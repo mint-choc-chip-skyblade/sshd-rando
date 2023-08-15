@@ -1,5 +1,5 @@
 F000: # Skyloft
-#F000 oarcadds
+  # F000 oarcadds
   - name: Trial
     type: oarcadd
     oarc: PLHarpPlay
@@ -20,7 +20,7 @@ F000: # Skyloft
     type: oarcadd
     oarc: Shinkan_motion
     destlayer: 6
-# F000 oarcdeletes
+  # F000 oarcdeletes
   - name: unnecessary oarcs
     type: oarcdelete
     oarc: GetGaragara
@@ -89,7 +89,7 @@ F000: # Skyloft
     type: oarcdelete
     oarc: SoMother # wryna is never outside anymore
     layer: 6
-# F000 objadds
+  # F000 objadds
   - name: Owlan on layer 6
     type: objadd
     layer: 6
@@ -141,7 +141,7 @@ F000: # Skyloft
       anglez: 951 # Untrigger on getting sword pedestal checks
       id: 0xFFFF
       name: ScChang
-# F000 objdeletes
+  # F000 objdeletes
   - name: Trial # trial object
     type: objdelete
     id: 0xFDD5
@@ -421,17 +421,13 @@ F000: # Skyloft
       layer: 6
       entrance: 52
 
-
 F001r:
-  - name: Move Fledge closer to Link's room at day
-    type: objpatch
-    id: 0xFC77
-    layer: 3
+  - name: Fi Text in Academy at night
+    type: objdelete
+    id: 0xFC80
+    layer: 4
     room: 0
     objtype: OBJ
-    object:
-      posx: 850
-      posz: -1700
   - name: Move Fledge closer to Link's room at night
     type: objpatch
     id: 0xFC7D
@@ -441,10 +437,89 @@ F001r:
     object:
       posx: 850
       posz: -1700
+  # - name: Fledge Pouch Check Storyflag at night
+  #   type: objpatch
+  #   id: 0xFC7E
+  #   layer: 4
+  #   room: 0
+  #   objtype: OBJ
+  #   object:
+  #     posx: 850
+  #     posz: -1700
+  #     untrigstoryfid: 923
+  - name: Move Fledge closer to Link's room at day
+    type: objpatch
+    id: 0xFC77
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 850
+      posz: -1700
+  # - name: Fledge Pouch Check Storyflag at day
+  #   type: objpatch
+  #   id: 0xFC78
+  #   layer: 3
+  #   room: 0
+  #   objtype: OBJ
+  #   object:
+  #     posx: 850
+  #     posz: -1700
+  #     untrigstoryfid: 923
+  - name: Fledge trains without wryna
+    type: objpatch
+    id: 0xFC10
+    layer: 4
+    room: 1
+    objtype: OBJ
+    object:
+      trigstoryfid: -1
+  - name: Keep cawlin with Letter check
+    type: objpatch
+    id: 0xFC7A
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      untrigstoryfid: 2047
+  - name: Olwan Npc after Kikwis
+    type: objpatch
+    id: 0xFC0A
+    layer: 3
+    room: 5
+    objtype: OBJ
+    object:
+      trigstoryfid: 57 # talk to Elder after locating every Kikwi
+  - name: untrigger other owlan
+    type: objpatch
+    id: 0xFC0B
+    layer: 3
+    room: 5
+    objtype: OBJ
+    object:
+      untrigstoryfid: 57 # talk to Elder after locating every Kikwi
+  - name: Toilethand trig
+    type: objpatch
+    id: 0xFC76
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 140 # groose landing in faron, cut out sleeping
+  - name: Toilethand inv
+    type: objpatch
+    id: 0xFC7B
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 140 # groose landing in faron, cut out sleeping
+  # temp start items arcs
   - name: Bow get model
     type: oarcadd
     oarc: GetBowA
     destlayer: 0
+
 
 F009r:
   - name: Commander dummy
