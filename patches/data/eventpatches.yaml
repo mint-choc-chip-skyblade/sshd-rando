@@ -1,0 +1,145 @@
+114-Friend:
+  - name: Skip Fledge camera panning 1
+    type: flowpatch
+    index: 15
+    flow:
+      next: 22
+  - name: Skip Fledge talking about the hero's tunic
+    type: flowpatch
+    index: 22
+    flow:
+      next: 51
+  - name: Skip Fledge wait frames
+    type: flowpatch
+    index: 51
+    flow:
+      next: 50
+  - name: Skip more Fledge camera panning
+    type: flowpatch
+    index: 50
+    flow:
+      next: 16
+  - name: Skip Fledge talking about the Adventure Pouch # skips part explaining the adventure pouch
+    type: flowpatch
+    index: 16
+    flow:
+      next: Set bwheel storyflag
+  - name: Set bwheel storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 58
+      next: Set tunic storyflag
+  - name: Set tunic storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 36
+      next: Set loftwing storyflag
+  - name: Set loftwing storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 27
+      next: Set can jump off loftwing storyflag
+  - name: Set can jump off loftwing storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 198
+      next: Set upper academy gate/sparring hall open sceneflag
+  - name: Set upper academy gate/sparring hall open sceneflag
+    type: setsceneflag
+    flow:
+      setsceneflag: 21
+      sceneindex: 0
+      next: Set LA gates sceneflag
+  - name: Set LA gates sceneflag
+    type: setsceneflag
+    flow:
+      setsceneflag: 0
+      sceneindex: 0
+      next: Set hero mode storyflag
+  - name: Set hero mode storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 226
+      next: Set emerald tablet storyflag
+  - name: Set emerald tablet storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 46
+      next: Set ruby tablet storyflag
+  - name: Set ruby tablet storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 47
+      next: Set amber tablet storyflag
+  - name: Set amber tablet storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 48
+      next: Set sailcloth storyflag
+  - name: Set sailcloth storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 32
+      next: Set botg storyflag
+  - name: Set botg storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 194
+      next: Set spiral charge storyflag
+  - name: Set spiral charge storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 364
+      next: Set UA doors sceneflag
+  - name: Set UA doors sceneflag
+    type: setsceneflag
+    flow:
+      setsceneflag: 1
+      sceneindex: 0
+      next: Set after tunic sceneflag
+  - name: Set after tunic sceneflag
+    type: setsceneflag
+    flow:
+      setsceneflag: 8
+      sceneindex: 0
+      next: Set eye cs sceneflag
+  - name: Set eye cs sceneflag
+    type: setsceneflag
+    flow:
+      setsceneflag: 26
+      sceneindex: 0
+      next: Set bat doors sceneflag
+  - name: Set bat doors sceneflag
+    type: setsceneflag
+    flow:
+      setsceneflag: 66
+      sceneindex: 0
+      next: Set inside US doors sceneflag
+  - name: Set inside US doors sceneflag
+    type: setsceneflag
+    flow:
+      setsceneflag: 67
+      sceneindex: 0
+      next: Set ruby fi text sceneflag
+  - name: Set ruby fi text sceneflag
+    type: setsceneflag
+    flow:
+      setsceneflag: 95
+      sceneindex: 0
+      next: Set amber fi text sceneflag
+  - name: Set amber fi text sceneflag
+    type: setsceneflag
+    flow:
+      setsceneflag: 96
+      sceneindex: 0
+      next: Bow storyflag
+  - name: Bow storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 944
+      next: Give bow
+  - name: Give bow
+    type: giveitem
+    flow:
+      itemid: 19
+      next: -1

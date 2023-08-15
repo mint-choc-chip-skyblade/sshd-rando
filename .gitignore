@@ -1,1 +1,14 @@
+# Don't commit the vanilla game files xD
 title
+
+# Don't commit the modified game files either :p
+output
+
+# Seriously, don't commit Nintendo's IP
+oarccache
+
+__pycache__
+
+
+# Muzu's test stuff.
+TODO
