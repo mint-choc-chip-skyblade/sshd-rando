@@ -614,33 +614,43 @@ F008r: # Goddess Statue
     room: 0
     objtype: OBJ
 
-F009r:
-  - name: Commander dummy
-    type: objpatch
-    id: 0xFC0A
+F010r: # Isle of songs tower
+  - name: Delete Faron Trial Dowsing
+    type: objdelete
+    id: 0xFC02
     layer: 0
     room: 0
     objtype: OBJ
-    object:
-      posx: 0.95
-      posy: 28
-      posz: -2059.5
-  - name: Pot add
-    type: objadd
+  - name: Delete Lanayru Trial Dowsing
+    type: objdelete
+    id: 0xFC03
     layer: 0
     room: 0
     objtype: OBJ
-    object:
-      params1: 0xFFFFFFF0
-      params2: 0x0CFFFFFF
-      posx: 524
-      posy: 0
-      posz: -1542.5
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0xFE50
-      name: Tubo
+  - name: Delete Eldin Trial Dowsing
+    type: objdelete
+    id: 0xFC04
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFC09
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Lanayru trial dowsing target
+    type: objdelete
+    id: 0xFC08
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Eldin trial dowsing target
+    type: objdelete
+    id: 0xFC07
+    layer: 0
+    room: 0
+    objtype: STAG
 
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
