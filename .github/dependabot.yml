@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    target-branch: "main"
+    groups:
+      all-dependencies:
+        patters:
+          - "*"
+    versioning-strategy: increase-if-necessary
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    target-branch: "main"
