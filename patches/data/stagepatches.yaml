@@ -695,6 +695,22 @@ F012r: # Batreaux House
   #   room: 0
   #   objtype: OBJ
 
+F013r: # Sparrot's House
+  - name: Sparrot spawn
+    type: objpatch
+    id: 0xFC0F
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1 # always there
+  - name: Sparrot at night
+    type: objdelete
+    id: 0xFC17
+    layer: 2
+    room: 0
+    objtype: OBJ
+
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
     type: objpatch
