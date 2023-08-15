@@ -520,6 +520,19 @@ F001r:
     oarc: GetBowA
     destlayer: 0
 
+F002r: # Beedle's Airshop
+  - name: Delete cutscene
+    type: objdelete
+    id: 0xFC11
+    layer: 1
+    room: 0
+    objtype: STAG
+  - name: Delete cutscene
+    type: objdelete
+    id: 0xFC13
+    layer: 1
+    room: 0
+    objtype: STAG
 
 F009r:
   - name: Commander dummy
