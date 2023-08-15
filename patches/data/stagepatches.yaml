@@ -1,0 +1,488 @@
+F000: # Skyloft
+#F000 oarcadds
+  - name: Trial
+    type: oarcadd
+    oarc: PLHarpPlay
+    destlayer: 0
+  - name: Trial
+    type: oarcadd
+    oarc: SirenEntrance
+    destlayer: 0
+  - name: Trial
+    type: oarcadd
+    oarc: PLSwordStick
+    destlayer: 0
+  - name: Owlan on layer 6 Model
+    type: oarcadd
+    oarc: ShinkanA
+    destlayer: 6
+  - name: Owlan on layer 6 Model 2
+    type: oarcadd
+    oarc: Shinkan_motion
+    destlayer: 6
+# F000 oarcdeletes
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetGaragara
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: PutGaragara
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: MoldoGut_Baby # baby molderarch, is probably here because of the dust pile but not needed
+    layer: 0
+  - name: delete people on bridge 1
+    type: oarcdelete
+    oarc: SenpaiAMotherLOD
+    layer: 1
+  - name: delete people on bridge 2
+    type: oarcdelete
+    oarc: DouguyaMotherLOD
+    layer: 1
+  - name: delete people on bridge 3
+    type: oarcdelete
+    oarc: JunkMotherLOD
+    layer: 1
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: SoMother # wryna is never outside anymore
+    layer: 4
+  - name: Trialarcremove
+    type: oarcdelete
+    oarc: PLHarpPlay
+    layer: 4
+  - name: Trialarcremove
+    type: oarcdelete
+    oarc: SirenEntrance
+    layer: 4
+  - name: Trialarcremove
+    type: oarcdelete
+    oarc: PLSwordStick
+    layer: 4
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetSozaiN
+    layer: 4
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetSozaiO
+    layer: 4
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetShieldHylia
+    layer: 4
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetShieldWood
+    layer: 4
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetSozaiN
+    layer: 6
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetSozaiO
+    layer: 6
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: SoMother # wryna is never outside anymore
+    layer: 6
+# F000 objadds
+  - name: Owlan on layer 6
+    type: objadd
+    layer: 6
+    room: 0
+    objtype: OBJ
+    object: # copied from the layer 4 version
+      params1: 0xFFFFFF31
+      params2: 0xFF5FFFFF
+      posx: -5296.68310546875
+      posy: 1237.6900634765625
+      posz: -6928.24267578125
+      anglex: 65535
+      angley: 0
+      anglez: 10811
+      id: 0xFDDD
+      name: NpcSkn
+  - name: extra Arrow Pot next to Bazaar Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 2010
+      posy: 390.534943
+      posz: 830
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: Add entrance to Goddess Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: STAG
+    object:
+      params1: 0xFFFFFF31 # scenlink: 49
+      params2: 0xFF5FFFFF
+      posx: 6.421215057373047
+      posy: 2871.08447265625
+      posz: -19011.0625
+      sizex: 527.0
+      sizey: 575.0
+      sizez: 958.0
+      anglex: 0xFFFF # no trigger storyflag
+      angley: 0
+      anglez: 951 # Untrigger on getting sword pedestal checks
+      id: 0xFFFF
+      name: ScChang
+# F000 objdeletes
+  - name: Trial # trial object
+    type: objdelete
+    id: 0xFDD5
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: Trial # butterflies
+    type: objdelete
+    id: 0xFDFE
+    layer: 4
+    room: 0
+    objtype: STAG
+  - name: Wryna cs
+    type: objdelete
+    id: 0xFDCD
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: Wryna cs
+    type: objdelete
+    id: 0xFDD1
+    layer: 6
+    room: 0
+    objtype: OBJ
+  - name: Wryna l4 1
+    type: objdelete
+    id: 0xFDCC
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: Wryna l6
+    type: objdelete
+    id: 0xFDD0
+    layer: 6
+    room: 0
+    objtype: OBJ
+  - name: Fi Text after trial
+    type: objdelete
+    id: 0xFDF3
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: Fi Text after trial
+    type: objdelete
+    id: 0xFDFE
+    layer: 5
+    room: 0
+    objtype: OBJ
+  - name: Fi Text on Stairs
+    type: objdelete
+    id: 0xFDCA
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: Goddess Statue chests
+    type: objdelete
+    id: 0xFDEA
+    layer: 2
+    room: 0
+    objtype: OBJS
+  - name: Goddess Statue chests
+    type: objdelete
+    id: 0xFDF6
+    layer: 4
+    room: 0
+    objtype: OBJS
+  - name: Goddess Statue chests
+    type: objdelete
+    id: 0xFDFF
+    layer: 5
+    room: 0
+    objtype: OBJS
+  - name: Goddess Statue chests
+    type: objdelete
+    id: 0xFDE5
+    layer: 10
+    room: 0
+    objtype: OBJS
+  - name: delete Wryna l4 2
+    type: objdelete
+    id: 0xFDF0
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: delete people on bridge 1
+    type: objdelete
+    id: 0x05D5
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: delete people on bridge 2
+    type: objdelete
+    id: 0x05D6
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: delete people on bridge 3
+    type: objdelete
+    id: 0x05D7
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: delete parrow before wryna
+    type: objdelete
+    id: 0xFDC6
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: delete parrow before wryna 2
+    type: objdelete
+    id: 0xFDCC
+    layer: 6
+    room: 0
+    objtype: OBJ
+  - name: delete parrow CS
+    type: objdelete
+    id: 0xFDF8
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: delete parrow CS 2
+    type: objdelete
+    id: 0xFDE9
+    layer: 6
+    room: 0
+    objtype: OBJ
+  - name: Remove confounding propeller dowsing
+    type: objdelete
+    id: 0xFD4D
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFD4A
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Lanayru trial dowsing target
+    type: objdelete
+    id: 0xFD50
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Eldin trial dowsing target
+    type: objdelete
+    id: 0xFD4C
+    layer: 0
+    room: 0
+    objtype: STAG
+
+  # MUST be patched and then moved, if swapped the layer on patch must be updated to 0
+  - name: Move Chest on goddess statue
+    type: objpatch
+    id: 0xFDE7
+    layer: 1
+    room: 0
+    objtype: OBJS
+    object:
+      posx: 666.327332
+      posy: 2893.23999
+      posz: -13083.1475
+      angley: 59591
+  - name: Move Chest on goddess statue to layer 0
+    type: objmove
+    id: 0xFDE7
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: OBJS
+
+  - name: Trial # trial object
+    type: objmove
+    id: 0xFDD7
+    layer: 5
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Trial # butterflies
+    type: objmove
+    id: 0xFE15
+    layer: 5
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Sand Size fix
+    type: objpatch
+    id: 0xFD02
+    layer: 0
+    room: 0
+    objtype: SOBJ
+    object:
+      sizex: 3.2
+      sizey: 4.5
+      sizez: 3.2
+  
+  - name: Fledge for Arrow minigame
+    type: objpatch
+    id: 0xFDD8
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 944 # bow
+  - name: Fledge for Arrow minigame
+    type: objpatch
+    id: 0xFDD7
+    layer: 6
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 944 # bow
+  - name: untrigger fledge on academy after bow layer 4
+    type: objpatch
+    id: 0xFDCE
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      untrigstoryfid: 944 # bow
+  - name: untrigger fledge on academy after bow layer 6
+    type: objpatch
+    id: 0xFDD2
+    layer: 6
+    room: 0
+    objtype: OBJ
+    object:
+      untrigstoryfid: 944 # bow
+  
+  - name: Fix Owlan disappearing after Harp
+    type: objpatch
+    room: 0
+    id: 0xFDDC
+    layer: 4
+    objtype: OBJ
+    object:
+      untrigstoryfid: -1
+  - name: always spawn parrow for quest
+    type: objpatch
+    id: 0xFDD3
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1
+  - name: always spawn parrow for quest 2
+    type: objpatch
+    id: 0xFDD5
+    layer: 6
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1
+
+  - name: Patch entrance to Goddess Statue
+    type: objpatch
+    id: 0xFD05
+    room: 0
+    layer: 0
+    objtype: STAG
+    object:
+      trigstoryfid: 951 # Only after raised goddess sword
+  - name: Patch other SCEN into Goddess Statue
+    type: objpatch
+    index: 49
+    room: 0
+    objtype: SCEN
+    object:
+      layer: 1
+      entrance: 0
+  - name: Remove SoT placement cutscene
+    type: objpatch
+    index: 46
+    room: 0
+    objtype: SCEN
+    object:
+      layer: 6
+      entrance: 52
+
+
+F001r:
+  - name: Move Fledge closer to Link's room at day
+    type: objpatch
+    id: 0xFC77
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 850
+      posz: -1700
+  - name: Move Fledge closer to Link's room at night
+    type: objpatch
+    id: 0xFC7D
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 850
+      posz: -1700
+  - name: Bow get model
+    type: oarcadd
+    oarc: GetBowA
+    destlayer: 0
+
+F009r:
+  - name: Commander dummy
+    type: objpatch
+    id: 0xFC0A
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 0.95
+      posy: 28
+      posz: -2059.5
+  - name: Pot add
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 524
+      posy: 0
+      posz: -1542.5
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+
+F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
+  - name: Skip from Whirlpool Cutscene to Link's room
+    type: objpatch
+    room: 0
+    index: 0
+    objtype: SCEN
+    object:
+      name: F001r
+      room: 1
+      layer: 3
+      entrance: 5
+      night: 2
