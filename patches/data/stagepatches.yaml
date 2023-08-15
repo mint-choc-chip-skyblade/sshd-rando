@@ -550,6 +550,22 @@ F004r: # Bazaar
   #   object:
   #     params1: 0x285FFCFF # >> 21 == 322
 
+F005r: # Orielle and Parrow's House
+  - name: Always Spawn Parrow
+    type: objpatch
+    id: 0xFC15
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1 # always Trigger
+  - name: Delete Parrow before Crystal Quest
+    type: objdelete
+    id: 0xFC13
+    layer: 2
+    room: 0
+    objtype: OBJ
+
 F009r:
   - name: Commander dummy
     type: objpatch
