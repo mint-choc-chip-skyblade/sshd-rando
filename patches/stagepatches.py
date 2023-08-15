@@ -296,80 +296,81 @@ class StagePatchHandler:
                             else:
                                 print(f"ERROR: {arcName} not found in oarc cache")
 
-                    # handle layer overrides
-                    layerOverridePatches = list(
-                        filter(lambda patch: patch["type"] == "layeroverride", patches)
-                    )
-                    if len(layerOverridePatches) > 1:
-                        print(
-                            f"ERROR: {len(layerOverridePatches)} layer overrides found for stage {stage}, expected 1"
+                    if layer == 0:
+                        # handle layer overrides
+                        layerOverridePatches = list(
+                            filter(lambda patch: patch["type"] == "layeroverride", patches)
                         )
-                        continue
-                    elif len(layerOverridePatches) == 1:
-                        if stageU8 is None:
-                            stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
-                        stageBZS = parseBzs(stageU8.get_file_data("dat/stage.bzs"))
-                        layer_override(bzs=stageBZS, patch=layerOverridePatches[0])
-                        stageU8.set_file_data("dat/stage.bzs", buildBzs(stageBZS))
-
-                    for objPatch in filter(
-                        lambda patch: patch["type"]
-                        in ["objadd", "objdelete", "objpatch", "objmove"],
-                        patches,
-                    ):
-                        objectPatches.append(objPatch)
-
-                    if len(objectPatches) > 0:
-                        if stageU8 is None:
-                            stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
-
-                        roomPathMatches = (
-                            ROOM_REGEX.match(path) for path in stageU8.get_all_paths()
-                        )
-                        roomPathMatches = (
-                            path for path in roomPathMatches if path is not None
-                        )
-                        for roomPathMatch in roomPathMatches:
-                            roomID = int(roomPathMatch.group("roomid"))
-
-                            patchesForCurrentRoom = list(
-                                filter(
-                                    lambda patch: patch.get("room") == roomID,
-                                    objectPatches,
-                                )
+                        if len(layerOverridePatches) > 1:
+                            print(
+                                f"ERROR: {len(layerOverridePatches)} layer overrides found for stage {stage}, expected 1"
                             )
-                            if len(patchesForCurrentRoom) > 0:
-                                roomU8 = stageU8.get_parsed_U8_from_this_U8(
-                                    path=roomPathMatch.group(0)
+                            continue
+                        elif len(layerOverridePatches) == 1:
+                            if stageU8 is None:
+                                stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
+                            stageBZS = parseBzs(stageU8.get_file_data("dat/stage.bzs"))
+                            layer_override(bzs=stageBZS, patch=layerOverridePatches[0])
+                            stageU8.set_file_data("dat/stage.bzs", buildBzs(stageBZS))
+
+                        for objPatch in filter(
+                            lambda patch: patch["type"]
+                            in ["objadd", "objdelete", "objpatch", "objmove"],
+                            patches,
+                        ):
+                            objectPatches.append(objPatch)
+
+                        if len(objectPatches) > 0:
+                            if stageU8 is None:
+                                stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
+
+                            roomPathMatches = (
+                                ROOM_REGEX.match(path) for path in stageU8.get_all_paths()
+                            )
+                            roomPathMatches = (
+                                path for path in roomPathMatches if path is not None
+                            )
+                            for roomPathMatch in roomPathMatches:
+                                roomID = int(roomPathMatch.group("roomid"))
+
+                                patchesForCurrentRoom = list(
+                                    filter(
+                                        lambda patch: patch.get("room") == roomID,
+                                        objectPatches,
+                                    )
                                 )
-                                roomBZS = parseBzs(roomU8.get_file_data("dat/room.bzs"))
+                                if len(patchesForCurrentRoom) > 0:
+                                    roomU8 = stageU8.get_parsed_U8_from_this_U8(
+                                        path=roomPathMatch.group(0)
+                                    )
+                                    roomBZS = parseBzs(roomU8.get_file_data("dat/room.bzs"))
 
-                                nextID = get_highest_object_id(bzs=roomBZS) + 1
+                                    nextID = get_highest_object_id(bzs=roomBZS) + 1
 
-                                for patch in patchesForCurrentRoom:
-                                    if patch["type"] == "objadd":
-                                        object_add(
-                                            bzs=roomBZS, objadd=patch, nextID=nextID
-                                        )
-                                        nextID += 1
-                                    elif patch["type"] == "objdelete":
-                                        object_delete(bzs=roomBZS, objdelete=patch)
-                                    elif patch["type"] == "objpatch":
-                                        object_patch(bzs=roomBZS, objpatch=patch)
-                                    elif patch["type"] == "objmove":
-                                        object_move(
-                                            bzs=roomBZS, objmove=patch, nextID=nextID
-                                        )
-                                        nextID += 1
-                                    else:
-                                        print(
-                                            f"ERROR: unsupported patch type {patch['type']} in stage {stage} layer {layer} room {roomID} patches"
-                                        )
+                                    for patch in patchesForCurrentRoom:
+                                        if patch["type"] == "objadd":
+                                            object_add(
+                                                bzs=roomBZS, objadd=patch, nextID=nextID
+                                            )
+                                            nextID += 1
+                                        elif patch["type"] == "objdelete":
+                                            object_delete(bzs=roomBZS, objdelete=patch)
+                                        elif patch["type"] == "objpatch":
+                                            object_patch(bzs=roomBZS, objpatch=patch)
+                                        elif patch["type"] == "objmove":
+                                            object_move(
+                                                bzs=roomBZS, objmove=patch, nextID=nextID
+                                            )
+                                            nextID += 1
+                                        else:
+                                            print(
+                                                f"ERROR: unsupported patch type {patch['type']} in stage {stage} layer {layer} room {roomID} patches"
+                                            )
 
-                                roomU8.set_file_data("dat/room.bzs", buildBzs(roomBZS))
-                                stageU8.set_file_data(
-                                    roomPathMatch.group(0), roomU8.build_U8()
-                                )
+                                    roomU8.set_file_data("dat/room.bzs", buildBzs(roomBZS))
+                                    stageU8.set_file_data(
+                                        roomPathMatch.group(0), roomU8.build_U8()
+                                    )
                     if (
                         len(layerOverridePatches)
                         + len(objectPatches)
