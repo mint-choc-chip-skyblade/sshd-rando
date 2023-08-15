@@ -371,7 +371,12 @@ class StagePatchHandler:
                                 stageU8.set_file_data(
                                     roomPathMatch.group(0), roomU8.build_U8()
                                 )
-                    if (len(layerOverridePatches) + len(objectPatches) + len(addArcs) + len(removeArcs)) > 0:
+                    if (
+                        len(layerOverridePatches)
+                        + len(objectPatches)
+                        + len(addArcs)
+                        + len(removeArcs)
+                    ) > 0:
                         write_bytes_create_dirs(
                             modifiedStagePath, stageU8.build_and_compress_U8()
                         )
