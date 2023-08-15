@@ -566,6 +566,54 @@ F005r: # Orielle and Parrow's House
     room: 0
     objtype: OBJ
 
+F008r: # Goddess Statue
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 951 # Raising Goddess Sword in Goddess Statue
+        night: 2
+        layer: 0
+      - story_flag: -1
+        night: 2
+        layer: 1
+  - name: Fi text after pulling Goddess Sword
+    type: objadd
+    room: 0
+    layer: 1
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # type 1, no fi, flag sets automatically
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 10750 # entrypoint 107_50
+      id: 0xFC00
+      name: NpcTke
+      trigstoryfid: 951 # Raised Goddess Sword in Goddess Statue
+      untrigscenefid: 25 # Scene flag 25 - Skyward Strike on Tablet Pedestal (unused in rando)
+  - name: Move Sword Pedestal to layer 1
+    type: objmove
+    id: 0xFC05
+    layer: 0
+    destlayer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove cutscene trigger on layer 1
+    type: objdelete
+    id: 0xFC0E
+    layer: 1
+    room: 0
+    objtype: STAG
+  - name: Delete Crest
+    type: objdelete
+    id: 0xFC02
+    layer: 0
+    room: 0
+    objtype: OBJ
+
 F009r:
   - name: Commander dummy
     type: objpatch

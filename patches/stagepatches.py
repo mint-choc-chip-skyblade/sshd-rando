@@ -246,7 +246,6 @@ def layer_override(bzs, patch):
         for override in patch["override"]
     ]
     bzs["LYSE"] = layerOverride
-    print("Layer overridden")
 
 
 class StagePatchHandler:
