@@ -678,6 +678,23 @@ F011r: # Lumpy Pumpkin
     room: 0
     objtype: OBJ
 
+F012r: # Batreaux House
+  - name: Batreaux unlock
+    type: objpatch
+    id: 0xFC00
+    layer: 0
+    room: 0
+    objtype: OBJS
+    object:
+      anglex: 0xFF00 # sets the flag to -1 (meaning open)
+  # - name: Remove Crystal Dowsing
+  #   onlyif: Option "dowsing-after-whitesword" Enabled
+  #   type: objdelete
+  #   id: 0xFC23
+  #   layer: 1
+  #   room: 0
+  #   objtype: OBJ
+
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
     type: objpatch
