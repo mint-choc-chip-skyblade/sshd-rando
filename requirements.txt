@@ -1,0 +1,3 @@
+cmake>=3.27.2 # Needed to get nlzss11 v1.6
+nlzss11 @ git+https://github.com/muzugalium/nlzss11@1.6
+PyYAML>=6.0

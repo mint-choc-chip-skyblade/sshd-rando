@@ -1,0 +1,3 @@
+# Yep, the filename is weird.
+# Blame dependabot :p
+black>=23.3.0
