@@ -1,0 +1,3 @@
+nlzss11>=1.5 # We actually need 1.6 but that's not been dealt with yet
+wheel
+PyYAML>=6.0
