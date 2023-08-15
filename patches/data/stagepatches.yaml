@@ -711,6 +711,262 @@ F013r: # Sparrot's House
     room: 0
     objtype: OBJ
 
+F020: # Sky
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetMedal
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetPouchB
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetSpareSeedA
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetSpareQuiverA
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetSpareBombBagA
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: WaterPotWater
+    layer: 2
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: Waterpot
+    layer: 2
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: Pinwheel
+    layer: 2
+  - name: Fi text about goddess cubes
+    type: objdelete
+    id: 0xFD0F
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: remove faron loadzone after groose
+    type: objdelete
+    id: 0xFC96
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: never untrigger first faron loadzone
+    type: objpatch
+    id: 0xFC8B
+    layer: 0
+    room: 0
+    objtype: STAG
+    object:
+      untrigstoryfid: -1
+  - name: remove Wryna requirement for orielle
+    type: objpatch
+    id: 0xFCFB
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1
+  - name: remove Wryna requirement for orielle's bird
+    type: objpatch
+    id: 0xFD0E
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xCBFFFFFF # make it always spawn
+  - name: Remove confounding propeller dowsing
+    type: objdelete
+    id: 0xFCAD
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFCAA
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Lanayru trial dowsing target
+    type: objdelete
+    id: 0xFCB0
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Eldin trial dowsing target
+    type: objdelete
+    id: 0xFCAC
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Skyloft trial dowsing target
+    type: objdelete
+    id: 0xFCB3
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Enlarge Thunderhead Entrance
+    type: objpatch
+    id: 0xFC9D
+    layer: 0
+    room: 0
+    objtype: STAG
+    object:
+      posy: -4500
+      sizex: 12000
+      sizey: 12800
+
+F023: # Thunderhead
+  - name: Remove unnecessary arc
+    type: oarcdelete
+    oarc: GetSpareBombBagA
+    layer: 0
+  - name: Remove unnecessary arc
+    type: oarcdelete
+    oarc: GetSpareQuiverA
+    layer: 0
+  - name: Remove unnecessary arc
+    type: oarcdelete
+    oarc: GetSpareSeedA
+    layer: 0
+  - name: Remove unnecessary arc
+    type: oarcdelete
+    oarc: GetTerryCage
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: Pinwheel
+    layer: 0
+  - name: Strich layer 1
+    type: objadd
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFCFF
+      params2: 0xFF5FFFFF
+      posx: -170960.21875
+      posy: 18262
+      posz: -51642.58984375
+      anglex: 65535
+      angley: 56434
+      anglez: 11601
+      id: 0xFCEF
+      name: NpcIcgK
+  - name: Stritch model
+    type: oarcadd
+    oarc: KobunB
+    destlayer: 1
+  - name: void out during bug heaven minigame
+    type: objadd
+    layer: 13
+    room: 0
+    objtype: STAG
+    object:
+      params1: 0xFFCFFF06
+      params2: 0xFFDFFFFF
+      posx: -165885
+      posy: 16506
+      posz: -52597
+      sizex: 50463
+      sizey: 1000
+      sizez: 50463
+      anglex: 0
+      angley: 0
+      anglez: 0xFFFF
+      id: 0xFC00
+      name: PlRsTag
+  - name: Delete Isle of Songs intro cutscene
+    type: objdelete
+    id: 0xFC89
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text after levias
+    type: objadd
+    room: 0
+    layer: 0
+    id: 0xFC13
+    objtype: OBJ
+    object:
+      params1: 0x74C32301 # triggered by story flag 200, untriggered by story flag 934
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      anglex: 0xFFFF
+      angley: 0xFFFF
+      anglez: 12003 # entrypoint 120_03
+      id: 0xFC13
+      name: NpcTke
+  - name: Yeet Levias Cutscene
+    type: objpatch
+    index: 6
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Gossip Stone
+    type: objmove
+    id: 0xFCEE
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Gossip Stone
+    type: oarcadd
+    oarc: GossipStone
+    destlayer: 0
+  - name: Remove confounding propeller dowsing
+    type: objdelete
+    id: 0xFCAE
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFCAB
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Lanayru trial dowsing target
+    type: objdelete
+    id: 0xFCB1
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Eldin trial dowsing target
+    type: objdelete
+    id: 0xFCAD
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Skyloft trial dowsing target
+    type: objdelete
+    id: 0xFCB4
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Skyloft trial dowsing target
+    type: objdelete
+    id: 0xFCA3
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove isle of songs puzzle complete cutscene
+    type: objpatch
+    id: 0xFC07
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFF01C5 # 00 FF 00 00 yeets the event call
+
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
     type: objpatch
