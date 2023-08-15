@@ -22,9 +22,12 @@ jobs:
       - name: Install requirements
         run: python -m pip install -r requirements.txt
       - name: Install dev requirements
-        run: python -m pip install -r requirements-dev.txt
+        run: python -m pip install -r req-dev-requirements.txt
       - name: Test formatting
         run: black . --check
-      - name: Run tests
-        run: |
-          python sshdrando.py
+      # Omitted until we can run without patching.
+      # Patching can't be tested as that requires a game extract.
+      #
+      # - name: Run tests
+      #   run: |
+      #     python sshdrando.py --patch false
