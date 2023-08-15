@@ -534,6 +534,22 @@ F002r: # Beedle's Airshop
     room: 0
     objtype: STAG
 
+F004r: # Bazaar
+  - name: Delete goddess chest fi text
+    type: objdelete
+    id: 0xFC7D
+    layer: 0
+    room: 0
+    objtype: OBJ
+  # - name: Patch Scrapper Junk Despawn Flag
+  #   type: objpatch
+  #   id: 0xFC74
+  #   layer: 0
+  #   room: 0
+  #   objtype: OBJ
+  #   object:
+  #     params1: 0x285FFCFF # >> 21 == 322
+
 F009r:
   - name: Commander dummy
     type: objpatch
