@@ -652,6 +652,32 @@ F010r: # Isle of songs tower
     room: 0
     objtype: STAG
 
+F011r: # Lumpy Pumpkin
+  - name: Delete Lumpy Pumpkin Cutscene 1
+    type: objdelete
+    id: 0xFC42
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Delete Lumpy Pumpkin Cutscene 2
+    type: objdelete
+    id: 0xFC43
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Delete new Lumpy chandelier Cutscene 1
+    type: objdelete
+    id: 0xFC44
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Delete new Lumpy chandelier Cutscene 2
+    type: objdelete
+    id: 0xFC45
+    layer: 0
+    room: 0
+    objtype: OBJ
+
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
     type: objpatch
