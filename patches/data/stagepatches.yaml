@@ -2608,6 +2608,396 @@ F303: # Lanayru Caves
     room: 0
     objtype: STAG
 
+F400: # Behind the Temple
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 13
+        night: 0
+        layer: 4
+      - story_flag: 9
+        night: 0
+        layer: 3
+      - story_flag: 36
+        night: 0
+        layer: 2
+  - name: Goron text trigger doesn't disappear after Sandship
+    type: objpatch
+    id: 0xFC95
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      untrigstoryfid: 2047
+  - name: Goron doesn't disappear after Sandship
+    type: objpatch
+    id: 0xFC94
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 2047
+      untrigstoryfid: 2047
+  - name: Goron after Skyview
+    type: objdelete
+    id: 0xFC2E
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Goron before unlocking goddess Walls
+    type: objdelete
+    id: 0xFC2F
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text for Trial
+    type: objdelete
+    id: 0xFC5B
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove fake trial dowsing
+    type: objdelete
+    id: 0xFC8A
+    layer: 0
+    room: 0
+    objtype: STAG
+
+F401: # Sealed grounds Whirlpool
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 705
+        night: 0
+        layer: 4
+      - story_flag: 704
+        night: 0
+        layer: 3
+      - story_flag: 703
+        night: 0
+        layer: 2
+      - story_flag: 133
+        night: 0
+        layer: 5
+      - story_flag: 13
+        night: 0
+        layer: 3
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Ruined save
+    type: objdelete
+    id: 0xFC8E
+    layer: 1
+    room: 1
+    objtype: OBJ
+  - name: Groosenator before imp 2
+    type: objdelete
+    id: 0xFC9D
+    layer: 3
+    room: 1
+    objtype: OBJ
+  - name: Fi text for Trial
+    type: objdelete
+    id: 0xFC09
+    layer: 0
+    room: 1
+    objtype: OBJ
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFCA3
+    layer: 2
+    room: 1
+    objtype: STAG
+
+F402: # Sealed Temple
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 133
+        night: 0
+        layer: 6
+      - story_flag: 132
+        night: 0
+        layer: 4
+      - story_flag: 13
+        night: 0
+        layer: 3
+      - story_flag: 140
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Delete LTF Tree
+    type: objdelete
+    id: 0xFC06
+    layer: 0
+    room: 2
+    objtype: OBJ
+  - name: SotH start cs
+    type: objdelete
+    id: 0xFC4F
+    layer: 4
+    room: 2
+    objtype: OBJ
+  - name: Groose Tree cs
+    type: objdelete
+    id: 0xFC4E
+    layer: 4
+    room: 2
+    objtype: OBJ
+  - name: Remove cs when entering ST
+    type: objpatch
+    room: 2
+    index: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1 # no cs anymore
+  - name: Raise GoT CS trigger
+    type: objadd
+    layer: 2
+    room: 2
+    objtype: STAG
+    object:
+      params1: 0xC303FF03 # scenlink: 3 - skip cutscene of GoT raising
+      posx: 0
+      posy: 7000
+      posz: 10971.697265625
+      sizex: 20000
+      sizey: 20000
+      sizez: 20000
+      anglex: 65535 # no trigger storyflag
+      angley: 0
+      anglez: 65535 # no untrigger storyflag (works but idk why)
+      id: 0xFC00
+      name: ScChang
+  - name: Yeet GoT opening Cutscene
+    type: objpatch
+    id: 0xFC55
+    layer: 4
+    room: 2
+    objtype: STAG
+    object:
+      params1: 0xFF03FF05 # scenlink: 5 - skip cutscene of GoT opening
+  - name: to BtT unlock
+    type: objpatch
+    id: 0xFC00
+    layer: 0
+    room: 2
+    objtype: OBJS
+    object:
+      anglex: 0xFF00 # sets the flag to -1 (meaning open)
+  - name: to BtT unlock
+    type: objpatch
+    id: 0xFC01
+    layer: 0
+    room: 2
+    objtype: OBJS
+    object:
+      anglex: 0xFF00 # sets the flag to -1 (meaning open)
+  - name: Impa text near Door after GoT
+    type: objdelete
+    id: 0xFC49
+    layer: 2
+    room: 2
+    objtype: OBJ
+  - name: Impa text before imp 2 trigger
+    type: objdelete
+    id: 0xFC4C
+    layer: 3
+    room: 2
+    objtype: OBJ
+  - name: BotG item trigger extended #so that the player automatically gets the item and the gate of time raised, while also not getting in the way of harp tutorial in BiT
+    type: objpatch
+    index: 1
+    room: 2
+    objtype: AREA
+    object:
+      posx: 0
+      posy: 7000
+      posz: 9600
+      sizex: 3600
+      sizey: 2000
+      sizez: 3000
+  - name: Remove Music and shaking
+    type: objpatch
+    room: 2
+    index: 5
+    objtype: EVNT
+    object:
+      story_flag2: -1 # no Imp trigger stuff
+      sceneflag1: 7 # no shaking into vents active
+  - name: Unforce layer after Raise GoT CS
+    type: objpatch
+    room: 2
+    index: 3
+    objtype: SCEN
+    object:
+      layer: 0
+  - name: Remove Goddess Statue falling down storyflag
+    type: objpatch
+    room: 2
+    index: 7
+    objtype: EVNT
+    object:
+      story_flag2: -1
+  - name: Delete post levias impa
+    type: objdelete
+    id: 0xFC17
+    layer: 0
+    room: 2
+    objtype: OBJ
+  - name: Impa triggers after raising GoT instead of Farores Courage
+    type: objpatch
+    id: 0xFC04
+    layer: 0
+    room: 2
+    objtype: OBJ
+    object:
+      trigstoryfid: 340 # gate of time raised
+  - name: Delete Imp 2 beaten cs inside
+    type: objdelete
+    id: 0xFC4D
+    layer: 4
+    room: 2
+    objtype: OBJ
+  - name: Delete Imp 2 beaten cs inside
+    type: objdelete
+    id: 0xFC4C
+    layer: 4
+    room: 2
+    objtype: OBJ
+  - name: extra Arrow Pot Next to Fairy
+    type: objadd
+    layer: 0
+    room: 2
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 1215
+      posy: 7700
+      posz: 12700
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFC3D
+    layer: 0
+    room: 2
+    objtype: STAG
+
+F403: # Hylia's Realm
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 726 # Refight G3
+        night: 0
+        layer: 4
+      - story_flag: 530 # Boss Rush
+        night: 0
+        layer: 1
+      - story_flag: 486 # G3 Defeated
+        night: 0
+        layer: 3
+      - story_flag: 134 # Horde Defeated
+        night: 0
+        layer: 7
+      - story_flag: 347 # Horde Cutscene watched
+        night: 0
+        layer: 1
+      - story_flag: -1
+        night: 0
+        layer: 13
+  # - name: Skip Ghirahim 3 Fight
+  #   onlyif: Option "skip-g3" Enabled
+  #   type: objpatch
+  #   room: 1
+  #   index: 1
+  #   objtype: EVNT
+  #   object:
+  #     exit_id: 5 # go to post g3 cutscene, sets g3 defeated storyflag
+  # - name: Skip Demise Fight
+  #   onlyif: Option "skip-demise" Enabled
+  #   type: objpatch
+  #   room: 1
+  #   index: 8
+  #   objtype: SCEN
+  #   object:
+  #     name: F404
+  #     room: 2
+  #     layer: 14
+  #     entrance: 5
+  #     night: 2
+  #     byte5: 1
+
+F404: # Hylia's Temple
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Set Gate of Time opening cutscene watched 
+    type: objadd
+    room: 2
+    layer: 0
+    objtype: STAG
+    object:
+      params1: 0xFFFFFFF
+      params2: 0xFF5FFFFF
+      posx: 0
+      posy: 7600
+      posz: 10250
+      sizex: 20000
+      sizey: 20000
+      sizez: 20000
+      anglex: 344 # Have watched Gate of Time opening Cutscene
+      angley: 0
+      anglez: 65535
+      name: SwAreaT
+  - name: Yeet TMS Cutscene
+    type: objpatch
+    index: 4
+    room: 2
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Remove TMS from CS
+    type: objpatch
+    room: 2
+    index: 0
+    objtype: EVNT
+    object:
+      item: -1 # no TMS anymore
+  - name: Delete post-ghirahim 3 impa
+    type: objdelete
+    id: 0xFC05
+    layer: 0
+    room: 2
+    objtype: OBJ
+  # - name: Trigger to Check Triforces
+  #   type: objadd
+  #   onlyif: Option "triforce-required" Enabled
+  #   room: 2
+  #   layer: 0
+  #   objtype: OBJ
+  #   object:
+  #     params1: 0xFFEA1400 # triggered by triforce completed
+  #     params2: 0xFF1FFFFF
+  #     posx: 0
+  #     posy: 7600
+  #     posz: 8250
+  #     anglex: 0x32FF # sets 7x04
+  #     angley: 0xFFFF
+  #     anglez: 50220 # entrypoint 502_20
+  #     id: 0xFC40
+  #     name: NpcTke
+
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
     type: objpatch
@@ -2620,6 +3010,22 @@ F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
       layer: 3
       entrance: 5
       night: 2
+
+F407: # Sky Keep beaten CS
+  - name: Sky Keep CS remove Storyflag
+    type: objpatch
+    room: 0
+    index: 2
+    objtype: EVNT
+    object:
+      story_flag2: -1 # first storyflag is handled by entrance rando patches
+  - name: Sky Keep CS remove Storyflag
+    type: objpatch
+    room: 0
+    index: 3
+    objtype: EVNT
+    object:
+      story_flag2: -1
 
 D100: # Skyview
   - name: Layer override
