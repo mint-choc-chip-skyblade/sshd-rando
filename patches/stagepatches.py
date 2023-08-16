@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import OrderedDict, defaultdict
 from filepathconstants import (
     OUTPUT_STAGE_PATH,
     STAGE_FILES_PATH,
@@ -36,7 +36,7 @@ def patch_tbox(bzs, itemID, id):
     obj = tboxs[0]
 
     obj["anglez"] = mask_shift_set(obj["anglez"], 0x1FF, 0, itemID)
-    # obj["params1"] = mask_shift_set(obj["params1"], 0x3, 4, 0x01)
+    obj["params1"] = mask_shift_set(obj["params1"], 0x3, 4, 0x02)
 
 
 def patch_additional_properties(object, property, value):
@@ -258,6 +258,10 @@ class StagePatchHandler:
     def handle_stage_patches(self):
         for stagePath in Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ"):
             stageMatch = STAGE_REGEX.match(stagePath.parts[-1])
+
+            if not stageMatch:
+                raise TypeError("Expected type Match[str] but found None.")
+
             stage = stageMatch[1]
             layer = int(stageMatch[2])
             modifiedStagePath = Path(
@@ -309,7 +313,18 @@ class StagePatchHandler:
                     elif len(layerOverridePatches) == 1:
                         if stageU8 is None:
                             stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
-                        stageBZS = parseBzs(stageU8.get_file_data("dat/stage.bzs"))
+
+                        stageU8Data = stageU8.get_file_data("dat/stage.bzs")
+
+                        if not stageU8Data:
+                            raise TypeError("Expected type bytes but found None.")
+
+                        stageBZS = parseBzs(stageU8Data)
+                        if type(stageBZS) is not OrderedDict:
+                            raise TypeError(
+                                f"Expected type OrderedDict but found {type(stageBZS)}."
+                            )
+
                         layer_override(bzs=stageBZS, patch=layerOverridePatches[0])
                         stageU8.set_file_data("dat/stage.bzs", buildBzs(stageBZS))
 
@@ -343,7 +358,19 @@ class StagePatchHandler:
                                 roomU8 = stageU8.get_parsed_U8_from_this_U8(
                                     path=roomPathMatch.group(0)
                                 )
-                                roomBZS = parseBzs(roomU8.get_file_data("dat/room.bzs"))
+                                roomU8Data = roomU8.get_file_data("dat/room.bzs")
+
+                                if not roomU8Data:
+                                    raise TypeError(
+                                        "Expected type bytes but found None."
+                                    )
+
+                                roomBZS = parseBzs(roomU8Data)
+
+                                if type(roomBZS) is not OrderedDict:
+                                    raise TypeError(
+                                        f"Expected type OrderedDict but found {type(roomBZS)}."
+                                    )
 
                                 nextID = get_highest_object_id(bzs=roomBZS) + 1
 
@@ -372,6 +399,9 @@ class StagePatchHandler:
                                     roomPathMatch.group(0), roomU8.build_U8()
                                 )
                     if (len(layerOverridePatches) + len(objectPatches)) > 0:
+                        if stageU8 is None:
+                            stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
+
                         write_bytes_create_dirs(
                             modifiedStagePath, stageU8.build_and_compress_U8()
                         )
@@ -398,6 +428,10 @@ class StagePatchHandler:
                 for arc in arcsNotInCache:
                     print(f"Extracting {arc}")
                     arcData = objectpackU8.get_file_data(f"oarc/{arc}.arc")
+
+                    if not arcData:
+                        raise TypeError("Expected type bytes but found None.")
+
                     (OARC_CACHE_PATH / f"{arc}.arc").write_bytes(arcData)
             else:
                 arcs = extract["oarcs"]
@@ -419,6 +453,10 @@ class StagePatchHandler:
                 for arcName in arcs:
                     print(f"Extracting {arcName}")
                     arcData = stageU8.get_file_data(f"oarc/{arcName}.arc")
+
+                    if not arcData:
+                        raise TypeError("Expected type bytes but found None.")
+
                     (OARC_CACHE_PATH / f"{arcName}.arc").write_bytes(arcData)
 
     def set_oarc_add_remove(self):

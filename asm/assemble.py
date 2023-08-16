@@ -10,9 +10,12 @@ import yaml
 # Causes the assembler to print out each instruction it's assembling and it's binary.
 DEBUG_SHOW_ASSEMBLY = True
 
+# Yes, these are duplicated in filepathconstants.py
+# This file should NEVER be run as part of the main randomization process.
+# This file should ONLY be run after development changes to asm.
+ASM_PATCHES_PATH = Path("./") / "patches"
+ASM_PATCHES_DIFFS_PATH = ASM_PATCHES_PATH / "diffs"
 
-ASM_PATCHES = Path(".") / "patches"
-ASM_PATCHES_DIFFS = ASM_PATCHES / "diffs"
 EXE = ".exe"
 SEMICOLON = ";"
 NEWLINE = "\n"
@@ -63,7 +66,7 @@ devkitA64Linker = devkitA64 / linker
 devkitA64Objcopy = devkitA64 / objcopy
 
 DEVKIT_DIR_NOT_FOUND_HELP = "Please visit https://devkitpro.org/wiki/devkitPro_pacman for installation instructions."
-DEVKIT_FILE_NOT_FOUND_HELP = "On Windows, devkitA64 should be installed to: C:\devkitPro\devkitPPC. On other operating systems, the DEVKITA64 environment variable should be declared."
+DEVKIT_FILE_NOT_FOUND_HELP = "On Windows, devkitA64 should be installed to: C:\\devkitPro\\devkitA64. On other operating systems, the DEVKITA64 environment variable should be declared."
 
 if not devkitpro.is_dir():
     raise FileNotFoundError(
@@ -105,7 +108,7 @@ for symbol, address in originalSymbols["main"].items():
 
 
 # Get patches from each asm file.
-asmPatchesPaths = tuple(ASM_PATCHES.glob("*.asm"))
+asmPatchesPaths = tuple(ASM_PATCHES_PATH.glob("*.asm"))
 
 for patchFilePath in asmPatchesPaths:
     patchFilename = patchFilePath.parts[-1]
@@ -119,6 +122,8 @@ for patchFilePath in asmPatchesPaths:
     # Keeps the temporary directory only within this with block.
     with tempDir as tempDirName:
         tempDirName = Path(tempDirName)
+
+        tempLinkerScript = linkerScript + NEWLINE
 
         for line in asmPatch.splitlines():
             line = line.strip()
@@ -150,8 +155,6 @@ for patchFilePath in asmPatchesPaths:
             else:
                 codeBlocks[asmReadOffset].append(line)
 
-            tempLinkerScript = linkerScript + NEWLINE
-
             for symbol in localBranches:
                 tempLinkerScript += symbol
 
@@ -175,6 +178,7 @@ for patchFilePath in asmPatchesPaths:
             # Assemble code block.
             assemblerCommand = [
                 devkitA64Assembler,
+                "-mcpu=cortex-a57",
                 "-EL",  # little endian
                 assemblerCodeFilename,
                 "-o",
@@ -235,7 +239,7 @@ for patchFilePath in asmPatchesPaths:
 
             codeBlocks[codeBlockOffset] = dataBytes
 
-    diffFilename = ASM_PATCHES_DIFFS / f"{patchFilename}-diff.yaml"
+    diffFilename = ASM_PATCHES_DIFFS_PATH / f"{patchFilename[:-4]}-diff.yaml"
 
     with open(diffFilename, "w") as f:
         f.write(yaml.dump(codeBlocks, Dumper=yaml.CDumper, line_break=NEWLINE))

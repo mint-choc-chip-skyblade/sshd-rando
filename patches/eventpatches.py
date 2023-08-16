@@ -33,7 +33,12 @@ class EventPatchHandler:
             ):
                 msbtFileName = eventFilePath.split("/")[-1]
                 if msbtFileName[:-5] in self.eventPatches:
-                    parsedMSBT = parseMSB(eventArc.get_file_data(eventFilePath))
+                    msbtData = eventArc.get_file_data(eventFilePath)
+
+                    if not msbtData:
+                        raise TypeError("Expected type bytes but found None")
+
+                    parsedMSBT = parseMSB(msbtData)
 
                     for patch in self.eventPatches[msbtFileName[:-5]]:
                         # handle text patches here
@@ -52,7 +57,12 @@ class EventPatchHandler:
             ):
                 msbfFileName = eventFilePath.split("/")[-1]
                 if msbfFileName[:-5] in self.eventPatches:
-                    parsedMSBF = parseMSB(eventArc.get_file_data(eventFilePath))
+                    msbfData = eventArc.get_file_data(eventFilePath)
+
+                    if not msbfData:
+                        raise TypeError("Expected type bytes but found None.")
+
+                    parsedMSBF = parseMSB(msbfData)
                     self.create_flow_label_to_index_mapping(
                         flowPatches=self.eventPatches[msbfFileName[:-5]],
                         msbf=parsedMSBF,
