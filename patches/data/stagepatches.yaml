@@ -3027,6 +3027,154 @@ F407: # Sky Keep beaten CS
     object:
       story_flag2: -1
 
+D003_0: # Sky Keep Courage Room
+  - name: Fi text
+    type: objdelete
+    id: 0xFC0F
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text reach the mark
+    type: objdelete
+    id: 0xFC11
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+D003_2: # Sky Keep Power Room
+  - name: Fi text
+    type: objdelete
+    id: 0xFC33
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text reach the mark
+    type: objdelete
+    id: 0xFC3C
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text wrong side
+    type: objdelete
+    id: 0xFC32
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+D003_3: # Sky Keep Wisdom Room
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1 # always use layer 1, 
+  - name: Fi text
+    type: objdelete
+    id: 0xFC1B
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text reach the mark
+    type: objdelete
+    id: 0xFC1D
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+D003_7: # Sky Keep Entrance Room
+  - name: Fi text
+    type: objdelete
+    id: 0xFC0B
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove bars
+    type: objdelete
+    id: 0xFC05
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove bars opening cs
+    type: objpatch
+    id: 0xFC16
+    room: 0
+    layer: 4
+    objtype: STAG
+    object:
+      params1: 0xFF1516FF # 0x000000FF = event number
+
+D003_8: # this change is purely to make sure D003_8 gets patched, so a perviously broken rando version gets overwritten
+  - name: remove last triforce cutscene # this does mean if triforces are vanilla you have to leave yourself
+    type: objdelete
+    id: 0xFC06
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Scene Change for Wisdom layer
+    type: objadd
+    room: 0
+    layer: 1
+    id: 0xFC20
+    objtype: STAG
+    object:
+      params1: 0x3EFFFF01 # scenlink: 1, triggered by scene flag 62
+      params2: 0xFF5FFFFF
+      posx: 0
+      posy: 0
+      posz: 0
+      sizex: 10000
+      sizey: 10000
+      sizez: 10000
+      anglex: 0xFFFF
+      angley: 0
+      anglez: 0xFFFF
+      name: ScChang
+  - name: Scene Change for Power layer
+    type: objadd
+    room: 0
+    layer: 2
+    id: 0xFC20
+    objtype: STAG
+    object:
+      params1: 0x3DFFFF02 # scenlink: 2, triggered by scene flag 61
+      params2: 0xFF5FFFFF
+      posx: 0
+      posy: 0
+      posz: 0
+      sizex: 10000
+      sizey: 10000
+      sizez: 10000
+      anglex: 0xFFFF
+      angley: 0
+      anglez: 0xFFFF
+      name: ScChang
+  - name: Scene Change for Courage layer
+    type: objadd
+    room: 0
+    layer: 3
+    id: 0xFC20
+    objtype: STAG
+    object:
+      params1: 0x40FFFF03 # scenlink: 3, triggered by scene flag 64
+      params2: 0xFF5FFFFF
+      posx: 0
+      posy: 0
+      posz: 0
+      sizex: 10000
+      sizey: 10000
+      sizez: 10000
+      anglex: 0xFFFF
+      angley: 0
+      anglez: 0xFFFF
+      name: ScChang
+  - name: layer 2 in Wisdom room
+    type: objpatch
+    index: 1
+    room: 0
+    objtype: SCEN
+    object:
+      layer: 2 # force layer 2 so the barbed wire is gone
+
 D100: # Skyview
   - name: Layer override
     type: layeroverride
@@ -3295,6 +3443,97 @@ D100: # Skyview
       id: 0xFE50
       name: Tubo
 
+B100: # Skyview boss room
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 530
+        night: 0
+        layer: 5
+      - story_flag: 67
+        night: 0
+        layer: 4
+      - story_flag: 206
+        night: 0
+        layer: 3
+      - story_flag: 83
+        night: 0
+        layer: 1
+      - story_flag: -1
+        night: 0
+        layer: 13
+  - name: only play CS when ghirahim hasn't been defeated
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: 83 # ghirahim defeated
+  - name: move first time loadzone to layer 0
+    type: objmove
+    id: 0xFC18
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: STAG
+
+B100_1: # Skyview Spring
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 65 # Set when healing Water Dragon
+        night: 0
+        layer: 4
+      - story_flag: 5 # Beat Skyview
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Patch Goddess Crest to not play Cutscene
+    type: objpatch
+    id: 0xFC05
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object: 
+      params1: 0xFFFF0369 # 0xFFFF, 03 = scen_link 3, 69 = scene flag 105 (vanilla)
+  - name: Fi text after skyview CS
+    type: objpatch
+    id: 0xFC73
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF1 # last 1 is subtype (not talk to fi)
+      trigscenefid: 105 # Goddess Crest hit
+  - name: Fi text after skyview CS
+    type: objmove
+    id: 0xFC73
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: loadzone to outside
+    type: objmove
+    id: 0xFC74
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove small cutscene
+    type: objdelete
+    room: 0
+    layer: 1
+    id: 0xFC73
+    objtype: STAG
+  - name: Remove fake trial dowsing target
+    type: objdelete
+    id: 0xFC63
+    layer: 0
+    room: 0
+    objtype: STAG
+
 D101: # Ancient Cistern
   - name: remove stone tablet text
     type: objpatch
@@ -3399,6 +3638,63 @@ D101: # Ancient Cistern
     layer: 0
     room: 4
     objtype: STAG
+
+B101: # Koloktos Boss Room
+  - name: Open door after boss
+    type: objpatch
+    room: 0
+    layer: 1
+    id: 0xFC13
+    objtype: OBJS
+    object:
+      params1: 0xFFFD3000
+  - name: Open door after boss
+    type: objpatch
+    room: 0
+    layer: 3
+    id: 0xFC15
+    objtype: OBJS
+    object:
+      params1: 0xFFFD3000
+
+B101_1: # after AC boss
+  - name: Remove Farore's Flame Cutscene
+    type: objpatch
+    room: 0
+    index: 2
+    objtype: SCEN
+    object:
+      name: F102_1
+      layer: 0
+      entrance: 6
+      saveprompt: 1
+  - name: Fi text before AC CS
+    type: objadd
+    room: 0
+    layer: 0
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # type 1, no fi, flag sets automatically
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 20231 # entrypoint 202_31
+      id: 0xFC00
+      name: NpcTke
+      trigscenefid: 86 # goddess crest hit
+      untrigscenefid: 85 # unused flag
+  - name: Loadzone to outside
+    type: objpatch
+    room: 0
+    layer: 0
+    id: 0xFC0B
+    objtype: STAG
+    object:
+      params1: 0xC303FF02 # change to zone temp flag 3
+      anglez: 0xFFFF # don't set any storyflag here
 
 D200: # ET
   - name: Ledd Text before Bomb Bag
@@ -3507,6 +3803,32 @@ B200: # ET Boss Room
     room: 10
     objtype: OBJ
 
+B210: # Earth Spring
+  - name: Patch Goddess Crest to not play Cutscene
+    type: objpatch
+    id: 0xFC0A
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object: 
+      params1: 0xFFFF0426 # 0xFFFF, 04 = scen_link 4, 26 = scene flag 38 (vanilla)
+  - name: Fi text after ET CS
+    type: objpatch
+    room: 0
+    layer: 0
+    id: 0xFC09
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF1
+  - name: Loadzone to outside
+    type: objpatch
+    room: 0
+    layer: 0
+    id: 0xFC0E
+    objtype: STAG
+    object:
+      params1: 0xC303FF00 # change to zone temp flag 3
+
 D201: # FS A
   - name: Mogma 1
     type: objdelete
@@ -3610,6 +3932,45 @@ B201: # FS Boss Room
       - story_flag: -1
         night: 0
         layer: 13
+
+B201_1: # after FS boss
+  - name: Remove Din's Flame Cutscene
+    type: objpatch
+    room: 0
+    index: 1
+    objtype: SCEN
+    object:
+      name: F201_3
+      layer: 0
+      entrance: 1
+      saveprompt: 1
+  - name: Fi text before FS CS
+    type: objadd
+    room: 0
+    layer: 0
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # untriggered by 901, storyflag for beating fire sanctuary
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 30407 # entrypoint 304_07
+      id: 0xFC00
+      name: NpcTke
+      trigscenefid: 95 # goddess crest hit
+      untrigscenefid: 121 # sets in flame CS normally
+  - name: Loadzone to outside
+    type: objpatch
+    room: 0
+    layer: 0
+    id: 0xFC0A
+    objtype: STAG
+    object:
+      params1: 0xC3030001 # change to zone temp flag 3
+      anglez: 0xFFFF # don't set any storyflag here
 
 D300: # LMF A
   - name: Dust in Gust Bellow room Blocking Door
@@ -3865,3 +4226,96 @@ D301_1: # Sandship B
     layer: 0
     room: 0
     objtype: OBJ
+
+B301: # after Sandship boss
+  - name: Sandship CS remove item
+    type: objpatch
+    room: 0
+    index: 1
+    objtype: EVNT
+    object:
+      story_flag1: -1
+      story_flag2: 933 # set defeat tentalus storyflag
+      item: -1
+  - name: Remove Nayru's Flame Cutscene
+    type: objpatch
+    room: 0
+    index: 3
+    objtype: SCEN
+    object:
+      name: F301
+      layer: 0
+      entrance: 3
+      saveprompt: 1
+  - name: Fi text before FS CS
+    type: objadd
+    room: 0
+    layer: 0
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # subtype for not talking to Fi, but setting the untriggerflag
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 40108 # entrypoint 401_08
+      id: 0xFC00
+      name: NpcTke
+      trigscenefid: 84
+      untrigscenefid: 87
+  - name: Fi text to force leave boss room
+    type: objadd
+    room: 0
+    layer: 1
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF0B # subtype 0xB for Fi and no storyflag set
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 40118 # entrypoint 401_18
+      id: 0xFC00
+      name: NpcTke
+      trigscenefid: 85
+      untrigscenefid: 0xFF
+      untrigstoryfid: 907 # untriggered by 907, storyflag for having goddess sword
+  - name: Loadzone to outside
+    type: objpatch
+    room: 0
+    layer: 1
+    id: 0xFC12
+    objtype: STAG
+    object:
+      params1: 0xC303FF03 # change to zone temp flag 3
+      anglez: 0xFFFF # don't set any storyflag here
+
+B400: # Demise's Sanctuary :)
+  - name: Make Demise's death Cutscene unskippable
+    type: objpatch
+    index: 1
+    room: 0
+    objtype: EVNT
+    object:
+      skipflag: 255
+
+S100: # Faron Silent Realm
+  - name: Fi text near waking water
+    type: objdelete
+    id: 0xFCDB
+    layer: 2
+    room: 0
+    objtype: OBJ
+
+S200:
+  - name: Unforce layer
+    type: objpatch
+    room: 2
+    index: 1
+    objtype: SCEN
+    object:
+      layer: 0
