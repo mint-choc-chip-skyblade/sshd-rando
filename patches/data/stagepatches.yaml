@@ -3204,3 +3204,258 @@ B201: # FS Boss Room
       - story_flag: -1
         night: 0
         layer: 13
+
+D300: # LMF A
+  - name: Dust in Gust Bellow room Blocking Door
+    type: objdelete
+    id: 0xFC35
+    layer: 0
+    room: 4
+    objtype: SOBJ
+  - name: Wall in Gust Bellow room Blocking Door
+    type: objdelete
+    id: 0xFC4E
+    layer: 0
+    room: 4
+    objtype: SOBJ
+  - name: Door in Gust Bellow room Blocking Door
+    type: objpatch
+    id: 0xFC12
+    layer: 0
+    room: 4
+    objtype: OBJS
+    object:
+      params1: 0xF7FFFC20
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 6
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: -6150
+      posy: 1050
+      posz: -10108
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC50
+      name: Bombf
+  - name: extra Arrow Pot next to entrance Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: -1100
+      posy: 0
+      posz: 2200
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+
+D300_1: # LMF B
+  - name: Close door to BK room from both sides
+    type: objpatch
+    index: 6 # all have id FFFF :(
+    layer: 0
+    objtype: DOOR
+    object:
+      anglex: 0x1313
+  - name: visual fence from BK room side
+    type: objadd
+    layer: 0
+    room: 8
+    objtype: OBJ
+    object:
+      params1: 0xCF134401
+      params2: 0xFF5FFFFF
+      posx: 5050
+      posy: 600
+      posz: -14350
+      anglex: 0xFF00
+      angley: 0x4000
+      anglez: 0xFFFF
+      id: 0xFC00
+      name: Fence
+  - name: anti softlock bomb flower
+    type: objadd
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 4716
+      posy: 600
+      posz: -14716
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC00
+      name: Bombf
+
+D301: # Sandship A
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 6397
+      posy: -1243.4300537109375
+      posz: 67
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC50
+      name: Bombf
+  - name: Heart Container on normal layer
+    type: objmove
+    layer: 9
+    destlayer: 1
+    room: 0
+    objtype: OBJ
+    id: 0xFC53
+  - name: Heart Container on normal layer
+    type: oarcadd
+    destlayer: 1
+    oarc: PutHeartUtuwa
+  - name: Candle on layer 1
+    type: objmove
+    layer: 9
+    destlayer: 1
+    room: 0
+    objtype: OBJ
+    id: 0xFC54
+  # - name: load goddess crest rel
+  #   type: objnadd
+  #   layer: 1
+  #   room: 0
+  #   objn: SwSB
+  - name: candle arcs
+    type: oarcadd
+    destlayer: 1
+    oarc: GoddessSymbolSc
+  - name: candle arcs
+    type: oarcadd
+    destlayer: 1
+    oarc: SwordCandle
+  - name: Fi text after hitting Sandship Crest
+    type: objadd
+    room: 0
+    layer: 1
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # subtype to not trigger fi, but set flag
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 40108 # entrypoint 401_08
+      id: 0xFC00
+      name: NpcTke
+      trigstoryfid: 933 # triggered by storyflag for leaving tentalus room
+      trigscenefid: 84 # and triggered by sceneflag 84, which is goddess crest hit
+      untrigscenefid: 87 # unused flag to untrigger
+  - name: Trigger Dungeon Exit
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: STAG
+    object:
+      params1: 0xC303FF07 # scenlink: 7, triggered by zone temp flag 3
+      params2: 0xFF5FFFFF
+      posx: -4118
+      posy: 500
+      posz: 1914
+      sizex: 50000
+      sizey: 500
+      sizez: 50000
+      anglex: 0xFFFF # no trigger storyflag
+      angley: 0
+      anglez: 0xFFFF # no untrigger cause zone temp flag is unset after load
+      id: 0xFC00
+      name: ScChang
+  - name: Flame CS Exit
+    type: objadd
+    room: 0
+    index: 7
+    objtype: SCEN
+    object:
+      name: F301
+      room: 0
+      layer: 0
+      entrance: 1
+      night: 2
+      byte5: 0
+      flag6: 0
+      zero: 0
+      saveprompt: 1
+  - name: Remove Boss Door loadzone after beating dungeon
+    type: objpatch
+    id: 0xFC45
+    layer: 4
+    room: 9
+    objtype: STAG
+    object:
+      anglez: 933 # untriggerstoryflag, defeat tentalus
+  - name: Fi text infront of Boss Door
+    type: objdelete
+    id: 0xFC43
+    layer: 4
+    room: 9
+    objtype: OBJ
+  - name: Fi text at generator
+    type: objdelete
+    id: 0xFC0F
+    layer: 1
+    room: 7
+    objtype: OBJ
+  - name: Fi text at generator
+    type: objdelete
+    id: 0xFC12
+    layer: 1
+    room: 5
+    objtype: OBJ
+  - name: Fi text after Scervo
+    type: objdelete
+    id: 0xFC07
+    layer: 2
+    room: 15
+    objtype: OBJ
+  - name: Fi text after bow chest
+    type: objdelete
+    id: 0xFC08
+    layer: 2
+    room: 15
+    objtype: OBJ
+  - name: Fi text for revealing timeshift stone
+    type: objdelete
+    id: 0xFC4C
+    layer: 1
+    room: 0
+    objtype: OBJ
+
+D301_1: # Sandship B
+  - name: Fi text before tentalus
+    type: objdelete
+    id: 0xFC1D
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text before tentalus
+    type: objdelete
+    id: 0xFC1E
+    layer: 0
+    room: 0
+    objtype: OBJ
