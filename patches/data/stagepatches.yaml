@@ -1163,6 +1163,34 @@ F100: # Faron main area
     object:
       play_cutscene: -1
 
+F101: # Deep Woods
+  - name: Layer override
+    type: layeroverride
+    override: # always
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Remove skippable Skyview intro Cutscene
+    type: objpatch
+    layer: 1
+    room: 0
+    id: 0xFD08
+    objtype: STAG
+    object:
+      event: 6 # DefaultStart
+  - name: Remove goddess cube force hit trigger
+    type: objdelete
+    id: 0xFD05
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove fake trial dowsing target
+    type: objdelete
+    id: 0xFCF2
+    layer: 0
+    room: 0
+    objtype: STAG
+
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
     type: objpatch
