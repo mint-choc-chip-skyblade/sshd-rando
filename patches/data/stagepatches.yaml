@@ -1163,6 +1163,66 @@ F100: # Faron main area
     object:
       play_cutscene: -1
 
+F100_1: # Great Tree
+  - name: Layer override
+    type: layeroverride
+    override: # change layer 2 trigger
+      - story_flag: 16
+        night: 0
+        layer: 3
+      - story_flag: 900 # new beat AC
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 1317
+      posy: 60
+      posz: -522
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC50
+      name: Bombf
+  - name: Exit from GT to Flooded GT Layer 2
+    type: objadd
+    index: 1
+    room: 0
+    objtype: SCEN
+    object:
+      name: F103_1
+      layer: 2 # Layer with Water Dragon after Tadtones appear
+      room: 0
+      entrance: 5 # New GT -> Flooded GT entrance
+  - name: Waterdragon in Great Tree
+    type: oarcadd
+    destlayer: 0
+    oarc: Waterdragon
+  - name: Add WaterDragon to Inside Great Tree
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFCFF
+      params2: 0xFF5FFFFF
+      posx: -864.560546875
+      posy: 3350
+      posz: 513.1231689453125
+      anglex: 65535
+      angley: 19660
+      anglez: 20392
+      id: 0x0065
+      name: NpcAdr
+
 F101: # Deep Woods
   - name: Layer override
     type: layeroverride
@@ -1191,6 +1251,173 @@ F101: # Deep Woods
     room: 0
     objtype: STAG
 
+F102: # lake Floria
+  - name: Layer override
+    type: layeroverride
+    override: # force layer 1
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Remove Lake Floria intro Cutscene 1
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Remove Lake Floria intro Cutscene 2
+    type: objpatch
+    index: 2
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Door to Dragon Lair
+    type: objdelete
+    id: 0x1000
+    layer: 0
+    room: 4
+    objtype: OBJ
+  - name: evntTag 2
+    type: objdelete
+    id: 0xFc1D
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: evntTag 3
+    type: objdelete
+    id: 0xFC1E
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: evntTag 4
+    type: objdelete
+    id: 0xFC2F
+    layer: 0
+    room: 3
+    objtype: STAG
+  - name: evntTag 5
+    type: objdelete
+    id: 0xFC13
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: evntTag 7
+    type: objdelete
+    id: 0xFC12
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: evntTag 8
+    type: objdelete
+    id: 0xFC26
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: evntTag 9
+    type: objdelete
+    id: 0xFC1F
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: evntTag 10
+    type: objdelete
+    id: 0xFC1C
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Delete Parella
+    type: objdelete
+    id: 0xFC2A
+    layer: 1
+    room: 1
+    objtype: OBJS
+
+F102_1: # Outside AC
+  - name: Layer override
+    type: layeroverride
+    override: # always layer 0
+      - story_flag: -1
+        night: 0
+        layer: 0
+  - name: Water Dragon trigger after AC
+    type: objdelete
+    id: 0xFC59
+    layer: 3
+    room: 0
+    objtype: OBJ
+  - name: Remove CS after cistern
+    type: objpatch
+    index: 6
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Water Dragon after AC
+    type: objdelete
+    id: 0xFC5A
+    layer: 3
+    room: 0
+    objtype: OBJ
+
+F102_2: # Faron's Lair
+  - name: Remove Faron's Lair entry cs
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+
+F103: # Flooded Faron Woods
+  - name: Add bomb flower on lilypad near Bucha
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFF0FFF0
+      params2: 0xFFFFFFFF
+      posx: -2296.102783203125
+      posy: 4500
+      posz: -1793.0338134765625
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFF00
+      name: Bombf
+  - name: Remove Tadtone Dowsing Trigger # is a start flag
+    type: objdelete
+    id: 0xFDE5
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove buggy Cranioc CS Trigger
+    type: objdelete
+    id: 0xFDF1
+    layer: 2
+    room: 0
+    objtype: STAG
+
+F103_1: # Flooded Great Tree
+  - name: Exit from Flooded GT to GT
+    type: objadd
+    index: 1
+    room: 0
+    objtype: SCEN
+    object:
+      name: F100_1
+      layer: 1 # Default layer for GT in rando??
+      room: 0
+      entrance: 5 # New Flooded GT -> GT entrance
+  - name: Remove Faron Soth Cutscene
+    type: objpatch
+    room: 0
+    index: 3
+    objtype: PLY
+    object:
+      play_cutscene: -1
+
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
     type: objpatch
@@ -1203,3 +1430,376 @@ F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
       layer: 3
       entrance: 5
       night: 2
+
+D100: # Skyview
+  - name: Layer override
+    type: layeroverride
+    override: # only layer change is to layer 2 after water dragons scale
+      - story_flag: 206 # storyflag after water dragons scale
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Small Key Soil
+    type: objmove
+    id: 0xFC4B
+    layer: 2
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Empty Soil
+    type: objdelete
+    id: 0xFC50
+    layer: 1
+    room: 4
+    objtype: OBJ
+  - name: Eyes
+    type: oarcadd
+    oarc: SwitchEye
+    destlayer: 0
+  - name: First Eye
+    type: objmove
+    id: 0xFC17
+    layer: 1
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Right Room Eyes
+    type: objmove
+    id: 0xFC48
+    layer: 1
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Right Room Eyes
+    type: objmove
+    id: 0xFC49
+    layer: 1
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Right Room Eyes
+    type: objmove
+    id: 0xFC4A
+    layer: 1
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Left Room Eyes
+    type: objmove
+    id: 0xFC31
+    layer: 1
+    destlayer: 0
+    room: 7
+    objtype: OBJ
+  - name: Left Room Eyes
+    type: objmove
+    id: 0xFC32
+    layer: 1
+    destlayer: 0
+    room: 7
+    objtype: OBJ
+  - name: Left Room Eyes
+    type: objmove
+    id: 0xFC33
+    layer: 1
+    destlayer: 0
+    room: 7
+    objtype: OBJ
+  - name: Left Room Eyes
+    type: objmove
+    id: 0xFC34
+    layer: 1
+    destlayer: 0
+    room: 7
+    objtype: OBJ
+  - name: Bar conected to chest
+    type: objpatch
+    id: 0x1018
+    layer: 2
+    room: 10
+    objtype: OBJS
+    object:
+      setscenefid: 13 # 0x0 20 (0xD)
+  - name: Bar conected to chest
+    type: objpatch
+    id: 0x1018
+    layer: 1
+    room: 10
+    objtype: OBJS
+    object:
+      setscenefid: 13 # 0x0 20
+  - name: Always open Bar from inside Beetle Room
+    type: objpatch
+    index: 6
+    layer: 0
+    objtype: DOOR
+    object:
+      anglex: 0xFF09 # remove inside sceneflag
+  - name: Remove Skyview 2 Key door # it's now the same as layer 1
+    type: objpatch
+    index: 2 # all have id FFFF :(
+    layer: 2
+    objtype: DOOR
+    object:
+      anglex: 0xFF06 # sceneflag 6
+  - name: Remove boards in layer 2 # they break by hitting the switch
+    type: objdelete
+    id: 0xFCA0
+    layer: 2
+    room: 2
+    objtype: OBJ
+  - name: Remove boards in layer 2 # they break by hitting the switch
+    type: objdelete
+    id: 0xFCA1
+    layer: 2
+    room: 2
+    objtype: OBJ
+  - name: Remove Mogma near goddess wall
+    type: objdelete
+    id: 0xFC4F
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove Mogma cs near goddess wall
+    type: objdelete
+    id: 0xFC4E
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove Mogma cs near goddess wall
+    type: objdelete
+    id: 0xFC4B
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove Mogma cs swTag near goddess wall
+    type: objdelete
+    id: 0xFC57
+    layer: 2
+    room: 0
+    objtype: STAG
+  - name: Remove Mogma cs AreaTag 1 near goddess wall
+    type: objdelete
+    id: 0xFC52
+    layer: 2
+    room: 0
+    objtype: STAG
+  - name: Remove Mogma cs AreaTag 2 near goddess wall
+    type: objdelete
+    id: 0xFC53
+    layer: 2
+    room: 0
+    objtype: STAG
+  - name: Pot in start room with bombs
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0BFFFFFF
+      posx: 155
+      posy: 1124.35009765625
+      posz: 6013
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFD01
+      name: Tubo
+  - name: Pot in Middle water room with bombs
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0BFFFFFF
+      posx: 702
+      posy: 0
+      posz: 1794
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFD02
+      name: Tubo
+  - name: Pot before Spider with bombs
+    type: objadd
+    layer: 0
+    room: 9
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0BFFFFFF
+      posx: 2997
+      posy: 300
+      posz: -12750
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFD03
+      name: Tubo
+  - name: Remove forced talk to mogma in right room
+    type: objdelete
+    id: 0xFC51
+    layer: 2
+    room: 4
+    objtype: STAG
+  - name: Remove forced talk to mogma in left room
+    type: objdelete
+    id: 0xFC46
+    layer: 2
+    room: 3
+    objtype: STAG
+  - name: Remove forced talk to mogma in front of boss door
+    type: objdelete
+    id: 0xFC7B
+    layer: 2
+    room: 9
+    objtype: STAG
+  - name: Remove soil in three eye room #this one makes pushing the block difficult
+    type: objdelete
+    id: 0xFC34
+    layer: 2
+    room: 7
+    objtype: OBJ
+  - name: Remove initial Fi text in Skyview 1
+    type: objdelete
+    id: 0xFC4C
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove initial Fi text in Skyview 2
+    type: objdelete
+    id: 0xFC4A
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove cutscene in hub room
+    type: objdelete
+    id: 0xFC85
+    layer: 1
+    room: 5
+    objtype: STAG
+  - name: extra Arrow Pot next to Entrance Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 42
+      posy: 1124.34998
+      posz: 6013
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+
+D101: # Ancient Cistern
+  - name: remove stone tablet text
+    type: objpatch
+    id: 0xFC11
+    layer: 0
+    room: 10
+    objtype: OBJ
+    object:
+      params1: 0xFF3C0000
+  - name: Reload Exit
+    type: objadd
+    room: 10
+    index: 0
+    objtype: SCEN
+    object:
+      name: D101
+      room: 0
+      layer: 0
+      entrance: 0
+      night: 2
+      byte5: 2
+      flag6: 0
+      zero: 0
+      saveprompt: 0
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 7
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 371
+      posy: -2410
+      posz: 2592
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFD01
+      name: Bombf
+  - name: extra Arrow Pot next to Entrance Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: -580
+      posy: 0
+      posz: 4900
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: Delete cutscene inside statue
+    type: objdelete
+    id: 0xFC1F
+    layer: 0
+    room: 10
+    objtype: STAG
+  - name: Delete cutscene in basement showing bk chest
+    type: objdelete
+    id: 0xFC7D
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: Delete bottom Water Spout cutscene inside statue
+    type: objdelete
+    id: 0xFC1A
+    layer: 0
+    room: 10
+    objtype: STAG
+  - name: Remove East Part Lily Pad CS 1
+    type: objdelete
+    id: 0xFC1C
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Remove East Part Lily Pad CS 2
+    type: objdelete
+    id: 0xFC1B
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Remove East Part Main Path Lily Pad CS
+    type: objdelete
+    id: 0xFC29
+    layer: 0
+    room: 2
+    objtype: STAG
+  - name: Remove Waterfall Switch Lily Pad CS
+    type: objdelete
+    id: 0xFC8D
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove Underground Lily Pad CS
+    type: objdelete
+    id: 0xFC83
+    layer: 0
+    room: 4
+    objtype: STAG
