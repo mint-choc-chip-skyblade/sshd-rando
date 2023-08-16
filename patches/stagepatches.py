@@ -150,7 +150,7 @@ def object_add(bzs, objadd, nextID):
         newObject = DEFAULT_OBJ.copy()
     elif objectType == "SCEN":
         newObject = DEFAULT_SCEN.copy()
-    elif objectType == "PLY":
+    elif objectType == "PLY ":
         newObject = DEFAULT_PLY.copy()
     elif objectType == "AREA":
         newObject = DEFAULT_AREA.copy()
