@@ -1418,6 +1418,400 @@ F103_1: # Flooded Great Tree
     object:
       play_cutscene: -1
 
+F200: # Eldin main area
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: intro cs
+    type: objmove
+    id: 0xFC26
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: First Mogma cs Fi
+    type: objdelete
+    id: 0xFC22
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: First Mogma cs left mogma
+    type: objdelete
+    id: 0x001F
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: First Mogma cs right mogma
+    type: objdelete
+    id: 0x0020
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Mogma near Mogma Turf cs
+    type: objdelete
+    id: 0x0CB9
+    layer: 1
+    room: 2
+    objtype: OBJ
+  - name: Just saying cs
+    type: objdelete
+    id: 0x248C
+    layer: 1
+    room: 4
+    objtype: OBJ
+  - name: delete Just saying cs mogma
+    type: objdelete
+    id: 0x248A
+    layer: 1
+    room: 4
+    objtype: OBJ
+  - name: delete Just saying cs mogma
+    type: objdelete
+    id: 0x248B
+    layer: 1
+    room: 4
+    objtype: OBJ
+  - name: Trial
+    type: oarcadd
+    oarc: PLHarpPlay
+    destlayer: 0
+  - name: Trial
+    type: oarcadd
+    oarc: SirenEntrance
+    destlayer: 0
+  - name: Trial
+    type: oarcadd
+    oarc: PLSwordStick
+    destlayer: 0
+  - name: Trial # trial object
+    type: objmove
+    id: 0x14AE
+    layer: 2
+    destlayer: 0
+    room: 2
+    objtype: OBJ
+  - name: Trial # butterflies
+    type: objmove
+    id: 0x14C0
+    layer: 2
+    destlayer: 0
+    room: 2
+    objtype: STAG
+  - name: Propeller delete # undo this when starting without scrapper repaired
+    type: objdelete
+    id: 0xFC2E
+    layer: 0
+    room: 4
+    objtype: OBJ
+  - name: Forced camera when draining lava before digging mitts
+    type: objdelete
+    id: 0xFCD6
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: Gossip Stone
+    type: objmove
+    id: 0xFC97
+    layer: 2
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Gossip Stone
+    type: oarcadd
+    oarc: GossipStone
+    destlayer: 0
+  - name: CS after draining lava for key piece
+    type: objdelete
+    id: 0x14CC
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: remove ET Door if open ET
+    onlyif: Option "open-et" Enabled
+    type: objdelete
+    id: 0x2413
+    layer: 0
+    room: 4
+    objtype: OBJ
+  - name: Remove 2nd key piece tower cs
+    type: objpatch
+    id: 0x200A
+    layer: 0
+    room: 4
+    objtype: OBJ
+    object:
+      params1: 0xFFF0FF18
+  - name: Remove thrill digger tower cs
+    type: objpatch
+    id: 0x1C0C
+    layer: 0
+    room: 4
+    objtype: OBJ
+    object:
+      params1: 0xCFF0FF1A
+  - name: Remove NpcTke before circles cutscene
+    type: objdelete
+    id: 0xFCBF
+    layer: 1
+    room: 2
+    objtype: OBJ
+  - name: Keep pre circles mogma above ground
+    type: objpatch
+    id: 0xFCBE
+    layer: 1
+    room: 2
+    objtype: OBJ
+    object:
+      anglex: 12031 #keep mogma above ground
+  - name: Remove Earth Temple Opening Cutscene
+    type: objpatch
+    id: 0x24A4
+    layer: 1
+    room: 4
+    objtype: STAG
+    object:
+      event: 7 # DefaultStart
+  - name: Remove first Pyrup
+    type: objdelete
+    id: 0x10B5
+    layer: 1
+    room: 2
+    objtype: OBJ
+  - name: Replace first Pyrup with stationary Pyrup
+    type: objadd
+    layer: 1
+    room: 2
+    objtype: OBJ
+    object:
+      params1: 0xFFEFFFF2
+      params2: 0x25FFFFFF
+      posx: 5800
+      posy: 0
+      posz: 4500
+      anglex: 0
+      angley: 37000
+      anglez: 0
+      id: 0x10B5
+      name: EHidoK
+  - name: Remove first Pyrup cs trigger 1
+    type: objdelete
+    id: 0xFCDB
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: Remove first Pyrup cs trigger 2
+    type: objdelete
+    id: 0xFCCF
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: Remove first Pyrup cs trigger 3
+    type: objdelete
+    id: 0xFCCE
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: Remove upper bridge CS
+    type: objpatch
+    id: 0x2833
+    layer: 1
+    room: 5
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF1E # replace event with FF
+
+F201_1: # Inside volcano
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 19
+        night: 0
+        layer: 4
+      - story_flag: 677
+        night: 0
+        layer: 3
+      - story_flag: 207
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+
+F201_3: # FS entrance
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 901
+        night: 0
+        layer: 4
+      - story_flag: 677
+        night: 0
+        layer: 3
+      - story_flag: 207
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Big Flames
+    type: objdelete
+    id: 0xFC15
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Goron Text after first frog
+    type: objdelete
+    id: 0xFC5A
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Goron Text after second frog
+    type: objdelete
+    id: 0xFC5B
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Goron Text near big frog
+    type: objdelete
+    id: 0xFC5C
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Goron Text near first frog
+    type: objdelete
+    id: 0xFC5D
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Goron Text near first frog
+    type: objdelete
+    id: 0xFC5E
+    layer: 2
+    room: 0
+    objtype: OBJ
+
+F201_4: # Volcano Waterfall
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 19
+        night: 0
+        layer: 4
+      - story_flag: 677
+        night: 0
+        layer: 3
+      - story_flag: 207
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 2809
+      posy: -4055.5771484375
+      posz: 4700
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC30
+      name: Bombf
+
+F210: # Mogma Turf
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Cobal Trigger
+    type: objpatch
+    id: 0xFC70
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 909 # White Sword
+  - name: Cobal
+    type: objmove
+    id: 0xFC70
+    layer: 2
+    destlayer: 1
+    room: 0
+    objtype: OBJ
+  - name: mogma 1
+    type: objpatch
+    id: 0xFC3E
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 901
+  - name: Guld
+    type: objpatch
+    id: 0xFC3C
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 470
+  - name: mogma 2
+    type: objpatch
+    id: 0xFC3D
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 901
+  - name: Mogma Holding you back in caves
+    type: objdelete
+    id: 0x007B
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: extra Arrow Pot Next to Entrance Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 1000
+      posy: -7390
+      posz: 1950
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: Remove Rupee Dowsing
+    onlyif: Option "dowsing-after-whitesword" Enabled
+    type: objdelete
+    id: 0xFC3B
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+F211: # Thrill digger
+  - name: Remove thrill digger entry CS
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
+
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
     type: objpatch
@@ -1803,3 +2197,214 @@ D101: # Ancient Cistern
     layer: 0
     room: 4
     objtype: STAG
+
+D200: # ET
+  - name: Ledd Text before Bomb Bag
+    type: objdelete
+    id: 0xFC51
+    layer: 0
+    room: 1
+    objtype: OBJ
+  - name: Bomb Bag from Ledd
+    type: objdelete
+    id: 0xFC52
+    layer: 0
+    room: 1
+    objtype: OBJ
+  - name: Keep Ledd after Beating ET
+    type: objpatch
+    id: 0xFC50
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      untrigstoryfid: 2047
+  - name: Bombs from Ledd
+    type: objpatch
+    id: 0xFC53
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      trigscenefid: 9
+  - name: Fi after Bridge
+    type: objdelete
+    id: 0xFC5E
+    layer: 0
+    room: 1
+    objtype: OBJ
+  - name: CS before Boulder to bombs
+    type: objdelete
+    id: 0xFC6D
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: extra Arrow Pot next to entrance Statue
+    type: objadd
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 800
+      posy: 0
+      posz: 14400
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: Remove cutscene showing the boss door
+    type: objdelete
+    id: 0xFC68
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: Remove cutscene after lavafall
+    type: objdelete
+    id: 0xFC65
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: change untrigger of lavafall in front of Boss Door
+    type: objpatch
+    id: 0xFC1F
+    layer: 0
+    room: 4
+    objtype: OBJ
+    object:
+      params1: 0x3F02050F
+
+B200: # ET Boss Room
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 7 # Beat ET
+        night: 0
+        layer: 1
+      - story_flag: -1
+        night: 0
+        layer: 2
+  - name: Yeet ET Spring Cutscene
+    type: objdelete
+    id: 0xFC27
+    layer: 0
+    room: 10
+    objtype: STAG
+  - name: delete boulder cutscene
+    type: objdelete
+    id: 0xFC36
+    layer: 2
+    room: 10
+    objtype: STAG
+  - name: delete fi text
+    type: objdelete
+    id: 0xFC30
+    layer: 2
+    room: 10
+    objtype: OBJ
+
+D201: # FS A
+  - name: Mogma 1
+    type: objdelete
+    id: 0xFC07
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Guld cs trigger
+    type: objdelete
+    id: 0xFC08
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: BK chest intro cs deleted
+    type: objdelete
+    id: 0xFC44
+    layer: 0
+    room: 4
+    objtype: STAG
+
+D201_1: # FS B
+  - name: Clawshot Target for 2nd small Key
+    type: objadd
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFC24
+      params2: 0xFFFFFFFF
+      posx: -5743
+      posy: 650
+      posz: -8514
+      anglex: 0
+      angley: 36894
+      anglez: 0
+      id: 0xFC20
+      name: ClawSTg
+  - name: Fist Trapped Mogma CS delete
+    type: objdelete
+    layer: 0
+    room: 5
+    objtype: OBJ
+    id: 0xFC11
+  - name: Double Magmanos fight cs (can softblock)
+    type: objdelete
+    layer: 0
+    room: 5
+    objtype: STAG
+    id: 0xFC2B
+  - name: Text after Magmanos fight 1
+    type: objdelete
+    layer: 0
+    room: 5
+    objtype: OBJ
+    id: 0xFC1E
+  - name: Text after Magmanos fight 2
+    type: objdelete
+    layer: 0
+    room: 5
+    objtype: OBJ
+    id: 0xFC23
+  - name: Remove Sealed Grounds intro CS flag
+    type: objpatch
+    room: 6
+    objtype: EVNT
+    index: 1
+    object:
+      story_flag1: -1
+  - name: Delete Camera Pan in first magmanos room
+    type: objdelete
+    id: 0xFC1B
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Underground tutorial text for mogma mitts
+    type: objdelete
+    id: 0xFC66
+    layer: 0
+    room: 5
+    objtype: OBJ
+  - name: Delete camera pan cutscene after mogma mitts
+    type: objdelete
+    id: 0xFC2C
+    layer: 0
+    room: 5
+    objtype: STAG
+
+B201: # FS Boss Room
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 530
+        night: 0
+        layer: 3
+      - story_flag: 901
+        night: 0
+        layer: 2
+      - story_flag: 84
+        night: 0
+        layer: 1
+      - story_flag: -1
+        night: 0
+        layer: 13
