@@ -186,10 +186,17 @@ DEFAULT_FLOW_TYPE_LOOKUP = {
     "checksceneflag": DEFAULT_CHECK_SCENEFLAG_FLOW,
 }
 
-STAGE_REGEX = re.compile("(.+)_stg_l([0-9]+).arc.LZ")
-EVENT_REGEX = re.compile("([0-9])-[A-Za-z]+.arc")
-ROOM_REGEX = re.compile(r"/rarc/(?P<stage>.+)_r(?P<roomid>[0-9]+).arc")
+STAGE_FILE_REGEX = re.compile("(.+)_stg_l([0-9]+).arc.LZ")
+EVENT_FILE_REGEX = re.compile("([0-9])-[A-Za-z]+.arc")
+ROOM_ARC_REGEX = re.compile(r"/rarc/(?P<stage>.+)_r(?P<roomID>[0-9]+).arc")
 OARC_ARC_REGEX = re.compile(r"/oarc/(?P<name>.+\.arc)")
 TEXT_ARC_REGEX = re.compile(
     r"(.+(/|\\))*(?P<lang>(en|es|fr))_US(/|\\)(?P<name>.+\.arc)"
 )
+
+STAGE_PATCH_PATH_REGEX = re.compile(
+    r"stage/(?P<stage>[^/]+)/r(?P<room>[0-9]+)/l(?P<layer>[0-9]+)/(?P<objectName>[a-zA-Z]+)(/(?P<objectID>[^/]+))?"
+)
+EVENT_PATCH_PATH_REGEX = re.compile(r"event/(?P<eventFile>[^/]+)/(?P<eventID>[^/]+)")
+OARC_ADD_PATH_REGEX = re.compile(r"oarc/(?P<stage>[^/]+)/l(?P<layer>[^/]+)")
+SHOP_PATCH_PATH_REGEX = re.compile(r"ShpSmpl/(?P<index>[0-9]+)")

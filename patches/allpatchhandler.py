@@ -1,4 +1,5 @@
 from patches.eventpatches import EventPatchHandler
+from patches.checkpatchhandler import determine_check_patches
 from filepathconstants import OUTPUT_PATH
 import os
 from patches.stagepatches import StagePatchHandler
@@ -15,6 +16,7 @@ class AllPatchHandler:
             rmtree(OUTPUT_PATH)
 
         self.stagePatchHandler.create_oarc_cache()
-        self.stagePatchHandler.set_oarc_add_remove()
+        self.stagePatchHandler.set_oarc_add_remove_from_patches()
+        determine_check_patches(self.stagePatchHandler)
         self.stagePatchHandler.handle_stage_patches()
         self.eventPatchHandler.handle_event_patches()
