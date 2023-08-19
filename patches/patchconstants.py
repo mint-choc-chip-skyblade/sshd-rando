@@ -157,7 +157,13 @@ DEFAULT_CHECK_SCENEFLAG_FLOW = {
     "param5": 0,
 }
 
-FLOW_ADD_VARIATIONS = ("flowadd", "giveitem", "setitemflag", "setstoryflag", "setsceneflag")
+FLOW_ADD_VARIATIONS = (
+    "flowadd",
+    "giveitem",
+    "setitemflag",
+    "setstoryflag",
+    "setsceneflag",
+)
 SWITCH_ADD_VARIATIONS = ("switchadd", "checkstoryflag", "checksceneflag")
 
 PARAM1_ALIASES = ("setsceneflag",)

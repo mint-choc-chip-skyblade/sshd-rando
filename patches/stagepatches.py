@@ -299,7 +299,9 @@ class StagePatchHandler:
                     if layer == 0:
                         # handle layer overrides
                         layerOverridePatches = list(
-                            filter(lambda patch: patch["type"] == "layeroverride", patches)
+                            filter(
+                                lambda patch: patch["type"] == "layeroverride", patches
+                            )
                         )
                         if len(layerOverridePatches) > 1:
                             print(
@@ -308,7 +310,9 @@ class StagePatchHandler:
                             continue
                         elif len(layerOverridePatches) == 1:
                             if stageU8 is None:
-                                stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
+                                stageU8 = U8File.get_parsed_U8_from_path(
+                                    stagePath, True
+                                )
                             stageBZS = parseBzs(stageU8.get_file_data("dat/stage.bzs"))
                             layer_override(bzs=stageBZS, patch=layerOverridePatches[0])
                             stageU8.set_file_data("dat/stage.bzs", buildBzs(stageBZS))
@@ -322,10 +326,13 @@ class StagePatchHandler:
 
                         if len(objectPatches) > 0:
                             if stageU8 is None:
-                                stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
+                                stageU8 = U8File.get_parsed_U8_from_path(
+                                    stagePath, True
+                                )
 
                             roomPathMatches = (
-                                ROOM_REGEX.match(path) for path in stageU8.get_all_paths()
+                                ROOM_REGEX.match(path)
+                                for path in stageU8.get_all_paths()
                             )
                             roomPathMatches = (
                                 path for path in roomPathMatches if path is not None
@@ -343,7 +350,9 @@ class StagePatchHandler:
                                     roomU8 = stageU8.get_parsed_U8_from_this_U8(
                                         path=roomPathMatch.group(0)
                                     )
-                                    roomBZS = parseBzs(roomU8.get_file_data("dat/room.bzs"))
+                                    roomBZS = parseBzs(
+                                        roomU8.get_file_data("dat/room.bzs")
+                                    )
 
                                     nextID = get_highest_object_id(bzs=roomBZS) + 1
 
@@ -359,7 +368,9 @@ class StagePatchHandler:
                                             object_patch(bzs=roomBZS, objpatch=patch)
                                         elif patch["type"] == "objmove":
                                             object_move(
-                                                bzs=roomBZS, objmove=patch, nextID=nextID
+                                                bzs=roomBZS,
+                                                objmove=patch,
+                                                nextID=nextID,
                                             )
                                             nextID += 1
                                         else:
@@ -367,7 +378,9 @@ class StagePatchHandler:
                                                 f"ERROR: unsupported patch type {patch['type']} in stage {stage} layer {layer} room {roomID} patches"
                                             )
 
-                                    roomU8.set_file_data("dat/room.bzs", buildBzs(roomBZS))
+                                    roomU8.set_file_data(
+                                        "dat/room.bzs", buildBzs(roomBZS)
+                                    )
                                     stageU8.set_file_data(
                                         roomPathMatch.group(0), roomU8.build_U8()
                                     )
