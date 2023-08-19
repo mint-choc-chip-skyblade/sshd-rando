@@ -110,18 +110,19 @@ for symbol, address in originalSymbols["main"].items():
 # Get patches from each asm file.
 asmPatchesPaths = tuple(ASM_PATCHES_PATH.glob("*.asm"))
 
-for patchFilePath in asmPatchesPaths:
-    patchFilename = patchFilePath.parts[-1]
-    codeBlocks = {}
-    localBranches = []
-    asmReadOffset = None
+# Keeps the temporary directory only within this with block.
+with tempDir as tempDirName:
+    tempDirName = Path(tempDirName)
 
-    with open(patchFilePath, "r") as f:
-        asmPatch = f.read()
+    for patchFilePath in asmPatchesPaths:
+        print(f"patchFilePath = {patchFilePath}")
+        patchFilename = patchFilePath.parts[-1]
+        codeBlocks = {}
+        localBranches = []
+        asmReadOffset = None
 
-    # Keeps the temporary directory only within this with block.
-    with tempDir as tempDirName:
-        tempDirName = Path(tempDirName)
+        with open(patchFilePath, "r") as f:
+            asmPatch = f.read()
 
         tempLinkerScript = linkerScript + NEWLINE
 
@@ -239,7 +240,7 @@ for patchFilePath in asmPatchesPaths:
 
             codeBlocks[codeBlockOffset] = dataBytes
 
-    diffFilename = ASM_PATCHES_DIFFS_PATH / f"{patchFilename[:-4]}-diff.yaml"
+        diffFilename = ASM_PATCHES_DIFFS_PATH / f"{patchFilename[:-4]}-diff.yaml"
 
-    with open(diffFilename, "w") as f:
-        f.write(yaml.dump(codeBlocks, Dumper=yaml.CDumper, line_break=NEWLINE))
+        with open(diffFilename, "w") as f:
+            f.write(yaml.dump(codeBlocks, Dumper=yaml.CDumper, line_break=NEWLINE))
