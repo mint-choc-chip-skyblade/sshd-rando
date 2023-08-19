@@ -2685,6 +2685,14 @@ F401: # Sealed grounds Whirlpool
       - story_flag: -1
         night: 0
         layer: 1
+  - name: Set start flags
+    type: objpatch
+    room: 1
+    index: 7
+    objtype: EVNT
+    object:
+      sceneflag1: 13
+      sceneflag2: 7
   - name: Ruined save
     type: objdelete
     id: 0xFC8E

@@ -104,6 +104,17 @@ DEFAULT_GIVE_ITEM_FLOW = {
     "next": -1,
 }
 
+DEFAULT_SET_ITEM_FLAG_FLOW = {
+    "type": "type3",
+    "subType": 0,
+    "param1": 0,
+    "param2": -1,  # item id
+    "param3": 53,  # set item flag command
+    "param4": 0,
+    "param5": 0,
+    "next": -1,
+}
+
 DEFAULT_SET_STORYFLAG_FLOW = {
     "type": "type3",
     "subType": 0,
@@ -146,7 +157,7 @@ DEFAULT_CHECK_SCENEFLAG_FLOW = {
     "param5": 0,
 }
 
-FLOW_ADD_VARIATIONS = ("flowadd", "giveitem", "setstoryflag", "setsceneflag")
+FLOW_ADD_VARIATIONS = ("flowadd", "giveitem", "setitemflag", "setstoryflag", "setsceneflag")
 SWITCH_ADD_VARIATIONS = ("switchadd", "checkstoryflag", "checksceneflag")
 
 PARAM1_ALIASES = ("setsceneflag",)
@@ -161,6 +172,7 @@ PARAM2_ALIASES = (
 DEFAULT_FLOW_TYPE_LOOKUP = {
     "flowadd": DEFAULT_FLOW,
     "giveitem": DEFAULT_GIVE_ITEM_FLOW,
+    "setitemflag": DEFAULT_SET_ITEM_FLAG_FLOW,
     "setstoryflag": DEFAULT_SET_STORYFLAG_FLOW,
     "setsceneflag": DEFAULT_SET_SCENEFLAG_FLOW,
     "switchadd": DEFAULT_FLOW,
