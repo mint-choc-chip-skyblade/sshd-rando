@@ -1,5 +1,5 @@
 F000: # Skyloft
-#F000 oarcadds
+  # F000 oarcadds
   - name: Trial
     type: oarcadd
     oarc: PLHarpPlay
@@ -20,7 +20,7 @@ F000: # Skyloft
     type: oarcadd
     oarc: Shinkan_motion
     destlayer: 6
-# F000 oarcdeletes
+  # F000 oarcdeletes
   - name: unnecessary oarcs
     type: oarcdelete
     oarc: GetGaragara
@@ -89,7 +89,7 @@ F000: # Skyloft
     type: oarcdelete
     oarc: SoMother # wryna is never outside anymore
     layer: 6
-# F000 objadds
+  # F000 objadds
   - name: Owlan on layer 6
     type: objadd
     layer: 6
@@ -141,7 +141,7 @@ F000: # Skyloft
       anglez: 951 # Untrigger on getting sword pedestal checks
       id: 0xFFFF
       name: ScChang
-# F000 objdeletes
+  # F000 objdeletes
   - name: Trial # trial object
     type: objdelete
     id: 0xFDD5
@@ -293,7 +293,7 @@ F000: # Skyloft
     room: 0
     objtype: STAG
 
-  # MUST be patched and then moved, if swapped the layer on patch must be updated to 0
+  # MUST be patched and then moved as there is a chance the ID changes on move if it conflicts with another object
   - name: Move Chest on goddess statue
     type: objpatch
     id: 0xFDE7
@@ -421,17 +421,13 @@ F000: # Skyloft
       layer: 6
       entrance: 52
 
-
 F001r:
-  - name: Move Fledge closer to Link's room at day
-    type: objpatch
-    id: 0xFC77
-    layer: 3
+  - name: Fi Text in Academy at night
+    type: objdelete
+    id: 0xFC80
+    layer: 4
     room: 0
     objtype: OBJ
-    object:
-      posx: 850
-      posz: -1700
   - name: Move Fledge closer to Link's room at night
     type: objpatch
     id: 0xFC7D
@@ -441,23 +437,671 @@ F001r:
     object:
       posx: 850
       posz: -1700
+  # - name: Fledge Pouch Check Storyflag at night
+  #   type: objpatch
+  #   id: 0xFC7E
+  #   layer: 4
+  #   room: 0
+  #   objtype: OBJ
+  #   object:
+  #     posx: 850
+  #     posz: -1700
+  #     untrigstoryfid: 923
+  - name: Move Fledge closer to Link's room at day
+    type: objpatch
+    id: 0xFC77
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 850
+      posz: -1700
+  # - name: Fledge Pouch Check Storyflag at day
+  #   type: objpatch
+  #   id: 0xFC78
+  #   layer: 3
+  #   room: 0
+  #   objtype: OBJ
+  #   object:
+  #     posx: 850
+  #     posz: -1700
+  #     untrigstoryfid: 923
+  - name: Fledge trains without wryna
+    type: objpatch
+    id: 0xFC10
+    layer: 4
+    room: 1
+    objtype: OBJ
+    object:
+      trigstoryfid: -1
+  - name: Keep cawlin with Letter check
+    type: objpatch
+    id: 0xFC7A
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      untrigstoryfid: 2047
+  - name: Olwan Npc after Kikwis
+    type: objpatch
+    id: 0xFC0A
+    layer: 3
+    room: 5
+    objtype: OBJ
+    object:
+      trigstoryfid: 57 # talk to Elder after locating every Kikwi
+  - name: untrigger other owlan
+    type: objpatch
+    id: 0xFC0B
+    layer: 3
+    room: 5
+    objtype: OBJ
+    object:
+      untrigstoryfid: 57 # talk to Elder after locating every Kikwi
+  - name: Toilethand trig
+    type: objpatch
+    id: 0xFC76
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 140 # groose landing in faron, cut out sleeping
+  - name: Toilethand inv
+    type: objpatch
+    id: 0xFC7B
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 140 # groose landing in faron, cut out sleeping
+  # temp start items arcs
   - name: Bow get model
     type: oarcadd
     oarc: GetBowA
     destlayer: 0
 
-F009r:
-  - name: Commander dummy
+F002r: # Beedle's Airshop
+  - name: Delete cutscene
+    type: objdelete
+    id: 0xFC11
+    layer: 1
+    room: 0
+    objtype: STAG
+  - name: Delete cutscene
+    type: objdelete
+    id: 0xFC13
+    layer: 1
+    room: 0
+    objtype: STAG
+
+F004r: # Bazaar
+  - name: Delete goddess chest fi text
+    type: objdelete
+    id: 0xFC7D
+    layer: 0
+    room: 0
+    objtype: OBJ
+  # - name: Patch Scrapper Junk Despawn Flag
+  #   type: objpatch
+  #   id: 0xFC74
+  #   layer: 0
+  #   room: 0
+  #   objtype: OBJ
+  #   object:
+  #     params1: 0x285FFCFF # >> 21 == 322
+
+F005r: # Orielle and Parrow's House
+  - name: Always Spawn Parrow
     type: objpatch
-    id: 0xFC0A
+    id: 0xFC15
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1 # always Trigger
+  - name: Delete Parrow before Crystal Quest
+    type: objdelete
+    id: 0xFC13
+    layer: 2
+    room: 0
+    objtype: OBJ
+
+F008r: # Goddess Statue
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 951 # Raising Goddess Sword in Goddess Statue
+        night: 2
+        layer: 0
+      - story_flag: -1
+        night: 2
+        layer: 1
+  - name: Fi text after pulling Goddess Sword
+    type: objadd
+    room: 0
+    layer: 1
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # type 1, no fi, flag sets automatically
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 10750 # entrypoint 107_50
+      id: 0xFC00
+      name: NpcTke
+      trigstoryfid: 951 # Raised Goddess Sword in Goddess Statue
+      untrigscenefid: 25 # Scene flag 25 - Skyward Strike on Tablet Pedestal (unused in rando)
+  - name: Move Sword Pedestal to layer 1
+    type: objmove
+    id: 0xFC05
+    layer: 0
+    destlayer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove cutscene trigger on layer 1
+    type: objdelete
+    id: 0xFC0E
+    layer: 1
+    room: 0
+    objtype: STAG
+  - name: Delete Crest
+    type: objdelete
+    id: 0xFC02
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+F010r: # Isle of songs tower
+  - name: Delete Faron Trial Dowsing
+    type: objdelete
+    id: 0xFC02
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Delete Lanayru Trial Dowsing
+    type: objdelete
+    id: 0xFC03
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Delete Eldin Trial Dowsing
+    type: objdelete
+    id: 0xFC04
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFC09
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Lanayru trial dowsing target
+    type: objdelete
+    id: 0xFC08
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Eldin trial dowsing target
+    type: objdelete
+    id: 0xFC07
+    layer: 0
+    room: 0
+    objtype: STAG
+
+F011r: # Lumpy Pumpkin
+  - name: Delete Lumpy Pumpkin Cutscene 1
+    type: objdelete
+    id: 0xFC42
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Delete Lumpy Pumpkin Cutscene 2
+    type: objdelete
+    id: 0xFC43
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Delete new Lumpy chandelier Cutscene 1
+    type: objdelete
+    id: 0xFC44
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Delete new Lumpy chandelier Cutscene 2
+    type: objdelete
+    id: 0xFC45
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+F012r: # Batreaux House
+  - name: Batreaux unlock
+    type: objpatch
+    id: 0xFC00
+    layer: 0
+    room: 0
+    objtype: OBJS
+    object:
+      anglex: 0xFF00 # sets the flag to -1 (meaning open)
+  # - name: Remove Crystal Dowsing
+  #   onlyif: Option "dowsing-after-whitesword" Enabled
+  #   type: objdelete
+  #   id: 0xFC23
+  #   layer: 1
+  #   room: 0
+  #   objtype: OBJ
+
+F013r: # Sparrot's House
+  - name: Sparrot spawn
+    type: objpatch
+    id: 0xFC0F
     layer: 0
     room: 0
     objtype: OBJ
     object:
-      posx: 0.95
-      posy: 28
-      posz: -2059.5
-  - name: Pot add
+      trigstoryfid: -1 # always there
+  - name: Sparrot at night
+    type: objdelete
+    id: 0xFC17
+    layer: 2
+    room: 0
+    objtype: OBJ
+
+F020: # Sky
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetMedal
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetPouchB
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetSpareSeedA
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetSpareQuiverA
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: GetSpareBombBagA
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: WaterPotWater
+    layer: 2
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: Waterpot
+    layer: 2
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: Pinwheel
+    layer: 2
+  - name: Fi text about goddess cubes
+    type: objdelete
+    id: 0xFD0F
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: remove faron loadzone after groose
+    type: objdelete
+    id: 0xFC96
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: never untrigger first faron loadzone
+    type: objpatch
+    id: 0xFC8B
+    layer: 0
+    room: 0
+    objtype: STAG
+    object:
+      untrigstoryfid: -1
+  - name: remove Wryna requirement for orielle
+    type: objpatch
+    id: 0xFCFB
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1
+  - name: remove Wryna requirement for orielle's bird
+    type: objpatch
+    id: 0xFD0E
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xCBFFFFFF # make it always spawn
+  - name: Remove confounding propeller dowsing
+    type: objdelete
+    id: 0xFCAD
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFCAA
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Lanayru trial dowsing target
+    type: objdelete
+    id: 0xFCB0
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Eldin trial dowsing target
+    type: objdelete
+    id: 0xFCAC
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Skyloft trial dowsing target
+    type: objdelete
+    id: 0xFCB3
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Enlarge Thunderhead Entrance
+    type: objpatch
+    id: 0xFC9D
+    layer: 0
+    room: 0
+    objtype: STAG
+    object:
+      posy: -4500
+      sizex: 12000
+      sizey: 12800
+
+F023: # Thunderhead
+  - name: Remove unnecessary arc
+    type: oarcdelete
+    oarc: GetSpareBombBagA
+    layer: 0
+  - name: Remove unnecessary arc
+    type: oarcdelete
+    oarc: GetSpareQuiverA
+    layer: 0
+  - name: Remove unnecessary arc
+    type: oarcdelete
+    oarc: GetSpareSeedA
+    layer: 0
+  - name: Remove unnecessary arc
+    type: oarcdelete
+    oarc: GetTerryCage
+    layer: 0
+  - name: unnecessary oarcs
+    type: oarcdelete
+    oarc: Pinwheel
+    layer: 0
+  - name: Strich layer 1
+    type: objadd
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFCFF
+      params2: 0xFF5FFFFF
+      posx: -170960.21875
+      posy: 18262
+      posz: -51642.58984375
+      anglex: 65535
+      angley: 56434
+      anglez: 11601
+      id: 0xFCEF
+      name: NpcIcgK
+  - name: Stritch model
+    type: oarcadd
+    oarc: KobunB
+    destlayer: 1
+  - name: void out during bug heaven minigame
+    type: objadd
+    layer: 13
+    room: 0
+    objtype: STAG
+    object:
+      params1: 0xFFCFFF06
+      params2: 0xFFDFFFFF
+      posx: -165885
+      posy: 16506
+      posz: -52597
+      sizex: 50463
+      sizey: 1000
+      sizez: 50463
+      anglex: 0
+      angley: 0
+      anglez: 0xFFFF
+      id: 0xFC00
+      name: PlRsTag
+  - name: Delete Isle of Songs intro cutscene
+    type: objdelete
+    id: 0xFC89
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text after levias
+    type: objadd
+    room: 0
+    layer: 0
+    id: 0xFC13
+    objtype: OBJ
+    object:
+      params1: 0x74C32301 # triggered by story flag 200, untriggered by story flag 934
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      anglex: 0xFFFF
+      angley: 0xFFFF
+      anglez: 12003 # entrypoint 120_03
+      id: 0xFC13
+      name: NpcTke
+  - name: Yeet Levias Cutscene
+    type: objpatch
+    index: 6
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Gossip Stone
+    type: objmove
+    id: 0xFCEE
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Gossip Stone
+    type: oarcadd
+    oarc: GossipStone
+    destlayer: 0
+  - name: Remove confounding propeller dowsing
+    type: objdelete
+    id: 0xFCAE
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFCAB
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Lanayru trial dowsing target
+    type: objdelete
+    id: 0xFCB1
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Eldin trial dowsing target
+    type: objdelete
+    id: 0xFCAD
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Skyloft trial dowsing target
+    type: objdelete
+    id: 0xFCB4
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake Skyloft trial dowsing target
+    type: objdelete
+    id: 0xFCA3
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove isle of songs puzzle complete cutscene
+    type: objpatch
+    id: 0xFC07
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFF01C5 # 00 FF 00 00 yeets the event call
+
+F100: # Faron main area
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 479 #owlan quest started
+        night: 0
+        layer: 5
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Trial
+    type: oarcadd
+    oarc: PLHarpPlay
+    destlayer: 0
+  - name: Trial
+    type: oarcadd
+    oarc: SirenEntrance
+    destlayer: 0
+  - name: Trial
+    type: oarcadd
+    oarc: PLSwordStick
+    destlayer: 0
+  - name: Trial # trial object
+    type: objmove
+    id: 0x02B4
+    layer: 3
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Trial # butterflies
+    type: objmove
+    id: 0xFEE7
+    layer: 3
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Lake floria door
+    type: oarcadd
+    oarc: SwrdPrj
+    destlayer: 0
+  - name: Lake floria door
+    type: objmove
+    id: 0xFEFF
+    layer: 4
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Lake floria door
+    type: objmove
+    id: 0xFEEC
+    layer: 4
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Lake floria door
+    type: objmove
+    id: 0xFEF4
+    layer: 4
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi text Not letting you leave machi 1
+    type: objdelete
+    id: 0x0EBE
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi text Not letting you leave machi 2
+    type: objdelete
+    id: 0x0EBD
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi text Not letting you leave machi 3
+    type: objdelete
+    id: 0x66BC
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove G1 Feet cs
+    type: objdelete
+    id: 0xFEEF
+    layer: 1
+    room: 0
+    objtype: STAG
+  - name: Yerbal Spawn
+    type: objpatch
+    id: 0x52BA
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 206 # scale
+  - name: Yerbal
+    type: objmove
+    id: 0x52BA
+    layer: 4
+    destlayer: 1
+    room: 0
+    objtype: OBJ
+  - name: Yerbal
+    type: oarcadd
+    oarc: ForestManWiz
+    destlayer: 1
+  - name: Add back map x icon for Yerbal
+    type: objmove
+    id: 0xFEF9
+    layer: 4
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Move Fi text trigger for Yerbal map x
+    type: objmove
+    id: 0xFEBD
+    layer: 4
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Move Fi Cam2Tag for Yerbal map x
+    type: objmove
+    id: 0xFEFD
+    layer: 4
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  # - name: Patch Main floria entrance
+  #   onlyif: Option "open-lake-floria" Is "Open"
+  #   type: objpatch
+  #   id: 0xFDBA
+  #   layer: 0
+  #   room: 0
+  #   objtype: STAG
+  #   object:
+  #     trigstoryfid: 206
+  - name: extra Arrow Pot next to Entrance Statue
     type: objadd
     layer: 0
     room: 0
@@ -465,14 +1109,1902 @@ F009r:
     object:
       params1: 0xFFFFFFF0
       params2: 0x0CFFFFFF
-      posx: 524
-      posy: 0
-      posz: -1542.5
+      posx: -8600
+      posy: -903.477051
+      posz: -1450
       anglex: 0
       angley: 0
       anglez: 0
       id: 0xFE50
       name: Tubo
+  - name: extra bomb Pot next to Entrance Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0BFFFFFF
+      posx: -8500
+      posy: -903.477051
+      posz: -1500
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFD01
+      name: Tubo
+  - name: extra bomb Pot next to VP Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0BFFFFFF
+      posx: 7200
+      posy: 2103.08911
+      posz: -9500
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFD01
+      name: Tubo
+  - name: Remove Faron soth fi text
+    type: objdelete
+    id: 0x52BA
+    layer: 5
+    room: 0
+    objtype: OBJ
+  - name: Remove Unflooded Faron Cutscene
+    type: objpatch
+    room: 0
+    index: 49
+    objtype: PLY
+    object:
+      play_cutscene: -1
+
+F100_1: # Great Tree
+  - name: Layer override
+    type: layeroverride
+    override: # change layer 2 trigger
+      - story_flag: 16
+        night: 0
+        layer: 3
+      - story_flag: 900 # new beat AC
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 1317
+      posy: 60
+      posz: -522
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC50
+      name: Bombf
+  - name: Exit from GT to Flooded GT Layer 2
+    type: objadd
+    index: 1
+    room: 0
+    objtype: SCEN
+    object:
+      name: F103_1
+      layer: 2 # Layer with Water Dragon after Tadtones appear
+      room: 0
+      entrance: 5 # New GT -> Flooded GT entrance
+  - name: Waterdragon in Great Tree
+    type: oarcadd
+    destlayer: 0
+    oarc: Waterdragon
+  - name: Add WaterDragon to Inside Great Tree
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFCFF
+      params2: 0xFF5FFFFF
+      posx: -864.560546875
+      posy: 3350
+      posz: 513.1231689453125
+      anglex: 65535
+      angley: 19660
+      anglez: 20392
+      id: 0x0065
+      name: NpcAdr
+
+F101: # Deep Woods
+  - name: Layer override
+    type: layeroverride
+    override: # always
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Remove skippable Skyview intro Cutscene
+    type: objpatch
+    layer: 1
+    room: 0
+    id: 0xFD08
+    objtype: STAG
+    object:
+      event: 6 # DefaultStart
+  - name: Remove goddess cube force hit trigger
+    type: objdelete
+    id: 0xFD05
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove fake trial dowsing target
+    type: objdelete
+    id: 0xFCF2
+    layer: 0
+    room: 0
+    objtype: STAG
+
+F102: # lake Floria
+  - name: Layer override
+    type: layeroverride
+    override: # force layer 1
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Remove Lake Floria intro Cutscene 1
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Remove Lake Floria intro Cutscene 2
+    type: objpatch
+    index: 2
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Door to Dragon Lair
+    type: objdelete
+    id: 0x1000
+    layer: 0
+    room: 4
+    objtype: OBJ
+  - name: evntTag 2
+    type: objdelete
+    id: 0xFc1D
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: evntTag 3
+    type: objdelete
+    id: 0xFC1E
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: evntTag 4
+    type: objdelete
+    id: 0xFC2F
+    layer: 0
+    room: 3
+    objtype: STAG
+  - name: evntTag 5
+    type: objdelete
+    id: 0xFC13
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: evntTag 7
+    type: objdelete
+    id: 0xFC12
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: evntTag 8
+    type: objdelete
+    id: 0xFC26
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: evntTag 9
+    type: objdelete
+    id: 0xFC1F
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: evntTag 10
+    type: objdelete
+    id: 0xFC1C
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Delete Parella
+    type: objdelete
+    id: 0xFC2A
+    layer: 1
+    room: 1
+    objtype: OBJS
+
+F102_1: # Outside AC
+  - name: Layer override
+    type: layeroverride
+    override: # always layer 0
+      - story_flag: -1
+        night: 0
+        layer: 0
+  - name: Water Dragon trigger after AC
+    type: objdelete
+    id: 0xFC59
+    layer: 3
+    room: 0
+    objtype: OBJ
+  - name: Remove CS after cistern
+    type: objpatch
+    index: 6
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Water Dragon after AC
+    type: objdelete
+    id: 0xFC5A
+    layer: 3
+    room: 0
+    objtype: OBJ
+
+F102_2: # Faron's Lair
+  - name: Remove Faron's Lair entry cs
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+
+F103: # Flooded Faron Woods
+  - name: Add bomb flower on lilypad near Bucha
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFF0FFF0
+      params2: 0xFFFFFFFF
+      posx: -2296.102783203125
+      posy: 4500
+      posz: -1793.0338134765625
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFF00
+      name: Bombf
+  - name: Remove Tadtone Dowsing Trigger # is a start flag
+    type: objdelete
+    id: 0xFDE5
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove buggy Cranioc CS Trigger
+    type: objdelete
+    id: 0xFDF1
+    layer: 2
+    room: 0
+    objtype: STAG
+
+F103_1: # Flooded Great Tree
+  - name: Exit from Flooded GT to GT
+    type: objadd
+    index: 1
+    room: 0
+    objtype: SCEN
+    object:
+      name: F100_1
+      layer: 1 # Default layer for GT in rando??
+      room: 0
+      entrance: 5 # New Flooded GT -> GT entrance
+  - name: Remove Faron Soth Cutscene
+    type: objpatch
+    room: 0
+    index: 3
+    objtype: PLY
+    object:
+      play_cutscene: -1
+
+F200: # Eldin main area
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: intro cs
+    type: objmove
+    id: 0xFC26
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: First Mogma cs Fi
+    type: objdelete
+    id: 0xFC22
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: First Mogma cs left mogma
+    type: objdelete
+    id: 0x001F
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: First Mogma cs right mogma
+    type: objdelete
+    id: 0x0020
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Mogma near Mogma Turf cs
+    type: objdelete
+    id: 0x0CB9
+    layer: 1
+    room: 2
+    objtype: OBJ
+  - name: Just saying cs
+    type: objdelete
+    id: 0x248C
+    layer: 1
+    room: 4
+    objtype: OBJ
+  - name: delete Just saying cs mogma
+    type: objdelete
+    id: 0x248A
+    layer: 1
+    room: 4
+    objtype: OBJ
+  - name: delete Just saying cs mogma
+    type: objdelete
+    id: 0x248B
+    layer: 1
+    room: 4
+    objtype: OBJ
+  - name: Trial
+    type: oarcadd
+    oarc: PLHarpPlay
+    destlayer: 0
+  - name: Trial
+    type: oarcadd
+    oarc: SirenEntrance
+    destlayer: 0
+  - name: Trial
+    type: oarcadd
+    oarc: PLSwordStick
+    destlayer: 0
+  - name: Trial # trial object
+    type: objmove
+    id: 0x14AE
+    layer: 2
+    destlayer: 0
+    room: 2
+    objtype: OBJ
+  - name: Trial # butterflies
+    type: objmove
+    id: 0x14C0
+    layer: 2
+    destlayer: 0
+    room: 2
+    objtype: STAG
+  - name: Propeller delete # undo this when starting without scrapper repaired
+    type: objdelete
+    id: 0xFC2E
+    layer: 0
+    room: 4
+    objtype: OBJ
+  - name: Forced camera when draining lava before digging mitts
+    type: objdelete
+    id: 0xFCD6
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: Gossip Stone
+    type: objmove
+    id: 0xFC97
+    layer: 2
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Gossip Stone
+    type: oarcadd
+    oarc: GossipStone
+    destlayer: 0
+  - name: CS after draining lava for key piece
+    type: objdelete
+    id: 0x14CC
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: remove ET Door if open ET
+    onlyif: Option "open-et" Enabled
+    type: objdelete
+    id: 0x2413
+    layer: 0
+    room: 4
+    objtype: OBJ
+  - name: Remove 2nd key piece tower cs
+    type: objpatch
+    id: 0x200A
+    layer: 0
+    room: 4
+    objtype: OBJ
+    object:
+      params1: 0xFFF0FF18
+  - name: Remove thrill digger tower cs
+    type: objpatch
+    id: 0x1C0C
+    layer: 0
+    room: 4
+    objtype: OBJ
+    object:
+      params1: 0xCFF0FF1A
+  - name: Remove NpcTke before circles cutscene
+    type: objdelete
+    id: 0xFCBF
+    layer: 1
+    room: 2
+    objtype: OBJ
+  - name: Keep pre circles mogma above ground
+    type: objpatch
+    id: 0xFCBE
+    layer: 1
+    room: 2
+    objtype: OBJ
+    object:
+      anglex: 12031 #keep mogma above ground
+  - name: Remove Earth Temple Opening Cutscene
+    type: objpatch
+    id: 0x24A4
+    layer: 1
+    room: 4
+    objtype: STAG
+    object:
+      event: 7 # DefaultStart
+  - name: Remove first Pyrup
+    type: objdelete
+    id: 0x10B5
+    layer: 1
+    room: 2
+    objtype: OBJ
+  - name: Replace first Pyrup with stationary Pyrup
+    type: objadd
+    layer: 1
+    room: 2
+    objtype: OBJ
+    object:
+      params1: 0xFFEFFFF2
+      params2: 0x25FFFFFF
+      posx: 5800
+      posy: 0
+      posz: 4500
+      anglex: 0
+      angley: 37000
+      anglez: 0
+      id: 0x10B5
+      name: EHidoK
+  - name: Remove first Pyrup cs trigger 1
+    type: objdelete
+    id: 0xFCDB
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: Remove first Pyrup cs trigger 2
+    type: objdelete
+    id: 0xFCCF
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: Remove first Pyrup cs trigger 3
+    type: objdelete
+    id: 0xFCCE
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: Remove upper bridge CS
+    type: objpatch
+    id: 0x2833
+    layer: 1
+    room: 5
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF1E # replace event with FF
+
+F201_1: # Inside volcano
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 19
+        night: 0
+        layer: 4
+      - story_flag: 677
+        night: 0
+        layer: 3
+      - story_flag: 207
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+
+F201_3: # FS entrance
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 901
+        night: 0
+        layer: 4
+      - story_flag: 677
+        night: 0
+        layer: 3
+      - story_flag: 207
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Big Flames
+    type: objdelete
+    id: 0xFC15
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Goron Text after first frog
+    type: objdelete
+    id: 0xFC5A
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Goron Text after second frog
+    type: objdelete
+    id: 0xFC5B
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Goron Text near big frog
+    type: objdelete
+    id: 0xFC5C
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Goron Text near first frog
+    type: objdelete
+    id: 0xFC5D
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Goron Text near first frog
+    type: objdelete
+    id: 0xFC5E
+    layer: 2
+    room: 0
+    objtype: OBJ
+
+F201_4: # Volcano Waterfall
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 19
+        night: 0
+        layer: 4
+      - story_flag: 677
+        night: 0
+        layer: 3
+      - story_flag: 207
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 2809
+      posy: -4055.5771484375
+      posz: 4700
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC30
+      name: Bombf
+
+F210: # Mogma Turf
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Cobal Trigger
+    type: objpatch
+    id: 0xFC70
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 909 # White Sword
+  - name: Cobal
+    type: objmove
+    id: 0xFC70
+    layer: 2
+    destlayer: 1
+    room: 0
+    objtype: OBJ
+  - name: mogma 1
+    type: objpatch
+    id: 0xFC3E
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 901
+  - name: Guld
+    type: objpatch
+    id: 0xFC3C
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 470
+  - name: mogma 2
+    type: objpatch
+    id: 0xFC3D
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 901
+  - name: Mogma Holding you back in caves
+    type: objdelete
+    id: 0x007B
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: extra Arrow Pot Next to Entrance Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 1000
+      posy: -7390
+      posz: 1950
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: Remove Rupee Dowsing
+    onlyif: Option "dowsing-after-whitesword" Enabled
+    type: objdelete
+    id: 0xFC3B
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+F211: # Thrill digger
+  - name: Remove thrill digger entry CS
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
+
+F300: # lanayru Main Area
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Chest Spawns after LMF
+    type: objpatch
+    id: 0xFE12
+    layer: 2
+    room: 0
+    objtype: OBJS
+    object:
+      spawnscenefid: 30 # 0x1E
+  - name: Chest on LMF
+    type: objmove
+    id: 0xFE12
+    layer: 2
+    destlayer: 1
+    room: 0
+    objtype: OBJS
+  - name: Remove Fi text after Tumbleweed Chest
+    type: objdelete
+    id: 0xFCC6
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi text before Hook Beetle Fight Check
+    type: objdelete
+    id: 0xFC29
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi text for 5 Beacons
+    type: objdelete
+    id: 0xFCBC
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove Boulder cs
+    type: objdelete
+    id: 0xFD53
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove Zelda Dowsing from LMF raising cs
+    type: objpatch
+    room: 0
+    index: 28
+    objtype: EVNT
+    object:
+      story_flag2: -1 # no Zelda Dowsing
+  - name: Remove Fi text for Trial Gate
+    type: objdelete
+    id: 0xFC87
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi text for all nodes
+    type: objdelete
+    id: 0x0CC4
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: LMF entrance loadzone
+    type: objpatch
+    id: 0xFCEB
+    layer: 0
+    room: 0
+    objtype: STAG
+    object:
+      trigstoryfid: 8 # LMF raised
+  - name: extra Arrow Pot next to first Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 1670
+      posy: 1975.19812
+      posz: 18750
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: LMF exit when not raised
+    type: objadd
+    index: 19
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: 2047
+      play_cutscene: -1
+      byte4: -1
+      posx: 39
+      posy: -170
+      posz: -5100
+      anglex: 0
+      angley: 34000
+      anglez: 0
+      entrance_id: 19
+
+F300_1: # Lanayru Mine
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Remove First timeshift stone cs
+    type: objdelete
+    id: 0xFC47
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove Fi text for Trial Gate
+    type: objdelete
+    id: 0xFC2D
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: extra Arrow Pot next to first Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 10200
+      posy: 2299.69092
+      posz: 35300
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: Remove fake trial dowsing target
+    type: objdelete
+    id: 0xFC59
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake trial dowsing target
+    type: objdelete
+    id: 0xFC0A
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Remove fake trial dowsing target
+    type: objdelete
+    id: 0xFC62
+    layer: 0
+    room: 2
+    objtype: STAG
+
+F300_2: # Thunder node
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 604
+      posy: 245
+      posz: -6672
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC50
+      name: Bombf
+  - name: Fi text for generator
+    type: objdelete
+    id: 0xFC24
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi text for all nodes
+    type: objdelete
+    id: 0xFC23
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+F300_3: # Fire node
+  - name: Fi text for generator
+    type: objdelete
+    id: 0xFC28
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi text for all nodes
+    type: objdelete
+    id: 0xFC27
+    layer: 0
+    room: 0
+    objtype: OBJ
+  # - name: Add Path Idx and SceneFlag to Fire Node Box
+  #   type: objpatch
+  #   objtype: OBJ
+  #   id: 0xFC07
+  #   layer: 0
+  #   room: 0
+  #   object:
+  #     pathIdx: 1
+  #     goalscenefid: 127
+  #     useLargerRadius: 1
+  #     isSwitchGoal: 0
+  # - name: Add Path For Fire Node Push Block
+  #   type: pathadd
+  #   room: 0
+  #   pnts:
+  #     - posx: -1275.0
+  #       posy: 240.0
+  #       posz: -4150.0
+
+F300_4: # Temple of Time
+  - name: Layer override
+    type: layeroverride
+    override: # always be layer 2
+      - story_flag: -1
+        night: 0
+        layer: 2
+  - name: Harp CS
+    type: objpatch
+    index: 20
+    room: 0
+    objtype: EVNT
+    object:
+      item: -1
+      story_flag1: -1
+      story_flag2: 935 # changes loadzone out of LMF
+  - name: Yeet harp Cutscene
+    type: objpatch
+    index: 4
+    room: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Fi text after Harp
+    type: objdelete
+    room: 0
+    layer: 0
+    id: 0xFC0D
+    objtype: OBJ
+  - name: Remove Fi text for Trial Gate
+    type: objdelete
+    id: 0xFC17
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove backwards loadingzone to LMF
+    type: objdelete
+    id: 0xFC3D
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove fake trial dowsing target
+    type: objdelete
+    id: 0xFCB2
+    layer: 2
+    room: 0
+    objtype: STAG
+
+F300_5: # LMF to ToT
+  - name: harp CS loadzone
+    type: objpatch
+    id: 0xFC03
+    layer: 0
+    room: 0
+    objtype: STAG
+    object:
+      # increase size to make it unmissable
+      sizex: 1700
+      sizez: 500
+      trigscenefid: 0xC3
+      untrigstoryfid: 935
+  - name: Correct layer and entrance for first exit from end of LMF
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: SCEN
+    object:
+      layer: 2
+      entrance: 2
+      saveprompt: 1
+  - name: harp CS loadzone
+    type: objpatch
+    id: 0xFC04
+    layer: 0
+    room: 0
+    objtype: STAG
+    object:
+      trigstoryfid: 935
+  - name: Area to give Reward after dungeon
+    type: objadd
+    index: 0
+    room: 0
+    objtype: AREA
+    object:
+      posx: -11810.81640625
+      posy: -103.16357421875
+      posz: -4.131864070892334
+      sizex: 700
+      sizey: 1000
+      sizez: 500
+      angle: 0
+  - name: Trigger to give Reward after dungeon
+    type: objadd
+    room: 0
+    layer: 0
+    objtype: OBJ
+    object:
+      params1: 0x751FFFF1 # sets own storyflag (936) to untrigger
+      params2: 0xFF1FFFFF
+      posx: -11810
+      posy: -103 # doesn't matter, triggered by area
+      posz: -4
+      anglex: 0xFFFF
+      angley: 0xFF00 # AREA 0
+      anglez: 40055 # entrypoint 400_55
+      id: 0xFC00
+      name: NpcTke
+  - name: Extra Bird Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJS
+    object:
+      params1: 0xFF0302FF # no sceneflag, exit=3
+      params2: 0xFF5FFFFF
+      posx: 836
+      posy: 0
+      posz: 305
+      anglex: 0xFFFF
+      angley: 0xBC30
+      anglez: 0xFFFF
+      id: 0xFD84
+      name: saveObj
+  - name: Extra Dungeon Exit
+    type: objadd
+    room: 0
+    index: 3
+    objtype: SCEN
+    object:
+      name: F300
+      room: 0
+      layer: 0
+      entrance: 5
+      night: 2
+      byte5: 2
+      flag6: 0
+      zero: 0
+      saveprompt: 0
+
+F301: # Ancient Harbour
+  - name: No Sandship beaten layer in sandship
+    type: objpatch
+    index: 4
+    room: 0
+    objtype: SCEN
+    object:
+      layer: 1
+  - name: Remove Skipper Text with White Sword
+    type: objdelete
+    id: 0xFC0F
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+F301_1: # Sand Sea Main Area
+  - name: Skipper's Text at first time in Sand  # gets rid of 2x40 so also of the Evnttags
+    type: objdelete
+    id: 0xFC05
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Area Block to Shipyard 1
+    type: objdelete
+    id: 0xFC63
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Area Block to Shipyard 2
+    type: objdelete
+    id: 0xFC61
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Area Block to Shipyard 3
+    type: objdelete
+    id: 0xFC60
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Area Block to Shipyard 4
+    type: objdelete
+    id: 0xFC62
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Area Block to Pirate Stronghold
+    type: objdelete
+    id: 0xFC65
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Area Block to Pirate Stronghold
+    type: objdelete
+    id: 0xFC66
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Area Block to Pirate Stronghold
+    type: objdelete
+    id: 0xFC67
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: No Sandship beaten layer in sandship
+    type: objpatch
+    index: 5
+    room: 0
+    objtype: SCEN
+    object:
+      layer: 1
+  - name: Move sandship load to layer 0
+    type: objmove
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: STAG
+    id: 0xFC6B
+  - name: Remove excess entrance to Sandship (layer 2)
+    type: objdelete
+    id: 0xFC98
+    layer: 2
+    room: 0
+    objtype: STAG
+  - name: Remove excess entrance to Sandship (layer 3)
+    type: objdelete
+    id: 0xFCB7
+    layer: 3
+    room: 0
+    objtype: STAG
+  - name: Remove excess entrance to Sandship (layer 4)
+    type: objdelete
+    id: 0xFCB7
+    layer: 4
+    room: 0
+    objtype: STAG
+  - name: Remove excess entrance to Sandship (layer 5)
+    type: objdelete
+    id: 0xFCB7
+    layer: 5
+    room: 0
+    objtype: STAG
+  - name: Cutscene after shipyard
+    type: objdelete
+    id: 0xFC07
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: remove entrance cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
+
+F301_2: # inside Pirate Stronghold
+  - name: Fi Text at beginning
+    type: objdelete
+    id: 0xFC0A
+    layer: 0
+    room: 1
+    objtype: OBJ
+  - name: Fi Text near timeshift orb
+    type: objdelete
+    id: 0xFC06
+    layer: 0
+    room: 3
+    objtype: OBJ
+  - name: Fi Text after placing orb
+    type: objdelete
+    id: 0xFC0B
+    layer: 0
+    room: 1
+    objtype: OBJ
+  - name: CS before second lever
+    type: objdelete
+    id: 0xFC28
+    layer: 0
+    room: 6
+    objtype: STAG
+
+F301_3: # Skipper's Retreat
+  - name: Text after intro
+    type: objdelete
+    id: 0xFC30
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: remove entrance cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
+
+F301_4: # Shipyard
+  - name: Text after intro
+    type: objdelete
+    id: 0xFC6E
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Door to Construction always open
+    type: objpatch
+    room: 0
+    layer: 0
+    id: 0xFC05
+    objtype: OBJS
+    object:
+      params1: 0xF7FFFC20
+  - name: remove entrance cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
+
+F301_5: # Skipper's Shack
+  - name: Text after chest
+    type: objdelete
+    id: 0xFC1B
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+F301_6: # outside Pirate stronghold
+  - name: Text after intro
+    type: objdelete
+    id: 0xFC07
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Ship dowsing
+    type: objdelete
+    id: 0xFC08
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: remove entrance cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
+  - name: Remove Nose Rupee 1
+    type: objdelete
+    layer: 2
+    room: 0
+    objtype: OBJ
+    id: 0xFC46
+  - name: Remove Nose Rupee 2
+    type: objdelete
+    layer: 2
+    room: 0
+    objtype: OBJ
+    id: 0xFC47
+  - name: Forcing Pillar Rupee 1 on layer 0
+    type: objmove
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+    id: 0xFC46
+  - name: Forcing Pillar Rupee 2 on layer 0
+    type: objmove
+    room: 0
+    layer: 1
+    destlayer: 0
+    objtype: OBJ
+    id: 0xFC47
+
+F301_7: # inside Shipyard
+  - name: Text near minecart door
+    type: objdelete
+    id: 0xFC04
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Door to outside
+    type: objpatch
+    id: 0xFC01
+    layer: 0
+    room: 0
+    objtype: OBJS
+    object:
+      params1: 0xF7FFFC20
+
+F302: # Lanayru Gorge
+  - name: Layer override
+    type: layeroverride
+    override: # always be layer 2
+      - story_flag: -1
+        night: 0
+        layer: 2
+  - name: Unlock Door
+    type: objpatch
+    id: 0x2BFF
+    index: 0
+    layer: 0
+    objtype: DOOR
+    object:
+      anglex: 0xFFFF # Always unlocked
+  - name: Patch Entry of Thunderdragon after heal
+    type: objpatch
+    id: 0x10D0
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      talk_behaviour: 46070
+  - name: Delete trigger preventing you from moveing over bridge
+    type: objdelete
+    id: 0xFC06
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Patch wounded Thuderdragon to always trigger
+    type: objpatch
+    id: 0x10D1
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1 # Always trigger
+  - name: Don't play Thunder Dragon healing Cutscene
+    type: objpatch
+    index: 18
+    room: 0
+    objtype: SCEN
+    object:
+      layer: 2
+      entrance: 4
+  - name: Patch Small Key
+    type: objpatch
+    id: 0xFCC3
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      anglex: 0
+      angley: 0
+  - name: Move Small Key
+    type: objmove
+    id: 0xFCC3
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: patch FrmLand
+    type: objpatch
+    id: 0xFC05
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFF4D11E2
+      params2: 0xFFFFFFFF
+      posx: 9804.2412109375
+      posy: 350
+      posz: -4532.95361328125
+      anglex: 0
+      angley: 16384
+      anglez: 0
+      name: Soil
+  - name: delete Fi after Lanayru SotH
+    type: objdelete
+    id: 0xFCC0
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove Lanayru Soth from CS
+    type: objpatch
+    room: 0
+    index: 8
+    objtype: EVNT
+    object:
+      item: -1 # no lanayru Soth anymore
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 4100
+      posy: 28.9521332
+      posz: -3200
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC50
+      name: Bombf
+
+F303: # Lanayru Caves
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 0
+  # Add oarcs
+  - name: Add Goron_motion
+    type: oarcadd
+    oarc: Goron_motion
+    destlayer: 0
+  - name: Add GoronD
+    type: oarcadd
+    oarc: GoronD
+    destlayer: 0
+  # Golo
+  - name: Move Golo out of the Way
+    type: objpatch
+    id: 0xFC5C
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      posx: -150
+      posz: 2090
+      angley: 61000
+      anglez: 40455
+      untrigstoryfid: 2047 # never untrigger
+  - name: Move Golo onto layer 0
+    type: objmove
+    id: 0xFC5C
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Move trigger onto layer 0
+    type: objmove
+    id: 0xFC5D
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Move Stool out of Golo's way
+    type: objpatch
+    id: 0xFC19
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posx: -400
+      posz: 1850
+  # Rock blocking Gorge access
+  - name: Move rock blocking Gorge onto layer 0
+    type: objmove
+    id: 0xFC5F
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: OBJS
+  - name: Fi text after chest
+    type: objdelete
+    id: 0xFC25
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Delete cutscene
+    type: objdelete
+    id: 0xFC41
+    layer: 0
+    room: 0
+    objtype: STAG
+
+F400: # Behind the Temple
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 13
+        night: 0
+        layer: 4
+      - story_flag: 9
+        night: 0
+        layer: 3
+      - story_flag: 36
+        night: 0
+        layer: 2
+  - name: Goron text trigger doesn't disappear after Sandship
+    type: objpatch
+    id: 0xFC95
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      untrigstoryfid: 2047
+  - name: Goron doesn't disappear after Sandship
+    type: objpatch
+    id: 0xFC94
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 2047
+      untrigstoryfid: 2047
+  - name: Goron after Skyview
+    type: objdelete
+    id: 0xFC2E
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Goron before unlocking goddess Walls
+    type: objdelete
+    id: 0xFC2F
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text for Trial
+    type: objdelete
+    id: 0xFC5B
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove fake trial dowsing
+    type: objdelete
+    id: 0xFC8A
+    layer: 0
+    room: 0
+    objtype: STAG
+
+F401: # Sealed grounds Whirlpool
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 705
+        night: 0
+        layer: 4
+      - story_flag: 704
+        night: 0
+        layer: 3
+      - story_flag: 703
+        night: 0
+        layer: 2
+      - story_flag: 133
+        night: 0
+        layer: 5
+      - story_flag: 13
+        night: 0
+        layer: 3
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Set start flags
+    type: objpatch
+    room: 1
+    index: 7
+    objtype: EVNT
+    object:
+      sceneflag1: 13
+      sceneflag2: 7
+  - name: Ruined save
+    type: objdelete
+    id: 0xFC8E
+    layer: 1
+    room: 1
+    objtype: OBJ
+  - name: Groosenator before imp 2
+    type: objdelete
+    id: 0xFC9D
+    layer: 3
+    room: 1
+    objtype: OBJ
+  - name: Fi text for Trial
+    type: objdelete
+    id: 0xFC09
+    layer: 0
+    room: 1
+    objtype: OBJ
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFCA3
+    layer: 2
+    room: 1
+    objtype: STAG
+
+F402: # Sealed Temple
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 133
+        night: 0
+        layer: 6
+      - story_flag: 132
+        night: 0
+        layer: 4
+      - story_flag: 13
+        night: 0
+        layer: 3
+      - story_flag: 140
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Delete LTF Tree
+    type: objdelete
+    id: 0xFC06
+    layer: 0
+    room: 2
+    objtype: OBJ
+  - name: SotH start cs
+    type: objdelete
+    id: 0xFC4F
+    layer: 4
+    room: 2
+    objtype: OBJ
+  - name: Groose Tree cs
+    type: objdelete
+    id: 0xFC4E
+    layer: 4
+    room: 2
+    objtype: OBJ
+  - name: Remove cs when entering ST
+    type: objpatch
+    room: 2
+    index: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1 # no cs anymore
+  - name: Raise GoT CS trigger
+    type: objadd
+    layer: 2
+    room: 2
+    objtype: STAG
+    object:
+      params1: 0xC303FF03 # scenlink: 3 - skip cutscene of GoT raising
+      posx: 0
+      posy: 7000
+      posz: 10971.697265625
+      sizex: 20000
+      sizey: 20000
+      sizez: 20000
+      anglex: 65535 # no trigger storyflag
+      angley: 0
+      anglez: 65535 # no untrigger storyflag (works but idk why)
+      id: 0xFC00
+      name: ScChang
+  - name: Yeet GoT opening Cutscene
+    type: objpatch
+    id: 0xFC55
+    layer: 4
+    room: 2
+    objtype: STAG
+    object:
+      params1: 0xFF03FF05 # scenlink: 5 - skip cutscene of GoT opening
+  - name: to BtT unlock
+    type: objpatch
+    id: 0xFC00
+    layer: 0
+    room: 2
+    objtype: OBJS
+    object:
+      anglex: 0xFF00 # sets the flag to -1 (meaning open)
+  - name: to BtT unlock
+    type: objpatch
+    id: 0xFC01
+    layer: 0
+    room: 2
+    objtype: OBJS
+    object:
+      anglex: 0xFF00 # sets the flag to -1 (meaning open)
+  - name: Impa text near Door after GoT
+    type: objdelete
+    id: 0xFC49
+    layer: 2
+    room: 2
+    objtype: OBJ
+  - name: Impa text before imp 2 trigger
+    type: objdelete
+    id: 0xFC4C
+    layer: 3
+    room: 2
+    objtype: OBJ
+  - name: BotG item trigger extended #so that the player automatically gets the item and the gate of time raised, while also not getting in the way of harp tutorial in BiT
+    type: objpatch
+    index: 1
+    room: 2
+    objtype: AREA
+    object:
+      posx: 0
+      posy: 7000
+      posz: 9600
+      sizex: 3600
+      sizey: 2000
+      sizez: 3000
+  - name: Remove Music and shaking
+    type: objpatch
+    room: 2
+    index: 5
+    objtype: EVNT
+    object:
+      story_flag2: -1 # no Imp trigger stuff
+      sceneflag1: 7 # no shaking into vents active
+  - name: Unforce layer after Raise GoT CS
+    type: objpatch
+    room: 2
+    index: 3
+    objtype: SCEN
+    object:
+      layer: 0
+  - name: Remove Goddess Statue falling down storyflag
+    type: objpatch
+    room: 2
+    index: 7
+    objtype: EVNT
+    object:
+      story_flag2: -1
+  - name: Delete post levias impa
+    type: objdelete
+    id: 0xFC17
+    layer: 0
+    room: 2
+    objtype: OBJ
+  - name: Impa triggers after raising GoT instead of Farores Courage
+    type: objpatch
+    id: 0xFC04
+    layer: 0
+    room: 2
+    objtype: OBJ
+    object:
+      trigstoryfid: 340 # gate of time raised
+  - name: Delete Imp 2 beaten cs inside
+    type: objdelete
+    id: 0xFC4D
+    layer: 4
+    room: 2
+    objtype: OBJ
+  - name: Delete Imp 2 beaten cs inside
+    type: objdelete
+    id: 0xFC4C
+    layer: 4
+    room: 2
+    objtype: OBJ
+  - name: extra Arrow Pot Next to Fairy
+    type: objadd
+    layer: 0
+    room: 2
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 1215
+      posy: 7700
+      posz: 12700
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: Remove fake Faron trial dowsing target
+    type: objdelete
+    id: 0xFC3D
+    layer: 0
+    room: 2
+    objtype: STAG
+
+F403: # Hylia's Realm
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 726 # Refight G3
+        night: 0
+        layer: 4
+      - story_flag: 530 # Boss Rush
+        night: 0
+        layer: 1
+      - story_flag: 486 # G3 Defeated
+        night: 0
+        layer: 3
+      - story_flag: 134 # Horde Defeated
+        night: 0
+        layer: 7
+      - story_flag: 347 # Horde Cutscene watched
+        night: 0
+        layer: 1
+      - story_flag: -1
+        night: 0
+        layer: 13
+  # - name: Skip Ghirahim 3 Fight
+  #   onlyif: Option "skip-g3" Enabled
+  #   type: objpatch
+  #   room: 1
+  #   index: 1
+  #   objtype: EVNT
+  #   object:
+  #     exit_id: 5 # go to post g3 cutscene, sets g3 defeated storyflag
+  # - name: Skip Demise Fight
+  #   onlyif: Option "skip-demise" Enabled
+  #   type: objpatch
+  #   room: 1
+  #   index: 8
+  #   objtype: SCEN
+  #   object:
+  #     name: F404
+  #     room: 2
+  #     layer: 14
+  #     entrance: 5
+  #     night: 2
+  #     byte5: 1
+
+F404: # Hylia's Temple
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Set Gate of Time opening cutscene watched 
+    type: objadd
+    room: 2
+    layer: 0
+    objtype: STAG
+    object:
+      params1: 0xFFFFFFF
+      params2: 0xFF5FFFFF
+      posx: 0
+      posy: 7600
+      posz: 10250
+      sizex: 20000
+      sizey: 20000
+      sizez: 20000
+      anglex: 344 # Have watched Gate of Time opening Cutscene
+      angley: 0
+      anglez: 65535
+      name: SwAreaT
+  - name: Yeet TMS Cutscene
+    type: objpatch
+    index: 4
+    room: 2
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Remove TMS from CS
+    type: objpatch
+    room: 2
+    index: 0
+    objtype: EVNT
+    object:
+      item: -1 # no TMS anymore
+  - name: Delete post-ghirahim 3 impa
+    type: objdelete
+    id: 0xFC05
+    layer: 0
+    room: 2
+    objtype: OBJ
+  # - name: Trigger to Check Triforces
+  #   type: objadd
+  #   onlyif: Option "triforce-required" Enabled
+  #   room: 2
+  #   layer: 0
+  #   objtype: OBJ
+  #   object:
+  #     params1: 0xFFEA1400 # triggered by triforce completed
+  #     params2: 0xFF1FFFFF
+  #     posx: 0
+  #     posy: 7600
+  #     posz: 8250
+  #     anglex: 0x32FF # sets 7x04
+  #     angley: 0xFFFF
+  #     anglez: 50220 # entrypoint 502_20
+  #     id: 0xFC40
+  #     name: NpcTke
 
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
@@ -486,3 +3018,1312 @@ F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
       layer: 3
       entrance: 5
       night: 2
+
+F407: # Sky Keep beaten CS
+  - name: Sky Keep CS remove Storyflag
+    type: objpatch
+    room: 0
+    index: 2
+    objtype: EVNT
+    object:
+      story_flag2: -1 # first storyflag is handled by entrance rando patches
+  - name: Sky Keep CS remove Storyflag
+    type: objpatch
+    room: 0
+    index: 3
+    objtype: EVNT
+    object:
+      story_flag2: -1
+
+D003_0: # Sky Keep Courage Room
+  - name: Fi text
+    type: objdelete
+    id: 0xFC0F
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text reach the mark
+    type: objdelete
+    id: 0xFC11
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+D003_2: # Sky Keep Power Room
+  - name: Fi text
+    type: objdelete
+    id: 0xFC33
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text reach the mark
+    type: objdelete
+    id: 0xFC3C
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text wrong side
+    type: objdelete
+    id: 0xFC32
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+D003_3: # Sky Keep Wisdom Room
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1 # always use layer 1, 
+  - name: Fi text
+    type: objdelete
+    id: 0xFC1B
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text reach the mark
+    type: objdelete
+    id: 0xFC1D
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+D003_7: # Sky Keep Entrance Room
+  - name: Fi text
+    type: objdelete
+    id: 0xFC0B
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove bars
+    type: objdelete
+    id: 0xFC05
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove bars opening cs
+    type: objpatch
+    id: 0xFC16
+    room: 0
+    layer: 4
+    objtype: STAG
+    object:
+      params1: 0xFF1516FF # 0x000000FF = event number
+
+D003_8: # this change is purely to make sure D003_8 gets patched, so a perviously broken rando version gets overwritten
+  - name: remove last triforce cutscene # this does mean if triforces are vanilla you have to leave yourself
+    type: objdelete
+    id: 0xFC06
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Scene Change for Wisdom layer
+    type: objadd
+    room: 0
+    layer: 1
+    id: 0xFC20
+    objtype: STAG
+    object:
+      params1: 0x3EFFFF01 # scenlink: 1, triggered by scene flag 62
+      params2: 0xFF5FFFFF
+      posx: 0
+      posy: 0
+      posz: 0
+      sizex: 10000
+      sizey: 10000
+      sizez: 10000
+      anglex: 0xFFFF
+      angley: 0
+      anglez: 0xFFFF
+      name: ScChang
+  - name: Scene Change for Power layer
+    type: objadd
+    room: 0
+    layer: 2
+    id: 0xFC20
+    objtype: STAG
+    object:
+      params1: 0x3DFFFF02 # scenlink: 2, triggered by scene flag 61
+      params2: 0xFF5FFFFF
+      posx: 0
+      posy: 0
+      posz: 0
+      sizex: 10000
+      sizey: 10000
+      sizez: 10000
+      anglex: 0xFFFF
+      angley: 0
+      anglez: 0xFFFF
+      name: ScChang
+  - name: Scene Change for Courage layer
+    type: objadd
+    room: 0
+    layer: 3
+    id: 0xFC20
+    objtype: STAG
+    object:
+      params1: 0x40FFFF03 # scenlink: 3, triggered by scene flag 64
+      params2: 0xFF5FFFFF
+      posx: 0
+      posy: 0
+      posz: 0
+      sizex: 10000
+      sizey: 10000
+      sizez: 10000
+      anglex: 0xFFFF
+      angley: 0
+      anglez: 0xFFFF
+      name: ScChang
+  - name: layer 2 in Wisdom room
+    type: objpatch
+    index: 1
+    room: 0
+    objtype: SCEN
+    object:
+      layer: 2 # force layer 2 so the barbed wire is gone
+
+D100: # Skyview
+  - name: Layer override
+    type: layeroverride
+    override: # only layer change is to layer 2 after water dragons scale
+      - story_flag: 206 # storyflag after water dragons scale
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Small Key Soil
+    type: objmove
+    id: 0xFC4B
+    layer: 2
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Empty Soil
+    type: objdelete
+    id: 0xFC50
+    layer: 1
+    room: 4
+    objtype: OBJ
+  - name: Eyes
+    type: oarcadd
+    oarc: SwitchEye
+    destlayer: 0
+  - name: First Eye
+    type: objmove
+    id: 0xFC17
+    layer: 1
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Right Room Eyes
+    type: objmove
+    id: 0xFC48
+    layer: 1
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Right Room Eyes
+    type: objmove
+    id: 0xFC49
+    layer: 1
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Right Room Eyes
+    type: objmove
+    id: 0xFC4A
+    layer: 1
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Left Room Eyes
+    type: objmove
+    id: 0xFC31
+    layer: 1
+    destlayer: 0
+    room: 7
+    objtype: OBJ
+  - name: Left Room Eyes
+    type: objmove
+    id: 0xFC32
+    layer: 1
+    destlayer: 0
+    room: 7
+    objtype: OBJ
+  - name: Left Room Eyes
+    type: objmove
+    id: 0xFC33
+    layer: 1
+    destlayer: 0
+    room: 7
+    objtype: OBJ
+  - name: Left Room Eyes
+    type: objmove
+    id: 0xFC34
+    layer: 1
+    destlayer: 0
+    room: 7
+    objtype: OBJ
+  - name: Bar conected to chest
+    type: objpatch
+    id: 0x1018
+    layer: 2
+    room: 10
+    objtype: OBJS
+    object:
+      setscenefid: 13 # 0x0 20 (0xD)
+  - name: Bar conected to chest
+    type: objpatch
+    id: 0x1018
+    layer: 1
+    room: 10
+    objtype: OBJS
+    object:
+      setscenefid: 13 # 0x0 20
+  - name: Always open Bar from inside Beetle Room
+    type: objpatch
+    index: 6
+    layer: 0
+    objtype: DOOR
+    object:
+      anglex: 0xFF09 # remove inside sceneflag
+  - name: Remove Skyview 2 Key door # it's now the same as layer 1
+    type: objpatch
+    index: 2 # all have id FFFF :(
+    layer: 2
+    objtype: DOOR
+    object:
+      anglex: 0xFF06 # sceneflag 6
+  - name: Remove boards in layer 2 # they break by hitting the switch
+    type: objdelete
+    id: 0xFCA0
+    layer: 2
+    room: 2
+    objtype: OBJ
+  - name: Remove boards in layer 2 # they break by hitting the switch
+    type: objdelete
+    id: 0xFCA1
+    layer: 2
+    room: 2
+    objtype: OBJ
+  - name: Remove Mogma near goddess wall
+    type: objdelete
+    id: 0xFC4F
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove Mogma cs near goddess wall
+    type: objdelete
+    id: 0xFC4E
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove Mogma cs near goddess wall
+    type: objdelete
+    id: 0xFC4B
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove Mogma cs swTag near goddess wall
+    type: objdelete
+    id: 0xFC57
+    layer: 2
+    room: 0
+    objtype: STAG
+  - name: Remove Mogma cs AreaTag 1 near goddess wall
+    type: objdelete
+    id: 0xFC52
+    layer: 2
+    room: 0
+    objtype: STAG
+  - name: Remove Mogma cs AreaTag 2 near goddess wall
+    type: objdelete
+    id: 0xFC53
+    layer: 2
+    room: 0
+    objtype: STAG
+  - name: Pot in start room with bombs
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0BFFFFFF
+      posx: 155
+      posy: 1124.35009765625
+      posz: 6013
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFD01
+      name: Tubo
+  - name: Pot in Middle water room with bombs
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0BFFFFFF
+      posx: 702
+      posy: 0
+      posz: 1794
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFD02
+      name: Tubo
+  - name: Pot before Spider with bombs
+    type: objadd
+    layer: 0
+    room: 9
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0BFFFFFF
+      posx: 2997
+      posy: 300
+      posz: -12750
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFD03
+      name: Tubo
+  - name: Remove forced talk to mogma in right room
+    type: objdelete
+    id: 0xFC51
+    layer: 2
+    room: 4
+    objtype: STAG
+  - name: Remove forced talk to mogma in left room
+    type: objdelete
+    id: 0xFC46
+    layer: 2
+    room: 3
+    objtype: STAG
+  - name: Remove forced talk to mogma in front of boss door
+    type: objdelete
+    id: 0xFC7B
+    layer: 2
+    room: 9
+    objtype: STAG
+  - name: Remove soil in three eye room #this one makes pushing the block difficult
+    type: objdelete
+    id: 0xFC34
+    layer: 2
+    room: 7
+    objtype: OBJ
+  - name: Remove initial Fi text in Skyview 1
+    type: objdelete
+    id: 0xFC4C
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove initial Fi text in Skyview 2
+    type: objdelete
+    id: 0xFC4A
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove cutscene in hub room
+    type: objdelete
+    id: 0xFC85
+    layer: 1
+    room: 5
+    objtype: STAG
+  - name: extra Arrow Pot next to Entrance Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 42
+      posy: 1124.34998
+      posz: 6013
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+
+B100: # Skyview boss room
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 530
+        night: 0
+        layer: 5
+      - story_flag: 67
+        night: 0
+        layer: 4
+      - story_flag: 206
+        night: 0
+        layer: 3
+      - story_flag: 83
+        night: 0
+        layer: 1
+      - story_flag: -1
+        night: 0
+        layer: 13
+  - name: only play CS when ghirahim hasn't been defeated
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: 83 # ghirahim defeated
+  - name: move first time loadzone to layer 0
+    type: objmove
+    id: 0xFC18
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: STAG
+
+B100_1: # Skyview Spring
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 65 # Set when healing Water Dragon
+        night: 0
+        layer: 4
+      - story_flag: 5 # Beat Skyview
+        night: 0
+        layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+  - name: Patch Goddess Crest to not play Cutscene
+    type: objpatch
+    id: 0xFC05
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object: 
+      params1: 0xFFFF0369 # 0xFFFF, 03 = scen_link 3, 69 = scene flag 105 (vanilla)
+  - name: Fi text after skyview CS
+    type: objpatch
+    id: 0xFC73
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF1 # last 1 is subtype (not talk to fi)
+      trigscenefid: 105 # Goddess Crest hit
+  - name: Fi text after skyview CS
+    type: objmove
+    id: 0xFC73
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: loadzone to outside
+    type: objmove
+    id: 0xFC74
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove small cutscene
+    type: objdelete
+    room: 0
+    layer: 1
+    id: 0xFC73
+    objtype: STAG
+  - name: Remove fake trial dowsing target
+    type: objdelete
+    id: 0xFC63
+    layer: 0
+    room: 0
+    objtype: STAG
+
+D101: # Ancient Cistern
+  - name: remove stone tablet text
+    type: objpatch
+    id: 0xFC11
+    layer: 0
+    room: 10
+    objtype: OBJ
+    object:
+      params1: 0xFF3C0000
+  - name: Reload Exit
+    type: objadd
+    room: 10
+    index: 0
+    objtype: SCEN
+    object:
+      name: D101
+      room: 0
+      layer: 0
+      entrance: 0
+      night: 2
+      byte5: 2
+      flag6: 0
+      zero: 0
+      saveprompt: 0
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 7
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 371
+      posy: -2410
+      posz: 2592
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFD01
+      name: Bombf
+  - name: extra Arrow Pot next to Entrance Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: -580
+      posy: 0
+      posz: 4900
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: Delete cutscene inside statue
+    type: objdelete
+    id: 0xFC1F
+    layer: 0
+    room: 10
+    objtype: STAG
+  - name: Delete cutscene in basement showing bk chest
+    type: objdelete
+    id: 0xFC7D
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: Delete bottom Water Spout cutscene inside statue
+    type: objdelete
+    id: 0xFC1A
+    layer: 0
+    room: 10
+    objtype: STAG
+  - name: Remove East Part Lily Pad CS 1
+    type: objdelete
+    id: 0xFC1C
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Remove East Part Lily Pad CS 2
+    type: objdelete
+    id: 0xFC1B
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Remove East Part Main Path Lily Pad CS
+    type: objdelete
+    id: 0xFC29
+    layer: 0
+    room: 2
+    objtype: STAG
+  - name: Remove Waterfall Switch Lily Pad CS
+    type: objdelete
+    id: 0xFC8D
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove Underground Lily Pad CS
+    type: objdelete
+    id: 0xFC83
+    layer: 0
+    room: 4
+    objtype: STAG
+
+B101: # Koloktos Boss Room
+  - name: Open door after boss
+    type: objpatch
+    room: 0
+    layer: 1
+    id: 0xFC13
+    objtype: OBJS
+    object:
+      params1: 0xFFFD3000
+  - name: Open door after boss
+    type: objpatch
+    room: 0
+    layer: 3
+    id: 0xFC15
+    objtype: OBJS
+    object:
+      params1: 0xFFFD3000
+
+B101_1: # after AC boss
+  - name: Remove Farore's Flame Cutscene
+    type: objpatch
+    room: 0
+    index: 2
+    objtype: SCEN
+    object:
+      name: F102_1
+      layer: 0
+      entrance: 6
+      saveprompt: 1
+  - name: Fi text before AC CS
+    type: objadd
+    room: 0
+    layer: 0
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # type 1, no fi, flag sets automatically
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 20231 # entrypoint 202_31
+      id: 0xFC00
+      name: NpcTke
+      trigscenefid: 86 # goddess crest hit
+      untrigscenefid: 85 # unused flag
+  - name: Loadzone to outside
+    type: objpatch
+    room: 0
+    layer: 0
+    id: 0xFC0B
+    objtype: STAG
+    object:
+      params1: 0xC303FF02 # change to zone temp flag 3
+      anglez: 0xFFFF # don't set any storyflag here
+
+D200: # ET
+  - name: Ledd Text before Bomb Bag
+    type: objdelete
+    id: 0xFC51
+    layer: 0
+    room: 1
+    objtype: OBJ
+  - name: Bomb Bag from Ledd
+    type: objdelete
+    id: 0xFC52
+    layer: 0
+    room: 1
+    objtype: OBJ
+  - name: Keep Ledd after Beating ET
+    type: objpatch
+    id: 0xFC50
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      untrigstoryfid: 2047
+  - name: Bombs from Ledd
+    type: objpatch
+    id: 0xFC53
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      trigscenefid: 9
+  - name: Fi after Bridge
+    type: objdelete
+    id: 0xFC5E
+    layer: 0
+    room: 1
+    objtype: OBJ
+  - name: CS before Boulder to bombs
+    type: objdelete
+    id: 0xFC6D
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: extra Arrow Pot next to entrance Statue
+    type: objadd
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: 800
+      posy: 0
+      posz: 14400
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+  - name: Remove cutscene showing the boss door
+    type: objdelete
+    id: 0xFC68
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: Remove cutscene after lavafall
+    type: objdelete
+    id: 0xFC65
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: change untrigger of lavafall in front of Boss Door
+    type: objpatch
+    id: 0xFC1F
+    layer: 0
+    room: 4
+    objtype: OBJ
+    object:
+      params1: 0x3F02050F
+
+B200: # ET Boss Room
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 7 # Beat ET
+        night: 0
+        layer: 1
+      - story_flag: -1
+        night: 0
+        layer: 2
+  - name: Yeet ET Spring Cutscene
+    type: objdelete
+    id: 0xFC27
+    layer: 0
+    room: 10
+    objtype: STAG
+  - name: delete boulder cutscene
+    type: objdelete
+    id: 0xFC36
+    layer: 2
+    room: 10
+    objtype: STAG
+  - name: delete fi text
+    type: objdelete
+    id: 0xFC30
+    layer: 2
+    room: 10
+    objtype: OBJ
+
+B210: # Earth Spring
+  - name: Patch Goddess Crest to not play Cutscene
+    type: objpatch
+    id: 0xFC0A
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object: 
+      params1: 0xFFFF0426 # 0xFFFF, 04 = scen_link 4, 26 = scene flag 38 (vanilla)
+  - name: Fi text after ET CS
+    type: objpatch
+    room: 0
+    layer: 0
+    id: 0xFC09
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF1
+  - name: Loadzone to outside
+    type: objpatch
+    room: 0
+    layer: 0
+    id: 0xFC0E
+    objtype: STAG
+    object:
+      params1: 0xC303FF00 # change to zone temp flag 3
+
+D201: # FS A
+  - name: Mogma 1
+    type: objdelete
+    id: 0xFC07
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Guld cs trigger
+    type: objdelete
+    id: 0xFC08
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: BK chest intro cs deleted
+    type: objdelete
+    id: 0xFC44
+    layer: 0
+    room: 4
+    objtype: STAG
+
+D201_1: # FS B
+  - name: Clawshot Target for 2nd small Key
+    type: objadd
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFC24
+      params2: 0xFFFFFFFF
+      posx: -5743
+      posy: 650
+      posz: -8514
+      anglex: 0
+      angley: 36894
+      anglez: 0
+      id: 0xFC20
+      name: ClawSTg
+  - name: Fist Trapped Mogma CS delete
+    type: objdelete
+    layer: 0
+    room: 5
+    objtype: OBJ
+    id: 0xFC11
+  - name: Double Magmanos fight cs (can softblock)
+    type: objdelete
+    layer: 0
+    room: 5
+    objtype: STAG
+    id: 0xFC2B
+  - name: Text after Magmanos fight 1
+    type: objdelete
+    layer: 0
+    room: 5
+    objtype: OBJ
+    id: 0xFC1E
+  - name: Text after Magmanos fight 2
+    type: objdelete
+    layer: 0
+    room: 5
+    objtype: OBJ
+    id: 0xFC23
+  - name: Remove Sealed Grounds intro CS flag
+    type: objpatch
+    room: 6
+    objtype: EVNT
+    index: 1
+    object:
+      story_flag1: -1
+  - name: Delete Camera Pan in first magmanos room
+    type: objdelete
+    id: 0xFC1B
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Underground tutorial text for mogma mitts
+    type: objdelete
+    id: 0xFC66
+    layer: 0
+    room: 5
+    objtype: OBJ
+  - name: Delete camera pan cutscene after mogma mitts
+    type: objdelete
+    id: 0xFC2C
+    layer: 0
+    room: 5
+    objtype: STAG
+
+B201: # FS Boss Room
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 530
+        night: 0
+        layer: 3
+      - story_flag: 901
+        night: 0
+        layer: 2
+      - story_flag: 84
+        night: 0
+        layer: 1
+      - story_flag: -1
+        night: 0
+        layer: 13
+
+B201_1: # after FS boss
+  - name: Remove Din's Flame Cutscene
+    type: objpatch
+    room: 0
+    index: 1
+    objtype: SCEN
+    object:
+      name: F201_3
+      layer: 0
+      entrance: 1
+      saveprompt: 1
+  - name: Fi text before FS CS
+    type: objadd
+    room: 0
+    layer: 0
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # untriggered by 901, storyflag for beating fire sanctuary
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 30407 # entrypoint 304_07
+      id: 0xFC00
+      name: NpcTke
+      trigscenefid: 95 # goddess crest hit
+      untrigscenefid: 121 # sets in flame CS normally
+  - name: Loadzone to outside
+    type: objpatch
+    room: 0
+    layer: 0
+    id: 0xFC0A
+    objtype: STAG
+    object:
+      params1: 0xC3030001 # change to zone temp flag 3
+      anglez: 0xFFFF # don't set any storyflag here
+
+D300: # LMF A
+  - name: Dust in Gust Bellow room Blocking Door
+    type: objdelete
+    id: 0xFC35
+    layer: 0
+    room: 4
+    objtype: SOBJ
+  - name: Wall in Gust Bellow room Blocking Door
+    type: objdelete
+    id: 0xFC4E
+    layer: 0
+    room: 4
+    objtype: SOBJ
+  - name: Door in Gust Bellow room Blocking Door
+    type: objpatch
+    id: 0xFC12
+    layer: 0
+    room: 4
+    objtype: OBJS
+    object:
+      params1: 0xF7FFFC20
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 6
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: -6150
+      posy: 1050
+      posz: -10108
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC50
+      name: Bombf
+  - name: extra Arrow Pot next to entrance Statue
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0x0CFFFFFF
+      posx: -1100
+      posy: 0
+      posz: 2200
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFE50
+      name: Tubo
+
+D300_1: # LMF B
+  - name: Close door to BK room from both sides
+    type: objpatch
+    index: 6 # all have id FFFF :(
+    layer: 0
+    objtype: DOOR
+    object:
+      anglex: 0x1313
+  - name: visual fence from BK room side
+    type: objadd
+    layer: 0
+    room: 8
+    objtype: OBJ
+    object:
+      params1: 0xCF134401
+      params2: 0xFF5FFFFF
+      posx: 5050
+      posy: 600
+      posz: -14350
+      anglex: 0xFF00
+      angley: 0x4000
+      anglez: 0xFFFF
+      id: 0xFC00
+      name: Fence
+  - name: anti softlock bomb flower
+    type: objadd
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 4716
+      posy: 600
+      posz: -14716
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC00
+      name: Bombf
+
+D301: # Sandship A
+  - name: extra Bomb flower
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: 6397
+      posy: -1243.4300537109375
+      posz: 67
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0xFC50
+      name: Bombf
+  - name: Heart Container on normal layer
+    type: objmove
+    layer: 9
+    destlayer: 1
+    room: 0
+    objtype: OBJ
+    id: 0xFC53
+  - name: Heart Container on normal layer
+    type: oarcadd
+    destlayer: 1
+    oarc: PutHeartUtuwa
+  - name: Candle on layer 1
+    type: objmove
+    layer: 9
+    destlayer: 1
+    room: 0
+    objtype: OBJ
+    id: 0xFC54
+  # - name: load goddess crest rel
+  #   type: objnadd
+  #   layer: 1
+  #   room: 0
+  #   objn: SwSB
+  - name: candle arcs
+    type: oarcadd
+    destlayer: 1
+    oarc: GoddessSymbolSc
+  - name: candle arcs
+    type: oarcadd
+    destlayer: 1
+    oarc: SwordCandle
+  - name: Fi text after hitting Sandship Crest
+    type: objadd
+    room: 0
+    layer: 1
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # subtype to not trigger fi, but set flag
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 40108 # entrypoint 401_08
+      id: 0xFC00
+      name: NpcTke
+      trigstoryfid: 933 # triggered by storyflag for leaving tentalus room
+      trigscenefid: 84 # and triggered by sceneflag 84, which is goddess crest hit
+      untrigscenefid: 87 # unused flag to untrigger
+  - name: Trigger Dungeon Exit
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: STAG
+    object:
+      params1: 0xC303FF07 # scenlink: 7, triggered by zone temp flag 3
+      params2: 0xFF5FFFFF
+      posx: -4118
+      posy: 500
+      posz: 1914
+      sizex: 50000
+      sizey: 500
+      sizez: 50000
+      anglex: 0xFFFF # no trigger storyflag
+      angley: 0
+      anglez: 0xFFFF # no untrigger cause zone temp flag is unset after load
+      id: 0xFC00
+      name: ScChang
+  - name: Flame CS Exit
+    type: objadd
+    room: 0
+    index: 7
+    objtype: SCEN
+    object:
+      name: F301
+      room: 0
+      layer: 0
+      entrance: 1
+      night: 2
+      byte5: 0
+      flag6: 0
+      zero: 0
+      saveprompt: 1
+  - name: Remove Boss Door loadzone after beating dungeon
+    type: objpatch
+    id: 0xFC45
+    layer: 4
+    room: 9
+    objtype: STAG
+    object:
+      anglez: 933 # untriggerstoryflag, defeat tentalus
+  - name: Fi text infront of Boss Door
+    type: objdelete
+    id: 0xFC43
+    layer: 4
+    room: 9
+    objtype: OBJ
+  - name: Fi text at generator
+    type: objdelete
+    id: 0xFC0F
+    layer: 1
+    room: 7
+    objtype: OBJ
+  - name: Fi text at generator
+    type: objdelete
+    id: 0xFC12
+    layer: 1
+    room: 5
+    objtype: OBJ
+  - name: Fi text after Scervo
+    type: objdelete
+    id: 0xFC07
+    layer: 2
+    room: 15
+    objtype: OBJ
+  - name: Fi text after bow chest
+    type: objdelete
+    id: 0xFC08
+    layer: 2
+    room: 15
+    objtype: OBJ
+  - name: Fi text for revealing timeshift stone
+    type: objdelete
+    id: 0xFC4C
+    layer: 1
+    room: 0
+    objtype: OBJ
+
+D301_1: # Sandship B
+  - name: Fi text before tentalus
+    type: objdelete
+    id: 0xFC1D
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Fi text before tentalus
+    type: objdelete
+    id: 0xFC1E
+    layer: 0
+    room: 0
+    objtype: OBJ
+
+B301: # after Sandship boss
+  - name: Sandship CS remove item
+    type: objpatch
+    room: 0
+    index: 1
+    objtype: EVNT
+    object:
+      story_flag1: -1
+      story_flag2: 933 # set defeat tentalus storyflag
+      item: -1
+  - name: Remove Nayru's Flame Cutscene
+    type: objpatch
+    room: 0
+    index: 3
+    objtype: SCEN
+    object:
+      name: F301
+      layer: 0
+      entrance: 3
+      saveprompt: 1
+  - name: Fi text before FS CS
+    type: objadd
+    room: 0
+    layer: 0
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # subtype for not talking to Fi, but setting the untriggerflag
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 40108 # entrypoint 401_08
+      id: 0xFC00
+      name: NpcTke
+      trigscenefid: 84
+      untrigscenefid: 87
+  - name: Fi text to force leave boss room
+    type: objadd
+    room: 0
+    layer: 1
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF0B # subtype 0xB for Fi and no storyflag set
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 40118 # entrypoint 401_18
+      id: 0xFC00
+      name: NpcTke
+      trigscenefid: 85
+      untrigscenefid: 0xFF
+      untrigstoryfid: 907 # untriggered by 907, storyflag for having goddess sword
+  - name: Loadzone to outside
+    type: objpatch
+    room: 0
+    layer: 1
+    id: 0xFC12
+    objtype: STAG
+    object:
+      params1: 0xC303FF03 # change to zone temp flag 3
+      anglez: 0xFFFF # don't set any storyflag here
+
+B400: # Demise's Sanctuary :)
+  - name: Make Demise's death Cutscene unskippable
+    type: objpatch
+    index: 1
+    room: 0
+    objtype: EVNT
+    object:
+      skipflag: 255
+
+S100: # Faron Silent Realm
+  - name: Fi text near waking water
+    type: objdelete
+    id: 0xFCDB
+    layer: 2
+    room: 0
+    objtype: OBJ
+
+S200:
+  - name: Unforce layer
+    type: objpatch
+    room: 2
+    index: 1
+    objtype: SCEN
+    object:
+      layer: 0
