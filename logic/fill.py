@@ -110,7 +110,7 @@ def assumed_fill(worlds: list[World], items_to_place_list: list[Item], items_not
 def fast_fill(items_to_place: list[Item], allowed_locations: list[Location]):
     empty_locations = [location for location in allowed_locations if location.is_empty()]
     if len(items_to_place) > len(empty_locations):
-        raise FillError(f"More items than available locations when trying to fast fill items")
+        print('WARNING: more items than locations when placing items with fast fill')
     random.shuffle(empty_locations)
     random.shuffle(items_to_place)
     for location in empty_locations:
