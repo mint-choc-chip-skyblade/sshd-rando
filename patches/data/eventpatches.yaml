@@ -69,6 +69,47 @@
     type: textpatch
     index: 243
     text: "The <y<Song of the Hero>> is now complete!"
+
+106-DrugStore:
+  - name: Potion Lady Text Patch # generalized for rando
+    type: textpatch
+    index: 5
+    text: "Just so you know, I can't sell you a \npotion if you don't have an Empty \nBottle to pour it into!\n\n\x0E\x01\x09\x04\x09\x90For some reason, I like you, though, so\nI'll give you a spare item I've\nbeen keeping here in the stall!\nOh, it's nothing. It's my little gift."
+  - name: Potion Lady Bottle # skip pouch requirements
+    type: flowpatch
+    index: 42
+    flow:
+      next: 44 # give item
+  - name: Requirement for Stamina Potion
+    type: flowpatch
+    index: 103
+    flow:
+      param2: 8 # raised LMF
+  - name: Remove pouch bipping from Potion Lady
+    type: flowpatch
+    index: 115
+    flow:
+      next: 111
+
+108-ShinkanA:
+  - name: Owlans Shield
+    type: flowpatch
+    index: 168
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 0 # item
+      next: 172 # end of owlans text
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: Remove bipping after Owlan's Gift
+    type: flowpatch
+    index: 165
+    flow:
+      next: -1
+
 114-Friend:
   - name: Skip Fledge camera panning 1
     type: flowpatch
@@ -233,16 +274,16 @@
     type: setitemflag
     flow:
       itemid: 16
-      next: Give clawshots
-  - name: Give clawshots
-    type: setitemflag
-    flow:
-      itemid: 20
-      next: Give bellows
-  - name: Give bellows
-    type: setitemflag
-    flow:
-      itemid: 49
+  #     next: Give clawshots
+  # - name: Give clawshots
+  #   type: setitemflag
+  #   flow:
+  #     itemid: 20
+  #     next: Give bellows
+  # - name: Give bellows
+  #   type: setitemflag
+  #   flow:
+  #     itemid: 49
       next: Give slingshot
   - name: Give slingshot
     type: setitemflag

@@ -17,6 +17,6 @@ class AllPatchHandler:
 
         self.stagePatchHandler.create_oarc_cache()
         self.stagePatchHandler.set_oarc_add_remove_from_patches()
-        determine_check_patches(self.stagePatchHandler)
+        determine_check_patches(self.stagePatchHandler, self.eventPatchHandler)
         self.stagePatchHandler.handle_stage_patches()
         self.eventPatchHandler.handle_event_patches()

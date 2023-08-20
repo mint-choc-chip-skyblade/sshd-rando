@@ -8,6 +8,7 @@ from patches.patchconstants import (
 )
 from itemconstants import *
 from pathlib import Path
+from collections import defaultdict
 
 from sslib.msb import parseMSB, buildMSB, add_msbf_branch, process_control_sequences
 from sslib.u8file import U8File
@@ -18,6 +19,7 @@ from sslib.yaml import yaml_load
 class EventPatchHandler:
     def __init__(self):
         self.eventPatches = yaml_load(EVENT_PATCHES_PATH)
+        self.checkPatches = defaultdict(list)
         self.flowLabelToIndexMapping = {}
         self.textLabels = {}
 
@@ -54,6 +56,7 @@ class EventPatchHandler:
                 msbfFileName = eventFilePath.split("/")[-1]
                 if (
                     msbfFileName[:-5] in self.eventPatches
+                    or msbfFileName[:-5] in self.checkPatches
                     or msbfFileName == "003-ItemGet.msbf"
                 ):
                     print(msbfFileName)
@@ -75,6 +78,23 @@ class EventPatchHandler:
                                 self.flow_patch(msbf=parsedMSBF, flowPatch=patch)
                             elif patch["type"] == "entryadd":
                                 self.entry_add(msbf=parsedMSBF, entryAdd=patch)
+
+                    if msbfFileName[:-5] in self.checkPatches:
+                        for eventID, itemID in self.checkPatches[msbfFileName[:-5]]:
+                            try:
+                                eventID = int(eventID)
+                            except ValueError:
+                                index = self.flowLabelToIndexMapping.get(eventID, None)
+                                if index is None:
+                                    print(
+                                        f"ERROR: Flow label {eventID} not found when patching event check- File: {msbfFileName} EventID: {eventID} ItemID: {itemID}"
+                                    )
+                                    continue
+                                eventID = index
+                            parsedMSBF["FLW3"]["flow"][eventID]["param2"] = itemID
+                            parsedMSBF["FLW3"]["flow"][eventID][
+                                "param3"
+                            ] = 9  # give item command
 
                     if msbfFileName == "003-ItemGet.msbf":
                         handle_progressive_items(parsedMSBF)
@@ -220,6 +240,9 @@ class EventPatchHandler:
         msbt["TXT2"][textPatch["index"]] = process_control_sequences(
             textPatch["text"]
         ).encode("utf-16be")
+
+    def add_check_patch(self, eventFile, eventID, itemID):
+        self.checkPatches[eventFile].append((eventID, itemID))
 
 
 def make_progressive_item_events(
