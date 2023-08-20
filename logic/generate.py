@@ -1,10 +1,10 @@
 
-from world import World
-from config import *
-from settings import *
-from fill import fill_worlds
-from search import generate_playthrough
-from spoiler_log import generate_spoiler_log
+from logic.world import World
+from logic.config import *
+from logic.settings import *
+from logic.fill import fill_worlds
+from logic.search import generate_playthrough
+from logic.spoiler_log import generate_spoiler_log
 
 import time
 import random
@@ -14,7 +14,7 @@ import logging
 
 
 
-def generate():
+def generate() -> list[World]:
 
     # Set specified log level
     opts, args = getopt.getopt(sys.argv[1:],"ll:", ["loglevel="])
@@ -24,24 +24,19 @@ def generate():
              print("Starting Debug Log")
              logging.basicConfig(filename='debug.log', encoding='utf-8', level=logging.DEBUG)
 
-    start = time.process_time()
-
     get_all_settings_info()
 
     # If the config file doesn't exist, create default
     if not os.path.isfile("config.yaml"):
         create_default_config("config.yaml")
-
     config = load_config_from_file("config.yaml")
 
-    generate_randomizer(config)
-
-    end = time.process_time()
-    print(f"Total Generation Time: {end - start} seconds")
+    return generate_randomizer(config)
 
 
-def generate_randomizer(config: Config):
 
+def generate_randomizer(config: Config) -> list[World]:
+    start = time.process_time()
     if config.seed == "":
         config.seed = str(random())
         # Write config back to file
@@ -91,6 +86,4 @@ def generate_randomizer(config: Config):
     generate_playthrough(worlds)
     # TODO: Perform Post-Fill Tasks
     generate_spoiler_log(worlds)
-
-
-generate()
+    return worlds

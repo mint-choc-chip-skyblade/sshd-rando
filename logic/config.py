@@ -1,7 +1,7 @@
 import yaml
 import random
 
-from settings import *
+from logic.settings import *
 
 required_config_fields = ["input_dir", "seed", "output_dir", "plandomizer", "plandomizer_file"]
 

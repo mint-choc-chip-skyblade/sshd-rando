@@ -1,7 +1,7 @@
 
-from location import *
-from entrance import *
-from requirements import TOD
+from logic.location import *
+from logic.entrance import *
+from logic.requirements import TOD
 
 # Helper class to link locations with their requirements
 # in a specific area. We don't want to tie requirements

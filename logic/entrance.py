@@ -1,4 +1,4 @@
-from requirements import *
+from logic.requirements import *
 
 class Entrance:
     def __init__(self, parent_area_ = None, connected_area_ = None, requirement_: Requirement = None, world_ = None) -> None:

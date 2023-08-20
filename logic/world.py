@@ -1,10 +1,10 @@
-from config import Config
-from settings import *
-from item import Item
-from location import Location
-from area import *
-from requirements import *
-from item_pool import *
+from logic.config import Config
+from logic.settings import *
+from logic.item import Item
+from logic.location import Location
+from logic.area import *
+from logic.requirements import *
+from logic.item_pool import *
 
 from collections import Counter
 import logging

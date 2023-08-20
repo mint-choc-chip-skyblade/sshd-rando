@@ -1,5 +1,5 @@
-from item import Item
-from requirements import Requirement
+from logic.item import Item
+from logic.requirements import Requirement
 
 import logging
 

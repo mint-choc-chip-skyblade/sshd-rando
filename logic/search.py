@@ -1,4 +1,4 @@
-from world import *
+from logic.world import *
 
 class SearchMode:
     ACCESSIBLE_LOCATIONS: int = 0

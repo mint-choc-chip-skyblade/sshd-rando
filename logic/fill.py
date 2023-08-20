@@ -1,5 +1,5 @@
-from world import *
-from search import *
+from logic.world import *
+from logic.search import *
 
 import random
 import logging
