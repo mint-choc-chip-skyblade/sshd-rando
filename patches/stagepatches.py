@@ -32,11 +32,25 @@ def patch_tbox(bzs, itemID, id):
         filter(lambda x: x["name"] == "TBox" and (x["anglez"] >> 9) == id, bzs["OBJS"])
     )
     if len(tboxs) == 0:
-        print(tboxs)
+        print(f"ERROR: No tbox id {id} found to patch")
+        return
     obj = tboxs[0]
 
     obj["anglez"] = mask_shift_set(obj["anglez"], 0x1FF, 0, itemID)
     # obj["params1"] = mask_shift_set(obj["params1"], 0x3, 4, 0x01)
+
+def patch_freestanding_item(bzs, itemID, id):
+    id = int(id)
+    freestandingItems = list(
+        filter(lambda x: x["name"] == "Item" and ((x["params1"] >> 10) & 0xFF) == id, bzs["OBJ "])
+    )
+    if len(freestandingItems) == 0:
+        print(F"ERROR: No freestanding item id {id} found to patch")
+        return
+    obj = freestandingItems[0]
+
+    obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 0, itemID)
+    obj["params1"] = mask_shift_set(obj["params1"], 0xF, 0x14, 9) # makes subtype 9 so it acts like a heart piece and force textbox on collection
 
 
 def patch_additional_properties(object, property, value):
@@ -389,6 +403,12 @@ class StagePatchHandler:
                                 ) in checkPatchesForCurrentRoom:
                                     if objectName == "TBox":
                                         patch_tbox(
+                                            roomBZS["LAY "][f"l{layer}"],
+                                            itemID,
+                                            objectID,
+                                        )
+                                    elif objectName == "Item":
+                                        patch_freestanding_item(
                                             roomBZS["LAY "][f"l{layer}"],
                                             itemID,
                                             objectID,

@@ -274,16 +274,16 @@
     type: setitemflag
     flow:
       itemid: 16
-  #     next: Give clawshots
-  # - name: Give clawshots
-  #   type: setitemflag
-  #   flow:
-  #     itemid: 20
-  #     next: Give bellows
-  # - name: Give bellows
-  #   type: setitemflag
-  #   flow:
-  #     itemid: 49
+      next: Give clawshots
+  - name: Give clawshots
+    type: setitemflag
+    flow:
+      itemid: 20
+      next: Give bellows
+  - name: Give bellows
+    type: setitemflag
+    flow:
+      itemid: 49
       next: Give slingshot
   - name: Give slingshot
     type: setitemflag
