@@ -1,0 +1,377 @@
+Playthrough:
+    Sphere 1:
+        Inside the Statue of the Goddess - First Goddess Sword Item:      Gratitude Crystal
+        Central Skyloft - Parrow's Gift:                                  Gratitude Crystal
+        Knight Academy - Crystal in Link's Room:                          Progressive Sword
+        Central Skyloft - Crystal on West Cliff:                          Gratitude Crystal Pack
+        Central Skyloft - Crystal between Wooden Planks:                  Key Piece
+        Central Skyloft - Crystal on Light Tower:                         Amber Tablet
+        Lumpy Pumpkin - Inside Crystal:                                   Sea Chart
+        Lumpy Pumpkin - Chandelier:                                       Clawshots
+    Sphere 2:
+        Knight Academy - In Zelda's Closet:                               Ballad of the Goddess
+        Central Skyloft - Waterfall Cave Crawlspace Rupee:                Scrapper
+        Batreaux - 5 Crystals:                                            Progressive Wallet
+        Beedle's Shop - 50 Rupee Item:                                    Gratitude Crystal Pack
+        Lanayru Mine - Chest behind First Landing:                        Key Piece
+        Lanayru Desert - Chest near Hook Beetle Fight:                    Progressive Sword
+        Lanayru Caves - Golo's Gift:                                      Key Piece
+    Sphere 3:
+        Fun Fun Island - Dodoh's Crystals:                                Whip
+        Triple Island - Lower Goddess Chest:                              Progressive Mitts
+    Sphere 4:
+        Fun Fun Island - Minigame -- 500 Rupees:                          Gratitude Crystal Pack
+        Thunderhead East Island - Chest:                                  Progressive Bow
+    Sphere 5:
+        Upper Skyloft - Pumpkin Archery -- 600 Points:                    Progressive Beetle
+    Sphere 6:
+        Lanayru Gorge - Item on Pillar:                                   Ruby Tablet
+    Sphere 7:
+        Bamboo Island - Goddess Chest:                                    Progressive Sword
+        Triple Island - Upper Goddess Chest:                              Goddess Harp
+        Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent:   Key Piece
+        Eldin Volcano - Left Rupee behind Bombable Wall on First Slope:   Progressive Beetle
+        Eldin Volcano - Right Rupee behind Bombable Wall on First Slope:  Gratitude Crystal
+        Mogma Turf - Chest behind Bombable Wall at Entrance:              Gratitude Crystal
+    Sphere 8:
+        Knight Academy - Cawlin's Letter:                                 Empty Bottle
+        Isle of Songs - Nayru's Wisdom:                                   Progressive Wallet
+        Lanayru Desert - Hook Beetle Fight:                               Extra Wallet
+    Sphere 9:
+        Beedle's Shop - 1200 Rupee Item:                                  Gratitude Crystal Pack
+    Sphere 10:
+        Lumpy Pumpkin - Kina's Crystals:                                  Progressive Mitts
+    Sphere 11:
+        Bokoblin Base - Chest near Drawbridge:                            Gratitude Crystal
+        Bokoblin Base - Chest West of Earth Temple Entrance:              Gratitude Crystal Pack
+    Sphere 12:
+        Batreaux - 30 Crystals:                                           Nayru's Wisdom
+    Sphere 13:
+        Lanayru Silent Realm - Reward:                                    Lanayru Caves Small Key
+    Sphere 14:
+        Skipper's Retreat - Chest on top of Cacti Pillar:                 Key Piece
+    Sphere 15:
+        Earth Temple - Boss Key Chest:                                    Emerald Tablet
+    Sphere 16:
+        Sealed Temple - Chest:                                            Progressive Sword
+        Sealed Temple - Song from Impa:                                   Fire Sanctuary Small Key
+    Sphere 17:
+        Sandship - Robot in Brig's Reward:                                Fireshield Earrings
+    Sphere 18:
+        Fire Sanctuary - Chest on Balcony:                                Progressive Sword
+    Sphere 19:
+        Hylia's Realm - Defeat Demise:                                    Game Beatable
+
+All Locations:
+    World 1:
+        Knight Academy - Fledge's Gift:                                   Gold Rupee
+        Upper Skyloft - Owlan's Gift:                                     Cursed Medal
+        Sparring Hall - Chest:                                            Red Rupee
+        Upper Skyloft - Chest near Goddess Statue:                        Silver Rupee
+        Inside the Statue of the Goddess - First Goddess Sword Item:      Gratitude Crystal
+        Inside the Statue of the Goddess - Second Goddess Sword Item:     Group of Tadtones
+        Knight Academy - In Zelda's Closet:                               Ballad of the Goddess
+        Knight Academy - Owlan's Crystals:                                Empty Bottle
+        Knight Academy - Fledge's Crystals:                               Semi Rare Treasure
+        Knight Academy - Cawlin's Letter:                                 Empty Bottle
+        Knight Academy - Ghost/Pipit's Crystals:                          Red Rupee
+        Upper Skyloft - Pumpkin Archery -- 600 Points:                    Progressive Beetle
+        Bazaar - Potion Lady's Gift:                                      Silver Rupee
+        Bazaar - Upgrade to Quick Beetle:                                 Rare Treasure
+        Bazaar - Upgrade to Tough Beetle:                                 Semi Rare Treasure
+        Central Skyloft - Repair Gondo's Junk:                            Blue Rupee
+        Central Skyloft - Wryna's Crystals:                               Bug Medal
+        Central Skyloft - Waterfall Cave First Chest:                     Red Rupee
+        Central Skyloft - Waterfall Cave Second Chest:                    Progressive Pouch
+        Central Skyloft - Waterfall Cave Crawlspace Rupee:                Scrapper
+        Central Skyloft - Parrow's Gift:                                  Gratitude Crystal
+        Central Skyloft - Parrow's Crystals:                              Blue Rupee
+        Central Skyloft - Peater/Peatrice's Crystals:                     Ancient Cistern Small Key
+        Central Skyloft - Item in Bird Nest:                              Silver Rupee
+        Central Skyloft - Shed Chest:                                     Red Rupee
+        Central Skyloft - West Cliff Goddess Chest:                       Blue Rupee
+        Bazaar - Goddess Chest:                                           Progressive Beetle
+        Central Skyloft - Shed Goddess Chest:                             Gold Rupee
+        Central Skyloft - Floating Island Goddess Chest:                  Group of Tadtones
+        Central Skyloft - Waterfall Goddess Chest:                        Silver Rupee
+        Skyloft Village - Mallara's Crystals:                             Group of Tadtones
+        Skyloft Village - Bertie's Crystals:                              Evil Crystal
+        Skyloft Village - Sparrot's Crystals:                             Progressive Pouch
+        Batreaux - 5 Crystals:                                            Progressive Wallet
+        Batreaux - 10 Crystals:                                           Green Rupee
+        Batreaux - 30 Crystals:                                           Nayru's Wisdom
+        Batreaux - 30 Crystals Chest:                                     Group of Tadtones
+        Batreaux - 40 Crystals:                                           Group of Tadtones
+        Batreaux - 50 Crystals:                                           Gold Rupee
+        Batreaux - 70 Crystals:                                           Silver Rupee
+        Batreaux - 70 Crystals Second Reward:                             Heart Piece
+        Batreaux - 80 Crystals:                                           Progressive Slingshot
+        Beedle's Shop - 300 Rupee Item:                                   Red Rupee
+        Beedle's Shop - 600 Rupee Item:                                   Red Rupee
+        Beedle's Shop - 1200 Rupee Item:                                  Gratitude Crystal Pack
+        Beedle's Shop - 800 Rupee Item:                                   Semi Rare Treasure
+        Beedle's Shop - 1600 Rupee Item:                                  Red Rupee
+        Beedle's Shop - First 100 Rupee Item:                             Tumbleweed
+        Beedle's Shop - Second 100 Rupee Item:                            Silver Rupee
+        Beedle's Shop - Third 100 Rupee Item:                             Dusk Relic
+        Beedle's Shop - 50 Rupee Item:                                    Gratitude Crystal Pack
+        Beedle's Shop - 1000 Rupee Item:                                  Heart Piece
+        Knight Academy - Crystal in Link's Room:                          Progressive Sword
+        Knight Academy - Crystal in Knight Academy Plant:                 Gold Rupee
+        Knight Academy - Crystal in Zelda's Room:                         Rare Treasure
+        Sparring Hall - Crystal:                                          Eldin Ore
+        Central Skyloft - Crystal in Orielle and Parrow's House:          Heart Container
+        Central Skyloft - Crystal on West Cliff:                          Gratitude Crystal Pack
+        Central Skyloft - Crystal between Wooden Planks:                  Key Piece
+        Central Skyloft - Crystal after Waterfall Cave:                   Group of Tadtones
+        Central Skyloft - Crystal in Loftwing Prison:                     Group of Tadtones
+        Central Skyloft - Crystal on Waterfall Island:                    Extra Wallet
+        Central Skyloft - Crystal on Light Tower:                         Amber Tablet
+        Skyloft Village - Crystal near Pumpkin Patch:                     Skyview Small Key
+        Lumpy Pumpkin - Outside Crystal:                                  Life Tree Fruit
+        Lumpy Pumpkin - Inside Crystal:                                   Sea Chart
+        Beedle's Island - Crystal:                                        Blue Rupee
+        Lumpy Pumpkin - Chandelier:                                       Clawshots
+        Lumpy Pumpkin - Harp Minigame:                                    Progressive Bug Net
+        Lumpy Pumpkin - Kina's Crystals:                                  Progressive Mitts
+        Orielle's Island - Orielle's Crystals:                            Horned Colossus Beetle
+        Beedle's Island - Beedle's Crystals:                              Life Medal
+        Fun Fun Island - Dodoh's Crystals:                                Whip
+        Fun Fun Island - Minigame -- 500 Rupees:                          Gratitude Crystal Pack
+        The Sky - Chest in Breakable Boulder near Fun Fun Island:         Blue Rupee
+        The Sky - Chest in Breakable Boulder near Lumpy Pumpkin:          Heart Piece
+        Bamboo Island - Goddess Chest:                                    Progressive Sword
+        Island near Bamboo Island - Goddess Chest:                        Small Seed Satchel
+        Island near Bamboo Island - Goddess Chest in Cave:                Gust Bellows
+        Beedle's Island - Top Goddess Chest:                              Red Rupee
+        Beedle's Island - Cage Goddess Chest:                             Rare Treasure
+        Northeast Island - Goddess Chest behind Bombable Rocks:           Semi Rare Treasure
+        Northeast Island - Cage Goddess Chest:                            Rare Treasure
+        Lumpy Pumpkin - Goddess Chest on Roof:                            Empty Bottle
+        Lumpy Pumpkin - Outside Goddess Chest:                            Fire Sanctuary Boss Key
+        Island Closest to Faron Pillar - Goddess Chest:                   Lanayru Mining Facility Small Key
+        Volcanic Island - Outside Goddess Chest:                          Heart Piece
+        Volcanic Island - Inside Goddess Chest:                           Heart Medal
+        Fun Fun Island - Goddess Chest:                                   Gratitude Crystal Pack
+        Triple Island - Upper Goddess Chest:                              Goddess Harp
+        Triple Island - Lower Goddess Chest:                              Progressive Mitts
+        Triple Island - Cage Goddess Chest:                               Gratitude Crystal
+        Isle of Songs - Farore's Courage:                                 Red Rupee
+        Isle of Songs - Nayru's Wisdom:                                   Progressive Wallet
+        Isle of Songs - Din's Power:                                      Rare Treasure
+        The Thunderhead - Song from Levias:                               Silver Rupee
+        Bug Heaven - Minigame -- 10 Bugs in 3 Minutes:                    Ancient Cistern Small Key
+        Thunderhead East Island - Chest:                                  Progressive Bow
+        Thunderhead East Island - Goddess Chest:                          Red Rupee
+        Isle of Songs - Top Goddess Chest:                                Heart Piece
+        Isle of Songs - Lower Goddess Chest:                              Red Rupee
+        Mogma Mitts Island - First Goddess Chest:                         Gratitude Crystal Pack
+        Mogma Mitts Island - Second Goddess Chest:                        Cawlin's Letter
+        Bug Heaven - Goddess Chest:                                       Silver Rupee
+        Sealed Temple - Chest:                                            Progressive Sword
+        Sealed Temple - Song from Impa:                                   Fire Sanctuary Small Key
+        Sealed Grounds - Gorko's Goddess Wall Reward:                     Sandship Boss Key
+        Hylia's Temple - Zelda's Blessing:                                Heart Piece
+        Hylia's Realm - Defeat Demise:                                    Game Beatable
+        Faron Woods - Item behind Bombable Rock:                          Silver Rupee
+        Faron Woods - Item on Tree:                                       Heart Piece
+        Faron Woods - Kikwi Elder's Reward:                               Blue Rupee
+        Faron Woods - Rupee on Hollow Tree Root:                          Sandship Small Key
+        Faron Woods - Rupee on Hollow Tree Branch:                        Heart Piece
+        Faron Woods - Rupee on Platform near Floria Door:                 Silver Rupee
+        Deep Woods - Chest:                                               Evil Crystal
+        Faron Woods - Chest behind Bombable Rocks near Erla:              Gold Rupee
+        Great Tree - Chest:                                               Heart Medal
+        Faron Woods - Rupee on Great Tree North Branch:                   Gold Rupee
+        Faron Woods - Rupee on Great Tree West Branch:                    Rare Treasure
+        Lake Floria - Rupee under Central Boulder:                        Heart Piece
+        Lake Floria - Rupee behind Southwest Boulder:                     Blue Rupee
+        Lake Floria - Left Rupee behind Northwest Boulder:                Red Rupee
+        Lake Floria - Right Rupee behind Northwest Boulder:               Red Rupee
+        Lake Floria - Chest:                                              Group of Tadtones
+        Lake Floria - Dragon Lair South Chest:                            Silver Rupee
+        Lake Floria - Dragon Lair East Chest:                             Earth Temple Map
+        Floria Waterfall - Rupee on High Ledge:                           Red Rupee
+        Flooded Faron Woods - Yellow Tadtone under Lilypad:               Stone of Trials
+        Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform: Small Bomb Bag
+        Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform:   Treasure Medal
+        Flooded Faron Woods - Red Moving Tadtone near Viewing Platform:   Gratitude Crystal
+        Flooded Faron Woods - Light Blue Tadtone under Great Tree Root:   Small Quiver
+        Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder:         Progressive Sword
+        Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder: Blue Rupee
+        Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree: Rupoor
+        Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock:   Triforce of Power
+        Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree: Progressive Pouch
+        Flooded Faron Woods - 8 Green Tadtones in West Tunnel:            Gratitude Crystal Pack
+        Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock: Heart Piece
+        Flooded Faron Woods - 16 Dark Blue Tadtones in the South West:    Semi Rare Treasure
+        Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate:  Gratitude Crystal
+        Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree: Heart Piece
+        Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree:  Bomb Bag
+        Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree: Sky Keep Map
+        Flooded Faron Woods - Water Dragon's Reward:                      Empty Bottle
+        Eldin Volcano - Rupee on Ledge before First Room:                 Fire Sanctuary Small Key
+        Eldin Volcano - Chest behind Bombable Wall in First Room:         Semi Rare Treasure
+        Eldin Volcano - Rupee behind Bombable Wall in First Room:         Fire Sanctuary Small Key
+        Eldin Volcano - Rupee in Crawlspace in First Room:                Group of Tadtones
+        Eldin Volcano - Chest after Crawlspace:                           Group of Tadtones
+        Eldin Volcano - Southeast Rupee above Mogma Turf Entrance:        5 Bombs
+        Eldin Volcano - North Rupee above Mogma Turf Entrance:            Red Rupee
+        Eldin Volcano - Chest behind Bombable Wall near Cliff:            Farore's Courage
+        Eldin Volcano - Item on Cliff:                                    Triforce of Wisdom
+        Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent:   Key Piece
+        Eldin Volcano - Left Rupee behind Bombable Wall on First Slope:   Progressive Beetle
+        Eldin Volcano - Right Rupee behind Bombable Wall on First Slope:  Gratitude Crystal
+        Eldin Volcano - Digging Spot in front of Earth Temple:            Heart Piece
+        Eldin Volcano - Digging Spot below Tower:                         Heart Piece
+        Eldin Volcano - Digging Spot behind Boulder on Sandy Slope:       Semi Rare Treasure
+        Eldin Volcano - Digging Spot after Vents:                         Gold Rupee
+        Eldin Volcano - Digging Spot after Draining Lava:                 Red Rupee
+        Mogma Turf - Free Fall Chest:                                     Heart Piece
+        Mogma Turf - Chest behind Bombable Wall at Entrance:              Gratitude Crystal
+        Mogma Turf - Digging Mitts Fight:                                 Heart Piece
+        Mogma Turf - Sand Slide Chest:                                    Group of Tadtones
+        Mogma Turf - Chest behind Bombable Wall in Fire Maze:             Gold Rupee
+        Volcano Summit - Chest behind Bombable Wall in Waterfall Area:    Red Rupee
+        Volcano Summit - Item behind Digging:                             Red Rupee
+        Bokoblin Base - Plats' Gift:                                      Progressive Pouch
+        Bokoblin Base - Chest near Bone Bridge:                           Sandship Small Key
+        Bokoblin Base - Chest on Cliff:                                   Silver Rupee
+        Bokoblin Base - Chest near Drawbridge:                            Gratitude Crystal
+        Bokoblin Base - Chest East of Earth Temple Entrance:              Heart Container
+        Bokoblin Base - Chest West of Earth Temple Entrance:              Gratitude Crystal Pack
+        Bokoblin Base - First Chest in Volcano Summit:                    Heart Container
+        Bokoblin Base - Raised Chest in Volcano Summit:                   Red Rupee
+        Bokoblin Base - Chest in Volcano Summit Alcove:                   Red Rupee
+        Bokoblin Base - Fire Dragon's Reward:                             Lanayru Mining Facility Map
+        Lanayru Mine - Chest behind First Landing:                        Key Piece
+        Lanayru Mine - Chest near First Timeshift Stone:                  Earth Temple Boss Key
+        Lanayru Mine - Chest behind Statue:                               Heart Piece
+        Lanayru Mine - Chest at the End of Mine:                          Rare Treasure
+        Lanayru Desert - Chest near Party Wheel:                          Spiral Charge
+        Lanayru Desert - Chest near Hook Beetle Fight:                    Progressive Sword
+        Lanayru Desert - Hook Beetle Fight:                               Extra Wallet
+        Lanayru Desert - Chest on Platform near Fire Node:                Heart Piece
+        Lanayru Desert - Chest on Platform near Lightning Node:           Semi Rare Treasure
+        Lanayru Desert - Chest near Sand Oasis:                           Gold Rupee
+        Lanayru Desert - Chest on top of Lanayru Mining Facility:         Skyview Boss Key
+        Lanayru Desert - Secret Passageway Chest:                         Group of Tadtones
+        Fire Node - Shortcut Chest:                                       Heart Piece
+        Fire Node - First Small Chest:                                    Red Rupee
+        Fire Node - Second Small Chest:                                   Progressive Wallet
+        Fire Node - Left Ending Chest:                                    Red Rupee
+        Fire Node - Right Ending Chest:                                   Gratitude Crystal Pack
+        Lightning Node - First Chest:                                     Red Rupee
+        Lightning Node - Second Chest:                                    Goddess Plume
+        Lightning Node - Raised Chest near Generator:                     Heart Container
+        Lanayru Caves - Chest:                                            Lanayru Song of the Hero Part
+        Lanayru Caves - Golo's Gift:                                      Key Piece
+        Lanayru Gorge - Thunder Dragon's Reward:                          Faron Song of the Hero Part
+        Lanayru Gorge - Item on Pillar:                                   Ruby Tablet
+        Lanayru Gorge - Life Tree Seedling:                               Red Rupee
+        Ancient Harbour - Rupee on First Pillar:                          Red Rupee
+        Ancient Harbour - Left Rupee on Entrance Crown:                   Red Rupee
+        Ancient Harbour - Right Rupee on Entrance Crown:                  Red Rupee
+        Skipper's Retreat - Chest after Moblin:                           Group of Tadtones
+        Skipper's Retreat - Chest on top of Cacti Pillar:                 Key Piece
+        Skipper's Retreat - Chest in Shack:                               Sandship Map
+        Skipper's Retreat - Skydive Chest:                                Silver Rupee
+        Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05:       Progressive Pouch
+        Pirate Stronghold - Rupee on East Sea Pillar:                     Green Rupee
+        Pirate Stronghold - Rupee on West Sea Pillar:                     Gratitude Crystal
+        Pirate Stronghold - Rupee on Bird Statue Pillar or Nose:          Lanayru Mining Facility Boss Key
+        Pirate Stronghold Interior - First Chest:                         Silver Rupee
+        Pirate Stronghold Interior - Second Chest:                        Group of Tadtones
+        Pirate Stronghold Interior - Third Chest:                         Red Rupee
+        Skyview Temple - Chest on Tree Branch:                            Heart Container
+        Skyview Temple - Digging Spot in Crawlspace:                      Red Rupee
+        Skyview Temple - Chest behind Two Eyes:                           Rupee Medal
+        Skyview Temple - Beetle Chest:                                    Progressive Bow
+        Skyview Temple - Item behind Bars:                                Triforce of Courage
+        Skyview Temple - Rupee in Southeast Tunnel:                       Progressive Bug Net
+        Skyview Temple - Rupee in Southwest Tunnel:                       Extra Wallet
+        Skyview Temple - Rupee in East Tunnel:                            Silver Rupee
+        Skyview Temple - Chest behind Three Eyes:                         Silver Rupee
+        Skyview Temple - Chest near Boss Door:                            Ancient Cistern Map
+        Skyview Temple - Boss Key Chest:                                  Progressive Wallet
+        Skyview Temple - Heart Container:                                 Gratitude Crystal
+        Skyview Spring - Rupee on Spring Pillar:                          Heart Piece
+        Skyview Spring - Ruby Tablet:                                     Red Rupee
+        Earth Temple - Vent Chest:                                        Hylian Shield
+        Earth Temple - Rupee above Drawbridge:                            Wooden Shield
+        Earth Temple - Chest behind Bombable Rock:                        Gratitude Crystal Pack
+        Earth Temple - Chest Left of Main Room Bridge:                    Gratitude Crystal Pack
+        Earth Temple - Chest in West Room:                                Silver Rupee
+        Earth Temple - Bomb Bag Chest:                                    Red Rupee
+        Earth Temple - Ledd's Gift:                                       Eldin Ore
+        Earth Temple - Rupee in Lava Tunnel:                              Red Rupee
+        Earth Temple - Chest Guarded by Lizalfos:                         Skyview Small Key
+        Earth Temple - Boss Key Chest:                                    Emerald Tablet
+        Earth Temple - Heart Container:                                   Golden Skull
+        Earth Spring - Amber Tablet:                                      Silver Rupee
+        Lanayru Mining Facility - Chest behind Bars:                      Rupee Medal
+        Lanayru Mining Facility - First Chest in Hub Room:                Heart Container
+        Lanayru Mining Facility - Chest in First West Room:               Life Medal
+        Lanayru Mining Facility - Chest after Armos Fight:                Potion Medal
+        Lanayru Mining Facility - Chest in Key Locked Room:               Semi Rare Treasure
+        Lanayru Mining Facility - Gust Bellows Chest:                     Gratitude Crystal Pack
+        Lanayru Mining Facility - Chest inside Gust Bellows Room:         Ancient Cistern Boss Key
+        Lanayru Mining Facility - Chest behind First Crawlspace:          Progressive Beetle
+        Lanayru Mining Facility - Chest in Spike Maze:                    Babys Rattle
+        Lanayru Mining Facility - Boss Key Chest:                         Semi Rare Treasure
+        Lanayru Mining Facility - Shortcut Chest in Main Hub:             Rupoor
+        Lanayru Mining Facility - Heart Container:                        Group of Tadtones
+        Lanayru Mining Facility - Goddess Harp:                           Heart Piece
+        Ancient Cistern - Rupee in West Hand:                             Red Rupee
+        Ancient Cistern - Rupee in East Hand:                             Red Rupee
+        Ancient Cistern - First Rupee in East Part in Short Tunnel:       Rare Treasure
+        Ancient Cistern - Second Rupee in East Part in Short Tunnel:      Rupoor
+        Ancient Cistern - Third Rupee in East Part in Short Tunnel:       Empty Bottle
+        Ancient Cistern - Rupee in East Part in Cubby:                    Red Rupee
+        Ancient Cistern - Rupee in East Part in Main Tunnel:              Group of Tadtones
+        Ancient Cistern - Chest in East Part:                             Eldin Song of the Hero Part
+        Ancient Cistern - Chest after Whip Hooks:                         Gratitude Crystal Pack
+        Ancient Cistern - Chest near Vines:                               Blue Rupee
+        Ancient Cistern - Chest behind the Waterfall:                     Red Rupee
+        Ancient Cistern - Bokoblin:                                       Rare Treasure
+        Ancient Cistern - Whip Chest:                                     Rupoor
+        Ancient Cistern - Boss Key Chest:                                 Heart Piece
+        Ancient Cistern - Heart Container:                                Silver Rupee
+        Ancient Cistern - Farore's Flame:                                 Skyview Map
+        Sandship - Chest at the Stern:                                    Green Rupee
+        Sandship - Chest before 4-Door Corridor:                          Gratitude Crystal
+        Sandship - Chest behind Combination Lock:                         Silver Rupee
+        Sandship - Treasure Room First Chest:                             Group of Tadtones
+        Sandship - Treasure Room Second Chest:                            Red Rupee
+        Sandship - Treasure Room Third Chest:                             Heart Piece
+        Sandship - Treasure Room Fourth Chest:                            Red Rupee
+        Sandship - Treasure Room Fifth Chest:                             Rare Treasure
+        Sandship - Robot in Brig's Reward:                                Fireshield Earrings
+        Sandship - Bow Chest:                                             Red Rupee
+        Sandship - Boss Key Chest:                                        Heart Piece
+        Sandship - Heart Container:                                       Gratitude Crystal
+        Sandship - Nayru's Flame:                                         Gratitude Crystal
+        Fire Sanctuary - Chest in First Room:                             Din's Power
+        Fire Sanctuary - Chest in Second Room:                            Golden Skull
+        Fire Sanctuary - Chest on Balcony:                                Progressive Sword
+        Fire Sanctuary - Chest near First Trapped Mogma:                  Blue Rupee
+        Fire Sanctuary - First Chest in Water Fruit Room:                 Gratitude Crystal
+        Fire Sanctuary - Second Chest in Water Fruit Room:                Progressive Bow
+        Fire Sanctuary - Mogma Mitts Chest:                               Fire Sanctuary Map
+        Fire Sanctuary - Chest after Second Trapped Mogma:                Progressive Slingshot
+        Fire Sanctuary - Chest after Bombable Wall:                       Silver Rupee
+        Fire Sanctuary - Plats' Chest:                                    Sky Keep Small Key
+        Fire Sanctuary - Chest in Staircase Room:                         Red Rupee
+        Fire Sanctuary - Boss Key Chest:                                  Rupoor
+        Fire Sanctuary - Heart Container:                                 Water Dragon Scale
+        Fire Sanctuary - Din's Flame:                                     Gold Rupee
+        Sky Keep - First Chest:                                           Gold Rupee
+        Sky Keep - Chest after Dreadfuse:                                 Rare Treasure
+        Sky Keep - Rupee in Fire Sanctuary Room in Alcove:                Red Rupee
+        Sky Keep - Triforce of Power:                                     Heart Piece
+        Sky Keep - Triforce of Wisdom:                                    Blue Rupee
+        Sky Keep - Triforce of Courage:                                   Gratitude Crystal
+        Skyloft Silent Realm - Reward:                                    Silver Rupee
+        Faron Silent Realm - Reward:                                      Rare Treasure
+        Lanayru Silent Realm - Reward:                                    Lanayru Caves Small Key
+        Eldin Silent Realm - Reward:                                      Red Rupee

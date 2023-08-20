@@ -1,0 +1,268 @@
+- name: The Sky
+  allowed_time_of_day: Day Only
+  hint_region: Sky
+  exits:
+    Faron Pillar: Emerald_Tablet
+    Eldin Pillar: Ruby_Tablet
+    Lanayru Pillar: Amber_Tablet
+    Bamboo Island: Nothing
+    Island near Bamboo Island: Nothing
+    Beedle's Island: Nothing
+    Northeast Island: Nothing
+    Lumpy Pumpkin Exterior: Nothing
+    Island Closest to Faron Pillar: Nothing
+    Volcanic Island: Nothing
+    Orielle's Island: Nothing
+    Fun Fun Island: Nothing
+    Triple Island: Nothing
+    The Thunderhead: Ballad_of_the_Goddess or open_thunderhead == open
+    Upper Skyloft: Nothing
+    Central Skyloft: Nothing
+    Skyloft Village: Nothing
+  locations:
+    The Sky - Chest in Breakable Boulder near Lumpy Pumpkin: Spiral_Charge
+    The Sky - Chest in Breakable Boulder near Fun Fun Island: Spiral_Charge
+
+
+- name: Faron Pillar
+  exits:
+    Sealed Grounds: Nothing
+    Sealed Grounds Statue: "'Unlock_Sealed_Grounds_Statue'"
+    Behind the Temple Statue: "'Unlock_Behind_the_Temple_Statue'"
+    Faron Woods Entry Statue: "'Unlock_Faron_Woods_Entry_Statue'"
+    Viewing Platform Statue:  "'Unlock_Viewing_Platform_Statue'"
+    In the Woods Statue: "'Unlock_In_the_Woods_Statue'"
+    Deep Woods Statue: "'Unlock_Deep_Woods_Statue'"
+    Forest Temple Statue: "'Unlock_Forest_Temple_Statue'"
+    The Great Tree Statue: "'Unlock_The_Great_Tree_Statue'"
+    Lake Floria Statue: "'Unlock_Lake_Floria_Statue'"
+    Floria Waterfall Statue: "'Unlock_Floria_Waterfall_Statue'"
+
+
+- name: Eldin Pillar
+  exits:
+    Volcano Entrance: Nothing
+    Volcano Entrance Statue: "'Unlock_Volcano_Entrance_Statue'"
+    Volcano East Statue: "'Unlock_Volcano_East_Statue'"
+    Volcano Ascent Statue: "'Unlock_Volcano_Ascent_Statue'"
+    Temple Entrance Statue: "'Unlock_Temple_Entrance_Statue'"
+    Inside the Volcano Statue: "'Unlock_Inside_the_Volcano_Statue'"
+    Inside the Fire Sanctuary Statue: "'Unlock_Inside_the_Fire_Sanctuary_Statue'"
+
+
+- name: Lanayru Pillar
+  exits:
+    Lanayru Mine Entry: Nothing
+    Lanayru Mine Entry Statue: "'Unlock_Lanayru_Mine_Entry_Statue'"
+    Desert Entrance Statue: "'Unlock_Desert_Entrance_Statue'"
+    West Desert Statue: "'Unlock_West_Desert_Statue'"
+    Desert Gorge Statue: "'Unlock_Desert_Gorge_Statue'"
+    Temple of Time Statue: "'Unlock_Temple_of_Time_Statue'"
+    North Desert Statue: "'Unlock_North_Desert_Statue'"
+    Stone Cache Statue: "'Unlock_Stone_Cache_Statue'"
+    Ancient Harbour Statue: "'Unlock_Ancient_Harbour_Statue'"
+    Skipper's Retreat Statue: "'Unlock_Skipper's_Retreat_Statue'"
+    Shipyard Statue: "'Unlock_Shipyard_Statue'"
+    Pirate Stronghold Statue: "'Unlock_Pirate_Stronghold_Statue'"
+    Lanayru Gorge Statue: "'Unlock_Lanayru_Gorge_Statue'"
+
+
+- name: Bamboo Island
+  hint_region: Sky
+  exits:
+    Bamboo Island Interior: Day
+    The Sky: Day
+  locations:
+    Bamboo Island - Goddess Chest: "'Goddess_Cube_West_of_Earth_Temple_Entrance'"
+
+
+- name: Bamboo Island Interior
+  events:
+    Can Play Clean Cut Minigame: Sword
+  exits:
+    Bamboo Island: Nothing
+  locations:
+    Bamboo Island Interior - Gossip Stone: Nothing
+
+
+- name: Island near Bamboo Island
+  exits:
+    The Sky: Day
+  locations:
+    Island near Bamboo Island - Goddess Chest: "'Goddess_Cube_near_Mogma_Turf_Entrance'"
+    Island near Bamboo Island - Goddess Chest in Cave: Water_Scale and 'Goddess_Cube_near_Mogma_Turf_Entrance'
+
+
+- name: Beedle's Island
+  hint_region: The Sky
+  exits:
+    Beedle's Ship: Night
+    The Sky: Day
+  locations:
+    Beedle's Island - Crystal: Night and Beetle
+    Beedle's Island - Beedle's Crystals: Night and Horned_Colossus_Beetle
+    Beedle's Island - Top Goddess Chest: Day and 'Goddess_Cube_at_Ride_near_Temple_of_Time'
+    Beedle's Island - Cage Goddess Chest: (Night or (Day and logic_beedles_island_cage_chest_dive)) and 'Goddess_Cube_on_top_of_Skyview'
+
+
+- name: Northeast Island
+  exits:
+    The Sky: Day
+  locations:
+    Northeast Island - Goddess Chest behind Bombable Rocks: Bomb_Bag and 'Goddess_Cube_at_Lanayru_Mine_Entrance'
+    Northeast Island - Cage Goddess Chest: "'Goddess_Cube_East_of_Earth_Temple_Entrance'"
+
+
+- name: Lumpy Pumpkin Exterior
+  hint_region: The Sky
+  events:
+    Start Kinas Quest: Day and 'Complete_Hot_Soup_Delivery'
+    Pumpkin Carrying: Day and 'Complete_Hot_Soup_Delivery'
+  exits:
+    Lumpy Pumpkin North Door: Nothing
+    Lumpy Pumpkin Southeast Door: Nothing
+    Lumpy Pumpkin Southwest Door: Nothing
+    The Sky: Day
+  locations:
+    Lumpy Pumpkin - Outside Crystal: Night
+    Lumpy Pumpkin - Outside Goddess Chest: "'Initial_Goddess_Cube'"
+    Lumpy Pumpkin - Goddess Chest on Roof: Day and 'Goddess_Cube_in_Skyview_Spring'
+    Lumpy Pumpkin - Kina's Crystals: Day and 'Pick_up_Guld'
+    Lumpy Pumpkin - Gossip Stone: Nothing
+
+
+- name: Lumpy Pumpkin North Door
+  exits:
+    Lumpy Pumpkin Exterior: Nothing
+    Lumpy Pumpkin Interior: Nothing
+
+- name: Lumpy Pumpkin Southeast Door
+  exits:
+    Lumpy Pumpkin Exterior: Nothing
+    Lumpy Pumpkin Interior: Nothing
+
+- name: Lumpy Pumpkin Southwest Door
+  exits:
+    Lumpy Pumpkin Exterior: Nothing
+    Lumpy Pumpkin Interior: Nothing
+
+
+- name: Lumpy Pumpkin Interior
+  can_sleep: true
+  events:
+    Start Hot Soup Delivery: Bottle
+    Complete Hot Soup Delivery: "'Delivered_Hot_Soup'"
+    Pick up Levias Soup: Spiral_Charge
+  exits:
+    Lumpy Pumpkin North Door: Nothing
+    Lumpy Pumpkin Southeast Door: Nothing
+    Lumpy Pumpkin Southwest Door: Nothing
+  locations:
+    Lumpy Pumpkin - Chandelier: Nothing
+    Lumpy Pumpkin - Inside Crystal: Night
+    Lumpy Pumpkin - Harp Minigame: Night and Goddess_Harp and 'Pumpkin_Carrying'
+
+
+- name: Island Closest to Faron Pillar
+  exits:
+    The Sky: Day
+  locations:
+    Island Closest to Faron Pillar - Goddess Chest: "'Goddess_Cube_in_Deep_Woods'"
+
+
+- name: Volcanic Island
+  events:
+    Mushroom Spores: Nothing
+  exits:
+    The Sky: Day
+  locations:
+    Volcanic Island - Outside Goddess Chest: "'Goddess_Cube_in_Sand_Oasis'"
+    Volcanic Island - Inside Goddess Chest: (Clawshots or logic_volcanic_island_dive) and 'Goddess_Cube_on_East_Great_Tree_with_Clawshots_Target'
+    Volcanic Island - Gossip Stone: Nothing
+
+
+- name: Orielle's Island
+  events:
+    Talk to Orielle: Nothing
+    Save Orielle: Bottle and 'Mushroom_Spores'
+  exits:
+    The Sky: Day
+  locations:
+    Orielle's Island - Orielle's Crystals: "'Save_Orielle'"
+
+
+- name: Fun Fun Island
+  events:
+    Start Dodohs Quest: Nothing
+    Can Play Fun Fun Island Minigame: "'Retrieve_Party_Wheel'"
+  exits:
+    The Sky: Day
+  locations:
+    Fun Fun Island - Dodoh's Crystals: "'Retrieve_Party_Wheel'"
+    Fun Fun Island - Minigame -- 500 Rupees: "'Can_Play_Fun_Fun_Island_Minigame'"
+    Fun Fun Island - Goddess Chest: Day and 'Goddess_Cube_in_Floria_Waterfall'
+
+
+- name: Triple Island
+  exits:
+    The Sky: Day
+  locations:
+    Triple Island - Upper Goddess Chest: "'Goddess_Cube_at_Eldin_Entrance'"
+    Triple Island - Lower Goddess Chest: "'Goddess_Cube_near_Hook_Beetle_Fight'"
+    Triple Island - Cage Goddess Chest: Clawshots and 'Goddess_Cube_in_Skippers_Retreat'
+
+# TODO: Check day/night stuff
+- name: The Thunderhead
+  allowed_time_of_day: Day Only
+  hint_region: Thunderhead
+  locations:
+    The Thunderhead - Song from Levias: Spiral_Charge and Scrapper and Sword and 'Pick_up_Levias_Soup'
+  exits:
+    Thunderhead East Island: Nothing
+    Isle of Songs: Nothing
+    Mogma Mitts Island: Nothing
+    Bug Heaven: Nothing
+    The Sky: Nothing
+
+
+- name: Isle of Songs
+  exits:
+    The Thunderhead: Day
+    Isle of Songs Interior: Sword
+  locations:
+    Isle of Songs - Top Goddess Chest: Day and 'Goddess_Cube_near_Fire_Sanctuary_Entrance'
+    Isle of Songs - Lower Goddess Chest: Day and 'Goddess_Cube_in_Mogma_Turf' 
+
+
+- name: Isle of Songs Interior
+  exits:
+    Isle of Songs: Nothing
+  locations:
+    Isle of Songs - Farore's Courage: Goddess_Sword
+    Isle of Songs - Nayru's Wisdom: Goddess_Longsword
+    Isle of Songs - Din's Power: Goddess_White_Sword
+
+
+- name: Thunderhead East Island
+  exits:
+    The Thunderhead: Day
+  locations:
+    Thunderhead East Island - Goddess Chest: "'Goddess_Cube_on_East_Great_Tree_with_Rope'"
+    Thunderhead East Island - Chest: Digging_Mitts or logic_east_island_dive
+
+
+- name: Mogma Mitts Island
+  exits:
+    The Thunderhead: Day
+  locations:
+    Mogma Mitts Island - First Goddess Chest: Mogma_Mitts and 'Goddess_Cube_inside_Volcano_Summit'
+    Mogma Mitts Island - Second Goddess Chest: Mogma_Mitts and 'Goddess_Cube_in_Lanayru_Gorge'
+
+
+- name: Bug Heaven
+  exits:
+    The Thunderhead: Day
+  locations:
+    Bug Heaven - Minigame -- 10 Bugs in 3 Minutes: Bug_Net
+    Bug Heaven - Goddess Chest: "'Goddess_Cube_in_Summit_Waterfall'"
+    Bug Heaven - Nearby Gossip Stone: Nothing

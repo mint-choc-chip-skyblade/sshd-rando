@@ -1,0 +1,505 @@
+- name: logic_rules
+  default_option: glitchless
+  pretty_name: Logic Rules
+  pretty_options:
+    - Glitchless
+    - Glitched
+    - No Logic
+    - Vanilla
+  options:
+    - glitchless:            "empty description"
+    - glitched:              "empty description"
+    - no_logic:              "Maximize randomization, Logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
+    - vanilla:               "empty description"
+
+
+- name: randomized_shops
+  default_option: vanilla
+  pretty_name: Randomized Shops
+  pretty_options:
+    - Vanilla
+    - Junk Only
+    - Randomized
+  options:
+    - vanilla:              "Shops will contain their vanilla items"
+    - junk_only:            "Shops will only contain junk items"
+    - randomized:           "Shops can contain any items"
+
+
+- name: open_thunderhead
+  default_option: ballad
+  pretty_name: Upgraded Skyward Strike
+  pretty_options:
+    - Ballad
+    - Open
+  options:
+   - ballad/open:                 "empty description"
+
+
+- name: open_lake_floria
+  default_option: vanilla
+  pretty_name: Open Lake Floria
+  pretty_options:
+    - Vanilla
+    - Yerbal
+    - Open
+  options:
+    - vanilla/yerbal/open:          "empty descriptions"
+
+
+- name: open_earth_temple
+  default_option: "off"
+  pretty_name: Open Earth Temple
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - off/on:          "empty descriptions"
+
+
+- name: open_lmf
+  default_option: nodes
+  pretty_name: Open Lanayru Mining Facility
+  pretty_options:
+    - Nodes
+    - Main Node
+    - Open
+  options:
+    - nodes/main_node/open:          "empty descriptions"
+
+
+- name: skykeep_layout
+  default_option: vanilla
+  pretty_name: Sky Keep Layout
+  pretty_options:
+    - Vanilla
+    - Randomized
+  options:
+    - vanilla/randomized:            "empty descriptions"
+
+
+- name: fs_lava_flow
+  default_option: "off"
+  pretty_name: FS Lava Flow
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - off/on:                        "empty descriptions"
+
+
+- name: natural_night_connections
+  default_option: "on"
+  pretty_name: Require Natural Night Connections
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: upgraded_skyward_strike
+  default_option: "off"
+  pretty_name: Upgraded Skyward Strike
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_early_lake_floria
+  default_option: "off"
+  pretty_name: Early lake Floria
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_beedles_island_cage_chest_dive
+  default_option: "off"
+  pretty_name: Beedle's Island Cage Chest Dive
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_volcanic_island_dive
+  default_option: "off"
+  pretty_name: Volcanic Island Dive
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_east_island_dive
+  default_option: "off"
+  pretty_name: East Island Dive
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+- name: logic_advanced_lizalfos_combat
+  default_option: "off"
+  pretty_name: Advanced Lizalfos Combat
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "You may be expected to be Lizalfos enemies with only bombs or only the Bow"
+
+
+- name: logic_gravestone_jump
+  default_option: "off"
+  pretty_name: Gravestone Jump
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_waterfall_cave_jump
+  default_option: "off"
+  pretty_name: Waterfall Cave Jump
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+  - off/on:                 "empty description"
+
+
+- name: logic_baby_rattle_from_beedles_shop
+  default_option: "off"
+  pretty_name: Baby Rattle from Beetle's Shop
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_beedles_shop_with_bombs
+  default_option: "off"
+  pretty_name: Beedle's Shop with Bombs
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_stuttersprint
+  default_option: "off"
+  pretty_name: Stutter Sprinting
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_bomb_throws
+  default_option: "off"
+  pretty_name: precise Bomb Throws
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+  
+
+
+- name: logic_itemless_first_timeshift_stone
+  default_option: "off"
+  pretty_name: Itemless First Timeshift Stone
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_lanayru_mine_brakeslide
+  default_option: "off"
+  pretty_name: Lanayru Mine Breakslide
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_lanayru_mine_quick_bomb
+  default_option: "off"
+  pretty_name: Lanayru Mine Quick Bomb
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_tot_skip_brakeslide
+  default_option: "off"
+  pretty_name: Temple of Time Skip Brakeslide
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_lanayru_spume_brakeslide
+  default_option: "off"
+  pretty_name: Lanayru Desert Spume Brakeslide
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_sand_oasis_brakeslide
+  default_option: "off"
+  pretty_name: Sand Oasis Brakeslide
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_tot_slingshot
+  default_option: "off"
+  pretty_name: Temple of Time Precise Slingshot Shot
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_lanayru_passageway_hook_beetle
+  default_option: "off"
+  pretty_name: Lanayru Desert Passageway With Hook Beetle
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_fire_node_brakeslide
+  default_option: "off"
+  pretty_name: Fire Node Brakeslide
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_cactus_bomb_whip
+  default_option: "off"
+  pretty_name: Cactus Bomb Whip Trick
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+- name: logic_skippers_fast_clawshots
+  default_option: "off"
+  pretty_name: Skipper's Retreat Fast Clawshots
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_skyview_spider_roll
+  default_option: "off"
+  pretty_name: Skyview Spider Roll
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_skyview_precise_slingshot
+  default_option: "off"
+  pretty_name: Skyview Precise Slingshot Trick
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_et_keese_yeet
+  default_option: "off"
+  pretty_name: Earth Temple Keese Yeet
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_et_slope_stuttersprint
+  default_option: "off"
+  pretty_name: Earth Temple Slope Stuttersprint
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_et_bombless_scaldera
+  default_option: "off"
+  pretty_name: Earth Temple Slope Stuttersprint
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_lmf_whip_switch
+  default_option: "off"
+  pretty_name: Lanayru Mining Facility Whip Switch
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_lmf_ceiling_precise_slingshot
+  default_option: "off"
+  pretty_name: Lanayru Mining Facility Precise Slingshot Aiming
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_lmf_minecart_jump
+  default_option: "off"
+  pretty_name: Lanayru Mining Facility Minecart Jump
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_lmf_bellowsless_moldarach
+  default_option: "off"
+  pretty_name: Moldarach without Gust Bellows
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_ac_lever_jump_trick
+  default_option: "off"
+  pretty_name: Ancient Cistern Lever Jump
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+- name: logic_ac_map_chest_jump
+  default_option: "off"
+  pretty_name: Ancient Cistern Map Chest Jump
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_sandship_mast_jump
+  default_option: "off"
+  pretty_name: Sandship Mast Jump
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_sandship_itemless_spume
+  default_option: "off"
+  pretty_name: Sandship Itemless Spume
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_sandship_no_combination_hint
+  default_option: "off"
+  pretty_name: Sandship No Combination Hint
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_fs_pillar_jump
+  default_option: "off"
+  pretty_name: Fire Sanctuary Pillar Jump
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_present_bow_switches
+  default_option: "off"
+  pretty_name: Present Bow Switch Shots
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: logic_skykeep_vineclip
+  default_option: "off"
+  pretty_name: Sky Keep Vine Clip
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - off/on:                 "empty description"
+
+
+- name: test_range_option
+  default_option: 0
+  pretty_name: Test Range Option
+  pretty_options:
+    - 0-69
+  options:
+    - 0-69:                 "empty descriptions"

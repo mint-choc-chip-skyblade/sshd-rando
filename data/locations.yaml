@@ -1,0 +1,2216 @@
+# Upper Skyloft checks:
+
+- name: Knight Academy - Fledge's Gift
+  original_item: Progressive Pouch
+  type:
+  Paths:
+    - event/114-Friend/16
+    - oarc/F001r/l3
+    - oarc/F001r/l4
+
+- name: Upper Skyloft - Owlan's Gift
+  original_item: Wooden Shield
+  type:
+  Paths:
+    - event/108-ShinkanA/169
+    - oarc/F000/l4
+    - oarc/F000/l6
+
+- name: Sparring Hall - Chest
+  original_item: Progressive Sword
+  type:
+  Paths:
+    - stage/F009r/r0/l0/TBox/66
+
+- name: Upper Skyloft - Chest near Goddess Statue
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F000/r0/l0/TBox/71
+
+- name: Inside the Statue of the Goddess - First Goddess Sword Item
+  original_item: Progressive Sword
+  type:
+  Paths:
+    - event/107-Kanban/Fi give Goddess Statue item 1
+    - oarc/F008r/l1
+
+- name: Inside the Statue of the Goddess - Second Goddess Sword Item
+  original_item: Emerald Tablet
+  type:
+  Paths:
+    - event/107-Kanban/Fi give Goddess Statue item 2
+    - oarc/F008r/l1
+
+- name: Knight Academy - In Zelda's Closet
+  original_item: Heart Piece
+  type:
+  Paths:
+    - stage/F001r/r6/l0/chest/32 #sceneflag
+
+- name: Knight Academy - Owlan's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Scrapper Deliveries, Gratitude Crystal Sidequests, Combat
+  Paths:
+    - event/118-Town3/157
+    - oarc/F001r/l0
+  hint: sometimes
+  text: delivering a <r<Kikwi>> reveals
+
+- name: Knight Academy - Fledge's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Gratitude Crystal Sidequests
+  Paths:
+    - event/115-Town2/325
+    - oarc/F001r/l0
+  text: <r<lending strength to a friend>> yields
+
+- name: Knight Academy - Cawlin's Letter
+  original_item: Cawlin's Letter
+  type:
+  Paths:
+    - event/115-Town2/166
+    - oarc/F001r/l0
+- name: Knight Academy - Ghost/Pipit's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Gratitude Crystal Sidequests
+  Paths:
+    - event/115-Town2/522
+    - event/115-Town2/641
+    - oarc/F001r/l0
+
+- name: Upper Skyloft - Pumpkin Archery -- 600 Points
+  original_item: Heart Piece
+  type: Minigames
+  Paths:
+    - event/114-Friend/99
+    - oarc/F000/l4
+    - oarc/F000/l6
+  hint: sometimes
+  text: <r<shooting pumpkings>> is rewarded with
+
+# Central Skyloft checks:
+
+- name: Bazaar - Potion Lady's Gift
+  original_item: Empty Bottle
+  type:
+  Paths:
+    - event/106-DrugStore/44
+    - oarc/F004r/l0
+
+- name: Bazaar - Upgrade to Quick Beetle
+  original_item: Quick Beetle
+
+- name: Bazaar - Upgrade to Tough Beetle
+  original_item: Tough Beetle
+
+- name: Central Skyloft - Repair Gondo's Junk
+  original_item: Scrapper
+  type:
+  Paths:
+    - event/113-RemodelStore/Give Repair Gondo Junk item
+    - oarc/F004r/l0
+
+- name: Central Skyloft - Wryna's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Gratitude Crystal Sidequests
+  Paths:
+    - event/118-Town3/144
+    - oarc/F006r/l0
+
+- name: Central Skyloft - Waterfall Cave First Chest
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D000/r0/l0/TBox/67
+
+- name: Central Skyloft - Waterfall Cave Second Chest
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D000/r0/l0/TBox/68
+
+- name: Central Skyloft - Waterfall Cave Crawlspace Rupee
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D000/r0/l0/Item/88
+
+- name: Central Skyloft - Gossip Stone on Waterfall Island
+  original_item: Nothing
+  type: Hint Location
+
+- name: Central Skyloft - Parrow's Gift
+  original_item: Empty Bottle
+  type:
+  Paths:
+    - event/115-Town2/230 # mushroom spores
+    - event/115-Town2/733 # Empty Bottle
+    - oarc/F000/l4
+    - oarc/F000/l6
+    - oarc/F005r/l0
+
+- name: Central Skyloft - Parrow's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Gratitude Crystal Sidequests
+  Paths:
+    - event/115-Town2/814
+    - oarc/F000/l4
+    - oarc/F000/l6
+    - oarc/F005r/l0
+
+- name: Central Skyloft - Peater/Peatrice's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Gratitude Crystal Sidequests
+  Paths:
+    - event/109-TakeGoron/79
+    - event/123-Town5/316
+    - oarc/F018r/l0
+    - oarc/F019r/l0
+  hint: always
+  text: the <r<item check girl>> hides
+
+- name: Central Skyloft - Item in Bird Nest
+  original_item: Baby's Rattle
+  type:
+  Paths:
+    - stage/F000/r0/l0/Item/13
+
+- name: Central Skyloft - Shed Chest
+  original_item: Silver Rupee
+  type:
+  Paths:
+    - stage/F000/r0/l0/TBox/70
+
+## Goddess Chests
+
+- name: Central Skyloft - West Cliff Goddess Chest
+  original_item: Silver Rupee
+  type: goddess, Faron Woods Goddess Chests
+  Paths:
+    - stage/F000/r0/l0/TBox/78
+  cube_region: Faron Woods
+
+- name: Bazaar - Goddess Chest
+  original_item: Gold Rupee
+  type: goddess, Sand Sea Goddess Chests
+  Paths:
+    - stage/F004r/r0/l0/TBox/93
+  cube_region: Lanayru Sand Sea
+
+- name: Central Skyloft - Shed Goddess Chest
+  original_item: Heart Piece
+  type: goddess, Eldin Volcano Goddess Chests
+  Paths:
+    - stage/F000/r0/l0/TBox/79
+  cube_region: Eldin Volcano
+
+- name: Central Skyloft - Floating Island Goddess Chest
+  original_item: Gold Rupee
+  type: goddess, Lake Floria Goddess Chests
+  Paths:
+    - stage/F000/r0/l0/TBox/91
+  cube_region: Lake Floria
+
+- name: Central Skyloft - Waterfall Goddess Chest
+  original_item: Heart Piece
+  type: goddess, Sand Sea Goddess Chests
+  Paths:
+    - stage/F000/r0/l0/TBox/80
+  hint: sometimes
+  text: a <s<goddess cube>> <r<amongst the pirates>> reveals
+  cube_region: Lanayru Sand Sea
+
+# Skyloft Village checks:
+
+- name: Skyloft Village - Mallara's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Gratitude Crystal Sidequests
+  Paths:
+    - event/123-Town5/186
+    - oarc/F016r/l0
+
+- name: Skyloft Village - Bertie's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Gratitude Crystal Sidequests
+  Paths:
+    - event/115-Town2/125
+    - oarc/F014r/l0
+  text: helping an <r<exhausted parent>> rewards
+
+- name: Skyloft Village - Sparrot's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Scrapper Deliveries, Gratitude Crystal Sidequests
+  Paths:
+    - event/118-Town3/141
+    - oarc/F013r/l0
+  hint: sometimes
+  text: delivering a <r<fortune telling device>> reveals
+
+# Batreaux Rewards:
+
+- name: Batreaux - 5 Crystals
+  original_item: Progressive Wallet
+  type: Batreaux's Rewards
+  Paths:
+    - event/121-AkumaKun/21
+    - oarc/F012r/l0
+
+- name: Batreaux - 10 Crystals
+  original_item: Heart Piece
+  type: Batreaux's Rewards
+  Paths:
+    - event/121-AkumaKun/42
+    - oarc/F012r/l0
+
+- name: Batreaux - 30 Crystals
+  original_item: Progressive Wallet
+  type: Batreaux's Rewards
+  Paths:
+    - event/121-AkumaKun/24
+    - oarc/F012r/l0
+
+- name: Batreaux - 30 Crystals Chest
+  original_item: Cursed Medal
+  type: Batreaux's Rewards
+  Paths:
+    - stage/F012r/r0/l0/TBox/69
+
+- name: Batreaux - 40 Crystals
+  original_item: Gold Rupee
+  type: Batreaux's Rewards
+  Paths:
+    - event/121-AkumaKun/49
+    - oarc/F012r/l0
+
+- name: Batreaux - 50 Crystals
+  original_item: Progressive Wallet
+  type: Batreaux's Rewards
+  Paths:
+    - event/121-AkumaKun/27
+    - oarc/F012r/l0
+  hint: sometimes
+  text: <ye<50>> <r<pieces of gratitude>> can be exchanged for
+
+- name: Batreaux - 70 Crystals
+  original_item: Gold Rupee
+  type: Batreaux's Rewards
+  Paths:
+    - event/121-AkumaKun/161
+    - oarc/F012r/l0
+  hint: sometimes
+  text: the <r<demon's penultimate reward>> is
+
+- name: Batreaux - 70 Crystals Second Reward
+  original_item: Gold Rupee
+  type: Batreaux's Rewards
+  Paths:
+    - event/121-AkumaKun/163
+    - oarc/F012r/l0
+  hint: sometimes
+  text: the <r<demon's penultimate reward>> is
+
+- name: Batreaux - 80 Crystals
+  original_item: Progressive Wallet
+  type: Batreaux's Rewards
+  Paths:
+    - event/121-AkumaKun/37
+    - oarc/F012r/l0
+  hint: always
+  text: a <r<demon in human form>> grants
+
+# Beedle's Shop:
+
+- name: Beedle's Shop - 300 Rupee Item
+  original_item: Progressive Pouch 
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  Paths:
+    - ShpSmpl/20
+
+- name: Beedle's Shop - 600 Rupee Item
+  original_item: Progressive Pouch 
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium)
+  Paths:
+    - ShpSmpl/21
+
+- name: Beedle's Shop - 1200 Rupee Item
+  original_item: Progressive Pouch 
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive)
+  hint: always
+  Paths:
+    - ShpSmpl/22
+  text: for <g+<1200 rupees>> <r<Beedle>> sells
+
+- name: Beedle's Shop - 800 Rupee Item
+  original_item: Life Medal 
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium)
+  Paths:
+    - ShpSmpl/26
+
+- name: Beedle's Shop - 1600 Rupee Item
+  original_item: Heart Piece 
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive)
+  hint: always
+  Paths:
+    - ShpSmpl/23
+  text: for <g+<1600 rupees>> <r<Beedle>> sells
+
+- name: Beedle's Shop - First 100 Rupee Item
+  original_item: Extra Wallet 
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  Paths:
+    - ShpSmpl/24
+
+- name: Beedle's Shop - Second 100 Rupee Item
+  original_item: Extra Wallet 
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  Paths:
+    - ShpSmpl/17
+
+- name: Beedle's Shop - Third 100 Rupee Item
+  original_item: Extra Wallet 
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  Paths:
+    - ShpSmpl/18
+
+- name: Beedle's Shop - 50 Rupee Item
+  original_item: Progressive Bug Net 
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  Paths:
+    - ShpSmpl/25
+
+- name: Beedle's Shop - 1000 Rupee Item
+  original_item: Bug Medal
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium)
+  Paths:
+    - ShpSmpl/27
+
+# Single Gratitude Crystals:
+## Aren't randomized, but still need logic, because some of them need items
+
+- name: Knight Academy - Crystal in Link's Room
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+- name: Knight Academy - Crystal in Knight Academy Plant
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+- name: Knight Academy - Crystal in Zelda's Room
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+- name: Sparring Hall - Crystal
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+
+- name: Central Skyloft - Crystal in Orielle and Parrow's House
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+- name: Central Skyloft - Crystal on West Cliff
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+- name: Central Skyloft - Crystal between Wooden Planks
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+- name: Central Skyloft - Crystal after Waterfall Cave
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+- name: Central Skyloft - Crystal in Loftwing Prison
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+- name: Central Skyloft - Crystal on Waterfall Island
+  original_item: Gratitude Crystal
+  type: Loose Crystals
+
+- name: Central Skyloft - Crystal on Light Tower
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+
+- name: Skyloft Village - Crystal near Pumpkin Patch
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+
+- name: Lumpy Pumpkin - Outside Crystal
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+- name: Lumpy Pumpkin - Inside Crystal
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+- name: Beedle's Island - Crystal
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+
+# Sky:
+
+- name: Bamboo Island Interior - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+- name: Lumpy Pumpkin - Chandelier
+  original_item: Heart Piece
+  type:
+  Paths:
+    - stage/F011r/r0/l0/Chandel
+  text: <r<angering a bartender>> dislodges
+
+- name: Lumpy Pumpkin - Harp Minigame
+  original_item: Heart Piece
+  type: Minigames
+  Paths:
+    - event/117-Pumpkin/305
+    - oarc/F011r/l0
+  hint: sometimes
+  text: the <r<bartender>> holds
+
+- name: Lumpy Pumpkin - Kina's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Scrapper Deliveries, Gratitude Crystal Sidequests
+  Paths:
+    - event/117-Pumpkin/386
+    - oarc/F020/l0
+  hint: sometimes
+  text: <r<delivering a mogma to the sky>> is rewarded with
+
+- name: Lumpy Pumpkin - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+- name: Orielle's Island - Orielle's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Gratitude Crystal Sidequests
+  Paths:
+    - event/115-Town2/225
+    - oarc/F020/l0
+  text: saving a <r<sick loftwing>> is rewardede with
+
+- name: Beedle's Island - Beedle's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Gratitude Crystal Sidequests
+  Paths:
+    - event/105-Terry/115
+    - oarc/F020/l0
+  hint: sometimes
+  text: <r<reuniting two Beedles>> is rewarded with
+
+- name: Fun Fun Island - Dodoh's Crystals
+  original_item: Gratitude Crystal Pack
+  type: Scrapper Deliveries
+  Paths:
+    - event/110-DivingGame/60
+    - oarc/F020/l0
+  text: delivering a <r<colorful wheel>> is rewarded with
+
+- name: Fun Fun Island - Minigame -- 500 Rupees
+  original_item: Heart Piece
+  type: Minigames, Scrapper Deliveries
+  Paths:
+    - event/110-DivingGame/19
+    - oarc/F020/l2
+  hint: sometimes
+  text: <r<diving through 5 rings>> yields
+
+- name: The Sky - Chest in Breakable Boulder near Fun Fun Island
+  original_item: Silver Rupee
+  type:
+  Paths:
+    - stage/F020/r0/l0/TBox/70
+
+- name: The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
+  original_item: Silver Rupee
+  type:
+  Paths:
+    - stage/F020/r0/l0/TBox/69
+
+- name: Volcanic Island - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+## Goddess Chests
+
+- name: Bamboo Island - Goddess Chest
+  original_item: Gold Rupee
+  type: goddess, Eldin Volcano Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/82
+  cube_region: Eldin Volcano
+
+- name: Island near Bamboo Island - Goddess Chest
+  original_item: Silver Rupee
+  type: goddess, Eldin Volcano Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/71
+  cube_region: Eldin Volcano
+
+- name: Island near Bamboo Island - Goddess Chest in Cave
+  original_item: Heart Medal
+  type: goddess, Lanayru Desert Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/83
+  cube_region: Lanayru Desert
+
+- name: Beedle's Island - Top Goddess Chest
+  original_item: Heart Piece
+  type: goddess, Lanayru Desert Goddess Chests, Combat
+  Paths:
+    - stage/F020/r0/l0/TBox/89
+  hint: sometimes
+  text: a <s<goddess cube>> at the <r<monument to time>> reveals
+  cube_region: Lanayru Desert
+
+- name: Beedle's Island - Cage Goddess Chest
+  original_item: Rupee Medal
+  type: goddess, Faron Woods Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/81
+  cube_region: Faron Woods
+
+- name: Northeast Island - Goddess Chest behind Bombable Rocks
+  original_item: Silver Rupee
+  type: goddess, Lanayru Desert Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/72
+  cube_region: Lanayru Mine
+
+- name: Northeast Island - Cage Goddess Chest
+  original_item: Treasure Medal
+  type: goddess, Eldin Volcano Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/74
+  cube_region: Eldin Volcano
+
+- name: Lumpy Pumpkin - Goddess Chest on Roof
+  original_item: Gold Rupee
+  type: goddess, Faron Woods Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/87
+  cube_region: Skyview
+
+- name: Lumpy Pumpkin - Outside Goddess Chest
+  original_item: Progressive Pouch
+  type: goddess, Faron Woods Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/64
+  cube_region: Faron Woods
+
+- name: Island Closest to Faron Pillar - Goddess Chest
+  original_item: Heart Piece
+  type: goddess, Faron Woods Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/65
+  cube_region: Faron Woods
+
+- name: Volcanic Island - Outside Goddess Chest
+  original_item: Heart Medal
+  type: goddess, Lanayru Desert Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/67
+  cube_region: Lanayru Desert
+
+- name: Volcanic Island - Inside Goddess Chest
+  original_item: Heart Piece
+  type: goddess, Faron Woods Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/68
+  cube_region: Faron Woods
+
+- name: Fun Fun Island - Goddess Chest
+  original_item: Gold Rupee
+  type: goddess, Lake Floria Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/86
+  cube_region: Lake Floria
+
+- name: Triple Island - Upper Goddess Chest
+  original_item: Small Seed Satchel
+  type: goddess, Eldin Volcano Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/66
+  cube_region: Eldin Volcano
+
+- name: Triple Island - Lower Goddess Chest
+  original_item: Life Medal
+  type: goddess, Lanayru Desert Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/84
+  cube_region: Lanayru Desert
+
+- name: Triple Island - Cage Goddess Chest
+  original_item: Potion Medal
+  type: goddess, Sand Sea Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/75
+  cube_region: Lanayru Sand Sea
+
+# Thunderhead:
+
+- name: Isle of Songs - Farore's Courage
+  original_item: Farore's Courage
+  type:
+  Paths:
+    - stage/F010r/r0/l0/SwSB/0
+  text: the <r<goddess' blade>> reveals
+
+- name: Isle of Songs - Nayru's Wisdom
+  original_item: Nayru's Wisdom
+  type:
+  Paths:
+    - stage/F010r/r0/l0/SwSB/1
+  text: a <r<longsword>> reveals
+
+- name: Isle of Songs - Din's Power
+  original_item: Din's Power
+  type:
+  Paths:
+    - stage/F010r/r0/l0/SwSB/2
+  hint: sometimes
+  text: a <r<blade of white>> reveals
+
+- name: The Thunderhead - Song from Levias
+  original_item: Song of the Hero
+  type: Scrapper Deliveries, Combat
+  Paths:
+    - event/120-Nushi/give item after levias
+    - oarc/F023/l0
+  hint: always
+  text: the <r<ancient whale within a raging storm>> bellows out
+
+- name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
+  original_item: Horned Colossus Beetle
+  type: Minigames
+  Paths:
+    - event/116-InsectGame/69
+    - oarc/F023/l0
+  hint: sometimes
+  text: <r<true bug catchers>> can find
+
+- name: Thunderhead East Island - Chest
+  original_item: Evil Crystal
+  type:
+  Paths:
+    - stage/F023/r0/l0/TBox/94
+
+- name: Bug Heaven - Nearby Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+## Goddess Cubes
+
+- name: Thunderhead East Island - Goddess Chest
+  original_item: Rupee Medal
+  type: goddess, Faron Woods Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/73
+  cube_region: Faron Woods
+
+- name: Isle of Songs - Top Goddess Chest
+  original_item: Small Bomb Bag
+  type: goddess, Volcano Summit Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/85
+  cube_region: Volcano Summit
+
+- name: Isle of Songs - Lower Goddess Chest
+  original_item: Gold Rupee
+  type: goddess, Eldin Volcano Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/92
+  cube_region: Mogma Turf
+
+- name: Mogma Mitts Island - First Goddess Chest
+  original_item: Empty Bottle
+  type: goddess, Volcano Summit Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/77
+  cube_region: Volcano Summit
+
+- name: Mogma Mitts Island - Second Goddess Chest
+  original_item: Small Quiver
+  type: goddess, Sand Sea Goddess Chests
+  Paths:
+   - stage/F023/r0/l0/TBox/76
+  cube_region: Lanayru Gorge
+
+- name: Bug Heaven - Goddess Chest
+  original_item: Heart Piece
+  type: goddess, Volcano Summit Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/88
+  cube_region: Volcano Summit
+
+# Sealed Grounds:
+
+- name: Sealed Temple - Chest
+  original_item: Revitalizing Potion
+  type:
+  Paths:
+    - stage/F402/r2/l0/TBox/64
+
+- name: Sealed Temple - Song from Impa
+  original_item: Ballad of the Goddess
+  type:
+  Paths:
+    - event/501-Inpa/267
+    - oarc/F402/l2
+
+- name: Sealed Grounds - Gorko's Goddess Wall Reward
+  type:
+  original_item: Heart Piece
+  Paths:
+    - event/503-Goron/630
+    - oarc/F400/l0
+  hint: sometimes
+  text: <r<drawing upon a magical wall>> reveals
+#Sealed Grounds - Behind the Temple Triforce on Goddess Wall:
+#  original_item: Gold Rupee
+#  type: long
+#  Paths:
+#   - event/503-Goron/418
+#   - oarc/F400/l0
+
+- name: Sealed Grounds - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+- name: Hylia's Temple - Zelda's Blessing
+  original_item: Progressive Sword
+  type: #TODO: this may need to be revisited as it doesnt really fit any other checks
+  Paths:
+    - event/502-CenterFieldBack/17
+    - oarc/F404/l1
+  hint: sometimes
+  text: the <r<goddess blesses you>> with
+
+- name: Hylia's Realm - Defeat Demise
+  original_item: Game Beatable
+
+# Faron Woods:
+
+- name: Faron Woods - Item behind Bombable Rock
+  original_item: Heart Piece
+  type:
+  Paths:
+    - stage/F100/r0/l0/Item/33 #last thing is SceneflagID
+
+- name: Faron Woods - Item on Tree
+  original_item: Heart Piece
+  type:
+  Paths:
+    - stage/F100/r0/l0/Item/68
+
+- name: Faron Woods - Kikwi Elder's Reward
+  original_item: Progressive Slingshot
+  type: Combat #because of the Lopsa Bokoblin fight, this is a Combat reward
+  Paths:
+    - event/200-Forest/595
+    - oarc/F100/l0
+  hint: sometimes
+  text: the <r<Kikwi relic>> is
+
+- name: Faron Woods - Rupee on Hollow Tree Root
+  original_item: Blue Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F100/r0/l0/Item/42
+
+- name: Faron Woods - Rupee on Hollow Tree Branch
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F100/r0/l0/Item/41
+
+- name: Faron Woods - Rupee on Platform near Floria Door
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F100/r0/l0/Item/40
+
+- name: Deep Woods - Chest
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F101/r0/l0/TBox/74
+
+- name: Deep Woods - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+- name: Faron Woods - Chest behind Bombable Rocks near Erla
+  original_item: Semi Rare Treasure
+  type:
+  Paths:
+    - stage/F100/r0/l0/TBox/64
+
+- name: Great Tree - Chest
+  original_item: Gold Rupee
+  type:
+  Paths:
+    - stage/F100_1/r0/l0/TBox/84
+  hint: sometimes
+  text: climbing inside an <r<old hermit's home>> rewards
+
+- name: Faron Woods - Rupee on Great Tree North Branch
+  original_item: Blue Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F100/r0/l0/Item/43
+
+- name: Faron Woods - Rupee on Great Tree West Branch
+  original_item: Blue Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F100/r0/l0/Item/44
+
+# Lake Floria:
+
+- name: Lake Floria - Rupee under Central Boulder
+  original_item: Silver Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F102/r2/l0/Item/60
+
+- name: Lake Floria - Rupee behind Southwest Boulder
+  original_item: Blue Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F102/r2/l0/Item/63
+
+- name: Lake Floria - Left Rupee behind Northwest Boulder
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F102/r2/l0/Item/62
+
+- name: Lake Floria - Right Rupee behind Northwest Boulder
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F102/r2/l0/Item/61
+
+- name: Lake Floria - Chest
+  original_item: Goddess Plume
+  type:
+  hint: sometimes
+  text: a <r<lonely chest in the lake>> contains
+  Paths:
+    - stage/F102/r3/l0/TBox/64
+
+- name: Lake Floria - Dragon Lair South Chest
+  original_item: Silver Rupee
+  type:
+  Paths:
+    - stage/F102_2/r0/l0/TBox/84
+
+- name: Lake Floria - Dragon Lair East Chest
+  original_item: Semi Rare Treasure
+  type:
+  Paths:
+    - stage/F102_2/r0/l0/TBox/85
+
+- name: Floria Waterfall - Rupee on High Ledge
+  original_item: Gold Rupee
+  type: Rupees (No Quick Beetle)
+  Paths:
+   - stage/F102_1/r0/l0/Item/64
+
+- name: Floria Waterfall - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+# Flooded Faron Woods:
+
+- name: Flooded Faron Woods - Yellow Tadtone under Lilypad
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/10 # group number
+
+- name: Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/4 # group number
+
+- name: Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/2 # group number
+
+- name: Flooded Faron Woods - Red Moving Tadtone near Viewing Platform
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/1 # group number
+
+- name: Flooded Faron Woods - Light Blue Tadtone under Great Tree Root
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/13 # group number
+
+- name: Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/6 # group number
+
+- name: Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/8 # group number
+
+- name: Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/11 # group number
+
+- name: Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/5 # group number
+
+- name: Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/3 # group number
+
+- name: Flooded Faron Woods - 8 Green Tadtones in West Tunnel
+  original_item: Group of Tadtones
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/9 # group number
+
+- name: Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/15 # group number
+
+- name: Flooded Faron Woods - 16 Dark Blue Tadtones in the South West
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/17 # group number
+
+- name: Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/16 # group number
+
+- name: Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/7 # group number
+
+- name: Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/14 # group number
+
+- name: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
+  original_item: Group of Tadtones 
+  type: Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/12 # group number
+
+
+- name: Flooded Faron Woods - Water Dragon's Reward
+  original_item: Faron Song of the Hero Part
+  type: Tadtones
+  hint: sometimes
+  text: completing a <r<watery song>> reveals
+  Paths:
+    - event/204-ForestF3/Give item after Faron SotH CS
+    - oarc/F103_1/l0
+
+# Eldin Volcano:
+
+- name: Eldin Volcano - Rupee on Ledge before First Room
+  original_item: Red Rupee
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F200/r0/l0/Item/41
+
+- name: Eldin Volcano - Chest behind Bombable Wall in First Room
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F200/r1/l0/TBox/72
+
+- name: Eldin Volcano - Rupee behind Bombable Wall in First Room
+  original_item: Blue Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F200/r1/l0/Item/13
+
+- name: Eldin Volcano - Rupee in Crawlspace in First Room
+  original_item: Blue Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F200/r1/l0/Item/19
+
+- name: Eldin Volcano - Chest after Crawlspace
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F200/r2/l0/TBox/66
+
+- name: Eldin Volcano - Southeast Rupee above Mogma Turf Entrance
+  original_item: Blue Rupee
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F200/r2/l0/Item/125
+
+- name: Eldin Volcano - North Rupee above Mogma Turf Entrance
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F200/r2/l0/Item/123
+
+- name: Eldin Volcano - Chest behind Bombable Wall near Cliff
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F200/r2/l0/TBox/73
+
+- name: Eldin Volcano - Item on Cliff
+  original_item: Heart Piece
+  type:
+  Paths:
+    - stage/F200/r2/l0/Item/102 #sceneflagID
+
+- name: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F200/r2/l0/TBox/71
+
+- name: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F200/r4/l0/Item/45
+
+- name: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F200/r4/l0/Item/11
+
+- name: Thrill Digger Cave - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+- name: Eldin Volcano - Gossip Stone next to Earth Temple
+  original_item: Nothing
+  type: Hint Location
+
+- name: Upper Eldin Cave - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+- name: Lower Eldin Cave - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+## These checks are Digging Spots
+
+- name: Eldin Volcano - Digging Spot in front of Earth Temple
+  original_item: Key Piece
+  type:
+  Paths:
+    - stage/F200/r4/l1/Soil/8
+
+- name: Eldin Volcano - Digging Spot below Tower
+  original_item: Key Piece
+  type:
+  Paths:
+    - stage/F200/r4/l1/Soil/9
+
+- name: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
+  original_item: Key Piece
+  type:
+  hint: sometimes
+  text: a <r<boulder on a sandy slope>> hides
+  Paths:
+    - stage/F200/r4/l1/Soil/12
+
+- name: Eldin Volcano - Digging Spot after Vents
+  original_item: Key Piece
+  type:
+  Paths:
+    - stage/F200/r6/l1/Soil/10
+
+- name: Eldin Volcano - Digging Spot after Draining Lava
+  original_item: Key Piece
+  type:
+  Paths:
+    - stage/F200/r2/l1/Soil/64
+
+# Mogma Turf:
+
+- name: Mogma Turf - Free Fall Chest
+  original_item: Eldin Ore
+  type:
+  Paths:
+    - stage/F210/r0/l0/TBox/64
+
+- name: Mogma Turf - Chest behind Bombable Wall at Entrance
+  original_item: Golden Skull
+  type:
+  Paths:
+    - stage/F210/r0/l0/TBox/65
+
+- name: Mogma Turf - Digging Mitts Fight
+  original_item: Progressive Mitts
+  type: Combat
+  Paths:
+    - event/300-Mountain/6
+    - event/300-Mountain/135
+    - oarc/F210/l0
+  text: helping <r<reclaim the mogmas' territory>> rewards
+
+- name: Mogma Turf - Sand Slide Chest
+  original_item: Eldin Ore
+  type:
+  text: <r<behind>> a slide mogmas buried
+  Paths:
+    - stage/F210/r0/l0/TBox/68
+
+- name: Mogma Turf - Chest behind Bombable Wall in Fire Maze
+  original_item: Silver Rupee
+  type:
+  Paths:
+    - stage/F210/r0/l0/TBox/70
+
+# Volcano Summit:
+
+- name: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
+  original_item: Silver Rupee
+  type:
+  Paths:
+    - stage/F201_4/r0/l0/TBox/95
+  text: atop a <r<volcanic waterfall>> hides
+
+- name: Volcano Summit - Item behind Digging
+  original_item: Heart Piece
+  type:
+  Paths:
+    - stage/F201_3/r0/l0/Item/104 #sceneflagID
+  hint: sometimes
+  text: <r<fairies at the summit>> dance with
+
+- name: Volcano Summit - Gossip Stone in Waterfall Area
+  original_item: Nothing
+  type: Hint Location
+
+
+- name: Volcano Summit - Gossip Stone near Second Thirsty Frog
+  original_item: Nothing
+  type: Hint Location
+
+# Bokoblin Base:
+
+- name: Bokoblin Base - Plats' Gift
+  original_item: Mogma Mitts
+  type:
+  text: a gift from an <r<imprisoned mogma>> has
+  Paths:
+   - event/305-MountainF3/Plats' Gift
+   - oarc/F202/l1
+
+- name: Bokoblin Base - Chest near Bone Bridge
+  original_item: Gust Bellows
+  type:
+  Paths:
+   - stage/F202/r2/l1/TBox/70
+
+- name: Bokoblin Base - Chest on Cliff
+  original_item: Clawshots
+  type:
+  Paths:
+   - stage/F202/r2/l1/TBox/66
+
+- name: Bokoblin Base - Chest near Drawbridge
+  original_item: Whip
+  type:
+  Paths:
+   - stage/F202/r2/l1/TBox/67
+
+- name: Bokoblin Base - Chest East of Earth Temple Entrance
+  original_item: Progressive Slingshot
+  type:
+  Paths:
+   - stage/F202/r4/l1/TBox/68
+
+- name: Bokoblin Base - Chest West of Earth Temple Entrance
+  original_item: Bomb Bag
+  type:
+  Paths:
+   - stage/F202/r4/l1/TBox/69
+
+- name: Bokoblin Base - First Chest in Volcano Summit
+  original_item: Blue Rupee
+  type:
+  Paths:
+   - stage/F201_2/r0/l0/TBox/72
+   - stage/F201_1/r0/l4/TBox/72
+
+- name: Bokoblin Base - Raised Chest in Volcano Summit
+  original_item: Progressive Sword
+  type:
+  Paths:
+   - stage/F201_2/r0/l0/TBox/73
+   - stage/F201_1/r0/l4/TBox/73
+
+- name: Bokoblin Base - Chest in Volcano Summit Alcove
+  original_item: Progressive Pouch
+  type:
+  Paths:
+   - stage/F201_2/r0/l0/TBox/71
+   - stage/F201_1/r0/l4/TBox/71
+
+- name: Bokoblin Base - Fire Dragon's Reward
+  original_item: Eldin Song of the Hero Part
+  type:
+  text: <r<hearing a song atop the great mountain>> is rewarded with
+  Paths:
+   - event/305-MountainF3/Give item after Eldin SotH CS
+   - oarc/F221/l0
+
+# Lanayru Mine:
+
+- name: Lanayru Mine - Chest behind First Landing
+  original_item: Evil Crystal
+  type:
+  Paths:
+    - stage/F300_1/r0/l0/TBox/64
+
+- name: Lanayru Mine - Chest near First Timeshift Stone
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F300_1/r1/l0/TBox/65
+
+- name: Lanayru Mine - Chest behind Statue
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F300_1/r2/l0/TBox/67
+
+- name: Lanayru Mine - Chest at the End of Mine
+  original_item: Rare Treasure
+  type:
+  Paths:
+    - stage/F300_1/r2/l0/TBox/66
+
+# Lanayru Desert:
+
+- name: Lanayru Desert - Chest near Party Wheel
+  original_item: Golden Skull
+  type:
+  Paths:
+    - stage/F300/r0/l0/TBox/70
+
+- name: Lanayru Desert - Chest near Hook Beetle Fight
+  original_item: Tumbleweed
+  type:
+  Paths:
+    - stage/F300/r0/l0/TBox/84
+
+- name: Lanayru Desert - Hook Beetle Fight
+  original_item: Progressive Beetle
+  type: Combat
+  Paths:
+    - event/400-Desert/8
+    - oarc/F300/l0
+
+- name: Lanayru Desert - Chest on Platform near Fire Node
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F300/r0/l0/TBox/73
+
+- name: Lanayru Desert - Chest on Platform near Lightning Node
+  original_item: Dusk Relic
+  type:
+  Paths:
+    - stage/F300/r0/l0/TBox/72
+
+- name: Lanayru Desert - Chest near Sand Oasis
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F300/r0/l0/TBox/71
+
+- name: Lanayru Desert - Chest on top of Lanayru Mining Facility # actually spawns on raising LMF
+  original_item: Rare Treasure # TODO check
+  type:
+  Paths:
+    - stage/F300/r0/l1/TBox/83
+  hint: sometimes
+  text: the <r<midst of the desert>> holds
+
+- name: Lanayru Desert - Secret Passageway Chest
+  original_item: Heart Piece
+  type:
+  hint: sometimes
+  text: a <r<secret passage in the desert>> holds
+  Paths:
+    - stage/F300/r0/l0/TBox/74
+
+- name: Temple of Time - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+## Nodes
+
+- name: Fire Node - Shortcut Chest
+  original_item: Rare Treasure # TODO check again
+  type:
+  hint: sometimes
+  text: a <r<raised chest in the Fire Node>> holds
+  Paths:
+    - stage/F300_3/r0/l0/TBox/79
+
+- name: Fire Node - First Small Chest
+  original_item: Blue Rupee
+  type:
+  Paths:
+    - stage/F300_3/r0/l0/TBox/78
+
+- name: Fire Node - Second Small Chest
+  original_item: Blue Rupee
+  type:
+  Paths:
+    - stage/F300_3/r0/l0/TBox/80
+
+- name: Fire Node - Left Ending Chest
+  original_item: Golden Skull # TODO check again
+  type:
+  Paths:
+    - stage/F300_3/r0/l0/TBox/81
+
+- name: Fire Node - Right Ending Chest
+  original_item: Blue Rupee
+  type:
+  Paths:
+    - stage/F300_3/r0/l0/TBox/82
+
+- name: Lightning Node - First Chest
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F300_2/r0/l0/TBox/75
+
+- name: Lightning Node - Second Chest
+  original_item: Blue Rupee
+  type:
+  Paths:
+    - stage/F300_2/r0/l0/TBox/76
+
+- name: Lightning Node - Raised Chest near Generator
+  original_item: Rare Treasure # TODO check again
+  type:
+  text: a <r<raised chest in the Lightning Node>> contains
+  Paths:
+    - stage/F300_2/r0/l0/TBox/77
+
+# Lanayru Caves:
+
+- name: Lanayru Caves - Chest
+  original_item: Golden Skull # TODO check again
+  type:
+  Paths:
+    - stage/F303/r0/l0/TBox/127
+
+- name: Lanayru Caves - Golo's Gift
+  original_item: Lanayru Caves Small Key
+  type:
+  Paths:
+    - event/404-DesertF3/127
+    - oarc/F303/l0
+
+- name: Lanayru Caves - Gossip Stone in Center
+  original_item: Nothing
+  type: Hint Location
+
+- name: Lanayru Caves - Gossip Stone towards Lanayru Gorge
+  original_item: Nothing
+  type: Hint Location
+
+
+# Lanayru Gorge:
+
+- name: Lanayru Gorge - Thunder Dragon's Reward
+  original_item: Lanayru Song of the Hero Part
+  type:
+  Paths:
+    - event/404-DesertF3/give item after Healing Thunderdragon
+    - oarc/F302/l0
+  hint: sometimes
+  text: <r<curing an ancient dragon>> is rewarded with
+
+- name: Lanayru Gorge - Item on Pillar
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F302/r0/l0/Item/9
+
+- name: Lanayru Gorge - Life Tree Seedling
+  original_item: Life Tree Seedling
+  type:
+  Paths:
+    - stage/F302/r0/l0/Soil/30
+
+# Lanayru Sand Sea:
+## Ancient Harbour
+
+- name: Ancient Harbour - Rupee on First Pillar
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F301/r0/l0/Item/92
+
+- name: Ancient Harbour - Left Rupee on Entrance Crown
+  original_item: Silver Rupee 
+  type: Rupees (Quick Beetle)
+  Paths:
+    - stage/F301/r0/l0/Item/91
+
+- name: Ancient Harbour - Right Rupee on Entrance Crown
+  original_item: Silver Rupee 
+  type: Rupees (Quick Beetle)
+  Paths:
+    - stage/F301/r0/l0/Item/93
+
+## Skipper's Retreat
+
+- name: Skipper's Retreat - Chest after Moblin
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F301_3/r0/l0/TBox/78
+
+- name: Skipper's Retreat - Chest on top of Cacti Pillar
+  original_item: Semi Rare Treasure
+  type:
+  Paths:
+    - stage/F301_3/r0/l0/TBox/76
+  text: a <r<chest amongst cacti>> holds
+
+- name: Skipper's Retreat - Chest in Shack
+  original_item: Sea Chart
+  type:
+  Paths:
+    - stage/F301_5/r0/l0/TBox/65
+  hint: sometimes
+  text: a <r<chest atop a sandy retreat>> holds
+
+- name: Skipper's Retreat - Skydive Chest
+  original_item: Silver Rupee
+  type:
+  Paths:
+    - stage/F301_3/r0/l0/TBox/77
+
+## Shipyard
+
+- name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
+  original_item: Heart Piece
+  type: Minigames, Combat #Moldarach 2 makes this a Combat check
+  Paths:
+    - event/406-TrolleyRace/77
+    - oarc/F301_4/l0
+  hint: sometimes
+  text: a <r<fast minecart time>> is rewarded with
+
+- name: Shipyard - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+## Pirate Stronghold
+
+- name: Pirate Stronghold - Rupee on East Sea Pillar
+  original_item: Silver Rupee 
+  type: Rupees (Quick Beetle)
+  Paths:
+    - stage/F301_6/r0/l0/Item/12
+
+- name: Pirate Stronghold - Rupee on West Sea Pillar
+  original_item: Silver Rupee 
+  type: Rupees (Quick Beetle)
+  Paths:
+    - stage/F301_6/r0/l0/Item/11
+
+- name: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
+  original_item: Silver Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/F301_6/r0/l1/Item/13
+    - stage/F301_6/r0/l2/Item/13
+
+- name: Pirate Stronghold Interior - First Chest
+  original_item: Silver Rupee
+  type:
+  Paths:
+    - stage/F301_2/r4/l0/TBox/75
+
+- name: Pirate Stronghold Interior - Second Chest
+  original_item: Semi Rare Treasure
+  type:
+  Paths:
+    - stage/F301_2/r5/l0/TBox/73
+
+- name: Pirate Stronghold Interior - Third Chest
+  original_item: Semi Rare Treasure
+  type:
+  Paths:
+    - stage/F301_2/r6/l0/TBox/74
+
+# Skyview (SV):
+
+- name: Skyview Temple - Chest on Tree Branch
+  original_item: Skyview Map
+  type:
+  Paths:
+    - stage/D100/r2/l0/TBox/64
+
+- name: Skyview Temple - Digging Spot in Crawlspace
+  original_item: Skyview Small Key
+  type:
+  hints: sometimes
+  text: in a <r<temple in the forest>> a mogma <r<buried>>
+  Paths:
+    - stage/D100/r4/l0/Soil/15
+
+- name: Skyview Temple - Chest behind Two Eyes
+  original_item: Skyview Small Key 
+  type:
+  Paths:
+    - stage/D100/r4/l0/TBox/67
+  text: <r<two watchful eyes>> guard
+
+- name: Skyview Temple - Beetle Chest
+  original_item: Progressive Beetle
+  type:
+  Paths:
+    - stage/D100/r10/l1/TBox/65
+    - stage/D100/r10/l2/TBox/65
+
+- name: Skyview Temple - Item behind Bars
+  original_item: Heart Piece
+  type:
+  Paths:
+    - stage/D100/r5/l0/Item/103
+
+- name: Skyview Temple - Rupee in Southeast Tunnel
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D100/r5/l0/Item/65
+
+- name: Skyview Temple - Rupee in Southwest Tunnel
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D100/r5/l0/Item/67
+
+- name: Skyview Temple - Rupee in East Tunnel
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D100/r5/l0/Item/66
+
+- name: Skyview Temple - Chest behind Three Eyes
+  original_item: Skyview Small Key 
+  type:
+  Paths:
+    - stage/D100/r7/l0/TBox/68
+  hint: sometimes
+  text: <r<three watchful eyes>> guard
+
+- name: Skyview Temple - Chest near Boss Door
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D100/r9/l0/TBox/70
+
+- name: Skyview Temple - Boss Key Chest
+  original_item: Skyview Boss Key
+  type:
+  Paths:
+    - stage/D100/r9/l0/TBox/66
+
+- name: Skyview Temple - Heart Container
+  original_item: Heart Container
+  type:
+  Paths:
+    - stage/B100/r0/l1/HeartCo
+    - stage/B100/r0/l2/HeartCo
+    - stage/B100/r0/l3/HeartCo
+    - stage/B100/r0/l4/HeartCo
+
+- name: Skyview Spring - Rupee on Spring Pillar
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/B100_1/r0/l0/Item/109
+
+- name: Skyview Spring - Ruby Tablet
+  original_item: Ruby Tablet
+  type:
+  Paths:
+    - event/201-ForestD1/6
+    - oarc/B100_1/l0
+
+# Earth Temple (ET):
+
+- name: Earth Temple - Vent Chest
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D200/r1/l0/TBox/66
+
+- name: Earth Temple - Rupee above Drawbridge
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D200/r1/l0/Item/25
+
+- name: Earth Temple - Chest behind Bombable Rock
+  original_item: Golden Skull
+  type:
+  Paths:
+    - stage/D200/r1/l0/TBox/69
+
+- name: Earth Temple - Chest Left of Main Room Bridge
+  original_item: Golden Skull # TODO check again
+  type:
+  Paths:
+    - stage/D200/r1/l0/TBox/70
+
+- name: Earth Temple - Chest in West Room
+  original_item: Earth Temple Map
+  type:
+  hint: sometimes
+  text: the <r<western wing in the Earth Temple>> holds
+  Paths:
+    - stage/D200/r0/l0/TBox/64
+
+- name: Earth Temple - Bomb Bag Chest
+  original_item: Bomb Bag
+  type:
+  Paths:
+    - stage/D200/r3/l0/TBox/65
+  text: a menacing <r<pair of Lizalfos>> protect
+
+- name: Earth Temple - Ledd's Gift
+  original_item: 5 Bombs
+  type:
+  Paths:
+    - event/301-MountainD1/16
+    - oarc/D200/l0
+
+- name: Earth Temple - Rupee in Lava Tunnel
+  original_item: Silver Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D200/r2/l0/Item/21
+  text: hidden within the <r<neck of a dragon>> rests
+
+- name: Earth Temple - Chest Guarded by Lizalfos
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D200/r1/l0/TBox/67
+
+- name: Earth Temple - Boss Key Chest
+  original_item: Earth Temple Boss Key
+  type:
+  Paths:
+    - stage/D200/r4/l0/TBox/68
+
+- name: Earth Temple - Heart Container
+  original_item: Heart Container
+  type:
+  Paths:
+    - stage/B200/r10/l1/HeartCo
+    - stage/B200/r10/l2/HeartCo
+
+- name: Earth Spring - Amber Tablet
+  original_item: Amber Tablet
+  type:
+  Paths:
+    - event/301-MountainD1/22
+    - oarc/B210/l0
+
+# Lanayru Mining Facility (LMF):
+
+- name: Lanayru Mining Facility - Chest behind Bars
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D300/r0/l0/TBox/64
+
+- name: Lanayru Mining Facility - First Chest in Hub Room
+  original_item: Lanayru Mining Facility Small Key
+  type:
+  Paths:
+    - stage/D300_1/r5/l0/TBox/70
+
+- name: Lanayru Mining Facility - Chest in First West Room
+  original_item: Golden Skull # TODO check again
+  type:
+  Paths:
+    - stage/D300/r3/l0/TBox/66
+
+- name: Lanayru Mining Facility - Chest after Armos Fight
+  original_item: Lanayru Mining Facility Map
+  type:
+  Paths:
+    - stage/D300/r6/l0/TBox/69
+
+- name: Lanayru Mining Facility - Chest in Key Locked Room
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D300/r2/l0/TBox/65
+
+- name: Lanayru Mining Facility - Gust Bellows Chest
+  original_item: Gust Bellows
+  type:
+  Paths:
+    - stage/D300/r4/l0/TBox/68
+
+- name: Lanayru Mining Facility - Chest inside Gust Bellows Room
+  original_item: Golden Skull # TODO check again
+  type:
+  Paths:
+    - stage/D300/r4/l0/TBox/76
+
+- name: Lanayru Mining Facility - Chest behind First Crawlspace
+  original_item: Golden Skull # TODO check again
+  type:
+  Paths:
+    - stage/D300_1/r9/l0/TBox/72
+    - stage/D300/r9/l0/TBox/72
+
+- name: Lanayru Mining Facility - Chest in Spike Maze
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D300_1/r7/l0/TBox/73
+    - stage/D300/r7/l0/TBox/73
+
+- name: Lanayru Mining Facility - Boss Key Chest
+  original_item: Lanayru Mining Facility Boss Key
+  type:
+  Paths:
+    - stage/D300_1/r8/l0/TBox/71
+  hint: always
+  text: deep inside <r<Lanayru Mining Facility, a pair of Armos>> guard
+
+- name: Lanayru Mining Facility - Shortcut Chest in Main Hub
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D300_1/r5/l0/TBox/74
+
+- name: Lanayru Mining Facility - Heart Container
+  original_item: Heart Container
+  type:
+  Paths:
+    - stage/B300/r0/l1/HeartCo
+    - stage/B300/r0/l3/HeartCo
+
+- name: Lanayru Mining Facility - Goddess Harp
+  original_item: Goddess Harp
+  type:
+  Paths:
+    - event/400-Desert/286
+    - oarc/F300_5/l0
+
+# Ancient Cistern (AC):
+
+- name: Ancient Cistern - Rupee in West Hand
+  original_item: Silver Rupee
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r0/l0/Item/93
+
+- name: Ancient Cistern - Rupee in East Hand
+  original_item: Silver Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r0/l0/Item/92
+
+- name: Ancient Cistern - First Rupee in East Part in Short Tunnel
+  original_item: Green Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r2/l0/Item/65
+
+- name: Ancient Cistern - Second Rupee in East Part in Short Tunnel
+  original_item: Green Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r2/l0/Item/66
+
+- name: Ancient Cistern - Third Rupee in East Part in Short Tunnel
+  original_item: Green Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r2/l0/Item/67
+
+- name: Ancient Cistern - Rupee in East Part in Cubby
+  original_item: Red Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r2/l0/Item/68
+
+- name: Ancient Cistern - Rupee in East Part in Main Tunnel
+  original_item: Red Rupee
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r2/l0/Item/34
+
+- name: Ancient Cistern - Chest in East Part
+  original_item: Ancient Cistern Small Key 
+  type:
+  hint: sometimes
+  text: the <r<lone east chest in the Ancient Cistern>> contains
+  Paths:
+    - stage/D101/r1/l0/TBox/67
+# # Can Be Locked Out Of if activating water pillar before collecting
+# Ancient Cistern - Rupee under Lilypad:
+#   original_item: Red Rupee
+#   type: Rupees (No Quick Beetle)
+#   Paths:
+#     - stage/D101/r5/l0/Item/13
+
+- name: Ancient Cistern - Chest after Whip Hooks
+  original_item: Ancient Cistern Map
+  type:
+  Paths:
+    - stage/D101/r0/l0/TBox/65
+
+- name: Ancient Cistern - Chest near Vines
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D101/r0/l0/TBox/66
+
+- name: Ancient Cistern - Chest behind the Waterfall
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D101/r3/l0/TBox/84
+
+- name: Ancient Cistern - Bokoblin
+  original_item: Ancient Cistern Small Key 
+  type:
+  Paths:
+    - stage/D101/r4/l0/EBc/0xFC00
+
+- name: Ancient Cistern - Whip Chest
+  original_item: Whip
+  type:
+  Paths:
+    - stage/D101/r7/l0/TBox/69
+
+- name: Ancient Cistern - Boss Key Chest
+  original_item: Ancient Cistern Boss Key
+  type:
+  Paths:
+    - stage/D101/r4/l0/TBox/68
+
+- name: Ancient Cistern - Heart Container
+  original_item: Heart Container
+  type:
+  Paths:
+    - stage/B101/r0/l1/HeartCo
+    - stage/B101/r0/l3/HeartCo
+
+- name: Ancient Cistern - Farore's Flame
+  original_item: Progressive Sword
+  type:
+  Paths:
+    - event/202-ForestD2/give item after beating ancient cistern
+    - oarc/B101_1/l0
+
+# Sandship (SSH):
+
+- name: Sandship - Chest at the Stern
+  original_item: Heart Piece
+  type:
+  Paths:
+    - stage/D301/r0/l0/TBox/127
+
+- name: Sandship - Chest before 4-Door Corridor
+  original_item: Sandship Map
+  type:
+  Paths:
+    - stage/D301/r3/l0/TBox/71
+
+- name: Sandship - Chest behind Combination Lock
+  original_item: Sandship Small Key 
+  type:
+  Paths:
+    - stage/D301/r10/l0/TBox/69
+
+- name: Sandship - Treasure Room First Chest
+  original_item: Semi Rare Treasure
+  type:
+  Paths:
+    - stage/D301/r9/l0/TBox/64
+
+- name: Sandship - Treasure Room Second Chest
+  original_item: Silver Rupee
+  type:
+  Paths:
+    - stage/D301/r9/l0/TBox/65
+
+- name: Sandship - Treasure Room Third Chest
+  original_item: Semi Rare Treasure
+  type:
+  Paths:
+    - stage/D301/r9/l0/TBox/66
+
+- name: Sandship - Treasure Room Fourth Chest
+  original_item: Silver Rupee
+  type:
+  Paths:
+    - stage/D301/r9/l0/TBox/67
+
+- name: Sandship - Treasure Room Fifth Chest
+  original_item: Semi Rare Treasure
+  type:
+  Paths:
+    - stage/D301/r9/l0/TBox/68
+
+- name: Sandship - Robot in Brig's Reward
+  original_item: Sandship Small Key 
+  type:
+  hint: sometimes
+  text: the <r<gratitude of a freed crew>> reveals
+  Paths:
+    - event/401-DesertD2/14
+    - oarc/D301/l4
+
+- name: Sandship - Bow Chest
+  original_item: Progressive Bow
+  type:
+  Paths:
+    - stage/D301/r15/l0/TBox/72
+  hint: sometimes
+  text: a <r<robot upon the Sandship's bow>> guards
+
+- name: Sandship - Boss Key Chest
+  original_item: Sandship Boss Key
+  type:
+  Paths:
+    - stage/D301/r14/l3/TBox/73
+  hint: sometimes
+  text: the <r<secret treasure of the Sandship's captain>> is
+
+- name: Sandship - Heart Container
+  original_item: Heart Container
+  type:
+  Paths:
+    - stage/B301/r0/l1/HeartCo
+    - stage/D301/r0/l1/HeartCo
+  hint: sometimes
+  text: the <r<heart of an ancient sea creature>> holds
+
+- name: Sandship - Nayru's Flame
+  original_item: Progressive Sword
+  type:
+  Paths:
+    - event/401-DesertD2/45
+    - oarc/B301/l1
+    - oarc/D301/l1
+
+# Fire Sanctuary (FS):
+
+- name: Fire Sanctuary - Chest in First Room
+  original_item: Fire Sanctuary Small Key 
+  type:
+  Paths:
+    - stage/D201/r0/l0/TBox/64
+
+- name: Fire Sanctuary - Chest in Second Room
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D201_1/r1/l0/TBox/74
+    - stage/D201/r1/l0/TBox/74
+
+- name: Fire Sanctuary - Chest on Balcony
+  original_item: Empty Bottle
+  type:
+  Paths:
+    - stage/D201_1/r6/l0/TBox/70
+    - stage/D201/r6/l0/TBox/70
+
+- name: Fire Sanctuary - Chest near First Trapped Mogma
+  original_item: Fire Sanctuary Small Key 
+  type:
+  Paths:
+    - stage/D201_1/r5/l0/TBox/69
+
+- name: Fire Sanctuary - First Chest in Water Fruit Room
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/D201_1/r7/l0/TBox/73
+
+- name: Fire Sanctuary - Second Chest in Water Fruit Room
+  original_item: Semi Rare Treasure
+  type:
+  Paths:
+    - stage/D201_1/r7/l0/TBox/72
+
+- name: Fire Sanctuary - Mogma Mitts Chest
+  original_item: Progressive Mitts
+  type:
+  Paths:
+    - stage/D201_1/r5/l0/TBox/68
+  text: saving a <r<mogma>> from a <r<fiery fate>> rewards
+
+- name: Fire Sanctuary - Chest after Second Trapped Mogma
+  original_item: Fire Sanctuary Map
+  type:
+  Paths:
+    - stage/D201_1/r2/l0/TBox/65
+    - stage/D201/r2/l0/TBox/65
+
+- name: Fire Sanctuary - Chest after Bombable Wall
+  original_item: Fire Sanctuary Small Key 
+  type:
+  Paths:
+    - stage/D201_1/r11/l0/TBox/71
+  hint: always
+  text: a <r<false wall in the Fire Sanctuary>> guards
+
+- name: Fire Sanctuary - Plats' Chest
+  original_item: Heart Piece
+  type:
+  Paths:
+    - stage/D201/r3/l0/TBox/66
+
+- name: Fire Sanctuary - Chest in Staircase Room
+  original_item: Semi Rare Treasure
+  type:
+  Paths:
+    - stage/D201/r9/l0/TBox/75
+  text: exploring a <r<broken staircase>> reveals
+
+- name: Fire Sanctuary - Boss Key Chest
+  original_item: Fire Sanctuary Boss Key
+  type:
+  Paths:
+    - stage/D201/r4/l0/TBox/67
+
+- name: Fire Sanctuary - Heart Container
+  original_item: Heart Container
+  type:
+  Paths:
+    - stage/B201/r0/l1/HeartCo
+    - stage/B201/r0/l2/HeartCo
+
+- name: Fire Sanctuary - Din's Flame
+  original_item: Progressive Sword
+  type:
+  Paths:
+    - event/304-MountainD2/5
+    - oarc/B201_1/l0
+
+# Sky Keep (SK):
+
+- name: Sky Keep - First Chest
+  original_item: Sky Keep Map
+  type:
+  Paths:
+    - stage/D003_7/r0/l0/TBox/64
+
+- name: Sky Keep - Chest after Dreadfuse
+  original_item: Sky Keep Small Key
+  type:
+  Paths:
+    - stage/D003_6/r0/l0/TBox/65
+
+- name: Sky Keep - Rupee in Fire Sanctuary Room in Alcove
+  original_item: Silver Rupee 
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D003_2/r0/l0/Item/36
+
+- name: Sky Keep - Triforce of Power
+  original_item: Triforce of Power
+  type:
+  Paths:
+  - stage/D003_8/r0/l2/Item/61
+
+- name: Sky Keep - Triforce of Wisdom
+  original_item: Triforce of Wisdom
+  type:
+  Paths:
+  - stage/D003_8/r0/l1/Item/62
+
+- name: Sky Keep - Triforce of Courage
+  original_item: Triforce of Courage
+  type:
+  Paths:
+  - stage/D003_8/r0/l3/Item/64
+
+# Silent Realms:
+
+- name: Skyloft Silent Realm - Reward
+  original_item: Stone of Trials
+  type:
+  Paths:
+    - stage/S000/r0/l2/WarpObj
+  hint: always
+  text: the <r<goddess's final trial>> grants
+
+- name: Faron Silent Realm - Reward
+  original_item: Water Dragon Scale
+  type:
+  Paths:
+    - stage/S100/r0/l2/WarpObj
+  hint: always
+  text: a <r<trial of courage>> grants
+
+- name: Lanayru Silent Realm - Reward
+  original_item: Clawshots
+  type:
+  Paths:
+    - stage/S300/r0/l2/WarpObj
+  hint: always
+  text: a <r<trial of wisdom>> grants
+
+- name: Eldin Silent Realm - Reward
+  original_item: Fireshield Earrings
+  type:
+  Paths:
+    - stage/S200/r2/l2/WarpObj
+  hint: always
+  text: a <r<trial of power>> grants
