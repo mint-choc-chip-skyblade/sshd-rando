@@ -145,6 +145,7 @@ DEFAULT_CHECK_STORYFLAG_FLOW = {
     "param3": 3,  # check storyflag command
     "param4": 0,
     "param5": 0,
+    "next": -1,
 }
 
 DEFAULT_CHECK_SCENEFLAG_FLOW = {
@@ -155,6 +156,7 @@ DEFAULT_CHECK_SCENEFLAG_FLOW = {
     "param3": 6,  # check sceneflag command
     "param4": 0,
     "param5": 0,
+    "next": -1,
 }
 
 FLOW_ADD_VARIATIONS = (

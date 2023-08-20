@@ -279,13 +279,11 @@ class StagePatchHandler:
                 removeArcs = removeArcs - addArcs
 
                 if len(removeArcs) > 0:
-                    print("Remov arc")
                     stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
                     for arc in removeArcs:
                         stageU8.delete_file(f"oarc/{arc}.arc")
 
                 if len(addArcs) > 0:
-                    print("Add arc")
                     if stageU8 is None:
                         stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
                     for arc in addArcs:
@@ -309,7 +307,6 @@ class StagePatchHandler:
                         )
                         continue
                     elif len(layerOverridePatches) == 1:
-                        print("Layer override")
                         if stageU8 is None:
                             stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
                         stageBZS = parseBzs(stageU8.get_file_data("dat/stage.bzs"))
@@ -324,7 +321,6 @@ class StagePatchHandler:
                         objectPatches.append(objPatch)
 
                     if len(objectPatches) + len(self.checkPatches[stage]) > 0:
-                        print("Patch")
                         if stageU8 is None:
                             stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
 

@@ -6,6 +6,7 @@ from patches.patchconstants import (
     PARAM2_ALIASES,
     DEFAULT_FLOW_TYPE_LOOKUP,
 )
+from itemconstants import *
 from pathlib import Path
 
 from sslib.msb import parseMSB, buildMSB, add_msbf_branch, process_control_sequences
@@ -51,20 +52,32 @@ class EventPatchHandler:
                 lambda name: name[-1] == "f", eventArc.get_all_paths()
             ):
                 msbfFileName = eventFilePath.split("/")[-1]
-                if msbfFileName[:-5] in self.eventPatches:
+                if (
+                    msbfFileName[:-5] in self.eventPatches
+                    or msbfFileName == "003-ItemGet.msbf"
+                ):
+                    print(msbfFileName)
                     parsedMSBF = parseMSB(eventArc.get_file_data(eventFilePath))
-                    self.create_flow_label_to_index_mapping(
-                        flowPatches=self.eventPatches[msbfFileName[:-5]],
-                        msbf=parsedMSBF,
-                    )
 
-                    for patch in self.eventPatches[msbfFileName[:-5]]:
-                        if patch["type"] in FLOW_ADD_VARIATIONS + SWITCH_ADD_VARIATIONS:
-                            self.flow_add(msbf=parsedMSBF, flowAdd=patch)
-                        elif patch["type"] == "flowpatch":
-                            self.flow_patch(msbf=parsedMSBF, flowPatch=patch)
-                        elif patch["type"] == "entryadd":
-                            self.entry_add(msbf=parsedMSBF, entryAdd=patch)
+                    if msbfFileName[:-5] in self.eventPatches:
+                        self.create_flow_label_to_index_mapping(
+                            flowPatches=self.eventPatches[msbfFileName[:-5]],
+                            msbf=parsedMSBF,
+                        )
+
+                        for patch in self.eventPatches[msbfFileName[:-5]]:
+                            if (
+                                patch["type"]
+                                in FLOW_ADD_VARIATIONS + SWITCH_ADD_VARIATIONS
+                            ):
+                                self.flow_add(msbf=parsedMSBF, flowAdd=patch)
+                            elif patch["type"] == "flowpatch":
+                                self.flow_patch(msbf=parsedMSBF, flowPatch=patch)
+                            elif patch["type"] == "entryadd":
+                                self.entry_add(msbf=parsedMSBF, entryAdd=patch)
+
+                    if msbfFileName == "003-ItemGet.msbf":
+                        handle_progressive_items(parsedMSBF)
 
                     eventArc.set_file_data(eventFilePath, buildMSB(parsedMSBF))
 
@@ -207,6 +220,108 @@ class EventPatchHandler:
         msbt["TXT2"][textPatch["index"]] = process_control_sequences(
             textPatch["text"]
         ).encode("utf-16be")
+
+
+def make_progressive_item_events(
+    msbf, baseItemStart, itemTextIndexes, itemIDs, storyflags
+):
+    if len(itemTextIndexes) != len(itemIDs) or len(itemTextIndexes) != len(storyflags):
+        raise Exception(
+            "itemtextIndexes must be the same length as itemIDs and storyflags to make a progressive item"
+        )
+    flowIndex = len(msbf["FLW3"]["flow"])
+    msbf["FLW3"]["flow"][baseItemStart]["next"] = flowIndex
+
+    for index in range(len(itemTextIndexes) - 1, 0, -1):
+        branch = DEFAULT_FLOW_TYPE_LOOKUP["checkstoryflag"].copy()
+        branch["param2"] = storyflags[index - 1]
+        add_msbf_branch(
+            msbf=msbf, switch=branch, branchpoints=[(flowIndex + 1), (flowIndex + 3)]
+        )
+
+        event = DEFAULT_FLOW_TYPE_LOOKUP["giveitem"].copy()
+        event["param2"] = itemIDs[index]
+        event["next"] = flowIndex + 2
+        msbf["FLW3"]["flow"].append(event)
+
+        event = DEFAULT_FLOW_TYPE_LOOKUP["setstoryflag"].copy()
+        event["param2"] = storyflags[index]
+        event["next"] = itemTextIndexes[index]
+        msbf["FLW3"]["flow"].append(event)
+
+        flowIndex += 3
+
+    event = DEFAULT_FLOW_TYPE_LOOKUP["setstoryflag"].copy()
+    event["param2"] = storyflags[0]
+    event["next"] = itemTextIndexes[0]
+    msbf["FLW3"]["flow"].append(event)
+
+
+def handle_progressive_items(msbf):
+    # progressive mitts
+    make_progressive_item_events(
+        msbf,
+        93,
+        [35, 231],
+        ITEM_FLAGS[PROGRESSIVE_MITTS],
+        ITEM_STORY_FLAGS[PROGRESSIVE_MITTS],
+    )
+    # progressive swords
+    make_progressive_item_events(
+        msbf,
+        136,
+        [77, 608, 75, 78, 74, 73],
+        ITEM_FLAGS[PROGRESSIVE_SWORD],
+        ITEM_STORY_FLAGS[PROGRESSIVE_SWORD],
+    )
+    # progressive beetle
+    make_progressive_item_events(
+        msbf,
+        96,
+        [38, 178, 177, 176],
+        ITEM_FLAGS[PROGRESSIVE_BEETLE],
+        ITEM_STORY_FLAGS[PROGRESSIVE_BEETLE],
+    )
+    # progressive bow
+    make_progressive_item_events(
+        msbf,
+        127,
+        [68, 163, 162],
+        ITEM_FLAGS[PROGRESSIVE_BOW],
+        ITEM_STORY_FLAGS[PROGRESSIVE_BOW],
+    )
+    # progressive slingshot
+    make_progressive_item_events(
+        msbf,
+        97,
+        [39, 237],
+        ITEM_FLAGS[PROGRESSIVE_SLINGSHOT],
+        ITEM_STORY_FLAGS[PROGRESSIVE_SLINGSHOT],
+    )
+    # progressive bug net
+    make_progressive_item_events(
+        msbf,
+        20,
+        [18, 309],
+        ITEM_FLAGS[PROGRESSIVE_BUG_NET],
+        ITEM_STORY_FLAGS[PROGRESSIVE_BUG_NET],
+    )
+    # progressive pouch
+    make_progressive_item_events(
+        msbf,
+        258,
+        [254, 253],
+        ITEM_FLAGS[PROGRESSIVE_POUCH],
+        ITEM_STORY_FLAGS[PROGRESSIVE_POUCH],
+    )
+    # progressive wallets
+    make_progressive_item_events(
+        msbf,
+        250,
+        [246, 245, 244, 255],
+        ITEM_FLAGS[PROGRESSIVE_WALLET],
+        ITEM_STORY_FLAGS[PROGRESSIVE_WALLET],
+    )
 
 
 def entrypoint_hash(name, entries):
