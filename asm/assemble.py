@@ -152,7 +152,7 @@ with tempDir as tempDirName:
                     tempBranchLabel + f" = 0x{destination:x}" + SEMICOLON + NEWLINE
                 )
 
-                codeBlocks[asmReadOffset].append(branch + SPACE + tempBranchLabel)
+                codeBlocks[asmReadOffset].append(branch + SPACE + tempBranchLabel + NEWLINE)
             else:
                 codeBlocks[asmReadOffset].append(line)
 
