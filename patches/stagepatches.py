@@ -30,7 +30,7 @@ def patch_tbox(bzs, itemID, id):
     id = int(id)
     tbox = next(
         filter(lambda x: x["name"] == "TBox" and (x["anglez"] >> 9) == id, bzs["OBJS"]),
-        None
+        None,
     )
     if tbox is None:
         print(f"ERROR: No tbox id {id} found to patch")
@@ -39,30 +39,120 @@ def patch_tbox(bzs, itemID, id):
     tbox["anglez"] = mask_shift_set(tbox["anglez"], 0x1FF, 0, itemID)
     # obj["params1"] = mask_shift_set(obj["params1"], 0x3, 4, 0x01)
 
+
 def patch_freestanding_item(bzs, itemID, id):
     id = int(id)
     freestandingItem = next(
-        filter(lambda x: x["name"] == "Item" and ((x["params1"] >> 10) & 0xFF) == id, bzs["OBJ "]),
-        None
+        filter(
+            lambda x: x["name"] == "Item" and ((x["params1"] >> 10) & 0xFF) == id,
+            bzs["OBJ "],
+        ),
+        None,
     )
     if freestandingItem is None:
-        print(F"ERROR: No freestanding item id {id} found to patch")
+        print(f"ERROR: No freestanding item id {id} found to patch")
         return
 
-    freestandingItem["params1"] = mask_shift_set(freestandingItem["params1"], 0xFF, 0, itemID)
-    freestandingItem["params1"] = mask_shift_set(freestandingItem["params1"], 0xF, 0x14, 9) # makes subtype 9 so it acts like a heart piece and force textbox on collection
+    freestandingItem["params1"] = mask_shift_set(
+        freestandingItem["params1"], 0xFF, 0, itemID
+    )
+    freestandingItem["params1"] = mask_shift_set(
+        freestandingItem["params1"], 0xF, 0x14, 9
+    )  # makes subtype 9 so it acts like a heart piece and force textbox on collection
+
 
 def patch_zeldas_closet(bzs, itemID, id):
     id = int(id)
     closet = next(
-        filter(lambda x: x["name"] == "chest" and (x["params1"] & 0xFF) == id, bzs["OBJ "]),
-        None
+        filter(
+            lambda x: x["name"] == "chest" and (x["params1"] & 0xFF) == id, bzs["OBJ "]
+        ),
+        None,
     )
     if closet is None:
-        print(F"ERROR: No closet id {id} found to patch")
+        print(f"ERROR: No closet id {id} found to patch")
         return
 
     closet["params1"] = mask_shift_set(closet["params1"], 0xFF, 8, itemID)
+
+
+# needs an asm change
+# def patch_ac_key_boko(bzs, itemID, id):
+#     id = int(id, 0)
+#     boko = next(
+#         filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
+#     )
+#     if boko is None:
+#         print(f"ERROR: No boko id {id} found to patch")
+#         return
+
+#     boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemID)
+
+
+# def patch_heart_container(bzs, itemID):
+#     hc = next(filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None)
+#     if hc is None:
+#         print(f"ERROR: No heart container found to patch")
+#         return
+
+#     hc["params1"] = mask_shift_set(hc["params1"], 0xFF, 16, itemID)
+
+
+# def patch_chandelier_item(bzs, itemID):
+#     chandelier = next(filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None)
+#     if chandelier is None:
+#         print(f"ERROR: No chandelier found to patch")
+#         return
+
+#     chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemID)
+
+
+# def patch_digspot_item(bzs, itemID, id):
+#     id = int(id)
+#     digSpot = next(
+#         filter(
+#             lambda x: x["name"] == "Soil" and ((x["params1"] >> 4) & 0xFF) == id,
+#             bzs["OBJ "],
+#         ),
+#         None,
+#     )
+#     if digSpot is None:
+#         print(f"ERROR: No digspot id {id} found to patch")
+#         return
+
+#     # patch digspot to be the same as key piece digspots in all ways except it keeps it's initial sceneflag
+#     digSpot["params1"] = (digSpot["params1"] & 0xFF0) | 0xFF0B1004
+
+#     digSpot["params2"] = mask_shift_set(digSpot["params2"], 0xFF, 0x18, itemID)
+
+
+# def patch_goddess_crest(bzs, itemID, index):
+#     crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
+#     if crest is None:
+#         print(f"ERROR: No crest found to patch")
+#         return
+
+#     # 3 items patched into same object at different points in the params
+#     if index == "0":
+#         crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemID)
+#     elif index == "1":
+#         crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x10, itemID)
+#     elif index == "2":
+#         crest["params2"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemID)
+
+
+# def patch_tadtone_group(bzs, itemID, groupID):
+#     groupID = int(groupID, 0)
+#     clefs = filter(
+#         lambda x: x["name"] == "Clef" and ((x["params1"] >> 3) & 0x1F) == groupID,
+#         bzs["OBJ "],
+#     )
+
+#     for clef in clefs:
+#         clef["anglez"] = mask_shift_set(clef["anglez"], 0xFFFF, 0, itemID)
+
+### still need to do trials
+
 
 def patch_additional_properties(object, property, value):
     if object["name"].startswith("Npc"):
@@ -430,6 +520,39 @@ class StagePatchHandler:
                                             itemID,
                                             objectID,
                                         )
+                                    # needs an asm change
+                                    # elif objectName == "EBc":
+                                    #     patch_ac_key_boko(
+                                    #         roomBZS["LAY "][f"l{layer}"],
+                                    #         itemID,
+                                    #         objectID,
+                                    #     )
+                                    # elif objectName == "HeartCo":
+                                    #     patch_heart_container(
+                                    #         roomBZS["LAY "][f"l{layer}"], itemID
+                                    #     )
+                                    # elif objectName == "Chandel":
+                                    #     patch_chandelier_item(
+                                    #         roomBZS["LAY "][f"l{layer}"], itemID
+                                    #     )
+                                    # elif objectName == "Soil":
+                                    #     patch_digspot_item(
+                                    #         roomBZS["LAY "][f"l{layer}"],
+                                    #         itemID,
+                                    #         objectID,
+                                    #     )
+                                    # elif objectName == "SwSB":
+                                    #     patch_goddess_crest(
+                                    #         roomBZS["LAY "][f"l{layer}"],
+                                    #         itemID,
+                                    #         objectID,
+                                    #     )
+                                    # elif objectName == "Clef":
+                                    #     patch_tadtone_group(
+                                    #         roomBZS["LAY "][f"l{layer}"],
+                                    #         itemID,
+                                    #         objectID,
+                                    #     )
                                     else:
                                         print(
                                             f"Object name: {objectName} not current supported for check patching"
