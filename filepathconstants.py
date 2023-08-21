@@ -5,8 +5,6 @@ TITLE_ID = "01002DA013484000"
 
 RANDO_ROOT_PATH = Path(os.path.dirname(os.path.realpath(__file__)))
 
-TEMP_PLACEMENT_LIST = Path(RANDO_ROOT_PATH / "placements.yaml")
-
 OUTPUT_PATH = Path(RANDO_ROOT_PATH / "output")
 OUTPUT_STAGE_PATH = Path(OUTPUT_PATH / "romfs" / "Stage")
 OUTPUT_EVENT_PATH = Path(OUTPUT_PATH / "romfs" / "US" / "Object" / "en_US")
@@ -31,3 +29,8 @@ OBJECTPACK_PATH = Path(
     / "NX"
     / "ObjectPack.arc.LZ"
 )
+
+TITLE2D_SOURCE_PATH = (
+    RANDO_ROOT_PATH / "title" / TITLE_ID / "romfs" / "Layout" / "Title2D.arc"
+)
+TITLE2D_OUTPUT_PATH = OUTPUT_PATH / "romfs" / "Layout" / "Title2D.arc"

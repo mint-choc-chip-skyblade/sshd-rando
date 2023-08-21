@@ -1,0 +1,401 @@
+- name: Root
+  allowed_time_of_day: Day Only
+  exits:
+    Link's Spawn: Nothing
+
+
+- name: Link's Spawn
+  allowed_time_of_day: Day Only
+  exits:
+    Knight Academy: Nothing
+
+
+- name: Knight Academy
+  allowed_time_of_day: All
+  can_sleep: true
+  events:
+    Start Owlans Quest: "'All_Kikwis_Saved'"
+    Knock on Toilet Door: Goddess_Harp and Night
+  exits:
+    Knight Academy Upper North Door: Nothing
+    Knight Academy Upper South Door: Nothing
+    Knight Academy Lower East Door: Day
+    Knight Academy Lower West Door: Day
+  locations:
+    Knight Academy - Fledge's Gift: Nothing
+    Knight Academy - Crystal in Knight Academy Plant: Night
+    Knight Academy - Crystal in Link's Room: Night
+    Knight Academy - Owlan's Crystals: Day and 'Retrieve_Oolo'
+    Knight Academy - Cawlin's Letter: Day and 'Knock_on_Toilet_Door'
+    Knight Academy - Ghost/Pipit's Crystals: Day and Cawlins_Letter
+    Knight Academy - Fledge's Crystals: Night and 'Endurance_Potion'
+
+
+- name: Knight Academy Chimney
+  allowed_time_of_day: All
+  exits:
+    Knight Academy Zelda's Room: Nothing
+
+
+- name: Knight Academy Zelda's Room
+  allowed_time_of_day: All
+  exits:
+    Knight Academy: Nothing
+  locations:
+    Knight Academy - Crystal in Zelda's Room: Night
+    Knight Academy - In Zelda's Closet: Nothing
+
+
+- name: Knight Academy Upper North Door
+  allowed_time_of_day: All
+  exits:
+    Knight Academy: Nothing
+    Upper Skyloft: Nothing
+
+
+- name: Knight Academy Upper South Door
+  allowed_time_of_day: All
+  exits:
+    Knight Academy: Nothing
+    Upper Skyloft: Nothing
+
+
+- name: Knight Academy Lower East Door
+  allowed_time_of_day: All
+  exits:
+    Knight Academy: Nothing
+    Upper Skyloft: Nothing
+
+
+- name: Knight Academy Lower West Door
+  allowed_time_of_day: All
+  exits:
+    Knight Academy: Nothing
+    Upper Skyloft: Nothing
+
+
+- name: Upper Skyloft
+  allowed_time_of_day: All
+  hint region: Upper Skyloft
+  exits:
+    Knight Academy Upper North Door: Nothing
+    Knight Academy Upper South Door: Nothing
+    Knight Academy Lower East Door: Day
+    Knight Academy Lower West Door: Day
+    Knight Academy Chimney: Clawshots
+    Sparring Hall North Door: Nothing
+    Sparring Hall South Door: Nothing
+    Inside the Statue of the Goddess: Nothing
+    Central Skyloft: Nothing
+  locations:
+    Upper Skyloft - Owlan's Gift: Day
+    Upper Skyloft - Chest near Goddess Statue: Nothing
+    Upper Skyloft - Pumpkin Archery -- 600 Points: Bow and Day
+
+
+- name: Sparring Hall
+  allowed_time_of_day: All
+  events:
+    Delivered Hot Soup: "'Start_Hot_Soup_Delivery'"
+  exits:
+    Sparring Hall North Door: Nothing
+    Sparring Hall South Door: Nothing
+  locations:
+    Sparring Hall - Crystal: Beetle and Night
+    Sparring Hall - Chest: Nothing
+
+
+- name: Sparring Hall North Door
+  allowed_time_of_day: All
+  exits:
+    Sparring Hall: Nothing
+    Upper Skyloft: Nothing
+
+
+- name: Sparring Hall South Door
+  allowed_time_of_day: All
+  exits:
+    Sparring Hall: Nothing
+    Upper Skyloft: Nothing
+
+
+- name: Inside the Statue of the Goddess
+  allowed_time_of_day: All
+  exits:
+    Upper Skyloft: Nothing
+  locations:
+    Inside the Statue of the Goddess - First Goddess Sword Item: Nothing
+    Inside the Statue of the Goddess - Second Goddess Sword Item: Nothing
+
+
+- name: Central Skyloft
+  allowed_time_of_day: All
+  hint region: Central Skyloft
+  events:
+    Can Collect Water: Bottle
+  exits:
+    Beedle's Shop: Day and (Distance_Activator or (logic_beedles_shop_with_bombs and Bomb_Bag))
+    Bazaar North: Day
+    Bazaar West: Day
+    Bazaar South: Day
+    Skyloft Silent Realm: Goddess_Harp and Song_of_the_Hero
+    Orielle and Parrow's House: Nothing
+    Peatrice's House: Nothing
+    Wryna's House: Nothing
+    Piper's House: Nothing
+    The Sky: Day
+    Upper Skyloft: Nothing
+    Skyloft Village: Nothing
+    # omit SoT here intentionally, see the comment on that
+    # area for an explanation
+    Sky Keep Entrance Platform: Day and Clawshots
+    Waterfall Island: Clawshots
+    Waterfall Cave: Can_Cut_Trees_And_Logs
+    Bird Nest: logic_baby_rattle_from_beedles_shop and Day and Distance_Activator and (Beetle or Whip)
+  locations:
+    Central Skyloft - Crystal between Wooden Planks: Night
+    Central Skyloft - Crystal on West Cliff: Night
+    Central Skyloft - Crystal on Light Tower: Night
+    Central Skyloft - West Cliff Goddess Chest: "'Goddess_Cube_on_West_Great_Tree_near_Exit'"
+    Central Skyloft - Parrow's Gift: Day and 'Talk_to_Orielle'
+    Central Skyloft - Parrow's Crystals: Day and 'Save_Orielle'
+    Central Skyloft - Shed Chest: Water_Scale
+    Central Skyloft - Shed Goddess Chest: Water_Scale and 'Goddess_Cube_on_Sand_Slide'
+    Central Skyloft - Crystal on Waterfall Island: Night and Quick_Beetle
+    Central Skyloft - Crystal after Waterfall Cave: Night and Beetle
+    Central Skyloft - Crystal in Loftwing Prison: Night and Beetle
+
+
+- name: Bird Nest
+  allowed_time_of_day: All
+  exits:
+    Central Skyloft: Nothing
+  locations:
+    Central Skyloft - Item in Bird Nest: Gust_Bellows
+
+
+- name: Bazaar
+  allowed_time_of_day: All
+  events:
+    Endurance Potion: Bottle and Raise_Lanayru_Mining_Facility
+  exits:
+    Bazaar North: Nothing
+    Bazaar West: Nothing
+    Bazaar South: Nothing
+  locations:
+    Bazaar - Potion Lady's Gift: Nothing
+    Bazaar - Goddess Chest: "'Goddess_Cube_in_Ancient_Harbour'"
+    Bazaar - Upgrade to Quick Beetle: Hook_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
+    Bazaar - Upgrade to Tough Beetle: Quick_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
+
+
+- name: Bazaar North
+  allowed_time_of_day: All
+  exits: 
+    Bazaar: Nothing
+    Central Skyloft: Nothing
+
+
+- name: Bazaar South
+  allowed_time_of_day: All
+  exits: 
+    Bazaar: Nothing
+    Central Skyloft: Nothing
+
+
+- name: Bazaar West
+  allowed_time_of_day: All
+  exits: 
+    Bazaar: Nothing
+    Central Skyloft: Nothing
+
+
+- name: Orielle and Parrow's House
+  allowed_time_of_day: All
+  can_sleep: true
+  exits:
+    Central Skyloft: Nothing
+  locations:
+    Central Skyloft - Crystal in Orielle and Parrow's House: Nothing
+    Central Skyloft - Parrow's Gift: Night and 'Talk_to_Orielle'
+    Central Skyloft - Parrow's Crystals: Night and 'Save_Orielle'
+
+
+- name: Peatrice's House
+  allowed_time_of_day: All
+  can_sleep: true
+  exits:
+    Central Skyloft: Nothing
+  locations:
+    Central Skyloft - Peater/Peatrice's Crystals: can_access(Bazaar) and Night
+
+
+- name: Wryna's House
+  allowed_time_of_day: All
+  can_sleep: true
+  exits:
+    Central Skyloft: Nothing
+  locations:
+    Central Skyloft - Wryna's Crystals: Nothing
+
+
+- name: Piper's House
+  allowed_time_of_day: All
+  can_sleep: true
+  exits:
+    Central Skyloft: Nothing
+
+# Pretend this area is reachable without SoT and instead require it
+# for the exit to SK
+# the reason for this is twofold:
+# - only requiring SoT for the actual exit doesn't trip up the algorithm that
+#   separates progress items from nonprogress
+# - When coming from SK in ER, when it hasn't been opened yet *doesn't* place
+#   you on the platform near the entrance (cause it doesn't exist), so you always need SoT to enter SK
+- name: Sky Keep Entrance Platform
+  exits:
+    Sky Keep Entryway: Stone_of_Trials
+    Central Skyloft: Clawshots
+
+
+- name: Waterfall Island
+  allowed_time_of_day: All
+  exits:
+    Central Skyloft: Nothing
+    Skyloft Village: Nothing
+    Bird Nest: Nothing
+  locations:
+    Central Skyloft - Crystal on Waterfall Island: Night
+    Central Skyloft - Waterfall Goddess Chest: "'Goddess_Cube_in_Pirate_Stronghold'"
+    Central Skyloft - Floating Island Goddess Chest: "'Goddess_Cube_in_Lake_Floria'"
+    Central Skyloft - Gossip Stone on Waterfall Island: Nothing
+
+
+- name: Waterfall Cave
+  allowed_time_of_day: All
+  exits:
+    Central Skyloft: Nothing
+    Skyloft Past Waterfall Cave: Nothing
+  locations:
+    Central Skyloft - Waterfall Cave First Chest: Nothing
+    Central Skyloft - Waterfall Cave Second Chest: Nothing
+    Central Skyloft - Waterfall Cave Crawlspace Rupee: Nothing
+
+
+- name: Skyloft Past Waterfall Cave
+  allowed_time_of_day: All
+  exits:
+    Waterfall Cave: Nothing
+    The Sky: Day
+  locations:
+    Central Skyloft - Crystal after Waterfall Cave: Night
+    Central Skyloft - Crystal in Loftwing Prison: Night
+
+
+- name: Skyloft Silent Realm
+  allowed_time_of_day: All
+  hint region: Skyloft Silent Realm
+  exits:
+    Central Skyloft: Nothing
+  locations:
+    Skyloft Silent Realm - Reward: Nothing
+
+
+- name: Skyloft Village
+  allowed_time_of_day: All
+  hint region: Skyloft Village
+  events:
+    Opened Shed: Night
+  exits:
+    Central Skyloft: Nothing
+    Skyloft Past Waterfall Cave: logic_waterfall_cave_jump and Day
+    Bertie's House: Nothing
+    Sparrot's House: Nothing
+    Mallara's House: Nothing
+    Gondo's House: Nothing
+    Rupin's House: Nothing
+    Batreaux's House: "'Opened_Shed' or logic_gravestone_jump"
+    The Sky: Day
+  locations:
+    Skyloft Village - Crystal near Pumpkin Patch: Night
+
+
+- name: Bertie's House
+  allowed_time_of_day: All
+  can_sleep: true
+  exits:
+    Skyloft Village: Nothing
+  locations:
+    Skyloft Village - Bertie's Crystals: Babys_Rattle and Night
+
+
+- name: Sparrot's House
+  allowed_time_of_day: All
+  can_sleep: true
+  events:
+    Start Sparrots Quest: Nothing
+  exits:
+    Skyloft Village: Nothing
+  locations:
+    Skyloft Village - Sparrot's Crystals: "'Retrieve_Crystal_Ball'"
+
+
+- name: Mallara's House
+  allowed_time_of_day: All
+  can_sleep: true
+  exits:
+    Skyloft Village: Nothing
+  locations:
+    Skyloft Village - Mallara's Crystals: Gust_Bellows
+
+
+- name: Gondo's House
+  allowed_time_of_day: All
+  can_sleep: true
+  exits:
+    Skyloft Village: Nothing
+
+
+- name: Rupin's House
+  can_sleep: true
+  exits:
+    Skyloft Village: Nothing
+
+
+- name: Batreaux's House
+  allowed_time_of_day: All
+  hint region: Batreaux's House
+  exits:
+    Skyloft Village: Nothing
+  locations:
+    Batreaux - 5 Crystals: gratitude_crystals(5)
+    Batreaux - 10 Crystals: gratitude_crystals(10)
+    Batreaux - 30 Crystals: gratitude_crystals(30)
+    Batreaux - 30 Crystals Chest: gratitude_crystals(30)
+    Batreaux - 40 Crystals: gratitude_crystals(40)
+    Batreaux - 50 Crystals: gratitude_crystals(50)
+    Batreaux - 70 Crystals: gratitude_crystals(70)
+    Batreaux - 70 Crystals Second Reward: gratitude_crystals(70)
+    Batreaux - 80 Crystals: gratitude_crystals(80)
+
+# BEEDLES SHOP
+- name: Beedle's Shop
+  allowed_time_of_day: All
+  hint region: Beedle's Shop
+  can_sleep: true
+  exits:
+    Beedle's Island: Night
+    Central Skyloft: Day
+  locations:
+    # We don't want the pouch extensions to be the logical access to the pouch
+    Beedle's Shop - 300 Rupee Item: Can_Afford_300_Rupees and (Pouch or randomized_shops != vanilla)
+    Beedle's Shop - 600 Rupee Item: Can_Afford_600_Rupees
+    Beedle's Shop - 1200 Rupee Item: Can_Afford_1200_Rupees
+    Beedle's Shop - 800 Rupee Item: Can_Afford_800_Rupees
+    Beedle's Shop - 1600 Rupee Item: Can_Afford_1600_Rupees
+    Beedle's Shop - First 100 Rupee Item: Can_Afford_100_Rupees
+    Beedle's Shop - Second 100 Rupee Item: Can_Afford_100_Rupees
+    # To reduce necessary rupee-farming at the start, the third item logically needs an efficient rupee-farming method
+    Beedle's Shop - Third 100 Rupee Item: Can_Afford_100_Rupees and Can_Medium_Rupee_Farm
+    Beedle's Shop - 50 Rupee Item: Can_Afford_50_Rupees
+    Beedle's Shop - 1000 Rupee Item: Can_Afford_1000_Rupees

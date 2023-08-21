@@ -1,0 +1,381 @@
+
+- name: Volcano Entrance
+  hint_region: Eldin Volcano
+  events:
+    Goddess Cube at Eldin Entrance: Goddess_Sword
+  exits:
+    Volcano Entrance Statue: Nothing
+    Volcano Ascent: Bomb_Bag or can_access(Volcano Ascent) # I'm pretty sure Hook Beetle won't work here
+    Volcano First Room: Nothing
+  locations:
+    Eldin Volcano - Rupee on Ledge before First Room: Nothing
+
+
+- name: Volcano First Room # Until the rocks
+  hint_region: Eldin Volcano
+  exits:
+    Volcano East: Nothing
+  locations:
+    Eldin Volcano - Chest behind Bombable Wall in First Room: Nothing
+    Eldin Volcano - Rupee behind Bombable Wall in First Room: Nothing
+    Eldin Volcano - Rupee in Crawlspace in First Room: Nothing
+
+
+- name: Volcano East
+  hint_region: Eldin Volcano
+  events:
+    Goddess Cube near Mogma Turf Entrance: Goddess_Sword
+  exits:
+    Volcano East Statue: Nothing
+    Volcano Entrance: Clawshots
+    Mogma Turf Dive: Nothing
+    Volcano First Room: Bomb_Bag
+    Past Mogma Turf: Bomb_Bag or Hook_Beetle
+    Bokoblin Base Prison: Nothing
+  locations:
+    Eldin Volcano - Chest after Crawlspace: Nothing
+    Eldin Volcano - Chest behind Bombable Wall near Cliff: Nothing
+    Eldin Volcano - Item on Cliff: Nothing
+    Eldin Volcano - Southeast Rupee above Mogma Turf Entrance: Beetle
+    Eldin Volcano - North Rupee above Mogma Turf Entrance: Beetle
+
+
+- name: Past Mogma Turf
+  exits:
+    Volcano East: Nothing
+    Volcano Ascent: Nothing
+
+
+- name: Volcano Ascent
+  exits:
+    Volcano Ascent Statue: Nothing
+    Eldin Silent Realm: Goddess_Harp and Dins_Power
+    Outside Thrill Digger Cave: Bow or Slingshot or Beetle or logic_stuttersprint
+    Past Sand Slide: Bomb_Bag or Hook_Beetle or can_access(Past Sand Slide) # or (Whip and Whip Bomb Trick)
+    Volcano Entrance: Nothing
+  locations:
+    Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent: Nothing
+
+
+- name: Outside Thrill Digger Cave
+  exits:
+    Volcano Ascent: Nothing
+    Near Temple Entrance: Nothing
+    Thrill Digger Cave: Nothing
+  locations:
+    Eldin Volcano - Left Rupee behind Bombable Wall on First Slope: Nothing
+    Eldin Volcano - Right Rupee behind Bombable Wall on First Slope: Nothing
+
+
+- name: Thrill Digger Cave
+  events:
+    Can Play Thrill Digger Minigame: Digging_Mitts
+  exits:
+    Outside Thrill Digger Dave: Nothing
+  locations:
+    Thrill Digger Cave - Gossip Stone: Nothing
+
+
+- name: Near Temple Entrance
+  events:
+    Retrieve Crystal Ball: Clawshots and Scrapper and 'Start_Sparrots_Quest'
+    Goddess Cube West of Earth Temple Entrance: Digging_Mitts and Goddess_Sword
+    Goddess Cube East of Earth Temple Entrance: Goddess_Sword
+  exits:
+    Temple Entrance Statue: Nothing
+    Earth Temple First Room: open_earth_temple or count(5, Key_Piece)
+    Hot Cave: Nothing
+    Outside Upper Eldin Cave: "'Beaten_Boko_Base'"
+  locations:
+    Eldin Volcano - Digging Spot in front of Earth Temple: Digging_Mitts
+    Eldin Volcano - Digging Spot below Tower: Digging_Mitts
+    Eldin Volcano - Digging Spot behind Boulder on Sandy Slope: Digging_Mitts
+    Eldin Volcano - Gossip Stone next to Earth Temple: Digging_Mitts
+  
+
+- name: Outside Upper Eldin Cave
+  exits:
+    Near Temple Entrance: Clawshots or 'Beaten_Boko_Base'
+    Upper Eldin Cave: Nothing
+
+
+- name: Upper Eldin Cave
+  exits:
+    Outside Upper Eldin Cave: Nothing
+  locations:
+    Upper Eldin Cave - Gossip Stone: Nothing
+
+
+- name: Hot Cave
+  exits:
+    Volcano Summit: Fireshield_Earrings
+    Sand Slide: Can_Survive_Hot_Cave
+    Near Temple Entrance: can_access(Near Temple Entrance) # Bomb_Bag and Bomb Throw Trick
+
+
+- name: Sand Slide
+  events:
+    Goddess Cube on Sand Slide: Goddess_Sword
+  exits:
+    Past Sand Slide: Nothing
+  locations:
+    Eldin Volcano - Digging Spot after Vents: Digging_Mitts
+
+- name: Past Sand Slide
+  exits:
+    Volcano Ascent: Nothing
+    Hot Cave: Nothing # Vent
+    Outside Lower Eldin Cave: "'Beaten_Boko_Base'"
+  locations:
+    Eldin Volcano - Digging Spot after Draining Lava: Digging_Mitts
+
+
+- name: Outside Lower Eldin Cave
+  exits:
+    Lower Eldin Cave: Nothing
+    Past Sand Slide: Clawshots
+    Past Mogma Turf: "'Beaten_Boko_Base'"
+    Volcano East: "'Beaten_Boko_Base'"
+
+
+- name: Lower Eldin Cave
+  exits:
+    Outside Lower Eldin Cave: Nothing
+  locations:
+    Lower Eldin Cave - Gossip Stone: Nothing
+
+
+- name: Mogma Turf Dive # when randomizing this, need to find a way to force the skydiving animation
+  hint_region: Mogma Turf
+  events:
+    Goddess Cube in Mogma Turf: Goddess_Sword
+    Pick up Guld: Scrapper and 'Start_Kinas_Quest'
+  locations:
+    Mogma Turf - Free Fall Chest: Nothing
+  exits:
+    Mogma Turf: Nothing
+
+
+- name: Mogma Turf
+  exits:
+    Deep Mogma Turf: Digging_Mitts
+    Volcano East: Nothing
+  locations:
+    Mogma Turf - Chest behind Bombable Wall at Entrance: Bomb_Bag or can_access(Mogma Turf Dive)
+    Mogma Turf - Digging Mitts Fight: Can_Defeat_Bokoblins
+
+
+- name: Deep Mogma Turf
+  exits:
+    Sand Slide Platform: Digging_Mitts
+    Past Mogma Turf: Nothing
+    Mogma Turf: Nothing
+  locations:
+    Mogma Turf - Chest behind Bombable Wall in Fire Maze: Nothing
+
+
+- name: Sand Slide Platform
+  exits:
+    Mogma Turf: Nothing
+  locations:
+    Mogma Turf - Sand Slide Chest: Nothing
+
+
+- name: Eldin Silent Realm
+  hint_region: Eldin Silent Realm
+  exits:
+    Volcano Ascent: Nothing
+  locations:
+    Eldin Silent Realm - Reward: Nothing
+
+# VOLCANO SUMMIT
+- name: Volcano Summit
+  hint_region: Volcano Summit
+  events:
+    Goddess Cube inside Volcano Summit: Fireshield_Earrings and Long_Range_Skyward_Strike
+  exits:
+    Hot Cave: Fireshield_Earrings
+    Volcano Summit Waterfall: Fireshield_Earrings
+    Past Volcano Summit: Fireshield_Earrings
+    
+
+- name: Volcano Summit Waterfall
+  events:
+    Can Collect Water: Bottle
+    Goddess Cube in Summit Waterfall: Goddess_Sword
+  exits:
+    Volcano Summit: Nothing
+  locations:
+    Volcano Summit - Chest behind Bombable Wall in Waterfall Area: Nothing
+    Volcano Summit - Gossip Stone in Waterfall Area: Nothing
+
+
+- name: Past Volcano Summit
+  exits:
+    Volcano Summit: Nothing
+    Outside Fire Sanctuary: Clawshots and 'Can_Collect_Water'
+  locations:
+    Volcano Summit - Item behind Digging: Mogma_Mitts and 'Can_Collect_Water'
+    Volcano Summit - Gossip Stone near Second Thirsty Frog: "'Can_Collect_Water'"
+
+
+- name: Outside Fire Sanctuary
+  events:
+    Goddess Cube near Fire Sanctuary Entrance: Clawshots and Goddess_Sword
+  exits:
+    Inside the Volcano Statue: Nothing
+    Fire Sanctuary First Room: Nothing
+    Past Volcano Summit: can_access(Past Volcano Summit) and Clawshots and 'Can_Collect_Water'
+
+ # BOKOBLIN BASE
+- name: Bokoblin Base Prison
+  exits:
+    Bokoblin Base Volcano East: Mogma_Mitts
+  locations:
+    Bokoblin Base - Plats' Gift: Nothing
+
+
+- name: Bokoblin Base Volcano East
+  events:
+    Goddess Cube near Mogma Turf Entrance: Goddess_Sword
+  exits:
+    Bokoblin Base Prison: Mogma_Mitts
+    Bokoblin Base Before Drawbridge: Nothing
+    Bokoblin Base After Drawbridge: Clawshots and Bomb_Bag
+  locations:
+    Bokoblin Base - Chest near Bone Bridge: Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts or Gust_Bellows
+    Bokoblin Base - Chest on Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
+
+
+- name: Bokoblin Base Before Drawbridge
+  exits:
+    Bokoblin Base Volcano East: Nothing
+    Bokoblin Base After Drawbridge: Whip and Clawshots
+  locations:
+    Bokoblin Base - Chest near Drawbridge: Clawshots or Can_Bypass_Boko_Base_Watch_Tower
+
+
+- name: Bokoblin Base After Drawbridge
+  exits:
+    Bokoblin Base Before Drawbridge: Clawshots
+    Bokoblin Base Outside Lower Eldin Cave: Nothing
+    Bokoblin Base Volcano East: Nothing
+    Bokoblin Base Outside Earth Temple: Nothing
+
+
+- name: Bokoblin Base Outside Lower Eldin Cave
+  exits:
+    Bokoblin Base Lower Eldin Cave: Nothing
+    Bokoblin Base After Drawbridge: Clawshots
+    Bokoblin Base Before Drawbridge: Nothing
+    Bokoblin Base Volcano East: Nothing
+
+
+- name: Bokoblin Base Lower Eldin Cave
+  exits:
+    Bokoblin Base Outside Lower Eldin Cave: Nothing
+  locations:
+    Lower Eldin Cave - Gossip Stone: Nothing
+
+
+- name: Bokoblin Base Outside Earth Temple
+  events:
+    Goddess Cube East of Earth Temple Entrance: Goddess_Sword
+    Goddess Cube West of Earth Temple Entrance: Goddess_Sword and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
+  exits:
+    Bokoblin Base Hot Cave: Nothing
+    Bokoblin Base Outside Upper Eldin Cave: Nothing
+  locations:
+    Bokoblin Base - Chest East of Earth Temple Entrance: Nothing
+    Bokoblin Base - Chest West of Earth Temple Entrance: (Slingshot or Bow or Bomb_Bag or Goddess_Sword) and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
+    
+
+- name: Bokoblin Base Outside Upper Eldin Cave
+  exits:
+    Outside Earth Temple: Nothing
+    Bokoblin Base Upper Eldin Cave: Nothing
+
+
+- name: Bokoblin Base Upper Eldin Cave
+  exits:
+    Bokoblin Base Outside Upper Eldin Cave: Nothing
+  locations:
+    Upper Eldin Cave - Gossip Stone: Nothing
+
+
+- name: Bokoblin Base Hot Cave
+  exits:
+    Bokoblin Base After Drawbridge: Fireshield_Earrings and Bomb_Bag
+    Bokoblin Base Summit: Fireshield_Earrings and Bomb_Bag
+
+
+- name: Bokoblin Base Summit
+  events:
+    Goddess Cube inside Volcano Summit: Fireshield_Earrings
+  exits:
+    Bokoblin Base Hot Cave: Fireshield_Earrings
+    Fire Dragon's Lair: Fireshield_Earrings
+  locations:
+    Bokoblin Base - First Chest in Volcano Summit: Fireshield_Earrings
+    Bokoblin Base - Raised Chest in Volcano Summit: Fireshield_Earrings
+    Bokoblin Base - Chest in Volcano Summit Alcove: Fireshield_Earrings and Sword
+    
+
+- name: Fire Dragon's Lair
+  events: 
+    Beaten Boko Base: Bow or Beetle
+  exits:
+    Bokoblin Base Summit: Nothing
+  locations:
+    Bokoblin Base - Fire Dragon's Reward: "'Beaten_Boko_Base'"
+
+# Bird Staues in Eldin
+- name: Volcano Entrance Statue
+  events:
+    Unlock Volcano Entrance Statue: Nothing
+  exits:
+    The Sky: Day
+    Volcano Entrance: Nothing
+
+
+- name: Volcano East Statue
+  events:
+    Unlock Volcano East Statue: Nothing
+  exits:
+    The Sky: Day
+    Volcano East: Nothing
+
+
+- name: Volcano Ascent Statue
+  events:
+    Unlock Volcano Ascent Statue: Nothing
+  exits:
+    The Sky: Day
+    Volcano Ascent: Nothing
+
+
+- name: Temple Entrance Statue
+  events:
+    Unlock Temple Entrance Statue: Nothing
+  exits:
+    The Sky: Day
+    Near Temple Entrance: Nothing
+
+
+- name: Inside the Volcano Statue
+  events:
+    Unlock Inside the Volcano Statue: Nothing
+  exits:
+    The Sky: Day
+    Outside Fire Sanctuary: Nothing
+
+
+- name: Inside the Fire Sanctuary Statue
+  events:
+    Unlock Inside the Fire Sanctuary Statue: Nothing
+  exits:
+    The Sky: Day
+    FS In Front of Boss Door: Nothing
+
+
+

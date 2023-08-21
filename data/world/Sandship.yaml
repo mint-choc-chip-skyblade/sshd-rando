@@ -1,0 +1,114 @@
+# allowed_time_of_day: DayOnly
+# hint_region: Sandship
+
+- name: Sandship Main Deck
+  hint_region: Sandship
+  events:
+    Sandship Raise Timeshift Stone: Bow
+    Sandship Freely Usable Timeshift Stone: Bow and 'Finish_Mast_Sequence'
+  exits:
+    Sandship Before Bow: Nothing
+    Sandship Captain's Cabin: count(2, Sandship_Small_Key) and ('Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone')
+    Sandship Starboard Rooms: Bow and 'Open_Starboard_Windows'
+    Sandship Mast: "'Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone'"
+    Lanayru Sand Sea: Nothing # If stuck in the mast sequence, deathwarp
+
+
+- name: Sandship Mast
+  events:
+    Finish Mast Sequence: Bow and Sword
+  exits:
+    Sandship Main Deck: Nothing
+    Sandship Stern: Bow and (Clawshots or logic_sandship_mast_jump)
+
+- name: Sandship Stern
+  exits:
+    Sandshp Main Deck: Clawshots # Deathwarp possible
+  locations:
+    Sandship - Chest at the Stern: Nothing
+
+
+- name: Sandship Captain's Cabin
+  exits:
+    Sandship Main Deck: count(2, Sandship_Small_Key)
+  locations:
+    Sandship - Boss Key Chest: Bow and 'Sandship_Freely_Usable_Timeshift_Stone' and Can_Defeat_Beamos
+
+
+- name: Sandship Before Bow
+  exits:
+    Sandship Bow: count(2, Sandship_Small_Key)
+    Sandship Corridor: (Goddess_Sword or Bow or Bomb_Bag or Slingshot or logic_sandship_itemless_spume) or 'Sandship_Freely_Usable_Timeshift_Stone'
+  locations:
+    Sandship - Chest before 4-Door Corridor: "'Sandship_Freely_Usable_Timeshift_Stone'"
+
+
+- name: Sandship Bow
+  exits:
+    Sandship Before Bow: Can_Defeat_Scervo_And_Dreadfuse
+  locations:
+    Sandship - Bow Chest: Can_Defeat_Scervo_And_Dreadfuse
+
+
+- name: Sandship Corridor
+  exits:
+    Sandship Before Bow: (Goddess_Sword or Bow or Bomb_Bag or Slingshot or logic_sandship_itemless_spume) or 'Sandship_Freely_Usable_Timeshift_Stone'
+    Sandship Starboard Rooms: "'Sandship_Freely_Usable_Timeshift_Stone'"
+    Sandship Port Rooms: Bow
+    Sandship Before Boss Door: Nothing
+
+
+- name: Sandship Starboard Rooms
+  events:
+    Open Starboard Windows: Nothing
+    Starboard Generator: Bow and 'Sandship_Freely_Usable_Timeshift_Stone'
+  exits:
+    Sandship Main Deck: Bow and 'Open_Starboard_Windows'
+    Sandship Brig: "'Open_Starboard_Windows'"
+    Sandship Corridor: "'Sandship_Freely_Usable_Timeshift_Stone'"
+
+
+- name: Sandship Port Rooms
+  events:
+    Port Generator: Bow and 'Sandship_Freely_Usable_Timeshift_Stone'
+  exits:
+    Sandship Corridor: Bow
+    
+
+- name: Sandship Before Boss Door
+  exits:
+    Sandship Corridor: Nothing
+    Sandship Boss Room: Sandship_Boss_Key and 'Sandship_Freely_Usable_Timeshift_Stone'
+  locations:
+    Sandship - Chest behind Combination Lock: (Gust_Bellows or 'Sandship_Freely_Usable_Timeshift_Stone' or logic_sandship_no_combination_hint) and Can_Unlock_Combination_Lock
+
+
+- name: Sandship Brig
+  exits:
+    Sandship Treasure Room: Whip and 'Starboard_Generator'
+    Sandship Brig Prison: Whip and 'Starboard_Generator' and 'Port_Generator'
+    Sandship Starboard Rooms: "'Open_Starboard_Windows'"
+
+
+- name: Sandship Treasure Room
+  exits:
+    Sandship Brig: Nothing
+  locations:
+    Sandship - Treasure Room First Chest: Nothing
+    Sandship - Treasure Room Second Chest: Nothing
+    Sandship - Treasure Room Third Chest: Nothing
+    Sandship - Treasure Room Fourth Chest: Nothing
+    Sandship - Treasure Room Fifth Chest: Nothing
+
+
+- name: Sandship Brig Prison
+  exits:
+    Sandship Brig: Nothing
+  locations:
+    Sandship - Robot in Brig's Reward: Nothing
+
+
+- name: Sandship Boss Room
+  locations:
+    Sandship - Heart Container: Can_Defeat_Tentalus
+    Sandship - Nayru's Flame: Can_Defeat_Tentalus and Goddess_Sword
