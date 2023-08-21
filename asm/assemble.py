@@ -143,9 +143,9 @@ with tempDir as tempDirName:
                     raise Exception(
                         f"Duplicate offset {asmReadOffset} section in {patchFilePath}."
                     )
-            elif line.startswith("b"):
-                branch, destination = line.split(SPACE)
-                destination = int(destination, 16)
+            elif line.startswith(("bl ", "b ", "b.", "bcc ", "cbz", "cbnz", "tbz", "tbnz")): # The blank space is necessary
+                instructionParts = line.split(SPACE)
+                destination = int(instructionParts[-1], 16)
 
                 tempBranchLabel = f"branch_label_0x{destination:x}"
                 localBranches.append(
@@ -153,7 +153,7 @@ with tempDir as tempDirName:
                 )
 
                 codeBlocks[asmReadOffset].append(
-                    branch + SPACE + tempBranchLabel + NEWLINE
+                    SPACE.join(instructionParts[:-1]) + SPACE + tempBranchLabel + NEWLINE
                 )
             else:
                 codeBlocks[asmReadOffset].append(line)
@@ -244,5 +244,5 @@ with tempDir as tempDirName:
 
         diffFilename = ASM_PATCHES_DIFFS_PATH / f"{patchFilename[:-4]}-diff.yaml"
 
-        with open(diffFilename, "w") as f:
+        with open(diffFilename, "w", newline="") as f:
             f.write(yaml.dump(codeBlocks, Dumper=yaml.CDumper, line_break=NEWLINE))
