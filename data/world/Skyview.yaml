@@ -1,0 +1,145 @@
+
+- name: Skyview Entry
+  hint_region: Skyview Temple
+  exits:
+    Deep Woods: Nothing
+    SV First Room: Can_Cut_Trees_And_Logs
+
+
+- name: SV First Room
+  events:
+    Goddess Wall Trigger: Ballad_of_the_Goddess and Goddess_Harp
+  exits:
+    Skyview Entry: Can_Cut_Trees_And_Logs
+    SV One Eye Room: Can_Hit_High_Skyview_Switches
+    SV First Hub Center Room: Skyview_2 or Bomb_Bag
+
+
+- name: SV One Eye Room
+  exits:
+    First Room: Nothing
+    First Hub Center Room: Sword
+
+
+- name: SV First Hub Center Room
+  events:
+    One Water Raise: "'Skyview_Raise_East_Water' or 'Skyview_Raise_West_Water'"
+  exits:
+    SV One Eye Room: Nothing
+    SV First Room: Nothing
+    SV First Hub Left Room: Can_Hit_Switch or ('One_Water_Raise' and Water_Scale)
+    SV First Hub Right Room Lower: Can_Hit_High_Skyview_Switches
+    SV First Hub Right Room Upper: Clawshots or ('Skyview_Raise_East_Water' and 'Skyview_Raise_West_Water')
+    SV Second Hub Center Room: Skyview_Small_Key and (Clawshots or 'One_Water_Raise')
+
+
+- name: SV First Hub Left Room
+  events:                      #                 Hit Vines                              and Can_Hit_Switch
+    Skyview Raise West Water: ((Can_Hit_High_Skyview_Switches or Goddess_Sword or Whip) and Can_Hit_Switch) or (logic_skyview_spider_roll and Can_Hit_High_Skyview_Switches)
+  exits:
+    SV First Hub Center Room: Nothing
+  locations:
+    Skyview Temple - Chest on Tree Branch: (Can_Hit_High_Skyview_Switches or Goddess_Sword or Whip) or logic_skyview_spider_roll
+
+
+- name: SV First Hub Right Room Lower
+  events:
+    Skyview Raise East Water: Can_Hit_High_Skyview_Switches
+  exits:
+    SV First Hub Center Room: Nothing
+  locations:
+    Skyview Temple - Digging Spot in Crawlspace: Digging_Mitts and Water_Scale # Have to assume player misses it the first time
+
+
+- name: SV First Hub Right Room Upper
+  exits:
+    SV First Hub Right Room Lower: Nothing
+    SV First Hub Center Room: Nothing
+  locations:
+    Skyview Temple - Chest behind Two Eyes: Sword
+
+
+- name: SV Second Hub Center Room
+  exits:
+    SV First Hub Center Room: Skyview_Small_Key
+    SV Miniboss Room: Distance_Activator
+    SV Second Hub Left Rooms: Beetle
+    SV Staldra Room: count(2, Skyview_Small_Key)
+    SV Last Room: can_access(SV Last Room Before Rope) and Can_Hit_High_Skyview_Switches
+  locations:
+    Skyview Temple - Rupee in Southeast Tunnel: Beetle
+    Skyview Temple - Rupee in Southwest Tunnel: Beetle
+    Skyview Temple - Rupee in East Tunnel: Beetle
+    Skyview Temple - Item behind Bars: Beetle or (Slingshot and logic_skyview_precise_slingshot) or Whip
+
+
+- name: SV Miniboss Room
+  exits:
+    SV Second Hub Center Room: Nothing
+  locations:
+    Skyview Temple - Beetle Chest: Can_Defeat_Stalfos or Skyview_2
+
+
+- name: SV Second Hub Left Rooms
+  exits:
+    SV Second Hub Center Room: Sword and Projectile_Item # to defeat skulltulas ? Include deathwarp ?
+  locations:
+    Skyview Temple - Chest behind Three Eyes: Beetle and Sword
+
+
+- name: SV Staldra Room
+  exits:
+    SV Second Hub Center Room: Skyview_Small_Key
+    SV Last Room Before Spider: Can_Defeat_Staldra
+
+
+- name: SV Last Room Before Spider
+  exits:
+    SV Staldra Room: Nothing
+    SV Last Room Before Rope: Bomb_Bag or Goddess_Sword or Beetle or Bow or Skyview_2
+    # A bomb knocks the Skulltula away. A skyward strike can knock it away too.
+    # Both the Beetle and the bow can cut it down. There is no spider anymore in Skyview 1.
+
+
+- name: SV Last Room Before Rope
+  exits:
+    SV Last Room Before Spider: Bomb_Bag or Goddess_Sword or Beetle or Bow or Skyview_2
+    SV Second Hub Center Room: Can_Hit_High_Skyview_Switches
+    SV Last Room After Rope: Long_Range_Skyward_Strike or Hook_Beetle or Bow
+
+
+- name: SV Last Room After Rope
+  exits:
+    SV Last Room Before Rope: Can_Defeat_Bokoblins
+    SV Last Room Near Boss Key Chest: Long_Range_Skyward_Strike or Distance_Activator
+    Skyview Boss Room: Skyview_Boss_Key
+  locations:
+    Skyview Temple - Chest near Boss Door: Nothing
+
+
+- name: SV Last Room Near Boss Key Chest
+  exits:
+    SV Last Room Before Rope: Nothing
+    SV Last Room After Rope: Distance_Activator
+  locations:
+    Skyview Temple - Boss Key Chest: Nothing
+
+
+- name: Skyview Boss Room
+  exits:
+    SV Last Room After Rope: Can_Defeat_Ghirahim
+    Skyview Spring: Can_Defeat_Ghirahim
+  locations:
+    Skyview Temple - Heart Container: Can_Defeat_Ghirahim
+
+
+- name: Skyview Spring
+  events:
+    Goddess Cube in Skyview Spring: Goddess_Sword
+    Sacred Water: Bottle and Skyview_2
+  exits:
+    Skyview Boss Room: Nothing
+    # Crest Hit: Ruby Tablet
+  locations:
+    Skyview Spring - Rupee on Spring Pillar: Beetle
+    Skyview Spring - Ruby Tablet: Goddess_Sword

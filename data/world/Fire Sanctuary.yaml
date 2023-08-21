@@ -1,0 +1,215 @@
+# allowed_time_of_day: DayOnly
+# hint_region: Fire Sanctuary
+
+
+- name: Fire Sanctuary First Room
+  hint_region: Fire Sanctuary
+  exits:
+    Outside Fire Sanctuary: Nothing
+    FS First Room Past Water Plant: Can_Hit_High_Water_Plant
+
+
+- name: FS First Room Past Water Plant
+  exits:
+    Fire Sanctuary First Room: Can_Hit_High_Water_Plant
+    FS First Outside Section: Fire_Sanctuary_Small_Key
+  locations:
+    Fire Sanctuary - Chest in First Room: Can_Defeat_Bokoblins and Can_Hit_High_Water_Plant
+
+
+- name: FS First Outside Section
+  exits:
+    FS First Room Past Water Plant: Nothing
+    FS First Magmanos Room: Nothing
+
+
+- name: FS First Magmanos Room
+  exits:
+    FS South Bridge: Nothing
+    FS First Magmanos Room Balcony: Mogma_Mitts and Sword
+    FS First Outside Section: Nothing
+  locations:
+    Fire Sanctuary - Chest in Second Room: Nothing
+
+
+- name: FS First Magmanos Room Balcony
+  exits:
+    FS First Magmanos Room: Mogma_Mitts
+  locations:
+    Fire Sanctuary - Chest on Balcony: Nothing
+
+
+- name: FS South Bridge
+  exits:
+    FS First Magmanos Room: Can_Defeat_Lizalfos
+    FS North Bridge East Side: can_access(FS North Bridge East Side)
+    FS Room with First Lava River: Can_Defeat_Lizalfos
+    
+
+- name: FS Room with First Lava River
+  exits:
+    FS South Bridge: Nothing
+    FS Room with First Lava River Past River: Hook_Beetle
+
+
+- name: FS Room with First Lava River Past River
+  exits:
+    FS Room with First Lava River: Clawshots or (Hook_Beetle and Projectile_Item)
+    FS First Trapped Mogma Room: Nothing
+    FS Water Fruit Room: count(2, Fire_Sanctuary_Small_Key)
+
+
+- name: FS First Trapped Mogma Room Upper
+  exits:
+    FS Room with Water Plant Past Lava: Nothing
+    FS First Trapped Mogma Room Lower: "'Double_Magmanos_Defeated'"
+  locations:
+    Fire Sanctuary - Chest near First Trapped Mogma: Gust_Bellows or Clawshots
+
+
+- name: FS Water Fruit Room
+  exits:
+    FS Room with First Lava River Past River: count(2, Fire_Sanctuary_Small_Key)
+    FS Water Fruit Room After Frog: Sword
+  locations:
+    Fire Sanctuary - First Chest in Water Fruit Room: Nothing
+    Fire Sanctuary - Second Chest in Water Fruit Room: Nothing
+
+
+- name: FS Water Fruit Room After Frog
+  exits:
+    FS Water Fruit Room: can_access(FS Water Fruit Room) and Sword
+    FS Magmanos Fight Room: Nothing
+
+
+- name: FS Magmanos Fight Room
+  events:
+    Double Magmanos Defeated: Sword
+  exits:
+    FS Water Fruit Room After Frog: "'Double_Magmanos_Defeated'"
+    FS First Trapped Mogma Room Lower: "'Double_Magmanos_Defeated'"
+
+
+- name: FS First Trapped Mogma Room Lower
+  exits:
+    FS First Trapped Mogma Room Upper: "'Double_Magmanos_Defeated'"
+    FS Magmanos Fight Room: "'Double_Magmanos_Defeated'"
+    FS Under Magmanos Fight Room: Mogma_Mitts
+  locations:
+    Fire Sanctuary - Mogma Mitts Chest: Nothing
+
+
+- name: FS Under Magmanos Fight Room
+  events:
+    Move First FS Sliding Gate: Gust_Bellows and Mogma_Mitts
+  exits:
+    FS First Trapped Mogma Room Lower: Mogma_Mitts
+    FS Under Magmanos Fight Room Past Sliding Door: "'Move_First_FS_Sliding_Gate'"
+    FS West of Boss Door Before Lava River: count(3, Fire_Sanctuary_Small_Key)
+
+
+- name: FS Under Magmanos Fight Room Past Sliding Door
+  exits:
+    FS Under Magmanos Fight Room: "'Move_First_FS_Sliding_Gate'"
+    FS North Bridge West Side: Nothing
+
+
+- name: FS North Bridge West Side
+  exits:
+    FS North Bridge Bottom: Nothing
+    FS North Bridge East Side: Clawshots or logic_fs_pillar_jump
+    FS South Bridge: Nothing
+    FS Under Magmanos Fight Room Past Sliding Door: Nothing
+
+
+- name: FS North Bridge Bottom
+  exits:
+    FS North Bridge West Side: Clawshots
+    FS North Bridge East Side: Clawshots
+
+
+- name: FS North Bridge East Side
+  exits:
+    FS North Bridge Bottom: Nothing
+    FS North Bridge West Side: Clawshots or logic_fs_pillar_jump
+    FS Second Trapped Mogma Room: Nothing
+
+
+- name: FS Second Trapped Mogma Room
+  exits:
+    FS North Bridge East Side: Nothing
+  locations:
+    Fire Sanctuary - Chest after Second Trapped Mogma: Mogma_Mitts and Sword
+    Fire Sanctuary - Chest after Bombable Wall: Mogma_Mitts and Sword and Bomb_Bag
+    
+
+- name: FS West of Boss Door Before Lava River
+  exits:
+    FS Under Magmanos Fight Room: Nothing
+    FS West of Boss Door: Can_Hit_High_Water_Plant
+
+
+- name: FS West of Boss Door
+  events:
+    FS Release Second Lava River: (Can_Hit_High_Water_Plant and Mogma_Mitts) or fs_lava_flow
+  exits:
+    FS In Front of Boss Door: Can_Hit_High_Water_Plant and 'FS_Release_Second_Lava_River'
+    FS West of Boss Door Before Lava River: Can_Hit_High_Water_Plant
+  locations:
+    Fire Sanctuary - Plats' Chest: Mogma_Mitts and Can_Hit_High_Water_Plant
+
+
+- name: FS In Front of Boss Door
+  exits:
+    Inside the Fire Sanctuary Statue: Nothing
+    Fire Sanctuary Boss Room: Fire_Sanctuary_Boss_Key
+    FS Lizalfos Fight Room: Nothing
+    FS West of Boss Door: Nothing
+
+
+- name: FS In Front of Boss Door Past Bars
+  exits:
+    FS Boss Key Room: Nothing
+    FS In Front of Boss Door: Nothing
+
+
+- name: FS Lizalfos Fight Room
+  exits:
+    FS Staircase Room Lower: Can_Defeat_Lizalfos
+
+
+- name: FS Staircase Room Lower
+  exits:
+    FS Staricase Room Upper: Clawshots
+    FS Lizalfos Fight Room: Nothing
+  locations:
+    Fire Sanctuary - Chest in Staircase Room: Clawshots
+
+
+- name: FS Staricase Room Upper
+  exits:
+    FS Staircase Room Lower: Nothing
+    FS Boss Key Room: Nothing
+
+
+- name: FS Boss Key Room
+  exits:
+    FS Staricase Room Upper: Nothing
+    FS In Front of Boss Door Past Bars: Nothing
+  locations:
+    Fire Sanctuary - Boss Key Chest: Mogma_Mitts
+
+
+- name: Fire Sanctuary Boss Room
+  exits:
+    FS In Front of Boss Door: Can_Defeat_Ghirahim_2
+    Fire Sanctuary Flame Room: Can_Defeat_Ghirahim_2
+  locations:
+    Fire Sanctuary - Heart Container: Can_Defeat_Ghirahim_2
+
+
+- name: Fire Sanctuary Flame Room
+  exits:
+    Fire Sanctuary Boss Room: Nothing
+  locations:
+    Fire Sanctuary - Din's Flame: Goddess_Sword

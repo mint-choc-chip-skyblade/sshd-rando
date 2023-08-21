@@ -1,0 +1,142 @@
+
+- name: Ancient Cistern Lobby
+  hint_region: Ancient Cistern
+  events:
+    Can Pull Waterfall Lever: Whip
+  exits:
+    AC East Rooms: Nothing
+    AC Lobby After Whip Hooks: Whip
+    AC Lobby Vines Area: can_access(AC Lobby Vines Area) and Whip # Turn on the geyser
+    AC Behind the Waterfall: Water_Scale and 'Can_Pull_Waterfall_Lever'
+    AC Inside Statue: count(2, Ancient_Cistern_Small_Key) or 'Can_Lower_Giant_Statue'
+  locations:
+    Ancient Cistern - Rupee in East Hand: Water_Scale
+    Ancient Cistern - Rupee in West Hand: Water_Scale
+
+
+- name: AC Lobby After Whip Hooks
+  exits:
+    AC Lobby Vines Area: Clawshots
+    AC Back Room: can_access(AC Back Room)
+    Ancient Cistern Lobby: Nothing
+  locations:
+    Ancient Cistern - Chest after Whip Hooks: Nothing
+
+
+- name: AC Lobby Vines Area
+  events:
+    Can Lower Giant Statue: Whip
+    Can Pull Waterfall Lever: logic_ac_lever_jump_trick
+  exits:
+    # Can front hop and jump slash
+    AC Lobby After Whip Hooks: Sword and logic_ac_map_chest_jump
+    Ancient Cistern Lobby: Nothing
+  locations:
+    Ancient Cistern - Chest near Vines: Nothing
+
+
+- name: AC Behind the Waterfall
+  exits:
+    AC Red Pipe Basement: Whip
+  locations:
+    Ancient Cistern - Chest behind the Waterfall: Nothing
+
+
+- name: AC Red Pipe Basement
+  exits:
+    AC Red Pipe Basement Past Skulltula: (Beetle or Bow) and Water_Scale # or Ancient Cistern - Basement Lilypad Clip Trick)
+
+
+- name: AC Red Pipe Basement Past Skulltula
+  exits:
+    AC Red Pipe Basement: Water_Scale
+    AC Back Room: count(2, Ancient_Cistern_Small_Key)
+  locations:
+    Ancient Cistern - Bokoblin: Whip
+
+
+- name: AC Back Room
+  exits:
+    AC Lobby After Whip Hooks: Nothing
+    AC Lobby Vines Area: Whip and Water_Scale
+
+
+- name: AC Spider Thread Area
+  events:
+    Can Freely Raise and Lower Statue: Whip
+  exits:
+    AC Basement Spider Thread: Nothing
+    AC Lobby Vines Area: Nothing
+    Ancient Cistern Lobby: Nothing
+    
+
+- name: AC East Rooms
+  exits:
+    Ancient Cistern Lobby: Nothing
+  locations:
+    Ancient Cistern - Rupee in East Part in Cubby: Can_Unlock_Combination_Lock and Water_Scale
+    Ancient Cistern - First Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Scale
+    Ancient Cistern - Second Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Scale
+    Ancient Cistern - Third Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Scale
+    Ancient Cistern - Rupee in East Part in Main Tunnel: Can_Unlock_Combination_Lock and Water_Scale
+    Ancient Cistern - Chest in East Part: Can_Unlock_Combination_Lock and Water_Scale
+
+
+# Implies statue is lowered
+- name: AC Basement
+  exits:
+    AC Inside Statue: Nothing
+    AC Basement Rotating Vines: (Whip and (Hook_Beetle or (Bomb_Bag and logic_bomb_throws))) or Clawshots # TODO: Damage Multiplier Check?
+    AC Under the Statue: "'Can_Freely_Raise_and_Lower_Statue'"
+
+
+- name: AC Basement Rotating Vines
+  exits:
+    AC Basement: Nothing
+    AC Basement Spider Thread: Whip
+
+
+- name: AC Basement Spider Thread
+  exits:
+    AC Basement: Nothing
+    AC Spider Thread Area: Nothing
+
+
+# Implies statue is raised
+- name: AC Under the Statue
+  events:
+    Can_Lower_Giant_Statue: Nothing
+  exits:
+    AC Basement: Nothing
+  locations:
+    Ancient Cistern - Boss Key Chest: "'Can_Lower_Giant_Statue'"
+
+
+- name: AC Inside Statue
+  exits:
+    AC Basement: "'Can_Lower_Giant_Statue'"
+    Ancient Cistern Lobby: Whip
+    AC Platform Before Boss: Ancient_Cistern_Boss_Key and Whip
+  locations:
+    Ancient Cistern - Whip Chest: count(2, Ancient_Cistern_Small_Key) and (Can_Defeat_Stalmaster or 'Can_Lower_Giant_Statue')
+    
+
+- name: AC Platform Before Boss
+  exits:
+    Ancient Cistern Boss Room: Nothing
+    Ancient Cistern Lobby: Nothing
+
+
+- name: Ancient Cistern Boss Room
+  exits:
+    AC Platform Before Boss: Can_Defeat_Koloktos
+    Ancient Cistern Flame Room: Can_Defeat_Koloktos
+  locations:
+    Ancient Cistern - Heart Container: Can_Defeat_Koloktos
+
+- name: Ancient Cistern Flame Room
+  exits:
+    Ancient Cistern Boss Room: Nothing
+    # Crest Hit: Farore's Flame
+  locations:
+    Ancient Cistern - Farore's Flame: Goddess_Sword
