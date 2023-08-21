@@ -28,30 +28,41 @@ from sslib.yaml import yaml_load
 
 def patch_tbox(bzs, itemID, id):
     id = int(id)
-    tboxs = list(
-        filter(lambda x: x["name"] == "TBox" and (x["anglez"] >> 9) == id, bzs["OBJS"])
+    tbox = next(
+        filter(lambda x: x["name"] == "TBox" and (x["anglez"] >> 9) == id, bzs["OBJS"]),
+        None
     )
-    if len(tboxs) == 0:
+    if tbox is None:
         print(f"ERROR: No tbox id {id} found to patch")
         return
-    obj = tboxs[0]
 
-    obj["anglez"] = mask_shift_set(obj["anglez"], 0x1FF, 0, itemID)
+    tbox["anglez"] = mask_shift_set(tbox["anglez"], 0x1FF, 0, itemID)
     # obj["params1"] = mask_shift_set(obj["params1"], 0x3, 4, 0x01)
 
 def patch_freestanding_item(bzs, itemID, id):
     id = int(id)
-    freestandingItems = list(
-        filter(lambda x: x["name"] == "Item" and ((x["params1"] >> 10) & 0xFF) == id, bzs["OBJ "])
+    freestandingItem = next(
+        filter(lambda x: x["name"] == "Item" and ((x["params1"] >> 10) & 0xFF) == id, bzs["OBJ "]),
+        None
     )
-    if len(freestandingItems) == 0:
+    if freestandingItem is None:
         print(F"ERROR: No freestanding item id {id} found to patch")
         return
-    obj = freestandingItems[0]
 
-    obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 0, itemID)
-    obj["params1"] = mask_shift_set(obj["params1"], 0xF, 0x14, 9) # makes subtype 9 so it acts like a heart piece and force textbox on collection
+    freestandingItem["params1"] = mask_shift_set(freestandingItem["params1"], 0xFF, 0, itemID)
+    freestandingItem["params1"] = mask_shift_set(freestandingItem["params1"], 0xF, 0x14, 9) # makes subtype 9 so it acts like a heart piece and force textbox on collection
 
+def patch_zeldas_closet(bzs, itemID, id):
+    id = int(id)
+    closet = next(
+        filter(lambda x: x["name"] == "chest" and (x["params1"] & 0xFF) == id, bzs["OBJ "]),
+        None
+    )
+    if closet is None:
+        print(F"ERROR: No closet id {id} found to patch")
+        return
+
+    closet["params1"] = mask_shift_set(closet["params1"], 0xFF, 8, itemID)
 
 def patch_additional_properties(object, property, value):
     if object["name"].startswith("Npc"):
@@ -409,6 +420,12 @@ class StagePatchHandler:
                                         )
                                     elif objectName == "Item":
                                         patch_freestanding_item(
+                                            roomBZS["LAY "][f"l{layer}"],
+                                            itemID,
+                                            objectID,
+                                        )
+                                    elif objectName == "chest":
+                                        patch_zeldas_closet(
                                             roomBZS["LAY "][f"l{layer}"],
                                             itemID,
                                             objectID,
