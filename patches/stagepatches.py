@@ -1,11 +1,15 @@
 from collections import defaultdict
+from io import BytesIO
 from filepathconstants import (
+    RANDO_ROOT_PATH,
     OUTPUT_STAGE_PATH,
     STAGE_FILES_PATH,
     STAGE_PATCHES_PATH,
     OARC_CACHE_PATH,
     EXTRACTS_PATH,
     OBJECTPACK_PATH,
+    TITLE2D_SOURCE_PATH,
+    TITLE2D_OUTPUT_PATH,
 )
 from pathlib import Path
 import json
@@ -446,3 +450,11 @@ class StagePatchHandler:
                     self.stageOarcAdd[(stage, patch["destlayer"])].add(patch["oarc"])
                 elif patch["type"] == "oarcdelete":
                     self.stageOarcRemove[(stage, patch["layer"])].add(patch["oarc"])
+
+    def patch_title_screen_logo(self):
+        print("Patching Title Screen Logo")
+        logoData = (RANDO_ROOT_PATH / "assets" / "sshdr-logo.tpl").read_bytes()
+        title2DFile = TITLE2D_SOURCE_PATH.read_bytes()
+        title2DArc = U8File.parse_u8(BytesIO(title2DFile))
+        title2DArc.set_file_data("timg/tr_wiiKing2Logo_00.tpl", logoData)
+        write_bytes_create_dirs(TITLE2D_OUTPUT_PATH, title2DArc.build_U8())
