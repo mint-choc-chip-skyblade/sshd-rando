@@ -635,4 +635,3 @@ class StagePatchHandler:
         title2DArc = U8File.get_parsed_U8_from_path(TITLE2D_SOURCE_PATH, False)
         title2DArc.set_file_data("timg/tr_wiiKing2Logo_00.tpl", logoData)
         write_bytes_create_dirs(TITLE2D_OUTPUT_PATH, title2DArc.build_U8())
-

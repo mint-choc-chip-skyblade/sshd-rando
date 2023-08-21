@@ -1,4 +1,3 @@
-
 from logic.world import World
 from logic.config import *
 from logic.settings import *
@@ -13,16 +12,17 @@ import sys, getopt
 import logging
 
 
-
 def generate() -> list[World]:
 
     # Set specified log level
-    opts, args = getopt.getopt(sys.argv[1:],"ll:", ["loglevel="])
+    opts, args = getopt.getopt(sys.argv[1:], "ll:", ["loglevel="])
     for opt, arg in opts:
-      if opt in ("-ll", "--loglevel"):
-         if arg == "debug":
-             print("Starting Debug Log")
-             logging.basicConfig(filename='debug.log', encoding='utf-8', level=logging.DEBUG)
+        if opt in ("-ll", "--loglevel"):
+            if arg == "debug":
+                print("Starting Debug Log")
+                logging.basicConfig(
+                    filename="debug.log", encoding="utf-8", level=logging.DEBUG
+                )
 
     get_all_settings_info()
 
@@ -32,7 +32,6 @@ def generate() -> list[World]:
     config = load_config_from_file("config.yaml")
 
     return generate_randomizer(config)
-
 
 
 def generate_randomizer(config: Config) -> list[World]:
@@ -52,7 +51,7 @@ def generate_randomizer(config: Config) -> list[World]:
 
     if config.generate_spoiler_log:
         hash_str += "spoilerlog"
-    
+
     random.seed(hash_str)
 
     worlds: list[World] = []
@@ -62,7 +61,7 @@ def generate_randomizer(config: Config) -> list[World]:
         setting_map = config.settings[i]
         print(f"Building World {i}")
         worlds.append(World(i))
-        
+
         # TODO: Resolve Random Settings
         # TODO: Resolve Cosmetic Choices
         # TODO: Resolve Setting Conflicts
@@ -71,7 +70,6 @@ def generate_randomizer(config: Config) -> list[World]:
         worlds[i].build()
         # TODO: Set Excluded Locations
         # TODO: Set Item Locations
-
 
     # TODO: Process plando data for all worlds
     # TODO: Perform Pre-Entrance Shuffle Tasks
