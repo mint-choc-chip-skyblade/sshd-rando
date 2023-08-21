@@ -3,10 +3,18 @@ import random
 
 from logic.settings import *
 
-required_config_fields = ["input_dir", "seed", "output_dir", "plandomizer", "plandomizer_file"]
+required_config_fields = [
+    "input_dir",
+    "seed",
+    "output_dir",
+    "plandomizer",
+    "plandomizer_file",
+]
+
 
 class ConfigError(RuntimeError):
     pass
+
 
 class Config:
     def __init__(self) -> None:
@@ -67,14 +75,14 @@ def write_config_to_file(filename: str, conf: Config):
                 config_out[world_num]["starting_inventory"] = []
                 for item in setting_map.starting_inventory.elements():
                     config_out[world_num]["starting_inventory"].append(item)
-            
+
             if len(setting_map.excluded_locations) == 0:
                 config_out[world_num]["excluded_locations"] = "none"
             else:
                 config_out[world_num]["excluded_locations"] = []
                 for loc in setting_map.excluded_locations:
                     config_out[world_num]["excluded_locations"].append(loc)
-            
+
         yaml.safe_dump(config_out, config_file)
 
 
@@ -88,8 +96,8 @@ def load_config_from_file(filename: str) -> Config:
         # Check required fields
         for field in required_config_fields:
             if field not in config_in:
-                raise ConfigError(f"Missing field \"{field}\" in {filename}")
-            
+                raise ConfigError(f'Missing field "{field}" in {filename}')
+
         config.seed = config_in["seed"]
         config.input_dir = config_in["input_dir"]
         config.output_dir = config_in["output_dir"]
@@ -98,7 +106,6 @@ def load_config_from_file(filename: str) -> Config:
 
         world_num = 1
         world_num_str = f"World {world_num}"
-
 
         settings_info = get_all_settings_info()
         while world_num_str in config_in:
@@ -110,9 +117,11 @@ def load_config_from_file(filename: str) -> Config:
                 if setting_name == "starting_inventory":
                     starting_inventory = config_in[world_num_str][setting_name]
                     if type(starting_inventory) is list:
-                        cur_world_settings.starting_inventory = Counter(starting_inventory)
+                        cur_world_settings.starting_inventory = Counter(
+                            starting_inventory
+                        )
                     continue
-                
+
                 # Special handling for excluded locations
                 if setting_name == "excluded_locations":
                     excluded_locations = config_in[world_num_str][setting_name]
@@ -120,31 +129,35 @@ def load_config_from_file(filename: str) -> Config:
                         cur_world_settings.excluded_locations = set(excluded_locations)
                     continue
 
-
                 if setting_name not in settings_info:
-                    raise ConfigError(f"Setting \"{setting_name}\" is not defined in settings_list.yaml")
-                
+                    raise ConfigError(
+                        f'Setting "{setting_name}" is not defined in settings_list.yaml'
+                    )
+
                 setting_value = config_in[world_num_str][setting_name]
                 # TODO: Hex codes
 
                 if setting_value not in settings_info[setting_name].options:
-                    raise ConfigError(f"\"{setting_value}\" is not a valid value for setting \"{setting_name}\"")
-            
-                cur_world_settings.settings[setting_name] = Setting(setting_name, setting_value, settings_info[setting_name])
+                    raise ConfigError(
+                        f'"{setting_value}" is not a valid value for setting "{setting_name}"'
+                    )
+
+                cur_world_settings.settings[setting_name] = Setting(
+                    setting_name, setting_value, settings_info[setting_name]
+                )
 
             # Add in defaults settings that weren't listed
             for setting_name, info in settings_info.items():
                 if setting_name not in cur_world_settings.settings:
                     default_value = info.options[info.default_option]
-                    cur_world_settings.settings[setting_name] = Setting(setting_name, default_value, info)
+                    cur_world_settings.settings[setting_name] = Setting(
+                        setting_name, default_value, info
+                    )
                     rewrite_config = True
 
             world_num += 1
             world_num_str = f"World {world_num}"
 
     write_config_to_file(filename, config)
-        
-    
+
     return config
-            
-        
