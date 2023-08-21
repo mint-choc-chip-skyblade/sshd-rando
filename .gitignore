@@ -7,8 +7,14 @@ output
 # Seriously, don't commit Nintendo's IP
 oarccache
 
-__pycache__
+# MSVC Windows builds of rustc generate these, which store debugging information
+*.pdb
 
+*__pycache__*
+config.yaml
+*.log
+*.gv
+Spoiler Log.txt
 
 # Muzu's test stuff.
 TODO

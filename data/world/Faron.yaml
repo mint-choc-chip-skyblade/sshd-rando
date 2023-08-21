@@ -1,0 +1,419 @@
+
+
+# SEALED GROUNDS
+- name: Sealed Grounds
+  exits:
+    Sealed Grounds Statue: Nothing
+    Sealed Grounds Spiral: Nothing
+    Sealed Grounds Upper Ledge: "'Push_Down_Sealed_Grounds_Log'"
+
+
+- name: Sealed Grounds Spiral
+  allowed_time_of_day: Day Only
+  hint_region: Sealed Grounds
+  events:
+    Can Defeat Imprisoned 2: Goddess_Sword and 'Start_Imprisoned_2'
+  exits:
+    Sealed Temple: Nothing
+    Sealed Grounds: "'Can_Defeat_Imprisoned_2'"
+
+
+- name: Sealed Grounds Upper Ledge
+  events:
+    Push Down Sealed Grounds Log: Nothing
+  exits:
+    Sealed Grounds: Nothing
+    Behind the Temple: Nothing
+
+
+- name: Sealed Temple
+  events:
+    Raise Gate of Time: Goddess_Harp
+    Start Imprisoned 2: "'Raise_Gate_of_Time' and Master_Sword" # TODO
+    Open Gate of Time: "'Can_Defeat_Imprisoned_2' and Master_Sword" # TODO
+  exits:
+    Sealed Grounds: Nothing
+    Behind the Temple North Door: Nothing
+    Behind the Temple South Door: Nothing
+    Hylia's Temple: "'Open_Gate_of_Time'"
+  locations:
+    Sealed Temple - Chest: Nothing
+    Sealed Temple - Song from Impa: Goddess_Harp
+
+
+- name: Hylia's Temple
+  exits:
+    Sealed Temple: Nothing
+  locations:
+    Hylia's Temple - Zelda's Blessing: Nothing
+    Hylia's Realm - Defeat Demise: Sword # TODO
+
+
+- name: Behind the Temple North Door
+  exits:
+    Sealed Temple: Nothing
+    Behind the Temple: Nothing
+
+
+- name: Behind the Temple South Door
+  exits:
+    Sealed Temple: Nothing
+    Behind the Temple: Nothing
+
+
+- name: Behind the Temple
+  hint_region: Sealed Grounds
+  exits:
+    Behind the Temple Statue: Nothing
+    Behind the Temple North Door: Nothing
+    Behind the Temple South Door: Nothing
+    Faron Woods Entry: Nothing
+    Sealed Grounds Upper Ledge: Nothing
+  locations:
+    Sealed Grounds - Gorko's Goddess Wall Reward: Goddess_Harp and Ballad_of_the_Goddess and Goddess_Sword
+    Sealed Grounds - Gossip Stone: Nothing
+
+
+# FARON WOODS
+
+- name: Faron Woods Entry
+  hint_region: Faron Woods
+  exits:
+    Faron Woods Entry Statue: Nothing
+    Faron Woods: Can_Cut_Trees_And_Logs or Clawshots or 'Push_Down_Faron_Woods_Entry_Log' # Either cut trees or clawshot vines
+    Behind the Temple: Nothing
+
+
+- name: Faron Woods
+  hint_region: Faron Woods
+  events:
+    Push Down Faron Woods Entry Log: Nothing
+    All Kikwis Saved: (Sword or Beetle) and Can_Defeat_Bokoblins
+    Amber Relic Farming: Nothing
+  exits:
+    In the Woods Statue: Nothing
+    Viewing Platform Statue: Nothing
+    Lake Floria: open_lake_floria == open or ('Talk_to_Yerbal' and (Goddess_Sword or open_lake_floria == yerbal)) or logic_early_lake_floria
+    Behind the Crawlspace and Rope: Bomb_Bag
+    Faron Silent Realm: Goddess_Harp and Farores_Courage
+    Great Tree Interior Underwater: Water_Scale
+    Great Tree Exterior Platforms: Clawshots
+    Great Tree Clawshot Target Branch: Clawshots
+    Faron Woods Swinging Vine Ledge: Distance_Activator
+    Faron Woods Floria Shortcut Ledge: logic_early_lake_floria or 'Push_Down_Floria_Shortcut_Log'
+    Faron Woods Entry: Nothing
+  locations:
+    Faron Woods - Rupee on Hollow Tree Root: Nothing
+    Faron Woods - Rupee on Hollow Tree Branch: Beetle
+    Faron Woods - Rupee on Platform near Floria Door: Beetle
+    Faron Woods - Kikwi Elder's Reward: "'All_Kikwis_Saved'"
+    Faron Woods - Item on Tree: Nothing
+    Faron Woods - Item behind Bombable Rock: Bomb_Bag
+    Faron Woods - Chest behind Bombable Rocks near Erla: Bomb_Bag
+
+
+- name: Faron Woods Floria Shortcut Ledge
+  events:
+    Push Down Floria Shortcut Log: Nothing
+  exits:
+    Faron Woods: Nothing
+    Floria Waterfall: Nothing
+
+
+- name: Faron Woods Swinging Vine Ledge
+  exits:
+    Faron Woods: Nothing
+    Deep Woods Entry: Nothing
+
+
+- name: Behind the Crawlspace and Rope
+  events:
+    Push Down Log Near Oolo: Nothing
+    Retrieve Oolo: Scrapper and 'Start_Owlans_Quest'
+  exits:
+    Faron Woods: Nothing
+
+
+- name: Great Tree West Branch
+  events:
+    Goddess Cube on West Great Tree near Exit: Goddess_Sword
+  exits:
+    Faron Woods: Nothing
+    
+
+- name: Clawshot Target Branch
+  events:
+    Goddess Cube on East Great Tree with Clawshots Target: Goddess_Sword
+  exits:
+    Faron Woods: Nothing
+    
+
+- name: Great Tree Rope Branch
+  events:
+    Goddess Cube on East Great Tree with Rope: Goddess_Sword
+  exits:
+    Faron Woods: Nothing
+
+  
+# GREAT TREE
+- name: Great Tree Interior Underwater
+  exits:
+    Faron Woods: Nothing
+    Great Tree Interior Lower: Water_Scale
+
+
+- name: Great Tree Interior Lower
+  exits:
+    Great Tree Interior Underwater: Water_Scale
+    Great Tree Interior Middle: Gust_Bellows
+
+
+- name: Great Tree Interior Middle # area including the platforms and chest
+  exits:
+    Great Tree Interior Lower: Nothing
+    Great Tree Exterior Platforms: Nothing
+  locations:
+    Great Tree - Chest: Nothing # Not even something to defeat the quadri-baba ?
+
+
+- name: Great Tree Exterior Platforms
+  exits:
+    Great Tree Interior Middle: Nothing
+    Great Tree Interior Upper: Nothing
+    Great Tree West Branch: Nothing
+    Faron Woods: Nothing
+
+
+- name: Great Tree Interior Upper # top with the moblin
+  exits:
+    Great Tree Interior Middle: Can_Defeat_Moblins or 'Can_Complete_Ancient_Cistern'
+    Flooded Great Tree Upper: Nothing
+    Great Tree Exterior Top: Nothing
+
+
+- name: Great Tree Exterior Top
+  events:
+    Talk to Yerbal: Water_Scale and (Slingshot or Beetle) # Water Scale?
+  exits:
+    The Great Tree Statue: Nothing
+    Great Tree Interior Upper: Nothing
+    Great Tree Exterior Platforms: Nothing
+    Great Tree Rope Branch: Nothing
+    Clawshot Target Branch: Nothing
+  locations:
+    Faron Woods - Rupee on Great Tree North Branch: Beetle
+    Faron Woods - Rupee on Great Tree West Branch: Beetle
+
+  
+# DEEP WOODS
+- name: Deep Woods Entry
+  events:
+    Hornet Larvae Farming: Nothing # Bonk the tree
+  exits:
+    Deep Woods: Distance_Activator or Goddess_Sword or 'Push_Down_Deep_Woods_Shortcut_Logs' # bomb bag?
+    Faron Woods Swinging Vine Ledge: Nothing
+    
+
+- name: Deep Woods
+  hint_region: Faron Woods
+  events:
+    Push Down Deep Woods Shortcut Logs: Nothing
+    Initial Goddess Cube: Goddess_Sword
+    Goddess Cube in Deep Woods: Goddess_Sword
+    Goddess Cube on top of Skyview: Goddess_Sword and Clawshots
+  exits:
+    Deep Woods Statue: Nothing
+    Forest Temple Statue: Nothing
+    Skyview Entry: Distance_Activator
+  locations:
+    Deep Woods - Chest: Nothing
+    Deep Woods - Gossip Stone: Nothing
+
+
+- name: Faron Silent Realm
+  hint_region: Faron Silent Realm
+  exits:
+    Faron Woods: Nothing
+  locations:
+    Faron Silent Realm - Reward: Nothing
+
+# FLOODED FARON WOODS
+- name: Flooded Faron Woods
+  hint_region: Flooded Faron Woods
+  events:
+    Unlock In the Woods Statue: Water_Scale
+    Unlock Viewing Platform Statue: Water_Scale
+    Unlock Faron Woods Entry Statue: Water_Scale
+    Unlock The Great Tree Statue: Nothing
+    Retrieve Oolo: Scrapper and 'Start_Owlans_Quest'
+    Can Watch Completed Tadtones Cutscene: Nothing
+  exits:
+    Flooded Great Tree Upper: Nothing
+    Flooded Great Tree Lower: Water_Scale
+  locations:
+    Flooded Faron Woods - Yellow Tadtone under Lilypad: Water_Scale
+    Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform: Water_Scale
+    Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform: Water_Scale
+    Flooded Faron Woods - Red Moving Tadtone near Viewing Platform: Water_Scale
+    Flooded Faron Woods - Light Blue Tadtone under Great Tree Root: Water_Scale
+    Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder: Water_Scale
+    Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder: Water_Scale
+    Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree: Water_Scale
+    Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock: Water_Scale
+    Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree: Water_Scale
+    Flooded Faron Woods - 8 Green Tadtones in West Tunnel: Water_Scale
+    Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock: Water_Scale
+    Flooded Faron Woods - 16 Dark Blue Tadtones in the South West: Water_Scale
+    Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate: Water_Scale
+    Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree: Water_Scale
+    Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree: Water_Scale
+    Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree: Water_Scale
+
+
+- name: Flooded Great Tree Upper
+  exits:
+    Flooded Faron Woods: Nothing
+    Flooded Great Tree Lower: Water_Scale
+  locations:
+    Flooded Faron Woods - Water Dragon's Reward: count(17, Group_of_Tadtones) and 'Can_Watch_Completed_Tadtones_Cutscene'
+
+
+- name: Flooded Great Tree Lower
+  exits:
+    Flooded Faron Woods: Nothing
+    Flooded Great Tree Upper: Water_Scale
+
+# LAKE FLORIA
+- name: Lake Floria
+  hint_region: Lake Floria
+  locations:
+    Lake Floria - Rupee behind Southwest Boulder: Water_Scale
+    Lake Floria - Left Rupee behind Northwest Boulder: Water_Scale
+    Lake Floria - Right Rupee behind Northwest Boulder: Water_Scale
+    Lake Floria - Rupee under Central Boulder: Water_Scale
+  exits:
+    Lake Floria Emerged Area: Water_Scale
+    Farore's Lair: Water_Scale
+
+
+- name: Lake Floria Emerged Area
+  hint_region: Lake Floria
+  events:
+    Goddess Cube in Lake Floria: Goddess_Sword
+  exits:
+    Lake Floria Statue: Nothing
+    Lake Floria: Water_Scale
+  locations:
+    Lake Floria - Chest: Nothing
+
+
+- name: Farore's Lair
+  events:
+    Talk to Farore: Nothing
+  exits:
+    Floria Waterfall: Nothing
+    Lake Floria: Water_Scale
+  locations:
+    Lake Floria - Dragon Lair South Chest: Water_Scale
+    Lake Floria - Dragon Lair East Chest: Nothing
+    
+
+- name: Floria Waterfall
+  hint_region: Lake Floria
+  events:
+    Goddess Cube in Floria Waterfall: Clawshots and Goddess_Sword
+  exits:
+    Floria Waterfall Statue: Nothing
+    Floria Waterfall Temple Ledge: Water_Scale
+    Faron Woods Floria Shortcut Ledge: Nothing
+    Farore's Lair: Nothing
+  locations:
+    Floria Waterfall - Gossip Stone: Nothing
+    Floria Waterfall - Rupee on High Ledge: Beetle
+
+
+- name: Floria Waterfall Temple Ledge
+  exits:
+    Ancient Cistern Lobby: Nothing
+    Floria Waterfall: Nothing
+
+# FARON STATUES
+- name: Sealed Grounds Statue
+  events:
+    Unlock Sealed Grounds Statue: Nothing
+  exits:
+    The Sky: Day
+    Sealed Grounds: Nothing
+
+
+- name: Behind the Temple Statue
+  events:
+    Unlock Behind the Temple Statue: Nothing
+  exits:
+    The Sky: Day
+    Behind the Temple: Nothing
+
+
+- name: Faron Woods Entry Statue
+  events:
+    Unlock Faron Woods Entry Statue: Nothing
+  exits:
+    The Sky: Day
+    Faron Woods Entry: Nothing
+
+
+- name: Viewing Platform Statue
+  events:
+    Unlock Viewing Platform Statue: Nothing
+  exits:
+    The Sky: Day
+    Faron Woods: Nothing
+
+
+- name: In the Woods Statue
+  events:
+    Unlock In the Woods Statue: Nothing
+  exits:
+    The Sky: Day
+    Faron Woods: Nothing
+
+
+- name: Deep Woods Statue
+  events:
+    Unlock Deep Woods Statue: Nothing
+  exits:
+    The Sky: Day
+    Deep Woods: Nothing
+
+
+- name: Forest Temple Statue
+  events:
+    Unlock Forest Temple Statue: Nothing
+  exits:
+    The Sky: Day
+    Deep Woods: Nothing
+
+
+- name: The Great Tree Statue
+  events:
+    Unlock The Great Tree Statue: Nothing
+  exits:
+    The Sky: Day
+    Great Tree Exterior Top: Nothing
+
+
+- name: Lake Floria Statue
+  events:
+    Unlock Lake Floria Statue: Nothing
+  exits:
+    The Sky: Day
+    Lake Floria Emerged Area: Nothing
+
+
+- name: Floria Waterfall Statue
+  events:
+    Unlock Floria Waterfall Statue: Nothing
+  exits:
+    The Sky: Day
+    Floria Waterfall: Nothing
+
