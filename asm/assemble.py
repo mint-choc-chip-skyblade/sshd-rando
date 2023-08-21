@@ -143,7 +143,9 @@ with tempDir as tempDirName:
                     raise Exception(
                         f"Duplicate offset {asmReadOffset} section in {patchFilePath}."
                     )
-            elif line.startswith(("bl ", "b ", "b.", "bcc ", "cbz", "cbnz", "tbz", "tbnz")): # The blank space is necessary
+            elif line.startswith(
+                ("bl ", "b ", "b.", "bcc ", "cbz", "cbnz", "tbz", "tbnz")
+            ):  # The blank space is necessary
                 instructionParts = line.split(SPACE)
                 destination = int(instructionParts[-1], 16)
 
@@ -153,7 +155,10 @@ with tempDir as tempDirName:
                 )
 
                 codeBlocks[asmReadOffset].append(
-                    SPACE.join(instructionParts[:-1]) + SPACE + tempBranchLabel + NEWLINE
+                    SPACE.join(instructionParts[:-1])
+                    + SPACE
+                    + tempBranchLabel
+                    + NEWLINE
                 )
             else:
                 codeBlocks[asmReadOffset].append(line)
