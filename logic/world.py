@@ -37,6 +37,7 @@ class World:
         self.area_ids: dict[str, int] = {}
 
         self.item_pool: Counter[Item] = Counter()
+        self.starting_item_pool: Counter[Item] = Counter()
         self.root: Area = None
 
         self.playthrough_spheres: list[set[Location]] = None
@@ -199,12 +200,12 @@ class World:
 
     def build_item_pools(self) -> None:
         generate_item_pool(self)
-
-        # TODO: Starting Inventory
+        generate_starting_item_pool(self)
 
 
     def place_hardcoded_items(self) -> None:
         self.location_table["Hylia's Realm - Defeat Demise"].set_current_item(self.get_item("Game Beatable"))
+
 
     # Adds a new event if one with the current name doesn't exist
     def add_event(self, event_name: str) -> None:

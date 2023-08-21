@@ -101,3 +101,12 @@ def generate_item_pool(world) -> None:
     for item_name in item_pool:
         item = world.get_item(item_name)
         world.item_pool[item] += 1
+
+
+# Will remove items from the passed in world's item pool
+# and add them to the starting pool.
+def generate_starting_item_pool(world):
+    for item_name, count in world.setting_map.starting_inventory.items():
+        item = world.get_item(item_name)
+        world.starting_item_pool[item] += count
+        world.item_pool[item] -= count

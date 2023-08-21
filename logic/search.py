@@ -33,10 +33,11 @@ class Search:
 
         self.area_time: dict[int, int] = {}
 
-        # TODO: Add starting inventory items for each world
+        # Add starting inventory items for each world
         for world in self.worlds:
             if world.id == self.world_to_search or self.world_to_search == -1:
-                pass
+                for item, count in world.starting_item_pool.items():
+                    self.owned_items[item] += count
 
         # Set search starting properties and add each world's root to exits_to_try
         for world in self.worlds:
@@ -47,6 +48,7 @@ class Search:
                 for root_exit in root.exits:
                     if not root_exit.disabled:
                         self.exits_to_try.append(root_exit)
+
 
     def search_worlds(self) -> None:
         # Get all locations which currently have items to test on each iteration
@@ -59,8 +61,11 @@ class Search:
 
         
         # Main Searching Loop
+        # Keep iterating while new things are being found, but
+        # if the search is beatable and we're either generating
+        # the playthrough or checking for beatability, exit early
         self.new_things_found = True
-        while self.new_things_found and not (self.is_beatable and self.search_mode in [ SearchMode.GENERATE_PLAYTHROUGH, SearchMode.GAME_BEATABLE]):
+        while self.new_things_found and not (self.is_beatable and self.search_mode in [SearchMode.GENERATE_PLAYTHROUGH, SearchMode.GAME_BEATABLE]):
             # Variable to keep track of making logical progress. We want to keep
             # looping as long as we're finding new things on each iteration
             self.new_things_found = False
