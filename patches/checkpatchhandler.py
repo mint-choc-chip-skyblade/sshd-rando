@@ -6,7 +6,6 @@ from patches.patchconstants import (
     OARC_ADD_PATH_REGEX,
     SHOP_PATCH_PATH_REGEX,
 )
-from collections import defaultdict
 
 
 def determine_check_patches(stagePatchHandler, eventPatchhandler):
