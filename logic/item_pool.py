@@ -3,7 +3,6 @@ from logic.item import *
 
 
 def generate_item_pool(world) -> None:
-
     item_pool = (
         [
             "Bomb Bag",

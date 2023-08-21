@@ -60,10 +60,8 @@ class World:
     def build_item_table(self) -> None:
         logging.getLogger("").debug(f"Building Item Table for {self}")
         with open("data/items.yaml", "r") as item_data_file:
-
             item_data = yaml.safe_load(item_data_file)
             for item_node in item_data:
-
                 # Check to make sure all neccesary fields exist
                 for field in ["id", "name"]:
                     if field not in item_node:
@@ -97,11 +95,9 @@ class World:
     def build_location_table(self) -> None:
         logging.getLogger("").debug(f"Building Location Table for {self}")
         with open("data/locations.yaml", "r") as item_data_file:
-
             location_id_counter = 0
             location_data = yaml.safe_load(item_data_file)
             for location_node in location_data:
-
                 # Check to make sure all required fields exist
                 for field in ["name", "original_item"]:
                     if field not in location_node:
@@ -152,7 +148,6 @@ class World:
             with open(filepath, "r") as world_data_file:
                 world_data = yaml.safe_load(world_data_file)
                 for area_node in world_data:
-
                     # Check to make sure all required fields exist
                     for field in ["name"]:
                         if field not in area_node:

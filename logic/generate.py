@@ -13,7 +13,6 @@ import logging
 
 
 def generate() -> list[World]:
-
     # Set specified log level
     opts, args = getopt.getopt(sys.argv[1:], "ll:", ["loglevel="])
     for opt, arg in opts:

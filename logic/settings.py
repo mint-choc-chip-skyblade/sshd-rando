@@ -50,6 +50,7 @@ class SettingInfo:
 
 settings_info_map: dict[str, SettingInfo] = {}
 
+
 # Setting for a specific world
 class Setting:
     def __init__(
@@ -122,7 +123,6 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
         with open(path, "r") as settings_file:
             settings_yaml = yaml.safe_load(settings_file)
             for setting_node in settings_yaml:
-
                 # Check for required fields
                 for field in [
                     "name",

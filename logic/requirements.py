@@ -54,7 +54,6 @@ def strip_outer_parenthesis(req_str: str):
 # Takes a logic expression and translates it into a requirement object
 # that's evaluated during the the search algorithm
 def parse_requirement_string(req_str: str, world, area_id: int = None) -> Requirement:
-
     # Get a new copy of an empty requirement
     req = copy.deepcopy(Requirement())
 

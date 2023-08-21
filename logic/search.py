@@ -184,7 +184,6 @@ class Search:
                 return
 
     def process_location(self, location: Location) -> None:
-
         if not self.collect_items:
             return
 
@@ -291,7 +290,6 @@ def generate_playthrough(worlds: list[World]) -> None:
     print("Paring down playthrough")
     for sphere in playthrough_spheres:
         for location in sphere:
-
             item_at_location = location.current_item
             location.remove_current_item()
 
