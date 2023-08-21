@@ -17,4 +17,5 @@ class AllPatchHandler:
         self.stagePatchHandler.create_oarc_cache()
         self.stagePatchHandler.set_oarc_add_remove()
         self.stagePatchHandler.handle_stage_patches()
+        self.stagePatchHandler.patch_title_screen_logo()
         self.eventPatchHandler.handle_event_patches()

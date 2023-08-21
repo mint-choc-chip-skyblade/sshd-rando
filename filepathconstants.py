@@ -27,3 +27,8 @@ OBJECTPACK_PATH = Path(
     / "NX"
     / "ObjectPack.arc.LZ"
 )
+
+TITLE2D_SOURCE_PATH = (
+    RANDO_ROOT_PATH / "title" / TITLE_ID / "romfs" / "Layout" / "Title2D.arc"
+)
+TITLE2D_OUTPUT_PATH = OUTPUT_PATH / "romfs" / "Layout" / "Title2D.arc"
