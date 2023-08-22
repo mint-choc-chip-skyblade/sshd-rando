@@ -1,3 +1,12 @@
+006-8KenseiNormal:
+  - name: Allow Amiibo Warp without actual Amiibo
+    type: flowpatch
+    index: 28
+    flow: {}
+    cases:
+      - 21 # Vanilla
+      - 25 # Vanilla
+      - 13 # Skip amiibo
 114-Friend:
   - name: Skip Fledge camera panning 1
     type: flowpatch
@@ -43,6 +52,11 @@
     type: setstoryflag
     flow:
       setstoryflag: 198
+      next: Give Amiibo Storyflag
+  - name: Give Amiibo Storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 1201
       next: Set upper academy gate/sparring hall open sceneflag
   - name: Set upper academy gate/sparring hall open sceneflag
     type: setsceneflag
@@ -132,6 +146,11 @@
     flow:
       setsceneflag: 96
       sceneindex: 0
+      next: Set gate to faron storyflag
+  - name: Set gate to faron storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 494
       next: Bow storyflag
   - name: Bow storyflag
     type: setstoryflag
@@ -139,7 +158,7 @@
       setstoryflag: 944
       next: Give bow
   - name: Give bow
-    type: giveitem
+    type: setitemflag
     flow:
       itemid: 19
       next: -1
