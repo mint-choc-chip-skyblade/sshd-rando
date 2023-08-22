@@ -1,6 +1,7 @@
 from patches.allpatchhandler import AllPatchHandler
 from logic.generate import generate
 
+
 worlds = generate()
 
 # for location in worlds[0].location_table.values():

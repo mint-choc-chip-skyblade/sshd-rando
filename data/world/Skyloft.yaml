@@ -185,8 +185,8 @@
   locations:
     Bazaar - Potion Lady's Gift: Nothing
     Bazaar - Goddess Chest: "'Goddess_Cube_in_Ancient_Harbour'"
-    Bazaar - Upgrade to Quick Beetle: Hook_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
-    Bazaar - Upgrade to Tough Beetle: Quick_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
+    # Bazaar - Upgrade to Quick Beetle: Hook_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
+    # Bazaar - Upgrade to Tough Beetle: Quick_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
 
 
 - name: Bazaar North

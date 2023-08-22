@@ -1,12 +1,12 @@
 from filepathconstants import EVENT_PATCHES_PATH, EVENT_FILES_PATH, OUTPUT_EVENT_PATH
-from patches.patchconstants import (
+from constants.patchconstants import (
     FLOW_ADD_VARIATIONS,
     SWITCH_ADD_VARIATIONS,
     PARAM1_ALIASES,
     PARAM2_ALIASES,
     DEFAULT_FLOW_TYPE_LOOKUP,
 )
-from itemconstants import *
+from constants.itemconstants import *
 from pathlib import Path
 from collections import defaultdict
 

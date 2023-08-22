@@ -55,7 +55,7 @@ def generate_item_pool(world) -> None:
         + ["Gratitude Crystal Pack"] * 13
         + ["Gratitude Crystal"] * 15
         + ["Empty Bottle"] * 5
-        + ["Group of Tadtones"] * 17
+        # + ["Group of Tadtones"] * 17
         + ["Key Piece"] * 5
         + ["Skyview Small Key"] * 2
         + ["Ancient Cistern Small Key"] * 2

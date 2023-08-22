@@ -98,18 +98,18 @@
     - event/106-DrugStore/44
     - oarc/F004r/l0
 
-- name: Bazaar - Upgrade to Quick Beetle
-  original_item: Quick Beetle
+# - name: Bazaar - Upgrade to Quick Beetle
+#   original_item: Quick Beetle
 
-- name: Bazaar - Upgrade to Tough Beetle
-  original_item: Tough Beetle
+# - name: Bazaar - Upgrade to Tough Beetle
+#   original_item: Tough Beetle
 
-- name: Central Skyloft - Repair Gondo's Junk
-  original_item: Scrapper
-  type:
-  Paths:
-    - event/113-RemodelStore/Give Repair Gondo Junk item
-    - oarc/F004r/l0
+# - name: Central Skyloft - Repair Gondo's Junk
+#   original_item: Scrapper
+#   type:
+#   Paths:
+#     - event/113-RemodelStore/Give Repair Gondo Junk item
+#     - oarc/F004r/l0
 
 - name: Central Skyloft - Wryna's Crystals
   original_item: Gratitude Crystal Pack
@@ -931,107 +931,107 @@
 
 # Flooded Faron Woods:
 
-- name: Flooded Faron Woods - Yellow Tadtone under Lilypad
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/10 # group number
+# - name: Flooded Faron Woods - Yellow Tadtone under Lilypad
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/10 # group number
 
-- name: Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/4 # group number
+# - name: Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/4 # group number
 
-- name: Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/2 # group number
+# - name: Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/2 # group number
 
-- name: Flooded Faron Woods - Red Moving Tadtone near Viewing Platform
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/1 # group number
+# - name: Flooded Faron Woods - Red Moving Tadtone near Viewing Platform
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/1 # group number
 
-- name: Flooded Faron Woods - Light Blue Tadtone under Great Tree Root
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/13 # group number
+# - name: Flooded Faron Woods - Light Blue Tadtone under Great Tree Root
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/13 # group number
 
-- name: Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/6 # group number
+# - name: Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/6 # group number
 
-- name: Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/8 # group number
+# - name: Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/8 # group number
 
-- name: Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/11 # group number
+# - name: Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/11 # group number
 
-- name: Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/5 # group number
+# - name: Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/5 # group number
 
-- name: Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/3 # group number
+# - name: Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/3 # group number
 
-- name: Flooded Faron Woods - 8 Green Tadtones in West Tunnel
-  original_item: Group of Tadtones
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/9 # group number
+# - name: Flooded Faron Woods - 8 Green Tadtones in West Tunnel
+#   original_item: Group of Tadtones
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/9 # group number
 
-- name: Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/15 # group number
+# - name: Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/15 # group number
 
-- name: Flooded Faron Woods - 16 Dark Blue Tadtones in the South West
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/17 # group number
+# - name: Flooded Faron Woods - 16 Dark Blue Tadtones in the South West
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/17 # group number
 
-- name: Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/16 # group number
+# - name: Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/16 # group number
 
-- name: Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/7 # group number
+# - name: Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/7 # group number
 
-- name: Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/14 # group number
+# - name: Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/14 # group number
 
-- name: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
-  original_item: Group of Tadtones 
-  type: Tadtones
-  Paths:
-    - stage/F103/r0/l2/Clef/12 # group number
+# - name: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
+#   original_item: Group of Tadtones 
+#   type: Tadtones
+#   Paths:
+#     - stage/F103/r0/l2/Clef/12 # group number
 
 
 - name: Flooded Faron Woods - Water Dragon's Reward
@@ -1231,72 +1231,72 @@
 
 # Bokoblin Base:
 
-- name: Bokoblin Base - Plats' Gift
-  original_item: Mogma Mitts
-  type:
-  text: a gift from an <r<imprisoned mogma>> has
-  Paths:
-   - event/305-MountainF3/Plats' Gift
-   - oarc/F202/l1
+# - name: Bokoblin Base - Plats' Gift
+#   original_item: Mogma Mitts
+#   type:
+#   text: a gift from an <r<imprisoned mogma>> has
+#   Paths:
+#    - event/305-MountainF3/Plats' Gift
+#    - oarc/F202/l1
 
-- name: Bokoblin Base - Chest near Bone Bridge
-  original_item: Gust Bellows
-  type:
-  Paths:
-   - stage/F202/r2/l1/TBox/70
+# - name: Bokoblin Base - Chest near Bone Bridge
+#   original_item: Gust Bellows
+#   type:
+#   Paths:
+#    - stage/F202/r2/l1/TBox/70
 
-- name: Bokoblin Base - Chest on Cliff
-  original_item: Clawshots
-  type:
-  Paths:
-   - stage/F202/r2/l1/TBox/66
+# - name: Bokoblin Base - Chest on Cliff
+#   original_item: Clawshots
+#   type:
+#   Paths:
+#    - stage/F202/r2/l1/TBox/66
 
-- name: Bokoblin Base - Chest near Drawbridge
-  original_item: Whip
-  type:
-  Paths:
-   - stage/F202/r2/l1/TBox/67
+# - name: Bokoblin Base - Chest near Drawbridge
+#   original_item: Whip
+#   type:
+#   Paths:
+#    - stage/F202/r2/l1/TBox/67
 
-- name: Bokoblin Base - Chest East of Earth Temple Entrance
-  original_item: Progressive Slingshot
-  type:
-  Paths:
-   - stage/F202/r4/l1/TBox/68
+# - name: Bokoblin Base - Chest East of Earth Temple Entrance
+#   original_item: Progressive Slingshot
+#   type:
+#   Paths:
+#    - stage/F202/r4/l1/TBox/68
 
-- name: Bokoblin Base - Chest West of Earth Temple Entrance
-  original_item: Bomb Bag
-  type:
-  Paths:
-   - stage/F202/r4/l1/TBox/69
+# - name: Bokoblin Base - Chest West of Earth Temple Entrance
+#   original_item: Bomb Bag
+#   type:
+#   Paths:
+#    - stage/F202/r4/l1/TBox/69
 
-- name: Bokoblin Base - First Chest in Volcano Summit
-  original_item: Blue Rupee
-  type:
-  Paths:
-   - stage/F201_2/r0/l0/TBox/72
-   - stage/F201_1/r0/l4/TBox/72
+# - name: Bokoblin Base - First Chest in Volcano Summit
+#   original_item: Blue Rupee
+#   type:
+#   Paths:
+#    - stage/F201_2/r0/l0/TBox/72
+#    - stage/F201_1/r0/l4/TBox/72
 
-- name: Bokoblin Base - Raised Chest in Volcano Summit
-  original_item: Progressive Sword
-  type:
-  Paths:
-   - stage/F201_2/r0/l0/TBox/73
-   - stage/F201_1/r0/l4/TBox/73
+# - name: Bokoblin Base - Raised Chest in Volcano Summit
+#   original_item: Progressive Sword
+#   type:
+#   Paths:
+#    - stage/F201_2/r0/l0/TBox/73
+#    - stage/F201_1/r0/l4/TBox/73
 
-- name: Bokoblin Base - Chest in Volcano Summit Alcove
-  original_item: Progressive Pouch
-  type:
-  Paths:
-   - stage/F201_2/r0/l0/TBox/71
-   - stage/F201_1/r0/l4/TBox/71
+# - name: Bokoblin Base - Chest in Volcano Summit Alcove
+#   original_item: Progressive Pouch
+#   type:
+#   Paths:
+#    - stage/F201_2/r0/l0/TBox/71
+#    - stage/F201_1/r0/l4/TBox/71
 
-- name: Bokoblin Base - Fire Dragon's Reward
-  original_item: Eldin Song of the Hero Part
-  type:
-  text: <r<hearing a song atop the great mountain>> is rewarded with
-  Paths:
-   - event/305-MountainF3/Give item after Eldin SotH CS
-   - oarc/F221/l0
+# - name: Bokoblin Base - Fire Dragon's Reward
+#   original_item: Eldin Song of the Hero Part
+#   type:
+#   text: <r<hearing a song atop the great mountain>> is rewarded with
+#   Paths:
+#    - event/305-MountainF3/Give item after Eldin SotH CS
+#    - oarc/F221/l0
 
 # Lanayru Mine:
 

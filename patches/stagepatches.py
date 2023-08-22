@@ -13,7 +13,7 @@ from filepathconstants import (
 from pathlib import Path
 import json
 
-from patches.patchconstants import (
+from constants.patchconstants import (
     DEFAULT_SOBJ,
     DEFAULT_OBJ,
     DEFAULT_SCEN,

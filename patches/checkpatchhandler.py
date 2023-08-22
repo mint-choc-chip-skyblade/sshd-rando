@@ -1,6 +1,6 @@
 # from sslib.yaml import yaml_load
 # from filepathconstants import TEMP_PLACEMENT_LIST, ITEMS_PATH, CHECKS_PATH
-from patches.patchconstants import (
+from constants.patchconstants import (
     STAGE_PATCH_PATH_REGEX,
     EVENT_PATCH_PATH_REGEX,
     OARC_ADD_PATH_REGEX,
