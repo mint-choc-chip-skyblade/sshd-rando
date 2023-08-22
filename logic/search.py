@@ -75,8 +75,17 @@ class Search:
                 self.playthrough_spheres.append(set())
                 self.entrance_spheres.append([])
             
-            self.process_exits()
             self.process_events()
+            self.process_exits()
+            
+            # For proper sphere calculation based on item locations
+            # we need to keep looping over exits and events until
+            # nothing new is found in them (and then process locations)
+            while self.search_mode == SearchMode.GENERATE_PLAYTHROUGH and self.new_things_found:
+                self.new_things_found = False
+                self.process_events()
+                self.process_exits()
+
             self.process_locations(item_locations)
 
             self.sphere_num += 1
@@ -188,7 +197,7 @@ class Search:
                 # If this is the playthrough, and we've found all game winning items, clear the current sphere
                 # except for the last game winning items
                 if self.search_mode == SearchMode.GENERATE_PLAYTHROUGH:
-                    self.playthrough_spheres[-1].clear()
+                    self.playthrough_spheres[-1] = set([loc for loc in self.playthrough_spheres[-1] if loc.current_item.is_game_winning_item])
                     self.playthrough_spheres[-1].add(location)
                 self.is_beatable = True
         
