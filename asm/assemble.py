@@ -131,7 +131,7 @@ def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
             if len(line) == 0 or line.startswith(SEMICOLON):
                 continue
 
-            line = line.split(SEMICOLON)[0] + NEWLINE
+            line = line.split(SEMICOLON)[0].strip()
 
             if line.startswith(OFFSET):
                 asmReadOffset = hex(int(line.split(SPACE)[-1], 16))
@@ -146,21 +146,25 @@ def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
                 ("bl ", "b ", "b.", "bcc ", "cbz", "cbnz", "tbz", "tbnz")
             ):  # The blank space is necessary
                 instructionParts = line.split(SPACE)
-                destination = int(instructionParts[-1], 16)
+                destination = instructionParts[-1]
 
-                tempBranchLabel = f"branch_label_0x{destination:x}"
-                localBranches.append(
-                    tempBranchLabel + f" = 0x{destination:x}" + SEMICOLON + NEWLINE
-                )
+                if destination.startswith("0x"):
+                    destination = int(destination, 16)
+                    tempBranchLabel = f"branch_label_0x{destination:x}"
+                    localBranches.append(
+                        tempBranchLabel + f" = 0x{destination:x}" + SEMICOLON + NEWLINE
+                    )
 
-                codeBlocks[asmReadOffset].append(
-                    SPACE.join(instructionParts[:-1])
-                    + SPACE
-                    + tempBranchLabel
-                    + NEWLINE
-                )
+                    codeBlocks[asmReadOffset].append(
+                        SPACE.join(instructionParts[:-1])
+                        + SPACE
+                        + tempBranchLabel
+                        + NEWLINE
+                    )
+                else:
+                    codeBlocks[asmReadOffset].append(line + NEWLINE)
             else:
-                codeBlocks[asmReadOffset].append(line)
+                codeBlocks[asmReadOffset].append(line + NEWLINE)
 
             for symbol in localBranches:
                 tempLinkerScript += symbol
