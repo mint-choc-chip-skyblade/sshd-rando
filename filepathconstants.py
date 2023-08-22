@@ -6,14 +6,18 @@ TITLE_ID = "01002DA013484000"
 RANDO_ROOT_PATH = Path(os.path.dirname(os.path.realpath(__file__)))
 
 # OUTPUT_PATH = RANDO_ROOT_PATH / "output"
-OUTPUT_PATH = Path("C:/Users/lilit/AppData/Roaming/yuzu/load/01002DA013484000/rando-dev")
+OUTPUT_PATH = Path(
+    "C:/Users/lilit/AppData/Roaming/yuzu/load/01002DA013484000/rando-dev"
+)
 OUTPUT_STAGE_PATH = OUTPUT_PATH / "romfs" / "Stage"
 OUTPUT_EVENT_PATH = OUTPUT_PATH / "romfs" / "US" / "Object" / "en_US"
 OARC_CACHE_PATH = RANDO_ROOT_PATH / "oarccache"
 
 STAGE_PATCHES_PATH = RANDO_ROOT_PATH / "patches" / "data" / "stagepatches.yaml"
 EVENT_PATCHES_PATH = RANDO_ROOT_PATH / "patches" / "data" / "eventpatches.yaml"
-OBJECTPACK_PATCHES_PATH =RANDO_ROOT_PATH / "patches" / "data" / "objectpackpatches.yaml"
+OBJECTPACK_PATCHES_PATH = (
+    RANDO_ROOT_PATH / "patches" / "data" / "objectpackpatches.yaml"
+)
 EXTRACTS_PATH = RANDO_ROOT_PATH / "patches" / "data" / "extracts.yaml"
 ITEMS_PATH = RANDO_ROOT_PATH / "data" / "items.yaml"
 LOCATIONS_PATH = RANDO_ROOT_PATH / "data" / "locations.yaml"

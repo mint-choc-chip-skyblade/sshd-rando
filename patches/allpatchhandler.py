@@ -6,6 +6,7 @@ from filepathconstants import OUTPUT_PATH
 from shutil import rmtree
 import os
 
+
 class AllPatchHandler:
     def __init__(self, world):
         self.stagePatchHandler = StagePatchHandler()
