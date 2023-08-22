@@ -8,7 +8,7 @@ import yaml
 
 
 # Causes the assembler to print out each instruction it's assembling and it's binary.
-DEBUG_SHOW_ASSEMBLY = True
+DEBUG_SHOW_ASSEMBLY = False
 
 # Yes, these are duplicated in filepathconstants.py
 # This file should NEVER be run as part of the main randomization process.
@@ -111,8 +111,10 @@ for symbol, address in originalSymbols["main"].items():
 
 
 def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
+    addressesOverwritten = []
+
     for asmFilePath in asmPaths:
-        print(f"asmFilePath = {asmFilePath}")
+        print(f"Assembling: {asmFilePath}")
         asmFilename = asmFilePath.parts[-1]
         codeBlocks = {}
         localBranches = []
@@ -243,6 +245,15 @@ def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
             dataBytes = list(struct.unpack("B" * len(binaryData), binaryData))
 
             codeBlocks[codeBlockOffset] = dataBytes
+
+        for offset in codeBlocks:
+            for byteNumber in range(len(codeBlocks[offset])):
+                trueOffset = int(offset, 16) + byteNumber
+
+                if trueOffset in addressesOverwritten:
+                    raise Exception(f"Overlapping asm patch found at {offset} in file {asmFilename}.")
+                else:
+                    addressesOverwritten.append(trueOffset)
 
         diffFilename = outputPath / f"{asmFilename[:-4]}-diff.yaml"
 
