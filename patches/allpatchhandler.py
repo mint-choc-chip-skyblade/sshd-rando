@@ -26,4 +26,4 @@ class AllPatchHandler:
         self.stagePatchHandler.patch_title_screen_logo()
         self.eventPatchHandler.handle_event_patches()
 
-        self.asmPatchHandler.do_asm_patches()
+        self.asmPatchHandler.patch_all_asm()

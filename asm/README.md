@@ -19,11 +19,6 @@ sure that the `DEVKITA64` environment variable is set to the path of your
 
 ## How to
 
-### Addtions (custom functions)
-
-Currently, only asm *patching* is supported. If you need to add custom code,
-you will have to find and replace some vanilla code that we don't need.
-
 ### Patches
 
 All the existing asm patches can be found in the `asm/patches` directory.
@@ -34,6 +29,70 @@ Each patch file should serve a specific purpose. This is to make it easier to
 find specific patches as well as make it easier to understand what patches
 have been made. If in doubt, create a new patch file rather than extending an
 existing one.
+
+Patches are written using the ARMv8-A instruction set. All asm instruction
+blocks must be preceded by the offset where the instructions are to be
+patched. This is done with `.offset address`. For example:
+
+```
+.offset 0x08b0d0a8
+mov w8, #2
+```
+
+For more information about the addresses used, see the Addresses and Offsets
+section below
+
+### Additions (custom functions)
+
+All the existing asm additons can be found in the `asm/additions` directory.
+Each addition should be named in lowercase, have words separated by hyphens
+(`-`), and end with the `.asm` file extension.
+
+Each addition file should serve a specific purpose. This is to make it easier
+to find a specific addition as well as make it easier to understand what
+additions have been made. If in doubt, create a new additions file rather than
+extending an existing one.
+
+Additions that require use of the jumptable should only be created when
+**absolutely** necessary. Jumptable space is **very** limited.
+
+A janky alternative is always better than a clean use of the jumptable. When
+avoiding creating a new jumptable entry, please explain any janky solutions in
+detail. Additions have to be maintained. A clever solution created 6 months
+ago is worthless if nobody remembers how it works.
+
+Fortunately (at least for this specific issue), SSHD's functions have been
+much more heavily in-lined than in SD. This means that there are often
+duplicated bits of code that can be used instead.
+
+Clever placement of your additions can help when you're short by an
+instruction. By aligning the offset of your addition such that the last 4
+digits are all zeros, you can save an instruction. For example:
+
+```
+; branches to addition at 0x360A5500
+mov x16, #0x5500
+movk x16, #0x360A, LSL #16
+br x16
+```
+
+vs
+
+```
+; branches to addition at 0x360B0000
+movz x16, #0x360B, LSL #16
+br x16
+```
+
+This method is preferred to using the jumptable but, again, a solution
+requiring neither should always be sought out first.
+
+#### subsdk8
+Additions are placed in a separate nso file and are loaded as their own
+module. Specifically, subsdk1 is copied, modified with any additions, and
+re-packed as subsdk8. Games usually use the lowest subsdk numbers first and
+subsdk9 is used by `exlaunch` so subsdk8 has been chosen to maximize
+flexibility.
 
 ### Assembling
 
@@ -90,3 +149,15 @@ For The Legend of Zelda: Skyward Sword HD, the relative addresses for each
 * `subsdk0 = 0x35037000 -> 0x359FEFFF`
 * `subsdk1 = 0x359FF000 -> 0x360A4FFF`
 * `sdk     = 0x360A5000 -> 0x36DA2FFF`
+
+#### subsdk8
+
+The above addresses are changed slightly by the randomizer to allow for asm
+additions to the code. The relative addresses for each `.nso` file with the
+randomizer asm changes are:
+* `rtld    = 0x08000000 -> 0x08003FFF`
+* `main    = 0x08004000 -> 0x09841FFF`
+* `subsdk0 = 0x35037000 -> 0x359FEFFF`
+* `subsdk1 = 0x359FF000 -> 0x360A4FFF`
+* `subsdk8 = 0x360A5000 -> 0x3674AFFF`
+* `sdk     = 0x3674B000 -> 0x3747EFFF`

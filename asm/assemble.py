@@ -15,6 +15,9 @@ DEBUG_SHOW_ASSEMBLY = True
 # This file should ONLY be run after development changes to asm.
 ASM_PATCHES_PATH = Path("./") / "patches"
 ASM_PATCHES_DIFFS_PATH = ASM_PATCHES_PATH / "diffs"
+ASM_ADDITIONS_PATH = Path("./") / "additions"
+ASM_ADDITIONS_DIFFS_PATH = ASM_ADDITIONS_PATH / "diffs"
+
 
 EXE = ".exe"
 SEMICOLON = ";"
@@ -107,26 +110,20 @@ for symbol, address in originalSymbols["main"].items():
     linkerScript += f"{symbol} = 0x{address:x}" + SEMICOLON + NEWLINE
 
 
-# Get patches from each asm file.
-asmPatchesPaths = tuple(ASM_PATCHES_PATH.glob("*.asm"))
-
-# Keeps the temporary directory only within this with block.
-with tempDir as tempDirName:
-    tempDirName = Path(tempDirName)
-
-    for patchFilePath in asmPatchesPaths:
-        print(f"patchFilePath = {patchFilePath}")
-        patchFilename = patchFilePath.parts[-1]
+def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
+    for asmFilePath in asmPaths:
+        print(f"asmFilePath = {asmFilePath}")
+        asmFilename = asmFilePath.parts[-1]
         codeBlocks = {}
         localBranches = []
         asmReadOffset = None
 
-        with open(patchFilePath, "r") as f:
-            asmPatch = f.read()
+        with open(asmFilePath, "r") as f:
+            asmBlock = f.read()
 
         tempLinkerScript = linkerScript + NEWLINE
 
-        for line in asmPatch.splitlines():
+        for line in asmBlock.splitlines():
             line = line.strip()
 
             if len(line) == 0 or line.startswith(SEMICOLON):
@@ -141,7 +138,7 @@ with tempDir as tempDirName:
                     codeBlocks[asmReadOffset] = []
                 else:
                     raise Exception(
-                        f"Duplicate offset {asmReadOffset} section in {patchFilePath}."
+                        f"Duplicate offset {asmReadOffset} section in {asmFilePath}."
                     )
             elif line.startswith(
                 ("bl ", "b ", "b.", "bcc ", "cbz", "cbnz", "tbz", "tbnz")
@@ -173,7 +170,7 @@ with tempDir as tempDirName:
                 f.write(tempLinkerScript)
 
             assemblerCodeFilename = (
-                tempDirName / f"{patchFilename}-0x{codeBlockOffset}.asm"
+                tempDirName / f"{asmFilename}-0x{codeBlockOffset}.asm"
             )
             # assemblerCodeFilename.mkdir(parents=True, exist_ok=True)
 
@@ -181,7 +178,7 @@ with tempDir as tempDirName:
                 for instruction in code:
                     f.write(instruction)
 
-            outputFilename = tempDirName / f"{patchFilename}-0x{codeBlockOffset}.o"
+            outputFilename = tempDirName / f"{asmFilename}-0x{codeBlockOffset}.o"
 
             # Assemble code block.
             assemblerCommand = [
@@ -202,9 +199,9 @@ with tempDir as tempDirName:
                 raise Exception(f"Assembler call failed with error code: {result}")
 
             # Apply linker.
-            elfFilename = tempDirName / f"{patchFilename}-0x{codeBlockOffset}.elf"
+            elfFilename = tempDirName / f"{asmFilename}-0x{codeBlockOffset}.elf"
 
-            mapFilename = tempDirName / f"{patchFilename}.map"
+            mapFilename = tempDirName / f"{asmFilename}.map"
 
             linkerCommand = [
                 devkitA64Linker,
@@ -225,7 +222,7 @@ with tempDir as tempDirName:
                 )
 
             # Convert to binary.
-            binaryFilename = tempDirName / f"{patchFilename}-0x{codeBlockOffset}.bin"
+            binaryFilename = tempDirName / f"{asmFilename}-0x{codeBlockOffset}.bin"
 
             objcopyCommand = [
                 devkitA64Objcopy,
@@ -247,7 +244,19 @@ with tempDir as tempDirName:
 
             codeBlocks[codeBlockOffset] = dataBytes
 
-        diffFilename = ASM_PATCHES_DIFFS_PATH / f"{patchFilename[:-4]}-diff.yaml"
+        diffFilename = outputPath / f"{asmFilename[:-4]}-diff.yaml"
 
         with open(diffFilename, "w", newline="") as f:
             f.write(yaml.dump(codeBlocks, Dumper=yaml.CDumper, line_break=NEWLINE))
+
+
+# Get patches from each asm file.
+asmPatchesPaths = list(ASM_PATCHES_PATH.glob("*.asm"))
+asmAdditionsPaths = list(ASM_ADDITIONS_PATH.glob("*.asm"))
+
+# Keeps the temporary directory only within this with block.
+with tempDir as tempDirName:
+    tempDirName = Path(tempDirName)
+
+    assemble(tempDirName, asmAdditionsPaths, ASM_ADDITIONS_DIFFS_PATH)
+    assemble(tempDirName, asmPatchesPaths, ASM_PATCHES_DIFFS_PATH)
