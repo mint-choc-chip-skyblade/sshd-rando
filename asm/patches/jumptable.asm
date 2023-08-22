@@ -20,10 +20,7 @@
 ; Total available instructions:                     372 (decimal)
 ; 
 ; Please update this:
-; Total space used (bytes):                          12
-; Total instructions used:                            3
+; Total space used (bytes):                           0
+; Total instructions used:                            0
 
-.offset 0x08659ab0
-mov x16, #0x5500
-movk x16, #0x360A, LSL #16
-br x16
+
