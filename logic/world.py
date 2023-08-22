@@ -222,12 +222,14 @@ class World:
                             )
 
         # Check to make sure all events were properly defined
-        # Uncomment when world graph is finished
-        # for event in self.events:
-        #     if event not in defined_events:
-        #         raise MissingInfoError(f"Event \'{event}\' is used, but never defined")
+        for event in self.events:
+            if event not in defined_events:
+                raise MissingInfoError(f'Event "{event}" is used, but never defined')
 
         # Same for areas
+        for area in self.areas.values():
+            if area not in defined_areas:
+                raise MissingInfoError(f'Area "{area}" is used, but never defined')
 
         # Check that root area exists
         if self.root == None:
