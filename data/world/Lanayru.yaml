@@ -25,7 +25,7 @@
 
 - name: Lanayru Mine Caves Platform
   exits:
-    Lanayru Mine Higher Area: Clawshots
+    Lanayru Mine Upper Area: Clawshots
     Lanayru Caves: Nothing
 
 
@@ -43,7 +43,7 @@
     Ancient Flower Farming: Can_Hit_Timeshift_Stone # Nothing?
   exits:
     Lanayru Mine Statues Area: "'Blow_Down_First_Mine_Statue' or logic_lanayru_mine_brakeslide or 'Endurance_Potion'"
-    Lanayru Mine in Minecart: Can_Hit_Timeshift_Stone
+    Lanayru Mine In Minecart: Can_Hit_Timeshift_Stone
   locations:
     Lanayru Mine - Chest at the End of Mine: Nothing # There's a baba in the way
 
@@ -53,7 +53,7 @@
     Blow up Rock on Track: Bomb_Bag and logic_lanayru_mine_quick_bomb
   exits:
     Lanayru Desert South: Nothing
-    Lanayru Mine End: "'Blow_Up_Rock_on_Track"
+    Lanayru Mine End: "'Blow_up_Rock_on_Track"
 
 
 - name: Lanayru Desert South
@@ -68,7 +68,7 @@
     Lanayru Desert West Wall: Clawshots
     Top of LMF: Raise_Lanayru_Mining_Facility
     Lanayru Desert East: Clawshots or 'Endurance_Potion' or can_access(Lanayru Desert East) or logic_tot_skip_brakeslide
-    Sand Oasis: Hook_Beetle or 'Endurance_Potion' or ('Defeat_Spume_to_Sand_Oasis' and logic_sand_oasis_brakeslide)
+    Lanayru Desert West Courtyard: Hook_Beetle or 'Endurance_Potion' or ('Defeat_Spume_to_Sand_Oasis' and logic_sand_oasis_brakeslide)
     Lanayru Mine In Minecart: Blow_Up_Covered_Timeshift_Stone # I can't assume the minecart is available, right ?
   locations:
     Lanayru Desert - Chest near Party Wheel: Blow_Up_Covered_Timeshift_Stone
@@ -317,8 +317,8 @@
   events:
     Goddess Cube in Skippers Retreat: Clawshots and Goddess_Sword
   exits:
-    Skipper's Retreat: Nothing
     Skipper's Retreat Top: Clawshots and Whip and (Slingshot or Beetle or Bow or logic_skippers_fast_clawshots)
+    Skipper's Retreat Dock: Nothing
   locations:
     Skipper's Retreat - Chest after Moblin: Nothing
 
@@ -497,7 +497,7 @@
 
 - name: Skipper's Retreat Statue
   events:
-    Unlock Skipper's Retreat Statue: Nothing
+    Unlock Skippers Retreat Statue: Nothing
   exits:
     The Sky: Day
     Skipper's Retreat Dock: Nothing

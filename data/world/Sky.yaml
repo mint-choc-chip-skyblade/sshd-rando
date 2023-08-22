@@ -96,7 +96,7 @@
 - name: Beedle's Island
   hint_region: The Sky
   exits:
-    Beedle's Ship: Night
+    Beedle's Shop: Night
     The Sky: Day
   locations:
     Beedle's Island - Crystal: Night and Beetle

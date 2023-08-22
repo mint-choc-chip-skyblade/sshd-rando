@@ -135,6 +135,8 @@
     Ancient Cistern - Heart Container: Can_Defeat_Koloktos
 
 - name: Ancient Cistern Flame Room
+  events:
+    Can Complete Ancient Cistern: Goddess_Sword
   exits:
     Ancient Cistern Boss Room: Nothing
     # Crest Hit: Farore's Flame

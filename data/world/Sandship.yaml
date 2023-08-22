@@ -23,7 +23,7 @@
 
 - name: Sandship Stern
   exits:
-    Sandshp Main Deck: Clawshots # Deathwarp possible
+    Sandship Main Deck: Clawshots # Deathwarp possible
   locations:
     Sandship - Chest at the Stern: Nothing
 

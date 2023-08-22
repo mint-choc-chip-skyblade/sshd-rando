@@ -141,7 +141,7 @@
     Faron Woods: Nothing
     
 
-- name: Clawshot Target Branch
+- name: Great Tree Clawshot Target Branch
   events:
     Goddess Cube on East Great Tree with Clawshots Target: Goddess_Sword
   exits:
@@ -199,7 +199,7 @@
     Great Tree Interior Upper: Nothing
     Great Tree Exterior Platforms: Nothing
     Great Tree Rope Branch: Nothing
-    Clawshot Target Branch: Nothing
+    Great Tree Clawshot Target Branch: Nothing
   locations:
     Faron Woods - Rupee on Great Tree North Branch: Beetle
     Faron Woods - Rupee on Great Tree West Branch: Beetle

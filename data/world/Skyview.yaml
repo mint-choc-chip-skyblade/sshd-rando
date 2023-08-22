@@ -17,8 +17,8 @@
 
 - name: SV One Eye Room
   exits:
-    First Room: Nothing
-    First Hub Center Room: Sword
+    SV First Room: Nothing
+    SV First Hub Center Room: Sword
 
 
 - name: SV First Hub Center Room
@@ -65,7 +65,7 @@
     SV Miniboss Room: Distance_Activator
     SV Second Hub Left Rooms: Beetle
     SV Staldra Room: count(2, Skyview_Small_Key)
-    SV Last Room: can_access(SV Last Room Before Rope) and Can_Hit_High_Skyview_Switches
+    SV Last Room Before Rope: can_access(SV Last Room Before Rope) and Can_Hit_High_Skyview_Switches
   locations:
     Skyview Temple - Rupee in Southeast Tunnel: Beetle
     Skyview Temple - Rupee in Southwest Tunnel: Beetle

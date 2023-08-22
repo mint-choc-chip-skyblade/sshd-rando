@@ -55,13 +55,13 @@
 - name: FS Room with First Lava River Past River
   exits:
     FS Room with First Lava River: Clawshots or (Hook_Beetle and Projectile_Item)
-    FS First Trapped Mogma Room: Nothing
+    FS First Trapped Mogma Room Upper: Nothing
     FS Water Fruit Room: count(2, Fire_Sanctuary_Small_Key)
 
 
 - name: FS First Trapped Mogma Room Upper
   exits:
-    FS Room with Water Plant Past Lava: Nothing
+    FS Room with First Lava River Past River: Nothing
     FS First Trapped Mogma Room Lower: "'Double_Magmanos_Defeated'"
   locations:
     Fire Sanctuary - Chest near First Trapped Mogma: Gust_Bellows or Clawshots

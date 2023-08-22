@@ -71,7 +71,7 @@
   events:
     Can Play Thrill Digger Minigame: Digging_Mitts
   exits:
-    Outside Thrill Digger Dave: Nothing
+    Outside Thrill Digger Cave: Nothing
   locations:
     Thrill Digger Cave - Gossip Stone: Nothing
 
@@ -292,7 +292,7 @@
 
 - name: Bokoblin Base Outside Upper Eldin Cave
   exits:
-    Outside Earth Temple: Nothing
+    Bokoblin Base Outside Earth Temple: Nothing
     Bokoblin Base Upper Eldin Cave: Nothing
 
 
