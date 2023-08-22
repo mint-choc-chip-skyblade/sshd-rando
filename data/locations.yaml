@@ -386,7 +386,6 @@
     - ShpSmpl/27
 
 # Single Gratitude Crystals:
-## Aren't randomized, but still need logic, because some of them need items
 
 - name: Knight Academy - Crystal in Link's Room
   original_item: Gratitude Crystal 
@@ -397,61 +396,89 @@
 - name: Knight Academy - Crystal in Knight Academy Plant
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F001r/r0/l0/Item/102
 
 - name: Knight Academy - Crystal in Zelda's Room
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F001r/r6/l0/Item/103
 
 - name: Sparring Hall - Crystal
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F009r/r0/l0/Item/115
 
 
 - name: Central Skyloft - Crystal in Orielle and Parrow's House
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F005r/r0/l0/Item/114
 
 - name: Central Skyloft - Crystal on West Cliff
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l0/Item/113
 
 - name: Central Skyloft - Crystal between Wooden Planks
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l0/Item/112
 
 - name: Central Skyloft - Crystal after Waterfall Cave
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l0/Item/111
 
 - name: Central Skyloft - Crystal in Loftwing Prison
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l0/Item/110
 
 - name: Central Skyloft - Crystal on Waterfall Island
   original_item: Gratitude Crystal
   type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l0/Item/109
 
 - name: Central Skyloft - Crystal on Light Tower
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l0/Item/106
 
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l0/Item/108
 
 
 - name: Lumpy Pumpkin - Outside Crystal
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F020/r0/l0/Item/100
 
 - name: Lumpy Pumpkin - Inside Crystal
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F011r/r0/l0/Item/116
 
 - name: Beedle's Island - Crystal
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F020/r0/l0/Item/119
 
 # Sky:
 
