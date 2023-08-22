@@ -15,6 +15,8 @@ OARC_CACHE_PATH = RANDO_ROOT_PATH / "oarccache"
 STAGE_PATCHES_PATH = RANDO_ROOT_PATH / "patches" / "data" / "stagepatches.yaml"
 EVENT_PATCHES_PATH = RANDO_ROOT_PATH / "patches" / "data" / "eventpatches.yaml"
 EXTRACTS_PATH = RANDO_ROOT_PATH / "patches" / "data" / "extracts.yaml"
+ITEMS_PATH = RANDO_ROOT_PATH / "patches" / "data" / "items.yaml"
+CHECKS_PATH = RANDO_ROOT_PATH / "patches" / "data" / "checks.yaml"
 
 STAGE_FILES_PATH = RANDO_ROOT_PATH / "title" / TITLE_ID / "romfs" / "Stage"
 EVENT_FILES_PATH = (
@@ -29,6 +31,11 @@ OBJECTPACK_PATH = (
     / "NX"
     / "ObjectPack.arc.LZ"
 )
+
+TITLE2D_SOURCE_PATH = (
+    RANDO_ROOT_PATH / "title" / TITLE_ID / "romfs" / "Layout" / "Title2D.arc"
+)
+TITLE2D_OUTPUT_PATH = OUTPUT_PATH / "romfs" / "Layout" / "Title2D.arc"
 
 ASM_PATCHES_PATH = RANDO_ROOT_PATH / "patches"
 ASM_PATCHES_DIFFS_PATH = RANDO_ROOT_PATH / "asm" / "patches" / "diffs"

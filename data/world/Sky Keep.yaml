@@ -1,0 +1,137 @@
+# allowed_time_of_day: DayOnly
+# hint_region: Sky Keep
+
+- name: Sky Keep Entryway
+  exits:
+    SK Meta Room: Nothing
+    SK First Room South: Nothing
+    Sky Keep Entrance Platform: Nothing
+
+# Holds entrance access to each room based on which areas have been reached
+# TODO: Needs to be generalized for random layouts
+- name: SK Meta Room
+  exits:
+    SK Skyview Room West: can_access(SK First Room East)
+    SK Skyview Room North: can_access(SK Fire Sanctuary Room East)
+    SK LMF Room South: can_access(SK Skyview Room North)
+    SK LMF Room North: can_access(SK Fire Sanctuary Room East)
+    SK Earth Temple Room North: can_access(SK Fire Sanctuary Room East)
+    SK Earth Temple Room East: can_access(SK Fire Sanctuary Room East)
+    SK Dreadfuse Room South: can_access(SK Fire Sanctuary Room East)
+    SK Dreadfuse Room West: can_access(SK Fire Sanctuary Room East)
+    SK Ancient Cistern Room South: can_access(SK Skyview Room North)
+    SK Ancient Cistern Room East: can_access(SK LMF Room North)
+    SK Fire Sanctuary Room East: can_access(SK LMF Room North)
+    SK Fire Sanctuary Room West: can_access(SK Fire Sanctuary Room East)
+    SK Sandship Room West: can_access(SK Fire Sanctuary Room East)
+
+
+- name: SK First Room South
+  exits:
+    SK First Room East: Nothing
+  locations:
+    Sky Keep - First Chest: Nothing
+
+
+- name: SK First Room East
+  exits:
+    SK First Room South: can_access(SK First Room South) # open chest
+
+
+- name: SK Skyview Room West
+  exits:
+    SK Skyview Room North: Whip and (Beetle or Bow) and Clawshots and (Bomb_Bag or Hook_Beetle or Bow) and Gust_Bellows
+
+
+- name: SK Skyview Room North
+  exits:
+    SK Skyview Room West: Nothing
+
+
+- name: SK LMF Room South
+  exits:
+    SK LMF Room North: (Gust_Bellows or logic_present_bow_switches) and Bow
+
+
+- name: SK LMF Room North
+  exits:
+    SK LMF Room South: logic_present_bow_switches and Bow
+
+
+- name: SK Earth Temple Room East
+  exits: {}
+
+- name: SK Earth Temple Room North
+  exits: {}
+
+- name: SK Dreadfuse Room South
+  exits:
+    SK Dreadfuse Room West: Can_Defeat_Scervo_And_Dreadfuse and Clawshots
+  locations:
+    Sky Keep - Chest after Dreadfuse: Nothing
+
+
+- name: SK Dreadfuse Room West
+  exits: {}
+
+
+- name: SK Ancient Cistern Room South
+  exits:
+    SK Triforce of Courage Room: 
+      Sky_Keep_Small_Key and
+      Can_Defeat_Moblins and 
+      Can_Defeat_Bokoblins and 
+      Can_Defeat_Stalfos and Bow and
+      Can_Defeat_Cursed_Bokoblins and
+      Can_Defeat_Stalmaster
+    SK Ancient Cistern Room East: Nothing
+
+
+- name: SK Ancient Cistern Room East
+  exits:
+    SK Ancient Cistern Room South: Nothing
+
+
+- name: SK Triforce of Courage Room
+  exits:
+    SK Ancient Cistern Room South: Nothing
+  locations:
+    Sky Keep - Triforce of Courage: Nothing
+
+
+- name: SK Fire Sanctuary Room East
+  exits:
+    SK Fire Sanctuary Room End Platform: Clawshots and (Beetle or (logic_skykeep_vineclip and Bomb_Bag))
+  locations:
+    Sky Keep - Rupee in Fire Sanctuary Room in Alcove: Beetle
+
+
+- name: SK Fire Sanctuary Room End Platform
+  exits:
+    SK Triforce of Power Room: Nothing
+    SK Fire Sanctuary Room West: Nothing
+    SK Fire Sanctuary Room East: Nothing
+    
+
+- name: SK Triforce of Power Room
+  exits:
+    SK Fire Sanctuary Room End Platform: Nothing
+  locations:
+    Sky Keep - Triforce of Power: Nothing
+
+
+- name: SK Fire Sanctuary Room West
+  exits:
+    SK Fire Sanctuary Room End Platform: can_access(SK Fire Sanctuary Room End Platform) # pull lever
+
+
+- name: SK Sandship Room West
+  exits:
+    SK Triforce of Wisdom Room: Bow and Clawshots
+
+
+- name: SK Triforce of Wisdom Room
+  exits:
+    SK Sandship Room West: Nothing
+  locations:
+    Sky Keep - Triforce of Wisdom: Nothing

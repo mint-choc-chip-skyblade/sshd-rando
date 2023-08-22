@@ -104,6 +104,17 @@ DEFAULT_GIVE_ITEM_FLOW = {
     "next": -1,
 }
 
+DEFAULT_SET_ITEM_FLAG_FLOW = {
+    "type": "type3",
+    "subType": 0,
+    "param1": 0,
+    "param2": -1,  # item id
+    "param3": 53,  # set item flag command
+    "param4": 0,
+    "param5": 0,
+    "next": -1,
+}
+
 DEFAULT_SET_STORYFLAG_FLOW = {
     "type": "type3",
     "subType": 0,
@@ -134,6 +145,7 @@ DEFAULT_CHECK_STORYFLAG_FLOW = {
     "param3": 3,  # check storyflag command
     "param4": 0,
     "param5": 0,
+    "next": -1,
 }
 
 DEFAULT_CHECK_SCENEFLAG_FLOW = {
@@ -144,9 +156,16 @@ DEFAULT_CHECK_SCENEFLAG_FLOW = {
     "param3": 6,  # check sceneflag command
     "param4": 0,
     "param5": 0,
+    "next": -1,
 }
 
-FLOW_ADD_VARIATIONS = ("flowadd", "giveitem", "setstoryflag", "setsceneflag")
+FLOW_ADD_VARIATIONS = (
+    "flowadd",
+    "giveitem",
+    "setitemflag",
+    "setstoryflag",
+    "setsceneflag",
+)
 SWITCH_ADD_VARIATIONS = ("switchadd", "checkstoryflag", "checksceneflag")
 
 PARAM1_ALIASES = ("setsceneflag",)
@@ -161,6 +180,7 @@ PARAM2_ALIASES = (
 DEFAULT_FLOW_TYPE_LOOKUP = {
     "flowadd": DEFAULT_FLOW,
     "giveitem": DEFAULT_GIVE_ITEM_FLOW,
+    "setitemflag": DEFAULT_SET_ITEM_FLAG_FLOW,
     "setstoryflag": DEFAULT_SET_STORYFLAG_FLOW,
     "setsceneflag": DEFAULT_SET_SCENEFLAG_FLOW,
     "switchadd": DEFAULT_FLOW,
@@ -168,10 +188,17 @@ DEFAULT_FLOW_TYPE_LOOKUP = {
     "checksceneflag": DEFAULT_CHECK_SCENEFLAG_FLOW,
 }
 
-STAGE_REGEX = re.compile("(.+)_stg_l([0-9]+).arc.LZ")
-EVENT_REGEX = re.compile("([0-9])-[A-Za-z]+.arc")
-ROOM_REGEX = re.compile(r"/rarc/(?P<stage>.+)_r(?P<roomid>[0-9]+).arc")
+STAGE_FILE_REGEX = re.compile("(.+)_stg_l([0-9]+).arc.LZ")
+EVENT_FILE_REGEX = re.compile("([0-9])-[A-Za-z]+.arc")
+ROOM_ARC_REGEX = re.compile(r"/rarc/(?P<stage>.+)_r(?P<roomID>[0-9]+).arc")
 OARC_ARC_REGEX = re.compile(r"/oarc/(?P<name>.+\.arc)")
 TEXT_ARC_REGEX = re.compile(
     r"(.+(/|\\))*(?P<lang>(en|es|fr))_US(/|\\)(?P<name>.+\.arc)"
 )
+
+STAGE_PATCH_PATH_REGEX = re.compile(
+    r"stage/(?P<stage>[^/]+)/r(?P<room>[0-9]+)/l(?P<layer>[0-9]+)/(?P<objectName>[a-zA-Z]+)(/(?P<objectID>[^/]+))?"
+)
+EVENT_PATCH_PATH_REGEX = re.compile(r"event/(?P<eventFile>[^/]+)/(?P<eventID>[^/]+)")
+OARC_ADD_PATH_REGEX = re.compile(r"oarc/(?P<stage>[^/]+)/l(?P<layer>[^/]+)")
+SHOP_PATCH_PATH_REGEX = re.compile(r"ShpSmpl/(?P<index>[0-9]+)")

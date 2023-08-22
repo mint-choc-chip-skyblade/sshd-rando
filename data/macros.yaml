@@ -1,0 +1,142 @@
+# macros, for logic snippets used in lots of different areas
+
+Practice Sword: count(1, Progressive_Sword)
+
+Goddess Sword: count(2, Progressive_Sword)
+
+Goddess Longsword: count(3, Progressive_Sword)
+
+Goddess White Sword: count(4, Progressive_Sword)
+
+Master Sword: count(5, Progressive_Sword)
+
+True MasterSword: count(6, Progressive_Sword)
+
+Beetle: count(1, Progressive_Beetle)
+
+Hook Beetle: count(2, Progressive_Beetle)
+
+Quick Beetle: count(3, Progressive_Beetle)
+
+Tough Beetle: count(4, Progressive_Beetle)
+
+Bow: count(1, Progressive_Bow)
+
+Slingshot: count(1, Progressive_Slingshot)
+
+Bug Net: count(1, Progressive_Bug_Net)
+
+Digging Mitts: count(1, Progressive_Mitts)
+
+Mogma Mitts: count(2, Progressive_Mitts)
+
+Pouch: count(1, Progressive_Pouch)
+
+Water Scale: Water_Dragon_Scale
+
+Can High Rupee Farm: "'Can_Play_Fun_Fun_Island_Minigame' or 'Can_Play_Thrill_Digger_Minigame'"
+
+Can Medium Rupee Farm: Can_High_Rupee_Farm or 'Can_Play_Clean_Cut_Minigame' 
+
+Can Afford 50 Rupees: Nothing
+
+Can Afford 100 Rupees: Nothing
+
+Can Afford 300 Rupees: Can_Medium_Rupee_Farm
+
+Can Afford 600 Rupees: Can_High_Rupee_Farm and wallet_capacity(600)
+
+Can Afford 800 Rupees: Can_High_Rupee_Farm and wallet_capacity(800)
+
+Can Afford 1000 Rupees: Can_High_Rupee_Farm and wallet_capacity(1000)
+
+Can Afford 1200 Rupees: Can_High_Rupee_Farm and wallet_capacity(1200)
+
+Can Afford 1600 Rupees: Can_High_Rupee_Farm and wallet_capacity(1600)
+
+Song of the Hero: Faron_Song_of_the_Hero_Part and Eldin_Song_of_the_Hero_Part and Lanayru_Song_of_the_Hero_Part
+
+Complete Triforce: Triforce_of_Courage and Triforce_of_Wisdom and Triforce_of_Power
+
+# Need access to the item check incase the user has a full pouch
+# or they picked up the cursed medal somewhere already
+Bottle: can_access(Bazaar) and Empty_Bottle
+
+Sword: Practice_Sword
+
+Long Range Skyward Strike: (Goddess_Sword and upgraded_skyward_strike) or True_Master_Sword
+
+Damaging Item: Sword or Bomb_Bag or Bow
+
+Projectile Item: Slingshot or Beetle or Bow
+
+Distance Activator: Slingshot or Beetle or Clawshots or Bow
+
+Can Cut Trees And Logs: Sword or Bomb_Bag
+
+Can Unlock Combination Lock: Sword or Whip or Clawshots or Slingshot or Bow
+
+Can Hit Switch: Sword or Bomb_Bag or Whip or Distance_Activator
+
+Can Hit Timeshift Stone: Sword or Bomb_Bag or Whip or Distance_Activator
+
+Can Hit Timeshift Stone in Minecart: Sword or Bomb_Bag or Whip or Distance_Activator
+
+Can Hit High Water Plant: Distance_Activator or Bomb_Bag
+
+Can Bypass Boko Base Watch Tower: Bow or Bomb_Bag or Slingshot
+
+# Can defeat enemy
+
+Can Defeat Bokoblins: Damaging_Item
+
+Can Defeat Moblins: Damaging_Item
+
+Can Defeat Keeses: Sword or Slingshot or Beetle or Whip or Clawshots or Bow or Bomb_Bag
+
+Can Defeat Lizalfos: Sword or (logic_advanced_lizalfos_combat and (Bomb_Bag or Bow)) # With bombs, let them attack you while you have a bomb in your hands. Takes one bomb for normal lizalfos, two for dark lizalfos
+
+Can Defeat Ampilus: Damaging_Item
+
+Can Defeat Armos: Gust_Bellows and Sword # Only a sword seems to be able to destroy their crystals, even the bow phases through
+
+Can Defeat Beamos: Sword or Bow
+
+Can Defeat Cursed Bokoblins: Sword or Bomb_Bag
+
+Can Defeat Stalfos: Sword
+
+Can Defeat Staldra: Sword or Bomb_Bag
+
+Can Defeat Stalmaster: Sword
+
+Can Defeat Scervo And Dreadfuse: Sword # Could add Pouch for a shield
+
+Can Defeat Ghirahim: Sword
+
+Can Defeat Scaldera: (Sword and Bomb_Bag) or (logic_et_bombless_scaldera and (Master_Sword or (Goddess_Sword and upgraded_skyward_strike)))
+
+Can Defeat Moldarach: Sword and (Gust_Bellows or logic_lmf_bellowsless_moldarach) # Bow also works instead of sword but you need a LOT of arrows
+
+Can Defeat Koloktos: Whip and (Sword or Bomb_Bag or Bow)
+
+Can Defeat Tentalus: Bow
+
+Can Defeat Ghirahim 2: Goddess_Sword # Practice Sword is extremely unfair here and takes forever
+
+# Area Specific Stuff
+
+Can Survive Hot Cave: Nothing # TODO: Check damage multiplier < 12 or Fireshield_Earrings
+
+Raise Lanayru Mining Facility: open_lmf == open or 'Activate_Main_Node'
+
+Can Navigate in Oasis: Can_Defeat_Ampilus or Hook_Beetle or logic_sand_oasis_brakeslide or 'Endurance_Potion'
+
+Blow Up Covered Timeshift Stone: Bomb_Bag
+
+Can Hit High Skyview Switches: Distance_Activator or (Bomb_Bag and logic_bomb_throws)
+
+Skyview 2: Water_Scale
+
+Can Make Froak Explode: Sword or Slingshot or Beetle or Bomb_Bag or Gust_Bellows or Whip or Clawshots or Bow # pretty much any item will make the Froak explode
+
