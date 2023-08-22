@@ -5,6 +5,7 @@ from .settings import *
 from .fill import fill_worlds
 from .search import generate_playthrough
 from .spoiler_log import generate_spoiler_log
+from .plandomizer import load_plandomizer_data
 
 import time
 import random
@@ -68,13 +69,19 @@ def generate_randomizer(config: Config) -> list[World]:
         # TODO: Resolve Setting Conflicts
 
         worlds[i].setting_map = setting_map
+        worlds[i].num_worlds = len(config.settings)
         worlds[i].build()
         # TODO: Set Excluded Locations
         # TODO: Set Item Locations
 
+    # Process plando data for all worlds
+    if config.plandomizer:
+        load_plandomizer_data(worlds, config.plandomizer_file)
 
-    # TODO: Process plando data for all worlds
-    # TODO: Perform Pre-Entrance Shuffle Tasks
+    # Perform Pre-Entrance Shuffle Tasks
+    for world in worlds:
+        world.perform_pre_entrance_shuffle_tasks()
+    
     # TODO: Shuffle Entrances
 
     start = time.process_time()

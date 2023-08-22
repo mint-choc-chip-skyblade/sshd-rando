@@ -9,7 +9,7 @@ class Location:
         self.name: str = name_
         self.types: list[str] = types_
         self.world = world_
-        self.original_item = original_item_
+        self.original_item: Item = original_item_
         self.current_item: Item = None
         self.loc_access_list: list = []
 
@@ -30,5 +30,5 @@ class Location:
 
 
     def remove_current_item(self):
-        logging.getLogger('').debug(f"Removed {self.current_item} at {self}")
+        logging.getLogger('').debug(f"Removed {self.current_item} from {self}")
         self.current_item = None

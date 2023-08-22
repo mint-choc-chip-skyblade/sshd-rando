@@ -21,6 +21,7 @@ class World:
     def __init__(self, id_ : int) -> None:
         self.id = id_
         self.config: Config = None
+        self.num_worlds: int = 0 
 
         self.setting_map: SettingMap = SettingMap()
 
@@ -41,6 +42,10 @@ class World:
         self.root: Area = None
 
         self.playthrough_spheres: list[set[Location]] = None
+        self.entrance_spheres: list[list[Entrance]] = None
+
+        self.plandomizer_locations: dict[Location, Item] = {}
+        self.plandomizer_entrances: dict[str, str] = {}
 
     def __str__(self) -> str:
         return f"World {self.id + 1}"
@@ -206,6 +211,16 @@ class World:
     def place_hardcoded_items(self) -> None:
         self.location_table["Hylia's Realm - Defeat Demise"].set_current_item(self.get_item("Game Beatable"))
 
+
+    def place_plandomizer_items(self) -> None:
+        for location, item in self.plandomizer_locations.items():
+            location.set_current_item(item)
+            self.item_pool[item] -= 1
+
+
+    def perform_pre_entrance_shuffle_tasks(self) -> None:
+        self.place_plandomizer_items() 
+        # TODO: Place vanilla items
 
     # Adds a new event if one with the current name doesn't exist
     def add_event(self, event_name: str) -> None:

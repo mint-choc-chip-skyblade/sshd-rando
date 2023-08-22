@@ -16,6 +16,7 @@ config.yaml
 *.gv
 *.svg
 Spoiler Log.txt
+*plandomizer.yaml
 
 # Muzu's test stuff.
 TODO
