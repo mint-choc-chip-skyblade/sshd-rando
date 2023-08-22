@@ -1101,6 +1101,11 @@
     type: setstoryflag
     flow:
       setstoryflag: 494
+      next: Set crystal quest storyflag
+  - name: Set crystal quest storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 304
       next: Bow storyflag
   - name: Bow storyflag
     type: setstoryflag
@@ -1368,3 +1373,1459 @@
     flow:
       next: 320 # before crystal itemget
 
+116-InsectGame:
+  - name: Fix switch 1
+    type: flowpatch
+    index: 25
+    flow:
+      param2: 925
+  - name: Fix switch 2
+    type: flowpatch
+    index: 61
+    flow:
+      param2: 925
+  - name: Fix switch 3
+    type: flowpatch
+    index: 24
+    flow:
+      param2: 36 # always trigger
+  - name: getting item from Strich flag
+    type: flowpatch
+    index: 68
+    flow:
+      param2: 925
+
+117-Pumpkin:
+  - name: Kina's Crystal
+    type: flowpatch
+    index: 386
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 0 # item
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: playing Harp with Kina 1
+    type: flowpatch
+    index: 434
+    flow:
+      param2: 9 # Harp
+  - name: playing Harp with Kina 2
+    type: flowpatch
+    index: 80
+    flow:
+      param2: 9 # Harp
+  - name: playing Harp with Kina 3
+    type: flowpatch
+    index: 579
+    flow:
+      param2: 9 # Harp
+  - name: Fs requirement for Kina Quest
+    type: flowpatch
+    index: 93
+    flow:
+      param2: 36 # always trigger
+  - name: ET requirement for Pumpkin Quest
+    type: flowpatch
+    index: 78
+    flow:
+      param2: 36 # always trigger
+  - name: Switch for Chandelier just fell
+    type: switchadd
+    flow:
+      subeType: 6
+      param2: 3
+      param3: 5 # zone temp flag 3, set after crashing chandelier
+    cases:
+      - 520 # jump over soup
+      - 118 # normal event
+  - name: Show Levias or other text before going down Quest
+    # this switch checks if the soup has been delivered to levias
+    # if no, it would normally only allow levias stuff, which locks the normal lumpy pumpkin quest
+    type: flowpatch
+    index: 211
+    flow: {}
+    cases:
+      - 216 # soup has been delivered, normal event
+      - Show new Text Option # soup has not been delivered, ask which quest to do
+  - name: Go to Switch for Chandelier
+    type: flowpatch
+    index: 6
+    flow:
+      next: Switch for Chandelier just fell
+  - name: Fix Soup textboxes
+    type: textpatch
+    index: 143
+    text: "What's the matter? You look like\nyou've got something mighty\nserious on your mind.\n[1]Soup[2-]No Soup"
+  - name: Go back to Chandelier Quest
+    type: flowpatch
+    index: 347
+    flow:
+      next: 520
+  - name: New text Option
+    type: textadd
+    text: "Hey, you look like you have a Questions?\n[1]Levias[2-]Other Things"
+  - name: Show new Text Option
+    type: flowadd
+    flow:
+      type: type1
+      next: Text option Switch
+      param3: 111
+      param4: New text Option
+  - name: Text option Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 208
+      - 216
+  - name: New Kina Text Option
+    type: textadd
+    text: "Hey, kid, what do you need from me?\n[1]Plowing the fields?[2]Carrying pumpkins![3-]Nothing."
+  - name: Kina Quest Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 96 # mogma quest switch
+      - 200 # pumpkin carrying
+      - -1 # nothing
+  - name: Show Kina Option
+    type: flowpatch
+    index: 605
+    flow:
+      type: type1
+      next: Kina Quest Switch
+      param4: New Kina Text Option
+  - name: Shorten Kina Text
+    type: flowpatch
+    index: 97
+    flow:
+      next: 103
+
+118-Town3:
+  - name: Shorten Sparrot quest start text
+    type: flowpatch
+    index: 100
+    flow:
+      next: 97
+  - name: Shorten Owlan quest start text
+    type: flowpatch
+    index: 320
+    flow:
+      next: 133
+  - name: Wryna's Crystal
+    type: flowpatch
+    index: 144
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 0 # item
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: Sparrot's Crystal
+    type: flowpatch
+    index: 141
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 0 # item
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: Owlan's Crystal
+    type: flowpatch
+    index: 157
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 0 # item
+      param3: 9
+      param4: 0
+      param5: 0
+
+120-Nushi:
+  - name: Fix Levias
+    type: flowpatch
+    index: 7
+    flow:
+      next: 21 # never talk about triforce or song of the hero
+  - name: Shorten Levias text
+    type: flowpatch
+    index: 0
+    flow:
+      next: 22
+  - name: Skip bokobase story flag
+    type: flowpatch
+    index: 22
+    flow:
+      next: -1 # don't set bokobase
+  - name: Give item after levias
+    type: entryadd
+    entry:
+      name: "120_03"
+      value: After levias event start
+  - name: After levias event start
+    type: flowadd
+    flow:
+      type: start
+      next: give item after levias
+  - name: give item after levias
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: 37 # set unset story flag
+      param3: 9
+
+121-AkumaKun:
+  - name: Never say cursed medal chest text
+    type: flowpatch
+    index: 9 # start
+    flow:
+      next: 120 # normal text
+
+123-Town5:
+  - name: Peatrice's Crystal
+    type: flowpatch
+    index: 316
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 0 # item
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: Pipit's Mom's Crystal
+    type: flowpatch
+    index: 186
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 0 # item
+      param3: 9
+      param4: 0
+      param5: 0
+
+200-Forest:
+  - name: give slingshot directly
+    type: flowpatch
+    index: 567
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 0 # item
+      next: insert owlan hint text # elder talks after gotten sligshot
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: text hinting to owlan
+    type: textadd
+    text: "\x0E\x01\x09\x04\x00\x08Do you think there might be a\n<r<professor>> who would want to see\n<b<one of my Kikwis>>, kwee?"
+  - name: insert owlan hint text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 302
+      param4: text hinting to owlan
+  - name: change later elder text to reference owlan
+    type: flowpatch
+    index: 46 # text when you talk to the kikwi elder after slingshot
+    flow:
+      next: insert owlan hint text
+  - name: Skip over Zelda Dowsing
+    type: flowpatch
+    index: 382
+    flow:
+      next: 127
+  - name: Skip over Zelda Dowsing 2
+    type: flowpatch
+    index: 412
+    flow:
+      next: -1
+  - name: Skip over Zelda Dowsing 3
+    type: flowpatch
+    index: 321
+    flow:
+      next: -1
+  - name: Skip over Zelda Dowsing 3
+    type: flowpatch
+    index: 600
+    flow:
+      next: -1
+  - name: Skip over Fi text after locateing machi
+    type: flowpatch
+    index: 91
+    flow:
+      next: 313
+  - name: From storyflag after machi to sceneflag
+    type: flowpatch
+    index: 313
+    flow:
+      next: 583
+  - name: End after machi sceneflag
+    type: flowpatch
+    index: 583
+    flow:
+      next: -1
+  - name: Skip over Fi text after locateing Oolo
+    type: flowpatch
+    index: 32
+    flow:
+      next: -1
+  - name: Skip over Fi text after locateing Erla
+    type: flowpatch
+    index: 641
+    flow:
+      next: -1
+  # hd sets an addtion scene flag after this, worth keeping in mind if there are problems
+  - name: Skip over Fi text after locateing Lopsa
+    type: flowpatch
+    index: 163
+    flow:
+      next: -1
+  - name: change Flag to skip over Fi telling you that you can roll
+    type: flowpatch
+    index: 118
+    flow:
+      param1: 13
+      param3: 2
+
+201-ForestD1:
+  - name: give item after beating skyview
+    type: flowpatch
+    index: 6
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: Give Skyview beaten story flag
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: Give Skyview beaten story flag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 5 # Skyview beaten story flag
+      next: 87
+      param3: 0
+  - name: rando required dungeon storyflag
+    type: flowpatch
+    index: 87
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: -1 # will be filled in later if this is a required dungeon
+      next: 81
+      param3: 0
+  - name: to rando dungeons completed check
+    type: flowpatch
+    index: 81
+    flow:
+      type: type3
+      subType: 1
+      param1: 8 # entrypoint 008_007
+      param2: 7
+      next: -1
+      param3: 7
+
+202-ForestD2:
+  - name: Shorten Ghirahim text before Koloktos
+    type: flowpatch
+    index: 18
+    flow:
+      next: 34
+  - name: Give item after AC
+    type: entryadd
+    entry:
+      name: "202_31"
+      value: After AC event start
+  - name: After AC event start
+    type: flowadd
+    flow:
+      type: start
+      next: give item after beating ancient cistern
+  - name: give item after beating ancient cistern
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: Give Ancient Cistern beaten story flag
+      param3: 9
+  - name: Give Ancient Cistern beaten story flag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 900 # Ancient Cistern beaten story flag
+      next: rando required dungeon storyflag
+      param3: 0
+  - name: rando required dungeon storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: -1 # will be filled in later if this is a required dungeon
+      next: to rando dungeons completed check
+      param3: 0
+  - name: to rando dungeons completed check
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 8 # entrypoint 008_007
+      param2: 7
+      next: -1
+      param3: 7
+  # make sure central statue can be moved down again, for that allow the player to
+  # talk to the tablet and then lower the statue and reload
+  - name: Statue Lower Question
+    type: textpatch
+    index: 9
+    text: "Do you want to reset the statue?\n[1]Yes[2-]No"
+  - name: Replace Stone Tablet Fi Event
+    type: flowpatch
+    index: 7
+    flow:
+      next: Statue Lower Switch
+  - name: Statue Lower Switch
+    type: switchadd
+    flow:
+      type: switch
+      subType: 6
+      param2: 0
+      param3: 2
+    cases:
+      - Unset Question Trigger then lower Statue # yes
+      - Unset Question Trigger # no
+  - name: Unset Question Trigger
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 60 # 60 triggers fi
+      param2: 12
+      next: -1
+      param3: 3
+  - name: Unset Question Trigger then lower Statue
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 60 # 60 triggers fi
+      param2: 12
+      next: Unset Raise Statue Sceneflag
+      param3: 3
+  - name: Unset Raise Statue Sceneflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 126
+      param2: 12
+      next: Unset Lower Statue Sceneflag
+      param3: 3
+  - name: Unset Lower Statue Sceneflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 100
+      param2: 12
+      next: Unset Valve on Top Sceneflag
+      param3: 3
+  - name: Unset Valve on Top Sceneflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 121
+      param2: 12
+      next: Trigger Exit
+      param3: 3
+  - name: Trigger Exit
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 0
+      param2: 0
+      next: -1
+      param3: 10
+
+203-ForestF2:
+  - name: Skip over Sacred Water dowsing
+    type: flowpatch
+    index: 62
+    flow:
+      next: 468
+  - name: Offer entry into Flooded Faron
+    type: flowpatch
+    index: 68
+    flow:
+      next: Tadtones Completion Storyflag Check
+  - name: Tadtones Completion Storyflag Check
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 18 # All Tadtones Collected
+      param3: 3
+    cases:
+      - Show Already Completed Tadtones Text # Tadtones complete
+      - Show Flooded Faron Entry Question
+  - name: Already Completed Tadtones Text
+    type: textadd
+    text: "You have already completed my final\ntest. There is nothing more I can do\nfor you."
+  - name: Show Already Completed Tadtones Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Show Flooded Faron Reentry Text
+      param3: 302
+      param4: Already Completed Tadtones Text
+  - name: Flooded Faron Reentry Text
+    type: textadd
+    text: "Would you like me to <r<flood the forest>>\nagain?\n[1]Yes[2-]No"
+  - name: Show Flooded Faron Reentry Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Flooded Faron Reentry Switch
+      param3: 302
+      param4: Flooded Faron Reentry Text
+  - name: Flooded Faron Reentry Switch
+    type: switchadd
+    flow:
+      type: switch
+      subType: 6
+      param2: 0
+      param3: 2
+    cases:
+      - Trigger Exit to Flooded Faron Layer 2 # Yes
+      - Show Declined Flooded Faron Offer Text # No
+  - name: Show Flooded Faron Entry Question
+    type: flowadd
+    flow:
+      type: type1
+      next: Flooded Faron Entry Switch
+      param3: 302
+      param4: Flooded Faron Entry Question
+  - name: Flooded Faron Entry Question
+    type: textadd
+    text: "Here to accept my final test? I will\n<r<flood the forest>> if you choose to\naccept.\n[1]Yes[2-]No"
+  - name: Flooded Faron Entry Switch
+    type: switchadd
+    flow:
+      type: switch
+      subType: 6
+      param2: 0
+      param3: 2
+    cases:
+      - Trigger Exit to Flooded Faron Layer 2 # Yes
+      - Show Declined Flooded Faron Offer Text # No
+  - name: Declined Flooded Faron Offer Text
+    type: textadd
+    text: "Very well. Talk to me again if you\nchange your mind."
+  - name: Show Declined Flooded Faron Offer Text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 302
+      param4: Declined Flooded Faron Offer Text
+  - name: Trigger Exit to Flooded Faron Layer 2
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 5 # Entrance number
+      param2: 0
+      next: -1
+      param3: 10 # Triggers an exit
+  - name: Force Yerbal to ignore floria gates story flags
+    type: flowpatch
+    index: 81
+    flow:
+      next: Give talked to Yerbal storyflag
+  - name: Give talked to Yerbal storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 63 # Talked to Yerbal storyflag
+      next: 83
+      param3: 0
+  - name: Skip Yerbal's questions
+    type: flowpatch
+    index: 356
+    flow:
+      next: 357
+  # don't have open floria options yet
+  # - name: Patch Yerbal intro text
+  #   type: textpatch
+  #   index: 4
+  #   text: "They used to call me <b<Yerbal>>. Now I'm\njust the old <b<Kikwi hermit>>."
+  # - name: Go to explanation of floria gates
+  #   onlyif: Option "open-lake-floria" Is Not "Talk to Yerbal"
+  #   type: flowpatch
+  #   index: 357
+  #   flow:
+  #     next: 373
+  # - name: Make Yerbal open the floria gates
+  #   onlyif: Option "open-lake-floria" Is "Talk to Yerbal"
+  #   type: flowpatch
+  #   index: 357
+  #   flow:
+  #     next: Show Yerbal open floria gates text
+  # - name: Yerbal open floria gates text
+  #   type: textadd
+  #   text: "However, <b<Faron>>, the Water Dragon,\nlet me know a secret of hers.\nKwwwwwwrk...
+  #         \n\nSee, she gave me a <r<spare key>> to the\nLake, kwwwrk!
+  #         \n\n\nDon't tell her I'm letting you in\nthough. I've heard stories of folks\nwho caught her in a fussy mood.
+  #         \n\nThey ended up as midmorning snacks,\nkwwwwrk!"
+  # - name: Show Yerbal open floria gates text
+  #   type: flowadd
+  #   flow:
+  #     type: type1
+  #     next: Open floria gates
+  #     param3: 302
+  #     param4: Yerbal open floria gates text
+  # - name: Open floria gates
+  #   type: flowadd
+  #   flow:
+  #     type: type3
+  #     subType: 1
+  #     param1: 49 # Floria gates opening cutscene scene flag
+  #     param2: 2
+  #     next: -1
+  #     param3: 2
+  # - name: Patch Yerbal floria gates intro
+  #   type: textpatch
+  #   index: 24
+  #   text: "See those gates over there? They\nlead to <b<Lake Floria>>. However, the\n<r<Water Dragon>> has sealed them shut to\nall those she judged unworthy...
+  #         \nBut don't worry, kwwwwrk. I'll let you\nin on the trick to opening the gate."
+  # - name: Remove end of Yerbal's text 1
+  #   type: flowpatch
+  #   index: 390
+  #   flow:
+  #     next: -1
+  # - name: Remove end of Yerbal's text 2
+  #   type: flowpatch
+  #   index: 31
+  #   flow:
+  #     next: -1
+
+204-ForestF3:
+  - name: Talk to Water Dragon in Flooded Faron
+    type: flowpatch
+    index: 16
+    flow:
+      next: Check If Already Obtained Faron SotH Item
+  - name: Check If Already Obtained Faron SotH Item
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 16 # Received Faron SotH
+      param3: 3
+    cases:
+      - Show Flooded Faron Exit Question # Already received item
+      - 19
+  - name: Exit mid tadtones
+    type: flowpatch
+    index: 20
+    flow:
+      next: Show Flooded Faron Exit Question
+  - name: Show Flooded Faron Exit Question
+    type: flowadd
+    flow:
+      type: type1
+      next: Flooded Faron Exit Switch
+      param3: 302
+      param4: Flooded Faron Exit Question
+  - name: Flooded Faron Exit Question
+    type: textadd
+    text: "Leaving so soon? I can drain the forest\nif you wish to return later.\n[1]Yes[2-]No"
+  - name: Flooded Faron Exit Switch
+    type: switchadd
+    flow:
+      type: switch
+      subType: 6
+      param2: 0
+      param3: 2
+    cases:
+      - Trigger Exit to Non-Flooded Faron # Yes
+      - Show Continue With Tadtones Text # No
+  - name: Continue With Tadtones Text
+    type: textadd
+    text: "Very well. Talk to me again if you\nchange your mind."
+  - name: Show Continue With Tadtones Text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 302
+      param4: Continue With Tadtones Text
+  - name: Trigger Exit to Non-Flooded Faron
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 5 # Entrance number
+      param2: 0
+      next: -1
+      param3: 10 # Triggers an exit
+  - name: Go to Faron SotH item
+    type: flowpatch
+    index: 160
+    flow:
+      next: Give item after Faron SotH CS
+  - name: Give item after Faron SotH CS
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: Trigger Exit to Non-Flooded Faron
+      param3: 9
+  # Gets unset in the Onp zev
+  # TODO: Replace with a zev patch?
+  - name: Make Bucha give the Tadtones Scroll storyflag
+    type: flowpatch
+    index: 195
+    flow:
+      param2: 82 # Tadtones Scroll storyflag
+      param3: 0 # set (not unset) flag
+
+250-ForestSiren:
+  - name: shorten fi text
+    type: flowpatch
+    index: 1
+    flow:
+      next: 78
+
+299-Demo:
+  - name: Skip setting sword itemflag
+    type: flowpatch
+    index: 2
+    flow:
+      next: 3
+
+300-Mountain:
+  - name: Skip over Zelda Dowsing
+    type: flowpatch
+    index: 281
+    flow:
+      next: -1
+
+301-MountainD1:
+  - name: remove ghirahim text before scaldera
+    type: flowpatch
+    index: 82
+    flow:
+      next: 48
+  - name: give item after beating earth temple
+    type: flowpatch
+    index: 22
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: 20 # goes to beat ET story flag
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: rando required dungeon storyflag
+    type: flowpatch
+    index: 21
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: -1 # will be filled in later if this is a required dungeon
+      next: 59
+      param3: 0
+  - name: to rando dungeons completed check
+    type: flowpatch
+    index: 59
+    flow:
+      type: type3
+      subType: 1
+      param1: 8 # entrypoint 008_007
+      param2: 7
+      next: -1
+      param3: 7
+
+302-Anahori:
+  - name: To Mitts Check
+    type: flowpatch
+    index: 0
+    flow:
+      next: Mitts Check
+  - name: Mitts Check
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 904 # Rando storyflag for digging mitts
+      param3: 3
+    cases:
+      - 19 # normal text
+      - Show No Mitts Text
+  - name: No Mitts Text
+    type: textadd
+    text: "You don't have Digging Mitts,\nso I can't let you play!"
+  - name: Show No Mitts Text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 302
+      param4: No Mitts Text
+
+303-MountainF2:
+  - name: skip over Water Basin dowsing
+    type: flowpatch
+    index: 128
+    flow:
+      param2: 668
+  - name: skip over Water Basin dowsing
+    type: flowpatch
+    index: 289
+    flow:
+      param2: 134
+
+304-MountainD2:
+  - name: Give item before CS
+    type: flowpatch
+    index: 5
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: Give Fire Sanctuary beaten story flag
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: Give Fire Sanctuary beaten story flag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 901 # Fire Sanctuary beaten story flag
+      next: 6
+      param3: 0
+  - name: rando required dungeon storyflag
+    type: flowpatch
+    index: 6
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: -1 # will be filled in later if this is a required dungeon
+      next: 94
+      param3: 0
+  - name: to rando dungeons completed check
+    type: flowpatch
+    index: 94
+    flow:
+      type: type3
+      subType: 1
+      param1: 8 # entrypoint 008_007
+      param2: 7
+      next: -1
+      param3: 7
+
+305-MountainF3:
+  - name: Boko Base entry
+    type: flowpatch
+    index: 64
+    flow:
+      next: Show Boko Base Entry Question
+  - name: Boko Base exit
+    type: flowpatch
+    index: 72
+    flow:
+      next: Show Boko Base Exit Question
+  - name: Show Boko Base Exit Question
+    type: flowadd
+    flow:
+      type: type1
+      next: Boko Base Exit Switch
+      param3: 302
+      param4: Boko Base Exit Question
+  - name: Boko Base Exit Question
+    type: textadd
+    text: "Want to leave <b<Bokoblin Base>>?\n[1]Yes[2-]No"
+  - name: Boko Base Exit Switch
+    type: switchadd
+    flow:
+      type: switch
+      subType: 6
+      param2: 0
+      param3: 2
+    cases:
+      - Leave Boko Base # Yes
+      - Show Declined Boko Base Offer Text # No (same as declined entry text)
+  - name: Leave Boko Base
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0 # Entrance number for Eldin???
+      param2: 0
+      next: -1
+      param3: 10 # Triggers an exit
+  - name: Show Boko Base Entry Question
+    type: flowadd
+    flow:
+      type: type1
+      next: Boko Base Entry Switch
+      param3: 302
+      param4: Boko Base Entry Question
+  - name: Boko Base Entry Question
+    type: textadd
+    text: "Want to enter <b<Bokoblin Base>>?\n[1]Yes[2-]No"
+  - name: Boko Base Entry Switch
+    type: switchadd
+    flow:
+      type: switch
+      subType: 6
+      param2: 0
+      param3: 2
+    cases:
+      - Entry into Boko Base # Yes
+      - Show Declined Boko Base Offer Text # No
+  - name: Declined Boko Base Offer Text
+    type: textadd
+    text: "Very well. Talk to me again if you\nchange your mind."
+  - name: Show Declined Boko Base Offer Text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 302
+      param4: Declined Boko Base Offer Text
+  - name: Entry into Boko Base
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0 # Entrance number for Boko Base
+      param2: 0
+      next: -1
+      param3: 10 # Triggers an exit
+  - name: Talking to Plats in Boko Base Prison
+    type: flowpatch
+    index: 1
+    flow:
+      next: Check if received Plats' Gift
+  - name: Check if received Plats' Gift
+    type: switchadd
+    flow:
+      type: switch
+      subType: 6
+      param2: 177
+      param3: 3
+    cases:
+      - Show Post Plats' Gift text # True
+      - 2 # False
+  - name: Post Plats' Gift text
+    type: textadd
+    text: "See ya around, pal!"
+  - name: Show Post Plats' Gift text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 302
+      param4: Post Plats' Gift text
+  - name: Cut off Plats' text to give item
+    type: flowpatch
+    index: 2
+    flow:
+      next: Plats' Gift
+  - name: Plats' Gift
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: 39
+      param3: 9
+  - name: Shorten Plats text in hot cave
+    type: flowpatch
+    index: 25
+    flow:
+      next: 36
+  - name: Go to Eldin SotH item
+    type: flowpatch
+    index: 28
+    flow:
+      next: Give item after Eldin SotH CS
+  - name: Give item after Eldin SotH CS
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: -1
+      param3: 9
+  - name: Remove Fire Dragon's lore text after SotH item
+    type: flowpatch
+    index: 46
+    flow:
+      next: 47
+  - name: Don't act differently when both other Dragons are already met
+    type: flowpatch
+    index: 31
+    flow: {}
+    cases:
+      - 57
+      - 57
+
+399-Demo:
+  - name: Skip setting sword itemflag
+    type: flowpatch
+    index: 0
+    flow:
+      next: 1
+
+400-Desert:
+  - name: give item after harp CS
+    type: flowpatch
+    index: 283
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 0 # item
+      next: 284 # end
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: rando required dungeon storyflag
+    type: flowpatch
+    index: 284
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: -1 # will be filled in later if this is a required dungeon
+      next: 285
+      param3: 0
+  - name: to rando dungeons completed check
+    type: flowpatch
+    index: 285
+    flow:
+      type: type3
+      subType: 1
+      param1: 8 # entrypoint 008_007
+      param2: 7
+      next: -1
+      param3: 7
+  - name: Fix Hook Beetle check # the robot doesn't give the item after harp
+    type: flowpatch
+    index: 39
+    flow:
+      next: 5
+  - name: skip over Zelda dowsing
+    type: flowpatch
+    index: 133
+    flow:
+      next: -1
+
+401-DesertD2:
+  - name: remove skipper text after opening mast
+    type: flowpatch
+    index: 25
+    flow:
+      next: 50
+  - name: give item after beating sandship
+    type: flowpatch
+    index: 45
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: Give Sandship beaten story flag
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: Give Sandship beaten story flag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 15 # Sandship beaten story flag
+      next: Give rando Tentalus Defeated storyflag
+      param3: 0
+  - name: Give rando Tentalus Defeated storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 933 # set defeat tentalus storyflag
+      next: 46
+      param3: 0
+  - name: rando required dungeon storyflag
+    type: flowpatch
+    index: 46
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: -1 # will be filled in later if this is a required dungeon
+      next: set sandship storyflag
+      param3: 0
+  - name: set sandship storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 933 # tentalus defeated
+      next: to rando dungeons completed check
+      param3: 0
+  - name: to rando dungeons completed check
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 8 # entrypoint 008_007
+      param2: 7
+      next: -1
+      param3: 7
+  - name: Fi text text to leave dungeon
+    type: textadd
+    unk1: 2
+    text: "You can't beat this\ndungeon at the present\ntime, I would suggest\ncoming back later"
+  - name: Fi trigger to leave
+    type: entryadd
+    entry:
+      name: "401_18"
+      value: Fi text to leave
+  - name: Fi text to leave
+    type: flowadd
+    flow:
+      type: type1
+      next: set tentalus defeated storyflag
+      param3: 171
+      param4: 57
+  - name: set tentalus defeated storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 933 # tentalus defeated
+      next: Leave dungeon trigger
+      param3: 0
+  - name: Leave dungeon trigger
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 1 # exit
+      param2: 0 # current room
+      next: -1
+      param3: 10
+
+402-DesertF2:
+  - name: Override Skipper check for first time conversation
+    type: flowpatch
+    index: 2
+    flow:
+      next: 150 # Check for SSH visible flag
+  - name: Never ask player to go inside shark mouth for ship dowsing
+    type: flowpatch
+    index: 17
+    flow:
+      next: 276
+
+404-DesertF3:
+  - name: Don't act when both other Dragons are already met
+    type: flowpatch
+    index: 21
+    flow: {}
+    cases:
+      - 79
+      - 79
+  - name: Set story flags from skipped cutscene
+    type: flowpatch
+    index: 165
+    flow:
+      next: Set when Thunder Dragon teaches SotH part story flag
+  - name: Set when Thunder Dragon teaches SotH part story flag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 462 # Set when Thunder Dragon teaches SotH part story flag
+      next: Thunder Dragon teaches SotH part story flag
+      param3: 0
+  - name: Thunder Dragon teaches SotH part story flag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 21 # Thunder Dragon teaches SotH part story flag
+      next: 90
+      param3: 0
+  - name: Go to item
+    type: flowpatch
+    index: 139
+    flow:
+      next: give item after Healing Thunderdragon
+  - name: give item after Healing Thunderdragon
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: -1
+      param3: 9
+  - name: Shorten Golo Text
+    type: flowpatch
+    index: 108
+    cases:
+      - 123
+      - 128
+
+460-RairyuMinigame:
+  - name: Avoid Boss rush Entry
+    type: entryadd
+    entry:
+      name: "460_70"
+      value: display Thank you text
+  - name: Thunderdragon Thank you text
+    type: textadd
+    text: "Thank you for saving me"
+  - name: display Thank you text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 115
+      param4: Thunderdragon Thank you text
+
+499-Demo:
+  - name: Skip setting sword itemflag
+    type: flowpatch
+    index: 6
+    flow:
+      next: 7
+
+500-CenterField:
+  - name: to SG intro cs storyflag
+    type: flowpatch
+    index: 114
+    flow:
+      next: Set SG intro in Groose cs
+  - name: Set SG intro in Groose cs
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 137
+      next: -1
+      param3: 0
+  - name: Zelda dowsing in Key Piece
+    type: flowpatch
+    index: 495
+    flow:
+      next: 492
+
+501-Inpa:
+  - name: botg context text
+    type: textadd
+    text: "I see you have acquired the <y<harp>>.\nWell done. Let me teach you a <b<song>>,\nit will be useful for your adventure."
+  - name: show botg context text
+    type: flowadd
+    flow:
+      type: type1
+      next: set 2x20 in lieu of botg tutorial
+      param3: 302
+      param4: botg context text
+  - name: botg cutscene skip to harp
+    type: flowpatch
+    index: 264
+    flow:
+      next: show botg context text
+  - name: set 2x20 in lieu of botg tutorial
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 29
+      param2: 10
+      next: Raise GoT
+      param3: 2
+  - name: Raise GoT
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 340 # Raise GoT
+      next: 267
+      param3: 0
+  - name: got to rando dungeons completed check
+    type: flowpatch
+    index: 267
+    flow:
+      next: to rando dungeons completed check
+  - name: to rando dungeons completed check
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 8 # entrypoint 008_007
+      param2: 7
+      next: -1
+      param3: 7
+
+502-CenterFieldBack:
+  - name: Zelda's Cutscene, give item from impa # this is overriding a set sceneflag, which is not needed anymore
+    type: flowpatch
+    index: 17
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: 16
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: Yeet TMS Cutscene
+    type: flowpatch
+    index: 16
+    flow:
+      next: Give watched TMS Cutscene storyflag
+  - name: Give watched TMS Cutscene storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 350 # TMS watched story flag
+      next: -1
+      param3: 0
+  - name: Patch Fi text before Demise
+    onlyif: Option "skip-demise" Enabled
+    type: textpatch
+    index: 23
+    text: "Master <heroname>, I have\nimportant information for you.\n\n\nMy analysis indicates a 100% chance\nthat entering this portal will\n<r<conclude>> your journey.\n\nAre you ready to proceed?\n[1]I'm ready![2-]Not yet..."
+  - name: Patch Fi text before Demise 2
+    onlyif: Option "skip-demise" Enabled
+    type: textpatch
+    index: 25
+    text: "Understood, Master <heroname>.\nThank you for taking me on this\njourney with you."
+  - name: Impa Complete Triforce text
+    type: textadd
+    text: "Though your wish has been granted by\nthe <y+<Triforce>>, <b<Ghirahim>> escaped with\nZelda through the <r<great doors\nat the front of the temple>>.\nYou may yet catch him before it's too\nlate. Hurry, <heroname>!"
+  - name: Show Triforce text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 302
+      param4: Impa Complete Triforce text
+  - name: Check for Triforces
+    type: entryadd
+    entry:
+      name: "502_20"
+      value: Show Triforce text
+
+503-Goron:
+  - name: To Bomb Bag Check I # when you don't have bow
+    type: flowpatch
+    index: 255
+    flow:
+      next: Bomb Bag Check I 1
+  - name: Bomb Bag Check I 1
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 92 # Bomb Bag itemflag
+      param2: 1 # check it's set
+      next: Bomb Bag Check I 2
+      param3: 23 # for checking a itemflag
+  - name: Bomb Bag Check I 2
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 7 # use result from previous chck
+    cases:
+      - 122 # true, continue with bomb as drawing quest
+      - 224  # false, go to random select
+  - name: To Bomb Bag Check II # when you do have bow
+    type: flowpatch
+    index: 259
+    flow:
+      next: Bomb Bag Check II 1
+  - name: Bomb Bag Check II 1
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 92 # Bomb Bag itemflag
+      param2: 1 # check it's set
+      next: Bomb Bag Check II 2
+      param3: 23 # for checking a itemflag
+  - name: Bomb Bag Check II 2
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 7 # use result from previous chck
+    cases:
+      - 116 # true, continue with bomb as drawing quest
+      - 261  # false, go to random select
+
+599-Demo:
+  - name: Skip setting sword itemflag
+    type: flowpatch
+    index: 6
+    flow:
+      next: 7

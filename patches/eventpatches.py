@@ -37,6 +37,7 @@ class EventPatchHandler:
                 msbtFileName = eventFilePath.split("/")[-1]
                 if msbtFileName[:-5] in self.eventPatches:
                     parsedMSBT = parseMSB(eventArc.get_file_data(eventFilePath))
+                    assert len(parsedMSBT["TXT2"]) == len(parsedMSBT["ATR1"])
 
                     for patch in self.eventPatches[msbtFileName[:-5]]:
                         # handle text patches here
@@ -48,7 +49,6 @@ class EventPatchHandler:
                             )
                         elif patch["type"] == "textpatch":
                             self.text_patch(msbt=parsedMSBT, textPatch=patch)
-
                     eventArc.set_file_data(eventFilePath, buildMSB(parsedMSBT))
             for eventFilePath in filter(
                 lambda name: name[-1] == "f", eventArc.get_all_paths()
@@ -223,11 +223,12 @@ class EventPatchHandler:
 
     def text_add(self, msbt, textAdd, msbtFileName):
         index = len(msbt["TXT2"])
-        self.flowLabelToIndexMapping[textAdd["name"]] = index
+        self.textLabels[textAdd["name"]] = index
         msbt["TXT2"].append(
             process_control_sequences(textAdd["text"]).encode("utf-16be")
         )
-        msbt["ATR1"].append([textAdd.get("unk1", 1), textAdd.get("unk2", 0)])
+        # had to add a 0 to the end to satisfy BuildMSB's length requirement, if text adds end up breaking, this may be overwriting a param?
+        msbt["ATR1"].append([textAdd.get("unk1", 1), textAdd.get("unk2", 0), 0])
         entryName = "%s:%d" % (msbtFileName[-3:], index)
         newEntry = {
             "name": entryName,

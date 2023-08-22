@@ -391,6 +391,8 @@
 - name: Knight Academy - Crystal in Link's Room
   original_item: Gratitude Crystal 
   type: Loose Crystals
+  Paths:
+    - stage/F001r/r1/l0/Item/104
 
 - name: Knight Academy - Crystal in Knight Academy Plant
   original_item: Gratitude Crystal 
