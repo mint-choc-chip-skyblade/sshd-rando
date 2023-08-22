@@ -36,7 +36,7 @@ def generate() -> list[World]:
 def generate_randomizer(config: Config) -> list[World]:
     start = time.process_time()
     if config.seed == "":
-        config.seed = str(random())
+        config.seed = str(random.randint(0, 0xFFFFFFFF))
         # Write config back to file
 
     # Seed RNG with combination of seed, standard settings, and plando file (if being used)
