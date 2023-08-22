@@ -393,7 +393,7 @@ class StagePatchHandler:
             if layer == 0 or removeArcs or addArcs:
                 patches = self.stagePatches.get(stage, [])
 
-                print(f"Patching {stage} layer {layer}")
+                print(f"Patching Stage: {stage}\tLayer: {layer}")
                 objectPatches = []
                 stageU8 = None
 

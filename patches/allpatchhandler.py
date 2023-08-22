@@ -16,6 +16,7 @@ class AllPatchHandler:
 
     def do_all_patches(self):
         if OUTPUT_PATH.exists() and OUTPUT_PATH.is_dir():
+            print("Removing previous output")
             rmtree(OUTPUT_PATH)
 
         self.stagePatchHandler.create_oarc_cache()

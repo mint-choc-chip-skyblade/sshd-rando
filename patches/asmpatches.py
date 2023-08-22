@@ -182,12 +182,15 @@ class ASMPatchHandler:
 
     # Applies both asm patches and additions.
     def patch_all_asm(self):
+        print("Applying asm patches")
         self.patch_asm(
             MAIN_NSO_FILE_PATH,
             ASM_PATCHES_DIFFS_PATH,
             OUTPUT_MAIN_NSO,
             MAIN_NSO_OFFSETS,
         )
+
+        print("Applying asm additions")
         self.patch_asm(
             SUBSDK1_FILE_PATH,
             ASM_ADDITIONS_DIFFS_PATH,
