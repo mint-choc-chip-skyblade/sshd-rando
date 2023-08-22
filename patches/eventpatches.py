@@ -64,8 +64,14 @@ class EventPatchHandler:
                     or msbfFileName[:-5] in self.checkPatches
                     or msbfFileName == "003-ItemGet.msbf"
                 ):
-                    print(msbfFileName)
-                    parsedMSBF = parseMSB(eventArc.get_file_data(eventFilePath))
+                    print(f"Patching {msbfFileName}")
+
+                    if (eventFileData := eventArc.get_file_data(eventFilePath)) is None:
+                        raise TypeError(
+                            "Event file data incorrect. Expected bytes but found None."
+                        )
+
+                    parsedMSBF = parseMSB(eventFileData)
 
                     if msbfFileName[:-5] in self.eventPatches:
                         self.create_flow_label_to_index_mapping(

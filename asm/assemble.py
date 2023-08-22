@@ -251,7 +251,9 @@ def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
                 trueOffset = int(offset, 16) + byteNumber
 
                 if trueOffset in addressesOverwritten:
-                    raise Exception(f"Overlapping asm patch found at {offset} in file {asmFilename}.")
+                    raise Exception(
+                        f"Overlapping asm patch found at {offset} in file {asmFilename}."
+                    )
                 else:
                     addressesOverwritten.append(trueOffset)
 
