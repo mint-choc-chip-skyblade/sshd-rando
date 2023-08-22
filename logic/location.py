@@ -15,10 +15,10 @@ class Location:
 
 
     def __str__(self) -> str:
-        return self.name
+        return self.name if self.world.num_worlds == 1 else f"{self.name} [W{self.world.id + 1}]"
     
     def __lt__(self, other) -> bool:
-        return self.id < other.id
+        return self.id < other.id if self.world.id == other.world.id else self.world.id < other.world.id 
 
     def is_empty(self) -> bool:
         return self.current_item == None

@@ -8,7 +8,7 @@ class Item:
         self.is_game_winning_item: bool = game_winning_item_
 
     def __str__(self) -> str:
-        return self.name
+        return self.name if self.world.num_worlds == 1 else f"{self.name} [W{self.world.id + 1}]"
     
     def __eq__(self, other) -> bool:
         if other == None:
