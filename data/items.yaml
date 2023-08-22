@@ -623,3 +623,4 @@
   name: Game Beatable
   oarc: null
   game_winning_item: true
+  advancement: true
