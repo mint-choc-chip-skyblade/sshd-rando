@@ -1,3 +1,115 @@
+003-ItemGet:
+  - name: Remove Goddess Sword Scene change
+    type: flowpatch
+    index: 462 # skip scene change after getting goddess sword
+    flow:
+      next: -1
+  - name: Remove bipping after practice sword
+    type: flowpatch
+    index: 383
+    flow:
+      next: -1
+  - name: Goddess Longsword Text
+    type: textpatch
+    index: 16
+    text: "You got the <y<Goddess Longsword>>!\nThe flames of Farore have improved your\nsword, making it longer and sharp enough\nto do twice as much damage!"
+  - name: Goddess White Sword Text
+    type: textpatch
+    index: 12
+    text: "You got the <y<Goddess White Sword>>!\nThe flames of Nayru have transformed\nyour blade, expanding Fi's powers.\n\nShe can now help you use your <r<dowsing>>\nability to search for more objects!"
+  - name: Master Sword Text
+    type: textpatch
+    index: 17
+    text: "You got the <y<Master Sword>>!\nThe flames of Din have imbued your\nblade with a sacred white light that\ndemons revile."
+  - name: True Master Sword Text
+    type: textpatch
+    index: 19
+    text: "You got the <y<True Master Sword>>!\nThe goddess has blessed your blade, and\nthe Master Sword has at last achieved its\nultimate form!"
+  - name: Harp Text
+    type: textpatch
+    index: 21
+    text: "You got the <y<Goddess's Harp>>!\nBut there's no time to admire it!"
+  - name: Emerald Tablet text
+    type: textpatch
+    index: 227
+    text: "You got the <y<Emerald Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
+  - name: Ruby Tablet text
+    type: textpatch
+    index: 228
+    text: "You got the <y<Ruby Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
+  - name: Amber Tablet text
+    type: textpatch
+    index: 229
+    text: "You got the <y<Amber Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
+  - name: Farore's Courage Text
+    type: textpatch
+    index: 237
+    text: "You learned <y<Farore's Courage>>!"
+  - name: Nayru's Wisdom Text
+    type: textpatch
+    index: 238
+    text: "You learned <y<Nayru's Wisdom>>!"
+  - name: Din's Power Text
+    type: textpatch
+    index: 239
+    text: "You learned <y<Din's Power>>!"
+  - name: Faron SotH text
+    type: textpatch
+    index: 240
+    text: "You learned the <y<Water Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
+  - name: Eldin SotH text
+    type: textpatch
+    index: 241
+    text: "You learned the <y<Fire Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
+  - name: Lanayru SotH text
+    type: textpatch
+    index: 242
+    text: "You learned the <y<Thunder Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
+  - name: Full SotH text
+    type: textpatch
+    index: 243
+    text: "The <y<Song of the Hero>> is now complete!"
+
+106-DrugStore:
+  - name: Potion Lady Text Patch # generalized for rando
+    type: textpatch
+    index: 5
+    text: "Just so you know, I can't sell you a \npotion if you don't have an Empty \nBottle to pour it into!\n\n\x0E\x01\x09\x04\x09\x90For some reason, I like you, though, so\nI'll give you a spare item I've\nbeen keeping here in the stall!\nOh, it's nothing. It's my little gift."
+  - name: Potion Lady Bottle # skip pouch requirements
+    type: flowpatch
+    index: 42
+    flow:
+      next: 44 # give item
+  - name: Requirement for Stamina Potion
+    type: flowpatch
+    index: 103
+    flow:
+      param2: 8 # raised LMF
+  - name: Remove pouch bipping from Potion Lady
+    type: flowpatch
+    index: 115
+    flow:
+      next: 111
+
+108-ShinkanA:
+  - name: Owlans Shield
+    type: flowpatch
+    index: 168
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 0 # item
+      next: 172 # end of owlans text
+      param3: 9
+      param4: 0
+      param5: 0
+  - name: Remove bipping after Owlan's Gift
+    type: flowpatch
+    index: 165
+    flow:
+      next: -1
+
 114-Friend:
   - name: Skip Fledge camera panning 1
     type: flowpatch

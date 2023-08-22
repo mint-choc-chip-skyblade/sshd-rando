@@ -1,11 +1,12 @@
 from .world import *
 
+
 def spoiler_format_location(location: Location, longest_name_length: int) -> str:
     spaces = longest_name_length - len(f"{location}")
     return f"{location}: {spaces * ' '}{location.current_item}"
 
-def generate_spoiler_log(worlds: list[World]) -> None:
 
+def generate_spoiler_log(worlds: list[World]) -> None:
     filepath = "Spoiler Log.txt"
     with open(filepath, "w") as spoiler_log:
         
@@ -22,7 +23,11 @@ def generate_spoiler_log(worlds: list[World]) -> None:
             sphere = sorted(sphere)
             spoiler_log.write(f"    Sphere {sphere_num}:\n")
             for location in sphere:
-                spoiler_log.write("        " + spoiler_format_location(location, longest_name_length) +  '\n')
+                spoiler_log.write(
+                    "        "
+                    + spoiler_format_location(location, longest_name_length)
+                    + "\n"
+                )
             sphere_num += 1
         
         # Recalculate longest name length for all locations
@@ -34,6 +39,10 @@ def generate_spoiler_log(worlds: list[World]) -> None:
             spoiler_log.write(f"    {world}:\n")
             for location in world.location_table.values():
                 if "Hint Location" not in location.types:
-                    spoiler_log.write("        " + spoiler_format_location(location, longest_name_length) +  '\n')
+                    spoiler_log.write(
+                        "        "
+                        + spoiler_format_location(location, longest_name_length)
+                        + "\n"
+                    )
 
-    print(f"Generated Spoiler Log at {filepath}")  
+    print(f"Generated Spoiler Log at {filepath}")
