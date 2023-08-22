@@ -1,10 +1,10 @@
 
-from logic.world import World
-from logic.config import *
-from logic.settings import *
-from logic.fill import fill_worlds
-from logic.search import generate_playthrough
-from logic.spoiler_log import generate_spoiler_log
+from .world import World
+from .config import *
+from .settings import *
+from .fill import fill_worlds
+from .search import generate_playthrough
+from .spoiler_log import generate_spoiler_log
 
 import time
 import random

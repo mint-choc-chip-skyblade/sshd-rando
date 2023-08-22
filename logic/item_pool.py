@@ -1,6 +1,6 @@
 
-from logic.settings import *
-from logic.item import *
+from .settings import *
+from .item import *
 
 def generate_item_pool(world) -> None:
 

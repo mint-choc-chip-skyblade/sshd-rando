@@ -1,4 +1,4 @@
-from logic.world import *
+from .world import *
 
 def spoiler_format_location(location: Location, longest_name_length: int) -> str:
     spaces = longest_name_length - len(location.name) + 1
