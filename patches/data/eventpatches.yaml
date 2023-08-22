@@ -1,6 +1,33 @@
 # 002-System
 
 003-ItemGet:
+  - name: Scrapper Entry
+    type: entryadd
+    entry:
+      name: "003_215"
+      value: Show Scrapper Item Get Text
+  - name: Scrapper Item Get Text
+    type: textadd
+    unk1: 5
+    unk2: 1
+    text: "You found Gondo's robot, <y<Scrapper>>!
+          \n\n\n\nBe sure to take care of him...\neven if he's a little mean."
+  - name: Show Scrapper Item Get Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Give Scrapper Storyflag
+      param3: 3
+      param4: Scrapper Item Get Text
+  - name: Give Scrapper Storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 323 # Scrapper Storyflag
+      next: -1
+      param3: 0
   - name: Tadtone Entry
     type: entryadd
     entry:
@@ -960,6 +987,84 @@
   #   index: 13
   #   flow:
   #     next: -1
+  - name: Gondo patch
+    type: flowpatch
+    index: 92
+    flow:
+      param2: 322 # Learn about Scrapper near Village Windmill (repurposed for rando)
+    cases:
+      - 93 # true
+      - Show Gondo Options # false
+  - name: Patch Gondo Options Text After Check
+    type: textpatch
+    index: 114
+    text: "Hey, kid! Anything to upgrade today?\n[1]Upgrade gear.[2]Repair shield.[3-]No, thanks."
+  - name: Gondo Options Text
+    type: textadd
+    text: "Heyyyyy! Welcome to the Scrap Shop!\nI can use the stuff you find to upgrade\nyour gear and make it even stronger!
+          \n\nAnd if your shield takes a beating, no\nworries. I can fix that too.\nSo what'll it be?\n[1]Upgrade gear.[2]Fix shield.[3]<r<Repair Junk?>>[4-]Never mind."
+  - name: Show Gondo Options
+    type: flowadd
+    flow:
+      type: type1
+      next: Gondo Options Switch
+      param3: 103
+      param4: Gondo Options Text
+  - name: Gondo Options Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 31 # Upgrade gear.
+      - 69 # Fix shield.
+      - 97 # Repair Junk?
+      - 3 # Never mind.
+  - name: Patch Gondo Repair Scrapper Text 1
+    type: textpatch
+    index: 101
+    text: "Oh that?\nWell, my old Gramps did tell me this:
+          \n\n\n\"You can get this working again with\nthe extract from an <y<Ancient Flower>>.\"\nBut I've never even heard of, much less\nseen, any such thing!\n[1]Take mine![2-]Me neither."
+  - name: Patch Gondo Repair Scrapper Text 2
+    type: textpatch
+    index: 108
+    text: "So this is an <y<Ancient Flower>>?!\nI can feel some slick, oily stuff coming\nout of its stem! Great, with this we can\nfix my old Gramps' stuff!\n...Wait right here! I'll have it up and\nrunning in no time!"
+  - name: Skip Scrapper Repaired Text 1
+    type: flowpatch
+    index: 59
+    flow:
+      next: 118
+  - name: Skip Scrapper Repaired Text 2
+    type: flowpatch
+    index: 118
+    flow:
+      next: 134
+  - name: Patch post Gondo Repair Text
+    type: textpatch
+    index: 115
+    text: "Well, here you are. All fixed up!
+          \n\n\n\nI couldn't have done it without your\nhelp. So, here, you have it...\nwhat ever this is..."
+  - name: Skip Scrapper Repaired Text 3
+    type: flowpatch
+    index: 134
+    flow:
+      next: 50 # give scrapper repaired flag
+  - name: Skip Scrapper Repaired Text 4
+    type: flowpatch
+    index: 50
+    flow:
+      param2: 322 # Learn about Scrapper near Village Windmill (repurposed for rando)
+      next: Give Repair Gondo Junk item
+  - name: Give Repair Gondo Junk item
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: -1
+      param3: 9
 
 # need to clean up
 114-Friend:
@@ -1435,7 +1540,7 @@
   - name: Switch for Chandelier just fell
     type: switchadd
     flow:
-      subeType: 6
+      subType: 6
       param2: 3
       param3: 5 # zone temp flag 3, set after crashing chandelier
     cases:
@@ -1449,7 +1554,16 @@
     flow: {}
     cases:
       - 216 # soup has been delivered, normal event
+      - Check for Scrapper
+  - name: Check for Scrapper
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 323 # Scrapper repaired
+      param3: 3 # check storyflag
+    cases:
       - Show new Text Option # soup has not been delivered, ask which quest to do
+      - 216 # no scrapper = normal event
   - name: Go to Switch for Chandelier
     type: flowpatch
     index: 6

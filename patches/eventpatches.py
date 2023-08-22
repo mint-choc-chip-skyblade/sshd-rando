@@ -21,7 +21,7 @@ class EventPatchHandler:
         self.eventPatches = yaml_load(EVENT_PATCHES_PATH)
         self.checkPatches = defaultdict(list)
         self.flowLabelToIndexMapping = {}
-        self.textLabels = {}
+        self.textLabelToIndexMapping = {}
 
     def handle_event_patches(self):
         for eventPath in Path(EVENT_FILES_PATH).glob("*.arc"):
@@ -36,6 +36,7 @@ class EventPatchHandler:
             ):
                 msbtFileName = eventFilePath.split("/")[-1]
                 if msbtFileName[:-5] in self.eventPatches:
+                    print(f"Patching {msbtFileName}")
                     parsedMSBT = parseMSB(eventArc.get_file_data(eventFilePath))
                     assert len(parsedMSBT["TXT2"]) == len(parsedMSBT["ATR1"])
 
@@ -59,7 +60,7 @@ class EventPatchHandler:
                     or msbfFileName[:-5] in self.checkPatches
                     or msbfFileName == "003-ItemGet.msbf"
                 ):
-                    print(msbfFileName)
+                    print(f"Patching {msbfFileName}")
                     parsedMSBF = parseMSB(eventArc.get_file_data(eventFilePath))
 
                     if msbfFileName[:-5] in self.eventPatches:
@@ -137,7 +138,7 @@ class EventPatchHandler:
                     continue
                 value = index
             if property == "param4" and not isinstance(value, int):
-                index = self.textLabels.get(value, None)
+                index = self.textLabelToIndexMapping.get(value, None)
                 if index is None:
                     print(
                         f"ERROR: text label {value} not found in file- patch: {flowAdd['name']}"
@@ -183,7 +184,7 @@ class EventPatchHandler:
                     continue
                 value = index
             if property == "param4" and not isinstance(value, int):
-                index = self.flowLabelToIndexMapping.get(value, None)
+                index = self.textLabelToIndexMapping.get(value, None)
                 if index is None:
                     print(
                         f"ERROR: text label {value} not found in file- patch: {flowPatch['name']}"
@@ -201,7 +202,7 @@ class EventPatchHandler:
                         case = self.flowLabelToIndexMapping.get(case, None)
                         assert (
                             case is not None
-                        ), f"ERROR: text label {case} not found in file- patch: {flowPatch['name']}"
+                        ), f"ERROR: flow label {case} not found in file- patch: {flowPatch['name']}"
                     msbf["FLW3"]["branch_points"][branchStart + i] = case
 
     def entry_add(self, msbf, entryAdd):
@@ -223,7 +224,7 @@ class EventPatchHandler:
 
     def text_add(self, msbt, textAdd, msbtFileName):
         index = len(msbt["TXT2"])
-        self.textLabels[textAdd["name"]] = index
+        self.textLabelToIndexMapping[textAdd["name"]] = index
         msbt["TXT2"].append(
             process_control_sequences(textAdd["text"]).encode("utf-16be")
         )

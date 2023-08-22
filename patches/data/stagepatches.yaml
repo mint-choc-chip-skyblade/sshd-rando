@@ -437,16 +437,16 @@ F001r:
     object:
       posx: 850
       posz: -1700
-  # - name: Fledge Pouch Check Storyflag at night
-  #   type: objpatch
-  #   id: 0xFC7E
-  #   layer: 4
-  #   room: 0
-  #   objtype: OBJ
-  #   object:
-  #     posx: 850
-  #     posz: -1700
-  #     untrigstoryfid: 923
+  - name: Fledge Pouch Check Storyflag at night
+    type: objpatch
+    id: 0xFC7E
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 850
+      posz: -1700
+      untrigstoryfid: 923
   - name: Move Fledge closer to Link's room at day
     type: objpatch
     id: 0xFC77
@@ -456,16 +456,16 @@ F001r:
     object:
       posx: 850
       posz: -1700
-  # - name: Fledge Pouch Check Storyflag at day
-  #   type: objpatch
-  #   id: 0xFC78
-  #   layer: 3
-  #   room: 0
-  #   objtype: OBJ
-  #   object:
-  #     posx: 850
-  #     posz: -1700
-  #     untrigstoryfid: 923
+  - name: Fledge Pouch Check Storyflag at day
+    type: objpatch
+    id: 0xFC78
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 850
+      posz: -1700
+      untrigstoryfid: 923
   - name: Fledge trains without wryna
     type: objpatch
     id: 0xFC10
@@ -541,14 +541,14 @@ F004r: # Bazaar
     layer: 0
     room: 0
     objtype: OBJ
-  # - name: Patch Scrapper Junk Despawn Flag
-  #   type: objpatch
-  #   id: 0xFC74
-  #   layer: 0
-  #   room: 0
-  #   objtype: OBJ
-  #   object:
-  #     params1: 0x285FFCFF # >> 21 == 322
+  - name: Patch Scrapper Junk Despawn Flag
+    type: objpatch
+    id: 0xFC74
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0x285FFCFF # >> 21 == 322
 
 F005r: # Orielle and Parrow's House
   - name: Always Spawn Parrow
@@ -2002,6 +2002,7 @@ F300_2: # Thunder node
     room: 0
     objtype: OBJ
 
+# block staying down stuff needs uncommenting when path add stuff ready
 F300_3: # Fire node
   - name: Fi text for generator
     type: objdelete
