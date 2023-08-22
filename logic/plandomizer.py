@@ -35,6 +35,10 @@ def load_plandomizer_data(worlds: list[World], filepath: str):
                             if field not in item:
                                 raise PlandomizerError(f"The item being plandomized at {location} in {world} is missing the {field} field")
 
+                        # Throw an error if the specified world number doesn't exist
+                        if item["world"] > len(worlds):
+                            raise PlandomizerError(f'Incorrect world number "{item["world"]}". Only {len(worlds)} world(s) are being generated.')
+                        
                         world.plandomizer_locations[world.get_location(location)] = worlds[item["world"] - 1].get_item(item["item"])
 
 
