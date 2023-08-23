@@ -17,7 +17,7 @@ nodestructnames = "name count ff offset"
 ParsedBzs = NewType("ParsedBzs", OrderedDict)
 
 
-def parseBzs(data: bytes) -> ParsedBzs:
+def parseBzs(data: bytes) -> OrderedDict | list:
     name, count, ff, offset = struct.unpack(">4shhi", data[:12])
     assert ff == -1
     name = name.decode("ascii")
@@ -180,7 +180,7 @@ namelengths = {
 }
 
 
-def buildBzs(root: ParsedBzs) -> bytes:
+def buildBzs(root: OrderedDict) -> bytes:
     count, odata = buildObj("V001", root)
     data = struct.pack(nodestruct, b"V001", count, -1, 12) + odata
 

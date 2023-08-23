@@ -37,7 +37,12 @@ class EventPatchHandler:
                 msbtFileName = eventFilePath.split("/")[-1]
                 if msbtFileName[:-5] in self.eventPatches:
                     print(f"Patching {msbtFileName}")
-                    parsedMSBT = parseMSB(eventArc.get_file_data(eventFilePath))
+                    msbtData = eventArc.get_file_data(eventFilePath)
+
+                    if not msbtData:
+                        raise TypeError("Expected type bytes but found None")
+
+                    parsedMSBT = parseMSB(msbtData)
                     assert len(parsedMSBT["TXT2"]) == len(parsedMSBT["ATR1"])
 
                     for patch in self.eventPatches[msbtFileName[:-5]]:
@@ -61,7 +66,13 @@ class EventPatchHandler:
                     or msbfFileName == "003-ItemGet.msbf"
                 ):
                     print(f"Patching {msbfFileName}")
-                    parsedMSBF = parseMSB(eventArc.get_file_data(eventFilePath))
+
+                    if (eventFileData := eventArc.get_file_data(eventFilePath)) is None:
+                        raise TypeError(
+                            "Event file data incorrect. Expected bytes but found None."
+                        )
+
+                    parsedMSBF = parseMSB(eventFileData)
 
                     if msbfFileName[:-5] in self.eventPatches:
                         self.create_flow_label_to_index_mapping(

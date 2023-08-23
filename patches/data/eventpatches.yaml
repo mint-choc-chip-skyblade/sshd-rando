@@ -1,5 +1,12 @@
-# 002-System
-
+006-8KenseiNormal:
+  - name: Allow Amiibo Warp without actual Amiibo
+    type: flowpatch
+    index: 28
+    flow: {}
+    cases:
+      - 21 # Vanilla
+      - 25 # Vanilla
+      - 13 # Skip amiibo
 003-ItemGet:
   - name: Scrapper Entry
     type: entryadd
@@ -1112,6 +1119,11 @@
     type: setstoryflag
     flow:
       setstoryflag: 198
+      next: Give Amiibo Storyflag
+  - name: Give Amiibo Storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 1201
       next: Set upper academy gate/sparring hall open sceneflag
   - name: Set upper academy gate/sparring hall open sceneflag
     type: setsceneflag

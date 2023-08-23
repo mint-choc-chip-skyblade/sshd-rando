@@ -1,3 +1,9 @@
+from filepathconstants import OUTPUT_PATH
+from patches.asmpatches import ASMPatchHandler
+from patches.eventpatches import EventPatchHandler
+
+# from patches.checkpatchhandler import determine_check_patches
+from filepathconstants import OUTPUT_PATH
 from patches.checkpatchhandler import determine_check_patches
 from patches.objectpackpatchhandler import patch_object_pack
 from patches.stagepatches import StagePatchHandler
@@ -9,12 +15,15 @@ import os
 
 class AllPatchHandler:
     def __init__(self, world):
+        self.asmPatchHandler = ASMPatchHandler()
+        self.eventPatchHandler = EventPatchHandler()
         self.stagePatchHandler = StagePatchHandler()
         self.eventPatchHandler = EventPatchHandler()
         self.world = world
 
     def do_all_patches(self):
-        if os.path.exists(OUTPUT_PATH) and os.path.isdir(OUTPUT_PATH):
+        if OUTPUT_PATH.exists() and OUTPUT_PATH.is_dir():
+            print("Removing previous output")
             rmtree(OUTPUT_PATH)
 
         self.stagePatchHandler.create_oarc_cache()
@@ -26,3 +35,5 @@ class AllPatchHandler:
         self.stagePatchHandler.handle_stage_patches()
         self.stagePatchHandler.patch_title_screen_logo()
         self.eventPatchHandler.handle_event_patches()
+
+        self.asmPatchHandler.patch_all_asm()
