@@ -1,4 +1,12 @@
+from sslib.bzs import parseBzs, buildBzs, get_entry_from_bzs, get_highest_object_id
+from sslib.utils import mask_shift_set, write_bytes_create_dirs
+from sslib.yaml import yaml_load
+from sslib.u8file import U8File
 from collections import OrderedDict, defaultdict
+from pathlib import Path
+import json
+
+from constants.tboxsubtypes import tboxSubtypes
 from filepathconstants import (
     RANDO_ROOT_PATH,
     OUTPUT_STAGE_PATH,
@@ -10,9 +18,6 @@ from filepathconstants import (
     TITLE2D_SOURCE_PATH,
     TITLE2D_OUTPUT_PATH,
 )
-from pathlib import Path
-import json
-
 from constants.patchconstants import (
     DEFAULT_SOBJ,
     DEFAULT_OBJ,
@@ -22,11 +27,6 @@ from constants.patchconstants import (
     STAGE_FILE_REGEX,
     ROOM_ARC_REGEX,
 )
-
-from sslib.bzs import parseBzs, buildBzs, get_entry_from_bzs, get_highest_object_id
-from sslib.u8file import U8File
-from sslib.utils import mask_shift_set, write_bytes_create_dirs
-from sslib.yaml import yaml_load
 
 
 def patch_tbox(bzs, itemID, id):
@@ -38,11 +38,14 @@ def patch_tbox(bzs, itemID, id):
     if tbox is None:
         print(f"ERROR: No tbox id {id} found to patch")
         return
+    originalItemID = tbox["anglez"] & 0x1FF
 
     # patches item
     tbox["anglez"] = mask_shift_set(tbox["anglez"], 0x1FF, 0, itemID)
     # patches chest type TODO: create chest type array and patch in
-    tbox["params1"] = mask_shift_set(tbox["params1"], 0x3, 4, 0x02)
+    tbox["params1"] = mask_shift_set(
+        tbox["params1"], 0x3, 4, tboxSubtypes[originalItemID]
+    )
 
 
 def patch_freestanding_item(bzs, itemID, id):
