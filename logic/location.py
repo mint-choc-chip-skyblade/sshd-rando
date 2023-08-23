@@ -6,13 +6,20 @@ import logging
 
 class Location:
     def __init__(
-        self, id_: int, name_: str, types_: list[str], world_, original_item_: Item
+        self,
+        id_: int,
+        name_: str,
+        types_: list[str],
+        world_,
+        original_item_: Item,
+        patch_paths_: list[str],
     ) -> None:
         self.id: int = id_
         self.name: str = name_
         self.types: list[str] = types_
         self.world = world_
         self.original_item = original_item_
+        self.patch_paths: list[str] = patch_paths_
         self.current_item: Item = None
         self.loc_access_list: list = []
 
