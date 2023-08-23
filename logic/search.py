@@ -1,5 +1,6 @@
 from .world import *
 
+import logging
 
 class SearchMode:
     ACCESSIBLE_LOCATIONS: int = 0
@@ -291,6 +292,7 @@ def game_beatable(worlds: list[World]) -> bool:
 
 
 def generate_playthrough(worlds: list[World]) -> None:
+    logging.getLogger('').debug('Generating Playthrough')
     # Generate initial playthrough
     playthrough_search = Search(SearchMode.GENERATE_PLAYTHROUGH, worlds)
     playthrough_search.search_worlds()
@@ -300,21 +302,37 @@ def generate_playthrough(worlds: list[World]) -> None:
     # Keep track of all locations we temporarily take items away from
     # so we can give them back after playthrough calculation
     temp_empty_locations = {}
+    # Keep track of all the locations that appear in the playthrough
+    playthrough_locations_set: set[Location] = set()
 
     print("Paring down playthrough")
+    # Reverse the playthrough so we're paring it down from highest to lowest sphere
+    # This way, lower sphere items will be prioritized for the playthrough
+    reversed(playthrough_spheres)
     for sphere in playthrough_spheres:
         for location in sphere:
             item_at_location = location.current_item
             location.remove_current_item()
 
+            # If the game is beatable, temporarily take this item away and
+            # add the location to the set of playthrough locations
             if game_beatable(worlds):
                 temp_empty_locations[location] = item_at_location
             else:
+                playthrough_locations_set.add(location)
                 location.set_current_item(item_at_location)
 
+    # Now generate a new playthrough search incase some spheres were flattened
+    # by the previous generation having access to extra items
     new_search = Search(SearchMode.GENERATE_PLAYTHROUGH, worlds)
     new_search.search_worlds()
+    # Discard all locations not in the playthrough locations set
+    for sphere in new_search.playthrough_spheres:
+        for location in sphere.copy():
+            if location not in playthrough_locations_set:
+                sphere.discard(location)
 
+    # Now remove any empty spheres that might remain
     worlds[0].playthrough_spheres = [
         sphere for sphere in new_search.playthrough_spheres if len(sphere) > 0
     ]
