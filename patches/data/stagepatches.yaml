@@ -301,7 +301,6 @@ F000: # Skyloft
     room: 0
     objtype: OBJS
     object:
-      params1: 0xffffffe3
       posx: 666.327332
       posy: 2893.23999
       posz: -13083.1475

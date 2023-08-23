@@ -1,8 +1,6 @@
 from filepathconstants import OUTPUT_PATH
 from patches.asmpatches import ASMPatchHandler
 from patches.eventpatches import EventPatchHandler
-
-# from patches.checkpatchhandler import determine_check_patches
 from filepathconstants import OUTPUT_PATH
 from patches.checkpatchhandler import determine_check_patches
 from patches.objectpackpatchhandler import patch_object_pack

@@ -39,7 +39,9 @@ def patch_tbox(bzs, itemID, id):
         print(f"ERROR: No tbox id {id} found to patch")
         return
 
+    # patches item
     tbox["anglez"] = mask_shift_set(tbox["anglez"], 0x1FF, 0, itemID)
+    # patches chest type TODO: create chest type array and patch in
     tbox["params1"] = mask_shift_set(tbox["params1"], 0x3, 4, 0x02)
 
 
