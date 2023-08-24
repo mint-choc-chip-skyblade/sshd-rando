@@ -25,6 +25,10 @@ class WrongInfoError(RuntimeError):
 
 
 class World:
+
+    event_id_counter: int = 0
+    area_id_counter: int = 0
+
     def __init__(self, id_: int) -> None:
         self.id = id_
         self.config: Config = None
@@ -143,9 +147,9 @@ class World:
     def load_world_graph(self) -> None:
         logging.getLogger("").debug(f"Loading world graph for {self}")
 
-        # Make sure all used events are defined
-        defined_events = []
-        defined_areas = set()
+        # Make sure all used events and areas are defined
+        defined_events: set[str] = set()
+        defined_areas: set[Area] = set()
 
         directory = "data/world"
 
@@ -200,7 +204,7 @@ class World:
                         for event_name, req_str in area_node["events"].items():
                             # Replace spaces with underscores to match logic syntax
                             event_name = event_name.replace(" ", "_")
-                            defined_events.append(event_name)
+                            defined_events.add(event_name)
                             self.add_event(event_name)
                             event_req = parse_requirement_string(req_str, self)
                             new_area.events.append(
@@ -297,19 +301,17 @@ class World:
     # Adds a new event if one with the current name doesn't exist
     def add_event(self, event_name: str) -> None:
         if event_name not in self.events:
-            id = len(self.events) + (
-                100000 * self.id
-            )  # Should be fine as long as never need more than 100000 events per world
-            self.events[event_name] = id
-            self.reverse_events[id] = event_name
+            event_id = World.event_id_counter
+            World.event_id_counter += 1
+            self.events[event_name] = event_id
+            self.reverse_events[event_id] = event_name
 
     # Adds a new area if one with the current name doesn't exist
     # Just creates the entry and doesn't set any of its properties except the id
     def add_area(self, area_name: str) -> None:
         if area_name not in self.area_ids:
-            area_id = len(self.area_ids) + (
-                100000 * self.id
-            )  # Should be fine as long as we never need more than 100000 areas per world
+            area_id = World.area_id_counter
+            World.area_id_counter += 1
             self.area_ids[area_name] = area_id
             self.areas[area_id] = Area()
             self.areas[area_id].id = area_id
