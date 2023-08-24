@@ -114,23 +114,23 @@ def patch_ac_key_boko(bzs, itemID, id):
 #     chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemID)
 
 
-# def patch_digspot_item(bzs, itemID, id):
-#     id = int(id)
-#     digSpot = next(
-#         filter(
-#             lambda x: x["name"] == "Soil" and ((x["params1"] >> 4) & 0xFF) == id,
-#             bzs["OBJ "],
-#         ),
-#         None,
-#     )
-#     if digSpot is None:
-#         print(f"ERROR: No digspot id {id} found to patch")
-#         return
+def patch_digspot_item(bzs, itemID, id):
+    id = int(id)
+    digSpot = next(
+        filter(
+            lambda x: x["name"] == "Soil" and ((x["params1"] >> 4) & 0xFF) == id,
+            bzs["OBJ "],
+        ),
+        None,
+    )
+    if digSpot is None:
+        print(f"ERROR: No digspot id {id} found to patch")
+        return
 
-#     # patch digspot to be the same as key piece digspots in all ways except it keeps it's initial sceneflag
-#     digSpot["params1"] = (digSpot["params1"] & 0xFF0) | 0xFF0B1004
+    # patch digspot to be the same as key piece digspots in all ways except it keeps it's initial sceneflag
+    digSpot["params1"] = (digSpot["params1"] & 0xFF0) | 0xFF0B1004
 
-#     digSpot["params2"] = mask_shift_set(digSpot["params2"], 0xFF, 0x18, itemID)
+    digSpot["params2"] = mask_shift_set(digSpot["params2"], 0xFF, 0x18, itemID)
 
 
 # def patch_goddess_crest(bzs, itemID, index):
@@ -568,12 +568,12 @@ class StagePatchHandler:
                                     #     patch_chandelier_item(
                                     #         roomBZS["LAY "][f"l{layer}"], itemID
                                     #     )
-                                    # elif objectName == "Soil":
-                                    #     patch_digspot_item(
-                                    #         roomBZS["LAY "][f"l{layer}"],
-                                    #         itemID,
-                                    #         objectID,
-                                    #     )
+                                    elif objectName == "Soil":
+                                        patch_digspot_item(
+                                            roomBZS["LAY "][f"l{layer}"],
+                                            itemID,
+                                            objectID,
+                                        )
                                     # elif objectName == "SwSB":
                                     #     patch_goddess_crest(
                                     #         roomBZS["LAY "][f"l{layer}"],
