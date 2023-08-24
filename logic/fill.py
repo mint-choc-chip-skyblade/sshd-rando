@@ -15,6 +15,10 @@ class GameNotBeatableError(RuntimeError):
 
 def fill_worlds(worlds: list[World]):
 
+    # Cache potential area times for each world
+    # so we cut down on exit evaluation iterations
+    cache_area_and_exit_times(worlds)
+
     # TODO: Have each world handle special cases before the fill
 
     # Place Own Worlds Restricted items first
@@ -48,9 +52,9 @@ def fill_worlds(worlds: list[World]):
     if not game_beatable(worlds):
         raise GameNotBeatableError("Game is not beatable after placing all items!")
 
-    # search = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds)
-    # search.search_worlds()
-    # search.dump_world_graph()
+    search = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds)
+    search.search_worlds()
+    search.dump_world_graph()
 
 
 def assumed_fill(
@@ -134,7 +138,6 @@ def assumed_fill(
 
             spot_to_fill.set_current_item(item_to_place)
             rollbacks.append(spot_to_fill)
-
 
 def fast_fill(items_to_place: list[Item], allowed_locations: list[Location]) -> None:
     empty_locations = [
@@ -285,6 +288,22 @@ def place_overworld_items(world: World, worlds: list[World]):
         # plandomized items that are required to get to this dungeon
         complete_item_pool = get_complete_item_pool(worlds)
         assumed_fill(worlds, overworld_items, complete_item_pool, overworld_locations)
+
+def cache_area_and_exit_times(worlds: list[World]) -> None:
+    search_with_items = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds, get_complete_item_pool(worlds))
+    search_with_items.search_worlds()
+
+    for world in worlds:
+        logging.getLogger('').debug(f'Caching times for {world}')
+        world.exit_time_cache.clear()
+        for area_id, area in world.areas.items():
+            area_times = search_with_items.area_time[area_id] if area_id in search_with_items.area_time else TOD.NONE
+            for exit_ in area.exits:
+                req = exit_.requirement
+                world.exit_time_cache[exit_] = TOD.NONE
+                for time in ALL_TODS:
+                    if time & area_times and evaluate_requirement_at_time(req, search_with_items, time, world):
+                        world.exit_time_cache[exit_] |= time
 
 def get_complete_item_pool(worlds: list[World]) -> list[Item]:
     complete_item_pool: list[Item] = []

@@ -292,8 +292,8 @@
   exits:
     Flooded Faron Woods: Nothing
     Flooded Great Tree Lower: Water_Scale
-  locations:
-    Flooded Faron Woods - Water Dragon's Reward: count(17, Group_of_Tadtones) and 'Can_Watch_Completed_Tadtones_Cutscene'
+  # locations:
+  #   Flooded Faron Woods - Water Dragon's Reward: count(17, Group_of_Tadtones) and 'Can_Watch_Completed_Tadtones_Cutscene'
 
 
 - name: Flooded Great Tree Lower

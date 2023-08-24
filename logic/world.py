@@ -48,6 +48,10 @@ class World:
 
         # Map area names to ids
         self.area_ids: dict[str, int] = {}
+        # Maps area ids to their possible times of day
+        self.area_time_cache: dict[int, int] = {}
+        # Maps area ids to their possible times of day
+        self.exit_time_cache: dict[Entrance, int] = {}
 
         self.item_pool: Counter[Item] = Counter()
         self.starting_item_pool: Counter[Item] = Counter()
@@ -332,7 +336,7 @@ class World:
 
     # Remove or add junk to the item pool until the total number of
     # items is equal to the number of currently empty locations
-    def sanitize_item_pool(self):
+    def sanitize_item_pool(self) -> None:
         num_empty_locations = len([l for l in self.get_all_item_locations() if l.is_empty()])
         while self.item_pool.total() < num_empty_locations:
             junk_item = self.get_item(get_random_junk_item_name())
@@ -354,7 +358,6 @@ class World:
                 junk_item = junk_to_remove.pop()
                 logging.getLogger('').debug(f'Removing {junk_item} from item pool in {self}')
                 self.item_pool[junk_item] -= 1
-
 
     # Adds a new event if one with the current name doesn't exist
     def add_event(self, event_name: str) -> None:
