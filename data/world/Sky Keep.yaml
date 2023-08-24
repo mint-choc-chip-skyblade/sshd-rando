@@ -2,6 +2,8 @@
 # hint_region: Sky Keep
 
 - name: Sky Keep Entryway
+  dungeon: Sky Keep
+  dungeon_starting_area: true
   exits:
     SK Meta Room: Nothing
     SK First Room South: Nothing
@@ -27,6 +29,7 @@
 
 
 - name: SK First Room South
+  dungeon: Sky Keep
   exits:
     SK First Room East: Nothing
   locations:
@@ -34,37 +37,43 @@
 
 
 - name: SK First Room East
+  dungeon: Sky Keep
   exits:
     SK First Room South: can_access(SK First Room South) # open chest
 
 
 - name: SK Skyview Room West
+  dungeon: Sky Keep
   exits:
     SK Skyview Room North: Whip and (Beetle or Bow) and Clawshots and (Bomb_Bag or Hook_Beetle or Bow) and Gust_Bellows
 
 
 - name: SK Skyview Room North
+  dungeon: Sky Keep
   exits:
     SK Skyview Room West: Nothing
 
 
 - name: SK LMF Room South
+  dungeon: Sky Keep
   exits:
     SK LMF Room North: (Gust_Bellows or logic_present_bow_switches) and Bow
 
 
 - name: SK LMF Room North
+  dungeon: Sky Keep
   exits:
     SK LMF Room South: logic_present_bow_switches and Bow
 
 
 - name: SK Earth Temple Room East
-  exits: {}
+  dungeon: Sky Keep
 
 - name: SK Earth Temple Room North
-  exits: {}
+  dungeon: Sky Keep
 
 - name: SK Dreadfuse Room South
+  dungeon: Sky Keep
   exits:
     SK Dreadfuse Room West: Can_Defeat_Scervo_And_Dreadfuse and Clawshots
   locations:
@@ -72,10 +81,10 @@
 
 
 - name: SK Dreadfuse Room West
-  exits: {}
 
 
 - name: SK Ancient Cistern Room South
+  dungeon: Sky Keep
   exits:
     SK Triforce of Courage Room: 
       Sky_Keep_Small_Key and
@@ -88,11 +97,13 @@
 
 
 - name: SK Ancient Cistern Room East
+  dungeon: Sky Keep
   exits:
     SK Ancient Cistern Room South: Nothing
 
 
 - name: SK Triforce of Courage Room
+  dungeon: Sky Keep
   exits:
     SK Ancient Cistern Room South: Nothing
   locations:
@@ -100,6 +111,7 @@
 
 
 - name: SK Fire Sanctuary Room East
+  dungeon: Sky Keep
   exits:
     SK Fire Sanctuary Room End Platform: Clawshots and (Beetle or (logic_skykeep_vineclip and Bomb_Bag))
   locations:
@@ -107,6 +119,7 @@
 
 
 - name: SK Fire Sanctuary Room End Platform
+  dungeon: Sky Keep
   exits:
     SK Triforce of Power Room: Nothing
     SK Fire Sanctuary Room West: Nothing
@@ -114,6 +127,7 @@
     
 
 - name: SK Triforce of Power Room
+  dungeon: Sky Keep
   exits:
     SK Fire Sanctuary Room End Platform: Nothing
   locations:
@@ -121,16 +135,19 @@
 
 
 - name: SK Fire Sanctuary Room West
+  dungeon: Sky Keep
   exits:
     SK Fire Sanctuary Room End Platform: can_access(SK Fire Sanctuary Room End Platform) # pull lever
 
 
 - name: SK Sandship Room West
+  dungeon: Sky Keep
   exits:
     SK Triforce of Wisdom Room: Bow and Clawshots
 
 
 - name: SK Triforce of Wisdom Room
+  dungeon: Sky Keep
   exits:
     SK Sandship Room West: Nothing
   locations:

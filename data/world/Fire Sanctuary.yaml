@@ -3,13 +3,15 @@
 
 
 - name: Fire Sanctuary First Room
-  hint_region: Fire Sanctuary
+  dungeon: Fire Sanctuary
+  dungeon_starting_area: true
   exits:
     Outside Fire Sanctuary: Nothing
     FS First Room Past Water Plant: Can_Hit_High_Water_Plant
 
 
 - name: FS First Room Past Water Plant
+  dungeon: Fire Sanctuary
   exits:
     Fire Sanctuary First Room: Can_Hit_High_Water_Plant
     FS First Outside Section: Fire_Sanctuary_Small_Key
@@ -18,12 +20,14 @@
 
 
 - name: FS First Outside Section
+  dungeon: Fire Sanctuary
   exits:
     FS First Room Past Water Plant: Nothing
     FS First Magmanos Room: Nothing
 
 
 - name: FS First Magmanos Room
+  dungeon: Fire Sanctuary
   exits:
     FS South Bridge: Nothing
     FS First Magmanos Room Balcony: Mogma_Mitts and Sword
@@ -33,6 +37,7 @@
 
 
 - name: FS First Magmanos Room Balcony
+  dungeon: Fire Sanctuary
   exits:
     FS First Magmanos Room: Mogma_Mitts
   locations:
@@ -40,6 +45,7 @@
 
 
 - name: FS South Bridge
+  dungeon: Fire Sanctuary
   exits:
     FS First Magmanos Room: Can_Defeat_Lizalfos
     FS North Bridge East Side: can_access(FS North Bridge East Side)
@@ -47,12 +53,14 @@
     
 
 - name: FS Room with First Lava River
+  dungeon: Fire Sanctuary
   exits:
     FS South Bridge: Nothing
     FS Room with First Lava River Past River: Hook_Beetle
 
 
 - name: FS Room with First Lava River Past River
+  dungeon: Fire Sanctuary
   exits:
     FS Room with First Lava River: Clawshots or (Hook_Beetle and Projectile_Item)
     FS First Trapped Mogma Room Upper: Nothing
@@ -60,6 +68,7 @@
 
 
 - name: FS First Trapped Mogma Room Upper
+  dungeon: Fire Sanctuary
   exits:
     FS Room with First Lava River Past River: Nothing
     FS First Trapped Mogma Room Lower: "'Double_Magmanos_Defeated'"
@@ -68,6 +77,7 @@
 
 
 - name: FS Water Fruit Room
+  dungeon: Fire Sanctuary
   exits:
     FS Room with First Lava River Past River: count(2, Fire_Sanctuary_Small_Key)
     FS Water Fruit Room After Frog: Sword
@@ -77,12 +87,14 @@
 
 
 - name: FS Water Fruit Room After Frog
+  dungeon: Fire Sanctuary
   exits:
     FS Water Fruit Room: can_access(FS Water Fruit Room) and Sword
     FS Magmanos Fight Room: Nothing
 
 
 - name: FS Magmanos Fight Room
+  dungeon: Fire Sanctuary
   events:
     Double Magmanos Defeated: Sword
   exits:
@@ -91,6 +103,7 @@
 
 
 - name: FS First Trapped Mogma Room Lower
+  dungeon: Fire Sanctuary
   exits:
     FS First Trapped Mogma Room Upper: "'Double_Magmanos_Defeated'"
     FS Magmanos Fight Room: "'Double_Magmanos_Defeated'"
@@ -100,6 +113,7 @@
 
 
 - name: FS Under Magmanos Fight Room
+  dungeon: Fire Sanctuary
   events:
     Move First FS Sliding Gate: Gust_Bellows and Mogma_Mitts
   exits:
@@ -109,12 +123,14 @@
 
 
 - name: FS Under Magmanos Fight Room Past Sliding Door
+  dungeon: Fire Sanctuary
   exits:
     FS Under Magmanos Fight Room: "'Move_First_FS_Sliding_Gate'"
     FS North Bridge West Side: Nothing
 
 
 - name: FS North Bridge West Side
+  dungeon: Fire Sanctuary
   exits:
     FS North Bridge Bottom: Nothing
     FS North Bridge East Side: Clawshots or logic_fs_pillar_jump
@@ -123,12 +139,14 @@
 
 
 - name: FS North Bridge Bottom
+  dungeon: Fire Sanctuary
   exits:
     FS North Bridge West Side: Clawshots
     FS North Bridge East Side: Clawshots
 
 
 - name: FS North Bridge East Side
+  dungeon: Fire Sanctuary
   exits:
     FS North Bridge Bottom: Nothing
     FS North Bridge West Side: Clawshots or logic_fs_pillar_jump
@@ -136,6 +154,7 @@
 
 
 - name: FS Second Trapped Mogma Room
+  dungeon: Fire Sanctuary
   exits:
     FS North Bridge East Side: Nothing
   locations:
@@ -144,12 +163,14 @@
     
 
 - name: FS West of Boss Door Before Lava River
+  dungeon: Fire Sanctuary
   exits:
     FS Under Magmanos Fight Room: Nothing
     FS West of Boss Door: Can_Hit_High_Water_Plant
 
 
 - name: FS West of Boss Door
+  dungeon: Fire Sanctuary
   events:
     FS Release Second Lava River: (Can_Hit_High_Water_Plant and Mogma_Mitts) or fs_lava_flow
   exits:
@@ -160,6 +181,7 @@
 
 
 - name: FS In Front of Boss Door
+  dungeon: Fire Sanctuary
   exits:
     Inside the Fire Sanctuary Statue: Nothing
     Fire Sanctuary Boss Room: Fire_Sanctuary_Boss_Key
@@ -168,17 +190,20 @@
 
 
 - name: FS In Front of Boss Door Past Bars
+  dungeon: Fire Sanctuary
   exits:
     FS Boss Key Room: Nothing
     FS In Front of Boss Door: Nothing
 
 
 - name: FS Lizalfos Fight Room
+  dungeon: Fire Sanctuary
   exits:
     FS Staircase Room Lower: Can_Defeat_Lizalfos
 
 
 - name: FS Staircase Room Lower
+  dungeon: Fire Sanctuary
   exits:
     FS Staricase Room Upper: Clawshots
     FS Lizalfos Fight Room: Nothing
@@ -187,12 +212,14 @@
 
 
 - name: FS Staricase Room Upper
+  dungeon: Fire Sanctuary
   exits:
     FS Staircase Room Lower: Nothing
     FS Boss Key Room: Nothing
 
 
 - name: FS Boss Key Room
+  dungeon: Fire Sanctuary
   exits:
     FS Staricase Room Upper: Nothing
     FS In Front of Boss Door Past Bars: Nothing

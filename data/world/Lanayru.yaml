@@ -16,6 +16,7 @@
 
 
 - name: Lanayru Mine Upper Area
+  hint_region: Lanayru Mine
   exits:
     Lanayru Mine Entry: Nothing
     Lanayru Mine Caves Platform: Clawshots
@@ -24,12 +25,14 @@
 
 
 - name: Lanayru Mine Caves Platform
+  hint_region: Lanayru Mine
   exits:
     Lanayru Mine Upper Area: Clawshots
     Lanayru Caves: Nothing
 
 
 - name: Lanayru Mine Statues Area
+  hint_region: Lanayru Mine
   exits:
     Lanayru Mine Entry: "'Blow_Down_First_Mine_Statue'"
     Lanayru Mine End: Bomb_Bag or (Hook_Beetle and 'Blow_Down_First_Mine_Statue') or logic_lanayru_mine_brakeslide or 'Endurance_Potion'
@@ -38,6 +41,7 @@
 
 
 - name: Lanayru Mine End
+  hint_region: Lanayru Mine
   events:
     Blow up Rock on Track: Nothing
     Ancient Flower Farming: Can_Hit_Timeshift_Stone # Nothing?
@@ -49,6 +53,7 @@
 
 
 - name: Lanayru Mine In Minecart
+  hint_region: Lanayru Mine
   events:
     Blow up Rock on Track: Bomb_Bag and logic_lanayru_mine_quick_bomb
   exits:
@@ -77,6 +82,7 @@
 
 
 - name: Lanayru Desert West Courtyard
+  hint_region: Lanayru Desert
   events:
     Goddess Cube in Sand Oasis: Can_Navigate_in_Oasis and Goddess_Sword
   exits:
@@ -86,6 +92,7 @@
 
 
 - name: Lanayru Desert West Wall
+  hint_region: Lanayru Desert
   events:
     Goddess Cube near Hook Beetle Fight: Goddess_Sword
     Push Down West Wall Minecart: Nothing
@@ -98,6 +105,7 @@
 
 
 - name: Sand Oasis Middle
+  hint_region: Lanayru Desert
   events:
     Goddess Cube in Sand Oasis: Goddess_Sword
     Push Down First Sand Oasis Minecart: Nothing
@@ -109,6 +117,7 @@
 
 
 - name: Sand Oasis End
+  hint_region: Lanayru Desert
   events:
     Push Down Sand Oasis Second Minecart: Nothing
   exits:
@@ -118,12 +127,14 @@
 
 
 - name: Sand Oasis Highest Platform
+  hint_region: Lanayru Desert
   exits:
     Sand Oasis End: Nothing
     Lanayru Caves: Nothing
 
 
 - name: Top of LMF
+  hint_region: Lanayru Desert
   exits:
     Lanayru Desert North: Nothing
     Lanayru Desert East: Nothing
@@ -134,6 +145,7 @@
 
 
 - name: Lanayru Desert North
+  hint_region: Lanayru Desert
   events:
     Water Node: (Bomb_Bag or Hook_Beetle) and Sword
     Ancient Flower Farming: Bomb_Bag or Hook_Beetle
@@ -163,6 +175,7 @@
 
 
 - name: Lanayru Desert Secret Passageway
+  hint_region: Lanayru Desert
   events:
     Goddess Cube in Secret Passageway: Clawshots and Goddess_Sword
   exits:
@@ -172,6 +185,7 @@
     
 
 - name: Lanayru Desert East
+  hint_region: Lanayru Desert
   exits:
     Stone Cache Statue: Nothing
     Fire Node: Nothing
@@ -197,6 +211,7 @@
 
 
 - name: Temple of Time South
+  hint_region: Lanayru Desert
   evets:
     Ancient Flower Farming: Distance_Activator # for timeshift stone
   exits:
@@ -206,6 +221,7 @@
 
 
 - name: Temple of Time West
+  hint_region: Lanayru Desert
   events:
     Ancient Flower Farming: Hook_Beetle # for timeshift stone
     # ToT West Timeshift Stone: Hook_Beetle or (logic_bomb_throws and (Bomb_Bag or (logic_cactus_bomb_whip and Whip)))
@@ -218,13 +234,15 @@
     
 
 - name: Temple of Time West Past Rubble
+  hint_region: None # TODO figure out what to do with this
   exits:
     Temple of Time Statue: Nothing
     Temple of Time West: Nothing
-    LMF Final Platform: Nothing
+    LMF End of Great Hall: Nothing
 
 
 - name: Temple of Time North Minecart Ride
+  hint_region: Lanayru Desert
   events:
     Goddess Cube at Ride near Temple of Time: Goddess_Sword
   exits:
@@ -232,6 +250,7 @@
     
 
 - name: Temple of Time North
+  hint_region: Lanayru Desert
   events:
     Ancient Flower Farming: Distance_Activator # for timeshift stone
   exits:
@@ -261,12 +280,14 @@
 
 
 - name: Lanayru Caves Past Locked Door
+  hint_region: Lanayru Caves
   exits:
     Lanayru Caves: Lanayru_Caves_Small_Key
     Ancient Harbour Highest Platform: Nothing
 
 
 - name: Lanayru Caves Past Crawlspace
+  hint_region: Lanayru Caves
   exits:
     Lanayru Caves: Bomb_Bag
     Lanayru Gorge: Nothing
@@ -275,6 +296,7 @@
 
 
 - name: Ancient Harbour Highest Platform
+  hint_region: Lanayru Sand Sea
   exits:
     Lanayru Caves Past Locked Door: Nothing
     Ancient Harbour: Clawshots
@@ -285,11 +307,12 @@
 
 
 - name: Ancient Harbour
+  hint_region: Lanayru Sand Sea
   events:
     Goddess Cube in Ancient Harbour: Clawshots and Goddess_Sword
   exits:
     Lanayru Sand Sea: Distance_Activator or Goddess_Sword or Bomb_Bag
-    Sandship Main Deck: (Distance_Activator or Goddess_Sword or Bomb_Bag) and 'Shoot_down_Sandship'
+    # Sandship Main Deck: (Distance_Activator or Goddess_Sword or Bomb_Bag) and 'Shoot_down_Sandship'
     Ancient Harbour Statue: Nothing
     Ancient Harbour Highest Platform: Clawshots
   
@@ -307,6 +330,7 @@
 
 
 - name: Skipper's Retreat Dock
+  hint_region: Lanayru Sand Sea
   exits:
     Skipper's Retreat Statue: Nothing
     Skipper's Retreat Past Rock: Clawshots and (Bomb_Bag or Hook_Beetle or (Whip and logic_cactus_bomb_whip))
@@ -314,6 +338,7 @@
 
 
 - name: Skipper's Retreat Past Rock
+  hint_region: Lanayru Sand Sea
   events:
     Goddess Cube in Skippers Retreat: Clawshots and Goddess_Sword
   exits:
@@ -324,6 +349,7 @@
 
 
 - name: Skipper's Retreat Top
+  hint_region: Lanayru Sand Sea
   exits:
     Skipper's Retreat Shack: Nothing
     Skipper's Retreat Past Rock: Nothing
@@ -333,6 +359,7 @@
 
 
 - name: Skipper's Retreat Shack
+  hint_region: Lanayru Sand Sea
   exits:
     Skipper's Retreat Top: Nothing
   locations:
@@ -340,6 +367,7 @@
 
 
 - name: Skipper's Retreat Skydive Platform
+  hint_region: Lanayru Sand Sea
   exits:
     Skipper's Retreat Dock: Nothing
   locations:
@@ -347,6 +375,7 @@
 
 
 - name: Shipyard Dock
+  hint_region: Lanayru Sand Sea
   exits:
     Shipyard Statue: Nothing
     Shipyard End of Minecart Ride: Nothing
@@ -357,11 +386,13 @@
 
 
 - name: Shipyard End of Minecart Ride
+  hint_region: Lanayru Sand Sea
   exits:
     Construction Bay: Nothing
 
 
 - name: Construction Bay
+  hint_region: Lanayru Sand Sea
   events:
     Defeat Shipyard Molderach: Gust_Bellows and Sword
   exits:
@@ -370,12 +401,13 @@
 
 
 - name: Pirate Stronghold Dock
+  hint_region: Lanayru Sand Sea
   events:
     Goddess Cube in Pirate Stronghold: Clawshots and Goddess_Sword and 'Finish_Pirate_Stronghold'
   exits:
     Pirate Stronghold Statue: Nothing
     Pirate Stronghold Side Door: Nothing
-    Pirate Stringhold Top Door: "'Finish_Pirate_Stronghold'" # What happens if you take it before finishing the minidungeon ?
+    Pirate Stronghold Top Door: "'Finish_Pirate_Stronghold'" # What happens if you take it before finishing the minidungeon ?
   locations:
     Pirate Stronghold - Rupee on West Sea Pillar: Quick_Beetle
     Pirate Stronghold - Rupee on East Sea Pillar: Quick_Beetle
@@ -388,7 +420,7 @@
     Ancient Flower Farming: Nothing
   exits:
     Pirate Stronghold Side Door: Nothing
-    Pirate Stringhold Top Door: "'Finish_Pirate_Stronghold'"
+    Pirate Stronghold Top Door: "'Finish_Pirate_Stronghold'"
   locations:
     # You can run past the Beamos without killing it. You can also run past the boko baba (in logic?) #UNSURE
     Pirate Stronghold Interior - First Chest: Nothing
@@ -402,7 +434,7 @@
     Pirate Stronghold Dock: Nothing
 
 
-- name: Pirate Stringhold Top Door
+- name: Pirate Stronghold Top Door
   exits:
     Pirate Stronghold Interior: Nothing
     Pirate Stronghold Dock: Nothing
@@ -422,6 +454,7 @@
 
 
 - name: Lanayru Gorge Beyond Bridge
+  hint_region: Lanayru Gorge
   events:
     Goddess Cube in Lanayru Gorge: Goddess_Sword
     Ancient Flower Farming: Gust_Bellows and Can_Hit_Timeshift_Stone

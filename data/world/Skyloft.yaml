@@ -11,6 +11,7 @@
 
 
 - name: Knight Academy
+  hint_region: Knight Academy
   allowed_time_of_day: All
   can_sleep: true
   events:
@@ -32,12 +33,14 @@
 
 
 - name: Knight Academy Chimney
+  hint_region: Knight Academy
   allowed_time_of_day: All
   exits:
     Knight Academy Zelda's Room: Nothing
 
 
 - name: Knight Academy Zelda's Room
+  hint_region: Knight Academy
   allowed_time_of_day: All
   exits:
     Knight Academy: Nothing
@@ -76,7 +79,7 @@
 
 - name: Upper Skyloft
   allowed_time_of_day: All
-  hint region: Upper Skyloft
+  hint_region: Upper Skyloft
   exits:
     Knight Academy Upper North Door: Nothing
     Knight Academy Upper South Door: Nothing
@@ -130,7 +133,7 @@
 
 - name: Central Skyloft
   allowed_time_of_day: All
-  hint region: Central Skyloft
+  hint_region: Central Skyloft
   events:
     Can Collect Water: Bottle
   exits:
@@ -167,6 +170,7 @@
 
 
 - name: Bird Nest
+  hint_region: Central Skyloft
   allowed_time_of_day: All
   exits:
     Central Skyloft: Nothing
@@ -187,6 +191,10 @@
     Bazaar - Goddess Chest: "'Goddess_Cube_in_Ancient_Harbour'"
     Bazaar - Upgrade to Quick Beetle: Hook_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
     Bazaar - Upgrade to Tough Beetle: Quick_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
+    Bazaar - Upgrade to Scattershot: Slingshot and 'Can_Play_Clean_Cut_Minigame'
+    Bazaar - Upgrade to Iron Bow: Bow and 'Can_Play_Clean_Cut_Minigame'
+    Bazaar - Upgrade to Sacred Bow: Bow and 'Can_Play_Clean_Cut_Minigame'
+    Bazaar - Upgrade to Big Bug Net: Bug_Net and 'Can_Play_Clean_Cut_Minigame'
 
 
 - name: Bazaar North
@@ -294,7 +302,7 @@
 
 - name: Skyloft Silent Realm
   allowed_time_of_day: All
-  hint region: Skyloft Silent Realm
+  hint_region: Skyloft Silent Realm
   exits:
     Central Skyloft: Nothing
   locations:
@@ -303,12 +311,10 @@
 
 - name: Skyloft Village
   allowed_time_of_day: All
-  hint region: Skyloft Village
+  hint_region: Skyloft Village
   events:
     Opened Shed: Night
   exits:
-    Central Skyloft: Nothing
-    Skyloft Past Waterfall Cave: logic_waterfall_cave_jump and Day
     Bertie's House: Nothing
     Sparrot's House: Nothing
     Mallara's House: Nothing
@@ -316,6 +322,8 @@
     Rupin's House: Nothing
     Batreaux's House: "'Opened_Shed' or logic_gravestone_jump"
     The Sky: Day
+    Skyloft Past Waterfall Cave Jump: logic_waterfall_cave_jump and Day
+    Central Skyloft: Nothing
   locations:
     Skyloft Village - Crystal near Pumpkin Patch: Night
 
@@ -364,7 +372,7 @@
 
 - name: Batreaux's House
   allowed_time_of_day: All
-  hint region: Batreaux's House
+  hint_region: Batreaux's House
   exits:
     Skyloft Village: Nothing
   locations:
@@ -378,10 +386,17 @@
     Batreaux - 70 Crystals Second Reward: gratitude_crystals(70)
     Batreaux - 80 Crystals: gratitude_crystals(80)
 
+
+- name: Skyloft Past Waterfall Cave Jump
+  hint_regin: None # Prevent Skyloft Past Waterfall Cave from being assigned to Skyloft Village
+  exits:
+    Skyloft Past Waterfall Cave: Nothing
+
+
 # BEEDLES SHOP
 - name: Beedle's Shop
   allowed_time_of_day: All
-  hint region: Beedle's Shop
+  hint_region: Beedle's Shop
   can_sleep: true
   exits:
     Beedle's Island: Night
@@ -389,8 +404,8 @@
   locations:
     # We don't want the pouch extensions to be the logical access to the pouch
     Beedle's Shop - 300 Rupee Item: Can_Afford_300_Rupees and (Pouch or randomized_shops != vanilla)
-    Beedle's Shop - 600 Rupee Item: Can_Afford_600_Rupees
-    Beedle's Shop - 1200 Rupee Item: Can_Afford_1200_Rupees
+    Beedle's Shop - 600 Rupee Item: Can_Afford_600_Rupees and (Pouch or randomized_shops != vanilla)
+    Beedle's Shop - 1200 Rupee Item: Can_Afford_1200_Rupees and (Pouch or randomized_shops != vanilla)
     Beedle's Shop - 800 Rupee Item: Can_Afford_800_Rupees
     Beedle's Shop - 1600 Rupee Item: Can_Afford_1600_Rupees
     Beedle's Shop - First 100 Rupee Item: Can_Afford_100_Rupees

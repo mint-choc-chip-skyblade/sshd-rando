@@ -1,6 +1,7 @@
 
 - name: Ancient Cistern Lobby
-  hint_region: Ancient Cistern
+  dungeon: Ancient Cistern
+  dungeon_starting_area: true
   events:
     Can Pull Waterfall Lever: Whip
   exits:
@@ -15,6 +16,7 @@
 
 
 - name: AC Lobby After Whip Hooks
+  dungeon: Ancient Cistern
   exits:
     AC Lobby Vines Area: Clawshots
     AC Back Room: can_access(AC Back Room)
@@ -24,6 +26,7 @@
 
 
 - name: AC Lobby Vines Area
+  dungeon: Ancient Cistern
   events:
     Can Lower Giant Statue: Whip
     Can Pull Waterfall Lever: logic_ac_lever_jump_trick
@@ -36,6 +39,7 @@
 
 
 - name: AC Behind the Waterfall
+  dungeon: Ancient Cistern
   exits:
     AC Red Pipe Basement: Whip
   locations:
@@ -43,11 +47,13 @@
 
 
 - name: AC Red Pipe Basement
+  dungeon: Ancient Cistern
   exits:
     AC Red Pipe Basement Past Skulltula: (Beetle or Bow) and Water_Scale # or Ancient Cistern - Basement Lilypad Clip Trick)
 
 
 - name: AC Red Pipe Basement Past Skulltula
+  dungeon: Ancient Cistern
   exits:
     AC Red Pipe Basement: Water_Scale
     AC Back Room: count(2, Ancient_Cistern_Small_Key)
@@ -56,12 +62,14 @@
 
 
 - name: AC Back Room
+  dungeon: Ancient Cistern
   exits:
     AC Lobby After Whip Hooks: Nothing
     AC Lobby Vines Area: Whip and Water_Scale
 
 
 - name: AC Spider Thread Area
+  dungeon: Ancient Cistern
   events:
     Can Freely Raise and Lower Statue: Whip
   exits:
@@ -71,6 +79,7 @@
     
 
 - name: AC East Rooms
+  dungeon: Ancient Cistern
   exits:
     Ancient Cistern Lobby: Nothing
   locations:
@@ -84,6 +93,7 @@
 
 # Implies statue is lowered
 - name: AC Basement
+  dungeon: Ancient Cistern
   exits:
     AC Inside Statue: Nothing
     AC Basement Rotating Vines: (Whip and (Hook_Beetle or (Bomb_Bag and logic_bomb_throws))) or Clawshots # TODO: Damage Multiplier Check?
@@ -91,12 +101,14 @@
 
 
 - name: AC Basement Rotating Vines
+  dungeon: Ancient Cistern
   exits:
     AC Basement: Nothing
     AC Basement Spider Thread: Whip
 
 
 - name: AC Basement Spider Thread
+  dungeon: Ancient Cistern
   exits:
     AC Basement: Nothing
     AC Spider Thread Area: Nothing
@@ -104,6 +116,7 @@
 
 # Implies statue is raised
 - name: AC Under the Statue
+  dungeon: Ancient Cistern
   events:
     Can_Lower_Giant_Statue: Nothing
   exits:
@@ -113,6 +126,7 @@
 
 
 - name: AC Inside Statue
+  dungeon: Ancient Cistern
   exits:
     AC Basement: "'Can_Lower_Giant_Statue'"
     Ancient Cistern Lobby: Whip
@@ -122,11 +136,12 @@
     
 
 - name: AC Platform Before Boss
+  dungeon: Ancient Cistern
   exits:
     Ancient Cistern Boss Room: Nothing
     Ancient Cistern Lobby: Nothing
 
-
+# Not explicitly part of the dungeon incase boss entrances are randomized
 - name: Ancient Cistern Boss Room
   exits:
     AC Platform Before Boss: Can_Defeat_Koloktos

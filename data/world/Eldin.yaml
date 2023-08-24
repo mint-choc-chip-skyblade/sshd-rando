@@ -41,12 +41,14 @@
 
 
 - name: Past Mogma Turf
+  hint_region: Eldin Volcano
   exits:
     Volcano East: Nothing
     Volcano Ascent: Nothing
 
 
 - name: Volcano Ascent
+  hint_region: Eldin Volcano
   exits:
     Volcano Ascent Statue: Nothing
     Eldin Silent Realm: Goddess_Harp and Dins_Power
@@ -58,6 +60,7 @@
 
 
 - name: Outside Thrill Digger Cave
+  hint_region: Eldin Volcano
   exits:
     Volcano Ascent: Nothing
     Near Temple Entrance: Nothing
@@ -68,6 +71,7 @@
 
 
 - name: Thrill Digger Cave
+  hint_region: Eldin Volcano
   events:
     Can Play Thrill Digger Minigame: Digging_Mitts
   exits:
@@ -77,6 +81,7 @@
 
 
 - name: Near Temple Entrance
+  hint_region: Eldin Volcano
   events:
     Retrieve Crystal Ball: Clawshots and Scrapper and 'Start_Sparrots_Quest'
     Goddess Cube West of Earth Temple Entrance: Digging_Mitts and Goddess_Sword
@@ -94,12 +99,14 @@
   
 
 - name: Outside Upper Eldin Cave
+  hint_region: Eldin Volcano
   exits:
     Near Temple Entrance: Clawshots or 'Beaten_Boko_Base'
     Upper Eldin Cave: Nothing
 
 
 - name: Upper Eldin Cave
+  hint_region: Eldin Volcano
   exits:
     Outside Upper Eldin Cave: Nothing
   locations:
@@ -107,6 +114,7 @@
 
 
 - name: Hot Cave
+  hint_region: Eldin Volcano
   exits:
     Volcano Summit: Fireshield_Earrings
     Sand Slide: Can_Survive_Hot_Cave
@@ -114,6 +122,7 @@
 
 
 - name: Sand Slide
+  hint_region: Eldin Volcano
   events:
     Goddess Cube on Sand Slide: Goddess_Sword
   exits:
@@ -122,6 +131,7 @@
     Eldin Volcano - Digging Spot after Vents: Digging_Mitts
 
 - name: Past Sand Slide
+  hint_region: Eldin Volcano
   exits:
     Volcano Ascent: Nothing
     Hot Cave: Nothing # Vent
@@ -131,6 +141,7 @@
 
 
 - name: Outside Lower Eldin Cave
+  hint_region: Eldin Volcano
   exits:
     Lower Eldin Cave: Nothing
     Past Sand Slide: Clawshots
@@ -139,6 +150,7 @@
 
 
 - name: Lower Eldin Cave
+  hint_region: Eldin Volcano
   exits:
     Outside Lower Eldin Cave: Nothing
   locations:
@@ -157,6 +169,7 @@
 
 
 - name: Mogma Turf
+  hint_region: Mogma Turf
   exits:
     Deep Mogma Turf: Digging_Mitts
     Volcano East: Nothing
@@ -166,6 +179,7 @@
 
 
 - name: Deep Mogma Turf
+  hint_region: Mogma Turf
   exits:
     Sand Slide Platform: Digging_Mitts
     Past Mogma Turf: Nothing
@@ -175,6 +189,7 @@
 
 
 - name: Sand Slide Platform
+  hint_region: Mogma Turf
   exits:
     Mogma Turf: Nothing
   locations:
@@ -200,6 +215,7 @@
     
 
 - name: Volcano Summit Waterfall
+  hint_region: Volcano Summit
   events:
     Can Collect Water: Bottle
     Goddess Cube in Summit Waterfall: Goddess_Sword
@@ -220,6 +236,7 @@
 
 
 - name: Outside Fire Sanctuary
+  hint_region: Volcano Summit
   events:
     Goddess Cube near Fire Sanctuary Entrance: Clawshots and Goddess_Sword
   exits:
@@ -229,6 +246,7 @@
 
  # BOKOBLIN BASE
 - name: Bokoblin Base Prison
+  hint_region: Bokoblin Base
   exits:
     Bokoblin Base Volcano East: Mogma_Mitts
   locations:
@@ -236,6 +254,7 @@
 
 
 - name: Bokoblin Base Volcano East
+  hint_region: Bokoblin Base
   events:
     Goddess Cube near Mogma Turf Entrance: Goddess_Sword
   exits:
@@ -248,6 +267,7 @@
 
 
 - name: Bokoblin Base Before Drawbridge
+  hint_region: Bokoblin Base
   exits:
     Bokoblin Base Volcano East: Nothing
     Bokoblin Base After Drawbridge: Whip and Clawshots
@@ -256,6 +276,7 @@
 
 
 - name: Bokoblin Base After Drawbridge
+  hint_region: Bokoblin Base
   exits:
     Bokoblin Base Before Drawbridge: Clawshots
     Bokoblin Base Outside Lower Eldin Cave: Nothing
@@ -264,6 +285,7 @@
 
 
 - name: Bokoblin Base Outside Lower Eldin Cave
+  hint_region: Bokoblin Base
   exits:
     Bokoblin Base Lower Eldin Cave: Nothing
     Bokoblin Base After Drawbridge: Clawshots
@@ -272,6 +294,7 @@
 
 
 - name: Bokoblin Base Lower Eldin Cave
+  hint_region: Bokoblin Base
   exits:
     Bokoblin Base Outside Lower Eldin Cave: Nothing
   locations:
@@ -279,6 +302,7 @@
 
 
 - name: Bokoblin Base Outside Earth Temple
+  hint_region: Bokoblin Base
   events:
     Goddess Cube East of Earth Temple Entrance: Goddess_Sword
     Goddess Cube West of Earth Temple Entrance: Goddess_Sword and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
@@ -291,12 +315,14 @@
     
 
 - name: Bokoblin Base Outside Upper Eldin Cave
+  hint_region: Bokoblin Base
   exits:
     Bokoblin Base Outside Earth Temple: Nothing
     Bokoblin Base Upper Eldin Cave: Nothing
 
 
 - name: Bokoblin Base Upper Eldin Cave
+  hint_region: Bokoblin Base
   exits:
     Bokoblin Base Outside Upper Eldin Cave: Nothing
   locations:
@@ -304,12 +330,14 @@
 
 
 - name: Bokoblin Base Hot Cave
+  hint_region: Bokoblin Base
   exits:
     Bokoblin Base After Drawbridge: Fireshield_Earrings and Bomb_Bag
     Bokoblin Base Summit: Fireshield_Earrings and Bomb_Bag
 
 
 - name: Bokoblin Base Summit
+  hint_region: Bokoblin Base
   events:
     Goddess Cube inside Volcano Summit: Fireshield_Earrings
   exits:
@@ -322,6 +350,7 @@
     
 
 - name: Fire Dragon's Lair
+  hint_region: Bokoblin Base
   events: 
     Beaten Boko Base: Bow or Beetle
   exits:
