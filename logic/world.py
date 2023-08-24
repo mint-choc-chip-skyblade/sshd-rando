@@ -16,6 +16,7 @@ import os
 if TYPE_CHECKING:
     from .search import Search
 
+
 class MissingInfoError(RuntimeError):
     pass
 
@@ -25,14 +26,13 @@ class WrongInfoError(RuntimeError):
 
 
 class World:
-
     event_id_counter: int = 0
     area_id_counter: int = 0
 
     def __init__(self, id_: int) -> None:
         self.id = id_
         self.config: Config = None
-        self.num_worlds: int = 0 
+        self.num_worlds: int = 0
 
         self.setting_map: SettingMap = SettingMap()
 
@@ -235,7 +235,9 @@ class World:
                             )
                             # Add the location to the dungeon if this area is part of one
                             if "dungeon" in area_node:
-                                self.get_dungeon(area_node["dungeon"]).locations.append(self.get_location(location_name))
+                                self.get_dungeon(area_node["dungeon"]).locations.append(
+                                    self.get_location(location_name)
+                                )
 
                     if "exits" in area_node:
                         for connected_area_name, req_str in area_node["exits"].items():
@@ -290,7 +292,7 @@ class World:
         self.place_plandomizer_items()
         self.place_vanilla_items()
         # TODO: Initial entrance time cache
-        
+
     def place_vanilla_items(self) -> None:
         for location in self.location_table.values():
             item = location.original_item
@@ -300,10 +302,18 @@ class World:
 
             # Small Keys, Boss Keys, Maps, Caves Key
             if (
-                (self.setting("small_keys") == "vanilla" and item.is_dungeon_small_key and location != self.get_location("Skyview Temple - Digging Spot in Crawlspace")) or
-                (self.setting("boss_keys") == "vanilla" and item.is_boss_key) or
-                (self.setting("map_mode") == "vanilla" and item.is_dungeon_map) or
-                (self.setting("lanayru_caves_key") == "vanilla" and item == self.get_item("Lanayru Caves Small Key"))
+                (
+                    self.setting("small_keys") == "vanilla"
+                    and item.is_dungeon_small_key
+                    and location
+                    != self.get_location("Skyview Temple - Digging Spot in Crawlspace")
+                )
+                or (self.setting("boss_keys") == "vanilla" and item.is_boss_key)
+                or (self.setting("map_mode") == "vanilla" and item.is_dungeon_map)
+                or (
+                    self.setting("lanayru_caves_key") == "vanilla"
+                    and item == self.get_item("Lanayru Caves Small Key")
+                )
             ):
                 location.set_current_item(item)
                 location.has_known_vanilla_item = True
@@ -317,7 +327,7 @@ class World:
                 else:
                     location.set_current_item(self.get_item("Green Rupee"))
 
-    def shuffle_entrances(self, worlds: list['World']) -> None:
+    def shuffle_entrances(self, worlds: list["World"]) -> None:
         # TODO: Actually shuffle entrances
         for area in self.areas.values():
             # Assign hint regions to all areas which don't
@@ -329,7 +339,9 @@ class World:
             # so we can lookup their region later if necessary
             for exit_ in area.exits:
                 exit_regions = exit_.parent_area.hint_regions
-                if None not in exit_regions and not exit_regions.intersection(self.dungeons.keys()):
+                if None not in exit_regions and not exit_regions.intersection(
+                    self.dungeons.keys()
+                ):
                     for dungeon in self.dungeons.values():
                         if exit_.connected_area == dungeon.starting_area:
                             dungeon.starting_entrance = exit_
@@ -337,10 +349,12 @@ class World:
     # Remove or add junk to the item pool until the total number of
     # items is equal to the number of currently empty locations
     def sanitize_item_pool(self) -> None:
-        num_empty_locations = len([l for l in self.get_all_item_locations() if l.is_empty()])
+        num_empty_locations = len(
+            [l for l in self.get_all_item_locations() if l.is_empty()]
+        )
         while self.item_pool.total() < num_empty_locations:
             junk_item = self.get_item(get_random_junk_item_name())
-            logging.getLogger('').debug(f'Added {junk_item} to item pool in {self}')
+            logging.getLogger("").debug(f"Added {junk_item} to item pool in {self}")
             self.item_pool[junk_item] += 1
 
         if self.item_pool.total() > num_empty_locations:
@@ -348,15 +362,19 @@ class World:
             for junk in all_junk_items:
                 junk_item = self.get_item(junk)
                 junk_to_remove.extend([junk_item] * self.item_pool[junk_item])
-            
-            # Make sure there's enough junk to remove 
+
+            # Make sure there's enough junk to remove
             if self.item_pool.total() - len(junk_to_remove) > num_empty_locations:
-                raise ItemPoolError(f"Not enough junk to remove from {self}'s item pool.\nEmpty Locations: {num_empty_locations} item_pool.total(): {self.item_pool.total()} junk_to_remove: {len(junk_to_remove)}")
+                raise ItemPoolError(
+                    f"Not enough junk to remove from {self}'s item pool.\nEmpty Locations: {num_empty_locations} item_pool.total(): {self.item_pool.total()} junk_to_remove: {len(junk_to_remove)}"
+                )
 
             while self.item_pool.total() > num_empty_locations:
                 random.shuffle(junk_to_remove)
                 junk_item = junk_to_remove.pop()
-                logging.getLogger('').debug(f'Removing {junk_item} from item pool in {self}')
+                logging.getLogger("").debug(
+                    f"Removing {junk_item} from item pool in {self}"
+                )
                 self.item_pool[junk_item] -= 1
 
     # Adds a new event if one with the current name doesn't exist
@@ -402,13 +420,15 @@ class World:
         return self.location_table[location_name]
 
     def get_all_item_locations(self) -> list[Location]:
-        return [location for location in self.location_table.values() if "Hint Location" not in location.types]
+        return [
+            location
+            for location in self.location_table.values()
+            if "Hint Location" not in location.types
+        ]
 
     def get_dungeon(self, dungeon_name: str) -> Dungeon:
         if dungeon_name not in self.dungeons:
-            raise WrongInfoError(
-                f'Dungeon "{dungeon_name}" is not defined for {self}'
-            )
+            raise WrongInfoError(f'Dungeon "{dungeon_name}" is not defined for {self}')
         return self.dungeons[dungeon_name]
 
     def get_macro(self, macro_name: str) -> Requirement:
@@ -426,7 +446,7 @@ class World:
             )
         return SettingGet(setting_name, self.setting_map.settings[setting_name])
 
-    def set_search_starting_properties(self, search: 'Search'):
+    def set_search_starting_properties(self, search: "Search"):
         # Set the root to have daytime
         # TODO: Change if we ever have an option to start at night
         search.area_time[self.root.id] = TOD.DAY

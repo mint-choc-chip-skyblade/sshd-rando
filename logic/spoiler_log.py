@@ -9,7 +9,6 @@ def spoiler_format_location(location: Location, longest_name_length: int) -> str
 def generate_spoiler_log(worlds: list[World]) -> None:
     filepath = "Spoiler Log.txt"
     with open(filepath, "w") as spoiler_log:
-        
         # Get name lengths for pretty formating
         longest_name_length = 0
         for sphere in worlds[0].playthrough_spheres:
@@ -29,7 +28,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                     + "\n"
                 )
             sphere_num += 1
-        
+
         # Recalculate longest name length for all locations
         for location in worlds[0].location_table.values():
             longest_name_length = max(longest_name_length, len(f"{location}"))

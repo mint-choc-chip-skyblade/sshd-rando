@@ -1,4 +1,3 @@
-
 from .settings import *
 from .item import *
 
@@ -8,35 +7,35 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from .world import World
 
-all_junk_items: list[str] = (
-    [
-        "Golden Skull",
-        "Goddess Plume",
-        "Dusk Relic",
-        "Tumbleweed",
-        "5 Bombs",
-        "Green Rupee",
-        "Blue Rupee",
-        "Red Rupee",
-        "Silver Rupee",
-        "Gold Rupee",
-        "Semi Rare Treasure",
-        "Rare Treasure",
-        "Evil Crystal",
-        "Eldin Ore",
-        "Rupoor",
-    ]
-)
+all_junk_items: list[str] = [
+    "Golden Skull",
+    "Goddess Plume",
+    "Dusk Relic",
+    "Tumbleweed",
+    "5 Bombs",
+    "Green Rupee",
+    "Blue Rupee",
+    "Red Rupee",
+    "Silver Rupee",
+    "Gold Rupee",
+    "Semi Rare Treasure",
+    "Rare Treasure",
+    "Evil Crystal",
+    "Eldin Ore",
+    "Rupoor",
+]
+
 
 class ItemPoolError(RuntimeError):
     pass
+
 
 # Generates the item pool for a single world
 # Items being placed in vanilla or restricted
 # location sets will be filtered out later. Items
 # that need to be removed and not placed anywhere
 # will be removed now
-def generate_item_pool(world: 'World') -> None:
+def generate_item_pool(world: "World") -> None:
     item_pool = (
         [
             "Bomb Bag",
@@ -149,7 +148,7 @@ def generate_item_pool(world: 'World') -> None:
 
 # Will remove items from the passed in world's item pool
 # and add them to the starting pool.
-def generate_starting_item_pool(world: 'World'):
+def generate_starting_item_pool(world: "World"):
     for item_name, count in world.setting_map.starting_inventory.items():
         item = world.get_item(item_name)
         world.starting_item_pool[item] += count
@@ -157,4 +156,6 @@ def generate_starting_item_pool(world: 'World'):
 
 
 def get_random_junk_item_name():
-    return random.choice(["Red Rupee", "Silver Rupee", "Semi Rare Treasure", "Rare Treasure"])
+    return random.choice(
+        ["Red Rupee", "Silver Rupee", "Semi Rare Treasure", "Rare Treasure"]
+    )

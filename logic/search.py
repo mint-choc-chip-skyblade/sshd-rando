@@ -2,6 +2,7 @@ from .world import *
 
 import logging
 
+
 class SearchMode:
     ACCESSIBLE_LOCATIONS: int = 0
     GAME_BEATABLE: int = 1
@@ -57,7 +58,6 @@ class Search:
                     if not root_exit.disabled:
                         self.exits_to_try.append(root_exit)
 
-
     def search_worlds(self) -> None:
         # Get all locations which currently have items to test on each iteration
         item_locations: set[LocationAccess] = set()
@@ -88,14 +88,17 @@ class Search:
             if self.search_mode == SearchMode.GENERATE_PLAYTHROUGH:
                 self.playthrough_spheres.append(set())
                 self.entrance_spheres.append([])
-            
+
             self.process_events()
             self.process_exits()
-            
+
             # For proper sphere calculation based on item locations
             # we need to keep looping over exits and events until
             # nothing new is found in them (and then process locations)
-            while self.search_mode == SearchMode.GENERATE_PLAYTHROUGH and self.new_things_found:
+            while (
+                self.search_mode == SearchMode.GENERATE_PLAYTHROUGH
+                and self.new_things_found
+            ):
                 self.new_things_found = False
                 self.process_events()
                 self.process_exits()
@@ -223,7 +226,13 @@ class Search:
                 # If this is the playthrough, and we've found all game winning items, clear the current sphere
                 # except for the last game winning items
                 if self.search_mode == SearchMode.GENERATE_PLAYTHROUGH:
-                    self.playthrough_spheres[-1] = set([loc for loc in self.playthrough_spheres[-1] if loc.current_item.is_game_winning_item])
+                    self.playthrough_spheres[-1] = set(
+                        [
+                            loc
+                            for loc in self.playthrough_spheres[-1]
+                            if loc.current_item.is_game_winning_item
+                        ]
+                    )
                     self.playthrough_spheres[-1].add(location)
                 self.is_beatable = True
 
@@ -292,7 +301,7 @@ def game_beatable(worlds: list[World]) -> bool:
 
 
 def generate_playthrough(worlds: list[World]) -> None:
-    logging.getLogger('').debug('Generating Playthrough')
+    logging.getLogger("").debug("Generating Playthrough")
     # Generate initial playthrough
     playthrough_search = Search(SearchMode.GENERATE_PLAYTHROUGH, worlds)
     playthrough_search.search_worlds()
@@ -303,7 +312,9 @@ def generate_playthrough(worlds: list[World]) -> None:
     # so we can give them back after playthrough calculation
     temp_empty_locations = {}
     # Keep track of all the locations that appear in the playthrough
-    playthrough_locations_set: set[Location] = set([l for sphere in playthrough_spheres for l in sphere])
+    playthrough_locations_set: set[Location] = set(
+        [l for sphere in playthrough_spheres for l in sphere]
+    )
 
     # Remove all items from locations that are not part of the playthrough set
     for location in [l for world in worlds for l in world.location_table.values()]:

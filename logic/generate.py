@@ -1,4 +1,3 @@
-
 from .world import World
 from .config import *
 from .settings import *
@@ -22,7 +21,10 @@ def generate() -> list[World]:
             if arg == "debug":
                 print("Starting Debug Log")
                 logging.basicConfig(
-                    filename="debug.log", encoding="utf-8", level=logging.DEBUG, filemode="w"
+                    filename="debug.log",
+                    encoding="utf-8",
+                    level=logging.DEBUG,
+                    filemode="w",
                 )
 
     get_all_settings_info()
@@ -80,7 +82,7 @@ def generate_randomizer(config: Config) -> list[World]:
     # Perform Pre-Entrance Shuffle Tasks
     for world in worlds:
         world.perform_pre_entrance_shuffle_tasks()
-    
+
     # Not actually shuffling entrances yet
     for world in worlds:
         world.shuffle_entrances(worlds)

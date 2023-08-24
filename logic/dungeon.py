@@ -2,6 +2,7 @@ from .location import Location
 from .area import Area
 from .entrance import Entrance
 
+
 class Dungeon:
     def __init__(self) -> None:
         self.name = ""

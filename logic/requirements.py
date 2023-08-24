@@ -6,6 +6,7 @@ if TYPE_CHECKING:
     from .search import Search
     from .entrance import Entrance
 
+
 class RequirementType:
     NOTHING: int = 1
     IMPOSSIBLE: int = 2
@@ -58,7 +59,9 @@ def strip_outer_parenthesis(req_str: str):
 
 # Takes a logic expression and translates it into a requirement object
 # that's evaluated during the the search algorithm
-def parse_requirement_string(req_str: str, world: 'World', area_id: int = None) -> Requirement:
+def parse_requirement_string(
+    req_str: str, world: "World", area_id: int = None
+) -> Requirement:
     # Get a new copy of an empty requirement
     req = copy.deepcopy(Requirement())
 
@@ -282,7 +285,9 @@ def parse_requirement_string(req_str: str, world: 'World', area_id: int = None) 
     return req
 
 
-def evaluate_requirement_at_time(req: Requirement, search: 'Search', time: int, world: 'World') -> bool:
+def evaluate_requirement_at_time(
+    req: Requirement, search: "Search", time: int, world: "World"
+) -> bool:
     match req.type:
         case RequirementType.NOTHING:
             return True
@@ -363,7 +368,7 @@ def evaluate_requirement_at_time(req: Requirement, search: 'Search', time: int, 
             return num_single_crystals + (num_crystal_packs * 5) >= expected_crystals
 
 
-def evaluate_exit_requirement(search: 'Search', exit_: 'Entrance') -> int:
+def evaluate_exit_requirement(search: "Search", exit_: "Entrance") -> int:
     if exit_.connected_area == None:
         # This should only be hit when splitting entrances
         # in the entrance shuffling algorithm
@@ -372,7 +377,11 @@ def evaluate_exit_requirement(search: 'Search', exit_: 'Entrance') -> int:
     parent_area = exit_.parent_area
     connected_area = exit_.connected_area
     parent_area_time = search.area_time[parent_area.id]
-    potential_exit_times = TOD.ALL if exit_ not in parent_area.world.exit_time_cache else parent_area.world.exit_time_cache[exit_]
+    potential_exit_times = (
+        TOD.ALL
+        if exit_ not in parent_area.world.exit_time_cache
+        else parent_area.world.exit_time_cache[exit_]
+    )
     connected_area_time = (
         TOD.NONE
         if connected_area.id not in search.area_time
@@ -421,14 +430,14 @@ def evaluate_exit_requirement(search: 'Search', exit_: 'Entrance') -> int:
     return eval_success
 
 
-def evaluate_event_requirement(search: 'Search', event) -> int:
+def evaluate_event_requirement(search: "Search", event) -> int:
     time = search.area_time[event.area.id]
     if evaluate_requirement_at_time(event.req, search, time, event.area.world):
         return EvalSuccess.COMPLETE
     return EvalSuccess.NONE
 
 
-def evaluate_location_requirement(search: 'Search', loc_access) -> int:
+def evaluate_location_requirement(search: "Search", loc_access) -> int:
     time = search.area_time[loc_access.area.id]
     if evaluate_requirement_at_time(
         loc_access.req, search, time, loc_access.area.world

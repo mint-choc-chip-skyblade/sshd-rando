@@ -14,7 +14,6 @@ class GameNotBeatableError(RuntimeError):
 
 
 def fill_worlds(worlds: list[World]):
-
     # Cache potential area times for each world
     # so we cut down on exit evaluation iterations
     cache_area_and_exit_times(worlds)
@@ -139,12 +138,15 @@ def assumed_fill(
             spot_to_fill.set_current_item(item_to_place)
             rollbacks.append(spot_to_fill)
 
+
 def fast_fill(items_to_place: list[Item], allowed_locations: list[Location]) -> None:
     empty_locations = [
         location for location in allowed_locations if location.is_empty()
     ]
     if len(items_to_place) > len(empty_locations):
-        print(f"WARNING: more items than locations when placing items with fast fill. Items: {len(items_to_place)} Locations: {len(empty_locations)}")
+        print(
+            f"WARNING: more items than locations when placing items with fast fill. Items: {len(items_to_place)} Locations: {len(empty_locations)}"
+        )
     random.shuffle(empty_locations)
     random.shuffle(items_to_place)
     for location in empty_locations:
@@ -152,11 +154,13 @@ def fast_fill(items_to_place: list[Item], allowed_locations: list[Location]) -> 
             break
         location.set_current_item(items_to_place.pop())
 
+
 def place_restricted_items(world: World, worlds: list[World]) -> None:
     place_own_dungeon_items(world, worlds)
     place_own_region_items(world, worlds)
     place_any_dungeon_items(world, worlds)
     place_overworld_items(world, worlds)
+
 
 def place_own_dungeon_items(world: World, worlds: list[World]):
     for world in worlds:
@@ -164,17 +168,46 @@ def place_own_dungeon_items(world: World, worlds: list[World]):
             own_dungeon_items: list[Item] = []
 
             if world.setting("small_keys") == "own_dungeon":
-                small_key = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_dungeon_small_key]), None)
+                small_key = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_dungeon_small_key
+                        ]
+                    ),
+                    None,
+                )
                 own_dungeon_items.extend([small_key] * world.item_pool[small_key])
                 world.item_pool[small_key] = 0
-            
+
             if world.setting("boss_keys") == "own_dungeon":
-                boss_key = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_boss_key]), None)
+                boss_key = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_boss_key
+                        ]
+                    ),
+                    None,
+                )
                 own_dungeon_items.extend([boss_key] * world.item_pool[boss_key])
                 world.item_pool[boss_key] = 0
 
-            if world.setting("map_mode").is_any_of("own_dungeon_restricted", "own_dungeon_unrestricted"):
-                map_item = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_dungeon_map]), None)
+            if world.setting("map_mode").is_any_of(
+                "own_dungeon_restricted", "own_dungeon_unrestricted"
+            ):
+                map_item = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_dungeon_map
+                        ]
+                    ),
+                    None,
+                )
                 own_dungeon_items.extend([map_item] * world.item_pool[map_item])
                 world.item_pool[map_item] = 0
 
@@ -188,11 +221,18 @@ def place_own_dungeon_items(world: World, worlds: list[World]):
             complete_item_pool = get_complete_item_pool(worlds)
             if world.setting("map_mode") == "own_dungeon_restricted":
                 boss_key = [item for item in own_dungeon_items if item.is_boss_key]
-                own_dungeon_items = [item for item in own_dungeon_items if not item.is_boss_key]
-                assumed_fill(worlds, own_dungeon_items, complete_item_pool, dungeon.locations)
+                own_dungeon_items = [
+                    item for item in own_dungeon_items if not item.is_boss_key
+                ]
+                assumed_fill(
+                    worlds, own_dungeon_items, complete_item_pool, dungeon.locations
+                )
                 own_dungeon_items = boss_key
-            
-            assumed_fill(worlds, own_dungeon_items, complete_item_pool, dungeon.locations)
+
+            assumed_fill(
+                worlds, own_dungeon_items, complete_item_pool, dungeon.locations
+            )
+
 
 def place_own_region_items(world: World, worlds: list[World]):
     for world in worlds:
@@ -201,17 +241,44 @@ def place_own_region_items(world: World, worlds: list[World]):
             own_region_locations: list[Location] = []
 
             if world.setting("small_keys") == "own_region":
-                small_key = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_dungeon_small_key]), None)
+                small_key = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_dungeon_small_key
+                        ]
+                    ),
+                    None,
+                )
                 own_region_items.extend([small_key] * world.item_pool[small_key])
                 world.item_pool[small_key] = 0
-            
+
             if world.setting("boss_keys") == "own_region":
-                boss_key = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_boss_key]), None)
+                boss_key = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_boss_key
+                        ]
+                    ),
+                    None,
+                )
                 own_region_items.extend([boss_key] * world.item_pool[boss_key])
                 world.item_pool[boss_key] = 0
 
             if world.setting("map_mode") == "own_region":
-                map_item = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_dungeon_map]), None)
+                map_item = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_dungeon_map
+                        ]
+                    ),
+                    None,
+                )
                 own_region_items.extend([map_item] * world.item_pool[map_item])
                 world.item_pool[map_item] = 0
 
@@ -219,13 +286,20 @@ def place_own_region_items(world: World, worlds: list[World]):
             dungeon_regions = dungeon.starting_entrance.parent_area.hint_regions
             own_region_locations.extend(dungeon.locations)
             for location in world.get_all_item_locations():
-                if any(la for la in location.loc_access_list if dungeon_regions.intersection(la.area.hint_regions)):
+                if any(
+                    la
+                    for la in location.loc_access_list
+                    if dungeon_regions.intersection(la.area.hint_regions)
+                ):
                     own_region_locations.append(location)
 
             # Get the complete item pool for all worlds incase of multiworld
             # plandomized items that are required to get to this dungeon
             complete_item_pool = get_complete_item_pool(worlds)
-            assumed_fill(worlds, own_region_items, complete_item_pool, own_region_locations)
+            assumed_fill(
+                worlds, own_region_items, complete_item_pool, own_region_locations
+            )
+
 
 def place_any_dungeon_items(world: World, worlds: list[World]):
     for world in worlds:
@@ -234,17 +308,44 @@ def place_any_dungeon_items(world: World, worlds: list[World]):
 
         for dungeon in world.dungeons.values():
             if world.setting("small_keys") == "any_dungeon":
-                small_key = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_dungeon_small_key]), None)
+                small_key = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_dungeon_small_key
+                        ]
+                    ),
+                    None,
+                )
                 any_dungeon_items.extend([small_key] * world.item_pool[small_key])
                 world.item_pool[small_key] = 0
-            
+
             if world.setting("boss_keys") == "any_dungeon":
-                boss_key = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_boss_key]), None)
+                boss_key = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_boss_key
+                        ]
+                    ),
+                    None,
+                )
                 any_dungeon_items.extend([boss_key] * world.item_pool[boss_key])
                 world.item_pool[boss_key] = 0
 
             if world.setting("map_mode") == "any_dungeon":
-                map_item = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_dungeon_map]), None)
+                map_item = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_dungeon_map
+                        ]
+                    ),
+                    None,
+                )
                 any_dungeon_items.extend([map_item] * world.item_pool[map_item])
                 world.item_pool[map_item] = 0
 
@@ -253,7 +354,10 @@ def place_any_dungeon_items(world: World, worlds: list[World]):
         # Get the complete item pool for all worlds incase of multiworld
         # plandomized items that are required to get to this dungeon
         complete_item_pool = get_complete_item_pool(worlds)
-        assumed_fill(worlds, any_dungeon_items, complete_item_pool, any_dungeon_locations)
+        assumed_fill(
+            worlds, any_dungeon_items, complete_item_pool, any_dungeon_locations
+        )
+
 
 def place_overworld_items(world: World, worlds: list[World]):
     for world in worlds:
@@ -262,23 +366,50 @@ def place_overworld_items(world: World, worlds: list[World]):
 
         for dungeon in world.dungeons.values():
             if world.setting("small_keys") == "overworld":
-                small_key = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_dungeon_small_key]), None)
+                small_key = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_dungeon_small_key
+                        ]
+                    ),
+                    None,
+                )
                 overworld_items.extend([small_key] * world.item_pool[small_key])
                 world.item_pool[small_key] = 0
-            
+
             if world.setting("boss_keys") == "overworld":
-                boss_key = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_boss_key]), None)
+                boss_key = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_boss_key
+                        ]
+                    ),
+                    None,
+                )
                 overworld_items.extend([boss_key] * world.item_pool[boss_key])
                 world.item_pool[boss_key] = 0
 
             if world.setting("map_mode") == "overworld":
-                map_item = next(iter([location.original_item for location in dungeon.locations if location.original_item.is_dungeon_map]), None)
+                map_item = next(
+                    iter(
+                        [
+                            location.original_item
+                            for location in dungeon.locations
+                            if location.original_item.is_dungeon_map
+                        ]
+                    ),
+                    None,
+                )
                 overworld_items.extend([map_item] * world.item_pool[map_item])
                 world.item_pool[map_item] = 0
-            
+
             # Remove locations from this dungeon from the overworld locations
             overworld_locations = overworld_locations.difference(dungeon.locations)
-        
+
         if world.setting("lanayru_caves_key") == "overworld":
             caves_key = world.get_item("Lanayru Caves Small Key")
             overworld_items.extend([caves_key] * world.item_pool[caves_key])
@@ -289,21 +420,31 @@ def place_overworld_items(world: World, worlds: list[World]):
         complete_item_pool = get_complete_item_pool(worlds)
         assumed_fill(worlds, overworld_items, complete_item_pool, overworld_locations)
 
+
 def cache_area_and_exit_times(worlds: list[World]) -> None:
-    search_with_items = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds, get_complete_item_pool(worlds))
+    search_with_items = Search(
+        SearchMode.ALL_LOCATIONS_REACHABLE, worlds, get_complete_item_pool(worlds)
+    )
     search_with_items.search_worlds()
 
     for world in worlds:
-        logging.getLogger('').debug(f'Caching times for {world}')
+        logging.getLogger("").debug(f"Caching times for {world}")
         world.exit_time_cache.clear()
         for area_id, area in world.areas.items():
-            area_times = search_with_items.area_time[area_id] if area_id in search_with_items.area_time else TOD.NONE
+            area_times = (
+                search_with_items.area_time[area_id]
+                if area_id in search_with_items.area_time
+                else TOD.NONE
+            )
             for exit_ in area.exits:
                 req = exit_.requirement
                 world.exit_time_cache[exit_] = TOD.NONE
                 for time in ALL_TODS:
-                    if time & area_times and evaluate_requirement_at_time(req, search_with_items, time, world):
+                    if time & area_times and evaluate_requirement_at_time(
+                        req, search_with_items, time, world
+                    ):
                         world.exit_time_cache[exit_] |= time
+
 
 def get_complete_item_pool(worlds: list[World]) -> list[Item]:
     complete_item_pool: list[Item] = []

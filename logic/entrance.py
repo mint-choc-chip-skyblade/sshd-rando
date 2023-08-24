@@ -6,22 +6,23 @@ if TYPE_CHECKING:
     from .area import Area
     from .world import World
 
+
 class Entrance:
     def __init__(
         self,
-        parent_area_: 'Area' = None,
-        connected_area_: 'Area' = None,
+        parent_area_: "Area" = None,
+        connected_area_: "Area" = None,
         requirement_: Requirement = None,
-        world_: 'World' = None,
+        world_: "World" = None,
     ) -> None:
-        self.parent_area: 'Area' = parent_area_
-        self.connected_area: 'Area' = connected_area_
-        self.original_connected_area: 'Area' = connected_area_
+        self.parent_area: "Area" = parent_area_
+        self.connected_area: "Area" = connected_area_
+        self.original_connected_area: "Area" = connected_area_
         self.type: str = None
         self.original_name: str = f"{parent_area_} -> {connected_area_}"
 
         self.requirement: Requirement = requirement_
-        self.world: 'World' = world_
+        self.world: "World" = world_
 
         # Variables used for entrance shuffling
         self.shuffled: bool = False
