@@ -99,10 +99,34 @@
     - oarc/F004r/l0
 
 - name: Bazaar - Upgrade to Quick Beetle
-  original_item: Quick Beetle
+  original_item: Progressive Beetle
+  type: Scrap Shop
+  hint: never
 
 - name: Bazaar - Upgrade to Tough Beetle
-  original_item: Tough Beetle
+  original_item: Progressive Beetle
+  type: Scrap Shop
+  hint: never
+
+- name: Bazaar - Upgrade to Scattershot
+  original_item: Progressive Slingshot
+  type: Scrap Shop
+  hint: never
+
+- name: Bazaar - Upgrade to Iron Bow
+  original_item: Progressive Bow
+  type: Scrap Shop
+  hint: never
+
+- name: Bazaar - Upgrade to Sacred Bow
+  original_item: Progressive Bow
+  type: Scrap Shop
+  hint: never
+
+- name: Bazaar - Upgrade to Big Bug Net
+  original_item: Progressive Bug Net
+  type: Scrap Shop
+  hint: never
 
 - name: Central Skyloft - Repair Gondo's Junk
   original_item: Scrapper
@@ -1676,6 +1700,7 @@
 
 - name: Skyview Spring - Ruby Tablet
   original_item: Ruby Tablet
+  goal_location: true
   type:
   Paths:
     - event/201-ForestD1/6
@@ -1757,6 +1782,7 @@
 
 - name: Earth Spring - Amber Tablet
   original_item: Amber Tablet
+  goal_location: true
   type:
   Paths:
     - event/301-MountainD1/22
@@ -1843,6 +1869,7 @@
 
 - name: Lanayru Mining Facility - Goddess Harp
   original_item: Goddess Harp
+  goal_location: true
   type:
   Paths:
     - event/400-Desert/286
@@ -1951,6 +1978,7 @@
 
 - name: Ancient Cistern - Farore's Flame
   original_item: Progressive Sword
+  goal_location: true
   type:
   Paths:
     - event/202-ForestD2/give item after beating ancient cistern
@@ -2042,6 +2070,7 @@
 
 - name: Sandship - Nayru's Flame
   original_item: Progressive Sword
+  goal_location: true
   type:
   Paths:
     - event/401-DesertD2/45
@@ -2138,6 +2167,7 @@
 
 - name: Fire Sanctuary - Din's Flame
   original_item: Progressive Sword
+  goal_location: true
   type:
   Paths:
     - event/304-MountainD2/5
@@ -2165,18 +2195,21 @@
 
 - name: Sky Keep - Triforce of Power
   original_item: Triforce of Power
+  goal_location: true
   type:
   Paths:
   - stage/D003_8/r0/l2/Item/61
 
 - name: Sky Keep - Triforce of Wisdom
   original_item: Triforce of Wisdom
+  goal_location: true
   type:
   Paths:
   - stage/D003_8/r0/l1/Item/62
 
 - name: Sky Keep - Triforce of Courage
   original_item: Triforce of Courage
+  goal_location: true
   type:
   Paths:
   - stage/D003_8/r0/l3/Item/64
