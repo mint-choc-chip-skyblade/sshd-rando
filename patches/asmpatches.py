@@ -13,7 +13,7 @@ from lz4.block import compress, decompress
 
 from patches.asmpatchhelper import NsoOffsets, SegmentHeader
 
-from sslib.fs_helpers import write_bytes, write_u32
+from sslib.fs_helpers import write_bytes, write_u32, write_u8
 from sslib.utils import write_bytes_create_dirs
 from sslib.yaml import yaml_load
 
@@ -35,6 +35,7 @@ SUBSDK_NSO_OFFSETS = NsoOffsets(
     size=subsdk1Size,
 )
 
+NSO_FLAGS_OFFSET = 0xC
 COMPRESSED_SEGMENT_NSO_OFFSET = 0x60
 
 
@@ -177,6 +178,10 @@ class ASMPatchHandler:
             len(newCompressedData),
             isLittleEndian=True,
         )
+
+        # Patch nso flags to tell consoles not to check the segment hashes.
+        # See https://switchbrew.org/wiki/NSO#Flags for more info.
+        write_u8(nso, NSO_FLAGS_OFFSET, 0x7, isLittleEndian=True)
 
         write_bytes_create_dirs(outputPath, nso.getvalue())
 
