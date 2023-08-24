@@ -32,6 +32,7 @@ class World:
         self.location_table: dict[str, Location] = {}
         self.areas: dict[int, Area] = {}
         self.macros: dict[str, Requirement] = {}
+        self.dungeons: dict[str, Dungeon] = {}
 
         # Map event names to ids and ids to names
         self.events: dict[str, int] = {}
@@ -181,6 +182,16 @@ class World:
                     if "can_sleep" in area_node:
                         new_area.can_sleep = True
 
+                    if "dungeon" in area_node:
+                        dungeon_name = area_node["dungeon"]
+                        self.add_dungeon(dungeon_name)
+                        new_area.hint_regions.add(dungeon_name)
+                        if "dungeon_starting_area" in area_node:
+                            self.get_dungeon(dungeon_name).starting_area = new_area
+                    elif "hint_region" in area_node:
+                        hint_region = area_node["hint_region"]
+                        new_area.hint_regions.add(hint_region)
+
                     if "events" in area_node:
                         for event_name, req_str in area_node["events"].items():
                             # Replace spaces with underscores to match logic syntax
@@ -208,6 +219,9 @@ class World:
                             self.get_location(location_name).loc_access_list.append(
                                 new_area.locations[-1]
                             )
+                            # Add the location to the dungeon if this area is part of one
+                            if "dungeon" in area_node:
+                                self.get_dungeon(area_node["dungeon"]).locations.append(self.get_location(location_name))
 
                     if "exits" in area_node:
                         for connected_area_name, req_str in area_node["exits"].items():
@@ -257,8 +271,24 @@ class World:
 
 
     def perform_pre_entrance_shuffle_tasks(self) -> None:
-        self.place_plandomizer_items() 
-        # TODO: Place vanilla items
+
+    def shuffle_entrances(self, worlds: list['World']) -> None:
+        # TODO: Actually shuffle entrances
+        for area in self.areas.values():
+            # Assign hint regions to all areas which don't
+            # have them at this point. This will also finalize
+            # dungeon locations.
+            assign_hint_regions(area)
+
+            # Also assign dungeons their entrance properties
+            # so we can lookup their region later if necessary
+            for exit_ in area.exits:
+                exit_regions = exit_.parent_area.hint_regions
+                if None not in exit_regions and not exit_regions.intersection(self.dungeons.keys()):
+                    for dungeon in self.dungeons.values():
+                        if exit_.connected_area == dungeon.starting_area:
+                            dungeon.starting_entrance = exit_
+
 
     # Adds a new event if one with the current name doesn't exist
     def add_event(self, event_name: str) -> None:
@@ -282,6 +312,11 @@ class World:
             if area_name == "Root":
                 self.root = self.areas[area_id]
 
+    def add_dungeon(self, dungeon_name: str) -> None:
+        if dungeon_name not in self.dungeons:
+            self.dungeons[dungeon_name] = Dungeon()
+            self.dungeons[dungeon_name].name = dungeon_name
+
     def get_item(self, item_name: str) -> Item:
         item_name = item_name.replace("_", " ").replace("'", "")
         if item_name == "Nothing":
@@ -298,6 +333,14 @@ class World:
                 f'Location "{location_name}" is not defined in location table for {self}'
             )
         return self.location_table[location_name]
+
+
+    def get_dungeon(self, dungeon_name: str) -> Dungeon:
+        if dungeon_name not in self.dungeons:
+            raise WrongInfoError(
+                f'Dungeon "{dungeon_name}" is not defined for {self}'
+            )
+        return self.dungeons[dungeon_name]
 
     def get_macro(self, macro_name: str) -> Requirement:
         macro_name = macro_name.replace("_", " ")

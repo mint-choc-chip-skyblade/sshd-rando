@@ -81,7 +81,9 @@ def generate_randomizer(config: Config) -> list[World]:
     for world in worlds:
         world.perform_pre_entrance_shuffle_tasks()
     
-    # TODO: Shuffle Entrances
+    # Not actually shuffling entrances yet
+    for world in worlds:
+        world.shuffle_entrances(worlds)
 
     start = time.process_time()
     print("Filling Worlds...")

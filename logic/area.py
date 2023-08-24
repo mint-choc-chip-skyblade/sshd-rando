@@ -30,7 +30,7 @@ class Area:
     def __init__(self) -> None:
         self.id: int = None
         self.name: str = None
-        self.hint_regions: list[str] = []
+        self.hint_regions: set[str] = set()
         self.events: list[EventAccess] = []
         self.locations: list[LocationAccess] = []
         self.exits: list[Entrance] = []
@@ -43,3 +43,54 @@ class Area:
 
     def __str__(self) -> str:
         return self.name
+
+# Will perform a search from the starting area until all 
+# possibly connected hint regions have been found.
+# These hint regions will be assigned to the starting area, 
+# as well as any areas along the way that don't have an 
+# assigned hint region. General hint regions will have priority
+# over dungeons. I.e. If an area is connected to a general 
+# hint region and a dungeon it will only be assigned to the 
+# general hint region.
+def assign_hint_regions(starting_area: Area):
+
+    hint_regions: set[str] = set()
+    already_checked: set[Area] = set()
+    unassigned_areas: set[Area] = set()
+    area_queue: list[Area] = [starting_area]
+
+    while len(area_queue) > 0:
+        area = area_queue.pop(0)
+        already_checked.add(area)
+
+        if len(area.hint_regions) > 0:
+            for region in area.hint_regions:
+                # Don't add None if we come across it
+                if region != "None":
+                    hint_regions.add(region)
+            continue
+        
+        unassigned_areas.add(area)
+        # If this area isn't assigned any hint regions
+        # add its entrances' parent areas to the queue
+        # as long as they haven't been checked yet
+        for entrance in area.entrances:
+            if entrance.parent_area not in already_checked:
+                area_queue.append(entrance.parent_area)
+
+    # Filter out dungeon regions if there are any general hint regions
+    dungeon_regions: set[str] = set([region for region in hint_regions if region in starting_area.world.dungeons])
+    if len(dungeon_regions) < len(hint_regions):
+        hint_regions = set([region for region in hint_regions if region not in dungeon_regions])
+
+    # Assign the found hint regions to all unassigned areas
+    for area in unassigned_areas:
+        area.hint_regions = hint_regions
+        logging.getLogger('').debug(f'{area} has been assigned hint region(s): {hint_regions}')
+        # Also assign any locations in this area to the dungeon
+        # if there are any dungeon regions
+        for region in hint_regions:
+            if region in dungeon_regions:
+                locations = [la.location for la in area.locations]
+                area.world.get_dungeon(region).locations.extend(locations)
+                logging.getLogger('').debug(f'{[l.name for l in locations]} have been assigned to dungeon {region}')
