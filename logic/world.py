@@ -297,6 +297,31 @@ class World:
                         if exit_.connected_area == dungeon.starting_area:
                             dungeon.starting_entrance = exit_
 
+    # Remove or add junk to the item pool until the total number of
+    # items is equal to the number of currently empty locations
+    def sanitize_item_pool(self):
+        num_empty_locations = len([l for l in self.get_all_item_locations() if l.is_empty()])
+        while self.item_pool.total() < num_empty_locations:
+            junk_item = self.get_item(get_random_junk_item_name())
+            logging.getLogger('').debug(f'Added {junk_item} to item pool in {self}')
+            self.item_pool[junk_item] += 1
+
+        if self.item_pool.total() > num_empty_locations:
+            junk_to_remove = []
+            for junk in all_junk_items:
+                junk_item = self.get_item(junk)
+                junk_to_remove.extend([junk_item] * self.item_pool[junk_item])
+            
+            # Make sure there's enough junk to remove 
+            if self.item_pool.total() - len(junk_to_remove) > num_empty_locations:
+                raise ItemPoolError(f"Not enough junk to remove from {self}'s item pool.\nEmpty Locations: {num_empty_locations} item_pool.total(): {self.item_pool.total()} junk_to_remove: {len(junk_to_remove)}")
+
+            while self.item_pool.total() > num_empty_locations:
+                random.shuffle(junk_to_remove)
+                junk_item = junk_to_remove.pop()
+                logging.getLogger('').debug(f'Removing {junk_item} from item pool in {self}')
+                self.item_pool[junk_item] -= 1
+
 
     # Adds a new event if one with the current name doesn't exist
     def add_event(self, event_name: str) -> None:
@@ -340,6 +365,8 @@ class World:
             )
         return self.location_table[location_name]
 
+    def get_all_item_locations(self) -> list[Location]:
+        return [location for location in self.location_table.values() if "Hint Location" not in location.types]
 
     def get_dungeon(self, dungeon_name: str) -> Dungeon:
         if dungeon_name not in self.dungeons:

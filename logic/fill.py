@@ -20,7 +20,7 @@ def fill_worlds(worlds: list[World]):
     # Combine all worlds' item pools and location pools
     for world in worlds:
         # Filter out hint locations
-        all_locations.extend(world.location_table.values())
+        all_locations.extend(world.get_all_item_locations())
         for item, count in world.item_pool.items():
             item_pool.extend([item] * count)
 
