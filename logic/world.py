@@ -5,12 +5,16 @@ from .location import Location
 from .area import *
 from .requirements import *
 from .item_pool import *
+from .dungeon import *
 
 from collections import Counter
+from typing import TYPE_CHECKING
 import logging
 import yaml
 import os
 
+if TYPE_CHECKING:
+    from .search import Search
 
 class MissingInfoError(RuntimeError):
     pass
@@ -357,7 +361,7 @@ class World:
             )
         return SettingGet(setting_name, self.setting_map.settings[setting_name])
 
-    def set_search_starting_properties(self, search):
+    def set_search_starting_properties(self, search: 'Search'):
         # Set the root to have daytime
         # TODO: Change if we ever have an option to start at night
         search.area_time[self.root.id] = TOD.DAY

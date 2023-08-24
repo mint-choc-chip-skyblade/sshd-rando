@@ -1,15 +1,20 @@
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .world import World
+
 class Item:
     def __init__(
         self,
         id_: int = -1,
         name_: str = None,
-        world_=None,
+        world_: 'World' = None,
         major_item_: bool = False,
         game_winning_item_: bool = False,
     ) -> None:
         self.id: int = id_
         self.name: str = name_
-        self.world = world_
+        self.world: 'World' = world_
         self.is_major_item: bool = major_item_
         self.is_game_winning_item: bool = game_winning_item_
 

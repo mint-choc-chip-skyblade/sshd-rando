@@ -2,6 +2,11 @@ from logic.location import *
 from logic.entrance import *
 from logic.requirements import TOD
 
+from typing import TYPE_CHECKING
+import logging
+
+if TYPE_CHECKING:
+    from .world import World
 
 # Helper class to link locations with their requirements
 # in a specific area. We don't want to tie requirements
@@ -10,20 +15,20 @@ from logic.requirements import TOD
 class LocationAccess:
     id_counter: int = 0
 
-    def __init__(self, location_: Location, req_: Requirement, area_) -> None:
+    def __init__(self, location_: Location, req_: Requirement, area_: 'Area') -> None:
         self.location: Location = location_
         self.req: Requirement = req_
-        self.area = area_
+        self.area: 'Area' = area_
         self.id = self.id_counter
         self.id_counter += 1
 
 
 # Same for events
 class EventAccess:
-    def __init__(self, id_: int, req_: Requirement, area_) -> None:
+    def __init__(self, id_: int, req_: Requirement, area_: 'Area') -> None:
         self.id: int = id_
         self.req: Requirement = req_
-        self.area = area_
+        self.area: 'Area' = area_
 
 
 class Area:
@@ -35,7 +40,7 @@ class Area:
         self.locations: list[LocationAccess] = []
         self.exits: list[Entrance] = []
         self.entrances: list[Entrance] = []
-        self.world = None
+        self.world: 'World' = None
         self.allowed_tod: int = (
             TOD.ALL
         )  # All by default, will set to day only if natural night connections are enforced
