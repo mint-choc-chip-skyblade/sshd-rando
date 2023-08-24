@@ -11,9 +11,9 @@ cbnz w22, 0x082c9918
 ; Get item id to give from boko and put it in the register that will become
 ; param1 of the dAcItem actor from the boko.
 .offset 0x082bbeec
-ldrb w2, [x19, #0x12C] ; load LSByte from param2
+ldrb w2, [x19, #0x12C] ; load 00 00 00 FF from param2 (the patched itemid)
 
 ; Get item id to give from boko and put it in the register that will become
 ; param1 of the dAcItem actor from the boko.
 .offset 0x082bb8f4
-ldrb w2, [x19, #0x12C] ; load LSByte from param2
+ldrb w2, [x19, #0x12C] ; load 00 00 00 FF from param2 (the patched itemid)
