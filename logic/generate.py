@@ -22,7 +22,7 @@ def generate() -> list[World]:
             if arg == "debug":
                 print("Starting Debug Log")
                 logging.basicConfig(
-                    filename="debug.log", encoding="utf-8", level=logging.DEBUG
+                    filename="debug.log", encoding="utf-8", level=logging.DEBUG, filemode="w"
                 )
 
     get_all_settings_info()
