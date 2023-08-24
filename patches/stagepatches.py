@@ -84,17 +84,16 @@ def patch_zeldas_closet(bzs, itemID, id):
     closet["params1"] = mask_shift_set(closet["params1"], 0xFF, 8, itemID)
 
 
-# needs an asm change
-# def patch_ac_key_boko(bzs, itemID, id):
-#     id = int(id, 0)
-#     boko = next(
-#         filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
-#     )
-#     if boko is None:
-#         print(f"ERROR: No boko id {id} found to patch")
-#         return
+def patch_ac_key_boko(bzs, itemID, id):
+    id = int(id, 0)
+    boko = next(
+        filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
+    )
+    if boko is None:
+        print(f"ERROR: No boko id {id} found to patch")
+        return
 
-#     boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemID)
+    boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemID)
 
 
 # def patch_heart_container(bzs, itemID):
@@ -555,13 +554,12 @@ class StagePatchHandler:
                                             itemID,
                                             objectID,
                                         )
-                                    # needs an asm change
-                                    # elif objectName == "EBc":
-                                    #     patch_ac_key_boko(
-                                    #         roomBZS["LAY "][f"l{layer}"],
-                                    #         itemID,
-                                    #         objectID,
-                                    #     )
+                                    elif objectName == "EBc":
+                                        patch_ac_key_boko(
+                                            roomBZS["LAY "][f"l{layer}"],
+                                            itemID,
+                                            objectID,
+                                        )
                                     # elif objectName == "HeartCo":
                                     #     patch_heart_container(
                                     #         roomBZS["LAY "][f"l{layer}"], itemID
