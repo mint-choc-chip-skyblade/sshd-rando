@@ -1,12 +1,12 @@
 from filepathconstants import EVENT_PATCHES_PATH, EVENT_FILES_PATH, OUTPUT_EVENT_PATH
-from patches.patchconstants import (
+from constants.patchconstants import (
     FLOW_ADD_VARIATIONS,
     SWITCH_ADD_VARIATIONS,
     PARAM1_ALIASES,
     PARAM2_ALIASES,
     DEFAULT_FLOW_TYPE_LOOKUP,
 )
-from itemconstants import *
+from constants.itemconstants import *
 from pathlib import Path
 from collections import defaultdict
 
@@ -21,7 +21,7 @@ class EventPatchHandler:
         self.eventPatches = yaml_load(EVENT_PATCHES_PATH)
         self.checkPatches = defaultdict(list)
         self.flowLabelToIndexMapping = {}
-        self.textLabels = {}
+        self.textLabelToIndexMapping = {}
 
     def handle_event_patches(self):
         for eventPath in Path(EVENT_FILES_PATH).glob("*.arc"):
@@ -36,7 +36,14 @@ class EventPatchHandler:
             ):
                 msbtFileName = eventFilePath.split("/")[-1]
                 if msbtFileName[:-5] in self.eventPatches:
-                    parsedMSBT = parseMSB(eventArc.get_file_data(eventFilePath))
+                    print(f"Patching {msbtFileName}")
+                    msbtData = eventArc.get_file_data(eventFilePath)
+
+                    if not msbtData:
+                        raise TypeError("Expected type bytes but found None")
+
+                    parsedMSBT = parseMSB(msbtData)
+                    assert len(parsedMSBT["TXT2"]) == len(parsedMSBT["ATR1"])
 
                     for patch in self.eventPatches[msbtFileName[:-5]]:
                         # handle text patches here
@@ -48,7 +55,6 @@ class EventPatchHandler:
                             )
                         elif patch["type"] == "textpatch":
                             self.text_patch(msbt=parsedMSBT, textPatch=patch)
-
                     eventArc.set_file_data(eventFilePath, buildMSB(parsedMSBT))
             for eventFilePath in filter(
                 lambda name: name[-1] == "f", eventArc.get_all_paths()
@@ -59,8 +65,14 @@ class EventPatchHandler:
                     or msbfFileName[:-5] in self.checkPatches
                     or msbfFileName == "003-ItemGet.msbf"
                 ):
-                    print(msbfFileName)
-                    parsedMSBF = parseMSB(eventArc.get_file_data(eventFilePath))
+                    print(f"Patching {msbfFileName}")
+
+                    if (eventFileData := eventArc.get_file_data(eventFilePath)) is None:
+                        raise TypeError(
+                            "Event file data incorrect. Expected bytes but found None."
+                        )
+
+                    parsedMSBF = parseMSB(eventFileData)
 
                     if msbfFileName[:-5] in self.eventPatches:
                         self.create_flow_label_to_index_mapping(
@@ -137,7 +149,7 @@ class EventPatchHandler:
                     continue
                 value = index
             if property == "param4" and not isinstance(value, int):
-                index = self.textLabels.get(value, None)
+                index = self.textLabelToIndexMapping.get(value, None)
                 if index is None:
                     print(
                         f"ERROR: text label {value} not found in file- patch: {flowAdd['name']}"
@@ -183,7 +195,7 @@ class EventPatchHandler:
                     continue
                 value = index
             if property == "param4" and not isinstance(value, int):
-                index = self.flowLabelToIndexMapping.get(value, None)
+                index = self.textLabelToIndexMapping.get(value, None)
                 if index is None:
                     print(
                         f"ERROR: text label {value} not found in file- patch: {flowPatch['name']}"
@@ -201,7 +213,7 @@ class EventPatchHandler:
                         case = self.flowLabelToIndexMapping.get(case, None)
                         assert (
                             case is not None
-                        ), f"ERROR: text label {case} not found in file- patch: {flowPatch['name']}"
+                        ), f"ERROR: flow label {case} not found in file- patch: {flowPatch['name']}"
                     msbf["FLW3"]["branch_points"][branchStart + i] = case
 
     def entry_add(self, msbf, entryAdd):
@@ -223,11 +235,12 @@ class EventPatchHandler:
 
     def text_add(self, msbt, textAdd, msbtFileName):
         index = len(msbt["TXT2"])
-        self.flowLabelToIndexMapping[textAdd["name"]] = index
+        self.textLabelToIndexMapping[textAdd["name"]] = index
         msbt["TXT2"].append(
             process_control_sequences(textAdd["text"]).encode("utf-16be")
         )
-        msbt["ATR1"].append([textAdd.get("unk1", 1), textAdd.get("unk2", 0)])
+        # had to add a 0 to the end to satisfy BuildMSB's length requirement, if text adds end up breaking, this may be overwriting a param?
+        msbt["ATR1"].append([textAdd.get("unk1", 1), textAdd.get("unk2", 0), 0])
         entryName = "%s:%d" % (msbtFileName[-3:], index)
         newEntry = {
             "name": entryName,

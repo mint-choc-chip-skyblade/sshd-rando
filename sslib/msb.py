@@ -53,7 +53,7 @@ def process_control_sequences(data: str) -> str:
 
 
 def parseMSB(data: bytes) -> ParsedMsb:
-    parsed = OrderedDict()
+    parsed = ParsedMsb(OrderedDict())
     if data[:10] == b"MsgFlwBn\xFE\xFF":
         parsed["type"] = "MsgFlwBn"
         assert data[10:16] == b"\x00\x00\x00\x03\x00\x02"

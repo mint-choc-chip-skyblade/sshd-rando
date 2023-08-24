@@ -78,7 +78,7 @@ class World:
             item_data = yaml.safe_load(item_data_file)
             for item_node in item_data:
                 # Check to make sure all neccesary fields exist
-                for field in ["id", "name"]:
+                for field in ["id", "name", "oarc"]:
                     if field not in item_node:
                         raise MissingInfoError(
                             f"item \"{item_node['name']}\" is missing the \"{field}\" field in items.yaml"
@@ -86,6 +86,7 @@ class World:
 
                 item_id = int(item_node["id"])
                 name = item_node["name"]
+                oarcs = item_node["oarc"]
                 major_item = (
                     item_node["advancement"] if "advancement" in item_node else False
                 )
@@ -99,7 +100,7 @@ class World:
 
                 stripped_name = name.replace("'", "")
                 self.item_table[stripped_name] = Item(
-                    item_id, name, self, major_item, game_winning_item
+                    item_id, name, oarcs, self, major_item, game_winning_item
                 )
                 logging.getLogger("").debug(
                     f"Processing new item {name}\tid: {item_id}"
@@ -125,13 +126,14 @@ class World:
                 types = location_node["type"] if "type" in location_node else []
                 if types == None:
                     types = []
+                patch_paths = location_node["Paths"] if "Paths" in location_node else []
                 location_id = location_id_counter
                 location_id_counter += 1
 
                 # TODO: Load the rest of the data
 
                 self.location_table[name] = Location(
-                    location_id, name, types, self, original_item
+                    location_id, name, types, self, original_item, patch_paths
                 )
                 logging.getLogger("").debug(
                     f"Processing new location {name}\tid: {location_id}\toriginal item: {original_item}"

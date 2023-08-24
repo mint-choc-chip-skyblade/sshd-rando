@@ -8,12 +8,14 @@ class Item:
         self,
         id_: int = -1,
         name_: str = None,
+        oarcs_: list[str] = [],
         world_: 'World' = None,
         major_item_: bool = False,
         game_winning_item_: bool = False,
     ) -> None:
         self.id: int = id_
         self.name: str = name_
+        self.oarcs = oarcs_
         self.world: 'World' = world_
         self.is_major_item: bool = major_item_
         self.is_game_winning_item: bool = game_winning_item_

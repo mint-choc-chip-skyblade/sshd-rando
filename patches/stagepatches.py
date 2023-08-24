@@ -1,4 +1,12 @@
-from collections import defaultdict
+from sslib.bzs import parseBzs, buildBzs, get_entry_from_bzs, get_highest_object_id
+from sslib.utils import mask_shift_set, write_bytes_create_dirs
+from sslib.yaml import yaml_load
+from sslib.u8file import U8File
+from collections import OrderedDict, defaultdict
+from pathlib import Path
+import json
+
+from constants.tboxsubtypes import tboxSubtypes
 from filepathconstants import (
     RANDO_ROOT_PATH,
     OUTPUT_STAGE_PATH,
@@ -10,10 +18,7 @@ from filepathconstants import (
     TITLE2D_SOURCE_PATH,
     TITLE2D_OUTPUT_PATH,
 )
-from pathlib import Path
-import json
-
-from patches.patchconstants import (
+from constants.patchconstants import (
     DEFAULT_SOBJ,
     DEFAULT_OBJ,
     DEFAULT_SCEN,
@@ -22,11 +27,6 @@ from patches.patchconstants import (
     STAGE_FILE_REGEX,
     ROOM_ARC_REGEX,
 )
-
-from sslib.bzs import parseBzs, buildBzs, get_entry_from_bzs, get_highest_object_id
-from sslib.u8file import U8File
-from sslib.utils import mask_shift_set, write_bytes_create_dirs
-from sslib.yaml import yaml_load
 
 
 def patch_tbox(bzs, itemID, id):
@@ -38,9 +38,14 @@ def patch_tbox(bzs, itemID, id):
     if tbox is None:
         print(f"ERROR: No tbox id {id} found to patch")
         return
+    originalItemID = tbox["anglez"] & 0x1FF
 
+    # patches item
     tbox["anglez"] = mask_shift_set(tbox["anglez"], 0x1FF, 0, itemID)
-    # obj["params1"] = mask_shift_set(obj["params1"], 0x3, 4, 0x01)
+    # patches chest type TODO: create chest type array and patch in
+    tbox["params1"] = mask_shift_set(
+        tbox["params1"], 0x3, 4, tboxSubtypes[originalItemID]
+    )
 
 
 def patch_freestanding_item(bzs, itemID, id):
@@ -79,17 +84,16 @@ def patch_zeldas_closet(bzs, itemID, id):
     closet["params1"] = mask_shift_set(closet["params1"], 0xFF, 8, itemID)
 
 
-# needs an asm change
-# def patch_ac_key_boko(bzs, itemID, id):
-#     id = int(id, 0)
-#     boko = next(
-#         filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
-#     )
-#     if boko is None:
-#         print(f"ERROR: No boko id {id} found to patch")
-#         return
+def patch_ac_key_boko(bzs, itemID, id):
+    id = int(id, 0)
+    boko = next(
+        filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
+    )
+    if boko is None:
+        print(f"ERROR: No boko id {id} found to patch")
+        return
 
-#     boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemID)
+    boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemID)
 
 
 # def patch_heart_container(bzs, itemID):
@@ -110,23 +114,23 @@ def patch_zeldas_closet(bzs, itemID, id):
 #     chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemID)
 
 
-# def patch_digspot_item(bzs, itemID, id):
-#     id = int(id)
-#     digSpot = next(
-#         filter(
-#             lambda x: x["name"] == "Soil" and ((x["params1"] >> 4) & 0xFF) == id,
-#             bzs["OBJ "],
-#         ),
-#         None,
-#     )
-#     if digSpot is None:
-#         print(f"ERROR: No digspot id {id} found to patch")
-#         return
+def patch_digspot_item(bzs, itemID, id):
+    id = int(id)
+    digSpot = next(
+        filter(
+            lambda x: x["name"] == "Soil" and ((x["params1"] >> 4) & 0xFF) == id,
+            bzs["OBJ "],
+        ),
+        None,
+    )
+    if digSpot is None:
+        print(f"ERROR: No digspot id {id} found to patch")
+        return
 
-#     # patch digspot to be the same as key piece digspots in all ways except it keeps it's initial sceneflag
-#     digSpot["params1"] = (digSpot["params1"] & 0xFF0) | 0xFF0B1004
+    # patch digspot to be the same as key piece digspots in all ways except it keeps it's initial sceneflag
+    digSpot["params1"] = (digSpot["params1"] & 0xFF0) | 0xFF0B1004
 
-#     digSpot["params2"] = mask_shift_set(digSpot["params2"], 0xFF, 0x18, itemID)
+    digSpot["params2"] = mask_shift_set(digSpot["params2"], 0xFF, 0x18, itemID)
 
 
 # def patch_goddess_crest(bzs, itemID, index):
@@ -376,6 +380,10 @@ class StagePatchHandler:
     def handle_stage_patches(self):
         for stagePath in Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ"):
             stageMatch = STAGE_FILE_REGEX.match(stagePath.parts[-1])
+
+            if not stageMatch:
+                raise TypeError("Expected type Match[str] but found None.")
+
             stage = stageMatch[1]
             layer = int(stageMatch[2])
             modifiedStagePath = Path(
@@ -389,7 +397,7 @@ class StagePatchHandler:
             if layer == 0 or removeArcs or addArcs:
                 patches = self.stagePatches.get(stage, [])
 
-                print(f"Patching {stage} layer {layer}")
+                print(f"Patching Stage: {stage}\tLayer: {layer}")
                 objectPatches = []
                 stageU8 = None
 
@@ -427,7 +435,18 @@ class StagePatchHandler:
                     elif len(layerOverridePatches) == 1:
                         if stageU8 is None:
                             stageU8 = U8File.get_parsed_U8_from_path(stagePath, True)
-                        stageBZS = parseBzs(stageU8.get_file_data("dat/stage.bzs"))
+
+                        stageU8Data = stageU8.get_file_data("dat/stage.bzs")
+
+                        if not stageU8Data:
+                            raise TypeError("Expected type bytes but found None.")
+
+                        stageBZS = parseBzs(stageU8Data)
+                        if type(stageBZS) is not OrderedDict:
+                            raise TypeError(
+                                f"Expected type OrderedDict but found {type(stageBZS)}."
+                            )
+
                         layer_override(bzs=stageBZS, patch=layerOverridePatches[0])
                         stageU8.set_file_data("dat/stage.bzs", buildBzs(stageBZS))
 
@@ -474,7 +493,19 @@ class StagePatchHandler:
                                 roomU8 = stageU8.get_parsed_U8_from_this_U8(
                                     path=roomPathMatch.group(0)
                                 )
-                                roomBZS = parseBzs(roomU8.get_file_data("dat/room.bzs"))
+                                roomU8Data = roomU8.get_file_data("dat/room.bzs")
+
+                                if not roomU8Data:
+                                    raise TypeError(
+                                        "Expected type bytes but found None."
+                                    )
+
+                                roomBZS = parseBzs(roomU8Data)
+
+                                if type(roomBZS) is not OrderedDict:
+                                    raise TypeError(
+                                        f"Expected type OrderedDict but found {type(roomBZS)}."
+                                    )
 
                                 nextID = get_highest_object_id(bzs=roomBZS) + 1
 
@@ -523,13 +554,12 @@ class StagePatchHandler:
                                             itemID,
                                             objectID,
                                         )
-                                    # needs an asm change
-                                    # elif objectName == "EBc":
-                                    #     patch_ac_key_boko(
-                                    #         roomBZS["LAY "][f"l{layer}"],
-                                    #         itemID,
-                                    #         objectID,
-                                    #     )
+                                    elif objectName == "EBc":
+                                        patch_ac_key_boko(
+                                            roomBZS["LAY "][f"l{layer}"],
+                                            itemID,
+                                            objectID,
+                                        )
                                     # elif objectName == "HeartCo":
                                     #     patch_heart_container(
                                     #         roomBZS["LAY "][f"l{layer}"], itemID
@@ -538,12 +568,12 @@ class StagePatchHandler:
                                     #     patch_chandelier_item(
                                     #         roomBZS["LAY "][f"l{layer}"], itemID
                                     #     )
-                                    # elif objectName == "Soil":
-                                    #     patch_digspot_item(
-                                    #         roomBZS["LAY "][f"l{layer}"],
-                                    #         itemID,
-                                    #         objectID,
-                                    #     )
+                                    elif objectName == "Soil":
+                                        patch_digspot_item(
+                                            roomBZS["LAY "][f"l{layer}"],
+                                            itemID,
+                                            objectID,
+                                        )
                                     # elif objectName == "SwSB":
                                     #     patch_goddess_crest(
                                     #         roomBZS["LAY "][f"l{layer}"],
@@ -592,6 +622,10 @@ class StagePatchHandler:
                 for arc in arcsNotInCache:
                     print(f"Extracting {arc}")
                     arcData = objectpackU8.get_file_data(f"oarc/{arc}.arc")
+
+                    if not arcData:
+                        raise TypeError("Expected type bytes but found None.")
+
                     (OARC_CACHE_PATH / f"{arc}.arc").write_bytes(arcData)
             else:
                 arcs = extract["oarcs"]
@@ -613,6 +647,10 @@ class StagePatchHandler:
                 for arcName in arcs:
                     print(f"Extracting {arcName}")
                     arcData = stageU8.get_file_data(f"oarc/{arcName}.arc")
+
+                    if not arcData:
+                        raise TypeError("Expected type bytes but found None.")
+
                     (OARC_CACHE_PATH / f"{arcName}.arc").write_bytes(arcData)
 
     def set_oarc_add_remove_from_patches(self):

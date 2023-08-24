@@ -267,24 +267,24 @@
   exits:
     Flooded Great Tree Upper: Nothing
     Flooded Great Tree Lower: Water_Scale
-  locations:
-    Flooded Faron Woods - Yellow Tadtone under Lilypad: Water_Scale
-    Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform: Water_Scale
-    Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform: Water_Scale
-    Flooded Faron Woods - Red Moving Tadtone near Viewing Platform: Water_Scale
-    Flooded Faron Woods - Light Blue Tadtone under Great Tree Root: Water_Scale
-    Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder: Water_Scale
-    Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder: Water_Scale
-    Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree: Water_Scale
-    Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock: Water_Scale
-    Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree: Water_Scale
-    Flooded Faron Woods - 8 Green Tadtones in West Tunnel: Water_Scale
-    Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock: Water_Scale
-    Flooded Faron Woods - 16 Dark Blue Tadtones in the South West: Water_Scale
-    Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate: Water_Scale
-    Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree: Water_Scale
-    Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree: Water_Scale
-    Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree: Water_Scale
+  # locations:
+  #   Flooded Faron Woods - Yellow Tadtone under Lilypad: Water_Scale
+  #   Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform: Water_Scale
+  #   Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform: Water_Scale
+  #   Flooded Faron Woods - Red Moving Tadtone near Viewing Platform: Water_Scale
+  #   Flooded Faron Woods - Light Blue Tadtone under Great Tree Root: Water_Scale
+  #   Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder: Water_Scale
+  #   Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder: Water_Scale
+  #   Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree: Water_Scale
+  #   Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock: Water_Scale
+  #   Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree: Water_Scale
+  #   Flooded Faron Woods - 8 Green Tadtones in West Tunnel: Water_Scale
+  #   Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock: Water_Scale
+  #   Flooded Faron Woods - 16 Dark Blue Tadtones in the South West: Water_Scale
+  #   Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate: Water_Scale
+  #   Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree: Water_Scale
+  #   Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree: Water_Scale
+  #   Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree: Water_Scale
 
 
 - name: Flooded Great Tree Upper

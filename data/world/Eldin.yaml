@@ -249,8 +249,8 @@
   hint_region: Bokoblin Base
   exits:
     Bokoblin Base Volcano East: Mogma_Mitts
-  locations:
-    Bokoblin Base - Plats' Gift: Nothing
+  # locations:
+  #   Bokoblin Base - Plats' Gift: Nothing
 
 
 - name: Bokoblin Base Volcano East
@@ -261,9 +261,9 @@
     Bokoblin Base Prison: Mogma_Mitts
     Bokoblin Base Before Drawbridge: Nothing
     Bokoblin Base After Drawbridge: Clawshots and Bomb_Bag
-  locations:
-    Bokoblin Base - Chest near Bone Bridge: Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts or Gust_Bellows
-    Bokoblin Base - Chest on Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
+  # locations:
+  #   Bokoblin Base - Chest near Bone Bridge: Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts or Gust_Bellows
+  #   Bokoblin Base - Chest on Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
 
 
 - name: Bokoblin Base Before Drawbridge
@@ -271,8 +271,8 @@
   exits:
     Bokoblin Base Volcano East: Nothing
     Bokoblin Base After Drawbridge: Whip and Clawshots
-  locations:
-    Bokoblin Base - Chest near Drawbridge: Clawshots or Can_Bypass_Boko_Base_Watch_Tower
+  # locations:
+  #   Bokoblin Base - Chest near Drawbridge: Clawshots or Can_Bypass_Boko_Base_Watch_Tower
 
 
 - name: Bokoblin Base After Drawbridge
@@ -309,9 +309,9 @@
   exits:
     Bokoblin Base Hot Cave: Nothing
     Bokoblin Base Outside Upper Eldin Cave: Nothing
-  locations:
-    Bokoblin Base - Chest East of Earth Temple Entrance: Nothing
-    Bokoblin Base - Chest West of Earth Temple Entrance: (Slingshot or Bow or Bomb_Bag or Goddess_Sword) and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
+  # locations:
+  #   Bokoblin Base - Chest East of Earth Temple Entrance: Nothing
+  #   Bokoblin Base - Chest West of Earth Temple Entrance: (Slingshot or Bow or Bomb_Bag or Goddess_Sword) and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
     
 
 - name: Bokoblin Base Outside Upper Eldin Cave
@@ -343,10 +343,10 @@
   exits:
     Bokoblin Base Hot Cave: Fireshield_Earrings
     Fire Dragon's Lair: Fireshield_Earrings
-  locations:
-    Bokoblin Base - First Chest in Volcano Summit: Fireshield_Earrings
-    Bokoblin Base - Raised Chest in Volcano Summit: Fireshield_Earrings
-    Bokoblin Base - Chest in Volcano Summit Alcove: Fireshield_Earrings and Sword
+  # locations:
+  #   Bokoblin Base - First Chest in Volcano Summit: Fireshield_Earrings
+  #   Bokoblin Base - Raised Chest in Volcano Summit: Fireshield_Earrings
+  #   Bokoblin Base - Chest in Volcano Summit Alcove: Fireshield_Earrings and Sword
     
 
 - name: Fire Dragon's Lair
@@ -355,8 +355,8 @@
     Beaten Boko Base: Bow or Beetle
   exits:
     Bokoblin Base Summit: Nothing
-  locations:
-    Bokoblin Base - Fire Dragon's Reward: "'Beaten_Boko_Base'"
+  # locations:
+  #   Bokoblin Base - Fire Dragon's Reward: "'Beaten_Boko_Base'"
 
 # Bird Staues in Eldin
 - name: Volcano Entrance Statue
