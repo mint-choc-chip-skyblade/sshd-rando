@@ -303,7 +303,13 @@ def generate_playthrough(worlds: list[World]) -> None:
     # so we can give them back after playthrough calculation
     temp_empty_locations = {}
     # Keep track of all the locations that appear in the playthrough
-    playthrough_locations_set: set[Location] = set()
+    playthrough_locations_set: set[Location] = set([l for sphere in playthrough_spheres for l in sphere])
+
+    # Remove all items from locations that are not part of the playthrough set
+    for location in [l for world in worlds for l in world.location_table.values()]:
+        if location not in playthrough_locations_set:
+            temp_empty_locations[location] = location.current_item
+            location.remove_current_item()
 
     print("Paring down playthrough")
     # Reverse the playthrough so we're paring it down from highest to lowest sphere
@@ -315,11 +321,11 @@ def generate_playthrough(worlds: list[World]) -> None:
             location.remove_current_item()
 
             # If the game is beatable, temporarily take this item away and
-            # add the location to the set of playthrough locations
+            # discard the location to the set of playthrough locations
             if game_beatable(worlds):
                 temp_empty_locations[location] = item_at_location
+                playthrough_locations_set.discard(location)
             else:
-                playthrough_locations_set.add(location)
                 location.set_current_item(item_at_location)
 
     # Now generate a new playthrough search incase some spheres were flattened
