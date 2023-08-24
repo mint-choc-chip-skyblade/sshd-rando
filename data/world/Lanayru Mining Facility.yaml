@@ -1,7 +1,7 @@
-# allowed_time_of_day: DayOnly
-# hint_region: Lanayru Mining Facility
 
 - name: LMF First Room
+  dungeon: Lanayru Mining Facility
+  dungeon_starting_area: true
   exits:
     LMF First Hub: Hook_Beetle or (Whip and logic_lmf_whip_switch)
     Top of LMF: Nothing
@@ -10,6 +10,7 @@
 
 
 - name: LMF First Hub
+  dungeon: Lanayru Mining Facility
   exits:
     LMF First Room: Nothing
     LMF Big Hub South: Nothing
@@ -18,6 +19,7 @@
 
 
 - name: LMF Key Locked Room
+  dungeon: Lanayru Mining Facility
   events:
     LMF Key Locked Room Timeshift Stone: (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)) and (Bow or Beetle or (Slingshot and logic_lmf_ceiling_precise_slingshot))
   exits:
@@ -28,6 +30,7 @@
 
 
 - name: LMF Gust Bellows Room
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Gust Bellows Room Near Exit: Can_Make_Froak_Explode
     # Does not include the entry ledge you can only jump from
@@ -37,12 +40,14 @@
 
 
 - name: LMF Gust Bellows Room Near Exit
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Big Hub Near Gust Bellows Room: Nothing
     LMF Gust Bellows Room: Nothing
 
 
 - name: LMF First West Room
+  dungeon: Lanayru Mining Facility
   exits:
     LMF First Hub: Nothing
     LMF Armos Fight Room: Gust_Bellows and Can_Defeat_Beamos
@@ -51,6 +56,7 @@
 
 
 - name: LMF Armos Fight Room
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Big Hub Past West Gate: Can_Defeat_Armos and (Distance_Activator or Goddess_Sword)
   locations:
@@ -58,6 +64,7 @@
 
 
 - name: LMF Big Hub South
+  dungeon: Lanayru Mining Facility
   exits:
     LMF First Hub: Nothing
     LMF Big Hub After Wooden Boxes: Bomb_Bag or Hook_Beetle
@@ -66,6 +73,7 @@
 
 
 - name: LMF Big Hub After Wooden Boxes
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Big Hub South: Nothing
     LMF Big Hub Near Gust Bellows Room: can_access(LMF Big Hub Near Gust Bellows Room) # Push the box
@@ -74,12 +82,14 @@
 
 
 - name: LMF Big Hub Near Gust Bellows Room
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Gust Bellows Room Near Exit: Nothing
     LMF Big Hub After Wooden Boxes: Nothing
 
 
 - name: LMF Big Hub Past West Gate
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Big Hub South: Nothing
     LMF Armos Fight Room: Nothing
@@ -89,6 +99,7 @@
 
 
 - name: LMF Sand Spike Maze
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Big Hub Near Boss Door: Gust_Bellows and Can_Hit_Timeshift_Stone_in_Minecart
   # Also includes the platform in Big Hub after the door
@@ -97,13 +108,15 @@
 
 
 - name: LMF Big Hub Near Boss Door
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Boss Room: Lanayru_Mining_Facility_Boss_Key and Can_Hit_Timeshift_Stone_in_Minecart
     LMF Big Hub Near Boss Key Room North: logic_lmf_minecart_jump and (Bomb_Bag or Beetle)
     LMF Big Hub Between Wind Gates: Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows and Can_Defeat_Beamos
 
 
-- name: LMF Big Hub Between Wind Gates 
+- name: LMF Big Hub Between Wind Gates
+  dungeon: Lanayru Mining Facility
   events:
     LMF First Wind Gate: Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows
   exits:
@@ -113,11 +126,13 @@
 
 
 - name: LMF Big Hub Near Boss Key Room South
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Boss Key Room: Gust_Bellows and Can_Hit_Timeshift_Stone_in_Minecart
 
 
 - name: LMF Boss Key Room
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Big Hub Near Boss Key Room North: Bomb_Bag and Gust_Bellows and Can_Defeat_Armos
   locations:
@@ -125,6 +140,7 @@
 
 
 - name: LMF Big Hub Near Boss Key Room North
+  dungeon: Lanayru Mining Facility
   exits:
     LMF Big Hub Between Wind Gates: Nothing
     LMF Boss Key Room: Nothing
@@ -149,10 +165,10 @@
 - name: LMF Great Hall
   exits:
     LMF Boss Room: Nothing
-    LMF Final Platform: Beetle or Bow
+    LMF End of Great Hall: Beetle or Bow
 
 
-- name: LMF Final Platform
+- name: LMF End of Great Hall
   exits:
     Temple of Time West Past Rubble: Nothing
   locations:

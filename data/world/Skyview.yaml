@@ -1,12 +1,14 @@
 
 - name: Skyview Entry
-  hint_region: Skyview Temple
+  dungeon: Skyview Temple
+  dungeon_starting_area: true
   exits:
     Deep Woods: Nothing
     SV First Room: Can_Cut_Trees_And_Logs
 
 
 - name: SV First Room
+  dungeon: Skyview Temple
   events:
     Goddess Wall Trigger: Ballad_of_the_Goddess and Goddess_Harp
   exits:
@@ -16,12 +18,14 @@
 
 
 - name: SV One Eye Room
+  dungeon: Skyview Temple
   exits:
-    First Room: Nothing
-    First Hub Center Room: Sword
+    SV First Room: Nothing
+    SV First Hub Center Room: Sword
 
 
 - name: SV First Hub Center Room
+  dungeon: Skyview Temple
   events:
     One Water Raise: "'Skyview_Raise_East_Water' or 'Skyview_Raise_West_Water'"
   exits:
@@ -34,6 +38,7 @@
 
 
 - name: SV First Hub Left Room
+  dungeon: Skyview Temple
   events:                      #                 Hit Vines                              and Can_Hit_Switch
     Skyview Raise West Water: ((Can_Hit_High_Skyview_Switches or Goddess_Sword or Whip) and Can_Hit_Switch) or (logic_skyview_spider_roll and Can_Hit_High_Skyview_Switches)
   exits:
@@ -43,6 +48,7 @@
 
 
 - name: SV First Hub Right Room Lower
+  dungeon: Skyview Temple
   events:
     Skyview Raise East Water: Can_Hit_High_Skyview_Switches
   exits:
@@ -52,6 +58,7 @@
 
 
 - name: SV First Hub Right Room Upper
+  dungeon: Skyview Temple
   exits:
     SV First Hub Right Room Lower: Nothing
     SV First Hub Center Room: Nothing
@@ -60,12 +67,13 @@
 
 
 - name: SV Second Hub Center Room
+  dungeon: Skyview Temple
   exits:
     SV First Hub Center Room: Skyview_Small_Key
     SV Miniboss Room: Distance_Activator
     SV Second Hub Left Rooms: Beetle
     SV Staldra Room: count(2, Skyview_Small_Key)
-    SV Last Room: can_access(SV Last Room Before Rope) and Can_Hit_High_Skyview_Switches
+    SV Last Room Before Rope: can_access(SV Last Room Before Rope) and Can_Hit_High_Skyview_Switches
   locations:
     Skyview Temple - Rupee in Southeast Tunnel: Beetle
     Skyview Temple - Rupee in Southwest Tunnel: Beetle
@@ -74,6 +82,7 @@
 
 
 - name: SV Miniboss Room
+  dungeon: Skyview Temple
   exits:
     SV Second Hub Center Room: Nothing
   locations:
@@ -81,6 +90,7 @@
 
 
 - name: SV Second Hub Left Rooms
+  dungeon: Skyview Temple
   exits:
     SV Second Hub Center Room: Sword and Projectile_Item # to defeat skulltulas ? Include deathwarp ?
   locations:
@@ -88,12 +98,14 @@
 
 
 - name: SV Staldra Room
+  dungeon: Skyview Temple
   exits:
     SV Second Hub Center Room: Skyview_Small_Key
     SV Last Room Before Spider: Can_Defeat_Staldra
 
 
 - name: SV Last Room Before Spider
+  dungeon: Skyview Temple
   exits:
     SV Staldra Room: Nothing
     SV Last Room Before Rope: Bomb_Bag or Goddess_Sword or Beetle or Bow or Skyview_2
@@ -102,6 +114,7 @@
 
 
 - name: SV Last Room Before Rope
+  dungeon: Skyview Temple
   exits:
     SV Last Room Before Spider: Bomb_Bag or Goddess_Sword or Beetle or Bow or Skyview_2
     SV Second Hub Center Room: Can_Hit_High_Skyview_Switches
@@ -109,6 +122,7 @@
 
 
 - name: SV Last Room After Rope
+  dungeon: Skyview Temple
   exits:
     SV Last Room Before Rope: Can_Defeat_Bokoblins
     SV Last Room Near Boss Key Chest: Long_Range_Skyward_Strike or Distance_Activator
@@ -118,6 +132,7 @@
 
 
 - name: SV Last Room Near Boss Key Chest
+  dungeon: Skyview Temple
   exits:
     SV Last Room Before Rope: Nothing
     SV Last Room After Rope: Distance_Activator

@@ -1,6 +1,6 @@
 - name: The Sky
   allowed_time_of_day: Day Only
-  hint_region: Sky
+  hint_region: The Sky
   exits:
     Faron Pillar: Emerald_Tablet
     Eldin Pillar: Ruby_Tablet
@@ -25,6 +25,7 @@
 
 
 - name: Faron Pillar
+  hint_region: None
   exits:
     Sealed Grounds: Nothing
     Sealed Grounds Statue: "'Unlock_Sealed_Grounds_Statue'"
@@ -40,6 +41,7 @@
 
 
 - name: Eldin Pillar
+  hint_region: None
   exits:
     Volcano Entrance: Nothing
     Volcano Entrance Statue: "'Unlock_Volcano_Entrance_Statue'"
@@ -51,6 +53,7 @@
 
 
 - name: Lanayru Pillar
+  hint_region: None
   exits:
     Lanayru Mine Entry: Nothing
     Lanayru Mine Entry Statue: "'Unlock_Lanayru_Mine_Entry_Statue'"
@@ -68,7 +71,7 @@
 
 
 - name: Bamboo Island
-  hint_region: Sky
+  hint_region: The Sky
   exits:
     Bamboo Island Interior: Day
     The Sky: Day
@@ -86,6 +89,7 @@
 
 
 - name: Island near Bamboo Island
+  hint_region: The Sky
   exits:
     The Sky: Day
   locations:
@@ -96,7 +100,7 @@
 - name: Beedle's Island
   hint_region: The Sky
   exits:
-    Beedle's Ship: Night
+    Beedle's Shop: Night
     The Sky: Day
   locations:
     Beedle's Island - Crystal: Night and Beetle
@@ -106,6 +110,7 @@
 
 
 - name: Northeast Island
+  hint_region: The Sky
   exits:
     The Sky: Day
   locations:
@@ -164,6 +169,7 @@
 
 
 - name: Island Closest to Faron Pillar
+  hint_region: The Sky
   exits:
     The Sky: Day
   locations:
@@ -171,6 +177,7 @@
 
 
 - name: Volcanic Island
+  hint_region: The Sky
   events:
     Mushroom Spores: Nothing
   exits:
@@ -182,6 +189,7 @@
 
 
 - name: Orielle's Island
+  hint_region: The Sky
   events:
     Talk to Orielle: Nothing
     Save Orielle: Bottle and 'Mushroom_Spores'
@@ -192,6 +200,7 @@
 
 
 - name: Fun Fun Island
+  hint_region: The Sky
   events:
     Start Dodohs Quest: Nothing
     Can Play Fun Fun Island Minigame: "'Retrieve_Party_Wheel'"
@@ -204,6 +213,7 @@
 
 
 - name: Triple Island
+  hint_region: The Sky
   exits:
     The Sky: Day
   locations:
@@ -214,7 +224,7 @@
 # TODO: Check day/night stuff
 - name: The Thunderhead
   allowed_time_of_day: Day Only
-  hint_region: Thunderhead
+  hint_region: The Thunderhead
   locations:
     The Thunderhead - Song from Levias: Spiral_Charge and Scrapper and Sword and 'Pick_up_Levias_Soup'
   exits:
@@ -226,6 +236,7 @@
 
 
 - name: Isle of Songs
+  hint_region: The Thunderhead
   exits:
     The Thunderhead: Day
     Isle of Songs Interior: Sword
@@ -244,6 +255,7 @@
 
 
 - name: Thunderhead East Island
+  hint_region: The Thunderhead
   exits:
     The Thunderhead: Day
   locations:
@@ -252,6 +264,7 @@
 
 
 - name: Mogma Mitts Island
+  hint_region: The Thunderhead
   exits:
     The Thunderhead: Day
   locations:
@@ -260,6 +273,7 @@
 
 
 - name: Bug Heaven
+  hint_region: The Thunderhead
   exits:
     The Thunderhead: Day
   locations:
