@@ -105,7 +105,7 @@ class World:
                     f"Processing new item {name}\tid: {item_id}"
                 )
 
-    # Read checks.yaml and store all necessary data in a dict
+    # Read locations.yaml and store all necessary data in a dict
     # for this world
     def build_location_table(self) -> None:
         logging.getLogger("").debug(f"Building Location Table for {self}")
@@ -271,14 +271,45 @@ class World:
             self.get_item("Game Beatable")
         )
 
-
     def place_plandomizer_items(self) -> None:
         for location, item in self.plandomizer_locations.items():
             location.set_current_item(item)
             self.item_pool[item] -= 1
 
-
     def perform_pre_entrance_shuffle_tasks(self) -> None:
+        # Plandomizer items and vanilla items must
+        # be placed before entrances are shuffled
+        # to ensure we create a valid world graph
+        # with the pre-planned item placements
+        self.place_plandomizer_items()
+        self.place_vanilla_items()
+        # TODO: Initial entrance time cache
+        
+    def place_vanilla_items(self) -> None:
+        for location in self.location_table.values():
+            item = location.original_item
+
+            if item == None:
+                continue
+
+            # Small Keys, Boss Keys, Maps, Caves Key
+            if (
+                (self.setting("small_keys") == "vanilla" and item.is_dungeon_small_key and location != self.get_location("Skyview Temple - Digging Spot in Crawlspace")) or
+                (self.setting("boss_keys") == "vanilla" and item.is_boss_key) or
+                (self.setting("map_mode") == "vanilla" and item.is_dungeon_map) or
+                (self.setting("lanayru_caves_key") == "vanilla" and item == self.get_item("Lanayru Caves Small Key"))
+            ):
+                location.set_current_item(item)
+                location.has_known_vanilla_item = True
+                self.item_pool[item] -= 1
+
+            # Scrap Shop Upgrades
+            if "Scrap Shop" in location.types:
+                if self.setting("scrap_shop_upgrades") == "off":
+                    location.set_current_item(item)
+                    self.item_pool[item] -= 1
+                else:
+                    location.set_current_item(self.get_item("Green Rupee"))
 
     def shuffle_entrances(self, worlds: list['World']) -> None:
         # TODO: Actually shuffle entrances

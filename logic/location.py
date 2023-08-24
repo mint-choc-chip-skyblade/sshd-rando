@@ -19,6 +19,7 @@ class Location:
         self.world: 'World' = world_
         self.original_item: Item = original_item_
         self.current_item: Item = None
+        self.has_known_vanilla_item: bool = False
         self.loc_access_list: list['LocationAccess'] = []
 
     def __str__(self) -> str:

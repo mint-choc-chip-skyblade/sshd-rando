@@ -18,6 +18,10 @@ class Item:
         self.is_major_item: bool = major_item_
         self.is_game_winning_item: bool = game_winning_item_
 
+        self.is_dungeon_small_key: bool = "Small Key" in name_ and name_ != "Lanayru Caves Small Key"
+        self.is_boss_key: bool = "Boss Key" in name_
+        self.is_dungeon_map: bool = "Map" in name_
+
     def __str__(self) -> str:
         return self.name if self.world.num_worlds == 1 else f"{self.name} [W{self.world.id + 1}]"
     
