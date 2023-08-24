@@ -105,13 +105,13 @@ def patch_ac_key_boko(bzs, itemID, id):
 #     hc["params1"] = mask_shift_set(hc["params1"], 0xFF, 16, itemID)
 
 
-# def patch_chandelier_item(bzs, itemID):
-#     chandelier = next(filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None)
-#     if chandelier is None:
-#         print(f"ERROR: No chandelier found to patch")
-#         return
+def patch_chandelier_item(bzs, itemID):
+    chandelier = next(filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None)
+    if chandelier is None:
+        print(f"ERROR: No chandelier found to patch")
+        return
 
-#     chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemID)
+    chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemID)
 
 
 def patch_digspot_item(bzs, itemID, id):
@@ -564,10 +564,10 @@ class StagePatchHandler:
                                     #     patch_heart_container(
                                     #         roomBZS["LAY "][f"l{layer}"], itemID
                                     #     )
-                                    # elif objectName == "Chandel":
-                                    #     patch_chandelier_item(
-                                    #         roomBZS["LAY "][f"l{layer}"], itemID
-                                    #     )
+                                    elif objectName == "Chandel":
+                                        patch_chandelier_item(
+                                            roomBZS["LAY "][f"l{layer}"], itemID
+                                        )
                                     elif objectName == "Soil":
                                         patch_digspot_item(
                                             roomBZS["LAY "][f"l{layer}"],
