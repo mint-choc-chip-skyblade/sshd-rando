@@ -20,6 +20,7 @@ F000: # Skyloft
     type: oarcadd
     oarc: Shinkan_motion
     destlayer: 6
+
   # F000 oarcdeletes
   - name: unnecessary oarcs
     type: oarcdelete
@@ -89,6 +90,7 @@ F000: # Skyloft
     type: oarcdelete
     oarc: SoMother # wryna is never outside anymore
     layer: 6
+
   # F000 objadds
   - name: Owlan on layer 6
     type: objadd
@@ -141,6 +143,7 @@ F000: # Skyloft
       anglez: 951 # Untrigger on getting sword pedestal checks
       id: 0xFFFF
       name: ScChang
+
   # F000 objdeletes
   - name: Trial # trial object
     type: objdelete
@@ -421,6 +424,364 @@ F000: # Skyloft
       layer: 6
       entrance: 52
 
+  # Move Loose Crystal checks to night layers
+  ## Crystal on West Cliff
+  - name: Move crystal on West Cliff to layer 2
+    type: objmove
+    id: 0xFCA2
+    layer: 0
+    destlayer: 2
+    room: 0
+    objtype: OBJ
+  - name: Add crystal on West Cliff to layer 5
+    type: objadd
+    room: 0
+    layer: 5
+    id: 0xFCA2
+    objtype: OBJ
+    object:
+      params1: 0xFF0DC630
+      params2: 0xFFFFFFFF
+      posx: -4045.677490234375
+      posy: -1795.4300537109375
+      posz: -904.0946044921875
+      id: 0xFCA2
+      name: Item
+  - name: Add crystal on West Cliff to layer 7
+    type: objadd
+    room: 0
+    layer: 7
+    id: 0xFCA2
+    objtype: OBJ
+    object:
+      params1: 0xFF0DC630
+      params2: 0xFFFFFFFF
+      posx: -4045.677490234375
+      posy: -1795.4300537109375
+      posz: -904.0946044921875
+      id: 0xFCA2
+      name: Item
+  - name: Add crystal on West Cliff to layer 9
+    type: objadd
+    room: 0
+    layer: 9
+    id: 0xFCA2
+    objtype: OBJ
+    object:
+      params1: 0xFF0DC630
+      params2: 0xFFFFFFFF
+      posx: -4045.677490234375
+      posy: -1795.4300537109375
+      posz: -904.0946044921875
+      id: 0xFCA2
+      name: Item
+
+  ## Crystal between Wooden Planks
+  - name: Move crystal between Wooden Planks to layer 2
+    type: objmove
+    id: 0xFCA1
+    layer: 0
+    destlayer: 2
+    room: 0
+    objtype: OBJ
+  - name: Add crystal between Wooden Planks to layer 5
+    type: objadd
+    room: 0
+    layer: 5
+    id: 0xFCA1
+    objtype: OBJ
+    object:
+      params1: 0xFF0DC230
+      params2: 0xFFFFFFFF
+      posx: -1796.03759765625
+      posy: 402.030029296875
+      posz: -5601.87255859375
+      id: 0xFCA1
+      name: Item
+  - name: Add crystal between Wooden Planks to layer 7
+    type: objadd
+    room: 0
+    layer: 7
+    id: 0xFCA1
+    objtype: OBJ
+    object:
+      params1: 0xFF0DC230
+      params2: 0xFFFFFFFF
+      posx: -1796.03759765625
+      posy: 402.030029296875
+      posz: -5601.87255859375
+      id: 0xFCA1
+      name: Item
+  - name: Add crystal between Wooden Planks to layer 9
+    type: objadd
+    room: 0
+    layer: 9
+    id: 0xFCA1
+    objtype: OBJ
+    object:
+      params1: 0xFF0DC230
+      params2: 0xFFFFFFFF
+      posx: -1796.03759765625
+      posy: 402.030029296875
+      posz: -5601.87255859375
+      id: 0xFCA1
+      name: Item
+
+  ## Crystal after Waterfall Cave
+  - name: Move crystal after waterfall cave to layer 2
+    type: objmove
+    id: 0xFCA0
+    layer: 0
+    destlayer: 2
+    room: 0
+    objtype: OBJ
+  - name: Add crystal after waterfall cave to layer 5
+    type: objadd
+    room: 0
+    layer: 5
+    id: 0xFCA0
+    objtype: OBJ
+    object:
+      params1: 0xFF0DBE30
+      params2: 0xFFFFFFFF
+      posx: 4273.537109375
+      posy: -3157.320068359375
+      posz: -4997.53173828125
+      id: 0xFCA0
+      name: Item
+  - name: Add crystal after waterfall cave to layer 7
+    type: objadd
+    room: 0
+    layer: 7
+    id: 0xFCA0
+    objtype: OBJ
+    object:
+      params1: 0xFF0DBE30
+      params2: 0xFFFFFFFF
+      posx: 4273.537109375
+      posy: -3157.320068359375
+      posz: -4997.53173828125
+      id: 0xFCA0
+      name: Item
+  - name: Add crystal after waterfall cave to layer 9
+    type: objadd
+    room: 0
+    layer: 9
+    id: 0xFCA0
+    objtype: OBJ
+    object:
+      params1: 0xFF0DBE30
+      params2: 0xFFFFFFFF
+      posx: 4273.537109375
+      posy: -3157.320068359375
+      posz: -4997.53173828125
+      id: 0xFCA0
+      name: Item
+
+  ## Crystal in Loftwing Prison
+  - name: Move crystal in loftwing prison to layer 2
+    type: objmove
+    id: 0xFC9F
+    layer: 0
+    destlayer: 2
+    room: 0
+    objtype: OBJ
+  - name: Add crystal in loftwing prison to layer 5
+    type: objadd
+    room: 0
+    layer: 5
+    id: 0xFC9F
+    objtype: OBJ
+    object:
+      params1: 0xFF0DBA30
+      params2: 0xFFFFFFFF
+      posx: 9222.8779296875
+      posy: -3717.320068359375
+      posz: -4296.15576171875
+      id: 0xFC9F
+      name: Item
+  - name: Add crystal in loftwing prison to layer 7
+    type: objadd
+    room: 0
+    layer: 7
+    id: 0xFC9F
+    objtype: OBJ
+    object:
+      params1: 0xFF0DBA30
+      params2: 0xFFFFFFFF
+      posx: 9222.8779296875
+      posy: -3717.320068359375
+      posz: -4296.15576171875
+      id: 0xFC9F
+      name: Item
+  - name: Add crystal in loftwing prison to layer 9
+    type: objadd
+    room: 0
+    layer: 9
+    id: 0xFC9F
+    objtype: OBJ
+    object:
+      params1: 0xFF0DBA30
+      params2: 0xFFFFFFFF
+      posx: 9222.8779296875
+      posy: -3717.320068359375
+      posz: -4296.15576171875
+      id: 0xFC9F
+      name: Item
+
+  ## Crystal on Waterfall Island
+  - name: Move crystal on waterfall island to layer 2
+    type: objmove
+    id: 0xFC9E
+    layer: 0
+    destlayer: 2
+    room: 0
+    objtype: OBJ
+  - name: Add crystal on waterfall island to layer 5
+    type: objadd
+    room: 0
+    layer: 5
+    id: 0xFC9E
+    objtype: OBJ
+    object:
+      params1: 0xFF0DB630
+      params2: 0xFFFFFFFF
+      posx: 9407.48828125
+      posy: 4130.65771484375
+      posz: -6259.48291015625
+      id: 0xFC9E
+      name: Item
+  - name: Add crystal on waterfall island to layer 7
+    type: objadd
+    room: 0
+    layer: 7
+    id: 0xFC9E
+    objtype: OBJ
+    object:
+      params1: 0xFF0DB630
+      params2: 0xFFFFFFFF
+      posx: 9407.48828125
+      posy: 4130.65771484375
+      posz: -6259.48291015625
+      id: 0xFC9E
+      name: Item
+  - name: Add crystal on waterfall island to layer 9
+    type: objadd
+    room: 0
+    layer: 9
+    id: 0xFC9E
+    objtype: OBJ
+    object:
+      params1: 0xFF0DB630
+      params2: 0xFFFFFFFF
+      posx: 9407.48828125
+      posy: 4130.65771484375
+      posz: -6259.48291015625
+      id: 0xFC9E
+      name: Item
+
+  ## Crystal on Light Tower
+  - name: Move crystal on light tower to layer 2
+    type: objmove
+    id: 0xFC9C
+    layer: 0
+    destlayer: 2
+    room: 0
+    objtype: OBJ
+  - name: Add crystal on light tower to layer 5
+    type: objadd
+    room: 0
+    layer: 5
+    id: 0xFC9C
+    objtype: OBJ
+    object:
+      params1: 0xFF0DAA30
+      params2: 0xFFFFFFFF
+      posx: 3651.93896484375
+      posy: 487.5
+      posz: 5633.90869140625
+      id: 0xFC9C
+      name: Item
+  - name: Add crystal on light tower to layer 7
+    type: objadd
+    room: 0
+    layer: 7
+    id: 0xFC9C
+    objtype: OBJ
+    object:
+      params1: 0xFF0DAA30
+      params2: 0xFFFFFFFF
+      posx: 3651.93896484375
+      posy: 487.5
+      posz: 5633.90869140625
+      id: 0xFC9C
+      name: Item
+  - name: Add crystal on light tower to layer 9
+    type: objadd
+    room: 0
+    layer: 9
+    id: 0xFC9C
+    objtype: OBJ
+    object:
+      params1: 0xFF0DAA30
+      params2: 0xFFFFFFFF
+      posx: 3651.93896484375
+      posy: 487.5
+      posz: 5633.90869140625
+      id: 0xFC9C
+      name: Item
+
+  ## Crystal near Pumpkin Patch
+  - name: Move crystal near pumpkin patch to layer 2
+    type: objmove
+    id: 0xFC9D
+    layer: 0
+    destlayer: 2
+    room: 0
+    objtype: OBJ
+  - name: Add crystal near pumpkin patch to layer 5
+    type: objadd
+    room: 0
+    layer: 5
+    id: 0xFC9D
+    objtype: OBJ
+    object:
+      params1: 0xFF0DB230
+      params2: 0xFFFFFFFF
+      posx: 11085.0029296875
+      posy: 1121.711669921875
+      posz: -1688.4466552734375
+      id: 0xFC9D
+      name: Item
+  - name: Add crystal near pumpkin patch to layer 7
+    type: objadd
+    room: 0
+    layer: 7
+    id: 0xFC9D
+    objtype: OBJ
+    object:
+      params1: 0xFF0DB230
+      params2: 0xFFFFFFFF
+      posx: 11085.0029296875
+      posy: 1121.711669921875
+      posz: -1688.4466552734375
+      id: 0xFC9D
+      name: Item
+  - name: Add crystal near pumpkin patch to layer 9
+    type: objadd
+    room: 0
+    layer: 9
+    id: 0xFC9D
+    objtype: OBJ
+    object:
+      params1: 0xFF0DB230
+      params2: 0xFFFFFFFF
+      posx: 11085.0029296875
+      posy: 1121.711669921875
+      posz: -1688.4466552734375
+      id: 0xFC9D
+      name: Item
+
 F001r:
   - name: Fi Text in Academy at night
     type: objdelete
@@ -519,6 +880,29 @@ F001r:
     type: oarcadd
     oarc: GetBowA
     destlayer: 0
+  
+  # Move Loose Crystal checks to night layers
+  - name: Move crystal in Link's room to night layer
+    type: objmove
+    id: 0xFC0C
+    layer: 0
+    destlayer: 4
+    room: 1
+    objtype: OBJ
+  - name: Move Academy plant crystal to night layer
+    type: objmove
+    id: 0xFC4B
+    layer: 0
+    destlayer: 4
+    room: 0
+    objtype: OBJ
+  - name: Move crystal in Zelda's room to night layer
+    type: objmove
+    id: 0xFC09
+    layer: 0
+    destlayer: 4
+    room: 6
+    objtype: OBJ
 
 F002r: # Beedle's Airshop
   - name: Delete cutscene
@@ -563,6 +947,13 @@ F005r: # Orielle and Parrow's House
     type: objdelete
     id: 0xFC13
     layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Move crystal in Orielle and Parrow's house to night layer
+    type: objmove
+    id: 0xFC0F
+    layer: 0
+    destlayer: 2
     room: 0
     objtype: OBJ
 
@@ -611,6 +1002,15 @@ F008r: # Goddess Statue
     type: objdelete
     id: 0xFC02
     layer: 0
+    room: 0
+    objtype: OBJ
+
+F009r:
+  - name: Move Sparring Hall crystal to night layer
+    type: objmove
+    id: 0xFC0C
+    layer: 0
+    destlayer: 2
     room: 0
     objtype: OBJ
 
@@ -675,6 +1075,14 @@ F011r: # Lumpy Pumpkin
     type: objdelete
     id: 0xFC45
     layer: 0
+    room: 0
+    objtype: OBJ
+
+  - name: Move crystal in Lumpy Pumpkin to night layer
+    type: objmove
+    id: 0xFC3F
+    layer: 0
+    destlayer: 2
     room: 0
     objtype: OBJ
 
@@ -820,6 +1228,21 @@ F020: # Sky
       posy: -4500
       sizex: 12000
       sizey: 12800
+
+  - name: Move crystal outside Lumpy Pumpkin to night layer
+    type: objmove
+    id: 0xFC77
+    layer: 0
+    destlayer: 4
+    room: 0
+    objtype: OBJ
+  - name: Move crystal on Beedle's Island to night layer
+    type: objmove
+    id: 0xFC38
+    layer: 0
+    destlayer: 4
+    room: 0
+    objtype: OBJ
 
 F023: # Thunderhead
   - name: Remove unnecessary arc
@@ -4302,15 +4725,6 @@ B301: # after Sandship boss
     object:
       params1: 0xC303FF03 # change to zone temp flag 3
       anglez: 0xFFFF # don't set any storyflag here
-
-B400: # Demise's Sanctuary :)
-  - name: Make Demise's death Cutscene unskippable
-    type: objpatch
-    index: 1
-    room: 0
-    objtype: EVNT
-    object:
-      skipflag: 255
 
 S100: # Faron Silent Realm
   - name: Fi text near waking water
