@@ -64,9 +64,11 @@ def patch_freestanding_item(bzs, itemID, id):
     freestandingItem["params1"] = mask_shift_set(
         freestandingItem["params1"], 0xFF, 0, itemID
     )
-    freestandingItem["params1"] = mask_shift_set(
-        freestandingItem["params1"], 0xF, 0x14, 9
-    )  # makes subtype 9 so it acts like a heart piece and force textbox on collection
+
+    # Unset 9th bit of param1 to force a textbox for freestanding items.
+    # Technically, item IDs are 9 bits long but the game almost never checks
+    # the 9th bit so we exploit that.
+    freestandingItem["params1"] = mask_shift_set(freestandingItem["params1"], 0x1, 9, 0)
 
 
 def patch_zeldas_closet(bzs, itemID, id):
