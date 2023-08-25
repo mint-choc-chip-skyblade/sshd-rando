@@ -244,6 +244,20 @@ class World:
             self.get_item("Game Beatable")
         )
 
+        self.location_table["Skyview Temple - Chest behind Two Eyes"].set_current_item(
+            self.get_item("Small Key")
+        )
+        self.location_table["Skyview Temple - Digging Spot in Crawlspace"].set_current_item(
+            self.get_item("Small Key")
+        )
+        self.location_table["Skyview Temple - Boss Key Chest"].set_current_item(
+            self.get_item("Skyview Boss Key")
+        )
+
+        self.location_table["Knight Academy - Fledge's Gift"].set_current_item(
+            self.get_item("Goddess Harp")
+        )
+
     # Adds a new event if one with the current name doesn't exist
     def add_event(self, event_name: str) -> None:
         if event_name not in self.events:
