@@ -353,6 +353,10 @@ def object_move(bzs, objmove, nextID):
         if not objectType in bzs["LAY "][f"l{destLayer}"]:
             bzs["LAY "][f"l{destLayer}"][objectType] = []
         bzs["LAY "][f"l{destLayer}"][objectType].append(object)
+
+        if not "OBJN" in bzs["LAY "][f"l{destLayer}"]:
+            bzs["LAY "][f"l{destLayer}"]["OBJN"] = []
+
         objn = bzs["LAY "][f"l{destLayer}"]["OBJN"]
         if not object["name"] in objn:
             objn.append(object["name"])
