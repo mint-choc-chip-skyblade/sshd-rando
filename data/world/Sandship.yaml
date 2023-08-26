@@ -2,7 +2,8 @@
 # hint_region: Sandship
 
 - name: Sandship Main Deck
-  hint_region: Sandship
+  dungeon: Sandship
+  dungeon_starting_area: true
   events:
     Sandship Raise Timeshift Stone: Bow
     Sandship Freely Usable Timeshift Stone: Bow and 'Finish_Mast_Sequence'
@@ -15,6 +16,7 @@
 
 
 - name: Sandship Mast
+  dungeon: Sandship
   events:
     Finish Mast Sequence: Bow and Sword
   exits:
@@ -22,13 +24,15 @@
     Sandship Stern: Bow and (Clawshots or logic_sandship_mast_jump)
 
 - name: Sandship Stern
+  dungeon: Sandship
   exits:
-    Sandshp Main Deck: Clawshots # Deathwarp possible
+    Sandship Main Deck: Clawshots # Deathwarp possible
   locations:
     Sandship - Chest at the Stern: Nothing
 
 
 - name: Sandship Captain's Cabin
+  dungeon: Sandship
   exits:
     Sandship Main Deck: count(2, Sandship_Small_Key)
   locations:
@@ -36,6 +40,7 @@
 
 
 - name: Sandship Before Bow
+  dungeon: Sandship
   exits:
     Sandship Bow: count(2, Sandship_Small_Key)
     Sandship Corridor: (Goddess_Sword or Bow or Bomb_Bag or Slingshot or logic_sandship_itemless_spume) or 'Sandship_Freely_Usable_Timeshift_Stone'
@@ -44,6 +49,7 @@
 
 
 - name: Sandship Bow
+  dungeon: Sandship
   exits:
     Sandship Before Bow: Can_Defeat_Scervo_And_Dreadfuse
   locations:
@@ -51,6 +57,7 @@
 
 
 - name: Sandship Corridor
+  dungeon: Sandship
   exits:
     Sandship Before Bow: (Goddess_Sword or Bow or Bomb_Bag or Slingshot or logic_sandship_itemless_spume) or 'Sandship_Freely_Usable_Timeshift_Stone'
     Sandship Starboard Rooms: "'Sandship_Freely_Usable_Timeshift_Stone'"
@@ -59,6 +66,7 @@
 
 
 - name: Sandship Starboard Rooms
+  dungeon: Sandship
   events:
     Open Starboard Windows: Nothing
     Starboard Generator: Bow and 'Sandship_Freely_Usable_Timeshift_Stone'
@@ -69,6 +77,7 @@
 
 
 - name: Sandship Port Rooms
+  dungeon: Sandship
   events:
     Port Generator: Bow and 'Sandship_Freely_Usable_Timeshift_Stone'
   exits:
@@ -76,6 +85,7 @@
     
 
 - name: Sandship Before Boss Door
+  dungeon: Sandship
   exits:
     Sandship Corridor: Nothing
     Sandship Boss Room: Sandship_Boss_Key and 'Sandship_Freely_Usable_Timeshift_Stone'
@@ -84,6 +94,7 @@
 
 
 - name: Sandship Brig
+  dungeon: Sandship
   exits:
     Sandship Treasure Room: Whip and 'Starboard_Generator'
     Sandship Brig Prison: Whip and 'Starboard_Generator' and 'Port_Generator'
@@ -91,6 +102,7 @@
 
 
 - name: Sandship Treasure Room
+  dungeon: Sandship
   exits:
     Sandship Brig: Nothing
   locations:
@@ -102,6 +114,7 @@
 
 
 - name: Sandship Brig Prison
+  dungeon: Sandship
   exits:
     Sandship Brig: Nothing
   locations:

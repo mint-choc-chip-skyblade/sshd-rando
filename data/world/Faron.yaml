@@ -2,6 +2,7 @@
 
 # SEALED GROUNDS
 - name: Sealed Grounds
+  hint_region: Sealed Grounds
   exits:
     Sealed Grounds Statue: Nothing
     Sealed Grounds Spiral: Nothing
@@ -9,7 +10,6 @@
 
 
 - name: Sealed Grounds Spiral
-  allowed_time_of_day: Day Only
   hint_region: Sealed Grounds
   events:
     Can Defeat Imprisoned 2: Goddess_Sword and 'Start_Imprisoned_2'
@@ -19,6 +19,7 @@
 
 
 - name: Sealed Grounds Upper Ledge
+  hint_region: Sealed Grounds
   events:
     Push Down Sealed Grounds Log: Nothing
   exits:
@@ -27,6 +28,7 @@
 
 
 - name: Sealed Temple
+  hint_region: Sealed Grounds
   events:
     Raise Gate of Time: Goddess_Harp
     Start Imprisoned 2: "'Raise_Gate_of_Time' and Master_Sword" # TODO
@@ -42,6 +44,7 @@
 
 
 - name: Hylia's Temple
+  hint_region: Hylia's Temple
   exits:
     Sealed Temple: Nothing
   locations:
@@ -99,7 +102,7 @@
     Great Tree Interior Underwater: Water_Scale
     Great Tree Exterior Platforms: Clawshots
     Great Tree Clawshot Target Branch: Clawshots
-    Faron Woods Swinging Vine Ledge: Distance_Activator
+    Faron Woods Ledge to Deep Woods: Distance_Activator
     Faron Woods Floria Shortcut Ledge: logic_early_lake_floria or 'Push_Down_Floria_Shortcut_Log'
     Faron Woods Entry: Nothing
   locations:
@@ -113,6 +116,7 @@
 
 
 - name: Faron Woods Floria Shortcut Ledge
+  hint_region: Faron Woods
   events:
     Push Down Floria Shortcut Log: Nothing
   exits:
@@ -120,13 +124,15 @@
     Floria Waterfall: Nothing
 
 
-- name: Faron Woods Swinging Vine Ledge
+- name: Faron Woods Ledge to Deep Woods
+  hint_region: Faron Woods
   exits:
     Faron Woods: Nothing
     Deep Woods Entry: Nothing
 
 
 - name: Behind the Crawlspace and Rope
+  hint_region: Faron Woods
   events:
     Push Down Log Near Oolo: Nothing
     Retrieve Oolo: Scrapper and 'Start_Owlans_Quest'
@@ -135,13 +141,15 @@
 
 
 - name: Great Tree West Branch
+  hint_region: Faron Woods
   events:
     Goddess Cube on West Great Tree near Exit: Goddess_Sword
   exits:
     Faron Woods: Nothing
     
 
-- name: Clawshot Target Branch
+- name: Great Tree Clawshot Target Branch
+  hint_region: Faron Woods
   events:
     Goddess Cube on East Great Tree with Clawshots Target: Goddess_Sword
   exits:
@@ -149,6 +157,7 @@
     
 
 - name: Great Tree Rope Branch
+  hint_region: Faron Woods
   events:
     Goddess Cube on East Great Tree with Rope: Goddess_Sword
   exits:
@@ -156,19 +165,23 @@
 
   
 # GREAT TREE
+# TODO: Figure out hint region for this
 - name: Great Tree Interior Underwater
+  hint_region: Faron Woods
   exits:
     Faron Woods: Nothing
     Great Tree Interior Lower: Water_Scale
 
 
 - name: Great Tree Interior Lower
+  hint_region: Faron Woods
   exits:
     Great Tree Interior Underwater: Water_Scale
     Great Tree Interior Middle: Gust_Bellows
 
 
 - name: Great Tree Interior Middle # area including the platforms and chest
+  hint_region: Faron Woods
   exits:
     Great Tree Interior Lower: Nothing
     Great Tree Exterior Platforms: Nothing
@@ -177,6 +190,7 @@
 
 
 - name: Great Tree Exterior Platforms
+  hint_region: Faron Woods
   exits:
     Great Tree Interior Middle: Nothing
     Great Tree Interior Upper: Nothing
@@ -185,6 +199,7 @@
 
 
 - name: Great Tree Interior Upper # top with the moblin
+  hint_region: Faron Woods
   exits:
     Great Tree Interior Middle: Can_Defeat_Moblins or 'Can_Complete_Ancient_Cistern'
     Flooded Great Tree Upper: Nothing
@@ -192,6 +207,7 @@
 
 
 - name: Great Tree Exterior Top
+  hint_region: Faron Woods
   events:
     Talk to Yerbal: Water_Scale and (Slingshot or Beetle) # Water Scale?
   exits:
@@ -199,7 +215,7 @@
     Great Tree Interior Upper: Nothing
     Great Tree Exterior Platforms: Nothing
     Great Tree Rope Branch: Nothing
-    Clawshot Target Branch: Nothing
+    Great Tree Clawshot Target Branch: Nothing
   locations:
     Faron Woods - Rupee on Great Tree North Branch: Beetle
     Faron Woods - Rupee on Great Tree West Branch: Beetle
@@ -207,11 +223,12 @@
   
 # DEEP WOODS
 - name: Deep Woods Entry
+  hint_region: Faron Woods
   events:
     Hornet Larvae Farming: Nothing # Bonk the tree
   exits:
     Deep Woods: Distance_Activator or Goddess_Sword or 'Push_Down_Deep_Woods_Shortcut_Logs' # bomb bag?
-    Faron Woods Swinging Vine Ledge: Nothing
+    Faron Woods Ledge to Deep Woods: Nothing
     
 
 - name: Deep Woods
@@ -271,14 +288,16 @@
 
 
 - name: Flooded Great Tree Upper
+  hint_region: Flooded Faron Woods
   exits:
     Flooded Faron Woods: Nothing
     Flooded Great Tree Lower: Water_Scale
-  locations:
-    Flooded Faron Woods - Water Dragon's Reward: count(17, Group_of_Tadtones) and 'Can_Watch_Completed_Tadtones_Cutscene'
+  # locations:
+  #   Flooded Faron Woods - Water Dragon's Reward: count(17, Group_of_Tadtones) and 'Can_Watch_Completed_Tadtones_Cutscene'
 
 
 - name: Flooded Great Tree Lower
+  hint_region: Flooded Faron Woods
   exits:
     Flooded Faron Woods: Nothing
     Flooded Great Tree Upper: Water_Scale
@@ -333,6 +352,7 @@
 
 
 - name: Floria Waterfall Temple Ledge
+  hint_region: Lake Floria
   exits:
     Ancient Cistern Lobby: Nothing
     Floria Waterfall: Nothing

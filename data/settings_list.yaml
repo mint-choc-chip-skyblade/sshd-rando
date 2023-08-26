@@ -88,6 +88,88 @@
     - off/on:                        "empty descriptions"
 
 
+- name: small_keys
+  default_option: own_dungeon
+  pretty_name: Small Keys
+  pretty_options:
+    - Vanilla
+    - Own Dungeon
+    - Any Dungeon
+    - Own Region
+    - Overworld
+    - Anywhere
+  options:
+    - vanilla:                      "Small Keys will appear in their vanilla locations"
+    - own_dungeon:                  "Small keys will appear inside their respective dungeon"
+    - any_dungeon:                  "Small Keys can appear inside any dungeon"
+    - own_region:                   "Small Keys will appear in their dungeon's region"
+    - overworld:                    "Small keys will only appear in the overworld"
+    - anywhere:                     "Small keys can appear anywhere"
+
+
+- name: lanayru_caves_key
+  default_option: vanilla
+  pretty_name: Lanayru Caves Key
+  pretty_options:
+    - Vanilla
+    - Overworld
+    - Anywhere
+  options:
+    - vanilla:                      "The Lanayru Caves Key will appear in its vanilla location"
+    - overworld:                    "The Lanayru Caves Key will only appear in the overworld"
+    - anywhere:                     "The Lanayru Caves Key can appear anywhere"
+
+
+- name: boss_keys
+  default_option: own_dungeon
+  pretty_name: Boss Keys
+  pretty_options:
+    - Vanilla
+    - Own Dungeon
+    - Any Dungeon
+    - Own Region
+    - Overworld
+    - Anywhere
+  options:
+    - vanilla:                      "Boss Keys will appear in their vanilla locations"
+    - own_dungeon:                  "Boss keys will appear inside their respective dungeon"
+    - any_dungeon:                  "Boss Keys can appear inside any dungeon"
+    - own_region:                   "Boss Keys appear in their dungeon's region"
+    - overworld:                    "Boss keys will only appear in the overworld"
+    - anywhere:                     "Boss keys can appear anywhere"
+
+
+- name: map_mode
+  default_option: own_dungeon_restricted
+  pretty_name: Map Mode
+  pretty_options:
+    - Vanilla
+    - Own Dungeon Restricted
+    - Own Dungeon Unrestricted
+    - Any Dungeon
+    - Own Region
+    - Overworld
+    - Anywhere
+  options:
+    - vanilla:                      "Maps will appear in their vanilla locations"
+    - own_dungeon_restricted:       "Maps will appear inside their respective dungeon, but won't appear on the heart container or dungeon end check"
+    - own_dungeon_unrestricted:     "Maps can appear anywhere inside their respective dungeon"
+    - any_dungeon:                  "Maps can appear inside any dungeon"
+    - own_region:                   "Maps will appear in their dungeon's region"
+    - overworld:                    "Maps will only appear in the overworld"
+    - anywhere:                     "Maps can appear anywhere"
+
+
+- name: scrap_shop_upgrades
+  default_option: 'on'
+  pretty_name: Place Scrap Shop Upgrades
+  pretty_options:
+    - 'Off'
+    - 'On'
+  options:
+    - off/on:                       "empty description"
+
+
 - name: natural_night_connections
   default_option: "on"
   pretty_name: Require Natural Night Connections

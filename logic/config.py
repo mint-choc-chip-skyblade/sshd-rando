@@ -1,7 +1,7 @@
 import yaml
 import random
 
-from logic.settings import *
+from .settings import *
 
 required_config_fields = [
     "input_dir",

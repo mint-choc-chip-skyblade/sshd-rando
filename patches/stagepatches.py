@@ -64,9 +64,11 @@ def patch_freestanding_item(bzs, itemID, id):
     freestandingItem["params1"] = mask_shift_set(
         freestandingItem["params1"], 0xFF, 0, itemID
     )
-    freestandingItem["params1"] = mask_shift_set(
-        freestandingItem["params1"], 0xF, 0x14, 9
-    )  # makes subtype 9 so it acts like a heart piece and force textbox on collection
+
+    # Unset 9th bit of param1 to force a textbox for freestanding items.
+    # Technically, item IDs are 9 bits long but the game almost never checks
+    # the 9th bit so we exploit that.
+    freestandingItem["params1"] = mask_shift_set(freestandingItem["params1"], 0x1, 9, 0)
 
 
 def patch_zeldas_closet(bzs, itemID, id):
@@ -84,17 +86,16 @@ def patch_zeldas_closet(bzs, itemID, id):
     closet["params1"] = mask_shift_set(closet["params1"], 0xFF, 8, itemID)
 
 
-# needs an asm change
-# def patch_ac_key_boko(bzs, itemID, id):
-#     id = int(id, 0)
-#     boko = next(
-#         filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
-#     )
-#     if boko is None:
-#         print(f"ERROR: No boko id {id} found to patch")
-#         return
+def patch_ac_key_boko(bzs, itemID, id):
+    id = int(id, 0)
+    boko = next(
+        filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
+    )
+    if boko is None:
+        print(f"ERROR: No boko id {id} found to patch")
+        return
 
-#     boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemID)
+    boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemID)
 
 
 # def patch_heart_container(bzs, itemID):
@@ -106,32 +107,32 @@ def patch_zeldas_closet(bzs, itemID, id):
 #     hc["params1"] = mask_shift_set(hc["params1"], 0xFF, 16, itemID)
 
 
-# def patch_chandelier_item(bzs, itemID):
-#     chandelier = next(filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None)
-#     if chandelier is None:
-#         print(f"ERROR: No chandelier found to patch")
-#         return
+def patch_chandelier_item(bzs, itemID):
+    chandelier = next(filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None)
+    if chandelier is None:
+        print(f"ERROR: No chandelier found to patch")
+        return
 
-#     chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemID)
+    chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemID)
 
 
-# def patch_digspot_item(bzs, itemID, id):
-#     id = int(id)
-#     digSpot = next(
-#         filter(
-#             lambda x: x["name"] == "Soil" and ((x["params1"] >> 4) & 0xFF) == id,
-#             bzs["OBJ "],
-#         ),
-#         None,
-#     )
-#     if digSpot is None:
-#         print(f"ERROR: No digspot id {id} found to patch")
-#         return
+def patch_digspot_item(bzs, itemID, id):
+    id = int(id)
+    digSpot = next(
+        filter(
+            lambda x: x["name"] == "Soil" and ((x["params1"] >> 4) & 0xFF) == id,
+            bzs["OBJ "],
+        ),
+        None,
+    )
+    if digSpot is None:
+        print(f"ERROR: No digspot id {id} found to patch")
+        return
 
-#     # patch digspot to be the same as key piece digspots in all ways except it keeps it's initial sceneflag
-#     digSpot["params1"] = (digSpot["params1"] & 0xFF0) | 0xFF0B1004
+    # patch digspot to be the same as key piece digspots in all ways except it keeps it's initial sceneflag
+    digSpot["params1"] = (digSpot["params1"] & 0xFF0) | 0xFF0B1004
 
-#     digSpot["params2"] = mask_shift_set(digSpot["params2"], 0xFF, 0x18, itemID)
+    digSpot["params2"] = mask_shift_set(digSpot["params2"], 0xFF, 0x18, itemID)
 
 
 # def patch_goddess_crest(bzs, itemID, index):
@@ -354,6 +355,10 @@ def object_move(bzs, objmove, nextID):
         if not objectType in bzs["LAY "][f"l{destLayer}"]:
             bzs["LAY "][f"l{destLayer}"][objectType] = []
         bzs["LAY "][f"l{destLayer}"][objectType].append(object)
+
+        if not "OBJN" in bzs["LAY "][f"l{destLayer}"]:
+            bzs["LAY "][f"l{destLayer}"]["OBJN"] = []
+
         objn = bzs["LAY "][f"l{destLayer}"]["OBJN"]
         if not object["name"] in objn:
             objn.append(object["name"])
@@ -555,27 +560,26 @@ class StagePatchHandler:
                                             itemID,
                                             objectID,
                                         )
-                                    # needs an asm change
-                                    # elif objectName == "EBc":
-                                    #     patch_ac_key_boko(
-                                    #         roomBZS["LAY "][f"l{layer}"],
-                                    #         itemID,
-                                    #         objectID,
-                                    #     )
+                                    elif objectName == "EBc":
+                                        patch_ac_key_boko(
+                                            roomBZS["LAY "][f"l{layer}"],
+                                            itemID,
+                                            objectID,
+                                        )
                                     # elif objectName == "HeartCo":
                                     #     patch_heart_container(
                                     #         roomBZS["LAY "][f"l{layer}"], itemID
                                     #     )
-                                    # elif objectName == "Chandel":
-                                    #     patch_chandelier_item(
-                                    #         roomBZS["LAY "][f"l{layer}"], itemID
-                                    #     )
-                                    # elif objectName == "Soil":
-                                    #     patch_digspot_item(
-                                    #         roomBZS["LAY "][f"l{layer}"],
-                                    #         itemID,
-                                    #         objectID,
-                                    #     )
+                                    elif objectName == "Chandel":
+                                        patch_chandelier_item(
+                                            roomBZS["LAY "][f"l{layer}"], itemID
+                                        )
+                                    elif objectName == "Soil":
+                                        patch_digspot_item(
+                                            roomBZS["LAY "][f"l{layer}"],
+                                            itemID,
+                                            objectID,
+                                        )
                                     # elif objectName == "SwSB":
                                     #     patch_goddess_crest(
                                     #         roomBZS["LAY "][f"l{layer}"],

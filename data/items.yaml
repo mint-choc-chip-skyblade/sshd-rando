@@ -137,15 +137,6 @@
   getarcname: GetGenki
   getmodelname: GetGenki
   advancement: true
-
-  # Temporary slot for single gratitude crystal
-- id: 36
-  name: Gratitude Crystal
-  oarc: null
-  getarcname: GetGenki
-  getmodelname: GetGenki
-  advancement: true
-
 - id: 40
   name: 5 Bombs
   oarc: null
@@ -156,6 +147,12 @@
   oarc: null
   getarcname: GetBombSet
   getmodelname: GetBombSet
+- id: 48
+  name: Gratitude Crystal
+  oarc: null
+  getarcname: GetGenki
+  getmodelname: GetGenki
+  advancement: true
 - id: 49
   name: Gust Bellows
   oarc: GetVacuum
@@ -623,3 +620,4 @@
   name: Game Beatable
   oarc: null
   game_winning_item: true
+  advancement: true

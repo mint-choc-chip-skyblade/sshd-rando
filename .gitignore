@@ -14,7 +14,9 @@ oarccache
 config.yaml
 *.log
 *.gv
+*.svg
 Spoiler Log.txt
+*plandomizer.yaml
 
 # Muzu's test stuff.
 TODO

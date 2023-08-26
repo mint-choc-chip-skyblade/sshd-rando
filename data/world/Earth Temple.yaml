@@ -1,7 +1,7 @@
-# allowed_time_of_day: DayOnly
-# hint_region: Earth Temple
 
 - name: Earth Temple First Room
+  dungeon: Earth Temple
+  dungeon_starting_area: true
   exits:
     Near Temple Entrance: Nothing
                  # Lower the drawbridge and Dislodge the boulder
@@ -13,6 +13,7 @@
 
       
 - name: ET Hub Room
+  dungeon: Earth Temple
   events:
     ET Push Left Peg: Nothing
   exits:
@@ -29,6 +30,7 @@
 
 
 - name: ET Past Lava Section
+  dungeon: Earth Temple
   events:
     ET Push Right Peg: Nothing
   exits:
@@ -38,6 +40,7 @@
 
 
 - name: ET East Room
+  dungeon: Earth Temple
   exits:
     ET Hub Room: Nothing
     # It'd be annoying to put in logic, but you need boulder access to reach the central part
@@ -46,6 +49,7 @@
 
 
 - name: ET West Room
+  dungeon: Earth Temple
   exits:
     ET Hub Room: Nothing
   locations:
@@ -53,12 +57,14 @@
 
 
 - name: ET Room with Slopes
+  dungeon: Earth Temple
   exits:
     ET Front of Boss Door: (Digging_Mitts and Bomb_Bag) or Hook_Beetle or logic_et_slope_stuttersprint
     ET Hub Room: Nothing
       
 
 - name: ET Front of Boss Door
+  dungeon: Earth Temple
   exits:
     ET Room with Slopes: Nothing
     Earth Temple Boss Room: Earth_Temple_Boss_Key

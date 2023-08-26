@@ -1,4 +1,10 @@
 import copy
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .world import World
+    from .search import Search
+    from .entrance import Entrance
 
 
 class RequirementType:
@@ -53,7 +59,9 @@ def strip_outer_parenthesis(req_str: str):
 
 # Takes a logic expression and translates it into a requirement object
 # that's evaluated during the the search algorithm
-def parse_requirement_string(req_str: str, world, area_id: int = None) -> Requirement:
+def parse_requirement_string(
+    req_str: str, world: "World", area_id: int = None
+) -> Requirement:
     # Get a new copy of an empty requirement
     req = copy.deepcopy(Requirement())
 
@@ -277,7 +285,9 @@ def parse_requirement_string(req_str: str, world, area_id: int = None) -> Requir
     return req
 
 
-def evaluate_requirement_at_time(req: Requirement, search, time: int, world) -> bool:
+def evaluate_requirement_at_time(
+    req: Requirement, search: "Search", time: int, world: "World"
+) -> bool:
     match req.type:
         case RequirementType.NOTHING:
             return True
@@ -358,7 +368,7 @@ def evaluate_requirement_at_time(req: Requirement, search, time: int, world) -> 
             return num_single_crystals + (num_crystal_packs * 5) >= expected_crystals
 
 
-def evaluate_exit_requirement(search, exit_) -> int:
+def evaluate_exit_requirement(search: "Search", exit_: "Entrance") -> int:
     if exit_.connected_area == None:
         # This should only be hit when splitting entrances
         # in the entrance shuffling algorithm
@@ -367,6 +377,11 @@ def evaluate_exit_requirement(search, exit_) -> int:
     parent_area = exit_.parent_area
     connected_area = exit_.connected_area
     parent_area_time = search.area_time[parent_area.id]
+    potential_exit_times = (
+        TOD.ALL
+        if exit_ not in parent_area.world.exit_time_cache
+        else parent_area.world.exit_time_cache[exit_]
+    )
     connected_area_time = (
         TOD.NONE
         if connected_area.id not in search.area_time
@@ -376,7 +391,7 @@ def evaluate_exit_requirement(search, exit_) -> int:
     # If there's no potential to spread time to the new area, then this
     # exit isn't going to be a success
     potential_time_spread = ~connected_area_time & (
-        parent_area_time & connected_area.allowed_tod
+        parent_area_time & potential_exit_times
     )
     # print(f"{exit_} potential time spread {format(potential_time_spread, '02b')}")
     # print(f"{format(connected_area_time, '02b')} {format(parent_area_time, '02b')} {format(connected_area.allowed_tod, '02b')}")
@@ -409,20 +424,20 @@ def evaluate_exit_requirement(search, exit_) -> int:
         )
         # If the connected area now has complete access, then we mark a complete success
         # instead of just a partial one
-        if ~connected_area_time & connected_area.allowed_tod == 0:
+        if ~connected_area_time & potential_exit_times == 0:
             eval_success = EvalSuccess.COMPLETE
 
     return eval_success
 
 
-def evaluate_event_requirement(search, event) -> int:
+def evaluate_event_requirement(search: "Search", event) -> int:
     time = search.area_time[event.area.id]
     if evaluate_requirement_at_time(event.req, search, time, event.area.world):
         return EvalSuccess.COMPLETE
     return EvalSuccess.NONE
 
 
-def evaluate_location_requirement(search, loc_access) -> int:
+def evaluate_location_requirement(search: "Search", loc_access) -> int:
     time = search.area_time[loc_access.area.id]
     if evaluate_requirement_at_time(
         loc_access.req, search, time, loc_access.area.world

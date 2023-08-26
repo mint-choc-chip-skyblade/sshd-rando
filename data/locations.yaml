@@ -99,10 +99,34 @@
     - oarc/F004r/l0
 
 # - name: Bazaar - Upgrade to Quick Beetle
-#   original_item: Quick Beetle
+#   original_item: Progressive Beetle
+#   type: Scrap Shop
+#   hint: never
 
 # - name: Bazaar - Upgrade to Tough Beetle
-#   original_item: Tough Beetle
+#   original_item: Progressive Beetle
+#   type: Scrap Shop
+#   hint: never
+
+# - name: Bazaar - Upgrade to Scattershot
+#   original_item: Progressive Slingshot
+#   type: Scrap Shop
+#   hint: never
+
+# - name: Bazaar - Upgrade to Iron Bow
+#   original_item: Progressive Bow
+#   type: Scrap Shop
+#   hint: never
+
+# - name: Bazaar - Upgrade to Sacred Bow
+#   original_item: Progressive Bow
+#   type: Scrap Shop
+#   hint: never
+
+# - name: Bazaar - Upgrade to Big Bug Net
+#   original_item: Progressive Bug Net
+#   type: Scrap Shop
+#   hint: never
 
 # - name: Central Skyloft - Repair Gondo's Junk
 #   original_item: Scrapper
@@ -391,94 +415,115 @@
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F001r/r1/l0/Item/104
+    - stage/F001r/r1/l4/Item/104
 
 - name: Knight Academy - Crystal in Knight Academy Plant
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F001r/r0/l0/Item/102
+    - stage/F001r/r0/l4/Item/102
 
 - name: Knight Academy - Crystal in Zelda's Room
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F001r/r6/l0/Item/103
+    - stage/F001r/r6/l4/Item/103
 
 - name: Sparring Hall - Crystal
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F009r/r0/l0/Item/115
+    - stage/F009r/r0/l2/Item/115
 
 
 - name: Central Skyloft - Crystal in Orielle and Parrow's House
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F005r/r0/l0/Item/114
+    - stage/F005r/r0/l2/Item/114
 
 - name: Central Skyloft - Crystal on West Cliff
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F000/r0/l0/Item/113
+    - stage/F000/r0/l2/Item/113
+    - stage/F000/r0/l5/Item/113
+    - stage/F000/r0/l7/Item/113
+    - stage/F000/r0/l9/Item/113
 
 - name: Central Skyloft - Crystal between Wooden Planks
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F000/r0/l0/Item/112
+    - stage/F000/r0/l2/Item/112
+    - stage/F000/r0/l5/Item/112
+    - stage/F000/r0/l7/Item/112
+    - stage/F000/r0/l9/Item/112
 
 - name: Central Skyloft - Crystal after Waterfall Cave
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F000/r0/l0/Item/111
+    - stage/F000/r0/l2/Item/111
+    - stage/F000/r0/l5/Item/111
+    - stage/F000/r0/l7/Item/111
+    - stage/F000/r0/l9/Item/111
 
 - name: Central Skyloft - Crystal in Loftwing Prison
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F000/r0/l0/Item/110
+    - stage/F000/r0/l2/Item/110
+    - stage/F000/r0/l5/Item/110
+    - stage/F000/r0/l7/Item/110
+    - stage/F000/r0/l9/Item/110
 
 - name: Central Skyloft - Crystal on Waterfall Island
   original_item: Gratitude Crystal
   type: Loose Crystals
   Paths:
-    - stage/F000/r0/l0/Item/109
+    - stage/F000/r0/l2/Item/109
+    - stage/F000/r0/l5/Item/109
+    - stage/F000/r0/l7/Item/109
+    - stage/F000/r0/l9/Item/109
 
 - name: Central Skyloft - Crystal on Light Tower
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F000/r0/l0/Item/106
+    - stage/F000/r0/l2/Item/106
+    - stage/F000/r0/l5/Item/106
+    - stage/F000/r0/l7/Item/106
+    - stage/F000/r0/l9/Item/106
 
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F000/r0/l0/Item/108
+    - stage/F000/r0/l2/Item/108
+    - stage/F000/r0/l5/Item/108
+    - stage/F000/r0/l7/Item/108
+    - stage/F000/r0/l9/Item/108
 
 
 - name: Lumpy Pumpkin - Outside Crystal
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F020/r0/l0/Item/100
+    - stage/F020/r0/l4/Item/100
 
 - name: Lumpy Pumpkin - Inside Crystal
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F011r/r0/l0/Item/116
+    - stage/F011r/r0/l2/Item/116
 
 - name: Beedle's Island - Crystal
   original_item: Gratitude Crystal 
   type: Loose Crystals
   Paths:
-    - stage/F020/r0/l0/Item/119
+    - stage/F020/r0/l4/Item/119
 
 # Sky:
 
@@ -1705,6 +1750,7 @@
 
 - name: Skyview Spring - Ruby Tablet
   original_item: Ruby Tablet
+  goal_location: true
   type:
   Paths:
     - event/201-ForestD1/6
@@ -1786,6 +1832,7 @@
 
 - name: Earth Spring - Amber Tablet
   original_item: Amber Tablet
+  goal_location: true
   type:
   Paths:
     - event/301-MountainD1/22
@@ -1872,6 +1919,7 @@
 
 - name: Lanayru Mining Facility - Goddess Harp
   original_item: Goddess Harp
+  goal_location: true
   type:
   Paths:
     - event/400-Desert/286
@@ -1980,6 +2028,7 @@
 
 - name: Ancient Cistern - Farore's Flame
   original_item: Progressive Sword
+  goal_location: true
   type:
   Paths:
     - event/202-ForestD2/give item after beating ancient cistern
@@ -2071,6 +2120,7 @@
 
 - name: Sandship - Nayru's Flame
   original_item: Progressive Sword
+  goal_location: true
   type:
   Paths:
     - event/401-DesertD2/45
@@ -2167,6 +2217,7 @@
 
 - name: Fire Sanctuary - Din's Flame
   original_item: Progressive Sword
+  goal_location: true
   type:
   Paths:
     - event/304-MountainD2/5
@@ -2194,18 +2245,21 @@
 
 - name: Sky Keep - Triforce of Power
   original_item: Triforce of Power
+  goal_location: true
   type:
   Paths:
   - stage/D003_8/r0/l2/Item/61
 
 - name: Sky Keep - Triforce of Wisdom
   original_item: Triforce of Wisdom
+  goal_location: true
   type:
   Paths:
   - stage/D003_8/r0/l1/Item/62
 
 - name: Sky Keep - Triforce of Courage
   original_item: Triforce of Courage
+  goal_location: true
   type:
   Paths:
   - stage/D003_8/r0/l3/Item/64

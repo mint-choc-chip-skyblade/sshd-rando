@@ -1,4 +1,6 @@
-from logic.world import *
+from .world import *
+
+import logging
 
 
 class SearchMode:
@@ -40,10 +42,11 @@ class Search:
 
         self.area_time: dict[int, int] = {}
 
-        # TODO: Add starting inventory items for each world
+        # Add starting inventory items for each world
         for world in self.worlds:
             if world.id == self.world_to_search or self.world_to_search == -1:
-                pass
+                for item, count in world.starting_item_pool.items():
+                    self.owned_items[item] += count
 
         # Set search starting properties and add each world's root to exits_to_try
         for world in self.worlds:
@@ -68,6 +71,9 @@ class Search:
                         item_locations.add(loc_access)
 
         # Main Searching Loop
+        # Keep iterating while new things are being found, but
+        # if the search is beatable and we're either generating
+        # the playthrough or checking for beatability, exit early
         self.new_things_found = True
         while self.new_things_found and not (
             self.is_beatable
@@ -83,8 +89,20 @@ class Search:
                 self.playthrough_spheres.append(set())
                 self.entrance_spheres.append([])
 
-            self.process_exits()
             self.process_events()
+            self.process_exits()
+
+            # For proper sphere calculation based on item locations
+            # we need to keep looping over exits and events until
+            # nothing new is found in them (and then process locations)
+            while (
+                self.search_mode == SearchMode.GENERATE_PLAYTHROUGH
+                and self.new_things_found
+            ):
+                self.new_things_found = False
+                self.process_events()
+                self.process_exits()
+
             self.process_locations(item_locations)
 
             self.sphere_num += 1
@@ -208,7 +226,13 @@ class Search:
                 # If this is the playthrough, and we've found all game winning items, clear the current sphere
                 # except for the last game winning items
                 if self.search_mode == SearchMode.GENERATE_PLAYTHROUGH:
-                    self.playthrough_spheres[-1].clear()
+                    self.playthrough_spheres[-1] = set(
+                        [
+                            loc
+                            for loc in self.playthrough_spheres[-1]
+                            if loc.current_item.is_game_winning_item
+                        ]
+                    )
                     self.playthrough_spheres[-1].add(location)
                 self.is_beatable = True
 
@@ -277,6 +301,7 @@ def game_beatable(worlds: list[World]) -> bool:
 
 
 def generate_playthrough(worlds: list[World]) -> None:
+    logging.getLogger("").debug("Generating Playthrough")
     # Generate initial playthrough
     playthrough_search = Search(SearchMode.GENERATE_PLAYTHROUGH, worlds)
     playthrough_search.search_worlds()
@@ -286,21 +311,45 @@ def generate_playthrough(worlds: list[World]) -> None:
     # Keep track of all locations we temporarily take items away from
     # so we can give them back after playthrough calculation
     temp_empty_locations = {}
+    # Keep track of all the locations that appear in the playthrough
+    playthrough_locations_set: set[Location] = set(
+        [l for sphere in playthrough_spheres for l in sphere]
+    )
+
+    # Remove all items from locations that are not part of the playthrough set
+    for location in [l for world in worlds for l in world.location_table.values()]:
+        if location not in playthrough_locations_set:
+            temp_empty_locations[location] = location.current_item
+            location.remove_current_item()
 
     print("Paring down playthrough")
+    # Reverse the playthrough so we're paring it down from highest to lowest sphere
+    # This way, lower sphere items will be prioritized for the playthrough
+    reversed(playthrough_spheres)
     for sphere in playthrough_spheres:
         for location in sphere:
             item_at_location = location.current_item
             location.remove_current_item()
 
+            # If the game is beatable, temporarily take this item away and
+            # discard the location to the set of playthrough locations
             if game_beatable(worlds):
                 temp_empty_locations[location] = item_at_location
+                playthrough_locations_set.discard(location)
             else:
                 location.set_current_item(item_at_location)
 
+    # Now generate a new playthrough search incase some spheres were flattened
+    # by the previous generation having access to extra items
     new_search = Search(SearchMode.GENERATE_PLAYTHROUGH, worlds)
     new_search.search_worlds()
+    # Discard all locations not in the playthrough locations set
+    for sphere in new_search.playthrough_spheres:
+        for location in sphere.copy():
+            if location not in playthrough_locations_set:
+                sphere.discard(location)
 
+    # Now remove any empty spheres that might remain
     worlds[0].playthrough_spheres = [
         sphere for sphere in new_search.playthrough_spheres if len(sphere) > 0
     ]

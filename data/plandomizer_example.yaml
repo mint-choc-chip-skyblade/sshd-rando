@@ -1,0 +1,60 @@
+# Example Plandomizer file.
+
+# Plandomizer files allow you to control certain aspects when generating a new
+# randomizer seed. You can place items in specific locations, and connect
+# specific entrances if entrance randomizer is enabled.
+
+# All plandomized elements must be under a "World 1" element at the start of the
+# plandomizer file like this
+World 1:
+      # ...everything else...
+
+# LOCATIONS
+# All plandomized locations are defined under a "locations" element and consist
+# of the location name followed by a colon(:) and the item name you want placed
+# at that location. The following example places Clawshots at Knight Academy - Fledge's Gift
+# and Amber Tablet at Earth Temple - Boss Key Chest.
+World 1:
+  locations:
+    Knight Academy - Fledge's Gift: Clawshots
+    Earth Temple - Boss Key Chest: Amber Tablet
+
+# NAMES
+# As a general rule, capitalize the first letter of all item names except for
+# the words "to" and "of". "Bomb Bag" is okay. "bomb bag" will be
+# unrecognized. For a full list of location names, please check out:
+# https://github.com/mint-choc-chip-skyblade/sshd-rando/blob/main/data/locations.yaml
+# or refer to a spoiler log.
+
+# EXCLUDED_LOCATIONS
+# Attempting to place a major item in an excluded location will give you a
+# Plandomizer Error and the seed won't generate.
+
+# MULTIWORLD PLANDOMIZER (Note: currently multiworld is not an option in the randomizer
+# and is not actively being developed, but the filling algorithm was made to support
+# multiworld incase it ever happens in the future.)
+# If you'd like to plandomize a multiworld seed, then each element
+# must be under a "World #" element, with the '#' being the world number
+# the locations will be for. For example, if we want place the Whip at
+# Bazaar - Potion Lady's Gift in World 1 and the Skyview Boss Key at
+# Sandship - Bow Chest in World 2, then we'd type
+World 1:
+  locations:
+    Bazaar - Potion Lady's Gift: Whip
+World 2:
+  locations:
+    Sandship - Bow Chest: Skyview Boss Key
+# Using this format, the item being plandomized will be for the world that the
+# location is currently under. If we want to specify the item for a different
+# world we can use the "item" and "world" elements to do so. For example, if we want
+# to place the Bomb Bag for World 1 at World 2's Thunderhead East Island - Goddess Chest Chest
+# and the Hylian Shield for World 1 at World 2's Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
+# we would type:
+World 2:
+  locations:
+    Thunderhead East Island - Goddess Chest:
+      item: Bomb Bag
+      world: 1
+    Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent:
+      item: Hylian Shield
+      world: 1
