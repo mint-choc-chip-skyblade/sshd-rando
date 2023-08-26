@@ -2860,23 +2860,23 @@ F402: # Sealed Temple
     object:
       trigstoryfid: 340 # gate of time raised
 
-  - name: Trigger to Raise GoT
-    type: objadd
-    # onlyif: Option "triforce-required" Enabled
-    room: 2
-    layer: 0
-    objtype: OBJ
-    object:
-      params1: 0x2a830800 # triggered by botg storyflag, untriggered by GoT storyflag
-      params2: 0xFF1FFFFF
-      posx: 0
-      posy: 7600
-      posz: 8250
-      anglex: 0xFFFF # sets 7x04
-      angley: 0xFFFF
-      anglez: 50221 # entrypoint 502_21
-      id: 0xFC40
-      name: NpcTke
+  # - name: Trigger to Raise GoT
+  #   type: objadd
+  #   # onlyif: Option "triforce-required" Enabled
+  #   room: 2
+  #   layer: 0
+  #   objtype: OBJ
+  #   object:
+  #     params1: 0x2a830800 # triggered by botg storyflag, untriggered by GoT storyflag
+  #     params2: 0xFF1FFFFF
+  #     posx: 0
+  #     posy: 7600
+  #     posz: 8250
+  #     anglex: 0xFFFF # sets 7x04
+  #     angley: 0xFFFF
+  #     anglez: 50221 # entrypoint 502_21
+  #     id: 0xFC40
+  #     name: NpcTke
 
   - name: Delete Imp 2 beaten cs inside
     type: objdelete

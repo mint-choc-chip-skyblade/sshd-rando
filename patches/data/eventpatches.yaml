@@ -279,8 +279,18 @@
       subType: 0
       param1: 0
       param2: 194
-      next: -1
+      next: BotG raises GoT
       param3: 0
+  - name: BotG raises GoT
+    type: setstoryflag
+    flow:
+      setstoryflag: 340
+      next: BotG set imp2 defeated
+  - name: BotG set imp2 defeated
+    type: setstoryflag
+    flow:
+      setstoryflag: 132
+      next: -1
   - name: get rid of Skyloft layer 8&9
     type: flowpatch
     index: 540 # before storyflag
@@ -1153,11 +1163,11 @@
     type: setstoryflag
     flow:
       setstoryflag: 32
-      next: Set botg storyflag
-  - name: Set botg storyflag
-    type: setstoryflag
-    flow:
-      setstoryflag: 194
+  #     next: Set botg storyflag
+  # - name: Set botg storyflag
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 194
       next: Set spiral charge storyflag
   - name: Set spiral charge storyflag
     type: setstoryflag
