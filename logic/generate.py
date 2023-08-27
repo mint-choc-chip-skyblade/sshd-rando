@@ -5,6 +5,7 @@ from .fill import fill_worlds
 from .search import generate_playthrough
 from .spoiler_log import generate_spoiler_log
 from .plandomizer import load_plandomizer_data
+from .entrance_shuffle import shuffle_world_entrances
 
 import time
 import random
@@ -62,8 +63,8 @@ def generate_randomizer(config: Config) -> list[World]:
     # Build all necessary worlds
     for i in range(len(config.settings)):
         setting_map = config.settings[i]
-        print(f"Building World {i}")
         worlds.append(World(i))
+        print(f"Building {worlds[i]}")
 
         # TODO: Resolve Random Settings
         # TODO: Resolve Cosmetic Choices
@@ -79,13 +80,17 @@ def generate_randomizer(config: Config) -> list[World]:
     if config.plandomizer:
         load_plandomizer_data(worlds, config.plandomizer_file)
 
-    # Perform Pre-Entrance Shuffle Tasks
+    # All worlds must perform pre-entrance shuffle tasks
+    # before any entrance shuffling takes place
     for world in worlds:
         world.perform_pre_entrance_shuffle_tasks()
 
-    # Not actually shuffling entrances yet
     for world in worlds:
-        world.shuffle_entrances(worlds)
+        print(f"Shuffling entrances for {world}...")
+        shuffle_world_entrances(world, worlds)
+
+    for world in worlds:
+        world.perform_post_entrance_shuffle_tasks()
 
     start = time.process_time()
     print("Filling Worlds...")

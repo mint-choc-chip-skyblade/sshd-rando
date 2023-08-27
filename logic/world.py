@@ -327,8 +327,7 @@ class World:
                 else:
                     location.set_current_item(self.get_item("Green Rupee"))
 
-    def shuffle_entrances(self, worlds: list["World"]) -> None:
-        # TODO: Actually shuffle entrances
+    def perform_post_entrance_shuffle_tasks(self) -> None:
         for area in self.areas.values():
             # Assign hint regions to all areas which don't
             # have them at this point. This will also finalize
@@ -426,6 +425,21 @@ class World:
             if "Hint Location" not in location.types
         ]
 
+    def get_area(self, area_name) -> Area:
+        if area_name not in self.area_ids:
+            raise WrongInfoError(f'area "{area_name}" is not a defined area for {self}')
+        return self.areas[self.area_ids[area_name]]
+
+    def get_entrance(self, original_name: str) -> Entrance:
+        parent_area_name, connected_area_name = original_name.split(" -> ")
+        parent_area = self.get_area(parent_area_name)
+        connected_area = self.get_area(connected_area_name)
+        for exit_ in parent_area.exits:
+            if exit_.connected_area == connected_area:
+                return exit_
+
+        raise WrongInfoError(f"There is no known entrance connection {original_name}")
+
     def get_dungeon(self, dungeon_name: str) -> Dungeon:
         if dungeon_name not in self.dungeons:
             raise WrongInfoError(f'Dungeon "{dungeon_name}" is not defined for {self}')
@@ -450,3 +464,16 @@ class World:
         # Set the root to have daytime
         # TODO: Change if we ever have an option to start at night
         search.area_time[self.root.id] = TOD.DAY
+
+    def get_shuffleable_entrances(
+        self, entrance_type: int, only_primary: bool = False
+    ) -> list[Entrance]:
+        entrances = []
+        for area in self.areas.values():
+            for exit_ in area.exits:
+                # print(exit_, exit_.type, entrance_type)
+                if (
+                    entrance_type == EntranceType.ALL or exit_.type == entrance_type
+                ) and (exit_.primary or not only_primary):
+                    entrances.append(exit_)
+        return entrances

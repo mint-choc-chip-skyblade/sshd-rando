@@ -160,6 +160,16 @@
     - anywhere:                     "Maps can appear anywhere"
 
 
+- name: randomize_dungeon_entrances
+  default_option: 'off'
+  pretty_name: Randomize Dungeon Entrances
+  pretty_options:
+    - 'Off'
+    - 'On'
+  options:
+    - off/on:                       "empty description"
+    
+
 - name: scrap_shop_upgrades
   default_option: 'on'
   pretty_name: Place Scrap Shop Upgrades

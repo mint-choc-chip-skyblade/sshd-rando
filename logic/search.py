@@ -300,6 +300,15 @@ def game_beatable(worlds: list[World]) -> bool:
     return search.is_beatable
 
 
+def all_locations_reachable(worlds: list[World], item_pool: Counter[Item] = {}) -> bool:
+    total_locations = 0
+    for world in worlds:
+        total_locations += len(world.location_table)
+    search = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds, item_pool)
+    search.search_worlds()
+    return len(search.visited_locations) == total_locations
+
+
 def generate_playthrough(worlds: list[World]) -> None:
     logging.getLogger("").debug("Generating Playthrough")
     # Generate initial playthrough

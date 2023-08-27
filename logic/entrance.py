@@ -7,6 +7,38 @@ if TYPE_CHECKING:
     from .world import World
 
 
+class EntranceType:
+    NONE: int = 0
+    BOSS: int = 1
+    BOSS_REVERSE: int = 2
+    DUNGEON: int = 3
+    DUNGEON_REVERSE: int = 4
+    SILENT_REALM: int = 5
+    SILENT_REALM_REVERSE: int = 6
+    INTERIOR: int = 7
+    INTERIOR_REVERSE: int = 8
+    OVERWORLD: int = 9
+
+    MIXED: int = 20
+
+    ALL: int = 50
+
+    def from_str(type_str: str) -> int:
+        match type_str:
+            case "Boss":
+                return EntranceType.BOSS
+            case "Dungeon":
+                return EntranceType.DUNGEON
+            case "Silent Realm":
+                return EntranceType.SILENT_REALM
+            case "Interior":
+                return EntranceType.INTERIOR
+            case "Overworld":
+                return EntranceType.OVERWORLD
+            case _:
+                return EntranceType.NONE
+
+
 class Entrance:
     def __init__(
         self,
@@ -18,11 +50,16 @@ class Entrance:
         self.parent_area: "Area" = parent_area_
         self.connected_area: "Area" = connected_area_
         self.original_connected_area: "Area" = connected_area_
-        self.type: str = None
+        self.type: int = None
         self.original_name: str = f"{parent_area_} -> {connected_area_}"
 
         self.requirement: Requirement = requirement_
         self.world: "World" = world_
+
+        self.exit_infos = {}
+        self.spawn_info = {}
+        self.secondary_exit_infos = {}
+        self.secondary_spawn_info = {}
 
         # Variables used for entrance shuffling
         self.shuffled: bool = False
@@ -35,3 +72,32 @@ class Entrance:
 
     def __str__(self) -> str:
         return self.original_name
+
+    def connect(self, new_connected_area: "Area") -> None:
+        self.connected_area = new_connected_area
+        new_connected_area.entrances.append(self)
+
+    def disconnect(self) -> "Area":
+        self.connected_area.entrances.remove(self)
+        previously_connected = self.connected_area
+        self.connected_area = None
+        return previously_connected
+
+    def bind_two_way(self, return_entrance: "Entrance") -> None:
+        self.reverse = return_entrance
+        return_entrance.reverse = self
+
+    def get_new_target(self) -> "Entrance":
+        target_entrance = Entrance(
+            self.world.root, None, Requirement(RequirementType.NOTHING), self.world
+        )
+        self.world.root.exits.append(target_entrance)
+        target_entrance.connect(self.connected_area)
+        target_entrance.replaces = self
+        return target_entrance
+
+    def assume_reachable(self) -> "Entrance":
+        if self.assumed == None:
+            self.assumed = self.get_new_target()
+            self.disconnect()
+        return self.assumed
