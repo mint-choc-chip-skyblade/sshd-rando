@@ -3149,6 +3149,9 @@ F402: # Sealed Temple
       - story_flag: 132 # imp2 defeated
         night: 0
         layer: 4
+      - story_flag: 13 # FS beaten
+        night: 0 
+        layer: 3
       - story_flag: 140 # groose lands in faron after harp
         night: 0
         layer: 2
@@ -3180,7 +3183,7 @@ F402: # Sealed Temple
     objtype: PLY
     object:
       play_cutscene: -1 # no cs anymore
-  - name: to BtT unlock
+  - name: Unlock door to BtT 1
     type: objpatch
     id: 0xFC00
     layer: 0
@@ -3188,7 +3191,7 @@ F402: # Sealed Temple
     objtype: OBJS
     object:
       anglex: 0xFF00 # sets the flag to -1 (meaning open)
-  - name: to BtT unlock
+  - name: Unlock door to BtT 2
     type: objpatch
     id: 0xFC01
     layer: 0
@@ -3226,26 +3229,15 @@ F402: # Sealed Temple
   #     anglez: 59391 # no untrigger storyflag (works but idk why)
   #     id: 0xFC00
   #     name: ScChang
-  # - name: Yeet GoT opening Cutscene
-  #   type: objpatch
-  #   id: 0xFC55
-  #   layer: 4
-  #   room: 2
-  #   objtype: STAG
-  #   object:
-  #     params1: 0xFF03FF05 # scenlink: 5 - skip cutscene of GoT opening
-  - name: BotG item trigger extended #so that the player automatically gets the item and the gate of time raised, while also not getting in the way of harp tutorial in BiT
+  - name: Yeet GoT opening Cutscene
     type: objpatch
-    index: 1
+    id: 0xFC55
+    layer: 4
     room: 2
-    objtype: AREA
+    objtype: STAG
     object:
-      posx: 0
-      posy: 7000
-      posz: 12300
-      sizex: 1100
-      sizey: 2000
-      sizez: 400
+      params1: 0xFF03FF05 # scenlink: 5 - skip cutscene of GoT opening
+
   - name: Remove Music and shaking
     type: objpatch
     room: 2
@@ -3254,6 +3246,7 @@ F402: # Sealed Temple
     object:
       story_flag2: -1 # no Imp trigger stuff
       sceneflag1: 7 # no shaking into vents active
+
   - name: Unforce layer after Raise GoT CS
     type: objpatch
     room: 2
@@ -3261,6 +3254,7 @@ F402: # Sealed Temple
     objtype: SCEN
     object:
       layer: 0
+  
   - name: Remove Goddess Statue falling down storyflag
     type: objpatch
     room: 2
@@ -3268,38 +3262,13 @@ F402: # Sealed Temple
     objtype: EVNT
     object:
       story_flag2: -1
+
   - name: Delete post levias impa
     type: objdelete
     id: 0xFC17
     layer: 0
     room: 2
     objtype: OBJ
-  - name: Impa triggers after raising GoT instead of Farores Courage
-    type: objpatch
-    id: 0xFC04
-    layer: 0
-    room: 2
-    objtype: OBJ
-    object:
-      trigstoryfid: 340 # gate of time raised
-
-  # - name: Trigger to Raise GoT
-  #   type: objadd
-  #   # onlyif: Option "triforce-required" Enabled
-  #   room: 2
-  #   layer: 0
-  #   objtype: OBJ
-  #   object:
-  #     params1: 0x2a830800 # triggered by botg storyflag, untriggered by GoT storyflag
-  #     params2: 0xFF1FFFFF
-  #     posx: 0
-  #     posy: 7600
-  #     posz: 8250
-  #     anglex: 0xFFFF # sets 7x04
-  #     angley: 0xFFFF
-  #     anglez: 50221 # entrypoint 502_21
-  #     id: 0xFC40
-  #     name: NpcTke
 
   - name: Delete Imp 2 beaten cs inside
     type: objdelete
@@ -3313,6 +3282,43 @@ F402: # Sealed Temple
     layer: 4
     room: 2
     objtype: OBJ
+
+  - name: Delete post imp2 Groose
+    type: objdelete
+    id: 0xFC4B
+    layer: 4
+    room: 2
+    objtype: OBJ
+
+  # get rid of multiple Impas
+  - name: Delete post GoT raised Impa
+    type: objdelete
+    id: 0xFC04
+    layer: 0
+    room: 2
+    objtype: OBJ
+
+  - name: Delete post imp2 Impa
+    type: objdelete
+    id: 0xFC0B
+    layer: 0
+    room: 2
+    objtype: OBJ
+
+  - name: Delete post tms Impa
+    type: objdelete
+    id: 0xFC07
+    layer: 0
+    room: 2
+    objtype: OBJ
+
+  - name: Delete post imp3 Impa
+    type: objdelete
+    id: 0xFC08
+    layer: 0
+    room: 2
+    objtype: OBJ
+
   - name: extra Arrow Pot Next to Fairy
     type: objadd
     layer: 0
@@ -3335,6 +3341,39 @@ F402: # Sealed Temple
     layer: 0
     room: 2
     objtype: STAG
+
+  - name: BotG item trigger extended #so that the player automatically gets the item and the gate of time raised, while also not getting in the way of harp tutorial in BiT
+    type: objpatch
+    index: 1
+    room: 2
+    objtype: AREA
+    object:
+      posx: 0
+      posy: 7000
+      posz: 11000
+      sizex: 400
+      sizey: 2000
+      sizez: 400
+
+  - name: Patch BotG check to trigger on harp storyflag
+    type: objpatch
+    id: 0xFC4E
+    layer: 2
+    room: 2
+    objtype: OBJ
+    object:
+      trigstoryfid: 9
+
+  - name: Move BotG check to layer 0
+    type: objmove
+    id: 0xFC4E
+    layer: 2
+    destlayer: 0
+    room: 2
+    objtype: OBJ
+
+  
+
 
 F403: # Hylia's Realm
   - name: Layer override
@@ -3387,7 +3426,7 @@ F404: # Hylia's Temple
       - story_flag: -1
         night: 0
         layer: 1
-  - name: Set Gate of Time opening cutscene watched 
+  - name: Set Gate of Time opening cutscene watched
     type: objadd
     room: 2
     layer: 0

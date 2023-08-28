@@ -273,25 +273,28 @@
     flow:
       next: BotG opens Thunderhead
   - name: BotG opens Thunderhead
-    type: flowadd
+    type: setstoryflag
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: 194
-      next: BotG raises GoT
-      param3: 0
-  - name: BotG raises GoT
+      setstoryflag: 194 # Thunderhead open flag
+      next: Check harp storyflag
+  - name: Check harp storyflag
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 9
+    cases:
+      - Set GoT raised
+      - -1
+  - name: Set GoT raised
     type: setstoryflag
     flow:
       setstoryflag: 340
-      next: BotG set imp2 defeated
-  - name: BotG set imp2 defeated
+      next: Set imp2 defeated
+  - name: Set imp2 defeated
     type: setstoryflag
     flow:
       setstoryflag: 132
       next: -1
-  - name: get rid of Skyloft layer 8&9
+  - name: Don't change to Skyloft layer 8/9 after getting the Triforce
     type: flowpatch
     index: 540 # before storyflag
     flow:
@@ -310,7 +313,14 @@
     type: setstoryflag
     flow:
       setstoryflag: 140
-      next: -1
+      next: Check BotG storyflag
+  - name: Check BotG storyflag
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 194
+    cases:
+      - Set GoT raised
+      - -1
   - name: Go to Letter Storyflag
     type: flowpatch
     index: 377
@@ -539,6 +549,21 @@
     type: flowpatch
     index: 520
     flow:
+      next: -1
+  - name: Set GoT flags on MS
+    type: flowpatch
+    index: 74
+    flow: 
+      next: Set AC flag for GoT on required sword
+  - name: Set AC flag for GoT on required sword
+    type: setstoryflag
+    flow:
+      setstoryflag: 11
+      next: Set FS flag for GoT on required sword
+  - name: Set FS flag for GoT on required sword
+    type: setstoryflag
+    flow:
+      setstoryflag: 13
       next: -1
   # don't currently have option
   # - name: Patch Medium Wallet
@@ -1315,21 +1340,21 @@
     type: setstoryflag
     flow:
       setstoryflag: 386
-      next: Set fi text before yerb storyflag
-  - name: Set fi text before yerb storyflag
+      next: Give WS storyflag
+  - name: Give WS storyflag
     type: setstoryflag
     flow:
-      setstoryflag: 60
-  #     next: Set ac flag
-  # - name: Set ac flag
-  #   type: setstoryflag
-  #   flow:
-  #     setstoryflag: 11
-  #     next: Set fs flag
-  # - name: Set fs flag
+      setstoryflag: 909
+  #     next: Set FS flag
+  # - name: Set FS flag
   #   type: setstoryflag
   #   flow:
   #     setstoryflag: 13
+  #     next: Set AC flag
+  # - name: Set AC flag
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 11
       next: Bow storyflag
 
 
@@ -1346,7 +1371,7 @@
   - name: Give tms
     type: setitemflag
     flow:
-      itemid: 14
+      itemid: 11 # goddess sword for now
       next: Give sailcloth
   - name: Give sailcloth
     type: setitemflag
@@ -3019,21 +3044,21 @@
       name: "502_20"
       value: Show Triforce text
 
-  - name: Raise GoT Entry
-    type: entryadd
-    entry:
-      name: "502_21"
-      value: Raise GoT
-  - name: Raise GoT
-    type: setstoryflag
-    flow:
-      setstoryflag: 340 # Raise GoT
-      next: Set imp2 beat storyflag
-  - name: Set imp2 beat storyflag
-    type: setstoryflag
-    flow:
-      setstoryflag: 132 # Beat imp2
-      next: -1
+  # - name: Raise GoT Entry
+  #   type: entryadd
+  #   entry:
+  #     name: "502_21"
+  #     value: Raise GoT
+  # - name: Raise GoT
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 340 # Raise GoT
+  #     next: Set imp2 beat storyflag
+  # - name: Set imp2 beat storyflag
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 132 # Beat imp2
+  #     next: -1
 
 503-Goron:
   - name: To Bomb Bag Check I # when you don't have bow
