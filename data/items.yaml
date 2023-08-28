@@ -261,6 +261,7 @@
   - GetTriForceSingle
   getarcname: GetTriForceSingle
   getmodelname: GetTriForceSingle
+  advancement: true
 - id: 97
   name: Triforce of Wisdom
   oarc:

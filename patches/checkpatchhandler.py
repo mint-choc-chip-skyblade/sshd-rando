@@ -9,11 +9,6 @@ from constants.patchconstants import (
 
 
 def determine_check_patches(locationTable, stagePatchHandler, eventPatchhandler):
-    # placements = yaml_load(TEMP_PLACEMENT_LIST)
-    # checks = yaml_load(CHECKS_PATH)
-    # items = yaml_load(ITEMS_PATH)
-    # byItemName = dict((x["name"], x) for x in items)
-
     for location in locationTable.values():
         item = location.current_item
 

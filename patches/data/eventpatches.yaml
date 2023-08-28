@@ -273,15 +273,28 @@
     flow:
       next: BotG opens Thunderhead
   - name: BotG opens Thunderhead
-    type: flowadd
+    type: setstoryflag
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: 194
+      setstoryflag: 194 # Thunderhead open flag
+      next: Check harp storyflag
+  - name: Check harp storyflag
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 9
+    cases:
+      - Set GoT raised
+      - -1
+  - name: Set GoT raised
+    type: setstoryflag
+    flow:
+      setstoryflag: 340
+      next: Set imp2 defeated
+  - name: Set imp2 defeated
+    type: setstoryflag
+    flow:
+      setstoryflag: 132
       next: -1
-      param3: 0
-  - name: get rid of Skyloft layer 8&9
+  - name: Don't change to Skyloft layer 8/9 after getting the Triforce
     type: flowpatch
     index: 540 # before storyflag
     flow:
@@ -292,23 +305,22 @@
     flow:
       next: Goddess Harp Storyflag
   - name: Goddess Harp Storyflag
-    type: flowadd
+    type: setstoryflag
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: 9
+      setstoryflag: 9
       next: Groose lands in Faron Storyflag
-      param3: 0
   - name: Groose lands in Faron Storyflag
-    type: flowadd
+    type: setstoryflag
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: 140
-      next: -1
-      param3: 0
+      setstoryflag: 140
+      next: Check BotG storyflag
+  - name: Check BotG storyflag
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 194
+    cases:
+      - Set GoT raised
+      - -1
   - name: Go to Letter Storyflag
     type: flowpatch
     index: 377
@@ -537,6 +549,21 @@
     type: flowpatch
     index: 520
     flow:
+      next: -1
+  - name: Set GoT flags on MS
+    type: flowpatch
+    index: 74
+    flow: 
+      next: Set AC flag for GoT on required sword
+  - name: Set AC flag for GoT on required sword
+    type: setstoryflag
+    flow:
+      setstoryflag: 11
+      next: Set FS flag for GoT on required sword
+  - name: Set FS flag for GoT on required sword
+    type: setstoryflag
+    flow:
+      setstoryflag: 13
       next: -1
   # don't currently have option
   # - name: Patch Medium Wallet
@@ -1161,11 +1188,11 @@
     type: setstoryflag
     flow:
       setstoryflag: 32
-      next: Set botg storyflag
-  - name: Set botg storyflag
-    type: setstoryflag
-    flow:
-      setstoryflag: 194
+  #     next: Set botg storyflag
+  # - name: Set botg storyflag
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 194
       next: Set spiral charge storyflag
   - name: Set spiral charge storyflag
     type: setstoryflag
@@ -1223,6 +1250,103 @@
     type: setstoryflag
     flow:
       setstoryflag: 304
+      next: Set first pillar storyflag
+  - name: Set first pillar storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 724
+      next: Set first map storyflag
+  - name: Set first map storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 96
+      next: Set 5 beacons storyflag
+  - name: Set 5 beacons storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 745
+      next: Set skipper chart cs storyflag
+  - name: Set skipper chart cs storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 496
+      next: Set beacon storyflag
+  - name: Set beacon storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 130
+      next: Set SG big door cs storyflag
+  - name: Set SG big door cs storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 792
+      next: Set dowsing storyflag
+  - name: Set dowsing storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 789
+      next: Set windmill repaired storyflag
+  - name: Set windmill repaired storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 661
+      next: Set sealed temple layer 1 storyflag
+  - name: Set sealed temple layer 1 storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 138
+      next: Set sky fi text storyflag
+  - name: Set sky fi text storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 24
+      next: Set no sleeping for wyrna storyflag
+  - name: Set no sleeping for wyrna storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 329
+      next: Set practice sword storyflag
+  - name: Set practice sword storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 28
+      next: Set updated sand sea map storyflag
+  - name: Set updated sand sea map storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 519
+      next: Set full lake floria storyflag
+  - name: Set full lake floria storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 115
+      next: Set updated desert map storyflag
+  - name: Set updated desert map storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 129
+      next: Set instructor text after sword storyflag
+  - name: Set instructor text after sword storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 199
+      next: Set eldin entrance statue storyflag
+  - name: Set eldin entrance statue storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 804
+      next: Set first part of bertie text storyflag
+  - name: Set first part of bertie text storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 386
+      next: Give WS storyflag
+
+      
+  - name: Give WS storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 909
       next: Bow storyflag
   - name: Bow storyflag
     type: setstoryflag
@@ -1233,21 +1357,21 @@
     type: setitemflag
     flow:
       itemid: 19
-      next: Give tms
-  - name: Give tms
+      next: Give Whitesword
+  - name: Give Whitesword # whitesword atm so you only need to hardcode 1 sword to get to MS to test GoT sword requirements (item get sets needed storyflags)
     type: setitemflag
     flow:
-      itemid: 14
+      itemid: 9 
       next: Give sailcloth
   - name: Give sailcloth
     type: setitemflag
     flow:
       itemid: 15
-      next: Give harp
-  - name: Give harp
-    type: setitemflag
-    flow:
-      itemid: 16
+  #     next: Give harp # commented out for now because harp item get gives you needed storyflag for GoT (will be a lot more reliable when we have actual start items)
+  # - name: Give harp
+  #   type: setitemflag
+  #   flow:
+  #     itemid: 16
       next: Give clawshots
   - name: Give clawshots
     type: setitemflag
@@ -2822,31 +2946,40 @@
       subType: 1
       param1: 29
       param2: 10
-      next: Raise GoT
-      param3: 2
-  - name: Raise GoT
-    type: flowadd
-    flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: 340 # Raise GoT
       next: 267
-      param3: 0
-  - name: got to rando dungeons completed check
+      param3: 2
+  - name: End after item get
     type: flowpatch
     index: 267
     flow:
-      next: to rando dungeons completed check
-  - name: to rando dungeons completed check
-    type: flowadd
-    flow:
-      type: type3
-      subType: 1
-      param1: 8 # entrypoint 008_007
-      param2: 7
       next: -1
-      param3: 7
+  # - name: Raise GoT
+  #   type: flowadd
+  #   flow:
+  #     type: type3
+  #     subType: 0
+  #     param1: 0
+  #     param2: 340 # Raise GoT
+  #     next: 267
+  #     param3: 0
+
+  # - name: Groose 1
+  #   type: flowpatch
+  #   index: 56
+  #   flow:
+  #     next: Set sf 1
+  # - name: Set sf 1
+  #   type: setsceneflag
+  #   flow: 
+  #     sceneindex: 10
+  #     setsceneflag: 28 # groose cs watched
+  #     next: Set sf 2
+  # - name: Set sf 2
+  #   type: setsceneflag
+  #   flow:
+  #     sceneindex: 10
+  #     setsceneflag: 21 # botg played
+  #     next: -1
 
 502-CenterFieldBack:
   - name: Zelda's Cutscene, give item from impa # this is overriding a set sceneflag, which is not needed anymore
@@ -2900,6 +3033,22 @@
     entry:
       name: "502_20"
       value: Show Triforce text
+
+  # - name: Raise GoT Entry
+  #   type: entryadd
+  #   entry:
+  #     name: "502_21"
+  #     value: Raise GoT
+  # - name: Raise GoT
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 340 # Raise GoT
+  #     next: Set imp2 beat storyflag
+  # - name: Set imp2 beat storyflag
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 132 # Beat imp2
+  #     next: -1
 
 503-Goron:
   - name: To Bomb Bag Check I # when you don't have bow
