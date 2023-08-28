@@ -3464,23 +3464,23 @@ F404: # Hylia's Temple
     layer: 0
     room: 2
     objtype: OBJ
-  # - name: Trigger to Check Triforces
-  #   type: objadd
-  #   onlyif: Option "triforce-required" Enabled
-  #   room: 2
-  #   layer: 0
-  #   objtype: OBJ
-  #   object:
-  #     params1: 0xFFEA1400 # triggered by triforce completed
-  #     params2: 0xFF1FFFFF
-  #     posx: 0
-  #     posy: 7600
-  #     posz: 8250
-  #     anglex: 0x32FF # sets 7x04
-  #     angley: 0xFFFF
-  #     anglez: 50220 # entrypoint 502_20
-  #     id: 0xFC40
-  #     name: NpcTke
+  - name: Trigger to Check Triforces
+    type: objadd
+    onlyif: Option "triforce-required" Enabled
+    room: 2
+    layer: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFEA1400 # triggered by triforce completed
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 7600
+      posz: 8250
+      anglex: 0x32FF # sets 7x04
+      angley: 0xFFFF
+      anglez: 50220 # entrypoint 502_20
+      id: 0xFC40
+      name: NpcTke
 
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
