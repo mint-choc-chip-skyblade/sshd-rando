@@ -30,6 +30,25 @@ World 1:
 # Attempting to place a major item in an excluded location will give you a
 # Plandomizer Error and the seed won't generate.
 
+# ENTRANCES
+# All plandomized entrances are defined under an "entrances" element and consist
+# of the original entrance that you want to change followed by a colon(:) and the
+# replacement entrance you want the original connection to go to. The following example
+# switches the entrances between Skyview Temple and Ancient Cistern. Note that
+# when plandomizing entrances, the entrance randomizer setting for the entrances you're
+# attempting to plandomize must be turned on.
+World 1:
+  entrances:
+    Deep Woods -> Skyview Entry: Ancient Cistern Lobby from Floria Waterfall Temple Ledge
+    Lake Floria Temple Ledge -> Ancient Cistern Lobby: Skyview Entry from Deep Woods
+# The original entrance must be in the format "<first area> -> <second area>", and
+# the replacement entrance must be in the format "<second area> from <first area>".
+# The spaces around the arrow and the word "from" are important to include. These
+# formats are not interchangable. If you attempt to randomize entrances
+# that don't exist or which aren't supported for shuffling at the current moment,
+# then you'll get a plandomizer error. For a full list of randomizable entrances please see:
+# https://github.com/mint-choc-chip-skyblade/sshd-rando/blob/main/data/entrance_shuffle_data.yaml
+
 # MULTIWORLD PLANDOMIZER (Note: currently multiworld is not an option in the randomizer
 # and is not actively being developed, but the filling algorithm was made to support
 # multiworld incase it ever happens in the future.)
