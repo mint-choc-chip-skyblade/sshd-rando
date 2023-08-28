@@ -97,6 +97,6 @@ ITEM_STORY_FLAGS = {
     PROGRESSIVE_BOW: [944, 945, 946],  # Bow, Iron, Sacred
     PROGRESSIVE_SLINGSHOT: [947, 948],  # Slingshot, Scatershot
     PROGRESSIVE_BUG_NET: [949, 950],  # Bug Net, Big Bug Net
-    PROGRESSIVE_POUCH: [931, 932]  # Adventure Pouch, Pouch Expansion * 4
+    PROGRESSIVE_POUCH: [30, 932]  # Adventure Pouch, Pouch Expansion * 4
     # SAILCLOTH: 32
 }
