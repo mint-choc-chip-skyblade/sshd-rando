@@ -50,7 +50,7 @@ class Entrance:
         self.parent_area: "Area" = parent_area_
         self.connected_area: "Area" = connected_area_
         self.original_connected_area: "Area" = connected_area_
-        self.type: int = None
+        self.type: int = EntranceType.NONE
         self.original_name: str = f"{parent_area_} -> {connected_area_}"
 
         self.requirement: Requirement = requirement_
@@ -72,6 +72,13 @@ class Entrance:
 
     def __str__(self) -> str:
         return self.original_name
+
+    def __lt__(self, other: "Entrance") -> bool:
+        if self.world.id != other.world.id:
+            return self.world.id < other.world.id
+        if self.parent_area != other.parent_area:
+            return self.parent_area < other.parent_area
+        return self.connected_area < other.connected_area
 
     def connect(self, new_connected_area: "Area") -> None:
         self.connected_area = new_connected_area

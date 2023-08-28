@@ -61,7 +61,7 @@ class World:
         self.entrance_spheres: list[list[Entrance]] = None
 
         self.plandomizer_locations: dict[Location, Item] = {}
-        self.plandomizer_entrances: dict[str, str] = {}
+        self.plandomizer_entrances: dict[Entrance, Entrance] = {}
 
     def __str__(self) -> str:
         return f"World {self.id + 1}"
@@ -466,7 +466,10 @@ class World:
         search.area_time[self.root.id] = TOD.DAY
 
     def get_shuffleable_entrances(
-        self, entrance_type: int, only_primary: bool = False
+        self,
+        entrance_type: int,
+        only_primary: bool = False,
+        only_shuffled: bool = False,
     ) -> list[Entrance]:
         entrances = []
         for area in self.areas.values():
