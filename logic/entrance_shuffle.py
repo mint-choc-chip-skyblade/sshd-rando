@@ -24,13 +24,15 @@ class EntranceShuffleError(RuntimeError):
 
 def shuffle_world_entrances(world: World, worlds: list[World]):
     set_all_entrances_data(world)
-    process_plandomizer_entrances(world)
 
     pools_to_mix: list[int] = []
     entrance_pools = create_entrance_pools(world, pools_to_mix)
     target_entrance_pools = create_target_pools(entrance_pools)
 
-    # TODO: Set Plandomizer Entrances
+    # Set plando entrances first
+    set_plandomizer_entrances(
+        world, worlds, entrance_pools, target_entrance_pools, pools_to_mix
+    )
 
     # Shuffle the entrances
     for entrance_type, entrance_pool in entrance_pools.items():
@@ -130,6 +132,86 @@ def create_target_pools(entrance_pools: EntrancePools) -> EntrancePools:
     for entrance_type, entrance_pool in entrance_pools.items():
         target_entrance_pools[entrance_type] = assume_entrance_pool(entrance_pool)
     return target_entrance_pools
+
+
+def set_plandomizer_entrances(
+    world: World,
+    worlds: list[World],
+    entrance_pools: EntrancePools,
+    target_entrance_pools: EntrancePools,
+    pools_to_mix: list[int],
+):
+    logging.getLogger("").debug("Now Placing plandomized entrances")
+    item_pool = get_complete_item_pool(worlds)
+
+    # Attempt to connect each plandomized entrance
+    for entrance, target in world.plandomizer_entrances.items():
+        entrance_to_connect = entrance
+        target_to_connect = target
+        entrance_type = entrance.type
+
+        if entrance_type == EntranceType.NONE:
+            raise EntranceShuffleError(
+                f"{entrance} is not an entrance that can be shuffled"
+            )
+        if target_to_connect.type == EntranceType.NONE:
+            raise EntranceShuffleError(
+                f"{target} is not an entrance that can be shuffled"
+            )
+
+        # Check to make sure this type of entrance is being shuffled
+        if entrance_type not in entrance_pools:
+            # Check if its reverse is being shuffled if decoupled entrances are off
+            if (
+                not entrance.decoupled
+                and entrance.reverse
+                and entrance.reverse.type in entrance_pools
+            ):
+                # If this entrance is already connected, throw an error
+                if entrance.connected_area is not None:
+                    raise EntranceShuffleError(
+                        f"{entrance} has already been connected. If you previously set the reverse of this entrance, you'll need to enabled the Decouple Entrances setting to plandomize this one also"
+                    )
+
+                entrance_to_connect = entrance.reverse
+                target_to_connect = target.reverse
+                entrance_type = entrance_to_connect.type
+            else:
+                raise EntranceShuffleError(
+                    f"Entrance {entrance}'s type is not being shuffled and thus can't be plandomized"
+                )
+
+        # Get the appropriate pools (depending on if the pool is being mixed)
+        entrance_pool = entrance_pools[
+            EntranceType.MIXED if entrance_type in pools_to_mix else entrance_type
+        ]
+        target_pool = target_entrance_pools[
+            EntranceType.MIXED if entrance_type in pools_to_mix else entrance_type
+        ]
+
+        if entrance_to_connect in entrance_pool:
+            valid_target_found = False
+            for target_entrance in target_pool:
+                if target_to_connect == target_entrance.replaces:
+                    replace_entrance(
+                        worlds, entrance_to_connect, target_entrance, [], item_pool
+                    )
+                    valid_target_found = True
+                    entrance_pool.remove(entrance_to_connect)
+                    target_pool.remove(target_entrance)
+                    confirm_replacement(entrance_to_connect, target_entrance)
+                    break
+
+            if not valid_target_found:
+                raise EntranceShuffleError(
+                    f"Entrance {target_to_connect} is not a valid target for {entrance}"
+                )
+        else:
+            raise EntranceShuffleError(
+                f"Entrance {entrance}'s type is not being shuffled and thus can't be plandomized"
+            )
+
+    logging.getLogger("").debug("All plandomizer entrances have been placed")
 
 
 def shuffle_entrance_pool(

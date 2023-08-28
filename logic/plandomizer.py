@@ -48,3 +48,14 @@ def load_plandomizer_data(worlds: list[World], filepath: str):
                         world.plandomizer_locations[
                             world.get_location(location)
                         ] = worlds[item["world"] - 1].get_item(item["item"])
+
+            if "entrances" in world_data:
+                for entrance_name, target_name in world_data["entrances"].items():
+                    target_connected, target_parent = target_name.split(" from ")
+
+                    entrance = world.get_entrance(entrance_name)
+                    target = world.get_entrance(
+                        f"{target_parent} -> {target_connected}"
+                    )
+
+                    world.plandomizer_entrances[entrance] = target
