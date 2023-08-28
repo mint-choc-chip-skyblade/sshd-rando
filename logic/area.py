@@ -50,6 +50,9 @@ class Area:
     def __str__(self) -> str:
         return self.name
 
+    def __lt__(self, other: "Area"):
+        return self.id < other.id
+
 
 # Will perform a search from the starting area until all
 # possibly connected hint regions have been found.
