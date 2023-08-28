@@ -77,7 +77,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
         # Recalculate longest name length for all shuffled entrances
         for world in worlds:
             for entrance in world.get_shuffleable_entrances(
-                EntranceType.ALL, only_shuffled=True, only_primary=True
+                EntranceType.ALL, only_primary=True
             ):
                 longest_name_length = max(longest_name_length, len(f"{entrance}"))
 
@@ -87,7 +87,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
             spoiler_log.write(f"    {world}:\n")
             for entrance in sorted(
                 world.get_shuffleable_entrances(
-                    EntranceType.ALL, only_shuffled=True, only_primary=True
+                    EntranceType.ALL, only_primary=True
                 )
             ):
                 spoiler_log.write(

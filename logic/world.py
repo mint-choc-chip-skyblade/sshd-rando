@@ -469,13 +469,12 @@ class World:
         self,
         entrance_type: int,
         only_primary: bool = False,
-        only_shuffled: bool = False,
     ) -> list[Entrance]:
         entrances = []
         for area in self.areas.values():
             for exit_ in area.exits:
                 # print(exit_, exit_.type, entrance_type)
-                if (
+                if exit_.type != EntranceType.NONE and (
                     entrance_type == EntranceType.ALL or exit_.type == entrance_type
                 ) and (exit_.primary or not only_primary):
                     entrances.append(exit_)
