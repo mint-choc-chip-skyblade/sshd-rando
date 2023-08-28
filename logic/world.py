@@ -474,8 +474,12 @@ class World:
         for area in self.areas.values():
             for exit_ in area.exits:
                 # print(exit_, exit_.type, entrance_type)
-                if exit_.type != EntranceType.NONE and (
-                    entrance_type == EntranceType.ALL or exit_.type == entrance_type
-                ) and (exit_.primary or not only_primary):
+                if (
+                    exit_.type != EntranceType.NONE
+                    and (
+                        entrance_type == EntranceType.ALL or exit_.type == entrance_type
+                    )
+                    and (exit_.primary or not only_primary)
+                ):
                     entrances.append(exit_)
         return entrances

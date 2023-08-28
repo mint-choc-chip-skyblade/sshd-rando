@@ -86,9 +86,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
         for world in worlds:
             spoiler_log.write(f"    {world}:\n")
             for entrance in sorted(
-                world.get_shuffleable_entrances(
-                    EntranceType.ALL, only_primary=True
-                )
+                world.get_shuffleable_entrances(EntranceType.ALL, only_primary=True)
             ):
                 spoiler_log.write(
                     "        "
