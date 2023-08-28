@@ -4,7 +4,7 @@
     exit_infos:
       - stage: F101
         room: 0
-        scen: 1
+        index: 1
     spawn_info:
       - stage: D100
         layer: 0
@@ -46,7 +46,7 @@
     exit_infos:
       - stage: F200
         room: 4
-        scen: 0
+        index: 0
     spawn_info:
       - stage: D200
         layer: 0
@@ -82,12 +82,12 @@
     exit_infos:
       - stage: F300
         room: 0
-        scen: 5
+        index: 5
     spawn_info:
       - stage: D300
         layer: 0
         room: 0
-        spawn: 0
+        entrance: 0
   return:  
     connection: LMF First Room -> Top of LMF
     exit_infos:
@@ -124,7 +124,7 @@
       - stage: F300_5
         room: 0
         index: 0
-    secondary_spawn_info: # Spawn in Harp Cutscene
+    secondary_spawn_info: # Spawn in Harp Cutindexe
       - stage: F300_4
         layer: 2
         room: 0
@@ -135,7 +135,7 @@
     exit_infos:
       - stage: F102_1
         room: 0
-        scen: 1
+        index: 1
     spawn_info:
       - stage: D101
         layer: 0
@@ -174,13 +174,13 @@
     exit_infos:
       - stage: F301_1
         room: 0
-        scen: 1
+        index: 1
       - stage: F301 # Going from harbour to sandship
         room: 0
-        scen: 0
+        index: 0
       - stage: F301
         room: 0
-        scen: 4
+        index: 4
     spawn_info:
       - stage: D301
         layer: 1
@@ -220,7 +220,7 @@
       - stage: F301_1
         layer: 0
         room: 0
-        spawn: 4
+        entrance: 4
     secondary_exit_infos: # Exit after striking goddess crest
       - stage: B301
         room: 0
@@ -236,7 +236,7 @@
     exit_infos:
       - stage: F201_3
         room: 0
-        scen: 1
+        index: 1
     spawn_info:
       - stage: D201
         layer: 0
@@ -281,12 +281,12 @@
     exit_infos:
       - stage: F000
         room: 0
-        scen: 48
+        index: 48
     spawn_info:
       - stage: D003_7
         layer: 0
         room: 0
-        index: 4
+        entrance: 4
   return:  
     connection: Sky Keep Entryway -> Sky Keep Entrance Platform
     exit_infos: # most of them not needed
