@@ -8,6 +8,9 @@ def spoiler_format_location(location: Location, longest_name_length: int) -> str
 
 def spoiler_format_entrance(entrance: Entrance, longest_name_length: int) -> str:
     spaces = longest_name_length - len(f"{entrance}")
+    if entrance.replaces is None:
+        print(entrance)
+        return "ERROR"
     replacement = entrance.replaces.original_name
     parent, connected = replacement.split(" -> ")
     return f"{entrance}: {spaces * ' '}{connected} from {parent}"
