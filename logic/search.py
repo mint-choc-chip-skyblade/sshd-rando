@@ -236,8 +236,28 @@ class Search:
                     self.playthrough_spheres[-1].add(location)
                 self.is_beatable = True
 
-    def add_exit_to_entrance_spheres(self, exit_):
-        pass
+    def add_exit_to_entrance_spheres(self, exit_: Entrance) -> None:
+        if self.search_mode == SearchMode.GENERATE_PLAYTHROUGH and exit_.shuffled:
+            if exit_ not in self.playthrough_entrances:
+                self.entrance_spheres[-1].append(exit_)
+                self.playthrough_entrances.add(exit_)
+                if not exit_.decoupled:
+                    self.playthrough_entrances.add(exit_.replaces.reverse)
+
+    def remove_empty_spheres(self) -> None:
+        spheres_to_remove = []
+        for i in range(len(self.playthrough_spheres)):
+            if (
+                len(self.playthrough_spheres[i]) == 0
+                and len(self.entrance_spheres[i]) == 0
+            ):
+                spheres_to_remove.append(i)
+
+        # Remove spheres from higher indices first so we the lower
+        # indices stay the same
+        for index in reversed(spheres_to_remove):
+            self.playthrough_spheres.pop(i)
+            self.entrance_spheres.pop(i)
 
     # Will dump a file which can be turned into a visual graph using graphviz
     # https://graphviz.org/download/
@@ -300,6 +320,15 @@ def game_beatable(worlds: list[World]) -> bool:
     return search.is_beatable
 
 
+def all_locations_reachable(worlds: list[World], item_pool: Counter[Item] = {}) -> bool:
+    total_locations = 0
+    for world in worlds:
+        total_locations += len(world.location_table)
+    search = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds, item_pool)
+    search.search_worlds()
+    return len(search.visited_locations) == total_locations
+
+
 def generate_playthrough(worlds: list[World]) -> None:
     logging.getLogger("").debug("Generating Playthrough")
     # Generate initial playthrough
@@ -343,6 +372,30 @@ def generate_playthrough(worlds: list[World]) -> None:
     # by the previous generation having access to extra items
     new_search = Search(SearchMode.GENERATE_PLAYTHROUGH, worlds)
     new_search.search_worlds()
+
+    # Now do the same process for entrances to pare down the entrance playthrough
+    entrance_spheres = new_search.entrance_spheres
+    non_required_entrances = {}
+
+    for sphere in entrance_spheres:
+        for entrance in sphere.copy():
+            connected_area = entrance.disconnect()
+            if game_beatable(worlds):
+                # If the game is still beatable then this entrance is not required
+                sphere.remove(entrance)
+                non_required_entrances[entrance] = connected_area
+            else:
+                # If the entrance is required, reconnect it
+                entrance.connect(connected_area)
+
+    # Reconnect all non-required entrances
+    for entrance, connected_area in non_required_entrances.items():
+        entrance.connect(connected_area)
+
+    # Give locations back their items
+    for location, item in temp_empty_locations.items():
+        location.set_current_item(item)
+
     # Discard all locations not in the playthrough locations set
     for sphere in new_search.playthrough_spheres:
         for location in sphere.copy():
@@ -350,10 +403,7 @@ def generate_playthrough(worlds: list[World]) -> None:
                 sphere.discard(location)
 
     # Now remove any empty spheres that might remain
-    worlds[0].playthrough_spheres = [
-        sphere for sphere in new_search.playthrough_spheres if len(sphere) > 0
-    ]
+    new_search.remove_empty_spheres()
 
-    # Give locations back their items
-    for location, item in temp_empty_locations.items():
-        location.set_current_item(item)
+    worlds[0].playthrough_spheres = new_search.playthrough_spheres
+    worlds[0].entrance_spheres = new_search.entrance_spheres

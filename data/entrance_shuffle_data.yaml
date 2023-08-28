@@ -1,0 +1,354 @@
+- type: Dungeon
+  forward: 
+    connection: Deep Woods -> Skyview Entry
+    exit_infos:
+      - stage: F101
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: D100
+        layer: 0
+        room: 0
+        entrance: 0
+  return: 
+    connection: Skyview Entry -> Deep Woods
+    exit_infos:
+      - stage: D100
+        room: 0
+        index: 0
+      - stage: D100
+        room: 0
+        index: 2
+      - stage: D100
+        room: 2
+        index: 0
+      - stage: D100
+        room: 5
+        index: 0
+      - stage: D100
+        room: 9
+        index: 0
+      - stage: B100_1
+        room: 0
+        index: 4
+    spawn_info:
+      - stage: F101
+        layer: 0
+        room: 0
+        entrance: 1
+    secondary_exit_infos: # Exit after striking goddess crest
+      - stage: B100_1
+        room: 0
+        index: 1
+- type: Dungeon
+  forward: 
+    connection: Near Temple Entrance -> Earth Temple First Room
+    exit_infos:
+      - stage: F200
+        room: 4
+        index: 0
+    spawn_info:
+      - stage: D200
+        layer: 0
+        room: 1
+        entrance: 0
+  return:  
+    connection: Earth Temple First Room -> Near Temple Entrance
+    exit_infos:
+      - stage: D200
+        room: 1
+        index: 0
+      - stage: D200
+        room: 1
+        index: 1
+      - stage: D200
+        room: 2
+        index: 0
+      - stage: D200
+        room: 4
+        index: 2
+    spawn_info:
+      - stage: F200
+        layer: 0
+        room: 4
+        entrance: 1
+    secondary_exit_infos: # Exit after striking goddess crest
+      - stage: B210
+        room: 0
+        index: 0 
+- type: Dungeon
+  forward: 
+    connection: Top of LMF -> LMF First Room
+    exit_infos:
+      - stage: F300
+        room: 0
+        index: 5
+    spawn_info:
+      - stage: D300
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: LMF First Room -> Top of LMF
+    exit_infos:
+      - stage: D300
+        room: 0
+        index: 0
+      - stage: D300
+        room: 0
+        index: 1
+      - stage: D300
+        room: 5
+        index: 4
+      - stage: D300_1
+        room: 0
+        index: 0
+      - stage: D300_1
+        room: 0
+        index: 1
+      - stage: D300_1
+        room: 5
+        index: 4
+      - stage: B300
+        room: 0
+        index: 1
+      - stage: F300_5
+        room: 0
+        index: 3
+    spawn_info:
+      - stage: F300
+        layer: 0
+        room: 0
+        entrance: 5
+    secondary_exit_infos: # Exit after the last minecart ride
+      - stage: F300_5
+        room: 0
+        index: 0
+    secondary_spawn_info: # Spawn in Harp Cutindexe
+      - stage: F300_4
+        layer: 2
+        room: 0
+        entrance: 2
+- type: Dungeon
+  forward: 
+    connection: Floria Waterfall Temple Ledge -> Ancient Cistern Lobby
+    exit_infos:
+      - stage: F102_1
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: D101
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Ancient Cistern Lobby -> Floria Waterfall Temple Ledge
+    exit_infos:
+      - stage: D101
+        room: 0
+        index: 2
+      - stage: D101
+        room: 0
+        index: 3
+      - stage: D101
+        room: 3
+        index: 1
+      - stage: D101
+        room: 4
+        index: 2
+      - stage: D101
+        room: 5
+        index: 0
+    spawn_info:
+      - stage: F102_1
+        layer: 0
+        room: 0
+        entrance: 1
+    secondary_exit_infos: # Exit after striking goddess crest
+      - stage: B101_1
+        room: 0
+        index: 2
+- type: Dungeon
+  forward: 
+    connection: Lanayru Sand Sea -> Sandship Main Deck
+    exit_infos:
+      - stage: F301_1
+        room: 0
+        index: 1
+      - stage: F301 # Going from harbour to sandship
+        room: 0
+        index: 0
+      - stage: F301
+        room: 0
+        index: 4
+    spawn_info:
+      - stage: D301
+        layer: 1
+        room: 0
+        entrance: 0
+  return:  
+    connection: Sandship Main Deck -> Lanayru Sand Sea
+    exit_infos:
+      - stage: D301
+        room: 0
+        index: 0
+      - stage: D301
+        room: 0
+        index: 1
+      - stage: D301
+        room: 1
+        index: 2
+      - stage: D301
+        room: 2
+        index: 0
+      - stage: D301
+        room: 6
+        index: 0
+      - stage: D301
+        room: 9
+        index: 1
+      - stage: D301
+        room: 12
+        index: 0
+      - stage: D301
+        room: 13
+        index: 0
+      - stage: B301
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F301_1
+        layer: 0
+        room: 0
+        entrance: 4
+    secondary_exit_infos: # Exit after striking goddess crest
+      - stage: B301
+        room: 0
+        index: 3
+    secondary_spawn_info: # Spawn at Harbour where Skipper thanks you
+      - stage: F301
+        layer: 0
+        room: 0
+        entrance: 3
+- type: Dungeon
+  forward: 
+    connection: Outside Fire Sanctuary -> Fire Sanctuary First Room
+    exit_infos:
+      - stage: F201_3
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: D201
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Fire Sanctuary First Room -> Outside Fire Sanctuary
+    exit_infos:
+      - stage: D201
+        room: 0
+        index: 1
+      - stage: D201
+        room: 3
+        index: 2
+      - stage: D201
+        room: 10
+        index: 2
+      - stage: D201_1
+        room: 1
+        index: 0
+      - stage: D201_1
+        room: 7
+        index: 0
+      - stage: D201_1
+        room: 5
+        index: 3
+      - stage: D201_1
+        room: 6
+        index: 2
+    spawn_info:
+      - stage: F201_3
+        layer: 0
+        room: 0
+        entrance: 1
+    secondary_exit_infos: # Exit after striking goddess crest
+      - stage: B201_1
+        room: 0
+        index: 1
+- type: Dungeon
+  forward: 
+    connection: Sky Keep Entrance Platform -> Sky Keep Entryway
+    exit_infos:
+      - stage: F000
+        room: 0
+        index: 48
+    spawn_info:
+      - stage: D003_7
+        layer: 0
+        room: 0
+        entrance: 4
+  return:  
+    connection: Sky Keep Entryway -> Sky Keep Entrance Platform
+    exit_infos: # most of them not needed
+      - stage: D003_0
+        room: 0
+        index: 3
+      - stage: D003_1
+        room: 0
+        index: 2
+      - stage: D003_2
+        room: 0
+        index: 3
+      - stage: D003_3
+        room: 0
+        index: 3
+      - stage: D003_4
+        room: 0
+        index: 2
+      - stage: D003_5
+        room: 0
+        index: 2
+      - stage: D003_6
+        room: 0
+        index: 2
+      - stage: D003_7
+        room: 0
+        index: 2
+      - stage: D003_0
+        room: 0
+        index: 1
+      - stage: D003_1
+        room: 0
+        index: 1
+      - stage: D003_2
+        room: 0
+        index: 1
+      - stage: D003_3
+        room: 0
+        index: 1
+      - stage: D003_4
+        room: 0
+        index: 1
+      - stage: D003_5
+        room: 0
+        index: 1
+      - stage: D003_6
+        room: 0
+        index: 1
+      - stage: D003_7
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 53
+    secondary_exit_infos: # Exit getting all 3 triforce pieces
+      - stage: F407
+        room: 0
+        index: 1
+    secondary_spawn_info: # Idk where this is
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 52

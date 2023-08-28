@@ -159,3 +159,11 @@ def get_random_junk_item_name():
     return random.choice(
         ["Red Rupee", "Silver Rupee", "Semi Rare Treasure", "Rare Treasure"]
     )
+
+
+def get_complete_item_pool(worlds: list["World"]) -> list[Item]:
+    complete_item_pool: list[Item] = []
+    for world in worlds:
+        for item, count in world.item_pool.items():
+            complete_item_pool.extend([item] * count)
+    return complete_item_pool

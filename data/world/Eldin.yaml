@@ -236,7 +236,6 @@
 
 
 - name: Outside Fire Sanctuary
-  hint_region: Volcano Summit
   events:
     Goddess Cube near Fire Sanctuary Entrance: Clawshots and Goddess_Sword
   exits:

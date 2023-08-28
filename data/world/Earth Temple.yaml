@@ -3,10 +3,10 @@
   dungeon: Earth Temple
   dungeon_starting_area: true
   exits:
-    Near Temple Entrance: Nothing
                  # Lower the drawbridge and Dislodge the boulder
     ET Hub Room: "(Beetle or Bow or (Long_Range_Skyward_Strike and logic_et_keese_yeet)) and 
-                  (Slingshot or (Beetle and (logic_advanced_lizalfos_combat or Can_Defeat_Lizalfos)) or Clawshots or Bow or Long_Range_Skyward_Strike)" 
+                  (Slingshot or (Beetle and (logic_advanced_lizalfos_combat or Can_Defeat_Lizalfos)) or Clawshots or Bow or Long_Range_Skyward_Strike)"
+    Near Temple Entrance: Nothing
   locations:
     Earth Temple - Vent Chest: Digging_Mitts
     Earth Temple - Rupee above Drawbridge: Beetle

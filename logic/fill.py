@@ -444,11 +444,3 @@ def cache_area_and_exit_times(worlds: list[World]) -> None:
                         req, search_with_items, time, world
                     ):
                         world.exit_time_cache[exit_] |= time
-
-
-def get_complete_item_pool(worlds: list[World]) -> list[Item]:
-    complete_item_pool: list[Item] = []
-    for world in worlds:
-        for item, count in world.item_pool.items():
-            complete_item_pool.extend([item] * count)
-    return complete_item_pool

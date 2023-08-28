@@ -1106,14 +1106,14 @@
 #     - stage/F103/r0/l2/Clef/12 # group number
 
 
-- name: Flooded Faron Woods - Water Dragon's Reward
-  original_item: Faron Song of the Hero Part
-  type: Tadtones
-  hint: sometimes
-  text: completing a <r<watery song>> reveals
-  Paths:
-    - event/204-ForestF3/Give item after Faron SotH CS
-    - oarc/F103_1/l0
+# - name: Flooded Faron Woods - Water Dragon's Reward
+#   original_item: Faron Song of the Hero Part
+#   type: Tadtones
+#   hint: sometimes
+#   text: completing a <r<watery song>> reveals
+#   Paths:
+#     - event/204-ForestF3/Give item after Faron SotH CS
+#     - oarc/F103_1/l0
 
 # Eldin Volcano:
 
