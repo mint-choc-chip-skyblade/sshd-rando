@@ -3211,24 +3211,6 @@ F402: # Sealed Temple
     layer: 3
     room: 2
     objtype: OBJ
-  # - name: Raise GoT CS trigger
-  #   type: objadd
-  #   layer: 2
-  #   room: 2
-  #   objtype: STAG
-  #   object:
-  #     params1: 0xC303FF03 # scenlink: 3 - skip cutscene of GoT raising
-  #     posx: 0
-  #     posy: 7000
-  #     posz: 10971.697265625
-  #     sizex: 20000
-  #     sizey: 20000
-  #     sizez: 20000
-  #     anglex: 59391 # no trigger storyflag
-  #     angley: 0
-  #     anglez: 59391 # no untrigger storyflag (works but idk why)
-  #     id: 0xFC00
-  #     name: ScChang
   - name: Yeet GoT opening Cutscene
     type: objpatch
     id: 0xFC55
@@ -3342,7 +3324,7 @@ F402: # Sealed Temple
     room: 2
     objtype: STAG
 
-  - name: BotG item trigger extended #so that the player automatically gets the item and the gate of time raised, while also not getting in the way of harp tutorial in BiT
+  - name: BotG item trigger in circle
     type: objpatch
     index: 1
     room: 2
@@ -3371,9 +3353,6 @@ F402: # Sealed Temple
     destlayer: 0
     room: 2
     objtype: OBJ
-
-  
-
 
 F403: # Hylia's Realm
   - name: Layer override

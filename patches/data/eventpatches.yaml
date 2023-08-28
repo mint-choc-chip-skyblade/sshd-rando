@@ -1341,23 +1341,13 @@
     flow:
       setstoryflag: 386
       next: Give WS storyflag
+
+      
   - name: Give WS storyflag
     type: setstoryflag
     flow:
       setstoryflag: 909
-  #     next: Set FS flag
-  # - name: Set FS flag
-  #   type: setstoryflag
-  #   flow:
-  #     setstoryflag: 13
-  #     next: Set AC flag
-  # - name: Set AC flag
-  #   type: setstoryflag
-  #   flow:
-  #     setstoryflag: 11
       next: Bow storyflag
-
-
   - name: Bow storyflag
     type: setstoryflag
     flow:
@@ -1367,17 +1357,17 @@
     type: setitemflag
     flow:
       itemid: 19
-      next: Give tms
-  - name: Give tms
+      next: Give Whitesword
+  - name: Give Whitesword # whitesword atm so you only need to hardcode 1 sword to get to MS to test GoT sword requirements (item get sets needed storyflags)
     type: setitemflag
     flow:
-      itemid: 11 # goddess sword for now
+      itemid: 9 
       next: Give sailcloth
   - name: Give sailcloth
     type: setitemflag
     flow:
       itemid: 15
-  #     next: Give harp
+  #     next: Give harp # commented out for now because harp item get gives you needed storyflag for GoT (will be a lot more reliable when we have actual start items)
   # - name: Give harp
   #   type: setitemflag
   #   flow:
