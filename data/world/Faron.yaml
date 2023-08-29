@@ -30,7 +30,7 @@
 - name: Sealed Temple
   hint_region: Sealed Grounds
   events:
-    Raise Gate of Time: Goddess_Harp
+    Raise Gate of Time: Goddess_Harp and Ballad_of_the_Goddess
     Start Imprisoned 2: "'Raise_Gate_of_Time' and Master_Sword" # TODO
     Open Gate of Time: "'Can_Defeat_Imprisoned_2' and Master_Sword" # TODO
   exits:
@@ -49,7 +49,7 @@
     Sealed Temple: Nothing
   locations:
     Hylia's Temple - Zelda's Blessing: Nothing
-    Hylia's Realm - Defeat Demise: Sword # TODO
+    Hylia's Realm - Defeat Demise: Sword and Complete_Triforce # TODO
 
 
 - name: Behind the Temple North Door
