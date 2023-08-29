@@ -473,7 +473,6 @@ class World:
         entrances = []
         for area in self.areas.values():
             for exit_ in area.exits:
-                # print(exit_, exit_.type, entrance_type)
                 if (
                     exit_.type != EntranceType.NONE
                     and (
@@ -481,5 +480,13 @@ class World:
                     )
                     and (exit_.primary or not only_primary)
                 ):
+                    entrances.append(exit_)
+        return entrances
+
+    def get_shuffled_entrances(self) -> list[Entrance]:
+        entrances = []
+        for area in self.areas.values():
+            for exit_ in area.exits:
+                if exit_.shuffled:
                     entrances.append(exit_)
         return entrances
