@@ -8,9 +8,6 @@ def spoiler_format_location(location: Location, longest_name_length: int) -> str
 
 def spoiler_format_entrance(entrance: Entrance, longest_name_length: int) -> str:
     spaces = longest_name_length - len(f"{entrance}")
-    if entrance.replaces is None:
-        print(entrance)
-        return "ERROR"
     replacement = entrance.replaces.original_name
     parent, connected = replacement.split(" -> ")
     return f"{entrance}: {spaces * ' '}{connected} from {parent}"
@@ -79,18 +76,14 @@ def generate_spoiler_log(worlds: list[World]) -> None:
 
         # Recalculate longest name length for all shuffled entrances
         for world in worlds:
-            for entrance in world.get_shuffleable_entrances(
-                EntranceType.ALL, only_primary=True
-            ):
+            for entrance in world.get_shuffled_entrances():
                 longest_name_length = max(longest_name_length, len(f"{entrance}"))
 
         if len(worlds[0].entrance_spheres) > 0:
             spoiler_log.write("\nAll Entrances:\n")
         for world in worlds:
             spoiler_log.write(f"    {world}:\n")
-            for entrance in sorted(
-                world.get_shuffleable_entrances(EntranceType.ALL, only_primary=True)
-            ):
+            for entrance in sorted(world.get_shuffled_entrances()):
                 spoiler_log.write(
                     "        "
                     + spoiler_format_entrance(entrance, longest_name_length)
