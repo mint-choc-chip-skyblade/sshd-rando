@@ -483,10 +483,8 @@ class World:
                     entrances.append(exit_)
         return entrances
 
-    def get_shuffled_entrances(self) -> list[Entrance]:
-        entrances = []
-        for area in self.areas.values():
-            for exit_ in area.exits:
-                if exit_.shuffled:
-                    entrances.append(exit_)
-        return entrances
+    def get_shuffled_entrances(
+        self, entrance_type: int = EntranceType.ALL, only_primary: bool = False
+    ) -> list[Entrance]:
+        entrances = self.get_shuffleable_entrances(entrance_type, only_primary)
+        return [e for e in entrances if e.shuffled]
