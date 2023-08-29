@@ -487,6 +487,6 @@ class World:
         entrances = []
         for area in self.areas.values():
             for exit_ in area.exits:
-                if exit_.shuffled != EntranceType.NONE:
+                if exit_.shuffled:
                     entrances.append(exit_)
         return entrances
