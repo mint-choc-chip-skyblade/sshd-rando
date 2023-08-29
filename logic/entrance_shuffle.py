@@ -304,6 +304,8 @@ def set_shuffled_entrances(entrance_pools: EntrancePools) -> None:
     for pool in entrance_pools.values():
         for entrance in pool:
             entrance.shuffled = True
+            if entrance.reverse:
+                entrance.reverse.shuffled = True
 
 
 def check_entrances_compatibility(entrance: Entrance, target: Entrance) -> None:
