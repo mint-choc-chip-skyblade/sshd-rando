@@ -3,6 +3,7 @@ from patches.asmpatches import ASMPatchHandler
 from patches.eventpatches import EventPatchHandler
 from filepathconstants import OUTPUT_PATH
 from patches.checkpatchhandler import determine_check_patches
+from patches.entrancepatchhandler import determine_entrance_patches
 from patches.objectpackpatchhandler import patch_object_pack
 from patches.stagepatches import StagePatchHandler
 from patches.eventpatches import EventPatchHandler
@@ -28,6 +29,9 @@ class AllPatchHandler:
         self.stagePatchHandler.set_oarc_add_remove_from_patches()
         determine_check_patches(
             self.world.location_table, self.stagePatchHandler, self.eventPatchHandler
+        )
+        determine_entrance_patches(
+            self.world.get_shuffled_entrances(), self.stagePatchHandler
         )
         patch_object_pack()
         self.stagePatchHandler.handle_stage_patches()

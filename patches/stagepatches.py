@@ -673,6 +673,35 @@ class StagePatchHandler:
     def add_check_patch(self, stage, room, objectName, layer, objectID, itemID):
         self.checkPatches[stage].append((room, objectName, layer, objectID, itemID))
 
+    def add_entrance_patch(
+        self,
+        exit_stage: str,
+        exit_scen_index: int,
+        exit_room: int,
+        spawn_stage: str,
+        spawn_layer: int,
+        spawn_room: int,
+        spawn_entrance: int,
+    ):
+        if exit_stage not in self.stagePatches:
+            self.stagePatches[exit_stage] = []
+
+        self.stagePatches[exit_stage].append(
+            {
+                "name": f"Entrance Patch - {exit_stage} to {spawn_stage}",
+                "type": "objpatch",
+                "index": exit_scen_index,
+                "room": exit_room,
+                "objtype": "SCEN",
+                "object": {
+                    "name": spawn_stage,
+                    "layer": spawn_layer,
+                    "room": spawn_room,
+                    "entrance": spawn_entrance,
+                },
+            }
+        )
+
     def patch_title_screen_logo(self):
         print("Patching Title Screen Logo")
         logoData = (RANDO_ROOT_PATH / "assets" / "sshdr-logo.tpl").read_bytes()

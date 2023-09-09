@@ -8,40 +8,6 @@
     - oarc/F001r/l3
     - oarc/F001r/l4
 
-- name: Upper Skyloft - Owlan's Gift
-  original_item: Wooden Shield
-  type:
-  Paths:
-    - event/108-ShinkanA/168
-    - oarc/F000/l4
-    - oarc/F000/l6
-
-- name: Sparring Hall - Chest
-  original_item: Progressive Sword
-  type:
-  Paths:
-    - stage/F009r/r0/l0/TBox/66
-
-- name: Upper Skyloft - Chest near Goddess Statue
-  original_item: Red Rupee
-  type:
-  Paths:
-    - stage/F000/r0/l0/TBox/71
-
-- name: Inside the Statue of the Goddess - First Goddess Sword Item
-  original_item: Progressive Sword
-  type:
-  Paths:
-    - event/107-Kanban/Fi give Goddess Statue item 1
-    - oarc/F008r/l1
-
-- name: Inside the Statue of the Goddess - Second Goddess Sword Item
-  original_item: Emerald Tablet
-  type:
-  Paths:
-    - event/107-Kanban/Fi give Goddess Statue item 2
-    - oarc/F008r/l1
-
 - name: Knight Academy - In Zelda's Closet
   original_item: Heart Piece
   type:
@@ -79,6 +45,38 @@
     - event/115-Town2/641
     - oarc/F001r/l0
 
+- name: Knight Academy - Crystal in Link's Room
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F001r/r1/l4/Item/104
+
+- name: Knight Academy - Crystal in Knight Academy Plant
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F001r/r0/l4/Item/102
+
+- name: Knight Academy - Crystal in Zelda's Room
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F001r/r6/l4/Item/103
+
+- name: Upper Skyloft - Owlan's Gift
+  original_item: Wooden Shield
+  type:
+  Paths:
+    - event/108-ShinkanA/168
+    - oarc/F000/l4
+    - oarc/F000/l6
+
+- name: Upper Skyloft - Chest near Goddess Statue
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F000/r0/l0/TBox/71
+
 - name: Upper Skyloft - Pumpkin Archery -- 600 Points
   original_item: Heart Piece
   type: Minigames
@@ -89,6 +87,32 @@
   hint: sometimes
   text: <r<shooting pumpkings>> is rewarded with
 
+- name: Inside the Statue of the Goddess - First Goddess Sword Item
+  original_item: Progressive Sword
+  type:
+  Paths:
+    - event/107-Kanban/Fi give Goddess Statue item 1
+    - oarc/F008r/l1
+
+- name: Inside the Statue of the Goddess - Second Goddess Sword Item
+  original_item: Emerald Tablet
+  type:
+  Paths:
+    - event/107-Kanban/Fi give Goddess Statue item 2
+    - oarc/F008r/l1
+
+- name: Sparring Hall - Chest
+  original_item: Progressive Sword
+  type:
+  Paths:
+    - stage/F009r/r0/l0/TBox/66
+
+- name: Sparring Hall - Crystal
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F009r/r0/l2/Item/115
+
 # Central Skyloft checks:
 
 - name: Bazaar - Potion Lady's Gift
@@ -97,6 +121,13 @@
   Paths:
     - event/106-DrugStore/44
     - oarc/F004r/l0
+
+- name: Bazaar - Goddess Chest
+  original_item: Gold Rupee
+  type: goddess, Sand Sea Goddess Chests
+  Paths:
+    - stage/F004r/r0/l0/TBox/93
+  cube_region: Lanayru Sand Sea
 
 # - name: Bazaar - Upgrade to Quick Beetle
 #   original_item: Progressive Beetle
@@ -215,13 +246,6 @@
     - stage/F000/r0/l0/TBox/78
   cube_region: Faron Woods
 
-- name: Bazaar - Goddess Chest
-  original_item: Gold Rupee
-  type: goddess, Sand Sea Goddess Chests
-  Paths:
-    - stage/F004r/r0/l0/TBox/93
-  cube_region: Lanayru Sand Sea
-
 - name: Central Skyloft - Shed Goddess Chest
   original_item: Heart Piece
   type: goddess, Eldin Volcano Goddess Chests
@@ -244,6 +268,66 @@
   hint: sometimes
   text: a <s<goddess cube>> <r<amongst the pirates>> reveals
   cube_region: Lanayru Sand Sea
+
+- name: Central Skyloft - Crystal in Orielle and Parrow's House
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F005r/r0/l2/Item/114
+
+- name: Central Skyloft - Crystal on West Cliff
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/113
+    - stage/F000/r0/l5/Item/113
+    - stage/F000/r0/l7/Item/113
+    - stage/F000/r0/l9/Item/113
+
+- name: Central Skyloft - Crystal between Wooden Planks
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/112
+    - stage/F000/r0/l5/Item/112
+    - stage/F000/r0/l7/Item/112
+    - stage/F000/r0/l9/Item/112
+
+- name: Central Skyloft - Crystal after Waterfall Cave
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/111
+    - stage/F000/r0/l5/Item/111
+    - stage/F000/r0/l7/Item/111
+    - stage/F000/r0/l9/Item/111
+
+- name: Central Skyloft - Crystal in Loftwing Prison
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/110
+    - stage/F000/r0/l5/Item/110
+    - stage/F000/r0/l7/Item/110
+    - stage/F000/r0/l9/Item/110
+
+- name: Central Skyloft - Crystal on Waterfall Island
+  original_item: Gratitude Crystal
+  type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/109
+    - stage/F000/r0/l5/Item/109
+    - stage/F000/r0/l7/Item/109
+    - stage/F000/r0/l9/Item/109
+
+- name: Central Skyloft - Crystal on Light Tower
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/106
+    - stage/F000/r0/l5/Item/106
+    - stage/F000/r0/l7/Item/106
+    - stage/F000/r0/l9/Item/106
 
 # Skyloft Village checks:
 
@@ -270,6 +354,15 @@
     - oarc/F013r/l0
   hint: sometimes
   text: delivering a <r<fortune telling device>> reveals
+
+- name: Skyloft Village - Crystal near Pumpkin Patch
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/108
+    - stage/F000/r0/l5/Item/108
+    - stage/F000/r0/l7/Item/108
+    - stage/F000/r0/l9/Item/108
 
 # Batreaux Rewards:
 
@@ -409,122 +502,6 @@
   Paths:
     - ShpSmpl/27
 
-# Single Gratitude Crystals:
-
-- name: Knight Academy - Crystal in Link's Room
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F001r/r1/l4/Item/104
-
-- name: Knight Academy - Crystal in Knight Academy Plant
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F001r/r0/l4/Item/102
-
-- name: Knight Academy - Crystal in Zelda's Room
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F001r/r6/l4/Item/103
-
-- name: Sparring Hall - Crystal
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F009r/r0/l2/Item/115
-
-
-- name: Central Skyloft - Crystal in Orielle and Parrow's House
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F005r/r0/l2/Item/114
-
-- name: Central Skyloft - Crystal on West Cliff
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/113
-    - stage/F000/r0/l5/Item/113
-    - stage/F000/r0/l7/Item/113
-    - stage/F000/r0/l9/Item/113
-
-- name: Central Skyloft - Crystal between Wooden Planks
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/112
-    - stage/F000/r0/l5/Item/112
-    - stage/F000/r0/l7/Item/112
-    - stage/F000/r0/l9/Item/112
-
-- name: Central Skyloft - Crystal after Waterfall Cave
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/111
-    - stage/F000/r0/l5/Item/111
-    - stage/F000/r0/l7/Item/111
-    - stage/F000/r0/l9/Item/111
-
-- name: Central Skyloft - Crystal in Loftwing Prison
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/110
-    - stage/F000/r0/l5/Item/110
-    - stage/F000/r0/l7/Item/110
-    - stage/F000/r0/l9/Item/110
-
-- name: Central Skyloft - Crystal on Waterfall Island
-  original_item: Gratitude Crystal
-  type: Loose Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/109
-    - stage/F000/r0/l5/Item/109
-    - stage/F000/r0/l7/Item/109
-    - stage/F000/r0/l9/Item/109
-
-- name: Central Skyloft - Crystal on Light Tower
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/106
-    - stage/F000/r0/l5/Item/106
-    - stage/F000/r0/l7/Item/106
-    - stage/F000/r0/l9/Item/106
-
-
-- name: Skyloft Village - Crystal near Pumpkin Patch
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/108
-    - stage/F000/r0/l5/Item/108
-    - stage/F000/r0/l7/Item/108
-    - stage/F000/r0/l9/Item/108
-
-
-- name: Lumpy Pumpkin - Outside Crystal
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F020/r0/l4/Item/100
-
-- name: Lumpy Pumpkin - Inside Crystal
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F011r/r0/l2/Item/116
-
-- name: Beedle's Island - Crystal
-  original_item: Gratitude Crystal 
-  type: Loose Crystals
-  Paths:
-    - stage/F020/r0/l4/Item/119
-
 # Sky:
 
 - name: Bamboo Island Interior - Gossip Stone
@@ -556,6 +533,18 @@
   hint: sometimes
   text: <r<delivering a mogma to the sky>> is rewarded with
 
+- name: Lumpy Pumpkin - Outside Crystal
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F020/r0/l4/Item/100
+
+- name: Lumpy Pumpkin - Inside Crystal
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F011r/r0/l2/Item/116
+
 - name: Lumpy Pumpkin - Gossip Stone
   original_item: Nothing
   type: Hint Location
@@ -577,6 +566,28 @@
   hint: sometimes
   text: <r<reuniting two Beedles>> is rewarded with
 
+- name: Beedle's Island - Crystal
+  original_item: Gratitude Crystal 
+  type: Loose Crystals
+  Paths:
+    - stage/F020/r0/l4/Item/119
+
+- name: Beedle's Island - Top Goddess Chest
+  original_item: Heart Piece
+  type: goddess, Lanayru Desert Goddess Chests, Combat
+  Paths:
+    - stage/F020/r0/l0/TBox/89
+  hint: sometimes
+  text: a <s<goddess cube>> at the <r<monument to time>> reveals
+  cube_region: Lanayru Desert
+
+- name: Beedle's Island - Cage Goddess Chest
+  original_item: Rupee Medal
+  type: goddess, Faron Woods Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/81
+  cube_region: Faron Woods
+
 - name: Fun Fun Island - Dodoh's Crystals
   original_item: Gratitude Crystal Pack
   type: Scrapper Deliveries
@@ -593,6 +604,13 @@
     - oarc/F020/l2
   hint: sometimes
   text: <r<diving through 5 rings>> yields
+
+- name: Fun Fun Island - Goddess Chest
+  original_item: Gold Rupee
+  type: goddess, Lake Floria Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/86
+  cube_region: Lake Floria
 
 - name: The Sky - Chest in Breakable Boulder near Fun Fun Island
   original_item: Silver Rupee
@@ -632,22 +650,6 @@
   Paths:
     - stage/F020/r0/l0/TBox/83
   cube_region: Lanayru Desert
-
-- name: Beedle's Island - Top Goddess Chest
-  original_item: Heart Piece
-  type: goddess, Lanayru Desert Goddess Chests, Combat
-  Paths:
-    - stage/F020/r0/l0/TBox/89
-  hint: sometimes
-  text: a <s<goddess cube>> at the <r<monument to time>> reveals
-  cube_region: Lanayru Desert
-
-- name: Beedle's Island - Cage Goddess Chest
-  original_item: Rupee Medal
-  type: goddess, Faron Woods Goddess Chests
-  Paths:
-    - stage/F020/r0/l0/TBox/81
-  cube_region: Faron Woods
 
 - name: Northeast Island - Goddess Chest behind Bombable Rocks
   original_item: Silver Rupee
@@ -698,13 +700,6 @@
     - stage/F020/r0/l0/TBox/68
   cube_region: Faron Woods
 
-- name: Fun Fun Island - Goddess Chest
-  original_item: Gold Rupee
-  type: goddess, Lake Floria Goddess Chests
-  Paths:
-    - stage/F020/r0/l0/TBox/86
-  cube_region: Lake Floria
-
 - name: Triple Island - Upper Goddess Chest
   original_item: Small Seed Satchel
   type: goddess, Eldin Volcano Goddess Chests
@@ -750,6 +745,20 @@
   hint: sometimes
   text: a <r<blade of white>> reveals
 
+- name: Isle of Songs - Top Goddess Chest
+  original_item: Small Bomb Bag
+  type: goddess, Volcano Summit Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/85
+  cube_region: Volcano Summit
+
+- name: Isle of Songs - Lower Goddess Chest
+  original_item: Gold Rupee
+  type: goddess, Eldin Volcano Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/92
+  cube_region: Mogma Turf
+
 - name: The Thunderhead - Song from Levias
   original_item: Song of the Hero
   type: Scrapper Deliveries, Combat
@@ -768,15 +777,22 @@
   hint: sometimes
   text: <r<true bug catchers>> can find
 
+- name: Bug Heaven - Goddess Chest
+  original_item: Heart Piece
+  type: goddess, Volcano Summit Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/88
+  cube_region: Volcano Summit
+
+- name: Bug Heaven - Nearby Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
 - name: Thunderhead East Island - Chest
   original_item: Evil Crystal
   type:
   Paths:
     - stage/F023/r0/l0/TBox/94
-
-- name: Bug Heaven - Nearby Gossip Stone
-  original_item: Nothing
-  type: Hint Location
 
 ## Goddess Cubes
 
@@ -786,20 +802,6 @@
   Paths:
     - stage/F023/r0/l0/TBox/73
   cube_region: Faron Woods
-
-- name: Isle of Songs - Top Goddess Chest
-  original_item: Small Bomb Bag
-  type: goddess, Volcano Summit Goddess Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/85
-  cube_region: Volcano Summit
-
-- name: Isle of Songs - Lower Goddess Chest
-  original_item: Gold Rupee
-  type: goddess, Eldin Volcano Goddess Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/92
-  cube_region: Mogma Turf
 
 - name: Mogma Mitts Island - First Goddess Chest
   original_item: Empty Bottle
@@ -814,13 +816,6 @@
   Paths:
    - stage/F023/r0/l0/TBox/76
   cube_region: Lanayru Gorge
-
-- name: Bug Heaven - Goddess Chest
-  original_item: Heart Piece
-  type: goddess, Volcano Summit Goddess Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/88
-  cube_region: Volcano Summit
 
 # Sealed Grounds:
 
