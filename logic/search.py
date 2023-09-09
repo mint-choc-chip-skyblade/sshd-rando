@@ -256,8 +256,8 @@ class Search:
         # Remove spheres from higher indices first so we the lower
         # indices stay the same
         for index in reversed(spheres_to_remove):
-            self.playthrough_spheres.pop(i)
-            self.entrance_spheres.pop(i)
+            self.playthrough_spheres.pop(index)
+            self.entrance_spheres.pop(index)
 
     # Will dump a file which can be turned into a visual graph using graphviz
     # https://graphviz.org/download/
@@ -354,8 +354,7 @@ def generate_playthrough(worlds: list[World]) -> None:
     print("Paring down playthrough")
     # Reverse the playthrough so we're paring it down from highest to lowest sphere
     # This way, lower sphere items will be prioritized for the playthrough
-    reversed(playthrough_spheres)
-    for sphere in playthrough_spheres:
+    for sphere in reversed(playthrough_spheres):
         for location in sphere:
             item_at_location = location.current_item
             location.remove_current_item()
