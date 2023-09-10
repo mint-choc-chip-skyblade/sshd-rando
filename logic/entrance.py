@@ -15,9 +15,11 @@ class EntranceType:
     DUNGEON_REVERSE: int = 4
     TRIAL_GATE: int = 5
     TRIAL_GATE_REVERSE: int = 6
-    INTERIOR: int = 7
-    INTERIOR_REVERSE: int = 8
-    OVERWORLD: int = 9
+    DOOR: int = 7
+    DOOR_REVERSE: int = 8
+    INTERIOR: int = 9
+    INTERIOR_REVERSE: int = 10
+    OVERWORLD: int = 11
 
     MIXED: int = 20
 
@@ -31,6 +33,8 @@ class EntranceType:
                 return EntranceType.DUNGEON
             case "Trial Gate":
                 return EntranceType.TRIAL_GATE
+            case "Door":
+                return EntranceType.DOOR
             case "Interior":
                 return EntranceType.INTERIOR
             case "Overworld":
@@ -58,9 +62,9 @@ class Entrance:
         self.requirement: Requirement = requirement_
         self.world: "World" = world_
 
-        self.exit_infos = {}
+        self.exit_infos = []
         self.spawn_info = {}
-        self.secondary_exit_infos = {}
+        self.secondary_exit_infos = []
         self.secondary_spawn_info = {}
 
         # Variables used for entrance shuffling

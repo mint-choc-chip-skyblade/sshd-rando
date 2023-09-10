@@ -45,6 +45,9 @@ def set_all_entrances_data(world: World) -> None:
     with open("data/entrance_shuffle_data.yaml") as entrance_data_file:
         entrance_shuffle_list = yaml.safe_load(entrance_data_file)
 
+        # Keep track of which double door entrances are together
+        coupled_doors: dict[str, list[Entrance]] = {}
+
         for entrance_data in entrance_shuffle_list:
             # Check that all required fields exist
             for field in ["type", "forward"]:
@@ -75,6 +78,13 @@ def set_all_entrances_data(world: World) -> None:
                 else None
             )
 
+            # Add double door entrances to their respective tag group
+            if "door_couple_tag" in entrance_data:
+                tag = entrance_data["door_couple_tag"]
+                if tag not in coupled_doors:
+                    coupled_doors[tag] = []
+                coupled_doors[tag].extend([forward_entrance, return_entrance])
+
             forward_entrance.type = EntranceType.from_str(entrance_type)
             forward_entrance.exit_infos = entrance_data["forward"]["exit_infos"]
             forward_entrance.spawn_info = entrance_data["forward"]["spawn_info"]
@@ -92,7 +102,7 @@ def set_all_entrances_data(world: World) -> None:
             forward_entrance.sort_priority = Entrance.sort_counter
             Entrance.sort_counter += 1
             if return_entrance != None:
-                return_entrance.type = entrance_type
+                return_entrance.type = EntranceType.from_str(entrance_type)
                 return_entrance.exit_infos = entrance_data["return"]["exit_infos"]
                 return_entrance.spawn_info = entrance_data["return"]["spawn_info"]
                 return_entrance.secondary_exit_infos = (
@@ -109,6 +119,39 @@ def set_all_entrances_data(world: World) -> None:
                 Entrance.sort_counter += 1
                 forward_entrance.bind_two_way(return_entrance)
 
+        # If double doors are to be coupled, add the coupled door's
+        # exit infos to the main door, remove the coupled door entrance,
+        # and rename the main door to be more general
+        if world.setting("decouple_double_doors") == "off":
+            for doors in coupled_doors.values():
+                while doors:
+                    main_door = doors.pop()
+                    coupled_door = next(
+                        iter(
+                            [
+                                door
+                                for door in doors
+                                if door.primary == main_door.primary
+                            ]
+                        )
+                    )
+
+                    # Add the coupled door's exit_infos to the main door
+                    main_door.exit_infos.extend(coupled_door.exit_infos)
+
+                    # Completely remove the coupled door from the world graph
+                    doors.remove(coupled_door)
+                    coupled_door.connected_area.entrances.remove(coupled_door)
+                    coupled_door.parent_area.exits.remove(coupled_door)
+
+                    # Change the main door's name to be more general
+                    main_door.original_name = (
+                        main_door.original_name.replace(" North", "")
+                        .replace(" South", "")
+                        .replace(" East", "")
+                        .replace(" West", "")
+                    )
+
 
 def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePools:
     # TODO: Mixed pools stuff
@@ -123,6 +166,11 @@ def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePool
     if world.setting("randomize_trial_gate_entrances") == "on":
         entrance_pools[EntranceType.TRIAL_GATE] = world.get_shuffleable_entrances(
             EntranceType.TRIAL_GATE, only_primary=True
+        )
+
+    if world.setting("randomize_door_entrances") == "on":
+        entrance_pools[EntranceType.DOOR] = world.get_shuffleable_entrances(
+            EntranceType.DOOR, only_primary=True
         )
 
     set_shuffled_entrances(entrance_pools)
@@ -233,6 +281,7 @@ def shuffle_entrance_pool(
             shuffle_entrances(worlds, entrance_pool, target_entrance_pools, rollbacks)
             for entrance, target in rollbacks:
                 confirm_replacement(entrance, target)
+            return
 
         except EntranceShuffleError as error:
             for entrance, target in rollbacks:
@@ -241,6 +290,8 @@ def shuffle_entrance_pool(
                 f"Failed to place all entrances in a pool for {world}. Will retry {retries} more times"
             )
             logging.getLogger("").debug(f"\t{error}")
+
+    raise EntranceShuffleError("Ran out of retries when shuffling entrances")
 
 
 def shuffle_entrances(
@@ -287,7 +338,7 @@ def replace_entrance(
         return True
     except EntranceShuffleError as error:
         logging.getLogger("").debug(
-            f"Failed to connect {entrance} to {target} (Reason: {error}) {entrance.world}"
+            f"Failed to connect {entrance} to {target.original_name} (Reason: {error}) {entrance.world}"
         )
         if entrance.connected_area:
             restore_connections(entrance, target)
