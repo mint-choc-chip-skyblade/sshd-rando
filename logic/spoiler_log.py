@@ -45,7 +45,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
         # Print entrance playthrough
         sphere_num = 0
         if len(worlds[0].entrance_spheres) > 0:
-            spoiler_log.write("Entrance Playthrough:\n")
+            spoiler_log.write("\nEntrance Playthrough:\n")
         for sphere in worlds[0].entrance_spheres:
             sphere_num += 1
             if len(sphere) == 0:
