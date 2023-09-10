@@ -89,6 +89,8 @@ def set_all_entrances_data(world: World) -> None:
                 else None
             )
             forward_entrance.primary = True
+            forward_entrance.sort_priority = Entrance.sort_counter
+            Entrance.sort_counter += 1
             if return_entrance != None:
                 return_entrance.type = entrance_type
                 return_entrance.exit_infos = entrance_data["return"]["exit_infos"]
@@ -103,11 +105,9 @@ def set_all_entrances_data(world: World) -> None:
                     if "secondary_spawn_info" in entrance_data["return"]
                     else None
                 )
+                return_entrance.sort_priority = Entrance.sort_counter
+                Entrance.sort_counter += 1
                 forward_entrance.bind_two_way(return_entrance)
-
-
-def process_plandomizer_entrances(world: World) -> None:
-    pass
 
 
 def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePools:
@@ -118,6 +118,11 @@ def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePool
     if world.setting("randomize_dungeon_entrances") == "on":
         entrance_pools[EntranceType.DUNGEON] = world.get_shuffleable_entrances(
             EntranceType.DUNGEON, only_primary=True
+        )
+
+    if world.setting("randomize_trial_gate_entrances") == "on":
+        entrance_pools[EntranceType.TRIAL_GATE] = world.get_shuffleable_entrances(
+            EntranceType.TRIAL_GATE, only_primary=True
         )
 
     set_shuffled_entrances(entrance_pools)

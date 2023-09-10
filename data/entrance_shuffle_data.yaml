@@ -1,3 +1,7 @@
+###############################
+#          DUNGEONS           #
+###############################
+
 - type: Dungeon
   forward: 
     connection: Deep Woods -> Skyview Entry
@@ -352,3 +356,100 @@
         layer: 0
         room: 0
         entrance: 52
+
+###############################
+#           TRIALS            #
+###############################
+
+- type: Trial Gate
+  forward: 
+    connection: Central Skyloft -> Skyloft Silent Realm
+    exit_infos:
+      - stage: F000
+        room: 0
+        index: 45
+    spawn_info:
+      - stage: S000
+        layer: 2
+        room: 0
+        entrance: 0
+  return:  
+    connection: Skyloft Silent Realm -> Central Skyloft
+    exit_infos: 
+      - stage: S000
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 83
+- type: Trial Gate
+  forward: 
+    connection: Faron Woods -> Faron Silent Realm
+    exit_infos:
+      - stage: F100
+        room: 0
+        index: 8
+    spawn_info:
+      - stage: S100
+        layer: 2
+        room: 0
+        entrance: 0
+  return:  
+    connection: Faron Silent Realm -> Faron Woods
+    exit_infos: 
+      - stage: S100
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F100
+        layer: 0
+        room: 0
+        entrance: 48
+- type: Trial Gate
+  forward: 
+    connection: Volcano Ascent -> Eldin Silent Realm
+    exit_infos:
+      - stage: F200
+        room: 2
+        index: 4
+    spawn_info:
+      - stage: S200
+        layer: 2
+        room: 2
+        entrance: 0
+  return:  
+    connection: Eldin Silent Realm -> Volcano Ascent
+    exit_infos: 
+      - stage: S200
+        room: 2
+        index: 1
+    spawn_info:
+      - stage: F200
+        layer: 0
+        room: 2
+        entrance: 5
+- type: Trial Gate
+  forward: 
+    connection: Lanayru Desert North -> Lanayru Silent Realm
+    exit_infos:
+      - stage: F300
+        room: 0
+        index: 7
+    spawn_info:
+      - stage: S300
+        layer: 2
+        room: 0
+        entrance: 0
+  return:  
+    connection: Lanayru Silent Realm -> Lanayru Desert North
+    exit_infos: 
+      - stage: S300
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F300
+        layer: 0
+        room: 0
+        entrance: 4

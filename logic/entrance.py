@@ -13,8 +13,8 @@ class EntranceType:
     BOSS_REVERSE: int = 2
     DUNGEON: int = 3
     DUNGEON_REVERSE: int = 4
-    SILENT_REALM: int = 5
-    SILENT_REALM_REVERSE: int = 6
+    TRIAL_GATE: int = 5
+    TRIAL_GATE_REVERSE: int = 6
     INTERIOR: int = 7
     INTERIOR_REVERSE: int = 8
     OVERWORLD: int = 9
@@ -29,8 +29,8 @@ class EntranceType:
                 return EntranceType.BOSS
             case "Dungeon":
                 return EntranceType.DUNGEON
-            case "Silent Realm":
-                return EntranceType.SILENT_REALM
+            case "Trial Gate":
+                return EntranceType.TRIAL_GATE
             case "Interior":
                 return EntranceType.INTERIOR
             case "Overworld":
@@ -40,6 +40,8 @@ class EntranceType:
 
 
 class Entrance:
+    sort_counter: int = 1
+
     def __init__(
         self,
         parent_area_: "Area" = None,
@@ -70,12 +72,18 @@ class Entrance:
         self.replaces: Entrance = None
         self.assumed: Entrance = None
 
+        # Used to sort shuffled entrances in an intuitive order
+        # Only potentially shuffled entrances will have a sort priority set
+        self.sort_priority: int = 0
+
     def __str__(self) -> str:
         return self.original_name
 
     def __lt__(self, other: "Entrance") -> bool:
         if self.world.id != other.world.id:
             return self.world.id < other.world.id
+        if self.sort_priority and other.sort_priority:
+            return self.sort_priority < other.sort_priority
         if self.parent_area != other.parent_area:
             return self.parent_area < other.parent_area
         return self.connected_area < other.connected_area
