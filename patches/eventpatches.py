@@ -23,6 +23,9 @@ class EventPatchHandler:
         self.flowLabelToIndexMapping = {}
         self.textLabelToIndexMapping = {}
 
+    def append_to_event_patches(self, filename: str, eventpatch: dict):
+        self.eventPatches[filename].append(eventpatch)
+
     def handle_event_patches(self):
         for eventPath in Path(EVENT_FILES_PATH).glob("*.arc"):
             fileName = eventPath.parts[-1]

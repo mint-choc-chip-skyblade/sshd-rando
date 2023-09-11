@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import re
 import struct
 from subprocess import call
 import sys
@@ -18,8 +19,24 @@ ASM_PATCHES_DIFFS_PATH = ASM_PATCHES_PATH / "diffs"
 ASM_ADDITIONS_PATH = Path("./") / "additions"
 ASM_ADDITIONS_DIFFS_PATH = ASM_ADDITIONS_PATH / "diffs"
 
+ASM_RUST_ADDITIONS_TARGET_PATH = (
+    ASM_ADDITIONS_PATH
+    / "rust-additions"
+    / "target"
+    / "aarch64-unknown-none"
+    / "release"
+    / "librust_additions.a"
+)
+ASM_RUST_ADDITIONS_PATH = ASM_ADDITIONS_PATH / "rust-additions.asm"
+ASM_RUST_ADDITIONS_LANDINGPAD_PATH = (
+    ASM_ADDITIONS_PATH / "rust-additions-landingpad.asm"
+)
+
+ASM_PATCHES_JUMPTABLE_PATH = ASM_PATCHES_PATH / "jumptable.asm"
+
 
 EXE = ".exe"
+COLON = ":"
 SEMICOLON = ";"
 NEWLINE = "\n"
 OFFSET = ".offset"
@@ -109,6 +126,8 @@ for symbol, address in originalSymbols["main"].items():
 
     linkerScript += f"{symbol} = 0x{address:x}" + SEMICOLON + NEWLINE
 
+custom_symbols = {}
+
 
 def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
     addressesOverwritten = []
@@ -119,11 +138,17 @@ def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
         codeBlocks = {}
         localBranches = []
         asmReadOffset = None
+        label = None
+
+        tempLinkerScript = linkerScript + NEWLINE
+
+        for sym in custom_symbols:
+            tempLinkerScript += (
+                sym + " = " + hex(custom_symbols[sym]) + SEMICOLON + NEWLINE
+            )
 
         with open(asmFilePath, "r") as f:
             asmBlock = f.read()
-
-        tempLinkerScript = linkerScript + NEWLINE
 
         for line in asmBlock.splitlines():
             line = line.strip()
@@ -222,10 +247,34 @@ def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
                 elfFilename,
             ]
 
+            if asmFilePath == ASM_RUST_ADDITIONS_PATH:
+                linkerCommand.append("./" + ASM_RUST_ADDITIONS_TARGET_PATH.as_posix())
+
             if result := call(linkerCommand):
                 raise Exception(
                     f"Linker call {linkerCommand} failed with error code: {result}"
                 )
+
+            if asmFilePath == ASM_RUST_ADDITIONS_PATH:
+                # Keep track of custom symbols so they can be passed in the linker script to future assembler calls.
+                with open(mapFilename) as f:
+                    on_custom_symbols = False
+                    for line in f.read().splitlines():
+                        if line.startswith(" .text          "):
+                            on_custom_symbols = True
+                            continue
+
+                        if on_custom_symbols:
+                            if not line:
+                                break
+                            match = re.search(
+                                r" +0x(?:00000000)?([0-9a-f]{8}) +([a-zA-Z]\S+)", line
+                            )
+                            if not match:
+                                continue
+                            symbol_address = int(match.group(1), 16)
+                            symbol_name = match.group(2)
+                            custom_symbols[symbol_name] = symbol_address
 
             # Convert to binary.
             binaryFilename = tempDirName / f"{asmFilename}-0x{codeBlockOffset}.bin"
@@ -234,6 +283,8 @@ def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
                 devkitA64Objcopy,
                 "--output-target",
                 "binary",
+                # "-j",
+                # ".text, .rodata",
                 elfFilename,
                 binaryFilename,
             ]
@@ -268,12 +319,32 @@ def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
 
 
 # Get patches from each asm file.
-asmPatchesPaths = list(ASM_PATCHES_PATH.glob("*.asm"))
 asmAdditionsPaths = list(ASM_ADDITIONS_PATH.glob("*.asm"))
+asmPatchesPaths = list(ASM_PATCHES_PATH.glob("*.asm"))
 
 # Keeps the temporary directory only within this with block.
 with tempDir as tempDirName:
     tempDirName = Path(tempDirName)
 
+    # Assemble rust additions.
+    if rustBuildCmd := call(
+        ["cargo", "build", "--release", "--target=aarch64-unknown-none"],
+        cwd="./additions/rust-additions",
+    ):
+        raise Exception("Building rust additions failed.")
+
+    # Ensure rust additions are assembled first.
+    asmAdditionsPaths.remove(ASM_RUST_ADDITIONS_PATH)
+    asmAdditionsPaths.remove(ASM_RUST_ADDITIONS_LANDINGPAD_PATH)
+    asmAdditionsPaths = [
+        ASM_RUST_ADDITIONS_PATH,
+        ASM_RUST_ADDITIONS_LANDINGPAD_PATH,
+    ] + asmAdditionsPaths
+
     assemble(tempDirName, asmAdditionsPaths, ASM_ADDITIONS_DIFFS_PATH)
+
+    # Ensure patches jumptable is assembled first.
+    asmPatchesPaths.remove(ASM_PATCHES_JUMPTABLE_PATH)
+    asmPatchesPaths = [ASM_PATCHES_JUMPTABLE_PATH] + asmPatchesPaths
+
     assemble(tempDirName, asmPatchesPaths, ASM_PATCHES_DIFFS_PATH)

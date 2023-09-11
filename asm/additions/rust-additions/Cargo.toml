@@ -1,0 +1,21 @@
+[package]
+name = "rust-additions"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type=["staticlib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+opt-level = "s"
+lto = true
+
+[dependencies]
+cstr = "0.2.11"
+static_assertions = "1.1.0"
