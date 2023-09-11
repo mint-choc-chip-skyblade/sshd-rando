@@ -461,9 +461,8 @@ class World:
         return SettingGet(setting_name, self.setting_map.settings[setting_name])
 
     def set_search_starting_properties(self, search: "Search"):
-        # Set the root to have daytime
-        # TODO: Change if we ever have an option to start at night
-        search.area_time[self.root.id] = TOD.DAY
+        # Set the root to have all times of day (necessary for entrance rando)
+        search.area_time[self.root.id] = TOD.ALL
 
     def get_shuffleable_entrances(
         self,

@@ -1,5 +1,5 @@
 - name: Root
-  allowed_time_of_day: Day Only
+  allowed_time_of_day: All
   exits:
     Link's Spawn: Nothing
 
@@ -388,7 +388,7 @@
 
 
 - name: Skyloft Past Waterfall Cave Jump
-  hint_regin: None # Prevent Skyloft Past Waterfall Cave from being assigned to Skyloft Village
+  hint_region: None # Prevent Skyloft Past Waterfall Cave from being assigned to Skyloft Village
   exits:
     Skyloft Past Waterfall Cave: Nothing
 

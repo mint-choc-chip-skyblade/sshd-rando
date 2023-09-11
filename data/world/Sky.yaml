@@ -124,9 +124,9 @@
     Start Kinas Quest: Day and 'Complete_Hot_Soup_Delivery'
     Pumpkin Carrying: Day and 'Complete_Hot_Soup_Delivery'
   exits:
-    Lumpy Pumpkin North Door: Nothing
-    Lumpy Pumpkin Southeast Door: Nothing
-    Lumpy Pumpkin Southwest Door: Nothing
+    Lumpy Pumpkin Back Door: Nothing
+    Lumpy Pumpkin Main East Door: Nothing
+    Lumpy Pumpkin Main West Door: Nothing
     The Sky: Day
   locations:
     Lumpy Pumpkin - Outside Crystal: Night
@@ -136,17 +136,17 @@
     Lumpy Pumpkin - Gossip Stone: Nothing
 
 
-- name: Lumpy Pumpkin North Door
+- name: Lumpy Pumpkin Back Door
   exits:
     Lumpy Pumpkin Exterior: Nothing
     Lumpy Pumpkin Interior: Nothing
 
-- name: Lumpy Pumpkin Southeast Door
+- name: Lumpy Pumpkin Main East Door
   exits:
     Lumpy Pumpkin Exterior: Nothing
     Lumpy Pumpkin Interior: Nothing
 
-- name: Lumpy Pumpkin Southwest Door
+- name: Lumpy Pumpkin Main West Door
   exits:
     Lumpy Pumpkin Exterior: Nothing
     Lumpy Pumpkin Interior: Nothing
@@ -159,9 +159,9 @@
     Complete Hot Soup Delivery: "'Delivered_Hot_Soup'"
     Pick up Levias Soup: Spiral_Charge
   exits:
-    Lumpy Pumpkin North Door: Nothing
-    Lumpy Pumpkin Southeast Door: Nothing
-    Lumpy Pumpkin Southwest Door: Nothing
+    Lumpy Pumpkin Back Door: Nothing
+    Lumpy Pumpkin Main East Door: Nothing
+    Lumpy Pumpkin Main West Door: Nothing
   locations:
     Lumpy Pumpkin - Chandelier: Nothing
     Lumpy Pumpkin - Inside Crystal: Night

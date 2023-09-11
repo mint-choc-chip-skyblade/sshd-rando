@@ -34,9 +34,8 @@
     Start Imprisoned 2: "'Raise_Gate_of_Time' and Master_Sword" # TODO
     Open Gate of Time: "'Can_Defeat_Imprisoned_2' and Master_Sword" # TODO
   exits:
-    Sealed Grounds: Nothing
-    Behind the Temple North Door: Nothing
-    Behind the Temple South Door: Nothing
+    Sealed Grounds Spiral: Nothing
+    Behind the Temple: Nothing
     Hylia's Temple: "'Open_Gate_of_Time'"
   locations:
     Sealed Temple - Chest: Nothing
@@ -52,24 +51,23 @@
     Hylia's Realm - Defeat Demise: Sword and Complete_Triforce # TODO
 
 
-- name: Behind the Temple North Door
-  exits:
-    Sealed Temple: Nothing
-    Behind the Temple: Nothing
+# - name: Behind the Temple North Door
+#   exits:
+#     Sealed Temple: Nothing
+#     Behind the Temple: Nothing
 
 
-- name: Behind the Temple South Door
-  exits:
-    Sealed Temple: Nothing
-    Behind the Temple: Nothing
+# - name: Behind the Temple South Door
+#   exits:
+#     Sealed Temple: Nothing
+#     Behind the Temple: Nothing
 
 
 - name: Behind the Temple
   hint_region: Sealed Grounds
   exits:
     Behind the Temple Statue: Nothing
-    Behind the Temple North Door: Nothing
-    Behind the Temple South Door: Nothing
+    Sealed Temple: Nothing
     Faron Woods Entry: Nothing
     Sealed Grounds Upper Ledge: Nothing
   locations:

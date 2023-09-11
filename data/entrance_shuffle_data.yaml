@@ -453,3 +453,522 @@
         layer: 0
         room: 0
         entrance: 4
+
+###############################
+#            DOORS            #
+###############################
+
+- type: Door
+  door_couple_tag: Knight Academy Lower
+  forward: 
+    connection: Upper Skyloft -> Knight Academy Lower East Door
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 3
+    spawn_info:
+      - stage: F001r
+        layer: 0
+        room: 0
+        entrance: 2
+  return:
+    connection: Knight Academy -> Knight Academy Lower East Door
+    exit_infos:
+      - stage: F001r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 4
+- type: Door
+  door_couple_tag: Knight Academy Lower
+  forward:
+    connection: Upper Skyloft -> Knight Academy Lower West Door
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 4
+    spawn_info:
+      - stage: F001r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Knight Academy -> Knight Academy Lower West Door
+    exit_infos:
+      - stage: F001r
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 5
+- type: Door
+  door_couple_tag: Knight Academy Upper
+  forward:
+    connection: Upper Skyloft -> Knight Academy Upper North Door
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 24
+    spawn_info:
+      - stage: F001r
+        layer: 0
+        room: 0
+        entrance: 4
+  return:  
+    connection: Knight Academy -> Knight Academy Upper North Door
+    exit_infos:
+      - stage: F001r
+        room: 0
+        index: 3
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 24
+- type: Door
+  door_couple_tag: Knight Academy Upper
+  forward:
+    connection: Upper Skyloft -> Knight Academy Upper South Door
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 23
+    spawn_info:
+      - stage: F001r
+        layer: 0
+        room: 0
+        entrance: 3
+  return:  
+    connection: Knight Academy -> Knight Academy Upper South Door
+    exit_infos:
+      - stage: F001r
+        room: 0
+        index: 2
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 23
+- type: Door
+  door_couple_tag: Sparring Hall
+  forward:
+    connection: Upper Skyloft -> Sparring Hall North Door
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 27
+    spawn_info:
+      - stage: F009r
+        layer: 0
+        room: 0
+        entrance: 2
+  return:  
+    connection: Sparring Hall -> Sparring Hall North Door
+    exit_infos:
+      - stage: F009r
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 26
+- type: Door
+  door_couple_tag: Sparring Hall
+  forward:
+    connection: Upper Skyloft -> Sparring Hall South Door
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 20
+    spawn_info:
+      - stage: F009r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Sparring Hall -> Sparring Hall South Door
+    exit_infos:
+      - stage: F009r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 21
+- type: Door
+  forward:
+    connection: Central Skyloft -> Orielle and Parrow's House
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 31
+    spawn_info:
+      - stage: F005r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Orielle and Parrow's House -> Central Skyloft
+    exit_infos:
+      - stage: F005r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 30
+- type: Door
+  forward:
+    connection: Central Skyloft -> Peatrice's House
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 38
+    spawn_info:
+      - stage: F018r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Peatrice's House -> Central Skyloft
+    exit_infos:
+      - stage: F018r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 38
+- type: Door
+  forward:
+    connection: Central Skyloft -> Wryna's House
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 10
+    spawn_info:
+      - stage: F006r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Wryna's House -> Central Skyloft
+    exit_infos:
+      - stage: F006r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 31
+- type: Door
+  forward:
+    connection: Central Skyloft -> Piper's House
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 32
+    spawn_info:
+      - stage: F007r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Piper's House -> Central Skyloft
+    exit_infos:
+      - stage: F007r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 32
+- type: Door
+  forward:
+    connection: Skyloft Village -> Bertie's House
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 34
+    spawn_info:
+      - stage: F014r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Bertie's House -> Skyloft Village
+    exit_infos:
+      - stage: F014r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 34
+- type: Door
+  forward:
+    connection: Skyloft Village -> Sparrot's House
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 33
+    spawn_info:
+      - stage: F013r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Sparrot's House -> Skyloft Village
+    exit_infos:
+      - stage: F013r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 33
+- type: Door
+  forward:
+    connection: Skyloft Village -> Mallara's House
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 36
+    spawn_info:
+      - stage: F016r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Mallara's House -> Skyloft Village
+    exit_infos:
+      - stage: F016r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 36
+- type: Door
+  forward:
+    connection: Skyloft Village -> Gondo's House
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 35
+    spawn_info:
+      - stage: F015r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Gondo's House -> Skyloft Village
+    exit_infos:
+      - stage: F015r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 35
+- type: Door
+  forward:
+    connection: Skyloft Village -> Rupin's House
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 37
+    spawn_info:
+      - stage: F017r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Rupin's House -> Skyloft Village
+    exit_infos:
+      - stage: F017r
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 37
+- type: Door
+  forward:
+    connection: Skyloft Village -> Batreaux's House
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 30
+    spawn_info:
+      - stage: F012r
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Batreaux's House -> Skyloft Village
+    exit_infos:
+      - stage: F012r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 29
+- type: Door
+  door_couple_tag: Lumpy Pumpkin
+  forward:
+    connection: Lumpy Pumpkin Exterior -> Lumpy Pumpkin Main East Door
+    exit_infos: 
+      - stage: F020
+        room: 0
+        index: 18
+    spawn_info:
+      - stage: F011r
+        layer: 0
+        room: 0
+        entrance: 2
+  return:  
+    connection: Lumpy Pumpkin Interior -> Lumpy Pumpkin Main East Door
+    exit_infos:
+      - stage: F011r
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F020
+        layer: 0
+        room: 0
+        entrance: 23
+- type: Door
+  door_couple_tag: Lumpy Pumpkin
+  forward:
+    connection: Lumpy Pumpkin Exterior -> Lumpy Pumpkin Main West Door
+    exit_infos: 
+      - stage: F020
+        room: 0
+        index: 19
+    spawn_info:
+      - stage: F011r
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Lumpy Pumpkin Interior -> Lumpy Pumpkin Main West Door
+    exit_infos:
+      - stage: F011r
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F020
+        layer: 0
+        room: 0
+        entrance: 22
+- type: Door
+  forward:
+    connection: Lumpy Pumpkin Exterior -> Lumpy Pumpkin Back Door
+    exit_infos: 
+      - stage: F020
+        room: 0
+        index: 20
+    spawn_info:
+      - stage: F011r
+        layer: 0
+        room: 0
+        entrance: 3
+  return:  
+    connection: Lumpy Pumpkin Interior -> Lumpy Pumpkin Back Door
+    exit_infos:
+      - stage: F011r
+        room: 0
+        index: 2
+    spawn_info:
+      - stage: F020
+        layer: 0
+        room: 0
+        entrance: 24
+- type: Door
+  forward:
+    connection: Sealed Grounds Spiral -> Sealed Temple
+    exit_infos: 
+      - stage: F401
+        room: 1
+        index: 0
+    spawn_info:
+      - stage: F402
+        layer: 0
+        room: 2
+        entrance: 0
+  return:  
+    connection: Sealed Temple -> Sealed Grounds Spiral
+    exit_infos:
+      - stage: F402
+        room: 2
+        index: 0
+    spawn_info:
+      - stage: F401
+        layer: 0
+        room: 1
+        entrance: 2
+- type: Door
+  forward:
+    connection: Behind the Temple -> Sealed Temple
+    exit_infos: 
+      - stage: F400
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F402
+        layer: 0
+        room: 2
+        entrance: 1
+  return:  
+    connection: Sealed Temple -> Behind the Temple
+    exit_infos:
+      - stage: F402
+        room: 2
+        index: 1
+    spawn_info:
+      - stage: F400
+        layer: 0
+        room: 0
+        entrance: 1
+- type: Door
+  forward:
+    connection: Skipper's Retreat Top -> Skipper's Retreat Shack
+    exit_infos: 
+      - stage: F301_3
+        room: 0
+        index: 3
+    spawn_info:
+      - stage: F301_5
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Skipper's Retreat Shack -> Skipper's Retreat Top
+    exit_infos:
+      - stage: F301_5
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F301_3
+        layer: 0
+        room: 0
+        entrance: 1
