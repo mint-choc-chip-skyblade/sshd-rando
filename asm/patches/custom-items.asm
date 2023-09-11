@@ -43,3 +43,17 @@
 .offset 0x084e0d04
 mov w8, #0
 bl 0x0865a070
+
+; Don't allow items to set dungeonflags
+; Could be used to allow tears to be placed anywhere
+; .offset 0x084e335c
+; nop
+
+
+; Only set dungeonflags from items if the item is a trial tear
+.offset 0x084e33b4
+cmp w8, #43 ; 1st tear item
+b.lt 0x084e3360 ; pretend like it's not a dungeonflag item
+cmp w8, #46 ; last tear item
+b.gt 0x084e3360 ; pretend like it's not a dungeonflag item
+b 0x084e3454 ; continue on to set dungeonflag
