@@ -20,7 +20,17 @@
 ; Total available instructions:                     372 (decimal)
 ; 
 ; Please update this:
-; Total space used (bytes):                           0
-; Total instructions used:                            0
+; Total space used (bytes):                           40
+; Total instructions used:                            10
+
+; Example:
+; 
+; .offset 0x08659ab0
+; mov w8, #0 ; addition 0
+; b 0x0865a070
 
 
+
+; Actually branches to the rust additions landingpad
+.offset 0x0865a070 ; uses 10 instructions
+b 0x360A5500

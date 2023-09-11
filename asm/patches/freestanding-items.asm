@@ -10,10 +10,10 @@ ldr w8, [x19, #0xC] ; put param1 in w8
 tbz w8, #9, 0x084e4e8c ; check if is patched freestanding item
 
 
-; some dAcItem func
-.offset 0x084e3ab0
-ldr w8, [x19, #0xC] ; put param1 in w8
-tbz w8, #9, 0x084e39f4 ; check if is patched freestanding item
+; some dAcItem func (when spawned from things like trees?)
+; .offset 0x084e3ab0
+; ldr w8, [x19, #0xC] ; put param1 in w8
+; tbz w8, #9, 0x084e39f4 ; check if is patched freestanding item
 
 ; dAcItem carry/beetle funcs
 .offset 0x084de294
