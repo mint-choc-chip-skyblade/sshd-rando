@@ -202,6 +202,7 @@
     Great Tree Interior Middle: Can_Defeat_Moblins or 'Can_Complete_Ancient_Cistern'
     Flooded Great Tree Upper: Nothing
     Great Tree Exterior Top: Nothing
+    Great Tree Exterior Platforms: Nothing
 
 
 - name: Great Tree Exterior Top
