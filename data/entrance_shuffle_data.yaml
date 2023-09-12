@@ -1069,6 +1069,33 @@
         layer: 0
         room: 0
         entrance: 3
+# Include again once entrance issues have been fixed
+# - type: Interior
+#   forward:
+#     connection: Central Skyloft -> Beedle's Shop
+#     exit_infos: 
+#       - stage: F000
+#         room: 0
+#         index: 26
+#     spawn_info:
+#       - stage: F002r
+#         layer: 0
+#         room: 0
+#         entrance: 0
+#   return:  
+#     connection: Beedle's Shop -> Central Skyloft
+#     exit_infos:
+#       - stage: F002r
+#         room: 0
+#         index: 0
+#       - stage: F002r # Trapdoor exit
+#         room: 0
+#         index: 1
+#     spawn_info:
+#       - stage: F000
+#         layer: 0
+#         room: 0
+#         entrance: 0
 - type: Interior
   forward:
     connection: Central Skyloft -> Waterfall Cave
