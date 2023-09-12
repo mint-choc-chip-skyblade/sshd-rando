@@ -175,8 +175,8 @@ def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePool
 
     if world.setting("randomize_interior_entrances") == "on":
         entrance_pools[EntranceType.INTERIOR] = world.get_shuffleable_entrances(
-        EntranceType.INTERIOR, only_primary=True
-    )
+            EntranceType.INTERIOR, only_primary=True
+        )
 
     set_shuffled_entrances(entrance_pools)
 
