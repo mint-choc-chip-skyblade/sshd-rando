@@ -2,7 +2,10 @@ from filepathconstants import OUTPUT_PATH
 from patches.asmpatches import ASMPatchHandler
 from patches.eventpatches import EventPatchHandler
 from filepathconstants import OUTPUT_PATH
-from patches.checkpatchhandler import determine_check_patches
+from patches.checkpatchhandler import (
+    determine_check_patches,
+    append_dungeon_item_patches,
+)
 from patches.entrancepatchhandler import determine_entrance_patches
 from patches.objectpackpatchhandler import patch_object_pack
 from patches.stagepatches import StagePatchHandler
@@ -30,6 +33,7 @@ class AllPatchHandler:
         determine_check_patches(
             self.world.location_table, self.stagePatchHandler, self.eventPatchHandler
         )
+        append_dungeon_item_patches(self.eventPatchHandler)
         determine_entrance_patches(
             self.world.get_shuffled_entrances(), self.stagePatchHandler
         )

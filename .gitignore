@@ -7,9 +7,6 @@ output
 # Seriously, don't commit Nintendo's IP
 oarccache
 
-# MSVC Windows builds of rustc generate these, which store debugging information
-*.pdb
-
 *__pycache__*
 config.yaml
 *.log
@@ -18,6 +15,5 @@ config.yaml
 Spoiler Log.txt
 *plandomizer.yaml
 
-# Muzu's test stuff.
-TODO
-placements.yaml
+# asm
+target/
