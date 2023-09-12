@@ -28,9 +28,7 @@ ASM_RUST_ADDITIONS_TARGET_PATH = (
     / "librust_additions.a"
 )
 ASM_RUST_ADDITIONS_PATH = ASM_ADDITIONS_PATH / "rust-additions.asm"
-ASM_RUST_ADDITIONS_LANDINGPAD_PATH = (
-    ASM_ADDITIONS_PATH / "rust-additions-landingpad.asm"
-)
+ASM_ADDITIONS_LANDINGPAD_PATH = ASM_ADDITIONS_PATH / "additions-landingpad.asm"
 
 ASM_PATCHES_JUMPTABLE_PATH = ASM_PATCHES_PATH / "jumptable.asm"
 
@@ -335,10 +333,10 @@ with tempDir as tempDirName:
 
     # Ensure rust additions are assembled first.
     asmAdditionsPaths.remove(ASM_RUST_ADDITIONS_PATH)
-    asmAdditionsPaths.remove(ASM_RUST_ADDITIONS_LANDINGPAD_PATH)
+    asmAdditionsPaths.remove(ASM_ADDITIONS_LANDINGPAD_PATH)
     asmAdditionsPaths = [
         ASM_RUST_ADDITIONS_PATH,
-        ASM_RUST_ADDITIONS_LANDINGPAD_PATH,
+        ASM_ADDITIONS_LANDINGPAD_PATH,
     ] + asmAdditionsPaths
 
     assemble(tempDirName, asmAdditionsPaths, ASM_ADDITIONS_DIFFS_PATH)
