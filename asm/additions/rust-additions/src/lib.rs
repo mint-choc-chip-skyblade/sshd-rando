@@ -107,12 +107,10 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
                 }
             }
             // Otherwise, set the global flag.
-            else {
-                if dungeon_item_mask != 0x0F {
-                    (*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][0] |= dungeon_item_mask;
-                } else {
-                    (*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][1] += 1;
-                }
+            if dungeon_item_mask != 0x0F {
+                (*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][0] |= dungeon_item_mask;
+            } else {
+                (*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][1] += 1;
             }
         }
 
