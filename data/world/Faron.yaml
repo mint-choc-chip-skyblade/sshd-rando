@@ -312,6 +312,7 @@
   exits:
     Lake Floria Emerged Area: Water_Scale
     Farore's Lair: Water_Scale
+    Faron Woods: Impossible # To satisfy entrance rando
 
 
 - name: Lake Floria Emerged Area

@@ -979,6 +979,25 @@
 
 - type: Interior
   forward:
+    connection: Upper Skyloft -> Knight Academy Chimney
+    exit_infos: 
+      - stage: F000
+        room: 0
+        index: 57
+    spawn_info:
+      - stage: F008r
+        layer: 0
+        room: 6
+        entrance: 1
+  return:  
+    connection: Knight Academy Chimney -> Upper Skyloft
+    spawn_info:
+      - stage: F000
+        layer: 0
+        room: 0
+        entrance: 100
+- type: Interior
+  forward:
     connection: Upper Skyloft -> Inside the Statue of the Goddess
     exit_infos: 
       - stage: F000
@@ -1533,3 +1552,437 @@
         layer: 0
         room: 0
         entrance: 2
+
+###############################
+#         OVERWORLD           #
+###############################
+
+- type: Overworld
+  forward:
+    connection: Sealed Grounds Upper Ledge -> Behind the Temple
+    exit_infos: 
+      - stage: F401
+        room: 1
+        index: 1
+    spawn_info:
+      - stage: F400
+        layer: 0
+        room: 0
+        entrance: 2
+  return:  
+    connection: Behind the Temple -> Sealed Grounds Upper Ledge
+    exit_infos:
+      - stage: F400
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F401
+        layer: 0
+        room: 1
+        entrance: 0
+- type: Overworld
+  forward:
+    connection: Behind the Temple -> Faron Woods Entry
+    exit_infos: 
+      - stage: F400
+        room: 0
+        index: 2
+    spawn_info:
+      - stage: F100
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Faron Woods Entry -> Behind the Temple
+    exit_infos:
+      - stage: F100
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F400
+        layer: 0
+        room: 0
+        entrance: 3
+- type: Overworld
+  forward:
+    connection: Faron Woods Ledge to Deep Woods -> Deep Woods Entry
+    exit_infos: 
+      - stage: F100
+        room: 0
+        index: 13
+    spawn_info:
+      - stage: F101
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Deep Woods Entry -> Faron Woods Ledge to Deep Woods
+    exit_infos:
+      - stage: F101
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F100
+        layer: 0
+        room: 0
+        entrance: 45
+- type: Overworld
+  forward:
+    connection: Faron Woods -> Lake Floria
+    exit_infos: 
+      - stage: F100
+        room: 0
+        index: 9
+    spawn_info:
+      - stage: F102
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Lake Floria -> Faron Woods
+    spawn_info:
+      - stage: F100
+        layer: 0
+        room: 0
+        entrance: 100 # Entrance added for rando
+- type: Overworld
+  forward:
+    connection: Lake Floria -> Farore's Lair
+    exit_infos: 
+      - stage: F102
+        room: 4
+        index: 0
+    spawn_info:
+      - stage: F102_2
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Farore's Lair -> Lake Floria
+    exit_infos:
+      - stage: F102_2
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F102
+        layer: 0
+        room: 4
+        entrance: 1
+- type: Overworld
+  forward:
+    connection: Farore's Lair -> Floria Waterfall
+    exit_infos: 
+      - stage: F102_2
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F102_1
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Floria Waterfall -> Farore's Lair
+    exit_infos:
+      - stage: F102_1
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F102_2
+        layer: 0
+        room: 0
+        entrance: 1
+- type: Overworld
+  forward:
+    connection: Floria Waterfall -> Faron Woods Floria Shortcut Ledge
+    exit_infos: 
+      - stage: F102_1
+        room: 0
+        index: 2
+    spawn_info:
+      - stage: F100
+        layer: 0
+        room: 0
+        entrance: 17
+  return:  
+    connection: Faron Woods Floria Shortcut Ledge -> Floria Waterfall
+    exit_infos:
+      - stage: F100
+        room: 0
+        index: 11
+    spawn_info:
+      - stage: F102_1
+        layer: 0
+        room: 0
+        entrance: 2
+- type: Overworld
+  forward:
+    connection: Volcano East -> Mogma Turf Dive
+    exit_infos: 
+      - stage: F200
+        room: 2
+        index: 1
+    spawn_info:
+      - stage: F210
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Mogma Turf -> Volcano East
+    exit_infos:
+      - stage: F210
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F200
+        layer: 0
+        room: 2
+        entrance: 1
+- type: Overworld
+  forward:
+    connection: Mogma Turf Final Vent -> Past Mogma Turf
+    exit_infos: 
+      - stage: F210
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F200
+        layer: 0
+        room: 2
+        entrance: 2
+  return:  
+    connection: Past Mogma Turf -> Mogma Turf Final Vent
+    spawn_info:
+      - stage: F210
+        layer: 0
+        room: 0
+        entrance: 100 # Custom entrance for rando
+- type: Overworld
+  forward:
+    connection: Hot Cave -> Volcano Summit
+    exit_infos: 
+      - stage: F200
+        room: 5
+        index: 1
+    spawn_info:
+      - stage: F201_1
+        layer: 0
+        room: 0
+        entrance: 4
+  return:  
+    connection: Volcano Summit -> Hot Cave
+    exit_infos: 
+      - stage: F201_1
+        room: 0
+        index: 2
+    spawn_info:
+      - stage: F200
+        layer: 0
+        room: 5
+        entrance: 2
+- type: Overworld
+  forward:
+    connection: Volcano Summit -> Volcano Summit Waterfall
+    exit_infos: 
+      - stage: F201_1
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F201_4
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Volcano Summit Waterfall -> Volcano Summit
+    exit_infos: 
+      - stage: F201_4
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F201_1
+        layer: 0
+        room: 0
+        entrance: 2
+- type: Overworld
+  forward:
+    connection: Volcano Summit -> Past Volcano Summit
+    exit_infos: 
+      - stage: F201_1
+        room: 0
+        index: 2
+    spawn_info:
+      - stage: F201_3
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Past Volcano Summit -> Volcano Summit
+    exit_infos: 
+      - stage: F201_3
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F201_1
+        layer: 0
+        room: 0
+        entrance: 1
+- type: Overworld
+  forward:
+    connection: Lanayru Mine In Minecart -> Lanayru Desert South
+    exit_infos: 
+      - stage: F300_1
+        room: 2
+        index: 0
+    spawn_info:
+      - stage: F300
+        layer: 0
+        room: 0
+        entrance: 2
+  return:  
+    connection: Lanayru Desert South -> Lanayru Mine In Minecart
+    exit_infos: 
+      - stage: F300
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F300_1
+        layer: 0
+        room: 2
+        entrance: 1
+- type: Overworld
+  forward:
+    connection: Sand Oasis End -> Temple of Time South
+    exit_infos: 
+      - stage: F300
+        room: 0
+        index: 3
+    spawn_info:
+      - stage: F300_4
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Temple of Time South -> Sand Oasis End
+    exit_infos: 
+      - stage: F300_4
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F300
+        layer: 0
+        room: 0
+        entrance: 0
+- type: Overworld
+  forward:
+    connection: Temple of Time North -> Lanayru Desert North
+    exit_infos: 
+      - stage: F300_4
+        room: 0
+        index: 1
+    spawn_info:
+      - stage: F300
+        layer: 0
+        room: 0
+        entrance: 1
+  return:  
+    connection: Lanayru Desert North -> Temple of Time North
+    exit_infos: 
+      - stage: F300
+        room: 0
+        index: 4
+    spawn_info:
+      - stage: F300_4
+        layer: 0
+        room: 0
+        entrance: 1
+- type: Overworld
+  forward:
+    connection: Ancient Harbour -> Lanayru Sand Sea
+    exit_infos: 
+      - stage: F301
+        room: 0
+        index: 2
+    spawn_info:
+      - stage: F301_1
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Lanayru Sand Sea -> Ancient Harbour
+    exit_infos: 
+      - stage: F301_1
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F301
+        layer: 0
+        room: 0
+        entrance: 1
+- type: Overworld
+  forward:
+    connection: Lanayru Sand Sea -> Skipper's Retreat Dock
+    exit_infos: 
+      - stage: F301_1
+        room: 0
+        index: 2
+    spawn_info:
+      - stage: F301_3
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Skipper's Retreat Dock -> Lanayru Sand Sea
+    exit_infos: 
+      - stage: F301_3
+        room: 0
+        index: 2
+    spawn_info:
+      - stage: F301_1
+        layer: 0
+        room: 0
+        entrance: 1
+- type: Overworld
+  forward:
+    connection: Lanayru Sand Sea -> Shipyard Dock
+    exit_infos: 
+      - stage: F301_1
+        room: 0
+        index: 3
+    spawn_info:
+      - stage: F301_4
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Shipyard Dock -> Lanayru Sand Sea
+    exit_infos: 
+      - stage: F301_4
+        room: 0
+        index: 2
+    spawn_info:
+      - stage: F301_1
+        layer: 0
+        room: 0
+        entrance: 2
+- type: Overworld
+  forward:
+    connection: Lanayru Sand Sea -> Pirate Stronghold Dock
+    exit_infos: 
+      - stage: F301_1
+        room: 0
+        index: 4
+    spawn_info:
+      - stage: F301_6
+        layer: 0
+        room: 0
+        entrance: 0
+  return:  
+    connection: Pirate Stronghold Dock -> Lanayru Sand Sea
+    exit_infos: 
+      - stage: F301_6
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F301_1
+        layer: 0
+        room: 0
+        entrance: 3
