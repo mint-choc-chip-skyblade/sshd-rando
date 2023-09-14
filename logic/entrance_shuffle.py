@@ -3,7 +3,7 @@ from .item import Item
 from .item_pool import get_complete_item_pool
 from .world import World
 from .search import Search, SearchMode, all_locations_reachable
-from collections import Counter
+from collections import Counter, OrderedDict
 
 
 from typing import TYPE_CHECKING
@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from .world import World
 
 EntrancePool = list[Entrance]
-EntrancePools = dict[int, list[Entrance]]
+EntrancePools = OrderedDict[str, list[Entrance]]
 
 
 class EntranceShuffleError(RuntimeError):
@@ -85,7 +85,7 @@ def set_all_entrances_data(world: World) -> None:
                     coupled_doors[tag] = []
                 coupled_doors[tag].extend([forward_entrance, return_entrance])
 
-            forward_entrance.type = EntranceType.from_str(entrance_type)
+            forward_entrance.type = entrance_type
             forward_entrance.exit_infos = entrance_data["forward"]["exit_infos"]
             forward_entrance.spawn_info = entrance_data["forward"]["spawn_info"]
             forward_entrance.secondary_exit_infos = (
@@ -98,11 +98,13 @@ def set_all_entrances_data(world: World) -> None:
                 if "secondary_spawn_info" in entrance_data["forward"]
                 else None
             )
+            if "can_start_at" in entrance_data["forward"]:
+                forward_entrance.can_start_at = entrance_data["forward"]["can_start_at"]
             forward_entrance.primary = True
             forward_entrance.sort_priority = Entrance.sort_counter
             Entrance.sort_counter += 1
             if return_entrance != None:
-                return_entrance.type = EntranceType.from_str(entrance_type)
+                return_entrance.type = entrance_type
                 return_entrance.exit_infos = (
                     entrance_data["return"]["exit_infos"]
                     if "exit_infos" in entrance_data["return"]
@@ -119,6 +121,8 @@ def set_all_entrances_data(world: World) -> None:
                     if "secondary_spawn_info" in entrance_data["return"]
                     else None
                 )
+                if "can_start_at" in entrance_data["return"]:
+                    return_entrance.can_start_at = entrance_data["return"]["can_start_at"]
                 return_entrance.sort_priority = Entrance.sort_counter
                 Entrance.sort_counter += 1
                 forward_entrance.bind_two_way(return_entrance)
@@ -155,36 +159,41 @@ def set_all_entrances_data(world: World) -> None:
                         .replace(" East", "")
                         .replace(" West", "")
                     )
-
+    
 
 def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePools:
     # TODO: Mixed pools stuff
 
     entrance_pools: EntrancePools = {}
 
+    if world.setting("random_starting_spawn") != "vanilla":
+        entrance_pools["Spawn"] = world.get_shuffleable_entrances(
+            "Spawn", only_primary=False
+        )
+
     if world.setting("randomize_dungeon_entrances") == "on":
-        entrance_pools[EntranceType.DUNGEON] = world.get_shuffleable_entrances(
-            EntranceType.DUNGEON, only_primary=True
+        entrance_pools["Dungeon"] = world.get_shuffleable_entrances(
+            "Dungeon", only_primary=True
         )
 
     if world.setting("randomize_trial_gate_entrances") == "on":
-        entrance_pools[EntranceType.TRIAL_GATE] = world.get_shuffleable_entrances(
-            EntranceType.TRIAL_GATE, only_primary=True
+        entrance_pools["Trial Gate"] = world.get_shuffleable_entrances(
+            "Trial Gate", only_primary=True
         )
 
     if world.setting("randomize_door_entrances") == "on":
-        entrance_pools[EntranceType.DOOR] = world.get_shuffleable_entrances(
-            EntranceType.DOOR, only_primary=True
+        entrance_pools["Door"] = world.get_shuffleable_entrances(
+            "Door", only_primary=True
         )
 
     if world.setting("randomize_interior_entrances") == "on":
-        entrance_pools[EntranceType.INTERIOR] = world.get_shuffleable_entrances(
-            EntranceType.INTERIOR, only_primary=True
+        entrance_pools["Interior"] = world.get_shuffleable_entrances(
+            "Interior", only_primary=True
         )
 
     if world.setting("randomize_overworld_entrances") == "on":
-        entrance_pools[EntranceType.OVERWORLD] = world.get_shuffleable_entrances(
-            EntranceType.OVERWORLD, only_primary=False
+        entrance_pools["Overworld"] = world.get_shuffleable_entrances(
+            "Overworld", only_primary=False
         )
 
     set_shuffled_entrances(entrance_pools)
@@ -197,8 +206,46 @@ def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePool
 def create_target_pools(entrance_pools: EntrancePools) -> EntrancePools:
     target_entrance_pools: EntrancePools = {}
     for entrance_type, entrance_pool in entrance_pools.items():
-        target_entrance_pools[entrance_type] = assume_entrance_pool(entrance_pool)
+        if entrance_type == "Spawn":
+            target_entrance_pools[entrance_type] = create_spawn_target_pool(entrance_pool[0].world)
+            for entrance in entrance_pool:
+                entrance.disconnect()
+        else:
+            target_entrance_pools[entrance_type] = assume_entrance_pool(entrance_pool)
     return target_entrance_pools
+
+
+def create_spawn_target_pool(world: World) -> list[Entrance]:
+    # Determine all possible starting targets depending on settings
+    target_pool: list[Entrance] = []
+    starting_spawn_value = world.setting("random_starting_spawn").value()
+    match starting_spawn_value:
+        case "vanilla":
+            assert False # Should never be hit
+        case "bird_statues":
+            for entrance_type in ["Bird Statue", "Spawn"]:
+                for entrance in world.get_shuffleable_entrances(entrance_type):
+                    target_pool.append(entrance.get_new_target())
+        case "any_surface_region":
+            banned_spawn_regions = {"Knight Academy", "Upper Skyloft", "Central Skyloft", "Skyloft Village", "Bazaar", "Batreaux", "The Sky", "The Thunderhead"}
+            for entrance_type in ["Door", "Interior", "Overworld", "Spawn"]:
+                for entrance in world.get_shuffleable_entrances(entrance_type):
+                    # Ignore any sky/skyloft entrances
+                    if entrance.can_start_at and not entrance.parent_area.get_regions().intersection(banned_spawn_regions):
+                        target_pool.append(entrance.get_new_target())
+        case "anywhere":
+            for entrance_type in ["Dungeon", "Trial Gate", "Door", "Interior", "Overworld", "Bird Statue", "Spawn"]:
+                for entrance in world.get_shuffleable_entrances(entrance_type):
+                    if entrance.can_start_at:
+                        target_pool.append(entrance.get_new_target())
+        case _:
+            raise EntranceShuffleError(f"Unknown value for random starting spawn: '{starting_spawn_value}'")
+    
+    # Don't assume we have access to the random spawn targets
+    for entrance in target_pool:
+        entrance.requirement.type = RequirementType.IMPOSSIBLE
+
+    return target_pool
 
 
 def set_plandomizer_entrances(
@@ -217,11 +264,11 @@ def set_plandomizer_entrances(
         target_to_connect = target
         entrance_type = entrance.type
 
-        if entrance_type == EntranceType.NONE:
+        if entrance_type == "None":
             raise EntranceShuffleError(
                 f"{entrance} is not an entrance that can be shuffled"
             )
-        if target_to_connect.type == EntranceType.NONE:
+        if target_to_connect.type == "None":
             raise EntranceShuffleError(
                 f"{target} is not an entrance that can be shuffled"
             )
@@ -250,10 +297,10 @@ def set_plandomizer_entrances(
 
         # Get the appropriate pools (depending on if the pool is being mixed)
         entrance_pool = entrance_pools[
-            EntranceType.MIXED if entrance_type in pools_to_mix else entrance_type
+            "Mixed" if entrance_type in pools_to_mix else entrance_type
         ]
         target_pool = target_entrance_pools[
-            EntranceType.MIXED if entrance_type in pools_to_mix else entrance_type
+            "Mixed" if entrance_type in pools_to_mix else entrance_type
         ]
 
         if entrance_to_connect in entrance_pool:
@@ -295,6 +342,8 @@ def shuffle_entrance_pool(
             shuffle_entrances(worlds, entrance_pool, target_entrance_pools, rollbacks)
             for entrance, target in rollbacks:
                 confirm_replacement(entrance, target)
+            for target in target_entrance_pools:
+                delete_target_entrance(target)
             return
 
         except EntranceShuffleError as error:
@@ -379,7 +428,7 @@ def set_shuffled_entrances(entrance_pools: EntrancePools) -> None:
 
 
 def check_entrances_compatibility(entrance: Entrance, target: Entrance) -> None:
-    if entrance.reverse == target.replaces:
+    if entrance.reverse and entrance.reverse == target.replaces:
         raise EntranceShuffleError(f"Attempted self-connection")
 
 

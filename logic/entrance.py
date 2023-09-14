@@ -6,43 +6,6 @@ if TYPE_CHECKING:
     from .area import Area
     from .world import World
 
-
-class EntranceType:
-    NONE: int = 0
-    BOSS: int = 1
-    BOSS_REVERSE: int = 2
-    DUNGEON: int = 3
-    DUNGEON_REVERSE: int = 4
-    TRIAL_GATE: int = 5
-    TRIAL_GATE_REVERSE: int = 6
-    DOOR: int = 7
-    DOOR_REVERSE: int = 8
-    INTERIOR: int = 9
-    INTERIOR_REVERSE: int = 10
-    OVERWORLD: int = 11
-
-    MIXED: int = 20
-
-    ALL: int = 50
-
-    def from_str(type_str: str) -> int:
-        match type_str:
-            case "Boss":
-                return EntranceType.BOSS
-            case "Dungeon":
-                return EntranceType.DUNGEON
-            case "Trial Gate":
-                return EntranceType.TRIAL_GATE
-            case "Door":
-                return EntranceType.DOOR
-            case "Interior":
-                return EntranceType.INTERIOR
-            case "Overworld":
-                return EntranceType.OVERWORLD
-            case _:
-                return EntranceType.NONE
-
-
 class Entrance:
     sort_counter: int = 1
 
@@ -56,7 +19,7 @@ class Entrance:
         self.parent_area: "Area" = parent_area_
         self.connected_area: "Area" = connected_area_
         self.original_connected_area: "Area" = connected_area_
-        self.type: int = EntranceType.NONE
+        self.type: str = "None"
         self.original_name: str = f"{parent_area_} -> {connected_area_}"
 
         self.requirement: Requirement = requirement_
@@ -66,6 +29,7 @@ class Entrance:
         self.spawn_info = {}
         self.secondary_exit_infos = []
         self.secondary_spawn_info = {}
+        self.can_start_at: bool = True
 
         # Variables used for entrance shuffling
         self.shuffled: bool = False

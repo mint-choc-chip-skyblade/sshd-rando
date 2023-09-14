@@ -1,4 +1,21 @@
 ###############################
+#           SPAWN             #
+###############################
+
+- type: Spawn
+  forward:
+    connection: Link's Spawn -> Knight Academy
+    exit_infos:
+      - stage: F405
+        room: 0
+        index: 0
+    spawn_info:
+      - stage: F001r
+        layer: 3
+        room: 1
+        entrance: 5
+
+###############################
 #          DUNGEONS           #
 ###############################
 
@@ -1210,6 +1227,7 @@
 - type: Interior
   forward:
     connection: Faron Woods -> Great Tree Interior Underwater
+    can_start_at: false
     exit_infos: 
       - stage: F100
         room: 0
@@ -1486,6 +1504,7 @@
 - type: Interior
   forward:
     connection: Shipyard Dock -> Construction Bay Sand Pit
+    can_start_at: false
     exit_infos: 
       - stage: F301_4
         room: 0
@@ -1629,6 +1648,7 @@
 - type: Overworld
   forward:
     connection: Faron Woods -> Lake Floria
+    can_start_at: false
     exit_infos: 
       - stage: F100
         room: 0
@@ -1659,6 +1679,7 @@
         entrance: 0
   return:  
     connection: Farore's Lair -> Lake Floria
+    can_start_at: false
     exit_infos:
       - stage: F102_2
         room: 0
@@ -1759,6 +1780,7 @@
 - type: Overworld
   forward:
     connection: Hot Cave -> Volcano Summit
+    can_start_at: false
     exit_infos: 
       - stage: F200
         room: 5
@@ -1793,6 +1815,7 @@
         entrance: 0
   return:  
     connection: Volcano Summit Waterfall -> Volcano Summit
+    can_start_at: false
     exit_infos: 
       - stage: F201_4
         room: 0
@@ -1816,6 +1839,7 @@
         entrance: 0
   return:  
     connection: Past Volcano Summit -> Volcano Summit
+    can_start_at: false
     exit_infos: 
       - stage: F201_3
         room: 0
@@ -1986,3 +2010,344 @@
         layer: 0
         room: 0
         entrance: 3
+
+###############################
+#        BIRD STATUES         #
+###############################
+
+- type: Bird Statue
+  forward:
+    connection: Faron Pillar -> Sealed Grounds Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 68
+    spawn_info:
+      - stage: F401
+        layer: 0
+        room: 1
+        entrance: 8  
+- type: Bird Statue
+  forward:
+    connection: Faron Pillar -> Behind the Temple Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 40
+    spawn_info:
+      - stage: F400
+        layer: 0
+        room: 0
+        entrance: 10
+- type: Bird Statue
+  forward:
+    connection: Faron Pillar -> Faron Woods Entry Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 41
+    spawn_info:
+      - stage: F100
+        layer: 0
+        room: 0
+        entrance: 50
+- type: Bird Statue
+  forward:
+    connection: Faron Pillar -> Viewing Platform Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 43
+    spawn_info:
+      - stage: F100
+        layer: 0
+        room: 0
+        entrance: 52
+- type: Bird Statue
+  forward:
+    connection: Faron Pillar -> In the Woods Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 42
+    spawn_info:
+      - stage: F100
+        layer: 0
+        room: 0
+        entrance: 51
+- type: Bird Statue
+  forward:
+    connection: Faron Pillar -> Deep Woods Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 46
+    spawn_info:
+      - stage: F101
+        layer: 0
+        room: 0
+        entrance: 14
+- type: Bird Statue
+  forward:
+    connection: Faron Pillar -> Forest Temple Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 45
+    spawn_info:
+      - stage: F101
+        layer: 0
+        room: 0
+        entrance: 13 
+- type: Bird Statue
+  forward:
+    connection: Faron Pillar -> The Great Tree Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 44
+    spawn_info:
+      - stage: F100
+        layer: 0
+        room: 0
+        entrance: 53 
+- type: Bird Statue
+  forward:
+    connection: Faron Pillar -> Lake Floria Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 47
+    spawn_info:
+      - stage: F102
+        layer: 0
+        room: 3
+        entrance: 2    
+- type: Bird Statue
+  forward:
+    connection: Faron Pillar -> Floria Waterfall Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 48
+    spawn_info:
+      - stage: F102_1
+        layer: 0
+        room: 0
+        entrance: 5
+- type: Bird Statue
+  forward:
+    connection: Eldin Pillar -> Volcano Entrance Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 50
+    spawn_info:
+      - stage: F200
+        layer: 0
+        room: 0
+        entrance: 2
+- type: Bird Statue
+  forward:
+    connection: Eldin Pillar -> Volcano East Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 51
+    spawn_info:
+      - stage: F200
+        layer: 0
+        room: 2
+        entrance: 6
+- type: Bird Statue
+  forward:
+    connection: Eldin Pillar -> Volcano Ascent Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 52
+    spawn_info:
+      - stage: F200
+        layer: 0
+        room: 2
+        entrance: 7
+- type: Bird Statue
+  forward:
+    connection: Eldin Pillar -> Temple Entrance Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 29
+    spawn_info:
+      - stage: F200
+        layer: 0
+        room: 4
+        entrance: 7
+- type: Bird Statue
+  forward:
+    connection: Eldin Pillar -> Inside the Volcano Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 30
+    spawn_info:
+      - stage: F201_3
+        layer: 0
+        room: 0
+        entrance: 3
+- type: Bird Statue
+  forward:
+    connection: Eldin Pillar -> Inside the Fire Sanctuary Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 55
+    spawn_info:
+      - stage: D201
+        layer: 0
+        room: 10
+        entrance: 2
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> Lanayru Mine Entry Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 56
+    spawn_info:
+      - stage: F300_1
+        layer: 0
+        room: 0
+        entrance: 2
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> Desert Entrance Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 57
+    spawn_info:
+      - stage: F300
+        layer: 0
+        room: 0
+        entrance: 15
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> West Desert Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 58
+    spawn_info:
+      - stage: F300
+        layer: 0
+        room: 0
+        entrance: 16    
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> Desert Gorge Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 61
+    spawn_info:
+      - stage: F300_4
+        layer: 0
+        room: 0
+        entrance: 16
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> Temple of Time Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 62
+    spawn_info:
+      - stage: F300_4
+        layer: 0
+        room: 0
+        entrance: 17
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> North Desert Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 59
+    spawn_info:
+      - stage: F300
+        layer: 0
+        room: 0
+        entrance: 17
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> Stone Cache Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 60
+    spawn_info:
+      - stage: F300
+        layer: 0
+        room: 0
+        entrance: 18
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> Ancient Harbour Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 63
+    spawn_info:
+      - stage: F301
+        layer: 0
+        room: 0
+        entrance: 10
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> Skipper's Retreat Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 64
+    spawn_info:
+      - stage: F301_3
+        layer: 0
+        room: 0
+        entrance: 10
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> Shipyard Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 65
+    spawn_info:
+      - stage: F301_4
+        layer: 0
+        room: 0
+        entrance: 10
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> Pirate Stronghold Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 66
+    spawn_info:
+      - stage: F301_6
+        layer: 0
+        room: 0
+        entrance: 10
+- type: Bird Statue
+  forward:
+    connection: Lanayru Pillar -> Lanayru Gorge Statue
+    exit_infos:
+      - stage: F020
+        room: 0
+        index: 67 # TODO Check
+    spawn_info:
+      - stage: F302
+        layer: 0
+        room: 0
+        entrance: 12

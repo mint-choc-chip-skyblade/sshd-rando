@@ -3510,6 +3510,8 @@ F404: # Hylia's Temple
 
 F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
   - name: Skip from Whirlpool Cutscene to Link's room
+    onlyif: 
+      - random_starting_spawn == vanilla
     type: objpatch
     room: 0
     index: 0
