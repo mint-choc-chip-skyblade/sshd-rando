@@ -241,7 +241,7 @@ class Search:
             if exit_ not in self.playthrough_entrances:
                 self.entrance_spheres[-1].append(exit_)
                 self.playthrough_entrances.add(exit_)
-                if not exit_.decoupled:
+                if not exit_.decoupled and exit_.replaces.reverse:
                     self.playthrough_entrances.add(exit_.replaces.reverse)
 
     def remove_empty_spheres(self) -> None:

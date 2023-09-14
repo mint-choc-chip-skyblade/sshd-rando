@@ -38,7 +38,7 @@ class AllPatchHandler:
             self.world.get_shuffled_entrances(), self.stagePatchHandler
         )
         patch_object_pack()
-        self.stagePatchHandler.handle_stage_patches()
+        self.stagePatchHandler.handle_stage_patches(self.world)
         self.stagePatchHandler.patch_title_screen_logo()
         self.eventPatchHandler.handle_event_patches()
 

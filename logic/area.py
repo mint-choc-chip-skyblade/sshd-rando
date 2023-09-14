@@ -53,6 +53,37 @@ class Area:
     def __lt__(self, other: "Area"):
         return self.id < other.id
 
+    # Will return the currently connected hint regions, if none are assigned
+    # but will not assign the found hint regions. This is meant to be called
+    # in the entrance randomization algorithm
+    def get_regions(self) -> set[str]:
+        if self.hint_regions:
+            return self.hint_regions
+
+        hint_regions: set[str] = set()
+        already_checked: set["Area"] = set()
+        area_queue: list["Area"] = [self]
+
+        while len(area_queue) > 0:
+            area = area_queue.pop(0)
+            already_checked.add(area)
+
+            if len(area.hint_regions) > 0:
+                for region in area.hint_regions:
+                    # Don't add None if we come across it
+                    if region != "None":
+                        hint_regions.add(region)
+                continue
+
+            # If this area isn't assigned any hint regions
+            # add its entrances' parent areas to the queue
+            # as long as they haven't been checked yet
+            for entrance in area.entrances:
+                if entrance.parent_area not in already_checked:
+                    area_queue.append(entrance.parent_area)
+
+        return hint_regions
+
 
 # Will perform a search from the starting area until all
 # possibly connected hint regions have been found.

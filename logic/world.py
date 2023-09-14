@@ -473,17 +473,15 @@ class World:
         for area in self.areas.values():
             for exit_ in area.exits:
                 if (
-                    exit_.type != EntranceType.NONE
-                    and (
-                        entrance_type == EntranceType.ALL or exit_.type == entrance_type
-                    )
+                    exit_.type != "None"
+                    and (entrance_type == "All" or exit_.type == entrance_type)
                     and (exit_.primary or not only_primary)
                 ):
                     entrances.append(exit_)
         return entrances
 
     def get_shuffled_entrances(
-        self, entrance_type: int = EntranceType.ALL, only_primary: bool = False
+        self, entrance_type: int = "All", only_primary: bool = False
     ) -> list[Entrance]:
         entrances = self.get_shuffleable_entrances(entrance_type, only_primary)
         return [e for e in entrances if e.shuffled]

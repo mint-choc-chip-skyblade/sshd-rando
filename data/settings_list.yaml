@@ -160,6 +160,18 @@
     - anywhere:                     "Maps can appear anywhere"
 
 
+- name: random_starting_spawn
+  default_option: vanilla
+  pretty_name: Randomize Starting Spawn
+  pretty_options:
+    - Vanilla
+    - Bird Statues
+    - Any Surface Region
+    - Anywhere
+  options:
+    - vanilla/bird_statues/any_surface_region/anywhere: "empty description"
+
+
 - name: randomize_dungeon_entrances
   default_option: 'off'
   pretty_name: Randomize Dungeon Entrances
