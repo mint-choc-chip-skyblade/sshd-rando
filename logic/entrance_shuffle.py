@@ -57,7 +57,7 @@ def set_all_entrances_data(world: World) -> None:
                     )
 
             # Check required fields for forward connection
-            for field in ["connection", "exit_infos", "spawn_info"]:
+            for field in ["connection", "spawn_info"]:
                 if field not in entrance_data["forward"]:
                     raise EntranceShuffleError(
                         f'"{field}" field is missing in forward entrance data: {entrance_data["forward"]}'
@@ -103,7 +103,11 @@ def set_all_entrances_data(world: World) -> None:
             Entrance.sort_counter += 1
             if return_entrance != None:
                 return_entrance.type = EntranceType.from_str(entrance_type)
-                return_entrance.exit_infos = entrance_data["return"]["exit_infos"]
+                return_entrance.exit_infos = (
+                    entrance_data["return"]["exit_infos"]
+                    if "exit_infos" in entrance_data["return"]
+                    else None
+                )
                 return_entrance.spawn_info = entrance_data["return"]["spawn_info"]
                 return_entrance.secondary_exit_infos = (
                     entrance_data["return"]["secondary_exit_infos"]
@@ -171,6 +175,16 @@ def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePool
     if world.setting("randomize_door_entrances") == "on":
         entrance_pools[EntranceType.DOOR] = world.get_shuffleable_entrances(
             EntranceType.DOOR, only_primary=True
+        )
+
+    if world.setting("randomize_interior_entrances") == "on":
+        entrance_pools[EntranceType.INTERIOR] = world.get_shuffleable_entrances(
+            EntranceType.INTERIOR, only_primary=True
+        )
+
+    if world.setting("randomize_overworld_entrances") == "on":
+        entrance_pools[EntranceType.OVERWORLD] = world.get_shuffleable_entrances(
+            EntranceType.OVERWORLD, only_primary=False
         )
 
     set_shuffled_entrances(entrance_pools)
@@ -365,7 +379,8 @@ def set_shuffled_entrances(entrance_pools: EntrancePools) -> None:
 
 
 def check_entrances_compatibility(entrance: Entrance, target: Entrance) -> None:
-    pass
+    if entrance.reverse == target.replaces:
+        raise EntranceShuffleError(f"Attempted self-connection")
 
 
 def change_connections(entrance: Entrance, target: Entrance) -> None:

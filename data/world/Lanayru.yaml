@@ -379,7 +379,8 @@
   exits:
     Shipyard Statue: Nothing
     Shipyard End of Minecart Ride: Nothing
-    Construction Bay: "'Defeat_Shipyard_Molderach'"
+    Construction Bay Sand Pit: "'Defeat_Shipyard_Molderach'"
+    Lanayru Sand Sea: Nothing
   locations:
     Shipyard - Gossip Stone: Nothing # Take the first cart and you've arrived
     Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05: "'Defeat_Shipyard_Molderach'"
@@ -388,15 +389,17 @@
 - name: Shipyard End of Minecart Ride
   hint_region: Lanayru Sand Sea
   exits:
-    Construction Bay: Nothing
+    Construction Bay Upper Platform: Nothing
 
+- name: Construction Bay Upper Platform
+  exits:
+    Construction Bay Sand Pit: Nothing
+    Shipyard End of Minecart Ride: Nothing
 
-- name: Construction Bay
-  hint_region: Lanayru Sand Sea
+- name: Construction Bay Sand Pit
   events:
     Defeat Shipyard Molderach: Gust_Bellows and Sword
   exits:
-    Shipyard End of Minecart Ride: Nothing
     Shipyard Dock: "'Defeat_Shipyard_Molderach'"
 
 
@@ -408,6 +411,7 @@
     Pirate Stronghold Statue: Nothing
     Pirate Stronghold Side Door: Nothing
     Pirate Stronghold Top Door: "'Finish_Pirate_Stronghold'" # What happens if you take it before finishing the minidungeon ?
+    Lanayru Sand Sea: Nothing
   locations:
     Pirate Stronghold - Rupee on West Sea Pillar: Quick_Beetle
     Pirate Stronghold - Rupee on East Sea Pillar: Quick_Beetle

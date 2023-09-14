@@ -7,8 +7,9 @@ def determine_entrance_patches(
 ):
     for entrance in shuffled_entrances:
         spawn_info = entrance.replaces.spawn_info[0]
-        for exit_info in entrance.exit_infos:
-            patch_entrance(exit_info, spawn_info, stage_patch_handler)
+        if entrance.exit_infos:
+            for exit_info in entrance.exit_infos:
+                patch_entrance(exit_info, spawn_info, stage_patch_handler)
 
         if entrance.replaces.secondary_spawn_info:
             spawn_info = entrance.replaces.secondary_spawn_info[0]

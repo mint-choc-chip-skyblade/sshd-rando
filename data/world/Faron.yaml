@@ -202,6 +202,7 @@
     Great Tree Interior Middle: Can_Defeat_Moblins or 'Can_Complete_Ancient_Cistern'
     Flooded Great Tree Upper: Nothing
     Great Tree Exterior Top: Nothing
+    Great Tree Exterior Platforms: Nothing
 
 
 - name: Great Tree Exterior Top
@@ -311,6 +312,7 @@
   exits:
     Lake Floria Emerged Area: Water_Scale
     Farore's Lair: Water_Scale
+    Faron Woods: Impossible # To satisfy entrance rando
 
 
 - name: Lake Floria Emerged Area

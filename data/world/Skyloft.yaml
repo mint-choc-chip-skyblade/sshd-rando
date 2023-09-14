@@ -37,6 +37,7 @@
   allowed_time_of_day: All
   exits:
     Knight Academy Zelda's Room: Nothing
+    Upper Skyloft: Impossible # To satisfy entrance rando
 
 
 - name: Knight Academy Zelda's Room

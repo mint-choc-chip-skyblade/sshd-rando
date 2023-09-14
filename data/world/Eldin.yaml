@@ -45,6 +45,7 @@
   exits:
     Volcano East: Nothing
     Volcano Ascent: Nothing
+    Mogma Turf Final Vent: Impossible # To satisfy entrance rando
 
 
 - name: Volcano Ascent
@@ -171,18 +172,18 @@
 - name: Mogma Turf
   hint_region: Mogma Turf
   exits:
-    Deep Mogma Turf: Digging_Mitts
+    Mogma Turf Pyrup Maze: Digging_Mitts
     Volcano East: Nothing
   locations:
     Mogma Turf - Chest behind Bombable Wall at Entrance: Bomb_Bag or can_access(Mogma Turf Dive)
     Mogma Turf - Digging Mitts Fight: Can_Defeat_Bokoblins
 
 
-- name: Deep Mogma Turf
+- name: Mogma Turf Pyrup Maze
   hint_region: Mogma Turf
   exits:
     Sand Slide Platform: Digging_Mitts
-    Past Mogma Turf: Nothing
+    Mogma Turf Final Vent: Digging_Mitts
     Mogma Turf: Nothing
   locations:
     Mogma Turf - Chest behind Bombable Wall in Fire Maze: Nothing
@@ -195,6 +196,12 @@
   locations:
     Mogma Turf - Sand Slide Chest: Nothing
 
+
+- name: Mogma Turf Final Vent
+  hint_region: Mogma Turf
+  exits:
+    Past Mogma Turf: Nothing
+    Mogma Turf Pyrup Maze: Bomb_Bag
 
 - name: Eldin Silent Realm
   hint_region: Eldin Silent Realm

@@ -143,6 +143,21 @@ F000: # Skyloft
       anglez: 951 # Untrigger on getting sword pedestal checks
       id: 0xFFFF
       name: ScChang
+  - name: Add entrance to simulate coming from chimney
+    type: objadd
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
+      byte4: -1
+      posx: -6450.0
+      posy: 2800.0
+      posz: -9300.0
+      anglex: 0
+      angley: 0
+      anglez: 0
+      entrance_id: 100
 
   # F000 objdeletes
   - name: Trial # trial object
@@ -1585,6 +1600,21 @@ F100: # Faron main area
     objtype: PLY
     object:
       play_cutscene: -1
+  - name: Add entrance to simulate coming from Lake Floria
+    type: objadd
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
+      byte4: -1
+      posx: -750.0
+      posy: 1011.0
+      posz: 11300.0
+      anglex: 0
+      angley: 33000
+      anglez: 0
+      entrance_id: 100
 
 F100_1: # Great Tree
   - name: Layer override
@@ -2224,6 +2254,21 @@ F210: # Mogma Turf
     layer: 0
     room: 0
     objtype: OBJ
+  - name: Add entrance to simulate coming from upper vent
+    type: objadd
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
+      byte4: -1
+      posx: 1000.0
+      posy: -5800.0
+      posz: -1000.0
+      anglex: 0
+      angley: 46000
+      anglez: 0
+      entrance_id: 100
 
 F211: # Thrill digger
   - name: Remove thrill digger entry CS
