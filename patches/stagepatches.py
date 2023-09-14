@@ -517,14 +517,19 @@ class StagePatchHandler:
                                 nextID = get_highest_object_id(bzs=roomBZS) + 1
 
                                 for patch in patchesForCurrentRoom:
-                                    
                                     if "onlyif" in patch:
                                         skip_patch = False
-                                        for test in patch["onlyif"]:   
+                                        for test in patch["onlyif"]:
                                             setting, comparison, value = test.split()
-                                            if comparison == "==" and world.setting(setting) != value:
+                                            if (
+                                                comparison == "=="
+                                                and world.setting(setting) != value
+                                            ):
                                                 skip_patch = True
-                                            if comparison == "!=" and world.setting(setting) == value:
+                                            if (
+                                                comparison == "!="
+                                                and world.setting(setting) == value
+                                            ):
                                                 skip_patch = True
                                         if skip_patch:
                                             continue

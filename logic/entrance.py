@@ -6,6 +6,7 @@ if TYPE_CHECKING:
     from .area import Area
     from .world import World
 
+
 class Entrance:
     sort_counter: int = 1
 

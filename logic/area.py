@@ -59,7 +59,7 @@ class Area:
     def get_regions(self) -> set[str]:
         if self.hint_regions:
             return self.hint_regions
-        
+
         hint_regions: set[str] = set()
         already_checked: set["Area"] = set()
         area_queue: list["Area"] = [self]
@@ -81,7 +81,7 @@ class Area:
             for entrance in area.entrances:
                 if entrance.parent_area not in already_checked:
                     area_queue.append(entrance.parent_area)
-        
+
         return hint_regions
 
 

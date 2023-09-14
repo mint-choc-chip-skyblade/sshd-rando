@@ -122,7 +122,9 @@ def set_all_entrances_data(world: World) -> None:
                     else None
                 )
                 if "can_start_at" in entrance_data["return"]:
-                    return_entrance.can_start_at = entrance_data["return"]["can_start_at"]
+                    return_entrance.can_start_at = entrance_data["return"][
+                        "can_start_at"
+                    ]
                 return_entrance.sort_priority = Entrance.sort_counter
                 Entrance.sort_counter += 1
                 forward_entrance.bind_two_way(return_entrance)
@@ -159,7 +161,7 @@ def set_all_entrances_data(world: World) -> None:
                         .replace(" East", "")
                         .replace(" West", "")
                     )
-    
+
 
 def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePools:
     # TODO: Mixed pools stuff
@@ -207,7 +209,9 @@ def create_target_pools(entrance_pools: EntrancePools) -> EntrancePools:
     target_entrance_pools: EntrancePools = {}
     for entrance_type, entrance_pool in entrance_pools.items():
         if entrance_type == "Spawn":
-            target_entrance_pools[entrance_type] = create_spawn_target_pool(entrance_pool[0].world)
+            target_entrance_pools[entrance_type] = create_spawn_target_pool(
+                entrance_pool[0].world
+            )
             for entrance in entrance_pool:
                 entrance.disconnect()
         else:
@@ -221,26 +225,50 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
     starting_spawn_value = world.setting("random_starting_spawn").value()
     match starting_spawn_value:
         case "vanilla":
-            assert False # Should never be hit
+            assert False  # Should never be hit
         case "bird_statues":
             for entrance_type in ["Bird Statue", "Spawn"]:
                 for entrance in world.get_shuffleable_entrances(entrance_type):
                     target_pool.append(entrance.get_new_target())
         case "any_surface_region":
-            banned_spawn_regions = {"Knight Academy", "Upper Skyloft", "Central Skyloft", "Skyloft Village", "Bazaar", "Batreaux", "The Sky", "The Thunderhead"}
+            banned_spawn_regions = {
+                "Knight Academy",
+                "Upper Skyloft",
+                "Central Skyloft",
+                "Skyloft Village",
+                "Bazaar",
+                "Batreaux",
+                "The Sky",
+                "The Thunderhead",
+            }
             for entrance_type in ["Door", "Interior", "Overworld", "Spawn"]:
                 for entrance in world.get_shuffleable_entrances(entrance_type):
                     # Ignore any sky/skyloft entrances
-                    if entrance.can_start_at and not entrance.parent_area.get_regions().intersection(banned_spawn_regions):
+                    if (
+                        entrance.can_start_at
+                        and not entrance.parent_area.get_regions().intersection(
+                            banned_spawn_regions
+                        )
+                    ):
                         target_pool.append(entrance.get_new_target())
         case "anywhere":
-            for entrance_type in ["Dungeon", "Trial Gate", "Door", "Interior", "Overworld", "Bird Statue", "Spawn"]:
+            for entrance_type in [
+                "Dungeon",
+                "Trial Gate",
+                "Door",
+                "Interior",
+                "Overworld",
+                "Bird Statue",
+                "Spawn",
+            ]:
                 for entrance in world.get_shuffleable_entrances(entrance_type):
                     if entrance.can_start_at:
                         target_pool.append(entrance.get_new_target())
         case _:
-            raise EntranceShuffleError(f"Unknown value for random starting spawn: '{starting_spawn_value}'")
-    
+            raise EntranceShuffleError(
+                f"Unknown value for random starting spawn: '{starting_spawn_value}'"
+            )
+
     # Don't assume we have access to the random spawn targets
     for entrance in target_pool:
         entrance.requirement.type = RequirementType.IMPOSSIBLE

@@ -474,9 +474,7 @@ class World:
             for exit_ in area.exits:
                 if (
                     exit_.type != "None"
-                    and (
-                        entrance_type == "All" or exit_.type == entrance_type
-                    )
+                    and (entrance_type == "All" or exit_.type == entrance_type)
                     and (exit_.primary or not only_primary)
                 ):
                     entrances.append(exit_)
