@@ -1531,7 +1531,8 @@ F100: # Faron main area
     room: 0
     objtype: STAG
   # - name: Patch Main floria entrance
-  #   onlyif: Option "open-lake-floria" Is "Open"
+  #   onlyif: 
+  #     - open_lake_floria == open
   #   type: objpatch
   #   id: 0xFDBA
   #   layer: 0
@@ -1983,7 +1984,8 @@ F200: # Eldin main area
     room: 2
     objtype: STAG
   - name: remove ET Door if open ET
-    onlyif: Option "open-et" Enabled
+    onlyif: 
+      - open_earth_temple == on
     type: objdelete
     id: 0x2413
     layer: 0
@@ -2248,7 +2250,7 @@ F210: # Mogma Turf
       id: 0xFE50
       name: Tubo
   - name: Remove Rupee Dowsing
-    onlyif: Option "dowsing-after-whitesword" Enabled
+    # onlyif: Option "dowsing-after-whitesword" Enabled
     type: objdelete
     id: 0xFC3B
     layer: 0
@@ -3490,7 +3492,7 @@ F404: # Hylia's Temple
     objtype: OBJ
   - name: Trigger to Check Triforces
     type: objadd
-    onlyif: Option "triforce-required" Enabled
+    # onlyif: Option "triforce-required" Enabled
     room: 2
     layer: 0
     objtype: OBJ

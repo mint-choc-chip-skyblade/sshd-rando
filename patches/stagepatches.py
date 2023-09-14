@@ -27,6 +27,7 @@ from constants.patchconstants import (
     STAGE_FILE_REGEX,
     ROOM_ARC_REGEX,
 )
+from logic.world import World
 
 
 def patch_tbox(bzs, itemID, id):
@@ -383,7 +384,7 @@ class StagePatchHandler:
         self.stageOarcAdd = defaultdict(set)
         self.stageOarcRemove = defaultdict(set)
 
-    def handle_stage_patches(self):
+    def handle_stage_patches(self, world: World):
         for stagePath in Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ"):
             stageMatch = STAGE_FILE_REGEX.match(stagePath.parts[-1])
 
@@ -516,6 +517,18 @@ class StagePatchHandler:
                                 nextID = get_highest_object_id(bzs=roomBZS) + 1
 
                                 for patch in patchesForCurrentRoom:
+                                    
+                                    if "onlyif" in patch:
+                                        skip_patch = False
+                                        for test in patch["onlyif"]:   
+                                            setting, comparison, value = test.split()
+                                            if comparison == "==" and world.setting(setting) != value:
+                                                skip_patch = True
+                                            if comparison == "!=" and world.setting(setting) == value:
+                                                skip_patch = True
+                                        if skip_patch:
+                                            continue
+
                                     if patch["type"] == "objadd":
                                         object_add(
                                             bzs=roomBZS, objadd=patch, nextID=nextID
