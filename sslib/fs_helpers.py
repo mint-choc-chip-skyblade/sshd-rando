@@ -12,16 +12,6 @@ class InvalidOffsetError(Exception):
     pass
 
 
-def data_len(data: BytesIO | BufferedIOBase) -> int:
-    data_length = data.seek(0, 2)
-    return data_length
-
-
-def make_copy_data(data: BytesIO | BufferedIOBase) -> BytesIO | BufferedIOBase:
-    copy_data = read_all_bytes(data)
-    return BytesIO(copy_data)
-
-
 def read_all_bytes(data: BytesIO | BufferedIOBase) -> bytes:
     data.seek(0)
     return data.read()
@@ -161,12 +151,12 @@ def write_str_with_null_byte(
 
 
 def read_u8(
-    data: BytesIO | BufferedIOBase, offset: int | None, isLittleEndian=False
+    data: BytesIO | BufferedIOBase, offset: int | None, is_little_endian=False
 ) -> Any:
     if not offset is None:
         data.seek(offset)
 
-    if isLittleEndian:
+    if is_little_endian:
         format = "<B"
     else:
         format = ">B"
@@ -175,12 +165,12 @@ def read_u8(
 
 
 def read_u16(
-    data: BytesIO | BufferedIOBase, offset: int | None, isLittleEndian=False
+    data: BytesIO | BufferedIOBase, offset: int | None, is_little_endian=False
 ) -> Any:
     if not offset is None:
         data.seek(offset)
 
-    if isLittleEndian:
+    if is_little_endian:
         format = "<H"
     else:
         format = ">H"
@@ -189,13 +179,13 @@ def read_u16(
 
 
 def read_u24(
-    data: BytesIO | BufferedIOBase, offset: int | None, isLittleEndian=False
+    data: BytesIO | BufferedIOBase, offset: int | None, is_little_endian=False
 ) -> Any:
     if not offset is None:
         data.seek(offset)
 
     # TODO: test if this actually works for little endian.
-    if isLittleEndian:
+    if is_little_endian:
         format = "<BH"
     else:
         format = ">BH"
@@ -205,12 +195,12 @@ def read_u24(
 
 
 def read_u32(
-    data: BytesIO | BufferedIOBase, offset: int | None, isLittleEndian=False
+    data: BytesIO | BufferedIOBase, offset: int | None, is_little_endian=False
 ) -> Any:
     if not offset is None:
         data.seek(offset)
 
-    if isLittleEndian:
+    if is_little_endian:
         format = "<I"
     else:
         format = ">I"
@@ -219,12 +209,12 @@ def read_u32(
 
 
 def read_float(
-    data: BytesIO | BufferedIOBase, offset: int | None, isLittleEndian=False
+    data: BytesIO | BufferedIOBase, offset: int | None, is_little_endian=False
 ) -> Any:
     if not offset is None:
         data.seek(offset)
 
-    if isLittleEndian:
+    if is_little_endian:
         format = "<f"
     else:
         format = ">f"
@@ -233,12 +223,12 @@ def read_float(
 
 
 def read_s8(
-    data: BytesIO | BufferedIOBase, offset: int | None, isLittleEndian=False
+    data: BytesIO | BufferedIOBase, offset: int | None, is_little_endian=False
 ) -> Any:
     if not offset is None:
         data.seek(offset)
 
-    if isLittleEndian:
+    if is_little_endian:
         format = "<b"
     else:
         format = ">b"
@@ -247,12 +237,12 @@ def read_s8(
 
 
 def read_s16(
-    data: BytesIO | BufferedIOBase, offset: int | None, isLittleEndian=False
+    data: BytesIO | BufferedIOBase, offset: int | None, is_little_endian=False
 ) -> Any:
     if not offset is None:
         data.seek(offset)
 
-    if isLittleEndian:
+    if is_little_endian:
         format = "<h"
     else:
         format = ">h"
@@ -261,12 +251,12 @@ def read_s16(
 
 
 def read_s32(
-    data: BytesIO | BufferedIOBase, offset: int | None, isLittleEndian=False
+    data: BytesIO | BufferedIOBase, offset: int | None, is_little_endian=False
 ) -> Any:
     if not offset is None:
         data.seek(offset)
 
-    if isLittleEndian:
+    if is_little_endian:
         format = "<i"
     else:
         format = ">i"
@@ -278,9 +268,9 @@ def write_u8(
     data: BytesIO | BufferedIOBase,
     offset: int | None,
     new_value: bytes | int,
-    isLittleEndian=False,
+    is_little_endian=False,
 ):
-    if isLittleEndian:
+    if is_little_endian:
         format = "<B"
     else:
         format = ">B"
@@ -297,9 +287,9 @@ def write_u16(
     data: BytesIO | BufferedIOBase,
     offset: int | None,
     new_value: bytes | int,
-    isLittleEndian=False,
+    is_little_endian=False,
 ):
-    if isLittleEndian:
+    if is_little_endian:
         format = "<H"
     else:
         format = ">H"
@@ -313,13 +303,16 @@ def write_u16(
 
 
 def write_u24(
-    data: BytesIO | BufferedIOBase, offset: int | None, value: int, isLittleEndian=False
+    data: BytesIO | BufferedIOBase,
+    offset: int | None,
+    value: int,
+    is_little_endian=False,
 ):
     if not offset is None:
         data.seek(offset)
 
     # TODO: test if this actually works for little endian.
-    if isLittleEndian:
+    if is_little_endian:
         format = "<BH"
     else:
         format = ">BH"
@@ -333,9 +326,9 @@ def write_u32(
     data: BytesIO | BufferedIOBase,
     offset: int | None,
     new_value: bytes | int,
-    isLittleEndian=False,
+    is_little_endian=False,
 ):
-    if isLittleEndian:
+    if is_little_endian:
         format = "<I"
     else:
         format = ">I"
@@ -352,9 +345,9 @@ def write_float(
     data: BytesIO | BufferedIOBase,
     offset: int | None,
     new_value: bytes | int,
-    isLittleEndian=False,
+    is_little_endian=False,
 ):
-    if isLittleEndian:
+    if is_little_endian:
         format = "<f"
     else:
         format = ">f"
@@ -371,9 +364,9 @@ def write_s8(
     data: BytesIO | BufferedIOBase,
     offset: int | None,
     new_value: bytes | int,
-    isLittleEndian=False,
+    is_little_endian=False,
 ):
-    if isLittleEndian:
+    if is_little_endian:
         format = "<b"
     else:
         format = ">b"
@@ -390,9 +383,9 @@ def write_s16(
     data: BytesIO | BufferedIOBase,
     offset: int | None,
     new_value: bytes | int,
-    isLittleEndian=False,
+    is_little_endian=False,
 ):
-    if isLittleEndian:
+    if is_little_endian:
         format = "<h"
     else:
         format = ">h"
@@ -409,9 +402,9 @@ def write_s32(
     data: BytesIO | BufferedIOBase,
     offset: int | None,
     new_value: bytes | int,
-    isLittleEndian=False,
+    is_little_endian=False,
 ):
-    if isLittleEndian:
+    if is_little_endian:
         format = "<i"
     else:
         format = ">i"
@@ -422,18 +415,6 @@ def write_s32(
         data.seek(offset)
 
     data.write(new_value)
-
-
-def align_data_to_nearest(
-    data: BytesIO | BufferedIOBase, size: int, padding_bytes=PADDING_BYTES
-):
-    current_end = data_len(data)
-    next_offset = current_end + (size - current_end % size) % size
-    padding_needed = next_offset - current_end
-    data.seek(current_end)
-    padding = padding_bytes * (padding_needed // len(padding_bytes))
-    padding += padding_bytes[: padding_needed % len(padding_bytes)]
-    data.write(padding)
 
 
 def pad_offset_to_nearest(offset: int, size: int) -> int:

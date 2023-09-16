@@ -16,7 +16,7 @@ GROUP_OF_TADTONES = "Group of Tadtones"
 
 # lists are used for progressive items,
 # tuples for setting multiple flags for one item
-ITEM_FLAGS = {
+ITEM_ITEMFLAGS = {
     PROGRESSIVE_BOW: [19, 90, 91],
     PROGRESSIVE_BEETLE: [53, 75, 76, 77],
     PROGRESSIVE_BUG_NET: [71, 140],
@@ -64,7 +64,7 @@ ITEM_FLAGS = {
 
 # lists are used for progressive items,
 # tuples for setting multiple flags for one item
-ITEM_STORY_FLAGS = {
+ITEM_STORYFLAGS = {
     # EMERALD_TABLET: 46,
     # RUBY_TABLET: 47,
     # AMBER_TABLET: 48,

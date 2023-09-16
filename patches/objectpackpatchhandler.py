@@ -11,20 +11,20 @@ from sslib.u8file import U8File
 
 def patch_object_pack():
     patches = yaml_load(OBJECTPACK_PATCHES_PATH)
-    objectpackArc = None
+    objectpack_arc = None
 
     if "AddArc" in patches:
-        objectpackArc = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH, True)
+        objectpack_arc = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH, True)
 
         for arc in patches["AddArc"]:
-            arcName = f"{arc}.arc"
-            oarcPath = OARC_CACHE_PATH / arcName
-            if oarcPath.exists():
-                objectpackArc.add_file_data(f"oarc/{arcName}", oarcPath.read_bytes())
+            arc_name = f"{arc}.arc"
+            oarc_path = OARC_CACHE_PATH / arc_name
+            if oarc_path.exists():
+                objectpack_arc.add_file_data(f"oarc/{arc_name}", oarc_path.read_bytes())
             else:
-                print(f"ERROR: {arcName} not found in oarc cache")
+                print(f"ERROR: {arc_name} not found in oarc cache")
 
-    if objectpackArc is not None:
+    if objectpack_arc is not None:
         write_bytes_create_dirs(
-            MODIFIED_OBJECTPACK_PATH, objectpackArc.build_and_compress_U8()
+            MODIFIED_OBJECTPACK_PATH, objectpack_arc.build_and_compress_U8()
         )

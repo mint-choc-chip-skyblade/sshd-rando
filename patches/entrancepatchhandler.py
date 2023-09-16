@@ -1,5 +1,5 @@
 from logic.entrance import Entrance
-from patches.stagepatches import StagePatchHandler
+from patches.stagepatchhandler import StagePatchHandler
 
 
 def determine_entrance_patches(
@@ -7,6 +7,7 @@ def determine_entrance_patches(
 ):
     for entrance in shuffled_entrances:
         spawn_info = entrance.replaces.spawn_info[0]
+
         if entrance.exit_infos:
             for exit_info in entrance.exit_infos:
                 patch_entrance(exit_info, spawn_info, stage_patch_handler)

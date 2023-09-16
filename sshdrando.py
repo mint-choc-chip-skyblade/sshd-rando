@@ -4,5 +4,5 @@ from logic.generate import generate
 
 worlds = generate()
 
-patchHandler = AllPatchHandler(worlds[0])
-patchHandler.do_all_patches()
+patch_handler = AllPatchHandler(worlds[0])
+patch_handler.do_all_patches()

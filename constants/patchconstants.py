@@ -1,5 +1,16 @@
 import re
 
+STAGE_OBJECT_NAMES = [
+    "OBJS",
+    "OBJ ",
+    "SOBS",
+    "SOBJ",
+    "STAS",
+    "STAG",
+    "SNDT",
+    "DOOR",
+]
+
 DEFAULT_SOBJ = {
     "params1": 0,
     "params2": 0,

@@ -6,7 +6,7 @@
 # this is used to patch chests back to the corresponding subtype of their ORIGINAL item, their is an asm patch that makes tboxs check their params for this info instead
 # the main reason being that some subtypes don't have chest appearing animations, so if an appearing chest was patched to be one of those, it wouldn't appear
 # also having these defined here frees up the space in the game code where they were originally defined
-tboxSubtypes = [
+tbox_subtypes = [
     0x00,
     0x00,
     0x01,
