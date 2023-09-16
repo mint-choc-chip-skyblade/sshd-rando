@@ -5,85 +5,14 @@
 # That file can be found here: https://github.com/ssrando/ssrando/blob/main/sslib/bzs.py
 
 from typing import NewType, Tuple
-from collections import OrderedDict
 import struct
 import json
 
-from .utils import unpack, toStr, toBytes
+from constants.patchconstants import STAGE_OBJECT_NAMES
 
-nodestruct = ">4shhi"
-nodestructnames = "name count ff offset"
+from .utils import unpack, to_str, to_bytes
 
-ParsedBzs = NewType("ParsedBzs", OrderedDict)
-
-
-def parseBzs(data: bytes) -> OrderedDict | list:
-    name, count, ff, offset = struct.unpack(">4shhi", data[:12])
-    assert ff == -1
-    name = name.decode("ascii")
-    return parseObj(name, count, data[offset:])
-
-
-def parseObj(objtype, quantity, data):
-    if objtype == "V001":
-        # root
-        parsed = OrderedDict()
-        for i in range(quantity):
-            addr = i * 12
-            name, count, ff, offset = struct.unpack(">4shhi", data[addr : addr + 12])
-            assert ff == -1
-            name = name.decode("ascii")
-            parsed[name] = parseObj(name, count, data[addr + offset :])
-            # if name != 'LAY ':
-            #    parsed[name]=len(parsed[name])
-        return parsed
-    elif objtype == "LAY ":
-        # different layers of the room (always 29 of them)
-        assert quantity == 29
-        parsed = OrderedDict()
-        for i in range(quantity):
-            addr = i * 8
-            count, ff, offset = struct.unpack(">hhi", data[addr : addr + 8])
-            if count == 0:
-                parsed["l%d" % i] = OrderedDict()
-            else:
-                parsed["l%d" % i] = parseObj("V001", count, data[addr + offset :])
-        return parsed
-
-    elif objtype in ("OBJN", "ARCN"):
-        parsed = []
-        for i in range(quantity):
-            addr = data[2 * i] * 0x100 + data[2 * i + 1]
-            name = toStr(data[addr:])
-            parsed.append(name)
-        return parsed
-    elif objtype == "RMPL":
-        parsed = OrderedDict()
-        for i in range(quantity):
-            rmpldata = data[4 * i :]
-            rmpl_id = rmpldata[0]
-            count = rmpldata[1]
-            addr = rmpldata[2] * 0x100 + rmpldata[3]
-            parsed[rmpl_id] = []
-            for j in range(count):
-                parsed[rmpl_id].append(rmpldata[addr + 2 * j : addr + 2 * j + 2])
-        return parsed
-
-    else:
-        # objects with quantities
-        parsed = []
-        structnames, structdef, size = objectstructs[objtype]
-        for i in range(quantity):
-            item = data[size * i : size * (i + 1)]
-            unpacked = unpack(structnames, structdef, item)
-            if "name" in unpacked.keys():
-                unpacked["name"] = toStr(unpacked["name"])
-            parsed.append(unpacked)
-
-        return parsed
-
-
-objectstructs = {
+OBJECT_STRUCTS = {
     "FILE": ("unk dummy", ">hh", 4),
     "SCEN": (
         "name room layer entrance night byte5 flag6 zero saveprompt",
@@ -165,7 +94,7 @@ objectstructs = {
     "LYLT": ("layer demo_high demo_low dummy", ">bbbb", 4),
 }
 
-namelengths = {
+NAME_LENGTHS = {
     "SCEN": 32,
     "CAM ": 16,
     "EVNT": 32,
@@ -179,10 +108,104 @@ namelengths = {
     "DOOR": 8,
 }
 
+NODE_STRUCT = ">4shhi"
+NODE_STRUCT_NAMES = "name count ff offset"
 
-def buildBzs(root: OrderedDict) -> bytes:
-    count, odata = buildObj("V001", root)
-    data = struct.pack(nodestruct, b"V001", count, -1, 12) + odata
+ParsedBzs = NewType("ParsedBzs", dict)
+
+
+def parse_bzs(data: bytes) -> dict:
+    name, count, ff, offset = struct.unpack(">4shhi", data[:12])
+    assert ff == -1
+
+    name = name.decode("ascii")
+    parsed_object = parse_object(name, count, data[offset:])
+    assert type(parsed_object) is dict
+
+    return parsed_object
+
+
+def parse_object(object_type: str, quantity: int, object_data: bytes) -> dict | list:
+    if object_type == "V001":
+        # root
+        parsed = {}
+
+        for i in range(quantity):
+            address = i * 12
+            name, count, ff, offset = struct.unpack(
+                ">4shhi", object_data[address : address + 12]
+            )
+            assert ff == -1
+            name = name.decode("ascii")
+            parsed[name] = parse_object(name, count, object_data[address + offset :])
+
+        return parsed
+
+    elif object_type == "LAY ":
+        # different layers of the room (always 29 of them)
+        assert quantity == 29
+        parsed = {}
+
+        for i in range(quantity):
+            address = i * 8
+            count, ff, offset = struct.unpack(
+                ">hhi", object_data[address : address + 8]
+            )
+
+            if count == 0:
+                parsed["l%d" % i] = {}
+            else:
+                parsed["l%d" % i] = parse_object(
+                    "V001", count, object_data[address + offset :]
+                )
+
+        return parsed
+
+    elif object_type in ("OBJN", "ARCN"):
+        parsed = []
+
+        for i in range(quantity):
+            address = object_data[2 * i] * 0x100 + object_data[2 * i + 1]
+            name = to_str(object_data[address:])
+            parsed.append(name)
+
+        return parsed
+
+    elif object_type == "RMPL":
+        parsed = {}
+
+        for i in range(quantity):
+            rmpl_data = object_data[4 * i :]
+            rmpl_id = rmpl_data[0]
+            count = rmpl_data[1]
+            address = rmpl_data[2] * 0x100 + rmpl_data[3]
+            parsed[rmpl_id] = []
+
+            for j in range(count):
+                parsed[rmpl_id].append(rmpl_data[address + 2 * j : address + 2 * j + 2])
+
+        return parsed
+
+    else:
+        # objects with quantities
+        parsed = []
+        struct_names, struct_def, size = OBJECT_STRUCTS[object_type]
+
+        for i in range(quantity):
+            item = object_data[size * i : size * (i + 1)]
+            unpacked = unpack(struct_names, struct_def, item)
+
+            if "name" in unpacked.keys():
+                unpacked["name"] = to_str(unpacked["name"])
+
+            parsed.append(unpacked)
+
+        return parsed
+
+
+def build_bzs(root: dict) -> bytes:
+    count, object_data = build_object("V001", root)
+    data = struct.pack(NODE_STRUCT, b"V001", count, -1, 12) + object_data
 
     # padding
     pad = 32 - (len(data) % 32)
@@ -192,124 +215,148 @@ def buildBzs(root: OrderedDict) -> bytes:
     return data
 
 
-def buildObj(
-    objtype, objdata
+def build_object(
+    object_type, object_data
 ) -> Tuple[int, bytes]:  # number of elements, bytes of body
-    if objtype == "V001":
-        assert type(objdata) == OrderedDict
-        offset = len(objdata) * 12
+    if object_type == "V001":
+        assert type(object_data) == dict
+        offset = len(object_data) * 12
         body = b""
-        headerbytes = b""
-        for typ, obj in objdata.items():
-            count, data = buildObj(typ, obj)
+        header_bytes = b""
+
+        for data_type, obj in object_data.items():
+            count, data = build_object(data_type, obj)
             # pad to 4
             pad = (4 - (len(data) % 4)) * b"\xFF"
             if len(pad) == 4:
                 pad = b""
-            headerbytes += struct.pack(
-                nodestruct,
-                typ.encode("ASCII"),
+            header_bytes += struct.pack(
+                NODE_STRUCT,
+                data_type.encode("ASCII"),
                 count,
                 -1,
-                len(body) - len(headerbytes) + offset,
+                len(body) - len(header_bytes) + offset,
             )
             body += data + pad
-            # body+=(16-(len(body)%16))*b'\xFF'
-        return (len(objdata), headerbytes + body)
-    elif objtype == "LAY ":
-        assert type(objdata) == OrderedDict
-        assert len(objdata) == 29
+
+        return (len(object_data), header_bytes + body)
+    elif object_type == "LAY ":
+        assert type(object_data) == dict
+        assert len(object_data) == 29
         offset = 29 * 8
         body = b""
-        headerbytes = b""
-        for layer in objdata.values():
+        header_bytes = b""
+
+        for layer in object_data.values():
             if not layer:
-                headerbytes += struct.pack(">hhi", 0, -1, 0)
+                header_bytes += struct.pack(">hhi", 0, -1, 0)
             else:
-                count, data = buildObj("V001", layer)
-                dataoffset = len(body) - len(headerbytes) + offset
+                count, data = build_object("V001", layer)
+                dataoffset = len(body) - len(header_bytes) + offset
                 # pad to 4
                 pad = (4 - (len(data) % 4)) * b"\xFF"
                 if len(pad) == 4:
                     pad = b""
-                headerbytes += struct.pack(">hhi", count, -1, dataoffset)
+                header_bytes += struct.pack(">hhi", count, -1, dataoffset)
                 body += data + pad
-        return (29, headerbytes + body)
 
-    elif objtype in ("OBJN", "ARCN"):
-        assert type(objdata) == list
-        offset = len(objdata) * 2
+        return (29, header_bytes + body)
+
+    elif object_type in ("OBJN", "ARCN"):
+        assert type(object_data) == list
+        offset = len(object_data) * 2
         sbytes = b""
-        headerbytes = b""
-        for s in objdata:
-            headerbytes += struct.pack(">H", len(sbytes) + offset)
-            sbytes += s.encode("ASCII") + b"\x00"
-        return (len(objdata), headerbytes + sbytes)
-    elif objtype == "RMPL":
-        assert type(objdata) == OrderedDict
-        offset = len(objdata) * 4
+        header_bytes = b""
+
+        for string in object_data:
+            header_bytes += struct.pack(">H", len(sbytes) + offset)
+            sbytes += string.encode("ASCII") + b"\x00"
+
+        return (len(object_data), header_bytes + sbytes)
+
+    elif object_type == "RMPL":
+        assert type(object_data) == dict
+        offset = len(object_data) * 4
         body = b""
-        headerbytes = b""
-        for i, s in objdata.items():
-            headerbytes += struct.pack(
-                ">BBH", i, len(s), len(body) + offset - len(headerbytes)
+        header_bytes = b""
+
+        for i, string in object_data.items():
+            header_bytes += struct.pack(
+                ">BBH", i, len(string), len(body) + offset - len(header_bytes)
             )
-            body += b"".join(s)
-        return (len(objdata), headerbytes + body)
+            body += b"".join(string)
+
+        return (len(object_data), header_bytes + body)
 
     else:
-        assert type(objdata) == list
-        for obj in objdata:
+        assert type(object_data) == list
+
+        for obj in object_data:
             if "name" in obj:
-                obj["name"] = toBytes(obj["name"], namelengths[objtype])
-        _, structdef, _ = objectstructs[objtype]
-        mapped = (struct.pack(structdef, *obj.values()) for obj in objdata)
-        return (len(objdata), b"".join(mapped))
+                obj["name"] = to_bytes(obj["name"], NAME_LENGTHS[object_type])
+
+        _, struct_def, _ = OBJECT_STRUCTS[object_type]
+        mapped = (struct.pack(struct_def, *obj.values()) for obj in object_data)
+
+        return (len(object_data), b"".join(mapped))
 
 
 def get_entry_from_bzs(
-    bzs: OrderedDict, objdef: dict, remove: bool = False
-) -> OrderedDict | None:
-    id = objdef.get("id", None)
-    index = objdef.get("index", None)
-    layer = objdef.get("layer", None)
-    objtype = objdef["objtype"].ljust(
+    bzs: dict, object_def: dict, remove: bool = False
+) -> dict | None:
+    id = object_def.get("id", None)
+    index = object_def.get("index", None)
+    layer = object_def.get("layer", None)
+    object_type = object_def["objtype"].ljust(
         4
     )  # OBJ has an whitespace but thats was too error prone for the yaml, so just pad it here
+
     if layer is None:
-        objlist = bzs[objtype]
+        object_list = bzs[object_type]
     else:
-        objlist = bzs["LAY "][f"l{layer}"][objtype]
+        object_list = bzs["LAY "][f"l{layer}"][object_type]
+
     if not id is None:
-        objs = [x for x in objlist if x["id"] == id]
+        objs = [x for x in object_list if x["id"] == id]
+
         if len(objs) != 1:
-            print(f"Error finding object: {json.dumps(objdef)}")
+            print(f"Error finding object: {json.dumps(object_def)}")
             return None
+
         obj = objs[0]
+
         if remove:
-            objlist.remove(obj)
+            object_list.remove(obj)
+
     elif not index is None:
-        if index >= len(objlist):
-            print(f"Error lisError list index out of range: {json.dumps(objdef)}")
+        if index >= len(object_list):
+            print(f"Error lisError list index out of range: {json.dumps(object_def)}")
             return None
+
         if remove:
-            obj = objlist.pop(index)
+            obj = object_list.pop(index)
         else:
-            obj = objlist[index]
+            obj = object_list[index]
+
     else:
-        print(f"ERROR: neither id nor index given for object {json.dumps(objdef)}")
+        print(f"ERROR: neither id nor index given for object {json.dumps(object_def)}")
         return None
+
     return obj
 
 
-def get_highest_object_id(bzs) -> int:
+def get_highest_object_id(bzs: dict) -> int:
     max_id = 0
+
     for layer in bzs.get("LAY ", {}).values():
         if len(layer) == 0:
             continue
-        for objtype in ["OBJS", "OBJ ", "SOBS", "SOBJ", "STAS", "STAG", "SNDT", "DOOR"]:
-            if objtype in layer:
-                id = layer[objtype][-1]["id"] & 0x3FF
+
+        for object_type in STAGE_OBJECT_NAMES:
+            if object_type in layer:
+                id = layer[object_type][-1]["id"] & 0x3FF
+
                 if id != 0x3FF:  # aparently some objects have the max id?
                     max_id = max(max_id, id)
+
     return max_id
