@@ -2554,18 +2554,6 @@ F300_4: # Temple of Time
     objtype: STAG
 
 F300_5: # LMF to ToT
-  - name: harp CS loadzone
-    type: objpatch
-    id: 0xFC03
-    layer: 0
-    room: 0
-    objtype: STAG
-    object:
-      # increase size to make it unmissable
-      sizex: 1700
-      sizez: 500
-      trigscenefid: 0xC3
-      untrigstoryfid: 935
   - name: Correct layer and entrance for first exit from end of LMF
     type: objpatch
     index: 0
@@ -2575,14 +2563,23 @@ F300_5: # LMF to ToT
       layer: 2
       entrance: 2
       saveprompt: 1
-  - name: harp CS loadzone
+  - name: End of LMF loadzone
     type: objpatch
-    id: 0xFC04
+    id: 0xFC03
     layer: 0
     room: 0
     objtype: STAG
     object:
+      # increase size to make it unmissable
+      sizex: 1700
+      sizez: 500
       trigstoryfid: 935
+  - name: End of LMF loadzone 2nd
+    type: objdelete
+    id: 0xFC04
+    layer: 0
+    room: 0
+    objtype: STAG
   - name: Area to give Reward after dungeon
     type: objadd
     index: 0
@@ -4205,7 +4202,7 @@ B101_1: # after AC boss
     id: 0xFC0B
     objtype: STAG
     object:
-      params1: 0xC303FF02 # change to zone temp flag 3
+      trigscenefid: 195
       anglez: 0xFFFF # don't set any storyflag here
 
 D200: # ET
@@ -4316,14 +4313,14 @@ B200: # ET Boss Room
     objtype: OBJ
 
 B210: # Earth Spring
-  - name: Patch Goddess Crest to not play Cutscene
+  - name: Patch entrance to not play Cutscene
     type: objpatch
-    id: 0xFC0A
-    layer: 0
     room: 0
-    objtype: OBJ
-    object: 
-      params1: 0xFFFF0426 # 0xFFFF, 04 = scen_link 4, 26 = scene flag 38 (vanilla)
+    index: 3
+    objtype: SCEN
+    object:
+      layer: 0
+      entrance: 4
   - name: Fi text after ET CS
     type: objpatch
     room: 0
@@ -4332,14 +4329,14 @@ B210: # Earth Spring
     objtype: OBJ
     object:
       params1: 0xFFFFFFF1
-  - name: Loadzone to outside
-    type: objpatch
-    room: 0
-    layer: 0
-    id: 0xFC0E
-    objtype: STAG
-    object:
-      params1: 0xC303FF00 # change to zone temp flag 3
+  # - name: Loadzone to outside
+  #   type: objpatch
+  #   room: 0
+  #   layer: 0
+  #   id: 0xFC0E
+  #   objtype: STAG
+  #   object:
+  #     params1: 0xC003FF00 # zone temp flag 192 set after crest hit
 
 D201: # FS A
   - name: Mogma 1
@@ -4481,7 +4478,7 @@ B201_1: # after FS boss
     id: 0xFC0A
     objtype: STAG
     object:
-      params1: 0xC3030001 # change to zone temp flag 3
+      trigscenefid: 195
       anglez: 0xFFFF # don't set any storyflag here
 
 D300: # LMF A
@@ -4643,7 +4640,6 @@ D301: # Sandship A
       anglez: 40108 # entrypoint 401_08
       id: 0xFC00
       name: NpcTke
-      trigstoryfid: 933 # triggered by storyflag for leaving tentalus room
       trigscenefid: 84 # and triggered by sceneflag 84, which is goddess crest hit
       untrigscenefid: 87 # unused flag to untrigger
   - name: Trigger Dungeon Exit
@@ -4759,7 +4755,7 @@ B301: # after Sandship boss
       layer: 0
       entrance: 3
       saveprompt: 1
-  - name: Fi text before FS CS
+  - name: Fi text before SSH CS
     type: objadd
     room: 0
     layer: 0
@@ -4804,7 +4800,7 @@ B301: # after Sandship boss
     objtype: STAG
     object:
       params1: 0xC303FF03 # change to zone temp flag 3
-      anglez: 0xFFFF # don't set any storyflag here
+      anglez: 0xFFFF # no untrigger flag
 
 S100: # Faron Silent Realm
   - name: Fi text near waking water
