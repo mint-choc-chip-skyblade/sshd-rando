@@ -1361,7 +1361,7 @@
   - name: Give Whitesword # whitesword atm so you only need to hardcode 1 sword to get to MS to test GoT sword requirements (item get sets needed storyflags)
     type: setitemflag
     flow:
-      itemid: 9 
+      itemid: 10
       next: Give sailcloth
   - name: Give sailcloth
     type: setitemflag
@@ -1977,28 +1977,13 @@
       subType: 0
       param1: 0
       param2: 5 # Skyview beaten story flag
-      next: 87
+      next: 79 # set zone flag for exit
       param3: 0
-  - name: rando required dungeon storyflag
+  - name: Prevent softlock on exit
     type: flowpatch
-    index: 87
+    index: 79
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: -1 # will be filled in later if this is a required dungeon
-      next: 81
-      param3: 0
-  - name: to rando dungeons completed check
-    type: flowpatch
-    index: 81
-    flow:
-      type: type3
-      subType: 1
-      param1: 8 # entrypoint 008_007
-      param2: 7
       next: -1
-      param3: 7
 
 202-ForestD2:
   - name: Shorten Ghirahim text before Koloktos
@@ -2023,35 +2008,13 @@
       subType: 0
       param1: 0
       param2: 3 # item
-      next: Give Ancient Cistern beaten story flag
+      next: Set zoneflag to trigger loadzone
       param3: 9
-  - name: Give Ancient Cistern beaten story flag
-    type: flowadd
+  - name: Set zoneflag to trigger loadzone
+    type: setzoneflag
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: 900 # Ancient Cistern beaten story flag
-      next: rando required dungeon storyflag
-      param3: 0
-  - name: rando required dungeon storyflag
-    type: flowadd
-    flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: -1 # will be filled in later if this is a required dungeon
-      next: to rando dungeons completed check
-      param3: 0
-  - name: to rando dungeons completed check
-    type: flowadd
-    flow:
-      type: type3
-      subType: 1
-      param1: 8 # entrypoint 008_007
-      param2: 7
+      setzoneflag: 3
       next: -1
-      param3: 7
   # make sure central statue can be moved down again, for that allow the player to
   # talk to the tablet and then lower the statue and reload
   - name: Statue Lower Question
@@ -2412,26 +2375,11 @@
       param3: 9
       param4: 0
       param5: 0
-  - name: rando required dungeon storyflag
+  - name: Prevent softlock on exit
     type: flowpatch
     index: 21
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: -1 # will be filled in later if this is a required dungeon
-      next: 59
-      param3: 0
-  - name: to rando dungeons completed check
-    type: flowpatch
-    index: 59
-    flow:
-      type: type3
-      subType: 1
-      param1: 8 # entrypoint 008_007
-      param2: 7
       next: -1
-      param3: 7
 
 302-Anahori:
   - name: To Mitts Check
@@ -2485,34 +2433,15 @@
       param4: 0
       param5: 0
   - name: Give Fire Sanctuary beaten story flag
-    type: flowadd
+    type: setstoryflag
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: 901 # Fire Sanctuary beaten story flag
-      next: 6
-      param3: 0
-  - name: rando required dungeon storyflag
-    type: flowpatch
-    index: 6
+      setstoryflag: 901 # Fire Sanctuary beaten story flag
+      next: Give zone flag for load zone
+  - name: Give zone flag for load zone
+    type: setzoneflag
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: -1 # will be filled in later if this is a required dungeon
-      next: 94
-      param3: 0
-  - name: to rando dungeons completed check
-    type: flowpatch
-    index: 94
-    flow:
-      type: type3
-      subType: 1
-      param1: 8 # entrypoint 008_007
-      param2: 7
+      setzoneflag: 105
       next: -1
-      param3: 7
 
 305-MountainF3:
   - name: Boko Base entry
@@ -2672,38 +2601,23 @@
       next: 1
 
 400-Desert:
-  - name: give item after harp CS
+  - name: Give item at end of LMF
     type: flowpatch
     index: 283
     flow:
       type: type3
       subType: 0
       param1: 0
-      param2: 0 # item
-      next: 284 # end
+      param2: 3 # item
+      next: Set storyflag for end of LMF item
       param3: 9
       param4: 0
       param5: 0
-  - name: rando required dungeon storyflag
-    type: flowpatch
-    index: 284
+  - name: Set storyflag for end of LMF item
+    type: setstoryflag
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: -1 # will be filled in later if this is a required dungeon
-      next: 285
-      param3: 0
-  - name: to rando dungeons completed check
-    type: flowpatch
-    index: 285
-    flow:
-      type: type3
-      subType: 1
-      param1: 8 # entrypoint 008_007
-      param2: 7
+      setstoryflag: 935
       next: -1
-      param3: 7
   - name: Fix Hook Beetle check # the robot doesn't give the item after harp
     type: flowpatch
     index: 39
@@ -2749,36 +2663,13 @@
       subType: 0
       param1: 0
       param2: 933 # set defeat tentalus storyflag
-      next: 46
+      next: Give SSH crest zoneflag
       param3: 0
-  - name: rando required dungeon storyflag
-    type: flowpatch
-    index: 46
+  - name: Give SSH crest zoneflag
+    type: setzoneflag
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: -1 # will be filled in later if this is a required dungeon
-      next: set sandship storyflag
-      param3: 0
-  - name: set sandship storyflag
-    type: flowadd
-    flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: 933 # tentalus defeated
-      next: to rando dungeons completed check
-      param3: 0
-  - name: to rando dungeons completed check
-    type: flowadd
-    flow:
-      type: type3
-      subType: 1
-      param1: 8 # entrypoint 008_007
-      param2: 7
+      setzoneflag: 3
       next: -1
-      param3: 7
   - name: Fi text text to leave dungeon
     type: textadd
     unk1: 2

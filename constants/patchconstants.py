@@ -148,6 +148,28 @@ DEFAULT_SET_SCENEFLAG_FLOW = {
     "next": -1,
 }
 
+DEFAULT_SET_TEMPFLAG_FLOW = {
+    "type": "type3",
+    "subType": 1,
+    "param1": -1,  # tempflag id
+    "param2": -1,  # scene index
+    "param3": 28,  # give tempflag command
+    "param4": 0,
+    "param5": 0,
+    "next": -1,
+}
+
+DEFAULT_SET_ZONEFLAG_FLOW = {
+    "type": "type3",
+    "subType": 1,
+    "param1": -1,  # zoneflag id
+    "param2": -1,  # scene index
+    "param3": 4,  # give zoneflag command
+    "param4": 0,
+    "param5": 0,
+    "next": -1,
+}
+
 DEFAULT_CHECK_STORYFLAG_FLOW = {
     "type": "switch",
     "subType": 6,
@@ -176,10 +198,16 @@ FLOW_ADD_VARIATIONS = (
     "setitemflag",
     "setstoryflag",
     "setsceneflag",
+    "settempflag",
+    "setzoneflag",
 )
 SWITCH_ADD_VARIATIONS = ("switchadd", "checkstoryflag", "checksceneflag")
 
-PARAM1_ALIASES = ("setsceneflag",)
+PARAM1_ALIASES = (
+    "setsceneflag",
+    "settempflag",
+    "setzoneflag",
+)
 PARAM2_ALIASES = (
     "itemid",
     "setstoryflag",
@@ -194,6 +222,8 @@ DEFAULT_FLOW_TYPE_LOOKUP = {
     "setitemflag": DEFAULT_SET_ITEM_FLAG_FLOW,
     "setstoryflag": DEFAULT_SET_STORYFLAG_FLOW,
     "setsceneflag": DEFAULT_SET_SCENEFLAG_FLOW,
+    "settempflag": DEFAULT_SET_TEMPFLAG_FLOW,
+    "setzoneflag": DEFAULT_SET_ZONEFLAG_FLOW,
     "switchadd": DEFAULT_FLOW,
     "checkstoryflag": DEFAULT_CHECK_STORYFLAG_FLOW,
     "checksceneflag": DEFAULT_CHECK_SCENEFLAG_FLOW,
