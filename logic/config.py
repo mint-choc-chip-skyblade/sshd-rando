@@ -71,14 +71,14 @@ def write_config_to_file(filename: str, conf: Config):
                 config_out[world_num][setting_name] = setting.value
 
             if len(setting_map.starting_inventory) == 0:
-                config_out[world_num]["starting_inventory"] = "none"
+                config_out[world_num]["starting_inventory"] = []
             else:
                 config_out[world_num]["starting_inventory"] = []
                 for item in setting_map.starting_inventory.elements():
                     config_out[world_num]["starting_inventory"].append(item)
 
             if len(setting_map.excluded_locations) == 0:
-                config_out[world_num]["excluded_locations"] = "none"
+                config_out[world_num]["excluded_locations"] = []
             else:
                 config_out[world_num]["excluded_locations"] = []
                 for loc in setting_map.excluded_locations:
@@ -124,17 +124,13 @@ def load_config_from_file(filename: str) -> Config:
                 # Special handling for starting inventory
                 if setting_name == "starting_inventory":
                     starting_inventory = config_in[world_num_str][setting_name]
-                    if type(starting_inventory) is list:
-                        cur_world_settings.starting_inventory = Counter(
-                            starting_inventory
-                        )
+                    cur_world_settings.starting_inventory = Counter(starting_inventory)
                     continue
 
                 # Special handling for excluded locations
                 if setting_name == "excluded_locations":
                     excluded_locations = config_in[world_num_str][setting_name]
-                    if type(excluded_locations) is list:
-                        cur_world_settings.excluded_locations = set(excluded_locations)
+                    cur_world_settings.excluded_locations = set(excluded_locations)
                     continue
 
                 # Special handling for mixed entrance pools
