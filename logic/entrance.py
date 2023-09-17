@@ -21,6 +21,7 @@ class Entrance:
         self.connected_area: "Area" = connected_area_
         self.original_connected_area: "Area" = connected_area_
         self.type: str = "None"
+        self.original_type: str = "None"
         self.original_name: str = f"{parent_area_} -> {connected_area_}"
 
         self.requirement: Requirement = requirement_

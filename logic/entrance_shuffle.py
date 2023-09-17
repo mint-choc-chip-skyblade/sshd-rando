@@ -25,14 +25,11 @@ class EntranceShuffleError(RuntimeError):
 def shuffle_world_entrances(world: World, worlds: list[World]):
     set_all_entrances_data(world)
 
-    pools_to_mix: list[int] = []
-    entrance_pools = create_entrance_pools(world, pools_to_mix)
+    entrance_pools = create_entrance_pools(world)
     target_entrance_pools = create_target_pools(entrance_pools)
 
     # Set plando entrances first
-    set_plandomizer_entrances(
-        world, worlds, entrance_pools, target_entrance_pools, pools_to_mix
-    )
+    set_plandomizer_entrances(world, worlds, entrance_pools, target_entrance_pools)
 
     # Shuffle the entrances
     for entrance_type, entrance_pool in entrance_pools.items():
@@ -86,6 +83,7 @@ def set_all_entrances_data(world: World) -> None:
                 coupled_doors[tag].extend([forward_entrance, return_entrance])
 
             forward_entrance.type = entrance_type
+            forward_entrance.original_type = entrance_type
             forward_entrance.exit_infos = entrance_data["forward"]["exit_infos"]
             forward_entrance.spawn_info = entrance_data["forward"]["spawn_info"]
             forward_entrance.secondary_exit_infos = (
@@ -105,6 +103,7 @@ def set_all_entrances_data(world: World) -> None:
             Entrance.sort_counter += 1
             if return_entrance != None:
                 return_entrance.type = entrance_type
+                return_entrance.original_type = entrance_type
                 return_entrance.exit_infos = (
                     entrance_data["return"]["exit_infos"]
                     if "exit_infos" in entrance_data["return"]
@@ -163,11 +162,15 @@ def set_all_entrances_data(world: World) -> None:
                     )
 
 
-def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePools:
-    # TODO: Mixed pools stuff
-
+def create_entrance_pools(world: World) -> EntrancePools:
     entrance_pools: EntrancePools = {}
 
+    # The order we check the types is the order they'll be shuffled in.
+    # This matters because we generally want to shuffle entrances types
+    # near the "outside" of the world graph first (dungeons, trial gates),
+    # and then types that are farther "inside" aftrewards (interiors, overworld).
+    # This reduces the chance of a complete failure of the entrance shuffle
+    # algorithm
     if world.setting("random_starting_spawn") != "vanilla":
         entrance_pools["Spawn"] = world.get_shuffleable_entrances(
             "Spawn", only_primary=False
@@ -200,7 +203,27 @@ def create_entrance_pools(world: World, pools_to_mix: list[int]) -> EntrancePool
 
     set_shuffled_entrances(entrance_pools)
 
-    # TODO: Mixed pools stuff
+    # Set mixed pools
+    for i, pool in enumerate(world.setting_map.mixed_entrance_pools):
+        pool_name = "Mixed Pool " + str(i + 1)
+        entrance_pools[pool_name] = []
+        # For each entrance type, add it to the mixed pool and then
+        # delete the original pool
+        for entrance_type in pool:
+            for entrance in entrance_pools[entrance_type]:
+                entrance.type = pool_name
+                entrance_pools[pool_name].append(entrance)
+            del entrance_pools[entrance_type]
+
+    # If Interior or Overworld entrances are still being shuffled
+    # make sure we move them to the back of the pools so they still
+    # get shuffled last after the mixed pools
+    for entrance_type in ["Interior", "Overworld"]:
+        if entrance_type in entrance_pools:
+            # Pop it out of the OrderedDict and then add it
+            # back in on the end
+            pool = entrance_pools.pop(entrance_type)
+            entrance_pools[entrance_type] = pool
 
     return entrance_pools
 
@@ -281,7 +304,6 @@ def set_plandomizer_entrances(
     worlds: list[World],
     entrance_pools: EntrancePools,
     target_entrance_pools: EntrancePools,
-    pools_to_mix: list[int],
 ):
     logging.getLogger("").debug("Now Placing plandomized entrances")
     item_pool = get_complete_item_pool(worlds)
@@ -323,13 +345,9 @@ def set_plandomizer_entrances(
                     f"Entrance {entrance}'s type is not being shuffled and thus can't be plandomized"
                 )
 
-        # Get the appropriate pools (depending on if the pool is being mixed)
-        entrance_pool = entrance_pools[
-            "Mixed" if entrance_type in pools_to_mix else entrance_type
-        ]
-        target_pool = target_entrance_pools[
-            "Mixed" if entrance_type in pools_to_mix else entrance_type
-        ]
+        # Get the appropriate pools
+        entrance_pool = entrance_pools[entrance_type]
+        target_pool = target_entrance_pools[entrance_type]
 
         if entrance_to_connect in entrance_pool:
             valid_target_found = False

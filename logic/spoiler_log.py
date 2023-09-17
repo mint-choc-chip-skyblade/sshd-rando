@@ -1,4 +1,5 @@
 from .world import *
+from .entrance_shuffle import create_entrance_pools
 
 
 def spoiler_format_location(location: Location, longest_name_length: int) -> str:
@@ -76,20 +77,24 @@ def generate_spoiler_log(worlds: list[World]) -> None:
 
         # Recalculate longest name length for all shuffled entrances
         for world in worlds:
-            for entrance in world.get_shuffled_entrances(only_primary=True):
+            for entrance in world.get_shuffled_entrances():
                 longest_name_length = max(longest_name_length, len(f"{entrance}"))
 
-        if any(
-            [len(world.get_shuffled_entrances(only_primary=True)) for world in worlds]
-        ):
+        if any([len(world.get_shuffled_entrances()) for world in worlds]):
             spoiler_log.write("\nAll Entrances:\n")
         for world in worlds:
             spoiler_log.write(f"    {world}:\n")
-            for entrance in sorted(world.get_shuffled_entrances(only_primary=True)):
-                spoiler_log.write(
-                    "        "
-                    + spoiler_format_entrance(entrance, longest_name_length)
-                    + "\n"
-                )
+            entrance_pools = create_entrance_pools(world)
+            for entrance_type, pool in entrance_pools.items():
+                spoiler_log.write(f"        {entrance_type}:\n")
+                for entrance in sorted(pool):
+                    # Ignore entrances that are impossible
+                    if entrance.requirement.type == RequirementType.IMPOSSIBLE:
+                        continue
+                    spoiler_log.write(
+                        "            "
+                        + spoiler_format_entrance(entrance, longest_name_length)
+                        + "\n"
+                    )
 
     print(f"Generated Spoiler Log at {filepath}")
