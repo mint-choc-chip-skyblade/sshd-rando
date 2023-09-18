@@ -72,6 +72,7 @@ class SettingMap:
         self.settings: dict[str, Setting] = {}
         self.starting_inventory: Counter[str] = Counter()
         self.excluded_locations: set = set()
+        self.mixed_entrance_pools: list[list[str]] = []
 
 
 # Helper class to allow for automatic sanity checking and syntactic sugar when

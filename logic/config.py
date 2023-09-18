@@ -41,6 +41,7 @@ def create_default_config(filename: str):
     setting_map = conf.settings[0]
     setting_map.starting_inventory = Counter()
     setting_map.excluded_locations = set()
+    setting_map.mixed_entrance_pools = []
 
     for setting_name, setting_info in get_all_settings_info().items():
         new_setting = Setting()
@@ -70,18 +71,25 @@ def write_config_to_file(filename: str, conf: Config):
                 config_out[world_num][setting_name] = setting.value
 
             if len(setting_map.starting_inventory) == 0:
-                config_out[world_num]["starting_inventory"] = "none"
+                config_out[world_num]["starting_inventory"] = []
             else:
                 config_out[world_num]["starting_inventory"] = []
                 for item in setting_map.starting_inventory.elements():
                     config_out[world_num]["starting_inventory"].append(item)
 
             if len(setting_map.excluded_locations) == 0:
-                config_out[world_num]["excluded_locations"] = "none"
+                config_out[world_num]["excluded_locations"] = []
             else:
                 config_out[world_num]["excluded_locations"] = []
                 for loc in setting_map.excluded_locations:
                     config_out[world_num]["excluded_locations"].append(loc)
+
+            if len(setting_map.mixed_entrance_pools) == 0:
+                config_out[world_num]["mixed_entrance_pools"] = []
+            else:
+                config_out[world_num]["mixed_entrance_pools"] = []
+                for pool in setting_map.mixed_entrance_pools:
+                    config_out[world_num]["mixed_entrance_pools"].append(pool)
 
         yaml.safe_dump(config_out, config_file)
 
@@ -116,17 +124,20 @@ def load_config_from_file(filename: str) -> Config:
                 # Special handling for starting inventory
                 if setting_name == "starting_inventory":
                     starting_inventory = config_in[world_num_str][setting_name]
-                    if type(starting_inventory) is list:
-                        cur_world_settings.starting_inventory = Counter(
-                            starting_inventory
-                        )
+                    cur_world_settings.starting_inventory = Counter(starting_inventory)
                     continue
 
                 # Special handling for excluded locations
                 if setting_name == "excluded_locations":
                     excluded_locations = config_in[world_num_str][setting_name]
-                    if type(excluded_locations) is list:
-                        cur_world_settings.excluded_locations = set(excluded_locations)
+                    cur_world_settings.excluded_locations = set(excluded_locations)
+                    continue
+
+                # Special handling for mixed entrance pools
+                if setting_name == "mixed_entrance_pools":
+                    mixed_pools = config_in[world_num_str][setting_name]
+                    for pool in mixed_pools:
+                        cur_world_settings.mixed_entrance_pools.append(pool)
                     continue
 
                 if setting_name not in settings_info:
