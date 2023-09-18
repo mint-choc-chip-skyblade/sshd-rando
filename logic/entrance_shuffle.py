@@ -233,6 +233,20 @@ def create_entrance_pools(world: World) -> EntrancePools:
 
     # Set mixed pools
     for i, pool in enumerate(world.setting_map.mixed_entrance_pools):
+        # The pool should have at least two types that are being shuffled
+        # If the pool has less than two types or some of the specified types
+        # aren't being shuffled, then ignore the pool
+        if (
+            len(
+                [
+                    entrance_type
+                    for entrance_type in pool
+                    if entrance_type in entrance_pools
+                ]
+            )
+            < 2
+        ):
+            continue
         pool_name = "Mixed Pool " + str(i + 1)
         entrance_pools[pool_name] = []
         # For each entrance type, add it to the mixed pool and then
