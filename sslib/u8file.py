@@ -313,7 +313,7 @@ class U8File:
             currnode = self.nodes[foundindex]
 
             if isinstance(currnode, DirNode):
-                while part != currnode.name:
+                while currnode.name != part:
                     foundindex = currnode.new_next_parent_index
 
                     if foundindex >= total_nodes:
@@ -323,7 +323,7 @@ class U8File:
 
                 foundindex += 1
             else:
-                while part < currnode.name:
+                while currnode.name < part:
                     foundindex += 1
 
                     if foundindex >= total_nodes:
