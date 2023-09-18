@@ -13,7 +13,6 @@ from patches.stagepatchhandler import StagePatchHandler
 from patches.eventpatchhandler import EventPatchHandler
 from filepathconstants import OUTPUT_PATH
 from shutil import rmtree
-import os
 
 
 class AllPatchHandler:
