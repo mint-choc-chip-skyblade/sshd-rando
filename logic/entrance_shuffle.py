@@ -180,28 +180,56 @@ def create_entrance_pools(world: World) -> EntrancePools:
         entrance_pools["Dungeon"] = world.get_shuffleable_entrances(
             "Dungeon", only_primary=True
         )
+        if world.setting("decouple_entrances") == "on":
+            entrance_pools["Dungeon Reverse"] = [
+                entrance.reverse for entrance in entrance_pools["Dungeon"]
+            ]
 
     if world.setting("randomize_trial_gate_entrances") == "on":
         entrance_pools["Trial Gate"] = world.get_shuffleable_entrances(
             "Trial Gate", only_primary=True
         )
+        # Don't enable this until trials stay permanently open
+        # if world.setting("decouple_entrances") == "on":
+        #     entrance_pools["Trial Gate Reverse"] = [entrance.reverse for entrance in entrance_pools["Trial Gate"]]
 
     if world.setting("randomize_door_entrances") == "on":
         entrance_pools["Door"] = world.get_shuffleable_entrances(
             "Door", only_primary=True
         )
+        if world.setting("decouple_entrances") == "on":
+            entrance_pools["Door Reverse"] = [
+                entrance.reverse for entrance in entrance_pools["Door"]
+            ]
 
     if world.setting("randomize_interior_entrances") == "on":
         entrance_pools["Interior"] = world.get_shuffleable_entrances(
             "Interior", only_primary=True
         )
+        if world.setting("decouple_entrances") == "on":
+            entrance_pools["Interior Reverse"] = [
+                entrance.reverse for entrance in entrance_pools["Interior"]
+            ]
 
     if world.setting("randomize_overworld_entrances") == "on":
+        exclude_overworld_reverse = (
+            any("Overworld" in pool for pool in world.setting_map.mixed_entrance_pools)
+            and not world.setting("decoupled_entrances") == "off"
+        )
         entrance_pools["Overworld"] = world.get_shuffleable_entrances(
-            "Overworld", only_primary=False
+            "Overworld", only_primary=exclude_overworld_reverse
         )
 
     set_shuffled_entrances(entrance_pools)
+
+    # Set appropriately decoupled types as decoupled
+    potentially_decoupled_types = {"Dungeon", "Door", "Interior", "Overworld"}
+    if world.setting("decouple_entrances") == "on":
+        for type_name in potentially_decoupled_types:
+            for entrance_type in [type_name, type_name + " Reverse"]:
+                if entrance_type in entrance_pools:
+                    for entrance in entrance_pools[entrance_type]:
+                        entrance.decoupled = True
 
     # Set mixed pools
     for i, pool in enumerate(world.setting_map.mixed_entrance_pools):
@@ -209,21 +237,24 @@ def create_entrance_pools(world: World) -> EntrancePools:
         entrance_pools[pool_name] = []
         # For each entrance type, add it to the mixed pool and then
         # delete the original pool
-        for entrance_type in pool:
-            for entrance in entrance_pools[entrance_type]:
-                entrance.type = pool_name
-                entrance_pools[pool_name].append(entrance)
-            del entrance_pools[entrance_type]
+        for type_str in pool:
+            for entrance_type in [type_str, type_str + " Reverse"]:
+                if entrance_type in entrance_pools:
+                    for entrance in entrance_pools[entrance_type]:
+                        entrance.type = pool_name
+                        entrance_pools[pool_name].append(entrance)
+                    del entrance_pools[entrance_type]
 
     # If Interior or Overworld entrances are still being shuffled
     # make sure we move them to the back of the pools so they still
     # get shuffled last after the mixed pools
-    for entrance_type in ["Interior", "Overworld"]:
-        if entrance_type in entrance_pools:
-            # Pop it out of the OrderedDict and then add it
-            # back in on the end
-            pool = entrance_pools.pop(entrance_type)
-            entrance_pools[entrance_type] = pool
+    if world.setting("decouple_entrances") == "off":
+        for entrance_type in ["Interior", "Overworld"]:
+            if entrance_type in entrance_pools:
+                # Pop it out of the OrderedDict and then add it
+                # back in on the end
+                pool = entrance_pools.pop(entrance_type)
+                entrance_pools[entrance_type] = pool
 
     return entrance_pools
 
@@ -458,7 +489,7 @@ def assume_entrance_pool(entrance_pool: EntrancePool) -> EntrancePool:
     assumed_pool: EntrancePool = []
     for entrance in entrance_pool:
         assumed_forward = entrance.assume_reachable()
-        if entrance.reverse != None and not entrance.decoupled:
+        if entrance.reverse and not entrance.decoupled:
             assumed_return = entrance.reverse.assume_reachable()
             assumed_forward.bind_two_way(assumed_return)
         assumed_pool.append(assumed_forward)
@@ -481,7 +512,7 @@ def check_entrances_compatibility(entrance: Entrance, target: Entrance) -> None:
 def change_connections(entrance: Entrance, target: Entrance) -> None:
     entrance.connect(target.disconnect())
     entrance.replaces = target.replaces
-    if entrance.reverse:
+    if entrance.reverse and not entrance.decoupled:
         target.replaces.reverse.connect(entrance.reverse.assumed.disconnect())
         target.replaces.reverse.replaces = entrance.reverse
 
@@ -489,7 +520,7 @@ def change_connections(entrance: Entrance, target: Entrance) -> None:
 def restore_connections(entrance: Entrance, target: Entrance) -> None:
     target.connect(entrance.disconnect())
     entrance.replaces = None
-    if entrance.reverse:
+    if entrance.reverse and not entrance.decoupled:
         entrance.reverse.assumed.connect(target.replaces.reverse.disconnect())
         target.replaces.reverse.replaces = None
 
@@ -499,7 +530,7 @@ def confirm_replacement(entrance: Entrance, target: Entrance) -> None:
     logging.getLogger("").debug(
         f"Connected {entrance} to {entrance.connected_area} [{entrance.world}]"
     )
-    if entrance.reverse:
+    if entrance.reverse and not entrance.decoupled:
         replaced_reverse = target.replaces.reverse
         delete_target_entrance(entrance.reverse.assumed)
         logging.getLogger("").debug(
