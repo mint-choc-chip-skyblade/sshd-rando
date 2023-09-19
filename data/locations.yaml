@@ -1913,7 +1913,7 @@
     - stage/B300/r0/l3/HeartCo
 
 - name: Lanayru Mining Facility - Goddess Harp
-  original_item: Goddess Harp
+  original_item: Goddess's Harp
   goal_location: true
   type:
   Paths:
@@ -2270,7 +2270,7 @@
   text: the <r<goddess's final trial>> grants
 
 - name: Faron Silent Realm - Reward
-  original_item: Water Dragon Scale
+  original_item: Water Dragon's Scale
   type:
   Paths:
     - stage/S100/r0/l2/WarpObj

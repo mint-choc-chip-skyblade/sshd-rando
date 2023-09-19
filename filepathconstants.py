@@ -51,3 +51,5 @@ ASM_ADDITIONS_DIFFS_PATH = RANDO_ROOT_PATH / "asm" / "additions" / "diffs"
 
 MAIN_NSO_FILE_PATH = RANDO_ROOT_PATH / "title" / TITLE_ID / "exefs" / "main"
 SUBSDK1_FILE_PATH = RANDO_ROOT_PATH / "title" / TITLE_ID / "exefs" / "subsdk1"
+
+STARTFLAGS_FILE_PATH = RANDO_ROOT_PATH / "patches" / "data" / "startflags.yaml"

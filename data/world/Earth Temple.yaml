@@ -67,7 +67,7 @@
   dungeon: Earth Temple
   exits:
     ET Room with Slopes: Nothing
-    Earth Temple Boss Room: Earth_Temple_Boss_Key
+    Earth Temple Boss Room: Earth_Temple_Boss_Key or boss_keys == removed
   locations:
     Earth Temple - Boss Key Chest: Nothing
 

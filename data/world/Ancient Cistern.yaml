@@ -8,12 +8,12 @@
     AC East Rooms: Nothing
     AC Lobby After Whip Hooks: Whip
     AC Lobby Vines Area: can_access(AC Lobby Vines Area) and Whip # Turn on the geyser
-    AC Behind the Waterfall: Water_Scale and 'Can_Pull_Waterfall_Lever'
-    AC Inside Statue: count(2, Ancient_Cistern_Small_Key) or 'Can_Lower_Giant_Statue'
+    AC Behind the Waterfall: Water_Dragons_Scale and 'Can_Pull_Waterfall_Lever'
+    AC Inside Statue: count(2, Ancient_Cistern_Small_Key) or small_keys == removed or 'Can_Lower_Giant_Statue'
     Floria Waterfall Temple Ledge: Nothing
   locations:
-    Ancient Cistern - Rupee in East Hand: Water_Scale
-    Ancient Cistern - Rupee in West Hand: Water_Scale
+    Ancient Cistern - Rupee in East Hand: Water_Dragons_Scale
+    Ancient Cistern - Rupee in West Hand: Water_Dragons_Scale
 
 
 - name: AC Lobby After Whip Hooks
@@ -50,14 +50,14 @@
 - name: AC Red Pipe Basement
   dungeon: Ancient Cistern
   exits:
-    AC Red Pipe Basement Past Skulltula: (Beetle or Bow) and Water_Scale # or Ancient Cistern - Basement Lilypad Clip Trick)
+    AC Red Pipe Basement Past Skulltula: (Beetle or Bow) and Water_Dragons_Scale # or Ancient Cistern - Basement Lilypad Clip Trick)
 
 
 - name: AC Red Pipe Basement Past Skulltula
   dungeon: Ancient Cistern
   exits:
-    AC Red Pipe Basement: Water_Scale
-    AC Back Room: count(2, Ancient_Cistern_Small_Key)
+    AC Red Pipe Basement: Water_Dragons_Scale
+    AC Back Room: count(2, Ancient_Cistern_Small_Key) or small_keys == removed
   locations:
     Ancient Cistern - Bokoblin: Whip
 
@@ -66,7 +66,7 @@
   dungeon: Ancient Cistern
   exits:
     AC Lobby After Whip Hooks: Nothing
-    AC Lobby Vines Area: Whip and Water_Scale
+    AC Lobby Vines Area: Whip and Water_Dragons_Scale
 
 
 - name: AC Spider Thread Area
@@ -84,12 +84,12 @@
   exits:
     Ancient Cistern Lobby: Nothing
   locations:
-    Ancient Cistern - Rupee in East Part in Cubby: Can_Unlock_Combination_Lock and Water_Scale
-    Ancient Cistern - First Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Scale
-    Ancient Cistern - Second Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Scale
-    Ancient Cistern - Third Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Scale
-    Ancient Cistern - Rupee in East Part in Main Tunnel: Can_Unlock_Combination_Lock and Water_Scale
-    Ancient Cistern - Chest in East Part: Can_Unlock_Combination_Lock and Water_Scale
+    Ancient Cistern - Rupee in East Part in Cubby: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - First Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Second Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Third Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Rupee in East Part in Main Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Chest in East Part: Can_Unlock_Combination_Lock and Water_Dragons_Scale
 
 
 # Implies statue is lowered
@@ -131,9 +131,9 @@
   exits:
     AC Basement: "'Can_Lower_Giant_Statue'"
     Ancient Cistern Lobby: Whip
-    AC Platform Before Boss: Ancient_Cistern_Boss_Key and Whip
+    AC Platform Before Boss: (Ancient_Cistern_Boss_Key or boss_keys == removed) and Whip
   locations:
-    Ancient Cistern - Whip Chest: count(2, Ancient_Cistern_Small_Key) and (Can_Defeat_Stalmaster or 'Can_Lower_Giant_Statue')
+    Ancient Cistern - Whip Chest: (count(2, Ancient_Cistern_Small_Key) or small_keys == removed) and (Can_Defeat_Stalmaster or 'Can_Lower_Giant_Statue')
     
 
 - name: AC Platform Before Boss

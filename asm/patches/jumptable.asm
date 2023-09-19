@@ -20,14 +20,12 @@
 ; Total available instructions:                     372 (decimal)
 ; 
 ; Please update this:
-; Total space used (bytes):                           40
-; Total instructions used:                            10
+; Total space used (bytes):                          48
+; Total instructions used:                           12
 
-; Example:
-; 
-; .offset 0x08659ab0
-; mov w8, #0 ; addition 0
-; b 0x0865a070
+.offset 0x08659ab0
+mov w8, #2
+b 0x0865a070
 
 
 

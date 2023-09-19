@@ -7,6 +7,8 @@
 ;; additions begin here ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 .offset 0x360A6500
-; .global test
 .global handle_custom_item_get
 .type handle_custom_item_get, @function
+
+.global handle_startflags
+.type handle_startflags, @function

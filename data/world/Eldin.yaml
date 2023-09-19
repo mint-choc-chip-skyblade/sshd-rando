@@ -52,7 +52,7 @@
   hint_region: Eldin Volcano
   exits:
     Volcano Ascent Statue: Nothing
-    Eldin Silent Realm: Goddess_Harp and Dins_Power
+    Eldin Silent Realm: Goddesss_Harp and Dins_Power
     Outside Thrill Digger Cave: Bow or Slingshot or Beetle or logic_stuttersprint
     Past Sand Slide: Bomb_Bag or Hook_Beetle or can_access(Past Sand Slide) # or (Whip and Whip Bomb Trick)
     Volcano Entrance: Nothing

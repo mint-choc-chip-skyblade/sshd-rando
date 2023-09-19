@@ -42,11 +42,11 @@ def generate_item_pool(world: "World") -> None:
             "Gust Bellows",
             "Whip",
             "Clawshots",
-            "Water Dragon Scale",
+            "Water Dragon's Scale",
             "Fireshield Earrings",
             "Stone of Trials",
             "Spiral Charge",
-            "Goddess Harp",
+            "Goddess's Harp",
             "Farore's Courage",
             "Nayru's Wisdom",
             "Din's Power",
@@ -140,6 +140,19 @@ def generate_item_pool(world: "World") -> None:
     # Remove Key Pieces if the ET Door is open
     if world.setting("open_earth_temple") == "on":
         item_pool = [item for item in item_pool if item != "Key Piece"]
+
+    if world.setting("small_keys") == "removed":
+        item_pool = [
+            item
+            for item in item_pool
+            if not item.endswith("Small Key") or item == "Lanayru Caves Key"
+        ]
+
+    if world.setting("lanayru_caves_key") == "removed":
+        item_pool.remove("Lanayru Caves Key")
+
+    if world.setting("boss_keys") == "removed":
+        item_pool = [item for item in item_pool if not item.endswith("Boss Key")]
 
     for item_name in item_pool:
         item = world.get_item(item_name)

@@ -32,7 +32,9 @@ Mogma Mitts: count(2, Progressive_Mitts)
 
 Pouch: count(1, Progressive_Pouch)
 
-Water Scale: Water_Dragon_Scale
+Water Dragon's Scale: Water_Dragons_Scale
+
+Goddess's Harp: Goddesss_Harp
 
 Can High Rupee Farm: "'Can_Play_Fun_Fun_Island_Minigame' or 'Can_Play_Thrill_Digger_Minigame'"
 
@@ -136,7 +138,7 @@ Blow Up Covered Timeshift Stone: Bomb_Bag
 
 Can Hit High Skyview Switches: Distance_Activator or (Bomb_Bag and logic_bomb_throws)
 
-Skyview 2: Water_Scale
+Skyview 2: Water_Dragons_Scale
 
 Can Make Froak Explode: Sword or Slingshot or Beetle or Bomb_Bag or Gust_Bellows or Whip or Clawshots or Bow # pretty much any item will make the Froak explode
 

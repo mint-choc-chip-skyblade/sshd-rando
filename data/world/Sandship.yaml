@@ -9,7 +9,7 @@
     Sandship Freely Usable Timeshift Stone: Bow and 'Finish_Mast_Sequence'
   exits:
     Sandship Before Bow: Nothing
-    Sandship Captain's Cabin: count(2, Sandship_Small_Key) and ('Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone')
+    Sandship Captain's Cabin: (count(2, Sandship_Small_Key) or small_keys == removed) and ('Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone')
     Sandship Starboard Rooms: Bow and 'Open_Starboard_Windows'
     Sandship Mast: "'Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone'"
     Lanayru Sand Sea: Nothing # If stuck in the mast sequence, deathwarp
@@ -34,7 +34,7 @@
 - name: Sandship Captain's Cabin
   dungeon: Sandship
   exits:
-    Sandship Main Deck: count(2, Sandship_Small_Key)
+    Sandship Main Deck: count(2, Sandship_Small_Key) or small_keys == removed
   locations:
     Sandship - Boss Key Chest: Bow and 'Sandship_Freely_Usable_Timeshift_Stone' and Can_Defeat_Beamos
 
@@ -42,7 +42,7 @@
 - name: Sandship Before Bow
   dungeon: Sandship
   exits:
-    Sandship Bow: count(2, Sandship_Small_Key)
+    Sandship Bow: count(2, Sandship_Small_Key) or small_keys == removed
     Sandship Corridor: (Goddess_Sword or Bow or Bomb_Bag or Slingshot or logic_sandship_itemless_spume) or 'Sandship_Freely_Usable_Timeshift_Stone'
   locations:
     Sandship - Chest before 4-Door Corridor: "'Sandship_Freely_Usable_Timeshift_Stone'"
@@ -88,7 +88,7 @@
   dungeon: Sandship
   exits:
     Sandship Corridor: Nothing
-    Sandship Boss Room: Sandship_Boss_Key and 'Sandship_Freely_Usable_Timeshift_Stone'
+    Sandship Boss Room: (Sandship_Boss_Key or boss_keys == removed) and 'Sandship_Freely_Usable_Timeshift_Stone'
   locations:
     Sandship - Chest behind Combination Lock: (Gust_Bellows or 'Sandship_Freely_Usable_Timeshift_Stone' or logic_sandship_no_combination_hint) and Can_Unlock_Combination_Lock
 

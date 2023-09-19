@@ -11,6 +11,7 @@ from filepathconstants import EVENT_PATCHES_PATH, EVENT_FILES_PATH, OUTPUT_EVENT
 
 from collections import defaultdict
 from pathlib import Path
+from patches.conditionalpatchhandler import ConditionalPatchHandler
 
 from sslib.msb import (
     ParsedMsb,
@@ -34,7 +35,7 @@ class EventPatchHandler:
     def append_to_event_patches(self, file_name: str, event_patch: dict):
         self.event_patches[file_name].append(event_patch)
 
-    def handle_event_patches(self):
+    def handle_event_patches(self, onlyif_handler: ConditionalPatchHandler):
         for event_path in Path(EVENT_FILES_PATH).glob("*.arc"):
             file_name = event_path.parts[-1]
             modified_event_path = Path(OUTPUT_EVENT_PATH / file_name)
@@ -57,6 +58,10 @@ class EventPatchHandler:
                     assert len(parsed_msbt["TXT2"]) == len(parsed_msbt["ATR1"])
 
                     for patch in self.event_patches[msbt_file_name[:-5]]:
+                        if statement := patch.get("onlyif", False):
+                            if not onlyif_handler.evaluate_onlyif(statement):
+                                continue
+
                         # handle text patches here
                         if patch["type"] == "textadd":
                             self.text_add(
@@ -319,7 +324,7 @@ def make_progressive_item_events(
         storyflags
     ):
         raise Exception(
-            "itemtextIndexes must be the same length as itemIDs and storyflags to make a progressive item"
+            "item_text_indexes must be the same length as itemids and storyflags to make a progressive item"
         )
 
     flow_index = len(msbf["FLW3"]["flow"])
@@ -409,7 +414,7 @@ def handle_progressive_items(msbf: ParsedMsb):
     make_progressive_item_events(
         msbf,
         258,
-        (254, 253),
+        (254, 253, 253, 253, 253),
         ITEM_ITEMFLAGS[PROGRESSIVE_POUCH],
         ITEM_STORYFLAGS[PROGRESSIVE_POUCH],
     )

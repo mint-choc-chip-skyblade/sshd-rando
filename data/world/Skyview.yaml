@@ -10,7 +10,7 @@
 - name: SV First Room
   dungeon: Skyview Temple
   events:
-    Goddess Wall Trigger: Ballad_of_the_Goddess and Goddess_Harp
+    Goddess Wall Trigger: Ballad_of_the_Goddess and Goddesss_Harp
   exits:
     Skyview Entry: Can_Cut_Trees_And_Logs
     SV One Eye Room: Can_Hit_High_Skyview_Switches
@@ -31,10 +31,10 @@
   exits:
     SV One Eye Room: Nothing
     SV First Room: Nothing
-    SV First Hub Left Room: Can_Hit_Switch or ('One_Water_Raise' and Water_Scale)
+    SV First Hub Left Room: Can_Hit_Switch or ('One_Water_Raise' and Water_Dragons_Scale)
     SV First Hub Right Room Lower: Can_Hit_High_Skyview_Switches
     SV First Hub Right Room Upper: Clawshots or ('Skyview_Raise_East_Water' and 'Skyview_Raise_West_Water')
-    SV Second Hub Center Room: Skyview_Small_Key and (Clawshots or 'One_Water_Raise')
+    SV Second Hub Center Room: (Skyview_Small_Key or small_keys == removed) and (Clawshots or 'One_Water_Raise')
 
 
 - name: SV First Hub Left Room
@@ -54,7 +54,7 @@
   exits:
     SV First Hub Center Room: Nothing
   locations:
-    Skyview Temple - Digging Spot in Crawlspace: Digging_Mitts and Water_Scale # Have to assume player misses it the first time
+    Skyview Temple - Digging Spot in Crawlspace: Digging_Mitts and Water_Dragons_Scale # Have to assume player misses it the first time
 
 
 - name: SV First Hub Right Room Upper
@@ -69,10 +69,10 @@
 - name: SV Second Hub Center Room
   dungeon: Skyview Temple
   exits:
-    SV First Hub Center Room: Skyview_Small_Key
+    SV First Hub Center Room: Skyview_Small_Key or small_keys == removed
     SV Miniboss Room: Distance_Activator
     SV Second Hub Left Rooms: Beetle
-    SV Staldra Room: count(2, Skyview_Small_Key)
+    SV Staldra Room: count(2, Skyview_Small_Key) or small_keys == removed
     SV Last Room Before Rope: can_access(SV Last Room Before Rope) and Can_Hit_High_Skyview_Switches
   locations:
     Skyview Temple - Rupee in Southeast Tunnel: Beetle
@@ -100,7 +100,7 @@
 - name: SV Staldra Room
   dungeon: Skyview Temple
   exits:
-    SV Second Hub Center Room: Skyview_Small_Key
+    SV Second Hub Center Room: Skyview_Small_Key or small_keys == removed
     SV Last Room Before Spider: Can_Defeat_Staldra
 
 
@@ -126,7 +126,7 @@
   exits:
     SV Last Room Before Rope: Can_Defeat_Bokoblins
     SV Last Room Near Boss Key Chest: Long_Range_Skyward_Strike or Distance_Activator
-    Skyview Boss Room: Skyview_Boss_Key
+    Skyview Boss Room: Skyview_Boss_Key or boss_keys == removed
   locations:
     Skyview Temple - Chest near Boss Door: Nothing
 

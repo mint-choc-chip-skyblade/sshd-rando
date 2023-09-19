@@ -16,7 +16,7 @@
   can_sleep: true
   events:
     Start Owlans Quest: "'All_Kikwis_Saved'"
-    Knock on Toilet Door: Goddess_Harp and Night
+    Knock on Toilet Door: Goddesss_Harp and Night
   exits:
     Knight Academy Upper North Door: Nothing
     Knight Academy Upper South Door: Nothing
@@ -142,7 +142,7 @@
     Bazaar North: Day
     Bazaar West: Day
     Bazaar South: Day
-    Skyloft Silent Realm: Goddess_Harp and Song_of_the_Hero
+    Skyloft Silent Realm: Goddesss_Harp and Song_of_the_Hero
     Orielle and Parrow's House: Nothing
     Peatrice's House: Nothing
     Wryna's House: Nothing
@@ -163,8 +163,8 @@
     Central Skyloft - West Cliff Goddess Chest: "'Goddess_Cube_on_West_Great_Tree_near_Exit'"
     Central Skyloft - Parrow's Gift: Day and 'Talk_to_Orielle'
     Central Skyloft - Parrow's Crystals: Day and 'Save_Orielle'
-    Central Skyloft - Shed Chest: Water_Scale
-    Central Skyloft - Shed Goddess Chest: Water_Scale and 'Goddess_Cube_on_Sand_Slide'
+    Central Skyloft - Shed Chest: Water_Dragons_Scale
+    Central Skyloft - Shed Goddess Chest: Water_Dragons_Scale and 'Goddess_Cube_on_Sand_Slide'
     Central Skyloft - Crystal on Waterfall Island: Night and Quick_Beetle
     Central Skyloft - Crystal after Waterfall Cave: Night and Beetle
     Central Skyloft - Crystal in Loftwing Prison: Night and Beetle

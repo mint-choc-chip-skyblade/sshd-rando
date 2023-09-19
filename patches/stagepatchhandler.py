@@ -1,3 +1,4 @@
+from patches.conditionalpatchhandler import ConditionalPatchHandler
 from sslib.bzs import parse_bzs, build_bzs, get_entry_from_bzs, get_highest_object_id
 from sslib.utils import mask_shift_set, write_bytes_create_dirs
 from sslib.yaml import yaml_load
@@ -394,7 +395,7 @@ class StagePatchHandler:
         self.stage_oarc_remove: dict[tuple[str, int], set[str]] = defaultdict(set)
         self.stage_oarc_add: dict[tuple[str, int], set[str]] = defaultdict(set)
 
-    def handle_stage_patches(self, world: World):
+    def handle_stage_patches(self, onlyif_handler: ConditionalPatchHandler):
         for stage_path in Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ"):
             stage_match = STAGE_FILE_REGEX.match(stage_path.parts[-1])
 
@@ -524,25 +525,10 @@ class StagePatchHandler:
                                 nextid = get_highest_object_id(bzs=room_bzs) + 1
 
                                 for patch in patches_for_current_room:
-                                    if "onlyif" in patch:
-                                        skip_patch = False
-
-                                        for test in patch["onlyif"]:
-                                            setting, comparison, value = test.split()
-
-                                            if (
-                                                comparison == "=="
-                                                and world.setting(setting) != value
-                                            ):
-                                                skip_patch = True
-
-                                            if (
-                                                comparison == "!="
-                                                and world.setting(setting) == value
-                                            ):
-                                                skip_patch = True
-
-                                        if skip_patch:
+                                    if statement := patch.get("onlyif", False):
+                                        if not onlyif_handler.evaluate_onlyif(
+                                            statement
+                                        ):
                                             continue
 
                                     if patch["type"] == "objadd":
