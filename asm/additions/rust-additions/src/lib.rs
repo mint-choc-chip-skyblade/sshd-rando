@@ -200,6 +200,17 @@ fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
     }
 }
 
+#[no_mangle]
+fn storyflag_set_to_1(flag: u16) {
+    unsafe { ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag); };
+}
+
+#[no_mangle]
+fn set_goddess_sword_pulled_scene_flag() {
+    // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
+    storyflag_set_to_1(951);
+}
+
 #[panic_handler]
 fn panic(_: &core::panic::PanicInfo) -> ! {
     loop {}
