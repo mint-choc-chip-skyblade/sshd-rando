@@ -30,7 +30,7 @@
 - name: Sealed Temple
   hint_region: Sealed Grounds
   events:
-    Raise Gate of Time: Goddess_Harp and Ballad_of_the_Goddess
+    Raise Gate of Time: Goddesss_Harp and Ballad_of_the_Goddess
     Start Imprisoned 2: "'Raise_Gate_of_Time' and Master_Sword" # TODO
     Open Gate of Time: "'Can_Defeat_Imprisoned_2' and Master_Sword" # TODO
   exits:
@@ -39,7 +39,7 @@
     Hylia's Temple: "'Open_Gate_of_Time'"
   locations:
     Sealed Temple - Chest: Nothing
-    Sealed Temple - Song from Impa: Goddess_Harp
+    Sealed Temple - Song from Impa: Goddesss_Harp
 
 
 - name: Hylia's Temple
@@ -71,7 +71,7 @@
     Faron Woods Entry: Nothing
     Sealed Grounds Upper Ledge: Nothing
   locations:
-    Sealed Grounds - Gorko's Goddess Wall Reward: Goddess_Harp and Ballad_of_the_Goddess and Goddess_Sword
+    Sealed Grounds - Gorko's Goddess Wall Reward: Goddesss_Harp and Ballad_of_the_Goddess and Goddess_Sword
     Sealed Grounds - Gossip Stone: Nothing
 
 
@@ -96,8 +96,8 @@
     Viewing Platform Statue: Nothing
     Lake Floria: open_lake_floria == open or ('Talk_to_Yerbal' and (Goddess_Sword or open_lake_floria == yerbal)) or logic_early_lake_floria
     Behind the Crawlspace and Rope: Bomb_Bag
-    Faron Silent Realm: Goddess_Harp and Farores_Courage
-    Great Tree Interior Underwater: Water_Scale
+    Faron Silent Realm: Goddesss_Harp and Farores_Courage
+    Great Tree Interior Underwater: Water_Dragons_Scale
     Great Tree Exterior Platforms: Clawshots
     Great Tree Clawshot Target Branch: Clawshots
     Faron Woods Ledge to Deep Woods: Distance_Activator
@@ -168,13 +168,13 @@
   hint_region: Faron Woods
   exits:
     Faron Woods: Nothing
-    Great Tree Interior Lower: Water_Scale
+    Great Tree Interior Lower: Water_Dragons_Scale
 
 
 - name: Great Tree Interior Lower
   hint_region: Faron Woods
   exits:
-    Great Tree Interior Underwater: Water_Scale
+    Great Tree Interior Underwater: Water_Dragons_Scale
     Great Tree Interior Middle: Gust_Bellows
 
 
@@ -208,7 +208,7 @@
 - name: Great Tree Exterior Top
   hint_region: Faron Woods
   events:
-    Talk to Yerbal: Water_Scale and (Slingshot or Beetle) # Water Scale?
+    Talk to Yerbal: Water_Dragons_Scale and (Slingshot or Beetle) # Water Scale needed for Yerbal to spawn
   exits:
     The Great Tree Statue: Nothing
     Great Tree Interior Upper: Nothing
@@ -257,40 +257,40 @@
 - name: Flooded Faron Woods
   hint_region: Flooded Faron Woods
   events:
-    Unlock In the Woods Statue: Water_Scale
-    Unlock Viewing Platform Statue: Water_Scale
-    Unlock Faron Woods Entry Statue: Water_Scale
+    Unlock In the Woods Statue: Water_Dragons_Scale
+    Unlock Viewing Platform Statue: Water_Dragons_Scale
+    Unlock Faron Woods Entry Statue: Water_Dragons_Scale
     Unlock The Great Tree Statue: Nothing
     Retrieve Oolo: Scrapper and 'Start_Owlans_Quest'
     Can Watch Completed Tadtones Cutscene: Nothing
   exits:
     Flooded Great Tree Upper: Nothing
-    Flooded Great Tree Lower: Water_Scale
+    Flooded Great Tree Lower: Water_Dragons_Scale
   # locations:
-  #   Flooded Faron Woods - Yellow Tadtone under Lilypad: Water_Scale
-  #   Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform: Water_Scale
-  #   Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform: Water_Scale
-  #   Flooded Faron Woods - Red Moving Tadtone near Viewing Platform: Water_Scale
-  #   Flooded Faron Woods - Light Blue Tadtone under Great Tree Root: Water_Scale
-  #   Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder: Water_Scale
-  #   Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder: Water_Scale
-  #   Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree: Water_Scale
-  #   Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock: Water_Scale
-  #   Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree: Water_Scale
-  #   Flooded Faron Woods - 8 Green Tadtones in West Tunnel: Water_Scale
-  #   Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock: Water_Scale
-  #   Flooded Faron Woods - 16 Dark Blue Tadtones in the South West: Water_Scale
-  #   Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate: Water_Scale
-  #   Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree: Water_Scale
-  #   Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree: Water_Scale
-  #   Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree: Water_Scale
+  #   Flooded Faron Woods - Yellow Tadtone under Lilypad: Water_Dragons_Scale
+  #   Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform: Water_Dragons_Scale
+  #   Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform: Water_Dragons_Scale
+  #   Flooded Faron Woods - Red Moving Tadtone near Viewing Platform: Water_Dragons_Scale
+  #   Flooded Faron Woods - Light Blue Tadtone under Great Tree Root: Water_Dragons_Scale
+  #   Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder: Water_Dragons_Scale
+  #   Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder: Water_Dragons_Scale
+  #   Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree: Water_Dragons_Scale
+  #   Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock: Water_Dragons_Scale
+  #   Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree: Water_Dragons_Scale
+  #   Flooded Faron Woods - 8 Green Tadtones in West Tunnel: Water_Dragons_Scale
+  #   Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock: Water_Dragons_Scale
+  #   Flooded Faron Woods - 16 Dark Blue Tadtones in the South West: Water_Dragons_Scale
+  #   Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate: Water_Dragons_Scale
+  #   Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree: Water_Dragons_Scale
+  #   Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree: Water_Dragons_Scale
+  #   Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree: Water_Dragons_Scale
 
 
 - name: Flooded Great Tree Upper
   hint_region: Flooded Faron Woods
   exits:
     Flooded Faron Woods: Nothing
-    Flooded Great Tree Lower: Water_Scale
+    Flooded Great Tree Lower: Water_Dragons_Scale
   # locations:
   #   Flooded Faron Woods - Water Dragon's Reward: count(17, Group_of_Tadtones) and 'Can_Watch_Completed_Tadtones_Cutscene'
 
@@ -299,19 +299,19 @@
   hint_region: Flooded Faron Woods
   exits:
     Flooded Faron Woods: Nothing
-    Flooded Great Tree Upper: Water_Scale
+    Flooded Great Tree Upper: Water_Dragons_Scale
 
 # LAKE FLORIA
 - name: Lake Floria
   hint_region: Lake Floria
   locations:
-    Lake Floria - Rupee behind Southwest Boulder: Water_Scale
-    Lake Floria - Left Rupee behind Northwest Boulder: Water_Scale
-    Lake Floria - Right Rupee behind Northwest Boulder: Water_Scale
-    Lake Floria - Rupee under Central Boulder: Water_Scale
+    Lake Floria - Rupee behind Southwest Boulder: Water_Dragons_Scale
+    Lake Floria - Left Rupee behind Northwest Boulder: Water_Dragons_Scale
+    Lake Floria - Right Rupee behind Northwest Boulder: Water_Dragons_Scale
+    Lake Floria - Rupee under Central Boulder: Water_Dragons_Scale
   exits:
-    Lake Floria Emerged Area: Water_Scale
-    Farore's Lair: Water_Scale
+    Lake Floria Emerged Area: Water_Dragons_Scale
+    Farore's Lair: Water_Dragons_Scale
     Faron Woods: Impossible # To satisfy entrance rando
 
 
@@ -321,7 +321,7 @@
     Goddess Cube in Lake Floria: Goddess_Sword
   exits:
     Lake Floria Statue: Nothing
-    Lake Floria: Water_Scale
+    Lake Floria: Water_Dragons_Scale
   locations:
     Lake Floria - Chest: Nothing
 
@@ -331,9 +331,9 @@
     Talk to Farore: Nothing
   exits:
     Floria Waterfall: Nothing
-    Lake Floria: Water_Scale
+    Lake Floria: Water_Dragons_Scale
   locations:
-    Lake Floria - Dragon Lair South Chest: Water_Scale
+    Lake Floria - Dragon Lair South Chest: Water_Dragons_Scale
     Lake Floria - Dragon Lair East Chest: Nothing
     
 
@@ -343,7 +343,7 @@
     Goddess Cube in Floria Waterfall: Clawshots and Goddess_Sword
   exits:
     Floria Waterfall Statue: Nothing
-    Floria Waterfall Temple Ledge: Water_Scale
+    Floria Waterfall Temple Ledge: Water_Dragons_Scale
     Faron Woods Floria Shortcut Ledge: Nothing
     Farore's Lair: Nothing
   locations:

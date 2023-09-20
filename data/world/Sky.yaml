@@ -94,7 +94,7 @@
     The Sky: Day
   locations:
     Island near Bamboo Island - Goddess Chest: "'Goddess_Cube_near_Mogma_Turf_Entrance'"
-    Island near Bamboo Island - Goddess Chest in Cave: Water_Scale and 'Goddess_Cube_near_Mogma_Turf_Entrance'
+    Island near Bamboo Island - Goddess Chest in Cave: Water_Dragons_Scale and 'Goddess_Cube_near_Mogma_Turf_Entrance'
 
 
 - name: Beedle's Island
@@ -165,7 +165,7 @@
   locations:
     Lumpy Pumpkin - Chandelier: Nothing
     Lumpy Pumpkin - Inside Crystal: Night
-    Lumpy Pumpkin - Harp Minigame: Night and Goddess_Harp and 'Pumpkin_Carrying'
+    Lumpy Pumpkin - Harp Minigame: Night and Goddesss_Harp and 'Pumpkin_Carrying'
 
 
 - name: Island Closest to Faron Pillar

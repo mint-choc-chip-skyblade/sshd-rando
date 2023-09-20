@@ -14,7 +14,7 @@
   dungeon: Fire Sanctuary
   exits:
     Fire Sanctuary First Room: Can_Hit_High_Water_Plant
-    FS First Outside Section: Fire_Sanctuary_Small_Key
+    FS First Outside Section: Fire_Sanctuary_Small_Key or small_keys == removed
   locations:
     Fire Sanctuary - Chest in First Room: Can_Defeat_Bokoblins and Can_Hit_High_Water_Plant
 
@@ -64,7 +64,7 @@
   exits:
     FS Room with First Lava River: Clawshots or (Hook_Beetle and Projectile_Item)
     FS First Trapped Mogma Room Upper: Nothing
-    FS Water Fruit Room: count(2, Fire_Sanctuary_Small_Key)
+    FS Water Fruit Room: count(2, Fire_Sanctuary_Small_Key) or small_keys == removed
 
 
 - name: FS First Trapped Mogma Room Upper
@@ -79,7 +79,7 @@
 - name: FS Water Fruit Room
   dungeon: Fire Sanctuary
   exits:
-    FS Room with First Lava River Past River: count(2, Fire_Sanctuary_Small_Key)
+    FS Room with First Lava River Past River: count(2, Fire_Sanctuary_Small_Key) or small_keys == removed
     FS Water Fruit Room After Frog: Sword
   locations:
     Fire Sanctuary - First Chest in Water Fruit Room: Nothing
@@ -119,7 +119,7 @@
   exits:
     FS First Trapped Mogma Room Lower: Mogma_Mitts
     FS Under Magmanos Fight Room Past Sliding Door: "'Move_First_FS_Sliding_Gate'"
-    FS West of Boss Door Before Lava River: count(3, Fire_Sanctuary_Small_Key)
+    FS West of Boss Door Before Lava River: count(3, Fire_Sanctuary_Small_Key) or small_keys == removed
 
 
 - name: FS Under Magmanos Fight Room Past Sliding Door
@@ -184,7 +184,7 @@
   dungeon: Fire Sanctuary
   exits:
     Inside the Fire Sanctuary Statue: Nothing
-    Fire Sanctuary Boss Room: Fire_Sanctuary_Boss_Key
+    Fire Sanctuary Boss Room: Fire_Sanctuary_Boss_Key or boss_keys == removed
     FS Lizalfos Fight Room: Nothing
     FS West of Boss Door: Nothing
 

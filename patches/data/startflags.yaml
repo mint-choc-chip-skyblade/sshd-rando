@@ -1,0 +1,299 @@
+Storyflags:
+  - 24   # SKip Fi text around Faron Pillar
+  - 27   # Loftwing Unlocked
+  - 28   # Pratice Sword
+  - 32   # Sailcoth
+  - 36   # Hero's tunic
+  - 58   # B-Wheel Unlocked
+  - 81   # Tadtone Dowsing
+  - 82   # Tadtones music scroll
+  - 96   # Skip 1st time getting a map Fi text
+  - 115  # Full Lake Floria map
+  - 129  # Updated Lanayru Desert map
+  - 130  # Start with Beacon
+  - 138  # Sealed Temple layer 1
+  - 178  # Cutscene showing off Bokoblin Base with Plats
+  - 198  # Can jump off Loftwing
+  - 199  # Skip Eagus Cutscene after Sparring Hall chest
+  - 226  # Hero Mode
+  - 304  # Batreaux Crystal Quest started
+  - 329  # Slept after starting Batreaux Crystal Quest
+  # - 358  # Interface choice unlocked
+  - 386  # Skip first part of Bertie's Crystal Quest text
+  - 494  # Open gates to Faron Woods
+  - 496  # Skip Skipper's Cutscene after Sea Chart
+  - 519  # Updated Sand Sea map
+  - 661  # Windmill Repaired (required for scrapper quests - TODO)
+  - 724  # Skip first time using Light Pillar Cutscene (always sends you to Sealed Grounds)
+  - 745  # Unlocked 5 Beacons
+  - 789  # Unlocked Dowsing (still needs Goddess Sword)
+  - 792  # Watched Sealed Temple Big Door unlocking Cutscene
+  - 804  # Eldin entrance statue unlocked
+  - 1201 # Unlocked Amiibo
+  # Cutscene flags
+  ## Surface
+  - 137 # Sealed Grounds Intro Cutscene (enable statue select from start)
+  - 87  # Faron Woods Intro Cutscene
+  - 91  # Deep Woods Intro Cutscene
+  - 88  # Lake Floria Intro Cutscene
+  - 182 # Eldin Volcano Intro Cutscene
+  - 180 # Thrill Digger Intro Cutscene
+  - 562 # Volcano Summit Intro Cutscene
+  - 190 # Lanayru Mine Intro Cutscene
+  - 92  # Lanayru Desert Intro Cutscene
+  - 157 # Ancient Harbour Intro Cutscene
+  - 526 # Lanayru Gorge Intro Cutscene
+  - 80  # Water Dragon in Flooded Faron Cutscene
+  ## Silent Realms
+  - 70  # First time Light Fruit Cutscene
+  - 94  # Faron Silent Realm Intro Cutscene
+  - 205 # Lanayru Silent Realm Intro Cutscene
+  - 330 # Eldin Silent Realm Intro Cutscene
+  - 331 # Hylia's Silent Realm Intro Cutscene
+  ## Dungeons
+  - 89  # Skyview Intro Cutscene
+  - 183 # Earth Temple Intro Cutscene
+  - 211 # Lanayru Mining Facility Intro Cutscene
+  - 155 # Ancient Cistorn Intro Cutscene
+  - 156 # Sandship Intro Cutscene
+  - 172 # Fire Sanctuary Intro Cutscene
+  - 173 # Fire Sanctuary Intro Cutscene
+  - 678 # Entering Sky Keep Cutscene
+  - 159 # Sky Keep Intro Cutscene
+  - open_thunderhead == open:
+    - 194 # Thunderhead open
+  - open_lmf == open:
+    - 8   # LMF rising Cutscene watched
+  - skip_horde == on:
+    - 134 # Horde defeated
+    - 347 # Horde Cutscene watched
+  - skip_g3 == on and skip_horde == on:
+    - 486 # Ghirahim 3 defeated
+Sceneflags:
+  Skyloft: # Scene Index 0
+    - 0  # Lower Academy gates opened
+    - 1  # UA Doors open
+    - 8  # Seen Cutscene after getting Hero's Tunic
+    - 21 # Upper Academy gates opened
+    - 26 # Watched Eye Cutscene in Bazaar
+    - 66 # Batreaux Doors outside open
+    - 67 # Inside Doors open
+    - 95 # Fi Text for Ruby Tablet
+    - 96 # Fi Text for Amber Tablet
+    # - 99 # Watched Sheikah Stone Cutscene
+
+  Faron Woods: # Scene Index 1
+    - 14 # Skip Fi text in front of Viewing Platform statue
+    - 15 # Skip Fi text after vine to Deep Woods
+    - 19 # Watched Great Tree Intro Cutscene
+    - 30 # Watched Enter Skyview Cutscene
+    - 51 # Fi text before talking to Yerbal
+    - 52 # Fi text after opening floria gate
+    - open_lake_floria == open:
+      - 49 # Cutscene of Lake Floria Gates opening
+      - 50 # Open Lake Floria Gates
+
+  # Lake Floria: # Scene Index 2
+
+  # Flooded Faron Woods: # Scene Index 3
+
+  Eldin Volcano: # Scene Index 4
+    - 2  # Skip first Digging Mitts mogma text
+    - 16 # Watched first time landing Cutscene
+    - 58 # Watched Digging Mitts mogma Cutscene
+
+  Eldin Volcano Summit: # Scene Index 5 (VS & Boko Base)
+    - 20 # Set after initial panning Cutscene with Plats
+    - 21 # Set after initial panning Cutscene
+    - 34 # Watched panning Cutscene showing peahots
+    - 37 # Watched panning Cutscene showing boko camp and clawshots chest
+    - 38 # Watched panning Cutscene showing gust bellows chest
+    - 50 # Watched panning Cutscene showing whippable peahot
+    - 51 # Watched panning Cutscene showing bombs chest
+    - 52 # Watched panning Cutscene showing camp after wind elevator
+    - 60 # Watched panning Cutscene showi
+    - 61 # Watched panning Cutscene showing summit platforms in lava
+    - 63 # Watched panning Cutscene showing pouch chest
+    - 68 # Have talked to Plats near Volcano East
+    - 70 # Watched initial panning Cutscene
+
+  # Unused: # Scene Index 6
+
+  Lanayru Desert: # Scene Index 7
+    - 3  # Obtain map of the past from robot in ToT area
+    - 6  # Watched first time landing Cutscene
+    - 7  # Pushed first minecart in Mine
+    - 50 # Watched Enter Lanayru Mining Facility (LMF) Cutscene
+    - 55 # Watched Lanayru Desert Intro Cutscene
+    - 68 # Checked Desert statue
+    - open_lmf == open:
+      - 30 # Watched LMF Rises Cutscene
+      - 31 # Watched LMF rising Cutscene
+    - open_lmf == main_node:
+      - 100 # Lightning node active
+      - 101 # Fire node active
+      - 102 # Water node active
+
+  # Lanayru Sand Sea: # Scene Index 8
+
+  Lanayru Gorge: # Scene Index 9 (Gorge & Caves)
+    - 10   # Minecart at end of Track
+    - 16   # Watched Lanayru Gorge Intro Cutscene
+    - lanayru_caves_key == removed:
+      - 28 # Unlocked door to Lanayru Sand Sea
+
+  Sealed Grounds: # Scene Index 10
+    - 7  # Activated vents
+    - 13 # Unlocked Sealed Temple big door
+    - 39 # Log to Behind the Temple pushed down
+    - 55 # Watched First time landing Cutscene
+    # - triforce_required == off:
+    #   - 50 # Unlocked Horde Door from Hylia's Temple
+    - skip_horde == on:
+      - 51 # Unlocked Horde Door from Hylia's Realm
+
+  Skyview Temple: # Scene Index 11
+    - small_keys == removed:
+      - 6   # Unlocked door into main room
+      - 7   # Unlocked door into Staldra room
+    - boss_keys == removed:
+      - 100 # Opened Boss Door
+
+  Ancient Cistern: # Scene Index 12
+    - 62   # Watched Ancient Cistern Intro Cutscene
+    - small_keys == removed:
+      - 40  # Unlocked door next to whippable Bokoblin
+      - 113 # Unlocked door inside stone statue
+    - boss_keys == removed:
+      - 108 # Opened Boss Door
+
+  # Unused: # Scene Index 13
+
+  Earth Temple: # Scene Index 14
+    - 15   # Set boulder entering dragon's mouth Cutscene watched and removes lavafall in front of Boss Door
+    - boss_keys == removed:
+      - 14 # Opened Boss Door
+
+  Fire Sanctuary: # Scene Index 15
+    - 83   # Watched Cutscene showing the outside of the Fire Sanctuary
+    - fs_lava_flow == on:
+      - 64 # Blow up rock underground starting lava chase (back half lava flow)
+    - small_keys == removed:
+      - 2  # Unlocked 1st locked door
+      - 57 # Unlocked 3rd locked door
+      - 85 # Unlocked 2nd locked door
+    - boss_keys == removed:
+      - 61 # Opened Boss Door
+
+  # Unused: # Scene Index 16
+
+  Lanayru Mining Facility: # Scene Index 17
+    - small_keys == removed:
+      - 0   # Unlocked door to room before hop across boxes room
+    - boss_keys == removed:
+      - 127 # Opened Boss Door
+
+  Sandship: # Scene Index 18
+    - small_keys == removed:
+      - 119 # Unlocked door leading to Scervo
+      - 121 # Unlocked door leading to the Captain's Cabin
+    - boss_keys == removed:
+      - 20  # Opened Boss Door
+
+  # Unused: # Scene Index 19
+
+  Sky Keep: # Scene Index 20
+    - small_keys == removed:
+      - 63 # Unlocked key locked door
+
+  # The Sky: # Scene Index 21
+
+  # Faron Silent Realm: # Scene Index 22
+
+  # Eldin Silent Realm: # Scene Index 23
+
+  # Lanayru Silent Realm: # Scene Index 24
+
+  # Skyloft Silent Realm: # Scene Index 25
+Itemflags:
+  - 2  # Green Rupee
+  - 3  # Blue Rupee
+  - 4  # Red Rupee
+  - 6  # Heart
+  - 7  # Single Arrow
+  - 8  # Bundle of Arrows
+  - 15 # sailcloth
+  - 40 # 5 Bombs
+  - 41 # 10 Bombs
+  - 42 # Stamina Fruit
+  - 43 # Tear of Farore
+  - 44 # Tear of Din
+  - 45 # Tear of Nayru
+  - 46 # Sacred Tear
+  - 47 # Light Fruit
+  - 57 # 5 Deku Seeds
+  - 60 # 10 Deku Seeds
+Dungeonflags:
+  # Skyloft: # Scene Index 0
+
+  # Faron Woods: # Scene Index 1
+
+  # Lake Floria: # Scene Index 2
+
+  # Flooded Faron Woods: # Scene Index 3
+
+  # Eldin Volcano: # Scene Index 4
+
+  # Eldin Volcano Summit: # Scene Index 5 (VS & Boko Base)
+
+  # Unused: # Scene Index 6
+
+  # Lanayru Desert: # Scene Index 7
+
+  # Lanayru Sand Sea: # Scene Index 8
+
+  # Lanayru Gorge: # Scene Index 9 (Gorge & Caves)
+
+  # Sealed Grounds: # Scene Index 10
+
+  Skyview Temple: # Scene Index 11
+    - boss_keys == removed:
+      - 16 # Boss Key placed
+
+  Ancient Cistern: # Scene Index 12
+    - boss_keys == removed:
+      - 16 # Boss Key placed
+
+  # Unused: # Scene Index 13
+
+  Earth Temple: # Scene Index 14
+    - boss_keys == removed:
+      - 16 # Boss Key placed
+
+  Fire Sanctuary: # Scene Index 15
+    - boss_keys == removed:
+      - 16 # Boss Key placed
+
+  # Unused: # Scene Index 16
+
+  Lanayru Mining Facility: # Scene Index 17
+    - boss_keys == removed:
+      - 16 # Boss Key placed
+
+  Sandship: # Scene Index 18
+    - boss_keys == removed:
+      - 16 # Boss Key placed
+
+  # Unused: # Scene Index 19
+
+  # Sky Keep: # Scene Index 20
+
+  # The Sky: # Scene Index 21
+
+  # Faron Silent Realm: # Scene Index 22
+
+  # Eldin Silent Realm: # Scene Index 23
+
+  # Lanayru Silent Realm: # Scene Index 24
+
+  # Skyloft Silent Realm: # Scene Index 25

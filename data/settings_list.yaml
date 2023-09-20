@@ -41,7 +41,7 @@
   pretty_name: Open Lake Floria
   pretty_options:
     - Vanilla
-    - Yerbal
+    - Talk to Yerbal
     - Open
   options:
     - vanilla/yerbal/open:          "empty descriptions"
@@ -98,13 +98,15 @@
     - Own Region
     - Overworld
     - Anywhere
+    - Removed
   options:
     - vanilla:                      "Small Keys will appear in their vanilla locations"
-    - own_dungeon:                  "Small keys will appear inside their respective dungeon"
+    - own_dungeon:                  "Small Keys will appear inside their respective dungeon"
     - any_dungeon:                  "Small Keys can appear inside any dungeon"
     - own_region:                   "Small Keys will appear in their dungeon's region"
-    - overworld:                    "Small keys will only appear in the overworld"
-    - anywhere:                     "Small keys can appear anywhere"
+    - overworld:                    "Small Keys will only appear in the overworld"
+    - anywhere:                     "Small Keys can appear anywhere"
+    - removed:                      "Small Keys will not appear anywhere in the world and their locks will start opened"
 
 
 - name: lanayru_caves_key
@@ -114,10 +116,12 @@
     - Vanilla
     - Overworld
     - Anywhere
+    - Removed
   options:
     - vanilla:                      "The Lanayru Caves Key will appear in its vanilla location"
     - overworld:                    "The Lanayru Caves Key will only appear in the overworld"
     - anywhere:                     "The Lanayru Caves Key can appear anywhere"
+    - removed:                      "The Lanayru Caves Key will not appear anywhere in the world and the lock will start opened"
 
 
 - name: boss_keys
@@ -130,13 +134,15 @@
     - Own Region
     - Overworld
     - Anywhere
+    - Removed
   options:
     - vanilla:                      "Boss Keys will appear in their vanilla locations"
-    - own_dungeon:                  "Boss keys will appear inside their respective dungeon"
+    - own_dungeon:                  "Boss Keys will appear inside their respective dungeon"
     - any_dungeon:                  "Boss Keys can appear inside any dungeon"
     - own_region:                   "Boss Keys appear in their dungeon's region"
-    - overworld:                    "Boss keys will only appear in the overworld"
-    - anywhere:                     "Boss keys can appear anywhere"
+    - overworld:                    "Boss Keys will only appear in the overworld"
+    - anywhere:                     "Boss Keys can appear anywhere"
+    - removed:                      "Boss Keys will not appear anywhere in the world and boss doors will start opened"
 
 
 - name: map_mode
@@ -241,6 +247,7 @@
   options:
     - off/on:                       "empty description"
 
+
 - name: scrap_shop_upgrades
   default_option: 'on'
   pretty_name: Place Scrap Shop Upgrades
@@ -270,6 +277,40 @@
   options:
    - off/on:                 "empty description"
 
+
+- name: skip_horde
+  default_option: "off"
+  pretty_name: Skip Horde Fight
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - off/on:                "When enabled, The Horde fight after exiting the double doors in Hylia's Temple will be skipped."
+
+
+- name: skip_g3
+  default_option: "off"
+  pretty_name: Skip Ghirahim 3 Fight
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - off/on:                "When enabled, the Ghirahim 3 fight after exiting the double doors in Hylia's Temple and after The Horde fight will be skipped."
+
+- name: skip_demise
+  default_option: "off"
+  pretty_name: Skip Demise Fight
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - off/on:                "When enabled, the Demise fight after exiting the portal at the bottom of the whirlpool spiral in Hylia's Realm will be skipped."
+
+
+
+############################
+## Logic options (tricks) ##
+############################
 
 - name: logic_early_lake_floria
   default_option: "off"
@@ -309,6 +350,7 @@
     - "On"
   options:
    - off/on:                 "empty description"
+
 
 - name: logic_advanced_lizalfos_combat
   default_option: "off"
@@ -379,7 +421,6 @@
   options:
    - off/on:                 "empty description"
   
-
 
 - name: logic_itemless_first_timeshift_stone
   default_option: "off"
@@ -479,6 +520,7 @@
     - "On"
   options:
    - off/on:                 "empty description"
+
 
 - name: logic_skippers_fast_clawshots
   default_option: "off"
@@ -589,6 +631,7 @@
   options:
    - off/on:                 "empty description"
 
+
 - name: logic_ac_map_chest_jump
   default_option: "off"
   pretty_name: Ancient Cistern Map Chest Jump
@@ -657,6 +700,7 @@
     - "On"
   options:
    - off/on:                 "empty description"
+
 
 
 - name: test_range_option

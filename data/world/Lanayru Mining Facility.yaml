@@ -14,7 +14,7 @@
   exits:
     LMF First Room: Nothing
     LMF Big Hub South: Nothing
-    LMF Key Locked Room: Lanayru_Mining_Facility_Small_Key
+    LMF Key Locked Room: Lanayru_Mining_Facility_Small_Key or small_keys == removed
     LMF First West Room: Gust_Bellows
 
 
@@ -110,7 +110,7 @@
 - name: LMF Big Hub Near Boss Door
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Boss Room: Lanayru_Mining_Facility_Boss_Key and Can_Hit_Timeshift_Stone_in_Minecart
+    LMF Boss Room: (Lanayru_Mining_Facility_Boss_Key or small_keys == removed) and Can_Hit_Timeshift_Stone_in_Minecart
     LMF Big Hub Near Boss Key Room North: logic_lmf_minecart_jump and (Bomb_Bag or Beetle)
     LMF Big Hub Between Wind Gates: Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows and Can_Defeat_Beamos
 

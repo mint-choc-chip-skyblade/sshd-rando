@@ -11,6 +11,10 @@ b.eq handle_custom_item_get
 cmp w8, #1
 b.eq 0x360A9000
 
+; startflags
+cmp w8, #2
+b.eq handle_startflags
+
 ret ; this should never be reached
 
 ; ends at 0x360A6500

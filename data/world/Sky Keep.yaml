@@ -87,7 +87,7 @@
   dungeon: Sky Keep
   exits:
     SK Triforce of Courage Room: 
-      Sky_Keep_Small_Key and
+      (Sky_Keep_Small_Key or small_keys == removed) and
       Can_Defeat_Moblins and 
       Can_Defeat_Bokoblins and 
       Can_Defeat_Stalfos and Bow and

@@ -45,7 +45,7 @@
   name: Sailcloth
   oarc: null
 - id: 16
-  name: Goddess Harp
+  name: Goddess's Harp
   oarc: GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
@@ -197,7 +197,7 @@
   getarcname: GetSozaiP
   getmodelname: GetSozaiP
 - id: 68
-  name: Water Dragon Scale
+  name: Water Dragon's Scale
   oarc: GetUroko
   getarcname: GetUroko
   getmodelname: GetUroko
@@ -398,7 +398,7 @@
   getmodelname: GetTerryCage
   advancement: true
 - id: 160
-  name: Babys Rattle
+  name: Baby's Rattle
   oarc:
   - GetGaragara
   - PutGaragara

@@ -18,3 +18,6 @@ main:
     STATIC_ITEMFLAGS: 0x09832170
     STATIC_DUNGEONFLAGS: 0x09832128
     STATIC_ENEMY_DEFEATED_FLAGS: 0x098322f8
+
+    # Custom Symbols
+    STARTFLAGS: 0x363EF000 # start of subsdk8 data section

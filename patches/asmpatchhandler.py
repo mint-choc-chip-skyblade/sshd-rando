@@ -1,42 +1,29 @@
+import struct
+import tempfile
+from constants.itemconstants import ITEM_ITEMFLAGS, ITEM_STORYFLAGS
 from filepathconstants import (
     ASM_ADDITIONS_DIFFS_PATH,
     ASM_PATCHES_DIFFS_PATH,
     MAIN_NSO_FILE_PATH,
     OUTPUT_ADDITIONAL_SUBSDK,
     OUTPUT_MAIN_NSO,
+    STARTFLAGS_FILE_PATH,
     SUBSDK1_FILE_PATH,
 )
 from io import BytesIO
 from pathlib import Path
 
+from constants.asmconstants import *
+
 from lz4.block import compress, decompress
+from logic.world import World
 
 from patches.asmpatchhelper import NsoOffsets, SegmentHeader
+from patches.conditionalpatchhandler import ConditionalPatchHandler
 
 from sslib.fs_helpers import write_bytes, write_u32, write_u8
 from sslib.utils import write_bytes_create_dirs
-from sslib.yaml import yaml_load
-
-MAIN_NSO_OFFSETS = NsoOffsets(
-    text_offset=0x08004000,
-    rodata_offset=0x09061000,
-    data_offset=0x09563000,
-    size=0x09842000 - 0x08004000,
-)
-
-# Start of next subsdk - start of subsdk1.
-subsdk1_size = 0x360A5000 - 0x359FF000
-
-# Offsets defined as the equivalent subsdk1 offset plus its size.
-SUBSDK_NSO_OFFSETS = NsoOffsets(
-    text_offset=0x359FF000 + subsdk1_size,
-    rodata_offset=0x35D49000 + subsdk1_size,
-    data_offset=0x35F59000 + subsdk1_size,
-    size=subsdk1_size,
-)
-
-NSO_FLAGS_OFFSET = 0xC
-COMPRESSED_SEGMENT_NSO_OFFSET = 0x60
+from sslib.yaml import yaml_load, yaml_write
 
 
 class ASMPatchHandler:
@@ -63,9 +50,13 @@ class ASMPatchHandler:
         asm_diffs_path: Path,
         output_path: Path,
         offsets: NsoOffsets,
+        extra_diffs_path: Path | None = None,
     ):
         # Get asm patch diffs.
         asm_patch_diff_paths = tuple(asm_diffs_path.glob("*-diff.yaml"))
+
+        if extra_diffs_path is not None:
+            asm_patch_diff_paths += tuple(extra_diffs_path.glob("*-diff.yaml"))
 
         # Get segment headers.
         nso = BytesIO(nso_path.read_bytes())
@@ -190,7 +181,7 @@ class ASMPatchHandler:
         write_bytes_create_dirs(output_path, nso.getvalue())
 
     # Applies both asm patches and additions.
-    def patch_all_asm(self):
+    def patch_all_asm(self, world: World, onlyif_handler: ConditionalPatchHandler):
         print("Applying asm patches")
         self.patch_asm(
             MAIN_NSO_FILE_PATH,
@@ -199,10 +190,120 @@ class ASMPatchHandler:
             MAIN_NSO_OFFSETS,
         )
 
-        print("Applying asm additions")
-        self.patch_asm(
-            SUBSDK1_FILE_PATH,
-            ASM_ADDITIONS_DIFFS_PATH,
-            OUTPUT_ADDITIONAL_SUBSDK,
-            SUBSDK_NSO_OFFSETS,
-        )
+        temp_dir = tempfile.TemporaryDirectory()
+
+        # Keeps the temporary directory only within this with block.
+        with temp_dir as temp_dir_name:
+            temp_dir_name = Path(temp_dir_name)
+            startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
+
+            print("Assembling startflags")
+            self.patch_startflags(startflags_diff_file_path, world, onlyif_handler)
+
+            print("Applying asm additions")
+            self.patch_asm(
+                SUBSDK1_FILE_PATH,
+                ASM_ADDITIONS_DIFFS_PATH,
+                OUTPUT_ADDITIONAL_SUBSDK,
+                SUBSDK_NSO_OFFSETS,
+                extra_diffs_path=temp_dir_name,
+            )
+
+    def patch_startflags(
+        self, output_path: Path, world: World, onlyif_handler: ConditionalPatchHandler
+    ):
+        startflags = dict(yaml_load(STARTFLAGS_FILE_PATH))
+
+        storyflags = startflags["Storyflags"]
+        sceneflags = startflags["Sceneflags"]
+        itemflags = startflags["Itemflags"]
+        dungeonflags = startflags["Dungeonflags"]
+
+        for item, count in world.starting_item_pool.items():
+            item_name = item.name
+
+            if itemflag_data := ITEM_ITEMFLAGS.get(item_name, False):
+                if type(itemflag_data) == list:
+                    for item_count in range(0, count):
+                        itemflags.append(itemflag_data[item_count])
+                elif type(itemflag_data) == tuple:
+                    for flag in itemflag_data:
+                        itemflags.append(flag)
+                else:
+                    itemflags.append(itemflag_data)
+
+            if storyflag_data := ITEM_STORYFLAGS.get(item_name, False):
+                if type(storyflag_data) == list:
+                    for item_count in range(count):
+                        storyflags.append(storyflag_data[item_count])
+                elif type(storyflag_data) == tuple:
+                    for flag in storyflag_data:
+                        storyflags.append(flag)
+                else:
+                    storyflags.append(storyflag_data)
+
+        # Each section is delimited by 0xFFFF
+        startflags_data = BytesIO()
+
+        # Storyflags
+        for flag in self._get_flags(storyflags, onlyif_handler):
+            startflags_data.write(struct.pack("<H", flag))
+
+        startflags_data.write(bytes.fromhex("FFFF"))
+
+        # Sceneflags
+        for scene in sceneflags:
+            for flag in self._get_flags(sceneflags[scene], onlyif_handler):
+                startflags_data.write(
+                    struct.pack("<BB", SCENE_NAME_TO_SCENE_INDEX[scene], flag)
+                )
+
+        startflags_data.write(bytes.fromhex("FFFF"))
+
+        # Itemflags
+        for flag in self._get_flags(itemflags, onlyif_handler):
+            startflags_data.write(struct.pack("<H", flag))
+
+        startflags_data.write(bytes.fromhex("FFFF"))
+
+        # Dungeonflags
+        for scene in dungeonflags:
+            for flag in self._get_flags(dungeonflags[scene], onlyif_handler):
+                startflags_data.write(
+                    struct.pack("<BB", SCENE_NAME_TO_SCENE_INDEX[scene], flag)
+                )
+
+        startflags_data.write(bytes.fromhex("FFFF"))
+
+        # Convert startflags_data into a list of bytes.
+        startflags_data_bytes = startflags_data.getvalue()
+        startflags_data_dict = {
+            SUBSDK8_RODATA_START: list(
+                struct.unpack("B" * len(startflags_data_bytes), startflags_data_bytes)
+            )
+        }
+
+        yaml_write(output_path, startflags_data_dict)
+
+        # Write the startflag binary to a non-temp file.
+        # yaml_write(Path("./test.yaml"), startflags_data_dict)
+
+        # If this fails, the rust struct size will need increasing
+        assert len(startflags_data_bytes) < 1000
+
+    def _get_flags(
+        self, startflag_section, onlyif_handler: ConditionalPatchHandler
+    ) -> tuple:
+        flags = []
+
+        for flag in startflag_section:
+            if type(flag) is not int:
+                condition = tuple(flag.keys())[0]
+
+                if onlyif_handler.evaluate_onlyif(condition):
+                    for onlyif_flag in flag[condition]:
+                        flags.append(onlyif_flag)
+            else:
+                flags.append(flag)
+
+        return tuple(flags)

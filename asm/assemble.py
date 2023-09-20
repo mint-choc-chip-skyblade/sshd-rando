@@ -62,7 +62,7 @@ yaml.CDumper.add_representer(
     ),
 )
 
-tempDir = tempfile.TemporaryDirectory()
+temp_dir = tempfile.TemporaryDirectory()
 
 # Get devkitpro paths.
 assembler = "aarch64-none-elf-as"
@@ -79,9 +79,9 @@ else:
 
 devkitA64 = devkitpro / "devkitA64" / "bin"
 
-devkitA64Assembler = devkitA64 / assembler
-devkitA64Linker = devkitA64 / linker
-devkitA64Objcopy = devkitA64 / objcopy
+devkitA64_assembler = devkitA64 / assembler
+devkitA64_linker = devkitA64 / linker
+devkitA64_objcopy = devkitA64 / objcopy
 
 DEVKIT_DIR_NOT_FOUND_HELP = "Please visit https://devkitpro.org/wiki/devkitPro_pacman for installation instructions."
 DEVKIT_FILE_NOT_FOUND_HELP = "On Windows, devkitA64 should be installed to: C:\\devkitPro\\devkitA64. On other operating systems, the DEVKITA64 environment variable should be declared."
@@ -96,59 +96,58 @@ if not devkitA64.is_dir():
         f"Failed to find devkitA64 at {devkitA64}. {DEVKIT_DIR_NOT_FOUND_HELP}"
     )
 
-if not devkitA64Assembler.is_file():
+if not devkitA64_assembler.is_file():
     raise Exception(
-        f"Failed to find devkitA64 assembler at {devkitA64Assembler}. {DEVKIT_FILE_NOT_FOUND_HELP}"
+        f"Failed to find devkitA64 assembler at {devkitA64_assembler}. {DEVKIT_FILE_NOT_FOUND_HELP}"
     )
 
-if not devkitA64Linker.is_file():
+if not devkitA64_linker.is_file():
     raise Exception(
-        f"Failed to find devkitA64 linker at {devkitA64Linker}. {DEVKIT_FILE_NOT_FOUND_HELP}"
+        f"Failed to find devkitA64 linker at {devkitA64_linker}. {DEVKIT_FILE_NOT_FOUND_HELP}"
     )
 
-if not devkitA64Objcopy.is_file():
+if not devkitA64_objcopy.is_file():
     raise Exception(
-        f"Failed to find devkitA64 linker at {devkitA64Linker}. {DEVKIT_FILE_NOT_FOUND_HELP}"
+        f"Failed to find devkitA64 linker at {devkitA64_linker}. {DEVKIT_FILE_NOT_FOUND_HELP}"
     )
 
 
-with open("original-symbols.yaml", "r") as f:
-    originalSymbols = yaml.safe_load(f)
+with open("symbols.yaml", "r") as f:
+    defined_symbols = yaml.safe_load(f)
 
 with open("linker.ld", "r") as f:
-    linkerScript = f.read()
+    linker_script = f.read()
 
-for symbol, address in originalSymbols["main"].items():
+for symbol, address in defined_symbols["main"].items():
     assert symbol is not None
     assert address is not None
 
-    linkerScript += f"{symbol} = 0x{address:x}" + SEMICOLON + NEWLINE
+    linker_script += f"{symbol} = 0x{address:x}" + SEMICOLON + NEWLINE
 
 custom_symbols = {}
 
 
-def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
-    addressesOverwritten = []
+def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
+    addresses_overwritten = []
 
-    for asmFilePath in asmPaths:
-        print(f"Assembling: {asmFilePath}")
-        asmFilename = asmFilePath.parts[-1]
-        codeBlocks = {}
-        localBranches = []
-        asmReadOffset = None
-        label = None
+    for asm_file_path in asmPaths:
+        print(f"Assembling: {asm_file_path}")
+        asm_file_name = asm_file_path.parts[-1]
+        code_blocks = {}
+        local_branches = []
+        asm_read_offset = None
 
-        tempLinkerScript = linkerScript + NEWLINE
+        temp_linker_cript = linker_script + NEWLINE
 
-        for sym in custom_symbols:
-            tempLinkerScript += (
-                sym + " = " + hex(custom_symbols[sym]) + SEMICOLON + NEWLINE
+        for symbol in custom_symbols:
+            temp_linker_cript += (
+                symbol + " = " + hex(custom_symbols[symbol]) + SEMICOLON + NEWLINE
             )
 
-        with open(asmFilePath, "r") as f:
-            asmBlock = f.read()
+        with open(asm_file_path, "r") as f:
+            asm_block = f.read()
 
-        for line in asmBlock.splitlines():
+        for line in asm_block.splitlines():
             line = line.strip()
 
             if len(line) == 0 or line.startswith(SEMICOLON):
@@ -157,106 +156,112 @@ def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
             line = line.split(SEMICOLON)[0].strip()
 
             if line.startswith(OFFSET):
-                asmReadOffset = hex(int(line.split(SPACE)[-1], 16))
+                asm_read_offset = hex(int(line.split(SPACE)[-1], 16))
 
-                if asmReadOffset not in codeBlocks:
-                    codeBlocks[asmReadOffset] = []
+                if asm_read_offset not in code_blocks:
+                    code_blocks[asm_read_offset] = []
                 else:
                     raise Exception(
-                        f"Duplicate offset {asmReadOffset} section in {asmFilePath}."
+                        f"Duplicate offset {asm_read_offset} section in {asm_file_path}."
                     )
             elif line.startswith(
                 ("bl ", "b ", "b.", "bcc ", "cbz", "cbnz", "tbz", "tbnz")
             ):  # The blank space is necessary
-                instructionParts = line.split(SPACE)
-                destination = instructionParts[-1]
+                instruction_parts = line.split(SPACE)
+                destination = instruction_parts[-1]
 
                 if destination.startswith("0x"):
                     destination = int(destination, 16)
-                    tempBranchLabel = f"branch_label_0x{destination:x}"
-                    localBranches.append(
-                        tempBranchLabel + f" = 0x{destination:x}" + SEMICOLON + NEWLINE
+                    temp_branch_label = f"branch_label_0x{destination:x}"
+                    local_branches.append(
+                        temp_branch_label
+                        + f" = 0x{destination:x}"
+                        + SEMICOLON
+                        + NEWLINE
                     )
 
-                    codeBlocks[asmReadOffset].append(
-                        SPACE.join(instructionParts[:-1])
+                    code_blocks[asm_read_offset].append(
+                        SPACE.join(instruction_parts[:-1])
                         + SPACE
-                        + tempBranchLabel
+                        + temp_branch_label
                         + NEWLINE
                     )
                 else:
-                    codeBlocks[asmReadOffset].append(line + NEWLINE)
+                    code_blocks[asm_read_offset].append(line + NEWLINE)
             else:
-                codeBlocks[asmReadOffset].append(line + NEWLINE)
+                code_blocks[asm_read_offset].append(line + NEWLINE)
 
-            for symbol in localBranches:
-                tempLinkerScript += symbol
+            for symbol in local_branches:
+                temp_linker_cript += symbol
 
-        for codeBlockOffset, code in codeBlocks.items():
-            tempLinkerFilename = tempDirName / "temp-linker.ld"
+        for code_block_offset, code in code_blocks.items():
+            temp_linker_file_name = temp_dir_name / "temp-linker.ld"
 
-            with open(tempLinkerFilename, "w") as f:
-                f.write(tempLinkerScript)
+            with open(temp_linker_file_name, "w") as f:
+                f.write(temp_linker_cript)
 
-            assemblerCodeFilename = (
-                tempDirName / f"{asmFilename}-0x{codeBlockOffset}.asm"
+            assembler_code_file_name = (
+                temp_dir_name / f"{asm_file_name}-0x{code_block_offset}.asm"
             )
             # assemblerCodeFilename.mkdir(parents=True, exist_ok=True)
 
-            with open(assemblerCodeFilename, "w") as f:
+            with open(assembler_code_file_name, "w") as f:
                 for instruction in code:
                     f.write(instruction)
 
-            outputFilename = tempDirName / f"{asmFilename}-0x{codeBlockOffset}.o"
+            assembled_file_name = (
+                temp_dir_name / f"{asm_file_name}-0x{code_block_offset}.o"
+            )
 
             # Assemble code block.
-            assemblerCommand = [
-                devkitA64Assembler,
+            assembler_command = [
+                devkitA64_assembler,
                 "-mcpu=cortex-a57",
                 "-EL",  # little endian
-                assemblerCodeFilename,
+                assembler_code_file_name,
                 "-o",
-                outputFilename,
+                assembled_file_name,
             ]
 
             if DEBUG_SHOW_ASSEMBLY:
-                assemblerCommand += [
+                assembler_command += [
                     "-al",
                 ]  # output asm instructions assembled
 
-            if result := call(assemblerCommand):
+            if result := call(assembler_command):
                 raise Exception(f"Assembler call failed with error code: {result}")
 
             # Apply linker.
-            elfFilename = tempDirName / f"{asmFilename}-0x{codeBlockOffset}.elf"
+            elf_file_name = temp_dir_name / f"{asm_file_name}-0x{code_block_offset}.elf"
 
-            mapFilename = tempDirName / f"{asmFilename}.map"
+            map_file_name = temp_dir_name / f"{asm_file_name}.map"
 
-            linkerCommand = [
-                devkitA64Linker,
+            linker_command = [
+                devkitA64_linker,
                 "-EL",  # little endian
                 "-Ttext",
-                codeBlockOffset,
+                code_block_offset,
                 "-T",
-                tempLinkerFilename,
-                f"-Map={mapFilename}",
-                outputFilename,
+                temp_linker_file_name,
+                f"-Map={map_file_name}",
+                assembled_file_name,
                 "-o",
-                elfFilename,
+                elf_file_name,
             ]
 
-            if asmFilePath == ASM_RUST_ADDITIONS_PATH:
-                linkerCommand.append("./" + ASM_RUST_ADDITIONS_TARGET_PATH.as_posix())
+            if asm_file_path == ASM_RUST_ADDITIONS_PATH:
+                linker_command.append("./" + ASM_RUST_ADDITIONS_TARGET_PATH.as_posix())
 
-            if result := call(linkerCommand):
+            if result := call(linker_command):
                 raise Exception(
-                    f"Linker call {linkerCommand} failed with error code: {result}"
+                    f"Linker call {linker_command} failed with error code: {result}"
                 )
 
-            if asmFilePath == ASM_RUST_ADDITIONS_PATH:
+            if asm_file_path == ASM_RUST_ADDITIONS_PATH:
                 # Keep track of custom symbols so they can be passed in the linker script to future assembler calls.
-                with open(mapFilename) as f:
+                with open(map_file_name) as f:
                     on_custom_symbols = False
+
                     for line in f.read().splitlines():
                         if line.startswith(" .text          "):
                             on_custom_symbols = True
@@ -265,84 +270,90 @@ def assemble(tempDirName: Path, asmPaths: list[Path], outputPath: Path):
                         if on_custom_symbols:
                             if not line:
                                 break
+
                             match = re.search(
                                 r" +0x(?:00000000)?([0-9a-f]{8}) +([a-zA-Z]\S+)", line
                             )
+
                             if not match:
                                 continue
+
                             symbol_address = int(match.group(1), 16)
                             symbol_name = match.group(2)
                             custom_symbols[symbol_name] = symbol_address
 
             # Convert to binary.
-            binaryFilename = tempDirName / f"{asmFilename}-0x{codeBlockOffset}.bin"
+            binary_file_name = (
+                temp_dir_name / f"{asm_file_name}-0x{code_block_offset}.bin"
+            )
 
-            objcopyCommand = [
-                devkitA64Objcopy,
+            objcopy_command = [
+                devkitA64_objcopy,
                 "--output-target",
                 "binary",
                 # "-j",
                 # ".text, .rodata",
-                elfFilename,
-                binaryFilename,
+                elf_file_name,
+                binary_file_name,
             ]
 
-            if result := call(objcopyCommand):
+            if result := call(objcopy_command):
                 raise Exception(
-                    f"Objcopy call {objcopyCommand} failed with error code: {result}"
+                    f"Objcopy call {objcopy_command} failed with error code: {result}"
                 )
 
-            with open(binaryFilename, "rb") as f:
-                binaryData = f.read()
+            with open(binary_file_name, "rb") as f:
+                binary_data = f.read()
 
-            dataBytes = list(struct.unpack("B" * len(binaryData), binaryData))
+            data_bytes = list(struct.unpack("B" * len(binary_data), binary_data))
 
-            codeBlocks[codeBlockOffset] = dataBytes
+            code_blocks[code_block_offset] = data_bytes
 
-        for offset in codeBlocks:
-            for byteNumber in range(len(codeBlocks[offset])):
-                trueOffset = int(offset, 16) + byteNumber
+        # Ensure there are no overlapping asm changes.
+        for offset in code_blocks:
+            for byte_number in range(len(code_blocks[offset])):
+                true_offset = int(offset, 16) + byte_number
 
-                if trueOffset in addressesOverwritten:
+                if true_offset in addresses_overwritten:
                     raise Exception(
-                        f"Overlapping asm patch found at {offset} in file {asmFilename}."
+                        f"Overlapping asm patch found at {offset} in file {asm_file_name}."
                     )
                 else:
-                    addressesOverwritten.append(trueOffset)
+                    addresses_overwritten.append(true_offset)
 
-        diffFilename = outputPath / f"{asmFilename[:-4]}-diff.yaml"
+        diff_file_name = outputPath / f"{asm_file_name[:-4]}-diff.yaml"
 
-        with open(diffFilename, "w", newline="") as f:
-            f.write(yaml.dump(codeBlocks, Dumper=yaml.CDumper, line_break=NEWLINE))
+        with open(diff_file_name, "w", newline="") as f:
+            f.write(yaml.dump(code_blocks, Dumper=yaml.CDumper, line_break=NEWLINE))
 
 
 # Get patches from each asm file.
-asmAdditionsPaths = list(ASM_ADDITIONS_PATH.glob("*.asm"))
-asmPatchesPaths = list(ASM_PATCHES_PATH.glob("*.asm"))
+asm_additions_paths = list(ASM_ADDITIONS_PATH.glob("*.asm"))
+asm_patches_paths = list(ASM_PATCHES_PATH.glob("*.asm"))
 
 # Keeps the temporary directory only within this with block.
-with tempDir as tempDirName:
-    tempDirName = Path(tempDirName)
+with temp_dir as temp_dir_name:
+    temp_dir_name = Path(temp_dir_name)
 
     # Assemble rust additions.
-    if rustBuildCmd := call(
+    if rust_build_command := call(
         ["cargo", "build", "--release", "--target=aarch64-unknown-none"],
         cwd="./additions/rust-additions",
     ):
         raise Exception("Building rust additions failed.")
 
     # Ensure rust additions are assembled first.
-    asmAdditionsPaths.remove(ASM_RUST_ADDITIONS_PATH)
-    asmAdditionsPaths.remove(ASM_ADDITIONS_LANDINGPAD_PATH)
-    asmAdditionsPaths = [
+    asm_additions_paths.remove(ASM_RUST_ADDITIONS_PATH)
+    asm_additions_paths.remove(ASM_ADDITIONS_LANDINGPAD_PATH)
+    asm_additions_paths = [
         ASM_RUST_ADDITIONS_PATH,
         ASM_ADDITIONS_LANDINGPAD_PATH,
-    ] + asmAdditionsPaths
+    ] + asm_additions_paths
 
-    assemble(tempDirName, asmAdditionsPaths, ASM_ADDITIONS_DIFFS_PATH)
+    assemble(temp_dir_name, asm_additions_paths, ASM_ADDITIONS_DIFFS_PATH)
 
     # Ensure patches jumptable is assembled first.
-    asmPatchesPaths.remove(ASM_PATCHES_JUMPTABLE_PATH)
-    asmPatchesPaths = [ASM_PATCHES_JUMPTABLE_PATH] + asmPatchesPaths
+    asm_patches_paths.remove(ASM_PATCHES_JUMPTABLE_PATH)
+    asm_patches_paths = [ASM_PATCHES_JUMPTABLE_PATH] + asm_patches_paths
 
-    assemble(tempDirName, asmPatchesPaths, ASM_PATCHES_DIFFS_PATH)
+    assemble(temp_dir_name, asm_patches_paths, ASM_PATCHES_DIFFS_PATH)
