@@ -2440,7 +2440,7 @@
   - name: Give zone flag for load zone
     type: setzoneflag
     flow:
-      setzoneflag: 105
+      setzoneflag: 3
       next: -1
 
 305-MountainF3:
