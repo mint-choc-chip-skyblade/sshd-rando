@@ -13,5 +13,5 @@
 .global handle_startflags
 .type handle_startflags, @function
 
-.global set_goddess_sword_pulled_scene_flag
-.type set_goddess_sword_pulled_scene_flag, @function
+.global set_goddess_sword_pulled_story_flag
+.type set_goddess_sword_pulled_story_flag, @function

@@ -206,7 +206,7 @@ fn storyflag_set_to_1(flag: u16) {
 }
 
 #[no_mangle]
-fn set_goddess_sword_pulled_scene_flag() {
+fn set_goddess_sword_pulled_story_flag() {
     // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
     storyflag_set_to_1(951);
 }

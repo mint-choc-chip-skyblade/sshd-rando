@@ -2,5 +2,15 @@
 ; setting a custom story flag to trigger the items
 ; from pulling the Goddess Sword
 
+; The nops after the bl stop the Goddess Sword text
+; and fanfare from playing
 .offset 0x08a1759c
-bl set_goddess_sword_pulled_scene_flag
+mov w8, #3
+bl 0x0865a070
+nop
+nop
+nop
+nop
+nop
+nop
+nop
