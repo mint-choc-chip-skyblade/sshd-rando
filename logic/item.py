@@ -22,10 +22,10 @@ class Item:
         self.is_game_winning_item: bool = game_winning_item_
 
         self.is_dungeon_small_key: bool = (
-            "Small Key" in name_ and name_ != "Lanayru Caves Small Key"
+            " Small Key" in name_ and name_ != "Lanayru Caves Small Key"
         )
-        self.is_boss_key: bool = "Boss Key" in name_
-        self.is_dungeon_map: bool = "Map" in name_
+        self.is_boss_key: bool = " Boss Key" in name_
+        self.is_dungeon_map: bool = " Map" in name_
 
     def __str__(self) -> str:
         return (

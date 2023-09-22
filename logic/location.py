@@ -18,6 +18,7 @@ class Location:
         world_: "World",
         original_item_: Item,
         patch_paths_: list[str],
+        goal_location_: bool,
     ) -> None:
         self.id: int = id_
         self.name: str = name_
@@ -25,9 +26,11 @@ class Location:
         self.world: "World" = world_
         self.original_item: Item = original_item_
         self.patch_paths: list[str] = patch_paths_
+        self.is_goal_location = goal_location_
         self.current_item: Item = None
         self.has_known_vanilla_item: bool = False
         self.loc_access_list: list["LocationAccess"] = []
+        self.progression = True  # Set as False later if applicable
 
     def __str__(self) -> str:
         return (

@@ -96,7 +96,7 @@
   getmodelname: GetKeyKakeraA
   advancement: true
 - id: 29
-  name: Skyview Boss Key
+  name: Skyview Temple Boss Key
   oarc: GetKeyBossA
   shuffle: Dungeon
   getarcname: GetKeyBossA
@@ -528,7 +528,7 @@
   advancement: true
 # start rando custom items
 - id: 200
-  name: Skyview Small Key
+  name: Skyview Temple Small Key
   oarc: null
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
@@ -570,7 +570,7 @@
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 207
-  name: Skyview Map
+  name: Skyview Temple Map
   oarc: null
   getarcname: GetMap
   getmodelname: GetMap

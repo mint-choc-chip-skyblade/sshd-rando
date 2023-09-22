@@ -66,7 +66,7 @@ def generate_item_pool(world: "World") -> None:
             "Triforce of Courage",
             "Triforce of Wisdom",
             "Triforce of Power",
-            "Skyview Boss Key",
+            "Skyview Temple Boss Key",
             "Earth Temple Boss Key",
             "Lanayru Mining Facility Boss Key",
             "Ancient Cistern Boss Key",
@@ -90,7 +90,7 @@ def generate_item_pool(world: "World") -> None:
         + ["Empty Bottle"] * 5
         # + ["Group of Tadtones"] * 17
         + ["Key Piece"] * 5
-        + ["Skyview Small Key"] * 2
+        + ["Skyview Temple Small Key"] * 2
         + ["Ancient Cistern Small Key"] * 2
         + ["Sandship Small Key"] * 2
         + ["Fire Sanctuary Small Key"] * 3
@@ -127,7 +127,7 @@ def generate_item_pool(world: "World") -> None:
         + ["Eldin Ore"] * 2
         + ["Rupoor"] * 5
         + [
-            "Skyview Map",
+            "Skyview Temple Map",
             "Earth Temple Map",
             "Lanayru Mining Facility Map",
             "Ancient Cistern Map",

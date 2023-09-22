@@ -297,6 +297,7 @@
   options:
     - off/on:                "When enabled, the Ghirahim 3 fight after exiting the double doors in Hylia's Temple and after The Horde fight will be skipped."
 
+
 - name: skip_demise
   default_option: "off"
   pretty_name: Skip Demise Fight
@@ -307,6 +308,23 @@
     - off/on:                "When enabled, the Demise fight after exiting the portal at the bottom of the whirlpool spiral in Hylia's Realm will be skipped."
 
 
+- name: required_dungeons
+  default_option: 3
+  pretty_name: Required Dungeons
+  pretty_options:
+    - 0-6
+  options:
+    - 0-6:                   "Choose how many required dungeons you want."
+
+
+- name: empty_unrequired_dungeons
+  default_option: "off"
+  pretty_name: Empty Unrequired Dungeons
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - off/on:                "If selected, unrequired dungeons will be barren."
 
 ############################
 ## Logic options (tricks) ##
