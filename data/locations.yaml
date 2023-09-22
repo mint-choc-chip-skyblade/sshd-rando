@@ -112,6 +112,7 @@
   type: Loose Crystals
   Paths:
     - stage/F009r/r0/l2/Item/115
+    - oarc/F009r/l0
 
 # Central Skyloft checks:
 
@@ -1657,13 +1658,13 @@
 # Skyview (SV):
 
 - name: Skyview Temple - Chest on Tree Branch
-  original_item: Skyview Map
+  original_item: Skyview Temple Map
   type:
   Paths:
     - stage/D100/r2/l0/TBox/64
 
 - name: Skyview Temple - Digging Spot in Crawlspace
-  original_item: Skyview Small Key
+  original_item: Skyview Temple Small Key
   type:
   hints: sometimes
   text: in a <r<temple in the forest>> a mogma <r<buried>>
@@ -1671,7 +1672,7 @@
     - stage/D100/r4/l0/Soil/15
 
 - name: Skyview Temple - Chest behind Two Eyes
-  original_item: Skyview Small Key 
+  original_item: Skyview Temple Small Key 
   type:
   Paths:
     - stage/D100/r4/l0/TBox/67
@@ -1709,7 +1710,7 @@
     - stage/D100/r5/l0/Item/66
 
 - name: Skyview Temple - Chest behind Three Eyes
-  original_item: Skyview Small Key 
+  original_item: Skyview Temple Small Key 
   type:
   Paths:
     - stage/D100/r7/l0/TBox/68
@@ -1723,7 +1724,7 @@
     - stage/D100/r9/l0/TBox/70
 
 - name: Skyview Temple - Boss Key Chest
-  original_item: Skyview Boss Key
+  original_item: Skyview Temple Boss Key
   type:
   Paths:
     - stage/D100/r9/l0/TBox/66

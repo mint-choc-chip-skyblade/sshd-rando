@@ -102,6 +102,9 @@ class SettingGet:
     def set_custom_value(self, value_: str):
         self.setting.custom_value = value_
 
+    def value_as_number(self):
+        return int(self.setting.value)
+
     def __eq__(self, value_: str) -> bool:
         if value_ not in self.setting.info.options:
             raise SettingInfoError(
@@ -197,6 +200,7 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                     s = settings_info_map[names[i]]
                     s.name = names[i]
                     s.pretty_name = pretty_names[i]
+                    s.type = setting_type
                     s.default_option = options.index(
                         default_options[min(len(default_options) - 1, i)]
                     )

@@ -93,7 +93,7 @@ class Area:
 # over dungeons. I.e. If an area is connected to a general
 # hint region and a dungeon it will only be assigned to the
 # general hint region.
-def assign_hint_regions(starting_area: Area):
+def assign_hint_regions_and_dungeon_locations(starting_area: Area):
     hint_regions: set[str] = set()
     already_checked: set[Area] = set()
     unassigned_areas: set[Area] = set()
@@ -142,3 +142,7 @@ def assign_hint_regions(starting_area: Area):
                 logging.getLogger("").debug(
                     f"{[l.name for l in locations]} have been assigned to dungeon {region}"
                 )
+
+                # Also assign goal locations
+                goal_locations = [loc for loc in locations if loc.is_goal_location]
+                area.world.get_dungeon(region).goal_locations.extend(goal_locations)
