@@ -73,6 +73,7 @@ Sceneflags:
   Skyloft: # Scene Index 0
     - 0  # Lower Academy gates opened
     - 1  # UA Doors open
+    - 7  # Revealed Gossip Stone above waterfall cave
     - 8  # Seen Cutscene after getting Hero's Tunic
     - 21 # Upper Academy gates opened
     - 26 # Watched Eye Cutscene in Bazaar
@@ -89,16 +90,20 @@ Sceneflags:
     - 30 # Watched Enter Skyview Cutscene
     - 51 # Fi text before talking to Yerbal
     - 52 # Fi text after opening floria gate
+    - 82 # Reveal Gossip Stone in Deep Woods
     - open_lake_floria == open:
       - 49 # Cutscene of Lake Floria Gates opening
       - 50 # Open Lake Floria Gates
 
-  # Lake Floria: # Scene Index 2
+  Lake Floria: # Scene Index 2
+    - 83 # Reveal Lake Floria Gossip Stone
 
   # Flooded Faron Woods: # Scene Index 3
 
   Eldin Volcano: # Scene Index 4
     - 2  # Skip first Digging Mitts mogma text
+    - 14 # Reveal Gossip Stone near Earth Temple Entrance
+    - 15 # Reveal Gossip Stone in Thrill Digger Cave
     - 16 # Watched first time landing Cutscene
     - 58 # Watched Digging Mitts mogma Cutscene
 
@@ -116,6 +121,8 @@ Sceneflags:
     - 63 # Watched panning Cutscene showing pouch chest
     - 68 # Have talked to Plats near Volcano East
     - 70 # Watched initial panning Cutscene
+    - 118 # Reveal Gossip Stone in Waterfall Area
+    - 119 # Reveal Gossip Stone Near 2nd Frog
 
   # Unused: # Scene Index 6
 
@@ -126,6 +133,7 @@ Sceneflags:
     - 50 # Watched Enter Lanayru Mining Facility (LMF) Cutscene
     - 55 # Watched Lanayru Desert Intro Cutscene
     - 68 # Checked Desert statue
+    - 79 # Revealed Gossip Stone near Temple of Time
     - open_lmf == open:
       - 30 # Watched LMF Rises Cutscene
       - 31 # Watched LMF rising Cutscene
@@ -134,11 +142,14 @@ Sceneflags:
       - 101 # Fire node active
       - 102 # Water node active
 
-  # Lanayru Sand Sea: # Scene Index 8
+  Lanayru Sand Sea: # Scene Index 8
+    - 85   # Reveal Shipyard Gossip Stone
 
   Lanayru Gorge: # Scene Index 9 (Gorge & Caves)
     - 10   # Minecart at end of Track
     - 16   # Watched Lanayru Gorge Intro Cutscene
+    - 40   # Revealed Gossip Stone in Center of Caves
+    - 41   # Revealed Gossip Stone near Lanayru Gorge Entrance
     - lanayru_caves_key == removed:
       - 28 # Unlocked door to Lanayru Sand Sea
 
@@ -147,6 +158,7 @@ Sceneflags:
     - 13 # Unlocked Sealed Temple big door
     - 39 # Log to Behind the Temple pushed down
     - 55 # Watched First time landing Cutscene
+    - 72 # Revealed Behind the Temple Gossip Stone
     # - triforce_required == off:
     #   - 50 # Unlocked Horde Door from Hylia's Temple
     - skip_horde == on:
@@ -206,7 +218,11 @@ Sceneflags:
     - small_keys == removed:
       - 63 # Unlocked key locked door
 
-  # The Sky: # Scene Index 21
+  The Sky: # Scene Index 21
+   - 19 # Revealed Gossip Stone in Thunderhead
+   - 20 # Revealed Gossip Stone in Volcanic Island
+   - 21 # Revealed Gossip Stone at Lumpy Pumpkin
+   - 22 # Revealed Gossip Stone on Bamboo Island
 
   # Faron Silent Realm: # Scene Index 22
 
