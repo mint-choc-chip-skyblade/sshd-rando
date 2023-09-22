@@ -102,6 +102,9 @@ class SettingGet:
     def set_custom_value(self, value_: str):
         self.setting.custom_value = value_
 
+    def value_as_number(self):
+        return int(self.setting.value)
+
     def __eq__(self, value_: str) -> bool:
         if value_ not in self.setting.info.options:
             raise SettingInfoError(

@@ -50,7 +50,7 @@ class World:
         self.area_ids: dict[str, int] = {}
         # Maps area ids to their possible times of day
         self.area_time_cache: dict[int, int] = {}
-        # Maps area ids to their possible times of day
+        # Maps exits to their possible times of day
         self.exit_time_cache: dict[Entrance, int] = {}
 
         self.item_pool: Counter[Item] = Counter()
@@ -100,8 +100,6 @@ class World:
                     else False
                 )
 
-                # TODO: Load the rest of the data
-
                 stripped_name = name.replace("'", "")
                 self.item_table[stripped_name] = Item(
                     item_id, name, oarcs, self, major_item, game_winning_item
@@ -109,6 +107,30 @@ class World:
                 logging.getLogger("").debug(
                     f"Processing new item {name}\tid: {item_id}"
                 )
+
+                # Assign this item to its appropriate dungeon if it's a dungeon item
+                item = self.item_table[stripped_name]
+                if item.is_dungeon_small_key:
+                    dungeon_name = item.name.replace(" Small Key", "")
+                    self.add_dungeon(dungeon_name)
+                    self.get_dungeon(dungeon_name).small_key = item
+                    logging.getLogger("").debug(
+                        f"Assigned {item} as small key for dungeon {dungeon_name}"
+                    )
+                elif item.is_boss_key:
+                    dungeon_name = item.name.replace(" Boss Key", "")
+                    self.add_dungeon(dungeon_name)
+                    self.get_dungeon(dungeon_name).boss_key = item
+                    logging.getLogger("").debug(
+                        f"Assigned {item} as boss key for dungeon {dungeon_name}"
+                    )
+                elif item.is_dungeon_map:
+                    dungeon_name = item.name.replace(" Map", "")
+                    self.add_dungeon(dungeon_name)
+                    self.get_dungeon(dungeon_name).map = item
+                    logging.getLogger("").debug(
+                        f"Assigned {item} as map for dungeon {dungeon_name}"
+                    )
 
     # Read locations.yaml and store all necessary data in a dict
     # for this world
@@ -131,13 +153,24 @@ class World:
                 if types == None:
                     types = []
                 patch_paths = location_node["Paths"] if "Paths" in location_node else []
+                goal_location = (
+                    location_node["goal_location"]
+                    if "goal_location" in location_node
+                    else False
+                )
                 location_id = location_id_counter
                 location_id_counter += 1
 
                 # TODO: Load the rest of the data
 
                 self.location_table[name] = Location(
-                    location_id, name, types, self, original_item, patch_paths
+                    location_id,
+                    name,
+                    types,
+                    self,
+                    original_item,
+                    patch_paths,
+                    goal_location,
                 )
                 logging.getLogger("").debug(
                     f"Processing new location {name}\tid: {location_id}\toriginal item: {original_item}"
@@ -328,11 +361,16 @@ class World:
                     location.set_current_item(self.get_item("Green Rupee"))
 
     def perform_post_entrance_shuffle_tasks(self) -> None:
+        self.assign_all_areas_hint_regions()
+        self.choose_required_dungeons()
+        self.set_nonprogress_locations()
+
+    def assign_all_areas_hint_regions(self):
         for area in self.areas.values():
             # Assign hint regions to all areas which don't
             # have them at this point. This will also finalize
             # dungeon locations.
-            assign_hint_regions(area)
+            assign_hint_regions_and_dungeon_locations(area)
 
             # Also assign dungeons their entrance properties
             # so we can lookup their region later if necessary
@@ -344,6 +382,29 @@ class World:
                     for dungeon in self.dungeons.values():
                         if exit_.connected_area == dungeon.starting_area:
                             dungeon.starting_entrance = exit_
+
+    def choose_required_dungeons(self):
+        dungeons = list(self.dungeons.values())
+        dungeons.remove(self.dungeons["Sky Keep"])
+        random.shuffle(dungeons)
+        for i in range(self.setting("required_dungeons").value_as_number()):
+            dungeons[i].required = True
+            logging.getLogger("").debug(f"Chose {dungeons[i]} as required dungeon")
+
+    def set_nonprogress_locations(self):
+        # Set excluded locations as non-progress
+        for location_name in self.setting_map.excluded_locations:
+            self.get_location(location_name).progression = False
+
+        # Sky Keep will never be a required dungeon with empty unrequired dungeons
+        if self.setting("empty_unrequired_dungeons") == "on":
+            self.dungeons["Sky Keep"].required = False
+
+        # Set dungeon locations which should be barren as non-progress
+        for dungeon in self.dungeons.values():
+            if dungeon.should_be_barren():
+                for location in dungeon.locations:
+                    location.progression = False
 
     # Remove or add junk to the item pool until the total number of
     # items is equal to the number of currently empty locations
@@ -400,6 +461,7 @@ class World:
         if dungeon_name not in self.dungeons:
             self.dungeons[dungeon_name] = Dungeon()
             self.dungeons[dungeon_name].name = dungeon_name
+            self.dungeons[dungeon_name].world = self
 
     def get_item(self, item_name: str) -> Item:
         item_name = item_name.replace("_", " ").replace("'", "")
