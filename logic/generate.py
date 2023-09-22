@@ -50,7 +50,7 @@ def generate_randomizer(config: Config) -> list[World]:
         for name, setting in setting_map.settings.items():
             if setting.info.type == SettingType.STANDARD:
                 hash_str += name + setting.value
-                
+
     if config.plandomizer:
         with open(config.plandomizer_file) as plando_file:
             hash_str += plando_file.read()

@@ -392,17 +392,36 @@ class World:
         # Remove any dungeons which have non-major items plandomized to their goal locations
         # Also force require any dungeons which have a major item plandomized to their goal locations
         for dungeon in dungeons.copy():
-            if any([True for loc in dungeon.goal_locations if not loc.is_empty() and not loc.current_item.is_major_item]):
+            if any(
+                [
+                    True
+                    for loc in dungeon.goal_locations
+                    if not loc.is_empty() and not loc.current_item.is_major_item
+                ]
+            ):
                 dungeons.remove(dungeon)
-            elif any([True for loc in dungeon.goal_locations if not loc.is_empty() and loc.current_item.is_major_item]):
+            elif any(
+                [
+                    True
+                    for loc in dungeon.goal_locations
+                    if not loc.is_empty() and loc.current_item.is_major_item
+                ]
+            ):
                 dungeon.required = True
                 num_required_dungeons -= 1
-                if num_required_dungeons < 0 and self.setting("empty_unrequired_dungeons") == "on":
-                    raise WrongInfoError("There are more major items plandomized at the end of dungeons than there are required dungeons. Please remove some plandomized major items at the end of dungeons")
+                if (
+                    num_required_dungeons < 0
+                    and self.setting("empty_unrequired_dungeons") == "on"
+                ):
+                    raise WrongInfoError(
+                        "There are more major items plandomized at the end of dungeons than there are required dungeons. Please remove some plandomized major items at the end of dungeons"
+                    )
                 logging.getLogger("").debug(f"Chose {dungeons} as required dungeon")
 
         if num_required_dungeons > len(dungeons):
-            raise WrongInfoError("Not enough free goal locations to satisfy required dungeons. Please remove junk that has been plandomized at the end of dungeons")
+            raise WrongInfoError(
+                "Not enough free goal locations to satisfy required dungeons. Please remove junk that has been plandomized at the end of dungeons"
+            )
 
         random.shuffle(dungeons)
         for i in range(num_required_dungeons):
