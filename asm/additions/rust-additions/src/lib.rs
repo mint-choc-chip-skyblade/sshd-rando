@@ -128,7 +128,7 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
 
         let mut dungeon_item_mask = 0;
 
-        if itemid >= 25 && itemid <= 27 {
+        if (itemid >= 25 && itemid <= 27) || (itemid >= 29 && itemid <= 31) {
             dungeon_item_mask = 0x80; // boss keys
         }
 
