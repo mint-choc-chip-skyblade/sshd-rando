@@ -46,6 +46,7 @@ class ASMPatchHandler:
 
     def patch_asm(
         self,
+        world: World,
         nso_path: Path,
         asm_diffs_path: Path,
         output_path: Path,
@@ -83,6 +84,9 @@ class ASMPatchHandler:
         )
 
         for diff_file_name in asm_patch_diff_paths:
+            if self.should_skip_diff(world, diff_file_name.parts[-1]):
+                continue
+
             binary_diffs = yaml_load(diff_file_name)
 
             # Write patch data for each segment.
@@ -180,10 +184,17 @@ class ASMPatchHandler:
 
         write_bytes_create_dirs(output_path, nso.getvalue())
 
+    # Skip applying certain patch diffs depending on settings
+    def should_skip_diff(self, world: World, diff_file_name: str) -> bool:
+        return any(
+            [world.setting("tunic_swap") == "off" and "tunic-swap" in diff_file_name]
+        )
+
     # Applies both asm patches and additions.
     def patch_all_asm(self, world: World, onlyif_handler: ConditionalPatchHandler):
         print("Applying asm patches")
         self.patch_asm(
+            world,
             MAIN_NSO_FILE_PATH,
             ASM_PATCHES_DIFFS_PATH,
             OUTPUT_MAIN_NSO,
@@ -202,6 +213,7 @@ class ASMPatchHandler:
 
             print("Applying asm additions")
             self.patch_asm(
+                world,
                 SUBSDK1_FILE_PATH,
                 ASM_ADDITIONS_DIFFS_PATH,
                 OUTPUT_ADDITIONAL_SUBSDK,
