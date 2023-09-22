@@ -200,6 +200,7 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                     s = settings_info_map[names[i]]
                     s.name = names[i]
                     s.pretty_name = pretty_names[i]
+                    s.type = setting_type
                     s.default_option = options.index(
                         default_options[min(len(default_options) - 1, i)]
                     )

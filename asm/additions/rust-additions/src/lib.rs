@@ -128,7 +128,7 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
 
         let mut dungeon_item_mask = 0;
 
-        if itemid >= 25 && itemid <= 27 {
+        if (itemid >= 25 && itemid <= 27) || (itemid >= 29 && itemid <= 31) {
             dungeon_item_mask = 0x80; // boss keys
         }
 
@@ -198,6 +198,17 @@ fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
     unsafe {
         (*FILE_MGR).FA.dungeonflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
     }
+}
+
+#[no_mangle]
+fn storyflag_set_to_1(flag: u16) {
+    unsafe { ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag); };
+}
+
+#[no_mangle]
+fn set_goddess_sword_pulled_story_flag() {
+    // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
+    storyflag_set_to_1(951);
 }
 
 #[panic_handler]

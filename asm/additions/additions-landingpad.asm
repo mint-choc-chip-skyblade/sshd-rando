@@ -15,6 +15,10 @@ b.eq 0x360A9000
 cmp w8, #2
 b.eq handle_startflags
 
+; set goddess sword pulled scene flag
+cmp w8, #3
+b.eq set_goddess_sword_pulled_story_flag
+
 ret ; this should never be reached
 
 ; ends at 0x360A6500

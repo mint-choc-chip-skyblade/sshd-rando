@@ -51,7 +51,9 @@ def generate_randomizer(config: Config) -> list[World]:
             if setting.info.type == SettingType.STANDARD:
                 hash_str += name + setting.value
 
-    # TODO: Check plando file
+    if config.plandomizer:
+        with open(config.plandomizer_file) as plando_file:
+            hash_str += plando_file.read()
 
     if config.generate_spoiler_log:
         hash_str += "spoilerlog"

@@ -17,6 +17,24 @@ def spoiler_format_entrance(entrance: Entrance, longest_name_length: int) -> str
 def generate_spoiler_log(worlds: list[World]) -> None:
     filepath = "Spoiler Log.txt"
     with open(filepath, "w") as spoiler_log:
+        # Print starting inventories if there are any
+        if any([True for world in worlds if world.starting_item_pool.total() > 0]):
+            spoiler_log.write("Starting Inventory:\n")
+            for world in worlds:
+                spoiler_log.write(f"    {world}:\n")
+                for item, count in world.starting_item_pool.items():
+                    for _ in range(count):
+                        spoiler_log.write(f"      - {item}\n")
+
+        # Print Required dungeons if there are any
+        if any([True for w in worlds for d in w.dungeons.values() if d.required]):
+            spoiler_log.write("\nRequired Dungeons:\n")
+            for world in worlds:
+                spoiler_log.write(f"    {world}:\n")
+                for dungeon in world.dungeons.values():
+                    if dungeon.required:
+                        spoiler_log.write(f"      - {dungeon.name}\n")
+
         # Get name lengths for pretty formating
         longest_name_length = 0
         for sphere in worlds[0].playthrough_spheres:
@@ -25,7 +43,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
 
         # Print playthrough
         sphere_num = 1
-        spoiler_log.write("Playthrough:\n")
+        spoiler_log.write("\nPlaythrough:\n")
         for sphere in worlds[0].playthrough_spheres:
             sphere = sorted(sphere)
             spoiler_log.write(f"    Sphere {sphere_num}:\n")
