@@ -45,7 +45,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
 
         # Print entrance playthrough
         sphere_num = 0
-        if len(worlds[0].entrance_spheres) > 0:
+        if len([e for sphere in worlds[0].entrance_spheres for e in sphere]) > 0:
             spoiler_log.write("\nEntrance Playthrough:\n")
         for sphere in worlds[0].entrance_spheres:
             sphere_num += 1
@@ -82,19 +82,19 @@ def generate_spoiler_log(worlds: list[World]) -> None:
 
         if any([len(world.get_shuffled_entrances()) for world in worlds]):
             spoiler_log.write("\nAll Entrances:\n")
-        for world in worlds:
-            spoiler_log.write(f"    {world}:\n")
-            entrance_pools = create_entrance_pools(world)
-            for entrance_type, pool in entrance_pools.items():
-                spoiler_log.write(f"        {entrance_type}:\n")
-                for entrance in sorted(pool):
-                    # Ignore entrances that are impossible
-                    if entrance.requirement.type == RequirementType.IMPOSSIBLE:
-                        continue
-                    spoiler_log.write(
-                        "            "
-                        + spoiler_format_entrance(entrance, longest_name_length)
-                        + "\n"
-                    )
+            for world in worlds:
+                spoiler_log.write(f"    {world}:\n")
+                entrance_pools = create_entrance_pools(world)
+                for entrance_type, pool in entrance_pools.items():
+                    spoiler_log.write(f"        {entrance_type}:\n")
+                    for entrance in sorted(pool):
+                        # Ignore entrances that are impossible
+                        if entrance.requirement.type == RequirementType.IMPOSSIBLE:
+                            continue
+                        spoiler_log.write(
+                            "            "
+                            + spoiler_format_entrance(entrance, longest_name_length)
+                            + "\n"
+                        )
 
     print(f"Generated Spoiler Log at {filepath}")
