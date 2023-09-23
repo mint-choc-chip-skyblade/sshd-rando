@@ -4,12 +4,13 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use core::arch::asm;
 use core::ffi::c_void;
 
 mod structs;
 
-// IMPORTANT: when using vanilla code, the start point must be declared in symbols.yaml
-// and then added to this extern block.
+// IMPORTANT: when using vanilla code, the start point must be declared in
+// symbols.yaml and then added to this extern block.
 extern "C" {
     static FILE_MGR: *mut structs::FileMgr;
     static STORYFLAG_MGR: *mut structs::FlagMgr;
@@ -24,9 +25,9 @@ extern "C" {
     static STARTFLAGS: [u16; 1000];
 }
 
-// IMPORTANT: when adding functions here that need to get called from the game, add `#[no_mangle]`
-// and add a .global *symbolname* to additions/rust-additions.asm
-
+// IMPORTANT: when adding functions here that need to get called from the game,
+// add `#[no_mangle]` and add a .global *symbolname* to
+// additions/rust-additions.asm
 #[no_mangle]
 pub fn handle_startflags() {
     unsafe {
@@ -46,18 +47,18 @@ pub fn handle_startflags() {
                 // Storyflags
                 0 => {
                     ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag.into());
-                }
+                },
 
                 // Sceneflags
                 1 => {
                     // flag = 0xFFSS where SS == sceneindex and FF == sceneflag
                     set_global_sceneflag(flag & 0xFF, flag >> 8);
-                }
+                },
 
                 // Itemflags
                 2 => {
                     ((*(*ITEMFLAG_MGR).funcs).setFlag)(ITEMFLAG_MGR, flag.into());
-                }
+                },
 
                 // Dungeonflags
                 3 => {
@@ -65,10 +66,12 @@ pub fn handle_startflags() {
                     flag = flag >> 8;
 
                     // Convert dungeonflag numbers to be like sceneflags
-                    // Dungeonflags start offset by 1 due to an undefined value in the flag definitions.
+                    // Dungeonflags start offset by 1 due to an undefined value in the flag
+                    // definitions.
                     if flag == 2 || flag == 3 || flag == 4 {
                         flag -= 1;
-                    } else if flag == 12 { // The rooms are defined before the boss key placed flag
+                    } else if flag == 12 {
+                        // The rooms are defined before the boss key placed flag
                         flag = 7;
                     } else if flag == 16 {
                         flag = 8;
@@ -76,11 +79,11 @@ pub fn handle_startflags() {
 
                     // flag = 0xFFSS where SS == sceneindex and FF == dungeonflag
                     set_global_dungeonflag(sceneindex, flag);
-                }
+                },
 
                 _ => {
                     break;
-                }
+                },
             }
         }
 
@@ -88,6 +91,26 @@ pub fn handle_startflags() {
         ((*(*ITEMFLAG_MGR).funcs).doCommit)(ITEMFLAG_MGR);
 
         (*FILE_MGR).preventCommit = false;
+    }
+}
+
+#[no_mangle]
+fn set_global_sceneflag(sceneindex: u16, flag: u16) {
+    let upper_flag = (flag & 0xF0) >> 4;
+    let lower_flag = flag & 0x0F;
+
+    unsafe {
+        (*FILE_MGR).FA.sceneflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
+    }
+}
+
+#[no_mangle]
+fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
+    let upper_flag = (flag & 0xF0) >> 4;
+    let lower_flag = flag & 0x0F;
+
+    unsafe {
+        (*FILE_MGR).FA.dungeonflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
     }
 }
 
@@ -181,28 +204,30 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
 }
 
 #[no_mangle]
-fn set_global_sceneflag(sceneindex: u16, flag: u16) {
-    let upper_flag = (flag & 0xF0) >> 4;
-    let lower_flag = flag & 0x0F;
+fn fix_freestanding_item_y_offset() {
+    let mut item: *mut structs::dAcItem;
 
     unsafe {
-        (*FILE_MGR).FA.sceneflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
-    }
-}
+        // Get param1 to check if the item needs its size changing.
+        asm!("mov {0}, x19", out(reg) item);
 
-#[no_mangle]
-fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
-    let upper_flag = (flag & 0xF0) >> 4;
-    let lower_flag = flag & 0x0F;
+        // Replaced instruction
+        asm!("mov w0, w20");
 
-    unsafe {
-        (*FILE_MGR).FA.dungeonflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
+        if (*item).base.baseBase.param1 >> 9 & 0x1 == 0 {
+            let y_offset_as_hex = ((*item).base.members.base.param2 & 0x00FFFF00) << 8;
+            let y_offset = f32::from_bits(y_offset_as_hex);
+
+            (*item).freestandingYOffset = y_offset;
+        }
     }
 }
 
 #[no_mangle]
 fn storyflag_set_to_1(flag: u16) {
-    unsafe { ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag); };
+    unsafe {
+        ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag);
+    };
 }
 
 #[no_mangle]

@@ -19,6 +19,10 @@ b.eq handle_startflags
 cmp w8, #3
 b.eq set_goddess_sword_pulled_story_flag
 
+; freestanding item y offset
+cmp w8, #4
+b.eq fix_freestanding_item_y_offset
+
 ret ; this should never be reached
 
 ; ends at 0x360A6500
