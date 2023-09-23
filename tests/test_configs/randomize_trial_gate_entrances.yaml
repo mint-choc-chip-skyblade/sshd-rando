@@ -1,0 +1,7 @@
+World 1:
+  randomize_trial_gate_entrances: 'on'
+input_dir: ./base
+output_dir: ./output
+plandomizer: false
+plandomizer_file: null
+seed: TESTTESTTEST

@@ -1,0 +1,9 @@
+World 1:
+  boss_keys: any_dungeon
+  map_mode: any_dungeon
+  small_keys: any_dungeon
+input_dir: ./base
+output_dir: ./output
+plandomizer: false
+plandomizer_file: null
+seed: TESTTESTTEST
