@@ -308,7 +308,7 @@ class World:
         generate_starting_item_pool(self)
 
     def place_hardcoded_items(self) -> None:
-        self.location_table["Hylia's Realm - Defeat Demise"].set_current_item(
+        self.get_location("Hylia's Realm - Defeat Demise").set_current_item(
             self.get_item("Game Beatable")
         )
 
@@ -376,11 +376,9 @@ class World:
             # so we can lookup their region later if necessary
             for exit_ in area.exits:
                 exit_regions = exit_.parent_area.hint_regions
-                if None not in exit_regions and not exit_regions.intersection(
-                    self.dungeons.keys()
-                ):
+                if None not in exit_regions:
                     for dungeon in self.dungeons.values():
-                        if exit_.connected_area == dungeon.starting_area:
+                        if exit_.connected_area == dungeon.starting_area and dungeon.name not in exit_regions:
                             dungeon.starting_entrance = exit_
 
     def choose_required_dungeons(self):
