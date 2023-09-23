@@ -565,82 +565,83 @@
     flow:
       setstoryflag: 13
       next: -1
-  # don't currently have option
-  # - name: Patch Medium Wallet
-  #   onlyif: full_wallet_upgrades == on
-  #   type: flowpatch
-  #   index: 246
-  #   flow:
-  #     next: Fill Medium Wallet
-  # - name: Fill Medium Wallet
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 1
-  #     param1: 0
-  #     param2: 200 # Rupees to add
-  #     next: -1
-  #     param3: 8 # Increase rupee count
-  # - name: Patch Big Wallet
-  #   onlyif: full_wallet_upgrades == on
-  #   type: flowpatch
-  #   index: 245
-  #   flow:
-  #     next: Fill Big Wallet
-  # - name: Fill Big Wallet
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 1
-  #     param1: 0
-  #     param2: 500 # Rupees to add
-  #     next: -1
-  #     param3: 8 # Increase rupee count
-  # - name: Patch Giant Wallet
-  #   onlyif: full_wallet_upgrades == on
-  #   type: flowpatch
-  #   index: 244
-  #   flow:
-  #     next: Fill Giant Wallet
-  # - name: Fill Giant Wallet
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 1
-  #     param1: 0
-  #     param2: 4000 # Rupees to add
-  #     next: -1
-  #     param3: 8 # Increase rupee count
-  # - name: Patch Tycoon Wallet
-  #   onlyif: full_wallet_upgrades == on
-  #   type: flowpatch
-  #   index: 255
-  #   flow:
-  #     next: Fill Tycoon Wallet
-  # - name: Fill Tycoon Wallet
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 1
-  #     param1: 0
-  #     param2: 4000 # Rupees to add
-  #     next: -1
-  #     param3: 8 # Increase rupee count
-  # - name: Patch Extra Wallets
-  #   onlyif: full_wallet_upgrades == on
-  #   type: flowpatch
-  #   index: 497
-  #   flow:
-  #     next: Fill Extra Wallets
-  # - name: Fill Extra Wallets
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 1
-  #     param1: 0
-  #     param2: 300 # Rupees to add
-  #     next: -1
-  #     param3: 8 # Increase rupee count
+
+  # Full wallet upgrades
+  - name: Patch Medium Wallet
+    onlyif: full_wallet_upgrades == on
+    type: flowpatch
+    index: 246
+    flow:
+      next: Fill Medium Wallet
+  - name: Fill Medium Wallet
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 0
+      param2: 200 # Rupees to add
+      next: -1
+      param3: 8 # Increase rupee count
+  - name: Patch Big Wallet
+    onlyif: full_wallet_upgrades == on
+    type: flowpatch
+    index: 245
+    flow:
+      next: Fill Big Wallet
+  - name: Fill Big Wallet
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 0
+      param2: 500 # Rupees to add
+      next: -1
+      param3: 8 # Increase rupee count
+  - name: Patch Giant Wallet
+    onlyif: full_wallet_upgrades == on
+    type: flowpatch
+    index: 244
+    flow:
+      next: Fill Giant Wallet
+  - name: Fill Giant Wallet
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 0
+      param2: 4000 # Rupees to add
+      next: -1
+      param3: 8 # Increase rupee count
+  - name: Patch Tycoon Wallet
+    onlyif: full_wallet_upgrades == on
+    type: flowpatch
+    index: 255
+    flow:
+      next: Fill Tycoon Wallet
+  - name: Fill Tycoon Wallet
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 0
+      param2: 4000 # Rupees to add
+      next: -1
+      param3: 8 # Increase rupee count
+  - name: Patch Extra Wallets
+    onlyif: full_wallet_upgrades == on
+    type: flowpatch
+    index: 497
+    flow:
+      next: Fill Extra Wallets
+  - name: Fill Extra Wallets
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 0
+      param2: 300 # Rupees to add
+      next: -1
+      param3: 8 # Increase rupee count
 
 004-Object:
   - name: Remove Heart piece hint from gossip stone

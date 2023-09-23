@@ -20,13 +20,18 @@
 ; Total available instructions:                     372 (decimal)
 ; 
 ; Please update this:
-; Total space used (bytes):                          48
-; Total instructions used:                           12
+; Total space used (bytes):                          52
+; Total instructions used:                           14
 
+; startflags
 .offset 0x08659ab0
 mov w8, #2
 b 0x0865a070
 
+; freestanding item y offset
+.offset 0x08659ab8
+mov w8, #4
+b 0x0865a070
 
 
 ; Actually branches to the rust additions landingpad

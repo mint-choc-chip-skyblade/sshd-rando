@@ -15,3 +15,6 @@
 
 .global set_goddess_sword_pulled_story_flag
 .type set_goddess_sword_pulled_story_flag, @function
+
+.global fix_freestanding_item_y_offset
+.type fix_freestanding_item_y_offset, @function

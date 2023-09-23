@@ -420,3 +420,8 @@ def write_s32(
 def pad_offset_to_nearest(offset: int, size: int) -> int:
     next_offset = offset + (size - offset % size) % size
     return next_offset
+
+
+def float_to_hex(value: float) -> int:
+    value_as_bytes = struct.pack("<f", value)
+    return struct.unpack("<I", value_as_bytes)[0]

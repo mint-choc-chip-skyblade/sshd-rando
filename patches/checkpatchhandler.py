@@ -60,13 +60,14 @@ def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
     TEXT_START_SINGLE = "You got the"
     TEXT_START_PLURAL = "You got a"
     DUNGEON_ITEMID_TO_TEXT = {
+        200: f"{TEXT_START_PLURAL} <g<Skyview Temple>> Small Key!",
         201: f"{TEXT_START_SINGLE} <y<Lanayru Mining Facility>> Small\nKey!",
         202: f"{TEXT_START_PLURAL} <b<Ancient Cistern>> Small Key!",
         203: f"{TEXT_START_PLURAL} <r<Fire Sanctuary>> Small Key!",
         204: f"{TEXT_START_PLURAL} <y+<Sandship>> Small Key!",
         205: f"{TEXT_START_PLURAL} <s<Sky Keep>> Small Key!",
         206: f"{TEXT_START_SINGLE} <ye<Lanayru Caves>> Small Key!",
-        207: f"{TEXT_START_SINGLE} <g<Skyview>> Map!",
+        207: f"{TEXT_START_SINGLE} <g<Skyview Temple>> Map!",
         208: f"{TEXT_START_SINGLE} <r+<Earth Temple>> Map!",
         209: f"{TEXT_START_SINGLE} <y<Lanayru Mining Facility>> Map!",
         210: f"{TEXT_START_SINGLE} <b<Ancient Cistern>> Map!",
@@ -80,7 +81,7 @@ def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
         "name": f"Skyview Key Text",
         "type": "textpatch",
         "index": 251,
-        "text": f"You got a\nSkyview Small Key!",
+        "text": DUNGEON_ITEMID_TO_TEXT[200],
     }
 
     event_patch_handler.append_to_event_patches(
