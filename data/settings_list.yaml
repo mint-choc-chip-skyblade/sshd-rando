@@ -327,6 +327,20 @@
     - off/on:                "If selected, unrequired dungeons will be barren."
 
 ############################
+##    Cosmetic Options    ##
+############################
+
+- name: tunic_swap
+  type: Cosmetic
+  default_option: "off"
+  pretty_name: Tunic Swap
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - off/on:                "If selected, Link will be in his regular Skyloft outfit."
+
+############################
 ## Logic options (tricks) ##
 ############################
 
