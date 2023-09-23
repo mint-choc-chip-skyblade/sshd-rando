@@ -378,7 +378,10 @@ class World:
                 exit_regions = exit_.parent_area.hint_regions
                 if None not in exit_regions:
                     for dungeon in self.dungeons.values():
-                        if exit_.connected_area == dungeon.starting_area and dungeon.name not in exit_regions:
+                        if (
+                            exit_.connected_area == dungeon.starting_area
+                            and dungeon.name not in exit_regions
+                        ):
                             dungeon.starting_entrance = exit_
 
     def choose_required_dungeons(self):

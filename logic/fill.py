@@ -257,9 +257,7 @@ def place_own_dungeon_items(world: World, worlds: list[World]):
         # non-progress locations, else choose progression locations
         fill_locations = []
         if dungeon.should_be_barren():
-            fill_locations = [
-                loc for loc in dungeon.locations if not loc.progression
-            ]
+            fill_locations = [loc for loc in dungeon.locations if not loc.progression]
         else:
             fill_locations = [loc for loc in dungeon.locations if loc.progression]
 
@@ -272,9 +270,7 @@ def place_own_dungeon_items(world: World, worlds: list[World]):
             own_dungeon_items = [
                 item for item in own_dungeon_items if not item.is_boss_key
             ]
-            assumed_fill(
-                worlds, own_dungeon_items, complete_item_pool, fill_locations
-            )
+            assumed_fill(worlds, own_dungeon_items, complete_item_pool, fill_locations)
             own_dungeon_items = boss_key
 
         assumed_fill(worlds, own_dungeon_items, complete_item_pool, fill_locations)
@@ -326,9 +322,7 @@ def place_own_region_items(world: World, worlds: list[World]):
         # Get the complete item pool for all worlds incase of multiworld
         # plandomized items that are required to get to this dungeon
         complete_item_pool = get_complete_item_pool(worlds)
-        assumed_fill(
-            worlds, own_region_items, complete_item_pool, own_region_locations
-        )
+        assumed_fill(worlds, own_region_items, complete_item_pool, own_region_locations)
 
 
 def place_any_dungeon_items(world: World, worlds: list[World]):
@@ -337,9 +331,7 @@ def place_any_dungeon_items(world: World, worlds: list[World]):
 
     # Any dungeon items for should_be_barren dungeons will go in a separate pool
     non_barren_dungeons = [
-        dungeon
-        for dungeon in world.dungeons.values()
-        if not dungeon.should_be_barren()
+        dungeon for dungeon in world.dungeons.values() if not dungeon.should_be_barren()
     ]
     barren_dungeons = [
         dungeon for dungeon in world.dungeons.values() if dungeon.should_be_barren()
