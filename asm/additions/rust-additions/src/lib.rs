@@ -22,12 +22,29 @@ extern "C" {
     static mut STATIC_ZONEFLAGS: [[u16; 4]; 63];
     static mut STATIC_ITEMFLAGS: [u16; 64];
     static mut STATIC_DUNGEONFLAGS: [u16; 8];
+    static mut CURRENT_STAGE_NAME: [u8; 4];
     static STARTFLAGS: [u16; 1000];
+
+    fn strlen(string: *mut u8) -> u64;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
+#[no_mangle]
+pub fn fix_sandship_boat() -> u32 {
+    unsafe {
+        let current_stage_name = unsafe { &CURRENT_STAGE_NAME[..4] };
+
+        if strlen(CURRENT_STAGE_NAME.as_mut_ptr()) == 4 && current_stage_name == b"F301" {
+            // 152 == Skipper's Boat Timeshift Stone Hit
+            return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, 152);
+        }
+
+        return 1u32;
+    }
+}
+
 #[no_mangle]
 pub fn handle_startflags() {
     unsafe {
@@ -95,7 +112,7 @@ pub fn handle_startflags() {
 }
 
 #[no_mangle]
-fn set_global_sceneflag(sceneindex: u16, flag: u16) {
+pub fn set_global_sceneflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
 
@@ -105,7 +122,7 @@ fn set_global_sceneflag(sceneindex: u16, flag: u16) {
 }
 
 #[no_mangle]
-fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
+pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
 
@@ -204,7 +221,7 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
 }
 
 #[no_mangle]
-fn fix_freestanding_item_y_offset() {
+pub fn fix_freestanding_item_y_offset() {
     let mut item: *mut structs::dAcItem;
 
     unsafe {
@@ -224,14 +241,14 @@ fn fix_freestanding_item_y_offset() {
 }
 
 #[no_mangle]
-fn storyflag_set_to_1(flag: u16) {
+pub fn storyflag_set_to_1(flag: u16) {
     unsafe {
         ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag);
     };
 }
 
 #[no_mangle]
-fn set_goddess_sword_pulled_story_flag() {
+pub fn set_goddess_sword_pulled_story_flag() {
     // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
     storyflag_set_to_1(951);
 }

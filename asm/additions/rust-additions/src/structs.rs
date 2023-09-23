@@ -127,8 +127,8 @@ pub struct FlagMgrFuncs {
     pub setFlag:                 extern "C" fn(*mut FlagMgr, u16),
     pub unsetFlag:               extern "C" fn(*mut FlagMgr, u16),
     pub setFlagOrCounterToValue: extern "C" fn(*mut FlagMgr, u16, u16),
-    pub getFlagOrCounter:        extern "C" fn(*mut FlagMgr, u16),
-    pub getUncommitedValue:      extern "C" fn(*mut FlagMgr, u16),
+    pub getFlagOrCounter:        extern "C" fn(*mut FlagMgr, u16) -> u32,
+    pub getUncommitedValue:      extern "C" fn(*mut FlagMgr, u16) -> u32,
     pub unk12:                   extern "C" fn(),
     pub getSaveFlagSpace:        extern "C" fn(*mut FlagMgr),
 }

@@ -23,6 +23,10 @@ b.eq set_goddess_sword_pulled_story_flag
 cmp w8, #4
 b.eq fix_freestanding_item_y_offset
 
+; fix sandship boat
+cmp w8, #5
+b.eq fix_sandship_boat
+
 ret ; this should never be reached
 
 ; ends at 0x360A6500

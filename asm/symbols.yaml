@@ -19,5 +19,11 @@ main:
     STATIC_DUNGEONFLAGS: 0x09832128
     STATIC_ENEMY_DEFEATED_FLAGS: 0x098322f8
 
+    # Reloader stuff
+    CURRENT_STAGE_NAME: 0x0abfd8d8
+
+    # Functions
+    strlen: 0x0905f5c0
+
     # Custom Symbols
     STARTFLAGS: 0x363EF000 # start of subsdk8 data section
