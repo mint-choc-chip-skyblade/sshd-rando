@@ -231,8 +231,17 @@ def create_entrance_pools(world: World) -> EntrancePools:
                     for entrance in entrance_pools[entrance_type]:
                         entrance.decoupled = True
 
+    # The mixed pools expect a list of lists, if just a list
+    # of types was passed in, then nest it into another list
+    mixed_pool_list = []
+    if world.setting_map.mixed_entrance_pools:
+        if type(world.setting_map.mixed_entrance_pools[0]) is list:
+            mixed_pool_list = world.setting_map.mixed_entrance_pools
+        else:
+            mixed_pool_list = [world.setting_map.mixed_entrance_pools]
+
     # Set mixed pools
-    for i, pool in enumerate(world.setting_map.mixed_entrance_pools):
+    for i, pool in enumerate(mixed_pool_list):
         # The pool should have at least two types that are being shuffled
         # If the pool has less than two types or some of the specified types
         # aren't being shuffled, then ignore the pool
