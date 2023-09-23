@@ -492,6 +492,14 @@ F000: # Skyloft
       name: Item
 
   ## Crystal between Wooden Planks
+  - name: Rotate crystal between Wooden Planks
+    type: objpatch
+    id: 0xFCA1
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      angley: 32000
   - name: Move crystal between Wooden Planks to layer 2
     type: objmove
     id: 0xFCA1
@@ -511,6 +519,7 @@ F000: # Skyloft
       posx: -1796.03759765625
       posy: 402.030029296875
       posz: -5601.87255859375
+      angley: 32000
       id: 0xFCA1
       name: Item
   - name: Add crystal between Wooden Planks to layer 7
@@ -525,6 +534,7 @@ F000: # Skyloft
       posx: -1796.03759765625
       posy: 402.030029296875
       posz: -5601.87255859375
+      angley: 32000
       id: 0xFCA1
       name: Item
   - name: Add crystal between Wooden Planks to layer 9
@@ -539,6 +549,7 @@ F000: # Skyloft
       posx: -1796.03759765625
       posy: 402.030029296875
       posz: -5601.87255859375
+      angley: 32000
       id: 0xFCA1
       name: Item
 
@@ -897,6 +908,14 @@ F001r:
     destlayer: 0
   
   # Move Loose Crystal checks to night layers
+  - name: Raise crystal in Link's room
+    type: objpatch
+    id: 0xFC0C
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      posy: 102.0
   - name: Move crystal in Link's room to night layer
     type: objmove
     id: 0xFC0C
@@ -904,6 +923,14 @@ F001r:
     destlayer: 4
     room: 1
     objtype: OBJ
+  - name: Rotate Academy plant crystal
+    type: objpatch
+    id: 0xFC4B
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      angley: 52000
   - name: Move Academy plant crystal to night layer
     type: objmove
     id: 0xFC4B
@@ -964,6 +991,14 @@ F005r: # Orielle and Parrow's House
     layer: 2
     room: 0
     objtype: OBJ
+  - name: Rotate crystal in Orielle and Parrow's house
+    type: objpatch
+    id: 0xFC0F
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      angley: 44000
   - name: Move crystal in Orielle and Parrow's house to night layer
     type: objmove
     id: 0xFC0F
