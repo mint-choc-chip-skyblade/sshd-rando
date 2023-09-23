@@ -18,3 +18,6 @@
 
 .global fix_freestanding_item_y_offset
 .type fix_freestanding_item_y_offset, @function
+
+.global fix_sandship_boat
+.type fix_sandship_boat, @function
