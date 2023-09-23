@@ -145,11 +145,11 @@ def generate_item_pool(world: "World") -> None:
         item_pool = [
             item
             for item in item_pool
-            if not item.endswith("Small Key") or item == "Lanayru Caves Key"
+            if not item.endswith("Small Key") or item == "Lanayru Caves Small Key"
         ]
 
     if world.setting("lanayru_caves_key") == "removed":
-        item_pool.remove("Lanayru Caves Key")
+        item_pool.remove("Lanayru Caves Small Key")
 
     if world.setting("boss_keys") == "removed":
         item_pool = [item for item in item_pool if not item.endswith("Boss Key")]
