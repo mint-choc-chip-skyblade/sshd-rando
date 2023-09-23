@@ -26,6 +26,16 @@
     - randomized:           "Shops can contain any items"
 
 
+- name: full_wallet_upgrades
+  default_option: "off"
+  pretty_name: Full Wallet Upgrades
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - off/on:               "When enabled, newly obtained wallets will come pre-filled with Rupees."
+
+
 - name: open_thunderhead
   default_option: ballad
   pretty_name: Upgraded Skyward Strike
