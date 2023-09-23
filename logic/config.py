@@ -94,7 +94,7 @@ def write_config_to_file(filename: str, conf: Config):
         yaml.safe_dump(config_out, config_file)
 
 
-def load_config_from_file(filename: str) -> Config:
+def load_config_from_file(filename: str, allow_rewrite: bool = True) -> Config:
     config = Config()
     # If the config is missing any options, set defaults and resave it afterwards
     rewrite_config: bool = False
@@ -141,9 +141,8 @@ def load_config_from_file(filename: str) -> Config:
                     continue
 
                 if setting_name not in settings_info:
-                    raise ConfigError(
-                        f'Setting "{setting_name}" is not defined in settings_list.yaml'
-                    )
+                    rewrite_config = True
+                    continue
 
                 setting_value = config_in[world_num_str][setting_name]
                 # TODO: Hex codes
@@ -169,6 +168,7 @@ def load_config_from_file(filename: str) -> Config:
             world_num += 1
             world_num_str = f"World {world_num}"
 
-    write_config_to_file(filename, config)
+    if rewrite_config and allow_rewrite:
+        write_config_to_file(filename, config)
 
     return config

@@ -1,0 +1,10 @@
+World 1:
+  boss_keys: overworld
+  lanayru_caves_key: overworld
+  map_mode: overworld
+  small_keys: overworld
+input_dir: ./base
+output_dir: ./output
+plandomizer: false
+plandomizer_file: null
+seed: TESTTESTTEST

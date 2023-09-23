@@ -269,7 +269,7 @@
 - name: Lanayru Caves
   hint_region: Lanayru Caves
   exits:
-    Lanayru Caves Past Locked Door: Clawshots and Lanayru_Caves_Small_Key
+    Lanayru Caves Past Locked Door: Clawshots and (Lanayru_Caves_Small_Key or lanayru_caves_key == removed)
     Lanayru Caves Past Crawlspace: Nothing
     Lanayru Mine Caves Platform: Nothing
     Sand Oasis Highest Platform: Nothing
@@ -282,7 +282,7 @@
 - name: Lanayru Caves Past Locked Door
   hint_region: Lanayru Caves
   exits:
-    Lanayru Caves: Lanayru_Caves_Small_Key
+    Lanayru Caves: Lanayru_Caves_Small_Key or lanayru_caves_key == removed
     Ancient Harbour Highest Platform: Nothing
 
 

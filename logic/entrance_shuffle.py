@@ -214,7 +214,7 @@ def create_entrance_pools(world: World) -> EntrancePools:
     if world.setting("randomize_overworld_entrances") == "on":
         exclude_overworld_reverse = (
             any("Overworld" in pool for pool in world.setting_map.mixed_entrance_pools)
-            and not world.setting("decoupled_entrances") == "off"
+            and world.setting("decouple_entrances") == "off"
         )
         entrance_pools["Overworld"] = world.get_shuffleable_entrances(
             "Overworld", only_primary=exclude_overworld_reverse
