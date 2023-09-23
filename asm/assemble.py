@@ -378,7 +378,10 @@ with temp_dir as temp_dir_name:
     # Format rust additions.
     print("Formatting rust code")
     if rust_build_command := call(
-        ["cargo", "fmt",],
+        [
+            "cargo",
+            "fmt",
+        ],
         cwd="./additions/rust-additions",
     ):
         raise Exception("Formatting rust additions failed.")

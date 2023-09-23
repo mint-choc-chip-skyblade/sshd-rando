@@ -1,4 +1,7 @@
-from constants.itemconstants import FREESTANDING_ITEM_OFFSETS, FREESTANDING_ITEMS_TO_USE_DEFAULT_SCALING
+from constants.itemconstants import (
+    FREESTANDING_ITEM_OFFSETS,
+    FREESTANDING_ITEMS_TO_USE_DEFAULT_SCALING,
+)
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 from sslib.bzs import parse_bzs, build_bzs, get_entry_from_bzs, get_highest_object_id
 from sslib.fs_helpers import float_to_hex
@@ -90,7 +93,7 @@ def patch_freestanding_item(bzs: dict, itemid: int, id_str: str):
 
     if itemid in FREESTANDING_ITEMS_TO_USE_DEFAULT_SCALING:
         scale_bit = 1
-    
+
     # Patch whether to use default scaling into angley.
     # angley is used for the actual rotation of the item but we use the lsb so
     # it shouldn't make a noticeable difference.
