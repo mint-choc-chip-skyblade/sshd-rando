@@ -15,6 +15,7 @@ Storyflags:
   - 178  # Cutscene showing off Bokoblin Base with Plats
   - 198  # Can jump off Loftwing
   - 199  # Skip Eagus Cutscene after Sparring Hall chest
+  - 201  # Talked to Stritch at Bug Island (Beedle always lost HCB)
   - 226  # Hero Mode
   - 304  # Batreaux Crystal Quest started
   - 329  # Slept after starting Batreaux Crystal Quest
@@ -40,7 +41,7 @@ Storyflags:
   - 180 # Thrill Digger Intro Cutscene
   - 562 # Volcano Summit Intro Cutscene
   - 190 # Lanayru Mine Intro Cutscene
-  - 92  # Lanayru Desert Intro Cutscene
+  - 92  # Lanayru Desert Intro Cutscene (Dodoh always loses his wheel)
   - 157 # Ancient Harbour Intro Cutscene
   - 526 # Lanayru Gorge Intro Cutscene
   - 80  # Water Dragon in Flooded Faron Cutscene
