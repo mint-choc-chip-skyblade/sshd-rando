@@ -66,7 +66,7 @@
   events:
     Retrieve Party Wheel: Scrapper and 'Start_Dodohs_Quest'
     Ancient Flower Farming: Blow_Up_Covered_Timeshift_Stone
-    Goddess Cube near Hook Beetle Fight: Long_Range_Skyward_Strike # Also accessible elsewhere
+    Goddess Cube near Rescue Caged Robot: Long_Range_Skyward_Strike # Also accessible elsewhere
     Defeat Spume to Sand Oasis: Long_Range_Skyward_Strike or Bomb_Bag or Bow or Hook_Beetle or (Goddess_Sword and logic_lanayru_spume_brakeslide)
   exits:
     Desert Entrance Statue: Nothing
@@ -77,8 +77,8 @@
     Lanayru Mine In Minecart: Blow_Up_Covered_Timeshift_Stone # I can't assume the minecart is available, right ?
   locations:
     Lanayru Desert - Chest near Party Wheel: Blow_Up_Covered_Timeshift_Stone
-    Lanayru Desert - Chest near Hook Beetle Fight: Nothing
-    Lanayru Desert - Hook Beetle Fight: (Blow_Up_Covered_Timeshift_Stone or Hook_Beetle) and Can_Defeat_Bokoblins
+    Lanayru Desert - Chest near Rescue Caged Robot: Nothing
+    Lanayru Desert - Rescue Caged Robot: (Blow_Up_Covered_Timeshift_Stone or Hook_Beetle) and Can_Defeat_Bokoblins
 
 
 - name: Lanayru Desert West Courtyard
@@ -94,7 +94,7 @@
 - name: Lanayru Desert West Wall
   hint_region: Lanayru Desert
   events:
-    Goddess Cube near Hook Beetle Fight: Goddess_Sword
+    Goddess Cube near Rescue Caged Robot: Goddess_Sword
     Push Down West Wall Minecart: Nothing
   exits:
     Lanayru Desert South: Nothing
@@ -263,7 +263,7 @@
   exits:
     Lanayru Desert North: Nothing
   locations:
-    Lanayru Silent Realm - Reward: Nothing
+    Lanayru Silent Realm - Collect all Tears Reward: Nothing
 
 
 - name: Lanayru Caves
@@ -465,7 +465,7 @@
   exits:
     Lanayru Gorge: Beetle or Bow # To activate the main Timeshift Stone
   locations:
-    Lanayru Gorge - Life Tree Seedling: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
+    Lanayru Gorge - Digging Spot: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
 
 # Lanayru Statues
 - name: Lanayru Mine Entry Statue

@@ -27,7 +27,7 @@
     Knight Academy - Crystal in Knight Academy Plant: Night
     Knight Academy - Crystal in Link's Room: Night
     Knight Academy - Owlan's Crystals: Day and 'Retrieve_Oolo'
-    Knight Academy - Cawlin's Letter: Day and 'Knock_on_Toilet_Door'
+    Knight Academy - Item from Cawlin: Day and 'Knock_on_Toilet_Door'
     Knight Academy - Ghost/Pipit's Crystals: Day and Cawlins_Letter
     Knight Academy - Fledge's Crystals: Night and 'Endurance_Potion'
 
@@ -307,7 +307,7 @@
   exits:
     Central Skyloft: Nothing
   locations:
-    Skyloft Silent Realm - Reward: Nothing
+    Skyloft Silent Realm - Collect all Tears Reward: Nothing
 
 
 - name: Skyloft Village

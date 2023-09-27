@@ -24,26 +24,26 @@
     LMF Key Locked Room Timeshift Stone: (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)) and (Bow or Beetle or (Slingshot and logic_lmf_ceiling_precise_slingshot))
   exits:
     LMF First Hub: Nothing
-    LMF Gust Bellows Room: "'LMF_Key_Locked_Room_Timeshift_Stone'"
+    LMF Hop Across Boxes Room: "'LMF_Key_Locked_Room_Timeshift_Stone'"
   locations:
     Lanayru Mining Facility - Chest in Key Locked Room: "'LMF_Key_Locked_Room_Timeshift_Stone'"
 
 
-- name: LMF Gust Bellows Room
+- name: LMF Hop Across Boxes Room
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Gust Bellows Room Near Exit: Can_Make_Froak_Explode
+    LMF Hop Across Boxes Room Near Exit: Can_Make_Froak_Explode
     # Does not include the entry ledge you can only jump from
   locations:
-    Lanayru Mining Facility - Gust Bellows Chest: Can_Make_Froak_Explode
-    Lanayru Mining Facility - Chest inside Gust Bellows Room: Can_Make_Froak_Explode
+    Lanayru Mining Facility - Hop across Boxes Raised Chest: Can_Make_Froak_Explode
+    Lanayru Mining Facility - Hop across Boxes Lower Chest: Can_Make_Froak_Explode
 
 
-- name: LMF Gust Bellows Room Near Exit
+- name: LMF Hop Across Boxes Room Near Exit
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Big Hub Near Gust Bellows Room: Nothing
-    LMF Gust Bellows Room: Nothing
+    LMF Big Hub Near Hop Across Boxes Room: Nothing
+    LMF Hop Across Boxes Room: Nothing
 
 
 - name: LMF First West Room
@@ -76,15 +76,15 @@
   dungeon: Lanayru Mining Facility
   exits:
     LMF Big Hub South: Nothing
-    LMF Big Hub Near Gust Bellows Room: can_access(LMF Big Hub Near Gust Bellows Room) # Push the box
+    LMF Big Hub Near Hop Across Boxes Room: can_access(LMF Big Hub Near Hop Across Boxes Room) # Push the box
   locations:
     Lanayru Mining Facility - First Chest in Hub Room: Nothing
 
 
-- name: LMF Big Hub Near Gust Bellows Room
+- name: LMF Big Hub Near Hop Across Boxes Room
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Gust Bellows Room Near Exit: Nothing
+    LMF Hop Across Boxes Room Near Exit: Nothing
     LMF Big Hub After Wooden Boxes: Nothing
 
 
@@ -136,7 +136,7 @@
   exits:
     LMF Big Hub Near Boss Key Room North: Bomb_Bag and Gust_Bellows and Can_Defeat_Armos
   locations:
-    Lanayru Mining Facility - Boss Key Chest: Bomb_Bag and Gust_Bellows and Can_Defeat_Armos
+    Lanayru Mining Facility - Chest after Double Armos Fight: Bomb_Bag and Gust_Bellows and Can_Defeat_Armos
 
 
 - name: LMF Big Hub Near Boss Key Room North
@@ -159,7 +159,7 @@
   exits:
     LMF Great Hall: Can_Defeat_Moldarach
   locations:
-    Lanayru Mining Facility - Heart Container: Can_Defeat_Moldarach
+    Lanayru Mining Facility - Defeat Boss: Can_Defeat_Moldarach
 
 
 - name: LMF Great Hall
@@ -172,4 +172,4 @@
   exits:
     Temple of Time West Past Rubble: Nothing
   locations:
-    Lanayru Mining Facility - Goddess Harp: Nothing
+    Lanayru Mining Facility - Exit Hall of Ancient Robots: Nothing

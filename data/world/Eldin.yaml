@@ -176,7 +176,7 @@
     Volcano East: Nothing
   locations:
     Mogma Turf - Chest behind Bombable Wall at Entrance: Bomb_Bag or can_access(Mogma Turf Dive)
-    Mogma Turf - Digging Mitts Fight: Can_Defeat_Bokoblins
+    Mogma Turf - Defeat Bokoblins: Can_Defeat_Bokoblins
 
 
 - name: Mogma Turf Pyrup Maze
@@ -208,7 +208,7 @@
   exits:
     Volcano Ascent: Nothing
   locations:
-    Eldin Silent Realm - Reward: Nothing
+    Eldin Silent Realm - Collect all Tears Reward: Nothing
 
 # VOLCANO SUMMIT
 - name: Volcano Summit
