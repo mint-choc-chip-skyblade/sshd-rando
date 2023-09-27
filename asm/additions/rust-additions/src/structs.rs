@@ -554,3 +554,33 @@ pub struct Vec3s {
 }
 
 assert_eq_size!([u8; 6], Vec3s);
+
+#[repr(C, packed(1))]
+pub struct GameReloader {
+    pub _0:                       [u8; 0x350],
+    pub trigger_reload:           u16,
+    pub _1:                       [u8; 0x52],
+    pub speed_after_reload:       f32,
+    pub stamina_after_reload:     u32,
+    pub item_to_use_after_reload: u8,
+    pub beedle_shop_spawn_state:  u8,
+    pub action_index:             i16,
+    pub area_type:                u8,
+    pub _2:                       [u8; 0x5],
+    pub is_reloading:             u8,
+    pub prevent_set_respawn_info: u8,
+    pub count_down_after_spawn:   u8,
+}
+
+assert_eq_size!([u8; 0x3B9], GameReloader);
+
+#[repr(C, packed(1))]
+pub struct Player {
+    pub _0:                [u8; 0x460],
+    pub action_flags:      u32,
+    pub more_action_flags: u32,
+    pub current_action:    u32,
+    // TODO: more stuff
+}
+
+assert_eq_size!([u8; 0x46C], Player);

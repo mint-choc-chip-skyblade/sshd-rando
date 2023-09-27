@@ -142,7 +142,7 @@ custom_symbols = {}
 
 
 def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
-    addresses_overwritten = []
+    addresses_overwritten = {}
 
     for asm_file_path in asmPaths:
         print(f"Assembling: {asm_file_path}")
@@ -344,10 +344,10 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
                 if true_offset in addresses_overwritten:
                     raise Exception(
-                        f"Overlapping asm patch found at {offset} in file {asm_file_name}."
+                        f"Overlapping asm patch found at {offset} in file {asm_file_name}. {addresses_overwritten[true_offset]} is already using that address"
                     )
                 else:
-                    addresses_overwritten.append(true_offset)
+                    addresses_overwritten[true_offset] = asm_file_name
 
         diff_file_name = outputPath / f"{asm_file_name[:-4]}-diff.yaml"
 
