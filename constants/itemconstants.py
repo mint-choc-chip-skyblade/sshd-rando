@@ -48,6 +48,7 @@ COMPLETE_TRIFORCE = "Completed Triforce"
 
 KEY_PIECE = "Key Piece"
 FULL_ET_KEY = "Full ET Key"
+SCRAPPER = "Scrapper"
 EMPTY_BOTTLE = "Empty Bottle"
 EXTRA_WALLET = "Extra Wallet"
 GROUP_OF_TADTONES = "Group of Tadtones"
@@ -121,6 +122,7 @@ ITEM_STORYFLAGS = {
     TRIFORCE_OF_WISDOM: 730,
     COMPLETE_TRIFORCE: 645,
     FULL_ET_KEY: 120,
+    SCRAPPER: 323,
     PROGRESSIVE_SWORD: [
         906,
         907,
