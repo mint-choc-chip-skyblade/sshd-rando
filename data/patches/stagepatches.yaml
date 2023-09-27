@@ -2334,7 +2334,7 @@ F300: # lanayru Main Area
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Remove Fi text before Hook Beetle Fight Check
+  - name: Remove Fi text before Rescue Caged Robot Check
     type: objdelete
     id: 0xFC29
     layer: 0
@@ -4731,7 +4731,7 @@ D301: # Sandship A
     layer: 2
     room: 15
     objtype: OBJ
-  - name: Fi text after bow chest
+  - name: Fi text after Chest after Scervo Fight
     type: objdelete
     id: 0xFC08
     layer: 2

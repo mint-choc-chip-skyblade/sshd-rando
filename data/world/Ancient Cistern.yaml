@@ -123,7 +123,7 @@
   exits:
     AC Basement: Nothing
   locations:
-    Ancient Cistern - Boss Key Chest: "'Can_Lower_Giant_Statue'"
+    Ancient Cistern - Chest under Stone Statue: "'Can_Lower_Giant_Statue'"
 
 
 - name: AC Inside Statue
@@ -133,7 +133,7 @@
     Ancient Cistern Lobby: Whip
     AC Platform Before Boss: (Ancient_Cistern_Boss_Key or boss_keys == removed) and Whip
   locations:
-    Ancient Cistern - Whip Chest: (count(2, Ancient_Cistern_Small_Key) or small_keys == removed) and (Can_Defeat_Stalmaster or 'Can_Lower_Giant_Statue')
+    Ancient Cistern - Chest in Key Locked Room: (count(2, Ancient_Cistern_Small_Key) or small_keys == removed) and (Can_Defeat_Stalmaster or 'Can_Lower_Giant_Statue')
     
 
 - name: AC Platform Before Boss
@@ -148,7 +148,7 @@
     AC Platform Before Boss: Can_Defeat_Koloktos
     Ancient Cistern Flame Room: Can_Defeat_Koloktos
   locations:
-    Ancient Cistern - Heart Container: Can_Defeat_Koloktos
+    Ancient Cistern - Defeat Boss: Can_Defeat_Koloktos
 
 - name: Ancient Cistern Flame Room
   events:

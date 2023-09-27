@@ -86,7 +86,7 @@
   exits:
     SV Second Hub Center Room: Nothing
   locations:
-    Skyview Temple - Beetle Chest: Can_Defeat_Stalfos or Skyview_2
+    Skyview Temple - Chest after Stalfos Fight: Can_Defeat_Stalfos or Skyview_2
 
 
 - name: SV Second Hub Left Rooms
@@ -125,19 +125,19 @@
   dungeon: Skyview Temple
   exits:
     SV Last Room Before Rope: Can_Defeat_Bokoblins
-    SV Last Room Near Boss Key Chest: Long_Range_Skyward_Strike or Distance_Activator
+    SV Last Room Near Chest after Vines: Long_Range_Skyward_Strike or Distance_Activator
     Skyview Boss Room: Skyview_Temple_Boss_Key or boss_keys == removed
   locations:
     Skyview Temple - Chest near Boss Door: Nothing
 
 
-- name: SV Last Room Near Boss Key Chest
+- name: SV Last Room Near Chest after Vines
   dungeon: Skyview Temple
   exits:
     SV Last Room Before Rope: Nothing
     SV Last Room After Rope: Distance_Activator
   locations:
-    Skyview Temple - Boss Key Chest: Nothing
+    Skyview Temple - Chest after Vines: Nothing
 
 
 - name: Skyview Boss Room
@@ -145,7 +145,7 @@
     SV Last Room After Rope: Can_Defeat_Ghirahim
     Skyview Spring: Can_Defeat_Ghirahim
   locations:
-    Skyview Temple - Heart Container: Can_Defeat_Ghirahim
+    Skyview Temple - Defeat Boss: Can_Defeat_Ghirahim
 
 
 - name: Skyview Spring
@@ -157,4 +157,4 @@
     # Crest Hit: Ruby Tablet
   locations:
     Skyview Spring - Rupee on Spring Pillar: Beetle
-    Skyview Spring - Ruby Tablet: Goddess_Sword
+    Skyview Spring - Strike Crest: Goddess_Sword
