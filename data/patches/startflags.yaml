@@ -144,6 +144,7 @@ Sceneflags:
       - 28 # Unlocked door to Lanayru Sand Sea
 
   Sealed Grounds: # Scene Index 10
+    - 4  # Pushed log from BtT to Faron Woods
     - 7  # Activated vents
     - 13 # Unlocked Sealed Temple big door
     - 39 # Log to Behind the Temple pushed down
