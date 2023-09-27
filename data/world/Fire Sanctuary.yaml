@@ -109,7 +109,7 @@
     FS Magmanos Fight Room: "'Double_Magmanos_Defeated'"
     FS Under Magmanos Fight Room: Mogma_Mitts
   locations:
-    Fire Sanctuary - Mogma Mitts Chest: Nothing
+    Fire Sanctuary - Rescue First Trapped Mogma Chest: Nothing
 
 
 - name: FS Under Magmanos Fight Room
@@ -158,7 +158,7 @@
   exits:
     FS North Bridge East Side: Nothing
   locations:
-    Fire Sanctuary - Chest after Second Trapped Mogma: Mogma_Mitts and Sword
+    Fire Sanctuary - Rescue Second Trapped Mogma Chest: Mogma_Mitts and Sword
     Fire Sanctuary - Chest after Bombable Wall: Mogma_Mitts and Sword and Bomb_Bag
     
 
@@ -224,7 +224,7 @@
     FS Staricase Room Upper: Nothing
     FS In Front of Boss Door Past Bars: Nothing
   locations:
-    Fire Sanctuary - Boss Key Chest: Mogma_Mitts
+    Fire Sanctuary - Chest after Winged Torches: Mogma_Mitts
 
 
 - name: Fire Sanctuary Boss Room
@@ -232,7 +232,7 @@
     FS In Front of Boss Door: Can_Defeat_Ghirahim_2
     Fire Sanctuary Flame Room: Can_Defeat_Ghirahim_2
   locations:
-    Fire Sanctuary - Heart Container: Can_Defeat_Ghirahim_2
+    Fire Sanctuary - Defeat Boss: Can_Defeat_Ghirahim_2
 
 
 - name: Fire Sanctuary Flame Room

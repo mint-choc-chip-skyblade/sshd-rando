@@ -36,7 +36,7 @@
   exits:
     Sandship Main Deck: count(2, Sandship_Small_Key) or small_keys == removed
   locations:
-    Sandship - Boss Key Chest: Bow and 'Sandship_Freely_Usable_Timeshift_Stone' and Can_Defeat_Beamos
+    Sandship - Chest in Captain's Cabin: Bow and 'Sandship_Freely_Usable_Timeshift_Stone' and Can_Defeat_Beamos
 
 
 - name: Sandship Before Bow
@@ -53,7 +53,7 @@
   exits:
     Sandship Before Bow: Can_Defeat_Scervo_And_Dreadfuse
   locations:
-    Sandship - Bow Chest: Can_Defeat_Scervo_And_Dreadfuse
+    Sandship - Chest after Scervo Fight: Can_Defeat_Scervo_And_Dreadfuse
 
 
 - name: Sandship Corridor
@@ -123,5 +123,5 @@
 
 - name: Sandship Boss Room
   locations:
-    Sandship - Heart Container: Can_Defeat_Tentalus
+    Sandship - Defeat Boss: Can_Defeat_Tentalus
     Sandship - Nayru's Flame: Can_Defeat_Tentalus and Goddess_Sword

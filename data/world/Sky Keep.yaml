@@ -86,7 +86,7 @@
 - name: SK Ancient Cistern Room South
   dungeon: Sky Keep
   exits:
-    SK Triforce of Courage Room: 
+    SK Sacred Power of Farore Room: 
       (Sky_Keep_Small_Key or small_keys == removed) and
       Can_Defeat_Moblins and 
       Can_Defeat_Bokoblins and 
@@ -102,12 +102,12 @@
     SK Ancient Cistern Room South: Nothing
 
 
-- name: SK Triforce of Courage Room
+- name: SK Sacred Power of Farore Room
   dungeon: Sky Keep
   exits:
     SK Ancient Cistern Room South: Nothing
   locations:
-    Sky Keep - Triforce of Courage: Nothing
+    Sky Keep - Sacred Power of Farore: Nothing
 
 
 - name: SK Fire Sanctuary Room East
@@ -121,17 +121,17 @@
 - name: SK Fire Sanctuary Room End Platform
   dungeon: Sky Keep
   exits:
-    SK Triforce of Power Room: Nothing
+    SK Sacred Power of Din Room: Nothing
     SK Fire Sanctuary Room West: Nothing
     SK Fire Sanctuary Room East: Nothing
     
 
-- name: SK Triforce of Power Room
+- name: SK Sacred Power of Din Room
   dungeon: Sky Keep
   exits:
     SK Fire Sanctuary Room End Platform: Nothing
   locations:
-    Sky Keep - Triforce of Power: Nothing
+    Sky Keep - Sacred Power of Din: Nothing
 
 
 - name: SK Fire Sanctuary Room West
@@ -143,12 +143,12 @@
 - name: SK Sandship Room West
   dungeon: Sky Keep
   exits:
-    SK Triforce of Wisdom Room: Bow and Clawshots
+    SK Sacred Power of Nayru Room: Bow and Clawshots
 
 
-- name: SK Triforce of Wisdom Room
+- name: SK Sacred Power of Nayru Room
   dungeon: Sky Keep
   exits:
     SK Sandship Room West: Nothing
   locations:
-    Sky Keep - Triforce of Wisdom: Nothing
+    Sky Keep - Sacred Power of Nayru: Nothing
