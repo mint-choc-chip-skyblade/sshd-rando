@@ -299,7 +299,7 @@ pub enum ITEMFLAGS {
     UNK157                           = 0x9D,
     CAWLIN_LETTER                    = 0x9E,
     HORNED_COLOSSUS_BEETLE           = 0x9F,
-    BABY_RATTLE                      = 0xA0,
+    RATTLE                           = 0xA0,
     HORNET_LAVAE                     = 0xA1,
     BIRD_FEATHER                     = 0xA2,
     TUMBLEWEED                       = 0xA3,

@@ -59,7 +59,7 @@ def generate_item_pool(world: "World") -> None:
             "Emerald Tablet",
             "Ruby Tablet",
             "Amber Tablet",
-            "Babys Rattle",
+            "Rattle",
             "Cawlin's Letter",
             "Horned Colossus Beetle",
             "Sea Chart",

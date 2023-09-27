@@ -155,7 +155,7 @@
     Sky Keep Entrance Platform: Day and Clawshots
     Waterfall Island: Clawshots
     Waterfall Cave: Can_Cut_Trees_And_Logs
-    Bird Nest: logic_baby_rattle_from_beedles_shop and Day and Distance_Activator and (Beetle or Whip)
+    Bird Nest: logic_bird_nest_item_from_beedles_shop and Day and Distance_Activator and (Beetle or Whip)
   locations:
     Central Skyloft - Crystal between Wooden Planks: Night
     Central Skyloft - Crystal on West Cliff: Night
@@ -335,7 +335,7 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Bertie's Crystals: Babys_Rattle and Night
+    Skyloft Village - Bertie's Crystals: Rattle and Night
 
 
 - name: Sparrot's House

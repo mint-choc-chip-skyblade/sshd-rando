@@ -34,7 +34,7 @@ LIFE_TREE_SEEDLING = "Life Tree Seedling"
 STONE_OF_TRIALS = "Stone of Trials"
 CAWLINS_LETTER = "Cawlin's Letter"
 HORNED_COLOSSUS_BEETLE = "Horned Colossus Beetle"
-BABYS_RATTLE = "Baby's Rattle"
+RATTLE = "Rattle"
 SEA_CHART = "Sea Chart"
 SPIRAL_CHARGE = "Spiral Charge"
 HYLIAN_SHIELD = "Hylian Shield"
@@ -87,7 +87,7 @@ ITEM_ITEMFLAGS = {
     STONE_OF_TRIALS: 180,
     CAWLINS_LETTER: 158,
     HORNED_COLOSSUS_BEETLE: 159,
-    BABYS_RATTLE: 160,
+    RATTLE: 160,
     SEA_CHART: 98,
     TRIFORCE_OF_COURAGE: 95,
     TRIFORCE_OF_POWER: 96,
@@ -144,7 +144,7 @@ FREESTANDING_ITEMS_TO_USE_DEFAULT_SCALING = [
     95,  # Triforce of Courage
     96,  # Triforce of Power
     97,  # Triforce of Wisdom
-    160,  # Baby's Rattle
+    160,  # Rattle
 ]
 
 FREESTANDING_ITEM_OFFSETS = {
@@ -266,7 +266,7 @@ FREESTANDING_ITEM_OFFSETS = {
     153: 16.0,  # Empty Bottle
     158: 12.0,  # Cawlin's Letter
     159: 20.0,  # Horned Colossus Beetle
-    160: 5.0,  # Baby's Rattle
+    160: 5.0,  # Rattle
     161: 16.0,  # Hornet Larvae (unused)
     162: 16.0,  # Bird Feather (unused)
     163: 16.0,  # Tumbleweed
