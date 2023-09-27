@@ -424,9 +424,9 @@
   - off/on:                 "empty description"
 
 
-- name: logic_baby_rattle_from_beedles_shop
+- name: logic_bird_nest_item_from_beedles_shop
   default_option: "off"
-  pretty_name: Baby Rattle from Beetle's Shop
+  pretty_name: Bird's Nest Item from Beetle's Shop
   pretty_options:
     - "Off"
     - "On"

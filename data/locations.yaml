@@ -227,7 +227,7 @@
   text: the <r<item check girl>> hides
 
 - name: Central Skyloft - Item in Bird Nest
-  original_item: Baby's Rattle
+  original_item: Rattle
   type:
   Paths:
     - stage/F000/r0/l0/Item/13

@@ -398,7 +398,7 @@
   getmodelname: GetTerryCage
   advancement: true
 - id: 160
-  name: Baby's Rattle
+  name: Rattle
   oarc:
   - GetGaragara
   - PutGaragara
