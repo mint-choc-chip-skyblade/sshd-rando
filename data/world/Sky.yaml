@@ -104,7 +104,7 @@
     The Sky: Day
   locations:
     Beedle's Island - Crystal: Night and Beetle
-    Beedle's Island - Beedle's Crystals: Night and Horned_Colossus_Beetle
+    Beedle's Island - Beedle's Crystals: Night and Beedles_Insect_Cage
     Beedle's Island - Top Goddess Chest: Day and 'Goddess_Cube_at_Ride_near_Temple_of_Time'
     Beedle's Island - Cage Goddess Chest: (Night or (Day and logic_beedles_island_cage_chest_dive)) and 'Goddess_Cube_on_top_of_Skyview'
 
