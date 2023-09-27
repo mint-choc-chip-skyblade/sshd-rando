@@ -21,3 +21,6 @@
 
 .global fix_sandship_boat
 .type fix_sandship_boat, @function
+
+.global handle_er_cases
+.type handle_er_cases, @function

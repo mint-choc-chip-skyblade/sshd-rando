@@ -21,6 +21,25 @@ main:
 
     # Reloader stuff
     CURRENT_STAGE_NAME: 0x0abfd8d8
+    CURRENT_STAGE_SUFFIX: 0x0abfd8dc
+    CURRENT_FADE_FRAMES: 0x0abfd8f8
+    CURRENT_ROOM: 0x0abfd8fa
+    CURRENT_LAYER: 0x0abfd8fb
+    CURRENT_ENTRANCE: 0x0abfd8fc
+    CURRENT_SOMETHING: 0x0abfd900
+    NEXT_STAGE_NAME: 0x0abfd904
+    NEXT_STAGE_SUFFIX: 0x0abfd908
+    NEXT_FADE_FRAMES: 0x0abfd924
+    NEXT_ROOM: 0x0abdf926 
+    NEXT_LAYER: 0x0abdf927
+    NEXT_ENTRANCE: 0x0abfd928
+    NEXT_SOMETHING: 0x0abfd92c
+    GAME_RELOADER: 0x0abfd930
+    CURRENT_LAYER_COPY: 0x0abfd94c
+    RESPAWN_TYPE: 0x0abfd960
+
+    # Actor Param Stuff
+    ACTOR_PARAM_SCALE: 0x0ac018d0
 
     # Functions
     strlen: 0x0905f5c0

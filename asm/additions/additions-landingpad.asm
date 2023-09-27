@@ -27,6 +27,14 @@ b.eq fix_freestanding_item_y_offset
 cmp w8, #5
 b.eq fix_sandship_boat
 
+; handle er cases
+cmp w8, #6
+b.eq handle_er_cases
+
+; handle er action states
+cmp w8, #7
+b.eq handle_er_action_states
+
 ret ; this should never be reached
 
 ; ends at 0x360A6500
