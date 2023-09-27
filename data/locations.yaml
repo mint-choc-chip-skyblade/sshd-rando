@@ -1914,7 +1914,7 @@
     - stage/B300/r0/l1/HeartCo
     - stage/B300/r0/l3/HeartCo
 
-- name: Lanayru Mining Facility - Hall of Ancient Robots
+- name: Lanayru Mining Facility - Exit Hall of Ancient Robots
   original_item: Goddess's Harp
   goal_location: true
   type:
