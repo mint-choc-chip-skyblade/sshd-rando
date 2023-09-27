@@ -335,12 +335,12 @@
       param2: 547
       next: -1
       param3: 0
-  - name: Go to Horned Colossus Beetle Storyflag
+  - name: Go to Beedle's Insect Cage Storyflag
     type: flowpatch
     index: 380
     flow:
-      next: Horned Colossus Beetle Storyflag
-  - name: Horned Colossus Beetle Storyflag
+      next: Beedle's Insect Cage Storyflag
+  - name: Beedle's Insect Cage Storyflag
     type: flowadd
     flow:
       type: type3

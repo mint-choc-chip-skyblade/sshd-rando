@@ -770,7 +770,7 @@
   text: the <r<ancient whale within a raging storm>> bellows out
 
 - name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
-  original_item: Horned Colossus Beetle
+  original_item: Beedle's Insect Cage
   type: Minigames
   Paths:
     - event/116-InsectGame/69

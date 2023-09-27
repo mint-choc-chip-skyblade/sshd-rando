@@ -61,7 +61,7 @@ def generate_item_pool(world: "World") -> None:
             "Amber Tablet",
             "Rattle",
             "Cawlin's Letter",
-            "Horned Colossus Beetle",
+            "Beedle's Insect Cage",
             "Sea Chart",
             "Triforce of Courage",
             "Triforce of Wisdom",
