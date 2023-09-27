@@ -210,7 +210,7 @@
   original_item: Gratitude Crystal Pack
   type: Gratitude Crystal Sidequests
   Paths:
-    - event/115-Town2/814
+    - event/115-Town2/813
     - oarc/F000/l4
     - oarc/F000/l6
     - oarc/F005r/l0
@@ -227,7 +227,7 @@
   text: the <r<item check girl>> hides
 
 - name: Central Skyloft - Item in Bird Nest
-  original_item: Baby's Rattle
+  original_item: Rattle
   type:
   Paths:
     - stage/F000/r0/l0/Item/13
@@ -770,7 +770,7 @@
   text: the <r<ancient whale within a raging storm>> bellows out
 
 - name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
-  original_item: Horned Colossus Beetle
+  original_item: Beedle's Insect Cage
   type: Minigames
   Paths:
     - event/116-InsectGame/69
@@ -841,6 +841,7 @@
     - oarc/F400/l0
   hint: sometimes
   text: <r<drawing upon a magical wall>> reveals
+
 #Sealed Grounds - Behind the Temple Triforce on Goddess Wall:
 #  original_item: Gold Rupee
 #  type: long
@@ -880,7 +881,7 @@
 
 - name: Faron Woods - Kikwi Elder's Reward
   original_item: Progressive Slingshot
-  type: Combat #because of the Lopsa Bokoblin fight, this is a Combat reward
+  type: Combat # because of the Lopsa Bokoblin fight, this is a Combat reward
   Paths:
     - event/200-Forest/595
     - oarc/F100/l0

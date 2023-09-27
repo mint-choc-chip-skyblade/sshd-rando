@@ -26,7 +26,7 @@ fmov s0, 0x40000000 ; 2.0
 orr w19, w1, #0x200 ; the 9th bit (zero-indexed)
 
 
-; Always act like Baby Rattle
+; Always act like Rattle
 
 ; dAcItem::init
 .offset 0x084e4e54

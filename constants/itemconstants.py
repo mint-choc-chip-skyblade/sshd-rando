@@ -33,8 +33,8 @@ LIFE_TREE_FRUIT = "Life Tree Fruit"
 LIFE_TREE_SEEDLING = "Life Tree Seedling"
 STONE_OF_TRIALS = "Stone of Trials"
 CAWLINS_LETTER = "Cawlin's Letter"
-HORNED_COLOSSUS_BEETLE = "Horned Colossus Beetle"
-BABYS_RATTLE = "Baby's Rattle"
+BEEDLES_INSECT_CAGE = "Beedle's Insect Cage"
+RATTLE = "Rattle"
 SEA_CHART = "Sea Chart"
 SPIRAL_CHARGE = "Spiral Charge"
 HYLIAN_SHIELD = "Hylian Shield"
@@ -48,6 +48,7 @@ COMPLETE_TRIFORCE = "Completed Triforce"
 
 KEY_PIECE = "Key Piece"
 FULL_ET_KEY = "Full ET Key"
+SCRAPPER = "Scrapper"
 EMPTY_BOTTLE = "Empty Bottle"
 EXTRA_WALLET = "Extra Wallet"
 GROUP_OF_TADTONES = "Group of Tadtones"
@@ -86,8 +87,8 @@ ITEM_ITEMFLAGS = {
     LIFE_TREE_SEEDLING: 197,
     STONE_OF_TRIALS: 180,
     CAWLINS_LETTER: 158,
-    HORNED_COLOSSUS_BEETLE: 159,
-    BABYS_RATTLE: 160,
+    BEEDLES_INSECT_CAGE: 159,
+    RATTLE: 160,
     SEA_CHART: 98,
     TRIFORCE_OF_COURAGE: 95,
     TRIFORCE_OF_POWER: 96,
@@ -106,7 +107,7 @@ ITEM_STORYFLAGS = {
     EMERALD_TABLET: 46,
     RUBY_TABLET: 47,
     AMBER_TABLET: 48,
-    HORNED_COLOSSUS_BEETLE: 476,
+    BEEDLES_INSECT_CAGE: 476,
     CAWLINS_LETTER: 547,
     SPIRAL_CHARGE: 364,
     SEA_CHART: 271,
@@ -121,6 +122,7 @@ ITEM_STORYFLAGS = {
     TRIFORCE_OF_WISDOM: 730,
     COMPLETE_TRIFORCE: 645,
     FULL_ET_KEY: 120,
+    SCRAPPER: 323,
     PROGRESSIVE_SWORD: [
         906,
         907,
@@ -144,7 +146,7 @@ FREESTANDING_ITEMS_TO_USE_DEFAULT_SCALING = [
     95,  # Triforce of Courage
     96,  # Triforce of Power
     97,  # Triforce of Wisdom
-    160,  # Baby's Rattle
+    160,  # Rattle
 ]
 
 FREESTANDING_ITEM_OFFSETS = {
@@ -265,8 +267,8 @@ FREESTANDING_ITEM_OFFSETS = {
     140: 0.0,  # Big Bug Net (unused)
     153: 16.0,  # Empty Bottle
     158: 12.0,  # Cawlin's Letter
-    159: 20.0,  # Horned Colossus Beetle
-    160: 5.0,  # Baby's Rattle
+    159: 20.0,  # Beedle's Insect Cage
+    160: 5.0,  # Rattle
     161: 16.0,  # Hornet Larvae (unused)
     162: 16.0,  # Bird Feather (unused)
     163: 16.0,  # Tumbleweed
