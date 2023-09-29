@@ -333,7 +333,7 @@ class World:
             if item == None:
                 continue
 
-            # Small Keys, Boss Keys, Maps, Caves Key
+            # Small Keys, Boss Keys, Maps, Caves Key, Shop items
             if (
                 (
                     self.setting("small_keys") == "vanilla"
@@ -346,6 +346,10 @@ class World:
                 or (
                     self.setting("lanayru_caves_key") == "vanilla"
                     and item == self.get_item("Lanayru Caves Small Key")
+                )
+                or (
+                    self.setting("randomized_shops") == "vanilla"
+                    and "Beedle's Shop Purchases" in location.types
                 )
             ):
                 location.set_current_item(item)

@@ -26,6 +26,16 @@
     - randomized:           "Shops can contain any items"
 
 
+- name: scrap_shop_upgrades
+  default_option: 'on'
+  pretty_name: Place Scrap Shop Upgrades
+  pretty_options:
+    - 'Off'
+    - 'On'
+  options:
+    - off/on:                       "empty description"
+    
+
 - name: full_wallet_upgrades
   default_option: "off"
   pretty_name: Full Wallet Upgrades
@@ -251,16 +261,6 @@
 - name: decouple_entrances
   default_option: 'off'
   pretty_name: Decouple Entrances
-  pretty_options:
-    - 'Off'
-    - 'On'
-  options:
-    - off/on:                       "empty description"
-
-
-- name: scrap_shop_upgrades
-  default_option: 'on'
-  pretty_name: Place Scrap Shop Upgrades
   pretty_options:
     - 'Off'
     - 'On'

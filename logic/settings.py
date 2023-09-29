@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import Counter, OrderedDict
 import yaml
 
 
@@ -49,7 +49,7 @@ class SettingInfo:
         return self.pretty_name | self.name
 
 
-settings_info_map: dict[str, SettingInfo] = {}
+settings_info_map: OrderedDict[str, SettingInfo] = {}
 
 
 # Setting for a specific world

@@ -369,7 +369,7 @@
 - name: Skipper's Retreat Skydive Platform
   hint_region: Lanayru Sand Sea
   exits:
-    Skipper's Retreat Dock: Nothing
+    Skipper's Retreat Dock: Clawshots
   locations:
     Skipper's Retreat - Skydive Chest: Nothing
 

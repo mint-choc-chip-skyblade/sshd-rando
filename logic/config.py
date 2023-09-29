@@ -91,7 +91,7 @@ def write_config_to_file(filename: str, conf: Config):
                 for pool in setting_map.mixed_entrance_pools:
                     config_out[world_num]["mixed_entrance_pools"].append(pool)
 
-        yaml.safe_dump(config_out, config_file)
+        yaml.safe_dump(config_out, config_file, sort_keys=False)
 
 
 def load_config_from_file(filename: str, allow_rewrite: bool = True) -> Config:
