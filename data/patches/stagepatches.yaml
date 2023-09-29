@@ -32,7 +32,7 @@ F000: # Skyloft
     layer: 0
   - name: unnecessary oarcs
     type: oarcdelete
-    oarc: MoldoGut_Baby # baby molderarch, is probably here because of the dust pile but not needed
+    oarc: MoldoGut_Baby # baby moldararch, is probably here because of the dust pile but not needed
     layer: 0
   - name: delete people on bridge 1
     type: oarcdelete
@@ -4090,6 +4090,16 @@ D101: # Ancient Cistern
       flag6: 0
       zero: 0
       saveprompt: 0
+  - name: Move Rupee under Lilypad # So it doesn't get caught up in the water stream
+    type: objpatch
+    id: 0xFC22
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      posx: -800
+      posy: -310
+      posz: -7590
   - name: extra Bomb flower
     type: objadd
     layer: 0
@@ -4398,7 +4408,15 @@ D201_1: # FS B
       anglez: 0
       id: 0xFC20
       name: ClawSTg
-  - name: Fist Trapped Mogma CS delete
+  - name: Move first trapped Mogma lever down to be reachable
+    type: objpatch
+    room: 5
+    layer: 0
+    id: 0xFC0E
+    objtype: OBJ
+    object:
+      posy: -200
+  - name: First Trapped Mogma CS delete
     type: objdelete
     layer: 0
     room: 5
@@ -4559,6 +4577,14 @@ D300: # LMF A
       name: Tubo
 
 D300_1: # LMF B
+  - name: Remove CS after blowing up boxes # Only one of the boxes plays the CS
+    type: objpatch
+    id: 0xFC62
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      params1: 0xFFF5CFF0 # Was 0xF035CFF0; 0x0FF00000 = eventid
   - name: Close door to BK room from both sides
     type: objpatch
     index: 6 # all have id FFFF :(

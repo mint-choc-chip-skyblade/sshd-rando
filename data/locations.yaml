@@ -1973,12 +1973,12 @@
   text: the <r<lone east chest in the Ancient Cistern>> contains
   Paths:
     - stage/D101/r1/l0/TBox/67
-# # Can Be Locked Out Of if activating water pillar before collecting
-# Ancient Cistern - Rupee under Lilypad:
-#   original_item: Red Rupee
-#   type: Rupees (No Quick Beetle)
-#   Paths:
-#     - stage/D101/r5/l0/Item/13
+
+- name: Ancient Cistern - Rupee under Lilypad
+  original_item: Red Rupee
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r5/l0/Item/13
 
 - name: Ancient Cistern - Chest after Whip Hooks
   original_item: Ancient Cistern Map
