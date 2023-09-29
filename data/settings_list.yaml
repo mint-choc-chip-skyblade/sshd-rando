@@ -464,7 +464,7 @@
 
 - name: logic_bird_nest_item_from_beedles_shop
   default_option: "off"
-  pretty_name: Bird's Nest Item from BeeDle's Shop
+  pretty_name: Bird's Nest Item from Beedle's Shop
   pretty_options:
     - "Off"
     - "On"

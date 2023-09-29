@@ -15,7 +15,7 @@
     LMF First Room: Nothing
     LMF Big Hub South: Nothing # Push boxes
     LMF Key Locked Room: Lanayru_Mining_Facility_Small_Key or small_keys == removed
-    LMF First West Room: Gust_Bellows # Blow sand of switch and box
+    LMF First West Room: Gust_Bellows # Blow sand off switch and box
 
 
 - name: LMF Key Locked Room
