@@ -13,15 +13,17 @@
   dungeon: Lanayru Mining Facility
   exits:
     LMF First Room: Nothing
-    LMF Big Hub South: Nothing
+    LMF Big Hub South: Nothing # Push boxes
     LMF Key Locked Room: Lanayru_Mining_Facility_Small_Key or small_keys == removed
-    LMF First West Room: Gust_Bellows
+    LMF First West Room: Gust_Bellows # Blow sand off switch and box
 
 
 - name: LMF Key Locked Room
   dungeon: Lanayru Mining Facility
   events:
-    LMF Key Locked Room Timeshift Stone: (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)) and (Bow or Beetle or (Slingshot and logic_lmf_ceiling_precise_slingshot))
+    # Blow up the box on top of the ladder and hit the timeshift stone
+    LMF Key Locked Room Timeshift Stone: "(Hook_Beetle or (Bomb_Bag and logic_bomb_throws)) and
+                                          (Bow or Beetle or (Slingshot and logic_lmf_ceiling_precise_slingshot))"
   exits:
     LMF First Hub: Nothing
     LMF Hop Across Boxes Room: "'LMF_Key_Locked_Room_Timeshift_Stone'"
@@ -57,8 +59,10 @@
 
 - name: LMF Armos Fight Room
   dungeon: Lanayru Mining Facility
+  events:
+    Can Activate Armos Room Timeshift Stone: Gust_Bellows and (Slingshot or Bow or Goddess_Sword or logic_lmf_whip_armos_room_timeshift_stone)
   exits:
-    LMF Big Hub Past West Gate: Can_Defeat_Armos and (Distance_Activator or Goddess_Sword)
+    LMF Big Hub Past West Gate: ('Can_Activate_Armos_Room_Timeshift_Stone') and Can_Defeat_Armos
   locations:
     Lanayru Mining Facility - Chest after Armos Fight: Can_Defeat_Armos and (Distance_Activator or Goddess_Sword)
 
@@ -68,8 +72,8 @@
   exits:
     LMF First Hub: Nothing
     LMF Big Hub After Wooden Boxes: Bomb_Bag or Hook_Beetle
-    LMF Big Hub Past West Gate: can_access(LMF Big Hub Past West Gate)
-    LMF Big Hub Between Wind Gates: "'LMF_First_Wind_Gate'"
+    LMF Big Hub Past West Gate: can_access(LMF Big Hub Past West Gate) # add shortcut here
+    LMF Big Hub Between Wind Gates: "'LMF_First_Wind_Gate'" # add shortcut here
 
 
 - name: LMF Big Hub After Wooden Boxes
@@ -112,7 +116,9 @@
   exits:
     LMF Boss Room: (Lanayru_Mining_Facility_Boss_Key or small_keys == removed) and Can_Hit_Timeshift_Stone_in_Minecart
     LMF Big Hub Near Boss Key Room North: logic_lmf_minecart_jump and (Bomb_Bag or Beetle)
-    LMF Big Hub Between Wind Gates: Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows and Can_Defeat_Beamos
+    LMF Big Hub Between Wind Gates: "Can_Hit_Timeshift_Stone_in_Minecart and
+                                     Can_Defeat_Sentrobe and Gust_Bellows and
+                                     Can_Defeat_Beamos"
 
 
 - name: LMF Big Hub Between Wind Gates
@@ -142,7 +148,7 @@
 - name: LMF Big Hub Near Boss Key Room North
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Big Hub Between Wind Gates: Nothing
+    LMF Big Hub Between Wind Gates: Nothing # Climb ladder and jump down
     LMF Boss Key Room: Nothing
     LMF Big Hub Near Boss Door: (Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows) or (logic_lmf_minecart_jump and (Bomb_Bag or Beetle))
   locations:
@@ -157,18 +163,18 @@
 
 - name: LMF After Sand Drain
   exits:
-    LMF Great Hall: Can_Defeat_Moldarach
+    LMF Hall of Ancient Robots: Can_Defeat_Moldarach
   locations:
     Lanayru Mining Facility - Defeat Boss: Can_Defeat_Moldarach
 
 
-- name: LMF Great Hall
+- name: LMF Hall of Ancient Robots
   exits:
     LMF Boss Room: Nothing
-    LMF End of Great Hall: Beetle or Bow
+    LMF End of Hall of Ancient Robots: Beetle or Bow
 
 
-- name: LMF End of Great Hall
+- name: LMF End of Hall of Ancient Robots
   exits:
     Temple of Time West Past Rubble: Nothing
   locations:

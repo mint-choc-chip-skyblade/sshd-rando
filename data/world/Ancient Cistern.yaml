@@ -4,6 +4,7 @@
   dungeon_starting_area: true
   events:
     Can Pull Waterfall Lever: Whip
+    Can Collect Water: Bottle
   exits:
     AC East Rooms: Nothing
     AC Lobby After Whip Hooks: Whip
@@ -14,6 +15,19 @@
   locations:
     Ancient Cistern - Rupee in East Hand: Water_Dragons_Scale
     Ancient Cistern - Rupee in West Hand: Water_Dragons_Scale
+
+
+- name: AC East Rooms
+  dungeon: Ancient Cistern
+  exits:
+    Ancient Cistern Lobby: Nothing
+  locations:
+    Ancient Cistern - Rupee in East Part in Cubby: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - First Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Second Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Third Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Rupee in East Part in Main Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Chest in East Part: Can_Unlock_Combination_Lock and Water_Dragons_Scale
 
 
 - name: AC Lobby After Whip Hooks
@@ -33,7 +47,7 @@
     Can Pull Waterfall Lever: logic_ac_lever_jump_trick
   exits:
     # Can front hop and jump slash
-    AC Lobby After Whip Hooks: Sword and logic_ac_map_chest_jump
+    AC Lobby After Whip Hooks: Sword and logic_ac_chest_after_whip_hooks_jump
     Ancient Cistern Lobby: Nothing
   locations:
     Ancient Cistern - Chest near Vines: Nothing
@@ -65,33 +79,21 @@
 - name: AC Back Room
   dungeon: Ancient Cistern
   exits:
-    AC Lobby After Whip Hooks: Nothing
-    AC Lobby Vines Area: Whip and Water_Dragons_Scale
+    AC Lobby After Whip Hooks: Nothing # Run up wall to pull lever or leave dungeon
+    AC Lobby Vines Area: Whip and Water_Dragons_Scale # The quadra-baba is kinda annoying but it's not too hard
   locations:
     Ancient Cistern - Rupee under Lilypad: Water_Dragons_Scale # Flip lilypad and swim under
 
 
-- name: AC Spider Thread Area
-  dungeon: Ancient Cistern
-  events:
-    Can Freely Raise and Lower Statue: Whip
-  exits:
-    AC Basement Spider Thread: Nothing
-    AC Lobby Vines Area: Nothing
-    Ancient Cistern Lobby: Nothing
-    
-
-- name: AC East Rooms
+- name: AC Inside Statue
   dungeon: Ancient Cistern
   exits:
-    Ancient Cistern Lobby: Nothing
+    AC Basement: "'Can_Lower_Giant_Statue'"
+    Ancient Cistern Lobby: Whip
+    AC Platform Before Boss: (Ancient_Cistern_Boss_Key or boss_keys == removed) and Whip
   locations:
-    Ancient Cistern - Rupee in East Part in Cubby: Can_Unlock_Combination_Lock and Water_Dragons_Scale
-    Ancient Cistern - First Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
-    Ancient Cistern - Second Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
-    Ancient Cistern - Third Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
-    Ancient Cistern - Rupee in East Part in Main Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
-    Ancient Cistern - Chest in East Part: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Chest in Key Locked Room: "(count(2, Ancient_Cistern_Small_Key) or small_keys == removed) and
+                                                 (Can_Defeat_Stalmaster or 'Can_Lower_Giant_Statue')"
 
 
 # Implies statue is lowered
@@ -99,22 +101,11 @@
   dungeon: Ancient Cistern
   exits:
     AC Inside Statue: Nothing
-    AC Basement Rotating Vines: (Whip and (Hook_Beetle or (Bomb_Bag and logic_bomb_throws))) or Clawshots # TODO: Damage Multiplier Check?
+
+    # You can clawshot straight onto the rotating vines
+    AC Basement Rotating Vines: "Clawshots or
+                                (Whip and (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)))" # TODO: Damage Multiplier Check?
     AC Under the Statue: "'Can_Freely_Raise_and_Lower_Statue'"
-
-
-- name: AC Basement Rotating Vines
-  dungeon: Ancient Cistern
-  exits:
-    AC Basement: Nothing
-    AC Basement Spider Thread: Whip
-
-
-- name: AC Basement Spider Thread
-  dungeon: Ancient Cistern
-  exits:
-    AC Basement: Nothing
-    AC Spider Thread Area: Nothing
 
 
 # Implies statue is raised
@@ -128,14 +119,29 @@
     Ancient Cistern - Chest under Stone Statue: "'Can_Lower_Giant_Statue'"
 
 
-- name: AC Inside Statue
+- name: AC Basement Rotating Vines
   dungeon: Ancient Cistern
   exits:
-    AC Basement: "'Can_Lower_Giant_Statue'"
-    Ancient Cistern Lobby: Whip
-    AC Platform Before Boss: (Ancient_Cistern_Boss_Key or boss_keys == removed) and Whip
-  locations:
-    Ancient Cistern - Chest in Key Locked Room: (count(2, Ancient_Cistern_Small_Key) or small_keys == removed) and (Can_Defeat_Stalmaster or 'Can_Lower_Giant_Statue')
+    AC Basement: Nothing # You can jump back down to where you came from
+    AC Basement Bone Pile with Long Thread: Whip
+
+
+# Renamed from SD cos just "Spider Thread" isn't clear
+- name: AC Basement Bone Pile with Long Thread
+  dungeon: Ancient Cistern
+  exits:
+    AC Basement: Nothing
+    AC Platform with Thread to Basement: Nothing
+
+
+- name: AC Platform with Thread to Basement
+  dungeon: Ancient Cistern
+  events:
+    Can Freely Raise and Lower Statue: Whip
+  exits:
+    AC Basement Bone Pile with Long Thread: Nothing
+    AC Lobby Vines Area: Nothing
+    Ancient Cistern Lobby: Nothing
     
 
 - name: AC Platform Before Boss

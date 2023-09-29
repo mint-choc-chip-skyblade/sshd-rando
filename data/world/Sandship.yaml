@@ -8,9 +8,9 @@
     Sandship Raise Timeshift Stone: Bow
     Sandship Freely Usable Timeshift Stone: Bow and 'Finish_Mast_Sequence'
   exits:
-    Sandship Before Bow: Nothing
+    Sandship Before Ship's Bow: Nothing # You can leave and re-enter to reset the timeshift stone and the bars on the door
     Sandship Captain's Cabin: (count(2, Sandship_Small_Key) or small_keys == removed) and ('Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone')
-    Sandship Starboard Rooms: Bow and 'Open_Starboard_Windows'
+    Sandship Starboard Rooms: Bow and 'Open_Starboard_Windows' # Add shortcut here
     Sandship Mast: "'Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone'"
     Lanayru Sand Sea: Nothing # If stuck in the mast sequence, deathwarp
 
@@ -39,19 +39,19 @@
     Sandship - Chest in Captain's Cabin: Bow and 'Sandship_Freely_Usable_Timeshift_Stone' and Can_Defeat_Beamos
 
 
-- name: Sandship Before Bow
+- name: Sandship Before Ship's Bow
   dungeon: Sandship
   exits:
-    Sandship Bow: count(2, Sandship_Small_Key) or small_keys == removed
+    Sandship Ship's Bow: count(2, Sandship_Small_Key) or small_keys == removed
     Sandship Corridor: (Goddess_Sword or Bow or Bomb_Bag or Slingshot or logic_sandship_itemless_spume) or 'Sandship_Freely_Usable_Timeshift_Stone'
   locations:
     Sandship - Chest before 4-Door Corridor: "'Sandship_Freely_Usable_Timeshift_Stone'"
 
 
-- name: Sandship Bow
+- name: Sandship Ship's Bow
   dungeon: Sandship
   exits:
-    Sandship Before Bow: Can_Defeat_Scervo_And_Dreadfuse
+    Sandship Before Ship's Bow: Can_Defeat_Scervo_And_Dreadfuse
   locations:
     Sandship - Chest after Scervo Fight: Can_Defeat_Scervo_And_Dreadfuse
 
@@ -59,7 +59,7 @@
 - name: Sandship Corridor
   dungeon: Sandship
   exits:
-    Sandship Before Bow: (Goddess_Sword or Bow or Bomb_Bag or Slingshot or logic_sandship_itemless_spume) or 'Sandship_Freely_Usable_Timeshift_Stone'
+    Sandship Before Ship's Bow: (Goddess_Sword or Bow or Bomb_Bag or Slingshot or logic_sandship_itemless_spume) or 'Sandship_Freely_Usable_Timeshift_Stone'
     Sandship Starboard Rooms: "'Sandship_Freely_Usable_Timeshift_Stone'"
     Sandship Port Rooms: Bow
     Sandship Before Boss Door: Nothing
@@ -93,6 +93,7 @@
     Sandship - Chest behind Combination Lock: (Gust_Bellows or 'Sandship_Freely_Usable_Timeshift_Stone' or logic_sandship_no_combination_hint) and Can_Unlock_Combination_Lock
 
 
+# All of the bottom-of-the-ship bit, not just the prison
 - name: Sandship Brig
   dungeon: Sandship
   exits:

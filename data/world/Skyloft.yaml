@@ -29,7 +29,7 @@
     Knight Academy - Owlan's Crystals: Day and 'Retrieve_Oolo'
     Knight Academy - Item from Cawlin: Day and 'Knock_on_Toilet_Door'
     Knight Academy - Ghost/Pipit's Crystals: Day and Cawlins_Letter
-    Knight Academy - Fledge's Crystals: Night and 'Endurance_Potion'
+    Knight Academy - Fledge's Crystals: Night and 'Stamina_Potion'
 
 
 - name: Knight Academy Chimney
@@ -165,9 +165,9 @@
     Central Skyloft - Parrow's Crystals: Day and 'Save_Orielle'
     Central Skyloft - Shed Chest: Water_Dragons_Scale
     Central Skyloft - Shed Goddess Chest: Water_Dragons_Scale and 'Goddess_Cube_on_Sand_Slide'
-    Central Skyloft - Crystal on Waterfall Island: Night and Quick_Beetle
-    Central Skyloft - Crystal after Waterfall Cave: Night and Beetle
-    Central Skyloft - Crystal in Loftwing Prison: Night and Beetle
+    Central Skyloft - Crystal on Waterfall Island: Night and Quick_Beetle and logic_precise_beetle
+    Central Skyloft - Crystal after Waterfall Cave: Night and Beetle and logic_precise_beetle
+    Central Skyloft - Crystal in Loftwing Prison: Night and Beetle and logic_precise_beetle
 
 
 - name: Bird Nest
@@ -182,7 +182,7 @@
 - name: Bazaar
   allowed_time_of_day: All
   events:
-    Endurance Potion: Bottle and Raise_Lanayru_Mining_Facility
+    Stamina Potion: Bottle and Raise_Lanayru_Mining_Facility
   exits:
     Bazaar North: Nothing
     Bazaar West: Nothing
@@ -269,6 +269,8 @@
 
 - name: Waterfall Island
   allowed_time_of_day: All
+  events:
+    Can Collect Water: Bottle
   exits:
     Central Skyloft: Nothing
     Skyloft Village: Nothing
@@ -377,15 +379,15 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Batreaux - 5 Crystals: gratitude_crystals(5)
-    Batreaux - 10 Crystals: gratitude_crystals(10)
-    Batreaux - 30 Crystals: gratitude_crystals(30)
-    Batreaux - 30 Crystals Chest: gratitude_crystals(30)
-    Batreaux - 40 Crystals: gratitude_crystals(40)
-    Batreaux - 50 Crystals: gratitude_crystals(50)
-    Batreaux - 70 Crystals: gratitude_crystals(70)
+    Batreaux - 5 Crystals:                gratitude_crystals(5)
+    Batreaux - 10 Crystals:               gratitude_crystals(10)
+    Batreaux - 30 Crystals:               gratitude_crystals(30)
+    Batreaux - 30 Crystals Chest:         gratitude_crystals(30)
+    Batreaux - 40 Crystals:               gratitude_crystals(40)
+    Batreaux - 50 Crystals:               gratitude_crystals(50)
+    Batreaux - 70 Crystals:               gratitude_crystals(70)
     Batreaux - 70 Crystals Second Reward: gratitude_crystals(70)
-    Batreaux - 80 Crystals: gratitude_crystals(80)
+    Batreaux - 80 Crystals:               gratitude_crystals(80)
 
 
 - name: Skyloft Past Waterfall Cave Jump

@@ -5,7 +5,7 @@
   exits:
                  # Lower the drawbridge and Dislodge the boulder
     ET Hub Room: "(Beetle or Bow or (Long_Range_Skyward_Strike and logic_et_keese_yeet)) and 
-                  (Slingshot or (Beetle and (logic_advanced_lizalfos_combat or Can_Defeat_Lizalfos)) or Clawshots or Bow or Long_Range_Skyward_Strike)"
+                  (Slingshot or Clawshots or Bow or Long_Range_Skyward_Strike or (Can_Defeat_Lizalfos and Beetle))"
     Near Temple Entrance: Nothing
   locations:
     Earth Temple - Vent Chest: Digging_Mitts
@@ -18,15 +18,15 @@
     ET Push Left Peg: Nothing
   exits:
     ET Past Lava Section: (Bomb_Bag or Hook_Beetle) and Beetle
-    ET East Room: Nothing
+    ET East Room: Nothing # Use bomb flowers to blow up rock
     ET West Room: Bomb_Bag or Hook_Beetle
     ET Room with Slopes: "'ET_Push_Left_Peg' and 'ET_Push_Right_Peg'"
   locations:
     Earth Temple - Rupee above Drawbridge: Beetle
-    Earth Temple - Chest behind Bombable Rock: Nothing
+    Earth Temple - Chest behind Bombable Rock: Nothing # Use nearby bomb flowers
     Earth Temple - Chest Left of Main Room Bridge: Nothing
     Earth Temple - Ledd's Gift: Can_Defeat_Lizalfos
-    Earth Temple - Rupee in Lava Tunnel: Beetle and (Bomb_Bag or Hook_Beetle)
+    Earth Temple - Rupee in Lava Tunnel: Beetle and (Bomb_Bag or Hook_Beetle) # Can use tough beetle and go round in reverse
 
 
 - name: ET Past Lava Section
@@ -43,7 +43,9 @@
   dungeon: Earth Temple
   exits:
     ET Hub Room: Nothing
-    # It'd be annoying to put in logic, but you need boulder access to reach the central part
+    # It'd be annoying to put in logic, but you need boulder access to reach the central part.
+    # If the boulder doesn't spawn where you can use it, you're locked.
+    # Releasing the boulder from here doesn't help as it's too far away.
   locations:
     Earth Temple - Chest after Double Lizalfos Fight: Can_Defeat_Lizalfos
 
@@ -51,7 +53,7 @@
 - name: ET West Room
   dungeon: Earth Temple
   exits:
-    ET Hub Room: Nothing
+    ET Hub Room: Bomb_Bag or Hook_Beetle # If you're somehow here first, you still need to blow up the rock
   locations:
     Earth Temple - Chest in West Room: Nothing
 
@@ -74,7 +76,7 @@
 
 - name: Earth Temple Boss Room
   exits:
-    ET Front of Boss Door: Can_Defeat_Scaldera
+    ET Front of Boss Door: Can_Defeat_Scaldera # Needs asm so you can leave without defeating the boss
     Earth Temple Boss Arena: Nothing
 
 

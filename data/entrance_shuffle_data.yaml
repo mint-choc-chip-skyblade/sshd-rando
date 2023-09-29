@@ -1550,7 +1550,7 @@
         entrance: 1
 - type: Interior
   forward:
-    connection: Pirate Stronghold Dock -> Pirate Stronghold Top Door
+    connection: Pirate Stronghold Inside the Shark Head -> Pirate Stronghold Top Door
     exit_infos: 
       - stage: F301_6
         room: 0
@@ -1561,7 +1561,7 @@
         room: 1
         entrance: 1
   return:  
-    connection: Pirate Stronghold Top Door -> Pirate Stronghold Dock
+    connection: Pirate Stronghold Top Door -> Pirate Stronghold Inside the Shark Head
     exit_infos:
       - stage: F301_2
         room: 1
