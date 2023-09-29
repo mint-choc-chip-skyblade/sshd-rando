@@ -32,7 +32,7 @@ F000: # Skyloft
     layer: 0
   - name: unnecessary oarcs
     type: oarcdelete
-    oarc: MoldoGut_Baby # baby molderarch, is probably here because of the dust pile but not needed
+    oarc: MoldoGut_Baby # baby moldararch, is probably here because of the dust pile but not needed
     layer: 0
   - name: delete people on bridge 1
     type: oarcdelete
