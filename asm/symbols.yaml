@@ -33,6 +33,7 @@ main:
     NEXT_ROOM: 0x0abdf926 
     NEXT_LAYER: 0x0abdf927
     NEXT_ENTRANCE: 0x0abfd928
+    NEXT_TRIAL: 0x0abfd92a
     NEXT_SOMETHING: 0x0abfd92c
     GAME_RELOADER: 0x0abfd930
     CURRENT_LAYER_COPY: 0x0abfd94c
