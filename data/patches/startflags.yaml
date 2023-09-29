@@ -177,6 +177,7 @@ Sceneflags:
       - 14 # Opened Boss Door
 
   Fire Sanctuary: # Scene Index 15
+    - 6    # Watched first water pod Cutscene
     - 83   # Watched Cutscene showing the outside of the Fire Sanctuary
     - fs_lava_flow == on:
       - 64 # Blow up rock underground starting lava chase (back half lava flow)
