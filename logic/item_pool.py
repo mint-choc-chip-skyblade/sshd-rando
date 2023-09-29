@@ -167,6 +167,19 @@ def generate_starting_item_pool(world: "World"):
         world.starting_item_pool[item] += count
         world.item_pool[item] -= count
 
+    # If all three parts of the song of the hero are in the starting inventory
+    # replace them with just the singular song of the hero
+    all_soth_parts = {
+        "Faron Song of the Hero Part",
+        "Eldin Song of the Hero Part",
+        "Lanayru Song of the Hero Part",
+    }
+    if all(world.get_item(part) in world.starting_item_pool for part in all_soth_parts):
+        for part in all_soth_parts:
+            part_item = world.get_item(part)
+            world.starting_item_pool[part_item] = 0
+        world.starting_item_pool[world.get_item("Song of the Hero")] = 1
+
 
 def get_random_junk_item_name():
     return random.choice(
