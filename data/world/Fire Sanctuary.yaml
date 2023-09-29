@@ -7,10 +7,10 @@
   dungeon_starting_area: true
   exits:
     Outside Fire Sanctuary: Nothing
-    FS First Room Past Water Plant: Can_Hit_High_Water_Plant
+    FS First Room Past Water Plants: Can_Hit_High_Water_Plant
 
 
-- name: FS First Room Past Water Plant
+- name: FS First Room Past Water Plants
   dungeon: Fire Sanctuary
   exits:
     Fire Sanctuary First Room: Can_Hit_High_Water_Plant
@@ -22,7 +22,7 @@
 - name: FS First Outside Section
   dungeon: Fire Sanctuary
   exits:
-    FS First Room Past Water Plant: Nothing
+    FS First Room Past Water Plants: Nothing
     FS First Magmanos Room: Nothing
 
 
@@ -39,7 +39,7 @@
 - name: FS First Magmanos Room Balcony
   dungeon: Fire Sanctuary
   exits:
-    FS First Magmanos Room: Mogma_Mitts
+    FS First Magmanos Room: Mogma_Mitts # Assumes lava is lowered from defeating the Magmanos
   locations:
     Fire Sanctuary - Chest on Balcony: Nothing
 
@@ -48,7 +48,7 @@
   dungeon: Fire Sanctuary
   exits:
     FS First Magmanos Room: Can_Defeat_Lizalfos
-    FS North Bridge East Side: can_access(FS North Bridge East Side)
+    FS North Bridge East Side: can_access(FS North Bridge East Side) # add shortcut option here
     FS Room with First Lava River: Can_Defeat_Lizalfos
     
 
@@ -62,7 +62,7 @@
 - name: FS Room with First Lava River Past River
   dungeon: Fire Sanctuary
   exits:
-    FS Room with First Lava River: Clawshots or (Hook_Beetle and Projectile_Item)
+    FS Room with First Lava River: Clawshots or Hook_Beetle # Clawshot to vines or heetle to blow up the lavaflow rock
     FS First Trapped Mogma Room Upper: Nothing
     FS Water Fruit Room: count(2, Fire_Sanctuary_Small_Key) or small_keys == removed
 
@@ -104,12 +104,14 @@
 
 - name: FS First Trapped Mogma Room Lower
   dungeon: Fire Sanctuary
+  events:
+    Blow Up Rock in Tunnel: Nothing
   exits:
     FS First Trapped Mogma Room Upper: "'Double_Magmanos_Defeated'"
     FS Magmanos Fight Room: "'Double_Magmanos_Defeated'"
-    FS Under Magmanos Fight Room: Mogma_Mitts
+    FS Under Magmanos Fight Room: Mogma_Mitts and 'Blow_Up_Rock_in_Tunnel'
   locations:
-    Fire Sanctuary - Rescue First Trapped Mogma Chest: Nothing
+    Fire Sanctuary - Rescue First Trapped Mogma Chest: Nothing # Lever lowered to match SD
 
 
 - name: FS Under Magmanos Fight Room
@@ -117,7 +119,8 @@
   events:
     Move First FS Sliding Gate: Gust_Bellows and Mogma_Mitts
   exits:
-    FS First Trapped Mogma Room Lower: Mogma_Mitts
+    # You can't blow up the rock in the tunnel when going backwards
+    FS First Trapped Mogma Room Lower: Mogma_Mitts and 'Blow_Up_Rock_in_Tunnel'
     FS Under Magmanos Fight Room Past Sliding Door: "'Move_First_FS_Sliding_Gate'"
     FS West of Boss Door Before Lava River: count(3, Fire_Sanctuary_Small_Key) or small_keys == removed
 
@@ -133,7 +136,7 @@
   dungeon: Fire Sanctuary
   exits:
     FS North Bridge Bottom: Nothing
-    FS North Bridge East Side: Clawshots or logic_fs_pillar_jump
+    FS North Bridge East Side: Clawshots or logic_fs_pillar_jump # No bow for the bokos?
     FS South Bridge: Nothing
     FS Under Magmanos Fight Room Past Sliding Door: Nothing
 
@@ -158,7 +161,7 @@
   exits:
     FS North Bridge East Side: Nothing
   locations:
-    Fire Sanctuary - Rescue Second Trapped Mogma Chest: Mogma_Mitts and Sword
+    Fire Sanctuary - Rescue Second Trapped Mogma Chest: Mogma_Mitts and Sword # Mitts to move gate; sword for water pod
     Fire Sanctuary - Chest after Bombable Wall: Mogma_Mitts and Sword and Bomb_Bag
     
 
@@ -187,6 +190,7 @@
     Fire Sanctuary Boss Room: Fire_Sanctuary_Boss_Key or boss_keys == removed
     FS Lizalfos Fight Room: Nothing
     FS West of Boss Door: Nothing
+    # FS In Front of Boss Door Past Bars: Opened Bars
 
 
 - name: FS In Front of Boss Door Past Bars

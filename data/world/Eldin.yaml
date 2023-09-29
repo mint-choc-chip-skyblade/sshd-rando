@@ -5,7 +5,7 @@
     Goddess Cube at Eldin Entrance: Goddess_Sword
   exits:
     Volcano Entrance Statue: Nothing
-    Volcano Ascent: Bomb_Bag or can_access(Volcano Ascent) # I'm pretty sure Hook Beetle won't work here
+    Volcano Ascent: Bomb_Bag or can_access(Volcano Ascent) # No bomb flowers are close enough for even tough beetle
     Volcano First Room: Nothing
   locations:
     Eldin Volcano - Rupee on Ledge before First Room: Nothing
@@ -28,8 +28,8 @@
   exits:
     Volcano East Statue: Nothing
     Volcano Entrance: Clawshots
-    Mogma Turf Dive: Nothing
     Volcano First Room: Bomb_Bag
+    Mogma Turf Dive: Nothing
     Past Mogma Turf: Bomb_Bag or Hook_Beetle
     Bokoblin Base Prison: Nothing
   locations:
@@ -53,7 +53,9 @@
   exits:
     Volcano Ascent Statue: Nothing
     Eldin Silent Realm: Goddesss_Harp and Dins_Power
-    Outside Thrill Digger Cave: Bow or Slingshot or Beetle or logic_stuttersprint
+
+    # Beetle can be used to scare the boko away but that's really not obvious
+    Outside Thrill Digger Cave: Bow or Slingshot or logic_stuttersprint
     Past Sand Slide: Bomb_Bag or Hook_Beetle or can_access(Past Sand Slide) # or (Whip and Whip Bomb Trick)
     Volcano Entrance: Nothing
   locations:
@@ -64,7 +66,7 @@
   hint_region: Eldin Volcano
   exits:
     Volcano Ascent: Nothing
-    Near Temple Entrance: Nothing
+    Near Temple Entrance: Nothing # You can use the nearby bomb flowers to blow up the tower
     Thrill Digger Cave: Nothing
   locations:
     Eldin Volcano - Left Rupee behind Bombable Wall on First Slope: Nothing
@@ -90,7 +92,7 @@
   exits:
     Temple Entrance Statue: Nothing
     Earth Temple First Room: open_earth_temple or count(5, Key_Piece)
-    Hot Cave: Nothing
+    Hot Cave: Nothing # You can use the bomb flower in one of the boko huts to blow up the tower
     Outside Upper Eldin Cave: "'Beaten_Boko_Base'"
   locations:
     Eldin Volcano - Digging Spot in front of Earth Temple: Digging_Mitts
@@ -119,7 +121,7 @@
   exits:
     Volcano Summit: Fireshield_Earrings
     Sand Slide: Can_Survive_Hot_Cave
-    Near Temple Entrance: can_access(Near Temple Entrance) # Bomb_Bag and Bomb Throw Trick
+    Near Temple Entrance: can_access(Near Temple Entrance) or (logic_bomb_throws and Bomb_Bag)
 
 
 - name: Sand Slide
@@ -134,8 +136,8 @@
 - name: Past Sand Slide
   hint_region: Eldin Volcano
   exits:
-    Volcano Ascent: Nothing
-    Hot Cave: Nothing # Vent
+    Volcano Ascent: Nothing # You can use the bomb flowers to blow up the rock
+    Hot Cave: Nothing # Huge Vent
     Outside Lower Eldin Cave: "'Beaten_Boko_Base'"
   locations:
     Eldin Volcano - Digging Spot after Draining Lava: Digging_Mitts
@@ -158,24 +160,24 @@
     Lower Eldin Cave - Gossip Stone: Nothing
 
 
-- name: Mogma Turf Dive # when randomizing this, need to find a way to force the skydiving animation
+- name: Mogma Turf Dive
   hint_region: Mogma Turf
   events:
     Goddess Cube in Mogma Turf: Goddess_Sword
     Pick up Guld: Scrapper and 'Start_Kinas_Quest'
-  locations:
-    Mogma Turf - Free Fall Chest: Nothing
   exits:
     Mogma Turf: Nothing
+  locations:
+    Mogma Turf - Free Fall Chest: Nothing
 
 
 - name: Mogma Turf
   hint_region: Mogma Turf
   exits:
     Mogma Turf Pyrup Maze: Digging_Mitts
-    Volcano East: Nothing
+    Volcano East: Nothing # Through 1st huge vent
   locations:
-    Mogma Turf - Chest behind Bombable Wall at Entrance: Bomb_Bag or can_access(Mogma Turf Dive)
+    Mogma Turf - Chest behind Bombable Wall at Entrance: Bomb_Bag or Hook_Beetle or can_access(Mogma Turf Dive)
     Mogma Turf - Defeat Bokoblins: Can_Defeat_Bokoblins
 
 
@@ -183,7 +185,7 @@
   hint_region: Mogma Turf
   exits:
     Sand Slide Platform: Digging_Mitts
-    Mogma Turf Final Vent: Digging_Mitts
+    Mogma Turf Final Vent: Digging_Mitts # Through 2nd huge vent
     Mogma Turf: Nothing
   locations:
     Mogma Turf - Chest behind Bombable Wall in Fire Maze: Nothing
@@ -193,6 +195,7 @@
   hint_region: Mogma Turf
   exits:
     Mogma Turf: Nothing
+    Mogma Turf Pyrup Maze: Nothing
   locations:
     Mogma Turf - Sand Slide Chest: Nothing
 
@@ -201,7 +204,7 @@
   hint_region: Mogma Turf
   exits:
     Past Mogma Turf: Nothing
-    Mogma Turf Pyrup Maze: Bomb_Bag
+    Mogma Turf Pyrup Maze: Bomb_Bag # Can't use hook beetle or whip
 
 - name: Eldin Silent Realm
   hint_region: Eldin Silent Realm
@@ -214,7 +217,7 @@
 - name: Volcano Summit
   hint_region: Volcano Summit
   events:
-    Goddess Cube inside Volcano Summit: Fireshield_Earrings and Long_Range_Skyward_Strike
+    Goddess Cube inside Volcano Summit: (Fireshield_Earrings and Long_Range_Skyward_Strike) or 'Beaten_Boko_Base'
   exits:
     Hot Cave: Fireshield_Earrings
     Volcano Summit Waterfall: Fireshield_Earrings
@@ -225,12 +228,12 @@
   hint_region: Volcano Summit
   events:
     Can Collect Water: Bottle
-    Goddess Cube in Summit Waterfall: Goddess_Sword
+    Goddess Cube in Summit Waterfall: Goddess_Sword # Bomb flower for death warp without claws
   exits:
     Volcano Summit: Nothing
   locations:
-    Volcano Summit - Chest behind Bombable Wall in Waterfall Area: Nothing
-    Volcano Summit - Gossip Stone in Waterfall Area: Nothing
+    Volcano Summit - Chest behind Bombable Wall in Waterfall Area: Clawshots
+    Volcano Summit - Gossip Stone in Waterfall Area: Clawshots
 
 
 - name: Past Volcano Summit
