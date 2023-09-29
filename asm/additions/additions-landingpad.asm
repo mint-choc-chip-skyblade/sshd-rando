@@ -35,6 +35,10 @@ b.eq handle_er_cases
 cmp w8, #7
 b.eq handle_er_action_states
 
+; fix Sky Keep entrance
+cmp w8, #8
+b.eq set_stone_of_trials_placed_flag
+
 ret ; this should never be reached
 
 ; ends at 0x360A6500

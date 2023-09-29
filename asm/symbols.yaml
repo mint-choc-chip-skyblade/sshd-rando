@@ -43,6 +43,7 @@ main:
 
     # Functions
     strlen: 0x0905f5c0
+    GameReloader__triggerExit: 0x08df9478
 
     # Custom Symbols
     STARTFLAGS: 0x363EF000 # start of subsdk8 data section

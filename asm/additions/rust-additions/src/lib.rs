@@ -47,6 +47,13 @@ extern "C" {
 
     fn strlen(string: *mut u8) -> u64;
     fn strncmp(dest: *mut u8, src: *mut u8, size: u64) -> u64;
+    fn GameReloader__triggerExit(
+        gameReloader: *mut structs::GameReloader,
+        currentRoom: u32,
+        exitIndex: u32,
+        forceNight: u32,
+        forceTrial: u32,
+    );
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -398,6 +405,21 @@ pub fn handle_er_action_states() {
         // Replaced code sets this
         ACTOR_PARAM_SCALE = 0;
     }
+}
+
+#[no_mangle]
+pub fn set_stone_of_trials_placed_flag(
+    gameReloader: *mut structs::GameReloader,
+    currentRoom: u32,
+    exitIndex: u32,
+    forceNight: u32,
+    forceTrial: u32,
+) {
+    unsafe {
+        GameReloader__triggerExit(gameReloader, currentRoom, exitIndex, forceNight, forceTrial)
+    }
+
+    storyflag_set_to_1(22); // 22 == Stone of Trials placed storyflag
 }
 
 // Will output a string to Yuzu's log.
