@@ -67,6 +67,8 @@
   exits:
     AC Lobby After Whip Hooks: Nothing
     AC Lobby Vines Area: Whip and Water_Dragons_Scale
+  locations:
+    Ancient Cistern - Rupee under Lilypad: Water_Dragons_Scale # Flip lilypad and swim under
 
 
 - name: AC Spider Thread Area

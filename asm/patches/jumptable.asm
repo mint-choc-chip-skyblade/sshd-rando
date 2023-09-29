@@ -33,6 +33,11 @@ b 0x0865a070
 mov w8, #4
 b 0x0865a070
 
+; Set Stone of Trials placed flag
+.offset 0x08659ac0
+mov w8, #8
+b 0x0865a070
+
 
 ; Actually branches to the rust additions landingpad
 .offset 0x0865a070 ; uses 10 instructions
