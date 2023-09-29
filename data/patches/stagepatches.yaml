@@ -4398,7 +4398,15 @@ D201_1: # FS B
       anglez: 0
       id: 0xFC20
       name: ClawSTg
-  - name: Fist Trapped Mogma CS delete
+  - name: Move first trapped Mogma lever down to be reachable
+    type: objpatch
+    room: 5
+    layer: 0
+    id: 0xFC0E
+    objtype: OBJ
+    object:
+      posy: -200
+  - name: First Trapped Mogma CS delete
     type: objdelete
     layer: 0
     room: 5
