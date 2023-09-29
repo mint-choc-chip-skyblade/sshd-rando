@@ -4090,6 +4090,16 @@ D101: # Ancient Cistern
       flag6: 0
       zero: 0
       saveprompt: 0
+  - name: Move Rupee under Lilypad # So it doesn't get caught up in the water stream
+    type: objpatch
+    id: 0xFC22
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      posx: -800
+      posy: -310
+      posz: -7590
   - name: extra Bomb flower
     type: objadd
     layer: 0
