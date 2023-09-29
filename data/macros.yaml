@@ -62,7 +62,7 @@ Complete Triforce: Triforce_of_Courage and Triforce_of_Wisdom and Triforce_of_Po
 
 # Need access to the item check incase the user has a full pouch
 # or they picked up the cursed medal somewhere already
-Bottle: can_access(Bazaar) and Empty_Bottle
+Bottle: can_access(Bazaar) and Empty_Bottle and Pouch
 
 Sword: Practice_Sword
 
