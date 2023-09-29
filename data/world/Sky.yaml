@@ -90,6 +90,8 @@
 
 - name: Island near Bamboo Island
   hint_region: The Sky
+  events:
+    Can Collect Water: Bottle
   exits:
     The Sky: Day
   locations:
@@ -274,6 +276,8 @@
 
 - name: Bug Heaven
   hint_region: The Thunderhead
+  events:
+    Can Collect Water: Bottle
   exits:
     The Thunderhead: Day
   locations:
