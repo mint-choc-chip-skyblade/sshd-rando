@@ -501,7 +501,7 @@ def replace_entrance(
         return True
     except EntranceShuffleError as error:
         logging.getLogger("").debug(
-            f"Failed to connect {entrance} to {target.original_name} (Reason: {error}) {entrance.world}"
+            f"Failed to connect {entrance} to {target.replaces.original_name} (Reason: {error}) {entrance.world}"
         )
         if entrance.connected_area:
             restore_connections(entrance, target)
@@ -575,3 +575,10 @@ def validate_world(
     # Validate that the world is still beatable
     if not all_locations_reachable(worlds, item_pool):
         raise EntranceShuffleError(f"Not all locations are reachable!")
+
+    # Check to make sure that there's at least 1 sphere 0 location reachable
+    # with no items except the starting inventory
+    sphere_zero_search = Search(SearchMode.ACCESSIBLE_LOCATIONS, worlds)
+    sphere_zero_search.search_worlds()
+    if len(sphere_zero_search.visited_locations) == 0:
+        raise EntranceShuffleError(f"No Sphere 0 locations reachable at the start!")

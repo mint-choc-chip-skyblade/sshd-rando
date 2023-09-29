@@ -59,15 +59,15 @@ class Search:
                         self.exits_to_try.append(root_exit)
 
     def search_worlds(self) -> None:
-        # Get all locations which currently have items to test on each iteration
+        # Get all locations which fit criteria to test on each iteration
         item_locations: set[LocationAccess] = set()
         for world in self.worlds:
             for area in world.areas.values():
                 for loc_access in area.locations:
-                    if (
-                        not loc_access.location.is_empty()
-                        or self.search_mode == SearchMode.ALL_LOCATIONS_REACHABLE
-                    ):
+                    if not loc_access.location.is_empty() or self.search_mode in [
+                        SearchMode.ACCESSIBLE_LOCATIONS,
+                        SearchMode.ALL_LOCATIONS_REACHABLE,
+                    ]:
                         item_locations.add(loc_access)
 
         # Main Searching Loop
