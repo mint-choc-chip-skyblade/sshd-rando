@@ -27,3 +27,6 @@
 
 .global handle_er_action_states
 .type handle_er_action_states, @function
+
+.global set_stone_of_trials_placed_flag
+.type set_stone_of_trials_placed_flag, @function
