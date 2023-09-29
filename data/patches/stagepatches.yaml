@@ -4567,6 +4567,14 @@ D300: # LMF A
       name: Tubo
 
 D300_1: # LMF B
+  - name: Remove CS after blowing up boxes # Only one of the boxes plays the CS
+    type: objpatch
+    id: 0xFC62
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      params1: 0xFFF5CFF0 # Was 0xF035CFF0; 0x0FF00000 = eventid
   - name: Close door to BK room from both sides
     type: objpatch
     index: 6 # all have id FFFF :(
