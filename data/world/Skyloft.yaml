@@ -43,6 +43,7 @@
 - name: Knight Academy Zelda's Room
   hint_region: Knight Academy
   allowed_time_of_day: All
+  can_sleep: true
   exits:
     Knight Academy: Nothing
   locations:
