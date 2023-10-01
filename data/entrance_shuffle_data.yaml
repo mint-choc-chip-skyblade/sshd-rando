@@ -1002,7 +1002,7 @@
         room: 0
         index: 57
     spawn_info:
-      - stage: F008r
+      - stage: F001r
         layer: 0
         room: 6
         entrance: 1
