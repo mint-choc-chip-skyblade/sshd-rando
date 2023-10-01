@@ -38,6 +38,7 @@ extern "C" {
     static mut NEXT_ROOM: u8;
     static mut NEXT_LAYER: u8;
     static mut NEXT_ENTRANCE: u8;
+    static mut NEXT_TRIAL: u8;
     static mut NEXT_SOMETHING: u8;
     static mut GAME_RELOADER: *mut structs::GameReloader;
     static mut CURRENT_LAYER_COPY: u8;
@@ -301,49 +302,6 @@ pub fn check_storyflag(flag: u16) -> u32 {
     }
 }
 
-pub fn stage_is(name: &str, stage: &[u8]) -> bool {
-    unsafe {
-        // Loop through the name and check
-        // that each character matches the stage name
-        for i in (0..(name.len() - 1)) {
-            if name.as_bytes()[i] != stage[i] {
-                return false;
-            }
-        }
-        // Check that the first character after the loop
-        // is a null terminator
-        if stage[name.len()] != 0 {
-            return false;
-        }
-        return true;
-    }
-}
-
-pub fn next_stage_is(name: &str) -> bool {
-    unsafe {
-        return stage_is(name, &NEXT_STAGE_NAME);
-    }
-}
-
-pub fn current_stage_is(name: &str) -> bool {
-    unsafe {
-        // Loop through the name and check
-        // that each character matches the current
-        // stage name
-        for i in (0..(name.len() - 1)) {
-            if name.as_bytes()[i] != CURRENT_STAGE_NAME[i] {
-                return false;
-            }
-        }
-        // Check that the first character after the loop
-        // is a null terminator
-        if CURRENT_STAGE_NAME[name.len()] != 0 {
-            return false;
-        }
-        return true;
-    }
-}
-
 #[no_mangle]
 pub fn set_goddess_sword_pulled_story_flag() {
     // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
@@ -358,20 +316,20 @@ pub fn handle_er_cases() {
     unsafe {
         // If we're spawning from Sky Keep, but Sky Keep hasn't appeared yet,
         // instead spawn near the statue
-        if next_stage_is("F000") && NEXT_ENTRANCE == 53 && check_storyflag(22) == 0 {
+        if &NEXT_STAGE_NAME[..5] == b"F000\0" && NEXT_ENTRANCE == 53 && check_storyflag(22) == 0 {
             NEXT_ENTRANCE = 52
         }
 
         // // If we're spawning from LMF and it hasn't been raised,
         // // instead spawn in front of where the dungeon entrance would be
-        if next_stage_is("F300") && NEXT_ENTRANCE == 5 && check_storyflag(8) == 0 {
+        if &NEXT_STAGE_NAME[..5] == b"F300\0" && NEXT_ENTRANCE == 5 && check_storyflag(8) == 0 {
             NEXT_ENTRANCE = 19;
         }
 
         // If we're spawning in Lanayru Desert/Mines through the minecart entrance,
         // make sure that a timeshift stone that makes the minecart move is active
-        if ((next_stage_is("F300") && NEXT_ENTRANCE == 2)
-            || (next_stage_is("F300_1") && NEXT_ENTRANCE == 1))
+        if ((&NEXT_STAGE_NAME[..5] == b"F300\0" && NEXT_ENTRANCE == 2)
+            || (&NEXT_STAGE_NAME[..7] == b"F300_1\0" && NEXT_ENTRANCE == 1))
             && (check_global_sceneflag(7, 113) == 0 && check_global_sceneflag(7, 114) == 0)
         {
             // Unset all other timeshift stones in the scene
@@ -380,7 +338,14 @@ pub fn handle_er_cases() {
             }
             // Set the last timeshift stone in mines
             set_global_sceneflag(7, 113);
-            yuzu_print("Minecart Entrance");
+        }
+
+        // If we're about to enter a stage that should have the silent realm effect
+        // set it. Otherwise unset it
+        if NEXT_STAGE_NAME[0] == b'S' || &NEXT_STAGE_NAME == b"D003_8\0" {
+            NEXT_TRIAL = 1;
+        } else {
+            NEXT_TRIAL = 0;
         }
 
         // Replaced code sets these
@@ -398,7 +363,7 @@ pub fn handle_er_action_states() {
         // If we're spawning in the mogma turf dive entrance,
         // set Link to always be diving regardless of how he
         // previously entered
-        if current_stage_is("F210") && CURRENT_ENTRANCE == 0 {
+        if &CURRENT_STAGE_NAME[..5] == b"F210\0" && CURRENT_ENTRANCE == 0 {
             (*GAME_RELOADER).action_index = 0x13;
         }
 

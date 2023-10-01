@@ -189,9 +189,11 @@ def create_entrance_pools(world: World) -> EntrancePools:
         entrance_pools["Trial Gate"] = world.get_shuffleable_entrances(
             "Trial Gate", only_primary=True
         )
-        # Don't enable this until trials stay permanently open
-        # if world.setting("decouple_entrances") == "on":
-        #     entrance_pools["Trial Gate Reverse"] = [entrance.reverse for entrance in entrance_pools["Trial Gate"]]
+        # TODO: Make Trials stay open permanently
+        if world.setting("decouple_entrances") == "on":
+            entrance_pools["Trial Gate Reverse"] = [
+                entrance.reverse for entrance in entrance_pools["Trial Gate"]
+            ]
 
     if world.setting("randomize_door_entrances") == "on":
         entrance_pools["Door"] = world.get_shuffleable_entrances(
@@ -223,7 +225,13 @@ def create_entrance_pools(world: World) -> EntrancePools:
     set_shuffled_entrances(entrance_pools)
 
     # Set appropriately decoupled types as decoupled
-    potentially_decoupled_types = {"Dungeon", "Door", "Interior", "Overworld"}
+    potentially_decoupled_types = {
+        "Dungeon",
+        "Door",
+        "Interior",
+        "Overworld",
+        "Trial Gate",
+    }
     if world.setting("decouple_entrances") == "on":
         for type_name in potentially_decoupled_types:
             for entrance_type in [type_name, type_name + " Reverse"]:
