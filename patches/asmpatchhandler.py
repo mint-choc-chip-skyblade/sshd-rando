@@ -308,7 +308,7 @@ class ASMPatchHandler:
         # Convert startflags_data into a list of bytes.
         startflags_data_bytes = startflags_data.getvalue()
         startflags_data_dict = {
-            SUBSDK8_RODATA_START: list(
+            SUBSDK_STARTFLAG_OFFSET: list(
                 struct.unpack("B" * len(startflags_data_bytes), startflags_data_bytes)
             )
         }
