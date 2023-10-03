@@ -51,6 +51,13 @@ def patch_tbox(bzs: dict, itemid: int, id_str: str):
         return
 
     original_itemid = tbox["anglez"] & 0x1FF
+
+    # Goddess Chests (subtype 0x03) expect the signed negative number of
+    # the item id for the item they have (for some reason)
+    # 9 bits means 2^9 - 1 = 511
+    if tbox_subtypes[original_itemid] == 0x03:
+        itemid = 511 - itemid
+
     # patches item
     tbox["anglez"] = mask_shift_set(tbox["anglez"], 0x1FF, 0, itemid)
     # patches chest type
