@@ -449,6 +449,12 @@ class World:
                 for location in dungeon.locations:
                     location.progression = False
 
+        # Set beedle's shop items as nonprogress if they can only contain junk
+        if self.setting("randomized_shops") == "junk_only":
+            for location in self.location_table.values():
+                if "Beedle's Shop Purchases" in location.types:
+                    location.progression = False
+
     # Remove or add junk to the item pool until the total number of
     # items is equal to the number of currently empty locations
     def sanitize_item_pool(self) -> None:
