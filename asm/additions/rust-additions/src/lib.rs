@@ -384,7 +384,9 @@ pub fn handle_er_cases() {
                     )
                 ) ||
                 // Waterfall Cave
-                &NEXT_STAGE_NAME[..5] == b"D000\0")
+                &NEXT_STAGE_NAME[..5] == b"D000\0" ||
+                // Skyloft Silent Realm
+                &NEXT_STAGE_NAME[..5] == b"S000\0")
             {
                 yuzu_print("NEXT_NIGHT = 1");
                 NEXT_NIGHT = 1;
