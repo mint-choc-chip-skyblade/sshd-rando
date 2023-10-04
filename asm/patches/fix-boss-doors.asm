@@ -1,6 +1,6 @@
 ; Have boss doors check for boss defeat storyflags
 ; instead of dungeon defeat storyflags to be openable
-; in reverse. This modofies a data array that holds
+; in reverse. This modifies a data array that holds
 ; storyflags in 4-byte elements
 .offset 0x09398550
 .word 0x53  ; Defeated Ghirahim 1
