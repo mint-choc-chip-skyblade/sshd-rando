@@ -1461,7 +1461,7 @@
     exit_infos: 
       - stage: F302
         room: 0
-        index: 4
+        index: 0
     spawn_info:
       - stage: F303
         layer: 0
