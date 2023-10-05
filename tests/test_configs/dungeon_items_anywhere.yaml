@@ -1,0 +1,10 @@
+World 1:
+  boss_keys: anywhere
+  lanayru_caves_key: anywhere
+  map_mode: anywhere
+  small_keys: anywhere
+input_dir: ./base
+output_dir: ./output
+plandomizer: false
+plandomizer_file: null
+seed: TESTTESTTEST

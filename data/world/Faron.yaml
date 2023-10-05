@@ -6,7 +6,7 @@
   exits:
     Sealed Grounds Statue: Nothing
     Sealed Grounds Spiral: Nothing
-    Sealed Grounds Upper Ledge: "'Push_Down_Sealed_Grounds_Log'"
+    Sealed Grounds Upper Ledge: Nothing # "'Push_Down_Sealed_Grounds_Log'" - log is down from the start
 
 
 - name: Sealed Grounds Spiral
@@ -15,7 +15,7 @@
     Can Defeat Imprisoned 2: Goddess_Sword and 'Start_Imprisoned_2'
   exits:
     Sealed Temple: Nothing
-    Sealed Grounds: "'Can_Defeat_Imprisoned_2'"
+    Sealed Grounds: "'Can_Defeat_Imprisoned_2'" # Needed for Groosenator access to climb back up
 
 
 - name: Sealed Grounds Upper Ledge
@@ -89,13 +89,15 @@
   hint_region: Faron Woods
   events:
     Push Down Faron Woods Entry Log: Nothing
+    #                       Erla                   Lopsa
     All Kikwis Saved: (Sword or Beetle) and Can_Defeat_Bokoblins
     Amber Relic Farming: Nothing
+    Can Collect Water: Bottle
   exits:
     In the Woods Statue: Nothing
     Viewing Platform Statue: Nothing
     Lake Floria: open_lake_floria == open or ('Talk_to_Yerbal' and (Goddess_Sword or open_lake_floria == yerbal)) or logic_early_lake_floria
-    Behind the Crawlspace and Rope: Bomb_Bag
+    Behind the Crawlspace and Rope: Bomb_Bag # Only after getting Kikwi Elder's Reward
     Faron Silent Realm: Goddesss_Harp and Farores_Courage
     Great Tree Interior Underwater: Water_Dragons_Scale
     Great Tree Exterior Platforms: Clawshots
@@ -173,6 +175,8 @@
 
 - name: Great Tree Interior Lower
   hint_region: Faron Woods
+  events:
+    Can Collect Water: Bottle
   exits:
     Great Tree Interior Underwater: Water_Dragons_Scale
     Great Tree Interior Middle: Gust_Bellows
@@ -184,7 +188,8 @@
     Great Tree Interior Lower: Nothing
     Great Tree Exterior Platforms: Nothing
   locations:
-    Great Tree - Chest: Nothing # Not even something to defeat the quadri-baba ?
+    # It's quite precise to wait for this baba like the others and very frustrating to fail
+    Great Tree - Chest: Can_Defeat_Baba or Slingshot # Slingshot to stun
 
 
 - name: Great Tree Exterior Platforms
@@ -208,7 +213,7 @@
 - name: Great Tree Exterior Top
   hint_region: Faron Woods
   events:
-    Talk to Yerbal: Water_Dragons_Scale and (Slingshot or Beetle) # Water Scale needed for Yerbal to spawn
+    Talk to Yerbal: Water_Dragons_Scale and (Slingshot or Beetle) # Scale needed for Yerbal to spawn
   exits:
     The Great Tree Statue: Nothing
     Great Tree Interior Upper: Nothing
@@ -226,7 +231,7 @@
   events:
     Hornet Larvae Farming: Nothing # Bonk the tree
   exits:
-    Deep Woods: Distance_Activator or Goddess_Sword or 'Push_Down_Deep_Woods_Shortcut_Logs' # bomb bag?
+    Deep Woods: Distance_Activator or Goddess_Sword or 'Push_Down_Deep_Woods_Shortcut_Logs' or logic_bomb_throws
     Faron Woods Ledge to Deep Woods: Nothing
     
 
@@ -251,7 +256,7 @@
   exits:
     Faron Woods: Nothing
   locations:
-    Faron Silent Realm - Reward: Nothing
+    Faron Silent Realm - Collect all Tears Reward: Nothing
 
 # FLOODED FARON WOODS
 - name: Flooded Faron Woods
@@ -263,6 +268,7 @@
     Unlock The Great Tree Statue: Nothing
     Retrieve Oolo: Scrapper and 'Start_Owlans_Quest'
     Can Watch Completed Tadtones Cutscene: Nothing
+    Can Collect Water: Bottle
   exits:
     Flooded Great Tree Upper: Nothing
     Flooded Great Tree Lower: Water_Dragons_Scale
@@ -304,15 +310,15 @@
 # LAKE FLORIA
 - name: Lake Floria
   hint_region: Lake Floria
+  exits:
+    Lake Floria Emerged Area: Water_Dragons_Scale
+    Farore's Lair: Water_Dragons_Scale
+    Faron Woods: Impossible # To satisfy entrance rando
   locations:
     Lake Floria - Rupee behind Southwest Boulder: Water_Dragons_Scale
     Lake Floria - Left Rupee behind Northwest Boulder: Water_Dragons_Scale
     Lake Floria - Right Rupee behind Northwest Boulder: Water_Dragons_Scale
     Lake Floria - Rupee under Central Boulder: Water_Dragons_Scale
-  exits:
-    Lake Floria Emerged Area: Water_Dragons_Scale
-    Farore's Lair: Water_Dragons_Scale
-    Faron Woods: Impossible # To satisfy entrance rando
 
 
 - name: Lake Floria Emerged Area
@@ -329,6 +335,7 @@
 - name: Farore's Lair
   events:
     Talk to Farore: Nothing
+    Can Collect Water: Bottle
   exits:
     Floria Waterfall: Nothing
     Lake Floria: Water_Dragons_Scale
@@ -341,6 +348,7 @@
   hint_region: Lake Floria
   events:
     Goddess Cube in Floria Waterfall: Clawshots and Goddess_Sword
+    Can Collect Water: Bottle
   exits:
     Floria Waterfall Statue: Nothing
     Floria Waterfall Temple Ledge: Water_Dragons_Scale

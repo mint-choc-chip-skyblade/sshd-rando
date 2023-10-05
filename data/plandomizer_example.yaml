@@ -13,11 +13,11 @@ World 1:
 # All plandomized locations are defined under a "locations" element and consist
 # of the location name followed by a colon(:) and the item name you want placed
 # at that location. The following example places Clawshots at Knight Academy - Fledge's Gift
-# and Amber Tablet at Earth Temple - Boss Key Chest.
+# and Amber Tablet at Earth Temple - Chest before Boulder Chase.
 World 1:
   locations:
     Knight Academy - Fledge's Gift: Clawshots
-    Earth Temple - Boss Key Chest: Amber Tablet
+    Earth Temple - Chest before Boulder Chase: Amber Tablet
 
 # NAMES
 # As a general rule, capitalize the first letter of all item names except for
@@ -56,13 +56,13 @@ World 1:
 # must be under a "World #" element, with the '#' being the world number
 # the locations will be for. For example, if we want place the Whip at
 # Bazaar - Potion Lady's Gift in World 1 and the Skyview Boss Key at
-# Sandship - Bow Chest in World 2, then we'd type
+# Sandship - Chest after Scervo Fight in World 2, then we'd type
 World 1:
   locations:
     Bazaar - Potion Lady's Gift: Whip
 World 2:
   locations:
-    Sandship - Bow Chest: Skyview Boss Key
+    Sandship - Chest after Scervo Fight: Skyview Boss Key
 # Using this format, the item being plandomized will be for the world that the
 # location is currently under. If we want to specify the item for a different
 # world we can use the "item" and "world" elements to do so. For example, if we want

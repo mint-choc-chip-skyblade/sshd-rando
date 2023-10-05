@@ -1,5 +1,10 @@
+from constants.itemconstants import (
+    FREESTANDING_ITEM_OFFSETS,
+    FREESTANDING_ITEMS_TO_USE_DEFAULT_SCALING,
+)
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 from sslib.bzs import parse_bzs, build_bzs, get_entry_from_bzs, get_highest_object_id
+from sslib.fs_helpers import float_to_hex
 from sslib.utils import mask_shift_set, write_bytes_create_dirs
 from sslib.yaml import yaml_load
 from sslib.u8file import U8File
@@ -46,6 +51,13 @@ def patch_tbox(bzs: dict, itemid: int, id_str: str):
         return
 
     original_itemid = tbox["anglez"] & 0x1FF
+
+    # Goddess Chests (subtype 0x03) expect the signed negative number of
+    # the item id for the item they have (for some reason)
+    # 9 bits means 2^9 - 1 = 511
+    if tbox_subtypes[original_itemid] == 0x03:
+        itemid = 511 - itemid
+
     # patches item
     tbox["anglez"] = mask_shift_set(tbox["anglez"], 0x1FF, 0, itemid)
     # patches chest type
@@ -71,11 +83,29 @@ def patch_freestanding_item(bzs: dict, itemid: int, id_str: str):
     freestanding_item["params1"] = mask_shift_set(
         freestanding_item["params1"], 0xFF, 0, itemid
     )
+
     # Unset 9th bit of param1 to force a textbox for freestanding items.
-    # Technically, item IDs are 9 bits long but the game almost never checks
-    # the 9th bit so we exploit that.
     freestanding_item["params1"] = mask_shift_set(
         freestanding_item["params1"], 0x1, 9, 0
+    )
+
+    y_offset = float_to_hex(FREESTANDING_ITEM_OFFSETS.get(itemid, 0)) >> 16
+
+    # Patch y-offset into params2 (0x00FFFF00).
+    freestanding_item["params2"] = mask_shift_set(
+        freestanding_item["params2"], 0xFFFF, 8, y_offset
+    )
+
+    scale_bit = 0
+
+    if itemid in FREESTANDING_ITEMS_TO_USE_DEFAULT_SCALING:
+        scale_bit = 1
+
+    # Patch whether to use default scaling into angley.
+    # angley is used for the actual rotation of the item but we use the lsb so
+    # it shouldn't make a noticeable difference.
+    freestanding_item["angley"] = mask_shift_set(
+        freestanding_item["angley"], 1, 0, scale_bit
     )
 
 

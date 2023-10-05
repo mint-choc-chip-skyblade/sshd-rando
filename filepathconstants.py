@@ -13,12 +13,12 @@ OUTPUT_ADDITIONAL_SUBSDK = OUTPUT_PATH / "exefs" / "subsdk8"
 
 OARC_CACHE_PATH = RANDO_ROOT_PATH / "oarccache"
 
-STAGE_PATCHES_PATH = RANDO_ROOT_PATH / "patches" / "data" / "stagepatches.yaml"
-EVENT_PATCHES_PATH = RANDO_ROOT_PATH / "patches" / "data" / "eventpatches.yaml"
+STAGE_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "stagepatches.yaml"
+EVENT_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "eventpatches.yaml"
 OBJECTPACK_PATCHES_PATH = (
-    RANDO_ROOT_PATH / "patches" / "data" / "objectpackpatches.yaml"
+    RANDO_ROOT_PATH / "data" / "patches" / "objectpackpatches.yaml"
 )
-EXTRACTS_PATH = RANDO_ROOT_PATH / "patches" / "data" / "extracts.yaml"
+EXTRACTS_PATH = RANDO_ROOT_PATH / "data" / "patches" / "extracts.yaml"
 ITEMS_PATH = RANDO_ROOT_PATH / "data" / "items.yaml"
 LOCATIONS_PATH = RANDO_ROOT_PATH / "data" / "locations.yaml"
 
@@ -52,4 +52,4 @@ ASM_ADDITIONS_DIFFS_PATH = RANDO_ROOT_PATH / "asm" / "additions" / "diffs"
 MAIN_NSO_FILE_PATH = RANDO_ROOT_PATH / "title" / TITLE_ID / "exefs" / "main"
 SUBSDK1_FILE_PATH = RANDO_ROOT_PATH / "title" / TITLE_ID / "exefs" / "subsdk1"
 
-STARTFLAGS_FILE_PATH = RANDO_ROOT_PATH / "patches" / "data" / "startflags.yaml"
+STARTFLAGS_FILE_PATH = RANDO_ROOT_PATH / "data" / "patches" / "startflags.yaml"

@@ -15,6 +15,7 @@ Storyflags:
   - 178  # Cutscene showing off Bokoblin Base with Plats
   - 198  # Can jump off Loftwing
   - 199  # Skip Eagus Cutscene after Sparring Hall chest
+  - 201  # Talked to Stritch at Bug Island (Beedle always lost HCB)
   - 226  # Hero Mode
   - 304  # Batreaux Crystal Quest started
   - 329  # Slept after starting Batreaux Crystal Quest
@@ -40,7 +41,7 @@ Storyflags:
   - 180 # Thrill Digger Intro Cutscene
   - 562 # Volcano Summit Intro Cutscene
   - 190 # Lanayru Mine Intro Cutscene
-  - 92  # Lanayru Desert Intro Cutscene
+  - 92  # Lanayru Desert Intro Cutscene (Dodoh always loses his wheel)
   - 157 # Ancient Harbour Intro Cutscene
   - 526 # Lanayru Gorge Intro Cutscene
   - 80  # Water Dragon in Flooded Faron Cutscene
@@ -154,6 +155,7 @@ Sceneflags:
       - 28 # Unlocked door to Lanayru Sand Sea
 
   Sealed Grounds: # Scene Index 10
+    - 4  # Pushed log from BtT to Faron Woods
     - 7  # Activated vents
     - 13 # Unlocked Sealed Temple big door
     - 39 # Log to Behind the Temple pushed down
@@ -187,6 +189,7 @@ Sceneflags:
       - 14 # Opened Boss Door
 
   Fire Sanctuary: # Scene Index 15
+    - 6    # Watched first water pod Cutscene
     - 83   # Watched Cutscene showing the outside of the Fire Sanctuary
     - fs_lava_flow == on:
       - 64 # Blow up rock underground starting lava chase (back half lava flow)

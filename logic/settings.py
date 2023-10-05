@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import Counter, OrderedDict
 import yaml
 
 
@@ -13,6 +13,7 @@ class SettingType:
     PREFERENCE: int = 3
     OTHER: int = 4
 
+    @staticmethod
     def from_str(name: str) -> int:
         match name:
             case "Standard":
@@ -48,7 +49,7 @@ class SettingInfo:
         return self.pretty_name | self.name
 
 
-settings_info_map: dict[str, SettingInfo] = {}
+settings_info_map: OrderedDict[str, SettingInfo] = {}
 
 
 # Setting for a specific world
@@ -147,7 +148,7 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                 # Assume a standard setting if there's no specification
                 setting_type = SettingType.STANDARD
                 if "type" in setting_node:
-                    setting_type = SettingType.from_str(setting_type["type"])
+                    setting_type = SettingType.from_str(setting_node["type"])
 
                 # If multiple settings were defined in one node, split them up
                 names = name_str.split(",")

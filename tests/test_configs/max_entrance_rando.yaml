@@ -1,0 +1,17 @@
+World 1:
+  randomize_dungeon_entrances: 'on'
+  randomize_door_entrances: 'on'
+  randomize_interior_entrances: 'on'
+  randomize_overworld_entrances: 'on'
+  mixed_entrance_pools:
+  - - Dungeon
+    - Door
+    - Interior
+    - Overworld
+  decouple_entrances: 'on'
+  decouple_double_doors: 'on'
+input_dir: ./base
+output_dir: ./output
+plandomizer: false
+plandomizer_file: null
+seed: TESTTESTTEST

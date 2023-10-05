@@ -1,0 +1,10 @@
+combine_control_expr = false
+comment_width = 79
+enum_discrim_align_threshold = 32
+force_multiline_blocks = true
+hex_literal_case = "Upper"
+match_block_trailing_comma = true
+newline_style = "Unix"
+normalize_comments = true
+struct_field_align_threshold = 32
+wrap_comments = true

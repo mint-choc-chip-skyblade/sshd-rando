@@ -1,0 +1,7 @@
+World 1:
+  random_starting_spawn: any_surface_region
+input_dir: ./base
+output_dir: ./output
+plandomizer: false
+plandomizer_file: null
+seed: TESTTESTTEST

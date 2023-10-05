@@ -19,6 +19,26 @@ b.eq handle_startflags
 cmp w8, #3
 b.eq set_goddess_sword_pulled_story_flag
 
+; freestanding item y offset
+cmp w8, #4
+b.eq fix_freestanding_item_y_offset
+
+; fix sandship boat
+cmp w8, #5
+b.eq fix_sandship_boat
+
+; handle er cases
+cmp w8, #6
+b.eq handle_er_cases
+
+; handle er action states
+cmp w8, #7
+b.eq handle_er_action_states
+
+; fix Sky Keep entrance
+cmp w8, #8
+b.eq set_stone_of_trials_placed_flag
+
 ret ; this should never be reached
 
 ; ends at 0x360A6500

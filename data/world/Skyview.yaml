@@ -10,7 +10,7 @@
 - name: SV First Room
   dungeon: Skyview Temple
   events:
-    Goddess Wall Trigger: Ballad_of_the_Goddess and Goddesss_Harp
+    Goddess Wall Trigger: Ballad_of_the_Goddess and Goddesss_Harp and Skyview_2
   exits:
     Skyview Entry: Can_Cut_Trees_And_Logs
     SV One Eye Room: Can_Hit_High_Skyview_Switches
@@ -28,6 +28,7 @@
   dungeon: Skyview Temple
   events:
     One Water Raise: "'Skyview_Raise_East_Water' or 'Skyview_Raise_West_Water'"
+    Can Collect Water: Bottle and 'One_Water_Raise'
   exits:
     SV One Eye Room: Nothing
     SV First Room: Nothing
@@ -39,8 +40,10 @@
 
 - name: SV First Hub Left Room
   dungeon: Skyview Temple
-  events:                      #                 Hit Vines                              and Can_Hit_Switch
-    Skyview Raise West Water: ((Can_Hit_High_Skyview_Switches or Goddess_Sword or Whip) and Can_Hit_Switch) or (logic_skyview_spider_roll and Can_Hit_High_Skyview_Switches)
+  events:                      #                  Hit Vines                              and Can_Hit_Switch
+    Skyview Raise West Water: "((Can_Hit_High_Skyview_Switches or Goddess_Sword or Whip) and Can_Hit_Switch)
+                               or (logic_skyview_spider_roll and Can_Hit_High_Skyview_Switches)"
+    Can Collect Water: Bottle and 'Skyview_Raise_West_Water'
   exits:
     SV First Hub Center Room: Nothing
   locations:
@@ -51,6 +54,7 @@
   dungeon: Skyview Temple
   events:
     Skyview Raise East Water: Can_Hit_High_Skyview_Switches
+    Can Collect Water: Bottle and 'Skyview_Raise_East_Water'
   exits:
     SV First Hub Center Room: Nothing
   locations:
@@ -69,7 +73,7 @@
 - name: SV Second Hub Center Room
   dungeon: Skyview Temple
   exits:
-    SV First Hub Center Room: Skyview_Temple_Small_Key or small_keys == removed
+    SV First Hub Center Room: count(2, Skyview_Temple_Small_Key) or small_keys == removed
     SV Miniboss Room: Distance_Activator
     SV Second Hub Left Rooms: Beetle
     SV Staldra Room: count(2, Skyview_Temple_Small_Key) or small_keys == removed
@@ -86,15 +90,19 @@
   exits:
     SV Second Hub Center Room: Nothing
   locations:
-    Skyview Temple - Beetle Chest: Can_Defeat_Stalfos or Skyview_2
+    Skyview Temple - Chest after Stalfos Fight: Can_Defeat_Stalfos or Skyview_2
 
 
+# This is both rooms so assume you've gotten locked in the 3-eyes room
 - name: SV Second Hub Left Rooms
   dungeon: Skyview Temple
   exits:
-    SV Second Hub Center Room: Sword and Projectile_Item # to defeat skulltulas ? Include deathwarp ?
+    # Sword for 3 eyes and to kill Skultullas
+    # Beetle or Bow to free the box
+    # Projectile Item to hit the switch to get back to 2nd hub room
+    SV Second Hub Center Room: Sword and (Beetle or Bow) and Projectile_Item
   locations:
-    Skyview Temple - Chest behind Three Eyes: Beetle and Sword
+    Skyview Temple - Chest behind Three Eyes: (Beetle or Bow) and Sword
 
 
 - name: SV Staldra Room
@@ -108,15 +116,15 @@
   dungeon: Skyview Temple
   exits:
     SV Staldra Room: Nothing
-    SV Last Room Before Rope: Bomb_Bag or Goddess_Sword or Beetle or Bow or Skyview_2
+    SV Last Room Before Rope: Goddess_Sword or Beetle or Bow or (Bomb_Bag and logic_bomb_throws) or Skyview_2
     # A bomb knocks the Skulltula away. A skyward strike can knock it away too.
-    # Both the Beetle and the bow can cut it down. There is no spider anymore in Skyview 1.
+    # Both the Beetle and the bow can cut it down. There is no spider anymore in Skyview 2.
 
 
 - name: SV Last Room Before Rope
   dungeon: Skyview Temple
   exits:
-    SV Last Room Before Spider: Bomb_Bag or Goddess_Sword or Beetle or Bow or Skyview_2
+    SV Last Room Before Spider: Goddess_Sword or Beetle or Bow or (Bomb_Bag and logic_bomb_throws) or Skyview_2
     SV Second Hub Center Room: Can_Hit_High_Skyview_Switches
     SV Last Room After Rope: Long_Range_Skyward_Strike or Hook_Beetle or Bow
 
@@ -124,20 +132,20 @@
 - name: SV Last Room After Rope
   dungeon: Skyview Temple
   exits:
-    SV Last Room Before Rope: Can_Defeat_Bokoblins
-    SV Last Room Near Boss Key Chest: Long_Range_Skyward_Strike or Distance_Activator
+    SV Last Room Before Rope: Can_Defeat_Bokoblins or Hook_Beetle # Run out of range and use bomb flower to defeat them
+    SV Last Room Near Chest after Vines: Long_Range_Skyward_Strike or Distance_Activator
     Skyview Boss Room: Skyview_Temple_Boss_Key or boss_keys == removed
   locations:
     Skyview Temple - Chest near Boss Door: Nothing
 
 
-- name: SV Last Room Near Boss Key Chest
+- name: SV Last Room Near Chest after Vines
   dungeon: Skyview Temple
   exits:
     SV Last Room Before Rope: Nothing
     SV Last Room After Rope: Distance_Activator
   locations:
-    Skyview Temple - Boss Key Chest: Nothing
+    Skyview Temple - Chest after Vines: Nothing
 
 
 - name: Skyview Boss Room
@@ -145,16 +153,17 @@
     SV Last Room After Rope: Can_Defeat_Ghirahim
     Skyview Spring: Can_Defeat_Ghirahim
   locations:
-    Skyview Temple - Heart Container: Can_Defeat_Ghirahim
+    Skyview Temple - Defeat Boss: Can_Defeat_Ghirahim
 
 
 - name: Skyview Spring
   events:
     Goddess Cube in Skyview Spring: Goddess_Sword
+    Can Collect Water: Bottle
     Sacred Water: Bottle and Skyview_2
   exits:
     Skyview Boss Room: Nothing
     # Crest Hit: Ruby Tablet
   locations:
     Skyview Spring - Rupee on Spring Pillar: Beetle
-    Skyview Spring - Ruby Tablet: Goddess_Sword
+    Skyview Spring - Strike Crest: Goddess_Sword

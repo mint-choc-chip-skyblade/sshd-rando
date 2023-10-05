@@ -14,7 +14,7 @@ import sys, getopt
 import logging
 
 
-def generate() -> list[World]:
+def generate(config_file: str) -> list[World]:
     # Set specified log level
     opts, args = getopt.getopt(sys.argv[1:], "ll:", ["loglevel="])
     for opt, arg in opts:
@@ -31,18 +31,20 @@ def generate() -> list[World]:
     get_all_settings_info()
 
     # If the config file doesn't exist, create default
-    if not os.path.isfile("config.yaml"):
-        create_default_config("config.yaml")
-    config = load_config_from_file("config.yaml")
+    if not os.path.isfile(config_file):
+        create_default_config(config_file)
+    config = load_config_from_file(config_file)
+
+    # If config has no seed, generate one
+    if config.seed == "":
+        config.seed = str(random.randint(0, 0xFFFFFFFF))
+        write_config_to_file(config_file, config)
 
     return generate_randomizer(config)
 
 
 def generate_randomizer(config: Config) -> list[World]:
     start = time.process_time()
-    if config.seed == "":
-        config.seed = str(random.randint(0, 0xFFFFFFFF))
-        # Write config back to file
 
     # Seed RNG with combination of seed, standard settings, and plando file (if being used)
     hash_str = config.seed

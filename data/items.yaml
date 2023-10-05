@@ -392,13 +392,13 @@
   getmodelname: GetKobunALetter
   advancement: true
 - id: 159
-  name: Horned Colossus Beetle
+  name: Beedle's Insect Cage
   oarc: GetTerryCage
   getarcname: GetTerryCage
   getmodelname: GetTerryCage
   advancement: true
 - id: 160
-  name: Baby's Rattle
+  name: Rattle
   oarc:
   - GetGaragara
   - PutGaragara

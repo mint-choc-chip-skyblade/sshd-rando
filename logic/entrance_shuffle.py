@@ -189,9 +189,11 @@ def create_entrance_pools(world: World) -> EntrancePools:
         entrance_pools["Trial Gate"] = world.get_shuffleable_entrances(
             "Trial Gate", only_primary=True
         )
-        # Don't enable this until trials stay permanently open
-        # if world.setting("decouple_entrances") == "on":
-        #     entrance_pools["Trial Gate Reverse"] = [entrance.reverse for entrance in entrance_pools["Trial Gate"]]
+        # TODO: Make Trials stay open permanently
+        if world.setting("decouple_entrances") == "on":
+            entrance_pools["Trial Gate Reverse"] = [
+                entrance.reverse for entrance in entrance_pools["Trial Gate"]
+            ]
 
     if world.setting("randomize_door_entrances") == "on":
         entrance_pools["Door"] = world.get_shuffleable_entrances(
@@ -214,7 +216,7 @@ def create_entrance_pools(world: World) -> EntrancePools:
     if world.setting("randomize_overworld_entrances") == "on":
         exclude_overworld_reverse = (
             any("Overworld" in pool for pool in world.setting_map.mixed_entrance_pools)
-            and not world.setting("decoupled_entrances") == "off"
+            and world.setting("decouple_entrances") == "off"
         )
         entrance_pools["Overworld"] = world.get_shuffleable_entrances(
             "Overworld", only_primary=exclude_overworld_reverse
@@ -223,7 +225,13 @@ def create_entrance_pools(world: World) -> EntrancePools:
     set_shuffled_entrances(entrance_pools)
 
     # Set appropriately decoupled types as decoupled
-    potentially_decoupled_types = {"Dungeon", "Door", "Interior", "Overworld"}
+    potentially_decoupled_types = {
+        "Dungeon",
+        "Door",
+        "Interior",
+        "Overworld",
+        "Trial Gate",
+    }
     if world.setting("decouple_entrances") == "on":
         for type_name in potentially_decoupled_types:
             for entrance_type in [type_name, type_name + " Reverse"]:
@@ -231,8 +239,17 @@ def create_entrance_pools(world: World) -> EntrancePools:
                     for entrance in entrance_pools[entrance_type]:
                         entrance.decoupled = True
 
+    # The mixed pools expect a list of lists, if just a list
+    # of types was passed in, then nest it into another list
+    mixed_pool_list = []
+    if world.setting_map.mixed_entrance_pools:
+        if type(world.setting_map.mixed_entrance_pools[0]) is list:
+            mixed_pool_list = world.setting_map.mixed_entrance_pools
+        else:
+            mixed_pool_list = [world.setting_map.mixed_entrance_pools]
+
     # Set mixed pools
-    for i, pool in enumerate(world.setting_map.mixed_entrance_pools):
+    for i, pool in enumerate(mixed_pool_list):
         # The pool should have at least two types that are being shuffled
         # If the pool has less than two types or some of the specified types
         # aren't being shuffled, then ignore the pool
@@ -492,7 +509,7 @@ def replace_entrance(
         return True
     except EntranceShuffleError as error:
         logging.getLogger("").debug(
-            f"Failed to connect {entrance} to {target.original_name} (Reason: {error}) {entrance.world}"
+            f"Failed to connect {entrance} to {target.replaces.original_name} (Reason: {error}) {entrance.world}"
         )
         if entrance.connected_area:
             restore_connections(entrance, target)
@@ -566,3 +583,10 @@ def validate_world(
     # Validate that the world is still beatable
     if not all_locations_reachable(worlds, item_pool):
         raise EntranceShuffleError(f"Not all locations are reachable!")
+
+    # Check to make sure that there's at least 1 sphere 0 location reachable
+    # with no items except the starting inventory
+    sphere_zero_search = Search(SearchMode.ACCESSIBLE_LOCATIONS, worlds)
+    sphere_zero_search.search_worlds()
+    if len(sphere_zero_search.visited_locations) == 0:
+        raise EntranceShuffleError(f"No Sphere 0 locations reachable at the start!")

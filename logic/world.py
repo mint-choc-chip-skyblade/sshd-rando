@@ -308,7 +308,7 @@ class World:
         generate_starting_item_pool(self)
 
     def place_hardcoded_items(self) -> None:
-        self.location_table["Hylia's Realm - Defeat Demise"].set_current_item(
+        self.get_location("Hylia's Realm - Defeat Demise").set_current_item(
             self.get_item("Game Beatable")
         )
 
@@ -333,7 +333,7 @@ class World:
             if item == None:
                 continue
 
-            # Small Keys, Boss Keys, Maps, Caves Key
+            # Small Keys, Boss Keys, Maps, Caves Key, Shop items
             if (
                 (
                     self.setting("small_keys") == "vanilla"
@@ -346,6 +346,10 @@ class World:
                 or (
                     self.setting("lanayru_caves_key") == "vanilla"
                     and item == self.get_item("Lanayru Caves Small Key")
+                )
+                or (
+                    self.setting("randomized_shops") == "vanilla"
+                    and "Beedle's Shop Purchases" in location.types
                 )
             ):
                 location.set_current_item(item)
@@ -376,11 +380,12 @@ class World:
             # so we can lookup their region later if necessary
             for exit_ in area.exits:
                 exit_regions = exit_.parent_area.hint_regions
-                if None not in exit_regions and not exit_regions.intersection(
-                    self.dungeons.keys()
-                ):
+                if None not in exit_regions:
                     for dungeon in self.dungeons.values():
-                        if exit_.connected_area == dungeon.starting_area:
+                        if (
+                            exit_.connected_area == dungeon.starting_area
+                            and dungeon.name not in exit_regions
+                        ):
                             dungeon.starting_entrance = exit_
 
     def choose_required_dungeons(self):
@@ -442,6 +447,12 @@ class World:
         for dungeon in self.dungeons.values():
             if dungeon.should_be_barren():
                 for location in dungeon.locations:
+                    location.progression = False
+
+        # Set beedle's shop items as nonprogress if they can only contain junk
+        if self.setting("randomized_shops") == "junk_only":
+            for location in self.location_table.values():
+                if "Beedle's Shop Purchases" in location.types:
                     location.progression = False
 
     # Remove or add junk to the item pool until the total number of

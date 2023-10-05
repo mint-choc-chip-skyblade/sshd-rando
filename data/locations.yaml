@@ -31,7 +31,7 @@
     - oarc/F001r/l0
   text: <r<lending strength to a friend>> yields
 
-- name: Knight Academy - Cawlin's Letter
+- name: Knight Academy - Item from Cawlin
   original_item: Cawlin's Letter
   type:
   Paths:
@@ -210,7 +210,7 @@
   original_item: Gratitude Crystal Pack
   type: Gratitude Crystal Sidequests
   Paths:
-    - event/115-Town2/814
+    - event/115-Town2/813
     - oarc/F000/l4
     - oarc/F000/l6
     - oarc/F005r/l0
@@ -227,7 +227,7 @@
   text: the <r<item check girl>> hides
 
 - name: Central Skyloft - Item in Bird Nest
-  original_item: Baby's Rattle
+  original_item: Rattle
   type:
   Paths:
     - stage/F000/r0/l0/Item/13
@@ -724,21 +724,21 @@
 
 # Thunderhead:
 
-- name: Isle of Songs - Farore's Courage
+- name: Isle of Songs - Strike Crest with Goddess Sword
   original_item: Farore's Courage
   type:
   Paths:
     - stage/F010r/r0/l0/SwSB/0
   text: the <r<goddess' blade>> reveals
 
-- name: Isle of Songs - Nayru's Wisdom
+- name: Isle of Songs - Strike Crest with Longsword
   original_item: Nayru's Wisdom
   type:
   Paths:
     - stage/F010r/r0/l0/SwSB/1
   text: a <r<longsword>> reveals
 
-- name: Isle of Songs - Din's Power
+- name: Isle of Songs - Strike Crest with White Sword
   original_item: Din's Power
   type:
   Paths:
@@ -770,7 +770,7 @@
   text: the <r<ancient whale within a raging storm>> bellows out
 
 - name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
-  original_item: Horned Colossus Beetle
+  original_item: Beedle's Insect Cage
   type: Minigames
   Paths:
     - event/116-InsectGame/69
@@ -841,6 +841,7 @@
     - oarc/F400/l0
   hint: sometimes
   text: <r<drawing upon a magical wall>> reveals
+
 #Sealed Grounds - Behind the Temple Triforce on Goddess Wall:
 #  original_item: Gold Rupee
 #  type: long
@@ -880,7 +881,7 @@
 
 - name: Faron Woods - Kikwi Elder's Reward
   original_item: Progressive Slingshot
-  type: Combat #because of the Lopsa Bokoblin fight, this is a Combat reward
+  type: Combat # because of the Lopsa Bokoblin fight, this is a Combat reward
   Paths:
     - event/200-Forest/595
     - oarc/F100/l0
@@ -1249,7 +1250,7 @@
   Paths:
     - stage/F210/r0/l0/TBox/65
 
-- name: Mogma Turf - Digging Mitts Fight
+- name: Mogma Turf - Defeat Bokoblins
   original_item: Progressive Mitts
   type: Combat
   Paths:
@@ -1400,13 +1401,13 @@
   Paths:
     - stage/F300/r0/l0/TBox/70
 
-- name: Lanayru Desert - Chest near Hook Beetle Fight
+- name: Lanayru Desert - Chest near Rescue Caged Robot
   original_item: Tumbleweed
   type:
   Paths:
     - stage/F300/r0/l0/TBox/84
 
-- name: Lanayru Desert - Hook Beetle Fight
+- name: Lanayru Desert - Rescue Caged Robot
   original_item: Progressive Beetle
   type: Combat
   Paths:
@@ -1545,7 +1546,7 @@
   Paths:
     - stage/F302/r0/l0/Item/9
 
-- name: Lanayru Gorge - Life Tree Seedling
+- name: Lanayru Gorge - Digging Spot
   original_item: Life Tree Seedling
   type:
   Paths:
@@ -1678,7 +1679,7 @@
     - stage/D100/r4/l0/TBox/67
   text: <r<two watchful eyes>> guard
 
-- name: Skyview Temple - Beetle Chest
+- name: Skyview Temple - Chest after Stalfos Fight
   original_item: Progressive Beetle
   type:
   Paths:
@@ -1723,13 +1724,13 @@
   Paths:
     - stage/D100/r9/l0/TBox/70
 
-- name: Skyview Temple - Boss Key Chest
+- name: Skyview Temple - Chest after Vines
   original_item: Skyview Temple Boss Key
   type:
   Paths:
     - stage/D100/r9/l0/TBox/66
 
-- name: Skyview Temple - Heart Container
+- name: Skyview Temple - Defeat Boss
   original_item: Heart Container
   type:
   Paths:
@@ -1744,7 +1745,7 @@
   Paths:
     - stage/B100_1/r0/l0/Item/109
 
-- name: Skyview Spring - Ruby Tablet
+- name: Skyview Spring - Strike Crest
   original_item: Ruby Tablet
   goal_location: true
   type:
@@ -1786,7 +1787,7 @@
   Paths:
     - stage/D200/r0/l0/TBox/64
 
-- name: Earth Temple - Bomb Bag Chest
+- name: Earth Temple - Chest after Double Lizalfos Fight
   original_item: Bomb Bag
   type:
   Paths:
@@ -1813,20 +1814,20 @@
   Paths:
     - stage/D200/r1/l0/TBox/67
 
-- name: Earth Temple - Boss Key Chest
+- name: Earth Temple - Chest before Boulder Chase
   original_item: Earth Temple Boss Key
   type:
   Paths:
     - stage/D200/r4/l0/TBox/68
 
-- name: Earth Temple - Heart Container
+- name: Earth Temple - Defeat Boss
   original_item: Heart Container
   type:
   Paths:
     - stage/B200/r10/l1/HeartCo
     - stage/B200/r10/l2/HeartCo
 
-- name: Earth Spring - Amber Tablet
+- name: Earth Spring - Strike Crest
   original_item: Amber Tablet
   goal_location: true
   type:
@@ -1866,13 +1867,13 @@
   Paths:
     - stage/D300/r2/l0/TBox/65
 
-- name: Lanayru Mining Facility - Gust Bellows Chest
+- name: Lanayru Mining Facility - Hop across Boxes Raised Chest
   original_item: Gust Bellows
   type:
   Paths:
     - stage/D300/r4/l0/TBox/68
 
-- name: Lanayru Mining Facility - Chest inside Gust Bellows Room
+- name: Lanayru Mining Facility - Hop across Boxes Lower Chest
   original_item: Golden Skull # TODO check again
   type:
   Paths:
@@ -1892,7 +1893,7 @@
     - stage/D300_1/r7/l0/TBox/73
     - stage/D300/r7/l0/TBox/73
 
-- name: Lanayru Mining Facility - Boss Key Chest
+- name: Lanayru Mining Facility - Chest after Double Armos Fight
   original_item: Lanayru Mining Facility Boss Key
   type:
   Paths:
@@ -1906,14 +1907,14 @@
   Paths:
     - stage/D300_1/r5/l0/TBox/74
 
-- name: Lanayru Mining Facility - Heart Container
+- name: Lanayru Mining Facility - Defeat Boss
   original_item: Heart Container
   type:
   Paths:
     - stage/B300/r0/l1/HeartCo
     - stage/B300/r0/l3/HeartCo
 
-- name: Lanayru Mining Facility - Goddess Harp
+- name: Lanayru Mining Facility - Exit Hall of Ancient Robots
   original_item: Goddess's Harp
   goal_location: true
   type:
@@ -1972,12 +1973,12 @@
   text: the <r<lone east chest in the Ancient Cistern>> contains
   Paths:
     - stage/D101/r1/l0/TBox/67
-# # Can Be Locked Out Of if activating water pillar before collecting
-# Ancient Cistern - Rupee under Lilypad:
-#   original_item: Red Rupee
-#   type: Rupees (No Quick Beetle)
-#   Paths:
-#     - stage/D101/r5/l0/Item/13
+
+- name: Ancient Cistern - Rupee under Lilypad
+  original_item: Red Rupee
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r5/l0/Item/13
 
 - name: Ancient Cistern - Chest after Whip Hooks
   original_item: Ancient Cistern Map
@@ -2003,19 +2004,19 @@
   Paths:
     - stage/D101/r4/l0/EBc/0xFC00
 
-- name: Ancient Cistern - Whip Chest
+- name: Ancient Cistern - Chest in Key Locked Room
   original_item: Whip
   type:
   Paths:
     - stage/D101/r7/l0/TBox/69
 
-- name: Ancient Cistern - Boss Key Chest
+- name: Ancient Cistern - Chest under Stone Statue
   original_item: Ancient Cistern Boss Key
   type:
   Paths:
     - stage/D101/r4/l0/TBox/68
 
-- name: Ancient Cistern - Heart Container
+- name: Ancient Cistern - Defeat Boss
   original_item: Heart Container
   type:
   Paths:
@@ -2089,7 +2090,7 @@
     - event/401-DesertD2/14
     - oarc/D301/l4
 
-- name: Sandship - Bow Chest
+- name: Sandship - Chest after Scervo Fight
   original_item: Progressive Bow
   type:
   Paths:
@@ -2097,7 +2098,7 @@
   hint: sometimes
   text: a <r<robot upon the Sandship's bow>> guards
 
-- name: Sandship - Boss Key Chest
+- name: Sandship - Chest in Captain's Cabin
   original_item: Sandship Boss Key
   type:
   Paths:
@@ -2105,7 +2106,7 @@
   hint: sometimes
   text: the <r<secret treasure of the Sandship's captain>> is
 
-- name: Sandship - Heart Container
+- name: Sandship - Defeat Boss
   original_item: Heart Container
   type:
   Paths:
@@ -2163,14 +2164,14 @@
   Paths:
     - stage/D201_1/r7/l0/TBox/72
 
-- name: Fire Sanctuary - Mogma Mitts Chest
+- name: Fire Sanctuary - Rescue First Trapped Mogma Chest
   original_item: Progressive Mitts
   type:
   Paths:
     - stage/D201_1/r5/l0/TBox/68
   text: saving a <r<mogma>> from a <r<fiery fate>> rewards
 
-- name: Fire Sanctuary - Chest after Second Trapped Mogma
+- name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   original_item: Fire Sanctuary Map
   type:
   Paths:
@@ -2198,13 +2199,13 @@
     - stage/D201/r9/l0/TBox/75
   text: exploring a <r<broken staircase>> reveals
 
-- name: Fire Sanctuary - Boss Key Chest
+- name: Fire Sanctuary - Chest after Winged Torches
   original_item: Fire Sanctuary Boss Key
   type:
   Paths:
     - stage/D201/r4/l0/TBox/67
 
-- name: Fire Sanctuary - Heart Container
+- name: Fire Sanctuary - Defeat Boss
   original_item: Heart Container
   type:
   Paths:
@@ -2239,21 +2240,21 @@
   Paths:
     - stage/D003_2/r0/l0/Item/36
 
-- name: Sky Keep - Triforce of Power
+- name: Sky Keep - Sacred Power of Din
   original_item: Triforce of Power
   goal_location: true
   type:
   Paths:
   - stage/D003_8/r0/l2/Item/61
 
-- name: Sky Keep - Triforce of Wisdom
+- name: Sky Keep - Sacred Power of Nayru
   original_item: Triforce of Wisdom
   goal_location: true
   type:
   Paths:
   - stage/D003_8/r0/l1/Item/62
 
-- name: Sky Keep - Triforce of Courage
+- name: Sky Keep - Sacred Power of Farore
   original_item: Triforce of Courage
   goal_location: true
   type:
@@ -2262,7 +2263,7 @@
 
 # Silent Realms:
 
-- name: Skyloft Silent Realm - Reward
+- name: Skyloft Silent Realm - Collect all Tears Reward
   original_item: Stone of Trials
   type:
   Paths:
@@ -2270,7 +2271,7 @@
   hint: always
   text: the <r<goddess's final trial>> grants
 
-- name: Faron Silent Realm - Reward
+- name: Faron Silent Realm - Collect all Tears Reward
   original_item: Water Dragon's Scale
   type:
   Paths:
@@ -2278,7 +2279,7 @@
   hint: always
   text: a <r<trial of courage>> grants
 
-- name: Lanayru Silent Realm - Reward
+- name: Lanayru Silent Realm - Collect all Tears Reward
   original_item: Clawshots
   type:
   Paths:
@@ -2286,7 +2287,7 @@
   hint: always
   text: a <r<trial of wisdom>> grants
 
-- name: Eldin Silent Realm - Reward
+- name: Eldin Silent Realm - Collect all Tears Reward
   original_item: Fireshield Earrings
   type:
   Paths:

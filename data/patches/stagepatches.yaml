@@ -32,7 +32,7 @@ F000: # Skyloft
     layer: 0
   - name: unnecessary oarcs
     type: oarcdelete
-    oarc: MoldoGut_Baby # baby molderarch, is probably here because of the dust pile but not needed
+    oarc: MoldoGut_Baby # baby moldararch, is probably here because of the dust pile but not needed
     layer: 0
   - name: delete people on bridge 1
     type: oarcdelete
@@ -492,6 +492,14 @@ F000: # Skyloft
       name: Item
 
   ## Crystal between Wooden Planks
+  - name: Rotate crystal between Wooden Planks
+    type: objpatch
+    id: 0xFCA1
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      angley: 32000
   - name: Move crystal between Wooden Planks to layer 2
     type: objmove
     id: 0xFCA1
@@ -511,6 +519,7 @@ F000: # Skyloft
       posx: -1796.03759765625
       posy: 402.030029296875
       posz: -5601.87255859375
+      angley: 32000
       id: 0xFCA1
       name: Item
   - name: Add crystal between Wooden Planks to layer 7
@@ -525,6 +534,7 @@ F000: # Skyloft
       posx: -1796.03759765625
       posy: 402.030029296875
       posz: -5601.87255859375
+      angley: 32000
       id: 0xFCA1
       name: Item
   - name: Add crystal between Wooden Planks to layer 9
@@ -539,6 +549,7 @@ F000: # Skyloft
       posx: -1796.03759765625
       posy: 402.030029296875
       posz: -5601.87255859375
+      angley: 32000
       id: 0xFCA1
       name: Item
 
@@ -897,6 +908,14 @@ F001r:
     destlayer: 0
   
   # Move Loose Crystal checks to night layers
+  - name: Raise crystal in Link's room
+    type: objpatch
+    id: 0xFC0C
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      posy: 102.0
   - name: Move crystal in Link's room to night layer
     type: objmove
     id: 0xFC0C
@@ -904,6 +923,14 @@ F001r:
     destlayer: 4
     room: 1
     objtype: OBJ
+  - name: Rotate Academy plant crystal
+    type: objpatch
+    id: 0xFC4B
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      angley: 52000
   - name: Move Academy plant crystal to night layer
     type: objmove
     id: 0xFC4B
@@ -964,6 +991,14 @@ F005r: # Orielle and Parrow's House
     layer: 2
     room: 0
     objtype: OBJ
+  - name: Rotate crystal in Orielle and Parrow's house
+    type: objpatch
+    id: 0xFC0F
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      angley: 44000
   - name: Move crystal in Orielle and Parrow's house to night layer
     type: objmove
     id: 0xFC0F
@@ -2299,7 +2334,7 @@ F300: # lanayru Main Area
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Remove Fi text before Hook Beetle Fight Check
+  - name: Remove Fi text before Rescue Caged Robot Check
     type: objdelete
     id: 0xFC29
     layer: 0
@@ -4055,6 +4090,16 @@ D101: # Ancient Cistern
       flag6: 0
       zero: 0
       saveprompt: 0
+  - name: Move Rupee under Lilypad # So it doesn't get caught up in the water stream
+    type: objpatch
+    id: 0xFC22
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      posx: -800
+      posy: -310
+      posz: -7590
   - name: extra Bomb flower
     type: objadd
     layer: 0
@@ -4363,7 +4408,15 @@ D201_1: # FS B
       anglez: 0
       id: 0xFC20
       name: ClawSTg
-  - name: Fist Trapped Mogma CS delete
+  - name: Move first trapped Mogma lever down to be reachable
+    type: objpatch
+    room: 5
+    layer: 0
+    id: 0xFC0E
+    objtype: OBJ
+    object:
+      posy: -200
+  - name: First Trapped Mogma CS delete
     type: objdelete
     layer: 0
     room: 5
@@ -4524,6 +4577,14 @@ D300: # LMF A
       name: Tubo
 
 D300_1: # LMF B
+  - name: Remove CS after blowing up boxes # Only one of the boxes plays the CS
+    type: objpatch
+    id: 0xFC62
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      params1: 0xFFF5CFF0 # Was 0xF035CFF0; 0x0FF00000 = eventid
   - name: Close door to BK room from both sides
     type: objpatch
     index: 6 # all have id FFFF :(
@@ -4696,7 +4757,7 @@ D301: # Sandship A
     layer: 2
     room: 15
     objtype: OBJ
-  - name: Fi text after bow chest
+  - name: Fi text after Chest after Scervo Fight
     type: objdelete
     id: 0xFC08
     layer: 2

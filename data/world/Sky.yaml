@@ -90,6 +90,8 @@
 
 - name: Island near Bamboo Island
   hint_region: The Sky
+  events:
+    Can Collect Water: Bottle
   exits:
     The Sky: Day
   locations:
@@ -104,7 +106,7 @@
     The Sky: Day
   locations:
     Beedle's Island - Crystal: Night and Beetle
-    Beedle's Island - Beedle's Crystals: Night and Horned_Colossus_Beetle
+    Beedle's Island - Beedle's Crystals: Night and Beedles_Insect_Cage
     Beedle's Island - Top Goddess Chest: Day and 'Goddess_Cube_at_Ride_near_Temple_of_Time'
     Beedle's Island - Cage Goddess Chest: (Night or (Day and logic_beedles_island_cage_chest_dive)) and 'Goddess_Cube_on_top_of_Skyview'
 
@@ -218,7 +220,7 @@
     The Sky: Day
   locations:
     Triple Island - Upper Goddess Chest: "'Goddess_Cube_at_Eldin_Entrance'"
-    Triple Island - Lower Goddess Chest: "'Goddess_Cube_near_Hook_Beetle_Fight'"
+    Triple Island - Lower Goddess Chest: "'Goddess_Cube_near_Rescue_Caged_Robot'"
     Triple Island - Cage Goddess Chest: Clawshots and 'Goddess_Cube_in_Skippers_Retreat'
 
 # TODO: Check day/night stuff
@@ -249,9 +251,9 @@
   exits:
     Isle of Songs: Nothing
   locations:
-    Isle of Songs - Farore's Courage: Goddess_Sword
-    Isle of Songs - Nayru's Wisdom: Goddess_Longsword
-    Isle of Songs - Din's Power: Goddess_White_Sword
+    Isle of Songs - Strike Crest with Goddess Sword: Goddess_Sword
+    Isle of Songs - Strike Crest with Longsword: Goddess_Longsword
+    Isle of Songs - Strike Crest with White Sword: Goddess_White_Sword
 
 
 - name: Thunderhead East Island
@@ -274,6 +276,8 @@
 
 - name: Bug Heaven
   hint_region: The Thunderhead
+  events:
+    Can Collect Water: Bottle
   exits:
     The Thunderhead: Day
   locations:

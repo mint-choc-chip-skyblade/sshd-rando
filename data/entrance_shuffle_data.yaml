@@ -1002,7 +1002,7 @@
         room: 0
         index: 57
     spawn_info:
-      - stage: F008r
+      - stage: F001r
         layer: 0
         room: 6
         entrance: 1
@@ -1461,7 +1461,7 @@
     exit_infos: 
       - stage: F302
         room: 0
-        index: 4
+        index: 0
     spawn_info:
       - stage: F303
         layer: 0
@@ -1550,7 +1550,7 @@
         entrance: 1
 - type: Interior
   forward:
-    connection: Pirate Stronghold Dock -> Pirate Stronghold Top Door
+    connection: Pirate Stronghold Inside the Shark Head -> Pirate Stronghold Top Door
     exit_infos: 
       - stage: F301_6
         room: 0
@@ -1561,7 +1561,7 @@
         room: 1
         entrance: 1
   return:  
-    connection: Pirate Stronghold Top Door -> Pirate Stronghold Dock
+    connection: Pirate Stronghold Top Door -> Pirate Stronghold Inside the Shark Head
     exit_infos:
       - stage: F301_2
         room: 1
@@ -1795,7 +1795,7 @@
     exit_infos: 
       - stage: F201_1
         room: 0
-        index: 2
+        index: 0
     spawn_info:
       - stage: F200
         layer: 0

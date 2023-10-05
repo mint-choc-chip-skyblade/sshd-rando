@@ -39,6 +39,7 @@ SEMICOLON = ";"
 NEWLINE = "\n"
 OFFSET = ".offset"
 SPACE = " "
+ONLYIF = "; onlyif "
 
 # Change how yaml dumps lists so each element isn't on a separate line.
 yaml.CDumper.add_representer(
@@ -47,6 +48,18 @@ yaml.CDumper.add_representer(
         "tag:yaml.org,2002:seq", data, flow_style=True
     ),
 )
+
+
+# Helper to determine if data is a hex number or not
+def is_hex(data: str) -> bool:
+    data = data.lower()
+    if data.startswith("0x"):
+        data = data[2:]
+    for char in data:
+        if char not in "0123456789abcdef":
+            return False
+    return True
+
 
 # Output integers as hexadecimal.
 yaml.CDumper.add_representer(
@@ -58,7 +71,8 @@ yaml.CDumper.add_representer(
 yaml.CDumper.add_representer(
     str,
     lambda dumper, data: yaml.ScalarNode(
-        "tag:yaml.org,2002:int", f"0x{int(data, 16):08X}"
+        "tag:yaml.org,2002:int" if is_hex(data) else "tag:yaml.org,2002:str",
+        f"0x{int(data, 16):08X}" if is_hex(data) else data,
     ),
 )
 
@@ -128,14 +142,16 @@ custom_symbols = {}
 
 
 def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
-    addresses_overwritten = []
+    addresses_overwritten = {}
 
     for asm_file_path in asmPaths:
         print(f"Assembling: {asm_file_path}")
         asm_file_name = asm_file_path.parts[-1]
         code_blocks = {}
+        only_ifs = {}  # Maps onlyifs to offsets
         local_branches = []
         asm_read_offset = None
+        current_only_if = None
 
         temp_linker_cript = linker_script + NEWLINE
 
@@ -150,6 +166,15 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
         for line in asm_block.splitlines():
             line = line.strip()
 
+            if line.startswith(ONLYIF):
+                current_only_if = line.replace(ONLYIF, "")
+                if current_only_if not in only_ifs:
+                    only_ifs[current_only_if] = []
+
+            # Reset the current_only_if whenever a blank line is encountered
+            if len(line) == 0:
+                current_only_if = None
+
             if len(line) == 0 or line.startswith(SEMICOLON):
                 continue
 
@@ -157,6 +182,9 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
             if line.startswith(OFFSET):
                 asm_read_offset = hex(int(line.split(SPACE)[-1], 16))
+
+                if current_only_if is not None:
+                    only_ifs[current_only_if].append(asm_read_offset)
 
                 if asm_read_offset not in code_blocks:
                     code_blocks[asm_read_offset] = []
@@ -316,15 +344,27 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
                 if true_offset in addresses_overwritten:
                     raise Exception(
-                        f"Overlapping asm patch found at {offset} in file {asm_file_name}."
+                        f"Overlapping asm patch found at {offset} in file {asm_file_name}. {addresses_overwritten[true_offset]} is already using that address"
                     )
                 else:
-                    addresses_overwritten.append(true_offset)
+                    addresses_overwritten[true_offset] = asm_file_name
 
         diff_file_name = outputPath / f"{asm_file_name[:-4]}-diff.yaml"
 
+        # Create a new dict that has all code patches under their respective only_ifs
+        diff_dict = {}
+        for only_if, asm_offsets in only_ifs.items():
+            diff_dict[only_if] = {}
+            for offset in asm_offsets:
+                code_block = code_blocks.pop(offset)
+                diff_dict[only_if][offset] = code_block
+
+        # Add all the blocks with no only_ifs
+        for offset, code_block in code_blocks.items():
+            diff_dict[offset] = code_block
+
         with open(diff_file_name, "w", newline="") as f:
-            f.write(yaml.dump(code_blocks, Dumper=yaml.CDumper, line_break=NEWLINE))
+            f.write(yaml.dump(diff_dict, Dumper=yaml.CDumper, line_break=NEWLINE))
 
 
 # Get patches from each asm file.
@@ -335,7 +375,19 @@ asm_patches_paths = list(ASM_PATCHES_PATH.glob("*.asm"))
 with temp_dir as temp_dir_name:
     temp_dir_name = Path(temp_dir_name)
 
+    # Format rust additions.
+    print("Formatting rust code")
+    if rust_build_command := call(
+        [
+            "cargo",
+            "fmt",
+        ],
+        cwd="./additions/rust-additions",
+    ):
+        raise Exception("Formatting rust additions failed.")
+
     # Assemble rust additions.
+    print("Building rust code")
     if rust_build_command := call(
         ["cargo", "build", "--release", "--target=aarch64-unknown-none"],
         cwd="./additions/rust-additions",

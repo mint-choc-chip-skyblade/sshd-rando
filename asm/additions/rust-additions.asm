@@ -15,3 +15,18 @@
 
 .global set_goddess_sword_pulled_story_flag
 .type set_goddess_sword_pulled_story_flag, @function
+
+.global fix_freestanding_item_y_offset
+.type fix_freestanding_item_y_offset, @function
+
+.global fix_sandship_boat
+.type fix_sandship_boat, @function
+
+.global handle_er_cases
+.type handle_er_cases, @function
+
+.global handle_er_action_states
+.type handle_er_action_states, @function
+
+.global set_stone_of_trials_placed_flag
+.type set_stone_of_trials_placed_flag, @function

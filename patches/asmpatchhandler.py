@@ -46,6 +46,8 @@ class ASMPatchHandler:
 
     def patch_asm(
         self,
+        world: World,
+        onlyif_handler: ConditionalPatchHandler,
         nso_path: Path,
         asm_diffs_path: Path,
         output_path: Path,
@@ -87,15 +89,26 @@ class ASMPatchHandler:
 
             # Write patch data for each segment.
             for relative_offset, data in binary_diffs.items():
-                if relative_offset < offsets.get_rodata_offset():
-                    file_offset = relative_offset - offsets.get_text_offset()
-                    write_bytes(text_segment, file_offset, bytes(data))
-                elif relative_offset < offsets.get_data_offset():
-                    file_offset = relative_offset - offsets.get_rodata_offset()
-                    write_bytes(rodata_segment, file_offset, bytes(data))
+                if type(relative_offset) is not int:
+                    if onlyif_handler.evaluate_onlyif(relative_offset):
+                        for relative_offset, data2 in data.items():
+                            self.write_patch(
+                                relative_offset,
+                                offsets,
+                                text_segment,
+                                rodata_segment,
+                                data_segment,
+                                data2,
+                            )
                 else:
-                    file_offset = relative_offset - offsets.get_data_offset()
-                    write_bytes(data_segment, file_offset, bytes(data))
+                    self.write_patch(
+                        relative_offset,
+                        offsets,
+                        text_segment,
+                        rodata_segment,
+                        data_segment,
+                        data,
+                    )
 
                 # print(f"data {bytes(data)}")
 
@@ -180,10 +193,25 @@ class ASMPatchHandler:
 
         write_bytes_create_dirs(output_path, nso.getvalue())
 
+    def write_patch(
+        self, relative_offset, offsets, text_segment, rodata_segment, data_segment, data
+    ) -> None:
+        if relative_offset < offsets.get_rodata_offset():
+            file_offset = relative_offset - offsets.get_text_offset()
+            write_bytes(text_segment, file_offset, bytes(data))
+        elif relative_offset < offsets.get_data_offset():
+            file_offset = relative_offset - offsets.get_rodata_offset()
+            write_bytes(rodata_segment, file_offset, bytes(data))
+        else:
+            file_offset = relative_offset - offsets.get_data_offset()
+            write_bytes(data_segment, file_offset, bytes(data))
+
     # Applies both asm patches and additions.
     def patch_all_asm(self, world: World, onlyif_handler: ConditionalPatchHandler):
         print("Applying asm patches")
         self.patch_asm(
+            world,
+            onlyif_handler,
             MAIN_NSO_FILE_PATH,
             ASM_PATCHES_DIFFS_PATH,
             OUTPUT_MAIN_NSO,
@@ -202,6 +230,8 @@ class ASMPatchHandler:
 
             print("Applying asm additions")
             self.patch_asm(
+                world,
+                onlyif_handler,
                 SUBSDK1_FILE_PATH,
                 ASM_ADDITIONS_DIFFS_PATH,
                 OUTPUT_ADDITIONAL_SUBSDK,
@@ -278,7 +308,7 @@ class ASMPatchHandler:
         # Convert startflags_data into a list of bytes.
         startflags_data_bytes = startflags_data.getvalue()
         startflags_data_dict = {
-            SUBSDK8_RODATA_START: list(
+            SUBSDK_STARTFLAG_OFFSET: list(
                 struct.unpack("B" * len(startflags_data_bytes), startflags_data_bytes)
             )
         }
