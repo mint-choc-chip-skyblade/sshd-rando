@@ -33,3 +33,9 @@
 
 .global update_day_night_storyflag
 .type update_day_night_storyflag, @function
+
+.global check_storyflag
+.type check_storyflag, @function
+
+; .global cmp_day_night_storyflag
+; .type cmp_day_night_storyflag, @function

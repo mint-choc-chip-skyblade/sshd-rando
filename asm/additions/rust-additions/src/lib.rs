@@ -365,37 +365,19 @@ pub fn handle_er_cases() {
 
         // Force NEXT_NIGHT to day (storyflag keeps the night state stored)
         // If it should be night time, check if the entrance is valid at night
+        // check_storyflag(899) can only be true if natural_night_connections is off
+        if (check_storyflag(899) != 0 || NEXT_NIGHT == 1) {
+            yuzu_print("Should be night");
 
-        if check_storyflag(899) != 0 {
-            yuzu_print("Night flag is set");
-
-            if (&NEXT_STAGE_NAME[..2] == b"F0" &&      // Non-surface stage
-                &NEXT_STAGE_NAME[..6] != b"F004r\0" && // Not Bazaar
-                &NEXT_STAGE_NAME[..6] != b"F010r\0" && // Not Isle of Songs
-                &NEXT_STAGE_NAME[..6] != b"F019r\0" && // Not Bamboo Island
-                &NEXT_STAGE_NAME[..3] != b"F02"   ||   // Not Sky/Thunderhead
-                (
-                    &NEXT_STAGE_NAME[..5] == b"F020\0" && // Sky stage
-                    (
-                        NEXT_ENTRANCE == 0  || // Beedle's Island
-                        NEXT_ENTRANCE == 22 || // Lumpy West Door
-                        NEXT_ENTRANCE == 23 || // Lumpy East Door
-                        NEXT_ENTRANCE == 24    // Lumpy Back Door
-                    )
-                ) ||
-                // Waterfall Cave
-                &NEXT_STAGE_NAME[..5] == b"D000\0" ||
-                // Skyloft Silent Realm
-                &NEXT_STAGE_NAME[..5] == b"S000\0")
-            {
-                yuzu_print("NEXT_NIGHT = 1");
+            if next_stage_is_valid_at_night() {
+                yuzu_print("Next stage is valid at night: NEXT_NIGHT = 1");
                 NEXT_NIGHT = 1;
             } else {
-                yuzu_print("Stage and Entrance cannot be night");
+                yuzu_print("Next stage is NOT valid at night: NEXT_NIGHT = 0");
                 NEXT_NIGHT = 0;
             }
         } else {
-            yuzu_print("Night flag is not set");
+            yuzu_print("Should not be night");
             NEXT_NIGHT = 0;
         }
 
@@ -404,6 +386,35 @@ pub fn handle_er_cases() {
         (*GAME_RELOADER).beedle_shop_spawn_state = 0xFF;
         (*GAME_RELOADER).action_index = 0xFF;
     }
+}
+
+#[no_mangle]
+pub fn next_stage_is_valid_at_night() -> bool {
+    unsafe {
+        if (&NEXT_STAGE_NAME[..2] == b"F0" &&      // Non-surface stage
+            &NEXT_STAGE_NAME[..6] != b"F004r\0" && // Not Bazaar
+            &NEXT_STAGE_NAME[..6] != b"F010r\0" && // Not Isle of Songs
+            &NEXT_STAGE_NAME[..6] != b"F019r\0" && // Not Bamboo Island
+            &NEXT_STAGE_NAME[..3] != b"F02"   ||   // Not Sky/Thunderhead
+            (
+                &NEXT_STAGE_NAME[..5] == b"F020\0" && // Sky stage
+                (
+                    NEXT_ENTRANCE == 0  || // Beedle's Island
+                    NEXT_ENTRANCE == 22 || // Lumpy West Door
+                    NEXT_ENTRANCE == 23 || // Lumpy East Door
+                    NEXT_ENTRANCE == 24    // Lumpy Back Door
+                )
+            ) ||
+            // Waterfall Cave
+            &NEXT_STAGE_NAME[..5] == b"D000\0" ||
+            // Skyloft Silent Realm
+            &NEXT_STAGE_NAME[..5] == b"S000\0")
+        {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 // When checking stage info in this function be sure to use
@@ -459,6 +470,17 @@ pub fn update_day_night_storyflag() {
     }
 
     return;
+}
+
+#[no_mangle]
+pub fn cmp_day_night_storyflag() {
+    unsafe {
+        asm!(
+            "mov w27, {0:w}", // w27 is reasigned after this
+            "cmp w27, #0x1",
+            in(reg) check_storyflag(899), // 899 == day/night flag
+        );
+    }
 }
 
 // Will output a string to Yuzu's log.
