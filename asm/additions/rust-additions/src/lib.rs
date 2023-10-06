@@ -31,6 +31,7 @@ extern "C" {
     static mut CURRENT_ROOM: u8;
     static mut CURRENT_LAYER: u8;
     static mut CURRENT_ENTRANCE: u8;
+    static mut CURRENT_NIGHT: u8;
     static mut CURRENT_SOMETHING: u8;
     static mut NEXT_STAGE_NAME: [u8; 7];
     static mut NEXT_STAGE_SUFFIX: [u8; 3];
@@ -38,6 +39,7 @@ extern "C" {
     static mut NEXT_ROOM: u8;
     static mut NEXT_LAYER: u8;
     static mut NEXT_ENTRANCE: u8;
+    static mut NEXT_NIGHT: u8;
     static mut NEXT_TRIAL: u8;
     static mut NEXT_SOMETHING: u8;
     static mut GAME_RELOADER: *mut structs::GameReloader;
@@ -289,9 +291,16 @@ pub fn fix_freestanding_item_y_offset() {
 }
 
 #[no_mangle]
-pub fn storyflag_set_to_1(flag: u16) {
+pub fn set_storyflag(flag: u16) {
     unsafe {
         ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag);
+    };
+}
+
+#[no_mangle]
+pub fn unset_storyflag(flag: u16) {
+    unsafe {
+        ((*(*STORYFLAG_MGR).funcs).unsetFlag)(STORYFLAG_MGR, flag);
     };
 }
 
@@ -305,7 +314,7 @@ pub fn check_storyflag(flag: u16) -> u32 {
 #[no_mangle]
 pub fn set_goddess_sword_pulled_story_flag() {
     // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
-    storyflag_set_to_1(951);
+    set_storyflag(951);
 }
 
 // When checking/setting stage info in this function be sure to use
@@ -314,6 +323,12 @@ pub fn set_goddess_sword_pulled_story_flag() {
 #[no_mangle]
 pub fn handle_er_cases() {
     unsafe {
+        // Enforce a max speed after reloading
+        // Prevents you running off high ledges from non-vanilla exits
+        if (*GAME_RELOADER).speed_after_reload > 30f32 {
+            (*GAME_RELOADER).speed_after_reload = 30f32;
+        }
+
         // If we're spawning from Sky Keep, but Sky Keep hasn't appeared yet,
         // instead spawn near the statue
         if &NEXT_STAGE_NAME[..5] == b"F000\0" && NEXT_ENTRANCE == 53 && check_storyflag(22) == 0 {
@@ -348,11 +363,58 @@ pub fn handle_er_cases() {
             NEXT_TRIAL = 0;
         }
 
+        // Force NEXT_NIGHT to day (storyflag keeps the night state stored)
+        // If it should be night time, check if the entrance is valid at night
+        // check_storyflag(899) can only be true if natural_night_connections is off
+        if (check_storyflag(899) != 0 || NEXT_NIGHT == 1) {
+            yuzu_print("Should be night");
+
+            if next_stage_is_valid_at_night() {
+                yuzu_print("Next stage is valid at night: NEXT_NIGHT = 1");
+                NEXT_NIGHT = 1;
+            } else {
+                yuzu_print("Next stage is NOT valid at night: NEXT_NIGHT = 0");
+                NEXT_NIGHT = 0;
+            }
+        } else {
+            yuzu_print("Should not be night");
+            NEXT_NIGHT = 0;
+        }
+
         // Replaced code sets these
         (*GAME_RELOADER).item_to_use_after_reload = 0xFF;
         (*GAME_RELOADER).beedle_shop_spawn_state = 0xFF;
         (*GAME_RELOADER).action_index = 0xFF;
     }
+}
+
+#[no_mangle]
+pub fn next_stage_is_valid_at_night() -> bool {
+    unsafe {
+        if (&NEXT_STAGE_NAME[..2] == b"F0" &&      // Non-surface stage
+            &NEXT_STAGE_NAME[..6] != b"F004r\0" && // Not Bazaar
+            &NEXT_STAGE_NAME[..6] != b"F010r\0" && // Not Isle of Songs
+            &NEXT_STAGE_NAME[..6] != b"F019r\0" && // Not Bamboo Island
+            &NEXT_STAGE_NAME[..3] != b"F02"   ||   // Not Sky/Thunderhead
+            (
+                &NEXT_STAGE_NAME[..5] == b"F020\0" && // Sky stage
+                (
+                    NEXT_ENTRANCE == 0  || // Beedle's Island
+                    NEXT_ENTRANCE == 22 || // Lumpy West Door
+                    NEXT_ENTRANCE == 23 || // Lumpy East Door
+                    NEXT_ENTRANCE == 24    // Lumpy Back Door
+                )
+            ) ||
+            // Waterfall Cave
+            &NEXT_STAGE_NAME[..5] == b"D000\0" ||
+            // Skyloft Silent Realm
+            &NEXT_STAGE_NAME[..5] == b"S000\0")
+        {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 // When checking stage info in this function be sure to use
@@ -384,7 +446,35 @@ pub fn set_stone_of_trials_placed_flag(
         GameReloader__triggerExit(gameReloader, currentRoom, exitIndex, forceNight, forceTrial)
     }
 
-    storyflag_set_to_1(22); // 22 == Stone of Trials placed storyflag
+    set_storyflag(22); // 22 == Stone of Trials placed storyflag
+}
+
+#[no_mangle]
+pub fn update_day_night_storyflag() {
+    yuzu_print("Updating night flag");
+
+    unsafe {
+        // 899 == day/night storyflag
+        if NEXT_NIGHT == 1 {
+            yuzu_print("Setting night flag");
+            set_storyflag(899);
+        } else {
+            yuzu_print("Unsetting night flag");
+            unset_storyflag(899);
+        }
+
+        ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);
+
+        // Replaced instruction
+        NEXT_SOMETHING = 0xFF;
+    }
+
+    return;
+}
+
+#[no_mangle]
+pub fn check_night_storyflag() -> bool {
+    return check_storyflag(899) != 0; // 899 == day/night flag
 }
 
 // Will output a string to Yuzu's log.

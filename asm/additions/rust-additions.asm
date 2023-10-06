@@ -30,3 +30,12 @@
 
 .global set_stone_of_trials_placed_flag
 .type set_stone_of_trials_placed_flag, @function
+
+.global update_day_night_storyflag
+.type update_day_night_storyflag, @function
+
+.global check_storyflag
+.type check_storyflag, @function
+
+.global check_night_storyflag
+.type check_night_storyflag, @function

@@ -39,6 +39,13 @@ b.eq handle_er_action_states
 cmp w8, #8
 b.eq set_stone_of_trials_placed_flag
 
+; update day/night storyflag
+cmp w8, #9
+b.eq update_day_night_storyflag
+
+cmp w8, #10
+b.eq check_night_storyflag
+
 ret ; this should never be reached
 
 ; ends at 0x360A6500
