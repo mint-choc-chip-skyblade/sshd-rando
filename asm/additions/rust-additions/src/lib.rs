@@ -473,14 +473,8 @@ pub fn update_day_night_storyflag() {
 }
 
 #[no_mangle]
-pub fn cmp_day_night_storyflag() {
-    unsafe {
-        asm!(
-            "mov w27, {0:w}", // w27 is reasigned after this
-            "cmp w27, #0x1",
-            in(reg) check_storyflag(899), // 899 == day/night flag
-        );
-    }
+pub fn check_night_storyflag() -> bool {
+    return check_storyflag(899) != 0; // 899 == day/night flag
 }
 
 // Will output a string to Yuzu's log.

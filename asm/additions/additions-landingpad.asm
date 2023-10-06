@@ -43,8 +43,8 @@ b.eq set_stone_of_trials_placed_flag
 cmp w8, #9
 b.eq update_day_night_storyflag
 
-; cmp w8, #10
-; b.eq cmp_day_night_storyflag
+cmp w8, #10
+b.eq check_night_storyflag
 
 ret ; this should never be reached
 
