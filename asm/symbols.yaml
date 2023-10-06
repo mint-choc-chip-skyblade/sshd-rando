@@ -49,4 +49,4 @@ main:
     GameReloader__triggerExit: 0x08df9478
 
     # Custom Symbols
-    STARTFLAGS: 0x363EF200 # start of subsdk8 data section + 0x200
+    STARTFLAGS: 0x3654b200 # See asmconstants.py for where this number comes from
