@@ -367,17 +367,17 @@ pub fn handle_er_cases() {
         // If it should be night time, check if the entrance is valid at night
         // check_storyflag(899) can only be true if natural_night_connections is off
         if (check_storyflag(899) != 0 || NEXT_NIGHT == 1) {
-            yuzu_print("Should be night");
+            // yuzu_print("Should be night");
 
             if next_stage_is_valid_at_night() {
-                yuzu_print("Next stage is valid at night: NEXT_NIGHT = 1");
+                // yuzu_print("Next stage is valid at night: NEXT_NIGHT = 1");
                 NEXT_NIGHT = 1;
             } else {
-                yuzu_print("Next stage is NOT valid at night: NEXT_NIGHT = 0");
+                // yuzu_print("Next stage is NOT valid at night: NEXT_NIGHT = 0");
                 NEXT_NIGHT = 0;
             }
         } else {
-            yuzu_print("Should not be night");
+            // yuzu_print("Should not be night");
             NEXT_NIGHT = 0;
         }
 
@@ -451,15 +451,15 @@ pub fn set_stone_of_trials_placed_flag(
 
 #[no_mangle]
 pub fn update_day_night_storyflag() {
-    yuzu_print("Updating night flag");
+    // yuzu_print("Updating night flag");
 
     unsafe {
         // 899 == day/night storyflag
         if NEXT_NIGHT == 1 {
-            yuzu_print("Setting night flag");
+            // yuzu_print("Setting night flag");
             set_storyflag(899);
         } else {
-            yuzu_print("Unsetting night flag");
+            // yuzu_print("Unsetting night flag");
             unset_storyflag(899);
         }
 
