@@ -91,12 +91,15 @@
     Push Down Faron Woods Entry Log: Nothing
     #                       Erla                   Lopsa
     All Kikwis Saved: (Sword or Beetle) and Can_Defeat_Bokoblins
+    # Early Lake Floria only works if you run to outside Ancient Cistern. You can't use it to get to the vanilla entrance.
+    Lake Floria Gates Opened: open_lake_floria == open or ('Talk_to_Yerbal' and (Goddess_Sword or open_lake_floria == yerbal))
     Amber Relic Farming: Nothing
     Can Collect Water: Bottle
   exits:
     In the Woods Statue: Nothing
     Viewing Platform Statue: Nothing
-    Lake Floria: open_lake_floria == open or ('Talk_to_Yerbal' and (Goddess_Sword or open_lake_floria == yerbal)) or logic_early_lake_floria
+    #              Free vine to Floria Gates         Remove Bamboo            Get to Lake Floria
+    Lake Floria: ((Beetle or Clawshots or Bow) or (Sword or Bomb_Bag)) and 'Lake_Floria_Gates_Opened'
     Behind the Crawlspace and Rope: Bomb_Bag # Only after getting Kikwi Elder's Reward
     Faron Silent Realm: Goddesss_Harp and Farores_Courage
     Great Tree Interior Underwater: Water_Dragons_Scale
