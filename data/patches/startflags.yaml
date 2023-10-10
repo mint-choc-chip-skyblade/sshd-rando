@@ -34,8 +34,6 @@ Storyflags:
   # Cutscene flags
   ## Surface
   - 137 # Sealed Grounds Intro Cutscene (enable statue select from start)
-  - 87  # Faron Woods Intro Cutscene
-  - 91  # Deep Woods Intro Cutscene
   - 88  # Lake Floria Intro Cutscene
   - 182 # Eldin Volcano Intro Cutscene
   - 180 # Thrill Digger Intro Cutscene
@@ -43,7 +41,6 @@ Storyflags:
   - 190 # Lanayru Mine Intro Cutscene
   - 92  # Lanayru Desert Intro Cutscene (Dodoh always loses his wheel)
   - 157 # Ancient Harbour Intro Cutscene
-  - 526 # Lanayru Gorge Intro Cutscene
   - 80  # Water Dragon in Flooded Faron Cutscene
   ## Silent Realms
   - 70  # First time Light Fruit Cutscene
@@ -52,13 +49,7 @@ Storyflags:
   - 330 # Eldin Silent Realm Intro Cutscene
   - 331 # Hylia's Silent Realm Intro Cutscene
   ## Dungeons
-  - 89  # Skyview Intro Cutscene
-  - 183 # Earth Temple Intro Cutscene
-  - 211 # Lanayru Mining Facility Intro Cutscene
-  - 155 # Ancient Cistorn Intro Cutscene
-  - 156 # Sandship Intro Cutscene
-  - 172 # Fire Sanctuary Intro Cutscene
-  - 173 # Fire Sanctuary Intro Cutscene
+  - 172 # Entering Fire Sanctuary Intro Cutscene
   - 678 # Entering Sky Keep Cutscene
   - 159 # Sky Keep Intro Cutscene
   - open_thunderhead == open:

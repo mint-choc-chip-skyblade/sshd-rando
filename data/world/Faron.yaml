@@ -91,19 +91,23 @@
     Push Down Faron Woods Entry Log: Nothing
     #                       Erla                   Lopsa
     All Kikwis Saved: (Sword or Beetle) and Can_Defeat_Bokoblins
+    # Early Lake Floria only works if you run to outside Ancient Cistern. You can't use it to get to the vanilla entrance.
+    Lake Floria Gates Opened: open_lake_floria == open or ('Talk_to_Yerbal' and (Goddess_Sword or open_lake_floria == yerbal))
+    #                             Free vine to Floria Gates       Remove Bamboo
+    Can Get To Lake Floria Gates: Beetle or Clawshots or Bow or Sword or Bomb_Bag
     Amber Relic Farming: Nothing
     Can Collect Water: Bottle
   exits:
     In the Woods Statue: Nothing
     Viewing Platform Statue: Nothing
-    Lake Floria: open_lake_floria == open or ('Talk_to_Yerbal' and (Goddess_Sword or open_lake_floria == yerbal)) or logic_early_lake_floria
+    Lake Floria: ('Can_Get_To_Lake_Floria_Gates') and ('Lake_Floria_Gates_Opened')
     Behind the Crawlspace and Rope: Bomb_Bag # Only after getting Kikwi Elder's Reward
     Faron Silent Realm: Goddesss_Harp and Farores_Courage
     Great Tree Interior Underwater: Water_Dragons_Scale
     Great Tree Exterior Platforms: Clawshots
     Great Tree Clawshot Target Branch: Clawshots
     Faron Woods Ledge to Deep Woods: Distance_Activator
-    Faron Woods Floria Shortcut Ledge: logic_early_lake_floria or 'Push_Down_Floria_Shortcut_Log'
+    Faron Woods Floria Shortcut Ledge: ('Can_Get_To_Lake_Floria_Gates' and Sword and logic_early_lake_floria) or 'Push_Down_Floria_Shortcut_Log'
     Faron Woods Entry: Nothing
   locations:
     Faron Woods - Rupee on Hollow Tree Root: Nothing

@@ -1450,6 +1450,14 @@ F100: # Faron main area
       - story_flag: -1
         night: 0
         layer: 1
+  - name: Yeet Faron Woods Intro Cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
   - name: Trial
     type: oarcadd
     oarc: PLHarpPlay
@@ -1709,6 +1717,14 @@ F101: # Deep Woods
       - story_flag: -1
         night: 0
         layer: 1
+  - name: Yeet Deep Woods Intro Cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
   - name: Remove skippable Skyview intro Cutscene
     type: objpatch
     layer: 1
@@ -2927,6 +2943,14 @@ F302: # Lanayru Gorge
       - story_flag: -1
         night: 0
         layer: 2
+  - name: Yeet Lanayru Gorge Intro Cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
   - name: Unlock Door
     type: objpatch
     id: 0x2BFF
@@ -3707,7 +3731,7 @@ D003_8: # this change is purely to make sure D003_8 gets patched, so a perviousl
     object:
       layer: 2 # force layer 2 so the barbed wire is gone
 
-D100: # Skyview
+D100: # Skyview Temple
   - name: Layer override
     type: layeroverride
     override: # only layer change is to layer 2 after water dragons scale
@@ -3717,6 +3741,14 @@ D100: # Skyview
       - story_flag: -1
         night: 0
         layer: 1
+  - name: Yeet Skyview Temple Intro Cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
   - name: Small Key Soil
     type: objmove
     id: 0xFC4B
@@ -4067,6 +4099,14 @@ B100_1: # Skyview Spring
     objtype: STAG
 
 D101: # Ancient Cistern
+  - name: Yeet Ancient Cistern Intro Cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
   - name: remove stone tablet text
     type: objpatch
     id: 0xFC11
@@ -4238,7 +4278,15 @@ B101_1: # after AC boss
       trigscenefid: 195
       anglez: 0xFFFF # don't set any storyflag here
 
-D200: # ET
+D200: # Earth Temple
+  - name: Yeet Earth Temple Intro Cutscene
+    type: objpatch
+    index: 0
+    room: 1
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
   - name: Ledd Text before Bomb Bag
     type: objdelete
     id: 0xFC51
@@ -4372,6 +4420,14 @@ B210: # Earth Spring
   #     params1: 0xC003FF00 # zone temp flag 192 set after crest hit
 
 D201: # FS A
+  - name: Yeet Fire Sanctuary Intro Cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
   - name: Mogma 1
     type: objdelete
     id: 0xFC07
@@ -4392,6 +4448,14 @@ D201: # FS A
     objtype: STAG
 
 D201_1: # FS B
+  - name: Yeet Fire Sanctuary Intro Cutscene
+    type: objpatch
+    index: 0
+    room: 6
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
   - name: Clawshot Target for 2nd small Key
     type: objadd
     layer: 0
@@ -4523,6 +4587,14 @@ B201_1: # after FS boss
       anglez: 0xFFFF # don't set any storyflag here
 
 D300: # LMF A
+  - name: Yeet Lanayru Mining Facility Intro Cutscene
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
   - name: Dust in Gust Bellow room Blocking Door
     type: objdelete
     id: 0xFC35
@@ -4626,6 +4698,22 @@ D300_1: # LMF B
       name: Bombf
 
 D301: # Sandship A
+  - name: Yeet Sandship Intro Cutscene 1
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
+  - name: Yeet Sandship Intro Cutscene 2
+    type: objpatch
+    index: 5
+    room: 0
+    objtype: PLY
+    object:
+      storyflag: -1
+      play_cutscene: -1
   - name: extra Bomb flower
     type: objadd
     layer: 0
