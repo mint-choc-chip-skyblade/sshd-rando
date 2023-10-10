@@ -3659,7 +3659,7 @@ D003_7: # Sky Keep Entrance Room
     object:
       params1: 0xFF1516FF # 0x000000FF = event number
 
-D003_8: # this change is purely to make sure D003_8 gets patched, so a perviously broken rando version gets overwritten
+D003_8: # Triforce Room
   - name: remove last triforce cutscene # this does mean if triforces are vanilla you have to leave yourself
     type: objdelete
     id: 0xFC06
