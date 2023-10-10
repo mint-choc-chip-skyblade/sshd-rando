@@ -46,6 +46,9 @@ b.eq update_day_night_storyflag
 cmp w8, #10
 b.eq check_night_storyflag
 
+cmp w8, #11
+b.eq fix_sky_keep_exit
+
 ret ; this should never be reached
 
 ; ends at 0x360A6500

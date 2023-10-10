@@ -47,6 +47,7 @@ main:
     # Functions
     strlen: 0x0905f5c0
     GameReloader__triggerExit: 0x08df9478
+    GameReloader__triggerEntrance: 0x08df8dfc
 
     # Custom Symbols
     STARTFLAGS: 0x3654b200 # See asmconstants.py for where this number comes from

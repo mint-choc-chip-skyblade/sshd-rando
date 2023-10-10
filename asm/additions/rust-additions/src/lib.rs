@@ -57,6 +57,19 @@ extern "C" {
         forceNight: u32,
         forceTrial: u32,
     );
+    fn GameReloader__triggerEntrance(
+        gameReloader: *mut structs::GameReloader,
+        stageName: *mut [u8; 7],
+        room: u32,
+        layer: u32,
+        entrance: u32,
+        forcedNight: u32,
+        forcedTrial: u32,
+        transitionType: u32,
+        transitionFadeFrames: u16,
+        unk10: u32,
+        unk11: u32,
+    );
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -447,6 +460,45 @@ pub fn set_stone_of_trials_placed_flag(
     }
 
     set_storyflag(22); // 22 == Stone of Trials placed storyflag
+}
+
+#[no_mangle]
+pub fn fix_sky_keep_exit(
+    gameReloader: *mut structs::GameReloader,
+    stageName: *mut [u8; 7],
+    room: u32,
+    layer: u32,
+    entrance: u32,
+    forcedNight: u32,
+    forcedTrial: u32,
+    transitionType: u32,
+    mut transitionFadeFrames: u16,
+    unk10: u32,
+    mut unk11: u32,
+) {
+    unsafe {
+        if &(*stageName)[..5] == b"F000\0" {
+            // Use bzs exit when leaving the dungeon (makes ER work properly)
+            GameReloader__triggerExit(gameReloader, 0, 1, 2, 2);
+        } else {
+            // Replaced instructions
+            transitionFadeFrames = 0xF;
+            unk11 = 0xFF;
+            GameReloader__triggerEntrance(
+                gameReloader,
+                stageName,
+                room,
+                layer,
+                entrance,
+                forcedNight,
+                forcedTrial,
+                transitionType,
+                transitionFadeFrames,
+                unk10,
+                unk11,
+            );
+        }
+    }
 }
 
 #[no_mangle]

@@ -313,52 +313,52 @@
     exit_infos: # most of them not needed
       - stage: D003_0
         room: 0
-        index: 3
-      - stage: D003_1
-        room: 0
-        index: 2
-      - stage: D003_2
-        room: 0
-        index: 3
-      - stage: D003_3
-        room: 0
-        index: 3
-      - stage: D003_4
-        room: 0
-        index: 2
-      - stage: D003_5
-        room: 0
-        index: 2
-      - stage: D003_6
-        room: 0
-        index: 2
-      - stage: D003_7
-        room: 0
-        index: 2
+        index: 1
       - stage: D003_0
         room: 0
+        index: 3
+      - stage: D003_1
+        room: 0
         index: 1
       - stage: D003_1
+        room: 0
+        index: 2
+      - stage: D003_2
         room: 0
         index: 1
       - stage: D003_2
         room: 0
+        index: 3
+      - stage: D003_3
+        room: 0
         index: 1
       - stage: D003_3
+        room: 0
+        index: 3
+      - stage: D003_4
         room: 0
         index: 1
       - stage: D003_4
         room: 0
+        index: 2
+      - stage: D003_5
+        room: 0
         index: 1
       - stage: D003_5
+        room: 0
+        index: 2
+      - stage: D003_6
         room: 0
         index: 1
       - stage: D003_6
         room: 0
-        index: 1
+        index: 2
       - stage: D003_7
         room: 0
         index: 1
+      - stage: D003_7
+        room: 0
+        index: 2
     spawn_info:
       - stage: F000
         layer: 0
