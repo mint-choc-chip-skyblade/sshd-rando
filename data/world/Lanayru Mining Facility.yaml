@@ -60,7 +60,9 @@
 - name: LMF Armos Fight Room
   dungeon: Lanayru Mining Facility
   events:
-    Can Activate Armos Room Timeshift Stone: Gust_Bellows and (Slingshot or Bow or Goddess_Sword or logic_lmf_whip_armos_room_timeshift_stone)
+    Can Activate Armos Room Timeshift Stone: Gust_Bellows and
+                                             (Slingshot or Bow or Goddess_Sword or
+                                             (Whip and logic_lmf_whip_armos_room_timeshift_stone))
   exits:
     LMF Big Hub Past West Gate: ('Can_Activate_Armos_Room_Timeshift_Stone') and Can_Defeat_Armos
   locations:

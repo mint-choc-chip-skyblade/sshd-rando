@@ -299,8 +299,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will not be required to sleep to night and travel to the overworld to access nighttime-only checks."
-    - "on":                            "You may be required to sleep to night and travel anywhere in the world to access nighttime-only checks."
+    - "off":                           "You may be required to sleep to night and travel anywhere in the world to access nighttime-only checks, including flying at night."
+    - "on":                            "You will not be required to sleep to night and travel to the overworld to access nighttime-only checks."
 
 
 - name: upgraded_skyward_strike

@@ -26,6 +26,7 @@ main:
     CURRENT_ROOM: 0x0abfd8fa
     CURRENT_LAYER: 0x0abfd8fb
     CURRENT_ENTRANCE: 0x0abfd8fc
+    CURRENT_NIGHT: 0x0abfd8fd
     CURRENT_SOMETHING: 0x0abfd900
     NEXT_STAGE_NAME: 0x0abfd904
     NEXT_STAGE_SUFFIX: 0x0abfd908
@@ -33,6 +34,7 @@ main:
     NEXT_ROOM: 0x0abdf926 
     NEXT_LAYER: 0x0abdf927
     NEXT_ENTRANCE: 0x0abfd928
+    NEXT_NIGHT: 0x0abfd929
     NEXT_TRIAL: 0x0abfd92a
     NEXT_SOMETHING: 0x0abfd92c
     GAME_RELOADER: 0x0abfd930
@@ -45,6 +47,7 @@ main:
     # Functions
     strlen: 0x0905f5c0
     GameReloader__triggerExit: 0x08df9478
+    GameReloader__triggerEntrance: 0x08df8dfc
 
     # Custom Symbols
-    STARTFLAGS: 0x363EF200 # start of subsdk8 data section + 0x200
+    STARTFLAGS: 0x3654b200 # See asmconstants.py for where this number comes from
