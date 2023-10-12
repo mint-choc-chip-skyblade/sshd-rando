@@ -1877,29 +1877,30 @@
     type: flowpatch
     index: 567
     flow:
-      type: type3
-      subType: 0
-      param1: 0
-      param2: 0 # item
-      next: insert owlan hint text # elder talks after gotten sligshot
-      param3: 9
-      param4: 0
-      param5: 0
-  - name: text hinting to owlan
-    type: textadd
-    text: "\x0E\x01\x09\x04\x00\x08Do you think there might be a\n<r<professor>> who would want to see\n<b<one of my Kikwis>>, kwee?"
-  - name: insert owlan hint text
-    type: flowadd
-    flow:
-      type: type1
-      next: -1
-      param3: 302
-      param4: text hinting to owlan
-  - name: change later elder text to reference owlan
-    type: flowpatch
-    index: 46 # text when you talk to the kikwi elder after slingshot
-    flow:
-      next: insert owlan hint text
+      next: 126
+      # type: type3
+      # subType: 0
+      # param1: 0
+      # param2: 0 # item
+      # next: insert owlan hint text # elder talks after gotten sligshot
+      # param3: 9
+      # param4: 0
+      # param5: 0
+  # - name: text hinting to owlan
+  #   type: textadd
+  #   text: "\x0E\x01\x09\x04\x00\x08Do you think there might be a\n<r<professor>> who would want to see\n<b<one of my Kikwis>>, kwee?"
+  # - name: insert owlan hint text
+  #   type: flowadd
+  #   flow:
+  #     type: type1
+  #     next: -1
+  #     param3: 302
+  #     param4: text hinting to owlan
+  # - name: change later elder text to reference owlan
+  #   type: flowpatch
+  #   index: 46 # text when you talk to the kikwi elder after slingshot
+  #   flow:
+  #     next: insert owlan hint text
   - name: Skip over Zelda Dowsing
     type: flowpatch
     index: 382
@@ -1920,7 +1921,7 @@
     index: 600
     flow:
       next: -1
-  - name: Skip over Fi text after locateing machi
+  - name: Skip over Fi text after locating machi
     type: flowpatch
     index: 91
     flow:
@@ -1935,18 +1936,18 @@
     index: 583
     flow:
       next: -1
-  - name: Skip over Fi text after locateing Oolo
+  - name: Skip over Fi text after locating Oolo
     type: flowpatch
     index: 32
     flow:
       next: -1
-  - name: Skip over Fi text after locateing Erla
+  - name: Skip over Fi text after locating Erla
     type: flowpatch
     index: 641
     flow:
       next: -1
-  # hd sets an addtion scene flag after this, worth keeping in mind if there are problems
-  - name: Skip over Fi text after locateing Lopsa
+  # HD sets the scene flag for the Fi text after this. The flag 53 (0x7 20) should now be free to use
+  - name: Skip over Fi text after locating Lopsa
     type: flowpatch
     index: 163
     flow:

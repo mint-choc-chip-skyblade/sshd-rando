@@ -883,7 +883,7 @@
   original_item: Progressive Slingshot
   type: Combat # because of the Lopsa Bokoblin fight, this is a Combat reward
   Paths:
-    - event/200-Forest/595
+    - stage/F100/r0/l1/NpcKyuE/0x1EBB # id is different from SD
     - oarc/F100/l0
   hint: sometimes
   text: the <r<Kikwi relic>> is

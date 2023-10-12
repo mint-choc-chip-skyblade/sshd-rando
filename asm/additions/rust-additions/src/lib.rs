@@ -15,16 +15,22 @@ mod structs;
 // symbols.yaml and then added to this extern block.
 extern "C" {
     static PLAYER_PTR: *mut structs::Player;
+
     static FILE_MGR: *mut structs::FileMgr;
     static STORYFLAG_MGR: *mut structs::FlagMgr;
     static ITEMFLAG_MGR: *mut structs::FlagMgr;
+    static SCENEFLAG_MGR: *mut c_void;
     static DUNGEONFLAG_MGR: *mut structs::DungeonflagMgr;
+
     static mut STATIC_STORYFLAGS: [u16; 128];
     static mut STATIC_SCENEFLAGS: [u16; 8];
     static mut STATIC_TEMPFLAGS: [u16; 4];
     static mut STATIC_ZONEFLAGS: [[u16; 4]; 63];
     static mut STATIC_ITEMFLAGS: [u16; 64];
     static mut STATIC_DUNGEONFLAGS: [u16; 8];
+
+    static mut GAME_RELOADER: *mut structs::GameReloader;
+    static mut RESPAWN_TYPE: u8;
     static mut CURRENT_STAGE_NAME: [u8; 7];
     static mut CURRENT_STAGE_SUFFIX: [u8; 3];
     static mut CURRENT_FADE_FRAMES: u16;
@@ -42,9 +48,8 @@ extern "C" {
     static mut NEXT_NIGHT: u8;
     static mut NEXT_TRIAL: u8;
     static mut NEXT_SOMETHING: u8;
-    static mut GAME_RELOADER: *mut structs::GameReloader;
     static mut CURRENT_LAYER_COPY: u8;
-    static mut RESPAWN_TYPE: u8;
+
     static mut ACTOR_PARAM_SCALE: u64;
     static STARTFLAGS: [u16; 1000];
 
@@ -70,25 +75,14 @@ extern "C" {
         unk10: u32,
         unk11: u32,
     );
+    fn SceneflagMgr__setFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
+    fn SceneflagMgr__unsetFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
+    fn SceneflagMgr__checkFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32) -> u16;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
-#[no_mangle]
-pub fn fix_sandship_boat() -> u32 {
-    unsafe {
-        let current_stage_name = unsafe { &CURRENT_STAGE_NAME[..4] };
-
-        if strlen(CURRENT_STAGE_NAME.as_mut_ptr()) == 4 && current_stage_name == b"F301" {
-            // 152 == Skipper's Boat Timeshift Stone Hit
-            return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, 152);
-        }
-
-        return 1u32;
-    }
-}
-
 #[no_mangle]
 pub fn handle_startflags() {
     unsafe {
@@ -155,6 +149,52 @@ pub fn handle_startflags() {
     }
 }
 
+// Flags
+// Storyflags
+#[no_mangle]
+pub fn set_storyflag(flag: u16) {
+    unsafe {
+        ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag);
+    };
+}
+
+#[no_mangle]
+pub fn unset_storyflag(flag: u16) {
+    unsafe {
+        ((*(*STORYFLAG_MGR).funcs).unsetFlag)(STORYFLAG_MGR, flag);
+    };
+}
+
+#[no_mangle]
+pub fn check_storyflag(flag: u16) -> u32 {
+    unsafe {
+        return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, flag);
+    }
+}
+
+// Sceneflags (local)
+#[no_mangle]
+pub fn set_local_sceneflag(flag: u32) {
+    unsafe {
+        return SceneflagMgr__setFlag(SCENEFLAG_MGR, 0, flag);
+    }
+}
+
+#[no_mangle]
+pub fn unset_local_sceneflag(flag: u32) {
+    unsafe {
+        return SceneflagMgr__unsetFlag(SCENEFLAG_MGR, 0, flag);
+    }
+}
+
+#[no_mangle]
+pub fn check_local_sceneflag(flag: u32) -> u16 {
+    unsafe {
+        return SceneflagMgr__checkFlag(SCENEFLAG_MGR, 0, flag);
+    }
+}
+
+// Sceneflags (global)
 #[no_mangle]
 pub fn set_global_sceneflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
@@ -165,6 +205,7 @@ pub fn set_global_sceneflag(sceneindex: u16, flag: u16) {
     }
 }
 
+#[no_mangle]
 pub fn unset_global_sceneflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
@@ -174,6 +215,7 @@ pub fn unset_global_sceneflag(sceneindex: u16, flag: u16) {
     }
 }
 
+#[no_mangle]
 pub fn check_global_sceneflag(sceneindex: u16, flag: u16) -> u16 {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
@@ -184,6 +226,7 @@ pub fn check_global_sceneflag(sceneindex: u16, flag: u16) -> u16 {
     }
 }
 
+// Dungeonflags (global)
 #[no_mangle]
 pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
@@ -191,6 +234,76 @@ pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
 
     unsafe {
         (*FILE_MGR).FA.dungeonflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
+    }
+}
+
+// Misc flag funcs
+#[no_mangle]
+pub fn set_goddess_sword_pulled_story_flag() {
+    // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
+    set_storyflag(951);
+}
+
+#[no_mangle]
+pub fn set_stone_of_trials_placed_flag(
+    gameReloader: *mut structs::GameReloader,
+    currentRoom: u32,
+    exitIndex: u32,
+    forceNight: u32,
+    forceTrial: u32,
+) {
+    unsafe {
+        GameReloader__triggerExit(gameReloader, currentRoom, exitIndex, forceNight, forceTrial)
+    }
+
+    set_storyflag(22); // 22 == Stone of Trials placed storyflag
+}
+
+#[no_mangle]
+pub fn check_night_storyflag() -> bool {
+    return check_storyflag(899) != 0; // 899 == day/night flag
+}
+
+#[no_mangle]
+pub fn update_day_night_storyflag() {
+    // yuzu_print("Updating night flag");
+
+    unsafe {
+        // 899 == day/night storyflag
+        if NEXT_NIGHT == 1 {
+            // yuzu_print("Setting night flag");
+            set_storyflag(899);
+        } else {
+            // yuzu_print("Unsetting night flag");
+            unset_storyflag(899);
+        }
+
+        ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);
+
+        // Replaced instruction
+        NEXT_SOMETHING = 0xFF;
+    }
+
+    return;
+}
+
+#[no_mangle]
+pub fn fix_freestanding_item_y_offset() {
+    let mut item: *mut structs::dAcItem;
+
+    unsafe {
+        // Get param1 to check if the item needs its size changing.
+        asm!("mov {0}, x19", out(reg) item);
+
+        // Replaced instruction
+        asm!("mov w0, w20");
+
+        if (*item).base.baseBase.param1 >> 9 & 0x1 == 0 {
+            let y_offset_as_hex = ((*item).base.members.base.param2 & 0x00FFFF00) << 8;
+            let y_offset = f32::from_bits(y_offset_as_hex);
+
+            (*item).freestandingYOffset = y_offset;
+        }
     }
 }
 
@@ -281,53 +394,6 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
 
         return (*item_actor).finalDeterminedItemID;
     }
-}
-
-#[no_mangle]
-pub fn fix_freestanding_item_y_offset() {
-    let mut item: *mut structs::dAcItem;
-
-    unsafe {
-        // Get param1 to check if the item needs its size changing.
-        asm!("mov {0}, x19", out(reg) item);
-
-        // Replaced instruction
-        asm!("mov w0, w20");
-
-        if (*item).base.baseBase.param1 >> 9 & 0x1 == 0 {
-            let y_offset_as_hex = ((*item).base.members.base.param2 & 0x00FFFF00) << 8;
-            let y_offset = f32::from_bits(y_offset_as_hex);
-
-            (*item).freestandingYOffset = y_offset;
-        }
-    }
-}
-
-#[no_mangle]
-pub fn set_storyflag(flag: u16) {
-    unsafe {
-        ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag);
-    };
-}
-
-#[no_mangle]
-pub fn unset_storyflag(flag: u16) {
-    unsafe {
-        ((*(*STORYFLAG_MGR).funcs).unsetFlag)(STORYFLAG_MGR, flag);
-    };
-}
-
-#[no_mangle]
-pub fn check_storyflag(flag: u16) -> u32 {
-    unsafe {
-        return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, flag);
-    }
-}
-
-#[no_mangle]
-pub fn set_goddess_sword_pulled_story_flag() {
-    // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
-    set_storyflag(951);
 }
 
 // When checking/setting stage info in this function be sure to use
@@ -448,21 +514,6 @@ pub fn handle_er_action_states() {
 }
 
 #[no_mangle]
-pub fn set_stone_of_trials_placed_flag(
-    gameReloader: *mut structs::GameReloader,
-    currentRoom: u32,
-    exitIndex: u32,
-    forceNight: u32,
-    forceTrial: u32,
-) {
-    unsafe {
-        GameReloader__triggerExit(gameReloader, currentRoom, exitIndex, forceNight, forceTrial)
-    }
-
-    set_storyflag(22); // 22 == Stone of Trials placed storyflag
-}
-
-#[no_mangle]
 pub fn fix_sky_keep_exit(
     gameReloader: *mut structs::GameReloader,
     stageName: *mut [u8; 7],
@@ -502,31 +553,17 @@ pub fn fix_sky_keep_exit(
 }
 
 #[no_mangle]
-pub fn update_day_night_storyflag() {
-    // yuzu_print("Updating night flag");
-
+pub fn fix_sandship_boat() -> u32 {
     unsafe {
-        // 899 == day/night storyflag
-        if NEXT_NIGHT == 1 {
-            // yuzu_print("Setting night flag");
-            set_storyflag(899);
-        } else {
-            // yuzu_print("Unsetting night flag");
-            unset_storyflag(899);
+        let current_stage_name = unsafe { &CURRENT_STAGE_NAME[..4] };
+
+        if strlen(CURRENT_STAGE_NAME.as_mut_ptr()) == 4 && current_stage_name == b"F301" {
+            // 152 == Skipper's Boat Timeshift Stone Hit
+            return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, 152);
         }
 
-        ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);
-
-        // Replaced instruction
-        NEXT_SOMETHING = 0xFF;
+        return 1u32;
     }
-
-    return;
-}
-
-#[no_mangle]
-pub fn check_night_storyflag() -> bool {
-    return check_storyflag(899) != 0; // 899 == day/night flag
 }
 
 // Will output a string to Yuzu's log.

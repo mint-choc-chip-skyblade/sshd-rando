@@ -82,6 +82,9 @@ Below is the list of all the flags that the randomizer changes:
 
 ### Sceneflags
 
+#### Faron Woods
+* 12: Kikwi Elder's Reward
+
 #### Ancient Cistern
 * 85: After receiving Item from flame CS
 

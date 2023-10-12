@@ -109,6 +109,30 @@ def patch_freestanding_item(bzs: dict, itemid: int, id_str: str):
     )
 
 
+def patch_bucha(bzs: dict, itemid: int, id_str: str):
+    id = int(id_str, 16)
+    bucha = next(
+        filter(lambda x: x["name"] == "NpcKyuE" and x["id"] == id, bzs["OBJ "]), None
+    )
+
+    if bucha is None:
+        print(f"ERROR: Bucha's id {id} not found. Cannot patch this check.")
+        return
+
+    # y_offset = float_to_hex(FREESTANDING_ITEM_OFFSETS.get(itemid, 0)) >> 16
+
+    # # Patch lsb of y_offset to indicate whether to use the default scaling or not
+    # if itemid in FREESTANDING_ITEMS_TO_USE_DEFAULT_SCALING:
+    #     y_offset |= 1
+    # else:
+    #     y_offset &= 0xFFFE
+
+    # bucha["anglex"] = mask_shift_set(bucha["anglex"], 0xFFFF, 0x0, y_offset)
+
+    bucha["params2"] = mask_shift_set(bucha["params2"], 0xFF, 0x8, itemid)
+    bucha["params2"] = mask_shift_set(bucha["params2"], 0xFF, 0x0, 2)
+
+
 def patch_zeldas_closet(bzs: dict, itemid: int, id_str: str):
     id = int(id_str)
     closet = next(
@@ -599,6 +623,12 @@ class StagePatchHandler:
                                         )
                                     elif object_name == "Item":
                                         patch_freestanding_item(
+                                            room_bzs["LAY "][f"l{layer}"],
+                                            itemid,
+                                            objectid,
+                                        )
+                                    elif object_name == "NpcKyuE":
+                                        patch_bucha(
                                             room_bzs["LAY "][f"l{layer}"],
                                             itemid,
                                             objectid,
