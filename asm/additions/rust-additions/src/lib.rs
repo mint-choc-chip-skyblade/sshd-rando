@@ -51,6 +51,14 @@ extern "C" {
     static mut CURRENT_LAYER_COPY: u8;
 
     static mut ACTOR_PARAM_SCALE: u64;
+    static mut ACTOR_PARAM_ROT: *mut structs::Vec3f;
+    static mut ACTORBASE_PARAM2: u32;
+
+    static mut BASEBASE_ACTOR_PARAM1: u32;
+    static mut BASEBASE_GROUP_TYPE: u8;
+
+    static ACTOR_ALLOCATOR_DEFINITIONS: u64; // [*const u64; 701];
+
     static STARTFLAGS: [u16; 1000];
 
     fn strlen(string: *mut u8) -> u64;
@@ -285,6 +293,101 @@ pub fn update_day_night_storyflag() {
     }
 
     return;
+}
+
+#[no_mangle]
+pub fn patch_freestanding_item_fields(
+    actorid: u16,
+    unk: u64,
+    actor_param1: u32,
+    actor_group_type: u8,
+) {
+    // dAcItem actor id && is rando patched item
+    if actorid == 0x281 && (actor_param1 >> 9) & 0x1 == 0 {
+        let mut use_default_scaling = false;
+        let mut y_offset = 0.0f32;
+
+        // Item id
+        match actor_param1 & 0x1FF {
+            // Sword | Harp | Mitts | Beedle's Insect Cage | Sot | Songs
+            10 | 16 | 56 | 159 | 180 | 186..=193 => y_offset = 20.0,
+            // Bow | Sea Chart | Wooden Shield | Hylian Shield
+            19 | 98 | 116 | 125 => y_offset = 23.0,
+            // Clawshots | Spiral Charge
+            20 | 21 => y_offset = 25.0,
+            // AC BK | FS BK
+            25 | 26 => y_offset = 30.0,
+            // SSH BK, ET Key, SV BK, ET BK | Amber Tablet
+            27..=30 | 179 => y_offset = 24.0,
+            // LMF BK
+            31 => y_offset = 27.0,
+            // Crystal Pack | Single Crystal | Beetle | Small Bomb Bag | Eldin Ore
+            35 | 48 | 53 | 134 | 165 => y_offset = 18.0,
+            // Bellows | Bug Net | Bomb Bag
+            49 | 71 | 92 => y_offset = 26.0,
+            52          // Slingshot
+            | 68        // Water Dragon's Scale
+            | 100..=104 // Medals
+            | 108       // Wallets
+            | 114       // Life Medal
+            | 153       // Empty Bottle
+            | 161..=164 // Treasures
+            | 166..=170 // Treasures
+            | 172..=174 // Treasures
+            | 178       // Ruby Tablet
+            | 198       // Life Tree Fruit
+            | 199 => y_offset = 16.0,
+            // Semi-rare | Rare Treasure
+            63 | 64 => y_offset = 15.0,
+            // Heart Container
+            93 => use_default_scaling = true,
+            95..=97 => {
+                y_offset = 24.0;
+                use_default_scaling = true;
+            },
+            // Seed Satchel | Golden Skull
+            128 | 175 => y_offset = 14.0,
+            // Quiver | Whip | Emerald Tablet | Maps
+            131 | 137 | 177 | 207..=213 => y_offset = 19.0,
+            // Earrings
+            138 => y_offset = 6.0,
+            // Letter | Monster Horn
+            158 | 171 => y_offset = 12.0,
+            // Rattle
+            160 => {
+                y_offset = 5.0;
+                use_default_scaling = true;
+            },
+            // Goddess Plume
+            176 => y_offset = 17.0,
+            _ => y_offset = 0.0,
+        }
+
+        let y_offset_as_hex = f32::to_bits(y_offset) >> 16;
+
+        unsafe {
+            ACTORBASE_PARAM2 &= 0xFF0000FF; // Clear space for y-offset
+            ACTORBASE_PARAM2 |= (y_offset_as_hex << 0x8) as u32;
+
+            // Patch whether to use default scaling into angley.
+            // angley is used for the actual rotation of the item but we use the lsb so
+            // it shouldn't make a noticeable difference.
+            let mut angley_as_hex = f32::to_bits((*ACTOR_PARAM_ROT).y);
+
+            if use_default_scaling {
+                angley_as_hex |= 1;
+            } else {
+                angley_as_hex &= 0xFFFE;
+            }
+
+            (*ACTOR_PARAM_ROT).y = f32::from_bits(angley_as_hex);
+        }
+    }
+
+    unsafe {
+        // Replaced instructions
+        asm!("mov x8, {0}", in(reg) &ACTOR_ALLOCATOR_DEFINITIONS);
+    }
 }
 
 #[no_mangle]

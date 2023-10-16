@@ -41,8 +41,15 @@ main:
     NEXT_SOMETHING: 0x0abfd92c
     CURRENT_LAYER_COPY: 0x0abfd94c
 
-    # Actor Param Stuff
+    # Actor Stuff
     ACTOR_PARAM_SCALE: 0x0ac018d0
+    ACTOR_PARAM_ROT: 0x0ac018c8
+    ACTORBASE_PARAM2: 0x096894b8
+
+    BASEBASE_ACTOR_PARAM1: 0x35036078
+    BASEBASE_GROUP_TYPE: 0x3503607c
+
+    ACTOR_ALLOCATOR_DEFINITIONS: 0x09678448
 
     # Functions
     strlen: 0x0905f5c0
@@ -51,6 +58,10 @@ main:
     SceneflagMgr__setFlag: 0x08b83380
     SceneflagMgr__unsetFlag: 0x08b834b0
     SceneflagMgr__checkFlag: 0x08b8319c
+    ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
+    dAcItem__spawnItemWithParams: 0x084eba70
 
     # Custom Symbols
     STARTFLAGS: 0x3654b200 # See asmconstants.py for where this number comes from
+    ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
+    dAcItem__spawnRandoItemWithParams: 0x085c2060

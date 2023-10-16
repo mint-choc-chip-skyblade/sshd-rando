@@ -6,15 +6,11 @@ ldrb w0, [x19, #0x12D] ; load 00 00 FF 00 from param2 (the patched itemid)
 .offset 0x085c2054
 ; setup param1
 mov w2, #0x3000 ; set sceneflag 12 on collection
-movk w2, #0x8, LSL #16
 bfxil w2, w0, #0x0, #0x9
 
-nop ; 7 nops
-nop
-nop
-nop
-nop
-nop
+; branch over 7 unused instructions
+b 0x085c207c ; this instruction space is used for the dAcItem__spawnRandoItemWithParams custom function
+
 
 ; Give randomized item in update function
 .offset 0x085c4e24 ; starts 1 instruction back to prevent self getting overwritten
@@ -25,7 +21,7 @@ ldrb w0, [x19, #0x12D] ; load 00 00 FF 00 from param2 (the patched itemid)
 .offset 0x085c4e30
 ; setup param1
 mov w2, #0x3000 ; set sceneflag 12 on collection
-movk w2, #0x8, LSL #16
+movk w2, #0x0, LSL #16
 bfxil w2, w0, #0x0, #0x9
 
 ; replaced instruction

@@ -51,3 +51,6 @@
 
 .global check_night_storyflag
 .type check_night_storyflag, @function
+
+.global patch_freestanding_item_fields
+.type patch_freestanding_item_fields, @function
