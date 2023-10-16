@@ -1873,34 +1873,21 @@
       param5: 0
 
 200-Forest:
-  - name: give slingshot directly
+  - name: Remove text and panning before Bucha gives the check
     type: flowpatch
     index: 567
     flow:
       next: 126
-      # type: type3
-      # subType: 0
-      # param1: 0
-      # param2: 0 # item
-      # next: insert owlan hint text # elder talks after gotten sligshot
-      # param3: 9
-      # param4: 0
-      # param5: 0
-  # - name: text hinting to owlan
-  #   type: textadd
-  #   text: "\x0E\x01\x09\x04\x00\x08Do you think there might be a\n<r<professor>> who would want to see\n<b<one of my Kikwis>>, kwee?"
-  # - name: insert owlan hint text
-  #   type: flowadd
-  #   flow:
-  #     type: type1
-  #     next: -1
-  #     param3: 302
-  #     param4: text hinting to owlan
-  # - name: change later elder text to reference owlan
-  #   type: flowpatch
-  #   index: 46 # text when you talk to the kikwi elder after slingshot
-  #   flow:
-  #     next: insert owlan hint text
+  - name: Remove text and panning about Slingshot after Bucha check
+    type: flowpatch
+    index: 140
+    flow:
+      next: 369
+  - name: Use string without reference to Slingshot when talking again after Bucha check
+    type: flowpatch
+    index: 119
+    flow:
+      param4: 106 # Change string index to use text without mention of Slingshot
   - name: Skip over Zelda Dowsing
     type: flowpatch
     index: 382
