@@ -4,7 +4,7 @@
 
 .offset 0x08a1759c
 mov w8, #3
-bl 0x0865a070
+bl additions_jumptable
 nop ; don't call the debug(?) function when setting itemflags
 nop
 

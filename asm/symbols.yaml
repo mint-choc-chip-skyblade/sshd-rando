@@ -62,6 +62,7 @@ main:
     dAcItem__spawnItemWithParams: 0x084eba70
 
     # Custom Symbols
+    additions_jumptable: 0x0865a070
     STARTFLAGS: 0x3654b200 # See asmconstants.py for where this number comes from
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
     dAcItem__spawnRandoItemWithParams: 0x085c2060

@@ -43,7 +43,7 @@ nop
 nop ; remove branch to getSaveFlagSpace
 mov w0, #12 ; sceneflag 12
 mov w8, #12 ; branch to addition 12
-bl 0x0865a070
+bl additions_jumptable
 mov w11, #0x2 ; replaced instruction
 mov w8, w0 ; move result into w8
 nop ; 6 nops
@@ -57,7 +57,7 @@ nop
 nop ; remove branch to getSaveFlagSpace
 mov w0, #12 ; sceneflag 12
 mov w8, #12 ; branch to addition 12
-bl 0x0865a070
+bl additions_jumptable
 mov w8, w0 ; move result into w8
 nop ; 7 nops
 nop
@@ -73,7 +73,7 @@ nop
 nop ; remove branch to getSaveFlagSpace
 mov w0, #12 ; sceneflag 12
 mov w8, #12 ; branch to addition 12
-bl 0x0865a070
+bl additions_jumptable
 mov w8, w0 ; move result into w8
 nop ; 7 nops
 nop
@@ -89,7 +89,7 @@ nop
 nop ; remove branch to getSaveFlagSpace
 mov w0, #12 ; sceneflag 12
 mov w8, #12 ; branch to addition 12
-bl 0x0865a070
+bl additions_jumptable
 mov w8, w0 ; move result into w8
 nop ; 7 nops
 nop
@@ -103,7 +103,7 @@ nop
 nop ; remove branch to getSaveFlagSpace
 mov w0, #12 ; sceneflag 12
 mov w8, #12 ; branch to addition 12
-bl 0x0865a070
+bl additions_jumptable
 mov w8, w0 ; move result into w8
 nop ; 7 nops
 nop
