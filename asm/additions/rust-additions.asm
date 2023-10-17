@@ -1,12 +1,13 @@
 ; Start using subsdk8 0x500 bytes into the .text section
 ; 1st 0x500 bytes are left to make sure none of the subsdk setup is mangled
 ; The next 0x1000 bytes are reserved for the landingpad
+; The next 0x500 bytes are reserved for additions not written in rust
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; additions begin here ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-.offset 0x360A6500
+.offset 0x360A7000
 .global handle_custom_item_get
 .type handle_custom_item_get, @function
 
@@ -54,3 +55,6 @@
 
 .global patch_freestanding_item_fields
 .type patch_freestanding_item_fields, @function
+
+.global drop_arrows_bombs_seeds
+.type drop_arrows_bombs_seeds, @function
