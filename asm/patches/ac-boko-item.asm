@@ -5,7 +5,7 @@ b 0x082cb820
 ; Don't set sceneflag on boko death if boko has a small key.
 .offset 0x082c98c4
 mov w8, #1
-bl 0x0865a070
+bl additions_jumptable
 
 ; .offset 0x082c98c4
 ; mov x22, #0x1988 ; get dAcEbc->bokoHasSmallKey offset

@@ -13,6 +13,18 @@
 .global handle_startflags
 .type handle_startflags, @function
 
+.global check_storyflag
+.type check_storyflag, @function
+
+.global set_local_sceneflag
+.type set_local_sceneflag, @function
+
+.global unset_local_sceneflag
+.type unset_local_sceneflag, @function
+
+.global check_local_sceneflag
+.type check_local_sceneflag, @function
+
 .global set_goddess_sword_pulled_story_flag
 .type set_goddess_sword_pulled_story_flag, @function
 
@@ -37,8 +49,8 @@
 .global update_day_night_storyflag
 .type update_day_night_storyflag, @function
 
-.global check_storyflag
-.type check_storyflag, @function
-
 .global check_night_storyflag
 .type check_night_storyflag, @function
+
+.global patch_freestanding_item_fields
+.type patch_freestanding_item_fields, @function

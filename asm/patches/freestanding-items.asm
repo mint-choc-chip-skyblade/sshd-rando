@@ -1,3 +1,8 @@
+; Patch dAcItem fields to fix y-offsets and scaling
+.offset 0x08f14514
+mov w8, #13
+bl additions_jumptable
+
 ; Fix freestanding item y offset at end of dAcItem::init
 .offset 0x084e5f94
 bl 0x08659ab8
@@ -22,8 +27,23 @@ fmov s0, 0x40000000 ; 2.0
 
 
 ; Prevent spawned items acting like rando-patched items
-.offset 0x084eba98
+.offset 0x084eba84 ; store actorParam1Base early to save instructions later
 orr w19, w1, #0x200 ; the 9th bit (zero-indexed)
+mov w21, w0
+
+.offset 0x084eba98 ; the instruction that was replaced above
+and w0, w1, #0x1FF
+
+; Use freed space in bucha to create a new function header for dAcItem__spawnRandoItemWithParams
+; Copied from dAcItem__spawnItemWithParams (0x084eba70)
+.offset 0x085c2060
+stp x24, x23, [sp, #-0x40]!
+stp x22, x21, [sp, #0x10]
+stp x20, x19, [sp, #0x20]
+stp x29, x30, [sp, #0x30]
+add x29, sp, #0x30
+mov w19, w1 ; don't change bit 9 (allows for rando patched *spawned* items)
+b 0x084eba88 ; branch to the rest of dAcItem__spawnItemWithParams
 
 
 ; Always act like Rattle

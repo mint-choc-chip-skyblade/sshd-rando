@@ -5,7 +5,7 @@ mov w8, #9
 
 ; onlyif natural_night_connections == off
 .offset 0x0877e260
-bl 0x0865a070
+bl additions_jumptable
 
 
 ; Make it look like night when the night flag is set
@@ -24,7 +24,7 @@ b 0x08ba5474 ; nighttime
 ; onlyif natural_night_connections == off
 .offset 0x08ec20b0
 mov w8, #10
-bl 0x0865a070 ; check day/night flag
+bl additions_jumptable ; check day/night flag
 cmp w0, #0x1
 b.ne 0x08ec290c ; daytime = no moon
 
@@ -32,7 +32,7 @@ b.ne 0x08ec290c ; daytime = no moon
 ; onlyif natural_night_connections == off
 .offset 0x08ec3c04
 mov w8, #10
-bl 0x0865a070 ; check day/night flag
+bl additions_jumptable ; check day/night flag
 tbnz w0, #0x0, 0x08ec3b60 ; night time = no sun
 
 

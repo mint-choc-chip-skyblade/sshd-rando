@@ -1,7 +1,7 @@
 ; Prevent sandsea boat softlock
 .offset 0x0896f8f4
 mov w8, #5
-bl 0x0865a070
+bl additions_jumptable
 
 ; Increase boat sprint speed
 .offset 0x0896d500

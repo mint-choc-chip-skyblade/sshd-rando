@@ -49,6 +49,12 @@ b.eq check_night_storyflag
 cmp w8, #11
 b.eq fix_sky_keep_exit
 
+cmp w8, #12
+b.eq check_local_sceneflag
+
+cmp w8, #13
+b.eq patch_freestanding_item_fields
+
 ret ; this should never be reached
 
 ; ends at 0x360A6500
