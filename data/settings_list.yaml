@@ -31,11 +31,11 @@
 
 
 - name: scrap_shop_upgrades
-  default_option: 'on'
+  default_option: "on"
   pretty_name: Place Scrap Shop Upgrades
   pretty_options:
-    - 'Off'
-    - 'On'
+    - "Off"
+    - "On"
   options:
     - "off":                           "Item upgrades from Gondo's Repair Shop can only be obtained by upgrading the corresponding vanilla item with treasures."
     - "on":                            "Item upgrades from Gondo's Repair Shop will be added to the item pool."
@@ -216,77 +216,77 @@
 
 
 - name: randomize_dungeon_entrances
-  default_option: 'off'
+  default_option: "off"
   pretty_name: Randomize Dungeon Entrances
   pretty_options:
-    - 'Off'
-    - 'On'
+    - "Off"
+    - "On"
   options:
     - "off":                           "Entering a dungeon will lead to the vanilla dungeon."
     - "on":                            "Entering a dungeon will lead to a random dungeon."
     
 
 - name: randomize_trial_gate_entrances
-  default_option: 'off'
+  default_option: "off"
   pretty_name: Randomize Trial Gate Entrances
   pretty_options:
-    - 'Off'
-    - 'On'
+    - "Off"
+    - "On"
   options:
     - "off":                           "Entering a Trial Gate will lead to the vanilla Silent Realm."
     - "on":                            "Entering a Trial Gate will lead to a random Silent Realm."
 
 
 - name: randomize_door_entrances
-  default_option: 'off'
+  default_option: "off"
   pretty_name: Randomize Door Entrances
   pretty_options:
-    - 'Off'
-    - 'On'
+    - "Off"
+    - "On"
   options:
     - "off":                           "Entering a door will lead to the vanilla exit on the other side."
     - "on":                            "Entering a door will lead to a random door exit on the other side."
 
 
 - name: decouple_double_doors
-  default_option: 'off'
+  default_option: "off"
   pretty_name: Decouple Double Doors
   pretty_options:
-    - 'Off'
-    - 'On'
+    - "Off"
+    - "On"
   options:
     - "off":                           "Entering a left door will lead to the same location as the corresponding right door."
     - "on":                            "Entering a left door may lead somewhere different to the corresponding right door (only when Randomize Door Entrance is also enabled)."
 
 
 - name: randomize_interior_entrances
-  default_option: 'off'
+  default_option: "off"
   pretty_name: Randomize Interior Entrances
   pretty_options:
-    - 'Off'
-    - 'On'
+    - "Off"
+    - "On"
   options:
     - "off":                           "Entering a doorway, pushup door, or loadzone that leads to an interior location in the vanilla game will lead to its vanilla location."
     - "on":                            "Entering a doorway, pushup door, or loadzone that leads to an interior location in the vanilla game will lead to a random interior location."
 
 
 - name: randomize_overworld_entrances
-  default_option: 'off'
+  default_option: "off"
   pretty_name: Randomize Overworld Entrances
   pretty_options:
-    - 'Off'
-    - 'On'
+    - "Off"
+    - "On"
   options:
     - "off":                           "Entering a doorway, pushup door, or loadzone that leads to an overworld location in the vanilla game will lead to its vanilla location."
     - "on":                            "Entering a doorway, pushup door, or loadzone that leads to an overworld location in the vanilla game will lead to a random overworld location."
 
 
 - name: decouple_entrances
-  default_option: 'off'
+  default_option: "off"
   pretty_name: Decouple Entrances
   pretty_options:
-    - 'Off'
-    - 'On'
+    - "Off"
+    - "On"
   options:
     - "off":                           "Entering a location and taking the entrance behind you will take you back to where you came from."
     - "on":                            "Entering a location and taking the entrance behind you will take you to a random location."
@@ -365,6 +365,20 @@
   options:
     - "off":                           "Unrequired dungeons may contain items needed to beat the game."
     - "on":                            "Unrequired dungeons will be barren."
+
+- name: ammo_availability
+  default_option: plentiful
+  pretty_name: Ammo Availability
+  pretty_options:
+    - Scarce
+    - Vanilla
+    - Useful
+    - Plentiful
+  options:
+    - scarce:                          "Ammo will only be available from enemy drops and Rupin's Gear shop."
+    - vanilla:                         "Ammo will appear when breaking pots and barrels in the same way as the vanilla game."
+    - useful:                          "Ammo pots will be added in key places near checks requiring a specific ammo to reduce back-tracking."
+    - plentiful:                       "Ammo pots will be added next to all Bird Statues."
 
 ############################
 ##    Cosmetic Options    ##
@@ -601,7 +615,7 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get to the top of Skipper's Retreat with an item to defeat the Deku Baba "
+    - "off":                           "You will only be expected to get to the top of Skipper's Retreat with an item to defeat the Deku Baba."
     - "on":                            "You may need to use the Clawshots to stun the Deku Baba in-front of the clawshot target in Skipper's Retreat and quickly clawshot across the gaps."
 
 
