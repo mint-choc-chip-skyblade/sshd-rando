@@ -86,6 +86,12 @@ extern "C" {
     fn SceneflagMgr__setFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
     fn SceneflagMgr__unsetFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
     fn SceneflagMgr__checkFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32) -> u16;
+    fn spawnDrop(
+        itemid: structs::ITEMFLAGS,
+        roomid: u32,
+        pos: *mut structs::Vec3f,
+        rot: *mut structs::Vec3s,
+    );
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -242,6 +248,28 @@ pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
 
     unsafe {
         (*FILE_MGR).FA.dungeonflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
+    }
+}
+
+// Itemflags
+#[no_mangle]
+pub fn set_itemflag(flag: structs::ITEMFLAGS) {
+    unsafe {
+        ((*(*ITEMFLAG_MGR).funcs).setFlag)(ITEMFLAG_MGR, flag as u16);
+    }
+}
+
+#[no_mangle]
+pub fn unset_itemflag(flag: structs::ITEMFLAGS) {
+    unsafe {
+        ((*(*ITEMFLAG_MGR).funcs).unsetFlag)(ITEMFLAG_MGR, flag as u16);
+    }
+}
+
+#[no_mangle]
+pub fn check_itemflag(flag: structs::ITEMFLAGS) -> u32 {
+    unsafe {
+        return ((*(*ITEMFLAG_MGR).funcs).getFlagOrCounter)(ITEMFLAG_MGR, flag as u16);
     }
 }
 
@@ -666,6 +694,57 @@ pub fn fix_sandship_boat() -> u32 {
         }
 
         return 1u32;
+    }
+}
+
+#[no_mangle]
+pub fn drop_arrows_bombs_seeds(
+    param2_s0x18: u8,
+    roomid: u32,
+    pos: *mut structs::Vec3f,
+    param4: u32,
+    param5: *mut c_void,
+) {
+    unsafe {
+        // 0xFE is the custom id being used to drop arrows, bombs, and seeds.
+        // Should set the eq flag for comparison after this addtion.
+        if param2_s0x18 == 0xFE {
+            if check_itemflag(structs::ITEMFLAGS::BOW) != 0 {
+                spawnDrop(
+                    structs::ITEMFLAGS::BUNDLE_OF_ARROWS,
+                    roomid,
+                    pos,
+                    &mut structs::Vec3s::default() as *mut structs::Vec3s,
+                );
+            }
+
+            if check_itemflag(structs::ITEMFLAGS::BOMB_BAG) != 0 {
+                spawnDrop(
+                    structs::ITEMFLAGS::TEN_BOMBS,
+                    roomid,
+                    pos,
+                    &mut structs::Vec3s::default() as *mut structs::Vec3s,
+                );
+            }
+
+            if check_itemflag(structs::ITEMFLAGS::SLINGSHOT) != 0 {
+                spawnDrop(
+                    structs::ITEMFLAGS::FIVE_DEKU_SEEDS, // 10 doesn't work for some reason
+                    roomid,
+                    pos,
+                    &mut structs::Vec3s::default() as *mut structs::Vec3s,
+                );
+            }
+        }
+
+        // Replaced instructions
+        asm!(
+            "mov w25, #0x660d",
+            "movk w25, #0x19, LSL #16",
+            "mul x10, x9, x25",
+            "mov w3, {0:w}",
+            in(reg) param4,
+        );
     }
 }
 

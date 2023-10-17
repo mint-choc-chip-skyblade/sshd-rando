@@ -109,13 +109,14 @@ F000: # Skyloft
       id: 0xFDDD
       name: NpcSkn
   - name: extra Arrow Pot next to Bazaar Statue
+    onlyif: ammo_availability == useful or ammo_availability == plentiful
     type: objadd
     layer: 0
     room: 0
     objtype: OBJ
     object:
       params1: 0xFFFFFFF0
-      params2: 0x0CFFFFFF
+      params2: 0xFEFFFFFF
       posx: 2010
       posy: 390.534943
       posz: 830
