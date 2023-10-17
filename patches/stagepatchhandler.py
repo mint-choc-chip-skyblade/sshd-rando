@@ -85,10 +85,6 @@ def patch_freestanding_item(bzs: dict, itemid: int, id_str: str):
         freestanding_item["params1"], 0x1, 9, 0
     )
 
-    freestanding_item["params1"] = mask_shift_set(
-        freestanding_item["params1"], 0xF, 0x14, 9
-    )
-
 
 def patch_bucha(bzs: dict, itemid: int, id_str: str):
     id = int(id_str, 16)
