@@ -30,3 +30,7 @@ mov w8, #0xFF
 ; don't play event when shooting arrow switches (eyes)
 ; .offset 0x086f5aac
 ; mov w8, #0xFF
+
+; Don't open collection screen when getting treasures/gratitude crystals
+.offset 0x08bf0590
+b 0x08bf0674 ; skip to the end of the function
