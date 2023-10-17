@@ -3268,6 +3268,12 @@ F402: # Sealed Temple
     layer: 4
     room: 2
     objtype: OBJ
+  - name: Groose before Harp Tutorial cs
+    type: objdelete
+    id: 0xFC4B
+    layer: 2
+    room: 2
+    objtype: OBJ
   - name: Remove cs when entering ST
     type: objpatch
     room: 2
