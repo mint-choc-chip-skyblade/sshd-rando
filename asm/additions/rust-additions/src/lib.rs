@@ -51,7 +51,7 @@ extern "C" {
     static mut CURRENT_LAYER_COPY: u8;
 
     static mut ACTOR_PARAM_SCALE: u64;
-    static mut ACTOR_PARAM_ROT: *mut structs::Vec3f;
+    static mut ACTOR_PARAM_ROT: *mut structs::Vec3s;
     static mut ACTORBASE_PARAM2: u32;
 
     static mut BASEBASE_ACTOR_PARAM1: u32;
@@ -370,17 +370,17 @@ pub fn patch_freestanding_item_fields(
             ACTORBASE_PARAM2 |= (y_offset_as_hex << 0x8) as u32;
 
             // Patch whether to use default scaling into angley.
-            // angley is used for the actual rotation of the item but we use the lsb so
-            // it shouldn't make a noticeable difference.
-            let mut angley_as_hex = f32::to_bits((*ACTOR_PARAM_ROT).y);
+            // angley is used for the actual rotation of the item but we use
+            // the lsb so it shouldn't make a noticeable
+            // difference.
 
-            if use_default_scaling {
-                angley_as_hex |= 1;
-            } else {
-                angley_as_hex &= 0xFFFE;
+            if ACTOR_PARAM_ROT != core::ptr::null_mut() {
+                if use_default_scaling {
+                    (*ACTOR_PARAM_ROT).y |= 1;
+                } else {
+                    (*ACTOR_PARAM_ROT).y &= 0xFFFE;
+                }
             }
-
-            (*ACTOR_PARAM_ROT).y = f32::from_bits(angley_as_hex);
         }
     }
 
