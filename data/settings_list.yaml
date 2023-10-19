@@ -375,7 +375,7 @@
     - Useful
     - Plentiful
   options:
-    - scarce:                          "Ammo will only be available from enemy drops and Rupin's Gear shop."
+    - scarce:                          "Ammo will only be available from chance-based drops and Rupin's Gear shop."
     - vanilla:                         "Ammo will appear when breaking pots and barrels in the same way as the vanilla game."
     - useful:                          "Ammo pots will be added in key places near checks requiring a specific ammo to reduce back-tracking."
     - plentiful:                       "Ammo pots will be added next to all Bird Statues."
