@@ -748,6 +748,23 @@ pub fn drop_arrows_bombs_seeds(
     }
 }
 
+#[no_mangle]
+pub fn drop_nothing(param2_s0x18: u8) {
+    unsafe {
+        // if should drop seeds, arrows, or bombs
+        if param2_s0x18 == 0xB || param2_s0x18 == 0xC || param2_s0x18 == 0xD {
+            asm!("mov w0, #0x0"); // 0x0 -> nothing, 0xFF -> green rupee
+        }
+
+        // Replaced instructions
+        asm!(
+            "mov w25, #0x660d",
+            "movk w25, #0x19, LSL #16",
+            "mul x10, x9, x25",
+        );
+    }
+}
+
 // Will output a string to Yuzu's log.
 // In Yuzu go to Emulation > Configure > Debug and
 // enter this into the global log filter:

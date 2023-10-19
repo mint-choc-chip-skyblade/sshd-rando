@@ -58,3 +58,6 @@
 
 .global drop_arrows_bombs_seeds
 .type drop_arrows_bombs_seeds, @function
+
+.global drop_nothing
+.type drop_nothing, @function
