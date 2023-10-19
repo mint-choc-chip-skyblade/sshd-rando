@@ -536,7 +536,7 @@ assert_eq_size!([u8; 192], ActorBaseBasemembers);
 
 // Misc
 #[repr(C)]
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, Default)]
 pub struct Vec3f {
     pub x: f32,
     pub y: f32,
@@ -546,7 +546,7 @@ pub struct Vec3f {
 assert_eq_size!([u8; 12], Vec3f);
 
 #[repr(C)]
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, Default)]
 pub struct Vec3s {
     pub x: u16,
     pub y: u16,

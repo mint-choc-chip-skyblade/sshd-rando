@@ -9,7 +9,7 @@ b.eq handle_custom_item_get
 
 ; don't set AC boko flag on death
 cmp w8, #1
-b.eq 0x360A9000
+b.eq 0x360A6500
 
 ; startflags
 cmp w8, #2
@@ -55,6 +55,12 @@ b.eq check_local_sceneflag
 cmp w8, #13
 b.eq patch_freestanding_item_fields
 
+cmp w8, #14
+b.eq drop_arrows_bombs_seeds
+
+cmp w8, #15
+b.eq drop_nothing
+
 ret ; this should never be reached
 
-; ends at 0x360A6500
+; ends at 0x360A7000

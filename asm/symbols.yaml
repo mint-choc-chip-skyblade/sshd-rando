@@ -60,6 +60,7 @@ main:
     SceneflagMgr__checkFlag: 0x08b8319c
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
     dAcItem__spawnItemWithParams: 0x084eba70
+    spawnDrop: 0x084ebc5c
 
     # Custom Symbols
     additions_jumptable: 0x0865a070
