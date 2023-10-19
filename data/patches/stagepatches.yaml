@@ -1873,7 +1873,19 @@ F101: # Deep Woods
     objtype: STAG
     object:
       event: 6 # DefaultStart
-  - name: Remove goddess cube force hit trigger
+  - name: Remove goddess cube force hit trigger 1
+    type: objdelete
+    id: 0xFD03
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove goddess cube force hit trigger 2
+    type: objdelete
+    id: 0xFD04
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove goddess cube force hit trigger 3
     type: objdelete
     id: 0xFD05
     layer: 1
