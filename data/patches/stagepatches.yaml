@@ -1873,7 +1873,19 @@ F101: # Deep Woods
     objtype: STAG
     object:
       event: 6 # DefaultStart
-  - name: Remove goddess cube force hit trigger
+  - name: Remove goddess cube force hit trigger 1
+    type: objdelete
+    id: 0xFD03
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove goddess cube force hit trigger 2
+    type: objdelete
+    id: 0xFD04
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove goddess cube force hit trigger 3
     type: objdelete
     id: 0xFD05
     layer: 1
@@ -4641,62 +4653,96 @@ D100: # Skyview Temple
     type: oarcadd
     oarc: SwitchEye
     destlayer: 0
-  - name: First Eye
+
+  # Eye switches
+  ## 1 eye
+  - name: Move First Eye to layer 0
     type: objmove
     id: 0xFC17
     layer: 1
     destlayer: 0
     room: 1
     objtype: OBJ
-  - name: Right Room Eyes
+  - name: Move First Eye CamTag to layer 0
+    type: objmove
+    id: 0xFC1A
+    layer: 1
+    destlayer: 0
+    room: 1
+    objtype: STAG
+  - name: Move First Eye SwAreaT to layer 0
+    type: objmove
+    id: 0xFC19
+    layer: 1
+    destlayer: 0
+    room: 1
+    objtype: STAG
+  - name: Remove First Eye SwAreaT 1 on layer 2
+    type: objdelete
+    id: 0xFC22
+    layer: 2
+    room: 1
+    objtype: STAG
+  - name: Remove First Eye SwAreaT 2 on layer 2
+    type: objdelete
+    id: 0xFC23
+    layer: 2
+    room: 1
+    objtype: STAG
+
+  ## 2 eyes
+  - name: Move Right Room Eyes to layer 0
     type: objmove
     id: 0xFC48
     layer: 1
     destlayer: 0
     room: 4
     objtype: OBJ
-  - name: Right Room Eyes
+  - name: Move Right Room Eyes to layer 0
     type: objmove
     id: 0xFC49
     layer: 1
     destlayer: 0
     room: 4
     objtype: OBJ
-  - name: Right Room Eyes
+  - name: Move Right Room Eyes to layer 0
     type: objmove
     id: 0xFC4A
     layer: 1
     destlayer: 0
     room: 4
     objtype: OBJ
-  - name: Left Room Eyes
+  
+  ## 3 eyes
+  - name: Move Left Room Eyes to layer 0
     type: objmove
     id: 0xFC31
     layer: 1
     destlayer: 0
     room: 7
     objtype: OBJ
-  - name: Left Room Eyes
+  - name: Move Left Room Eyes to layer 0
     type: objmove
     id: 0xFC32
     layer: 1
     destlayer: 0
     room: 7
     objtype: OBJ
-  - name: Left Room Eyes
+  - name: Move Left Room Eyes to layer 0
     type: objmove
     id: 0xFC33
     layer: 1
     destlayer: 0
     room: 7
     objtype: OBJ
-  - name: Left Room Eyes
+  - name: Move Left Room Eyes to layer 0
     type: objmove
     id: 0xFC34
     layer: 1
     destlayer: 0
     room: 7
     objtype: OBJ
+
   - name: Bar conected to chest
     type: objpatch
     id: 0x1018
