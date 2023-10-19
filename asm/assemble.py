@@ -38,6 +38,7 @@ COLON = ":"
 SEMICOLON = ";"
 NEWLINE = "\n"
 OFFSET = ".offset"
+OFFSET_PREFIX = "0x"
 SPACE = " "
 ONLYIF = "; onlyif "
 
@@ -53,11 +54,14 @@ yaml.CDumper.add_representer(
 # Helper to determine if data is a hex number or not
 def is_hex(data: str) -> bool:
     data = data.lower()
-    if data.startswith("0x"):
+
+    if data.startswith(OFFSET_PREFIX):
         data = data[2:]
+
     for char in data:
         if char not in "0123456789abcdef":
             return False
+
     return True
 
 
@@ -148,10 +152,9 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
         print(f"Assembling: {asm_file_path}")
         asm_file_name = asm_file_path.parts[-1]
         code_blocks = {}
-        only_ifs = {}  # Maps onlyifs to offsets
         local_branches = []
         asm_read_offset = None
-        current_only_if = None
+        current_only_if = ""
 
         temp_linker_cript = linker_script + NEWLINE
 
@@ -168,23 +171,18 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
             if line.startswith(ONLYIF):
                 current_only_if = line.replace(ONLYIF, "")
-                if current_only_if not in only_ifs:
-                    only_ifs[current_only_if] = []
 
             # Reset the current_only_if whenever a blank line is encountered
             if len(line) == 0:
-                current_only_if = None
-
-            if len(line) == 0 or line.startswith(SEMICOLON):
+                current_only_if = ""
+                continue
+            elif line.startswith(SEMICOLON):
                 continue
 
             line = line.split(SEMICOLON)[0].strip()
 
             if line.startswith(OFFSET):
-                asm_read_offset = hex(int(line.split(SPACE)[-1], 16))
-
-                if current_only_if is not None:
-                    only_ifs[current_only_if].append(asm_read_offset)
+                asm_read_offset = current_only_if + hex(int(line.split(SPACE)[-1], 16))
 
                 if asm_read_offset not in code_blocks:
                     code_blocks[asm_read_offset] = []
@@ -222,7 +220,14 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
             for symbol in local_branches:
                 temp_linker_cript += symbol
 
-        for code_block_offset, code in code_blocks.items():
+        for code_block_identifier, code in code_blocks.items():
+            if code_block_identifier.startswith(OFFSET_PREFIX):
+                code_block_offset = code_block_identifier
+            else:
+                code_block_offset = (
+                    OFFSET_PREFIX + code_block_identifier.split(OFFSET_PREFIX)[-1]
+                )
+
             temp_linker_file_name = temp_dir_name / "temp-linker.ld"
 
             with open(temp_linker_file_name, "w") as f:
@@ -231,7 +236,6 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
             assembler_code_file_name = (
                 temp_dir_name / f"{asm_file_name}-0x{code_block_offset}.asm"
             )
-            # assemblerCodeFilename.mkdir(parents=True, exist_ok=True)
 
             with open(assembler_code_file_name, "w") as f:
                 for instruction in code:
@@ -335,10 +339,14 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
             data_bytes = list(struct.unpack("B" * len(binary_data), binary_data))
 
-            code_blocks[code_block_offset] = data_bytes
+            code_blocks[code_block_identifier] = data_bytes
 
         # Ensure there are no overlapping asm changes.
         for offset in code_blocks:
+            # Can't check for overlapping condtional patches.
+            if not offset.startswith(OFFSET_PREFIX):
+                continue
+
             for byte_number in range(len(code_blocks[offset])):
                 true_offset = int(offset, 16) + byte_number
 
@@ -353,15 +361,21 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
         # Create a new dict that has all code patches under their respective only_ifs
         diff_dict = {}
-        for only_if, asm_offsets in only_ifs.items():
-            diff_dict[only_if] = {}
-            for offset in asm_offsets:
-                code_block = code_blocks.pop(offset)
-                diff_dict[only_if][offset] = code_block
 
-        # Add all the blocks with no only_ifs
         for offset, code_block in code_blocks.items():
-            diff_dict[offset] = code_block
+            offset = str(offset)
+
+            if offset.startswith(OFFSET_PREFIX):
+                diff_dict[offset] = code_block
+            else:
+                # This is a bit contrived but it makes python happy :p
+                only_if = offset.split(OFFSET_PREFIX)[0]
+                offset = offset.split(only_if)[-1]
+
+                if only_if not in diff_dict:
+                    diff_dict[only_if] = {}
+
+                diff_dict[only_if][offset] = code_block
 
         with open(diff_file_name, "w", newline="") as f:
             f.write(yaml.dump(diff_dict, Dumper=yaml.CDumper, line_break=NEWLINE))
