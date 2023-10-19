@@ -2897,22 +2897,6 @@ F300: # Lanayru Desert
     objtype: STAG
     object:
       trigstoryfid: 8 # LMF raised
-  - name: extra Arrow Pot next to first Statue
-    type: objadd
-    layer: 0
-    room: 0
-    objtype: OBJ
-    object:
-      params1: 0xFFFFFFF0
-      params2: 0x0CFFFFFF
-      posx: 1670
-      posy: 1975.19812
-      posz: 18750
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0xFE50
-      name: Tubo
   - name: LMF exit when not raised
     type: objadd
     index: 19
@@ -2966,22 +2950,6 @@ F300_1: # Lanayru Mine
     layer: 0
     room: 0
     objtype: OBJ
-  - name: extra Arrow Pot next to first Statue
-    type: objadd
-    layer: 0
-    room: 0
-    objtype: OBJ
-    object:
-      params1: 0xFFFFFFF0
-      params2: 0x0CFFFFFF
-      posx: 10200
-      posy: 2299.69092
-      posz: 35300
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0xFE50
-      name: Tubo
   - name: Remove fake trial dowsing target
     type: objdelete
     id: 0xFC59
@@ -5766,22 +5734,6 @@ D300: # Lanayru Mining Facility A (front)
       anglez: 0
       id: 0xFC50
       name: Bombf
-  - name: extra Arrow Pot next to entrance Statue
-    type: objadd
-    layer: 0
-    room: 0
-    objtype: OBJ
-    object:
-      params1: 0xFFFFFFF0
-      params2: 0x0CFFFFFF
-      posx: -1100
-      posy: 0
-      posz: 2200
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0xFE50
-      name: Tubo
 
 D300_1: # Lanayru Mining Facility B (back)
   - name: Add ammo pot to Lanayru Mining Facility Entrance Bird Statue
