@@ -3672,6 +3672,24 @@ F303: # Lanayru Caves
       - story_flag: -1
         night: 0
         layer: 0
+  # ER means you can get here without useful access to a bomb refill
+  - name: Add ammo pot to Caves between Gorge and Golo
+    onlyif: ammo_availability == useful or ammo_availability == plentiful
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
+      posx: 295
+      posy: 0
+      posz: 3500
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0x4269
+      name: Tubo
   # Add oarcs
   - name: Add Goron_motion
     type: oarcadd
