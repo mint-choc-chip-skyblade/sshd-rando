@@ -4,7 +4,7 @@ var ARGS := {
 	"seed": ""
 }
 
-func _ready():
+func _ready() -> void:
 	for argument in OS.get_cmdline_user_args():
 		if argument.find("=") > -1:
 			var key_value = argument.split("=")
