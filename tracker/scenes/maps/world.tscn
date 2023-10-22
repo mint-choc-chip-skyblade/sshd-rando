@@ -1,26 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjly5ntj2jhfn"]
+[gd_scene load_steps=4 format=3 uid="uid://bjly5ntj2jhfn"]
 
 [ext_resource type="Texture2D" uid="uid://bq13h60eeg7bw" path="res://assets/images/ss-map.png" id="1_uijf8"]
 [ext_resource type="Script" path="res://scenes/maps/Map.gd" id="2_c7043"]
-[ext_resource type="PackedScene" uid="uid://cmugiqudyuot6" path="res://scenes/maps/skyloft/skyloft.tscn" id="3_x8brm"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ueqhw"]
-radius = 96.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_lsvye"]
+radius = 96.421
 
 [node name="World" type="Node"]
 
-[node name="Map" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_c7043")
-child_scene = ExtResource("3_x8brm")
-
-[node name="TextureRect" type="TextureRect" parent="Map"]
-layout_mode = 1
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,8 +18,13 @@ texture = ExtResource("1_uijf8")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Area2D" type="Area2D" parent="Map"]
-position = Vector2(640, 342)
+[node name="Skyloft" type="CanvasLayer" parent="."]
+script = ExtResource("2_c7043")
+child_scene = "res://scenes/maps/skyloft/skyloft.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Area2D"]
-shape = SubResource("CircleShape2D_ueqhw")
+[node name="Area2D" type="Area2D" parent="Skyloft"]
+position = Vector2(640, 333)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skyloft/Area2D"]
+shape = SubResource("CircleShape2D_lsvye")

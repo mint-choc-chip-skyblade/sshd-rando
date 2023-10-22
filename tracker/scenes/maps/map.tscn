@@ -2,7 +2,5 @@
 
 [ext_resource type="Script" path="res://scenes/maps/Map.gd" id="1_wjh8i"]
 
-[node name="Map" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Map" type="CanvasLayer"]
 script = ExtResource("1_wjh8i")

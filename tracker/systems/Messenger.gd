@@ -1,3 +1,4 @@
 extends Node
 
-signal closed_child_map(child: Map)
+signal transition_scene(scene: PackedScene)
+signal transitioned_scene

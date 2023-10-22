@@ -5,17 +5,11 @@
 
 [node name="Skyloft" type="Node"]
 
-[node name="Map" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Map" type="CanvasLayer" parent="."]
 script = ExtResource("2_5nb6n")
+parent_scene = "res://scenes/maps/world.tscn"
 
-[node name="TextureRect" type="TextureRect" parent="Map"]
-layout_mode = 1
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,3 +18,4 @@ grow_vertical = 2
 texture = ExtResource("1_vyvj7")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_lock_ = true

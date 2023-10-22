@@ -1,50 +1,26 @@
 @tool
-extends Control
+extends CanvasLayer
 class_name Map
 
 
 # child_scene specifies the target that this scene
 # will transition into when entered.
-@export var child_scene: PackedScene
+@export_file var child_scene: String
+# parent_scene specifies the target parent that
+# this scene will transition to when exited.
+@export_file var parent_scene: String
 
 
 # interactable_area is the child interaction zone for this node.
 #
 # When an interaction occurs within this area, the node should act.
-@onready var interactable_area: Area2D = $Area2D
-# parent references the parent node of a map
-@onready var parent: Node = get_parent()
-
-
-# is_selected allows for a quick toggle of this interactable
-# being enabled or disabled.
-var is_selected := false
-# id of the child
-var id: int
-# child_id tracks the id given to the child
-var child_id: int
+@onready var interactable_area: Area2D = find_child("Area2D")
 
 
 func _ready() -> void:
-	Messenger.closed_child_map.connect(_on_close_child_map)
-
-
-func _input(event) -> void:
-	if (child_scene != null
-	&& is_selected
-	&& (event.is_action_pressed("interact") || event.is_action_pressed("zoom_in"))):
-		open_child_map()
-	
-	if id != null && event.is_action("zoom_out"):
-		Messenger.closed_child_map.emit(self)
-
-
-func _on_area_2d_mouse_entered() -> void:
-	is_selected = true
-
-
-func _on_area_2d_mouse_exited() -> void:
-	is_selected = false
+	# if we have a child_scene and an interactable area, listen to events
+	if child_scene && interactable_area:
+		interactable_area.connect("input_event", _on_area_2d_input_event)
 
 
 func _get_configuration_warnings() -> PackedStringArray:
@@ -57,20 +33,26 @@ func _get_configuration_warnings() -> PackedStringArray:
 	return warnings
 
 
-func _on_close_child_map(child: Map) -> void:
-	if child.id != child_id:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event.is_action_pressed("zoom_in"):
+		open_child_map()
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action("zoom_out"):
+		close_child_map()
+
+
+
+func close_child_map() -> void:
+	if !parent_scene:
 		return
 	
-	child.queue_free()
-	
-	visible = true
+	Messenger.transition_scene.emit(load(parent_scene))
 
 
 func open_child_map() -> void:
-	child_id = ResourceUID.create_id()
+	if !child_scene:
+		return
 	
-	var child: Map = child_scene.instantiate()
-	child.id = child_id
-	parent.add_child(child)
-	
-	visible = false
+	Messenger.transition_scene.emit(load(child_scene))
