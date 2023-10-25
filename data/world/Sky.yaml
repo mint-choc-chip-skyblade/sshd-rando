@@ -76,7 +76,7 @@
     Bamboo Island Interior: Day
     The Sky: Day
   locations:
-    Bamboo Island - Goddess Chest: "'Goddess_Cube_West_of_Earth_Temple_Entrance'"
+    Bamboo Island - Goddess Chest: Eldin_Volcano_Goddess_Cube_West_of_Earth_Temple_Entrance
 
 
 - name: Bamboo Island Interior
@@ -95,8 +95,8 @@
   exits:
     The Sky: Day
   locations:
-    Island near Bamboo Island - Goddess Chest: "'Goddess_Cube_near_Mogma_Turf_Entrance'"
-    Island near Bamboo Island - Goddess Chest in Cave: Water_Dragons_Scale and 'Goddess_Cube_near_Mogma_Turf_Entrance'
+    Island near Bamboo Island - Goddess Chest: Eldin_Volcano_Goddess_Cube_near_Mogma_Turf_Entrance
+    Island near Bamboo Island - Goddess Chest in Cave: Water_Dragons_Scale and Lanayru_Desert_Goddess_Cube_in_Secret_Passageway
 
 
 - name: Beedle's Island
@@ -107,8 +107,8 @@
   locations:
     Beedle's Island - Crystal: Night and Beetle
     Beedle's Island - Beedle's Crystals: Night and Beedles_Insect_Cage
-    Beedle's Island - Top Goddess Chest: Day and 'Goddess_Cube_at_Ride_near_Temple_of_Time'
-    Beedle's Island - Cage Goddess Chest: (Night or (Day and logic_beedles_island_cage_chest_dive)) and 'Goddess_Cube_on_top_of_Skyview'
+    Beedle's Island - Top Goddess Chest: Day and Lanayru_Desert_Goddess_Cube_near_Temple_of_Time
+    Beedle's Island - Cage Goddess Chest: (Night or (Day and logic_beedles_island_cage_chest_dive)) and Deep_Woods_Goddess_Cube_on_top_of_Skyview
 
 
 - name: Northeast Island
@@ -116,8 +116,8 @@
   exits:
     The Sky: Day
   locations:
-    Northeast Island - Goddess Chest behind Bombable Rocks: Bomb_Bag and 'Goddess_Cube_at_Lanayru_Mine_Entrance'
-    Northeast Island - Cage Goddess Chest: "'Goddess_Cube_East_of_Earth_Temple_Entrance'"
+    Northeast Island - Goddess Chest behind Bombable Rocks: Bomb_Bag and Lanayru_Mine_Goddess_Cube
+    Northeast Island - Cage Goddess Chest: Eldin_Volcano_Goddess_Cube_East_of_Earth_Temple_Entrance
 
 
 - name: Lumpy Pumpkin Exterior
@@ -132,8 +132,8 @@
     The Sky: Day
   locations:
     Lumpy Pumpkin - Outside Crystal: Night
-    Lumpy Pumpkin - Outside Goddess Chest: "'Initial_Goddess_Cube'"
-    Lumpy Pumpkin - Goddess Chest on Roof: Day and 'Goddess_Cube_in_Skyview_Spring'
+    Lumpy Pumpkin - Outside Goddess Chest: Deep_Woods_Goddess_Cube_Near_Goron
+    Lumpy Pumpkin - Goddess Chest on Roof: Day and Skyview_Spring_Goddess_Cube
     Lumpy Pumpkin - Kina's Crystals: Day and 'Pick_up_Guld'
     Lumpy Pumpkin - Gossip Stone: Nothing
 
@@ -175,7 +175,7 @@
   exits:
     The Sky: Day
   locations:
-    Island Closest to Faron Pillar - Goddess Chest: "'Goddess_Cube_in_Deep_Woods'"
+    Island Closest to Faron Pillar - Goddess Chest: Deep_Woods_Goddess_Cube_in_front_of_Skyview
 
 
 - name: Volcanic Island
@@ -185,8 +185,8 @@
   exits:
     The Sky: Day
   locations:
-    Volcanic Island - Outside Goddess Chest: "'Goddess_Cube_in_Sand_Oasis'"
-    Volcanic Island - Inside Goddess Chest: (Clawshots or logic_volcanic_island_dive) and 'Goddess_Cube_on_East_Great_Tree_with_Clawshots_Target'
+    Volcanic Island - Outside Goddess Chest: Lanayru_Desert_Goddess_Cube_in_Sand_Oasis
+    Volcanic Island - Inside Goddess Chest: (Clawshots or logic_volcanic_island_dive) and Faron_Woods_Goddess_Cube_on_East_Great_Tree_with_Clawshots_Target
     Volcanic Island - Gossip Stone: Nothing
 
 
@@ -211,7 +211,7 @@
   locations:
     Fun Fun Island - Dodoh's Crystals: "'Retrieve_Party_Wheel'"
     Fun Fun Island - Minigame -- 500 Rupees: "'Can_Play_Fun_Fun_Island_Minigame'"
-    Fun Fun Island - Goddess Chest: Day and 'Goddess_Cube_in_Floria_Waterfall'
+    Fun Fun Island - Goddess Chest: Day and Floria_Waterfall_Goddess_Cube_on_High_Ledge
 
 
 - name: Triple Island
@@ -219,9 +219,9 @@
   exits:
     The Sky: Day
   locations:
-    Triple Island - Upper Goddess Chest: "'Goddess_Cube_at_Eldin_Entrance'"
-    Triple Island - Lower Goddess Chest: "'Goddess_Cube_near_Rescue_Caged_Robot'"
-    Triple Island - Cage Goddess Chest: Clawshots and 'Goddess_Cube_in_Skippers_Retreat'
+    Triple Island - Upper Goddess Chest: Eldin_Volcano_Goddess_Cube_at_Eldin_Entrance
+    Triple Island - Lower Goddess Chest: Lanayru_Desert_Goddess_Cube_near_Caged_Robot
+    Triple Island - Cage Goddess Chest: Clawshots and Skippers_Retreat_Goddess_Cube
 
 # TODO: Check day/night stuff
 - name: The Thunderhead
@@ -243,8 +243,8 @@
     The Thunderhead: Day
     Isle of Songs Interior: Sword
   locations:
-    Isle of Songs - Top Goddess Chest: Day and 'Goddess_Cube_near_Fire_Sanctuary_Entrance'
-    Isle of Songs - Lower Goddess Chest: Day and 'Goddess_Cube_in_Mogma_Turf' 
+    Isle of Songs - Top Goddess Chest: Day and Volcano_Summit_Goddess_Cube_near_Fire_Sanctuary_Entrance
+    Isle of Songs - Lower Goddess Chest: Day and Mogma_Turf_Goddess_Cube
 
 
 - name: Isle of Songs Interior
@@ -261,7 +261,7 @@
   exits:
     The Thunderhead: Day
   locations:
-    Thunderhead East Island - Goddess Chest: "'Goddess_Cube_on_East_Great_Tree_with_Rope'"
+    Thunderhead East Island - Goddess Chest: Faron_Woods_Goddess_Cube_on_East_Great_Tree_with_Rope
     Thunderhead East Island - Chest: Digging_Mitts or logic_east_island_dive
 
 
@@ -270,8 +270,8 @@
   exits:
     The Thunderhead: Day
   locations:
-    Mogma Mitts Island - First Goddess Chest: Mogma_Mitts and 'Goddess_Cube_inside_Volcano_Summit'
-    Mogma Mitts Island - Second Goddess Chest: Mogma_Mitts and 'Goddess_Cube_in_Lanayru_Gorge'
+    Mogma Mitts Island - First Goddess Chest: Mogma_Mitts and Volcano_Summit_Goddess_Cube_in_Lava_Lake
+    Mogma Mitts Island - Second Goddess Chest: Mogma_Mitts and Lanayru_Gorge_Goddess_Cube
 
 
 - name: Bug Heaven
@@ -282,5 +282,5 @@
     The Thunderhead: Day
   locations:
     Bug Heaven - Minigame -- 10 Bugs in 3 Minutes: Bug_Net
-    Bug Heaven - Goddess Chest: "'Goddess_Cube_in_Summit_Waterfall'"
+    Bug Heaven - Goddess Chest: Volcano_Summit_Goddess_Cube_at_Summit_Waterfall
     Bug Heaven - Nearby Gossip Stone: Nothing
