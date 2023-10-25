@@ -364,6 +364,10 @@ class World:
                 else:
                     location.set_current_item(self.get_item("Green Rupee"))
 
+            # Set Goddess Cubes as having their own item
+            if "Goddess Cube" in location.types:
+                location.set_current_item(item)
+
     def perform_post_entrance_shuffle_tasks(self) -> None:
         self.assign_all_areas_hint_regions()
         self.choose_required_dungeons()

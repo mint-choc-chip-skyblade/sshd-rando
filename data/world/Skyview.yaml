@@ -158,7 +158,6 @@
 
 - name: Skyview Spring
   events:
-    Goddess Cube in Skyview Spring: Goddess_Sword
     Can Collect Water: Bottle
     Sacred Water: Bottle and Skyview_2
   exits:
@@ -167,3 +166,4 @@
   locations:
     Skyview Spring - Rupee on Spring Pillar: Beetle
     Skyview Spring - Strike Crest: Goddess_Sword
+    Skyview Spring - Goddess Cube: Goddess_Sword

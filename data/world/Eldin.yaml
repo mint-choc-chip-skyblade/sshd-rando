@@ -1,14 +1,13 @@
 
 - name: Volcano Entrance
   hint_region: Eldin Volcano
-  events:
-    Goddess Cube at Eldin Entrance: Goddess_Sword
   exits:
     Volcano Entrance Statue: Nothing
     Volcano Ascent: Bomb_Bag or can_access(Volcano Ascent) # No bomb flowers are close enough for even tough beetle
     Volcano First Room: Nothing
   locations:
     Eldin Volcano - Rupee on Ledge before First Room: Nothing
+    Eldin Volcano - Goddess Cube at Eldin Entrance: Goddess_Sword
 
 
 - name: Volcano First Room # Until the rocks
@@ -23,8 +22,6 @@
 
 - name: Volcano East
   hint_region: Eldin Volcano
-  events:
-    Goddess Cube near Mogma Turf Entrance: Goddess_Sword
   exits:
     Volcano East Statue: Nothing
     Volcano Entrance: Clawshots
@@ -38,6 +35,7 @@
     Eldin Volcano - Item on Cliff: Nothing
     Eldin Volcano - Southeast Rupee above Mogma Turf Entrance: Beetle
     Eldin Volcano - North Rupee above Mogma Turf Entrance: Beetle
+    Eldin Volcano - Goddess Cube near Mogma Turf Entrance: Goddess_Sword
 
 
 - name: Past Mogma Turf
@@ -87,8 +85,6 @@
   hint_region: Eldin Volcano
   events:
     Retrieve Crystal Ball: Clawshots and Scrapper and 'Start_Sparrots_Quest'
-    Goddess Cube West of Earth Temple Entrance: Digging_Mitts and Goddess_Sword
-    Goddess Cube East of Earth Temple Entrance: Goddess_Sword
   exits:
     Temple Entrance Statue: Nothing
     Earth Temple First Room: open_earth_temple or count(5, Key_Piece)
@@ -99,6 +95,8 @@
     Eldin Volcano - Digging Spot below Tower: Digging_Mitts
     Eldin Volcano - Digging Spot behind Boulder on Sandy Slope: Digging_Mitts
     Eldin Volcano - Gossip Stone next to Earth Temple: Digging_Mitts
+    Eldin Volcano - Goddess Cube West of Earth Temple Entrance: Digging_Mitts and Goddess_Sword
+    Eldin Volcano - Goddess Cube East of Earth Temple Entrance: Goddess_Sword
   
 
 - name: Outside Upper Eldin Cave
@@ -126,12 +124,11 @@
 
 - name: Sand Slide
   hint_region: Eldin Volcano
-  events:
-    Goddess Cube on Sand Slide: Goddess_Sword
   exits:
     Past Sand Slide: Nothing
   locations:
     Eldin Volcano - Digging Spot after Vents: Digging_Mitts
+    Eldin Volcano - Goddess Cube on Sand Slide: Goddess_Sword
 
 - name: Past Sand Slide
   hint_region: Eldin Volcano
@@ -163,12 +160,12 @@
 - name: Mogma Turf Dive
   hint_region: Mogma Turf
   events:
-    Goddess Cube in Mogma Turf: Goddess_Sword
     Pick up Guld: Scrapper and 'Start_Kinas_Quest'
   exits:
     Mogma Turf: Nothing
   locations:
     Mogma Turf - Free Fall Chest: Nothing
+    Mogma Turf - Goddess Cube: Goddess_Sword
 
 
 - name: Mogma Turf
@@ -216,24 +213,24 @@
 # VOLCANO SUMMIT
 - name: Volcano Summit
   hint_region: Volcano Summit
-  events:
-    Goddess Cube inside Volcano Summit: (Fireshield_Earrings and Long_Range_Skyward_Strike) or 'Beaten_Boko_Base'
   exits:
     Hot Cave: Fireshield_Earrings
     Volcano Summit Waterfall: Fireshield_Earrings
     Past Volcano Summit: Fireshield_Earrings
+  locations:
+    Volcano Summit - Goddess Cube in Lava Lake: (Fireshield_Earrings and Long_Range_Skyward_Strike) or 'Beaten_Boko_Base'
     
 
 - name: Volcano Summit Waterfall
   hint_region: Volcano Summit
   events:
     Can Collect Water: Bottle
-    Goddess Cube in Summit Waterfall: Goddess_Sword # Bomb flower for death warp without claws
   exits:
     Volcano Summit: Nothing
   locations:
     Volcano Summit - Chest behind Bombable Wall in Waterfall Area: Clawshots
     Volcano Summit - Gossip Stone in Waterfall Area: Clawshots
+    Volcano Summit - Goddess Cube at Summit Waterfall: Goddess_Sword # Bomb flower for death warp without claws
 
 
 - name: Past Volcano Summit
@@ -246,12 +243,12 @@
 
 
 - name: Outside Fire Sanctuary
-  events:
-    Goddess Cube near Fire Sanctuary Entrance: Clawshots and Goddess_Sword
   exits:
     Inside the Volcano Statue: Nothing
     Fire Sanctuary First Room: Nothing
     Past Volcano Summit: can_access(Past Volcano Summit) and Clawshots and 'Can_Collect_Water'
+  locations:
+    Volcano Summit - Goddess Cube near Fire Sanctuary Entrance: Clawshots and Goddess_Sword
 
  # BOKOBLIN BASE
 - name: Bokoblin Base Prison
