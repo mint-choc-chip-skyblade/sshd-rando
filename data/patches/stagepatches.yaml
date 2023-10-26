@@ -677,6 +677,14 @@ F000: # Skyloft
       name: Item
 
   ## Crystal in Loftwing Prison
+  - name: Patch y-offset for crystal in loftwing prison (l2)
+    type: objpatch
+    id: 0xFC9F
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posy: -3708
   - name: Move crystal in loftwing prison to l2
     type: objmove
     id: 0xFC9F
@@ -694,7 +702,7 @@ F000: # Skyloft
       params1: 0xFF0DBA30
       params2: 0xFFFFFFFF
       posx: 9222.8779296875
-      posy: -3717.320068359375
+      posy: -3708
       posz: -4296.15576171875
       id: 0xFC9F
       name: Item
@@ -708,7 +716,7 @@ F000: # Skyloft
       params1: 0xFF0DBA30
       params2: 0xFFFFFFFF
       posx: 9222.8779296875
-      posy: -3717.320068359375
+      posy: -3708
       posz: -4296.15576171875
       id: 0xFC9F
       name: Item
@@ -722,7 +730,7 @@ F000: # Skyloft
       params1: 0xFF0DBA30
       params2: 0xFFFFFFFF
       posx: 9222.8779296875
-      posy: -3717.320068359375
+      posy: -3708
       posz: -4296.15576171875
       id: 0xFC9F
       name: Item
