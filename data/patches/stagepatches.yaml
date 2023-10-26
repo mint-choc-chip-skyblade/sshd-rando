@@ -5163,7 +5163,7 @@ D101: # Ancient Cistern
       anglez: 0
       id: 0x4269
       name: Tubo
-  - name: remove stone tablet text
+  - name: Remove stone tablet text
     type: objpatch
     id: 0xFC11
     layer: 0
@@ -5196,7 +5196,23 @@ D101: # Ancient Cistern
       posx: -800
       posy: -310
       posz: -7590
-  - name: extra Bomb flower
+  - name: Move Rupee in East Hand
+    type: objpatch
+    id: 0xFC56
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posy: -890
+  - name: Move Rupee in West Hand
+    type: objpatch
+    id: 0xFC57
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posy: -890
+  - name: Add extra Bomb flower
     type: objadd
     layer: 0
     room: 7
@@ -5212,19 +5228,19 @@ D101: # Ancient Cistern
       anglez: 0
       id: 0xFD01
       name: Bombf
-  - name: Delete cutscene inside statue
+  - name: Remove cutscene inside statue
     type: objdelete
     id: 0xFC1F
     layer: 0
     room: 10
     objtype: STAG
-  - name: Delete cutscene in basement showing bk chest
+  - name: Remove cutscene in basement showing bk chest
     type: objdelete
     id: 0xFC7D
     layer: 0
     room: 4
     objtype: STAG
-  - name: Delete bottom Water Spout cutscene inside statue
+  - name: Remove bottom Water Spout cutscene inside statue
     type: objdelete
     id: 0xFC1A
     layer: 0
