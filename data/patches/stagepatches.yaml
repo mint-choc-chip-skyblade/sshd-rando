@@ -2735,6 +2735,12 @@ F210: # Mogma Turf
     layer: 1
     room: 0
     objtype: OBJ
+  - name: Remove Chuchu on Guld platform
+    type: objdelete
+    id: 0x007C
+    layer: 1
+    room: 0
+    objtype: SOBJ
   - name: Remove Rupee Dowsing
     # onlyif: dowsing_after_whitesword == on
     type: objdelete
