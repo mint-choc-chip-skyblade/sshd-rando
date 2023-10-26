@@ -2324,43 +2324,43 @@ F200: # Eldin main area
     destlayer: 0
     room: 0
     objtype: STAG
-  - name: First Mogma cs Fi
+  - name: Remove First Mogma cs Fi
     type: objdelete
     id: 0xFC22
     layer: 1
     room: 0
     objtype: OBJ
-  - name: First Mogma cs left mogma
+  - name: Remove First Mogma cs left mogma
     type: objdelete
     id: 0x001F
     layer: 1
     room: 0
     objtype: OBJ
-  - name: First Mogma cs right mogma
+  - name: Remove First Mogma cs right mogma
     type: objdelete
     id: 0x0020
     layer: 1
     room: 0
     objtype: OBJ
-  - name: Mogma near Mogma Turf cs
+  - name: Remove Mogma near Mogma Turf cs
     type: objdelete
     id: 0x0CB9
     layer: 1
     room: 2
     objtype: OBJ
-  - name: Just saying cs
+  - name: Remove Just saying cs
     type: objdelete
     id: 0x248C
     layer: 1
     room: 4
     objtype: OBJ
-  - name: delete Just saying cs mogma
+  - name: Remove Just saying cs mogma
     type: objdelete
     id: 0x248A
     layer: 1
     room: 4
     objtype: OBJ
-  - name: delete Just saying cs mogma
+  - name: Remove Just saying cs mogma
     type: objdelete
     id: 0x248B
     layer: 1
@@ -2392,7 +2392,7 @@ F200: # Eldin main area
     destlayer: 0
     room: 2
     objtype: STAG
-  - name: Propeller delete # undo this when starting without scrapper repaired
+  - name: Remove Propeller
     type: objdelete
     id: 0xFC2E
     layer: 0
@@ -2421,7 +2421,7 @@ F200: # Eldin main area
     layer: 1
     room: 2
     objtype: STAG
-  - name: remove ET Door if open ET
+  - name: Remove  ET Door if open ET
     onlyif: open_earth_temple == on
     type: objdelete
     id: 0x2413
@@ -2506,14 +2506,6 @@ F200: # Eldin main area
     layer: 1
     room: 2
     objtype: STAG
-  - name: Remove upper bridge CS
-    type: objpatch
-    id: 0x2833
-    layer: 1
-    room: 5
-    objtype: OBJ
-    object:
-      params1: 0xFFFFFF1E # replace event with FF
 
 F201_1: # Inside volcano
   - name: Layer override
