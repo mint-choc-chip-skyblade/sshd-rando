@@ -96,6 +96,7 @@ Sceneflags:
   Eldin Volcano: # Scene Index 4
     - 2  # Skip first Digging Mitts mogma text
     - 16 # Watched first time landing Cutscene
+    - 32 # Watched Impa Cutscene (bridge extended)
     - 58 # Watched Digging Mitts mogma Cutscene
 
   Eldin Volcano Summit: # Scene Index 5 (VS & Boko Base)
