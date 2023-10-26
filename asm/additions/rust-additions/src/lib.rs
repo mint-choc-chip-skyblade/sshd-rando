@@ -765,6 +765,39 @@ pub fn drop_nothing(param2_s0x18: u8) {
     }
 }
 
+#[no_mangle]
+pub fn fix_item_get_under_water() {
+    unsafe {
+        let mut item_animation_index: u8;
+
+        asm!(
+            "mov {0:w}, w9",
+            out(reg) item_animation_index,
+        );
+
+        // Handle bounds check that was replaced
+        if item_animation_index > 3 {
+            asm!(
+                "mov x20, xzr",
+                "mov w25, #0x4",
+                "mov w8, #0x4", // used later to set event name to null
+            );
+            return;
+        }
+
+        // if in water
+        if ((*PLAYER_PTR).action_flags >> 18) & 0x1 == 1 {
+            asm!("mov w25, #0"); // allow collecting items under water
+
+            // If should be a big item get animation, make it a small one
+            // Big item gets don't work properly under water :(
+            if item_animation_index == 1 {
+                asm!("mov w8, #0");
+            }
+        }
+    }
+}
+
 // Will output a string to Yuzu's log.
 // In Yuzu go to Emulation > Configure > Debug and
 // enter this into the global log filter:

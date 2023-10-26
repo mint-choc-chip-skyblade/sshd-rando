@@ -61,3 +61,6 @@
 
 .global drop_nothing
 .type drop_nothing, @function
+
+.global fix_item_get_under_water
+.type fix_item_get_under_water, @function

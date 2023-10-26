@@ -61,6 +61,9 @@ b.eq drop_arrows_bombs_seeds
 cmp w8, #15
 b.eq drop_nothing
 
+cmp w8, #16
+b.eq fix_item_get_under_water
+
 ret ; this should never be reached
 
 ; ends at 0x360A7000
