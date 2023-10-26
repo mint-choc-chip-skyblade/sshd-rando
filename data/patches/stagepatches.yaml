@@ -344,6 +344,24 @@ F000: # Skyloft
     layer: 6
     room: 0
     objtype: OBJ
+  - name: Remove extra Pipit l5
+    type: objdelete
+    id: 0xFDC6
+    layer: 5
+    room: 0
+    objtype: OBJ
+  - name: Remove extra Pipit l7
+    type: objdelete
+    id: 0xFDE4
+    layer: 7
+    room: 0
+    objtype: OBJ
+  - name: Remove extra Pipit l9
+    type: objdelete
+    id: 0xFDE3
+    layer: 9
+    room: 0
+    objtype: OBJ
   - name: Remove confounding propeller dowsing
     type: objdelete
     id: 0xFD4D
@@ -460,6 +478,34 @@ F000: # Skyloft
     objtype: OBJ
     object:
       untrigstoryfid: 944 # bow
+
+  - name: Always spawn Pipit at night l5
+    type: objpatch
+    id: 0xFDC5
+    layer: 5
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1
+      untrigstoryfid: -1
+  - name: Always spawn Pipit at night l7
+    type: objpatch
+    id: 0xFDE3
+    layer: 7
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1
+      untrigstoryfid: -1
+  - name: Always spawn Pipit at night l9
+    type: objpatch
+    id: 0xFDE2
+    layer: 9
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: -1
+      untrigstoryfid: -1
   
   - name: Fix Owlan disappearing after Harp
     type: objpatch
