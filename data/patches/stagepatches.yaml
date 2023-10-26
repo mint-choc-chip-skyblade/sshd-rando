@@ -212,127 +212,133 @@ F000: # Skyloft
       entrance_id: 100
 
   # F000 objdeletes
-  - name: Trial # trial object
-    type: objdelete
-    id: 0xFDD5
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Trial # butterflies
-    type: objdelete
-    id: 0xFDFE
-    layer: 4
-    room: 0
-    objtype: STAG
-  - name: Wryna cs
+  - name: Remove Wryna Cutscene l4
     type: objdelete
     id: 0xFDCD
     layer: 4
     room: 0
     objtype: OBJ
-  - name: Wryna cs
+  - name: Remove Wryna Cutscene l6
     type: objdelete
     id: 0xFDD1
     layer: 6
     room: 0
     objtype: OBJ
-  - name: Wryna l4 1
+  - name: Remove Wryna l4 1
     type: objdelete
     id: 0xFDCC
     layer: 4
     room: 0
     objtype: OBJ
-  - name: Wryna l6
-    type: objdelete
-    id: 0xFDD0
-    layer: 6
-    room: 0
-    objtype: OBJ
-  - name: Fi Text after trial
-    type: objdelete
-    id: 0xFDF3
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Fi Text after trial
-    type: objdelete
-    id: 0xFDFE
-    layer: 5
-    room: 0
-    objtype: OBJ
-  - name: Fi Text on Stairs
-    type: objdelete
-    id: 0xFDCA
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Goddess Statue chests
-    type: objdelete
-    id: 0xFDEA
-    layer: 2
-    room: 0
-    objtype: OBJS
-  - name: Goddess Statue chests
-    type: objdelete
-    id: 0xFDF6
-    layer: 4
-    room: 0
-    objtype: OBJS
-  - name: Goddess Statue chests
-    type: objdelete
-    id: 0xFDFF
-    layer: 5
-    room: 0
-    objtype: OBJS
-  - name: Goddess Statue chests
-    type: objdelete
-    id: 0xFDE5
-    layer: 10
-    room: 0
-    objtype: OBJS
-  - name: delete Wryna l4 2
+  - name: Remove Wryna l4 2
     type: objdelete
     id: 0xFDF0
     layer: 4
     room: 0
     objtype: OBJ
-  - name: delete people on bridge 1
+  - name: Remove Wryna l6
+    type: objdelete
+    id: 0xFDD0
+    layer: 6
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi Text after trial l4
+    type: objdelete
+    id: 0xFDF3
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi Text after trial l5
+    type: objdelete
+    id: 0xFDFE
+    layer: 5
+    room: 0
+    objtype: OBJ
+  - name: Remove Fi Text on Stairs
+    type: objdelete
+    id: 0xFDCA
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: Remove Vanilla Chest near Goddess Statue l2
+    type: objdelete
+    id: 0xFDEA
+    layer: 2
+    room: 0
+    objtype: OBJS
+  - name: Remove Vanilla Chest near Goddess Statue l4
+    type: objdelete
+    id: 0xFDF6
+    layer: 4
+    room: 0
+    objtype: OBJS
+  - name: Remove Vanilla Chest near Goddess Statue l5
+    type: objdelete
+    id: 0xFDFF
+    layer: 5
+    room: 0
+    objtype: OBJS
+  - name: Remove Vanilla Chest near Goddess Statue l10
+    type: objdelete
+    id: 0xFDE5
+    layer: 10
+    room: 0
+    objtype: OBJS
+  - name: Remove people on bridge 1
     type: objdelete
     id: 0x05D5
     layer: 1
     room: 0
     objtype: OBJ
-  - name: delete people on bridge 2
+  - name: Remove people on bridge 2
     type: objdelete
     id: 0x05D6
     layer: 1
     room: 0
     objtype: OBJ
-  - name: delete people on bridge 3
+  - name: Remove people on bridge 3
     type: objdelete
     id: 0x05D7
     layer: 1
     room: 0
     objtype: OBJ
-  - name: delete parrow before wryna
+  - name: Remove Orielle before Wryna l4
+    type: objdelete
+    id: 0xFDC8
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: Remove Orielle before Wryna l6
+    type: objdelete
+    id: 0xFDCE
+    layer: 6
+    room: 0
+    objtype: OBJ
+  - name: Remove Orielle before Wryna l8
+    type: objdelete
+    id: 0xFDC4
+    layer: 8
+    room: 0
+    objtype: OBJ
+  - name: Remove Parrow before Wryna 1
     type: objdelete
     id: 0xFDC6
     layer: 4
     room: 0
     objtype: OBJ
-  - name: delete parrow before wryna 2
+  - name: Remove Parrow before Wryna 2
     type: objdelete
     id: 0xFDCC
     layer: 6
     room: 0
     objtype: OBJ
-  - name: delete parrow CS
+  - name: Remove Parrow Cutscene l4
     type: objdelete
     id: 0xFDF8
     layer: 4
     room: 0
     objtype: OBJ
-  - name: delete parrow CS 2
+  - name: Remove Parrow Cutscene l6
     type: objdelete
     id: 0xFDE9
     layer: 6
@@ -383,20 +389,34 @@ F000: # Skyloft
     room: 0
     objtype: OBJS
 
-  - name: Trial # trial object
+  # Trial stuff
+  - name: Remove Trial Gate l4
+    type: objdelete
+    id: 0xFDD5
+    layer: 4
+    room: 0
+    objtype: OBJ
+  - name: Remove Trial Butterflies l4
+    type: objdelete
+    id: 0xFDFE
+    layer: 4
+    room: 0
+    objtype: STAG
+  - name: Remove Trial Gate l5
     type: objmove
     id: 0xFDD7
     layer: 5
     destlayer: 0
     room: 0
     objtype: OBJ
-  - name: Trial # butterflies
+  - name: Remove Trial Butterflies l5
     type: objmove
     id: 0xFE15
     layer: 5
     destlayer: 0
     room: 0
     objtype: STAG
+
   - name: Sand Size fix
     type: objpatch
     id: 0xFD02
@@ -424,7 +444,7 @@ F000: # Skyloft
     objtype: OBJ
     object:
       trigstoryfid: 944 # bow
-  - name: untrigger fledge on academy after bow layer 4
+  - name: Untrigger Fledge on academy after bow layer 4
     type: objpatch
     id: 0xFDCE
     layer: 4
@@ -432,7 +452,7 @@ F000: # Skyloft
     objtype: OBJ
     object:
       untrigstoryfid: 944 # bow
-  - name: untrigger fledge on academy after bow layer 6
+  - name: Untrigger Fledge on academy after bow layer 6
     type: objpatch
     id: 0xFDD2
     layer: 6
@@ -449,7 +469,7 @@ F000: # Skyloft
     objtype: OBJ
     object:
       untrigstoryfid: -1
-  - name: always spawn parrow for quest
+  - name: Always spawn Parrow for quest l4
     type: objpatch
     id: 0xFDD3
     layer: 4
@@ -457,7 +477,7 @@ F000: # Skyloft
     objtype: OBJ
     object:
       trigstoryfid: -1
-  - name: always spawn parrow for quest 2
+  - name: Always spawn Parrow for quest l6
     type: objpatch
     id: 0xFDD5
     layer: 6
@@ -493,14 +513,14 @@ F000: # Skyloft
 
   # Move Loose Crystal checks to night layers
   ## Crystal on West Cliff
-  - name: Move crystal on West Cliff to layer 2
+  - name: Move crystal on West Cliff to l2
     type: objmove
     id: 0xFCA2
     layer: 0
     destlayer: 2
     room: 0
     objtype: OBJ
-  - name: Add crystal on West Cliff to layer 5
+  - name: Add crystal on West Cliff to l5
     type: objadd
     room: 0
     layer: 5
@@ -514,7 +534,7 @@ F000: # Skyloft
       posz: -904.0946044921875
       id: 0xFCA2
       name: Item
-  - name: Add crystal on West Cliff to layer 7
+  - name: Add crystal on West Cliff to l7
     type: objadd
     room: 0
     layer: 7
@@ -528,7 +548,7 @@ F000: # Skyloft
       posz: -904.0946044921875
       id: 0xFCA2
       name: Item
-  - name: Add crystal on West Cliff to layer 9
+  - name: Add crystal on West Cliff to l9
     type: objadd
     room: 0
     layer: 9
@@ -552,14 +572,14 @@ F000: # Skyloft
     objtype: OBJ
     object:
       angley: 32000
-  - name: Move crystal between Wooden Planks to layer 2
+  - name: Move crystal between Wooden Planks to l2
     type: objmove
     id: 0xFCA1
     layer: 0
     destlayer: 2
     room: 0
     objtype: OBJ
-  - name: Add crystal between Wooden Planks to layer 5
+  - name: Add crystal between Wooden Planks to l5
     type: objadd
     room: 0
     layer: 5
@@ -574,7 +594,7 @@ F000: # Skyloft
       angley: 32000
       id: 0xFCA1
       name: Item
-  - name: Add crystal between Wooden Planks to layer 7
+  - name: Add crystal between Wooden Planks to l7
     type: objadd
     room: 0
     layer: 7
@@ -589,7 +609,7 @@ F000: # Skyloft
       angley: 32000
       id: 0xFCA1
       name: Item
-  - name: Add crystal between Wooden Planks to layer 9
+  - name: Add crystal between Wooden Planks to l9
     type: objadd
     room: 0
     layer: 9
@@ -606,14 +626,14 @@ F000: # Skyloft
       name: Item
 
   ## Crystal after Waterfall Cave
-  - name: Move crystal after waterfall cave to layer 2
+  - name: Move crystal after waterfall cave to l2
     type: objmove
     id: 0xFCA0
     layer: 0
     destlayer: 2
     room: 0
     objtype: OBJ
-  - name: Add crystal after waterfall cave to layer 5
+  - name: Add crystal after waterfall cave to l5
     type: objadd
     room: 0
     layer: 5
@@ -627,7 +647,7 @@ F000: # Skyloft
       posz: -4997.53173828125
       id: 0xFCA0
       name: Item
-  - name: Add crystal after waterfall cave to layer 7
+  - name: Add crystal after waterfall cave to l7
     type: objadd
     room: 0
     layer: 7
@@ -641,7 +661,7 @@ F000: # Skyloft
       posz: -4997.53173828125
       id: 0xFCA0
       name: Item
-  - name: Add crystal after waterfall cave to layer 9
+  - name: Add crystal after waterfall cave to l9
     type: objadd
     room: 0
     layer: 9
@@ -657,14 +677,14 @@ F000: # Skyloft
       name: Item
 
   ## Crystal in Loftwing Prison
-  - name: Move crystal in loftwing prison to layer 2
+  - name: Move crystal in loftwing prison to l2
     type: objmove
     id: 0xFC9F
     layer: 0
     destlayer: 2
     room: 0
     objtype: OBJ
-  - name: Add crystal in loftwing prison to layer 5
+  - name: Add crystal in loftwing prison to l5
     type: objadd
     room: 0
     layer: 5
@@ -678,7 +698,7 @@ F000: # Skyloft
       posz: -4296.15576171875
       id: 0xFC9F
       name: Item
-  - name: Add crystal in loftwing prison to layer 7
+  - name: Add crystal in loftwing prison to l7
     type: objadd
     room: 0
     layer: 7
@@ -692,7 +712,7 @@ F000: # Skyloft
       posz: -4296.15576171875
       id: 0xFC9F
       name: Item
-  - name: Add crystal in loftwing prison to layer 9
+  - name: Add crystal in loftwing prison to l9
     type: objadd
     room: 0
     layer: 9
@@ -708,14 +728,14 @@ F000: # Skyloft
       name: Item
 
   ## Crystal on Waterfall Island
-  - name: Move crystal on waterfall island to layer 2
+  - name: Move crystal on waterfall island to l2
     type: objmove
     id: 0xFC9E
     layer: 0
     destlayer: 2
     room: 0
     objtype: OBJ
-  - name: Add crystal on waterfall island to layer 5
+  - name: Add crystal on waterfall island to l5
     type: objadd
     room: 0
     layer: 5
@@ -729,7 +749,7 @@ F000: # Skyloft
       posz: -6259.48291015625
       id: 0xFC9E
       name: Item
-  - name: Add crystal on waterfall island to layer 7
+  - name: Add crystal on waterfall island to l7
     type: objadd
     room: 0
     layer: 7
@@ -743,7 +763,7 @@ F000: # Skyloft
       posz: -6259.48291015625
       id: 0xFC9E
       name: Item
-  - name: Add crystal on waterfall island to layer 9
+  - name: Add crystal on waterfall island to l9
     type: objadd
     room: 0
     layer: 9
@@ -759,14 +779,14 @@ F000: # Skyloft
       name: Item
 
   ## Crystal on Light Tower
-  - name: Move crystal on light tower to layer 2
+  - name: Move crystal on light tower to l2
     type: objmove
     id: 0xFC9C
     layer: 0
     destlayer: 2
     room: 0
     objtype: OBJ
-  - name: Add crystal on light tower to layer 5
+  - name: Add crystal on light tower to l5
     type: objadd
     room: 0
     layer: 5
@@ -780,7 +800,7 @@ F000: # Skyloft
       posz: 5633.90869140625
       id: 0xFC9C
       name: Item
-  - name: Add crystal on light tower to layer 7
+  - name: Add crystal on light tower to l7
     type: objadd
     room: 0
     layer: 7
@@ -794,7 +814,7 @@ F000: # Skyloft
       posz: 5633.90869140625
       id: 0xFC9C
       name: Item
-  - name: Add crystal on light tower to layer 9
+  - name: Add crystal on light tower to l9
     type: objadd
     room: 0
     layer: 9
@@ -810,14 +830,14 @@ F000: # Skyloft
       name: Item
 
   ## Crystal near Pumpkin Patch
-  - name: Move crystal near pumpkin patch to layer 2
+  - name: Move crystal near pumpkin patch to l2
     type: objmove
     id: 0xFC9D
     layer: 0
     destlayer: 2
     room: 0
     objtype: OBJ
-  - name: Add crystal near pumpkin patch to layer 5
+  - name: Add crystal near pumpkin patch to l5
     type: objadd
     room: 0
     layer: 5
@@ -831,7 +851,7 @@ F000: # Skyloft
       posz: -1688.4466552734375
       id: 0xFC9D
       name: Item
-  - name: Add crystal near pumpkin patch to layer 7
+  - name: Add crystal near pumpkin patch to l7
     type: objadd
     room: 0
     layer: 7
@@ -845,7 +865,7 @@ F000: # Skyloft
       posz: -1688.4466552734375
       id: 0xFC9D
       name: Item
-  - name: Add crystal near pumpkin patch to layer 9
+  - name: Add crystal near pumpkin patch to l9
     type: objadd
     room: 0
     layer: 9
@@ -905,7 +925,7 @@ F001r:
       posx: 850
       posz: -1700
       untrigstoryfid: 923
-  - name: Fledge trains without wryna
+  - name: Fledge trains without Wryna
     type: objpatch
     id: 0xFC10
     layer: 4
@@ -921,7 +941,7 @@ F001r:
     objtype: OBJ
     object:
       untrigstoryfid: 2047
-  - name: Olwan Npc after Kikwis
+  - name: Owlan Npc after Kikwis
     type: objpatch
     id: 0xFC0A
     layer: 3
@@ -929,7 +949,7 @@ F001r:
     objtype: OBJ
     object:
       trigstoryfid: 57 # talk to Elder after locating every Kikwi
-  - name: untrigger other owlan
+  - name: Untrigger other Owlan
     type: objpatch
     id: 0xFC0B
     layer: 3
@@ -953,11 +973,6 @@ F001r:
     objtype: OBJ
     object:
       trigstoryfid: 140 # groose landing in faron, cut out sleeping
-  # temp start items arcs
-  - name: Bow get model
-    type: oarcadd
-    oarc: GetBowA
-    destlayer: 0
   
   # Move Loose Crystal checks to night layers
   - name: Raise crystal in Link's room
@@ -999,13 +1014,13 @@ F001r:
     objtype: OBJ
 
 F002r: # Beedle's Airshop
-  - name: Delete cutscene
+  - name: Remove Cutscene 1
     type: objdelete
     id: 0xFC11
     layer: 1
     room: 0
     objtype: STAG
-  - name: Delete cutscene
+  - name: Remove Cutscene 2
     type: objdelete
     id: 0xFC13
     layer: 1
@@ -1013,7 +1028,7 @@ F002r: # Beedle's Airshop
     objtype: STAG
 
 F004r: # Bazaar
-  - name: Delete goddess chest fi text
+  - name: Remove goddess chest fi text
     type: objdelete
     id: 0xFC7D
     layer: 0
@@ -1037,9 +1052,15 @@ F005r: # Orielle and Parrow's House
     objtype: OBJ
     object:
       trigstoryfid: -1 # always Trigger
-  - name: Delete Parrow before Crystal Quest
+  - name: Remove Parrow before Crystal Quest (Wryna)
     type: objdelete
     id: 0xFC13
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove Orielle before Crystal Quest (Wryna)
+    type: objdelete
+    id: 0xFC14
     layer: 2
     room: 0
     objtype: OBJ
@@ -1087,14 +1108,14 @@ F008r: # Goddess Statue
       name: NpcTke
       trigstoryfid: 951 # Raised Goddess Sword in Goddess Statue
       untrigscenefid: 25 # Scene flag 25 - Skyward Strike on Tablet Pedestal (unused in rando)
-  - name: Move Sword Pedestal to layer 1
+  - name: Move Sword Pedestal to l1
     type: objmove
     id: 0xFC05
     layer: 0
     destlayer: 1
     room: 0
     objtype: OBJ
-  - name: Remove cutscene trigger on layer 1
+  - name: Remove cutscene trigger on l1
     type: objdelete
     id: 0xFC0E
     layer: 1
@@ -1134,19 +1155,19 @@ F010r: # Isle of Songs Tower
       anglez: 0
       id: 0x4269
       name: Tubo
-  - name: Delete Faron Trial Dowsing
+  - name: Remove Faron Trial Dowsing
     type: objdelete
     id: 0xFC02
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Delete Lanayru Trial Dowsing
+  - name: Remove Lanayru Trial Dowsing
     type: objdelete
     id: 0xFC03
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Delete Eldin Trial Dowsing
+  - name: Remove Eldin Trial Dowsing
     type: objdelete
     id: 0xFC04
     layer: 0
@@ -1172,25 +1193,25 @@ F010r: # Isle of Songs Tower
     objtype: STAG
 
 F011r: # Lumpy Pumpkin
-  - name: Delete Lumpy Pumpkin Cutscene 1
+  - name: Remove Lumpy Pumpkin Cutscene 1
     type: objdelete
     id: 0xFC42
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Delete Lumpy Pumpkin Cutscene 2
+  - name: Remove Lumpy Pumpkin Cutscene 2
     type: objdelete
     id: 0xFC43
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Delete new Lumpy chandelier Cutscene 1
+  - name: Remove new Lumpy chandelier Cutscene 1
     type: objdelete
     id: 0xFC44
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Delete new Lumpy chandelier Cutscene 2
+  - name: Remove new Lumpy chandelier Cutscene 2
     type: objdelete
     id: 0xFC45
     layer: 0
@@ -1294,13 +1315,13 @@ F020: # The Sky
     layer: 2
     room: 0
     objtype: OBJ
-  - name: remove faron loadzone after groose
+  - name: Remove Faron loadzone after Groose
     type: objdelete
     id: 0xFC96
     layer: 0
     room: 0
     objtype: STAG
-  - name: never untrigger first faron loadzone
+  - name: Never untrigger first Faron loadzone
     type: objpatch
     id: 0xFC8B
     layer: 0
@@ -1308,7 +1329,7 @@ F020: # The Sky
     objtype: STAG
     object:
       untrigstoryfid: -1
-  - name: remove Wryna requirement for orielle
+  - name: Remove Wryna requirement for Orielle
     type: objpatch
     id: 0xFCFB
     layer: 2
@@ -1316,7 +1337,7 @@ F020: # The Sky
     objtype: OBJ
     object:
       trigstoryfid: -1
-  - name: remove Wryna requirement for orielle's bird
+  - name: Remove Wryna requirement for Orielle's bird
     type: objpatch
     id: 0xFD0E
     layer: 2
@@ -1401,7 +1422,7 @@ F023: # Thunderhead
     type: oarcdelete
     oarc: Pinwheel
     layer: 0
-  - name: Strich layer 1
+  - name: Strich l1
     type: objadd
     layer: 1
     room: 0
@@ -1421,7 +1442,7 @@ F023: # Thunderhead
     type: oarcadd
     oarc: KobunB
     destlayer: 1
-  - name: void out during bug heaven minigame
+  - name: Void out during Bug Heaven minigame
     type: objadd
     layer: 13
     room: 0
@@ -1440,13 +1461,13 @@ F023: # Thunderhead
       anglez: 0xFFFF
       id: 0xFC00
       name: PlRsTag
-  - name: Delete Isle of Songs intro cutscene
+  - name: Delete Isle of Songs intro Cutscene
     type: objdelete
     id: 0xFC89
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Fi text after levias
+  - name: Fi text after Levias
     type: objadd
     room: 0
     layer: 0
@@ -1463,7 +1484,7 @@ F023: # Thunderhead
       anglez: 12003 # entrypoint 120_03
       id: 0xFC13
       name: NpcTke
-  - name: Yeet Levias Cutscene
+  - name: Remove Levias Cutscene
     type: objpatch
     index: 6
     room: 0
@@ -1604,7 +1625,7 @@ F100: # Faron Woods
       anglez: 0
       id: 0x4269
       name: Tubo
-  - name: Yeet Faron Woods Intro Cutscene
+  - name: Remove Faron Woods Intro Cutscene
     type: objpatch
     index: 0
     room: 0
