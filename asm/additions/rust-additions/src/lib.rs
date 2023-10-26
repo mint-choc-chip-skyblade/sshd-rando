@@ -349,7 +349,7 @@ pub fn patch_freestanding_item_fields(
             27..=30 | 179 => y_offset = 24.0,
             // LMF BK
             31 => y_offset = 27.0,
-            // Crystal Pack | Single Crystal | Beetle | Small Bomb Bag | Eldin Ore
+            // Crystal Pack | Single Crystal | Beetle | Pouch | Small Bomb Bag | Eldin Ore
             35 | 48 | 53 | 112 | 134 | 165 => y_offset = 18.0,
             // Bellows | Bug Net | Bomb Bag
             49 | 71 | 92 => y_offset = 26.0,
