@@ -3420,6 +3420,22 @@ F301_3: # Skipper's Retreat
       anglez: 0
       id: 0x4269
       name: Tubo
+  - name: Add bomb flower next to skydive chest # prevents softlocks
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: -80
+      posy: 800
+      posz: 2670
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0x4270
+      name: Bombf
 
 F301_4: # Shipyard
   - name: Text after intro
