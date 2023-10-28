@@ -1,5 +1,4 @@
-; May eventually need adjusting if rust addition grow too large
-.offset 0x360A9000
+.offset 0x360A6500
 ldrb w22, [x27, #0x10b] ; replaced instruction (get sceneflag)
 cmp w22, #0xFF
 b.eq not_set_flag

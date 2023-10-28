@@ -333,7 +333,7 @@ class World:
             if item == None:
                 continue
 
-            # Small Keys, Boss Keys, Maps, Caves Key, Shop items
+            # Small Keys, Boss Keys, Maps, Caves Key, Shop items, Single Crystals
             if (
                 (
                     self.setting("small_keys") == "vanilla"
@@ -351,6 +351,10 @@ class World:
                     self.setting("randomized_shops") == "vanilla"
                     and "Beedle's Shop Purchases" in location.types
                 )
+                or (
+                    self.setting("single_gratitude_crystals") == "vanilla"
+                    and "Loose Crystals" in location.types
+                )
             ):
                 location.set_current_item(item)
                 location.has_known_vanilla_item = True
@@ -363,6 +367,10 @@ class World:
                     self.item_pool[item] -= 1
                 else:
                     location.set_current_item(self.get_item("Green Rupee"))
+
+            # Set Goddess Cubes as having their own item
+            if "Goddess Cube" in location.types:
+                location.set_current_item(item)
 
     def perform_post_entrance_shuffle_tasks(self) -> None:
         self.assign_all_areas_hint_regions()

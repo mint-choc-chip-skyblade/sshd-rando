@@ -1,7 +1,3 @@
-from constants.itemconstants import (
-    FREESTANDING_ITEM_OFFSETS,
-    FREESTANDING_ITEMS_TO_USE_DEFAULT_SCALING,
-)
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 from sslib.bzs import parse_bzs, build_bzs, get_entry_from_bzs, get_highest_object_id
 from sslib.fs_helpers import float_to_hex
@@ -89,24 +85,18 @@ def patch_freestanding_item(bzs: dict, itemid: int, id_str: str):
         freestanding_item["params1"], 0x1, 9, 0
     )
 
-    y_offset = float_to_hex(FREESTANDING_ITEM_OFFSETS.get(itemid, 0)) >> 16
 
-    # Patch y-offset into params2 (0x00FFFF00).
-    freestanding_item["params2"] = mask_shift_set(
-        freestanding_item["params2"], 0xFFFF, 8, y_offset
+def patch_bucha(bzs: dict, itemid: int, id_str: str):
+    id = int(id_str, 16)
+    bucha = next(
+        filter(lambda x: x["name"] == "NpcKyuE" and x["id"] == id, bzs["OBJ "]), None
     )
 
-    scale_bit = 0
+    if bucha is None:
+        print(f"ERROR: Bucha's id {id} not found. Cannot patch this check.")
+        return
 
-    if itemid in FREESTANDING_ITEMS_TO_USE_DEFAULT_SCALING:
-        scale_bit = 1
-
-    # Patch whether to use default scaling into angley.
-    # angley is used for the actual rotation of the item but we use the lsb so
-    # it shouldn't make a noticeable difference.
-    freestanding_item["angley"] = mask_shift_set(
-        freestanding_item["angley"], 1, 0, scale_bit
-    )
+    bucha["params2"] = mask_shift_set(bucha["params2"], 0xFF, 0x8, itemid)
 
 
 def patch_zeldas_closet(bzs: dict, itemid: int, id_str: str):
@@ -599,6 +589,12 @@ class StagePatchHandler:
                                         )
                                     elif object_name == "Item":
                                         patch_freestanding_item(
+                                            room_bzs["LAY "][f"l{layer}"],
+                                            itemid,
+                                            objectid,
+                                        )
+                                    elif object_name == "NpcKyuE":
+                                        patch_bucha(
                                             room_bzs["LAY "][f"l{layer}"],
                                             itemid,
                                             objectid,

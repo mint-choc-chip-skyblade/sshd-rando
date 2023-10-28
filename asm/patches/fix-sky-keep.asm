@@ -8,4 +8,4 @@ b 0x08659ac0
 mov w8, #11
 
 .offset 0x08e419f0
-bl 0x0865a070
+bl additions_jumptable

@@ -15,16 +15,22 @@ mod structs;
 // symbols.yaml and then added to this extern block.
 extern "C" {
     static PLAYER_PTR: *mut structs::Player;
+
     static FILE_MGR: *mut structs::FileMgr;
     static STORYFLAG_MGR: *mut structs::FlagMgr;
     static ITEMFLAG_MGR: *mut structs::FlagMgr;
+    static SCENEFLAG_MGR: *mut c_void;
     static DUNGEONFLAG_MGR: *mut structs::DungeonflagMgr;
+
     static mut STATIC_STORYFLAGS: [u16; 128];
     static mut STATIC_SCENEFLAGS: [u16; 8];
     static mut STATIC_TEMPFLAGS: [u16; 4];
     static mut STATIC_ZONEFLAGS: [[u16; 4]; 63];
     static mut STATIC_ITEMFLAGS: [u16; 64];
     static mut STATIC_DUNGEONFLAGS: [u16; 8];
+
+    static mut GAME_RELOADER: *mut structs::GameReloader;
+    static mut RESPAWN_TYPE: u8;
     static mut CURRENT_STAGE_NAME: [u8; 7];
     static mut CURRENT_STAGE_SUFFIX: [u8; 3];
     static mut CURRENT_FADE_FRAMES: u16;
@@ -42,10 +48,17 @@ extern "C" {
     static mut NEXT_NIGHT: u8;
     static mut NEXT_TRIAL: u8;
     static mut NEXT_SOMETHING: u8;
-    static mut GAME_RELOADER: *mut structs::GameReloader;
     static mut CURRENT_LAYER_COPY: u8;
-    static mut RESPAWN_TYPE: u8;
+
     static mut ACTOR_PARAM_SCALE: u64;
+    static mut ACTOR_PARAM_ROT: *mut structs::Vec3s;
+    static mut ACTORBASE_PARAM2: u32;
+
+    static mut BASEBASE_ACTOR_PARAM1: u32;
+    static mut BASEBASE_GROUP_TYPE: u8;
+
+    static ACTOR_ALLOCATOR_DEFINITIONS: u64; // [*const u64; 701];
+
     static STARTFLAGS: [u16; 1000];
 
     fn strlen(string: *mut u8) -> u64;
@@ -70,25 +83,20 @@ extern "C" {
         unk10: u32,
         unk11: u32,
     );
+    fn SceneflagMgr__setFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
+    fn SceneflagMgr__unsetFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
+    fn SceneflagMgr__checkFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32) -> u16;
+    fn spawnDrop(
+        itemid: structs::ITEMFLAGS,
+        roomid: u32,
+        pos: *mut structs::Vec3f,
+        rot: *mut structs::Vec3s,
+    );
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
-#[no_mangle]
-pub fn fix_sandship_boat() -> u32 {
-    unsafe {
-        let current_stage_name = unsafe { &CURRENT_STAGE_NAME[..4] };
-
-        if strlen(CURRENT_STAGE_NAME.as_mut_ptr()) == 4 && current_stage_name == b"F301" {
-            // 152 == Skipper's Boat Timeshift Stone Hit
-            return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, 152);
-        }
-
-        return 1u32;
-    }
-}
-
 #[no_mangle]
 pub fn handle_startflags() {
     unsafe {
@@ -155,6 +163,52 @@ pub fn handle_startflags() {
     }
 }
 
+// Flags
+// Storyflags
+#[no_mangle]
+pub fn set_storyflag(flag: u16) {
+    unsafe {
+        ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag);
+    };
+}
+
+#[no_mangle]
+pub fn unset_storyflag(flag: u16) {
+    unsafe {
+        ((*(*STORYFLAG_MGR).funcs).unsetFlag)(STORYFLAG_MGR, flag);
+    };
+}
+
+#[no_mangle]
+pub fn check_storyflag(flag: u16) -> u32 {
+    unsafe {
+        return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, flag);
+    }
+}
+
+// Sceneflags (local)
+#[no_mangle]
+pub fn set_local_sceneflag(flag: u32) {
+    unsafe {
+        return SceneflagMgr__setFlag(SCENEFLAG_MGR, 0, flag);
+    }
+}
+
+#[no_mangle]
+pub fn unset_local_sceneflag(flag: u32) {
+    unsafe {
+        return SceneflagMgr__unsetFlag(SCENEFLAG_MGR, 0, flag);
+    }
+}
+
+#[no_mangle]
+pub fn check_local_sceneflag(flag: u32) -> u16 {
+    unsafe {
+        return SceneflagMgr__checkFlag(SCENEFLAG_MGR, 0, flag);
+    }
+}
+
+// Sceneflags (global)
 #[no_mangle]
 pub fn set_global_sceneflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
@@ -165,6 +219,7 @@ pub fn set_global_sceneflag(sceneindex: u16, flag: u16) {
     }
 }
 
+#[no_mangle]
 pub fn unset_global_sceneflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
@@ -174,6 +229,7 @@ pub fn unset_global_sceneflag(sceneindex: u16, flag: u16) {
     }
 }
 
+#[no_mangle]
 pub fn check_global_sceneflag(sceneindex: u16, flag: u16) -> u16 {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
@@ -184,6 +240,7 @@ pub fn check_global_sceneflag(sceneindex: u16, flag: u16) -> u16 {
     }
 }
 
+// Dungeonflags (global)
 #[no_mangle]
 pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
@@ -191,6 +248,193 @@ pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
 
     unsafe {
         (*FILE_MGR).FA.dungeonflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
+    }
+}
+
+// Itemflags
+#[no_mangle]
+pub fn set_itemflag(flag: structs::ITEMFLAGS) {
+    unsafe {
+        ((*(*ITEMFLAG_MGR).funcs).setFlag)(ITEMFLAG_MGR, flag as u16);
+    }
+}
+
+#[no_mangle]
+pub fn unset_itemflag(flag: structs::ITEMFLAGS) {
+    unsafe {
+        ((*(*ITEMFLAG_MGR).funcs).unsetFlag)(ITEMFLAG_MGR, flag as u16);
+    }
+}
+
+#[no_mangle]
+pub fn check_itemflag(flag: structs::ITEMFLAGS) -> u32 {
+    unsafe {
+        return ((*(*ITEMFLAG_MGR).funcs).getFlagOrCounter)(ITEMFLAG_MGR, flag as u16);
+    }
+}
+
+// Misc flag funcs
+#[no_mangle]
+pub fn set_goddess_sword_pulled_story_flag() {
+    // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
+    set_storyflag(951);
+}
+
+#[no_mangle]
+pub fn set_stone_of_trials_placed_flag(
+    gameReloader: *mut structs::GameReloader,
+    currentRoom: u32,
+    exitIndex: u32,
+    forceNight: u32,
+    forceTrial: u32,
+) {
+    unsafe {
+        GameReloader__triggerExit(gameReloader, currentRoom, exitIndex, forceNight, forceTrial)
+    }
+
+    set_storyflag(22); // 22 == Stone of Trials placed storyflag
+}
+
+#[no_mangle]
+pub fn check_night_storyflag() -> bool {
+    return check_storyflag(899) != 0; // 899 == day/night flag
+}
+
+#[no_mangle]
+pub fn update_day_night_storyflag() {
+    // yuzu_print("Updating night flag");
+
+    unsafe {
+        // 899 == day/night storyflag
+        if NEXT_NIGHT == 1 {
+            // yuzu_print("Setting night flag");
+            set_storyflag(899);
+        } else {
+            // yuzu_print("Unsetting night flag");
+            unset_storyflag(899);
+        }
+
+        ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);
+
+        // Replaced instruction
+        NEXT_SOMETHING = 0xFF;
+    }
+
+    return;
+}
+
+#[no_mangle]
+pub fn patch_freestanding_item_fields(
+    actorid: u16,
+    unk: u64,
+    actor_param1: u32,
+    actor_group_type: u8,
+) {
+    // dAcItem actor id && is rando patched item
+    if actorid == 0x281 && (actor_param1 >> 9) & 0x1 == 0 {
+        let mut use_default_scaling = false;
+        let mut y_offset = 0.0f32;
+
+        // Item id
+        match actor_param1 & 0x1FF {
+            // Sword | Harp | Mitts | Beedle's Insect Cage | Sot | Songs
+            10 | 16 | 56 | 159 | 180 | 186..=193 => y_offset = 20.0,
+            // Bow | Sea Chart | Wooden Shield | Hylian Shield
+            19 | 98 | 116 | 125 => y_offset = 23.0,
+            // Clawshots | Spiral Charge
+            20 | 21 => y_offset = 25.0,
+            // AC BK | FS BK
+            25 | 26 => y_offset = 30.0,
+            // SSH BK, ET Key, SV BK, ET BK | Amber Tablet
+            27..=30 | 179 => y_offset = 24.0,
+            // LMF BK
+            31 => y_offset = 27.0,
+            // Crystal Pack | Single Crystal | Beetle | Small Bomb Bag | Eldin Ore
+            35 | 48 | 53 | 134 | 165 => y_offset = 18.0,
+            // Bellows | Bug Net | Bomb Bag
+            49 | 71 | 92 => y_offset = 26.0,
+            52          // Slingshot
+            | 68        // Water Dragon's Scale
+            | 100..=104 // Medals
+            | 108       // Wallets
+            | 114       // Life Medal
+            | 153       // Empty Bottle
+            | 161..=164 // Treasures
+            | 166..=170 // Treasures
+            | 172..=174 // Treasures
+            | 178       // Ruby Tablet
+            | 198       // Life Tree Fruit
+            | 199 => y_offset = 16.0,
+            // Semi-rare | Rare Treasure
+            63 | 64 => y_offset = 15.0,
+            // Heart Container
+            93 => use_default_scaling = true,
+            95..=97 => {
+                y_offset = 24.0;
+                use_default_scaling = true;
+            },
+            // Seed Satchel | Golden Skull
+            128 | 175 => y_offset = 14.0,
+            // Quiver | Whip | Emerald Tablet | Maps
+            131 | 137 | 177 | 207..=213 => y_offset = 19.0,
+            // Earrings
+            138 => y_offset = 6.0,
+            // Letter | Monster Horn
+            158 | 171 => y_offset = 12.0,
+            // Rattle
+            160 => {
+                y_offset = 5.0;
+                use_default_scaling = true;
+            },
+            // Goddess Plume
+            176 => y_offset = 17.0,
+            _ => y_offset = 0.0,
+        }
+
+        let y_offset_as_hex = f32::to_bits(y_offset) >> 16;
+
+        unsafe {
+            ACTORBASE_PARAM2 &= 0xFF0000FF; // Clear space for y-offset
+            ACTORBASE_PARAM2 |= (y_offset_as_hex << 0x8) as u32;
+
+            // Patch whether to use default scaling into angley.
+            // angley is used for the actual rotation of the item but we use
+            // the lsb so it shouldn't make a noticeable
+            // difference.
+
+            if ACTOR_PARAM_ROT != core::ptr::null_mut() {
+                if use_default_scaling {
+                    (*ACTOR_PARAM_ROT).y |= 1;
+                } else {
+                    (*ACTOR_PARAM_ROT).y &= 0xFFFE;
+                }
+            }
+        }
+    }
+
+    unsafe {
+        // Replaced instructions
+        asm!("mov x8, {0}", in(reg) &ACTOR_ALLOCATOR_DEFINITIONS);
+    }
+}
+
+#[no_mangle]
+pub fn fix_freestanding_item_y_offset() {
+    let mut item: *mut structs::dAcItem;
+
+    unsafe {
+        // Get param1 to check if the item needs its size changing.
+        asm!("mov {0}, x19", out(reg) item);
+
+        // Replaced instruction
+        asm!("mov w0, w20");
+
+        if (*item).base.baseBase.param1 >> 9 & 0x1 == 0 {
+            let y_offset_as_hex = ((*item).base.members.base.param2 & 0x00FFFF00) << 8;
+            let y_offset = f32::from_bits(y_offset_as_hex);
+
+            (*item).freestandingYOffset = y_offset;
+        }
     }
 }
 
@@ -281,53 +525,6 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
 
         return (*item_actor).finalDeterminedItemID;
     }
-}
-
-#[no_mangle]
-pub fn fix_freestanding_item_y_offset() {
-    let mut item: *mut structs::dAcItem;
-
-    unsafe {
-        // Get param1 to check if the item needs its size changing.
-        asm!("mov {0}, x19", out(reg) item);
-
-        // Replaced instruction
-        asm!("mov w0, w20");
-
-        if (*item).base.baseBase.param1 >> 9 & 0x1 == 0 {
-            let y_offset_as_hex = ((*item).base.members.base.param2 & 0x00FFFF00) << 8;
-            let y_offset = f32::from_bits(y_offset_as_hex);
-
-            (*item).freestandingYOffset = y_offset;
-        }
-    }
-}
-
-#[no_mangle]
-pub fn set_storyflag(flag: u16) {
-    unsafe {
-        ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag);
-    };
-}
-
-#[no_mangle]
-pub fn unset_storyflag(flag: u16) {
-    unsafe {
-        ((*(*STORYFLAG_MGR).funcs).unsetFlag)(STORYFLAG_MGR, flag);
-    };
-}
-
-#[no_mangle]
-pub fn check_storyflag(flag: u16) -> u32 {
-    unsafe {
-        return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, flag);
-    }
-}
-
-#[no_mangle]
-pub fn set_goddess_sword_pulled_story_flag() {
-    // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
-    set_storyflag(951);
 }
 
 // When checking/setting stage info in this function be sure to use
@@ -448,21 +645,6 @@ pub fn handle_er_action_states() {
 }
 
 #[no_mangle]
-pub fn set_stone_of_trials_placed_flag(
-    gameReloader: *mut structs::GameReloader,
-    currentRoom: u32,
-    exitIndex: u32,
-    forceNight: u32,
-    forceTrial: u32,
-) {
-    unsafe {
-        GameReloader__triggerExit(gameReloader, currentRoom, exitIndex, forceNight, forceTrial)
-    }
-
-    set_storyflag(22); // 22 == Stone of Trials placed storyflag
-}
-
-#[no_mangle]
 pub fn fix_sky_keep_exit(
     gameReloader: *mut structs::GameReloader,
     stageName: *mut [u8; 7],
@@ -502,31 +684,85 @@ pub fn fix_sky_keep_exit(
 }
 
 #[no_mangle]
-pub fn update_day_night_storyflag() {
-    // yuzu_print("Updating night flag");
-
+pub fn fix_sandship_boat() -> u32 {
     unsafe {
-        // 899 == day/night storyflag
-        if NEXT_NIGHT == 1 {
-            // yuzu_print("Setting night flag");
-            set_storyflag(899);
-        } else {
-            // yuzu_print("Unsetting night flag");
-            unset_storyflag(899);
+        let current_stage_name = unsafe { &CURRENT_STAGE_NAME[..4] };
+
+        if strlen(CURRENT_STAGE_NAME.as_mut_ptr()) == 4 && current_stage_name == b"F301" {
+            // 152 == Skipper's Boat Timeshift Stone Hit
+            return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, 152);
         }
 
-        ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);
-
-        // Replaced instruction
-        NEXT_SOMETHING = 0xFF;
+        return 1u32;
     }
-
-    return;
 }
 
 #[no_mangle]
-pub fn check_night_storyflag() -> bool {
-    return check_storyflag(899) != 0; // 899 == day/night flag
+pub fn drop_arrows_bombs_seeds(
+    param2_s0x18: u8,
+    roomid: u32,
+    pos: *mut structs::Vec3f,
+    param4: u32,
+    param5: *mut c_void,
+) {
+    unsafe {
+        // 0xFE is the custom id being used to drop arrows, bombs, and seeds.
+        // Should set the eq flag for comparison after this addtion.
+        if param2_s0x18 == 0xFE {
+            if check_itemflag(structs::ITEMFLAGS::BOW) != 0 {
+                spawnDrop(
+                    structs::ITEMFLAGS::BUNDLE_OF_ARROWS,
+                    roomid,
+                    pos,
+                    &mut structs::Vec3s::default() as *mut structs::Vec3s,
+                );
+            }
+
+            if check_itemflag(structs::ITEMFLAGS::BOMB_BAG) != 0 {
+                spawnDrop(
+                    structs::ITEMFLAGS::TEN_BOMBS,
+                    roomid,
+                    pos,
+                    &mut structs::Vec3s::default() as *mut structs::Vec3s,
+                );
+            }
+
+            if check_itemflag(structs::ITEMFLAGS::SLINGSHOT) != 0 {
+                spawnDrop(
+                    structs::ITEMFLAGS::FIVE_DEKU_SEEDS, // 10 doesn't work for some reason
+                    roomid,
+                    pos,
+                    &mut structs::Vec3s::default() as *mut structs::Vec3s,
+                );
+            }
+        }
+
+        // Replaced instructions
+        asm!(
+            "mov w25, #0x660d",
+            "movk w25, #0x19, LSL #16",
+            "mul x10, x9, x25",
+            "mov w3, {0:w}",
+            in(reg) param4,
+        );
+    }
+}
+
+#[no_mangle]
+pub fn drop_nothing(param2_s0x18: u8) {
+    unsafe {
+        // if should drop seeds, arrows, or bombs
+        if param2_s0x18 == 0xB || param2_s0x18 == 0xC || param2_s0x18 == 0xD {
+            asm!("mov w0, #0x0"); // 0x0 -> nothing, 0xFF -> green rupee
+        }
+
+        // Replaced instructions
+        asm!(
+            "mov w25, #0x660d",
+            "movk w25, #0x19, LSL #16",
+            "mul x10, x9, x25",
+        );
+    }
 }
 
 // Will output a string to Yuzu's log.

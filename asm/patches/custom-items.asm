@@ -42,7 +42,7 @@
 
 .offset 0x084e0d04
 mov w8, #0
-bl 0x0865a070
+bl additions_jumptable
 
 ; Don't allow items to set dungeonflags
 ; Could be used to allow tears to be placed anywhere

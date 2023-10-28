@@ -1,17 +1,30 @@
 ; Start using subsdk8 0x500 bytes into the .text section
 ; 1st 0x500 bytes are left to make sure none of the subsdk setup is mangled
 ; The next 0x1000 bytes are reserved for the landingpad
+; The next 0x500 bytes are reserved for additions not written in rust
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; additions begin here ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-.offset 0x360A6500
+.offset 0x360A7000
 .global handle_custom_item_get
 .type handle_custom_item_get, @function
 
 .global handle_startflags
 .type handle_startflags, @function
+
+.global check_storyflag
+.type check_storyflag, @function
+
+.global set_local_sceneflag
+.type set_local_sceneflag, @function
+
+.global unset_local_sceneflag
+.type unset_local_sceneflag, @function
+
+.global check_local_sceneflag
+.type check_local_sceneflag, @function
 
 .global set_goddess_sword_pulled_story_flag
 .type set_goddess_sword_pulled_story_flag, @function
@@ -37,8 +50,14 @@
 .global update_day_night_storyflag
 .type update_day_night_storyflag, @function
 
-.global check_storyflag
-.type check_storyflag, @function
-
 .global check_night_storyflag
 .type check_night_storyflag, @function
+
+.global patch_freestanding_item_fields
+.type patch_freestanding_item_fields, @function
+
+.global drop_arrows_bombs_seeds
+.type drop_arrows_bombs_seeds, @function
+
+.global drop_nothing
+.type drop_nothing, @function

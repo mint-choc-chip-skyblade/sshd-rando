@@ -149,6 +149,9 @@ Sceneflags:
     - 4  # Pushed log from BtT to Faron Woods
     - 7  # Activated vents
     - 13 # Unlocked Sealed Temple big door
+    - 21 # Ballad of the Goddess played with Impa
+    - 28 # Groose metting Impa first time cutscene
+    - 29 # Harp Tutorial completed
     - 39 # Log to Behind the Temple pushed down
     - 55 # Watched First time landing Cutscene
     - 72 # Revealed Behind the Temple Gossip Stone
@@ -183,6 +186,7 @@ Sceneflags:
     - 6    # Watched first water pod Cutscene
     - 83   # Watched Cutscene showing the outside of the Fire Sanctuary
     - fs_lava_flow == on:
+      - 62 # Watched Cutscene after blowing up lava chase rock
       - 64 # Blow up rock underground starting lava chase (back half lava flow)
     - small_keys == removed:
       - 2  # Unlocked 1st locked door
