@@ -333,7 +333,7 @@ class World:
             if item == None:
                 continue
 
-            # Small Keys, Boss Keys, Maps, Caves Key, Shop items
+            # Small Keys, Boss Keys, Maps, Caves Key, Shop items, Single Crystals
             if (
                 (
                     self.setting("small_keys") == "vanilla"
@@ -350,6 +350,10 @@ class World:
                 or (
                     self.setting("randomized_shops") == "vanilla"
                     and "Beedle's Shop Purchases" in location.types
+                )
+                or (
+                    self.setting("single_gratitude_crystals") == "vanilla"
+                    and "Loose Crystals" in location.types
                 )
             ):
                 location.set_current_item(item)

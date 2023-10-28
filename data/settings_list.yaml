@@ -16,6 +16,15 @@
     - no_logic:                        "Maximize randomization, logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
     - vanilla:                         "Items are placed in their vanilla locations."
 
+- name: single_gratitude_crystals
+  default_option: vanilla
+  pretty_name: Single Gratitude Crystals
+  pretty_options:
+    - Vanilla
+    - Randomized
+  options:
+    - vanilla:                       "Single Gratitude Crystal locations will only contain single gratitude crystals."
+    - randomized:                    "Single Gratitude Crystal locations can contain any item."
 
 - name: randomized_shops
   default_option: vanilla
