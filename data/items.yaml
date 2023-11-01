@@ -622,3 +622,112 @@
   oarc: null
   game_winning_item: true
   advancement: true
+# Dummy items (for now) to simulate hitting goddess cubes
+- id: 257
+  name: Faron Woods Goddess Cube on West Great Tree near Exit
+  oarc: null
+  advancement: true
+- id: 258
+  name: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
+  oarc: null
+  advancement: true
+- id: 259
+  name: Faron Woods Goddess Cube on East Great Tree with Rope
+  oarc: null
+  advancement: true
+- id: 260
+  name: Deep Woods Goddess Cube Near Goron
+  oarc: null
+  advancement: true
+- id: 261
+  name: Deep Woods Goddess Cube in front of Skyview
+  oarc: null
+  advancement: true
+- id: 262
+  name: Deep Woods Goddess Cube on top of Skyview
+  oarc: null
+  advancement: true
+- id: 263
+  name: Lake Floria Goddess Cube
+  oarc: null
+  advancement: true
+- id: 264
+  name: Floria Waterfall Goddess Cube on High Ledge
+  oarc: null
+  advancement: true
+- id: 265
+  name: Eldin Volcano Goddess Cube at Eldin Entrance
+  oarc: null
+  advancement: true
+- id: 266
+  name: Eldin Volcano Goddess Cube near Mogma Turf Entrance
+  oarc: null
+  advancement: true
+- id: 267
+  name: Eldin Volcano Goddess Cube West of Earth Temple Entrance
+  oarc: null
+  advancement: true
+- id: 268
+  name: Eldin Volcano Goddess Cube East of Earth Temple Entrance
+  oarc: null
+  advancement: true
+- id: 269
+  name: Eldin Volcano Goddess Cube on Sand Slide
+  oarc: null
+  advancement: true
+- id: 270
+  name: Mogma Turf Goddess Cube
+  oarc: null
+  advancement: true
+- id: 271
+  name: Volcano Summit Goddess Cube in Lava Lake
+  oarc: null
+  advancement: true
+- id: 272
+  name: Volcano Summit Goddess Cube at Summit Waterfall
+  oarc: null
+  advancement: true
+- id: 273
+  name: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
+  oarc: null
+  advancement: true
+- id: 274
+  name: Lanayru Mine Goddess Cube
+  oarc: null
+  advancement: true
+- id: 275
+  name: Lanayru Desert Goddess Cube near Caged Robot
+  oarc: null
+  advancement: true
+- id: 276
+  name: Lanayru Desert Goddess Cube in Sand Oasis
+  oarc: null
+  advancement: true
+- id: 277
+  name: Lanayru Desert Goddess Cube in Secret Passageway
+  oarc: null
+  advancement: true
+- id: 278
+  name: Lanayru Desert Goddess Cube near Temple of Time
+  oarc: null
+  advancement: true
+- id: 279
+  name: Lanayru Gorge Goddess Cube
+  oarc: null
+  advancement: true
+- id: 280
+  name: Ancient Harbour Goddess Cube
+  oarc: null
+  advancement: true
+- id: 281
+  name: Skipper's Retreat Goddess Cube
+  oarc: null
+  advancement: true
+- id: 282
+  name: Pirate Stronghold Goddess Cube
+  oarc: null
+  advancement: true
+- id: 283
+  name: Skyview Spring Goddess Cube
+  oarc: null
+  advancement: true

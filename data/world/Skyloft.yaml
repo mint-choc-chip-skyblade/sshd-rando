@@ -161,11 +161,11 @@
     Central Skyloft - Crystal between Wooden Planks: Night
     Central Skyloft - Crystal on West Cliff: Night
     Central Skyloft - Crystal on Light Tower: Night
-    Central Skyloft - West Cliff Goddess Chest: "'Goddess_Cube_on_West_Great_Tree_near_Exit'"
+    Central Skyloft - West Cliff Goddess Chest: Faron_Woods_Goddess_Cube_on_West_Great_Tree_near_Exit
     Central Skyloft - Parrow's Gift: Day and 'Talk_to_Orielle'
     Central Skyloft - Parrow's Crystals: Day and 'Save_Orielle'
     Central Skyloft - Shed Chest: Water_Dragons_Scale
-    Central Skyloft - Shed Goddess Chest: Water_Dragons_Scale and 'Goddess_Cube_on_Sand_Slide'
+    Central Skyloft - Shed Goddess Chest: Water_Dragons_Scale and Eldin_Volcano_Goddess_Cube_on_Sand_Slide
     Central Skyloft - Crystal on Waterfall Island: Night and Quick_Beetle and logic_precise_beetle
     Central Skyloft - Crystal after Waterfall Cave: Night and Beetle and logic_precise_beetle
     Central Skyloft - Crystal in Loftwing Prison: Night and Beetle and logic_precise_beetle
@@ -190,7 +190,7 @@
     Bazaar South: Nothing
   locations:
     Bazaar - Potion Lady's Gift: Nothing
-    Bazaar - Goddess Chest: "'Goddess_Cube_in_Ancient_Harbour'"
+    Bazaar - Goddess Chest: Ancient_Harbour_Goddess_Cube
     # Bazaar - Upgrade to Quick Beetle: Hook_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
     # Bazaar - Upgrade to Tough Beetle: Quick_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
     # Bazaar - Upgrade to Scattershot: Slingshot and 'Can_Play_Clean_Cut_Minigame'
@@ -278,8 +278,8 @@
     Bird Nest: Nothing
   locations:
     Central Skyloft - Crystal on Waterfall Island: Night
-    Central Skyloft - Waterfall Goddess Chest: "'Goddess_Cube_in_Pirate_Stronghold'"
-    Central Skyloft - Floating Island Goddess Chest: "'Goddess_Cube_in_Lake_Floria'"
+    Central Skyloft - Waterfall Goddess Chest: Pirate_Stronghold_Goddess_Cube
+    Central Skyloft - Floating Island Goddess Chest: Lake_Floria_Goddess_Cube
     Central Skyloft - Gossip Stone on Waterfall Island: Nothing
 
 

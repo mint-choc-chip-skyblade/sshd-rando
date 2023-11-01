@@ -906,29 +906,11 @@
   Paths:
     - stage/F100/r0/l0/Item/40
 
-- name: Deep Woods - Chest
-  original_item: Red Rupee
-  type:
-  Paths:
-    - stage/F101/r0/l0/TBox/74
-
-- name: Deep Woods - Gossip Stone
-  original_item: Nothing
-  type: Hint Location
-
 - name: Faron Woods - Chest behind Bombable Rocks near Erla
   original_item: Semi Rare Treasure
   type:
   Paths:
     - stage/F100/r0/l0/TBox/64
-
-- name: Great Tree - Chest
-  original_item: Gold Rupee
-  type:
-  Paths:
-    - stage/F100_1/r0/l0/TBox/84
-  hint: sometimes
-  text: climbing inside an <r<old hermit's home>> rewards
 
 - name: Faron Woods - Rupee on Great Tree North Branch
   original_item: Blue Rupee 
@@ -941,6 +923,48 @@
   type: Rupees (No Quick Beetle)
   Paths:
     - stage/F100/r0/l0/Item/44
+
+- name: Faron Woods - Goddess Cube on West Great Tree near Exit
+  original_item: Faron Woods Goddess Cube on West Great Tree near Exit
+  type: Goddess Cube
+
+- name: Faron Woods - Goddess Cube on East Great Tree with Clawshots Target
+  original_item: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
+  type: Goddess Cube
+
+- name: Faron Woods - Goddess Cube on East Great Tree with Rope
+  original_item: Faron Woods Goddess Cube on East Great Tree with Rope
+  type: Goddess Cube
+
+- name: Great Tree - Chest
+  original_item: Gold Rupee
+  type:
+  Paths:
+    - stage/F100_1/r0/l0/TBox/84
+  hint: sometimes
+  text: climbing inside an <r<old hermit's home>> rewards
+
+- name: Deep Woods - Chest
+  original_item: Red Rupee
+  type:
+  Paths:
+    - stage/F101/r0/l0/TBox/74
+
+- name: Deep Woods - Gossip Stone
+  original_item: Nothing
+  type: Hint Location
+
+- name: Deep Woods - Goddess Cube Near Goron
+  original_item: Deep Woods Goddess Cube Near Goron
+  type: Goddess Cube
+
+- name: Deep Woods - Goddess Cube in front of Skyview
+  original_item: Deep Woods Goddess Cube in front of Skyview
+  type: Goddess Cube
+
+- name: Deep Woods - Goddess Cube on top of Skyview
+  original_item: Deep Woods Goddess Cube on top of Skyview
+  type: Goddess Cube
 
 # Lake Floria:
 
@@ -988,6 +1012,10 @@
   Paths:
     - stage/F102_2/r0/l0/TBox/85
 
+- name: Lake Floria - Goddess Cube
+  original_item: Lake Floria Goddess Cube
+  type: Goddess Cube
+
 - name: Floria Waterfall - Rupee on High Ledge
   original_item: Gold Rupee
   type: Rupees (No Quick Beetle)
@@ -997,6 +1025,10 @@
 - name: Floria Waterfall - Gossip Stone
   original_item: Nothing
   type: Hint Location
+
+- name: Floria Waterfall - Goddess Cube on High Ledge
+  original_item: Floria Waterfall Goddess Cube on High Ledge
+  type: Goddess Cube
 
 # Flooded Faron Woods:
 
@@ -1202,6 +1234,26 @@
   original_item: Nothing
   type: Hint Location
 
+- name: Eldin Volcano - Goddess Cube at Eldin Entrance
+  original_item: Eldin Volcano Goddess Cube at Eldin Entrance
+  type: Goddess Cube
+
+- name: Eldin Volcano - Goddess Cube near Mogma Turf Entrance
+  original_item: Eldin Volcano Goddess Cube near Mogma Turf Entrance
+  type: Goddess Cube
+
+- name: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
+  original_item: Eldin Volcano Goddess Cube West of Earth Temple Entrance
+  type: Goddess Cube
+
+- name: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
+  original_item: Eldin Volcano Goddess Cube East of Earth Temple Entrance
+  type: Goddess Cube
+
+- name: Eldin Volcano - Goddess Cube on Sand Slide
+  original_item: Eldin Volcano Goddess Cube on Sand Slide
+  type: Goddess Cube
+
 ## These checks are Digging Spots
 
 - name: Eldin Volcano - Digging Spot in front of Earth Temple
@@ -1272,6 +1324,10 @@
   Paths:
     - stage/F210/r0/l0/TBox/70
 
+- name: Mogma Turf - Goddess Cube
+  original_item: Mogma Turf Goddess Cube
+  type: Goddess Cube
+
 # Volcano Summit:
 
 - name: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
@@ -1293,10 +1349,22 @@
   original_item: Nothing
   type: Hint Location
 
-
 - name: Volcano Summit - Gossip Stone near Second Thirsty Frog
   original_item: Nothing
   type: Hint Location
+
+- name: Volcano Summit - Goddess Cube in Lava Lake
+  original_item: Volcano Summit Goddess Cube in Lava Lake
+  type: Goddess Cube
+
+- name: Volcano Summit - Goddess Cube at Summit Waterfall
+  original_item: Volcano Summit Goddess Cube at Summit Waterfall
+  type: Goddess Cube
+
+- name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
+  original_item: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
+  type: Goddess Cube
+
 
 # Bokoblin Base:
 
@@ -1393,6 +1461,10 @@
   Paths:
     - stage/F300_1/r2/l0/TBox/66
 
+- name: Lanayru Mine - Goddess Cube
+  original_item: Lanayru Mine Goddess Cube
+  type: Goddess Cube
+
 # Lanayru Desert:
 
 - name: Lanayru Desert - Chest near Party Wheel
@@ -1451,6 +1523,22 @@
 - name: Temple of Time - Gossip Stone
   original_item: Nothing
   type: Hint Location
+
+- name: Lanayru Desert - Goddess Cube near Caged Robot
+  original_item: Lanayru Desert Goddess Cube near Caged Robot
+  type: Goddess Cube
+
+- name: Lanayru Desert - Goddess Cube in Sand Oasis
+  original_item: Lanayru Desert Goddess Cube in Sand Oasis
+  type: Goddess Cube
+
+- name: Lanayru Desert - Goddess Cube in Secret Passageway
+  original_item: Lanayru Desert Goddess Cube in Secret Passageway
+  type: Goddess Cube
+
+- name: Lanayru Desert - Goddess Cube near Temple of Time
+  original_item: Lanayru Desert Goddess Cube near Temple of Time
+  type: Goddess Cube
 
 ## Nodes
 
@@ -1552,6 +1640,10 @@
   Paths:
     - stage/F302/r0/l0/Soil/30
 
+- name: Lanayru Gorge - Goddess Cube
+  original_item: Lanayru Gorge Goddess Cube
+  type: Goddess Cube
+
 # Lanayru Sand Sea:
 ## Ancient Harbour
 
@@ -1572,6 +1664,10 @@
   type: Rupees (Quick Beetle)
   Paths:
     - stage/F301/r0/l0/Item/93
+
+- name: Ancient Harbour - Goddess Cube
+  original_item: Ancient Harbour Goddess Cube
+  type: Goddess Cube
 
 ## Skipper's Retreat
 
@@ -1601,6 +1697,10 @@
   type:
   Paths:
     - stage/F301_3/r0/l0/TBox/77
+
+- name: Skipper's Retreat - Goddess Cube
+  original_item: Skipper's Retreat Goddess Cube
+  type: Goddess Cube
 
 ## Shipyard
 
@@ -1637,6 +1737,10 @@
   Paths:
     - stage/F301_6/r0/l1/Item/13
     - stage/F301_6/r0/l2/Item/13
+
+- name: Pirate Stronghold - Goddess Cube
+  original_item: Pirate Stronghold Goddess Cube
+  type: Goddess Cube
 
 - name: Pirate Stronghold Interior - First Chest
   original_item: Silver Rupee
@@ -1752,6 +1856,10 @@
   Paths:
     - event/201-ForestD1/6
     - oarc/B100_1/l0
+
+- name: Skyview Spring - Goddess Cube
+  original_item: Skyview Spring Goddess Cube
+  type: Goddess Cube
 
 # Earth Temple (ET):
 

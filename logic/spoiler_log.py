@@ -4,6 +4,8 @@ from .entrance_shuffle import create_entrance_pools
 
 def spoiler_format_location(location: Location, longest_name_length: int) -> str:
     spaces = longest_name_length - len(f"{location}")
+    if "Goddess Cube" in location.types:
+        return f"{location}"
     return f"{location}: {spaces * ' '}{location.current_item}"
 
 
@@ -79,14 +81,19 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 )
 
         # Recalculate longest name length for all locations
+        longest_name_length = 0
         for location in worlds[0].location_table.values():
-            longest_name_length = max(longest_name_length, len(f"{location}"))
+            if "Goddess Cube" not in location.types:
+                longest_name_length = max(longest_name_length, len(f"{location}"))
 
         spoiler_log.write("\nAll Locations:\n")
         for world in worlds:
             spoiler_log.write(f"    {world}:\n")
             for location in world.location_table.values():
-                if "Hint Location" not in location.types:
+                if (
+                    "Hint Location" not in location.types
+                    and "Goddess Cube" not in location.types
+                ):
                     spoiler_log.write(
                         "        "
                         + spoiler_format_location(location, longest_name_length)
@@ -94,6 +101,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                     )
 
         # Recalculate longest name length for all shuffled entrances
+        longest_name_length = 0
         for world in worlds:
             for entrance in world.get_shuffled_entrances():
                 longest_name_length = max(longest_name_length, len(f"{entrance}"))

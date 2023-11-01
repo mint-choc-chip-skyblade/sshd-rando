@@ -146,24 +146,24 @@
 
 - name: Great Tree West Branch
   hint_region: Faron Woods
-  events:
-    Goddess Cube on West Great Tree near Exit: Goddess_Sword
+  locations:
+    Faron Woods - Goddess Cube on West Great Tree near Exit: Goddess_Sword
   exits:
     Faron Woods: Nothing
     
 
 - name: Great Tree Clawshot Target Branch
   hint_region: Faron Woods
-  events:
-    Goddess Cube on East Great Tree with Clawshots Target: Goddess_Sword
+  locations:
+    Faron Woods - Goddess Cube on East Great Tree with Clawshots Target: Goddess_Sword
   exits:
     Faron Woods: Nothing
     
 
 - name: Great Tree Rope Branch
   hint_region: Faron Woods
-  events:
-    Goddess Cube on East Great Tree with Rope: Goddess_Sword
+  locations:
+    Faron Woods - Goddess Cube on East Great Tree with Rope: Goddess_Sword
   exits:
     Faron Woods: Nothing
 
@@ -243,9 +243,6 @@
   hint_region: Faron Woods
   events:
     Push Down Deep Woods Shortcut Logs: Nothing
-    Initial Goddess Cube: Goddess_Sword
-    Goddess Cube in Deep Woods: Goddess_Sword
-    Goddess Cube on top of Skyview: Goddess_Sword and Clawshots
   exits:
     Deep Woods Statue: Nothing
     Forest Temple Statue: Nothing
@@ -253,6 +250,9 @@
   locations:
     Deep Woods - Chest: Nothing
     Deep Woods - Gossip Stone: Nothing
+    Deep Woods - Goddess Cube Near Goron: Goddess_Sword
+    Deep Woods - Goddess Cube in front of Skyview: Goddess_Sword
+    Deep Woods - Goddess Cube on top of Skyview: Goddess_Sword and Clawshots
 
 
 - name: Faron Silent Realm
@@ -327,13 +327,12 @@
 
 - name: Lake Floria Emerged Area
   hint_region: Lake Floria
-  events:
-    Goddess Cube in Lake Floria: Goddess_Sword
   exits:
     Lake Floria Statue: Nothing
     Lake Floria: Water_Dragons_Scale
   locations:
     Lake Floria - Chest: Nothing
+    Lake Floria - Goddess Cube: Goddess_Sword
 
 
 - name: Farore's Lair
@@ -351,7 +350,6 @@
 - name: Floria Waterfall
   hint_region: Lake Floria
   events:
-    Goddess Cube in Floria Waterfall: Clawshots and Goddess_Sword
     Can Collect Water: Bottle
   exits:
     Floria Waterfall Statue: Nothing
@@ -361,6 +359,7 @@
   locations:
     Floria Waterfall - Gossip Stone: Nothing
     Floria Waterfall - Rupee on High Ledge: Beetle
+    Floria Waterfall - Goddess Cube on High Ledge: Clawshots and Goddess_Sword
 
 
 - name: Floria Waterfall Temple Ledge

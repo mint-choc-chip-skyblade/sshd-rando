@@ -3,7 +3,6 @@
 - name: Lanayru Mine Entry
   hint_region: Lanayru Mine
   events:
-    Goddess Cube at Lanayru Mine Entrance: Goddess_Sword
     Lanayru Mine First Timeshift Stone: Can_Hit_Timeshift_Stone or logic_itemless_first_timeshift_stone
     Ancient Flower Farming: "'Lanayru_Mine_First_Timeshift_Stone'"
     Blow Down First Mine Statue: Nothing
@@ -13,6 +12,7 @@
     Lanayru Mine Upper Area: Clawshots
   locations:
     Lanayru Mine - Chest near First Timeshift Stone: "'Lanayru_Mine_First_Timeshift_Stone'"
+    Lanayru Mine - Goddess Cube: Goddess_Sword
 
 
 - name: Lanayru Mine Upper Area
@@ -66,7 +66,6 @@
   events:
     Retrieve Party Wheel: Scrapper and 'Start_Dodohs_Quest'
     Ancient Flower Farming: Blow_Up_Covered_Timeshift_Stone
-    Goddess Cube near Rescue Caged Robot: Long_Range_Skyward_Strike # Also accessible elsewhere
 
     # Hook Beetle to knock down statue platforms
     # Stamina Potion to run past the Spume
@@ -88,22 +87,22 @@
     # You can use the bomb flowers to *just* throw one up into the hole in the cage from the ground
     # This trick is only doable on HD
     Lanayru Desert - Rescue Caged Robot: (Blow_Up_Covered_Timeshift_Stone or Hook_Beetle or logic_bomb_throws) and Can_Defeat_Bokoblins
+    Lanayru Desert - Goddess Cube near Caged Robot: Long_Range_Skyward_Strike # Also accessible elsewhere
 
 
 - name: Lanayru Desert West Courtyard
   hint_region: Lanayru Desert
-  events:
-    Goddess Cube in Sand Oasis: Can_Navigate_in_Oasis and Goddess_Sword
   exits:
     Lanayru Desert South: Nothing
     Lanayru Desert West Wall: Clawshots or 'Push_Down_West_Wall_Minecart'
     Sand Oasis Middle: Can_Navigate_in_Oasis or 'Push_Down_First_Sand_Oasis_Minecart'
+  locations:
+    Lanayru Desert - Goddess Cube in Sand Oasis: Can_Navigate_in_Oasis and Goddess_Sword
 
 
 - name: Lanayru Desert West Wall
   hint_region: Lanayru Desert
   events:
-    Goddess Cube near Rescue Caged Robot: Goddess_Sword
     Push Down West Wall Minecart: Nothing
   exits:
     Lanayru Desert South: Nothing
@@ -111,18 +110,20 @@
     Lanayru Desert North: Nothing
   locations:
     Lanayru Desert - Chest near Sand Oasis: Nothing
+    Lanayru Desert - Goddess Cube near Caged Robot: Goddess_Sword
 
 
 - name: Sand Oasis Middle
   hint_region: Lanayru Desert
   events:
-    Goddess Cube in Sand Oasis: Goddess_Sword
     Push Down First Sand Oasis Minecart: Nothing
   exits:
     West Desert Statue: Nothing
     Lanayru Desert West Courtyard: Nothing
     Lanayru Desert West Wall: Clawshots
     Sand Oasis End: Can_Navigate_in_Oasis or Clawshots or 'Push_Down_Second_Sand_Oasis_Minecart'
+  locations:
+    Lanayru Desert - Goddess Cube in Sand Oasis: Goddess_Sword
 
 
 - name: Sand Oasis End
@@ -185,12 +186,11 @@
 
 - name: Lanayru Desert Secret Passageway
   hint_region: Lanayru Desert
-  events:
-    Goddess Cube in Secret Passageway: Clawshots and Goddess_Sword
   exits:
     Lanayru Desert North: Nothing
   locations:
     Lanayru Desert - Secret Passageway Chest: Nothing
+    Lanayru Desert - Goddess Cube in Secret Passageway: Clawshots and Goddess_Sword
 
 
 - name: Lanayru Desert East
@@ -252,10 +252,10 @@
 
 - name: Temple of Time North Minecart Ride
   hint_region: Lanayru Desert
-  events:
-    Goddess Cube at Ride near Temple of Time: Goddess_Sword
   exits:
     Temple of Time North: Nothing
+  locations:
+    Lanayru Desert - Goddess Cube near Temple of Time: Goddess_Sword
     
 
 - name: Temple of Time North
@@ -320,12 +320,12 @@
 - name: Lanayru Gorge Beyond Bridge
   hint_region: Lanayru Gorge
   events:
-    Goddess Cube in Lanayru Gorge: Goddess_Sword
     Ancient Flower Farming: Gust_Bellows and Can_Hit_Timeshift_Stone
   exits:
     Lanayru Gorge: Beetle or Bow # To activate the main Timeshift Stone
   locations:
     Lanayru Gorge - Digging Spot: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
+    Lanayru Gorge - Goddess Cube: Goddess_Sword
 
 
 - name: Ancient Harbour Highest Platform
@@ -341,13 +341,13 @@
 
 - name: Ancient Harbour
   hint_region: Lanayru Sand Sea
-  events:
-    Goddess Cube in Ancient Harbour: Clawshots and Goddess_Sword
   exits:
     Lanayru Sand Sea: Distance_Activator or Sword or Bomb_Bag
     # Sandship Main Deck: (Distance_Activator or Sword or Bomb_Bag) and 'Shoot_down_Sandship'
     Ancient Harbour Statue: Nothing
     Ancient Harbour Highest Platform: Clawshots
+  locations:
+    Ancient Harbour - Goddess Cube: Clawshots and Goddess_Sword
   
 
 - name: Lanayru Sand Sea
@@ -372,13 +372,12 @@
 
 - name: Skipper's Retreat Past Rock
   hint_region: Lanayru Sand Sea
-  events:
-    Goddess Cube in Skippers Retreat: Clawshots and Goddess_Sword
   exits:
     Skipper's Retreat Top: Clawshots and Whip and (Projectile_Item or logic_skippers_fast_clawshots)
     Skipper's Retreat Dock: Nothing
   locations:
     Skipper's Retreat - Chest after Moblin: Nothing
+    Skipper's Retreat - Goddess Cube: Clawshots and Goddess_Sword
 
 
 - name: Skipper's Retreat Top
@@ -452,8 +451,6 @@
 # "'Finish_Pirate_Stronghold'" means the Shark Head is raised
 - name: Pirate Stronghold Inside the Shark Head
   hint_region: Lanayru Sand Sea
-  events:
-    Goddess Cube in Pirate Stronghold: Clawshots and Goddess_Sword
   exits:
     # Clawshot up and run along the Shark Head or just run out if it's been raised
     Pirate Stronghold Dock: Clawshots or 'Finish_Pirate_Stronghold'
@@ -463,6 +460,7 @@
     Pirate Stronghold - Rupee on West Sea Pillar: Quick_Beetle
     Pirate Stronghold - Rupee on East Sea Pillar: Quick_Beetle
     Pirate Stronghold - Rupee on Bird Statue Pillar or Nose: Beetle # Still possible
+    Pirate Stronghold - Goddess Cube: Clawshots and Goddess_Sword
     
 
 - name: Pirate Stronghold Interior

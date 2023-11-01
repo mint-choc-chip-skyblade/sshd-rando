@@ -25,6 +25,14 @@ def test_default_config() -> None:
     config_test("default_config.yaml")
 
 
+def test_random_crystals() -> None:
+    config_test("random_crystals.yaml")
+
+
+def test_random_shops() -> None:
+    config_test("random_shops.yaml")
+
+
 def test_dungeon_items_vanilla() -> None:
     config_test("dungeon_items_vanilla.yaml")
 
