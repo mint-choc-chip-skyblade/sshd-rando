@@ -1,0 +1,2905 @@
+- name: Path Hint
+  standard: They say that |regions| |is/are| on the path to |goal_name|.
+
+- name: Barren Hint
+  standard: They say that visiting |region| is a foolish choice.
+
+- name: Item Hint
+  standard: They say that |item| can be found at |regions|.
+
+- name: Location Hint
+  standard: They say that |location| rewards |item|.
+
+- name: Small Key
+  standard: Small Key
+  pretty: a <Small Key>
+  cryptic: a <key>
+  plurality: Singular
+
+- name: Green Rupee
+  standard: Green Rupee
+  pretty: a <Green Rupee>
+  cryptic: a <g<penny>>
+  plurality: Singular
+
+- name: Blue Rupee
+  standard: Blue Rupee
+  pretty: a <Blue Rupee>
+  cryptic: a <b+<common coin>>
+  plurality: Singular
+
+- name: Red Rupee
+  standard: Red Rupee
+  pretty: a <Red Rupee>
+  cryptic: <r<couch cash>>
+  plurality: Singular
+
+- name: Heart
+  standard: Heart
+  pretty: a <Heart>
+  cryptic: a <r<Band-Aid>>
+  plurailty: Singular
+
+- name: Goddess White Sword
+  standard: Goddess White Sword
+  pretty: the <Goddess White Sword>
+  cryptic: a <r<white sword extension>>
+  plurality: Singular
+
+- name: Progressive Sword
+  standard: Progressive Sword
+  pretty: a <Progressive Sword>
+  cryptic: a <r<sword upgrade>>
+  plurality: Singular
+
+- name: Goddess Sword
+  standard: Goddess Sword
+  pretty: the <Goddess Sword>
+  cryptic: the <r<sword of the goddess>>
+  plurality: Singular
+
+- name: Goddess Longsword
+  standard: Goddess Longsword
+  pretty: the <Goddess Longsword>
+  cryptic: a <r<long sword extension>>
+  plurality: Singular
+
+- name: Master Sword
+  standard: Master Sword
+  pretty: the <Master Sword>
+  cryptic: the <r<blade of evil's bane>>
+  plurality: Singular
+
+- name: True Master Sword
+  standard: True Master Sword
+  pretty: the <True Master Sword>
+  cryptic: the <r<final blessing of Hylia>>
+  plurality: Singular
+
+- name: Sailcloth
+  standard: Sailcloth
+  pretty: a <Sailcloth>
+  cryptic: an <r<item that smells nice>>
+  plurality: Singular
+
+- name: Goddess's Harp
+  standard: Goddess's Harp
+  pretty: the <Goddess's Harp>
+  cryptic: the <r<strings of a goddess>>
+  plurality: Singular
+
+- name: Progressive Bow
+  standard: Progressive Bow
+  pretty: a <Progressive Bow>
+  cryptic: an <r<archery enabler>>
+  plurality: Singular
+
+- name: Clawshots
+  standard: Clawshots
+  pretty: the <Clawshots>
+  cryptic: a <r<pair of orange chains>>
+  plurality: Plural
+
+- name: Spiral Charge
+  standard: Spiral Charge
+  pretty: the <Spiral Charge>
+  cryptic: the <r<barrel roll>>
+  plurality: Singular
+
+- name: Ancient Cistern Boss Key
+  standard: Ancient Cistern Boss Key
+  pretty: the <Ancient Cistern Boss Key>
+  cryptic: a <blessed idol>
+  plurality: Singular
+
+- name: Fire Sanctuary Boss Key
+  standard: Fire Sanctuary Boss Key
+  pretty: the <Fire Sanctuary Boss Key>
+  cryptic: some <mysterious crystals>
+  plurality: Plural
+
+- name: Sandship Boss Key
+  standard: Sandship Boss Key
+  pretty: the <Sandship Boss Key>
+  cryptic: a <squid carving>
+  plurality: Singular
+
+- name: Key Piece
+  standard: Key Piece
+  pretty: a <Key Piece>
+  cryptic: a <r<1/5 of a pie>>
+  plurality: Singular
+
+- name: Skyview Temple Boss Key
+  standard: Skyview Temple Boss Key
+  pretty: the <Skyview Temple Boss Key>
+  cryptic: a <golden carving>
+  plurality: Singular
+
+- name: Earth Temple Boss Key
+  standard: Earth Temple Boss Key
+  pretty: the <Earth Temple Boss Key>
+  cryptic: a <dragon sculpture>
+  plurality: Singular
+
+- name: Lanayru Mining Facility Boss Key
+  standard: Lanayru Mining Facility Boss Key
+  pretty: the <Lanayru Mining Facility Boss Key>
+  cryptic: an <ancient circuit>
+  plurality: Singular
+
+- name: Silver Rupee
+  standard: Silver Rupee
+  pretty: a <Silver Rupee>
+  cryptic: some <s<decent pay>>
+  plurality: Singular
+
+- name: Gold Rupee
+  standard: Gold Rupee
+  pretty: a <Gold Rupee>
+  cryptic: <ye<many riches>>
+  plurality: Singular
+
+- name: Rupoor
+  standard: Rupoor
+  pretty: a <Rupoor>
+  cryptic: an <blk<anti-rupee>>
+  plurality: Singular
+
+- name: Gratitude Crystal Pack
+  standard: Gratitude Crystal Pack
+  pretty: a <Gratitude Crystal Pack>
+  cryptic: a <r<pack of gratitude>>
+  plurality: Singular
+
+- name: 5 Bombs
+  standard: 5 Bombs
+  pretty: 5 Bombs
+  cryptic: <r<5 explosions>>
+  plurality: Plural
+
+- name: 10 Bombs
+  standard: 10 Bombs
+  pretty: 10 Bombs
+  cryptic: <r<10 explosions>>
+  plurality: Plural
+
+- name: Gratitude Crystal
+  standard: Gratitude Crystal
+  pretty: a <Gratitude Crystal>
+  cryptic: a <r<piece of gratitude>>
+  plurality: Singular
+
+- name: Gust Bellows
+  standard: Gust Bellows
+  pretty: the <Gust Bellows>
+  cryptic: a <r<leaf blower>>
+  plurality: Singular
+
+- name: Map
+  standard: Map
+  pretty: a Map
+  cryptic: some <r<paper>>
+  plurality: Singular
+
+- name: Progressive Slingshot
+  standard: Progressive Slingshot
+  pretty: a <Progressive Slingshot>
+  cryptic: a <r<pellet launcher>>
+  plurality: Singular
+
+- name: Progressive Beetle
+  standard: Progressive Beetle
+  pretty: a <Progressive Beetle>
+  cryptic: a <r<remote controlled insect>>
+  plurality: Singular
+
+- name: Progressive Mitts
+  standard: Progressive Mitts
+  pretty: Progressive Mitts
+  cryptic: <r<excavation tools>>
+  plurality: Plural
+
+- name: 10 Deku Seeds
+  standard: 10 Deku Seeds
+  pretty: 10 Deku Seeds
+  cryptic: some <r<pellets>>
+  plurality: Plural
+
+- name: Semi Rare Treasure
+  standard: Semi Rare Treasure
+  pretty: a <Semi Rare Treasure>
+  cryptic: a <r<nice treasure>>
+  plurality: Singular
+
+- name: Rare Treasure
+  standard: Rare Treasure
+  pretty: a <Rare Treasure>
+  cryptic: a <r<very nice treasure>>
+  plurality: Singular
+
+- name: Water Dragon's Scale
+  standard: Water Dragon's Scale
+  pretty: the <Water Dragon's Scale>
+  cryptic: <b<underwater exploration>>
+  plurality: Singular
+
+- name: Bug Medal
+  standard: Bug Medal
+  pretty: a <Bug Medal>
+  cryptic: a <r<bug attractor>>
+  plurality: Singular
+
+- name: Progressive Bug Net
+  standard: Progressive Bug Net
+  pretty: a <Progressive Bug Net>
+  cryptic: a <r<fun net>>
+  plurality: Singular
+
+- name: Hook Beetle
+  standard: Hook Beetle
+  pretty: the <Hook Beetle>
+  cryptic: a <r<clawed insect>>
+  plurality: Singular
+
+- name: Quick Beetle
+  standard: Quick Beetle
+  pretty: the <Quick Beetle>
+  cryptic: a <r<fast insect>>
+  plurality: Singular
+
+- name: Tough Beetle
+  standard: Tough Beetle
+  pretty: the <Tough Beetle>
+  cryptic: a <r<touch insect>>
+  plurality: Singular
+
+- name: Iron Bow
+  standard: Iron Bow
+  pretty: an <Iron Bow>
+  cryptic: a <r<metal launcher>>
+  plurality: Singular
+
+- name: Sacred Bow
+  standard: Sacred Bow
+  pretty: a <Sacred Bow>
+  cryptic: a <r<sacred launcher>>
+  plurality: Singular
+
+- name: Bomb Bag
+  standard: Bomb Bag
+  pretty: a <Bomb Bag>
+  cryptic: a <r<bag for explosions>>
+  plurality: Singular
+
+- name: Heart Container
+  standard: Heart Container
+  pretty: a <Heart Container>
+  cryptic: <r<a lot of love>
+
+- name: Heart Piece
+  standard: Heart Piece
+  pretty: a <Heart Piece>
+  cryptic: <r<a little love>>
+  plurality: Singular
+
+- name: Triforce of Courage
+  standard: Triforce of Courage
+  pretty: the <Triforce of Courage>
+  cryptic: the <r<power of courage>>
+  plurality: Singular
+
+- name: Triforce of Power
+  standard: Triforce of Power
+  pretty: the <Triforce of Power>
+  cryptic: the <r<power of...power>>
+  plurality: Singular
+
+- name: Triforce of Wisdom
+  standard: Triforce of Wisdom
+  pretty: the <Triforce of Wisdom>
+  cryptic: the <r<power of wisdom>>
+  plurality: Singular
+
+- name: Sea Chart
+  standard: Sea Chart
+  pretty: a <Sea Chart>
+  cryptic: a <r<ship finder>>
+  plurailty: Singular
+
+- name: Mogma Mitts
+  standard: Mogma Mitts
+  pretty: the <Mogma Mitts>
+  cryptic: <r<spelunking tools>>
+  plurality: Plural
+
+- name: Heart Medal
+  standard: Heart Medal
+  pretty: a <Heart Medal>
+  cryptic: a <r<love medallion>>
+  plurality: Singular
+
+- name: Rupee Medal
+  standard: Rupee Medal
+  pretty: a <Rupee Medal>
+  cryptic: a <r<money maker>>
+  plurality: Singular
+
+- name: Treasure Medal
+  standard: Treasure Medal
+  pretty: a <Treasure Medal>
+  cryptic: a <r<treasure finder>>
+  plurality: Singular
+
+- name: Potion Medal
+  standard: Potion Medal
+  pretty: a <Potion Medal>
+  cryptic: a <r<potion enhancer>>
+  plurality: Singular
+
+- name: Cursed Medal
+  standard: Cursed Medal
+  pretty: a <Cursed Medal>
+  cryptic: a <blk<hexed circle>>
+  plurality: Singular
+
+- name: Scattershot
+  standard: Scattershot
+  pretty: the <Scattershot>
+  cryptic: a <r<scattering device>>
+  plurality: Singular
+
+- name: Progressive Wallet 
+  standard: Progressive Wallet 
+  pretty: a <Progressive Wallet>
+  cryptic: a <r<rupee holder>>
+  plurality: Singular
+
+- name: Big Wallet
+  standard: Big Wallet
+  pretty: the <Big Wallet>
+  cryptic: a <r<big rupee holder>>
+  plurality: Singular
+
+- name: Giant Wallet
+  standard: Giant Wallet
+  pretty: the <Giant Wallet>
+  cryptic: a <r<giant rupee holder>>
+  plurality: Singular
+
+- name: Tycoon Wallet
+  standard: Tycoon Wallet
+  pretty: the <Tycoon Wallet>
+  cryptic: a <r<tycoon's rupee holder>>
+  plurality: Singular
+
+- name: Progressive Pouch
+  standard: Progressive Pouch
+  pretty: a <Progressive Pouch>
+  cryptic: <r<extra space>>
+  plurality: Singular
+
+- name: Pouch Expansion
+  standard: Pouch Expansion
+  pretty: a <Pouch Expansion>
+  cryptic: <r<extra space>>
+  plurality: Singular
+
+- name: Life Medal
+  standard: Life Medal
+  pretty: a <Life Medal>
+  cryptic: an <r<extra heart>>
+  plurality: Singular
+
+- name: Wooden Shield
+  standard: Wooden Shield
+  pretty: a <Wooden Shield>
+  cryptic: a <r<beginner's blocker>>
+  plurality: Singular
+
+- name: Hylian Shield
+  standard: Hylian Shield
+  pretty: a <Hylian Shield>
+  cryptic: the <b<ultimate blocker>>
+  plurality: Singular
+
+- name: Revitalizing Potion
+  standard: Revitalizing Potion
+  pretty: a <Revitalizing Potion>
+  cryptic: a <r<heal and repair>>
+  plurality: Singular
+
+- name: Small Seed Satchel
+  standard: Small Seed Satchel
+  pretty: a <Small Seed Satchel>
+  cryptic: a <r<pellet bag>>
+  plurality: Singular
+
+- name: Small Quiver
+  standard: Small Quiver
+  pretty: a <Small Quiver>
+  cryptic: a <r<launcher bag>>
+  plurality: Singular
+
+- name: Small Bomb Bag
+  standard: Small Bomb Bag
+  pretty: a <Small Bomb Bag>
+  cryptic: a <r<bag for extra explosions>>
+  plurality: Singular
+
+- name: Whip
+  standard: Whip
+  pretty: the <Whip>
+  cryptic: a <r<small sonicboom>> 
+  plurality: Singular
+
+- name: Fireshield Earrings
+  standard: Fireshield Earrings
+  pretty: the <Fireshield Earrings>
+  cryptic: <r<fashionable fire protection>>
+  plurality: Singular
+
+- name: Big Bug Net
+  standard: Big Bug Net
+  pretty: the <Big Bug Net>
+  cryptic: a <r<big net>>
+  plurality: Singular
+
+- name: Empty Bottle
+  standard: Empty Bottle
+  pretty: an <Empty Bottle>
+  cryptic: a <r<glass container>>
+  plurality: Singular
+
+- name: Cawlin's Letter
+  standard: Cawlin's Letter
+  pretty: Cawlin's Letter
+  cryptic: a <r<love letter>>
+  plurality: Singular
+
+- name: Beedle's Insect Cage
+  standard: Beedle's Insect Cage
+  pretty: Beedle's Insect Cage
+  cryptic: a <r<prized insect>>
+  plurality: Singular
+
+- name: Rattle
+  standard: Rattle
+  pretty: a <Rattle>
+  cryptic: a <r<baby's toy>>
+  plurality: Singular
+
+- name: Tumbleweed
+  standard: Tumbleweed
+  pretty: a <Tumbleweed>
+  cryptic: some <r<conjoined twigs>>
+  plurality: Singular
+
+- name: Eldin Ore
+  standard: Eldin Ore
+  pretty: some <Eldin Ore>
+  cryptic: some <r<common metal>>
+  plurality: Singular
+
+- name: Dusk Relic
+  standard: Dusk Relic
+  pretty: a <Dusk Relic>
+  cryptic: a <r<dark tear>>
+  plurality: Singular
+
+- name: Monster Horn
+  standard: Monster Horn
+  pretty: a <Monster Horn>
+  cryptic: a <r<call to evil>>
+  plurality: Singular
+
+- name: Evil Crystal
+  standard: Evil Crystal
+  pretty: an <Evil Crystal>
+  cryptic: a <r<dark crystal>>
+  plurality: Singular
+
+- name: Golden Skull
+  standard: Golden Skull
+  pretty: a <Golden Skull>
+  cryptic: a <r<prized face>>
+  plurality: Singular
+
+- name: Goddess Plume
+  standard: Goddess Plume
+  pretty: a <Goddess Plume>
+  cryptic: a <r<heavenly feather>>
+  plurality: Singular
+
+- name: Emerald Tablet
+  standard: Emerald Tablet
+  pretty: the <Emerald Tablet>
+  cryptic: the <g<forest cloud breaker>>
+  plurality: Singular
+
+- name: Ruby Tablet
+  standard: Ruby Tablet
+  pretty: the <Ruby Tablet>
+  cryptic: the <r<volcano cloud breaker>>
+  plurality: Singular
+
+- name: Amber Tablet
+  standard: Amber Tablet
+  pretty: the <Amber Tablet>
+  cryptic: the <y<desert cloud breaker>>
+  plurality: Singular
+
+- name: Stone of Trials
+  standard: Stone of Trials
+  pretty: the <Stone of Trials>
+  cryptic: a <r<matching bird's eye>>
+  plurality: Singular
+
+- name: Ballad of the Goddess
+  standard: Ballad of the Goddess
+  pretty: the <Ballad of the Goddess>
+  cryptic: a <r<tune for the gods>>
+  plurality: Singular
+
+- name: Farore's Courage
+  standard: Farore's Courage
+  pretty: Farore's Courage
+  cryptic: a <r<couragous tune>>
+  plurality: Singular
+
+- name: Nayru's Wisdom
+  standard: Nayru's Wisdom
+  pretty: Nayru's Widsom
+  cryptic: a <r<wise tune>>
+  plurality: Singular
+
+- name: Din's Power
+  standard: Din's Power
+  pretty: Din's Power
+  cryptic: a <r<powerful tune>>
+  plurality: Singular
+
+- name: Faron Song of the Hero Part
+  standard: Faron Song of the Hero Part
+  pretty: Faron's Song of the Hero Part
+  cryptic: a <r<dragon's tune>>
+  plurality: Singular
+
+- name: Eldin Song of the Hero Part
+  standard: Eldin Song of the Hero Part
+  pretty: Eldin's Song of the Hero Part
+  cryptic: a <r<dragon's tune>>
+  plurality: Singular
+
+- name: Lanayru Song of the Hero Part
+  standard: Lanayru Song of the Hero Part
+  pretty: Lanayru's Song of the Hero Part
+  cryptic: a <r<dragon's tune>>
+  plurality: Singular
+
+- name: Song of the Hero
+  standard: Song of the Hero
+  pretty: the <Song of the Hero>
+  cryptic: a <r<tune for the chosen one>>
+  plurality: Singular
+
+- name: Life Tree Seedling
+  standard: Life Tree Seedling
+  pretty: the <Life Tree Seedling>
+  cryptic: the <r<sprouting of life>>
+  plurality: Singular
+
+- name: Life Tree Fruit
+  standard: Life Tree Fruit
+  pretty: the <Life Tree Fruit>
+  cryptic: the <r<fruit of life>>
+  plurality: Singular
+
+- name: Extra Wallet
+  standard: Extra Wallet
+  pretty: an <Extra Wallet>
+  cryptic: a <r<coin purse>>
+  plurality: Singular
+
+- name: Skyview Temple Small Key
+  standard: Skyview Temple Small Key
+  pretty: a <Skyview Temple Small Key>
+  cryptic: a <r<glowing mushroom key>>
+  plurality: Singular
+
+- name: Lanayru Mining Facility Small Key
+  standard: Lanayru Mining Facility Small Key
+  pretty: a <Lanayru Mining Facility Small Key>
+  cryptic: an <r<electric key>>
+  plurality: Singular
+
+- name: Ancient Cistern Small Key
+  standard: Ancient Cistern Small Key
+  pretty: an <Ancient Cistern Small Key>
+  cryptic: a <r<wet key>>
+  plurality: Singular
+
+- name: Fire Sanctuary Small Key
+  standard: Fire Sanctuary Small Key
+  pretty: a <Fire Sanctuary Small Key>
+  cryptic: a <r<flaming key>>
+  plurality: Singular
+
+- name: Sandship Small Key
+  standard: Sandship Small Key
+  pretty: a <Sandship Small Key>
+  cryptic: a <r<time-travelling key>>
+  plurality: Singular
+
+- name: Sky Keep Small Key
+  standard: Sky Keep Small Key
+  pretty: a <Sky Keep Small Key>
+  cryptic: a <r<sacred key>>
+  plurality: Singular
+
+- name: Lanayru Caves Small Key
+  standard: Lanayru Caves Small Key
+  pretty: the <Lanayru Caves Small Key>
+  cryptic: a <r<key to the sea>>
+  plurality: Singular
+
+- name: Skyview Temple Map
+  standard: Skyview Temple Map
+  pretty: the <Skyview Temple map>
+  cryptic: a <r<glowing mushroom map>>
+  plurality: Singular
+
+- name: Earth Temple Map
+  standard: Earth Temple Map
+  pretty: the <Earth Temple Map>
+  cryptic: an <r<earthen map>>
+  plurality: Singular
+
+- name: Lanayru Mining Facility Map
+  standard: Lanayru Mining Facility Map
+  pretty: the <Lanayru Mining Facility Map>
+  cryptic: an <r<electric map>>
+  plurality: Singular
+
+- name: Ancient Cistern Map
+  standard: Ancient Cistern Map
+  pretty: the <Ancient Cistern Map>
+  cryptic: a <r<wet map>>
+  plurality: Singular
+
+- name: Fire Sanctuary Map
+  standard: Fire Sanctuary Map
+  pretty: the <Fire Sanctuary Map>
+  cryptic: a <r<flaming map>>
+  plurality: Singular
+
+- name: Sandship Map
+  standard: Sandship Map
+  pretty: the <Sandship Map>
+  cryptic: a <r<time-travelling map>>
+  plurality: Singular
+
+- name: Sky Keep Map
+  standard: Sky Keep Map
+  pretty: the <Sky Keep Map>
+  cryptic: a <r<sacred map>>
+  plurality: Singular
+
+- name: Group of Tadtones
+  standard: Group of Tadtones
+  pretty: a <Group of Tadtones>
+  cryptic: some <r<music notes>>
+  plurality: Singular
+
+- name: Scrapper
+  standard: Scrapper
+  pretty: Scrapper
+  cryptic: a <transport friend>>
+  plurality: Singular
+
+- name: Game Beatable
+  standard: Game Beatable
+  pretty: Game Beatable
+  cryptic: the <death of the demon king>>
+  plurality: Singular
+
+- name: Faron Woods Goddess Cube on West Great Tree near Exit
+  standard: Faron Woods Goddess Cube on West Great Tree near Exit
+  pretty: the <Faron Woods Goddess Cube on West Great Tree near Exit>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
+  standard: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
+  pretty: the <Faron Woods Goddess Cube on East Great Tree with Clawshots Target>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Faron Woods Goddess Cube on East Great Tree with Rope
+  standard: Faron Woods Goddess Cube on East Great Tree with Rope
+  pretty: the <Faron Woods Goddess Cube on East Great Tree with Rope>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Deep Woods Goddess Cube Near Goron
+  standard: Deep Woods Goddess Cube Near Goron
+  pretty: the <Deep Woods Goddess Cube Near Goron>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Deep Woods Goddess Cube in front of Skyview
+  standard: Deep Woods Goddess Cube in front of Skyview
+  pretty: the <Deep Woods Goddess Cube in front of Skyview>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Deep Woods Goddess Cube on top of Skyview
+  standard: Deep Woods Goddess Cube on top of Skyview
+  pretty: the <Deep Woods Goddess Cube on top of Skyview>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Lake Floria Goddess Cube
+  standard: Lake Floria Goddess Cube
+  pretty: the <Lake Floria Goddess Cube>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Floria Waterfall Goddess Cube on High Ledge
+  standard: Floria Waterfall Goddess Cube on High Ledge
+  pretty: the <Floria Waterfall Goddess Cube on High Ledge>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Eldin Volcano Goddess Cube at Eldin Entrance
+  standard: Eldin Volcano Goddess Cube at Eldin Entrance
+  pretty: the <Eldin Volcano Goddess Cube at Eldin Entrance>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Eldin Volcano Goddess Cube near Mogma Turf Entrance
+  standard: Eldin Volcano Goddess Cube near Mogma Turf Entrance
+  pretty: the <Eldin Volcano Goddess Cube near Mogma Turf Entrance>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Eldin Volcano Goddess Cube West of Earth Temple Entrance
+  standard: Eldin Volcano Goddess Cube West of Earth Temple Entrance
+  pretty: the <Eldin Volcano Goddess Cube West of Earth Temple Entrance>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Eldin Volcano Goddess Cube East of Earth Temple Entrance
+  standard: Eldin Volcano Goddess Cube East of Earth Temple Entrance
+  pretty: the <Eldin Volcano Goddess Cube East of Earth Temple Entrance>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Eldin Volcano Goddess Cube on Sand Slide
+  standard: Eldin Volcano Goddess Cube on Sand Slide
+  pretty: the <Eldin Volcano Goddess Cube on Sand Slide>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Mogma Turf Goddess Cube
+  standard: Mogma Turf Goddess Cube
+  pretty: the <Mogma Turf Goddess Cube>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Volcano Summit Goddess Cube in Lava Lake
+  standard: Volcano Summit Goddess Cube in Lava Lake
+  pretty: the <Volcano Summit Goddess Cube in Lava Lake>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Volcano Summit Goddess Cube at Summit Waterfall
+  standard: Volcano Summit Goddess Cube at Summit Waterfall
+  pretty: the <Volcano Summit Goddess Cube at Summit Waterfall>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
+  standard: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
+  pretty: the <Volcano Summit Goddess Cube near Fire Sanctuary Entrance>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Lanayru Mine Goddess Cube
+  standard: Lanayru Mine Goddess Cube
+  pretty: the <Lanayru Mine Goddess Cube>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Lanayru Desert Goddess Cube near Caged Robot
+  standard: Lanayru Desert Goddess Cube near Caged Robot
+  pretty: the <Lanayru Desert Goddess Cube near Caged Robot>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Lanayru Desert Goddess Cube in Sand Oasis
+  standard: Lanayru Desert Goddess Cube in Sand Oasis
+  pretty: the <Lanayru Desert Goddess Cube in Sand Oasis>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Lanayru Desert Goddess Cube in Secret Passageway
+  standard: Lanayru Desert Goddess Cube in Secret Passageway
+  pretty: the <Lanayru Desert Goddess Cube in Secret Passageway>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Lanayru Desert Goddess Cube near Temple of Time
+  standard: Lanayru Desert Goddess Cube near Temple of Time
+  pretty: the <Lanayru Desert Goddess Cube near Temple of Time>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Lanayru Gorge Goddess Cube
+  standard: Lanayru Gorge Goddess Cube
+  pretty: the <Lanayru Gorge Goddess Cube>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Ancient Harbour Goddess Cube
+  standard: Ancient Harbour Goddess Cube
+  pretty: the <Ancient Harbour Goddess Cube>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Skipper's Retreat Goddess Cube
+  standard: Skipper's Retreat Goddess Cube
+  pretty: the <Skipper's Retreat Goddess Cube>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Pirate Stronghold Goddess Cube
+  standard: Pirate Stronghold Goddess Cube
+  pretty: the <Pirate Stronghold Goddess Cube>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Skyview Spring Goddess Cube
+  standard: Skyview Spring Goddess Cube
+  pretty: the <Skyview Spring Goddess Cube>
+  cryptic: a <ye<cube of sacred power>>
+  plurality: Singular
+
+- name: Knight Academy - Fledge's Gift
+  standard: Knight Academy - Fledge's Gift
+  pretty: Knight Academy - Fledge's Gift
+  cryptic: a <gift from a friend>
+
+- name: Knight Academy - In Zelda's Closet
+  standard: Knight Academy - In Zelda's Closet
+  pretty: Knight Academy - In Zelda's Closet
+  cryptic: a <r<lover's closet>>
+
+- name: Knight Academy - Owlan's Crystals
+  standard: Knight Academy - Owlan's Crystals
+  pretty: Knight Academy - Owlan's Crystals
+  cryptic: delivering a <r<Kikwi>>
+
+- name: Knight Academy - Fledge's Crystals
+  standard: Knight Academy - Fledge's Crystals
+  pretty: Knight Academy - Fledge's Crystals
+  cryptic: <r<lending strength to a friend>>
+
+- name: Knight Academy - Item from Cawlin
+  standard: Knight Academy - Item from Cawlin
+  pretty: Knight Academy - Item from Cawlin
+  cryptic: a <r<disgruntled teenager>>
+
+- name: Knight Academy - Ghost/Pipit's Crystals
+  standard: Knight Academy - Ghost/Pipit's Crystals
+  pretty: Knight Academy - Ghost/Pipit's Crystals
+  cryptic: <r<delivering a letter>>
+
+- name: Knight Academy - Crystal in Link's Room
+  standard: Knight Academy - Crystal in Link's Room
+  pretty: Knight Academy - Crystal in Link's Room
+  cryptic: the <r<crystal on the hero's desk>> 
+
+- name: Knight Academy - Crystal in Knight Academy Plant
+  standard: Knight Academy - Crystal in Knight Academy Plant
+  pretty: Knight Academy - Crystal in Knight Academy Plant
+  cryptic: the <r<crystal hidden in a plant>> 
+
+- name: Knight Academy - Crystal in Zelda's Room
+  standard: Knight Academy - Crystal in Zelda's Room
+  pretty: Knight Academy - Crystal in Zelda's Room
+  cryptic: the <r<crystal in a lover's room>> 
+
+- name: Upper Skyloft - Owlan's Gift
+  standard: Upper Skyloft - Owlan's Gift
+  pretty: Upper Skyloft - Owlan's Gift
+  cryptic: a <r<gift from a professor>> 
+
+- name: Upper Skyloft - Chest near Goddess Statue
+  standard: Upper Skyloft - Chest near Goddess Statue
+  pretty: Upper Skyloft - Chest near Goddess Statue
+  cryptic: the <r<northmost chest on Skyloft>> 
+
+- name: Upper Skyloft - Pumpkin Archery -- 600 Points
+  standard: Upper Skyloft - Pumpkin Archery -- 600 Points
+  pretty: Upper Skyloft - Pumpkin Archery -- 600 Points
+  cryptic: <r<shooting pumpkings>>
+
+- name: Inside the Statue of the Goddess - First Goddess Sword Item
+  standard: Inside the Statue of the Goddess - First Goddess Sword Item
+  pretty: Inside the Statue of the Goddess - First Goddess Sword Item
+  cryptic: the <r<goddess's first reward>>
+
+- name: Inside the Statue of the Goddess - Second Goddess Sword Item
+  standard: Inside the Statue of the Goddess - Second Goddess Sword Item
+  pretty: Inside the Statue of the Goddess - Second Goddess Sword Item
+  cryptic: the <r<goddess's second reward>>
+
+- name: Sparring Hall - Chest
+  standard: Sparring Hall - Chest
+  pretty: Sparring Hall - Chest
+  cryptic: a <r<training chest>>
+
+- name: Sparring Hall - Crystal
+  standard: Sparring Hall - Crystal
+  pretty: Sparring Hall - Crystal
+  cryptic: a <r<training crystal>>
+
+- name: Bazaar - Potion Lady's Gift
+  standard: Bazaar - Potion Lady's Gift
+  pretty: Bazaar - Potion Lady's Gift
+  cryptic: a <r<gift from a seller>>
+
+- name: Bazaar - Goddess Chest
+  standard: Bazaar - Goddess Chest
+  pretty: Bazaar - Goddess Chest
+  cryptic: a <s<goddess cube>> in an <r<ancient harbor>>
+
+- name: Bazaar - Upgrade to Quick Beetle
+  standard: Bazaar - Upgrade to Quick Beetle
+  pretty: Bazaar - Upgrade to Quick Beetle
+  cryptic: <r<making your insect fly faster>>
+
+- name: Bazaar - Upgrade to Tough Beetle
+  standard: Bazaar - Upgrade to Tough Beetle
+  pretty: Bazaar - Upgrade to Tough Beetle
+  cryptic: <r<making your insect tougher>>
+
+- name: Bazaar - Upgrade to Scattershot
+  standard: Bazaar - Upgrade to Scattershot
+  pretty: Bazaar - Upgrade to Scattershot
+  cryptic: <r<scattering your pellets>>
+
+- name: Bazaar - Upgrade to Iron Bow
+  standard: Bazaar - Upgrade to Iron Bow
+  pretty: Bazaar - Upgrade to Iron Bow
+  cryptic: <r<forging your bow>>
+
+- name: Bazaar - Upgrade to Sacred Bow
+  standard: Bazaar - Upgrade to Sacred Bow
+  pretty: Bazaar - Upgrade to Sacred Bow
+  cryptic: <r<blessing your bow>>
+
+- name: Bazaar - Upgrade to Big Bug Net
+  standard: Bazaar - Upgrade to Big Bug Net
+  pretty: Bazaar - Upgrade to Big Bug Net
+  cryptic: <r<increasing your net size>>
+
+- name: Central Skyloft - Repair Gondo's Junk
+  standard: Central Skyloft - Repair Gondo's Junk
+  pretty: Central Skyloft - Repair Gondo's Junk
+  cryptic: <r<fixing an ancient robot>>
+
+- name: Central Skyloft - Wryna's Crystals
+  standard: Central Skyloft - Wryna's Crystals
+  pretty: Central Skyloft - Wryna's Crystals
+  cryptic: a <r<happy mother>>
+
+- name: Central Skyloft - Waterfall Cave First Chest
+  standard: Central Skyloft - Waterfall Cave First Chest
+  pretty: Central Skyloft - Waterfall Cave First Chest
+  cryptic: the <r<higher chest>> in a <r<cave in the sky>>
+
+- name: Central Skyloft - Waterfall Cave Second Chest
+  standard: Central Skyloft - Waterfall Cave Second Chest
+  pretty: Central Skyloft - Waterfall Cave Second Chest
+  cryptic: the <r<lower chest>> in a <r<cave in the sky>>
+
+- name: Central Skyloft - Waterfall Cave Crawlspace Rupee
+  standard: Central Skyloft - Waterfall Cave Crawlspace Rupee
+  pretty: Central Skyloft - Waterfall Cave Crawlspace Rupee
+  cryptic: a <r<rupee>> in a <r<cave in the sky>>
+
+- name: Central Skyloft - Gossip Stone on Waterfall Island
+  standard: Central Skyloft - Gossip Stone on Waterfall Island
+  pretty: Central Skyloft - Gossip Stone on Waterfall Island
+  cryptic:
+
+- name: Central Skyloft - Parrow's Gift
+  standard: Central Skyloft - Parrow's Gift
+  pretty: Central Skyloft - Parrow's Gift
+  cryptic: a <r<brother's distress>>
+
+- name: Central Skyloft - Parrow's Crystals
+  standard: Central Skyloft - Parrow's Crystals
+  pretty: Central Skyloft - Parrow's Crystals
+  cryptic: a <r<brother's gratitude>>
+
+- name: Central Skyloft - Peater/Peatrice's Crystals
+  standard: Central Skyloft - Peater/Peatrice's Crystals
+  pretty: Central Skyloft - Peater/Peatrice's Crystals
+  cryptic: the <r<item check girl>>
+
+- name: Central Skyloft - Item in Bird Nest
+  standard: Central Skyloft - Item in Bird Nest
+  pretty: Central Skyloft - Item in Bird Nest
+  cryptic: an <r<item hidden in sand>>
+
+- name: Central Skyloft - Shed Chest
+  standard: Central Skyloft - Shed Chest
+  pretty: Central Skyloft - Shed Chest
+  cryptic: a <r<chest next to a goddess chest>>
+
+- name: Central Skyloft - West Cliff Goddess Chest
+  standard: Central Skyloft - West Cliff Goddess Chest
+  pretty: Central Skyloft - West Cliff Goddess Chest
+  cryptic: a <ye<goddess cube>> <r<on a great tree's branch>>
+
+- name: Central Skyloft - Shed Goddess Chest
+  standard: Central Skyloft - Shed Goddess Chest
+  pretty: Central Skyloft - Shed Goddess Chest
+  cryptic: a <ye<goddess cube>> <r<on a slippery slope>>
+
+- name: Central Skyloft - Floating Island Goddess Chest
+  standard: Central Skyloft - Floating Island Goddess Chest
+  pretty: Central Skyloft - Floating Island Goddess Chest
+  cryptic: a <ye<goddess cube>> <r<in a lake>>
+
+- name: Central Skyloft - Waterfall Goddess Chest
+  standard: Central Skyloft - Waterfall Goddess Chest
+  pretty: Central Skyloft - Waterfall Goddess Chest
+  cryptic: a <s<goddess cube>> <r<amongst the pirates>>
+
+- name: Central Skyloft - Crystal in Orielle and Parrow's House
+  standard: Central Skyloft - Crystal in Orielle and Parrow's House
+  pretty: Central Skyloft - Crystal in Orielle and Parrow's House
+  cryptic: a <r<crystal in a home corner>>
+
+- name: Central Skyloft - Crystal on West Cliff
+  standard: Central Skyloft - Crystal on West Cliff
+  pretty: Central Skyloft - Crystal on West Cliff
+  cryptic: a <r<crystal down west>>
+
+- name: Central Skyloft - Crystal between Wooden Planks
+  standard: Central Skyloft - Crystal between Wooden Planks
+  pretty: Central Skyloft - Crystal between Wooden Planks
+  cryptic: a <r<crystal along a wooden path>>
+
+- name: Central Skyloft - Crystal after Waterfall Cave
+  standard: Central Skyloft - Crystal after Waterfall Cave
+  pretty: Central Skyloft - Crystal after Waterfall Cave
+  cryptic: a <r<crystal near a cave exit>>
+
+- name: Central Skyloft - Crystal in Loftwing Prison
+  standard: Central Skyloft - Crystal in Loftwing Prison
+  pretty: Central Skyloft - Crystal in Loftwing Prison
+  cryptic: a <r<crystal in a former prison>>
+
+- name: Central Skyloft - Crystal on Waterfall Island
+  standard: Central Skyloft - Crystal on Waterfall Island
+  pretty: Central Skyloft - Crystal on Waterfall Island
+  cryptic: a <r<crystal on the edge of a waterfall>>
+
+- name: Central Skyloft - Crystal on Light Tower
+  standard: Central Skyloft - Crystal on Light Tower
+  pretty: Central Skyloft - Crystal on Light Tower
+  cryptic: a <r<crystal at the base of a tower>>
+
+- name: Skyloft Village - Mallara's Crystals
+  standard: Skyloft Village - Mallara's Crystals
+  pretty: Skyloft Village - Mallara's Crystals
+  cryptic: a <r<mother's laziness>>
+
+- name: Skyloft Village - Bertie's Crystals
+  standard: Skyloft Village - Bertie's Crystals
+  pretty: Skyloft Village - Bertie's Crystals
+  cryptic: helping an <r<exhausted parent>>
+
+- name: Skyloft Village - Sparrot's Crystals
+  standard: Skyloft Village - Sparrot's Crystals
+  pretty: Skyloft Village - Sparrot's Crystals
+  cryptic: delivering a <r<fortune telling device>>
+
+- name: Skyloft Village - Crystal near Pumpkin Patch
+  standard: Skyloft Village - Crystal near Pumpkin Patch
+  pretty: Skyloft Village - Crystal near Pumpkin Patch
+  cryptic: a <r<crystal behind a tree>>
+
+- name: Batreaux - 5 Crystals
+  standard: Batreaux - 5 Crystals
+  pretty: Batreaux - 5 Crystals
+  cryptic: <r<the demon's first reward>>
+
+- name: Batreaux - 10 Crystals
+  standard: Batreaux - 10 Crystals
+  pretty: Batreaux - 10 Crystals
+  cryptic: <r<10 pieces of gratitude>>
+
+- name: Batreaux - 30 Crystals
+  standard: Batreaux - 30 Crystals
+  pretty: Batreaux - 30 Crystals
+  cryptic: <r<30 pieces of gratitude>>
+
+- name: Batreaux - 30 Crystals Chest
+  standard: Batreaux - 30 Crystals Chest
+  pretty: Batreaux - 30 Crystals Chest
+  cryptic: a <r<chest from a demon>>
+
+- name: Batreaux - 40 Crystals
+  standard: Batreaux - 40 Crystals
+  pretty: Batreaux - 40 Crystals
+  cryptic: <r<40 pieces of gratitude>>
+
+- name: Batreaux - 50 Crystals
+  standard: Batreaux - 50 Crystals
+  pretty: Batreaux - 50 Crystals
+  cryptic: <ye<50>> <r<pieces of gratitude>>
+
+- name: Batreaux - 70 Crystals
+  standard: Batreaux - 70 Crystals
+  pretty: Batreaux - 70 Crystals
+  cryptic: the <r<demon's penultimate reward>>
+
+- name: Batreaux - 70 Crystals Second Reward
+  standard: Batreaux - 70 Crystals Second Reward
+  pretty: Batreaux - 70 Crystals Second Reward
+  cryptic: the <r<demon's penultimate reward>>
+
+- name: Batreaux - 80 Crystals
+  standard: Batreaux - 80 Crystals
+  pretty: Batreaux - 80 Crystals
+  cryptic: a <r<demon in human form>>
+
+- name: Beedle's Shop - 300 Rupee Item
+  standard: Beedle's Shop - 300 Rupee Item
+  pretty: Beedle's Shop - 300 Rupee Item
+  cryptic: for <g+<300 rupees>> <r<Beedle>>
+
+- name: Beedle's Shop - 600 Rupee Item
+  standard: Beedle's Shop - 600 Rupee Item
+  pretty: Beedle's Shop - 600 Rupee Item
+  cryptic: for <g+<600 rupees>> <r<Beedle>>
+
+- name: Beedle's Shop - 1200 Rupee Item
+  standard: Beedle's Shop - 1200 Rupee Item
+  pretty: Beedle's Shop - 1200 Rupee Item
+  cryptic: for <g+<1200 rupees>> <r<Beedle>>
+
+- name: Beedle's Shop - 800 Rupee Item
+  standard: Beedle's Shop - 800 Rupee Item
+  pretty: Beedle's Shop - 800 Rupee Item
+  cryptic: for <g+<800 rupees>> <r<Beedle>>
+
+- name: Beedle's Shop - 1600 Rupee Item
+  standard: Beedle's Shop - 1600 Rupee Item
+  pretty: Beedle's Shop - 1600 Rupee Item
+  cryptic: for <g+<1600 rupees>> <r<Beedle>>
+
+- name: Beedle's Shop - First 100 Rupee Item
+  standard: Beedle's Shop - First 100 Rupee Item
+  pretty: Beedle's Shop - First 100 Rupee Item
+  cryptic: for <g+<100 rupees>> <r<Beedle>>
+
+- name: Beedle's Shop - Second 100 Rupee Item
+  standard: Beedle's Shop - Second 100 Rupee Item
+  pretty: Beedle's Shop - Second 100 Rupee Item
+  cryptic: for <g+<100 rupees>> <r<Beedle>>
+
+- name: Beedle's Shop - Third 100 Rupee Item
+  standard: Beedle's Shop - Third 100 Rupee Item
+  pretty: Beedle's Shop - Third 100 Rupee Item
+  cryptic: for <g+<100 rupees>> <r<Beedle>>
+
+- name: Beedle's Shop - 50 Rupee Item
+  standard: Beedle's Shop - 50 Rupee Item
+  pretty: Beedle's Shop - 50 Rupee Item
+  cryptic: for <g+<50 rupees>> <r<Beedle>>
+
+- name: Beedle's Shop - 1000 Rupee Item
+  standard: Beedle's Shop - 1000 Rupee Item
+  pretty: Beedle's Shop - 1000 Rupee Item
+  cryptic: for <g+<1000 rupees>> <r<Beedle>>
+
+- name: Bamboo Island Interior - Gossip Stone
+  standard: Bamboo Island Interior - Gossip Stone
+  pretty: Bamboo Island Interior - Gossip Stone
+  cryptic:
+
+- name: Lumpy Pumpkin - Chandelier
+  standard: Lumpy Pumpkin - Chandelier
+  pretty: Lumpy Pumpkin - Chandelier
+  cryptic: <r<angering a bartender>>
+
+- name: Lumpy Pumpkin - Harp Minigame
+  standard: Lumpy Pumpkin - Harp Minigame
+  pretty: Lumpy Pumpkin - Harp Minigame
+  cryptic: the <r<bartender>>
+
+- name: Lumpy Pumpkin - Kina's Crystals
+  standard: Lumpy Pumpkin - Kina's Crystals
+  pretty: Lumpy Pumpkin - Kina's Crystals
+  cryptic: <r<delivering a mogma to the sky>>
+
+- name: Lumpy Pumpkin - Outside Crystal
+  standard: Lumpy Pumpkin - Outside Crystal
+  pretty: Lumpy Pumpkin - Outside Crystal
+  cryptic: a <r<crystal in a shed>>
+
+- name: Lumpy Pumpkin - Inside Crystal
+  standard: Lumpy Pumpkin - Inside Crystal
+  pretty: Lumpy Pumpkin - Inside Crystal
+  cryptic: a <r<crystal in a bar>>
+
+- name: Lumpy Pumpkin - Gossip Stone
+  standard: Lumpy Pumpkin - Gossip Stone
+  pretty: Lumpy Pumpkin - Gossip Stone
+  cryptic:
+
+- name: Orielle's Island - Orielle's Crystals
+  standard: Orielle's Island - Orielle's Crystals
+  pretty: Orielle's Island - Orielle's Crystals
+  cryptic: saving a <r<sick loftwing>>
+
+- name: Beedle's Island - Beedle's Crystals
+  standard: Beedle's Island - Beedle's Crystals
+  pretty: Beedle's Island - Beedle's Crystals
+  cryptic: <r<reuniting two Beedles>>
+
+- name: Beedle's Island - Crystal
+  standard: Beedle's Island - Crystal
+  pretty: Beedle's Island - Crystal
+  cryptic: a <r<crystal above propellors>>
+
+- name: Beedle's Island - Top Goddess Chest
+  standard: Beedle's Island - Top Goddess Chest
+  pretty: Beedle's Island - Top Goddess Chest
+  cryptic: a <s<goddess cube>> at the <r<monument to time>> reveals
+
+- name: Beedle's Island - Cage Goddess Chest
+  standard: Beedle's Island - Cage Goddess Chest
+  pretty: Beedle's Island - Cage Goddess Chest
+  cryptic: a <s<goddess cube>> <r<atop a temple>>
+
+- name: Fun Fun Island - Dodoh's Crystals
+  standard: Fun Fun Island - Dodoh's Crystals
+  pretty: Fun Fun Island - Dodoh's Crystals
+  cryptic: delivering a <r<colorful wheel>>
+
+- name: Fun Fun Island - Minigame -- 500 Rupees
+  standard: Fun Fun Island - Minigame -- 500 Rupees
+  pretty: Fun Fun Island - Minigame -- 500 Rupees
+  cryptic: <r<diving through 5 rings>>
+
+- name: Fun Fun Island - Goddess Chest
+  standard: Fun Fun Island - Goddess Chest
+  pretty: Fun Fun Island - Goddess Chest
+  cryptic: a <s<goddess cube>> <r<near an ancient purifier>>
+
+- name: The Sky - Chest in Breakable Boulder near Fun Fun Island
+  standard: The Sky - Chest in Breakable Boulder near Fun Fun Island
+  pretty: The Sky - Chest in Breakable Boulder near Fun Fun Island
+  cryptic: an <r<eastern chest in a floating rock>>
+
+- name: The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
+  standard: The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
+  pretty: The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
+  cryptic: a <r<western chest in a floating rock>>
+
+- name: Volcanic Island - Gossip Stone
+  standard: Volcanic Island - Gossip Stone
+  pretty: Volcanic Island - Gossip Stone
+  cryptic:
+
+- name: Bamboo Island - Goddess Chest
+  standard: Bamboo Island - Goddess Chest
+  pretty: Bamboo Island - Goddess Chest
+  cryptic: a <s<goddess cube>> <r<above an air vent>>
+
+- name: Island near Bamboo Island - Goddess Chest
+  standard: Island near Bamboo Island - Goddess Chest
+  pretty: Island near Bamboo Island - Goddess Chest
+  cryptic: a <s<goddess cube>> <r<near a turf entrance>>
+
+- name: Island near Bamboo Island - Goddess Chest in Cave
+  standard: Island near Bamboo Island - Goddess Chest in Cave
+  pretty: Island near Bamboo Island - Goddess Chest in Cave
+  cryptic: a <s<goddess cube>> <r<in a secret desert passageway>>
+
+- name: Northeast Island - Goddess Chest behind Bombable Rocks
+  standard: Northeast Island - Goddess Chest behind Bombable Rocks
+  pretty: Northeast Island - Goddess Chest behind Bombable Rocks
+  cryptic: a <s<goddess cube>> <r<at a desert landing>>
+
+- name: Northeast Island - Cage Goddess Chest
+  standard: Northeast Island - Cage Goddess Chest
+  pretty: Northeast Island - Cage Goddess Chest
+  cryptic: a <s<goddess cube>> <r<next to a river of lava>>
+
+- name: Lumpy Pumpkin - Goddess Chest on Roof
+  standard: Lumpy Pumpkin - Goddess Chest on Roof
+  pretty: Lumpy Pumpkin - Goddess Chest on Roof
+  cryptic: a <s<goddess cube>> <r<in a spring>>
+
+- name: Lumpy Pumpkin - Outside Goddess Chest
+  standard: Lumpy Pumpkin - Outside Goddess Chest
+  pretty: Lumpy Pumpkin - Outside Goddess Chest
+  cryptic: a <s<goddess cube>> <r<near an intrigued individual>>
+
+- name: Island Closest to Faron Pillar - Goddess Chest
+  standard: Island Closest to Faron Pillar - Goddess Chest
+  pretty: Island Closest to Faron Pillar - Goddess Chest
+  cryptic: a <s<goddess cube>> <r<in front of a temple in the forest>>
+
+- name: Volcanic Island - Outside Goddess Chest
+  standard: Volcanic Island - Outside Goddess Chest
+  pretty: Volcanic Island - Outside Goddess Chest
+  cryptic: a <s<goddess cube>> <r<among quicksand>>
+
+- name: Volcanic Island - Inside Goddess Chest
+  standard: Volcanic Island - Inside Goddess Chest
+  pretty: Volcanic Island - Inside Goddess Chest
+  cryptic: a <s<goddess cube>> <r<on a great tree's west branch>>
+
+- name: Triple Island - Upper Goddess Chest
+  standard: Triple Island - Upper Goddess Chest
+  pretty: Triple Island - Upper Goddess Chest
+  cryptic: a <s<goddess cube>> <r<at the entrance to a volcano>>
+
+- name: Triple Island - Lower Goddess Chest
+  standard: Triple Island - Lower Goddess Chest
+  pretty: Triple Island - Lower Goddess Chest
+  cryptic: a <s<goddess cube>> <r<near a caged friend>>
+
+- name: Triple Island - Cage Goddess Chest
+  standard: Triple Island - Cage Goddess Chest
+  pretty: Triple Island - Cage Goddess Chest
+  cryptic: a <s<goddess cube>> <r<in a retreat>>
+
+- name: Isle of Songs - Strike Crest with Goddess Sword
+  standard: Isle of Songs - Strike Crest with Goddess Sword
+  pretty: Isle of Songs - Strike Crest with Goddess Sword
+  cryptic: the <r<goddess' blade>> reveals
+
+- name: Isle of Songs - Strike Crest with Longsword
+  standard: Isle of Songs - Strike Crest with Longsword
+  pretty: Isle of Songs - Strike Crest with Longsword
+  cryptic: a <r<longsword>> reveals
+
+- name: Isle of Songs - Strike Crest with White Sword
+  standard: Isle of Songs - Strike Crest with White Sword
+  pretty: Isle of Songs - Strike Crest with White Sword
+  cryptic: a <r<blade of white>>
+
+- name: Isle of Songs - Top Goddess Chest
+  standard: Isle of Songs - Top Goddess Chest
+  pretty: Isle of Songs - Top Goddess Chest
+  cryptic: a <s<goddess cube>> <r<deep in a volcano>>
+
+- name: Isle of Songs - Lower Goddess Chest
+  standard: Isle of Songs - Lower Goddess Chest
+  pretty: Isle of Songs - Lower Goddess Chest
+  cryptic: a <s<goddess cube>> <r<in an underground cave>>
+
+- name: The Thunderhead - Song from Levias
+  standard: The Thunderhead - Song from Levias
+  pretty: The Thunderhead - Song from Levias
+  cryptic: the <r<ancient whale within a raging storm>>
+
+- name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
+  standard: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
+  pretty: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
+  cryptic: <r<true bug catchers>>
+
+- name: Bug Heaven - Goddess Chest
+  standard: Bug Heaven - Goddess Chest
+  pretty: Bug Heaven - Goddess Chest
+  cryptic: a <s<goddess cube>> <r<near a volcano's waterfall>>
+
+- name: Bug Heaven - Nearby Gossip Stone
+  standard: Bug Heaven - Nearby Gossip Stone
+  pretty: Bug Heaven - Nearby Gossip Stone
+  cryptic:
+
+- name: Thunderhead East Island - Chest
+  standard: Thunderhead East Island - Chest
+  pretty: Thunderhead East Island - Chest
+  cryptic: a <r<chest within a raging storm>>
+
+- name: Thunderhead East Island - Goddess Chest
+  standard: Thunderhead East Island - Goddess Chest
+  pretty: Thunderhead East Island - Goddess Chest
+  cryptic: a <s<goddess cube>> <r<near a rope>>
+
+- name: Mogma Mitts Island - First Goddess Chest
+  standard: Mogma Mitts Island - First Goddess Chest
+  pretty: Mogma Mitts Island - First Goddess Chest
+  cryptic: a <s<goddess cube>> <r<surrounded by lava>>
+
+- name: Mogma Mitts Island - Second Goddess Chest
+  standard: Mogma Mitts Island - Second Goddess Chest
+  pretty: Mogma Mitts Island - Second Goddess Chest
+  cryptic: a <s<goddess cube>> <r<in a desert gorge>>
+
+- name: Sealed Temple - Chest
+  standard: Sealed Temple - Chest
+  pretty: Sealed Temple - Chest
+  cryptic: a <r<chest in an ancient building>>
+
+- name: Sealed Temple - Song from Impa
+  standard: Sealed Temple - Song from Impa
+  pretty: Sealed Temple - Song from Impa
+  cryptic: the <old one's song>>
+
+- name: Sealed Grounds - Gorko's Goddess Wall Reward
+  standard: Sealed Grounds - Gorko's Goddess Wall Reward
+  pretty: Sealed Grounds - Gorko's Goddess Wall Reward
+  cryptic: <r<drawing upon a magical wall>>
+
+- name: Sealed Grounds - Gossip Stone
+  standard: Sealed Grounds - Gossip Stone
+  pretty: Sealed Grounds - Gossip Stone
+  cryptic:
+
+- name: Hylia's Temple - Zelda's Blessing
+  standard: Hylia's Temple - Zelda's Blessing
+  pretty: Hylia's Temple - Zelda's Blessing
+  cryptic: the <r<goddess's blessing>>
+
+- name: Hylia's Realm - Defeat Demise
+  standard: Hylia's Realm - Defeat Demise
+  pretty: Hylia's Realm - Defeat Demise
+  cryptic: the <r<eradication of the demon king>>
+  goal_name: Demise
+
+- name: Faron Woods - Item behind Bombable Rock
+  standard: Faron Woods - Item behind Bombable Rock
+  pretty: Faron Woods - Item behind Bombable Rock
+  cryptic: an <r<item behind some forest rocks>>
+
+- name: Faron Woods - Item on Tree
+  standard: Faron Woods - Item on Tree
+  pretty: Faron Woods - Item on Tree
+  cryptic: an <r<item after a rope>>
+
+- name: Faron Woods - Kikwi Elder's Reward
+  standard: Faron Woods - Kikwi Elder's Reward
+  pretty: Faron Woods - Kikwi Elder's Reward
+  cryptic: the <r<Kikwi relic>>
+
+- name: Faron Woods - Rupee on Hollow Tree Root
+  standard: Faron Woods - Rupee on Hollow Tree Root
+  pretty: Faron Woods - Rupee on Hollow Tree Root
+  cryptic: an <r<item on a tree root>>
+
+- name: Faron Woods - Rupee on Hollow Tree Branch
+  standard: Faron Woods - Rupee on Hollow Tree Branch
+  pretty: Faron Woods - Rupee on Hollow Tree Branch
+  cryptic: an <r<item on a tree branch>>
+
+- name: Faron Woods - Rupee on Platform near Floria Door
+  standard: Faron Woods - Rupee on Platform near Floria Door
+  pretty: Faron Woods - Rupee on Platform near Floria Door
+  cryptic: an <r<item on a far away ledge>>
+
+- name: Faron Woods - Chest behind Bombable Rocks near Erla
+  standard: Faron Woods - Chest behind Bombable Rocks near Erla
+  pretty: Faron Woods - Chest behind Bombable Rocks near Erla
+  cryptic: a <r<chest behind some forest rocks>>
+
+- name: Faron Woods - Rupee on Great Tree North Branch
+  standard: Faron Woods - Rupee on Great Tree North Branch
+  pretty: Faron Woods - Rupee on Great Tree North Branch
+  cryptic: an <r<item on a high up tree branch>>
+
+- name: Faron Woods - Rupee on Great Tree West Branch
+  standard: Faron Woods - Rupee on Great Tree West Branch
+  pretty: Faron Woods - Rupee on Great Tree West Branch
+  cryptic: an <r<item on a high up tree branch>>
+
+- name: Faron Woods - Goddess Cube on West Great Tree near Exit
+  standard: Faron Woods - Goddess Cube on West Great Tree near Exit
+  pretty: Faron Woods - Goddess Cube on West Great Tree near Exit
+  cryptic:
+
+- name: Faron Woods - Goddess Cube on East Great Tree with Clawshots Target
+  standard: Faron Woods - Goddess Cube on East Great Tree with Clawshots Target
+  pretty: Faron Woods - Goddess Cube on East Great Tree with Clawshots Target
+  cryptic:
+
+- name: Faron Woods - Goddess Cube on East Great Tree with Rope
+  standard: Faron Woods - Goddess Cube on East Great Tree with Rope
+  pretty: Faron Woods - Goddess Cube on East Great Tree with Rope
+  cryptic:
+
+- name: Great Tree - Chest
+  standard: Great Tree - Chest
+  pretty: Great Tree - Chest
+  cryptic: climbing inside an <r<old hermit's home>>
+
+- name: Deep Woods - Chest
+  standard: Deep Woods - Chest
+  pretty: Deep Woods - Chest
+  cryptic: a <r<chest deep in a forest>>
+
+- name: Deep Woods - Gossip Stone
+  standard: Deep Woods - Gossip Stone
+  pretty: Deep Woods - Gossip Stone
+  cryptic:
+
+- name: Deep Woods - Goddess Cube Near Goron
+  standard: Deep Woods - Goddess Cube Near Goron
+  pretty: Deep Woods - Goddess Cube Near Goron
+  cryptic:
+
+- name: Deep Woods - Goddess Cube in front of Skyview
+  standard: Deep Woods - Goddess Cube in front of Skyview
+  pretty: Deep Woods - Goddess Cube in front of Skyview
+  cryptic:
+
+- name: Deep Woods - Goddess Cube on top of Skyview
+  standard: Deep Woods - Goddess Cube on top of Skyview
+  pretty: Deep Woods - Goddess Cube on top of Skyview
+  cryptic:
+
+- name: Lake Floria - Rupee under Central Boulder
+  standard: Lake Floria - Rupee under Central Boulder
+  pretty: Lake Floria - Rupee under Central Boulder
+  cryptic: an <r<item under a boulder in a lake>>
+
+- name: Lake Floria - Rupee behind Southwest Boulder
+  standard: Lake Floria - Rupee behind Southwest Boulder
+  pretty: Lake Floria - Rupee behind Southwest Boulder
+  cryptic: an <r<item behind a boulder in a lake>>
+
+- name: Lake Floria - Left Rupee behind Northwest Boulder
+  standard: Lake Floria - Left Rupee behind Northwest Boulder
+  pretty: Lake Floria - Left Rupee behind Northwest Boulder
+  cryptic: an <r<item behind a boulder in a lake>>
+
+- name: Lake Floria - Right Rupee behind Northwest Boulder
+  standard: Lake Floria - Right Rupee behind Northwest Boulder
+  pretty: Lake Floria - Right Rupee behind Northwest Boulder
+  cryptic: an <r<item behind a boulder in a lake>>
+
+- name: Lake Floria - Chest
+  standard: Lake Floria - Chest
+  pretty: Lake Floria - Chest
+  cryptic: a <r<lonely chest in the lake>>
+
+- name: Lake Floria - Dragon Lair South Chest
+  standard: Lake Floria - Dragon Lair South Chest
+  pretty: Lake Floria - Dragon Lair South Chest
+  cryptic: a <r<chest in a watery lair on a high ledge>>
+
+- name: Lake Floria - Dragon Lair East Chest
+  standard: Lake Floria - Dragon Lair East Chest
+  pretty: Lake Floria - Dragon Lair East Chest
+  cryptic: a <r<chest in a watery lair>>
+
+- name: Lake Floria - Goddess Cube
+  standard: Lake Floria - Goddess Cube
+  pretty: Lake Floria - Goddess Cube
+  cryptic:
+
+- name: Floria Waterfall - Rupee on High Ledge
+  standard: Floria Waterfall - Rupee on High Ledge
+  pretty: Floria Waterfall - Rupee on High Ledge
+  cryptic: an <r<item on a humid high ledge>>
+
+- name: Floria Waterfall - Gossip Stone
+  standard: Floria Waterfall - Gossip Stone
+  pretty: Floria Waterfall - Gossip Stone
+  cryptic:
+
+- name: Floria Waterfall - Goddess Cube on High Ledge
+  standard: Floria Waterfall - Goddess Cube on High Ledge
+  pretty: Floria Waterfall - Goddess Cube on High Ledge
+  cryptic:
+
+- name: Flooded Faron Woods - Yellow Tadtone under Lilypad
+  standard: Flooded Faron Woods - Yellow Tadtone under Lilypad
+  pretty: Flooded Faron Woods - Yellow Tadtone under Lilypad
+  cryptic:
+
+- name: Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform
+  standard: Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform
+  pretty: Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform
+  cryptic:
+
+- name: Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform
+  standard: Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform
+  pretty: Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform
+  cryptic:
+
+- name: Flooded Faron Woods - Red Moving Tadtone near Viewing Platform
+  standard: Flooded Faron Woods - Red Moving Tadtone near Viewing Platform
+  pretty: Flooded Faron Woods - Red Moving Tadtone near Viewing Platform
+  cryptic:
+
+- name: Flooded Faron Woods - Light Blue Tadtone under Great Tree Root
+  standard: Flooded Faron Woods - Light Blue Tadtone under Great Tree Root
+  pretty: Flooded Faron Woods - Light Blue Tadtone under Great Tree Root
+  cryptic:
+
+- name: Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder
+  standard: Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder
+  pretty: Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder
+  cryptic:
+
+- name: Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder
+  standard: Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder
+  pretty: Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder
+  cryptic:
+
+- name: Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree
+  standard: Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree
+  pretty: Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree
+  cryptic:
+
+- name: Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock
+  standard: Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock
+  pretty: Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock
+  cryptic:
+
+- name: Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree
+  standard: Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree
+  pretty: Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree
+  cryptic:
+
+- name: Flooded Faron Woods - 8 Green Tadtones in West Tunnel
+  standard: Flooded Faron Woods - 8 Green Tadtones in West Tunnel
+  pretty: Flooded Faron Woods - 8 Green Tadtones in West Tunnel
+  cryptic:
+
+- name: Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock
+  standard: Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock
+  pretty: Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock
+  cryptic:
+
+- name: Flooded Faron Woods - 16 Dark Blue Tadtones in the South West
+  standard: Flooded Faron Woods - 16 Dark Blue Tadtones in the South West
+  pretty: Flooded Faron Woods - 16 Dark Blue Tadtones in the South West
+  cryptic:
+
+- name: Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate
+  standard: Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate
+  pretty: Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate
+  cryptic:
+
+- name: Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree
+  standard: Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree
+  pretty: Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree
+  cryptic:
+
+- name: Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree
+  standard: Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree
+  pretty: Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree
+  cryptic:
+
+- name: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
+  standard: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
+  pretty: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
+  cryptic:
+
+- name: Flooded Faron Woods - Water Dragon's Reward
+  standard: Flooded Faron Woods - Water Dragon's Reward
+  pretty: Flooded Faron Woods - Water Dragon's Reward
+  cryptic: completing a <r<watery song>> reveals
+
+- name: Eldin Volcano - Rupee on Ledge before First Room
+  standard: Eldin Volcano - Rupee on Ledge before First Room
+  pretty: Eldin Volcano - Rupee on Ledge before First Room
+  cryptic:
+
+- name: Eldin Volcano - Chest behind Bombable Wall in First Room
+  standard: Eldin Volcano - Chest behind Bombable Wall in First Room
+  pretty: Eldin Volcano - Chest behind Bombable Wall in First Room
+  cryptic:
+
+- name: Eldin Volcano - Rupee behind Bombable Wall in First Room
+  standard: Eldin Volcano - Rupee behind Bombable Wall in First Room
+  pretty: Eldin Volcano - Rupee behind Bombable Wall in First Room
+  cryptic:
+
+- name: Eldin Volcano - Rupee in Crawlspace in First Room
+  standard: Eldin Volcano - Rupee in Crawlspace in First Room
+  pretty: Eldin Volcano - Rupee in Crawlspace in First Room
+  cryptic:
+
+- name: Eldin Volcano - Chest after Crawlspace
+  standard: Eldin Volcano - Chest after Crawlspace
+  pretty: Eldin Volcano - Chest after Crawlspace
+  cryptic:
+
+- name: Eldin Volcano - Southeast Rupee above Mogma Turf Entrance
+  standard: Eldin Volcano - Southeast Rupee above Mogma Turf Entrance
+  pretty: Eldin Volcano - Southeast Rupee above Mogma Turf Entrance
+  cryptic:
+
+- name: Eldin Volcano - North Rupee above Mogma Turf Entrance
+  standard: Eldin Volcano - North Rupee above Mogma Turf Entrance
+  pretty: Eldin Volcano - North Rupee above Mogma Turf Entrance
+  cryptic:
+
+- name: Eldin Volcano - Chest behind Bombable Wall near Cliff
+  standard: Eldin Volcano - Chest behind Bombable Wall near Cliff
+  pretty: Eldin Volcano - Chest behind Bombable Wall near Cliff
+  cryptic:
+
+- name: Eldin Volcano - Item on Cliff
+  standard: Eldin Volcano - Item on Cliff
+  pretty: Eldin Volcano - Item on Cliff
+  cryptic:
+
+- name: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
+  standard: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
+  pretty: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
+  cryptic:
+
+- name: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
+  standard: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
+  pretty: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
+  cryptic:
+
+- name: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
+  standard: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
+  pretty: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
+  cryptic:
+
+- name: Thrill Digger Cave - Gossip Stone
+  standard: Thrill Digger Cave - Gossip Stone
+  pretty: Thrill Digger Cave - Gossip Stone
+  cryptic:
+
+- name: Eldin Volcano - Gossip Stone next to Earth Temple
+  standard: Eldin Volcano - Gossip Stone next to Earth Temple
+  pretty: Eldin Volcano - Gossip Stone next to Earth Temple
+  cryptic:
+
+- name: Upper Eldin Cave - Gossip Stone
+  standard: Upper Eldin Cave - Gossip Stone
+  pretty: Upper Eldin Cave - Gossip Stone
+  cryptic:
+
+- name: Lower Eldin Cave - Gossip Stone
+  standard: Lower Eldin Cave - Gossip Stone
+  pretty: Lower Eldin Cave - Gossip Stone
+  cryptic:
+
+- name: Eldin Volcano - Goddess Cube at Eldin Entrance
+  standard: Eldin Volcano - Goddess Cube at Eldin Entrance
+  pretty: Eldin Volcano - Goddess Cube at Eldin Entrance
+  cryptic:
+
+- name: Eldin Volcano - Goddess Cube near Mogma Turf Entrance
+  standard: Eldin Volcano - Goddess Cube near Mogma Turf Entrance
+  pretty: Eldin Volcano - Goddess Cube near Mogma Turf Entrance
+  cryptic:
+
+- name: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
+  standard: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
+  pretty: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
+  cryptic:
+
+- name: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
+  standard: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
+  pretty: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
+  cryptic:
+
+- name: Eldin Volcano - Goddess Cube on Sand Slide
+  standard: Eldin Volcano - Goddess Cube on Sand Slide
+  pretty: Eldin Volcano - Goddess Cube on Sand Slide
+  cryptic:
+
+- name: Eldin Volcano - Digging Spot in front of Earth Temple
+  standard: Eldin Volcano - Digging Spot in front of Earth Temple
+  pretty: Eldin Volcano - Digging Spot in front of Earth Temple
+  cryptic:
+
+- name: Eldin Volcano - Digging Spot below Tower
+  standard: Eldin Volcano - Digging Spot below Tower
+  pretty: Eldin Volcano - Digging Spot below Tower
+  cryptic:
+
+- name: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
+  standard: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
+  pretty: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
+  cryptic: a <r<boulder on a sandy slope>>
+
+- name: Eldin Volcano - Digging Spot after Vents
+  standard: Eldin Volcano - Digging Spot after Vents
+  pretty: Eldin Volcano - Digging Spot after Vents
+  cryptic:
+
+- name: Eldin Volcano - Digging Spot after Draining Lava
+  standard: Eldin Volcano - Digging Spot after Draining Lava
+  pretty: Eldin Volcano - Digging Spot after Draining Lava
+  cryptic:
+
+- name: Mogma Turf - Free Fall Chest
+  standard: Mogma Turf - Free Fall Chest
+  pretty: Mogma Turf - Free Fall Chest
+  cryptic:
+
+- name: Mogma Turf - Chest behind Bombable Wall at Entrance
+  standard: Mogma Turf - Chest behind Bombable Wall at Entrance
+  pretty: Mogma Turf - Chest behind Bombable Wall at Entrance
+  cryptic:
+
+- name: Mogma Turf - Defeat Bokoblins
+  standard: Mogma Turf - Defeat Bokoblins
+  pretty: Mogma Turf - Defeat Bokoblins
+  cryptic: helping <r<reclaim the mogmas' territory>>
+
+- name: Mogma Turf - Sand Slide Chest
+  standard: Mogma Turf - Sand Slide Chest
+  pretty: Mogma Turf - Sand Slide Chest
+  cryptic: <r<behind>> a slide mogmas buried
+
+- name: Mogma Turf - Chest behind Bombable Wall in Fire Maze
+  standard: Mogma Turf - Chest behind Bombable Wall in Fire Maze
+  pretty: Mogma Turf - Chest behind Bombable Wall in Fire Maze
+  cryptic:
+
+- name: Mogma Turf - Goddess Cube
+  standard: Mogma Turf - Goddess Cube
+  pretty: Mogma Turf - Goddess Cube
+  cryptic:
+
+- name: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
+  standard: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
+  pretty: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
+  cryptic: atop a <r<volcanic waterfall>>
+
+- name: Volcano Summit - Item behind Digging
+  standard: Volcano Summit - Item behind Digging
+  pretty: Volcano Summit - Item behind Digging
+  cryptic: <r<fairies at the summit>>
+
+- name: Volcano Summit - Gossip Stone in Waterfall Area
+  standard: Volcano Summit - Gossip Stone in Waterfall Area
+  pretty: Volcano Summit - Gossip Stone in Waterfall Area
+  cryptic:
+
+- name: Volcano Summit - Gossip Stone near Second Thirsty Frog
+  standard: Volcano Summit - Gossip Stone near Second Thirsty Frog
+  pretty: Volcano Summit - Gossip Stone near Second Thirsty Frog
+  cryptic:
+
+- name: Volcano Summit - Goddess Cube in Lava Lake
+  standard: Volcano Summit - Goddess Cube in Lava Lake
+  pretty: Volcano Summit - Goddess Cube in Lava Lake
+  cryptic:
+
+- name: Volcano Summit - Goddess Cube at Summit Waterfall
+  standard: Volcano Summit - Goddess Cube at Summit Waterfall
+  pretty: Volcano Summit - Goddess Cube at Summit Waterfall
+  cryptic:
+
+- name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
+  standard: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
+  pretty: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
+  cryptic:
+
+- name: Bokoblin Base - Plats' Gift
+  standard: Bokoblin Base - Plats' Gift
+  pretty: Bokoblin Base - Plats' Gift
+  cryptic: a gift from an <r<imprisoned mogma>>
+
+- name: Bokoblin Base - Chest near Bone Bridge
+  standard: Bokoblin Base - Chest near Bone Bridge
+  pretty: Bokoblin Base - Chest near Bone Bridge
+  cryptic:
+
+- name: Bokoblin Base - Chest on Cliff
+  standard: Bokoblin Base - Chest on Cliff
+  pretty: Bokoblin Base - Chest on Cliff
+  cryptic:
+
+- name: Bokoblin Base - Chest near Drawbridge
+  standard: Bokoblin Base - Chest near Drawbridge
+  pretty: Bokoblin Base - Chest near Drawbridge
+  cryptic:
+
+- name: Bokoblin Base - Chest East of Earth Temple Entrance
+  standard: Bokoblin Base - Chest East of Earth Temple Entrance
+  pretty: Bokoblin Base - Chest East of Earth Temple Entrance
+  cryptic:
+
+- name: Bokoblin Base - Chest West of Earth Temple Entrance
+  standard: Bokoblin Base - Chest West of Earth Temple Entrance
+  pretty: Bokoblin Base - Chest West of Earth Temple Entrance
+  cryptic:
+
+- name: Bokoblin Base - First Chest in Volcano Summit
+  standard: Bokoblin Base - First Chest in Volcano Summit
+  pretty: Bokoblin Base - First Chest in Volcano Summit
+  cryptic:
+
+- name: Bokoblin Base - Raised Chest in Volcano Summit
+  standard: Bokoblin Base - Raised Chest in Volcano Summit
+  pretty: Bokoblin Base - Raised Chest in Volcano Summit
+  cryptic:
+
+- name: Bokoblin Base - Chest in Volcano Summit Alcove
+  standard: Bokoblin Base - Chest in Volcano Summit Alcove
+  pretty: Bokoblin Base - Chest in Volcano Summit Alcove
+  cryptic:
+
+- name: Bokoblin Base - Fire Dragon's Reward
+  standard: Bokoblin Base - Fire Dragon's Reward
+  pretty: Bokoblin Base - Fire Dragon's Reward
+  cryptic: <r<hearing a song atop the great mountain>>
+
+- name: Lanayru Mine - Chest behind First Landing
+  standard: Lanayru Mine - Chest behind First Landing
+  pretty: Lanayru Mine - Chest behind First Landing
+  cryptic:
+
+- name: Lanayru Mine - Chest near First Timeshift Stone
+  standard: Lanayru Mine - Chest near First Timeshift Stone
+  pretty: Lanayru Mine - Chest near First Timeshift Stone
+  cryptic:
+
+- name: Lanayru Mine - Chest behind Statue
+  standard: Lanayru Mine - Chest behind Statue
+  pretty: Lanayru Mine - Chest behind Statue
+  cryptic:
+
+- name: Lanayru Mine - Chest at the End of Mine
+  standard: Lanayru Mine - Chest at the End of Mine
+  pretty: Lanayru Mine - Chest at the End of Mine
+  cryptic:
+
+- name: Lanayru Mine - Goddess Cube
+  standard: Lanayru Mine - Goddess Cube
+  pretty: Lanayru Mine - Goddess Cube
+  cryptic:
+
+- name: Lanayru Desert - Chest near Party Wheel
+  standard: Lanayru Desert - Chest near Party Wheel
+  pretty: Lanayru Desert - Chest near Party Wheel
+  cryptic:
+
+- name: Lanayru Desert - Chest near Rescue Caged Robot
+  standard: Lanayru Desert - Chest near Rescue Caged Robot
+  pretty: Lanayru Desert - Chest near Rescue Caged Robot
+  cryptic:
+
+- name: Lanayru Desert - Rescue Caged Robot
+  standard: Lanayru Desert - Rescue Caged Robot
+  pretty: Lanayru Desert - Rescue Caged Robot
+  cryptic:
+
+- name: Lanayru Desert - Chest on Platform near Fire Node
+  standard: Lanayru Desert - Chest on Platform near Fire Node
+  pretty: Lanayru Desert - Chest on Platform near Fire Node
+  cryptic:
+
+- name: Lanayru Desert - Chest on Platform near Lightning Node
+  standard: Lanayru Desert - Chest on Platform near Lightning Node
+  pretty: Lanayru Desert - Chest on Platform near Lightning Node
+  cryptic:
+
+- name: Lanayru Desert - Chest near Sand Oasis
+  standard: Lanayru Desert - Chest near Sand Oasis
+  pretty: Lanayru Desert - Chest near Sand Oasis
+  cryptic:
+
+- name: Lanayru Desert - Chest on top of Lanayru Mining Facility
+  standard: Lanayru Desert - Chest on top of Lanayru Mining Facility
+  pretty: Lanayru Desert - Chest on top of Lanayru Mining Facility
+  cryptic: the <r<midst of the desert>>
+
+- name: Lanayru Desert - Secret Passageway Chest
+  standard: Lanayru Desert - Secret Passageway Chest
+  pretty: Lanayru Desert - Secret Passageway Chest
+  cryptic: a <r<secret passage in the desert>>
+
+- name: Temple of Time - Gossip Stone
+  standard: Temple of Time - Gossip Stone
+  pretty: Temple of Time - Gossip Stone
+  cryptic:
+
+- name: Lanayru Desert - Goddess Cube near Caged Robot
+  standard: Lanayru Desert - Goddess Cube near Caged Robot
+  pretty: Lanayru Desert - Goddess Cube near Caged Robot
+  cryptic:
+
+- name: Lanayru Desert - Goddess Cube in Sand Oasis
+  standard: Lanayru Desert - Goddess Cube in Sand Oasis
+  pretty: Lanayru Desert - Goddess Cube in Sand Oasis
+  cryptic:
+
+- name: Lanayru Desert - Goddess Cube in Secret Passageway
+  standard: Lanayru Desert - Goddess Cube in Secret Passageway
+  pretty: Lanayru Desert - Goddess Cube in Secret Passageway
+  cryptic:
+
+- name: Lanayru Desert - Goddess Cube near Temple of Time
+  standard: Lanayru Desert - Goddess Cube near Temple of Time
+  pretty: Lanayru Desert - Goddess Cube near Temple of Time
+  cryptic:
+
+- name: Fire Node - Shortcut Chest
+  standard: Fire Node - Shortcut Chest
+  pretty: Fire Node - Shortcut Chest
+  cryptic: a <r<raised chest in the Fire Node>>
+
+- name: Fire Node - First Small Chest
+  standard: Fire Node - First Small Chest
+  pretty: Fire Node - First Small Chest
+  cryptic:
+
+- name: Fire Node - Second Small Chest
+  standard: Fire Node - Second Small Chest
+  pretty: Fire Node - Second Small Chest
+  cryptic:
+
+- name: Fire Node - Left Ending Chest
+  standard: Fire Node - Left Ending Chest
+  pretty: Fire Node - Left Ending Chest
+  cryptic:
+
+- name: Fire Node - Right Ending Chest
+  standard: Fire Node - Right Ending Chest
+  pretty: Fire Node - Right Ending Chest
+  cryptic:
+
+- name: Lightning Node - First Chest
+  standard: Lightning Node - First Chest
+  pretty: Lightning Node - First Chest
+  cryptic:
+
+- name: Lightning Node - Second Chest
+  standard: Lightning Node - Second Chest
+  pretty: Lightning Node - Second Chest
+  cryptic:
+
+- name: Lightning Node - Raised Chest near Generator
+  standard: Lightning Node - Raised Chest near Generator
+  pretty: Lightning Node - Raised Chest near Generator
+  cryptic: a <r<raised chest in the Lightning Node>>
+
+- name: Lanayru Caves - Chest
+  standard: Lanayru Caves - Chest
+  pretty: Lanayru Caves - Chest
+  cryptic:
+
+- name: Lanayru Caves - Golo's Gift
+  standard: Lanayru Caves - Golo's Gift
+  pretty: Lanayru Caves - Golo's Gift
+  cryptic:
+
+- name: Lanayru Caves - Gossip Stone in Center
+  standard: Lanayru Caves - Gossip Stone in Center
+  pretty: Lanayru Caves - Gossip Stone in Center
+  cryptic:
+
+- name: Lanayru Caves - Gossip Stone towards Lanayru Gorge
+  standard: Lanayru Caves - Gossip Stone towards Lanayru Gorge
+  pretty: Lanayru Caves - Gossip Stone towards Lanayru Gorge
+  cryptic:
+
+- name: Lanayru Gorge - Thunder Dragon's Reward
+  standard: Lanayru Gorge - Thunder Dragon's Reward
+  pretty: Lanayru Gorge - Thunder Dragon's Reward
+  cryptic: <r<curing an ancient dragon>>
+
+- name: Lanayru Gorge - Item on Pillar
+  standard: Lanayru Gorge - Item on Pillar
+  pretty: Lanayru Gorge - Item on Pillar
+  cryptic:
+
+- name: Lanayru Gorge - Digging Spot
+  standard: Lanayru Gorge - Digging Spot
+  pretty: Lanayru Gorge - Digging Spot
+  cryptic:
+
+- name: Lanayru Gorge - Goddess Cube
+  standard: Lanayru Gorge - Goddess Cube
+  pretty: Lanayru Gorge - Goddess Cube
+  cryptic:
+
+- name: Ancient Harbour - Rupee on First Pillar
+  standard: Ancient Harbour - Rupee on First Pillar
+  pretty: Ancient Harbour - Rupee on First Pillar
+  cryptic:
+
+- name: Ancient Harbour - Left Rupee on Entrance Crown
+  standard: Ancient Harbour - Left Rupee on Entrance Crown
+  pretty: Ancient Harbour - Left Rupee on Entrance Crown
+  cryptic:
+
+- name: Ancient Harbour - Right Rupee on Entrance Crown
+  standard: Ancient Harbour - Right Rupee on Entrance Crown
+  pretty: Ancient Harbour - Right Rupee on Entrance Crown
+  cryptic:
+
+- name: Ancient Harbour - Goddess Cube
+  standard: Ancient Harbour - Goddess Cube
+  pretty: Ancient Harbour - Goddess Cube
+  cryptic:
+
+- name: Skipper's Retreat - Chest after Moblin
+  standard: Skipper's Retreat - Chest after Moblin
+  pretty: Skipper's Retreat - Chest after Moblin
+  cryptic:
+
+- name: Skipper's Retreat - Chest on top of Cacti Pillar
+  standard: Skipper's Retreat - Chest on top of Cacti Pillar
+  pretty: Skipper's Retreat - Chest on top of Cacti Pillar
+  cryptic: a <r<chest amongst cacti>>
+
+- name: Skipper's Retreat - Chest in Shack
+  standard: Skipper's Retreat - Chest in Shack
+  pretty: Skipper's Retreat - Chest in Shack
+  cryptic: a <r<chest atop a sandy retreat>>
+
+- name: Skipper's Retreat - Skydive Chest
+  standard: Skipper's Retreat - Skydive Chest
+  pretty: Skipper's Retreat - Skydive Chest
+  cryptic:
+
+- name: Skipper's Retreat - Goddess Cube
+  standard: Skipper's Retreat - Goddess Cube
+  pretty: Skipper's Retreat - Goddess Cube
+  cryptic:
+
+- name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
+  standard: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
+  pretty: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
+  cryptic: a <r<fast minecart time>>
+
+- name: Shipyard - Gossip Stone
+  standard: Shipyard - Gossip Stone
+  pretty: Shipyard - Gossip Stone
+  cryptic:
+
+- name: Pirate Stronghold - Rupee on East Sea Pillar
+  standard: Pirate Stronghold - Rupee on East Sea Pillar
+  pretty: Pirate Stronghold - Rupee on East Sea Pillar
+  cryptic:
+
+- name: Pirate Stronghold - Rupee on West Sea Pillar
+  standard: Pirate Stronghold - Rupee on West Sea Pillar
+  pretty: Pirate Stronghold - Rupee on West Sea Pillar
+  cryptic:
+
+- name: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
+  standard: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
+  pretty: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
+  cryptic:
+
+- name: Pirate Stronghold - Goddess Cube
+  standard: Pirate Stronghold - Goddess Cube
+  pretty: Pirate Stronghold - Goddess Cube
+  cryptic:
+
+- name: Pirate Stronghold Interior - First Chest
+  standard: Pirate Stronghold Interior - First Chest
+  pretty: Pirate Stronghold Interior - First Chest
+  cryptic:
+
+- name: Pirate Stronghold Interior - Second Chest
+  standard: Pirate Stronghold Interior - Second Chest
+  pretty: Pirate Stronghold Interior - Second Chest
+  cryptic:
+
+- name: Pirate Stronghold Interior - Third Chest
+  standard: Pirate Stronghold Interior - Third Chest
+  pretty: Pirate Stronghold Interior - Third Chest
+  cryptic:
+
+- name: Skyview Temple - Chest on Tree Branch
+  standard: Skyview Temple - Chest on Tree Branch
+  pretty: Skyview Temple - Chest on Tree Branch
+  cryptic:
+
+- name: Skyview Temple - Digging Spot in Crawlspace
+  standard: Skyview Temple - Digging Spot in Crawlspace
+  pretty: Skyview Temple - Digging Spot in Crawlspace
+  cryptic: <r<soft soil>> in a <r<temple in the forest>>
+
+- name: Skyview Temple - Chest behind Two Eyes
+  standard: Skyview Temple - Chest behind Two Eyes
+  pretty: Skyview Temple - Chest behind Two Eyes
+  cryptic: <r<two watchful eyes>>
+
+- name: Skyview Temple - Chest after Stalfos Fight
+  standard: Skyview Temple - Chest after Stalfos Fight
+  pretty: Skyview Temple - Chest after Stalfos Fight
+  cryptic:
+
+- name: Skyview Temple - Item behind Bars
+  standard: Skyview Temple - Item behind Bars
+  pretty: Skyview Temple - Item behind Bars
+  cryptic:
+
+- name: Skyview Temple - Rupee in Southeast Tunnel
+  standard: Skyview Temple - Rupee in Southeast Tunnel
+  pretty: Skyview Temple - Rupee in Southeast Tunnel
+  cryptic:
+
+- name: Skyview Temple - Rupee in Southwest Tunnel
+  standard: Skyview Temple - Rupee in Southwest Tunnel
+  pretty: Skyview Temple - Rupee in Southwest Tunnel
+  cryptic:
+
+- name: Skyview Temple - Rupee in East Tunnel
+  standard: Skyview Temple - Rupee in East Tunnel
+  pretty: Skyview Temple - Rupee in East Tunnel
+  cryptic:
+
+- name: Skyview Temple - Chest behind Three Eyes
+  standard: Skyview Temple - Chest behind Three Eyes
+  pretty: Skyview Temple - Chest behind Three Eyes
+  cryptic: <r<three watchful eyes>>
+
+- name: Skyview Temple - Chest near Boss Door
+  standard: Skyview Temple - Chest near Boss Door
+  pretty: Skyview Temple - Chest near Boss Door
+  cryptic:
+
+- name: Skyview Temple - Chest after Vines
+  standard: Skyview Temple - Chest after Vines
+  pretty: Skyview Temple - Chest after Vines
+  cryptic:
+
+- name: Skyview Temple - Defeat Boss
+  standard: Skyview Temple - Defeat Boss
+  pretty: Skyview Temple - Defeat Boss
+  cryptic:
+
+- name: Skyview Spring - Rupee on Spring Pillar
+  standard: Skyview Spring - Rupee on Spring Pillar
+  pretty: Skyview Spring - Rupee on Spring Pillar
+  cryptic:
+
+- name: Skyview Spring - Strike Crest
+  standard: Skyview Spring - Strike Crest
+  pretty: Skyview Spring - Strike Crest
+  cryptic:
+  goal_name: Ghirahim 1
+
+- name: Skyview Spring - Goddess Cube
+  standard: Skyview Spring - Goddess Cube
+  pretty: Skyview Spring - Goddess Cube
+  cryptic:
+
+- name: Earth Temple - Vent Chest
+  standard: Earth Temple - Vent Chest
+  pretty: Earth Temple - Vent Chest
+  cryptic:
+
+- name: Earth Temple - Rupee above Drawbridge
+  standard: Earth Temple - Rupee above Drawbridge
+  pretty: Earth Temple - Rupee above Drawbridge
+  cryptic:
+
+- name: Earth Temple - Chest behind Bombable Rock
+  standard: Earth Temple - Chest behind Bombable Rock
+  pretty: Earth Temple - Chest behind Bombable Rock
+  cryptic:
+
+- name: Earth Temple - Chest Left of Main Room Bridge
+  standard: Earth Temple - Chest Left of Main Room Bridge
+  pretty: Earth Temple - Chest Left of Main Room Bridge
+  cryptic:
+
+- name: Earth Temple - Chest in West Room
+  standard: Earth Temple - Chest in West Room
+  pretty: Earth Temple - Chest in West Room
+  cryptic: the <r<western wing in the Earth Temple>>
+
+- name: Earth Temple - Chest after Double Lizalfos Fight
+  standard: Earth Temple - Chest after Double Lizalfos Fight
+  pretty: Earth Temple - Chest after Double Lizalfos Fight
+  cryptic: a menacing <r<pair of Lizalfos>>
+
+- name: Earth Temple - Ledd's Gift
+  standard: Earth Temple - Ledd's Gift
+  pretty: Earth Temple - Ledd's Gift
+  cryptic:
+
+- name: Earth Temple - Rupee in Lava Tunnel
+  standard: Earth Temple - Rupee in Lava Tunnel
+  pretty: Earth Temple - Rupee in Lava Tunnel
+  cryptic: the <r<neck of a dragon>>
+
+- name: Earth Temple - Chest Guarded by Lizalfos
+  standard: Earth Temple - Chest Guarded by Lizalfos
+  pretty: Earth Temple - Chest Guarded by Lizalfos
+  cryptic:
+
+- name: Earth Temple - Chest before Boulder Chase
+  standard: Earth Temple - Chest before Boulder Chase
+  pretty: Earth Temple - Chest before Boulder Chase
+  cryptic:
+
+- name: Earth Temple - Defeat Boss
+  standard: Earth Temple - Defeat Boss
+  pretty: Earth Temple - Defeat Boss
+  cryptic:
+
+- name: Earth Spring - Strike Crest
+  standard: Earth Spring - Strike Crest
+  pretty: Earth Spring - Strike Crest
+  cryptic:
+  goal_name: Scaldera
+
+- name: Lanayru Mining Facility - Chest behind Bars
+  standard: Lanayru Mining Facility - Chest behind Bars
+  pretty: Lanayru Mining Facility - Chest behind Bars
+  cryptic:
+
+- name: Lanayru Mining Facility - First Chest in Hub Room
+  standard: Lanayru Mining Facility - First Chest in Hub Room
+  pretty: Lanayru Mining Facility - First Chest in Hub Room
+  cryptic:
+
+- name: Lanayru Mining Facility - Chest in First West Room
+  standard: Lanayru Mining Facility - Chest in First West Room
+  pretty: Lanayru Mining Facility - Chest in First West Room
+  cryptic:
+
+- name: Lanayru Mining Facility - Chest after Armos Fight
+  standard: Lanayru Mining Facility - Chest after Armos Fight
+  pretty: Lanayru Mining Facility - Chest after Armos Fight
+  cryptic:
+
+- name: Lanayru Mining Facility - Chest in Key Locked Room
+  standard: Lanayru Mining Facility - Chest in Key Locked Room
+  pretty: Lanayru Mining Facility - Chest in Key Locked Room
+  cryptic:
+
+- name: Lanayru Mining Facility - Hop across Boxes Raised Chest
+  standard: Lanayru Mining Facility - Hop across Boxes Raised Chest
+  pretty: Lanayru Mining Facility - Hop across Boxes Raised Chest
+  cryptic:
+
+- name: Lanayru Mining Facility - Hop across Boxes Lower Chest
+  standard: Lanayru Mining Facility - Hop across Boxes Lower Chest
+  pretty: Lanayru Mining Facility - Hop across Boxes Lower Chest
+  cryptic:
+
+- name: Lanayru Mining Facility - Chest behind First Crawlspace
+  standard: Lanayru Mining Facility - Chest behind First Crawlspace
+  pretty: Lanayru Mining Facility - Chest behind First Crawlspace
+  cryptic:
+
+- name: Lanayru Mining Facility - Chest in Spike Maze
+  standard: Lanayru Mining Facility - Chest in Spike Maze
+  pretty: Lanayru Mining Facility - Chest in Spike Maze
+  cryptic:
+
+- name: Lanayru Mining Facility - Chest after Double Armos Fight
+  standard: Lanayru Mining Facility - Chest after Double Armos Fight
+  pretty: Lanayru Mining Facility - Chest after Double Armos Fight
+  cryptic: deep inside <r<Lanayru Mining Facility, a pair of Armos>>
+
+- name: Lanayru Mining Facility - Shortcut Chest in Main Hub
+  standard: Lanayru Mining Facility - Shortcut Chest in Main Hub
+  pretty: Lanayru Mining Facility - Shortcut Chest in Main Hub
+  cryptic:
+
+- name: Lanayru Mining Facility - Defeat Boss
+  standard: Lanayru Mining Facility - Defeat Boss
+  pretty: Lanayru Mining Facility - Defeat Boss
+  cryptic:
+
+- name: Lanayru Mining Facility - Exit Hall of Ancient Robots
+  standard: Lanayru Mining Facility - Exit Hall of Ancient Robots
+  pretty: Lanayru Mining Facility - Exit Hall of Ancient Robots
+  cryptic:
+  goal_name: Moldarach
+
+- name: Ancient Cistern - Rupee in West Hand
+  standard: Ancient Cistern - Rupee in West Hand
+  pretty: Ancient Cistern - Rupee in West Hand
+  cryptic:
+
+- name: Ancient Cistern - Rupee in East Hand
+  standard: Ancient Cistern - Rupee in East Hand
+  pretty: Ancient Cistern - Rupee in East Hand
+  cryptic:
+
+- name: Ancient Cistern - First Rupee in East Part in Short Tunnel
+  standard: Ancient Cistern - First Rupee in East Part in Short Tunnel
+  pretty: Ancient Cistern - First Rupee in East Part in Short Tunnel
+  cryptic:
+
+- name: Ancient Cistern - Second Rupee in East Part in Short Tunnel
+  standard: Ancient Cistern - Second Rupee in East Part in Short Tunnel
+  pretty: Ancient Cistern - Second Rupee in East Part in Short Tunnel
+  cryptic:
+
+- name: Ancient Cistern - Third Rupee in East Part in Short Tunnel
+  standard: Ancient Cistern - Third Rupee in East Part in Short Tunnel
+  pretty: Ancient Cistern - Third Rupee in East Part in Short Tunnel
+  cryptic:
+
+- name: Ancient Cistern - Rupee in East Part in Cubby
+  standard: Ancient Cistern - Rupee in East Part in Cubby
+  pretty: Ancient Cistern - Rupee in East Part in Cubby
+  cryptic:
+
+- name: Ancient Cistern - Rupee in East Part in Main Tunnel
+  standard: Ancient Cistern - Rupee in East Part in Main Tunnel
+  pretty: Ancient Cistern - Rupee in East Part in Main Tunnel
+  cryptic:
+
+- name: Ancient Cistern - Chest in East Part
+  standard: Ancient Cistern - Chest in East Part
+  pretty: Ancient Cistern - Chest in East Part
+  cryptic: the <r<lone east chest in the Ancient Cistern>>
+
+- name: Ancient Cistern - Rupee under Lilypad
+  standard: Ancient Cistern - Rupee under Lilypad
+  pretty: Ancient Cistern - Rupee under Lilypad
+  cryptic:
+
+- name: Ancient Cistern - Chest after Whip Hooks
+  standard: Ancient Cistern - Chest after Whip Hooks
+  pretty: Ancient Cistern - Chest after Whip Hooks
+  cryptic:
+
+- name: Ancient Cistern - Chest near Vines
+  standard: Ancient Cistern - Chest near Vines
+  pretty: Ancient Cistern - Chest near Vines
+  cryptic:
+
+- name: Ancient Cistern - Chest behind the Waterfall
+  standard: Ancient Cistern - Chest behind the Waterfall
+  pretty: Ancient Cistern - Chest behind the Waterfall
+  cryptic:
+
+- name: Ancient Cistern - Bokoblin
+  standard: Ancient Cistern - Bokoblin
+  pretty: Ancient Cistern - Bokoblin
+  cryptic:
+
+- name: Ancient Cistern - Chest in Key Locked Room
+  standard: Ancient Cistern - Chest in Key Locked Room
+  pretty: Ancient Cistern - Chest in Key Locked Room
+  cryptic:
+
+- name: Ancient Cistern - Chest under Stone Statue
+  standard: Ancient Cistern - Chest under Stone Statue
+  pretty: Ancient Cistern - Chest under Stone Statue
+  cryptic:
+
+- name: Ancient Cistern - Defeat Boss
+  standard: Ancient Cistern - Defeat Boss
+  pretty: Ancient Cistern - Defeat Boss
+  cryptic:
+
+- name: Ancient Cistern - Farore's Flame
+  standard: Ancient Cistern - Farore's Flame
+  pretty: Ancient Cistern - Farore's Flame
+  cryptic:
+  goal_name: Koloktos
+
+- name: Sandship - Chest at the Stern
+  standard: Sandship - Chest at the Stern
+  pretty: Sandship - Chest at the Stern
+  cryptic:
+
+- name: Sandship - Chest before 4-Door Corridor
+  standard: Sandship - Chest before 4-Door Corridor
+  pretty: Sandship - Chest before 4-Door Corridor
+  cryptic:
+
+- name: Sandship - Chest behind Combination Lock
+  standard: Sandship - Chest behind Combination Lock
+  pretty: Sandship - Chest behind Combination Lock
+  cryptic:
+
+- name: Sandship - Treasure Room First Chest
+  standard: Sandship - Treasure Room First Chest
+  pretty: Sandship - Treasure Room First Chest
+  cryptic:
+
+- name: Sandship - Treasure Room Second Chest
+  standard: Sandship - Treasure Room Second Chest
+  pretty: Sandship - Treasure Room Second Chest
+  cryptic:
+
+- name: Sandship - Treasure Room Third Chest
+  standard: Sandship - Treasure Room Third Chest
+  pretty: Sandship - Treasure Room Third Chest
+  cryptic:
+
+- name: Sandship - Treasure Room Fourth Chest
+  standard: Sandship - Treasure Room Fourth Chest
+  pretty: Sandship - Treasure Room Fourth Chest
+  cryptic:
+
+- name: Sandship - Treasure Room Fifth Chest
+  standard: Sandship - Treasure Room Fifth Chest
+  pretty: Sandship - Treasure Room Fifth Chest
+  cryptic:
+
+- name: Sandship - Robot in Brig's Reward
+  standard: Sandship - Robot in Brig's Reward
+  pretty: Sandship - Robot in Brig's Reward
+  cryptic: the <r<gratitude of a freed crew>>
+
+- name: Sandship - Chest after Scervo Fight
+  standard: Sandship - Chest after Scervo Fight
+  pretty: Sandship - Chest after Scervo Fight
+  cryptic: a <r<robot upon the Sandship's bow>>
+
+- name: Sandship - Chest in Captain's Cabin
+  standard: Sandship - Chest in Captain's Cabin
+  pretty: Sandship - Chest in Captain's Cabin
+  cryptic: the <r<secret treasure of the Sandship's captain>>
+
+- name: Sandship - Defeat Boss
+  standard: Sandship - Defeat Boss
+  pretty: Sandship - Defeat Boss
+  cryptic: the <r<heart of an ancient sea creature>>
+
+- name: Sandship - Nayru's Flame
+  standard: Sandship - Nayru's Flame
+  pretty: Sandship - Nayru's Flame
+  cryptic: a <b<wise flame>>
+  goal_name: Tentalus
+
+- name: Fire Sanctuary - Chest in First Room
+  standard: Fire Sanctuary - Chest in First Room
+  pretty: Fire Sanctuary - Chest in First Room
+  cryptic:
+
+- name: Fire Sanctuary - Chest in Second Room
+  standard: Fire Sanctuary - Chest in Second Room
+  pretty: Fire Sanctuary - Chest in Second Room
+  cryptic:
+
+- name: Fire Sanctuary - Chest on Balcony
+  standard: Fire Sanctuary - Chest on Balcony
+  pretty: Fire Sanctuary - Chest on Balcony
+  cryptic:
+
+- name: Fire Sanctuary - Chest near First Trapped Mogma
+  standard: Fire Sanctuary - Chest near First Trapped Mogma
+  pretty: Fire Sanctuary - Chest near First Trapped Mogma
+  cryptic:
+
+- name: Fire Sanctuary - First Chest in Water Fruit Room
+  standard: Fire Sanctuary - First Chest in Water Fruit Room
+  pretty: Fire Sanctuary - First Chest in Water Fruit Room
+  cryptic:
+
+- name: Fire Sanctuary - Second Chest in Water Fruit Room
+  standard: Fire Sanctuary - Second Chest in Water Fruit Room
+  pretty: Fire Sanctuary - Second Chest in Water Fruit Room
+  cryptic:
+
+- name: Fire Sanctuary - Rescue First Trapped Mogma Chest
+  standard: Fire Sanctuary - Rescue First Trapped Mogma Chest
+  pretty: Fire Sanctuary - Rescue First Trapped Mogma Chest
+  cryptic: saving a <r<mogma>> from a <r<fiery fate>>
+
+- name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
+  standard: Fire Sanctuary - Rescue Second Trapped Mogma Chest
+  pretty: Fire Sanctuary - Rescue Second Trapped Mogma Chest
+  cryptic:
+
+- name: Fire Sanctuary - Chest after Bombable Wall
+  standard: Fire Sanctuary - Chest after Bombable Wall
+  pretty: Fire Sanctuary - Chest after Bombable Wall
+  cryptic: a <r<false wall in the Fire Sanctuary>>
+
+- name: Fire Sanctuary - Plats' Chest
+  standard: Fire Sanctuary - Plats' Chest
+  pretty: Fire Sanctuary - Plats' Chest
+  cryptic:
+
+- name: Fire Sanctuary - Chest in Staircase Room
+  standard: Fire Sanctuary - Chest in Staircase Room
+  pretty: Fire Sanctuary - Chest in Staircase Room
+  cryptic: exploring a <r<broken staircase>>
+
+- name: Fire Sanctuary - Chest after Winged Torches
+  standard: Fire Sanctuary - Chest after Winged Torches
+  pretty: Fire Sanctuary - Chest after Winged Torches
+  cryptic:
+
+- name: Fire Sanctuary - Defeat Boss
+  standard: Fire Sanctuary - Defeat Boss
+  pretty: Fire Sanctuary - Defeat Boss
+  cryptic:
+
+- name: Fire Sanctuary - Din's Flame
+  standard: Fire Sanctuary - Din's Flame
+  pretty: Fire Sanctuary - Din's Flame
+  cryptic:
+  goal_name: Ghirahim 2
+
+- name: Sky Keep - First Chest
+  standard: Sky Keep - First Chest
+  pretty: Sky Keep - First Chest
+  cryptic:
+
+- name: Sky Keep - Chest after Dreadfuse
+  standard: Sky Keep - Chest after Dreadfuse
+  pretty: Sky Keep - Chest after Dreadfuse
+  cryptic:
+
+- name: Sky Keep - Rupee in Fire Sanctuary Room in Alcove
+  standard: Sky Keep - Rupee in Fire Sanctuary Room in Alcove
+  pretty: Sky Keep - Rupee in Fire Sanctuary Room in Alcove
+  cryptic:
+
+- name: Sky Keep - Sacred Power of Din
+  standard: Sky Keep - Sacred Power of Din
+  pretty: Sky Keep - Sacred Power of Din
+  cryptic:
+
+- name: Sky Keep - Sacred Power of Nayru
+  standard: Sky Keep - Sacred Power of Nayru
+  pretty: Sky Keep - Sacred Power of Nayru
+  cryptic:
+
+- name: Sky Keep - Sacred Power of Farore
+  standard: Sky Keep - Sacred Power of Farore
+  pretty: Sky Keep - Sacred Power of Farore
+  cryptic:
+
+- name: Skyloft Silent Realm - Collect all Tears Reward
+  standard: Skyloft Silent Realm - Collect all Tears Reward
+  pretty: Skyloft Silent Realm - Collect all Tears Reward
+  cryptic: the <r<goddess's final trial>>
+
+- name: Faron Silent Realm - Collect all Tears Reward
+  standard: Faron Silent Realm - Collect all Tears Reward
+  pretty: Faron Silent Realm - Collect all Tears Reward
+  cryptic: a <r<trial of courage>>
+
+- name: Lanayru Silent Realm - Collect all Tears Reward
+  standard: Lanayru Silent Realm - Collect all Tears Reward
+  pretty: Lanayru Silent Realm - Collect all Tears Reward
+  cryptic: a <r<trial of wisdom>>
+
+- name: Eldin Silent Realm - Collect all Tears Reward
+  standard: Eldin Silent Realm - Collect all Tears Reward
+  pretty: Eldin Silent Realm - Collect all Tears Reward
+  cryptic: a <r<trial of power>>
+
+
+# Hint Areas
+
+- name: Knight Academy
+  standard: Knight Academy
+  pretty: the <Knight Academy>
+  cryptic: 
+
+- name: Upper Skyloft
+  standard: Upper Skyloft
+  pretty: Upper Skyloft
+  cryptic: 
+
+- name: Central Skyloft
+  standard: Central Skyloft
+  pretty: Central Skyloft
+  cryptic:
+
+- name: Skyloft Village
+  standard: Skyloft Village
+  pretty: the <Skyloft Village>
+  cryptic:
+
+- name: Batreaux's House
+  standard: Batreaux's House
+  pretty: Batreaux's House
+  cryptic:
+
+- name: Beedle's Shop
+  standard: Beedle's Shop
+  pretty: Beedle's Shop
+  cryptic:
+
+- name: Sky
+  standard: Sky
+  pretty: the <Sky>
+  cryptic:
+
+- name: Thunderhead
+  standard: Thunderhead
+  pretty: the <Thunderhead>
+  cryptic:
+
+- name: Sealed Grounds
+  standard: Sealed Grounds
+  pretty: the <Sealed Grounds>
+  cryptic:
+
+- name: Hylia's Temple
+  standard: Hylia's Temple
+  pretty: Hylia's Temple
+  cryptic:
+
+- name: Faron Woods
+  standard: Faron Woods
+  pretty: Faron Woods
+  cryptic:
+
+- name: Great Tree
+  standard: Great Tree
+  pretty: the <Great Tree>
+  cryptic:
+
+- name: Flooded Faron Woods
+  standard: Flooded Faron Woods
+  pretty: Flooded Faron Woods
+  cryptic:
+
+- name: Lake Floria
+  standard: Lake Floria
+  pretty: Lake Floria
+  cryptic:
+
+- name: Eldin Volcano
+  standard: Eldin Volcano
+  pretty: Eldin Volcano
+  cryptic:
+
+- name: Mogma Turf
+  standard: Mogma Turf
+  pretty: the <Mogma Turf>
+  cryptic:
+
+- name: Volcano Summit
+  standard: Volcano Summit
+  pretty: Volcano Summit
+  cryptic:
+
+- name: Bokoblin Base 
+  standard: Bokoblin Base 
+  pretty: Bokoblin Base
+  cryptic:
+
+- name: Lanayru Mine
+  standard: Lanayru Mine
+  pretty: the <Lanayru Mine>
+  cryptic:
+
+- name: Lanayru Desert
+  standard: Lanayru Desert
+  pretty: Lanayru Desert
+  cryptic:
+
+- name: Lanayru Caves
+  standard: Lanayru Caves
+  pretty: the <Lanayru Caves>
+  cryptic:
+
+- name: Lanayru Sand Sea
+  standard: Lanayru Sand Sea
+  pretty: the <Lanayru Sand Sea>
+  cryptic:
+
+- name: Lanayru Gorge
+  standard: Lanayru Gorge
+  pretty: Lanayru Gorge
+  cryptic:
+
+- name: Skyview Temple
+  standard: Skyview Temple
+  pretty: Skyview Temple
+  cryptic:
+
+- name: Earth Temple
+  standard: Earth Temple
+  pretty: the <Earth Temple>
+  cryptic:
+
+- name: Lanayru Mining Facility
+  standard: Lanayru Mining Facility
+  pretty: the <Lanayru Mining Facility>
+  cryptic:
+
+- name: Ancient Cistern
+  standard: Ancient Cistern
+  pretty: the <Ancient Cistern>
+  cryptic:
+
+- name: Sandship
+  standard: Sandship
+  pretty: the <Sandship>
+  cryptic:
+
+- name: Fire Sanctuary
+  standard: Fire Sanctuary
+  pretty: the <Fire Sanctuary>
+  cryptic:
+
+- name: Sky Keep
+  standard: Sky Keep
+  pretty: Sky Keep
+  cryptic:
+
+- name: Faron Silent Realm
+  standard: Faron Silent Realm
+  pretty: the <Faron Silent Realm>
+  cryptic:
+
+- name: Eldin Silent Realm
+  standard: Eldin Silent Realm
+  pretty: the <Eldin Silent Realm>
+  cryptic:
+
+- name: Lanayru Silent Realm
+  standard: Lanayru Silent Realm
+  pretty: the <Lanayru Silent Realm>
+  cryptic:
+
+- name: Skyloft Silent Realm
+  standard: Skyloft Silent Realm
+  pretty: the <Skyloft Silent Realm>
+  cryptic:
+
+- name: Trial Direct Nothing
+  standard: The realm beyond holds <r<nothing>>.
+
+- name: Trial Direct One
+  standard: The realm beyond holds |item|.
+
+- name: Trial Direct Two Plus
+  standard: The realm beyond holds |item| and <r<%d more items>>.
+
+- name: Trial Useless
+  standard: You probably don't need to use it...
+
+- name: Trial Useful
+  standard: It looks like it can unlock some useful items...
+
+- name: Trial Required
+  standard: Your spirit will grow by entering the realm beyond this song.
+
+- name: Farore's Courage Inventory
+  standard: This song opens the trial located in <b+<Faron Woods>>.
+
+- name: Din's Power Inventory
+  standard: This song opens the trial located on <b+<Eldin Volcano>>.
+
+- name: Nayru's Wisdom Inventory
+  standard: This song opens the trial located in <b+<Lanayru Desert>>.
+
+- name: Song of the Hero Inventory
+  standard: The song that leads you to the final trial on <b+<Skyloft>>.
+
+- name: Impa SoT Text
+  standard: Do not fear for <b<Zelda>>. I will watch over her here. Go now to |regions|. The <r<item you need to fulfill your destiny>> is there.
+  
