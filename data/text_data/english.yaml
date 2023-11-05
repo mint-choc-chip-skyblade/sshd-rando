@@ -2805,6 +2805,11 @@
   pretty: the <Lanayru Caves>
   cryptic:
 
+- name: Ancient Harbour
+  standard: Ancient Harbour
+  pretty: the <Ancient Harbour>
+  cryptic: 
+
 - name: Lanayru Sand Sea
   standard: Lanayru Sand Sea
   pretty: the <Lanayru Sand Sea>
@@ -2902,4 +2907,3 @@
 
 - name: Impa SoT Text
   standard: Do not fear for <b<Zelda>>. I will watch over her here. Go now to |regions|. The <r<item you need to fulfill your destiny>> is there.
-  
