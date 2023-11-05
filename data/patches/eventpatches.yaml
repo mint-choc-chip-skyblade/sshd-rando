@@ -245,7 +245,7 @@
     type: textpatch
     index: 243
     text: "The <y<Song of the Hero>> is now complete!"
-  - name: Single Gratitude crystal counter
+  - name: Five Gratitude crystal counter
     type: textpatch
     index: 45 # \x0e\x02\x03\x06\x00\x00\xcd is for showing numeric arg0
     text: "You got <r<five>> <y<Gratitude Crystals>>!\nThat is <r<<numeric arg1> >>in Total!"

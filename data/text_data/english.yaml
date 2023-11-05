@@ -1,3 +1,226 @@
+- name: Scrapper Item Get Text
+  standard: "You found Gondo's robot, <y<Scrapper>>!
+            \n\n\n\nBe sure to take care of him.\n...even if he's a little mean."
+
+- name: Some Tadtones Collected text
+  standard: "You got a group of <y<Tadtones>>!\nOnly <r<<numeric arg0> >> left to find!"
+
+- name: All Tadtones Collected text
+  standard: "You got the last group of <y<Tadtones>>!\nYou found every last one of them!
+          \n\n\nHurry to <b<Flooded Faron Woods>> and talk\nto the <r<Water Dragon>> to claim your\nreward!"
+
+- name: Spiral Charge Text
+  standard: "You learned the <y<Spiral Charge>>!"
+
+- name: Goddess Longsword Text
+  standard: "You got the <y<Goddess Longsword>>!\nThe flames of Farore have improved your\nsword, making it longer and sharp enough\nto do twice as much damage!"
+
+- name: Goddess White Sword Text
+  standard: "You got the <y<Goddess White Sword>>!\nThe flames of Nayru have transformed\nyour blade, expanding Fi's powers.\n\nShe can now help you use your <r<dowsing>>\nability to search for more objects!"
+
+- name: Master Sword Text
+  standard: "You got the <y<Master Sword>>!\nThe flames of Din have imbued your\nblade with a sacred white light that\ndemons revile."
+
+- name: True Master Sword Text
+  standard: "You got the <y<True Master Sword>>!\nThe goddess has blessed your blade, and\nthe Master Sword has at last achieved its\nultimate form!"
+
+- name: Harp Text
+  standard: "You got the <y<Goddess's Harp>>!\nBut there's no time to admire it!"
+
+- name: Emerald Tablet text
+  standard: "You got the <y<Emerald Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
+
+- name: Ruby Tablet text
+  standard: "You got the <y<Ruby Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
+
+- name: Amber Tablet text
+  standard: "You got the <y<Amber Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
+
+- name: Farore's Courage Text
+  standard: "You learned <y<Farore's Courage>>!"
+
+- name: Nayru's Wisdom Text
+  standard: "You learned <y<Nayru's Wisdom>>!"
+
+- name: Din's Power Text
+  standard: "You learned <y<Din's Power>>!"
+
+- name: Faron SotH text
+  standard: "You learned the <y<Water Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
+
+- name: Eldin SotH text
+  standard: "You learned the <y<Fire Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
+
+- name: Lanayru SotH text
+  standard: "You learned the <y<Thunder Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
+
+- name: Full SotH text
+  standard: "The <y<Song of the Hero>> is now complete!"
+
+- name: Five Gratitude crystal counter
+  standard: "You got <r<five>> <y<Gratitude Crystals>>!\nThat is <r<<numeric arg1> >>in Total!"
+
+- name: Single Gratitude crystal counter
+  standard: "You got <r<one>> <y<Gratitude Crystal>>!\nThat is <r<<numeric arg1> >>in Total!"
+
+- name: Skyview Key Text
+  standard: You got a <g<Skyview Temple>> Small Key!"
+
+  # This is an intentional duplicate of the above entry
+- name: Item 200 Text
+  standard: You got a <g<Skyview Temple>> Small Key!"
+
+- name: Item 201 Text
+  standard: You got a <y<Lanayru Mining Facility>> Small\nKey!"
+
+- name: Item 202 Text
+  standard: You got a <b<Ancient Cistern>> Small Key!"
+
+- name: Item 203 Text
+  standard: You got a <r<Fire Sanctuary>> Small Key!"
+
+- name: Item 204 Text
+  standard: You got a <y+<Sandship>> Small Key!"
+
+- name: Item 205 Text
+  standard: You got a <s<Sky Keep>> Small Key!"
+
+- name: Item 206 Text
+  standard: You got a <ye<Lanayru Caves>> Small Key!"
+
+- name: Item 207 Text
+  standard: You got the <g<Skyview Temple>> Map!"
+
+- name: Item 208 Text
+  standard: You got the <r+<Earth Temple>> Map!"
+
+- name: Item 209 Text
+  standard: You got the <y<Lanayru Mining Facility>> Map!"
+
+- name: Item 210 Text
+  standard: You got the <b<Ancient Cistern>> Map!"
+
+- name: Item 211 Text
+  standard: You got the <r<Fire Sanctuary>> Map!"
+
+- name: Item 212 Text
+  standard: You got the <y+<Sandship>> Map!"
+
+- name: Item 213 Text
+  standard: You got the <s<Sky Keep>> Map!"
+
+- name: Can't buy Pouch text
+  standard: "You need an <y<Adventure Pouch>> to buy\nthis!"
+
+- name: Potion Lady Text Patch
+  standard: "Just so you know, I can't sell you a \npotion if you don't have an Empty \nBottle to pour it into!\n\n\x0E\x01\x09\x04\x09\x90For some reason, I like you, though, so\nI'll give you a spare item I've\nbeen keeping here in the stall!\nOh, it's nothing. It's my little gift."
+
+- name: Does not have slingshot
+  standard: "\x0E\x01\x09\x04\x00\x01By the way, <heroname>, I have been \nlooking for new sources of research\nabout <b<plant life>>.\n\nIf you ever find something, please meet\nme <r<in the Knight Academy>>!"
+
+- name: Does have slingshot
+  standard: "\x0E\x01\x09\x04\x00\x01Oh, <heroname>, something tells me you\nmight know some <b<plant life>> I could\nresearch! Please meet me \n<r<in the Knight Academy>>!"
+
+- name: No Sword Text
+  standard: "You don't have a Sword,\nso I can't let you play!"
+
+- name: Patch Gondo Options Text After Check
+  standard: "Hey, kid! Anything to upgrade today?\n[1]Upgrade gear.[2]Repair shield.[3-]No, thanks."
+
+- name: Gondo Options Text
+  standard: "Heyyyyy! Welcome to the Scrap Shop!\nI can use the stuff you find to upgrade\nyour gear and make it even stronger!
+            \n\nAnd if your shield takes a beating, no\nworries. I can fix that too.\nSo what'll it be?\n[1]Upgrade gear.[2]Fix shield.[3]<r<Repair Junk?>>[4-]Never mind."
+
+- name: Patch Gondo Repair Scrapper Text 1
+  standard: "Oh that?\nWell, my old Gramps did tell me this:
+            \n\n\n\"You can get this working again with\nthe extract from an <y<Ancient Flower>>.\"\nBut I've never even heard of, much less\nseen, any such thing!\n[1]Take mine![2-]Me neither."
+
+- name: Patch Gondo Repair Scrapper Text 2
+  standard: "So this is an <y<Ancient Flower>>?!\nI can feel some slick, oily stuff coming\nout of its stem! Great, with this we can\nfix my old Gramps' stuff!\n...Wait right here! I'll have it up and\nrunning in no time!"
+
+- name: Patch post Gondo Repair Text
+  standard: "Well, here you are. All fixed up!
+            \n\n\n\nI couldn't have done it without your\nhelp. So, here, you have it...\nwhat ever this is..."
+
+- name: Rerandomize Treasure Question
+  standard: "Want to sell something different?\n[1]Yes[2-]No"
+
+- name: Fix Soup textboxes
+  standard: "What's the matter? You look like\nyou've got something mighty\nserious on your mind.\n[1]Soup[2-]No Soup"
+
+- name: New text Option
+  standard: "Hey, you look like you have a Questions?\n[1]Levias[2-]Other Things"
+
+- name: New Kina Text Option
+  standard: "Hey, kid, what do you need from me?\n[1]Plowing the fields?[2]Carrying pumpkins![3-]Nothing."
+
+- name: Statue Lower Question
+  standard: "Do you want to reset the statue?\n[1]Yes[2-]No"
+
+- name: Already Completed Tadtones Text
+  standard: "You have already completed my final\ntest. There is nothing more I can do\nfor you."
+
+- name: Flooded Faron Reentry Text
+  standard: "Would you like me to <r<flood the forest>>\nagain?\n[1]Yes[2-]No"
+
+- name: Flooded Faron Entry Question
+  standard: "Here to accept my final test? I will\n<r<flood the forest>> if you choose to\naccept.\n[1]Yes[2-]No"
+
+- name: Declined Flooded Faron Offer Text
+  standard: "Very well. Talk to me again if you\nchange your mind."
+
+- name: Patch Yerbal intro text
+  standard: "They used to call me <b<Yerbal>>. Now I'm\njust the old <b<Kikwi hermit>>."
+
+- name: Yerbal open floria gates text
+  standard: "However, <b<Faron>>, the Water Dragon,\nlet me know a secret of hers.\nKwwwwwwrk...
+            \n\nSee, she gave me a <r<spare key>> to the\nLake, kwwwrk!
+            \n\n\nDon't tell her I'm letting you in\nthough. I've heard stories of folks\nwho caught her in a fussy mood.
+            \n\nThey ended up as midmorning snacks,\nkwwwwrk!"
+
+- name: Patch Yerbal floria gates intro
+  standard: "See those gates over there? They\nlead to <b<Lake Floria>>. However, the\n<r<Water Dragon>> has sealed them shut to\nall those she judged unworthy...
+            \nBut don't worry, kwwwwrk. I'll let you\nin on the trick to opening the gate."
+
+- name: Flooded Faron Exit Question
+  standard: "Leaving so soon? I can drain the forest\nif you wish to return later.\n[1]Yes[2-]No"
+
+- name: Continue With Tadtones Text
+  standard: "Very well. Talk to me again if you\nchange your mind."
+
+- name: No Mitts Text
+  standard: "You don't have Digging Mitts,\nso I can't let you play!"
+
+- name: Boko Base Exit Question
+  standard: "Want to leave <b<Bokoblin Base>>?\n[1]Yes[2-]No"
+
+- name: Boko Base Entry Question
+  standard: "Want to enter <b<Bokoblin Base>>?\n[1]Yes[2-]No"
+
+- name: Declined Boko Base Offer Text
+  standard: "Very well. Talk to me again if you\nchange your mind."
+
+- name: Post Plats' Gift text
+  standard: "See ya around, pal!"
+
+- name: Fi text text to leave dungeon
+  standard: "You can't beat this\ndungeon at the present\ntime, I would suggest\ncoming back later"
+
+- name: Thunderdragon Thank you text
+  standard: "Thank you for saving me"
+
+- name: botg context text
+  standard: "I see you have acquired the <y<harp>>.\nWell done. Let me teach you a <b<song>>,\nit will be useful for your adventure."
+
+- name: Patch Fi text before Demise
+  standard: "Master <heroname>, I have\nimportant information for you.\n\n\nMy analysis indicates a 100% chance\nthat entering this portal will\n<r<conclude>> your journey.\n\nAre you ready to proceed?\n[1]I'm ready![2-]Not yet..."
+
+- name: Patch Fi text before Demise 2
+  standard: "Understood, Master <heroname>.\nThank you for taking me on this\njourney with you."
+
+- name: Impa Complete Triforce text
+  standard: "Though your wish has been granted by\nthe <y+<Triforce>>, <b<Ghirahim>> escaped with\nZelda through the <r<great doors\nat the front of the temple>>.\nYou may yet catch him before it's too\nlate. Hurry, <heroname>!"
+
 - name: Path Hint
   standard: They say that |regions| |is/are| on the path to |goal_name|.
 
@@ -2907,3 +3130,6 @@
 
 - name: Impa SoT Text
   standard: Do not fear for <b<Zelda>>. I will watch over her here. Go now to |regions|. The <r<item you need to fulfill your destiny>> is there.
+
+- name: No Fi Hints Text
+  standard: "Master, I unfortunately have <r<no hints>> for you."
