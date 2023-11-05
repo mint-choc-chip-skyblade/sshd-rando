@@ -1,6 +1,9 @@
 from sslib.msb import CONTROL_REPLACEMENTS
 from typing import Union
 import copy
+import logging
+import os
+import yaml
 
 
 class Text:
@@ -32,8 +35,15 @@ class Text:
                 new_text.text[lang] += text
             else:
                 new_text.text[lang] += text.text[lang]
-
         return new_text
+    
+    def __iadd__(self, text: Union[str, "Text"]) -> "Text":
+        for lang in Text.SUPPORTED_LANGUAGES:
+            if type(text) == str:
+                self.text[lang] += text
+            else:
+                self.text[lang] += text.text[lang]
+        return self
 
     def get(self, lang: str) -> str:
         if lang not in Text.SUPPORTED_LANGUAGES:
@@ -81,6 +91,55 @@ class Text:
             new_text.text[lang] = text
 
         return new_text
+    
+    def break_lines(self) -> None:
+        for lang in Text.SUPPORTED_LANGUAGES:
+            self.text[lang] = break_lines(self.text[lang])
+
+# text table keyed by english name and type
+text_table: dict[str, dict[str, Text]] = {}
+
+def load_text_data() -> None:
+    print("Loading text data")
+    directory = "data/text_data"
+
+    for language in Text.SUPPORTED_LANGUAGES:
+        filename = f"{language}.yaml"
+        filepath = os.path.join(directory, filename)
+
+        with open(filepath, "r") as text_data_file:
+            text_data = yaml.safe_load(text_data_file)
+            for element in text_data:
+                name = element["name"]
+                if name not in text_table:
+                    text_table[name] = {}
+
+                for field, text in element.items():
+                    if field == "name":
+                        continue
+                    if field not in text_table[name]:
+                        text_table[name][field] = Text()
+                    # Insert the text into the appropriate Text objects
+                    # language
+                    text_table[name][field].text[language] = (
+                        text if text is not None else ""
+                    )
+
+
+def get_text_data(key: str, type_: str = "standard") -> Text:
+    if key not in text_table:
+        raise RuntimeError(f'Unknown hint data key "{key}"')
+    elif type_ not in text_table[key]:
+        raise RuntimeError(f'Unknown hint data type "{type_}"')
+    else:
+        return text_table[key][type_]
+
+
+def add_text_data(key: str, text: Text, type_: str = "standard") -> None:
+    if key in text_table:
+        raise RuntimeError(f'Data for "{key}" already exists in text table')
+    text_table[key] = {}
+    text_table[key][type_] = text
 
 
 def make_text_listing(texts: list[Text]) -> Text:
@@ -103,18 +162,21 @@ def make_text_listing(texts: list[Text]) -> Text:
     return listing_text
 
 
-def break_and_make_multiple_textboxes(texts):
-    return make_mutliple_textboxes((break_lines(text) for text in texts))
-
-
-def make_mutliple_textboxes(texts) -> str:
-    final_text = ""
+def break_and_make_multiple_textboxes(texts: list[Text]) -> Text:
     for text in texts:
-        text = text.rstrip("\n")
+        text.break_lines()
+    return make_mutliple_textboxes(texts)
+
+
+def make_mutliple_textboxes(texts: list[Text]) -> Text:
+    final_text = Text()
+    for text in texts:
+        for lang in Text.SUPPORTED_LANGUAGES:
+            text.text[lang] = text.text[lang].rstrip("\n")
+            lines = text.text[lang].count("\n") + 1
+            needed_linebreaks = -lines % 4 + 1
+            text.text[lang] += "\n" * needed_linebreaks
         final_text += text
-        lines = text.count("\n") + 1
-        needed_linebreaks = -lines % 4 + 1
-        final_text += "\n" * needed_linebreaks
     return final_text
 
 
