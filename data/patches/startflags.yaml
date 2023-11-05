@@ -82,13 +82,13 @@ Sceneflags:
     - 30 # Watched Enter Skyview Cutscene
     - 51 # Fi text before talking to Yerbal
     - 52 # Fi text after opening floria gate
-    - 82 # Reveal Gossip Stone in Deep Woods
+    - 66 # Reveal Gossip Stone in Deep Woods
     - open_lake_floria == open:
       - 49 # Cutscene of Lake Floria Gates opening
       - 50 # Open Lake Floria Gates
 
   Lake Floria: # Scene Index 2
-    - 83 # Reveal Lake Floria Gossip Stone
+    - 67 # Reveal Lake Floria Gossip Stone
 
   # Flooded Faron Woods: # Scene Index 3
 
@@ -96,6 +96,8 @@ Sceneflags:
     - 2  # Skip first Digging Mitts mogma text
     - 14 # Reveal Gossip Stone near Earth Temple Entrance
     - 15 # Reveal Gossip Stone in Thrill Digger Cave
+    - 52 # Reveal Gossip Stone in lower Eldin Cave
+    - 53 # Reveal Gossip Stone in upper Eldin Cave
     - 16 # Watched first time landing Cutscene
     - 58 # Watched Digging Mitts mogma Cutscene
 
@@ -135,7 +137,7 @@ Sceneflags:
       - 102 # Water node active
 
   Lanayru Sand Sea: # Scene Index 8
-    - 85   # Reveal Shipyard Gossip Stone
+    - 95   # Reveal Shipyard Gossip Stone
 
   Lanayru Gorge: # Scene Index 9 (Gorge & Caves)
     - 10   # Minecart at end of Track
@@ -217,10 +219,10 @@ Sceneflags:
       - 63 # Unlocked key locked door
 
   The Sky: # Scene Index 21
-   - 19 # Revealed Gossip Stone in Thunderhead
-   - 20 # Revealed Gossip Stone in Volcanic Island
-   - 21 # Revealed Gossip Stone at Lumpy Pumpkin
-   - 22 # Revealed Gossip Stone on Bamboo Island
+   - 43 # Revealed Gossip Stone in Thunderhead
+   - 44 # Revealed Gossip Stone in Volcanic Island
+   - 45 # Revealed Gossip Stone at Lumpy Pumpkin
+   - 46 # Revealed Gossip Stone on Bamboo Island
 
   # Faron Silent Realm: # Scene Index 22
 
