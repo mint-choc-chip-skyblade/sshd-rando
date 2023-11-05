@@ -1,4 +1,4 @@
-from .text import Text
+from util.text import Text
 
 
 class Hint:

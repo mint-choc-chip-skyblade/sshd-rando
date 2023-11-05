@@ -57,44 +57,40 @@ def determine_check_patches(
 def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
     print("Creating Dungeon Item Patches")
 
-    TEXT_START_SINGLE = "You got the"
-    TEXT_START_PLURAL = "You got a"
-    DUNGEON_ITEMID_TO_TEXT = {
-        200: f"{TEXT_START_PLURAL} <g<Skyview Temple>> Small Key!",
-        201: f"{TEXT_START_SINGLE} <y<Lanayru Mining Facility>> Small\nKey!",
-        202: f"{TEXT_START_PLURAL} <b<Ancient Cistern>> Small Key!",
-        203: f"{TEXT_START_PLURAL} <r<Fire Sanctuary>> Small Key!",
-        204: f"{TEXT_START_PLURAL} <y+<Sandship>> Small Key!",
-        205: f"{TEXT_START_PLURAL} <s<Sky Keep>> Small Key!",
-        206: f"{TEXT_START_SINGLE} <ye<Lanayru Caves>> Small Key!",
-        207: f"{TEXT_START_SINGLE} <g<Skyview Temple>> Map!",
-        208: f"{TEXT_START_SINGLE} <r+<Earth Temple>> Map!",
-        209: f"{TEXT_START_SINGLE} <y<Lanayru Mining Facility>> Map!",
-        210: f"{TEXT_START_SINGLE} <b<Ancient Cistern>> Map!",
-        211: f"{TEXT_START_SINGLE} <r<Fire Sanctuary>> Map!",
-        212: f"{TEXT_START_SINGLE} <y+<Sandship>> Map!",
-        213: f"{TEXT_START_SINGLE} <s<Sky Keep>> Map!",
-    }
+    DUNGEON_ITEMIDS= [
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+    ]
 
     # Patch the pre-existing entry for the Skyview Small Key (003_200).
     skyview_small_key_text_patch = {
         "name": f"Skyview Key Text",
         "type": "textpatch",
         "index": 251,
-        "text": DUNGEON_ITEMID_TO_TEXT[200],
     }
 
     event_patch_handler.append_to_event_patches(
         "003-ItemGet", skyview_small_key_text_patch
     )
 
-    for itemid in DUNGEON_ITEMID_TO_TEXT:
+    for itemid in DUNGEON_ITEMIDS:
         textadd_patch = {
             "name": f"Item {itemid} Text",
             "type": "textadd",
             "unk1": 5,
             "unk2": 1,
-            "text": DUNGEON_ITEMID_TO_TEXT[itemid],
         }
 
         flowadd_patch = {

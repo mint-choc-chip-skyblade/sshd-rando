@@ -6,7 +6,7 @@ from .area import *
 from .requirements import *
 from .item_pool import *
 from .dungeon import *
-from .text import *
+from util.text import *
 
 from collections import Counter, OrderedDict
 from typing import TYPE_CHECKING
@@ -29,9 +29,6 @@ class WrongInfoError(RuntimeError):
 class World:
     event_id_counter: int = 0
     area_id_counter: int = 0
-
-    # hint table keyed by english name, type, and language
-    text_table: dict[str, dict[str, Text]] = {}
 
     def __init__(self, id_: int) -> None:
         self.id = id_
@@ -84,11 +81,7 @@ class World:
         self.build_location_table()
         self.load_logic_macros()
         self.load_world_graph()
-
-        # Load text data once for all worlds
-        if len(World.text_table) == 0:
-            self.load_text_data()
-
+        self.verify_hint_data()
         self.place_hardcoded_items()
         self.build_item_pools()
 
@@ -342,42 +335,17 @@ class World:
             for exit_ in area.exits:
                 exit_.connected_area.entrances.append(exit_)
 
-    def load_text_data(self) -> None:
-        logging.getLogger("").debug(f"Loading text data")
-        directory = "data/text_data"
-
-        for language in Text.SUPPORTED_LANGUAGES:
-            filename = f"{language}.yaml"
-            filepath = os.path.join(directory, filename)
-
-            with open(filepath, "r") as text_data_file:
-                text_data = yaml.safe_load(text_data_file)
-                for element in text_data:
-                    name = element["name"]
-                    if name not in World.text_table:
-                        World.text_table[name] = {}
-
-                    for field, text in element.items():
-                        if field == "name":
-                            continue
-                        if field not in World.text_table[name]:
-                            World.text_table[name][field] = Text()
-                        # Insert the text into the appropriate Text objects
-                        # language
-                        World.text_table[name][field].text[language] = (
-                            text if text is not None else ""
-                        )
-
+    def verify_hint_data(self) -> None:
         # Verify that every item, location, and hint region has text data
         for item in self.item_table.values():
-            if item.name not in World.text_table:
+            if get_text_data(item.name) is None:
                 raise MissingInfoError(f'"{item}" has no associated hint data')
         for location in self.location_table.values():
-            if location.name not in World.text_table:
+            if get_text_data(location.name) is None:
                 raise MissingInfoError(f'"{location}" has no associated hint data')
         for area in self.areas.values():
             for region in area.hint_regions:
-                if region not in World.text_table and region != "None":
+                if region != "None" and get_text_data(region) is None:
                     raise MissingInfoError(f'"{region}" has no associated hint data')
 
 
@@ -624,6 +592,11 @@ class World:
             if "Hint Location" not in location.types
         ]
 
+    def get_gossip_stones(self) -> list[Location]:
+        return [
+            location for location in self.location_table.values() if "Hint Location" in location.types
+        ]
+
     def get_area(self, area_name) -> Area:
         if area_name not in self.area_ids:
             raise WrongInfoError(f'area "{area_name}" is not a defined area for {self}')
@@ -651,22 +624,6 @@ class World:
                 f'Macro "{macro_name}" was not previously not defined for {self}'
             )
         return self.macros[macro_name]
-
-    def get_text_data(
-        self, key: str, type_: str = "standard", language: str = "All"
-    ) -> Text:
-        if key not in World.text_table:
-            raise WrongInfoError(f'Unknown hint data key "{key}"')
-        elif type_ not in World.text_table[key]:
-            raise WrongInfoError(f'Unknown hint data type "{type_}"')
-        elif language != "All" and language not in Text.SUPPORTED_LANGUAGES:
-            raise WrongInfoError(f'Unknown hint data language "{language}"')
-        elif language != "All" and World.text_table[key][type_].text[language] is None:
-            raise WrongInfoError(f'No hint data for "{key} - {language} - {type_}"')
-        elif language != "All":
-            return World.text_table[key][type_].text[language]
-        else:
-            return World.text_table[key][type_]
 
     def setting(self, setting_name: str) -> SettingGet:
         if setting_name not in self.setting_map.settings:
@@ -700,18 +657,3 @@ class World:
     ) -> list[Entrance]:
         entrances = self.get_shuffleable_entrances(entrance_type, only_primary)
         return [e for e in entrances if e.shuffled]
-
-    def get_hint_region_text(
-        self,
-        hint_region: str,
-        type_: str = "standard",
-        color: str = "r",
-        language: str = "All",
-    ) -> Text:
-        hint_region_text = self.get_text_data(hint_region, type_, language)
-        return hint_region_text.apply_text_color(color)
-
-    def get_gossip_stones(self) -> list[Location]:
-        return [
-            loc for loc in self.location_table.values() if "Hint Location" in loc.types
-        ]

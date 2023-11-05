@@ -7,7 +7,10 @@ def add_dynamic_text_patches(
 ) -> None:
     add_fi_text_patches(world, event_patch_handler)
     add_gossip_stone_text_patches(world, event_patch_handler)
-    add_impa_text_patches(world, event_patch_handler)
+
+    if world.impa_sot_hint:
+        add_impa_text_patches(world, event_patch_handler)
+
     add_song_text_patches(world, event_patch_handler)
 
 
@@ -29,7 +32,7 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
     #     required_dungeons_text = break_lines(", ".join(colorful_dungeon_text), 44)
 
     fi_hint_chunks = []
-    fi_hints = [loc.hint.text.get("english") for loc in world.fi_hints]
+    fi_hints = [loc.hint.text for loc in world.fi_hints]
     for i in range(0, len(fi_hints), 8):
         fi_hint_chunks.append(fi_hints[i : i + 8])
 
@@ -64,9 +67,9 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
                     "name": f"Fi Hints Text {ind}",
                     "type": "textadd",
                     "unk1": 2,
-                    "text": break_and_make_multiple_textboxes(hints),
                 },
             )
+            add_text_data(f"Fi Hints Text {ind}", break_and_make_multiple_textboxes(hints))
     else:
         event_patch_handler.append_to_event_patches(
             "006-8KenseiNormal",
@@ -87,9 +90,6 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
                 "name": f"No Fi Hints Text",
                 "type": "textadd",
                 "unk1": 2,
-                "text": break_lines(
-                    "Master, I unfortunately have <r<no hints>> for you."
-                ),
             },
         )
 
@@ -162,30 +162,29 @@ def add_gossip_stone_text_patches(
     world: World, event_patch_handler: EventPatchHandler
 ) -> None:
     for stone, locations in world.gossip_stone_hints.items():
-        hints = [loc.hint.text.get("english") for loc in locations]
+        hints = [loc.hint.text for loc in locations]
         event_patch_handler.append_to_event_patches(
             stone.hint_textfile,
             {
                 "name": f"Hint {stone}",
                 "type": "textpatch",
                 "index": stone.hint_textindex,
-                "text": break_and_make_multiple_textboxes(hints),
             },
         )
+        add_text_data(f"Hint {stone}", break_and_make_multiple_textboxes(hints))
 
 
 def add_impa_text_patches(world: World, event_patch_handler: EventPatchHandler) -> None:
-    if world.impa_sot_hint is None:
-        return
     event_patch_handler.append_to_event_patches(
         "502-CenterFieldBack",
         {
             "name": "Past Impa SoT Hint",
             "type": "textpatch",
             "index": 6,
-            "text": break_lines(world.impa_sot_hint.text.get("english")),
         },
     )
+    world.impa_sot_hint.text.break_lines()
+    add_text_data("Past Impa SoT Hint", world.impa_sot_hint.text)
 
 
 def add_song_text_patches(world: World, event_patch_handler: EventPatchHandler) -> None:
@@ -212,17 +211,19 @@ def add_song_text_patches(world: World, event_patch_handler: EventPatchHandler) 
         obtain_text_name,
         inventory_text_idx,
     ) in song_items.items():
-        inventory_text = world.get_text_data(f"{song_item} Inventory").get("english")
-        useful_text = world.song_hints[song_item].text.get("english")
-        item_get_patch = event_patch_handler.find_event("003-ItemGet", obtain_text_name)
-        item_get_patch["text"] += " " + useful_text
-        item_get_patch["text"] = break_lines(item_get_patch["text"])
+        if song_item in world.song_hints:
+            useful_text = Text(" ") + world.song_hints[song_item].text
+            inventory_text = get_text_data(f"{song_item} Inventory")
+            inventory_text += useful_text
+            inventory_text.break_lines()
+            item_get_text = get_text_data(obtain_text_name)
+            item_get_text += useful_text
+            item_get_text.break_lines()
         event_patch_handler.append_to_event_patches(
             "003-ItemGet",
             {
-                "name": f"{song_item} Inventory Text",
+                "name": f"{song_item} Inventory",
                 "type": "textpatch",
                 "index": inventory_text_idx,
-                "text": break_lines(inventory_text + " " + useful_text),
             },
         )

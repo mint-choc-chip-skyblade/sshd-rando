@@ -1,6 +1,5 @@
 from .item import Item
 from .hint_class import Hint
-from .text import *
 
 import logging
 from typing import TYPE_CHECKING
@@ -67,8 +66,5 @@ class Location:
         self.current_item = None
 
     def get_goal_name(self, language: str) -> str:
-        return self.world.get_text_data(self.name, "goal_name", language)
+        return self.get_text_data(self.name, "goal_name", language)
 
-    def get_hint_text(self, type_: str, color: str = "", language: str = "All") -> str:
-        location_text = self.world.get_text_data(self.name, type_, language)
-        return location_text.apply_text_color(color)

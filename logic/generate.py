@@ -7,6 +7,7 @@ from .spoiler_log import generate_spoiler_log
 from .plandomizer import load_plandomizer_data
 from .entrance_shuffle import shuffle_world_entrances
 from .hints import generate_hints
+from util.text import load_text_data
 
 import time
 import random
@@ -30,6 +31,7 @@ def generate(config_file: str) -> list[World]:
                 )
 
     get_all_settings_info()
+    load_text_data()
 
     # If the config file doesn't exist, create default
     if not os.path.isfile(config_file):

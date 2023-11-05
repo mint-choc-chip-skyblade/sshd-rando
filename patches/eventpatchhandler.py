@@ -23,7 +23,7 @@ from sslib.msb import (
 from sslib.u8file import U8File
 from sslib.utils import write_bytes_create_dirs
 from sslib.yaml import yaml_load
-
+from util.text import get_text_data
 
 class EventPatchHandler:
     def __init__(self):
@@ -303,7 +303,7 @@ class EventPatchHandler:
         text_index = len(msbt["TXT2"])
         self.text_label_to_index_mapping[text_add["name"]] = text_index
         msbt["TXT2"].append(
-            process_control_sequences(text_add["text"]).encode("utf-16be")
+            process_control_sequences(get_text_data(text_add["name"]).get("english")).encode("utf-16be")
         )
 
         # Had to add a 0 to the end to satisfy BuildMSB's length requirement, if text adds end up breaking, this may be overwriting a param?
@@ -318,7 +318,7 @@ class EventPatchHandler:
 
     def text_patch(self, msbt: ParsedMsb, text_patch: dict):
         msbt["TXT2"][text_patch["index"]] = process_control_sequences(
-            text_patch["text"]
+            get_text_data(text_patch["name"]).get("english")
         ).encode("utf-16be")
 
     def add_check_patch(self, event_file: str, eventid: str, itemid: int):

@@ -1,4 +1,3 @@
-from .text import *
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -44,9 +43,3 @@ class Item:
 
     def __hash__(self) -> int:
         return (self.id, self.world.id).__hash__()
-
-    def get_hint_text(
-        self, type_: str = "standard", color: str = "", language: str = "All"
-    ) -> str:
-        item_text = self.world.get_text_data(self.name, type_, language)
-        return item_text.apply_text_color(color)

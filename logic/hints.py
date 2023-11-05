@@ -1,3 +1,4 @@
+from util.text import *
 from .world import World
 from .search import *
 import logging
@@ -136,7 +137,7 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
 
         # logging.getLogger("").debug(f"Path locations for {world}")
         # for goal_locations, path_locations in world.path_locations.items():
-        #     goal_name = world.get_text_data(goal_locations[0].name, "goal_name").get(
+        #     goal_name = get_text_data(goal_locations[0].name, "goal_name").get(
         #         "english"
         #     )
         #     logging.getLogger("").debug(f"  {goal_name}")
@@ -314,7 +315,7 @@ def generate_barren_hint_locations(world: World, hint_locations: list) -> None:
         for location in world.barren_regions[region]:
             location.is_hinted = True
             generate_barren_hint_message(
-                location, world.get_hint_region_text(region, "pretty", "b")
+                location, get_text_data(region, "pretty").apply_text_color("b")
             )
         hint_locations.append(world.barren_regions[region][0])
         logging.getLogger("").debug(f'Chose "{region}" as a hinted barren region')
@@ -424,16 +425,14 @@ def generate_path_hint_message(
         )
     )
     hint_region_text = make_text_listing(
-        [world.get_hint_region_text(region, "pretty", "b+") for region in hint_regions]
+        [get_text_data(region, "pretty").apply_text_color("b") for region in hint_regions]
     )
 
     plurality_en = "is" if len(hint_regions) == 1 else "are"
 
-    goal_name_text = world.get_text_data(
-        goal_locations[0].name, "goal_name"
-    ).apply_text_color("r")
+    goal_name_text = get_text_data(goal_locations[0].name, "goal_name").apply_text_color("r")
     full_text = (
-        world.get_text_data("Path Hint")
+        get_text_data("Path Hint")
         .replace("|regions|", hint_region_text)
         .replace("|goal_name|", goal_name_text)
     )
@@ -446,7 +445,7 @@ def generate_path_hint_message(
 
 def generate_barren_hint_message(location: Location, barren_region: Text) -> None:
     world = location.world
-    location.hint.text = world.get_text_data("Barren Hint").replace(
+    location.hint.text = get_text_data("Barren Hint").replace(
         "|region|", barren_region
     )
     location.hint.type = "Barren"
@@ -457,7 +456,7 @@ def generate_item_hint_message(location: Location) -> None:
     hint_regions = list(
         set(
             [
-                world.get_hint_region_text(region, "pretty", "b+")
+                get_text_data(region, "pretty").apply_text_color("b+")
                 for la in location.loc_access_list
                 for region in la.area.hint_regions
             ]
@@ -467,10 +466,10 @@ def generate_item_hint_message(location: Location) -> None:
 
     type_ = "cryptic" if world.setting("cryptic_hint_text") == "on" else "pretty"
     item_text_color = "r" if type_ == "pretty" else ""
-    item_text = location.current_item.get_hint_text(type_, item_text_color)
+    item_text = get_text_data(location.current_item.name, type_).apply_text_color(item_text_color)
 
     location.hint.text = (
-        world.get_text_data("Item Hint")
+        get_text_data("Item Hint")
         .replace("|item|", item_text)
         .replace("|regions|", hint_region_text)
     )
@@ -484,11 +483,11 @@ def generate_location_hint_message(location: Location) -> None:
     color = "r" if type_ == "pretty" else ""
     item = location.current_item
 
-    location_text = location.get_hint_text(type_, color)
-    item_text = item.get_hint_text(type_, color)
+    location_text = get_text_data(location.name, type_).apply_text_color(color)
+    item_text = get_text_data(item.name, type_).apply_text_color(color)
 
     location.hint.text = (
-        location.world.get_text_data("Location Hint")
+        get_text_data("Location Hint")
         .replace("|location|", location_text)
         .replace("|item|", item_text)
     )
@@ -598,7 +597,7 @@ def generate_impa_sot_hint(world: World) -> None:
     sot_regions = list(
         set(
             [
-                world.get_hint_region_text(region, "pretty", "b+")
+                get_text_data(region, "pretty").apply_text_color("b+")
                 for la in sot_location.loc_access_list
                 for region in la.area.hint_regions
             ]
@@ -608,7 +607,7 @@ def generate_impa_sot_hint(world: World) -> None:
 
     impa_hint = Hint()
     impa_hint.type = "Impa"
-    impa_hint.text = world.get_text_data("Impa SoT Text").replace(
+    impa_hint.text = get_text_data("Impa SoT Text").replace(
         "|regions|", sot_regions_text
     )
 
@@ -663,9 +662,9 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
             case "basic":
                 # If there are any major items in the silent realm
                 if any([loc for loc in locations if loc.current_item.is_major_item]):
-                    hint.text = world.get_text_data("Trial Useful")
+                    hint.text = get_text_data("Trial Useful")
                 else:
-                    hint.text = world.get_text_data("Trial Useless")
+                    hint.text = get_text_data("Trial Useless")
 
             case "advanced":
                 # If there are any items on the path to Demise
@@ -679,19 +678,19 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                         ]
                     ]
                 ):
-                    hint.text = world.get_text_data("Trial Required")
+                    hint.text = get_text_data("Trial Required")
                 # If there are any major items in the silent realm
                 elif any([loc for loc in locations if loc.current_item.is_major_item]):
-                    hint.text = world.get_text_data("Trial Useful")
+                    hint.text = get_text_data("Trial Useful")
                 else:
-                    hint.text = world.get_text_data("Trial Useless")
+                    hint.text = get_text_data("Trial Useless")
 
             case "direct":
                 useful_locations = [
                     loc for loc in locations if loc.current_item.is_major_item
                 ]
                 if not useful_locations:
-                    hint.text = world.get_text_data("Trial Direct Nothing")
+                    hint.text = get_text_data("Trial Direct Nothing")
                 else:
                     # There's only enough text space to hint at one full item name, so calculate which item
                     # is the most logically useful among the set and display that item name. The most logically
@@ -716,18 +715,16 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
 
                         location.set_current_item(item_at_location)
 
-                    first_item_text = most_useful_location.current_item.get_hint_text(
-                        "pretty", "r"
-                    )
+                    first_item_text = get_text_data(f"{most_useful_location.current_item}", "pretty").apply_text_color("r")
                     # If there are still more useful locations in the silent realm, then list how many there are
                     if len(useful_locations) == 1:
-                        hint.text += world.get_text_data("Trial Direct One").replace(
+                        hint.text += get_text_data("Trial Direct One").replace(
                             "|item|", first_item_text
                         )
                     else:
                         useful_locations.remove(most_useful_location)
                         hint.text += (
-                            world.get_text_data("Trial Direct Two Plus")
+                            get_text_data("Trial Direct Two Plus")
                             .replace("|item|", first_item_text)
                             .replace("%d", str(len(useful_locations)))
                         )
