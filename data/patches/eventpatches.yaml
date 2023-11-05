@@ -1,12 +1,3 @@
-006-8KenseiNormal:
-  - name: Allow Amiibo Warp without actual Amiibo
-    type: flowpatch
-    index: 28
-    flow: {}
-    cases:
-      - 21 # Vanilla
-      - 25 # Vanilla
-      - 13 # Skip amiibo
 003-ItemGet:
   - name: Scrapper Entry
     type: entryadd
@@ -660,7 +651,24 @@
     flow:
       next: 30
 
-# 006-8KenseiNormal
+006-8KenseiNormal:
+  - name: Allow Amiibo Warp without actual Amiibo
+    type: flowpatch
+    index: 28
+    flow: {}
+    cases:
+      - 21 # Vanilla
+      - 25 # Vanilla
+      - 13 # Skip amiibo
+  - name: Fi Hints Text
+    type: flowpatch
+    index: 7
+    flow: {}
+    cases:
+     - Display Fi Hints Text 0 # Hints
+     - 8  # Rumors
+     - 8  # Summary
+     - -1 # Never Mind
 # 008-Hint
 
 101-Shop:

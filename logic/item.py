@@ -1,3 +1,4 @@
+from .text import *
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -13,6 +14,7 @@ class Item:
         world_: "World" = None,
         major_item_: bool = False,
         game_winning_item_: bool = False,
+        chain_locations_: list[str] = [],
     ) -> None:
         self.id: int = id_
         self.name: str = name_
@@ -20,6 +22,7 @@ class Item:
         self.world: "World" = world_
         self.is_major_item: bool = major_item_
         self.is_game_winning_item: bool = game_winning_item_
+        self.chain_locations: list[str] = chain_locations_
 
         self.is_dungeon_small_key: bool = (
             " Small Key" in name_ and name_ != "Lanayru Caves Small Key"
@@ -41,3 +44,9 @@ class Item:
 
     def __hash__(self) -> int:
         return (self.id, self.world.id).__hash__()
+
+    def get_hint_text(
+        self, type_: str = "standard", color: str = "", language: str = "All"
+    ) -> str:
+        item_text = self.world.get_text_data(self.name, type_, language)
+        return item_text.apply_text_color(color)

@@ -33,7 +33,19 @@ class EventPatchHandler:
         self.text_label_to_index_mapping = {}
 
     def append_to_event_patches(self, file_name: str, event_patch: dict):
+        if file_name not in self.event_patches:
+            self.event_patches[file_name] = []
         self.event_patches[file_name].append(event_patch)
+
+    def find_event(self, file_name: str, event_name: str) -> dict:
+        return next(
+            (
+                patch
+                for patch in self.event_patches[file_name]
+                if patch["name"] == event_name
+            ),
+            None,
+        )
 
     def handle_event_patches(self, onlyif_handler: ConditionalPatchHandler):
         for event_path in Path(EVENT_FILES_PATH).glob("*.arc"):

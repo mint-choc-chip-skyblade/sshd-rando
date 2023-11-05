@@ -12,6 +12,7 @@ from patches.entrancepatchhandler import determine_entrance_patches
 from patches.objectpackpatchhandler import patch_object_pack
 from patches.stagepatchhandler import StagePatchHandler
 from patches.eventpatchhandler import EventPatchHandler
+from patches.dynamictextpatches import add_dynamic_text_patches
 from filepathconstants import OUTPUT_PATH
 from shutil import rmtree
 
@@ -45,6 +46,7 @@ class AllPatchHandler:
         determine_entrance_patches(
             self.world.get_shuffled_entrances(), self.stage_patch_handler
         )
+        add_dynamic_text_patches(self.world, self.event_patch_handler)
 
         patch_object_pack()
 

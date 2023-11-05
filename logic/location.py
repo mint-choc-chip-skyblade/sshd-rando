@@ -1,5 +1,6 @@
 from .item import Item
-from .requirements import Requirement
+from .hint_class import Hint
+from .text import *
 
 import logging
 from typing import TYPE_CHECKING
@@ -19,6 +20,9 @@ class Location:
         original_item_: Item,
         patch_paths_: list[str],
         goal_location_: bool,
+        hint_priority_: str,
+        hint_textfile_: str,
+        hint_textindex_: int,
     ) -> None:
         self.id: int = id_
         self.name: str = name_
@@ -30,7 +34,12 @@ class Location:
         self.current_item: Item = None
         self.has_known_vanilla_item: bool = False
         self.loc_access_list: list["LocationAccess"] = []
-        self.progression = True  # Set as False later if applicable
+        self.progression: bool = True  # Set as False later if applicable
+        self.is_hinted: bool = False
+        self.hint: Hint = Hint()
+        self.hint_priority: str = hint_priority_
+        self.hint_textfile: str = hint_textfile_
+        self.hint_textindex: int = hint_textindex_
 
     def __str__(self) -> str:
         return (
@@ -56,3 +65,10 @@ class Location:
     def remove_current_item(self):
         logging.getLogger("").debug(f"Removed {self.current_item} from {self}")
         self.current_item = None
+
+    def get_goal_name(self, language: str) -> str:
+        return self.world.get_text_data(self.name, "goal_name", language)
+
+    def get_hint_text(self, type_: str, color: str = "", language: str = "All") -> str:
+        location_text = self.world.get_text_data(self.name, type_, language)
+        return location_text.apply_text_color(color)

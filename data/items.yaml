@@ -68,6 +68,10 @@
   getarcname: GetBirdStatue
   getmodelname: GetBirdStatue
   advancement: true
+  chain_locations:
+   - The Sky - Chest in Breakable Boulder near Fun Fun Island
+   - The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
+   - The Thunderhead - Song from Levias
 - id: 25
   name: Ancient Cistern Boss Key
   oarc: GetKeyBoss2A
@@ -137,6 +141,16 @@
   getarcname: GetGenki
   getmodelname: GetGenki
   advancement: true
+  chain_locations:
+   - Batreaux - 5 Crystals
+   - Batreaux - 10 Crystals
+   - Batreaux - 30 Crystals
+   - Batreaux - 30 Crystals Chest
+   - Batreaux - 40 Crystals
+   - Batreaux - 50 Crystals
+   - Batreaux - 70 Crystals
+   - Batreaux - 70 Crystals Second Reward
+   - Batreaux - 80 Crystals
 - id: 40
   name: 5 Bombs
   oarc: null
@@ -153,6 +167,16 @@
   getarcname: GetGenki
   getmodelname: GetGenki
   advancement: true
+  chain_locations:
+   - Batreaux - 5 Crystals
+   - Batreaux - 10 Crystals
+   - Batreaux - 30 Crystals
+   - Batreaux - 30 Crystals Chest
+   - Batreaux - 40 Crystals
+   - Batreaux - 50 Crystals
+   - Batreaux - 70 Crystals
+   - Batreaux - 70 Crystals Second Reward
+   - Batreaux - 80 Crystals
 - id: 49
   name: Gust Bellows
   oarc: GetVacuum
@@ -213,6 +237,8 @@
   getarcname: GetNetA
   getmodelname: GetNetA
   advancement: true
+  chain_locations:
+   - Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
 - id: 75
   name: Hook Beetle
   oarc: GetBeetleB
@@ -305,7 +331,7 @@
   getarcname: GetMedal
   getmodelname: GetMedalDemon
 - id: 105
-  name: Scatershot
+  name: Scattershot
   oarc: GetPachinkoB
 - id: 108
   name: Progressive Wallet # Medium Wallet
@@ -313,6 +339,11 @@
   getarcname: GetPurseB
   getmodelname: GetPurseB
   advancement: true
+  chain_locations:
+   - Beedle's Shop - 600 Rupee Item
+   - Beedle's Shop - 1200 Rupee Item
+   - Beedle's Shop - 800 Rupee Item
+   - Beedle's Shop - 1600 Rupee Item
 - id: 109
   name: Big Wallet
   oarc: GetPurseC
@@ -391,12 +422,16 @@
   getarcname: GetKobunALetter
   getmodelname: GetKobunALetter
   advancement: true
+  chain_locations:
+   - Knight Academy - Ghost/Pipit's Crystals
 - id: 159
   name: Beedle's Insect Cage
   oarc: GetTerryCage
   getarcname: GetTerryCage
   getmodelname: GetTerryCage
   advancement: true
+  chain_locations:
+   - Beedle's Island - Beedle's Crystals
 - id: 160
   name: Rattle
   oarc:
@@ -405,6 +440,8 @@
   getarcname: GetGaragara
   getmodelname: GetGaragara
   advancement: true
+  chain_locations:
+   - Skyloft Village - Bertie's Crystals
 - id: 163
   name: Tumbleweed
   oarc: GetSozaiC
@@ -520,12 +557,19 @@
   getarcname: GetFruitB
   getmodelname: GetFruitB
   advancement: true
+  chain_locations:
+   - Lanayru Gorge - Thunder Dragon's Reward
 - id: 199
   name: Extra Wallet
   oarc: GetSparePurse
   getarcname: GetSparePurse
   getmodelname: GetSparePurse
   advancement: true
+  chain_locations:
+   - Beedle's Shop - 600 Rupee Item
+   - Beedle's Shop - 1200 Rupee Item
+   - Beedle's Shop - 800 Rupee Item
+   - Beedle's Shop - 1600 Rupee Item
 # start rando custom items
 - id: 200
   name: Skyview Temple Small Key
@@ -616,6 +660,13 @@
   getarcname: DesertRobot
   getmodelname: DesertRobot
   advancement: true
+  chain_locations:
+   - Knight Academy - Owlan's Crystals
+   - Skyloft Village - Sparrot's Crystals
+   - Lumpy Pumpkin - Kina's Crystals
+   - Fun Fun Island - Dodoh's Crystals
+   - Fun Fun Island - Minigame -- 500 Rupees
+   - The Thunderhead - Song from Levias
 # Dummy item to simulate game beatability for logic
 - id: 256
   name: Game Beatable
@@ -627,107 +678,161 @@
   name: Faron Woods Goddess Cube on West Great Tree near Exit
   oarc: null
   advancement: true
+  chain_locations:
+   - Central Skyloft - West Cliff Goddess Chest
 - id: 258
   name: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
   oarc: null
   advancement: true
+  chain_locations:
+   - Volcanic Island - Inside Goddess Chest
 - id: 259
   name: Faron Woods Goddess Cube on East Great Tree with Rope
   oarc: null
   advancement: true
+  chain_locations:
+   - Thunderhead East Island - Goddess Chest
 - id: 260
   name: Deep Woods Goddess Cube Near Goron
   oarc: null
   advancement: true
+  chain_locations:
+   - Lumpy Pumpkin - Outside Goddess Chest
 - id: 261
   name: Deep Woods Goddess Cube in front of Skyview
   oarc: null
   advancement: true
+  chain_locations:
+   - Island Closest to Faron Pillar - Goddess Chest
 - id: 262
   name: Deep Woods Goddess Cube on top of Skyview
   oarc: null
   advancement: true
+  chain_locations:
+   - Beedle's Island - Cage Goddess Chest
 - id: 263
   name: Lake Floria Goddess Cube
   oarc: null
   advancement: true
+  chain_locations:
+   - Central Skyloft - Floating Island Goddess Chest
 - id: 264
   name: Floria Waterfall Goddess Cube on High Ledge
   oarc: null
   advancement: true
+  chain_locations:
+   - Fun Fun Island - Goddess Chest
 - id: 265
   name: Eldin Volcano Goddess Cube at Eldin Entrance
   oarc: null
   advancement: true
+  chain_locations:
+   - Triple Island - Upper Goddess Chest
 - id: 266
   name: Eldin Volcano Goddess Cube near Mogma Turf Entrance
   oarc: null
   advancement: true
+  chain_locations:
+   - Island near Bamboo Island - Goddess Chest
 - id: 267
   name: Eldin Volcano Goddess Cube West of Earth Temple Entrance
   oarc: null
   advancement: true
+  chain_locations:
+   - Bamboo Island - Goddess Chest
 - id: 268
   name: Eldin Volcano Goddess Cube East of Earth Temple Entrance
   oarc: null
   advancement: true
+  chain_locations:
+   - Northeast Island - Cage Goddess Chest
 - id: 269
   name: Eldin Volcano Goddess Cube on Sand Slide
   oarc: null
   advancement: true
+  chain_locations:
+   - Central Skyloft - Shed Goddess Chest
 - id: 270
   name: Mogma Turf Goddess Cube
   oarc: null
   advancement: true
+  chain_locations:
+   - Isle of Songs - Lower Goddess Chest
 - id: 271
   name: Volcano Summit Goddess Cube in Lava Lake
   oarc: null
   advancement: true
+  chain_locations:
+   - Mogma Mitts Island - First Goddess Chest
 - id: 272
   name: Volcano Summit Goddess Cube at Summit Waterfall
   oarc: null
   advancement: true
+  chain_locations:
+   - Bug Heaven - Goddess Chest
 - id: 273
   name: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
   oarc: null
   advancement: true
+  chain_locations:
+   - Isle of Songs - Top Goddess Chest
 - id: 274
   name: Lanayru Mine Goddess Cube
   oarc: null
   advancement: true
+  chain_locations:
+   - Northeast Island - Goddess Chest behind Bombable Rocks
 - id: 275
   name: Lanayru Desert Goddess Cube near Caged Robot
   oarc: null
   advancement: true
+  chain_locations:
+   - Triple Island - Lower Goddess Chest
 - id: 276
   name: Lanayru Desert Goddess Cube in Sand Oasis
   oarc: null
   advancement: true
+  chain_locations:
+   - Volcanic Island - Outside Goddess Chest
 - id: 277
   name: Lanayru Desert Goddess Cube in Secret Passageway
   oarc: null
   advancement: true
+  chain_locations:
+   - Island near Bamboo Island - Goddess Chest in Cave
 - id: 278
   name: Lanayru Desert Goddess Cube near Temple of Time
   oarc: null
   advancement: true
+  chain_locations:
+   - Beedle's Island - Top Goddess Chest
 - id: 279
   name: Lanayru Gorge Goddess Cube
   oarc: null
   advancement: true
+  chain_locations:
+   - Mogma Mitts Island - Second Goddess Chest
 - id: 280
   name: Ancient Harbour Goddess Cube
   oarc: null
   advancement: true
+  chain_locations:
+   - Bazaar - Goddess Chest
 - id: 281
   name: Skipper's Retreat Goddess Cube
   oarc: null
   advancement: true
+  chain_locations:
+   - Triple Island - Cage Goddess Chest
 - id: 282
   name: Pirate Stronghold Goddess Cube
   oarc: null
   advancement: true
+  chain_locations:
+   - Central Skyloft - Waterfall Goddess Chest
 - id: 283
   name: Skyview Spring Goddess Cube
   oarc: null
   advancement: true
+  chain_locations:
+   - Lumpy Pumpkin - Goddess Chest on Roof

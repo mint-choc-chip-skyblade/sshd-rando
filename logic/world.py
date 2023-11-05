@@ -6,6 +6,7 @@ from .area import *
 from .requirements import *
 from .item_pool import *
 from .dungeon import *
+from .text import *
 
 from collections import Counter, OrderedDict
 from typing import TYPE_CHECKING
@@ -29,10 +30,14 @@ class World:
     event_id_counter: int = 0
     area_id_counter: int = 0
 
+    # hint table keyed by english name, type, and language
+    text_table: dict[str, dict[str, Text]] = {}
+
     def __init__(self, id_: int) -> None:
         self.id = id_
         self.config: Config = None
         self.num_worlds: int = 0
+        self.worlds: list = []
 
         self.setting_map: SettingMap = SettingMap()
 
@@ -63,6 +68,14 @@ class World:
         self.plandomizer_locations: dict[Location, Item] = {}
         self.plandomizer_entrances: dict[Entrance, Entrance] = {}
 
+        # Hint related things
+        self.path_locations: dict[tuple, list[Location]] = {}
+        self.barren_regions: OrderedDict[str, list[Location]] = OrderedDict()
+        self.fi_hints: list[Location] = []
+        self.gossip_stone_hints: OrderedDict[Location, list[Location]] = OrderedDict()
+        self.song_hints: dict[Item, Hint] = {}
+        self.impa_sot_hint: Hint = None
+
     def __str__(self) -> str:
         return f"World {self.id + 1}"
 
@@ -71,6 +84,11 @@ class World:
         self.build_location_table()
         self.load_logic_macros()
         self.load_world_graph()
+
+        # Load text data once for all worlds
+        if len(World.text_table) == 0:
+            self.load_text_data()
+
         self.place_hardcoded_items()
         self.build_item_pools()
 
@@ -99,10 +117,21 @@ class World:
                     if "game_winning_item" in item_node
                     else False
                 )
+                chain_locations = (
+                    item_node["chain_locations"]
+                    if "chain_locations" in item_node
+                    else []
+                )
 
                 stripped_name = name.replace("'", "")
                 self.item_table[stripped_name] = Item(
-                    item_id, name, oarcs, self, major_item, game_winning_item
+                    item_id,
+                    name,
+                    oarcs,
+                    self,
+                    major_item,
+                    game_winning_item,
+                    chain_locations,
                 )
                 logging.getLogger("").debug(
                     f"Processing new item {name}\tid: {item_id}"
@@ -158,10 +187,17 @@ class World:
                     if "goal_location" in location_node
                     else False
                 )
+                hint_priority = (
+                    location_node["hint"] if "hint" in location_node else "never"
+                )
+                hint_textfile = (
+                    location_node["textfile"] if "textfile" in location_node else ""
+                )
+                hint_textindex = (
+                    location_node["textindex"] if "textindex" in location_node else -1
+                )
                 location_id = location_id_counter
                 location_id_counter += 1
-
-                # TODO: Load the rest of the data
 
                 self.location_table[name] = Location(
                     location_id,
@@ -171,6 +207,9 @@ class World:
                     original_item,
                     patch_paths,
                     goal_location,
+                    hint_priority,
+                    hint_textfile,
+                    hint_textindex,
                 )
                 logging.getLogger("").debug(
                     f"Processing new location {name}\tid: {location_id}\toriginal item: {original_item}"
@@ -303,6 +342,45 @@ class World:
             for exit_ in area.exits:
                 exit_.connected_area.entrances.append(exit_)
 
+    def load_text_data(self) -> None:
+        logging.getLogger("").debug(f"Loading text data")
+        directory = "data/text_data"
+
+        for language in Text.SUPPORTED_LANGUAGES:
+            filename = f"{language}.yaml"
+            filepath = os.path.join(directory, filename)
+
+            with open(filepath, "r") as text_data_file:
+                text_data = yaml.safe_load(text_data_file)
+                for element in text_data:
+                    name = element["name"]
+                    if name not in World.text_table:
+                        World.text_table[name] = {}
+
+                    for field, text in element.items():
+                        if field == "name":
+                            continue
+                        if field not in World.text_table[name]:
+                            World.text_table[name][field] = Text()
+                        # Insert the text into the appropriate Text objects
+                        # language
+                        World.text_table[name][field].text[language] = (
+                            text if text is not None else ""
+                        )
+
+        # Verify that every item, location, and hint region has text data
+        for item in self.item_table.values():
+            if item.name not in World.text_table:
+                raise MissingInfoError(f'"{item}" has no associated hint data')
+        for location in self.location_table.values():
+            if location.name not in World.text_table:
+                raise MissingInfoError(f'"{location}" has no associated hint data')
+        for area in self.areas.values():
+            for region in area.hint_regions:
+                if region not in World.text_table and region != "None":
+                    raise MissingInfoError(f'"{region}" has no associated hint data')
+
+
     def build_item_pools(self) -> None:
         generate_item_pool(self)
         generate_starting_item_pool(self)
@@ -311,6 +389,7 @@ class World:
         self.get_location("Hylia's Realm - Defeat Demise").set_current_item(
             self.get_item("Game Beatable")
         )
+        self.get_location("Hylia's Realm - Defeat Demise").has_known_vanilla_item = True
 
     def place_plandomizer_items(self) -> None:
         for location, item in self.plandomizer_locations.items():
@@ -371,6 +450,7 @@ class World:
             # Set Goddess Cubes as having their own item
             if "Goddess Cube" in location.types:
                 location.set_current_item(item)
+                location.has_known_vanilla_item = True
 
     def perform_post_entrance_shuffle_tasks(self) -> None:
         self.assign_all_areas_hint_regions()
@@ -554,7 +634,7 @@ class World:
         parent_area = self.get_area(parent_area_name)
         connected_area = self.get_area(connected_area_name)
         for exit_ in parent_area.exits:
-            if exit_.connected_area == connected_area:
+            if exit_.original_connected_area == connected_area:
                 return exit_
 
         raise WrongInfoError(f"There is no known entrance connection {original_name}")
@@ -571,6 +651,22 @@ class World:
                 f'Macro "{macro_name}" was not previously not defined for {self}'
             )
         return self.macros[macro_name]
+
+    def get_text_data(
+        self, key: str, type_: str = "standard", language: str = "All"
+    ) -> Text:
+        if key not in World.text_table:
+            raise WrongInfoError(f'Unknown hint data key "{key}"')
+        elif type_ not in World.text_table[key]:
+            raise WrongInfoError(f'Unknown hint data type "{type_}"')
+        elif language != "All" and language not in Text.SUPPORTED_LANGUAGES:
+            raise WrongInfoError(f'Unknown hint data language "{language}"')
+        elif language != "All" and World.text_table[key][type_].text[language] is None:
+            raise WrongInfoError(f'No hint data for "{key} - {language} - {type_}"')
+        elif language != "All":
+            return World.text_table[key][type_].text[language]
+        else:
+            return World.text_table[key][type_]
 
     def setting(self, setting_name: str) -> SettingGet:
         if setting_name not in self.setting_map.settings:
@@ -604,3 +700,18 @@ class World:
     ) -> list[Entrance]:
         entrances = self.get_shuffleable_entrances(entrance_type, only_primary)
         return [e for e in entrances if e.shuffled]
+
+    def get_hint_region_text(
+        self,
+        hint_region: str,
+        type_: str = "standard",
+        color: str = "r",
+        language: str = "All",
+    ) -> Text:
+        hint_region_text = self.get_text_data(hint_region, type_, language)
+        return hint_region_text.apply_text_color(color)
+
+    def get_gossip_stones(self) -> list[Location]:
+        return [
+            loc for loc in self.location_table.values() if "Hint Location" in loc.types
+        ]

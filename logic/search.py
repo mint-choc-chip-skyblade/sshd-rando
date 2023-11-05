@@ -403,3 +403,17 @@ def generate_playthrough(worlds: list[World]) -> None:
 
     worlds[0].playthrough_spheres = new_search.playthrough_spheres
     worlds[0].entrance_spheres = new_search.entrance_spheres
+
+
+# Returns all the possible gossip stones that could
+# hint at the passed in location
+def get_possible_gossip_stones(location: Location) -> list[Location]:
+    item_at_location = location.current_item
+    location.remove_current_item()
+
+    search = Search(SearchMode.ACCESSIBLE_LOCATIONS, location.world.worlds)
+    search.search_worlds()
+
+    location.set_current_item(item_at_location)
+    stones = location.world.get_gossip_stones()
+    return [stone for stone in stones if stone in search.visited_locations]

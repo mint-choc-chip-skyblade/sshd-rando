@@ -6,6 +6,7 @@ from .search import generate_playthrough
 from .spoiler_log import generate_spoiler_log
 from .plandomizer import load_plandomizer_data
 from .entrance_shuffle import shuffle_world_entrances
+from .hints import generate_hints
 
 import time
 import random
@@ -77,8 +78,9 @@ def generate_randomizer(config: Config) -> list[World]:
         worlds[i].setting_map = setting_map
         worlds[i].num_worlds = len(config.settings)
         worlds[i].build()
-        # TODO: Set Excluded Locations
-        # TODO: Set Item Locations
+
+    for world in worlds:
+        world.worlds = worlds
 
     # Process plando data for all worlds
     if config.plandomizer:
@@ -103,6 +105,6 @@ def generate_randomizer(config: Config) -> list[World]:
     print(f"Fill took {(end - start)} seconds")
 
     generate_playthrough(worlds)
-    # TODO: Perform Post-Fill Tasks
+    generate_hints(worlds)
     generate_spoiler_log(worlds)
     return worlds

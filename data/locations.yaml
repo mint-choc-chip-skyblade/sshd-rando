@@ -195,6 +195,8 @@
 - name: Central Skyloft - Gossip Stone on Waterfall Island
   original_item: Nothing
   type: Hint Location
+  textfile: 124-Town6
+  textindex: 18
 
 - name: Central Skyloft - Parrow's Gift
   original_item: Empty Bottle
@@ -508,6 +510,8 @@
 - name: Bamboo Island Interior - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 11
 
 - name: Lumpy Pumpkin - Chandelier
   original_item: Heart Piece
@@ -549,6 +553,8 @@
 - name: Lumpy Pumpkin - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 27
 
 - name: Orielle's Island - Orielle's Crystals
   original_item: Gratitude Crystal Pack
@@ -628,6 +634,8 @@
 - name: Volcanic Island - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 30
 
 ## Goddess Chests
 
@@ -788,6 +796,8 @@
 - name: Bug Heaven - Nearby Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 12
 
 - name: Thunderhead East Island - Chest
   original_item: Evil Crystal
@@ -852,6 +862,8 @@
 - name: Sealed Grounds - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 13
 
 - name: Hylia's Temple - Zelda's Blessing
   original_item: Progressive Sword
@@ -953,6 +965,8 @@
 - name: Deep Woods - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 15
 
 - name: Deep Woods - Goddess Cube Near Goron
   original_item: Deep Woods Goddess Cube Near Goron
@@ -1025,6 +1039,8 @@
 - name: Floria Waterfall - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 28
 
 - name: Floria Waterfall - Goddess Cube on High Ledge
   original_item: Floria Waterfall Goddess Cube on High Ledge
@@ -1221,18 +1237,26 @@
 - name: Thrill Digger Cave - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 16
 
 - name: Eldin Volcano - Gossip Stone next to Earth Temple
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 14
 
 - name: Upper Eldin Cave - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 21
 
 - name: Lower Eldin Cave - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 17
 
 - name: Eldin Volcano - Goddess Cube at Eldin Entrance
   original_item: Eldin Volcano Goddess Cube at Eldin Entrance
@@ -1348,10 +1372,14 @@
 - name: Volcano Summit - Gossip Stone in Waterfall Area
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 26
 
 - name: Volcano Summit - Gossip Stone near Second Thirsty Frog
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 31
 
 - name: Volcano Summit - Goddess Cube in Lava Lake
   original_item: Volcano Summit Goddess Cube in Lava Lake
@@ -1523,6 +1551,8 @@
 - name: Temple of Time - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 25
 
 - name: Lanayru Desert - Goddess Cube near Caged Robot
   original_item: Lanayru Desert Goddess Cube near Caged Robot
@@ -1611,11 +1641,14 @@
 - name: Lanayru Caves - Gossip Stone in Center
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 24
 
 - name: Lanayru Caves - Gossip Stone towards Lanayru Gorge
   original_item: Nothing
   type: Hint Location
-
+  textfile: 004-Object
+  textindex: 29
 
 # Lanayru Gorge:
 
@@ -1716,6 +1749,8 @@
 - name: Shipyard - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  textfile: 004-Object
+  textindex: 23
 
 ## Pirate Stronghold
 

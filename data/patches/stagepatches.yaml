@@ -3455,6 +3455,17 @@ F301_4: # Shipyard
     object:
       storyflag: -1
       play_cutscene: -1
+  - name: Gossip Stone
+    type: objmove
+    id: 0xFC5E
+    layer: 5
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Gossip Stone
+    type: oarcadd
+    oarc: GossipStone
+    destlayer: 0
 
 F301_5: # Skipper's Shack
   - name: Text after chest
