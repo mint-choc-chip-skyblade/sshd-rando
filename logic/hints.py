@@ -608,13 +608,18 @@ def generate_impa_sot_hint(world: World) -> None:
     sot_regions = list(
         set(
             [
-                get_text_data(region, "pretty").apply_text_color("b+")
+                region
                 for la in sot_location.loc_access_list
                 for region in la.area.hint_regions
             ]
         )
     )
-    sot_regions_text = make_text_listing(sot_regions)
+    sot_regions_text = make_text_listing(
+        [
+            get_text_data(region, "pretty").apply_text_color("b+")
+            for region in sot_regions
+        ]
+    )
 
     impa_hint = Hint()
     impa_hint.type = "Impa"
