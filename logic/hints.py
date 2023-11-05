@@ -456,15 +456,21 @@ def generate_barren_hint_message(location: Location, barren_region: Text) -> Non
 
 def generate_item_hint_message(location: Location) -> None:
     world = location.world
+    # Convert to set and back to list to get rid of duplicates
     hint_regions = list(
         set(
             [
-                get_text_data(region, "pretty").apply_text_color("b+")
+                region
                 for la in location.loc_access_list
                 for region in la.area.hint_regions
             ]
         )
     )
+    # Convert to Text objects
+    hint_regions = [
+        get_text_data(region, "pretty").apply_text_color("b+")
+        for region in hint_regions
+    ]
     hint_region_text = make_text_listing(hint_regions)
 
     type_ = "cryptic" if world.setting("cryptic_hint_text") == "on" else "pretty"

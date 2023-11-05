@@ -147,8 +147,8 @@ def add_text_data(key: str, text: Text, type_: str = "standard") -> None:
 def make_text_listing(texts: list[Text]) -> Text:
     if len(texts) == 1:
         return texts[0]
-    listing_text = Text()
-    english = listing_text.text["english"]
+
+    english = ""
     # TODO: Add rules for other languages when we get to them
     for i, text in enumerate(texts):
         # Change formatting depending on how many items we're listing
@@ -161,6 +161,8 @@ def make_text_listing(texts: list[Text]) -> Text:
         else:
             english += ", " + text.get("english")
 
+    listing_text = Text()
+    listing_text.text["english"] = english
     return listing_text
 
 
