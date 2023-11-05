@@ -425,12 +425,17 @@ def generate_path_hint_message(
         )
     )
     hint_region_text = make_text_listing(
-        [get_text_data(region, "pretty").apply_text_color("b") for region in hint_regions]
+        [
+            get_text_data(region, "pretty").apply_text_color("b")
+            for region in hint_regions
+        ]
     )
 
     plurality_en = "is" if len(hint_regions) == 1 else "are"
 
-    goal_name_text = get_text_data(goal_locations[0].name, "goal_name").apply_text_color("r")
+    goal_name_text = get_text_data(
+        goal_locations[0].name, "goal_name"
+    ).apply_text_color("r")
     full_text = (
         get_text_data("Path Hint")
         .replace("|regions|", hint_region_text)
@@ -445,9 +450,7 @@ def generate_path_hint_message(
 
 def generate_barren_hint_message(location: Location, barren_region: Text) -> None:
     world = location.world
-    location.hint.text = get_text_data("Barren Hint").replace(
-        "|region|", barren_region
-    )
+    location.hint.text = get_text_data("Barren Hint").replace("|region|", barren_region)
     location.hint.type = "Barren"
 
 
@@ -466,7 +469,9 @@ def generate_item_hint_message(location: Location) -> None:
 
     type_ = "cryptic" if world.setting("cryptic_hint_text") == "on" else "pretty"
     item_text_color = "r" if type_ == "pretty" else ""
-    item_text = get_text_data(location.current_item.name, type_).apply_text_color(item_text_color)
+    item_text = get_text_data(location.current_item.name, type_).apply_text_color(
+        item_text_color
+    )
 
     location.hint.text = (
         get_text_data("Item Hint")
@@ -715,7 +720,9 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
 
                         location.set_current_item(item_at_location)
 
-                    first_item_text = get_text_data(f"{most_useful_location.current_item}", "pretty").apply_text_color("r")
+                    first_item_text = get_text_data(
+                        f"{most_useful_location.current_item}", "pretty"
+                    ).apply_text_color("r")
                     # If there are still more useful locations in the silent realm, then list how many there are
                     if len(useful_locations) == 1:
                         hint.text += get_text_data("Trial Direct One").replace(

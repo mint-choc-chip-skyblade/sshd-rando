@@ -36,7 +36,7 @@ class Text:
             else:
                 new_text.text[lang] += text.text[lang]
         return new_text
-    
+
     def __iadd__(self, text: Union[str, "Text"]) -> "Text":
         for lang in Text.SUPPORTED_LANGUAGES:
             if type(text) == str:
@@ -91,13 +91,15 @@ class Text:
             new_text.text[lang] = text
 
         return new_text
-    
+
     def break_lines(self) -> None:
         for lang in Text.SUPPORTED_LANGUAGES:
             self.text[lang] = break_lines(self.text[lang])
 
+
 # text table keyed by english name and type
 text_table: dict[str, dict[str, Text]] = {}
+
 
 def load_text_data() -> None:
     print("Loading text data")

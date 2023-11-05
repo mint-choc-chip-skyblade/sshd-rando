@@ -25,6 +25,7 @@ from sslib.utils import write_bytes_create_dirs
 from sslib.yaml import yaml_load
 from util.text import get_text_data
 
+
 class EventPatchHandler:
     def __init__(self):
         self.event_patches: dict[str, list[dict]] = yaml_load(EVENT_PATCHES_PATH)
@@ -303,7 +304,9 @@ class EventPatchHandler:
         text_index = len(msbt["TXT2"])
         self.text_label_to_index_mapping[text_add["name"]] = text_index
         msbt["TXT2"].append(
-            process_control_sequences(get_text_data(text_add["name"]).get("english")).encode("utf-16be")
+            process_control_sequences(
+                get_text_data(text_add["name"]).get("english")
+            ).encode("utf-16be")
         )
 
         # Had to add a 0 to the end to satisfy BuildMSB's length requirement, if text adds end up breaking, this may be overwriting a param?

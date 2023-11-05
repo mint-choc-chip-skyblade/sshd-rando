@@ -69,7 +69,9 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
                     "unk1": 2,
                 },
             )
-            add_text_data(f"Fi Hints Text {ind}", break_and_make_multiple_textboxes(hints))
+            add_text_data(
+                f"Fi Hints Text {ind}", break_and_make_multiple_textboxes(hints)
+            )
     else:
         event_patch_handler.append_to_event_patches(
             "006-8KenseiNormal",

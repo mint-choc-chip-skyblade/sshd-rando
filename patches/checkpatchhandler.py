@@ -57,7 +57,7 @@ def determine_check_patches(
 def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
     print("Creating Dungeon Item Patches")
 
-    DUNGEON_ITEMIDS= [
+    DUNGEON_ITEMIDS = [
         200,
         201,
         202,

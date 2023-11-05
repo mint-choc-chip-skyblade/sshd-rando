@@ -67,4 +67,3 @@ class Location:
 
     def get_goal_name(self, language: str) -> str:
         return self.get_text_data(self.name, "goal_name", language)
-

@@ -348,7 +348,6 @@ class World:
                 if region != "None" and get_text_data(region) is None:
                     raise MissingInfoError(f'"{region}" has no associated hint data')
 
-
     def build_item_pools(self) -> None:
         generate_item_pool(self)
         generate_starting_item_pool(self)
@@ -594,7 +593,9 @@ class World:
 
     def get_gossip_stones(self) -> list[Location]:
         return [
-            location for location in self.location_table.values() if "Hint Location" in location.types
+            location
+            for location in self.location_table.values()
+            if "Hint Location" in location.types
         ]
 
     def get_area(self, area_name) -> Area:
