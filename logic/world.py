@@ -596,6 +596,7 @@ class World:
             location
             for location in self.location_table.values()
             if "Hint Location" in location.types
+            and location.name not in self.setting_map.excluded_locations
         ]
 
     def get_area(self, area_name) -> Area:
