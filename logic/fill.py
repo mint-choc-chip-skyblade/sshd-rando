@@ -58,11 +58,10 @@ def assumed_fill(
     worlds: list[World],
     items_to_place_list: list[Item],
     items_not_yet_placed: list[Item],
-    allowed_locations: list[Location] | set[Location],
+    allowed_locations: list[Location],
     world_to_fill: int = -1,
 ) -> None:
     # Create a set of valid location_access spots from the list of allowed locations
-    location_set: set[Location] = set(allowed_locations)
     valid_locations: list[LocationAccess] = []
     for world in worlds:
         for area in world.areas.values():
@@ -70,7 +69,7 @@ def assumed_fill(
                 [
                     la
                     for la in area.locations
-                    if la.location.is_empty() and la.location in location_set
+                    if la.location.is_empty() and la.location in allowed_locations
                 ]
             )
 
@@ -377,9 +376,9 @@ def place_any_dungeon_items(world: World, worlds: list[World]):
 
 def place_overworld_items(world: World, worlds: list[World]):
     overworld_items: list[Item] = []
-    overworld_locations: set[Location] = set(
-        [loc for loc in world.get_all_item_locations() if loc.progression]
-    )
+    overworld_locations = [
+        loc for loc in world.get_all_item_locations() if loc.progression
+    ]
 
     for dungeon in world.dungeons.values():
         if world.setting("small_keys") == "overworld":
@@ -400,7 +399,9 @@ def place_overworld_items(world: World, worlds: list[World]):
             world.item_pool[map_item] = 0
 
         # Remove locations from this dungeon from the overworld locations
-        overworld_locations = overworld_locations.difference(dungeon.locations)
+        overworld_locations = [
+            loc for loc in overworld_locations if loc not in dungeon.locations
+        ]
 
     if world.setting("lanayru_caves_key") == "overworld":
         caves_key = world.get_item("Lanayru Caves Small Key")

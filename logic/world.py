@@ -7,7 +7,7 @@ from .requirements import *
 from .item_pool import *
 from .dungeon import *
 
-from collections import Counter
+from collections import Counter, OrderedDict
 from typing import TYPE_CHECKING
 import logging
 import yaml
@@ -38,7 +38,7 @@ class World:
 
         self.item_table: dict[str, Item] = {}
         self.location_table: dict[str, Location] = {}
-        self.areas: dict[int, Area] = {}
+        self.areas: OrderedDict[int, Area] = OrderedDict()
         self.macros: dict[str, Requirement] = {}
         self.dungeons: dict[str, Dungeon] = {}
 
@@ -57,7 +57,7 @@ class World:
         self.starting_item_pool: Counter[Item] = Counter()
         self.root: Area = None
 
-        self.playthrough_spheres: list[set[Location]] = None
+        self.playthrough_spheres: list[list[Location]] = None
         self.entrance_spheres: list[list[Entrance]] = None
 
         self.plandomizer_locations: dict[Location, Item] = {}
