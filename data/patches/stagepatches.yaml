@@ -2439,6 +2439,15 @@ F200: # Eldin main area
     objtype: OBJ
     object:
       params1: 0xFFFFFF1E # replace event with FF
+  - name: Move Entrance from Thrill Digger forward # Otherwise you can get stuck behind the rocks in ER
+    type: objpatch
+    room: 4
+    index: 2
+    objtype: PLY
+    object:
+      posx: -3900
+      posy: 5600
+      posz: -15000
 
 F201_1: # Inside volcano
   - name: Layer override
