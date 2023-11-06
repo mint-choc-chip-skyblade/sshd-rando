@@ -584,3 +584,11 @@ pub struct Player {
 }
 
 assert_eq_size!([u8; 0x46C], Player);
+
+#[repr(C, packed(1))]
+pub struct StartCount {
+    pub counter: u16,
+    pub value:   u16,
+}
+
+assert_eq_size!(u32, StartCount);

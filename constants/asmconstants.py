@@ -18,6 +18,8 @@ SUBSDK_SIZE = SUBSDK8_TEXT_START - SUBSDK1_START
 
 # Start of .rodata.1 of subsdk1 in Ghidra + size of subsdk1 -> start of .rodata.1 of subsdk8
 SUBSDK_STARTFLAG_OFFSET = 0x3654B200
+MAX_STARTFLAGS = 1000
+SUBSDK_START_COUNTS_OFFSET = SUBSDK_STARTFLAG_OFFSET + MAX_STARTFLAGS
 
 
 # Offsets defined as the equivalent subsdk1 offset plus its size.
