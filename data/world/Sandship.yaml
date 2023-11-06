@@ -23,12 +23,13 @@
     Sandship Main Deck: Nothing
     Sandship Stern: Bow and (Clawshots or logic_sandship_mast_jump)
 
+
 - name: Sandship Stern
   dungeon: Sandship
   exits:
     Sandship Main Deck: Clawshots # Deathwarp possible
   locations:
-    Sandship - Chest at the Stern: Nothing
+    Sandship - Chest at the Stern: "'Finish_Mast_Sequence'" # Can't keep the item otherwise
 
 
 - name: Sandship Captain's Cabin
