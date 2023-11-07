@@ -2512,6 +2512,15 @@ F200: # Eldin main area
     layer: 1
     room: 2
     objtype: STAG
+  - name: Move Entrance from Thrill Digger forward # Otherwise you can get stuck behind the rocks in ER
+    type: objpatch
+    room: 4
+    index: 2
+    objtype: PLY
+    object:
+      posx: -3900
+      posy: 5600
+      posz: -15000
 
 F201_1: # Inside volcano
   - name: Layer override
