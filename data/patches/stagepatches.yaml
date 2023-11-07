@@ -3555,6 +3555,23 @@ F301_4: # Shipyard
       anglez: 0
       id: 0x4269
       name: Tubo
+  - name: Add ammo pot to before Construction Bay Bird Statue
+    onlyif: ammo_availability == plentiful
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
+      posx: -3875
+      posy: 500
+      posz: 8830
+      anglex: 0
+      angley: 0
+      anglez: 0
+      id: 0x4269
+      name: Tubo
   - name: Door to Construction always open
     type: objpatch
     room: 0
