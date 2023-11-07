@@ -2096,25 +2096,37 @@ F102_1: # Outside Ancient Cistern
       anglez: 0
       id: 0x4269
       name: Tubo
-  - name: Water Dragon trigger after AC
+  - name: Remove Water Dragon trigger after Ancient Cistern
     type: objdelete
     id: 0xFC59
     layer: 3
     room: 0
     objtype: OBJ
-  - name: Remove CS after cistern
+  - name: Remove CS after Ancient Cistern
     type: objpatch
     index: 6
     room: 0
     objtype: PLY
     object:
       play_cutscene: -1
-  - name: Water Dragon after AC
+  - name: Remove Water Dragon after Ancient Cistern
     type: objdelete
     id: 0xFC5A
     layer: 3
     room: 0
     objtype: OBJ
+  - name: Remove waterfall sound 1
+    type: objdelete
+    id: 0xFC57
+    layer: 0
+    room: 0
+    objtype: SNDT
+  - name: Remove waterfall sound 2
+    type: objdelete
+    id: 0xFC58
+    layer: 0
+    room: 0
+    objtype: SNDT
 
 F102_2: # Faron's Lair
   - name: Remove Faron's Lair entry cs
