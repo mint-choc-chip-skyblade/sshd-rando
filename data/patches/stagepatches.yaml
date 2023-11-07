@@ -304,19 +304,19 @@ F000: # Skyloft
     objtype: OBJ
   - name: Remove Orielle before Wryna l4
     type: objdelete
-    id: 0xFDC8
+    id: 0xFDC7
     layer: 4
     room: 0
     objtype: OBJ
   - name: Remove Orielle before Wryna l6
     type: objdelete
-    id: 0xFDCE
+    id: 0xFDCD
     layer: 6
     room: 0
     objtype: OBJ
   - name: Remove Orielle before Wryna l8
     type: objdelete
-    id: 0xFDC4
+    id: 0xFDC3
     layer: 8
     room: 0
     objtype: OBJ
