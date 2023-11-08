@@ -771,6 +771,8 @@ pub fn fix_item_get_under_water() {
         let mut item_animation_index: u8;
 
         asm!(
+            "mov w8, w9", // put animation index back into w8
+            "mov w25, #0x4", // default to not allowing immediate item gets
             "mov {0:w}, w9",
             out(reg) item_animation_index,
         );
@@ -779,14 +781,14 @@ pub fn fix_item_get_under_water() {
         if item_animation_index > 3 {
             asm!(
                 "mov x20, xzr",
-                "mov w25, #0x4",
                 "mov w8, #0x4", // used later to set event name to null
             );
             return;
         }
 
-        // if in water
+        // If in water, allow immediate item gets
         if ((*PLAYER_PTR).action_flags >> 18) & 0x1 == 1 {
+            yuzu_print_number((*PLAYER_PTR).action_flags, 16);
             asm!("mov w25, #0"); // allow collecting items under water
 
             // If should be a big item get animation, make it a small one
