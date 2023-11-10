@@ -550,21 +550,21 @@
     index: 520
     flow:
       next: -1
-  - name: Set GoT flags on MS
-    type: flowpatch
-    index: 74
-    flow: 
-      next: Set AC flag for GoT on required sword
-  - name: Set AC flag for GoT on required sword
-    type: setstoryflag
-    flow:
-      setstoryflag: 11
-      next: Set FS flag for GoT on required sword
-  - name: Set FS flag for GoT on required sword
-    type: setstoryflag
-    flow:
-      setstoryflag: 13
-      next: -1
+  # - name: Set GoT flags on MS
+  #   type: flowpatch
+  #   index: 74
+  #   flow: 
+  #     next: Set AC flag for GoT on required sword
+  # - name: Set AC flag for GoT on required sword
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 11
+  #     next: Set FS flag for GoT on required sword
+  # - name: Set FS flag for GoT on required sword
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 13
+  #     next: -1
 
   # Full wallet upgrades
   - name: Patch Medium Wallet

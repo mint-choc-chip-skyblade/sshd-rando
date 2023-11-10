@@ -3989,12 +3989,9 @@ F401: # Sealed Grounds Whirlpool
       - story_flag: 133
         night: 0
         layer: 5
-      - story_flag: 13
+      - story_flag: -1 # So the Groosenator behaves properly
         night: 0
         layer: 3
-      - story_flag: -1
-        night: 0
-        layer: 1
   - name: Add ammo pot to Sealed Grounds Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
@@ -4044,9 +4041,9 @@ F402: # Sealed Temple
       - story_flag: 132 # imp2 defeated
         night: 0
         layer: 4
-      - story_flag: 13 # FS beaten
-        night: 0 
-        layer: 3
+      # - story_flag: 13 # FS beaten
+      #   night: 0 
+      #   layer: 3
       - story_flag: 140 # groose lands in faron after harp
         night: 0
         layer: 2
