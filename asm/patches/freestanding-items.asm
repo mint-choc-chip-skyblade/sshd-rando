@@ -102,3 +102,10 @@ nop
 ; LMF conveyor stamina fruits
 .offset 0x08e50318 ; 0x7100e4c318
 mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Player shot arrows
+.offset 0x0802b1dc ; 0x71000271dc
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x0802bccc ; 0x7100027ccc
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
