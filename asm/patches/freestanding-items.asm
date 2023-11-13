@@ -95,3 +95,9 @@ b.hi 0x084e37a8 ; branch over checks to prevent being picked up by beetle
 
 .offset 0x084e37a4
 nop
+
+
+
+; Fix spawned items that shouldn't have textboxes
+.offset 0x08e50318 ; 0x7100e4c318
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
