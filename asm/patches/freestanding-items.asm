@@ -143,3 +143,10 @@ mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
 
 .offset 0x086f0b7c ; 71006ecb7c
 mov w8, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Ancient Flowers
+.offset 0x087cdbf8 ; 0x71007c9bf8
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x087cdf3c ; 0x71007c9f3c
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
