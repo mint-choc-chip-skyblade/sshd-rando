@@ -1402,6 +1402,14 @@ F020: # The Sky
       sizex: 12000
       sizey: 12800
 
+  - name: Rotate crystal outside Lumpy Pumpkin
+    type: objpatch
+    id: 0xFC77
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      angley: 40000
   - name: Move crystal outside Lumpy Pumpkin to night layer
     type: objmove
     id: 0xFC77
