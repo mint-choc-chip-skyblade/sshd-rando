@@ -122,7 +122,7 @@ mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
 mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
 
 .offset 0x083ac348 ; 0x71003a8348
-mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+mov w8, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
 
 .offset 0x083ac550 ; 0x71003a8550
 mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
