@@ -136,3 +136,10 @@ mov w8, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
 
 .offset 0x084ad6dc ; 0x71004a96dc
 mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Treasures
+.offset 0x086f0ad8; 0x71006ecad8
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x086f0b7c ; 71006ecb7c
+mov w8, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
