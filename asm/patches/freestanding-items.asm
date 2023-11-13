@@ -109,3 +109,10 @@ mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
 
 .offset 0x0802bccc ; 0x7100027ccc
 mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Boko shot arrows
+.offset 0x082ce808 ; 0x71002ca808
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x082d7b94 ; 0x71002d3b94
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
