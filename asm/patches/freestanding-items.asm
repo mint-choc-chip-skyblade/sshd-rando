@@ -117,6 +117,10 @@ mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
 .offset 0x082d7b94 ; 0x71002d3b94
 mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
 
+; Some arrow thing?
+.offset 0x08a7d988 ; 0x7100a79988
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
 ; Lizalfos Tails
 .offset 0x083ac274 ; 0x71003a8274
 mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
