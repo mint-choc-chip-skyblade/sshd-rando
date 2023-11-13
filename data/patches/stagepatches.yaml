@@ -176,25 +176,6 @@ F000: # Skyloft
       anglez: 0
       id: 0x4269
       name: Tubo
-  - name: Add entrance to Goddess Statue
-    type: objadd
-    layer: 0
-    room: 0
-    objtype: STAG
-    object:
-      params1: 0xFFFFFF31 # scenlink: 49
-      params2: 0xFF5FFFFF
-      posx: 6.421215057373047
-      posy: 2871.08447265625
-      posz: -19011.0625
-      sizex: 527.0
-      sizey: 575.0
-      sizez: 958.0
-      anglex: 0xFFFF # no trigger storyflag
-      angley: 0
-      anglez: 951 # Untrigger on getting sword pedestal checks
-      id: 0xFFFF
-      name: ScChang
   - name: Add entrance to simulate coming from chimney
     type: objadd
     room: 0
@@ -532,22 +513,6 @@ F000: # Skyloft
     object:
       trigstoryfid: -1
 
-  - name: Patch entrance to Goddess Statue
-    type: objpatch
-    id: 0xFD05
-    room: 0
-    layer: 0
-    objtype: STAG
-    object:
-      trigstoryfid: 951 # Only after raised goddess sword
-  - name: Patch other SCEN into Goddess Statue
-    type: objpatch
-    index: 49
-    room: 0
-    objtype: SCEN
-    object:
-      layer: 1
-      entrance: 0
   - name: Remove SoT placement cutscene
     type: objpatch
     index: 46
@@ -1138,9 +1103,6 @@ F008r: # Goddess Statue
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 951 # Raising Goddess Sword in Goddess Statue
-        night: 2
-        layer: 0
       - story_flag: -1
         night: 2
         layer: 1
