@@ -23,6 +23,7 @@ Storyflags:
   - 329  # Slept after starting Batreaux Crystal Quest
   # - 358  # Interface choice unlocked
   - 386  # Skip first part of Bertie's Crystal Quest text
+  - 493  # Unlocked Goddess Walls
   - 494  # Open gates to Faron Woods
   - 496  # Skip Skipper's Cutscene after Sea Chart
   - 519  # Updated Sand Sea map

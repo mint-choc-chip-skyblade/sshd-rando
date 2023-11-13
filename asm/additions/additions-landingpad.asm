@@ -64,6 +64,9 @@ b.eq drop_nothing
 cmp w8, #16
 b.eq fix_item_get_under_water
 
+cmp w8, #17
+b.eq activation_checks_for_goddess_walls
+
 ret ; this should never be reached
 
 ; ends at 0x360A7000

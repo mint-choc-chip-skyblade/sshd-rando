@@ -17,6 +17,8 @@ extern "C" {
     static PLAYER_PTR: *mut structs::Player;
 
     static FILE_MGR: *mut structs::FileMgr;
+    static HARP_RELATED: *mut structs::HarpRelated;
+
     static STORYFLAG_MGR: *mut structs::FlagMgr;
     static ITEMFLAG_MGR: *mut structs::FlagMgr;
     static SCENEFLAG_MGR: *mut c_void;
@@ -797,6 +799,23 @@ pub fn fix_item_get_under_water() {
                 asm!("mov w8, #0");
             }
         }
+    }
+}
+
+#[no_mangle]
+pub fn activation_checks_for_goddess_walls() -> bool {
+    unsafe {
+        // Replaced code
+        if (*HARP_RELATED).someCheckForContinuousStrumming == 0
+            || (*HARP_RELATED).someOtherHarpThing != 0
+        {
+            // Additional check for BotG
+            if check_itemflag(structs::ITEMFLAGS::BALLAD_OF_THE_GODDESS) == 1 {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
 
