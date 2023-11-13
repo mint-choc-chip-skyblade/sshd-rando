@@ -126,3 +126,13 @@ mov w8, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
 
 .offset 0x083ac550 ; 0x71003a8550
 mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Heart Flowers
+.offset 0x084ac154 ; 0x71004a8154
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x084ac2c8 ; 0x71004a82c8
+mov w8, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x084ad6dc ; 0x71004a96dc
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
