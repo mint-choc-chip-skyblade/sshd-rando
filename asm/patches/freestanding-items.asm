@@ -154,3 +154,13 @@ mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
 
 .offset 0x087cdf3c ; 0x71007c9f3c
 mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Insects
+.offset 0x08a97b18 ; 0x7100a93b18
+mov w9, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x08a97a28 ; 0x7100a93a28
+mov w10, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x08a97acc ; 0x7100a93acc
+mov w10, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
