@@ -73,13 +73,11 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
     non_required_locations = {}
     for world in worlds:
         # Defeat Demise is always a goal location
-        world.path_locations[
-            (world.get_location("Hylia's Realm - Defeat Demise"),)
-        ] = []
+        world.path_locations[world.get_location("Hylia's Realm - Defeat Demise")] = []
         # Required dungeons also have goal locations
         for dungeon in world.dungeons.values():
             if dungeon.required:
-                world.path_locations[tuple(dungeon.goal_locations)] = []
+                world.path_locations[dungeon.goal_location] = []
 
         for location in world.location_table.values():
             if not location.progression:
@@ -122,22 +120,16 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
 
                 # If we never reach the goal location, then this location is
                 # "on the path to" the goal location.
-                for goal_locations, path_locations in world.path_locations.items():
-                    if any(
-                        [
-                            loc
-                            for loc in goal_locations
-                            if loc not in search.visited_locations
-                        ]
-                    ):
+                for goal_location, path_locations in world.path_locations.items():
+                    if goal_location not in search.visited_locations:
                         path_locations.append(location)
 
                 # Then give back the location's item
                 location.set_current_item(item_at_location)
 
         # logging.getLogger("").debug(f"Path locations for {world}")
-        # for goal_locations, path_locations in world.path_locations.items():
-        #     goal_name = get_text_data(goal_locations[0].name, "goal_name").get(
+        # for goal_location, path_locations in world.path_locations.items():
+        #     goal_name = get_text_data(goal_location.name, "goal_name").get(
         #         "english"
         #     )
         #     logging.getLogger("").debug(f"  {goal_name}")
@@ -236,39 +228,39 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
 def generate_path_hint_locations(world: World, hint_locations: list) -> None:
     # Shuffle each pool of path locations so that their orders are random
     goal_locations_list = []
-    for goal_locations, path_locations in world.path_locations.items():
+    for goal_location, path_locations in world.path_locations.items():
         random.shuffle(path_locations)
         # Initially we want to create hints for required dungeon's goal locations
         # and then add Demise in once we have at least 1 hint for each required dungeon
-        if goal_locations[0] != world.get_location("Hylia's Realm - Defeat Demise"):
-            goal_locations_list.append(goal_locations)
+        if goal_location != world.get_location("Hylia's Realm - Defeat Demise"):
+            goal_locations_list.append(goal_location)
 
     added_demise_path_location = False
     for i in range(world.setting("path_hints").value_as_number()):
         # Try to get at least one hint for each required dungeon first
-        goal_locations = None
+        goal_location = None
         if i < len(goal_locations_list):
-            goal_locations = goal_locations_list[i]
+            goal_location = goal_locations_list[i]
         else:
             # Once we've pulled from all required dungeons, then add demise
             # to the list and choose randomly
             if i == len(goal_locations_list) and not added_demise_path_location:
                 added_demise_path_location = True
                 goal_locations_list.append(
-                    (world.get_location("Hylia's Realm - Defeat Demise"),)
+                    world.get_location("Hylia's Realm - Defeat Demise")
                 )
 
             if not goal_locations_list:
                 logging.getLogger("").debug("No more possible path hints")
                 break
 
-            goal_locations = random.choice(goal_locations_list)
+            goal_location = random.choice(goal_locations_list)
 
         # If we're placing hints on gossip stones, don't choose any that somehow
         # manage to be before every possible gossip stone
         valid_path_locations = [
             loc
-            for loc in world.path_locations[goal_locations]
+            for loc in world.path_locations[goal_location]
             if world.setting("gossip_stone_hints") == "off"
             or (
                 world.setting("gossip_stone_hints") == "on"
@@ -277,19 +269,17 @@ def generate_path_hint_locations(world: World, hint_locations: list) -> None:
         ]
         hint_location = get_hintable_location(valid_path_locations)
         if hint_location is None:
-            logging.getLogger("").debug(
-                f"No more path locations for {goal_locations[0]}"
-            )
-            goal_locations_list.remove(goal_locations)
+            logging.getLogger("").debug(f"No more path locations for {goal_location}")
+            goal_locations_list.remove(goal_location)
             i -= 1
             continue
 
         hint_location.is_hinted = True
         hint_locations.append(hint_location)
         logging.getLogger("").debug(
-            f'Chose "{hint_location}" as path hint for "{goal_locations[0]}"'
+            f'Chose "{hint_location}" as path hint for "{goal_location}"'
         )
-        generate_path_hint_message(hint_location, goal_locations)
+        generate_path_hint_message(hint_location, goal_location)
 
 
 def generate_barren_hint_locations(world: World, hint_locations: list) -> None:
@@ -411,9 +401,7 @@ def generate_location_hint_locations(
         )
 
 
-def generate_path_hint_message(
-    location: Location, goal_locations: list[Location]
-) -> None:
+def generate_path_hint_message(location: Location, goal_location: Location) -> None:
     world = location.world
     hint_regions = list(
         set(
@@ -433,9 +421,9 @@ def generate_path_hint_message(
 
     plurality_en = "is" if len(hint_regions) == 1 else "are"
 
-    goal_name_text = get_text_data(
-        goal_locations[0].name, "goal_name"
-    ).apply_text_color("r")
+    goal_name_text = get_text_data(goal_location.name, "goal_name").apply_text_color(
+        "r"
+    )
     full_text = (
         get_text_data("Path Hint")
         .replace("|regions|", hint_region_text)
@@ -690,7 +678,7 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                         for loc in locations
                         if loc
                         in world.path_locations[
-                            (world.get_location("Hylia's Realm - Defeat Demise"),)
+                            world.get_location("Hylia's Realm - Defeat Demise")
                         ]
                     ]
                 ):

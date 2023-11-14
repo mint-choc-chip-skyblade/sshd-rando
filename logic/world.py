@@ -66,9 +66,12 @@ class World:
         self.plandomizer_entrances: dict[Entrance, Entrance] = {}
 
         # Hint related things
-        self.path_locations: dict[tuple, list[Location]] = {}
+        # path_locations maps a goal location to its set of path locations
+        self.path_locations: dict[Location, list[Location]] = {}
+        # barren_regions maps a hint region to the list of all locations in the region
         self.barren_regions: OrderedDict[str, list[Location]] = OrderedDict()
         self.fi_hints: list[Location] = []
+        # gossip_stone_hints map each gossip stone location to the list of locations the stone is hinting at
         self.gossip_stone_hints: OrderedDict[Location, list[Location]] = OrderedDict()
         self.song_hints: dict[Item, Hint] = {}
         self.impa_sot_hint: Hint = None
@@ -102,19 +105,9 @@ class World:
                 item_id = int(item_node["id"])
                 name = item_node["name"]
                 oarcs = item_node["oarc"]
-                major_item = (
-                    item_node["advancement"] if "advancement" in item_node else False
-                )
-                game_winning_item = (
-                    item_node["game_winning_item"]
-                    if "game_winning_item" in item_node
-                    else False
-                )
-                chain_locations = (
-                    item_node["chain_locations"]
-                    if "chain_locations" in item_node
-                    else []
-                )
+                major_item = item_node.get("advancement", False)
+                game_winning_item = item_node.get("game_winning_item", False)
+                chain_locations = item_node.get("chain_locations", [])
 
                 stripped_name = name.replace("'", "")
                 self.item_table[stripped_name] = Item(
@@ -166,29 +159,19 @@ class World:
                 for field in ["name", "original_item"]:
                     if field not in location_node:
                         raise MissingInfoError(
-                            f"location \"{location_node['name']}\" is missing the \"{field}\" field in items.yaml"
+                            f"location \"{location_node['name']}\" is missing the \"{field}\" field in locations.yaml"
                         )
 
                 name = location_node["name"]
                 original_item = self.get_item(location_node["original_item"])
-                types = location_node["type"] if "type" in location_node else []
+                types = location_node.get("type", [])
                 if types == None:
                     types = []
-                patch_paths = location_node["Paths"] if "Paths" in location_node else []
-                goal_location = (
-                    location_node["goal_location"]
-                    if "goal_location" in location_node
-                    else False
-                )
-                hint_priority = (
-                    location_node["hint"] if "hint" in location_node else "never"
-                )
-                hint_textfile = (
-                    location_node["textfile"] if "textfile" in location_node else ""
-                )
-                hint_textindex = (
-                    location_node["textindex"] if "textindex" in location_node else -1
-                )
+                patch_paths = location_node.get("Paths", [])
+                goal_location = location_node.get("goal_location", False)
+                hint_priority = location_node.get("hint", "never")
+                hint_textfile = location_node.get("textfile", "")
+                hint_textindex = location_node.get("textindex", -1)
                 location_id = location_id_counter
                 location_id_counter += 1
 
@@ -258,17 +241,14 @@ class World:
                             else TOD.ALL
                         )
 
-                    if "can_sleep" in area_node:
-                        new_area.can_sleep = True
+                    new_area.can_sleep = area_node.get("can_sleep", False)
 
-                    if "dungeon" in area_node:
-                        dungeon_name = area_node["dungeon"]
+                    if dungeon_name := area_node.get("dungeon", False):
                         self.add_dungeon(dungeon_name)
                         new_area.hint_regions.add(dungeon_name)
                         if "dungeon_starting_area" in area_node:
                             self.get_dungeon(dungeon_name).starting_area = new_area
-                    elif "hint_region" in area_node:
-                        hint_region = area_node["hint_region"]
+                    elif hint_region := area_node.get("hint_region", False):
                         new_area.hint_regions.add(hint_region)
 
                     if "events" in area_node:
@@ -299,8 +279,8 @@ class World:
                                 new_area.locations[-1]
                             )
                             # Add the location to the dungeon if this area is part of one
-                            if "dungeon" in area_node:
-                                self.get_dungeon(area_node["dungeon"]).locations.append(
+                            if dungeon_name := area_node.get("dungeon", False):
+                                self.get_dungeon(dungeon_name).locations.append(
                                     self.get_location(location_name)
                                 )
 
@@ -353,10 +333,9 @@ class World:
         generate_starting_item_pool(self)
 
     def place_hardcoded_items(self) -> None:
-        self.get_location("Hylia's Realm - Defeat Demise").set_current_item(
-            self.get_item("Game Beatable")
-        )
-        self.get_location("Hylia's Realm - Defeat Demise").has_known_vanilla_item = True
+        defeat_demise = self.get_location("Hylia's Realm - Defeat Demise")
+        defeat_demise.set_current_item(self.get_item("Game Beatable"))
+        defeat_demise.has_known_vanilla_item = True
 
     def place_plandomizer_items(self) -> None:
         for location, item in self.plandomizer_locations.items():
@@ -452,20 +431,14 @@ class World:
         # Remove any dungeons which have non-major items plandomized to their goal locations
         # Also force require any dungeons which have a major item plandomized to their goal locations
         for dungeon in dungeons.copy():
-            if any(
-                [
-                    True
-                    for loc in dungeon.goal_locations
-                    if not loc.is_empty() and not loc.current_item.is_major_item
-                ]
+            if (
+                not dungeon.goal_location.is_empty()
+                and not dungeon.goal_location.current_item.is_major_item
             ):
                 dungeons.remove(dungeon)
-            elif any(
-                [
-                    True
-                    for loc in dungeon.goal_locations
-                    if not loc.is_empty() and loc.current_item.is_major_item
-                ]
+            elif (
+                not dungeon.goal_location.is_empty()
+                and dungeon.goal_location.current_item.is_major_item
             ):
                 dungeon.required = True
                 num_required_dungeons -= 1

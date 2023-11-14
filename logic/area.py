@@ -4,6 +4,7 @@ from logic.requirements import TOD
 
 from typing import TYPE_CHECKING
 import logging
+import random
 
 if TYPE_CHECKING:
     from .world import World
@@ -138,11 +139,18 @@ def assign_hint_regions_and_dungeon_locations(starting_area: Area):
         for region in hint_regions:
             if region in dungeon_regions:
                 locations = [la.location for la in area.locations]
-                area.world.get_dungeon(region).locations.extend(locations)
+                dungeon = area.world.get_dungeon(region)
+                dungeon.locations.extend(locations)
                 logging.getLogger("").debug(
                     f"{[l.name for l in locations]} have been assigned to dungeon {region}"
                 )
 
                 # Also assign goal locations
                 goal_locations = [loc for loc in locations if loc.is_goal_location]
-                area.world.get_dungeon(region).goal_locations.extend(goal_locations)
+                random.shuffle(goal_locations)
+                for goal_location in goal_locations:
+                    if not dungeon.goal_location:
+                        dungeon.goal_location = goal_location
+                    else:
+                        if random.randint(0, 1):
+                            dungeon.goal_location = goal_location

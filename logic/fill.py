@@ -165,9 +165,7 @@ def fill_required_dungeon_goal_locations(world: World, worlds: list[World]):
     required_goal_locations = []
     for dungeon in world.dungeons.values():
         if dungeon.required:
-            required_goal_locations.extend(
-                [loc for loc in dungeon.goal_locations if loc.is_empty()]
-            )
+            required_goal_locations.append(dungeon.goal_location)
 
     # Return early if there are no goal locations
     if len(required_goal_locations) == 0:
