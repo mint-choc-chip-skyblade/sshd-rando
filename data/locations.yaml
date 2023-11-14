@@ -21,7 +21,6 @@
     - event/118-Town3/157
     - oarc/F001r/l0
   hint: sometimes
-  text: delivering a <r<Kikwi>> reveals
 
 - name: Knight Academy - Fledge's Crystals
   original_item: Gratitude Crystal Pack
@@ -29,7 +28,6 @@
   Paths:
     - event/115-Town2/325
     - oarc/F001r/l0
-  text: <r<lending strength to a friend>> yields
 
 - name: Knight Academy - Item from Cawlin
   original_item: Cawlin's Letter
@@ -85,7 +83,6 @@
     - oarc/F000/l4
     - oarc/F000/l6
   hint: sometimes
-  text: <r<shooting pumpkings>> is rewarded with
 
 - name: Inside the Statue of the Goddess - First Goddess Sword Item
   original_item: Progressive Sword
@@ -226,7 +223,6 @@
     - oarc/F018r/l0
     - oarc/F019r/l0
   hint: always
-  text: the <r<item check girl>> hides
 
 - name: Central Skyloft - Item in Bird Nest
   original_item: Rattle
@@ -269,7 +265,6 @@
   Paths:
     - stage/F000/r0/l0/TBox/80
   hint: sometimes
-  text: a <s<goddess cube>> <r<amongst the pirates>> reveals
   cube_region: Lanayru Sand Sea
 
 - name: Central Skyloft - Crystal in Orielle and Parrow's House
@@ -347,7 +342,6 @@
   Paths:
     - event/115-Town2/125
     - oarc/F014r/l0
-  text: helping an <r<exhausted parent>> rewards
 
 - name: Skyloft Village - Sparrot's Crystals
   original_item: Gratitude Crystal Pack
@@ -356,7 +350,6 @@
     - event/118-Town3/141
     - oarc/F013r/l0
   hint: sometimes
-  text: delivering a <r<fortune telling device>> reveals
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
   original_item: Gratitude Crystal 
@@ -410,7 +403,6 @@
     - event/121-AkumaKun/27
     - oarc/F012r/l0
   hint: sometimes
-  text: <ye<50>> <r<pieces of gratitude>> can be exchanged for
 
 - name: Batreaux - 70 Crystals
   original_item: Gold Rupee
@@ -419,7 +411,6 @@
     - event/121-AkumaKun/161
     - oarc/F012r/l0
   hint: sometimes
-  text: the <r<demon's penultimate reward>> is
 
 - name: Batreaux - 70 Crystals Second Reward
   original_item: Gold Rupee
@@ -428,7 +419,6 @@
     - event/121-AkumaKun/163
     - oarc/F012r/l0
   hint: sometimes
-  text: the <r<demon's penultimate reward>> is
 
 - name: Batreaux - 80 Crystals
   original_item: Progressive Wallet
@@ -437,7 +427,6 @@
     - event/121-AkumaKun/37
     - oarc/F012r/l0
   hint: always
-  text: a <r<demon in human form>> grants
 
 # Beedle's Shop:
 
@@ -459,7 +448,6 @@
   hint: always
   Paths:
     - ShpSmpl/22
-  text: for <g+<1200 rupees>> <r<Beedle>> sells
 
 - name: Beedle's Shop - 800 Rupee Item
   original_item: Life Medal 
@@ -473,7 +461,6 @@
   hint: always
   Paths:
     - ShpSmpl/23
-  text: for <g+<1600 rupees>> <r<Beedle>> sells
 
 - name: Beedle's Shop - First 100 Rupee Item
   original_item: Extra Wallet 
@@ -518,7 +505,6 @@
   type:
   Paths:
     - stage/F011r/r0/l0/Chandel
-  text: <r<angering a bartender>> dislodges
 
 - name: Lumpy Pumpkin - Harp Minigame
   original_item: Heart Piece
@@ -527,7 +513,6 @@
     - event/117-Pumpkin/305
     - oarc/F011r/l0
   hint: sometimes
-  text: the <r<bartender>> holds
 
 - name: Lumpy Pumpkin - Kina's Crystals
   original_item: Gratitude Crystal Pack
@@ -536,7 +521,6 @@
     - event/117-Pumpkin/386
     - oarc/F020/l0
   hint: sometimes
-  text: <r<delivering a mogma to the sky>> is rewarded with
 
 - name: Lumpy Pumpkin - Outside Crystal
   original_item: Gratitude Crystal 
@@ -562,7 +546,6 @@
   Paths:
     - event/115-Town2/225
     - oarc/F020/l0
-  text: saving a <r<sick loftwing>> is rewardede with
 
 - name: Beedle's Island - Beedle's Crystals
   original_item: Gratitude Crystal Pack
@@ -571,7 +554,6 @@
     - event/105-Terry/115
     - oarc/F020/l0
   hint: sometimes
-  text: <r<reuniting two Beedles>> is rewarded with
 
 - name: Beedle's Island - Crystal
   original_item: Gratitude Crystal 
@@ -585,7 +567,6 @@
   Paths:
     - stage/F020/r0/l0/TBox/89
   hint: sometimes
-  text: a <s<goddess cube>> at the <r<monument to time>> reveals
   cube_region: Lanayru Desert
 
 - name: Beedle's Island - Cage Goddess Chest
@@ -601,7 +582,6 @@
   Paths:
     - event/110-DivingGame/60
     - oarc/F020/l0
-  text: delivering a <r<colorful wheel>> is rewarded with
 
 - name: Fun Fun Island - Minigame -- 500 Rupees
   original_item: Heart Piece
@@ -610,7 +590,6 @@
     - event/110-DivingGame/19
     - oarc/F020/l2
   hint: sometimes
-  text: <r<diving through 5 rings>> yields
 
 - name: Fun Fun Island - Goddess Chest
   original_item: Gold Rupee
@@ -737,14 +716,12 @@
   type:
   Paths:
     - stage/F010r/r0/l0/SwSB/0
-  text: the <r<goddess' blade>> reveals
 
 - name: Isle of Songs - Strike Crest with Longsword
   original_item: Nayru's Wisdom
   type:
   Paths:
     - stage/F010r/r0/l0/SwSB/1
-  text: a <r<longsword>> reveals
 
 - name: Isle of Songs - Strike Crest with White Sword
   original_item: Din's Power
@@ -752,7 +729,6 @@
   Paths:
     - stage/F010r/r0/l0/SwSB/2
   hint: sometimes
-  text: a <r<blade of white>> reveals
 
 - name: Isle of Songs - Top Goddess Chest
   original_item: Small Bomb Bag
@@ -775,7 +751,6 @@
     - event/120-Nushi/give item after levias
     - oarc/F023/l0
   hint: always
-  text: the <r<ancient whale within a raging storm>> bellows out
 
 - name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
   original_item: Beedle's Insect Cage
@@ -784,7 +759,6 @@
     - event/116-InsectGame/69
     - oarc/F023/l0
   hint: sometimes
-  text: <r<true bug catchers>> can find
 
 - name: Bug Heaven - Goddess Chest
   original_item: Heart Piece
@@ -850,7 +824,6 @@
     - event/503-Goron/630
     - oarc/F400/l0
   hint: sometimes
-  text: <r<drawing upon a magical wall>> reveals
 
 #Sealed Grounds - Behind the Temple Triforce on Goddess Wall:
 #  original_item: Gold Rupee
@@ -872,7 +845,6 @@
     - event/502-CenterFieldBack/17
     - oarc/F404/l1
   hint: sometimes
-  text: the <r<goddess blesses you>> with
 
 - name: Hylia's Realm - Defeat Demise
   original_item: Game Beatable
@@ -898,7 +870,6 @@
     - stage/F100/r0/l1/NpcKyuE/0x1EBB # id is different from SD
     - oarc/F100/l0
   hint: sometimes
-  text: the <r<Kikwi relic>> is
 
 - name: Faron Woods - Rupee on Hollow Tree Root
   original_item: Blue Rupee 
@@ -954,7 +925,6 @@
   Paths:
     - stage/F100_1/r0/l0/TBox/84
   hint: sometimes
-  text: climbing inside an <r<old hermit's home>> rewards
 
 - name: Deep Woods - Chest
   original_item: Red Rupee
@@ -1010,7 +980,6 @@
   original_item: Goddess Plume
   type:
   hint: sometimes
-  text: a <r<lonely chest in the lake>> contains
   Paths:
     - stage/F102/r3/l0/TBox/64
 
@@ -1155,7 +1124,6 @@
 #   original_item: Faron Song of the Hero Part
 #   type: Tadtones
 #   hint: sometimes
-#   text: completing a <r<watery song>> reveals
 #   Paths:
 #     - event/204-ForestF3/Give item after Faron SotH CS
 #     - oarc/F103_1/l0
@@ -1296,7 +1264,6 @@
   original_item: Key Piece
   type:
   hint: sometimes
-  text: a <r<boulder on a sandy slope>> hides
   Paths:
     - stage/F200/r4/l1/Soil/12
 
@@ -1333,12 +1300,10 @@
     - event/300-Mountain/6
     - event/300-Mountain/135
     - oarc/F210/l0
-  text: helping <r<reclaim the mogmas' territory>> rewards
 
 - name: Mogma Turf - Sand Slide Chest
   original_item: Eldin Ore
   type:
-  text: <r<behind>> a slide mogmas buried
   Paths:
     - stage/F210/r0/l0/TBox/68
 
@@ -1359,7 +1324,6 @@
   type:
   Paths:
     - stage/F201_4/r0/l0/TBox/95
-  text: atop a <r<volcanic waterfall>> hides
 
 - name: Volcano Summit - Item behind Digging
   original_item: Heart Piece
@@ -1367,7 +1331,6 @@
   Paths:
     - stage/F201_3/r0/l0/Item/104 #sceneflagID
   hint: sometimes
-  text: <r<fairies at the summit>> dance with
 
 - name: Volcano Summit - Gossip Stone in Waterfall Area
   original_item: Nothing
@@ -1399,7 +1362,6 @@
 # - name: Bokoblin Base - Plats' Gift
 #   original_item: Mogma Mitts
 #   type:
-#   text: a gift from an <r<imprisoned mogma>> has
 #   Paths:
 #    - event/305-MountainF3/Plats' Gift
 #    - oarc/F202/l1
@@ -1458,7 +1420,6 @@
 # - name: Bokoblin Base - Fire Dragon's Reward
 #   original_item: Eldin Song of the Hero Part
 #   type:
-#   text: <r<hearing a song atop the great mountain>> is rewarded with
 #   Paths:
 #    - event/305-MountainF3/Give item after Eldin SotH CS
 #    - oarc/F221/l0
@@ -1538,13 +1499,11 @@
   Paths:
     - stage/F300/r0/l1/TBox/83
   hint: sometimes
-  text: the <r<midst of the desert>> holds
 
 - name: Lanayru Desert - Secret Passageway Chest
   original_item: Heart Piece
   type:
   hint: sometimes
-  text: a <r<secret passage in the desert>> holds
   Paths:
     - stage/F300/r0/l0/TBox/74
 
@@ -1576,7 +1535,6 @@
   original_item: Rare Treasure # TODO check again
   type:
   hint: sometimes
-  text: a <r<raised chest in the Fire Node>> holds
   Paths:
     - stage/F300_3/r0/l0/TBox/79
 
@@ -1619,7 +1577,6 @@
 - name: Lightning Node - Raised Chest near Generator
   original_item: Rare Treasure # TODO check again
   type:
-  text: a <r<raised chest in the Lightning Node>> contains
   Paths:
     - stage/F300_2/r0/l0/TBox/77
 
@@ -1659,7 +1616,6 @@
     - event/404-DesertF3/give item after Healing Thunderdragon
     - oarc/F302/l0
   hint: sometimes
-  text: <r<curing an ancient dragon>> is rewarded with
 
 - name: Lanayru Gorge - Item on Pillar
   original_item: Red Rupee
@@ -1715,7 +1671,6 @@
   type:
   Paths:
     - stage/F301_3/r0/l0/TBox/76
-  text: a <r<chest amongst cacti>> holds
 
 - name: Skipper's Retreat - Chest in Shack
   original_item: Sea Chart
@@ -1723,7 +1678,6 @@
   Paths:
     - stage/F301_5/r0/l0/TBox/65
   hint: sometimes
-  text: a <r<chest atop a sandy retreat>> holds
 
 - name: Skipper's Retreat - Skydive Chest
   original_item: Silver Rupee
@@ -1744,7 +1698,6 @@
     - event/406-TrolleyRace/77
     - oarc/F301_4/l0
   hint: sometimes
-  text: a <r<fast minecart time>> is rewarded with
 
 - name: Shipyard - Gossip Stone
   original_item: Nothing
@@ -1807,7 +1760,6 @@
   original_item: Skyview Temple Small Key
   type:
   hints: sometimes
-  text: in a <r<temple in the forest>> a mogma <r<buried>>
   Paths:
     - stage/D100/r4/l0/Soil/15
 
@@ -1816,7 +1768,6 @@
   type:
   Paths:
     - stage/D100/r4/l0/TBox/67
-  text: <r<two watchful eyes>> guard
 
 - name: Skyview Temple - Chest after Stalfos Fight
   original_item: Progressive Beetle
@@ -1855,7 +1806,6 @@
   Paths:
     - stage/D100/r7/l0/TBox/68
   hint: sometimes
-  text: <r<three watchful eyes>> guard
 
 - name: Skyview Temple - Chest near Boss Door
   original_item: Red Rupee
@@ -1926,7 +1876,6 @@
   original_item: Earth Temple Map
   type:
   hint: sometimes
-  text: the <r<western wing in the Earth Temple>> holds
   Paths:
     - stage/D200/r0/l0/TBox/64
 
@@ -1935,7 +1884,6 @@
   type:
   Paths:
     - stage/D200/r3/l0/TBox/65
-  text: a menacing <r<pair of Lizalfos>> protect
 
 - name: Earth Temple - Ledd's Gift
   original_item: 5 Bombs
@@ -1949,7 +1897,6 @@
   type: Rupees (No Quick Beetle)
   Paths:
     - stage/D200/r2/l0/Item/21
-  text: hidden within the <r<neck of a dragon>> rests
 
 - name: Earth Temple - Chest Guarded by Lizalfos
   original_item: Red Rupee
@@ -2042,7 +1989,6 @@
   Paths:
     - stage/D300_1/r8/l0/TBox/71
   hint: always
-  text: deep inside <r<Lanayru Mining Facility, a pair of Armos>> guard
 
 - name: Lanayru Mining Facility - Shortcut Chest in Main Hub
   original_item: Red Rupee
@@ -2113,7 +2059,6 @@
   original_item: Ancient Cistern Small Key 
   type:
   hint: sometimes
-  text: the <r<lone east chest in the Ancient Cistern>> contains
   Paths:
     - stage/D101/r1/l0/TBox/67
 
@@ -2228,7 +2173,6 @@
   original_item: Sandship Small Key 
   type:
   hint: sometimes
-  text: the <r<gratitude of a freed crew>> reveals
   Paths:
     - event/401-DesertD2/14
     - oarc/D301/l4
@@ -2239,7 +2183,6 @@
   Paths:
     - stage/D301/r15/l0/TBox/72
   hint: sometimes
-  text: a <r<robot upon the Sandship's bow>> guards
 
 - name: Sandship - Chest in Captain's Cabin
   original_item: Sandship Boss Key
@@ -2247,7 +2190,6 @@
   Paths:
     - stage/D301/r14/l3/TBox/73
   hint: sometimes
-  text: the <r<secret treasure of the Sandship's captain>> is
 
 - name: Sandship - Defeat Boss
   original_item: Heart Container
@@ -2256,7 +2198,6 @@
     - stage/B301/r0/l1/HeartCo
     - stage/D301/r0/l1/HeartCo
   hint: sometimes
-  text: the <r<heart of an ancient sea creature>> holds
 
 - name: Sandship - Nayru's Flame
   original_item: Progressive Sword
@@ -2312,7 +2253,6 @@
   type:
   Paths:
     - stage/D201_1/r5/l0/TBox/68
-  text: saving a <r<mogma>> from a <r<fiery fate>> rewards
 
 - name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   original_item: Fire Sanctuary Map
@@ -2327,7 +2267,6 @@
   Paths:
     - stage/D201_1/r11/l0/TBox/71
   hint: always
-  text: a <r<false wall in the Fire Sanctuary>> guards
 
 - name: Fire Sanctuary - Plats' Chest
   original_item: Heart Piece
@@ -2340,7 +2279,6 @@
   type:
   Paths:
     - stage/D201/r9/l0/TBox/75
-  text: exploring a <r<broken staircase>> reveals
 
 - name: Fire Sanctuary - Chest after Winged Torches
   original_item: Fire Sanctuary Boss Key
@@ -2412,7 +2350,6 @@
   Paths:
     - stage/S000/r0/l2/WarpObj
   hint: always
-  text: the <r<goddess's final trial>> grants
 
 - name: Faron Silent Realm - Collect all Tears Reward
   original_item: Water Dragon's Scale
@@ -2420,7 +2357,6 @@
   Paths:
     - stage/S100/r0/l2/WarpObj
   hint: always
-  text: a <r<trial of courage>> grants
 
 - name: Lanayru Silent Realm - Collect all Tears Reward
   original_item: Clawshots
@@ -2428,7 +2364,6 @@
   Paths:
     - stage/S300/r0/l2/WarpObj
   hint: always
-  text: a <r<trial of wisdom>> grants
 
 - name: Eldin Silent Realm - Collect all Tears Reward
   original_item: Fireshield Earrings
@@ -2436,4 +2371,3 @@
   Paths:
     - stage/S200/r2/l2/WarpObj
   hint: always
-  text: a <r<trial of power>> grants
