@@ -67,6 +67,9 @@ b.eq fix_item_get_under_water
 cmp w8, #17
 b.eq activation_checks_for_goddess_walls
 
+cmp w8, #18
+b.eq remove_timeshift_stone_cutscenes
+
 ret ; this should never be reached
 
 ; ends at 0x360A7000

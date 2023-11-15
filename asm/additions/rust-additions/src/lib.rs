@@ -819,6 +819,26 @@ pub fn activation_checks_for_goddess_walls() -> bool {
     }
 }
 
+#[no_mangle]
+pub fn remove_timeshift_stone_cutscenes() {
+    let mut param1: u32;
+
+    unsafe {
+        asm!(
+            "ldr {0:w}, [x19, #0xc]",
+            out(reg) param1,
+        );
+
+        let isSandshipStone = param1 >> 10 & 0xFF == 1;
+
+        // set value for playFirstTimeCutscene
+        asm!(
+            "strb {0:w}, [x23, #0xba]",
+            in(reg) isSandshipStone as u8,
+        );
+    }
+}
+
 // Will output a string to Yuzu's log.
 // In Yuzu go to Emulation > Configure > Debug and
 // enter this into the global log filter:
