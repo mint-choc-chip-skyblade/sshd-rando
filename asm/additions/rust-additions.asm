@@ -64,3 +64,6 @@
 
 .global fix_item_get_under_water
 .type fix_item_get_under_water, @function
+
+.global activation_checks_for_goddess_walls
+.type activation_checks_for_goddess_walls, @function
