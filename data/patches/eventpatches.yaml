@@ -1446,21 +1446,6 @@
       next: -1
 
 115-Town2:
-  - name: Shorten Karane letter text
-    type: flowpatch
-    index: 592
-    flow:
-      next: 612
-  - name: Shorten Pipit letter text
-    type: flowpatch
-    index: 92
-    flow:
-      next: 121
-  - name: Shorten letter cutscene
-    type: flowpatch
-    index: 365
-    flow:
-      next: 377
   - name: Parrow's Empty Bottle
     type: flowpatch
     index: 734
