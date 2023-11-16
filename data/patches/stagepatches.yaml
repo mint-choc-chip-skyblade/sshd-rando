@@ -3502,6 +3502,12 @@ F301_3: # Skipper's Retreat
       name: Bombf
 
 F301_4: # Shipyard
+  - name: Layer override
+    type: layeroverride
+    override: # always be layer 1
+      - story_flag: -1
+        night: 0
+        layer: 1
   - name: Text after intro
     type: objdelete
     id: 0xFC6E
