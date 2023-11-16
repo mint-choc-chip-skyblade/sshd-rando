@@ -56,6 +56,7 @@
     Outside Thrill Digger Cave: Bow or Slingshot or logic_stuttersprint
     Past Sand Slide: Bomb_Bag or Hook_Beetle or can_access(Past Sand Slide) # or (Whip and Whip Bomb Trick)
     Volcano Entrance: Nothing
+    Past Mogma Turf: Nothing
   locations:
     Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent: Nothing
 

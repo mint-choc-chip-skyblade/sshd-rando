@@ -17,6 +17,8 @@ extern "C" {
     static PLAYER_PTR: *mut structs::Player;
 
     static FILE_MGR: *mut structs::FileMgr;
+    static HARP_RELATED: *mut structs::HarpRelated;
+
     static STORYFLAG_MGR: *mut structs::FlagMgr;
     static ITEMFLAG_MGR: *mut structs::FlagMgr;
     static SCENEFLAG_MGR: *mut c_void;
@@ -349,8 +351,8 @@ pub fn patch_freestanding_item_fields(
             27..=30 | 179 => y_offset = 24.0,
             // LMF BK
             31 => y_offset = 27.0,
-            // Crystal Pack | Single Crystal | Beetle | Small Bomb Bag | Eldin Ore
-            35 | 48 | 53 | 134 | 165 => y_offset = 18.0,
+            // Crystal Pack | 5 Bombs | 10 Bombs | Single Crystal | Beetle | Pouch | Small Bomb Bag | Eldin Ore
+            35 | 40 | 41 | 48 | 53 | 112 | 134 | 165 => y_offset = 18.0,
             // Bellows | Bug Net | Bomb Bag
             49 | 71 | 92 => y_offset = 26.0,
             52          // Slingshot
@@ -761,6 +763,78 @@ pub fn drop_nothing(param2_s0x18: u8) {
             "mov w25, #0x660d",
             "movk w25, #0x19, LSL #16",
             "mul x10, x9, x25",
+        );
+    }
+}
+
+#[no_mangle]
+pub fn fix_item_get_under_water() {
+    unsafe {
+        let mut item_animation_index: u8;
+
+        asm!(
+            "mov w8, w9", // put animation index back into w8
+            "mov w25, #0x4", // default to not allowing immediate item gets
+            "mov {0:w}, w9",
+            out(reg) item_animation_index,
+        );
+
+        // Handle bounds check that was replaced
+        if item_animation_index > 3 {
+            asm!(
+                "mov x20, xzr",
+                "mov w8, #0x4", // used later to set event name to null
+            );
+            return;
+        }
+
+        // If in water, allow immediate item gets
+        if ((*PLAYER_PTR).action_flags >> 18) & 0x1 == 1 {
+            yuzu_print_number((*PLAYER_PTR).action_flags, 16);
+            asm!("mov w25, #0"); // allow collecting items under water
+
+            // If should be a big item get animation, make it a small one
+            // Big item gets don't work properly under water :(
+            if item_animation_index == 1 {
+                asm!("mov w8, #0");
+            }
+        }
+    }
+}
+
+#[no_mangle]
+pub fn activation_checks_for_goddess_walls() -> bool {
+    unsafe {
+        // Replaced code
+        if (*HARP_RELATED).someCheckForContinuousStrumming == 0
+            || (*HARP_RELATED).someOtherHarpThing != 0
+        {
+            // Additional check for BotG
+            if check_itemflag(structs::ITEMFLAGS::BALLAD_OF_THE_GODDESS) == 1 {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
+
+#[no_mangle]
+pub fn remove_timeshift_stone_cutscenes() {
+    let mut param1: u32;
+
+    unsafe {
+        asm!(
+            "ldr {0:w}, [x19, #0xc]",
+            out(reg) param1,
+        );
+
+        let isSandshipStone = param1 >> 10 & 0xFF == 1;
+
+        // set value for playFirstTimeCutscene
+        asm!(
+            "strb {0:w}, [x23, #0xba]",
+            in(reg) isSandshipStone as u8,
         );
     }
 }

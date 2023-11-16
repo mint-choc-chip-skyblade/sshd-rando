@@ -550,21 +550,21 @@
     index: 520
     flow:
       next: -1
-  - name: Set GoT flags on MS
-    type: flowpatch
-    index: 74
-    flow: 
-      next: Set AC flag for GoT on required sword
-  - name: Set AC flag for GoT on required sword
-    type: setstoryflag
-    flow:
-      setstoryflag: 11
-      next: Set FS flag for GoT on required sword
-  - name: Set FS flag for GoT on required sword
-    type: setstoryflag
-    flow:
-      setstoryflag: 13
-      next: -1
+  # - name: Set GoT flags on MS
+  #   type: flowpatch
+  #   index: 74
+  #   flow: 
+  #     next: Set AC flag for GoT on required sword
+  # - name: Set AC flag for GoT on required sword
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 11
+  #     next: Set FS flag for GoT on required sword
+  # - name: Set FS flag for GoT on required sword
+  #   type: setstoryflag
+  #   flow:
+  #     setstoryflag: 13
+  #     next: -1
 
   # Full wallet upgrades
   - name: Patch Medium Wallet
@@ -1446,21 +1446,6 @@
       next: -1
 
 115-Town2:
-  - name: Shorten Karane letter text
-    type: flowpatch
-    index: 592
-    flow:
-      next: 612
-  - name: Shorten Pipit letter text
-    type: flowpatch
-    index: 92
-    flow:
-      next: 121
-  - name: Shorten letter cutscene
-    type: flowpatch
-    index: 365
-    flow:
-      next: 377
   - name: Parrow's Empty Bottle
     type: flowpatch
     index: 734
@@ -1552,18 +1537,30 @@
     index: 165
     flow:
       param2: 924
-  - name: Fix switch (Cawlin)
+  - name: Fix Cawlin switch to use rando storyflag
     type: flowpatch
     index: 33
     flow:
       param2: 924
-  - name: Fix switch (Cawlin)
+  - name: Remove Attention Mark after Cawlin gives item
+    type: flowpatch
+    index: 58
+    flow: {}
+    cases:
+      - 61
+      - 113
+  - name: Fix Cawlin switch to always give item
     type: flowpatch
     index: 141
+    flow: {}
+    cases:
+      - Add Attention Mark before Cawlin gives item
+      - Add Attention Mark before Cawlin gives item
+  - name: Add Attention Mark before Cawlin gives item
+    type: attentionmark
     flow:
-      param2: 36 # always trigger
-      param3: 3 # check Storyflag
-  - name: add Cawlin storyflag to other text options
+      next: 163
+  - name: Add Cawlin storyflag to other text options
     type: flowpatch
     index: 507
     flow:
@@ -2757,6 +2754,25 @@
     cases:
       - 123
       - 128
+
+406-TrolleyRace:
+  - name: Always allow Minecart minigame
+    type: flowpatch
+    index: 26
+    cases:
+      - Check if already gotten minecart reward
+      - Check if already gotten minecart reward
+  - name: Check if already gotten minecart reward
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 667 # Storyflag set after getting minecart reward
+    cases:
+      - 100 # Continue as normal
+      - Show Attention Mark
+  - name: Show Attention Mark
+    type: attentionmark
+    flow:
+      next: 100
 
 460-RairyuMinigame:
   - name: Avoid Boss rush Entry
