@@ -2764,10 +2764,25 @@
   - name: Always allow Minecart minigame
     type: flowpatch
     index: 26
-    flow: {}
     cases:
-      - 100
-      - 100
+      - Check if already gotten minecart reward
+      - Check if already gotten minecart reward
+  - name: Check if already gotten minecart reward
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 667 # Storyflag set after getting minecart reward
+    cases:
+      - 100 # Continue as normal
+      - Show Attention Mark
+  - name: Show Attention Mark
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 1
+      next: 100
+      param3: 31
 
 460-RairyuMinigame:
   - name: Avoid Boss rush Entry
