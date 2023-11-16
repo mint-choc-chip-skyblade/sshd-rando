@@ -983,7 +983,7 @@ F001r:
     room: 0
     objtype: OBJ
     object:
-      trigstoryfid: 140 # groose landing in faron, cut out sleeping
+      trigstoryfid: -1
   - name: Toilethand inv
     type: objpatch
     id: 0xFC7B
@@ -991,7 +991,7 @@ F001r:
     room: 0
     objtype: OBJ
     object:
-      trigstoryfid: 140 # groose landing in faron, cut out sleeping
+      trigstoryfid: -1
   
   # Move Loose Crystal checks to night layers
   - name: Raise crystal in Link's room
