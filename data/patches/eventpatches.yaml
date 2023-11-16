@@ -1557,12 +1557,29 @@
     index: 33
     flow:
       param2: 924
+  - name: Remove Attention Mark after Cawlin gives item
+    type: flowpatch
+    index: 58
+    flow: {}
+    cases:
+      - 61
+      - 113
   - name: Fix switch (Cawlin)
     type: flowpatch
     index: 141
+    flow: {}
+    cases:
+      - Add Attention Mark before Cawlin gives item
+      - Add Attention Mark before Cawlin gives item
+  - name: Add Attention Mark before Cawlin gives item
+    type: flowadd
     flow:
-      param2: 36 # always trigger
-      param3: 3 # check Storyflag
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 1
+      next: 163
+      param3: 31
   - name: add Cawlin storyflag to other text options
     type: flowpatch
     index: 507
