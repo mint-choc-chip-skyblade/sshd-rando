@@ -2760,6 +2760,15 @@
       - 123
       - 128
 
+406-TrolleyRace:
+  - name: Always allow Minecart minigame
+    type: flowpatch
+    index: 26
+    flow: {}
+    cases:
+      - 100
+      - 100
+
 460-RairyuMinigame:
   - name: Avoid Boss rush Entry
     type: entryadd
