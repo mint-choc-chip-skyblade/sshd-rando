@@ -140,3 +140,14 @@ ITEM_STORYFLAGS = {
     PROGRESSIVE_POUCH: [30, 932, 932, 932, 932]  # Adventure Pouch, Pouch Expansion * 4
     # SAILCLOTH: 32
 }
+
+# first value of tuple is the counter flag,
+# second is the amount to add
+# third is the maximum of the item
+ITEM_COUNTS = {
+    GRATITUDE_CRYSTAL: (0x1F6, 1, 15),
+    GRATITUDE_CRYSTAL_PACK: (0x1F6, 5, 13),
+    BOMB_BAG: (0x1F3, 10, 1),
+    PROGRESSIVE_BOW: (0x1F2, 20, 1),
+    PROGRESSIVE_SLINGSHOT: (0x1ED, 20, 1),
+}

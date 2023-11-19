@@ -62,6 +62,7 @@ extern "C" {
     static ACTOR_ALLOCATOR_DEFINITIONS: u64; // [*const u64; 701];
 
     static STARTFLAGS: [u16; 1000];
+    static START_COUNTS: [structs::StartCount; 50];
 
     fn strlen(string: *mut u8) -> u64;
     fn strncmp(dest: *mut u8, src: *mut u8, size: u64) -> u64;
@@ -156,6 +157,18 @@ pub fn handle_startflags() {
                     break;
                 },
             }
+        }
+
+        for start_count in START_COUNTS.iter() {
+            if start_count.counter == 0xFFFF {
+                break;
+            }
+
+            ((*(*ITEMFLAG_MGR).funcs).setFlagOrCounterToValue)(
+                ITEMFLAG_MGR,
+                start_count.counter,
+                start_count.value,
+            );
         }
 
         ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);

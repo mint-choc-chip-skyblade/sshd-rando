@@ -1,6 +1,6 @@
 import struct
 import tempfile
-from constants.itemconstants import ITEM_ITEMFLAGS, ITEM_STORYFLAGS
+from constants.itemconstants import ITEM_ITEMFLAGS, ITEM_STORYFLAGS, ITEM_COUNTS
 from filepathconstants import (
     ASM_ADDITIONS_DIFFS_PATH,
     ASM_PATCHES_DIFFS_PATH,
@@ -12,6 +12,7 @@ from filepathconstants import (
 )
 from io import BytesIO
 from pathlib import Path
+from collections import Counter
 
 from constants.asmconstants import *
 
@@ -248,6 +249,7 @@ class ASMPatchHandler:
         sceneflags = startflags["Sceneflags"]
         itemflags = startflags["Itemflags"]
         dungeonflags = startflags["Dungeonflags"]
+        start_counts = Counter()
 
         for item, count in world.starting_item_pool.items():
             item_name = item.name
@@ -271,6 +273,11 @@ class ASMPatchHandler:
                         storyflags.append(flag)
                 else:
                     storyflags.append(storyflag_data)
+
+            if start_count_data := ITEM_COUNTS.get(item_name, False):
+                counter, amount, maximum = start_count_data
+                final_count = min(maximum, count)
+                start_counts[counter] += amount * final_count
 
         # Each section is delimited by 0xFFFF
         startflags_data = BytesIO()
@@ -305,6 +312,14 @@ class ASMPatchHandler:
 
         startflags_data.write(bytes.fromhex("FFFF"))
 
+        start_counts_data = BytesIO()
+
+        # Start counts
+        for counter, amount in start_counts.items():
+            start_counts_data.write(struct.pack("<HH", counter, amount))
+
+        start_counts_data.write(bytes.fromhex("FFFFFFFF"))
+
         # Convert startflags_data into a list of bytes.
         startflags_data_bytes = startflags_data.getvalue()
         startflags_data_dict = {
@@ -313,13 +328,25 @@ class ASMPatchHandler:
             )
         }
 
+        # Same with start_counts_data
+        start_counts_data_bytes = start_counts_data.getvalue()
+        start_counts_data_dict = {
+            SUBSDK_START_COUNTS_OFFSET: list(
+                struct.unpack(
+                    "B" * len(start_counts_data_bytes), start_counts_data_bytes
+                )
+            )
+        }
+
+        startflags_data_dict.update(start_counts_data_dict)
+
         yaml_write(output_path, startflags_data_dict)
 
         # Write the startflag binary to a non-temp file.
         # yaml_write(Path("./test.yaml"), startflags_data_dict)
 
         # If this fails, the rust struct size will need increasing
-        assert len(startflags_data_bytes) < 1000
+        assert len(startflags_data_bytes) < MAX_STARTFLAGS
 
     def _get_flags(
         self, startflag_section, onlyif_handler: ConditionalPatchHandler
