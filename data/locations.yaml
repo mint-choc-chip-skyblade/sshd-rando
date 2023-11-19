@@ -1735,7 +1735,9 @@
   original_item: Silver Rupee 
   type: Rupees (No Quick Beetle)
   Paths:
-    - stage/F301_6/r0/l0/Item/13
+    - stage/F301_6/r0/l1/Item/13
+    - stage/F301_6/r0/l2/Item/13
+    - oarc/F301_6/l0
 
 - name: Pirate Stronghold - Goddess Cube
   original_item: Pirate Stronghold Goddess Cube
