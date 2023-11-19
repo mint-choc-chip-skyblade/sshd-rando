@@ -1,5 +1,7 @@
 Storyflags:
-  - 24   # SKip Fi text around Faron Pillar
+  - 11   # Tracks spawned in Sealed Grounds
+  - 13   # Groosenator completed
+  - 24   # Skip Fi text around Faron Pillar
   - 27   # Loftwing Unlocked
   - 28   # Pratice Sword
   - 32   # Sailcoth
@@ -9,6 +11,7 @@ Storyflags:
   - 82   # Tadtones music scroll
   - 96   # Skip 1st time getting a map Fi text
   - 115  # Full Lake Floria map
+  - 122  # Collected Deku Hornet for 1st time
   - 129  # Updated Lanayru Desert map
   - 130  # Start with Beacon
   - 138  # Sealed Temple layer 1
@@ -21,12 +24,34 @@ Storyflags:
   - 329  # Slept after starting Batreaux Crystal Quest
   # - 358  # Interface choice unlocked
   - 386  # Skip first part of Bertie's Crystal Quest text
+  - 493  # Unlocked Goddess Walls
   - 494  # Open gates to Faron Woods
   - 496  # Skip Skipper's Cutscene after Sea Chart
   - 519  # Updated Sand Sea map
+  - 545  # Watched toilet hand ask for help Cutscene
+  - 546  # Tried to open door to toilet hand
+  - 576  # Watched Pipit scold Mallara Cutscene
+  - 577  # Watched Pipit scold Mallara Cutscene
+  - 578  # Watched Pipit scold Mallara Cutscene
   - 661  # Windmill Repaired (required for scrapper quests - TODO)
   - 724  # Skip first time using Light Pillar Cutscene (always sends you to Sealed Grounds)
   - 745  # Unlocked 5 Beacons
+  - 753  # Collected Hornet Larvae for 1st time
+  - 754  # Collected Bird Feather for 1st time
+  - 755  # Collected Tumbleweed for 1st time
+  - 756  # Collected Lizard Tail for 1st time
+  - 757  # Collected Eldin Ore for 1st time
+  - 758  # Collected Ancient Flower for 1st time
+  - 759  # Collected Amber Relic for 1st time
+  - 760  # Collected Dusk Relic for 1st time
+  - 761  # Collected Jelly Blob for 1st time
+  - 762  # Collected Monster Claw for 1st time
+  - 763  # Collected Monster Horn for 1st time
+  - 764  # Collected Ornamental Skull for 1st time
+  - 765  # Collected Evil Crystal for 1st time
+  - 766  # Collected Blue Bird Feather for 1st time
+  - 767  # Collected Golden Skull for 1st time
+  - 768  # Collected Goddess Plume for 1st time
   - 789  # Unlocked Dowsing (still needs Goddess Sword)
   - 792  # Watched Sealed Temple Big Door unlocking Cutscene
   - 804  # Eldin entrance statue unlocked
@@ -71,6 +96,7 @@ Sceneflags:
     - 26 # Watched Eye Cutscene in Bazaar
     - 66 # Batreaux Doors outside open
     - 67 # Inside Doors open
+    - 76 # Watched Pipit scold Mallara Cutscene
     - 95 # Fi Text for Ruby Tablet
     - 96 # Fi Text for Amber Tablet
     # - 99 # Watched Sheikah Stone Cutscene
@@ -99,6 +125,7 @@ Sceneflags:
     - 52 # Reveal Gossip Stone in lower Eldin Cave
     - 53 # Reveal Gossip Stone in upper Eldin Cave
     - 16 # Watched first time landing Cutscene
+    - 32 # Watched Impa Cutscene (bridge extended)
     - 58 # Watched Digging Mitts mogma Cutscene
 
   Eldin Volcano Summit: # Scene Index 5 (VS & Boko Base)
@@ -232,23 +259,52 @@ Sceneflags:
 
   # Skyloft Silent Realm: # Scene Index 25
 Itemflags:
-  - 2  # Green Rupee
-  - 3  # Blue Rupee
-  - 4  # Red Rupee
-  - 6  # Heart
-  - 7  # Single Arrow
-  - 8  # Bundle of Arrows
-  - 15 # sailcloth
-  - 40 # 5 Bombs
-  - 41 # 10 Bombs
-  - 42 # Stamina Fruit
-  - 43 # Tear of Farore
-  - 44 # Tear of Din
-  - 45 # Tear of Nayru
-  - 46 # Sacred Tear
-  - 47 # Light Fruit
-  - 57 # 5 Deku Seeds
-  - 60 # 10 Deku Seeds
+  # These are mainly for 1st time textbox skips
+  - 2   # Green Rupee
+  - 3   # Blue Rupee
+  - 4   # Red Rupee
+  - 6   # Heart
+  - 7   # Single Arrow
+  - 8   # Bundle of Arrows
+  - 15  # Sailcloth (actually the item in this case)
+  - 40  # 5 Bombs
+  - 41  # 10 Bombs
+  - 42  # Stamina Fruit
+  - 43  # Tear of Farore
+  - 44  # Tear of Din
+  - 45  # Tear of Nayru
+  - 46  # Sacred Tear
+  - 47  # Light Fruit
+  - 57  # 5 Deku Seeds
+  - 60  # 10 Deku Seeds
+  - 141 # Faron Grasshopper
+  - 142 # Woodland Rhino Beetle
+  - 143 # Deku Hornet
+  - 144 # Skyloft Mantis
+  - 145 # Volcanic Ladybug
+  - 146 # Blessed Butterfly
+  - 147 # Lanayru Ant
+  - 148 # Sand Cicada
+  - 149 # Gerudo Dragonfly
+  - 150 # Eldin Roller
+  - 151 # Sky Stag Beetle
+  - 152 # Starry Firefly
+  - 161 # Hornet Larvae
+  - 162 # Bird Feather
+  - 163 # Tumbleweed
+  - 164 # Lizard Tail
+  - 165 # Eldin Ore
+  - 166 # Ancient Flower
+  - 167 # Amber Relic
+  - 168 # Dusk Relic
+  - 169 # Jelly Blob
+  - 170 # Monster Claw
+  - 171 # Monster Horn
+  - 172 # Ornamental Skull
+  - 173 # Evil Crystal
+  - 174 # Blue Bird Feather
+  - 175 # Golden Skull
+  - 176 # Goddess Plume
 Dungeonflags:
   # Skyloft: # Scene Index 0
 

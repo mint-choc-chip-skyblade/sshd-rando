@@ -1019,10 +1019,10 @@
     exit_infos: 
       - stage: F000
         room: 0
-        index: 49
+        index: 5
     spawn_info:
       - stage: F008r
-        layer: 0
+        layer: 1
         room: 0
         entrance: 0
   return:  

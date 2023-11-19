@@ -36,3 +36,18 @@ nop ; prevent flapping from reducing speed
 
 ; .offset 0x08247300
 ; mov w8, #5
+
+
+; Spawn Tornados further away
+.offset 0x08e9be14 ; 0x7100e97e14
+; w9 already has 0x8000 at LSL #0
+movk w9, #0x469c, LSL #16 ; 12000.0 -> 20032.0
+
+; Increase Tornado culling distance
+; Uses instructions that inits parts of the worldMatrix to 0.0
+; Since this data is being inited and doesn't have a value yet, it's alraedy zero
+.offset 0x089876a0 ; 0x71009836a0
+movz w8, #0x47df, LSL #16 ; 114176.0 arbitrarily large value to stop despawn - taken from SD
+
+.offset 0x089876a8 ; 0x71009836a8
+str w8, [x19, #0x23c] ; store new culling distance value

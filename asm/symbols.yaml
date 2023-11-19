@@ -4,6 +4,8 @@ main:
     # MGRs
     FILE_MGR: 0x0abfdcc0
     INPUT_MGR: 0x0ac02a68
+    HARP_RELATED: 0x0ac02c48 # 0x7102bfec48
+
     STORYFLAG_MGR: 0x098321f0
     SCENEFLAG_MGR: 0x09831ef8
     ITEMFLAG_MGR: 0x09832168
@@ -65,5 +67,6 @@ main:
     # Custom Symbols
     additions_jumptable: 0x0865a070
     STARTFLAGS: 0x3654b200 # See asmconstants.py for where this number comes from
+    START_COUNTS: 0x3654b5e8 # STARTFLAGS_OFFSET + MAX_STARFLAGS
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
     dAcItem__spawnRandoItemWithParams: 0x085c2060

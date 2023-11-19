@@ -34,3 +34,13 @@ mov w8, #0xFF
 ; Don't open collection screen when getting treasures/gratitude crystals
 .offset 0x08bf0590
 b 0x08bf0674 ; skip to the end of the function
+
+; Timeshift Stones
+; Don't play first time timeshift stone cutscenes
+.offset 0x0897eabc ; 0x710097aabc
+mov w8, #18
+bl additions_jumptable
+
+; Always set isFirstStone to false
+.offset 0x0897eadc ; 0x710097aadc
+strb wzr, [x23, #0xc1]
