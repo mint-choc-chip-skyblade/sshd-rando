@@ -314,7 +314,7 @@ class ASMPatchHandler:
 
         start_counts_data = BytesIO()
 
-        # Item counts
+        # Start counts
         for counter, amount in start_counts.items():
             start_counts_data.write(struct.pack("<HH", counter, amount))
 
@@ -332,7 +332,9 @@ class ASMPatchHandler:
         start_counts_data_bytes = start_counts_data.getvalue()
         start_counts_data_dict = {
             SUBSDK_START_COUNTS_OFFSET: list(
-                struct.unpack("B" * len(start_counts_data_bytes), start_counts_data_bytes)
+                struct.unpack(
+                    "B" * len(start_counts_data_bytes), start_counts_data_bytes
+                )
             )
         }
 
