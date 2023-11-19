@@ -170,6 +170,17 @@ DEFAULT_SET_ZONEFLAG_FLOW = {
     "next": -1,
 }
 
+DEFAULT_ATTENTION_MARK_FLOW = {
+    "type": "type3",
+    "subType": 0,
+    "param1": 0,
+    "param2": 1,
+    "param3": 31,
+    "param4": 0,
+    "param5": 0,
+    "next": -1,
+}
+
 DEFAULT_CHECK_STORYFLAG_FLOW = {
     "type": "switch",
     "subType": 6,
@@ -200,6 +211,7 @@ FLOW_ADD_VARIATIONS = (
     "setsceneflag",
     "settempflag",
     "setzoneflag",
+    "attentionmark",
 )
 SWITCH_ADD_VARIATIONS = ("switchadd", "checkstoryflag", "checksceneflag")
 
@@ -224,6 +236,7 @@ DEFAULT_FLOW_TYPE_LOOKUP = {
     "setsceneflag": DEFAULT_SET_SCENEFLAG_FLOW,
     "settempflag": DEFAULT_SET_TEMPFLAG_FLOW,
     "setzoneflag": DEFAULT_SET_ZONEFLAG_FLOW,
+    "attentionmark": DEFAULT_ATTENTION_MARK_FLOW,
     "switchadd": DEFAULT_FLOW,
     "checkstoryflag": DEFAULT_CHECK_STORYFLAG_FLOW,
     "checksceneflag": DEFAULT_CHECK_SCENEFLAG_FLOW,

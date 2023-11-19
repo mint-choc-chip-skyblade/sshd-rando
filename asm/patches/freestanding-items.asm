@@ -95,3 +95,72 @@ b.hi 0x084e37a8 ; branch over checks to prevent being picked up by beetle
 
 .offset 0x084e37a4
 nop
+
+
+
+; Fix spawned items that shouldn't have textboxes
+; LMF conveyor stamina fruits
+.offset 0x08e50318 ; 0x7100e4c318
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Player shot arrows
+.offset 0x0802b1dc ; 0x71000271dc
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x0802bccc ; 0x7100027ccc
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Boko shot arrows
+.offset 0x082ce808 ; 0x71002ca808
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x082d7b94 ; 0x71002d3b94
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Some arrow thing?
+.offset 0x08a7d988 ; 0x7100a79988
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Lizalfos Tails
+.offset 0x083ac274 ; 0x71003a8274
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x083ac348 ; 0x71003a8348
+mov w8, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x083ac550 ; 0x71003a8550
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Heart Flowers
+.offset 0x084ac154 ; 0x71004a8154
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x084ac2c8 ; 0x71004a82c8
+mov w8, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x084ad6dc ; 0x71004a96dc
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Treasures
+.offset 0x086f0ad8; 0x71006ecad8
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x086f0b7c ; 71006ecb7c
+mov w8, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Ancient Flowers
+.offset 0x087cdbf8 ; 0x71007c9bf8
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x087cdf3c ; 0x71007c9f3c
+mov w2, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+; Insects
+.offset 0x08a97b18 ; 0x7100a93b18
+mov w9, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x08a97a28 ; 0x7100a93a28
+mov w10, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)
+
+.offset 0x08a97acc ; 0x7100a93acc
+mov w10, #0xfe00 ; from 0xfc00 (sets bit 9 of param1)

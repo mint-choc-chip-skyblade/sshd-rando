@@ -79,6 +79,18 @@ pub struct SaveFile {
 
 assert_eq_size!([u8; 21440], SaveFile);
 
+// Harp stuff
+// Not sure what this stuff is all about
+// Used to keep vanilla checks for isPlayingHarp (see SD for more details)
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct HarpRelated {
+    pub unk:                             [u8; 0x30],
+    pub someCheckForContinuousStrumming: u64,
+    pub unk1:                            [u8; 0x22],
+    pub someOtherHarpThing:              u8,
+}
+
 // FlagMgr stuff
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]

@@ -415,7 +415,7 @@
     Lanayru Sand Sea: Nothing
   locations:
     Shipyard - Gossip Stone: Nothing # Take the first cart and you've arrived
-    Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05: "'Defeat_Shipyard_Moldarach'"
+    Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05: Nothing
 
 
 - name: Shipyard End of Minecart Ride
