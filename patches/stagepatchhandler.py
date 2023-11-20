@@ -786,6 +786,7 @@ class StagePatchHandler:
         write_bytes_create_dirs(TITLE2D_OUTPUT_PATH, title_2d_arc.build_U8())
 
         # Write credits logo
+        print("Patching Credits Logo")
         endroll_arc = U8File.get_parsed_U8_from_path(ENDROLL_SOURCE_PATH, False)
         endroll_arc.set_file_data("timg/th_zeldaRogoEnd_02.tpl", logo_data)
         endroll_arc.set_file_data("timg/th_rogo_03.tpl", rogo_03_data)
