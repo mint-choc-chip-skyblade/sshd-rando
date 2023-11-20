@@ -19,9 +19,14 @@ def spoiler_format_entrance(entrance: Entrance, longest_name_length: int) -> str
 def generate_spoiler_log(worlds: list[World]) -> None:
     filepath = "Spoiler Log.txt"
     with open(filepath, "w") as spoiler_log:
+        spoiler_log.write(f"Seeds:\n")
+
+        for world in worlds:
+            spoiler_log.write(f"    {world}: {world.config.seed}\n")
+
         # Print starting inventories if there are any
         if any([True for world in worlds if world.starting_item_pool.total() > 0]):
-            spoiler_log.write("Starting Inventory:\n")
+            spoiler_log.write("\nStarting Inventory:\n")
             for world in worlds:
                 spoiler_log.write(f"    {world}:\n")
                 for item, count in world.starting_item_pool.items():

@@ -78,6 +78,7 @@ def generate_randomizer(config: Config) -> list[World]:
 
         worlds[i].setting_map = setting_map
         worlds[i].num_worlds = len(config.settings)
+        worlds[i].config = config
         worlds[i].build()
         # TODO: Set Excluded Locations
         # TODO: Set Item Locations
