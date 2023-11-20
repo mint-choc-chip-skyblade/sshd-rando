@@ -18,6 +18,9 @@ def generate_hints(worlds: list[World]) -> None:
         generate_barren_hint_locations(world, hint_locations)
         generate_item_hint_locations(world, hint_locations)
 
+        # If we weren't able to generate the specified number
+        # of hints for path, barren, or item hints then make up
+        # for those with extra location hints
         total_num_hints = (
             world.setting("path_hints").value_as_number()
             + world.setting("barren_hints").value_as_number()
@@ -402,7 +405,6 @@ def generate_location_hint_locations(
 
 
 def generate_path_hint_message(location: Location, goal_location: Location) -> None:
-    world = location.world
     hint_regions = list(
         set(
             [
@@ -437,7 +439,6 @@ def generate_path_hint_message(location: Location, goal_location: Location) -> N
 
 
 def generate_barren_hint_message(location: Location, barren_region: Text) -> None:
-    world = location.world
     location.hint.text = get_text_data("Barren Hint").replace("|region|", barren_region)
     location.hint.type = "Barren"
 
@@ -640,13 +641,13 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
         "Nayru's Wisdom": "Lanayru Desert North -> Lanayru Silent Realm",
     }
 
-    # Mapping of song item to items in associated silent realm
+    # Mapping of song item to locations in associated silent realm
     trial_gate_locations: dict[Item, list[Location]] = {}
 
     # Gather all the locations for each song
-    for item_name, entrance_name in trial_gate_entrances.items():
-        item = world.get_item(item_name)
-        trial_gate_locations[item] = []
+    for song_name, entrance_name in trial_gate_entrances.items():
+        song = world.get_item(song_name)
+        trial_gate_locations[song] = []
         entrance = world.get_entrance(entrance_name)
         silent_realm = (
             entrance.connected_area
@@ -654,13 +655,13 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
             else world.get_area(entrance_name.split(" -> ")[1])
         )
         for loc_access in silent_realm.locations:
-            trial_gate_locations[item].append(loc_access.location)
+            trial_gate_locations[song].append(loc_access.location)
             loc_access.location.is_hinted = True
 
     # Generate hint text depending on setting and what items are in the silent realm
-    for item, locations in trial_gate_locations.items():
-        world.song_hints[item] = Hint()
-        hint = world.song_hints[item]
+    for song, locations in trial_gate_locations.items():
+        world.song_hints[song] = Hint()
+        hint = world.song_hints[song]
         hint.type = "Song"
         match world.setting("song_hints"):
             case "basic":
@@ -737,7 +738,7 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
 
                     useful_locations.remove(most_useful_location)
 
-        logging.getLogger("").debug(f'Generated hint "{hint.text}" for song {item}')
+        logging.getLogger("").debug(f'Generated hint "{hint.text}" for song {song}')
 
 
 def locations_are_all_junk(locations: list[Location]) -> None:
