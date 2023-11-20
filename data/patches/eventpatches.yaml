@@ -1,12 +1,3 @@
-006-8KenseiNormal:
-  - name: Allow Amiibo Warp without actual Amiibo
-    type: flowpatch
-    index: 28
-    flow: {}
-    cases:
-      - 21 # Vanilla
-      - 25 # Vanilla
-      - 13 # Skip amiibo
 003-ItemGet:
   - name: Scrapper Entry
     type: entryadd
@@ -254,7 +245,7 @@
     type: textpatch
     index: 243
     text: "The <y<Song of the Hero>> is now complete!"
-  - name: Single Gratitude crystal counter
+  - name: Five Gratitude crystal counter
     type: textpatch
     index: 45 # \x0e\x02\x03\x06\x00\x00\xcd is for showing numeric arg0
     text: "You got <r<five>> <y<Gratitude Crystals>>!\nThat is <r<<numeric arg1> >>in Total!"
@@ -660,7 +651,24 @@
     flow:
       next: 30
 
-# 006-8KenseiNormal
+006-8KenseiNormal:
+  - name: Allow Amiibo Warp without actual Amiibo
+    type: flowpatch
+    index: 28
+    flow: {}
+    cases:
+      - 21 # Vanilla
+      - 25 # Vanilla
+      - 13 # Skip amiibo
+  - name: Fi Hints Text
+    type: flowpatch
+    index: 7
+    flow: {}
+    cases:
+     - Display Fi Hints Text 0 # Hints
+     - 8  # Rumors
+     - 8  # Summary
+     - -1 # Never Mind
 # 008-Hint
 
 100-Town:

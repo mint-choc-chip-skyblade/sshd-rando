@@ -128,4 +128,39 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                             + "\n"
                         )
 
+        if worlds_with_hints := [
+            world
+            for world in worlds
+            if world.fi_hints
+            or world.gossip_stone_hints
+            or world.song_hints
+            or world.impa_sot_hint
+        ]:
+            spoiler_log.write("\nHints:\n")
+            for world in worlds_with_hints:
+                spoiler_log.write(f"    {world}:\n")
+                if world.fi_hints:
+                    spoiler_log.write("        Fi Hints:\n")
+                    for location in world.fi_hints:
+                        spoiler_log.write(f"            {location.hint}")
+                        if location.hint.type == "Path":
+                            spoiler_log.write(f" ({location.current_item})")
+                        spoiler_log.write("\n")
+                if world.gossip_stone_hints:
+                    spoiler_log.write("        Gossip Stone Hints:\n")
+                    for stone, locations in world.gossip_stone_hints.items():
+                        spoiler_log.write(f"            {stone}:\n")
+                        for location in locations:
+                            spoiler_log.write(f"                {location.hint}")
+                            if location.hint.type == "Path":
+                                spoiler_log.write(f" ({location.current_item})")
+                            spoiler_log.write("\n")
+                if world.song_hints:
+                    spoiler_log.write("        Song Hints:\n")
+                    for song, hint in world.song_hints.items():
+                        spoiler_log.write(f"            {song}: {hint}\n")
+                if world.impa_sot_hint:
+                    spoiler_log.write("        Impa Hint:\n")
+                    spoiler_log.write(f"            {world.impa_sot_hint}\n")
+
     print(f"Generated Spoiler Log at {filepath}")

@@ -6,8 +6,9 @@ from .area import *
 from .requirements import *
 from .item_pool import *
 from .dungeon import *
+from util.text import *
 
-from collections import Counter
+from collections import Counter, OrderedDict
 from typing import TYPE_CHECKING
 import logging
 import yaml
@@ -33,12 +34,13 @@ class World:
         self.id = id_
         self.config: Config = None
         self.num_worlds: int = 0
+        self.worlds: list = []
 
         self.setting_map: SettingMap = SettingMap()
 
         self.item_table: dict[str, Item] = {}
         self.location_table: dict[str, Location] = {}
-        self.areas: dict[int, Area] = {}
+        self.areas: OrderedDict[int, Area] = OrderedDict()
         self.macros: dict[str, Requirement] = {}
         self.dungeons: dict[str, Dungeon] = {}
 
@@ -57,11 +59,22 @@ class World:
         self.starting_item_pool: Counter[Item] = Counter()
         self.root: Area = None
 
-        self.playthrough_spheres: list[set[Location]] = None
+        self.playthrough_spheres: list[list[Location]] = None
         self.entrance_spheres: list[list[Entrance]] = None
 
         self.plandomizer_locations: dict[Location, Item] = {}
         self.plandomizer_entrances: dict[Entrance, Entrance] = {}
+
+        # Hint related things
+        # path_locations maps a goal location to its set of path locations
+        self.path_locations: dict[Location, list[Location]] = {}
+        # barren_regions maps a hint region to the list of all locations in the region
+        self.barren_regions: OrderedDict[str, list[Location]] = OrderedDict()
+        self.fi_hints: list[Location] = []
+        # gossip_stone_hints map each gossip stone location to the list of locations the stone is hinting at
+        self.gossip_stone_hints: OrderedDict[Location, list[Location]] = OrderedDict()
+        self.song_hints: dict[Item, Hint] = {}
+        self.impa_sot_hint: Hint = None
 
     def __str__(self) -> str:
         return f"World {self.id + 1}"
@@ -71,6 +84,7 @@ class World:
         self.build_location_table()
         self.load_logic_macros()
         self.load_world_graph()
+        self.verify_hint_data()
         self.place_hardcoded_items()
         self.build_item_pools()
 
@@ -91,18 +105,19 @@ class World:
                 item_id = int(item_node["id"])
                 name = item_node["name"]
                 oarcs = item_node["oarc"]
-                major_item = (
-                    item_node["advancement"] if "advancement" in item_node else False
-                )
-                game_winning_item = (
-                    item_node["game_winning_item"]
-                    if "game_winning_item" in item_node
-                    else False
-                )
+                major_item = item_node.get("advancement", False)
+                game_winning_item = item_node.get("game_winning_item", False)
+                chain_locations = item_node.get("chain_locations", [])
 
                 stripped_name = name.replace("'", "")
                 self.item_table[stripped_name] = Item(
-                    item_id, name, oarcs, self, major_item, game_winning_item
+                    item_id,
+                    name,
+                    oarcs,
+                    self,
+                    major_item,
+                    game_winning_item,
+                    chain_locations,
                 )
                 logging.getLogger("").debug(
                     f"Processing new item {name}\tid: {item_id}"
@@ -144,24 +159,21 @@ class World:
                 for field in ["name", "original_item"]:
                     if field not in location_node:
                         raise MissingInfoError(
-                            f"location \"{location_node['name']}\" is missing the \"{field}\" field in items.yaml"
+                            f"location \"{location_node['name']}\" is missing the \"{field}\" field in locations.yaml"
                         )
 
                 name = location_node["name"]
                 original_item = self.get_item(location_node["original_item"])
-                types = location_node["type"] if "type" in location_node else []
+                types = location_node.get("type", [])
                 if types == None:
                     types = []
-                patch_paths = location_node["Paths"] if "Paths" in location_node else []
-                goal_location = (
-                    location_node["goal_location"]
-                    if "goal_location" in location_node
-                    else False
-                )
+                patch_paths = location_node.get("Paths", [])
+                goal_location = location_node.get("goal_location", False)
+                hint_priority = location_node.get("hint", "never")
+                hint_textfile = location_node.get("textfile", "")
+                hint_textindex = location_node.get("textindex", -1)
                 location_id = location_id_counter
                 location_id_counter += 1
-
-                # TODO: Load the rest of the data
 
                 self.location_table[name] = Location(
                     location_id,
@@ -171,6 +183,9 @@ class World:
                     original_item,
                     patch_paths,
                     goal_location,
+                    hint_priority,
+                    hint_textfile,
+                    hint_textindex,
                 )
                 logging.getLogger("").debug(
                     f"Processing new location {name}\tid: {location_id}\toriginal item: {original_item}"
@@ -226,17 +241,14 @@ class World:
                             else TOD.ALL
                         )
 
-                    if "can_sleep" in area_node:
-                        new_area.can_sleep = True
+                    new_area.can_sleep = area_node.get("can_sleep", False)
 
-                    if "dungeon" in area_node:
-                        dungeon_name = area_node["dungeon"]
+                    if dungeon_name := area_node.get("dungeon", False):
                         self.add_dungeon(dungeon_name)
                         new_area.hint_regions.add(dungeon_name)
                         if "dungeon_starting_area" in area_node:
                             self.get_dungeon(dungeon_name).starting_area = new_area
-                    elif "hint_region" in area_node:
-                        hint_region = area_node["hint_region"]
+                    elif hint_region := area_node.get("hint_region", False):
                         new_area.hint_regions.add(hint_region)
 
                     if "events" in area_node:
@@ -267,8 +279,8 @@ class World:
                                 new_area.locations[-1]
                             )
                             # Add the location to the dungeon if this area is part of one
-                            if "dungeon" in area_node:
-                                self.get_dungeon(area_node["dungeon"]).locations.append(
+                            if dungeon_name := area_node.get("dungeon", False):
+                                self.get_dungeon(dungeon_name).locations.append(
                                     self.get_location(location_name)
                                 )
 
@@ -303,14 +315,27 @@ class World:
             for exit_ in area.exits:
                 exit_.connected_area.entrances.append(exit_)
 
+    def verify_hint_data(self) -> None:
+        # Verify that every item, location, and hint region has text data
+        for item in self.item_table.values():
+            if get_text_data(item.name) is None:
+                raise MissingInfoError(f'"{item}" has no associated hint data')
+        for location in self.location_table.values():
+            if get_text_data(location.name) is None:
+                raise MissingInfoError(f'"{location}" has no associated hint data')
+        for area in self.areas.values():
+            for region in area.hint_regions:
+                if region != "None" and get_text_data(region) is None:
+                    raise MissingInfoError(f'"{region}" has no associated hint data')
+
     def build_item_pools(self) -> None:
         generate_item_pool(self)
         generate_starting_item_pool(self)
 
     def place_hardcoded_items(self) -> None:
-        self.get_location("Hylia's Realm - Defeat Demise").set_current_item(
-            self.get_item("Game Beatable")
-        )
+        defeat_demise = self.get_location("Hylia's Realm - Defeat Demise")
+        defeat_demise.set_current_item(self.get_item("Game Beatable"))
+        defeat_demise.has_known_vanilla_item = True
 
     def place_plandomizer_items(self) -> None:
         for location, item in self.plandomizer_locations.items():
@@ -371,6 +396,7 @@ class World:
             # Set Goddess Cubes as having their own item
             if "Goddess Cube" in location.types:
                 location.set_current_item(item)
+                location.has_known_vanilla_item = True
 
     def perform_post_entrance_shuffle_tasks(self) -> None:
         self.assign_all_areas_hint_regions()
@@ -405,20 +431,14 @@ class World:
         # Remove any dungeons which have non-major items plandomized to their goal locations
         # Also force require any dungeons which have a major item plandomized to their goal locations
         for dungeon in dungeons.copy():
-            if any(
-                [
-                    True
-                    for loc in dungeon.goal_locations
-                    if not loc.is_empty() and not loc.current_item.is_major_item
-                ]
+            if (
+                not dungeon.goal_location.is_empty()
+                and not dungeon.goal_location.current_item.is_major_item
             ):
                 dungeons.remove(dungeon)
-            elif any(
-                [
-                    True
-                    for loc in dungeon.goal_locations
-                    if not loc.is_empty() and loc.current_item.is_major_item
-                ]
+            elif (
+                not dungeon.goal_location.is_empty()
+                and dungeon.goal_location.current_item.is_major_item
             ):
                 dungeon.required = True
                 num_required_dungeons -= 1
@@ -544,6 +564,14 @@ class World:
             if "Hint Location" not in location.types
         ]
 
+    def get_gossip_stones(self) -> list[Location]:
+        return [
+            location
+            for location in self.location_table.values()
+            if "Hint Location" in location.types
+            and location.name not in self.setting_map.excluded_locations
+        ]
+
     def get_area(self, area_name) -> Area:
         if area_name not in self.area_ids:
             raise WrongInfoError(f'area "{area_name}" is not a defined area for {self}')
@@ -554,7 +582,7 @@ class World:
         parent_area = self.get_area(parent_area_name)
         connected_area = self.get_area(connected_area_name)
         for exit_ in parent_area.exits:
-            if exit_.connected_area == connected_area:
+            if exit_.original_connected_area == connected_area:
                 return exit_
 
         raise WrongInfoError(f"There is no known entrance connection {original_name}")

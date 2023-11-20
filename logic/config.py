@@ -138,6 +138,12 @@ def load_config_from_file(filename: str, allow_rewrite: bool = True) -> Config:
                     mixed_pools = config_in[world_num_str][setting_name]
                     for pool in mixed_pools:
                         cur_world_settings.mixed_entrance_pools.append(pool)
+                    # Turn mixed pools into a list of lists
+                    if mixed_pools:
+                        if type(mixed_pools[0]) is str:
+                            cur_world_settings.mixed_entrance_pools = [
+                                cur_world_settings.mixed_entrance_pools
+                            ]
                     continue
 
                 if setting_name not in settings_info:

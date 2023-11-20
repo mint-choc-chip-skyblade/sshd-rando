@@ -169,16 +169,18 @@
 
   
 # GREAT TREE
-# TODO: Figure out hint region for this
+# This gets it's own hint region, otherwise the interior
+# chest would be part of 4 different hint regions which
+# would be dumb
 - name: Great Tree Interior Underwater
-  hint_region: Faron Woods
+  hint_region: Great Tree
   exits:
     Faron Woods: Nothing
     Great Tree Interior Lower: Water_Dragons_Scale
 
 
 - name: Great Tree Interior Lower
-  hint_region: Faron Woods
+  hint_region: Great Tree
   events:
     Can Collect Water: Bottle
   exits:
@@ -187,7 +189,7 @@
 
 
 - name: Great Tree Interior Middle # area including the platforms and chest
-  hint_region: Faron Woods
+  hint_region: Great Tree
   exits:
     Great Tree Interior Lower: Nothing
     Great Tree Exterior Platforms: Nothing
@@ -206,7 +208,7 @@
 
 
 - name: Great Tree Interior Upper # top with the moblin
-  hint_region: Faron Woods
+  hint_region: Great Tree
   exits:
     Great Tree Interior Middle: Can_Defeat_Moblins or 'Can_Complete_Ancient_Cistern'
     Flooded Great Tree Upper: Nothing
@@ -231,7 +233,6 @@
   
 # DEEP WOODS
 - name: Deep Woods Entry
-  hint_region: Faron Woods
   events:
     Hornet Larvae Farming: Nothing # Bonk the tree
   exits:
@@ -240,7 +241,6 @@
     
 
 - name: Deep Woods
-  hint_region: Faron Woods
   events:
     Push Down Deep Woods Shortcut Logs: Nothing
   exits:
