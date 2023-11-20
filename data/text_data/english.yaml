@@ -332,19 +332,19 @@
 - name: Ancient Cistern Boss Key
   standard: Ancient Cistern Boss Key
   pretty: the <Ancient Cistern Boss Key>
-  cryptic: a <blessed idol>
+  cryptic: a <r<blessed idol>>
   plurality: Singular
 
 - name: Fire Sanctuary Boss Key
   standard: Fire Sanctuary Boss Key
   pretty: the <Fire Sanctuary Boss Key>
-  cryptic: some <mysterious crystals>
+  cryptic: some <r<mysterious crystals>>
   plurality: Plural
 
 - name: Sandship Boss Key
   standard: Sandship Boss Key
   pretty: the <Sandship Boss Key>
-  cryptic: a <squid carving>
+  cryptic: a <r<squid carving>>
   plurality: Singular
 
 - name: Key Piece
@@ -356,19 +356,19 @@
 - name: Skyview Temple Boss Key
   standard: Skyview Temple Boss Key
   pretty: the <Skyview Temple Boss Key>
-  cryptic: a <golden carving>
+  cryptic: a <r<golden carving>>
   plurality: Singular
 
 - name: Earth Temple Boss Key
   standard: Earth Temple Boss Key
   pretty: the <Earth Temple Boss Key>
-  cryptic: a <dragon sculpture>
+  cryptic: a <r<dragon sculpture>>
   plurality: Singular
 
 - name: Lanayru Mining Facility Boss Key
   standard: Lanayru Mining Facility Boss Key
   pretty: the <Lanayru Mining Facility Boss Key>
-  cryptic: an <ancient circuit>
+  cryptic: an <r<ancient circuit>>
   plurality: Singular
 
 - name: Silver Rupee
@@ -421,7 +421,7 @@
 
 - name: Map
   standard: Map
-  pretty: a Map
+  pretty: a <Map>
   cryptic: some <r<paper>>
   plurality: Singular
 
@@ -518,7 +518,8 @@
 - name: Heart Container
   standard: Heart Container
   pretty: a <Heart Container>
-  cryptic: <r<a lot of love>
+  cryptic: <r<a lot of love>>
+  plurality: Singular
 
 - name: Heart Piece
   standard: Heart Piece
@@ -937,13 +938,13 @@
 - name: Scrapper
   standard: Scrapper
   pretty: Scrapper
-  cryptic: a <transport friend>>
+  cryptic: a <r<transport friend>>
   plurality: Singular
 
 - name: Game Beatable
   standard: Game Beatable
   pretty: Game Beatable
-  cryptic: the <death of the demon king>>
+  cryptic: the <r<death of the demon king>>
   plurality: Singular
 
 - name: Faron Woods Goddess Cube on West Great Tree near Exit
@@ -1111,7 +1112,7 @@
 - name: Knight Academy - Fledge's Gift
   standard: Knight Academy - Fledge's Gift
   pretty: Knight Academy - Fledge's Gift
-  cryptic: a <gift from a friend>
+  cryptic: a <r<gift from a friend>>
 
 - name: Knight Academy - In Zelda's Closet
   standard: Knight Academy - In Zelda's Closet
@@ -1366,12 +1367,12 @@
 - name: Batreaux - 10 Crystals
   standard: Batreaux - 10 Crystals
   pretty: Batreaux - 10 Crystals
-  cryptic: <r<10 pieces of gratitude>>
+  cryptic: <ye<10>> <r<pieces of gratitude>>
 
 - name: Batreaux - 30 Crystals
   standard: Batreaux - 30 Crystals
   pretty: Batreaux - 30 Crystals
-  cryptic: <r<30 pieces of gratitude>>
+  cryptic: <ye<30>> <r<pieces of gratitude>>
 
 - name: Batreaux - 30 Crystals Chest
   standard: Batreaux - 30 Crystals Chest
@@ -1381,7 +1382,7 @@
 - name: Batreaux - 40 Crystals
   standard: Batreaux - 40 Crystals
   pretty: Batreaux - 40 Crystals
-  cryptic: <r<40 pieces of gratitude>>
+  cryptic: <ye<40>> <r<pieces of gratitude>>
 
 - name: Batreaux - 50 Crystals
   standard: Batreaux - 50 Crystals
@@ -1681,7 +1682,7 @@
 - name: Sealed Temple - Song from Impa
   standard: Sealed Temple - Song from Impa
   pretty: Sealed Temple - Song from Impa
-  cryptic: the <old one's song>>
+  cryptic: the <r<old one's song>>
 
 - name: Sealed Grounds - Gorko's Goddess Wall Reward
   standard: Sealed Grounds - Gorko's Goddess Wall Reward
@@ -1942,12 +1943,12 @@
 - name: Eldin Volcano - Rupee on Ledge before First Room
   standard: Eldin Volcano - Rupee on Ledge before First Room
   pretty: Eldin Volcano - Rupee on Ledge before First Room
-  cryptic:
+  cryptic: the <r<rupee furthest from the volcano>> 
 
 - name: Eldin Volcano - Chest behind Bombable Wall in First Room
   standard: Eldin Volcano - Chest behind Bombable Wall in First Room
   pretty: Eldin Volcano - Chest behind Bombable Wall in First Room
-  cryptic:
+  cryptic: 
 
 - name: Eldin Volcano - Rupee behind Bombable Wall in First Room
   standard: Eldin Volcano - Rupee behind Bombable Wall in First Room
