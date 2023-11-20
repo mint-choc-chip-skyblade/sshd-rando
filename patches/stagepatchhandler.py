@@ -778,7 +778,9 @@ class StagePatchHandler:
         # Fix size of rogo stuff (makes the logo text shiny)
         if lyt_file := title_2d_arc.get_file_data("blyt/titleBG_00.brlyt"):
             # Changes the size of the P_loop_00, P_auraR_03, and P_auraR_00 lyt elements
-            lyt_file =  lyt_file.replace(b"\x43\xA4\xC0\x00\x43\x37", b"\x43\xA4\xC0\x00\x43\x69")
+            lyt_file = lyt_file.replace(
+                b"\x43\xA4\xC0\x00\x43\x37", b"\x43\xA4\xC0\x00\x43\x69"
+            )
             title_2d_arc.set_file_data("blyt/titleBG_00.brlyt", lyt_file)
 
         write_bytes_create_dirs(TITLE2D_OUTPUT_PATH, title_2d_arc.build_U8())
@@ -786,4 +788,16 @@ class StagePatchHandler:
         # Write credits logo
         endroll_arc = U8File.get_parsed_U8_from_path(ENDROLL_SOURCE_PATH, False)
         endroll_arc.set_file_data("timg/th_zeldaRogoEnd_02.tpl", logo_data)
+        endroll_arc.set_file_data("timg/th_rogo_03.tpl", rogo_03_data)
+        endroll_arc.set_file_data("timg/th_rogo_04.tpl", rogo_04_data)
+
+        # Fix size of rogo stuff (makes the logo text shiny)
+        if lyt_file := endroll_arc.get_file_data("blyt/endTitle_00.brlyt"):
+            # Changes the size of the P_loop_00, and P_auraR_00 lyt elements
+            lyt_file = lyt_file.replace(
+                b"\x9A\x40\x49\x99\x9A\x43\x13\x80\x00\x42\xA2",
+                b"\x99\x40\x49\x99\x99\x43\x13\x80\x00\x42\xCE",
+            )
+            endroll_arc.set_file_data("blyt/endTitle_00.brlyt", lyt_file)
+
         write_bytes_create_dirs(ENDROLL_OUTPUT_PATH, endroll_arc.build_U8())
