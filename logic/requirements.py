@@ -111,7 +111,9 @@ def parse_requirement_string(
         pos = new_req_str.index(delimeter)
         char_before = new_req_str[pos - 1]
         char_after = new_req_str[pos + 1]
-        if char_before not in ["!", "=", ">", "<"] and char_after not in ["!", "=", ">", "<"]:
+        if (char_before not in ["!", "=", ">", "<"]) and (
+            char_after not in ["!", "=", ">", "<"]
+        ):
             split_req_str.append(new_req_str[:pos])
             new_req_str = new_req_str[pos + 1 :]
         else:
