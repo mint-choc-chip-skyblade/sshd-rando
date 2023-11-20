@@ -36,7 +36,7 @@ def generate(config_file: str) -> list[World]:
     config = load_config_from_file(config_file)
 
     # If config has no seed, generate one
-    if config.seed == "":
+    if config.seed == "" or config.seed == "-1":
         config.seed = str(random.randint(0, 0xFFFFFFFF))
         write_config_to_file(config_file, config)
 
