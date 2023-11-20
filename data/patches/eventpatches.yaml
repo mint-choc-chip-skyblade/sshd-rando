@@ -663,6 +663,15 @@
 # 006-8KenseiNormal
 # 008-Hint
 
+100-Town:
+  - name: Remove Attention Mark from Pipit at night
+    type: flowpatch
+    index: 168
+    flow: {}
+    cases:
+     - 167
+     - 165
+
 101-Shop:
   - name: Remove pouch bipping after item seller
     type: flowpatch
