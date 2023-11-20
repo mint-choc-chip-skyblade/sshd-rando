@@ -40,6 +40,8 @@ def generate(config_file: str) -> list[World]:
         config.seed = str(random.randint(0, 0xFFFFFFFF))
         write_config_to_file(config_file, config)
 
+    print(f"Seed: {config.seed}")
+
     return generate_randomizer(config)
 
 
