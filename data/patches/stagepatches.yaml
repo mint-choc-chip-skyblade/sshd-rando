@@ -3734,7 +3734,7 @@ F302: # Lanayru Gorge
       anglex: 0 # Fix rotation
       angley: 44000 # Turn item to face the player
       posy: -2600 # Fix height
-  - name: Move Small Key
+  - name: Move Pillar Item
     type: objmove
     id: 0xFCC3
     layer: 1
