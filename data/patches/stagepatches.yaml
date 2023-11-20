@@ -3732,7 +3732,7 @@ F302: # Lanayru Gorge
     objtype: OBJ
     object:
       anglex: 0 # Fix rotation
-      angley: 0
+      angley: 44000 # Turn item to face the player
       posy: -2600 # Fix height
   - name: Move Small Key
     type: objmove
