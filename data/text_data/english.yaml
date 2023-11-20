@@ -149,7 +149,7 @@
   standard: "What's the matter? You look like\nyou've got something mighty\nserious on your mind.\n[1]Soup[2-]No Soup"
 
 - name: New text Option
-  standard: "Hey, you look like you have a Questions?\n[1]Levias[2-]Other Things"
+  standard: "Hey, you look like you have a question?\n[1]<r<Levias>>[2-]Other Things"
 
 - name: New Kina Text Option
   standard: "Hey, kid, what do you need from me?\n[1]Plowing the fields?[2]Carrying pumpkins![3-]Nothing."
