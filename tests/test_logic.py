@@ -109,5 +109,29 @@ def test_max_entrance_rando() -> None:
     config_test("max_entrance_rando.yaml")
 
 
+def test_fi_hints() -> None:
+    config_test("fi_hints.yaml")
+
+
+def test_gossip_stone_hints() -> None:
+    config_test("gossip_stone_hints.yaml")
+
+
+def test_song_hints_basic() -> None:
+    config_test("song_hints_basic.yaml")
+
+
+def test_song_hints_advanced() -> None:
+    config_test("song_hints_advanced.yaml")
+
+
+def test_impa_sot_hint() -> None:
+    config_test("impa_sot_hint.yaml")
+
+
+def test_all_hints() -> None:
+    config_test("all_hints.yaml")
+
+
 def test_default_multiworld_config() -> None:
     config_test("default_multiworld_config.yaml")

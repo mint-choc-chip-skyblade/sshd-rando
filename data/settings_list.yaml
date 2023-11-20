@@ -218,6 +218,107 @@
     - anywhere:                        "Maps can appear anywhere."
 
 
+- name: path_hints
+  default_option: 0
+  pretty_name: Path Hints
+  pretty_options:
+   - 0-7
+  options:
+   - 0-7:                              "Select the number of path hints you would like to generate."
+  
+
+- name: barren_hints
+  default_option: 0
+  pretty_name: Barren Hints
+  pretty_options:
+   - 0-7
+  options:
+   - 0-7:                              "Select the number of barren hints you would like to generate."
+
+
+- name: location_hints
+  default_option: 0
+  pretty_name: Location Hints
+  pretty_options:
+   - 0-7
+  options:
+   - 0-7:                              "Select the number of location hints you would like to generate."
+
+
+- name: item_hints
+  default_option: 0
+  pretty_name: Item Hints
+  pretty_options:
+   - 0-7
+  options:
+   - 0-7:                              "Select the number of item hints you would like to generate."
+
+
+- name: fi_hints
+  default_option: "off"
+  pretty_name: Fi Hints
+  pretty_options:
+   - "Off"
+   - "On"
+  options:
+   - "off/on":                         "Hints will be placed on Fi and can be seen by calling Fi and asking her for hints."
+
+  
+- name: gossip_stone_hints
+  default_option: "off"
+  pretty_name: Gossip Stone Hints
+  pretty_options:
+   - "Off"
+   - "On"
+  options:
+   - "off/on":                         "Hints will be placed on gossip stones and can be seen by talking to them."
+
+
+- name: song_hints
+  default_option: "off"
+  pretty_name: Song Hints
+  pretty_options:
+   - "Off"
+   - Basic
+   - Advanced
+   - Direct
+  options:
+   - "off":                            "Silent Realm rewards will potentially be hinted at other hint sources."
+   - basic:                            "The song text indicates if any progress items are within the associated silent realm."
+   - advanced:                         "The song text indicates if any SotS, or potentially required items are in the associated silent realm."
+   - direct:                           "The song text directly states which important items, if any, can be found in the silent realm."
+
+
+- name: impa_sot_hint
+  default_option: "on"
+  pretty_name: Past Impa Stone of Trials Hint
+  pretty_options:
+   - "Off"
+   - "On"
+  options:
+   - "off/on":                         "If enabled, Impa in Hylia's Temple will give a hint to the location of the Stone of Trials. Does not appear if the Stone of Trials is a starting item."
+
+
+- name: cryptic_hint_text
+  default_option: "off"
+  pretty_name: Cryptic Hint Text
+  pretty_options:
+   - "Off"
+   - "On"
+  options:
+   - "off/on":                         "When selected, item and location hints will use cryptic text for their items and locations."
+
+
+- name: always_hints
+  default_option: "off"
+  pretty_name: Prioritize Remote Location Hints
+  pretty_options:
+   - "Off"
+   - "On"
+  options:
+   - "off/on":                         "When selected, certain locations which are time-consuming to check will be given priority for location hints."
+
+
 - name: random_starting_spawn
   default_option: vanilla
   pretty_name: Randomize Starting Spawn

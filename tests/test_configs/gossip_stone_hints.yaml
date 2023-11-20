@@ -1,0 +1,11 @@
+World 1:
+  path_hints: "7"
+  barren_hints: "7"
+  item_hints: "7"
+  location_hints: "7"
+  gossip_stone_hints: "on"
+input_dir: ./base
+output_dir: ./output
+plandomizer: false
+plandomizer_file: null
+seed: TESTTESTTEST

@@ -329,7 +329,7 @@
 
 
 - name: Ancient Harbour Highest Platform
-  hint_region: Lanayru Sand Sea
+  hint_region: Ancient Harbour
   exits:
     Lanayru Caves Past Locked Door: Nothing
     Ancient Harbour: Clawshots
@@ -340,7 +340,7 @@
 
 
 - name: Ancient Harbour
-  hint_region: Lanayru Sand Sea
+  hint_region: Ancient Harbour
   exits:
     Lanayru Sand Sea: Distance_Activator or Sword or Bomb_Bag
     # Sandship Main Deck: (Distance_Activator or Sword or Bomb_Bag) and 'Shoot_down_Sandship'
@@ -363,7 +363,6 @@
 
 
 - name: Skipper's Retreat Dock
-  hint_region: Lanayru Sand Sea
   exits:
     Skipper's Retreat Statue: Nothing
     Skipper's Retreat Past Rock: Clawshots and (Bomb_Bag or Hook_Beetle or (Whip and logic_cactus_bomb_whip))
@@ -371,7 +370,6 @@
 
 
 - name: Skipper's Retreat Past Rock
-  hint_region: Lanayru Sand Sea
   exits:
     Skipper's Retreat Top: Clawshots and Whip and (Projectile_Item or logic_skippers_fast_clawshots)
     Skipper's Retreat Dock: Nothing
@@ -381,7 +379,6 @@
 
 
 - name: Skipper's Retreat Top
-  hint_region: Lanayru Sand Sea
   exits:
     Skipper's Retreat Shack: Nothing
     Skipper's Retreat Past Rock: Nothing
@@ -391,7 +388,6 @@
 
 
 - name: Skipper's Retreat Shack
-  hint_region: Lanayru Sand Sea
   exits:
     Skipper's Retreat Top: Nothing
   locations:
@@ -399,7 +395,6 @@
 
 
 - name: Skipper's Retreat Skydive Platform
-  hint_region: Lanayru Sand Sea
   exits:
     Skipper's Retreat Dock: Clawshots # Should add bomb flower here
   locations:
@@ -407,7 +402,6 @@
 
 
 - name: Shipyard Dock
-  hint_region: Lanayru Sand Sea
   exits:
     Shipyard Statue: Nothing
     Shipyard End of Minecart Ride: Nothing
@@ -419,7 +413,6 @@
 
 
 - name: Shipyard End of Minecart Ride
-  hint_region: Lanayru Sand Sea
   exits:
     Construction Bay Upper Platform: Nothing
 
@@ -436,7 +429,6 @@
 
 
 - name: Pirate Stronghold Dock
-  hint_region: Lanayru Sand Sea
   exits:
     Pirate Stronghold Statue: Nothing
     Pirate Stronghold Side Door: Nothing
@@ -450,7 +442,6 @@
 
 # "'Finish_Pirate_Stronghold'" means the Shark Head is raised
 - name: Pirate Stronghold Inside the Shark Head
-  hint_region: Lanayru Sand Sea
   exits:
     # Clawshot up and run along the Shark Head or just run out if it's been raised
     Pirate Stronghold Dock: Clawshots or 'Finish_Pirate_Stronghold'

@@ -1,0 +1,7 @@
+World 1:
+  song_hints: "advanced"
+input_dir: ./base
+output_dir: ./output
+plandomizer: false
+plandomizer_file: null
+seed: TESTTESTTEST

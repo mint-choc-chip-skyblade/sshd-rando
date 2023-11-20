@@ -37,7 +37,7 @@ class Search:
         self.successful_exits: set[Entrance] = set()
         self.playthrough_entrances: set[Entrance] = set()
 
-        self.playthrough_spheres: list[set[Location]] = []
+        self.playthrough_spheres: list[list[Location]] = []
         self.entrance_spheres: list[list[Entrance]] = []
 
         self.area_time: dict[int, int] = {}
@@ -60,7 +60,7 @@ class Search:
 
     def search_worlds(self) -> None:
         # Get all locations which fit criteria to test on each iteration
-        item_locations: set[LocationAccess] = set()
+        item_locations: list[LocationAccess] = []
         for world in self.worlds:
             for area in world.areas.values():
                 for loc_access in area.locations:
@@ -68,7 +68,7 @@ class Search:
                         SearchMode.ACCESSIBLE_LOCATIONS,
                         SearchMode.ALL_LOCATIONS_REACHABLE,
                     ]:
-                        item_locations.add(loc_access)
+                        item_locations.append(loc_access)
 
         # Main Searching Loop
         # Keep iterating while new things are being found, but
@@ -86,7 +86,7 @@ class Search:
 
             # Add an empty sphere if we're generating the playthrough
             if self.search_mode == SearchMode.GENERATE_PLAYTHROUGH:
-                self.playthrough_spheres.append(set())
+                self.playthrough_spheres.append([])
                 self.entrance_spheres.append([])
 
             self.process_events()
@@ -175,7 +175,7 @@ class Search:
                 self.new_things_found = True
                 self.owned_events.add(event.id)
 
-    def process_locations(self, item_locations: set[LocationAccess]) -> None:
+    def process_locations(self, item_locations: list[LocationAccess]) -> None:
         accessible_this_iteration: list[Location] = []
         for loc_access in item_locations:
             loc = loc_access.location
@@ -210,7 +210,7 @@ class Search:
             self.search_mode == SearchMode.GENERATE_PLAYTHROUGH
             and location.current_item.is_major_item
         ):
-            self.playthrough_spheres[-1].add(location)
+            self.playthrough_spheres[-1].append(location)
 
         # If we're generating a playthrough or just checking for beatability then we can
         # stop searching early by checking if we've found all game beating items for each
@@ -226,14 +226,11 @@ class Search:
                 # If this is the playthrough, and we've found all game winning items, clear the current sphere
                 # except for the last game winning items
                 if self.search_mode == SearchMode.GENERATE_PLAYTHROUGH:
-                    self.playthrough_spheres[-1] = set(
-                        [
-                            loc
-                            for loc in self.playthrough_spheres[-1]
-                            if loc.current_item.is_game_winning_item
-                        ]
-                    )
-                    self.playthrough_spheres[-1].add(location)
+                    self.playthrough_spheres[-1] = [
+                        loc
+                        for loc in self.playthrough_spheres[-1]
+                        if loc.current_item.is_game_winning_item
+                    ]
                 self.is_beatable = True
 
     def add_exit_to_entrance_spheres(self, exit_: Entrance) -> None:
@@ -406,3 +403,17 @@ def generate_playthrough(worlds: list[World]) -> None:
 
     worlds[0].playthrough_spheres = new_search.playthrough_spheres
     worlds[0].entrance_spheres = new_search.entrance_spheres
+
+
+# Returns all the possible gossip stones that could
+# hint at the passed in location
+def get_possible_gossip_stones(location: Location) -> list[Location]:
+    item_at_location = location.current_item
+    location.remove_current_item()
+
+    search = Search(SearchMode.ACCESSIBLE_LOCATIONS, location.world.worlds)
+    search.search_worlds()
+
+    location.set_current_item(item_at_location)
+    stones = location.world.get_gossip_stones()
+    return [stone for stone in stones if stone in search.visited_locations]

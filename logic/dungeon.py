@@ -12,7 +12,7 @@ class Dungeon:
     def __init__(self) -> None:
         self.name = ""
         self.locations: list[Location] = []
-        self.goal_locations: list[Location] = []
+        self.goal_location: Location = None
         self.starting_area: Area = None
         self.starting_entrance: Entrance = None
         self.required = False

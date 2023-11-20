@@ -23,6 +23,7 @@ from sslib.msb import (
 from sslib.u8file import U8File
 from sslib.utils import write_bytes_create_dirs
 from sslib.yaml import yaml_load
+from util.text import get_text_data
 
 
 class EventPatchHandler:
@@ -33,7 +34,19 @@ class EventPatchHandler:
         self.text_label_to_index_mapping = {}
 
     def append_to_event_patches(self, file_name: str, event_patch: dict):
+        if file_name not in self.event_patches:
+            self.event_patches[file_name] = []
         self.event_patches[file_name].append(event_patch)
+
+    def find_event(self, file_name: str, event_name: str) -> dict:
+        return next(
+            (
+                patch
+                for patch in self.event_patches[file_name]
+                if patch["name"] == event_name
+            ),
+            None,
+        )
 
     def handle_event_patches(self, onlyif_handler: ConditionalPatchHandler):
         for event_path in Path(EVENT_FILES_PATH).glob("*.arc"):
@@ -291,7 +304,9 @@ class EventPatchHandler:
         text_index = len(msbt["TXT2"])
         self.text_label_to_index_mapping[text_add["name"]] = text_index
         msbt["TXT2"].append(
-            process_control_sequences(text_add["text"]).encode("utf-16be")
+            process_control_sequences(
+                get_text_data(text_add["name"]).get("english")
+            ).encode("utf-16be")
         )
 
         # Had to add a 0 to the end to satisfy BuildMSB's length requirement, if text adds end up breaking, this may be overwriting a param?
@@ -306,7 +321,7 @@ class EventPatchHandler:
 
     def text_patch(self, msbt: ParsedMsb, text_patch: dict):
         msbt["TXT2"][text_patch["index"]] = process_control_sequences(
-            text_patch["text"]
+            get_text_data(text_patch["name"]).get("english")
         ).encode("utf-16be")
 
     def add_check_patch(self, event_file: str, eventid: str, itemid: int):

@@ -13,6 +13,7 @@ class Item:
         world_: "World" = None,
         major_item_: bool = False,
         game_winning_item_: bool = False,
+        chain_locations_: list[str] = [],
     ) -> None:
         self.id: int = id_
         self.name: str = name_
@@ -20,6 +21,7 @@ class Item:
         self.world: "World" = world_
         self.is_major_item: bool = major_item_
         self.is_game_winning_item: bool = game_winning_item_
+        self.chain_locations: list[str] = chain_locations_
 
         self.is_dungeon_small_key: bool = (
             " Small Key" in name_ and name_ != "Lanayru Caves Small Key"
