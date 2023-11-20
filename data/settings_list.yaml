@@ -131,6 +131,15 @@
     - "on":                            "The lava river at the end of Fire Sanctuary will be flowing from the start of the game."
 
 
+- name: peatrice_conversations
+  default_option: 0
+  pretty_name: Peatrice Conversations
+  pretty_options:
+    - 0-6
+  options:
+    - 0-6:                           "How many times you need to talk to Peatrice before she calls you darling and you can start Peater's quest."
+
+
 - name: small_keys
   default_option: own_dungeon
   pretty_name: Small Keys

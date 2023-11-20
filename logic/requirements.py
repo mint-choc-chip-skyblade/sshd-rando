@@ -111,7 +111,9 @@ def parse_requirement_string(
         pos = new_req_str.index(delimeter)
         char_before = new_req_str[pos - 1]
         char_after = new_req_str[pos + 1]
-        if char_before not in ["!", "=", ">"] and char_after not in ["!", "=", ">"]:
+        if (char_before not in ["!", "=", ">", "<"]) and (
+            char_after not in ["!", "=", ">", "<"]
+        ):
             split_req_str.append(new_req_str[:pos])
             new_req_str = new_req_str[pos + 1 :]
         else:
@@ -165,7 +167,7 @@ def parse_requirement_string(
         # Then setting comparison check...
         # Since settings don't change curing seed generation,
         # we can resolve them to NOTHING or IMPOSSIBLE requirements now
-        elif "==" in arg or "!=" in arg or ">=" in arg:
+        elif "==" in arg or "!=" in arg or ">=" in arg or "<=" in arg:
             # Split up the comparison using the second comparison character (which will always be '=')
             split_pos = arg.rindex("=")
             compared_option_str = arg[split_pos + 1 :]
@@ -184,6 +186,7 @@ def parse_requirement_string(
                 ("==" in arg and actual_option == compared_option)
                 or ("!=" in arg and actual_option != compared_option)
                 or (">=" in arg and actual_option >= compared_option)
+                or ("<=" in arg and actual_option <= compared_option)
             ):
                 req.type = RequirementType.NOTHING
             else:
