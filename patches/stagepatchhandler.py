@@ -32,6 +32,8 @@ from filepathconstants import (
     OBJECTPACK_PATH,
     TITLE2D_SOURCE_PATH,
     TITLE2D_OUTPUT_PATH,
+    ENDROLL_SOURCE_PATH,
+    ENDROLL_OUTPUT_PATH,
 )
 
 
@@ -763,9 +765,16 @@ class StagePatchHandler:
             }
         )
 
-    def patch_title_screen_logo(self):
+    def patch_logo(self):
         print("Patching Title Screen Logo")
         logo_data = (RANDO_ROOT_PATH / "assets" / "sshdr-logo.tpl").read_bytes()
+
+        # Write title screen logo
         title_2d_arc = U8File.get_parsed_U8_from_path(TITLE2D_SOURCE_PATH, False)
         title_2d_arc.set_file_data("timg/tr_wiiKing2Logo_00.tpl", logo_data)
         write_bytes_create_dirs(TITLE2D_OUTPUT_PATH, title_2d_arc.build_U8())
+
+        # Write credits logo
+        endroll_arc = U8File.get_parsed_U8_from_path(ENDROLL_SOURCE_PATH, False)
+        endroll_arc.set_file_data("timg/th_zeldaRogoEnd_02.tpl", logo_data)
+        write_bytes_create_dirs(ENDROLL_OUTPUT_PATH, endroll_arc.build_U8())
