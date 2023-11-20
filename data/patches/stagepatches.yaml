@@ -3735,16 +3735,17 @@ F302: # Lanayru Gorge
     object:
       layer: 2
       entrance: 4
-  - name: Patch Small Key
+  - name: Patch Pillar Item
     type: objpatch
     id: 0xFCC3
     layer: 1
     room: 0
     objtype: OBJ
     object:
-      anglex: 0
-      angley: 0
-  - name: Move Small Key
+      anglex: 0 # Fix rotation
+      angley: 44000 # Turn item to face the player
+      posy: -2600 # Fix height
+  - name: Move Pillar Item
     type: objmove
     id: 0xFCC3
     layer: 1

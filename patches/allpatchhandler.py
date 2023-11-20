@@ -51,7 +51,7 @@ class AllPatchHandler:
         patch_object_pack()
 
         self.stage_patch_handler.handle_stage_patches(self.conditional_patch_handler)
-        self.stage_patch_handler.patch_title_screen_logo()
+        self.stage_patch_handler.patch_logo()
 
         self.event_patch_handler.handle_event_patches(self.conditional_patch_handler)
 

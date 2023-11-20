@@ -39,9 +39,11 @@ def generate(config_file: str) -> list[World]:
     config = load_config_from_file(config_file)
 
     # If config has no seed, generate one
-    if config.seed == "":
+    if config.seed == "" or config.seed == "-1":
         config.seed = str(random.randint(0, 0xFFFFFFFF))
         write_config_to_file(config_file, config)
+
+    print(f"Seed: {config.seed}")
 
     return generate_randomizer(config)
 
@@ -79,6 +81,7 @@ def generate_randomizer(config: Config) -> list[World]:
 
         worlds[i].setting_map = setting_map
         worlds[i].num_worlds = len(config.settings)
+        worlds[i].config = config
         worlds[i].build()
 
     for world in worlds:

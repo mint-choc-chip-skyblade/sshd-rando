@@ -1,12 +1,10 @@
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 from sslib.bzs import parse_bzs, build_bzs, get_entry_from_bzs, get_highest_object_id
-from sslib.fs_helpers import float_to_hex
 from sslib.utils import mask_shift_set, write_bytes_create_dirs
 from sslib.yaml import yaml_load
 from sslib.u8file import U8File
 
 from collections import defaultdict
-from logic.world import World
 from pathlib import Path
 import json
 
@@ -32,6 +30,8 @@ from filepathconstants import (
     OBJECTPACK_PATH,
     TITLE2D_SOURCE_PATH,
     TITLE2D_OUTPUT_PATH,
+    ENDROLL_SOURCE_PATH,
+    ENDROLL_OUTPUT_PATH,
 )
 
 
@@ -763,9 +763,42 @@ class StagePatchHandler:
             }
         )
 
-    def patch_title_screen_logo(self):
+    def patch_logo(self):
         print("Patching Title Screen Logo")
         logo_data = (RANDO_ROOT_PATH / "assets" / "sshdr-logo.tpl").read_bytes()
+        rogo_03_data = (RANDO_ROOT_PATH / "assets" / "th_rogo_03.tpl").read_bytes()
+        rogo_04_data = (RANDO_ROOT_PATH / "assets" / "th_rogo_04.tpl").read_bytes()
+
+        # Write title screen logo
         title_2d_arc = U8File.get_parsed_U8_from_path(TITLE2D_SOURCE_PATH, False)
         title_2d_arc.set_file_data("timg/tr_wiiKing2Logo_00.tpl", logo_data)
+        title_2d_arc.set_file_data("timg/th_rogo_03.tpl", rogo_03_data)
+        title_2d_arc.set_file_data("timg/th_rogo_04.tpl", rogo_04_data)
+
+        # Fix size of rogo stuff (makes the logo text shiny)
+        if lyt_file := title_2d_arc.get_file_data("blyt/titleBG_00.brlyt"):
+            # Changes the size of the P_loop_00, P_auraR_03, and P_auraR_00 lyt elements
+            lyt_file = lyt_file.replace(
+                b"\x43\xA4\xC0\x00\x43\x37", b"\x43\xA4\xC0\x00\x43\x69"
+            )
+            title_2d_arc.set_file_data("blyt/titleBG_00.brlyt", lyt_file)
+
         write_bytes_create_dirs(TITLE2D_OUTPUT_PATH, title_2d_arc.build_U8())
+
+        # Write credits logo
+        print("Patching Credits Logo")
+        endroll_arc = U8File.get_parsed_U8_from_path(ENDROLL_SOURCE_PATH, False)
+        endroll_arc.set_file_data("timg/th_zeldaRogoEnd_02.tpl", logo_data)
+        endroll_arc.set_file_data("timg/th_rogo_03.tpl", rogo_03_data)
+        endroll_arc.set_file_data("timg/th_rogo_04.tpl", rogo_04_data)
+
+        # Fix size of rogo stuff (makes the logo text shiny)
+        if lyt_file := endroll_arc.get_file_data("blyt/endTitle_00.brlyt"):
+            # Changes the size of the P_loop_00, and P_auraR_00 lyt elements
+            lyt_file = lyt_file.replace(
+                b"\x9A\x40\x49\x99\x9A\x43\x13\x80\x00\x42\xA2",
+                b"\x99\x40\x49\x99\x99\x43\x13\x80\x00\x42\xCE",
+            )
+            endroll_arc.set_file_data("blyt/endTitle_00.brlyt", lyt_file)
+
+        write_bytes_create_dirs(ENDROLL_OUTPUT_PATH, endroll_arc.build_U8())

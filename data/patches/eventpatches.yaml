@@ -671,6 +671,15 @@
      - -1 # Never Mind
 # 008-Hint
 
+100-Town:
+  - name: Remove Attention Mark from Pipit at night
+    type: flowpatch
+    index: 168
+    flow: {}
+    cases:
+     - 167
+     - 165
+
 101-Shop:
   - name: Remove pouch bipping after item seller
     type: flowpatch
@@ -1722,7 +1731,7 @@
       next: 520
   - name: New text Option
     type: textadd
-    text: "Hey, you look like you have a Questions?\n[1]Levias[2-]Other Things"
+    text: "Hey, you look like you have a question?\n[1]<r<Levias>>[2-]Other Things"
   - name: Show new Text Option
     type: flowadd
     flow:

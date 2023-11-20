@@ -45,3 +45,9 @@ nop
 ; Don't check in water action flag when also checking is in boat?
 .offset 0x08a6e06c
 movk w9, #0xc3, LSL #16
+
+
+; Allow calling Fi while on fire
+.offset 0x08a6de70 ; 0x7100a69e70
+nop
+nop
