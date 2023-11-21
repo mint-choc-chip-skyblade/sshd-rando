@@ -12,24 +12,9 @@ from util.text import load_text_data
 import time
 import random
 import os
-import sys, getopt
-import logging
 
 
 def generate(config_file: str) -> list[World]:
-    # Set specified log level
-    opts, args = getopt.getopt(sys.argv[1:], "ll:", ["loglevel="])
-    for opt, arg in opts:
-        if opt in ("-ll", "--loglevel"):
-            if arg == "debug":
-                print("Starting Debug Log")
-                logging.basicConfig(
-                    filename="debug.log",
-                    encoding="utf-8",
-                    level=logging.DEBUG,
-                    filemode="w",
-                )
-
     get_all_settings_info()
     load_text_data()
 
