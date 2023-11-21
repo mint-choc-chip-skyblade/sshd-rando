@@ -28,6 +28,11 @@ class Main(QMainWindow):
         # TODO: Replace with path from constants file
         self.setWindowIcon(QIcon("../assets/icon.png"))
 
+        self.ui.randomize_button.clicked.connect(self.randomize)
+
+    def randomize(self):
+        print("Randomize")
+
 
 def start_gui():
     app = QApplication([])
