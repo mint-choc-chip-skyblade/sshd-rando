@@ -1,72 +1,72 @@
 main:
-    PLAYER_PTR: 0x0abfd940
+    PLAYER_PTR: 0x7102bfd940
 
     # MGRs
-    FILE_MGR: 0x0abfdcc0
-    INPUT_MGR: 0x0ac02a68
-    HARP_RELATED: 0x0ac02c48 # 0x7102bfec48
+    FILE_MGR: 0x7102bfdcc0
+    INPUT_MGR: 0x7102c02a68
+    HARP_RELATED: 0x7102c02c48
 
-    STORYFLAG_MGR: 0x098321f0
-    SCENEFLAG_MGR: 0x09831ef8
-    ITEMFLAG_MGR: 0x09832168
-    DUNGEONFLAG_MGR: 0x09832120
-    ENEMY_DEFEAT_FLAG_MGR: 0x09832160
+    STORYFLAG_MGR: 0x71018321f0
+    SCENEFLAG_MGR: 0x7101831ef8
+    ITEMFLAG_MGR: 0x7101832168
+    DUNGEONFLAG_MGR: 0x7101832120
+    ENEMY_DEFEAT_FLAG_MGR: 0x7101832160
 
     # Static flags
-    STATIC_STORYFLAGS: 0x098321f8
-    STATIC_SCENEFLAGS: 0x09831f00
-    STATIC_TEMPFLAGS: 0x09831f10
-    STATIC_ZONEFLAGS: 0x09831f18
-    STATIC_ITEMFLAGS: 0x09832170
-    STATIC_DUNGEONFLAGS: 0x09832128
-    STATIC_ENEMY_DEFEATED_FLAGS: 0x098322f8
+    STATIC_STORYFLAGS: 0x71018321f8
+    STATIC_SCENEFLAGS: 0x7101831f00
+    STATIC_TEMPFLAGS: 0x7101831f10
+    STATIC_ZONEFLAGS: 0x7101831f18
+    STATIC_ITEMFLAGS: 0x7101832170
+    STATIC_DUNGEONFLAGS: 0x7101832128
+    STATIC_ENEMY_DEFEATED_FLAGS: 0x71018322f8
 
     # Reloader stuff
-    GAME_RELOADER: 0x0abfd930
-    RESPAWN_TYPE: 0x0abfd960
-    CURRENT_STAGE_NAME: 0x0abfd8d8
-    CURRENT_STAGE_SUFFIX: 0x0abfd8dc
-    CURRENT_ROOM: 0x0abfd8fa
-    CURRENT_LAYER: 0x0abfd8fb
-    CURRENT_ENTRANCE: 0x0abfd8fc
-    CURRENT_NIGHT: 0x0abfd8fd
-    CURRENT_FADE_FRAMES: 0x0abfd8f8
-    CURRENT_SOMETHING: 0x0abfd900
-    NEXT_STAGE_NAME: 0x0abfd904
-    NEXT_STAGE_SUFFIX: 0x0abfd908
-    NEXT_ROOM: 0x0abdf926
-    NEXT_LAYER: 0x0abdf927
-    NEXT_ENTRANCE: 0x0abfd928
-    NEXT_NIGHT: 0x0abfd929
-    NEXT_TRIAL: 0x0abfd92a
-    NEXT_FADE_FRAMES: 0x0abfd924
-    NEXT_SOMETHING: 0x0abfd92c
-    CURRENT_LAYER_COPY: 0x0abfd94c
+    GAME_RELOADER: 0x7102bfd930
+    RESPAWN_TYPE: 0x7102bfd960
+    CURRENT_STAGE_NAME: 0x7102bfd8d8
+    CURRENT_STAGE_SUFFIX: 0x7102bfd8dc
+    CURRENT_ROOM: 0x7102bfd8fa
+    CURRENT_LAYER: 0x7102bfd8fb
+    CURRENT_ENTRANCE: 0x7102bfd8fc
+    CURRENT_NIGHT: 0x7102bfd8fd
+    CURRENT_FADE_FRAMES: 0x7102bfd8f8
+    CURRENT_SOMETHING: 0x7102bfd900
+    NEXT_STAGE_NAME: 0x7102bfd904
+    NEXT_STAGE_SUFFIX: 0x7102bfd908
+    NEXT_ROOM: 0x7102bfd926
+    NEXT_LAYER: 0x7102bfd927
+    NEXT_ENTRANCE: 0x7102bfd928
+    NEXT_NIGHT: 0x7102bfd929
+    NEXT_TRIAL: 0x7102bfd92a
+    NEXT_FADE_FRAMES: 0x7102bfd924
+    NEXT_SOMETHING: 0x7102bfd92c
+    CURRENT_LAYER_COPY: 0x7102bfd94c
 
     # Actor Stuff
-    ACTOR_PARAM_SCALE: 0x0ac018d0
-    ACTOR_PARAM_ROT: 0x0ac018c8
-    ACTORBASE_PARAM2: 0x096894b8
+    ACTOR_PARAM_SCALE: 0x7102c018d0
+    ACTOR_PARAM_ROT: 0x7102c018c8
+    ACTORBASE_PARAM2: 0x71016894b8
 
-    BASEBASE_ACTOR_PARAM1: 0x35036078
-    BASEBASE_GROUP_TYPE: 0x3503607c
+    BASEBASE_ACTOR_PARAM1: 0x712d036078
+    BASEBASE_GROUP_TYPE: 0x712d03607c
 
-    ACTOR_ALLOCATOR_DEFINITIONS: 0x09678448
+    ACTOR_ALLOCATOR_DEFINITIONS: 0x7101678448
 
     # Functions
-    strlen: 0x0905f5c0
-    GameReloader__triggerExit: 0x08df9478
-    GameReloader__triggerEntrance: 0x08df8dfc
-    SceneflagMgr__setFlag: 0x08b83380
-    SceneflagMgr__unsetFlag: 0x08b834b0
-    SceneflagMgr__checkFlag: 0x08b8319c
+    strlen: 0x710105f5c0
+    GameReloader__triggerExit: 0x7100df9478
+    GameReloader__triggerEntrance: 0x7100df8dfc
+    SceneflagMgr__setFlag: 0x7100b83380
+    SceneflagMgr__unsetFlag: 0x7100b834b0
+    SceneflagMgr__checkFlag: 0x7100b8319c
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
-    dAcItem__spawnItemWithParams: 0x084eba70
-    spawnDrop: 0x084ebc5c
+    dAcItem__spawnItemWithParams: 0x71004eba70
+    spawnDrop: 0x71004ebc5c
 
     # Custom Symbols
-    additions_jumptable: 0x0865a070
-    STARTFLAGS: 0x3654b200 # See asmconstants.py for where this number comes from
-    START_COUNTS: 0x3654b5e8 # STARTFLAGS_OFFSET + MAX_STARFLAGS
+    additions_jumptable: 0x710065a070
+    STARTFLAGS: 0x712e54b200 # See asmconstants.py for where this number comes from
+    START_COUNTS: 0x712e54b5e8 # STARTFLAGS_OFFSET + MAX_STARFLAGS
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
-    dAcItem__spawnRandoItemWithParams: 0x085c2060
+    dAcItem__spawnRandoItemWithParams: 0x71005c2060

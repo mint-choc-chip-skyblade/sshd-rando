@@ -156,10 +156,10 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
         asm_read_offset = None
         current_only_if = ""
 
-        temp_linker_cript = linker_script + NEWLINE
+        temp_linker_script = linker_script + NEWLINE
 
         for symbol in custom_symbols:
-            temp_linker_cript += (
+            temp_linker_script += (
                 symbol + " = " + hex(custom_symbols[symbol]) + SEMICOLON + NEWLINE
             )
 
@@ -218,7 +218,7 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
                 code_blocks[asm_read_offset].append(line + NEWLINE)
 
             for symbol in local_branches:
-                temp_linker_cript += symbol
+                temp_linker_script += symbol
 
         for code_block_identifier, code in code_blocks.items():
             if code_block_identifier.startswith(OFFSET_PREFIX):
@@ -231,7 +231,7 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
             temp_linker_file_name = temp_dir_name / "temp-linker.ld"
 
             with open(temp_linker_file_name, "w") as f:
-                f.write(temp_linker_cript)
+                f.write(temp_linker_script)
 
             assembler_code_file_name = (
                 temp_dir_name / f"{asm_file_name}-0x{code_block_offset}.asm"
@@ -285,6 +285,9 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
                 linker_command.append("./" + ASM_RUST_ADDITIONS_TARGET_PATH.as_posix())
 
             if result := call(linker_command):
+                # with open(temp_linker_file_name, "r") as f:
+                #     print(f.readlines())
+
                 raise Exception(
                     f"Linker call {linker_command} failed with error code: {result}"
                 )
@@ -304,7 +307,8 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
                                 break
 
                             match = re.search(
-                                r" +0x(?:00000000)?([0-9a-f]{8}) +([a-zA-Z]\S+)", line
+                                r" +0x000000(?:0000000000)?([0-9a-f]{10}) +([a-zA-Z]\S+)",
+                                line,
                             )
 
                             if not match:
