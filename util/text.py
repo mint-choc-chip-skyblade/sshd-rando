@@ -102,6 +102,10 @@ text_table: dict[str, dict[str, Text]] = {}
 
 
 def load_text_data() -> None:
+    # Don't create the text table if it already exists
+    if text_table:
+        return
+
     print("Loading text data")
     directory = "data/text_data"
 
