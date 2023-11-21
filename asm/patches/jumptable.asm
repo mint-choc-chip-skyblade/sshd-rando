@@ -13,8 +13,8 @@
 ; actor that can be used but more knowledge about this actor is needed before
 ; they can be used safely.
 ; 
-; dAcNpcSenpaiAMotherLOD_c::ctor starts at:  0x08659ab0
-; dAcNpcSenpaiAMotherLOD_c::init ends at:    0x0865a080
+; dAcNpcSenpaiAMotherLOD_c::ctor starts at:  0x7100659ab0
+; dAcNpcSenpaiAMotherLOD_c::init ends at:    0x710065a080
 ; Total available space (bytes):                  0x5D0
 ; Total available space (bytes):                   1488 (decimal)
 ; Total available instructions:                     372 (decimal)
@@ -24,22 +24,22 @@
 ; Total instructions used:                           14
 
 ; startflags
-.offset 0x08659ab0
+.offset 0x7100659ab0
 mov w8, #2
 b additions_jumptable
 
 ; freestanding item y offset
-.offset 0x08659ab8
+.offset 0x7100659ab8
 mov w8, #4
 b additions_jumptable
 
 ; Set Stone of Trials placed flag
-.offset 0x08659ac0
+.offset 0x7100659ac0
 mov w8, #8
 b additions_jumptable
 
 
 ; Actually branches to the rust additions landingpad
 ; additions_jumptable
-.offset 0x0865a070 ; uses 10 instructions
-b 0x360A5500
+.offset 0x710065a070 ; uses 10 instructions
+b 0x712e0a5500

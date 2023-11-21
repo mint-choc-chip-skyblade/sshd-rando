@@ -1,5 +1,5 @@
 ; Assign model index for new items
-.offset 0x093a0d84
+.offset 0x71013a0d84
 ; Small Keys
 .2byte 0 ; SV Small Key (200)
 .2byte 0 ; LMF Small Key (201)
@@ -21,7 +21,7 @@
 
 ; Assign item get animation
 ; the good game SS is, it assumes the best default and crashes :p
-.offset 0x0937af0c
+.offset 0x710137af0c
 .int 0 ; SV Small Key      (200)
 .int 0 ; LMF Small Key     (201)
 .int 0 ; AC Small Key      (202)
@@ -40,20 +40,20 @@
 .int 0x1000 ; Scrapper     (215)
 
 
-.offset 0x084e0d04
+.offset 0x71004e0d04
 mov w8, #0
 bl additions_jumptable
 
 ; Don't allow items to set dungeonflags
 ; Could be used to allow tears to be placed anywhere
-; .offset 0x084e335c
+; .offset 0x71004e335c
 ; nop
 
 
 ; Only set dungeonflags from items if the item is a trial tear
-.offset 0x084e33b4
+.offset 0x71004e33b4
 cmp w8, #43 ; 1st tear item
-b.lt 0x084e3360 ; pretend like it's not a dungeonflag item
+b.lt 0x71004e3360 ; pretend like it's not a dungeonflag item
 cmp w8, #46 ; last tear item
-b.gt 0x084e3360 ; pretend like it's not a dungeonflag item
-b 0x084e3454 ; continue on to set dungeonflag
+b.gt 0x71004e3360 ; pretend like it's not a dungeonflag item
+b 0x71004e3454 ; continue on to set dungeonflag
