@@ -2,6 +2,7 @@
 import signal
 import sys
 
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow
 
 from ui.ui_main import Ui_MainWindow
@@ -12,6 +13,7 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 # TODO: Replace with a proper version
 TEMP_VERSION = "-1"
 
+
 class Main(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -19,7 +21,13 @@ class Main(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.setWindowTitle("The Legend of Zelda: Skyward Sword HD Randomizer " + TEMP_VERSION)
+        self.setWindowTitle(
+            "The Legend of Zelda: Skyward Sword HD Randomizer " + TEMP_VERSION
+        )
+
+        # TODO: Replace with path from constants file
+        self.setWindowIcon(QIcon("../assets/icon.png"))
+
 
 def start_gui():
     app = QApplication([])
@@ -27,7 +35,7 @@ def start_gui():
     widget = Main()
     widget.show()
 
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
 
 if __name__ == "__main__":
