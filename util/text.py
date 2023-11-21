@@ -102,9 +102,9 @@ text_table: dict[str, dict[str, Text]] = {}
 
 
 def load_text_data() -> None:
-    # Don't create the text table if it already exists
+    # Clear the text table for multiple generations
     if text_table:
-        return
+        text_table.clear()
 
     print("Loading text data")
     directory = "data/text_data"
