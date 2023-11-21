@@ -12,6 +12,9 @@ OUTPUT_EVENT_PATH = OUTPUT_PATH / "romfs" / "US" / "Object" / "en_US"
 OUTPUT_MAIN_NSO = OUTPUT_PATH / "exefs" / "main"
 OUTPUT_ADDITIONAL_SUBSDK = OUTPUT_PATH / "exefs" / "subsdk8"
 
+# Config
+CONFIG_PATH = RANDO_ROOT_PATH / "config.yaml"
+
 # Stage and event stuff
 OARC_CACHE_PATH = RANDO_ROOT_PATH / "oarccache"
 

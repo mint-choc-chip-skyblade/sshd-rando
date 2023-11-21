@@ -1,3 +1,4 @@
+from pathlib import Path
 import yaml
 import random
 
@@ -28,7 +29,7 @@ class Config:
         self.plandomizer_file: str = None
 
 
-def create_default_config(filename: str):
+def create_default_config(filename: Path):
     conf = Config()
     conf.output_dir = "./output"
     conf.input_dir = "./base"
@@ -53,7 +54,7 @@ def create_default_config(filename: str):
     write_config_to_file(filename, conf)
 
 
-def write_config_to_file(filename: str, conf: Config):
+def write_config_to_file(filename: Path, conf: Config):
     with open(filename, "w") as config_file:
         config_out = {}
 
@@ -94,7 +95,7 @@ def write_config_to_file(filename: str, conf: Config):
         yaml.safe_dump(config_out, config_file, sort_keys=False)
 
 
-def load_config_from_file(filename: str, allow_rewrite: bool = True) -> Config:
+def load_config_from_file(filename: Path, allow_rewrite: bool = True) -> Config:
     config = Config()
     # If the config is missing any options, set defaults and resave it afterwards
     rewrite_config: bool = False

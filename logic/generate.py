@@ -14,7 +14,7 @@ import random
 import os
 
 
-def generate(config_file: str) -> list[World]:
+def generate(config_file: Path) -> list[World]:
     get_all_settings_info()
     load_text_data()
 

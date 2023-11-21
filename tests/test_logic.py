@@ -12,10 +12,10 @@ from logic.world import World
 def config_test(config_file_name: str) -> list[World]:
     assert os.path.exists(f"tests/test_configs/{config_file_name}")
     config = load_config_from_file(
-        f"tests/test_configs/{config_file_name}", allow_rewrite=False
+        Path(f"tests/test_configs/{config_file_name}"), allow_rewrite=False
     )
-    write_config_to_file(config_file_name, config)
-    worlds = generate(config_file_name)
+    write_config_to_file(Path(config_file_name), config)
+    worlds = generate(Path(config_file_name))
     assert all_locations_reachable(worlds)
     os.remove(config_file_name)
     return worlds
