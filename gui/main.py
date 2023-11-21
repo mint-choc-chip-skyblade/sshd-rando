@@ -4,8 +4,9 @@ import sys
 
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow
-from constants.randoconstants import VERSION
 
+from constants.randoconstants import VERSION
+from filepathconstants import ICON_PATH
 from gui.ui.ui_main import Ui_MainWindow
 
 
@@ -23,8 +24,7 @@ class Main(QMainWindow):
             "The Legend of Zelda: Skyward Sword HD Randomizer " + VERSION
         )
 
-        # TODO: Replace with path from constants file
-        self.setWindowIcon(QIcon("../assets/icon.png"))
+        self.setWindowIcon(QIcon(ICON_PATH.as_posix()))
 
         self.ui.randomize_button.clicked.connect(self.randomize)
 
