@@ -4,14 +4,12 @@ import sys
 
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow
+from constants.randoconstants import VERSION
 
 from gui.ui.ui_main import Ui_MainWindow
 
 
 signal.signal(signal.SIGINT, signal.SIG_DFL)
-
-# TODO: Replace with a proper version
-TEMP_VERSION = "-1"
 
 
 class Main(QMainWindow):
@@ -22,7 +20,7 @@ class Main(QMainWindow):
         self.ui.setupUi(self)
 
         self.setWindowTitle(
-            "The Legend of Zelda: Skyward Sword HD Randomizer " + TEMP_VERSION
+            "The Legend of Zelda: Skyward Sword HD Randomizer " + VERSION
         )
 
         # TODO: Replace with path from constants file

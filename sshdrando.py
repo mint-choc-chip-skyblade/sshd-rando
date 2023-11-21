@@ -1,6 +1,5 @@
 import argparse
 import logging
-import sys
 
 from logic.generate import generate
 from patches.allpatchhandler import AllPatchHandler
