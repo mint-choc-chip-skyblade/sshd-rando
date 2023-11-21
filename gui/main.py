@@ -8,6 +8,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 from constants.randoconstants import VERSION
 from filepathconstants import ICON_PATH
 from gui.ui.ui_main import Ui_MainWindow
+from randomize import randomize
 
 
 signal.signal(signal.SIGINT, signal.SIG_DFL)
@@ -29,7 +30,7 @@ class Main(QMainWindow):
         self.ui.randomize_button.clicked.connect(self.randomize)
 
     def randomize(self):
-        print("Randomize")
+        randomize()
 
 
 def start_gui():

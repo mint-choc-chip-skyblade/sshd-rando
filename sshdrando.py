@@ -1,8 +1,7 @@
 import argparse
 import logging
 
-from logic.generate import generate
-from patches.allpatchhandler import AllPatchHandler
+from randomize import randomize
 
 parser = argparse.ArgumentParser(
     description="A randomizer for The Legend of Zelda: Skyward Sword HD."
@@ -39,7 +38,4 @@ if args.with_gui:
 
     start_gui()
 else:
-    worlds = generate("config.yaml")
-
-    patch_handler = AllPatchHandler(worlds[0])
-    patch_handler.do_all_patches()
+    randomize()
