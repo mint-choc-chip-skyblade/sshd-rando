@@ -5,7 +5,7 @@ import sys
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow
 
-from ui.ui_main import Ui_MainWindow
+from gui.ui.ui_main import Ui_MainWindow
 
 
 signal.signal(signal.SIGINT, signal.SIG_DFL)
