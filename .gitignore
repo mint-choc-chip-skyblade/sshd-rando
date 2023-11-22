@@ -8,11 +8,14 @@ output
 oarccache
 
 *__pycache__*
-config.yaml
+.pytest_cache
+
 *.log
 *.gv
 *.svg
+
 Spoiler Log.txt
+config.yaml
 *plandomizer.yaml
 
 # asm
