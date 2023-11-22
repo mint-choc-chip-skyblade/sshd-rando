@@ -1,3 +1,4 @@
+from gui.dialog_header import print_progress_text
 from logic.entrance import Entrance
 from patches.stagepatchhandler import StagePatchHandler
 
@@ -5,6 +6,8 @@ from patches.stagepatchhandler import StagePatchHandler
 def determine_entrance_patches(
     shuffled_entrances: list[Entrance], stage_patch_handler: StagePatchHandler
 ):
+    print_progress_text("Creating Entrances Patches")
+
     for entrance in shuffled_entrances:
         spawn_info = entrance.replaces.spawn_info[0]
 

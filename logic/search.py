@@ -348,7 +348,7 @@ def generate_playthrough(worlds: list[World]) -> None:
             temp_empty_locations[location] = location.current_item
             location.remove_current_item()
 
-    print("Paring down playthrough")
+    print_progress_text("Paring down playthrough")
     # Reverse the playthrough so we're paring it down from highest to lowest sphere
     # This way, lower sphere items will be prioritized for the playthrough
     for sphere in reversed(playthrough_spheres):

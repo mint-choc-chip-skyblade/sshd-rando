@@ -159,4 +159,4 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                     spoiler_log.write("        Impa Hint:\n")
                     spoiler_log.write(f"            {world.impa_sot_hint}\n")
 
-    print(f"Generated Spoiler Log at {filepath}")
+    print_progress_text(f"Generated Spoiler Log at {filepath}")

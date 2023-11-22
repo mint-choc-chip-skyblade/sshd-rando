@@ -11,6 +11,11 @@ from filepathconstants import EVENT_PATCHES_PATH, EVENT_FILES_PATH, OUTPUT_EVENT
 
 from collections import defaultdict
 from pathlib import Path
+from gui.dialog_header import (
+    get_progress_value_from_range,
+    print_progress_text,
+    update_progress_value,
+)
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 
 from sslib.msb import (
@@ -49,7 +54,16 @@ class EventPatchHandler:
         )
 
     def handle_event_patches(self, onlyif_handler: ConditionalPatchHandler):
-        for event_path in Path(EVENT_FILES_PATH).glob("*.arc"):
+        event_paths = tuple(Path(EVENT_FILES_PATH).glob("*.arc"))
+        total_event_file_count = len(event_paths)
+
+        for event_path in event_paths:
+            patched_event_file_count = event_paths.index(event_path)
+            progress_value = get_progress_value_from_range(
+                99, 7, patched_event_file_count, total_event_file_count
+            )
+            update_progress_value(progress_value)
+
             file_name = event_path.parts[-1]
             modified_event_path = Path(OUTPUT_EVENT_PATH / file_name)
 
@@ -61,7 +75,7 @@ class EventPatchHandler:
             ):
                 msbt_file_name = event_file_path.split("/")[-1]
                 if msbt_file_name[:-5] in self.event_patches:
-                    print(f"Patching {msbt_file_name}")
+                    print_progress_text(f"Patching {msbt_file_name}")
                     msbt_data = event_arc.get_file_data(event_file_path)
 
                     if not msbt_data:
@@ -97,7 +111,7 @@ class EventPatchHandler:
                     or msbf_file_name[:-5] in self.check_patches
                     or msbf_file_name == "003-ItemGet.msbf"
                 ):
-                    print(f"Patching {msbf_file_name}")
+                    print_progress_text(f"Patching {msbf_file_name}")
 
                     if (
                         event_file_data := event_arc.get_file_data(event_file_path)

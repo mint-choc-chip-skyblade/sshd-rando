@@ -1,8 +1,6 @@
 import argparse
 import logging
 
-from randomize import randomize
-
 parser = argparse.ArgumentParser(
     description="A randomizer for The Legend of Zelda: Skyward Sword HD."
 )
@@ -33,9 +31,12 @@ if args.debug:
         filemode="w",
     )
 
+# Imports here to prevent circular dependency
 if args.with_gui:
     from gui.main import start_gui
 
     start_gui()
 else:
+    from randomize import randomize
+
     randomize()

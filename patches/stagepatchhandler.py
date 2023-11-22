@@ -1,3 +1,8 @@
+from gui.dialog_header import (
+    get_progress_value_from_range,
+    print_progress_text,
+    update_progress_value,
+)
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 from sslib.bzs import parse_bzs, build_bzs, get_entry_from_bzs, get_highest_object_id
 from sslib.utils import mask_shift_set, write_bytes_create_dirs
@@ -416,7 +421,16 @@ class StagePatchHandler:
         self.stage_oarc_add: dict[tuple[str, int], set[str]] = defaultdict(set)
 
     def handle_stage_patches(self, onlyif_handler: ConditionalPatchHandler):
-        for stage_path in Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ"):
+        stage_paths = tuple(Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ"))
+        total_stage_count = len(stage_paths)
+
+        for stage_path in stage_paths:
+            patched_stage_count = stage_paths.index(stage_path)
+            progress_value = get_progress_value_from_range(
+                90, 70, patched_stage_count, total_stage_count
+            )
+            update_progress_value(progress_value)
+
             stage_match = STAGE_FILE_REGEX.match(stage_path.parts[-1])
 
             if not stage_match:
@@ -435,7 +449,7 @@ class StagePatchHandler:
             if layer == 0 or remove_arcs or add_arcs:
                 patches = self.stage_patches.get(stage, [])
 
-                print(f"Patching Stage: {stage}\tLayer: {layer}")
+                print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
                 object_patches = []
                 stage_u8 = None
 
@@ -677,7 +691,7 @@ class StagePatchHandler:
                 objectpack_u8 = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH, True)
 
                 for arc in arcs_not_in_cache:
-                    print(f"Extracting {arc}")
+                    print_progress_text(f"Extracting {arc}")
                     arc_data = objectpack_u8.get_file_data(f"oarc/{arc}.arc")
 
                     if not arc_data:
@@ -704,7 +718,7 @@ class StagePatchHandler:
                 stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
 
                 for arc_name in arcs:
-                    print(f"Extracting {arc_name}")
+                    print_progress_text(f"Extracting {arc_name}")
                     arc_data = stage_u8.get_file_data(f"oarc/{arc_name}.arc")
 
                     if not arc_data:
@@ -764,7 +778,7 @@ class StagePatchHandler:
         )
 
     def patch_logo(self):
-        print("Patching Title Screen Logo")
+        print_progress_text("Patching Title Screen Logo")
         logo_data = (RANDO_ROOT_PATH / "assets" / "sshdr-logo.tpl").read_bytes()
         rogo_03_data = (RANDO_ROOT_PATH / "assets" / "th_rogo_03.tpl").read_bytes()
         rogo_04_data = (RANDO_ROOT_PATH / "assets" / "th_rogo_04.tpl").read_bytes()
@@ -786,7 +800,7 @@ class StagePatchHandler:
         write_bytes_create_dirs(TITLE2D_OUTPUT_PATH, title_2d_arc.build_U8())
 
         # Write credits logo
-        print("Patching Credits Logo")
+        print_progress_text("Patching Credits Logo")
         endroll_arc = U8File.get_parsed_U8_from_path(ENDROLL_SOURCE_PATH, False)
         endroll_arc.set_file_data("timg/th_zeldaRogoEnd_02.tpl", logo_data)
         endroll_arc.set_file_data("timg/th_rogo_03.tpl", rogo_03_data)

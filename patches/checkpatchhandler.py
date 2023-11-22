@@ -4,6 +4,7 @@ from constants.patchconstants import (
     OARC_ADD_PATH_REGEX,
     SHOP_PATCH_PATH_REGEX,
 )
+from gui.dialog_header import print_progress_text
 
 from logic.location import Location
 from patches.eventpatchhandler import EventPatchHandler
@@ -55,7 +56,7 @@ def determine_check_patches(
 
 
 def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
-    print("Creating Dungeon Item Patches")
+    print_progress_text("Creating Dungeon Item Patches")
 
     DUNGEON_ITEMIDS = [
         200,

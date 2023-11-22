@@ -1,17 +1,13 @@
-# Allow keyboard interrupts on the command line to instantly close the program.
-import signal
 import sys
 
+from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QProgressDialog
 
 from constants.randoconstants import VERSION
 from filepathconstants import ICON_PATH
 from gui.ui.ui_main import Ui_MainWindow
 from gui.guithreads import RandomizationThread
-
-
-signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 
 class Main(QMainWindow):
@@ -32,7 +28,23 @@ class Main(QMainWindow):
         self.ui.randomize_button.clicked.connect(self.randomize)
 
     def randomize(self):
+        self.progress_dialog = QProgressDialog("Initializing", "", 0, 100, self)
+        self.progress_dialog.setWindowTitle("Randomizing...")
+        self.progress_dialog.setWindowModality(Qt.WindowModality.WindowModal)
+        self.progress_dialog.setCancelButton(None)
+        self.progress_dialog.setValue(0)
+        self.progress_dialog.setMinimumWidth(250)
+        self.progress_dialog.setVisible(True)
+        self.progress_dialog.canceled.connect(self.close)
+
+        self.randomize_thread.dialog_value_update.connect(self.progress_dialog.setValue)
+        self.randomize_thread.dialog_label_update.connect(
+            self.progress_dialog.setLabelText
+        )
+
+        self.randomize_thread.setTerminationEnabled(True)
         self.randomize_thread.start()
+        self.progress_dialog.exec()
 
 
 def start_gui():

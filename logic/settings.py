@@ -1,6 +1,8 @@
 from collections import Counter, OrderedDict
 import yaml
 
+from gui.dialog_header import print_progress_text
+
 
 class SettingInfoError(RuntimeError):
     pass
@@ -123,7 +125,7 @@ class SettingGet:
 def get_all_settings_info() -> dict[str, SettingInfo]:
     # Load in settings if we haven't done so yet
     if len(settings_info_map) == 0:
-        print("Loading setting data")
+        print_progress_text("Loading setting data")
         path = "data/settings_list.yaml"
         with open(path, "r") as settings_file:
             settings_yaml = yaml.safe_load(settings_file)

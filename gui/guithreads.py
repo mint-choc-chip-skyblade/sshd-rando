@@ -1,17 +1,25 @@
 from PySide6.QtCore import QThread, Signal
-from randomize import randomize
 
 
 class RandomizationThread(QThread):
-    # update_progress = Signal(str, int)
-    # error_abort = Signal(str)
-    # randomization_complete = Signal()
+    dialog_value_update = Signal(int)
+    dialog_label_update = Signal(str)
+
+    update_progress = Signal(str, int)
+    error_abort = Signal(str)
+    randomization_complete = Signal()
+
+    callback = None
 
     def __init__(self):
         QThread.__init__(self)
 
     def run(self):
         try:
+            # Import here to prevent circular dependency
+            from randomize import randomize
+
+            RandomizationThread.callback = self
             randomize()
         except Exception as e:
             self.error_abort.emit(str(e))
@@ -20,4 +28,6 @@ class RandomizationThread(QThread):
             print(traceback.format_exc())
             return
 
-        # self.randomization_complete.emit()
+        self.randomization_complete.emit()
+
+        RandomizationThread.callback = None

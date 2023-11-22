@@ -17,6 +17,7 @@ from collections import Counter
 from constants.asmconstants import *
 
 from lz4.block import compress, decompress
+from gui.dialog_header import print_progress_text
 from logic.world import World
 
 from patches.asmpatchhelper import NsoOffsets, SegmentHeader
@@ -209,7 +210,7 @@ class ASMPatchHandler:
 
     # Applies both asm patches and additions.
     def patch_all_asm(self, world: World, onlyif_handler: ConditionalPatchHandler):
-        print("Applying asm patches")
+        print_progress_text("Applying asm patches")
         self.patch_asm(
             world,
             onlyif_handler,
@@ -226,10 +227,10 @@ class ASMPatchHandler:
             temp_dir_name = Path(temp_dir_name)
             startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
 
-            print("Assembling startflags")
+            print_progress_text("Assembling startflags")
             self.patch_startflags(startflags_diff_file_path, world, onlyif_handler)
 
-            print("Applying asm additions")
+            print_progress_text("Applying asm additions")
             self.patch_asm(
                 world,
                 onlyif_handler,

@@ -9,6 +9,7 @@ from .entrance_shuffle import shuffle_world_entrances
 from .hints import generate_hints
 from util.text import load_text_data
 
+from gui.dialog_header import print_progress_text, update_progress_value
 import time
 import random
 import os
@@ -28,7 +29,7 @@ def generate(config_file: Path) -> list[World]:
         config.seed = str(random.randint(0, 0xFFFFFFFF))
         write_config_to_file(config_file, config)
 
-    print(f"Seed: {config.seed}")
+    print_progress_text(f"Seed: {config.seed}")
 
     return generate_randomizer(config)
 
@@ -54,11 +55,13 @@ def generate_randomizer(config: Config) -> list[World]:
 
     worlds: list[World] = []
 
+    update_progress_value(2)
+
     # Build all necessary worlds
     for i in range(len(config.settings)):
         setting_map = config.settings[i]
         worlds.append(World(i))
-        print(f"Building {worlds[i]}")
+        print_progress_text(f"Building {worlds[i]}")
 
         # TODO: Resolve Random Settings
         # TODO: Resolve Cosmetic Choices
@@ -81,20 +84,29 @@ def generate_randomizer(config: Config) -> list[World]:
     for world in worlds:
         world.perform_pre_entrance_shuffle_tasks()
 
+    update_progress_value(4)
     for world in worlds:
-        print(f"Shuffling entrances for {world}...")
+        print_progress_text(f"Shuffling entrances for {world}...")
         shuffle_world_entrances(world, worlds)
 
     for world in worlds:
         world.perform_post_entrance_shuffle_tasks()
 
     start = time.process_time()
-    print("Filling Worlds...")
+
+    update_progress_value(6)
+    print_progress_text("Filling Worlds...")
+
     fill_worlds(worlds)
     end = time.process_time()
     print(f"Fill took {(end - start)} seconds")
 
+    update_progress_value(8)
     generate_playthrough(worlds)
+
+    update_progress_value(10)
     generate_hints(worlds)
+
+    update_progress_value(12)
     generate_spoiler_log(worlds)
     return worlds

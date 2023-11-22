@@ -5,6 +5,8 @@ from logic.world import *
 def add_dynamic_text_patches(
     world: World, event_patch_handler: EventPatchHandler
 ) -> None:
+    print_progress_text("Adding Text Patches")
+
     add_fi_text_patches(world, event_patch_handler)
     add_gossip_stone_text_patches(world, event_patch_handler)
 

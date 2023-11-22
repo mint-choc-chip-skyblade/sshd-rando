@@ -1,3 +1,4 @@
+from gui.dialog_header import print_progress_text
 from sslib.msb import CONTROL_REPLACEMENTS
 from typing import Union
 import copy
@@ -106,7 +107,7 @@ def load_text_data() -> None:
     if text_table:
         text_table.clear()
 
-    print("Loading text data")
+    print_progress_text("Loading text data")
     directory = "data/text_data"
 
     for language in Text.SUPPORTED_LANGUAGES:

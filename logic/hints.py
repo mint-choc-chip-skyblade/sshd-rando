@@ -6,7 +6,7 @@ import math
 
 
 def generate_hints(worlds: list[World]) -> None:
-    print("Generating Hints")
+    print_progress_text("Generating Hints")
     calculate_possible_path_locations(worlds)
     calculate_possible_barren_regions(worlds)
 
