@@ -411,7 +411,7 @@ class Ui_main_window(object):
 
         self.verticalLayout.addWidget(self.setting_fs_lava_flow)
 
-        self.tweaks_vspacer = QSpacerItem(20, 163, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.tweaks_vspacer = QSpacerItem(20, 148, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout.addItem(self.tweaks_vspacer)
 
@@ -561,7 +561,7 @@ class Ui_main_window(object):
 
         self.verticalLayout_11.addWidget(self.setting_tunic_swap)
 
-        self.verticalSpacer_3 = QSpacerItem(20, 606, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_3 = QSpacerItem(20, 576, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_11.addItem(self.verticalSpacer_3)
 
@@ -580,27 +580,37 @@ class Ui_main_window(object):
 
         self.verticalLayout_2.addWidget(self.tab_widget)
 
-        self.seed_layout = QHBoxLayout()
+        self.seed_layout = QGridLayout()
         self.seed_layout.setObjectName(u"seed_layout")
         self.seed_label = QLabel(self.central_widget)
         self.seed_label.setObjectName(u"seed_label")
 
-        self.seed_layout.addWidget(self.seed_label)
-
-        self.seed_line_edit = QLineEdit(self.central_widget)
-        self.seed_line_edit.setObjectName(u"seed_line_edit")
-
-        self.seed_layout.addWidget(self.seed_line_edit)
+        self.seed_layout.addWidget(self.seed_label, 1, 0, 1, 1)
 
         self.new_seed_button = QPushButton(self.central_widget)
         self.new_seed_button.setObjectName(u"new_seed_button")
 
-        self.seed_layout.addWidget(self.new_seed_button)
+        self.seed_layout.addWidget(self.new_seed_button, 1, 3, 1, 1)
 
-        self.copy_seed_button = QPushButton(self.central_widget)
-        self.copy_seed_button.setObjectName(u"copy_seed_button")
+        self.setting_seed = QLineEdit(self.central_widget)
+        self.setting_seed.setObjectName(u"setting_seed")
 
-        self.seed_layout.addWidget(self.copy_seed_button)
+        self.seed_layout.addWidget(self.setting_seed, 1, 2, 1, 1)
+
+        self.setting_string_label = QLabel(self.central_widget)
+        self.setting_string_label.setObjectName(u"setting_string_label")
+
+        self.seed_layout.addWidget(self.setting_string_label, 0, 0, 1, 1)
+
+        self.setting_string = QLineEdit(self.central_widget)
+        self.setting_string.setObjectName(u"setting_string")
+
+        self.seed_layout.addWidget(self.setting_string, 0, 2, 1, 1)
+
+        self.copy_setting_string_button = QPushButton(self.central_widget)
+        self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
+
+        self.seed_layout.addWidget(self.copy_setting_string_button, 0, 3, 1, 1)
 
 
         self.verticalLayout_2.addLayout(self.seed_layout)
@@ -736,7 +746,8 @@ class Ui_main_window(object):
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.accessibility_tab), QCoreApplication.translate("main_window", u"Accessibility", None))
         self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
         self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
-        self.copy_seed_button.setText(QCoreApplication.translate("main_window", u"Copy Seed", None))
+        self.setting_string_label.setText(QCoreApplication.translate("main_window", u"Setting String", None))
+        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
         self.about_button.setText(QCoreApplication.translate("main_window", u"About", None))
         self.reset_button.setText(QCoreApplication.translate("main_window", u"Reset Settings to Default", None))
         self.randomize_button.setText(QCoreApplication.translate("main_window", u"Randomize", None))

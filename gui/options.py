@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QAbstractButton, QComboBox, QSpinBox, QWidget
+from PySide6.QtWidgets import QAbstractButton, QComboBox, QLineEdit, QSpinBox, QWidget
 from filepathconstants import CONFIG_PATH
 from logic.config import load_config_from_file, write_config_to_file
 from logic.settings import Setting
@@ -11,6 +11,12 @@ class Options:
         self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
         self.settings = self.config.settings[0].settings
 
+        # Init seed
+        seed_widget: QLineEdit = getattr(self.ui, "setting_seed")
+        seed_widget.setText(self.config.seed)
+        seed_widget.textChanged.connect(self.update_seed)
+
+        # Init other settings
         for setting_name, setting_info in self.settings.items():
             current_option_value = setting_info.value
 
@@ -37,7 +43,9 @@ class Options:
                 for option in setting_info.info.pretty_options:
                     widget.addItem(option)
 
-                widget.setCurrentIndex(setting_info.current_option_index)
+                widget.setCurrentIndex(
+                    setting_info.info.options.index(setting_info.value)
+                )
                 widget.currentIndexChanged.connect(self.update_settings)
             elif isinstance(widget, QSpinBox):  # pick a value
                 widget.setMinimum(int(setting_info.info.options[0]))
@@ -48,7 +56,6 @@ class Options:
     def update_settings(self):
         for setting_name, setting in self.settings.items():
             if setting_name in (
-                "seed",
                 "input_dir",
                 "output_dir",
                 "plandomizer",
@@ -102,3 +109,9 @@ class Options:
         new_setting.info.current_option_index = option_index
 
         return new_setting
+
+    def update_seed(self):
+        seed_widget: QLineEdit = getattr(self.ui, "setting_seed")
+        self.config.seed = seed_widget.text()
+
+        write_config_to_file(CONFIG_PATH, self.config)

@@ -625,7 +625,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
-               <height>163</height>
+               <height>148</height>
               </size>
              </property>
             </spacer>
@@ -853,7 +853,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
-               <height>606</height>
+               <height>576</height>
               </size>
              </property>
             </spacer>
@@ -877,28 +877,38 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="seed_layout">
-      <item>
+     <layout class="QGridLayout" name="seed_layout">
+      <item row="1" column="0">
        <widget class="QLabel" name="seed_label">
         <property name="text">
          <string>Seed:</string>
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLineEdit" name="seed_line_edit"/>
-      </item>
-      <item>
+      <item row="1" column="3">
        <widget class="QPushButton" name="new_seed_button">
         <property name="text">
          <string>New Seed</string>
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QPushButton" name="copy_seed_button">
+      <item row="1" column="2">
+       <widget class="QLineEdit" name="setting_seed"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="setting_string_label">
         <property name="text">
-         <string>Copy Seed</string>
+         <string>Setting String</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLineEdit" name="setting_string"/>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="copy_setting_string_button">
+        <property name="text">
+         <string>Copy</string>
         </property>
        </widget>
       </item>
