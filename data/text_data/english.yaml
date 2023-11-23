@@ -2158,7 +2158,7 @@
 - name: Bokoblin Base - Chest East of Earth Temple Entrance
   standard: Bokoblin Base - Chest East of Earth Temple Entrance
   pretty: Bokoblin Base - Chest East of Earth Temple Entrance
-  cryptic:a <r<captured chest past a river of lava>>
+  cryptic: a <r<captured chest past a river of lava>>
 
 - name: Bokoblin Base - Chest West of Earth Temple Entrance
   standard: Bokoblin Base - Chest West of Earth Temple Entrance
