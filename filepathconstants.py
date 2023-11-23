@@ -44,7 +44,7 @@ OBJECTPACK_PATH = (
 
 MODIFIED_OBJECTPACK_PATH = OUTPUT_PATH / "romfs" / "Object" / "NX" / "ObjectPack.arc.LZ"
 
-# Logo and Icon
+# Logo, Icon, and Words
 ICON_PATH = RANDO_ROOT_PATH / "assets" / "icon.png"
 
 TITLE2D_SOURCE_PATH = (
@@ -58,6 +58,8 @@ ENDROLL_SOURCE_PATH = (
 TITLE2D_OUTPUT_PATH = OUTPUT_PATH / "romfs" / "Layout" / "Title2D.arc"
 
 ENDROLL_OUTPUT_PATH = OUTPUT_PATH / "romfs" / "Layout" / "EndRoll.arc"
+
+WORDS_PATH = RANDO_ROOT_PATH / "data" / "skyward_sword_words.yaml"
 
 # ASM
 ASM_PATCHES_DIFFS_PATH = RANDO_ROOT_PATH / "asm" / "patches" / "diffs"

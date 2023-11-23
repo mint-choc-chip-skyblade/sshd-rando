@@ -1,5 +1,7 @@
+import random
 from PySide6.QtWidgets import QAbstractButton, QComboBox, QLineEdit, QSpinBox, QWidget
-from filepathconstants import CONFIG_PATH
+import yaml
+from filepathconstants import CONFIG_PATH, WORDS_PATH
 from logic.config import load_config_from_file, write_config_to_file
 from logic.settings import Setting
 
@@ -15,6 +17,7 @@ class Options:
         seed_widget: QLineEdit = getattr(self.ui, "setting_seed")
         seed_widget.setText(self.config.seed)
         seed_widget.textChanged.connect(self.update_seed)
+        self.ui.new_seed_button.clicked.connect(self.new_seed)
 
         # Init other settings
         for setting_name, setting_info in self.settings.items():
@@ -109,6 +112,17 @@ class Options:
         new_setting.info.current_option_index = option_index
 
         return new_setting
+
+    def new_seed(self):
+        with open(WORDS_PATH, "r") as words_file:
+            words = yaml.safe_load(words_file)
+
+        new_seed = ""
+        for _ in range(0, 4):
+            new_seed += random.choice(words)
+
+        seed_widget: QLineEdit = getattr(self.ui, "setting_seed")
+        seed_widget.setText(new_seed)
 
     def update_seed(self):
         seed_widget: QLineEdit = getattr(self.ui, "setting_seed")

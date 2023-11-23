@@ -29,10 +29,10 @@ class Main(QMainWindow):
         # Always open on the getting started tab
         self.ui.tab_widget.setCurrentIndex(0)
 
+        self.options = Options(self.ui)
+
         self.ui.randomize_button.clicked.connect(self.randomize)
         self.ui.about_button.clicked.connect(self.about)
-
-        self.options = Options(self.ui)
 
     def randomize(self):
         self.progress_dialog = QProgressDialog("Initializing", "", 0, 100, self)
