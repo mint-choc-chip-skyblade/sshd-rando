@@ -19,23 +19,23 @@ class ConfigError(RuntimeError):
 
 class Config:
     def __init__(self) -> None:
-        self.seed: str = None
+        self.seed: str = None  # type: ignore
         self.settings: list[SettingMap] = []
         self.num_worlds: int = 0
         self.generate_spoiler_log = True
-        self.output_dir: str = None
-        self.input_dir: str = None
+        self.output_dir: Path = None  # type: ignore
+        self.input_dir: Path = None  # type: ignore
         self.plandomizer: bool = False
-        self.plandomizer_file: str = None
+        self.plandomizer_file: Path = None  # type: ignore
 
 
 def create_default_config(filename: Path):
     conf = Config()
-    conf.output_dir = "./output"
-    conf.input_dir = "./base"
+    conf.output_dir = Path("./output")
+    conf.input_dir = Path("./base")
     conf.seed = str(random.randint(0, 0x80000000))
     conf.plandomizer = False
-    conf.plandomizer_file = None
+    conf.plandomizer_file = None  # type: ignore
     conf.generate_spoiler_log = True
 
     conf.settings.append(SettingMap())

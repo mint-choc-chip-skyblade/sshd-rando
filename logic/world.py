@@ -12,7 +12,6 @@ from collections import Counter, OrderedDict
 from typing import TYPE_CHECKING
 import logging
 import yaml
-import os
 
 if TYPE_CHECKING:
     from .search import Search
@@ -32,7 +31,7 @@ class World:
 
     def __init__(self, id_: int) -> None:
         self.id = id_
-        self.config: Config = None
+        self.config: Config = None  # type: ignore
         self.num_worlds: int = 0
         self.worlds: list = []
 
@@ -57,10 +56,10 @@ class World:
 
         self.item_pool: Counter[Item] = Counter()
         self.starting_item_pool: Counter[Item] = Counter()
-        self.root: Area = None
+        self.root: Area = None  # type: ignore
 
-        self.playthrough_spheres: list[list[Location]] = None
-        self.entrance_spheres: list[list[Entrance]] = None
+        self.playthrough_spheres: list[list[Location]] = None  # type: ignore
+        self.entrance_spheres: list[list[Entrance]] = None  # type: ignore
 
         self.plandomizer_locations: dict[Location, Item] = {}
         self.plandomizer_entrances: dict[Entrance, Entrance] = {}
@@ -74,7 +73,7 @@ class World:
         # gossip_stone_hints map each gossip stone location to the list of locations the stone is hinting at
         self.gossip_stone_hints: OrderedDict[Location, list[Location]] = OrderedDict()
         self.song_hints: dict[Item, Hint] = {}
-        self.impa_sot_hint: Hint = None
+        self.impa_sot_hint: Hint = None  # type: ignore
 
     def __str__(self) -> str:
         return f"World {self.id + 1}"
@@ -205,13 +204,11 @@ class World:
         defined_events: set[str] = set()
         defined_areas: set[Area] = set()
 
-        directory = "data/world"
+        directory = Path("data") / "world"
 
-        for filename in os.listdir(directory):
-            filepath = os.path.join(directory, filename)
-
+        for filepath in directory.iterdir():
             # Skip over any non-yaml files
-            if not filepath.endswith(".yaml"):
+            if not filepath.as_posix().endswith(".yaml"):
                 continue
 
             with open(filepath, "r") as world_data_file:
@@ -543,7 +540,7 @@ class World:
     def get_item(self, item_name: str) -> Item:
         item_name = item_name.replace("_", " ").replace("'", "")
         if item_name == "Nothing":
-            return None
+            return None  # type: ignore
         if item_name not in self.item_table:
             raise WrongInfoError(
                 f'Item "{item_name}" is not defined in the item table for {self}'

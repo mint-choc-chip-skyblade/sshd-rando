@@ -12,7 +12,6 @@ from util.text import load_text_data
 from gui.dialog_header import print_progress_text, update_progress_value
 import time
 import random
-import os
 
 
 def generate(config_file: Path) -> list[World]:
@@ -20,8 +19,9 @@ def generate(config_file: Path) -> list[World]:
     load_text_data()
 
     # If the config file doesn't exist, create default
-    if not os.path.isfile(config_file):
+    if not config_file.is_file():
         create_default_config(config_file)
+
     config = load_config_from_file(config_file)
 
     # If config has no seed, generate one

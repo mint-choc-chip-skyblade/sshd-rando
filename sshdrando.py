@@ -1,6 +1,9 @@
 import argparse
 import logging
 
+from filepathconstants import CONFIG_PATH
+from logic.config import create_default_config
+
 parser = argparse.ArgumentParser(
     description="A randomizer for The Legend of Zelda: Skyward Sword HD."
 )
@@ -30,6 +33,10 @@ if args.debug:
         level=logging.DEBUG,
         filemode="w",
     )
+
+# If the config file doesn't exist, create default
+if not CONFIG_PATH.is_file():
+    create_default_config(CONFIG_PATH)
 
 # Imports here to prevent circular dependency
 if args.with_gui:

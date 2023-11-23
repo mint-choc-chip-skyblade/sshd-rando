@@ -1,9 +1,8 @@
+from pathlib import Path
 from gui.dialog_header import print_progress_text
 from sslib.msb import CONTROL_REPLACEMENTS
 from typing import Union
 import copy
-import logging
-import os
 import yaml
 
 
@@ -108,11 +107,11 @@ def load_text_data() -> None:
         text_table.clear()
 
     print_progress_text("Loading text data")
-    directory = "data/text_data"
+    directory = Path("data") / "text_data"
 
     for language in Text.SUPPORTED_LANGUAGES:
         filename = f"{language}.yaml"
-        filepath = os.path.join(directory, filename)
+        filepath = directory / filename
 
         with open(filepath, "r") as text_data_file:
             text_data = yaml.safe_load(text_data_file)
@@ -270,6 +269,8 @@ def break_lines(text: str) -> str:
     previous_space = 0
     text_chars = list(text)
     while i < len(text_chars):
+        code = ""
+
         # Skip over control codes since they don't get displayed
         control_code = False
         for code in CONTROL_REPLACEMENTS:

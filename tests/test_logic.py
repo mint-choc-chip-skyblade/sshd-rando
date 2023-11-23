@@ -9,15 +9,17 @@ from logic.search import all_locations_reachable
 from logic.world import World
 
 
-def config_test(config_file_name: str) -> list[World]:
-    assert os.path.exists(f"tests/test_configs/{config_file_name}")
-    config = load_config_from_file(
-        Path(f"tests/test_configs/{config_file_name}"), allow_rewrite=False
-    )
-    write_config_to_file(Path(config_file_name), config)
-    worlds = generate(Path(config_file_name))
+def config_test(config_file_name: str | Path) -> list[World]:
+    config_file_name = Path(config_file_name)
+
+    config_test_path = Path("tests") / "test_configs" / config_file_name
+    assert config_test_path.exists()
+
+    config = load_config_from_file(config_test_path, allow_rewrite=False)
+    write_config_to_file(config_file_name, config)
+    worlds = generate(config_file_name)
     assert all_locations_reachable(worlds)
-    os.remove(config_file_name)
+    config_file_name.unlink()
     return worlds
 
 

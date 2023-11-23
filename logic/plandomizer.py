@@ -1,6 +1,6 @@
+from pathlib import Path
 from .world import *
 
-import os
 import yaml
 
 
@@ -8,10 +8,10 @@ class PlandomizerError(RuntimeError):
     pass
 
 
-def load_plandomizer_data(worlds: list[World], filepath: str):
+def load_plandomizer_data(worlds: list[World], filepath: Path):
     if filepath == None:
         return
-    if not os.path.isfile(filepath):
+    if not filepath.is_file():
         raise PlandomizerError(f"Could not find plandomizer file: {filepath}")
 
     with open(filepath, "r") as plando_file:
