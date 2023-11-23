@@ -114,8 +114,8 @@ def load_config_from_file(
                 raise ConfigError(f'Missing field "{field}" in {filepath}')
 
         config.seed = config_in["seed"]
-        config.input_dir = config_in["input_dir"]
-        config.output_dir = config_in["output_dir"]
+        config.input_dir = Path(config_in["input_dir"])
+        config.output_dir = Path(config_in["output_dir"])
         config.plandomizer = config_in["plandomizer"]
         config.plandomizer_file = config_in["plandomizer_file"]
 
