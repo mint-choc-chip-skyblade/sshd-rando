@@ -95,7 +95,9 @@ def write_config_to_file(filename: Path, conf: Config):
         yaml.safe_dump(config_out, config_file, sort_keys=False)
 
 
-def load_config_from_file(filepath: Path, allow_rewrite: bool = True, create_if_blank: bool = False) -> Config:
+def load_config_from_file(
+    filepath: Path, allow_rewrite: bool = True, create_if_blank: bool = False
+) -> Config:
     if create_if_blank and not filepath.is_file():
         print("No config file found. Creating default config file.")
         create_default_config(filepath)

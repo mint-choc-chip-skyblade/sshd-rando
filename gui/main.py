@@ -6,6 +6,7 @@ from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow, QProgressD
 
 from constants.randoconstants import VERSION
 from filepathconstants import ICON_PATH
+from gui.options import Options
 from gui.ui.ui_main import Ui_main_window
 from gui.guithreads import RandomizationThread
 
@@ -25,8 +26,13 @@ class Main(QMainWindow):
 
         self.setWindowIcon(QIcon(ICON_PATH.as_posix()))
 
+        # Always open on the getting started tab
+        self.ui.tab_widget.setCurrentIndex(0)
+
         self.ui.randomize_button.clicked.connect(self.randomize)
         self.ui.about_button.clicked.connect(self.about)
+
+        self.options = Options(self.ui)
 
     def randomize(self):
         self.progress_dialog = QProgressDialog("Initializing", "", 0, 100, self)

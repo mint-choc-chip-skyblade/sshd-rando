@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QGroupBox, QHBoxLayout,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QSpacerItem, QTabWidget, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QGridLayout, QGroupBox,
+    QHBoxLayout, QLabel, QLayout, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QTabWidget, QVBoxLayout, QWidget)
 
 class Ui_main_window(object):
     def setupUi(self, main_window):
@@ -136,12 +136,46 @@ class Ui_main_window(object):
 
         self.useful_info_group_box = QGroupBox(self.getting_started_tab)
         self.useful_info_group_box.setObjectName(u"useful_info_group_box")
-        self.horizontalLayout_2 = QHBoxLayout(self.useful_info_group_box)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.useful_info_label = QLabel(self.useful_info_group_box)
-        self.useful_info_label.setObjectName(u"useful_info_label")
+        self.horizontalLayout = QHBoxLayout(self.useful_info_group_box)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.useful_choose_settings_group_box = QGroupBox(self.useful_info_group_box)
+        self.useful_choose_settings_group_box.setObjectName(u"useful_choose_settings_group_box")
+        sizePolicy3.setHeightForWidth(self.useful_choose_settings_group_box.sizePolicy().hasHeightForWidth())
+        self.useful_choose_settings_group_box.setSizePolicy(sizePolicy3)
+        self.verticalLayout_8 = QVBoxLayout(self.useful_choose_settings_group_box)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.choose_settings_label = QLabel(self.useful_choose_settings_group_box)
+        self.choose_settings_label.setObjectName(u"choose_settings_label")
+        sizePolicy1.setHeightForWidth(self.choose_settings_label.sizePolicy().hasHeightForWidth())
+        self.choose_settings_label.setSizePolicy(sizePolicy1)
+        self.choose_settings_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.choose_settings_label.setWordWrap(True)
+        self.choose_settings_label.setOpenExternalLinks(True)
 
-        self.horizontalLayout_2.addWidget(self.useful_info_label)
+        self.verticalLayout_8.addWidget(self.choose_settings_label)
+
+
+        self.horizontalLayout.addWidget(self.useful_choose_settings_group_box)
+
+        self.useful_links_group_box = QGroupBox(self.useful_info_group_box)
+        self.useful_links_group_box.setObjectName(u"useful_links_group_box")
+        sizePolicy3.setHeightForWidth(self.useful_links_group_box.sizePolicy().hasHeightForWidth())
+        self.useful_links_group_box.setSizePolicy(sizePolicy3)
+        self.horizontalLayout_2 = QHBoxLayout(self.useful_links_group_box)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.links_label = QLabel(self.useful_links_group_box)
+        self.links_label.setObjectName(u"links_label")
+        self.links_label.setOpenExternalLinks(True)
+
+        self.horizontalLayout_2.addWidget(self.links_label)
+
+        self.links_hspacer = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.links_hspacer)
+
+
+        self.horizontalLayout.addWidget(self.useful_links_group_box)
 
 
         self.verticalLayout_4.addWidget(self.useful_info_group_box)
@@ -195,6 +229,68 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.getting_started_tab, "")
         self.world_tab = QWidget()
         self.world_tab.setObjectName(u"world_tab")
+        self.horizontalLayout_5 = QHBoxLayout(self.world_tab)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.beat_the_game_group_box = QGroupBox(self.world_tab)
+        self.beat_the_game_group_box.setObjectName(u"beat_the_game_group_box")
+        self.verticalLayout_13 = QVBoxLayout(self.beat_the_game_group_box)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.beat_the_game_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_13.addItem(self.beat_the_game_vspacer)
+
+
+        self.horizontalLayout_5.addWidget(self.beat_the_game_group_box)
+
+        self.open_world_group_box = QGroupBox(self.world_tab)
+        self.open_world_group_box.setObjectName(u"open_world_group_box")
+        self.verticalLayout_14 = QVBoxLayout(self.open_world_group_box)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.open_world_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_14.addItem(self.open_world_vspacer)
+
+
+        self.horizontalLayout_5.addWidget(self.open_world_group_box)
+
+        self.shuffles_group_box = QGroupBox(self.world_tab)
+        self.shuffles_group_box.setObjectName(u"shuffles_group_box")
+        self.verticalLayout_15 = QVBoxLayout(self.shuffles_group_box)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.setting_shuffle_single_gratitude_crystals = QCheckBox(self.shuffles_group_box)
+        self.setting_shuffle_single_gratitude_crystals.setObjectName(u"setting_shuffle_single_gratitude_crystals")
+
+        self.verticalLayout_15.addWidget(self.setting_shuffle_single_gratitude_crystals)
+
+        self.shuffles_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_15.addItem(self.shuffles_vspacer)
+
+
+        self.horizontalLayout_5.addWidget(self.shuffles_group_box)
+
+        self.dungeons_group_box = QGroupBox(self.world_tab)
+        self.dungeons_group_box.setObjectName(u"dungeons_group_box")
+        self.verticalLayout_16 = QVBoxLayout(self.dungeons_group_box)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.dungeons_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_16.addItem(self.dungeons_vspacer)
+
+
+        self.horizontalLayout_5.addWidget(self.dungeons_group_box)
+
+        self.entrance_randomization_group_box = QGroupBox(self.world_tab)
+        self.entrance_randomization_group_box.setObjectName(u"entrance_randomization_group_box")
+        self.verticalLayout_17 = QVBoxLayout(self.entrance_randomization_group_box)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.entrance_randomization_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_17.addItem(self.entrance_randomization_vspacer)
+
+
+        self.horizontalLayout_5.addWidget(self.entrance_randomization_group_box)
+
         self.tab_widget.addTab(self.world_tab, "")
         self.logic_tab = QWidget()
         self.logic_tab.setObjectName(u"logic_tab")
@@ -310,17 +406,29 @@ class Ui_main_window(object):
 "\n"
 "If you want to play the randomizer on the <a href=\"https://ryujinx.org/\">Ryujinx emulator</a>, copy the outputted <code>exeFS</code> and <code>romFS</code> folders into the <code>/Ryujinx/mods/contents/01002DA013484000</code> folder.", None))
         self.useful_info_group_box.setTitle(QCoreApplication.translate("main_window", u"Useful Information", None))
-        self.useful_info_label.setText(QCoreApplication.translate("main_window", u"TODO:<br><br>\n"
+        self.useful_choose_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Choosing your Settings", None))
+        self.choose_settings_label.setText(QCoreApplication.translate("main_window", u"<b>\u2023</b> World: Customize how the world is randomized. Pick dungeon, completion, shuffle, entrance, and other fun settings.<br>\n"
+"<b>\u2023</b> Logic: Pick which locations and tricks are enabled.<br>\n"
+"<b>\u2023</b> Inventory: Pick what items you start with.<br>\n"
+"<b>\u2023</b> Cosmetic: Customize the music and how the player model will look in-game.", None))
+        self.useful_links_group_box.setTitle(QCoreApplication.translate("main_window", u"Links", None))
+        self.links_label.setText(QCoreApplication.translate("main_window", u"<b>TODO</b><br>\n"
 "\n"
-"Discord Server: https::/discord.com<br>\n"
-"Report a Bug: https::/github.com/mint-choc-chip-skyblade/ssdh-rando/issues<br>\n"
-"Location Guide: ???", None))
+"<b>\u2023</b> <a href=\"https://discord.com\">Discord Server (todo)</a><br>\n"
+"<b>\u2023</b> <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\">Report a Bug</a><br>\n"
+"<b>\u2023</b> <a href=\"\">Location Guide (todo)</a>", None))
         self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"File Setup", None))
         self.extract_label.setText(QCoreApplication.translate("main_window", u"Extract", None))
         self.extract_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
         self.output_label.setText(QCoreApplication.translate("main_window", u"Output", None))
         self.output_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.getting_started_tab), QCoreApplication.translate("main_window", u"Getting Started", None))
+        self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
+        self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))
+        self.shuffles_group_box.setTitle(QCoreApplication.translate("main_window", u"Shuffles", None))
+        self.setting_shuffle_single_gratitude_crystals.setText(QCoreApplication.translate("main_window", u"Single Gratitude Crystals", None))
+        self.dungeons_group_box.setTitle(QCoreApplication.translate("main_window", u"Dungeons", None))
+        self.entrance_randomization_group_box.setTitle(QCoreApplication.translate("main_window", u"Entrance Randomization", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.world_tab), QCoreApplication.translate("main_window", u"World", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.inventory_tab), QCoreApplication.translate("main_window", u"Inventory", None))
