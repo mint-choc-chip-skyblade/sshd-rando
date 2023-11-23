@@ -39,6 +39,7 @@
     - randomized:                      "Shops can contain any items."
 
 
+# Will be put on the gui once this option is migrated to a more general plentiful/scarce items option
 - name: scrap_shop_upgrades
   default_option: "on"
   pretty_name: Place Scrap Shop Upgrades
@@ -109,6 +110,7 @@
     - open:                            "The Lanayru Mining Facility will be raised from the start of the game."
 
 
+# Will be put on the gui once this option actually changes behaviour
 - name: randomize_skykeep_layout
   default_option: "off"
   pretty_name: Sky Keep Layout
@@ -199,7 +201,7 @@
 
 - name: map_mode
   default_option: own_dungeon_restricted
-  pretty_name: Map Mode
+  pretty_name: Dungeon Maps
   pretty_options:
     - Vanilla
     - Own Dungeon Restricted
@@ -374,7 +376,7 @@
 
 - name: decouple_double_doors
   default_option: "off"
-  pretty_name: Decouple Double Doors
+  pretty_name: Decouple Double Door Entrances
   pretty_options:
     - "Off"
     - "On"
@@ -416,6 +418,7 @@
     - "on":                            "Entering a location and taking the entrance behind you will take you to a random location."
 
 
+# Not on the gui yet - wanna look into making this better first
 - name: natural_night_connections
   default_option: "on"
   pretty_name: Require Natural Night Connections
@@ -427,8 +430,9 @@
     - "on":                            "You will not be required to sleep to night and travel to the overworld to access nighttime-only checks."
 
 
+# Will be added to the gui once it actually changes behaviour
 - name: upgraded_skyward_strike
-  default_option: "off"
+  default_option: "on"
   pretty_name: Upgraded Skyward Strike
   pretty_options:
     - "Off"
@@ -440,7 +444,7 @@
 
 - name: skip_horde
   default_option: "off"
-  pretty_name: Skip Horde Fight
+  pretty_name: Skip The Horde Fight
   pretty_options:
     - "Off"
     - "On"
@@ -482,7 +486,7 @@
 
 - name: empty_unrequired_dungeons
   default_option: "off"
-  pretty_name: Empty Unrequired Dungeons
+  pretty_name: Barren Unrequired Dungeons
   pretty_options:
     - "Off"
     - "On"
