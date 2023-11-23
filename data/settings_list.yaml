@@ -16,15 +16,15 @@
     - no_logic:                        "Maximize randomization, logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
     - vanilla:                         "Items are placed in their vanilla locations."
 
-- name: single_gratitude_crystals
-  default_option: vanilla
-  pretty_name: Single Gratitude Crystals
+- name: shuffle_single_gratitude_crystals
+  default_option: "off"
+  pretty_name: Shuffle Single Gratitude Crystals
   pretty_options:
-    - Vanilla
-    - Randomized
+    - "Off"
+    - "On"
   options:
-    - vanilla:                       "Single Gratitude Crystal locations will only contain single gratitude crystals."
-    - randomized:                    "Single Gratitude Crystal locations can contain any item."
+    - "off":                           "Single Gratitude Crystal locations will only contain single gratitude crystals."
+    - "on":                            "Single Gratitude Crystal locations can contain any item."
 
 - name: randomized_shops
   default_option: vanilla
@@ -109,15 +109,15 @@
     - open:                            "The Lanayru Mining Facility will be raised from the start of the game."
 
 
-- name: skykeep_layout
-  default_option: vanilla
+- name: randomize_skykeep_layout
+  default_option: "off"
   pretty_name: Sky Keep Layout
   pretty_options:
-    - Vanilla
-    - Randomized
+    - "Off"
+    - "On"
   options:
-    - vanilla:                         "The Sky Keep rooms will start in their vanilla positions."
-    - randomized:                      "The Sky Keep rooms will start in a random order."
+    - "off":                           "The Sky Keep rooms will start in their vanilla positions."
+    - "on":                            "The Sky Keep rooms will start in a random order."
 
 
 - name: fs_lava_flow
@@ -222,101 +222,106 @@
   default_option: 0
   pretty_name: Path Hints
   pretty_options:
-   - 0-7
+    - 0-7
   options:
-   - 0-7:                              "Select the number of path hints you would like to generate."
+    - 0-7:                             "Select the number of path hints you would like to generate."
   
 
 - name: barren_hints
   default_option: 0
   pretty_name: Barren Hints
   pretty_options:
-   - 0-7
+    - 0-7
   options:
-   - 0-7:                              "Select the number of barren hints you would like to generate."
+    - 0-7:                             "Select the number of barren hints you would like to generate."
 
 
 - name: location_hints
   default_option: 0
   pretty_name: Location Hints
   pretty_options:
-   - 0-7
+    - 0-7
   options:
-   - 0-7:                              "Select the number of location hints you would like to generate."
+    - 0-7:                             "Select the number of location hints you would like to generate."
 
 
 - name: item_hints
   default_option: 0
   pretty_name: Item Hints
   pretty_options:
-   - 0-7
+    - 0-7
   options:
-   - 0-7:                              "Select the number of item hints you would like to generate."
+    - 0-7:                             "Select the number of item hints you would like to generate."
 
 
 - name: fi_hints
   default_option: "off"
   pretty_name: Fi Hints
   pretty_options:
-   - "Off"
-   - "On"
+    - "Off"
+    - "On"
   options:
-   - "off/on":                         "Hints will be placed on Fi and can be seen by calling Fi and asking her for hints."
+    - "off":                           "Hints will not be placed on Fi."
+    - "on":                            "Hints will be placed on Fi and can be seen by calling Fi and asking her for hints."
 
   
 - name: gossip_stone_hints
   default_option: "off"
   pretty_name: Gossip Stone Hints
   pretty_options:
-   - "Off"
-   - "On"
+    - "Off"
+    - "On"
   options:
-   - "off/on":                         "Hints will be placed on gossip stones and can be seen by talking to them."
+    - "off":                           "Hints will not be placed on Gossip Stones."
+    - "on":                            "Hints will be placed on Gossip Stones and can be seen by talking to them."
 
 
 - name: song_hints
   default_option: "off"
   pretty_name: Song Hints
   pretty_options:
-   - "Off"
-   - Basic
-   - Advanced
-   - Direct
+    - "Off"
+    - Basic
+    - Advanced
+    - Direct
   options:
-   - "off":                            "Silent Realm rewards will potentially be hinted at other hint sources."
-   - basic:                            "The song text indicates if any progress items are within the associated silent realm."
-   - advanced:                         "The song text indicates if any SotS, or potentially required items are in the associated silent realm."
-   - direct:                           "The song text directly states which important items, if any, can be found in the silent realm."
+    - "off":                           "Silent Realm rewards will potentially be hinted at other hint sources."
+    - basic:                           "The song text indicates if any progress items are within the associated silent realm."
+    - advanced:                        "The song text indicates if any SotS, or potentially required items are in the associated silent realm."
+    - direct:                          "The song text directly states which important items, if any, can be found in the silent realm."
 
 
 - name: impa_sot_hint
   default_option: "on"
   pretty_name: Past Impa Stone of Trials Hint
   pretty_options:
-   - "Off"
-   - "On"
+    - "Off"
+    - "On"
   options:
-   - "off/on":                         "If enabled, Impa in Hylia's Temple will give a hint to the location of the Stone of Trials. Does not appear if the Stone of Trials is a starting item."
+    - "off":                           "Impa in Hylia's Temple will not give a hint to the location of the Stone of Trials."
+    - "on":                            "Impa in Hylia's Temple will give a hint to the location of the Stone of Trials. Does not appear if the Stone of Trials is a starting item."
 
 
 - name: cryptic_hint_text
   default_option: "off"
   pretty_name: Cryptic Hint Text
   pretty_options:
-   - "Off"
-   - "On"
+    - "Off"
+    - "On"
   options:
-   - "off/on":                         "When selected, item and location hints will use cryptic text for their items and locations."
+    - "off":                           "Item and location hints will use the normal, clear names for their items and locations."
+    - "on":                            "Item and location hints will use cryptic text for their items and locations."
 
 
 - name: always_hints
   default_option: "off"
   pretty_name: Prioritize Remote Location Hints
   pretty_options:
-   - "Off"
-   - "On"
+    - "Off"
+    - "On"
   options:
-   - "off/on":                         "When selected, certain locations which are time-consuming to check will be given priority for location hints."
+    - "off":                           "All locations will be treated equally for location hints."
+    - "on":                            "Certain locations which are time-consuming to check will be given priority for location hints."
 
 
 - name: random_starting_spawn

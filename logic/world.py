@@ -374,7 +374,7 @@ class World:
                     and "Beedle's Shop Purchases" in location.types
                 )
                 or (
-                    self.setting("single_gratitude_crystals") == "vanilla"
+                    self.setting("shuffle_single_gratitude_crystals") == "off"
                     and "Loose Crystals" in location.types
                 )
             ):
