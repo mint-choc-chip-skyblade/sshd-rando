@@ -63,7 +63,7 @@ class Setting:
         self.value: str = value_
         self.info: SettingInfo = info_
         self.is_using_random_option: bool = False
-        self.current_option: int = 0
+        self.current_option_index: int = 0
         self.custom_value: str = None
 
     def __str__(self) -> str:
@@ -242,7 +242,7 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                     if s.random_option not in s.options:
                         # This should only apply to non-aliased random selections currently
                         s.options.append(s.random_option)
-                        s.pretty_options.append("Random")
+                        s.pretty_options.append("Random Option")
                         s.descriptions.append("")
 
     return settings_info_map

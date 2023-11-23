@@ -1,15 +1,17 @@
-from PySide6.QtWidgets import QAbstractButton, QComboBox, QSpinBox
+from PySide6.QtWidgets import QAbstractButton, QComboBox, QSpinBox, QWidget
 from filepathconstants import CONFIG_PATH
-from logic.config import load_config_from_file
+from logic.config import load_config_from_file, write_config_to_file
+from logic.settings import Setting
 
 
 class Options:
     def __init__(self, ui):
         self.ui = ui
 
-        config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
+        self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
+        self.settings = self.config.settings[0].settings
 
-        for setting_name, setting_info in config.settings[0].settings.items():
+        for setting_name, setting_info in self.settings.items():
             current_option_value = setting_info.value
 
             widget = None
@@ -32,13 +34,71 @@ class Options:
 
                 widget.clicked.connect(self.update_settings)
             elif isinstance(widget, QComboBox):  # pick one option
-                widget.setCurrentIndex(setting_info.current_option)
+                for option in setting_info.info.pretty_options:
+                    widget.addItem(option)
+
+                widget.setCurrentIndex(setting_info.current_option_index)
                 widget.currentIndexChanged.connect(self.update_settings)
             elif isinstance(widget, QSpinBox):  # pick a value
                 widget.setMinimum(int(setting_info.info.options[0]))
-                widget.setMaximum(int(setting_info.info.options[-1]))
+                widget.setMaximum(int(setting_info.info.options[-2]))
                 widget.setValue(int(current_option_value))
                 widget.valueChanged.connect(self.update_settings)
 
     def update_settings(self):
-        pass
+        for setting_name, setting in self.settings.items():
+            if setting_name in (
+                "seed",
+                "input_dir",
+                "output_dir",
+                "plandomizer",
+                "plandomizer_file",
+            ):
+                continue
+
+            widget = None  # type: ignore
+
+            try:
+                widget: QWidget = getattr(self.ui, "setting_" + setting_name)
+            except:
+                # print(f"Cannot find attribute for '{setting_name}', ignoring.")
+                continue
+
+            if not widget:
+                continue
+
+            new_setting = setting
+            new_option = ""
+
+            if isinstance(widget, QAbstractButton):
+                if widget.isChecked():
+                    new_option = "on"
+                else:
+                    new_option = "off"
+            elif isinstance(widget, QComboBox):
+                new_option = new_setting.info.options[widget.currentIndex()]
+            elif isinstance(widget, QSpinBox):
+                new_option = str(widget.value())
+
+            self.settings[setting_name] = self.get_updated_setting(
+                new_setting, new_option
+            )
+
+        self.config.settings[0].settings = self.settings
+
+        write_config_to_file(CONFIG_PATH, self.config)
+
+    def get_updated_setting(self, setting: Setting, value: str) -> Setting:
+        if value == "":
+            raise ValueError(
+                f"Cannot update setting '{setting.name}' value as value is empty."
+            )
+
+        new_setting = setting
+
+        option_index = setting.info.options.index(value)
+        new_setting.value = value
+        new_setting.current_option_index = option_index
+        new_setting.info.current_option_index = option_index
+
+        return new_setting
