@@ -49,6 +49,19 @@ World 1:
 # then you'll get a plandomizer error. For a full list of randomizable entrances please see:
 # https://github.com/mint-choc-chip-skyblade/sshd-rando/blob/main/data/entrance_shuffle_data.yaml
 
+# HINTS
+# You can set which locations should be considered 'always' or 'sometimes' locations for
+# location hints. These new lists will override the default lists used by the randomizer.
+World 1:
+  sometimes_hint_locations:
+    - Knight Academy - Fledge's Gift
+    - Knight Academy - In Zelda's Closet
+    - Knight Academy - Crystal in Link's Room
+    - Knight Academy - Owlan's Crystals
+  always_hint_locations:
+    - Inside the Statue of the Goddess - First Goddess Sword Item
+    - Inside the Statue of the Goddess - Second Goddess Sword Item
+
 # MULTIWORLD PLANDOMIZER (Note: currently multiworld is not an option in the randomizer
 # and is not actively being developed, but the filling algorithm was made to support
 # multiworld incase it ever happens in the future.)
