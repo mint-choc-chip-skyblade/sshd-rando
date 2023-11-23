@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1000</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,17 +17,345 @@
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QTabWidget" name="tab_widget">
-      <widget class="QWidget" name="tab">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
-        <string>Tab 1</string>
+        <string>Getting Started</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QGroupBox" name="how_to_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>How to Randomize the Game</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QGroupBox" name="how_to_extract_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Extract the Game</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QLabel" name="how_to_extract_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Before generating a seed, you need to have a valid extract of the vanilla version of the game.&lt;br&gt;&lt;br&gt;
+
+Specifically, you will need to extract the &lt;code&gt;exeFS&lt;/code&gt; and &lt;code&gt;romFS&lt;/code&gt; files of the 1.0.1 version of the game. You can do this with a modded Nintendo Switch console with a tool such as &lt;a href=&quot;https://github.com/DarkMatterCore/nxdumptool&quot;&gt;nxdumptool&lt;/a&gt; or with the &lt;a href=&quot;https://ryujinx.org&quot;&gt;Ryujinx emulator&lt;/a&gt; (yuzu cannot currently extract the &lt;code&gt;romFS&lt;/code&gt; folder)&lt;br&gt;&lt;br&gt;
+
+For help with this process, please ask on GitHub or join the Discord server linked below.</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="openExternalLinks">
+                 <bool>true</bool>
+                </property>
+                <property name="textInteractionFlags">
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="how_to_left_arrow_label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>--&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="how_to_generate_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Generate a Seed</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QLabel" name="how_to_generate_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>After you have obtained an extract of the vanilla game, you need to tell this randomizer program where the extract is located so that it can be used to generate a seed.&lt;br&gt;&lt;br&gt;
+
+Please go to the &quot;File Setup&quot; box below and click the &quot;Browse&quot; button on the &quot;Extract&quot; row. You will then be asked to find the location of your extract.&lt;br&gt;&lt;br&gt;
+
+Once the extract has been verified, you can browse the various tabs and customize the settings of your randomizer seed.&lt;br&gt;&lt;br&gt;
+
+When you are ready, click the &quot;Randomize&quot; button in the bottom right of the screen. By default, the output will be in the &lt;code&gt;output&lt;/code&gt; folder where this randomizer program is located.</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="openExternalLinks">
+                 <bool>true</bool>
+                </property>
+                <property name="textInteractionFlags">
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="how_to_right_arrow_label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>--&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="how_to_running_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Running the Seed</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="QLabel" name="how_to_running_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>If you want to play this randomizer on a modded Nintendo Switch console, copy the outputted &lt;code&gt;exeFS&lt;/code&gt; and &lt;code&gt;romFS&lt;/code&gt; folders into the &lt;code&gt;/atmosphere/contents/01002DA013484000&lt;/code&gt; folder on your Switch's SD card. You can then run the game like normal and the randomizer will be patched on top of the vanilla game.&lt;br&gt;&lt;br&gt;
+
+If you want to play this randomizer on the &lt;a href=&quot;https://yuzu-emu.org/&quot;&gt;yuzu emulator&lt;/a&gt;, open yuzu and right click on your copy of Skyward Sword HD. Click the &quot;Open Mod Data Location&quot; option and create a folder called &lt;code&gt;rando&lt;/code&gt;. Copy the outputted &lt;code&gt;exeFS&lt;/code&gt; and &lt;code&gt;romFS&lt;/code&gt; folders into the newly created &lt;code&gt;rando&lt;/code&gt; folder.&lt;br&gt;&lt;br&gt;
+
+If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&quot;&gt;Ryujinx emulator&lt;/a&gt;, copy the outputted &lt;code&gt;exeFS&lt;/code&gt; and &lt;code&gt;romFS&lt;/code&gt; folders into the &lt;code&gt;/Ryujinx/mods/contents/01002DA013484000&lt;/code&gt; folder.</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="openExternalLinks">
+                 <bool>true</bool>
+                </property>
+                <property name="textInteractionFlags">
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="useful_info_group_box">
+          <property name="title">
+           <string>Useful Information</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="useful_info_label">
+             <property name="text">
+              <string>TODO:&lt;br&gt;&lt;br&gt;
+
+Discord Server: https::/discord.com&lt;br&gt;
+Report a Bug: https::/github.com/mint-choc-chip-skyblade/ssdh-rando/issues&lt;br&gt;
+Location Guide: ???</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="file_setup_group_box">
+          <property name="title">
+           <string>File Setup</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="1" column="0">
+            <widget class="QLabel" name="extract_label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Extract</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLineEdit" name="extract_line_edit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="extract_button">
+             <property name="text">
+              <string>Browse</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLineEdit" name="output_line_edit"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="output_label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Output</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QPushButton" name="output_button">
+             <property name="text">
+              <string>Browse</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="world_tab">
+       <attribute name="title">
+        <string>World</string>
        </attribute>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="logic_tab">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>Logic</string>
        </attribute>
+      </widget>
+      <widget class="QWidget" name="inventory_tab">
+       <attribute name="title">
+        <string>Inventory</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="cosmetic_tab">
+       <attribute name="title">
+        <string>Cosmetic</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="advanced_tab">
+       <attribute name="title">
+        <string>Advanced</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="accessibility_tab">
+       <attribute name="title">
+        <string>Accessibility</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3"/>
       </widget>
      </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="seed_layout">
+      <item>
+       <widget class="QLabel" name="seed_label">
+        <property name="text">
+         <string>Seed:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="seed_line_edit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="new_seed_button">
+        <property name="text">
+         <string>New Seed</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="copy_seed_button">
+        <property name="text">
+         <string>Copy Seed</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <layout class="QHBoxLayout" name="footer_layout">
