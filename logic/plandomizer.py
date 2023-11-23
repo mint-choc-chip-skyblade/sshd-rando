@@ -59,3 +59,23 @@ def load_plandomizer_data(worlds: list[World], filepath: str):
                     )
 
                     world.plandomizer_entrances[entrance] = target
+
+            if "sometimes_hint_locations" in world_data:
+                # Clear previous sometimes locations
+                for location in world.get_all_item_locations():
+                    if location.hint_priority == "sometimes":
+                        location.hint_priority = "never"
+
+                for location_name in world_data["sometimes_hint_locations"]:
+                    location = world.get_location(location_name)
+                    location.hint_priority = "sometimes"
+
+            if "always_hint_locations" in world_data:
+                # Clear previous always locations
+                for location in world.get_all_item_locations():
+                    if location.hint_priority == "always":
+                        location.hint_priority = "never"
+
+                for location_name in world_data["always_hint_locations"]:
+                    location = world.get_location(location_name)
+                    location.hint_priority = "always"
