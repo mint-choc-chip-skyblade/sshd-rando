@@ -79,4 +79,3 @@ def load_plandomizer_data(worlds: list[World], filepath: str):
                 for location_name in world_data["always_hint_locations"]:
                     location = world.get_location(location_name)
                     location.hint_priority = "always"
-                    
