@@ -39,8 +39,8 @@ class SettingInfo:
         self.options: list[str] = []
         self.pretty_options: list[str] = []
         self.descriptions: list[str] = []
-        self.default_option: int = 0
-        self.current_option: int = 0
+        self.default_option_index: int = 0
+        self.current_option_index: int = 0
 
         self.has_random_option: bool = True
         self.random_option: str = None  # name of random option
@@ -204,7 +204,7 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                     s.name = names[i]
                     s.pretty_name = pretty_names[i]
                     s.type = setting_type
-                    s.default_option = options.index(
+                    s.default_option_index = options.index(
                         default_options[min(len(default_options) - 1, i)]
                     )
                     s.options = options

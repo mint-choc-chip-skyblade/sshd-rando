@@ -18,16 +18,12 @@ def generate(config_file: Path) -> list[World]:
     get_all_settings_info()
     load_text_data()
 
-    # If the config file doesn't exist, create default
-    if not config_file.is_file():
-        create_default_config(config_file)
-
-    config = load_config_from_file(config_file)
+    config = load_config_from_file(config_file, create_if_blank=True)
 
     # If config has no seed, generate one
     if config.seed == "" or config.seed == "-1":
         config.seed = str(random.randint(0, 0xFFFFFFFF))
-        write_config_to_file(config_file, config)
+        # write_config_to_file(config_file, config)
 
     print_progress_text(f"Seed: {config.seed}")
 

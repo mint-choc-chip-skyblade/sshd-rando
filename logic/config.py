@@ -32,7 +32,7 @@ class Config:
 def create_default_config(filename: Path):
     conf = Config()
     conf.output_dir = Path("./output")
-    conf.input_dir = Path("./base")
+    conf.input_dir = Path("./title")
     conf.seed = str(random.randint(0, 0x80000000))
     conf.plandomizer = False
     conf.plandomizer_file = None  # type: ignore
@@ -48,7 +48,7 @@ def create_default_config(filename: Path):
         new_setting = Setting()
         new_setting.name = setting_name
         new_setting.info = setting_info
-        new_setting.value = setting_info.options[setting_info.default_option]
+        new_setting.value = setting_info.options[setting_info.default_option_index]
         setting_map.settings[setting_name] = new_setting
 
     write_config_to_file(filename, conf)
@@ -59,8 +59,8 @@ def write_config_to_file(filename: Path, conf: Config):
         config_out = {}
 
         config_out["seed"] = conf.seed
-        config_out["input_dir"] = conf.input_dir
-        config_out["output_dir"] = conf.output_dir
+        config_out["input_dir"] = conf.input_dir.as_posix()
+        config_out["output_dir"] = conf.output_dir.as_posix()
         config_out["plandomizer"] = conf.plandomizer
         config_out["plandomizer_file"] = conf.plandomizer_file
 
@@ -95,17 +95,21 @@ def write_config_to_file(filename: Path, conf: Config):
         yaml.safe_dump(config_out, config_file, sort_keys=False)
 
 
-def load_config_from_file(filename: Path, allow_rewrite: bool = True) -> Config:
+def load_config_from_file(filepath: Path, allow_rewrite: bool = True, create_if_blank: bool = False) -> Config:
+    if create_if_blank and not filepath.is_file():
+        print("No config file found. Creating default config file.")
+        create_default_config(filepath)
+
     config = Config()
     # If the config is missing any options, set defaults and resave it afterwards
     rewrite_config: bool = False
-    with open(filename) as config_file:
+    with open(filepath) as config_file:
         config_in = yaml.safe_load(config_file)
 
         # Check required fields
         for field in required_config_fields:
             if field not in config_in:
-                raise ConfigError(f'Missing field "{field}" in {filename}')
+                raise ConfigError(f'Missing field "{field}" in {filepath}')
 
         config.seed = config_in["seed"]
         config.input_dir = config_in["input_dir"]
@@ -166,7 +170,7 @@ def load_config_from_file(filename: Path, allow_rewrite: bool = True) -> Config:
             # Add in defaults settings that weren't listed
             for setting_name, info in settings_info.items():
                 if setting_name not in cur_world_settings.settings:
-                    default_value = info.options[info.default_option]
+                    default_value = info.options[info.default_option_index]
                     cur_world_settings.settings[setting_name] = Setting(
                         setting_name, default_value, info
                     )
@@ -176,6 +180,6 @@ def load_config_from_file(filename: Path, allow_rewrite: bool = True) -> Config:
             world_num_str = f"World {world_num}"
 
     if rewrite_config and allow_rewrite:
-        write_config_to_file(filename, config)
+        write_config_to_file(filepath, config)
 
     return config
