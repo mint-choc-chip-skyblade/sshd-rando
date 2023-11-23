@@ -409,10 +409,13 @@ def layer_override(bzs: dict, patch: dict):
 
     bzs["LYSE"] = layer_override
 
+
 # Generic function outside of the StagePatchHandler
 # We have to pass all the various patch data to each process
 # individually
-def patch_and_write_stage(stage_path: Path, stage_patches, check_patches, stage_oarc_remove, stage_oarc_add):
+def patch_and_write_stage(
+    stage_path: Path, stage_patches, check_patches, stage_oarc_remove, stage_oarc_add
+):
     stage_match = STAGE_FILE_REGEX.match(stage_path.parts[-1])
 
     if not stage_match:
@@ -422,7 +425,7 @@ def patch_and_write_stage(stage_path: Path, stage_patches, check_patches, stage_
     layer = int(stage_match[2])
     modified_stage_path = Path(
         OUTPUT_STAGE_PATH / f"{stage}" / "NX" / f"{stage}_stg_l{layer}.arc.LZ"
-            )
+    )
     # remove arcs
     remove_arcs = set(stage_oarc_remove.get((stage, layer), []))
     # add arcs
@@ -453,9 +456,7 @@ def patch_and_write_stage(stage_path: Path, stage_patches, check_patches, stage_
                 oarc_path = OARC_CACHE_PATH / arc_name
 
                 if oarc_path.exists():
-                    stage_u8.add_file_data(
-                        f"oarc/{arc_name}", oarc_path.read_bytes()
-                    )
+                    stage_u8.add_file_data(f"oarc/{arc_name}", oarc_path.read_bytes())
                 else:
                     print(f"ERROR: {arc_name} not found in oarc cache")
 
@@ -496,8 +497,7 @@ def patch_and_write_stage(stage_path: Path, stage_patches, check_patches, stage_
                     stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
 
                 room_path_matches = (
-                    ROOM_ARC_REGEX.match(path)
-                    for path in stage_u8.get_all_paths()
+                    ROOM_ARC_REGEX.match(path) for path in stage_u8.get_all_paths()
                 )
 
                 room_path_matches = (
@@ -532,9 +532,7 @@ def patch_and_write_stage(stage_path: Path, stage_patches, check_patches, stage_
                         room_u8_data = room_u8.get_file_data("dat/room.bzs")
 
                         if not room_u8_data:
-                            raise TypeError(
-                                "Expected type bytes but found None."
-                            )
+                            raise TypeError("Expected type bytes but found None.")
 
                         room_bzs = parse_bzs(room_u8_data)
 
@@ -632,18 +630,19 @@ def patch_and_write_stage(stage_path: Path, stage_patches, check_patches, stage_
                                     f"Object name: {object_name} not current supported for check patching"
                                 )
 
-                        room_u8.set_file_data(
-                            "dat/room.bzs", build_bzs(room_bzs)
-                        )
+                        room_u8.set_file_data("dat/room.bzs", build_bzs(room_bzs))
                         stage_u8.set_file_data(
                             room_path_match.group(0), room_u8.build_U8()
                         )
 
         if stage_u8 is not None:
-            write_bytes_create_dirs(modified_stage_path, stage_u8.build_and_compress_U8())
-        
+            write_bytes_create_dirs(
+                modified_stage_path, stage_u8.build_and_compress_U8()
+            )
+
         # uncomment if you want to copy over all files for any reason
         # write_bytes_create_dirs(modifiedStagePath, stagePath.read_bytes())
+
 
 class StagePatchHandler:
     def __init__(self):
@@ -653,28 +652,37 @@ class StagePatchHandler:
         self.stage_oarc_add: dict[tuple[str, int], set[str]] = defaultdict(set)
 
     def handle_stage_patches(self, onlyif_handler: ConditionalPatchHandler):
-
         # Pre-emptively remove unecessary patches since we can't pass
         # the onlyif_handler to other worker processes
         print("Removing unecessary patches")
         self.remove_unnecessary_patches(onlyif_handler)
-        
+
         # Create the pool or worker processes
         with mp.Pool() as pool:
             # Create a function which emulates patch_and_write_stage except
             # we only have to pass the stage name to it and all the other args
-            # will have their values set here. 
+            # will have their values set here.
             #
             # This is done because we can only pass 1 argument to the function
             # we're kicking off to the pool when using the pool.map method
-            patch_stage_func = partial(patch_and_write_stage, 
-                                       stage_patches=self.stage_patches, 
-                                       check_patches=self.check_patches, 
-                                       stage_oarc_remove=self.stage_oarc_remove,
-                                       stage_oarc_add=self.stage_oarc_add)
-            pool.map(patch_stage_func, [stage_path for stage_path in Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ")])
+            patch_stage_func = partial(
+                patch_and_write_stage,
+                stage_patches=self.stage_patches,
+                check_patches=self.check_patches,
+                stage_oarc_remove=self.stage_oarc_remove,
+                stage_oarc_add=self.stage_oarc_add,
+            )
+            pool.map(
+                patch_stage_func,
+                [
+                    stage_path
+                    for stage_path in Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ")
+                ],
+            )
 
-    def remove_unnecessary_patches(self, onlyif_handler: ConditionalPatchHandler) -> None:
+    def remove_unnecessary_patches(
+        self, onlyif_handler: ConditionalPatchHandler
+    ) -> None:
         for patches in self.stage_patches.values():
             for patch in patches.copy():
                 if statement := patch.get("onlyif", False):
