@@ -29,7 +29,7 @@ class Main(QMainWindow):
         # Always open on the getting started tab
         self.ui.tab_widget.setCurrentIndex(0)
 
-        self.options = Options(self.ui)
+        self.options = Options(self, self.ui)
 
         self.ui.randomize_button.clicked.connect(self.randomize)
         self.ui.about_button.clicked.connect(self.about)

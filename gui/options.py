@@ -1,5 +1,14 @@
 import random
-from PySide6.QtWidgets import QAbstractButton, QComboBox, QLineEdit, QSpinBox, QWidget
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import (
+    QAbstractButton,
+    QComboBox,
+    QLineEdit,
+    QMessageBox,
+    QMainWindow,
+    QSpinBox,
+    QWidget,
+)
 import yaml
 from filepathconstants import CONFIG_PATH, WORDS_PATH
 from logic.config import load_config_from_file, write_config_to_file
@@ -7,7 +16,8 @@ from logic.settings import Setting
 
 
 class Options:
-    def __init__(self, ui):
+    def __init__(self, parent, ui):
+        self.parent: QMainWindow = parent
         self.ui = ui
 
         self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
@@ -125,6 +135,15 @@ class Options:
         write_config_to_file(CONFIG_PATH, self.config)
 
     def reset(self):
+        confirm_choice = QMessageBox.question(
+            self.parent,
+            "Are you sure?",
+            "Are you sure you want to reset EVERY option?",
+        )
+
+        if confirm_choice != QMessageBox.Yes:
+            return
+
         for setting_name, setting in self.settings.items():
             widget = None  # type: ignore
 
@@ -140,10 +159,10 @@ class Options:
             default_option = setting.info.options[setting.info.default_option_index]
 
             if isinstance(widget, QAbstractButton):
-                if default_option == "on":
-                    widget.setChecked(True)
-                else:
-                    widget.setChecked(False)
+                if default_option == "on" and not widget.isChecked():
+                    widget.click()
+                elif default_option == "off" and widget.isChecked():
+                    widget.click()
             elif isinstance(widget, QComboBox):
                 widget.setCurrentIndex(setting.info.default_option_index)
             elif isinstance(widget, QSpinBox):
