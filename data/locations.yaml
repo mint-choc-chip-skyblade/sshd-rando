@@ -89,14 +89,14 @@
   type:
   Paths:
     - event/107-Kanban/Fi give Goddess Statue item 1
-    - oarc/F008r/l1
+    - oarc/F008r/l0
 
 - name: Inside the Statue of the Goddess - Second Goddess Sword Item
   original_item: Emerald Tablet
   type:
   Paths:
     - event/107-Kanban/Fi give Goddess Statue item 2
-    - oarc/F008r/l1
+    - oarc/F008r/l0
 
 - name: Sparring Hall - Chest
   original_item: Progressive Sword

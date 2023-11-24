@@ -383,6 +383,7 @@ class World:
             ):
                 location.set_current_item(item)
                 location.has_known_vanilla_item = True
+                location.hint_priority = "never"
                 self.item_pool[item] -= 1
 
             # Scrap Shop Upgrades
