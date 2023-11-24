@@ -2,6 +2,8 @@ from pathlib import Path
 import yaml
 import random
 
+from filepathconstants import WORDS_PATH
+
 from .settings import *
 
 required_config_fields = [
@@ -38,7 +40,7 @@ def create_default_config(filename: Path):
     config = Config()
     config.output_dir = Path("./output")
     config.input_dir = Path("./title")
-    config.seed = str(random.randint(0, 0x80000000))
+    config.seed = get_new_seed()
     config.plandomizer = False
     config.plandomizer_file = None  # type: ignore
     config.generate_spoiler_log = True
@@ -208,3 +210,14 @@ def load_config_from_file(
         write_config_to_file(filepath, config)
 
     return config
+
+
+def get_new_seed() -> str:
+    with open(WORDS_PATH, "r") as words_file:
+        words = yaml.safe_load(words_file)
+        new_seed = ""
+
+        for _ in range(0, 4):
+            new_seed += random.choice(words)
+
+        return new_seed

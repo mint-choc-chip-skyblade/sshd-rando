@@ -8,9 +8,9 @@ from PySide6.QtWidgets import (
     QSpinBox,
     QWidget,
 )
-import yaml
-from filepathconstants import CONFIG_PATH, WORDS_PATH
-from logic.config import load_config_from_file, write_config_to_file
+
+from filepathconstants import CONFIG_PATH
+from logic.config import get_new_seed, load_config_from_file, write_config_to_file
 from logic.settings import Setting
 
 
@@ -117,15 +117,8 @@ class Options:
         return new_setting
 
     def new_seed(self):
-        with open(WORDS_PATH, "r") as words_file:
-            words = yaml.safe_load(words_file)
-
-        new_seed = ""
-        for _ in range(0, 4):
-            new_seed += random.choice(words)
-
         seed_widget: QLineEdit = getattr(self.ui, "setting_seed")
-        seed_widget.setText(new_seed)
+        seed_widget.setText(get_new_seed())
 
     def update_seed(self):
         seed_widget: QLineEdit = getattr(self.ui, "setting_seed")
