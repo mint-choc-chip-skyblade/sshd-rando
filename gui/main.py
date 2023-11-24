@@ -1,4 +1,5 @@
 import sys
+import time
 
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon
@@ -35,6 +36,7 @@ class Main(QMainWindow):
         self.ui.about_button.clicked.connect(self.about)
 
     def randomize(self):
+        start_time = time.time()
         self.progress_dialog = QProgressDialog("Initializing", "", 0, 100, self)
         self.progress_dialog.setWindowTitle("Randomizing...")
         self.progress_dialog.setWindowModality(Qt.WindowModality.WindowModal)
@@ -52,6 +54,9 @@ class Main(QMainWindow):
         self.randomize_thread.setTerminationEnabled(True)
         self.randomize_thread.start()
         self.progress_dialog.exec()
+
+        end_time = time.time()
+        print("GUI randomization time:", round(end_time - start_time, 4), "seconds")
 
     def about(self):
         self.about_dialog = QMessageBox(self)

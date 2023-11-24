@@ -36,8 +36,10 @@ if args.debug:
 if args.with_gui:
     from gui.main import start_gui
 
-    start_gui()
+    if __name__ == "__main__":
+        start_gui()
 else:
     from randomize import randomize
 
-    randomize()
+    if __name__ == "__main__":
+        randomize()

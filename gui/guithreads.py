@@ -23,9 +23,16 @@ class RandomizationThread(QThread):
             randomize()
         except Exception as e:
             self.error_abort.emit(str(e))
+
+            import multiprocessing as mp
+
+            for child in mp.active_children():
+                child.kill()
+
             import traceback
 
             print(traceback.format_exc())
+
             return
 
         self.randomization_complete.emit()

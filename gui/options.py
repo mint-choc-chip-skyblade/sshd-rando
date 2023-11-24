@@ -141,7 +141,7 @@ class Options:
             "Are you sure you want to reset EVERY option?",
         )
 
-        if confirm_choice != QMessageBox.Yes:
+        if confirm_choice != QMessageBox.Yes:  # type: ignore (Qt is stupid)
             return
 
         for setting_name, setting in self.settings.items():
