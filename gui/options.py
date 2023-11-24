@@ -17,7 +17,9 @@ class Options:
         seed_widget: QLineEdit = getattr(self.ui, "setting_seed")
         seed_widget.setText(self.config.seed)
         seed_widget.textChanged.connect(self.update_seed)
+
         self.ui.new_seed_button.clicked.connect(self.new_seed)
+        self.ui.reset_button.clicked.connect(self.reset)
 
         # Init other settings
         for setting_name, setting_info in self.settings.items():
@@ -58,14 +60,6 @@ class Options:
 
     def update_settings(self):
         for setting_name, setting in self.settings.items():
-            if setting_name in (
-                "input_dir",
-                "output_dir",
-                "plandomizer",
-                "plandomizer_file",
-            ):
-                continue
-
             widget = None  # type: ignore
 
             try:
@@ -129,3 +123,29 @@ class Options:
         self.config.seed = seed_widget.text()
 
         write_config_to_file(CONFIG_PATH, self.config)
+
+    def reset(self):
+        for setting_name, setting in self.settings.items():
+            widget = None  # type: ignore
+
+            try:
+                widget: QWidget = getattr(self.ui, "setting_" + setting_name)
+            except:
+                # print(f"Cannot find attribute for '{setting_name}', ignoring.")
+                continue
+
+            if not widget:
+                continue
+
+            default_option = setting.info.options[setting.info.default_option_index]
+
+            if isinstance(widget, QAbstractButton):
+                if default_option == "on":
+                    widget.setChecked(True)
+                else:
+                    widget.setChecked(False)
+            elif isinstance(widget, QComboBox):
+                widget.setCurrentIndex(setting.info.default_option_index)
+            elif isinstance(widget, QSpinBox):
+                new_option = str(widget.value())
+                widget.setValue(int(default_option))
