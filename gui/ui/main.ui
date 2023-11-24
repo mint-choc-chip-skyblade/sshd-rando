@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
+    <width>1200</width>
     <height>800</height>
    </rect>
   </property>
@@ -17,8 +17,11 @@
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QTabWidget" name="tab_widget">
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
       <property name="currentIndex">
-       <number>6</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -378,45 +381,6 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
         <string>World</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="1" column="1">
-         <widget class="QGroupBox" name="shuffles_group_box">
-          <property name="title">
-           <string>Shuffles</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_15">
-           <item>
-            <widget class="QLabel" name="randomized_shops_label">
-             <property name="text">
-              <string>Randomize Shops</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_randomized_shops"/>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_shuffle_single_gratitude_crystals">
-             <property name="text">
-              <string>Single Gratitude Crystals</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="shuffles_vspacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
         <item row="1" column="2">
          <widget class="QGroupBox" name="entrance_randomization_group_box">
           <property name="title">
@@ -768,26 +732,271 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="locations_tab">
+       <attribute name="title">
+        <string>Locations</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="3" column="1">
+         <layout class="QHBoxLayout" name="individual_locations_layout">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QGroupBox" name="included_locations_group_box">
+            <property name="title">
+             <string>Included Locations</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <item>
+              <layout class="QHBoxLayout" name="included_locations_filter_layout">
+               <item>
+                <widget class="QComboBox" name="included_locations_category_filters">
+                 <property name="placeholderText">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="included_locations_free_search">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Search</string>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QListView" name="included_locations_list_view">
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <property name="showDropIndicator" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::MultiSelection</enum>
+               </property>
+               <property name="selectionRectVisible">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="individual_locations_button_layout">
+            <item>
+             <spacer name="individual_locations_top_vspacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="include_location_button">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Include
+&lt;---</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="individual_locations_middle_vspacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="exclude_location_button">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Exclude
+---&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="individual_locations_bottom_vspacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="excluded_locations_group_box">
+            <property name="title">
+             <string>Excluded Locations</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_18">
+             <item>
+              <layout class="QHBoxLayout" name="excluded_locations_filter_layout">
+               <item>
+                <widget class="QComboBox" name="excluded_locations_category_filters"/>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="excluded_locations_free_search">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Search</string>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QListView" name="excluded_locations_list_view">
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <property name="showDropIndicator" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::MultiSelection</enum>
+               </property>
+               <property name="selectionRectVisible">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <layout class="QHBoxLayout" name="location_control_layout">
+          <item>
+           <widget class="QGroupBox" name="shuffles_group_box">
+            <property name="title">
+             <string>Shuffles</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+             <item>
+              <widget class="QCheckBox" name="setting_shuffle_single_gratitude_crystals">
+               <property name="text">
+                <string>Single Gratitude Crystals</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="shops_group_box">
+            <property name="title">
+             <string>Shops</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_15">
+             <item>
+              <widget class="QLabel" name="randomized_shops_label">
+               <property name="text">
+                <string>Randomize Shops</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="setting_randomized_shops"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="inventory_tab">
+       <attribute name="title">
+        <string>Inventory</string>
+       </attribute>
+      </widget>
       <widget class="QWidget" name="logic_tab">
        <attribute name="title">
         <string>Logic</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_3">
+       <layout class="QGridLayout" name="gridLayout_5">
         <item row="0" column="0">
-         <widget class="QGroupBox" name="groupBox">
+         <widget class="QGroupBox" name="logic_rules_group_box">
           <property name="title">
-           <string>Locations</string>
+           <string>Logic</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_9">
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
            <item>
-            <spacer name="verticalSpacer_2">
+            <widget class="QLabel" name="logic_rules_label">
+             <property name="text">
+              <string>Logic Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_logic_rules"/>
+           </item>
+           <item>
+            <spacer name="logic_rules_hspacer">
              <property name="orientation">
-              <enum>Qt::Vertical</enum>
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Expanding</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>20</width>
-               <height>40</height>
+               <width>40</width>
+               <height>20</height>
               </size>
              </property>
             </spacer>
@@ -796,36 +1005,384 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
          </widget>
         </item>
         <item row="1" column="0">
-         <widget class="QGroupBox" name="groupBox_2">
-          <property name="title">
-           <string>Tricks and Logic Breaks</string>
+         <widget class="QGroupBox" name="tricks_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_10">
+          <property name="title">
+           <string>Tricks</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
            <item>
-            <spacer name="verticalSpacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
+            <widget class="QGroupBox" name="precise_items_group_box">
+             <property name="title">
+              <string>Precise Items</string>
              </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Expanding</enum>
+             <layout class="QVBoxLayout" name="verticalLayout_20">
+              <item>
+               <widget class="QCheckBox" name="setting_logic_advanced_lizalfos_combat">
+                <property name="text">
+                 <string>Advanced Lizalfos Combat</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_skyview_precise_slingshot">
+                <property name="text">
+                 <string>Skyview Temple Precise Slingshot</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_lmf_ceiling_precise_slingshot">
+                <property name="text">
+                 <string>Lanayru Mining Facility Precise Slingshot</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_tot_slingshot">
+                <property name="text">
+                 <string>Temple of Time Precise Slingshot</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_bomb_throws">
+                <property name="text">
+                 <string>Precise Bomb Throws</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_lanayru_mine_quick_bomb">
+                <property name="text">
+                 <string>Lanayru Mine Quick Bomb</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_cactus_bomb_whip">
+                <property name="text">
+                 <string>Whip Bomb Flowers off Cacti</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_beedles_shop_with_bombs">
+                <property name="text">
+                 <string>Beedle's Shop with Bombs</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_bird_nest_item_from_beedles_shop">
+                <property name="text">
+                 <string>Bird's Nest from Beedle's Shop</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_precise_beetle">
+                <property name="text">
+                 <string>Precise Beetle Flying</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_skippers_fast_clawshots">
+                <property name="text">
+                 <string>Skipper's Retreat Fast Clawshots</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_lmf_whip_switch">
+                <property name="text">
+                 <string>Lanayru Mining Facility Whip Switch</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_lmf_whip_armos_room_timeshift_stone">
+                <property name="text">
+                 <string>Lanayru Mining Facility Whip Timeshift Stone</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_lmf_minecart_jump">
+                <property name="text">
+                 <string>Lanayru Mining Facility Ride on Minecart</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_present_bow_switches">
+                <property name="text">
+                 <string>Present Bow Switch Shots</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_skykeep_vineclip">
+                <property name="text">
+                 <string>Sky Keep Vine Clip</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="precise_items_vspacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>87</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="dives_and_jumps_group_box">
+             <property name="title">
+              <string>Dives and Jumps</string>
              </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
+             <layout class="QVBoxLayout" name="verticalLayout_19">
+              <item>
+               <widget class="QCheckBox" name="setting_logic_volcanic_island_dive">
+                <property name="text">
+                 <string>Volcanic Island Dive</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_east_island_dive">
+                <property name="text">
+                 <string>Thunderhead East Island Dive</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_beedles_island_cage_chest_dive">
+                <property name="text">
+                 <string>Beedle's Island Cage Chest Dive</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_gravestone_jump">
+                <property name="text">
+                 <string>Gravestone Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_waterfall_cave_jump">
+                <property name="text">
+                 <string>Waterfall Cave Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_early_lake_floria">
+                <property name="text">
+                 <string>Early Lake Floria Jumpslash</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_ac_lever_jump_trick">
+                <property name="text">
+                 <string>Ancient Cistern Lever Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_ac_chest_after_whip_hooks_jump">
+                <property name="text">
+                 <string>Ancient Cistern Chest after Whip Hooks Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_sandship_jump_to_stern">
+                <property name="text">
+                 <string>Sandship Jump to Stern</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_fs_pillar_jump">
+                <property name="text">
+                 <string>Fire Sanctuary Pillar Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="dives_and_jumps_vspacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="glitches_group_box">
+             <property name="title">
+              <string>Glitches</string>
              </property>
-            </spacer>
+             <layout class="QVBoxLayout" name="verticalLayout_21">
+              <item>
+               <widget class="QCheckBox" name="setting_logic_stuttersprint">
+                <property name="text">
+                 <string>Stutter Sprinting</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_et_slope_stuttersprint">
+                <property name="text">
+                 <string>Earth Temple Slope Stuttersprint</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_brakeslide">
+                <property name="text">
+                 <string>Brakesliding</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_tot_skip_brakeslide">
+                <property name="text">
+                 <string>Temple of Time Skip Brakeslide</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="glitches_vspacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>399</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="miscellaneous_group_box">
+             <property name="title">
+              <string>Miscellaneous</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_22">
+              <item>
+               <widget class="QCheckBox" name="setting_logic_fire_node_without_hook_beetle">
+                <property name="text">
+                 <string>Fire Node without Hook Beetle</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_skyview_spider_roll">
+                <property name="text">
+                 <string>Skyview Temple Spider Roll</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_et_keese_skyward_strike">
+                <property name="text">
+                 <string>Earth Temple Keese Skyward Strike</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_et_bombless_scaldera">
+                <property name="text">
+                 <string>Earth Temple Bomb Flower Scaldera</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_lmf_bellowsless_moldarach">
+                <property name="text">
+                 <string>Lanayru Mining Facility Moldarach
+without Gust Bellows</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_sandship_itemless_spume">
+                <property name="text">
+                 <string>Sandship Itemless Spume</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_sandship_no_combination_hint">
+                <property name="text">
+                 <string>Sandship No Combination Hint</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_fs_practice_sword_ghirahim_2">
+                <property name="text">
+                 <string>Fire Sanctuary Ghirahim 2 with
+Practice Sword</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_itemless_first_timeshift_stone">
+                <property name="text">
+                 <string>Itemless First Timeshift Stone</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="miscellaneous_vspacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>237</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
            </item>
           </layout>
          </widget>
         </item>
        </layout>
-      </widget>
-      <widget class="QWidget" name="inventory_tab">
-       <attribute name="title">
-        <string>Inventory</string>
-       </attribute>
       </widget>
       <widget class="QWidget" name="cosmetic_tab">
        <attribute name="title">
@@ -1023,7 +1580,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
         <item>
          <widget class="QGroupBox" name="groupBox_6">
           <property name="title">
-           <string>GroupBox</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -1033,37 +1590,37 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
     </item>
     <item>
      <layout class="QGridLayout" name="seed_layout">
-      <item row="1" column="0">
-       <widget class="QLabel" name="seed_label">
+      <item row="1" column="3">
+       <widget class="QPushButton" name="copy_setting_string_button">
         <property name="text">
-         <string>Seed:</string>
+         <string>Copy</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="3">
+      <item row="2" column="2">
+       <widget class="QLineEdit" name="setting_seed"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLineEdit" name="setting_string"/>
+      </item>
+      <item row="2" column="3">
        <widget class="QPushButton" name="new_seed_button">
         <property name="text">
          <string>New Seed</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
-       <widget class="QLineEdit" name="setting_seed"/>
-      </item>
-      <item row="0" column="0">
+      <item row="1" column="0">
        <widget class="QLabel" name="setting_string_label">
         <property name="text">
          <string>Setting String</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QLineEdit" name="setting_string"/>
-      </item>
-      <item row="0" column="3">
-       <widget class="QPushButton" name="copy_setting_string_button">
+      <item row="2" column="0">
+       <widget class="QLabel" name="seed_label">
         <property name="text">
-         <string>Copy</string>
+         <string>Seed:</string>
         </property>
        </widget>
       </item>

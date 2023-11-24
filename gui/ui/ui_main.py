@@ -15,23 +15,24 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFontComboBox,
-    QGridLayout, QGroupBox, QHBoxLayout, QLabel,
-    QLayout, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QSpacerItem, QSpinBox, QTabWidget,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComboBox,
+    QFontComboBox, QGridLayout, QGroupBox, QHBoxLayout,
+    QLabel, QLayout, QLineEdit, QListView,
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QSpinBox, QTabWidget, QVBoxLayout, QWidget)
 
 class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(1000, 800)
+        main_window.resize(1200, 800)
         self.central_widget = QWidget(main_window)
         self.central_widget.setObjectName(u"central_widget")
         self.verticalLayout_2 = QVBoxLayout(self.central_widget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.tab_widget = QTabWidget(self.central_widget)
         self.tab_widget.setObjectName(u"tab_widget")
+        self.tab_widget.setTabShape(QTabWidget.Rounded)
         self.getting_started_tab = QWidget()
         self.getting_started_tab.setObjectName(u"getting_started_tab")
         self.verticalLayout_4 = QVBoxLayout(self.getting_started_tab)
@@ -232,32 +233,6 @@ class Ui_main_window(object):
         self.world_tab.setObjectName(u"world_tab")
         self.gridLayout_2 = QGridLayout(self.world_tab)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.shuffles_group_box = QGroupBox(self.world_tab)
-        self.shuffles_group_box.setObjectName(u"shuffles_group_box")
-        self.verticalLayout_15 = QVBoxLayout(self.shuffles_group_box)
-        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.randomized_shops_label = QLabel(self.shuffles_group_box)
-        self.randomized_shops_label.setObjectName(u"randomized_shops_label")
-
-        self.verticalLayout_15.addWidget(self.randomized_shops_label)
-
-        self.setting_randomized_shops = QComboBox(self.shuffles_group_box)
-        self.setting_randomized_shops.setObjectName(u"setting_randomized_shops")
-
-        self.verticalLayout_15.addWidget(self.setting_randomized_shops)
-
-        self.setting_shuffle_single_gratitude_crystals = QCheckBox(self.shuffles_group_box)
-        self.setting_shuffle_single_gratitude_crystals.setObjectName(u"setting_shuffle_single_gratitude_crystals")
-
-        self.verticalLayout_15.addWidget(self.setting_shuffle_single_gratitude_crystals)
-
-        self.shuffles_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_15.addItem(self.shuffles_vspacer)
-
-
-        self.gridLayout_2.addWidget(self.shuffles_group_box, 1, 1, 1, 1)
-
         self.entrance_randomization_group_box = QGroupBox(self.world_tab)
         self.entrance_randomization_group_box.setObjectName(u"entrance_randomization_group_box")
         self.verticalLayout_17 = QVBoxLayout(self.entrance_randomization_group_box)
@@ -518,36 +493,433 @@ class Ui_main_window(object):
         self.gridLayout_2.addWidget(self.dungeons_group_box, 0, 2, 1, 1)
 
         self.tab_widget.addTab(self.world_tab, "")
-        self.logic_tab = QWidget()
-        self.logic_tab.setObjectName(u"logic_tab")
-        self.gridLayout_3 = QGridLayout(self.logic_tab)
+        self.locations_tab = QWidget()
+        self.locations_tab.setObjectName(u"locations_tab")
+        self.gridLayout_3 = QGridLayout(self.locations_tab)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.groupBox = QGroupBox(self.logic_tab)
-        self.groupBox.setObjectName(u"groupBox")
-        self.verticalLayout_9 = QVBoxLayout(self.groupBox)
+        self.individual_locations_layout = QHBoxLayout()
+        self.individual_locations_layout.setObjectName(u"individual_locations_layout")
+        self.individual_locations_layout.setContentsMargins(-1, 0, -1, -1)
+        self.included_locations_group_box = QGroupBox(self.locations_tab)
+        self.included_locations_group_box.setObjectName(u"included_locations_group_box")
+        self.verticalLayout_9 = QVBoxLayout(self.included_locations_group_box)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.included_locations_filter_layout = QHBoxLayout()
+        self.included_locations_filter_layout.setObjectName(u"included_locations_filter_layout")
+        self.included_locations_category_filters = QComboBox(self.included_locations_group_box)
+        self.included_locations_category_filters.setObjectName(u"included_locations_category_filters")
 
-        self.verticalLayout_9.addItem(self.verticalSpacer_2)
+        self.included_locations_filter_layout.addWidget(self.included_locations_category_filters)
+
+        self.included_locations_free_search = QLineEdit(self.included_locations_group_box)
+        self.included_locations_free_search.setObjectName(u"included_locations_free_search")
+        sizePolicy6 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.included_locations_free_search.sizePolicy().hasHeightForWidth())
+        self.included_locations_free_search.setSizePolicy(sizePolicy6)
+        self.included_locations_free_search.setClearButtonEnabled(True)
+
+        self.included_locations_filter_layout.addWidget(self.included_locations_free_search)
 
 
-        self.gridLayout_3.addWidget(self.groupBox, 0, 0, 1, 1)
+        self.verticalLayout_9.addLayout(self.included_locations_filter_layout)
 
-        self.groupBox_2 = QGroupBox(self.logic_tab)
-        self.groupBox_2.setObjectName(u"groupBox_2")
-        self.verticalLayout_10 = QVBoxLayout(self.groupBox_2)
+        self.included_locations_list_view = QListView(self.included_locations_group_box)
+        self.included_locations_list_view.setObjectName(u"included_locations_list_view")
+        self.included_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.included_locations_list_view.setProperty("showDropIndicator", False)
+        self.included_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.included_locations_list_view.setSelectionRectVisible(False)
+
+        self.verticalLayout_9.addWidget(self.included_locations_list_view)
+
+
+        self.individual_locations_layout.addWidget(self.included_locations_group_box)
+
+        self.individual_locations_button_layout = QVBoxLayout()
+        self.individual_locations_button_layout.setObjectName(u"individual_locations_button_layout")
+        self.individual_locations_top_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.individual_locations_button_layout.addItem(self.individual_locations_top_vspacer)
+
+        self.include_location_button = QPushButton(self.locations_tab)
+        self.include_location_button.setObjectName(u"include_location_button")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.include_location_button.sizePolicy().hasHeightForWidth())
+        self.include_location_button.setSizePolicy(sizePolicy7)
+
+        self.individual_locations_button_layout.addWidget(self.include_location_button)
+
+        self.individual_locations_middle_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.individual_locations_button_layout.addItem(self.individual_locations_middle_vspacer)
+
+        self.exclude_location_button = QPushButton(self.locations_tab)
+        self.exclude_location_button.setObjectName(u"exclude_location_button")
+        sizePolicy7.setHeightForWidth(self.exclude_location_button.sizePolicy().hasHeightForWidth())
+        self.exclude_location_button.setSizePolicy(sizePolicy7)
+
+        self.individual_locations_button_layout.addWidget(self.exclude_location_button)
+
+        self.individual_locations_bottom_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.individual_locations_button_layout.addItem(self.individual_locations_bottom_vspacer)
+
+
+        self.individual_locations_layout.addLayout(self.individual_locations_button_layout)
+
+        self.excluded_locations_group_box = QGroupBox(self.locations_tab)
+        self.excluded_locations_group_box.setObjectName(u"excluded_locations_group_box")
+        self.verticalLayout_18 = QVBoxLayout(self.excluded_locations_group_box)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.excluded_locations_filter_layout = QHBoxLayout()
+        self.excluded_locations_filter_layout.setObjectName(u"excluded_locations_filter_layout")
+        self.excluded_locations_category_filters = QComboBox(self.excluded_locations_group_box)
+        self.excluded_locations_category_filters.setObjectName(u"excluded_locations_category_filters")
+
+        self.excluded_locations_filter_layout.addWidget(self.excluded_locations_category_filters)
+
+        self.excluded_locations_free_search = QLineEdit(self.excluded_locations_group_box)
+        self.excluded_locations_free_search.setObjectName(u"excluded_locations_free_search")
+        sizePolicy6.setHeightForWidth(self.excluded_locations_free_search.sizePolicy().hasHeightForWidth())
+        self.excluded_locations_free_search.setSizePolicy(sizePolicy6)
+        self.excluded_locations_free_search.setClearButtonEnabled(True)
+
+        self.excluded_locations_filter_layout.addWidget(self.excluded_locations_free_search)
+
+
+        self.verticalLayout_18.addLayout(self.excluded_locations_filter_layout)
+
+        self.excluded_locations_list_view = QListView(self.excluded_locations_group_box)
+        self.excluded_locations_list_view.setObjectName(u"excluded_locations_list_view")
+        self.excluded_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.excluded_locations_list_view.setProperty("showDropIndicator", False)
+        self.excluded_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.excluded_locations_list_view.setSelectionRectVisible(False)
+
+        self.verticalLayout_18.addWidget(self.excluded_locations_list_view)
+
+
+        self.individual_locations_layout.addWidget(self.excluded_locations_group_box)
+
+
+        self.gridLayout_3.addLayout(self.individual_locations_layout, 3, 1, 1, 1)
+
+        self.location_control_layout = QHBoxLayout()
+        self.location_control_layout.setObjectName(u"location_control_layout")
+        self.shuffles_group_box = QGroupBox(self.locations_tab)
+        self.shuffles_group_box.setObjectName(u"shuffles_group_box")
+        self.verticalLayout_10 = QVBoxLayout(self.shuffles_group_box)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.setting_shuffle_single_gratitude_crystals = QCheckBox(self.shuffles_group_box)
+        self.setting_shuffle_single_gratitude_crystals.setObjectName(u"setting_shuffle_single_gratitude_crystals")
 
-        self.verticalLayout_10.addItem(self.verticalSpacer)
+        self.verticalLayout_10.addWidget(self.setting_shuffle_single_gratitude_crystals)
 
 
-        self.gridLayout_3.addWidget(self.groupBox_2, 1, 0, 1, 1)
+        self.location_control_layout.addWidget(self.shuffles_group_box)
 
-        self.tab_widget.addTab(self.logic_tab, "")
+        self.shops_group_box = QGroupBox(self.locations_tab)
+        self.shops_group_box.setObjectName(u"shops_group_box")
+        self.verticalLayout_15 = QVBoxLayout(self.shops_group_box)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.randomized_shops_label = QLabel(self.shops_group_box)
+        self.randomized_shops_label.setObjectName(u"randomized_shops_label")
+
+        self.verticalLayout_15.addWidget(self.randomized_shops_label)
+
+        self.setting_randomized_shops = QComboBox(self.shops_group_box)
+        self.setting_randomized_shops.setObjectName(u"setting_randomized_shops")
+
+        self.verticalLayout_15.addWidget(self.setting_randomized_shops)
+
+
+        self.location_control_layout.addWidget(self.shops_group_box)
+
+
+        self.gridLayout_3.addLayout(self.location_control_layout, 0, 1, 1, 1)
+
+        self.tab_widget.addTab(self.locations_tab, "")
         self.inventory_tab = QWidget()
         self.inventory_tab.setObjectName(u"inventory_tab")
         self.tab_widget.addTab(self.inventory_tab, "")
+        self.logic_tab = QWidget()
+        self.logic_tab.setObjectName(u"logic_tab")
+        self.gridLayout_5 = QGridLayout(self.logic_tab)
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.logic_rules_group_box = QGroupBox(self.logic_tab)
+        self.logic_rules_group_box.setObjectName(u"logic_rules_group_box")
+        self.horizontalLayout_5 = QHBoxLayout(self.logic_rules_group_box)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.logic_rules_label = QLabel(self.logic_rules_group_box)
+        self.logic_rules_label.setObjectName(u"logic_rules_label")
+
+        self.horizontalLayout_5.addWidget(self.logic_rules_label)
+
+        self.setting_logic_rules = QComboBox(self.logic_rules_group_box)
+        self.setting_logic_rules.setObjectName(u"setting_logic_rules")
+
+        self.horizontalLayout_5.addWidget(self.setting_logic_rules)
+
+        self.logic_rules_hspacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_5.addItem(self.logic_rules_hspacer)
+
+
+        self.gridLayout_5.addWidget(self.logic_rules_group_box, 0, 0, 1, 1)
+
+        self.tricks_group_box = QGroupBox(self.logic_tab)
+        self.tricks_group_box.setObjectName(u"tricks_group_box")
+        sizePolicy.setHeightForWidth(self.tricks_group_box.sizePolicy().hasHeightForWidth())
+        self.tricks_group_box.setSizePolicy(sizePolicy)
+        self.horizontalLayout_6 = QHBoxLayout(self.tricks_group_box)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.precise_items_group_box = QGroupBox(self.tricks_group_box)
+        self.precise_items_group_box.setObjectName(u"precise_items_group_box")
+        self.verticalLayout_20 = QVBoxLayout(self.precise_items_group_box)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.setting_logic_advanced_lizalfos_combat = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_advanced_lizalfos_combat.setObjectName(u"setting_logic_advanced_lizalfos_combat")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_advanced_lizalfos_combat)
+
+        self.setting_logic_skyview_precise_slingshot = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_skyview_precise_slingshot.setObjectName(u"setting_logic_skyview_precise_slingshot")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_skyview_precise_slingshot)
+
+        self.setting_logic_lmf_ceiling_precise_slingshot = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_lmf_ceiling_precise_slingshot.setObjectName(u"setting_logic_lmf_ceiling_precise_slingshot")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_lmf_ceiling_precise_slingshot)
+
+        self.setting_logic_tot_slingshot = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_tot_slingshot.setObjectName(u"setting_logic_tot_slingshot")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_tot_slingshot)
+
+        self.setting_logic_bomb_throws = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_bomb_throws.setObjectName(u"setting_logic_bomb_throws")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_bomb_throws)
+
+        self.setting_logic_lanayru_mine_quick_bomb = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_lanayru_mine_quick_bomb.setObjectName(u"setting_logic_lanayru_mine_quick_bomb")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_lanayru_mine_quick_bomb)
+
+        self.setting_logic_cactus_bomb_whip = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_cactus_bomb_whip.setObjectName(u"setting_logic_cactus_bomb_whip")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_cactus_bomb_whip)
+
+        self.setting_logic_beedles_shop_with_bombs = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_beedles_shop_with_bombs.setObjectName(u"setting_logic_beedles_shop_with_bombs")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_beedles_shop_with_bombs)
+
+        self.setting_logic_bird_nest_item_from_beedles_shop = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_bird_nest_item_from_beedles_shop.setObjectName(u"setting_logic_bird_nest_item_from_beedles_shop")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_bird_nest_item_from_beedles_shop)
+
+        self.setting_logic_precise_beetle = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_precise_beetle.setObjectName(u"setting_logic_precise_beetle")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_precise_beetle)
+
+        self.setting_logic_skippers_fast_clawshots = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_skippers_fast_clawshots.setObjectName(u"setting_logic_skippers_fast_clawshots")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_skippers_fast_clawshots)
+
+        self.setting_logic_lmf_whip_switch = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_lmf_whip_switch.setObjectName(u"setting_logic_lmf_whip_switch")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_lmf_whip_switch)
+
+        self.setting_logic_lmf_whip_armos_room_timeshift_stone = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_lmf_whip_armos_room_timeshift_stone.setObjectName(u"setting_logic_lmf_whip_armos_room_timeshift_stone")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_lmf_whip_armos_room_timeshift_stone)
+
+        self.setting_logic_lmf_minecart_jump = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_lmf_minecart_jump.setObjectName(u"setting_logic_lmf_minecart_jump")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_lmf_minecart_jump)
+
+        self.setting_logic_present_bow_switches = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_present_bow_switches.setObjectName(u"setting_logic_present_bow_switches")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_present_bow_switches)
+
+        self.setting_logic_skykeep_vineclip = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_skykeep_vineclip.setObjectName(u"setting_logic_skykeep_vineclip")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_skykeep_vineclip)
+
+        self.precise_items_vspacer = QSpacerItem(20, 87, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_20.addItem(self.precise_items_vspacer)
+
+
+        self.horizontalLayout_6.addWidget(self.precise_items_group_box)
+
+        self.dives_and_jumps_group_box = QGroupBox(self.tricks_group_box)
+        self.dives_and_jumps_group_box.setObjectName(u"dives_and_jumps_group_box")
+        self.verticalLayout_19 = QVBoxLayout(self.dives_and_jumps_group_box)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.setting_logic_volcanic_island_dive = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_volcanic_island_dive.setObjectName(u"setting_logic_volcanic_island_dive")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_volcanic_island_dive)
+
+        self.setting_logic_east_island_dive = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_east_island_dive.setObjectName(u"setting_logic_east_island_dive")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_east_island_dive)
+
+        self.setting_logic_beedles_island_cage_chest_dive = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_beedles_island_cage_chest_dive.setObjectName(u"setting_logic_beedles_island_cage_chest_dive")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_beedles_island_cage_chest_dive)
+
+        self.setting_logic_gravestone_jump = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_gravestone_jump.setObjectName(u"setting_logic_gravestone_jump")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_gravestone_jump)
+
+        self.setting_logic_waterfall_cave_jump = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_waterfall_cave_jump.setObjectName(u"setting_logic_waterfall_cave_jump")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_waterfall_cave_jump)
+
+        self.setting_logic_early_lake_floria = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_early_lake_floria.setObjectName(u"setting_logic_early_lake_floria")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_early_lake_floria)
+
+        self.setting_logic_ac_lever_jump_trick = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_ac_lever_jump_trick.setObjectName(u"setting_logic_ac_lever_jump_trick")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_ac_lever_jump_trick)
+
+        self.setting_logic_ac_chest_after_whip_hooks_jump = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_ac_chest_after_whip_hooks_jump.setObjectName(u"setting_logic_ac_chest_after_whip_hooks_jump")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_ac_chest_after_whip_hooks_jump)
+
+        self.setting_logic_sandship_jump_to_stern = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_sandship_jump_to_stern.setObjectName(u"setting_logic_sandship_jump_to_stern")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_sandship_jump_to_stern)
+
+        self.setting_logic_fs_pillar_jump = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_fs_pillar_jump.setObjectName(u"setting_logic_fs_pillar_jump")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_fs_pillar_jump)
+
+        self.dives_and_jumps_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_19.addItem(self.dives_and_jumps_vspacer)
+
+
+        self.horizontalLayout_6.addWidget(self.dives_and_jumps_group_box)
+
+        self.glitches_group_box = QGroupBox(self.tricks_group_box)
+        self.glitches_group_box.setObjectName(u"glitches_group_box")
+        self.verticalLayout_21 = QVBoxLayout(self.glitches_group_box)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.setting_logic_stuttersprint = QCheckBox(self.glitches_group_box)
+        self.setting_logic_stuttersprint.setObjectName(u"setting_logic_stuttersprint")
+
+        self.verticalLayout_21.addWidget(self.setting_logic_stuttersprint)
+
+        self.setting_logic_et_slope_stuttersprint = QCheckBox(self.glitches_group_box)
+        self.setting_logic_et_slope_stuttersprint.setObjectName(u"setting_logic_et_slope_stuttersprint")
+
+        self.verticalLayout_21.addWidget(self.setting_logic_et_slope_stuttersprint)
+
+        self.setting_logic_brakeslide = QCheckBox(self.glitches_group_box)
+        self.setting_logic_brakeslide.setObjectName(u"setting_logic_brakeslide")
+
+        self.verticalLayout_21.addWidget(self.setting_logic_brakeslide)
+
+        self.setting_logic_tot_skip_brakeslide = QCheckBox(self.glitches_group_box)
+        self.setting_logic_tot_skip_brakeslide.setObjectName(u"setting_logic_tot_skip_brakeslide")
+
+        self.verticalLayout_21.addWidget(self.setting_logic_tot_skip_brakeslide)
+
+        self.glitches_vspacer = QSpacerItem(20, 399, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_21.addItem(self.glitches_vspacer)
+
+
+        self.horizontalLayout_6.addWidget(self.glitches_group_box)
+
+        self.miscellaneous_group_box = QGroupBox(self.tricks_group_box)
+        self.miscellaneous_group_box.setObjectName(u"miscellaneous_group_box")
+        self.verticalLayout_22 = QVBoxLayout(self.miscellaneous_group_box)
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.setting_logic_fire_node_without_hook_beetle = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_fire_node_without_hook_beetle.setObjectName(u"setting_logic_fire_node_without_hook_beetle")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_fire_node_without_hook_beetle)
+
+        self.setting_logic_skyview_spider_roll = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_skyview_spider_roll.setObjectName(u"setting_logic_skyview_spider_roll")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_skyview_spider_roll)
+
+        self.setting_logic_et_keese_skyward_strike = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_et_keese_skyward_strike.setObjectName(u"setting_logic_et_keese_skyward_strike")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_et_keese_skyward_strike)
+
+        self.setting_logic_et_bombless_scaldera = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_et_bombless_scaldera.setObjectName(u"setting_logic_et_bombless_scaldera")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_et_bombless_scaldera)
+
+        self.setting_logic_lmf_bellowsless_moldarach = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_lmf_bellowsless_moldarach.setObjectName(u"setting_logic_lmf_bellowsless_moldarach")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_lmf_bellowsless_moldarach)
+
+        self.setting_logic_sandship_itemless_spume = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_sandship_itemless_spume.setObjectName(u"setting_logic_sandship_itemless_spume")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_sandship_itemless_spume)
+
+        self.setting_logic_sandship_no_combination_hint = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_sandship_no_combination_hint.setObjectName(u"setting_logic_sandship_no_combination_hint")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_sandship_no_combination_hint)
+
+        self.setting_logic_fs_practice_sword_ghirahim_2 = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_fs_practice_sword_ghirahim_2.setObjectName(u"setting_logic_fs_practice_sword_ghirahim_2")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_fs_practice_sword_ghirahim_2)
+
+        self.setting_logic_itemless_first_timeshift_stone = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_itemless_first_timeshift_stone.setObjectName(u"setting_logic_itemless_first_timeshift_stone")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_itemless_first_timeshift_stone)
+
+        self.miscellaneous_vspacer = QSpacerItem(20, 237, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_22.addItem(self.miscellaneous_vspacer)
+
+
+        self.horizontalLayout_6.addWidget(self.miscellaneous_group_box)
+
+
+        self.gridLayout_5.addWidget(self.tricks_group_box, 1, 0, 1, 1)
+
+        self.tab_widget.addTab(self.logic_tab, "")
         self.cosmetic_tab = QWidget()
         self.cosmetic_tab.setObjectName(u"cosmetic_tab")
         self.gridLayout_4 = QGridLayout(self.cosmetic_tab)
@@ -682,35 +1054,35 @@ class Ui_main_window(object):
 
         self.seed_layout = QGridLayout()
         self.seed_layout.setObjectName(u"seed_layout")
-        self.seed_label = QLabel(self.central_widget)
-        self.seed_label.setObjectName(u"seed_label")
+        self.copy_setting_string_button = QPushButton(self.central_widget)
+        self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
 
-        self.seed_layout.addWidget(self.seed_label, 1, 0, 1, 1)
-
-        self.new_seed_button = QPushButton(self.central_widget)
-        self.new_seed_button.setObjectName(u"new_seed_button")
-
-        self.seed_layout.addWidget(self.new_seed_button, 1, 3, 1, 1)
+        self.seed_layout.addWidget(self.copy_setting_string_button, 1, 3, 1, 1)
 
         self.setting_seed = QLineEdit(self.central_widget)
         self.setting_seed.setObjectName(u"setting_seed")
 
-        self.seed_layout.addWidget(self.setting_seed, 1, 2, 1, 1)
-
-        self.setting_string_label = QLabel(self.central_widget)
-        self.setting_string_label.setObjectName(u"setting_string_label")
-
-        self.seed_layout.addWidget(self.setting_string_label, 0, 0, 1, 1)
+        self.seed_layout.addWidget(self.setting_seed, 2, 2, 1, 1)
 
         self.setting_string = QLineEdit(self.central_widget)
         self.setting_string.setObjectName(u"setting_string")
 
-        self.seed_layout.addWidget(self.setting_string, 0, 2, 1, 1)
+        self.seed_layout.addWidget(self.setting_string, 1, 2, 1, 1)
 
-        self.copy_setting_string_button = QPushButton(self.central_widget)
-        self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
+        self.new_seed_button = QPushButton(self.central_widget)
+        self.new_seed_button.setObjectName(u"new_seed_button")
 
-        self.seed_layout.addWidget(self.copy_setting_string_button, 0, 3, 1, 1)
+        self.seed_layout.addWidget(self.new_seed_button, 2, 3, 1, 1)
+
+        self.setting_string_label = QLabel(self.central_widget)
+        self.setting_string_label.setObjectName(u"setting_string_label")
+
+        self.seed_layout.addWidget(self.setting_string_label, 1, 0, 1, 1)
+
+        self.seed_label = QLabel(self.central_widget)
+        self.seed_label.setObjectName(u"seed_label")
+
+        self.seed_layout.addWidget(self.seed_label, 2, 0, 1, 1)
 
 
         self.verticalLayout_2.addLayout(self.seed_layout)
@@ -737,11 +1109,11 @@ class Ui_main_window(object):
 
         self.randomize_button = QPushButton(self.central_widget)
         self.randomize_button.setObjectName(u"randomize_button")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
-        self.randomize_button.setSizePolicy(sizePolicy6)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
+        self.randomize_button.setSizePolicy(sizePolicy8)
 
         self.footer_layout.addWidget(self.randomize_button)
 
@@ -752,7 +1124,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(6)
+        self.tab_widget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -801,9 +1173,6 @@ class Ui_main_window(object):
         self.output_label.setText(QCoreApplication.translate("main_window", u"Output", None))
         self.output_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.getting_started_tab), QCoreApplication.translate("main_window", u"Getting Started", None))
-        self.shuffles_group_box.setTitle(QCoreApplication.translate("main_window", u"Shuffles", None))
-        self.randomized_shops_label.setText(QCoreApplication.translate("main_window", u"Randomize Shops", None))
-        self.setting_shuffle_single_gratitude_crystals.setText(QCoreApplication.translate("main_window", u"Single Gratitude Crystals", None))
         self.entrance_randomization_group_box.setTitle(QCoreApplication.translate("main_window", u"Entrance Randomization", None))
         self.setting_randomize_door_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Door Entrances", None))
         self.setting_randomize_interior_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Interior Entrances", None))
@@ -835,10 +1204,71 @@ class Ui_main_window(object):
         self.map_mode_label.setText(QCoreApplication.translate("main_window", u"Dungeon Maps", None))
         self.lanayru_caves_key_label.setText(QCoreApplication.translate("main_window", u"Lanayru Caves Small Key", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.world_tab), QCoreApplication.translate("main_window", u"World", None))
-        self.groupBox.setTitle(QCoreApplication.translate("main_window", u"Locations", None))
-        self.groupBox_2.setTitle(QCoreApplication.translate("main_window", u"Tricks and Logic Breaks", None))
-        self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic", None))
+        self.included_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Locations", None))
+        self.included_locations_category_filters.setPlaceholderText("")
+        self.included_locations_free_search.setText("")
+        self.included_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
+        self.include_location_button.setText(QCoreApplication.translate("main_window", u"Include\n"
+"<---", None))
+        self.exclude_location_button.setText(QCoreApplication.translate("main_window", u"Exclude\n"
+"--->", None))
+        self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))
+        self.excluded_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
+        self.shuffles_group_box.setTitle(QCoreApplication.translate("main_window", u"Shuffles", None))
+        self.setting_shuffle_single_gratitude_crystals.setText(QCoreApplication.translate("main_window", u"Single Gratitude Crystals", None))
+        self.shops_group_box.setTitle(QCoreApplication.translate("main_window", u"Shops", None))
+        self.randomized_shops_label.setText(QCoreApplication.translate("main_window", u"Randomize Shops", None))
+        self.tab_widget.setTabText(self.tab_widget.indexOf(self.locations_tab), QCoreApplication.translate("main_window", u"Locations", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.inventory_tab), QCoreApplication.translate("main_window", u"Inventory", None))
+        self.logic_rules_group_box.setTitle(QCoreApplication.translate("main_window", u"Logic", None))
+        self.logic_rules_label.setText(QCoreApplication.translate("main_window", u"Logic Mode", None))
+        self.tricks_group_box.setTitle(QCoreApplication.translate("main_window", u"Tricks", None))
+        self.precise_items_group_box.setTitle(QCoreApplication.translate("main_window", u"Precise Items", None))
+        self.setting_logic_advanced_lizalfos_combat.setText(QCoreApplication.translate("main_window", u"Advanced Lizalfos Combat", None))
+        self.setting_logic_skyview_precise_slingshot.setText(QCoreApplication.translate("main_window", u"Skyview Temple Precise Slingshot", None))
+        self.setting_logic_lmf_ceiling_precise_slingshot.setText(QCoreApplication.translate("main_window", u"Lanayru Mining Facility Precise Slingshot", None))
+        self.setting_logic_tot_slingshot.setText(QCoreApplication.translate("main_window", u"Temple of Time Precise Slingshot", None))
+        self.setting_logic_bomb_throws.setText(QCoreApplication.translate("main_window", u"Precise Bomb Throws", None))
+        self.setting_logic_lanayru_mine_quick_bomb.setText(QCoreApplication.translate("main_window", u"Lanayru Mine Quick Bomb", None))
+        self.setting_logic_cactus_bomb_whip.setText(QCoreApplication.translate("main_window", u"Whip Bomb Flowers off Cacti", None))
+        self.setting_logic_beedles_shop_with_bombs.setText(QCoreApplication.translate("main_window", u"Beedle's Shop with Bombs", None))
+        self.setting_logic_bird_nest_item_from_beedles_shop.setText(QCoreApplication.translate("main_window", u"Bird's Nest from Beedle's Shop", None))
+        self.setting_logic_precise_beetle.setText(QCoreApplication.translate("main_window", u"Precise Beetle Flying", None))
+        self.setting_logic_skippers_fast_clawshots.setText(QCoreApplication.translate("main_window", u"Skipper's Retreat Fast Clawshots", None))
+        self.setting_logic_lmf_whip_switch.setText(QCoreApplication.translate("main_window", u"Lanayru Mining Facility Whip Switch", None))
+        self.setting_logic_lmf_whip_armos_room_timeshift_stone.setText(QCoreApplication.translate("main_window", u"Lanayru Mining Facility Whip Timeshift Stone", None))
+        self.setting_logic_lmf_minecart_jump.setText(QCoreApplication.translate("main_window", u"Lanayru Mining Facility Ride on Minecart", None))
+        self.setting_logic_present_bow_switches.setText(QCoreApplication.translate("main_window", u"Present Bow Switch Shots", None))
+        self.setting_logic_skykeep_vineclip.setText(QCoreApplication.translate("main_window", u"Sky Keep Vine Clip", None))
+        self.dives_and_jumps_group_box.setTitle(QCoreApplication.translate("main_window", u"Dives and Jumps", None))
+        self.setting_logic_volcanic_island_dive.setText(QCoreApplication.translate("main_window", u"Volcanic Island Dive", None))
+        self.setting_logic_east_island_dive.setText(QCoreApplication.translate("main_window", u"Thunderhead East Island Dive", None))
+        self.setting_logic_beedles_island_cage_chest_dive.setText(QCoreApplication.translate("main_window", u"Beedle's Island Cage Chest Dive", None))
+        self.setting_logic_gravestone_jump.setText(QCoreApplication.translate("main_window", u"Gravestone Jump", None))
+        self.setting_logic_waterfall_cave_jump.setText(QCoreApplication.translate("main_window", u"Waterfall Cave Jump", None))
+        self.setting_logic_early_lake_floria.setText(QCoreApplication.translate("main_window", u"Early Lake Floria Jumpslash", None))
+        self.setting_logic_ac_lever_jump_trick.setText(QCoreApplication.translate("main_window", u"Ancient Cistern Lever Jump", None))
+        self.setting_logic_ac_chest_after_whip_hooks_jump.setText(QCoreApplication.translate("main_window", u"Ancient Cistern Chest after Whip Hooks Jump", None))
+        self.setting_logic_sandship_jump_to_stern.setText(QCoreApplication.translate("main_window", u"Sandship Jump to Stern", None))
+        self.setting_logic_fs_pillar_jump.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Pillar Jump", None))
+        self.glitches_group_box.setTitle(QCoreApplication.translate("main_window", u"Glitches", None))
+        self.setting_logic_stuttersprint.setText(QCoreApplication.translate("main_window", u"Stutter Sprinting", None))
+        self.setting_logic_et_slope_stuttersprint.setText(QCoreApplication.translate("main_window", u"Earth Temple Slope Stuttersprint", None))
+        self.setting_logic_brakeslide.setText(QCoreApplication.translate("main_window", u"Brakesliding", None))
+        self.setting_logic_tot_skip_brakeslide.setText(QCoreApplication.translate("main_window", u"Temple of Time Skip Brakeslide", None))
+        self.miscellaneous_group_box.setTitle(QCoreApplication.translate("main_window", u"Miscellaneous", None))
+        self.setting_logic_fire_node_without_hook_beetle.setText(QCoreApplication.translate("main_window", u"Fire Node without Hook Beetle", None))
+        self.setting_logic_skyview_spider_roll.setText(QCoreApplication.translate("main_window", u"Skyview Temple Spider Roll", None))
+        self.setting_logic_et_keese_skyward_strike.setText(QCoreApplication.translate("main_window", u"Earth Temple Keese Skyward Strike", None))
+        self.setting_logic_et_bombless_scaldera.setText(QCoreApplication.translate("main_window", u"Earth Temple Bomb Flower Scaldera", None))
+        self.setting_logic_lmf_bellowsless_moldarach.setText(QCoreApplication.translate("main_window", u"Lanayru Mining Facility Moldarach\n"
+"without Gust Bellows", None))
+        self.setting_logic_sandship_itemless_spume.setText(QCoreApplication.translate("main_window", u"Sandship Itemless Spume", None))
+        self.setting_logic_sandship_no_combination_hint.setText(QCoreApplication.translate("main_window", u"Sandship No Combination Hint", None))
+        self.setting_logic_fs_practice_sword_ghirahim_2.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Ghirahim 2 with\n"
+"Practice Sword", None))
+        self.setting_logic_itemless_first_timeshift_stone.setText(QCoreApplication.translate("main_window", u"Itemless First Timeshift Stone", None))
+        self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("main_window", u"GroupBox", None))
         self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.cosmetic_tab), QCoreApplication.translate("main_window", u"Cosmetic", None))
@@ -853,12 +1283,12 @@ class Ui_main_window(object):
         self.font_family_combo_box.setPlaceholderText(QCoreApplication.translate("main_window", u"Select Font Family", None))
         self.font_size_label.setText(QCoreApplication.translate("main_window", u"Font Size", None))
         self.font_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
-        self.groupBox_6.setTitle(QCoreApplication.translate("main_window", u"GroupBox", None))
+        self.groupBox_6.setTitle("")
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.accessibility_tab), QCoreApplication.translate("main_window", u"Accessibility", None))
-        self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
+        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
         self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
         self.setting_string_label.setText(QCoreApplication.translate("main_window", u"Setting String", None))
-        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
+        self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
         self.about_button.setText(QCoreApplication.translate("main_window", u"About", None))
         self.reset_button.setText(QCoreApplication.translate("main_window", u"Reset Settings to Default", None))
         self.randomize_button.setText(QCoreApplication.translate("main_window", u"Randomize", None))

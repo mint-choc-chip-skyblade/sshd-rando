@@ -529,7 +529,7 @@
 
 - name: logic_early_lake_floria
   default_option: "off"
-  pretty_name: Early lake Floria
+  pretty_name: Early Lake Floria Jumpslash
   pretty_options:
     - "Off"
     - "On"
@@ -562,7 +562,7 @@
 
 - name: logic_east_island_dive
   default_option: "off"
-  pretty_name: East Island Dive
+  pretty_name: Thunderhead East Island Dive
   pretty_options:
     - "Off"
     - "On"
@@ -606,7 +606,7 @@
 
 - name: logic_bird_nest_item_from_beedles_shop
   default_option: "off"
-  pretty_name: Bird's Nest Item from Beedle's Shop
+  pretty_name: Bird's Nest from Beedle's Shop
   pretty_options:
     - "Off"
     - "On"
@@ -639,7 +639,7 @@
 
 - name: logic_precise_beetle
   default_option: "off"
-  pretty_name: Precise Beetle
+  pretty_name: Precise Beetle Flying
   pretty_options:
     - "Off"
     - "On"
@@ -650,7 +650,7 @@
 
 - name: logic_bomb_throws
   default_option: "off"
-  pretty_name: precise Bomb Throws
+  pretty_name: Precise Bomb Throws
   pretty_options:
     - "Off"
     - "On"
@@ -672,7 +672,7 @@
 
 - name: logic_brakeslide
   default_option: "off"
-  pretty_name: Breakslide
+  pretty_name: Brakesliding
   pretty_options:
     - "Off"
     - "On"
@@ -705,7 +705,7 @@
 
 - name: logic_tot_slingshot
   default_option: "off"
-  pretty_name: Temple of Time Precise Slingshot Shot
+  pretty_name: Temple of Time Precise Slingshot
   pretty_options:
     - "Off"
     - "On"
@@ -727,7 +727,7 @@
 
 - name: logic_cactus_bomb_whip
   default_option: "off"
-  pretty_name: Cactus Bomb Whip Trick
+  pretty_name: Whip Bomb Flowers off Cacti
   pretty_options:
     - "Off"
     - "On"
@@ -749,7 +749,7 @@
 
 - name: logic_skyview_spider_roll
   default_option: "off"
-  pretty_name: Skyview Spider Roll
+  pretty_name: Skyview Temple Spider Roll
   pretty_options:
     - "Off"
     - "On"
@@ -760,7 +760,7 @@
 
 - name: logic_skyview_precise_slingshot
   default_option: "off"
-  pretty_name: Skyview Precise Slingshot Trick
+  pretty_name: Skyview Temple Precise Slingshot
   pretty_options:
     - "Off"
     - "On"
@@ -769,9 +769,9 @@
     - "on":                            "You may need to use the slingshot to precisely hit the crystal at the top of the second hub room to get the Skyview Temple - Item behind Bars."
 
 
-- name: logic_et_keese_yeet
+- name: logic_et_keese_skyward_strike
   default_option: "off"
-  pretty_name: Earth Temple Keese Yeet
+  pretty_name: Earth Temple Keese Skyward Strike
   pretty_options:
     - "Off"
     - "On"
@@ -793,7 +793,7 @@
 
 - name: logic_et_bombless_scaldera
   default_option: "off"
-  pretty_name: Earth Temple Bomb Bag-less Scaldera
+  pretty_name: Earth Temple Bomb Flower Scaldera
   pretty_options:
     - "Off"
     - "On"
@@ -815,7 +815,7 @@
 
 - name: logic_lmf_ceiling_precise_slingshot
   default_option: "off"
-  pretty_name: Lanayru Mining Facility Precise Slingshot Aiming
+  pretty_name: Lanayru Mining Facility Precise Slingshot
   pretty_options:
     - "Off"
     - "On"
@@ -826,7 +826,7 @@
 
 - name: logic_lmf_whip_armos_room_timeshift_stone
   default_option: "off"
-  pretty_name: Lanayru Mining Facility Whip Timeshift Stone in Armos Room
+  pretty_name: Lanayru Mining Facility Whip Timeshift Stone
   pretty_options:
     - "Off"
     - "On"
@@ -837,7 +837,7 @@
 
 - name: logic_lmf_minecart_jump
   default_option: "off"
-  pretty_name: Lanayru Mining Facility Minecart Jump
+  pretty_name: Lanayru Mining Facility Ride on Minecart
   pretty_options:
     - "Off"
     - "On"
@@ -848,7 +848,7 @@
 
 - name: logic_lmf_bellowsless_moldarach
   default_option: "off"
-  pretty_name: Lanayru Mining Facility Moldarach without Gust Bellows
+  pretty_name: Lanayru Mining Facility Moldarach without\nGust Bellows
   pretty_options:
     - "Off"
     - "On"
@@ -879,9 +879,9 @@
     - "on":                            "You may be expected to get the Ancient Cistern - Chest after Whip Hooks by jumping down from the higher platform after exiting the basement via the long thread."
 
 
-- name: logic_sandship_mast_jump
+- name: logic_sandship_jump_to_stern
   default_option: "off"
-  pretty_name: Sandship Mast Jump
+  pretty_name: Sandship Jump to Stern
   pretty_options:
     - "Off"
     - "On"
@@ -925,7 +925,7 @@
 
 - name: logic_fs_practice_sword_ghirahim_2 
   default_option: "off"
-  pretty_name: Fire Sanctuary Ghirahim 2 with Practice Sword
+  pretty_name: Fire Sanctuary Ghirahim 2 with\nPractice Sword
   pretty_options:
     - "Off"
     - "On"
