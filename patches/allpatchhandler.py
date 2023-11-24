@@ -65,6 +65,7 @@ class AllPatchHandler:
         add_dynamic_text_patches(self.world, self.event_patch_handler)
 
         update_progress_value(92)
+        print_progress_text("Patching Events")
         self.event_patch_handler.handle_event_patches(self.conditional_patch_handler)
 
         update_progress_value(99)

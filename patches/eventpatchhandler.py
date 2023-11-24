@@ -13,7 +13,6 @@ from collections import defaultdict
 from pathlib import Path
 from gui.dialog_header import (
     get_progress_value_from_range,
-    print_progress_text,
     update_progress_value,
 )
 from patches.conditionalpatchhandler import ConditionalPatchHandler
@@ -75,7 +74,7 @@ class EventPatchHandler:
             ):
                 msbt_file_name = event_file_path.split("/")[-1]
                 if msbt_file_name[:-5] in self.event_patches:
-                    print_progress_text(f"Patching {msbt_file_name}")
+                    print(f"Patching {msbt_file_name}")
                     msbt_data = event_arc.get_file_data(event_file_path)
 
                     if not msbt_data:
@@ -111,7 +110,7 @@ class EventPatchHandler:
                     or msbf_file_name[:-5] in self.check_patches
                     or msbf_file_name == "003-ItemGet.msbf"
                 ):
-                    print_progress_text(f"Patching {msbf_file_name}")
+                    print(f"Patching {msbf_file_name}")
 
                     if (
                         event_file_data := event_arc.get_file_data(event_file_path)
