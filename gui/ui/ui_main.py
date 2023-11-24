@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QGridLayout,
-    QGroupBox, QHBoxLayout, QLabel, QLayout,
-    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QSpinBox, QTabWidget, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFontComboBox,
+    QGridLayout, QGroupBox, QHBoxLayout, QLabel,
+    QLayout, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QSpacerItem, QSpinBox, QTabWidget,
+    QVBoxLayout, QWidget)
 
 class Ui_main_window(object):
     def setupUi(self, main_window):
@@ -574,8 +574,108 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.advanced_tab, "")
         self.accessibility_tab = QWidget()
         self.accessibility_tab.setObjectName(u"accessibility_tab")
-        self.verticalLayout_3 = QVBoxLayout(self.accessibility_tab)
+        self.horizontalLayout_4 = QHBoxLayout(self.accessibility_tab)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.theming_group_box = QGroupBox(self.accessibility_tab)
+        self.theming_group_box.setObjectName(u"theming_group_box")
+        self.verticalLayout_3 = QVBoxLayout(self.theming_group_box)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.theme_mode_label = QLabel(self.theming_group_box)
+        self.theme_mode_label.setObjectName(u"theme_mode_label")
+
+        self.verticalLayout_3.addWidget(self.theme_mode_label)
+
+        self.theme_mode_combo_box = QComboBox(self.theming_group_box)
+        self.theme_mode_combo_box.setObjectName(u"theme_mode_combo_box")
+
+        self.verticalLayout_3.addWidget(self.theme_mode_combo_box)
+
+        self.theme_presets_label = QLabel(self.theming_group_box)
+        self.theme_presets_label.setObjectName(u"theme_presets_label")
+
+        self.verticalLayout_3.addWidget(self.theme_presets_label)
+
+        self.theme_presets_combo_box = QComboBox(self.theming_group_box)
+        self.theme_presets_combo_box.setObjectName(u"theme_presets_combo_box")
+
+        self.verticalLayout_3.addWidget(self.theme_presets_combo_box)
+
+        self.use_custom_theme_check_box = QCheckBox(self.theming_group_box)
+        self.use_custom_theme_check_box.setObjectName(u"use_custom_theme_check_box")
+
+        self.verticalLayout_3.addWidget(self.use_custom_theme_check_box)
+
+        self.customize_theme_button = QPushButton(self.theming_group_box)
+        self.customize_theme_button.setObjectName(u"customize_theme_button")
+
+        self.verticalLayout_3.addWidget(self.customize_theme_button)
+
+        self.theming_vspacer = QSpacerItem(20, 448, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_3.addItem(self.theming_vspacer)
+
+
+        self.horizontalLayout_4.addWidget(self.theming_group_box)
+
+        self.theming_fonts = QGroupBox(self.accessibility_tab)
+        self.theming_fonts.setObjectName(u"theming_fonts")
+        self.verticalLayout_12 = QVBoxLayout(self.theming_fonts)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.font_family_label = QLabel(self.theming_fonts)
+        self.font_family_label.setObjectName(u"font_family_label")
+
+        self.verticalLayout_12.addWidget(self.font_family_label)
+
+        self.font_family_combo_box = QFontComboBox(self.theming_fonts)
+        self.font_family_combo_box.setObjectName(u"font_family_combo_box")
+        sizePolicy3.setHeightForWidth(self.font_family_combo_box.sizePolicy().hasHeightForWidth())
+        self.font_family_combo_box.setSizePolicy(sizePolicy3)
+        self.font_family_combo_box.setEditable(False)
+        self.font_family_combo_box.setFontFilters(QFontComboBox.ScalableFonts)
+        font = QFont()
+        font.setFamilies([u"Arial"])
+        font.setPointSize(10)
+        self.font_family_combo_box.setCurrentFont(font)
+
+        self.verticalLayout_12.addWidget(self.font_family_combo_box)
+
+        self.font_size_layout = QHBoxLayout()
+        self.font_size_layout.setObjectName(u"font_size_layout")
+        self.font_size_label = QLabel(self.theming_fonts)
+        self.font_size_label.setObjectName(u"font_size_label")
+
+        self.font_size_layout.addWidget(self.font_size_label)
+
+        self.font_size_spin_box = QSpinBox(self.theming_fonts)
+        self.font_size_spin_box.setObjectName(u"font_size_spin_box")
+        sizePolicy5.setHeightForWidth(self.font_size_spin_box.sizePolicy().hasHeightForWidth())
+        self.font_size_spin_box.setSizePolicy(sizePolicy5)
+        self.font_size_spin_box.setMinimum(6)
+        self.font_size_spin_box.setMaximum(14)
+        self.font_size_spin_box.setValue(10)
+
+        self.font_size_layout.addWidget(self.font_size_spin_box)
+
+
+        self.verticalLayout_12.addLayout(self.font_size_layout)
+
+        self.font_reset_button = QPushButton(self.theming_fonts)
+        self.font_reset_button.setObjectName(u"font_reset_button")
+
+        self.verticalLayout_12.addWidget(self.font_reset_button)
+
+        self.fonts_vspacer = QSpacerItem(20, 494, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_12.addItem(self.fonts_vspacer)
+
+
+        self.horizontalLayout_4.addWidget(self.theming_fonts)
+
+        self.groupBox_6 = QGroupBox(self.accessibility_tab)
+        self.groupBox_6.setObjectName(u"groupBox_6")
+
+        self.horizontalLayout_4.addWidget(self.groupBox_6)
+
         self.tab_widget.addTab(self.accessibility_tab, "")
 
         self.verticalLayout_2.addWidget(self.tab_widget)
@@ -652,7 +752,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -743,6 +843,17 @@ class Ui_main_window(object):
         self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.cosmetic_tab), QCoreApplication.translate("main_window", u"Cosmetic", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
+        self.theming_group_box.setTitle(QCoreApplication.translate("main_window", u"Theming", None))
+        self.theme_mode_label.setText(QCoreApplication.translate("main_window", u"Theme Mode", None))
+        self.theme_presets_label.setText(QCoreApplication.translate("main_window", u"Theme Presets", None))
+        self.use_custom_theme_check_box.setText(QCoreApplication.translate("main_window", u"Use Custom Theme", None))
+        self.customize_theme_button.setText(QCoreApplication.translate("main_window", u"Customize Theme", None))
+        self.theming_fonts.setTitle(QCoreApplication.translate("main_window", u"Fonts", None))
+        self.font_family_label.setText(QCoreApplication.translate("main_window", u"Font Family", None))
+        self.font_family_combo_box.setPlaceholderText(QCoreApplication.translate("main_window", u"Select Font Family", None))
+        self.font_size_label.setText(QCoreApplication.translate("main_window", u"Font Size", None))
+        self.font_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
+        self.groupBox_6.setTitle(QCoreApplication.translate("main_window", u"GroupBox", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.accessibility_tab), QCoreApplication.translate("main_window", u"Accessibility", None))
         self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
         self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))

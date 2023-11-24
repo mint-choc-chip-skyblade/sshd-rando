@@ -27,19 +27,30 @@ class Config:
         self.input_dir: Path = None  # type: ignore
         self.plandomizer: bool = False
         self.plandomizer_file: Path = None  # type: ignore
+        self.theme_mode: str = None  # type: ignore
+        self.theme_presets: str = None  # type: ignore
+        self.use_custom_theme: bool = False
+        self.font_family: str = None  # type: ignore
+        self.font_size: int = 0
 
 
 def create_default_config(filename: Path):
-    conf = Config()
-    conf.output_dir = Path("./output")
-    conf.input_dir = Path("./title")
-    conf.seed = str(random.randint(0, 0x80000000))
-    conf.plandomizer = False
-    conf.plandomizer_file = None  # type: ignore
-    conf.generate_spoiler_log = True
+    config = Config()
+    config.output_dir = Path("./output")
+    config.input_dir = Path("./title")
+    config.seed = str(random.randint(0, 0x80000000))
+    config.plandomizer = False
+    config.plandomizer_file = None  # type: ignore
+    config.generate_spoiler_log = True
 
-    conf.settings.append(SettingMap())
-    setting_map = conf.settings[0]
+    config.theme_mode = "Auto"
+    config.theme_presets = "Default"
+    config.use_custom_theme = False
+    config.font_family = "Lato"
+    config.font_size = 10
+
+    config.settings.append(SettingMap())
+    setting_map = config.settings[0]
     setting_map.starting_inventory = Counter()
     setting_map.excluded_locations = set()
     setting_map.mixed_entrance_pools = []
@@ -51,20 +62,26 @@ def create_default_config(filename: Path):
         new_setting.value = setting_info.options[setting_info.default_option_index]
         setting_map.settings[setting_name] = new_setting
 
-    write_config_to_file(filename, conf)
+    write_config_to_file(filename, config)
 
 
-def write_config_to_file(filename: Path, conf: Config):
+def write_config_to_file(filename: Path, config: Config):
     with open(filename, "w") as config_file:
         config_out = {}
 
-        config_out["seed"] = conf.seed
-        config_out["input_dir"] = conf.input_dir.as_posix()
-        config_out["output_dir"] = conf.output_dir.as_posix()
-        config_out["plandomizer"] = conf.plandomizer
-        config_out["plandomizer_file"] = conf.plandomizer_file
+        config_out["seed"] = config.seed
+        config_out["input_dir"] = config.input_dir.as_posix()
+        config_out["output_dir"] = config.output_dir.as_posix()
+        config_out["plandomizer"] = config.plandomizer
+        config_out["plandomizer_file"] = config.plandomizer_file
 
-        for i, setting_map in enumerate(conf.settings):
+        config_out["theme_mode"] = config.theme_mode
+        config_out["theme_presets"] = config.theme_presets
+        config_out["use_custom_theme"] = config.use_custom_theme
+        config_out["font_family"] = config.font_family
+        config_out["font_size"] = config.font_size
+
+        for i, setting_map in enumerate(config.settings):
             world_num = f"World {i + 1}"
             config_out[world_num] = {}
 
@@ -118,6 +135,12 @@ def load_config_from_file(
         config.output_dir = Path(config_in["output_dir"])
         config.plandomizer = config_in["plandomizer"]
         config.plandomizer_file = config_in["plandomizer_file"]
+
+        config.theme_mode = config_in["theme_mode"]
+        config.theme_presets = config_in["theme_presets"]
+        config.use_custom_theme = config_in["use_custom_theme"]
+        config.font_family = config_in["font_family"]
+        config.font_size = config_in["font_size"]
 
         world_num = 1
         world_num_str = f"World {world_num}"

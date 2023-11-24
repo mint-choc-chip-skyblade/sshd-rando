@@ -15,6 +15,21 @@ OUTPUT_ADDITIONAL_SUBSDK = OUTPUT_PATH / "exefs" / "subsdk8"
 # Config
 CONFIG_PATH = RANDO_ROOT_PATH / "config.yaml"
 
+# GUI Stuff
+THEME_INFO_PATH = RANDO_ROOT_PATH / "gui" / "custom_themes" / "default_theme_info.yaml"
+
+DEFAULT_THEME_PATH = RANDO_ROOT_PATH / "gui" / "custom_themes" / "default_theme.json"
+HIGH_CONTRAST_THEME_PATH = (
+    RANDO_ROOT_PATH / "gui" / "custom_themes" / "high_contrast_theme.json"
+)
+READABILITY_THEME_PATH = (
+    RANDO_ROOT_PATH / "gui" / "custom_themes" / "readability_theme.json"
+)
+CUSTOM_THEME_PATH = RANDO_ROOT_PATH / "custom_theme.json"
+
+LATO_FONT_PATH = RANDO_ROOT_PATH / "assets" / "Lato-Regular.ttf"
+DYSLEXIC_FONT_PATH = RANDO_ROOT_PATH / "assets" / "OpenDyslexic3-Regular.ttf"
+
 # Stage and event stuff
 OARC_CACHE_PATH = RANDO_ROOT_PATH / "oarccache"
 

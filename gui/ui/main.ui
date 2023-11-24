@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tab_widget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -872,7 +872,162 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
        <attribute name="title">
         <string>Accessibility</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_3"/>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QGroupBox" name="theming_group_box">
+          <property name="title">
+           <string>Theming</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="theme_mode_label">
+             <property name="text">
+              <string>Theme Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="theme_mode_combo_box"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="theme_presets_label">
+             <property name="text">
+              <string>Theme Presets</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="theme_presets_combo_box"/>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="use_custom_theme_check_box">
+             <property name="text">
+              <string>Use Custom Theme</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="customize_theme_button">
+             <property name="text">
+              <string>Customize Theme</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="theming_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>448</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="theming_fonts">
+          <property name="title">
+           <string>Fonts</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="QLabel" name="font_family_label">
+             <property name="text">
+              <string>Font Family</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFontComboBox" name="font_family_combo_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+             <property name="placeholderText">
+              <string>Select Font Family</string>
+             </property>
+             <property name="fontFilters">
+              <set>QFontComboBox::ScalableFonts</set>
+             </property>
+             <property name="currentFont">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="font_size_layout">
+             <item>
+              <widget class="QLabel" name="font_size_label">
+               <property name="text">
+                <string>Font Size</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="font_size_spin_box">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimum">
+                <number>6</number>
+               </property>
+               <property name="maximum">
+                <number>14</number>
+               </property>
+               <property name="value">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="font_reset_button">
+             <property name="text">
+              <string>Reset</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="fonts_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>494</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="title">
+           <string>GroupBox</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>

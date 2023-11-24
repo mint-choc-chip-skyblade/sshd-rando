@@ -7,9 +7,11 @@ from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow, QProgressD
 
 from constants.randoconstants import VERSION
 from filepathconstants import ICON_PATH
+
+from gui.accessibility import Accessibility
+from gui.guithreads import RandomizationThread
 from gui.options import Options
 from gui.ui.ui_main import Ui_main_window
-from gui.guithreads import RandomizationThread
 
 
 class Main(QMainWindow):
@@ -31,6 +33,7 @@ class Main(QMainWindow):
         self.ui.tab_widget.setCurrentIndex(0)
 
         self.options = Options(self, self.ui)
+        self.accessibility = Accessibility(self, self.ui)
 
         self.ui.randomize_button.clicked.connect(self.randomize)
         self.ui.about_button.clicked.connect(self.about)
