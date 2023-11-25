@@ -28,9 +28,8 @@ def generate_spoiler_log(worlds: list[World]) -> None:
             spoiler_log.write("\nStarting Inventory:\n")
             for world in worlds_with_starting_inventories:
                 spoiler_log.write(f"    {world}:\n")
-                for item, count in world.starting_item_pool.items():
-                    for _ in range(count):
-                        spoiler_log.write(f"      - {item}\n")
+                for item in sorted(world.starting_item_pool.elements()):
+                    spoiler_log.write(f"      - {item}\n")
 
         # Print Required dungeons if there are any
         if worlds_with_requried_dungeons := [
