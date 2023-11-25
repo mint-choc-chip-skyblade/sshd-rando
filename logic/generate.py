@@ -57,6 +57,9 @@ def generate_randomizer(config: Config) -> list[World]:
         for name, setting in setting_map.settings.items():
             if setting.info.type == SettingType.STANDARD:
                 hash_str += name + setting.value
+            else:
+                # If any non-standard settings are random, resolve them now before seeding
+                setting.resolve_if_random()
 
     if config.plandomizer:
         with open(config.plandomizer_file) as plando_file:
@@ -74,12 +77,9 @@ def generate_randomizer(config: Config) -> list[World]:
         setting_map = config.settings[i]
         worlds.append(World(i))
         print(f"Building {worlds[i]}")
-
-        # TODO: Resolve Random Settings
-        # TODO: Resolve Cosmetic Choices
-        # TODO: Resolve Setting Conflicts
-
         worlds[i].setting_map = setting_map
+        worlds[i].resolve_random_settings()
+        worlds[i].resolve_conflicting_settings()
         worlds[i].num_worlds = len(config.settings)
         worlds[i].config = config
         worlds[i].build()
