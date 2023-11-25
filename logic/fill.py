@@ -61,24 +61,12 @@ def assumed_fill(
     allowed_locations: list[Location],
     world_to_fill: int = -1,
 ) -> None:
-    # Create a set of valid location_access spots from the list of allowed locations
-    valid_locations: list[LocationAccess] = []
-    for world in worlds:
-        for area in world.areas.values():
-            valid_locations.extend(
-                [
-                    la
-                    for la in area.locations
-                    if la.location.is_empty() and la.location in allowed_locations
-                ]
-            )
-
     retries: int = 10
     unsuccessful_placement: bool = True
     while unsuccessful_placement:
         if retries <= 0:
             raise FillError(
-                f"Ran out of retries while attempting to place items: {[item.name for item in items_to_place]}"
+                f"Ran out of retries while attempting to place items: {[item.name for item in items_to_place_list]}"
             )
         retries -= 1
         unsuccessful_placement = False
@@ -91,7 +79,7 @@ def assumed_fill(
             # Get a random item to place
             item_to_place = items_to_place.pop()
 
-            random.shuffle(valid_locations)
+            random.shuffle(allowed_locations)
             spot_to_fill: Location = None
 
             # Assume we have all the items which haven't been placed yet except the one we're about to place
@@ -103,17 +91,24 @@ def assumed_fill(
             search.search_worlds()
 
             # Loop through the shuffled locations until we find a valid one
-            for loc_acesss in valid_locations:
-                if (
-                    not loc_acesss.location.is_empty()
-                    or loc_acesss.area not in search.visited_areas
-                ):
+            for location in allowed_locations:
+                loc_acc_list = [
+                    la
+                    for la in location.loc_access_list
+                    if la.area in search.visited_areas
+                ]
+                if not location.is_empty() or not loc_acc_list:
                     continue
-                if (
-                    evaluate_location_requirement(search, loc_acesss)
-                    == EvalSuccess.COMPLETE
+
+                if any(
+                    [
+                        True
+                        for la in loc_acc_list
+                        if evaluate_location_requirement(search, la)
+                        == EvalSuccess.COMPLETE
+                    ]
                 ):
-                    spot_to_fill = loc_acesss.location
+                    spot_to_fill = location
                     break
 
             if spot_to_fill == None:
