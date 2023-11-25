@@ -455,7 +455,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
         <item row="0" column="1">
          <widget class="QGroupBox" name="open_world_group_box">
           <property name="title">
-           <string>Open World</string>
+           <string>Open World and Shortcuts</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_14">
            <item>
@@ -497,6 +497,13 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            </item>
            <item>
             <widget class="QComboBox" name="setting_open_lmf"/>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_fs_lava_flow">
+             <property name="text">
+              <string>Skip Fire Sanctuary Lava Chase</string>
+             </property>
+            </widget>
            </item>
            <item>
             <spacer name="open_world_vspacer">
@@ -615,87 +622,6 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            </item>
            <item>
             <spacer name="hint_placements_vspacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <widget class="QGroupBox" name="entrance_randomization_group_box">
-          <property name="title">
-           <string>Entrance Randomization</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_17">
-           <item>
-            <widget class="QCheckBox" name="setting_randomize_door_entrances">
-             <property name="text">
-              <string>Randomize Door Entrances</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_randomize_interior_entrances">
-             <property name="text">
-              <string>Randomize Interior Entrances</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_randomize_overworld_entrances">
-             <property name="text">
-              <string>Randomize Overworld Entrances</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_randomize_dungeon_entrances">
-             <property name="text">
-              <string>Randomize Dungeon Entrances</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_randomize_trial_gate_entrances">
-             <property name="text">
-              <string>Randomize Trial Gate Entrances</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="random_starting_spawn_label">
-             <property name="text">
-              <string>Randomize Starting Spawn</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_random_starting_spawn"/>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_decouple_double_doors">
-             <property name="text">
-              <string>Decouple Double Door Entrances</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_decouple_entrances">
-             <property name="text">
-              <string>Decouple Entrances</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="entrance_randomization_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
@@ -830,7 +756,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           </layout>
          </widget>
         </item>
-        <item row="1" column="2">
+        <item row="0" column="3">
          <widget class="QGroupBox" name="tweaks_group_box">
           <property name="title">
            <string>Tweaks</string>
@@ -896,28 +822,137 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           </layout>
          </widget>
         </item>
-        <item row="1" column="3">
-         <widget class="QGroupBox" name="shortcuts_group_box">
+        <item row="1" column="2">
+         <widget class="QGroupBox" name="entrance_randomization_group_box">
           <property name="title">
-           <string>Shortcuts</string>
+           <string>Entrance Randomization</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_25">
+          <layout class="QVBoxLayout" name="verticalLayout_17">
            <item>
-            <widget class="QCheckBox" name="setting_fs_lava_flow">
+            <widget class="QCheckBox" name="setting_randomize_door_entrances">
              <property name="text">
-              <string>Skip Fire Sanctuary Lava Chase</string>
+              <string>Randomize Door Entrances</string>
              </property>
             </widget>
            </item>
            <item>
-            <spacer name="verticalSpacer_2">
+            <widget class="QCheckBox" name="setting_randomize_interior_entrances">
+             <property name="text">
+              <string>Randomize Interior Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_randomize_overworld_entrances">
+             <property name="text">
+              <string>Randomize Overworld Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_randomize_dungeon_entrances">
+             <property name="text">
+              <string>Randomize Dungeon Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_randomize_trial_gate_entrances">
+             <property name="text">
+              <string>Randomize Trial Gate Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="random_starting_spawn_label">
+             <property name="text">
+              <string>Randomize Starting Spawn</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_random_starting_spawn"/>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_decouple_double_doors">
+             <property name="text">
+              <string>Decouple Double Door Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_decouple_entrances">
+             <property name="text">
+              <string>Decouple Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="entrance_randomization_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
-               <height>252</height>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QGroupBox" name="mixed_pools_group_box">
+          <property name="title">
+           <string>Mixed Pools Entrance Randomization</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_25">
+           <item>
+            <widget class="QCheckBox" name="mixed_pools_door">
+             <property name="text">
+              <string>Include Door Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="mixed_pools_interior">
+             <property name="text">
+              <string>Include Interior Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="mixed_pools_overworld">
+             <property name="text">
+              <string>Include Overworld Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="mixed_pools_dungeon">
+             <property name="text">
+              <string>Include Dungeon Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="mixed_pools_trial_gate">
+             <property name="text">
+              <string>Include Trial Gate Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="mixed_pools_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>148</height>
               </size>
              </property>
             </spacer>

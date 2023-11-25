@@ -328,6 +328,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_14.addWidget(self.setting_open_lmf)
 
+        self.setting_fs_lava_flow = QCheckBox(self.open_world_group_box)
+        self.setting_fs_lava_flow.setObjectName(u"setting_fs_lava_flow")
+
+        self.verticalLayout_14.addWidget(self.setting_fs_lava_flow)
+
         self.open_world_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_14.addItem(self.open_world_vspacer)
@@ -421,62 +426,6 @@ class Ui_main_window(object):
 
 
         self.gridLayout_2.addWidget(self.hint_placements_group_box, 1, 1, 1, 1)
-
-        self.entrance_randomization_group_box = QGroupBox(self.world_tab)
-        self.entrance_randomization_group_box.setObjectName(u"entrance_randomization_group_box")
-        self.verticalLayout_17 = QVBoxLayout(self.entrance_randomization_group_box)
-        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.setting_randomize_door_entrances = QCheckBox(self.entrance_randomization_group_box)
-        self.setting_randomize_door_entrances.setObjectName(u"setting_randomize_door_entrances")
-
-        self.verticalLayout_17.addWidget(self.setting_randomize_door_entrances)
-
-        self.setting_randomize_interior_entrances = QCheckBox(self.entrance_randomization_group_box)
-        self.setting_randomize_interior_entrances.setObjectName(u"setting_randomize_interior_entrances")
-
-        self.verticalLayout_17.addWidget(self.setting_randomize_interior_entrances)
-
-        self.setting_randomize_overworld_entrances = QCheckBox(self.entrance_randomization_group_box)
-        self.setting_randomize_overworld_entrances.setObjectName(u"setting_randomize_overworld_entrances")
-
-        self.verticalLayout_17.addWidget(self.setting_randomize_overworld_entrances)
-
-        self.setting_randomize_dungeon_entrances = QCheckBox(self.entrance_randomization_group_box)
-        self.setting_randomize_dungeon_entrances.setObjectName(u"setting_randomize_dungeon_entrances")
-
-        self.verticalLayout_17.addWidget(self.setting_randomize_dungeon_entrances)
-
-        self.setting_randomize_trial_gate_entrances = QCheckBox(self.entrance_randomization_group_box)
-        self.setting_randomize_trial_gate_entrances.setObjectName(u"setting_randomize_trial_gate_entrances")
-
-        self.verticalLayout_17.addWidget(self.setting_randomize_trial_gate_entrances)
-
-        self.random_starting_spawn_label = QLabel(self.entrance_randomization_group_box)
-        self.random_starting_spawn_label.setObjectName(u"random_starting_spawn_label")
-
-        self.verticalLayout_17.addWidget(self.random_starting_spawn_label)
-
-        self.setting_random_starting_spawn = QComboBox(self.entrance_randomization_group_box)
-        self.setting_random_starting_spawn.setObjectName(u"setting_random_starting_spawn")
-
-        self.verticalLayout_17.addWidget(self.setting_random_starting_spawn)
-
-        self.setting_decouple_double_doors = QCheckBox(self.entrance_randomization_group_box)
-        self.setting_decouple_double_doors.setObjectName(u"setting_decouple_double_doors")
-
-        self.verticalLayout_17.addWidget(self.setting_decouple_double_doors)
-
-        self.setting_decouple_entrances = QCheckBox(self.entrance_randomization_group_box)
-        self.setting_decouple_entrances.setObjectName(u"setting_decouple_entrances")
-
-        self.verticalLayout_17.addWidget(self.setting_decouple_entrances)
-
-        self.entrance_randomization_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_17.addItem(self.entrance_randomization_vspacer)
-
-
-        self.gridLayout_2.addWidget(self.entrance_randomization_group_box, 0, 3, 1, 1)
 
         self.hints_group_box = QGroupBox(self.world_tab)
         self.hints_group_box.setObjectName(u"hints_group_box")
@@ -610,23 +559,99 @@ class Ui_main_window(object):
         self.verticalLayout.addItem(self.tweaks_vspacer)
 
 
-        self.gridLayout_2.addWidget(self.tweaks_group_box, 1, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.tweaks_group_box, 0, 3, 1, 1)
 
-        self.shortcuts_group_box = QGroupBox(self.world_tab)
-        self.shortcuts_group_box.setObjectName(u"shortcuts_group_box")
-        self.verticalLayout_25 = QVBoxLayout(self.shortcuts_group_box)
+        self.entrance_randomization_group_box = QGroupBox(self.world_tab)
+        self.entrance_randomization_group_box.setObjectName(u"entrance_randomization_group_box")
+        self.verticalLayout_17 = QVBoxLayout(self.entrance_randomization_group_box)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.setting_randomize_door_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_randomize_door_entrances.setObjectName(u"setting_randomize_door_entrances")
+
+        self.verticalLayout_17.addWidget(self.setting_randomize_door_entrances)
+
+        self.setting_randomize_interior_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_randomize_interior_entrances.setObjectName(u"setting_randomize_interior_entrances")
+
+        self.verticalLayout_17.addWidget(self.setting_randomize_interior_entrances)
+
+        self.setting_randomize_overworld_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_randomize_overworld_entrances.setObjectName(u"setting_randomize_overworld_entrances")
+
+        self.verticalLayout_17.addWidget(self.setting_randomize_overworld_entrances)
+
+        self.setting_randomize_dungeon_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_randomize_dungeon_entrances.setObjectName(u"setting_randomize_dungeon_entrances")
+
+        self.verticalLayout_17.addWidget(self.setting_randomize_dungeon_entrances)
+
+        self.setting_randomize_trial_gate_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_randomize_trial_gate_entrances.setObjectName(u"setting_randomize_trial_gate_entrances")
+
+        self.verticalLayout_17.addWidget(self.setting_randomize_trial_gate_entrances)
+
+        self.random_starting_spawn_label = QLabel(self.entrance_randomization_group_box)
+        self.random_starting_spawn_label.setObjectName(u"random_starting_spawn_label")
+
+        self.verticalLayout_17.addWidget(self.random_starting_spawn_label)
+
+        self.setting_random_starting_spawn = QComboBox(self.entrance_randomization_group_box)
+        self.setting_random_starting_spawn.setObjectName(u"setting_random_starting_spawn")
+
+        self.verticalLayout_17.addWidget(self.setting_random_starting_spawn)
+
+        self.setting_decouple_double_doors = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_decouple_double_doors.setObjectName(u"setting_decouple_double_doors")
+
+        self.verticalLayout_17.addWidget(self.setting_decouple_double_doors)
+
+        self.setting_decouple_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_decouple_entrances.setObjectName(u"setting_decouple_entrances")
+
+        self.verticalLayout_17.addWidget(self.setting_decouple_entrances)
+
+        self.entrance_randomization_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_17.addItem(self.entrance_randomization_vspacer)
+
+
+        self.gridLayout_2.addWidget(self.entrance_randomization_group_box, 1, 2, 1, 1)
+
+        self.mixed_pools_group_box = QGroupBox(self.world_tab)
+        self.mixed_pools_group_box.setObjectName(u"mixed_pools_group_box")
+        self.verticalLayout_25 = QVBoxLayout(self.mixed_pools_group_box)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
-        self.setting_fs_lava_flow = QCheckBox(self.shortcuts_group_box)
-        self.setting_fs_lava_flow.setObjectName(u"setting_fs_lava_flow")
+        self.mixed_pools_door = QCheckBox(self.mixed_pools_group_box)
+        self.mixed_pools_door.setObjectName(u"mixed_pools_door")
 
-        self.verticalLayout_25.addWidget(self.setting_fs_lava_flow)
+        self.verticalLayout_25.addWidget(self.mixed_pools_door)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 252, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.mixed_pools_interior = QCheckBox(self.mixed_pools_group_box)
+        self.mixed_pools_interior.setObjectName(u"mixed_pools_interior")
 
-        self.verticalLayout_25.addItem(self.verticalSpacer_2)
+        self.verticalLayout_25.addWidget(self.mixed_pools_interior)
+
+        self.mixed_pools_overworld = QCheckBox(self.mixed_pools_group_box)
+        self.mixed_pools_overworld.setObjectName(u"mixed_pools_overworld")
+
+        self.verticalLayout_25.addWidget(self.mixed_pools_overworld)
+
+        self.mixed_pools_dungeon = QCheckBox(self.mixed_pools_group_box)
+        self.mixed_pools_dungeon.setObjectName(u"mixed_pools_dungeon")
+
+        self.verticalLayout_25.addWidget(self.mixed_pools_dungeon)
+
+        self.mixed_pools_trial_gate = QCheckBox(self.mixed_pools_group_box)
+        self.mixed_pools_trial_gate.setObjectName(u"mixed_pools_trial_gate")
+
+        self.verticalLayout_25.addWidget(self.mixed_pools_trial_gate)
+
+        self.mixed_pools_vspacer = QSpacerItem(20, 148, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_25.addItem(self.mixed_pools_vspacer)
 
 
-        self.gridLayout_2.addWidget(self.shortcuts_group_box, 1, 3, 1, 1)
+        self.gridLayout_2.addWidget(self.mixed_pools_group_box, 1, 3, 1, 1)
 
         self.tab_widget.addTab(self.world_tab, "")
         self.locations_tab = QWidget()
@@ -1315,11 +1340,12 @@ class Ui_main_window(object):
         self.setting_skip_horde.setText(QCoreApplication.translate("main_window", u"Skip The Horde Fight", None))
         self.setting_skip_g3.setText(QCoreApplication.translate("main_window", u"Skip Ghirahim 3 Fight", None))
         self.setting_skip_demise.setText(QCoreApplication.translate("main_window", u"Skip Demise Fight", None))
-        self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))
+        self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World and Shortcuts", None))
         self.open_thunderhead_label.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
         self.open_lake_floria_label.setText(QCoreApplication.translate("main_window", u"Open Lake Floria", None))
         self.open_earth_temple_label.setText(QCoreApplication.translate("main_window", u"Open Earth Temple", None))
         self.open_lmf_label.setText(QCoreApplication.translate("main_window", u"Open Lanyru Mining Facility", None))
+        self.setting_fs_lava_flow.setText(QCoreApplication.translate("main_window", u"Skip Fire Sanctuary Lava Chase", None))
         self.dungeons_group_box.setTitle(QCoreApplication.translate("main_window", u"Dungeon Items", None))
         self.small_keys_label.setText(QCoreApplication.translate("main_window", u"Small Keys", None))
         self.boss_keys_label.setText(QCoreApplication.translate("main_window", u"Boss Keys", None))
@@ -1330,15 +1356,6 @@ class Ui_main_window(object):
         self.setting_fi_hints.setText(QCoreApplication.translate("main_window", u"Fi Hints", None))
         self.setting_impa_sot_hint.setText(QCoreApplication.translate("main_window", u"Past Impa Stone of Trials Hint", None))
         self.song_hints_label.setText(QCoreApplication.translate("main_window", u"Song Hints", None))
-        self.entrance_randomization_group_box.setTitle(QCoreApplication.translate("main_window", u"Entrance Randomization", None))
-        self.setting_randomize_door_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Door Entrances", None))
-        self.setting_randomize_interior_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Interior Entrances", None))
-        self.setting_randomize_overworld_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Overworld Entrances", None))
-        self.setting_randomize_dungeon_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Dungeon Entrances", None))
-        self.setting_randomize_trial_gate_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Trial Gate Entrances", None))
-        self.random_starting_spawn_label.setText(QCoreApplication.translate("main_window", u"Randomize Starting Spawn", None))
-        self.setting_decouple_double_doors.setText(QCoreApplication.translate("main_window", u"Decouple Double Door Entrances", None))
-        self.setting_decouple_entrances.setText(QCoreApplication.translate("main_window", u"Decouple Entrances", None))
         self.hints_group_box.setTitle(QCoreApplication.translate("main_window", u"Hints", None))
         self.path_hints_label.setText(QCoreApplication.translate("main_window", u"Path Hints", None))
         self.barren_hints_label.setText(QCoreApplication.translate("main_window", u"Barren Hints", None))
@@ -1350,8 +1367,21 @@ class Ui_main_window(object):
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
-        self.shortcuts_group_box.setTitle(QCoreApplication.translate("main_window", u"Shortcuts", None))
-        self.setting_fs_lava_flow.setText(QCoreApplication.translate("main_window", u"Skip Fire Sanctuary Lava Chase", None))
+        self.entrance_randomization_group_box.setTitle(QCoreApplication.translate("main_window", u"Entrance Randomization", None))
+        self.setting_randomize_door_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Door Entrances", None))
+        self.setting_randomize_interior_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Interior Entrances", None))
+        self.setting_randomize_overworld_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Overworld Entrances", None))
+        self.setting_randomize_dungeon_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Dungeon Entrances", None))
+        self.setting_randomize_trial_gate_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Trial Gate Entrances", None))
+        self.random_starting_spawn_label.setText(QCoreApplication.translate("main_window", u"Randomize Starting Spawn", None))
+        self.setting_decouple_double_doors.setText(QCoreApplication.translate("main_window", u"Decouple Double Door Entrances", None))
+        self.setting_decouple_entrances.setText(QCoreApplication.translate("main_window", u"Decouple Entrances", None))
+        self.mixed_pools_group_box.setTitle(QCoreApplication.translate("main_window", u"Mixed Pools Entrance Randomization", None))
+        self.mixed_pools_door.setText(QCoreApplication.translate("main_window", u"Include Door Entrances", None))
+        self.mixed_pools_interior.setText(QCoreApplication.translate("main_window", u"Include Interior Entrances", None))
+        self.mixed_pools_overworld.setText(QCoreApplication.translate("main_window", u"Include Overworld Entrances", None))
+        self.mixed_pools_dungeon.setText(QCoreApplication.translate("main_window", u"Include Dungeon Entrances", None))
+        self.mixed_pools_trial_gate.setText(QCoreApplication.translate("main_window", u"Include Trial Gate Entrances", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.world_tab), QCoreApplication.translate("main_window", u"World", None))
         self.included_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Locations", None))
         self.included_locations_category_filters.setPlaceholderText("")
