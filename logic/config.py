@@ -31,7 +31,7 @@ class Config:
 def create_default_config(filename: str):
     conf = Config()
     conf.output_dir = "./output"
-    conf.input_dir = "./base"
+    conf.input_dir = "./title"
     conf.seed = str(random.randint(0, 0x80000000))
     conf.plandomizer = False
     conf.plandomizer_file = None
