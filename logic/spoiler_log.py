@@ -5,7 +5,7 @@ from .entrance_shuffle import create_entrance_pools
 def spoiler_format_location(location: Location, longest_name_length: int) -> str:
     spaces = longest_name_length - len(f"{location}")
     if "Goddess Cube" in location.types:
-        return f"{location}"
+        return f"{location}: {spaces * ' '}Strike Goddess Cube"
     return f"{location}: {spaces * ' '}{location.current_item}"
 
 
@@ -18,21 +18,26 @@ def spoiler_format_entrance(entrance: Entrance, longest_name_length: int) -> str
 
 def generate_spoiler_log(worlds: list[World]) -> None:
     filepath = "Spoiler Log.txt"
+    config = worlds[0].config
     with open(filepath, "w") as spoiler_log:
-        spoiler_log.write(f"Seed: {worlds[0].config.seed}\n")
+        spoiler_log.write(f"seed: {config.seed}\n")
         # Print starting inventories if there are any
-        if any([True for world in worlds if world.starting_item_pool.total() > 0]):
+        if worlds_with_starting_inventories := [
+            w for w in worlds if w.starting_item_pool.total() > 0
+        ]:
             spoiler_log.write("\nStarting Inventory:\n")
-            for world in worlds:
+            for world in worlds_with_starting_inventories:
                 spoiler_log.write(f"    {world}:\n")
                 for item, count in world.starting_item_pool.items():
                     for _ in range(count):
                         spoiler_log.write(f"      - {item}\n")
 
         # Print Required dungeons if there are any
-        if any([True for w in worlds for d in w.dungeons.values() if d.required]):
+        if worlds_with_requried_dungeons := [
+            w for w in worlds if any([True for d in w.dungeons.values() if d.required])
+        ]:
             spoiler_log.write("\nRequired Dungeons:\n")
-            for world in worlds:
+            for world in worlds_with_requried_dungeons:
                 spoiler_log.write(f"    {world}:\n")
                 for dungeon in world.dungeons.values():
                     if dungeon.required:
@@ -107,9 +112,11 @@ def generate_spoiler_log(worlds: list[World]) -> None:
             for entrance in world.get_shuffled_entrances():
                 longest_name_length = max(longest_name_length, len(f"{entrance}"))
 
-        if any([len(world.get_shuffled_entrances()) for world in worlds]):
+        if worlds_with_shuffled_entrances := [
+            w for w in worlds if len(w.get_shuffled_entrances()) > 0
+        ]:
             spoiler_log.write("\nAll Entrances:\n")
-            for world in worlds:
+            for world in worlds_with_shuffled_entrances:
                 spoiler_log.write(f"    {world}:\n")
                 entrance_pools = create_entrance_pools(world)
                 for entrance_type, pool in entrance_pools.items():
@@ -124,6 +131,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                             + "\n"
                         )
 
+        # Print hints if there are any
         if worlds_with_hints := [
             world
             for world in worlds
@@ -158,5 +166,32 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 if world.impa_sot_hint:
                     spoiler_log.write("        Impa Hint:\n")
                     spoiler_log.write(f"            {world.impa_sot_hint}\n")
+
+        # Settings
+        spoiler_log.write(f"\n# Settings\n")
+        spoiler_log.write(f"input_dir: {config.input_dir}\n")
+        spoiler_log.write(f"output_dir: {config.output_dir}\n")
+        spoiler_log.write(f"plandomizer: {config.plandomizer}\n")
+        spoiler_log.write(
+            f"plandomizer_file: {config.plandomizer_file if config.plandomizer_file else 'null'}\n"
+        )
+        for world in worlds:
+            spoiler_log.write(f"{world}:\n")
+            for setting in world.setting_map.settings.values():
+                if setting.is_using_random_option:
+                    spoiler_log.write(
+                        f"    {setting.name}: '{setting.info.random_option}' # chose {setting.value}\n"
+                    )
+                else:
+                    spoiler_log.write(f"    {setting.name}: '{setting.value}'\n")
+            spoiler_log.write(
+                f"    starting_inventory: {sorted(world.setting_map.starting_inventory.elements())}\n"
+            )
+            spoiler_log.write(
+                f"    excluded_locations: {list(world.setting_map.excluded_locations)}\n"
+            )
+            spoiler_log.write(
+                f"    mixed_entrance_pools: {world.setting_map.mixed_entrance_pools}\n"
+            )
 
     print(f"Generated Spoiler Log at {filepath}")
