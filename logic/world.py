@@ -332,6 +332,17 @@ class World:
         generate_item_pool(self)
         generate_starting_item_pool(self)
 
+    def resolve_random_settings(self) -> None:
+        # Use the randomness from the seed for resolving standard settings
+        for setting in self.setting_map.settings.values():
+            if setting.info.type == SettingType.STANDARD:
+                setting.resolve_if_random()
+
+    def resolve_conflicting_settings(self) -> None:
+        # Resolve any conflicting settings here if we ever
+        # find any
+        pass
+
     def place_hardcoded_items(self) -> None:
         defeat_demise = self.get_location("Hylia's Realm - Defeat Demise")
         defeat_demise.set_current_item(self.get_item("Game Beatable"))
