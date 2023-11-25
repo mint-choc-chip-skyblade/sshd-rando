@@ -78,7 +78,7 @@ class Setting:
 
 class SettingMap:
     def __init__(self) -> None:
-        self.settings: dict[str, Setting] = {}
+        self.settings: OrderedDict[str, Setting] = {}
         self.starting_inventory: Counter[str] = Counter()
         self.excluded_locations: set = set()
         self.mixed_entrance_pools: list[list[str]] = []
