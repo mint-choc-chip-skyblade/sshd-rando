@@ -40,7 +40,7 @@ class Item:
         if other == None:
             return False
         return self.id == other.id and self.world.id == other.world.id
-    
+
     def __lt__(self, other) -> bool:
         if other == None:
             return False
