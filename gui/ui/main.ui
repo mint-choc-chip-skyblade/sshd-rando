@@ -21,7 +21,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -381,7 +381,255 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
         <string>World</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="1" column="2">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="beat_the_game_group_box">
+          <property name="title">
+           <string>Beat the Game</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <layout class="QHBoxLayout" name="required_dungeons_layout">
+             <item>
+              <widget class="QLabel" name="required_dungeons_label">
+               <property name="text">
+                <string>Required Dungeons</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_required_dungeons">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_empty_unrequired_dungeons">
+             <property name="text">
+              <string>Barren Unrequired Dungeons</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_skip_horde">
+             <property name="text">
+              <string>Skip The Horde Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_skip_g3">
+             <property name="text">
+              <string>Skip Ghirahim 3 Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_skip_demise">
+             <property name="text">
+              <string>Skip Demise Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="beat_the_game_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="open_world_group_box">
+          <property name="title">
+           <string>Open World</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QLabel" name="open_thunderhead_label">
+             <property name="text">
+              <string>Open Thunderhead</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_thunderhead"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="open_lake_floria_label">
+             <property name="text">
+              <string>Open Lake Floria</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_lake_floria"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="open_earth_temple_label">
+             <property name="text">
+              <string>Open Earth Temple</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_earth_temple"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="open_lmf_label">
+             <property name="text">
+              <string>Open Lanyru Mining Facility</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_lmf"/>
+           </item>
+           <item>
+            <spacer name="open_world_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="dungeons_group_box">
+          <property name="title">
+           <string>Dungeon Items</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QLabel" name="small_keys_label">
+             <property name="text">
+              <string>Small Keys</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_small_keys"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="boss_keys_label">
+             <property name="text">
+              <string>Boss Keys</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_boss_keys"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="map_mode_label">
+             <property name="text">
+              <string>Dungeon Maps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_map_mode"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="lanayru_caves_key_label">
+             <property name="text">
+              <string>Lanayru Caves Small Key</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_lanayru_caves_key"/>
+           </item>
+           <item>
+            <spacer name="dungeons_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QGroupBox" name="hint_placements_group_box">
+          <property name="title">
+           <string>Hint Placements</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_24">
+           <item>
+            <widget class="QCheckBox" name="setting_gossip_stone_hints">
+             <property name="text">
+              <string>Gossip Stone Hints</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_fi_hints">
+             <property name="text">
+              <string>Fi Hints</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_impa_sot_hint">
+             <property name="text">
+              <string>Past Impa Stone of Trials Hint</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="song_hints_label">
+             <property name="text">
+              <string>Song Hints</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_song_hints"/>
+           </item>
+           <item>
+            <spacer name="hint_placements_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="3">
          <widget class="QGroupBox" name="entrance_randomization_group_box">
           <property name="title">
            <string>Entrance Randomization</string>
@@ -462,54 +710,112 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           </layout>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="QGroupBox" name="open_world_group_box">
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="hints_group_box">
           <property name="title">
-           <string>Open World</string>
+           <string>Hints</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_14">
+          <layout class="QVBoxLayout" name="verticalLayout_23">
            <item>
-            <widget class="QLabel" name="open_thunderhead_label">
+            <layout class="QHBoxLayout" name="path_hints_layout">
+             <item>
+              <widget class="QLabel" name="path_hints_label">
+               <property name="text">
+                <string>Path Hints</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_path_hints">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="barren_hints_layout">
+             <item>
+              <widget class="QLabel" name="barren_hints_label">
+               <property name="text">
+                <string>Barren Hints</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_barren_hints">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="location_hints_layout">
+             <item>
+              <widget class="QLabel" name="location_hints_label">
+               <property name="text">
+                <string>Location Hints</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_location_hints">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="item_hints_layout">
+             <item>
+              <widget class="QLabel" name="item_hints_label">
+               <property name="text">
+                <string>Item Hints</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_item_hints">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_always_hints">
              <property name="text">
-              <string>Open Thunderhead</string>
+              <string>Prioritize Remote Location Hints</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="setting_open_thunderhead"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="open_lake_floria_label">
+            <widget class="QCheckBox" name="setting_cryptic_hint_text">
              <property name="text">
-              <string>Open Lake Floria</string>
+              <string>Cryptic Hint Text</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="setting_open_lake_floria"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="open_earth_temple_label">
-             <property name="text">
-              <string>Open Earth Temple</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_open_earth_temple"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="open_lmf_label">
-             <property name="text">
-              <string>Open Lanyru Mining Facility</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_open_lmf"/>
-           </item>
-           <item>
-            <spacer name="open_world_vspacer">
+            <spacer name="verticalSpacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
@@ -524,7 +830,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           </layout>
          </widget>
         </item>
-        <item row="1" column="0">
+        <item row="1" column="2">
          <widget class="QGroupBox" name="tweaks_group_box">
           <property name="title">
            <string>Tweaks</string>
@@ -575,13 +881,6 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_fs_lava_flow">
-             <property name="text">
-              <string>Skip Fire Sanctuary Lava Chase</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <spacer name="tweaks_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
@@ -597,132 +896,28 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           </layout>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QGroupBox" name="beat_the_game_group_box">
+        <item row="1" column="3">
+         <widget class="QGroupBox" name="shortcuts_group_box">
           <property name="title">
-           <string>Beat the Game</string>
+           <string>Shortcuts</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_13">
+          <layout class="QVBoxLayout" name="verticalLayout_25">
            <item>
-            <layout class="QHBoxLayout" name="required_dungeons_layout">
-             <item>
-              <widget class="QLabel" name="required_dungeons_label">
-               <property name="text">
-                <string>Required Dungeons</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="setting_required_dungeons">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_empty_unrequired_dungeons">
+            <widget class="QCheckBox" name="setting_fs_lava_flow">
              <property name="text">
-              <string>Barren Unrequired Dungeons</string>
+              <string>Skip Fire Sanctuary Lava Chase</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_skip_horde">
-             <property name="text">
-              <string>Skip The Horde Fight</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_skip_g3">
-             <property name="text">
-              <string>Skip Ghirahim 3 Fight</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_skip_demise">
-             <property name="text">
-              <string>Skip Demise Fight</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="beat_the_game_vspacer">
+            <spacer name="verticalSpacer_2">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QGroupBox" name="dungeons_group_box">
-          <property name="title">
-           <string>Dungeon Items</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_16">
-           <item>
-            <widget class="QLabel" name="small_keys_label">
-             <property name="text">
-              <string>Small Keys</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_small_keys"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="boss_keys_label">
-             <property name="text">
-              <string>Boss Keys</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_boss_keys"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="map_mode_label">
-             <property name="text">
-              <string>Dungeon Maps</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_map_mode"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="lanayru_caves_key_label">
-             <property name="text">
-              <string>Lanayru Caves Small Key</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_lanayru_caves_key"/>
-           </item>
-           <item>
-            <spacer name="dungeons_vspacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
+               <height>252</height>
               </size>
              </property>
             </spacer>
