@@ -1,5 +1,7 @@
 from collections import Counter, OrderedDict
 import yaml
+import random
+import logging
 
 from gui.dialog_header import print_progress_text
 
@@ -69,10 +71,21 @@ class Setting:
     def __str__(self) -> str:
         return self.info.pretty_name
 
+    def resolve_if_random(self) -> None:
+        if self.value == self.info.random_option:
+            self.is_using_random_option = True
+            random_options = self.info.options[
+                self.info.random_low : self.info.random_high + 1
+            ]
+            self.value = random.choice(random_options)
+            logging.getLogger("").debug(
+                f"Chose {self.value} as random option for {self.name}"
+            )
+
 
 class SettingMap:
     def __init__(self) -> None:
-        self.settings: dict[str, Setting] = {}
+        self.settings: OrderedDict[str, Setting] = {}
         self.starting_inventory: Counter[str] = Counter()
         self.excluded_locations: set = set()
         self.mixed_entrance_pools: list[list[str]] = []
