@@ -660,7 +660,7 @@
   - name: Fi Warp Text
     type: textadd
     unk1: 2 # Fi text box background
-    text: "Yes, Master. Which warp would\nyou like to use?\n[1]Warp to Start[2]amiibo[3-]Never mind."
+    text: ""
   - name: Fi Warp choice
     type: flowadd
     flow:
