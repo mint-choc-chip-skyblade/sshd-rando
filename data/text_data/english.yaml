@@ -109,6 +109,9 @@
 - name: Item 213 Text
   standard: You got the <s<Sky Keep>> Map!"
 
+- name: Fi Warp Text
+  standard: "Yes, Master. Which warp would\nyou like to use?\n[1]Warp to Start[2]amiibo[3-]Never mind."
+
 - name: Can't buy Pouch text
   standard: "You need an <y<Adventure Pouch>> to buy\nthis!"
 

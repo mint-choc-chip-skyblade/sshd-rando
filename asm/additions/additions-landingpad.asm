@@ -70,6 +70,10 @@ b.eq activation_checks_for_goddess_walls
 cmp w8, #18
 b.eq remove_timeshift_stone_cutscenes
 
+
+cmp w8, #20
+b.eq custom_event_commands
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

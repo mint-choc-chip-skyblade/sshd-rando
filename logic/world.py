@@ -625,7 +625,7 @@ class World:
 
     def get_shuffleable_entrances(
         self,
-        entrance_type: int,
+        entrance_type: str,
         only_primary: bool = False,
     ) -> list[Entrance]:
         entrances = []
@@ -640,7 +640,7 @@ class World:
         return entrances
 
     def get_shuffled_entrances(
-        self, entrance_type: int = "All", only_primary: bool = False
+        self, entrance_type: str = "All", only_primary: bool = False
     ) -> list[Entrance]:
         entrances = self.get_shuffleable_entrances(entrance_type, only_primary)
         return [e for e in entrances if e.shuffled]

@@ -570,7 +570,7 @@ assert_eq_size!([u8; 6], Vec3s);
 #[repr(C, packed(1))]
 pub struct GameReloader {
     pub _0:                       [u8; 0x350],
-    pub trigger_reload:           u16,
+    pub reload_trigger:           u16,
     pub _1:                       [u8; 0x52],
     pub speed_after_reload:       f32,
     pub stamina_after_reload:     u32,
@@ -604,3 +604,50 @@ pub struct StartCount {
 }
 
 assert_eq_size!(u32, StartCount);
+
+#[repr(C, packed(1))]
+pub struct WarpToStartInfo {
+    pub stage_name: [u8; 8],
+    pub room:       u8,
+    pub layer:      u8,
+    pub entrance:   u8,
+    pub night:      u8,
+}
+
+assert_eq_size!([u8; 12], WarpToStartInfo);
+
+// Event Flow stuff
+#[repr(C, packed(1))]
+pub struct ActorEventFlowMgr {
+    vtable:                     u64,
+    msbf_info:                  u64,
+    current_flow_index:         u32,
+    unk1:                       u32,
+    unk2:                       u32,
+    unk3:                       u32,
+    result_from_previous_check: u32,
+    current_text_label_name:    [u8; 32],
+    unk4:                       u32,
+    unk5:                       u32,
+    unk6:                       u32,
+    next_flow_delay_timer:      u32,
+    another_flow_element:       EventFlowElement,
+    unk7:                       u32,
+    unk8:                       u32,
+    unk9:                       u32,
+}
+
+#[repr(C, packed(1))]
+pub struct EventFlowElement {
+    pub typ:      u8,
+    pub sub_type: u8,
+    pub pad:      u16,
+    pub param1:   u16,
+    pub param2:   u16,
+    pub next:     u16,
+    pub param3:   u16,
+    pub param4:   u16,
+    pub param5:   u16,
+}
+
+assert_eq_size!([u8; 16], EventFlowElement);

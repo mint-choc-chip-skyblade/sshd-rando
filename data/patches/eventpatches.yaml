@@ -652,6 +652,38 @@
       next: 30
 
 006-8KenseiNormal:
+  - name: Add Fi Warp choice
+    type: flowpatch
+    index: 9
+    flow:
+      next: Fi Warp choice
+  - name: Fi Warp Text
+    type: textadd
+    unk1: 2 # Fi text box background
+    text: "Yes, Master. Which warp would\nyou like to use?\n[1]Warp to Start[2]amiibo[3-]Never mind."
+  - name: Fi Warp choice
+    type: flowadd
+    flow:
+      type: type1
+      next: Fi Warp Switch
+      param3: 68
+      param4: Fi Warp Text
+  - name: Fi Warp Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - Warp to Start
+      - 28
+      - -1
+  - name: Warp to Start
+    type: flowadd
+    flow:
+      type: type3
+      next: -1
+      param3: 70 # Custom command
   - name: Allow Amiibo Warp without actual Amiibo
     type: flowpatch
     index: 28

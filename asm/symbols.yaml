@@ -5,6 +5,7 @@ main:
     FILE_MGR: 0x7102bfdcc0
     INPUT_MGR: 0x7102c02a68
     HARP_RELATED: 0x7102c02c48
+    STAGE_MGR: 0x7102bfdda8
 
     STORYFLAG_MGR: 0x71018321f0
     SCENEFLAG_MGR: 0x7101831ef8
@@ -22,7 +23,7 @@ main:
     STATIC_ENEMY_DEFEATED_FLAGS: 0x71018322f8
 
     # Reloader stuff
-    GAME_RELOADER: 0x7102bfd930
+    GAME_RELOADER_PTR: 0x7102bfd930
     RESPAWN_TYPE: 0x7102bfd960
     CURRENT_STAGE_NAME: 0x7102bfd8d8
     CURRENT_STAGE_SUFFIX: 0x7102bfd8dc
@@ -55,6 +56,7 @@ main:
 
     # Functions
     strlen: 0x710105f5c0
+    GameReloader__actuallyTriggerEntrance: 0x7100e2f0b8
     GameReloader__triggerExit: 0x7100df9478
     GameReloader__triggerEntrance: 0x7100df8dfc
     SceneflagMgr__setFlag: 0x7100b83380
@@ -67,6 +69,7 @@ main:
     # Custom Symbols
     additions_jumptable: 0x710065a070
     STARTFLAGS: 0x712e54b200 # See asmconstants.py for where this number comes from
-    START_COUNTS: 0x712e54b5e8 # STARTFLAGS_OFFSET + MAX_STARFLAGS
+    WARP_TO_START_INFO: 0x712e54b5e8 # STARTFLAGS_OFFSET + MAX_STARFLAGS
+    START_COUNTS: 0x712e54b5f4 # WARP_TO_START_INFO + 12
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
     dAcItem__spawnRandoItemWithParams: 0x71005c2060
