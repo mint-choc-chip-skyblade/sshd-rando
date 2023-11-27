@@ -74,6 +74,9 @@ b.eq remove_timeshift_stone_cutscenes
 cmp w8, #20
 b.eq custom_event_commands
 
+cmp w8, #21
+b.eq warp_to_start
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

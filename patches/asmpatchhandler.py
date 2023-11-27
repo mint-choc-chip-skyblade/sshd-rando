@@ -248,9 +248,16 @@ class ASMPatchHandler:
             )
 
     def patch_starting_entrance(self, output_path: Path, world: World):
-        spawn_info = world.get_entrance(
-            "Link's Spawn -> Knight Academy"
-        ).replaces.spawn_info[0]
+        try:
+            spawn_info = world.get_entrance(
+                "Link's Spawn -> Knight Academy"
+            ).replaces.spawn_info[0]
+        except:
+            spawn_info = world.get_entrance(
+                "Link's Spawn -> Knight Academy"
+            ).spawn_info[0]
+
+        # print(spawn_info)
 
         stage_name: str = spawn_info["stage"]
         layer: int = spawn_info["layer"]

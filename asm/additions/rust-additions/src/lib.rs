@@ -18,11 +18,11 @@ extern "C" {
 
     static FILE_MGR: *mut structs::FileMgr;
     static HARP_RELATED: *mut structs::HarpRelated;
-    static STAGE_MGR: *mut c_void;
+    static STAGE_MGR: *mut structs::dStageMgr;
 
     static STORYFLAG_MGR: *mut structs::FlagMgr;
     static ITEMFLAG_MGR: *mut structs::FlagMgr;
-    static SCENEFLAG_MGR: *mut c_void;
+    static SCENEFLAG_MGR: *mut structs::SceneflagMgr;
     static DUNGEONFLAG_MGR: *mut structs::DungeonflagMgr;
 
     static mut STATIC_STORYFLAGS: [u16; 128];
@@ -44,13 +44,13 @@ extern "C" {
     static mut CURRENT_SOMETHING: u8;
     static mut NEXT_STAGE_NAME: [u8; 8];
     static mut NEXT_STAGE_SUFFIX: [u8; 4];
-    static mut NEXT_FADE_FRAMES: u16;
+    static mut NEXT_TRANSITION_FADE_FRAMES: u16;
     static mut NEXT_ROOM: u8;
     static mut NEXT_LAYER: u8;
     static mut NEXT_ENTRANCE: u8;
     static mut NEXT_NIGHT: u8;
     static mut NEXT_TRIAL: u8;
-    static mut NEXT_SOMETHING: u8;
+    static mut NEXT_UNK: u8;
     static mut CURRENT_LAYER_COPY: u8;
 
     static mut ACTOR_PARAM_SCALE: u64;
@@ -89,7 +89,7 @@ extern "C" {
         unk11: u32,
     );
     fn GameReloader__actuallyTriggerEntrance(
-        dStageMgr: *mut c_void,
+        dStageMgr: *mut structs::dStageMgr,
         room: u8,
         layer: u8,
         entrance: u8,
@@ -99,9 +99,13 @@ extern "C" {
         transition_fade_frames: u16,
         param_9: u8,
     );
-    fn SceneflagMgr__setFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
-    fn SceneflagMgr__unsetFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
-    fn SceneflagMgr__checkFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32) -> u16;
+    fn SceneflagMgr__setFlag(sceneflagMgr: *mut structs::SceneflagMgr, roomid: u32, flag: u32);
+    fn SceneflagMgr__unsetFlag(sceneflagMgr: *mut structs::SceneflagMgr, roomid: u32, flag: u32);
+    fn SceneflagMgr__checkFlag(
+        sceneflagMgr: *mut structs::SceneflagMgr,
+        roomid: u32,
+        flag: u32,
+    ) -> u16;
     fn spawnDrop(
         itemid: structs::ITEMFLAGS,
         roomid: u32,
@@ -137,7 +141,14 @@ pub fn handle_startflags() {
                 // Sceneflags
                 1 => {
                     // flag = 0xFFSS where SS == sceneindex and FF == sceneflag
-                    set_global_sceneflag(flag & 0xFF, flag >> 8);
+                    let sceneindex = flag & 0xFF;
+                    let sceneflag = flag >> 8;
+
+                    if (*SCENEFLAG_MGR).sceneindex == sceneindex {
+                        set_local_sceneflag(sceneflag.into());
+                    }
+
+                    set_global_sceneflag(sceneindex, sceneflag);
                 },
 
                 // Itemflags
@@ -345,7 +356,7 @@ pub fn update_day_night_storyflag() {
         ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);
 
         // Replaced instruction
-        NEXT_SOMETHING = 0xFF;
+        NEXT_UNK = 0xFF;
     }
 
     return;
@@ -621,8 +632,9 @@ pub fn handle_er_cases() {
 
         // Replaced code sets these
         (*GAME_RELOADER_PTR).item_to_use_after_reload = 0xFF;
-        (*GAME_RELOADER_PTR).beedle_shop_spawn_state = 0xFF;
+        (*GAME_RELOADER_PTR).beedle_shop_spawn_state = 0;
         (*GAME_RELOADER_PTR).action_index = 0xFF;
+        (*GAME_RELOADER_PTR).area_type = 0xFF;
     }
 }
 
@@ -745,11 +757,16 @@ pub fn warp_to_start() {
             0xFF,
         );
 
+        (*STAGE_MGR).set_in_actually_trigger_entrance = 0;
+
         NEXT_STAGE_NAME = (*start_info).stage_name; // *b"F001r\0\0\0";
 
         if (*GAME_RELOADER_PTR).reload_trigger == 0x2BF {
             (*GAME_RELOADER_PTR).reload_trigger = 5;
         }
+
+        // Just to be extra safe (fixes some issues with Fi warp)
+        handle_er_cases();
     }
 }
 
