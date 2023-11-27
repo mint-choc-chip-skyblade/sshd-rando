@@ -22,7 +22,7 @@ from logic.world import World
 from patches.asmpatchhelper import NsoOffsets, SegmentHeader
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 
-from sslib.fs_helpers import write_bytes, write_u32, write_u8
+from sslib.fs_helpers import write_bytes, write_str, write_u32, write_u8
 from sslib.utils import write_bytes_create_dirs
 from sslib.yaml import yaml_load, yaml_write
 
@@ -229,6 +229,13 @@ class ASMPatchHandler:
             print("Assembling startflags")
             self.patch_startflags(startflags_diff_file_path, world, onlyif_handler)
 
+            staring_entrance_diff_file_path = (
+                temp_dir_name / "starting-entrance-diff.yaml"
+            )
+
+            print("Patching Starting Entrance")
+            self.patch_starting_entrance(staring_entrance_diff_file_path, world)
+
             print("Applying asm additions")
             self.patch_asm(
                 world,
@@ -239,6 +246,48 @@ class ASMPatchHandler:
                 SUBSDK_NSO_OFFSETS,
                 extra_diffs_path=temp_dir_name,
             )
+
+    def patch_starting_entrance(self, output_path: Path, world: World):
+        try:
+            spawn_info = world.get_entrance(
+                "Link's Spawn -> Knight Academy"
+            ).replaces.spawn_info[0]
+        except:
+            spawn_info = world.get_entrance(
+                "Link's Spawn -> Knight Academy"
+            ).spawn_info[0]
+
+        # print(spawn_info)
+
+        stage_name: str = spawn_info["stage"]
+        layer: int = spawn_info["layer"]
+        room: int = spawn_info["room"]
+        entrance: int = spawn_info["entrance"]
+
+        spawn_data = BytesIO()
+        write_str(spawn_data, 0, stage_name, 8)
+        write_u8(spawn_data, 8, room)
+        write_u8(spawn_data, 9, layer)
+        write_u8(spawn_data, 10, entrance)
+        write_u8(spawn_data, 11, 0)  # night
+
+        # print(spawn_info)
+        # print(spawn_data.getvalue())
+
+        # Convert startflags_data into a list of bytes.
+        spawn_data_bytes = spawn_data.getvalue()
+        assert len(spawn_data_bytes) == 12
+
+        spawn_data_dict = {
+            SUBSDK_WARP_TO_START_OFFSET: list(
+                struct.unpack("B" * len(spawn_data_bytes), spawn_data_bytes)
+            )
+        }
+
+        yaml_write(output_path, spawn_data_dict)
+
+        # Write the startflag binary to a non-temp file.
+        # yaml_write(Path("./test-starting-entrance.yaml"), spawn_data_dict)
 
     def patch_startflags(
         self, output_path: Path, world: World, onlyif_handler: ConditionalPatchHandler
@@ -343,7 +392,7 @@ class ASMPatchHandler:
         yaml_write(output_path, startflags_data_dict)
 
         # Write the startflag binary to a non-temp file.
-        # yaml_write(Path("./test.yaml"), startflags_data_dict)
+        # yaml_write(Path("./test-startflags.yaml"), startflags_data_dict)
 
         # If this fails, the rust struct size will need increasing
         assert len(startflags_data_bytes) < MAX_STARTFLAGS

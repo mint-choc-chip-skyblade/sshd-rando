@@ -18,10 +18,11 @@ extern "C" {
 
     static FILE_MGR: *mut structs::FileMgr;
     static HARP_RELATED: *mut structs::HarpRelated;
+    static STAGE_MGR: *mut structs::dStageMgr;
 
     static STORYFLAG_MGR: *mut structs::FlagMgr;
     static ITEMFLAG_MGR: *mut structs::FlagMgr;
-    static SCENEFLAG_MGR: *mut c_void;
+    static SCENEFLAG_MGR: *mut structs::SceneflagMgr;
     static DUNGEONFLAG_MGR: *mut structs::DungeonflagMgr;
 
     static mut STATIC_STORYFLAGS: [u16; 128];
@@ -31,25 +32,25 @@ extern "C" {
     static mut STATIC_ITEMFLAGS: [u16; 64];
     static mut STATIC_DUNGEONFLAGS: [u16; 8];
 
-    static mut GAME_RELOADER: *mut structs::GameReloader;
+    static mut GAME_RELOADER_PTR: *mut structs::GameReloader;
     static mut RESPAWN_TYPE: u8;
-    static mut CURRENT_STAGE_NAME: [u8; 7];
-    static mut CURRENT_STAGE_SUFFIX: [u8; 3];
+    static mut CURRENT_STAGE_NAME: [u8; 8];
+    static mut CURRENT_STAGE_SUFFIX: [u8; 4];
     static mut CURRENT_FADE_FRAMES: u16;
     static mut CURRENT_ROOM: u8;
     static mut CURRENT_LAYER: u8;
     static mut CURRENT_ENTRANCE: u8;
     static mut CURRENT_NIGHT: u8;
     static mut CURRENT_SOMETHING: u8;
-    static mut NEXT_STAGE_NAME: [u8; 7];
-    static mut NEXT_STAGE_SUFFIX: [u8; 3];
-    static mut NEXT_FADE_FRAMES: u16;
+    static mut NEXT_STAGE_NAME: [u8; 8];
+    static mut NEXT_STAGE_SUFFIX: [u8; 4];
+    static mut NEXT_TRANSITION_FADE_FRAMES: u16;
     static mut NEXT_ROOM: u8;
     static mut NEXT_LAYER: u8;
     static mut NEXT_ENTRANCE: u8;
     static mut NEXT_NIGHT: u8;
     static mut NEXT_TRIAL: u8;
-    static mut NEXT_SOMETHING: u8;
+    static mut NEXT_UNK: u8;
     static mut CURRENT_LAYER_COPY: u8;
 
     static mut ACTOR_PARAM_SCALE: u64;
@@ -62,6 +63,7 @@ extern "C" {
     static ACTOR_ALLOCATOR_DEFINITIONS: u64; // [*const u64; 701];
 
     static STARTFLAGS: [u16; 1000];
+    static WARP_TO_START_INFO: structs::WarpToStartInfo;
     static START_COUNTS: [structs::StartCount; 50];
 
     fn strlen(string: *mut u8) -> u64;
@@ -86,9 +88,24 @@ extern "C" {
         unk10: u32,
         unk11: u32,
     );
-    fn SceneflagMgr__setFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
-    fn SceneflagMgr__unsetFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
-    fn SceneflagMgr__checkFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32) -> u16;
+    fn GameReloader__actuallyTriggerEntrance(
+        dStageMgr: *mut structs::dStageMgr,
+        room: u8,
+        layer: u8,
+        entrance: u8,
+        forced_night: u32,
+        forced_trial: u32,
+        transition_type: u32,
+        transition_fade_frames: u16,
+        param_9: u8,
+    );
+    fn SceneflagMgr__setFlag(sceneflagMgr: *mut structs::SceneflagMgr, roomid: u32, flag: u32);
+    fn SceneflagMgr__unsetFlag(sceneflagMgr: *mut structs::SceneflagMgr, roomid: u32, flag: u32);
+    fn SceneflagMgr__checkFlag(
+        sceneflagMgr: *mut structs::SceneflagMgr,
+        roomid: u32,
+        flag: u32,
+    ) -> u16;
     fn spawnDrop(
         itemid: structs::ITEMFLAGS,
         roomid: u32,
@@ -124,7 +141,14 @@ pub fn handle_startflags() {
                 // Sceneflags
                 1 => {
                     // flag = 0xFFSS where SS == sceneindex and FF == sceneflag
-                    set_global_sceneflag(flag & 0xFF, flag >> 8);
+                    let sceneindex = flag & 0xFF;
+                    let sceneflag = flag >> 8;
+
+                    if (*SCENEFLAG_MGR).sceneindex == sceneindex {
+                        set_local_sceneflag(sceneflag.into());
+                    }
+
+                    set_global_sceneflag(sceneindex, sceneflag);
                 },
 
                 // Itemflags
@@ -332,7 +356,7 @@ pub fn update_day_night_storyflag() {
         ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);
 
         // Replaced instruction
-        NEXT_SOMETHING = 0xFF;
+        NEXT_UNK = 0xFF;
     }
 
     return;
@@ -550,8 +574,8 @@ pub fn handle_er_cases() {
     unsafe {
         // Enforce a max speed after reloading
         // Prevents you running off high ledges from non-vanilla exits
-        if (*GAME_RELOADER).speed_after_reload > 30f32 {
-            (*GAME_RELOADER).speed_after_reload = 30f32;
+        if (*GAME_RELOADER_PTR).speed_after_reload > 30f32 {
+            (*GAME_RELOADER_PTR).speed_after_reload = 30f32;
         }
 
         // If we're spawning from Sky Keep, but Sky Keep hasn't appeared yet,
@@ -582,7 +606,7 @@ pub fn handle_er_cases() {
 
         // If we're about to enter a stage that should have the silent realm effect
         // set it. Otherwise unset it
-        if NEXT_STAGE_NAME[0] == b'S' || &NEXT_STAGE_NAME == b"D003_8\0" {
+        if NEXT_STAGE_NAME[0] == b'S' || &NEXT_STAGE_NAME[..7] == b"D003_8\0" {
             NEXT_TRIAL = 1;
         } else {
             NEXT_TRIAL = 0;
@@ -607,9 +631,10 @@ pub fn handle_er_cases() {
         }
 
         // Replaced code sets these
-        (*GAME_RELOADER).item_to_use_after_reload = 0xFF;
-        (*GAME_RELOADER).beedle_shop_spawn_state = 0xFF;
-        (*GAME_RELOADER).action_index = 0xFF;
+        (*GAME_RELOADER_PTR).item_to_use_after_reload = 0xFF;
+        (*GAME_RELOADER_PTR).beedle_shop_spawn_state = 0;
+        (*GAME_RELOADER_PTR).action_index = 0xFF;
+        (*GAME_RELOADER_PTR).area_type = 0xFF;
     }
 }
 
@@ -651,7 +676,7 @@ pub fn handle_er_action_states() {
         // set Link to always be diving regardless of how he
         // previously entered
         if &CURRENT_STAGE_NAME[..5] == b"F210\0" && CURRENT_ENTRANCE == 0 {
-            (*GAME_RELOADER).action_index = 0x13;
+            (*GAME_RELOADER_PTR).action_index = 0x13;
         }
 
         // Replaced code sets this
@@ -695,6 +720,53 @@ pub fn fix_sky_keep_exit(
                 unk11,
             );
         }
+    }
+}
+
+#[no_mangle]
+pub fn custom_event_commands(
+    actor_event_flow_mgr: *mut structs::ActorEventFlowMgr,
+    p_event_flow_element: *const structs::EventFlowElement,
+) {
+    let event_flow_element = unsafe { &*p_event_flow_element };
+    match event_flow_element.param3 {
+        70 => warp_to_start(),
+        _ => (),
+    }
+
+    unsafe {
+        // Replaced instructions
+        asm!("mov w21, #1", "cmp w8, #0x3f",);
+    }
+}
+
+#[no_mangle]
+pub fn warp_to_start() {
+    unsafe {
+        let start_info = &*(&WARP_TO_START_INFO as *const structs::WarpToStartInfo);
+
+        GameReloader__actuallyTriggerEntrance(
+            STAGE_MGR,
+            (*start_info).room.into(),
+            (*start_info).layer.into(),
+            (*start_info).entrance.into(),
+            (*start_info).night.into(),
+            0,
+            0,
+            0xF,
+            0xFF,
+        );
+
+        (*STAGE_MGR).set_in_actually_trigger_entrance = 0;
+
+        NEXT_STAGE_NAME = (*start_info).stage_name; // *b"F001r\0\0\0";
+
+        if (*GAME_RELOADER_PTR).reload_trigger == 0x2BF {
+            (*GAME_RELOADER_PTR).reload_trigger = 5;
+        }
+
+        // Just to be extra safe (fixes some issues with Fi warp)
+        handle_er_cases();
     }
 }
 
