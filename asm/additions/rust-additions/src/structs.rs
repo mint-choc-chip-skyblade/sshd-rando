@@ -696,3 +696,11 @@ pub struct EventFlowElement {
 }
 
 assert_eq_size!([u8; 16], EventFlowElement);
+
+#[repr(C, packed(1))]
+pub struct TextManagerMaybe {
+    pub unkfiller1:   [u8; 0x29C],
+    pub numeric_args: [u32; 5],
+}
+
+assert_eq_size!([u8; 0x2B0], TextManagerMaybe);
