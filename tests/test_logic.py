@@ -149,7 +149,7 @@ def test_spoiler_as_config() -> None:
 
     with open("config.yaml", "w") as config:
         config.write(log1)
-        worlds = generate("config.yaml")
+        worlds = generate(Path("config.yaml"))
         assert all_locations_reachable(worlds)
 
     with open("Spoiler Log.txt") as second_log:
