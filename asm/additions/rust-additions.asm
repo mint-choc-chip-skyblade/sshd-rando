@@ -67,3 +67,12 @@
 
 .global activation_checks_for_goddess_walls
 .type activation_checks_for_goddess_walls, @function
+
+.global fix_light_pillars
+.type fix_light_pillars, @function
+
+.global custom_event_commands
+.type custom_event_commands, @function
+
+.global warp_to_start
+.type warp_to_start, @function
