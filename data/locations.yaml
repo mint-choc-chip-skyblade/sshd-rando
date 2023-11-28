@@ -75,6 +75,18 @@
   Paths:
     - stage/F000/r0/l0/TBox/71
 
+- name: Upper Skyloft - Stamina Fruit near Knight Academy
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCD7
+
+- name: Upper Skyloft - Stamina Fruit near Goddess Statue
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F000/r0/l0/Item/0xFDE6
+
 - name: Upper Skyloft - Pumpkin Archery -- 600 Points
   original_item: Heart Piece
   type: Minigames
@@ -236,6 +248,41 @@
   Paths:
     - stage/F000/r0/l0/TBox/70
 
+- name: Central Skyloft - Stamina Fruit between Wooden Planks
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCDF
+
+- name: Central Skyloft - Stamina Fruit near Wryna's House
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCDA
+
+- name: Central Skyloft - Stamina Fruit near River
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCD9
+
+- name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCD6
+
+- name: Central Skyloft - Stamina Fruit near Bazaar
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCD9
+
+- name: Central Skyloft - Stamina Fruit near Plaza
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCDE
 ## Goddess Chests
 
 - name: Central Skyloft - West Cliff Goddess Chest
@@ -767,6 +814,30 @@
     - stage/F023/r0/l0/TBox/88
   cube_region: Volcano Summit
 
+- name: Bug Heaven - Stamina Fruit near Start
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F023/r0/l0/Item/0xFC87
+
+- name: Bug Heaven - Stamina Fruit in front of Wooden Plank
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F023/r0/l0/Item/0xFC1C
+
+- name: Bug Heaven - Stamina Fruit in Center Room
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F023/r0/l0/Item/0xFC86
+
+- name: Bug Heaven - Stamina Fruit on top of Slope
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F023/r0/l0/Item/0xFC10
+
 - name: Bug Heaven - Nearby Gossip Stone
   original_item: Nothing
   type: Hint Location
@@ -778,8 +849,6 @@
   type:
   Paths:
     - stage/F023/r0/l0/TBox/94
-
-## Goddess Cubes
 
 - name: Thunderhead East Island - Goddess Chest
   original_item: Rupee Medal
@@ -803,6 +872,156 @@
   cube_region: Lanayru Gorge
 
 # Sealed Grounds:
+
+- name: Sealed Grounds - Spiral Stamina Fruit 1
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC1D
+
+- name: Sealed Grounds - Spiral Stamina Fruit 2
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC2C
+
+- name: Sealed Grounds - Spiral Stamina Fruit 3
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC1C
+
+- name: Sealed Grounds - Spiral Stamina Fruit 4
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC2B
+
+- name: Sealed Grounds - Spiral Stamina Fruit 5
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC1B
+
+- name: Sealed Grounds - Spiral Stamina Fruit 6
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC2A
+
+- name: Sealed Grounds - Spiral Stamina Fruit 7
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC29
+
+- name: Sealed Grounds - Spiral Stamina Fruit 8
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC1A
+
+- name: Sealed Grounds - Spiral Stamina Fruit 9
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC28
+
+- name: Sealed Grounds - Spiral Stamina Fruit 10
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC28
+
+- name: Sealed Grounds - Spiral Stamina Fruit 11
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC27
+
+- name: Sealed Grounds - Spiral Stamina Fruit 12
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC19
+
+- name: Sealed Grounds - Spiral Stamina Fruit 13
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC26
+
+- name: Sealed Grounds - Spiral Stamina Fruit 14
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC25
+
+- name: Sealed Grounds - Spiral Stamina Fruit 15
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC18
+
+- name: Sealed Grounds - Spiral Stamina Fruit 16
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC24
+
+- name: Sealed Grounds - Spiral Stamina Fruit 17
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC23
+
+- name: Sealed Grounds - Spiral Stamina Fruit 18
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC2D
+
+- name: Sealed Grounds - Spiral Stamina Fruit 19
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC22
+
+- name: Sealed Grounds - Spiral Stamina Fruit 20
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC17
+
+- name: Sealed Grounds - Spiral Stamina Fruit 21
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC21
+
+- name: Sealed Grounds - Spiral Stamina Fruit 22
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC20
+
+- name: Sealed Grounds - Spiral Stamina Fruit 23
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC16
+
+- name: Sealed Grounds - Spiral Stamina Fruit 24
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC1F
+
+- name: Sealed Grounds - Spiral Stamina Fruit 25
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+   - stage/F401/r1/l0/Item/FC1E
 
 - name: Sealed Temple - Chest
   original_item: Revitalizing Potion
@@ -906,6 +1125,36 @@
   type: Rupees (No Quick Beetle)
   Paths:
     - stage/F100/r0/l0/Item/44
+
+- name: Faron Woods - Stamina Fruit on Vines below First Log
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F100/r0/l0/Item/60E6
+
+- name: Faron Woods - Stamina Fruit past Empty Slope
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F100/r0/l0/Item/64E5
+
+- name: Faron Woods - Stamina Fruit past Baba Slope
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F100/r0/l0/Item/0CE7
+
+- name: Faron Woods - Stamina Fruit on Vines near Erla
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F100/r0/l0/Item/5CE4
+
+- name: Faron Woods - Stamina Fruit on Vines on Great Tree
+  original_item: Stamina Fruit
+  type: Stamina Fruit
+  Paths:
+    - stage/F100/r0/l0/Item/50E3
 
 - name: Faron Woods - Goddess Cube on West Great Tree near Exit
   original_item: Faron Woods Goddess Cube on West Great Tree near Exit

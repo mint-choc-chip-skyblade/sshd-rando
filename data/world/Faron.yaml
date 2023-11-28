@@ -16,6 +16,32 @@
   exits:
     Sealed Temple: Nothing
     Sealed Grounds: "'Can_Defeat_Imprisoned_2'" # Needed for Groosenator access to climb back up
+  locations:
+    Sealed Grounds - Spiral Stamina Fruit 1: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 2: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 3: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 4: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 5: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 6: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 7: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 8: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 9: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 10: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 11: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 12: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 13: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 14: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 15: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 16: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 17: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 18: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 19: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 20: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 21: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 22: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 23: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 24: Nothing
+    Sealed Grounds - Spiral Stamina Fruit 25: Nothing
 
 
 - name: Sealed Grounds Upper Ledge

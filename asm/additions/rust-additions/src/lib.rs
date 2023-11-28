@@ -538,7 +538,20 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
             }
         }
 
+        yuzu_print_number((*item_actor).base.baseBase.uniqueActorIndex, 16);
+        // set_custom_collection_flag(item_actor as u32);
+
         return (*item_actor).finalDeterminedItemID;
+    }
+}
+
+#[no_mangle]
+pub fn set_custom_collection_flag(item_actor: u32) {
+    unsafe {
+        yuzu_print("Collected");
+        yuzu_print_number(item_actor, 16);
+        // yuzu_print_number((*item_actor).base.baseBase.uniqueActorIndex, 16);
+        // yuzu_print_number((*item_actor).itemid, 16);
     }
 }
 

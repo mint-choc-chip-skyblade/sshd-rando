@@ -67,3 +67,6 @@
 
 .global activation_checks_for_goddess_walls
 .type activation_checks_for_goddess_walls, @function
+
+.global set_custom_collection_flag
+.type set_custom_collection_flag @function

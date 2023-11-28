@@ -407,6 +407,12 @@
   cryptic: <r<10 explosions>>
   plurality: Plural
 
+- name: Stamina Fruit
+  standard: Stamina Fruit
+  pretty: Stamina Fruit
+  cryptic: an <r<energetic fruit>>
+  plurality: Singular
+
 - name: Gratitude Crystal
   standard: Gratitude Crystal
   pretty: a <Gratitude Crystal>
@@ -1168,6 +1174,11 @@
   standard: Upper Skyloft - Pumpkin Archery -- 600 Points
   pretty: Upper Skyloft - Pumpkin Archery -- 600 Points
   cryptic: <r<shooting pumpkings>>
+
+- name: Upper Skyloft - Stamina Fruit near Knight Academy
+  standard: Upper Skyloft - Stamina Fruit near Knight Academy
+  pretty: Upper Skyloft - Stamina Fruit near Knight Academy
+  cryptic: a <r<fruit near a school>>
 
 - name: Inside the Statue of the Goddess - First Goddess Sword Item
   standard: Inside the Statue of the Goddess - First Goddess Sword Item

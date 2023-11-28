@@ -96,6 +96,11 @@ b.hi 0x71004e37a8 ; branch over checks to prevent being picked up by beetle
 .offset 0x71004e37a4
 nop
 
+; ; dAcItem::performCollection1
+; .offset 0x71004e257c
+; mov w8, #19
+; bl additions_jumptable
+; and w8, w20, #0xffff
 
 
 ; Fix spawned items that shouldn't have textboxes

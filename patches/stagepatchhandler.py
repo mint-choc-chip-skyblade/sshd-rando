@@ -65,15 +65,14 @@ def patch_tbox(bzs: dict, itemid: int, id_str: str):
 
 
 def patch_freestanding_item(bzs: dict, itemid: int, id_str: str):
-    id = int(id_str)
+    id = int(id_str, 0)
     freestanding_item = next(
         filter(
-            lambda x: x["name"] == "Item" and ((x["params1"] >> 10) & 0xFF) == id,
+            lambda x: x["name"] == "Item" and (((x["params1"] >> 10) & 0xFF) == id or x["id"] == id),
             bzs["OBJ "],
         ),
         None,
     )
-
     if freestanding_item is None:
         print(f"ERROR: No freestanding item id {id} found to patch")
         return
