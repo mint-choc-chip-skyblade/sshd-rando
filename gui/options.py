@@ -1,6 +1,6 @@
-import random
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
-    QAbstractButton,
+    QCheckBox,
     QComboBox,
     QLineEdit,
     QMessageBox,
@@ -42,9 +42,13 @@ class Options:
                 pass
                 print(f"Could not find widget for setting: {setting_name}.")
 
-            if isinstance(widget, QAbstractButton):  # on or off
+            if isinstance(widget, QCheckBox):  # on or off
+                widget.setTristate(True)
+
                 if current_option_value == "on":
                     widget.setChecked(True)
+                elif current_option_value == "random":
+                    widget.setCheckState(Qt.CheckState.PartiallyChecked)
                 elif current_option_value == "off":
                     widget.setChecked(False)
                 else:
@@ -52,7 +56,7 @@ class Options:
                         f"Setting '{setting_name}' has value '{current_option_value}' which is invalid for a QAbstractButton. Expected either 'on' or 'off'."
                     )
 
-                widget.clicked.connect(self.update_settings)
+                widget.stateChanged.connect(self.update_settings)
             elif isinstance(widget, QComboBox):  # pick one option
                 for option in setting_info.info.pretty_options:
                     widget.addItem(option)
@@ -83,9 +87,11 @@ class Options:
             new_setting = setting
             new_option = ""
 
-            if isinstance(widget, QAbstractButton):
-                if widget.isChecked():
+            if isinstance(widget, QCheckBox):
+                if widget.checkState() == Qt.CheckState.Checked:
                     new_option = "on"
+                elif widget.checkState() == Qt.CheckState.PartiallyChecked:
+                    new_option = "random"
                 else:
                     new_option = "off"
             elif isinstance(widget, QComboBox):
@@ -150,11 +156,13 @@ class Options:
 
             default_option = setting.info.options[setting.info.default_option_index]
 
-            if isinstance(widget, QAbstractButton):
-                if default_option == "on" and not widget.isChecked():
-                    widget.click()
-                elif default_option == "off" and widget.isChecked():
-                    widget.click()
+            if isinstance(widget, QCheckBox):
+                if default_option == "on":
+                    widget.setCheckState(Qt.CheckState.Checked)
+                elif default_option == "random":
+                    widget.setCheckState(Qt.CheckState.PartiallyChecked)
+                elif default_option == "off":
+                    widget.setCheckState(Qt.CheckState.Unchecked)
             elif isinstance(widget, QComboBox):
                 widget.setCurrentIndex(setting.info.default_option_index)
             elif isinstance(widget, QSpinBox):
