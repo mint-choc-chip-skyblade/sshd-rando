@@ -112,6 +112,7 @@ extern "C" {
         pos: *mut structs::Vec3f,
         rot: *mut structs::Vec3s,
     );
+    fn dAcOlightLine__inUpdate(light_pillar_actor: *mut structs::dAcOlightLine, unk: u64);
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -921,6 +922,20 @@ pub fn remove_timeshift_stone_cutscenes() {
             "strb {0:w}, [x23, #0xba]",
             in(reg) isSandshipStone as u8,
         );
+    }
+}
+
+#[no_mangle]
+pub fn fix_light_pillars(light_pillar_actor: *mut structs::dAcOlightLine) {
+    unsafe {
+        let param1 = (*light_pillar_actor).base.baseBase.param1;
+        let storyflag = ((param1 >> 8) & 0xFF) as u16;
+
+        if (check_storyflag(storyflag) == 1) {
+            (*light_pillar_actor).lightShaftActivated = true;
+        }
+
+        dAcOlightLine__inUpdate(light_pillar_actor, 1);
     }
 }
 
