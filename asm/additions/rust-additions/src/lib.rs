@@ -939,6 +939,25 @@ pub fn fix_light_pillars(light_pillar_actor: *mut structs::dAcOlightLine) {
     }
 }
 
+#[no_mangle]
+pub fn update_crystal_count(item: u32) {
+    unsafe {
+        let mut count: u32 = check_itemflag(structs::ITEMFLAGS::CRYSTAL_PACK_COUNTER);
+
+        match item {
+            0x23 => count += 5,
+            0x30 => count += 1,
+            _ => count += 0,
+        }
+
+        // if (item == 0x23 || item == 0x30) {
+        //     (*TEXT_MGR_PTR_MAYBE).numeric_arg_1 = count;
+        // }
+
+        asm!("and w8, w0, #0xffff", "cmp w8, #0x1c");
+    }
+}
+
 // Will output a string to Yuzu's log.
 // In Yuzu go to Emulation > Configure > Debug and
 // enter this into the global log filter:
