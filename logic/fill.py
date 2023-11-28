@@ -61,6 +61,9 @@ def assumed_fill(
     allowed_locations: list[Location],
     world_to_fill: int = -1,
 ) -> None:
+    # Sort locations to keep consistency incase a set
+    # was passed in
+    allowed_locations.sort()
     retries: int = 10
     unsuccessful_placement: bool = True
     while unsuccessful_placement:

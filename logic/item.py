@@ -41,5 +41,12 @@ class Item:
             return False
         return self.id == other.id and self.world.id == other.world.id
 
+    def __lt__(self, other) -> bool:
+        if other == None:
+            return False
+        if self.world.id != other.world.id:
+            return self.world.id < other.world.id
+        return self.id < other.id
+
     def __hash__(self) -> int:
         return (self.id, self.world.id).__hash__()

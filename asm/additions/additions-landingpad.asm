@@ -52,8 +52,7 @@ b.eq fix_sky_keep_exit
 cmp w8, #12
 b.eq check_local_sceneflag
 
-cmp w8, #13
-b.eq patch_freestanding_item_fields
+
 
 cmp w8, #14
 b.eq drop_arrows_bombs_seeds
@@ -71,7 +70,16 @@ cmp w8, #18
 b.eq remove_timeshift_stone_cutscenes
 
 cmp w8, #19
-b.eq set_custom_collection_flag
+b.eq fix_light_pillars
+
+cmp w8, #20
+b.eq custom_event_commands
+
+cmp w8, #21
+b.eq warp_to_start
+
+cmp w8, #22
+b.eq update_crystal_count
 
 ret ; this should never be reached
 

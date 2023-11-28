@@ -1,8 +1,3 @@
-; Patch dAcItem fields to fix y-offsets and scaling
-.offset 0x7100f14514
-mov w8, #13
-bl additions_jumptable
-
 ; Fix freestanding item y offset at end of dAcItem::init
 .offset 0x71004e5f94
 bl 0x7100659ab8

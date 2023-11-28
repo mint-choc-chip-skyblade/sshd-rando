@@ -18,11 +18,13 @@ extern "C" {
 
     static FILE_MGR: *mut structs::FileMgr;
     static HARP_RELATED: *mut structs::HarpRelated;
+    static STAGE_MGR: *mut structs::dStageMgr;
 
     static STORYFLAG_MGR: *mut structs::FlagMgr;
     static ITEMFLAG_MGR: *mut structs::FlagMgr;
-    static SCENEFLAG_MGR: *mut c_void;
+    static SCENEFLAG_MGR: *mut structs::SceneflagMgr;
     static DUNGEONFLAG_MGR: *mut structs::DungeonflagMgr;
+    static LYT_MSG_WINDOW: *mut structs::LytMsgWindow;
 
     static mut STATIC_STORYFLAGS: [u16; 128];
     static mut STATIC_SCENEFLAGS: [u16; 8];
@@ -31,25 +33,25 @@ extern "C" {
     static mut STATIC_ITEMFLAGS: [u16; 64];
     static mut STATIC_DUNGEONFLAGS: [u16; 8];
 
-    static mut GAME_RELOADER: *mut structs::GameReloader;
+    static mut GAME_RELOADER_PTR: *mut structs::GameReloader;
     static mut RESPAWN_TYPE: u8;
-    static mut CURRENT_STAGE_NAME: [u8; 7];
-    static mut CURRENT_STAGE_SUFFIX: [u8; 3];
+    static mut CURRENT_STAGE_NAME: [u8; 8];
+    static mut CURRENT_STAGE_SUFFIX: [u8; 4];
     static mut CURRENT_FADE_FRAMES: u16;
     static mut CURRENT_ROOM: u8;
     static mut CURRENT_LAYER: u8;
     static mut CURRENT_ENTRANCE: u8;
     static mut CURRENT_NIGHT: u8;
     static mut CURRENT_SOMETHING: u8;
-    static mut NEXT_STAGE_NAME: [u8; 7];
-    static mut NEXT_STAGE_SUFFIX: [u8; 3];
-    static mut NEXT_FADE_FRAMES: u16;
+    static mut NEXT_STAGE_NAME: [u8; 8];
+    static mut NEXT_STAGE_SUFFIX: [u8; 4];
+    static mut NEXT_TRANSITION_FADE_FRAMES: u16;
     static mut NEXT_ROOM: u8;
     static mut NEXT_LAYER: u8;
     static mut NEXT_ENTRANCE: u8;
     static mut NEXT_NIGHT: u8;
     static mut NEXT_TRIAL: u8;
-    static mut NEXT_SOMETHING: u8;
+    static mut NEXT_UNK: u8;
     static mut CURRENT_LAYER_COPY: u8;
 
     static mut ACTOR_PARAM_SCALE: u64;
@@ -62,6 +64,7 @@ extern "C" {
     static ACTOR_ALLOCATOR_DEFINITIONS: u64; // [*const u64; 701];
 
     static STARTFLAGS: [u16; 1000];
+    static WARP_TO_START_INFO: structs::WarpToStartInfo;
     static START_COUNTS: [structs::StartCount; 50];
 
     fn strlen(string: *mut u8) -> u64;
@@ -86,15 +89,31 @@ extern "C" {
         unk10: u32,
         unk11: u32,
     );
-    fn SceneflagMgr__setFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
-    fn SceneflagMgr__unsetFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32);
-    fn SceneflagMgr__checkFlag(sceneflagMgr: *mut c_void, roomid: u32, flag: u32) -> u16;
+    fn GameReloader__actuallyTriggerEntrance(
+        dStageMgr: *mut structs::dStageMgr,
+        room: u8,
+        layer: u8,
+        entrance: u8,
+        forced_night: u32,
+        forced_trial: u32,
+        transition_type: u32,
+        transition_fade_frames: u16,
+        param_9: u8,
+    );
+    fn SceneflagMgr__setFlag(sceneflagMgr: *mut structs::SceneflagMgr, roomid: u32, flag: u32);
+    fn SceneflagMgr__unsetFlag(sceneflagMgr: *mut structs::SceneflagMgr, roomid: u32, flag: u32);
+    fn SceneflagMgr__checkFlag(
+        sceneflagMgr: *mut structs::SceneflagMgr,
+        roomid: u32,
+        flag: u32,
+    ) -> u16;
     fn spawnDrop(
         itemid: structs::ITEMFLAGS,
         roomid: u32,
         pos: *mut structs::Vec3f,
         rot: *mut structs::Vec3s,
     );
+    fn dAcOlightLine__inUpdate(light_pillar_actor: *mut structs::dAcOlightLine, unk: u64);
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -124,7 +143,14 @@ pub fn handle_startflags() {
                 // Sceneflags
                 1 => {
                     // flag = 0xFFSS where SS == sceneindex and FF == sceneflag
-                    set_global_sceneflag(flag & 0xFF, flag >> 8);
+                    let sceneindex = flag & 0xFF;
+                    let sceneflag = flag >> 8;
+
+                    if (*SCENEFLAG_MGR).sceneindex == sceneindex {
+                        set_local_sceneflag(sceneflag.into());
+                    }
+
+                    set_global_sceneflag(sceneindex, sceneflag);
                 },
 
                 // Itemflags
@@ -332,124 +358,91 @@ pub fn update_day_night_storyflag() {
         ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);
 
         // Replaced instruction
-        NEXT_SOMETHING = 0xFF;
+        NEXT_UNK = 0xFF;
     }
 
     return;
 }
 
 #[no_mangle]
-pub fn patch_freestanding_item_fields(
-    actorid: u16,
-    unk: u64,
-    actor_param1: u32,
-    actor_group_type: u8,
-) {
-    // dAcItem actor id && is rando patched item
-    if actorid == 0x281 && (actor_param1 >> 9) & 0x1 == 0 {
-        let mut use_default_scaling = false;
-        let mut y_offset = 0.0f32;
+pub fn fix_freestanding_item_y_offset() {
+    unsafe {
+        let mut item_actor: *mut structs::dAcItem;
+        asm!("mov {0}, x19", out(reg) item_actor);
 
-        // Item id
-        match actor_param1 & 0x1FF {
-            // Sword | Harp | Mitts | Beedle's Insect Cage | Sot | Songs
-            10 | 16 | 56 | 159 | 180 | 186..=193 => y_offset = 20.0,
-            // Bow | Sea Chart | Wooden Shield | Hylian Shield
-            19 | 98 | 116 | 125 => y_offset = 23.0,
-            // Clawshots | Spiral Charge
-            20 | 21 => y_offset = 25.0,
-            // AC BK | FS BK
-            25 | 26 => y_offset = 30.0,
-            // SSH BK, ET Key, SV BK, ET BK | Amber Tablet
-            27..=30 | 179 => y_offset = 24.0,
-            // LMF BK
-            31 => y_offset = 27.0,
-            // Crystal Pack | 5 Bombs | 10 Bombs | Single Crystal | Beetle | Pouch | Small Bomb Bag | Eldin Ore
-            35 | 40 | 41 | 48 | 53 | 112 | 134 | 165 => y_offset = 18.0,
-            // Bellows | Bug Net | Bomb Bag
-            49 | 71 | 92 => y_offset = 26.0,
-            52          // Slingshot
-            | 68        // Water Dragon's Scale
-            | 100..=104 // Medals
-            | 108       // Wallets
-            | 114       // Life Medal
-            | 153       // Empty Bottle
-            | 161..=164 // Treasures
-            | 166..=170 // Treasures
-            | 172..=174 // Treasures
-            | 178       // Ruby Tablet
-            | 198       // Life Tree Fruit
-            | 199 => y_offset = 16.0,
-            // Semi-rare | Rare Treasure
-            63 | 64 => y_offset = 15.0,
-            // Heart Container
-            93 => use_default_scaling = true,
-            95..=97 => {
-                y_offset = 24.0;
-                use_default_scaling = true;
-            },
-            // Seed Satchel | Golden Skull
-            128 | 175 => y_offset = 14.0,
-            // Quiver | Whip | Emerald Tablet | Maps
-            131 | 137 | 177 | 207..=213 => y_offset = 19.0,
-            // Earrings
-            138 => y_offset = 6.0,
-            // Letter | Monster Horn
-            158 | 171 => y_offset = 12.0,
-            // Rattle
-            160 => {
-                y_offset = 5.0;
-                use_default_scaling = true;
-            },
-            // Goddess Plume
-            176 => y_offset = 17.0,
-            _ => y_offset = 0.0,
-        }
+        let actor_param1 = (*item_actor).base.baseBase.param1;
 
-        let y_offset_as_hex = f32::to_bits(y_offset) >> 16;
+        if (actor_param1 >> 9) & 0x1 == 0 {
+            let mut use_default_scaling = false;
+            let mut y_offset = 0.0f32;
 
-        unsafe {
-            ACTORBASE_PARAM2 &= 0xFF0000FF; // Clear space for y-offset
-            ACTORBASE_PARAM2 |= (y_offset_as_hex << 0x8) as u32;
+            // Item id
+            match actor_param1 & 0x1FF {
+                // Sword | Harp | Mitts | Beedle's Insect Cage | Sot | Songs
+                10 | 16 | 56 | 159 | 180 | 186..=193 => y_offset = 20.0,
+                // Bow | Sea Chart | Wooden Shield | Hylian Shield
+                19 | 98 | 116 | 125 => y_offset = 23.0,
+                // Clawshots | Spiral Charge
+                20 | 21 => y_offset = 25.0,
+                // AC BK | FS BK
+                25 | 26 => y_offset = 30.0,
+                // SSH BK, ET Key, SV BK, ET BK | Amber Tablet
+                27..=30 | 179 => y_offset = 24.0,
+                // LMF BK
+                31 => y_offset = 27.0,
+                // Crystal Pack | 5 Bombs | 10 Bombs | Single Crystal | Beetle | Pouch | Small Bomb Bag | Eldin Ore
+                35 | 40 | 41 | 48 | 53 | 112 | 134 | 165 => y_offset = 18.0,
+                // Bellows | Bug Net | Bomb Bag
+                49 | 71 | 92 => y_offset = 26.0,
+                52          // Slingshot
+                | 68        // Water Dragon's Scale
+                | 100..=104 // Medals
+                | 108       // Wallets
+                | 114       // Life Medal
+                | 153       // Empty Bottle
+                | 161..=164 // Treasures
+                | 166..=170 // Treasures
+                | 172..=174 // Treasures
+                | 178       // Ruby Tablet
+                | 198       // Life Tree Fruit
+                | 199 => y_offset = 16.0,
+                // Semi-rare | Rare Treasure
+                63 | 64 => y_offset = 15.0,
+                // Heart Container
+                93 => use_default_scaling = true,
+                95..=97 => {
+                    y_offset = 24.0;
+                    use_default_scaling = true;
+                },
+                // Seed Satchel | Golden Skull
+                128 | 175 => y_offset = 14.0,
+                // Quiver | Whip | Emerald Tablet | Maps
+                131 | 137 | 177 | 207..=213 => y_offset = 19.0,
+                // Earrings
+                138 => y_offset = 6.0,
+                // Letter | Monster Horn
+                158 | 171 => y_offset = 12.0,
+                // Rattle
+                160 => {
+                    y_offset = 5.0;
+                    use_default_scaling = true;
+                },
+                // Goddess Plume
+                176 => y_offset = 17.0,
+                _ => y_offset = 0.0,
+            }
 
-            // Patch whether to use default scaling into angley.
-            // angley is used for the actual rotation of the item but we use
-            // the lsb so it shouldn't make a noticeable
-            // difference.
+            (*item_actor).freestandingYOffset = y_offset;
 
-            if ACTOR_PARAM_ROT != core::ptr::null_mut() {
-                if use_default_scaling {
-                    (*ACTOR_PARAM_ROT).y |= 1;
-                } else {
-                    (*ACTOR_PARAM_ROT).y &= 0xFFFE;
-                }
+            if use_default_scaling {
+                (*item_actor).base.members.base.rot.y |= 1;
+            } else {
+                (*item_actor).base.members.base.rot.y &= 0xFFFE;
             }
         }
-    }
-
-    unsafe {
-        // Replaced instructions
-        asm!("mov x8, {0}", in(reg) &ACTOR_ALLOCATOR_DEFINITIONS);
-    }
-}
-
-#[no_mangle]
-pub fn fix_freestanding_item_y_offset() {
-    let mut item: *mut structs::dAcItem;
-
-    unsafe {
-        // Get param1 to check if the item needs its size changing.
-        asm!("mov {0}, x19", out(reg) item);
 
         // Replaced instruction
         asm!("mov w0, w20");
-
-        if (*item).base.baseBase.param1 >> 9 & 0x1 == 0 {
-            let y_offset_as_hex = ((*item).base.members.base.param2 & 0x00FFFF00) << 8;
-            let y_offset = f32::from_bits(y_offset_as_hex);
-
-            (*item).freestandingYOffset = y_offset;
-        }
     }
 }
 
@@ -563,8 +556,8 @@ pub fn handle_er_cases() {
     unsafe {
         // Enforce a max speed after reloading
         // Prevents you running off high ledges from non-vanilla exits
-        if (*GAME_RELOADER).speed_after_reload > 30f32 {
-            (*GAME_RELOADER).speed_after_reload = 30f32;
+        if (*GAME_RELOADER_PTR).speed_after_reload > 30f32 {
+            (*GAME_RELOADER_PTR).speed_after_reload = 30f32;
         }
 
         // If we're spawning from Sky Keep, but Sky Keep hasn't appeared yet,
@@ -595,7 +588,7 @@ pub fn handle_er_cases() {
 
         // If we're about to enter a stage that should have the silent realm effect
         // set it. Otherwise unset it
-        if NEXT_STAGE_NAME[0] == b'S' || &NEXT_STAGE_NAME == b"D003_8\0" {
+        if NEXT_STAGE_NAME[0] == b'S' || &NEXT_STAGE_NAME[..7] == b"D003_8\0" {
             NEXT_TRIAL = 1;
         } else {
             NEXT_TRIAL = 0;
@@ -620,9 +613,10 @@ pub fn handle_er_cases() {
         }
 
         // Replaced code sets these
-        (*GAME_RELOADER).item_to_use_after_reload = 0xFF;
-        (*GAME_RELOADER).beedle_shop_spawn_state = 0xFF;
-        (*GAME_RELOADER).action_index = 0xFF;
+        (*GAME_RELOADER_PTR).item_to_use_after_reload = 0xFF;
+        (*GAME_RELOADER_PTR).beedle_shop_spawn_state = 0;
+        (*GAME_RELOADER_PTR).action_index = 0xFF;
+        (*GAME_RELOADER_PTR).area_type = 0xFF;
     }
 }
 
@@ -664,7 +658,7 @@ pub fn handle_er_action_states() {
         // set Link to always be diving regardless of how he
         // previously entered
         if &CURRENT_STAGE_NAME[..5] == b"F210\0" && CURRENT_ENTRANCE == 0 {
-            (*GAME_RELOADER).action_index = 0x13;
+            (*GAME_RELOADER_PTR).action_index = 0x13;
         }
 
         // Replaced code sets this
@@ -708,6 +702,53 @@ pub fn fix_sky_keep_exit(
                 unk11,
             );
         }
+    }
+}
+
+#[no_mangle]
+pub fn custom_event_commands(
+    actor_event_flow_mgr: *mut structs::ActorEventFlowMgr,
+    p_event_flow_element: *const structs::EventFlowElement,
+) {
+    let event_flow_element = unsafe { &*p_event_flow_element };
+    match event_flow_element.param3 {
+        70 => warp_to_start(),
+        _ => (),
+    }
+
+    unsafe {
+        // Replaced instructions
+        asm!("mov w21, #1", "cmp w8, #0x3f",);
+    }
+}
+
+#[no_mangle]
+pub fn warp_to_start() {
+    unsafe {
+        let start_info = &*(&WARP_TO_START_INFO as *const structs::WarpToStartInfo);
+
+        GameReloader__actuallyTriggerEntrance(
+            STAGE_MGR,
+            (*start_info).room.into(),
+            (*start_info).layer.into(),
+            (*start_info).entrance.into(),
+            (*start_info).night.into(),
+            0,
+            0,
+            0xF,
+            0xFF,
+        );
+
+        (*STAGE_MGR).set_in_actually_trigger_entrance = 0;
+
+        NEXT_STAGE_NAME = (*start_info).stage_name; // *b"F001r\0\0\0";
+
+        if (*GAME_RELOADER_PTR).reload_trigger == 0x2BF {
+            (*GAME_RELOADER_PTR).reload_trigger = 5;
+        }
+
+        // Just to be extra safe (fixes some issues with Fi warp)
+        handle_er_cases();
     }
 }
 
@@ -865,6 +906,43 @@ pub fn remove_timeshift_stone_cutscenes() {
     }
 }
 
+#[no_mangle]
+pub fn fix_light_pillars(light_pillar_actor: *mut structs::dAcOlightLine) {
+    unsafe {
+        let param1 = (*light_pillar_actor).base.baseBase.param1;
+        let storyflag = ((param1 >> 8) & 0xFF) as u16;
+
+        if (check_storyflag(storyflag) == 1) {
+            (*light_pillar_actor).lightShaftActivated = true;
+        }
+
+        dAcOlightLine__inUpdate(light_pillar_actor, 1);
+    }
+}
+
+#[no_mangle]
+pub fn update_crystal_count(item: u32) {
+    unsafe {
+        let mut count: u32 = check_itemflag(structs::ITEMFLAGS::CRYSTAL_PACK_COUNTER);
+
+        // Increase counter depending on which item we got.
+        // The counter hasn't increased with the value of the item yet
+        // so we have to add it manually here
+        match item {
+            0x23 => count += 5, // Crystal Pack
+            0x30 => count += 1, // Single Crystal
+            _ => count += 0,
+        }
+
+        // Update numeric arg 1 with the proper count
+        if (item == 0x23 || item == 0x30) {
+            (*(*LYT_MSG_WINDOW).textManager).numeric_args[1] = count;
+        }
+
+        asm!("and w8, w0, #0xffff", "cmp w8, #0x1c");
+    }
+}
+
 // Will output a string to Yuzu's log.
 // In Yuzu go to Emulation > Configure > Debug and
 // enter this into the global log filter:
@@ -883,9 +961,11 @@ pub fn yuzu_print_number<T: NumToA<T>>(num: T, base: T) {
 
 pub fn output_debug_string(string: *const u8, length: usize) {
     unsafe {
+        asm!("stp x0, x1, [sp, #-0x10]!");
         asm!("mov x0, {0}", in(reg) string);
         asm!("mov x1, {0}", in(reg) length);
         asm!("svc #39");
+        asm!("ldp x0, x1, [sp], #0x10");
     }
 }
 

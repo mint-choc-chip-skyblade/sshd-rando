@@ -104,27 +104,42 @@ pub struct FlagMgr {
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct DungeonflagMgr {
+pub struct SceneflagMgr {
+    pub sceneflags:   FlagSpace,
+    pub tempflags:    FlagSpace,
+    pub zoneflags:    FlagSpace,
     pub unk:          u16,
+    pub sceneindex:   u16,
+    pub shouldCommit: u8,
+    pub unk1:         [u8; 3],
+}
+
+assert_eq_size!([u8; 0x50], SceneflagMgr);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct DungeonflagMgr {
+    pub shouldCommit: u8,
+    pub unk:          u8,
     pub sceneindex:   u8,
     pub unkfiller:    [u8; 5],
-    pub shouldCommit: u8,
-    pub unkfiller1:   [u8; 7],
+    pub flagdefs:     u64,
     pub unkFlagStuff: u64,
     pub dungeonflags: FlagSpace,
 }
 
-assert_eq_size!([u8; 40], DungeonflagMgr);
+assert_eq_size!([u8; 0x30], DungeonflagMgr);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct FlagSpace {
-    pub flagPtr:   u64,
-    pub flagcount: u16,
-    pub unk:       [u8; 6],
+    pub flagPtr:       u64,
+    pub staticFlagPtr: *mut [u16; 8],
+    pub flagSpaceSize: u16,
+    pub unk:           [u8; 6],
 }
 
-assert_eq_size!([u8; 16], FlagSpace);
+assert_eq_size!([u8; 0x18], FlagSpace);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -386,6 +401,20 @@ pub struct dAcItem {
 
 assert_eq_size!([u8; 4744], dAcItem);
 
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcOlightLine {
+    pub base:                ActorObjectBase,
+    pub unkfiller0:          [u8; 124],
+    pub unkfiller:           [u8; 0x989],
+    pub lightShaftActivated: bool,
+    pub unkfiller1:          [u8; 6],
+    pub lightShaftIndex:     u32,
+    pub unkfiller2:          [u8; 4],
+}
+
+assert_eq_size!([u8; 0xDA8], dAcOlightLine);
+
 // ActorObjectBase
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -568,15 +597,26 @@ pub struct Vec3s {
 assert_eq_size!([u8; 6], Vec3s);
 
 #[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dStageMgr {
+    pub _0:                               [u8; 0x1000C],
+    pub set_in_actually_trigger_entrance: u8,
+    pub _1:                               [u8; 11],
+}
+
+assert_eq_size!([u8; 0x10018], dStageMgr);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
 pub struct GameReloader {
     pub _0:                       [u8; 0x350],
-    pub trigger_reload:           u16,
+    pub reload_trigger:           u16,
     pub _1:                       [u8; 0x52],
     pub speed_after_reload:       f32,
     pub stamina_after_reload:     u32,
     pub item_to_use_after_reload: u8,
     pub beedle_shop_spawn_state:  u8,
-    pub action_index:             i16,
+    pub action_index:             u16,
     pub area_type:                u8,
     pub _2:                       [u8; 0x5],
     pub is_reloading:             u8,
@@ -587,6 +627,7 @@ pub struct GameReloader {
 assert_eq_size!([u8; 0x3B9], GameReloader);
 
 #[repr(C, packed(1))]
+#[derive(Copy, Clone)]
 pub struct Player {
     pub _0:                [u8; 0x460],
     pub action_flags:      u32,
@@ -598,9 +639,76 @@ pub struct Player {
 assert_eq_size!([u8; 0x46C], Player);
 
 #[repr(C, packed(1))]
+#[derive(Copy, Clone)]
 pub struct StartCount {
     pub counter: u16,
     pub value:   u16,
 }
 
 assert_eq_size!(u32, StartCount);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct WarpToStartInfo {
+    pub stage_name: [u8; 8],
+    pub room:       u8,
+    pub layer:      u8,
+    pub entrance:   u8,
+    pub night:      u8,
+}
+
+assert_eq_size!([u8; 12], WarpToStartInfo);
+
+// Event Flow stuff
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct ActorEventFlowMgr {
+    vtable:                     u64,
+    msbf_info:                  u64,
+    current_flow_index:         u32,
+    unk1:                       u32,
+    unk2:                       u32,
+    unk3:                       u32,
+    result_from_previous_check: u32,
+    current_text_label_name:    [u8; 32],
+    unk4:                       u32,
+    unk5:                       u32,
+    unk6:                       u32,
+    next_flow_delay_timer:      u32,
+    another_flow_element:       EventFlowElement,
+    unk7:                       u32,
+    unk8:                       u32,
+    unk9:                       u32,
+}
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct EventFlowElement {
+    pub typ:      u8,
+    pub sub_type: u8,
+    pub pad:      u16,
+    pub param1:   u16,
+    pub param2:   u16,
+    pub next:     u16,
+    pub param3:   u16,
+    pub param4:   u16,
+    pub param5:   u16,
+}
+
+assert_eq_size!([u8; 16], EventFlowElement);
+
+#[repr(C, packed(1))]
+pub struct LytMsgWindow {
+    pub unkfiller1:  [u8; 0xA90],
+    pub textManager: *mut TextManagerMaybe,
+}
+
+assert_eq_size!([u8; 0xA98], LytMsgWindow);
+
+#[repr(C, packed(1))]
+pub struct TextManagerMaybe {
+    pub unkfiller1:   [u8; 0x8AC],
+    pub numeric_args: [u32; 5],
+}
+
+assert_eq_size!([u8; 0x8C0], TextManagerMaybe);
