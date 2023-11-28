@@ -24,6 +24,8 @@ extern "C" {
     static ITEMFLAG_MGR: *mut structs::FlagMgr;
     static SCENEFLAG_MGR: *mut structs::SceneflagMgr;
     static DUNGEONFLAG_MGR: *mut structs::DungeonflagMgr;
+    static TEXT_MGR_PTR_MAYBE: *mut structs::TextManagerMaybe;
+    static mut NUMERIC_ARG_1: u32;
 
     static mut STATIC_STORYFLAGS: [u16; 128];
     static mut STATIC_SCENEFLAGS: [u16; 8];
