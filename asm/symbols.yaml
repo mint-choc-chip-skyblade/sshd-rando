@@ -65,6 +65,7 @@ main:
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
     dAcItem__spawnItemWithParams: 0x71004eba70
     spawnDrop: 0x71004ebc5c
+    dAcOlightLine__inUpdate: 0x7100836380
 
     # Custom Symbols
     additions_jumptable: 0x710065a070

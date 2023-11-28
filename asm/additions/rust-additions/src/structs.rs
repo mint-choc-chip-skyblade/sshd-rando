@@ -401,6 +401,20 @@ pub struct dAcItem {
 
 assert_eq_size!([u8; 4744], dAcItem);
 
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcOlightLine {
+    pub base:                ActorObjectBase,
+    pub unkfiller0:          [u8; 124],
+    pub unkfiller:           [u8; 0x989],
+    pub lightShaftActivated: bool,
+    pub unkfiller1:          [u8; 6],
+    pub lightShaftIndex:     u32,
+    pub unkfiller2:          [u8; 4],
+}
+
+assert_eq_size!([u8; 0xDA8], dAcOlightLine);
+
 // ActorObjectBase
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
