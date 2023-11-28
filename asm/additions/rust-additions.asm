@@ -73,3 +73,6 @@
 
 .global warp_to_start
 .type warp_to_start, @function
+
+.global update_crystal_count
+.type update_crystal_count, @function

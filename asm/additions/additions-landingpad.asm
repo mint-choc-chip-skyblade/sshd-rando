@@ -78,6 +78,9 @@ b.eq custom_event_commands
 cmp w8, #21
 b.eq warp_to_start
 
+cmp w8, #22
+b.eq update_crystal_count
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

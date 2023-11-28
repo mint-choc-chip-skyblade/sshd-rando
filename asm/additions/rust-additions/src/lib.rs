@@ -24,6 +24,7 @@ extern "C" {
     static ITEMFLAG_MGR: *mut structs::FlagMgr;
     static SCENEFLAG_MGR: *mut structs::SceneflagMgr;
     static DUNGEONFLAG_MGR: *mut structs::DungeonflagMgr;
+    static LYT_MSG_WINDOW: *mut structs::LytMsgWindow;
 
     static mut STATIC_STORYFLAGS: [u16; 128];
     static mut STATIC_SCENEFLAGS: [u16; 8];
@@ -906,6 +907,29 @@ pub fn fix_light_pillars(light_pillar_actor: *mut structs::dAcOlightLine) {
     }
 }
 
+#[no_mangle]
+pub fn update_crystal_count(item: u32) {
+    unsafe {
+        let mut count: u32 = check_itemflag(structs::ITEMFLAGS::CRYSTAL_PACK_COUNTER);
+
+        // Increase counter depending on which item we got.
+        // The counter hasn't increased with the value of the item yet
+        // so we have to add it manually here
+        match item {
+            0x23 => count += 5, // Crystal Pack
+            0x30 => count += 1, // Single Crystal
+            _ => count += 0,
+        }
+
+        // Update numeric arg 1 with the proper count
+        if (item == 0x23 || item == 0x30) {
+            (*(*LYT_MSG_WINDOW).textManager).numeric_args[1] = count;
+        }
+
+        asm!("and w8, w0, #0xffff", "cmp w8, #0x1c");
+    }
+}
+
 // Will output a string to Yuzu's log.
 // In Yuzu go to Emulation > Configure > Debug and
 // enter this into the global log filter:
@@ -924,9 +948,11 @@ pub fn yuzu_print_number<T: NumToA<T>>(num: T, base: T) {
 
 pub fn output_debug_string(string: *const u8, length: usize) {
     unsafe {
+        asm!("stp x0, x1, [sp, #-0x10]!");
         asm!("mov x0, {0}", in(reg) string);
         asm!("mov x1, {0}", in(reg) length);
         asm!("svc #39");
+        asm!("ldp x0, x1, [sp], #0x10");
     }
 }
 
