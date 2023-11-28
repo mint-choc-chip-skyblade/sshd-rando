@@ -66,9 +66,17 @@ class Options:
                 )
                 widget.currentIndexChanged.connect(self.update_settings)
             elif isinstance(widget, QSpinBox):  # pick a value
-                widget.setMinimum(int(setting_info.info.options[0]))
+                widget.setMinimum(
+                    int(setting_info.info.options[0]) - 1
+                )  # -1 for special value
                 widget.setMaximum(int(setting_info.info.options[-2]))
-                widget.setValue(int(current_option_value))
+                widget.setSpecialValueText("Random")
+
+                if current_option_value == "random":
+                    widget.setValue(widget.minimum())
+                else:
+                    widget.setValue(int(current_option_value))
+
                 widget.valueChanged.connect(self.update_settings)
 
     def update_settings(self):
@@ -115,8 +123,15 @@ class Options:
 
         new_setting = setting
 
-        option_index = setting.info.options.index(value)
-        new_setting.value = value
+        if ((value.startswith("-") and value[1:].isdigit()) or value.isdigit()) and int(
+            value
+        ) == int(setting.info.options[0]) - 1:
+            option_index = setting.info.options.index("random")
+            new_setting.value = "random"
+        else:
+            option_index = setting.info.options.index(value)
+            new_setting.value = value
+
         new_setting.current_option_index = option_index
         new_setting.info.current_option_index = option_index
 
