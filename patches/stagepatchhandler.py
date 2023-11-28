@@ -130,13 +130,16 @@ def patch_ac_key_boko(bzs: dict, itemid: int, id_str: str):
     boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemid)
 
 
-# def patch_heart_container(bzs: dict, itemid: int):
-#     hc = next(filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None)
-#     if hc is None:
-#         print(f"ERROR: No heart container found to patch")
-#         return
+def patch_heart_container(bzs: dict, itemid: int):
+    heart_container = next(filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None)
 
-#     hc["params1"] = mask_shift_set(hc["params1"], 0xFF, 16, itemid)
+    if heart_container is None:
+        print(f"ERROR: No heart container found to patch")
+        return
+
+    heart_container["params1"] = mask_shift_set(
+        heart_container["params1"], 0xFF, 16, itemid
+    )
 
 
 def patch_chandelier_item(bzs: dict, itemid: int):
@@ -599,10 +602,10 @@ def patch_and_write_stage(
                                     itemid,
                                     objectid,
                                 )
-                            # elif objectName == "HeartCo":
-                            #     patch_heart_container(
-                            #         roomBZS["LAY "][f"l{layer}"], itemid
-                            #     )
+                            elif object_name == "HeartCo":
+                                patch_heart_container(
+                                    room_bzs["LAY "][f"l{layer}"], itemid
+                                )
                             elif object_name == "Chandel":
                                 patch_chandelier_item(
                                     room_bzs["LAY "][f"l{layer}"], itemid
@@ -613,17 +616,17 @@ def patch_and_write_stage(
                                     itemid,
                                     objectid,
                                 )
-                            # elif objectName == "SwSB":
+                            # elif object_name == "SwSB":
                             #     patch_goddess_crest(
-                            #         roomBZS["LAY "][f"l{layer}"],
+                            #         room_bzs["LAY "][f"l{layer}"],
                             #         itemid,
-                            #         objectID,
+                            #         objectid,
                             #     )
-                            # elif objectName == "Clef":
+                            # elif object_name == "Clef":
                             #     patch_tadtone_group(
-                            #         roomBZS["LAY "][f"l{layer}"],
+                            #         room_bzs["LAY "][f"l{layer}"],
                             #         itemid,
-                            #         objectID,
+                            #         objectid,
                             #     )
                             else:
                                 print(
