@@ -310,7 +310,9 @@ class EventPatchHandler:
         )
 
         # Had to add a 0 to the end to satisfy BuildMSB's length requirement, if text adds end up breaking, this may be overwriting a param?
-        msbt["ATR1"].append([text_add.get("unk1", 1), text_add.get("unk2", 0), 0])
+        msbt["ATR1"].append(
+            [text_add.get("textboxtype", 1), text_add.get("unk2", 0), 0]
+        )
         entry_name = "%s:%d" % (msbt_file_name[-3:], text_index)
         new_entry = {
             "name": entry_name,
@@ -323,6 +325,16 @@ class EventPatchHandler:
         msbt["TXT2"][text_patch["index"]] = process_control_sequences(
             get_text_data(text_patch["name"]).get("english")
         ).encode("utf-16be")
+
+        # Allow patching other textbox data
+        current_text_atr1_data = msbt["ATR1"][text_patch["index"]]
+
+        if (textbox_type := text_patch.get("textboxtype", None)) is not None:
+            current_text_atr1_data[0] = textbox_type
+        if (unk2 := text_patch.get("unk2", None)) is not None:
+            current_text_atr1_data[1] = unk2
+
+        msbt["ATR1"][text_patch["index"]] = current_text_atr1_data
 
     def add_check_patch(self, event_file: str, eventid: str, itemid: int):
         self.check_patches[event_file].append((eventid, itemid))

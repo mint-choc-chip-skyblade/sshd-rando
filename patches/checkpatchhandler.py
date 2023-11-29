@@ -89,7 +89,7 @@ def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
         textadd_patch = {
             "name": f"Item {itemid} Text",
             "type": "textadd",
-            "unk1": 5,
+            "textboxtype": 5,
             "unk2": 1,
         }
 

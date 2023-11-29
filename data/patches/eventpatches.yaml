@@ -6,7 +6,7 @@
       value: Show Scrapper Item Get Text
   - name: Scrapper Item Get Text
     type: textadd
-    unk1: 5
+    textboxtype: 5
     unk2: 1
     text: "You found Gondo's robot, <y<Scrapper>>!
           \n\n\n\nBe sure to take care of him...\neven if he's a little mean."
@@ -26,6 +26,7 @@
       param2: 323 # Scrapper Storyflag
       next: -1
       param3: 0
+
   - name: Tadtone Entry
     type: entryadd
     entry:
@@ -58,7 +59,7 @@
       - Show some Tadtones Collected text
   - name: Some Tadtones Collected text
     type: textadd
-    unk1: 5
+    textboxtype: 5
     unk2: 1
     text: "You got a group of <y<Tadtones>>!\nOnly <r<<numeric arg0> >> left to find!"
   - name: Show some Tadtones Collected text
@@ -70,7 +71,7 @@
       param4: Some Tadtones Collected text
   - name: All Tadtones Collected text
     type: textadd
-    unk1: 5
+    textboxtype: 5
     unk2: 1
     text: "You got the last group of <y<Tadtones>>!\nYou found every last one of them!
           \n\n\nHurry to <b<Flooded Faron Woods>> and talk\nto the <r<Water Dragon>> to claim your\nreward."
@@ -81,6 +82,7 @@
       next: -1
       param3: 3
       param4: All Tadtones Collected text
+
   - name: Spiral Charge Text
     type: textpatch
     index: 27
@@ -93,6 +95,7 @@
       param1: 0
       param2: 364
       param3: 0
+
   - name: Remove Goddess Sword Scene change
     type: flowpatch
     index: 462 # skip scene change after getting goddess sword
@@ -659,7 +662,7 @@
       next: Fi Warp choice
   - name: Fi Warp Text
     type: textadd
-    unk1: 2 # Fi text box background
+    textboxtype: 2 # Fi text box background
     text: ""
   - name: Fi Warp choice
     type: flowadd
@@ -2707,7 +2710,7 @@
       next: -1
   - name: Fi text text to leave dungeon
     type: textadd
-    unk1: 2
+    textboxtype: 2
     text: "You can't beat this\ndungeon at the present\ntime, I would suggest\ncoming back later"
   - name: Fi trigger to leave
     type: entryadd
