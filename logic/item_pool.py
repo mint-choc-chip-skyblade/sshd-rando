@@ -137,6 +137,9 @@ def generate_item_pool(world: "World") -> None:
         ]
     )
 
+    # if world.setting("traps") == "on":
+    #     item_pool += ["Trap"] * 10
+
     # Remove Key Pieces if the ET Door is open
     if world.setting("open_earth_temple") == "on":
         item_pool = [item for item in item_pool if item != "Key Piece"]

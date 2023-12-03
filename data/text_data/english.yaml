@@ -1,3 +1,6 @@
+- name: Trap Text
+  standard: "<slowtext>You got<pause 5>.<pause 5>.<pause 5>. <pause 15>Trapped!"
+
 - name: Scrapper Item Get Text
   standard: "You found Gondo's robot, <y<Scrapper>>!
             \n\n\n\nBe sure to take care of him.\n...even if he's a little mean."
@@ -942,6 +945,12 @@
   standard: Scrapper
   pretty: Scrapper
   cryptic: a <r<transport friend>>
+  plurality: Singular
+
+- name: Trap
+  standard: Trap
+  pretty: a Trap
+  cryptic: a <r<fool's delight>>
   plurality: Singular
 
 - name: Game Beatable

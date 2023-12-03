@@ -1,4 +1,49 @@
 003-ItemGet:
+  - name: Trap Entry
+    type: entryadd
+    entry:
+      name: "003_254"
+      value: Show Trap Text
+  - name: Trap Text
+    type: textadd
+    textboxtype: 5
+    unk2: 1
+    text: ""
+  - name: Show Trap Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Give Trap
+      param3: 3
+      param4: Trap Text
+  - name: Give Trap
+    type: flowadd
+    flow:
+      type: type3
+      next: -1
+      param3: 72 # custom command: give trap
+  
+  - name: Patch Rupoor for Traps
+    type: flowpatch
+    index: 112
+    flow:
+      next: Check for Trap
+  - name: Check for Trap
+    type: flowadd
+    flow:
+      type: type3
+      next: Trap Rupoor Switch
+      param3: 71 # custom command: get trap id
+  - name: Trap Rupoor Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 7 # use result from previous check
+    cases:
+      - 54 # Rupoor text
+      - Show Trap Text
+
   - name: Scrapper Entry
     type: entryadd
     entry:
@@ -373,7 +418,7 @@
     flow:
       subType: 6
       param2: 0
-      param3: 7 # use result from previous chck
+      param3: 7 # use result from previous check
     cases:
       - Check Eldin SotH 1 # true
       - -1                 # false
@@ -391,7 +436,7 @@
     flow:
       subType: 6
       param2: 0
-      param3: 7 # use result from previous chck
+      param3: 7 # use result from previous check
     cases:
       - Check Lanayru SotH 1 # true
       - -1                   # false
@@ -409,7 +454,7 @@
     flow:
       subType: 6
       param2: 0
-      param3: 7 # use result from previous chck
+      param3: 7 # use result from previous check
     cases:
       - Give full SotH # true
       - -1             # false
@@ -3018,7 +3063,7 @@
     flow:
       subType: 6
       param2: 0
-      param3: 7 # use result from previous chck
+      param3: 7 # use result from previous check
     cases:
       - 122 # true, continue with bomb as drawing quest
       - 224  # false, go to random select
@@ -3041,7 +3086,7 @@
     flow:
       subType: 6
       param2: 0
-      param3: 7 # use result from previous chck
+      param3: 7 # use result from previous check
     cases:
       - 116 # true, continue with bomb as drawing quest
       - 261  # false, go to random select

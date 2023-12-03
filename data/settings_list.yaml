@@ -485,6 +485,16 @@
     - "off":                           "Unrequired dungeons may contain items needed to beat the game."
     - "on":                            "Unrequired dungeons will be barren."
 
+- name: traps
+  default_option: "on"
+  pretty_name: Trap Items
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "All items in the game will be genuine."
+    - "on":                            "Some items in the item pool will look like important items but actually be 'traps' that give negative effects (e.g. burning, cursed, slow textboxes)."
+
 - name: ammo_availability
   default_option: plentiful
   pretty_name: Ammo Availability

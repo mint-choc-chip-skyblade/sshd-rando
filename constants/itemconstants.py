@@ -151,3 +151,65 @@ ITEM_COUNTS = {
     PROGRESSIVE_BOW: (0x1F2, 20, 1),
     PROGRESSIVE_SLINGSHOT: (0x1ED, 20, 1),
 }
+
+TRAP_OARC_NAMES: dict[int, tuple] = {
+    10: ("GetSwordA",),  # Progressive Sword
+    16: ("GetHarp",),  # Goddess's Harp
+    19: (
+        "GetBowA",
+        "GetBowB",
+        "GetBowC",
+    ),  # Progressive Bow
+    20: ("GetHookShot",),  # Clawshots
+    21: ("GetBirdStatue",),  # Spiral Charge
+    25: ("GetKeyBoss2A",),  # Ancient Cistern Boss Key
+    26: ("GetKeyBoss2B",),  # Fire Sanctuary Boss Key
+    27: ("GetKeyBoss2C",),  # Sandship Boss Key
+    28: ("GetKeyKakera",),  # Key Piece
+    29: ("GetKeyBossA",),  # Skyview Temple Boss Key
+    30: ("GetKeyBossB",),  # Earth Temple Boss Key
+    31: ("GetKeyBossC",),  # Lanayru Mining Facility Boss Key
+    35: ("GetGenki",),  # Gratitude Crystal Pack
+    # 48: ("GetGenki",), # Gratitude Crystal
+    49: ("GetVacuum",),  # Gust Bellows
+    52: (
+        "GetPachinkoA",
+        "GetPachinkoB",
+    ),  # Progressive Slingshot
+    53: (
+        "GetBeetleA",
+        "GetBeetleB",
+        "GetBeetleC",
+        "GetBeetleD",
+    ),  # Progressive Beetle
+    56: (
+        "GetMoleGloveA",
+        "GetMoleGloveB",
+    ),  # Progressive Mitts
+    68: ("GetUroko",),  # Water Dragon's Scale
+    71: (
+        "GetNetA",
+        "GetNetB",
+    ),  # Progressive Bug Net
+    92: ("GetBombBag",),  # Bomb Bag
+    98: ("GetMapSea",),  # Sea Chart
+    108: ("GetPurseB", "get others"),  # Progressive Wallet
+    112: (
+        "GetPouchA",
+        "GetPouchB",
+    ),  # Progressive Pouch
+    137: ("GetWhip",),  # Whip
+    138: ("GetEarring",),  # Fireshield Earrings
+    153: (
+        "GetBottleEmpty",
+        "get other bottles",
+    ),  # Empty Bottle
+    158: ("GetKobunALetter",),  # Cawlin's Letter
+    159: ("GetTerryCage",),  # Beedle's Insect Cage
+    177: ("GetSekibanMapA",),  # Emerald Tablet
+    178: ("GetSekibanMapB",),  # Ruby Tablet
+    179: ("GetSekibanMapC",),  # Amber Tablet
+    180: ("GetSirenKey",),  # Stone of Trials
+    198: ("GetFruitB",),  # Life Tree Fruit
+    199: ("GetSparePurse",),  # Extra Wallet
+}

@@ -1,9 +1,13 @@
+import random
+from constants.itemconstants import TRAP_OARC_NAMES
 from constants.patchconstants import (
     STAGE_PATCH_PATH_REGEX,
     EVENT_PATCH_PATH_REGEX,
     OARC_ADD_PATH_REGEX,
     SHOP_PATCH_PATH_REGEX,
 )
+
+from logic.config import Config
 
 from logic.location import Location
 from patches.eventpatchhandler import EventPatchHandler
@@ -14,9 +18,33 @@ def determine_check_patches(
     location_table: dict[str, Location],
     stage_patch_handler: StagePatchHandler,
     event_patch_handler: EventPatchHandler,
+    config: Config,
 ):
     for location in location_table.values():
         item = location.current_item
+
+        itemid = -1
+        if item is not None:
+            itemid = item.id
+
+        # TODO: make sure all models are in extracts.yaml
+        if (
+            traps := (config.settings[0].settings["traps"].value == "on")
+            and itemid == 254
+        ):
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            print(item.name)
+
+            if not item.oarcs:
+                item.oarcs = list()
+
+            if isinstance(item.oarcs, list):
+                itemid = random.choice(list(TRAP_OARC_NAMES.keys()))
+                item.oarcs.append(
+                    TRAP_OARC_NAMES[itemid][0]
+                )  # TODO: implement variations
+
+                print(itemid, TRAP_OARC_NAMES[itemid], item.oarcs)
 
         for path in location.patch_paths:
             if stage_patch_match := STAGE_PATCH_PATH_REGEX.match(path):
@@ -34,12 +62,13 @@ def determine_check_patches(
                         stage_patch_handler.add_oarc_for_check(stage, layer, item.oarcs)
 
                 stage_patch_handler.add_check_patch(
-                    stage, room, object_name, layer, objectid, item.id
+                    stage, room, object_name, layer, objectid, itemid, traps
                 )
 
             if event_patch_match := EVENT_PATCH_PATH_REGEX.match(path):
                 event_file = event_patch_match.group("eventFile")
                 eventid = event_patch_match.group("eventID")
+                # TODO: does this need to use the random_item_id from the traps stuff?
                 event_patch_handler.add_check_patch(event_file, eventid, item.id)
 
             if oarc_add_match := OARC_ADD_PATH_REGEX.match(path):
