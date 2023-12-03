@@ -8,23 +8,48 @@ use core::arch::asm;
 use core::ffi::c_void;
 use core::str;
 use numtoa::NumToA;
+use static_assertions::assert_eq_size;
 
-mod structs;
+mod actor;
+mod custom;
+mod event;
+mod flag;
+mod lyt;
+mod savefile;
+
+#[repr(C)]
+#[derive(Copy, Clone, Default)]
+pub struct Vec3f {
+    pub x: f32,
+    pub y: f32,
+    pub z: f32,
+}
+assert_eq_size!([u8; 12], Vec3f);
+
+#[repr(C)]
+#[derive(Copy, Clone, Default)]
+pub struct Vec3s {
+    pub x: u16,
+    pub y: u16,
+    pub z: u16,
+}
+assert_eq_size!([u8; 6], Vec3s);
 
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
-    static PLAYER_PTR: *mut structs::Player;
+    static PLAYER_PTR: *mut actor::dPlayer;
 
-    static FILE_MGR: *mut structs::FileMgr;
-    static HARP_RELATED: *mut structs::HarpRelated;
-    static STAGE_MGR: *mut structs::dStageMgr;
+    static FILE_MGR: *mut savefile::FileMgr;
+    static HARP_RELATED: *mut event::HarpRelated;
+    static STAGE_MGR: *mut actor::dStageMgr;
+    static EVENT_MGR: *mut event::EventMgr;
 
-    static STORYFLAG_MGR: *mut structs::FlagMgr;
-    static ITEMFLAG_MGR: *mut structs::FlagMgr;
-    static SCENEFLAG_MGR: *mut structs::SceneflagMgr;
-    static DUNGEONFLAG_MGR: *mut structs::DungeonflagMgr;
-    static LYT_MSG_WINDOW: *mut structs::LytMsgWindow;
+    static STORYFLAG_MGR: *mut flag::FlagMgr;
+    static ITEMFLAG_MGR: *mut flag::FlagMgr;
+    static SCENEFLAG_MGR: *mut flag::SceneflagMgr;
+    static DUNGEONFLAG_MGR: *mut flag::DungeonflagMgr;
+    static LYT_MSG_WINDOW: *mut lyt::dLytMsgWindow;
 
     static mut STATIC_STORYFLAGS: [u16; 128];
     static mut STATIC_SCENEFLAGS: [u16; 8];
@@ -33,7 +58,7 @@ extern "C" {
     static mut STATIC_ITEMFLAGS: [u16; 64];
     static mut STATIC_DUNGEONFLAGS: [u16; 8];
 
-    static mut GAME_RELOADER_PTR: *mut structs::GameReloader;
+    static mut GAME_RELOADER_PTR: *mut actor::GameReloader;
     static mut RESPAWN_TYPE: u8;
     static mut CURRENT_STAGE_NAME: [u8; 8];
     static mut CURRENT_STAGE_SUFFIX: [u8; 4];
@@ -55,42 +80,46 @@ extern "C" {
     static mut CURRENT_LAYER_COPY: u8;
 
     static mut ACTOR_PARAM_SCALE: u64;
-    static mut ACTOR_PARAM_ROT: *mut structs::Vec3s;
+    static mut ACTOR_PARAM_ROT: *mut Vec3s;
     static mut ACTORBASE_PARAM2: u32;
 
     static mut BASEBASE_ACTOR_PARAM1: u32;
     static mut BASEBASE_GROUP_TYPE: u8;
 
     static ACTOR_ALLOCATOR_DEFINITIONS: u64; // [*const u64; 701];
+    static CURRENT_ACTOR_EVENT_FLOW_MGR: *mut event::ActorEventFlowMgr;
 
+    // Custom symbols
     static STARTFLAGS: [u16; 1000];
-    static WARP_TO_START_INFO: structs::WarpToStartInfo;
-    static START_COUNTS: [structs::StartCount; 50];
+    static WARP_TO_START_INFO: custom::WarpToStartInfo;
+    static START_COUNTS: [custom::StartCount; 50];
+    static mut TRAP_ITEM_INDEX: u8;
+    static mut TRAP_DURATION: u16;
 
     fn strlen(string: *mut u8) -> u64;
     fn strncmp(dest: *mut u8, src: *mut u8, size: u64) -> u64;
     fn GameReloader__triggerExit(
-        gameReloader: *mut structs::GameReloader,
-        currentRoom: u32,
-        exitIndex: u32,
-        forceNight: u32,
-        forceTrial: u32,
+        game_reloader: *mut actor::GameReloader,
+        current_room: u32,
+        exit_index: u32,
+        force_night: u32,
+        force_trial: u32,
     );
     fn GameReloader__triggerEntrance(
-        gameReloader: *mut structs::GameReloader,
-        stageName: *mut [u8; 7],
+        game_reloader: *mut actor::GameReloader,
+        stage_name: *mut [u8; 7],
         room: u32,
         layer: u32,
         entrance: u32,
-        forcedNight: u32,
-        forcedTrial: u32,
-        transitionType: u32,
-        transitionFadeFrames: u16,
+        forced_night: u32,
+        forced_trial: u32,
+        transition_type: u32,
+        transition_fade_frames: u16,
         unk10: u32,
         unk11: u32,
     );
     fn GameReloader__actuallyTriggerEntrance(
-        dStageMgr: *mut structs::dStageMgr,
+        stage_mgr: *mut actor::dStageMgr,
         room: u8,
         layer: u8,
         entrance: u8,
@@ -100,20 +129,15 @@ extern "C" {
         transition_fade_frames: u16,
         param_9: u8,
     );
-    fn SceneflagMgr__setFlag(sceneflagMgr: *mut structs::SceneflagMgr, roomid: u32, flag: u32);
-    fn SceneflagMgr__unsetFlag(sceneflagMgr: *mut structs::SceneflagMgr, roomid: u32, flag: u32);
+    fn SceneflagMgr__setFlag(sceneflag_mgr: *mut flag::SceneflagMgr, roomid: u32, flag: u32);
+    fn SceneflagMgr__unsetFlag(sceneflag_mgr: *mut flag::SceneflagMgr, roomid: u32, flag: u32);
     fn SceneflagMgr__checkFlag(
-        sceneflagMgr: *mut structs::SceneflagMgr,
+        sceneflag_mgr: *mut flag::SceneflagMgr,
         roomid: u32,
         flag: u32,
     ) -> u16;
-    fn spawnDrop(
-        itemid: structs::ITEMFLAGS,
-        roomid: u32,
-        pos: *mut structs::Vec3f,
-        rot: *mut structs::Vec3s,
-    );
-    fn dAcOlightLine__inUpdate(light_pillar_actor: *mut structs::dAcOlightLine, unk: u64);
+    fn spawnDrop(itemid: flag::ITEMFLAGS, roomid: u32, pos: *mut Vec3f, rot: *mut Vec3s);
+    fn dAcOlightLine__inUpdate(light_pillar_actor: *mut actor::dAcOlightLine, unk: u64);
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -122,7 +146,7 @@ extern "C" {
 #[no_mangle]
 pub fn handle_startflags() {
     unsafe {
-        (*FILE_MGR).preventCommit = true;
+        (*FILE_MGR).prevent_commit = true;
 
         let mut delimiter_count = 0;
 
@@ -137,7 +161,7 @@ pub fn handle_startflags() {
             match delimiter_count {
                 // Storyflags
                 0 => {
-                    ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag.into());
+                    ((*(*STORYFLAG_MGR).funcs).set_flag)(STORYFLAG_MGR, flag.into());
                 },
 
                 // Sceneflags
@@ -155,7 +179,7 @@ pub fn handle_startflags() {
 
                 // Itemflags
                 2 => {
-                    ((*(*ITEMFLAG_MGR).funcs).setFlag)(ITEMFLAG_MGR, flag.into());
+                    ((*(*ITEMFLAG_MGR).funcs).set_flag)(ITEMFLAG_MGR, flag.into());
                 },
 
                 // Dungeonflags
@@ -190,17 +214,17 @@ pub fn handle_startflags() {
                 break;
             }
 
-            ((*(*ITEMFLAG_MGR).funcs).setFlagOrCounterToValue)(
+            ((*(*ITEMFLAG_MGR).funcs).set_flag_or_counter_to_value)(
                 ITEMFLAG_MGR,
                 start_count.counter,
                 start_count.value,
             );
         }
 
-        ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);
-        ((*(*ITEMFLAG_MGR).funcs).doCommit)(ITEMFLAG_MGR);
+        ((*(*STORYFLAG_MGR).funcs).do_commit)(STORYFLAG_MGR);
+        ((*(*ITEMFLAG_MGR).funcs).do_commit)(ITEMFLAG_MGR);
 
-        (*FILE_MGR).preventCommit = false;
+        (*FILE_MGR).prevent_commit = false;
     }
 }
 
@@ -209,21 +233,21 @@ pub fn handle_startflags() {
 #[no_mangle]
 pub fn set_storyflag(flag: u16) {
     unsafe {
-        ((*(*STORYFLAG_MGR).funcs).setFlag)(STORYFLAG_MGR, flag);
+        ((*(*STORYFLAG_MGR).funcs).set_flag)(STORYFLAG_MGR, flag);
     };
 }
 
 #[no_mangle]
 pub fn unset_storyflag(flag: u16) {
     unsafe {
-        ((*(*STORYFLAG_MGR).funcs).unsetFlag)(STORYFLAG_MGR, flag);
+        ((*(*STORYFLAG_MGR).funcs).unset_flag)(STORYFLAG_MGR, flag);
     };
 }
 
 #[no_mangle]
 pub fn check_storyflag(flag: u16) -> u32 {
     unsafe {
-        return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, flag);
+        return ((*(*STORYFLAG_MGR).funcs).get_flag_or_counter)(STORYFLAG_MGR, flag);
     }
 }
 
@@ -294,23 +318,23 @@ pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
 
 // Itemflags
 #[no_mangle]
-pub fn set_itemflag(flag: structs::ITEMFLAGS) {
+pub fn set_itemflag(flag: flag::ITEMFLAGS) {
     unsafe {
-        ((*(*ITEMFLAG_MGR).funcs).setFlag)(ITEMFLAG_MGR, flag as u16);
+        ((*(*ITEMFLAG_MGR).funcs).set_flag)(ITEMFLAG_MGR, flag as u16);
     }
 }
 
 #[no_mangle]
-pub fn unset_itemflag(flag: structs::ITEMFLAGS) {
+pub fn unset_itemflag(flag: flag::ITEMFLAGS) {
     unsafe {
-        ((*(*ITEMFLAG_MGR).funcs).unsetFlag)(ITEMFLAG_MGR, flag as u16);
+        ((*(*ITEMFLAG_MGR).funcs).unset_flag)(ITEMFLAG_MGR, flag as u16);
     }
 }
 
 #[no_mangle]
-pub fn check_itemflag(flag: structs::ITEMFLAGS) -> u32 {
+pub fn check_itemflag(flag: flag::ITEMFLAGS) -> u32 {
     unsafe {
-        return ((*(*ITEMFLAG_MGR).funcs).getFlagOrCounter)(ITEMFLAG_MGR, flag as u16);
+        return ((*(*ITEMFLAG_MGR).funcs).get_flag_or_counter)(ITEMFLAG_MGR, flag as u16);
     }
 }
 
@@ -323,14 +347,20 @@ pub fn set_goddess_sword_pulled_story_flag() {
 
 #[no_mangle]
 pub fn set_stone_of_trials_placed_flag(
-    gameReloader: *mut structs::GameReloader,
-    currentRoom: u32,
-    exitIndex: u32,
-    forceNight: u32,
-    forceTrial: u32,
+    game_reloader: *mut actor::GameReloader,
+    current_room: u32,
+    exit_index: u32,
+    force_night: u32,
+    force_trial: u32,
 ) {
     unsafe {
-        GameReloader__triggerExit(gameReloader, currentRoom, exitIndex, forceNight, forceTrial)
+        GameReloader__triggerExit(
+            game_reloader,
+            current_room,
+            exit_index,
+            force_night,
+            force_trial,
+        )
     }
 
     set_storyflag(22); // 22 == Stone of Trials placed storyflag
@@ -355,7 +385,7 @@ pub fn update_day_night_storyflag() {
             unset_storyflag(899);
         }
 
-        ((*(*STORYFLAG_MGR).funcs).doCommit)(STORYFLAG_MGR);
+        ((*(*STORYFLAG_MGR).funcs).do_commit)(STORYFLAG_MGR);
 
         // Replaced instruction
         NEXT_UNK = 0xFF;
@@ -367,10 +397,10 @@ pub fn update_day_night_storyflag() {
 #[no_mangle]
 pub fn fix_freestanding_item_y_offset() {
     unsafe {
-        let mut item_actor: *mut structs::dAcItem;
+        let mut item_actor: *mut actor::dAcItem;
         asm!("mov {0}, x19", out(reg) item_actor);
 
-        let actor_param1 = (*item_actor).base.baseBase.param1;
+        let actor_param1 = (*item_actor).base.basebase.members.param1;
 
         if (actor_param1 >> 9) & 0x1 == 0 {
             let mut use_default_scaling = false;
@@ -432,7 +462,7 @@ pub fn fix_freestanding_item_y_offset() {
                 _ => y_offset = 0.0,
             }
 
-            (*item_actor).freestandingYOffset = y_offset;
+            (*item_actor).freestanding_y_offset = y_offset;
 
             if use_default_scaling {
                 (*item_actor).base.members.base.rot.y |= 1;
@@ -447,7 +477,7 @@ pub fn fix_freestanding_item_y_offset() {
 }
 
 #[no_mangle]
-pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
+pub fn handle_custom_item_get(item_actor: *mut actor::dAcItem) -> u16 {
     const BK_TO_FLAGINDEX: [usize; 7] = [
         12,  // AC BK - item id 25
         15,  // FS BK - item id 26
@@ -531,7 +561,7 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
             }
         }
 
-        return (*item_actor).finalDeterminedItemID;
+        return (*item_actor).final_determined_itemid;
     }
 }
 
@@ -655,36 +685,36 @@ pub fn handle_er_action_states() {
 
 #[no_mangle]
 pub fn fix_sky_keep_exit(
-    gameReloader: *mut structs::GameReloader,
-    stageName: *mut [u8; 7],
+    game_reloader: *mut actor::GameReloader,
+    stage_name: *mut [u8; 7],
     room: u32,
     layer: u32,
     entrance: u32,
-    forcedNight: u32,
-    forcedTrial: u32,
-    transitionType: u32,
-    mut transitionFadeFrames: u16,
+    forced_night: u32,
+    forced_trial: u32,
+    transition_type: u32,
+    mut transition_fade_frames: u16,
     unk10: u32,
     mut unk11: u32,
 ) {
     unsafe {
-        if &(*stageName)[..5] == b"F000\0" {
+        if &(*stage_name)[..5] == b"F000\0" {
             // Use bzs exit when leaving the dungeon (makes ER work properly)
-            GameReloader__triggerExit(gameReloader, 0, 1, 2, 2);
+            GameReloader__triggerExit(game_reloader, 0, 1, 2, 2);
         } else {
             // Replaced instructions
-            transitionFadeFrames = 0xF;
+            transition_fade_frames = 0xF;
             unk11 = 0xFF;
             GameReloader__triggerEntrance(
-                gameReloader,
-                stageName,
+                game_reloader,
+                stage_name,
                 room,
                 layer,
                 entrance,
-                forcedNight,
-                forcedTrial,
-                transitionType,
-                transitionFadeFrames,
+                forced_night,
+                forced_trial,
+                transition_type,
+                transition_fade_frames,
                 unk10,
                 unk11,
             );
@@ -694,12 +724,31 @@ pub fn fix_sky_keep_exit(
 
 #[no_mangle]
 pub fn custom_event_commands(
-    actor_event_flow_mgr: *mut structs::ActorEventFlowMgr,
-    p_event_flow_element: *const structs::EventFlowElement,
+    actor_event_flow_mgr: *mut event::ActorEventFlowMgr,
+    p_event_flow_element: *const event::EventFlowElement,
 ) {
     let event_flow_element = unsafe { &*p_event_flow_element };
     match event_flow_element.param3 {
+        // Fi Warp
         70 => warp_to_start(),
+        // Get trap type
+        71 => unsafe {
+            if TRAP_ITEM_INDEX != 0 {
+                (*actor_event_flow_mgr).result_from_previous_check = 1;
+            } else {
+                (*actor_event_flow_mgr).result_from_previous_check = 0;
+            }
+
+            TRAP_ITEM_INDEX = 0;
+        },
+        72 => unsafe {
+            (*PLAYER_PTR).burn_timer = 32;
+            (*PLAYER_PTR).shock_effect_timer = 32;
+            (*PLAYER_PTR).cursed_timer = 32;
+            (*PLAYER_PTR).shit_smell_timer = 32;
+            (*PLAYER_PTR).sheild_burn_timer = 32;
+            TRAP_DURATION = 256;
+        },
         _ => (),
     }
 
@@ -710,9 +759,38 @@ pub fn custom_event_commands(
 }
 
 #[no_mangle]
+pub fn handle_effect_timers() -> u32 {
+    unsafe {
+        // If in event, clear status effects
+        if EVENT_MGR != core::ptr::null_mut() && (*EVENT_MGR).probably_state != 0 {
+            // But if the cause is a trap, don't clear them
+            if TRAP_DURATION > 0 {
+                return 0;
+            }
+
+            return 1;
+        }
+
+        if TRAP_DURATION > 0 {
+            TRAP_DURATION -= 1;
+
+            if (*PLAYER_PTR).burn_timer == 0 {
+                (*PLAYER_PTR).burn_timer = 32;
+                (*PLAYER_PTR).shock_effect_timer = 32;
+                (*PLAYER_PTR).cursed_timer = 32;
+                (*PLAYER_PTR).shit_smell_timer = 32;
+                (*PLAYER_PTR).sheild_burn_timer = 32;
+            }
+        }
+
+        return 0;
+    }
+}
+
+#[no_mangle]
 pub fn warp_to_start() {
     unsafe {
-        let start_info = &*(&WARP_TO_START_INFO as *const structs::WarpToStartInfo);
+        let start_info = &*(&WARP_TO_START_INFO as *const custom::WarpToStartInfo);
 
         GameReloader__actuallyTriggerEntrance(
             STAGE_MGR,
@@ -746,7 +824,7 @@ pub fn fix_sandship_boat() -> u32 {
 
         if strlen(CURRENT_STAGE_NAME.as_mut_ptr()) == 4 && current_stage_name == b"F301" {
             // 152 == Skipper's Boat Timeshift Stone Hit
-            return ((*(*STORYFLAG_MGR).funcs).getFlagOrCounter)(STORYFLAG_MGR, 152);
+            return ((*(*STORYFLAG_MGR).funcs).get_flag_or_counter)(STORYFLAG_MGR, 152);
         }
 
         return 1u32;
@@ -757,7 +835,7 @@ pub fn fix_sandship_boat() -> u32 {
 pub fn drop_arrows_bombs_seeds(
     param2_s0x18: u8,
     roomid: u32,
-    pos: *mut structs::Vec3f,
+    pos: *mut Vec3f,
     param4: u32,
     param5: *mut c_void,
 ) {
@@ -765,30 +843,30 @@ pub fn drop_arrows_bombs_seeds(
         // 0xFE is the custom id being used to drop arrows, bombs, and seeds.
         // Should set the eq flag for comparison after this addtion.
         if param2_s0x18 == 0xFE {
-            if check_itemflag(structs::ITEMFLAGS::BOW) != 0 {
+            if check_itemflag(flag::ITEMFLAGS::BOW) != 0 {
                 spawnDrop(
-                    structs::ITEMFLAGS::BUNDLE_OF_ARROWS,
+                    flag::ITEMFLAGS::BUNDLE_OF_ARROWS,
                     roomid,
                     pos,
-                    &mut structs::Vec3s::default() as *mut structs::Vec3s,
+                    &mut Vec3s::default() as *mut Vec3s,
                 );
             }
 
-            if check_itemflag(structs::ITEMFLAGS::BOMB_BAG) != 0 {
+            if check_itemflag(flag::ITEMFLAGS::BOMB_BAG) != 0 {
                 spawnDrop(
-                    structs::ITEMFLAGS::TEN_BOMBS,
+                    flag::ITEMFLAGS::TEN_BOMBS,
                     roomid,
                     pos,
-                    &mut structs::Vec3s::default() as *mut structs::Vec3s,
+                    &mut Vec3s::default() as *mut Vec3s,
                 );
             }
 
-            if check_itemflag(structs::ITEMFLAGS::SLINGSHOT) != 0 {
+            if check_itemflag(flag::ITEMFLAGS::SLINGSHOT) != 0 {
                 spawnDrop(
-                    structs::ITEMFLAGS::FIVE_DEKU_SEEDS, // 10 doesn't work for some reason
+                    flag::ITEMFLAGS::FIVE_DEKU_SEEDS, // 10 doesn't work for some reason
                     roomid,
                     pos,
-                    &mut structs::Vec3s::default() as *mut structs::Vec3s,
+                    &mut Vec3s::default() as *mut Vec3s,
                 );
             }
         }
@@ -860,11 +938,11 @@ pub fn fix_item_get_under_water() {
 pub fn activation_checks_for_goddess_walls() -> bool {
     unsafe {
         // Replaced code
-        if (*HARP_RELATED).someCheckForContinuousStrumming == 0
-            || (*HARP_RELATED).someOtherHarpThing != 0
+        if (*HARP_RELATED).some_check_for_continuous_strumming == 0
+            || (*HARP_RELATED).some_other_harp_thing != 0
         {
             // Additional check for BotG
-            if check_itemflag(structs::ITEMFLAGS::BALLAD_OF_THE_GODDESS) == 1 {
+            if check_itemflag(flag::ITEMFLAGS::BALLAD_OF_THE_GODDESS) == 1 {
                 return true;
             }
         }
@@ -883,24 +961,24 @@ pub fn remove_timeshift_stone_cutscenes() {
             out(reg) param1,
         );
 
-        let isSandshipStone = param1 >> 10 & 0xFF == 1;
+        let is_sandship_stone = param1 >> 10 & 0xFF == 1;
 
         // set value for playFirstTimeCutscene
         asm!(
             "strb {0:w}, [x23, #0xba]",
-            in(reg) isSandshipStone as u8,
+            in(reg) is_sandship_stone as u8,
         );
     }
 }
 
 #[no_mangle]
-pub fn fix_light_pillars(light_pillar_actor: *mut structs::dAcOlightLine) {
+pub fn fix_light_pillars(light_pillar_actor: *mut actor::dAcOlightLine) {
     unsafe {
-        let param1 = (*light_pillar_actor).base.baseBase.param1;
+        let param1 = (*light_pillar_actor).base.basebase.members.param1;
         let storyflag = ((param1 >> 8) & 0xFF) as u16;
 
         if (check_storyflag(storyflag) == 1) {
-            (*light_pillar_actor).lightShaftActivated = true;
+            (*light_pillar_actor).light_shaft_activated = true;
         }
 
         dAcOlightLine__inUpdate(light_pillar_actor, 1);
@@ -910,7 +988,7 @@ pub fn fix_light_pillars(light_pillar_actor: *mut structs::dAcOlightLine) {
 #[no_mangle]
 pub fn update_crystal_count(item: u32) {
     unsafe {
-        let mut count: u32 = check_itemflag(structs::ITEMFLAGS::CRYSTAL_PACK_COUNTER);
+        let mut count: u32 = check_itemflag(flag::ITEMFLAGS::CRYSTAL_PACK_COUNTER);
 
         // Increase counter depending on which item we got.
         // The counter hasn't increased with the value of the item yet
@@ -923,10 +1001,28 @@ pub fn update_crystal_count(item: u32) {
 
         // Update numeric arg 1 with the proper count
         if (item == 0x23 || item == 0x30) {
-            (*(*LYT_MSG_WINDOW).textManager).numeric_args[1] = count;
+            (*(*LYT_MSG_WINDOW).text_mgr).numeric_args[1] = count;
         }
 
         asm!("and w8, w0, #0xffff", "cmp w8, #0x1c");
+    }
+}
+
+#[no_mangle]
+pub fn setup_traps(item_actor: *mut actor::dAcItem) -> u16 {
+    unsafe {
+        // If Trap
+        if (*item_actor).base.members.base.param2 & 0x80 == 0 {
+            // Set itemid to a rupoor for the frowny face and sound
+            (*item_actor).itemid = 34;
+            (*item_actor).final_determined_itemid = 34;
+
+            // Still keep track of which trap it is tho
+            TRAP_ITEM_INDEX = 1;
+            TRAP_DURATION = 255;
+        }
+
+        return (*item_actor).final_determined_itemid;
     }
 }
 
