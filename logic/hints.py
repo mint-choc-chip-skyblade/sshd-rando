@@ -736,8 +736,6 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                             .replace("%d", str(len(useful_locations)))
                         )
 
-                    useful_locations.remove(most_useful_location)
-
         logging.getLogger("").debug(f'Generated hint "{hint.text}" for song {song}')
 
 
