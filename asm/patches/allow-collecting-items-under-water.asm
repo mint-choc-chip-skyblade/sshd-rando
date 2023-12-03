@@ -1,4 +1,4 @@
-; in item get func 1
+; in dAcItem::stateWaitGetDemoUpdate
 .offset 0x71004df098
 mov w9, w8
 mov w8, #16
@@ -9,7 +9,7 @@ tbnz w8, #2, 0x71004df0b8 ; don't set event name if anim index == 4
 nop ; don't set default item get eventFlags
 
 
-; in item get func 2
+; in dAcItem::stateWaitForcedGetDemoUpdate
 .offset 0x71004df2c0
 mov w9, w8
 mov w8, #16

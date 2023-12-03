@@ -1,11 +1,13 @@
 main:
     PLAYER_PTR: 0x7102bfd940
 
+
     # MGRs
     FILE_MGR: 0x7102bfdcc0
     INPUT_MGR: 0x7102c02a68
     HARP_RELATED: 0x7102c02c48
     STAGE_MGR: 0x7102bfdda8
+    EVENT_MGR: 0x7101831ed8
 
     STORYFLAG_MGR: 0x71018321f0
     SCENEFLAG_MGR: 0x7101831ef8
@@ -13,7 +15,8 @@ main:
     DUNGEONFLAG_MGR: 0x7101832120
     ENEMY_DEFEAT_FLAG_MGR: 0x7101832160
     LYT_MSG_WINDOW: 0x7101840a18
-    
+
+
     # Static flags
     STATIC_STORYFLAGS: 0x71018321f8
     STATIC_SCENEFLAGS: 0x7101831f00
@@ -22,6 +25,7 @@ main:
     STATIC_ITEMFLAGS: 0x7101832170
     STATIC_DUNGEONFLAGS: 0x7101832128
     STATIC_ENEMY_DEFEATED_FLAGS: 0x71018322f8
+
 
     # Reloader stuff
     GAME_RELOADER_PTR: 0x7102bfd930
@@ -45,6 +49,7 @@ main:
     NEXT_UNK: 0x7102bfd92c
     CURRENT_LAYER_COPY: 0x7102bfd94c
 
+
     # Actor Stuff
     ACTOR_PARAM_SCALE: 0x7102c018d0
     ACTOR_PARAM_ROT: 0x7102c018c8
@@ -54,6 +59,8 @@ main:
     BASEBASE_GROUP_TYPE: 0x712d03607c
 
     ACTOR_ALLOCATOR_DEFINITIONS: 0x7101678448
+    CURRENT_ACTOR_EVENT_FLOW_MGR: 0x7101840a48
+
 
     # Functions
     strlen: 0x710105f5c0
@@ -68,10 +75,24 @@ main:
     spawnDrop: 0x71004ebc5c
     dAcOlightLine__inUpdate: 0x7100836380
 
+
     # Custom Symbols
     additions_jumptable: 0x710065a070
+
+    # Size: 0x1000
     STARTFLAGS: 0x712e54b200 # See asmconstants.py for where this number comes from
+
+    # Size: 12
     WARP_TO_START_INFO: 0x712e54b5e8 # STARTFLAGS_OFFSET + MAX_STARFLAGS
+
+    # Size: 50
     START_COUNTS: 0x712e54b5f4 # WARP_TO_START_INFO + 12
+
+    # Size: 1
+    TRAP_ITEM_INDEX: 0x712e54b626
+
+    # Size: 2
+    TRAP_DURATION: 0x712e54b62c
+
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
     dAcItem__spawnRandoItemWithParams: 0x71005c2060

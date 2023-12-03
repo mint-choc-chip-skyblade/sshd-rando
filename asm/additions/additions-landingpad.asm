@@ -52,7 +52,8 @@ b.eq fix_sky_keep_exit
 cmp w8, #12
 b.eq check_local_sceneflag
 
-
+cmp w8, #13
+b.eq setup_traps
 
 cmp w8, #14
 b.eq drop_arrows_bombs_seeds
@@ -80,6 +81,9 @@ b.eq warp_to_start
 
 cmp w8, #22
 b.eq update_crystal_count
+
+cmp w8, #23
+b.eq handle_effect_timers
 
 ret ; this should never be reached
 

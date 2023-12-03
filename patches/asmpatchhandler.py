@@ -389,6 +389,15 @@ class ASMPatchHandler:
 
         startflags_data_dict.update(start_counts_data_dict)
 
+        # Clear space after startflags for use as custom constants
+        data_clear_dict = {
+            0x712E54B626: [
+                0,
+            ]
+            * 0x20
+        }
+        startflags_data_dict.update(data_clear_dict)
+
         yaml_write(output_path, startflags_data_dict)
 
         # Write the startflag binary to a non-temp file.
