@@ -1183,6 +1183,11 @@
   pretty: Upper Skyloft - Stamina Fruit near Knight Academy
   cryptic: a <r<fruit near a school>>
 
+- name: Upper Skyloft - Stamina Fruit near Goddess Statue
+  standard: Upper Skyloft - Stamina Fruit near Goddess Statue
+  pretty: Upper Skyloft - Stamina Fruit near Goddess Statue
+  cryptic: a <r<fruit near a tall statue>>
+
 - name: Inside the Statue of the Goddess - First Goddess Sword Item
   standard: Inside the Statue of the Goddess - First Goddess Sword Item
   pretty: Inside the Statue of the Goddess - First Goddess Sword Item
@@ -1298,6 +1303,36 @@
   pretty: Central Skyloft - Shed Chest
   cryptic: a <r<chest next to a goddess chest>>
 
+- name: Central Skyloft - Stamina Fruit between Wooden Planks
+  standard: Central Skyloft - Stamina Fruit between Wooden Planks
+  pretty: Central Skyloft - Stamina Fruit between Wooden Planks
+  cryptic: a <r<fruit in a lively area>>
+
+- name: Central Skyloft - Stamina Fruit near Wryna's House
+  standard: Central Skyloft - Stamina Fruit near Wryna's House
+  pretty: Central Skyloft - Stamina Fruit near Wryna's House
+  cryptic: a <r<fruit in a lively area>>
+
+- name: Central Skyloft - Stamina Fruit near River
+  standard: Central Skyloft - Stamina Fruit near River
+  pretty: Central Skyloft - Stamina Fruit near River
+  cryptic: a <r<fruit in a lively area>>
+
+- name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
+  standard: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
+  pretty: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
+  cryptic: a <r<fruit in a lively area>>
+
+- name: Central Skyloft - Stamina Fruit near Bazaar
+  standard: Central Skyloft - Stamina Fruit near Bazaar
+  pretty: Central Skyloft - Stamina Fruit near Bazaar
+  cryptic: a <r<fruit in a lively area>>
+
+- name: Central Skyloft - Stamina Fruit near Plaza
+  standard: Central Skyloft - Stamina Fruit near Plaza
+  pretty: Central Skyloft - Stamina Fruit near Plaza
+  cryptic: a <r<fruit in a lively area>>
+
 - name: Central Skyloft - West Cliff Goddess Chest
   standard: Central Skyloft - West Cliff Goddess Chest
   pretty: Central Skyloft - West Cliff Goddess Chest
@@ -1372,6 +1407,11 @@
   standard: Skyloft Village - Crystal near Pumpkin Patch
   pretty: Skyloft Village - Crystal near Pumpkin Patch
   cryptic: a <r<crystal behind a tree>>
+
+- name: Skyloft Village - Stamina Fruit
+  standard: Skyloft Village - Stamina Fruit
+  pretty: Skyloft Village - Stamina Fruit
+  cryptic: a <r<fruit near some residences>>
 
 - name: Batreaux - 5 Crystals
   standard: Batreaux - 5 Crystals
@@ -1663,6 +1703,26 @@
   pretty: Bug Heaven - Goddess Chest
   cryptic: a <s<goddess cube>> <r<near a volcano's waterfall>>
 
+- name: Bug Heaven - Stamina Fruit near Start
+  standard: Bug Heaven - Stamina Fruit near Start
+  pretty: Bug Heaven - Stamina Fruit near Start
+  cryptic: a <r<fruit in a buggy area>>
+
+- name: Bug Heaven - Stamina Fruit in front of Wooden Plank
+  standard: Bug Heaven - Stamina Fruit in front of Wooden Plank
+  pretty: Bug Heaven - Stamina Fruit in front of Wooden Plank
+  cryptic: a <r<fruit in a buggy area>>
+
+- name: Bug Heaven - Stamina Fruit in Center Room
+  standard: Bug Heaven - Stamina Fruit in Center Room
+  pretty: Bug Heaven - Stamina Fruit in Center Room
+  cryptic: a <r<fruit in a buggy area>>
+
+- name: Bug Heaven - Stamina Fruit on top of Slope
+  standard: Bug Heaven - Stamina Fruit on top of Slope
+  pretty: Bug Heaven - Stamina Fruit on top of Slope
+  cryptic: a <r<fruit in a buggy area>>
+
 - name: Bug Heaven - Nearby Gossip Stone
   standard: Bug Heaven - Nearby Gossip Stone
   pretty: Bug Heaven - Nearby Gossip Stone
@@ -1688,6 +1748,131 @@
   pretty: Mogma Mitts Island - Second Goddess Chest
   cryptic: a <s<goddess cube>> <r<in a desert gorge>>
 
+- name: Sealed Grounds - Spiral Stamina Fruit 1
+  standard: Sealed Grounds - Spiral Stamina Fruit 1
+  pretty: Sealed Grounds - Spiral Stamina Fruit 1
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 2
+  standard: Sealed Grounds - Spiral Stamina Fruit 2
+  pretty: Sealed Grounds - Spiral Stamina Fruit 2
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 3
+  standard: Sealed Grounds - Spiral Stamina Fruit 3
+  pretty: Sealed Grounds - Spiral Stamina Fruit 3
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 4
+  standard: Sealed Grounds - Spiral Stamina Fruit 4
+  pretty: Sealed Grounds - Spiral Stamina Fruit 4
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 5
+  standard: Sealed Grounds - Spiral Stamina Fruit 5
+  pretty: Sealed Grounds - Spiral Stamina Fruit 5
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 6
+  standard: Sealed Grounds - Spiral Stamina Fruit 6
+  pretty: Sealed Grounds - Spiral Stamina Fruit 6
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 7
+  standard: Sealed Grounds - Spiral Stamina Fruit 7
+  pretty: Sealed Grounds - Spiral Stamina Fruit 7
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 8
+  standard: Sealed Grounds - Spiral Stamina Fruit 8
+  pretty: Sealed Grounds - Spiral Stamina Fruit 8
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 9
+  standard: Sealed Grounds - Spiral Stamina Fruit 9
+  pretty: Sealed Grounds - Spiral Stamina Fruit 9
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 10
+  standard: Sealed Grounds - Spiral Stamina Fruit 10
+  pretty: Sealed Grounds - Spiral Stamina Fruit 10
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 11
+  standard: Sealed Grounds - Spiral Stamina Fruit 11
+  pretty: Sealed Grounds - Spiral Stamina Fruit 11
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 12
+  standard: Sealed Grounds - Spiral Stamina Fruit 12
+  pretty: Sealed Grounds - Spiral Stamina Fruit 12
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 13
+  standard: Sealed Grounds - Spiral Stamina Fruit 13
+  pretty: Sealed Grounds - Spiral Stamina Fruit 13
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 14
+  standard: Sealed Grounds - Spiral Stamina Fruit 14
+  pretty: Sealed Grounds - Spiral Stamina Fruit 14
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 15
+  standard: Sealed Grounds - Spiral Stamina Fruit 15
+  pretty: Sealed Grounds - Spiral Stamina Fruit 15
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 16
+  standard: Sealed Grounds - Spiral Stamina Fruit 16
+  pretty: Sealed Grounds - Spiral Stamina Fruit 16
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 17
+  standard: Sealed Grounds - Spiral Stamina Fruit 17
+  pretty: Sealed Grounds - Spiral Stamina Fruit 17
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 18
+  standard: Sealed Grounds - Spiral Stamina Fruit 18
+  pretty: Sealed Grounds - Spiral Stamina Fruit 18
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 19
+  standard: Sealed Grounds - Spiral Stamina Fruit 19
+  pretty: Sealed Grounds - Spiral Stamina Fruit 19
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 20
+  standard: Sealed Grounds - Spiral Stamina Fruit 20
+  pretty: Sealed Grounds - Spiral Stamina Fruit 20
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 21
+  standard: Sealed Grounds - Spiral Stamina Fruit 21
+  pretty: Sealed Grounds - Spiral Stamina Fruit 21
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 22
+  standard: Sealed Grounds - Spiral Stamina Fruit 22
+  pretty: Sealed Grounds - Spiral Stamina Fruit 22
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 23
+  standard: Sealed Grounds - Spiral Stamina Fruit 23
+  pretty: Sealed Grounds - Spiral Stamina Fruit 23
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 24
+  standard: Sealed Grounds - Spiral Stamina Fruit 24
+  pretty: Sealed Grounds - Spiral Stamina Fruit 24
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 25
+  standard: Sealed Grounds - Spiral Stamina Fruit 25
+  pretty: Sealed Grounds - Spiral Stamina Fruit 25
+  cryptic: a <r<fruit in a spiral>>
+  
 - name: Sealed Temple - Chest
   standard: Sealed Temple - Chest
   pretty: Sealed Temple - Chest
@@ -1764,6 +1949,31 @@
   pretty: Faron Woods - Rupee on Great Tree West Branch
   cryptic: an <r<item on a high up tree branch>>
 
+- name: Faron Woods - Stamina Fruit on Vines below First Log
+  standard: Faron Woods - Stamina Fruit on Vines below First Log
+  pretty: Faron Woods - Stamina Fruit on Vines below First Log
+  cryptic: a <r<fruit below a forest log>>
+
+- name: Faron Woods - Stamina Fruit past Empty Slope
+  standard: Faron Woods - Stamina Fruit past Empty Slope
+  pretty: Faron Woods - Stamina Fruit past Empty Slope
+  cryptic: a <r<fruit beyond a forest slope>>
+
+- name: Faron Woods - Stamina Fruit past Baba Slope
+  standard: Faron Woods - Stamina Fruit past Baba Slope
+  pretty: Faron Woods - Stamina Fruit past Baba Slope
+  cryptic: a <r<fruit above a forest slope>>
+
+- name: Faron Woods - Stamina Fruit on Vines near Erla
+  standard: Faron Woods - Stamina Fruit on Vines near Erla
+  pretty: Faron Woods - Stamina Fruit on Vines near Erla
+  cryptic: a <r<fruit on some forest vines>>
+
+- name: Faron Woods - Stamina Fruit on Vines on Great Tree
+  standard: Faron Woods - Stamina Fruit on Vines on Great Tree
+  pretty: Faron Woods - Stamina Fruit on Vines on Great Tree
+  cryptic: a <r<fruit on some tree vines>>
+
 - name: Faron Woods - Goddess Cube on West Great Tree near Exit
   standard: Faron Woods - Goddess Cube on West Great Tree near Exit
   pretty: Faron Woods - Goddess Cube on West Great Tree near Exit
@@ -1788,6 +1998,11 @@
   standard: Deep Woods - Chest
   pretty: Deep Woods - Chest
   cryptic: a <r<chest deep in a forest>>
+
+- name: Deep Woods - Stamina Fruit
+  standard: Deep Woods - Stamina Fruit
+  pretty: Deep Woods - Stamina Fruit
+  cryptic: a <r<fruit deep in a forest>>
 
 - name: Deep Woods - Gossip Stone
   standard: Deep Woods - Gossip Stone

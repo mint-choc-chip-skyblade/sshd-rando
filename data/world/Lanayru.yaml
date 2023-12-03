@@ -38,6 +38,7 @@
     Lanayru Mine End: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle) or 'Stamina_Potion' or logic_brakeslide
   locations:
     Lanayru Mine - Chest behind Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
+    Lanayru Mine - Stamina Fruit before Falling Statues: Nothing
 
 
 - name: Lanayru Mine End
@@ -50,6 +51,10 @@
     Lanayru Mine In Minecart: Can_Hit_Timeshift_Stone
   locations:
     Lanayru Mine - Chest at the End of Mine: Nothing # There's a baba in the way
+    Lanayru Mine - Stamina Fruit after Falling Statues: Nothing
+    Lanayru Mine - Stamina Fruit near Spumes 1: Nothing
+    Lanayru Mine - Stamina Fruit near Spumes 2: Nothing
+    Lanayru Mine - Stamina Fruit near Spumes 3: Nothing
 
 
 - name: Lanayru Mine In Minecart
@@ -83,6 +88,7 @@
   locations:
     Lanayru Desert - Chest near Party Wheel: Blow_Up_Covered_Timeshift_Stone
     Lanayru Desert - Chest near Rescue Caged Robot: Nothing
+    Lanayru Desert - Stamina Fruit on Ledge to Party Wheel: Blow_Up_Covered_Timeshift_Stone
 
     # You can use the bomb flowers to *just* throw one up into the hole in the cage from the ground
     # This trick is only doable on HD
@@ -124,7 +130,10 @@
     Sand Oasis End: Can_Navigate_in_Oasis or Clawshots or 'Push_Down_Second_Sand_Oasis_Minecart'
   locations:
     Lanayru Desert - Goddess Cube in Sand Oasis: Goddess_Sword
-
+    Lanayru Desert - Stamina Fruit in South Sand Oasis 1: Can_Navigate_in_Oasis
+    Lanayru Desert - Stamina Fruit in South Sand Oasis 2: Can_Navigate_in_Oasis
+    Lanayru Desert - Stamina Fruit in North Sand Oasis 1: Can_Navigate_in_Oasis
+    Lanayru Desert - Stamina Fruit in North Sand Oasis 2: Can_Navigate_in_Oasis
 
 - name: Sand Oasis End
   hint_region: Lanayru Desert
@@ -152,6 +161,9 @@
     LMF First Room: Nothing
   locations:
     Lanayru Desert - Chest on top of Lanayru Mining Facility: Nothing
+    Lanayru Desert - Stamina Fruit on South LMF Ledge: Nothing
+    Lanayru Desert - Stamina Fruit on West LMF Ledge: Nothing
+    Lanayru Desert - Stamina Fruit on LMF Wall Vines: Nothing
 
 
 - name: Lanayru Desert North
@@ -273,6 +285,11 @@
     Lanayru Desert North: Nothing
   locations:
     Lanayru Silent Realm - Collect all Tears Reward: Nothing
+    Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall: Nothing
+    Lanayru Silent Realm - Stamina Fruit on West LMF Vine Wall: Nothing
+    Lanayru Silent Realm - Stamina Fruit near Minecart: Nothing
+    Lanayru Silent Realm - Stamina Fruit between Watchers: Nothing
+    Lanayru Silent Realm - Stamina Fruit near Tree: Nothing
 
 
 - name: Lanayru Caves
@@ -438,6 +455,9 @@
     Pirate Stronghold - Rupee on West Sea Pillar: Quick_Beetle or (logic_precise_beetle and Beetle)
     Pirate Stronghold - Rupee on East Sea Pillar: Quick_Beetle or (logic_precise_beetle and Beetle)
     Pirate Stronghold - Rupee on Bird Statue Pillar or Nose: Beetle
+    Pirate Stronghold - Stamina Fruit on Left Side: Nothing
+    Pirate Stronghold - Stamina Fruit on Upper Right Side: Nothing
+    Pirate Stronghold - Stamina Fruit on Lower Right Side: Nothing
 
 
 # "'Finish_Pirate_Stronghold'" means the Shark Head is raised

@@ -187,7 +187,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 f"    starting_inventory: {sorted(world.setting_map.starting_inventory.elements())}\n"
             )
             spoiler_log.write(
-                f"    excluded_locations: {list(world.setting_map.excluded_locations)}\n"
+                f"    excluded_locations: {list(sorted(world.setting_map.excluded_locations))}\n"
             )
             spoiler_log.write(
                 f"    mixed_entrance_pools: {world.setting_map.mixed_entrance_pools}\n"

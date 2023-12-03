@@ -69,6 +69,8 @@ extern "C" {
 
     fn strlen(string: *mut u8) -> u64;
     fn strncmp(dest: *mut u8, src: *mut u8, size: u64) -> u64;
+    fn sinf(x: f32) -> f32;
+    fn cosf(x: f32) -> f32;
     fn GameReloader__triggerExit(
         gameReloader: *mut structs::GameReloader,
         currentRoom: u32,
@@ -292,6 +294,18 @@ pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
     }
 }
 
+#[no_mangle]
+pub fn check_global_dungeonflag(sceneindex: u16, flag: u16) -> u16 {
+    let upper_flag = (flag & 0xF0) >> 4;
+    let lower_flag = flag & 0x0F;
+
+    unsafe {
+        return ((*FILE_MGR).FA.dungeonflags[sceneindex as usize][upper_flag as usize]
+            >> lower_flag)
+            & 0x1;
+    }
+}
+
 // Itemflags
 #[no_mangle]
 pub fn set_itemflag(flag: structs::ITEMFLAGS) {
@@ -432,7 +446,10 @@ pub fn fix_freestanding_item_y_offset() {
                 _ => y_offset = 0.0,
             }
 
-            (*item_actor).freestandingYOffset = y_offset;
+            // Only apply the offset if the item isn't tilted
+            if (*item_actor).base.members.base.rot.x == 0 {
+                (*item_actor).freestandingYOffset = y_offset;
+            }
 
             if use_default_scaling {
                 (*item_actor).base.members.base.rot.y |= 1;
@@ -443,6 +460,67 @@ pub fn fix_freestanding_item_y_offset() {
 
         // Replaced instruction
         asm!("mov w0, w20");
+    }
+}
+
+#[no_mangle]
+pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut structs::dAcItem) {
+    unsafe {
+        // If the item is facing sideways, apply a horizontal offset (i.e. stamina
+        // fruit on walls) and rotate the item if necessary
+        let item_rot = (*item_actor).base.members.base.rot;
+        if item_rot.x == 16384 {
+            let actor_param1 = (*item_actor).base.baseBase.param1;
+            let mut h_offset = 0.0f32;
+            let mut angle_change_x = 0u16;
+            let mut angle_change_y = 0u16;
+            let mut angle_change_z = 0u16;
+
+            // Item id
+            match actor_param1 & 0x1FF {
+                // Rupees
+                2 | 3 | 4 | 32 | 33 | 34 => h_offset = 20.0,
+                // Progressive Sword
+                10 => {
+                    h_offset = 7.0;
+                    angle_change_x = 0xD900;
+                    angle_change_y = 0xF400;
+                    angle_change_z = 0xF600;
+                },
+                // Goddess's Harp
+                16 => {
+                    h_offset = 17.0;
+                    angle_change_x = 0x0800;
+                    angle_change_y = 0x2500;
+                    angle_change_z = 0x0800;
+                },
+                // Progressive Bow
+                19 => h_offset = 17.0,
+                // Clawshots
+                20 => {
+                    h_offset = 25.0;
+                    angle_change_x = 0x0500;
+                    angle_change_y = 0x2400;
+                },
+
+                _ => h_offset = 0.0,
+            }
+
+            // Use trigonometry to figure out the horizontal offsets
+            let mut facing_angle = item_rot.y;
+            if facing_angle == 0 {
+                facing_angle = item_rot.z;
+            }
+            let facing_angle_radians: f32 = (facing_angle as f32 / 65535 as f32) * 2.0 * 3.14159;
+            let xOffset = sinf(facing_angle_radians) * h_offset;
+            let zOffset = cosf(facing_angle_radians) * h_offset;
+            (*item_actor).base.members.base.pos.x += xOffset;
+            (*item_actor).base.members.base.pos.z += zOffset;
+            (*item_actor).base.members.base.rot.x = 0;
+            (*item_actor).base.members.base.rot.x += angle_change_x;
+            (*item_actor).base.members.base.rot.y += angle_change_y;
+            (*item_actor).base.members.base.rot.z += angle_change_z;
+        }
     }
 }
 
@@ -531,20 +609,26 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
             }
         }
 
-        yuzu_print_number((*item_actor).base.baseBase.uniqueActorIndex, 16);
-        // set_custom_collection_flag(item_actor as u32);
+        // Get necessary params for setting a custom flag if this item has one
+        let param2: u32 = (*item_actor).base.members.base.param2;
+        let flag: u32 = (param2 & (0x00007F00)) >> 8;
+        let mut sceneindex: u32 = (param2 & (0x00018000)) >> 16;
+        let flag_space_trigger: u32 = (param2 & (0x00020000)) >> 18;
+        let mut original_itemid: u32 = (param2 & (0x00FC0000)) >> 19;
+
+        transform_item_actor_params(&mut sceneindex, &mut original_itemid);
+
+        if flag != 0x7F {
+            // Use different flag spaces depending on the value of the
+            // flag_space_trigger
+            match flag_space_trigger {
+                0 => set_global_sceneflag(sceneindex as u16, flag as u16),
+                1 => set_global_dungeonflag(sceneindex as u16, flag as u16),
+                _ => {},
+            }
+        }
 
         return (*item_actor).finalDeterminedItemID;
-    }
-}
-
-#[no_mangle]
-pub fn set_custom_collection_flag(item_actor: u32) {
-    unsafe {
-        yuzu_print("Collected");
-        yuzu_print_number(item_actor, 16);
-        // yuzu_print_number((*item_actor).base.baseBase.uniqueActorIndex, 16);
-        // yuzu_print_number((*item_actor).itemid, 16);
     }
 }
 
@@ -940,6 +1024,96 @@ pub fn update_crystal_count(item: u32) {
         }
 
         asm!("and w8, w0, #0xffff", "cmp w8, #0x1c");
+    }
+}
+
+// Transforms custom flag variables into what they should be
+#[no_mangle]
+pub fn transform_item_actor_params(sceneindex: &mut u32, original_itemid: &mut u32) {
+    // Transform the scene index into one of the unused ones
+    match sceneindex {
+        0 => *sceneindex = 6,
+        1 => *sceneindex = 13,
+        2 => *sceneindex = 16,
+        3 => *sceneindex = 19,
+        _ => {},
+    }
+
+    // Transform the original_itemid into its proper itemid
+    match original_itemid {
+        1 => *original_itemid = 42, // Stamina Fruit
+        2 => *original_itemid = 2,  // Green Rupee
+        3 => *original_itemid = 3,  // Blue Rupee
+        4 => *original_itemid = 4,  // Red Rupee
+        5 => *original_itemid = 34, // Rupoor
+        _ => {},
+    }
+}
+
+#[no_mangle]
+pub fn check_and_modify_item_actor(item_actor: *mut structs::dAcItem) {
+    unsafe {
+        // Get necessary params for checking if this item has a custom
+        // flag
+        let param2: u32 = (*item_actor).base.members.base.param2;
+        let flag: u32 = (param2 & (0x00007F00)) >> 8;
+        let mut sceneindex: u32 = (param2 & (0x00018000)) >> 15;
+        let flag_space_trigger: u32 = (param2 & (0x00020000)) >> 17;
+        let mut original_itemid: u32 = (param2 & (0x00FC0000)) >> 18;
+        let item_rot = (*item_actor).base.members.base.rot;
+
+        transform_item_actor_params(&mut sceneindex, &mut original_itemid);
+
+        // let rupee_count = check_itemflag(structs::ITEMFLAGS::RUPEE_COUNTER);
+        // (*item_actor).base.baseBase.param1 &= !0x1FF;
+        // (*item_actor).base.baseBase.param1 |= rupee_count;
+
+        // Despawn the item if it's one of the stamina fruit on LMF that
+        // shouldn't exist until the dungeon has been raised. Actors are
+        // identified by Z position
+        let zPos: f32 = (*item_actor).base.members.base.pos.z;
+        if (&CURRENT_STAGE_NAME[..5] == b"F300\0"
+            && check_storyflag(8) == 0 // LMF is not raised
+            && (zPos == 46.531517028808594 || zPos == 105.0 || zPos == 3495.85009765625))
+        {
+            // Set itemid to 0 which despawns it later in the init function
+            (*item_actor).base.baseBase.param1 &= !0x1FF;
+        }
+
+        // If we have any kind of junk item, set bit 9 for no textbox
+        // Rupees / 5 Bombs / 10 Bombs / All Treasures
+        match (*item_actor).base.baseBase.param1 & 0x1FF {
+            2 | 3 | 4 | 31 | 32 | 40 | 41 | 63 | 64 | 161..=176 => {
+                (*item_actor).base.baseBase.param1 |= 0x200;
+            },
+            _ => {},
+        }
+
+        let mut flag_is_on = 0;
+        match flag_space_trigger {
+            0 => flag_is_on = check_global_sceneflag(sceneindex as u16, flag as u16),
+            1 => flag_is_on = check_global_dungeonflag(sceneindex as u16, flag as u16),
+            _ => {},
+        }
+        // If we have a custom flag and it's been set, revert this item back to what
+        // it originally was
+        if flag != 0x7F && flag_is_on != 0 {
+            (*item_actor).base.baseBase.param1 &= !0x1FF;
+            (*item_actor).base.baseBase.param1 |= original_itemid;
+            // Set bit 9 for no textbox
+            (*item_actor).base.baseBase.param1 |= 0x200;
+        // Otherwise, if we have a custom flag, potentially fix
+        // the horizontal offset if necessary
+        } else if (flag != 0x7F) {
+            fix_freestanding_item_horizontal_offset(item_actor);
+        }
+
+        // Replaced Code
+        if (((*item_actor).base.baseBase.param1 >> 10) & 0xFF) == 0xFF {
+            asm!("mov x19, #1");
+            asm!("cmp x19, #1");
+        }
+        asm!("mov x19, {0}", in(reg) item_actor);
     }
 }
 

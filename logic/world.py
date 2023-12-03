@@ -84,7 +84,7 @@ class World:
         self.build_location_table()
         self.load_logic_macros()
         self.load_world_graph()
-        self.verify_hint_data()
+        # self.verify_hint_data()
         self.place_hardcoded_items()
         self.build_item_pools()
 

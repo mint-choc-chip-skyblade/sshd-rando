@@ -15,8 +15,29 @@ def determine_check_patches(
     stage_patch_handler: StagePatchHandler,
     event_patch_handler: EventPatchHandler,
 ):
+    # Custom flags currently use 10 total bits as follows
+    # in order of most significant to least significant bits:
+
+    # - (1 bit) flag_space_trigger: Used to denote whether this flag is using
+    # the unused scene flag space or the unused dungeon flag space
+
+    # - (2 bits) scene index / dungeon index: Used to denote which unused scene/dungeon index the
+    # flag is in. There are a total of 4 unused indexes for both scene flags and dungeon flags.
+    # Since each index can hold 128 bits, this gives us a total of 1,024 flags to use.
+
+    # - (7 bits) flag: The flag within the unused flag space. Can be any value from 0-127.
+    # 128 is used to indicate there being no custom flag (so really we can have up to 1,016 flags)
+    custom_flags = [i for i in range(1024) if (i & 0x7F) != 0x7F]
+    custom_flags.reverse()
+
     for location in location_table.values():
         item = location.current_item
+        custom_flag = 0x3FF # Value for no custom flag
+        original_itemid = 0
+        if "Custom Flag" in location.types:
+            custom_flag = custom_flags.pop()
+        if "Stamina Fruit" in location.types:
+            original_itemid = 1
 
         for path in location.patch_paths:
             if stage_patch_match := STAGE_PATCH_PATH_REGEX.match(path):
@@ -34,7 +55,7 @@ def determine_check_patches(
                         stage_patch_handler.add_oarc_for_check(stage, layer, item.oarcs)
 
                 stage_patch_handler.add_check_patch(
-                    stage, room, object_name, layer, objectid, item.id
+                    stage, room, object_name, layer, objectid, item.id, custom_flag, original_itemid
                 )
 
             if event_patch_match := EVENT_PATCH_PATH_REGEX.match(path):

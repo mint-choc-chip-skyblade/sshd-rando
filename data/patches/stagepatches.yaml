@@ -2982,6 +2982,27 @@ F300: # Lanayru Desert
       angley: 34000
       anglez: 0
       entrance_id: 19
+  - name: Move Stamina Fruit on South LMF Ledge to Layer 1
+    type: objmove
+    id: 0xFE11
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Move Stamina Fruit on West LMF Ledge to Layer 1
+    type: objmove
+    id: 0xFE13
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Move Stamina Fruit on LMF Vine Wall to Layer 1
+    type: objmove
+    id: 0xFE15
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
 
 F300_1: # Lanayru Mine
   - name: Layer override

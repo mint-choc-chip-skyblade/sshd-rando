@@ -41,7 +41,6 @@
     Sealed Grounds - Spiral Stamina Fruit 22: Nothing
     Sealed Grounds - Spiral Stamina Fruit 23: Nothing
     Sealed Grounds - Spiral Stamina Fruit 24: Nothing
-    Sealed Grounds - Spiral Stamina Fruit 25: Nothing
 
 
 - name: Sealed Grounds Upper Ledge
@@ -143,6 +142,11 @@
     Faron Woods - Item on Tree: Nothing
     Faron Woods - Item behind Bombable Rock: Bomb_Bag
     Faron Woods - Chest behind Bombable Rocks near Erla: Bomb_Bag
+    Faron Woods - Stamina Fruit on Vines below First Log: Nothing
+    Faron Woods - Stamina Fruit past Empty Slope: Nothing
+    Faron Woods - Stamina Fruit past Baba Slope: Nothing
+    Faron Woods - Stamina Fruit on Vines near Erla: Nothing
+    Faron Woods - Stamina Fruit on Vines on Great Tree: Beetle # TODO: Check
 
 
 - name: Faron Woods Floria Shortcut Ledge
@@ -231,6 +235,8 @@
     Great Tree Interior Upper: Nothing
     Great Tree West Branch: Nothing
     Faron Woods: Nothing
+  locations:
+    Faron Woods - Stamina Fruit on Vines on Great Tree: Nothing
 
 
 - name: Great Tree Interior Upper # top with the moblin
@@ -275,6 +281,7 @@
     Skyview Entry: Distance_Activator
   locations:
     Deep Woods - Chest: Nothing
+    Deep Woods - Stamina Fruit: Nothing
     Deep Woods - Gossip Stone: Nothing
     Deep Woods - Goddess Cube Near Goron: Goddess_Sword
     Deep Woods - Goddess Cube in front of Skyview: Goddess_Sword
@@ -287,6 +294,8 @@
     Faron Woods: Nothing
   locations:
     Faron Silent Realm - Collect all Tears Reward: Nothing
+    Faron Silent Realm - Stamina Fruit on Vine Wall 1: Nothing
+    Faron Silent Realm - Stamina Fruit on Vine Wall 2: Nothing
 
 # FLOODED FARON WOODS
 - name: Flooded Faron Woods
