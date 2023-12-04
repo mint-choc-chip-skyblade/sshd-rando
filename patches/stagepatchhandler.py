@@ -37,7 +37,7 @@ from filepathconstants import (
 )
 
 
-def patch_tbox(bzs: dict, itemid: int, object_id_str: str, is_trap: bool):
+def patch_tbox(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str)
     tbox = next(
         filter(lambda x: x["name"] == "TBox" and (x["anglez"] >> 9) == id, bzs["OBJS"]),
@@ -48,9 +48,9 @@ def patch_tbox(bzs: dict, itemid: int, object_id_str: str, is_trap: bool):
         print(f"ERROR: No tbox id {id} found to patch")
         return
 
-    if is_trap:
-        # TODO: swap this for is_trap bit patch
-        itemid = 254  # Trap itemid
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = trapid
 
     original_itemid = tbox["anglez"] & 0x1FF
 
@@ -68,7 +68,7 @@ def patch_tbox(bzs: dict, itemid: int, object_id_str: str, is_trap: bool):
     )
 
 
-def patch_freestanding_item(bzs: dict, itemid: int, object_id_str: str, is_trap: bool):
+def patch_freestanding_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str)
     freestanding_item = next(
         filter(
@@ -82,16 +82,17 @@ def patch_freestanding_item(bzs: dict, itemid: int, object_id_str: str, is_trap:
         print(f"ERROR: No freestanding item id {id} found to patch")
         return
 
-    # Need to check this as itemid is the itemid of the fake item model when is_trap is true
-    if is_trap:
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
         # Unsets bit 0x00000080 of params2
         freestanding_item["params2"] = mask_shift_set(
-            freestanding_item["params2"], 1, 7, 0
+            freestanding_item["params2"], 2, 6, trapbits
         )
     else:
         # Makes sure the bit is set if not a trap
         freestanding_item["params2"] = mask_shift_set(
-            freestanding_item["params2"], 1, 7, 1
+            freestanding_item["params2"], 2, 6, 3
         )
 
     freestanding_item["params1"] = mask_shift_set(
@@ -104,15 +105,15 @@ def patch_freestanding_item(bzs: dict, itemid: int, object_id_str: str, is_trap:
     )
 
 
-def patch_bucha(bzs: dict, itemid: int, object_id_str: str, is_trap: bool):
+def patch_bucha(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str, 16)
     bucha = next(
         filter(lambda x: x["name"] == "NpcKyuE" and x["id"] == id, bzs["OBJ "]), None
     )
 
-    if is_trap:
-        # TODO: swap this for is_trap bit patch
-        itemid = 254  # Trap itemid
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = trapid
 
     if bucha is None:
         print(f"ERROR: Bucha's id {id} not found. Cannot patch this check.")
@@ -121,7 +122,7 @@ def patch_bucha(bzs: dict, itemid: int, object_id_str: str, is_trap: bool):
     bucha["params2"] = mask_shift_set(bucha["params2"], 0xFF, 0x8, itemid)
 
 
-def patch_zeldas_closet(bzs: dict, itemid: int, object_id_str: str, is_trap: bool):
+def patch_zeldas_closet(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str)
     closet = next(
         filter(
@@ -130,9 +131,9 @@ def patch_zeldas_closet(bzs: dict, itemid: int, object_id_str: str, is_trap: boo
         None,
     )
 
-    if is_trap:
-        # TODO: swap this for is_trap bit patch
-        itemid = 254  # Trap itemid
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = trapid
 
     if closet is None:
         print(f"ERROR: No closet id {id} found to patch")
@@ -141,15 +142,15 @@ def patch_zeldas_closet(bzs: dict, itemid: int, object_id_str: str, is_trap: boo
     closet["params1"] = mask_shift_set(closet["params1"], 0xFF, 8, itemid)
 
 
-def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, is_trap: bool):
+def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str, 16)
     boko = next(
         filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
     )
 
-    if is_trap:
-        # TODO: swap this for is_trap bit patch
-        itemid = 254  # Trap itemid
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = trapid
 
     if boko is None:
         print(f"ERROR: No boko id {id} found to patch")
@@ -158,37 +159,37 @@ def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, is_trap: bool)
     boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemid)
 
 
-def patch_heart_container(bzs: dict, itemid: int, is_trap: bool):
+def patch_heart_container(bzs: dict, itemid: int, trapid: int):
     heart_container = next(filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None)
 
     if heart_container is None:
         print(f"ERROR: No heart container found to patch")
         return
 
-    if is_trap:
-        # TODO: swap this for is_trap bit patch
-        itemid = 254  # Trap itemid
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = trapid
 
     heart_container["params1"] = mask_shift_set(
         heart_container["params1"], 0xFF, 16, itemid
     )
 
 
-def patch_chandelier_item(bzs: dict, itemid: int, is_trap: bool):
+def patch_chandelier_item(bzs: dict, itemid: int, trapid: int):
     chandelier = next(filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None)
 
     if chandelier is None:
         print(f"ERROR: No chandelier found to patch")
         return
 
-    if is_trap:
-        # TODO: swap this for is_trap bit patch
-        itemid = 254  # Trap itemid
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = trapid
 
     chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemid)
 
 
-def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, is_trap: bool):
+def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str)
     digspot = next(
         filter(
@@ -198,9 +199,9 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, is_trap: bool
         None,
     )
 
-    if is_trap:
-        # TODO: swap this for is_trap bit patch
-        itemid = 254  # Trap itemid
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = trapid
 
     if digspot is None:
         print(f"ERROR: No digspot id {id} found to patch")
@@ -211,15 +212,15 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, is_trap: bool
     digspot["params2"] = mask_shift_set(digspot["params2"], 0xFF, 0x18, itemid)
 
 
-# def patch_goddess_crest(bzs: dict, itemid: int, index: str, is_trap: bool):
+# def patch_goddess_crest(bzs: dict, itemid: int, index: str, trapid: int):
 #     crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
 #     if crest is None:
 #         print(f"ERROR: No crest found to patch")
 #         return
 
-#     if is_trap:
-#         # TODO: swap this for is_trap bit patch
-#         itemid = 254 # Trap itemid
+#     # Don't use fake itemid yet, this needs patching properly first
+#     if trapid:
+#         itemid = trapid
 
 #     # 3 items patched into same object at different points in the params
 #     if index == "0":
@@ -230,16 +231,16 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, is_trap: bool
 #         crest["params2"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemid)
 
 
-# def patch_tadtone_group(bzs: dict, itemid: int, groupID: str, is_trap: bool):
+# def patch_tadtone_group(bzs: dict, itemid: int, groupID: str, trapid: int):
 #     groupID = int(groupID, 0)
 #     clefs = filter(
 #         lambda x: x["name"] == "Clef" and ((x["params1"] >> 3) & 0x1F) == groupID,
 #         bzs["OBJ "],
 #     )
 
-#     if is_trap:
-#         # TODO: swap this for is_trap bit patch
-#         itemid = 254 # Trap itemid
+#     # Don't use fake itemid yet, this needs patching properly first
+#     if trapid:
+#         itemid = trapid
 
 #     for clef in clefs:
 #         clef["anglez"] = mask_shift_set(clef["anglez"], 0xFFFF, 0, itemid)
@@ -619,75 +620,75 @@ def patch_and_write_stage(
                             layer,
                             objectid,
                             itemid,
-                            is_trap,
+                            trapid,
                         ) in check_patches_for_current_room:
                             if object_name == "TBox":
                                 patch_tbox(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
-                                    is_trap,
+                                    trapid,
                                 )
                             elif object_name == "Item":
                                 patch_freestanding_item(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
-                                    is_trap,
+                                    trapid,
                                 )
                             elif object_name == "NpcKyuE":
                                 patch_bucha(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
-                                    is_trap,
+                                    trapid,
                                 )
                             elif object_name == "chest":
                                 patch_zeldas_closet(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
-                                    is_trap,
+                                    trapid,
                                 )
                             elif object_name == "EBc":
                                 patch_ac_key_boko(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
-                                    is_trap,
+                                    trapid,
                                 )
                             elif object_name == "HeartCo":
                                 patch_heart_container(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
-                                    is_trap,
+                                    trapid,
                                 )
                             elif object_name == "Chandel":
                                 patch_chandelier_item(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
-                                    is_trap,
+                                    trapid,
                                 )
                             elif object_name == "Soil":
                                 patch_digspot_item(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
-                                    is_trap,
+                                    trapid,
                                 )
                             # elif object_name == "SwSB":
                             #     patch_goddess_crest(
                             #         room_bzs["LAY "][f"l{layer}"],
                             #         itemid,
                             #         objectid,
-                            #         is_trap,
+                            #         trapid,
                             #     )
                             # elif object_name == "Clef":
                             #     patch_tadtone_group(
                             #         room_bzs["LAY "][f"l{layer}"],
                             #         itemid,
                             #         objectid,
-                            #         is_trap,
+                            #         trapid,
                             #     )
                             else:
                                 print(
@@ -827,10 +828,10 @@ class StagePatchHandler:
         layer: int,
         objectid: str,
         itemid: int,
-        is_trap: bool = False,
+        trapid: int = 0,
     ):
         self.check_patches[stage].append(
-            (room, object_name, layer, objectid, itemid, is_trap)
+            (room, object_name, layer, objectid, itemid, trapid)
         )
 
     def add_entrance_patch(

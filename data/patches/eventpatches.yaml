@@ -1,5 +1,10 @@
 003-ItemGet:
-  - name: Trap Entry
+  - name: Noise Trap Entry
+    type: entryadd
+    entry:
+      name: "003_253"
+      value: Show Trap Text
+  - name: Status Effect Trap Entry
     type: entryadd
     entry:
       name: "003_254"

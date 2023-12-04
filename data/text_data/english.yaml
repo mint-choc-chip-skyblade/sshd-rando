@@ -947,7 +947,13 @@
   cryptic: a <r<transport friend>>
   plurality: Singular
 
-- name: Trap
+- name: Noise Trap
+  standard: Trap
+  pretty: a Trap
+  cryptic: a <r<fool's delight>>
+  plurality: Singular
+
+- name: Status Effect Trap
   standard: Trap
   pretty: a Trap
   cryptic: a <r<fool's delight>>

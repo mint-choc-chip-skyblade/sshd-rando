@@ -49,7 +49,10 @@ extern "C" {
     static ITEMFLAG_MGR: *mut flag::FlagMgr;
     static SCENEFLAG_MGR: *mut flag::SceneflagMgr;
     static DUNGEONFLAG_MGR: *mut flag::DungeonflagMgr;
+
     static LYT_MSG_WINDOW: *mut lyt::dLytMsgWindow;
+
+    static FANFARE_SOUND_MGR: *mut c_void;
 
     static mut STATIC_STORYFLAGS: [u16; 128];
     static mut STATIC_SCENEFLAGS: [u16; 8];
@@ -93,7 +96,7 @@ extern "C" {
     static STARTFLAGS: [u16; 1000];
     static WARP_TO_START_INFO: custom::WarpToStartInfo;
     static START_COUNTS: [custom::StartCount; 50];
-    static mut TRAP_ITEM_INDEX: u8;
+    static mut TRAP_ID: u8;
     static mut TRAP_DURATION: u16;
 
     fn strlen(string: *mut u8) -> u64;
@@ -138,6 +141,7 @@ extern "C" {
     ) -> u16;
     fn spawnDrop(itemid: flag::ITEMFLAGS, roomid: u32, pos: *mut Vec3f, rot: *mut Vec3s);
     fn dAcOlightLine__inUpdate(light_pillar_actor: *mut actor::dAcOlightLine, unk: u64);
+    fn playFanfareMaybe(soundMgr: *mut c_void, soundIndex: u16) -> u64;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -733,21 +737,41 @@ pub fn custom_event_commands(
         70 => warp_to_start(),
         // Get trap type
         71 => unsafe {
-            if TRAP_ITEM_INDEX != 0 {
+            if TRAP_ID != u8::MAX {
                 (*actor_event_flow_mgr).result_from_previous_check = 1;
             } else {
                 (*actor_event_flow_mgr).result_from_previous_check = 0;
             }
-
-            TRAP_ITEM_INDEX = 0;
         },
         72 => unsafe {
-            (*PLAYER_PTR).burn_timer = 32;
-            (*PLAYER_PTR).shock_effect_timer = 32;
-            (*PLAYER_PTR).cursed_timer = 32;
-            (*PLAYER_PTR).shit_smell_timer = 32;
-            (*PLAYER_PTR).sheild_burn_timer = 32;
-            TRAP_DURATION = 256;
+            match TRAP_ID {
+                0 => {
+                    (*PLAYER_PTR).burn_timer = 32;
+                    (*PLAYER_PTR).shock_effect_timer = 32;
+                    (*PLAYER_PTR).cursed_timer = 32;
+                    (*PLAYER_PTR).shit_smell_timer = 32;
+                    (*PLAYER_PTR).sheild_burn_timer = 32;
+                    TRAP_DURATION = 256;
+                },
+                1 => {
+                    (*FILE_MGR).FA.current_health = 1;
+                    (*PLAYER_PTR).stamina_amount = 0;
+                    (*PLAYER_PTR).stamina_recovery_timer = 64;
+                    set_storyflag(565); // z button bipping
+                    set_storyflag(566); // c button bipping
+                    set_storyflag(567); // map button bipping
+                    set_storyflag(568); // pouch button bipping
+                    set_storyflag(569); // b button bipping
+                    set_storyflag(570); // interface selection bipping
+                    set_storyflag(571); // gear button bipping
+                    set_storyflag(818); // dowsing button bipping
+                    set_storyflag(832); // help button bipping
+                    playFanfareMaybe(FANFARE_SOUND_MGR, 0x15C2);
+                },
+                _ => (),
+            }
+
+            TRAP_ID = u8::MAX;
         },
         _ => (),
     }
@@ -922,7 +946,7 @@ pub fn fix_item_get_under_water() {
 
         // If in water, allow immediate item gets
         if ((*PLAYER_PTR).action_flags >> 18) & 0x1 == 1 {
-            yuzu_print_number((*PLAYER_PTR).action_flags, 16);
+            // yuzu_print_number((*PLAYER_PTR).action_flags, 16);
             asm!("mov w25, #0"); // allow collecting items under water
 
             // If should be a big item get animation, make it a small one
@@ -1011,15 +1035,28 @@ pub fn update_crystal_count(item: u32) {
 #[no_mangle]
 pub fn setup_traps(item_actor: *mut actor::dAcItem) -> u16 {
     unsafe {
-        // If Trap
-        if (*item_actor).base.members.base.param2 & 0x80 == 0 {
+        // Is trap if one of 0x000000C0 is unset
+        let trapid = ((*item_actor).base.members.base.param2 & 0xC0) >> 6;
+
+        if trapid != 3 {
             // Set itemid to a rupoor for the frowny face and sound
             (*item_actor).itemid = 34;
             (*item_actor).final_determined_itemid = 34;
 
-            // Still keep track of which trap it is tho
-            TRAP_ITEM_INDEX = 1;
-            TRAP_DURATION = 255;
+            match trapid {
+                0 => {
+                    TRAP_ID = 0;
+                    TRAP_DURATION = 255;
+                },
+                1 => {
+                    TRAP_ID = 1;
+                },
+                _ => (),
+            }
+        } else {
+            // Just to be sure, reset the trap values
+            TRAP_ID = u8::MAX;
+            TRAP_DURATION = 0;
         }
 
         return (*item_actor).final_determined_itemid;

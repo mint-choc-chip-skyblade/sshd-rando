@@ -23,17 +23,17 @@ def determine_check_patches(
     for location in location_table.values():
         item = location.current_item
 
+        trapid = 0
         itemid = -1
         if item is not None:
             itemid = item.id
 
         # TODO: make sure all models are in extracts.yaml
-        if (
-            traps := (config.settings[0].settings["traps"].value == "on")
-            and itemid == 254
-        ):
+        if config.settings[0].settings["traps"].value == "on" and itemid in (253, 254):
             print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             print(item.name)
+
+            trapid = itemid
 
             if not item.oarcs:
                 item.oarcs = list()
@@ -62,7 +62,7 @@ def determine_check_patches(
                         stage_patch_handler.add_oarc_for_check(stage, layer, item.oarcs)
 
                 stage_patch_handler.add_check_patch(
-                    stage, room, object_name, layer, objectid, itemid, traps
+                    stage, room, object_name, layer, objectid, itemid, trapid
                 )
 
             if event_patch_match := EVENT_PATCH_PATH_REGEX.match(path):
