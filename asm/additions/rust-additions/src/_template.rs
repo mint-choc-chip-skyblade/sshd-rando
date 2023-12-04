@@ -2,6 +2,8 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use core::arch::asm;
+use core::ffi::c_void;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -15,23 +17,24 @@ use static_assertions::assert_eq_size;
 // Always add an assert_eq_size!() macro after defining a struct to ensure it's
 // the size you expect it to be.
 
-// Start flag stuff
-#[repr(C, packed(1))]
-#[derive(Copy, Clone)]
-pub struct StartCount {
-    pub counter: u16,
-    pub value:   u16,
-}
-assert_eq_size!(u32, StartCount);
+//////////////////////
+// ADD STRUCTS HERE //
+//////////////////////
 
-// Fi warp stuff
-#[repr(C, packed(1))]
-#[derive(Copy, Clone)]
-pub struct WarpToStartInfo {
-    pub stage_name: [u8; 8],
-    pub room:       u8,
-    pub layer:      u8,
-    pub entrance:   u8,
-    pub night:      u8,
+// IMPORTANT: when using vanilla code, the start point must be declared in
+// symbols.yaml and then added to this extern block.
+extern "C" {
+
+//////////////////////
+// ADD EXTERNS HERE //
+//////////////////////
+
 }
-assert_eq_size!([u8; 12], WarpToStartInfo);
+
+// IMPORTANT: when adding functions here that need to get called from the game,
+// add `#[no_mangle]` and add a .global *symbolname* to
+// additions/rust-additions.asm
+
+////////////////////////
+// ADD FUNCTIONS HERE //
+////////////////////////

@@ -44,14 +44,17 @@
 .global set_stone_of_trials_placed_flag
 .type set_stone_of_trials_placed_flag, @function
 
-.global fix_sky_keep_exit
-.type fix_sky_keep_exit, @function
-
 .global update_day_night_storyflag
 .type update_day_night_storyflag, @function
 
 .global check_night_storyflag
 .type check_night_storyflag, @function
+
+.global fix_sky_keep_exit
+.type fix_sky_keep_exit, @function
+
+.global setup_traps
+.type setup_traps, @function
 
 .global drop_arrows_bombs_seeds
 .type drop_arrows_bombs_seeds, @function
@@ -65,6 +68,9 @@
 .global activation_checks_for_goddess_walls
 .type activation_checks_for_goddess_walls, @function
 
+.global remove_timeshift_stone_cutscenes
+.type remove_timeshift_stone_cutscenes, @function
+
 .global fix_light_pillars
 .type fix_light_pillars, @function
 
@@ -76,3 +82,6 @@
 
 .global update_crystal_count
 .type update_crystal_count, @function
+
+.global handle_effect_timers
+.type handle_effect_timers, @function

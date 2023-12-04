@@ -2,6 +2,11 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use crate::actor;
+use crate::savefile;
+
+use core::arch::asm;
+use core::ffi::c_void;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -295,4 +300,304 @@ pub enum ITEMFLAGS {
     KEY_PIECE_COUNTER                = 0x1F9,
     EXTRA_WALLET_COUNTER             = 0x1FC,
     MAX511                           = 0x1FF,
+}
+
+// Start flag stuff
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct StartCount {
+    pub counter: u16,
+    pub value:   u16,
+}
+assert_eq_size!(u32, StartCount);
+
+// IMPORTANT: when using vanilla code, the start point must be declared in
+// symbols.yaml and then added to this extern block.
+extern "C" {
+    static FILE_MGR: *mut savefile::FileMgr;
+
+    static STORYFLAG_MGR: *mut FlagMgr;
+    static ITEMFLAG_MGR: *mut FlagMgr;
+    static SCENEFLAG_MGR: *mut SceneflagMgr;
+    static DUNGEONFLAG_MGR: *mut DungeonflagMgr;
+
+    static mut STATIC_STORYFLAGS: [u16; 128];
+    static mut STATIC_SCENEFLAGS: [u16; 8];
+    static mut STATIC_TEMPFLAGS: [u16; 4];
+    static mut STATIC_ZONEFLAGS: [[u16; 4]; 63];
+    static mut STATIC_ITEMFLAGS: [u16; 64];
+    static mut STATIC_DUNGEONFLAGS: [u16; 8];
+
+    static mut NEXT_NIGHT: u8;
+    static mut NEXT_UNK: u8;
+
+    // Custom symbols
+    static STARTFLAGS: [u16; 1000];
+    static START_COUNTS: [StartCount; 50];
+
+    fn SceneflagMgr__setFlag(sceneflag_mgr: *mut SceneflagMgr, roomid: u32, flag: u32);
+    fn SceneflagMgr__unsetFlag(sceneflag_mgr: *mut SceneflagMgr, roomid: u32, flag: u32);
+    fn SceneflagMgr__checkFlag(sceneflag_mgr: *mut SceneflagMgr, roomid: u32, flag: u32) -> u16;
+    fn GameReloader__triggerExit(
+        game_reloader: *mut actor::GameReloader,
+        current_room: u32,
+        exit_index: u32,
+        force_night: u32,
+        force_trial: u32,
+    );
+}
+
+// IMPORTANT: when adding functions here that need to get called from the game,
+// add `#[no_mangle]` and add a .global *symbolname* to
+// additions/rust-additions.asm
+
+// Flags
+// Storyflags
+#[no_mangle]
+pub fn set_storyflag(flag: u16) {
+    unsafe {
+        ((*(*STORYFLAG_MGR).funcs).set_flag)(STORYFLAG_MGR, flag);
+    };
+}
+
+#[no_mangle]
+pub fn unset_storyflag(flag: u16) {
+    unsafe {
+        ((*(*STORYFLAG_MGR).funcs).unset_flag)(STORYFLAG_MGR, flag);
+    };
+}
+
+#[no_mangle]
+pub fn check_storyflag(flag: u16) -> u32 {
+    unsafe {
+        return ((*(*STORYFLAG_MGR).funcs).get_flag_or_counter)(STORYFLAG_MGR, flag);
+    }
+}
+
+// Sceneflags (local)
+#[no_mangle]
+pub fn set_local_sceneflag(flag: u32) {
+    unsafe {
+        return SceneflagMgr__setFlag(SCENEFLAG_MGR, 0, flag);
+    }
+}
+
+#[no_mangle]
+pub fn unset_local_sceneflag(flag: u32) {
+    unsafe {
+        return SceneflagMgr__unsetFlag(SCENEFLAG_MGR, 0, flag);
+    }
+}
+
+#[no_mangle]
+pub fn check_local_sceneflag(flag: u32) -> u16 {
+    unsafe {
+        return SceneflagMgr__checkFlag(SCENEFLAG_MGR, 0, flag);
+    }
+}
+
+// Sceneflags (global)
+#[no_mangle]
+pub fn set_global_sceneflag(sceneindex: u16, flag: u16) {
+    let upper_flag = (flag & 0xF0) >> 4;
+    let lower_flag = flag & 0x0F;
+
+    unsafe {
+        (*FILE_MGR).FA.sceneflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
+    }
+}
+
+#[no_mangle]
+pub fn unset_global_sceneflag(sceneindex: u16, flag: u16) {
+    let upper_flag = (flag & 0xF0) >> 4;
+    let lower_flag = flag & 0x0F;
+
+    unsafe {
+        (*FILE_MGR).FA.sceneflags[sceneindex as usize][upper_flag as usize] &= !(1 << lower_flag);
+    }
+}
+
+#[no_mangle]
+pub fn check_global_sceneflag(sceneindex: u16, flag: u16) -> u16 {
+    let upper_flag = (flag & 0xF0) >> 4;
+    let lower_flag = flag & 0x0F;
+
+    unsafe {
+        return ((*FILE_MGR).FA.sceneflags[sceneindex as usize][upper_flag as usize] >> lower_flag)
+            & 0x1;
+    }
+}
+
+// Dungeonflags (global)
+#[no_mangle]
+pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
+    let upper_flag = (flag & 0xF0) >> 4;
+    let lower_flag = flag & 0x0F;
+
+    unsafe {
+        (*FILE_MGR).FA.dungeonflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
+    }
+}
+
+// Itemflags
+#[no_mangle]
+pub fn set_itemflag(flag: ITEMFLAGS) {
+    unsafe {
+        ((*(*ITEMFLAG_MGR).funcs).set_flag)(ITEMFLAG_MGR, flag as u16);
+    }
+}
+
+#[no_mangle]
+pub fn unset_itemflag(flag: ITEMFLAGS) {
+    unsafe {
+        ((*(*ITEMFLAG_MGR).funcs).unset_flag)(ITEMFLAG_MGR, flag as u16);
+    }
+}
+
+#[no_mangle]
+pub fn check_itemflag(flag: ITEMFLAGS) -> u32 {
+    unsafe {
+        return ((*(*ITEMFLAG_MGR).funcs).get_flag_or_counter)(ITEMFLAG_MGR, flag as u16);
+    }
+}
+
+// Misc flag funcs
+#[no_mangle]
+pub fn set_goddess_sword_pulled_story_flag() {
+    // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
+    set_storyflag(951);
+}
+
+#[no_mangle]
+pub fn check_night_storyflag() -> bool {
+    return check_storyflag(899) != 0; // 899 == day/night flag
+}
+
+#[no_mangle]
+pub fn update_day_night_storyflag() {
+    // yuzu_print("Updating night flag");
+
+    unsafe {
+        // 899 == day/night storyflag
+        if NEXT_NIGHT == 1 {
+            // yuzu_print("Setting night flag");
+            set_storyflag(899);
+        } else {
+            // yuzu_print("Unsetting night flag");
+            unset_storyflag(899);
+        }
+
+        ((*(*STORYFLAG_MGR).funcs).do_commit)(STORYFLAG_MGR);
+
+        // Replaced instruction
+        NEXT_UNK = 0xFF;
+    }
+
+    return;
+}
+
+#[no_mangle]
+pub fn set_stone_of_trials_placed_flag(
+    game_reloader: *mut actor::GameReloader,
+    current_room: u32,
+    exit_index: u32,
+    force_night: u32,
+    force_trial: u32,
+) {
+    unsafe {
+        GameReloader__triggerExit(
+            game_reloader,
+            current_room,
+            exit_index,
+            force_night,
+            force_trial,
+        )
+    }
+
+    set_storyflag(22); // 22 == Stone of Trials placed storyflag
+}
+
+#[no_mangle]
+pub fn handle_startflags() {
+    unsafe {
+        (*FILE_MGR).prevent_commit = true;
+
+        let mut delimiter_count = 0;
+
+        for flag_ptr in STARTFLAGS.iter() {
+            let mut flag = *flag_ptr;
+
+            if flag == 0xFFFF {
+                delimiter_count += 1;
+                continue;
+            }
+
+            match delimiter_count {
+                // Storyflags
+                0 => {
+                    ((*(*STORYFLAG_MGR).funcs).set_flag)(STORYFLAG_MGR, flag.into());
+                },
+
+                // Sceneflags
+                1 => {
+                    // flag = 0xFFSS where SS == sceneindex and FF == sceneflag
+                    let sceneindex = flag & 0xFF;
+                    let sceneflag = flag >> 8;
+
+                    if (*SCENEFLAG_MGR).sceneindex == sceneindex {
+                        set_local_sceneflag(sceneflag.into());
+                    }
+
+                    set_global_sceneflag(sceneindex, sceneflag);
+                },
+
+                // Itemflags
+                2 => {
+                    ((*(*ITEMFLAG_MGR).funcs).set_flag)(ITEMFLAG_MGR, flag.into());
+                },
+
+                // Dungeonflags
+                3 => {
+                    let sceneindex = flag & 0xFF;
+                    flag = flag >> 8;
+
+                    // Convert dungeonflag numbers to be like sceneflags
+                    // Dungeonflags start offset by 1 due to an undefined value in the flag
+                    // definitions.
+                    if flag == 2 || flag == 3 || flag == 4 {
+                        flag -= 1;
+                    } else if flag == 12 {
+                        // The rooms are defined before the boss key placed flag
+                        flag = 7;
+                    } else if flag == 16 {
+                        flag = 8;
+                    }
+
+                    // flag = 0xFFSS where SS == sceneindex and FF == dungeonflag
+                    set_global_dungeonflag(sceneindex, flag);
+                },
+
+                _ => {
+                    break;
+                },
+            }
+        }
+
+        for start_count in START_COUNTS.iter() {
+            if start_count.counter == 0xFFFF {
+                break;
+            }
+
+            ((*(*ITEMFLAG_MGR).funcs).set_flag_or_counter_to_value)(
+                ITEMFLAG_MGR,
+                start_count.counter,
+                start_count.value,
+            );
+        }
+
+        ((*(*STORYFLAG_MGR).funcs).do_commit)(STORYFLAG_MGR);
+        ((*(*ITEMFLAG_MGR).funcs).do_commit)(ITEMFLAG_MGR);
+
+        (*FILE_MGR).prevent_commit = false;
+    }
 }

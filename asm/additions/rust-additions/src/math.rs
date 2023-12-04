@@ -17,21 +17,23 @@ use static_assertions::assert_eq_size;
 // Always add an assert_eq_size!() macro after defining a struct to ensure it's
 // the size you expect it to be.
 
-// Lyt stuff
-#[repr(C, packed(1))]
-pub struct dLytMsgWindow {
-    pub _0:       [u8; 0xA90],
-    pub text_mgr: *mut TextManagerMaybe,
+#[repr(C)]
+#[derive(Copy, Clone, Default)]
+pub struct Vec3f {
+    pub x: f32,
+    pub y: f32,
+    pub z: f32,
 }
-assert_eq_size!([u8; 0xA98], dLytMsgWindow);
+assert_eq_size!([u8; 12], Vec3f);
 
-// Text stuff
-#[repr(C, packed(1))]
-pub struct TextManagerMaybe {
-    pub _0:           [u8; 0x8AC],
-    pub numeric_args: [u32; 5],
+#[repr(C)]
+#[derive(Copy, Clone, Default)]
+pub struct Vec3s {
+    pub x: u16,
+    pub y: u16,
+    pub z: u16,
 }
-assert_eq_size!([u8; 0x8C0], TextManagerMaybe);
+assert_eq_size!([u8; 6], Vec3s);
 
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
