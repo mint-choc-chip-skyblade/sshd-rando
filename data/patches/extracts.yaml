@@ -1,99 +1,30 @@
-
+# B100
 - layer: 1
   oarcs:
-    - Goron_motion
-    - GoronD
-  stage: F303
-- layer: 2
+  - GetHeartUtuwa
+  - PutHeartUtuwa
+  stage: B100
+
+# B100_1
+- layer: 0
   oarcs:
-    - Onp
-  stage: F103
-- layer: 4
+  - GetSekibanMapB
+  stage: B100_1
+
+# B210
+- layer: 0
   oarcs:
-    - FWRockB
-    - Ph
-    - PRing
-  stage: F200
-- layer: 4
-  oarcs:
-    - Waterdragon
-  stage: F102_2
+  - GetSekibanMapC
+  stage: B210
+
+# D003_0
 - layer: 0
   oarcs:
   - PutTriForceSingle
   - GetTriForceSingle
   stage: D003_0
-- layer: 0
-  oarcs:
-  - GetBowA
-  stage: D301
-- layer: 3
-  oarcs:
-  - GetKobunALetter
-  - GetPouchA
-  stage: F001r
-- layer: 0
-  oarcs:
-    - GetSparePurse
-  stage: F002r
-- layer: 1
-  oarcs:
-  - GetPouchB
-  - GetMedal
-  - GetNetA
-  stage: F002r
-- layer: 0
-  oarcs:
-  - GetPachinkoB
-  - GetBowB
-  - GetBowC
-  - GetBeetleC
-  - GetBeetleD
-  - GetNetB
-  - GetSpareSeedA
-  - GetBottleRepair
-  - GetSpareQuiverA
-  - GetSpareBombBagA
-  - DesertRobot
-  stage: F004r
-- layer: 1
-  oarcs:
-  - GetPachinkoA
-  - GetHookShot
-  - GetMoleGloveB
-  - GetVacuum
-  - GetWhip
-  - GetBombBag
-  stage: F202
-- layer: 1
-  oarcs:
-  - GetKeyKakera
-  stage: F200
-- layer: 0
-  oarcs:
-  - GetSwordA
-  stage: F009r
-- layer: 0
-  oarcs:
-  - GetPurseB
-  stage: F012r
-- layer: 0
-  oarcs:
-  - GetMoleGloveA
-  stage: F210
-- layer: 2
-  oarcs:
-  - GetSizuku
-  - GetUroko
-  stage: S100
-- layer: 2
-  oarcs:
-  - GetEarring
-  stage: S200
-- layer: 2
-  oarcs:
-  - GetSirenKey
-  stage: S000
+
+# D100
 - layer: 0
   oarcs:
   - GetKeyBossA
@@ -103,49 +34,47 @@
   - GetBeetleA
   - SwitchEye
   stage: D100
+
+# D101
+- layer: 0
+  oarcs:
+  - GetKeyBoss2A
+  stage: D101
+
+# D200
 - layer: 0
   oarcs:
   - GetKeyBossB
   stage: D200
+
+# D201
+- layer: 0
+  oarcs:
+  - GetKeyBoss2B
+  stage: D201
+
+# D300
 - layer: 0
   oarcs:
   - GetKeyBossC
   stage: D300
+
+# D301
+- layer: 0
+  oarcs:
+  - GetBowA
+  stage: D301
 - layer: 9
   oarcs:
   - GoddessSymbolSc
   - SwordCandle
   stage: D301
-- layer: 0
-  oarcs:
-  - GetKeyBoss2A
-  stage: D101
-- layer: 0
-  oarcs:
-  - GetKeyBoss2B
-  stage: D201
 - layer: 11
   oarcs:
   - GetKeyBoss2C
   stage: D301
-- layer: 0
-  oarcs:
-  - GetBeetleB
-  - GetSozaiH
-  - GetSozaiC
-  stage: F300
-- layer: 0
-  oarcs:
-  - GetMapSea
-  stage: F301_5
-- layer: 2
-  oarcs:
-  - GetHarp
-  stage: F402
-- layer: 0
-  oarcs:
-  - GetFruitB
-  stage: F402
+
+# F000
 - layer: 0
   oarcs:
   - GetGaragara
@@ -164,6 +93,77 @@
   - Shinkan_motion
   # - GetSozaiP
   stage: F000
+
+# F001r
+- layer: 3
+  oarcs:
+  - GetKobunALetter
+  - GetPouchA
+  stage: F001r
+
+# F002r
+- layer: 0
+  oarcs:
+    - GetSparePurse
+  stage: F002r
+- layer: 1
+  oarcs:
+  - GetPouchB
+  - GetMedal
+  - GetNetA
+  stage: F002r
+
+# F004r
+- layer: 0
+  oarcs:
+  - GetPachinkoB
+  - GetBowB
+  - GetBowC
+  - GetBeetleC
+  - GetBeetleD
+  - GetNetB
+  - GetSpareSeedA
+  - GetBottleRepair
+  - GetSpareQuiverA
+  - GetSpareBombBagA
+  - DesertRobot
+  stage: F004r
+
+# F008r
+- layer: 1
+  oarcs:
+  - GetSekibanMapA
+  stage: F008r
+
+# F009r
+- layer: 0
+  oarcs:
+  - GetSwordA
+  stage: F009r
+
+# F012r
+- layer: 0
+  oarcs:
+  - GetPurseB
+  stage: F012r
+
+# F020
+- layer: 1
+  oarcs:
+  - GetBirdStatue
+  stage: F020
+
+# F023
+- layer: 0
+  oarcs:
+  - GetTerryCage
+  stage: F023
+- layer: 2
+  oarcs:
+  - KobunB
+  stage: F023
+
+# F100
 - layer: 3
   oarcs:
   - PLHarpPlay
@@ -176,35 +176,99 @@
   - GetSozaiL
   - SwrdPrj
   stage: F100
-- layer: 1
+
+# F102
+- layer: 4
   oarcs:
-  - GetBirdStatue
-  stage: F020
-- layer: 0
-  oarcs:
-  - GetTerryCage
-  stage: F023
+    - Waterdragon
+  stage: F102_2
+
+# F103
 - layer: 2
   oarcs:
-  - KobunB
-  stage: F023
+    - Onp
+  stage: F103
+
+# F200
 - layer: 1
   oarcs:
-  - GetSekibanMapA
-  stage: F008r
-- layer: 0
+  - GetKeyKakera
+  stage: F200
+- layer: 4
   oarcs:
-  - GetSekibanMapB
-  stage: B100_1
-- layer: 0
-  oarcs:
-  - GetSekibanMapC
-  stage: B210
+    - FWRockB
+    - Ph
+    - PRing
+  stage: F200
+
+# F202
 - layer: 1
   oarcs:
-  - GetHeartUtuwa
-  - PutHeartUtuwa
-  stage: B100
+  - GetPachinkoA
+  - GetHookShot
+  - GetMoleGloveB
+  - GetVacuum
+  - GetWhip
+  - GetBombBag
+  stage: F202
+
+# F210
+- layer: 0
+  oarcs:
+  - GetMoleGloveA
+  stage: F210
+
+# F300
+- layer: 0
+  oarcs:
+  - GetBeetleB
+  - GetSozaiH
+  - GetSozaiC
+  stage: F300
+
+# F301_5
+- layer: 0
+  oarcs:
+  - GetMapSea
+  stage: F301_5
+
+# F303
+- layer: 1
+  oarcs:
+    - Goron_motion
+    - GoronD
+  stage: F303
+
+# F402
+- layer: 0
+  oarcs:
+  - GetFruitB
+  stage: F402
+- layer: 2
+  oarcs:
+  - GetHarp
+  stage: F402
+
+# S000
+- layer: 2
+  oarcs:
+  - GetSirenKey
+  stage: S000
+
+# S100
+- layer: 2
+  oarcs:
+  - GetSizuku
+  - GetUroko
+  stage: S100
+
+# S200
+- layer: 2
+  oarcs:
+  - GetEarring
+  stage: S200
+
+# Is this even necessary?
 - objectpack:
   - Alink
   - Bird_Link
