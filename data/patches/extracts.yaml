@@ -83,6 +83,10 @@
   - GetSozaiP
   - GossipStone
   stage: F000
+- layer: 3
+  oarcs:
+    - RivalCmnAnm
+    - RivalNpcAnm
 - layer: 4
   oarcs:
   - GetShieldWood
