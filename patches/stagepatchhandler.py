@@ -755,7 +755,7 @@ class StagePatchHandler:
                         patches.remove(patch)
 
     def create_oarc_cache(self):
-        extracts = yaml_load(EXTRACTS_PATH)
+        extracts: dict[dict, dict] = yaml_load(EXTRACTS_PATH)
         OARC_CACHE_PATH.mkdir(parents=True, exist_ok=True)
 
         for extract in extracts:
@@ -782,32 +782,35 @@ class StagePatchHandler:
 
                     (OARC_CACHE_PATH / f"{arc}.arc").write_bytes(arc_data)
             else:
-                arcs = extract["oarcs"]
                 stage = extract["stage"]
-                layer = extract["layer"]
-                all_already_in_cache = all(
-                    ((OARC_CACHE_PATH / f"{arc}.arc").exists() for arc in arcs)
-                )
 
-                if all_already_in_cache:
-                    continue
+                for layer in extract["layers"]:
+                    layerid = layer["layerid"]
+                    arcs = layer["oarcs"]
 
-                stage_path = Path(
-                    STAGE_FILES_PATH
-                    / f"{stage}"
-                    / "NX"
-                    / f"{stage}_stg_l{layer}.arc.LZ"
-                )
-                stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+                    all_already_in_cache = all(
+                        ((OARC_CACHE_PATH / f"{arc}.arc").exists() for arc in arcs)
+                    )
 
-                for arc_name in arcs:
-                    print(f"Extracting {arc_name}")
-                    arc_data = stage_u8.get_file_data(f"oarc/{arc_name}.arc")
+                    if all_already_in_cache:
+                        continue
 
-                    if not arc_data:
-                        raise TypeError("Expected type bytes but found None.")
+                    stage_path = Path(
+                        STAGE_FILES_PATH
+                        / f"{stage}"
+                        / "NX"
+                        / f"{stage}_stg_l{layerid}.arc.LZ"
+                    )
+                    stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
 
-                    (OARC_CACHE_PATH / f"{arc_name}.arc").write_bytes(arc_data)
+                    for arc_name in arcs:
+                        print(f"Extracting {arc_name}")
+                        arc_data = stage_u8.get_file_data(f"oarc/{arc_name}.arc")
+
+                        if not arc_data:
+                            raise TypeError("Expected type bytes but found None.")
+
+                        (OARC_CACHE_PATH / f"{arc_name}.arc").write_bytes(arc_data)
 
     def set_oarc_add_remove_from_patches(self):
         for stage, stage_patches in self.stage_patches.items():
