@@ -1,4 +1,5 @@
 #![no_std]
+#![feature(ptr_from_ref)]
 #![feature(split_array)]
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
@@ -41,6 +42,7 @@ extern "C" {
     static HARP_RELATED: *mut event::HarpRelated;
     static STAGE_MGR: *mut actor::dStageMgr;
     static EVENT_MGR: *mut event::EventMgr;
+    static CURRENT_ACTOR_EVENT_FLOW_MGR: *mut event::ActorEventFlowMgr;
 
     static STORYFLAG_MGR: *mut flag::FlagMgr;
     static ITEMFLAG_MGR: *mut flag::FlagMgr;
@@ -83,9 +85,6 @@ extern "C" {
 
     static mut BASEBASE_ACTOR_PARAM1: u32;
     static mut BASEBASE_GROUP_TYPE: u8;
-
-    static ACTOR_ALLOCATOR_DEFINITIONS: u64; // [*const u64; 701];
-    static CURRENT_ACTOR_EVENT_FLOW_MGR: *mut event::ActorEventFlowMgr;
 
     // Custom symbols
     static WARP_TO_START_INFO: WarpToStartInfo;

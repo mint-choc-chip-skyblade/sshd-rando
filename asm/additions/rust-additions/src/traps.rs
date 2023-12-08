@@ -5,11 +5,13 @@
 use crate::actor;
 use crate::event;
 use crate::flag;
+use crate::math;
 use crate::player;
 use crate::savefile;
 
 use core::arch::asm;
 use core::ffi::c_void;
+use core::ptr::{from_ref, read_unaligned};
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -33,6 +35,7 @@ extern "C" {
     static PLAYER_PTR: *mut player::dPlayer;
 
     static FILE_MGR: *mut savefile::FileMgr;
+    static ROOM_MGR: *mut actor::RoomMgr;
     static EVENT_MGR: *mut event::EventMgr;
     static FANFARE_SOUND_MGR: *mut c_void;
 
@@ -94,19 +97,80 @@ pub fn update_traps() {
                 TRAP_DURATION = 256;
             },
             1 => {
-                (*FILE_MGR).FA.current_health = 1;
-                (*PLAYER_PTR).stamina_amount = 0;
-                (*PLAYER_PTR).stamina_recovery_timer = 64;
-                flag::set_storyflag(565); // z button bipping
-                flag::set_storyflag(566); // c button bipping
-                flag::set_storyflag(567); // map button bipping
-                flag::set_storyflag(568); // pouch button bipping
-                flag::set_storyflag(569); // b button bipping
-                flag::set_storyflag(570); // interface selection bipping
-                flag::set_storyflag(571); // gear button bipping
-                flag::set_storyflag(818); // dowsing button bipping
-                flag::set_storyflag(832); // help button bipping
-                playFanfareMaybe(FANFARE_SOUND_MGR, 0x15C2);
+                // (*FILE_MGR).FA.current_health = 1;
+                // (*PLAYER_PTR).stamina_amount = 0;
+                // (*PLAYER_PTR).stamina_recovery_timer = 64;
+                // flag::set_storyflag(565); // z button bipping
+                // flag::set_storyflag(566); // c button bipping
+                // flag::set_storyflag(567); // map button bipping
+                // flag::set_storyflag(568); // pouch button bipping
+                // flag::set_storyflag(569); // b button bipping
+                // flag::set_storyflag(570); // interface selection bipping
+                // flag::set_storyflag(571); // gear button bipping
+                // flag::set_storyflag(818); // dowsing button bipping
+                // flag::set_storyflag(832); // help button bipping
+                // playFanfareMaybe(FANFARE_SOUND_MGR, 0x15C2);
+
+                let player_pos = (*PLAYER_PTR).obj_base_members.base.pos;
+                let actor_pos: *mut math::Vec3f = &mut math::Vec3f {
+                    x: player_pos.x,
+                    y: player_pos.y,
+                    z: player_pos.z,
+                } as *mut math::Vec3f;
+
+                let player_rot = (*PLAYER_PTR).obj_base_members.base.rot;
+                let actor_rot: *mut math::Vec3s = &mut math::Vec3s {
+                    x: player_rot.x,
+                    y: player_rot.y,
+                    z: player_rot.z,
+                } as *mut math::Vec3s;
+
+                let player_scale = (*PLAYER_PTR).obj_base_members.base.scale;
+                let actor_scale: *mut math::Vec3f = &mut math::Vec3f {
+                    x: player_scale.x,
+                    y: player_scale.y,
+                    z: player_scale.z,
+                } as *mut math::Vec3f;
+                // let pos: *mut math::Vec3f =
+                //     from_ref(&((*PLAYER_PTR).obj_base_members.base.pos));
+                // let rot: *mut math::Vec3s =
+                //     from_ref(&(*PLAYER_PTR).obj_base_members.base.rot) as
+                // *mut math::Vec3s; let scale: *mut
+                // math::Vec3f =     from_ref(&(*PLAYER_PTR).
+                // obj_base_members.base.scale) as *mut math::Vec3f;
+
+                let mut hornet_count = 0u32;
+
+                while hornet_count < 8 {
+                    actor::spawn_actor(
+                        actor::ACTORID::NPC_RVL,
+                        (*ROOM_MGR).roomid.into(),
+                        0xFFFFFFFF,
+                        actor_pos,
+                        actor_rot,
+                        actor_scale,
+                        0xFFFFFFFF,
+                    );
+
+                    match hornet_count % 4 {
+                        0 => {
+                            (*actor_pos).x += 150.0;
+                            (*actor_pos).z -= 150.0;
+                        },
+                        1 => {
+                            (*actor_pos).x -= 300.0;
+                        },
+                        2 => {
+                            (*actor_pos).z += 300.0;
+                        },
+                        3 => {
+                            (*actor_pos).x += 300.0;
+                        },
+                        _ => (),
+                    }
+
+                    hornet_count += 1;
+                }
             },
             _ => (),
         }

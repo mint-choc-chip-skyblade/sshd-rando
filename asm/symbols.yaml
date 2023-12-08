@@ -7,6 +7,7 @@ main:
     INPUT_MGR: 0x7102c02a68
     HARP_RELATED: 0x7102c02c48
     STAGE_MGR: 0x7102bfdda8
+    ROOM_MGR: 0x7102bfdd90
     EVENT_MGR: 0x7101831ed8
 
     STORYFLAG_MGR: 0x71018321f0
@@ -54,9 +55,16 @@ main:
 
 
     # Actor Stuff
-    ACTOR_PARAM_SCALE: 0x7102c018d0
+    ACTOR_PARAM_POS: 0x7102c018c0
     ACTOR_PARAM_ROT: 0x7102c018c8
+    ACTOR_PARAM_SCALE: 0x7102c018d0
+    ACTOR_STAGE_OBJECT_FLAG: 0x71016894bc
+    ACTOR_VIEW_CLIP_INDEX: 0x71016894c0
+    ACTOR_OBJECT_INFO_PTR: 0x7102c018b0
+    ACTOR_SPAWN_WITH_REF: 0x7102c018d8
     ACTORBASE_PARAM2: 0x71016894b8
+    ACTORBASE_ROOMID: 0x71016894c4
+    ACTORBASE_SUBTYPE: 0x7102c018b8
 
     BASEBASE_ACTOR_PARAM1: 0x712d036078
     BASEBASE_GROUP_TYPE: 0x712d03607c
@@ -67,12 +75,16 @@ main:
 
     # Functions
     strlen: 0x710105f5c0
+
     GameReloader__actuallyTriggerEntrance: 0x7100e2f0b8
     GameReloader__triggerExit: 0x7100df9478
     GameReloader__triggerEntrance: 0x7100df8dfc
     SceneflagMgr__setFlag: 0x7100b83380
     SceneflagMgr__unsetFlag: 0x7100b834b0
     SceneflagMgr__checkFlag: 0x7100b8319c
+
+    allocateNewActor: 0x7100f14500
+
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
     dAcItem__spawnItemWithParams: 0x71004eba70
     spawnDrop: 0x71004ebc5c
