@@ -29,7 +29,7 @@ from util.text import get_text_data
 class EventPatchHandler:
     def __init__(self):
         self.event_patches: dict[str, list[dict]] = yaml_load(EVENT_PATCHES_PATH)
-        self.check_patches: dict[str, list[tuple[str, int]]] = defaultdict(list)
+        self.check_patches: dict[str, list[tuple[str, int, int]]] = defaultdict(list)
         self.flow_label_to_index_mapping = {}
         self.text_label_to_index_mapping = {}
 
@@ -126,7 +126,9 @@ class EventPatchHandler:
                                 self.entry_add(msbf=parsed_msbf, entry_add=patch)
 
                     if msbf_file_name[:-5] in self.check_patches:
-                        for eventid, itemid in self.check_patches[msbf_file_name[:-5]]:
+                        for eventid, itemid, trapid in self.check_patches[
+                            msbf_file_name[:-5]
+                        ]:
                             try:
                                 eventid = int(eventid)
                             except ValueError:
@@ -139,6 +141,15 @@ class EventPatchHandler:
                                     )
                                     continue
                                 eventid = index
+
+                            trapbits = 0xF
+
+                            if trapid:
+                                trapbits = 254 - trapid
+
+                            itemid |= (
+                                trapbits & 0xF
+                            ) << 11  # 11 cos signed numbers are bleh
 
                             parsed_msbf["FLW3"]["flow"][eventid]["param2"] = itemid
 
@@ -336,8 +347,8 @@ class EventPatchHandler:
 
         msbt["ATR1"][text_patch["index"]] = current_text_atr1_data
 
-    def add_check_patch(self, event_file: str, eventid: str, itemid: int):
-        self.check_patches[event_file].append((eventid, itemid))
+    def add_check_patch(self, event_file: str, eventid: str, itemid: int, trapid: int):
+        self.check_patches[event_file].append((eventid, itemid, trapid))
 
 
 def make_progressive_item_events(

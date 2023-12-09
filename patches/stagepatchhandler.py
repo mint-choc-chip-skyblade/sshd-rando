@@ -85,7 +85,7 @@ def patch_freestanding_item(bzs: dict, itemid: int, object_id_str: str, trapid: 
     # Need to check this as itemid is the itemid of the fake item model when trapid > 0
     if trapid:
         trapbits = 254 - trapid
-        # Unsets bit 0x00000080 of params2
+        # Unsets bit 0x000000F0 of params2
         freestanding_item["params2"] = mask_shift_set(
             freestanding_item["params2"], 0xF, 4, trapbits
         )

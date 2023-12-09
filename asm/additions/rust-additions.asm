@@ -85,3 +85,9 @@
 
 .global handle_effect_timers
 .type handle_effect_timers, @function
+
+.global npc_traps
+.type npc_traps, @function
+
+.global spawned_actor_traps
+.type spawned_actor_traps, @function

@@ -8,6 +8,17 @@ bl additions_jumptable
 mov w8, #13
 bl additions_jumptable
 
+; Setup traps in handleType3
+.offset 0x710050d8c8
+mov w8, #24
+bl additions_jumptable
+
+
+; Check for traps when spawning actors
+.offset 0x7100f14514
+mov w8, #25
+bl additions_jumptable
+
 
 ; Prevent events clearing trap effects
 .offset 0x7100ac055c

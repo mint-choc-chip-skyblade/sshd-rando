@@ -30,13 +30,9 @@ def determine_check_patches(
             itemid = item.id
             item_name = item.name
 
-        # TODO: make sure all models are in extracts.yaml
         if config.settings[0].settings["traps"].value == "on" and item_name.endswith(
             "Trap"
         ):
-            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-            print(item.name)
-
             trapid = itemid
 
             if not item.oarcs:
@@ -46,7 +42,7 @@ def determine_check_patches(
                 itemid = random.choice(list(TRAP_OARC_NAMES.keys()))
                 item.oarcs.append(
                     TRAP_OARC_NAMES[itemid][0]
-                )  # TODO: implement variations
+                )  # TODO: implement variations (and add to extracts.yaml)
 
                 print(itemid, TRAP_OARC_NAMES[itemid], item.oarcs)
 
@@ -72,8 +68,7 @@ def determine_check_patches(
             if event_patch_match := EVENT_PATCH_PATH_REGEX.match(path):
                 event_file = event_patch_match.group("eventFile")
                 eventid = event_patch_match.group("eventID")
-                # TODO: does this need to use the random_item_id from the traps stuff?
-                event_patch_handler.add_check_patch(event_file, eventid, item.id)
+                event_patch_handler.add_check_patch(event_file, eventid, itemid, trapid)
 
             if oarc_add_match := OARC_ADD_PATH_REGEX.match(path):
                 stage = oarc_add_match.group("stage")

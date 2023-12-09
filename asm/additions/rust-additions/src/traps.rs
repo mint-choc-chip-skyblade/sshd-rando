@@ -40,8 +40,15 @@ extern "C" {
     static EVENT_MGR: *mut event::EventMgr;
     static FANFARE_SOUND_MGR: *mut c_void;
 
+    static ITEMFLAG_MGR: *mut flag::FlagMgr;
+
+    static ACTOR_ALLOCATOR_DEFINITIONS_PTR: *mut c_void;
+
+    static mut ACTORBASE_PARAM2: u32;
+
     // Custom symbols
     static mut TRAP_ID: u8;
+    static mut NEXT_TRAP_ID: u8;
     static mut TRAP_DURATION: u16;
 
     // Functions
@@ -194,5 +201,43 @@ pub fn handle_effect_timers() -> u32 {
         }
 
         return 0;
+    }
+}
+
+#[no_mangle]
+pub fn npc_traps() {
+    unsafe {
+        let mut itemid: u16;
+        let mut trapid: u8;
+        asm!("ldr {0:w}, [x20, #0x4]", out(reg) itemid);
+
+        trapid = ((itemid >> 11) & 0xF) as u8; // 11 cos signed numbers are bleh
+        itemid &= 0x1FF;
+
+        if trapid != 0xF {
+            NEXT_TRAP_ID = trapid;
+        }
+
+        // Replaced instructions
+        asm!("mov w1, #0x9", "mov w2, {0:w}", in(reg) itemid);
+    }
+}
+
+#[no_mangle]
+pub fn spawned_actor_traps(
+    actorid: actor::ACTORID,
+    parent: *mut c_void,
+    actor_param1: u32,
+    actor_group_type: u8,
+) {
+    unsafe {
+        if actorid == actor::ACTORID::ITEM && NEXT_TRAP_ID != u8::MAX {
+            ACTORBASE_PARAM2 &= 0xFFFFFF0F;
+            ACTORBASE_PARAM2 |= (NEXT_TRAP_ID << 4) as u32;
+            NEXT_TRAP_ID = u8::MAX;
+        }
+
+        // Replaced instructions
+        asm!("mov x8, {0:x}", in(reg) ACTOR_ALLOCATOR_DEFINITIONS_PTR);
     }
 }

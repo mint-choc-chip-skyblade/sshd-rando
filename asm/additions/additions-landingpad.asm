@@ -85,6 +85,12 @@ b.eq update_crystal_count
 cmp w8, #23
 b.eq handle_effect_timers
 
+cmp w8, #24
+b.eq npc_traps
+
+cmp w8, #25
+b.eq spawned_actor_traps
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
