@@ -8,6 +8,7 @@ use crate::flag;
 use crate::math;
 use crate::player;
 use crate::savefile;
+use crate::yuzu;
 
 use core::arch::asm;
 use core::ffi::c_void;
@@ -45,6 +46,7 @@ extern "C" {
 
     // Functions
     fn playFanfareMaybe(soundMgr: *mut c_void, soundIndex: u16) -> u64;
+    fn dPlayer__putItemAway(player: *mut player::dPlayer, unk1: u64, unk2: u64) -> i32;
 
 }
 
@@ -56,10 +58,11 @@ extern "C" {
 #[no_mangle]
 pub fn setup_traps(item_actor: *mut actor::dAcItem) -> u16 {
     unsafe {
-        // Is trap if one of 0x000000C0 is unset
-        let trapid = ((*item_actor).base.members.base.param2 & 0xC0) >> 6;
+        // Is trap if one of 0x000000F0 is unset
+        let trapid_bitmask = 0xF;
+        let trapid = ((*item_actor).base.members.base.param2 >> 4) & trapid_bitmask;
 
-        if trapid != 3 {
+        if trapid != trapid_bitmask {
             // Set itemid to a rupoor for the frowny face and sound
             (*item_actor).itemid = 34;
             (*item_actor).final_determined_itemid = 34;
@@ -69,9 +72,9 @@ pub fn setup_traps(item_actor: *mut actor::dAcItem) -> u16 {
                     TRAP_ID = 0;
                     TRAP_DURATION = 255;
                 },
-                1 => {
-                    TRAP_ID = 1;
-                },
+                1 => TRAP_ID = 1,
+                2 => TRAP_ID = 2,
+                3 => TRAP_ID = 3,
                 _ => (),
             }
         } else {
@@ -88,29 +91,41 @@ pub fn setup_traps(item_actor: *mut actor::dAcItem) -> u16 {
 pub fn update_traps() {
     unsafe {
         match TRAP_ID {
+            // Burn trap
             0 => {
                 (*PLAYER_PTR).burn_timer = 32;
-                (*PLAYER_PTR).shock_effect_timer = 32;
-                (*PLAYER_PTR).cursed_timer = 32;
-                (*PLAYER_PTR).shit_smell_timer = 32;
                 (*PLAYER_PTR).sheild_burn_timer = 32;
                 TRAP_DURATION = 256;
             },
+            // Curse trap
             1 => {
-                // (*FILE_MGR).FA.current_health = 1;
-                // (*PLAYER_PTR).stamina_amount = 0;
-                // (*PLAYER_PTR).stamina_recovery_timer = 64;
-                // flag::set_storyflag(565); // z button bipping
-                // flag::set_storyflag(566); // c button bipping
-                // flag::set_storyflag(567); // map button bipping
-                // flag::set_storyflag(568); // pouch button bipping
-                // flag::set_storyflag(569); // b button bipping
-                // flag::set_storyflag(570); // interface selection bipping
-                // flag::set_storyflag(571); // gear button bipping
-                // flag::set_storyflag(818); // dowsing button bipping
-                // flag::set_storyflag(832); // help button bipping
-                // playFanfareMaybe(FANFARE_SOUND_MGR, 0x15C2);
+                (*PLAYER_PTR).cursed_timer = 512;
+                TRAP_DURATION = 512;
 
+                // Mitts || Water Dragon's Scale
+                if (*PLAYER_PTR).item_being_used != 7 || (*PLAYER_PTR).item_being_used != 0x12 {
+                    dPlayer__putItemAway(PLAYER_PTR, 0, 1);
+                }
+            },
+            // Noise trap
+            2 => {
+                (*FILE_MGR).FA.current_health = 1;
+                (*PLAYER_PTR).stamina_amount = 0;
+                (*PLAYER_PTR).something_we_use_for_stamina = 0x5A; // Make player exhausted?
+                (*PLAYER_PTR).stamina_recovery_timer = 64;
+                flag::set_storyflag(565); // z button bipping
+                flag::set_storyflag(566); // c button bipping
+                flag::set_storyflag(567); // map button bipping
+                flag::set_storyflag(568); // pouch button bipping
+                flag::set_storyflag(569); // b button bipping
+                flag::set_storyflag(570); // interface selection bipping
+                flag::set_storyflag(571); // gear button bipping
+                flag::set_storyflag(818); // dowsing button bipping
+                flag::set_storyflag(832); // help button bipping
+                playFanfareMaybe(FANFARE_SOUND_MGR, 0x15C2);
+            },
+            // Groose trap
+            3 => {
                 let player_pos = (*PLAYER_PTR).obj_base_members.base.pos;
                 let actor_pos: *mut math::Vec3f = &mut math::Vec3f {
                     x: player_pos.x,
@@ -118,64 +133,37 @@ pub fn update_traps() {
                     z: player_pos.z,
                 } as *mut math::Vec3f;
 
-                let player_rot = (*PLAYER_PTR).obj_base_members.base.rot;
                 let actor_rot: *mut math::Vec3s = &mut math::Vec3s {
-                    x: player_rot.x,
-                    y: player_rot.y,
-                    z: player_rot.z,
+                    x: 0,
+                    y: 0,
+                    z: 10404, // talk_behaviour
                 } as *mut math::Vec3s;
 
-                let player_scale = (*PLAYER_PTR).obj_base_members.base.scale;
                 let actor_scale: *mut math::Vec3f = &mut math::Vec3f {
-                    x: player_scale.x,
-                    y: player_scale.y,
-                    z: player_scale.z,
+                    x: 1.0,
+                    y: 1.0,
+                    z: 1.0,
                 } as *mut math::Vec3f;
-                // let pos: *mut math::Vec3f =
-                //     from_ref(&((*PLAYER_PTR).obj_base_members.base.pos));
-                // let rot: *mut math::Vec3s =
-                //     from_ref(&(*PLAYER_PTR).obj_base_members.base.rot) as
-                // *mut math::Vec3s; let scale: *mut
-                // math::Vec3f =     from_ref(&(*PLAYER_PTR).
-                // obj_base_members.base.scale) as *mut math::Vec3f;
 
-                let mut hornet_count = 0u32;
+                actor::spawn_actor(
+                    actor::ACTORID::NPC_RVL,
+                    (*ROOM_MGR).roomid.into(),
+                    0xFFFFFFFF,
+                    actor_pos,
+                    actor_rot,
+                    actor_scale,
+                    0xFFFFFFFF,
+                );
 
-                while hornet_count < 8 {
-                    actor::spawn_actor(
-                        actor::ACTORID::NPC_RVL,
-                        (*ROOM_MGR).roomid.into(),
-                        0xFFFFFFFF,
-                        actor_pos,
-                        actor_rot,
-                        actor_scale,
-                        0xFFFFFFFF,
-                    );
-
-                    match hornet_count % 4 {
-                        0 => {
-                            (*actor_pos).x += 150.0;
-                            (*actor_pos).z -= 150.0;
-                        },
-                        1 => {
-                            (*actor_pos).x -= 300.0;
-                        },
-                        2 => {
-                            (*actor_pos).z += 300.0;
-                        },
-                        3 => {
-                            (*actor_pos).x += 300.0;
-                        },
-                        _ => (),
-                    }
-
-                    hornet_count += 1;
-                }
+                playFanfareMaybe(FANFARE_SOUND_MGR, 0x1705); // Groose's theme
             },
             _ => (),
         }
 
-        TRAP_ID = u8::MAX;
+        // Only reset the trapid if the trap has an immediate effect
+        if TRAP_DURATION == 0 {
+            TRAP_ID = u8::MAX;
+        }
     }
 }
 
@@ -195,13 +183,14 @@ pub fn handle_effect_timers() -> u32 {
         if TRAP_DURATION > 0 {
             TRAP_DURATION -= 1;
 
-            if (*PLAYER_PTR).burn_timer == 0 {
+            if TRAP_ID == 0 {
                 (*PLAYER_PTR).burn_timer = 32;
-                (*PLAYER_PTR).shock_effect_timer = 32;
-                (*PLAYER_PTR).cursed_timer = 32;
-                (*PLAYER_PTR).shit_smell_timer = 32;
                 (*PLAYER_PTR).sheild_burn_timer = 32;
+            } else if TRAP_ID == 1 {
+                (*PLAYER_PTR).cursed_timer = 512;
             }
+        } else {
+            TRAP_ID = u8::MAX;
         }
 
         return 0;

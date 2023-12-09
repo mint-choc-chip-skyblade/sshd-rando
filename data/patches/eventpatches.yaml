@@ -1,14 +1,25 @@
 003-ItemGet:
+  - name: Groose Trap Entry
+    type: entryadd
+    entry:
+      name: "003_251"
+      value: Show Trap Text
   - name: Noise Trap Entry
+    type: entryadd
+    entry:
+      name: "003_252"
+      value: Show Trap Text
+  - name: Curse Trap Entry
     type: entryadd
     entry:
       name: "003_253"
       value: Show Trap Text
-  - name: Status Effect Trap Entry
+  - name: Burn Trap Entry
     type: entryadd
     entry:
       name: "003_254"
       value: Show Trap Text
+
   - name: Trap Text
     type: textadd
     textboxtype: 5

@@ -25,11 +25,15 @@ def determine_check_patches(
 
         trapid = 0
         itemid = -1
+        item_name = ""
         if item is not None:
             itemid = item.id
+            item_name = item.name
 
         # TODO: make sure all models are in extracts.yaml
-        if config.settings[0].settings["traps"].value == "on" and itemid in (253, 254):
+        if config.settings[0].settings["traps"].value == "on" and item_name.endswith(
+            "Trap"
+        ):
             print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             print(item.name)
 

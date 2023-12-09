@@ -87,12 +87,12 @@ def patch_freestanding_item(bzs: dict, itemid: int, object_id_str: str, trapid: 
         trapbits = 254 - trapid
         # Unsets bit 0x00000080 of params2
         freestanding_item["params2"] = mask_shift_set(
-            freestanding_item["params2"], 2, 6, trapbits
+            freestanding_item["params2"], 0xF, 4, trapbits
         )
     else:
         # Makes sure the bit is set if not a trap
         freestanding_item["params2"] = mask_shift_set(
-            freestanding_item["params2"], 2, 6, 3
+            freestanding_item["params2"], 0xF, 4, 0xF
         )
 
     freestanding_item["params1"] = mask_shift_set(

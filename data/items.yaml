@@ -667,11 +667,22 @@
    - Fun Fun Island - Dodoh's Crystals
    - Fun Fun Island - Minigame -- 500 Rupees
    - The Thunderhead - Song from Levias
-- id: 253
+
+# - id: 240+ == traps
+
+- id: 251
+  name: Groose Trap
+  oarc:
+    - RivalCmnAnm
+    - RivalNpcAnm
+- id: 252
   name: Noise Trap
   oarc: null
+- id: 253
+  name: Curse Trap
+  oarc: null
 - id: 254
-  name: Status Effect Trap
+  name: Burn Trap
   oarc: null
 
 # Dummy item to simulate game beatability for logic

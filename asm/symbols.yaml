@@ -85,6 +85,8 @@ main:
 
     allocateNewActor: 0x7100f14500
 
+    dPlayer__putItemAway: 0x7100a1c6d4
+
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
     dAcItem__spawnItemWithParams: 0x71004eba70
     spawnDrop: 0x71004ebc5c

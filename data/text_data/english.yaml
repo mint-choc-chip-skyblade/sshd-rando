@@ -947,16 +947,28 @@
   cryptic: a <r<transport friend>>
   plurality: Singular
 
-- name: Noise Trap
+- name: Groose Trap
   standard: Trap
-  pretty: a Trap
-  cryptic: a <r<fool's delight>>
+  pretty: a Groose Trap
+  cryptic: <r<Skyloft's true hero>>
   plurality: Singular
 
-- name: Status Effect Trap
+- name: Noise Trap
   standard: Trap
-  pretty: a Trap
-  cryptic: a <r<fool's delight>>
+  pretty: a Noise Trap
+  cryptic: a <r<audiophile's delight>>
+  plurality: Singular
+
+- name: Curse Trap
+  standard: Trap
+  pretty: a Curse Trap
+  cryptic: a <r<magical hand-tie>>
+  plurality: Singular
+
+- name: Burn Trap
+  standard: Trap
+  pretty: a Burn Trap
+  cryptic: a <r<pyrotechnician's delight>>
   plurality: Singular
 
 - name: Game Beatable
