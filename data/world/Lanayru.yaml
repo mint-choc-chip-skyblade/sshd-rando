@@ -39,6 +39,10 @@
   locations:
     Lanayru Mine - Chest behind Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
     Lanayru Mine - Stamina Fruit before Falling Statues: Nothing
+    Lanayru Mine - Stamina Fruit after Falling Statues: Beetle
+    Lanayru Mine - Stamina Fruit near Spumes 1: Beetle
+    Lanayru Mine - Stamina Fruit near Spumes 2: Beetle
+    Lanayru Mine - Stamina Fruit near Spumes 3: Beetle
 
 
 - name: Lanayru Mine End
@@ -88,7 +92,7 @@
   locations:
     Lanayru Desert - Chest near Party Wheel: Blow_Up_Covered_Timeshift_Stone
     Lanayru Desert - Chest near Rescue Caged Robot: Nothing
-    Lanayru Desert - Stamina Fruit on Ledge to Party Wheel: Blow_Up_Covered_Timeshift_Stone
+    Lanayru Desert - Stamina Fruit on Ledge to Party Wheel: Blow_Up_Covered_Timeshift_Stone or Beetle
 
     # You can use the bomb flowers to *just* throw one up into the hole in the cage from the ground
     # This trick is only doable on HD
@@ -130,10 +134,10 @@
     Sand Oasis End: Can_Navigate_in_Oasis or Clawshots or 'Push_Down_Second_Sand_Oasis_Minecart'
   locations:
     Lanayru Desert - Goddess Cube in Sand Oasis: Goddess_Sword
-    Lanayru Desert - Stamina Fruit in South Sand Oasis 1: Can_Navigate_in_Oasis
-    Lanayru Desert - Stamina Fruit in South Sand Oasis 2: Can_Navigate_in_Oasis
-    Lanayru Desert - Stamina Fruit in North Sand Oasis 1: Can_Navigate_in_Oasis
-    Lanayru Desert - Stamina Fruit in North Sand Oasis 2: Can_Navigate_in_Oasis
+    Lanayru Desert - Stamina Fruit in South Sand Oasis 1: Can_Navigate_in_Oasis or Beetle
+    Lanayru Desert - Stamina Fruit in South Sand Oasis 2: Can_Navigate_in_Oasis or Beetle
+    Lanayru Desert - Stamina Fruit in North Sand Oasis 1: Can_Navigate_in_Oasis or Beetle
+    Lanayru Desert - Stamina Fruit in North Sand Oasis 2: Can_Navigate_in_Oasis or Beetle
 
 - name: Sand Oasis End
   hint_region: Lanayru Desert
@@ -143,6 +147,9 @@
     Temple of Time South: Nothing
     Sand Oasis Highest Platform: Clawshots
     Sand Oasis Middle: Nothing
+  locations:
+    Lanayru Desert - Stamina Fruit in North Sand Oasis 1: Nothing
+    Lanayru Desert - Stamina Fruit in North Sand Oasis 2: Nothing
 
 
 - name: Sand Oasis Highest Platform
