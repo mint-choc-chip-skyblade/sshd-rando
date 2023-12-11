@@ -82,8 +82,6 @@ b.eq warp_to_start
 cmp w8, #22
 b.eq update_crystal_count
 
-cmp w8, #23
-b.eq handle_effect_timers
 
 cmp w8, #24
 b.eq npc_traps
@@ -93,6 +91,9 @@ b.eq spawned_actor_traps
 
 cmp w8, #26
 b.eq fix_tbox_traps
+
+cmp w8, #27
+b.eq handle_effect_timers
 
 ret ; this should never be reached
 

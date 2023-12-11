@@ -83,8 +83,6 @@
 .global update_crystal_count
 .type update_crystal_count, @function
 
-.global handle_effect_timers
-.type handle_effect_timers, @function
 
 .global npc_traps
 .type npc_traps, @function
@@ -94,3 +92,6 @@
 
 .global fix_tbox_traps
 .type fix_tbox_traps, @function
+
+.global handle_effect_timers
+.type handle_effect_timers, @function
