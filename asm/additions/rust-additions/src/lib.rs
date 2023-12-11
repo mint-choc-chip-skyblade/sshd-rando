@@ -379,16 +379,14 @@ pub fn update_day_night_storyflag() {
 }
 
 #[no_mangle]
-pub fn fix_freestanding_item_y_offset() {
+pub fn fix_freestanding_item_y_offset(item_actor: *mut structs::dAcItem) {
     unsafe {
-        let mut item_actor: *mut structs::dAcItem;
-        asm!("mov {0}, x19", out(reg) item_actor);
-
         let actor_param1 = (*item_actor).base.baseBase.param1;
 
         if (actor_param1 >> 9) & 0x1 == 0 {
             let mut use_default_scaling = false;
             let mut y_offset = 0.0f32;
+            let item_rot = (*item_actor).base.members.base.rot;
 
             // Item id
             match actor_param1 & 0x1FF {
@@ -447,7 +445,7 @@ pub fn fix_freestanding_item_y_offset() {
             }
 
             // Only apply the offset if the item isn't tilted
-            if (*item_actor).base.members.base.rot.x == 0 {
+            if item_rot.x < 0x2000 || item_rot.x > 0xE000 {
                 (*item_actor).freestandingYOffset = y_offset;
             }
 
@@ -457,9 +455,6 @@ pub fn fix_freestanding_item_y_offset() {
                 (*item_actor).base.members.base.rot.y &= 0xFFFE;
             }
         }
-
-        // Replaced instruction
-        asm!("mov w0, w20");
     }
 }
 
@@ -469,7 +464,7 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut structs::dAcItem
         // If the item is facing sideways, apply a horizontal offset (i.e. stamina
         // fruit on walls) and rotate the item if necessary
         let item_rot = (*item_actor).base.members.base.rot;
-        if item_rot.x == 16384 {
+        if item_rot.x > 0x2000 && item_rot.x < 0xE000 {
             let actor_param1 = (*item_actor).base.baseBase.param1;
             let mut h_offset = 0.0f32;
             let mut angle_change_x = 0u16;
@@ -487,8 +482,8 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut structs::dAcItem
                     angle_change_y = 0xF400;
                     angle_change_z = 0xF600;
                 },
-                // Goddess's Harp
-                16 => {
+                // Goddess's Harp | All Songs
+                16 | 186..=193 => {
                     h_offset = 17.0;
                     angle_change_x = 0x0800;
                     angle_change_y = 0x2500;
@@ -502,14 +497,166 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut structs::dAcItem
                     angle_change_x = 0x0500;
                     angle_change_y = 0x2400;
                 },
-
+                21 => {
+                    h_offset = 27.0;
+                    angle_change_y = 0x3000;
+                    angle_change_z = 0x0300;
+                },
+                // AC BK
+                25 => {
+                    h_offset = 50.0;
+                    angle_change_x = 0xEF00;
+                },
+                // FS BK | SV BK
+                26 | 29 => h_offset = 40.0,
+                // SSH BK
+                27 => h_offset = 47.0,
+                // Key Piece
+                28 => {
+                    h_offset = 10.0;
+                    angle_change_x = 0x0800;
+                    angle_change_y = 0x2000;
+                    angle_change_z = 0x0800;
+                },
+                // ET BK
+                30 => h_offset = 60.0,
+                // LMF BK | Small Seed Satchel | Whip
+                31 | 128 | 137 => h_offset = 25.0,
+                // Gratitude Crystal Pack | Single Crystal
+                35 | 48 => h_offset = 28.0,
+                // 5 Bombs | 10 Bombs
+                40 | 41 => {
+                    h_offset = 20.0;
+                    angle_change_y = 0x1600;
+                },
+                // Gust Bellows
+                49 => {
+                    h_offset = 35.0;
+                    angle_change_x = 0x1100;
+                    angle_change_z = 0x2000;
+                },
+                // Progressive Slingshot
+                52 => {
+                    h_offset = 30.0;
+                    angle_change_x = 0x1000;
+                    angle_change_z = 0x1000;
+                },
+                // Progressive Beetle
+                53 => {
+                    h_offset = 40.0;
+                    angle_change_x = 0xE000;
+                    angle_change_y = 0xCB00;
+                    angle_change_z = 0xB000;
+                },
+                // Progressive Mitts
+                56 => {
+                    h_offset = 45.0;
+                    angle_change_y = 0xE800;
+                },
+                // Water Dragon Scale | Sea Chart
+                68 | 98 => h_offset = 15.0,
+                // Bug Medal | Life Medal
+                70 | 114 => {
+                    h_offset = 15.0;
+                    angle_change_x = 0x0A80;
+                },
+                // Progressive Bug Net
+                71 => {
+                    h_offset = 30.0;
+                    angle_change_x = 0x1000;
+                    angle_change_y = 0xE800;
+                    angle_change_z = 0x2000;
+                },
+                // Bomb Bag
+                92 => h_offset = 45.0,
+                // Heart Container | Progressive Pouch | Life Tree Fruit
+                93 | 112 | 198 => h_offset = 35.0,
+                // Heart Piece
+                94 => h_offset = 40.0,
+                // Triforce Pieces
+                95 | 96 | 97 => h_offset = 75.0,
+                // Heart Medal | Rupee Medal | Treasure Medal | Potion Medal | Cursed Medal
+                100..=104 => {
+                    h_offset = 15.0;
+                    angle_change_y = 0x4000;
+                    angle_change_z = 0x0A00;
+                },
+                // Progressive Wallet | Bottle | Tumbleweed | Extra Wallet
+                108 | 153 | 163 | 199 => h_offset = 20.0,
+                // Wooden Shield | Hylian Shield
+                116 | 125 => {
+                    h_offset = 25.0;
+                    angle_change_x = 0x0800;
+                    angle_change_y = 0x2400;
+                    angle_change_z = 0x1000;
+                },
+                // Small Quiver
+                131 => {
+                    h_offset = 25.0;
+                    angle_change_x = 0x1000;
+                    angle_change_z = 0x1000;
+                },
+                // Small Bomb Bag
+                134 => h_offset = 30.0,
+                // Fireshield Earrings
+                138 => h_offset = 20.0,
+                // Cawlin's Letter
+                158 => {
+                    h_offset = 15.0;
+                    angle_change_y = 0x2000;
+                },
+                // Beedle's Insect Cage
+                159 => {
+                    h_offset = 40.0;
+                    angle_change_y = 0x2000;
+                },
+                // Rattle
+                160 => {
+                    h_offset = 25.0;
+                    angle_change_y = 0xE000;
+                },
+                // All Treasures
+                63 | 64 | 165..=176 => h_offset = 25.0,
+                // Tablets
+                177..=179 => {
+                    h_offset = 10.0;
+                    angle_change_x = 0x0800;
+                    angle_change_y = 0x2000;
+                    angle_change_z = 0x0800;
+                },
+                // Stone of Trials
+                180 => {
+                    h_offset = 20.0;
+                    angle_change_x = 0x0800;
+                    angle_change_y = 0x2000;
+                    angle_change_z = 0x0800;
+                },
+                // Small Keys
+                200..=206 => {
+                    h_offset = 5.0;
+                    angle_change_x = 0x0C00;
+                    angle_change_y = 0x1000;
+                    angle_change_z = 0x0600;
+                },
+                // Maps
+                207..=213 => {
+                    h_offset = 30.0;
+                    angle_change_x = 0x0800;
+                    angle_change_y = 0x1000;
+                    angle_change_z = 0x0800;
+                },
                 _ => h_offset = 0.0,
             }
 
             // Use trigonometry to figure out the horizontal offsets
+            // Assume items are tilted on the x rotation and turned with the
+            // y rotation to get whatever angle they have. If they're rotated with z
+            // change it accordingly
             let mut facing_angle = item_rot.y;
             if facing_angle == 0 {
-                facing_angle = item_rot.z;
+                facing_angle = 0 - item_rot.z;
+                (*item_actor).base.members.base.rot.y = facing_angle;
+                (*item_actor).base.members.base.rot.z = 0;
             }
             let facing_angle_radians: f32 = (facing_angle as f32 / 65535 as f32) * 2.0 * 3.14159;
             let xOffset = sinf(facing_angle_radians) * h_offset;
@@ -610,13 +757,8 @@ pub fn handle_custom_item_get(item_actor: *mut structs::dAcItem) -> u16 {
         }
 
         // Get necessary params for setting a custom flag if this item has one
-        let param2: u32 = (*item_actor).base.members.base.param2;
-        let flag: u32 = (param2 & (0x00007F00)) >> 8;
-        let mut sceneindex: u32 = (param2 & (0x00018000)) >> 16;
-        let flag_space_trigger: u32 = (param2 & (0x00020000)) >> 18;
-        let mut original_itemid: u32 = (param2 & (0x00FC0000)) >> 19;
-
-        transform_item_actor_params(&mut sceneindex, &mut original_itemid);
+        let (flag, sceneindex, flag_space_trigger, original_itemid) =
+            unpack_custom_item_params(item_actor);
 
         if flag != 0x7F {
             // Use different flag spaces depending on the value of the
@@ -1027,26 +1169,36 @@ pub fn update_crystal_count(item: u32) {
     }
 }
 
-// Transforms custom flag variables into what they should be
+// Unpacks our custom item params into separate variables
 #[no_mangle]
-pub fn transform_item_actor_params(sceneindex: &mut u32, original_itemid: &mut u32) {
-    // Transform the scene index into one of the unused ones
-    match sceneindex {
-        0 => *sceneindex = 6,
-        1 => *sceneindex = 13,
-        2 => *sceneindex = 16,
-        3 => *sceneindex = 19,
-        _ => {},
-    }
+pub fn unpack_custom_item_params(item_actor: *mut structs::dAcItem) -> (u32, u32, u32, u32) {
+    unsafe {
+        let param2: u32 = (*item_actor).base.members.base.param2;
+        let flag: u32 = (param2 & (0x00007F00)) >> 8;
+        let mut sceneindex: u32 = (param2 & (0x00018000)) >> 15;
+        let flag_space_trigger: u32 = (param2 & (0x00020000)) >> 17;
+        let mut original_itemid: u32 = (param2 & (0x00FC0000)) >> 18;
 
-    // Transform the original_itemid into its proper itemid
-    match original_itemid {
-        1 => *original_itemid = 42, // Stamina Fruit
-        2 => *original_itemid = 2,  // Green Rupee
-        3 => *original_itemid = 3,  // Blue Rupee
-        4 => *original_itemid = 4,  // Red Rupee
-        5 => *original_itemid = 34, // Rupoor
-        _ => {},
+        // Transform the scene index into one of the unused ones
+        match sceneindex {
+            0 => sceneindex = 6,
+            1 => sceneindex = 13,
+            2 => sceneindex = 16,
+            3 => sceneindex = 19,
+            _ => {},
+        }
+
+        // Transform the original_itemid into its proper itemid
+        match original_itemid {
+            1 => original_itemid = 42, // Stamina Fruit
+            2 => original_itemid = 2,  // Green Rupee
+            3 => original_itemid = 3,  // Blue Rupee
+            4 => original_itemid = 4,  // Red Rupee
+            5 => original_itemid = 34, // Rupoor
+            _ => {},
+        }
+
+        return (flag, sceneindex, flag_space_trigger, original_itemid);
     }
 }
 
@@ -1055,18 +1207,8 @@ pub fn check_and_modify_item_actor(item_actor: *mut structs::dAcItem) {
     unsafe {
         // Get necessary params for checking if this item has a custom
         // flag
-        let param2: u32 = (*item_actor).base.members.base.param2;
-        let flag: u32 = (param2 & (0x00007F00)) >> 8;
-        let mut sceneindex: u32 = (param2 & (0x00018000)) >> 15;
-        let flag_space_trigger: u32 = (param2 & (0x00020000)) >> 17;
-        let mut original_itemid: u32 = (param2 & (0x00FC0000)) >> 18;
-        let item_rot = (*item_actor).base.members.base.rot;
-
-        transform_item_actor_params(&mut sceneindex, &mut original_itemid);
-
-        // let rupee_count = check_itemflag(structs::ITEMFLAGS::RUPEE_COUNTER);
-        // (*item_actor).base.baseBase.param1 &= !0x1FF;
-        // (*item_actor).base.baseBase.param1 |= rupee_count;
+        let (flag, sceneindex, flag_space_trigger, original_itemid) =
+            unpack_custom_item_params(item_actor);
 
         // Despawn the item if it's one of the stamina fruit on LMF that
         // shouldn't exist until the dungeon has been raised. Actors are
@@ -1080,21 +1222,22 @@ pub fn check_and_modify_item_actor(item_actor: *mut structs::dAcItem) {
             (*item_actor).base.baseBase.param1 &= !0x1FF;
         }
 
-        // If we have any kind of junk item, set bit 9 for no textbox
-        // Rupees / 5 Bombs / 10 Bombs / All Treasures
+        // Don't give a textbox for rupees
         match (*item_actor).base.baseBase.param1 & 0x1FF {
-            2 | 3 | 4 | 31 | 32 | 40 | 41 | 63 | 64 | 161..=176 => {
+            2 | 3 | 4 | 31 | 32 => {
                 (*item_actor).base.baseBase.param1 |= 0x200;
             },
             _ => {},
         }
 
+        // Check if the flag is on
         let mut flag_is_on = 0;
         match flag_space_trigger {
             0 => flag_is_on = check_global_sceneflag(sceneindex as u16, flag as u16),
             1 => flag_is_on = check_global_dungeonflag(sceneindex as u16, flag as u16),
             _ => {},
         }
+
         // If we have a custom flag and it's been set, revert this item back to what
         // it originally was
         if flag != 0x7F && flag_is_on != 0 {
@@ -1107,6 +1250,9 @@ pub fn check_and_modify_item_actor(item_actor: *mut structs::dAcItem) {
         } else if (flag != 0x7F) {
             fix_freestanding_item_horizontal_offset(item_actor);
         }
+
+        // Fix the y offset if necessary
+        fix_freestanding_item_y_offset(item_actor);
 
         // Replaced Code
         if (((*item_actor).base.baseBase.param1 >> 10) & 0xFF) == 0xFF {

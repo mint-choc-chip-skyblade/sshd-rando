@@ -32,12 +32,15 @@ def determine_check_patches(
 
     for location in location_table.values():
         item = location.current_item
-        custom_flag = 0x3FF # Value for no custom flag
+        custom_flag = 0x3FF  # Value for no custom flag
         original_itemid = 0
         if "Custom Flag" in location.types:
             custom_flag = custom_flags.pop()
         if "Stamina Fruit" in location.types:
             original_itemid = 1
+            # Don't patch anything if the stamina fruit is vanilla
+            if location.current_item == location.world.get_item("Stamina Fruit"):
+                continue
 
         for path in location.patch_paths:
             if stage_patch_match := STAGE_PATCH_PATH_REGEX.match(path):
@@ -55,7 +58,14 @@ def determine_check_patches(
                         stage_patch_handler.add_oarc_for_check(stage, layer, item.oarcs)
 
                 stage_patch_handler.add_check_patch(
-                    stage, room, object_name, layer, objectid, item.id, custom_flag, original_itemid
+                    stage,
+                    room,
+                    object_name,
+                    layer,
+                    objectid,
+                    item.id,
+                    custom_flag,
+                    original_itemid,
                 )
 
             if event_patch_match := EVENT_PATCH_PATH_REGEX.match(path):

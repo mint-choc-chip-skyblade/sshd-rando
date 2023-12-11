@@ -1,7 +1,3 @@
-; Fix freestanding item y offset at end of dAcItem::init
-.offset 0x71004e5f94
-bl 0x7100659ab8
-
 .offset 0x71004e8f7c
 b 0x71004e8f94
 

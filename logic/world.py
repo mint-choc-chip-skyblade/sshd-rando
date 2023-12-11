@@ -84,7 +84,7 @@ class World:
         self.build_location_table()
         self.load_logic_macros()
         self.load_world_graph()
-        # self.verify_hint_data()
+        self.verify_hint_data()
         self.place_hardcoded_items()
         self.build_item_pools()
 
@@ -369,7 +369,7 @@ class World:
             if item == None:
                 continue
 
-            # Small Keys, Boss Keys, Maps, Caves Key, Shop items, Single Crystals
+            # Small Keys, Boss Keys, Maps, Caves Key, Shop items, Single Crystals, Stamina Fruit
             if (
                 (
                     self.setting("small_keys") == "vanilla"
@@ -391,11 +391,16 @@ class World:
                     self.setting("single_gratitude_crystals") == "vanilla"
                     and "Loose Crystals" in location.types
                 )
+                or (
+                    self.setting("stamina_fruit") == "vanilla"
+                    and "Stamina Fruit" in location.types
+                )
             ):
                 location.set_current_item(item)
                 location.has_known_vanilla_item = True
                 location.hint_priority = "never"
-                self.item_pool[item] -= 1
+                if item in self.item_pool:
+                    self.item_pool[item] -= 1
 
             # Scrap Shop Upgrades
             if "Scrap Shop" in location.types:

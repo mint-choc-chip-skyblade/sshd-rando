@@ -64,19 +64,20 @@ def patch_tbox(bzs: dict, itemid: int, id_str: str):
     )
 
 
-def patch_freestanding_item(bzs: dict, itemid: int, id_str: str, custom_flag: int, original_itemid: int):
+def patch_freestanding_item(
+    bzs: dict, itemid: int, id_str: str, custom_flag: int, original_itemid: int
+):
     id = int(id_str, 0)
     freestanding_item = next(
         filter(
-            lambda x: x["name"] == "Item" and (((x["params1"] >> 10) & 0xFF) == id or x["id"] == id),
+            lambda x: x["name"] == "Item"
+            and (((x["params1"] >> 10) & 0xFF) == id or x["id"] == id),
             bzs["OBJ "],
         ),
         None,
     )
     if freestanding_item is None:
         print(f"ERROR: No freestanding item id {hex(id)} found to patch")
-        available_object_ids = [hex(x["id"]) for x in bzs["OBJ "] if x["name"] == "Item"]
-        print(available_object_ids)
         return
 
     freestanding_item["params1"] = mask_shift_set(
@@ -780,9 +781,11 @@ class StagePatchHandler:
         objectid: str,
         itemid: int,
         custom_flag: int = -1,
-        original_itemid: int = 0
+        original_itemid: int = 0,
     ):
-        self.check_patches[stage].append((room, object_name, layer, objectid, itemid, custom_flag, original_itemid))
+        self.check_patches[stage].append(
+            (room, object_name, layer, objectid, itemid, custom_flag, original_itemid)
+        )
 
     def add_entrance_patch(
         self,

@@ -2490,6 +2490,17 @@ F200: # Eldin main area
       posx: -3900
       posy: 5600
       posz: -15000
+  # Match tilt expectation of anglex being 0x4000
+  - name: Tilt Stamina Fruit near hot cave differently
+    type: objpatch
+    id: 0x2805
+    room: 5
+    layer: 0
+    objtype: OBJ
+    object:
+      anglex: 0x4000
+      angley: 0x8000
+      anglez: 0x0000
 
 F201_1: # Inside volcano
   - name: Layer override
@@ -6362,3 +6373,27 @@ S200:
     objtype: SCEN
     object:
       layer: 0
+
+# Patch stamina fruit to keep assumption
+# of rot.x being the tilt
+S300:
+  - name: Patch vine stamina fruit 1
+    type: objpatch
+    id: 0xFC36
+    room: 0
+    layer: 2
+    objtype: OBJ
+    object:
+      anglex: 0x4000
+      angley: 0xC000
+      anglez: 0x0000
+  - name: Patch vine stamina fruit 2
+    type: objpatch
+    id: 0xFC2D
+    room: 0
+    layer: 2
+    objtype: OBJ
+    object:
+      anglex: 0x4000
+      angley: 0x4000
+      anglez: 0x0000
