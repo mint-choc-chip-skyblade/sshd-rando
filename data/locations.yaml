@@ -1611,7 +1611,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFC35
 
-- name: Eldin Volcano - Stamina Fruit after Last Bokoblin Tower
+- name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
   original_item: Stamina Fruit
   type: Stamina Fruit, Custom Flag
   Paths:

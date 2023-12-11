@@ -2349,9 +2349,9 @@
   pretty: Eldin Volcano - Stamina Fruit in front of Second Slope 3
   cryptic: a <r<fruit in front of a sandy slope>>
 
-- name: Eldin Volcano - Stamina Fruit after Last Bokoblin Tower
-  standard: Eldin Volcano - Stamina Fruit after Last Bokoblin Tower
-  pretty: Eldin Volcano - Stamina Fruit after Last Bokoblin Tower
+- name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
+  standard: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
+  pretty: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
   cryptic: a <r<fruit past a fallen tower>>
 
 - name: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
