@@ -274,7 +274,36 @@ pub struct dAcItem {
     pub no_longer_waiting:       u8,
     pub _6:                      [u8; 19],
 }
-assert_eq_size!([u8; 4744], dAcItem);
+assert_eq_size!([u8; 0x1288], dAcItem);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcTbox {
+    pub base:                         ActorObjectBase,
+    pub mdlAnmChr_c:                  [u8; 0xB8],
+    pub _0:                           [u8; 0x12E8],
+    pub state_mgr:                    [u8; 0x70],
+    pub _1:                           [u8; 0xA8],
+    pub dowsing_target:               [u8; 0x28],
+    pub goddess_chest_dowsing_target: [u8; 0x28],
+    pub register_dowsing_target:      [u8; 0x10],
+    pub unregister_dowsing_target:    [u8; 0x10],
+    pub _2:                           [u8; 0x58],
+    pub itemid_0x1ff:                 flag::ITEMFLAGS,
+    pub item_model_index:             u16,
+    pub chest_opened:                 u8,
+    pub spawn_sceneflag:              u8,
+    pub set_sceneflag:                u8,
+    pub chestflag:                    u8,
+    pub unk:                          u8,
+    pub chest_subtype:                u8,
+    pub _3:                           [u8; 2],
+    pub is_chest_opened_related:      u8,
+    pub _4:                           [u8; 4],
+    pub do_obstructed_check:          bool,
+    pub _5:                           [u8; 6],
+}
+assert_eq_size!([u8; 0x19A8], dAcTbox);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]

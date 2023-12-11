@@ -45,6 +45,7 @@ extern "C" {
     static ACTOR_ALLOCATOR_DEFINITIONS_PTR: *mut c_void;
 
     static mut ACTORBASE_PARAM2: u32;
+    static mut ITEM_GET_BOTTLE_POUCH_SLOT: u32;
 
     // Custom symbols
     static mut TRAP_ID: u8;
@@ -220,6 +221,28 @@ pub fn npc_traps() {
 
         // Replaced instructions
         asm!("mov w1, #0x9", "mov w2, {0:w}", in(reg) itemid);
+    }
+}
+
+#[no_mangle]
+pub fn fix_tbox_traps() {
+    unsafe {
+        let tbox_actor: *mut actor::dAcTbox;
+        asm!("mov {0:x}, x19", out(reg) tbox_actor);
+
+        let trapid = (((*tbox_actor).base.members.base.param2 >> 28) & 0xF) as u8;
+
+        if trapid != 0xF {
+            // Force a rupoor model (otherwise, you get a trap with a big item get anim and
+            // sound)
+            asm!("mov w20, #34"); // set tbox itemid to rupoor
+            NEXT_TRAP_ID = trapid;
+        }
+
+        // Replaced instructions
+        let max = u32::MAX;
+        ITEM_GET_BOTTLE_POUCH_SLOT = max;
+        asm!("mov w25, {0:w}", in(reg) max);
     }
 }
 

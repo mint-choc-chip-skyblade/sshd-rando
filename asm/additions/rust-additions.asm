@@ -91,3 +91,6 @@
 
 .global spawned_actor_traps
 .type spawned_actor_traps, @function
+
+.global fix_tbox_traps
+.type fix_tbox_traps, @function

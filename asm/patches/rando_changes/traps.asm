@@ -8,9 +8,19 @@ bl additions_jumptable
 mov w8, #13
 bl additions_jumptable
 
+; Setup traps (change itemids) in dAcItem::stateWaitTBoxGetDemoUpdate
+.offset 0x71004dfc4c
+mov w8, #13
+bl additions_jumptable
+
 ; Setup traps in handleType3
 .offset 0x710050d8c8
 mov w8, #24
+bl additions_jumptable
+
+; Setup traps in tboxs
+.offset 0x7100b0b7f4
+mov w8, #26
 bl additions_jumptable
 
 

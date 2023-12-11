@@ -48,9 +48,15 @@ def patch_tbox(bzs: dict, itemid: int, object_id_str: str, trapid: int):
         print(f"ERROR: No tbox id {id} found to patch")
         return
 
-    # Don't use fake itemid yet, this needs patching properly first
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
     if trapid:
-        itemid = trapid
+        trapbits = 254 - trapid
+        # Unsets bit 0xF0000000 of params2
+        tbox["params2"] = mask_shift_set(tbox["params2"], 0xF, 28, trapbits)
+        print(hex(tbox["params2"]))
+    else:
+        # Makes sure the bit is set if not a trap
+        tbox["params2"] = mask_shift_set(tbox["params2"], 0xF, 28, 0xF)
 
     original_itemid = tbox["anglez"] & 0x1FF
 

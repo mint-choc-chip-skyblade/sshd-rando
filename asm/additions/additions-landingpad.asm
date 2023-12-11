@@ -91,6 +91,9 @@ b.eq npc_traps
 cmp w8, #25
 b.eq spawned_actor_traps
 
+cmp w8, #26
+b.eq fix_tbox_traps
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
