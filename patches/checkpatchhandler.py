@@ -30,9 +30,7 @@ def determine_check_patches(
             itemid = item.id
             item_name = item.name
 
-        if config.settings[0].settings["traps"].value == "on" and item_name.endswith(
-            "Trap"
-        ):
+        if item_name.endswith("Trap"):
             trapid = itemid
 
             if not item.oarcs:
@@ -40,9 +38,12 @@ def determine_check_patches(
 
             if isinstance(item.oarcs, list):
                 itemid = random.choice(list(TRAP_OARC_NAMES.keys()))
-                item.oarcs.append(
-                    TRAP_OARC_NAMES[itemid][0]
-                )  # TODO: implement variations (and add to extracts.yaml)
+
+                # TODO: implement variations (and add to extracts.yaml)
+                trap_oarc_name = TRAP_OARC_NAMES[itemid][0]
+
+                if trap_oarc_name != "":
+                    item.oarcs.append(trap_oarc_name)
 
                 print(itemid, TRAP_OARC_NAMES[itemid], item.oarcs)
 

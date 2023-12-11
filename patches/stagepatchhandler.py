@@ -118,7 +118,7 @@ def patch_bucha(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
-        itemid = 34 # rupoor
+        itemid = 34  # rupoor
 
     if bucha is None:
         print(f"ERROR: Bucha's id {id} not found. Cannot patch this check.")
@@ -138,7 +138,7 @@ def patch_zeldas_closet(bzs: dict, itemid: int, object_id_str: str, trapid: int)
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
-        itemid = 34 # rupoor
+        itemid = 34  # rupoor
 
     if closet is None:
         print(f"ERROR: No closet id {id} found to patch")
@@ -155,7 +155,7 @@ def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
-        itemid = 34 # rupoor
+        itemid = 34  # rupoor
 
     if boko is None:
         print(f"ERROR: No boko id {id} found to patch")
@@ -173,7 +173,7 @@ def patch_heart_container(bzs: dict, itemid: int, trapid: int):
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
-        itemid = 34 # rupoor
+        itemid = 34  # rupoor
 
     heart_container["params1"] = mask_shift_set(
         heart_container["params1"], 0xFF, 16, itemid
@@ -189,7 +189,7 @@ def patch_chandelier_item(bzs: dict, itemid: int, trapid: int):
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
-        itemid = 34 # rupoor
+        itemid = 34  # rupoor
 
     chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemid)
 
@@ -206,7 +206,7 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
-        itemid = 34 # rupoor
+        itemid = 34  # rupoor
 
     if digspot is None:
         print(f"ERROR: No digspot id {id} found to patch")

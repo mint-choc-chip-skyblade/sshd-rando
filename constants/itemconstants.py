@@ -152,64 +152,104 @@ ITEM_COUNTS = {
     PROGRESSIVE_SLINGSHOT: (0x1ED, 20, 1),
 }
 
+TRAP_SETTING_TO_ITEM = {
+    "burn_traps": "Burn Trap",
+    "curse_traps": "Curse Trap",
+    "noise_traps": "Noise Trap",
+    "groose_traps": "Groose Trap",
+}
+
 TRAP_OARC_NAMES: dict[int, tuple] = {
-    10: ("GetSwordA",),  # Progressive Sword
-    16: ("GetHarp",),  # Goddess's Harp
+    # Progressive Sword
+    10: ("GetSwordA",),
+    # Goddess's Harp
+    16: ("GetHarp",),
+    # Progressive Bow
     19: (
         "GetBowA",
         "GetBowB",
         "GetBowC",
-    ),  # Progressive Bow
-    20: ("GetHookShot",),  # Clawshots
-    21: ("GetBirdStatue",),  # Spiral Charge
-    25: ("GetKeyBoss2A",),  # Ancient Cistern Boss Key
-    26: ("GetKeyBoss2B",),  # Fire Sanctuary Boss Key
-    27: ("GetKeyBoss2C",),  # Sandship Boss Key
-    28: ("GetKeyKakera",),  # Key Piece
-    29: ("GetKeyBossA",),  # Skyview Temple Boss Key
-    30: ("GetKeyBossB",),  # Earth Temple Boss Key
-    31: ("GetKeyBossC",),  # Lanayru Mining Facility Boss Key
-    35: ("GetGenki",),  # Gratitude Crystal Pack
-    # 48: ("GetGenki",), # Gratitude Crystal
-    49: ("GetVacuum",),  # Gust Bellows
+    ),
+    # Clawshots
+    20: ("GetHookShot",),
+    # Spiral Charge
+    21: ("GetBirdStatue",),
+    # Ancient Cistern Boss Key
+    25: ("GetKeyBoss2A",),
+    # Fire Sanctuary Boss Key
+    26: ("GetKeyBoss2B",),
+    # Sandship Boss Key
+    27: ("GetKeyBoss2C",),
+    # Key Piece
+    28: ("GetKeyKakera",),
+    # Skyview Temple Boss Key
+    29: ("GetKeyBossA",),
+    # Earth Temple Boss Key
+    30: ("GetKeyBossB",),
+    # Lanayru Mining Facility Boss Key
+    31: ("GetKeyBossC",),
+    # Gratitude Crystal Pack
+    35: ("GetGenki",),
+    # Gust Bellows
+    49: ("GetVacuum",),
+    # Progressive Slingshot
     52: (
         "GetPachinkoA",
         "GetPachinkoB",
-    ),  # Progressive Slingshot
+    ),
+    # Progressive Beetle
     53: (
         "GetBeetleA",
         "GetBeetleB",
         "GetBeetleC",
         "GetBeetleD",
-    ),  # Progressive Beetle
+    ),
+    # Progressive Mitts
     56: (
         "GetMoleGloveA",
         "GetMoleGloveB",
-    ),  # Progressive Mitts
-    68: ("GetUroko",),  # Water Dragon's Scale
+    ),
+    # Water Dragon's Scale
+    68: ("GetUroko",),
+    # Progressive Bug Net
     71: (
         "GetNetA",
         "GetNetB",
-    ),  # Progressive Bug Net
-    92: ("GetBombBag",),  # Bomb Bag
-    98: ("GetMapSea",),  # Sea Chart
-    108: ("GetPurseB", "get others"),  # Progressive Wallet
+    ),
+    # Bomb Bag
+    92: ("GetBombBag",),
+    # Sea Chart
+    98: ("GetMapSea",),
+    # Progressive Wallet
+    108: ("GetPurseB", "get others"),
+    # Progressive Pouch
     112: (
         "GetPouchA",
         "GetPouchB",
-    ),  # Progressive Pouch
-    137: ("GetWhip",),  # Whip
-    138: ("GetEarring",),  # Fireshield Earrings
+    ),
+    # Whip
+    137: ("GetWhip",),
+    # Fireshield Earrings
+    138: ("GetEarring",),
+    # Empty Bottle
     153: (
-        "GetBottleEmpty",
+        "",
         "get other bottles",
-    ),  # Empty Bottle
-    158: ("GetKobunALetter",),  # Cawlin's Letter
-    159: ("GetTerryCage",),  # Beedle's Insect Cage
-    177: ("GetSekibanMapA",),  # Emerald Tablet
-    178: ("GetSekibanMapB",),  # Ruby Tablet
-    179: ("GetSekibanMapC",),  # Amber Tablet
-    180: ("GetSirenKey",),  # Stone of Trials
-    198: ("GetFruitB",),  # Life Tree Fruit
-    199: ("GetSparePurse",),  # Extra Wallet
+    ),
+    # Cawlin's Letter
+    158: ("GetKobunALetter",),
+    # Beedle's Insect Cage
+    159: ("GetTerryCage",),
+    # Emerald Tablet
+    177: ("GetSekibanMapA",),
+    # Ruby Tablet
+    178: ("GetSekibanMapB",),
+    # Amber Tablet
+    179: ("GetSekibanMapC",),
+    # Stone of Trials
+    180: ("GetSirenKey",),
+    # Life Tree Fruit
+    198: ("GetFruitB",),
+    # Extra Wallet
+    199: ("GetSparePurse",),
 }

@@ -485,15 +485,61 @@
     - "off":                           "Unrequired dungeons may contain items needed to beat the game."
     - "on":                            "Unrequired dungeons will be barren."
 
-- name: traps
+- name: trap_mode
+  default_option: "no_traps"
+  pretty_name: Trap Mode
+  pretty_options:
+    - "No Traps"
+    - "Trapish"
+    - "Trapsome"
+    - "Traps'O'Plenty"
+    - "Traptacular"
+  options:
+    - "no_traps":                      "All items in the game will be genuine."
+    - "trapish":                       "Up to 10 non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "trapsome":                      "Approximately 25% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "traps_o_plenty":                "Approximately 50% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "traptacular":                   "All of the non-major items will be replaced with 'traps' that don't give the item they appear to be."
+
+- name: burn_traps
   default_option: "on"
-  pretty_name: Trap Items
+  pretty_name: Burn Traps
   pretty_options:
     - "Off"
     - "On"
   options:
-    - "off":                           "All items in the game will be genuine."
-    - "on":                            "Some items in the item pool will look like important items but actually be 'traps' that give negative effects (e.g. burning, cursed, slow textboxes)."
+    - "off":                           "Traps that set you on fire will not be added to the item pool."
+    - "on":                            "Traps that set you on fire can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+
+- name: curse_traps
+  default_option: "on"
+  pretty_name: Curse Traps
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Traps that curse you (prevents you from using your items) will not be added to the item pool."
+    - "on":                            "Traps that curse you can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+
+- name: noise_traps
+  default_option: "off"
+  pretty_name: Noise Traps
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Traps that create a lot of noise will not be added to the item pool."
+    - "on":                            "Traps that create a lot of noise can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+
+- name: groose_traps
+  default_option: "off"
+  pretty_name: Groose Traps
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Traps that spawn Groose will not be added to the item pool."
+    - "on":                            "Traps that spawn Groose can be picked when replacing items with traps (controlled by the Trap Mode setting)."
 
 - name: ammo_availability
   default_option: plentiful
