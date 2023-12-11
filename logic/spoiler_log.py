@@ -98,7 +98,10 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 if (
                     "Hint Location" not in location.types
                     and "Goddess Cube" not in location.types
-                    and not ("Stamina Fruit" in location.types and location.current_item == world.get_item("Stamina Fruit"))
+                    and not (
+                        "Stamina Fruit" in location.types
+                        and location.current_item == world.get_item("Stamina Fruit")
+                    )
                 ):
                     spoiler_log.write(
                         "        "
