@@ -1,7 +1,3 @@
-; Fix freestanding item y offset at end of dAcItem::init
-.offset 0x71004e5f94
-bl 0x7100659ab8
-
 .offset 0x71004e8f7c
 b 0x71004e8f94
 
@@ -91,7 +87,10 @@ b.hi 0x71004e37a8 ; branch over checks to prevent being picked up by beetle
 .offset 0x71004e37a4
 nop
 
-
+; dAcItem::Init
+.offset 0x71004e44ac
+mov w8, #23
+bl additions_jumptable
 
 ; Fix spawned items that shouldn't have textboxes
 ; LMF conveyor stamina fruits
