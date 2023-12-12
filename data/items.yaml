@@ -161,6 +161,9 @@
   oarc: null
   getarcname: GetBombSet
   getmodelname: GetBombSet
+- id: 42
+  name: Stamina Fruit
+  oarc: null
 - id: 48
   name: Gratitude Crystal
   oarc: null

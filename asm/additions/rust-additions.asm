@@ -76,3 +76,6 @@
 
 .global update_crystal_count
 .type update_crystal_count, @function
+
+.global check_and_modify_item_actor
+.type check_and_modify_item_actor, @function

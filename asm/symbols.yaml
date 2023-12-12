@@ -72,6 +72,8 @@ main:
 
     # Functions
     strlen: 0x710105f5c0
+    sinf: 0x710105f830
+    cosf: 0x710105f820
     GameReloader__actuallyTriggerEntrance: 0x7100e2f0b8
     GameReloader__triggerExit: 0x7100df9478
     GameReloader__triggerEntrance: 0x7100df8dfc

@@ -82,6 +82,9 @@ b.eq warp_to_start
 cmp w8, #22
 b.eq update_crystal_count
 
+cmp w8, #23
+b.eq check_and_modify_item_actor
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

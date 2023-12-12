@@ -29,6 +29,10 @@ def test_random_crystals() -> None:
     config_test("random_crystals.yaml")
 
 
+def test_random_stamina_fruit() -> None:
+    config_test("random_stamina_fruit.yaml")
+
+
 def test_random_shops() -> None:
     config_test("random_shops.yaml")
 

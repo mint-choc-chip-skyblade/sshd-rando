@@ -16,6 +16,7 @@
     - no_logic:                        "Maximize randomization, logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
     - vanilla:                         "Items are placed in their vanilla locations."
 
+
 - name: single_gratitude_crystals
   default_option: vanilla
   pretty_name: Single Gratitude Crystals
@@ -23,8 +24,20 @@
     - Vanilla
     - Randomized
   options:
-    - vanilla:                       "Single Gratitude Crystal locations will only contain single gratitude crystals."
-    - randomized:                    "Single Gratitude Crystal locations can contain any item."
+    - vanilla:                         "Single Gratitude Crystal locations will only contain single gratitude crystals."
+    - randomized:                      "Single Gratitude Crystal locations can contain any item."
+
+
+- name: stamina_fruit
+  default_option: vanilla
+  pretty_name: Stamina Fruit
+  pretty_options:
+    - Vanilla
+    - Randomized
+  options:
+    - vanilla:                         "Stamina Fruit will not be randomized."
+    - randomized:                      "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
+
 
 - name: randomized_shops
   default_option: vanilla

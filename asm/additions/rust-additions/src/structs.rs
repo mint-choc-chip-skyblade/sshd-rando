@@ -383,6 +383,7 @@ pub enum ITEMFLAGS {
     DEKU_SEED_COUNTER                = 0x1ED,
     ARROW_COUNTER                    = 0x1F2,
     BOMB_COUNTER                     = 0x1F3,
+    RUPEE_COUNTER                    = 0x1F5,
     CRYSTAL_PACK_COUNTER             = 0x1F6,
     KEY_PIECE_COUNTER                = 0x1F9,
     EXTRA_WALLET_COUNTER             = 0x1FC,

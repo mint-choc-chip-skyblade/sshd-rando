@@ -64,18 +64,20 @@ def patch_tbox(bzs: dict, itemid: int, id_str: str):
     )
 
 
-def patch_freestanding_item(bzs: dict, itemid: int, id_str: str):
-    id = int(id_str)
+def patch_freestanding_item(
+    bzs: dict, itemid: int, id_str: str, custom_flag: int, original_itemid: int
+):
+    id = int(id_str, 0)
     freestanding_item = next(
         filter(
-            lambda x: x["name"] == "Item" and ((x["params1"] >> 10) & 0xFF) == id,
+            lambda x: x["name"] == "Item"
+            and (((x["params1"] >> 10) & 0xFF) == id or x["id"] == id),
             bzs["OBJ "],
         ),
         None,
     )
-
     if freestanding_item is None:
-        print(f"ERROR: No freestanding item id {id} found to patch")
+        print(f"ERROR: No freestanding item id {hex(id)} found to patch")
         return
 
     freestanding_item["params1"] = mask_shift_set(
@@ -86,6 +88,14 @@ def patch_freestanding_item(bzs: dict, itemid: int, id_str: str):
     freestanding_item["params1"] = mask_shift_set(
         freestanding_item["params1"], 0x1, 9, 0
     )
+
+    if custom_flag != -1:
+        freestanding_item["params2"] = mask_shift_set(
+            freestanding_item["params2"], 0x3FF, 8, custom_flag
+        )
+        freestanding_item["params2"] = mask_shift_set(
+            freestanding_item["params2"], 0x3F, 18, original_itemid
+        )
 
 
 def patch_bucha(bzs: dict, itemid: int, id_str: str):
@@ -571,6 +581,8 @@ def patch_and_write_stage(
                             layer,
                             objectid,
                             itemid,
+                            custom_flag,
+                            original_itemid,
                         ) in check_patches_for_current_room:
                             if object_name == "TBox":
                                 patch_tbox(
@@ -583,6 +595,8 @@ def patch_and_write_stage(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
+                                    custom_flag,
+                                    original_itemid,
                                 )
                             elif object_name == "NpcKyuE":
                                 patch_bucha(
@@ -766,8 +780,12 @@ class StagePatchHandler:
         layer: int,
         objectid: str,
         itemid: int,
+        custom_flag: int = -1,
+        original_itemid: int = 0,
     ):
-        self.check_patches[stage].append((room, object_name, layer, objectid, itemid))
+        self.check_patches[stage].append(
+            (room, object_name, layer, objectid, itemid, custom_flag, original_itemid)
+        )
 
     def add_entrance_patch(
         self,
