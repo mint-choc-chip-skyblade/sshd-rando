@@ -16,8 +16,13 @@ mod structs;
 extern "C" {
     static PLAYER_PTR: *mut structs::Player;
 
+    static EQUIPPED_SWORD: u8;
+    static mut ITEM_GET_BOTTLE_POUCH_SLOT: u32;
+    static mut NUMBER_OF_ITEMS: u32;
+
     static FILE_MGR: *mut structs::FileMgr;
     static HARP_RELATED: *mut structs::HarpRelated;
+    static STAGE_ROOM_MGR: *mut structs::dStageRoomMgr;
     static STAGE_MGR: *mut structs::dStageMgr;
 
     static STORYFLAG_MGR: *mut structs::FlagMgr;
@@ -54,9 +59,18 @@ extern "C" {
     static mut NEXT_UNK: u8;
     static mut CURRENT_LAYER_COPY: u8;
 
-    static mut ACTOR_PARAM_SCALE: u64;
+    static mut ACTOR_PARAM_POS: *mut structs::Vec3f;
     static mut ACTOR_PARAM_ROT: *mut structs::Vec3s;
+    static mut ACTOR_PARAM_SCALE: u64;
+    static mut ACTOR_SPAWN_WITH_REF: u64;
+
+    static mut ACTORBASE_ROOMID: u32;
     static mut ACTORBASE_PARAM2: u32;
+    static mut ACTORBASE_SUBTYPE: u8;
+
+    static mut ACTOR_STAGE_OBJECT_FLAG: u16;
+    static mut ACTOR_VIEW_CLIP_INDEX: u8;
+    static mut ACTOR_OBJECT_INFO_PTR: u64;
 
     static mut BASEBASE_ACTOR_PARAM1: u32;
     static mut BASEBASE_GROUP_TYPE: u8;
@@ -116,6 +130,8 @@ extern "C" {
         rot: *mut structs::Vec3s,
     );
     fn dAcOlightLine__inUpdate(light_pillar_actor: *mut structs::dAcOlightLine, unk: u64);
+    fn fBase_make(actorid: u16, actorTreeNode: *mut u8, param1: u32, groupType: u8);
+    fn resolveItemMaybe(itemid: u64) -> u64;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -1260,6 +1276,81 @@ pub fn check_and_modify_item_actor(item_actor: *mut structs::dAcItem) {
             asm!("cmp x19, #1");
         }
         asm!("mov x19, {0}", in(reg) item_actor);
+    }
+}
+
+// itemGive from SD seems to have been inlined, so we need
+// to manually recreate it here
+#[no_mangle]
+pub fn item_give(itemid: u8) {
+    unsafe {
+        NUMBER_OF_ITEMS = 0;
+        ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
+        let new_itemid = resolveItemMaybe(itemid as u64);
+        ACTOR_PARAM_POS = core::ptr::null_mut();
+        ACTOR_PARAM_ROT = core::ptr::null_mut();
+        ACTOR_PARAM_SCALE = 0;
+        ACTORBASE_ROOMID = 0xFFFFFFFF;
+        ACTORBASE_PARAM2 = 0xFFFFFFFF;
+        ACTOR_SPAWN_WITH_REF = 0;
+        ACTORBASE_SUBTYPE = 0;
+        ACTOR_STAGE_OBJECT_FLAG = 0xFFFF;
+        ACTOR_VIEW_CLIP_INDEX = 0xFF;
+        ACTOR_OBJECT_INFO_PTR = 0;
+
+        if (STAGE_ROOM_MGR != core::ptr::null_mut()) {
+            if ((*STAGE_ROOM_MGR).base).members.signalForDelete == 0
+                && ((*STAGE_ROOM_MGR).base).members.signalForInit != 2
+            {
+                let connectNode: *mut u8 = ((*STAGE_ROOM_MGR).base)
+                    .members
+                    .actorMgr
+                    .connectNode
+                    .as_mut_ptr();
+                fBase_make(0x281, connectNode, new_itemid as u32 | 0x5BFC00, 2);
+            }
+        }
+
+        ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
+        NUMBER_OF_ITEMS = 0;
+    }
+}
+
+#[no_mangle]
+pub fn handle_crest_hit_item_give(crest_actor: *mut structs::dAcOSwSwordBeam) {
+    unsafe {
+        // Reset position so that we don't void out before getting the items
+        let position = structs::Vec3f {
+            x: 0.0,
+            y: 0.0,
+            z: 304.0,
+        };
+        (*PLAYER_PTR).objBaseMembers.base.pos = position;
+
+        // Goddess Sword Reward
+        if check_local_sceneflag(50) == 0 {
+            let goddess_sword_reward: u8 = ((*crest_actor).base.baseBase.param1 >> 0x18) as u8;
+            item_give(goddess_sword_reward);
+            set_local_sceneflag(50);
+        }
+        if (EQUIPPED_SWORD < 2) {
+            return;
+        }
+        // Longsword reward
+        if check_local_sceneflag(51) == 0 {
+            let longsword_reward: u8 = ((*crest_actor).base.baseBase.param1 >> 0x10) as u8;
+            item_give(longsword_reward);
+            set_local_sceneflag(51);
+        }
+        if (EQUIPPED_SWORD < 3) {
+            return;
+        }
+        // White Sword Reward
+        if check_local_sceneflag(52) == 0 {
+            let whitesword_reward: u8 = ((*crest_actor).base.members.base.param2 >> 0x18) as u8;
+            item_give(whitesword_reward);
+            set_local_sceneflag(52);
+        }
     }
 }
 

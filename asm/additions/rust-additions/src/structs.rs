@@ -91,6 +91,18 @@ pub struct HarpRelated {
     pub someOtherHarpThing:              u8,
 }
 
+// Actor Stuff
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct ActorMgr {
+    pub connectNode: [u8; 0x28], // TODO: define properly
+    pub executeNode: [u8; 0x20],
+    pub drawNode:    [u8; 0x20],
+    pub searchNode:  [u8; 0x18],
+}
+
+assert_eq_size!([u8; 0x80], ActorMgr);
+
 // FlagMgr stuff
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -565,13 +577,18 @@ assert_eq_size!([u8; 144], ActorBaseBasevtable);
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct ActorBaseBasemembers {
-    pub vtable:           *mut ActorObjectBasevtable,
-    pub uniqueActorIndex: u32,
-    pub param1:           u32,
-    pub actorID:          u16,
-    pub unk:              u32,
-    pub groupType:        u8,
-    pub unkfiller:        [u8; 169],
+    pub vtable:               *mut ActorObjectBasevtable,
+    pub uniqueActorIndex:     u32,
+    pub param1:               u32,
+    pub actorID:              u16,
+    pub signalForInit:        u8,
+    pub signalForDelete:      u8,
+    pub signalForUpdate:      u8,
+    pub signalForRetryCreate: u8,
+    pub groupType:            u8,
+    pub procControl:          u8,
+    pub actorMgr:             ActorMgr,
+    pub unkfiller:            [u8; 40],
 }
 
 assert_eq_size!([u8; 192], ActorBaseBasemembers);
@@ -609,6 +626,17 @@ assert_eq_size!([u8; 0x10018], dStageMgr);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
+pub struct dStageRoomMgr {
+    pub base:   ActorBaseBase,
+    pub _0:     [u8; 0x24A4],
+    pub roomid: u8,
+    pub _1:     [u8; 3],
+}
+
+assert_eq_size!([u8; 0x2578], dStageRoomMgr);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
 pub struct GameReloader {
     pub _0:                       [u8; 0x350],
     pub reload_trigger:           u16,
@@ -630,7 +658,10 @@ assert_eq_size!([u8; 0x3B9], GameReloader);
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct Player {
-    pub _0:                [u8; 0x460],
+    pub dPlayer__vtable:   u64,
+    pub base:              ActorBaseBasemembers,
+    pub objBaseMembers:    ActorObjectBasemembers,
+    pub _0:                [u8; 0x194],
     pub action_flags:      u32,
     pub more_action_flags: u32,
     pub current_action:    u32,
@@ -713,3 +744,11 @@ pub struct TextManagerMaybe {
 }
 
 assert_eq_size!([u8; 0x8C0], TextManagerMaybe);
+
+#[repr(C, packed(1))]
+pub struct dAcOSwSwordBeam {
+    pub base: ActorObjectBase,
+    pub _0:   [u8; 0xCDC], // TODO: Fill in later
+}
+
+assert_eq_size!([u8; 0x1070], dAcOSwSwordBeam);
