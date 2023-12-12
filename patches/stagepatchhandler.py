@@ -171,19 +171,19 @@ def patch_digspot_item(bzs: dict, itemid: int, id_str: str):
     digspot["params2"] = mask_shift_set(digspot["params2"], 0xFF, 0x18, itemid)
 
 
-# def patch_goddess_crest(bzs: dict, itemid: int, index: str):
-#     crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
-#     if crest is None:
-#         print(f"ERROR: No crest found to patch")
-#         return
+def patch_goddess_crest(bzs: dict, itemid: int, index: str):
+    crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
+    if crest is None:
+        print(f"ERROR: No crest found to patch")
+        return
 
-#     # 3 items patched into same object at different points in the params
-#     if index == "0":
-#         crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemid)
-#     elif index == "1":
-#         crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x10, itemid)
-#     elif index == "2":
-#         crest["params2"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemid)
+    # 3 items patched into same object at different points in the params
+    if index == "0":
+        crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemid)
+    elif index == "1":
+        crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x10, itemid)
+    elif index == "2":
+        crest["params2"] = mask_shift_set(crest["params2"], 0xFF, 0x18, itemid)
 
 
 # def patch_tadtone_group(bzs: dict, itemid: int, groupID: str):
@@ -616,12 +616,12 @@ def patch_and_write_stage(
                                     itemid,
                                     objectid,
                                 )
-                            # elif object_name == "SwSB":
-                            #     patch_goddess_crest(
-                            #         room_bzs["LAY "][f"l{layer}"],
-                            #         itemid,
-                            #         objectid,
-                            #     )
+                            elif object_name == "SwSB":
+                                patch_goddess_crest(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                )
                             # elif object_name == "Clef":
                             #     patch_tadtone_group(
                             #         room_bzs["LAY "][f"l{layer}"],

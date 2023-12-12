@@ -52,7 +52,8 @@ b.eq fix_sky_keep_exit
 cmp w8, #12
 b.eq check_local_sceneflag
 
-
+cmp w8, #13
+b.eq handle_crest_hit_item_give
 
 cmp w8, #14
 b.eq drop_arrows_bombs_seeds
