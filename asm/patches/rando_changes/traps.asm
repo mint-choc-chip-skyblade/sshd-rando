@@ -1,16 +1,16 @@
 ; Setup traps (change itemids) in dAcItem::stateWaitForceGetDemoUpdate
 .offset 0x71004df298
-mov w8, #13
+mov w8, #28
 bl additions_jumptable
 
 ; Setup traps (change itemids) in dAcItem::stateWaitGetDemoUpdate
 .offset 0x71004def10
-mov w8, #13
+mov w8, #28
 bl additions_jumptable
 
 ; Setup traps (change itemids) in dAcItem::stateWaitTBoxGetDemoUpdate
 .offset 0x71004dfc4c
-mov w8, #13
+mov w8, #28
 bl additions_jumptable
 
 ; Setup traps in handleType3

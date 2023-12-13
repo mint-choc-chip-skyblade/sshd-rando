@@ -189,7 +189,7 @@ TRAP_OARC_NAMES: dict[int, tuple] = {
     # Lanayru Mining Facility Boss Key
     31: ("GetKeyBossC",),
     # Gratitude Crystal Pack
-    35: ("GetGenki",),
+    35: ("",),
     # Gust Bellows
     49: ("GetVacuum",),
     # Progressive Slingshot

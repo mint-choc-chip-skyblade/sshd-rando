@@ -6,6 +6,7 @@ main:
     FILE_MGR: 0x7102bfdcc0
     INPUT_MGR: 0x7102c02a68
     HARP_RELATED: 0x7102c02c48
+    STAGE_ROOM_MGR: 0x7102bfdd90
     STAGE_MGR: 0x7102bfdda8
     ROOM_MGR: 0x7102bfdd90
     EVENT_MGR: 0x7101831ed8
@@ -57,6 +58,8 @@ main:
     # Actor Stuff
     ACTOR_PARAM_POS: 0x7102c018c0
     ACTOR_PARAM_ROT: 0x7102c018c8
+    ACTOR_PARAM_POS: 0x7102c018c0
+    ACTOR_PARAM_ROT: 0x7102c018c8
     ACTOR_PARAM_SCALE: 0x7102c018d0
     ACTOR_STAGE_OBJECT_FLAG: 0x71016894bc
     ACTOR_VIEW_CLIP_INDEX: 0x71016894c0
@@ -66,7 +69,6 @@ main:
     ACTORBASE_ROOMID: 0x71016894c4
     ACTORBASE_SUBTYPE: 0x7102c018b8
 
-    ITEM_GET_BOTTLE_POUCH_SLOT: 0x71015904e8
 
     BASEBASE_ACTOR_PARAM1: 0x712d036078
     BASEBASE_GROUP_TYPE: 0x712d03607c
@@ -75,10 +77,16 @@ main:
     ACTOR_ALLOCATOR_DEFINITIONS_PTR: 0x7102c02658
     CURRENT_ACTOR_EVENT_FLOW_MGR: 0x7101840a48
 
+    # Item Stuff
+    EQUIPPED_SWORD: 0x7101675c6c
+    ITEM_GET_BOTTLE_POUCH_SLOT: 0x71015904e8
+    NUMBER_OF_ITEMS: 0x71018265fc
+
 
     # Functions
     strlen: 0x710105f5c0
-
+    sinf: 0x710105f830
+    cosf: 0x710105f820
     GameReloader__actuallyTriggerEntrance: 0x7100e2f0b8
     GameReloader__triggerExit: 0x7100df9478
     GameReloader__triggerEntrance: 0x7100df8dfc
@@ -94,6 +102,7 @@ main:
     dAcItem__spawnItemWithParams: 0x71004eba70
     spawnDrop: 0x71004ebc5c
     dAcOlightLine__inUpdate: 0x7100836380
+    resolveItemMaybe: 0x71004ea050
     playFanfareMaybe: 0x7100f37c5c
 
 

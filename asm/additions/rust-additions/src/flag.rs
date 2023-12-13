@@ -4,6 +4,7 @@
 
 use crate::actor;
 use crate::savefile;
+use crate::yuzu;
 
 use core::arch::asm;
 use core::ffi::c_void;
@@ -296,6 +297,7 @@ pub enum ITEMFLAGS {
     DEKU_SEED_COUNTER                = 0x1ED,
     ARROW_COUNTER                    = 0x1F2,
     BOMB_COUNTER                     = 0x1F3,
+    RUPEE_COUNTER                    = 0x1F5,
     CRYSTAL_PACK_COUNTER             = 0x1F6,
     KEY_PIECE_COUNTER                = 0x1F9,
     EXTRA_WALLET_COUNTER             = 0x1FC,
@@ -436,6 +438,18 @@ pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
 
     unsafe {
         (*FILE_MGR).FA.dungeonflags[sceneindex as usize][upper_flag as usize] |= 1 << lower_flag;
+    }
+}
+
+#[no_mangle]
+pub fn check_global_dungeonflag(sceneindex: u16, flag: u16) -> u16 {
+    let upper_flag = (flag & 0xF0) >> 4;
+    let lower_flag = flag & 0x0F;
+
+    unsafe {
+        return ((*FILE_MGR).FA.dungeonflags[sceneindex as usize][upper_flag as usize]
+            >> lower_flag)
+            & 0x1;
     }
 }
 

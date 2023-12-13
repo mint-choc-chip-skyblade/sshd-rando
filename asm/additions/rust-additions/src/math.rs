@@ -2,6 +2,8 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use crate::yuzu;
+
 use core::arch::asm;
 use core::ffi::c_void;
 use static_assertions::assert_eq_size;

@@ -5,6 +5,7 @@
 use crate::flag;
 use crate::math;
 use crate::savefile;
+use crate::yuzu;
 
 use core::arch::asm;
 use core::ffi::c_void;
@@ -200,6 +201,7 @@ pub struct ActorBaseBasemembersnovtable {
 }
 assert_eq_size!([u8; 0xB8], ActorBaseBasemembersnovtable);
 
+// ActorMgr stuff
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct ActorMgr {
@@ -257,56 +259,6 @@ assert_eq_size!([u8; 0x10], ListLink);
 // Actors
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct dAcItem {
-    pub base:                    ActorObjectBase,
-    pub itemid:                  u16,
-    pub _0:                      [u8; 6],
-    pub item_model_ptr:          u64,
-    pub _1:                      [u8; 2784],
-    pub actor_list_element:      u32,
-    pub _2:                      [u8; 816],
-    pub freestanding_y_offset:   f32,
-    pub _3:                      [u8; 44],
-    pub final_determined_itemid: u16,
-    pub _4:                      [u8; 10],
-    pub prevent_drop:            u8,
-    pub _5:                      [u8; 3],
-    pub no_longer_waiting:       u8,
-    pub _6:                      [u8; 19],
-}
-assert_eq_size!([u8; 0x1288], dAcItem);
-
-#[repr(C, packed(1))]
-#[derive(Copy, Clone)]
-pub struct dAcTbox {
-    pub base:                         ActorObjectBase,
-    pub mdlAnmChr_c:                  [u8; 0xB8],
-    pub _0:                           [u8; 0x12E8],
-    pub state_mgr:                    [u8; 0x70],
-    pub _1:                           [u8; 0xA8],
-    pub dowsing_target:               [u8; 0x28],
-    pub goddess_chest_dowsing_target: [u8; 0x28],
-    pub register_dowsing_target:      [u8; 0x10],
-    pub unregister_dowsing_target:    [u8; 0x10],
-    pub _2:                           [u8; 0x58],
-    pub itemid_0x1ff:                 flag::ITEMFLAGS,
-    pub item_model_index:             u16,
-    pub chest_opened:                 u8,
-    pub spawn_sceneflag:              u8,
-    pub set_sceneflag:                u8,
-    pub chestflag:                    u8,
-    pub unk:                          u8,
-    pub chest_subtype:                u8,
-    pub _3:                           [u8; 2],
-    pub is_chest_opened_related:      u8,
-    pub _4:                           [u8; 4],
-    pub do_obstructed_check:          bool,
-    pub _5:                           [u8; 6],
-}
-assert_eq_size!([u8; 0x19A8], dAcTbox);
-
-#[repr(C, packed(1))]
-#[derive(Copy, Clone)]
 pub struct dAcOlightLine {
     pub base:                  ActorObjectBase,
     pub _0:                    [u8; 0x989],
@@ -316,6 +268,23 @@ pub struct dAcOlightLine {
     pub _2:                    [u8; 4],
 }
 assert_eq_size!([u8; 0xDA8], dAcOlightLine);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcOSwSwordBeam {
+    pub base:                     ActorObjectBase,
+    pub _0:                       [u8; 0xB90],
+    pub state_mgr:                [u8; 0x70],
+    pub _1:                       [u8; 0x4C],
+    pub subtype:                  u8,
+    pub sceneflag:                u8,
+    pub _2:                       [u8; 3],
+    pub spawned_from_other_actor: u8,
+    pub _3:                       [u8; 6],
+    pub cs_exitid:                i32,
+    pub _4:                       [u8; 4],
+}
+assert_eq_size!([u8; 0x1070], dAcOSwSwordBeam);
 
 // Stage stuff
 #[repr(C, packed(1))]
@@ -1098,177 +1067,6 @@ extern "C" {
 // IMPORTANT: when adding functions here that need to get called from the game,
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
-#[no_mangle]
-pub fn fix_freestanding_item_y_offset() {
-    unsafe {
-        let mut item_actor: *mut dAcItem;
-        asm!("mov {0}, x19", out(reg) item_actor);
-
-        let actor_param1 = (*item_actor).base.basebase.members.param1;
-
-        if (actor_param1 >> 9) & 0x1 == 0 {
-            let mut use_default_scaling = false;
-            let mut y_offset = 0.0f32;
-
-            // Item id
-            match actor_param1 & 0x1FF {
-                // Sword | Harp | Mitts | Beedle's Insect Cage | Sot | Songs
-                10 | 16 | 56 | 159 | 180 | 186..=193 => y_offset = 20.0,
-                // Bow | Sea Chart | Wooden Shield | Hylian Shield
-                19 | 98 | 116 | 125 => y_offset = 23.0,
-                // Clawshots | Spiral Charge
-                20 | 21 => y_offset = 25.0,
-                // AC BK | FS BK
-                25 | 26 => y_offset = 30.0,
-                // SSH BK, ET Key, SV BK, ET BK | Amber Tablet
-                27..=30 | 179 => y_offset = 24.0,
-                // LMF BK
-                31 => y_offset = 27.0,
-                // Crystal Pack | 5 Bombs | 10 Bombs | Single Crystal | Beetle | Pouch | Small Bomb Bag | Eldin Ore
-                35 | 40 | 41 | 48 | 53 | 112 | 134 | 165 => y_offset = 18.0,
-                // Bellows | Bug Net | Bomb Bag
-                49 | 71 | 92 => y_offset = 26.0,
-                52          // Slingshot
-                | 68        // Water Dragon's Scale
-                | 100..=104 // Medals
-                | 108       // Wallets
-                | 114       // Life Medal
-                | 153       // Empty Bottle
-                | 161..=164 // Treasures
-                | 166..=170 // Treasures
-                | 172..=174 // Treasures
-                | 178       // Ruby Tablet
-                | 198       // Life Tree Fruit
-                | 199 => y_offset = 16.0,
-                // Semi-rare | Rare Treasure
-                63 | 64 => y_offset = 15.0,
-                // Heart Container
-                93 => use_default_scaling = true,
-                95..=97 => {
-                    y_offset = 24.0;
-                    use_default_scaling = true;
-                },
-                // Seed Satchel | Golden Skull
-                128 | 175 => y_offset = 14.0,
-                // Quiver | Whip | Emerald Tablet | Maps
-                131 | 137 | 177 | 207..=213 => y_offset = 19.0,
-                // Earrings
-                138 => y_offset = 6.0,
-                // Letter | Monster Horn
-                158 | 171 => y_offset = 12.0,
-                // Rattle
-                160 => {
-                    y_offset = 5.0;
-                    use_default_scaling = true;
-                },
-                // Goddess Plume
-                176 => y_offset = 17.0,
-                _ => y_offset = 0.0,
-            }
-
-            (*item_actor).freestanding_y_offset = y_offset;
-
-            if use_default_scaling {
-                (*item_actor).base.members.base.rot.y |= 1;
-            } else {
-                (*item_actor).base.members.base.rot.y &= 0xFFFE;
-            }
-        }
-
-        // Replaced instruction
-        asm!("mov w0, w20");
-    }
-}
-
-#[no_mangle]
-pub fn handle_custom_item_get(item_actor: *mut dAcItem) -> u16 {
-    const BK_TO_FLAGINDEX: [usize; 7] = [
-        12,  // AC BK - item id 25
-        15,  // FS BK - item id 26
-        18,  // SSH BK - item id 27
-        255, // unused, shouldn't happen
-        11,  // SV BK - item id 29
-        14,  // ET - item id 30
-        17,  // LMF - item id 31
-    ];
-
-    const SK_TO_FLAGINDEX: [usize; 7] = [
-        11, // SV SK - item id 200
-        17, // LMF SK - item id 201
-        12, // AC SK - item id 202
-        15, // FS SK - item id 203
-        18, // SSH SK - item id 204
-        20, // SK SK - item id 205
-        9,  // Caves SK - item id 206
-    ];
-
-    const MAP_TO_FLAGINDEX: [usize; 7] = [
-        11, // SV MAP - item id 207
-        14, // ET MAP - item id 208
-        17, // LMF MAP - item id 209
-        12, // AC MAP - item id 210
-        15, // FS MAP - item id 211
-        18, // SSH MAP - item id 212
-        20, // SK MAP - item id 213
-    ];
-
-    unsafe {
-        let itemid = (*item_actor).itemid;
-
-        let mut dungeon_item_mask = 0;
-
-        if (itemid >= 25 && itemid <= 27) || (itemid >= 29 && itemid <= 31) {
-            dungeon_item_mask = 0x80; // boss keys
-        }
-
-        if dungeon_item_mask == 0 {
-            if itemid >= 200 && itemid <= 206 {
-                dungeon_item_mask = 0x0F; // small keys
-            }
-        }
-
-        if dungeon_item_mask == 0 {
-            if itemid >= 207 && itemid <= 213 {
-                dungeon_item_mask = 0x02; // maps
-            }
-        }
-
-        if dungeon_item_mask != 0 {
-            let current_scene_index = (*DUNGEONFLAG_MGR).sceneindex as usize;
-            let mut dungeon_item_scene_index = 0xFF;
-
-            if dungeon_item_mask == 0x80 {
-                dungeon_item_scene_index = BK_TO_FLAGINDEX[(itemid - 25) as usize];
-            }
-
-            if dungeon_item_mask == 0x0F {
-                dungeon_item_scene_index = SK_TO_FLAGINDEX[(itemid - 200) as usize];
-            }
-
-            if dungeon_item_mask == 0x02 {
-                dungeon_item_scene_index = MAP_TO_FLAGINDEX[(itemid - 207) as usize];
-            }
-
-            // Set the local flag if the item is in its vanilla scene.
-            if current_scene_index == dungeon_item_scene_index {
-                if dungeon_item_mask != 0x0F {
-                    STATIC_DUNGEONFLAGS[0] |= dungeon_item_mask;
-                } else {
-                    STATIC_DUNGEONFLAGS[1] += 1;
-                }
-            }
-            // Otherwise, set the global flag.
-            if dungeon_item_mask != 0x0F {
-                (*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][0] |= dungeon_item_mask;
-            } else {
-                (*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][1] += 1;
-            }
-        }
-
-        return (*item_actor).final_determined_itemid;
-    }
-}
-
 #[no_mangle]
 pub fn spawn_actor(
     actorid: ACTORID,

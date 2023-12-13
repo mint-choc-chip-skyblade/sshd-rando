@@ -73,18 +73,25 @@ def patch_tbox(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     )
 
 
-def patch_freestanding_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
-    id = int(object_id_str)
+def patch_freestanding_item(
+    bzs: dict,
+    itemid: int,
+    object_id_str: str,
+    trapid: int,
+    custom_flag: int,
+    original_itemid: int,
+):
+    id = int(object_id_str, 0)
     freestanding_item = next(
         filter(
-            lambda x: x["name"] == "Item" and ((x["params1"] >> 10) & 0xFF) == id,
+            lambda x: x["name"] == "Item"
+            and (((x["params1"] >> 10) & 0xFF) == id or x["id"] == id),
             bzs["OBJ "],
         ),
         None,
     )
-
     if freestanding_item is None:
-        print(f"ERROR: No freestanding item id {id} found to patch")
+        print(f"ERROR: No freestanding item id {hex(id)} found to patch")
         return
 
     # Need to check this as itemid is the itemid of the fake item model when trapid > 0
@@ -108,6 +115,14 @@ def patch_freestanding_item(bzs: dict, itemid: int, object_id_str: str, trapid: 
     freestanding_item["params1"] = mask_shift_set(
         freestanding_item["params1"], 0x1, 9, 0
     )
+
+    if custom_flag != -1:
+        freestanding_item["params2"] = mask_shift_set(
+            freestanding_item["params2"], 0x3FF, 8, custom_flag
+        )
+        freestanding_item["params2"] = mask_shift_set(
+            freestanding_item["params2"], 0x3F, 18, original_itemid
+        )
 
 
 def patch_bucha(bzs: dict, itemid: int, object_id_str: str, trapid: int):
@@ -217,23 +232,23 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     digspot["params2"] = mask_shift_set(digspot["params2"], 0xFF, 0x18, itemid)
 
 
-# def patch_goddess_crest(bzs: dict, itemid: int, index: str, trapid: int):
-#     crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
-#     if crest is None:
-#         print(f"ERROR: No crest found to patch")
-#         return
+def patch_goddess_crest(bzs: dict, itemid: int, index: str, trapid: int):
+    crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
+    if crest is None:
+        print(f"ERROR: No crest found to patch")
+        return
 
-#     # Don't use fake itemid yet, this needs patching properly first
-#     if trapid:
-#         itemid = 34 # rupoor
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
 
-#     # 3 items patched into same object at different points in the params
-#     if index == "0":
-#         crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemid)
-#     elif index == "1":
-#         crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x10, itemid)
-#     elif index == "2":
-#         crest["params2"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemid)
+    # 3 items patched into same object at different points in the params
+    if index == "0":
+        crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemid)
+    elif index == "1":
+        crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x10, itemid)
+    elif index == "2":
+        crest["params2"] = mask_shift_set(crest["params2"], 0xFF, 0x18, itemid)
 
 
 # def patch_tadtone_group(bzs: dict, itemid: int, groupID: str, trapid: int):
@@ -626,6 +641,8 @@ def patch_and_write_stage(
                             objectid,
                             itemid,
                             trapid,
+                            custom_flag,
+                            original_itemid,
                         ) in check_patches_for_current_room:
                             if object_name == "TBox":
                                 patch_tbox(
@@ -640,6 +657,8 @@ def patch_and_write_stage(
                                     itemid,
                                     objectid,
                                     trapid,
+                                    custom_flag,
+                                    original_itemid,
                                 )
                             elif object_name == "NpcKyuE":
                                 patch_bucha(
@@ -681,13 +700,13 @@ def patch_and_write_stage(
                                     objectid,
                                     trapid,
                                 )
-                            # elif object_name == "SwSB":
-                            #     patch_goddess_crest(
-                            #         room_bzs["LAY "][f"l{layer}"],
-                            #         itemid,
-                            #         objectid,
-                            #         trapid,
-                            #     )
+                            elif object_name == "SwSB":
+                                patch_goddess_crest(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
                             # elif object_name == "Clef":
                             #     patch_tadtone_group(
                             #         room_bzs["LAY "][f"l{layer}"],
@@ -837,9 +856,20 @@ class StagePatchHandler:
         objectid: str,
         itemid: int,
         trapid: int = 0,
+        custom_flag: int = -1,
+        original_itemid: int = 0,
     ):
         self.check_patches[stage].append(
-            (room, object_name, layer, objectid, itemid, trapid)
+            (
+                room,
+                object_name,
+                layer,
+                objectid,
+                itemid,
+                trapid,
+                custom_flag,
+                original_itemid,
+            )
         )
 
     def add_entrance_patch(

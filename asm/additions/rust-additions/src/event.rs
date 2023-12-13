@@ -2,6 +2,8 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use crate::yuzu;
+
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.

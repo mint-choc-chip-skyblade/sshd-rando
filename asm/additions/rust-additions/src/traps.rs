@@ -5,6 +5,7 @@
 use crate::actor;
 use crate::event;
 use crate::flag;
+use crate::item;
 use crate::math;
 use crate::player;
 use crate::savefile;
@@ -64,7 +65,7 @@ extern "C" {
 
 // Traps
 #[no_mangle]
-pub fn setup_traps(item_actor: *mut actor::dAcItem) -> u16 {
+pub fn setup_traps(item_actor: *mut item::dAcItem) -> u16 {
     unsafe {
         // Is trap if one of 0x000000F0 is unset
         let trapid_bitmask = 0xF;
@@ -227,7 +228,7 @@ pub fn npc_traps() {
 #[no_mangle]
 pub fn fix_tbox_traps() {
     unsafe {
-        let tbox_actor: *mut actor::dAcTbox;
+        let tbox_actor: *mut item::dAcTbox;
         asm!("mov {0:x}, x19", out(reg) tbox_actor);
 
         let trapid = (((*tbox_actor).base.members.base.param2 >> 28) & 0xF) as u8;

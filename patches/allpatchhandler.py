@@ -40,7 +40,6 @@ class AllPatchHandler:
             self.world.location_table,
             self.stage_patch_handler,
             self.event_patch_handler,
-            self.world.config,
         )
 
         append_dungeon_item_patches(self.event_patch_handler)
