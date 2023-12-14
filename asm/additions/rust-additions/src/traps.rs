@@ -56,7 +56,6 @@ extern "C" {
     // Functions
     fn playFanfareMaybe(soundMgr: *mut c_void, soundIndex: u16) -> u64;
     fn dPlayer__putItemAway(player: *mut player::dPlayer, unk1: u64, unk2: u64) -> i32;
-
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,

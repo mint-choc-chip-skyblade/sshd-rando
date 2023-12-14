@@ -224,16 +224,21 @@ class ASMPatchHandler:
         # Keeps the temporary directory only within this with block.
         with temp_dir as temp_dir_name:
             temp_dir_name = Path(temp_dir_name)
-            startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
 
             print("Assembling startflags")
+            startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
             self.patch_startflags(startflags_diff_file_path, world, onlyif_handler)
 
+            print("Initializing global variables")
+            global_variables_diff_file_path = (
+                temp_dir_name / "global-variables-diff.yaml"
+            )
+            self.patch_global_variables(global_variables_diff_file_path)
+
+            print("Patching starting entrance")
             staring_entrance_diff_file_path = (
                 temp_dir_name / "starting-entrance-diff.yaml"
             )
-
-            print("Patching Starting Entrance")
             self.patch_starting_entrance(staring_entrance_diff_file_path, world)
 
             print("Applying asm additions")
@@ -389,15 +394,6 @@ class ASMPatchHandler:
 
         startflags_data_dict.update(start_counts_data_dict)
 
-        # Clear space after startflags for use as custom constants
-        data_clear_dict = {
-            0x712E54B626: [
-                0,
-            ]
-            * 0x20
-        }
-        startflags_data_dict.update(data_clear_dict)
-
         yaml_write(output_path, startflags_data_dict)
 
         # Write the startflag binary to a non-temp file.
@@ -405,6 +401,33 @@ class ASMPatchHandler:
 
         # If this fails, the rust struct size will need increasing
         assert len(startflags_data_bytes) < MAX_STARTFLAGS
+
+    def patch_global_variables(self, output_path: Path):
+        init_globals_dict = {
+            0x712E5FF020: [
+                0xFF,
+                0xFF,
+                0xFF,
+                0xFF,
+            ],  # NEXT_TRAP_ID
+            0x712E5FF024: [
+                0xFF,
+                0xFF,
+                0xFF,
+                0xFF,
+            ],  # TRAP_ID
+            0x712E5FF028: [
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+            ],  # TRAP_DURATION
+        }
+
+        yaml_write(output_path, init_globals_dict)
+
+        # Write the global variables binary to a non-temp file.
+        # yaml_write(Path("./test-global-variables.yaml"), init_globals_dict)
 
     def _get_flags(
         self, startflag_section, onlyif_handler: ConditionalPatchHandler

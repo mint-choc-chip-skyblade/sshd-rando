@@ -119,11 +119,11 @@ main:
     START_COUNTS: 0x712e54b5f4 # WARP_TO_START_INFO + 12
 
     # Size: 1
-    TRAP_ID: 0x712e54b626
-    NEXT_TRAP_ID: 0x712e54b627
+    TRAP_ID: 0x712e5ff020
+    NEXT_TRAP_ID: 0x712e5ff024
 
     # Size: 2
-    TRAP_DURATION: 0x712e54b62c
+    TRAP_DURATION: 0x712e5ff028
 
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
     dAcItem__spawnRandoItemWithParams: 0x71005c2060
