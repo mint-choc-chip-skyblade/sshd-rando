@@ -67,50 +67,50 @@
   standard: "You got <r<one>> <y<Gratitude Crystal>>!\nThat is <r<<numeric arg1> >>in Total!"
 
 - name: Skyview Key Text
-  standard: You got a <g<Skyview Temple>> Small Key!"
+  standard: "You got a <g<Skyview Temple>> Small Key!"
 
   # This is an intentional duplicate of the above entry
 - name: Item 200 Text
-  standard: You got a <g<Skyview Temple>> Small Key!"
+  standard: "You got a <g<Skyview Temple>> Small Key!"
 
 - name: Item 201 Text
-  standard: You got a <y<Lanayru Mining Facility>> Small\nKey!"
+  standard: "You got a <y<Lanayru Mining Facility>> Small\nKey!"
 
 - name: Item 202 Text
-  standard: You got a <b<Ancient Cistern>> Small Key!"
+  standard: "You got a <b<Ancient Cistern>> Small Key!"
 
 - name: Item 203 Text
-  standard: You got a <r<Fire Sanctuary>> Small Key!"
+  standard: "You got a <r<Fire Sanctuary>> Small Key!"
 
 - name: Item 204 Text
-  standard: You got a <y+<Sandship>> Small Key!"
+  standard: "You got a <y+<Sandship>> Small Key!"
 
 - name: Item 205 Text
-  standard: You got a <s<Sky Keep>> Small Key!"
+  standard: "You got a <s<Sky Keep>> Small Key!"
 
 - name: Item 206 Text
-  standard: You got a <ye<Lanayru Caves>> Small Key!"
+  standard: "You got a <ye<Lanayru Caves>> Small Key!"
 
 - name: Item 207 Text
-  standard: You got the <g<Skyview Temple>> Map!"
+  standard: "You got the <g<Skyview Temple>> Map!"
 
 - name: Item 208 Text
-  standard: You got the <r+<Earth Temple>> Map!"
+  standard: "You got the <r+<Earth Temple>> Map!"
 
 - name: Item 209 Text
-  standard: You got the <y<Lanayru Mining Facility>> Map!"
+  standard: "You got the <y<Lanayru Mining Facility>> Map!"
 
 - name: Item 210 Text
-  standard: You got the <b<Ancient Cistern>> Map!"
+  standard: "You got the <b<Ancient Cistern>> Map!"
 
 - name: Item 211 Text
-  standard: You got the <r<Fire Sanctuary>> Map!"
+  standard: "You got the <r<Fire Sanctuary>> Map!"
 
 - name: Item 212 Text
-  standard: You got the <y+<Sandship>> Map!"
+  standard: "You got the <y+<Sandship>> Map!"
 
 - name: Item 213 Text
-  standard: You got the <s<Sky Keep>> Map!"
+  standard: "You got the <s<Sky Keep>> Map!"
 
 - name: Fi Warp Text
   standard: "Which warp would you like to use?\n[1]Warp to Start[2]Use amiibo[3-]Never mind."
