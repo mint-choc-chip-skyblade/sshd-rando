@@ -329,6 +329,7 @@ def generate_item_hint_locations(world: World, hint_locations: list) -> None:
         # and does not have a boss key when boss keys are in known areas...
         # and is not a goal location
         # and is not an "always" location when we're using always hints
+        # and is not a gratitude crystal pack or single gratitude crystal
         # then it can be hinted as an item hint
         if (
             location.progression
@@ -347,6 +348,7 @@ def generate_item_hint_locations(world: World, hint_locations: list) -> None:
             and (
                 location.hint_priority != "always" or not world.setting("always_hints")
             )
+            and not location.current_item.name.startswith("Gratitude Crystal")
         ):
             possible_item_hint_locations.append(location)
 
