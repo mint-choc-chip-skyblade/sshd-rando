@@ -251,18 +251,23 @@
 - id: 75
   name: Hook Beetle
   oarc: GetBeetleB
+  advancement: true
 - id: 76
   name: Quick Beetle
   oarc: GetBeetleC
+  advancement: true
 - id: 77
   name: Tough Beetle
   oarc: GetBeetleD
+  advancement: true
 - id: 90
   name: Iron Bow
   oarc: GetBowB
+  advancement: true
 - id: 91
   name: Sacred Bow
   oarc: GetBowC
+  advancement: true
 - id: 92
   name: Bomb Bag
   oarc: GetBombBag
@@ -314,6 +319,7 @@
 - id: 99
   name: Mogma Mitts
   oarc: GetMoleGloveB
+  advancement: true
 - id: 100
   name: Heart Medal
   oarc: GetMedal
@@ -342,6 +348,7 @@
 - id: 105
   name: Scattershot
   oarc: GetPachinkoB
+  advancement: true
 - id: 108
   name: Progressive Wallet # Medium Wallet
   oarc: GetPurseB
@@ -356,12 +363,15 @@
 - id: 109
   name: Big Wallet
   oarc: GetPurseC
+  advancement: true
 - id: 110
   name: Giant Wallet
   oarc: GetPurseD
+  advancement: true
 - id: 111
   name: Tycoon Wallet
   oarc: GetPurseE
+  advancement: true
 - id: 112
   name: Progressive Pouch
   oarc: GetPouchA
@@ -389,6 +399,7 @@
 - id: 126
   name: Revitalizing Potion
   oarc: GetBottleRepair
+  advancement: true
 - id: 128
   name: Small Seed Satchel
   oarc: GetSpareSeedA # TODO upgrades?
@@ -419,6 +430,7 @@
 - id: 140
   name: Big Bug Net
   oarc: GetNetB
+  advancement: true
 - id: 153
   name: Empty Bottle
   oarc: null # ObjectPack
@@ -555,6 +567,7 @@
 - id: 193
   name: Song of the Hero
   oarc: GetHarp
+  advancement: true
 - id: 197
   name: Life Tree Seedling
   oarc: GetSeedLife
