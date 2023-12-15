@@ -392,10 +392,10 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
 
             // Item id
             match actor_param1 & 0x1FF {
-                // Sword | Harp | Mitts | Beedle's Insect Cage | Sot | Songs
-                10 | 16 | 56 | 159 | 180 | 186..=193 => y_offset = 20.0,
-                // Bow | Sea Chart | Wooden Shield | Hylian Shield
-                19 | 98 | 116 | 125 => y_offset = 23.0,
+                // Sword + Sailcloth | Harp | Digging Mitts | Mogma Mitts | Scattershot | Beedle's Insect Cage | Sot | Songs
+                9..=15 | 16 | 56 | 99 | 105 | 159 | 180 | 186..=193 => y_offset = 20.0,
+                // Bow | Iron Bow | Sacred Bow | Sea Chart | Wooden Shield | Hylian Shield
+                19 | 90 | 91 | 98 | 116 | 125 => y_offset = 23.0,
                 // Clawshots | Spiral Charge
                 20 | 21 => y_offset = 25.0,
                 // AC BK | FS BK
@@ -404,20 +404,22 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 27..=30 | 179 => y_offset = 24.0,
                 // LMF BK
                 31 => y_offset = 27.0,
-                // Crystal Pack | 5 Bombs | 10 Bombs | Single Crystal | Beetle | Pouch | Small Bomb Bag | Eldin Ore
-                35 | 40 | 41 | 48 | 53 | 112 | 134 | 165 => y_offset = 18.0,
-                // Bellows | Bug Net | Bomb Bag
-                49 | 71 | 92 => y_offset = 26.0,
+                // Crystal Pack | 5 Bombs | 10 Bombs | Single Crystal | Beetle | Beetle Upgrades | Pouch | Pouch Expansion | Small Bomb Bag | Eldin Ore
+                35 | 40 | 41 | 48 | 53 | 75..=77 | 112 | 113 | 134 | 165 => y_offset = 18.0,
+                // Bellows | Bug Net | Bomb Bag | Big Bug Net
+                49 | 71 | 92 | 140 => y_offset = 26.0,
                 52          // Slingshot
                 | 68        // Water Dragon's Scale
+                | 70        // Bug Medal
                 | 100..=104 // Medals
-                | 108       // Wallets
+                | 108..=111 // Wallets
                 | 114       // Life Medal
                 | 153       // Empty Bottle
                 | 161..=164 // Treasures
                 | 166..=170 // Treasures
                 | 172..=174 // Treasures
                 | 178       // Ruby Tablet
+                | 197       // Life Tree Seedling
                 | 198       // Life Tree Fruit
                 | 199 => y_offset = 16.0,
                 // Semi-rare | Rare Treasure
@@ -430,8 +432,8 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 },
                 // Seed Satchel | Golden Skull
                 128 | 175 => y_offset = 14.0,
-                // Quiver | Whip | Emerald Tablet | Maps
-                131 | 137 | 177 | 207..=213 => y_offset = 19.0,
+                // Map | Quiver | Whip | Emerald Tablet | Maps
+                50 | 131 | 137 | 177 | 207..=213 => y_offset = 19.0,
                 // Earrings
                 138 => y_offset = 6.0,
                 // Letter | Monster Horn
@@ -478,7 +480,7 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                 // Rupees
                 2 | 3 | 4 | 32 | 33 | 34 => h_offset = 20.0,
                 // Progressive Sword
-                10 => {
+                9..=14 => {
                     h_offset = 7.0;
                     angle_change_x = 0xD900;
                     angle_change_y = 0xF400;
@@ -492,13 +494,14 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                     angle_change_z = 0x0800;
                 },
                 // Progressive Bow
-                19 => h_offset = 17.0,
+                19 | 90 | 91 => h_offset = 17.0,
                 // Clawshots
                 20 => {
                     h_offset = 25.0;
                     angle_change_x = 0x0500;
                     angle_change_y = 0x2400;
                 },
+                // Spiral Charge
                 21 => {
                     h_offset = 27.0;
                     angle_change_y = 0x3000;
@@ -538,20 +541,20 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                     angle_change_z = 0x2000;
                 },
                 // Progressive Slingshot
-                52 => {
+                52 | 105 => {
                     h_offset = 30.0;
                     angle_change_x = 0x1000;
                     angle_change_z = 0x1000;
                 },
                 // Progressive Beetle
-                53 => {
+                53 | 75..=77 => {
                     h_offset = 40.0;
                     angle_change_x = 0xE000;
                     angle_change_y = 0xCB00;
                     angle_change_z = 0xB000;
                 },
                 // Progressive Mitts
-                56 => {
+                56 | 99 => {
                     h_offset = 45.0;
                     angle_change_y = 0xE800;
                 },
@@ -563,7 +566,7 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                     angle_change_x = 0x0A80;
                 },
                 // Progressive Bug Net
-                71 => {
+                71 | 140 => {
                     h_offset = 30.0;
                     angle_change_x = 0x1000;
                     angle_change_y = 0xE800;
@@ -572,11 +575,11 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                 // Bomb Bag
                 92 => h_offset = 45.0,
                 // Heart Container | Progressive Pouch | Life Tree Fruit
-                93 | 112 | 198 => h_offset = 35.0,
+                93 | 112 | 113 | 198 => h_offset = 35.0,
                 // Heart Piece
                 94 => h_offset = 40.0,
                 // Triforce Pieces
-                95 | 96 | 97 => h_offset = 75.0,
+                95..=97 => h_offset = 75.0,
                 // Heart Medal | Rupee Medal | Treasure Medal | Potion Medal | Cursed Medal
                 100..=104 => {
                     h_offset = 15.0;
@@ -584,7 +587,7 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                     angle_change_z = 0x0A00;
                 },
                 // Progressive Wallet | Bottle | Tumbleweed | Extra Wallet
-                108 | 153 | 163 | 199 => h_offset = 20.0,
+                108..=111 | 153 | 163 | 199 => h_offset = 20.0,
                 // Wooden Shield | Hylian Shield
                 116 | 125 => {
                     h_offset = 25.0;
@@ -634,14 +637,14 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                     angle_change_z = 0x0800;
                 },
                 // Small Keys
-                200..=206 => {
+                1 | 200..=206 => {
                     h_offset = 5.0;
                     angle_change_x = 0x0C00;
                     angle_change_y = 0x1000;
                     angle_change_z = 0x0600;
                 },
                 // Maps
-                207..=213 => {
+                50 | 207..=213 => {
                     h_offset = 30.0;
                     angle_change_x = 0x0800;
                     angle_change_y = 0x1000;
