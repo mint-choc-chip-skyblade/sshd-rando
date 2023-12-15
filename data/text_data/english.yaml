@@ -473,6 +473,12 @@
   cryptic: a <r<very nice treasure>>
   plurality: Singular
 
+- name: Guardian Potion
+  standard: Guardian Potion
+  pretty: a <Guardian Potion>
+  cryptic: <r<immunity>>
+  plurality: Singular
+
 - name: Water Dragon's Scale
   standard: Water Dragon's Scale
   pretty: the <Water Dragon's Scale>
@@ -507,6 +513,24 @@
   standard: Tough Beetle
   pretty: the <Tough Beetle>
   cryptic: a <r<touch insect>>
+  plurality: Singular
+
+- name: Heart Potion
+  standard: Heart Potion
+  pretty: a <Heart Potion>
+  cryptic: <r<medicine>>
+  plurality: Singular
+
+- name: Stamina Potion
+  standard: Stamina Potion
+  pretty: a <Stamina Potion>
+  cryptic: <r<stimulants>>
+  plurality: Singular
+
+- name: Air Potion
+  standard: Air Potion
+  pretty: a <Air Potion>
+  cryptic: a <r<snorkel>>
   plurality: Singular
 
 - name: Iron Bow
@@ -662,7 +686,7 @@
 - name: Revitalizing Potion
   standard: Revitalizing Potion
   pretty: a <Revitalizing Potion>
-  cryptic: a <r<heal and repair>>
+  cryptic: a <r<cure-all>>
   plurality: Singular
 
 - name: Small Seed Satchel

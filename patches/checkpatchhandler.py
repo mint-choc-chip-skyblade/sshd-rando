@@ -61,13 +61,24 @@ def determine_check_patches(
 
                 trap_oarcs = item.oarcs
 
-                # All items that aren't traps, Game Beatable, or Goddess Cubes
+                # Don't use items that don't have usable models
                 trappable_items = [
                     item
                     for item in world.item_table.values()
                     if not item.name.endswith("Trap")
-                    and item.name != "Game Beatable"
+                    and item.name
+                    not in (
+                        "Game Beatable",
+                        "Heart",
+                        "Sailcloth",
+                        "Scrapper",
+                        "Group of Tadtones",
+                        "Goddess Sword",
+                        "Goddess Longsword",
+                        "Goddess White Sword",
+                    )
                     and not "Goddess Cube" in item.name
+                    and not "Master Sword" in item.name
                 ]
 
                 if (
@@ -87,7 +98,7 @@ def determine_check_patches(
             item_oarcs = []
             if item.oarcs:
                 if isinstance(item.oarcs, list):
-                    item_oarcs += item_oarcs
+                    item_oarcs += item.oarcs
                 else:
                     item_oarcs.append(item.oarcs)
 

@@ -22,7 +22,7 @@
   oarc: null # ObjectPack
 - id: 9
   name: Goddess White Sword
-  oarc: GetSwordA # Placeholder
+  oarc: null
   advancement: true
 - id: 10
   name: Progressive Sword
@@ -32,19 +32,19 @@
   advancement: true
 - id: 11
   name: Goddess Sword
-  oarc: GetSwordA # Placeholder
+  oarc: null
   advancement: true
 - id: 12
   name: Goddess Longsword
-  oarc: GetSwordA # Placeholder
+  oarc: null
   advancement: true
 - id: 13
   name: Master Sword
-  oarc: GetSwordA # Placeholder
+  oarc: null
   advancement: true
 - id: 14
   name: True Master Sword
-  oarc: GetSwordA # Placeholder
+  oarc: null
   advancement: true
 - id: 15
   name: Sailcloth
@@ -198,7 +198,9 @@
   shuffle: Dungeon
 - id: 52
   name: Progressive Slingshot
-  oarc: GetPachinkoA
+  oarc:
+  - GetPachinkoA
+  - GetPachinkoB # Fixes weirdness with traps
   getarcname: GetPachinkoA
   getmodelname: GetPachinkoA
   advancement: true
@@ -229,6 +231,9 @@
   oarc: null # ObjectPack
   getarcname: GetSozaiP
   getmodelname: GetSozaiP
+- id: 65
+  name: Guardian Potion
+  oarc: GetBottleMuteki
 - id: 68
   name: Water Dragon's Scale
   oarc: GetUroko
@@ -260,6 +265,15 @@
   name: Tough Beetle
   oarc: GetBeetleD
   advancement: true
+- id: 78
+  name: Heart Potion
+  oarc: GetBottleKusuri
+- id: 84
+  name: Stamina Potion
+  oarc: GetBottleGuts
+- id: 86
+  name: Air Potion
+  oarc: GetBottleAir
 - id: 90
   name: Iron Bow
   oarc: GetBowB
@@ -399,7 +413,6 @@
 - id: 126
   name: Revitalizing Potion
   oarc: GetBottleRepair
-  advancement: true
 - id: 128
   name: Small Seed Satchel
   oarc: GetSpareSeedA # TODO upgrades?
