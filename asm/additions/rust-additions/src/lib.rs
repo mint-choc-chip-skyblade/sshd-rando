@@ -1226,6 +1226,12 @@ pub fn check_and_modify_item_actor(item_actor: *mut structs::dAcItem) {
         let (flag, sceneindex, flag_space_trigger, original_itemid) =
             unpack_custom_item_params(item_actor);
 
+        // Don't do anything for conveyor spawned stamina fruit in LMF
+        let current_item = (*item_actor).base.baseBase.param1 & 0x1FF;
+        if current_item == 42 && &CURRENT_STAGE_NAME[..4] == b"D300" {
+            return;
+        }
+
         // Despawn the item if it's one of the stamina fruit on LMF that
         // shouldn't exist until the dungeon has been raised. Actors are
         // identified by Z position
@@ -1239,7 +1245,7 @@ pub fn check_and_modify_item_actor(item_actor: *mut structs::dAcItem) {
         }
 
         // Don't give a textbox for rupees
-        match (*item_actor).base.baseBase.param1 & 0x1FF {
+        match current_item {
             2 | 3 | 4 | 31 | 32 => {
                 (*item_actor).base.baseBase.param1 |= 0x200;
             },
