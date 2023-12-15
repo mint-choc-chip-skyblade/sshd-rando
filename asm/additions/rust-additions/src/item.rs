@@ -392,40 +392,47 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
 
             // Item id
             match actor_param1 & 0x1FF {
-                // Sword + Sailcloth | Harp | Digging Mitts | Mogma Mitts | Scattershot | Beedle's Insect Cage | Sot | Songs
-                9..=15 | 16 | 56 | 99 | 105 | 159 | 180 | 186..=193 => y_offset = 20.0,
+                // Sword + Sailcloth | Harp | Digging Mitts | Scattershot | Beedle's Insect Cage | Sot | Songs
+                9..=15 | 16 | 56 | 105 | 159 | 180 | 186..=193 => y_offset = 20.0,
                 // Bow | Iron Bow | Sacred Bow | Sea Chart | Wooden Shield | Hylian Shield
                 19 | 90 | 91 | 98 | 116 | 125 => y_offset = 23.0,
-                // Clawshots | Spiral Charge
-                20 | 21 => y_offset = 25.0,
+                // Clawshots | Spiral Charge | Mogma Mitts | Life Tree Seedling
+                20 | 21 | 99 | 197 => y_offset = 25.0,
                 // AC BK | FS BK
                 25 | 26 => y_offset = 30.0,
                 // SSH BK, ET Key, SV BK, ET BK | Amber Tablet
-                27..=30 | 179 => y_offset = 24.0,
+                27..=30 | 99 | 179 => y_offset = 24.0,
                 // LMF BK
                 31 => y_offset = 27.0,
-                // Crystal Pack | 5 Bombs | 10 Bombs | Single Crystal | Beetle | Beetle Upgrades | Pouch | Pouch Expansion | Small Bomb Bag | Eldin Ore
-                35 | 40 | 41 | 48 | 53 | 75..=77 | 112 | 113 | 134 | 165 => y_offset = 18.0,
-                // Bellows | Bug Net | Bomb Bag | Big Bug Net
-                49 | 71 | 92 | 140 => y_offset = 26.0,
+                // Crystal Pack | 5 Bombs | 10 Bombs | Single Crystal | Beetle | Pouch | Pouch Expansion | Small Bomb Bag | Big Bug Net | Eldin Ore
+                35 | 40 | 41 | 48 | 53 | 112 | 113 | 134 | 140 | 165 => y_offset = 18.0,
+                // Bellows | Bug Net | Bomb Bag
+                49 | 71 | 92 => y_offset = 26.0,
                 52          // Slingshot
+                | 65        // Guardian Potion
                 | 68        // Water Dragon's Scale
                 | 70        // Bug Medal
+                | 78        // Heart Potion
+                | 84        // Stamina Potion
+                | 86        // Air Potion
                 | 100..=104 // Medals
                 | 108..=111 // Wallets
                 | 114       // Life Medal
+                | 126       // Revitalizing Potion
                 | 153       // Empty Bottle
                 | 161..=164 // Treasures
                 | 166..=170 // Treasures
                 | 172..=174 // Treasures
                 | 178       // Ruby Tablet
-                | 197       // Life Tree Seedling
                 | 198       // Life Tree Fruit
                 | 199 => y_offset = 16.0,
                 // Semi-rare | Rare Treasure
                 63 | 64 => y_offset = 15.0,
+                // Beetle Upgrades
+                75..=77 => y_offset = 10.0,
                 // Heart Container
                 93 => use_default_scaling = true,
+                // Triforces
                 95..=97 => {
                     y_offset = 24.0;
                     use_default_scaling = true;
