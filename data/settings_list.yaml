@@ -514,6 +514,18 @@
     - "traps_o_plenty":                "Approximately 50% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
     - "traptacular":                   "All of the non-major items will be replaced with 'traps' that don't give the item they appear to be."
 
+- name: trappable_items
+  default_option: "major_items"
+  pretty_name: Trappable Items
+  pretty_options:
+    - "Major Items"
+    - "Non Major Items"
+    - "Any Items"
+  options:
+    - "major_items":                   "Traps can mimic any major item that could be necessary to beat the game."
+    - "non_major_items":               "Traps can only mimic non-major items that cannot be necessary to beat the game."
+    - "any_items":                     "Traps can mimic any item."
+
 - name: burn_traps
   default_option: "on"
   pretty_name: Burn Traps
@@ -553,6 +565,7 @@
   options:
     - "off":                           "Traps that spawn Groose will not be added to the item pool."
     - "on":                            "Traps that spawn Groose can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+
 
 - name: ammo_availability
   default_option: plentiful

@@ -145,6 +145,9 @@
   - layerid: 0
     oarcs:
     - GetPurseB
+    - GetPurseC
+    - GetPurseD
+    - GetPurseE
 
 - stage: F020
   layers:

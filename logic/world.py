@@ -546,7 +546,6 @@ class World:
             item for item in item_pool_copy if not item.is_major_item
         ]
 
-        print("len(non_major_item_pool)", len(non_major_item_pool))
         match self.setting("trap_mode"):
             case "trapish":
                 num_traps = 10

@@ -37,7 +37,7 @@ class AllPatchHandler:
         self.stage_patch_handler.set_oarc_add_remove_from_patches()
 
         determine_check_patches(
-            self.world.location_table,
+            self.world,
             self.stage_patch_handler,
             self.event_patch_handler,
         )

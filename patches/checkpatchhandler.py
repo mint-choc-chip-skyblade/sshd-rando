@@ -1,21 +1,18 @@
 import random
-from constants.itemconstants import TRAP_OARC_NAMES
 from constants.patchconstants import (
     STAGE_PATCH_PATH_REGEX,
     EVENT_PATCH_PATH_REGEX,
     OARC_ADD_PATH_REGEX,
     SHOP_PATCH_PATH_REGEX,
 )
+from logic.world import World
 
-from logic.config import Config
-
-from logic.location import Location
 from patches.eventpatchhandler import EventPatchHandler
 from patches.stagepatchhandler import StagePatchHandler
 
 
 def determine_check_patches(
-    location_table: dict[str, Location],
+    world: World,
     stage_patch_handler: StagePatchHandler,
     event_patch_handler: EventPatchHandler,
 ):
@@ -33,6 +30,8 @@ def determine_check_patches(
     # 128 is used to indicate there being no custom flag (so really we can have up to 1,016 flags)
     custom_flags = [i for i in range(1024) if (i & 0x7F) != 0x7F]
     custom_flags.reverse()
+
+    location_table = world.location_table
 
     for location in location_table.values():
         item = location.current_item
@@ -53,29 +52,50 @@ def determine_check_patches(
 
         # Deal with traps
         trapid = 0
-        itemid = -1
-        item_name = ""
+        trap_oarcs = None
+        item_oarcs = []
 
         if item is not None:
-            itemid = item.id
-            item_name = item.name
+            if item.name.endswith("Trap"):
+                trapid = item.id
 
-        if item_name.endswith("Trap"):
-            trapid = itemid
+                trap_oarcs = item.oarcs
 
-            if not item.oarcs:
-                item.oarcs = list()
+                # All items that aren't traps, Game Beatable, or Goddess Cubes
+                trappable_items = [
+                    item
+                    for item in world.item_table.values()
+                    if not item.name.endswith("Trap")
+                    and item.name != "Game Beatable"
+                    and not "Goddess Cube" in item.name
+                ]
 
-            if isinstance(item.oarcs, list):
-                itemid = random.choice(list(TRAP_OARC_NAMES.keys()))
+                if (
+                    trappable_items_setting := world.setting("trappable_items")
+                ) == "major_items":
+                    trappable_items = [
+                        item for item in trappable_items if item.is_major_item
+                    ]
+                elif trappable_items_setting == "non_major_items":
+                    trappable_items = [
+                        item for item in trappable_items if not item.is_major_item
+                    ]
 
-                # TODO: implement variations (and add to extracts.yaml)
-                trap_oarc_name = TRAP_OARC_NAMES[itemid][0]
+                item = random.choice(trappable_items)
 
-                if trap_oarc_name != "":
-                    item.oarcs.append(trap_oarc_name)
+            # Combine item.oarcs with trap_oarcs
+            item_oarcs = []
+            if item.oarcs:
+                if isinstance(item.oarcs, list):
+                    item_oarcs += item_oarcs
+                else:
+                    item_oarcs.append(item.oarcs)
 
-                print(itemid, TRAP_OARC_NAMES[itemid], item.oarcs)
+            if trap_oarcs:
+                if isinstance(trap_oarcs, list):
+                    item_oarcs += trap_oarcs
+                else:
+                    item_oarcs.append(trap_oarcs)
 
         for path in location.patch_paths:
             if stage_patch_match := STAGE_PATCH_PATH_REGEX.match(path):
@@ -85,12 +105,8 @@ def determine_check_patches(
                 object_name = stage_patch_match.group("objectName")
                 objectid = stage_patch_match.group("objectID")
 
-                if item.oarcs:
-                    if isinstance(item.oarcs, list):
-                        for oarc in item.oarcs:
-                            stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
-                    else:
-                        stage_patch_handler.add_oarc_for_check(stage, layer, item.oarcs)
+                for oarc in item_oarcs:
+                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
 
                 stage_patch_handler.add_check_patch(
                     stage,
@@ -98,7 +114,7 @@ def determine_check_patches(
                     object_name,
                     layer,
                     objectid,
-                    itemid,
+                    item.id,
                     trapid,
                     custom_flag,
                     original_itemid,
@@ -107,18 +123,16 @@ def determine_check_patches(
             if event_patch_match := EVENT_PATCH_PATH_REGEX.match(path):
                 event_file = event_patch_match.group("eventFile")
                 eventid = event_patch_match.group("eventID")
-                event_patch_handler.add_check_patch(event_file, eventid, itemid, trapid)
+                event_patch_handler.add_check_patch(
+                    event_file, eventid, item.id, trapid
+                )
 
             if oarc_add_match := OARC_ADD_PATH_REGEX.match(path):
                 stage = oarc_add_match.group("stage")
                 layer = int(oarc_add_match.group("layer"))
 
-                if item.oarcs:
-                    if isinstance(item.oarcs, list):
-                        for oarc in item.oarcs:
-                            stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
-                    else:
-                        stage_patch_handler.add_oarc_for_check(stage, layer, item.oarcs)
+                for oarc in item_oarcs:
+                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
 
 
 def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
