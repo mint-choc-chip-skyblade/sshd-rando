@@ -93,6 +93,11 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
         for sphere in worlds[0].playthrough_spheres:
             for location in sphere:
                 item_at_location = location.current_item
+
+                # TODO: how can an item_at_location even be null here?
+                if item_at_location is None:
+                    continue
+
                 # If this location has a small or big key and the key is known to be within the dungeon,
                 # then ignore it because the player already knows where those items are. Also ignore race
                 # mode locations at the end of dungeons because players know those locations are required.
