@@ -104,7 +104,7 @@ def determine_check_patches(
                 else:
                     item_oarcs.append(trap_oarcs)
 
-            print(location, item)
+            # print(location, item)
 
         for path in location.patch_paths:
             if stage_patch_match := STAGE_PATCH_PATH_REGEX.match(path):
