@@ -714,7 +714,10 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                         visisted_progression_locations = [
                             loc for loc in search.visited_locations if loc.progression
                         ]
-                        if len(visisted_progression_locations) < unlocked_locations or most_useful_location is None:
+                        if (
+                            len(visisted_progression_locations) < unlocked_locations
+                            or most_useful_location is None
+                        ):
                             most_useful_location = location
                             unlocked_locations = len(visisted_progression_locations)
 
