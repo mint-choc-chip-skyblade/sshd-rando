@@ -70,7 +70,9 @@ pub fn setup_traps(item_actor: *mut item::dAcItem) -> u16 {
         let trapid_bitmask = 0xF;
         let trapid = ((*item_actor).base.members.base.param2 >> 4) & trapid_bitmask;
 
-        if trapid != trapid_bitmask {
+        let is_trappable_item = ((*item_actor).base.members.base.param2 & 0xF) == 0xF;
+
+        if trapid != trapid_bitmask && is_trappable_item {
             // Set itemid to a rupoor for the frowny face and sound
             (*item_actor).itemid = 34;
             (*item_actor).final_determined_itemid = 34;
@@ -212,11 +214,14 @@ pub fn npc_traps() {
         let mut trapid: u8;
         asm!("ldr {0:w}, [x20, #0x4]", out(reg) itemid);
 
-        trapid = ((itemid >> 11) & 0xF) as u8; // 11 cos signed numbers are bleh
+        // 11 cos signed numbers are bleh
+        trapid = ((itemid >> 11) & 0xF) as u8;
         itemid &= 0x1FF;
 
-        if trapid != 0xF {
-            NEXT_TRAP_ID = trapid;
+        // NPC trapids are +1 in eventpatches.py to allow trapid != 0 so spawned NPC
+        // items don't break
+        if trapid != 0 {
+            NEXT_TRAP_ID = trapid - 1;
         }
 
         // Replaced instructions

@@ -142,14 +142,15 @@ class EventPatchHandler:
                                     continue
                                 eventid = index
 
-                            trapbits = 0xF
+                            trapbits = 0
 
+                            # +1 allows 0 == not a trap so spawned NPC items don't break
                             if trapid:
-                                trapbits = 254 - trapid
+                                trapbits = (254 - trapid) + 1
 
-                            itemid |= (
-                                trapbits & 0xF
-                            ) << 11  # 11 cos signed numbers are bleh
+                            # Inverted so a value of 0 == not a trap
+                            # 11 cos signed numbers are bleh
+                            itemid |= (trapbits & 0xF) << 11
 
                             parsed_msbf["FLW3"]["flow"][eventid]["param2"] = itemid
 
