@@ -87,6 +87,12 @@ World 1:
   logic_fs_practice_sword_ghirahim_2: random
   logic_present_bow_switches: random
   logic_skykeep_vineclip: random
+  trap_mode: random
+  trappable_items: random
+  burn_traps: random
+  curse_traps: random
+  noise_traps: random
+  groose_traps: random
   starting_inventory: 
    - Scrapper
    - Progressive Sword
