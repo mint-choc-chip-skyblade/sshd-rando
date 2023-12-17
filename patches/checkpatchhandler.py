@@ -65,25 +65,15 @@ def determine_check_patches(
                 trappable_items = [
                     item
                     for item in world.item_table.values()
-                    if not item.name.endswith("Trap")
-                    and item.name
-                    not in (
-                        "Game Beatable",
-                        "Heart",
-                        "Sailcloth",
-                        "Scrapper",
-                        "Group of Tadtones",
-                        "Goddess Sword",
-                        "Goddess Longsword",
-                        "Goddess White Sword",
-                    )
-                    and not "Goddess Cube" in item.name
-                    and not "Master Sword" in item.name
+                    if item.id < 200  # exclude custom items
+                    # Heart, Sailcloth, Non-Practice Swords
+                    and item.id not in (6, 15, 9, 11, 12, 13, 14)
+                    and not "Song of the Hero" in item.name
                 ]
 
-                if (
-                    trappable_items_setting := world.setting("trappable_items")
-                ) == "major_items":
+                trappable_items_setting = world.setting("trappable_items")
+
+                if trappable_items_setting == "major_items":
                     trappable_items = [
                         item for item in trappable_items if item.is_major_item
                     ]
