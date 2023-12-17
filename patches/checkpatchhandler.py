@@ -92,6 +92,12 @@ def determine_check_patches(
                         item for item in trappable_items if not item.is_major_item
                     ]
 
+                # Getting potion models from NPCs is broken rn
+                if "NPC" in location.types:
+                    trappable_items = [
+                        item for item in trappable_items if not "Potion" in item.name
+                    ]
+
                 item = random.choice(trappable_items)
 
             # Combine item.oarcs with trap_oarcs
@@ -107,6 +113,8 @@ def determine_check_patches(
                     item_oarcs += trap_oarcs
                 else:
                     item_oarcs.append(trap_oarcs)
+
+            print(location, item)
 
         for path in location.patch_paths:
             if stage_patch_match := STAGE_PATCH_PATH_REGEX.match(path):
