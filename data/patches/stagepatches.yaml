@@ -2502,6 +2502,54 @@ F200: # Eldin main area
       angley: 0x8000
       anglez: 0x0000
 
+  # Boko Base access
+  - name: Shiekah Stone in Eldin
+    type: oarcadd
+    destlayer: 0
+    oarc: GossipStone
+  - name: Add Shiekah Stone to Eldin
+    type: objadd
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      params1: 0xF2FFFF10
+      params2: 0xFFDFFFFF
+      posx: 250
+      posy: 700
+      posz: 9800
+      anglex: 0
+      angley: 42000
+      anglez: 30505 # Different eventpoint on hero mode cos boko base sucks
+      id: 0xFFFF
+      name: HrpHint
+  - name: Exit from Eldin Shiekah Stone to Boko Base
+    type: objadd
+    index: 0
+    room: 1
+    objtype: SCEN
+    object:
+      name: F202
+      layer: 1
+      room: 1 # 0 = cutscene + no items; 1 = no cutscene + keep items
+      entrance: 0 # New Eldin -> Boko Base sky entrance
+  - name: Boko Base Shiekah Stone Coords
+    type: objadd
+    index: 5
+    room: 1
+    objtype: PLY
+    object:
+      storyflag: 2047
+      play_cutscene: -1
+      byte4: -1
+      posx: 80
+      posy: 700
+      posz: 9670
+      anglex: 0
+      angley: 9200
+      anglez: 0
+      entrance_id: 5
+
 F201_1: # Inside volcano
   - name: Layer override
     type: layeroverride
