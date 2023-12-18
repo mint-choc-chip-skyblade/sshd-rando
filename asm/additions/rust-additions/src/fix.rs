@@ -131,24 +131,27 @@ pub fn fix_light_pillars(light_pillar_actor: *mut actor::dAcOlightLine) {
 }
 
 #[no_mangle]
-pub fn update_crystal_count(item: u32) {
+pub fn update_crystal_count(itemid: u32) {
     unsafe {
         let mut count: u32 = flag::check_itemflag(flag::ITEMFLAGS::CRYSTAL_PACK_COUNTER);
 
-        // Increase counter depending on which item we got.
-        // The counter hasn't increased with the value of the item yet
+        // Increase counter depending on the itemid.
+        // The counter hasn't increased with the value of the itemid yet
         // so we have to add it manually here
-        match item {
+        match itemid {
             0x23 => count += 5, // Crystal Pack
             0x30 => count += 1, // Single Crystal
             _ => count += 0,
         }
 
         // Update numeric arg 1 with the proper count
-        if (item == 0x23 || item == 0x30) {
+        if (itemid == 0x23 || itemid == 0x30) {
             (*(*LYT_MSG_WINDOW).text_mgr).numeric_args[1] = count;
         }
 
+        asm!("mov w0, {0:w}", in(reg) itemid); // Restore w0 back to itemid
+
+        // Replaced instructions
         asm!("and w8, w0, #0xffff", "cmp w8, #0x1c");
     }
 }
