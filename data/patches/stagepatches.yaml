@@ -2503,10 +2503,6 @@ F200: # Eldin main area
       anglez: 0x0000
 
   # Boko Base access
-  - name: Shiekah Stone in Eldin
-    type: oarcadd
-    destlayer: 0
-    oarc: GossipStone
   - name: Add Shiekah Stone to Eldin
     type: objadd
     layer: 0
@@ -2583,6 +2579,35 @@ F201_1: # Inside volcano
       anglez: 0
       id: 0x4269
       name: Tubo
+  - name: Remove Sword Pedestal on post-Boko Base layer
+    type: objdelete
+    id: 0xFC32
+    room: 0
+    layer: 4
+    objtype: OBJ
+  - name: Add True Master Sword chest on post-Boko Base layer
+    type: objadd
+    layer: 4
+    room: 0
+    objtype: OBJS
+    object:
+      params1: 0xFFFFFFF3
+      params2: 0xFF5FFFFF
+      posx: 1314.69677734375
+      posy: 50
+      posz: -68.63192749023438
+      anglex: 0xFFFF
+      angley: 16384
+      anglez: 37379 # >> 9 = chest flag 73
+      id: 0xFC26
+      name: TBox
+  - name: Patch loadzone to Fire Dragon's Lair
+    type: objpatch
+    index: 3
+    room: 0
+    objtype: SCEN
+    object:
+      layer: 2
 
 F201_2: # Inside Volcano (Bokoblin Base)
   - name: Add ammo pot to Volcano Summit Bird Statue
@@ -2602,6 +2627,47 @@ F201_2: # Inside Volcano (Bokoblin Base)
       anglez: 0
       id: 0x4269
       name: Tubo
+  - name: True Master Sword Chest
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJS
+    object:
+      params1: 0xFFFFFFF3
+      params2: 0xFF5FFFFF
+      posx: 1314.69677734375
+      posy: 50
+      posz: -68.63192749023438
+      anglex: 0xFFFF
+      angley: 16384
+      anglez: 37379 # >> 9 = chest flag 73
+      id: 0xFC26
+      name: TBox
+  - name: Force layer 2 when entering Fire Dragon's Lair
+    type: objpatch
+    index: 0
+    room: 0
+    objtype: SCEN
+    object:
+      layer: 2
+  - name: Remove panning Cutscene showing pouch chest
+    type: objdelete
+    id: 0xFC4B
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove panning Cutscene showing sword
+    type: objdelete
+    id: 0xFC46
+    layer: 0
+    room: 0
+    objtype: STAG
+  - name: Remove panning Cutscene showing platforms in lava
+    type: objdelete
+    id: 0xFC49
+    layer: 0
+    room: 0
+    objtype: STAG
 
 F201_3: # Outside Fire Sanctuary
   - name: Layer override
@@ -2707,6 +2773,172 @@ F201_4: # Volcano Waterfall
       name: Bombf
 
 F202: # Bokoblin Base
+  - name: Gossip Stone
+    type: oarcadd
+    oarc: GossipStone
+    destlayer: 0
+  - name: Add Shiekah Stone in Boko Base to Prison
+    type: objadd
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      params1: 0xF2FFFF14
+      params2: 0xFFDFFFFF
+      posx: 380
+      posy: 700
+      posz: 10950
+      anglex: 0
+      angley: 37000
+      anglez: 30507 # Different eventpoint on hero mode cos boko base sucks
+      id: 0xFFFF
+      name: HrpHint
+  - name: Exit from Boko Base Shiekah Stone to Eldin
+    type: objadd
+    index: 0
+    room: 1
+    objtype: SCEN
+    object:
+      name: F200
+      layer: 1
+      room: 1
+      entrance: 5 # New Boko Base -> Eldin entrance
+  - name: Add hot cave Plats to prison
+    type: objadd
+    layer: 0
+    room: 1
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFE3
+      params2: 0xFFDFFFFF
+      posx: 489.810791015625
+      posy: 700
+      posz: 10652.2568359375
+      anglex: 0
+      angley: 40960
+      anglez: 30502
+      id: 0xFC1E
+      name: NpcMoEN
+  - name: Remove Plats from hot cave
+    type: objdelete
+    id: 0xFC1E
+    layer: 1
+    room: 5
+    objtype: OBJ
+  - name: Remove barrel of doom
+    type: objdelete
+    id: 0x084B
+    layer: 1
+    room: 1
+    objtype: OBJ
+  - name: Remove default Plats from prison
+    type: objdelete
+    id: 0x0850
+    layer: 1
+    room: 1
+    objtype: OBJ
+  - name: Remove Plats Map Cutscene 1
+    type: objdelete
+    id: 0x017B
+    layer: 1
+    room: 2
+    objtype: STAG
+  - name: Remove panning Cutscene showing Peahot behind bridge
+    type: objdelete
+    id: 0x0099
+    layer: 0
+    room: 2
+    objtype: STAG
+  - name: Remove panning Cutscene after clawshot chest
+    type: objdelete
+    id: 0x0098
+    layer: 0
+    room: 2
+    objtype: STAG
+  - name: Remove panning Cutscene showing Peahots (near clawshot chest)
+    type: objdelete
+    id: 0x0095
+    layer: 0
+    room: 2
+    objtype: STAG
+  - name: Remove panning Cutscene showing gust bellows chest
+    type: objdelete
+    id: 0x0097
+    layer: 0
+    room: 2
+    objtype: STAG
+  - name: Remove panning Cutscene showing clawshot chest
+    type: objdelete
+    id: 0x0096
+    layer: 0
+    room: 2
+    objtype: STAG
+  - name: Remove panning Cutscene showing bomb chest
+    type: objdelete
+    id: 0x0051
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: Remove panning Cutscene showing boko camp outside ET
+    type: objdelete
+    id: 0x0050
+    layer: 0
+    room: 4
+    objtype: STAG
+  - name: Remove Plats talking Cutscene near hot cave
+    type: objdelete
+    id: 0xFC1F
+    layer: 1
+    room: 5
+    objtype: OBJ
+  - name: Add fi NpcTke for hot cave without earrings
+    type: objadd
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      params1: 0x19FFFFFB
+      params2: 0xFF1FFFFF
+      posx: 13000
+      posy: 15022.0302734375
+      posz: -23100
+      anglex: 65535
+      angley: 513
+      anglez: 30013
+      id: 0x280A
+      name: NpcTke
+  - name: Add ActTag to hot cave to trigger fi
+    type: objadd
+    layer: 0
+    room: 5
+    objtype: STAG
+    object:
+      params1: 0xFFFFFFC4
+      params2: 0xFFFFFFFF
+      posx: 11640
+      posy: 14502.8857421875
+      posz: -22080
+      sizex: 1000
+      sizey: 1000
+      sizez: 600
+      anglex: 0
+      angley: 9102
+      anglez: 0
+      id: 0xFC28
+      name: ActTag
+  - name: Add AREA for where fi should spawn
+    type: objadd
+    index: 0
+    room: 5
+    objtype: AREA
+    object:
+      posx: 13400
+      posy: 15000
+      posz: -24130
+      sizex: 2000
+      sizey: 2000
+      sizez: 2000
+      angle: 0
   - name: Add ammo pot to Volcano Entry Bird Statue # Can't get to this one
     onlyif: ammo_availability == plentiful
     type: objadd
@@ -2884,6 +3116,37 @@ F211: # Thrill Digger
       storyflag: -1
       play_cutscene: -1
 
+F221: # Fire Dragon Room
+  - name: Patch exit trigger from Fire Dragon's Lair to normal Volcano Summit
+    type: objpatch
+    id: 0xFC10
+    room: 0
+    layer: 2
+    objtype: STAG
+    object:
+      trigstoryfid: 19 # Active after talked to Fire Dragon
+  - name: Patch exit trigger from Fire Dragon's Lair to Boko Base Volcano Summit
+    type: objpatch
+    id: 0xFC08
+    room: 0
+    layer: 0
+    objtype: STAG
+    object:
+      untrigstoryfid: 19 # Inactive after talked to Fire Dragon
+  - name: Move exit trigger to layer 2
+    type: objmove
+    id: 0xFC08
+    layer: 0
+    destlayer: 2
+    room: 0
+    objtype: STAG
+  - name: Remove Cutscene trigger
+    type: objdelete
+    id: 0xFC09
+    room: 0
+    layer: 0
+    objtype: STAG
+    
 F300: # Lanayru Desert
   - name: Layer override
     type: layeroverride
