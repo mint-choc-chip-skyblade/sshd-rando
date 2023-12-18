@@ -1,3 +1,4 @@
+import logging
 import random
 from constants.patchconstants import (
     STAGE_PATCH_PATH_REGEX,
@@ -104,7 +105,9 @@ def determine_check_patches(
                 else:
                     item_oarcs.append(trap_oarcs)
 
-            # print(location, item)
+            logging.getLogger("").debug(
+                f'Trapped item at "{location}" assigned model of "{item}".'
+            )
 
         for path in location.patch_paths:
             if stage_patch_match := STAGE_PATCH_PATH_REGEX.match(path):
