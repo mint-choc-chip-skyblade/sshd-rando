@@ -721,14 +721,17 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                         visisted_progression_locations = [
                             loc for loc in search.visited_locations if loc.progression
                         ]
-                        if len(visisted_progression_locations) < unlocked_locations:
+                        if (
+                            len(visisted_progression_locations) < unlocked_locations
+                            or most_useful_location is None
+                        ):
                             most_useful_location = location
                             unlocked_locations = len(visisted_progression_locations)
 
                         location.set_current_item(item_at_location)
 
                     first_item_text = get_text_data(
-                        f"{most_useful_location.current_item}", "pretty"
+                        f"{most_useful_location.current_item.name}", "pretty"
                     ).apply_text_color("r")
                     # If there are still more useful locations in the silent realm, then list how many there are
                     if len(useful_locations) == 1:
