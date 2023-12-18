@@ -67,8 +67,8 @@ def determine_check_patches(
                     item
                     for item in world.item_table.values()
                     if item.id < 200  # exclude custom items
-                    # Heart, Sailcloth, Non-Practice Swords
-                    and item.id not in (6, 15, 9, 11, 12, 13, 14)
+                    # Heart, Sailcloth, Non-Practice Swords, Stamina Fruit
+                    and item.id not in (6, 15, 9, 11, 12, 13, 14, 42)
                     and not "Song of the Hero" in item.name
                 ]
 
