@@ -316,6 +316,18 @@ pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
             return;
         }
 
+        // Don't give a textbox for the specified items, otherwise, force a textbox
+        match current_item {
+            // Green | Blue | Red Rupee | Heart, Arrows | Bombs, Stamina | Light Fruit | Seeds |
+            // Semi | Rare Treasure | Bugs | Treasures
+            2 | 3 | 4 | 6..=8 | 40..=42 | 47 | 60 | 63 | 64 | 141..=152 | 161..=176 => {
+                (*item_actor).base.basebase.members.param1 |= 0x200;
+            },
+            _ => {
+                (*item_actor).base.basebase.members.param1 &= 0xFFFFDFFF;
+            },
+        }
+
         // Despawn the item if it's one of the stamina fruit on LMF that
         // shouldn't exist until the dungeon has been raised. Actors are
         // identified by Z position
@@ -326,14 +338,6 @@ pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
         {
             // Set itemid to 0 which despawns it later in the init function
             (*item_actor).base.basebase.members.param1 &= !0x1FF;
-        }
-
-        // Don't give a textbox for rupees
-        match current_item {
-            2 | 3 | 4 | 31 | 32 => {
-                (*item_actor).base.basebase.members.param1 |= 0x200;
-            },
-            _ => {},
         }
 
         // Check if the flag is on
