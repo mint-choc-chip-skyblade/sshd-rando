@@ -75,9 +75,9 @@ tbz w8, #9, 0x71004dd088 ; check if is patched freestanding item
 
 
 ; some dAcItem sound effect func
-.offset 0x71004e310c
-ldr w8, [x19, #0xC] ; put param1 in w8
-tbz w8, #9, 0x71004e31c8 ; check if is patched freestanding item
+; .offset 0x71004e310c
+; ldr w8, [x19, #0xC] ; put param1 in w8
+; tbz w8, #9, 0x71004e31c8 ; check if is patched freestanding item
 
 
 ; Make all items able to be picked up by beetle

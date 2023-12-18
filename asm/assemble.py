@@ -386,8 +386,8 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
 
 # Get patches from each asm file.
-asm_additions_paths = list(ASM_ADDITIONS_PATH.glob("*.asm"))
-asm_patches_paths = list(ASM_PATCHES_PATH.glob("*.asm"))
+asm_additions_paths = list(ASM_ADDITIONS_PATH.rglob("*.asm"))
+asm_patches_paths = list(ASM_PATCHES_PATH.rglob("*.asm"))
 
 # Keeps the temporary directory only within this with block.
 with temp_dir as temp_dir_name:

@@ -2,7 +2,7 @@
 
 - name: Knight Academy - Fledge's Gift
   original_item: Progressive Pouch
-  type:
+  type: NPC
   Paths:
     - event/114-Friend/16
     - oarc/F001r/l3
@@ -16,28 +16,28 @@
 
 - name: Knight Academy - Owlan's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries, Gratitude Crystal Sidequests, Combat
+  type: Scrapper Deliveries, Gratitude Crystal Sidequests, Combat, NPC
+  hint: sometimes
   Paths:
     - event/118-Town3/157
     - oarc/F001r/l0
-  hint: sometimes
 
 - name: Knight Academy - Fledge's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/325
     - oarc/F001r/l0
 
 - name: Knight Academy - Item from Cawlin
   original_item: Cawlin's Letter
-  type:
+  type: NPC
   Paths:
     - event/115-Town2/166
     - oarc/F001r/l0
 - name: Knight Academy - Ghost/Pipit's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/522
     - event/115-Town2/641
@@ -63,7 +63,7 @@
 
 - name: Upper Skyloft - Owlan's Gift
   original_item: Wooden Shield
-  type:
+  type: NPC
   Paths:
     - event/108-ShinkanA/168
     - oarc/F000/l4
@@ -117,23 +117,23 @@
 
 - name: Upper Skyloft - Pumpkin Archery -- 600 Points
   original_item: Heart Piece
-  type: Minigames
+  type: Minigames, NPC
+  hint: sometimes
   Paths:
     - event/114-Friend/99
     - oarc/F000/l4
     - oarc/F000/l6
-  hint: sometimes
 
 - name: Inside the Statue of the Goddess - First Goddess Sword Item
   original_item: Progressive Sword
-  type:
+  type: NPC
   Paths:
     - event/107-Kanban/Fi give Goddess Statue item 1
     - oarc/F008r/l0
 
 - name: Inside the Statue of the Goddess - Second Goddess Sword Item
   original_item: Emerald Tablet
-  type:
+  type: NPC
   Paths:
     - event/107-Kanban/Fi give Goddess Statue item 2
     - oarc/F008r/l0
@@ -155,7 +155,7 @@
 
 - name: Bazaar - Potion Lady's Gift
   original_item: Empty Bottle
-  type:
+  type: NPC
   Paths:
     - event/106-DrugStore/44
     - oarc/F004r/l0
@@ -169,44 +169,44 @@
 
 # - name: Bazaar - Upgrade to Quick Beetle
 #   original_item: Progressive Beetle
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Tough Beetle
 #   original_item: Progressive Beetle
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Scattershot
 #   original_item: Progressive Slingshot
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Iron Bow
 #   original_item: Progressive Bow
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Sacred Bow
 #   original_item: Progressive Bow
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Big Bug Net
 #   original_item: Progressive Bug Net
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Central Skyloft - Repair Gondo's Junk
 #   original_item: Scrapper
-#   type:
+#   type: NPC
 #   Paths:
 #     - event/113-RemodelStore/Give Repair Gondo Junk item
 #     - oarc/F004r/l0
 
 - name: Central Skyloft - Wryna's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/118-Town3/144
     - oarc/F006r/l0
@@ -237,7 +237,7 @@
 
 - name: Central Skyloft - Parrow's Gift
   original_item: Empty Bottle
-  type:
+  type: NPC
   Paths:
     - event/115-Town2/230 # mushroom spores
     - event/115-Town2/733 # Empty Bottle
@@ -247,7 +247,7 @@
 
 - name: Central Skyloft - Parrow's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/813
     - oarc/F000/l4
@@ -256,13 +256,13 @@
 
 - name: Central Skyloft - Peater/Peatrice's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
+  hint: sometimes
   Paths:
     - event/109-TakeGoron/79
     - event/123-Town5/316
     - oarc/F018r/l0
     - oarc/F019r/l0
-  hint: always
 
 - name: Central Skyloft - Item in Bird Nest
   original_item: Rattle
@@ -338,9 +338,9 @@
 - name: Central Skyloft - Waterfall Goddess Chest
   original_item: Heart Piece
   type: goddess, Sand Sea Goddess Chests
+  hint: sometimes
   Paths:
     - stage/F000/r0/l0/TBox/80
-  hint: sometimes
   cube_region: Lanayru Sand Sea
 
 - name: Central Skyloft - Crystal in Orielle and Parrow's House
@@ -407,25 +407,25 @@
 
 - name: Skyloft Village - Mallara's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/123-Town5/186
     - oarc/F016r/l0
 
 - name: Skyloft Village - Bertie's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/125
     - oarc/F014r/l0
 
 - name: Skyloft Village - Sparrot's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries, Gratitude Crystal Sidequests
+  type: Scrapper Deliveries, Gratitude Crystal Sidequests, NPC
+  hint: sometimes
   Paths:
     - event/118-Town3/141
     - oarc/F013r/l0
-  hint: sometimes
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
   original_item: Gratitude Crystal 
@@ -446,21 +446,21 @@
 
 - name: Batreaux - 5 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
   Paths:
     - event/121-AkumaKun/21
     - oarc/F012r/l0
 
 - name: Batreaux - 10 Crystals
   original_item: Heart Piece
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
   Paths:
     - event/121-AkumaKun/42
     - oarc/F012r/l0
 
 - name: Batreaux - 30 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
   Paths:
     - event/121-AkumaKun/24
     - oarc/F012r/l0
@@ -473,104 +473,104 @@
 
 - name: Batreaux - 40 Crystals
   original_item: Gold Rupee
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
   Paths:
     - event/121-AkumaKun/49
     - oarc/F012r/l0
 
 - name: Batreaux - 50 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
+  hint: sometimes
   Paths:
     - event/121-AkumaKun/27
     - oarc/F012r/l0
-  hint: sometimes
 
 - name: Batreaux - 70 Crystals
   original_item: Gold Rupee
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
+  hint: sometimes
   Paths:
     - event/121-AkumaKun/161
     - oarc/F012r/l0
-  hint: sometimes
 
 - name: Batreaux - 70 Crystals Second Reward
   original_item: Gold Rupee
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
+  hint: sometimes
   Paths:
     - event/121-AkumaKun/163
     - oarc/F012r/l0
-  hint: sometimes
 
 - name: Batreaux - 80 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
+  hint: always
   Paths:
     - event/121-AkumaKun/37
     - oarc/F012r/l0
-  hint: always
 
 # Beedle's Shop:
 
 - name: Beedle's Shop - 300 Rupee Item
   original_item: Progressive Pouch 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
   Paths:
     - ShpSmpl/20
 
 - name: Beedle's Shop - 600 Rupee Item
   original_item: Progressive Pouch 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium), NPC
   Paths:
     - ShpSmpl/21
 
 - name: Beedle's Shop - 1200 Rupee Item
   original_item: Progressive Pouch 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive), NPC
   hint: always
   Paths:
     - ShpSmpl/22
 
 - name: Beedle's Shop - 800 Rupee Item
   original_item: Life Medal 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium), NPC
   Paths:
     - ShpSmpl/26
 
 - name: Beedle's Shop - 1600 Rupee Item
   original_item: Heart Piece 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive), NPC
   hint: always
   Paths:
     - ShpSmpl/23
 
 - name: Beedle's Shop - First 100 Rupee Item
   original_item: Extra Wallet 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
   Paths:
     - ShpSmpl/24
 
 - name: Beedle's Shop - Second 100 Rupee Item
   original_item: Extra Wallet 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
   Paths:
     - ShpSmpl/17
 
 - name: Beedle's Shop - Third 100 Rupee Item
   original_item: Extra Wallet 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
   Paths:
     - ShpSmpl/18
 
 - name: Beedle's Shop - 50 Rupee Item
   original_item: Progressive Bug Net 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
   Paths:
     - ShpSmpl/25
 
 - name: Beedle's Shop - 1000 Rupee Item
   original_item: Bug Medal
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium), NPC
   Paths:
     - ShpSmpl/27
 
@@ -590,19 +590,19 @@
 
 - name: Lumpy Pumpkin - Harp Minigame
   original_item: Heart Piece
-  type: Minigames
+  type: Minigames, NPC
+  hint: sometimes
   Paths:
     - event/117-Pumpkin/305
     - oarc/F011r/l0
-  hint: sometimes
 
 - name: Lumpy Pumpkin - Kina's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries, Gratitude Crystal Sidequests
+  type: Scrapper Deliveries, Gratitude Crystal Sidequests, NPC
+  hint: sometimes
   Paths:
     - event/117-Pumpkin/386
     - oarc/F020/l0
-  hint: sometimes
 
 - name: Lumpy Pumpkin - Outside Crystal
   original_item: Gratitude Crystal 
@@ -624,18 +624,18 @@
 
 - name: Orielle's Island - Orielle's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/225
     - oarc/F020/l0
 
 - name: Beedle's Island - Beedle's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
+  hint: sometimes
   Paths:
     - event/105-Terry/115
     - oarc/F020/l0
-  hint: sometimes
 
 - name: Beedle's Island - Crystal
   original_item: Gratitude Crystal 
@@ -646,9 +646,9 @@
 - name: Beedle's Island - Top Goddess Chest
   original_item: Heart Piece
   type: goddess, Lanayru Desert Goddess Chests, Combat
+  hint: sometimes
   Paths:
     - stage/F020/r0/l0/TBox/89
-  hint: sometimes
   cube_region: Lanayru Desert
 
 - name: Beedle's Island - Cage Goddess Chest
@@ -660,18 +660,18 @@
 
 - name: Fun Fun Island - Dodoh's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries
+  type: Scrapper Deliveries, NPC
   Paths:
     - event/110-DivingGame/60
     - oarc/F020/l0
 
 - name: Fun Fun Island - Minigame -- 500 Rupees
   original_item: Heart Piece
-  type: Minigames, Scrapper Deliveries
+  type: Minigames, Scrapper Deliveries, NPC
+  hint: sometimes
   Paths:
     - event/110-DivingGame/19
     - oarc/F020/l2
-  hint: sometimes
 
 - name: Fun Fun Island - Goddess Chest
   original_item: Gold Rupee
@@ -810,7 +810,6 @@
   type:
   Paths:
     - stage/F010r/r0/l0/SwSB/2
-  hint: sometimes
 
 - name: Isle of Songs - Top Goddess Chest
   original_item: Small Bomb Bag
@@ -828,19 +827,19 @@
 
 - name: The Thunderhead - Song from Levias
   original_item: Song of the Hero
-  type: Scrapper Deliveries, Combat
+  type: Scrapper Deliveries, Combat, NPC
+  hint: always
   Paths:
     - event/120-Nushi/give item after levias
     - oarc/F023/l0
-  hint: always
 
 - name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
   original_item: Beedle's Insect Cage
-  type: Minigames
+  type: Minigames, NPC
+  hint: sometimes
   Paths:
     - event/116-InsectGame/69
     - oarc/F023/l0
-  hint: sometimes
 
 - name: Bug Heaven - Goddess Chest
   original_item: Heart Piece
@@ -1060,25 +1059,25 @@
 
 - name: Sealed Temple - Song from Impa
   original_item: Ballad of the Goddess
-  type:
+  type: NPC
   Paths:
     - event/501-Inpa/267
     - oarc/F402/l0
 
 - name: Sealed Grounds - Gorko's Goddess Wall Reward
-  type:
+  type: NPC
   original_item: Heart Piece
+  hint: sometimes
   Paths:
     - event/503-Goron/630
     - oarc/F400/l0
-  hint: sometimes
 
-#Sealed Grounds - Behind the Temple Triforce on Goddess Wall:
-#  original_item: Gold Rupee
-#  type: long
-#  Paths:
-#   - event/503-Goron/418
-#   - oarc/F400/l0
+# Sealed Grounds - Behind the Temple Triforce on Goddess Wall:
+#   original_item: Gold Rupee
+#   type:
+#   Paths:
+#    - event/503-Goron/418
+#    - oarc/F400/l0
 
 - name: Sealed Grounds - Gossip Stone
   original_item: Nothing
@@ -1088,11 +1087,11 @@
 
 - name: Hylia's Temple - Zelda's Blessing
   original_item: Progressive Sword
-  type: #TODO: this may need to be revisited as it doesnt really fit any other checks
+  type: NPC #TODO: this may need to be revisited as it doesnt really fit any other checks
+  hint: sometimes
   Paths:
     - event/502-CenterFieldBack/17
     - oarc/F404/l1
-  hint: sometimes
 
 - name: Hylia's Realm - Defeat Demise
   original_item: Game Beatable
@@ -1113,11 +1112,11 @@
 
 - name: Faron Woods - Kikwi Elder's Reward
   original_item: Progressive Slingshot
-  type: Combat # because of the Lopsa Bokoblin fight, this is a Combat reward
+  type: NPC, Combat # because of the Lopsa Bokoblin fight, this is a Combat reward
+  hint: sometimes
   Paths:
     - stage/F100/r0/l1/NpcKyuE/0x1EBB # id is different from SD
     - oarc/F100/l0
-  hint: sometimes
 
 - name: Faron Woods - Rupee on Hollow Tree Root
   original_item: Blue Rupee 
@@ -1200,9 +1199,9 @@
 - name: Great Tree - Chest
   original_item: Gold Rupee
   type:
+  hint: sometimes
   Paths:
     - stage/F100_1/r0/l0/TBox/84
-  hint: sometimes
 
 - name: Deep Woods - Chest
   original_item: Red Rupee
@@ -1263,7 +1262,6 @@
 - name: Lake Floria - Chest
   original_item: Goddess Plume
   type:
-  hint: sometimes
   Paths:
     - stage/F102/r3/l0/TBox/64
 
@@ -1406,7 +1404,7 @@
 
 # - name: Flooded Faron Woods - Water Dragon's Reward
 #   original_item: Faron Song of the Hero Part
-#   type: Tadtones
+#   type: Tadtones, NPC
 #   hint: sometimes
 #   Paths:
 #     - event/204-ForestF3/Give item after Faron SotH CS
@@ -1652,7 +1650,6 @@
 - name: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
   original_item: Key Piece
   type:
-  hint: sometimes
   Paths:
     - stage/F200/r4/l1/Soil/12
 
@@ -1684,7 +1681,7 @@
 
 - name: Mogma Turf - Defeat Bokoblins
   original_item: Progressive Mitts
-  type: Combat
+  type: Combat, NPC
   Paths:
     - event/300-Mountain/6
     - event/300-Mountain/135
@@ -1717,9 +1714,9 @@
 - name: Volcano Summit - Item behind Digging
   original_item: Heart Piece
   type:
+  hint: sometimes
   Paths:
     - stage/F201_3/r0/l0/Item/104 #sceneflagID
-  hint: sometimes
 
 - name: Volcano Summit - Gossip Stone in Waterfall Area
   original_item: Nothing
@@ -1750,7 +1747,7 @@
 
 # - name: Bokoblin Base - Plats' Gift
 #   original_item: Mogma Mitts
-#   type:
+#   type: NPC
 #   Paths:
 #    - event/305-MountainF3/Plats' Gift
 #    - oarc/F202/l1
@@ -1808,7 +1805,7 @@
 
 # - name: Bokoblin Base - Fire Dragon's Reward
 #   original_item: Eldin Song of the Hero Part
-#   type:
+#   type: NPC
 #   Paths:
 #    - event/305-MountainF3/Give item after Eldin SotH CS
 #    - oarc/F221/l0
@@ -1889,7 +1886,7 @@
 
 - name: Lanayru Desert - Rescue Caged Robot
   original_item: Progressive Beetle
-  type: Combat
+  type: Combat, NPC
   Paths:
     - event/400-Desert/8
     - oarc/F300/l0
@@ -1915,9 +1912,9 @@
 - name: Lanayru Desert - Chest on top of Lanayru Mining Facility # actually spawns on raising LMF
   original_item: Rare Treasure # TODO check
   type:
+  hint: sometimes
   Paths:
     - stage/F300/r0/l1/TBox/83
-  hint: sometimes
 
 - name: Lanayru Desert - Secret Passageway Chest
   original_item: Heart Piece
@@ -2057,7 +2054,7 @@
 
 - name: Lanayru Caves - Golo's Gift
   original_item: Lanayru Caves Small Key
-  type:
+  type: NPC
   Paths:
     - event/404-DesertF3/127
     - oarc/F303/l0
@@ -2078,11 +2075,11 @@
 
 - name: Lanayru Gorge - Thunder Dragon's Reward
   original_item: Lanayru Song of the Hero Part
-  type:
+  type: NPC
+  hint: sometimes
   Paths:
     - event/404-DesertF3/give item after Healing Thunderdragon
     - oarc/F302/l0
-  hint: sometimes
 
 - name: Lanayru Gorge - Item on Pillar
   original_item: Red Rupee
@@ -2142,9 +2139,9 @@
 - name: Skipper's Retreat - Chest in Shack
   original_item: Sea Chart
   type:
+  hint: sometimes
   Paths:
     - stage/F301_5/r0/l0/TBox/65
-  hint: sometimes
 
 - name: Skipper's Retreat - Skydive Chest
   original_item: Silver Rupee
@@ -2160,11 +2157,11 @@
 
 - name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
   original_item: Heart Piece
-  type: Minigames, Combat #Moldarach 2 makes this a Combat check
+  type: Minigames, NPC
+  hint: sometimes
   Paths:
     - event/406-TrolleyRace/77
     - oarc/F301_4/l0
-  hint: sometimes
 
 - name: Shipyard - Gossip Stone
   original_item: Nothing
@@ -2245,7 +2242,7 @@
 - name: Skyview Temple - Digging Spot in Crawlspace
   original_item: Skyview Temple Small Key
   type:
-  hints: sometimes
+  hint: sometimes
   Paths:
     - stage/D100/r4/l0/Soil/15
 
@@ -2289,9 +2286,9 @@
 - name: Skyview Temple - Chest behind Three Eyes
   original_item: Skyview Temple Small Key 
   type:
+  hint: sometimes
   Paths:
     - stage/D100/r7/l0/TBox/68
-  hint: sometimes
 
 - name: Skyview Temple - Chest near Boss Door
   original_item: Red Rupee
@@ -2323,7 +2320,7 @@
 - name: Skyview Spring - Strike Crest
   original_item: Ruby Tablet
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/201-ForestD1/6
     - oarc/B100_1/l0
@@ -2361,7 +2358,6 @@
 - name: Earth Temple - Chest in West Room
   original_item: Earth Temple Map
   type:
-  hint: sometimes
   Paths:
     - stage/D200/r0/l0/TBox/64
 
@@ -2373,7 +2369,7 @@
 
 - name: Earth Temple - Ledd's Gift
   original_item: 5 Bombs
-  type:
+  type: NPC
   Paths:
     - event/301-MountainD1/16
     - oarc/D200/l0
@@ -2393,6 +2389,7 @@
 - name: Earth Temple - Chest before Boulder Chase
   original_item: Earth Temple Boss Key
   type:
+  hint: sometimes
   Paths:
     - stage/D200/r4/l0/TBox/68
 
@@ -2430,7 +2427,7 @@
 - name: Earth Spring - Strike Crest
   original_item: Amber Tablet
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/301-MountainD1/22
     - oarc/B210/l0
@@ -2496,9 +2493,9 @@
 - name: Lanayru Mining Facility - Chest after Double Armos Fight
   original_item: Lanayru Mining Facility Boss Key
   type:
+  hint: sometimes
   Paths:
     - stage/D300_1/r8/l0/TBox/71
-  hint: always
 
 - name: Lanayru Mining Facility - Shortcut Chest in Main Hub
   original_item: Red Rupee
@@ -2516,7 +2513,7 @@
 - name: Lanayru Mining Facility - Exit Hall of Ancient Robots
   original_item: Goddess's Harp
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/400-Desert/283
     - oarc/F300_5/l0
@@ -2568,15 +2565,8 @@
 - name: Ancient Cistern - Chest in East Part
   original_item: Ancient Cistern Small Key 
   type:
-  hint: sometimes
   Paths:
     - stage/D101/r1/l0/TBox/67
-
-- name: Ancient Cistern - Rupee under Lilypad
-  original_item: Red Rupee
-  type: Rupees (No Quick Beetle)
-  Paths:
-    - stage/D101/r5/l0/Item/13
 
 - name: Ancient Cistern - Chest after Whip Hooks
   original_item: Ancient Cistern Map
@@ -2602,6 +2592,12 @@
   Paths:
     - stage/D101/r4/l0/EBc/0xFC00
 
+- name: Ancient Cistern - Rupee under Lilypad
+  original_item: Red Rupee
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r5/l0/Item/13
+
 - name: Ancient Cistern - Chest in Key Locked Room
   original_item: Whip
   type:
@@ -2611,6 +2607,7 @@
 - name: Ancient Cistern - Chest under Stone Statue
   original_item: Ancient Cistern Boss Key
   type:
+  hint: sometimes
   Paths:
     - stage/D101/r4/l0/TBox/68
 
@@ -2624,7 +2621,7 @@
 - name: Ancient Cistern - Farore's Flame
   original_item: Progressive Sword
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/202-ForestD2/give item after beating ancient cistern
     - oarc/B101_1/l0
@@ -2681,7 +2678,7 @@
 
 - name: Sandship - Robot in Brig's Reward
   original_item: Sandship Small Key 
-  type:
+  type: NPC
   hint: sometimes
   Paths:
     - event/401-DesertD2/14
@@ -2690,16 +2687,16 @@
 - name: Sandship - Chest after Scervo Fight
   original_item: Progressive Bow
   type:
+  hint: sometimes
   Paths:
     - stage/D301/r15/l0/TBox/72
-  hint: sometimes
 
 - name: Sandship - Chest in Captain's Cabin
   original_item: Sandship Boss Key
   type:
+  hint: sometimes
   Paths:
     - stage/D301/r14/l3/TBox/73
-  hint: sometimes
 
 - name: Sandship - Defeat Boss
   original_item: Heart Container
@@ -2707,12 +2704,11 @@
   Paths:
     - stage/B301/r0/l1/HeartCo
     - stage/D301/r0/l1/HeartCo
-  hint: sometimes
 
 - name: Sandship - Nayru's Flame
   original_item: Progressive Sword
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/401-DesertD2/45
     - oarc/B301/l1
@@ -2767,6 +2763,7 @@
 - name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   original_item: Fire Sanctuary Map
   type:
+  hint: sometimes
   Paths:
     - stage/D201_1/r2/l0/TBox/65
     - stage/D201/r2/l0/TBox/65
@@ -2774,9 +2771,9 @@
 - name: Fire Sanctuary - Chest after Bombable Wall
   original_item: Fire Sanctuary Small Key 
   type:
+  hint: sometimes
   Paths:
     - stage/D201_1/r11/l0/TBox/71
-  hint: always
 
 - name: Fire Sanctuary - Plats' Chest
   original_item: Heart Piece
@@ -2806,7 +2803,7 @@
 - name: Fire Sanctuary - Din's Flame
   original_item: Progressive Sword
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/304-MountainD2/5
     - oarc/B201_1/l0
@@ -2865,7 +2862,6 @@
   type:
   Paths:
     - stage/S000/r0/l2/WarpObj
-  hint: always
 
 - name: Faron Silent Realm - Stamina Fruit on Vine Wall 1
   original_item: Stamina Fruit
@@ -2884,7 +2880,6 @@
   type:
   Paths:
     - stage/S100/r0/l2/WarpObj
-  hint: always
 
 - name: Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall
   original_item: Stamina Fruit
@@ -2921,7 +2916,6 @@
   type:
   Paths:
     - stage/S300/r0/l2/WarpObj
-  hint: always
 
 - name: Eldin Silent Realm - Stamina Fruit on First Slope
   original_item: Stamina Fruit
@@ -2946,4 +2940,3 @@
   type:
   Paths:
     - stage/S200/r2/l2/WarpObj
-  hint: always

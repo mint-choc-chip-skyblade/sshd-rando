@@ -10,7 +10,7 @@ mov w8, #13
 bl additions_jumptable
 b 0x710093086c ; cancel song giving cutscene
 
-; Skip setting the sceneflag normally as we set it
-; in our custom function
-.offset 0x710092ed18
-nop
+; Skip setting the sceneflag for the IoS crest
+; but still set it for all the other crests
+.offset 0x710092eca8
+b 0x710092ed1c ; return

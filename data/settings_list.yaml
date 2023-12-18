@@ -40,7 +40,7 @@
 
 
 - name: randomized_shops
-  default_option: vanilla
+  default_option: junk_only
   pretty_name: Randomized Shops
   pretty_options:
     - Vanilla
@@ -110,7 +110,7 @@
 
 
 - name: open_lmf
-  default_option: nodes
+  default_option: open
   pretty_name: Open Lanayru Mining Facility
   pretty_options:
     - Nodes
@@ -134,7 +134,7 @@
 
 
 - name: fs_lava_flow
-  default_option: "off"
+  default_option: "on"
   pretty_name: Fire Sanctuary Lava Flow
   pretty_options:
     - "Off"
@@ -436,7 +436,7 @@
 
 
 - name: upgraded_skyward_strike
-  default_option: "off"
+  default_option: "on"
   pretty_name: Upgraded Skyward Strike
   pretty_options:
     - "Off"
@@ -480,7 +480,7 @@
 
 
 - name: required_dungeons
-  default_option: 3
+  default_option: 2
   pretty_name: Required Dungeons
   pretty_options:
     - 0-6
@@ -489,7 +489,7 @@
 
 
 - name: empty_unrequired_dungeons
-  default_option: "off"
+  default_option: "on"
   pretty_name: Empty Unrequired Dungeons
   pretty_options:
     - "Off"
@@ -497,6 +497,75 @@
   options:
     - "off":                           "Unrequired dungeons may contain items needed to beat the game."
     - "on":                            "Unrequired dungeons will be barren."
+
+- name: trap_mode
+  default_option: "no_traps"
+  pretty_name: Trap Mode
+  pretty_options:
+    - "No Traps"
+    - "Trapish"
+    - "Trapsome"
+    - "Traps'O'Plenty"
+    - "Traptacular"
+  options:
+    - "no_traps":                      "All items in the game will be genuine."
+    - "trapish":                       "Up to 10 non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "trapsome":                      "Approximately 25% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "traps_o_plenty":                "Approximately 50% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "traptacular":                   "All of the non-major items will be replaced with 'traps' that don't give the item they appear to be."
+
+- name: trappable_items
+  default_option: "major_items"
+  pretty_name: Trappable Items
+  pretty_options:
+    - "Major Items"
+    - "Non Major Items"
+    - "Any Items"
+  options:
+    - "major_items":                   "Traps can mimic any major item that could be necessary to beat the game."
+    - "non_major_items":               "Traps can only mimic non-major items that cannot be necessary to beat the game."
+    - "any_items":                     "Traps can mimic any item."
+
+- name: burn_traps
+  default_option: "on"
+  pretty_name: Burn Traps
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Traps that set you on fire will not be added to the item pool."
+    - "on":                            "Traps that set you on fire can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+
+- name: curse_traps
+  default_option: "on"
+  pretty_name: Curse Traps
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Traps that curse you (prevents you from using your items) will not be added to the item pool."
+    - "on":                            "Traps that curse you can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+
+- name: noise_traps
+  default_option: "off"
+  pretty_name: Noise Traps
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Traps that create a lot of noise will not be added to the item pool."
+    - "on":                            "Traps that create a lot of noise can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+
+- name: groose_traps
+  default_option: "off"
+  pretty_name: Groose Traps
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Traps that spawn Groose will not be added to the item pool."
+    - "on":                            "Traps that spawn Groose can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+
 
 - name: ammo_availability
   default_option: plentiful
