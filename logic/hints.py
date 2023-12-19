@@ -93,6 +93,11 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
         for sphere in worlds[0].playthrough_spheres:
             for location in sphere:
                 item_at_location = location.current_item
+
+                # TODO: how can an item_at_location even be null here?
+                if item_at_location is None:
+                    continue
+
                 # If this location has a small or big key and the key is known to be within the dungeon,
                 # then ignore it because the player already knows where those items are. Also ignore race
                 # mode locations at the end of dungeons because players know those locations are required.
@@ -329,6 +334,7 @@ def generate_item_hint_locations(world: World, hint_locations: list) -> None:
         # and does not have a boss key when boss keys are in known areas...
         # and is not a goal location
         # and is not an "always" location when we're using always hints
+        # and is not a gratitude crystal pack or single gratitude crystal
         # then it can be hinted as an item hint
         if (
             location.progression
@@ -347,6 +353,7 @@ def generate_item_hint_locations(world: World, hint_locations: list) -> None:
             and (
                 location.hint_priority != "always" or not world.setting("always_hints")
             )
+            and not location.current_item.name.startswith("Gratitude Crystal")
         ):
             possible_item_hint_locations.append(location)
 
@@ -714,14 +721,17 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                         visisted_progression_locations = [
                             loc for loc in search.visited_locations if loc.progression
                         ]
-                        if len(visisted_progression_locations) < unlocked_locations:
+                        if (
+                            len(visisted_progression_locations) < unlocked_locations
+                            or most_useful_location is None
+                        ):
                             most_useful_location = location
                             unlocked_locations = len(visisted_progression_locations)
 
                         location.set_current_item(item_at_location)
 
                     first_item_text = get_text_data(
-                        f"{most_useful_location.current_item}", "pretty"
+                        f"{most_useful_location.current_item.name}", "pretty"
                     ).apply_text_color("r")
                     # If there are still more useful locations in the silent realm, then list how many there are
                     if len(useful_locations) == 1:

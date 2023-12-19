@@ -141,6 +141,14 @@ def test_default_multiworld_config() -> None:
     config_test("default_multiworld_config.yaml")
 
 
+def test_traps_all_config() -> None:
+    config_test("traps_all.yaml")
+
+
+def test_traps_off_config() -> None:
+    config_test("traps_off.yaml")
+
+
 def test_spoiler_as_config() -> None:
     config_test("spoiler_as_config.yaml")
     log1 = ""

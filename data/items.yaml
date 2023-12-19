@@ -1,28 +1,29 @@
 - id: 1
   name: Small Key
-  oarc: null
+  oarc: null # ObjectPack
   shuffle: Dungeon
 - id: 2
   name: Green Rupee
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 3
   name: Blue Rupee
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 4
   name: Red Rupee
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 6
   name: Heart
-  oarc: null
+  oarc: null # ObjectPack
 - id: 9
   name: Goddess White Sword
   oarc: null
+  advancement: true
 - id: 10
   name: Progressive Sword
   oarc: GetSwordA
@@ -32,18 +33,23 @@
 - id: 11
   name: Goddess Sword
   oarc: null
+  advancement: true
 - id: 12
   name: Goddess Longsword
   oarc: null
+  advancement: true
 - id: 13
   name: Master Sword
   oarc: null
+  advancement: true
 - id: 14
   name: True Master Sword
   oarc: null
+  advancement: true
 - id: 15
   name: Sailcloth
-  oarc: null
+  oarc: null # Placeholder (defaults to green rupee)
+  advancement: true
 - id: 16
   name: Goddess's Harp
   oarc: GetHarp
@@ -122,22 +128,22 @@
   advancement: true
 - id: 32
   name: Silver Rupee
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 33
   name: Gold Rupee
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 34
   name: Rupoor
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 35
   name: Gratitude Crystal Pack
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetGenki
   getmodelname: GetGenki
   advancement: true
@@ -153,20 +159,20 @@
    - Batreaux - 80 Crystals
 - id: 40
   name: 5 Bombs
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetBombSet
   getmodelname: GetBombSet
 - id: 41
   name: 10 Bombs
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetBombSet
   getmodelname: GetBombSet
 - id: 42
   name: Stamina Fruit
-  oarc: null
+  oarc: null # ObjectPack
 - id: 48
   name: Gratitude Crystal
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetGenki
   getmodelname: GetGenki
   advancement: true
@@ -188,11 +194,13 @@
   advancement: true
 - id: 50
   name: Map
-  oarc: null
+  oarc: null # ObjectPack
   shuffle: Dungeon
 - id: 52
   name: Progressive Slingshot
-  oarc: GetPachinkoA
+  oarc:
+  - GetPachinkoA
+  - GetPachinkoB # Fixes weirdness with traps
   getarcname: GetPachinkoA
   getmodelname: GetPachinkoA
   advancement: true
@@ -210,19 +218,22 @@
   advancement: true
 - id: 60
   name: 10 Deku Seeds
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetSeedSet
   getmodelname: GetSeedSet
 - id: 63
   name: Semi Rare Treasure
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetSozaiL
   getmodelname: GetSozaiL
 - id: 64
   name: Rare Treasure
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetSozaiP
   getmodelname: GetSozaiP
+- id: 65
+  name: Guardian Potion
+  oarc: GetBottleMuteki
 - id: 68
   name: Water Dragon's Scale
   oarc: GetUroko
@@ -245,18 +256,32 @@
 - id: 75
   name: Hook Beetle
   oarc: GetBeetleB
+  advancement: true
 - id: 76
   name: Quick Beetle
   oarc: GetBeetleC
+  advancement: true
 - id: 77
   name: Tough Beetle
   oarc: GetBeetleD
+  advancement: true
+- id: 78
+  name: Heart Potion
+  oarc: GetBottleKusuri
+- id: 84
+  name: Stamina Potion
+  oarc: GetBottleGuts
+- id: 86
+  name: Air Potion
+  oarc: GetBottleAir
 - id: 90
   name: Iron Bow
   oarc: GetBowB
+  advancement: true
 - id: 91
   name: Sacred Bow
   oarc: GetBowC
+  advancement: true
 - id: 92
   name: Bomb Bag
   oarc: GetBombBag
@@ -272,7 +297,7 @@
   getmodelname: GetHeartUtuwa
 - id: 94
   name: Heart Piece
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetHeartKakera
   getmodelname: GetHeartKakera
 - id: 95
@@ -308,6 +333,7 @@
 - id: 99
   name: Mogma Mitts
   oarc: GetMoleGloveB
+  advancement: true
 - id: 100
   name: Heart Medal
   oarc: GetMedal
@@ -336,6 +362,7 @@
 - id: 105
   name: Scattershot
   oarc: GetPachinkoB
+  advancement: true
 - id: 108
   name: Progressive Wallet # Medium Wallet
   oarc: GetPurseB
@@ -350,12 +377,15 @@
 - id: 109
   name: Big Wallet
   oarc: GetPurseC
+  advancement: true
 - id: 110
   name: Giant Wallet
   oarc: GetPurseD
+  advancement: true
 - id: 111
   name: Tycoon Wallet
   oarc: GetPurseE
+  advancement: true
 - id: 112
   name: Progressive Pouch
   oarc: GetPouchA
@@ -413,9 +443,10 @@
 - id: 140
   name: Big Bug Net
   oarc: GetNetB
+  advancement: true
 - id: 153
   name: Empty Bottle
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetBottleEmpty
   getmodelname: GetBottleEmpty
   advancement: true
@@ -452,7 +483,7 @@
   getmodelname: GetSozaiC
 - id: 165
   name: Eldin Ore
-  oarc: null # Is in objectPack
+  oarc: null # ObjectPack
   getarcname: GetSozaiE
   getmodelname: GetSozaiE
 - id: 168
@@ -462,22 +493,22 @@
   getmodelname: GetSozaiH
 - id: 171
   name: Monster Horn
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetSozaiL
   getmodelname: GetSozaiL
 - id: 173
   name: Evil Crystal
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetSozaiM
   getmodelname: GetSozaiM
 - id: 175
   name: Golden Skull
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetSozaiO
   getmodelname: GetSozaiO
 - id: 176
   name: Goddess Plume
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetSozaiP
   getmodelname: GetSozaiP
 - id: 177
@@ -549,11 +580,13 @@
 - id: 193
   name: Song of the Hero
   oarc: GetHarp
+  advancement: true
 - id: 197
   name: Life Tree Seedling
   oarc: GetSeedLife
   getarcname: GetSeedLife
   getmodelname: GetSeedLife
+  advancement: true
 - id: 198
   name: Life Tree Fruit
   oarc: GetFruitB
@@ -573,82 +606,83 @@
    - Beedle's Shop - 1200 Rupee Item
    - Beedle's Shop - 800 Rupee Item
    - Beedle's Shop - 1600 Rupee Item
-# start rando custom items
+
+# Custom rando items
 - id: 200
   name: Skyview Temple Small Key
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 201
   name: Lanayru Mining Facility Small Key
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 202
   name: Ancient Cistern Small Key
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 203
   name: Fire Sanctuary Small Key
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 204
   name: Sandship Small Key
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 205
   name: Sky Keep Small Key
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 206
   name: Lanayru Caves Small Key
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 207
   name: Skyview Temple Map
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 208
   name: Earth Temple Map
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 209
   name: Lanayru Mining Facility Map
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 210
   name: Ancient Cistern Map
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 211
   name: Fire Sanctuary Map
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 212
   name: Sandship Map
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 213
   name: Sky Keep Map
-  oarc: null
+  oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 214
@@ -670,6 +704,24 @@
    - Fun Fun Island - Dodoh's Crystals
    - Fun Fun Island - Minigame -- 500 Rupees
    - The Thunderhead - Song from Levias
+
+# - id: 240+ == traps
+
+- id: 251
+  name: Groose Trap
+  oarc:
+    - RivalCmnAnm
+    - RivalNpcAnm
+- id: 252
+  name: Noise Trap
+  oarc: null
+- id: 253
+  name: Curse Trap
+  oarc: null
+- id: 254
+  name: Burn Trap
+  oarc: null
+
 # Dummy item to simulate game beatability for logic
 - id: 256
   name: Game Beatable

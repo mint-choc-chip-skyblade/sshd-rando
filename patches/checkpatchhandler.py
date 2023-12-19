@@ -1,17 +1,19 @@
+import logging
+import random
 from constants.patchconstants import (
     STAGE_PATCH_PATH_REGEX,
     EVENT_PATCH_PATH_REGEX,
     OARC_ADD_PATH_REGEX,
     SHOP_PATCH_PATH_REGEX,
 )
+from logic.world import World
 
-from logic.location import Location
 from patches.eventpatchhandler import EventPatchHandler
 from patches.stagepatchhandler import StagePatchHandler
 
 
 def determine_check_patches(
-    location_table: dict[str, Location],
+    world: World,
     stage_patch_handler: StagePatchHandler,
     event_patch_handler: EventPatchHandler,
 ):
@@ -30,17 +32,82 @@ def determine_check_patches(
     custom_flags = [i for i in range(1024) if (i & 0x7F) != 0x7F]
     custom_flags.reverse()
 
+    location_table = world.location_table
+
     for location in location_table.values():
         item = location.current_item
+
+        # Deal with items with custom flags
         custom_flag = 0x3FF  # Value for no custom flag
         original_itemid = 0
+
         if "Custom Flag" in location.types:
             custom_flag = custom_flags.pop()
+
         if "Stamina Fruit" in location.types:
             original_itemid = 1
+
             # Don't patch anything if the stamina fruit is vanilla
             if location.current_item == location.world.get_item("Stamina Fruit"):
                 continue
+
+        # Deal with traps
+        trapid = 0
+        trap_oarcs = None
+        item_oarcs = []
+
+        if item is not None:
+            if item.name.endswith("Trap"):
+                trapid = item.id
+
+                trap_oarcs = item.oarcs
+
+                # Don't use items that don't have usable models
+                trappable_items = [
+                    item
+                    for item in world.item_table.values()
+                    if item.id < 200  # exclude custom items
+                    # Heart, Sailcloth, Non-Practice Swords, Stamina Fruit
+                    and item.id not in (6, 15, 9, 11, 12, 13, 14, 42)
+                    and not "Song of the Hero" in item.name
+                ]
+
+                trappable_items_setting = world.setting("trappable_items")
+
+                if trappable_items_setting == "major_items":
+                    trappable_items = [
+                        item for item in trappable_items if item.is_major_item
+                    ]
+                elif trappable_items_setting == "non_major_items":
+                    trappable_items = [
+                        item for item in trappable_items if not item.is_major_item
+                    ]
+
+                # Getting potion models from NPCs is broken rn
+                if "NPC" in location.types:
+                    trappable_items = [
+                        item for item in trappable_items if not "Potion" in item.name
+                    ]
+
+                item = random.choice(trappable_items)
+
+            # Combine item.oarcs with trap_oarcs
+            item_oarcs = []
+            if item.oarcs:
+                if isinstance(item.oarcs, list):
+                    item_oarcs += item.oarcs
+                else:
+                    item_oarcs.append(item.oarcs)
+
+            if trap_oarcs:
+                if isinstance(trap_oarcs, list):
+                    item_oarcs += trap_oarcs
+                else:
+                    item_oarcs.append(trap_oarcs)
+
+            logging.getLogger("").debug(
+                f'Trapped item at "{location}" assigned model of "{item}".'
+            )
 
         for path in location.patch_paths:
             if stage_patch_match := STAGE_PATCH_PATH_REGEX.match(path):
@@ -50,12 +117,8 @@ def determine_check_patches(
                 object_name = stage_patch_match.group("objectName")
                 objectid = stage_patch_match.group("objectID")
 
-                if item.oarcs:
-                    if isinstance(item.oarcs, list):
-                        for oarc in item.oarcs:
-                            stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
-                    else:
-                        stage_patch_handler.add_oarc_for_check(stage, layer, item.oarcs)
+                for oarc in item_oarcs:
+                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
 
                 stage_patch_handler.add_check_patch(
                     stage,
@@ -64,6 +127,7 @@ def determine_check_patches(
                     layer,
                     objectid,
                     item.id,
+                    trapid,
                     custom_flag,
                     original_itemid,
                 )
@@ -71,18 +135,16 @@ def determine_check_patches(
             if event_patch_match := EVENT_PATCH_PATH_REGEX.match(path):
                 event_file = event_patch_match.group("eventFile")
                 eventid = event_patch_match.group("eventID")
-                event_patch_handler.add_check_patch(event_file, eventid, item.id)
+                event_patch_handler.add_check_patch(
+                    event_file, eventid, item.id, trapid
+                )
 
             if oarc_add_match := OARC_ADD_PATH_REGEX.match(path):
                 stage = oarc_add_match.group("stage")
                 layer = int(oarc_add_match.group("layer"))
 
-                if item.oarcs:
-                    if isinstance(item.oarcs, list):
-                        for oarc in item.oarcs:
-                            stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
-                    else:
-                        stage_patch_handler.add_oarc_for_check(stage, layer, item.oarcs)
+                for oarc in item_oarcs:
+                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
 
 
 def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
@@ -120,7 +182,7 @@ def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
         textadd_patch = {
             "name": f"Item {itemid} Text",
             "type": "textadd",
-            "unk1": 5,
+            "textboxtype": 5,
             "unk2": 1,
         }
 

@@ -53,7 +53,7 @@ cmp w8, #12
 b.eq check_local_sceneflag
 
 cmp w8, #13
-b.eq handle_crest_hit_item_give
+b.eq handle_crest_hit_give_item
 
 cmp w8, #14
 b.eq drop_arrows_bombs_seeds
@@ -84,6 +84,21 @@ b.eq update_crystal_count
 
 cmp w8, #23
 b.eq check_and_modify_item_actor
+
+cmp w8, #24
+b.eq npc_traps
+
+cmp w8, #25
+b.eq spawned_actor_traps
+
+cmp w8, #26
+b.eq fix_tbox_traps
+
+cmp w8, #27
+b.eq handle_effect_timers
+
+cmp w8, #28
+b.eq setup_traps
 
 ret ; this should never be reached
 

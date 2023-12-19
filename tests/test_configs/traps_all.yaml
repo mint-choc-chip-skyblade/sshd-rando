@@ -1,0 +1,12 @@
+World 1:
+  trap_mode: traptacular
+  trappable_items: any_items
+  burn_traps: 'on'
+  curse_traps: 'on'
+  noise_traps: 'on'
+  groose_traps: 'on'
+input_dir: ./base
+output_dir: ./output
+plandomizer: false
+plandomizer_file: null
+seed: TESTTESTTEST

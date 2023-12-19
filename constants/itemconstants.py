@@ -151,3 +151,10 @@ ITEM_COUNTS = {
     PROGRESSIVE_BOW: (0x1F2, 20, 1),
     PROGRESSIVE_SLINGSHOT: (0x1ED, 20, 1),
 }
+
+TRAP_SETTING_TO_ITEM = {
+    "burn_traps": "Burn Trap",
+    "curse_traps": "Curse Trap",
+    "noise_traps": "Noise Trap",
+    "groose_traps": "Groose Trap",
+}
