@@ -286,6 +286,17 @@ pub struct dAcOSwSwordBeam {
 }
 assert_eq_size!([u8; 0x1070], dAcOSwSwordBeam);
 
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcORockBoatMaybe {
+    pub _0:            [u8; 0x4],
+    pub param1:        u32,
+    pub _1:            [u8; 0x1F8],
+    pub spawnCooldown: u32,
+    // TODO
+}
+assert_eq_size!([u8; 0x204], dAcORockBoatMaybe);
+
 // Stage stuff
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -1094,5 +1105,25 @@ pub fn spawn_actor(
         let group_type: u8 = 2; // 0 = other, 1 = scene, 2 = actor, 3 = unk
 
         return allocateNewActor(actorid, connect_parent, actor_param1, group_type);
+    }
+}
+
+#[no_mangle]
+pub fn should_spawn_eldin_platforms(platform_actor_maybe: *mut dAcORockBoatMaybe) -> u32 {
+    unsafe {
+        // If we haven't visited the fire dragon and param1 is zero,
+        // then don't spawn the platform
+        if flag::check_storyflag(19) == 0 && (*platform_actor_maybe).param1 == 0 {
+            return 0;
+        }
+
+        // Replaced code
+        if (*platform_actor_maybe).spawnCooldown > 0 {
+            (*platform_actor_maybe).spawnCooldown -= 1;
+            if (*platform_actor_maybe).spawnCooldown == 0 {
+                return 1;
+            }
+        }
+        return 0;
     }
 }

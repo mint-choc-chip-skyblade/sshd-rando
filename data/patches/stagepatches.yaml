@@ -2545,6 +2545,235 @@ F200: # Eldin main area
       angley: 9200
       anglez: 0
       entrance_id: 5
+  
+  # Post Boko Base Platforms
+  - name: Platform arc
+    type: oarcadd
+    destlayer: 0
+    oarc: FWRockB
+  # Lower Eldin StreamTs
+  - name: Move lower Eldin StreamT start
+    type: objmove
+    id: 0xFD10
+    layer: 4
+    destlayer: 0
+    room: 2
+    objtype: STAG
+  - name: New lower Eldin StreamT 1 # Moving this from layer 4 doesn't work ¯\_(ツ)_/¯
+    type: objadd
+    id: 0xFD0D
+    layer: 0
+    room: 2
+    objtype: STAG
+    object:
+      params1: 0xF032FFFF
+      params2: 0xFFDFFFFF
+      posx: 4300
+      posy: -307.654052734375
+      posz: -4600
+      sizex: 1000
+      sizey: 700
+      sizez: 4000
+      anglex: 0
+      angley: 64990
+      anglez: 65535
+      name: StreamT
+  - name: Move lower Eldin StreamT 2
+    type: objmove
+    id: 0xFD0E
+    layer: 4
+    destlayer: 0
+    room: 2
+    objtype: STAG
+  - name: Move lower Eldin StreamT 3
+    type: objmove
+    id: 0xFD11
+    layer: 4
+    destlayer: 0
+    room: 2
+    objtype: STAG
+  - name: New lower Eldin StreamT end # Moving this from layer 4 doesn't work ¯\_(ツ)_/¯
+    type: objadd
+    id: 0xFD0F
+    layer: 0
+    room: 2
+    objtype: STAG
+    object:
+      params1: 0xF032FFFF
+      params2: 0xFFDFFFFF
+      posx: 500
+      posy: -307.654052734375
+      posz: 2900
+      sizex: 2000
+      sizey: 700
+      sizez: 4000
+      anglex: 0
+      angley: 0
+      anglez: 65535
+      name: StreamT
+  # Lower Eldin platform spawner
+  - name: Lower TgRBoat patch
+    type: objpatch
+    id: 0xFD12
+    layer: 4
+    room: 2
+    objtype: STAG
+    object:
+      params1: 0 # Custom - only spawns when story flag 19 is set
+  - name: Move lower TgRBoat
+    type: objmove
+    id: 0xFD12
+    layer: 4
+    destlayer: 0
+    room: 2
+    objtype: STAG
+  # Sound stuff??
+  - name: Move lower TgSound
+    type: objmove
+    id: 0xFD19
+    layer: 4
+    destlayer: 0
+    room: 2
+    objtype: SNDT
+  # Upper Eldin StreamTs
+  - name: Move upper Eldin StreamT start
+    type: objmove
+    id: 0xFCBB
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: STAG
+  - name: Move upper Eldin StreamT 1
+    type: objmove
+    id: 0xFCB7
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: STAG
+  - name: Move upper Eldin StreamT 2
+    type: objmove
+    id: 0xFCB8
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: STAG
+  - name: Move upper Eldin StreamT 3
+    type: objmove
+    id: 0xFCBA
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: STAG
+  - name: New upper Eldin StreamT 4 # Moving this from layer 4 doesn't work ¯\_(ツ)_/¯
+    type: objadd
+    id: 0xFCB9
+    layer: 0
+    room: 4
+    objtype: STAG
+    object:
+      params1: 0xF032FFFF
+      params2: 0xFFDFFFFF
+      posx: 5400
+      posy: 11346.9013671875
+      posz: -21600
+      sizex: 1000
+      sizey: 2000
+      sizez: 5000
+      anglex: 0
+      angley: 60075
+      anglez: 65535
+      name: StreamT
+  - name: Move upper Eldin StreamT end
+    type: objmove
+    id: 0xFCB6
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: STAG
+  # TgNoEffs
+  - name: Move upper Eldin TgNoEff 1
+    type: objmove
+    id: 0xFCBD
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: STAG
+  - name: Move upper Eldin TgNoEff 2
+    type: objmove
+    id: 0xFCBE
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: STAG
+  - name: Move upper Eldin TgNoEff 3
+    type: objmove
+    id: 0xFCBF
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: STAG
+  # Upper Eldin platform spawner
+  - name: Upper TgRBoat patch
+    type: objpatch
+    id: 0xFCBC
+    layer: 4
+    room: 4
+    objtype: STAG
+    object:
+      params1: 0 # Custom - only spawns when story flag 19 is set
+  - name: Move upper TgRBoat
+    type: objmove
+    id: 0xFCBC
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: STAG
+  # Sound stuff??
+  - name: Move upper TgSound
+    type: objmove
+    id: 0xFCC2
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: SNDT
+  # Add Peahat arc
+  - name: Peahat arc
+    type: oarcadd
+    destlayer: 0
+    oarc: Ph
+  - name: Peahat ring arc
+    type: oarcadd
+    destlayer: 0
+    oarc: PRing
+  # Move Peahats
+  - name: Move peahat 1
+    type: objmove
+    id: 0xFC92
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Move peahat 2
+    type: objmove
+    id: 0xFC90
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Move peahat 3
+    type: objmove
+    id: 0xFC8F
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Move peahat 4
+    type: objmove
+    id: 0xFC91
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: OBJ
 
 F201_1: # Inside volcano
   - name: Layer override

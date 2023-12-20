@@ -97,3 +97,6 @@
 
 .global handle_effect_timers
 .type handle_effect_timers, @function
+
+.global should_spawn_eldin_platforms
+.type should_spawn_eldin_platforms, @function
