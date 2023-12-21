@@ -251,6 +251,33 @@ def patch_goddess_crest(bzs: dict, itemid: int, index: str, trapid: int):
         crest["params2"] = mask_shift_set(crest["params2"], 0xFF, 0x18, itemid)
 
 
+def patch_squirrels(bzs: dict, itemid: int, object_id_str: str, trapid: int):
+    id = int(object_id_str, 16)
+
+    squirrel_tag = next(
+        filter(lambda x: x["name"] == "MssbTag" and x["id"] == id, bzs["STAG"]), None
+    )
+
+    if squirrel_tag is None:
+        print(f"ERROR: No squirrel tag (MssbTag) found to patch")
+        return
+
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
+
+    squirrel_tag["params2"] = mask_shift_set(squirrel_tag["params2"], 0xFF, 0, itemid)
+
+    squirrel_id_to_sceneflag = {
+        0xFCC8: 88,  # 0xA 01
+        0xFC9C: 89,  # 0xA 02
+        0xFCA0: 90,  # 0xA 04
+    }
+    squirrel_tag["params2"] = mask_shift_set(
+        squirrel_tag["params2"], 0xFF, 8, squirrel_id_to_sceneflag[id]
+    )
+
+
 # def patch_tadtone_group(bzs: dict, itemid: int, groupID: str, trapid: int):
 #     groupID = int(groupID, 0)
 #     clefs = filter(
@@ -702,6 +729,13 @@ def patch_and_write_stage(
                                 )
                             elif object_name == "SwSB":
                                 patch_goddess_crest(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
+                            elif object_name == "MssbTag":
+                                patch_squirrels(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,

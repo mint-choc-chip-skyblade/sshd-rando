@@ -100,6 +100,9 @@ b.eq handle_effect_timers
 cmp w8, #28
 b.eq setup_traps
 
+cmp w8, #29
+b.eq give_squirrel_item
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

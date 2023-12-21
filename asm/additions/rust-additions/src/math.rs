@@ -38,6 +38,24 @@ pub struct Vec3s {
 }
 assert_eq_size!([u8; 6], Vec3s);
 
+#[repr(C)]
+#[derive(Copy, Clone, Default)]
+pub struct Matrix {
+    pub xx: f32,
+    pub xy: f32,
+    pub xz: f32,
+    pub xw: f32,
+    pub yx: f32,
+    pub yy: f32,
+    pub yz: f32,
+    pub yw: f32,
+    pub zx: f32,
+    pub zy: f32,
+    pub zz: f32,
+    pub zw: f32,
+}
+assert_eq_size!([u8; 0x30], Matrix);
+
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {

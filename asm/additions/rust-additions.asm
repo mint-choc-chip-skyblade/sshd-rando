@@ -97,3 +97,6 @@
 
 .global handle_effect_timers
 .type handle_effect_timers, @function
+
+.global give_squirrel_item
+.type give_squirrel_item, @function

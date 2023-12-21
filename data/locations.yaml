@@ -680,6 +680,24 @@
     - stage/F020/r0/l0/TBox/86
   cube_region: Lake Floria
 
+- name: The Sky - Form a Squirrel Ring above Volcanic Island
+  original_item: Red Rupee
+  type: Squirrel
+  Paths:
+    - stage/F020/r0/l0/MssbTag/0xFCC8 # actor id
+
+- name: The Sky - Form a Squirrel Ring above Lumpy Pumpkin
+  original_item: Red Rupee
+  type: Squirrel
+  Paths:
+    - stage/F020/r0/l0/MssbTag/0xFC9C # actor id
+
+- name: The Sky - Form a Squirrel Ring above Bamboo Island
+  original_item: Red Rupee
+  type: Squirrel
+  Paths:
+    - stage/F020/r0/l0/MssbTag/0xFCA0 # actor id
+
 - name: The Sky - Chest in Breakable Boulder near Fun Fun Island
   original_item: Silver Rupee
   type:
