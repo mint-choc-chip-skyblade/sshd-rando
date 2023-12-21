@@ -82,6 +82,11 @@ Below is the list of all the flags that the randomizer changes:
 
 ### Sceneflags
 
+#### The Sky
+* 88: Form a Squirrel Ring above Volcanic Island
+* 89: Form a Squirrel Ring above Lumpy Pumpkin
+* 90: Form a Squirrel Ring above Bamboo Island
+
 #### Faron Woods
 * 12: Kikwi Elder's Reward
 

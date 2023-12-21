@@ -287,6 +287,22 @@ pub struct dAcOSwSwordBeam {
 }
 assert_eq_size!([u8; 0x1070], dAcOSwSwordBeam);
 
+// Tags
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dTgMusasabi {
+    pub base:                      ActorBase,
+    pub matrix1:                   math::Matrix,
+    pub matrix2:                   math::Matrix,
+    pub squirrel_count:            u8,
+    pub unused:                    u8,
+    pub some_countdown:            i16,
+    pub param1_rshift4:            u16,
+    pub has_spawned_squirrels:     bool,
+    pub has_spawned_squirrels_LOD: bool,
+}
+assert_eq_size!([u8; 0x1F8], dTgMusasabi);
+
 // Stage stuff
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]

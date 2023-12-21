@@ -722,6 +722,11 @@
   name: Burn Trap
   oarc: null
 
+#####################################################################
+#                      DO NOT USE ITEM ID 255                       #
+# THIS ID IS FREQUENTLY USED TO REPRESENT THE CONCEPT OF NO ITEM ID #
+#####################################################################
+
 # Dummy item to simulate game beatability for logic
 - id: 256
   name: Game Beatable
@@ -891,3 +896,8 @@
   advancement: true
   chain_locations:
    - Lumpy Pumpkin - Goddess Chest on Roof
+
+#####################################################################
+#                      DO NOT USE ITEM ID 511                       #
+# THIS ID IS FREQUENTLY USED TO REPRESENT THE CONCEPT OF NO ITEM ID #
+#####################################################################
