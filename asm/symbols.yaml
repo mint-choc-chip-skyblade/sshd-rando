@@ -88,6 +88,7 @@ main:
 
 
     # Functions
+    debugPrint_128: 0x710051bf54
     strlen: 0x710105f5c0
     sinf: 0x710105f830
     cosf: 0x710105f820

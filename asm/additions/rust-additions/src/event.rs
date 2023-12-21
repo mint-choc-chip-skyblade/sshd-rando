@@ -2,8 +2,11 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
-use crate::yuzu;
+use crate::debug;
 
+use core::arch::asm;
+use core::ffi::{c_char, c_void};
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -93,3 +96,18 @@ pub struct EventFlowElement {
     pub param5:  u16,
 }
 assert_eq_size!([u8; 0x10], EventFlowElement);
+
+// IMPORTANT: when using vanilla code, the start point must be declared in
+// symbols.yaml and then added to this extern block.
+extern "C" {
+    // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
+}
+
+// IMPORTANT: when adding functions here that need to get called from the game,
+// add `#[no_mangle]` and add a .global *symbolname* to
+// additions/rust-additions.asm
+
+////////////////////////
+// ADD FUNCTIONS HERE //
+////////////////////////

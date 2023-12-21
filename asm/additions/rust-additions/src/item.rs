@@ -3,15 +3,16 @@
 #![allow(unused)]
 
 use crate::actor;
+use crate::debug;
 use crate::event;
 use crate::flag;
 use crate::math;
 use crate::player;
 use crate::savefile;
-use crate::yuzu;
 
 use core::arch::asm;
-use core::ffi::c_void;
+use core::ffi::{c_char, c_void};
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -94,6 +95,7 @@ extern "C" {
     static mut NUMBER_OF_ITEMS: u32;
 
     // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn sinf(x: f32) -> f32;
     fn cosf(x: f32) -> f32;
     fn resolveItemMaybe(itemid: u64) -> u64;
@@ -305,8 +307,7 @@ pub fn unpack_custom_item_params(item_actor: *mut dAcItem) -> (u32, u32, u32, u3
 #[no_mangle]
 pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
     unsafe {
-        // Get necessary params for checking if this item has a custom
-        // flag
+        // Get necessary params for checking if this item has a custom flag
         let (flag, sceneindex, flag_space_trigger, original_itemid) =
             unpack_custom_item_params(item_actor);
 
