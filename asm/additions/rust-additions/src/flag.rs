@@ -3,11 +3,12 @@
 #![allow(unused)]
 
 use crate::actor;
+use crate::debug;
 use crate::savefile;
-use crate::yuzu;
 
 use core::arch::asm;
-use core::ffi::c_void;
+use core::ffi::{c_char, c_void};
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -337,6 +338,8 @@ extern "C" {
     static STARTFLAGS: [u16; 1000];
     static START_COUNTS: [StartCount; 50];
 
+    // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn SceneflagMgr__setFlag(sceneflag_mgr: *mut SceneflagMgr, roomid: u32, flag: u32);
     fn SceneflagMgr__unsetFlag(sceneflag_mgr: *mut SceneflagMgr, roomid: u32, flag: u32);
     fn SceneflagMgr__checkFlag(sceneflag_mgr: *mut SceneflagMgr, roomid: u32, flag: u32) -> u16;
@@ -489,15 +492,15 @@ pub fn check_night_storyflag() -> bool {
 
 #[no_mangle]
 pub fn update_day_night_storyflag() {
-    // yuzu_print("Updating night flag");
+    // debug::debug_print("Updating night flag");
 
     unsafe {
         // 899 == day/night storyflag
         if NEXT_NIGHT == 1 {
-            // yuzu_print("Setting night flag");
+            // debug::debug_print("Setting night flag");
             set_storyflag(899);
         } else {
-            // yuzu_print("Unsetting night flag");
+            // debug::debug_print("Unsetting night flag");
             unset_storyflag(899);
         }
 

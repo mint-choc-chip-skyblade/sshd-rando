@@ -2,14 +2,15 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use crate::debug;
 use crate::flag;
 use crate::math;
 use crate::savefile;
-use crate::yuzu;
 
 use core::arch::asm;
-use core::ffi::c_void;
+use core::ffi::{c_char, c_void};
 use core::ptr::from_ref;
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -1056,6 +1057,7 @@ extern "C" {
     static mut ACTORBASE_SUBTYPE: u8;
 
     // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn allocateNewActor(
         actorid: ACTORID,
         connect_parent: *const ActorTreeNode,

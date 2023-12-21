@@ -3,10 +3,11 @@
 #![allow(unused)]
 
 use crate::actor;
-use crate::yuzu;
+use crate::debug;
 
 use core::arch::asm;
-use core::ffi::c_void;
+use core::ffi::{c_char, c_void};
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -84,11 +85,8 @@ assert_eq_size!([u8; 0x64DC], dPlayer);
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
-
-    //////////////////////
-    // ADD EXTERNS HERE //
-    //////////////////////
-
+    // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
