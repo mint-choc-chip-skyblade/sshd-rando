@@ -2552,6 +2552,34 @@ F200: # Eldin main area
     destlayer: 0
     oarc: FWRockB
   # Lower Eldin StreamTs
+  # For some reason, moving the StreamT objects to layer 0
+  # makes them not behave correctly? These angle patches
+  # fix their paths to be good enough (otherwise they clip
+  # into walls or just straight up miss the next StreamT)
+  - name: Patch lower Eldin StreamT start angle
+    type: objpatch
+    id: 0xFD10
+    layer: 4
+    room: 2
+    objtype: STAG
+    object:
+      angley: 5000
+  - name: Patch lower Eldin StreamT 3 angle
+    type: objpatch
+    id: 0xFD11
+    layer: 4
+    room: 2
+    objtype: STAG
+    object:
+      angley: 56000
+  - name: Patch lower Eldin StreamT end angle
+    type: objpatch
+    id: 0xFD0F
+    layer: 4
+    room: 2
+    objtype: STAG
+    object:
+      angley: 2000
   - name: Move lower Eldin StreamT start
     type: objmove
     id: 0xFD10
@@ -2575,7 +2603,7 @@ F200: # Eldin main area
       sizey: 700
       sizez: 4000
       anglex: 0
-      angley: 64990
+      angley: 64000
       anglez: 65535
       name: StreamT
   - name: Move lower Eldin StreamT 2
@@ -2592,34 +2620,14 @@ F200: # Eldin main area
     destlayer: 0
     room: 2
     objtype: STAG
-  - name: New lower Eldin StreamT end # Moving this from layer 4 doesn't work ¯\_(ツ)_/¯
-    type: objadd
+  - name: Move lower Eldin StreamT end
+    type: objmove
     id: 0xFD0F
-    layer: 0
-    room: 2
-    objtype: STAG
-    object:
-      params1: 0xF032FFFF
-      params2: 0xFFDFFFFF
-      posx: 500
-      posy: -307.654052734375
-      posz: 2900
-      sizex: 2000
-      sizey: 700
-      sizez: 4000
-      anglex: 0
-      angley: 0
-      anglez: 65535
-      name: StreamT
-  # Lower Eldin platform spawner
-  - name: Lower TgRBoat patch
-    type: objpatch
-    id: 0xFD12
     layer: 4
+    destlayer: 0
     room: 2
     objtype: STAG
-    object:
-      params1: 0 # Custom - only spawns when story flag 19 is set
+  # Lower Eldin platform spawner
   - name: Move lower TgRBoat
     type: objmove
     id: 0xFD12
@@ -2636,6 +2644,22 @@ F200: # Eldin main area
     room: 2
     objtype: SNDT
   # Upper Eldin StreamTs
+  - name: Patch upper Eldin StreamT 3 angle
+    type: objpatch
+    id: 0xFCBA
+    layer: 4
+    room: 4
+    objtype: STAG
+    object:
+      angley: 65000
+  - name: Patch upper Eldin StreamT 5 angle
+    type: objpatch
+    id: 0xFCB6
+    layer: 4
+    room: 4
+    objtype: STAG
+    object:
+      angley: 64500
   - name: Move upper Eldin StreamT start
     type: objmove
     id: 0xFCBB
@@ -2664,25 +2688,13 @@ F200: # Eldin main area
     destlayer: 0
     room: 4
     objtype: STAG
-  - name: New upper Eldin StreamT 4 # Moving this from layer 4 doesn't work ¯\_(ツ)_/¯
-    type: objadd
+  - name: Move upper Eldin StreamT 4
+    type: objmove
     id: 0xFCB9
-    layer: 0
+    layer: 4
+    destlayer: 0
     room: 4
     objtype: STAG
-    object:
-      params1: 0xF032FFFF
-      params2: 0xFFDFFFFF
-      posx: 5400
-      posy: 11346.9013671875
-      posz: -21600
-      sizex: 1000
-      sizey: 2000
-      sizez: 5000
-      anglex: 0
-      angley: 60075
-      anglez: 65535
-      name: StreamT
   - name: Move upper Eldin StreamT end
     type: objmove
     id: 0xFCB6
@@ -2713,14 +2725,6 @@ F200: # Eldin main area
     room: 4
     objtype: STAG
   # Upper Eldin platform spawner
-  - name: Upper TgRBoat patch
-    type: objpatch
-    id: 0xFCBC
-    layer: 4
-    room: 4
-    objtype: STAG
-    object:
-      params1: 0 # Custom - only spawns when story flag 19 is set
   - name: Move upper TgRBoat
     type: objmove
     id: 0xFCBC

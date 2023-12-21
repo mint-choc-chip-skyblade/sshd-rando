@@ -1066,6 +1066,8 @@ extern "C" {
     static mut ACTORBASE_ROOMID: u32;
     static mut ACTORBASE_SUBTYPE: u8;
 
+    static mut CURRENT_STAGE_NAME: [u8; 8];
+
     // Functions
     fn allocateNewActor(
         actorid: ACTORID,
@@ -1111,9 +1113,11 @@ pub fn spawn_actor(
 #[no_mangle]
 pub fn should_spawn_eldin_platforms(platform_actor_maybe: *mut dAcORockBoatMaybe) -> u32 {
     unsafe {
-        // If we haven't visited the fire dragon and param1 is zero,
-        // then don't spawn the platform
-        if flag::check_storyflag(19) == 0 && (*platform_actor_maybe).param1 == 0 {
+        // If we haven't visited the fire dragon and aren't in boko base,
+        // then don't spawn the platforms
+        if flag::check_storyflag(19) == 0
+            && (&CURRENT_STAGE_NAME[..5] == b"F200\0" || &CURRENT_STAGE_NAME[..7] == b"F201_1\0")
+        {
             return 0;
         }
 
