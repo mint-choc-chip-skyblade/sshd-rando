@@ -2545,7 +2545,7 @@
 305-MountainF3:
   - name: Boko Base entry
     type: flowpatch
-    index: 64
+    index: 58
     flow:
       next: Show Boko Base Entry Question
   - name: Boko Base exit

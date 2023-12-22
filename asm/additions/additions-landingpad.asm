@@ -103,6 +103,9 @@ b.eq setup_traps
 cmp w8, #29
 b.eq give_squirrel_item
 
+cmp w8, #30
+b.eq should_spawn_eldin_platforms
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

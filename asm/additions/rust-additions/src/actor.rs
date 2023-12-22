@@ -287,6 +287,17 @@ pub struct dAcOSwSwordBeam {
 }
 assert_eq_size!([u8; 0x1070], dAcOSwSwordBeam);
 
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcORockBoatMaybe {
+    pub _0:            [u8; 0x4],
+    pub param1:        u32,
+    pub _1:            [u8; 0x1F8],
+    pub spawnCooldown: u32,
+    // TODO
+}
+assert_eq_size!([u8; 0x204], dAcORockBoatMaybe);
+
 // Tags
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -1072,6 +1083,8 @@ extern "C" {
     static mut ACTORBASE_ROOMID: u32;
     static mut ACTORBASE_SUBTYPE: u8;
 
+    static mut CURRENT_STAGE_NAME: [u8; 8];
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn allocateNewActor(
@@ -1112,5 +1125,27 @@ pub fn spawn_actor(
         let group_type: u8 = 2; // 0 = other, 1 = scene, 2 = actor, 3 = unk
 
         return allocateNewActor(actorid, connect_parent, actor_param1, group_type);
+    }
+}
+
+#[no_mangle]
+pub fn should_spawn_eldin_platforms(platform_actor_maybe: *mut dAcORockBoatMaybe) -> u32 {
+    unsafe {
+        // If we haven't visited the fire dragon and aren't in boko base,
+        // then don't spawn the platforms
+        if flag::check_storyflag(19) == 0
+            && (&CURRENT_STAGE_NAME[..5] == b"F200\0" || &CURRENT_STAGE_NAME[..7] == b"F201_1\0")
+        {
+            return 0;
+        }
+
+        // Replaced code
+        if (*platform_actor_maybe).spawnCooldown > 0 {
+            (*platform_actor_maybe).spawnCooldown -= 1;
+            if (*platform_actor_maybe).spawnCooldown == 0 {
+                return 1;
+            }
+        }
+        return 0;
     }
 }
