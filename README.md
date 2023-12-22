@@ -32,7 +32,6 @@ information related to the randomizer (usually checks)
 
 ### Not yet implemented
 * Shop randomization
-* Bokoblin Base randomization
 * Flooded Faron Woods randomization
 * Heart containers as checks
 * Isle of Songs crest as checks
