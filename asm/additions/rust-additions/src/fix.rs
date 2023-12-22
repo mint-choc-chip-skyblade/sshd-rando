@@ -3,13 +3,14 @@
 #![allow(unused)]
 
 use crate::actor;
+use crate::debug;
 use crate::flag;
 use crate::lyt;
 use crate::player;
-use crate::yuzu;
 
 use core::arch::asm;
-use core::ffi::c_void;
+use core::ffi::{c_char, c_void};
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -39,6 +40,7 @@ extern "C" {
     static LYT_MSG_WINDOW: *mut lyt::dLytMsgWindow;
 
     // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn strlen(string: *mut u8) -> u64;
     fn strncmp(dest: *mut u8, src: *mut u8, size: u64) -> u64;
     fn dAcOlightLine__inUpdate(light_pillar_actor: *mut actor::dAcOlightLine, unk: u64);
@@ -70,7 +72,7 @@ pub fn fix_item_get_under_water() {
 
         // If in water, allow immediate item gets
         if ((*PLAYER_PTR).action_flags >> 18) & 0x1 == 1 {
-            // yuzu_print_number((*PLAYER_PTR).action_flags, 16);
+            // debug::debug_print_num("action_flags: ", (*PLAYER_PTR).action_flags);
             asm!("mov w25, #0"); // allow collecting items under water
 
             // If should be a big item get animation, make it a small one

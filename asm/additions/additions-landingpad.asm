@@ -101,6 +101,9 @@ cmp w8, #28
 b.eq setup_traps
 
 cmp w8, #29
+b.eq give_squirrel_item
+
+cmp w8, #30
 b.eq should_spawn_eldin_platforms
 
 ret ; this should never be reached

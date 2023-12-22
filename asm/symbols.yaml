@@ -86,8 +86,10 @@ main:
     ITEM_GET_BOTTLE_POUCH_SLOT: 0x71015904e8
     NUMBER_OF_ITEMS: 0x71018265fc
 
+    SQUIRRELS_CAUGHT_THIS_PLAY_SESSION: 0x71018285e2
 
     # Functions
+    debugPrint_128: 0x710051bf54
     strlen: 0x710105f5c0
     sinf: 0x710105f830
     cosf: 0x710105f820
@@ -101,12 +103,14 @@ main:
     allocateNewActor: 0x7100f14500
 
     dPlayer__putItemAway: 0x7100a1c6d4
+    dAcItem__determineFinalItemid: 0x71004ea050
+    dAcOlightLine__inUpdate: 0x7100836380
+    dAcOmusasabi__stateWaitEnter: 0x7100861db4
 
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
     dAcItem__spawnItemWithParams: 0x71004eba70
+
     spawnDrop: 0x71004ebc5c
-    dAcOlightLine__inUpdate: 0x7100836380
-    resolveItemMaybe: 0x71004ea050
     playFanfareMaybe: 0x7100f37c5c
 
 

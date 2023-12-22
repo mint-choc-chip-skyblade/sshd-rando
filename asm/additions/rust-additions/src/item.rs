@@ -3,15 +3,16 @@
 #![allow(unused)]
 
 use crate::actor;
+use crate::debug;
 use crate::event;
 use crate::flag;
 use crate::math;
 use crate::player;
 use crate::savefile;
-use crate::yuzu;
 
 use core::arch::asm;
-use core::ffi::c_void;
+use core::ffi::{c_char, c_void};
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -93,10 +94,14 @@ extern "C" {
     static mut ITEM_GET_BOTTLE_POUCH_SLOT: u32;
     static mut NUMBER_OF_ITEMS: u32;
 
+    static mut SQUIRRELS_CAUGHT_THIS_PLAY_SESSION: bool;
+
     // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn sinf(x: f32) -> f32;
     fn cosf(x: f32) -> f32;
-    fn resolveItemMaybe(itemid: u64) -> u64;
+    fn dAcItem__determineFinalItemid(itemid: u64) -> u64;
+    fn dAcOmusasabi__stateWaitEnter();
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -104,16 +109,22 @@ extern "C" {
 // additions/rust-additions.asm
 #[no_mangle]
 pub fn give_item(itemid: u8) {
+    give_item_with_sceneflag(itemid, 0xFF);
+}
+
+#[no_mangle]
+pub fn give_item_with_sceneflag(itemid: u8, sceneflag: u8) {
     unsafe {
         NUMBER_OF_ITEMS = 0;
         ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
 
-        let new_itemid = resolveItemMaybe(itemid as u64);
+        let new_itemid = dAcItem__determineFinalItemid(itemid as u64);
+        let param1: u32 = (new_itemid as u32) | (sceneflag as u32) << 10 | 0x580000;
 
         actor::spawn_actor(
             actor::ACTORID::ITEM,
             (*ROOM_MGR).roomid.into(),
-            new_itemid as u32 | 0x5BFC00,
+            param1,
             core::ptr::null_mut(),
             core::ptr::null_mut(),
             core::ptr::null_mut(),
@@ -305,8 +316,7 @@ pub fn unpack_custom_item_params(item_actor: *mut dAcItem) -> (u32, u32, u32, u3
 #[no_mangle]
 pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
     unsafe {
-        // Get necessary params for checking if this item has a custom
-        // flag
+        // Get necessary params for checking if this item has a custom flag
         let (flag, sceneindex, flag_space_trigger, original_itemid) =
             unpack_custom_item_params(item_actor);
 
@@ -387,6 +397,36 @@ pub fn activation_checks_for_goddess_walls() -> bool {
         }
 
         return false;
+    }
+}
+
+#[no_mangle]
+pub fn give_squirrel_item(musasabi_tag: *mut actor::dTgMusasabi) {
+    unsafe {
+        if SQUIRRELS_CAUGHT_THIS_PLAY_SESSION && (*musasabi_tag).unused == 0 {
+            let itemid: u8 = ((*musasabi_tag).base.members.param2 & 0xFF) as u8;
+            let sceneflag: u8 = ((*musasabi_tag).base.members.param2 >> 8 & 0xFF) as u8;
+
+            if sceneflag != u8::MAX && flag::check_local_sceneflag(sceneflag as u32) == 0 {
+                give_item_with_sceneflag(itemid, sceneflag);
+            } else {
+                give_item(flag::ITEMFLAGS::RED_RUPEE as u8);
+            }
+
+            // Keep track of if the item has alreeady been given
+            (*musasabi_tag).unused = 1;
+        }
+
+        SQUIRRELS_CAUGHT_THIS_PLAY_SESSION = false;
+
+        // Replaced instructions
+        let current_action: player::PLAYER_ACTIONS = (*PLAYER_PTR).current_action;
+
+        if current_action != player::PLAYER_ACTIONS::FREE_FALL
+            && current_action != player::PLAYER_ACTIONS::USING_SAILCLOTH
+        {
+            (*musasabi_tag).has_spawned_squirrels = false;
+        }
     }
 }
 

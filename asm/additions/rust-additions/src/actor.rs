@@ -2,14 +2,15 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use crate::debug;
 use crate::flag;
 use crate::math;
 use crate::savefile;
-use crate::yuzu;
 
 use core::arch::asm;
-use core::ffi::c_void;
+use core::ffi::{c_char, c_void};
 use core::ptr::from_ref;
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -296,6 +297,22 @@ pub struct dAcORockBoatMaybe {
     // TODO
 }
 assert_eq_size!([u8; 0x204], dAcORockBoatMaybe);
+
+// Tags
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dTgMusasabi {
+    pub base:                      ActorBase,
+    pub matrix1:                   math::Matrix,
+    pub matrix2:                   math::Matrix,
+    pub squirrel_count:            u8,
+    pub unused:                    u8,
+    pub some_countdown:            i16,
+    pub param1_rshift4:            u16,
+    pub has_spawned_squirrels:     bool,
+    pub has_spawned_squirrels_LOD: bool,
+}
+assert_eq_size!([u8; 0x1F8], dTgMusasabi);
 
 // Stage stuff
 #[repr(C, packed(1))]
@@ -1069,6 +1086,7 @@ extern "C" {
     static mut CURRENT_STAGE_NAME: [u8; 8];
 
     // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn allocateNewActor(
         actorid: ACTORID,
         connect_parent: *const ActorTreeNode,

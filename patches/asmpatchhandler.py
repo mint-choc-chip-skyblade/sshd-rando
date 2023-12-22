@@ -4,9 +4,12 @@ from constants.itemconstants import ITEM_ITEMFLAGS, ITEM_STORYFLAGS, ITEM_COUNTS
 from filepathconstants import (
     ASM_ADDITIONS_DIFFS_PATH,
     ASM_PATCHES_DIFFS_PATH,
+    ASM_SDK_DIFFS_PATH,
     MAIN_NSO_FILE_PATH,
     OUTPUT_ADDITIONAL_SUBSDK,
     OUTPUT_MAIN_NSO,
+    OUTPUT_SDK_NSO,
+    SDK_FILE_PATH,
     STARTFLAGS_FILE_PATH,
     SUBSDK1_FILE_PATH,
 )
@@ -25,6 +28,12 @@ from patches.conditionalpatchhandler import ConditionalPatchHandler
 from sslib.fs_helpers import write_bytes, write_str, write_u32, write_u8
 from sslib.utils import write_bytes_create_dirs
 from sslib.yaml import yaml_load, yaml_write
+
+
+# Adds a patch to nnSdk to route all vfprintf calls to the debug output
+# These will be printed to the console on yuzu
+# These prints will spam the console so don't leave this set to True
+ASM_DEBUG_PRINT = False
 
 
 class ASMPatchHandler:
@@ -209,6 +218,17 @@ class ASMPatchHandler:
 
     # Applies both asm patches and additions.
     def patch_all_asm(self, world: World, onlyif_handler: ConditionalPatchHandler):
+        if ASM_DEBUG_PRINT:
+            print("Debug print asm patches")
+            self.patch_asm(
+                world,
+                onlyif_handler,
+                SDK_FILE_PATH,
+                ASM_SDK_DIFFS_PATH,
+                OUTPUT_SDK_NSO,
+                SDK_NSO_OFFSETS,
+            )
+
         print("Applying asm patches")
         self.patch_asm(
             world,

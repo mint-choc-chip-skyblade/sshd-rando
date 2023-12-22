@@ -6,12 +6,14 @@
 #![allow(unused)]
 
 use core::arch::asm;
-use core::ffi::c_void;
+use core::ffi::{c_char, c_void};
 use core::str;
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 mod actor;
 mod ammo;
+mod debug;
 mod entrance;
 mod event;
 mod fix;
@@ -22,7 +24,6 @@ mod math;
 mod player;
 mod savefile;
 mod traps;
-mod yuzu;
 
 // repr(C) prevents rust from reordering struct fields.
 // packed(1) prevents rust from aligning structs to the size of the largest
@@ -76,6 +77,9 @@ extern "C" {
 
     // Custom symbols
     static mut TRAP_ID: u8;
+
+    // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,

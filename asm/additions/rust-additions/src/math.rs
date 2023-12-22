@@ -2,10 +2,11 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
-use crate::yuzu;
+use crate::debug;
 
 use core::arch::asm;
-use core::ffi::c_void;
+use core::ffi::{c_char, c_void};
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -37,14 +38,29 @@ pub struct Vec3s {
 }
 assert_eq_size!([u8; 6], Vec3s);
 
+#[repr(C)]
+#[derive(Copy, Clone, Default)]
+pub struct Matrix {
+    pub xx: f32,
+    pub xy: f32,
+    pub xz: f32,
+    pub xw: f32,
+    pub yx: f32,
+    pub yy: f32,
+    pub yz: f32,
+    pub yw: f32,
+    pub zx: f32,
+    pub zy: f32,
+    pub zz: f32,
+    pub zw: f32,
+}
+assert_eq_size!([u8; 0x30], Matrix);
+
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
-
-    //////////////////////
-    // ADD EXTERNS HERE //
-    //////////////////////
-
+    // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,

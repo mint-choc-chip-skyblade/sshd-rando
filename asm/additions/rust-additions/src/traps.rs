@@ -3,17 +3,18 @@
 #![allow(unused)]
 
 use crate::actor;
+use crate::debug;
 use crate::event;
 use crate::flag;
 use crate::item;
 use crate::math;
 use crate::player;
 use crate::savefile;
-use crate::yuzu;
 
 use core::arch::asm;
-use core::ffi::c_void;
+use core::ffi::{c_char, c_void};
 use core::ptr::{from_ref, read_unaligned};
+use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -54,6 +55,7 @@ extern "C" {
     static mut TRAP_DURATION: u16;
 
     // Functions
+    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn playFanfareMaybe(soundMgr: *mut c_void, soundIndex: u16) -> u64;
     fn dPlayer__putItemAway(player: *mut player::dPlayer, unk1: u64, unk2: u64) -> i32;
 }
