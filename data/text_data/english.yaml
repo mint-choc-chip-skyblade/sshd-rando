@@ -710,7 +710,7 @@
 - name: Whip
   standard: Whip
   pretty: the <Whip>
-  cryptic: a <r<small sonicboom>> 
+  cryptic: a <r<small sonicboom>>
   plurality: Singular
 
 - name: Fireshield Earrings
@@ -1202,27 +1202,32 @@
 - name: Knight Academy - Crystal in Link's Room
   standard: Knight Academy - Crystal in Link's Room
   pretty: Knight Academy - Crystal in Link's Room
-  cryptic: the <r<crystal on the hero's desk>> 
+  cryptic: the <r<crystal on the hero's desk>>
 
 - name: Knight Academy - Crystal in Knight Academy Plant
   standard: Knight Academy - Crystal in Knight Academy Plant
   pretty: Knight Academy - Crystal in Knight Academy Plant
-  cryptic: the <r<crystal hidden in a plant>> 
+  cryptic: the <r<crystal hidden in a plant>>
 
 - name: Knight Academy - Crystal in Zelda's Room
   standard: Knight Academy - Crystal in Zelda's Room
   pretty: Knight Academy - Crystal in Zelda's Room
-  cryptic: the <r<crystal in a lover's room>> 
+  cryptic: the <r<crystal in a lover's room>>
 
 - name: Upper Skyloft - Owlan's Gift
   standard: Upper Skyloft - Owlan's Gift
   pretty: Upper Skyloft - Owlan's Gift
-  cryptic: a <r<gift from a professor>> 
+  cryptic: a <r<gift from a professor>>
+
+- name: Upper Skyloft - Rescue Remlit above Knight Academy
+  standard: Upper Skyloft - Rescue Remlit above Knight Academy
+  pretty: Upper Skyloft - Rescue Remlit above Knight Academy
+  cryptic: disturbing a <r<sleepy cat>>
 
 - name: Upper Skyloft - Chest near Goddess Statue
   standard: Upper Skyloft - Chest near Goddess Statue
   pretty: Upper Skyloft - Chest near Goddess Statue
-  cryptic: the <r<northmost chest on Skyloft>> 
+  cryptic: the <r<northmost chest on Skyloft>>
 
 - name: Upper Skyloft - Pumpkin Archery -- 600 Points
   standard: Upper Skyloft - Pumpkin Archery -- 600 Points
@@ -2248,7 +2253,7 @@
 - name: Eldin Volcano - Rupee on Ledge before First Room
   standard: Eldin Volcano - Rupee on Ledge before First Room
   pretty: Eldin Volcano - Rupee on Ledge before First Room
-  cryptic: the <r<rupee furthest from the volcano>> 
+  cryptic: the <r<rupee furthest from the volcano>>
 
 - name: Eldin Volcano - Chest behind Bombable Wall in First Room
   standard: Eldin Volcano - Chest behind Bombable Wall in First Room
@@ -2868,7 +2873,7 @@
 - name: Pirate Stronghold - Rupee on East Sea Pillar
   standard: Pirate Stronghold - Rupee on East Sea Pillar
   pretty: Pirate Stronghold - Rupee on East Sea Pillar
-  cryptic: a <r<rupee atop a giant skull>> 
+  cryptic: a <r<rupee atop a giant skull>>
 
 - name: Pirate Stronghold - Rupee on West Sea Pillar
   standard: Pirate Stronghold - Rupee on West Sea Pillar

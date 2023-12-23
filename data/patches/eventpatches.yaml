@@ -1057,12 +1057,25 @@
     flow: {}
     cases:
       - 51 # Check if already given item
-      - 7 # Horwell asks if you'll save Mia
-  # - name: Don't set flags to start Save Mia quest
-  #   type: flowpatch
-  #   index: 44
-  #   flow:
-  #     next: -1
+      - Show Attention Mark before saving Mia
+  - name: Show Attention Mark before saving Mia
+    type: attentionmark
+    flow:
+      next: 7 # Horwell asks if you'll save Mia
+  - name: Remove camera panning after saving Mia
+    type: flowpatch
+    index: 49
+    flow:
+      next: 242
+  - name: Horwell item
+    type: flowpatch
+    index: 292
+    flow:
+      type: type3
+      subType: 0
+      param2: 0 # item
+      next: -1
+      param3: 9
 
 109-TakeGoron:
   - name: Peater's Crystal 1

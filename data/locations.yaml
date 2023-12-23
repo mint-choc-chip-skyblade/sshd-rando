@@ -69,6 +69,14 @@
     - oarc/F000/l4
     - oarc/F000/l6
 
+- name: Upper Skyloft - Rescue Remlit above Knight Academy
+  original_item: Red Rupee
+  type: NPC
+  Paths:
+    - event/108-ShinkanA/292
+    - oarc/F000/l4
+    - oarc/F000/l6
+
 - name: Upper Skyloft - Chest near Goddess Statue
   original_item: Red Rupee
   type:
