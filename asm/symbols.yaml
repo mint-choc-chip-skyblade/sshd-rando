@@ -113,6 +113,9 @@ main:
     spawnDrop: 0x71004ebc5c
     playFanfareMaybe: 0x7100f37c5c
 
+    dAcOrdinaryNpc__update: 0x7100a0cd7c
+    dAcNpcSkn2__addInteractionTarget: 0x710065ff60
+
 
     # Custom Symbols
     additions_jumptable: 0x710065a070

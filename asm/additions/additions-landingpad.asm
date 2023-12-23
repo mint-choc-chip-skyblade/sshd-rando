@@ -106,6 +106,9 @@ b.eq give_squirrel_item
 cmp w8, #30
 b.eq should_spawn_eldin_platforms
 
+cmp w8, #31
+b.eq horwell_always_interactable
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
