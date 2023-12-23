@@ -1035,6 +1035,34 @@
     type: textpatch
     index: 69 # switch is true
     text: "\x0E\x01\x09\x04\x00\x01Oh, <heroname>, something tells me you\nmight know some <b<plant life>> I could\nresearch! Please meet me \n<r<in the Knight Academy>>!"
+  - name: Horwell Mia start
+    type: flowpatch
+    index: 9
+    flow: {}
+    cases:
+      - Can talk to Horwell
+      - Can talk to Horwell
+  - name: Can talk to Horwell
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 3
+      param2: -1
+      next: 48 # Check if Mia has been saved
+      param3: 42
+  - name: Mia saved switch
+    type: flowpatch
+    index: 48
+    flow: {}
+    cases:
+      - 51 # Check if already given item
+      - 7 # Horwell asks if you'll save Mia
+  # - name: Don't set flags to start Save Mia quest
+  #   type: flowpatch
+  #   index: 44
+  #   flow:
+  #     next: -1
 
 109-TakeGoron:
   - name: Peater's Crystal 1

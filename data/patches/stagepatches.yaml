@@ -20,6 +20,14 @@ F000: # Skyloft
     type: oarcadd
     oarc: Shinkan_motion
     destlayer: 6
+  - name: Horwell Model on layer 4
+    type: oarcadd
+    oarc: ShinkanB
+    destlayer: 4
+  - name: Horwell Model on layer 6
+    type: oarcadd
+    oarc: ShinkanB
+    destlayer: 6
 
   # F000 oarcdeletes
   - name: unnecessary oarcs
@@ -92,6 +100,105 @@ F000: # Skyloft
     layer: 6
 
   # F000 objadds
+  - name: Horwell on layer 4
+    type: objadd
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFDFF
+      params2: 0xFF5FFFFF
+      posx: -4458.7373046875
+      posy: 1717.4801025390625
+      posz: -7820.41455078125
+      anglex: 7423
+      angley: 62260
+      anglez: 10801
+      id: 0x05C6
+      name: NpcSkn2
+  - name: Horwell on layer 6
+    type: objadd
+    layer: 6
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFDFF
+      params2: 0xFF5FFFFF
+      posx: -4458.7373046875
+      posy: 1717.4801025390625
+      posz: -7820.41455078125
+      anglex: 7423
+      angley: 62260
+      anglez: 10801
+      id: 0x05C6
+      name: NpcSkn2
+  - name: Mia on layer 4
+    type: objadd
+    layer: 4
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFF0A1C1
+      params2: 0xFFFFFFFF
+      posx: -8431.8837890625
+      posy: 2853.16015625
+      posz: -7843.978515625
+      anglex: 0
+      angley: 32768
+      anglez: 0
+      id: 0xFDC8
+      name: ERemly
+  - name: Mia on layer 6
+    type: objadd
+    layer: 6
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFF0A1C1
+      params2: 0xFFFFFFFF
+      posx: -8431.8837890625
+      posy: 2853.16015625
+      posz: -7843.978515625
+      anglex: 0
+      angley: 32768
+      anglez: 0
+      id: 0xFDC8
+      name: ERemly
+  - name: Move TgMien 1 to layer 0
+    type: objmove
+    id: 0xFDEE
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Move TgMien 2 to layer 0
+    type: objmove
+    id: 0xFDF1
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Move TgMien 3 to layer 0
+    type: objmove
+    id: 0xFDEF
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Move TgMien 4 to layer 0
+    type: objmove
+    id: 0xFDF0
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Move NpcInv to layer 0
+    type: objmove
+    id: 0xFDE2
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: OBJ
   - name: Owlan on layer 6
     type: objadd
     layer: 6
