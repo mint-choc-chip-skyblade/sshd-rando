@@ -109,6 +109,9 @@ b.eq should_spawn_eldin_platforms
 cmp w8, #31
 b.eq horwell_always_interactable
 
+cmp w8, #32
+b.eq rotate_freestanding_items
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

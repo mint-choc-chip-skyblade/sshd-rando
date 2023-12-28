@@ -37,7 +37,9 @@ pub struct dAcItem {
     pub actor_list_element:      u32,
     pub _2:                      [u8; 816],
     pub freestanding_y_offset:   f32,
-    pub _3:                      [u8; 44],
+    pub _3:                      [u8; 32],
+    pub rot_increment:           math::Vec3s,
+    pub model_rot:               math::Vec3s,
     pub final_determined_itemid: u16,
     pub _4:                      [u8; 10],
     pub prevent_drop:            u8,
@@ -100,6 +102,7 @@ extern "C" {
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn sinf(x: f32) -> f32;
     fn cosf(x: f32) -> f32;
+    fn getRotFromDegrees(deg: f32) -> u16;
     fn dAcItem__determineFinalItemid(itemid: u64) -> u64;
     fn dAcOmusasabi__stateWaitEnter();
 }
@@ -426,6 +429,16 @@ pub fn give_squirrel_item(musasabi_tag: *mut actor::dTgMusasabi) {
             && current_action != player::PLAYER_ACTIONS::USING_SAILCLOTH
         {
             (*musasabi_tag).has_spawned_squirrels = false;
+        }
+    }
+}
+
+#[no_mangle]
+pub fn rotate_freestanding_items(item_actor: *mut dAcItem) {
+    unsafe {
+        // Spin items if not a stamina fruit
+        if (*item_actor).itemid != 42 {
+            (*item_actor).rot_increment.x = getRotFromDegrees(1.5);
         }
     }
 }
