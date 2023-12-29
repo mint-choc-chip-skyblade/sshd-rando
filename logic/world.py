@@ -504,7 +504,6 @@ class World:
     # Remove or add junk to the item pool until the total number of
     # items is equal to the number of currently empty locations
     def sanitize_item_pool(self) -> None:
-        
         # Get rid of any negative item counts. This can happen if
         # a user plandomizes an item into more locations than the
         # number of times the item appears in the pool
