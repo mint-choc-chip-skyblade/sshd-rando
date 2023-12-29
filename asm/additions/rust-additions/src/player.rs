@@ -219,8 +219,8 @@ pub enum PLAYER_ACTIONS {
 #[derive(Copy, Clone)]
 pub struct dPlayer {
     pub vtable:                         u64,
-    pub base:                           actor::ActorBaseBasemembers,
-    pub obj_base_members:               actor::ActorObjectBasemembers,
+    pub base:                           actor::dBasemembers,
+    pub obj_base_members:               actor::dAcOBasemembers,
     pub _0:                             [u8; 8],
     pub changes_when_stabbing:          f32,
     pub sword_swing_direction:          u8,
