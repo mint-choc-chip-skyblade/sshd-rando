@@ -193,58 +193,57 @@
     index: 537
     flow:
       next: -1
-  # don't currently have option
-  # - name: Give Dowsings after Whitesword
-  #   type: flowpatch
-  #   onlyif: dowsing_after_whitesword == on
-  #   index: 542
-  #   flow:
-  #     next: Rupee Dowsing
-  # - name: Rupee Dowsing
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 0
-  #     param1: 0
-  #     param2: 105 # Rupee Dowsing
-  #     next: Crystal Dowsing
-  #     param3: 0
-  # - name: Crystal Dowsing
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 0
-  #     param1: 0
-  #     param2: 104 # Crystal Dowsing
-  #     next: Treasure Dowsing
-  #     param3: 0
-  # - name: Treasure Dowsing
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 0
-  #     param1: 0
-  #     param2: 102 # Treasure Dowsing
-  #     next: Goddess Cube Dowsing
-  #     param3: 0
-  # - name: Goddess Cube Dowsing
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 0
-  #     param1: 0
-  #     param2: 110 # Goddess Cube Dowsing
-  #     next: Open Dowsing Wheel
-  #     param3: 0
-  # - name: Open Dowsing Wheel
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 6
-  #     param1: 0
-  #     param2: 19 # Crystal blinks
-  #     next: -1
-  #     param3: 56
+  - name: Give Dowsings after Whitesword
+    type: flowpatch
+    onlyif: dowsing_after_whitesword == on
+    index: 542
+    flow:
+      next: Rupee Dowsing
+  - name: Rupee Dowsing
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 105 # Rupee Dowsing
+      next: Crystal Dowsing
+      param3: 0
+  - name: Crystal Dowsing
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 104 # Crystal Dowsing
+      next: Treasure Dowsing
+      param3: 0
+  - name: Treasure Dowsing
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 102 # Treasure Dowsing
+      next: Goddess Cube Dowsing
+      param3: 0
+  - name: Goddess Cube Dowsing
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 110 # Goddess Cube Dowsing
+      next: Open Dowsing Wheel
+      param3: 0
+  - name: Open Dowsing Wheel
+    type: flowadd
+    flow:
+      type: type3
+      subType: 6
+      param1: 0
+      param2: 19 # Crystal blinks
+      next: -1
+      param3: 56
   - name: Goddess Longsword Text
     type: textpatch
     index: 16

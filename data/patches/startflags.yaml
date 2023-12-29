@@ -53,6 +53,13 @@ Storyflags:
   - 767  # Collected Golden Skull for 1st time
   - 768  # Collected Goddess Plume for 1st time
   - 789  # Unlocked Dowsing (still needs Goddess Sword)
+  - Goddess_White_Sword: # If starting with at least white sword
+    - 583 # Unlocked 4 New Dowsing Slots
+  - Goddess_White_Sword and dowsing_after_whitesword == on:
+    - 102 # Treasure Dowsing
+    - 104 # Crystal Dowsing
+    - 105 # Rupee Dowsing
+    - 110 # Goddess Cube Dowsing
   - 792  # Watched Sealed Temple Big Door unlocking Cutscene
   - 804  # Eldin entrance statue unlocked
   - 1201 # Unlocked Amiibo
