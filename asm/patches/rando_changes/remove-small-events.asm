@@ -44,3 +44,7 @@ bl additions_jumptable
 ; Always set isFirstStone to false
 .offset 0x710097eadc
 strb wzr, [x23, #0xc1]
+
+; Skip basketball statue cutscenes
+.offset 0x710090cbcc
+mov w8, #0xFF
