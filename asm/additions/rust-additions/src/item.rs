@@ -29,7 +29,7 @@ use static_assertions::assert_eq_size;
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct dAcItem {
-    pub base:                    actor::ActorObjectBase,
+    pub base:                    actor::dAcOBase,
     pub itemid:                  u16,
     pub _0:                      [u8; 6],
     pub item_model_ptr:          u64,
@@ -52,7 +52,7 @@ assert_eq_size!([u8; 0x1288], dAcItem);
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct dAcTbox {
-    pub base:                         actor::ActorObjectBase,
+    pub base:                         actor::dAcOBase,
     pub mdlAnmChr_c:                  [u8; 0xB8],
     pub _0:                           [u8; 0x12E8],
     pub state_mgr:                    [u8; 0x70],

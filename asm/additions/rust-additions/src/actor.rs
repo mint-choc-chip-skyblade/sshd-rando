@@ -25,30 +25,30 @@ use static_assertions::assert_eq_size;
 // the size you expect it to be.
 
 // Core actor stuff
-// ActorObjectBase
+// dAcOBase
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ActorObjectBase {
-    pub vtable:   *mut ActorObjectBasevtable,
-    pub basebase: ActorBaseBasemembers,
-    pub members:  ActorObjectBasemembers,
+pub struct dAcOBase {
+    pub vtable:   *mut dAcOBasevtable,
+    pub basebase: dBasemembers,
+    pub members:  dAcOBasemembers,
 }
-assert_eq_size!([u8; 0x410], ActorObjectBase);
+assert_eq_size!([u8; 0x410], dAcOBase);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ActorObjectBasevtable {
-    pub base:                      ActorBasevtable,
+pub struct dAcOBasevtable {
+    pub base:                      dAcBasevtable,
     pub get_actor_list_element:    extern "C" fn() -> u64,
     pub can_be_linked_to_wood_tag: extern "C" fn() -> bool,
     pub do_drop:                   extern "C" fn() -> bool,
 }
-assert_eq_size!([u8; 0xF8], ActorObjectBasevtable);
+assert_eq_size!([u8; 0xF8], dAcOBasevtable);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ActorObjectBasemembers {
-    pub base:               ActorBasemembers,
+pub struct dAcOBasemembers {
+    pub base:               dAcBasemembers,
     pub y_offset_maybe:     f32,
     pub _0:                 [u8; 20],
     pub target_fi_text_id1: u32,
@@ -81,38 +81,38 @@ pub struct ActorObjectBasemembers {
     pub actor_carry:        [u8; 0xCC],
     pub _10:                [u8; 0x8C],
 }
-assert_eq_size!([u8; 0x348], ActorObjectBasemembers);
+assert_eq_size!([u8; 0x348], dAcOBasemembers);
 
-// ActorBase
+// dAcBase
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ActorBase {
-    pub vtable:  *mut ActorBasevtable,
-    pub base:    ActorBaseBasemembers,
-    pub members: ActorBasemembers,
+pub struct dAcBase {
+    pub vtable:  *mut dAcBasevtable,
+    pub base:    dBasemembers,
+    pub members: dAcBasemembers,
 }
-assert_eq_size!([u8; 0x190], ActorBase);
+assert_eq_size!([u8; 0x190], dAcBase);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ActorBasevtable {
-    pub base:                    ActorBaseBasevtable,
-    pub actor_init1:             extern "C" fn(*mut ActorObjectBase),
-    pub actor_init2:             extern "C" fn(*mut ActorObjectBase),
-    pub actor_update:            extern "C" fn(*mut ActorObjectBase),
-    pub actor_update_in_event:   extern "C" fn(*mut ActorObjectBase),
-    pub _0:                      extern "C" fn(*mut ActorObjectBase),
-    pub _1:                      extern "C" fn(*mut ActorObjectBase),
-    pub copy_pos_rot:            extern "C" fn(*mut ActorObjectBase),
-    pub get_current_actor_event: extern "C" fn(*mut ActorObjectBase) -> u32,
-    pub update_actor_properties: extern "C" fn(*mut ActorObjectBase),
-    pub perform_interaction:     extern "C" fn(*mut ActorObjectBase),
+pub struct dAcBasevtable {
+    pub base:                    dBasevtable,
+    pub actor_init1:             extern "C" fn(*mut dAcOBase),
+    pub actor_init2:             extern "C" fn(*mut dAcOBase),
+    pub actor_update:            extern "C" fn(*mut dAcOBase),
+    pub actor_update_in_event:   extern "C" fn(*mut dAcOBase),
+    pub _0:                      extern "C" fn(*mut dAcOBase),
+    pub _1:                      extern "C" fn(*mut dAcOBase),
+    pub copy_pos_rot:            extern "C" fn(*mut dAcOBase),
+    pub get_current_actor_event: extern "C" fn(*mut dAcOBase) -> u32,
+    pub update_actor_properties: extern "C" fn(*mut dAcOBase),
+    pub perform_interaction:     extern "C" fn(*mut dAcOBase),
 }
-assert_eq_size!([u8; 0xE0], ActorBasevtable);
+assert_eq_size!([u8; 0xE0], dAcBasevtable);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ActorBasemembers {
+pub struct dAcBasemembers {
     pub base_properties:  u64,
     pub _0:               [u8; 22],
     pub obj_name_ptr:     u64,
@@ -137,53 +137,53 @@ pub struct ActorBasemembers {
     pub actor_sub_type:   u8,
     pub _7:               [u8; 18],
 }
-assert_eq_size!([u8; 0xC8], ActorBasemembers);
+assert_eq_size!([u8; 0xC8], dAcBasemembers);
 
-// ActorBaseBase
+// dBase
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ActorBaseBase {
-    pub vtable:          *mut ActorBaseBasevtable,
-    pub members:         ActorBaseBasemembers,
+pub struct dBase {
+    pub vtable:          *mut dBasevtable,
+    pub members:         dBasemembers,
     pub base_properties: u64,
 }
-assert_eq_size!([u8; 0xD0], ActorBaseBase);
+assert_eq_size!([u8; 0xD0], dBase);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ActorBaseBasevtable {
-    pub init:                  extern "C" fn(*mut ActorBaseBase),
-    pub pre_init:              extern "C" fn(*mut ActorBaseBase),
-    pub post_init:             extern "C" fn(*mut ActorBaseBase),
-    pub destroy:               extern "C" fn(*mut ActorBaseBase),
-    pub pre_destroy:           extern "C" fn(*mut ActorBaseBase),
-    pub post_destroy:          extern "C" fn(*mut ActorBaseBase),
-    pub base_update:           extern "C" fn(*mut ActorBaseBase),
-    pub pre_update:            extern "C" fn(*mut ActorBaseBase),
-    pub post_update:           extern "C" fn(*mut ActorBaseBase),
-    pub draw:                  extern "C" fn(*mut ActorBaseBase),
-    pub pre_draw:              extern "C" fn(*mut ActorBaseBase),
-    pub post_draw:             extern "C" fn(*mut ActorBaseBase),
-    pub delete_ready:          extern "C" fn(*mut ActorBaseBase),
-    pub create_heap:           extern "C" fn(*mut ActorBaseBase),
-    pub create_heap2:          extern "C" fn(*mut ActorBaseBase),
-    pub init_models:           extern "C" fn(*mut ActorBaseBase),
-    pub dtor:                  extern "C" fn(*mut ActorBaseBase),
-    pub dtor_with_actor_heaps: extern "C" fn(*mut ActorBaseBase),
+pub struct dBasevtable {
+    pub init:                  extern "C" fn(*mut dBase),
+    pub pre_init:              extern "C" fn(*mut dBase),
+    pub post_init:             extern "C" fn(*mut dBase),
+    pub destroy:               extern "C" fn(*mut dBase),
+    pub pre_destroy:           extern "C" fn(*mut dBase),
+    pub post_destroy:          extern "C" fn(*mut dBase),
+    pub base_update:           extern "C" fn(*mut dBase),
+    pub pre_update:            extern "C" fn(*mut dBase),
+    pub post_update:           extern "C" fn(*mut dBase),
+    pub draw:                  extern "C" fn(*mut dBase),
+    pub pre_draw:              extern "C" fn(*mut dBase),
+    pub post_draw:             extern "C" fn(*mut dBase),
+    pub delete_ready:          extern "C" fn(*mut dBase),
+    pub create_heap:           extern "C" fn(*mut dBase),
+    pub create_heap2:          extern "C" fn(*mut dBase),
+    pub init_models:           extern "C" fn(*mut dBase),
+    pub dtor:                  extern "C" fn(*mut dBase),
+    pub dtor_with_actor_heaps: extern "C" fn(*mut dBase),
 }
-assert_eq_size!([u8; 0x90], ActorBaseBasevtable);
+assert_eq_size!([u8; 0x90], dBasevtable);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ActorBaseBasemembers {
-    pub members: ActorBaseBasemembersnovtable,
-    pub vtable:  *mut ActorBaseBasevtable,
+pub struct dBasemembers {
+    pub members: dBasemembersnovtable,
+    pub vtable:  *mut dBasevtable,
 }
-assert_eq_size!([u8; 0xC0], ActorBaseBasemembers);
+assert_eq_size!([u8; 0xC0], dBasemembers);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ActorBaseBasemembersnovtable {
+pub struct dBasemembersnovtable {
     pub unique_actor_index:      u32,
     pub param1:                  u32,
     pub actorid:                 u16,
@@ -200,7 +200,7 @@ pub struct ActorBaseBasemembersnovtable {
     pub base_properties:         u32,
     pub _1:                      u32,
 }
-assert_eq_size!([u8; 0xB8], ActorBaseBasemembersnovtable);
+assert_eq_size!([u8; 0xB8], dBasemembersnovtable);
 
 // ActorMgr stuff
 #[repr(C, packed(1))]
@@ -217,7 +217,7 @@ assert_eq_size!([u8; 0x80], ActorMgr);
 #[derive(Copy, Clone)]
 pub struct ActorTreeNode {
     pub tree_node: TreeNode,
-    pub owner:     *mut ActorBaseBase,
+    pub owner:     *mut dBase,
 }
 assert_eq_size!([u8; 0x28], ActorTreeNode);
 
@@ -245,7 +245,7 @@ assert_eq_size!([u8; 0x20], ActorPriorityListNode);
 #[derive(Copy, Clone)]
 pub struct ActorListNode {
     pub list_node: ListLink,
-    pub owner:     *mut ActorBase,
+    pub owner:     *mut dAcBase,
 }
 assert_eq_size!([u8; 0x18], ActorListNode);
 
@@ -261,7 +261,7 @@ assert_eq_size!([u8; 0x10], ListLink);
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct dAcOlightLine {
-    pub base:                  ActorObjectBase,
+    pub base:                  dAcOBase,
     pub _0:                    [u8; 0x989],
     pub light_shaft_activated: bool,
     pub _1:                    [u8; 6],
@@ -273,7 +273,7 @@ assert_eq_size!([u8; 0xDA8], dAcOlightLine);
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct dAcOSwSwordBeam {
-    pub base:                     ActorObjectBase,
+    pub base:                     dAcOBase,
     pub _0:                       [u8; 0xB90],
     pub state_mgr:                [u8; 0x70],
     pub _1:                       [u8; 0x4C],
@@ -302,7 +302,7 @@ assert_eq_size!([u8; 0x204], dAcORockBoatMaybe);
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct dTgMusasabi {
-    pub base:                      ActorBase,
+    pub base:                      dAcBase,
     pub matrix1:                   math::Matrix,
     pub matrix2:                   math::Matrix,
     pub squirrel_count:            u8,
@@ -327,7 +327,7 @@ assert_eq_size!([u8; 0x10018], dStageMgr);
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct RoomMgr {
-    pub base:         ActorBaseBase,
+    pub base:         dBase,
     pub _0:           [u8; 24],
     pub _1:           u64,
     pub roomPointers: [u64; 63], // actually [*mut Room; 63]
@@ -1078,7 +1078,7 @@ extern "C" {
     static mut ACTOR_STAGE_OBJECT_FLAG: u16;
     static mut ACTOR_VIEW_CLIP_INDEX: u8;
     static mut ACTOR_OBJECT_INFO_PTR: *mut c_void;
-    static mut ACTOR_SPAWN_WITH_REF: *mut ActorBase;
+    static mut ACTOR_SPAWN_WITH_REF: *mut dAcBase;
     static mut ACTORBASE_PARAM2: u32;
     static mut ACTORBASE_ROOMID: u32;
     static mut ACTORBASE_SUBTYPE: u8;
@@ -1092,7 +1092,7 @@ extern "C" {
         connect_parent: *const ActorTreeNode,
         actor_param1: u32,
         actor_group_type: u8,
-    ) -> *mut ActorBaseBase;
+    ) -> *mut dBase;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -1107,7 +1107,7 @@ pub fn spawn_actor(
     rot: *mut math::Vec3s,
     scale: *mut math::Vec3f,
     actor_param2: u32,
-) -> *mut ActorBaseBase {
+) -> *mut dBase {
     unsafe {
         ACTOR_PARAM_POS = pos;
         ACTOR_PARAM_ROT = rot;
