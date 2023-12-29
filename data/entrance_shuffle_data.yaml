@@ -246,6 +246,9 @@
       - stage: B301
         room: 0
         index: 3
+      - stage: D301 # Custom exit for striking crest on non-boss stage
+        room: 0
+        index: 7 
     secondary_spawn_info: # Spawn at Harbour where Skipper thanks you
       - stage: F301
         layer: 0
@@ -1653,6 +1656,9 @@
       - stage: F100
         room: 0
         index: 9
+      - stage: F100
+        room: 0
+        index: 12
     spawn_info:
       - stage: F102
         layer: 0
