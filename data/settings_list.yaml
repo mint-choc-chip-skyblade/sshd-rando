@@ -74,6 +74,17 @@
     - "on":                            "Newly obtained wallets will come pre-filled with Rupees."
 
 
+- name: dowsing_after_whitesword
+  default_option: "on"
+  pretty_name: Fill Dowsing on Whitesword
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Obtaining the Goddess Whitesword won't unlock the additional dowsing options."
+    - "on":                            "Obtaining the Goddess Whitesword will immediately unlock rupee, crystal, treasure, and goddess cube dowsing."
+
+
 - name: open_thunderhead
   default_option: ballad
   pretty_name: Upgraded Skyward Strike
