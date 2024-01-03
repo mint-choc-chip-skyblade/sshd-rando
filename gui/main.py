@@ -1,5 +1,4 @@
 import sys
-import time
 
 from PySide6.QtCore import QEvent, Qt
 from PySide6.QtGui import QIcon, QMouseEvent
@@ -40,25 +39,14 @@ class Main(QMainWindow):
         self.ui.about_button.clicked.connect(self.about)
 
     def randomize(self):
-        start_time = time.time()
-        self.progress_dialog = RandomizerProgressDialog(self)
+        progress_dialog = RandomizerProgressDialog(self)
 
-        self.randomize_thread.dialog_value_update.connect(self.progress_dialog.setValue)
-        self.randomize_thread.dialog_label_update.connect(
-            self.progress_dialog.setLabelText
-        )
+        self.randomize_thread.dialog_value_update.connect(progress_dialog.setValue)
+        self.randomize_thread.dialog_label_update.connect(progress_dialog.setLabelText)
 
         self.randomize_thread.setTerminationEnabled(True)
         self.randomize_thread.start()
-        self.progress_dialog.exec()
-
-        end_time = time.time()
-        print("GUI randomization time:", round(end_time - start_time, 4), "seconds")
-
-        done_dialog = QMessageBox(self)
-        done_dialog.about(
-            self, "Randomization Completed", "Seed successfully generated!"
-        )
+        progress_dialog.exec()
 
     def about(self):
         about_dialog = QMessageBox(self)
