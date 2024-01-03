@@ -62,6 +62,7 @@ MODIFIED_OBJECTPACK_PATH = OUTPUT_PATH / "romfs" / "Object" / "NX" / "ObjectPack
 
 # Logo, Icon, and Words
 ICON_PATH = RANDO_ROOT_PATH / "assets" / "icon.png"
+FI_ICON_PATH = RANDO_ROOT_PATH / "assets" / "fi.png"
 
 TITLE2D_SOURCE_PATH = (
     RANDO_ROOT_PATH / "title" / TITLE_ID / "romfs" / "Layout" / "Title2D.arc"

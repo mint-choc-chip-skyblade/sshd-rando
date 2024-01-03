@@ -256,6 +256,8 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                         # This should only apply to non-aliased random selections currently
                         s.options.append(s.random_option)
                         s.pretty_options.append("Random")
-                        s.descriptions.append("One of the other options will be selected at random.")
+                        s.descriptions.append(
+                            "One of the other options will be selected at random."
+                        )
 
     return settings_info_map

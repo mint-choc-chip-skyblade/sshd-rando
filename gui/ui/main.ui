@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>The Legend of Zelda: Skyward Sword HD Randomizer</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QToolTip {
+color: #000000;
+background-color: #FFFFFF;
+}</string>
+  </property>
   <widget class="QWidget" name="central_widget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
@@ -21,7 +27,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -381,23 +387,39 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
         <string>World</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="0">
-         <widget class="QGroupBox" name="beat_the_game_group_box">
+        <item row="1" column="3">
+         <widget class="QGroupBox" name="tweaks_group_box">
           <property name="title">
-           <string>Beat the Game</string>
+           <string>Tweaks and Cosmetics</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_13">
+          <layout class="QVBoxLayout" name="verticalLayout">
            <item>
-            <layout class="QHBoxLayout" name="required_dungeons_layout">
+            <widget class="QLabel" name="ammo_availability_label">
+             <property name="text">
+              <string>Ammo Availability</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_ammo_availability"/>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="peatrice_conversations_layout">
              <item>
-              <widget class="QLabel" name="required_dungeons_label">
+              <widget class="QLabel" name="peatrice_conversations_label">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="text">
-                <string>Required Dungeons</string>
+                <string>Peatrice Conversations</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QSpinBox" name="setting_required_dungeons">
+              <widget class="QSpinBox" name="setting_peatrice_conversations">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -409,104 +431,42 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             </layout>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_empty_unrequired_dungeons">
+            <widget class="QCheckBox" name="setting_full_wallet_upgrades">
              <property name="text">
-              <string>Barren Unrequired Dungeons</string>
+              <string>Full Wallet Upgrades</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_skip_horde">
+            <widget class="QCheckBox" name="setting_dowsing_after_whitesword">
              <property name="text">
-              <string>Skip The Horde Fight</string>
+              <string>Fill Dowsing on White Sword</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_skip_g3">
+            <widget class="QCheckBox" name="setting_tunic_swap">
              <property name="text">
-              <string>Skip Ghirahim 3 Fight</string>
+              <string>Tunic Swap</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_skip_demise">
+            <widget class="QCheckBox" name="setting_rotating_items">
              <property name="text">
-              <string>Skip Demise Fight</string>
+              <string>Rotating Items</string>
              </property>
             </widget>
            </item>
            <item>
-            <spacer name="beat_the_game_vspacer">
+            <spacer name="tweaks_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QGroupBox" name="open_world_group_box">
-          <property name="title">
-           <string>Open World and Shortcuts</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_14">
-           <item>
-            <widget class="QLabel" name="open_thunderhead_label">
-             <property name="text">
-              <string>Open Thunderhead</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_open_thunderhead"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="open_lake_floria_label">
-             <property name="text">
-              <string>Open Lake Floria</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_open_lake_floria"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="open_earth_temple_label">
-             <property name="text">
-              <string>Open Earth Temple</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_open_earth_temple"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="open_lmf_label">
-             <property name="text">
-              <string>Open Lanyru Mining Facility</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_open_lmf"/>
-           </item>
-           <item>
-            <spacer name="open_world_vspacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
+               <height>148</height>
               </size>
              </property>
             </spacer>
@@ -643,6 +603,139 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            </item>
            <item>
             <spacer name="dungeons_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="beat_the_game_group_box">
+          <property name="title">
+           <string>Beat the Game</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <layout class="QHBoxLayout" name="required_dungeons_layout">
+             <item>
+              <widget class="QLabel" name="required_dungeons_label">
+               <property name="text">
+                <string>Required Dungeons</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_required_dungeons">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_empty_unrequired_dungeons">
+             <property name="text">
+              <string>Barren Unrequired Dungeons</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_skip_horde">
+             <property name="text">
+              <string>Skip The Horde Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_skip_g3">
+             <property name="text">
+              <string>Skip Ghirahim 3 Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_skip_demise">
+             <property name="text">
+              <string>Skip Demise Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="beat_the_game_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="open_world_group_box">
+          <property name="title">
+           <string>Open World</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QLabel" name="open_thunderhead_label">
+             <property name="text">
+              <string>Open Thunderhead</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_thunderhead"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="open_lake_floria_label">
+             <property name="text">
+              <string>Open Lake Floria</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_lake_floria"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="open_earth_temple_label">
+             <property name="text">
+              <string>Open Earth Temple</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_earth_temple"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="open_lmf_label">
+             <property name="text">
+              <string>Open Lanyru Mining Facility</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_lmf"/>
+           </item>
+           <item>
+            <spacer name="open_world_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
@@ -871,93 +964,6 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
               <size>
                <width>20</width>
                <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="1" column="3">
-         <widget class="QGroupBox" name="tweaks_group_box">
-          <property name="title">
-           <string>Tweaks and Cosmetics</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
-           <item>
-            <widget class="QLabel" name="ammo_availability_label">
-             <property name="text">
-              <string>Ammo Availability</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_ammo_availability"/>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="peatrice_conversations_layout">
-             <item>
-              <widget class="QLabel" name="peatrice_conversations_label">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string>Peatrice Conversations</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="setting_peatrice_conversations">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_full_wallet_upgrades">
-             <property name="text">
-              <string>Full Wallet Upgrades</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_dowsing_after_whitesword">
-             <property name="text">
-              <string>Fill Dowsing on White Sword</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_tunic_swap">
-             <property name="text">
-              <string>Tunic Swap</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_rotating_items">
-             <property name="text">
-              <string>Rotating Items</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="tweaks_vspacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>148</height>
               </size>
              </property>
             </spacer>
@@ -1824,26 +1830,55 @@ Practice Sword</string>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="settings_descriptions">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Settings Descriptions</string>
-      </property>
-      <property name="textFormat">
-       <enum>Qt::MarkdownText</enum>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="settings_descriptions_layout">
+      <item>
+       <widget class="QLabel" name="settings_current_option_description_label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>64</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Settings current option description</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::RichText</enum>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="settings_default_option_description_label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>64</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Settings default option description</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <layout class="QGridLayout" name="seed_layout">

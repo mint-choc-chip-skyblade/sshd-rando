@@ -1,9 +1,9 @@
 import sys
 import time
 
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow
+from PySide6.QtCore import QEvent, Qt
+from PySide6.QtGui import QIcon, QMouseEvent
+from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow, QWidget
 
 from constants.randoconstants import VERSION
 from filepathconstants import ICON_PATH
@@ -11,7 +11,7 @@ from filepathconstants import ICON_PATH
 from gui.accessibility import Accessibility
 from gui.guithreads import RandomizationThread
 from gui.options import Options
-from gui.randomize_progress_dialog import RandomizerProgressDialog
+from gui.dialogs.randomize_progress_dialog import RandomizerProgressDialog
 from gui.ui.ui_main import Ui_main_window
 
 
@@ -55,9 +55,14 @@ class Main(QMainWindow):
         end_time = time.time()
         print("GUI randomization time:", round(end_time - start_time, 4), "seconds")
 
+        done_dialog = QMessageBox(self)
+        done_dialog.about(
+            self, "Randomization Completed", "Seed successfully generated!"
+        )
+
     def about(self):
-        self.about_dialog = QMessageBox(self)
-        self.about_dialog.setTextFormat(Qt.TextFormat.RichText)
+        about_dialog = QMessageBox(self)
+        about_dialog.setTextFormat(Qt.TextFormat.RichText)
 
         about_text = f"""
                         <b>The Legend of Zelda: Skyward Sword HD Randomizer</b><br>
@@ -74,7 +79,24 @@ class Main(QMainWindow):
                         <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando\">Source code</a>
         """
 
-        self.about_dialog.about(self, "About", about_text)
+        about_dialog.about(self, "About", about_text)
+
+    def eventFilter(self, target: QWidget, event: QEvent) -> bool:
+        if event.type() == QEvent.Type.Enter:
+            return self.options.update_descriptions(target)
+        elif event.type() == QEvent.Type.Leave:
+            return self.options.update_descriptions(None)
+        elif event.type() == QEvent.Type.ContextMenu:
+            return self.options.show_full_descriptions(target)
+        elif (
+            isinstance(event, QMouseEvent)
+            and event.button() == Qt.MouseButton.MiddleButton
+        ):
+            return self.options.reset_single(
+                self.options.get_setting_from_widget(target)
+            )
+
+        return QMainWindow.eventFilter(self, target, event)
 
 
 def start_gui():
