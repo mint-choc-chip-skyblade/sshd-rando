@@ -3,7 +3,7 @@ import time
 
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow, QProgressDialog
+from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow
 
 from constants.randoconstants import VERSION
 from filepathconstants import ICON_PATH
@@ -11,6 +11,7 @@ from filepathconstants import ICON_PATH
 from gui.accessibility import Accessibility
 from gui.guithreads import RandomizationThread
 from gui.options import Options
+from gui.randomize_progress_dialog import RandomizerProgressDialog
 from gui.ui.ui_main import Ui_main_window
 
 
@@ -40,14 +41,7 @@ class Main(QMainWindow):
 
     def randomize(self):
         start_time = time.time()
-        self.progress_dialog = QProgressDialog("Initializing", "", 0, 100, self)
-        self.progress_dialog.setWindowTitle("Randomizing...")
-        self.progress_dialog.setWindowModality(Qt.WindowModality.WindowModal)
-        self.progress_dialog.setCancelButton(None)  # type: ignore
-        self.progress_dialog.setValue(0)
-        self.progress_dialog.setMinimumWidth(250)
-        self.progress_dialog.setVisible(True)
-        self.progress_dialog.canceled.connect(self.close)
+        self.progress_dialog = RandomizerProgressDialog(self)
 
         self.randomize_thread.dialog_value_update.connect(self.progress_dialog.setValue)
         self.randomize_thread.dialog_label_update.connect(

@@ -21,7 +21,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -281,7 +281,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                 <property name="text">
                  <string>&lt;b&gt;TODO&lt;/b&gt;&lt;br&gt;
 
-&lt;b&gt;‣&lt;/b&gt; &lt;a href=&quot;https://discord.com&quot;&gt;Discord Server (todo)&lt;/a&gt;&lt;br&gt;
+&lt;b&gt;‣&lt;/b&gt; &lt;a href=&quot;https://discord.gg/zkm6yncD&quot;&gt;Discord Server&lt;/a&gt;&lt;br&gt;
 &lt;b&gt;‣&lt;/b&gt; &lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;Report a Bug&lt;/a&gt;&lt;br&gt;
 &lt;b&gt;‣&lt;/b&gt; &lt;a href=&quot;&quot;&gt;Location Guide (todo)&lt;/a&gt;</string>
                 </property>
@@ -1821,6 +1821,28 @@ Practice Sword</string>
         </item>
        </layout>
       </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="settings_descriptions">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Settings Descriptions</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::MarkdownText</enum>
+      </property>
      </widget>
     </item>
     <item>

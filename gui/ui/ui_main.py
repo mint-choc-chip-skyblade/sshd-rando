@@ -1227,6 +1227,18 @@ class Ui_main_window(object):
 
         self.verticalLayout_2.addWidget(self.tab_widget)
 
+        self.settings_descriptions = QLabel(self.central_widget)
+        self.settings_descriptions.setObjectName(u"settings_descriptions")
+        sizePolicy8 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.settings_descriptions.sizePolicy().hasHeightForWidth())
+        self.settings_descriptions.setSizePolicy(sizePolicy8)
+        self.settings_descriptions.setMinimumSize(QSize(0, 48))
+        self.settings_descriptions.setTextFormat(Qt.MarkdownText)
+
+        self.verticalLayout_2.addWidget(self.settings_descriptions)
+
         self.seed_layout = QGridLayout()
         self.seed_layout.setObjectName(u"seed_layout")
         self.seed_label = QLabel(self.central_widget)
@@ -1284,11 +1296,11 @@ class Ui_main_window(object):
 
         self.randomize_button = QPushButton(self.central_widget)
         self.randomize_button.setObjectName(u"randomize_button")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy8.setHorizontalStretch(0)
-        sizePolicy8.setVerticalStretch(0)
-        sizePolicy8.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
-        self.randomize_button.setSizePolicy(sizePolicy8)
+        sizePolicy9 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(0)
+        sizePolicy9.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
+        self.randomize_button.setSizePolicy(sizePolicy9)
 
         self.footer_layout.addWidget(self.randomize_button)
 
@@ -1299,7 +1311,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1339,7 +1351,7 @@ class Ui_main_window(object):
         self.useful_links_group_box.setTitle(QCoreApplication.translate("main_window", u"Links", None))
         self.links_label.setText(QCoreApplication.translate("main_window", u"<b>TODO</b><br>\n"
 "\n"
-"<b>\u2023</b> <a href=\"https://discord.com\">Discord Server (todo)</a><br>\n"
+"<b>\u2023</b> <a href=\"https://discord.gg/zkm6yncD\">Discord Server</a><br>\n"
 "<b>\u2023</b> <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\">Report a Bug</a><br>\n"
 "<b>\u2023</b> <a href=\"\">Location Guide (todo)</a>", None))
         self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"File Setup", None))
@@ -1480,6 +1492,7 @@ class Ui_main_window(object):
         self.font_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
         self.groupBox_6.setTitle("")
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.accessibility_tab), QCoreApplication.translate("main_window", u"Accessibility", None))
+        self.settings_descriptions.setText(QCoreApplication.translate("main_window", u"Settings Descriptions", None))
         self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
         self.setting_string_label.setText(QCoreApplication.translate("main_window", u"Setting String", None))
         self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
