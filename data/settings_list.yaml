@@ -28,15 +28,15 @@
     - "on":                            "Single Gratitude Crystal locations can contain any item."
 
 
-- name: stamina_fruit
-  default_option: vanilla
-  pretty_name: Stamina Fruit
+- name: stamina_fruit_shuffle
+  default_option: "off"
+  pretty_name: Stamina Fruit Shuffle
   pretty_options:
-    - Vanilla
-    - Randomized
+    - "Off"
+    - "On"
   options:
-    - vanilla:                         "Stamina Fruit will not be randomized."
-    - randomized:                      "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
+    - "off":                           "Stamina Fruit will not be randomized."
+    - "on":                            "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
 
 
 - name: randomized_shops
@@ -77,13 +77,13 @@
 
 - name: dowsing_after_whitesword
   default_option: "on"
-  pretty_name: Fill Dowsing on Whitesword
+  pretty_name: Fill Dowsing on White Sword
   pretty_options:
     - "Off"
     - "On"
   options:
-    - "off":                           "Obtaining the Goddess Whitesword won't unlock the additional dowsing options."
-    - "on":                            "Obtaining the Goddess Whitesword will immediately unlock rupee, crystal, treasure, and goddess cube dowsing."
+    - "off":                           "Obtaining the Goddess White Sword won't unlock the additional dowsing options."
+    - "on":                            "Obtaining the Goddess White Sword will immediately unlock rupee, crystal, treasure, and goddess cube dowsing."
 
 
 - name: open_thunderhead
