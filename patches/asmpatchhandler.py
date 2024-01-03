@@ -20,7 +20,7 @@ from collections import Counter
 from constants.asmconstants import *
 
 from lz4.block import compress, decompress
-from gui.dialog_header import print_progress_text
+from gui.dialogs.dialog_header import print_progress_text
 from logic.world import World
 
 from patches.asmpatchhelper import NsoOffsets, SegmentHeader

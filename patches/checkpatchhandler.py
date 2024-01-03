@@ -6,7 +6,7 @@ from constants.patchconstants import (
     OARC_ADD_PATH_REGEX,
     SHOP_PATCH_PATH_REGEX,
 )
-from gui.dialog_header import print_progress_text
+from gui.dialogs.dialog_header import print_progress_text
 from logic.world import World
 
 from patches.eventpatchhandler import EventPatchHandler

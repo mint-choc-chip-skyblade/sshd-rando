@@ -14,7 +14,6 @@ class RandomizerProgressDialog(QProgressDialog):
         self.setLabelText("Initializing")
         self.setWindowIcon(QIcon(ICON_PATH.as_posix()))
         self.setCancelButton(None)  # type: ignore
-        self.setAutoReset(False)
         self.setValue(0)
         self.setMinimumWidth(250)
         self.setVisible(True)

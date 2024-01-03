@@ -11,7 +11,7 @@ from filepathconstants import EVENT_PATCHES_PATH, EVENT_FILES_PATH, OUTPUT_EVENT
 
 from collections import defaultdict
 from pathlib import Path
-from gui.dialog_header import (
+from gui.dialogs.dialog_header import (
     get_progress_value_from_range,
     update_progress_value,
 )

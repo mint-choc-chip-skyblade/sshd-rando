@@ -1,6 +1,5 @@
 import argparse
-import signal
-from gui.dialog_header import (
+from gui.dialogs.dialog_header import (
     get_progress_value_from_range,
     print_progress_text,
     update_progress_value,

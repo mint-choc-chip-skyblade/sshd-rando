@@ -1,4 +1,4 @@
-from gui.dialog_header import print_progress_text
+from gui.dialogs.dialog_header import print_progress_text
 from logic.entrance import Entrance
 from patches.stagepatchhandler import StagePatchHandler
 

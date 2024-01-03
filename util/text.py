@@ -1,5 +1,5 @@
 from pathlib import Path
-from gui.dialog_header import print_progress_text
+from gui.dialogs.dialog_header import print_progress_text
 from sslib.msb import CONTROL_REPLACEMENTS
 from typing import Union
 import copy

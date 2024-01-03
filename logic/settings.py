@@ -3,7 +3,7 @@ import yaml
 import random
 import logging
 
-from gui.dialog_header import print_progress_text
+from gui.dialogs.dialog_header import print_progress_text
 
 
 class SettingInfoError(RuntimeError):
@@ -255,7 +255,7 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                     if s.random_option not in s.options:
                         # This should only apply to non-aliased random selections currently
                         s.options.append(s.random_option)
-                        s.pretty_options.append("Random Option")
-                        s.descriptions.append("")
+                        s.pretty_options.append("Random")
+                        s.descriptions.append("One of the other options will be selected at random.")
 
     return settings_info_map

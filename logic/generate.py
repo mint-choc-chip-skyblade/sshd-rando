@@ -9,7 +9,7 @@ from .entrance_shuffle import shuffle_world_entrances
 from .hints import generate_hints
 from util.text import load_text_data
 
-from gui.dialog_header import print_progress_text, update_progress_value
+from gui.dialogs.dialog_header import print_progress_text, update_progress_value
 import time
 import random
 

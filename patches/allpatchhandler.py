@@ -1,5 +1,5 @@
 from filepathconstants import OUTPUT_PATH
-from gui.dialog_header import print_progress_text, update_progress_value
+from gui.dialogs.dialog_header import print_progress_text, update_progress_value
 from logic.world import World
 from patches.asmpatchhandler import ASMPatchHandler
 from patches.conditionalpatchhandler import ConditionalPatchHandler
