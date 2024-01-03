@@ -19,7 +19,7 @@ from filepathconstants import (
     LATO_FONT_PATH,
     READABILITY_THEME_PATH,
 )
-from gui.custom_theme_dialog import CustomThemeDialog
+from gui.dialogs.custom_theme_dialog import CustomThemeDialog
 from logic.config import load_config_from_file, write_config_to_file
 
 # Add stylesheet overrides here.
@@ -83,7 +83,13 @@ class Accessibility:
         self.ui.use_custom_theme_check_box.stateChanged.connect(
             self.toggle_custom_theme
         )
-        use_custom_theme_widget.setChecked(self.config.use_custom_theme)
+
+        if self.config.use_custom_theme:
+            use_custom_theme_widget.setChecked(True)
+            self.enable_theme_interface()
+        else:
+            use_custom_theme_widget.setChecked(False)
+            self.disable_theme_interface()
 
         font_family_widget: QFontComboBox = getattr(self.ui, "font_family_combo_box")
         font_family_widget.setCurrentIndex(
