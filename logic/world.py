@@ -390,7 +390,7 @@ class World:
                     and "Loose Crystals" in location.types
                 )
                 or (
-                    self.setting("stamina_fruit_shuffle") == "vanilla"
+                    self.setting("stamina_fruit_shuffle") == "off"
                     and "Stamina Fruit" in location.types
                 )
             ):
