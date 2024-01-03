@@ -11,6 +11,7 @@ OUTPUT_STAGE_PATH = OUTPUT_PATH / "romfs" / "Stage"
 OUTPUT_EVENT_PATH = OUTPUT_PATH / "romfs" / "US" / "Object" / "en_US"
 OUTPUT_MAIN_NSO = OUTPUT_PATH / "exefs" / "main"
 OUTPUT_ADDITIONAL_SUBSDK = OUTPUT_PATH / "exefs" / "subsdk8"
+OUTPUT_SDK_NSO = OUTPUT_PATH / "exefs" / "sdk"
 
 # Config
 CONFIG_PATH = RANDO_ROOT_PATH / "config.yaml"
@@ -79,8 +80,10 @@ WORDS_PATH = RANDO_ROOT_PATH / "data" / "skyward_sword_words.yaml"
 # ASM
 ASM_PATCHES_DIFFS_PATH = RANDO_ROOT_PATH / "asm" / "patches" / "diffs"
 ASM_ADDITIONS_DIFFS_PATH = RANDO_ROOT_PATH / "asm" / "additions" / "diffs"
+ASM_SDK_DIFFS_PATH = RANDO_ROOT_PATH / "asm" / "sdk" / "diffs"
 
 MAIN_NSO_FILE_PATH = RANDO_ROOT_PATH / "title" / TITLE_ID / "exefs" / "main"
 SUBSDK1_FILE_PATH = RANDO_ROOT_PATH / "title" / TITLE_ID / "exefs" / "subsdk1"
+SDK_FILE_PATH = RANDO_ROOT_PATH / "title" / TITLE_ID / "exefs" / "sdk"
 
 STARTFLAGS_FILE_PATH = RANDO_ROOT_PATH / "data" / "patches" / "startflags.yaml"

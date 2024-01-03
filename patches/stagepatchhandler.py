@@ -55,8 +55,8 @@ parser.add_argument(
 args = parser.parse_args()
 
 
-def patch_tbox(bzs: dict, itemid: int, id_str: str):
-    id = int(id_str)
+def patch_tbox(bzs: dict, itemid: int, object_id_str: str, trapid: int):
+    id = int(object_id_str)
     tbox = next(
         filter(lambda x: x["name"] == "TBox" and (x["anglez"] >> 9) == id, bzs["OBJS"]),
         None,
@@ -65,6 +65,15 @@ def patch_tbox(bzs: dict, itemid: int, id_str: str):
     if tbox is None:
         print(f"ERROR: No tbox id {id} found to patch")
         return
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0xF0000000 of params2
+        tbox["params2"] = mask_shift_set(tbox["params2"], 0xF, 28, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        tbox["params2"] = mask_shift_set(tbox["params2"], 0xF, 28, 0xF)
 
     original_itemid = tbox["anglez"] & 0x1FF
 
@@ -82,19 +91,39 @@ def patch_tbox(bzs: dict, itemid: int, id_str: str):
     )
 
 
-def patch_freestanding_item(bzs: dict, itemid: int, id_str: str):
-    id = int(id_str)
+def patch_freestanding_item(
+    bzs: dict,
+    itemid: int,
+    object_id_str: str,
+    trapid: int,
+    custom_flag: int,
+    original_itemid: int,
+):
+    id = int(object_id_str, 0)
     freestanding_item = next(
         filter(
-            lambda x: x["name"] == "Item" and ((x["params1"] >> 10) & 0xFF) == id,
+            lambda x: x["name"] == "Item"
+            and (((x["params1"] >> 10) & 0xFF) == id or x["id"] == id),
             bzs["OBJ "],
         ),
         None,
     )
-
     if freestanding_item is None:
-        print(f"ERROR: No freestanding item id {id} found to patch")
+        print(f"ERROR: No freestanding item id {hex(id)} found to patch")
         return
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        freestanding_item["params2"] = mask_shift_set(
+            freestanding_item["params2"], 0xF, 4, trapbits
+        )
+    else:
+        # Makes sure the bit is set if not a trap
+        freestanding_item["params2"] = mask_shift_set(
+            freestanding_item["params2"], 0xF, 4, 0xF
+        )
 
     freestanding_item["params1"] = mask_shift_set(
         freestanding_item["params1"], 0xFF, 0, itemid
@@ -105,12 +134,24 @@ def patch_freestanding_item(bzs: dict, itemid: int, id_str: str):
         freestanding_item["params1"], 0x1, 9, 0
     )
 
+    if custom_flag != -1:
+        freestanding_item["params2"] = mask_shift_set(
+            freestanding_item["params2"], 0x3FF, 8, custom_flag
+        )
+        freestanding_item["params2"] = mask_shift_set(
+            freestanding_item["params2"], 0x3F, 18, original_itemid
+        )
 
-def patch_bucha(bzs: dict, itemid: int, id_str: str):
-    id = int(id_str, 16)
+
+def patch_bucha(bzs: dict, itemid: int, object_id_str: str, trapid: int):
+    id = int(object_id_str, 16)
     bucha = next(
         filter(lambda x: x["name"] == "NpcKyuE" and x["id"] == id, bzs["OBJ "]), None
     )
+
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
 
     if bucha is None:
         print(f"ERROR: Bucha's id {id} not found. Cannot patch this check.")
@@ -119,14 +160,18 @@ def patch_bucha(bzs: dict, itemid: int, id_str: str):
     bucha["params2"] = mask_shift_set(bucha["params2"], 0xFF, 0x8, itemid)
 
 
-def patch_zeldas_closet(bzs: dict, itemid: int, id_str: str):
-    id = int(id_str)
+def patch_zeldas_closet(bzs: dict, itemid: int, object_id_str: str, trapid: int):
+    id = int(object_id_str)
     closet = next(
         filter(
             lambda x: x["name"] == "chest" and (x["params1"] & 0xFF) == id, bzs["OBJ "]
         ),
         None,
     )
+
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
 
     if closet is None:
         print(f"ERROR: No closet id {id} found to patch")
@@ -135,11 +180,15 @@ def patch_zeldas_closet(bzs: dict, itemid: int, id_str: str):
     closet["params1"] = mask_shift_set(closet["params1"], 0xFF, 8, itemid)
 
 
-def patch_ac_key_boko(bzs: dict, itemid: int, id_str: str):
-    id = int(id_str, 16)
+def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
+    id = int(object_id_str, 16)
     boko = next(
         filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
     )
+
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
 
     if boko is None:
         print(f"ERROR: No boko id {id} found to patch")
@@ -148,27 +197,38 @@ def patch_ac_key_boko(bzs: dict, itemid: int, id_str: str):
     boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemid)
 
 
-# def patch_heart_container(bzs: dict, itemid: int):
-#     hc = next(filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None)
-#     if hc is None:
-#         print(f"ERROR: No heart container found to patch")
-#         return
+def patch_heart_container(bzs: dict, itemid: int, trapid: int):
+    heart_container = next(filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None)
 
-#     hc["params1"] = mask_shift_set(hc["params1"], 0xFF, 16, itemid)
+    if heart_container is None:
+        print(f"ERROR: No heart container found to patch")
+        return
+
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
+
+    heart_container["params1"] = mask_shift_set(
+        heart_container["params1"], 0xFF, 16, itemid
+    )
 
 
-def patch_chandelier_item(bzs: dict, itemid: int):
+def patch_chandelier_item(bzs: dict, itemid: int, trapid: int):
     chandelier = next(filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None)
 
     if chandelier is None:
         print(f"ERROR: No chandelier found to patch")
         return
 
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
+
     chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemid)
 
 
-def patch_digspot_item(bzs: dict, itemid: int, id_str: str):
-    id = int(id_str)
+def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
+    id = int(object_id_str)
     digspot = next(
         filter(
             lambda x: x["name"] == "Soil" and ((x["params1"] >> 4) & 0xFF) == id,
@@ -176,6 +236,10 @@ def patch_digspot_item(bzs: dict, itemid: int, id_str: str):
         ),
         None,
     )
+
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
 
     if digspot is None:
         print(f"ERROR: No digspot id {id} found to patch")
@@ -186,27 +250,62 @@ def patch_digspot_item(bzs: dict, itemid: int, id_str: str):
     digspot["params2"] = mask_shift_set(digspot["params2"], 0xFF, 0x18, itemid)
 
 
-# def patch_goddess_crest(bzs: dict, itemid: int, index: str):
-#     crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
-#     if crest is None:
-#         print(f"ERROR: No crest found to patch")
-#         return
+def patch_goddess_crest(bzs: dict, itemid: int, index: str, trapid: int):
+    crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
+    if crest is None:
+        print(f"ERROR: No crest found to patch")
+        return
 
-#     # 3 items patched into same object at different points in the params
-#     if index == "0":
-#         crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemid)
-#     elif index == "1":
-#         crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x10, itemid)
-#     elif index == "2":
-#         crest["params2"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemid)
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
+
+    # 3 items patched into same object at different points in the params
+    if index == "0":
+        crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x18, itemid)
+    elif index == "1":
+        crest["params1"] = mask_shift_set(crest["params1"], 0xFF, 0x10, itemid)
+    elif index == "2":
+        crest["params2"] = mask_shift_set(crest["params2"], 0xFF, 0x18, itemid)
 
 
-# def patch_tadtone_group(bzs: dict, itemid: int, groupID: str):
+def patch_squirrels(bzs: dict, itemid: int, object_id_str: str, trapid: int):
+    id = int(object_id_str, 16)
+
+    squirrel_tag = next(
+        filter(lambda x: x["name"] == "MssbTag" and x["id"] == id, bzs["STAG"]), None
+    )
+
+    if squirrel_tag is None:
+        print(f"ERROR: No squirrel tag (MssbTag) found to patch")
+        return
+
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
+
+    squirrel_tag["params2"] = mask_shift_set(squirrel_tag["params2"], 0xFF, 0, itemid)
+
+    squirrel_id_to_sceneflag = {
+        0xFCC8: 88,  # 0xA 01
+        0xFC9C: 89,  # 0xA 02
+        0xFCA0: 90,  # 0xA 04
+    }
+    squirrel_tag["params2"] = mask_shift_set(
+        squirrel_tag["params2"], 0xFF, 8, squirrel_id_to_sceneflag[id]
+    )
+
+
+# def patch_tadtone_group(bzs: dict, itemid: int, groupID: str, trapid: int):
 #     groupID = int(groupID, 0)
 #     clefs = filter(
 #         lambda x: x["name"] == "Clef" and ((x["params1"] >> 3) & 0x1F) == groupID,
 #         bzs["OBJ "],
 #     )
+
+#     # Don't use fake itemid yet, this needs patching properly first
+#     if trapid:
+#         itemid = 34 # rupoor
 
 #     for clef in clefs:
 #         clef["anglez"] = mask_shift_set(clef["anglez"], 0xFFFF, 0, itemid)
@@ -590,62 +689,86 @@ def patch_and_write_stage(
                             layer,
                             objectid,
                             itemid,
+                            trapid,
+                            custom_flag,
+                            original_itemid,
                         ) in check_patches_for_current_room:
                             if object_name == "TBox":
                                 patch_tbox(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
+                                    trapid,
                                 )
                             elif object_name == "Item":
                                 patch_freestanding_item(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
+                                    trapid,
+                                    custom_flag,
+                                    original_itemid,
                                 )
                             elif object_name == "NpcKyuE":
                                 patch_bucha(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
+                                    trapid,
                                 )
                             elif object_name == "chest":
                                 patch_zeldas_closet(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
+                                    trapid,
                                 )
                             elif object_name == "EBc":
                                 patch_ac_key_boko(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
+                                    trapid,
                                 )
-                            # elif objectName == "HeartCo":
-                            #     patch_heart_container(
-                            #         roomBZS["LAY "][f"l{layer}"], itemid
-                            #     )
+                            elif object_name == "HeartCo":
+                                patch_heart_container(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    trapid,
+                                )
                             elif object_name == "Chandel":
                                 patch_chandelier_item(
-                                    room_bzs["LAY "][f"l{layer}"], itemid
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    trapid,
                                 )
                             elif object_name == "Soil":
                                 patch_digspot_item(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
+                                    trapid,
                                 )
-                            # elif objectName == "SwSB":
-                            #     patch_goddess_crest(
-                            #         roomBZS["LAY "][f"l{layer}"],
-                            #         itemid,
-                            #         objectID,
-                            #     )
-                            # elif objectName == "Clef":
+                            elif object_name == "SwSB":
+                                patch_goddess_crest(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
+                            elif object_name == "MssbTag":
+                                patch_squirrels(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
+                            # elif object_name == "Clef":
                             #     patch_tadtone_group(
-                            #         roomBZS["LAY "][f"l{layer}"],
+                            #         room_bzs["LAY "][f"l{layer}"],
                             #         itemid,
-                            #         objectID,
+                            #         objectid,
+                            #         trapid,
                             #     )
                             else:
                                 print(
@@ -742,7 +865,7 @@ class StagePatchHandler:
                         patches.remove(patch)
 
     def create_oarc_cache(self):
-        extracts = yaml_load(EXTRACTS_PATH)
+        extracts: dict[dict, dict] = yaml_load(EXTRACTS_PATH)
         OARC_CACHE_PATH.mkdir(parents=True, exist_ok=True)
 
         for extract in extracts:
@@ -769,32 +892,35 @@ class StagePatchHandler:
 
                     (OARC_CACHE_PATH / f"{arc}.arc").write_bytes(arc_data)
             else:
-                arcs = extract["oarcs"]
                 stage = extract["stage"]
-                layer = extract["layer"]
-                all_already_in_cache = all(
-                    ((OARC_CACHE_PATH / f"{arc}.arc").exists() for arc in arcs)
-                )
 
-                if all_already_in_cache:
-                    continue
+                for layer in extract["layers"]:
+                    layerid = layer["layerid"]
+                    arcs = layer["oarcs"]
 
-                stage_path = Path(
-                    STAGE_FILES_PATH
-                    / f"{stage}"
-                    / "NX"
-                    / f"{stage}_stg_l{layer}.arc.LZ"
-                )
-                stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+                    all_already_in_cache = all(
+                        ((OARC_CACHE_PATH / f"{arc}.arc").exists() for arc in arcs)
+                    )
 
-                for arc_name in arcs:
-                    print_progress_text(f"Extracting {arc_name}")
-                    arc_data = stage_u8.get_file_data(f"oarc/{arc_name}.arc")
+                    if all_already_in_cache:
+                        continue
 
-                    if not arc_data:
-                        raise TypeError("Expected type bytes but found None.")
+                    stage_path = Path(
+                        STAGE_FILES_PATH
+                        / f"{stage}"
+                        / "NX"
+                        / f"{stage}_stg_l{layerid}.arc.LZ"
+                    )
+                    stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
 
-                    (OARC_CACHE_PATH / f"{arc_name}.arc").write_bytes(arc_data)
+                    for arc_name in arcs:
+                        print_progress_text(f"Extracting {arc_name}")
+                        arc_data = stage_u8.get_file_data(f"oarc/{arc_name}.arc")
+
+                        if not arc_data:
+                            raise TypeError("Expected type bytes but found None.")
+
+                        (OARC_CACHE_PATH / f"{arc_name}.arc").write_bytes(arc_data)
 
     def set_oarc_add_remove_from_patches(self):
         for stage, stage_patches in self.stage_patches.items():
@@ -815,8 +941,22 @@ class StagePatchHandler:
         layer: int,
         objectid: str,
         itemid: int,
+        trapid: int = 0,
+        custom_flag: int = -1,
+        original_itemid: int = 0,
     ):
-        self.check_patches[stage].append((room, object_name, layer, objectid, itemid))
+        self.check_patches[stage].append(
+            (
+                room,
+                object_name,
+                layer,
+                objectid,
+                itemid,
+                trapid,
+                custom_flag,
+                original_itemid,
+            )
+        )
 
     def add_entrance_patch(
         self,

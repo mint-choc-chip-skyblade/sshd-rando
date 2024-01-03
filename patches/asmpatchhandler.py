@@ -4,9 +4,12 @@ from constants.itemconstants import ITEM_ITEMFLAGS, ITEM_STORYFLAGS, ITEM_COUNTS
 from filepathconstants import (
     ASM_ADDITIONS_DIFFS_PATH,
     ASM_PATCHES_DIFFS_PATH,
+    ASM_SDK_DIFFS_PATH,
     MAIN_NSO_FILE_PATH,
     OUTPUT_ADDITIONAL_SUBSDK,
     OUTPUT_MAIN_NSO,
+    OUTPUT_SDK_NSO,
+    SDK_FILE_PATH,
     STARTFLAGS_FILE_PATH,
     SUBSDK1_FILE_PATH,
 )
@@ -26,6 +29,12 @@ from patches.conditionalpatchhandler import ConditionalPatchHandler
 from sslib.fs_helpers import write_bytes, write_str, write_u32, write_u8
 from sslib.utils import write_bytes_create_dirs
 from sslib.yaml import yaml_load, yaml_write
+
+
+# Adds a patch to nnSdk to route all vfprintf calls to the debug output
+# These will be printed to the console on yuzu
+# These prints will spam the console so don't leave this set to True
+ASM_DEBUG_PRINT = False
 
 
 class ASMPatchHandler:
@@ -210,6 +219,17 @@ class ASMPatchHandler:
 
     # Applies both asm patches and additions.
     def patch_all_asm(self, world: World, onlyif_handler: ConditionalPatchHandler):
+        if ASM_DEBUG_PRINT:
+            print("Debug print asm patches")
+            self.patch_asm(
+                world,
+                onlyif_handler,
+                SDK_FILE_PATH,
+                ASM_SDK_DIFFS_PATH,
+                OUTPUT_SDK_NSO,
+                SDK_NSO_OFFSETS,
+            )
+
         print_progress_text("Applying asm patches")
         self.patch_asm(
             world,
@@ -225,11 +245,18 @@ class ASMPatchHandler:
         # Keeps the temporary directory only within this with block.
         with temp_dir as temp_dir_name:
             temp_dir_name = Path(temp_dir_name)
-            startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
 
             print_progress_text("Assembling startflags")
+            startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
             self.patch_startflags(startflags_diff_file_path, world, onlyif_handler)
 
+            print("Initializing global variables")
+            global_variables_diff_file_path = (
+                temp_dir_name / "global-variables-diff.yaml"
+            )
+            self.patch_global_variables(global_variables_diff_file_path)
+
+            print("Patching starting entrance")
             staring_entrance_diff_file_path = (
                 temp_dir_name / "starting-entrance-diff.yaml"
             )
@@ -397,6 +424,33 @@ class ASMPatchHandler:
 
         # If this fails, the rust struct size will need increasing
         assert len(startflags_data_bytes) < MAX_STARTFLAGS
+
+    def patch_global_variables(self, output_path: Path):
+        init_globals_dict = {
+            0x712E5FF020: [
+                0xFF,
+                0xFF,
+                0xFF,
+                0xFF,
+            ],  # NEXT_TRAP_ID
+            0x712E5FF024: [
+                0xFF,
+                0xFF,
+                0xFF,
+                0xFF,
+            ],  # TRAP_ID
+            0x712E5FF028: [
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+            ],  # TRAP_DURATION
+        }
+
+        yaml_write(output_path, init_globals_dict)
+
+        # Write the global variables binary to a non-temp file.
+        # yaml_write(Path("./test-global-variables.yaml"), init_globals_dict)
 
     def _get_flags(
         self, startflag_section, onlyif_handler: ConditionalPatchHandler

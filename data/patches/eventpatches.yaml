@@ -1,4 +1,67 @@
+# For any textadd objects, see the text_data folder for what
+# the specific text being added is
+
 003-ItemGet:
+  - name: Groose Trap Entry
+    type: entryadd
+    entry:
+      name: "003_251"
+      value: Show Trap Text
+  - name: Noise Trap Entry
+    type: entryadd
+    entry:
+      name: "003_252"
+      value: Show Trap Text
+  - name: Curse Trap Entry
+    type: entryadd
+    entry:
+      name: "003_253"
+      value: Show Trap Text
+  - name: Burn Trap Entry
+    type: entryadd
+    entry:
+      name: "003_254"
+      value: Show Trap Text
+
+  - name: Trap Text
+    type: textadd
+    textboxtype: 5
+    unk2: 1
+  - name: Show Trap Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Give Trap
+      param3: 3
+      param4: Trap Text
+  - name: Give Trap
+    type: flowadd
+    flow:
+      type: type3
+      next: -1
+      param3: 72 # custom command: give trap
+  
+  - name: Patch Rupoor for Traps
+    type: flowpatch
+    index: 112
+    flow:
+      next: Check for Trap
+  - name: Check for Trap
+    type: flowadd
+    flow:
+      type: type3
+      next: Trap Rupoor Switch
+      param3: 71 # custom command: get trap id
+  - name: Trap Rupoor Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 7 # use result from previous check
+    cases:
+      - 54 # Rupoor text
+      - Show Trap Text
+
   - name: Scrapper Entry
     type: entryadd
     entry:
@@ -6,10 +69,8 @@
       value: Show Scrapper Item Get Text
   - name: Scrapper Item Get Text
     type: textadd
-    unk1: 5
+    textboxtype: 5
     unk2: 1
-    text: "You found Gondo's robot, <y<Scrapper>>!
-          \n\n\n\nBe sure to take care of him...\neven if he's a little mean."
   - name: Show Scrapper Item Get Text
     type: flowadd
     flow:
@@ -26,6 +87,7 @@
       param2: 323 # Scrapper Storyflag
       next: -1
       param3: 0
+
   - name: Tadtone Entry
     type: entryadd
     entry:
@@ -58,9 +120,8 @@
       - Show some Tadtones Collected text
   - name: Some Tadtones Collected text
     type: textadd
-    unk1: 5
+    textboxtype: 5
     unk2: 1
-    text: "You got a group of <y<Tadtones>>!\nOnly <r<<numeric arg0> >> left to find!"
   - name: Show some Tadtones Collected text
     type: flowadd
     flow:
@@ -70,10 +131,8 @@
       param4: Some Tadtones Collected text
   - name: All Tadtones Collected text
     type: textadd
-    unk1: 5
+    textboxtype: 5
     unk2: 1
-    text: "You got the last group of <y<Tadtones>>!\nYou found every last one of them!
-          \n\n\nHurry to <b<Flooded Faron Woods>> and talk\nto the <r<Water Dragon>> to claim your\nreward."
   - name: Show all Tadtones Collected text
     type: flowadd
     flow:
@@ -81,10 +140,10 @@
       next: -1
       param3: 3
       param4: All Tadtones Collected text
+
   - name: Spiral Charge Text
     type: textpatch
     index: 27
-    text: "You learned the <y<Spiral Charge>>!"
   - name: Change Spiral Charge Scene change
     type: flowpatch
     index: 584 # change it to give Spiral Charge Storyflag
@@ -93,6 +152,7 @@
       param1: 0
       param2: 364
       param3: 0
+
   - name: Remove Goddess Sword Scene change
     type: flowpatch
     index: 462 # skip scene change after getting goddess sword
@@ -133,126 +193,108 @@
     index: 537
     flow:
       next: -1
-  # don't currently have option
-  # - name: Give Dowsings after Whitesword
-  #   type: flowpatch
-  #   onlyif: dowsing_after_whitesword == on
-  #   index: 542
-  #   flow:
-  #     next: Rupee Dowsing
-  # - name: Rupee Dowsing
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 0
-  #     param1: 0
-  #     param2: 105 # Rupee Dowsing
-  #     next: Crystal Dowsing
-  #     param3: 0
-  # - name: Crystal Dowsing
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 0
-  #     param1: 0
-  #     param2: 104 # Crystal Dowsing
-  #     next: Treasure Dowsing
-  #     param3: 0
-  # - name: Treasure Dowsing
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 0
-  #     param1: 0
-  #     param2: 102 # Treasure Dowsing
-  #     next: Goddess Cube Dowsing
-  #     param3: 0
-  # - name: Goddess Cube Dowsing
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 0
-  #     param1: 0
-  #     param2: 110 # Goddess Cube Dowsing
-  #     next: Open Dowsing Wheel
-  #     param3: 0
-  # - name: Open Dowsing Wheel
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 6
-  #     param1: 0
-  #     param2: 19 # Crystal blinks
-  #     next: -1
-  #     param3: 56
+  - name: Give Dowsings after Whitesword
+    type: flowpatch
+    onlyif: dowsing_after_whitesword == on
+    index: 542
+    flow:
+      next: Rupee Dowsing
+  - name: Rupee Dowsing
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 105 # Rupee Dowsing
+      next: Crystal Dowsing
+      param3: 0
+  - name: Crystal Dowsing
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 104 # Crystal Dowsing
+      next: Treasure Dowsing
+      param3: 0
+  - name: Treasure Dowsing
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 102 # Treasure Dowsing
+      next: Goddess Cube Dowsing
+      param3: 0
+  - name: Goddess Cube Dowsing
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 110 # Goddess Cube Dowsing
+      next: Open Dowsing Wheel
+      param3: 0
+  - name: Open Dowsing Wheel
+    type: flowadd
+    flow:
+      type: type3
+      subType: 6
+      param1: 0
+      param2: 19 # Crystal blinks
+      next: -1
+      param3: 56
   - name: Goddess Longsword Text
     type: textpatch
     index: 16
-    text: "You got the <y<Goddess Longsword>>!\nThe flames of Farore have improved your\nsword, making it longer and sharp enough\nto do twice as much damage!"
   - name: Goddess White Sword Text
     type: textpatch
     index: 12
-    text: "You got the <y<Goddess White Sword>>!\nThe flames of Nayru have transformed\nyour blade, expanding Fi's powers.\n\nShe can now help you use your <r<dowsing>>\nability to search for more objects!"
   - name: Master Sword Text
     type: textpatch
     index: 17
-    text: "You got the <y<Master Sword>>!\nThe flames of Din have imbued your\nblade with a sacred white light that\ndemons revile."
   - name: True Master Sword Text
     type: textpatch
     index: 19
-    text: "You got the <y<True Master Sword>>!\nThe goddess has blessed your blade, and\nthe Master Sword has at last achieved its\nultimate form!"
   - name: Harp Text
     type: textpatch
     index: 21
-    text: "You got the <y<Goddess's Harp>>!\nBut there's no time to admire it!"
   - name: Emerald Tablet text
     type: textpatch
     index: 227
-    text: "You got the <y<Emerald Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
   - name: Ruby Tablet text
     type: textpatch
     index: 228
-    text: "You got the <y<Ruby Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
   - name: Amber Tablet text
     type: textpatch
     index: 229
-    text: "You got the <y<Amber Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
   - name: Farore's Courage Text
     type: textpatch
     index: 237
-    text: "You learned <y<Farore's Courage>>!"
   - name: Nayru's Wisdom Text
     type: textpatch
     index: 238
-    text: "You learned <y<Nayru's Wisdom>>!"
   - name: Din's Power Text
     type: textpatch
     index: 239
-    text: "You learned <y<Din's Power>>!"
   - name: Faron SotH text
     type: textpatch
     index: 240
-    text: "You learned the <y<Water Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
   - name: Eldin SotH text
     type: textpatch
     index: 241
-    text: "You learned the <y<Fire Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
   - name: Lanayru SotH text
     type: textpatch
     index: 242
-    text: "You learned the <y<Thunder Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
   - name: Full SotH text
     type: textpatch
     index: 243
-    text: "The <y<Song of the Hero>> is now complete!"
   - name: Five Gratitude crystal counter
     type: textpatch
-    index: 45 # \x0e\x02\x03\x06\x00\x00\xcd is for showing numeric arg0
-    text: "You got <r<five>> <y<Gratitude Crystals>>!\nThat is <r<<numeric arg1> >>in Total!"
+    index: 45
   - name: Single Gratitude crystal counter
     type: textpatch
-    index: 62 # \x0e\x02\x03\x06\x00\x00\xcd is for showing numeric arg0
-    text: "You got <r<one>> <y<Gratitude Crystal>>!\nThat is <r<<numeric arg1> >>in Total!"
+    index: 62
   - name: Zelda dowsing in Key Piece
     type: flowpatch
     index: 677
@@ -370,7 +412,7 @@
     flow:
       subType: 6
       param2: 0
-      param3: 7 # use result from previous chck
+      param3: 7 # use result from previous check
     cases:
       - Check Eldin SotH 1 # true
       - -1                 # false
@@ -388,7 +430,7 @@
     flow:
       subType: 6
       param2: 0
-      param3: 7 # use result from previous chck
+      param3: 7 # use result from previous check
     cases:
       - Check Lanayru SotH 1 # true
       - -1                   # false
@@ -406,7 +448,7 @@
     flow:
       subType: 6
       param2: 0
-      param3: 7 # use result from previous chck
+      param3: 7 # use result from previous check
     cases:
       - Give full SotH # true
       - -1             # false
@@ -659,8 +701,7 @@
       next: Fi Warp choice
   - name: Fi Warp Text
     type: textadd
-    unk1: 2 # Fi text box background
-    text: ""
+    textboxtype: 2 # Fi text box background
   - name: Fi Warp choice
     type: flowadd
     flow:
@@ -745,7 +786,6 @@
       param5: 0
   - name: Can't buy Pouch text
     type: textadd
-    text: "You need an <y<Adventure Pouch>> to buy\nthis!"
   - name: Show can't buy Pouch text
     type: flowadd
     flow:
@@ -898,7 +938,6 @@
   - name: Potion Lady Text Patch # generalized for rando
     type: textpatch
     index: 5
-    text: "Just so you know, I can't sell you a \npotion if you don't have an Empty \nBottle to pour it into!\n\n\x0E\x01\x09\x04\x09\x90For some reason, I like you, though, so\nI'll give you a spare item I've\nbeen keeping here in the stall!\nOh, it's nothing. It's my little gift."
   - name: Potion Lady Bottle # skip pouch requirements
     type: flowpatch
     index: 42
@@ -966,11 +1005,50 @@
   - name: Does not have slingshot
     type: textpatch
     index: 68 # switch is false
-    text: "\x0E\x01\x09\x04\x00\x01By the way, <heroname>, I have been \nlooking for new sources of research\nabout <b<plant life>>.\n\nIf you ever find something, please meet\nme <r<in the Knight Academy>>!"
   - name: Does have slingshot
     type: textpatch
     index: 69 # switch is true
-    text: "\x0E\x01\x09\x04\x00\x01Oh, <heroname>, something tells me you\nmight know some <b<plant life>> I could\nresearch! Please meet me \n<r<in the Knight Academy>>!"
+  - name: Horwell Mia start
+    type: flowpatch
+    index: 9
+    flow: {}
+    cases:
+      - Can talk to Horwell
+      - Can talk to Horwell
+  - name: Can talk to Horwell
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 3
+      param2: -1
+      next: 48 # Check if Mia has been saved
+      param3: 42
+  - name: Mia saved switch
+    type: flowpatch
+    index: 48
+    flow: {}
+    cases:
+      - 51 # Check if already given item
+      - Show Attention Mark before saving Mia
+  - name: Show Attention Mark before saving Mia
+    type: attentionmark
+    flow:
+      next: 7 # Horwell asks if you'll save Mia
+  - name: Remove camera panning after saving Mia
+    type: flowpatch
+    index: 49
+    flow:
+      next: 242
+  - name: Horwell item
+    type: flowpatch
+    index: 292
+    flow:
+      type: type3
+      subType: 0
+      param2: 0 # item
+      next: -1
+      param3: 9
 
 109-TakeGoron:
   - name: Peater's Crystal 1
@@ -1008,7 +1086,6 @@
       - Show No Sword Text
   - name: No Sword Text
     type: textadd
-    text: "You don't have a Sword,\nso I can't let you play!"
   - name: Show No Sword Text
     type: flowadd
     flow:
@@ -1082,11 +1159,8 @@
   - name: Patch Gondo Options Text After Check
     type: textpatch
     index: 114
-    text: "Hey, kid! Anything to upgrade today?\n[1]Upgrade gear.[2]Repair shield.[3-]No, thanks."
   - name: Gondo Options Text
     type: textadd
-    text: "Heyyyyy! Welcome to the Scrap Shop!\nI can use the stuff you find to upgrade\nyour gear and make it even stronger!
-          \n\nAnd if your shield takes a beating, no\nworries. I can fix that too.\nSo what'll it be?\n[1]Upgrade gear.[2]Fix shield.[3]<r<Repair Junk?>>[4-]Never mind."
   - name: Show Gondo Options
     type: flowadd
     flow:
@@ -1108,12 +1182,9 @@
   - name: Patch Gondo Repair Scrapper Text 1
     type: textpatch
     index: 101
-    text: "Oh that?\nWell, my old Gramps did tell me this:
-          \n\n\n\"You can get this working again with\nthe extract from an <y<Ancient Flower>>.\"\nBut I've never even heard of, much less\nseen, any such thing!\n[1]Take mine![2-]Me neither."
   - name: Patch Gondo Repair Scrapper Text 2
     type: textpatch
     index: 108
-    text: "So this is an <y<Ancient Flower>>?!\nI can feel some slick, oily stuff coming\nout of its stem! Great, with this we can\nfix my old Gramps' stuff!\n...Wait right here! I'll have it up and\nrunning in no time!"
   - name: Skip Scrapper Repaired Text 1
     type: flowpatch
     index: 59
@@ -1127,8 +1198,6 @@
   - name: Patch post Gondo Repair Text
     type: textpatch
     index: 115
-    text: "Well, here you are. All fixed up!
-          \n\n\n\nI couldn't have done it without your\nhelp. So, here, you have it...\nwhat ever this is..."
   - name: Skip Scrapper Repaired Text 3
     type: flowpatch
     index: 134
@@ -1755,7 +1824,6 @@
   - name: Fix Soup textboxes
     type: textpatch
     index: 143
-    text: "What's the matter? You look like\nyou've got something mighty\nserious on your mind.\n[1]Soup[2-]No Soup"
   - name: Go back to Chandelier Quest
     type: flowpatch
     index: 347
@@ -1763,7 +1831,6 @@
       next: 520
   - name: New text Option
     type: textadd
-    text: "Hey, you look like you have a question?\n[1]<r<Levias>>[2-]Other Things"
   - name: Show new Text Option
     type: flowadd
     flow:
@@ -1782,7 +1849,6 @@
       - 216
   - name: New Kina Text Option
     type: textadd
-    text: "Hey, kid, what do you need from me?\n[1]Plowing the fields?[2]Carrying pumpkins![3-]Nothing."
   - name: Kina Quest Switch
     type: switchadd
     flow:
@@ -2055,7 +2121,6 @@
   - name: Statue Lower Question
     type: textpatch
     index: 9
-    text: "Do you want to reset the statue?\n[1]Yes[2-]No"
   - name: Replace Stone Tablet Fi Event
     type: flowpatch
     index: 7
@@ -2148,7 +2213,6 @@
       - Show Flooded Faron Entry Question
   - name: Already Completed Tadtones Text
     type: textadd
-    text: "You have already completed my final\ntest. There is nothing more I can do\nfor you."
   - name: Show Already Completed Tadtones Text
     type: flowadd
     flow:
@@ -2158,7 +2222,6 @@
       param4: Already Completed Tadtones Text
   - name: Flooded Faron Reentry Text
     type: textadd
-    text: "Would you like me to <r<flood the forest>>\nagain?\n[1]Yes[2-]No"
   - name: Show Flooded Faron Reentry Text
     type: flowadd
     flow:
@@ -2185,7 +2248,6 @@
       param4: Flooded Faron Entry Question
   - name: Flooded Faron Entry Question
     type: textadd
-    text: "Here to accept my final test? I will\n<r<flood the forest>> if you choose to\naccept.\n[1]Yes[2-]No"
   - name: Flooded Faron Entry Switch
     type: switchadd
     flow:
@@ -2198,7 +2260,6 @@
       - Show Declined Flooded Faron Offer Text # No
   - name: Declined Flooded Faron Offer Text
     type: textadd
-    text: "Very well. Talk to me again if you\nchange your mind."
   - name: Show Declined Flooded Faron Offer Text
     type: flowadd
     flow:
@@ -2318,7 +2379,6 @@
       param4: Flooded Faron Exit Question
   - name: Flooded Faron Exit Question
     type: textadd
-    text: "Leaving so soon? I can drain the forest\nif you wish to return later.\n[1]Yes[2-]No"
   - name: Flooded Faron Exit Switch
     type: switchadd
     flow:
@@ -2331,7 +2391,6 @@
       - Show Continue With Tadtones Text # No
   - name: Continue With Tadtones Text
     type: textadd
-    text: "Very well. Talk to me again if you\nchange your mind."
   - name: Show Continue With Tadtones Text
     type: flowadd
     flow:
@@ -2433,7 +2492,6 @@
       - Show No Mitts Text
   - name: No Mitts Text
     type: textadd
-    text: "You don't have Digging Mitts,\nso I can't let you play!"
   - name: Show No Mitts Text
     type: flowadd
     flow:
@@ -2481,7 +2539,7 @@
 305-MountainF3:
   - name: Boko Base entry
     type: flowpatch
-    index: 64
+    index: 58
     flow:
       next: Show Boko Base Entry Question
   - name: Boko Base exit
@@ -2498,7 +2556,6 @@
       param4: Boko Base Exit Question
   - name: Boko Base Exit Question
     type: textadd
-    text: "Want to leave <b<Bokoblin Base>>?\n[1]Yes[2-]No"
   - name: Boko Base Exit Switch
     type: switchadd
     flow:
@@ -2527,7 +2584,6 @@
       param4: Boko Base Entry Question
   - name: Boko Base Entry Question
     type: textadd
-    text: "Want to enter <b<Bokoblin Base>>?\n[1]Yes[2-]No"
   - name: Boko Base Entry Switch
     type: switchadd
     flow:
@@ -2540,7 +2596,6 @@
       - Show Declined Boko Base Offer Text # No
   - name: Declined Boko Base Offer Text
     type: textadd
-    text: "Very well. Talk to me again if you\nchange your mind."
   - name: Show Declined Boko Base Offer Text
     type: flowadd
     flow:
@@ -2574,7 +2629,6 @@
       - 2 # False
   - name: Post Plats' Gift text
     type: textadd
-    text: "See ya around, pal!"
   - name: Show Post Plats' Gift text
     type: flowadd
     flow:
@@ -2707,8 +2761,7 @@
       next: -1
   - name: Fi text text to leave dungeon
     type: textadd
-    unk1: 2
-    text: "You can't beat this\ndungeon at the present\ntime, I would suggest\ncoming back later"
+    textboxtype: 2
   - name: Fi trigger to leave
     type: entryadd
     entry:
@@ -2831,7 +2884,6 @@
       value: display Thank you text
   - name: Thunderdragon Thank you text
     type: textadd
-    text: "Thank you for saving me"
   - name: display Thank you text
     type: flowadd
     flow:
@@ -2871,7 +2923,6 @@
 501-Inpa:
   - name: botg context text
     type: textadd
-    text: "I see you have acquired the <y<harp>>.\nWell done. Let me teach you a <b<song>>,\nit will be useful for your adventure."
   - name: show botg context text
     type: flowadd
     flow:
@@ -2957,15 +3008,12 @@
     onlyif: skip_demise == on
     type: textpatch
     index: 23
-    text: "Master <heroname>, I have\nimportant information for you.\n\n\nMy analysis indicates a 100% chance\nthat entering this portal will\n<r<conclude>> your journey.\n\nAre you ready to proceed?\n[1]I'm ready![2-]Not yet..."
   - name: Patch Fi text before Demise 2
     onlyif: skip_demise == on
     type: textpatch
     index: 25
-    text: "Understood, Master <heroname>.\nThank you for taking me on this\njourney with you."
   - name: Impa Complete Triforce text
     type: textadd
-    text: "Though your wish has been granted by\nthe <y+<Triforce>>, <b<Ghirahim>> escaped with\nZelda through the <r<great doors\nat the front of the temple>>.\nYou may yet catch him before it's too\nlate. Hurry, <heroname>!"
   - name: Show Triforce text
     type: flowadd
     flow:
@@ -3015,7 +3063,7 @@
     flow:
       subType: 6
       param2: 0
-      param3: 7 # use result from previous chck
+      param3: 7 # use result from previous check
     cases:
       - 122 # true, continue with bomb as drawing quest
       - 224  # false, go to random select
@@ -3038,7 +3086,7 @@
     flow:
       subType: 6
       param2: 0
-      param3: 7 # use result from previous chck
+      param3: 7 # use result from previous check
     cases:
       - 116 # true, continue with bomb as drawing quest
       - 261  # false, go to random select

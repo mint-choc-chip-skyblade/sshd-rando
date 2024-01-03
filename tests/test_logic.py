@@ -31,6 +31,10 @@ def test_random_crystals() -> None:
     config_test("random_crystals.yaml")
 
 
+def test_random_stamina_fruit() -> None:
+    config_test("random_stamina_fruit.yaml")
+
+
 def test_random_shops() -> None:
     config_test("random_shops.yaml")
 
@@ -137,6 +141,14 @@ def test_all_hints() -> None:
 
 def test_default_multiworld_config() -> None:
     config_test("default_multiworld_config.yaml")
+
+
+def test_traps_all_config() -> None:
+    config_test("traps_all.yaml")
+
+
+def test_traps_off_config() -> None:
+    config_test("traps_off.yaml")
 
 
 def test_spoiler_as_config() -> None:

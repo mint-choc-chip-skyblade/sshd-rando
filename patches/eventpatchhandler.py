@@ -33,7 +33,7 @@ from util.text import get_text_data
 class EventPatchHandler:
     def __init__(self):
         self.event_patches: dict[str, list[dict]] = yaml_load(EVENT_PATCHES_PATH)
-        self.check_patches: dict[str, list[tuple[str, int]]] = defaultdict(list)
+        self.check_patches: dict[str, list[tuple[str, int, int]]] = defaultdict(list)
         self.flow_label_to_index_mapping = {}
         self.text_label_to_index_mapping = {}
 
@@ -139,7 +139,9 @@ class EventPatchHandler:
                                 self.entry_add(msbf=parsed_msbf, entry_add=patch)
 
                     if msbf_file_name[:-5] in self.check_patches:
-                        for eventid, itemid in self.check_patches[msbf_file_name[:-5]]:
+                        for eventid, itemid, trapid in self.check_patches[
+                            msbf_file_name[:-5]
+                        ]:
                             try:
                                 eventid = int(eventid)
                             except ValueError:
@@ -152,6 +154,16 @@ class EventPatchHandler:
                                     )
                                     continue
                                 eventid = index
+
+                            trapbits = 0
+
+                            # +1 allows 0 == not a trap so spawned NPC items don't break
+                            if trapid:
+                                trapbits = (254 - trapid) + 1
+
+                            # Inverted so a value of 0 == not a trap
+                            # 11 cos signed numbers are bleh
+                            itemid |= (trapbits & 0xF) << 11
 
                             parsed_msbf["FLW3"]["flow"][eventid]["param2"] = itemid
 
@@ -323,7 +335,9 @@ class EventPatchHandler:
         )
 
         # Had to add a 0 to the end to satisfy BuildMSB's length requirement, if text adds end up breaking, this may be overwriting a param?
-        msbt["ATR1"].append([text_add.get("unk1", 1), text_add.get("unk2", 0), 0])
+        msbt["ATR1"].append(
+            [text_add.get("textboxtype", 1), text_add.get("unk2", 0), 0]
+        )
         entry_name = "%s:%d" % (msbt_file_name[-3:], text_index)
         new_entry = {
             "name": entry_name,
@@ -337,8 +351,18 @@ class EventPatchHandler:
             get_text_data(text_patch["name"]).get("english")
         ).encode("utf-16be")
 
-    def add_check_patch(self, event_file: str, eventid: str, itemid: int):
-        self.check_patches[event_file].append((eventid, itemid))
+        # Allow patching other textbox data
+        current_text_atr1_data = msbt["ATR1"][text_patch["index"]]
+
+        if (textbox_type := text_patch.get("textboxtype", None)) is not None:
+            current_text_atr1_data[0] = textbox_type
+        if (unk2 := text_patch.get("unk2", None)) is not None:
+            current_text_atr1_data[1] = unk2
+
+        msbt["ATR1"][text_patch["index"]] = current_text_atr1_data
+
+    def add_check_patch(self, event_file: str, eventid: str, itemid: int, trapid: int):
+        self.check_patches[event_file].append((eventid, itemid, trapid))
 
 
 def make_progressive_item_events(

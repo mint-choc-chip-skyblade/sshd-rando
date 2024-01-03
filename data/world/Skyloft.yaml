@@ -93,8 +93,13 @@
     Central Skyloft: Nothing
   locations:
     Upper Skyloft - Owlan's Gift: Day
+    Upper Skyloft - Rescue Remlit above Knight Academy: Day
     Upper Skyloft - Chest near Goddess Statue: Nothing
     Upper Skyloft - Pumpkin Archery -- 600 Points: Bow and Day
+    Upper Skyloft - Stamina Fruit near Upper Academy Gates: Nothing
+    Upper Skyloft - Stamina Fruit near Lower Academy Gates: Nothing
+    Upper Skyloft - Stamina Fruit near Sparring Hall: Nothing
+    Upper Skyloft - Stamina Fruit near Goddess Statue: Nothing
 
 
 - name: Sparring Hall
@@ -165,6 +170,12 @@
     Central Skyloft - Parrow's Crystals: Day and 'Save_Orielle'
     Central Skyloft - Shed Chest: Water_Dragons_Scale
     Central Skyloft - Shed Goddess Chest: Water_Dragons_Scale and Eldin_Volcano_Goddess_Cube_on_Sand_Slide
+    Central Skyloft - Stamina Fruit between Wooden Planks: Nothing
+    Central Skyloft - Stamina Fruit near Wryna's House: Nothing
+    Central Skyloft - Stamina Fruit near River: Nothing
+    Central Skyloft - Stamina Fruit near Orielle and Parrow's House: Nothing
+    Central Skyloft - Stamina Fruit near Bazaar: Nothing
+    Central Skyloft - Stamina Fruit near Plaza: Nothing
     Central Skyloft - Crystal on Waterfall Island: Night and Quick_Beetle and logic_precise_beetle
     Central Skyloft - Crystal after Waterfall Cave: Night and Beetle and logic_precise_beetle
     Central Skyloft - Crystal in Loftwing Prison: Night and Beetle and logic_precise_beetle
@@ -310,6 +321,7 @@
     Central Skyloft: Nothing
   locations:
     Skyloft Silent Realm - Collect all Tears Reward: Nothing
+    Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge: Nothing
 
 
 - name: Skyloft Village
@@ -329,6 +341,7 @@
     Central Skyloft: Nothing
   locations:
     Skyloft Village - Crystal near Pumpkin Patch: Night
+    Skyloft Village - Stamina Fruit: Nothing
 
 
 - name: Bertie's House

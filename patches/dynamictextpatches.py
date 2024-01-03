@@ -42,7 +42,7 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
     #     {
     #         "name": "Fi Required Dungeon Text",
     #         "type": "textadd",
-    #         "unk1": 2,
+    #         "textboxtype": 2,
     #         "text": required_dungeons_text,
     #     }
     # )
@@ -68,7 +68,7 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
                 {
                     "name": f"Fi Hints Text {ind}",
                     "type": "textadd",
-                    "unk1": 2,
+                    "textboxtype": 2,
                 },
             )
             add_text_data(
@@ -93,7 +93,7 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
             {
                 "name": f"No Fi Hints Text",
                 "type": "textadd",
-                "unk1": 2,
+                "textboxtype": 2,
             },
         )
 
@@ -145,7 +145,7 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
     #             {
     #                 "name": f"{dungeon} Status Text",
     #                 "type": "textadd",
-    #                 "unk1": 2,
+    #                 "textboxtype": 2,
     #                 "text": f"{DUNGEON_COLORS[dungeon] + dungeon}>>: <string arg2> \nSmall Keys: <numeric arg0> \nBoss Key: <string arg0> \nDungeon Map: <string arg1>"
     #                 if dungeon != ET
     #                 else f"{DUNGEON_COLORS[dungeon] + dungeon}>>: <string arg2> \nKey Pieces: <numeric arg0> \nBoss Key: <string arg0> \nDungeon Map: <string arg1>",
@@ -156,7 +156,7 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
     #             {
     #                 "name": "Sky Keep Status Text",
     #                 "type": "textadd",
-    #                 "unk1": 2,
+    #                 "textboxtype": 2,
     #                 "text": f"{DUNGEON_COLORS[SK]}Sky Keep>>\nSmall Keys: <numeric arg0>\n\nDungeon Map: <string arg1>",
     #             }
     #         )

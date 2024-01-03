@@ -1,3 +1,4 @@
+from constants.itemconstants import TRAP_SETTING_TO_ITEM
 from .config import Config
 from .settings import *
 from .item import Item
@@ -366,7 +367,7 @@ class World:
             if item == None:
                 continue
 
-            # Small Keys, Boss Keys, Maps, Caves Key, Shop items, Single Crystals
+            # Small Keys, Boss Keys, Maps, Caves Key, Shop items, Single Crystals, Stamina Fruit
             if (
                 (
                     self.setting("small_keys") == "vanilla"
@@ -388,11 +389,16 @@ class World:
                     self.setting("shuffle_single_gratitude_crystals") == "off"
                     and "Loose Crystals" in location.types
                 )
+                or (
+                    self.setting("stamina_fruit") == "vanilla"
+                    and "Stamina Fruit" in location.types
+                )
             ):
                 location.set_current_item(item)
                 location.has_known_vanilla_item = True
                 location.hint_priority = "never"
-                self.item_pool[item] -= 1
+                if item in self.item_pool:
+                    self.item_pool[item] -= 1
 
             # Scrap Shop Upgrades
             if "Scrap Shop" in location.types:
@@ -495,6 +501,13 @@ class World:
     # Remove or add junk to the item pool until the total number of
     # items is equal to the number of currently empty locations
     def sanitize_item_pool(self) -> None:
+        # Get rid of any negative item counts. This can happen if
+        # a user plandomizes an item into more locations than the
+        # number of times the item appears in the pool
+        for item, count in self.item_pool.items():
+            if count < 0:
+                self.item_pool[item] = 0
+
         num_empty_locations = len(
             [l for l in self.get_all_item_locations() if l.is_empty()]
         )
@@ -522,6 +535,59 @@ class World:
                     f"Removing {junk_item} from item pool in {self}"
                 )
                 self.item_pool[junk_item] -= 1
+
+    # Replaces a portion of the non-major item pool with traps.
+    def add_traps(self) -> None:
+        item_pool_copy: list[Item] = []
+
+        # Get item pool as list
+        for item, count in self.item_pool.items():
+            item_pool_copy.extend([item] * count)
+
+        # Remove major items from item pool
+        major_item_pool = [item for item in item_pool_copy if item.is_major_item]
+        non_major_item_pool = [
+            item for item in item_pool_copy if not item.is_major_item
+        ]
+
+        match self.setting("trap_mode"):
+            case "trapish":
+                num_traps = 10
+            case "trapsome":
+                num_traps = len(non_major_item_pool) // 4
+            case "traps_o_plenty":
+                num_traps = len(non_major_item_pool) // 2
+            case "traptacular":
+                num_traps = len(non_major_item_pool)
+            case _:
+                num_traps = 0
+
+        possible_traps = [
+            trap_name
+            for trap_name in TRAP_SETTING_TO_ITEM
+            if self.setting(trap_name) == "on"
+        ]
+
+        if len(possible_traps) <= 0:
+            return
+
+        # Replace non-major items with traps
+        random.shuffle(non_major_item_pool)
+
+        for replace_index in range(0, num_traps):
+            if replace_index >= len(non_major_item_pool):
+                break
+
+            trap_item = TRAP_SETTING_TO_ITEM[random.choice(possible_traps)]
+            non_major_item_pool[replace_index] = self.get_item(trap_item)
+
+        new_item_pool = major_item_pool + non_major_item_pool
+
+        assert len(item_pool_copy) == len(new_item_pool)
+
+        self.item_pool = Counter()
+        for item in new_item_pool:
+            self.item_pool[item] += 1
 
     # Adds a new event if one with the current name doesn't exist
     def add_event(self, event_name: str) -> None:

@@ -17,7 +17,7 @@ class Item:
     ) -> None:
         self.id: int = id_
         self.name: str = name_
-        self.oarcs = oarcs_
+        self.oarcs: list[str] = oarcs_
         self.world: "World" = world_
         self.is_major_item: bool = major_item_
         self.is_game_winning_item: bool = game_winning_item_

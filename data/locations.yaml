@@ -2,7 +2,7 @@
 
 - name: Knight Academy - Fledge's Gift
   original_item: Progressive Pouch
-  type:
+  type: NPC
   Paths:
     - event/114-Friend/16
     - oarc/F001r/l3
@@ -16,28 +16,28 @@
 
 - name: Knight Academy - Owlan's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries, Gratitude Crystal Sidequests, Combat
+  type: Scrapper Deliveries, Gratitude Crystal Sidequests, Combat, NPC
+  hint: sometimes
   Paths:
     - event/118-Town3/157
     - oarc/F001r/l0
-  hint: sometimes
 
 - name: Knight Academy - Fledge's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/325
     - oarc/F001r/l0
 
 - name: Knight Academy - Item from Cawlin
   original_item: Cawlin's Letter
-  type:
+  type: NPC
   Paths:
     - event/115-Town2/166
     - oarc/F001r/l0
 - name: Knight Academy - Ghost/Pipit's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/522
     - event/115-Town2/641
@@ -63,9 +63,17 @@
 
 - name: Upper Skyloft - Owlan's Gift
   original_item: Wooden Shield
-  type:
+  type: NPC
   Paths:
     - event/108-ShinkanA/168
+    - oarc/F000/l4
+    - oarc/F000/l6
+
+- name: Upper Skyloft - Rescue Remlit above Knight Academy
+  original_item: Red Rupee
+  type: NPC
+  Paths:
+    - event/108-ShinkanA/292
     - oarc/F000/l4
     - oarc/F000/l6
 
@@ -75,25 +83,65 @@
   Paths:
     - stage/F000/r0/l0/TBox/71
 
+- name: Upper Skyloft - Stamina Fruit near Upper Academy Gates
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCD7
+
+- name: Upper Skyloft - Stamina Fruit near Lower Academy Gates
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l4/Item/0xFDFB
+    - stage/F000/r0/l5/Item/0xFE07
+    - stage/F000/r0/l6/Item/0xFDEC
+    - stage/F000/r0/l7/Item/0xFE02
+    - stage/F000/r0/l8/Item/0xFDD9
+    - stage/F000/r0/l9/Item/0xFDF7
+
+- name: Upper Skyloft - Stamina Fruit near Sparring Hall
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l4/Item/0xFDFA
+    - stage/F000/r0/l5/Item/0xFE06
+    - stage/F000/r0/l6/Item/0xFDEB
+    - stage/F000/r0/l7/Item/0xFE01
+    - stage/F000/r0/l8/Item/0xFDD8
+    - stage/F000/r0/l9/Item/0xFDF6
+
+- name: Upper Skyloft - Stamina Fruit near Goddess Statue
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l1/Item/0xFDC2
+    - stage/F000/r0/l2/Item/0xFDEB
+    - stage/F000/r0/l4/Item/0xFDF9
+    - stage/F000/r0/l5/Item/0xFE04
+    - stage/F000/r0/l6/Item/0xFDEA
+    - stage/F000/r0/l7/Item/0xFDFF
+    
+
 - name: Upper Skyloft - Pumpkin Archery -- 600 Points
   original_item: Heart Piece
-  type: Minigames
+  type: Minigames, NPC
+  hint: sometimes
   Paths:
     - event/114-Friend/99
     - oarc/F000/l4
     - oarc/F000/l6
-  hint: sometimes
 
 - name: Inside the Statue of the Goddess - First Goddess Sword Item
   original_item: Progressive Sword
-  type:
+  type: NPC
   Paths:
     - event/107-Kanban/Fi give Goddess Statue item 1
     - oarc/F008r/l0
 
 - name: Inside the Statue of the Goddess - Second Goddess Sword Item
   original_item: Emerald Tablet
-  type:
+  type: NPC
   Paths:
     - event/107-Kanban/Fi give Goddess Statue item 2
     - oarc/F008r/l0
@@ -115,7 +163,7 @@
 
 - name: Bazaar - Potion Lady's Gift
   original_item: Empty Bottle
-  type:
+  type: NPC
   Paths:
     - event/106-DrugStore/44
     - oarc/F004r/l0
@@ -129,44 +177,44 @@
 
 # - name: Bazaar - Upgrade to Quick Beetle
 #   original_item: Progressive Beetle
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Tough Beetle
 #   original_item: Progressive Beetle
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Scattershot
 #   original_item: Progressive Slingshot
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Iron Bow
 #   original_item: Progressive Bow
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Sacred Bow
 #   original_item: Progressive Bow
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Big Bug Net
 #   original_item: Progressive Bug Net
-#   type: Scrap Shop
+#   type: Scrap Shop, NPC
 #   hint: never
 
 # - name: Central Skyloft - Repair Gondo's Junk
 #   original_item: Scrapper
-#   type:
+#   type: NPC
 #   Paths:
 #     - event/113-RemodelStore/Give Repair Gondo Junk item
 #     - oarc/F004r/l0
 
 - name: Central Skyloft - Wryna's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/118-Town3/144
     - oarc/F006r/l0
@@ -197,7 +245,7 @@
 
 - name: Central Skyloft - Parrow's Gift
   original_item: Empty Bottle
-  type:
+  type: NPC
   Paths:
     - event/115-Town2/230 # mushroom spores
     - event/115-Town2/733 # Empty Bottle
@@ -207,7 +255,7 @@
 
 - name: Central Skyloft - Parrow's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/813
     - oarc/F000/l4
@@ -216,13 +264,13 @@
 
 - name: Central Skyloft - Peater/Peatrice's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
+  hint: sometimes
   Paths:
     - event/109-TakeGoron/79
     - event/123-Town5/316
     - oarc/F018r/l0
     - oarc/F019r/l0
-  hint: always
 
 - name: Central Skyloft - Item in Bird Nest
   original_item: Rattle
@@ -235,6 +283,42 @@
   type:
   Paths:
     - stage/F000/r0/l0/TBox/70
+
+- name: Central Skyloft - Stamina Fruit between Wooden Planks
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCDF
+
+- name: Central Skyloft - Stamina Fruit near Wryna's House
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCDA
+
+- name: Central Skyloft - Stamina Fruit near River
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCD9
+
+- name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCD8
+
+- name: Central Skyloft - Stamina Fruit near Bazaar
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCD6
+
+- name: Central Skyloft - Stamina Fruit near Plaza
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCDE
 
 ## Goddess Chests
 
@@ -262,9 +346,9 @@
 - name: Central Skyloft - Waterfall Goddess Chest
   original_item: Heart Piece
   type: goddess, Sand Sea Goddess Chests
+  hint: sometimes
   Paths:
     - stage/F000/r0/l0/TBox/80
-  hint: sometimes
   cube_region: Lanayru Sand Sea
 
 - name: Central Skyloft - Crystal in Orielle and Parrow's House
@@ -331,25 +415,25 @@
 
 - name: Skyloft Village - Mallara's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/123-Town5/186
     - oarc/F016r/l0
 
 - name: Skyloft Village - Bertie's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/125
     - oarc/F014r/l0
 
 - name: Skyloft Village - Sparrot's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries, Gratitude Crystal Sidequests
+  type: Scrapper Deliveries, Gratitude Crystal Sidequests, NPC
+  hint: sometimes
   Paths:
     - event/118-Town3/141
     - oarc/F013r/l0
-  hint: sometimes
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
   original_item: Gratitude Crystal 
@@ -360,25 +444,31 @@
     - stage/F000/r0/l7/Item/108
     - stage/F000/r0/l9/Item/108
 
+- name: Skyloft Village - Stamina Fruit
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCDB
+
 # Batreaux Rewards:
 
 - name: Batreaux - 5 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
   Paths:
     - event/121-AkumaKun/21
     - oarc/F012r/l0
 
 - name: Batreaux - 10 Crystals
   original_item: Heart Piece
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
   Paths:
     - event/121-AkumaKun/42
     - oarc/F012r/l0
 
 - name: Batreaux - 30 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
   Paths:
     - event/121-AkumaKun/24
     - oarc/F012r/l0
@@ -391,104 +481,104 @@
 
 - name: Batreaux - 40 Crystals
   original_item: Gold Rupee
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
   Paths:
     - event/121-AkumaKun/49
     - oarc/F012r/l0
 
 - name: Batreaux - 50 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
+  hint: sometimes
   Paths:
     - event/121-AkumaKun/27
     - oarc/F012r/l0
-  hint: sometimes
 
 - name: Batreaux - 70 Crystals
   original_item: Gold Rupee
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
+  hint: sometimes
   Paths:
     - event/121-AkumaKun/161
     - oarc/F012r/l0
-  hint: sometimes
 
 - name: Batreaux - 70 Crystals Second Reward
   original_item: Gold Rupee
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
+  hint: sometimes
   Paths:
     - event/121-AkumaKun/163
     - oarc/F012r/l0
-  hint: sometimes
 
 - name: Batreaux - 80 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards
+  type: Batreaux's Rewards, NPC
+  hint: always
   Paths:
     - event/121-AkumaKun/37
     - oarc/F012r/l0
-  hint: always
 
 # Beedle's Shop:
 
 - name: Beedle's Shop - 300 Rupee Item
   original_item: Progressive Pouch 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
   Paths:
     - ShpSmpl/20
 
 - name: Beedle's Shop - 600 Rupee Item
   original_item: Progressive Pouch 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium), NPC
   Paths:
     - ShpSmpl/21
 
 - name: Beedle's Shop - 1200 Rupee Item
   original_item: Progressive Pouch 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive), NPC
   hint: always
   Paths:
     - ShpSmpl/22
 
 - name: Beedle's Shop - 800 Rupee Item
   original_item: Life Medal 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium), NPC
   Paths:
     - ShpSmpl/26
 
 - name: Beedle's Shop - 1600 Rupee Item
   original_item: Heart Piece 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive), NPC
   hint: always
   Paths:
     - ShpSmpl/23
 
 - name: Beedle's Shop - First 100 Rupee Item
   original_item: Extra Wallet 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
   Paths:
     - ShpSmpl/24
 
 - name: Beedle's Shop - Second 100 Rupee Item
   original_item: Extra Wallet 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
   Paths:
     - ShpSmpl/17
 
 - name: Beedle's Shop - Third 100 Rupee Item
   original_item: Extra Wallet 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
   Paths:
     - ShpSmpl/18
 
 - name: Beedle's Shop - 50 Rupee Item
   original_item: Progressive Bug Net 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
   Paths:
     - ShpSmpl/25
 
 - name: Beedle's Shop - 1000 Rupee Item
   original_item: Bug Medal
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium)
+  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium), NPC
   Paths:
     - ShpSmpl/27
 
@@ -508,19 +598,19 @@
 
 - name: Lumpy Pumpkin - Harp Minigame
   original_item: Heart Piece
-  type: Minigames
+  type: Minigames, NPC
+  hint: sometimes
   Paths:
     - event/117-Pumpkin/305
     - oarc/F011r/l0
-  hint: sometimes
 
 - name: Lumpy Pumpkin - Kina's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries, Gratitude Crystal Sidequests
+  type: Scrapper Deliveries, Gratitude Crystal Sidequests, NPC
+  hint: sometimes
   Paths:
     - event/117-Pumpkin/386
     - oarc/F020/l0
-  hint: sometimes
 
 - name: Lumpy Pumpkin - Outside Crystal
   original_item: Gratitude Crystal 
@@ -542,18 +632,18 @@
 
 - name: Orielle's Island - Orielle's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/225
     - oarc/F020/l0
 
 - name: Beedle's Island - Beedle's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests
+  type: Gratitude Crystal Sidequests, NPC
+  hint: sometimes
   Paths:
     - event/105-Terry/115
     - oarc/F020/l0
-  hint: sometimes
 
 - name: Beedle's Island - Crystal
   original_item: Gratitude Crystal 
@@ -564,9 +654,9 @@
 - name: Beedle's Island - Top Goddess Chest
   original_item: Heart Piece
   type: goddess, Lanayru Desert Goddess Chests, Combat
+  hint: sometimes
   Paths:
     - stage/F020/r0/l0/TBox/89
-  hint: sometimes
   cube_region: Lanayru Desert
 
 - name: Beedle's Island - Cage Goddess Chest
@@ -578,18 +668,18 @@
 
 - name: Fun Fun Island - Dodoh's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries
+  type: Scrapper Deliveries, NPC
   Paths:
     - event/110-DivingGame/60
     - oarc/F020/l0
 
 - name: Fun Fun Island - Minigame -- 500 Rupees
   original_item: Heart Piece
-  type: Minigames, Scrapper Deliveries
+  type: Minigames, Scrapper Deliveries, NPC
+  hint: sometimes
   Paths:
     - event/110-DivingGame/19
     - oarc/F020/l2
-  hint: sometimes
 
 - name: Fun Fun Island - Goddess Chest
   original_item: Gold Rupee
@@ -597,6 +687,24 @@
   Paths:
     - stage/F020/r0/l0/TBox/86
   cube_region: Lake Floria
+
+- name: The Sky - Form a Squirrel Ring above Volcanic Island
+  original_item: Red Rupee
+  type: Squirrel
+  Paths:
+    - stage/F020/r0/l0/MssbTag/0xFCC8 # actor id
+
+- name: The Sky - Form a Squirrel Ring above Lumpy Pumpkin
+  original_item: Red Rupee
+  type: Squirrel
+  Paths:
+    - stage/F020/r0/l0/MssbTag/0xFC9C # actor id
+
+- name: The Sky - Form a Squirrel Ring above Bamboo Island
+  original_item: Red Rupee
+  type: Squirrel
+  Paths:
+    - stage/F020/r0/l0/MssbTag/0xFCA0 # actor id
 
 - name: The Sky - Chest in Breakable Boulder near Fun Fun Island
   original_item: Silver Rupee
@@ -728,7 +836,6 @@
   type:
   Paths:
     - stage/F010r/r0/l0/SwSB/2
-  hint: sometimes
 
 - name: Isle of Songs - Top Goddess Chest
   original_item: Small Bomb Bag
@@ -746,19 +853,19 @@
 
 - name: The Thunderhead - Song from Levias
   original_item: Song of the Hero
-  type: Scrapper Deliveries, Combat
+  type: Scrapper Deliveries, Combat, NPC
+  hint: always
   Paths:
     - event/120-Nushi/give item after levias
     - oarc/F023/l0
-  hint: always
 
 - name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
   original_item: Beedle's Insect Cage
-  type: Minigames
+  type: Minigames, NPC
+  hint: sometimes
   Paths:
     - event/116-InsectGame/69
     - oarc/F023/l0
-  hint: sometimes
 
 - name: Bug Heaven - Goddess Chest
   original_item: Heart Piece
@@ -766,6 +873,30 @@
   Paths:
     - stage/F023/r0/l0/TBox/88
   cube_region: Volcano Summit
+
+- name: Bug Heaven - Stamina Fruit near Start
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F023/r0/l0/Item/0xFC87
+
+- name: Bug Heaven - Stamina Fruit in front of Wooden Plank
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F023/r0/l0/Item/0xFC1C
+
+- name: Bug Heaven - Stamina Fruit in Center Room
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F023/r0/l0/Item/0xFC86
+
+- name: Bug Heaven - Stamina Fruit on top of Slope
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F023/r0/l0/Item/0xFC10
 
 - name: Bug Heaven - Nearby Gossip Stone
   original_item: Nothing
@@ -778,8 +909,6 @@
   type:
   Paths:
     - stage/F023/r0/l0/TBox/94
-
-## Goddess Cubes
 
 - name: Thunderhead East Island - Goddess Chest
   original_item: Rupee Medal
@@ -804,6 +933,150 @@
 
 # Sealed Grounds:
 
+- name: Sealed Grounds - Spiral Stamina Fruit 1
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC1D
+
+- name: Sealed Grounds - Spiral Stamina Fruit 2
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC2C
+
+- name: Sealed Grounds - Spiral Stamina Fruit 3
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC1C
+
+- name: Sealed Grounds - Spiral Stamina Fruit 4
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC2B
+
+- name: Sealed Grounds - Spiral Stamina Fruit 5
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC1B
+
+- name: Sealed Grounds - Spiral Stamina Fruit 6
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC2A
+
+- name: Sealed Grounds - Spiral Stamina Fruit 7
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC29
+
+- name: Sealed Grounds - Spiral Stamina Fruit 8
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC1A
+
+- name: Sealed Grounds - Spiral Stamina Fruit 9
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC28
+
+- name: Sealed Grounds - Spiral Stamina Fruit 10
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC27
+
+- name: Sealed Grounds - Spiral Stamina Fruit 11
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC19
+
+- name: Sealed Grounds - Spiral Stamina Fruit 12
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC26
+
+- name: Sealed Grounds - Spiral Stamina Fruit 13
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC25
+
+- name: Sealed Grounds - Spiral Stamina Fruit 14
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC18
+
+- name: Sealed Grounds - Spiral Stamina Fruit 15
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC24
+
+- name: Sealed Grounds - Spiral Stamina Fruit 16
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC23
+
+- name: Sealed Grounds - Spiral Stamina Fruit 17
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC2D
+
+- name: Sealed Grounds - Spiral Stamina Fruit 18
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC22
+
+- name: Sealed Grounds - Spiral Stamina Fruit 19
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC17
+
+- name: Sealed Grounds - Spiral Stamina Fruit 20
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC21
+
+- name: Sealed Grounds - Spiral Stamina Fruit 21
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC20
+
+- name: Sealed Grounds - Spiral Stamina Fruit 22
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC16
+
+- name: Sealed Grounds - Spiral Stamina Fruit 23
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC1F
+
+- name: Sealed Grounds - Spiral Stamina Fruit 24
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+   - stage/F401/r1/l0/Item/0xFC1E
+
 - name: Sealed Temple - Chest
   original_item: Revitalizing Potion
   type:
@@ -812,25 +1085,25 @@
 
 - name: Sealed Temple - Song from Impa
   original_item: Ballad of the Goddess
-  type:
+  type: NPC
   Paths:
     - event/501-Inpa/267
     - oarc/F402/l0
 
 - name: Sealed Grounds - Gorko's Goddess Wall Reward
-  type:
+  type: NPC
   original_item: Heart Piece
+  hint: sometimes
   Paths:
     - event/503-Goron/630
     - oarc/F400/l0
-  hint: sometimes
 
-#Sealed Grounds - Behind the Temple Triforce on Goddess Wall:
-#  original_item: Gold Rupee
-#  type: long
-#  Paths:
-#   - event/503-Goron/418
-#   - oarc/F400/l0
+# Sealed Grounds - Behind the Temple Triforce on Goddess Wall:
+#   original_item: Gold Rupee
+#   type:
+#   Paths:
+#    - event/503-Goron/418
+#    - oarc/F400/l0
 
 - name: Sealed Grounds - Gossip Stone
   original_item: Nothing
@@ -840,11 +1113,11 @@
 
 - name: Hylia's Temple - Zelda's Blessing
   original_item: Progressive Sword
-  type: #TODO: this may need to be revisited as it doesnt really fit any other checks
+  type: NPC #TODO: this may need to be revisited as it doesnt really fit any other checks
+  hint: sometimes
   Paths:
     - event/502-CenterFieldBack/17
     - oarc/F404/l1
-  hint: sometimes
 
 - name: Hylia's Realm - Defeat Demise
   original_item: Game Beatable
@@ -865,11 +1138,11 @@
 
 - name: Faron Woods - Kikwi Elder's Reward
   original_item: Progressive Slingshot
-  type: Combat # because of the Lopsa Bokoblin fight, this is a Combat reward
+  type: NPC, Combat # because of the Lopsa Bokoblin fight, this is a Combat reward
+  hint: sometimes
   Paths:
     - stage/F100/r0/l1/NpcKyuE/0x1EBB # id is different from SD
     - oarc/F100/l0
-  hint: sometimes
 
 - name: Faron Woods - Rupee on Hollow Tree Root
   original_item: Blue Rupee 
@@ -907,6 +1180,36 @@
   Paths:
     - stage/F100/r0/l0/Item/44
 
+- name: Faron Woods - Stamina Fruit on Vines below First Log
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F100/r0/l0/Item/0x60E6
+
+- name: Faron Woods - Stamina Fruit past Empty Slope
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F100/r0/l0/Item/0x64E5
+
+- name: Faron Woods - Stamina Fruit past Baba Slope
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F100/r0/l0/Item/0x0CE7
+
+- name: Faron Woods - Stamina Fruit on Vines near Erla
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F100/r0/l0/Item/0x5CE4
+
+- name: Faron Woods - Stamina Fruit on Vines on Great Tree
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F100/r0/l0/Item/0x50E3
+
 - name: Faron Woods - Goddess Cube on West Great Tree near Exit
   original_item: Faron Woods Goddess Cube on West Great Tree near Exit
   type: Goddess Cube
@@ -922,15 +1225,21 @@
 - name: Great Tree - Chest
   original_item: Gold Rupee
   type:
+  hint: sometimes
   Paths:
     - stage/F100_1/r0/l0/TBox/84
-  hint: sometimes
 
 - name: Deep Woods - Chest
   original_item: Red Rupee
   type:
   Paths:
     - stage/F101/r0/l0/TBox/74
+
+- name: Deep Woods - Stamina Fruit
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F101/r0/l0/Item/0xFC61
 
 - name: Deep Woods - Gossip Stone
   original_item: Nothing
@@ -979,7 +1288,6 @@
 - name: Lake Floria - Chest
   original_item: Goddess Plume
   type:
-  hint: sometimes
   Paths:
     - stage/F102/r3/l0/TBox/64
 
@@ -1122,7 +1430,7 @@
 
 # - name: Flooded Faron Woods - Water Dragon's Reward
 #   original_item: Faron Song of the Hero Part
-#   type: Tadtones
+#   type: Tadtones, NPC
 #   hint: sometimes
 #   Paths:
 #     - event/204-ForestF3/Give item after Faron SotH CS
@@ -1246,6 +1554,111 @@
   original_item: Eldin Volcano Goddess Cube on Sand Slide
   type: Goddess Cube
 
+- name: Eldin Volcano - Stamina Fruit in Rising Lava Room
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFC1B
+
+- name: Eldin Volcano - Stamina Fruit near Volcano East Statue
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFC4D
+
+- name: Eldin Volcano - Stamina Fruit in front of Bone Bridge
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r2/l1/Item/0xFCC6
+    - stage/F200/r2/l2/Item/0xFCBE
+    - stage/F200/r2/l3/Item/0xFCCC
+    - oarc/F200/l0
+
+- name: Eldin Volcano - Stamina Fruit near Item on Cliff
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFC4E
+
+- name: Eldin Volcano - Stamina Fruit in front of First Slope 1
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC2F
+
+- name: Eldin Volcano - Stamina Fruit in front of First Slope 2
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC30
+
+- name: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r8/l0/Item/0xFC02
+
+- name: Eldin Volcano - Stamina Fruit after First Slope
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC31
+
+- name: Eldin Volcano - Stamina Fruit next to Small Puddle
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC32
+
+- name: Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC33
+
+- name: Eldin Volcano - Stamina Fruit in front of Second Slope 1
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC36
+
+- name: Eldin Volcano - Stamina Fruit in front of Second Slope 2
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC34
+
+- name: Eldin Volcano - Stamina Fruit in front of Second Slope 3
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC35
+
+- name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r5/l0/Item/0xFC0B
+
+- name: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r5/l0/Item/0xFC0C
+
+- name: Eldin Volcano - Stamina Fruit on vines near Hot Cave
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r5/l0/Item/0x2805
+
+- name: Eldin Volcano - Stamina Fruit after Big Sand Slide
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFC4F
+
 ## These checks are Digging Spots
 
 - name: Eldin Volcano - Digging Spot in front of Earth Temple
@@ -1263,7 +1676,6 @@
 - name: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
   original_item: Key Piece
   type:
-  hint: sometimes
   Paths:
     - stage/F200/r4/l1/Soil/12
 
@@ -1295,7 +1707,7 @@
 
 - name: Mogma Turf - Defeat Bokoblins
   original_item: Progressive Mitts
-  type: Combat
+  type: Combat, NPC
   Paths:
     - event/300-Mountain/6
     - event/300-Mountain/135
@@ -1328,9 +1740,9 @@
 - name: Volcano Summit - Item behind Digging
   original_item: Heart Piece
   type:
+  hint: sometimes
   Paths:
     - stage/F201_3/r0/l0/Item/104 #sceneflagID
-  hint: sometimes
 
 - name: Volcano Summit - Gossip Stone in Waterfall Area
   original_item: Nothing
@@ -1359,70 +1771,70 @@
 
 # Bokoblin Base:
 
-# - name: Bokoblin Base - Plats' Gift
-#   original_item: Mogma Mitts
-#   type:
-#   Paths:
-#    - event/305-MountainF3/Plats' Gift
-#    - oarc/F202/l1
+- name: Bokoblin Base - Plats' Gift
+  original_item: Mogma Mitts
+  type: NPC
+  Paths:
+   - event/305-MountainF3/Plats' Gift
+   - oarc/F202/l1
 
-# - name: Bokoblin Base - Chest near Bone Bridge
-#   original_item: Gust Bellows
-#   type:
-#   Paths:
-#    - stage/F202/r2/l1/TBox/70
+- name: Bokoblin Base - Chest near Bone Bridge
+  original_item: Gust Bellows
+  type:
+  Paths:
+   - stage/F202/r2/l1/TBox/70
 
-# - name: Bokoblin Base - Chest on Cliff
-#   original_item: Clawshots
-#   type:
-#   Paths:
-#    - stage/F202/r2/l1/TBox/66
+- name: Bokoblin Base - Chest on Cliff
+  original_item: Clawshots
+  type:
+  Paths:
+   - stage/F202/r2/l1/TBox/66
 
-# - name: Bokoblin Base - Chest near Drawbridge
-#   original_item: Whip
-#   type:
-#   Paths:
-#    - stage/F202/r2/l1/TBox/67
+- name: Bokoblin Base - Chest near Drawbridge
+  original_item: Whip
+  type:
+  Paths:
+   - stage/F202/r2/l1/TBox/67
 
-# - name: Bokoblin Base - Chest East of Earth Temple Entrance
-#   original_item: Progressive Slingshot
-#   type:
-#   Paths:
-#    - stage/F202/r4/l1/TBox/68
+- name: Bokoblin Base - Chest East of Earth Temple Entrance
+  original_item: Progressive Slingshot
+  type:
+  Paths:
+   - stage/F202/r4/l1/TBox/68
 
-# - name: Bokoblin Base - Chest West of Earth Temple Entrance
-#   original_item: Bomb Bag
-#   type:
-#   Paths:
-#    - stage/F202/r4/l1/TBox/69
+- name: Bokoblin Base - Chest West of Earth Temple Entrance
+  original_item: Bomb Bag
+  type:
+  Paths:
+   - stage/F202/r4/l1/TBox/69
 
-# - name: Bokoblin Base - First Chest in Volcano Summit
-#   original_item: Blue Rupee
-#   type:
-#   Paths:
-#    - stage/F201_2/r0/l0/TBox/72
-#    - stage/F201_1/r0/l4/TBox/72
+- name: Bokoblin Base - First Chest in Volcano Summit
+  original_item: Blue Rupee
+  type:
+  Paths:
+   - stage/F201_2/r0/l0/TBox/72
+   - stage/F201_1/r0/l4/TBox/72
 
-# - name: Bokoblin Base - Raised Chest in Volcano Summit
-#   original_item: Progressive Sword
-#   type:
-#   Paths:
-#    - stage/F201_2/r0/l0/TBox/73
-#    - stage/F201_1/r0/l4/TBox/73
+- name: Bokoblin Base - Raised Chest in Volcano Summit
+  original_item: Progressive Sword
+  type:
+  Paths:
+   - stage/F201_2/r0/l0/TBox/73
+   - stage/F201_1/r0/l4/TBox/73
 
-# - name: Bokoblin Base - Chest in Volcano Summit Alcove
-#   original_item: Progressive Pouch
-#   type:
-#   Paths:
-#    - stage/F201_2/r0/l0/TBox/71
-#    - stage/F201_1/r0/l4/TBox/71
+- name: Bokoblin Base - Chest in Volcano Summit Alcove
+  original_item: Progressive Pouch
+  type:
+  Paths:
+   - stage/F201_2/r0/l0/TBox/71
+   - stage/F201_1/r0/l4/TBox/71
 
-# - name: Bokoblin Base - Fire Dragon's Reward
-#   original_item: Eldin Song of the Hero Part
-#   type:
-#   Paths:
-#    - event/305-MountainF3/Give item after Eldin SotH CS
-#    - oarc/F221/l0
+- name: Bokoblin Base - Fire Dragon's Reward
+  original_item: Eldin Song of the Hero Part
+  type: NPC
+  Paths:
+   - event/305-MountainF3/Give item after Eldin SotH CS
+   - oarc/F221/l0
 
 # Lanayru Mine:
 
@@ -1450,6 +1862,36 @@
   Paths:
     - stage/F300_1/r2/l0/TBox/66
 
+- name: Lanayru Mine - Stamina Fruit before Falling Statues
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/Item/0xFC31
+
+- name: Lanayru Mine - Stamina Fruit after Falling Statues
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/Item/0xFC19
+
+- name: Lanayru Mine - Stamina Fruit near Spumes 1
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/Item/0xFC1A
+
+- name: Lanayru Mine - Stamina Fruit near Spumes 2
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/Item/0xFC1B
+
+- name: Lanayru Mine - Stamina Fruit near Spumes 3
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/Item/0xFC1C
+
 - name: Lanayru Mine - Goddess Cube
   original_item: Lanayru Mine Goddess Cube
   type: Goddess Cube
@@ -1470,7 +1912,7 @@
 
 - name: Lanayru Desert - Rescue Caged Robot
   original_item: Progressive Beetle
-  type: Combat
+  type: Combat, NPC
   Paths:
     - event/400-Desert/8
     - oarc/F300/l0
@@ -1496,9 +1938,9 @@
 - name: Lanayru Desert - Chest on top of Lanayru Mining Facility # actually spawns on raising LMF
   original_item: Rare Treasure # TODO check
   type:
+  hint: sometimes
   Paths:
     - stage/F300/r0/l1/TBox/83
-  hint: sometimes
 
 - name: Lanayru Desert - Secret Passageway Chest
   original_item: Heart Piece
@@ -1506,6 +1948,54 @@
   hint: sometimes
   Paths:
     - stage/F300/r0/l0/TBox/74
+
+- name: Lanayru Desert - Stamina Fruit on Ledge to Party Wheel
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFC3B
+
+- name: Lanayru Desert - Stamina Fruit on South LMF Ledge
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFE2A
+
+- name: Lanayru Desert - Stamina Fruit on West LMF Ledge
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFE2B
+
+- name: Lanayru Desert - Stamina Fruit on LMF Wall Vines
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFE2C
+
+- name: Lanayru Desert - Stamina Fruit in South Sand Oasis 1
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFC32
+
+- name: Lanayru Desert - Stamina Fruit in South Sand Oasis 2
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFC33
+
+- name: Lanayru Desert - Stamina Fruit in North Sand Oasis 1
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFCAF
+
+- name: Lanayru Desert - Stamina Fruit in North Sand Oasis 2
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFC3C
 
 - name: Temple of Time - Gossip Stone
   original_item: Nothing
@@ -1590,7 +2080,7 @@
 
 - name: Lanayru Caves - Golo's Gift
   original_item: Lanayru Caves Small Key
-  type:
+  type: NPC
   Paths:
     - event/404-DesertF3/127
     - oarc/F303/l0
@@ -1611,11 +2101,11 @@
 
 - name: Lanayru Gorge - Thunder Dragon's Reward
   original_item: Lanayru Song of the Hero Part
-  type:
+  type: NPC
+  hint: sometimes
   Paths:
     - event/404-DesertF3/give item after Healing Thunderdragon
     - oarc/F302/l0
-  hint: sometimes
 
 - name: Lanayru Gorge - Item on Pillar
   original_item: Red Rupee
@@ -1675,9 +2165,9 @@
 - name: Skipper's Retreat - Chest in Shack
   original_item: Sea Chart
   type:
+  hint: sometimes
   Paths:
     - stage/F301_5/r0/l0/TBox/65
-  hint: sometimes
 
 - name: Skipper's Retreat - Skydive Chest
   original_item: Silver Rupee
@@ -1693,11 +2183,11 @@
 
 - name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
   original_item: Heart Piece
-  type: Minigames, Combat #Moldarach 2 makes this a Combat check
+  type: Minigames, NPC
+  hint: sometimes
   Paths:
     - event/406-TrolleyRace/77
     - oarc/F301_4/l0
-  hint: sometimes
 
 - name: Shipyard - Gossip Stone
   original_item: Nothing
@@ -1726,6 +2216,24 @@
     - stage/F301_6/r0/l1/Item/13
     - stage/F301_6/r0/l2/Item/13
     - oarc/F301_6/l0
+
+- name: Pirate Stronghold - Stamina Fruit on Left Side
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F301_6/r0/l0/Item/0xFC1F
+
+- name: Pirate Stronghold - Stamina Fruit on Upper Right Side
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F301_6/r0/l0/Item/0xFC20
+
+- name: Pirate Stronghold - Stamina Fruit on Lower Right Side
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/F301_6/r0/l0/Item/0xFC1E
 
 - name: Pirate Stronghold - Goddess Cube
   original_item: Pirate Stronghold Goddess Cube
@@ -1760,7 +2268,7 @@
 - name: Skyview Temple - Digging Spot in Crawlspace
   original_item: Skyview Temple Small Key
   type:
-  hints: sometimes
+  hint: sometimes
   Paths:
     - stage/D100/r4/l0/Soil/15
 
@@ -1804,9 +2312,9 @@
 - name: Skyview Temple - Chest behind Three Eyes
   original_item: Skyview Temple Small Key 
   type:
+  hint: sometimes
   Paths:
     - stage/D100/r7/l0/TBox/68
-  hint: sometimes
 
 - name: Skyview Temple - Chest near Boss Door
   original_item: Red Rupee
@@ -1838,7 +2346,7 @@
 - name: Skyview Spring - Strike Crest
   original_item: Ruby Tablet
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/201-ForestD1/6
     - oarc/B100_1/l0
@@ -1876,7 +2384,6 @@
 - name: Earth Temple - Chest in West Room
   original_item: Earth Temple Map
   type:
-  hint: sometimes
   Paths:
     - stage/D200/r0/l0/TBox/64
 
@@ -1888,7 +2395,7 @@
 
 - name: Earth Temple - Ledd's Gift
   original_item: 5 Bombs
-  type:
+  type: NPC
   Paths:
     - event/301-MountainD1/16
     - oarc/D200/l0
@@ -1908,8 +2415,33 @@
 - name: Earth Temple - Chest before Boulder Chase
   original_item: Earth Temple Boss Key
   type:
+  hint: sometimes
   Paths:
     - stage/D200/r4/l0/TBox/68
+
+- name: Earth Temple - Stamina Fruit before Boulder Chase 1
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/D200/r4/l0/Item/0xFC02
+
+- name: Earth Temple - Stamina Fruit before Boulder Chase 2
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/D200/r4/l0/Item/0xFC22
+
+- name: Earth Temple - Stamina Fruit before Boulder Chase 3
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/D200/r4/l0/Item/0xFC27
+
+- name: Earth Temple - Stamina Fruit before Boulder Chase 4
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/D200/r4/l0/Item/0xFC13
 
 - name: Earth Temple - Defeat Boss
   original_item: Heart Container
@@ -1921,7 +2453,7 @@
 - name: Earth Spring - Strike Crest
   original_item: Amber Tablet
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/301-MountainD1/22
     - oarc/B210/l0
@@ -1987,9 +2519,9 @@
 - name: Lanayru Mining Facility - Chest after Double Armos Fight
   original_item: Lanayru Mining Facility Boss Key
   type:
+  hint: sometimes
   Paths:
     - stage/D300_1/r8/l0/TBox/71
-  hint: always
 
 - name: Lanayru Mining Facility - Shortcut Chest in Main Hub
   original_item: Red Rupee
@@ -2007,7 +2539,7 @@
 - name: Lanayru Mining Facility - Exit Hall of Ancient Robots
   original_item: Goddess's Harp
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/400-Desert/283
     - oarc/F300_5/l0
@@ -2059,15 +2591,8 @@
 - name: Ancient Cistern - Chest in East Part
   original_item: Ancient Cistern Small Key 
   type:
-  hint: sometimes
   Paths:
     - stage/D101/r1/l0/TBox/67
-
-- name: Ancient Cistern - Rupee under Lilypad
-  original_item: Red Rupee
-  type: Rupees (No Quick Beetle)
-  Paths:
-    - stage/D101/r5/l0/Item/13
 
 - name: Ancient Cistern - Chest after Whip Hooks
   original_item: Ancient Cistern Map
@@ -2093,6 +2618,12 @@
   Paths:
     - stage/D101/r4/l0/EBc/0xFC00
 
+- name: Ancient Cistern - Rupee under Lilypad
+  original_item: Red Rupee
+  type: Rupees (No Quick Beetle)
+  Paths:
+    - stage/D101/r5/l0/Item/13
+
 - name: Ancient Cistern - Chest in Key Locked Room
   original_item: Whip
   type:
@@ -2102,6 +2633,7 @@
 - name: Ancient Cistern - Chest under Stone Statue
   original_item: Ancient Cistern Boss Key
   type:
+  hint: sometimes
   Paths:
     - stage/D101/r4/l0/TBox/68
 
@@ -2115,7 +2647,7 @@
 - name: Ancient Cistern - Farore's Flame
   original_item: Progressive Sword
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/202-ForestD2/give item after beating ancient cistern
     - oarc/B101_1/l0
@@ -2172,7 +2704,7 @@
 
 - name: Sandship - Robot in Brig's Reward
   original_item: Sandship Small Key 
-  type:
+  type: NPC
   hint: sometimes
   Paths:
     - event/401-DesertD2/14
@@ -2181,16 +2713,16 @@
 - name: Sandship - Chest after Scervo Fight
   original_item: Progressive Bow
   type:
+  hint: sometimes
   Paths:
     - stage/D301/r15/l0/TBox/72
-  hint: sometimes
 
 - name: Sandship - Chest in Captain's Cabin
   original_item: Sandship Boss Key
   type:
+  hint: sometimes
   Paths:
     - stage/D301/r14/l3/TBox/73
-  hint: sometimes
 
 - name: Sandship - Defeat Boss
   original_item: Heart Container
@@ -2198,12 +2730,11 @@
   Paths:
     - stage/B301/r0/l1/HeartCo
     - stage/D301/r0/l1/HeartCo
-  hint: sometimes
 
 - name: Sandship - Nayru's Flame
   original_item: Progressive Sword
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/401-DesertD2/45
     - oarc/B301/l1
@@ -2258,6 +2789,7 @@
 - name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   original_item: Fire Sanctuary Map
   type:
+  hint: sometimes
   Paths:
     - stage/D201_1/r2/l0/TBox/65
     - stage/D201/r2/l0/TBox/65
@@ -2265,9 +2797,9 @@
 - name: Fire Sanctuary - Chest after Bombable Wall
   original_item: Fire Sanctuary Small Key 
   type:
+  hint: sometimes
   Paths:
     - stage/D201_1/r11/l0/TBox/71
-  hint: always
 
 - name: Fire Sanctuary - Plats' Chest
   original_item: Heart Piece
@@ -2297,7 +2829,7 @@
 - name: Fire Sanctuary - Din's Flame
   original_item: Progressive Sword
   goal_location: true
-  type:
+  type: NPC
   Paths:
     - event/304-MountainD2/5
     - oarc/B201_1/l0
@@ -2345,30 +2877,92 @@
 
 # Silent Realms:
 
+- name: Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S000/r0/l2/Item/0xFC55
+
 - name: Skyloft Silent Realm - Collect all Tears Reward
   original_item: Stone of Trials
   type:
   Paths:
     - stage/S000/r0/l2/WarpObj
-  hint: always
+
+- name: Faron Silent Realm - Stamina Fruit on Vine Wall 1
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S100/r0/l2/Item/0xFC9A
+
+- name: Faron Silent Realm - Stamina Fruit on Vine Wall 2
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S100/r0/l2/Item/0xFC9B
 
 - name: Faron Silent Realm - Collect all Tears Reward
   original_item: Water Dragon's Scale
   type:
   Paths:
     - stage/S100/r0/l2/WarpObj
-  hint: always
+
+- name: Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S300/r0/l2/Item/0xFC2D
+
+- name: Lanayru Silent Realm - Stamina Fruit on West LMF Vine Wall
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S300/r0/l2/Item/0xFC36
+
+- name: Lanayru Silent Realm - Stamina Fruit near Minecart
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S300/r0/l2/Item/0xFC30
+
+- name: Lanayru Silent Realm - Stamina Fruit between Watchers
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S300/r0/l2/Item/0xFC63
+
+- name: Lanayru Silent Realm - Stamina Fruit near Tree
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S300/r0/l2/Item/0xFC31
 
 - name: Lanayru Silent Realm - Collect all Tears Reward
   original_item: Clawshots
   type:
   Paths:
     - stage/S300/r0/l2/WarpObj
-  hint: always
+
+- name: Eldin Silent Realm - Stamina Fruit on First Slope
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S200/r4/l2/Item/0xFC05
+
+- name: Eldin Silent Realm - Stamina Fruit near First Bone Bridge
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S200/r2/l2/Item/0xFC40
+
+- name: Eldin Silent Realm - Stamina Fruit near Tear on Vines
+  original_item: Stamina Fruit
+  type: Stamina Fruit, Custom Flag
+  Paths:
+    - stage/S200/r2/l2/Item/0xFC4D
 
 - name: Eldin Silent Realm - Collect all Tears Reward
   original_item: Fireshield Earrings
   type:
   Paths:
     - stage/S200/r2/l2/WarpObj
-  hint: always

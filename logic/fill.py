@@ -25,6 +25,7 @@ def fill_worlds(worlds: list[World]):
     for world in worlds:
         place_restricted_items(world, worlds)
         world.sanitize_item_pool()
+        world.add_traps()
 
     item_pool: list[Item] = []
     all_locations: list[Location] = []

@@ -8,6 +8,13 @@ MAIN_NSO_OFFSETS = NsoOffsets(
     size=0x2D033000,  # 0x712D037000 (from gdb) - 0x7100004000
 )
 
+SDK_NSO_OFFSETS = NsoOffsets(
+    text_offset=0x712E0A5000,
+    rodata_offset=0x712E633000,
+    data_offset=0x712ECBA000,
+    size=0xD34000,  # From gdb: (0x00af47ffff - 0x00ae74c000) + 1
+)
+
 SUBSDK1_START = 0x712D9FF000
 
 SUBSDK8_TEXT_START = 0x712E0A5000

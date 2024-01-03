@@ -1,3 +1,6 @@
+- name: Trap Text
+  standard: "<slowtext>You got<pause 5>.<pause 5>.<pause 5>. <pause 15>Trapped!"
+
 - name: Scrapper Item Get Text
   standard: "You found Gondo's robot, <y<Scrapper>>!
             \n\n\n\nBe sure to take care of him.\n...even if he's a little mean."
@@ -64,50 +67,50 @@
   standard: "You got <r<one>> <y<Gratitude Crystal>>!\nThat is <r<<numeric arg1> >>in Total!"
 
 - name: Skyview Key Text
-  standard: You got a <g<Skyview Temple>> Small Key!"
+  standard: "You got a <g<Skyview Temple>> Small Key!"
 
   # This is an intentional duplicate of the above entry
 - name: Item 200 Text
-  standard: You got a <g<Skyview Temple>> Small Key!"
+  standard: "You got a <g<Skyview Temple>> Small Key!"
 
 - name: Item 201 Text
-  standard: You got a <y<Lanayru Mining Facility>> Small\nKey!"
+  standard: "You got a <y<Lanayru Mining Facility>> Small\nKey!"
 
 - name: Item 202 Text
-  standard: You got a <b<Ancient Cistern>> Small Key!"
+  standard: "You got a <b<Ancient Cistern>> Small Key!"
 
 - name: Item 203 Text
-  standard: You got a <r<Fire Sanctuary>> Small Key!"
+  standard: "You got a <r<Fire Sanctuary>> Small Key!"
 
 - name: Item 204 Text
-  standard: You got a <y+<Sandship>> Small Key!"
+  standard: "You got a <y+<Sandship>> Small Key!"
 
 - name: Item 205 Text
-  standard: You got a <s<Sky Keep>> Small Key!"
+  standard: "You got a <s<Sky Keep>> Small Key!"
 
 - name: Item 206 Text
-  standard: You got a <ye<Lanayru Caves>> Small Key!"
+  standard: "You got a <ye<Lanayru Caves>> Small Key!"
 
 - name: Item 207 Text
-  standard: You got the <g<Skyview Temple>> Map!"
+  standard: "You got the <g<Skyview Temple>> Map!"
 
 - name: Item 208 Text
-  standard: You got the <r+<Earth Temple>> Map!"
+  standard: "You got the <r+<Earth Temple>> Map!"
 
 - name: Item 209 Text
-  standard: You got the <y<Lanayru Mining Facility>> Map!"
+  standard: "You got the <y<Lanayru Mining Facility>> Map!"
 
 - name: Item 210 Text
-  standard: You got the <b<Ancient Cistern>> Map!"
+  standard: "You got the <b<Ancient Cistern>> Map!"
 
 - name: Item 211 Text
-  standard: You got the <r<Fire Sanctuary>> Map!"
+  standard: "You got the <r<Fire Sanctuary>> Map!"
 
 - name: Item 212 Text
-  standard: You got the <y+<Sandship>> Map!"
+  standard: "You got the <y+<Sandship>> Map!"
 
 - name: Item 213 Text
-  standard: You got the <s<Sky Keep>> Map!"
+  standard: "You got the <s<Sky Keep>> Map!"
 
 - name: Fi Warp Text
   standard: "Which warp would you like to use?\n[1]Warp to Start[2]Use amiibo[3-]Never mind."
@@ -410,6 +413,12 @@
   cryptic: <r<10 explosions>>
   plurality: Plural
 
+- name: Stamina Fruit
+  standard: Stamina Fruit
+  pretty: Stamina Fruit
+  cryptic: an <r<energetic fruit>>
+  plurality: Singular
+
 - name: Gratitude Crystal
   standard: Gratitude Crystal
   pretty: a <Gratitude Crystal>
@@ -464,6 +473,12 @@
   cryptic: a <r<very nice treasure>>
   plurality: Singular
 
+- name: Guardian Potion
+  standard: Guardian Potion
+  pretty: a <Guardian Potion>
+  cryptic: <r<immunity>>
+  plurality: Singular
+
 - name: Water Dragon's Scale
   standard: Water Dragon's Scale
   pretty: the <Water Dragon's Scale>
@@ -498,6 +513,24 @@
   standard: Tough Beetle
   pretty: the <Tough Beetle>
   cryptic: a <r<touch insect>>
+  plurality: Singular
+
+- name: Heart Potion
+  standard: Heart Potion
+  pretty: a <Heart Potion>
+  cryptic: <r<medicine>>
+  plurality: Singular
+
+- name: Stamina Potion
+  standard: Stamina Potion
+  pretty: a <Stamina Potion>
+  cryptic: <r<stimulants>>
+  plurality: Singular
+
+- name: Air Potion
+  standard: Air Potion
+  pretty: a <Air Potion>
+  cryptic: a <r<snorkel>>
   plurality: Singular
 
 - name: Iron Bow
@@ -653,7 +686,7 @@
 - name: Revitalizing Potion
   standard: Revitalizing Potion
   pretty: a <Revitalizing Potion>
-  cryptic: a <r<heal and repair>>
+  cryptic: a <r<cure-all>>
   plurality: Singular
 
 - name: Small Seed Satchel
@@ -677,7 +710,7 @@
 - name: Whip
   standard: Whip
   pretty: the <Whip>
-  cryptic: a <r<small sonicboom>> 
+  cryptic: a <r<small sonicboom>>
   plurality: Singular
 
 - name: Fireshield Earrings
@@ -944,6 +977,30 @@
   cryptic: a <r<transport friend>>
   plurality: Singular
 
+- name: Groose Trap
+  standard: Trap
+  pretty: a Groose Trap
+  cryptic: <r<Skyloft's true hero>>
+  plurality: Singular
+
+- name: Noise Trap
+  standard: Trap
+  pretty: a Noise Trap
+  cryptic: a <r<audiophile's delight>>
+  plurality: Singular
+
+- name: Curse Trap
+  standard: Trap
+  pretty: a Curse Trap
+  cryptic: a <r<magical hand-tie>>
+  plurality: Singular
+
+- name: Burn Trap
+  standard: Trap
+  pretty: a Burn Trap
+  cryptic: a <r<pyrotechnician's delight>>
+  plurality: Singular
+
 - name: Game Beatable
   standard: Game Beatable
   pretty: Game Beatable
@@ -1145,32 +1202,57 @@
 - name: Knight Academy - Crystal in Link's Room
   standard: Knight Academy - Crystal in Link's Room
   pretty: Knight Academy - Crystal in Link's Room
-  cryptic: the <r<crystal on the hero's desk>> 
+  cryptic: the <r<crystal on the hero's desk>>
 
 - name: Knight Academy - Crystal in Knight Academy Plant
   standard: Knight Academy - Crystal in Knight Academy Plant
   pretty: Knight Academy - Crystal in Knight Academy Plant
-  cryptic: the <r<crystal hidden in a plant>> 
+  cryptic: the <r<crystal hidden in a plant>>
 
 - name: Knight Academy - Crystal in Zelda's Room
   standard: Knight Academy - Crystal in Zelda's Room
   pretty: Knight Academy - Crystal in Zelda's Room
-  cryptic: the <r<crystal in a lover's room>> 
+  cryptic: the <r<crystal in a lover's room>>
 
 - name: Upper Skyloft - Owlan's Gift
   standard: Upper Skyloft - Owlan's Gift
   pretty: Upper Skyloft - Owlan's Gift
-  cryptic: a <r<gift from a professor>> 
+  cryptic: a <r<gift from a professor>>
+
+- name: Upper Skyloft - Rescue Remlit above Knight Academy
+  standard: Upper Skyloft - Rescue Remlit above Knight Academy
+  pretty: Upper Skyloft - Rescue Remlit above Knight Academy
+  cryptic: disturbing a <r<sleepy cat>>
 
 - name: Upper Skyloft - Chest near Goddess Statue
   standard: Upper Skyloft - Chest near Goddess Statue
   pretty: Upper Skyloft - Chest near Goddess Statue
-  cryptic: the <r<northmost chest on Skyloft>> 
+  cryptic: the <r<northmost chest on Skyloft>>
 
 - name: Upper Skyloft - Pumpkin Archery -- 600 Points
   standard: Upper Skyloft - Pumpkin Archery -- 600 Points
   pretty: Upper Skyloft - Pumpkin Archery -- 600 Points
   cryptic: <r<shooting pumpkings>>
+
+- name: Upper Skyloft - Stamina Fruit near Upper Academy Gates
+  standard: Upper Skyloft - Stamina Fruit near Upper Academy Gates
+  pretty: Upper Skyloft - Stamina Fruit near Upper Academy Gates
+  cryptic: a <r<fruit near a school>>
+
+- name: Upper Skyloft - Stamina Fruit near Lower Academy Gates
+  standard: Upper Skyloft - Stamina Fruit near Lower Academy Gates
+  pretty: Upper Skyloft - Stamina Fruit near Lower Academy Gates
+  cryptic: a <r<fruit near a school>>
+
+- name: Upper Skyloft - Stamina Fruit near Sparring Hall
+  standard: Upper Skyloft - Stamina Fruit near Sparring Hall
+  pretty: Upper Skyloft - Stamina Fruit near Sparring Hall
+  cryptic: a <r<fruit near a school>>
+
+- name: Upper Skyloft - Stamina Fruit near Goddess Statue
+  standard: Upper Skyloft - Stamina Fruit near Goddess Statue
+  pretty: Upper Skyloft - Stamina Fruit near Goddess Statue
+  cryptic: a <r<fruit near a tall statue>>
 
 - name: Inside the Statue of the Goddess - First Goddess Sword Item
   standard: Inside the Statue of the Goddess - First Goddess Sword Item
@@ -1287,6 +1369,36 @@
   pretty: Central Skyloft - Shed Chest
   cryptic: a <r<chest next to a goddess chest>>
 
+- name: Central Skyloft - Stamina Fruit between Wooden Planks
+  standard: Central Skyloft - Stamina Fruit between Wooden Planks
+  pretty: Central Skyloft - Stamina Fruit between Wooden Planks
+  cryptic: a <r<fruit in a lively area>>
+
+- name: Central Skyloft - Stamina Fruit near Wryna's House
+  standard: Central Skyloft - Stamina Fruit near Wryna's House
+  pretty: Central Skyloft - Stamina Fruit near Wryna's House
+  cryptic: a <r<fruit in a lively area>>
+
+- name: Central Skyloft - Stamina Fruit near River
+  standard: Central Skyloft - Stamina Fruit near River
+  pretty: Central Skyloft - Stamina Fruit near River
+  cryptic: a <r<fruit in a lively area>>
+
+- name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
+  standard: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
+  pretty: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
+  cryptic: a <r<fruit in a lively area>>
+
+- name: Central Skyloft - Stamina Fruit near Bazaar
+  standard: Central Skyloft - Stamina Fruit near Bazaar
+  pretty: Central Skyloft - Stamina Fruit near Bazaar
+  cryptic: a <r<fruit in a lively area>>
+
+- name: Central Skyloft - Stamina Fruit near Plaza
+  standard: Central Skyloft - Stamina Fruit near Plaza
+  pretty: Central Skyloft - Stamina Fruit near Plaza
+  cryptic: a <r<fruit in a lively area>>
+
 - name: Central Skyloft - West Cliff Goddess Chest
   standard: Central Skyloft - West Cliff Goddess Chest
   pretty: Central Skyloft - West Cliff Goddess Chest
@@ -1361,6 +1473,11 @@
   standard: Skyloft Village - Crystal near Pumpkin Patch
   pretty: Skyloft Village - Crystal near Pumpkin Patch
   cryptic: a <r<crystal behind a tree>>
+
+- name: Skyloft Village - Stamina Fruit
+  standard: Skyloft Village - Stamina Fruit
+  pretty: Skyloft Village - Stamina Fruit
+  cryptic: a <r<fruit near some residences>>
 
 - name: Batreaux - 5 Crystals
   standard: Batreaux - 5 Crystals
@@ -1532,6 +1649,21 @@
   pretty: Fun Fun Island - Goddess Chest
   cryptic: a <s<goddess cube>> <r<near an ancient purifier>>
 
+- name: The Sky - Form a Squirrel Ring above Volcanic Island
+  standard: The Sky - Fly in Formation above Volcanic Island
+  pretty: The Sky - Fly in Formation above Volcanic Island
+  cryptic: <r<flying in a western formation>
+
+- name: The Sky - Form a Squirrel Ring above Lumpy Pumpkin
+  standard: The Sky - Fly in Formation above Lumpy Pumpkin
+  pretty: The Sky - Fly in Formation above Lumpy Pumpkin
+  cryptic: <r<flying in an eastern formation>
+
+- name: The Sky - Form a Squirrel Ring above Bamboo Island
+  standard: The Sky - Fly in Formation above Bamboo Island
+  pretty: The Sky - Fly in Formation above Bamboo Island
+  cryptic: <r<flying in a northern formation>
+
 - name: The Sky - Chest in Breakable Boulder near Fun Fun Island
   standard: The Sky - Chest in Breakable Boulder near Fun Fun Island
   pretty: The Sky - Chest in Breakable Boulder near Fun Fun Island
@@ -1652,6 +1784,26 @@
   pretty: Bug Heaven - Goddess Chest
   cryptic: a <s<goddess cube>> <r<near a volcano's waterfall>>
 
+- name: Bug Heaven - Stamina Fruit near Start
+  standard: Bug Heaven - Stamina Fruit near Start
+  pretty: Bug Heaven - Stamina Fruit near Start
+  cryptic: a <r<fruit in a buggy area>>
+
+- name: Bug Heaven - Stamina Fruit in front of Wooden Plank
+  standard: Bug Heaven - Stamina Fruit in front of Wooden Plank
+  pretty: Bug Heaven - Stamina Fruit in front of Wooden Plank
+  cryptic: a <r<fruit in a buggy area>>
+
+- name: Bug Heaven - Stamina Fruit in Center Room
+  standard: Bug Heaven - Stamina Fruit in Center Room
+  pretty: Bug Heaven - Stamina Fruit in Center Room
+  cryptic: a <r<fruit in a buggy area>>
+
+- name: Bug Heaven - Stamina Fruit on top of Slope
+  standard: Bug Heaven - Stamina Fruit on top of Slope
+  pretty: Bug Heaven - Stamina Fruit on top of Slope
+  cryptic: a <r<fruit in a buggy area>>
+
 - name: Bug Heaven - Nearby Gossip Stone
   standard: Bug Heaven - Nearby Gossip Stone
   pretty: Bug Heaven - Nearby Gossip Stone
@@ -1677,6 +1829,131 @@
   pretty: Mogma Mitts Island - Second Goddess Chest
   cryptic: a <s<goddess cube>> <r<in a desert gorge>>
 
+- name: Sealed Grounds - Spiral Stamina Fruit 1
+  standard: Sealed Grounds - Spiral Stamina Fruit 1
+  pretty: Sealed Grounds - Spiral Stamina Fruit 1
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 2
+  standard: Sealed Grounds - Spiral Stamina Fruit 2
+  pretty: Sealed Grounds - Spiral Stamina Fruit 2
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 3
+  standard: Sealed Grounds - Spiral Stamina Fruit 3
+  pretty: Sealed Grounds - Spiral Stamina Fruit 3
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 4
+  standard: Sealed Grounds - Spiral Stamina Fruit 4
+  pretty: Sealed Grounds - Spiral Stamina Fruit 4
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 5
+  standard: Sealed Grounds - Spiral Stamina Fruit 5
+  pretty: Sealed Grounds - Spiral Stamina Fruit 5
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 6
+  standard: Sealed Grounds - Spiral Stamina Fruit 6
+  pretty: Sealed Grounds - Spiral Stamina Fruit 6
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 7
+  standard: Sealed Grounds - Spiral Stamina Fruit 7
+  pretty: Sealed Grounds - Spiral Stamina Fruit 7
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 8
+  standard: Sealed Grounds - Spiral Stamina Fruit 8
+  pretty: Sealed Grounds - Spiral Stamina Fruit 8
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 9
+  standard: Sealed Grounds - Spiral Stamina Fruit 9
+  pretty: Sealed Grounds - Spiral Stamina Fruit 9
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 10
+  standard: Sealed Grounds - Spiral Stamina Fruit 10
+  pretty: Sealed Grounds - Spiral Stamina Fruit 10
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 11
+  standard: Sealed Grounds - Spiral Stamina Fruit 11
+  pretty: Sealed Grounds - Spiral Stamina Fruit 11
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 12
+  standard: Sealed Grounds - Spiral Stamina Fruit 12
+  pretty: Sealed Grounds - Spiral Stamina Fruit 12
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 13
+  standard: Sealed Grounds - Spiral Stamina Fruit 13
+  pretty: Sealed Grounds - Spiral Stamina Fruit 13
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 14
+  standard: Sealed Grounds - Spiral Stamina Fruit 14
+  pretty: Sealed Grounds - Spiral Stamina Fruit 14
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 15
+  standard: Sealed Grounds - Spiral Stamina Fruit 15
+  pretty: Sealed Grounds - Spiral Stamina Fruit 15
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 16
+  standard: Sealed Grounds - Spiral Stamina Fruit 16
+  pretty: Sealed Grounds - Spiral Stamina Fruit 16
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 17
+  standard: Sealed Grounds - Spiral Stamina Fruit 17
+  pretty: Sealed Grounds - Spiral Stamina Fruit 17
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 18
+  standard: Sealed Grounds - Spiral Stamina Fruit 18
+  pretty: Sealed Grounds - Spiral Stamina Fruit 18
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 19
+  standard: Sealed Grounds - Spiral Stamina Fruit 19
+  pretty: Sealed Grounds - Spiral Stamina Fruit 19
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 20
+  standard: Sealed Grounds - Spiral Stamina Fruit 20
+  pretty: Sealed Grounds - Spiral Stamina Fruit 20
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 21
+  standard: Sealed Grounds - Spiral Stamina Fruit 21
+  pretty: Sealed Grounds - Spiral Stamina Fruit 21
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 22
+  standard: Sealed Grounds - Spiral Stamina Fruit 22
+  pretty: Sealed Grounds - Spiral Stamina Fruit 22
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 23
+  standard: Sealed Grounds - Spiral Stamina Fruit 23
+  pretty: Sealed Grounds - Spiral Stamina Fruit 23
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 24
+  standard: Sealed Grounds - Spiral Stamina Fruit 24
+  pretty: Sealed Grounds - Spiral Stamina Fruit 24
+  cryptic: a <r<fruit in a spiral>>
+
+- name: Sealed Grounds - Spiral Stamina Fruit 25
+  standard: Sealed Grounds - Spiral Stamina Fruit 25
+  pretty: Sealed Grounds - Spiral Stamina Fruit 25
+  cryptic: a <r<fruit in a spiral>>
+  
 - name: Sealed Temple - Chest
   standard: Sealed Temple - Chest
   pretty: Sealed Temple - Chest
@@ -1753,6 +2030,31 @@
   pretty: Faron Woods - Rupee on Great Tree West Branch
   cryptic: an <r<item on a high up tree branch>>
 
+- name: Faron Woods - Stamina Fruit on Vines below First Log
+  standard: Faron Woods - Stamina Fruit on Vines below First Log
+  pretty: Faron Woods - Stamina Fruit on Vines below First Log
+  cryptic: a <r<fruit below a forest log>>
+
+- name: Faron Woods - Stamina Fruit past Empty Slope
+  standard: Faron Woods - Stamina Fruit past Empty Slope
+  pretty: Faron Woods - Stamina Fruit past Empty Slope
+  cryptic: a <r<fruit beyond a forest slope>>
+
+- name: Faron Woods - Stamina Fruit past Baba Slope
+  standard: Faron Woods - Stamina Fruit past Baba Slope
+  pretty: Faron Woods - Stamina Fruit past Baba Slope
+  cryptic: a <r<fruit above a forest slope>>
+
+- name: Faron Woods - Stamina Fruit on Vines near Erla
+  standard: Faron Woods - Stamina Fruit on Vines near Erla
+  pretty: Faron Woods - Stamina Fruit on Vines near Erla
+  cryptic: a <r<fruit on some forest vines>>
+
+- name: Faron Woods - Stamina Fruit on Vines on Great Tree
+  standard: Faron Woods - Stamina Fruit on Vines on Great Tree
+  pretty: Faron Woods - Stamina Fruit on Vines on Great Tree
+  cryptic: a <r<fruit on some tree vines>>
+
 - name: Faron Woods - Goddess Cube on West Great Tree near Exit
   standard: Faron Woods - Goddess Cube on West Great Tree near Exit
   pretty: Faron Woods - Goddess Cube on West Great Tree near Exit
@@ -1777,6 +2079,11 @@
   standard: Deep Woods - Chest
   pretty: Deep Woods - Chest
   cryptic: a <r<chest deep in a forest>>
+
+- name: Deep Woods - Stamina Fruit
+  standard: Deep Woods - Stamina Fruit
+  pretty: Deep Woods - Stamina Fruit
+  cryptic: a <r<fruit deep in a forest>>
 
 - name: Deep Woods - Gossip Stone
   standard: Deep Woods - Gossip Stone
@@ -1946,7 +2253,7 @@
 - name: Eldin Volcano - Rupee on Ledge before First Room
   standard: Eldin Volcano - Rupee on Ledge before First Room
   pretty: Eldin Volcano - Rupee on Ledge before First Room
-  cryptic: the <r<rupee furthest from the volcano>> 
+  cryptic: the <r<rupee furthest from the volcano>>
 
 - name: Eldin Volcano - Chest behind Bombable Wall in First Room
   standard: Eldin Volcano - Chest behind Bombable Wall in First Room
@@ -2047,6 +2354,91 @@
   standard: Eldin Volcano - Goddess Cube on Sand Slide
   pretty: Eldin Volcano - Goddess Cube on Sand Slide
   cryptic:
+
+- name: Eldin Volcano - Stamina Fruit in Rising Lava Room
+  standard: Eldin Volcano - Stamina Fruit in Rising Lava Room
+  pretty: Eldin Volcano - Stamina Fruit in Rising Lava Room
+  cryptic: a <r<fruit around rising lava>>
+
+- name: Eldin Volcano - Stamina Fruit near Volcano East Statue
+  standard: Eldin Volcano - Stamina Fruit near Volcano East Statue
+  pretty: Eldin Volcano - Stamina Fruit near Volcano East Statue
+  cryptic: a <r<fruit near a volcanic statue>>
+
+- name: Eldin Volcano - Stamina Fruit in front of Bone Bridge
+  standard: Eldin Volcano - Stamina Fruit in front of Bone Bridge
+  pretty: Eldin Volcano - Stamina Fruit in front of Bone Bridge
+  cryptic: a <r<fruit near some bones>>
+
+- name: Eldin Volcano - Stamina Fruit near Item on Cliff
+  standard: Eldin Volcano - Stamina Fruit near Item on Cliff
+  pretty: Eldin Volcano - Stamina Fruit near Item on Cliff
+  cryptic: a <r<fruit near some fire turtles>>
+
+- name: Eldin Volcano - Stamina Fruit in front of First Slope 1
+  standard: Eldin Volcano - Stamina Fruit in front of First Slope 1
+  pretty: Eldin Volcano - Stamina Fruit in front of First Slope 1
+  cryptic: a <r<fruit in front of a sandy slope>>
+
+- name: Eldin Volcano - Stamina Fruit in front of First Slope 2
+  standard: Eldin Volcano - Stamina Fruit in front of First Slope 2
+  pretty: Eldin Volcano - Stamina Fruit in front of First Slope 2
+  cryptic: a <r<fruit in front of a sandy slope>>
+
+- name: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
+  standard: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
+  pretty: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
+  cryptic: a <r<fruit in front of a sandy slope>>
+
+- name: Eldin Volcano - Stamina Fruit after First Slope
+  standard: Eldin Volcano - Stamina Fruit after First Slope
+  pretty: Eldin Volcano - Stamina Fruit after First Slope
+  cryptic: a <r<fruit on top of a sandy slope>>
+
+- name: Eldin Volcano - Stamina Fruit next to Small Puddle
+  standard: Eldin Volcano - Stamina Fruit next to Small Puddle
+  pretty: Eldin Volcano - Stamina Fruit next to Small Puddle
+  cryptic: a <r<fruit near a circle of water>>
+
+- name: Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger
+  standard: Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger
+  pretty: Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger
+  cryptic: a <r<fruit above a circle of water>>
+
+- name: Eldin Volcano - Stamina Fruit in front of Second Slope 1
+  standard: Eldin Volcano - Stamina Fruit in front of Second Slope 1
+  pretty: Eldin Volcano - Stamina Fruit in front of Second Slope 1
+  cryptic: a <r<fruit in front of a sandy slope>>
+
+- name: Eldin Volcano - Stamina Fruit in front of Second Slope 2
+  standard: Eldin Volcano - Stamina Fruit in front of Second Slope 2
+  pretty: Eldin Volcano - Stamina Fruit in front of Second Slope 2
+  cryptic: a <r<fruit in front of a sandy slope>>
+
+- name: Eldin Volcano - Stamina Fruit in front of Second Slope 3
+  standard: Eldin Volcano - Stamina Fruit in front of Second Slope 3
+  pretty: Eldin Volcano - Stamina Fruit in front of Second Slope 3
+  cryptic: a <r<fruit in front of a sandy slope>>
+
+- name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
+  standard: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
+  pretty: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
+  cryptic: a <r<fruit past a fallen tower>>
+
+- name: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
+  standard: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
+  pretty: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
+  cryptic: a <r<fruit over a hot ledge>>
+
+- name: Eldin Volcano - Stamina Fruit on vines near Hot Cave
+  standard: Eldin Volcano - Stamina Fruit on vines near Hot Cave
+  pretty: Eldin Volcano - Stamina Fruit on vines near Hot Cave
+  cryptic: a <r<fruit near a hot cave>>
+
+- name: Eldin Volcano - Stamina Fruit after Big Sand Slide
+  standard: Eldin Volcano - Stamina Fruit after Big Sand Slide
+  pretty: Eldin Volcano - Stamina Fruit after Big Sand Slide
+  cryptic: a <r<fruit down a long slide>>
 
 - name: Eldin Volcano - Digging Spot in front of Earth Temple
   standard: Eldin Volcano - Digging Spot in front of Earth Temple
@@ -2208,6 +2600,31 @@
   pretty: Lanayru Mine - Chest at the End of Mine
   cryptic: a <r<chest deep in a mine>>
 
+- name: Lanayru Mine - Stamina Fruit before Falling Statues
+  standard: Lanayru Mine - Stamina Fruit before Falling Statues
+  pretty: Lanayru Mine - Stamina Fruit before Falling Statues
+  cryptic: a <r<fruit in front of falling hoops>>
+
+- name: Lanayru Mine - Stamina Fruit after Falling Statues
+  standard: Lanayru Mine - Stamina Fruit after Falling Statues
+  pretty: Lanayru Mine - Stamina Fruit after Falling Statues
+  cryptic: a <r<fruit beyond falling hoops>>
+
+- name: Lanayru Mine - Stamina Fruit near Spumes 1
+  standard: Lanayru Mine - Stamina Fruit near Spumes 1
+  pretty: Lanayru Mine - Stamina Fruit near Spumes 1
+  cryptic: a <r<fruit surrounded by sandy spumes>>
+
+- name: Lanayru Mine - Stamina Fruit near Spumes 2
+  standard: Lanayru Mine - Stamina Fruit near Spumes 2
+  pretty: Lanayru Mine - Stamina Fruit near Spumes 2
+  cryptic: a <r<fruit surrounded by sandy spumes>>
+
+- name: Lanayru Mine - Stamina Fruit near Spumes 3
+  standard: Lanayru Mine - Stamina Fruit near Spumes 3
+  pretty: Lanayru Mine - Stamina Fruit near Spumes 3
+  cryptic: a <r<fruit surrounded by sandy spumes>>
+  
 - name: Lanayru Mine - Goddess Cube
   standard: Lanayru Mine - Goddess Cube
   pretty: Lanayru Mine - Goddess Cube
@@ -2252,6 +2669,46 @@
   standard: Lanayru Desert - Secret Passageway Chest
   pretty: Lanayru Desert - Secret Passageway Chest
   cryptic: a <r<secret passage in the desert>>
+
+- name: Lanayru Desert - Stamina Fruit on Ledge to Party Wheel
+  standard: Lanayru Desert - Stamina Fruit on Ledge to Party Wheel
+  pretty: Lanayru Desert - Stamina Fruit on Ledge to Party Wheel
+  cryptic: a <r<fruit on a sandy ledge>>
+
+- name: Lanayru Desert - Stamina Fruit on South LMF Ledge
+  standard: Lanayru Desert - Stamina Fruit on South LMF Ledge
+  pretty: Lanayru Desert - Stamina Fruit on South LMF Ledge
+  cryptic: a <r<fruit on a south temple ledge>>
+
+- name: Lanayru Desert - Stamina Fruit on West LMF Ledge
+  standard: Lanayru Desert - Stamina Fruit on West LMF Ledge
+  pretty: Lanayru Desert - Stamina Fruit on West LMF Ledge
+  cryptic: a <r<fruit on a west temple ledge>>
+
+- name: Lanayru Desert - Stamina Fruit on LMF Wall Vines
+  standard: Lanayru Desert - Stamina Fruit on LMF Wall Vines
+  pretty: Lanayru Desert - Stamina Fruit on LMF Wall Vines
+  cryptic: a <r<fruit on a temple vine wall>>
+
+- name: Lanayru Desert - Stamina Fruit in South Sand Oasis 1
+  standard: Lanayru Desert - Stamina Fruit in South Sand Oasis 1
+  pretty: Lanayru Desert - Stamina Fruit in South Sand Oasis 1
+  cryptic: a <r<fruit in a sandy paradise>>
+
+- name: Lanayru Desert - Stamina Fruit in South Sand Oasis 2
+  standard: Lanayru Desert - Stamina Fruit in South Sand Oasis 2
+  pretty: Lanayru Desert - Stamina Fruit in South Sand Oasis 2
+  cryptic: a <r<fruit in a sandy paradise>>
+
+- name: Lanayru Desert - Stamina Fruit in North Sand Oasis 1
+  standard: Lanayru Desert - Stamina Fruit in North Sand Oasis 1
+  pretty: Lanayru Desert - Stamina Fruit in North Sand Oasis 1
+  cryptic: a <r<fruit in a sandy paradise>>
+
+- name: Lanayru Desert - Stamina Fruit in North Sand Oasis 2
+  standard: Lanayru Desert - Stamina Fruit in North Sand Oasis 2
+  pretty: Lanayru Desert - Stamina Fruit in North Sand Oasis 2
+  cryptic: a <r<fruit in a sandy paradise>>
 
 - name: Temple of Time - Gossip Stone
   standard: Temple of Time - Gossip Stone
@@ -2416,7 +2873,7 @@
 - name: Pirate Stronghold - Rupee on East Sea Pillar
   standard: Pirate Stronghold - Rupee on East Sea Pillar
   pretty: Pirate Stronghold - Rupee on East Sea Pillar
-  cryptic: a <r<rupee atop a giant skull>> 
+  cryptic: a <r<rupee atop a giant skull>>
 
 - name: Pirate Stronghold - Rupee on West Sea Pillar
   standard: Pirate Stronghold - Rupee on West Sea Pillar
@@ -2427,6 +2884,21 @@
   standard: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
   pretty: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
   cryptic: a <r<rupee inside a nose>>
+
+- name: Pirate Stronghold - Stamina Fruit on Left Side
+  standard: Pirate Stronghold - Stamina Fruit on Left Side
+  pretty: Pirate Stronghold - Stamina Fruit on Left Side
+  cryptic: a <r<fruit outside a fortress>>
+
+- name: Pirate Stronghold - Stamina Fruit on Upper Right Side
+  standard: Pirate Stronghold - Stamina Fruit on Upper Right Side
+  pretty: Pirate Stronghold - Stamina Fruit on Upper Right Side
+  cryptic: a <r<fruit outside a fortress>>
+
+- name: Pirate Stronghold - Stamina Fruit on Lower Right Side
+  standard: Pirate Stronghold - Stamina Fruit on Lower Right Side
+  pretty: Pirate Stronghold - Stamina Fruit on Lower Right Side
+  cryptic: a <r<fruit outside a fortress>>
 
 - name: Pirate Stronghold - Goddess Cube
   standard: Pirate Stronghold - Goddess Cube
@@ -2573,6 +3045,26 @@
   standard: Earth Temple - Chest before Boulder Chase
   pretty: Earth Temple - Chest before Boulder Chase
   cryptic: the <r<highest chest in a volcano>>
+
+- name: Earth Temple - Stamina Fruit before Boulder Chase 1
+  standard: Earth Temple - Stamina Fruit before Boulder Chase 1
+  pretty: Earth Temple - Stamina Fruit before Boulder Chase 1
+  cryptic: a <r<fruit on a dragon's body>>
+
+- name: Earth Temple - Stamina Fruit before Boulder Chase 2
+  standard: Earth Temple - Stamina Fruit before Boulder Chase 2
+  pretty: Earth Temple - Stamina Fruit before Boulder Chase 2
+  cryptic: a <r<fruit on a dragon's body>>
+
+- name: Earth Temple - Stamina Fruit before Boulder Chase 3
+  standard: Earth Temple - Stamina Fruit before Boulder Chase 3
+  pretty: Earth Temple - Stamina Fruit before Boulder Chase 3
+  cryptic: a <r<fruit on a dragon's body>>
+
+- name: Earth Temple - Stamina Fruit before Boulder Chase 4
+  standard: Earth Temple - Stamina Fruit before Boulder Chase 4
+  pretty: Earth Temple - Stamina Fruit before Boulder Chase 4
+  cryptic: a <r<fruit on a dragon's body>>
 
 - name: Earth Temple - Defeat Boss
   standard: Earth Temple - Defeat Boss
@@ -2904,20 +3396,75 @@
   pretty: Sky Keep - Sacred Power of Farore
   cryptic: the <r<courage of a goddess>>
 
+- name: Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge
+  standard: Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge
+  pretty: Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge
+  cryptic: a <r<fruit on a silent school ledge>>
+
 - name: Skyloft Silent Realm - Collect all Tears Reward
   standard: Skyloft Silent Realm - Collect all Tears Reward
   pretty: Skyloft Silent Realm - Collect all Tears Reward
   cryptic: the <r<goddess's final trial>>
+
+- name: Faron Silent Realm - Stamina Fruit on Vine Wall 1
+  standard: Faron Silent Realm - Stamina Fruit on Vine Wall 1
+  pretty: Faron Silent Realm - Stamina Fruit on Vine Wall 1
+  cryptic: a <r<fruit on a silent forest wall>>
+
+- name: Faron Silent Realm - Stamina Fruit on Vine Wall 2
+  standard: Faron Silent Realm - Stamina Fruit on Vine Wall 2
+  pretty: Faron Silent Realm - Stamina Fruit on Vine Wall 2
+  cryptic: a <r<fruit on a silent forest wall>>
 
 - name: Faron Silent Realm - Collect all Tears Reward
   standard: Faron Silent Realm - Collect all Tears Reward
   pretty: Faron Silent Realm - Collect all Tears Reward
   cryptic: a <r<trial of courage>>
 
+- name: Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall
+  standard: Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall
+  pretty: Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall
+  cryptic: a <r<fruit on a silent desert wall>>
+
+- name: Lanayru Silent Realm - Stamina Fruit on West LMF Vine Wall
+  standard: Lanayru Silent Realm - Stamina Fruit on West LMF Vine Wall
+  pretty: Lanayru Silent Realm - Stamina Fruit on West LMF Vine Wall
+  cryptic: a <r<fruit on a silent desert wall>>
+
+- name: Lanayru Silent Realm - Stamina Fruit near Minecart
+  standard: Lanayru Silent Realm - Stamina Fruit near Minecart
+  pretty: Lanayru Silent Realm - Stamina Fruit near Minecart
+  cryptic: a <r<fruit near a silent minecart>>
+
+- name: Lanayru Silent Realm - Stamina Fruit between Watchers
+  standard: Lanayru Silent Realm - Stamina Fruit between Watchers
+  pretty: Lanayru Silent Realm - Stamina Fruit between Watchers
+  cryptic: a <r<fruit surrounded by silent watchers>>
+
+- name: Lanayru Silent Realm - Stamina Fruit near Tree
+  standard: Lanayru Silent Realm - Stamina Fruit near Tree
+  pretty: Lanayru Silent Realm - Stamina Fruit near Tree
+  cryptic: a <r<fruit near a silent desert tree>>
+
 - name: Lanayru Silent Realm - Collect all Tears Reward
   standard: Lanayru Silent Realm - Collect all Tears Reward
   pretty: Lanayru Silent Realm - Collect all Tears Reward
   cryptic: a <r<trial of wisdom>>
+
+- name: Eldin Silent Realm - Stamina Fruit on First Slope
+  standard: Eldin Silent Realm - Stamina Fruit on First Slope
+  pretty: Eldin Silent Realm - Stamina Fruit on First Slope
+  cryptic: a <r<fruit on a silent sandy slope>>
+
+- name: Eldin Silent Realm - Stamina Fruit near First Bone Bridge
+  standard: Eldin Silent Realm - Stamina Fruit near First Bone Bridge
+  pretty: Eldin Silent Realm - Stamina Fruit near First Bone Bridge
+  cryptic: a <r<fruit near some silent bones>>
+
+- name: Eldin Silent Realm - Stamina Fruit near Tear on Vines
+  standard: Eldin Silent Realm - Stamina Fruit near Tear on Vines
+  pretty: Eldin Silent Realm - Stamina Fruit near Tear on Vines
+  cryptic: a <r<fruit on a silent volcanic wall>>
 
 - name: Eldin Silent Realm - Collect all Tears Reward
   standard: Eldin Silent Realm - Collect all Tears Reward

@@ -98,6 +98,10 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 if (
                     "Hint Location" not in location.types
                     and "Goddess Cube" not in location.types
+                    and not (
+                        "Stamina Fruit" in location.types
+                        and location.current_item == world.get_item("Stamina Fruit")
+                    )
                 ):
                     spoiler_log.write(
                         "        "
@@ -192,7 +196,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 f"    starting_inventory: {sorted(world.setting_map.starting_inventory.elements())}\n"
             )
             spoiler_log.write(
-                f"    excluded_locations: {list(world.setting_map.excluded_locations)}\n"
+                f"    excluded_locations: {world.setting_map.excluded_locations}\n"
             )
             spoiler_log.write(
                 f"    mixed_entrance_pools: {world.setting_map.mixed_entrance_pools}\n"

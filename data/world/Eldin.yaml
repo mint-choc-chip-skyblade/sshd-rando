@@ -18,6 +18,7 @@
     Eldin Volcano - Chest behind Bombable Wall in First Room: Nothing
     Eldin Volcano - Rupee behind Bombable Wall in First Room: Nothing
     Eldin Volcano - Rupee in Crawlspace in First Room: Nothing
+    Eldin Volcano - Stamina Fruit in Rising Lava Room: Nothing
 
 
 - name: Volcano East
@@ -35,6 +36,9 @@
     Eldin Volcano - Item on Cliff: Nothing
     Eldin Volcano - Southeast Rupee above Mogma Turf Entrance: Beetle
     Eldin Volcano - North Rupee above Mogma Turf Entrance: Beetle
+    Eldin Volcano - Stamina Fruit near Volcano East Statue: Nothing
+    Eldin Volcano - Stamina Fruit in front of Bone Bridge: Nothing
+    Eldin Volcano - Stamina Fruit near Item on Cliff: Nothing
     Eldin Volcano - Goddess Cube near Mogma Turf Entrance: Goddess_Sword
 
 
@@ -59,6 +63,9 @@
     Past Mogma Turf: Nothing
   locations:
     Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent: Nothing
+    Eldin Volcano - Stamina Fruit in front of First Slope 1: Nothing
+    Eldin Volcano - Stamina Fruit in front of First Slope 2: Nothing
+    Eldin Volcano - Stamina Fruit in front of First Slope Shortcut: Nothing
 
 
 - name: Outside Thrill Digger Cave
@@ -70,6 +77,9 @@
   locations:
     Eldin Volcano - Left Rupee behind Bombable Wall on First Slope: Nothing
     Eldin Volcano - Right Rupee behind Bombable Wall on First Slope: Nothing
+    Eldin Volcano - Stamina Fruit after First Slope: Nothing
+    Eldin Volcano - Stamina Fruit next to Small Puddle: Nothing
+    Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger: Nothing
 
 
 - name: Thrill Digger Cave
@@ -95,6 +105,12 @@
     Eldin Volcano - Digging Spot in front of Earth Temple: Digging_Mitts
     Eldin Volcano - Digging Spot below Tower: Digging_Mitts
     Eldin Volcano - Digging Spot behind Boulder on Sandy Slope: Digging_Mitts
+    Eldin Volcano - Stamina Fruit in front of Second Slope 1: Nothing
+    Eldin Volcano - Stamina Fruit in front of Second Slope 2: Nothing
+    Eldin Volcano - Stamina Fruit in front of Second Slope 3: Nothing
+    Eldin Volcano - Stamina Fruit after Last Boko Camp Tower: Nothing
+    Eldin Volcano - Stamina Fruit on ledge near Hot Cave: Nothing
+    Eldin Volcano - Stamina Fruit on vines near Hot Cave: Nothing
     Eldin Volcano - Gossip Stone next to Earth Temple: Digging_Mitts
     Eldin Volcano - Goddess Cube West of Earth Temple Entrance: Digging_Mitts and Goddess_Sword
     Eldin Volcano - Goddess Cube East of Earth Temple Entrance: Goddess_Sword
@@ -139,6 +155,7 @@
     Outside Lower Eldin Cave: "'Beaten_Boko_Base'"
   locations:
     Eldin Volcano - Digging Spot after Draining Lava: Digging_Mitts
+    Eldin Volcano - Stamina Fruit after Big Sand Slide: Nothing
 
 
 - name: Outside Lower Eldin Cave
@@ -210,6 +227,9 @@
     Volcano Ascent: Nothing
   locations:
     Eldin Silent Realm - Collect all Tears Reward: Nothing
+    Eldin Silent Realm - Stamina Fruit on First Slope: Nothing
+    Eldin Silent Realm - Stamina Fruit near First Bone Bridge: Nothing
+    Eldin Silent Realm - Stamina Fruit near Tear on Vines: Nothing
 
 # VOLCANO SUMMIT
 - name: Volcano Summit
@@ -256,8 +276,8 @@
   hint_region: Bokoblin Base
   exits:
     Bokoblin Base Volcano East: Mogma_Mitts
-  # locations:
-  #   Bokoblin Base - Plats' Gift: Nothing
+  locations:
+    Bokoblin Base - Plats' Gift: Nothing
 
 
 - name: Bokoblin Base Volcano East
@@ -268,9 +288,9 @@
     Bokoblin Base Prison: Mogma_Mitts
     Bokoblin Base Before Drawbridge: Nothing
     Bokoblin Base After Drawbridge: Clawshots and Bomb_Bag
-  # locations:
-  #   Bokoblin Base - Chest near Bone Bridge: Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts or Gust_Bellows
-  #   Bokoblin Base - Chest on Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
+  locations:
+    Bokoblin Base - Chest near Bone Bridge: Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts or Gust_Bellows
+    Bokoblin Base - Chest on Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
 
 
 - name: Bokoblin Base Before Drawbridge
@@ -278,8 +298,8 @@
   exits:
     Bokoblin Base Volcano East: Nothing
     Bokoblin Base After Drawbridge: Whip and Clawshots
-  # locations:
-  #   Bokoblin Base - Chest near Drawbridge: Clawshots or Can_Bypass_Boko_Base_Watch_Tower
+  locations:
+    Bokoblin Base - Chest near Drawbridge: Clawshots or Can_Bypass_Boko_Base_Watch_Tower
 
 
 - name: Bokoblin Base After Drawbridge
@@ -316,9 +336,9 @@
   exits:
     Bokoblin Base Hot Cave: Nothing
     Bokoblin Base Outside Upper Eldin Cave: Nothing
-  # locations:
-  #   Bokoblin Base - Chest East of Earth Temple Entrance: Nothing
-  #   Bokoblin Base - Chest West of Earth Temple Entrance: (Slingshot or Bow or Bomb_Bag or Goddess_Sword) and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
+  locations:
+    Bokoblin Base - Chest East of Earth Temple Entrance: Nothing
+    Bokoblin Base - Chest West of Earth Temple Entrance: (Slingshot or Bow or Bomb_Bag or Goddess_Sword) and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
     
 
 - name: Bokoblin Base Outside Upper Eldin Cave
@@ -350,10 +370,10 @@
   exits:
     Bokoblin Base Hot Cave: Fireshield_Earrings
     Fire Dragon's Lair: Fireshield_Earrings
-  # locations:
-  #   Bokoblin Base - First Chest in Volcano Summit: Fireshield_Earrings
-  #   Bokoblin Base - Raised Chest in Volcano Summit: Fireshield_Earrings
-  #   Bokoblin Base - Chest in Volcano Summit Alcove: Fireshield_Earrings and Sword
+  locations:
+    Bokoblin Base - First Chest in Volcano Summit: Fireshield_Earrings
+    Bokoblin Base - Raised Chest in Volcano Summit: Fireshield_Earrings
+    Bokoblin Base - Chest in Volcano Summit Alcove: Fireshield_Earrings and Sword
     
 
 - name: Fire Dragon's Lair
@@ -362,8 +382,8 @@
     Beaten Boko Base: Bow or Beetle
   exits:
     Bokoblin Base Summit: Nothing
-  # locations:
-  #   Bokoblin Base - Fire Dragon's Reward: "'Beaten_Boko_Base'"
+  locations:
+    Bokoblin Base - Fire Dragon's Reward: "'Beaten_Boko_Base'"
 
 # Bird Staues in Eldin
 - name: Volcano Entrance Statue

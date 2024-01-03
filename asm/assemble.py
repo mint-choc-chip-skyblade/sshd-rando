@@ -18,6 +18,8 @@ ASM_PATCHES_PATH = Path("./") / "patches"
 ASM_PATCHES_DIFFS_PATH = ASM_PATCHES_PATH / "diffs"
 ASM_ADDITIONS_PATH = Path("./") / "additions"
 ASM_ADDITIONS_DIFFS_PATH = ASM_ADDITIONS_PATH / "diffs"
+ASM_SDK_PATH = Path("./") / "sdk"
+ASM_SDK_DIFFS_PATH = ASM_SDK_PATH / "diffs"
 
 ASM_RUST_ADDITIONS_TARGET_PATH = (
     ASM_ADDITIONS_PATH
@@ -386,8 +388,9 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
 
 # Get patches from each asm file.
-asm_additions_paths = list(ASM_ADDITIONS_PATH.glob("*.asm"))
-asm_patches_paths = list(ASM_PATCHES_PATH.glob("*.asm"))
+asm_additions_paths = list(ASM_ADDITIONS_PATH.rglob("*.asm"))
+asm_patches_paths = list(ASM_PATCHES_PATH.rglob("*.asm"))
+asm_sdk_paths = list(ASM_SDK_PATH.rglob("*.asm"))
 
 # Keeps the temporary directory only within this with block.
 with temp_dir as temp_dir_name:
@@ -427,3 +430,6 @@ with temp_dir as temp_dir_name:
     asm_patches_paths = [ASM_PATCHES_JUMPTABLE_PATH] + asm_patches_paths
 
     assemble(temp_dir_name, asm_patches_paths, ASM_PATCHES_DIFFS_PATH)
+
+    # Assemble sdk stuff
+    assemble(temp_dir_name, asm_sdk_paths, ASM_SDK_DIFFS_PATH)

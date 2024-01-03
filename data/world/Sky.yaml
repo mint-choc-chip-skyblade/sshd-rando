@@ -20,6 +20,9 @@
     Central Skyloft: Nothing
     Skyloft Village: Nothing
   locations:
+    The Sky - Form a Squirrel Ring above Volcanic Island: Nothing
+    The Sky - Form a Squirrel Ring above Lumpy Pumpkin: Nothing
+    The Sky - Form a Squirrel Ring above Bamboo Island: Nothing
     The Sky - Chest in Breakable Boulder near Lumpy Pumpkin: Spiral_Charge
     The Sky - Chest in Breakable Boulder near Fun Fun Island: Spiral_Charge
 
@@ -283,4 +286,8 @@
   locations:
     Bug Heaven - Minigame -- 10 Bugs in 3 Minutes: Bug_Net
     Bug Heaven - Goddess Chest: Volcano_Summit_Goddess_Cube_at_Summit_Waterfall
+    Bug Heaven - Stamina Fruit near Start: Nothing
+    Bug Heaven - Stamina Fruit in front of Wooden Plank: Nothing
+    Bug Heaven - Stamina Fruit in Center Room: Nothing
+    Bug Heaven - Stamina Fruit on top of Slope: Nothing
     Bug Heaven - Nearby Gossip Stone: Nothing

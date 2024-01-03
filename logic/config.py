@@ -54,7 +54,7 @@ def create_default_config(filename: Path):
     config.settings.append(SettingMap())
     setting_map = config.settings[0]
     setting_map.starting_inventory = Counter()
-    setting_map.excluded_locations = set()
+    setting_map.excluded_locations = []
     setting_map.mixed_entrance_pools = []
 
     for setting_name, setting_info in get_all_settings_info().items():
@@ -161,8 +161,10 @@ def load_config_from_file(
 
                 # Special handling for excluded locations
                 if setting_name == "excluded_locations":
-                    excluded_locations = config_in[world_num_str][setting_name]
-                    cur_world_settings.excluded_locations = set(excluded_locations)
+                    excluded_locations: list[str] = config_in[world_num_str][
+                        setting_name
+                    ]
+                    cur_world_settings.excluded_locations = excluded_locations
                     continue
 
                 # Special handling for mixed entrance pools
