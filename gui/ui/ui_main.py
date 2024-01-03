@@ -1330,7 +1330,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1345,7 +1345,7 @@ class Ui_main_window(object):
 "Specifically, you will need to extract the <code>exeFS</code> and <code>romFS</code> files of the 1.0.1 version of the game. You can do this with a modded Nintendo Switch console with a tool such as <a href=\"https://github.com/DarkMatterCore/nxdumptool\">nxdumptool</a> or with the <a href=\"https://ryujinx.org\">Ryujinx emulator</a> (yuzu cannot currently extract the <code>romFS</code> folder)<br><br>\n"
 "\n"
 "For help with this process, please ask on GitHub or join the Discord server linked below.", None))
-        self.how_to_left_arrow_label.setText(QCoreApplication.translate("main_window", u"-->", None))
+        self.how_to_left_arrow_label.setText(QCoreApplication.translate("main_window", u"\u279c", None))
         self.how_to_generate_group_box.setTitle(QCoreApplication.translate("main_window", u"Generate a Seed", None))
         self.how_to_generate_label.setText(QCoreApplication.translate("main_window", u"After you have obtained an extract of the vanilla game, you need to tell this randomizer program where the extract is located so that it can be used to generate a seed.<br><br>\n"
 "\n"
@@ -1354,7 +1354,7 @@ class Ui_main_window(object):
 "Once the extract has been verified, you can browse the various tabs and customize the settings of your randomizer seed.<br><br>\n"
 "\n"
 "When you are ready, click the \"Randomize\" button in the bottom right of the screen. By default, the output will be in the <code>output</code> folder where this randomizer program is located.", None))
-        self.how_to_right_arrow_label.setText(QCoreApplication.translate("main_window", u"-->", None))
+        self.how_to_right_arrow_label.setText(QCoreApplication.translate("main_window", u"\u279c", None))
         self.how_to_running_group_box.setTitle(QCoreApplication.translate("main_window", u"Running the Seed", None))
         self.how_to_running_label.setText(QCoreApplication.translate("main_window", u"If you want to play this randomizer on a modded Nintendo Switch console, copy the outputted <code>exeFS</code> and <code>romFS</code> folders into the <code>/atmosphere/contents/01002DA013484000</code> folder on your Switch's SD card. You can then run the game like normal and the randomizer will be patched on top of the vanilla game.<br><br>\n"
 "\n"
@@ -1363,16 +1363,16 @@ class Ui_main_window(object):
 "If you want to play the randomizer on the <a href=\"https://ryujinx.org/\">Ryujinx emulator</a>, copy the outputted <code>exeFS</code> and <code>romFS</code> folders into the <code>/Ryujinx/mods/contents/01002DA013484000</code> folder.", None))
         self.useful_info_group_box.setTitle(QCoreApplication.translate("main_window", u"Useful Information", None))
         self.useful_choose_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Choosing your Settings", None))
-        self.choose_settings_label.setText(QCoreApplication.translate("main_window", u"<b>\u2023</b> World: Customize how the world is randomized. Pick dungeon, completion, shuffle, entrance, and other fun settings.<br>\n"
-"<b>\u2023</b> Logic: Pick which locations and tricks are enabled.<br>\n"
-"<b>\u2023</b> Inventory: Pick what items you start with.<br>\n"
-"<b>\u2023</b> Cosmetic: Customize the music and how the player model will look in-game.", None))
+        self.choose_settings_label.setText(QCoreApplication.translate("main_window", u"<b>\u279c</b> World: Customize how the world is randomized. Pick dungeon, completion, shuffle, entrance, and other fun settings.<br>\n"
+"<b>\u279c</b> Logic: Pick which locations and tricks are enabled.<br>\n"
+"<b>\u279c</b> Inventory: Pick what items you start with.<br>\n"
+"<b>\u279c</b> Cosmetic: Customize the music and how the player model will look in-game.", None))
         self.useful_links_group_box.setTitle(QCoreApplication.translate("main_window", u"Links", None))
         self.links_label.setText(QCoreApplication.translate("main_window", u"<b>TODO</b><br>\n"
 "\n"
-"<b>\u2023</b> <a href=\"https://discord.gg/zkm6yncD\">Discord Server</a><br>\n"
-"<b>\u2023</b> <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\">Report a Bug</a><br>\n"
-"<b>\u2023</b> <a href=\"\">Location Guide (todo)</a>", None))
+"<b>\u279c</b> <a href=\"https://discord.gg/zkm6yncD\">Discord Server</a><br>\n"
+"<b>\u279c</b> <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\">Report a Bug</a><br>\n"
+"<b>\u279c</b> <a href=\"\">Location Guide (todo)</a>", None))
         self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"File Setup", None))
         self.extract_label.setText(QCoreApplication.translate("main_window", u"Extract", None))
         self.extract_button.setText(QCoreApplication.translate("main_window", u"Browse", None))

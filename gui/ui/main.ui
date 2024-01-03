@@ -27,7 +27,7 @@ background-color: #FFFFFF;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -102,7 +102,7 @@ For help with this process, please ask on GitHub or join the Discord server link
               </sizepolicy>
              </property>
              <property name="text">
-              <string>--&gt;</string>
+              <string>➜</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -167,7 +167,7 @@ When you are ready, click the &quot;Randomize&quot; button in the bottom right o
               </sizepolicy>
              </property>
              <property name="text">
-              <string>--&gt;</string>
+              <string>➜</string>
              </property>
             </widget>
            </item>
@@ -251,10 +251,10 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>&lt;b&gt;‣&lt;/b&gt; World: Customize how the world is randomized. Pick dungeon, completion, shuffle, entrance, and other fun settings.&lt;br&gt;
-&lt;b&gt;‣&lt;/b&gt; Logic: Pick which locations and tricks are enabled.&lt;br&gt;
-&lt;b&gt;‣&lt;/b&gt; Inventory: Pick what items you start with.&lt;br&gt;
-&lt;b&gt;‣&lt;/b&gt; Cosmetic: Customize the music and how the player model will look in-game.</string>
+                 <string>&lt;b&gt;➜&lt;/b&gt; World: Customize how the world is randomized. Pick dungeon, completion, shuffle, entrance, and other fun settings.&lt;br&gt;
+&lt;b&gt;➜&lt;/b&gt; Logic: Pick which locations and tricks are enabled.&lt;br&gt;
+&lt;b&gt;➜&lt;/b&gt; Inventory: Pick what items you start with.&lt;br&gt;
+&lt;b&gt;➜&lt;/b&gt; Cosmetic: Customize the music and how the player model will look in-game.</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -287,9 +287,9 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                 <property name="text">
                  <string>&lt;b&gt;TODO&lt;/b&gt;&lt;br&gt;
 
-&lt;b&gt;‣&lt;/b&gt; &lt;a href=&quot;https://discord.gg/zkm6yncD&quot;&gt;Discord Server&lt;/a&gt;&lt;br&gt;
-&lt;b&gt;‣&lt;/b&gt; &lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;Report a Bug&lt;/a&gt;&lt;br&gt;
-&lt;b&gt;‣&lt;/b&gt; &lt;a href=&quot;&quot;&gt;Location Guide (todo)&lt;/a&gt;</string>
+&lt;b&gt;➜&lt;/b&gt; &lt;a href=&quot;https://discord.gg/zkm6yncD&quot;&gt;Discord Server&lt;/a&gt;&lt;br&gt;
+&lt;b&gt;➜&lt;/b&gt; &lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;Report a Bug&lt;/a&gt;&lt;br&gt;
+&lt;b&gt;➜&lt;/b&gt; &lt;a href=&quot;&quot;&gt;Location Guide (todo)&lt;/a&gt;</string>
                 </property>
                 <property name="openExternalLinks">
                  <bool>true</bool>
