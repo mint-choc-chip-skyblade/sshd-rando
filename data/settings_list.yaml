@@ -245,7 +245,7 @@
 
 
 - name: path_hints
-  default_option: 0
+  default_option: 3
   pretty_name: Path Hints
   pretty_options:
     - 0-7
@@ -254,7 +254,7 @@
   
 
 - name: barren_hints
-  default_option: 0
+  default_option: 2
   pretty_name: Barren Hints
   pretty_options:
     - 0-7
@@ -263,7 +263,7 @@
 
 
 - name: location_hints
-  default_option: 0
+  default_option: 7 # assumes always_hints is on
   pretty_name: Location Hints
   pretty_options:
     - 0-7
@@ -272,7 +272,7 @@
 
 
 - name: item_hints
-  default_option: 0
+  default_option: 3
   pretty_name: Item Hints
   pretty_options:
     - 0-7
@@ -281,7 +281,7 @@
 
 
 - name: fi_hints
-  default_option: "off"
+  default_option: "on"
   pretty_name: Fi Hints
   pretty_options:
     - "Off"
@@ -303,7 +303,7 @@
 
 
 - name: song_hints
-  default_option: "off"
+  default_option: "direct"
   pretty_name: Song Hints
   pretty_options:
     - "Off"
@@ -340,7 +340,7 @@
 
 
 - name: always_hints
-  default_option: "off"
+  default_option: "on"
   pretty_name: Prioritize Remote Location Hints
   pretty_options:
     - "Off"
