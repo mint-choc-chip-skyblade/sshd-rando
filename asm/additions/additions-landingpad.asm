@@ -112,6 +112,9 @@ b.eq horwell_always_interactable
 cmp w8, #32
 b.eq rotate_freestanding_items
 
+cmp w8, #33
+b.eq fix_items_in_sand_piles
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

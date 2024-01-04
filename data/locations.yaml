@@ -233,7 +233,7 @@
 
 - name: Central Skyloft - Waterfall Cave Crawlspace Rupee
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D000/r0/l0/Item/88
 
@@ -272,11 +272,35 @@
     - oarc/F018r/l0
     - oarc/F019r/l0
 
-- name: Central Skyloft - Item in Bird Nest
+- name: Central Skyloft - Item in Bird's Nest
   original_item: Rattle
   type:
   Paths:
     - stage/F000/r0/l0/Item/13
+
+- name: Central Skyloft - North Rupee in Bird's Nest
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFC5D
+
+- name: Central Skyloft - East Rupee in Bird's Nest
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFC5C
+
+- name: Central Skyloft - South Rupee in Bird's Nest
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFC5B
+
+- name: Central Skyloft - West Rupee in Bird's Nest
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFC5E
 
 - name: Central Skyloft - Shed Chest
   original_item: Silver Rupee
@@ -1146,19 +1170,19 @@
 
 - name: Faron Woods - Rupee on Hollow Tree Root
   original_item: Blue Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F100/r0/l0/Item/42
 
 - name: Faron Woods - Rupee on Hollow Tree Branch
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F100/r0/l0/Item/41
 
 - name: Faron Woods - Rupee on Platform near Floria Door
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F100/r0/l0/Item/40
 
@@ -1170,13 +1194,13 @@
 
 - name: Faron Woods - Rupee on Great Tree North Branch
   original_item: Blue Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F100/r0/l0/Item/43
 
 - name: Faron Woods - Rupee on Great Tree West Branch
   original_item: Blue Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F100/r0/l0/Item/44
 
@@ -1263,25 +1287,25 @@
 
 - name: Lake Floria - Rupee under Central Boulder
   original_item: Silver Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F102/r2/l0/Item/60
 
 - name: Lake Floria - Rupee behind Southwest Boulder
   original_item: Blue Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F102/r2/l0/Item/63
 
 - name: Lake Floria - Left Rupee behind Northwest Boulder
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F102/r2/l0/Item/62
 
 - name: Lake Floria - Right Rupee behind Northwest Boulder
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F102/r2/l0/Item/61
 
@@ -1309,7 +1333,7 @@
 
 - name: Floria Waterfall - Rupee on High Ledge
   original_item: Gold Rupee
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
    - stage/F102_1/r0/l0/Item/64
 
@@ -1440,7 +1464,7 @@
 
 - name: Eldin Volcano - Rupee on Ledge before First Room
   original_item: Red Rupee
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F200/r0/l0/Item/41
 
@@ -1452,13 +1476,13 @@
 
 - name: Eldin Volcano - Rupee behind Bombable Wall in First Room
   original_item: Blue Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F200/r1/l0/Item/13
 
 - name: Eldin Volcano - Rupee in Crawlspace in First Room
   original_item: Blue Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F200/r1/l0/Item/19
 
@@ -1470,13 +1494,13 @@
 
 - name: Eldin Volcano - Southeast Rupee above Mogma Turf Entrance
   original_item: Blue Rupee
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F200/r2/l0/Item/125
 
 - name: Eldin Volcano - North Rupee above Mogma Turf Entrance
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F200/r2/l0/Item/123
 
@@ -1500,13 +1524,13 @@
 
 - name: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F200/r4/l0/Item/45
 
 - name: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F200/r4/l0/Item/11
 
@@ -2128,19 +2152,19 @@
 
 - name: Ancient Harbour - Rupee on First Pillar
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F301/r0/l0/Item/92
 
 - name: Ancient Harbour - Left Rupee on Entrance Crown
   original_item: Silver Rupee 
-  type: Rupees (Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F301/r0/l0/Item/91
 
 - name: Ancient Harbour - Right Rupee on Entrance Crown
   original_item: Silver Rupee 
-  type: Rupees (Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F301/r0/l0/Item/93
 
@@ -2199,19 +2223,19 @@
 
 - name: Pirate Stronghold - Rupee on East Sea Pillar
   original_item: Silver Rupee 
-  type: Rupees (Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F301_6/r0/l0/Item/12
 
 - name: Pirate Stronghold - Rupee on West Sea Pillar
   original_item: Silver Rupee 
-  type: Rupees (Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F301_6/r0/l0/Item/11
 
 - name: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
   original_item: Silver Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/F301_6/r0/l1/Item/13
     - stage/F301_6/r0/l2/Item/13
@@ -2293,19 +2317,19 @@
 
 - name: Skyview Temple - Rupee in Southeast Tunnel
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D100/r5/l0/Item/65
 
 - name: Skyview Temple - Rupee in Southwest Tunnel
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D100/r5/l0/Item/67
 
 - name: Skyview Temple - Rupee in East Tunnel
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D100/r5/l0/Item/66
 
@@ -2339,7 +2363,7 @@
 
 - name: Skyview Spring - Rupee on Spring Pillar
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/B100_1/r0/l0/Item/109
 
@@ -2365,7 +2389,7 @@
 
 - name: Earth Temple - Rupee above Drawbridge
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D200/r1/l0/Item/25
 
@@ -2402,7 +2426,7 @@
 
 - name: Earth Temple - Rupee in Lava Tunnel
   original_item: Silver Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D200/r2/l0/Item/21
 
@@ -2548,43 +2572,43 @@
 
 - name: Ancient Cistern - Rupee in West Hand
   original_item: Silver Rupee
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D101/r0/l0/Item/93
 
 - name: Ancient Cistern - Rupee in East Hand
   original_item: Silver Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D101/r0/l0/Item/92
 
 - name: Ancient Cistern - First Rupee in East Part in Short Tunnel
   original_item: Green Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D101/r2/l0/Item/65
 
 - name: Ancient Cistern - Second Rupee in East Part in Short Tunnel
   original_item: Green Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D101/r2/l0/Item/66
 
 - name: Ancient Cistern - Third Rupee in East Part in Short Tunnel
   original_item: Green Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D101/r2/l0/Item/67
 
 - name: Ancient Cistern - Rupee in East Part in Cubby
   original_item: Red Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D101/r2/l0/Item/68
 
 - name: Ancient Cistern - Rupee in East Part in Main Tunnel
   original_item: Red Rupee
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D101/r2/l0/Item/34
 
@@ -2620,7 +2644,7 @@
 
 - name: Ancient Cistern - Rupee under Lilypad
   original_item: Red Rupee
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D101/r5/l0/Item/13
 
@@ -2850,7 +2874,7 @@
 
 - name: Sky Keep - Rupee in Fire Sanctuary Room in Alcove
   original_item: Silver Rupee 
-  type: Rupees (No Quick Beetle)
+  type: Rupee
   Paths:
     - stage/D003_2/r0/l0/Item/36
 

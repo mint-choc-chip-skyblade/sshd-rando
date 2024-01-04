@@ -1359,10 +1359,30 @@
   pretty: Central Skyloft - Peater/Peatrice's Crystals
   cryptic: the <r<item check girl>>
 
-- name: Central Skyloft - Item in Bird Nest
-  standard: Central Skyloft - Item in Bird Nest
-  pretty: Central Skyloft - Item in Bird Nest
-  cryptic: an <r<item hidden in sand>>
+- name: Central Skyloft - Item in Bird's Nest
+  standard: Central Skyloft - Item in Bird's Nest
+  pretty: Central Skyloft - Item in Bird's Nest
+  cryptic: an <r<item nesting in dust>>
+
+- name: Central Skyloft - North Rupee in Bird's Nest
+  standard: Central Skyloft - North Rupee in Bird's Nest
+  pretty: Central Skyloft - North Rupee in Bird's Nest
+  cryptic: a <r<nesting item>>
+
+- name: Central Skyloft - East Rupee in Bird's Nest
+  standard: Central Skyloft - East Rupee in Bird's Nest
+  pretty: Central Skyloft - East Rupee in Bird's Nest
+  cryptic: a <r<nesting item>>
+
+- name: Central Skyloft - South Rupee in Bird's Nest
+  standard: Central Skyloft - South Rupee in Bird's Nest
+  pretty: Central Skyloft - South Rupee in Bird's Nest
+  cryptic: a <r<nesting item>>
+
+- name: Central Skyloft - West Rupee in Bird's Nest
+  standard: Central Skyloft - West Rupee in Bird's Nest
+  pretty: Central Skyloft - West Rupee in Bird's Nest
+  cryptic: a <r<nesting item>>
 
 - name: Central Skyloft - Shed Chest
   standard: Central Skyloft - Shed Chest

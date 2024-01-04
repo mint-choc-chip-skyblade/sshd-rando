@@ -87,6 +87,29 @@ pub fn fix_item_get_under_water() {
 }
 
 #[no_mangle]
+pub fn fix_items_in_sand_piles() {
+    unsafe {
+        let param1: u32;
+        asm!(
+            "ldr {0:w}, [x19, #0xc]",
+            out(reg) param1,
+        );
+
+        let sceneflag = param1 >> 10 & 0xFF;
+
+        // Only trap items in sand piles on Skyloft and if they have the
+        // sceneflag for the Item in Bird's Nest check
+        if &CURRENT_STAGE_NAME[..5] == b"F000\0" && sceneflag == 13 {
+            asm!("mov w8, #1");
+        } else {
+            asm!("mov w8, #0");
+        }
+
+        asm!("cmp w8, #1");
+    }
+}
+
+#[no_mangle]
 pub fn fix_sandship_boat() -> u32 {
     unsafe {
         let current_stage_name = unsafe { &CURRENT_STAGE_NAME[..4] };

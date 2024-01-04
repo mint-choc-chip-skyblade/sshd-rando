@@ -533,6 +533,50 @@ F000: # Skyloft
       sizex: 3.2
       sizey: 4.5
       sizez: 3.2
+
+  - name: Move Bird Nest North Rupee
+    type: objpatch
+    id: 0xFC5D
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 5425
+      posy: 1940
+      posz: -5425
+
+  - name: Move Bird Nest East Rupee
+    type: objpatch
+    id: 0xFC5C
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 5595
+      posy: 1940
+      posz: -5135
+
+  - name: Move Bird Nest South Rupee
+    type: objpatch
+    id: 0xFC5B
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 5325
+      posy: 1940
+      posz: -4955
+
+  - name: Move Bird Nest West Rupee
+    type: objpatch
+    id: 0xFC5E
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 5145
+      posy: 1940
+      posz: -5265
   
   - name: Fledge for Arrow minigame
     type: objpatch
