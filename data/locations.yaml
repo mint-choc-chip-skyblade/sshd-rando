@@ -261,11 +261,17 @@
   Paths:
     - stage/D000/r0/l0/TBox/68
 
-- name: Central Skyloft - Waterfall Cave Crawlspace Rupee
-  original_item: Red Rupee 
+- name: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
+  original_item: Red Rupee
   type: Rupee
   Paths:
     - stage/D000/r0/l0/Item/88
+
+- name: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
+  original_item: Red Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D000/r0/l0/Item/0xFC14
 
 - name: Central Skyloft - Gossip Stone on Waterfall Island
   original_item: Nothing

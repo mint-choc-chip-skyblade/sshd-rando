@@ -1,3 +1,13 @@
+D000: # Waterfall Cave
+  - name: Remove flag from Crawlspace Rupee
+    type: objpatch
+    id: 0xFC14
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFF0FFE04 # sceneflag = 0xFF
+
 F000: # Skyloft
   # F000 oarcadds
   - name: Trial

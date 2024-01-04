@@ -1359,9 +1359,14 @@
   pretty: Central Skyloft - Waterfall Cave Second Chest
   cryptic: the <r<lower chest>> in a <r<cave in the sky>>
 
-- name: Central Skyloft - Waterfall Cave Crawlspace Rupee
-  standard: Central Skyloft - Waterfall Cave Crawlspace Rupee
-  pretty: Central Skyloft - Waterfall Cave Crawlspace Rupee
+- name: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
+  standard: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
+  pretty: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
+  cryptic: a <r<rupee>> in a <r<cave in the sky>>
+
+- name: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
+  standard: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
+  pretty: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
   cryptic: a <r<rupee>> in a <r<cave in the sky>>
 
 - name: Central Skyloft - Gossip Stone on Waterfall Island
