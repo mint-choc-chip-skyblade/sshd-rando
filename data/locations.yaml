@@ -14,6 +14,36 @@
   Paths:
     - stage/F001r/r6/l0/chest/32 #sceneflag
 
+- name: Knight Academy - Rupee in Chimney Crawlspace 1
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F001r/r6/l0/Item/0xFC0D
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 2
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F001r/r6/l0/Item/0xFC0E
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 3
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F001r/r6/l0/Item/0xFC0F
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 4
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F001r/r6/l0/Item/0xFC10
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 5
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F001r/r6/l0/Item/0xFC11
+
 - name: Knight Academy - Owlan's Crystals
   original_item: Gratitude Crystal Pack
   type: Scrapper Deliveries, Gratitude Crystal Sidequests, Combat, NPC

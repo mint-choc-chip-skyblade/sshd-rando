@@ -1177,7 +1177,32 @@
 - name: Knight Academy - In Zelda's Closet
   standard: Knight Academy - In Zelda's Closet
   pretty: Knight Academy - In Zelda's Closet
-  cryptic: a <r<lover's closet>>
+  cryptic: snooping through a <r<lover's clothes>>
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 1
+  standard: Knight Academy - Rupee in Chimney Crawlspace 1
+  pretty: Knight Academy - Rupee in Chimney Crawlspace 1
+  cryptic: sneaking above a <r<lover's bedroom>>
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 2
+  standard: Knight Academy - Rupee in Chimney Crawlspace 2
+  pretty: Knight Academy - Rupee in Chimney Crawlspace 2
+  cryptic: sneaking above a <r<lover's bedroom>>
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 3
+  standard: Knight Academy - Rupee in Chimney Crawlspace 3
+  pretty: Knight Academy - Rupee in Chimney Crawlspace 3
+  cryptic: sneaking above a <r<lover's bedroom>>
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 4
+  standard: Knight Academy - Rupee in Chimney Crawlspace 4
+  pretty: Knight Academy - Rupee in Chimney Crawlspace 4
+  cryptic: sneaking above a <r<lover's bedroom>>
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 5
+  standard: Knight Academy - Rupee in Chimney Crawlspace 5
+  pretty: Knight Academy - Rupee in Chimney Crawlspace 5
+  cryptic: sneaking above a <r<lover's bedroom>>
 
 - name: Knight Academy - Owlan's Crystals
   standard: Knight Academy - Owlan's Crystals

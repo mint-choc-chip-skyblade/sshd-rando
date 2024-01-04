@@ -37,6 +37,12 @@
   exits:
     Knight Academy Zelda's Room: Nothing
     Upper Skyloft: Impossible # To satisfy entrance rando
+  locations:
+    Knight Academy - Rupee in Chimney Crawlspace 1: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 2: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 3: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 4: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 5: Nothing
 
 
 - name: Knight Academy Zelda's Room
