@@ -2752,6 +2752,18 @@
   Paths:
     - stage/D101/r7/l0/TBox/69
 
+- name: Ancient Cistern - Rupee in Basement Demon's Right Eye
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D101/r4/l0/Item/0xFC11
+
+- name: Ancient Cistern - Rupee in Basement Demon's Left Eye
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D101/r4/l0/Item/0xFC12
+
 - name: Ancient Cistern - Chest under Stone Statue
   original_item: Ancient Cistern Boss Key
   type:

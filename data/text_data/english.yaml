@@ -3313,6 +3313,16 @@
   pretty: Ancient Cistern - Chest in Key Locked Room
   cryptic: a <r<chest in a statue>>
 
+- name: Ancient Cistern - Rupee in Basement Demon's Right Eye
+  standard: Ancient Cistern - Rupee in Basement Demon's Right Eye
+  pretty: Ancient Cistern - Rupee in Basement Demon's Right Eye
+  cryptic: <r<removing a demon's vision>>
+
+- name: Ancient Cistern - Rupee in Basement Demon's Left Eye
+  standard: Ancient Cistern - Rupee in Basement Demon's Left Eye
+  pretty: Ancient Cistern - Rupee in Basement Demon's Left Eye
+  cryptic: <r<removing a demon's vision>>
+
 - name: Ancient Cistern - Chest under Stone Statue
   standard: Ancient Cistern - Chest under Stone Statue
   pretty: Ancient Cistern - Chest under Stone Statue
