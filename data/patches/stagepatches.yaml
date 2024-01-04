@@ -5493,6 +5493,20 @@ D100: # Skyview Temple
     destlayer: 0
     room: 4
     objtype: OBJ
+  - name: Move First Rupee under West Walkway before Hub Room to layer 0
+    type: objmove
+    id: 0xFC9C
+    layer: 1
+    destlayer: 0
+    room: 2
+    objtype: OBJ
+  - name: Move Second Rupee under West Walkway before Hub Room to layer 0
+    type: objmove
+    id: 0xFC9B
+    layer: 1
+    destlayer: 0
+    room: 2
+    objtype: OBJ
   - name: Empty Soil
     type: objdelete
     id: 0xFC50

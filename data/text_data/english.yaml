@@ -2985,6 +2985,31 @@
   pretty: Skyview Temple - Chest behind Two Eyes
   cryptic: <r<two watchful eyes>>
 
+- name: Skyview Temple - Rupee under South Walkway before Hub Room
+  standard: Skyview Temple - Rupee under South Walkway before Hub Room
+  pretty: Skyview Temple - Rupee under South Walkway before Hub Room
+  cryptic: a <r<rupee under a temple bridge>>
+
+- name: Skyview Temple - First Rupee under West Walkway before Hub Room
+  standard: Skyview Temple - First Rupee under West Walkway before Hub Room
+  pretty: Skyview Temple - First Rupee under West Walkway before Hub Room
+  cryptic: a <r<rupee under a temple bridge>>
+
+- name: Skyview Temple - Second Rupee under West Walkway before Hub Room
+  standard: Skyview Temple - Second Rupee under West Walkway before Hub Room
+  pretty: Skyview Temple - Second Rupee under West Walkway before Hub Room
+  cryptic: a <r<rupee under a temple bridge>>
+
+- name: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
+  standard: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
+  pretty: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
+  cryptic: a <r<rupee on a temple tree>>
+
+- name: Skyview Temple - Rupee on Coiled Tree Branch before Hub Room
+  standard: Skyview Temple - Rupee on Coiled Tree Branch before Hub Room
+  pretty: Skyview Temple - Rupee on Coiled Tree Branch before Hub Room
+  cryptic: a <r<rupee on a temple tree>>
+
 - name: Skyview Temple - Chest after Stalfos Fight
   standard: Skyview Temple - Chest after Stalfos Fight
   pretty: Skyview Temple - Chest after Stalfos Fight
@@ -2994,6 +3019,16 @@
   standard: Skyview Temple - Item behind Bars
   pretty: Skyview Temple - Item behind Bars
   cryptic: an <r<item behind bars>>
+
+- name: Skyview Temple - Rupee on South Bird Pillar in Hub Room
+  standard: Skyview Temple - Rupee on South Bird Pillar in Hub Room
+  pretty: Skyview Temple - Rupee on South Bird Pillar in Hub Room
+  cryptic: a <r<rupee on a forest bird>>
+
+- name: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
+  standard: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
+  pretty: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
+  cryptic: a <r<rupee on a forest bird>>
 
 - name: Skyview Temple - Rupee in Southeast Tunnel
   standard: Skyview Temple - Rupee in Southeast Tunnel
@@ -3008,6 +3043,21 @@
 - name: Skyview Temple - Rupee in East Tunnel
   standard: Skyview Temple - Rupee in East Tunnel
   pretty: Skyview Temple - Rupee in East Tunnel
+  cryptic: a <r<rupee in a high tunnel>>
+
+- name: Skyview Temple - First Rupee in Northeast Tunnel
+  standard: Skyview Temple - First Rupee in Northeast Tunnel
+  pretty: Skyview Temple - First Rupee in Northeast Tunnel
+  cryptic: a <r<rupee in a high tunnel>>
+
+- name: Skyview Temple - Second Rupee in Northeast Tunnel
+  standard: Skyview Temple - Second Rupee in Northeast Tunnel
+  pretty: Skyview Temple - Second Rupee in Northeast Tunnel
+  cryptic: a <r<rupee in a high tunnel>>
+
+- name: Skyview Temple - Third Rupee in Northeast Tunnel
+  standard: Skyview Temple - Third Rupee in Northeast Tunnel
+  pretty: Skyview Temple - Third Rupee in Northeast Tunnel
   cryptic: a <r<rupee in a high tunnel>>
 
 - name: Skyview Temple - Chest behind Three Eyes

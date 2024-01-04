@@ -2338,6 +2338,38 @@
   Paths:
     - stage/D100/r4/l0/TBox/67
 
+- name: Skyview Temple - Rupee under South Walkway before Hub Room
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D100/r2/l0/Item/0xFC3D
+
+- name: Skyview Temple - First Rupee under West Walkway before Hub Room
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    # Moved objects get given new ids so use the vanilla tempflag id instead
+    - stage/D100/r2/l0/Item/159
+
+- name: Skyview Temple - Second Rupee under West Walkway before Hub Room
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    # Moved objects get given new ids so use the vanilla tempflag id instead
+    - stage/D100/r2/l0/Item/158
+
+- name: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D100/r2/l0/Item/0xFC3B
+
+- name: Skyview Temple - Rupee on Coiled Tree Branch before Hub Room
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D100/r2/l0/Item/0xFC3C
+
 - name: Skyview Temple - Chest after Stalfos Fight
   original_item: Progressive Beetle
   type:
@@ -2350,6 +2382,18 @@
   type:
   Paths:
     - stage/D100/r5/l0/Item/103
+
+- name: Skyview Temple - Rupee on South Bird Pillar in Hub Room
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D100/r5/l0/Item/0xFC41
+
+- name: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D100/r5/l0/Item/0xFC40
 
 - name: Skyview Temple - Rupee in Southeast Tunnel
   original_item: Red Rupee 
@@ -2368,6 +2412,24 @@
   type: Rupee
   Paths:
     - stage/D100/r5/l0/Item/66
+
+- name: Skyview Temple - First Rupee in Northeast Tunnel
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D100/r5/l0/Item/0xFC3F
+
+- name: Skyview Temple - Second Rupee in Northeast Tunnel
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D100/r5/l0/Item/0xFC3E
+
+- name: Skyview Temple - Third Rupee in Northeast Tunnel
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D100/r5/l0/Item/0xFC3D
 
 - name: Skyview Temple - Chest behind Three Eyes
   original_item: Skyview Temple Small Key 

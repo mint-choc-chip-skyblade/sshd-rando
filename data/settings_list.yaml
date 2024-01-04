@@ -853,6 +853,17 @@
     - "on":                            "You may need to roll next the Skultullas in the Skyview Temple while they are on their webs in order to get past them."
 
 
+- name: logic_skyview_coiled_rupee_jump
+  default_option: "off"
+  pretty_name: Skyview Coiled Rupee Jump
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "You will only be expected to get the Rupee check on the Coiled Branch in the Skyview Temple using the Beetle."
+    - "on":                            "You may need to front-hop or backflip into the Rupee check on the Coiled Branch in the Skyview Temple."
+
+
 - name: logic_skyview_precise_slingshot
   default_option: "off"
   pretty_name: Skyview Precise Slingshot Trick

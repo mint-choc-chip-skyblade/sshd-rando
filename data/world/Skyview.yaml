@@ -36,6 +36,14 @@
     SV First Hub Right Room Lower: Can_Hit_High_Skyview_Switches
     SV First Hub Right Room Upper: Clawshots or ('Skyview_Raise_East_Water' and 'Skyview_Raise_West_Water')
     SV Second Hub Center Room: (Skyview_Temple_Small_Key or small_keys == removed) and (Clawshots or 'One_Water_Raise')
+  locations:
+    # Water Dragon's Scale needed to make sure you can't lock yourself out of the checks
+    # by raising the water before getting them
+    Skyview Temple - Rupee under South Walkway before Hub Room: Water_Dragons_Scale
+    Skyview Temple - First Rupee under West Walkway before Hub Room: Water_Dragons_Scale
+    Skyview Temple - Second Rupee under West Walkway before Hub Room: Water_Dragons_Scale
+    Skyview Temple - Rupee on Lower Tree Branch before Hub Room: Water_Dragons_Scale
+    Skyview Temple - Rupee on Coiled Tree Branch before Hub Room: Beetle or (logic_skyview_coiled_rupee_jump and Practice_Sword)
 
 
 - name: SV First Hub Left Room
@@ -79,9 +87,14 @@
     SV Staldra Room: count(2, Skyview_Temple_Small_Key) or small_keys == removed
     SV Last Room Before Rope: can_access(SV Last Room Before Rope) and Can_Hit_High_Skyview_Switches
   locations:
+    Skyview Temple - Rupee on South Bird Pillar in Hub Room: Beetle
+    Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room: Beetle
     Skyview Temple - Rupee in Southeast Tunnel: Beetle
     Skyview Temple - Rupee in Southwest Tunnel: Beetle
     Skyview Temple - Rupee in East Tunnel: Beetle
+    Skyview Temple - First Rupee in Northeast Tunnel: Beetle
+    Skyview Temple - Second Rupee in Northeast Tunnel: Beetle
+    Skyview Temple - Third Rupee in Northeast Tunnel: Beetle
     Skyview Temple - Item behind Bars: Beetle or (Slingshot and logic_skyview_precise_slingshot) or Whip
 
 
