@@ -2198,7 +2198,17 @@
 - name: Floria Waterfall - Rupee on High Ledge
   standard: Floria Waterfall - Rupee on High Ledge
   pretty: Floria Waterfall - Rupee on High Ledge
-  cryptic: an <r<item on a humid high ledge>>
+  cryptic: a <r<rupee on a humid high ledge>>
+
+- name: Floria Waterfall - North Rupee in underwater Grass
+  standard: Floria Waterfall - North Rupee in underwater Grass
+  pretty: Floria Waterfall - North Rupee in underwater Grass
+  cryptic: a <r<soggy rupee outside a temple>>
+
+- name: Floria Waterfall - South Rupee in underwater Grass
+  standard: Floria Waterfall - South Rupee in underwater Grass
+  pretty: Floria Waterfall - South Rupee in underwater Grass
+  cryptic: a <r<soggy rupee outside a temple>>
 
 - name: Floria Waterfall - Gossip Stone
   standard: Floria Waterfall - Gossip Stone

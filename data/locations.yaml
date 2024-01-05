@@ -1373,6 +1373,18 @@
   Paths:
    - stage/F102_1/r0/l0/Item/64
 
+- name: Floria Waterfall - North Rupee in underwater Grass
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/Item/0xFC19
+
+- name: Floria Waterfall - South Rupee in underwater Grass
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/Item/0xFC1A
+
 - name: Floria Waterfall - Gossip Stone
   original_item: Nothing
   type: Hint Location
