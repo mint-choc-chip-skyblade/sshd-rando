@@ -7,6 +7,12 @@
     Top of LMF: Nothing
   locations:
     Lanayru Mining Facility - Chest behind Bars: Nothing
+    Lanayru Mining Facility - Left Front Rupee behind Statue: Nothing
+    Lanayru Mining Facility - Left Middle Rupee behind Statue: Nothing
+    Lanayru Mining Facility - Left Back Rupee behind Statue: Hook_Beetle
+    Lanayru Mining Facility - Right Front Rupee behind Statue: Bomb_Bag or Hook_Beetle
+    Lanayru Mining Facility - Right Middle Rupee behind Statue: Nothing
+    Lanayru Mining Facility - Right Back Rupee behind Statue: Nothing
 
 
 - name: LMF First Hub
@@ -101,6 +107,7 @@
     LMF Armos Fight Room: Nothing
     LMF Sand Spike Maze: Gust_Bellows
   locations:
+    Lanayru Mining Facility - Rupee in First Crawlspace: Gust_Bellows
     Lanayru Mining Facility - Chest behind First Crawlspace: Gust_Bellows
 
 
@@ -110,6 +117,20 @@
     LMF Big Hub Near Boss Door: Gust_Bellows and Can_Hit_Timeshift_Stone_in_Minecart
   # Also includes the platform in Big Hub after the door
   locations:
+    Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze: Gust_Bellows
+    Lanayru Mining Facility - Second Rupee in Crawlspace before Spike Maze: Gust_Bellows
+    Lanayru Mining Facility - West Rupee in Spike Maze 1: Gust_Bellows
+    Lanayru Mining Facility - West Rupee in Spike Maze 2: Gust_Bellows
+    Lanayru Mining Facility - West Rupee in Spike Maze 3: Gust_Bellows
+    Lanayru Mining Facility - West Rupee in Spike Maze 4: Gust_Bellows
+    Lanayru Mining Facility - Southeast Rupee in Spike Maze 1: Nothing
+    Lanayru Mining Facility - Southeast Rupee in Spike Maze 2: Nothing
+    Lanayru Mining Facility - Southeast Rupee in Spike Maze 3: Nothing
+    Lanayru Mining Facility - Southeast Rupee in Spike Maze 4: Nothing
+    Lanayru Mining Facility - Central Rupee in Spike Maze 1: Gust_Bellows
+    Lanayru Mining Facility - Central Rupee in Spike Maze 2: Gust_Bellows
+    Lanayru Mining Facility - Central Rupee in Spike Maze 3: Gust_Bellows
+    Lanayru Mining Facility - Northeast Rupee in Spike Maze: Gust_Bellows
     Lanayru Mining Facility - Chest in Spike Maze: Gust_Bellows
 
 
@@ -144,6 +165,7 @@
   exits:
     LMF Big Hub Near Boss Key Room North: Bomb_Bag and Gust_Bellows and Can_Defeat_Armos
   locations:
+    Lanayru Mining Facility - Rupee behind South Statue in Northeast Room: Bomb_Bag
     Lanayru Mining Facility - Chest after Double Armos Fight: Bomb_Bag and Gust_Bellows and Can_Defeat_Armos
 
 

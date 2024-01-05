@@ -2588,6 +2588,42 @@
   Paths:
     - stage/D300/r0/l0/TBox/64
 
+- name: Lanayru Mining Facility - Left Front Rupee behind Statue
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300/r0/l0/Item/0xFC12
+
+- name: Lanayru Mining Facility - Left Middle Rupee behind Statue
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300/r0/l0/Item/0xFC20
+
+- name: Lanayru Mining Facility - Left Back Rupee behind Statue
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300/r0/l0/Item/0xFC21
+
+- name: Lanayru Mining Facility - Right Front Rupee behind Statue
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300/r0/l0/Item/0xFC0F
+
+- name: Lanayru Mining Facility - Right Middle Rupee behind Statue
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300/r0/l0/Item/0xFC0E
+
+- name: Lanayru Mining Facility - Right Back Rupee behind Statue
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300/r0/l0/Item/0xFC22
+
 - name: Lanayru Mining Facility - First Chest in Hub Room
   original_item: Lanayru Mining Facility Small Key
   type:
@@ -2624,6 +2660,12 @@
   Paths:
     - stage/D300/r4/l0/TBox/76
 
+- name: Lanayru Mining Facility - Rupee in First Crawlspace
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r9/l0/Item/0xFC00
+
 - name: Lanayru Mining Facility - Chest behind First Crawlspace
   original_item: Golden Skull # TODO check again
   type:
@@ -2631,12 +2673,102 @@
     - stage/D300_1/r9/l0/TBox/72
     - stage/D300/r9/l0/TBox/72
 
+- name: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r9/l0/Item/0xFC07
+
+- name: Lanayru Mining Facility - Second Rupee in Crawlspace before Spike Maze
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r9/l0/Item/0xFC01
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 1
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC33
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 2
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC32
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 3
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC1C
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 4
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC27
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 1
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC31
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 2
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC30
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 3
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC1B
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 4
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC1A
+
+- name: Lanayru Mining Facility - Central Rupee in Spike Maze 1
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC19
+
+- name: Lanayru Mining Facility - Central Rupee in Spike Maze 2
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC36
+
+- name: Lanayru Mining Facility - Central Rupee in Spike Maze 3
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC28
+
+- name: Lanayru Mining Facility - Northeast Rupee in Spike Maze
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r7/l0/Item/0xFC38
+
 - name: Lanayru Mining Facility - Chest in Spike Maze
   original_item: Red Rupee
   type:
   Paths:
     - stage/D300_1/r7/l0/TBox/73
     - stage/D300/r7/l0/TBox/73
+
+- name: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D300_1/r8/l0/Item/0xFC50
 
 - name: Lanayru Mining Facility - Chest after Double Armos Fight
   original_item: Lanayru Mining Facility Boss Key

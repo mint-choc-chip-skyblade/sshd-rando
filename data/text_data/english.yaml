@@ -3182,6 +3182,36 @@
   pretty: Lanayru Mining Facility - Chest behind Bars
   cryptic: a <r<present chest behind bars>>
 
+- name: Lanayru Mining Facility - Left Front Rupee behind Statue
+  standard: Lanayru Mining Facility - Left Front Rupee behind Statue
+  pretty: Lanayru Mining Facility - Left Front Rupee behind Statue
+  cryptic: rupee behind a <r<statue in a sandy temple>>
+
+- name: Lanayru Mining Facility - Left Middle Rupee behind Statue
+  standard: Lanayru Mining Facility - Left Middle Rupee behind Statue
+  pretty: Lanayru Mining Facility - Left Middle Rupee behind Statue
+  cryptic: rupee behind a <r<statue in a sandy temple>>
+
+- name: Lanayru Mining Facility - Left Back Rupee behind Statue
+  standard: Lanayru Mining Facility - Left Back Rupee behind Statue
+  pretty: Lanayru Mining Facility - Left Back Rupee behind Statue
+  cryptic: rupee behind a <r<statue in a sandy temple>>
+
+- name: Lanayru Mining Facility - Right Front Rupee behind Statue
+  standard: Lanayru Mining Facility - Right Front Rupee behind Statue
+  pretty: Lanayru Mining Facility - Right Front Rupee behind Statue
+  cryptic: rupee behind a <r<statue in a sandy temple>>
+
+- name: Lanayru Mining Facility - Right Middle Rupee behind Statue
+  standard: Lanayru Mining Facility - Right Middle Rupee behind Statue
+  pretty: Lanayru Mining Facility - Right Middle Rupee behind Statue
+  cryptic: rupee behind a <r<statue in a sandy temple>>
+
+- name: Lanayru Mining Facility - Right Back Rupee behind Statue
+  standard: Lanayru Mining Facility - Right Back Rupee behind Statue
+  pretty: Lanayru Mining Facility - Right Back Rupee behind Statue
+  cryptic: rupee behind a <r<statue in a sandy temple>>
+
 - name: Lanayru Mining Facility - First Chest in Hub Room
   standard: Lanayru Mining Facility - First Chest in Hub Room
   pretty: Lanayru Mining Facility - First Chest in Hub Room
@@ -3212,15 +3242,95 @@
   pretty: Lanayru Mining Facility - Hop across Boxes Lower Chest
   cryptic: a <r<chest after many hops>>
 
+- name: Lanayru Mining Facility - Rupee in First Crawlspace
+  standard: Lanayru Mining Facility - Rupee in First Crawlspace
+  pretty: Lanayru Mining Facility - Rupee in First Crawlspace
+  cryptic: a <r<lone rupee in a sandy tunnel>>
+
 - name: Lanayru Mining Facility - Chest behind First Crawlspace
   standard: Lanayru Mining Facility - Chest behind First Crawlspace
   pretty: Lanayru Mining Facility - Chest behind First Crawlspace
   cryptic: a <r<chest past a sandy cralwspace>>
 
+- name: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
+  standard: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
+  pretty: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
+  cryptic: a <r<coupled rupee in a sandy tunnel>>
+
+- name: Lanayru Mining Facility - Second Rupee in Crawlspace before Spike Maze
+  standard: Lanayru Mining Facility - Second Rupee in Crawlspace before Spike Maze
+  pretty: Lanayru Mining Facility - Second Rupee in Crawlspace before Spike Maze
+  cryptic: a <r<coupled rupee in a sandy tunnel>>
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 1
+  standard: Lanayru Mining Facility - West Rupee in Spike Maze 1
+  pretty: Lanayru Mining Facility - West Rupee in Spike Maze 1
+  cryptic: a <r<western rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 2
+  standard: Lanayru Mining Facility - West Rupee in Spike Maze 2
+  pretty: Lanayru Mining Facility - West Rupee in Spike Maze 2
+  cryptic: a <r<western rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 3
+  standard: Lanayru Mining Facility - West Rupee in Spike Maze 3
+  pretty: Lanayru Mining Facility - West Rupee in Spike Maze 3
+  cryptic: a <r<western rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 4
+  standard: Lanayru Mining Facility - West Rupee in Spike Maze 4
+  pretty: Lanayru Mining Facility - West Rupee in Spike Maze 4
+  cryptic: a <r<western rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 1
+  standard: Lanayru Mining Facility - Southeast Rupee in Spike Maze 1
+  pretty: Lanayru Mining Facility - Southeast Rupee in Spike Maze 1
+  cryptic: a <r<southern rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 2
+  standard: Lanayru Mining Facility - Southeast Rupee in Spike Maze 2
+  pretty: Lanayru Mining Facility - Southeast Rupee in Spike Maze 2
+  cryptic: a <r<southern rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 3
+  standard: Lanayru Mining Facility - Southeast Rupee in Spike Maze 3
+  pretty: Lanayru Mining Facility - Southeast Rupee in Spike Maze 3
+  cryptic: a <r<southern rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 4
+  standard: Lanayru Mining Facility - Southeast Rupee in Spike Maze 4
+  pretty: Lanayru Mining Facility - Southeast Rupee in Spike Maze 4
+  cryptic: a <r<southern rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Central Rupee in Spike Maze 1
+  standard: Lanayru Mining Facility - Central Rupee in Spike Maze 1
+  pretty: Lanayru Mining Facility - Central Rupee in Spike Maze 1
+  cryptic: a <r<central rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Central Rupee in Spike Maze 2
+  standard: Lanayru Mining Facility - Central Rupee in Spike Maze 2
+  pretty: Lanayru Mining Facility - Central Rupee in Spike Maze 2
+  cryptic: a <r<central rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Central Rupee in Spike Maze 3
+  standard: Lanayru Mining Facility - Central Rupee in Spike Maze 3
+  pretty: Lanayru Mining Facility - Central Rupee in Spike Maze 3
+  cryptic: a <r<central rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Northeast Rupee in Spike Maze
+  standard: Lanayru Mining Facility - Northeast Rupee in Spike Maze
+  pretty: Lanayru Mining Facility - Northeast Rupee in Spike Maze
+  cryptic: a <r<northern rupee surrounded by spikes>>
+
 - name: Lanayru Mining Facility - Chest in Spike Maze
   standard: Lanayru Mining Facility - Chest in Spike Maze
   pretty: Lanayru Mining Facility - Chest in Spike Maze
   cryptic: a <r<chest surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
+  standard: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
+  pretty: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
+  cryptic: rupee behind a <r<northern statue in a sandy temple>>
 
 - name: Lanayru Mining Facility - Chest after Double Armos Fight
   standard: Lanayru Mining Facility - Chest after Double Armos Fight
