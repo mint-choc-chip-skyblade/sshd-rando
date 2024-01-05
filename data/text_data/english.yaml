@@ -3420,6 +3420,36 @@
   pretty: Fire Sanctuary - Chest on Balcony
   cryptic: a <r<chest on a lone balcony>>
 
+- name: Fire Sanctuary - Left Rupee above Blocked Lava Source
+  standard: Fire Sanctuary - Left Rupee above Blocked Lava Source
+  pretty: Fire Sanctuary - Left Rupee above Blocked Lava Source
+  cryptic: a <r<rupee above some hot rubble>>
+
+- name: Fire Sanctuary - Right Rupee above Blocked Lava Source
+  standard: Fire Sanctuary - Right Rupee above Blocked Lava Source
+  pretty: Fire Sanctuary - Right Rupee above Blocked Lava Source
+  cryptic: a <r<rupee above some hot rubble>>
+
+- name: Fire Sanctuary - Rupee in Alcove near Blocked Lava Source
+  standard: Fire Sanctuary - Rupee in Alcove near Blocked Lava Source
+  pretty: Fire Sanctuary - Rupee in Alcove near Blocked Lava Source
+  cryptic: a <r<rupee near some hot rubble>>
+
+- name: Fire Sanctuary - First Rupee in Alcove opposite Blocked Lava Source
+  standard: Fire Sanctuary - First Rupee in Alcove opposite Blocked Lava Source
+  pretty: Fire Sanctuary - First Rupee in Alcove opposite Blocked Lava Source
+  cryptic: a <r<rupee opposite some hot rubble>>
+
+- name: Fire Sanctuary - Second Rupee in Alcove opposite Blocked Lava Source
+  standard: Fire Sanctuary - Second Rupee in Alcove opposite Blocked Lava Source
+  pretty: Fire Sanctuary - Second Rupee in Alcove opposite Blocked Lava Source
+  cryptic: a <r<rupee opposite some hot rubble>>
+
+- name: Fire Sanctuary - Third Rupee in Alcove opposite Blocked Lava Source
+  standard: Fire Sanctuary - Third Rupee in Alcove opposite Blocked Lava Source
+  pretty: Fire Sanctuary - Third Rupee in Alcove opposite Blocked Lava Source
+  cryptic: a <r<rupee opposite some hot rubble>>
+
 - name: Fire Sanctuary - Chest near First Trapped Mogma
   standard: Fire Sanctuary - Chest near First Trapped Mogma
   pretty: Fire Sanctuary - Chest near First Trapped Mogma
@@ -3440,10 +3470,40 @@
   pretty: Fire Sanctuary - Rescue First Trapped Mogma Chest
   cryptic: saving a <r<mogma>> from a <r<fiery fate>>
 
+- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 1
+  standard: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 1
+  pretty: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 1
+  cryptic: an <r<underground temple rupee>>
+
+- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 2
+  standard: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 2
+  pretty: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 2
+  cryptic: an <r<underground temple rupee>>
+
+- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 3
+  standard: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 3
+  pretty: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 3
+  cryptic: an <r<underground temple rupee>>
+
+- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 4
+  standard: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 4
+  pretty: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 4
+  cryptic: an <r<underground temple rupee>>
+
+- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 5
+  standard: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 5
+  pretty: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 5
+  cryptic: an <r<underground temple rupee>>
+
 - name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   standard: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   pretty: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   cryptic: saving a <r<mogma>> from a <r<regular temperatured fate>>
+
+- name: Fire Sanctuary - Rupee underground behind Bombable Wall
+  standard: Fire Sanctuary - Rupee underground behind Bombable Wall
+  pretty: Fire Sanctuary - Rupee underground behind Bombable Wall
+  cryptic: a <r<hidden underground temple rupee>>
 
 - name: Fire Sanctuary - Chest after Bombable Wall
   standard: Fire Sanctuary - Chest after Bombable Wall

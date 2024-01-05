@@ -2896,6 +2896,42 @@
     - stage/D201_1/r6/l0/TBox/70
     - stage/D201/r6/l0/TBox/70
 
+- name: Fire Sanctuary - Left Rupee above Blocked Lava Source
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r8/l0/Item/0xFC27
+
+- name: Fire Sanctuary - Right Rupee above Blocked Lava Source
+  original_item: Red Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r8/l0/Item/0xFC26
+
+- name: Fire Sanctuary - Rupee in Alcove near Blocked Lava Source
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r8/l0/Item/0xFC25
+
+- name: Fire Sanctuary - First Rupee in Alcove opposite Blocked Lava Source
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r8/l0/Item/0xFC1F
+
+- name: Fire Sanctuary - Second Rupee in Alcove opposite Blocked Lava Source
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r8/l0/Item/0xFC23
+
+- name: Fire Sanctuary - Third Rupee in Alcove opposite Blocked Lava Source
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r8/l0/Item/0xFC24
+
 - name: Fire Sanctuary - Chest near First Trapped Mogma
   original_item: Fire Sanctuary Small Key 
   type:
@@ -2920,6 +2956,36 @@
   Paths:
     - stage/D201_1/r5/l0/TBox/68
 
+- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 1
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r5/l0/Item/0xFC6A
+
+- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 2
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r5/l0/Item/0xFC6B
+
+- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 3
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r5/l0/Item/0xFC6C
+
+- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 4
+  original_item: Red Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r5/l0/Item/0xFC6D
+
+- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 5
+  original_item: Red Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r5/l0/Item/0xFC5E
+
 - name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   original_item: Fire Sanctuary Map
   type:
@@ -2927,6 +2993,12 @@
   Paths:
     - stage/D201_1/r2/l0/TBox/65
     - stage/D201/r2/l0/TBox/65
+
+- name: Fire Sanctuary - Rupee underground behind Bombable Wall
+  original_item: Red Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/D201_1/r2/l0/Item/0xFCCD
 
 - name: Fire Sanctuary - Chest after Bombable Wall
   original_item: Fire Sanctuary Small Key 
