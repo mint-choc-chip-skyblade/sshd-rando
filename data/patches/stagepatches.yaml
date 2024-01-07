@@ -4421,10 +4421,7 @@ D003_8: # Triforce Room
 D100: # Skyview Temple
   - name: Layer override
     type: layeroverride
-    override: # only layer change is to layer 2 after water dragons scale
-      - story_flag: 206 # storyflag after water dragons scale
-        night: 0
-        layer: 2
+    override:
       - story_flag: -1
         night: 0
         layer: 1
@@ -4500,57 +4497,10 @@ D100: # Skyview Temple
     layer: 1
     room: 4
     objtype: OBJ
-  - name: Remove boards in layer 2 # they break by hitting the switch
-    type: objdelete
-    ids:
-      - 0xFCA0
-      - 0xFCA1
-    layer: 2
-    room: 2
-    objtype: OBJ
-  - name: Remove Mogma near goddess wall
-    type: objdelete
-    ids:
-      - 0xFC4F # Mogma
-      - 0xFC4E # Cutscene
-      - 0xFC4B # Cutscene
-    layer: 2
-    room: 0
-    objtype: OBJ
-  - name: Remove Mogma tags near goddess wall
-    type: objdelete
-    ids:
-      - 0xFC57 # SwTag
-      - 0xFC52 # AreaTag
-      - 0xFC53 # AreaTag
-    layer: 2
-    room: 0
-    objtype: STAG
-  - name: Remove forced talk to Mogmas
-    type: objdelete
-    ids:
-      - 0xFC51 # Right room
-      - 0xFC46 # Left room
-      - 0xFC7B # Before Boss room
-    layer: 2
-    rooms: [4, 3, 9]
-    objtype: STAG
-  - name: Remove soil in three eye room #this one makes pushing the block difficult
-    type: objdelete
-    id: 0xFC34
-    layer: 2
-    room: 7
-    objtype: OBJ
   - name: Remove initial Fi text in Skyview 1
     type: objdelete
     id: 0xFC4C
     layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove initial Fi text in Skyview 2
-    type: objdelete
-    id: 0xFC4A
-    layer: 2
     room: 0
     objtype: OBJ
   - name: Remove cutscene in hub room
@@ -4639,13 +4589,6 @@ D100: # Skyview Temple
     objtype: DOOR
     object:
       anglex: 0xFF09 # remove inside sceneflag
-  - name: Remove Skyview 2 Key door # it's now the same as layer 1
-    type: objpatch
-    index: 2 # all have id FFFF :(
-    layer: 2
-    objtype: DOOR
-    object:
-      anglex: 0xFF06 # sceneflag 6
 
 B100: # Skyview boss room
   - name: Layer override
