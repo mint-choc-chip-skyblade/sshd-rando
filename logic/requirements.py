@@ -60,13 +60,16 @@ def strip_outer_parenthesis(req_str: str):
 # Takes a logic expression and translates it into a requirement object
 # that's evaluated during the the search algorithm
 def parse_requirement_string(
-    req_str: str, world: "World", area_id: int = None
+    req_str: str,
+    world: "World",
+    area_id: int = None,
+    conditional_patch_check: bool = False,
 ) -> Requirement:
     # Get a new copy of an empty requirement
     req = copy.deepcopy(Requirement())
 
-    # If we're not considering logic, return nothing
-    if world.setting("logic_rules") == "no_logic":
+    # If we're not considering logic and this isn't a patch condition check, return nothing
+    if world.setting("logic_rules") == "no_logic" and not conditional_patch_check:
         req.type = RequirementType.NOTHING
         return req
 

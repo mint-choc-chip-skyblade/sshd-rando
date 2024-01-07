@@ -32,6 +32,8 @@ class ConditionalPatchHandler:
 
     def evaluate_onlyif(self, onlyif: str) -> bool:
         # print(f"Onlyif: {onlyif}")
-        requirement = parse_requirement_string(onlyif, self.world)
+        requirement = parse_requirement_string(
+            onlyif, self.world, conditional_patch_check=True
+        )
 
         return self.evaluate_statements(requirement)
