@@ -2674,103 +2674,93 @@ F200: # Eldin main area
   # Underground Rupee Stuff
   - name: Move Underground Arc 1
     type: oarcadd
-    oarc: MoundShovelB
+    oarc: MoldWorm
     destlayer: 0
-  - name: Move Underground Arc 1
+  - name: Move Underground Arc 2
     type: oarcadd
-    oarc: PLMoleGlove
+    oarc: MoleBlock
     destlayer: 0
-  - name: Move Underground Arc 1
+  - name: Move Underground Arc 3
+    type: oarcadd
+    oarc: MoleGroundLn
+    destlayer: 0
+  - name: Move Underground Arc 4
+    type: oarcadd
+    oarc: MoleGroundMn
+    destlayer: 0
+  - name: Move Underground Arc 5
     type: oarcadd
     oarc: MoleGroundS
     destlayer: 0
-  # 1st Room
-  - name: Move 1st Room InHole
-    type: objmove
-    id: 0xFC3F
-    layer: 4
+  - name: Move Underground Arc 6
+    type: oarcadd
+    oarc: MoleShutter
     destlayer: 0
-    room: 1
-    objtype: OBJ
-  - name: Move 1st Room Uground
-    type: objmove
-    id: 0xFC3E
+  - name: Move Underground Arc 7
+    type: oarcadd
+    oarc: MoundShovelB
+    destlayer: 0
+  - name: Move Underground Arc 8
+    type: oarcadd
+    oarc: PLMoleGlove
+    destlayer: 0
+  # 1st Room
+  - name: Move 1st Room Uground and InHole
+    type: objbatchmove
+    startid: 0xFC3E
+    endid: 0xFC3F
     layer: 4
     destlayer: 0
     room: 1
     objtype: OBJ
   # 1st Room: Move Underground Objects
-  - name: Move 1st Room Underground Rupee 1
-    type: objmove
-    id: 0xFC44
+  - name: Move 1st Room Underground Rupees
+    type: objbatchmove
+    startid: 0xFC44
+    endid: 0xFC4C
     hardcoded_id: 0xFFF1
     layer: 4
     destlayer: 0
     room: 1
     objtype: OBJ
-  - name: Move 1st Room Underground Rupee 2
-    type: objmove
-    id: 0xFC45
-    hardcoded_id: 0xFFF2
+  # Before Bone Bridge
+  - name: Move before Bone Bridge Uground, InHole, and Moldorm
+    type: objbatchmove
+    startid: 0xFCCF
+    endid: 0xFCD1
     layer: 4
     destlayer: 0
-    room: 1
+    room: 2
     objtype: OBJ
-  - name: Move 1st Room Underground Rupee 3
-    type: objmove
-    id: 0xFC46
-    hardcoded_id: 0xFFF3
+  - name: Move before Bone Bridge Underground Blocks 1
+    type: objbatchmove
+    startid: 0xFCD9
+    endid: 0xFCDE
     layer: 4
     destlayer: 0
-    room: 1
+    room: 2
     objtype: OBJ
-  - name: Move 1st Room Underground Rupee 4
-    type: objmove
-    id: 0xFC49
-    hardcoded_id: 0xFFF4
+  - name: Move before Bone Bridge Underground Blocks 2
+    type: objbatchmove
+    startid: 0xFCE1
+    endid: 0xFCE3
     layer: 4
     destlayer: 0
-    room: 1
+    room: 2
     objtype: OBJ
-  - name: Move 1st Room Underground Rupee 5
+  - name: Move before Bone Bridge Underground Rupee 1
     type: objmove
-    id: 0xFC48
-    hardcoded_id: 0xFFF5
+    id: 0xFCE0
     layer: 4
     destlayer: 0
-    room: 1
+    room: 2
     objtype: OBJ
-  - name: Move 1st Room Underground Rupee 6
+  - name: Move before Bone Bridge Underground Rupee 2
     type: objmove
-    id: 0xFC47
-    hardcoded_id: 0xFFF6
+    id: 0xFCE4
     layer: 4
     destlayer: 0
-    room: 1
-    objtype: OBJ
-  - name: Move 1st Room Underground Rupee 7
-    type: objmove
-    id: 0xFC4A
-    hardcoded_id: 0xFFF7
-    layer: 4
-    destlayer: 0
-    room: 1
-    objtype: OBJ
-  - name: Move 1st Room Underground Rupee 8
-    type: objmove
-    id: 0xFC4B
-    hardcoded_id: 0xFFF8
-    layer: 4
-    destlayer: 0
-    room: 1
-    objtype: OBJ
-  - name: Move 1st Room Underground Rupee 9
-    type: objmove
-    id: 0xFC4C
-    hardcoded_id: 0xFFF9
-    layer: 4
-    destlayer: 0
-    room: 1
+    room: 2
     objtype: OBJ
 
   # Boko Base access

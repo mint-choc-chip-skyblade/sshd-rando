@@ -1568,7 +1568,7 @@
   original_item: Green Rupee
   type: Rupee, Custom Flag
   Paths:
-    - stage/F200/r1/l0/Item/0xFFF4 # ids hardcoded in the objmove patches
+    - stage/F200/r1/l0/Item/0xFFF6 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Rupee underground in First Room 5
   original_item: Green Rupee
@@ -1580,7 +1580,7 @@
   original_item: Green Rupee
   type: Rupee, Custom Flag
   Paths:
-    - stage/F200/r1/l0/Item/0xFFF6 # ids hardcoded in the objmove patches
+    - stage/F200/r1/l0/Item/0xFFF4 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Rupee underground in First Room 7
   original_item: Green Rupee
@@ -1601,7 +1601,6 @@
     - stage/F200/r1/l0/Item/0xFFF9 # ids hardcoded in the objmove patches
 
 
-
 - name: Eldin Volcano - Chest after Crawlspace
   original_item: Red Rupee
   type:
@@ -1619,6 +1618,18 @@
   type: Rupee
   Paths:
     - stage/F200/r2/l0/Item/123
+
+- name: Eldin Volcano - Rupee underground before Bone Bridge 1
+  original_item: Red Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/152
+
+- name: Eldin Volcano - Rupee underground before Bone Bridge 2
+  original_item: Red Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/173
 
 - name: Eldin Volcano - Chest behind Bombable Wall near Cliff
   original_item: Red Rupee
