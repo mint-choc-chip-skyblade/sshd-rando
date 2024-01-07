@@ -1,13 +1,3 @@
-D000: # Waterfall Cave
-  - name: Remove flag from Crawlspace Rupee
-    type: objpatch
-    id: 0xFC14
-    layer: 0
-    room: 0
-    objtype: OBJ
-    object:
-      params1: 0xFF0FFE04 # sceneflag = 0xFF
-
 F000: # Skyloft
   # F000 oarcadds
   - name: Add Trial Arcs
@@ -134,30 +124,10 @@ F000: # Skyloft
       anglez: 0
       id: 0xFDC8
       name: ERemly
-  - name: Move TgMien 1 to layer 0
+  - name: Move TgMiens to layer 0
     type: objmove
-    id: 0xFDEE
-    layer: 1
-    destlayer: 0
-    room: 0
-    objtype: STAG
-  - name: Move TgMien 2 to layer 0
-    type: objmove
-    id: 0xFDF1
-    layer: 1
-    destlayer: 0
-    room: 0
-    objtype: STAG
-  - name: Move TgMien 3 to layer 0
-    type: objmove
-    id: 0xFDEF
-    layer: 1
-    destlayer: 0
-    room: 0
-    objtype: STAG
-  - name: Move TgMien 4 to layer 0
-    type: objmove
-    id: 0xFDF0
+    startid: 0xFDEE
+    endid: 0xFDF1
     layer: 1
     destlayer: 0
     room: 0
@@ -197,10 +167,6 @@ F000: # Skyloft
       posx: -4800
       posy: 1237.578857
       posz: -6330
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Upper Skyloft Upper Bird Statue
     onlyif: ammo_availability == plentiful
@@ -214,10 +180,6 @@ F000: # Skyloft
       posx: -2240
       posy: 1880.569946
       posz: -9620
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Central Skyloft Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -231,10 +193,6 @@ F000: # Skyloft
       posx: 2070
       posy: 390.370575
       posz: 820
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to after Waterfall Cave Bird Statue
     onlyif: ammo_availability == plentiful
@@ -248,10 +206,6 @@ F000: # Skyloft
       posx: 4140
       posy: -3157.320068
       posz: -5830
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add entrance to simulate coming from chimney
     type: objadd
@@ -264,148 +218,56 @@ F000: # Skyloft
       posx: -6450.0
       posy: 2800.0
       posz: -9300.0
-      anglex: 0
-      angley: 0
-      anglez: 0
       entrance_id: 100
 
   # F000 objdeletes
-  - name: Remove Wryna Cutscene l4
+  - name: Remove people on bridge (layer 1)
     type: objdelete
-    id: 0xFDCD
+    ids:
+      - 0x05D5
+      - 0x05D6
+      # - 0x05D7
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove objects layer 4
+    type: objdelete
+    ids:
+      - 0xFDCC # Wryna
+      - 0xFDCD # Wryna
+      - 0xFDF0 # Wryna
+      - 0xFDF3 # Fi text after trial
+      - 0xFDCA # Fi text on stairs
+      - 0xFDC7 # Orielle before Wryna
+      - 0xFDC6 # Parrow before Wryna
+      - 0xFDF8 # Parrow cutscene
+      - 0xFDD5 # Trial gate
     layer: 4
     room: 0
     objtype: OBJ
-  - name: Remove Wryna Cutscene l6
-    type: objdelete
-    id: 0xFDD1
-    layer: 6
-    room: 0
-    objtype: OBJ
-  - name: Remove Wryna l4 1
-    type: objdelete
-    id: 0xFDCC
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Remove Wryna l4 2
-    type: objdelete
-    id: 0xFDF0
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Remove Wryna l6
-    type: objdelete
-    id: 0xFDD0
-    layer: 6
-    room: 0
-    objtype: OBJ
-  - name: Remove Fi Text after trial l4
-    type: objdelete
-    id: 0xFDF3
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Remove Fi Text after trial l5
+  - name: Remove Trial butterflies layer 4
     type: objdelete
     id: 0xFDFE
+    layer: 4
+    room: 0
+    objtype: STAG
+  - name: Remove objects layer 5
+    type: objdelete
+    ids:
+      - 0xFDFE # Fi text after trial
+      - 0xFDC5 # Extra Pipit
     layer: 5
     room: 0
     objtype: OBJ
-  - name: Remove Fi Text on Stairs
+  - name: Remove objects layer 6
     type: objdelete
-    id: 0xFDCA
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Remove Vanilla Chest near Goddess Statue l2
-    type: objdelete
-    id: 0xFDEA
-    layer: 2
-    room: 0
-    objtype: OBJS
-  - name: Remove Vanilla Chest near Goddess Statue l4
-    type: objdelete
-    id: 0xFDF6
-    layer: 4
-    room: 0
-    objtype: OBJS
-  - name: Remove Vanilla Chest near Goddess Statue l5
-    type: objdelete
-    id: 0xFDFF
-    layer: 5
-    room: 0
-    objtype: OBJS
-  - name: Remove Vanilla Chest near Goddess Statue l10
-    type: objdelete
-    id: 0xFDE5
-    layer: 10
-    room: 0
-    objtype: OBJS
-  - name: Remove people on bridge 1
-    type: objdelete
-    id: 0x05D5
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove people on bridge 2
-    type: objdelete
-    id: 0x05D6
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove people on bridge 3
-    type: objdelete
-    id: 0x05D7
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove Orielle before Wryna l4
-    type: objdelete
-    id: 0xFDC7
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Remove Orielle before Wryna l6
-    type: objdelete
-    id: 0xFDCD
+    ids:
+      - 0xFDD0 # Wryna
+      - 0xFDD1 # Wryna
+      - 0xFDCD # Orielle before Wryna
+      - 0xFDCC # Parrow before Wryna
+      - 0xFDE9 # Parrow cutscene
     layer: 6
-    room: 0
-    objtype: OBJ
-  - name: Remove Orielle before Wryna l8
-    type: objdelete
-    id: 0xFDC3
-    layer: 8
-    room: 0
-    objtype: OBJ
-  - name: Remove Parrow before Wryna 1
-    type: objdelete
-    id: 0xFDC6
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Remove Parrow before Wryna 2
-    type: objdelete
-    id: 0xFDCC
-    layer: 6
-    room: 0
-    objtype: OBJ
-  - name: Remove Parrow Cutscene l4
-    type: objdelete
-    id: 0xFDF8
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Remove Parrow Cutscene l6
-    type: objdelete
-    id: 0xFDE9
-    layer: 6
-    room: 0
-    objtype: OBJ
-  - name: Remove extra Pipit l5
-    type: objdelete
-    id: 0xFDC5
-    layer: 5
     room: 0
     objtype: OBJ
   - name: Remove extra Pipit l7
@@ -420,27 +282,27 @@ F000: # Skyloft
     layer: 9
     room: 0
     objtype: OBJ
-  - name: Remove confounding propeller dowsing
+  - name: Remove Vanilla Chest near Goddess Statue
     type: objdelete
-    id: 0xFD4D
-    layer: 0
+    ids:
+      - 0xFDEA
+      - 0xFDF6
+      - 0xFDFF
+      - 0xFDE5
+    layers:
+      - 2
+      - 4
+      - 5
+      - 10
     room: 0
-    objtype: STAG
-  - name: Remove fake Faron trial dowsing target
+    objtype: OBJS
+  - name: Remove dowsing targets
     type: objdelete
-    id: 0xFD4A
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Lanayru trial dowsing target
-    type: objdelete
-    id: 0xFD50
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Eldin trial dowsing target
-    type: objdelete
-    id: 0xFD4C
+    ids:
+      - 0xFD4D # Propeller
+      - 0xFD4A # Faron Trial
+      - 0xFD50 # Lanayru Trial
+      - 0xFD4C # Eldin Trial
     layer: 0
     room: 0
     objtype: STAG
@@ -466,26 +328,14 @@ F000: # Skyloft
     objtype: OBJS
 
   # Trial stuff
-  - name: Remove Trial Gate l4
-    type: objdelete
-    id: 0xFDD5
-    layer: 4
-    room: 0
-    objtype: OBJ
-  - name: Remove Trial Butterflies l4
-    type: objdelete
-    id: 0xFDFE
-    layer: 4
-    room: 0
-    objtype: STAG
-  - name: Remove Trial Gate l5
+  - name: Move Trial Gate to layer 0
     type: objmove
     id: 0xFDD7
     layer: 5
     destlayer: 0
     room: 0
     objtype: OBJ
-  - name: Remove Trial Butterflies l5
+  - name: Remove Trial Butterflies to layer 0
     type: objmove
     id: 0xFE15
     layer: 5
@@ -493,6 +343,7 @@ F000: # Skyloft
     room: 0
     objtype: STAG
 
+  # Bird's Nest stuff
   - name: Sand Size fix
     type: objpatch
     id: 0xFD02
@@ -503,7 +354,6 @@ F000: # Skyloft
       sizex: 3.2
       sizey: 4.5
       sizez: 3.2
-
   - name: Move Bird Nest North Rupee
     type: objpatch
     id: 0xFC5D
@@ -514,7 +364,6 @@ F000: # Skyloft
       posx: 5425
       posy: 1940
       posz: -5425
-
   - name: Move Bird Nest East Rupee
     type: objpatch
     id: 0xFC5C
@@ -525,7 +374,6 @@ F000: # Skyloft
       posx: 5595
       posy: 1940
       posz: -5135
-
   - name: Move Bird Nest South Rupee
     type: objpatch
     id: 0xFC5B
@@ -536,7 +384,6 @@ F000: # Skyloft
       posx: 5325
       posy: 1940
       posz: -4955
-
   - name: Move Bird Nest West Rupee
     type: objpatch
     id: 0xFC5E
@@ -548,6 +395,7 @@ F000: # Skyloft
       posy: 1940
       posz: -5265
 
+  # Fledge
   - name: Fledge for Arrow minigame
     type: objpatch
     id: 0xFDD8
@@ -581,6 +429,7 @@ F000: # Skyloft
     object:
       untrigstoryfid: 944 # bow
 
+  # Pipit
   - name: Always spawn Pipit at night l5
     type: objpatch
     id: 0xFDC4
@@ -617,6 +466,8 @@ F000: # Skyloft
     objtype: OBJ
     object:
       untrigstoryfid: -1
+
+  # Parrow
   - name: Always spawn Parrow for quest l4
     type: objpatch
     id: 0xFDD3
@@ -1162,15 +1013,11 @@ F001r:
     objtype: OBJ
 
 F002r: # Beedle's Airshop
-  - name: Remove Cutscene 1
+  - name: Remove Cutscenes
     type: objdelete
-    id: 0xFC11
-    layer: 1
-    room: 0
-    objtype: STAG
-  - name: Remove Cutscene 2
-    type: objdelete
-    id: 0xFC13
+    ids:
+      - 0xFC11
+      - 0xFC13
     layer: 1
     room: 0
     objtype: STAG
@@ -1200,15 +1047,11 @@ F005r: # Orielle and Parrow's House
     objtype: OBJ
     object:
       trigstoryfid: -1 # always Trigger
-  - name: Remove Parrow before Crystal Quest (Wryna)
+  - name: Remove Parrow and Orielle before Crystal Quest (Wryna)
     type: objdelete
-    id: 0xFC13
-    layer: 2
-    room: 0
-    objtype: OBJ
-  - name: Remove Orielle before Crystal Quest (Wryna)
-    type: objdelete
-    id: 0xFC14
+    ids:
+      - 0xFC13 # Parrow
+      - 0xFC14 # Orielle
     layer: 2
     room: 0
     objtype: OBJ
@@ -1260,7 +1103,7 @@ F008r: # Goddess Statue
     room: 0
     objtype: OBJ
 
-F009r:
+F009r: # Sparring Hall
   - name: Move Sparring Hall crystal to night layer
     type: objmove
     id: 0xFC0C
@@ -1282,74 +1125,37 @@ F010r: # Isle of Songs Tower
       posx: 170
       posy: 395.3815918
       posz: 4650
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: Remove Faron Trial Dowsing
+  - name: Remove Dowsing Targets 1
     type: objdelete
-    id: 0xFC02
+    ids:
+      - 0xFC02 # Faron
+      - 0xFC03 # Lanayru
+      - 0xFC04 # Eldin
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Remove Lanayru Trial Dowsing
+  - name: Remove Dowsing Targets 2
     type: objdelete
-    id: 0xFC03
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove Eldin Trial Dowsing
-    type: objdelete
-    id: 0xFC04
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove fake Faron trial dowsing target
-    type: objdelete
-    id: 0xFC09
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Lanayru trial dowsing target
-    type: objdelete
-    id: 0xFC08
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Eldin trial dowsing target
-    type: objdelete
-    id: 0xFC07
+    ids:
+      - 0xFC09 # Faron
+      - 0xFC08 # Lanayru
+      - 0xFC07 # Eldin
     layer: 0
     room: 0
     objtype: STAG
 
 F011r: # Lumpy Pumpkin
-  - name: Remove Lumpy Pumpkin Cutscene 1
+  - name: Remove Lumpy Pumpkin Cutscenes
     type: objdelete
-    id: 0xFC42
+    ids:
+      - 0xFC42
+      - 0xFC43
+      - 0xFC44 # New
+      - 0xFC45 # New
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Remove Lumpy Pumpkin Cutscene 2
-    type: objdelete
-    id: 0xFC43
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove new Lumpy chandelier Cutscene 1
-    type: objdelete
-    id: 0xFC44
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove new Lumpy chandelier Cutscene 2
-    type: objdelete
-    id: 0xFC45
-    layer: 0
-    room: 0
-    objtype: OBJ
-
   - name: Move crystal in Lumpy Pumpkin to night layer
     type: objmove
     id: 0xFC3F
@@ -1367,13 +1173,13 @@ F012r: # Batreaux House
     objtype: OBJS
     object:
       anglex: 0xFF00 # sets the flag to -1 (meaning open)
-  # - name: Remove Crystal Dowsing
-  #   onlyif: dowsing_after_whitesword == on
-  #   type: objdelete
-  #   id: 0xFC23
-  #   layer: 1
-  #   room: 0
-  #   objtype: OBJ
+  - name: Remove Crystal Dowsing
+    onlyif: dowsing_after_whitesword == on
+    type: objdelete
+    id: 0xFC23
+    layer: 1
+    room: 0
+    objtype: OBJ
 
 F013r: # Sparrot's House
   - name: Sparrot spawn
@@ -1404,10 +1210,6 @@ F020: # The Sky
       posx: 102000
       posy: -10643.59375
       posz: 47020
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Remove oarcs
     type: oarcdelete
@@ -1431,12 +1233,6 @@ F020: # The Sky
     layer: 2
     room: 0
     objtype: OBJ
-  - name: Remove Faron loadzone after Groose
-    type: objdelete
-    id: 0xFC96
-    layer: 0
-    room: 0
-    objtype: STAG
   - name: Never untrigger first Faron loadzone
     type: objpatch
     id: 0xFC8B
@@ -1461,33 +1257,15 @@ F020: # The Sky
     objtype: OBJ
     object:
       params1: 0xCBFFFFFF # make it always spawn
-  - name: Remove confounding propeller dowsing
+  - name: Remove STAGs
     type: objdelete
-    id: 0xFCAD
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Faron trial dowsing target
-    type: objdelete
-    id: 0xFCAA
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Lanayru trial dowsing target
-    type: objdelete
-    id: 0xFCB0
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Eldin trial dowsing target
-    type: objdelete
-    id: 0xFCAC
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Skyloft trial dowsing target
-    type: objdelete
-    id: 0xFCB3
+    ids:
+      - 0xFC96 # Faron loadzone after Groose
+      - 0xFCAD # Propeller dowsing target
+      - 0xFCAA # Faron trial dowsing target
+      - 0xFCB0 # Lanayru trial dowsing target
+      - 0xFCAC # Eldin trial dowsing target
+      - 0xFCB3 # Skyloft trial dowsing target
     layer: 0
     room: 0
     objtype: STAG
@@ -1510,23 +1288,18 @@ F020: # The Sky
     objtype: OBJ
     object:
       angley: 40000
-  - name: Move crystal outside Lumpy Pumpkin to night layer
+  - name: Move Crystals to night layer
     type: objmove
-    id: 0xFC77
-    layer: 0
-    destlayer: 4
-    room: 0
-    objtype: OBJ
-  - name: Move crystal on Beedle's Island to night layer
-    type: objmove
-    id: 0xFC38
+    ids:
+      - 0xFC77 # Lumpy Crystal
+      - 0xFC38 # Beedle Crystal
     layer: 0
     destlayer: 4
     room: 0
     objtype: OBJ
 
 F023: # Thunderhead
-  - name: Remove oarc
+  - name: Remove Arcs
     type: oarcdelete
     oarc:
       - GetSpareBombBagA
@@ -1535,7 +1308,17 @@ F023: # Thunderhead
       - GetTerryCage
       - Pinwheel
     layer: 0
-  - name: Strich l1
+  - name: Add Arcs layer 0
+    type: oarcadd
+    oarc:
+      - GossipStone
+    destlayer: 0
+  - name: Add Arcs layer 1
+    type: oarcadd
+    oarc:
+      - KobunB # Stritch
+    destlayer: 1
+  - name: Add Stritch to layer 1
     type: objadd
     layer: 1
     room: 0
@@ -1551,11 +1334,6 @@ F023: # Thunderhead
       anglez: 11601
       id: 0xFCEF
       name: NpcIcgK
-  - name: Stritch model
-    type: oarcadd
-    oarc:
-      - KobunB
-    destlayer: 1
   - name: Void out during Bug Heaven minigame
     type: objadd
     layer: 13
@@ -1575,12 +1353,6 @@ F023: # Thunderhead
       anglez: 0xFFFF
       id: 0xFC00
       name: PlRsTag
-  - name: Delete Isle of Songs intro Cutscene
-    type: objdelete
-    id: 0xFC89
-    layer: 0
-    room: 0
-    objtype: OBJ
   - name: Fi text after Levias
     type: objadd
     room: 0
@@ -1612,44 +1384,21 @@ F023: # Thunderhead
     destlayer: 0
     room: 0
     objtype: OBJ
-  - name: Gossip Stone
-    type: oarcadd
-    oarc:
-      - GossipStone
-    destlayer: 0
+  - name: Delete Isle of Songs intro Cutscene
+    type: objdelete
+    id: 0xFC89
+    layer: 0
+    room: 0
+    objtype: OBJ
   - name: Remove confounding propeller dowsing
     type: objdelete
-    id: 0xFCAE
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Faron trial dowsing target
-    type: objdelete
-    id: 0xFCAB
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Lanayru trial dowsing target
-    type: objdelete
-    id: 0xFCB1
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Eldin trial dowsing target
-    type: objdelete
-    id: 0xFCAD
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Skyloft trial dowsing target
-    type: objdelete
-    id: 0xFCB4
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake Skyloft trial dowsing target
-    type: objdelete
-    id: 0xFCA3
+    ids:
+      - 0xFCAE # Propeller dowsing target
+      - 0xFCAB # Faron trial dowsing target
+      - 0xFCB1 # Lanayru trial dowsing target
+      - 0xFCAD # Eldin trial dowsing target
+      - 0xFCB4 # Skyloft trial dowsing target
+      - 0xFCA3 # Skylfot trial dowsing target
     layer: 0
     room: 0
     objtype: STAG
@@ -1672,6 +1421,19 @@ F100: # Faron Woods
       - story_flag: -1
         night: 0
         layer: 1
+  - name: Add Arcs layer 0
+    type: oarcadd
+    oarc:
+      - PLHarpPlay
+      - PLSwordStick
+      - SirenEntrance
+      - SwrdPrj
+    destlayer: 0
+  - name: Add Arcs layer 1
+    type: oarcadd
+    oarc:
+      - ForestManWiz
+    destlayer: 1
   - name: Add ammo pot to Faron Woods Entry Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
     type: objadd
@@ -1684,10 +1446,6 @@ F100: # Faron Woods
       posx: -8465
       posy: -918.6898193
       posz: -1580
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to In the Woods Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -1701,10 +1459,6 @@ F100: # Faron Woods
       posx: -2220
       posy: -497.8004456
       posz: 5560
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to The Great Tree Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -1718,10 +1472,6 @@ F100: # Faron Woods
       posx: -1170
       posy: 4979.450195
       posz: -4395
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Viewing Platform Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -1735,10 +1485,6 @@ F100: # Faron Woods
       posx: 7230
       posy: 2102.997295
       posz: -9485
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Remove Faron Woods Intro Cutscene
     type: objpatch
@@ -1748,68 +1494,46 @@ F100: # Faron Woods
     object:
       storyflag: -1
       play_cutscene: -1
-  - name: Add Arcs
-    type: oarcadd
-    oarc:
-      - PLHarpPlay
-      - PLSwordStick
-      - SirenEntrance
-      - SwrdPrj
-    destlayer: 0
-  - name: Trial # trial object
+  - name: Move Trial Gate
     type: objmove
     id: 0x02B4
     layer: 3
     destlayer: 0
     room: 0
     objtype: OBJ
-  - name: Trial # butterflies
+  - name: Move Trial Butterflies
     type: objmove
     id: 0xFEE7
     layer: 3
     destlayer: 0
     room: 0
     objtype: STAG
-  - name: Lake floria door
+  - name: Lake floria door 1
+    type: objmove
+    ids:
+      - 0xFEEC
+      - 0xFEF4
+    layer: 4
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Lake floria door 2
     type: objmove
     id: 0xFEFF
     layer: 4
     destlayer: 0
     room: 0
     objtype: STAG
-  - name: Lake floria door
-    type: objmove
-    id: 0xFEEC
-    layer: 4
-    destlayer: 0
-    room: 0
-    objtype: OBJ
-  - name: Lake floria door
-    type: objmove
-    id: 0xFEF4
-    layer: 4
-    destlayer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove Fi text Not letting you leave machi 1
+  - name: Remove Fi text Not letting you leave Machi
     type: objdelete
-    id: 0x0EBE
+    ids:
+      - 0x0EBE
+      - 0x0EBD
+      - 0x66BC
     layer: 1
     room: 0
     objtype: OBJ
-  - name: Remove Fi text Not letting you leave machi 2
-    type: objdelete
-    id: 0x0EBD
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove Fi text Not letting you leave machi 3
-    type: objdelete
-    id: 0x66BC
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove G1 Feet cs
+  - name: Remove G1 Feet Cutscene
     type: objdelete
     id: 0xFEEF
     layer: 1
@@ -1830,14 +1554,11 @@ F100: # Faron Woods
     destlayer: 1
     room: 0
     objtype: OBJ
-  - name: Yerbal
-    type: oarcadd
-    oarc:
-      - ForestManWiz
-    destlayer: 1
-  - name: Add back map x icon for Yerbal
+  - name: Move Map and Cam for Yerbal Floria door hint
     type: objmove
-    id: 0xFEF9
+    ids:
+      - 0xFEF9 # Map x Icon
+      - 0xFEFD # Cam2Tag
     layer: 4
     destlayer: 0
     room: 0
@@ -1849,13 +1570,6 @@ F100: # Faron Woods
     destlayer: 0
     room: 0
     objtype: OBJ
-  - name: Move Fi Cam2Tag for Yerbal map x
-    type: objmove
-    id: 0xFEFD
-    layer: 4
-    destlayer: 0
-    room: 0
-    objtype: STAG
   - name: Remove Faron soth fi text
     type: objdelete
     id: 0x52BA
@@ -1965,10 +1679,6 @@ F101: # Deep Woods
       posx: 2455
       posy: 1541.632446
       posz: 10220
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Forest Temple Bird Statue
     onlyif: ammo_availability == plentiful
@@ -1982,10 +1692,6 @@ F101: # Deep Woods
       posx: -875
       posy: 760.835083
       posz: 3365
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Yeet Deep Woods Intro Cutscene
     type: objpatch
@@ -2003,21 +1709,12 @@ F101: # Deep Woods
     objtype: STAG
     object:
       event: 6 # DefaultStart
-  - name: Remove goddess cube force hit trigger 1
+  - name: Remove goddess cube force hit triggers
     type: objdelete
-    id: 0xFD03
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove goddess cube force hit trigger 2
-    type: objdelete
-    id: 0xFD04
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove goddess cube force hit trigger 3
-    type: objdelete
-    id: 0xFD05
+    ids:
+      - 0xFD03
+      - 0xFD04
+      - 0xFD05
     layer: 1
     room: 0
     objtype: OBJ
@@ -2047,10 +1744,6 @@ F102: # Lake Floria
       posx: 2760
       posy: 433.4100037
       posz: 8155
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Remove Lake Floria intro Cutscene 1
     type: objpatch
@@ -2072,60 +1765,26 @@ F102: # Lake Floria
     layer: 0
     room: 4
     objtype: OBJ
-  - name: evntTag 2
-    type: objdelete
-    id: 0xFc1D
-    layer: 0
-    room: 1
-    objtype: STAG
-  - name: evntTag 3
-    type: objdelete
-    id: 0xFC1E
-    layer: 0
-    room: 1
-    objtype: STAG
-  - name: evntTag 4
-    type: objdelete
-    id: 0xFC2F
-    layer: 0
-    room: 3
-    objtype: STAG
-  - name: evntTag 5
-    type: objdelete
-    id: 0xFC13
-    layer: 0
-    room: 4
-    objtype: STAG
-  - name: evntTag 7
-    type: objdelete
-    id: 0xFC12
-    layer: 0
-    room: 4
-    objtype: STAG
-  - name: evntTag 8
-    type: objdelete
-    id: 0xFC26
-    layer: 0
-    room: 1
-    objtype: STAG
-  - name: evntTag 9
-    type: objdelete
-    id: 0xFC1F
-    layer: 0
-    room: 1
-    objtype: STAG
-  - name: evntTag 10
-    type: objdelete
-    id: 0xFC1C
-    layer: 0
-    room: 1
-    objtype: STAG
   - name: Delete Parella
     type: objdelete
     id: 0xFC2A
     layer: 1
     room: 1
     objtype: OBJS
+  - name: Remove evntTags
+    type: objdelete
+    ids:
+      - 0xFC1D
+      - 0xFC1E
+      - 0xFC2F
+      - 0xFC13
+      - 0xFC12
+      - 0xFC26
+      - 0xFC1F
+      - 0xFC1C
+    layer: 0
+    rooms: [1, 1, 3, 4, 4, 1, 1, 1]
+    objtype: STAG
 
 F102_1: # Outside Ancient Cistern
   - name: Layer override
@@ -2146,17 +1805,7 @@ F102_1: # Outside Ancient Cistern
       posx: -4900
       posy: 253.9722748
       posz: -5800
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: Remove Water Dragon trigger after Ancient Cistern
-    type: objdelete
-    id: 0xFC59
-    layer: 3
-    room: 0
-    objtype: OBJ
   - name: Remove CS after Ancient Cistern
     type: objpatch
     index: 6
@@ -2166,19 +1815,17 @@ F102_1: # Outside Ancient Cistern
       play_cutscene: -1
   - name: Remove Water Dragon after Ancient Cistern
     type: objdelete
-    id: 0xFC5A
+    ids:
+      - 0xFC59 # Trigger
+      - 0xFC5A # Water Dragon
     layer: 3
     room: 0
     objtype: OBJ
-  - name: Remove waterfall sound 1
+  - name: Remove waterfall sound
     type: objdelete
-    id: 0xFC57
-    layer: 0
-    room: 0
-    objtype: SNDT
-  - name: Remove waterfall sound 2
-    type: objdelete
-    id: 0xFC58
+    ids:
+      - 0xFC57
+      - 0xFC58
     layer: 0
     room: 0
     objtype: SNDT
@@ -2205,10 +1852,6 @@ F103: # Flooded Faron Woods
       posx: -8465
       posy: -918.6898193
       posz: -1580
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to In the Woods Bird Statue
     onlyif: ammo_availability == plentiful
@@ -2222,10 +1865,6 @@ F103: # Flooded Faron Woods
       posx: -2220
       posy: -497.8004456
       posz: 5560
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Great Tree Top Bird Statue
     onlyif: ammo_availability == plentiful
@@ -2239,10 +1878,6 @@ F103: # Flooded Faron Woods
       posx: -1170
       posy: 4979.450195
       posz: -4395
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Viewing Platform Bird Statue
     onlyif: ammo_availability == plentiful
@@ -2256,10 +1891,6 @@ F103: # Flooded Faron Woods
       posx: 7230
       posy: 2102.997295
       posz: -9485
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add bomb flower on lilypad near Bucha
     type: objadd
@@ -2316,123 +1947,6 @@ F200: # Eldin main area
       - story_flag: -1
         night: 0
         layer: 1
-  - name: Add ammo pot to Volcano Entry Bird Statue
-    onlyif: ammo_availability == plentiful
-    type: objadd
-    layer: 0
-    room: 0
-    objtype: OBJ
-    object:
-      params1: 0xFFFFFFF0
-      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
-      posx: -9790
-      posy: 1863.461914
-      posz: 2810
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
-      name: Tubo
-  - name: Add ammo pot to Volcano East Bird Statue
-    onlyif: ammo_availability == plentiful
-    type: objadd
-    layer: 0
-    room: 2
-    objtype: OBJ
-    object:
-      params1: 0xFFFFFFF0
-      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
-      posx: 3480
-      posy: 1004.046692
-      posz: 6530
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
-      name: Tubo
-  - name: Add ammo pot to Volcano Ascent Bird Statue
-    onlyif: ammo_availability == useful or ammo_availability == plentiful
-    type: objadd
-    layer: 0
-    room: 2
-    objtype: OBJ
-    object:
-      params1: 0xFFFFFFF0
-      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
-      posx: 1205
-      posy: 848.3775635
-      posz: -5585
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
-      name: Tubo
-  - name: Add ammo pot to Temple Entrance Bird Statue
-    onlyif: ammo_availability == plentiful
-    type: objadd
-    layer: 0
-    room: 4
-    objtype: OBJ
-    object:
-      params1: 0xFFFFFFF0
-      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
-      posx: 420
-      posy: 13800
-      posz: -24700
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
-      name: Tubo
-  - name: Remove Intro Cutscene
-    type: objmove
-    id: 0xFC26
-    layer: 1
-    destlayer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove First Mogma cs Fi
-    type: objdelete
-    id: 0xFC22
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove First Mogma cs left mogma
-    type: objdelete
-    id: 0x001F
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove First Mogma cs right mogma
-    type: objdelete
-    id: 0x0020
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove Mogma near Mogma Turf cs
-    type: objdelete
-    id: 0x0CB9
-    layer: 1
-    room: 2
-    objtype: OBJ
-  - name: Remove Just saying cs
-    type: objdelete
-    id: 0x248C
-    layer: 1
-    room: 4
-    objtype: OBJ
-  - name: Remove Just saying cs mogma
-    type: objdelete
-    id: 0x248A
-    layer: 1
-    room: 4
-    objtype: OBJ
-  - name: Remove Just saying cs mogma
-    type: objdelete
-    id: 0x248B
-    layer: 1
-    room: 4
-    objtype: OBJ
   - name: Add Arcs
     type: oarcadd
     oarc:
@@ -2455,50 +1969,140 @@ F200: # Eldin main area
       - Ph
       - PRing
     destlayer: 0
-  - name: Trial # trial object
-    type: objmove
-    id: 0x14AE
-    layer: 2
-    destlayer: 0
+  - name: Add ammo pot to Volcano Entry Bird Statue
+    onlyif: ammo_availability == plentiful
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
+      posx: -9790
+      posy: 1863.461914
+      posz: 2810
+      name: Tubo
+  - name: Add ammo pot to Volcano East Bird Statue
+    onlyif: ammo_availability == plentiful
+    type: objadd
+    layer: 0
     room: 2
     objtype: OBJ
-  - name: Trial # butterflies
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
+      posx: 3480
+      posy: 1004.046692
+      posz: 6530
+      name: Tubo
+  - name: Add ammo pot to Volcano Ascent Bird Statue
+    onlyif: ammo_availability == useful or ammo_availability == plentiful
+    type: objadd
+    layer: 0
+    room: 2
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
+      posx: 1205
+      posy: 848.3775635
+      posz: -5585
+      name: Tubo
+  - name: Add ammo pot to Temple Entrance Bird Statue
+    onlyif: ammo_availability == plentiful
+    type: objadd
+    layer: 0
+    room: 4
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
+      posx: 420
+      posy: 13800
+      posz: -24700
+      name: Tubo
+  - name: Remove Intro Cutscene
     type: objmove
-    id: 0x14C0
-    layer: 2
+    id: 0xFC26
+    layer: 1
     destlayer: 0
+    room: 0
+    objtype: STAG
+  # objdeletes
+  - name: Remove First Mogma Cutscene actors
+    type: objdelete
+    ids:
+      - 0xFC22 # Fi Trigger
+      - 0x001F # Left Mogma
+      - 0x0020 # Right Mogma
+    layer: 1
+    room: 0
+    objtype: OBJ
+
+
+  - name: Remove room 2 actors
+    type: objdelete
+    ids:
+      - 0x10B5 # First Pyrup
+      - 0x0CB9 # Mogma above draining lava
+      - 0xFCBF # NpcTke before Impa
+    layer: 1
+    room: 2
+    objtype: OBJ
+  - name: Remove room 2 cutscenes
+    type: objdelete
+    ids:
+      - 0xFCDB # First Pyrup Trigger 1
+      - 0xFCCF # First Pyrup Trigger 2
+      - 0xFCCE # First Pyrup Trigger 3
+      - 0xFCD6 # Draining lava near Turf Camera
+      - 0x08CA # Impa Cutscene
+      - 0x14CC # Key Piece draining lava
+    layer: 1
     room: 2
     objtype: STAG
+  - name: Remove Just saying cs
+    type: objdelete
+    ids:
+      - 0x248C
+      - 0x248A # Mogma
+      - 0x248B # Mogma
+    layer: 1
+    room: 4
+    objtype: OBJ
   - name: Remove Propeller
     type: objdelete
     id: 0xFC2E
     layer: 0
     room: 4
     objtype: OBJ
-  - name: Forced camera when draining lava before digging mitts
-    type: objdelete
-    id: 0xFCD6
-    layer: 1
-    room: 2
-    objtype: STAG
-  - name: Gossip Stone
-    type: objmove
-    id: 0xFC97
-    layer: 2
-    destlayer: 0
-    room: 4
-    objtype: OBJ
-  - name: CS after draining lava for key piece
-    type: objdelete
-    id: 0x14CC
-    layer: 1
-    room: 2
-    objtype: STAG
-  - name: Remove  ET Door if open ET
+  - name: Remove ET Door if open ET
     onlyif: open_earth_temple == on
     type: objdelete
     id: 0x2413
     layer: 0
+    room: 4
+    objtype: OBJ
+
+  - name: Move Trial Gate
+    type: objmove
+    id: 0x14AE
+    layer: 2
+    destlayer: 0
+    room: 2
+    objtype: OBJ
+  - name: Move Trial Butterflies
+    type: objmove
+    id: 0x14C0
+    layer: 2
+    destlayer: 0
+    room: 2
+    objtype: STAG
+  - name: Move Gossip Stone to layer 0
+    type: objmove
+    id: 0xFC97
+    layer: 2
+    destlayer: 0
     room: 4
     objtype: OBJ
   - name: Remove 2nd key piece tower cs
@@ -2517,12 +2121,6 @@ F200: # Eldin main area
     objtype: OBJ
     object:
       params1: 0xCFF0FF1A
-  - name: Remove NpcTke before circles cutscene
-    type: objdelete
-    id: 0xFCBF
-    layer: 1
-    room: 2
-    objtype: OBJ
   - name: Keep pre circles mogma above ground
     type: objpatch
     id: 0xFCBE
@@ -2539,12 +2137,6 @@ F200: # Eldin main area
     objtype: STAG
     object:
       event: 7 # DefaultStart
-  - name: Remove first Pyrup
-    type: objdelete
-    id: 0x10B5
-    layer: 1
-    room: 2
-    objtype: OBJ
   - name: Replace first Pyrup with stationary Pyrup
     type: objadd
     layer: 1
@@ -2561,30 +2153,6 @@ F200: # Eldin main area
       anglez: 0
       id: 0x10B5
       name: EHidoK
-  - name: Remove first Pyrup cs trigger 1
-    type: objdelete
-    id: 0xFCDB
-    layer: 1
-    room: 2
-    objtype: STAG
-  - name: Remove first Pyrup cs trigger 2
-    type: objdelete
-    id: 0xFCCF
-    layer: 1
-    room: 2
-    objtype: STAG
-  - name: Remove first Pyrup cs trigger 3
-    type: objdelete
-    id: 0xFCCE
-    layer: 1
-    room: 2
-    objtype: STAG
-  - name: Remove Impa Cutscene
-    type: objdelete
-    id: 0x08CA
-    layer: 1
-    room: 2
-    objtype: STAG
   - name: Move Entrance from Thrill Digger forward # Otherwise you can get stuck behind the rocks in ER
     type: objpatch
     room: 4
@@ -2609,7 +2177,7 @@ F200: # Eldin main area
   # Underground Rupee Stuff
   # 1st Room
   - name: Move 1st Room Uground and InHole
-    type: objbatchmove
+    type: objmove
     startid: 0xFC3E
     endid: 0xFC3F
     layer: 4
@@ -2618,7 +2186,7 @@ F200: # Eldin main area
     objtype: OBJ
   # 1st Room: Move Underground Objects
   - name: Move 1st Room Underground Rupees
-    type: objbatchmove
+    type: objmove
     startid: 0xFC44
     endid: 0xFC4C
     hardcoded_id: 0xFFF1
@@ -2628,7 +2196,7 @@ F200: # Eldin main area
     objtype: OBJ
   # Before Bone Bridge
   - name: Move before Bone Bridge Uground, InHole, and Moldorm
-    type: objbatchmove
+    type: objmove
     startid: 0xFCCF
     endid: 0xFCD1
     layer: 4
@@ -2636,7 +2204,7 @@ F200: # Eldin main area
     room: 2
     objtype: OBJ
   - name: Move before Bone Bridge Underground Blocks 1
-    type: objbatchmove
+    type: objmove
     startid: 0xFCD9
     endid: 0xFCDE
     layer: 4
@@ -2644,7 +2212,7 @@ F200: # Eldin main area
     room: 2
     objtype: OBJ
   - name: Move before Bone Bridge Underground Blocks 2
-    type: objbatchmove
+    type: objmove
     startid: 0xFCE1
     endid: 0xFCE3
     layer: 4
@@ -2710,7 +2278,8 @@ F200: # Eldin main area
       anglez: 0
       entrance_id: 5
 
-  # Lower Eldin StreamTs
+  # Lower Eldin lava platforms
+  #
   # For some reason, moving the StreamT objects to layer 0
   # makes them not behave correctly? These angle patches
   # fix their paths to be good enough (otherwise they clip
@@ -2739,9 +2308,14 @@ F200: # Eldin main area
     objtype: STAG
     object:
       angley: 2000
-  - name: Move lower Eldin StreamT start
+  - name: Move lower Eldin lava platforms
     type: objmove
-    id: 0xFD10
+    ids:
+      - 0xFD10 # StreamT Start
+      - 0xFD0E # StreamT 2
+      - 0xFD11 # StreamT 3
+      - 0xFD0F # StreamT End
+      - 0xFD12 # TgRBoat (platform spawner)
     layer: 4
     destlayer: 0
     room: 2
@@ -2765,36 +2339,6 @@ F200: # Eldin main area
       angley: 64000
       anglez: 65535
       name: StreamT
-  - name: Move lower Eldin StreamT 2
-    type: objmove
-    id: 0xFD0E
-    layer: 4
-    destlayer: 0
-    room: 2
-    objtype: STAG
-  - name: Move lower Eldin StreamT 3
-    type: objmove
-    id: 0xFD11
-    layer: 4
-    destlayer: 0
-    room: 2
-    objtype: STAG
-  - name: Move lower Eldin StreamT end
-    type: objmove
-    id: 0xFD0F
-    layer: 4
-    destlayer: 0
-    room: 2
-    objtype: STAG
-  # Lower Eldin platform spawner
-  - name: Move lower TgRBoat
-    type: objmove
-    id: 0xFD12
-    layer: 4
-    destlayer: 0
-    room: 2
-    objtype: STAG
-  # Sound stuff??
   - name: Move lower TgSound
     type: objmove
     id: 0xFD19
@@ -2802,7 +2346,7 @@ F200: # Eldin main area
     destlayer: 0
     room: 2
     objtype: SNDT
-  # Upper Eldin StreamTs
+  # Upper Eldin lava platforms
   - name: Patch upper Eldin StreamT 3 angle
     type: objpatch
     id: 0xFCBA
@@ -2819,79 +2363,23 @@ F200: # Eldin main area
     objtype: STAG
     object:
       angley: 64500
-  - name: Move upper Eldin StreamT start
+  - name: Move upper Eldin lava platforms
     type: objmove
-    id: 0xFCBB
+    ids:
+      - 0xFCBB # StreamT Start
+      - 0xFCB7 # StreamT 1
+      - 0xFCB8 # StreamT 2
+      - 0xFCBA # StreamT 3
+      - 0xFCB9 # StreamT 4
+      - 0xFCB6 # StreamT End
+      - 0xFCBD # TgNoEff 1
+      - 0xFCBE # TgNoEff 2
+      - 0xFCBF # TgNoEff 3
+      - 0xFCBC # TgRBoat (platform spawner)
     layer: 4
     destlayer: 0
     room: 4
     objtype: STAG
-  - name: Move upper Eldin StreamT 1
-    type: objmove
-    id: 0xFCB7
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: STAG
-  - name: Move upper Eldin StreamT 2
-    type: objmove
-    id: 0xFCB8
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: STAG
-  - name: Move upper Eldin StreamT 3
-    type: objmove
-    id: 0xFCBA
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: STAG
-  - name: Move upper Eldin StreamT 4
-    type: objmove
-    id: 0xFCB9
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: STAG
-  - name: Move upper Eldin StreamT end
-    type: objmove
-    id: 0xFCB6
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: STAG
-  # TgNoEffs
-  - name: Move upper Eldin TgNoEff 1
-    type: objmove
-    id: 0xFCBD
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: STAG
-  - name: Move upper Eldin TgNoEff 2
-    type: objmove
-    id: 0xFCBE
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: STAG
-  - name: Move upper Eldin TgNoEff 3
-    type: objmove
-    id: 0xFCBF
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: STAG
-  # Upper Eldin platform spawner
-  - name: Move upper TgRBoat
-    type: objmove
-    id: 0xFCBC
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: STAG
-  # Sound stuff??
   - name: Move upper TgSound
     type: objmove
     id: 0xFCC2
@@ -2899,31 +2387,11 @@ F200: # Eldin main area
     destlayer: 0
     room: 4
     objtype: SNDT
-  # Move Peahats
-  - name: Move peahat 1
+
+  - name: Move Peahats
     type: objmove
-    id: 0xFC92
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: OBJ
-  - name: Move peahat 2
-    type: objmove
-    id: 0xFC90
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: OBJ
-  - name: Move peahat 3
-    type: objmove
-    id: 0xFC8F
-    layer: 4
-    destlayer: 0
-    room: 4
-    objtype: OBJ
-  - name: Move peahat 4
-    type: objmove
-    id: 0xFC91
+    startid: 0xFC8F
+    endid: 0xFC92
     layer: 4
     destlayer: 0
     room: 4
@@ -2957,10 +2425,6 @@ F201_1: # Inside volcano
       posx: -380
       posy: 0
       posz: -810
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Remove Sword Pedestal on post-Boko Base layer
     type: objdelete
@@ -3005,10 +2469,6 @@ F201_2: # Inside Volcano (Bokoblin Base)
       posx: -380
       posy: 0
       posz: -810
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: True Master Sword Chest
     type: objadd
@@ -3033,21 +2493,12 @@ F201_2: # Inside Volcano (Bokoblin Base)
     objtype: SCEN
     object:
       layer: 2
-  - name: Remove panning Cutscene showing pouch chest
+  - name: Remove panning Cutscenes
     type: objdelete
-    id: 0xFC4B
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove panning Cutscene showing sword
-    type: objdelete
-    id: 0xFC46
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove panning Cutscene showing platforms in lava
-    type: objdelete
-    id: 0xFC49
+    ids:
+      - 0xFC4B # Pouch Chest
+      - 0xFC46 # Sword
+      - 0xFC49 # Lava platforms
     layer: 0
     room: 0
     objtype: STAG
@@ -3080,44 +2531,17 @@ F201_3: # Outside Fire Sanctuary
       posx: -490
       posy: -500
       posz: -10490
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: Big Flames
+  - name: Remove Big Flames blocking FS
     type: objdelete
     id: 0xFC15
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Goron Text after first frog
+  - name: Remove Goron Text after Frogs
     type: objdelete
-    id: 0xFC5A
-    layer: 2
-    room: 0
-    objtype: OBJ
-  - name: Goron Text after second frog
-    type: objdelete
-    id: 0xFC5B
-    layer: 2
-    room: 0
-    objtype: OBJ
-  - name: Goron Text near big frog
-    type: objdelete
-    id: 0xFC5C
-    layer: 2
-    room: 0
-    objtype: OBJ
-  - name: Goron Text near first frog
-    type: objdelete
-    id: 0xFC5D
-    layer: 2
-    room: 0
-    objtype: OBJ
-  - name: Goron Text near first frog
-    type: objdelete
-    id: 0xFC5E
+    startid: 0xFC5A
+    endid: 0xFC5E
     layer: 2
     room: 0
     objtype: OBJ
@@ -3156,7 +2580,7 @@ F201_4: # Volcano Waterfall
       name: Bombf
 
 F202: # Bokoblin Base
-  - name: Gossip Stone
+  - name: Add Arcs
     type: oarcadd
     oarc:
       - GossipStone
@@ -3209,15 +2633,11 @@ F202: # Bokoblin Base
     layer: 1
     room: 5
     objtype: OBJ
-  - name: Remove barrel of doom
+  - name: Remove prison actors
     type: objdelete
-    id: 0x084B
-    layer: 1
-    room: 1
-    objtype: OBJ
-  - name: Remove default Plats from prison
-    type: objdelete
-    id: 0x0850
+    ids:
+      - 0x084B # Barrel of Doom
+      - 0x0850 # Plats
     layer: 1
     room: 1
     objtype: OBJ
@@ -3227,45 +2647,17 @@ F202: # Bokoblin Base
     layer: 1
     room: 2
     objtype: STAG
-  - name: Remove panning Cutscene showing Peahot behind bridge
+  - name: Remove lower Eldin panning Cutscenes
     type: objdelete
-    id: 0x0099
+    startid: 0x0095
+    endid: 0x0099
     layer: 0
     room: 2
     objtype: STAG
-  - name: Remove panning Cutscene after clawshot chest
+  - name: Remove upper Eldin panning Cutscenes
     type: objdelete
-    id: 0x0098
-    layer: 0
-    room: 2
-    objtype: STAG
-  - name: Remove panning Cutscene showing Peahots (near clawshot chest)
-    type: objdelete
-    id: 0x0095
-    layer: 0
-    room: 2
-    objtype: STAG
-  - name: Remove panning Cutscene showing gust bellows chest
-    type: objdelete
-    id: 0x0097
-    layer: 0
-    room: 2
-    objtype: STAG
-  - name: Remove panning Cutscene showing clawshot chest
-    type: objdelete
-    id: 0x0096
-    layer: 0
-    room: 2
-    objtype: STAG
-  - name: Remove panning Cutscene showing bomb chest
-    type: objdelete
-    id: 0x0051
-    layer: 0
-    room: 4
-    objtype: STAG
-  - name: Remove panning Cutscene showing boko camp outside ET
-    type: objdelete
-    id: 0x0050
+    startid: 0x0050
+    endid: 0x0051
     layer: 0
     room: 4
     objtype: STAG
@@ -3335,10 +2727,6 @@ F202: # Bokoblin Base
       posx: -9790
       posy: 1863.461914
       posz: 2810
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Volcano East Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -3352,10 +2740,6 @@ F202: # Bokoblin Base
       posx: 3480
       posy: 1004.046692
       posz: 6530
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Volcano Ascent Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -3369,10 +2753,6 @@ F202: # Bokoblin Base
       posx: 1205
       posy: 848.3775635
       posz: -5585
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Temple Entrance Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -3386,10 +2766,6 @@ F202: # Bokoblin Base
       posx: 420
       posy: 13800
       posz: -24700
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
 
 F210: # Mogma Turf
@@ -3411,10 +2787,6 @@ F210: # Mogma Turf
       posx: 1265
       posy: -7390
       posz: 1625
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Cobal Trigger
     type: objpatch
@@ -3424,7 +2796,7 @@ F210: # Mogma Turf
     objtype: OBJ
     object:
       trigstoryfid: 909 # White Sword
-  - name: Cobal
+  - name: Move Cobal to layer 1
     type: objmove
     id: 0xFC70
     layer: 2
@@ -3468,7 +2840,7 @@ F210: # Mogma Turf
     room: 0
     objtype: SOBJ
   - name: Remove Rupee Dowsing
-    # onlyif: dowsing_after_whitesword == on
+    onlyif: dowsing_after_whitesword == on
     type: objdelete
     id: 0xFC3B
     layer: 0
@@ -3550,10 +2922,6 @@ F300: # Lanayru Desert
       posx: 1680
       posy: 1974.559326
       posz: 18820
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to West Desert Bird Statue
     onlyif: ammo_availability == plentiful
@@ -3567,10 +2935,6 @@ F300: # Lanayru Desert
       posx: -15020
       posy: 80
       posz: 8205
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to North Desert Bird Statue
     onlyif: ammo_availability == plentiful
@@ -3584,10 +2948,6 @@ F300: # Lanayru Desert
       posx: -2105
       posy: 475
       posz: -6640
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Stone Cache Bird Statue
     onlyif: ammo_availability == plentiful
@@ -3601,11 +2961,26 @@ F300: # Lanayru Desert
       posx: 9410
       posy: 218.9002533
       posz: 10200
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
+  # objdeletes
+  - name: Remove Fi texts
+    type: objdelete
+    ids:
+      - 0xFCC6 # Fi text after chest near caged robot
+      - 0xFC29 # Fi text around caged robot
+      - 0xFCBC # Fi text for 5 beacons
+      - 0xFC87 # Fi text for trial gate
+      - 0x0CC4 # Fi text for all nodes
+    layer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove Boulder cs
+    type: objdelete
+    id: 0xFD53
+    layer: 0
+    room: 0
+    objtype: STAG
+
   - name: Chest Spawns after LMF
     type: objpatch
     id: 0xFE12
@@ -3621,30 +2996,6 @@ F300: # Lanayru Desert
     destlayer: 1
     room: 0
     objtype: OBJS
-  - name: Remove Fi text after Tumbleweed Chest
-    type: objdelete
-    id: 0xFCC6
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove Fi text before Rescue Caged Robot Check
-    type: objdelete
-    id: 0xFC29
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove Fi text for 5 Beacons
-    type: objdelete
-    id: 0xFCBC
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove Boulder cs
-    type: objdelete
-    id: 0xFD53
-    layer: 0
-    room: 0
-    objtype: STAG
   - name: Remove Zelda Dowsing from LMF raising cs
     type: objpatch
     room: 0
@@ -3652,18 +3003,6 @@ F300: # Lanayru Desert
     objtype: EVNT
     object:
       story_flag2: -1 # no Zelda Dowsing
-  - name: Remove Fi text for Trial Gate
-    type: objdelete
-    id: 0xFC87
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove Fi text for all nodes
-    type: objdelete
-    id: 0x0CC4
-    layer: 0
-    room: 0
-    objtype: OBJ
   - name: LMF entrance loadzone
     type: objpatch
     id: 0xFCEB
@@ -3688,23 +3027,12 @@ F300: # Lanayru Desert
       angley: 34000
       anglez: 0
       entrance_id: 19
-  - name: Move Stamina Fruit on South LMF Ledge to Layer 1
+  - name: Move Stamina Fruit on South LMF Ledge to layer 0
     type: objmove
-    id: 0xFE11
-    layer: 2
-    destlayer: 0
-    room: 0
-    objtype: OBJ
-  - name: Move Stamina Fruit on West LMF Ledge to Layer 1
-    type: objmove
-    id: 0xFE13
-    layer: 2
-    destlayer: 0
-    room: 0
-    objtype: OBJ
-  - name: Move Stamina Fruit on LMF Vine Wall to Layer 1
-    type: objmove
-    id: 0xFE15
+    ids:
+      - 0xFE11 # South
+      - 0xFE13 # West
+      - 0xFE15 # On vine wall
     layer: 2
     destlayer: 0
     room: 0
@@ -3729,44 +3057,26 @@ F300_1: # Lanayru Mine
       posx: 10245
       posy: 2302.375
       posz: 35480
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: Remove First timeshift stone cs
-    type: objdelete
-    id: 0xFC47
-    layer: 0
-    room: 0
-    objtype: STAG
   - name: Remove Fi text for Trial Gate
     type: objdelete
     id: 0xFC2D
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Remove fake trial dowsing target
+  - name: Remove Timeshift stone cutscene and dowsing targets
     type: objdelete
-    id: 0xFC59
+    ids:
+      - 0xFC47 # First Timeshift Stone
+      - 0xFC59 # Trial dowsing target
+      - 0xFC0A # Trial dowsing target
+      - 0xFC62 # Trial dowsing target
     layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove fake trial dowsing target
-    type: objdelete
-    id: 0xFC0A
-    layer: 0
-    room: 1
-    objtype: STAG
-  - name: Remove fake trial dowsing target
-    type: objdelete
-    id: 0xFC62
-    layer: 0
-    room: 2
+    rooms: [0, 0, 1, 2]
     objtype: STAG
 
 F300_2: # Lightning Node
-  - name: extra Bomb flower
+  - name: Add extra Bomb Flower
     type: objadd
     layer: 0
     room: 0
@@ -3784,13 +3094,9 @@ F300_2: # Lightning Node
       name: Bombf
   - name: Fi text for generator
     type: objdelete
-    id: 0xFC24
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove Fi text for all nodes
-    type: objdelete
-    id: 0xFC23
+    ids:
+      - 0xFC24 # Fi text for Generator
+      - 0xFC23 # Fi text for all nodes
     layer: 0
     room: 0
     objtype: OBJ
@@ -3799,13 +3105,9 @@ F300_2: # Lightning Node
 F300_3: # Fire Node
   - name: Fi text for generator
     type: objdelete
-    id: 0xFC28
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove Fi text for all nodes
-    type: objdelete
-    id: 0xFC27
+    ids:
+      - 0xFC28 # Fi text for Generator
+      - 0xFC27 # Fi text for all nodes
     layer: 0
     room: 0
     objtype: OBJ
@@ -3847,10 +3149,6 @@ F300_4: # Temple of Time
       posx: -23330
       posy: 50
       posz: 640
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Temple of Time Bird Statue
     onlyif: ammo_availability == plentiful
@@ -3864,10 +3162,6 @@ F300_4: # Temple of Time
       posx: -34360
       posy: 50
       posz: -3910
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Yeet harp Cutscene
     type: objpatch
@@ -3876,15 +3170,11 @@ F300_4: # Temple of Time
     objtype: PLY
     object:
       play_cutscene: -1
-  - name: Fi text after Harp
+  - name: Remove Fi texts
     type: objdelete
-    room: 0
-    layer: 0
-    id: 0xFC0D
-    objtype: OBJ
-  - name: Remove Fi text for Trial Gate
-    type: objdelete
-    id: 0xFC17
+    ids:
+      - 0xFC0D # Fi text after Harp
+      - 0xFC17 # Fi text for trial gate
     layer: 0
     room: 0
     objtype: OBJ
@@ -4000,10 +3290,6 @@ F300_5: # Lanayru Mining Facility to Temple of Time
       posx: 580
       posy: 0
       posz: 840
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
 
 F301: # Ancient Harbour
@@ -4019,10 +3305,6 @@ F301: # Ancient Harbour
       posx: 190
       posy: 70
       posz: -520
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: No Sandship beaten layer in sandship
     type: objpatch
@@ -4039,61 +3321,31 @@ F301: # Ancient Harbour
     objtype: OBJ
 
 F301_1: # Lanayru Sand Sea
-  - name: Skipper's Text at first time in Sand  # gets rid of 2x40 so also of the Evnttags
+  - name: Remove Events
     type: objdelete
-    id: 0xFC05
+    ids:
+      - 0xFC05 # Skipper's text first item at sea (gets rid of 2x40 so also of the Evnttags)
+      - 0xFC07 # Cutscene after Shipyard
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Area Block to Shipyard 1
+  - name: Remove Skipper's Boat Area Blocks
     type: objdelete
-    id: 0xFC63
+    startid: 0xFC60
+    endid: 0xFC67
     layer: 0
     room: 0
     objtype: STAG
-  - name: Area Block to Shipyard 2
+  - name: Remove excess entrances to Sandship
     type: objdelete
-    id: 0xFC61
-    layer: 0
+    ids:
+      - 0xFC98
+      - 0xFCB7
+      - 0xFCB7
+      - 0xFCB7
+    layers: [2, 3, 4, 5]
     room: 0
     objtype: STAG
-  - name: Area Block to Shipyard 3
-    type: objdelete
-    id: 0xFC60
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Area Block to Shipyard 4
-    type: objdelete
-    id: 0xFC62
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Area Block to Pirate Stronghold
-    type: objdelete
-    id: 0xFC65
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Area Block to Pirate Stronghold
-    type: objdelete
-    id: 0xFC66
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Area Block to Pirate Stronghold
-    type: objdelete
-    id: 0xFC67
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: No Sandship beaten layer in sandship
-    type: objpatch
-    index: 5
-    room: 0
-    objtype: SCEN
-    object:
-      layer: 1
   - name: Move sandship load to layer 0
     type: objmove
     layer: 1
@@ -4101,36 +3353,13 @@ F301_1: # Lanayru Sand Sea
     room: 0
     objtype: STAG
     id: 0xFC6B
-  - name: Remove excess entrance to Sandship (layer 2)
-    type: objdelete
-    id: 0xFC98
-    layer: 2
+  - name: No Sandship beaten layer in sandship
+    type: objpatch
+    index: 5
     room: 0
-    objtype: STAG
-  - name: Remove excess entrance to Sandship (layer 3)
-    type: objdelete
-    id: 0xFCB7
-    layer: 3
-    room: 0
-    objtype: STAG
-  - name: Remove excess entrance to Sandship (layer 4)
-    type: objdelete
-    id: 0xFCB7
-    layer: 4
-    room: 0
-    objtype: STAG
-  - name: Remove excess entrance to Sandship (layer 5)
-    type: objdelete
-    id: 0xFCB7
-    layer: 5
-    room: 0
-    objtype: STAG
-  - name: Cutscene after shipyard
-    type: objdelete
-    id: 0xFC07
-    layer: 0
-    room: 0
-    objtype: OBJ
+    objtype: SCEN
+    object:
+      layer: 1
   - name: remove entrance cutscene
     type: objpatch
     index: 0
@@ -4141,23 +3370,14 @@ F301_1: # Lanayru Sand Sea
       play_cutscene: -1
 
 F301_2: # Inside Pirate Stronghold
-  - name: Fi Text at beginning
+  - name: Remove Fi Texts
     type: objdelete
-    id: 0xFC0A
+    ids:
+      - 0xFC0A # Fi text at start
+      - 0xFC06 # Fi text before Timeshift Orb
+      - 0xFC0B # Fi text after placing Timeshift Orb
     layer: 0
-    room: 1
-    objtype: OBJ
-  - name: Fi Text near timeshift orb
-    type: objdelete
-    id: 0xFC06
-    layer: 0
-    room: 3
-    objtype: OBJ
-  - name: Fi Text after placing orb
-    type: objdelete
-    id: 0xFC0B
-    layer: 0
-    room: 1
+    rooms: [1, 3, 1]
     objtype: OBJ
   - name: CS before second lever
     type: objdelete
@@ -4193,10 +3413,6 @@ F301_3: # Skipper's Retreat
       posx: -3930
       posy: 50
       posz: 8550
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add bomb flower next to skydive chest # prevents softlocks
     type: objadd
@@ -4222,6 +3438,18 @@ F301_4: # Shipyard
       - story_flag: -1
         night: 0
         layer: 1
+  - name: Add Arcs
+    type: oarcadd
+    oarc:
+      - GossipStone
+    destlayer: 0
+  - name: Move Gossip Stone
+    type: objmove
+    id: 0xFC5E
+    layer: 5
+    destlayer: 0
+    room: 0
+    objtype: OBJ
   - name: Text after intro
     type: objdelete
     id: 0xFC6E
@@ -4240,10 +3468,6 @@ F301_4: # Shipyard
       posx: -300
       posy: 50
       posz: 15830
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to before Construction Bay Bird Statue
     onlyif: ammo_availability == plentiful
@@ -4257,10 +3481,6 @@ F301_4: # Shipyard
       posx: -3875
       posy: 500
       posz: 8830
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Door to Construction always open
     type: objpatch
@@ -4278,18 +3498,6 @@ F301_4: # Shipyard
     object:
       storyflag: -1
       play_cutscene: -1
-  - name: Gossip Stone
-    type: objmove
-    id: 0xFC5E
-    layer: 5
-    destlayer: 0
-    room: 0
-    objtype: OBJ
-  - name: Gossip Stone
-    type: oarcadd
-    oarc:
-      - GossipStone
-    destlayer: 0
 
 F301_5: # Skipper's Shack
   - name: Text after chest
@@ -4312,24 +3520,33 @@ F301_6: # Outside Pirate stronghold
       posx: -585
       posy: 70
       posz: 200
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: Text after intro
+  - name: Remove texts
     type: objdelete
-    id: 0xFC07
+    ids:
+      - 0xFC07 # Text after intro
+      - 0xFC08 # Ship dowsing
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Ship dowsing
+  - name: Remove Nose Rupees
     type: objdelete
-    id: 0xFC08
-    layer: 0
+    ids:
+      - 0xFC46
+      - 0xFC47
+    layer: 2
     room: 0
     objtype: OBJ
-  - name: remove entrance cutscene
+  - name: Move Pillar Rupees to layer 0
+    type: objmove
+    ids:
+      - 0xFC46
+      - 0xFC47
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+  - name: Remove entrance cutscene
     type: objpatch
     index: 0
     room: 0
@@ -4337,41 +3554,15 @@ F301_6: # Outside Pirate stronghold
     object:
       storyflag: -1
       play_cutscene: -1
-  - name: Remove Nose Rupee 1
-    type: objdelete
-    layer: 2
-    room: 0
-    objtype: OBJ
-    id: 0xFC46
-  - name: Remove Nose Rupee 2
-    type: objdelete
-    layer: 2
-    room: 0
-    objtype: OBJ
-    id: 0xFC47
-  - name: Forcing Pillar Rupee 1 on layer 0
-    type: objmove
-    layer: 1
-    destlayer: 0
-    room: 0
-    objtype: OBJ
-    id: 0xFC46
-  - name: Forcing Pillar Rupee 2 on layer 0
-    type: objmove
-    room: 0
-    layer: 1
-    destlayer: 0
-    objtype: OBJ
-    id: 0xFC47
 
 F301_7: # Construction Bay
-  - name: Text near minecart door
+  - name: Remove Text near minecart door
     type: objdelete
     id: 0xFC04
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Door to outside
+  - name: Open Door to outside
     type: objpatch
     id: 0xFC01
     layer: 0
@@ -4399,11 +3590,15 @@ F302: # Lanayru Gorge
       posx: -1200
       posy: 29.94655228
       posz: -2115
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
+  - name: Delete trigger preventing you from moving over bridge
+    type: objdelete
+    ids:
+      - 0xFC06 # Trigger blocking bridge access
+      - 0xFCC0 # Fi text after Dragon's reward
+    layers: [0, 2]
+    room: 0
+    objtype: OBJ
   - name: Yeet Lanayru Gorge Intro Cutscene
     type: objpatch
     index: 0
@@ -4428,12 +3623,6 @@ F302: # Lanayru Gorge
     objtype: OBJ
     object:
       talk_behaviour: 46070
-  - name: Delete trigger preventing you from moveing over bridge
-    type: objdelete
-    id: 0xFC06
-    layer: 0
-    room: 0
-    objtype: OBJ
   - name: Patch wounded Thuderdragon to always trigger
     type: objpatch
     id: 0x10D1
@@ -4460,7 +3649,7 @@ F302: # Lanayru Gorge
       anglex: 0 # Fix rotation
       angley: 44000 # Turn item to face the player
       posy: -2600 # Fix height
-  - name: Move Pillar Item
+  - name: Move Pillar Item to layer 0
     type: objmove
     id: 0xFCC3
     layer: 1
@@ -4483,12 +3672,6 @@ F302: # Lanayru Gorge
       angley: 16384
       anglez: 0
       name: Soil
-  - name: delete Fi after Lanayru SotH
-    type: objdelete
-    id: 0xFCC0
-    layer: 2
-    room: 0
-    objtype: OBJ
   - name: Remove Lanayru Soth from CS
     type: objpatch
     room: 0
@@ -4496,7 +3679,7 @@ F302: # Lanayru Gorge
     objtype: EVNT
     object:
       item: -1 # no lanayru Soth anymore
-  - name: extra Bomb flower
+  - name: Add extra Bomb Flower
     type: objadd
     layer: 0
     room: 0
@@ -4533,10 +3716,6 @@ F303: # Lanayru Caves
       posx: 295
       posy: 0
       posz: 3500
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   # Add oarcs
   - name: Add Goron Arcs
@@ -4558,16 +3737,11 @@ F303: # Lanayru Caves
       angley: 61000
       anglez: 40455
       untrigstoryfid: 2047 # never untrigger
-  - name: Move Golo onto layer 0
+  - name: Move Golo to layer 0
     type: objmove
-    id: 0xFC5C
-    layer: 1
-    destlayer: 0
-    room: 0
-    objtype: OBJ
-  - name: Move trigger onto layer 0
-    type: objmove
-    id: 0xFC5D
+    ids:
+      - 0xFC5C # Golo
+      - 0xFC5D # Trigger
     layer: 1
     destlayer: 0
     room: 0
@@ -4582,7 +3756,7 @@ F303: # Lanayru Caves
       posx: -400
       posz: 1850
   # Rock blocking Gorge access
-  - name: Move rock blocking Gorge onto layer 0
+  - name: Move rock blocking Gorge to layer 0
     type: objmove
     id: 0xFC5F
     layer: 1
@@ -4627,10 +3801,6 @@ F400: # Behind the Temple
       posx: -10990
       posy: 7500
       posz: 6170
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Goron text trigger doesn't disappear after Sandship
     type: objpatch
@@ -4649,21 +3819,12 @@ F400: # Behind the Temple
     object:
       trigstoryfid: 2047
       untrigstoryfid: 2047
-  - name: Goron after Skyview
+  - name: Remove extra Gorkos and Fi text
     type: objdelete
-    id: 0xFC2E
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Goron before unlocking goddess Walls
-    type: objdelete
-    id: 0xFC2F
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Fi text for Trial
-    type: objdelete
-    id: 0xFC5B
+    ids:
+      - 0xFC2E # Gorko after Skyview
+      - 0xFC2F # Gorko before Goddess Walls
+      - 0xFC5B # Fi text for trial
     layer: 0
     room: 0
     objtype: OBJ
@@ -4705,27 +3866,14 @@ F401: # Sealed Grounds Whirlpool
       posx: -8050
       posy: 8403.867188
       posz: 30
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: Ruined save
+  - name: Remove objects
     type: objdelete
-    id: 0xFC8E
-    layer: 1
-    room: 1
-    objtype: OBJ
-  - name: Groosenator before imp 2
-    type: objdelete
-    id: 0xFC9D
-    layer: 3
-    room: 1
-    objtype: OBJ
-  - name: Fi text for Trial
-    type: objdelete
-    id: 0xFC09
-    layer: 0
+    ids:
+      - 0xFC8E # Ruined save statue
+      - 0xFC9D # Groosenator before imp 2
+      - 0xFC09 # Fi text for trial
+    layers: [1, 3, 0]
     room: 1
     objtype: OBJ
   - name: Remove fake Faron trial dowsing target
@@ -4763,35 +3911,47 @@ F402: # Sealed Temple
       posx: 1355
       posy: 7599.990234
       posz: 10540
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: Delete LTF Tree
+  # objdeletes
+  - name: Remove extra Impas
     type: objdelete
-    id: 0xFC06
+    ids:
+      - 0xFC04 # Post-GoT raised
+      - 0xFC0B # Post-imp2
+      - 0xFC07 # Post-TMS
+      - 0xFC08 # Post-imp3
+      - 0xFC17 # Post-Levias
     layer: 0
     room: 2
     objtype: OBJ
-  - name: SotH start cs
+  - name: Remove imp2 Cutscenes and extra Groose
     type: objdelete
-    id: 0xFC4F
+    ids:
+      - 0xFC4B # Post-imp2 Groose
+      - 0xFC4C # imp2 beaten
+      - 0xFC4D # imp2 beaten
+      - 0xFC4E # Groose Tree Cutscene
+      - 0xFC4F # SotH start trigger
     layer: 4
     room: 2
     objtype: OBJ
-  - name: Groose Tree cs
+  - name: Remove objects and triggers
     type: objdelete
-    id: 0xFC4E
-    layer: 4
+    ids:
+      - 0xFC06 # Tree of Life
+      - 0xFC4B # Groose before Harp Tutorial Cutscene
+      - 0xFC49 # Impa text near door after GoT
+      - 0xFC4C # Impa text before imp 2 trigger
+    layers: [0, 2, 2, 3]
     room: 2
     objtype: OBJ
-  - name: Groose before Harp Tutorial cs
+  - name: Remove fake Faron trial dowsing target
     type: objdelete
-    id: 0xFC4B
-    layer: 2
+    id: 0xFC3D
+    layer: 0
     room: 2
-    objtype: OBJ
+    objtype: STAG
+
   - name: Remove cs when entering ST
     type: objpatch
     room: 2
@@ -4815,18 +3975,6 @@ F402: # Sealed Temple
     objtype: OBJS
     object:
       anglex: 0xFF00 # sets the flag to -1 (meaning open)
-  - name: Impa text near Door after GoT
-    type: objdelete
-    id: 0xFC49
-    layer: 2
-    room: 2
-    objtype: OBJ
-  - name: Impa text before imp 2 trigger
-    type: objdelete
-    id: 0xFC4C
-    layer: 3
-    room: 2
-    objtype: OBJ
   - name: Yeet GoT opening Cutscene
     type: objpatch
     id: 0xFC55
@@ -4844,7 +3992,6 @@ F402: # Sealed Temple
     object:
       story_flag2: -1 # no Imp trigger stuff
       sceneflag1: 7 # no shaking into vents active
-
   - name: Unforce layer after Raise GoT CS
     type: objpatch
     room: 2
@@ -4852,7 +3999,6 @@ F402: # Sealed Temple
     objtype: SCEN
     object:
       layer: 0
-
   - name: Remove Goddess Statue falling down storyflag
     type: objpatch
     room: 2
@@ -4860,69 +4006,6 @@ F402: # Sealed Temple
     objtype: EVNT
     object:
       story_flag2: -1
-
-  - name: Delete post levias impa
-    type: objdelete
-    id: 0xFC17
-    layer: 0
-    room: 2
-    objtype: OBJ
-
-  - name: Delete Imp 2 beaten cs inside
-    type: objdelete
-    id: 0xFC4D
-    layer: 4
-    room: 2
-    objtype: OBJ
-  - name: Delete Imp 2 beaten cs inside
-    type: objdelete
-    id: 0xFC4C
-    layer: 4
-    room: 2
-    objtype: OBJ
-
-  - name: Delete post imp2 Groose
-    type: objdelete
-    id: 0xFC4B
-    layer: 4
-    room: 2
-    objtype: OBJ
-
-  # get rid of multiple Impas
-  - name: Delete post GoT raised Impa
-    type: objdelete
-    id: 0xFC04
-    layer: 0
-    room: 2
-    objtype: OBJ
-
-  - name: Delete post imp2 Impa
-    type: objdelete
-    id: 0xFC0B
-    layer: 0
-    room: 2
-    objtype: OBJ
-
-  - name: Delete post tms Impa
-    type: objdelete
-    id: 0xFC07
-    layer: 0
-    room: 2
-    objtype: OBJ
-
-  - name: Delete post imp3 Impa
-    type: objdelete
-    id: 0xFC08
-    layer: 0
-    room: 2
-    objtype: OBJ
-
-  - name: Remove fake Faron trial dowsing target
-    type: objdelete
-    id: 0xFC3D
-    layer: 0
-    room: 2
-    objtype: STAG
 
   - name: BotG item trigger in circle
     type: objpatch
@@ -4936,7 +4019,6 @@ F402: # Sealed Temple
       sizex: 400
       sizey: 2000
       sizez: 400
-
   - name: Patch BotG check to trigger on harp storyflag
     type: objpatch
     id: 0xFC4E
@@ -4945,7 +4027,6 @@ F402: # Sealed Temple
     objtype: OBJ
     object:
       trigstoryfid: 9
-
   - name: Move BotG check to layer 0
     type: objmove
     id: 0xFC4E
@@ -5005,6 +4086,12 @@ F404: # Hylia's Temple
       - story_flag: -1
         night: 0
         layer: 1
+  - name: Delete post-ghirahim 3 impa
+    type: objdelete
+    id: 0xFC05
+    layer: 0
+    room: 2
+    objtype: OBJ
   - name: Add ammo pot to Hylia's Temple Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
@@ -5017,10 +4104,6 @@ F404: # Hylia's Temple
       posx: 1355
       posy: 7599.990234
       posz: 10540
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Set Gate of Time opening cutscene watched
     type: objadd
@@ -5054,15 +4137,8 @@ F404: # Hylia's Temple
     objtype: EVNT
     object:
       item: -1 # no TMS anymore
-  - name: Delete post-ghirahim 3 impa
-    type: objdelete
-    id: 0xFC05
-    layer: 0
-    room: 2
-    objtype: OBJ
   - name: Trigger to Check Triforces
     type: objadd
-    # onlyif: triforce_required == on
     room: 2
     layer: 0
     objtype: OBJ
@@ -5108,16 +4184,22 @@ F407: # Sky Keep beaten CS
     object:
       story_flag2: -1
 
-D003_0: # Sky Keep Courage Room
-  - name: Fi text
-    type: objdelete
-    id: 0xFC0F
+D000: # Waterfall Cave
+  - name: Remove flag from Crawlspace Rupee
+    type: objpatch
+    id: 0xFC14
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Fi text reach the mark
+    object:
+      params1: 0xFF0FFE04 # sceneflag = 0xFF
+
+D003_0: # Sky Keep Courage Room
+  - name: Remove Fi texts
     type: objdelete
-    id: 0xFC11
+    ids:
+      - 0xFC0F # Fi text
+      - 0xFC11 # Fi text reach the mark
     layer: 0
     room: 0
     objtype: OBJ
@@ -5133,10 +4215,6 @@ D003_0: # Sky Keep Courage Room
       posx: -300
       posy: 0
       posz: 2495
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
 
 D003_1: # Sky Keep Earth Temple Room
@@ -5152,28 +4230,15 @@ D003_1: # Sky Keep Earth Temple Room
       posx: 2640
       posy: 0
       posz: 740
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
 
 D003_2: # Sky Keep Power Room
-  - name: Fi text
+  - name: Remove Fi texts
     type: objdelete
-    id: 0xFC33
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Fi text reach the mark
-    type: objdelete
-    id: 0xFC3C
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Fi text wrong side
-    type: objdelete
-    id: 0xFC32
+    ids:
+      - 0xFC33 # Fi text
+      - 0xFC3C # Fi text reach the mark
+      - 0xFC32 # Fi text wrong side
     layer: 0
     room: 0
     objtype: OBJ
@@ -5189,10 +4254,6 @@ D003_2: # Sky Keep Power Room
       posx: 2610
       posy: 0
       posz: -750
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
 
 D003_3: # Sky Keep Wisdom Room
@@ -5202,15 +4263,11 @@ D003_3: # Sky Keep Wisdom Room
       - story_flag: -1
         night: 0
         layer: 1 # always use layer 1,
-  - name: Fi text
+  - name: Remove Fi texts
     type: objdelete
-    id: 0xFC1B
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Fi text reach the mark
-    type: objdelete
-    id: 0xFC1D
+    ids:
+      - 0xFC1B # Fi text
+      - 0xFC1D # Fi text reach the mark
     layer: 0
     room: 0
     objtype: OBJ
@@ -5226,10 +4283,6 @@ D003_3: # Sky Keep Wisdom Room
       posx: -2300
       posy: 0
       posz: -540
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
 
 D003_4: # Sky Keep LMF Room
@@ -5245,10 +4298,6 @@ D003_4: # Sky Keep LMF Room
       posx: 615
       posy: 0
       posz: 2260
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
 
 D003_5: # Sky Keep Skyview Temple Room
@@ -5264,22 +4313,14 @@ D003_5: # Sky Keep Skyview Temple Room
       posx: -540
       posy: 0
       posz: -2860
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
 
 D003_7: # Sky Keep Entrance Room
-  - name: Fi text
+  - name: Remove objects
     type: objdelete
-    id: 0xFC0B
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Remove bars
-    type: objdelete
-    id: 0xFC05
+    ids:
+      - 0xFC0B # Fi text
+      - 0xFC05 # Bars
     layer: 0
     room: 0
     objtype: OBJ
@@ -5303,14 +4344,10 @@ D003_7: # Sky Keep Entrance Room
       posx: -610
       posy: 0
       posz: 2015
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
 
 D003_8: # Triforce Room
-  - name: remove last triforce cutscene # this does mean if triforces are vanilla you have to leave yourself
+  - name: Remove last triforce cutscene # this does mean if triforces are vanilla you have to leave yourself
     type: objdelete
     id: 0xFC06
     layer: 0
@@ -5411,10 +4448,6 @@ D100: # Skyview Temple
       posx: 145
       posy: 1124.349976
       posz: 6115
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Skyview Temple First Hub Room Bird Statue
     onlyif: ammo_availability == plentiful
@@ -5428,10 +4461,6 @@ D100: # Skyview Temple
       posx: 750
       posy: 0
       posz: -1670
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Skyview Temple Second Hub Room Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -5445,10 +4474,6 @@ D100: # Skyview Temple
       posx: -3490
       posy: 0
       posz: -8540
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Skyview Temple before Boss Door Bird Statue
     onlyif: ammo_availability == plentiful
@@ -5462,11 +4487,79 @@ D100: # Skyview Temple
       posx: 1160
       posy: 300
       posz: -16960
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
+  - name: Add Arcs
+    type: oarcadd
+    oarc:
+      - SwitchEye
+    destlayer: 0
+  # objdeletes
+  - name: Remove Empty Soil
+    type: objdelete
+    id: 0xFC50
+    layer: 1
+    room: 4
+    objtype: OBJ
+  - name: Remove boards in layer 2 # they break by hitting the switch
+    type: objdelete
+    ids:
+      - 0xFCA0
+      - 0xFCA1
+    layer: 2
+    room: 2
+    objtype: OBJ
+  - name: Remove Mogma near goddess wall
+    type: objdelete
+    ids:
+      - 0xFC4F # Mogma
+      - 0xFC4E # Cutscene
+      - 0xFC4B # Cutscene
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove Mogma tags near goddess wall
+    type: objdelete
+    ids:
+      - 0xFC57 # SwTag
+      - 0xFC52 # AreaTag
+      - 0xFC53 # AreaTag
+    layer: 2
+    room: 0
+    objtype: STAG
+  - name: Remove forced talk to Mogmas
+    type: objdelete
+    ids:
+      - 0xFC51 # Right room
+      - 0xFC46 # Left room
+      - 0xFC7B # Before Boss room
+    layer: 2
+    rooms: [4, 3, 9]
+    objtype: STAG
+  - name: Remove soil in three eye room #this one makes pushing the block difficult
+    type: objdelete
+    id: 0xFC34
+    layer: 2
+    room: 7
+    objtype: OBJ
+  - name: Remove initial Fi text in Skyview 1
+    type: objdelete
+    id: 0xFC4C
+    layer: 1
+    room: 0
+    objtype: OBJ
+  - name: Remove initial Fi text in Skyview 2
+    type: objdelete
+    id: 0xFC4A
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove cutscene in hub room
+    type: objdelete
+    id: 0xFC85
+    layer: 1
+    room: 5
+    objtype: STAG
+  # objmoves
   - name: Move Small Key Digspot to layer 0
     type: objmove
     id: 0xFC4B
@@ -5474,116 +4567,50 @@ D100: # Skyview Temple
     destlayer: 0
     room: 4
     objtype: OBJ
-  - name: Move First Rupee under West Walkway before Hub Room to layer 0
+  - name: Move Rupees under West Walkway before Hub Room to layer 0
     type: objmove
-    id: 0xFC9C
+    ids:
+      - 0xFC9C # First
+      - 0xFC9B # Second
     layer: 1
     destlayer: 0
     room: 2
     objtype: OBJ
-  - name: Move Second Rupee under West Walkway before Hub Room to layer 0
-    type: objmove
-    id: 0xFC9B
-    layer: 1
-    destlayer: 0
-    room: 2
-    objtype: OBJ
-  - name: Empty Soil
-    type: objdelete
-    id: 0xFC50
-    layer: 1
-    room: 4
-    objtype: OBJ
-  - name: Eyes
-    type: oarcadd
-    oarc:
-      - SwitchEye
-    destlayer: 0
 
   # Eye switches
   ## 1 eye
   - name: Move First Eye to layer 0
     type: objmove
-    id: 0xFC17
+    ids:
+      - 0xFC17 # Eye
+      - 0xFC1A # CamTag
+      - 0xFC19 # SwAreaT
     layer: 1
     destlayer: 0
     room: 1
-    objtype: OBJ
-  - name: Move First Eye CamTag to layer 0
-    type: objmove
-    id: 0xFC1A
-    layer: 1
-    destlayer: 0
-    room: 1
-    objtype: STAG
-  - name: Move First Eye SwAreaT to layer 0
-    type: objmove
-    id: 0xFC19
-    layer: 1
-    destlayer: 0
-    room: 1
-    objtype: STAG
-  - name: Remove First Eye SwAreaT 1 on layer 2
+    objtypes: [OBJ, STAG, STAG]
+  - name: Remove First Eye SwAreaTs on layer 2
     type: objdelete
-    id: 0xFC22
+    ids:
+      - 0xFC22
+      - 0xFC23
     layer: 2
     room: 1
     objtype: STAG
-  - name: Remove First Eye SwAreaT 2 on layer 2
-    type: objdelete
-    id: 0xFC23
-    layer: 2
-    room: 1
-    objtype: STAG
-
   ## 2 eyes
   - name: Move Right Room Eyes to layer 0
     type: objmove
-    id: 0xFC48
+    startid: 0xFC48
+    endid: 0xFC4A
     layer: 1
     destlayer: 0
     room: 4
     objtype: OBJ
-  - name: Move Right Room Eyes to layer 0
-    type: objmove
-    id: 0xFC49
-    layer: 1
-    destlayer: 0
-    room: 4
-    objtype: OBJ
-  - name: Move Right Room Eyes to layer 0
-    type: objmove
-    id: 0xFC4A
-    layer: 1
-    destlayer: 0
-    room: 4
-    objtype: OBJ
-
   ## 3 eyes
   - name: Move Left Room Eyes to layer 0
     type: objmove
-    id: 0xFC31
-    layer: 1
-    destlayer: 0
-    room: 7
-    objtype: OBJ
-  - name: Move Left Room Eyes to layer 0
-    type: objmove
-    id: 0xFC32
-    layer: 1
-    destlayer: 0
-    room: 7
-    objtype: OBJ
-  - name: Move Left Room Eyes to layer 0
-    type: objmove
-    id: 0xFC33
-    layer: 1
-    destlayer: 0
-    room: 7
-    objtype: OBJ
-  - name: Move Left Room Eyes to layer 0
-    type: objmove
-    id: 0xFC34
+    startid: 0xFC31
+    endid: 0xFC34
     layer: 1
     destlayer: 0
     room: 7
@@ -5619,96 +4646,6 @@ D100: # Skyview Temple
     objtype: DOOR
     object:
       anglex: 0xFF06 # sceneflag 6
-  - name: Remove boards in layer 2 # they break by hitting the switch
-    type: objdelete
-    id: 0xFCA0
-    layer: 2
-    room: 2
-    objtype: OBJ
-  - name: Remove boards in layer 2 # they break by hitting the switch
-    type: objdelete
-    id: 0xFCA1
-    layer: 2
-    room: 2
-    objtype: OBJ
-  - name: Remove Mogma near goddess wall
-    type: objdelete
-    id: 0xFC4F
-    layer: 2
-    room: 0
-    objtype: OBJ
-  - name: Remove Mogma cs near goddess wall
-    type: objdelete
-    id: 0xFC4E
-    layer: 2
-    room: 0
-    objtype: OBJ
-  - name: Remove Mogma cs near goddess wall
-    type: objdelete
-    id: 0xFC4B
-    layer: 2
-    room: 0
-    objtype: OBJ
-  - name: Remove Mogma cs swTag near goddess wall
-    type: objdelete
-    id: 0xFC57
-    layer: 2
-    room: 0
-    objtype: STAG
-  - name: Remove Mogma cs AreaTag 1 near goddess wall
-    type: objdelete
-    id: 0xFC52
-    layer: 2
-    room: 0
-    objtype: STAG
-  - name: Remove Mogma cs AreaTag 2 near goddess wall
-    type: objdelete
-    id: 0xFC53
-    layer: 2
-    room: 0
-    objtype: STAG
-  - name: Remove forced talk to mogma in right room
-    type: objdelete
-    id: 0xFC51
-    layer: 2
-    room: 4
-    objtype: STAG
-  - name: Remove forced talk to mogma in left room
-    type: objdelete
-    id: 0xFC46
-    layer: 2
-    room: 3
-    objtype: STAG
-  - name: Remove forced talk to mogma in front of boss door
-    type: objdelete
-    id: 0xFC7B
-    layer: 2
-    room: 9
-    objtype: STAG
-  - name: Remove soil in three eye room #this one makes pushing the block difficult
-    type: objdelete
-    id: 0xFC34
-    layer: 2
-    room: 7
-    objtype: OBJ
-  - name: Remove initial Fi text in Skyview 1
-    type: objdelete
-    id: 0xFC4C
-    layer: 1
-    room: 0
-    objtype: OBJ
-  - name: Remove initial Fi text in Skyview 2
-    type: objdelete
-    id: 0xFC4A
-    layer: 2
-    room: 0
-    objtype: OBJ
-  - name: Remove cutscene in hub room
-    type: objdelete
-    id: 0xFC85
-    layer: 1
-    room: 5
-    objtype: STAG
 
 B100: # Skyview boss room
   - name: Layer override
@@ -5774,30 +4711,21 @@ B100_1: # Skyview Spring
     object:
       params1: 0xFFFFFFF1 # last 1 is subtype (not talk to fi)
       trigscenefid: 105 # Goddess Crest hit
-  - name: Fi text after skyview CS
+  - name: Move post-crest objects
     type: objmove
-    id: 0xFC73
+    ids:
+      - 0xFC73 # Fi text after Skyview Cutscene
+      - 0xFC74 # Loadzone to outside
     layer: 2
     destlayer: 0
     room: 0
-    objtype: OBJ
-  - name: loadzone to outside
-    type: objmove
-    id: 0xFC74
-    layer: 2
-    destlayer: 0
-    room: 0
-    objtype: STAG
+    objtypes: [OBJ, STAG]
   - name: Remove small cutscene
     type: objdelete
-    room: 0
-    layer: 1
-    id: 0xFC73
-    objtype: STAG
-  - name: Remove fake trial dowsing target
-    type: objdelete
-    id: 0xFC63
-    layer: 0
+    ids:
+      - 0xFC73 # Small Cutscene
+      - 0xFC63 # Trial dowsing target
+    layers: [1, 0]
     room: 0
     objtype: STAG
 
@@ -5822,10 +4750,6 @@ D101: # Ancient Cistern
       posx: -560
       posy: 0
       posz: -5020
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Ancient Cistern in Whirlpool Room Bird Statue
     onlyif: ammo_availability == plentiful
@@ -5839,10 +4763,6 @@ D101: # Ancient Cistern
       posx: -12290
       posy: 1481.52002
       posz: 1510
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Ancient Cistern Pipes Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -5856,10 +4776,6 @@ D101: # Ancient Cistern
       posx: -5225
       posy: -3410.026367
       posz: 4250
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Ancient Cistern after Pipes Bird Statue
     onlyif: ammo_availability == plentiful
@@ -5873,10 +4789,6 @@ D101: # Ancient Cistern
       posx: -310
       posy: 0
       posz: -5450
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Ancient Cistern after Thread Bird Statue
     onlyif: ammo_availability == plentiful
@@ -5890,10 +4802,6 @@ D101: # Ancient Cistern
       posx: -4080
       posy: 1000
       posz: -2750
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Ancient Cistern before Boss Room Bird Statue
     onlyif: ammo_availability == plentiful
@@ -5907,11 +4815,27 @@ D101: # Ancient Cistern
       posx: 520
       posy: 7569.609863
       posz: 1370
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
+  - name: Remove Cutscenes
+    type: objdelete
+    ids:
+      - 0xFC1F # Inside statue
+      - 0xFC7D # In basement showing Boss Key chest
+      - 0xFC1A # Water spout inside statue
+    layer: 0
+    room: [10, 4, 10]
+    objtype: STAG
+  - name: Remove Lily Pad Cutscenes
+    type: objdelete
+    ids:
+      - 0xFC1B # East part
+      - 0xFC1C # East part
+      - 0xFC29 # East part main
+      - 0xFC8D # Waterfall switch
+      - 0xFC83 # Underground
+    layer: 0
+    rooms: [1, 1, 2, 0, 4]
+    objtype: STAG
   - name: Remove stone tablet text
     type: objpatch
     id: 0xFC11
@@ -5961,7 +4885,7 @@ D101: # Ancient Cistern
     objtype: OBJ
     object:
       posy: -890
-  - name: Add extra Bomb flower
+  - name: Add extra Bomb Flower
     type: objadd
     layer: 0
     room: 7
@@ -5977,54 +4901,6 @@ D101: # Ancient Cistern
       anglez: 0
       id: 0xFD01
       name: Bombf
-  - name: Remove cutscene inside statue
-    type: objdelete
-    id: 0xFC1F
-    layer: 0
-    room: 10
-    objtype: STAG
-  - name: Remove cutscene in basement showing bk chest
-    type: objdelete
-    id: 0xFC7D
-    layer: 0
-    room: 4
-    objtype: STAG
-  - name: Remove bottom Water Spout cutscene inside statue
-    type: objdelete
-    id: 0xFC1A
-    layer: 0
-    room: 10
-    objtype: STAG
-  - name: Remove East Part Lily Pad CS 1
-    type: objdelete
-    id: 0xFC1C
-    layer: 0
-    room: 1
-    objtype: STAG
-  - name: Remove East Part Lily Pad CS 2
-    type: objdelete
-    id: 0xFC1B
-    layer: 0
-    room: 1
-    objtype: STAG
-  - name: Remove East Part Main Path Lily Pad CS
-    type: objdelete
-    id: 0xFC29
-    layer: 0
-    room: 2
-    objtype: STAG
-  - name: Remove Waterfall Switch Lily Pad CS
-    type: objdelete
-    id: 0xFC8D
-    layer: 0
-    room: 0
-    objtype: STAG
-  - name: Remove Underground Lily Pad CS
-    type: objdelete
-    id: 0xFC83
-    layer: 0
-    room: 4
-    objtype: STAG
 
 B101: # Koloktos Boss Room
   - name: Open door after boss
@@ -6104,10 +4980,6 @@ D200: # Earth Temple
       posx: 840
       posy: 0
       posz: 14325
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Earth Temple Hub Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6121,10 +4993,6 @@ D200: # Earth Temple
       posx: 995
       posy: 0
       posz: 65
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Earth Temple Gate Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6138,10 +5006,6 @@ D200: # Earth Temple
       posx: 9080
       posy: 450
       posz: -4640
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Earth Temple Boss Door Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6155,23 +5019,25 @@ D200: # Earth Temple
       posx: -9575
       posy: 6050
       posz: -13970
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: Ledd Text before Bomb Bag
+  - name: Remove text triggers
     type: objdelete
-    id: 0xFC51
+    ids:
+      - 0xFC51 # Ledd text before Bomb Bag
+      - 0xFC52 # Bomb Bag from Ledd
+      - 0xFC5E # Fi text after bridge
     layer: 0
     room: 1
     objtype: OBJ
-  - name: Bomb Bag from Ledd
+  - name: Remove Cutscenes
     type: objdelete
-    id: 0xFC52
+    ids:
+      - 0xFC6D # Before boulder to Bomb Bag
+      - 0xFC68 # Showing Boss Door
+      - 0xFC65 # After Lavafall
     layer: 0
-    room: 1
-    objtype: OBJ
+    rooms: [1, 4, 4]
+    objtype: STAG
   - name: Keep Ledd after Beating ET
     type: objpatch
     id: 0xFC50
@@ -6188,31 +5054,7 @@ D200: # Earth Temple
     objtype: OBJ
     object:
       trigscenefid: 9
-  - name: Fi after Bridge
-    type: objdelete
-    id: 0xFC5E
-    layer: 0
-    room: 1
-    objtype: OBJ
-  - name: CS before Boulder to bombs
-    type: objdelete
-    id: 0xFC6D
-    layer: 0
-    room: 1
-    objtype: STAG
-  - name: Remove cutscene showing the boss door
-    type: objdelete
-    id: 0xFC68
-    layer: 0
-    room: 4
-    objtype: STAG
-  - name: Remove cutscene after lavafall
-    type: objdelete
-    id: 0xFC65
-    layer: 0
-    room: 4
-    objtype: STAG
-  - name: change untrigger of lavafall in front of Boss Door
+  - name: Change untrigger of lavafall in front of Boss Door
     type: objpatch
     id: 0xFC1F
     layer: 0
@@ -6231,24 +5073,15 @@ B200: # ET Boss Room
       - story_flag: -1
         night: 0
         layer: 2
-  - name: Yeet ET Spring Cutscene
+  - name: Remove cutscene/text triggers
     type: objdelete
-    id: 0xFC27
-    layer: 0
+    ids:
+      - 0xFC27 # Spring Cutscene
+      - 0xFC36 # Boulder Cutscene
+      - 0xFC30 # Fi text
+    layers: [0, 2, 2]
     room: 10
-    objtype: STAG
-  - name: delete boulder cutscene
-    type: objdelete
-    id: 0xFC36
-    layer: 2
-    room: 10
-    objtype: STAG
-  - name: delete fi text
-    type: objdelete
-    id: 0xFC30
-    layer: 2
-    room: 10
-    objtype: OBJ
+    objtypes: [STAG, STAG, OBJ]
 
 B210: # Earth Spring
   - name: Patch entrance to not play Cutscene
@@ -6267,14 +5100,6 @@ B210: # Earth Spring
     objtype: OBJ
     object:
       params1: 0xFFFFFFF1
-  # - name: Loadzone to outside
-  #   type: objpatch
-  #   room: 0
-  #   layer: 0
-  #   id: 0xFC0E
-  #   objtype: STAG
-  #   object:
-  #     params1: 0xC003FF00 # zone temp flag 192 set after crest hit
 
 D201: # Fire Sanctuary A (outer)
   - name: Yeet Fire Sanctuary Intro Cutscene
@@ -6297,10 +5122,6 @@ D201: # Fire Sanctuary A (outer)
       posx: 1275
       posy: 1100
       posz: 6105
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Fire Sanctuary Lava Chase Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6314,10 +5135,6 @@ D201: # Fire Sanctuary A (outer)
       posx: -7020
       posy: 0
       posz: -15790
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Fire Sanctuary Boss Room Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6331,24 +5148,16 @@ D201: # Fire Sanctuary A (outer)
       posx: 110
       posy: -550
       posz: -14240
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: Mogma 1
+  - name: Remove guld
     type: objdelete
-    id: 0xFC07
+    ids:
+      - 0xFC07 # Guld
+      - 0xFC08 # Guld trigger
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Guld cs trigger
-    type: objdelete
-    id: 0xFC08
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: BK chest intro cs deleted
+  - name: Remove BK chest panning cutscene
     type: objdelete
     id: 0xFC44
     layer: 0
@@ -6376,10 +5185,6 @@ D201_1: # Fire Sanctuary B (inner)
       posx: 1275
       posy: 1100
       posz: 6105
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Fire Sanctuary after First Locked Door Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6393,10 +5198,6 @@ D201_1: # Fire Sanctuary B (inner)
       posx: -120
       posy: 1100
       posz: -1165
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Fire Sanctuary before Bridge Lizalfos Fight Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6410,10 +5211,6 @@ D201_1: # Fire Sanctuary B (inner)
       posx: 3210
       posy: 200
       posz: -5131
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Fire Sanctuary before Double Magmanos Fight Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6427,10 +5224,6 @@ D201_1: # Fire Sanctuary B (inner)
       posx: -11460
       posy: 600
       posz: -10005
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Fire Sanctuary before 3rd Locked Door Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -6444,10 +5237,6 @@ D201_1: # Fire Sanctuary B (inner)
       posx: -7475
       posy: -550
       posz: -11560
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Fire Sanctuary Boss Room Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6461,10 +5250,6 @@ D201_1: # Fire Sanctuary B (inner)
       posx: 110
       posy: -550
       posz: -14240
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Clawshot Target for 2nd small Key
     type: objadd
@@ -6491,31 +5276,18 @@ D201_1: # Fire Sanctuary B (inner)
     objtype: OBJ
     object:
       posy: -200
-  - name: First Trapped Mogma CS delete
+  - name: Remove Magmanos Cutscenes/Text
     type: objdelete
+    ids:
+      - 0xFC11 # First trapped Mogma Cutscene
+      - 0xFC2B # Double Magmanos Cutscene (Can softlock apparently - from SD)
+      - 0xFC1E # Text after Magmanos
+      - 0xFC23 # Text after Magmanos
+      - 0xFC66 # Mogma Mitts tutorial text
+      - 0xFC2C # Camera pan after Mogma Mitts
     layer: 0
     room: 5
-    objtype: OBJ
-    id: 0xFC11
-  # Can softlock apparently (from SD)
-  - name: Remove Double Magmanos Fight Cutscene
-    type: objdelete
-    layer: 0
-    room: 5
-    objtype: STAG
-    id: 0xFC2B
-  - name: Text after Magmanos fight 1
-    type: objdelete
-    layer: 0
-    room: 5
-    objtype: OBJ
-    id: 0xFC1E
-  - name: Text after Magmanos fight 2
-    type: objdelete
-    layer: 0
-    room: 5
-    objtype: OBJ
-    id: 0xFC23
+    objtypes: [OBJ, STAG, OBJ, OBJ, OBJ, STAG]
   - name: Remove Sealed Grounds intro CS flag
     type: objpatch
     room: 6
@@ -6528,18 +5300,6 @@ D201_1: # Fire Sanctuary B (inner)
     id: 0xFC1B
     layer: 0
     room: 1
-    objtype: STAG
-  - name: Underground tutorial text for mogma mitts
-    type: objdelete
-    id: 0xFC66
-    layer: 0
-    room: 5
-    objtype: OBJ
-  - name: Delete camera pan cutscene after mogma mitts
-    type: objdelete
-    id: 0xFC2C
-    layer: 0
-    room: 5
     objtype: STAG
 
 B201: # FS Boss Room
@@ -6619,20 +5379,12 @@ D300: # Lanayru Mining Facility A (front)
       posx: -1035
       posy: 0
       posz: 2180
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: Dust in Gust Bellow room Blocking Door
+  - name: Remove objects blocking exit door in Hop across boxes room
     type: objdelete
-    id: 0xFC35
-    layer: 0
-    room: 4
-    objtype: SOBJ
-  - name: Wall in Gust Bellow room Blocking Door
-    type: objdelete
-    id: 0xFC4E
+    ids:
+      - 0xFC35 # Sand
+      - 0xFC4E # Wall
     layer: 0
     room: 4
     objtype: SOBJ
@@ -6674,10 +5426,6 @@ D300_1: # Lanayru Mining Facility B (back)
       posx: -1035
       posy: 0
       posz: 2180
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Lanayru Mining Facility South Hub Room Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -6691,10 +5439,6 @@ D300_1: # Lanayru Mining Facility B (back)
       posx: -560
       posy: 600
       posz: -8850
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Lanayru Mining Facility before Boss Room Left Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6708,10 +5452,6 @@ D300_1: # Lanayru Mining Facility B (back)
       posx: -3880
       posy: 1100
       posz: -20740
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Lanayru Mining Facility before Boss Room Right Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6725,10 +5465,6 @@ D300_1: # Lanayru Mining Facility B (back)
       posx: 3990
       posy: 1100
       posz: -22785
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Remove CS after blowing up boxes # Only one of the boxes plays the CS
     type: objpatch
@@ -6745,7 +5481,7 @@ D300_1: # Lanayru Mining Facility B (back)
     objtype: DOOR
     object:
       anglex: 0x1313
-  - name: visual fence from BK room side
+  - name: Visual fence from BK room side
     type: objadd
     layer: 0
     room: 8
@@ -6761,7 +5497,7 @@ D300_1: # Lanayru Mining Facility B (back)
       anglez: 0xFFFF
       id: 0xFC00
       name: Fence
-  - name: anti softlock bomb flower
+  - name: Anti-softlock Bomb Flower
     type: objadd
     layer: 0
     room: 5
@@ -6807,10 +5543,6 @@ D301: # Sandship A (main)
       posx: -4980
       posy: 0
       posz: 675
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Sandship Captain's Cabin Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6824,10 +5556,6 @@ D301: # Sandship A (main)
       posx: 4810
       posy: 0
       posz: -595
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
   - name: Add ammo pot to Sandship before Boss Door Bird Statue
     onlyif: ammo_availability == plentiful
@@ -6841,12 +5569,8 @@ D301: # Sandship A (main)
       posx: -2770
       posy: -1600
       posz: 1690
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0x4269
       name: Tubo
-  - name: extra Bomb flower
+  - name: Add extra Bomb Flower
     type: objadd
     layer: 0
     room: 0
@@ -6869,20 +5593,27 @@ D301: # Sandship A (main)
       - GoddessSymbolSc
       - PutHeartUtuwa
       - SwordCandle
-  - name: Heart Container on normal layer
+  - name: Move Heart Container to layer 1
     type: objmove
+    ids:
+      - 0xFC53 # Heart container
+      - 0xFC54 # Candle
     layer: 9
     destlayer: 1
     room: 0
     objtype: OBJ
-    id: 0xFC53
-  - name: Candle on layer 1
-    type: objmove
-    layer: 9
-    destlayer: 1
-    room: 0
+  - name: Remove Fi texts
+    type: objdelete
+    ids:
+      - 0xFC43 # Before Boss Door
+      - 0xFC0F # Generator
+      - 0xFC12 # Generator
+      - 0xFC07 # After Scervo
+      - 0xFC08 # After Scervo chest
+      - 0xFC4C # After revealed timeshift stone
+    layers: [4, 1, 1, 2, 2, 1]
+    rooms: [9, 7, 5, 15, 15, 0]
     objtype: OBJ
-    id: 0xFC54
   - name: Fi text after hitting Sandship Crest
     type: objadd
     room: 0
@@ -6943,53 +5674,13 @@ D301: # Sandship A (main)
     objtype: STAG
     object:
       anglez: 933 # untriggerstoryflag, defeat tentalus
-  - name: Fi text infront of Boss Door
-    type: objdelete
-    id: 0xFC43
-    layer: 4
-    room: 9
-    objtype: OBJ
-  - name: Fi text at generator
-    type: objdelete
-    id: 0xFC0F
-    layer: 1
-    room: 7
-    objtype: OBJ
-  - name: Fi text at generator
-    type: objdelete
-    id: 0xFC12
-    layer: 1
-    room: 5
-    objtype: OBJ
-  - name: Fi text after Scervo
-    type: objdelete
-    id: 0xFC07
-    layer: 2
-    room: 15
-    objtype: OBJ
-  - name: Fi text after Chest after Scervo Fight
-    type: objdelete
-    id: 0xFC08
-    layer: 2
-    room: 15
-    objtype: OBJ
-  - name: Fi text for revealing timeshift stone
-    type: objdelete
-    id: 0xFC4C
-    layer: 1
-    room: 0
-    objtype: OBJ
 
 D301_1: # Sandship B (escape)
-  - name: Fi text before tentalus
+  - name: Fi texts before tentalus
     type: objdelete
-    id: 0xFC1D
-    layer: 0
-    room: 0
-    objtype: OBJ
-  - name: Fi text before tentalus
-    type: objdelete
-    id: 0xFC1E
+    ids:
+      - 0xFC1D
+      - 0xFC1E
     layer: 0
     room: 0
     objtype: OBJ
