@@ -2340,6 +2340,51 @@
   pretty: Eldin Volcano - Rupee in Crawlspace in First Room
   cryptic: a <r<crawlspace rupee near a volcano>>
 
+- name: Eldin Volcano - Rupee underground in First Room 1
+  standard: Eldin Volcano - Rupee underground in First Room 1
+  pretty: Eldin Volcano - Rupee underground in First Room 1
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Rupee underground in First Room 2
+  standard: Eldin Volcano - Rupee underground in First Room 2
+  pretty: Eldin Volcano - Rupee underground in First Room 2
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Rupee underground in First Room 3
+  standard: Eldin Volcano - Rupee underground in First Room 3
+  pretty: Eldin Volcano - Rupee underground in First Room 3
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Rupee underground in First Room 4
+  standard: Eldin Volcano - Rupee underground in First Room 4
+  pretty: Eldin Volcano - Rupee underground in First Room 4
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Rupee underground in First Room 5
+  standard: Eldin Volcano - Rupee underground in First Room 5
+  pretty: Eldin Volcano - Rupee underground in First Room 5
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Rupee underground in First Room 6
+  standard: Eldin Volcano - Rupee underground in First Room 6
+  pretty: Eldin Volcano - Rupee underground in First Room 6
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Rupee underground in First Room 7
+  standard: Eldin Volcano - Rupee underground in First Room 7
+  pretty: Eldin Volcano - Rupee underground in First Room 7
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Rupee underground in First Room 8
+  standard: Eldin Volcano - Rupee underground in First Room 8
+  pretty: Eldin Volcano - Rupee underground in First Room 8
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Rupee underground in First Room 9
+  standard: Eldin Volcano - Rupee underground in First Room 9
+  pretty: Eldin Volcano - Rupee underground in First Room 9
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
 - name: Eldin Volcano - Chest after Crawlspace
   standard: Eldin Volcano - Chest after Crawlspace
   pretty: Eldin Volcano - Chest after Crawlspace

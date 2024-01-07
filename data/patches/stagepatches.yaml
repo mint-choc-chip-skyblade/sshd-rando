@@ -2670,6 +2670,108 @@ F200: # Eldin main area
       anglex: 0x4000
       angley: 0x8000
       anglez: 0x0000
+  
+  # Underground Rupee Stuff
+  - name: Move Underground Arc 1
+    type: oarcadd
+    oarc: MoundShovelB
+    destlayer: 0
+  - name: Move Underground Arc 1
+    type: oarcadd
+    oarc: PLMoleGlove
+    destlayer: 0
+  - name: Move Underground Arc 1
+    type: oarcadd
+    oarc: MoleGroundS
+    destlayer: 0
+  # 1st Room
+  - name: Move 1st Room InHole
+    type: objmove
+    id: 0xFC3F
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Move 1st Room Uground
+    type: objmove
+    id: 0xFC3E
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  # 1st Room: Move Underground Objects
+  - name: Move 1st Room Underground Rupee 1
+    type: objmove
+    id: 0xFC44
+    hardcoded_id: 0xFFF1
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Move 1st Room Underground Rupee 2
+    type: objmove
+    id: 0xFC45
+    hardcoded_id: 0xFFF2
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Move 1st Room Underground Rupee 3
+    type: objmove
+    id: 0xFC46
+    hardcoded_id: 0xFFF3
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Move 1st Room Underground Rupee 4
+    type: objmove
+    id: 0xFC49
+    hardcoded_id: 0xFFF4
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Move 1st Room Underground Rupee 5
+    type: objmove
+    id: 0xFC48
+    hardcoded_id: 0xFFF5
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Move 1st Room Underground Rupee 6
+    type: objmove
+    id: 0xFC47
+    hardcoded_id: 0xFFF6
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Move 1st Room Underground Rupee 7
+    type: objmove
+    id: 0xFC4A
+    hardcoded_id: 0xFFF7
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Move 1st Room Underground Rupee 8
+    type: objmove
+    id: 0xFC4B
+    hardcoded_id: 0xFFF8
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
+  - name: Move 1st Room Underground Rupee 9
+    type: objmove
+    id: 0xFC4C
+    hardcoded_id: 0xFFF9
+    layer: 4
+    destlayer: 0
+    room: 1
+    objtype: OBJ
 
   # Boko Base access
   - name: Add Shiekah Stone to Eldin

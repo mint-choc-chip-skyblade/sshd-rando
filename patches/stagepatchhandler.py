@@ -422,11 +422,14 @@ def object_add(bzs: dict, object_add: dict, nextid: int):
     for prop, value in obj.items():
         if prop in new_object:
             new_object[prop] = value
+
+            if prop == "id":
+                new_object["id"] = (new_object["id"] & ~0x3FF) | nextid
+        # Allow creating new objects that *need* a known id
+        elif prop == "hardcoded_id":
+            new_object["id"] = value
         else:
             patch_additional_properties(obj=new_object, prop=prop, value=value)
-
-    if "id" in new_object:
-        new_object["id"] = (new_object["id"] & ~0x3FF) | nextid
 
     # creates list for object types if don't already exist in bzs
     if layer is None:
@@ -481,6 +484,10 @@ def object_move(bzs: dict, object_move: dict, nextid: int):
     if obj is not None:
         object_type = object_move["objtype"].ljust(4)
         obj["id"] = (obj["id"] & ~0x3FF) | nextid
+
+        # Allow moving objects that *need* a specific id
+        if hardcoded_id := object_move.get("hardcoded_id"):
+            obj["id"] = hardcoded_id
 
         if not object_type in bzs["LAY "][f"l{destination_layer}"]:
             bzs["LAY "][f"l{destination_layer}"][object_type] = []

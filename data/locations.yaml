@@ -1546,6 +1546,62 @@
   Paths:
     - stage/F200/r1/l0/Item/19
 
+- name: Eldin Volcano - Rupee underground in First Room 1
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFFF1 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in First Room 2
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFFF2 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in First Room 3
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFFF3 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in First Room 4
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFFF4 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in First Room 5
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFFF5 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in First Room 6
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFFF6 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in First Room 7
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFFF7 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in First Room 8
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFFF8 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in First Room 9
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFFF9 # ids hardcoded in the objmove patches
+
+
+
 - name: Eldin Volcano - Chest after Crawlspace
   original_item: Red Rupee
   type:
