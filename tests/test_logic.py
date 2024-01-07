@@ -148,6 +148,7 @@ def test_traps_all_config() -> None:
 def test_traps_off_config() -> None:
     config_test("traps_off.yaml")
 
+
 def test_no_logic_config() -> None:
     config_test("no_logic.yaml")
 
