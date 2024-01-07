@@ -1643,6 +1643,97 @@
   Paths:
     - stage/F200/r2/l0/Item/102 #sceneflagID
 
+- name: Eldin Volcano - Rupee underground in Cliff 1
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFEF # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 2
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFEE # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 3
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFE4 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 4
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFED # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 5
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFEC # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 6
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFEB # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 7
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFE3 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 8
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFEA # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 9
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFE9 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 10
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFE8 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 11
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFE2 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 12
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFE7 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 13
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFE6 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 14
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFE5 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground in Cliff 15
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFFE1 # ids hardcoded in the objmove patches
+
+
 - name: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
   original_item: Red Rupee
   type:

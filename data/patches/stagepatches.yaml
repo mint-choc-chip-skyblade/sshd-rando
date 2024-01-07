@@ -2038,8 +2038,6 @@ F200: # Eldin main area
     layer: 1
     room: 0
     objtype: OBJ
-
-
   - name: Remove room 2 actors
     type: objdelete
     ids:
@@ -2086,18 +2084,13 @@ F200: # Eldin main area
 
   - name: Move Trial Gate
     type: objmove
-    id: 0x14AE
+    ids:
+      - 0x14AE # Trial Gate
+      - 0x14C0 # Butterflies
     layer: 2
     destlayer: 0
     room: 2
-    objtype: OBJ
-  - name: Move Trial Butterflies
-    type: objmove
-    id: 0x14C0
-    layer: 2
-    destlayer: 0
-    room: 2
-    objtype: STAG
+    objtypes: [OBJ, STAG]
   - name: Move Gossip Stone to layer 0
     type: objmove
     id: 0xFC97
@@ -2184,7 +2177,6 @@ F200: # Eldin main area
     destlayer: 0
     room: 1
     objtype: OBJ
-  # 1st Room: Move Underground Objects
   - name: Move 1st Room Underground Rupees
     type: objmove
     startid: 0xFC44
@@ -2203,32 +2195,78 @@ F200: # Eldin main area
     destlayer: 0
     room: 2
     objtype: OBJ
-  - name: Move before Bone Bridge Underground Blocks 1
+  - name: Move before Bone Bridge Underground Blocks
     type: objmove
+    ids:
+      - 0xFCE1
+      - 0xFCE2
+      - 0xFCE3
     startid: 0xFCD9
     endid: 0xFCDE
     layer: 4
     destlayer: 0
     room: 2
     objtype: OBJ
-  - name: Move before Bone Bridge Underground Blocks 2
+  - name: Move before Bone Bridge Underground Rupees
     type: objmove
-    startid: 0xFCE1
-    endid: 0xFCE3
+    ids:
+      - 0xFCE0
+      - 0xFCE4
     layer: 4
     destlayer: 0
     room: 2
     objtype: OBJ
-  - name: Move before Bone Bridge Underground Rupee 1
+  # In Cliff
+  - name: Move in Cliff Uground, InHole, and Moldorm
     type: objmove
-    id: 0xFCE0
+    ids:
+      - 0xFCBF # Uground
+      - 0xFCC1 # InHole
+      - 0xFCFE # Moldorm
     layer: 4
     destlayer: 0
     room: 2
     objtype: OBJ
-  - name: Move before Bone Bridge Underground Rupee 2
+  - name: Move in Cliff DieTag
     type: objmove
-    id: 0xFCE4
+    id: 0xFD14
+    layer: 4
+    destlayer: 0
+    room: 2
+    objtype: STAG
+  - name: Move in Cliff underground Spike Gates
+    type: objmove
+    startid: 0xFCFF
+    endid: 0xFD02
+    layer: 4
+    destlayer: 0
+    room: 2
+    objtype: OBJ
+  - name: Move in Cliff Underground Blocks
+    type: objmove
+    ids:
+      - 0xFCD6
+      - 0xFCD7
+      - 0xFCD8
+      - 0xFCF9
+      - 0xFCFA
+    startid: 0xFCE6
+    endid: 0xFCED
+    layer: 4
+    destlayer: 0
+    room: 2
+    objtype: OBJ
+  - name: Move in Cliff Rupees
+    type: objmove
+    # ids are added first
+    ids: # -> 0xFFE1-4
+      - 0xFCE5
+      - 0xFCFB
+      - 0xFCFC
+      - 0xFCFD
+    startid: 0xFCEE # -> 0xFFE5+
+    endid: 0xFCF8
+    hardcoded_id: 0xFFE1
     layer: 4
     destlayer: 0
     room: 2
