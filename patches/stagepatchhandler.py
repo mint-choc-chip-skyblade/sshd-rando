@@ -387,10 +387,11 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
         print(f"ERROR: unsupported object to patch {obj}")
 
 
-def object_add(bzs: dict, object_add: dict, nextid: int):
+def object_add(bzs: dict, object_add: dict, nextid: int) -> int:
     layer = object_add.get("layer", None)
     object_type = object_add["objtype"].ljust(4)
     obj = object_add["object"]
+    return_nextid_increment = 0
 
     # populate with default object as a base
     if object_type in ["SOBS", "SOBJ", "STAS", "STAG", "SNDT"]:
@@ -405,7 +406,7 @@ def object_add(bzs: dict, object_add: dict, nextid: int):
         new_object = DEFAULT_AREA.copy()
     else:
         print(f"ERROR: Unknown objtype: {object_type}")
-        return
+        return return_nextid_increment
 
     # check index to verify new index is the next available index
     if "index" in obj:
@@ -416,7 +417,7 @@ def object_add(bzs: dict, object_add: dict, nextid: int):
 
         if len(object_list) != obj["index"]:
             print(f"ERROR: wrong index on added object: {json.dumps(object_add)}")
-            return
+            return return_nextid_increment
 
     # populate provided properties
     for prop, value in obj.items():
@@ -425,6 +426,7 @@ def object_add(bzs: dict, object_add: dict, nextid: int):
 
             if prop == "id":
                 new_object["id"] = (new_object["id"] & ~0x3FF) | nextid
+                return_nextid_increment += 1
         # Allow creating new objects that *need* a known id
         elif prop == "hardcoded_id":
             new_object["id"] = value
@@ -455,6 +457,7 @@ def object_add(bzs: dict, object_add: dict, nextid: int):
             objn.append(obj["name"])
 
     object_list.append(new_object)
+    return return_nextid_increment
 
 
 def object_delete(bzs: dict, object_delete: dict):
@@ -477,30 +480,65 @@ def object_patch(bzs: dict, object_patch: dict):
                 patch_additional_properties(obj=obj, prop=prop, value=value)
 
 
-def object_move(bzs: dict, object_move: dict, nextid: int):
+def object_move(bzs: dict, object_move: dict, nextid: int) -> int:
     obj = get_entry_from_bzs(bzs=bzs, object_def=object_move, remove=True)
     destination_layer = object_move["destlayer"]
+    return_nextid_increment = 0
 
-    if obj is not None:
-        object_type = object_move["objtype"].ljust(4)
+    if obj is None:
+        print(f"ERROR: Cannot find object to move: {object_move}")
+        return return_nextid_increment
+
+    object_type = object_move["objtype"].ljust(4)
+
+    # Allow moving objects that *need* a specific id
+    if hardcoded_id := object_move.get("hardcoded_id"):
+        obj["id"] = hardcoded_id
+    else:
         obj["id"] = (obj["id"] & ~0x3FF) | nextid
+        return_nextid_increment += 1
 
-        # Allow moving objects that *need* a specific id
-        if hardcoded_id := object_move.get("hardcoded_id"):
-            obj["id"] = hardcoded_id
+    if not object_type in bzs["LAY "][f"l{destination_layer}"]:
+        bzs["LAY "][f"l{destination_layer}"][object_type] = []
 
-        if not object_type in bzs["LAY "][f"l{destination_layer}"]:
-            bzs["LAY "][f"l{destination_layer}"][object_type] = []
+    bzs["LAY "][f"l{destination_layer}"][object_type].append(obj)
 
-        bzs["LAY "][f"l{destination_layer}"][object_type].append(obj)
+    if not "OBJN" in bzs["LAY "][f"l{destination_layer}"]:
+        bzs["LAY "][f"l{destination_layer}"]["OBJN"] = []
 
-        if not "OBJN" in bzs["LAY "][f"l{destination_layer}"]:
-            bzs["LAY "][f"l{destination_layer}"]["OBJN"] = []
+    objn = bzs["LAY "][f"l{destination_layer}"]["OBJN"]
 
-        objn = bzs["LAY "][f"l{destination_layer}"]["OBJN"]
+    if not obj["name"] in objn:
+        objn.append(obj["name"])
 
-        if not obj["name"] in objn:
-            objn.append(obj["name"])
+    return return_nextid_increment
+
+
+def object_batch_move(bzs: dict, object_batch_move: dict, nextid: int) -> int:
+    current_obj_id = object_batch_move["startid"]
+    end_obj_id = object_batch_move["endid"]
+    hardcoded_id = object_batch_move.get("hardcoded_id")
+    return_nextid_increment = 0
+
+    if current_obj_id > end_obj_id:
+        print(
+            f"ERROR: cannot perform objbatchmove because startid ({current_obj_id}) is bigger than endid ({end_obj_id})."
+        )
+        return return_nextid_increment
+
+    while current_obj_id <= end_obj_id:
+        object_to_move = object_batch_move
+        object_to_move["id"] = current_obj_id
+
+        if hardcoded_id:
+            object_to_move["hardcoded_id"] = hardcoded_id
+            hardcoded_id += 1
+
+        return_nextid_increment += object_move(bzs, object_to_move, nextid)
+
+        current_obj_id += 1
+
+    return return_nextid_increment
 
 
 def layer_override(bzs: dict, patch: dict):
@@ -593,7 +631,7 @@ def patch_and_write_stage(
 
             for obj_patch in filter(
                 lambda patch: patch["type"]
-                in ["objadd", "objdelete", "objpatch", "objmove"],
+                in ["objadd", "objdelete", "objpatch", "objmove", "objbatchmove"],
                 patches,
             ):
                 object_patches.append(obj_patch)
@@ -646,23 +684,27 @@ def patch_and_write_stage(
 
                         for patch in patches_for_current_room:
                             if patch["type"] == "objadd":
-                                object_add(
+                                nextid += object_add(
                                     bzs=room_bzs,
                                     object_add=patch,
                                     nextid=nextid,
                                 )
-                                nextid += 1
                             elif patch["type"] == "objdelete":
                                 object_delete(bzs=room_bzs, object_delete=patch)
                             elif patch["type"] == "objpatch":
                                 object_patch(bzs=room_bzs, object_patch=patch)
                             elif patch["type"] == "objmove":
-                                object_move(
+                                nextid += object_move(
                                     bzs=room_bzs,
                                     object_move=patch,
                                     nextid=nextid,
                                 )
-                                nextid += 1
+                            elif patch["type"] == "objbatchmove":
+                                nextid += object_batch_move(
+                                    bzs=room_bzs,
+                                    object_batch_move=patch,
+                                    nextid=nextid,
+                                )
                             else:
                                 print(
                                     f"ERROR: unsupported patch type {patch['type']} in stage {stage} layer {layer} room {roomid} patches"
