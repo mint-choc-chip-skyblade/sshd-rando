@@ -65,6 +65,11 @@ def parse_requirement_string(
     # Get a new copy of an empty requirement
     req = copy.deepcopy(Requirement())
 
+    # If we're not considering logic, return nothing
+    if world.setting("logic_rules") == "no_logic":
+        req.type = RequirementType.NOTHING
+        return req
+
     assert len(req.args) == 0
 
     macros = world.macros

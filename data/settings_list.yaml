@@ -3,16 +3,14 @@
 ############################
 
 - name: logic_rules
-  default_option: glitchless
+  default_option: 'on'
   pretty_name: Logic Rules
   pretty_options:
-    - Glitchless
-    - Glitched
+    - 'On'
     - No Logic
     - Vanilla
   options:
-    - glitchless:                      "Items are placed so that you do not need to perform any glitches in order to beat the seed."
-    - glitched:                        "Items are placed so that you may be expected to perform any and all glitches in order to beat the seed."
+    - 'on':                            "Logic is considered when placing Items. Generated seeds will always be beatable. Tricks and Glitches can be enabled for consideration below."
     - no_logic:                        "Maximize randomization, logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
     - vanilla:                         "Items are placed in their vanilla locations."
 
