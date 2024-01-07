@@ -10,103 +10,63 @@ D000: # Waterfall Cave
 
 F000: # Skyloft
   # F000 oarcadds
-  - name: Trial
+  - name: Add Trial Arcs
     type: oarcadd
-    oarc: PLHarpPlay
+    oarc:
+      - PLHarpPlay
+      - PLSwordStick
+      - SirenEntrance
     destlayer: 0
-  - name: Trial
+  - name: Owlan on layer 6 Arcs
     type: oarcadd
-    oarc: SirenEntrance
-    destlayer: 0
-  - name: Trial
-    type: oarcadd
-    oarc: PLSwordStick
-    destlayer: 0
-  - name: Owlan on layer 6 Model
-    type: oarcadd
-    oarc: ShinkanA
+    oarc:
+      - ShinkanA
+      - Shinkan_motion
     destlayer: 6
-  - name: Owlan on layer 6 Model 2
+  - name: Horwell on layer 4 Arc
     type: oarcadd
-    oarc: Shinkan_motion
-    destlayer: 6
-  - name: Horwell Model on layer 4
-    type: oarcadd
-    oarc: ShinkanB
+    oarc:
+      - ShinkanB
     destlayer: 4
-  - name: Horwell Model on layer 6
+  - name: Horwell on layer 6 Arc
     type: oarcadd
-    oarc: ShinkanB
+    oarc:
+      - ShinkanB
     destlayer: 6
 
   # F000 oarcdeletes
-  - name: unnecessary oarcs
+  - name: Remove oarcs layer 0
     type: oarcdelete
-    oarc: GetGaragara
+    oarc:
+      - GetGaragara
+      - PutGaragara
+      - MoldoGut_Baby # baby moldararch, is probably here because of the dust pile but not needed
     layer: 0
-  - name: unnecessary oarcs
+  - name: Remove people on bridge # probably unnecessary
     type: oarcdelete
-    oarc: PutGaragara
-    layer: 0
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: MoldoGut_Baby # baby moldararch, is probably here because of the dust pile but not needed
-    layer: 0
-  - name: delete people on bridge 1
-    type: oarcdelete
-    oarc: SenpaiAMotherLOD
+    oarc:
+      - DouguyaMotherLOD
+      - JunkMotherLOD
+      - SenpaiAMotherLOD
     layer: 1
-  - name: delete people on bridge 2
+  - name: Remove oarcs layer 4
     type: oarcdelete
-    oarc: DouguyaMotherLOD
-    layer: 1
-  - name: delete people on bridge 3
-    type: oarcdelete
-    oarc: JunkMotherLOD
-    layer: 1
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: SoMother # wryna is never outside anymore
+    oarc:
+      - GetShieldHylia
+      - GetShieldWood
+      - GetSozaiN
+      - GetSozaiO
+      - PLHarpPlay
+      - PLSwordStick
+      - SirenEntrance
+      - SoMother # wryna is never outside anymore
     layer: 4
-  - name: Trialarcremove
+  - name: Remove oarcs layer 6
     type: oarcdelete
-    oarc: PLHarpPlay
-    layer: 4
-  - name: Trialarcremove
-    type: oarcdelete
-    oarc: SirenEntrance
-    layer: 4
-  - name: Trialarcremove
-    type: oarcdelete
-    oarc: PLSwordStick
-    layer: 4
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: GetSozaiN
-    layer: 4
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: GetSozaiO
-    layer: 4
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: GetShieldHylia
-    layer: 4
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: GetShieldWood
-    layer: 4
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: GetSozaiN
-    layer: 6
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: GetSozaiO
-    layer: 6
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: SoMother # wryna is never outside anymore
+    oarc:
+      - GetSozaiN
+      - GetSozaiO
+      - SoMother # wryna is never outside anymore
     layer: 6
 
   # F000 objadds
@@ -587,7 +547,7 @@ F000: # Skyloft
       posx: 5145
       posy: 1940
       posz: -5265
-  
+
   - name: Fledge for Arrow minigame
     type: objpatch
     id: 0xFDD8
@@ -648,7 +608,7 @@ F000: # Skyloft
     object:
       trigstoryfid: -1
       untrigstoryfid: -1
-  
+
   - name: Fix Owlan disappearing after Harp
     type: objpatch
     room: 0
@@ -1161,7 +1121,7 @@ F001r:
     objtype: OBJS
     object:
       anglex: 65025 # from 0x4301 -> 0xFE01; don't have an unlock sceneflag
-  
+
   # Move Loose Crystal checks to night layers
   - name: Raise crystal in Link's room
     type: objpatch
@@ -1449,37 +1409,21 @@ F020: # The Sky
       anglez: 0
       id: 0x4269
       name: Tubo
-  - name: unnecessary oarcs
+  - name: Remove oarcs
     type: oarcdelete
-    oarc: GetMedal
+    oarc:
+      - GetMedal
+      - GetPouchB
+      - GetSpareBombBagA
+      - GetSpareQuiverA
+      - GetSpareSeedA
     layer: 0
-  - name: unnecessary oarcs
+  - name: Remove unused Scrapper related oarcs
     type: oarcdelete
-    oarc: GetPouchB
-    layer: 0
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: GetSpareSeedA
-    layer: 0
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: GetSpareQuiverA
-    layer: 0
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: GetSpareBombBagA
-    layer: 0
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: WaterPotWater
-    layer: 2
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: Waterpot
-    layer: 2
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: Pinwheel
+    oarc:
+      - Pinwheel
+      - WaterPotWater
+      - Waterpot
     layer: 2
   - name: Fi text about goddess cubes
     type: objdelete
@@ -1582,25 +1526,14 @@ F020: # The Sky
     objtype: OBJ
 
 F023: # Thunderhead
-  - name: Remove unnecessary arc
+  - name: Remove oarc
     type: oarcdelete
-    oarc: GetSpareBombBagA
-    layer: 0
-  - name: Remove unnecessary arc
-    type: oarcdelete
-    oarc: GetSpareQuiverA
-    layer: 0
-  - name: Remove unnecessary arc
-    type: oarcdelete
-    oarc: GetSpareSeedA
-    layer: 0
-  - name: Remove unnecessary arc
-    type: oarcdelete
-    oarc: GetTerryCage
-    layer: 0
-  - name: unnecessary oarcs
-    type: oarcdelete
-    oarc: Pinwheel
+    oarc:
+      - GetSpareBombBagA
+      - GetSpareQuiverA
+      - GetSpareSeedA
+      - GetTerryCage
+      - Pinwheel
     layer: 0
   - name: Strich l1
     type: objadd
@@ -1620,7 +1553,8 @@ F023: # Thunderhead
       name: NpcIcgK
   - name: Stritch model
     type: oarcadd
-    oarc: KobunB
+    oarc:
+      - KobunB
     destlayer: 1
   - name: Void out during Bug Heaven minigame
     type: objadd
@@ -1680,7 +1614,8 @@ F023: # Thunderhead
     objtype: OBJ
   - name: Gossip Stone
     type: oarcadd
-    oarc: GossipStone
+    oarc:
+      - GossipStone
     destlayer: 0
   - name: Remove confounding propeller dowsing
     type: objdelete
@@ -1813,17 +1748,13 @@ F100: # Faron Woods
     object:
       storyflag: -1
       play_cutscene: -1
-  - name: Trial
+  - name: Add Arcs
     type: oarcadd
-    oarc: PLHarpPlay
-    destlayer: 0
-  - name: Trial
-    type: oarcadd
-    oarc: SirenEntrance
-    destlayer: 0
-  - name: Trial
-    type: oarcadd
-    oarc: PLSwordStick
+    oarc:
+      - PLHarpPlay
+      - PLSwordStick
+      - SirenEntrance
+      - SwrdPrj
     destlayer: 0
   - name: Trial # trial object
     type: objmove
@@ -1839,10 +1770,6 @@ F100: # Faron Woods
     destlayer: 0
     room: 0
     objtype: STAG
-  - name: Lake floria door
-    type: oarcadd
-    oarc: SwrdPrj
-    destlayer: 0
   - name: Lake floria door
     type: objmove
     id: 0xFEFF
@@ -1905,7 +1832,8 @@ F100: # Faron Woods
     objtype: OBJ
   - name: Yerbal
     type: oarcadd
-    oarc: ForestManWiz
+    oarc:
+      - ForestManWiz
     destlayer: 1
   - name: Add back map x icon for Yerbal
     type: objmove
@@ -1999,7 +1927,8 @@ F100_1: # Great Tree
   - name: Waterdragon in Great Tree
     type: oarcadd
     destlayer: 0
-    oarc: Waterdragon
+    oarc:
+      - Waterdragon
   - name: Add WaterDragon to Inside Great Tree
     type: objadd
     layer: 0
@@ -2504,17 +2433,27 @@ F200: # Eldin main area
     layer: 1
     room: 4
     objtype: OBJ
-  - name: Trial
+  - name: Add Arcs
     type: oarcadd
-    oarc: PLHarpPlay
-    destlayer: 0
-  - name: Trial
-    type: oarcadd
-    oarc: SirenEntrance
-    destlayer: 0
-  - name: Trial
-    type: oarcadd
-    oarc: PLSwordStick
+    oarc:
+      - GossipStone
+      # Underground stuff
+      - MoldWorm
+      - MoleBlock
+      - MoleGroundLn
+      - MoleGroundMn
+      - MoleGroundS
+      - MoleShutter
+      - MoundShovelB
+      - PLMoleGlove
+      # Trial stuff
+      - PLHarpPlay
+      - PLSwordStick
+      - SirenEntrance
+      # Post Boko Base stuff
+      - FWRockB
+      - Ph
+      - PRing
     destlayer: 0
   - name: Trial # trial object
     type: objmove
@@ -2549,10 +2488,6 @@ F200: # Eldin main area
     destlayer: 0
     room: 4
     objtype: OBJ
-  - name: Gossip Stone
-    type: oarcadd
-    oarc: GossipStone
-    destlayer: 0
   - name: CS after draining lava for key piece
     type: objdelete
     id: 0x14CC
@@ -2670,40 +2605,8 @@ F200: # Eldin main area
       anglex: 0x4000
       angley: 0x8000
       anglez: 0x0000
-  
+
   # Underground Rupee Stuff
-  - name: Move Underground Arc 1
-    type: oarcadd
-    oarc: MoldWorm
-    destlayer: 0
-  - name: Move Underground Arc 2
-    type: oarcadd
-    oarc: MoleBlock
-    destlayer: 0
-  - name: Move Underground Arc 3
-    type: oarcadd
-    oarc: MoleGroundLn
-    destlayer: 0
-  - name: Move Underground Arc 4
-    type: oarcadd
-    oarc: MoleGroundMn
-    destlayer: 0
-  - name: Move Underground Arc 5
-    type: oarcadd
-    oarc: MoleGroundS
-    destlayer: 0
-  - name: Move Underground Arc 6
-    type: oarcadd
-    oarc: MoleShutter
-    destlayer: 0
-  - name: Move Underground Arc 7
-    type: oarcadd
-    oarc: MoundShovelB
-    destlayer: 0
-  - name: Move Underground Arc 8
-    type: oarcadd
-    oarc: PLMoleGlove
-    destlayer: 0
   # 1st Room
   - name: Move 1st Room Uground and InHole
     type: objbatchmove
@@ -2806,12 +2709,7 @@ F200: # Eldin main area
       angley: 9200
       anglez: 0
       entrance_id: 5
-  
-  # Post Boko Base Platforms
-  - name: Platform arc
-    type: oarcadd
-    destlayer: 0
-    oarc: FWRockB
+
   # Lower Eldin StreamTs
   # For some reason, moving the StreamT objects to layer 0
   # makes them not behave correctly? These angle patches
@@ -3001,15 +2899,6 @@ F200: # Eldin main area
     destlayer: 0
     room: 4
     objtype: SNDT
-  # Add Peahat arc
-  - name: Peahat arc
-    type: oarcadd
-    destlayer: 0
-    oarc: Ph
-  - name: Peahat ring arc
-    type: oarcadd
-    destlayer: 0
-    oarc: PRing
   # Move Peahats
   - name: Move peahat 1
     type: objmove
@@ -3269,7 +3158,8 @@ F201_4: # Volcano Waterfall
 F202: # Bokoblin Base
   - name: Gossip Stone
     type: oarcadd
-    oarc: GossipStone
+    oarc:
+      - GossipStone
     destlayer: 0
   - name: Add Shiekah Stone in Boko Base to Prison
     type: objadd
@@ -3640,7 +3530,7 @@ F221: # Fire Dragon Room
     room: 0
     layer: 0
     objtype: STAG
-    
+
 F300: # Lanayru Desert
   - name: Layer override
     type: layeroverride
@@ -4397,7 +4287,8 @@ F301_4: # Shipyard
     objtype: OBJ
   - name: Gossip Stone
     type: oarcadd
-    oarc: GossipStone
+    oarc:
+      - GossipStone
     destlayer: 0
 
 F301_5: # Skipper's Shack
@@ -4648,13 +4539,11 @@ F303: # Lanayru Caves
       id: 0x4269
       name: Tubo
   # Add oarcs
-  - name: Add Goron_motion
+  - name: Add Goron Arcs
     type: oarcadd
-    oarc: Goron_motion
-    destlayer: 0
-  - name: Add GoronD
-    type: oarcadd
-    oarc: GoronD
+    oarc:
+      - GoronD
+      - Goron_motion
     destlayer: 0
   # Golo
   - name: Move Golo out of the Way
@@ -4854,7 +4743,7 @@ F402: # Sealed Temple
         night: 0
         layer: 4
       # - story_flag: 13 # FS beaten
-      #   night: 0 
+      #   night: 0
       #   layer: 3
       - story_flag: 140 # groose lands in faron after harp
         night: 0
@@ -4963,7 +4852,7 @@ F402: # Sealed Temple
     objtype: SCEN
     object:
       layer: 0
-  
+
   - name: Remove Goddess Statue falling down storyflag
     type: objpatch
     room: 2
@@ -5312,7 +5201,7 @@ D003_3: # Sky Keep Wisdom Room
     override:
       - story_flag: -1
         night: 0
-        layer: 1 # always use layer 1, 
+        layer: 1 # always use layer 1,
   - name: Fi text
     type: objdelete
     id: 0xFC1B
@@ -5607,7 +5496,8 @@ D100: # Skyview Temple
     objtype: OBJ
   - name: Eyes
     type: oarcadd
-    oarc: SwitchEye
+    oarc:
+      - SwitchEye
     destlayer: 0
 
   # Eye switches
@@ -5668,7 +5558,7 @@ D100: # Skyview Temple
     destlayer: 0
     room: 4
     objtype: OBJ
-  
+
   ## 3 eyes
   - name: Move Left Room Eyes to layer 0
     type: objmove
@@ -5873,7 +5763,7 @@ B100_1: # Skyview Spring
     layer: 0
     room: 0
     objtype: OBJ
-    object: 
+    object:
       params1: 0xFFFF0369 # 0xFFFF, 03 = scen_link 3, 69 = scene flag 105 (vanilla)
   - name: Fi text after skyview CS
     type: objpatch
@@ -6972,6 +6862,13 @@ D301: # Sandship A (main)
       anglez: 0
       id: 0xFC50
       name: Bombf
+  - name: Add Heart Container and Crest Arcs to normal layer
+    type: oarcadd
+    destlayer: 1
+    oarc:
+      - GoddessSymbolSc
+      - PutHeartUtuwa
+      - SwordCandle
   - name: Heart Container on normal layer
     type: objmove
     layer: 9
@@ -6979,10 +6876,6 @@ D301: # Sandship A (main)
     room: 0
     objtype: OBJ
     id: 0xFC53
-  - name: Heart Container on normal layer
-    type: oarcadd
-    destlayer: 1
-    oarc: PutHeartUtuwa
   - name: Candle on layer 1
     type: objmove
     layer: 9
@@ -6990,14 +6883,6 @@ D301: # Sandship A (main)
     room: 0
     objtype: OBJ
     id: 0xFC54
-  - name: candle arcs
-    type: oarcadd
-    destlayer: 1
-    oarc: GoddessSymbolSc
-  - name: candle arcs
-    type: oarcadd
-    destlayer: 1
-    oarc: SwordCandle
   - name: Fi text after hitting Sandship Crest
     type: objadd
     room: 0

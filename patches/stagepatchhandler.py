@@ -922,10 +922,11 @@ class StagePatchHandler:
     def set_oarc_add_remove_from_patches(self):
         for stage, stage_patches in self.stage_patches.items():
             for patch in stage_patches:
-                if patch["type"] == "oarcadd":
-                    self.stage_oarc_add[(stage, patch["destlayer"])].add(patch["oarc"])
-                elif patch["type"] == "oarcdelete":
-                    self.stage_oarc_remove[(stage, patch["layer"])].add(patch["oarc"])
+                for oarc in patch.get("oarc", []):
+                    if patch["type"] == "oarcadd":
+                        self.stage_oarc_add[(stage, patch["destlayer"])].add(oarc)
+                    elif patch["type"] == "oarcdelete":
+                        self.stage_oarc_remove[(stage, patch["layer"])].add(oarc)
 
     def add_oarc_for_check(self, stage: str, layer: int, oarc: str):
         self.stage_oarc_add[(stage, layer)].add(oarc)
