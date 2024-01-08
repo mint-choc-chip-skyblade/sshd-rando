@@ -52,7 +52,7 @@ extern "C" {
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
 #[no_mangle]
-pub fn fix_item_get_under_water() {
+pub fn fix_item_get() {
     unsafe {
         let mut item_animation_index: u8;
 
@@ -72,14 +72,20 @@ pub fn fix_item_get_under_water() {
             return;
         }
 
-        // If in water, allow immediate item gets
-        if ((*PLAYER_PTR).action_flags >> 18) & 0x1 == 1 {
+        let current_action = (*PLAYER_PTR).current_action;
+        let item_being_used = (*PLAYER_PTR).item_being_used;
+
+        // If in water, using mitts, or sliding, allow immediate item gets
+        if ((*PLAYER_PTR).action_flags >> 18) & 0x1 == 1
+            || item_being_used == player::ITEM_BEING_USED::MITTS
+            || current_action == player::PLAYER_ACTIONS::SLIDING
+        {
             // debug::debug_print_num("action_flags: ", (*PLAYER_PTR).action_flags);
-            asm!("mov w25, #0"); // allow collecting items under water
+            asm!("mov w25, #0"); // allow collecting items in non-vanilla ways
 
             // If should be a big item get animation, make it a small one
-            // Big item gets don't work properly under water :(
-            if item_animation_index == 1 {
+            // Big item gets don't work properly under water or underground :(
+            if item_animation_index == 1 && current_action != player::PLAYER_ACTIONS::SLIDING {
                 asm!("mov w8, #0");
             }
         }
