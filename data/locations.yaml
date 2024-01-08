@@ -1796,6 +1796,66 @@
   textfile: 004-Object
   textindex: 14
 
+- name: Eldin Volcano - Rupee underground West of Earth Temple 1
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFFDA # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground West of Earth Temple 2
+  original_item: Rupoor
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFFD1 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground West of Earth Temple 3
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFFD3 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground West of Earth Temple 4
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFFD2 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground West of Earth Temple 5
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFFD7 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground West of Earth Temple 6
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFFD9 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground West of Earth Temple 7
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFFD4 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground West of Earth Temple 8
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFFD5 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground West of Earth Temple 9
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFFD6 # ids hardcoded in the objmove patches
+
+- name: Eldin Volcano - Rupee underground West of Earth Temple 10
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFFD8 # ids hardcoded in the objmove patches
+
 - name: Upper Eldin Cave - Gossip Stone
   original_item: Nothing
   type: Hint Location

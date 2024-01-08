@@ -1955,6 +1955,7 @@ F200: # Eldin main area
       - MoldWorm
       - MoleBlock
       - MoleGroundLn
+      - MoleGroundMl
       - MoleGroundMn
       - MoleGroundS
       - MoleShutter
@@ -2325,6 +2326,49 @@ F200: # Eldin main area
   #   destlayer: 0
   #   room: 2
   #   objtype: OBJ
+  # West of Earth Temple
+  - name: Move West of Earth Temple Uground, InHole, and Bombf
+    type: objmove
+    ids:
+      - 0xFC8B # Uground
+      - 0xFC8C # InHole
+      - 0x249D # Bombf
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Move West of Earth Temple CBomSld
+    type: objmove
+    id: 0xFCB5
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: STAG
+  - name: Move West of Earth Temple Underground Blocks 1
+    type: objmove
+    startid: 0xFCA8
+    endid: 0xFCAF
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Move West of Earth Temple Underground Blocks 2
+    type: objmove
+    startid: 0xFC97
+    endid: 0xFC9C
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: OBJ
+  - name: Move West of Earth Temple Rupees
+    type: objmove
+    startid: 0x249E
+    endid: 0x24A7
+    hardcoded_id: 0xFFD1
+    layer: 4
+    destlayer: 0
+    room: 4
+    objtype: OBJ
 
   # Boko Base access
   - name: Add Shiekah Stone to Eldin
