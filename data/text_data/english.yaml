@@ -2951,10 +2951,40 @@
   pretty: Lanayru Mine - Chest near First Timeshift Stone
   cryptic: a <r<chest passed an automatic door>>
 
-- name: Lanayru Mine - Chest behind Statue
-  standard: Lanayru Mine - Chest behind Statue
-  pretty: Lanayru Mine - Chest behind Statue
+- name: Lanayru Mine - Rupee on Southeast Conveyor 1
+  standard: Lanayru Mine - Rupee on Southeast Conveyor 1
+  pretty: Lanayru Mine - Rupee on Southeast Conveyor 1
+  cryptic: a <r<high rupee in a mine>>
+
+- name: Lanayru Mine - Rupee on Southeast Conveyor 2
+  standard: Lanayru Mine - Rupee on Southeast Conveyor 2
+  pretty: Lanayru Mine - Rupee on Southeast Conveyor 2
+  cryptic: a <r<high rupee in a mine>>
+
+- name: Lanayru Mine - Rupee on Southwest Conveyor 1
+  standard: Lanayru Mine - Rupee on Southwest Conveyor 1
+  pretty: Lanayru Mine - Rupee on Southwest Conveyor 1
+  cryptic: a <r<high rupee in a mine>>
+
+- name: Lanayru Mine - Rupee on Southwest Conveyor 2
+  standard: Lanayru Mine - Rupee on Southwest Conveyor 2
+  pretty: Lanayru Mine - Rupee on Southwest Conveyor 2
+  cryptic: a <r<high rupee in a mine>>
+
+- name: Lanayru Mine - Chest behind Northeast Statue
+  standard: Lanayru Mine - Chest behind Northeast Statue
+  pretty: Lanayru Mine - Chest behind Northeast Statue
   cryptic: a <r<chest hidden behind a falling statue>>
+
+- name: Lanayru Mine - Rupee behind Northeast Statue
+  standard: Lanayru Mine - Rupee behind Northeast Statue
+  pretty: Lanayru Mine - Rupee behind Northeast Statue
+  cryptic: a <r<rupee hidden behind a falling statue>>
+
+- name: Lanayru Mine - Rupee behind Southwest Statue
+  standard: Lanayru Mine - Rupee behind Southwest Statue
+  pretty: Lanayru Mine - Rupee behind Southwest Statue
+  cryptic: a <r<rupee hidden behind a falling statue>>
 
 - name: Lanayru Mine - Chest at the End of Mine
   standard: Lanayru Mine - Chest at the End of Mine
@@ -2996,15 +3026,45 @@
   pretty: Lanayru Desert - Chest near Party Wheel
   cryptic: a <r<chest surrounded by a void>>
 
-- name: Lanayru Desert - Chest near Rescue Caged Robot
-  standard: Lanayru Desert - Chest near Rescue Caged Robot
-  pretty: Lanayru Desert - Chest near Rescue Caged Robot
-  cryptic: a <r<chest near a captive>>
+- name: Lanayru Desert - Chest near Caged Robot
+  standard: Lanayru Desert - Chest near Caged Robot
+  pretty: Lanayru Desert - Chest near Caged Robot
+  cryptic: a <r<chest near a scared robot>>
+
+- name: Lanayru Desert - Rupee above Caged Robot 1
+  standard: Lanayru Desert - Rupee above Caged Robot 1
+  pretty: Lanayru Desert - Rupee above Caged Robot 1
+  cryptic: a <r<rupee above a scared robot>>
+
+- name: Lanayru Desert - Rupee above Caged Robot 2
+  standard: Lanayru Desert - Rupee above Caged Robot 2
+  pretty: Lanayru Desert - Rupee above Caged Robot 2
+  cryptic: a <r<rupee above a scared robot>>
 
 - name: Lanayru Desert - Rescue Caged Robot
   standard: Lanayru Desert - Rescue Caged Robot
   pretty: Lanayru Desert - Rescue Caged Robot
   cryptic: <r<rescuing a scared robot>>
+
+- name: Lanayru Desert - Rupee behind South Statue near Caged Robot
+  standard: Lanayru Desert - Rupee behind South Statue near Caged Robot
+  pretty: Lanayru Desert - Rupee behind South Statue near Caged Robot
+  cryptic: a <r<guarded rupee near a scared robot>>
+
+- name: Lanayru Desert - Rupee behind West Statue near Caged Robot
+  standard: Lanayru Desert - Rupee behind West Statue near Caged Robot
+  pretty: Lanayru Desert - Rupee behind West Statue near Caged Robot
+  cryptic: a <r<guarded rupee near a scared robot>>
+
+- name: Lanayru Desert - Rupee behind East Statue before Sand Oasis
+  standard: Lanayru Desert - Rupee behind East Statue before Sand Oasis
+  pretty: Lanayru Desert - Rupee behind East Statue before Sand Oasis
+  cryptic: a <r<guarded rupee before a sandy paradise>>
+
+- name: Lanayru Desert - Rupee behind West Statue before Sand Oasis
+  standard: Lanayru Desert - Rupee behind West Statue before Sand Oasis
+  pretty: Lanayru Desert - Rupee behind West Statue before Sand Oasis
+  cryptic: a <r<guarded rupee before a sandy paradise>>
 
 - name: Lanayru Desert - Chest on Platform near Fire Node
   standard: Lanayru Desert - Chest on Platform near Fire Node
@@ -3019,7 +3079,7 @@
 - name: Lanayru Desert - Chest near Sand Oasis
   standard: Lanayru Desert - Chest near Sand Oasis
   pretty: Lanayru Desert - Chest near Sand Oasis
-  cryptic: a <r<chest above quicksand>>
+  cryptic: a <r<chest above a sandy paradise>>
 
 - name: Lanayru Desert - Chest on top of Lanayru Mining Facility
   standard: Lanayru Desert - Chest on top of Lanayru Mining Facility
@@ -3496,32 +3556,32 @@
 - name: Lanayru Mining Facility - Left Front Rupee behind Statue
   standard: Lanayru Mining Facility - Left Front Rupee behind Statue
   pretty: Lanayru Mining Facility - Left Front Rupee behind Statue
-  cryptic: rupee behind a <r<statue in a sandy temple>>
+  cryptic: a <r<guarded rupee in a sandy temple>>
 
 - name: Lanayru Mining Facility - Left Middle Rupee behind Statue
   standard: Lanayru Mining Facility - Left Middle Rupee behind Statue
   pretty: Lanayru Mining Facility - Left Middle Rupee behind Statue
-  cryptic: rupee behind a <r<statue in a sandy temple>>
+  cryptic: a <r<guarded rupee in a sandy temple>>
 
 - name: Lanayru Mining Facility - Left Back Rupee behind Statue
   standard: Lanayru Mining Facility - Left Back Rupee behind Statue
   pretty: Lanayru Mining Facility - Left Back Rupee behind Statue
-  cryptic: rupee behind a <r<statue in a sandy temple>>
+  cryptic: a <r<guarded rupee in a sandy temple>>
 
 - name: Lanayru Mining Facility - Right Front Rupee behind Statue
   standard: Lanayru Mining Facility - Right Front Rupee behind Statue
   pretty: Lanayru Mining Facility - Right Front Rupee behind Statue
-  cryptic: rupee behind a <r<statue in a sandy temple>>
+  cryptic: a <r<guarded rupee in a sandy temple>>
 
 - name: Lanayru Mining Facility - Right Middle Rupee behind Statue
   standard: Lanayru Mining Facility - Right Middle Rupee behind Statue
   pretty: Lanayru Mining Facility - Right Middle Rupee behind Statue
-  cryptic: rupee behind a <r<statue in a sandy temple>>
+  cryptic: a <r<guarded rupee in a sandy temple>>
 
 - name: Lanayru Mining Facility - Right Back Rupee behind Statue
   standard: Lanayru Mining Facility - Right Back Rupee behind Statue
   pretty: Lanayru Mining Facility - Right Back Rupee behind Statue
-  cryptic: rupee behind a <r<statue in a sandy temple>>
+  cryptic: a <r<guarded rupee in a sandy temple>>
 
 - name: Lanayru Mining Facility - First Chest in Hub Room
   standard: Lanayru Mining Facility - First Chest in Hub Room

@@ -12,6 +12,10 @@
     Lanayru Mine Upper Area: Clawshots
   locations:
     Lanayru Mine - Chest near First Timeshift Stone: "'Lanayru_Mine_First_Timeshift_Stone'"
+    Lanayru Mine - Rupee on Southeast Conveyor 1: Beetle
+    Lanayru Mine - Rupee on Southeast Conveyor 2: Beetle
+    Lanayru Mine - Rupee on Southwest Conveyor 1: Beetle
+    Lanayru Mine - Rupee on Southwest Conveyor 2: Beetle
     Lanayru Mine - Goddess Cube: Goddess_Sword
 
 
@@ -37,7 +41,9 @@
     Lanayru Mine Entry: "'Blow_Down_First_Mine_Statue'"
     Lanayru Mine End: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle) or 'Stamina_Potion' or logic_brakeslide
   locations:
-    Lanayru Mine - Chest behind Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
+    Lanayru Mine - Chest behind Northeast Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
+    Lanayru Mine - Rupee behind Northeast Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
+    Lanayru Mine - Rupee behind Southwest Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
     Lanayru Mine - Stamina Fruit before Falling Statues: Nothing
     Lanayru Mine - Stamina Fruit after Falling Statues: Beetle
     Lanayru Mine - Stamina Fruit near Spumes 1: Beetle
@@ -91,8 +97,14 @@
     Lanayru Mine In Minecart: Blow_Up_Covered_Timeshift_Stone # I can't assume the minecart is available, right?
   locations:
     Lanayru Desert - Chest near Party Wheel: Blow_Up_Covered_Timeshift_Stone
-    Lanayru Desert - Chest near Rescue Caged Robot: Nothing
     Lanayru Desert - Stamina Fruit on Ledge to Party Wheel: Blow_Up_Covered_Timeshift_Stone or Beetle
+    Lanayru Desert - Rupee above Caged Robot 1: Beetle # You can (in theory) use a bomb flower to knock it down
+    Lanayru Desert - Rupee above Caged Robot 2: Beetle # You can (in theory) use a bomb flower to knock it down
+    Lanayru Desert - Rupee behind South Statue near Caged Robot: Hook_Beetle
+    Lanayru Desert - Rupee behind West Statue near Caged Robot: Hook_Beetle
+    Lanayru Desert - Rupee behind East Statue before Sand Oasis: Hook_Beetle
+    Lanayru Desert - Rupee behind West Statue before Sand Oasis: Hook_Beetle
+    Lanayru Desert - Chest near Caged Robot: Nothing
 
     # You can use the bomb flowers to *just* throw one up into the hole in the cage from the ground
     # This trick is only doable on HD
@@ -108,6 +120,10 @@
     Sand Oasis Middle: Can_Navigate_in_Oasis or 'Push_Down_First_Sand_Oasis_Minecart'
   locations:
     Lanayru Desert - Goddess Cube in Sand Oasis: Can_Navigate_in_Oasis and Goddess_Sword
+    Lanayru Desert - Rupee behind South Statue near Caged Robot: Bomb_Bag and logic_bomb_throws
+    Lanayru Desert - Rupee behind West Statue near Caged Robot: Bomb_Bag and logic_bomb_throws
+    Lanayru Desert - Rupee behind East Statue before Sand Oasis: Bomb_Bag and logic_bomb_throws
+    Lanayru Desert - Rupee behind West Statue before Sand Oasis: Bomb_Bag and logic_bomb_throws
 
 
 - name: Lanayru Desert West Wall

@@ -1771,19 +1771,30 @@ F102: # Lake Floria
     layer: 1
     room: 1
     objtype: OBJS
-  - name: Remove evntTags
+  - name: Remove EvntTags 1
     type: objdelete
     ids:
       - 0xFC1D
       - 0xFC1E
-      - 0xFC2F
-      - 0xFC13
-      - 0xFC12
       - 0xFC26
       - 0xFC1F
       - 0xFC1C
     layer: 0
-    rooms: [1, 1, 3, 4, 4, 1, 1, 1]
+    room: 1
+    objtype: STAG
+  - name: Remove EvntTags 2
+    type: objdelete
+    id: 0xFC2F
+    layer: 0
+    room: 3
+    objtype: STAG
+  - name: Remove EvntTags 3
+    type: objdelete
+    ids:
+      - 0xFC13
+      - 0xFC12
+    layer: 0
+    room: 4
     objtype: STAG
 
 F102_1: # Outside Ancient Cistern
@@ -3200,15 +3211,25 @@ F300_1: # Lanayru Mine
     layer: 0
     room: 0
     objtype: OBJ
-  - name: Remove Timeshift stone cutscene and dowsing targets
+  - name: Remove Timeshift stone cutscene and dowsing target
     type: objdelete
     ids:
       - 0xFC47 # First Timeshift Stone
       - 0xFC59 # Trial dowsing target
-      - 0xFC0A # Trial dowsing target
-      - 0xFC62 # Trial dowsing target
     layer: 0
-    rooms: [0, 0, 1, 2]
+    room: 0
+    objtype: STAG
+  - name: Remove Trial Dowsing Target room 1
+    type: objdelete
+    id: 0xFC0A
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Remove Trial Dowsing Target room 2
+    type: objdelete
+    id: 0xFC62
+    layer: 0
+    room: 2
     objtype: STAG
 
 F300_2: # Lightning Node
@@ -3506,14 +3527,19 @@ F301_1: # Lanayru Sand Sea
       play_cutscene: -1
 
 F301_2: # Inside Pirate Stronghold
-  - name: Remove Fi Texts
+  - name: Remove Fi Texts room 1
     type: objdelete
     ids:
       - 0xFC0A # Fi text at start
-      - 0xFC06 # Fi text before Timeshift Orb
       - 0xFC0B # Fi text after placing Timeshift Orb
     layer: 0
-    rooms: [1, 3, 1]
+    room: 1
+    objtype: OBJ
+  - name: Remove Fi text before Timeshift Orb
+    type: objdelete
+    id: 0xFC06
+    layer: 0
+    room: 3
     objtype: OBJ
   - name: CS before second lever
     type: objdelete
@@ -4904,16 +4930,31 @@ D101: # Ancient Cistern
     layer: 0
     room: [10, 4, 10]
     objtype: STAG
+  - name: Remove Waterfall switch Lily Pad Cutscene (room 0)
+    type: objdelete
+    id: 0xFC8D
+    layer: 0
+    room: 0
+    objtype: STAG
   - name: Remove Lily Pad Cutscenes
     type: objdelete
     ids:
       - 0xFC1B # East part
       - 0xFC1C # East part
-      - 0xFC29 # East part main
-      - 0xFC8D # Waterfall switch
-      - 0xFC83 # Underground
     layer: 0
-    rooms: [1, 1, 2, 0, 4]
+    room: 1
+    objtype: STAG
+  - name: Remove East part main Lily Pad Cutscene (room 2)
+    type: objdelete
+    id: 0xFC29
+    layer: 0
+    room: 2
+    objtype: STAG
+  - name: Remove Underground Lily Pad Cutscene (room 4)
+    type: objdelete
+    id: 0xFC83
+    layer: 0
+    room: 4
     objtype: STAG
   - name: Remove stone tablet text
     type: objpatch
@@ -5108,14 +5149,19 @@ D200: # Earth Temple
     layer: 0
     room: 1
     objtype: OBJ
-  - name: Remove Cutscenes
+  - name: Remove Before boulder to Bomb Bag Cutscene
+    type: objdelete
+    id: 0xFC6D
+    layer: 0
+    room: 1
+    objtype: STAG
+  - name: Remove Boss Door Cutscenes
     type: objdelete
     ids:
-      - 0xFC6D # Before boulder to Bomb Bag
       - 0xFC68 # Showing Boss Door
       - 0xFC65 # After Lavafall
     layer: 0
-    rooms: [1, 4, 4]
+    room: 4
     objtype: STAG
   - name: Keep Ledd after Beating ET
     type: objpatch
@@ -5681,17 +5727,37 @@ D301: # Sandship A (main)
     destlayer: 1
     room: 0
     objtype: OBJ
-  - name: Remove Fi texts
+  - name: Remove Fi text Before Boss Door
+    type: objdelete
+    id: 0xFC43
+    layer: 4
+    room: 9
+    objtype: OBJ
+  - name: Remove Fi text Generator 1
+    type: objdelete
+    id: 0xFC0F
+    layer: 1
+    room: 7
+    objtype: OBJ
+  - name: Remove Fi text Generator 2
+    type: objdelete
+    id: 0xFC12
+    layer: 1
+    room: 5
+    objtype: OBJ
+  - name: Remove Scervo Fi texts 
     type: objdelete
     ids:
-      - 0xFC43 # Before Boss Door
-      - 0xFC0F # Generator
-      - 0xFC12 # Generator
       - 0xFC07 # After Scervo
       - 0xFC08 # After Scervo chest
-      - 0xFC4C # After revealed timeshift stone
-    layers: [4, 1, 1, 2, 2, 1]
-    rooms: [9, 7, 5, 15, 15, 0]
+    layer: 2
+    room: 15
+    objtype: OBJ
+  - name: Remove Fi text After revealed timeshift stone
+    type: objdelete
+    id: 0xFC4C
+    layer: 1
+    room: 0
     objtype: OBJ
   - name: Fi text after hitting Sandship Crest
     type: objadd

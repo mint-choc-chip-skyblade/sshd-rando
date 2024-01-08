@@ -2286,11 +2286,47 @@
   Paths:
     - stage/F300_1/r1/l0/TBox/65
 
-- name: Lanayru Mine - Chest behind Statue
+- name: Lanayru Mine - Rupee on Southeast Conveyor 1
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/Item/148
+
+- name: Lanayru Mine - Rupee on Southeast Conveyor 2
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/Item/149
+
+- name: Lanayru Mine - Rupee on Southwest Conveyor 1
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/Item/150
+
+- name: Lanayru Mine - Rupee on Southwest Conveyor 2
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/Item/147
+
+- name: Lanayru Mine - Chest behind Northeast Statue
   original_item: Red Rupee
   type:
   Paths:
     - stage/F300_1/r2/l0/TBox/67
+
+- name: Lanayru Mine - Rupee behind Northeast Statue
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/Item/0xFC37
+
+- name: Lanayru Mine - Rupee behind Southwest Statue
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/Item/0xFC15
 
 - name: Lanayru Mine - Chest at the End of Mine
   original_item: Rare Treasure
@@ -2340,11 +2376,23 @@
   Paths:
     - stage/F300/r0/l0/TBox/70
 
-- name: Lanayru Desert - Chest near Rescue Caged Robot
+- name: Lanayru Desert - Chest near Caged Robot
   original_item: Tumbleweed
   type:
   Paths:
     - stage/F300/r0/l0/TBox/84
+
+- name: Lanayru Desert - Rupee above Caged Robot 1
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFCC2
+
+- name: Lanayru Desert - Rupee above Caged Robot 2
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFCC3
 
 - name: Lanayru Desert - Rescue Caged Robot
   original_item: Progressive Beetle
@@ -2352,6 +2400,30 @@
   Paths:
     - event/400-Desert/8
     - oarc/F300/l0
+
+- name: Lanayru Desert - Rupee behind South Statue near Caged Robot
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFC34
+
+- name: Lanayru Desert - Rupee behind West Statue near Caged Robot
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFC35
+
+- name: Lanayru Desert - Rupee behind East Statue before Sand Oasis
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFC31
+
+- name: Lanayru Desert - Rupee behind West Statue before Sand Oasis
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300/r0/l0/Item/0xFC36
 
 - name: Lanayru Desert - Chest on Platform near Fire Node
   original_item: Red Rupee
