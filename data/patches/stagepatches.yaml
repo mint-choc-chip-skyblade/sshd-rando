@@ -2166,6 +2166,14 @@ F200: # Eldin main area
       anglex: 0x4000
       angley: 0x8000
       anglez: 0x0000
+  
+  - name: Move Cliff Pyrup Shell Rupee to layer 0
+    type: objmove
+    id: 0x10BD
+    layer: 1
+    destlayer: 0
+    room: 2
+    objtype: OBJ
 
   # Underground Rupee Stuff
   # 1st Room

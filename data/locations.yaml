@@ -1643,6 +1643,18 @@
   Paths:
     - stage/F200/r2/l0/Item/102 #sceneflagID
 
+- name: Eldin Volcano - Rupee in Old Pyrup Shell near Cliff
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/183
+
+- name: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/184
+
 - name: Eldin Volcano - Rupee underground in Cliff 1
   original_item: Blue Rupee
   type: Rupee, Custom Flag
@@ -1815,6 +1827,90 @@
 - name: Eldin Volcano - Goddess Cube on Sand Slide
   original_item: Eldin Volcano Goddess Cube on Sand Slide
   type: Goddess Cube
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 1
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C00
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 2
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C01
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 3
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C02
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 4
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C03
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 5
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C04
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 6
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C05
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 7
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C06
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 8
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C07
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 1
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C08
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 2
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C09
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 3
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r6/l0/Item/0x2C0A
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 4
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r7/l0/Item/0xFC00
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 5
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r7/l0/Item/0xFC01
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 6
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F200/r7/l0/Item/0xFC02
 
 - name: Eldin Volcano - Stamina Fruit in Rising Lava Room
   original_item: Stamina Fruit

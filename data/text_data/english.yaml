@@ -2420,6 +2420,16 @@
   pretty: Eldin Volcano - Item on Cliff
   cryptic: an <r<item on a volcanic cliff>>
 
+- name: Eldin Volcano - Rupee in Old Pyrup Shell near Cliff
+  standard: Eldin Volcano - Rupee in Old Pyrup Shell near Cliff
+  pretty: Eldin Volcano - Rupee in Old Pyrup Shell near Cliff
+  cryptic: <r<cracking a rupee's armor>>
+
+- name: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
+  standard: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
+  pretty: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
+  cryptic: <r<cracking a rupee's armor>>
+
 - name: Eldin Volcano - Rupee underground in Cliff 1
   standard: Eldin Volcano - Rupee underground in Cliff 1
   pretty: Eldin Volcano - Rupee underground in Cliff 1
@@ -2569,6 +2579,77 @@
   standard: Eldin Volcano - Goddess Cube on Sand Slide
   pretty: Eldin Volcano - Goddess Cube on Sand Slide
   cryptic:
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 1
+  standard: Eldin Volcano - Left Rupee on Sand Slide 1
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 1
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 2
+  standard: Eldin Volcano - Left Rupee on Sand Slide 2
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 2
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 3
+  standard: Eldin Volcano - Left Rupee on Sand Slide 3
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 3
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 4
+  standard: Eldin Volcano - Left Rupee on Sand Slide 4
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 4
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 5
+  standard: Eldin Volcano - Left Rupee on Sand Slide 5
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 5
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 6
+  standard: Eldin Volcano - Left Rupee on Sand Slide 6
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 6
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 7
+  standard: Eldin Volcano - Left Rupee on Sand Slide 7
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 7
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 8
+  standard: Eldin Volcano - Left Rupee on Sand Slide 8
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 8
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 1
+  standard: Eldin Volcano - Right Rupee on Sand Slide 1
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 1
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 2
+  standard: Eldin Volcano - Right Rupee on Sand Slide 2
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 2
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 3
+  standard: Eldin Volcano - Right Rupee on Sand Slide 3
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 3
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 4
+  standard: Eldin Volcano - Right Rupee on Sand Slide 4
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 4
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 5
+  standard: Eldin Volcano - Right Rupee on Sand Slide 5
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 5
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 6
+  standard: Eldin Volcano - Right Rupee on Sand Slide 6
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 6
+  cryptic: a <r<rupee on a sandy slope>>
+
 
 - name: Eldin Volcano - Stamina Fruit in Rising Lava Room
   standard: Eldin Volcano - Stamina Fruit in Rising Lava Room
