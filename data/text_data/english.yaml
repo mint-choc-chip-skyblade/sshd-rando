@@ -2495,7 +2495,20 @@
   pretty: Eldin Volcano - Rupee underground in Cliff 15
   cryptic: an <r<underground rupee beneath a cliff>>
 
+- name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 1
+  standard: Eldin Volcano - Rupee underground below Mogma Turf Entrance 1
+  pretty: Eldin Volcano - Rupee underground below Mogma Turf Entrance 1
+  cryptic: an <r<underground rupee below claimed territory>>
 
+- name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 2
+  standard: Eldin Volcano - Rupee underground below Mogma Turf Entrance 2
+  pretty: Eldin Volcano - Rupee underground below Mogma Turf Entrance 2
+  cryptic: an <r<underground rupee below claimed territory>>
+
+- name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 3
+  standard: Eldin Volcano - Rupee underground below Mogma Turf Entrance 3
+  pretty: Eldin Volcano - Rupee underground below Mogma Turf Entrance 3
+  cryptic: an <r<underground rupee below claimed territory>>
 
 - name: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
   standard: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent

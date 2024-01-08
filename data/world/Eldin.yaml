@@ -62,6 +62,11 @@
     Eldin Volcano - Rupee underground in Cliff 13: Mogma_Mitts
     Eldin Volcano - Rupee underground in Cliff 14: Mogma_Mitts
     Eldin Volcano - Rupee underground in Cliff 15: Mogma_Mitts
+    # Removed as extra collision on Eldin layer 1 makes this digspot *very* buggy
+    # 
+    # Eldin Volcano - Rupee underground below Mogma Turf Entrance 1: Mogma_Mitts
+    # Eldin Volcano - Rupee underground below Mogma Turf Entrance 2: Mogma_Mitts
+    # Eldin Volcano - Rupee underground below Mogma Turf Entrance 3: Mogma_Mitts
     Eldin Volcano - Stamina Fruit near Volcano East Statue: Nothing
     Eldin Volcano - Stamina Fruit in front of Bone Bridge: Nothing
     Eldin Volcano - Stamina Fruit near Item on Cliff: Nothing

@@ -2227,9 +2227,11 @@ F200: # Eldin main area
     destlayer: 0
     room: 2
     objtype: OBJ
-  - name: Move in Cliff DieTag
+  - name: Move in Cliff Tags
     type: objmove
-    id: 0xFD14
+    ids:
+      - 0xFD14 # DieTag
+      - 0xFD15 # CamTag
     layer: 4
     destlayer: 0
     room: 2
@@ -2271,6 +2273,50 @@ F200: # Eldin main area
     destlayer: 0
     room: 2
     objtype: OBJ
+  # Below Mogma Turf Entrance
+  # 
+  # Removed as extra collision on Eldin layer 1 makes this digspot *very* buggy
+  # 
+  # - name: Move below Turf Uground, InHole, and Bombf
+  #   type: objmove
+  #   ids:
+  #     - 0xFCC0 # Uground
+  #     - 0xFCC2 # InHole
+  #     - 0xFCBB # Bombf
+  #   layer: 4
+  #   destlayer: 0
+  #   room: 2
+  #   objtype: OBJ
+  # - name: Move below Turf CBomSld
+  #   type: objmove
+  #   id: 0xFD0C
+  #   layer: 4
+  #   destlayer: 0
+  #   room: 2
+  #   objtype: STAG
+  # - name: Move below Turf Underground Blocks
+  #   type: objmove
+  #   ids:
+  #     - 0xFCD3
+  #     - 0xFCD4
+  #     - 0xFCD5
+  #   startid: 0xFD03
+  #   endid: 0xFD09
+  #   layer: 4
+  #   destlayer: 0
+  #   room: 2
+  #   objtype: OBJ
+  # - name: Move below Turf Underground Rupees
+  #   type: objmove
+  #   ids:
+  #     - 0xFD0A
+  #     - 0xFCBC
+  #     - 0xFCDF
+  #   hardcoded_id: 0xFFFA
+  #   layer: 4
+  #   destlayer: 0
+  #   room: 2
+  #   objtype: OBJ
 
   # Boko Base access
   - name: Add Shiekah Stone to Eldin

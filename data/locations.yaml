@@ -1733,6 +1733,26 @@
   Paths:
     - stage/F200/r2/l0/Item/0xFFE1 # ids hardcoded in the objmove patches
 
+# Removed as extra collision on Eldin layer 1 makes this digspot *very* buggy
+# 
+# - name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 1
+#   original_item: Blue Rupee
+#   type: Rupee, Custom Flag
+#   Paths:
+#     - stage/F200/r2/l0/Item/0xFFFA # ids hardcoded in the objmove patches
+
+# - name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 2
+#   original_item: Rupoor
+#   type: Rupee, Custom Flag
+#   Paths:
+#     - stage/F200/r2/l0/Item/0xFFFB # ids hardcoded in the objmove patches
+
+# - name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 3
+#   original_item: Red Rupee
+#   type: Rupee, Custom Flag
+#   Paths:
+#     - stage/F200/r2/l0/Item/0xFFFC # ids hardcoded in the objmove patches
+
 
 - name: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
   original_item: Red Rupee
