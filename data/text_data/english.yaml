@@ -2831,6 +2831,11 @@
   pretty: Mogma Turf - Sand Slide Chest
   cryptic: a <r<chest down a slide>>
 
+- name: Mogma Turf - Rupee in First Pyrup Hole in Fire Maze
+  standard: Mogma Turf - Rupee in First Pyrup Hole in Fire Maze
+  pretty: Mogma Turf - Rupee in First Pyrup Hole in Fire Maze
+  cryptic: a <r<rupee in a hot maze>>
+
 - name: Mogma Turf - Chest behind Bombable Wall in Fire Maze
   standard: Mogma Turf - Chest behind Bombable Wall in Fire Maze
   pretty: Mogma Turf - Chest behind Bombable Wall in Fire Maze

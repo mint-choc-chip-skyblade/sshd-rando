@@ -2137,6 +2137,12 @@
   Paths:
     - stage/F210/r0/l0/TBox/68
 
+- name: Mogma Turf - Rupee in First Pyrup Hole in Fire Maze
+  original_item: Red Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F210/r0/l0/Item/169
+
 - name: Mogma Turf - Chest behind Bombable Wall in Fire Maze
   original_item: Silver Rupee
   type:
