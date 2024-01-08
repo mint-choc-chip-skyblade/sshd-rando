@@ -131,11 +131,11 @@
     FS Under Magmanos Fight Room Past Sliding Door: "'Move_First_FS_Sliding_Gate'"
     FS West of Boss Door Before Lava River: count(3, Fire_Sanctuary_Small_Key) or small_keys == removed
   locations:
-    Fire Sanctuary - Rupee underground beneath Double Magmanos Room 1: Mogma_Mitts
-    Fire Sanctuary - Rupee underground beneath Double Magmanos Room 2: Mogma_Mitts
-    Fire Sanctuary - Rupee underground beneath Double Magmanos Room 3: Mogma_Mitts
-    Fire Sanctuary - Rupee underground beneath Double Magmanos Room 4: Mogma_Mitts
-    Fire Sanctuary - Rupee underground beneath Double Magmanos Room 5: Mogma_Mitts
+    Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 1: Mogma_Mitts
+    Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 2: Mogma_Mitts
+    Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 3: Mogma_Mitts
+    Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 4: Mogma_Mitts
+    Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5: Mogma_Mitts
 
 
 - name: FS Under Magmanos Fight Room Past Sliding Door
@@ -175,7 +175,7 @@
     FS North Bridge East Side: Nothing
   locations:
     Fire Sanctuary - Rescue Second Trapped Mogma Chest: Mogma_Mitts and Sword # Mitts to move gate; sword for water pod
-    Fire Sanctuary - Rupee underground behind Bombable Wall: Mogma_Mitts and Sword and Bomb_Bag
+    Fire Sanctuary - Underground Rupee behind Bombable Wall: Mogma_Mitts and Sword and Bomb_Bag
     Fire Sanctuary - Chest after Bombable Wall: Mogma_Mitts and Sword and Bomb_Bag
     
 

@@ -1546,55 +1546,55 @@
   Paths:
     - stage/F200/r1/l0/Item/19
 
-- name: Eldin Volcano - Rupee underground in First Room 1
+- name: Eldin Volcano - Underground Rupee in First Room 1
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF1 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in First Room 2
+- name: Eldin Volcano - Underground Rupee in First Room 2
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF2 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in First Room 3
+- name: Eldin Volcano - Underground Rupee in First Room 3
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF3 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in First Room 4
+- name: Eldin Volcano - Underground Rupee in First Room 4
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF6 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in First Room 5
+- name: Eldin Volcano - Underground Rupee in First Room 5
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF5 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in First Room 6
+- name: Eldin Volcano - Underground Rupee in First Room 6
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF4 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in First Room 7
+- name: Eldin Volcano - Underground Rupee in First Room 7
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF7 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in First Room 8
+- name: Eldin Volcano - Underground Rupee in First Room 8
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF8 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in First Room 9
+- name: Eldin Volcano - Underground Rupee in First Room 9
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
@@ -1619,13 +1619,13 @@
   Paths:
     - stage/F200/r2/l0/Item/123
 
-- name: Eldin Volcano - Rupee underground before Bone Bridge 1
+- name: Eldin Volcano - Underground Rupee before Bone Bridge 1
   original_item: Red Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/152
 
-- name: Eldin Volcano - Rupee underground before Bone Bridge 2
+- name: Eldin Volcano - Underground Rupee before Bone Bridge 2
   original_item: Red Rupee
   type: Underground Rupee, Custom Flag
   Paths:
@@ -1655,91 +1655,91 @@
   Paths:
     - stage/F200/r2/l0/Item/184
 
-- name: Eldin Volcano - Rupee underground in Cliff 1
+- name: Eldin Volcano - Underground Rupee in Cliff 1
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFEF # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 2
+- name: Eldin Volcano - Underground Rupee in Cliff 2
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFEE # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 3
+- name: Eldin Volcano - Underground Rupee in Cliff 3
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE4 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 4
+- name: Eldin Volcano - Underground Rupee in Cliff 4
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFED # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 5
+- name: Eldin Volcano - Underground Rupee in Cliff 5
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFEC # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 6
+- name: Eldin Volcano - Underground Rupee in Cliff 6
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFEB # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 7
+- name: Eldin Volcano - Underground Rupee in Cliff 7
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE3 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 8
+- name: Eldin Volcano - Underground Rupee in Cliff 8
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFEA # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 9
+- name: Eldin Volcano - Underground Rupee in Cliff 9
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE9 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 10
+- name: Eldin Volcano - Underground Rupee in Cliff 10
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE8 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 11
+- name: Eldin Volcano - Underground Rupee in Cliff 11
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE2 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 12
+- name: Eldin Volcano - Underground Rupee in Cliff 12
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE7 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 13
+- name: Eldin Volcano - Underground Rupee in Cliff 13
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE6 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 14
+- name: Eldin Volcano - Underground Rupee in Cliff 14
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE5 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground in Cliff 15
+- name: Eldin Volcano - Underground Rupee in Cliff 15
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
@@ -1747,19 +1747,19 @@
 
 # Removed as extra collision on Eldin layer 1 makes this digspot *very* buggy
 # 
-# - name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 1
+# - name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1
 #   original_item: Blue Rupee
 #   type: Underground Rupee, Custom Flag
 #   Paths:
 #     - stage/F200/r2/l0/Item/0xFFFA # ids hardcoded in the objmove patches
 
-# - name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 2
+# - name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2
 #   original_item: Rupoor
 #   type: Underground Rupee, Custom Flag
 #   Paths:
 #     - stage/F200/r2/l0/Item/0xFFFB # ids hardcoded in the objmove patches
 
-# - name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 3
+# - name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3
 #   original_item: Red Rupee
 #   type: Underground Rupee, Custom Flag
 #   Paths:
@@ -1796,61 +1796,61 @@
   textfile: 004-Object
   textindex: 14
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 1
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 1
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFDA # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 2
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 2
   original_item: Rupoor
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD1 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 3
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 3
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD3 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 4
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 4
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD2 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 5
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 5
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD7 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 6
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 6
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD9 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 7
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 7
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD4 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 8
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 8
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD5 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 9
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 9
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD6 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 10
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 10
   original_item: Green Rupee
   type: Underground Rupee, Custom Flag
   Paths:
@@ -2161,6 +2161,18 @@
   hint: sometimes
   Paths:
     - stage/F201_3/r0/l0/Item/104 #sceneflagID
+
+- name: Volcano Summit - Underground Rupee 1
+  original_item: Blue Rupee
+  type: Underground Rupee, Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/Item/135 #sceneflagID
+
+- name: Volcano Summit - Underground Rupee 2
+  original_item: Green Rupee
+  type: Underground Rupee, Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/Item/136 #sceneflagID
 
 - name: Volcano Summit - Gossip Stone in Waterfall Area
   original_item: Nothing
@@ -3446,31 +3458,31 @@
   Paths:
     - stage/D201_1/r5/l0/TBox/68
 
-- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 1
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 1
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/D201_1/r5/l0/Item/0xFC6A
 
-- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 2
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 2
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/D201_1/r5/l0/Item/0xFC6B
 
-- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 3
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 3
   original_item: Blue Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/D201_1/r5/l0/Item/0xFC6C
 
-- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 4
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 4
   original_item: Red Rupee
   type: Underground Rupee, Custom Flag
   Paths:
     - stage/D201_1/r5/l0/Item/0xFC6D
 
-- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 5
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5
   original_item: Red Rupee
   type: Underground Rupee, Custom Flag
   Paths:
@@ -3484,7 +3496,7 @@
     - stage/D201_1/r2/l0/TBox/65
     - stage/D201/r2/l0/TBox/65
 
-- name: Fire Sanctuary - Rupee underground behind Bombable Wall
+- name: Fire Sanctuary - Underground Rupee behind Bombable Wall
   original_item: Red Rupee
   type: Underground Rupee, Custom Flag
   Paths:

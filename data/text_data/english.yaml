@@ -2340,49 +2340,49 @@
   pretty: Eldin Volcano - Rupee in Crawlspace in First Room
   cryptic: a <r<crawlspace rupee near a volcano>>
 
-- name: Eldin Volcano - Rupee underground in First Room 1
-  standard: Eldin Volcano - Rupee underground in First Room 1
-  pretty: Eldin Volcano - Rupee underground in First Room 1
+- name: Eldin Volcano - Underground Rupee in First Room 1
+  standard: Eldin Volcano - Underground Rupee in First Room 1
+  pretty: Eldin Volcano - Underground Rupee in First Room 1
   cryptic: an <r<underground rupee before a bokoblin's hidout>>
 
-- name: Eldin Volcano - Rupee underground in First Room 2
-  standard: Eldin Volcano - Rupee underground in First Room 2
-  pretty: Eldin Volcano - Rupee underground in First Room 2
+- name: Eldin Volcano - Underground Rupee in First Room 2
+  standard: Eldin Volcano - Underground Rupee in First Room 2
+  pretty: Eldin Volcano - Underground Rupee in First Room 2
   cryptic: an <r<underground rupee before a bokoblin's hidout>>
 
-- name: Eldin Volcano - Rupee underground in First Room 3
-  standard: Eldin Volcano - Rupee underground in First Room 3
-  pretty: Eldin Volcano - Rupee underground in First Room 3
+- name: Eldin Volcano - Underground Rupee in First Room 3
+  standard: Eldin Volcano - Underground Rupee in First Room 3
+  pretty: Eldin Volcano - Underground Rupee in First Room 3
   cryptic: an <r<underground rupee before a bokoblin's hidout>>
 
-- name: Eldin Volcano - Rupee underground in First Room 4
-  standard: Eldin Volcano - Rupee underground in First Room 4
-  pretty: Eldin Volcano - Rupee underground in First Room 4
+- name: Eldin Volcano - Underground Rupee in First Room 4
+  standard: Eldin Volcano - Underground Rupee in First Room 4
+  pretty: Eldin Volcano - Underground Rupee in First Room 4
   cryptic: an <r<underground rupee before a bokoblin's hidout>>
 
-- name: Eldin Volcano - Rupee underground in First Room 5
-  standard: Eldin Volcano - Rupee underground in First Room 5
-  pretty: Eldin Volcano - Rupee underground in First Room 5
+- name: Eldin Volcano - Underground Rupee in First Room 5
+  standard: Eldin Volcano - Underground Rupee in First Room 5
+  pretty: Eldin Volcano - Underground Rupee in First Room 5
   cryptic: an <r<underground rupee before a bokoblin's hidout>>
 
-- name: Eldin Volcano - Rupee underground in First Room 6
-  standard: Eldin Volcano - Rupee underground in First Room 6
-  pretty: Eldin Volcano - Rupee underground in First Room 6
+- name: Eldin Volcano - Underground Rupee in First Room 6
+  standard: Eldin Volcano - Underground Rupee in First Room 6
+  pretty: Eldin Volcano - Underground Rupee in First Room 6
   cryptic: an <r<underground rupee before a bokoblin's hidout>>
 
-- name: Eldin Volcano - Rupee underground in First Room 7
-  standard: Eldin Volcano - Rupee underground in First Room 7
-  pretty: Eldin Volcano - Rupee underground in First Room 7
+- name: Eldin Volcano - Underground Rupee in First Room 7
+  standard: Eldin Volcano - Underground Rupee in First Room 7
+  pretty: Eldin Volcano - Underground Rupee in First Room 7
   cryptic: an <r<underground rupee before a bokoblin's hidout>>
 
-- name: Eldin Volcano - Rupee underground in First Room 8
-  standard: Eldin Volcano - Rupee underground in First Room 8
-  pretty: Eldin Volcano - Rupee underground in First Room 8
+- name: Eldin Volcano - Underground Rupee in First Room 8
+  standard: Eldin Volcano - Underground Rupee in First Room 8
+  pretty: Eldin Volcano - Underground Rupee in First Room 8
   cryptic: an <r<underground rupee before a bokoblin's hidout>>
 
-- name: Eldin Volcano - Rupee underground in First Room 9
-  standard: Eldin Volcano - Rupee underground in First Room 9
-  pretty: Eldin Volcano - Rupee underground in First Room 9
+- name: Eldin Volcano - Underground Rupee in First Room 9
+  standard: Eldin Volcano - Underground Rupee in First Room 9
+  pretty: Eldin Volcano - Underground Rupee in First Room 9
   cryptic: an <r<underground rupee before a bokoblin's hidout>>
 
 - name: Eldin Volcano - Chest after Crawlspace
@@ -2400,14 +2400,14 @@
   pretty: Eldin Volcano - North Rupee above Mogma Turf Entrance
   cryptic: a <r<rupee above claimed territory>>
 
-- name: Eldin Volcano - Rupee underground before Bone Bridge 1
-  standard: Eldin Volcano - Rupee underground before Bone Bridge 1
-  pretty: Eldin Volcano - Rupee underground before Bone Bridge 1
+- name: Eldin Volcano - Underground Rupee before Bone Bridge 1
+  standard: Eldin Volcano - Underground Rupee before Bone Bridge 1
+  pretty: Eldin Volcano - Underground Rupee before Bone Bridge 1
   cryptic: an <r<underground rupee near a bridge>>
 
-- name: Eldin Volcano - Rupee underground before Bone Bridge 2
-  standard: Eldin Volcano - Rupee underground before Bone Bridge 2
-  pretty: Eldin Volcano - Rupee underground before Bone Bridge 2
+- name: Eldin Volcano - Underground Rupee before Bone Bridge 2
+  standard: Eldin Volcano - Underground Rupee before Bone Bridge 2
+  pretty: Eldin Volcano - Underground Rupee before Bone Bridge 2
   cryptic: an <r<underground rupee near a bridge>>
 
 - name: Eldin Volcano - Chest behind Bombable Wall near Cliff
@@ -2430,94 +2430,94 @@
   pretty: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
   cryptic: <r<cracking a rupee's armor>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 1
-  standard: Eldin Volcano - Rupee underground in Cliff 1
-  pretty: Eldin Volcano - Rupee underground in Cliff 1
+- name: Eldin Volcano - Underground Rupee in Cliff 1
+  standard: Eldin Volcano - Underground Rupee in Cliff 1
+  pretty: Eldin Volcano - Underground Rupee in Cliff 1
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 2
-  standard: Eldin Volcano - Rupee underground in Cliff 2
-  pretty: Eldin Volcano - Rupee underground in Cliff 2
+- name: Eldin Volcano - Underground Rupee in Cliff 2
+  standard: Eldin Volcano - Underground Rupee in Cliff 2
+  pretty: Eldin Volcano - Underground Rupee in Cliff 2
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 3
-  standard: Eldin Volcano - Rupee underground in Cliff 3
-  pretty: Eldin Volcano - Rupee underground in Cliff 3
+- name: Eldin Volcano - Underground Rupee in Cliff 3
+  standard: Eldin Volcano - Underground Rupee in Cliff 3
+  pretty: Eldin Volcano - Underground Rupee in Cliff 3
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 4
-  standard: Eldin Volcano - Rupee underground in Cliff 4
-  pretty: Eldin Volcano - Rupee underground in Cliff 4
+- name: Eldin Volcano - Underground Rupee in Cliff 4
+  standard: Eldin Volcano - Underground Rupee in Cliff 4
+  pretty: Eldin Volcano - Underground Rupee in Cliff 4
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 5
-  standard: Eldin Volcano - Rupee underground in Cliff 5
-  pretty: Eldin Volcano - Rupee underground in Cliff 5
+- name: Eldin Volcano - Underground Rupee in Cliff 5
+  standard: Eldin Volcano - Underground Rupee in Cliff 5
+  pretty: Eldin Volcano - Underground Rupee in Cliff 5
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 6
-  standard: Eldin Volcano - Rupee underground in Cliff 6
-  pretty: Eldin Volcano - Rupee underground in Cliff 6
+- name: Eldin Volcano - Underground Rupee in Cliff 6
+  standard: Eldin Volcano - Underground Rupee in Cliff 6
+  pretty: Eldin Volcano - Underground Rupee in Cliff 6
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 7
-  standard: Eldin Volcano - Rupee underground in Cliff 7
-  pretty: Eldin Volcano - Rupee underground in Cliff 7
+- name: Eldin Volcano - Underground Rupee in Cliff 7
+  standard: Eldin Volcano - Underground Rupee in Cliff 7
+  pretty: Eldin Volcano - Underground Rupee in Cliff 7
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 8
-  standard: Eldin Volcano - Rupee underground in Cliff 8
-  pretty: Eldin Volcano - Rupee underground in Cliff 8
+- name: Eldin Volcano - Underground Rupee in Cliff 8
+  standard: Eldin Volcano - Underground Rupee in Cliff 8
+  pretty: Eldin Volcano - Underground Rupee in Cliff 8
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 9
-  standard: Eldin Volcano - Rupee underground in Cliff 9
-  pretty: Eldin Volcano - Rupee underground in Cliff 9
+- name: Eldin Volcano - Underground Rupee in Cliff 9
+  standard: Eldin Volcano - Underground Rupee in Cliff 9
+  pretty: Eldin Volcano - Underground Rupee in Cliff 9
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 10
-  standard: Eldin Volcano - Rupee underground in Cliff 10
-  pretty: Eldin Volcano - Rupee underground in Cliff 10
+- name: Eldin Volcano - Underground Rupee in Cliff 10
+  standard: Eldin Volcano - Underground Rupee in Cliff 10
+  pretty: Eldin Volcano - Underground Rupee in Cliff 10
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 11
-  standard: Eldin Volcano - Rupee underground in Cliff 11
-  pretty: Eldin Volcano - Rupee underground in Cliff 11
+- name: Eldin Volcano - Underground Rupee in Cliff 11
+  standard: Eldin Volcano - Underground Rupee in Cliff 11
+  pretty: Eldin Volcano - Underground Rupee in Cliff 11
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 12
-  standard: Eldin Volcano - Rupee underground in Cliff 12
-  pretty: Eldin Volcano - Rupee underground in Cliff 12
+- name: Eldin Volcano - Underground Rupee in Cliff 12
+  standard: Eldin Volcano - Underground Rupee in Cliff 12
+  pretty: Eldin Volcano - Underground Rupee in Cliff 12
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 13
-  standard: Eldin Volcano - Rupee underground in Cliff 13
-  pretty: Eldin Volcano - Rupee underground in Cliff 13
+- name: Eldin Volcano - Underground Rupee in Cliff 13
+  standard: Eldin Volcano - Underground Rupee in Cliff 13
+  pretty: Eldin Volcano - Underground Rupee in Cliff 13
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 14
-  standard: Eldin Volcano - Rupee underground in Cliff 14
-  pretty: Eldin Volcano - Rupee underground in Cliff 14
+- name: Eldin Volcano - Underground Rupee in Cliff 14
+  standard: Eldin Volcano - Underground Rupee in Cliff 14
+  pretty: Eldin Volcano - Underground Rupee in Cliff 14
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground in Cliff 15
-  standard: Eldin Volcano - Rupee underground in Cliff 15
-  pretty: Eldin Volcano - Rupee underground in Cliff 15
+- name: Eldin Volcano - Underground Rupee in Cliff 15
+  standard: Eldin Volcano - Underground Rupee in Cliff 15
+  pretty: Eldin Volcano - Underground Rupee in Cliff 15
   cryptic: an <r<underground rupee beneath a cliff>>
 
-- name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 1
-  standard: Eldin Volcano - Rupee underground below Mogma Turf Entrance 1
-  pretty: Eldin Volcano - Rupee underground below Mogma Turf Entrance 1
+- name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1
+  standard: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1
+  pretty: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1
   cryptic: an <r<underground rupee below claimed territory>>
 
-- name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 2
-  standard: Eldin Volcano - Rupee underground below Mogma Turf Entrance 2
-  pretty: Eldin Volcano - Rupee underground below Mogma Turf Entrance 2
+- name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2
+  standard: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2
+  pretty: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2
   cryptic: an <r<underground rupee below claimed territory>>
 
-- name: Eldin Volcano - Rupee underground below Mogma Turf Entrance 3
-  standard: Eldin Volcano - Rupee underground below Mogma Turf Entrance 3
-  pretty: Eldin Volcano - Rupee underground below Mogma Turf Entrance 3
+- name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3
+  standard: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3
+  pretty: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3
   cryptic: an <r<underground rupee below claimed territory>>
 
 - name: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
@@ -2570,54 +2570,54 @@
   pretty: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
   cryptic:
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 1
-  standard: Eldin Volcano - Rupee underground West of Earth Temple 1
-  pretty: Eldin Volcano - Rupee underground West of Earth Temple 1
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 1
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 1
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 1
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 2
-  standard: Eldin Volcano - Rupee underground West of Earth Temple 2
-  pretty: Eldin Volcano - Rupee underground West of Earth Temple 2
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 2
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 2
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 2
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 3
-  standard: Eldin Volcano - Rupee underground West of Earth Temple 3
-  pretty: Eldin Volcano - Rupee underground West of Earth Temple 3
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 3
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 3
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 3
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 4
-  standard: Eldin Volcano - Rupee underground West of Earth Temple 4
-  pretty: Eldin Volcano - Rupee underground West of Earth Temple 4
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 4
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 4
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 4
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 5
-  standard: Eldin Volcano - Rupee underground West of Earth Temple 5
-  pretty: Eldin Volcano - Rupee underground West of Earth Temple 5
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 5
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 5
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 5
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 6
-  standard: Eldin Volcano - Rupee underground West of Earth Temple 6
-  pretty: Eldin Volcano - Rupee underground West of Earth Temple 6
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 6
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 6
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 6
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 7
-  standard: Eldin Volcano - Rupee underground West of Earth Temple 7
-  pretty: Eldin Volcano - Rupee underground West of Earth Temple 7
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 7
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 7
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 7
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 8
-  standard: Eldin Volcano - Rupee underground West of Earth Temple 8
-  pretty: Eldin Volcano - Rupee underground West of Earth Temple 8
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 8
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 8
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 8
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 9
-  standard: Eldin Volcano - Rupee underground West of Earth Temple 9
-  pretty: Eldin Volcano - Rupee underground West of Earth Temple 9
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 9
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 9
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 9
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Rupee underground West of Earth Temple 10
-  standard: Eldin Volcano - Rupee underground West of Earth Temple 10
-  pretty: Eldin Volcano - Rupee underground West of Earth Temple 10
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 10
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 10
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 10
   cryptic: an <r<underground rupee near a temple>>
 
 - name: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
@@ -2850,6 +2850,16 @@
   standard: Volcano Summit - Item behind Digging
   pretty: Volcano Summit - Item behind Digging
   cryptic: <r<fairies at the summit>>
+
+- name: Volcano Summit - Underground Rupee 1
+  standard: Volcano Summit - Underground Rupee 1
+  pretty: Volcano Summit - Underground Rupee 1
+  cryptic: an <r<underground rupee at the summit>>
+
+- name: Volcano Summit - Underground Rupee 2
+  standard: Volcano Summit - Underground Rupee 2
+  pretty: Volcano Summit - Underground Rupee 2
+  cryptic: an <r<underground rupee at the summit>>
 
 - name: Volcano Summit - Gossip Stone in Waterfall Area
   standard: Volcano Summit - Gossip Stone in Waterfall Area
@@ -3876,29 +3886,29 @@
   pretty: Fire Sanctuary - Rescue First Trapped Mogma Chest
   cryptic: saving a <r<mogma>> from a <r<fiery fate>>
 
-- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 1
-  standard: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 1
-  pretty: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 1
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 1
+  standard: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 1
+  pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 1
   cryptic: an <r<underground temple rupee>>
 
-- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 2
-  standard: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 2
-  pretty: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 2
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 2
+  standard: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 2
+  pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 2
   cryptic: an <r<underground temple rupee>>
 
-- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 3
-  standard: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 3
-  pretty: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 3
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 3
+  standard: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 3
+  pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 3
   cryptic: an <r<underground temple rupee>>
 
-- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 4
-  standard: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 4
-  pretty: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 4
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 4
+  standard: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 4
+  pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 4
   cryptic: an <r<underground temple rupee>>
 
-- name: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 5
-  standard: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 5
-  pretty: Fire Sanctuary - Rupee underground beneath Double Magmanos Room 5
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5
+  standard: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5
+  pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5
   cryptic: an <r<underground temple rupee>>
 
 - name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
@@ -3906,9 +3916,9 @@
   pretty: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   cryptic: saving a <r<mogma>> from a <r<regular temperatured fate>>
 
-- name: Fire Sanctuary - Rupee underground behind Bombable Wall
-  standard: Fire Sanctuary - Rupee underground behind Bombable Wall
-  pretty: Fire Sanctuary - Rupee underground behind Bombable Wall
+- name: Fire Sanctuary - Underground Rupee behind Bombable Wall
+  standard: Fire Sanctuary - Underground Rupee behind Bombable Wall
+  pretty: Fire Sanctuary - Underground Rupee behind Bombable Wall
   cryptic: a <r<hidden underground temple rupee>>
 
 - name: Fire Sanctuary - Chest after Bombable Wall
