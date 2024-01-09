@@ -282,20 +282,6 @@ F000: # Skyloft
     layer: 9
     room: 0
     objtype: OBJ
-  - name: Remove Vanilla Chest near Goddess Statue
-    type: objdelete
-    ids:
-      - 0xFDEA
-      - 0xFDF6
-      - 0xFDFF
-      - 0xFDE5
-    layers:
-      - 2
-      - 4
-      - 5
-      - 10
-    room: 0
-    objtype: OBJS
   - name: Remove dowsing targets
     type: objdelete
     ids:
@@ -307,25 +293,37 @@ F000: # Skyloft
     room: 0
     objtype: STAG
 
-  # MUST be patched and then moved as there is a chance the ID changes on move if it conflicts with another object
-  - name: Move Chest on goddess statue
-    type: objpatch
-    id: 0xFDE7
-    layer: 1
+  # Sky Keep open layers
+  - name: Add Chest near Goddess Statue to layer 6
+    type: objadd
+    layer: 6
     room: 0
     objtype: OBJS
     object:
+      params1: 0xFFFFFFF3
+      params2: 0xFF5FFFFF
       posx: 666.327332
       posy: 2893.23999
       posz: -13083.1475
+      anglex: 65535
       angley: 59591
-  - name: Move Chest on goddess statue to layer 0
-    type: objmove
-    id: 0xFDE7
-    layer: 1
-    destlayer: 0
+      anglez: 36356
+      name: TBox
+  - name: Add Chest near Goddess Statue to layer 7
+    type: objadd
+    layer: 7
     room: 0
     objtype: OBJS
+    object:
+      params1: 0xFFFFFFF3
+      params2: 0xFF5FFFFF
+      posx: 666.327332
+      posy: 2893.23999
+      posz: -13083.1475
+      anglex: 65535
+      angley: 59591
+      anglez: 36356
+      name: TBox
 
   # Trial stuff
   - name: Move Trial Gate to layer 0
