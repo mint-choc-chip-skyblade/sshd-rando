@@ -1178,6 +1178,12 @@ F012r: # Batreaux House
     layer: 1
     room: 0
     objtype: OBJ
+  - name: Remove text trigger around 30 Crystal Chest
+    type: objdelete
+    id: 0xFC22
+    layer: 1
+    room: 0
+    objtype: OBJ
 
 F013r: # Sparrot's House
   - name: Sparrot spawn
