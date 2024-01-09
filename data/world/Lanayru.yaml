@@ -255,17 +255,23 @@
 
 
 - name: Temple of Time South
-  hint_region: Lanayru Desert
+  hint_region: Temple of Time
   evets:
     Ancient Flower Farming: Distance_Activator # For timeshift stone
   exits:
     Sand Oasis End: Nothing
     Desert Gorge Statue: Nothing
     Temple of Time West: Hook_Beetle or (Slingshot and logic_tot_slingshot)
+  locations:
+    Temple of Time - Northwest Rupee on Tree Root: Beetle
+    Temple of Time - Northeast Rupee on Tree Root: Beetle
+    Temple of Time - Southeast Rupee on Tree Root: Beetle
+    Temple of Time - East Rupee on Tree Trunk: Beetle
+    Temple of Time - South Rupee on Tree Trunk: Beetle
 
 
 - name: Temple of Time West
-  hint_region: Lanayru Desert
+  hint_region: Temple of Time
   events:
     Ancient Flower Farming: Hook_Beetle # For timeshift stone
     # ToT West Timeshift Stone: Hook_Beetle or (logic_bomb_throws and (Bomb_Bag or (logic_cactus_bomb_whip and Whip)))
@@ -278,23 +284,32 @@
     
 
 - name: Temple of Time West Past Rubble
-  hint_region: None # TODO figure out what to do with this
+  hint_region: Temple of Time
   exits:
     Temple of Time Statue: Nothing
     Temple of Time West: Nothing
+  locations:
+    Temple of Time - Rupee on North Gate of Time Pillar: Beetle
+    Temple of Time - Rupee on Southwest Gate of Time Pillar: Beetle
+
+
+# Weird but allows Temple of Time West Past Rubble to have a proper hint_region
+- name: Temple of Time West Post LMF Area
+  hint_region: None # TODO figure out what to do with this
+  exits:
     LMF End of Hall of Ancient Robots: Impossible # TODO
 
 
 - name: Temple of Time North Minecart Ride
-  hint_region: Lanayru Desert
+  hint_region: Temple of Time
   exits:
     Temple of Time North: Nothing
   locations:
-    Lanayru Desert - Goddess Cube near Temple of Time: Goddess_Sword
+    Temple of Time - Goddess Cube: Goddess_Sword
     
 
 - name: Temple of Time North
-  hint_region: Lanayru Desert
+  hint_region: Temple of Time
   events:
     Ancient Flower Farming: Distance_Activator # For timeshift stone
   exits:

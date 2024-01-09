@@ -2511,6 +2511,52 @@
   textfile: 004-Object
   textindex: 25
 
+- name: Temple of Time - Northwest Rupee on Tree Root
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFC0A
+
+- name: Temple of Time - Northeast Rupee on Tree Root
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFC09
+
+- name: Temple of Time - Southeast Rupee on Tree Root
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFC08
+
+- name: Temple of Time - East Rupee on Tree Trunk
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFC0B
+
+- name: Temple of Time - South Rupee on Tree Trunk
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFC0C
+
+- name: Temple of Time - Rupee on North Gate of Time Pillar
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFFFD
+
+- name: Temple of Time - Rupee on Southwest Gate of Time Pillar
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFFFE
+
+- name: Lanayru Desert - Goddess Cube in Secret Passageway
+  original_item: Lanayru Desert Goddess Cube in Secret Passageway
+  type: Goddess Cube
+
 - name: Lanayru Desert - Goddess Cube near Caged Robot
   original_item: Lanayru Desert Goddess Cube near Caged Robot
   type: Goddess Cube
@@ -2519,12 +2565,8 @@
   original_item: Lanayru Desert Goddess Cube in Sand Oasis
   type: Goddess Cube
 
-- name: Lanayru Desert - Goddess Cube in Secret Passageway
-  original_item: Lanayru Desert Goddess Cube in Secret Passageway
-  type: Goddess Cube
-
-- name: Lanayru Desert - Goddess Cube near Temple of Time
-  original_item: Lanayru Desert Goddess Cube near Temple of Time
+- name: Temple of Time - Goddess Cube
+  original_item: Temple of Time Goddess Cube
   type: Goddess Cube
 
 ## Nodes

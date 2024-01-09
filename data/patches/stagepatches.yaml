@@ -3347,6 +3347,16 @@ F300_4: # Temple of Time
     layer: 2
     room: 0
     objtype: STAG
+  - name: Move ToT GoT Rupees to layer 0
+    type: objmove
+    ids:
+      - 0xFC9C
+      - 0xFC9E
+    hardcoded_id: 0xFFFD
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
 
 F300_5: # Lanayru Mining Facility to Temple of Time
   - name: Correct layer and entrance for first exit from end of LMF
