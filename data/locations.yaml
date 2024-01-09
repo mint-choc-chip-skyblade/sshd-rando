@@ -8,11 +8,48 @@
     - oarc/F001r/l3
     - oarc/F001r/l4
 
+- name: Knight Academy - In Link's Closet
+  original_item: Blue Rupee
+  type: Closet
+  Paths:
+    - stage/F001r/r1/l0/chest/0xFC08
+
+- name: Knight Academy - In Fledge's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F001r/r1/l0/chest/0xFC07
+
+- name: Knight Academy - In Groose's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F001r/r2/l0/chest/0xFC03
+
+- name: Knight Academy - In Owlan's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F001r/r5/l0/chest/0xFC05
+
+# Uncomment when Horwell's door is unlocked
+# - name: Knight Academy - In Horwell's Closet
+#   original_item: Green Rupee
+#   type:
+#   Paths:
+#     - stage/F001r/r5/l0/chest/0xFC03
+
+- name: Knight Academy - In Karane's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F001r/r6/l0/chest/0xFC06
+
 - name: Knight Academy - In Zelda's Closet
   original_item: Heart Piece
-  type:
+  type: # Closet
   Paths:
-    - stage/F001r/r6/l0/chest/32 #sceneflag
+    - stage/F001r/r6/l0/chest/0xFC07
 
 - name: Knight Academy - Owlan's Crystals
   original_item: Gratitude Crystal Pack
@@ -219,6 +256,12 @@
     - event/118-Town3/144
     - oarc/F006r/l0
 
+- name: Central Skyloft - Wryna's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F006r/r0/l0/chest/0xFC16
+
 - name: Central Skyloft - Waterfall Cave First Chest
   original_item: Red Rupee
   type:
@@ -262,6 +305,12 @@
     - oarc/F000/l6
     - oarc/F005r/l0
 
+- name: Central Skyloft - Orielle and Parrow's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F005r/r0/l0/chest/0xFC0E
+
 - name: Central Skyloft - Peater/Peatrice's Crystals
   original_item: Gratitude Crystal Pack
   type: Gratitude Crystal Sidequests, NPC
@@ -271,6 +320,18 @@
     - event/123-Town5/316
     - oarc/F018r/l0
     - oarc/F019r/l0
+
+- name: Central Skyloft - Peater's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F018r/r0/l0/chest/0xFC11
+
+- name: Central Skyloft - Peatrice's Closet
+  original_item: Green Rupee
+  type: Peatrice's Closet
+  Paths:
+    - stage/F018r/r0/l0/chest/0xFC12
 
 - name: Central Skyloft - Item in Bird Nest
   original_item: Rattle
@@ -420,12 +481,36 @@
     - event/123-Town5/186
     - oarc/F016r/l0
 
+- name: Skyloft Village - Mallara's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F016r/r0/l0/chest/0xFC28
+
 - name: Skyloft Village - Bertie's Crystals
   original_item: Gratitude Crystal Pack
   type: Gratitude Crystal Sidequests, NPC
   Paths:
     - event/115-Town2/125
     - oarc/F014r/l0
+
+- name: Skyloft Village - Luv and Bertie's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F014r/r0/l0/chest/0xFC12
+
+- name: Skyloft Village - Gondo's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F015r/r0/l0/chest/0xFC10
+
+- name: Skyloft Village - Rupin's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F017r/r0/l0/chest/0xFC1E
 
 - name: Skyloft Village - Sparrot's Crystals
   original_item: Gratitude Crystal Pack
@@ -434,6 +519,12 @@
   Paths:
     - event/118-Town3/141
     - oarc/F013r/l0
+
+- name: Skyloft Village - Sparrot's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F013r/r0/l0/chest/0xFC0E
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
   original_item: Gratitude Crystal 
@@ -611,6 +702,12 @@
   Paths:
     - event/117-Pumpkin/386
     - oarc/F020/l0
+
+- name: Lumpy Pumpkin - Pumm and Kina's Closet
+  original_item: Green Rupee
+  type: Closet
+  Paths:
+    - stage/F011r/r0/l0/chest/0xFC3B
 
 - name: Lumpy Pumpkin - Outside Crystal
   original_item: Gratitude Crystal 

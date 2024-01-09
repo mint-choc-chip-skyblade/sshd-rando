@@ -370,7 +370,7 @@ class World:
             if item == None:
                 continue
 
-            # Small Keys, Boss Keys, Maps, Caves Key, Shop items, Single Crystals, Stamina Fruit
+            # Small Keys, Boss Keys, Maps, Caves Key, Shop items, Single Crystals, Stamina Fruit, Closets
             if (
                 (
                     self.setting("small_keys") == "vanilla"
@@ -395,6 +395,10 @@ class World:
                 or (
                     self.setting("stamina_fruit") == "vanilla"
                     and "Stamina Fruit" in location.types
+                )
+                or (
+                    self.setting("npc_closets") == "vanilla"
+                    and "Closet" in location.types
                 )
             ):
                 location.set_current_item(item)

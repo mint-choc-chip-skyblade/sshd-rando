@@ -38,6 +38,15 @@
     - vanilla:                         "Stamina Fruit will not be randomized."
     - randomized:                      "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
 
+- name: npc_closets
+  default_option: vanilla
+  pretty_name: NPC Closets
+  pretty_options:
+    - Vanilla
+    - Randomized
+  options:
+    - vanilla:                         "Only Zelda's Closet (the one with a heart piece normally) will contain a randomized item."
+    - randomized:                      "All NPC closets will contain randomized items."
 
 - name: randomized_shops
   default_option: junk_only

@@ -82,7 +82,25 @@ Below is the list of all the flags that the randomizer changes:
 
 ### Sceneflags
 
+#### Skyloft
+* 12: Obtained the item in Link's Closet
+* 24: Obtained the item in Fledge's Closet
+* 48: Obtained the item in Groose's Closet
+* 50: Obtained the item in Owlan's Closet
+* 57: Obtained the item in Horwell's Closet
+* 61: Obtained the item in Karane's Closet
+* 81: Obtained the item in Orielle and Parrow's Closet
+* 82: Obtained the item in Wryna's Closet
+* 100: Obtained the item in Sparrot's Closet
+* 101: Obtained the item in Luv and Bertie's Closet
+* 105: Obtained the item in Gondo's Closet
+* 107: Obtained the item in Mallara's Closet
+* 116: Obtained the item in Rupin's Closet
+* 117: Obtained the item in Peater's Closet
+* 118: Obtained the item in Peatrice's Closet
+
 #### The Sky
+* 3: Obtained the item in Pumm and Kina's Closet
 * 88: Form a Squirrel Ring above Volcanic Island
 * 89: Form a Squirrel Ring above Lumpy Pumpkin
 * 90: Form a Squirrel Ring above Bamboo Island

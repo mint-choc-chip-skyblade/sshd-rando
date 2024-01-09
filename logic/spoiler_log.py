@@ -102,6 +102,10 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                         "Stamina Fruit" in location.types
                         and location.current_item == world.get_item("Stamina Fruit")
                     )
+                    and not (
+                        "Closet" in location.types
+                        and world.setting("npc_closets") == "vanilla"
+                    )
                 ):
                     spoiler_log.write(
                         "        "
