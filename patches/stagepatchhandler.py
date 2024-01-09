@@ -456,7 +456,9 @@ def object_add(bzs: dict, object_add: dict, nextid: int) -> int:
         objn = bzs["LAY "][f"l{layer}"]["OBJN"]
 
         if (obj_name := obj.get("name")) is None:
-            raise Exception(f"Cannot add an object without a name field (actor name).\nObject: {obj}\nPatch: {object_add}")
+            raise Exception(
+                f"Cannot add an object without a name field (actor name).\nObject: {obj}\nPatch: {object_add}"
+            )
 
         if not obj_name in objn:
             objn.append(obj_name)
