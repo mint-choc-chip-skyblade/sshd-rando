@@ -39,6 +39,32 @@
     - randomized:                      "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
 
 
+- name: rupee_shuffle
+  default_option: vanilla
+  pretty_name: Rupee Shuffle
+  pretty_options:
+    - Vanilla
+    - Beginner
+    - Intermediate
+    - Advanced
+  options:
+    - vanilla:                         "Freestanding Rupees will not be randomized."
+    - beginner:                        "Some freestanding Rupees can contain any item. These checks are easier to spot and collect, and there aren't lots of them. Perfect for trying out Rupee shuffle!"
+    - intermediate:                    "Most freestanding Rupees can contain any item. There's a lot of Rupee checks added and some may be more tricky to collect. Perfect for seasoned Rupee shufflers!"
+    - advanced:                        "All freestanding Rupees can contain any item. Only a few extra Rupee checks are added but these are the most obscure and difficult checks to collect. You have been warned!"
+
+
+- name: underground_rupee_shuffle
+  default_option: "off"
+  pretty_name: Underground Rupee Shuffle
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Underground Rupee locations will not be randomized."
+    - "on":                            "Underground Rupee locations that require burrowing into digspots with the Mogma Mitts can contain any item."
+
+
 - name: randomized_shops
   default_option: junk_only
   pretty_name: Randomized Shops

@@ -396,6 +396,24 @@ class World:
                     self.setting("stamina_fruit") == "vanilla"
                     and "Stamina Fruit" in location.types
                 )
+                or (
+                    self.setting("rupee_shuffle") == "vanilla"
+                    and "Freestanding Rupee" in location.types
+                )
+                or (
+                    self.setting("rupee_shuffle") == "beginner"
+                    and "Freestanding Rupee" in location.types
+                    and "Beginner Rupee" not in location.types
+                )
+                or (
+                    self.setting("rupee_shuffle") == "intermediate"
+                    and "Freestanding Rupee" in location.types
+                    and "Advanced Rupee" in location.types
+                )
+                or (
+                    self.setting("underground_rupee_shuffle") == "off"
+                    and "Underground Rupee" in location.types
+                )
             ):
                 location.set_current_item(item)
                 location.has_known_vanilla_item = True

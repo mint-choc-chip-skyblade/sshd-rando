@@ -16,31 +16,31 @@
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 1
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F001r/r6/l0/Item/0xFC0D
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 2
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F001r/r6/l0/Item/0xFC0E
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 3
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F001r/r6/l0/Item/0xFC0F
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 4
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F001r/r6/l0/Item/0xFC10
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 5
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F001r/r6/l0/Item/0xFC11
 
@@ -263,13 +263,13 @@
 
 - name: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
   original_item: Red Rupee
-  type: Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/D000/r0/l0/Item/88
 
 - name: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
   original_item: Red Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D000/r0/l0/Item/0xFC14
 
@@ -316,25 +316,25 @@
 
 - name: Central Skyloft - North Rupee in Bird's Nest
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5D
 
 - name: Central Skyloft - East Rupee in Bird's Nest
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5C
 
 - name: Central Skyloft - South Rupee in Bird's Nest
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5B
 
 - name: Central Skyloft - West Rupee in Bird's Nest
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5E
 
@@ -1205,20 +1205,20 @@
     - oarc/F100/l0
 
 - name: Faron Woods - Rupee on Hollow Tree Root
-  original_item: Blue Rupee 
-  type: Rupee
+  original_item: Blue Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/F100/r0/l0/Item/42
 
 - name: Faron Woods - Rupee on Hollow Tree Branch
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/F100/r0/l0/Item/41
 
 - name: Faron Woods - Rupee on Platform near Floria Door
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/F100/r0/l0/Item/40
 
@@ -1229,14 +1229,14 @@
     - stage/F100/r0/l0/TBox/64
 
 - name: Faron Woods - Rupee on Great Tree North Branch
-  original_item: Blue Rupee 
-  type: Rupee
+  original_item: Blue Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/F100/r0/l0/Item/43
 
 - name: Faron Woods - Rupee on Great Tree West Branch
-  original_item: Blue Rupee 
-  type: Rupee
+  original_item: Blue Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/F100/r0/l0/Item/44
 
@@ -1322,26 +1322,26 @@
 # Lake Floria:
 
 - name: Lake Floria - Rupee under Central Boulder
-  original_item: Silver Rupee 
-  type: Rupee
+  original_item: Silver Rupee
+  type: Freestanding Rupee, Advanced Rupee
   Paths:
     - stage/F102/r2/l0/Item/60
 
 - name: Lake Floria - Rupee behind Southwest Boulder
-  original_item: Blue Rupee 
-  type: Rupee
+  original_item: Blue Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/F102/r2/l0/Item/63
 
 - name: Lake Floria - Left Rupee behind Northwest Boulder
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/F102/r2/l0/Item/62
 
 - name: Lake Floria - Right Rupee behind Northwest Boulder
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/F102/r2/l0/Item/61
 
@@ -1369,19 +1369,19 @@
 
 - name: Floria Waterfall - Rupee on High Ledge
   original_item: Gold Rupee
-  type: Rupee
+  type: Freestanding Rupee, Advanced Rupee
   Paths:
    - stage/F102_1/r0/l0/Item/64
 
 - name: Floria Waterfall - North Rupee in underwater Grass
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F102_1/r0/l0/Item/0xFC19
 
 - name: Floria Waterfall - South Rupee in underwater Grass
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F102_1/r0/l0/Item/0xFC1A
 
@@ -1502,13 +1502,13 @@
 
 # - name: Flooded Faron Woods - Rupee 1
 #   original_item: Red Rupee
-#   type: Rupee, Custom Flag
+#   type: Freestanding Rupee, Intermediate Rupee, Custom Flag
 #   Paths:
 #     - stage/F103_1/r0/l0/Item/0xFC44 # Needs moving to layer 0
 
 # - name: Flooded Faron Woods - Rupee 2
 #   original_item: Red Rupee
-#   type: Rupee, Custom Flag
+#   type: Freestanding Rupee, Intermediate Rupee, Custom Flag
 #   Paths:
 #     - stage/F103_1/r0/l0/Item/0xFC45 # Needs moving to layer 0
 
@@ -1524,7 +1524,7 @@
 
 - name: Eldin Volcano - Rupee on Ledge before First Room
   original_item: Red Rupee
-  type: Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/F200/r0/l0/Item/41
 
@@ -1535,14 +1535,14 @@
     - stage/F200/r1/l0/TBox/72
 
 - name: Eldin Volcano - Rupee behind Bombable Wall in First Room
-  original_item: Blue Rupee 
-  type: Rupee
+  original_item: Blue Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/F200/r1/l0/Item/13
 
 - name: Eldin Volcano - Rupee in Crawlspace in First Room
-  original_item: Blue Rupee 
-  type: Rupee
+  original_item: Blue Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/F200/r1/l0/Item/19
 
@@ -1609,13 +1609,13 @@
 
 - name: Eldin Volcano - Southeast Rupee above Mogma Turf Entrance
   original_item: Blue Rupee
-  type: Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/F200/r2/l0/Item/125
 
 - name: Eldin Volcano - North Rupee above Mogma Turf Entrance
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/F200/r2/l0/Item/123
 
@@ -1645,13 +1645,13 @@
 
 - name: Eldin Volcano - Rupee in Old Pyrup Shell near Cliff
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/183
 
 - name: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/184
 
@@ -1773,14 +1773,14 @@
     - stage/F200/r2/l0/TBox/71
 
 - name: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/F200/r4/l0/Item/45
 
 - name: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/F200/r4/l0/Item/11
 
@@ -1890,85 +1890,85 @@
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 1
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C00
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 2
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C01
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 3
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C02
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 4
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C03
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 5
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C04
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 6
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C05
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 7
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C06
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 8
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C07
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 1
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C08
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 2
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C09
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 3
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C0A
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 4
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r7/l0/Item/0xFC00
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 5
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r7/l0/Item/0xFC01
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 6
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F200/r7/l0/Item/0xFC02
 
@@ -2139,7 +2139,7 @@
 
 - name: Mogma Turf - Rupee in First Pyrup Hole in Fire Maze
   original_item: Red Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F210/r0/l0/Item/169
 
@@ -2288,25 +2288,25 @@
 
 - name: Lanayru Mine - Rupee on Southeast Conveyor 1
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/148
 
 - name: Lanayru Mine - Rupee on Southeast Conveyor 2
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/149
 
 - name: Lanayru Mine - Rupee on Southwest Conveyor 1
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/150
 
 - name: Lanayru Mine - Rupee on Southwest Conveyor 2
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/147
 
@@ -2318,13 +2318,13 @@
 
 - name: Lanayru Mine - Rupee behind Northeast Statue
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC37
 
 - name: Lanayru Mine - Rupee behind Southwest Statue
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC15
 
@@ -2384,13 +2384,13 @@
 
 - name: Lanayru Desert - Rupee above Caged Robot 1
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFCC2
 
 - name: Lanayru Desert - Rupee above Caged Robot 2
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFCC3
 
@@ -2403,25 +2403,25 @@
 
 - name: Lanayru Desert - Rupee behind South Statue near Caged Robot
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC34
 
 - name: Lanayru Desert - Rupee behind West Statue near Caged Robot
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC35
 
 - name: Lanayru Desert - Rupee behind East Statue before Sand Oasis
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC31
 
 - name: Lanayru Desert - Rupee behind West Statue before Sand Oasis
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC36
 
@@ -2513,43 +2513,43 @@
 
 - name: Temple of Time - Northwest Rupee on Tree Root
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC0A
 
 - name: Temple of Time - Northeast Rupee on Tree Root
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC09
 
 - name: Temple of Time - Southeast Rupee on Tree Root
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC08
 
 - name: Temple of Time - East Rupee on Tree Trunk
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC0B
 
 - name: Temple of Time - South Rupee on Tree Trunk
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC0C
 
 - name: Temple of Time - Rupee on North Gate of Time Pillar
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFFFD
 
 - name: Temple of Time - Rupee on Southwest Gate of Time Pillar
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFFFE
 
@@ -2671,31 +2671,31 @@
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F302/r0/l0/Item/0xFC2E
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F302/r0/l0/Item/0xFC29
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
   original_item: Red Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F302/r0/l0/Item/0xFC27
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F302/r0/l0/Item/0xFC28
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/F302/r0/l0/Item/0xFC2D
 
@@ -2707,20 +2707,20 @@
 ## Ancient Harbour
 
 - name: Ancient Harbour - Rupee on First Pillar
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/F301/r0/l0/Item/92
 
 - name: Ancient Harbour - Left Rupee on Entrance Crown
-  original_item: Silver Rupee 
-  type: Rupee
+  original_item: Silver Rupee
+  type: Freestanding Rupee, Advanced Rupee
   Paths:
     - stage/F301/r0/l0/Item/91
 
 - name: Ancient Harbour - Right Rupee on Entrance Crown
-  original_item: Silver Rupee 
-  type: Rupee
+  original_item: Silver Rupee
+  type: Freestanding Rupee, Advanced Rupee
   Paths:
     - stage/F301/r0/l0/Item/93
 
@@ -2751,37 +2751,37 @@
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 1
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC10
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 2
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC1A
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 3
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC19
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 4
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC08
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 5
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC09
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 6
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC07
 
@@ -2814,20 +2814,20 @@
 ## Pirate Stronghold
 
 - name: Pirate Stronghold - Rupee on East Sea Pillar
-  original_item: Silver Rupee 
-  type: Rupee
+  original_item: Silver Rupee
+  type: Freestanding Rupee, Advanced Rupee
   Paths:
     - stage/F301_6/r0/l0/Item/12
 
 - name: Pirate Stronghold - Rupee on West Sea Pillar
-  original_item: Silver Rupee 
-  type: Rupee
+  original_item: Silver Rupee
+  type: Freestanding Rupee, Advanced Rupee
   Paths:
     - stage/F301_6/r0/l0/Item/11
 
 - name: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
-  original_item: Silver Rupee 
-  type: Rupee
+  original_item: Silver Rupee
+  type: Freestanding Rupee, Advanced Rupee
   Paths:
     - stage/F301_6/r0/l1/Item/13
     - stage/F301_6/r0/l2/Item/13
@@ -2896,33 +2896,33 @@
 
 - name: Skyview Temple - Rupee under South Walkway before Hub Room
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D100/r2/l0/Item/0xFC3D
 
 - name: Skyview Temple - First Rupee under West Walkway before Hub Room
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     # Moved objects get given new ids so use the vanilla tempflag id instead
     - stage/D100/r2/l0/Item/159
 
 - name: Skyview Temple - Second Rupee under West Walkway before Hub Room
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     # Moved objects get given new ids so use the vanilla tempflag id instead
     - stage/D100/r2/l0/Item/158
 
 - name: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D100/r2/l0/Item/0xFC3B
 
 - name: Skyview Temple - Rupee on Coiled Tree Branch before Hub Room
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D100/r2/l0/Item/0xFC3C
 
@@ -2941,49 +2941,49 @@
 
 - name: Skyview Temple - Rupee on South Bird Pillar in Hub Room
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC41
 
 - name: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC40
 
 - name: Skyview Temple - Rupee in Southeast Tunnel
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/D100/r5/l0/Item/65
 
 - name: Skyview Temple - Rupee in Southwest Tunnel
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/D100/r5/l0/Item/67
 
 - name: Skyview Temple - Rupee in East Tunnel
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/D100/r5/l0/Item/66
 
 - name: Skyview Temple - First Rupee in Northeast Tunnel
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC3F
 
 - name: Skyview Temple - Second Rupee in Northeast Tunnel
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC3E
 
 - name: Skyview Temple - Third Rupee in Northeast Tunnel
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC3D
 
@@ -3016,8 +3016,8 @@
     - stage/B100/r0/l4/HeartCo
 
 - name: Skyview Spring - Rupee on Spring Pillar
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/B100_1/r0/l0/Item/109
 
@@ -3042,8 +3042,8 @@
     - stage/D200/r1/l0/TBox/66
 
 - name: Earth Temple - Rupee above Drawbridge
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/D200/r1/l0/Item/25
 
@@ -3079,8 +3079,8 @@
     - oarc/D200/l0
 
 - name: Earth Temple - Rupee in Lava Tunnel
-  original_item: Silver Rupee 
-  type: Rupee
+  original_item: Silver Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/D200/r2/l0/Item/21
 
@@ -3146,37 +3146,37 @@
 
 - name: Lanayru Mining Facility - Left Front Rupee behind Statue
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC12
 
 - name: Lanayru Mining Facility - Left Middle Rupee behind Statue
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC20
 
 - name: Lanayru Mining Facility - Left Back Rupee behind Statue
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC21
 
 - name: Lanayru Mining Facility - Right Front Rupee behind Statue
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC0F
 
 - name: Lanayru Mining Facility - Right Middle Rupee behind Statue
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC0E
 
 - name: Lanayru Mining Facility - Right Back Rupee behind Statue
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC22
 
@@ -3218,7 +3218,7 @@
 
 - name: Lanayru Mining Facility - Rupee in First Crawlspace
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r9/l0/Item/0xFC00
 
@@ -3231,85 +3231,85 @@
 
 - name: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r9/l0/Item/0xFC07
 
 - name: Lanayru Mining Facility - Second Rupee in Crawlspace before Spike Maze
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r9/l0/Item/0xFC01
 
 - name: Lanayru Mining Facility - West Rupee in Spike Maze 1
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC33
 
 - name: Lanayru Mining Facility - West Rupee in Spike Maze 2
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC32
 
 - name: Lanayru Mining Facility - West Rupee in Spike Maze 3
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC1C
 
 - name: Lanayru Mining Facility - West Rupee in Spike Maze 4
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC27
 
 - name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 1
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC31
 
 - name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 2
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC30
 
 - name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 3
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC1B
 
 - name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 4
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC1A
 
 - name: Lanayru Mining Facility - Central Rupee in Spike Maze 1
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC19
 
 - name: Lanayru Mining Facility - Central Rupee in Spike Maze 2
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC36
 
 - name: Lanayru Mining Facility - Central Rupee in Spike Maze 3
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC28
 
 - name: Lanayru Mining Facility - Northeast Rupee in Spike Maze
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC38
 
@@ -3322,7 +3322,7 @@
 
 - name: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
   original_item: Green Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D300_1/r8/l0/Item/0xFC50
 
@@ -3358,43 +3358,43 @@
 
 - name: Ancient Cistern - Rupee in West Hand
   original_item: Silver Rupee
-  type: Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/D101/r0/l0/Item/93
 
 - name: Ancient Cistern - Rupee in East Hand
-  original_item: Silver Rupee 
-  type: Rupee
+  original_item: Silver Rupee
+  type: Freestanding Rupee, Intermediate Rupee
   Paths:
     - stage/D101/r0/l0/Item/92
 
 - name: Ancient Cistern - First Rupee in East Part in Short Tunnel
-  original_item: Green Rupee 
-  type: Rupee
+  original_item: Green Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/D101/r2/l0/Item/65
 
 - name: Ancient Cistern - Second Rupee in East Part in Short Tunnel
-  original_item: Green Rupee 
-  type: Rupee
+  original_item: Green Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/D101/r2/l0/Item/66
 
 - name: Ancient Cistern - Third Rupee in East Part in Short Tunnel
-  original_item: Green Rupee 
-  type: Rupee
+  original_item: Green Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/D101/r2/l0/Item/67
 
 - name: Ancient Cistern - Rupee in East Part in Cubby
-  original_item: Red Rupee 
-  type: Rupee
+  original_item: Red Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/D101/r2/l0/Item/68
 
 - name: Ancient Cistern - Rupee in East Part in Main Tunnel
   original_item: Red Rupee
-  type: Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/D101/r2/l0/Item/34
 
@@ -3430,7 +3430,7 @@
 
 - name: Ancient Cistern - Rupee under Lilypad
   original_item: Red Rupee
-  type: Rupee
+  type: Freestanding Rupee, Beginner Rupee
   Paths:
     - stage/D101/r5/l0/Item/13
 
@@ -3442,13 +3442,13 @@
 
 - name: Ancient Cistern - Rupee in Basement Demon's Right Eye
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D101/r4/l0/Item/0xFC11
 
 - name: Ancient Cistern - Rupee in Basement Demon's Left Eye
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D101/r4/l0/Item/0xFC12
 
@@ -3586,37 +3586,37 @@
 
 - name: Fire Sanctuary - Left Rupee above Blocked Lava Source
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC27
 
 - name: Fire Sanctuary - Right Rupee above Blocked Lava Source
   original_item: Red Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC26
 
 - name: Fire Sanctuary - Rupee in Alcove near Blocked Lava Source
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Beginner Rupee, Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC25
 
 - name: Fire Sanctuary - First Rupee in Alcove opposite Blocked Lava Source
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC1F
 
 - name: Fire Sanctuary - Second Rupee in Alcove opposite Blocked Lava Source
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC23
 
 - name: Fire Sanctuary - Third Rupee in Alcove opposite Blocked Lava Source
   original_item: Blue Rupee
-  type: Rupee, Custom Flag
+  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC24
 
@@ -3743,8 +3743,8 @@
     - stage/D003_6/r0/l0/TBox/65
 
 - name: Sky Keep - Rupee in Fire Sanctuary Room in Alcove
-  original_item: Silver Rupee 
-  type: Rupee
+  original_item: Silver Rupee
+  type: Freestanding Rupee, Advanced Rupee
   Paths:
     - stage/D003_2/r0/l0/Item/36
 
