@@ -2669,6 +2669,36 @@
   Paths:
     - stage/F302/r0/l0/Soil/30
 
+- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F302/r0/l0/Item/0xFC2E
+
+- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F302/r0/l0/Item/0xFC29
+
+- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
+  original_item: Red Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F302/r0/l0/Item/0xFC27
+
+- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
+  original_item: Blue Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F302/r0/l0/Item/0xFC28
+
+- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F302/r0/l0/Item/0xFC2D
+
 - name: Lanayru Gorge - Goddess Cube
   original_item: Lanayru Gorge Goddess Cube
   type: Goddess Cube
