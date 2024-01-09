@@ -111,7 +111,12 @@
   original_item: Red Rupee
   type:
   Paths:
-    - stage/F000/r0/l0/TBox/71
+    - stage/F000/r0/l2/TBox/71
+    - stage/F000/r0/l4/TBox/71
+    - stage/F000/r0/l5/TBox/71
+    - stage/F000/r0/l6/TBox/71
+    - stage/F000/r0/l7/TBox/71
+    # - stage/F000/r0/l10/TBox/71
 
 - name: Upper Skyloft - Stamina Fruit near Upper Academy Gates
   original_item: Stamina Fruit
