@@ -2719,6 +2719,42 @@
   Paths:
     - stage/F301_5/r0/l0/TBox/65
 
+- name: Skipper's Retreat - Rupee under Sand in Shack 1
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC10
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 2
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC1A
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 3
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC19
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 4
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC08
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 5
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC09
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 6
+  original_item: Green Rupee
+  type: Rupee, Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC07
+
 - name: Skipper's Retreat - Skydive Chest
   original_item: Silver Rupee
   type:

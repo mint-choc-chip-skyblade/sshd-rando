@@ -447,6 +447,12 @@
     Skipper's Retreat Top: Nothing
   locations:
     Skipper's Retreat - Chest in Shack: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 1: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 2: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 3: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 4: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 5: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 6: Gust_Bellows
 
 
 - name: Skipper's Retreat Skydive Platform

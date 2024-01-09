@@ -3306,6 +3306,36 @@
   pretty: Skipper's Retreat - Chest in Shack
   cryptic: a <r<chest atop a sandy retreat>>
 
+- name: Skipper's Retreat - Rupee under Sand in Shack 1
+  standard: Skipper's Retreat - Rupee under Sand in Shack 1
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 1
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 2
+  standard: Skipper's Retreat - Rupee under Sand in Shack 2
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 2
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 3
+  standard: Skipper's Retreat - Rupee under Sand in Shack 3
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 3
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 4
+  standard: Skipper's Retreat - Rupee under Sand in Shack 4
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 4
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 5
+  standard: Skipper's Retreat - Rupee under Sand in Shack 5
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 5
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 6
+  standard: Skipper's Retreat - Rupee under Sand in Shack 6
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 6
+  cryptic: a <r<rupee atop a sandy retreat>>
+
 - name: Skipper's Retreat - Skydive Chest
   standard: Skipper's Retreat - Skydive Chest
   pretty: Skipper's Retreat - Skydive Chest
