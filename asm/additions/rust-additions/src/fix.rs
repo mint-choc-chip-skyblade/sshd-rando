@@ -52,7 +52,7 @@ extern "C" {
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
 #[no_mangle]
-pub fn fix_item_get_under_water() {
+pub fn fix_item_get() {
     unsafe {
         let mut item_animation_index: u8;
 
@@ -72,17 +72,44 @@ pub fn fix_item_get_under_water() {
             return;
         }
 
-        // If in water, allow immediate item gets
-        if ((*PLAYER_PTR).action_flags >> 18) & 0x1 == 1 {
+        let current_action = (*PLAYER_PTR).current_action;
+
+        // If in water or sliding, allow immediate item gets
+        if ((*PLAYER_PTR).action_flags >> 18) & 0x1 == 1
+            || current_action == player::PLAYER_ACTIONS::SLIDING
+        {
             // debug::debug_print_num("action_flags: ", (*PLAYER_PTR).action_flags);
-            asm!("mov w25, #0"); // allow collecting items under water
+            asm!("mov w25, #0"); // allow collecting items in non-vanilla ways
 
             // If should be a big item get animation, make it a small one
             // Big item gets don't work properly under water :(
-            if item_animation_index == 1 {
+            if item_animation_index == 1 && current_action != player::PLAYER_ACTIONS::SLIDING {
                 asm!("mov w8, #0");
             }
         }
+    }
+}
+
+#[no_mangle]
+pub fn fix_items_in_sand_piles() {
+    unsafe {
+        let param1: u32;
+        asm!(
+            "ldr {0:w}, [x19, #0xc]",
+            out(reg) param1,
+        );
+
+        let sceneflag = param1 >> 10 & 0xFF;
+
+        // Only trap items in sand piles on Skyloft and if they have the
+        // sceneflag for the Item in Bird's Nest check
+        if &CURRENT_STAGE_NAME[..5] == b"F000\0" && sceneflag == 13 {
+            asm!("mov w8, #1");
+        } else {
+            asm!("mov w8, #0");
+        }
+
+        asm!("cmp w8, #1");
     }
 }
 

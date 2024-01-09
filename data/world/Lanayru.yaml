@@ -12,6 +12,10 @@
     Lanayru Mine Upper Area: Clawshots
   locations:
     Lanayru Mine - Chest near First Timeshift Stone: "'Lanayru_Mine_First_Timeshift_Stone'"
+    Lanayru Mine - Rupee on Southeast Conveyor 1: Beetle
+    Lanayru Mine - Rupee on Southeast Conveyor 2: Beetle
+    Lanayru Mine - Rupee on Southwest Conveyor 1: Beetle
+    Lanayru Mine - Rupee on Southwest Conveyor 2: Beetle
     Lanayru Mine - Goddess Cube: Goddess_Sword
 
 
@@ -37,7 +41,9 @@
     Lanayru Mine Entry: "'Blow_Down_First_Mine_Statue'"
     Lanayru Mine End: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle) or 'Stamina_Potion' or logic_brakeslide
   locations:
-    Lanayru Mine - Chest behind Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
+    Lanayru Mine - Chest behind Northeast Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
+    Lanayru Mine - Rupee behind Northeast Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
+    Lanayru Mine - Rupee behind Southwest Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
     Lanayru Mine - Stamina Fruit before Falling Statues: Nothing
     Lanayru Mine - Stamina Fruit after Falling Statues: Beetle
     Lanayru Mine - Stamina Fruit near Spumes 1: Beetle
@@ -91,8 +97,14 @@
     Lanayru Mine In Minecart: Blow_Up_Covered_Timeshift_Stone # I can't assume the minecart is available, right?
   locations:
     Lanayru Desert - Chest near Party Wheel: Blow_Up_Covered_Timeshift_Stone
-    Lanayru Desert - Chest near Rescue Caged Robot: Nothing
     Lanayru Desert - Stamina Fruit on Ledge to Party Wheel: Blow_Up_Covered_Timeshift_Stone or Beetle
+    Lanayru Desert - Rupee above Caged Robot 1: Beetle # You can (in theory) use a bomb flower to knock it down
+    Lanayru Desert - Rupee above Caged Robot 2: Beetle # You can (in theory) use a bomb flower to knock it down
+    Lanayru Desert - Rupee behind South Statue near Caged Robot: Hook_Beetle
+    Lanayru Desert - Rupee behind West Statue near Caged Robot: Hook_Beetle
+    Lanayru Desert - Rupee behind East Statue before Sand Oasis: Hook_Beetle
+    Lanayru Desert - Rupee behind West Statue before Sand Oasis: Hook_Beetle
+    Lanayru Desert - Chest near Caged Robot: Nothing
 
     # You can use the bomb flowers to *just* throw one up into the hole in the cage from the ground
     # This trick is only doable on HD
@@ -108,6 +120,10 @@
     Sand Oasis Middle: Can_Navigate_in_Oasis or 'Push_Down_First_Sand_Oasis_Minecart'
   locations:
     Lanayru Desert - Goddess Cube in Sand Oasis: Can_Navigate_in_Oasis and Goddess_Sword
+    Lanayru Desert - Rupee behind South Statue near Caged Robot: Bomb_Bag and logic_bomb_throws
+    Lanayru Desert - Rupee behind West Statue near Caged Robot: Bomb_Bag and logic_bomb_throws
+    Lanayru Desert - Rupee behind East Statue before Sand Oasis: Bomb_Bag and logic_bomb_throws
+    Lanayru Desert - Rupee behind West Statue before Sand Oasis: Bomb_Bag and logic_bomb_throws
 
 
 - name: Lanayru Desert West Wall
@@ -239,17 +255,23 @@
 
 
 - name: Temple of Time South
-  hint_region: Lanayru Desert
+  hint_region: Temple of Time
   evets:
     Ancient Flower Farming: Distance_Activator # For timeshift stone
   exits:
     Sand Oasis End: Nothing
     Desert Gorge Statue: Nothing
     Temple of Time West: Hook_Beetle or (Slingshot and logic_tot_slingshot)
+  locations:
+    Temple of Time - Northwest Rupee on Tree Root: Beetle
+    Temple of Time - Northeast Rupee on Tree Root: Beetle
+    Temple of Time - Southeast Rupee on Tree Root: Beetle
+    Temple of Time - East Rupee on Tree Trunk: Beetle
+    Temple of Time - South Rupee on Tree Trunk: Beetle
 
 
 - name: Temple of Time West
-  hint_region: Lanayru Desert
+  hint_region: Temple of Time
   events:
     Ancient Flower Farming: Hook_Beetle # For timeshift stone
     # ToT West Timeshift Stone: Hook_Beetle or (logic_bomb_throws and (Bomb_Bag or (logic_cactus_bomb_whip and Whip)))
@@ -262,23 +284,32 @@
     
 
 - name: Temple of Time West Past Rubble
-  hint_region: None # TODO figure out what to do with this
+  hint_region: Temple of Time
   exits:
     Temple of Time Statue: Nothing
     Temple of Time West: Nothing
+  locations:
+    Temple of Time - Rupee on North Gate of Time Pillar: Beetle
+    Temple of Time - Rupee on Southwest Gate of Time Pillar: Beetle
+
+
+# Weird but allows Temple of Time West Past Rubble to have a proper hint_region
+- name: Temple of Time West Post LMF Area
+  hint_region: None # TODO figure out what to do with this
+  exits:
     LMF End of Hall of Ancient Robots: Impossible # TODO
 
 
 - name: Temple of Time North Minecart Ride
-  hint_region: Lanayru Desert
+  hint_region: Temple of Time
   exits:
     Temple of Time North: Nothing
   locations:
-    Lanayru Desert - Goddess Cube near Temple of Time: Goddess_Sword
+    Temple of Time - Goddess Cube: Goddess_Sword
     
 
 - name: Temple of Time North
-  hint_region: Lanayru Desert
+  hint_region: Temple of Time
   events:
     Ancient Flower Farming: Distance_Activator # For timeshift stone
   exits:
@@ -350,6 +381,11 @@
   locations:
     Lanayru Gorge - Digging Spot: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
     Lanayru Gorge - Goddess Cube: Goddess_Sword
+    Lanayru Gorge - Rupee in High Tunnel after Bridge 1: Beetle
+    Lanayru Gorge - Rupee in High Tunnel after Bridge 2: Beetle
+    Lanayru Gorge - Rupee in High Tunnel after Bridge 3: Beetle
+    Lanayru Gorge - Rupee in High Tunnel after Bridge 4: Beetle
+    Lanayru Gorge - Rupee in High Tunnel after Bridge 5: Beetle
 
 
 - name: Ancient Harbour Highest Platform
@@ -416,6 +452,12 @@
     Skipper's Retreat Top: Nothing
   locations:
     Skipper's Retreat - Chest in Shack: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 1: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 2: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 3: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 4: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 5: Gust_Bellows
+    Skipper's Retreat - Rupee under Sand in Shack 6: Gust_Bellows
 
 
 - name: Skipper's Retreat Skydive Platform

@@ -20,6 +20,7 @@ from constants.patchconstants import (
     STAGE_OBJECT_NAMES,
     STAGE_FILE_REGEX,
     ROOM_ARC_REGEX,
+    VALID_STAGE_PATCH_TYPES,
 )
 
 from filepathconstants import (
@@ -45,8 +46,7 @@ def patch_tbox(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     )
 
     if tbox is None:
-        print(f"ERROR: No tbox id {id} found to patch")
-        return
+        raise Exception(f"No TBox with id '{id}' found to patch.")
 
     # Need to check this as itemid is the itemid of the fake item model when trapid > 0
     if trapid:
@@ -91,8 +91,9 @@ def patch_freestanding_item(
         None,
     )
     if freestanding_item is None:
-        print(f"ERROR: No freestanding item id {hex(id)} found to patch")
-        return
+        raise Exception(
+            f"No freestanding item with id '{id}({hex(id)})' found to patch."
+        )
 
     # Need to check this as itemid is the itemid of the fake item model when trapid > 0
     if trapid:
@@ -136,8 +137,7 @@ def patch_bucha(bzs: dict, itemid: int, object_id_str: str, trapid: int):
         itemid = 34  # rupoor
 
     if bucha is None:
-        print(f"ERROR: Bucha's id {id} not found. Cannot patch this check.")
-        return
+        raise Exception(f"Bucha's id '{id}' not found. Cannot patch this check.")
 
     bucha["params2"] = mask_shift_set(bucha["params2"], 0xFF, 0x8, itemid)
 
@@ -156,8 +156,7 @@ def patch_zeldas_closet(bzs: dict, itemid: int, object_id_str: str, trapid: int)
         itemid = 34  # rupoor
 
     if closet is None:
-        print(f"ERROR: No closet id {id} found to patch")
-        return
+        raise Exception(f"No closet with id '{id}' found to patch.")
 
     closet["params1"] = mask_shift_set(closet["params1"], 0xFF, 8, itemid)
 
@@ -173,8 +172,7 @@ def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
         itemid = 34  # rupoor
 
     if boko is None:
-        print(f"ERROR: No boko id {id} found to patch")
-        return
+        raise Exception(f"No Bokoblin (EBc) with id '{id}' found to patch.")
 
     boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemid)
 
@@ -183,8 +181,7 @@ def patch_heart_container(bzs: dict, itemid: int, trapid: int):
     heart_container = next(filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None)
 
     if heart_container is None:
-        print(f"ERROR: No heart container found to patch")
-        return
+        raise Exception(f"No heart container found to patch.")
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
@@ -199,8 +196,7 @@ def patch_chandelier_item(bzs: dict, itemid: int, trapid: int):
     chandelier = next(filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None)
 
     if chandelier is None:
-        print(f"ERROR: No chandelier found to patch")
-        return
+        raise Exception(f"No chandelier found to patch.")
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
@@ -224,8 +220,7 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
         itemid = 34  # rupoor
 
     if digspot is None:
-        print(f"ERROR: No digspot id {id} found to patch")
-        return
+        raise Exception(f"No digspot with id '{id}' found to patch.")
 
     # patch digspot to be the same as key piece digspots in all ways except it keeps it's initial sceneflag
     digspot["params1"] = (digspot["params1"] & 0xFF0) | 0xFF0B1004
@@ -235,7 +230,7 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 def patch_goddess_crest(bzs: dict, itemid: int, index: str, trapid: int):
     crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
     if crest is None:
-        print(f"ERROR: No crest found to patch")
+        raise Exception(f"No goddess crest found to patch.")
         return
 
     # Don't use fake itemid yet, this needs patching properly first
@@ -259,7 +254,7 @@ def patch_squirrels(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     )
 
     if squirrel_tag is None:
-        print(f"ERROR: No squirrel tag (MssbTag) found to patch")
+        raise Exception(f"No squirrel tag (MssbTag) found to patch.")
         return
 
     # Don't use fake itemid yet, this needs patching properly first
@@ -296,6 +291,8 @@ def patch_squirrels(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 
 
 def patch_additional_properties(obj: dict, prop: str, value: int):
+    unsupported_prop_execption = f"Cannot patch object with unsupported property.\nUnsupported property: {prop}\nObject: {obj}"
+
     if obj["name"].startswith("Npc"):
         if prop == "trigstoryfid":
             obj["params1"] = mask_shift_set(obj["params1"], 0x7FF, 10, value)
@@ -312,10 +309,10 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
             elif prop == "subtype":
                 obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 0, value)
             else:
-                print(f'ERROR: unsupported property "{prop}" to patch for object {obj}')
+                raise Exception(unsupported_prop_execption)
 
         else:
-            print(f'ERROR: unsupported property "{prop}" to patch for object {obj}')
+            raise Exception(unsupported_prop_execption)
 
     elif obj["name"] == "TBox":
         if prop == "spawnscenefid":
@@ -325,7 +322,7 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
         elif prop == "itemid":
             obj["anglez"] = mask_shift_set(obj["anglez"], 0x1FF, 0, value)
         else:
-            print(f'ERROR: unsupported property "{prop}" to patch for object {obj}')
+            raise Exception(unsupported_prop_execption)
 
     elif obj["name"] == "EvntTag":
         if prop == "trigscenefid":
@@ -335,7 +332,7 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
         elif prop == "event":
             obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 0, value)
         else:
-            print(f'ERROR: unsupported property "{prop}" to patch for object {obj}')
+            raise Exception(unsupported_prop_execption)
 
     elif obj["name"] == "EvfTag":
         if prop == "trigstoryfid":
@@ -345,7 +342,7 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
         elif prop == "event":
             obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 0, value)
         else:
-            print(f'ERROR: unsupported property "{prop}" to patch for object {obj}')
+            raise Exception(unsupported_prop_execption)
 
     elif obj["name"] == "ScChang":
         if prop == "trigstoryfid":
@@ -357,7 +354,7 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
         elif prop == "trigscenefid":
             obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 24, value)
         else:
-            print(f'ERROR: unsupported property "{prop}" to patch for object {obj}')
+            raise Exception(unsupported_prop_execption)
 
     elif obj["name"] == "SwAreaT":
         if prop == "setstoryfid":
@@ -369,7 +366,7 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
         elif prop == "unsetscenefid":
             obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 8, value)
         else:
-            print(f'ERROR: unsupported property "{prop}" to patch for object {obj}')
+            raise Exception(unsupported_prop_execption)
 
     elif obj["name"] == "PushBlk":
         if prop == "pathIdx":
@@ -381,16 +378,17 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
         elif prop == "isSwitchGoal":
             obj["params1"] = mask_shift_set(obj["params1"], 0x03, 28, value)
         else:
-            print(f'ERROR: unsupported property "{prop}" to patch for object {obj}')
+            raise Exception(unsupported_prop_execption)
 
     else:
-        print(f"ERROR: unsupported object to patch {obj}")
+        raise Exception(f"Unsupported object to patch: {obj}")
 
 
-def object_add(bzs: dict, object_add: dict, nextid: int):
+def object_add(bzs: dict, object_add: dict, nextid: int) -> int:
     layer = object_add.get("layer", None)
     object_type = object_add["objtype"].ljust(4)
     obj = object_add["object"]
+    return_nextid_increment = 0
 
     # populate with default object as a base
     if object_type in ["SOBS", "SOBJ", "STAS", "STAG", "SNDT"]:
@@ -404,8 +402,9 @@ def object_add(bzs: dict, object_add: dict, nextid: int):
     elif object_type == "AREA":
         new_object = DEFAULT_AREA.copy()
     else:
-        print(f"ERROR: Unknown objtype: {object_type}")
-        return
+        raise Exception(
+            f"Cannot add object with unknown objtype: {object_type}.\nObject: {obj}\nPatch: {object_add}"
+        )
 
     # check index to verify new index is the next available index
     if "index" in obj:
@@ -415,18 +414,23 @@ def object_add(bzs: dict, object_add: dict, nextid: int):
             object_list = bzs["LAY "][f"l{layer}"].get(object_type, [])
 
         if len(object_list) != obj["index"]:
-            print(f"ERROR: wrong index on added object: {json.dumps(object_add)}")
-            return
+            raise Exception(
+                f"Cannot use wrong index on added object: {json.dumps(object_add)}"
+            )
 
     # populate provided properties
     for prop, value in obj.items():
         if prop in new_object:
             new_object[prop] = value
+
+            if prop == "id":
+                new_object["id"] = (new_object["id"] & ~0x3FF) | nextid
+                return_nextid_increment += 1
+        # Allow creating new objects that *need* a known id
+        elif prop == "hardcoded_id":
+            new_object["id"] = value
         else:
             patch_additional_properties(obj=new_object, prop=prop, value=value)
-
-    if "id" in new_object:
-        new_object["id"] = (new_object["id"] & ~0x3FF) | nextid
 
     # creates list for object types if don't already exist in bzs
     if layer is None:
@@ -442,7 +446,10 @@ def object_add(bzs: dict, object_add: dict, nextid: int):
 
     # add object name to objn if it's some type of actor
     if object_type in STAGE_OBJECT_NAMES:
-        # TODO: this only works if the layer is set
+        # Add layer if it doesn't already exist
+        if not bzs["LAY "].get(f"l{layer}"):
+            bzs["LAY "][f"l{layer}"] = []
+
         if not "OBJN" in bzs["LAY "][f"l{layer}"]:
             bzs["LAY "][f"l{layer}"]["OBJN"] = []
 
@@ -452,15 +459,94 @@ def object_add(bzs: dict, object_add: dict, nextid: int):
             objn.append(obj["name"])
 
     object_list.append(new_object)
+    return return_nextid_increment
+
+
+def object_handle_list_props(object: dict, ids: list, current_id_index: int) -> dict:
+    new_object = object.copy()
+    new_object["ids"] = []
+    new_object["id"] = ids[current_id_index]
+
+    # Allows batch handling of objects across multiple layers
+    if len(layers := object.get("layers", [])) > 0:
+        if not isinstance(layers, list):
+            raise Exception(
+                f"Cannot handle object as property 'layers' is not a list: {object}."
+            )
+
+        if len(layers) != len(ids):
+            raise Exception(
+                f"Cannot handle object as number of layers is different to number of ids: {object}."
+            )
+
+        new_object["layers"] = []
+        new_object["layer"] = layers[current_id_index]
+
+    # Allows batch handling of objects across multiple rooms
+    if len(rooms := object.get("rooms", [])) > 0:
+        assert isinstance(rooms, list)
+
+        if len(rooms) != len(ids):
+            raise Exception(
+                f"Cannot handle object as number of rooms is different to number of ids: {object}."
+            )
+
+        new_object["rooms"] = []
+        new_object["room"] = rooms[current_id_index]
+
+    # Allows batch handling of objects of different types
+    if len(objtypes := object.get("objtypes", [])) > 0:
+        assert isinstance(objtypes, list)
+
+        if len(objtypes) != len(ids):
+            raise Exception(
+                f"Cannot handle object as number of rooms is different to number of ids: {object}."
+            )
+
+        new_object["objtypes"] = []
+        new_object["objtype"] = objtypes[current_id_index]
+
+    if not isinstance(new_object["layer"], int):
+        raise Exception(
+            f"Cannot handle object with a non-integer layer ({new_object['layer']}).\nObject: {new_object}\nPatch: {object}"
+        )
+
+    if not isinstance(new_object["room"], int):
+        raise Exception(
+            f"Cannot handle object with a non-integer room ({new_object['room']}).\nObject: {new_object}\nPatch: {object}"
+        )
+
+    if not isinstance(new_object["objtype"], str):
+        raise Exception(
+            f"Cannot handle object with a non-string objtype ({new_object['objtype']}).\nObject: {new_object}\nPatch: {object}"
+        )
+
+    return new_object
 
 
 def object_delete(bzs: dict, object_delete: dict):
-    obj = get_entry_from_bzs(bzs=bzs, object_def=object_delete, remove=True)
+    ids: list = object_delete.get("ids", [])
+    start_obj_id = object_delete.get("startid")
+    end_obj_id = object_delete.get("endid")
 
-    if obj is None:
-        print(
-            f'ERROR: object not found and therefore not deleted- patch {object_delete["name"]}'
-        )
+    if id := object_delete.get("id"):
+        ids.append(id)
+
+    if start_obj_id and end_obj_id:
+        if start_obj_id > end_obj_id:
+            raise Exception(
+                f"Cannot perform objdelete because startid ({start_obj_id}) is bigger than endid ({end_obj_id})."
+            )
+
+        for obj_id in range(start_obj_id, end_obj_id + 1):
+            ids.append(obj_id)
+
+    for id_index in range(len(ids)):
+        object_to_delete = object_handle_list_props(object_delete, ids, id_index)
+        obj = get_entry_from_bzs(bzs=bzs, object_def=object_to_delete, remove=True)
+
+        if obj is None:
+            raise Exception(f"Cannot find object:\n{obj}\nPatch: {object_delete}")
 
 
 def object_patch(bzs: dict, object_patch: dict):
@@ -474,13 +560,45 @@ def object_patch(bzs: dict, object_patch: dict):
                 patch_additional_properties(obj=obj, prop=prop, value=value)
 
 
-def object_move(bzs: dict, object_move: dict, nextid: int):
-    obj = get_entry_from_bzs(bzs=bzs, object_def=object_move, remove=True)
-    destination_layer = object_move["destlayer"]
+def object_move(bzs: dict, object_move: dict, nextid: int) -> int:
+    ids: list = object_move.get("ids", [])
+    start_obj_id = object_move.get("startid")
+    end_obj_id = object_move.get("endid")
 
-    if obj is not None:
-        object_type = object_move["objtype"].ljust(4)
-        obj["id"] = (obj["id"] & ~0x3FF) | nextid
+    if id := object_move.get("id"):
+        ids.append(id)
+
+    if start_obj_id and end_obj_id:
+        if start_obj_id > end_obj_id:
+            raise Exception(
+                f"Cannot perform objmove because startid ({start_obj_id}) is bigger than endid ({end_obj_id})."
+            )
+
+        for obj_id in range(start_obj_id, end_obj_id + 1):
+            ids.append(obj_id)
+
+    destination_layer = object_move["destlayer"]
+    return_nextid_increment = 0
+
+    for id_index in range(len(ids)):
+        object_to_move = object_handle_list_props(object_move, ids, id_index)
+
+        obj = get_entry_from_bzs(bzs=bzs, object_def=object_to_move, remove=True)
+
+        if obj is None:
+            raise Exception(
+                f"Cannot find object to move: {object_to_move}.\nPatch: {object_move}"
+            )
+
+        object_type = object_to_move["objtype"].ljust(4)
+
+        # Allow moving objects that *need* a specific id
+        if hardcoded_id := object_move.get("hardcoded_id"):
+            obj["id"] = hardcoded_id + id_index
+        else:
+            obj["id"] = (obj["id"] & ~0x3FF) | nextid
+            return_nextid_increment += 1
+            nextid += 1
 
         if not object_type in bzs["LAY "][f"l{destination_layer}"]:
             bzs["LAY "][f"l{destination_layer}"][object_type] = []
@@ -494,6 +612,8 @@ def object_move(bzs: dict, object_move: dict, nextid: int):
 
         if not obj["name"] in objn:
             objn.append(obj["name"])
+
+    return return_nextid_increment
 
 
 def layer_override(bzs: dict, patch: dict):
@@ -557,7 +677,9 @@ def patch_and_write_stage(
                 if oarc_path.exists():
                     stage_u8.add_file_data(f"oarc/{arc_name}", oarc_path.read_bytes())
                 else:
-                    print(f"ERROR: {arc_name} not found in oarc cache")
+                    raise Exception(
+                        f"Arc '{arc_name}' cannot be found in oarccache. Try adding the arc to extracts.yaml."
+                    )
 
         if layer == 0:
             # handle layer overrides
@@ -566,10 +688,9 @@ def patch_and_write_stage(
             )
 
             if len(layer_override_patches) > 1:
-                print(
-                    f"ERROR: {len(layer_override_patches)} layer overrides found for stage {stage}, expected 1"
+                raise Exception(
+                    f"Multiple layeroverrides found. {len(layer_override_patches)} layer overrides found for stage {stage}, expected 1."
                 )
-                return
             elif len(layer_override_patches) == 1:
                 if stage_u8 is None:
                     stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
@@ -639,26 +760,24 @@ def patch_and_write_stage(
 
                         for patch in patches_for_current_room:
                             if patch["type"] == "objadd":
-                                object_add(
+                                nextid += object_add(
                                     bzs=room_bzs,
                                     object_add=patch,
                                     nextid=nextid,
                                 )
-                                nextid += 1
                             elif patch["type"] == "objdelete":
                                 object_delete(bzs=room_bzs, object_delete=patch)
                             elif patch["type"] == "objpatch":
                                 object_patch(bzs=room_bzs, object_patch=patch)
                             elif patch["type"] == "objmove":
-                                object_move(
+                                nextid += object_move(
                                     bzs=room_bzs,
                                     object_move=patch,
                                     nextid=nextid,
                                 )
-                                nextid += 1
                             else:
-                                print(
-                                    f"ERROR: unsupported patch type {patch['type']} in stage {stage} layer {layer} room {roomid} patches"
+                                raise Exception(
+                                    f"Unsupported patch type ({patch['type']}) found.\nPatch: {patch}"
                                 )
 
                         for (
@@ -750,7 +869,7 @@ def patch_and_write_stage(
                             #     )
                             else:
                                 print(
-                                    f"Object name: {object_name} not current supported for check patching"
+                                    f"Object name: {object_name} not currently supported for check patching."
                                 )
 
                         room_u8.set_file_data("dat/room.bzs", build_bzs(room_bzs))
@@ -775,6 +894,18 @@ class StagePatchHandler:
         self.stage_oarc_add: dict[tuple[str, int], set[str]] = defaultdict(set)
 
     def handle_stage_patches(self, onlyif_handler: ConditionalPatchHandler):
+        for stage in self.stage_patches:
+            for patch in self.stage_patches[stage]:
+                if not patch.get("type"):
+                    raise Exception(f"Patch doesn't have a 'type' field: {patch}")
+                if patch["type"] not in VALID_STAGE_PATCH_TYPES:
+                    exception_str = (
+                        f"Invalid patch with type '{patch['type']}' found.\n"
+                    )
+                    exception_str += f"Valid patch types: {VALID_STAGE_PATCH_TYPES}\n"
+                    exception_str += f"Patch: {patch}"
+                    raise Exception(exception_str)
+
         # Pre-emptively remove unecessary patches since we can't pass
         # the onlyif_handler to other worker processes
         print("Removing unecessary patches")
@@ -873,10 +1004,11 @@ class StagePatchHandler:
     def set_oarc_add_remove_from_patches(self):
         for stage, stage_patches in self.stage_patches.items():
             for patch in stage_patches:
-                if patch["type"] == "oarcadd":
-                    self.stage_oarc_add[(stage, patch["destlayer"])].add(patch["oarc"])
-                elif patch["type"] == "oarcdelete":
-                    self.stage_oarc_remove[(stage, patch["layer"])].add(patch["oarc"])
+                for oarc in patch.get("oarc", []):
+                    if patch["type"] == "oarcadd":
+                        self.stage_oarc_add[(stage, patch["destlayer"])].add(oarc)
+                    elif patch["type"] == "oarcdelete":
+                        self.stage_oarc_remove[(stage, patch["layer"])].add(oarc)
 
     def add_oarc_for_check(self, stage: str, layer: int, oarc: str):
         self.stage_oarc_add[(stage, layer)].add(oarc)

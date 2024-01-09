@@ -212,7 +212,6 @@ Sceneflags:
     - small_keys == removed:
       - 6   # Unlocked door into main room
       - 7   # Unlocked door into Staldra room
-      - 69  # Unlocked door into main room (SV2)
     - boss_keys == removed:
       - 100 # Opened Boss Door
 

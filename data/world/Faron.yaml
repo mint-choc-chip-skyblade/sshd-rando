@@ -338,6 +338,8 @@
     Flooded Great Tree Lower: Water_Dragons_Scale
   # locations:
   #   Flooded Faron Woods - Water Dragon's Reward: count(17, Group_of_Tadtones) and 'Can_Watch_Completed_Tadtones_Cutscene'
+  #   Flooded Faron Woods - Rupee 1
+  #   Flooded Faron Woods - Rupee 2
 
 
 - name: Flooded Great Tree Lower
@@ -394,6 +396,8 @@
   locations:
     Floria Waterfall - Gossip Stone: Nothing
     Floria Waterfall - Rupee on High Ledge: Beetle
+    Floria Waterfall - North Rupee in underwater Grass: Water_Dragons_Scale
+    Floria Waterfall - South Rupee in underwater Grass: Water_Dragons_Scale
     Floria Waterfall - Goddess Cube on High Ledge: Clawshots and Goddess_Sword
 
 
