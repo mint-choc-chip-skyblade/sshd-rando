@@ -173,10 +173,12 @@ def test_spoiler_as_config() -> None:
 
     os.remove("Spoiler Log.txt")
 
-    with open("config.yaml", "w") as config:
+    with open("spoiler_log_config_test.yaml", "w") as config:
         config.write(log1)
-        worlds = generate("config.yaml")
+        worlds = generate("spoiler_log_config_test.yaml")
         assert all_locations_reachable(worlds)
+
+    os.remove("spoiler_log_config_test.yaml")
 
     with open("Spoiler Log.txt") as second_log:
         assert log1 == second_log.read()
