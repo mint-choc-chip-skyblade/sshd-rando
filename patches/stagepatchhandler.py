@@ -160,15 +160,15 @@ def patch_closet(
 
     # Mapping of each closet (scene, roomid, objectid) to the local scene flag we'll use
     unused_scene_flags = {
-        ("F001r", 1, 0xFC08): 12,  # Link's Closet           0x10
-        ("F001r", 1, 0xFC07): 24,  # Fledge's Closet         2x01
-        ("F001r", 6, 0xFC07): 32,  # Zelda's Closet          5x01 (vanilla scene flag)
-        ("F001r", 2, 0xFC03): 48,  # Groose's Closet         7x01
-        ("F001r", 5, 0xFC05): 50,  # Owlan's Closet          7x04
-        ("F001r", 4, 0xFC03): 57,  # Horwell's Closet        6x02
-        ("F001r", 6, 0xFC06): 61,  # Karane's Closet         6x20
-        ("F005r", 0, 0xFC0E): 81,  # O&P's Closet            Bx02
-        ("F006r", 0, 0xFC16): 82,  # Wryna's Closet          Bx04
+        ("F001r", 1, 0xFC08): 12,  # Link's Closet            0x10
+        ("F001r", 1, 0xFC07): 24,  # Fledge's Closet          2x01
+        ("F001r", 6, 0xFC07): 32,  # Zelda's Closet           5x01 (vanilla scene flag)
+        ("F001r", 2, 0xFC03): 48,  # Groose's Closet          7x01
+        ("F001r", 5, 0xFC05): 50,  # Owlan's Closet           7x04
+        ("F001r", 4, 0xFC03): 57,  # Horwell's Closet         6x02
+        ("F001r", 6, 0xFC06): 61,  # Karane's Closet          6x20
+        ("F005r", 0, 0xFC0E): 81,  # O&P's Closet             Bx02
+        ("F006r", 0, 0xFC16): 82,  # Wryna's Closet           Bx04
         ("F013r", 0, 0xFC0E): 100,  # Sparrot's Closet        Dx10
         ("F014r", 0, 0xFC12): 101,  # Luv and Bertie's Closet Dx20
         ("F015r", 0, 0xFC10): 105,  # Gondo's Closet          Cx02
@@ -176,8 +176,8 @@ def patch_closet(
         ("F017r", 0, 0xFC1E): 116,  # Rupin's Closet          Fx10
         ("F018r", 0, 0xFC11): 117,  # Peater's Closet         Fx20
         ("F018r", 0, 0xFC12): 118,  # Peatrice's Closet       Fx40
-        ("F011r", 0, 0xFC3B): 3,  # Pumm and Kina's Closet  1x08 (Unused Sky scene flag)
-        ("F301_5", 0, 0xFC0C): 0, # Skipper's Closet        2x01 (Unused Sand Sea scene flag)
+        ("F011r", 0, 0xFC3B): 3,  # Pumm and Kina's Closet    1x08
+        ("F301_5", 0, 0xFC0C): 0,  # Skipper's Closet         2x01
     }
 
     # Specify which scene flag to use
