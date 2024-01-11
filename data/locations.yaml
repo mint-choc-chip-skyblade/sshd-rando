@@ -47,7 +47,7 @@
 
 - name: Knight Academy - In Zelda's Closet
   original_item: Heart Piece
-  type: # Closet
+  type: Closet
   Paths:
     - stage/F001r/r6/l0/chest/0xFC07
 
