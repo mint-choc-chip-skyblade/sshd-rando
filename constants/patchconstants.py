@@ -1,5 +1,15 @@
 import re
 
+VALID_STAGE_PATCH_TYPES = (
+    "layeroverride",
+    "objadd",
+    "objdelete",
+    "objpatch",
+    "objmove",
+    "oarcadd",
+    "oarcdelete",
+)
+
 STAGE_OBJECT_NAMES = [
     "OBJS",
     "OBJ ",

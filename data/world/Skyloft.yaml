@@ -43,6 +43,12 @@
   exits:
     Knight Academy Zelda's Room: Nothing
     Upper Skyloft: Impossible # To satisfy entrance rando
+  locations:
+    Knight Academy - Rupee in Chimney Crawlspace 1: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 2: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 3: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 4: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 5: Nothing
 
 
 - name: Knight Academy Zelda's Room
@@ -182,6 +188,10 @@
     Central Skyloft - Stamina Fruit near Orielle and Parrow's House: Nothing
     Central Skyloft - Stamina Fruit near Bazaar: Nothing
     Central Skyloft - Stamina Fruit near Plaza: Nothing
+    Central Skyloft - North Rupee in Bird's Nest: Beetle
+    Central Skyloft - East Rupee in Bird's Nest: Beetle
+    Central Skyloft - South Rupee in Bird's Nest: Beetle
+    Central Skyloft - West Rupee in Bird's Nest: Beetle
     Central Skyloft - Crystal on Waterfall Island: Night and Quick_Beetle and logic_precise_beetle
     Central Skyloft - Crystal after Waterfall Cave: Night and Beetle and logic_precise_beetle
     Central Skyloft - Crystal in Loftwing Prison: Night and Beetle and logic_precise_beetle
@@ -193,7 +203,11 @@
   exits:
     Central Skyloft: Nothing
   locations:
-    Central Skyloft - Item in Bird Nest: Gust_Bellows
+    Central Skyloft - Item in Bird's Nest: Gust_Bellows
+    Central Skyloft - North Rupee in Bird's Nest: Nothing
+    Central Skyloft - East Rupee in Bird's Nest: Nothing
+    Central Skyloft - South Rupee in Bird's Nest: Nothing
+    Central Skyloft - West Rupee in Bird's Nest: Nothing
 
 
 - name: Bazaar
@@ -311,7 +325,8 @@
   locations:
     Central Skyloft - Waterfall Cave First Chest: Nothing
     Central Skyloft - Waterfall Cave Second Chest: Nothing
-    Central Skyloft - Waterfall Cave Crawlspace Rupee: Nothing
+    Central Skyloft - First Rupee in Waterfall Cave Crawlspace: Nothing
+    Central Skyloft - Second Rupee in Waterfall Cave Crawlspace: Nothing
 
 
 - name: Skyloft Past Waterfall Cave

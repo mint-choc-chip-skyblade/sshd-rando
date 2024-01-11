@@ -62,7 +62,7 @@ cmp w8, #15
 b.eq drop_nothing
 
 cmp w8, #16
-b.eq fix_item_get_under_water
+b.eq fix_item_get
 
 cmp w8, #17
 b.eq activation_checks_for_goddess_walls
@@ -111,6 +111,9 @@ b.eq horwell_always_interactable
 
 cmp w8, #32
 b.eq rotate_freestanding_items
+
+cmp w8, #33
+b.eq fix_items_in_sand_piles
 
 ret ; this should never be reached
 

@@ -114,8 +114,11 @@ pub fn update_traps() {
                 (*PLAYER_PTR).cursed_timer = 512;
                 TRAP_DURATION = 512;
 
-                // Mitts || Water Dragon's Scale
-                if (*PLAYER_PTR).item_being_used != 7 || (*PLAYER_PTR).item_being_used != 0x12 {
+                let item_being_used = (*PLAYER_PTR).item_being_used;
+
+                if item_being_used != player::ITEM_BEING_USED::MITTS
+                    || item_being_used != player::ITEM_BEING_USED::WATER_DRAGON_SCALE
+                {
                     dPlayer__putItemAway(PLAYER_PTR, 0, 1);
                 }
             },

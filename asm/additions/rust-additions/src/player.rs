@@ -215,6 +215,31 @@ pub enum PLAYER_ACTIONS {
     NUMBER_OF_ACTIONS           = 0xBB,
 }
 
+#[repr(u16)]
+#[derive(Copy, Clone, Hash, PartialEq, Eq)]
+pub enum ITEM_BEING_USED {
+    BOMB_BAG            = 0x0,
+    BOW                 = 0x1,
+    CLAWSHOTS           = 0x2,
+    BEETLE              = 0x3,
+    SLINGSHOT           = 0x4,
+    GUST_BELLOWS        = 0x5,
+    WHIP                = 0x6,
+    MITTS               = 0x7,
+    BUG_NET             = 0x8,
+    HARP                = 0x9,
+    SAILCLOTH           = 0xA,
+    NONE                = 0xB,
+    POTION              = 0xC,
+    EMPTY_BOTTLE        = 0xD,
+    ITEM_IN_BOTTLE      = 0xE,
+    REVITALIZING_POTION = 0xF,
+    SHIELD              = 0x10,
+    SWORD               = 0x11,
+    WATER_DRAGON_SCALE  = 0x12,
+    GUIDE_PT_PM         = 0x13,
+}
+
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct dPlayer {
@@ -251,8 +276,8 @@ pub struct dPlayer {
     pub held_buttons:                   u16,
     pub current_pressed_button_flags:   u16,
     pub _8:                             [u8; 4],
-    pub item_being_used:                u16,
-    pub item_trying_to_be_used:         u16,
+    pub item_being_used:                ITEM_BEING_USED,
+    pub item_trying_to_be_used:         ITEM_BEING_USED,
     pub equipped_b_item:                u16,
     pub damage_cooldown:                u16,
     pub _9:                             [u8; 8],

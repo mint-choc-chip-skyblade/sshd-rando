@@ -1,0 +1,8 @@
+World 1:
+  rupee_shuffle: "intermediate"
+  underground_rupee_shuffle: "off"
+input_dir: ./base
+output_dir: ./output
+plandomizer: false
+plandomizer_file: null
+seed: TESTTESTTEST

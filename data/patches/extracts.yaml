@@ -208,6 +208,15 @@
       - FWRockB
       - Ph
       - PRing
+      - MoldWorm
+      - MoleBlock
+      - MoleGroundLn
+      - MoleGroundMl
+      - MoleGroundMn
+      - MoleGroundS
+      - MoleShutter
+      - PLMoleGlove
+      - MoundShovelB
 
 - stage: F202
   layers:

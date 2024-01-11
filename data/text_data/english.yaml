@@ -1133,9 +1133,9 @@
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Lanayru Desert Goddess Cube near Temple of Time
-  standard: Lanayru Desert Goddess Cube near Temple of Time
-  pretty: the <Lanayru Desert Goddess Cube near Temple of Time>
+- name: Temple of Time Goddess Cube
+  standard: Temple of Time Goddess Cube
+  pretty: the <Temple of Time Goddess Cube>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
@@ -1182,32 +1182,57 @@
 - name: Knight Academy - In Fledge's Closet
   standard: Knight Academy - In Fledge's Closet
   pretty: Knight Academy - In Fledge's Closet
-  cryptic: <r<snooping through a friend's clothes>>
+  cryptic: snooping through a <r<friend's clothes>>
 
 - name: Knight Academy - In Groose's Closet
   standard: Knight Academy - In Groose's Closet
   pretty: Knight Academy - In Groose's Closet
-  cryptic: <r<snooping through a rival's clothes>>
+  cryptic: snooping through a <r<rival's clothes>>
 
 - name: Knight Academy - In Owlan's Closet
   standard: Knight Academy - In Owlan's Closet
   pretty: Knight Academy - In Owlan's Closet
-  cryptic: <r<snooping through a professor's clothes>>
+  cryptic: snooping through a <r<professor's clothes>>
 
 - name: Knight Academy - In Horwell's Closet
   standard: Knight Academy - In Horwell's Closet
   pretty: Knight Academy - In Horwell's Closet
-  cryptic: <r<snooping through a professor's clothes>>
+  cryptic: snooping through a <r<professor's clothes>>
 
 - name: Knight Academy - In Karane's Closet
   standard: Knight Academy - In Karane's Closet
   pretty: Knight Academy - In Karane's Closet
-  cryptic: <r<snooping through a popular student's clothes>>
+  cryptic: snooping through a <r<popular student's clothes>>
 
 - name: Knight Academy - In Zelda's Closet
   standard: Knight Academy - In Zelda's Closet
   pretty: Knight Academy - In Zelda's Closet
-  cryptic: <r<snooping through a lover's clothes>>
+  cryptic: snooping through a <r<lover's clothes>>
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 1
+  standard: Knight Academy - Rupee in Chimney Crawlspace 1
+  pretty: Knight Academy - Rupee in Chimney Crawlspace 1
+  cryptic: sneaking above a <r<lover's bedroom>>
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 2
+  standard: Knight Academy - Rupee in Chimney Crawlspace 2
+  pretty: Knight Academy - Rupee in Chimney Crawlspace 2
+  cryptic: sneaking above a <r<lover's bedroom>>
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 3
+  standard: Knight Academy - Rupee in Chimney Crawlspace 3
+  pretty: Knight Academy - Rupee in Chimney Crawlspace 3
+  cryptic: sneaking above a <r<lover's bedroom>>
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 4
+  standard: Knight Academy - Rupee in Chimney Crawlspace 4
+  pretty: Knight Academy - Rupee in Chimney Crawlspace 4
+  cryptic: sneaking above a <r<lover's bedroom>>
+
+- name: Knight Academy - Rupee in Chimney Crawlspace 5
+  standard: Knight Academy - Rupee in Chimney Crawlspace 5
+  pretty: Knight Academy - Rupee in Chimney Crawlspace 5
+  cryptic: sneaking above a <r<lover's bedroom>>
 
 - name: Knight Academy - Owlan's Crystals
   standard: Knight Academy - Owlan's Crystals
@@ -1357,7 +1382,7 @@
 - name: Central Skyloft - Wryna's Closet
   standard: Central Skyloft - Wryna's Closet
   pretty: Central Skyloft - Wryna's Closet
-  cryptic: <r<snooping through a happy mother's clothes>>
+  cryptic: snooping through a <r<happy mother's clothes>>
 
 - name: Central Skyloft - Waterfall Cave First Chest
   standard: Central Skyloft - Waterfall Cave First Chest
@@ -1369,9 +1394,14 @@
   pretty: Central Skyloft - Waterfall Cave Second Chest
   cryptic: the <r<lower chest>> in a <r<cave in the sky>>
 
-- name: Central Skyloft - Waterfall Cave Crawlspace Rupee
-  standard: Central Skyloft - Waterfall Cave Crawlspace Rupee
-  pretty: Central Skyloft - Waterfall Cave Crawlspace Rupee
+- name: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
+  standard: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
+  pretty: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
+  cryptic: a <r<rupee>> in a <r<cave in the sky>>
+
+- name: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
+  standard: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
+  pretty: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
   cryptic: a <r<rupee>> in a <r<cave in the sky>>
 
 - name: Central Skyloft - Gossip Stone on Waterfall Island
@@ -1392,7 +1422,7 @@
 - name: Central Skyloft - Orielle and Parrow's Closet
   standard: Central Skyloft - Orielle and Parrow's Closet
   pretty: Central Skyloft - Orielle and Parrow's Closet
-  cryptic: <r<snooping through a worried couple's clothes>>
+  cryptic: snooping through a <r<worried couple's clothes>>
 
 - name: Central Skyloft - Peater/Peatrice's Crystals
   standard: Central Skyloft - Peater/Peatrice's Crystals
@@ -1402,17 +1432,37 @@
 - name: Central Skyloft - Peater's Closet
   standard: Central Skyloft - Peater's Closet
   pretty: Central Skyloft - Peater's Closet
-  cryptic: <r<snooping through a protective father's clothes>>
+  cryptic: snooping through a <r<protective father's clothes>>
 
 - name: Central Skyloft - Peatrice's Closet
   standard: Central Skyloft - Peatrice's Closet
   pretty: Central Skyloft - Peatrice's Closet
   cryptic: <r<snooping through the item check girl's clothes>>
 
-- name: Central Skyloft - Item in Bird Nest
-  standard: Central Skyloft - Item in Bird Nest
-  pretty: Central Skyloft - Item in Bird Nest
-  cryptic: an <r<item hidden in sand>>
+- name: Central Skyloft - Item in Bird's Nest
+  standard: Central Skyloft - Item in Bird's Nest
+  pretty: Central Skyloft - Item in Bird's Nest
+  cryptic: an <r<item nesting in dust>>
+
+- name: Central Skyloft - North Rupee in Bird's Nest
+  standard: Central Skyloft - North Rupee in Bird's Nest
+  pretty: Central Skyloft - North Rupee in Bird's Nest
+  cryptic: a <r<nesting item>>
+
+- name: Central Skyloft - East Rupee in Bird's Nest
+  standard: Central Skyloft - East Rupee in Bird's Nest
+  pretty: Central Skyloft - East Rupee in Bird's Nest
+  cryptic: a <r<nesting item>>
+
+- name: Central Skyloft - South Rupee in Bird's Nest
+  standard: Central Skyloft - South Rupee in Bird's Nest
+  pretty: Central Skyloft - South Rupee in Bird's Nest
+  cryptic: a <r<nesting item>>
+
+- name: Central Skyloft - West Rupee in Bird's Nest
+  standard: Central Skyloft - West Rupee in Bird's Nest
+  pretty: Central Skyloft - West Rupee in Bird's Nest
+  cryptic: a <r<nesting item>>
 
 - name: Central Skyloft - Shed Chest
   standard: Central Skyloft - Shed Chest
@@ -1512,7 +1562,7 @@
 - name: Skyloft Village - Mallara's Closet
   standard: Skyloft Village - Mallara's Closet
   pretty: Skyloft Village - Mallara's Closet
-  cryptic: <r<snooping through a dusty closet>>
+  cryptic: snooping through a <r<dusty closet>>
 
 - name: Skyloft Village - Bertie's Crystals
   standard: Skyloft Village - Bertie's Crystals
@@ -1522,17 +1572,17 @@
 - name: Skyloft Village - Luv and Bertie's Closet
   standard: Skyloft Village - Luv and Bertie's Closet
   pretty: Skyloft Village - Luv and Bertie's Closet
-  cryptic: <r<snooping through a potion couple's clothes>>
+  cryptic: snooping through a <r<potion couple's clothes>>
 
 - name: Skyloft Village - Gondo's Closet
   standard: Skyloft Village - Gondo's Closet
   pretty: Skyloft Village - Gondo's Closet
-  cryptic: <r<snooping through a repairman's clothes>>
+  cryptic: snooping through a <r<repairman's clothes>>
 
 - name: Skyloft Village - Rupin's Closet
   standard: Skyloft Village - Rupin's Closet
   pretty: Skyloft Village - Rupin's Closet
-  cryptic: <r<snooping through a greedy man's clothes>>
+  cryptic: snooping through a <r<greedy man's clothes>>
 
 - name: Skyloft Village - Sparrot's Crystals
   standard: Skyloft Village - Sparrot's Crystals
@@ -1542,7 +1592,7 @@
 - name: Skyloft Village - Sparrot's Closet
   standard: Skyloft Village - Sparrot's Closet
   pretty: Skyloft Village - Sparrot's Closet
-  cryptic: <r<snooping through a fortune teller's clothes>>
+  cryptic: snooping through a <r<fortune teller's clothes>>
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
   standard: Skyloft Village - Crystal near Pumpkin Patch
@@ -1672,7 +1722,7 @@
 - name: Lumpy Pumpkin - Pumm and Kina's Closet
   standard: Lumpy Pumpkin - Pumm and Kina's Closet
   pretty: Lumpy Pumpkin - Pumm and Kina's Closet
-  cryptic: <r<snooping through a father and daughter's clothes>>
+  cryptic: snooping through a <r<father and daughter's clothes>>
 
 - name: Lumpy Pumpkin - Outside Crystal
   standard: Lumpy Pumpkin - Outside Crystal
@@ -2228,7 +2278,17 @@
 - name: Floria Waterfall - Rupee on High Ledge
   standard: Floria Waterfall - Rupee on High Ledge
   pretty: Floria Waterfall - Rupee on High Ledge
-  cryptic: an <r<item on a humid high ledge>>
+  cryptic: a <r<rupee on a humid high ledge>>
+
+- name: Floria Waterfall - North Rupee in underwater Grass
+  standard: Floria Waterfall - North Rupee in underwater Grass
+  pretty: Floria Waterfall - North Rupee in underwater Grass
+  cryptic: a <r<soggy rupee outside a temple>>
+
+- name: Floria Waterfall - South Rupee in underwater Grass
+  standard: Floria Waterfall - South Rupee in underwater Grass
+  pretty: Floria Waterfall - South Rupee in underwater Grass
+  cryptic: a <r<soggy rupee outside a temple>>
 
 - name: Floria Waterfall - Gossip Stone
   standard: Floria Waterfall - Gossip Stone
@@ -2325,6 +2385,16 @@
   pretty: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
   cryptic: a <r<group of 8 tadtones>>
 
+- name: Flooded Faron Woods - Rupee 1
+  standard: Flooded Faron Woods - Rupee 1
+  pretty: Flooded Faron Woods - Rupee 1
+  cryptic: ""
+
+- name: Flooded Faron Woods - Rupee 2
+  standard: Flooded Faron Woods - Rupee 2
+  pretty: Flooded Faron Woods - Rupee 2
+  cryptic: ""
+
 - name: Flooded Faron Woods - Water Dragon's Reward
   standard: Flooded Faron Woods - Water Dragon's Reward
   pretty: Flooded Faron Woods - Water Dragon's Reward
@@ -2350,6 +2420,51 @@
   pretty: Eldin Volcano - Rupee in Crawlspace in First Room
   cryptic: a <r<crawlspace rupee near a volcano>>
 
+- name: Eldin Volcano - Underground Rupee in First Room 1
+  standard: Eldin Volcano - Underground Rupee in First Room 1
+  pretty: Eldin Volcano - Underground Rupee in First Room 1
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Underground Rupee in First Room 2
+  standard: Eldin Volcano - Underground Rupee in First Room 2
+  pretty: Eldin Volcano - Underground Rupee in First Room 2
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Underground Rupee in First Room 3
+  standard: Eldin Volcano - Underground Rupee in First Room 3
+  pretty: Eldin Volcano - Underground Rupee in First Room 3
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Underground Rupee in First Room 4
+  standard: Eldin Volcano - Underground Rupee in First Room 4
+  pretty: Eldin Volcano - Underground Rupee in First Room 4
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Underground Rupee in First Room 5
+  standard: Eldin Volcano - Underground Rupee in First Room 5
+  pretty: Eldin Volcano - Underground Rupee in First Room 5
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Underground Rupee in First Room 6
+  standard: Eldin Volcano - Underground Rupee in First Room 6
+  pretty: Eldin Volcano - Underground Rupee in First Room 6
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Underground Rupee in First Room 7
+  standard: Eldin Volcano - Underground Rupee in First Room 7
+  pretty: Eldin Volcano - Underground Rupee in First Room 7
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Underground Rupee in First Room 8
+  standard: Eldin Volcano - Underground Rupee in First Room 8
+  pretty: Eldin Volcano - Underground Rupee in First Room 8
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
+- name: Eldin Volcano - Underground Rupee in First Room 9
+  standard: Eldin Volcano - Underground Rupee in First Room 9
+  pretty: Eldin Volcano - Underground Rupee in First Room 9
+  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+
 - name: Eldin Volcano - Chest after Crawlspace
   standard: Eldin Volcano - Chest after Crawlspace
   pretty: Eldin Volcano - Chest after Crawlspace
@@ -2365,6 +2480,16 @@
   pretty: Eldin Volcano - North Rupee above Mogma Turf Entrance
   cryptic: a <r<rupee above claimed territory>>
 
+- name: Eldin Volcano - Underground Rupee before Bone Bridge 1
+  standard: Eldin Volcano - Underground Rupee before Bone Bridge 1
+  pretty: Eldin Volcano - Underground Rupee before Bone Bridge 1
+  cryptic: an <r<underground rupee near a bridge>>
+
+- name: Eldin Volcano - Underground Rupee before Bone Bridge 2
+  standard: Eldin Volcano - Underground Rupee before Bone Bridge 2
+  pretty: Eldin Volcano - Underground Rupee before Bone Bridge 2
+  cryptic: an <r<underground rupee near a bridge>>
+
 - name: Eldin Volcano - Chest behind Bombable Wall near Cliff
   standard: Eldin Volcano - Chest behind Bombable Wall near Cliff
   pretty: Eldin Volcano - Chest behind Bombable Wall near Cliff
@@ -2374,6 +2499,106 @@
   standard: Eldin Volcano - Item on Cliff
   pretty: Eldin Volcano - Item on Cliff
   cryptic: an <r<item on a volcanic cliff>>
+
+- name: Eldin Volcano - Rupee in Old Pyrup Shell near Cliff
+  standard: Eldin Volcano - Rupee in Old Pyrup Shell near Cliff
+  pretty: Eldin Volcano - Rupee in Old Pyrup Shell near Cliff
+  cryptic: <r<cracking a rupee's armor>>
+
+- name: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
+  standard: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
+  pretty: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
+  cryptic: <r<cracking a rupee's armor>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 1
+  standard: Eldin Volcano - Underground Rupee in Cliff 1
+  pretty: Eldin Volcano - Underground Rupee in Cliff 1
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 2
+  standard: Eldin Volcano - Underground Rupee in Cliff 2
+  pretty: Eldin Volcano - Underground Rupee in Cliff 2
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 3
+  standard: Eldin Volcano - Underground Rupee in Cliff 3
+  pretty: Eldin Volcano - Underground Rupee in Cliff 3
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 4
+  standard: Eldin Volcano - Underground Rupee in Cliff 4
+  pretty: Eldin Volcano - Underground Rupee in Cliff 4
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 5
+  standard: Eldin Volcano - Underground Rupee in Cliff 5
+  pretty: Eldin Volcano - Underground Rupee in Cliff 5
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 6
+  standard: Eldin Volcano - Underground Rupee in Cliff 6
+  pretty: Eldin Volcano - Underground Rupee in Cliff 6
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 7
+  standard: Eldin Volcano - Underground Rupee in Cliff 7
+  pretty: Eldin Volcano - Underground Rupee in Cliff 7
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 8
+  standard: Eldin Volcano - Underground Rupee in Cliff 8
+  pretty: Eldin Volcano - Underground Rupee in Cliff 8
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 9
+  standard: Eldin Volcano - Underground Rupee in Cliff 9
+  pretty: Eldin Volcano - Underground Rupee in Cliff 9
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 10
+  standard: Eldin Volcano - Underground Rupee in Cliff 10
+  pretty: Eldin Volcano - Underground Rupee in Cliff 10
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 11
+  standard: Eldin Volcano - Underground Rupee in Cliff 11
+  pretty: Eldin Volcano - Underground Rupee in Cliff 11
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 12
+  standard: Eldin Volcano - Underground Rupee in Cliff 12
+  pretty: Eldin Volcano - Underground Rupee in Cliff 12
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 13
+  standard: Eldin Volcano - Underground Rupee in Cliff 13
+  pretty: Eldin Volcano - Underground Rupee in Cliff 13
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 14
+  standard: Eldin Volcano - Underground Rupee in Cliff 14
+  pretty: Eldin Volcano - Underground Rupee in Cliff 14
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee in Cliff 15
+  standard: Eldin Volcano - Underground Rupee in Cliff 15
+  pretty: Eldin Volcano - Underground Rupee in Cliff 15
+  cryptic: an <r<underground rupee beneath a cliff>>
+
+- name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1
+  standard: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1
+  pretty: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1
+  cryptic: an <r<underground rupee below claimed territory>>
+
+- name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2
+  standard: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2
+  pretty: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2
+  cryptic: an <r<underground rupee below claimed territory>>
+
+- name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3
+  standard: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3
+  pretty: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3
+  cryptic: an <r<underground rupee below claimed territory>>
 
 - name: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
   standard: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
@@ -2425,6 +2650,56 @@
   pretty: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
   cryptic:
 
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 1
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 1
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 1
+  cryptic: an <r<underground rupee near a temple>>
+
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 2
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 2
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 2
+  cryptic: an <r<underground rupee near a temple>>
+
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 3
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 3
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 3
+  cryptic: an <r<underground rupee near a temple>>
+
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 4
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 4
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 4
+  cryptic: an <r<underground rupee near a temple>>
+
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 5
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 5
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 5
+  cryptic: an <r<underground rupee near a temple>>
+
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 6
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 6
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 6
+  cryptic: an <r<underground rupee near a temple>>
+
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 7
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 7
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 7
+  cryptic: an <r<underground rupee near a temple>>
+
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 8
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 8
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 8
+  cryptic: an <r<underground rupee near a temple>>
+
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 9
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 9
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 9
+  cryptic: an <r<underground rupee near a temple>>
+
+- name: Eldin Volcano - Underground Rupee West of Earth Temple 10
+  standard: Eldin Volcano - Underground Rupee West of Earth Temple 10
+  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 10
+  cryptic: an <r<underground rupee near a temple>>
+
 - name: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
   standard: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
   pretty: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
@@ -2434,6 +2709,77 @@
   standard: Eldin Volcano - Goddess Cube on Sand Slide
   pretty: Eldin Volcano - Goddess Cube on Sand Slide
   cryptic:
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 1
+  standard: Eldin Volcano - Left Rupee on Sand Slide 1
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 1
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 2
+  standard: Eldin Volcano - Left Rupee on Sand Slide 2
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 2
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 3
+  standard: Eldin Volcano - Left Rupee on Sand Slide 3
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 3
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 4
+  standard: Eldin Volcano - Left Rupee on Sand Slide 4
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 4
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 5
+  standard: Eldin Volcano - Left Rupee on Sand Slide 5
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 5
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 6
+  standard: Eldin Volcano - Left Rupee on Sand Slide 6
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 6
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 7
+  standard: Eldin Volcano - Left Rupee on Sand Slide 7
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 7
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Left Rupee on Sand Slide 8
+  standard: Eldin Volcano - Left Rupee on Sand Slide 8
+  pretty: Eldin Volcano - Left Rupee on Sand Slide 8
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 1
+  standard: Eldin Volcano - Right Rupee on Sand Slide 1
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 1
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 2
+  standard: Eldin Volcano - Right Rupee on Sand Slide 2
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 2
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 3
+  standard: Eldin Volcano - Right Rupee on Sand Slide 3
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 3
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 4
+  standard: Eldin Volcano - Right Rupee on Sand Slide 4
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 4
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 5
+  standard: Eldin Volcano - Right Rupee on Sand Slide 5
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 5
+  cryptic: a <r<rupee on a sandy slope>>
+
+- name: Eldin Volcano - Right Rupee on Sand Slide 6
+  standard: Eldin Volcano - Right Rupee on Sand Slide 6
+  pretty: Eldin Volcano - Right Rupee on Sand Slide 6
+  cryptic: a <r<rupee on a sandy slope>>
+
 
 - name: Eldin Volcano - Stamina Fruit in Rising Lava Room
   standard: Eldin Volcano - Stamina Fruit in Rising Lava Room
@@ -2565,6 +2911,11 @@
   pretty: Mogma Turf - Sand Slide Chest
   cryptic: a <r<chest down a slide>>
 
+- name: Mogma Turf - Rupee in First Pyrup Hole in Fire Maze
+  standard: Mogma Turf - Rupee in First Pyrup Hole in Fire Maze
+  pretty: Mogma Turf - Rupee in First Pyrup Hole in Fire Maze
+  cryptic: a <r<rupee in a hot maze>>
+
 - name: Mogma Turf - Chest behind Bombable Wall in Fire Maze
   standard: Mogma Turf - Chest behind Bombable Wall in Fire Maze
   pretty: Mogma Turf - Chest behind Bombable Wall in Fire Maze
@@ -2584,6 +2935,16 @@
   standard: Volcano Summit - Item behind Digging
   pretty: Volcano Summit - Item behind Digging
   cryptic: <r<fairies at the summit>>
+
+- name: Volcano Summit - Underground Rupee 1
+  standard: Volcano Summit - Underground Rupee 1
+  pretty: Volcano Summit - Underground Rupee 1
+  cryptic: an <r<underground rupee at the summit>>
+
+- name: Volcano Summit - Underground Rupee 2
+  standard: Volcano Summit - Underground Rupee 2
+  pretty: Volcano Summit - Underground Rupee 2
+  cryptic: an <r<underground rupee at the summit>>
 
 - name: Volcano Summit - Gossip Stone in Waterfall Area
   standard: Volcano Summit - Gossip Stone in Waterfall Area
@@ -2670,10 +3031,40 @@
   pretty: Lanayru Mine - Chest near First Timeshift Stone
   cryptic: a <r<chest passed an automatic door>>
 
-- name: Lanayru Mine - Chest behind Statue
-  standard: Lanayru Mine - Chest behind Statue
-  pretty: Lanayru Mine - Chest behind Statue
+- name: Lanayru Mine - Rupee on Southeast Conveyor 1
+  standard: Lanayru Mine - Rupee on Southeast Conveyor 1
+  pretty: Lanayru Mine - Rupee on Southeast Conveyor 1
+  cryptic: a <r<high rupee in a mine>>
+
+- name: Lanayru Mine - Rupee on Southeast Conveyor 2
+  standard: Lanayru Mine - Rupee on Southeast Conveyor 2
+  pretty: Lanayru Mine - Rupee on Southeast Conveyor 2
+  cryptic: a <r<high rupee in a mine>>
+
+- name: Lanayru Mine - Rupee on Southwest Conveyor 1
+  standard: Lanayru Mine - Rupee on Southwest Conveyor 1
+  pretty: Lanayru Mine - Rupee on Southwest Conveyor 1
+  cryptic: a <r<high rupee in a mine>>
+
+- name: Lanayru Mine - Rupee on Southwest Conveyor 2
+  standard: Lanayru Mine - Rupee on Southwest Conveyor 2
+  pretty: Lanayru Mine - Rupee on Southwest Conveyor 2
+  cryptic: a <r<high rupee in a mine>>
+
+- name: Lanayru Mine - Chest behind Northeast Statue
+  standard: Lanayru Mine - Chest behind Northeast Statue
+  pretty: Lanayru Mine - Chest behind Northeast Statue
   cryptic: a <r<chest hidden behind a falling statue>>
+
+- name: Lanayru Mine - Rupee behind Northeast Statue
+  standard: Lanayru Mine - Rupee behind Northeast Statue
+  pretty: Lanayru Mine - Rupee behind Northeast Statue
+  cryptic: a <r<rupee hidden behind a falling statue>>
+
+- name: Lanayru Mine - Rupee behind Southwest Statue
+  standard: Lanayru Mine - Rupee behind Southwest Statue
+  pretty: Lanayru Mine - Rupee behind Southwest Statue
+  cryptic: a <r<rupee hidden behind a falling statue>>
 
 - name: Lanayru Mine - Chest at the End of Mine
   standard: Lanayru Mine - Chest at the End of Mine
@@ -2715,15 +3106,45 @@
   pretty: Lanayru Desert - Chest near Party Wheel
   cryptic: a <r<chest surrounded by a void>>
 
-- name: Lanayru Desert - Chest near Rescue Caged Robot
-  standard: Lanayru Desert - Chest near Rescue Caged Robot
-  pretty: Lanayru Desert - Chest near Rescue Caged Robot
-  cryptic: a <r<chest near a captive>>
+- name: Lanayru Desert - Chest near Caged Robot
+  standard: Lanayru Desert - Chest near Caged Robot
+  pretty: Lanayru Desert - Chest near Caged Robot
+  cryptic: a <r<chest near a scared robot>>
+
+- name: Lanayru Desert - Rupee above Caged Robot 1
+  standard: Lanayru Desert - Rupee above Caged Robot 1
+  pretty: Lanayru Desert - Rupee above Caged Robot 1
+  cryptic: a <r<rupee above a scared robot>>
+
+- name: Lanayru Desert - Rupee above Caged Robot 2
+  standard: Lanayru Desert - Rupee above Caged Robot 2
+  pretty: Lanayru Desert - Rupee above Caged Robot 2
+  cryptic: a <r<rupee above a scared robot>>
 
 - name: Lanayru Desert - Rescue Caged Robot
   standard: Lanayru Desert - Rescue Caged Robot
   pretty: Lanayru Desert - Rescue Caged Robot
   cryptic: <r<rescuing a scared robot>>
+
+- name: Lanayru Desert - Rupee behind South Statue near Caged Robot
+  standard: Lanayru Desert - Rupee behind South Statue near Caged Robot
+  pretty: Lanayru Desert - Rupee behind South Statue near Caged Robot
+  cryptic: a <r<guarded rupee near a scared robot>>
+
+- name: Lanayru Desert - Rupee behind West Statue near Caged Robot
+  standard: Lanayru Desert - Rupee behind West Statue near Caged Robot
+  pretty: Lanayru Desert - Rupee behind West Statue near Caged Robot
+  cryptic: a <r<guarded rupee near a scared robot>>
+
+- name: Lanayru Desert - Rupee behind East Statue before Sand Oasis
+  standard: Lanayru Desert - Rupee behind East Statue before Sand Oasis
+  pretty: Lanayru Desert - Rupee behind East Statue before Sand Oasis
+  cryptic: a <r<guarded rupee before a sandy paradise>>
+
+- name: Lanayru Desert - Rupee behind West Statue before Sand Oasis
+  standard: Lanayru Desert - Rupee behind West Statue before Sand Oasis
+  pretty: Lanayru Desert - Rupee behind West Statue before Sand Oasis
+  cryptic: a <r<guarded rupee before a sandy paradise>>
 
 - name: Lanayru Desert - Chest on Platform near Fire Node
   standard: Lanayru Desert - Chest on Platform near Fire Node
@@ -2738,7 +3159,7 @@
 - name: Lanayru Desert - Chest near Sand Oasis
   standard: Lanayru Desert - Chest near Sand Oasis
   pretty: Lanayru Desert - Chest near Sand Oasis
-  cryptic: a <r<chest above quicksand>>
+  cryptic: a <r<chest above a sandy paradise>>
 
 - name: Lanayru Desert - Chest on top of Lanayru Mining Facility
   standard: Lanayru Desert - Chest on top of Lanayru Mining Facility
@@ -2795,6 +3216,41 @@
   pretty: Temple of Time - Gossip Stone
   cryptic:
 
+- name: Temple of Time - Northwest Rupee on Tree Root
+  standard: Temple of Time - Northwest Rupee on Tree Root
+  pretty: Temple of Time - Northwest Rupee on Tree Root
+  cryptic: a <r<rupee on a time-travelling tree>>
+
+- name: Temple of Time - Northeast Rupee on Tree Root
+  standard: Temple of Time - Northeast Rupee on Tree Root
+  pretty: Temple of Time - Northeast Rupee on Tree Root
+  cryptic: a <r<rupee on a time-travelling tree>>
+
+- name: Temple of Time - Southeast Rupee on Tree Root
+  standard: Temple of Time - Southeast Rupee on Tree Root
+  pretty: Temple of Time - Southeast Rupee on Tree Root
+  cryptic: a <r<rupee on a time-travelling tree>>
+
+- name: Temple of Time - East Rupee on Tree Trunk
+  standard: Temple of Time - East Rupee on Tree Trunk
+  pretty: Temple of Time - East Rupee on Tree Trunk
+  cryptic: a <r<rupee on a time-travelling tree>>
+
+- name: Temple of Time - South Rupee on Tree Trunk
+  standard: Temple of Time - South Rupee on Tree Trunk
+  pretty: Temple of Time - South Rupee on Tree Trunk
+  cryptic: a <r<rupee on a time-travelling tree>>
+
+- name: Temple of Time - Rupee on North Gate of Time Pillar
+  standard: Temple of Time - Rupee on North Gate of Time Pillar
+  pretty: Temple of Time - Rupee on North Gate of Time Pillar
+  cryptic: a <r<rupee standing guard over time>>
+
+- name: Temple of Time - Rupee on Southwest Gate of Time Pillar
+  standard: Temple of Time - Rupee on Southwest Gate of Time Pillar
+  pretty: Temple of Time - Rupee on Southwest Gate of Time Pillar
+  cryptic: a <r<rupee standing guard over time>>
+
 - name: Lanayru Desert - Goddess Cube near Caged Robot
   standard: Lanayru Desert - Goddess Cube near Caged Robot
   pretty: Lanayru Desert - Goddess Cube near Caged Robot
@@ -2810,9 +3266,9 @@
   pretty: Lanayru Desert - Goddess Cube in Secret Passageway
   cryptic:
 
-- name: Lanayru Desert - Goddess Cube near Temple of Time
-  standard: Lanayru Desert - Goddess Cube near Temple of Time
-  pretty: Lanayru Desert - Goddess Cube near Temple of Time
+- name: Temple of Time - Goddess Cube
+  standard: Temple of Time - Goddess Cube
+  pretty: Temple of Time - Goddess Cube
   cryptic:
 
 - name: Fire Node - Shortcut Chest
@@ -2890,6 +3346,31 @@
   pretty: Lanayru Gorge - Digging Spot
   cryptic: <r<soft soil in the desert>>
 
+- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
+  standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
+  pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
+  cryptic: a <r<high rupee near an ancient dragon>>
+
+- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
+  standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
+  pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
+  cryptic: a <r<high rupee near an ancient dragon>>
+
+- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
+  standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
+  pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
+  cryptic: a <r<high rupee near an ancient dragon>>
+
+- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
+  standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
+  pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
+  cryptic: a <r<high rupee near an ancient dragon>>
+
+- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
+  standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
+  pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
+  cryptic: a <r<high rupee near an ancient dragon>>
+
 - name: Lanayru Gorge - Goddess Cube
   standard: Lanayru Gorge - Goddess Cube
   pretty: Lanayru Gorge - Goddess Cube
@@ -2933,7 +3414,37 @@
 - name: Skipper's Retreat - Skipper's Closet
   standard: Skipper's Retreat - Skipper's Closet
   pretty: Skipper's Retreat - Skipper's Closet
-  cryptic: <r<snooping through a captain's clothes>>
+  cryptic: snooping through a <r<captain's clothes>>
+  
+- name: Skipper's Retreat - Rupee under Sand in Shack 1
+  standard: Skipper's Retreat - Rupee under Sand in Shack 1
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 1
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 2
+  standard: Skipper's Retreat - Rupee under Sand in Shack 2
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 2
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 3
+  standard: Skipper's Retreat - Rupee under Sand in Shack 3
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 3
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 4
+  standard: Skipper's Retreat - Rupee under Sand in Shack 4
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 4
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 5
+  standard: Skipper's Retreat - Rupee under Sand in Shack 5
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 5
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat - Rupee under Sand in Shack 6
+  standard: Skipper's Retreat - Rupee under Sand in Shack 6
+  pretty: Skipper's Retreat - Rupee under Sand in Shack 6
+  cryptic: a <r<rupee atop a sandy retreat>>
 
 - name: Skipper's Retreat - Skydive Chest
   standard: Skipper's Retreat - Skydive Chest
@@ -3020,6 +3531,31 @@
   pretty: Skyview Temple - Chest behind Two Eyes
   cryptic: <r<two watchful eyes>>
 
+- name: Skyview Temple - Rupee under South Walkway before Hub Room
+  standard: Skyview Temple - Rupee under South Walkway before Hub Room
+  pretty: Skyview Temple - Rupee under South Walkway before Hub Room
+  cryptic: a <r<rupee under a temple bridge>>
+
+- name: Skyview Temple - First Rupee under West Walkway before Hub Room
+  standard: Skyview Temple - First Rupee under West Walkway before Hub Room
+  pretty: Skyview Temple - First Rupee under West Walkway before Hub Room
+  cryptic: a <r<rupee under a temple bridge>>
+
+- name: Skyview Temple - Second Rupee under West Walkway before Hub Room
+  standard: Skyview Temple - Second Rupee under West Walkway before Hub Room
+  pretty: Skyview Temple - Second Rupee under West Walkway before Hub Room
+  cryptic: a <r<rupee under a temple bridge>>
+
+- name: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
+  standard: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
+  pretty: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
+  cryptic: a <r<rupee on a temple tree>>
+
+- name: Skyview Temple - Rupee on Coiled Tree Branch before Hub Room
+  standard: Skyview Temple - Rupee on Coiled Tree Branch before Hub Room
+  pretty: Skyview Temple - Rupee on Coiled Tree Branch before Hub Room
+  cryptic: a <r<rupee on a temple tree>>
+
 - name: Skyview Temple - Chest after Stalfos Fight
   standard: Skyview Temple - Chest after Stalfos Fight
   pretty: Skyview Temple - Chest after Stalfos Fight
@@ -3029,6 +3565,16 @@
   standard: Skyview Temple - Item behind Bars
   pretty: Skyview Temple - Item behind Bars
   cryptic: an <r<item behind bars>>
+
+- name: Skyview Temple - Rupee on South Bird Pillar in Hub Room
+  standard: Skyview Temple - Rupee on South Bird Pillar in Hub Room
+  pretty: Skyview Temple - Rupee on South Bird Pillar in Hub Room
+  cryptic: a <r<rupee on a forest bird>>
+
+- name: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
+  standard: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
+  pretty: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
+  cryptic: a <r<rupee on a forest bird>>
 
 - name: Skyview Temple - Rupee in Southeast Tunnel
   standard: Skyview Temple - Rupee in Southeast Tunnel
@@ -3043,6 +3589,21 @@
 - name: Skyview Temple - Rupee in East Tunnel
   standard: Skyview Temple - Rupee in East Tunnel
   pretty: Skyview Temple - Rupee in East Tunnel
+  cryptic: a <r<rupee in a high tunnel>>
+
+- name: Skyview Temple - First Rupee in Northeast Tunnel
+  standard: Skyview Temple - First Rupee in Northeast Tunnel
+  pretty: Skyview Temple - First Rupee in Northeast Tunnel
+  cryptic: a <r<rupee in a high tunnel>>
+
+- name: Skyview Temple - Second Rupee in Northeast Tunnel
+  standard: Skyview Temple - Second Rupee in Northeast Tunnel
+  pretty: Skyview Temple - Second Rupee in Northeast Tunnel
+  cryptic: a <r<rupee in a high tunnel>>
+
+- name: Skyview Temple - Third Rupee in Northeast Tunnel
+  standard: Skyview Temple - Third Rupee in Northeast Tunnel
+  pretty: Skyview Temple - Third Rupee in Northeast Tunnel
   cryptic: a <r<rupee in a high tunnel>>
 
 - name: Skyview Temple - Chest behind Three Eyes
@@ -3167,6 +3728,36 @@
   pretty: Lanayru Mining Facility - Chest behind Bars
   cryptic: a <r<present chest behind bars>>
 
+- name: Lanayru Mining Facility - Left Front Rupee behind Statue
+  standard: Lanayru Mining Facility - Left Front Rupee behind Statue
+  pretty: Lanayru Mining Facility - Left Front Rupee behind Statue
+  cryptic: a <r<guarded rupee in a sandy temple>>
+
+- name: Lanayru Mining Facility - Left Middle Rupee behind Statue
+  standard: Lanayru Mining Facility - Left Middle Rupee behind Statue
+  pretty: Lanayru Mining Facility - Left Middle Rupee behind Statue
+  cryptic: a <r<guarded rupee in a sandy temple>>
+
+- name: Lanayru Mining Facility - Left Back Rupee behind Statue
+  standard: Lanayru Mining Facility - Left Back Rupee behind Statue
+  pretty: Lanayru Mining Facility - Left Back Rupee behind Statue
+  cryptic: a <r<guarded rupee in a sandy temple>>
+
+- name: Lanayru Mining Facility - Right Front Rupee behind Statue
+  standard: Lanayru Mining Facility - Right Front Rupee behind Statue
+  pretty: Lanayru Mining Facility - Right Front Rupee behind Statue
+  cryptic: a <r<guarded rupee in a sandy temple>>
+
+- name: Lanayru Mining Facility - Right Middle Rupee behind Statue
+  standard: Lanayru Mining Facility - Right Middle Rupee behind Statue
+  pretty: Lanayru Mining Facility - Right Middle Rupee behind Statue
+  cryptic: a <r<guarded rupee in a sandy temple>>
+
+- name: Lanayru Mining Facility - Right Back Rupee behind Statue
+  standard: Lanayru Mining Facility - Right Back Rupee behind Statue
+  pretty: Lanayru Mining Facility - Right Back Rupee behind Statue
+  cryptic: a <r<guarded rupee in a sandy temple>>
+
 - name: Lanayru Mining Facility - First Chest in Hub Room
   standard: Lanayru Mining Facility - First Chest in Hub Room
   pretty: Lanayru Mining Facility - First Chest in Hub Room
@@ -3197,15 +3788,95 @@
   pretty: Lanayru Mining Facility - Hop across Boxes Lower Chest
   cryptic: a <r<chest after many hops>>
 
+- name: Lanayru Mining Facility - Rupee in First Crawlspace
+  standard: Lanayru Mining Facility - Rupee in First Crawlspace
+  pretty: Lanayru Mining Facility - Rupee in First Crawlspace
+  cryptic: a <r<lone rupee in a sandy tunnel>>
+
 - name: Lanayru Mining Facility - Chest behind First Crawlspace
   standard: Lanayru Mining Facility - Chest behind First Crawlspace
   pretty: Lanayru Mining Facility - Chest behind First Crawlspace
   cryptic: a <r<chest past a sandy cralwspace>>
 
+- name: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
+  standard: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
+  pretty: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
+  cryptic: a <r<coupled rupee in a sandy tunnel>>
+
+- name: Lanayru Mining Facility - Second Rupee in Crawlspace before Spike Maze
+  standard: Lanayru Mining Facility - Second Rupee in Crawlspace before Spike Maze
+  pretty: Lanayru Mining Facility - Second Rupee in Crawlspace before Spike Maze
+  cryptic: a <r<coupled rupee in a sandy tunnel>>
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 1
+  standard: Lanayru Mining Facility - West Rupee in Spike Maze 1
+  pretty: Lanayru Mining Facility - West Rupee in Spike Maze 1
+  cryptic: a <r<western rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 2
+  standard: Lanayru Mining Facility - West Rupee in Spike Maze 2
+  pretty: Lanayru Mining Facility - West Rupee in Spike Maze 2
+  cryptic: a <r<western rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 3
+  standard: Lanayru Mining Facility - West Rupee in Spike Maze 3
+  pretty: Lanayru Mining Facility - West Rupee in Spike Maze 3
+  cryptic: a <r<western rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - West Rupee in Spike Maze 4
+  standard: Lanayru Mining Facility - West Rupee in Spike Maze 4
+  pretty: Lanayru Mining Facility - West Rupee in Spike Maze 4
+  cryptic: a <r<western rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 1
+  standard: Lanayru Mining Facility - Southeast Rupee in Spike Maze 1
+  pretty: Lanayru Mining Facility - Southeast Rupee in Spike Maze 1
+  cryptic: a <r<southern rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 2
+  standard: Lanayru Mining Facility - Southeast Rupee in Spike Maze 2
+  pretty: Lanayru Mining Facility - Southeast Rupee in Spike Maze 2
+  cryptic: a <r<southern rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 3
+  standard: Lanayru Mining Facility - Southeast Rupee in Spike Maze 3
+  pretty: Lanayru Mining Facility - Southeast Rupee in Spike Maze 3
+  cryptic: a <r<southern rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 4
+  standard: Lanayru Mining Facility - Southeast Rupee in Spike Maze 4
+  pretty: Lanayru Mining Facility - Southeast Rupee in Spike Maze 4
+  cryptic: a <r<southern rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Central Rupee in Spike Maze 1
+  standard: Lanayru Mining Facility - Central Rupee in Spike Maze 1
+  pretty: Lanayru Mining Facility - Central Rupee in Spike Maze 1
+  cryptic: a <r<central rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Central Rupee in Spike Maze 2
+  standard: Lanayru Mining Facility - Central Rupee in Spike Maze 2
+  pretty: Lanayru Mining Facility - Central Rupee in Spike Maze 2
+  cryptic: a <r<central rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Central Rupee in Spike Maze 3
+  standard: Lanayru Mining Facility - Central Rupee in Spike Maze 3
+  pretty: Lanayru Mining Facility - Central Rupee in Spike Maze 3
+  cryptic: a <r<central rupee surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Northeast Rupee in Spike Maze
+  standard: Lanayru Mining Facility - Northeast Rupee in Spike Maze
+  pretty: Lanayru Mining Facility - Northeast Rupee in Spike Maze
+  cryptic: a <r<northern rupee surrounded by spikes>>
+
 - name: Lanayru Mining Facility - Chest in Spike Maze
   standard: Lanayru Mining Facility - Chest in Spike Maze
   pretty: Lanayru Mining Facility - Chest in Spike Maze
   cryptic: a <r<chest surrounded by spikes>>
+
+- name: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
+  standard: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
+  pretty: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
+  cryptic: rupee behind a <r<northern statue in a sandy temple>>
 
 - name: Lanayru Mining Facility - Chest after Double Armos Fight
   standard: Lanayru Mining Facility - Chest after Double Armos Fight
@@ -3297,6 +3968,16 @@
   standard: Ancient Cistern - Chest in Key Locked Room
   pretty: Ancient Cistern - Chest in Key Locked Room
   cryptic: a <r<chest in a statue>>
+
+- name: Ancient Cistern - Rupee in Basement Demon's Right Eye
+  standard: Ancient Cistern - Rupee in Basement Demon's Right Eye
+  pretty: Ancient Cistern - Rupee in Basement Demon's Right Eye
+  cryptic: <r<removing a demon's vision>>
+
+- name: Ancient Cistern - Rupee in Basement Demon's Left Eye
+  standard: Ancient Cistern - Rupee in Basement Demon's Left Eye
+  pretty: Ancient Cistern - Rupee in Basement Demon's Left Eye
+  cryptic: <r<removing a demon's vision>>
 
 - name: Ancient Cistern - Chest under Stone Statue
   standard: Ancient Cistern - Chest under Stone Statue
@@ -3395,6 +4076,36 @@
   pretty: Fire Sanctuary - Chest on Balcony
   cryptic: a <r<chest on a lone balcony>>
 
+- name: Fire Sanctuary - Left Rupee above Blocked Lava Source
+  standard: Fire Sanctuary - Left Rupee above Blocked Lava Source
+  pretty: Fire Sanctuary - Left Rupee above Blocked Lava Source
+  cryptic: a <r<rupee above some hot rubble>>
+
+- name: Fire Sanctuary - Right Rupee above Blocked Lava Source
+  standard: Fire Sanctuary - Right Rupee above Blocked Lava Source
+  pretty: Fire Sanctuary - Right Rupee above Blocked Lava Source
+  cryptic: a <r<rupee above some hot rubble>>
+
+- name: Fire Sanctuary - Rupee in Alcove near Blocked Lava Source
+  standard: Fire Sanctuary - Rupee in Alcove near Blocked Lava Source
+  pretty: Fire Sanctuary - Rupee in Alcove near Blocked Lava Source
+  cryptic: a <r<rupee near some hot rubble>>
+
+- name: Fire Sanctuary - First Rupee in Alcove opposite Blocked Lava Source
+  standard: Fire Sanctuary - First Rupee in Alcove opposite Blocked Lava Source
+  pretty: Fire Sanctuary - First Rupee in Alcove opposite Blocked Lava Source
+  cryptic: a <r<rupee opposite some hot rubble>>
+
+- name: Fire Sanctuary - Second Rupee in Alcove opposite Blocked Lava Source
+  standard: Fire Sanctuary - Second Rupee in Alcove opposite Blocked Lava Source
+  pretty: Fire Sanctuary - Second Rupee in Alcove opposite Blocked Lava Source
+  cryptic: a <r<rupee opposite some hot rubble>>
+
+- name: Fire Sanctuary - Third Rupee in Alcove opposite Blocked Lava Source
+  standard: Fire Sanctuary - Third Rupee in Alcove opposite Blocked Lava Source
+  pretty: Fire Sanctuary - Third Rupee in Alcove opposite Blocked Lava Source
+  cryptic: a <r<rupee opposite some hot rubble>>
+
 - name: Fire Sanctuary - Chest near First Trapped Mogma
   standard: Fire Sanctuary - Chest near First Trapped Mogma
   pretty: Fire Sanctuary - Chest near First Trapped Mogma
@@ -3415,10 +4126,40 @@
   pretty: Fire Sanctuary - Rescue First Trapped Mogma Chest
   cryptic: saving a <r<mogma>> from a <r<fiery fate>>
 
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 1
+  standard: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 1
+  pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 1
+  cryptic: an <r<underground temple rupee>>
+
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 2
+  standard: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 2
+  pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 2
+  cryptic: an <r<underground temple rupee>>
+
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 3
+  standard: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 3
+  pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 3
+  cryptic: an <r<underground temple rupee>>
+
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 4
+  standard: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 4
+  pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 4
+  cryptic: an <r<underground temple rupee>>
+
+- name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5
+  standard: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5
+  pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5
+  cryptic: an <r<underground temple rupee>>
+
 - name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   standard: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   pretty: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   cryptic: saving a <r<mogma>> from a <r<regular temperatured fate>>
+
+- name: Fire Sanctuary - Underground Rupee behind Bombable Wall
+  standard: Fire Sanctuary - Underground Rupee behind Bombable Wall
+  pretty: Fire Sanctuary - Underground Rupee behind Bombable Wall
+  cryptic: a <r<hidden underground temple rupee>>
 
 - name: Fire Sanctuary - Chest after Bombable Wall
   standard: Fire Sanctuary - Chest after Bombable Wall
@@ -3658,6 +4399,11 @@
   standard: Lanayru Desert
   pretty: Lanayru Desert
   cryptic:
+
+- name: Temple of Time
+  standard: Temple of Time
+  pretty: the <Temple of Time>
+  cryptic: 
 
 - name: Lanayru Caves
   standard: Lanayru Caves
