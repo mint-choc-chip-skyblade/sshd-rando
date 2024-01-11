@@ -22,6 +22,12 @@
     Knight Academy Lower East Door: Day
     Knight Academy Lower West Door: Day
   locations:
+    Knight Academy - In Link's Closet: Nothing
+    Knight Academy - In Fledge's Closet: Nothing
+    Knight Academy - In Groose's Closet: Nothing
+    Knight Academy - In Owlan's Closet: Nothing
+    # Knight Academy - In Horwell's Closet: Nothing
+    Knight Academy - In Karane's Closet: Nothing
     Knight Academy - Fledge's Gift: Nothing
     Knight Academy - Crystal in Knight Academy Plant: Night
     Knight Academy - Crystal in Link's Room: Night
@@ -253,6 +259,7 @@
     Central Skyloft - Crystal in Orielle and Parrow's House: Nothing
     Central Skyloft - Parrow's Gift: Night and 'Talk_to_Orielle'
     Central Skyloft - Parrow's Crystals: Night and 'Save_Orielle'
+    Central Skyloft - Orielle and Parrow's Closet: Nothing
 
 
 - name: Peatrice's House
@@ -262,6 +269,8 @@
     Central Skyloft: Nothing
   locations:
     Central Skyloft - Peater/Peatrice's Crystals: can_access(Bazaar) and Night
+    Central Skyloft - Peater's Closet: Nothing
+    Central Skyloft - Peatrice's Closet: Nothing
 
 
 - name: Wryna's House
@@ -271,6 +280,7 @@
     Central Skyloft: Nothing
   locations:
     Central Skyloft - Wryna's Crystals: Nothing
+    Central Skyloft - Wryna's Closet: Nothing
 
 
 - name: Piper's House
@@ -366,6 +376,7 @@
     Skyloft Village: Nothing
   locations:
     Skyloft Village - Bertie's Crystals: Rattle and Night
+    Skyloft Village - Luv and Bertie's Closet: Nothing
 
 
 - name: Sparrot's House
@@ -377,6 +388,7 @@
     Skyloft Village: Nothing
   locations:
     Skyloft Village - Sparrot's Crystals: "'Retrieve_Crystal_Ball'"
+    Skyloft Village - Sparrot's Closet: Nothing
 
 
 - name: Mallara's House
@@ -386,6 +398,7 @@
     Skyloft Village: Nothing
   locations:
     Skyloft Village - Mallara's Crystals: Gust_Bellows
+    Skyloft Village - Mallara's Closet: Nothing
 
 
 - name: Gondo's House
@@ -393,12 +406,17 @@
   can_sleep: true
   exits:
     Skyloft Village: Nothing
+  locations:
+    Skyloft Village - Gondo's Closet: Nothing
 
 
 - name: Rupin's House
+  allowed_time_of_day: All
   can_sleep: true
   exits:
     Skyloft Village: Nothing
+  locations:
+    Skyloft Village - Rupin's Closet: Nothing
 
 
 - name: Batreaux's House

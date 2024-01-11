@@ -142,12 +142,12 @@ def patch_bucha(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     bucha["params2"] = mask_shift_set(bucha["params2"], 0xFF, 0x8, itemid)
 
 
-def patch_zeldas_closet(bzs: dict, itemid: int, object_id_str: str, trapid: int):
-    id = int(object_id_str)
-    closet = next(
-        filter(
-            lambda x: x["name"] == "chest" and (x["params1"] & 0xFF) == id, bzs["OBJ "]
-        ),
+def patch_closet(
+    bzs: dict, itemid: int, object_id_str: str, trapid: int, room: int, stage: str
+):
+    id = int(object_id_str, 16)
+    closet: dict = next(
+        filter(lambda x: x["name"] == "chest" and x["id"] == id, bzs["OBJ "]),
         None,
     )
 
@@ -158,7 +158,36 @@ def patch_zeldas_closet(bzs: dict, itemid: int, object_id_str: str, trapid: int)
     if closet is None:
         raise Exception(f"No closet with id '{id}' found to patch.")
 
+    # Mapping of each closet (scene, roomid, objectid) to the local scene flag we'll use
+    unused_scene_flags = {
+        ("F001r", 1, 0xFC08): 12,  # Link's Closet            0x10
+        ("F001r", 1, 0xFC07): 24,  # Fledge's Closet          2x01
+        ("F001r", 6, 0xFC07): 32,  # Zelda's Closet           5x01 (vanilla scene flag)
+        ("F001r", 2, 0xFC03): 48,  # Groose's Closet          7x01
+        ("F001r", 5, 0xFC05): 50,  # Owlan's Closet           7x04
+        ("F001r", 4, 0xFC03): 57,  # Horwell's Closet         6x02
+        ("F001r", 6, 0xFC06): 61,  # Karane's Closet          6x20
+        ("F005r", 0, 0xFC0E): 81,  # O&P's Closet             Bx02
+        ("F006r", 0, 0xFC16): 82,  # Wryna's Closet           Bx04
+        ("F013r", 0, 0xFC0E): 100,  # Sparrot's Closet        Dx10
+        ("F014r", 0, 0xFC12): 101,  # Luv and Bertie's Closet Dx20
+        ("F015r", 0, 0xFC10): 105,  # Gondo's Closet          Cx02
+        ("F016r", 0, 0xFC28): 107,  # Mallara's Closet        Cx04
+        ("F017r", 0, 0xFC1E): 116,  # Rupin's Closet          Fx10
+        ("F018r", 0, 0xFC11): 117,  # Peater's Closet         Fx20
+        ("F018r", 0, 0xFC12): 118,  # Peatrice's Closet       Fx40
+        ("F011r", 0, 0xFC3B): 3,  # Pumm and Kina's Closet    1x08
+        ("F301_5", 0, 0xFC0C): 0,  # Skipper's Closet         2x01
+    }
+
+    # Specify which scene flag to use
+    closet["params1"] = mask_shift_set(
+        closet["params1"], 0xFF, 0, unused_scene_flags[(stage, room, id)]
+    )
+    # Patch in the item
     closet["params1"] = mask_shift_set(closet["params1"], 0xFF, 8, itemid)
+    # Tell the closet to interpret the flag as a local scene flag
+    closet["params1"] = mask_shift_set(closet["params1"], 0x1, 16, 1)
 
 
 def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
@@ -819,11 +848,13 @@ def patch_and_write_stage(
                                     trapid,
                                 )
                             elif object_name == "chest":
-                                patch_zeldas_closet(
+                                patch_closet(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
                                     trapid,
+                                    room,
+                                    stage,
                                 )
                             elif object_name == "EBc":
                                 patch_ac_key_boko(

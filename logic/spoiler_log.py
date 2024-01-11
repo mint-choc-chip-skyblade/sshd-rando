@@ -106,6 +106,10 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                         and location.current_item == world.get_item("Stamina Fruit")
                     )
                     and not (
+                        "Closet" in location.types
+                        and world.setting("npc_closets") == "vanilla"
+                    )
+                    and not (
                         rupee_shuffle_setting.value == "vanilla"
                         and "Freestanding Rupee" in location.types
                     )

@@ -1174,6 +1174,36 @@
   pretty: Knight Academy - Fledge's Gift
   cryptic: a <r<gift from a friend>>
 
+- name: Knight Academy - In Link's Closet
+  standard: Knight Academy - In Link's Closet
+  pretty: Knight Academy - In Link's Closet
+  cryptic: <r<your closet>>
+
+- name: Knight Academy - In Fledge's Closet
+  standard: Knight Academy - In Fledge's Closet
+  pretty: Knight Academy - In Fledge's Closet
+  cryptic: snooping through a <r<friend's clothes>>
+
+- name: Knight Academy - In Groose's Closet
+  standard: Knight Academy - In Groose's Closet
+  pretty: Knight Academy - In Groose's Closet
+  cryptic: snooping through a <r<rival's clothes>>
+
+- name: Knight Academy - In Owlan's Closet
+  standard: Knight Academy - In Owlan's Closet
+  pretty: Knight Academy - In Owlan's Closet
+  cryptic: snooping through a <r<professor's clothes>>
+
+- name: Knight Academy - In Horwell's Closet
+  standard: Knight Academy - In Horwell's Closet
+  pretty: Knight Academy - In Horwell's Closet
+  cryptic: snooping through a <r<professor's clothes>>
+
+- name: Knight Academy - In Karane's Closet
+  standard: Knight Academy - In Karane's Closet
+  pretty: Knight Academy - In Karane's Closet
+  cryptic: snooping through a <r<popular student's clothes>>
+
 - name: Knight Academy - In Zelda's Closet
   standard: Knight Academy - In Zelda's Closet
   pretty: Knight Academy - In Zelda's Closet
@@ -1349,6 +1379,11 @@
   pretty: Central Skyloft - Wryna's Crystals
   cryptic: a <r<happy mother>>
 
+- name: Central Skyloft - Wryna's Closet
+  standard: Central Skyloft - Wryna's Closet
+  pretty: Central Skyloft - Wryna's Closet
+  cryptic: snooping through a <r<happy mother's clothes>>
+
 - name: Central Skyloft - Waterfall Cave First Chest
   standard: Central Skyloft - Waterfall Cave First Chest
   pretty: Central Skyloft - Waterfall Cave First Chest
@@ -1384,10 +1419,25 @@
   pretty: Central Skyloft - Parrow's Crystals
   cryptic: a <r<brother's gratitude>>
 
+- name: Central Skyloft - Orielle and Parrow's Closet
+  standard: Central Skyloft - Orielle and Parrow's Closet
+  pretty: Central Skyloft - Orielle and Parrow's Closet
+  cryptic: snooping through a <r<worried couple's clothes>>
+
 - name: Central Skyloft - Peater/Peatrice's Crystals
   standard: Central Skyloft - Peater/Peatrice's Crystals
   pretty: Central Skyloft - Peater/Peatrice's Crystals
   cryptic: the <r<item check girl>>
+
+- name: Central Skyloft - Peater's Closet
+  standard: Central Skyloft - Peater's Closet
+  pretty: Central Skyloft - Peater's Closet
+  cryptic: snooping through a <r<protective father's clothes>>
+
+- name: Central Skyloft - Peatrice's Closet
+  standard: Central Skyloft - Peatrice's Closet
+  pretty: Central Skyloft - Peatrice's Closet
+  cryptic: <r<snooping through the item check girl's clothes>>
 
 - name: Central Skyloft - Item in Bird's Nest
   standard: Central Skyloft - Item in Bird's Nest
@@ -1509,15 +1559,40 @@
   pretty: Skyloft Village - Mallara's Crystals
   cryptic: a <r<mother's laziness>>
 
+- name: Skyloft Village - Mallara's Closet
+  standard: Skyloft Village - Mallara's Closet
+  pretty: Skyloft Village - Mallara's Closet
+  cryptic: snooping through a <r<dusty closet>>
+
 - name: Skyloft Village - Bertie's Crystals
   standard: Skyloft Village - Bertie's Crystals
   pretty: Skyloft Village - Bertie's Crystals
   cryptic: helping an <r<exhausted parent>>
 
+- name: Skyloft Village - Luv and Bertie's Closet
+  standard: Skyloft Village - Luv and Bertie's Closet
+  pretty: Skyloft Village - Luv and Bertie's Closet
+  cryptic: snooping through a <r<potion couple's clothes>>
+
+- name: Skyloft Village - Gondo's Closet
+  standard: Skyloft Village - Gondo's Closet
+  pretty: Skyloft Village - Gondo's Closet
+  cryptic: snooping through a <r<repairman's clothes>>
+
+- name: Skyloft Village - Rupin's Closet
+  standard: Skyloft Village - Rupin's Closet
+  pretty: Skyloft Village - Rupin's Closet
+  cryptic: snooping through a <r<greedy man's clothes>>
+
 - name: Skyloft Village - Sparrot's Crystals
   standard: Skyloft Village - Sparrot's Crystals
   pretty: Skyloft Village - Sparrot's Crystals
   cryptic: delivering a <r<fortune telling device>>
+
+- name: Skyloft Village - Sparrot's Closet
+  standard: Skyloft Village - Sparrot's Closet
+  pretty: Skyloft Village - Sparrot's Closet
+  cryptic: snooping through a <r<fortune teller's clothes>>
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
   standard: Skyloft Village - Crystal near Pumpkin Patch
@@ -1643,6 +1718,11 @@
   standard: Lumpy Pumpkin - Kina's Crystals
   pretty: Lumpy Pumpkin - Kina's Crystals
   cryptic: <r<delivering a mogma to the sky>>
+
+- name: Lumpy Pumpkin - Pumm and Kina's Closet
+  standard: Lumpy Pumpkin - Pumm and Kina's Closet
+  pretty: Lumpy Pumpkin - Pumm and Kina's Closet
+  cryptic: snooping through a <r<father and daughter's clothes>>
 
 - name: Lumpy Pumpkin - Outside Crystal
   standard: Lumpy Pumpkin - Outside Crystal
@@ -3331,6 +3411,11 @@
   pretty: Skipper's Retreat - Chest in Shack
   cryptic: a <r<chest atop a sandy retreat>>
 
+- name: Skipper's Retreat - Skipper's Closet
+  standard: Skipper's Retreat - Skipper's Closet
+  pretty: Skipper's Retreat - Skipper's Closet
+  cryptic: snooping through a <r<captain's clothes>>
+  
 - name: Skipper's Retreat - Rupee under Sand in Shack 1
   standard: Skipper's Retreat - Rupee under Sand in Shack 1
   pretty: Skipper's Retreat - Rupee under Sand in Shack 1
