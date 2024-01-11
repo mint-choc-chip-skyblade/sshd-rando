@@ -108,6 +108,9 @@ Below is the list of all the flags that the randomizer changes:
 #### Faron Woods
 * 12: Kikwi Elder's Reward
 
+#### Sand Sea
+* 0: Obtained the item in Skipper's Closet
+
 #### Ancient Cistern
 * 85: After receiving Item from flame CS
 
