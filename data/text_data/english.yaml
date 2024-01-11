@@ -2930,6 +2930,11 @@
   pretty: Skipper's Retreat - Chest in Shack
   cryptic: a <r<chest atop a sandy retreat>>
 
+- name: Skipper's Retreat - Skipper's Closet
+  standard: Skipper's Retreat - Skipper's Closet
+  pretty: Skipper's Retreat - Skipper's Closet
+  cryptic: <r<snooping through a captain's clothes>>
+
 - name: Skipper's Retreat - Skydive Chest
   standard: Skipper's Retreat - Skydive Chest
   pretty: Skipper's Retreat - Skydive Chest

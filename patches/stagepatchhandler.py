@@ -160,7 +160,6 @@ def patch_closet(
         return
 
     # Mapping of each closet (scene, roomid, objectid) to the local scene flag we'll use
-    # All scene flags except the one for Pumm and Kina's closet are unused Skyloft scene flags
     unused_scene_flags = {
         ("F001r", 1, 0xFC08): 12,  # Link's Closet           0x10
         ("F001r", 1, 0xFC07): 24,  # Fledge's Closet         2x01
@@ -179,6 +178,7 @@ def patch_closet(
         ("F018r", 0, 0xFC11): 117,  # Peater's Closet         Fx20
         ("F018r", 0, 0xFC12): 118,  # Peatrice's Closet       Fx40
         ("F011r", 0, 0xFC3B): 3,  # Pumm and Kina's Closet  1x08 (Unused Sky scene flag)
+        ("F301_5", 0, 0xFC0C): 0, # Skipper's Closet        2x01 (Unused Sand Sea scene flag)
     }
 
     # Specify which scene flag to use

@@ -2266,6 +2266,13 @@
   Paths:
     - stage/F301_5/r0/l0/TBox/65
 
+- name: Skipper's Retreat - Skipper's Closet
+  original_item: Green Rupee
+  type: Closet
+  hint: sometimes
+  Paths:
+    - stage/F301_5/r0/l0/chest/0xFC0C
+
 - name: Skipper's Retreat - Skydive Chest
   original_item: Silver Rupee
   type:

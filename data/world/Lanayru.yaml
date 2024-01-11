@@ -416,6 +416,7 @@
     Skipper's Retreat Top: Nothing
   locations:
     Skipper's Retreat - Chest in Shack: Gust_Bellows
+    Skipper's Retreat - Skipper's Closet: Gust_Bellows
 
 
 - name: Skipper's Retreat Skydive Platform
