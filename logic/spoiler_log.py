@@ -94,6 +94,9 @@ def generate_spoiler_log(worlds: list[World]) -> None:
         spoiler_log.write("\nAll Locations:\n")
         for world in worlds:
             spoiler_log.write(f"    {world}:\n")
+
+            rupee_shuffle_setting = world.setting_map.settings["rupee_shuffle"]
+
             for location in world.location_table.values():
                 if (
                     "Hint Location" not in location.types
@@ -101,6 +104,30 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                     and not (
                         "Stamina Fruit" in location.types
                         and location.current_item == world.get_item("Stamina Fruit")
+                    )
+                    and not (
+                        "Closet" in location.types
+                        and world.setting("npc_closets") == "vanilla"
+                    )
+                    and not (
+                        rupee_shuffle_setting.value == "vanilla"
+                        and "Freestanding Rupee" in location.types
+                    )
+                    and not (
+                        rupee_shuffle_setting.value == "beginner"
+                        and (
+                            "Intermediate Rupee" in location.types
+                            or "Advanced Rupee" in location.types
+                        )
+                    )
+                    and not (
+                        rupee_shuffle_setting.value == "intermediate"
+                        and "Advanced Rupee" in location.types
+                    )
+                    and not (
+                        world.setting_map.settings["underground_rupee_shuffle"].value
+                        == "off"
+                        and "Underground Rupee" in location.types
                     )
                 ):
                     spoiler_log.write(
