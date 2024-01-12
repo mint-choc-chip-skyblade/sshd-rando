@@ -63,9 +63,10 @@ ldr w8, [x19, #0xC] ; put param1 in w8
 tbz w8, #9, 0x71004de458 ; check if is patched freestanding item
 
 ; dAcItem::stateWaitEnter
-.offset 0x71004db344
-ldr w8, [x19, #0xC] ; put param1 in w8
-tbnz w8, #9, 0x71004db358 ; check if is patched freestanding item (this case is inverted)
+; Special case for items in sand piles
+.offset 0x71004db340
+mov w8, #33
+bl additions_jumptable
 
 .offset 0x71004dd078
 ldr w8, [x19, #0xC] ; put param1 in w8
@@ -94,3 +95,11 @@ b additions_jumptable
 ; onlyif rotating_items == on
 .offset 0x71004e49ec
 add x9, x9, #0xb0 ; use above func for other default case
+
+
+; Prevent picking up Skyview Temple - Item behind Bars
+; with a Skyward Spin Attack
+.offset 0x71004e621c
+nop
+nop
+nop

@@ -337,7 +337,7 @@ pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
                 (*item_actor).base.basebase.members.param1 |= 0x200;
             },
             _ => {
-                (*item_actor).base.basebase.members.param1 &= 0xFFFFDFFF;
+                (*item_actor).base.basebase.members.param1 &= !0x200u32;
             },
         }
 

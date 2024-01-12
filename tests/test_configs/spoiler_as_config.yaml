@@ -9,9 +9,11 @@ use_custom_theme: false
 font_family: Lato
 font_size: 10
 World 1:
-  logic_rules: glitchless
+  logic_rules: 'on'
   single_gratitude_crystals: random
   stamina_fruit_shuffle: random
+  rupee_shuffle: random
+  underground_rupee_shuffle: random
   randomized_shops: random
   scrap_shop_upgrades: 'random'
   full_wallet_upgrades: 'random'

@@ -1095,11 +1095,6 @@
       param4: No Sword Text
 
 110-DivingGame:
-  - name: Shorten Dodoh quest start text
-    type: flowpatch
-    index: 49
-    flow:
-      next: 55
   - name: Fun Fun Owner's Quest requirement
     type: flowpatch
     index: 38
@@ -1873,16 +1868,16 @@
       next: 103
 
 118-Town3:
-  - name: Shorten Sparrot quest start text
+  - name: Remove reference to Windmill in Sparrot Quest starting text
     type: flowpatch
-    index: 100
+    index: 122
     flow:
-      next: 97
-  - name: Shorten Owlan quest start text
+      next: 255
+  - name: Remove reference to Levias in Owlan Quest starting text
     type: flowpatch
     index: 320
     flow:
-      next: 133
+      next: 116
   - name: Wryna's Crystal
     type: flowpatch
     index: 144
@@ -1923,7 +1918,7 @@
     index: 7
     flow:
       next: 21 # never talk about triforce or song of the hero
-  - name: Shorten Levias text
+  - name: Remove reference to Triforce and SotH in Levias text
     type: flowpatch
     index: 0
     flow:
@@ -2431,11 +2426,11 @@
       param3: 0 # set (not unset) flag
 
 250-ForestSiren:
-  - name: shorten fi text
+  - name: Remove first time trial Fi text
     type: flowpatch
-    index: 1
+    index: 3
     flow:
-      next: 78
+      next: 67
 
 299-Demo:
   - name: Skip setting sword itemflag
@@ -2650,7 +2645,7 @@
       param2: 3 # item
       next: 39
       param3: 9
-  - name: Shorten Plats text in hot cave
+  - name: Fix Plats text in hot cave
     type: flowpatch
     index: 25
     flow:

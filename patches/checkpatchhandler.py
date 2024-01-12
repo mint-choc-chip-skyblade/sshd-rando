@@ -52,6 +52,10 @@ def determine_check_patches(
             if location.current_item == location.world.get_item("Stamina Fruit"):
                 continue
 
+        # Don't patch closets if they're off
+        if "Closet" in location.types and world.setting("npc_closets") == "vanilla":
+            continue
+
         # Deal with traps
         trapid = 0
         trap_oarcs = None

@@ -106,6 +106,9 @@
     AC Basement Rotating Vines: "Clawshots or
                                 (Whip and (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)))" # TODO: Damage Multiplier Check?
     AC Under the Statue: "'Can_Freely_Raise_and_Lower_Statue'"
+  locations:
+    Ancient Cistern - Rupee in Basement Demon's Right Eye: Beetle
+    Ancient Cistern - Rupee in Basement Demon's Left Eye: Beetle
 
 
 # Implies statue is raised

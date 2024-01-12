@@ -22,6 +22,12 @@
     Knight Academy Lower East Door: Day
     Knight Academy Lower West Door: Day
   locations:
+    Knight Academy - In Link's Closet: Nothing
+    Knight Academy - In Fledge's Closet: Nothing
+    Knight Academy - In Groose's Closet: Nothing
+    Knight Academy - In Owlan's Closet: Nothing
+    # Knight Academy - In Horwell's Closet: Nothing
+    Knight Academy - In Karane's Closet: Nothing
     Knight Academy - Fledge's Gift: Nothing
     Knight Academy - Crystal in Knight Academy Plant: Night
     Knight Academy - Crystal in Link's Room: Night
@@ -37,6 +43,12 @@
   exits:
     Knight Academy Zelda's Room: Nothing
     Upper Skyloft: Impossible # To satisfy entrance rando
+  locations:
+    Knight Academy - Rupee in Chimney Crawlspace 1: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 2: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 3: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 4: Nothing
+    Knight Academy - Rupee in Chimney Crawlspace 5: Nothing
 
 
 - name: Knight Academy Zelda's Room
@@ -176,6 +188,10 @@
     Central Skyloft - Stamina Fruit near Orielle and Parrow's House: Nothing
     Central Skyloft - Stamina Fruit near Bazaar: Nothing
     Central Skyloft - Stamina Fruit near Plaza: Nothing
+    Central Skyloft - North Rupee in Bird's Nest: Beetle
+    Central Skyloft - East Rupee in Bird's Nest: Beetle
+    Central Skyloft - South Rupee in Bird's Nest: Beetle
+    Central Skyloft - West Rupee in Bird's Nest: Beetle
     Central Skyloft - Crystal on Waterfall Island: Night and Quick_Beetle and logic_precise_beetle
     Central Skyloft - Crystal after Waterfall Cave: Night and Beetle and logic_precise_beetle
     Central Skyloft - Crystal in Loftwing Prison: Night and Beetle and logic_precise_beetle
@@ -187,7 +203,11 @@
   exits:
     Central Skyloft: Nothing
   locations:
-    Central Skyloft - Item in Bird Nest: Gust_Bellows
+    Central Skyloft - Item in Bird's Nest: Gust_Bellows
+    Central Skyloft - North Rupee in Bird's Nest: Nothing
+    Central Skyloft - East Rupee in Bird's Nest: Nothing
+    Central Skyloft - South Rupee in Bird's Nest: Nothing
+    Central Skyloft - West Rupee in Bird's Nest: Nothing
 
 
 - name: Bazaar
@@ -239,6 +259,7 @@
     Central Skyloft - Crystal in Orielle and Parrow's House: Nothing
     Central Skyloft - Parrow's Gift: Night and 'Talk_to_Orielle'
     Central Skyloft - Parrow's Crystals: Night and 'Save_Orielle'
+    Central Skyloft - Orielle and Parrow's Closet: Nothing
 
 
 - name: Peatrice's House
@@ -248,6 +269,8 @@
     Central Skyloft: Nothing
   locations:
     Central Skyloft - Peater/Peatrice's Crystals: can_access(Bazaar) and Night
+    Central Skyloft - Peater's Closet: Nothing
+    Central Skyloft - Peatrice's Closet: Nothing
 
 
 - name: Wryna's House
@@ -257,6 +280,7 @@
     Central Skyloft: Nothing
   locations:
     Central Skyloft - Wryna's Crystals: Nothing
+    Central Skyloft - Wryna's Closet: Nothing
 
 
 - name: Piper's House
@@ -301,7 +325,8 @@
   locations:
     Central Skyloft - Waterfall Cave First Chest: Nothing
     Central Skyloft - Waterfall Cave Second Chest: Nothing
-    Central Skyloft - Waterfall Cave Crawlspace Rupee: Nothing
+    Central Skyloft - First Rupee in Waterfall Cave Crawlspace: Nothing
+    Central Skyloft - Second Rupee in Waterfall Cave Crawlspace: Nothing
 
 
 - name: Skyloft Past Waterfall Cave
@@ -351,6 +376,7 @@
     Skyloft Village: Nothing
   locations:
     Skyloft Village - Bertie's Crystals: Rattle and Night
+    Skyloft Village - Luv and Bertie's Closet: Nothing
 
 
 - name: Sparrot's House
@@ -362,6 +388,7 @@
     Skyloft Village: Nothing
   locations:
     Skyloft Village - Sparrot's Crystals: "'Retrieve_Crystal_Ball'"
+    Skyloft Village - Sparrot's Closet: Nothing
 
 
 - name: Mallara's House
@@ -371,6 +398,7 @@
     Skyloft Village: Nothing
   locations:
     Skyloft Village - Mallara's Crystals: Gust_Bellows
+    Skyloft Village - Mallara's Closet: Nothing
 
 
 - name: Gondo's House
@@ -378,12 +406,17 @@
   can_sleep: true
   exits:
     Skyloft Village: Nothing
+  locations:
+    Skyloft Village - Gondo's Closet: Nothing
 
 
 - name: Rupin's House
+  allowed_time_of_day: All
   can_sleep: true
   exits:
     Skyloft Village: Nothing
+  locations:
+    Skyloft Village - Rupin's Closet: Nothing
 
 
 - name: Batreaux's House
