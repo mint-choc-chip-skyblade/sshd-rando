@@ -95,3 +95,11 @@ b additions_jumptable
 ; onlyif rotating_items == on
 .offset 0x71004e49ec
 add x9, x9, #0xb0 ; use above func for other default case
+
+
+; Prevent picking up Skyview Temple - Item behind Bars
+; with a Skyward Spin Attack
+.offset 0x71004e621c
+nop
+nop
+nop
