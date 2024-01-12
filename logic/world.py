@@ -197,7 +197,9 @@ class World:
         with open("data/macros.yaml", "r") as macros_data_file:
             macros_data = yaml.safe_load(macros_data_file)
             for macro_name, req_str in macros_data.items():
-                self.macros[macro_name] = parse_requirement_string(req_str, self)
+                self.macros[macro_name] = parse_requirement_string(
+                    req_str, self, force_logic=True
+                )
 
     def load_world_graph(self) -> None:
         logging.getLogger("").debug(f"Loading world graph for {self}")

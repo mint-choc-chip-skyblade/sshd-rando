@@ -149,6 +149,10 @@ def test_traps_off() -> None:
     config_test("traps_off.yaml")
 
 
+def test_no_logic_config() -> None:
+    config_test("no_logic.yaml")
+
+
 def test_rupee_shuffle_off() -> None:
     config_test("rupee_shuffle_off.yaml")
 
