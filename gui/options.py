@@ -56,6 +56,7 @@ class Options:
 
             try:
                 label = getattr(self.ui, setting_name + "_label")
+                label.setText(setting_info.info.pretty_name)
                 label.installEventFilter(self.parent)
             except:
                 pass
@@ -74,6 +75,7 @@ class Options:
                         f"Setting '{setting_name}' has value '{current_option_value}' which is invalid for a QAbstractButton. Expected either 'on' or 'off'."
                     )
 
+                widget.setText(setting_info.info.pretty_name)
                 widget.clicked.connect(partial(self.update_settings, widget))
             elif isinstance(widget, QComboBox):  # pick one option
                 for option in setting_info.info.pretty_options:
@@ -155,7 +157,9 @@ class Options:
         self.config.settings[0].settings = self.settings
 
         write_config_to_file(CONFIG_PATH, self.config)
-        self.update_descriptions(from_widget)
+
+        if not from_reset:
+            self.update_descriptions(from_widget)
 
     def get_updated_setting(self, setting: Setting, value: str) -> Setting:
         if value == "":
