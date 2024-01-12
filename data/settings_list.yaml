@@ -996,7 +996,7 @@
 
 - name: logic_lmf_bellowsless_moldarach
   default_option: "off"
-  pretty_name: Lanayru Mining Facility Moldarach without\nGust Bellows
+  pretty_name: Lanayru Mining Facility Moldarach without Gust Bellows
   pretty_options:
     - "Off"
     - "On"
@@ -1073,7 +1073,7 @@
 
 - name: logic_fs_practice_sword_ghirahim_2 
   default_option: "off"
-  pretty_name: Fire Sanctuary Ghirahim 2 with\nPractice Sword
+  pretty_name: Fire Sanctuary Ghirahim 2 with Practice Sword
   pretty_options:
     - "Off"
     - "On"

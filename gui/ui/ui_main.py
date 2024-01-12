@@ -732,16 +732,6 @@ class Ui_main_window(object):
         self.shuffles_group_box.setSizePolicy(sizePolicy3)
         self.verticalLayout_10 = QVBoxLayout(self.shuffles_group_box)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.setting_shuffle_single_gratitude_crystals = QCheckBox(self.shuffles_group_box)
-        self.setting_shuffle_single_gratitude_crystals.setObjectName(u"setting_shuffle_single_gratitude_crystals")
-
-        self.verticalLayout_10.addWidget(self.setting_shuffle_single_gratitude_crystals)
-
-        self.setting_stamina_fruit_shuffle = QCheckBox(self.shuffles_group_box)
-        self.setting_stamina_fruit_shuffle.setObjectName(u"setting_stamina_fruit_shuffle")
-
-        self.verticalLayout_10.addWidget(self.setting_stamina_fruit_shuffle)
-
         self.randomized_shops_label = QLabel(self.shuffles_group_box)
         self.randomized_shops_label.setObjectName(u"randomized_shops_label")
 
@@ -751,6 +741,31 @@ class Ui_main_window(object):
         self.setting_randomized_shops.setObjectName(u"setting_randomized_shops")
 
         self.verticalLayout_10.addWidget(self.setting_randomized_shops)
+
+        self.rupee_shuffle_label = QLabel(self.shuffles_group_box)
+        self.rupee_shuffle_label.setObjectName(u"rupee_shuffle_label")
+
+        self.verticalLayout_10.addWidget(self.rupee_shuffle_label)
+
+        self.setting_rupee_shuffle = QComboBox(self.shuffles_group_box)
+        self.setting_rupee_shuffle.setObjectName(u"setting_rupee_shuffle")
+
+        self.verticalLayout_10.addWidget(self.setting_rupee_shuffle)
+
+        self.setting_underground_rupee_shuffle = QCheckBox(self.shuffles_group_box)
+        self.setting_underground_rupee_shuffle.setObjectName(u"setting_underground_rupee_shuffle")
+
+        self.verticalLayout_10.addWidget(self.setting_underground_rupee_shuffle)
+
+        self.setting_shuffle_single_gratitude_crystals = QCheckBox(self.shuffles_group_box)
+        self.setting_shuffle_single_gratitude_crystals.setObjectName(u"setting_shuffle_single_gratitude_crystals")
+
+        self.verticalLayout_10.addWidget(self.setting_shuffle_single_gratitude_crystals)
+
+        self.setting_stamina_fruit_shuffle = QCheckBox(self.shuffles_group_box)
+        self.setting_stamina_fruit_shuffle.setObjectName(u"setting_stamina_fruit_shuffle")
+
+        self.verticalLayout_10.addWidget(self.setting_stamina_fruit_shuffle)
 
         self.npc_closets_label = QLabel(self.shuffles_group_box)
         self.npc_closets_label.setObjectName(u"npc_closets_label")
@@ -1140,6 +1155,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_19.addWidget(self.setting_logic_early_lake_floria)
 
+        self.setting_logic_skyview_coiled_rupee_jump = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_skyview_coiled_rupee_jump.setObjectName(u"setting_logic_skyview_coiled_rupee_jump")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_skyview_coiled_rupee_jump)
+
         self.setting_logic_ac_lever_jump_trick = QCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_ac_lever_jump_trick.setObjectName(u"setting_logic_ac_lever_jump_trick")
 
@@ -1473,7 +1493,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(2)
+        self.tab_widget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1580,10 +1600,12 @@ class Ui_main_window(object):
         self.exclude_location_button.setText(QCoreApplication.translate("main_window", u"Exclude\n"
 "--->", None))
         self.shuffles_group_box.setTitle(QCoreApplication.translate("main_window", u"Shuffles", None))
-        self.setting_shuffle_single_gratitude_crystals.setText(QCoreApplication.translate("main_window", u"Single Gratitude Crystals", None))
-        self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruits-----", None))
         self.randomized_shops_label.setText(QCoreApplication.translate("main_window", u"Randomize Shops", None))
-        self.npc_closets_label.setText(QCoreApplication.translate("main_window", u"npc closets", None))
+        self.rupee_shuffle_label.setText(QCoreApplication.translate("main_window", u"Rupee Shuffle", None))
+        self.setting_underground_rupee_shuffle.setText(QCoreApplication.translate("main_window", u"Underground Rupee Shuffle", None))
+        self.setting_shuffle_single_gratitude_crystals.setText(QCoreApplication.translate("main_window", u"Single Gratitude Crystals", None))
+        self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruits", None))
+        self.npc_closets_label.setText(QCoreApplication.translate("main_window", u"NPC Closets", None))
         self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))
         self.excluded_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.included_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Locations", None))
@@ -1632,6 +1654,7 @@ class Ui_main_window(object):
         self.setting_logic_gravestone_jump.setText(QCoreApplication.translate("main_window", u"Gravestone Jump", None))
         self.setting_logic_waterfall_cave_jump.setText(QCoreApplication.translate("main_window", u"Waterfall Cave Jump", None))
         self.setting_logic_early_lake_floria.setText(QCoreApplication.translate("main_window", u"Early Lake Floria Jumpslash", None))
+        self.setting_logic_skyview_coiled_rupee_jump.setText(QCoreApplication.translate("main_window", u"Skyview Coiled Rupee Jump", None))
         self.setting_logic_ac_lever_jump_trick.setText(QCoreApplication.translate("main_window", u"Ancient Cistern Lever Jump", None))
         self.setting_logic_ac_chest_after_whip_hooks_jump.setText(QCoreApplication.translate("main_window", u"Ancient Cistern Chest after Whip Hooks Jump", None))
         self.setting_logic_sandship_jump_to_stern.setText(QCoreApplication.translate("main_window", u"Sandship Jump to Stern", None))

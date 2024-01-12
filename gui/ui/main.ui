@@ -27,7 +27,7 @@ background-color: #FFFFFF;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -1091,20 +1091,6 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_10">
            <item>
-            <widget class="QCheckBox" name="setting_shuffle_single_gratitude_crystals">
-             <property name="text">
-              <string>Single Gratitude Crystals</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="setting_stamina_fruit_shuffle">
-             <property name="text">
-              <string>Stamina Fruits-----</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="QLabel" name="randomized_shops_label">
              <property name="text">
               <string>Randomize Shops</string>
@@ -1115,9 +1101,40 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             <widget class="QComboBox" name="setting_randomized_shops"/>
            </item>
            <item>
+            <widget class="QLabel" name="rupee_shuffle_label">
+             <property name="text">
+              <string>Rupee Shuffle</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_rupee_shuffle"/>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_underground_rupee_shuffle">
+             <property name="text">
+              <string>Underground Rupee Shuffle</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_shuffle_single_gratitude_crystals">
+             <property name="text">
+              <string>Single Gratitude Crystals</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_stamina_fruit_shuffle">
+             <property name="text">
+              <string>Stamina Fruits</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLabel" name="npc_closets_label">
              <property name="text">
-              <string>npc closets</string>
+              <string>NPC Closets</string>
              </property>
             </widget>
            </item>
@@ -1731,6 +1748,13 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                <widget class="QCheckBox" name="setting_logic_early_lake_floria">
                 <property name="text">
                  <string>Early Lake Floria Jumpslash</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="setting_logic_skyview_coiled_rupee_jump">
+                <property name="text">
+                 <string>Skyview Coiled Rupee Jump</string>
                 </property>
                </widget>
               </item>
