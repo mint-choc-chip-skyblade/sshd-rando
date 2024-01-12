@@ -27,7 +27,7 @@ background-color: #FFFFFF;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -886,7 +886,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             </widget>
            </item>
            <item>
-            <spacer name="verticalSpacer">
+            <spacer name="hints_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
@@ -1006,233 +1006,242 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
        <attribute name="title">
         <string>Locations</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_3">
-        <item row="3" column="1">
-         <layout class="QHBoxLayout" name="individual_locations_layout">
-          <property name="topMargin">
-           <number>0</number>
-          </property>
+       <layout class="QGridLayout" name="gridLayout_3" columnstretch="6,1,6,3">
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="locations_button_layout">
           <item>
-           <widget class="QGroupBox" name="included_locations_group_box">
-            <property name="title">
-             <string>Included Locations</string>
+           <spacer name="individual_locations_top_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_9">
-             <item>
-              <layout class="QHBoxLayout" name="included_locations_filter_layout">
-               <item>
-                <widget class="QComboBox" name="included_locations_category_filters">
-                 <property name="placeholderText">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="included_locations_free_search">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="placeholderText">
-                  <string>Search</string>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <widget class="QListView" name="included_locations_list_view">
-               <property name="editTriggers">
-                <set>QAbstractItemView::NoEditTriggers</set>
-               </property>
-               <property name="showDropIndicator" stdset="0">
-                <bool>false</bool>
-               </property>
-               <property name="selectionMode">
-                <enum>QAbstractItemView::MultiSelection</enum>
-               </property>
-               <property name="selectionRectVisible">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="individual_locations_button_layout">
-            <item>
-             <spacer name="individual_locations_top_vspacer">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="include_location_button">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>Include
+           <widget class="QPushButton" name="include_location_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Include
 &lt;---</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="individual_locations_middle_vspacer">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="exclude_location_button">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>Exclude
----&gt;</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="individual_locations_bottom_vspacer">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
+            </property>
+           </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="excluded_locations_group_box">
-            <property name="title">
-             <string>Excluded Locations</string>
+           <spacer name="individual_locations_middle_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_18">
-             <item>
-              <layout class="QHBoxLayout" name="excluded_locations_filter_layout">
-               <item>
-                <widget class="QComboBox" name="excluded_locations_category_filters"/>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="excluded_locations_free_search">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="placeholderText">
-                  <string>Search</string>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <widget class="QListView" name="excluded_locations_list_view">
-               <property name="editTriggers">
-                <set>QAbstractItemView::NoEditTriggers</set>
-               </property>
-               <property name="showDropIndicator" stdset="0">
-                <bool>false</bool>
-               </property>
-               <property name="selectionMode">
-                <enum>QAbstractItemView::MultiSelection</enum>
-               </property>
-               <property name="selectionRectVisible">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="exclude_location_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Exclude
+---&gt;</string>
+            </property>
            </widget>
+          </item>
+          <item>
+           <spacer name="individual_locations_bottom_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </item>
-        <item row="0" column="1">
-         <layout class="QHBoxLayout" name="location_control_layout">
-          <item>
-           <widget class="QGroupBox" name="shuffles_group_box">
-            <property name="title">
-             <string>Shuffles</string>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item row="0" column="3">
+         <widget class="QGroupBox" name="shuffles_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Shuffles</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="QCheckBox" name="setting_shuffle_single_gratitude_crystals">
+             <property name="text">
+              <string>Single Gratitude Crystals</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_stamina_fruit_shuffle">
+             <property name="text">
+              <string>Stamina Fruits-----</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="randomized_shops_label">
+             <property name="text">
+              <string>Randomize Shops</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_randomized_shops"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="npc_closets_label">
+             <property name="text">
+              <string>npc closets</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_npc_closets"/>
+           </item>
+           <item>
+            <spacer name="shuffles_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="excluded_locations_group_box">
+          <property name="title">
+           <string>Excluded Locations</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_18">
+           <item>
+            <layout class="QHBoxLayout" name="excluded_locations_filter_layout">
              <item>
-              <widget class="QCheckBox" name="setting_shuffle_single_gratitude_crystals">
-               <property name="text">
-                <string>Single Gratitude Crystals</string>
-               </property>
-              </widget>
+              <widget class="QComboBox" name="excluded_locations_category_filters"/>
              </item>
              <item>
-              <widget class="QCheckBox" name="setting_stamina_fruit_shuffle">
-               <property name="text">
-                <string>Stamina Fruits</string>
+              <widget class="QLineEdit" name="excluded_locations_free_search">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="placeholderText">
+                <string>Search</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
             </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="shops_group_box">
-            <property name="title">
-             <string>Shops</string>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_15">
+           </item>
+           <item>
+            <widget class="QListView" name="excluded_locations_list_view">
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="included_locations_group_box">
+          <property name="title">
+           <string>Included Locations</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <layout class="QHBoxLayout" name="included_locations_filter_layout">
              <item>
-              <widget class="QLabel" name="randomized_shops_label">
-               <property name="text">
-                <string>Randomize Shops</string>
+              <widget class="QComboBox" name="included_locations_category_filters">
+               <property name="placeholderText">
+                <string/>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QComboBox" name="setting_randomized_shops"/>
+              <widget class="QLineEdit" name="included_locations_free_search">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Search</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
             </layout>
-           </widget>
-          </item>
-         </layout>
+           </item>
+           <item>
+            <widget class="QListView" name="included_locations_list_view">
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -1240,6 +1249,244 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
        <attribute name="title">
         <string>Inventory</string>
        </attribute>
+       <layout class="QGridLayout" name="gridLayout_4" columnstretch="6,1,6,3">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="randomized_items_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Randomized Items</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <widget class="QLineEdit" name="randomized_items_free_search">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>Search</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListView" name="randomized_items_list_view">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="starting_items_group_box">
+          <property name="title">
+           <string>Starting Items</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QLineEdit" name="starting_items_free_search">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>Search</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListView" name="starting_items_list_view">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="inventory_button_layout">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
+          </property>
+          <item>
+           <spacer name="starting_items_top_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="randomize_item_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Remove
+&lt;---</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="starting_items_middle_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="start_with_item_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Add
+---&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="starting_items_bottom_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="3">
+         <widget class="QGroupBox" name="item_settings_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Item Settings</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_29">
+           <item>
+            <widget class="QLabel" name="starting_sword_label">
+             <property name="text">
+              <string>Starting Sword</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_starting_sword"/>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="starting_tablets_hlayout">
+             <item>
+              <widget class="QLabel" name="starting_tablet_count_label">
+               <property name="text">
+                <string>Starting Tablets</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_starting_tablet_count">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="item_settings_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>137</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="logic_tab">
        <attribute name="title">
@@ -1292,9 +1539,15 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           <property name="title">
            <string>Tricks</string>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_6">
-           <item>
+          <layout class="QGridLayout" name="gridLayout_6" columnstretch="1,1,1,1">
+           <item row="0" column="0">
             <widget class="QGroupBox" name="precise_items_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="title">
               <string>Precise Items</string>
              </property>
@@ -1427,8 +1680,14 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
              </layout>
             </widget>
            </item>
-           <item>
+           <item row="0" column="1">
             <widget class="QGroupBox" name="dives_and_jumps_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="title">
               <string>Dives and Jumps</string>
              </property>
@@ -1519,8 +1778,14 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
              </layout>
             </widget>
            </item>
-           <item>
+           <item row="0" column="2">
             <widget class="QGroupBox" name="glitches_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="title">
               <string>Glitches</string>
              </property>
@@ -1569,8 +1834,14 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
              </layout>
             </widget>
            </item>
-           <item>
+           <item row="0" column="3">
             <widget class="QGroupBox" name="miscellaneous_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="title">
               <string>Miscellaneous</string>
              </property>
@@ -1881,15 +2152,21 @@ Practice Sword</string>
      </layout>
     </item>
     <item>
-     <layout class="QGridLayout" name="seed_layout">
-      <item row="2" column="0">
+     <layout class="QGridLayout" name="footer_grid_layout">
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="setting_seed"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="setting_setting_string"/>
+      </item>
+      <item row="1" column="0">
        <widget class="QLabel" name="seed_label">
         <property name="text">
          <string>Seed:</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="0" column="0">
        <widget class="QLabel" name="setting_string_label">
         <property name="text">
          <string>Setting String</string>
@@ -1897,70 +2174,27 @@ Practice Sword</string>
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QLineEdit" name="setting_string"/>
-      </item>
-      <item row="2" column="3">
        <widget class="QPushButton" name="new_seed_button">
         <property name="text">
          <string>New Seed</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="3">
+      <item row="0" column="2">
        <widget class="QPushButton" name="copy_setting_string_button">
         <property name="text">
          <string>Copy</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
-       <widget class="QLineEdit" name="setting_seed"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="footer_layout">
-      <item>
+      <item row="2" column="0">
        <widget class="QPushButton" name="about_button">
         <property name="text">
          <string>About</string>
         </property>
        </widget>
       </item>
-      <item>
-       <spacer name="footer_left_hspacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="reset_button">
-        <property name="text">
-         <string>Reset Settings to Default</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="footer_right_hspacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
+      <item row="2" column="2">
        <widget class="QPushButton" name="randomize_button">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -1972,6 +2206,43 @@ Practice Sword</string>
          <string>Randomize</string>
         </property>
        </widget>
+      </item>
+      <item row="2" column="1">
+       <layout class="QHBoxLayout" name="reset_settings_to_default_hlayout">
+        <item>
+         <spacer name="reset_settings_to_default_left_hspacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="reset_settings_to_default_button">
+          <property name="text">
+           <string>Reset Settings to Default</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="reset_settings_to_default_right_hspacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>

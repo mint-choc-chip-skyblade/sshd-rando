@@ -36,7 +36,7 @@ class Options:
         seed_widget.textChanged.connect(self.update_seed)
 
         self.ui.new_seed_button.clicked.connect(self.new_seed)
-        self.ui.reset_button.clicked.connect(self.reset)
+        self.ui.reset_settings_to_default_button.clicked.connect(self.reset)
 
         # Init other settings
         for setting_name, setting_info in self.settings.items():

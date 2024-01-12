@@ -543,7 +543,7 @@
 
 - name: empty_unrequired_dungeons
   default_option: "on"
-  pretty_name: Empty Unrequired Dungeons
+  pretty_name: Barren Unrequired Dungeons
   pretty_options:
     - "Off"
     - "On"

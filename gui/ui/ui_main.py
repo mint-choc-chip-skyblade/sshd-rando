@@ -613,9 +613,9 @@ class Ui_main_window(object):
 
         self.verticalLayout_23.addWidget(self.setting_cryptic_hint_text)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.hints_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_23.addItem(self.verticalSpacer)
+        self.verticalLayout_23.addItem(self.hints_vspacer)
 
 
         self.gridLayout_2.addWidget(self.hints_group_box, 1, 1, 1, 1)
@@ -692,79 +692,82 @@ class Ui_main_window(object):
         self.locations_tab.setObjectName(u"locations_tab")
         self.gridLayout_3 = QGridLayout(self.locations_tab)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.individual_locations_layout = QHBoxLayout()
-        self.individual_locations_layout.setObjectName(u"individual_locations_layout")
-        self.individual_locations_layout.setContentsMargins(-1, 0, -1, -1)
-        self.included_locations_group_box = QGroupBox(self.locations_tab)
-        self.included_locations_group_box.setObjectName(u"included_locations_group_box")
-        self.verticalLayout_9 = QVBoxLayout(self.included_locations_group_box)
-        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.included_locations_filter_layout = QHBoxLayout()
-        self.included_locations_filter_layout.setObjectName(u"included_locations_filter_layout")
-        self.included_locations_category_filters = QComboBox(self.included_locations_group_box)
-        self.included_locations_category_filters.setObjectName(u"included_locations_category_filters")
-
-        self.included_locations_filter_layout.addWidget(self.included_locations_category_filters)
-
-        self.included_locations_free_search = QLineEdit(self.included_locations_group_box)
-        self.included_locations_free_search.setObjectName(u"included_locations_free_search")
-        sizePolicy6 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.included_locations_free_search.sizePolicy().hasHeightForWidth())
-        self.included_locations_free_search.setSizePolicy(sizePolicy6)
-        self.included_locations_free_search.setClearButtonEnabled(True)
-
-        self.included_locations_filter_layout.addWidget(self.included_locations_free_search)
-
-
-        self.verticalLayout_9.addLayout(self.included_locations_filter_layout)
-
-        self.included_locations_list_view = QListView(self.included_locations_group_box)
-        self.included_locations_list_view.setObjectName(u"included_locations_list_view")
-        self.included_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.included_locations_list_view.setProperty("showDropIndicator", False)
-        self.included_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
-        self.included_locations_list_view.setSelectionRectVisible(False)
-
-        self.verticalLayout_9.addWidget(self.included_locations_list_view)
-
-
-        self.individual_locations_layout.addWidget(self.included_locations_group_box)
-
-        self.individual_locations_button_layout = QVBoxLayout()
-        self.individual_locations_button_layout.setObjectName(u"individual_locations_button_layout")
+        self.locations_button_layout = QVBoxLayout()
+        self.locations_button_layout.setObjectName(u"locations_button_layout")
         self.individual_locations_top_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.individual_locations_button_layout.addItem(self.individual_locations_top_vspacer)
+        self.locations_button_layout.addItem(self.individual_locations_top_vspacer)
 
         self.include_location_button = QPushButton(self.locations_tab)
         self.include_location_button.setObjectName(u"include_location_button")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.include_location_button.sizePolicy().hasHeightForWidth())
-        self.include_location_button.setSizePolicy(sizePolicy7)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.include_location_button.sizePolicy().hasHeightForWidth())
+        self.include_location_button.setSizePolicy(sizePolicy6)
 
-        self.individual_locations_button_layout.addWidget(self.include_location_button)
+        self.locations_button_layout.addWidget(self.include_location_button)
 
         self.individual_locations_middle_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.individual_locations_button_layout.addItem(self.individual_locations_middle_vspacer)
+        self.locations_button_layout.addItem(self.individual_locations_middle_vspacer)
 
         self.exclude_location_button = QPushButton(self.locations_tab)
         self.exclude_location_button.setObjectName(u"exclude_location_button")
-        sizePolicy7.setHeightForWidth(self.exclude_location_button.sizePolicy().hasHeightForWidth())
-        self.exclude_location_button.setSizePolicy(sizePolicy7)
+        sizePolicy6.setHeightForWidth(self.exclude_location_button.sizePolicy().hasHeightForWidth())
+        self.exclude_location_button.setSizePolicy(sizePolicy6)
 
-        self.individual_locations_button_layout.addWidget(self.exclude_location_button)
+        self.locations_button_layout.addWidget(self.exclude_location_button)
 
         self.individual_locations_bottom_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.individual_locations_button_layout.addItem(self.individual_locations_bottom_vspacer)
+        self.locations_button_layout.addItem(self.individual_locations_bottom_vspacer)
 
 
-        self.individual_locations_layout.addLayout(self.individual_locations_button_layout)
+        self.gridLayout_3.addLayout(self.locations_button_layout, 0, 1, 1, 1)
+
+        self.shuffles_group_box = QGroupBox(self.locations_tab)
+        self.shuffles_group_box.setObjectName(u"shuffles_group_box")
+        sizePolicy3.setHeightForWidth(self.shuffles_group_box.sizePolicy().hasHeightForWidth())
+        self.shuffles_group_box.setSizePolicy(sizePolicy3)
+        self.verticalLayout_10 = QVBoxLayout(self.shuffles_group_box)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.setting_shuffle_single_gratitude_crystals = QCheckBox(self.shuffles_group_box)
+        self.setting_shuffle_single_gratitude_crystals.setObjectName(u"setting_shuffle_single_gratitude_crystals")
+
+        self.verticalLayout_10.addWidget(self.setting_shuffle_single_gratitude_crystals)
+
+        self.setting_stamina_fruit_shuffle = QCheckBox(self.shuffles_group_box)
+        self.setting_stamina_fruit_shuffle.setObjectName(u"setting_stamina_fruit_shuffle")
+
+        self.verticalLayout_10.addWidget(self.setting_stamina_fruit_shuffle)
+
+        self.randomized_shops_label = QLabel(self.shuffles_group_box)
+        self.randomized_shops_label.setObjectName(u"randomized_shops_label")
+
+        self.verticalLayout_10.addWidget(self.randomized_shops_label)
+
+        self.setting_randomized_shops = QComboBox(self.shuffles_group_box)
+        self.setting_randomized_shops.setObjectName(u"setting_randomized_shops")
+
+        self.verticalLayout_10.addWidget(self.setting_randomized_shops)
+
+        self.npc_closets_label = QLabel(self.shuffles_group_box)
+        self.npc_closets_label.setObjectName(u"npc_closets_label")
+
+        self.verticalLayout_10.addWidget(self.npc_closets_label)
+
+        self.setting_npc_closets = QComboBox(self.shuffles_group_box)
+        self.setting_npc_closets.setObjectName(u"setting_npc_closets")
+
+        self.verticalLayout_10.addWidget(self.setting_npc_closets)
+
+        self.shuffles_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_10.addItem(self.shuffles_vspacer)
+
+
+        self.gridLayout_3.addWidget(self.shuffles_group_box, 0, 3, 1, 1)
 
         self.excluded_locations_group_box = QGroupBox(self.locations_tab)
         self.excluded_locations_group_box.setObjectName(u"excluded_locations_group_box")
@@ -779,8 +782,11 @@ class Ui_main_window(object):
 
         self.excluded_locations_free_search = QLineEdit(self.excluded_locations_group_box)
         self.excluded_locations_free_search.setObjectName(u"excluded_locations_free_search")
-        sizePolicy6.setHeightForWidth(self.excluded_locations_free_search.sizePolicy().hasHeightForWidth())
-        self.excluded_locations_free_search.setSizePolicy(sizePolicy6)
+        sizePolicy7 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.excluded_locations_free_search.sizePolicy().hasHeightForWidth())
+        self.excluded_locations_free_search.setSizePolicy(sizePolicy7)
         self.excluded_locations_free_search.setClearButtonEnabled(True)
 
         self.excluded_locations_filter_layout.addWidget(self.excluded_locations_free_search)
@@ -798,53 +804,181 @@ class Ui_main_window(object):
         self.verticalLayout_18.addWidget(self.excluded_locations_list_view)
 
 
-        self.individual_locations_layout.addWidget(self.excluded_locations_group_box)
+        self.gridLayout_3.addWidget(self.excluded_locations_group_box, 0, 2, 1, 1)
+
+        self.included_locations_group_box = QGroupBox(self.locations_tab)
+        self.included_locations_group_box.setObjectName(u"included_locations_group_box")
+        self.verticalLayout_9 = QVBoxLayout(self.included_locations_group_box)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.included_locations_filter_layout = QHBoxLayout()
+        self.included_locations_filter_layout.setObjectName(u"included_locations_filter_layout")
+        self.included_locations_category_filters = QComboBox(self.included_locations_group_box)
+        self.included_locations_category_filters.setObjectName(u"included_locations_category_filters")
+
+        self.included_locations_filter_layout.addWidget(self.included_locations_category_filters)
+
+        self.included_locations_free_search = QLineEdit(self.included_locations_group_box)
+        self.included_locations_free_search.setObjectName(u"included_locations_free_search")
+        sizePolicy7.setHeightForWidth(self.included_locations_free_search.sizePolicy().hasHeightForWidth())
+        self.included_locations_free_search.setSizePolicy(sizePolicy7)
+        self.included_locations_free_search.setClearButtonEnabled(True)
+
+        self.included_locations_filter_layout.addWidget(self.included_locations_free_search)
 
 
-        self.gridLayout_3.addLayout(self.individual_locations_layout, 3, 1, 1, 1)
+        self.verticalLayout_9.addLayout(self.included_locations_filter_layout)
 
-        self.location_control_layout = QHBoxLayout()
-        self.location_control_layout.setObjectName(u"location_control_layout")
-        self.shuffles_group_box = QGroupBox(self.locations_tab)
-        self.shuffles_group_box.setObjectName(u"shuffles_group_box")
-        self.verticalLayout_10 = QVBoxLayout(self.shuffles_group_box)
-        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.setting_shuffle_single_gratitude_crystals = QCheckBox(self.shuffles_group_box)
-        self.setting_shuffle_single_gratitude_crystals.setObjectName(u"setting_shuffle_single_gratitude_crystals")
+        self.included_locations_list_view = QListView(self.included_locations_group_box)
+        self.included_locations_list_view.setObjectName(u"included_locations_list_view")
+        self.included_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.included_locations_list_view.setProperty("showDropIndicator", False)
+        self.included_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.included_locations_list_view.setSelectionRectVisible(False)
 
-        self.verticalLayout_10.addWidget(self.setting_shuffle_single_gratitude_crystals)
-
-        self.setting_stamina_fruit_shuffle = QCheckBox(self.shuffles_group_box)
-        self.setting_stamina_fruit_shuffle.setObjectName(u"setting_stamina_fruit_shuffle")
-
-        self.verticalLayout_10.addWidget(self.setting_stamina_fruit_shuffle)
+        self.verticalLayout_9.addWidget(self.included_locations_list_view)
 
 
-        self.location_control_layout.addWidget(self.shuffles_group_box)
+        self.gridLayout_3.addWidget(self.included_locations_group_box, 0, 0, 1, 1)
 
-        self.shops_group_box = QGroupBox(self.locations_tab)
-        self.shops_group_box.setObjectName(u"shops_group_box")
-        self.verticalLayout_15 = QVBoxLayout(self.shops_group_box)
-        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.randomized_shops_label = QLabel(self.shops_group_box)
-        self.randomized_shops_label.setObjectName(u"randomized_shops_label")
-
-        self.verticalLayout_15.addWidget(self.randomized_shops_label)
-
-        self.setting_randomized_shops = QComboBox(self.shops_group_box)
-        self.setting_randomized_shops.setObjectName(u"setting_randomized_shops")
-
-        self.verticalLayout_15.addWidget(self.setting_randomized_shops)
-
-
-        self.location_control_layout.addWidget(self.shops_group_box)
-
-
-        self.gridLayout_3.addLayout(self.location_control_layout, 0, 1, 1, 1)
-
+        self.gridLayout_3.setColumnStretch(0, 6)
+        self.gridLayout_3.setColumnStretch(1, 1)
+        self.gridLayout_3.setColumnStretch(2, 6)
+        self.gridLayout_3.setColumnStretch(3, 3)
         self.tab_widget.addTab(self.locations_tab, "")
         self.inventory_tab = QWidget()
         self.inventory_tab.setObjectName(u"inventory_tab")
+        self.gridLayout_4 = QGridLayout(self.inventory_tab)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.randomized_items_group_box = QGroupBox(self.inventory_tab)
+        self.randomized_items_group_box.setObjectName(u"randomized_items_group_box")
+        sizePolicy3.setHeightForWidth(self.randomized_items_group_box.sizePolicy().hasHeightForWidth())
+        self.randomized_items_group_box.setSizePolicy(sizePolicy3)
+        self.verticalLayout_15 = QVBoxLayout(self.randomized_items_group_box)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.randomized_items_free_search = QLineEdit(self.randomized_items_group_box)
+        self.randomized_items_free_search.setObjectName(u"randomized_items_free_search")
+        self.randomized_items_free_search.setClearButtonEnabled(True)
+
+        self.verticalLayout_15.addWidget(self.randomized_items_free_search)
+
+        self.randomized_items_list_view = QListView(self.randomized_items_group_box)
+        self.randomized_items_list_view.setObjectName(u"randomized_items_list_view")
+        sizePolicy8 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.randomized_items_list_view.sizePolicy().hasHeightForWidth())
+        self.randomized_items_list_view.setSizePolicy(sizePolicy8)
+        self.randomized_items_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.randomized_items_list_view.setProperty("showDropIndicator", False)
+        self.randomized_items_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.randomized_items_list_view.setSelectionRectVisible(False)
+
+        self.verticalLayout_15.addWidget(self.randomized_items_list_view)
+
+
+        self.gridLayout_4.addWidget(self.randomized_items_group_box, 0, 0, 1, 1)
+
+        self.starting_items_group_box = QGroupBox(self.inventory_tab)
+        self.starting_items_group_box.setObjectName(u"starting_items_group_box")
+        self.verticalLayout_11 = QVBoxLayout(self.starting_items_group_box)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.starting_items_free_search = QLineEdit(self.starting_items_group_box)
+        self.starting_items_free_search.setObjectName(u"starting_items_free_search")
+        self.starting_items_free_search.setClearButtonEnabled(True)
+
+        self.verticalLayout_11.addWidget(self.starting_items_free_search)
+
+        self.starting_items_list_view = QListView(self.starting_items_group_box)
+        self.starting_items_list_view.setObjectName(u"starting_items_list_view")
+        sizePolicy8.setHeightForWidth(self.starting_items_list_view.sizePolicy().hasHeightForWidth())
+        self.starting_items_list_view.setSizePolicy(sizePolicy8)
+        self.starting_items_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.starting_items_list_view.setProperty("showDropIndicator", False)
+        self.starting_items_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.starting_items_list_view.setSelectionRectVisible(False)
+
+        self.verticalLayout_11.addWidget(self.starting_items_list_view)
+
+
+        self.gridLayout_4.addWidget(self.starting_items_group_box, 0, 2, 1, 1)
+
+        self.inventory_button_layout = QVBoxLayout()
+        self.inventory_button_layout.setObjectName(u"inventory_button_layout")
+        self.inventory_button_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.starting_items_top_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.inventory_button_layout.addItem(self.starting_items_top_vspacer)
+
+        self.randomize_item_button = QPushButton(self.inventory_tab)
+        self.randomize_item_button.setObjectName(u"randomize_item_button")
+        sizePolicy6.setHeightForWidth(self.randomize_item_button.sizePolicy().hasHeightForWidth())
+        self.randomize_item_button.setSizePolicy(sizePolicy6)
+
+        self.inventory_button_layout.addWidget(self.randomize_item_button)
+
+        self.starting_items_middle_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.inventory_button_layout.addItem(self.starting_items_middle_vspacer)
+
+        self.start_with_item_button = QPushButton(self.inventory_tab)
+        self.start_with_item_button.setObjectName(u"start_with_item_button")
+        sizePolicy6.setHeightForWidth(self.start_with_item_button.sizePolicy().hasHeightForWidth())
+        self.start_with_item_button.setSizePolicy(sizePolicy6)
+
+        self.inventory_button_layout.addWidget(self.start_with_item_button)
+
+        self.starting_items_bottom_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.inventory_button_layout.addItem(self.starting_items_bottom_vspacer)
+
+
+        self.gridLayout_4.addLayout(self.inventory_button_layout, 0, 1, 1, 1)
+
+        self.item_settings_group_box = QGroupBox(self.inventory_tab)
+        self.item_settings_group_box.setObjectName(u"item_settings_group_box")
+        sizePolicy3.setHeightForWidth(self.item_settings_group_box.sizePolicy().hasHeightForWidth())
+        self.item_settings_group_box.setSizePolicy(sizePolicy3)
+        self.verticalLayout_29 = QVBoxLayout(self.item_settings_group_box)
+        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
+        self.starting_sword_label = QLabel(self.item_settings_group_box)
+        self.starting_sword_label.setObjectName(u"starting_sword_label")
+
+        self.verticalLayout_29.addWidget(self.starting_sword_label)
+
+        self.setting_starting_sword = QComboBox(self.item_settings_group_box)
+        self.setting_starting_sword.setObjectName(u"setting_starting_sword")
+
+        self.verticalLayout_29.addWidget(self.setting_starting_sword)
+
+        self.starting_tablets_hlayout = QHBoxLayout()
+        self.starting_tablets_hlayout.setObjectName(u"starting_tablets_hlayout")
+        self.starting_tablet_count_label = QLabel(self.item_settings_group_box)
+        self.starting_tablet_count_label.setObjectName(u"starting_tablet_count_label")
+
+        self.starting_tablets_hlayout.addWidget(self.starting_tablet_count_label)
+
+        self.setting_starting_tablet_count = QSpinBox(self.item_settings_group_box)
+        self.setting_starting_tablet_count.setObjectName(u"setting_starting_tablet_count")
+        sizePolicy5.setHeightForWidth(self.setting_starting_tablet_count.sizePolicy().hasHeightForWidth())
+        self.setting_starting_tablet_count.setSizePolicy(sizePolicy5)
+        self.setting_starting_tablet_count.setMaximumSize(QSize(16777215, 16777215))
+
+        self.starting_tablets_hlayout.addWidget(self.setting_starting_tablet_count)
+
+
+        self.verticalLayout_29.addLayout(self.starting_tablets_hlayout)
+
+        self.item_settings_vspacer = QSpacerItem(20, 137, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_29.addItem(self.item_settings_vspacer)
+
+
+        self.gridLayout_4.addWidget(self.item_settings_group_box, 0, 3, 1, 1)
+
+        self.gridLayout_4.setColumnStretch(0, 6)
+        self.gridLayout_4.setColumnStretch(1, 1)
+        self.gridLayout_4.setColumnStretch(2, 6)
+        self.gridLayout_4.setColumnStretch(3, 3)
         self.tab_widget.addTab(self.inventory_tab, "")
         self.logic_tab = QWidget()
         self.logic_tab.setObjectName(u"logic_tab")
@@ -875,10 +1009,12 @@ class Ui_main_window(object):
         self.tricks_group_box.setObjectName(u"tricks_group_box")
         sizePolicy.setHeightForWidth(self.tricks_group_box.sizePolicy().hasHeightForWidth())
         self.tricks_group_box.setSizePolicy(sizePolicy)
-        self.horizontalLayout_6 = QHBoxLayout(self.tricks_group_box)
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.gridLayout_6 = QGridLayout(self.tricks_group_box)
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.precise_items_group_box = QGroupBox(self.tricks_group_box)
         self.precise_items_group_box.setObjectName(u"precise_items_group_box")
+        sizePolicy1.setHeightForWidth(self.precise_items_group_box.sizePolicy().hasHeightForWidth())
+        self.precise_items_group_box.setSizePolicy(sizePolicy1)
         self.verticalLayout_20 = QVBoxLayout(self.precise_items_group_box)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.setting_logic_advanced_lizalfos_combat = QCheckBox(self.precise_items_group_box)
@@ -966,10 +1102,12 @@ class Ui_main_window(object):
         self.verticalLayout_20.addItem(self.precise_items_vspacer)
 
 
-        self.horizontalLayout_6.addWidget(self.precise_items_group_box)
+        self.gridLayout_6.addWidget(self.precise_items_group_box, 0, 0, 1, 1)
 
         self.dives_and_jumps_group_box = QGroupBox(self.tricks_group_box)
         self.dives_and_jumps_group_box.setObjectName(u"dives_and_jumps_group_box")
+        sizePolicy1.setHeightForWidth(self.dives_and_jumps_group_box.sizePolicy().hasHeightForWidth())
+        self.dives_and_jumps_group_box.setSizePolicy(sizePolicy1)
         self.verticalLayout_19 = QVBoxLayout(self.dives_and_jumps_group_box)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.setting_logic_volcanic_island_dive = QCheckBox(self.dives_and_jumps_group_box)
@@ -1027,10 +1165,12 @@ class Ui_main_window(object):
         self.verticalLayout_19.addItem(self.dives_and_jumps_vspacer)
 
 
-        self.horizontalLayout_6.addWidget(self.dives_and_jumps_group_box)
+        self.gridLayout_6.addWidget(self.dives_and_jumps_group_box, 0, 1, 1, 1)
 
         self.glitches_group_box = QGroupBox(self.tricks_group_box)
         self.glitches_group_box.setObjectName(u"glitches_group_box")
+        sizePolicy1.setHeightForWidth(self.glitches_group_box.sizePolicy().hasHeightForWidth())
+        self.glitches_group_box.setSizePolicy(sizePolicy1)
         self.verticalLayout_21 = QVBoxLayout(self.glitches_group_box)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
         self.setting_logic_stuttersprint = QCheckBox(self.glitches_group_box)
@@ -1058,10 +1198,12 @@ class Ui_main_window(object):
         self.verticalLayout_21.addItem(self.glitches_vspacer)
 
 
-        self.horizontalLayout_6.addWidget(self.glitches_group_box)
+        self.gridLayout_6.addWidget(self.glitches_group_box, 0, 2, 1, 1)
 
         self.miscellaneous_group_box = QGroupBox(self.tricks_group_box)
         self.miscellaneous_group_box.setObjectName(u"miscellaneous_group_box")
+        sizePolicy1.setHeightForWidth(self.miscellaneous_group_box.sizePolicy().hasHeightForWidth())
+        self.miscellaneous_group_box.setSizePolicy(sizePolicy1)
         self.verticalLayout_22 = QVBoxLayout(self.miscellaneous_group_box)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.setting_logic_fire_node_without_hook_beetle = QCheckBox(self.miscellaneous_group_box)
@@ -1114,8 +1256,12 @@ class Ui_main_window(object):
         self.verticalLayout_22.addItem(self.miscellaneous_vspacer)
 
 
-        self.horizontalLayout_6.addWidget(self.miscellaneous_group_box)
+        self.gridLayout_6.addWidget(self.miscellaneous_group_box, 0, 3, 1, 1)
 
+        self.gridLayout_6.setColumnStretch(0, 1)
+        self.gridLayout_6.setColumnStretch(1, 1)
+        self.gridLayout_6.setColumnStretch(2, 1)
+        self.gridLayout_6.setColumnStretch(3, 1)
 
         self.gridLayout_5.addWidget(self.tricks_group_box, 1, 0, 1, 1)
 
@@ -1235,9 +1381,6 @@ class Ui_main_window(object):
         self.settings_descriptions_layout.setObjectName(u"settings_descriptions_layout")
         self.settings_current_option_description_label = QLabel(self.central_widget)
         self.settings_current_option_description_label.setObjectName(u"settings_current_option_description_label")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy8.setHorizontalStretch(0)
-        sizePolicy8.setVerticalStretch(0)
         sizePolicy8.setHeightForWidth(self.settings_current_option_description_label.sizePolicy().hasHeightForWidth())
         self.settings_current_option_description_label.setSizePolicy(sizePolicy8)
         self.settings_current_option_description_label.setMinimumSize(QSize(0, 64))
@@ -1258,60 +1401,42 @@ class Ui_main_window(object):
 
         self.verticalLayout_2.addLayout(self.settings_descriptions_layout)
 
-        self.seed_layout = QGridLayout()
-        self.seed_layout.setObjectName(u"seed_layout")
+        self.footer_grid_layout = QGridLayout()
+        self.footer_grid_layout.setObjectName(u"footer_grid_layout")
+        self.setting_seed = QLineEdit(self.central_widget)
+        self.setting_seed.setObjectName(u"setting_seed")
+
+        self.footer_grid_layout.addWidget(self.setting_seed, 1, 1, 1, 1)
+
+        self.setting_setting_string = QLineEdit(self.central_widget)
+        self.setting_setting_string.setObjectName(u"setting_setting_string")
+
+        self.footer_grid_layout.addWidget(self.setting_setting_string, 0, 1, 1, 1)
+
         self.seed_label = QLabel(self.central_widget)
         self.seed_label.setObjectName(u"seed_label")
 
-        self.seed_layout.addWidget(self.seed_label, 2, 0, 1, 1)
+        self.footer_grid_layout.addWidget(self.seed_label, 1, 0, 1, 1)
 
         self.setting_string_label = QLabel(self.central_widget)
         self.setting_string_label.setObjectName(u"setting_string_label")
 
-        self.seed_layout.addWidget(self.setting_string_label, 1, 0, 1, 1)
-
-        self.setting_string = QLineEdit(self.central_widget)
-        self.setting_string.setObjectName(u"setting_string")
-
-        self.seed_layout.addWidget(self.setting_string, 1, 2, 1, 1)
+        self.footer_grid_layout.addWidget(self.setting_string_label, 0, 0, 1, 1)
 
         self.new_seed_button = QPushButton(self.central_widget)
         self.new_seed_button.setObjectName(u"new_seed_button")
 
-        self.seed_layout.addWidget(self.new_seed_button, 2, 3, 1, 1)
+        self.footer_grid_layout.addWidget(self.new_seed_button, 1, 2, 1, 1)
 
         self.copy_setting_string_button = QPushButton(self.central_widget)
         self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
 
-        self.seed_layout.addWidget(self.copy_setting_string_button, 1, 3, 1, 1)
+        self.footer_grid_layout.addWidget(self.copy_setting_string_button, 0, 2, 1, 1)
 
-        self.setting_seed = QLineEdit(self.central_widget)
-        self.setting_seed.setObjectName(u"setting_seed")
-
-        self.seed_layout.addWidget(self.setting_seed, 2, 2, 1, 1)
-
-
-        self.verticalLayout_2.addLayout(self.seed_layout)
-
-        self.footer_layout = QHBoxLayout()
-        self.footer_layout.setObjectName(u"footer_layout")
         self.about_button = QPushButton(self.central_widget)
         self.about_button.setObjectName(u"about_button")
 
-        self.footer_layout.addWidget(self.about_button)
-
-        self.footer_left_hspacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.footer_layout.addItem(self.footer_left_hspacer)
-
-        self.reset_button = QPushButton(self.central_widget)
-        self.reset_button.setObjectName(u"reset_button")
-
-        self.footer_layout.addWidget(self.reset_button)
-
-        self.footer_right_hspacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.footer_layout.addItem(self.footer_right_hspacer)
+        self.footer_grid_layout.addWidget(self.about_button, 2, 0, 1, 1)
 
         self.randomize_button = QPushButton(self.central_widget)
         self.randomize_button.setObjectName(u"randomize_button")
@@ -1321,16 +1446,34 @@ class Ui_main_window(object):
         sizePolicy9.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
         self.randomize_button.setSizePolicy(sizePolicy9)
 
-        self.footer_layout.addWidget(self.randomize_button)
+        self.footer_grid_layout.addWidget(self.randomize_button, 2, 2, 1, 1)
+
+        self.reset_settings_to_default_hlayout = QHBoxLayout()
+        self.reset_settings_to_default_hlayout.setObjectName(u"reset_settings_to_default_hlayout")
+        self.reset_settings_to_default_left_hspacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.reset_settings_to_default_hlayout.addItem(self.reset_settings_to_default_left_hspacer)
+
+        self.reset_settings_to_default_button = QPushButton(self.central_widget)
+        self.reset_settings_to_default_button.setObjectName(u"reset_settings_to_default_button")
+
+        self.reset_settings_to_default_hlayout.addWidget(self.reset_settings_to_default_button)
+
+        self.reset_settings_to_default_right_hspacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.reset_settings_to_default_hlayout.addItem(self.reset_settings_to_default_right_hspacer)
 
 
-        self.verticalLayout_2.addLayout(self.footer_layout)
+        self.footer_grid_layout.addLayout(self.reset_settings_to_default_hlayout, 2, 1, 1, 1)
+
+
+        self.verticalLayout_2.addLayout(self.footer_grid_layout)
 
         main_window.setCentralWidget(self.central_widget)
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1432,22 +1575,35 @@ class Ui_main_window(object):
         self.mixed_pools_group_box.setTitle(QCoreApplication.translate("main_window", u"Shortcuts", None))
         self.setting_fs_lava_flow.setText(QCoreApplication.translate("main_window", u"Skip Fire Sanctuary Lava Chase", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.world_tab), QCoreApplication.translate("main_window", u"World", None))
-        self.included_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Locations", None))
-        self.included_locations_category_filters.setPlaceholderText("")
-        self.included_locations_free_search.setText("")
-        self.included_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.include_location_button.setText(QCoreApplication.translate("main_window", u"Include\n"
 "<---", None))
         self.exclude_location_button.setText(QCoreApplication.translate("main_window", u"Exclude\n"
 "--->", None))
-        self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))
-        self.excluded_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.shuffles_group_box.setTitle(QCoreApplication.translate("main_window", u"Shuffles", None))
         self.setting_shuffle_single_gratitude_crystals.setText(QCoreApplication.translate("main_window", u"Single Gratitude Crystals", None))
-        self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruits", None))
-        self.shops_group_box.setTitle(QCoreApplication.translate("main_window", u"Shops", None))
+        self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruits-----", None))
         self.randomized_shops_label.setText(QCoreApplication.translate("main_window", u"Randomize Shops", None))
+        self.npc_closets_label.setText(QCoreApplication.translate("main_window", u"npc closets", None))
+        self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))
+        self.excluded_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
+        self.included_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Locations", None))
+        self.included_locations_category_filters.setPlaceholderText("")
+        self.included_locations_free_search.setText("")
+        self.included_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.locations_tab), QCoreApplication.translate("main_window", u"Locations", None))
+        self.randomized_items_group_box.setTitle(QCoreApplication.translate("main_window", u"Randomized Items", None))
+        self.randomized_items_free_search.setText("")
+        self.randomized_items_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
+        self.starting_items_group_box.setTitle(QCoreApplication.translate("main_window", u"Starting Items", None))
+        self.starting_items_free_search.setText("")
+        self.starting_items_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
+        self.randomize_item_button.setText(QCoreApplication.translate("main_window", u"Remove\n"
+"<---", None))
+        self.start_with_item_button.setText(QCoreApplication.translate("main_window", u"Add\n"
+"--->", None))
+        self.item_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Item Settings", None))
+        self.starting_sword_label.setText(QCoreApplication.translate("main_window", u"Starting Sword", None))
+        self.starting_tablet_count_label.setText(QCoreApplication.translate("main_window", u"Starting Tablets", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.inventory_tab), QCoreApplication.translate("main_window", u"Inventory", None))
         self.logic_rules_group_box.setTitle(QCoreApplication.translate("main_window", u"Logic", None))
         self.logic_rules_label.setText(QCoreApplication.translate("main_window", u"Logic Mode", None))
@@ -1518,7 +1674,7 @@ class Ui_main_window(object):
         self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
         self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
         self.about_button.setText(QCoreApplication.translate("main_window", u"About", None))
-        self.reset_button.setText(QCoreApplication.translate("main_window", u"Reset Settings to Default", None))
         self.randomize_button.setText(QCoreApplication.translate("main_window", u"Randomize", None))
+        self.reset_settings_to_default_button.setText(QCoreApplication.translate("main_window", u"Reset Settings to Default", None))
     # retranslateUi
 
