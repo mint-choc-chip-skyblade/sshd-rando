@@ -8,11 +8,11 @@
   pretty_options:
     - 'On'
     - No Logic
-    - Vanilla
+    # - Vanilla
   options:
     - 'on':                            "Logic is considered when placing Items. Generated seeds will always be beatable. Tricks and Glitches can be enabled for consideration below."
     - no_logic:                        "Maximize randomization, logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
-    - vanilla:                         "Items are placed in their vanilla locations."
+    # - vanilla:                         "Items are placed in their vanilla locations."
 
 
 - name: single_gratitude_crystals
