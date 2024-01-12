@@ -23,8 +23,21 @@ def config_test(config_file_name: str | Path) -> list[World]:
     return worlds
 
 
-def test_default_config() -> None:
-    config_test("default_config.yaml")
+def test_default_empty_config() -> None:
+    config_test("default_empty_config.yaml")
+
+
+def test_default_undefined_config() -> None:
+    # This file does not exist intentionally to test that it behaves without it
+    config_file_name = Path("default_undefined_config.yaml")
+
+    config = load_config_from_file(
+        config_file_name, create_if_blank=True, allow_rewrite=False
+    )
+    write_config_to_file(config_file_name, config)
+    worlds = generate(config_file_name)
+    assert all_locations_reachable(worlds)
+    config_file_name.unlink()
 
 
 def test_random_crystals() -> None:

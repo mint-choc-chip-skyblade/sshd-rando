@@ -10,9 +10,10 @@ from PySide6.QtWidgets import (
     QSpinBox,
     QWidget,
 )
+from constants.configdefaults import get_new_seed
 
 from filepathconstants import CONFIG_PATH, FI_ICON_PATH
-from logic.config import get_new_seed, load_config_from_file, write_config_to_file
+from logic.config import load_config_from_file, write_config_to_file
 from logic.settings import Setting
 
 

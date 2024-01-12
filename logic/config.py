@@ -1,18 +1,8 @@
 from pathlib import Path
 import yaml
-import random
-
-from filepathconstants import WORDS_PATH
+from constants.configdefaults import get_default_setting
 
 from .settings import *
-
-required_config_fields = [
-    "input_dir",
-    "seed",
-    "output_dir",
-    "plandomizer",
-    "plandomizer_file",
-]
 
 
 class ConfigError(RuntimeError):
@@ -38,33 +28,44 @@ class Config:
 
 def create_default_config(filename: Path):
     config = Config()
-    config.output_dir = Path("./output")
-    config.input_dir = Path("./title")
-    config.seed = get_new_seed()
-    config.plandomizer = False
-    config.plandomizer_file = None  # type: ignore
-    config.generate_spoiler_log = True
+    config.output_dir = get_default_setting("output_dir")
+    config.input_dir = get_default_setting("input_dir")
+    config.seed = get_default_setting("seed")
+    config.plandomizer = get_default_setting("plandomizer")
+    config.plandomizer_file = get_default_setting("plandomizer_file")
+    config.generate_spoiler_log = get_default_setting("generate_spoiler_log")
 
-    config.theme_mode = "Auto"
-    config.theme_presets = "Default"
-    config.use_custom_theme = False
-    config.font_family = "Lato"
-    config.font_size = 10
+    config.theme_mode = get_default_setting("theme_mode")
+    config.theme_presets = get_default_setting("theme_presets")
+    config.use_custom_theme = get_default_setting("use_custom_theme")
+    config.font_family = get_default_setting("font_family")
+    config.font_size = get_default_setting("font_size")
 
     config.settings.append(SettingMap())
     setting_map = config.settings[0]
-    setting_map.starting_inventory = Counter()
-    setting_map.excluded_locations = []
-    setting_map.mixed_entrance_pools = []
+    setting_map.starting_inventory = get_default_setting("starting_inventory")
+    setting_map.excluded_locations = get_default_setting("excluded_locations")
+    setting_map.mixed_entrance_pools = get_default_setting("mixed_entrance_pools")
 
-    for setting_name, setting_info in get_all_settings_info().items():
-        new_setting = Setting()
-        new_setting.name = setting_name
-        new_setting.info = setting_info
-        new_setting.value = setting_info.options[setting_info.default_option_index]
-        setting_map.settings[setting_name] = new_setting
+    for setting_name in get_all_settings_info():
+        setting_map.settings[setting_name] = create_default_setting(setting_name)
 
+    print(setting_map.starting_inventory)
     write_config_to_file(filename, config)
+
+
+def create_default_setting(setting_name: str) -> Setting:
+    all_settings_info = get_all_settings_info()
+
+    if (setting_info := all_settings_info.get(setting_name)) is None:
+        raise Exception(f"Could not find setting info for setting: {setting_name}.")
+
+    new_setting = Setting()
+    new_setting.name = setting_name
+    new_setting.info = setting_info
+    new_setting.value = setting_info.options[setting_info.default_option_index]
+
+    return new_setting
 
 
 def write_config_to_file(filename: Path, config: Config):
@@ -90,28 +91,45 @@ def write_config_to_file(filename: Path, config: Config):
             for setting_name, setting in setting_map.settings.items():
                 config_out[world_num][setting_name] = setting.value
 
+            # Map starting inventory
             if len(setting_map.starting_inventory) == 0:
-                config_out[world_num]["starting_inventory"] = []
-            else:
-                config_out[world_num]["starting_inventory"] = []
-                for item in setting_map.starting_inventory.elements():
-                    config_out[world_num]["starting_inventory"].append(item)
+                setting_map.starting_inventory = get_default_setting(
+                    "starting_inventory"
+                )
 
+            config_out[world_num]["starting_inventory"] = []
+
+            for item in setting_map.starting_inventory.elements():
+                config_out[world_num]["starting_inventory"].append(item)
+
+            # Map excluded locations
             if len(setting_map.excluded_locations) == 0:
-                config_out[world_num]["excluded_locations"] = []
+                config_out[world_num]["excluded_locations"] = get_default_setting(
+                    "excluded_locations"
+                )
             else:
                 config_out[world_num]["excluded_locations"] = []
                 for loc in setting_map.excluded_locations:
                     config_out[world_num]["excluded_locations"].append(loc)
 
+            # Map mixed pools
             if len(setting_map.mixed_entrance_pools) == 0:
-                config_out[world_num]["mixed_entrance_pools"] = []
+                config_out[world_num]["mixed_entrance_pools"] = get_default_setting(
+                    "mixed_entrance_pools"
+                )
             else:
                 config_out[world_num]["mixed_entrance_pools"] = []
                 for pool in setting_map.mixed_entrance_pools:
                     config_out[world_num]["mixed_entrance_pools"].append(pool)
 
         yaml.safe_dump(config_out, config_file, sort_keys=False)
+
+
+def load_or_get_default_from_config(config: dict, setting_name: str):
+    if (setting_value := config.get(setting_name)) is None:
+        setting_value = get_default_setting(setting_name)
+
+    return setting_value
 
 
 def load_config_from_file(
@@ -127,25 +145,35 @@ def load_config_from_file(
     with open(filepath) as config_file:
         config_in = yaml.safe_load(config_file)
 
-        # Check required fields
-        for field in required_config_fields:
-            if field not in config_in:
-                raise ConfigError(f'Missing field "{field}" in {filepath}')
+        if config_in is None:
+            config_in = dict()
 
-        config.seed = config_in["seed"]
-        config.input_dir = Path(config_in["input_dir"])
-        config.output_dir = Path(config_in["output_dir"])
-        config.plandomizer = config_in["plandomizer"]
-        config.plandomizer_file = config_in["plandomizer_file"]
+        config.seed = load_or_get_default_from_config(config_in, "seed")
+        config.input_dir = Path(load_or_get_default_from_config(config_in, "input_dir"))
+        config.output_dir = Path(
+            load_or_get_default_from_config(config_in, "output_dir")
+        )
+        config.plandomizer = load_or_get_default_from_config(config_in, "plandomizer")
+        config.plandomizer_file = load_or_get_default_from_config(
+            config_in, "plandomizer_file"
+        )
 
-        config.theme_mode = config_in["theme_mode"]
-        config.theme_presets = config_in["theme_presets"]
-        config.use_custom_theme = config_in["use_custom_theme"]
-        config.font_family = config_in["font_family"]
-        config.font_size = config_in["font_size"]
+        config.theme_mode = load_or_get_default_from_config(config_in, "theme_mode")
+        config.theme_presets = load_or_get_default_from_config(
+            config_in, "theme_presets"
+        )
+        config.use_custom_theme = load_or_get_default_from_config(
+            config_in, "use_custom_theme"
+        )
+        config.font_family = load_or_get_default_from_config(config_in, "font_family")
+        config.font_size = load_or_get_default_from_config(config_in, "font_size")
 
         world_num = 1
         world_num_str = f"World {world_num}"
+
+        # Create default World 1 if it doesn't exist already
+        if world_num_str not in config_in:
+            config_in[world_num_str] = []
 
         settings_info = get_all_settings_info()
         while world_num_str in config_in:
@@ -212,14 +240,3 @@ def load_config_from_file(
         write_config_to_file(filepath, config)
 
     return config
-
-
-def get_new_seed() -> str:
-    with open(WORDS_PATH, "r") as words_file:
-        words = yaml.safe_load(words_file)
-        new_seed = ""
-
-        for _ in range(0, 4):
-            new_seed += random.choice(words)
-
-        return new_seed
