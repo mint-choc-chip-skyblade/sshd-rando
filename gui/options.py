@@ -23,7 +23,7 @@ OPTION_PREFIX = "&nbsp;&nbsp;➜ "
 LOCATION_FILTER_TYPES = (
     "Minigames",
     "Goddess Chests",
-    "Single Gratitude Crystals",
+    "Gratitude Crystals",
     "Batreaux's Rewards",
     "Scrapper Deliveries",
     "Silent Realms",
@@ -67,8 +67,8 @@ class Options:
         excludable_locations = [
             location
             for location in excludable_locations
-            if (location_type := location.get("type")) is not None
-            and "Goddess Cube" not in location_type
+            if (show_on_gui := location.get("show_on_gui"))
+            or show_on_gui is None
         ]
 
         # Init excluded locations
