@@ -223,9 +223,8 @@ class Options:
 
         # Special cases
         ## Excluded locations
-        self.config.settings[
-            0
-        ].excluded_locations = self.exclude_locations_pair.get_added()
+        excluded_locations_from_gui = self.exclude_locations_pair.get_added()
+        self.config.settings[0].excluded_locations = excluded_locations_from_gui
 
         write_config_to_file(CONFIG_PATH, self.config)
 

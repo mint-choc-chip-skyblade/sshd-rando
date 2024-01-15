@@ -1,4 +1,4 @@
-from PySide6.QtCore import QObject, QStringListModel, Signal
+from PySide6.QtCore import QObject, QStringListModel, Signal, QAbstractItemModel
 from PySide6.QtWidgets import QListView, QPushButton
 
 from gui.models.searchable_list_model import SearchableListModel
@@ -16,14 +16,13 @@ class ListPair(QObject):
         add_button: QPushButton,
         remove_button: QPushButton,
         full_data_dict: list[dict] = [],
-        setting_options_list: list = [],
     ):
         super().__init__()
         self.current_setting_list = current_setting_list
         self.settings_list_view = settings_list_view
         self.non_settings_list_view = non_settings_list_view
         self.has_type_filter = len(full_data_dict) > 0
-        self.setting_options_list = [
+        self.setting_options_list: list[str] = [
             data_entry["name"] for data_entry in full_data_dict
         ]
         self._stored_filter_option_list = ""
@@ -36,7 +35,7 @@ class ListPair(QObject):
 
         if self.has_type_filter:
             self.option_list_proxy = LocationTypeFilterModel(
-                self.settings_list_view, setting_options_list, full_data_dict
+                self.settings_list_view, self.setting_options_list, full_data_dict
             )
         else:
             self.option_list_proxy = SearchableListModel(
@@ -93,7 +92,7 @@ class ListPair(QObject):
         self.listPairChanged.emit(self.option_list_model.stringList())
 
     @staticmethod
-    def append_row(model, value):
+    def append_row(model: QAbstractItemModel, value):
         model.insertRow(model.rowCount())
         new_row = model.index(model.rowCount() - 1, 0)
         model.setData(new_row, value)
@@ -129,7 +128,14 @@ class ListPair(QObject):
         self._restore_filters()
 
     def get_added(self) -> list:
-        return self.option_list_model.stringList()
+        # A little more complex than *necessary* so that the config file
+        # remains ordered correctly
+        added_list = [
+            added
+            for added in self.option_list_proxy.full_list
+            if added in self.option_list_model.stringList()
+        ]
+        return added_list
 
     def _store_and_remove_filters(self):
         self._stored_filter_option_list = self.option_list_proxy.free_text_filter
