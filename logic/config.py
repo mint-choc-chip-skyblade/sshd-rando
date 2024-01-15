@@ -92,35 +92,22 @@ def write_config_to_file(filename: Path, config: Config):
                 config_out[world_num][setting_name] = setting.value
 
             # Map starting inventory
-            if len(setting_map.starting_inventory) == 0:
-                setting_map.starting_inventory = get_default_setting(
-                    "starting_inventory"
-                )
-
             config_out[world_num]["starting_inventory"] = []
 
             for item in setting_map.starting_inventory.elements():
                 config_out[world_num]["starting_inventory"].append(item)
 
             # Map excluded locations
-            if len(setting_map.excluded_locations) == 0:
-                config_out[world_num]["excluded_locations"] = get_default_setting(
-                    "excluded_locations"
-                )
-            else:
-                config_out[world_num]["excluded_locations"] = []
-                for loc in setting_map.excluded_locations:
-                    config_out[world_num]["excluded_locations"].append(loc)
+            config_out[world_num]["excluded_locations"] = []
+
+            for loc in setting_map.excluded_locations:
+                config_out[world_num]["excluded_locations"].append(loc)
 
             # Map mixed pools
-            if len(setting_map.mixed_entrance_pools) == 0:
-                config_out[world_num]["mixed_entrance_pools"] = get_default_setting(
-                    "mixed_entrance_pools"
-                )
-            else:
-                config_out[world_num]["mixed_entrance_pools"] = []
-                for pool in setting_map.mixed_entrance_pools:
-                    config_out[world_num]["mixed_entrance_pools"].append(pool)
+            config_out[world_num]["mixed_entrance_pools"] = []
+
+            for pool in setting_map.mixed_entrance_pools:
+                config_out[world_num]["mixed_entrance_pools"].append(pool)
 
         yaml.safe_dump(config_out, config_file, sort_keys=False)
 

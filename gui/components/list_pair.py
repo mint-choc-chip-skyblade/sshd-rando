@@ -23,7 +23,9 @@ class ListPair(QObject):
         self.settings_list_view = settings_list_view
         self.non_settings_list_view = non_settings_list_view
         self.has_type_filter = len(full_data_dict) > 0
-        self.setting_options_list = setting_options_list
+        self.setting_options_list = [
+            data_entry["name"] for data_entry in full_data_dict
+        ]
         self._stored_filter_option_list = ""
         self._stored_filter_non_option_list = ""
         self._stored_type_filter_option_list = ""

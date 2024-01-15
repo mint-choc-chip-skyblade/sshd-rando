@@ -79,7 +79,6 @@ class Options:
             self.ui.exclude_location_button,
             self.ui.include_location_button,
             excludable_locations,
-            [location["name"] for location in excludable_locations],
         )
         self.exclude_locations_pair.listPairChanged.connect(self.update_settings)
 
