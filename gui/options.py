@@ -12,12 +12,37 @@ from PySide6.QtWidgets import (
 )
 from constants.configdefaults import get_new_seed
 
-from filepathconstants import CONFIG_PATH, FI_ICON_PATH
+from filepathconstants import CONFIG_PATH, FI_ICON_PATH, LOCATIONS_PATH
+from gui.components.list_pair import ListPair
 from logic.config import load_config_from_file, write_config_to_file
 from logic.settings import Setting
+from sslib.yaml import yaml_load
 
 
 OPTION_PREFIX = "&nbsp;&nbsp;➜ "
+LOCATION_FILTER_TYPES = (
+    "Minigames",
+    "Goddess Chests",
+    "Single Gratitude Crystals",
+    "Batreaux's Rewards",
+    "Scrapper Deliveries",
+    "Silent Realms",
+    "Closets",
+    "Digging Spots",
+    "Underground Rupees",
+    "Freestanding Rupees",
+    "Beginner Rupees",
+    "Intermediate Rupees",
+    "Advanced Rupees",
+    "Beedle's Shop",
+    "Shop (Cheap)",
+    "Shop (Medium)",
+    "Shop (Expensive)",
+    "Freestanding Items",
+    "Chests",
+    "NPC",
+    "Defeat Boss",
+)
 
 
 class Options:
@@ -37,6 +62,47 @@ class Options:
 
         self.ui.new_seed_button.clicked.connect(self.new_seed)
         self.ui.reset_settings_to_default_button.clicked.connect(self.reset)
+
+        excludable_locations = list(yaml_load(LOCATIONS_PATH))
+        excludable_locations = [
+            location
+            for location in excludable_locations
+            if (location_type := location.get("type")) is not None
+            and "Goddess Cube" not in location_type
+        ]
+
+        # Init excluded locations
+        self.exclude_locations_pair = ListPair(
+            self.config.settings[0].excluded_locations,
+            self.ui.excluded_locations_list_view,
+            self.ui.included_locations_list_view,
+            self.ui.exclude_location_button,
+            self.ui.include_location_button,
+            excludable_locations,
+            [location["name"] for location in excludable_locations],
+        )
+        self.exclude_locations_pair.listPairChanged.connect(self.update_settings)
+
+        self.ui.excluded_locations_free_search.textChanged.connect(
+            self.exclude_locations_pair.update_option_list_filter
+        )
+        self.ui.included_locations_free_search.textChanged.connect(
+            self.exclude_locations_pair.update_non_option_list_filter
+        )
+
+        self.ui.included_locations_category_filters.addItem("All")
+        self.ui.included_locations_category_filters.addItems(
+            location for location in LOCATION_FILTER_TYPES
+        )
+        self.ui.included_locations_category_filters.currentTextChanged.connect(
+            self.exclude_locations_pair.update_non_option_list_type_filter
+        )
+
+        self.ui.excluded_locations_category_filters.addItem("All")
+        self.ui.excluded_locations_category_filters.addItems(LOCATION_FILTER_TYPES)
+        self.ui.excluded_locations_category_filters.currentTextChanged.connect(
+            self.exclude_locations_pair.update_option_list_type_filter
+        )
 
         # Init other settings
         for setting_name, setting_info in self.settings.items():
@@ -156,6 +222,12 @@ class Options:
 
         self.config.settings[0].settings = self.settings
 
+        # Special cases
+        ## Excluded locations
+        self.config.settings[
+            0
+        ].excluded_locations = self.exclude_locations_pair.get_added()
+
         write_config_to_file(CONFIG_PATH, self.config)
 
         if not from_reset:
@@ -240,7 +312,7 @@ class Options:
             self.reset_single(setting)
 
     def get_setting_from_widget(self, widget: QObject | None) -> Setting | None:
-        if widget is None:
+        if not widget:
             return None
 
         widget_name = widget.objectName()

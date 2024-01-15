@@ -89,7 +89,8 @@ def determine_check_patches(
                     ]
 
                 # Getting potion models from NPCs is broken rn
-                if "NPC" in location.types:
+                # Fi counts as an NPC for this so also include Crest
+                if "NPC" in location.types or "Crests" in location.types:
                     trappable_items = [
                         item for item in trappable_items if not "Potion" in item.name
                     ]

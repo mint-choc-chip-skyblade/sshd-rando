@@ -1,4 +1,6 @@
 from constants.itemconstants import TRAP_SETTING_TO_ITEM
+from filepathconstants import LOCATIONS_PATH
+from sslib.yaml import yaml_load
 from .config import Config
 from .settings import *
 from .item import Item
@@ -151,45 +153,45 @@ class World:
     # for this world
     def build_location_table(self) -> None:
         logging.getLogger("").debug(f"Building Location Table for {self}")
-        with open("data/locations.yaml", "r") as item_data_file:
-            location_id_counter = 0
-            location_data = yaml.safe_load(item_data_file)
-            for location_node in location_data:
-                # Check to make sure all required fields exist
-                for field in ["name", "original_item"]:
-                    if field not in location_node:
-                        raise MissingInfoError(
-                            f"location \"{location_node['name']}\" is missing the \"{field}\" field in locations.yaml"
-                        )
+        location_data = yaml_load(LOCATIONS_PATH)
+        location_id_counter = 0
 
-                name = location_node["name"]
-                original_item = self.get_item(location_node["original_item"])
-                types = location_node.get("type", [])
-                if types == None:
-                    types = []
-                patch_paths = location_node.get("Paths", [])
-                goal_location = location_node.get("goal_location", False)
-                hint_priority = location_node.get("hint", "never")
-                hint_textfile = location_node.get("textfile", "")
-                hint_textindex = location_node.get("textindex", -1)
-                location_id = location_id_counter
-                location_id_counter += 1
+        for location_node in location_data:
+            # Check to make sure all required fields exist
+            for field in ["name", "original_item"]:
+                if field not in location_node:
+                    raise MissingInfoError(
+                        f"location \"{location_node['name']}\" is missing the \"{field}\" field in locations.yaml"
+                    )
 
-                self.location_table[name] = Location(
-                    location_id,
-                    name,
-                    types,
-                    self,
-                    original_item,
-                    patch_paths,
-                    goal_location,
-                    hint_priority,
-                    hint_textfile,
-                    hint_textindex,
-                )
-                logging.getLogger("").debug(
-                    f"Processing new location {name}\tid: {location_id}\toriginal item: {original_item}"
-                )
+            name = location_node["name"]
+            original_item = self.get_item(location_node["original_item"])
+            types = location_node.get("type", [])
+            if types == None:
+                types = []
+            patch_paths = location_node.get("Paths", [])
+            goal_location = location_node.get("goal_location", False)
+            hint_priority = location_node.get("hint", "never")
+            hint_textfile = location_node.get("textfile", "")
+            hint_textindex = location_node.get("textindex", -1)
+            location_id = location_id_counter
+            location_id_counter += 1
+
+            self.location_table[name] = Location(
+                location_id,
+                name,
+                types,
+                self,
+                original_item,
+                patch_paths,
+                goal_location,
+                hint_priority,
+                hint_textfile,
+                hint_textindex,
+            )
+            logging.getLogger("").debug(
+                f"Processing new location {name}\tid: {location_id}\toriginal item: {original_item}"
+            )
 
     def load_logic_macros(self) -> None:
         logging.getLogger("").debug(f"Loading macros for {self}")
@@ -385,11 +387,11 @@ class World:
                 )
                 or (
                     self.setting("randomized_shops") == "vanilla"
-                    and "Beedle's Shop Purchases" in location.types
+                    and "Beedle's Shop" in location.types
                 )
                 or (
                     self.setting("shuffle_single_gratitude_crystals") == "off"
-                    and "Loose Crystals" in location.types
+                    and "Gratitude Crystal" in location.types
                 )
                 or (
                     self.setting("stamina_fruit_shuffle") == "off"

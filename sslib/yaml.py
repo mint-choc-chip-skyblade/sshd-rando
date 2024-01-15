@@ -20,7 +20,7 @@ class UniqueKeyLoader(yaml.SafeLoader):
         return super().construct_mapping(node, deep)
 
 
-def yaml_load(file_path: Path) -> dict:
+def yaml_load(file_path: Path) -> dict | list:
     with file_path.open("r", encoding="utf-8") as file:
         return yaml.load(file, UniqueKeyLoader)
 
