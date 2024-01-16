@@ -163,7 +163,7 @@ pub enum ITEMFLAGS {
     UNK67                            = 0x43,
     WATER_DRAGON_SCALE               = 0x44,
     UNK69                            = 0x45,
-    FAIRY                            = 0x46,
+    BUG_MEDAL                        = 0x46,
     BUG_NET                          = 0x47,
     FAIRY_WITH_BUG_NET               = 0x48,
     UNK73                            = 0x49,
