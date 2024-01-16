@@ -1,4 +1,4 @@
-from constants.itemconstants import TRAP_SETTING_TO_ITEM
+from constants.itemconstants import ALL_JUNK_ITEMS, TRAP_SETTING_TO_ITEM
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from .config import Config
 from .settings import *
@@ -478,7 +478,7 @@ class World:
 
         if self.item_pool.total() > num_empty_locations:
             junk_to_remove = []
-            for junk in all_junk_items:
+            for junk in ALL_JUNK_ITEMS:
                 junk_item = self.get_item(junk)
                 junk_to_remove.extend([junk_item] * self.item_pool[junk_item])
 
