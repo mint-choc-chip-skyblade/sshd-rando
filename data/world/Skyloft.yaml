@@ -452,9 +452,9 @@
     Central Skyloft: Day
   locations:
     # We don't want the pouch extensions to be the logical access to the pouch
-    Beedle's Shop - 300 Rupee Item: Can_Afford_300_Rupees and (Pouch or randomized_shops != vanilla)
-    Beedle's Shop - 600 Rupee Item: Can_Afford_600_Rupees and (Pouch or randomized_shops != vanilla)
-    Beedle's Shop - 1200 Rupee Item: Can_Afford_1200_Rupees and (Pouch or randomized_shops != vanilla)
+    Beedle's Shop - 300 Rupee Item: Can_Afford_300_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
+    Beedle's Shop - 600 Rupee Item: Can_Afford_600_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
+    Beedle's Shop - 1200 Rupee Item: Can_Afford_1200_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
     Beedle's Shop - 800 Rupee Item: Can_Afford_800_Rupees
     Beedle's Shop - 1600 Rupee Item: Can_Afford_1600_Rupees
     Beedle's Shop - First 100 Rupee Item: Can_Afford_100_Rupees

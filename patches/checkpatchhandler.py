@@ -53,7 +53,10 @@ def determine_check_patches(
                 continue
 
         # Don't patch closets if they're off
-        if "Closet" in location.types and world.setting("npc_closets") == "vanilla":
+        if (
+            "Closets" in location.types
+            and world.setting("npc_closet_shuffle") == "vanilla"
+        ):
             continue
 
         # Deal with traps

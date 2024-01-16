@@ -732,15 +732,15 @@ class Ui_main_window(object):
         self.shuffles_group_box.setSizePolicy(sizePolicy3)
         self.verticalLayout_10 = QVBoxLayout(self.shuffles_group_box)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.randomized_shops_label = QLabel(self.shuffles_group_box)
-        self.randomized_shops_label.setObjectName(u"randomized_shops_label")
+        self.beedle_shop_shuffle_label = QLabel(self.shuffles_group_box)
+        self.beedle_shop_shuffle_label.setObjectName(u"beedle_shop_shuffle_label")
 
-        self.verticalLayout_10.addWidget(self.randomized_shops_label)
+        self.verticalLayout_10.addWidget(self.beedle_shop_shuffle_label)
 
-        self.setting_randomized_shops = QComboBox(self.shuffles_group_box)
-        self.setting_randomized_shops.setObjectName(u"setting_randomized_shops")
+        self.setting_beedle_shop_shuffle = QComboBox(self.shuffles_group_box)
+        self.setting_beedle_shop_shuffle.setObjectName(u"setting_beedle_shop_shuffle")
 
-        self.verticalLayout_10.addWidget(self.setting_randomized_shops)
+        self.verticalLayout_10.addWidget(self.setting_beedle_shop_shuffle)
 
         self.rupee_shuffle_label = QLabel(self.shuffles_group_box)
         self.rupee_shuffle_label.setObjectName(u"rupee_shuffle_label")
@@ -757,25 +757,30 @@ class Ui_main_window(object):
 
         self.verticalLayout_10.addWidget(self.setting_underground_rupee_shuffle)
 
-        self.setting_shuffle_single_gratitude_crystals = QCheckBox(self.shuffles_group_box)
-        self.setting_shuffle_single_gratitude_crystals.setObjectName(u"setting_shuffle_single_gratitude_crystals")
+        self.setting_goddess_chest_shuffle = QCheckBox(self.shuffles_group_box)
+        self.setting_goddess_chest_shuffle.setObjectName(u"setting_goddess_chest_shuffle")
 
-        self.verticalLayout_10.addWidget(self.setting_shuffle_single_gratitude_crystals)
+        self.verticalLayout_10.addWidget(self.setting_goddess_chest_shuffle)
+
+        self.setting_gratitude_crystal_shuffle = QCheckBox(self.shuffles_group_box)
+        self.setting_gratitude_crystal_shuffle.setObjectName(u"setting_gratitude_crystal_shuffle")
+
+        self.verticalLayout_10.addWidget(self.setting_gratitude_crystal_shuffle)
 
         self.setting_stamina_fruit_shuffle = QCheckBox(self.shuffles_group_box)
         self.setting_stamina_fruit_shuffle.setObjectName(u"setting_stamina_fruit_shuffle")
 
         self.verticalLayout_10.addWidget(self.setting_stamina_fruit_shuffle)
 
-        self.npc_closets_label = QLabel(self.shuffles_group_box)
-        self.npc_closets_label.setObjectName(u"npc_closets_label")
+        self.npc_closet_shuffle_label = QLabel(self.shuffles_group_box)
+        self.npc_closet_shuffle_label.setObjectName(u"npc_closet_shuffle_label")
 
-        self.verticalLayout_10.addWidget(self.npc_closets_label)
+        self.verticalLayout_10.addWidget(self.npc_closet_shuffle_label)
 
-        self.setting_npc_closets = QComboBox(self.shuffles_group_box)
-        self.setting_npc_closets.setObjectName(u"setting_npc_closets")
+        self.setting_npc_closet_shuffle = QComboBox(self.shuffles_group_box)
+        self.setting_npc_closet_shuffle.setObjectName(u"setting_npc_closet_shuffle")
 
-        self.verticalLayout_10.addWidget(self.setting_npc_closets)
+        self.verticalLayout_10.addWidget(self.setting_npc_closet_shuffle)
 
         self.shuffles_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -1493,7 +1498,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(4)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1600,12 +1605,13 @@ class Ui_main_window(object):
         self.exclude_location_button.setText(QCoreApplication.translate("main_window", u"Exclude\n"
 "--->", None))
         self.shuffles_group_box.setTitle(QCoreApplication.translate("main_window", u"Shuffles", None))
-        self.randomized_shops_label.setText(QCoreApplication.translate("main_window", u"Randomize Shops", None))
+        self.beedle_shop_shuffle_label.setText(QCoreApplication.translate("main_window", u"Beedle's Shop Shuffle", None))
         self.rupee_shuffle_label.setText(QCoreApplication.translate("main_window", u"Rupee Shuffle", None))
         self.setting_underground_rupee_shuffle.setText(QCoreApplication.translate("main_window", u"Underground Rupee Shuffle", None))
-        self.setting_shuffle_single_gratitude_crystals.setText(QCoreApplication.translate("main_window", u"Single Gratitude Crystals", None))
+        self.setting_goddess_chest_shuffle.setText(QCoreApplication.translate("main_window", u"Goddess Chest Shuffle", None))
+        self.setting_gratitude_crystal_shuffle.setText(QCoreApplication.translate("main_window", u"Gratitude Crystals Shuffle", None))
         self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruits", None))
-        self.npc_closets_label.setText(QCoreApplication.translate("main_window", u"NPC Closets", None))
+        self.npc_closet_shuffle_label.setText(QCoreApplication.translate("main_window", u"NPC Closets", None))
         self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))
         self.excluded_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.included_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Locations", None))

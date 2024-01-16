@@ -50,7 +50,6 @@ def create_default_config(filename: Path):
     for setting_name in get_all_settings_info():
         setting_map.settings[setting_name] = create_default_setting(setting_name)
 
-    print(setting_map.starting_inventory)
     write_config_to_file(filename, config)
 
 

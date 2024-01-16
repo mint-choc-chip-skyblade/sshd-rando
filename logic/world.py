@@ -1,6 +1,5 @@
 from constants.itemconstants import TRAP_SETTING_TO_ITEM
-from filepathconstants import LOCATIONS_PATH
-from sslib.yaml import yaml_load
+from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from .config import Config
 from .settings import *
 from .item import Item
@@ -152,46 +151,7 @@ class World:
     # Read locations.yaml and store all necessary data in a dict
     # for this world
     def build_location_table(self) -> None:
-        logging.getLogger("").debug(f"Building Location Table for {self}")
-        location_data = yaml_load(LOCATIONS_PATH)
-        location_id_counter = 0
-
-        for location_node in location_data:
-            # Check to make sure all required fields exist
-            for field in ["name", "original_item"]:
-                if field not in location_node:
-                    raise MissingInfoError(
-                        f"location \"{location_node['name']}\" is missing the \"{field}\" field in locations.yaml"
-                    )
-
-            name = location_node["name"]
-            original_item = self.get_item(location_node["original_item"])
-            types = location_node.get("type", [])
-            if types == None:
-                types = []
-            patch_paths = location_node.get("Paths", [])
-            goal_location = location_node.get("goal_location", False)
-            hint_priority = location_node.get("hint", "never")
-            hint_textfile = location_node.get("textfile", "")
-            hint_textindex = location_node.get("textindex", -1)
-            location_id = location_id_counter
-            location_id_counter += 1
-
-            self.location_table[name] = Location(
-                location_id,
-                name,
-                types,
-                self,
-                original_item,
-                patch_paths,
-                goal_location,
-                hint_priority,
-                hint_textfile,
-                hint_textindex,
-            )
-            logging.getLogger("").debug(
-                f"Processing new location {name}\tid: {location_id}\toriginal item: {original_item}"
-            )
+        self.location_table = build_location_table(self)
 
     def load_logic_macros(self) -> None:
         logging.getLogger("").debug(f"Loading macros for {self}")
@@ -365,6 +325,13 @@ class World:
         # TODO: Initial entrance time cache
 
     def place_vanilla_items(self) -> None:
+        disabled_shuffle_locations = [
+            location
+            for location in get_disabled_shuffle_locations(
+                self.location_table, self.config
+            )
+        ]
+
         for location in self.location_table.values():
             item = location.original_item
 
@@ -385,40 +352,7 @@ class World:
                     self.setting("lanayru_caves_key") == "vanilla"
                     and item == self.get_item("Lanayru Caves Small Key")
                 )
-                or (
-                    self.setting("randomized_shops") == "vanilla"
-                    and "Beedle's Shop" in location.types
-                )
-                or (
-                    self.setting("shuffle_single_gratitude_crystals") == "off"
-                    and "Gratitude Crystal" in location.types
-                )
-                or (
-                    self.setting("stamina_fruit_shuffle") == "off"
-                    and "Stamina Fruit" in location.types
-                )
-                or (
-                    self.setting("npc_closets") == "vanilla"
-                    and "Closet" in location.types
-                )
-                or (
-                    self.setting("rupee_shuffle") == "vanilla"
-                    and "Freestanding Rupee" in location.types
-                )
-                or (
-                    self.setting("rupee_shuffle") == "beginner"
-                    and "Freestanding Rupee" in location.types
-                    and "Beginner Rupee" not in location.types
-                )
-                or (
-                    self.setting("rupee_shuffle") == "intermediate"
-                    and "Freestanding Rupee" in location.types
-                    and "Advanced Rupee" in location.types
-                )
-                or (
-                    self.setting("underground_rupee_shuffle") == "off"
-                    and "Underground Rupee" in location.types
-                )
+                or location in disabled_shuffle_locations
             ):
                 location.set_current_item(item)
                 location.has_known_vanilla_item = True
@@ -519,7 +453,7 @@ class World:
                     location.progression = False
 
         # Set beedle's shop items as nonprogress if they can only contain junk
-        if self.setting("randomized_shops") == "junk_only":
+        if self.setting("beedle_shop_shuffle") == "junk_only":
             for location in self.location_table.values():
                 if "Beedle's Shop Purchases" in location.types:
                     location.progression = False

@@ -1,8 +1,7 @@
 from PySide6.QtCore import QObject, QStringListModel, Signal, QAbstractItemModel
 from PySide6.QtWidgets import QListView, QPushButton
 
-from gui.models.searchable_list_model import SearchableListModel
-from gui.models.location_type_filter_model import LocationTypeFilterModel
+from gui.models.type_filter_model import TypeFilterModel
 
 
 class ListPair(QObject):
@@ -15,32 +14,33 @@ class ListPair(QObject):
         non_settings_list_view: QListView,
         add_button: QPushButton,
         remove_button: QPushButton,
-        full_data_dict: list[dict] = [],
+        typed_data_dict: dict[str, list[str]] = {},
+        excluder_list: list[str] = [],
     ):
         super().__init__()
         self.current_setting_list = current_setting_list
         self.settings_list_view = settings_list_view
         self.non_settings_list_view = non_settings_list_view
-        self.has_type_filter = len(full_data_dict) > 0
+        self.typed_data = typed_data_dict
         self.setting_options_list: list[str] = [
-            data_entry["name"] for data_entry in full_data_dict
+            data_name for data_name in typed_data_dict
         ]
+        self.excluder_list = excluder_list
+
         self._stored_filter_option_list = ""
         self._stored_filter_non_option_list = ""
         self._stored_type_filter_option_list = ""
         self._stored_type_filter_non_option_list = ""
+        self._stored_excluder_list = []
 
         # Main list
         self.option_list_model = QStringListModel()
-
-        if self.has_type_filter:
-            self.option_list_proxy = LocationTypeFilterModel(
-                self.settings_list_view, self.setting_options_list, full_data_dict
-            )
-        else:
-            self.option_list_proxy = SearchableListModel(
-                self.settings_list_view, self.setting_options_list
-            )
+        self.option_list_proxy = TypeFilterModel(
+            self.settings_list_view,
+            self.setting_options_list,
+            typed_data_dict,
+            excluder_list,
+        )
 
         self.option_list_proxy.setSourceModel(self.option_list_model)
         self.option_list_model.setStringList(current_setting_list)
@@ -48,15 +48,12 @@ class ListPair(QObject):
 
         # Secondary List
         self.non_option_list_model = QStringListModel()
-
-        if self.has_type_filter:
-            self.non_option_list_proxy = LocationTypeFilterModel(
-                self.non_settings_list_view, self.setting_options_list, full_data_dict
-            )
-        else:
-            self.non_option_list_proxy = SearchableListModel(
-                self.non_settings_list_view, self.setting_options_list
-            )
+        self.non_option_list_proxy = TypeFilterModel(
+            self.non_settings_list_view,
+            self.setting_options_list,
+            typed_data_dict,
+            excluder_list,
+        )
 
         self.non_option_list_proxy.setSourceModel(self.non_option_list_model)
         self.non_option_list_model.setStringList(
@@ -74,13 +71,13 @@ class ListPair(QObject):
     def update_option_list_filter(self, new_text: str | None):
         self.option_list_proxy.filterRows(new_text)
 
-    def update_option_list_type_filter(self, type_filter: str | None):
+    def update_option_list_type_filter(self, type_filter: str):
         self.option_list_proxy.filterType(type_filter)
 
     def update_non_option_list_filter(self, new_text: str | None):
         self.non_option_list_proxy.filterRows(new_text)
 
-    def update_non_option_list_type_filter(self, type_filter: str | None):
+    def update_non_option_list_type_filter(self, type_filter: str):
         self.non_option_list_proxy.filterType(type_filter)
 
     def add(self):
@@ -90,6 +87,13 @@ class ListPair(QObject):
     def remove(self):
         self.move_selected_rows(self.settings_list_view, self.non_settings_list_view)
         self.listPairChanged.emit(self.option_list_model.stringList())
+
+    def update_excluder_list(self, new_excluder_list: list[str]):
+        self.excluder_list = new_excluder_list
+        self.option_list_proxy.update_excluder_list(new_excluder_list)
+        self.non_option_list_proxy.update_excluder_list(new_excluder_list)
+        self.option_list_proxy.invalidateFilter()
+        self.non_option_list_proxy.invalidateFilter()
 
     @staticmethod
     def append_row(model: QAbstractItemModel, value):
@@ -137,6 +141,14 @@ class ListPair(QObject):
         ]
         return added_list
 
+    def get_not_added(self) -> list:
+        not_added_list = [
+            added
+            for added in self.option_list_proxy.full_list
+            if added not in self.option_list_model.stringList()
+        ]
+        return not_added_list
+
     def _store_and_remove_filters(self):
         self._stored_filter_option_list = self.option_list_proxy.free_text_filter
         self._stored_filter_non_option_list = (
@@ -145,20 +157,21 @@ class ListPair(QObject):
         self.option_list_proxy.filterRows("")
         self.non_option_list_proxy.filterRows("")
 
-        if self.has_type_filter:
-            self._stored_type_filter_option_list = self.option_list_proxy.type_filter
-            self._stored_type_filter_non_option_list = (
-                self.non_option_list_proxy.type_filter
-            )
-            self.option_list_proxy.filterType("")
-            self.non_option_list_proxy.filterType("")
+        self._stored_type_filter_option_list = self.option_list_proxy.type_filter
+        self._stored_type_filter_non_option_list = (
+            self.non_option_list_proxy.type_filter
+        )
+        self.option_list_proxy.filterType("")
+        self.non_option_list_proxy.filterType("")
+
+        self._stored_excluder_list = self.excluder_list
+        self.update_excluder_list([])
 
     def _restore_filters(self):
         self.option_list_proxy.filterRows(self._stored_filter_option_list)
         self.non_option_list_proxy.filterRows(self._stored_filter_non_option_list)
 
-        if self.has_type_filter:
-            self.option_list_proxy.filterType(self._stored_type_filter_option_list)
-            self.non_option_list_proxy.filterType(
-                self._stored_type_filter_non_option_list
-            )
+        self.option_list_proxy.filterType(self._stored_type_filter_option_list)
+        self.non_option_list_proxy.filterType(self._stored_type_filter_non_option_list)
+
+        self.update_excluder_list(self._stored_excluder_list)

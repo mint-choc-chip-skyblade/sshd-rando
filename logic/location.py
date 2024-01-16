@@ -15,6 +15,7 @@ class Location:
         id_: int,
         name_: str,
         types_: list[str],
+        is_gui_excluded_location_: bool,
         world_: "World",
         original_item_: Item,
         patch_paths_: list[str],
@@ -26,6 +27,7 @@ class Location:
         self.id: int = id_
         self.name: str = name_
         self.types: list[str] = types_
+        self.is_gui_excluded_location: bool = is_gui_excluded_location_
         self.world: "World" = world_
         self.original_item: Item = original_item_
         self.patch_paths: list[str] = patch_paths_

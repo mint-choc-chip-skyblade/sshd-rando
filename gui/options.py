@@ -12,11 +12,11 @@ from PySide6.QtWidgets import (
 )
 from constants.configdefaults import get_new_seed
 
-from filepathconstants import CONFIG_PATH, FI_ICON_PATH, LOCATIONS_PATH
+from filepathconstants import CONFIG_PATH, FI_ICON_PATH
 from gui.components.list_pair import ListPair
 from logic.config import load_config_from_file, write_config_to_file
+from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from logic.settings import Setting
-from sslib.yaml import yaml_load
 
 
 OPTION_PREFIX = "&nbsp;&nbsp;➜ "
@@ -27,6 +27,7 @@ LOCATION_FILTER_TYPES = (
     "Batreaux's Rewards",
     "Scrapper Deliveries",
     "Silent Realms",
+    "Stamina Fruits",
     "Closets",
     "Digging Spots",
     "Underground Rupees",
@@ -52,6 +53,7 @@ class Options:
 
         self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
         self.settings = self.config.settings[0].settings
+        self.location_table = build_location_table()
 
         self.set_setting_descriptions(None)
 
@@ -63,13 +65,11 @@ class Options:
         self.ui.new_seed_button.clicked.connect(self.new_seed)
         self.ui.reset_settings_to_default_button.clicked.connect(self.reset)
 
-        excludable_locations = list(yaml_load(LOCATIONS_PATH))
-        excludable_locations = [
-            location
-            for location in excludable_locations
-            if (show_on_gui := location.get("show_on_gui"))
-            or show_on_gui is None
-        ]
+        excludable_locations = {
+            location.name: location.types
+            for location in self.location_table.values()
+            if location.is_gui_excluded_location
+        }
 
         # Init excluded locations
         self.exclude_locations_pair = ListPair(
@@ -79,6 +79,7 @@ class Options:
             self.ui.exclude_location_button,
             self.ui.include_location_button,
             excludable_locations,
+            excluder_list=self.get_disabled_shuffle_location_names(),
         )
         self.exclude_locations_pair.listPairChanged.connect(self.update_settings)
 
@@ -170,6 +171,8 @@ class Options:
         self.update_settings()
 
     def update_settings(self, from_widget=None, from_reset=False, _=None):
+        should_update_location_counter = True
+
         for setting_name, setting in self.settings.items():
             widget = None  # type: ignore
 
@@ -181,6 +184,9 @@ class Options:
 
             if not widget:
                 continue
+
+            if widget == from_widget and "shuffle" not in setting_name:
+                should_update_location_counter = False
 
             new_setting = setting
             new_option = ""
@@ -223,10 +229,37 @@ class Options:
 
         # Special cases
         ## Excluded locations
-        excluded_locations_from_gui = self.exclude_locations_pair.get_added()
-        self.config.settings[0].excluded_locations = excluded_locations_from_gui
+        excluded_locations = self.exclude_locations_pair.get_added()
+        self.config.settings[0].excluded_locations = excluded_locations
 
         write_config_to_file(CONFIG_PATH, self.config)
+
+        # Has to be updated *after* the the config has been rewritten
+        #
+        # This operation isn't *very* expensive but it does require re-reading
+        # the config file so only do it if something has actually changed
+        if should_update_location_counter:
+            disabled_shuffle_locations = self.get_disabled_shuffle_location_names()
+            self.exclude_locations_pair.update_excluder_list(disabled_shuffle_locations)
+
+            included_loc_count = len(
+                [
+                    location
+                    for location in self.exclude_locations_pair.get_not_added()
+                    if location not in disabled_shuffle_locations
+                ]
+            )
+            excluded_loc_count = len(
+                [
+                    location
+                    for location in excluded_locations
+                    if location not in disabled_shuffle_locations
+                ]
+            )
+            total_loc_count = excluded_loc_count + included_loc_count
+            self.ui.included_locations_group_box.setTitle(
+                f"Included Locations ({included_loc_count} out of {total_loc_count})"
+            )
 
         if not from_reset:
             self.update_descriptions(from_widget)
@@ -403,3 +436,11 @@ class Options:
         dialog_title = setting.info.pretty_name + " Options"
         description_dialog.about(target, dialog_title, description_text)
         return True
+
+    def get_disabled_shuffle_location_names(self) -> list[str]:
+        return [
+            location.name
+            for location in get_disabled_shuffle_locations(
+                self.location_table, self.config
+            )
+        ]

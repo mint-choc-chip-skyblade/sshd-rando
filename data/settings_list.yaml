@@ -15,9 +15,10 @@
     # - vanilla:                         "Items are placed in their vanilla locations."
 
 
-- name: shuffle_single_gratitude_crystals
+# Shuffles
+- name: gratitude_crystal_shuffle
   default_option: "off"
-  pretty_name: Shuffle Single Gratitude Crystals
+  pretty_name: Gratitude Crystal Shuffle
   pretty_options:
     - "Off"
     - "On"
@@ -36,9 +37,9 @@
     - "off":                           "Stamina Fruit will not be randomized."
     - "on":                            "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
 
-- name: npc_closets
+- name: npc_closet_shuffle
   default_option: vanilla
-  pretty_name: NPC Closets
+  pretty_name: NPC Closet Shuffle
   pretty_options:
     - Vanilla
     - Randomized
@@ -72,17 +73,28 @@
     - "on":                            "Underground Rupee locations that require burrowing into digspots with the Mogma Mitts can contain any item."
 
 
-- name: randomized_shops
+- name: beedle_shop_shuffle
   default_option: junk_only
-  pretty_name: Randomized Shops
+  pretty_name: Beedle's Shop Shuffle
   pretty_options:
     - Vanilla
     - Junk Only
     - Randomized
   options:
-    - vanilla:                         "Shops will contain their vanilla items."
-    - junk_only:                       "Shops will only contain junk items."
-    - randomized:                      "Shops can contain any items."
+    - vanilla:                         "Beedle's Shop will contain its vanilla items."
+    - junk_only:                       "Beedle's Shop will only contain junk items."
+    - randomized:                      "Beedle's Shop can contain any items."
+
+
+- name: goddess_chest_shuffle
+  default_option: "off"
+  pretty_name: Goddess Chest Shuffle
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Activating and opening Goddess Chests will not be required."
+    - "on":                            "Goddess Chests can contain any item. Goddess Chests are activated by Skyward Striking their corresponding Goddess Cube."
 
 
 # Will be put on the gui once this option is migrated to a more general plentiful/scarce items option

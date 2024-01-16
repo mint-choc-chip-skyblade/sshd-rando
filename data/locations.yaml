@@ -157,13 +157,13 @@
 
 - name: Upper Skyloft - Stamina Fruit near Upper Academy Gates
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCD7
 
 - name: Upper Skyloft - Stamina Fruit near Lower Academy Gates
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l4/Item/0xFDFB
     - stage/F000/r0/l5/Item/0xFE07
@@ -174,7 +174,7 @@
 
 - name: Upper Skyloft - Stamina Fruit near Sparring Hall
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l4/Item/0xFDFA
     - stage/F000/r0/l5/Item/0xFE06
@@ -185,7 +185,7 @@
 
 - name: Upper Skyloft - Stamina Fruit near Goddess Statue
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l1/Item/0xFDC2
     - stage/F000/r0/l2/Item/0xFDEB
@@ -324,6 +324,7 @@
 - name: Central Skyloft - Gossip Stone on Waterfall Island
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 124-Town6
   textindex: 18
 
@@ -412,37 +413,37 @@
 
 - name: Central Skyloft - Stamina Fruit between Wooden Planks
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDF
 
 - name: Central Skyloft - Stamina Fruit near Wryna's House
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDA
 
 - name: Central Skyloft - Stamina Fruit near River
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCD9
 
 - name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCD8
 
 - name: Central Skyloft - Stamina Fruit near Bazaar
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCD6
 
 - name: Central Skyloft - Stamina Fruit near Plaza
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDE
 
@@ -602,7 +603,7 @@
 
 - name: Skyloft Village - Stamina Fruit
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDB
 
@@ -743,6 +744,7 @@
 - name: Bamboo Island Interior - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 11
 
@@ -789,6 +791,7 @@
 - name: Lumpy Pumpkin - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 27
 
@@ -883,6 +886,7 @@
 - name: Volcanic Island - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 30
 
@@ -1038,31 +1042,32 @@
 
 - name: Bug Heaven - Stamina Fruit near Start
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F023/r0/l0/Item/0xFC87
 
 - name: Bug Heaven - Stamina Fruit in front of Wooden Plank
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F023/r0/l0/Item/0xFC1C
 
 - name: Bug Heaven - Stamina Fruit in Center Room
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F023/r0/l0/Item/0xFC86
 
 - name: Bug Heaven - Stamina Fruit on top of Slope
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F023/r0/l0/Item/0xFC10
 
 - name: Bug Heaven - Nearby Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 12
 
@@ -1097,145 +1102,145 @@
 
 - name: Sealed Grounds - Spiral Stamina Fruit 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1D
 
 - name: Sealed Grounds - Spiral Stamina Fruit 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC2C
 
 - name: Sealed Grounds - Spiral Stamina Fruit 3
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1C
 
 - name: Sealed Grounds - Spiral Stamina Fruit 4
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC2B
 
 - name: Sealed Grounds - Spiral Stamina Fruit 5
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1B
 
 - name: Sealed Grounds - Spiral Stamina Fruit 6
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC2A
 
 - name: Sealed Grounds - Spiral Stamina Fruit 7
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC29
 
 - name: Sealed Grounds - Spiral Stamina Fruit 8
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1A
 
 - name: Sealed Grounds - Spiral Stamina Fruit 9
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC28
 
 - name: Sealed Grounds - Spiral Stamina Fruit 10
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC27
 
 - name: Sealed Grounds - Spiral Stamina Fruit 11
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC19
 
 - name: Sealed Grounds - Spiral Stamina Fruit 12
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC26
 
 - name: Sealed Grounds - Spiral Stamina Fruit 13
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC25
 
 - name: Sealed Grounds - Spiral Stamina Fruit 14
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC18
 
 - name: Sealed Grounds - Spiral Stamina Fruit 15
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC24
 
 - name: Sealed Grounds - Spiral Stamina Fruit 16
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC23
 
 - name: Sealed Grounds - Spiral Stamina Fruit 17
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC2D
 
 - name: Sealed Grounds - Spiral Stamina Fruit 18
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC22
 
 - name: Sealed Grounds - Spiral Stamina Fruit 19
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC17
 
 - name: Sealed Grounds - Spiral Stamina Fruit 20
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC21
 
 - name: Sealed Grounds - Spiral Stamina Fruit 21
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC20
 
 - name: Sealed Grounds - Spiral Stamina Fruit 22
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC16
 
 - name: Sealed Grounds - Spiral Stamina Fruit 23
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1F
 
 - name: Sealed Grounds - Spiral Stamina Fruit 24
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1E
 
@@ -1270,6 +1275,7 @@
 - name: Sealed Grounds - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 13
 
@@ -1284,7 +1290,7 @@
 - name: Hylia's Realm - Defeat Demise
   original_item: Game Beatable
   type: Game Beatable
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 # Faron Woods:
 
@@ -1346,48 +1352,48 @@
 
 - name: Faron Woods - Stamina Fruit on Vines below First Log
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F100/r0/l0/Item/0x60E6
 
 - name: Faron Woods - Stamina Fruit past Empty Slope
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F100/r0/l0/Item/0x64E5
 
 - name: Faron Woods - Stamina Fruit past Baba Slope
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F100/r0/l0/Item/0x0CE7
 
 - name: Faron Woods - Stamina Fruit on Vines near Erla
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F100/r0/l0/Item/0x5CE4
 
 - name: Faron Woods - Stamina Fruit on Vines on Great Tree
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F100/r0/l0/Item/0x50E3
 
 - name: Faron Woods - Goddess Cube on West Great Tree near Exit
   original_item: Faron Woods Goddess Cube on West Great Tree near Exit
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Faron Woods - Goddess Cube on East Great Tree with Clawshots Target
   original_item: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Faron Woods - Goddess Cube on East Great Tree with Rope
   original_item: Faron Woods Goddess Cube on East Great Tree with Rope
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Great Tree - Chest
   original_item: Gold Rupee
@@ -1404,30 +1410,31 @@
 
 - name: Deep Woods - Stamina Fruit
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F101/r0/l0/Item/0xFC61
 
 - name: Deep Woods - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 15
 
 - name: Deep Woods - Goddess Cube Near Goron
   original_item: Deep Woods Goddess Cube Near Goron
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Deep Woods - Goddess Cube in front of Skyview
   original_item: Deep Woods Goddess Cube in front of Skyview
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Deep Woods - Goddess Cube on top of Skyview
   original_item: Deep Woods Goddess Cube on top of Skyview
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 # Lake Floria:
 
@@ -1476,7 +1483,7 @@
 - name: Lake Floria - Goddess Cube
   original_item: Lake Floria Goddess Cube
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Floria Waterfall - Rupee on High Ledge
   original_item: Gold Rupee
@@ -1499,13 +1506,14 @@
 - name: Floria Waterfall - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 28
 
 - name: Floria Waterfall - Goddess Cube on High Ledge
   original_item: Floria Waterfall Goddess Cube on High Ledge
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 # Flooded Faron Woods:
 
@@ -1899,12 +1907,14 @@
 - name: Thrill Digger Cave - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 16
 
 - name: Eldin Volcano - Gossip Stone next to Earth Temple
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 14
 
@@ -1971,39 +1981,41 @@
 - name: Upper Eldin Cave - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 21
 
 - name: Lower Eldin Cave - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 17
 
 - name: Eldin Volcano - Goddess Cube at Eldin Entrance
   original_item: Eldin Volcano Goddess Cube at Eldin Entrance
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Eldin Volcano - Goddess Cube near Mogma Turf Entrance
   original_item: Eldin Volcano Goddess Cube near Mogma Turf Entrance
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
   original_item: Eldin Volcano Goddess Cube West of Earth Temple Entrance
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
   original_item: Eldin Volcano Goddess Cube East of Earth Temple Entrance
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Eldin Volcano - Goddess Cube on Sand Slide
   original_item: Eldin Volcano Goddess Cube on Sand Slide
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 1
   original_item: Green Rupee
@@ -2091,19 +2103,19 @@
 
 - name: Eldin Volcano - Stamina Fruit in Rising Lava Room
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFC1B
 
 - name: Eldin Volcano - Stamina Fruit near Volcano East Statue
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFC4D
 
 - name: Eldin Volcano - Stamina Fruit in front of Bone Bridge
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r2/l1/Item/0xFCC6
     - stage/F200/r2/l2/Item/0xFCBE
@@ -2112,85 +2124,85 @@
 
 - name: Eldin Volcano - Stamina Fruit near Item on Cliff
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFC4E
 
 - name: Eldin Volcano - Stamina Fruit in front of First Slope 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC2F
 
 - name: Eldin Volcano - Stamina Fruit in front of First Slope 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC30
 
 - name: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r8/l0/Item/0xFC02
 
 - name: Eldin Volcano - Stamina Fruit after First Slope
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC31
 
 - name: Eldin Volcano - Stamina Fruit next to Small Puddle
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC32
 
 - name: Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC33
 
 - name: Eldin Volcano - Stamina Fruit in front of Second Slope 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC36
 
 - name: Eldin Volcano - Stamina Fruit in front of Second Slope 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC34
 
 - name: Eldin Volcano - Stamina Fruit in front of Second Slope 3
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC35
 
 - name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r5/l0/Item/0xFC0B
 
 - name: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r5/l0/Item/0xFC0C
 
 - name: Eldin Volcano - Stamina Fruit on vines near Hot Cave
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r5/l0/Item/0x2805
 
 - name: Eldin Volcano - Stamina Fruit after Big Sand Slide
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFC4F
 
@@ -2269,7 +2281,7 @@
 - name: Mogma Turf - Goddess Cube
   original_item: Mogma Turf Goddess Cube
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 # Volcano Summit:
 
@@ -2301,29 +2313,31 @@
 - name: Volcano Summit - Gossip Stone in Waterfall Area
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 26
 
 - name: Volcano Summit - Gossip Stone near Second Thirsty Frog
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 31
 
 - name: Volcano Summit - Goddess Cube in Lava Lake
   original_item: Volcano Summit Goddess Cube in Lava Lake
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Volcano Summit - Goddess Cube at Summit Waterfall
   original_item: Volcano Summit Goddess Cube at Summit Waterfall
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
   original_item: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 
 # Bokoblin Base:
@@ -2457,38 +2471,38 @@
 
 - name: Lanayru Mine - Stamina Fruit before Falling Statues
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC31
 
 - name: Lanayru Mine - Stamina Fruit after Falling Statues
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC19
 
 - name: Lanayru Mine - Stamina Fruit near Spumes 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC1A
 
 - name: Lanayru Mine - Stamina Fruit near Spumes 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC1B
 
 - name: Lanayru Mine - Stamina Fruit near Spumes 3
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC1C
 
 - name: Lanayru Mine - Goddess Cube
   original_item: Lanayru Mine Goddess Cube
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 # Lanayru Desert:
 
@@ -2581,55 +2595,56 @@
 
 - name: Lanayru Desert - Stamina Fruit on Ledge to Party Wheel
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC3B
 
 - name: Lanayru Desert - Stamina Fruit on South LMF Ledge
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFE2A
 
 - name: Lanayru Desert - Stamina Fruit on West LMF Ledge
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFE2B
 
 - name: Lanayru Desert - Stamina Fruit on LMF Wall Vines
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFE2C
 
 - name: Lanayru Desert - Stamina Fruit in South Sand Oasis 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC32
 
 - name: Lanayru Desert - Stamina Fruit in South Sand Oasis 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC33
 
 - name: Lanayru Desert - Stamina Fruit in North Sand Oasis 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFCAF
 
 - name: Lanayru Desert - Stamina Fruit in North Sand Oasis 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC3C
 
 - name: Temple of Time - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 25
 
@@ -2678,22 +2693,22 @@
 - name: Lanayru Desert - Goddess Cube in Secret Passageway
   original_item: Lanayru Desert Goddess Cube in Secret Passageway
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Lanayru Desert - Goddess Cube near Caged Robot
   original_item: Lanayru Desert Goddess Cube near Caged Robot
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Lanayru Desert - Goddess Cube in Sand Oasis
   original_item: Lanayru Desert Goddess Cube in Sand Oasis
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Temple of Time - Goddess Cube
   original_item: Temple of Time Goddess Cube
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 ## Nodes
 
@@ -2764,12 +2779,14 @@
 - name: Lanayru Caves - Gossip Stone in Center
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 24
 
 - name: Lanayru Caves - Gossip Stone towards Lanayru Gorge
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 29
 
@@ -2828,7 +2845,7 @@
 - name: Lanayru Gorge - Goddess Cube
   original_item: Lanayru Gorge Goddess Cube
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 # Lanayru Sand Sea:
 ## Ancient Harbour
@@ -2854,7 +2871,7 @@
 - name: Ancient Harbour - Goddess Cube
   original_item: Ancient Harbour Goddess Cube
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 ## Skipper's Retreat
 
@@ -2929,7 +2946,7 @@
 - name: Skipper's Retreat - Goddess Cube
   original_item: Skipper's Retreat Goddess Cube
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 ## Shipyard
 
@@ -2944,6 +2961,7 @@
 - name: Shipyard - Gossip Stone
   original_item: Nothing
   type: Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 23
 
@@ -2971,26 +2989,26 @@
 
 - name: Pirate Stronghold - Stamina Fruit on Left Side
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F301_6/r0/l0/Item/0xFC1F
 
 - name: Pirate Stronghold - Stamina Fruit on Upper Right Side
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F301_6/r0/l0/Item/0xFC20
 
 - name: Pirate Stronghold - Stamina Fruit on Lower Right Side
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/F301_6/r0/l0/Item/0xFC1E
 
 - name: Pirate Stronghold - Goddess Cube
   original_item: Pirate Stronghold Goddess Cube
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 - name: Pirate Stronghold Interior - First Chest
   original_item: Silver Rupee
@@ -3169,7 +3187,7 @@
 - name: Skyview Spring - Goddess Cube
   original_item: Skyview Spring Goddess Cube
   type: Goddess Cube
-  show_on_gui: False
+  is_gui_excluded_location: False
 
 # Earth Temple (ET):
 
@@ -3237,25 +3255,25 @@
 
 - name: Earth Temple - Stamina Fruit before Boulder Chase 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/D200/r4/l0/Item/0xFC02
 
 - name: Earth Temple - Stamina Fruit before Boulder Chase 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/D200/r4/l0/Item/0xFC22
 
 - name: Earth Temple - Stamina Fruit before Boulder Chase 3
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/D200/r4/l0/Item/0xFC27
 
 - name: Earth Temple - Stamina Fruit before Boulder Chase 4
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/D200/r4/l0/Item/0xFC13
 
@@ -3911,7 +3929,7 @@
 
 - name: Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  type: Stamina Fruits, Custom Flag
   Paths:
     - stage/S000/r0/l2/Item/0xFC55
 
