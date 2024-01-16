@@ -45,7 +45,7 @@ def determine_check_patches(
         if "Custom Flag" in location.types:
             custom_flag = custom_flags.pop()
 
-        if "Stamina Fruit" in location.types:
+        if "Stamina Fruits" in location.types:
             original_itemid = 1
 
             # Don't patch anything if the stamina fruit is vanilla
