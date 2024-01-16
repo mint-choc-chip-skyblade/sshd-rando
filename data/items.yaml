@@ -222,7 +222,7 @@
   getarcname: GetSeedSet
   getmodelname: GetSeedSet
 - id: 63
-  name: Semi Rare Treasure
+  name: Uncommon Treasure
   oarc: null # ObjectPack
   getarcname: GetSozaiL
   getmodelname: GetSozaiL

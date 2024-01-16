@@ -332,7 +332,7 @@ pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
         // Don't give a textbox for the specified items, otherwise, force a textbox
         match current_item {
             // Green | Blue | Red Rupee | Heart, Arrows | Bombs, Stamina | Light Fruit | Seeds |
-            // Semi | Rare Treasure | Bugs | Treasures
+            // Uncommon | Rare Treasure | Bugs | Treasures
             2 | 3 | 4 | 6..=8 | 40..=42 | 47 | 60 | 63 | 64 | 141..=152 | 161..=176 => {
                 (*item_actor).base.basebase.members.param1 |= 0x200;
             },
@@ -489,7 +489,7 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 | 178       // Ruby Tablet
                 | 198       // Life Tree Fruit
                 | 199 => y_offset = 16.0,
-                // Semi-rare | Rare Treasure
+                // Uncommon | Rare Treasure
                 63 | 64 => y_offset = 15.0,
                 // Beetle Upgrades
                 75..=77 => y_offset = 10.0,

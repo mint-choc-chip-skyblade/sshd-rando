@@ -1667,7 +1667,7 @@
     - stage/F100/r0/l0/Item/40
 
 - name: Faron Woods - Chest behind Bombable Rocks near Erla
-  original_item: Semi Rare Treasure
+  original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
@@ -1845,7 +1845,7 @@
     - stage/F102_2/r0/l0/TBox/84
 
 - name: Lake Floria - Dragon Lair East Chest
-  original_item: Semi Rare Treasure
+  original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
@@ -3654,7 +3654,7 @@
     - stage/F301_3/r0/l0/TBox/78
 
 - name: Skipper's Retreat - Chest on top of Cacti Pillar
-  original_item: Semi Rare Treasure
+  original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
@@ -3829,14 +3829,14 @@
     - stage/F301_2/r4/l0/TBox/75
 
 - name: Pirate Stronghold Interior - Second Chest
-  original_item: Semi Rare Treasure
+  original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
     - stage/F301_2/r5/l0/TBox/73
 
 - name: Pirate Stronghold Interior - Third Chest
-  original_item: Semi Rare Treasure
+  original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
@@ -4649,7 +4649,7 @@
     - stage/D301/r10/l0/TBox/69
 
 - name: Sandship - Treasure Room First Chest
-  original_item: Semi Rare Treasure
+  original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
@@ -4663,7 +4663,7 @@
     - stage/D301/r9/l0/TBox/65
 
 - name: Sandship - Treasure Room Third Chest
-  original_item: Semi Rare Treasure
+  original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
@@ -4677,7 +4677,7 @@
     - stage/D301/r9/l0/TBox/67
 
 - name: Sandship - Treasure Room Fifth Chest
-  original_item: Semi Rare Treasure
+  original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
@@ -4820,7 +4820,7 @@
     - stage/D201_1/r7/l0/TBox/73
 
 - name: Fire Sanctuary - Second Chest in Water Fruit Room
-  original_item: Semi Rare Treasure
+  original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
@@ -4906,7 +4906,7 @@
     - stage/D201/r3/l0/TBox/66
 
 - name: Fire Sanctuary - Chest in Staircase Room
-  original_item: Semi Rare Treasure
+  original_item: Uncommon Treasure
   types:
     - Chests
   Paths:

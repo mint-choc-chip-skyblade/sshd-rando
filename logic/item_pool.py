@@ -1,4 +1,4 @@
-from constants.itemconstants import ITEM_POOL
+from constants.itemconstants import *
 from .settings import *
 from .item import *
 
@@ -23,20 +23,20 @@ def generate_item_pool(world: "World") -> None:
 
     # Remove Key Pieces if the ET Door is open
     if world.setting("open_earth_temple") == "on":
-        item_pool = [item for item in item_pool if item != "Key Piece"]
+        item_pool = [item for item in item_pool if item != KEY_PIECE]
 
     if world.setting("small_keys") == "removed":
         item_pool = [
             item
             for item in item_pool
-            if not item.endswith("Small Key") or item == "Lanayru Caves Small Key"
+            if not item.endswith(SMALL_KEY) or item == LC_SMALL_KEY
         ]
 
     if world.setting("lanayru_caves_key") == "removed":
-        item_pool.remove("Lanayru Caves Small Key")
+        item_pool.remove(LC_SMALL_KEY)
 
     if world.setting("boss_keys") == "removed":
-        item_pool = [item for item in item_pool if not item.endswith("Boss Key")]
+        item_pool = [item for item in item_pool if not item.endswith(BOSS_KEY)]
 
     for item_name in item_pool:
         item = world.get_item(item_name)
@@ -54,21 +54,19 @@ def generate_starting_item_pool(world: "World"):
     # If all three parts of the song of the hero are in the starting inventory
     # replace them with just the singular song of the hero
     all_soth_parts = {
-        "Faron Song of the Hero Part",
-        "Eldin Song of the Hero Part",
-        "Lanayru Song of the Hero Part",
+        FARON_SOTH_PART,
+        ELDIN_SOTH_PART,
+        LANAYRU_SOTH_PART,
     }
     if all(world.get_item(part) in world.starting_item_pool for part in all_soth_parts):
         for part in all_soth_parts:
             part_item = world.get_item(part)
             world.starting_item_pool[part_item] = 0
-        world.starting_item_pool[world.get_item("Song of the Hero")] = 1
+        world.starting_item_pool[world.get_item(SONG_OF_THE_HERO)] = 1
 
 
 def get_random_junk_item_name():
-    return random.choice(
-        ["Red Rupee", "Silver Rupee", "Semi Rare Treasure", "Rare Treasure"]
-    )
+    return random.choice([RED_RUPEE, SILVER_RUPEE, UNCOMMON_TREASURE, RARE_TREASURE])
 
 
 def get_complete_item_pool(worlds: list["World"]) -> list[Item]:

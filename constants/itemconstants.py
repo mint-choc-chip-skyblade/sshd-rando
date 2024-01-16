@@ -12,7 +12,7 @@ ALL_JUNK_ITEMS: list[str] = [
     RED_RUPEE,
     SILVER_RUPEE,
     GOLD_RUPEE,
-    SEMI_RARE_TREASURE,
+    UNCOMMON_TREASURE,
     RARE_TREASURE,
     EVIL_CRYSTAL,
     ELDIN_ORE,
@@ -103,7 +103,7 @@ ITEM_POOL: list[str] = (
     + [RED_RUPEE] * 42
     + [SILVER_RUPEE] * 22
     + [GOLD_RUPEE] * 11
-    + [SEMI_RARE_TREASURE] * 10
+    + [UNCOMMON_TREASURE] * 10
     + [GOLDEN_SKULL] * 1
     + [RARE_TREASURE] * 12
     + [EVIL_CRYSTAL] * 2
