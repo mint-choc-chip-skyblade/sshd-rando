@@ -20,7 +20,7 @@ def build_location_table(world: "World | None" = None) -> dict[str, Location]:
 
     for location_node in location_data:
         # Check to make sure all required fields exist
-        for field in ["name", "original_item", "type"]:
+        for field in ["name", "original_item", "types"]:
             if field not in location_node:
                 raise Exception(
                     f"location \"{location_node['name']}\" is missing the \"{field}\" field in locations.yaml"
@@ -33,7 +33,7 @@ def build_location_table(world: "World | None" = None) -> dict[str, Location]:
             original_item = world.get_item(location_node["original_item"])
 
         # TODO: Actually make into a list in locations.yaml
-        types: list[str] = location_node.get("type", [])
+        types: list[str] = location_node.get("types", [])
         is_gui_excluded_location: bool = location_node.get(
             "is_gui_excluded_location", True
         )
