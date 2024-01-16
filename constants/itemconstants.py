@@ -71,7 +71,7 @@ ITEM_POOL: list[str] = (
     + [GRATITUDE_CRYSTAL_PACK] * 13
     + [GRATITUDE_CRYSTAL] * 15
     + [EMPTY_BOTTLE] * 5
-    + [GROUP_OF_TADTONES] * 17
+    # + [GROUP_OF_TADTONES] * 17
     + [KEY_PIECE] * 5
     + [SV_SMALL_KEY] * 2
     + [AC_SMALL_KEY] * 2

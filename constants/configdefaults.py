@@ -33,10 +33,10 @@ DEFAULT_SETTINGS = {
         [
             "Scrapper",
         ]
-        + [
-            "Group of Tadtones",
-        ]
-        * 17
+        # + [
+        #     "Group of Tadtones",
+        # ]
+        # * 17
     ),
     "excluded_locations": [
         "Skyloft Silent Realm - Collect all Tears Reward",
