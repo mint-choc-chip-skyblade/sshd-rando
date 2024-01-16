@@ -27,7 +27,7 @@ background-color: #FFFFFF;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -1076,6 +1076,13 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             </property>
            </spacer>
           </item>
+          <item>
+           <widget class="QPushButton" name="locations_reset_button">
+            <property name="text">
+             <string>Reset</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
         <item row="0" column="3">
@@ -1442,6 +1449,13 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
              </size>
             </property>
            </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="inventory_reset_button">
+            <property name="text">
+             <string>Reset</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>

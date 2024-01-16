@@ -10,7 +10,7 @@ from PySide6.QtWidgets import (
     QSpinBox,
     QWidget,
 )
-from constants.configdefaults import get_new_seed
+from constants.configdefaults import get_default_setting, get_new_seed
 
 from filepathconstants import CONFIG_PATH, FI_ICON_PATH
 from gui.components.list_pair import ListPair
@@ -74,10 +74,12 @@ class Options:
         # Init excluded locations
         self.exclude_locations_pair = ListPair(
             self.config.settings[0].excluded_locations,
+            get_default_setting("excluded_locations"),
             self.ui.excluded_locations_list_view,
             self.ui.included_locations_list_view,
             self.ui.exclude_location_button,
             self.ui.include_location_button,
+            self.ui.locations_reset_button,
             excludable_locations,
             excluder_list=self.get_disabled_shuffle_location_names(),
         )

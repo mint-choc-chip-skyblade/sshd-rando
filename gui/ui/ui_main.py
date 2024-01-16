@@ -723,6 +723,11 @@ class Ui_main_window(object):
 
         self.locations_button_layout.addItem(self.individual_locations_bottom_vspacer)
 
+        self.locations_reset_button = QPushButton(self.locations_tab)
+        self.locations_reset_button.setObjectName(u"locations_reset_button")
+
+        self.locations_button_layout.addWidget(self.locations_reset_button)
+
 
         self.gridLayout_3.addLayout(self.locations_button_layout, 0, 1, 1, 1)
 
@@ -950,6 +955,11 @@ class Ui_main_window(object):
         self.starting_items_bottom_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.inventory_button_layout.addItem(self.starting_items_bottom_vspacer)
+
+        self.inventory_reset_button = QPushButton(self.inventory_tab)
+        self.inventory_reset_button.setObjectName(u"inventory_reset_button")
+
+        self.inventory_button_layout.addWidget(self.inventory_reset_button)
 
 
         self.gridLayout_4.addLayout(self.inventory_button_layout, 0, 1, 1, 1)
@@ -1498,7 +1508,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(2)
+        self.tab_widget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1604,6 +1614,7 @@ class Ui_main_window(object):
 "<---", None))
         self.exclude_location_button.setText(QCoreApplication.translate("main_window", u"Exclude\n"
 "--->", None))
+        self.locations_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
         self.shuffles_group_box.setTitle(QCoreApplication.translate("main_window", u"Shuffles", None))
         self.beedle_shop_shuffle_label.setText(QCoreApplication.translate("main_window", u"Beedle's Shop Shuffle", None))
         self.rupee_shuffle_label.setText(QCoreApplication.translate("main_window", u"Rupee Shuffle", None))
@@ -1629,6 +1640,7 @@ class Ui_main_window(object):
 "<---", None))
         self.start_with_item_button.setText(QCoreApplication.translate("main_window", u"Add\n"
 "--->", None))
+        self.inventory_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
         self.item_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Item Settings", None))
         self.starting_sword_label.setText(QCoreApplication.translate("main_window", u"Starting Sword", None))
         self.starting_tablet_count_label.setText(QCoreApplication.translate("main_window", u"Starting Tablets", None))

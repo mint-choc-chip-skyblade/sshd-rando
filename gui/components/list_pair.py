@@ -10,15 +10,18 @@ class ListPair(QObject):
     def __init__(
         self,
         current_setting_list: list,
+        default_setting_list: list,
         settings_list_view: QListView,
         non_settings_list_view: QListView,
         add_button: QPushButton,
         remove_button: QPushButton,
+        reset_button: QPushButton,
         typed_data_dict: dict[str, list[str]] = {},
         excluder_list: list[str] = [],
     ):
         super().__init__()
         self.current_setting_list = current_setting_list
+        self.default_setting_list = default_setting_list
         self.settings_list_view = settings_list_view
         self.non_settings_list_view = non_settings_list_view
         self.typed_data = typed_data_dict
@@ -67,6 +70,7 @@ class ListPair(QObject):
 
         add_button.clicked.connect(self.add)
         remove_button.clicked.connect(self.remove)
+        reset_button.clicked.connect(self.reset)
 
     def update_option_list_filter(self, new_text: str | None):
         self.option_list_proxy.filterRows(new_text)
@@ -86,6 +90,10 @@ class ListPair(QObject):
 
     def remove(self):
         self.move_selected_rows(self.settings_list_view, self.non_settings_list_view)
+        self.listPairChanged.emit(self.option_list_model.stringList())
+
+    def reset(self):
+        self.update(self.default_setting_list)
         self.listPairChanged.emit(self.option_list_model.stringList())
 
     def update_excluder_list(self, new_excluder_list: list[str]):
