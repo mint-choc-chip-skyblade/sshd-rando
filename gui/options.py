@@ -1,3 +1,4 @@
+from collections import Counter
 from functools import partial
 from PySide6.QtCore import QObject, Qt
 from PySide6.QtGui import QIcon
@@ -11,6 +12,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 from constants.configdefaults import get_default_setting, get_new_seed
+from constants.itemconstants import STARTABLE_ITEMS
 
 from filepathconstants import CONFIG_PATH, FI_ICON_PATH
 from gui.components.list_pair import ListPair
@@ -65,13 +67,13 @@ class Options:
         self.ui.new_seed_button.clicked.connect(self.new_seed)
         self.ui.reset_settings_to_default_button.clicked.connect(self.reset)
 
-        excludable_locations = {
-            location.name: location.types
+        # Init excluded locations
+        excludable_locations = list(
+            (location.name, location.types)
             for location in self.location_table.values()
             if location.is_gui_excluded_location
-        }
+        )
 
-        # Init excluded locations
         self.exclude_locations_pair = ListPair(
             self.config.settings[0].excluded_locations,
             get_default_setting("excluded_locations"),
@@ -105,6 +107,50 @@ class Options:
         self.ui.excluded_locations_category_filters.currentTextChanged.connect(
             self.exclude_locations_pair.update_option_list_type_filter
         )
+
+        # Init starting items
+        startable_items = list(
+            (
+                item_name,
+                [
+                    "",
+                ],
+            )
+            for item_name in STARTABLE_ITEMS
+        )
+
+        self.starting_inventory_pair = ListPair(
+            list(self.config.settings[0].starting_inventory.elements()),
+            list(get_default_setting("starting_inventory").elements()),
+            self.ui.starting_items_list_view,
+            self.ui.randomized_items_list_view,
+            self.ui.start_with_item_button,
+            self.ui.randomize_item_button,
+            self.ui.inventory_reset_button,
+            startable_items,
+        )
+        self.starting_inventory_pair.listPairChanged.connect(self.update_settings)
+
+        self.ui.starting_items_free_search.textChanged.connect(
+            self.starting_inventory_pair.update_option_list_filter
+        )
+        self.ui.randomized_items_free_search.textChanged.connect(
+            self.starting_inventory_pair.update_non_option_list_filter
+        )
+
+        # self.ui.included_locations_category_filters.addItem("All")
+        # self.ui.included_locations_category_filters.addItems(
+        #     location for location in LOCATION_FILTER_TYPES
+        # )
+        # self.ui.included_locations_category_filters.currentTextChanged.connect(
+        #     self.starting_inventory_pair.update_non_option_list_type_filter
+        # )
+
+        # self.ui.excluded_locations_category_filters.addItem("All")
+        # self.ui.excluded_locations_category_filters.addItems(LOCATION_FILTER_TYPES)
+        # self.ui.excluded_locations_category_filters.currentTextChanged.connect(
+        #     self.starting_inventory_pair.update_option_list_type_filter
+        # )
 
         # Init other settings
         for setting_name, setting_info in self.settings.items():
@@ -233,6 +279,10 @@ class Options:
         ## Excluded locations
         excluded_locations = self.exclude_locations_pair.get_added()
         self.config.settings[0].excluded_locations = excluded_locations
+
+        ## Starting inventory
+        starting_inventory = self.starting_inventory_pair.get_added()
+        self.config.settings[0].starting_inventory = Counter(starting_inventory)
 
         write_config_to_file(CONFIG_PATH, self.config)
 

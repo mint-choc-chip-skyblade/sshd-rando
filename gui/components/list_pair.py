@@ -16,7 +16,7 @@ class ListPair(QObject):
         add_button: QPushButton,
         remove_button: QPushButton,
         reset_button: QPushButton,
-        typed_data_dict: dict[str, list[str]] = {},
+        typed_data_list: list[tuple[str, list[str]]] = [],
         excluder_list: list[str] = [],
     ):
         super().__init__()
@@ -24,10 +24,8 @@ class ListPair(QObject):
         self.default_setting_list = default_setting_list
         self.settings_list_view = settings_list_view
         self.non_settings_list_view = non_settings_list_view
-        self.typed_data = typed_data_dict
-        self.setting_options_list: list[str] = [
-            data_name for data_name in typed_data_dict
-        ]
+        self.typed_data = typed_data_list
+        self.setting_options_list: list[str] = [data[0] for data in typed_data_list]
         self.excluder_list = excluder_list
 
         self._stored_filter_option_list = ""
@@ -35,6 +33,8 @@ class ListPair(QObject):
         self._stored_type_filter_option_list = ""
         self._stored_type_filter_non_option_list = ""
         self._stored_excluder_list = []
+
+        typed_data_dict = {data[0]: data[1] for data in typed_data_list}
 
         # Main list
         self.option_list_model = QStringListModel()

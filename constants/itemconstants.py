@@ -171,6 +171,76 @@ PLENTIFUL_ITEM_POOL: list[str] = (
     + STANDARD_ITEM_POOL
 )
 
+# The order the items are defined in here determines
+# the order they appear on the GUI
+STARTABLE_ITEMS: list[str] = (
+    [
+        EMERALD_TABLET,
+        RUBY_TABLET,
+        AMBER_TABLET,
+        TRIFORCE_OF_COURAGE,
+        TRIFORCE_OF_POWER,
+        TRIFORCE_OF_WISDOM,
+    ]
+    + [PROGRESSIVE_BOW] * 3
+    + [BOMB_BAG]
+    + [PROGRESSIVE_BEETLE] * 4
+    + [PROGRESSIVE_BUG_NET] * 2
+    + [PROGRESSIVE_SLINGSHOT] * 2
+    + [
+        CLAWSHOTS,
+        WHIP,
+        GUST_BELLOWS,
+    ]
+    + [PROGRESSIVE_POUCH] * 5
+    # + [SAILCLOTH]
+    + [PROGRESSIVE_MITTS] * 2
+    + [
+        WATER_DRAGON_SCALE,
+        FIRESHIELD_EARRINGS,
+        GODDESS_HARP,
+        BALLAD_OF_THE_GODDESS,
+        FARORES_COURAGE,
+        DINS_POWER,
+        NAYRUS_WISDOM,
+        FARON_SOTH_PART,
+        ELDIN_SOTH_PART,
+        LANAYRU_SOTH_PART,
+        STONE_OF_TRIALS,
+        BEEDLES_INSECT_CAGE,
+        CAWLINS_LETTER,
+        RATTLE,
+        LIFE_TREE_FRUIT,
+        # LIFE_TREE_SEEDLING,
+        SPIRAL_CHARGE,
+        SCRAPPER,
+    ]
+    + [PROGRESSIVE_WALLET] * 4
+    + [EXTRA_WALLET] * 3
+    + [LC_SMALL_KEY]
+    + [SV_SMALL_KEY] * 2
+    + [LMF_SMALL_KEY]
+    + [AC_SMALL_KEY] * 2
+    + [SSH_SMALL_KEY] * 2
+    + [FS_SMALL_KEY] * 3
+    + [SK_SMALL_KEY]
+    + [
+        SV_MAP,
+        ET_MAP,
+        LMF_MAP,
+        AC_MAP,
+        SSH_MAP,
+        FS_MAP,
+        SK_MAP,
+        SV_BOSS_KEY,
+        ET_BOSS_KEY,
+        LMF_BOSS_KEY,
+        AC_BOSS_KEY,
+        SSH_BOSS_KEY,
+        FS_BOSS_KEY,
+    ]
+)
+
 # lists are used for progressive items,
 # tuples for setting multiple flags for one item
 ITEM_ITEMFLAGS = {
