@@ -68,6 +68,10 @@ class Setting:
         self.current_option_index: int = 0
         self.custom_value: str = None
 
+        if self.info:
+            self.info.current_option_index = self.info.options.index(self.value)
+            self.current_option_index = self.info.current_option_index
+
     def __str__(self) -> str:
         return self.info.pretty_name
 

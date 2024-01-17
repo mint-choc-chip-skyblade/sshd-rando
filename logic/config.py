@@ -59,10 +59,11 @@ def create_default_setting(setting_name: str) -> Setting:
     if (setting_info := all_settings_info.get(setting_name)) is None:
         raise Exception(f"Could not find setting info for setting: {setting_name}.")
 
-    new_setting = Setting()
-    new_setting.name = setting_name
-    new_setting.info = setting_info
-    new_setting.value = setting_info.options[setting_info.default_option_index]
+    new_setting = Setting(
+        setting_name,
+        setting_info.options[setting_info.default_option_index],
+        setting_info,
+    )
 
     return new_setting
 

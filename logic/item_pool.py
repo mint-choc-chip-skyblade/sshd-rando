@@ -56,7 +56,13 @@ def generate_item_pool(world: "World") -> None:
 # Will remove items from the passed in world's item pool
 # and add them to the starting pool.
 def generate_starting_item_pool(world: "World"):
-    for item_name, count in world.setting_map.starting_inventory.items():
+    starting_items = world.setting_map.starting_inventory
+    starting_sword_setting = world.setting_map.settings.get("starting_sword")
+
+    if starting_sword_setting:
+        starting_items[PROGRESSIVE_SWORD] = starting_sword_setting.current_option_index
+
+    for item_name, count in starting_items.items():
         item = world.get_item(item_name)
         world.starting_item_pool[item] += count
         world.item_pool[item] -= count

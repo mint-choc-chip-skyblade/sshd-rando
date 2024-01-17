@@ -1117,3 +1117,27 @@
   options:
     - "off":                           "You well only be expected to use the Beetle and Clawshots to travel across the Fire Sanctuary room in Sky Keep."
     - "on":                            "You may need to use the Bomb Bag and Clawshots to clip through the vines in the Fire Sanctuary room in Sky Keep."
+
+#######################################
+## Extra Starting Inventory Settings ##
+#######################################
+
+- name: starting_sword
+  default_option: goddess_sword
+  pretty_name: Starting Sword
+  pretty_options:
+    - No Sword
+    - Practice Sword
+    - Goddess Sword
+    - Goddess Longsword
+    - Goddess White Sword
+    - Master Sword
+    - True Master Sword
+  options:
+    - no_sword:                        "You will start without a sword."
+    - practice_sword:                  "You will start with 1 sword upgrade. You will not be able to use the Skyward Strike ability until you find another sword."
+    - goddess_sword:                   "You will start with 2 sword upgrades. You can use the Skyward Strike ability from the start of the game."
+    - goddess_longsword:               "You will start with 3 sword upgrades. Your sword will do more damage from the start of the game."
+    - goddess_white_sword:             "You will start with 4 sword upgrades. You will have the completed dowsing wheel from the start of the game."
+    - master_sword:                    "You will start with 5 sword upgrades. You will deal maximum sword damage from the start of the game."
+    - true_master_sword:               "You will start with all 6 sword upgrades. You will stun regular enemies with the sword from the start of the game."
