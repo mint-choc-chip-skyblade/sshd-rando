@@ -724,3 +724,9 @@ CURSE_TRAP = "Curse " + TRAP
 
 # 254
 BURN_TRAP = "Burn " + TRAP
+
+# 255
+# DO NOT USE!
+
+# 256
+GAME_BEATABLE = "Game Beatable"

@@ -307,7 +307,7 @@ class World:
 
     def place_hardcoded_items(self) -> None:
         defeat_demise = self.get_location("Hylia's Realm - Defeat Demise")
-        defeat_demise.set_current_item(self.get_item("Game Beatable"))
+        defeat_demise.set_current_item(self.get_item(GAME_BEATABLE))
         defeat_demise.has_known_vanilla_item = True
 
     def place_plandomizer_items(self) -> None:
@@ -350,7 +350,7 @@ class World:
                 or (self.setting("map_mode") == "vanilla" and item.is_dungeon_map)
                 or (
                     self.setting("lanayru_caves_key") == "vanilla"
-                    and item == self.get_item("Lanayru Caves Small Key")
+                    and item == self.get_item(LC_SMALL_KEY)
                 )
                 or location in disabled_shuffle_locations
             ):
@@ -362,11 +362,11 @@ class World:
 
             # Scrap Shop Upgrades
             if "Scrap Shop" in location.types:
-                if self.setting("scrap_shop_upgrades") == "off":
+                if self.setting("item_pool") == "minimum":
                     location.set_current_item(item)
                     self.item_pool[item] -= 1
                 else:
-                    location.set_current_item(self.get_item("Green Rupee"))
+                    location.set_current_item(self.get_item(GREEN_RUPEE))
 
             # Set Goddess Cubes as having their own item
             if "Goddess Cube" in location.types:
@@ -455,7 +455,7 @@ class World:
         # Set beedle's shop items as nonprogress if they can only contain junk
         if self.setting("beedle_shop_shuffle") == "junk_only":
             for location in self.location_table.values():
-                if "Beedle's Shop Purchases" in location.types:
+                if "Beedle's Shop" in location.types:
                     location.progression = False
 
     # Remove or add junk to the item pool until the total number of
