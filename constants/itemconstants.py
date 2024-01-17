@@ -19,12 +19,15 @@ ALL_JUNK_ITEMS: list[str] = [
     RUPOOR,
 ]
 
-ITEM_POOL: list[str] = (
+MINIMAL_ITEM_POOL: list[str] = (
     [
         BOMB_BAG,
         GUST_BELLOWS,
         WHIP,
         CLAWSHOTS,
+        PROGRESSIVE_SLINGSHOT,
+        PROGRESSIVE_BOW,
+        PROGRESSIVE_BUG_NET,
         WATER_DRAGON_SCALE,
         FIRESHIELD_EARRINGS,
         STONE_OF_TRIALS,
@@ -59,12 +62,9 @@ ITEM_POOL: list[str] = (
         SK_SMALL_KEY,
         LC_SMALL_KEY,
     ]
-    + [PROGRESSIVE_SLINGSHOT] * 2
     + [PROGRESSIVE_POUCH] * 5
     + [PROGRESSIVE_MITTS] * 2
-    + [PROGRESSIVE_BOW] * 3
-    + [PROGRESSIVE_BEETLE] * 4
-    + [PROGRESSIVE_BUG_NET] * 2
+    + [PROGRESSIVE_BEETLE] * 2
     + [PROGRESSIVE_SWORD] * 6
     + [PROGRESSIVE_WALLET] * 4
     + [EXTRA_WALLET] * 3
@@ -118,6 +118,57 @@ ITEM_POOL: list[str] = (
         FS_MAP,
         SK_MAP,
     ]
+)
+
+STANDARD_ITEM_POOL: list[str] = (
+    [
+        PROGRESSIVE_SLINGSHOT,
+        PROGRESSIVE_BUG_NET,
+    ]
+    + [PROGRESSIVE_BOW] * 2
+    + [PROGRESSIVE_BEETLE] * 2
+    + MINIMAL_ITEM_POOL
+)
+
+# + 1 extra of main items
+EXTRA_ITEM_POOL: list[str] = [
+    PROGRESSIVE_BOW,
+    BOMB_BAG,
+    PROGRESSIVE_BEETLE,
+    PROGRESSIVE_BUG_NET,
+    PROGRESSIVE_SLINGSHOT,
+    CLAWSHOTS,
+    WHIP,
+    GUST_BELLOWS,
+    # SAILCLOTH,
+    PROGRESSIVE_MITTS,
+    WATER_DRAGON_SCALE,
+    FIRESHIELD_EARRINGS,
+    EMERALD_TABLET,
+    RUBY_TABLET,
+    AMBER_TABLET,
+] + STANDARD_ITEM_POOL
+
+# + 100% extra of main items
+PLENTIFUL_ITEM_POOL: list[str] = (
+    [
+        BOMB_BAG,
+        CLAWSHOTS,
+        WHIP,
+        GUST_BELLOWS,
+        # SAILCLOTH,
+        WATER_DRAGON_SCALE,
+        FIRESHIELD_EARRINGS,
+        EMERALD_TABLET,
+        RUBY_TABLET,
+        AMBER_TABLET,
+    ]
+    + [PROGRESSIVE_BOW] * 3
+    + [PROGRESSIVE_BEETLE] * 4
+    + [PROGRESSIVE_BUG_NET] * 2
+    + [PROGRESSIVE_SLINGSHOT] * 2
+    + [PROGRESSIVE_MITTS] * 2
+    + STANDARD_ITEM_POOL
 )
 
 # lists are used for progressive items,

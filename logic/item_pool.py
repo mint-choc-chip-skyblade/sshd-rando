@@ -19,7 +19,17 @@ class ItemPoolError(RuntimeError):
 # that need to be removed and not placed anywhere
 # will be removed now
 def generate_item_pool(world: "World") -> None:
-    item_pool = ITEM_POOL
+    item_pool = STANDARD_ITEM_POOL
+
+    match world.setting("item_pool"):
+        case "minimal":
+            item_pool = MINIMAL_ITEM_POOL
+        case "standard":
+            item_pool = STANDARD_ITEM_POOL
+        case "extra":
+            item_pool = EXTRA_ITEM_POOL
+        case "plentiful":
+            item_pool = PLENTIFUL_ITEM_POOL
 
     # Remove Key Pieces if the ET Door is open
     if world.setting("open_earth_temple") == "on":

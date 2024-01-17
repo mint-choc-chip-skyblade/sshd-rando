@@ -10,12 +10,12 @@ font_family: Lato
 font_size: 10
 World 1:
   logic_rules: 'on'
+  item_pool: random
   gratitude_crystal_shuffle: random
   stamina_fruit_shuffle: random
   rupee_shuffle: random
   underground_rupee_shuffle: random
   beedle_shop_shuffle: random
-  scrap_shop_upgrades: 'random'
   full_wallet_upgrades: 'random'
   open_thunderhead: random
   open_lake_floria: random

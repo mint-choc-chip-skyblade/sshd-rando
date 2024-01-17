@@ -970,6 +970,16 @@ class Ui_main_window(object):
         self.item_settings_group_box.setSizePolicy(sizePolicy3)
         self.verticalLayout_29 = QVBoxLayout(self.item_settings_group_box)
         self.verticalLayout_29.setObjectName(u"verticalLayout_29")
+        self.item_pool_label = QLabel(self.item_settings_group_box)
+        self.item_pool_label.setObjectName(u"item_pool_label")
+
+        self.verticalLayout_29.addWidget(self.item_pool_label)
+
+        self.setting_item_pool = QComboBox(self.item_settings_group_box)
+        self.setting_item_pool.setObjectName(u"setting_item_pool")
+
+        self.verticalLayout_29.addWidget(self.setting_item_pool)
+
         self.starting_sword_label = QLabel(self.item_settings_group_box)
         self.starting_sword_label.setObjectName(u"starting_sword_label")
 
@@ -1642,6 +1652,7 @@ class Ui_main_window(object):
 "--->", None))
         self.inventory_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
         self.item_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Item Settings", None))
+        self.item_pool_label.setText(QCoreApplication.translate("main_window", u"Item Pool", None))
         self.starting_sword_label.setText(QCoreApplication.translate("main_window", u"Starting Sword", None))
         self.starting_tablet_count_label.setText(QCoreApplication.translate("main_window", u"Starting Tablets", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.inventory_tab), QCoreApplication.translate("main_window", u"Inventory", None))

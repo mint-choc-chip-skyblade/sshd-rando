@@ -3,16 +3,31 @@
 ############################
 
 - name: logic_rules
-  default_option: 'on'
+  default_option: "on"
   pretty_name: Logic Rules
   pretty_options:
-    - 'On'
+    - "On"
     - No Logic
     # - Vanilla
   options:
-    - 'on':                            "Logic is considered when placing Items. Generated seeds will always be beatable. Tricks and Glitches can be enabled for consideration below."
+    - "on":                            "Logic is considered when placing Items. Generated seeds will always be beatable. Tricks and Glitches can be enabled for consideration below."
     - no_logic:                        "Maximize randomization, logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
     # - vanilla:                         "Items are placed in their vanilla locations."
+
+
+- name: item_pool
+  default_option: standard
+  pretty_name: Item Pool
+  pretty_options:
+    - Minimal
+    - Standard
+    - Extra
+    - Plentiful
+  options:
+    - minimal:                         "No item upgrades will be shuffled into the item pool. There will only be 2 Beetles, 1 Bow, 1 Slingshot, and 1 Bug Net in the item pool."
+    - standard:                        "All of Gondo's item upgrades will be shuffled into the item pool. There will be: 4 Beetles, 3 Bows, 2 Slingshots, and 2 Bug Nets."
+    - extra:                           "The standard item pool will be used plus 1 extra of the major items (Item-Wheel item, Tablets, Mitts, Water Dragon's Scale, and Fireshield Earrings)."
+    - plentiful:                       "The standard item pool will be used plus 100% extra of the major items. E.g. There will be 8 Beetles, 6 Bows, 4 Mitts, etc..."
 
 
 # Shuffles
@@ -95,18 +110,6 @@
   options:
     - "off":                           "Activating and opening Goddess Chests will not be required."
     - "on":                            "Goddess Chests can contain any item. Goddess Chests are activated by Skyward Striking their corresponding Goddess Cube."
-
-
-# Will be put on the gui once this option is migrated to a more general plentiful/scarce items option
-- name: scrap_shop_upgrades
-  default_option: "on"
-  pretty_name: Place Scrap Shop Upgrades
-  pretty_options:
-    - "Off"
-    - "On"
-  options:
-    - "off":                           "Item upgrades from Gondo's Repair Shop can only be obtained by upgrading the corresponding vanilla item with treasures."
-    - "on":                            "Item upgrades from Gondo's Repair Shop will be added to the item pool."
     
 
 - name: full_wallet_upgrades

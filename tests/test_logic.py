@@ -9,7 +9,9 @@ from logic.search import all_locations_reachable
 from logic.world import World
 
 
-def config_test(config_file_name: str | Path) -> list[World]:
+def config_test(
+    config_file_name: str | Path, assert_all_locations_reachable: bool = True
+) -> list[World]:
     config_file_name = Path(config_file_name)
 
     config_test_path = Path("tests") / "test_configs" / config_file_name
@@ -18,7 +20,10 @@ def config_test(config_file_name: str | Path) -> list[World]:
     config = load_config_from_file(config_test_path, allow_rewrite=False)
     write_config_to_file(config_file_name, config)
     worlds = generate(config_file_name)
-    assert all_locations_reachable(worlds)
+
+    if assert_all_locations_reachable:
+        assert all_locations_reachable(worlds)
+
     config_file_name.unlink()
     return worlds
 
@@ -166,6 +171,20 @@ def test_traps_off() -> None:
 
 def test_no_logic_config() -> None:
     config_test("no_logic.yaml")
+
+
+def test_item_pool_minimal() -> None:
+    # The minimal item pool can make the 2 Ancient Harbour Crown and the 2
+    # Pirate Stronghold Pillar rupee checks impossible to reach
+    config_test("item_pool_minimal.yaml", assert_all_locations_reachable=False)
+
+
+def test_item_pool_extra() -> None:
+    config_test("item_pool_extra.yaml")
+
+
+def test_item_pool_plentiful() -> None:
+    config_test("item_pool_plentiful.yaml")
 
 
 def test_rupee_shuffle_off() -> None:

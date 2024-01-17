@@ -1472,6 +1472,16 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_29">
            <item>
+            <widget class="QLabel" name="item_pool_label">
+             <property name="text">
+              <string>Item Pool</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_item_pool"/>
+           </item>
+           <item>
             <widget class="QLabel" name="starting_sword_label">
              <property name="text">
               <string>Starting Sword</string>
