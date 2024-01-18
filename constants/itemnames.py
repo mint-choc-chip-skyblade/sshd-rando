@@ -329,7 +329,7 @@ SCATTERSHOT = "Scattershot"
 # 107
 
 # 108
-SMALL_WALLET = "Small " + WALLET
+MEDIUM_WALLET = "Medium " + WALLET
 PROGRESSIVE_WALLET = "Progressive " + WALLET
 
 # 109

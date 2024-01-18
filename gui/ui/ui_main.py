@@ -800,10 +800,10 @@ class Ui_main_window(object):
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.excluded_locations_filter_layout = QHBoxLayout()
         self.excluded_locations_filter_layout.setObjectName(u"excluded_locations_filter_layout")
-        self.excluded_locations_category_filters = QComboBox(self.excluded_locations_group_box)
-        self.excluded_locations_category_filters.setObjectName(u"excluded_locations_category_filters")
+        self.excluded_locations_type_filter = QComboBox(self.excluded_locations_group_box)
+        self.excluded_locations_type_filter.setObjectName(u"excluded_locations_type_filter")
 
-        self.excluded_locations_filter_layout.addWidget(self.excluded_locations_category_filters)
+        self.excluded_locations_filter_layout.addWidget(self.excluded_locations_type_filter)
 
         self.excluded_locations_free_search = QLineEdit(self.excluded_locations_group_box)
         self.excluded_locations_free_search.setObjectName(u"excluded_locations_free_search")
@@ -837,10 +837,10 @@ class Ui_main_window(object):
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.included_locations_filter_layout = QHBoxLayout()
         self.included_locations_filter_layout.setObjectName(u"included_locations_filter_layout")
-        self.included_locations_category_filters = QComboBox(self.included_locations_group_box)
-        self.included_locations_category_filters.setObjectName(u"included_locations_category_filters")
+        self.included_locations_type_filter = QComboBox(self.included_locations_group_box)
+        self.included_locations_type_filter.setObjectName(u"included_locations_type_filter")
 
-        self.included_locations_filter_layout.addWidget(self.included_locations_category_filters)
+        self.included_locations_filter_layout.addWidget(self.included_locations_type_filter)
 
         self.included_locations_free_search = QLineEdit(self.included_locations_group_box)
         self.included_locations_free_search.setObjectName(u"included_locations_free_search")
@@ -880,11 +880,21 @@ class Ui_main_window(object):
         self.randomized_items_group_box.setSizePolicy(sizePolicy3)
         self.verticalLayout_15 = QVBoxLayout(self.randomized_items_group_box)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.randomized_items_filter_layout = QHBoxLayout()
+        self.randomized_items_filter_layout.setObjectName(u"randomized_items_filter_layout")
+        self.randomized_items_type_filter = QComboBox(self.randomized_items_group_box)
+        self.randomized_items_type_filter.setObjectName(u"randomized_items_type_filter")
+
+        self.randomized_items_filter_layout.addWidget(self.randomized_items_type_filter)
+
         self.randomized_items_free_search = QLineEdit(self.randomized_items_group_box)
         self.randomized_items_free_search.setObjectName(u"randomized_items_free_search")
         self.randomized_items_free_search.setClearButtonEnabled(True)
 
-        self.verticalLayout_15.addWidget(self.randomized_items_free_search)
+        self.randomized_items_filter_layout.addWidget(self.randomized_items_free_search)
+
+
+        self.verticalLayout_15.addLayout(self.randomized_items_filter_layout)
 
         self.randomized_items_list_view = QListView(self.randomized_items_group_box)
         self.randomized_items_list_view.setObjectName(u"randomized_items_list_view")
@@ -907,11 +917,21 @@ class Ui_main_window(object):
         self.starting_items_group_box.setObjectName(u"starting_items_group_box")
         self.verticalLayout_11 = QVBoxLayout(self.starting_items_group_box)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.starting_items_filter_layout = QHBoxLayout()
+        self.starting_items_filter_layout.setObjectName(u"starting_items_filter_layout")
+        self.starting_items_type_filter = QComboBox(self.starting_items_group_box)
+        self.starting_items_type_filter.setObjectName(u"starting_items_type_filter")
+
+        self.starting_items_filter_layout.addWidget(self.starting_items_type_filter)
+
         self.starting_items_free_search = QLineEdit(self.starting_items_group_box)
         self.starting_items_free_search.setObjectName(u"starting_items_free_search")
         self.starting_items_free_search.setClearButtonEnabled(True)
 
-        self.verticalLayout_11.addWidget(self.starting_items_free_search)
+        self.starting_items_filter_layout.addWidget(self.starting_items_free_search)
+
+
+        self.verticalLayout_11.addLayout(self.starting_items_filter_layout)
 
         self.starting_items_list_view = QListView(self.starting_items_group_box)
         self.starting_items_list_view.setObjectName(u"starting_items_list_view")
@@ -1518,7 +1538,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(3)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1636,7 +1656,7 @@ class Ui_main_window(object):
         self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))
         self.excluded_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.included_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Locations", None))
-        self.included_locations_category_filters.setPlaceholderText("")
+        self.included_locations_type_filter.setPlaceholderText("")
         self.included_locations_free_search.setText("")
         self.included_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.locations_tab), QCoreApplication.translate("main_window", u"Locations", None))

@@ -14,14 +14,26 @@ from PySide6.QtWidgets import (
 from constants.configdefaults import get_default_setting, get_new_seed
 from constants.itemconstants import STARTABLE_ITEMS
 
-from filepathconstants import CONFIG_PATH, FI_ICON_PATH
+from filepathconstants import CONFIG_PATH, FI_ICON_PATH, ITEMS_PATH
 from gui.components.list_pair import ListPair
 from logic.config import load_config_from_file, write_config_to_file
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from logic.settings import Setting
+from sslib.yaml import yaml_load
 
 
 OPTION_PREFIX = "&nbsp;&nbsp;➜ "
+ITEM_FILTER_TYPES = (
+    "Major Items",
+    "Item Wheel Items",
+    "Main Quest Items",
+    "Side Quest Items",
+    "Dungeon Items",
+    "Boss Keys",
+    "Small Keys",
+    "Maps",
+    "Songs",
+)
 LOCATION_FILTER_TYPES = (
     "Minigames",
     "Goddess Chests",
@@ -94,29 +106,26 @@ class Options:
             self.exclude_locations_pair.update_non_option_list_filter
         )
 
-        self.ui.included_locations_category_filters.addItem("All")
-        self.ui.included_locations_category_filters.addItems(
-            location for location in LOCATION_FILTER_TYPES
-        )
-        self.ui.included_locations_category_filters.currentTextChanged.connect(
+        self.ui.included_locations_type_filter.addItem("All")
+        self.ui.included_locations_type_filter.addItems(LOCATION_FILTER_TYPES)
+        self.ui.included_locations_type_filter.currentTextChanged.connect(
             self.exclude_locations_pair.update_non_option_list_type_filter
         )
 
-        self.ui.excluded_locations_category_filters.addItem("All")
-        self.ui.excluded_locations_category_filters.addItems(LOCATION_FILTER_TYPES)
-        self.ui.excluded_locations_category_filters.currentTextChanged.connect(
+        self.ui.excluded_locations_type_filter.addItem("All")
+        self.ui.excluded_locations_type_filter.addItems(LOCATION_FILTER_TYPES)
+        self.ui.excluded_locations_type_filter.currentTextChanged.connect(
             self.exclude_locations_pair.update_option_list_type_filter
         )
 
         # Init starting items
+        item_defs: list[dict] = list(yaml_load(ITEMS_PATH))
+        item_types: dict[str, list[str]] = {
+            item["name"]: item["types"] for item in item_defs
+        }
+
         startable_items = list(
-            (
-                item_name,
-                [
-                    "",
-                ],
-            )
-            for item_name in STARTABLE_ITEMS
+            (item_name, item_types[item_name]) for item_name in STARTABLE_ITEMS
         )
 
         self.starting_inventory_pair = ListPair(
@@ -138,19 +147,17 @@ class Options:
             self.starting_inventory_pair.update_non_option_list_filter
         )
 
-        # self.ui.included_locations_category_filters.addItem("All")
-        # self.ui.included_locations_category_filters.addItems(
-        #     location for location in LOCATION_FILTER_TYPES
-        # )
-        # self.ui.included_locations_category_filters.currentTextChanged.connect(
-        #     self.starting_inventory_pair.update_non_option_list_type_filter
-        # )
+        self.ui.randomized_items_type_filter.addItem("All")
+        self.ui.randomized_items_type_filter.addItems(ITEM_FILTER_TYPES)
+        self.ui.randomized_items_type_filter.currentTextChanged.connect(
+            self.starting_inventory_pair.update_non_option_list_type_filter
+        )
 
-        # self.ui.excluded_locations_category_filters.addItem("All")
-        # self.ui.excluded_locations_category_filters.addItems(LOCATION_FILTER_TYPES)
-        # self.ui.excluded_locations_category_filters.currentTextChanged.connect(
-        #     self.starting_inventory_pair.update_option_list_type_filter
-        # )
+        self.ui.starting_items_type_filter.addItem("All")
+        self.ui.starting_items_type_filter.addItems(ITEM_FILTER_TYPES)
+        self.ui.starting_items_type_filter.currentTextChanged.connect(
+            self.starting_inventory_pair.update_option_list_type_filter
+        )
 
         # Init other settings
         for setting_name, setting_info in self.settings.items():

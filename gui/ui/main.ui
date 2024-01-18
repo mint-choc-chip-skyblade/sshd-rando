@@ -27,7 +27,7 @@ background-color: #FFFFFF;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -1180,7 +1180,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            <item>
             <layout class="QHBoxLayout" name="excluded_locations_filter_layout">
              <item>
-              <widget class="QComboBox" name="excluded_locations_category_filters"/>
+              <widget class="QComboBox" name="excluded_locations_type_filter"/>
              </item>
              <item>
               <widget class="QLineEdit" name="excluded_locations_free_search">
@@ -1228,7 +1228,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            <item>
             <layout class="QHBoxLayout" name="included_locations_filter_layout">
              <item>
-              <widget class="QComboBox" name="included_locations_category_filters">
+              <widget class="QComboBox" name="included_locations_type_filter">
                <property name="placeholderText">
                 <string/>
                </property>
@@ -1294,17 +1294,24 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_15">
            <item>
-            <widget class="QLineEdit" name="randomized_items_free_search">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="placeholderText">
-              <string>Search</string>
-             </property>
-             <property name="clearButtonEnabled">
-              <bool>true</bool>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="randomized_items_filter_layout">
+             <item>
+              <widget class="QComboBox" name="randomized_items_type_filter"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="randomized_items_free_search">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Search</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item>
             <widget class="QListView" name="randomized_items_list_view">
@@ -1338,17 +1345,24 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_11">
            <item>
-            <widget class="QLineEdit" name="starting_items_free_search">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="placeholderText">
-              <string>Search</string>
-             </property>
-             <property name="clearButtonEnabled">
-              <bool>true</bool>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="starting_items_filter_layout">
+             <item>
+              <widget class="QComboBox" name="starting_items_type_filter"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="starting_items_free_search">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Search</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item>
             <widget class="QListView" name="starting_items_list_view">
