@@ -3,6 +3,7 @@ from pathlib import Path
 import random
 
 import yaml
+from constants.itemnames import *
 from filepathconstants import WORDS_PATH
 
 
@@ -31,7 +32,15 @@ DEFAULT_SETTINGS = {
     "font_size": 10,
     "starting_inventory": Counter(
         [
-            "Scrapper",
+            PROGRESSIVE_POUCH,
+            SCRAPPER,
+            SV_MAP,
+            ET_MAP,
+            LMF_MAP,
+            AC_MAP,
+            SSH_MAP,
+            FS_MAP,
+            SK_MAP,
         ]
         # + [
         #     "Group of Tadtones",
