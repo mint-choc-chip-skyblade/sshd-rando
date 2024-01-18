@@ -1,6 +1,7 @@
 from pathlib import Path
 import yaml
 from constants.configdefaults import get_default_setting
+from constants.itemconstants import STARTABLE_ITEMS
 
 from .settings import *
 
@@ -170,7 +171,29 @@ def load_config_from_file(
             for setting_name in config_in[world_num_str]:
                 # Special handling for starting inventory
                 if setting_name == "starting_inventory":
-                    starting_inventory = config_in[world_num_str][setting_name]
+                    starting_inventory: list = config_in[world_num_str][setting_name]
+
+                    # Verify starting inventory list is valid
+                    invalid_starting_items = starting_inventory.copy()
+
+                    for item in STARTABLE_ITEMS:
+                        if item in invalid_starting_items:
+                            invalid_starting_items.remove(item)
+
+                    if len(invalid_starting_items) > 0:
+                        for item in invalid_starting_items:
+                            starting_inventory.remove(item)
+
+                        config_in[world_num_str][setting_name] = starting_inventory
+                        cur_world_settings.starting_inventory = Counter(
+                            starting_inventory
+                        )
+                        rewrite_config = True
+
+                        print(
+                            f"WARNING: Invalid starting items found. The invalid entries have been removed. Invalid starting items: {invalid_starting_items}"
+                        )
+
                     cur_world_settings.starting_inventory = Counter(starting_inventory)
                     continue
 
@@ -190,8 +213,8 @@ def load_config_from_file(
                     # Turn mixed pools into a list of lists
                     if mixed_pools:
                         if type(mixed_pools[0]) is str:
-                            cur_world_settings.mixed_entrance_pools = [
-                                cur_world_settings.mixed_entrance_pools
+                            cur_world_settings.mixed_entrance_pools = [  # type: ignore
+                                cur_world_settings.mixed_entrance_pools  # type: ignore
                             ]
                     continue
 
