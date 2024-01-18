@@ -67,7 +67,7 @@ def build_location_table(world: "World | None" = None) -> dict[str, Location]:
 
 def get_disabled_shuffle_locations(
     location_table: dict[str, Location],
-    config: Config = load_config_from_file(CONFIG_PATH),
+    config: Config,
 ) -> list[Location]:
     settings = config.settings[0].settings
 
