@@ -57,7 +57,7 @@ args = parser.parse_args()
 
 def patch_tbox(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str)
-    tbox = next(
+    tbox: dict | None = next(
         filter(lambda x: x["name"] == "TBox" and (x["anglez"] >> 9) == id, bzs["OBJS"]),
         None,
     )
@@ -99,7 +99,7 @@ def patch_freestanding_item(
     original_itemid: int,
 ):
     id = int(object_id_str, 0)
-    freestanding_item = next(
+    freestanding_item: dict | None = next(
         filter(
             lambda x: x["name"] == "Item"
             and (((x["params1"] >> 10) & 0xFF) == id or x["id"] == id),
@@ -145,7 +145,7 @@ def patch_freestanding_item(
 
 def patch_bucha(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str, 16)
-    bucha = next(
+    bucha: dict | None = next(
         filter(lambda x: x["name"] == "NpcKyuE" and x["id"] == id, bzs["OBJ "]), None
     )
 
@@ -163,7 +163,7 @@ def patch_closet(
     bzs: dict, itemid: int, object_id_str: str, trapid: int, room: int, stage: str
 ):
     id = int(object_id_str, 16)
-    closet: dict = next(
+    closet: dict | None = next(
         filter(lambda x: x["name"] == "chest" and x["id"] == id, bzs["OBJ "]),
         None,
     )
@@ -176,7 +176,7 @@ def patch_closet(
         raise Exception(f"No closet with id '{id}' found to patch.")
 
     # Mapping of each closet (scene, roomid, objectid) to the local scene flag we'll use
-    unused_scene_flags = {
+    unused_scene_flags: dict[tuple[str, int, int], int] = {
         ("F001r", 1, 0xFC08): 12,  # Link's Closet            0x10
         ("F001r", 1, 0xFC07): 24,  # Fledge's Closet          2x01
         ("F001r", 6, 0xFC07): 32,  # Zelda's Closet           5x01 (vanilla scene flag)
@@ -209,7 +209,7 @@ def patch_closet(
 
 def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str, 16)
-    boko = next(
+    boko: dict | None = next(
         filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
     )
 
@@ -224,7 +224,9 @@ def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 
 
 def patch_heart_container(bzs: dict, itemid: int, trapid: int):
-    heart_container = next(filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None)
+    heart_container: dict | None = next(
+        filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None
+    )
 
     if heart_container is None:
         raise Exception(f"No heart container found to patch.")
@@ -239,7 +241,9 @@ def patch_heart_container(bzs: dict, itemid: int, trapid: int):
 
 
 def patch_chandelier_item(bzs: dict, itemid: int, trapid: int):
-    chandelier = next(filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None)
+    chandelier: dict | None = next(
+        filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None
+    )
 
     if chandelier is None:
         raise Exception(f"No chandelier found to patch.")
@@ -253,7 +257,7 @@ def patch_chandelier_item(bzs: dict, itemid: int, trapid: int):
 
 def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str)
-    digspot = next(
+    digspot: dict | None = next(
         filter(
             lambda x: x["name"] == "Soil" and ((x["params1"] >> 4) & 0xFF) == id,
             bzs["OBJ "],
@@ -274,10 +278,10 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 
 
 def patch_goddess_crest(bzs: dict, itemid: int, index: str, trapid: int):
-    crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
+    crest: dict | None = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
+
     if crest is None:
         raise Exception(f"No goddess crest found to patch.")
-        return
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
@@ -295,13 +299,12 @@ def patch_goddess_crest(bzs: dict, itemid: int, index: str, trapid: int):
 def patch_squirrels(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str, 16)
 
-    squirrel_tag = next(
+    squirrel_tag: dict | None = next(
         filter(lambda x: x["name"] == "MssbTag" and x["id"] == id, bzs["STAG"]), None
     )
 
     if squirrel_tag is None:
         raise Exception(f"No squirrel tag (MssbTag) found to patch.")
-        return
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
@@ -945,7 +948,7 @@ def patch_and_write_stage(
 
 class StagePatchHandler:
     def __init__(self):
-        self.stage_patches: dict = yaml_load(STAGE_PATCHES_PATH)
+        self.stage_patches: dict = dict(yaml_load(STAGE_PATCHES_PATH))
         self.check_patches: dict[str, list[tuple]] = defaultdict(list)
         self.stage_oarc_remove: dict[tuple[str, int], set[str]] = defaultdict(set)
         self.stage_oarc_add: dict[tuple[str, int], set[str]] = defaultdict(set)
@@ -1031,7 +1034,7 @@ class StagePatchHandler:
                         patches.remove(patch)
 
     def create_oarc_cache(self):
-        extracts: dict[dict, dict] = yaml_load(EXTRACTS_PATH)
+        extracts: dict[dict, dict] = dict(yaml_load(EXTRACTS_PATH))
         OARC_CACHE_PATH.mkdir(parents=True, exist_ok=True)
 
         for extract in extracts:
