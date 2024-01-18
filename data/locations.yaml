@@ -3298,7 +3298,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-    - stage/F300/r0/l0/Item/0xFE2A
+    - stage/F300/r0/l0/Item/0xFFF0
 
 - name: Lanayru Desert - Stamina Fruit on West LMF Ledge
   original_item: Stamina Fruit
@@ -3306,7 +3306,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-    - stage/F300/r0/l0/Item/0xFE2B
+    - stage/F300/r0/l0/Item/0xFFF1
 
 - name: Lanayru Desert - Stamina Fruit on LMF Wall Vines
   original_item: Stamina Fruit
@@ -3314,7 +3314,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-    - stage/F300/r0/l0/Item/0xFE2C
+    - stage/F300/r0/l0/Item/0xFFF2
 
 - name: Lanayru Desert - Stamina Fruit in South Sand Oasis 1
   original_item: Stamina Fruit

@@ -3184,6 +3184,7 @@ F300: # Lanayru Desert
       - 0xFE11 # South
       - 0xFE13 # West
       - 0xFE15 # On vine wall
+    hardcoded_id: 0xFFF0
     layer: 2
     destlayer: 0
     room: 0
