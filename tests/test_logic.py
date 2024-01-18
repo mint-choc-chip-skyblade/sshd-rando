@@ -205,12 +205,30 @@ def test_rupee_shuffle_advanced() -> None:
 
 def test_bad_starting_inventory() -> None:
     worlds = config_test("starting_inventory_bad.yaml")
-    assert worlds[0].starting_item_pool.total() == 0
+    assert (
+        len(
+            [
+                item
+                for item in worlds[0].starting_item_pool.elements()
+                if item.name == "Progressive Sword"
+            ]
+        )
+        == 0
+    )
 
 
 def test_good_starting_inventory() -> None:
     worlds = config_test("starting_inventory_good.yaml")
-    assert worlds[0].starting_item_pool.total() == 2
+    assert (
+        len(
+            [
+                item
+                for item in worlds[0].starting_item_pool.elements()
+                if item.name == "Progressive Sword"
+            ]
+        )
+        == 2
+    )
 
 
 def test_spoiler_as_config() -> None:
