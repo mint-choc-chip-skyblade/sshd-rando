@@ -48,6 +48,10 @@ class Main(QMainWindow):
         self.randomize_thread.start()
         progress_dialog.exec()
 
+        # Prevents old progress dialogs reappearing when generating another
+        # seed without reopening the entire program
+        progress_dialog.deleteLater()
+
     def about(self):
         about_dialog = QMessageBox(self)
         about_dialog.setTextFormat(Qt.TextFormat.RichText)
