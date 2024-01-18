@@ -218,7 +218,9 @@ STARTABLE_ITEMS: list[str] = (
         # LIFE_TREE_SEEDLING,
         SPIRAL_CHARGE,
         SCRAPPER,
+        SEA_CHART,
     ]
+    + [KEY_PIECE] * 5
     + [PROGRESSIVE_WALLET] * 4
     + [EXTRA_WALLET] * 3
     + [LC_SMALL_KEY]
@@ -243,6 +245,27 @@ STARTABLE_ITEMS: list[str] = (
         SSH_BOSS_KEY,
         FS_BOSS_KEY,
     ]
+)
+
+RANDOM_STARTABLE_ITEMS = (
+    [
+        PROGRESSIVE_BOW,
+        BOMB_BAG,
+        PROGRESSIVE_BUG_NET,
+        PROGRESSIVE_SLINGSHOT,
+        CLAWSHOTS,
+        WHIP,
+        GUST_BELLOWS,
+        PROGRESSIVE_POUCH,
+        # SAILCLOTH,
+        WATER_DRAGON_SCALE,
+        FIRESHIELD_EARRINGS,
+        GODDESS_HARP,
+        BALLAD_OF_THE_GODDESS,
+        SPIRAL_CHARGE,
+    ]
+    + [PROGRESSIVE_BEETLE] * 2
+    + [PROGRESSIVE_MITTS] * 2
 )
 
 # Itemflags

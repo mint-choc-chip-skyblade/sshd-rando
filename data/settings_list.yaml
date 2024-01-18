@@ -1143,10 +1143,19 @@
     - true_master_sword:               "You will start with all 6 sword upgrades. You will stun regular enemies with the sword from the start of the game."
 
 
-- name: starting_tablet_count
+- name: random_starting_tablet_count
   default_option: 1
-  pretty_name: Starting Tablet Count
+  pretty_name: Random Starting Tablet Count
   pretty_options:
     - 0-3
   options:
     - 0-3:                             "Select the number of randomly chosen tablets you would like to start with. This is in addition to any tablets you have added to your starting inventory already."
+
+
+- name: random_starting_item_count
+  default_option: 0
+  pretty_name: Random Starting Item Count
+  pretty_options:
+    - 0-7
+  options:
+    - 0-7:                             "Select the number of randomly chosen items you would like to start with. Only a selection of the most useful items are able to be chosen to maximize the benefit of this setting."

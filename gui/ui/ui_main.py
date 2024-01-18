@@ -25,7 +25,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(1200, 800)
+        main_window.resize(1300, 900)
         main_window.setStyleSheet(u"QToolTip {\n"
 "color: #000000;\n"
 "background-color: #FFFFFF;\n"
@@ -252,6 +252,7 @@ class Ui_main_window(object):
         self.verticalLayout.addWidget(self.setting_ammo_availability)
 
         self.peatrice_conversations_layout = QHBoxLayout()
+        self.peatrice_conversations_layout.setSpacing(0)
         self.peatrice_conversations_layout.setObjectName(u"peatrice_conversations_layout")
         self.peatrice_conversations_label = QLabel(self.tweaks_group_box)
         self.peatrice_conversations_label.setObjectName(u"peatrice_conversations_label")
@@ -412,6 +413,7 @@ class Ui_main_window(object):
         self.verticalLayout_13 = QVBoxLayout(self.beat_the_game_group_box)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.required_dungeons_layout = QHBoxLayout()
+        self.required_dungeons_layout.setSpacing(0)
         self.required_dungeons_layout.setObjectName(u"required_dungeons_layout")
         self.required_dungeons_label = QLabel(self.beat_the_game_group_box)
         self.required_dungeons_label.setObjectName(u"required_dungeons_label")
@@ -536,6 +538,7 @@ class Ui_main_window(object):
         self.verticalLayout_23.addWidget(self.setting_song_hints)
 
         self.path_hints_layout = QHBoxLayout()
+        self.path_hints_layout.setSpacing(0)
         self.path_hints_layout.setObjectName(u"path_hints_layout")
         self.path_hints_label = QLabel(self.hints_group_box)
         self.path_hints_label.setObjectName(u"path_hints_label")
@@ -553,6 +556,7 @@ class Ui_main_window(object):
         self.verticalLayout_23.addLayout(self.path_hints_layout)
 
         self.barren_hints_layout = QHBoxLayout()
+        self.barren_hints_layout.setSpacing(0)
         self.barren_hints_layout.setObjectName(u"barren_hints_layout")
         self.barren_hints_label = QLabel(self.hints_group_box)
         self.barren_hints_label.setObjectName(u"barren_hints_label")
@@ -570,6 +574,7 @@ class Ui_main_window(object):
         self.verticalLayout_23.addLayout(self.barren_hints_layout)
 
         self.location_hints_layout = QHBoxLayout()
+        self.location_hints_layout.setSpacing(0)
         self.location_hints_layout.setObjectName(u"location_hints_layout")
         self.location_hints_label = QLabel(self.hints_group_box)
         self.location_hints_label.setObjectName(u"location_hints_label")
@@ -587,6 +592,7 @@ class Ui_main_window(object):
         self.verticalLayout_23.addLayout(self.location_hints_layout)
 
         self.item_hints_layout = QHBoxLayout()
+        self.item_hints_layout.setSpacing(0)
         self.item_hints_layout.setObjectName(u"item_hints_layout")
         self.item_hints_label = QLabel(self.hints_group_box)
         self.item_hints_label.setObjectName(u"item_hints_label")
@@ -868,7 +874,7 @@ class Ui_main_window(object):
         self.gridLayout_3.setColumnStretch(0, 6)
         self.gridLayout_3.setColumnStretch(1, 1)
         self.gridLayout_3.setColumnStretch(2, 6)
-        self.gridLayout_3.setColumnStretch(3, 3)
+        self.gridLayout_3.setColumnStretch(3, 4)
         self.tab_widget.addTab(self.locations_tab, "")
         self.inventory_tab = QWidget()
         self.inventory_tab.setObjectName(u"inventory_tab")
@@ -1010,23 +1016,42 @@ class Ui_main_window(object):
 
         self.verticalLayout_29.addWidget(self.setting_starting_sword)
 
-        self.starting_tablets_hlayout = QHBoxLayout()
-        self.starting_tablets_hlayout.setObjectName(u"starting_tablets_hlayout")
-        self.starting_tablet_count_label = QLabel(self.item_settings_group_box)
-        self.starting_tablet_count_label.setObjectName(u"starting_tablet_count_label")
+        self.random_starting_tablet_count_layout = QHBoxLayout()
+        self.random_starting_tablet_count_layout.setSpacing(0)
+        self.random_starting_tablet_count_layout.setObjectName(u"random_starting_tablet_count_layout")
+        self.random_starting_tablet_count_label = QLabel(self.item_settings_group_box)
+        self.random_starting_tablet_count_label.setObjectName(u"random_starting_tablet_count_label")
 
-        self.starting_tablets_hlayout.addWidget(self.starting_tablet_count_label)
+        self.random_starting_tablet_count_layout.addWidget(self.random_starting_tablet_count_label)
 
-        self.setting_starting_tablet_count = QSpinBox(self.item_settings_group_box)
-        self.setting_starting_tablet_count.setObjectName(u"setting_starting_tablet_count")
-        sizePolicy5.setHeightForWidth(self.setting_starting_tablet_count.sizePolicy().hasHeightForWidth())
-        self.setting_starting_tablet_count.setSizePolicy(sizePolicy5)
-        self.setting_starting_tablet_count.setMaximumSize(QSize(16777215, 16777215))
+        self.setting_random_starting_tablet_count = QSpinBox(self.item_settings_group_box)
+        self.setting_random_starting_tablet_count.setObjectName(u"setting_random_starting_tablet_count")
+        sizePolicy5.setHeightForWidth(self.setting_random_starting_tablet_count.sizePolicy().hasHeightForWidth())
+        self.setting_random_starting_tablet_count.setSizePolicy(sizePolicy5)
+        self.setting_random_starting_tablet_count.setMaximumSize(QSize(16777215, 16777215))
 
-        self.starting_tablets_hlayout.addWidget(self.setting_starting_tablet_count)
+        self.random_starting_tablet_count_layout.addWidget(self.setting_random_starting_tablet_count)
 
 
-        self.verticalLayout_29.addLayout(self.starting_tablets_hlayout)
+        self.verticalLayout_29.addLayout(self.random_starting_tablet_count_layout)
+
+        self.random_starting_item_count_layout = QHBoxLayout()
+        self.random_starting_item_count_layout.setSpacing(0)
+        self.random_starting_item_count_layout.setObjectName(u"random_starting_item_count_layout")
+        self.random_starting_item_count_label = QLabel(self.item_settings_group_box)
+        self.random_starting_item_count_label.setObjectName(u"random_starting_item_count_label")
+
+        self.random_starting_item_count_layout.addWidget(self.random_starting_item_count_label)
+
+        self.setting_random_starting_item_count = QSpinBox(self.item_settings_group_box)
+        self.setting_random_starting_item_count.setObjectName(u"setting_random_starting_item_count")
+        sizePolicy5.setHeightForWidth(self.setting_random_starting_item_count.sizePolicy().hasHeightForWidth())
+        self.setting_random_starting_item_count.setSizePolicy(sizePolicy5)
+
+        self.random_starting_item_count_layout.addWidget(self.setting_random_starting_item_count)
+
+
+        self.verticalLayout_29.addLayout(self.random_starting_item_count_layout)
 
         self.item_settings_vspacer = QSpacerItem(20, 137, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -1038,7 +1063,7 @@ class Ui_main_window(object):
         self.gridLayout_4.setColumnStretch(0, 6)
         self.gridLayout_4.setColumnStretch(1, 1)
         self.gridLayout_4.setColumnStretch(2, 6)
-        self.gridLayout_4.setColumnStretch(3, 3)
+        self.gridLayout_4.setColumnStretch(3, 4)
         self.tab_widget.addTab(self.inventory_tab, "")
         self.logic_tab = QWidget()
         self.logic_tab.setObjectName(u"logic_tab")
@@ -1446,8 +1471,11 @@ class Ui_main_window(object):
         self.settings_descriptions_layout.setObjectName(u"settings_descriptions_layout")
         self.settings_current_option_description_label = QLabel(self.central_widget)
         self.settings_current_option_description_label.setObjectName(u"settings_current_option_description_label")
-        sizePolicy8.setHeightForWidth(self.settings_current_option_description_label.sizePolicy().hasHeightForWidth())
-        self.settings_current_option_description_label.setSizePolicy(sizePolicy8)
+        sizePolicy9 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(0)
+        sizePolicy9.setHeightForWidth(self.settings_current_option_description_label.sizePolicy().hasHeightForWidth())
+        self.settings_current_option_description_label.setSizePolicy(sizePolicy9)
         self.settings_current_option_description_label.setMinimumSize(QSize(0, 64))
         self.settings_current_option_description_label.setTextFormat(Qt.RichText)
         self.settings_current_option_description_label.setWordWrap(True)
@@ -1456,8 +1484,8 @@ class Ui_main_window(object):
 
         self.settings_default_option_description_label = QLabel(self.central_widget)
         self.settings_default_option_description_label.setObjectName(u"settings_default_option_description_label")
-        sizePolicy8.setHeightForWidth(self.settings_default_option_description_label.sizePolicy().hasHeightForWidth())
-        self.settings_default_option_description_label.setSizePolicy(sizePolicy8)
+        sizePolicy9.setHeightForWidth(self.settings_default_option_description_label.sizePolicy().hasHeightForWidth())
+        self.settings_default_option_description_label.setSizePolicy(sizePolicy9)
         self.settings_default_option_description_label.setMinimumSize(QSize(0, 64))
         self.settings_default_option_description_label.setWordWrap(True)
 
@@ -1505,11 +1533,11 @@ class Ui_main_window(object):
 
         self.randomize_button = QPushButton(self.central_widget)
         self.randomize_button.setObjectName(u"randomize_button")
-        sizePolicy9 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy9.setHorizontalStretch(0)
-        sizePolicy9.setVerticalStretch(0)
-        sizePolicy9.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
-        self.randomize_button.setSizePolicy(sizePolicy9)
+        sizePolicy10 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(0)
+        sizePolicy10.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
+        self.randomize_button.setSizePolicy(sizePolicy10)
 
         self.footer_grid_layout.addWidget(self.randomize_button, 2, 2, 1, 1)
 
@@ -1538,7 +1566,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(2)
+        self.tab_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1674,7 +1702,8 @@ class Ui_main_window(object):
         self.item_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Item Settings", None))
         self.item_pool_label.setText(QCoreApplication.translate("main_window", u"Item Pool", None))
         self.starting_sword_label.setText(QCoreApplication.translate("main_window", u"Starting Sword", None))
-        self.starting_tablet_count_label.setText(QCoreApplication.translate("main_window", u"Starting Tablets", None))
+        self.random_starting_tablet_count_label.setText(QCoreApplication.translate("main_window", u"Random Starting Tablet Count", None))
+        self.random_starting_item_count_label.setText(QCoreApplication.translate("main_window", u"Random Starting Item Count", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.inventory_tab), QCoreApplication.translate("main_window", u"Inventory", None))
         self.logic_rules_group_box.setTitle(QCoreApplication.translate("main_window", u"Logic", None))
         self.logic_rules_label.setText(QCoreApplication.translate("main_window", u"Logic Mode", None))

@@ -2,7 +2,6 @@ from constants.itemconstants import *
 from .settings import *
 from .item import *
 
-import random
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -56,7 +55,7 @@ def generate_item_pool(world: "World") -> None:
 # Will remove items from the passed in world's item pool
 # and add them to the starting pool.
 def generate_starting_item_pool(world: "World"):
-    starting_items = world.setting_map.starting_inventory
+    starting_items = world.setting_map.starting_inventory.copy()
 
     # Add starting swords
     starting_sword_setting = world.setting_map.settings.get("starting_sword")
@@ -65,7 +64,9 @@ def generate_starting_item_pool(world: "World"):
         starting_items[PROGRESSIVE_SWORD] = starting_sword_setting.current_option_index
 
     # Deal with starting tablets
-    starting_tablet_count = world.setting("starting_tablet_count").value_as_number()
+    starting_tablet_count = world.setting(
+        "random_starting_tablet_count"
+    ).value_as_number()
 
     if starting_tablet_count > 0:
         inventory_tablets = [
@@ -85,6 +86,27 @@ def generate_starting_item_pool(world: "World"):
                 tablet_pool.remove(random_tablet)
                 starting_items[random_tablet] = 1
 
+    # Random starting items
+    random_starting_count = world.setting(
+        "random_starting_item_count"
+    ).value_as_number()
+
+    if random_starting_count > 0:
+        random_starting_item_pool = RANDOM_STARTABLE_ITEMS
+
+        for item in starting_items:
+            if item in random_starting_item_pool:
+                random_starting_item_pool.remove(item)
+
+        for _ in range(random_starting_count):
+            if len(random_starting_item_pool) < 1:
+                break
+
+            random_item = random.choice(random_starting_item_pool)
+            starting_items[random_item] = starting_items[random_item] + 1
+            random_starting_item_pool.remove(random_item)
+
+    # Populate starting item pool
     for item_name, count in starting_items.items():
         item = world.get_item(item_name)
         world.starting_item_pool[item] += count

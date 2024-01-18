@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>800</height>
+    <width>1300</width>
+    <height>900</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@ background-color: #FFFFFF;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -405,6 +405,9 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            </item>
            <item>
             <layout class="QHBoxLayout" name="peatrice_conversations_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QLabel" name="peatrice_conversations_label">
                <property name="sizePolicy">
@@ -625,6 +628,9 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           <layout class="QVBoxLayout" name="verticalLayout_13">
            <item>
             <layout class="QHBoxLayout" name="required_dungeons_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QLabel" name="required_dungeons_label">
                <property name="text">
@@ -789,6 +795,9 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            </item>
            <item>
             <layout class="QHBoxLayout" name="path_hints_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QLabel" name="path_hints_label">
                <property name="text">
@@ -810,6 +819,9 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            </item>
            <item>
             <layout class="QHBoxLayout" name="barren_hints_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QLabel" name="barren_hints_label">
                <property name="text">
@@ -831,6 +843,9 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            </item>
            <item>
             <layout class="QHBoxLayout" name="location_hints_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QLabel" name="location_hints_label">
                <property name="text">
@@ -852,6 +867,9 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            </item>
            <item>
             <layout class="QHBoxLayout" name="item_hints_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QLabel" name="item_hints_label">
                <property name="text">
@@ -1006,7 +1024,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
        <attribute name="title">
         <string>Locations</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_3" columnstretch="6,1,6,3">
+       <layout class="QGridLayout" name="gridLayout_3" columnstretch="6,1,6,4">
         <item row="0" column="1">
          <layout class="QVBoxLayout" name="locations_button_layout">
           <item>
@@ -1280,7 +1298,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
        <attribute name="title">
         <string>Inventory</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_4" columnstretch="6,1,6,3">
+       <layout class="QGridLayout" name="gridLayout_4" columnstretch="6,1,6,4">
         <item row="0" column="0">
          <widget class="QGroupBox" name="randomized_items_group_box">
           <property name="sizePolicy">
@@ -1506,16 +1524,19 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             <widget class="QComboBox" name="setting_starting_sword"/>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="starting_tablets_hlayout">
+            <layout class="QHBoxLayout" name="random_starting_tablet_count_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
-              <widget class="QLabel" name="starting_tablet_count_label">
+              <widget class="QLabel" name="random_starting_tablet_count_label">
                <property name="text">
-                <string>Starting Tablets</string>
+                <string>Random Starting Tablet Count</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QSpinBox" name="setting_starting_tablet_count">
+              <widget class="QSpinBox" name="setting_random_starting_tablet_count">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -1527,6 +1548,30 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                  <width>16777215</width>
                  <height>16777215</height>
                 </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="random_starting_item_count_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="random_starting_item_count_label">
+               <property name="text">
+                <string>Random Starting Item Count</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_random_starting_item_count">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
                </property>
               </widget>
              </item>
@@ -2174,7 +2219,7 @@ Practice Sword</string>
       <item>
        <widget class="QLabel" name="settings_current_option_description_label">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -2199,7 +2244,7 @@ Practice Sword</string>
       <item>
        <widget class="QLabel" name="settings_default_option_description_label">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
