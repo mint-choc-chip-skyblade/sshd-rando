@@ -218,7 +218,9 @@ class Options:
         # Force descriptions to update before changing any setting
         self.update_settings()
 
-    def update_settings(self, from_widget=None, from_reset=False, _=None):
+    def update_settings(
+        self, from_widget=None, widget_index=None, from_reset=False, _=None
+    ):
         should_update_location_counter = True
 
         for setting_name, setting in self.settings.items():
