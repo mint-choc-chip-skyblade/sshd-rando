@@ -1,6 +1,6 @@
 import logging
-from filepathconstants import CONFIG_PATH, LOCATIONS_PATH
-from logic.config import Config, load_config_from_file
+from filepathconstants import LOCATIONS_PATH
+from logic.config import Config
 from logic.location import Location
 
 from sslib.yaml import yaml_load

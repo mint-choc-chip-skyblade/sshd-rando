@@ -195,7 +195,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 else:
                     spoiler_log.write(f"    {setting.name}: '{setting.value}'\n")
             spoiler_log.write(
-                f"    starting_inventory: {sorted(world.setting_map.starting_inventory.elements())}\n"
+                f"    starting_inventory: {sorted(world.config.settings[0].starting_inventory.elements())}\n"
             )
             spoiler_log.write(
                 f"    excluded_locations: {world.setting_map.excluded_locations}\n"
