@@ -1,23 +1,14 @@
 seed: TESTTESTTEST
-input_dir: ./title
-output_dir: ./output
-plandomizer: false
-plandomizer_file: null
-theme_mode: Auto
-theme_presets: Default
-use_custom_theme: false
-font_family: Lato
-font_size: 10
 World 1:
-  logic_rules: 'on'
-  # Can't be random as 'minimal' causes 4 locations to be unreachable
+  logic_rules: "on"
+  # Can't be random as "minimal" causes 4 locations to be unreachable
   item_pool: standard
   gratitude_crystal_shuffle: random
   stamina_fruit_shuffle: random
   rupee_shuffle: random
   underground_rupee_shuffle: random
   beedle_shop_shuffle: random
-  full_wallet_upgrades: 'random'
+  full_wallet_upgrades: random
   open_thunderhead: random
   open_lake_floria: random
   open_earth_temple: random
@@ -40,22 +31,20 @@ World 1:
   cryptic_hint_text: random
   always_hints: random
   random_starting_spawn: random
-  randomize_dungeon_entrances: 'on'
-  randomize_trial_gate_entrances: 'on'
-  randomize_door_entrances: 'on'
-  decouple_double_doors: 'off'
-  randomize_interior_entrances: 'on'
-  randomize_overworld_entrances: 'off'
-  decouple_entrances: 'off'
-  natural_night_connections: 'on'
-  upgraded_skyward_strike: 'off'
+  randomize_dungeon_entrances: "on"
+  randomize_trial_gate_entrances: "on"
+  randomize_door_entrances: "on"
+  decouple_double_doors: "off"
+  randomize_interior_entrances: "on"
+  randomize_overworld_entrances: "off"
+  decouple_entrances: "off"
+  natural_night_connections: "on"
   skip_horde: random
   skip_g3: random
   skip_demise: random
   required_dungeons: random
   empty_unrequired_dungeons: random
   ammo_availability: random
-  tunic_swap: 'off'
   logic_early_lake_floria: random
   logic_beedles_island_cage_chest_dive: random
   logic_volcanic_island_dive: random

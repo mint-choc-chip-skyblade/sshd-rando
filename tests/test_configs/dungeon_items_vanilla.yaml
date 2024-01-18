@@ -1,15 +1,6 @@
+seed: TESTTESTTEST
 World 1:
   boss_keys: vanilla
   lanayru_caves_key: vanilla
   map_mode: vanilla
   small_keys: vanilla
-input_dir: ./base
-output_dir: ./output
-plandomizer: false
-plandomizer_file: null
-theme_mode: Auto
-theme_presets: Default
-use_custom_theme: false
-font_family: Lato
-font_size: 10
-seed: TESTTESTTEST

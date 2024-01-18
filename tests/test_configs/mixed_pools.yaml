@@ -1,20 +1,13 @@
-World 1:
-  randomize_dungeon_entrances: 'on'
-  randomize_door_entrances: 'on'
-  randomize_interior_entrances: 'on'
-  randomize_overworld_entrances: 'on'
-  mixed_entrance_pools:
-  - Dungeon
-  - Door
-  - Interior
-  - Overworld
-input_dir: ./base
-output_dir: ./output
-plandomizer: false
-plandomizer_file: null
-theme_mode: Auto
-theme_presets: Default
-use_custom_theme: false
-font_family: Lato
-font_size: 10
 seed: TESTTESTTEST
+World 1:
+  randomize_dungeon_entrances: "on"
+  randomize_trial_gate_entrances: "on"
+  randomize_door_entrances: "on"
+  randomize_interior_entrances: "on"
+  randomize_overworld_entrances: "on"
+  mixed_entrance_pools:
+  - - Dungeon
+    - Trial Gate
+    - Door
+    - Interior
+    - Overworld
