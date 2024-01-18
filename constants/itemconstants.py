@@ -1,6 +1,10 @@
 from constants.itemnames import *
 
 
+# Item Groups
+ALL_TABLETS = (EMERALD_TABLET, RUBY_TABLET, AMBER_TABLET)
+
+# Item Pools
 ALL_JUNK_ITEMS: list[str] = [
     GOLDEN_SKULL,
     GODDESS_PLUME,
@@ -241,6 +245,8 @@ STARTABLE_ITEMS: list[str] = (
     ]
 )
 
+# Itemflags
+#
 # lists are used for progressive items,
 # tuples for setting multiple flags for one item
 ITEM_ITEMFLAGS = {

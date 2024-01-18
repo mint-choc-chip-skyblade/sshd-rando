@@ -1141,3 +1141,12 @@
     - goddess_white_sword:             "You will start with 4 sword upgrades. You will have the completed dowsing wheel from the start of the game."
     - master_sword:                    "You will start with 5 sword upgrades. You will deal maximum sword damage from the start of the game."
     - true_master_sword:               "You will start with all 6 sword upgrades. You will stun regular enemies with the sword from the start of the game."
+
+
+- name: starting_tablet_count
+  default_option: 1
+  pretty_name: Starting Tablet Count
+  pretty_options:
+    - 0-3
+  options:
+    - 0-3:                             "Select the number of randomly chosen tablets you would like to start with. This is in addition to any tablets you have added to your starting inventory already."

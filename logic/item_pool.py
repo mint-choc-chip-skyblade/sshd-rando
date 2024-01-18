@@ -64,6 +64,27 @@ def generate_starting_item_pool(world: "World"):
     if starting_sword_setting:
         starting_items[PROGRESSIVE_SWORD] = starting_sword_setting.current_option_index
 
+    # Deal with starting tablets
+    starting_tablet_count = world.setting("starting_tablet_count").value_as_number()
+
+    if starting_tablet_count > 0:
+        inventory_tablets = [
+            item for item in world.setting_map.starting_inventory if item in ALL_TABLETS
+        ]
+
+        if len(inventory_tablets) + starting_tablet_count >= 3:
+            for tablet in ALL_TABLETS:
+                starting_items[tablet] = 1
+        else:
+            tablet_pool = [
+                tablet for tablet in ALL_TABLETS if tablet not in inventory_tablets
+            ]
+
+            for _ in range(starting_tablet_count):
+                random_tablet = random.choice(tablet_pool)
+                tablet_pool.remove(random_tablet)
+                starting_items[random_tablet] = 1
+
     for item_name, count in starting_items.items():
         item = world.get_item(item_name)
         world.starting_item_pool[item] += count
