@@ -10,7 +10,8 @@ font_family: Lato
 font_size: 10
 World 1:
   logic_rules: 'on'
-  item_pool: random
+  # Can't be random as 'minimal' causes 4 locations to be unreachable
+  item_pool: standard
   gratitude_crystal_shuffle: random
   stamina_fruit_shuffle: random
   rupee_shuffle: random
@@ -100,16 +101,16 @@ World 1:
   curse_traps: random
   noise_traps: random
   groose_traps: random
-  starting_inventory: 
+  starting_sword: goddess_longsword
+  starting_inventory:
    - Scrapper
-   - Progressive Sword
-   - Progressive Sword
-   - Gratitude Crystal Pack
-   - Gratitude Crystal Pack
-  excluded_locations: 
+   - Bomb Bag
+   - Goddess's Harp
+   - Fire Sanctuary Small Key
+  excluded_locations:
    - Sky Keep - Sacred Power of Nayru
    - Isle of Songs - Strike Crest with Goddess Sword
-  mixed_entrance_pools: 
+  mixed_entrance_pools:
    - - Dungeon
      - Trial Gate
    - - Door

@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -201,6 +201,16 @@ def test_rupee_shuffle_intermediate() -> None:
 
 def test_rupee_shuffle_advanced() -> None:
     config_test("rupee_shuffle_advanced.yaml")
+
+
+def test_bad_starting_inventory() -> None:
+    worlds = config_test("starting_inventory_bad.yaml")
+    assert worlds[0].starting_item_pool.total() == 0
+
+
+def test_good_starting_inventory() -> None:
+    worlds = config_test("starting_inventory_good.yaml")
+    assert worlds[0].starting_item_pool.total() == 2
 
 
 def test_spoiler_as_config() -> None:

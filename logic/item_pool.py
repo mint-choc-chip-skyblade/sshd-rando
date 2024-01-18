@@ -57,6 +57,30 @@ def generate_item_pool(world: "World") -> None:
 # and add them to the starting pool.
 def generate_starting_item_pool(world: "World"):
     starting_items = world.setting_map.starting_inventory
+    invalid_starting_items = starting_items
+
+    # Verify starting_inventory setting is valid
+    # Doesn't include would-be valid items (like swords) since those are
+    # dealt with with a separate setting
+    for item in STARTABLE_ITEMS:
+        if item in invalid_starting_items:
+            invalid_starting_items[item] = invalid_starting_items[item] - 1
+
+            if invalid_starting_items[item] == 0:
+                del invalid_starting_items[item]
+
+    if invalid_starting_items.total() > 0:
+        for item in invalid_starting_items:
+            starting_items[item] -= invalid_starting_items[item]
+            logging.getLogger("").debug(
+                f"Removed {invalid_starting_items[item]} copies of {item} from the starting item pool."
+            )
+
+        print(
+            f"WARNING: Invalid starting items found. The invalid entries have been removed. Invalid starting items: {invalid_starting_items}"
+        )
+
+    # Add starting swords
     starting_sword_setting = world.setting_map.settings.get("starting_sword")
 
     if starting_sword_setting:
