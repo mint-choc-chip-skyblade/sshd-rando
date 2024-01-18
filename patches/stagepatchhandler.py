@@ -948,7 +948,7 @@ def patch_and_write_stage(
 
 class StagePatchHandler:
     def __init__(self):
-        self.stage_patches: dict = dict(yaml_load(STAGE_PATCHES_PATH))
+        self.stage_patches: dict = yaml_load(STAGE_PATCHES_PATH) # type: ignore
         self.check_patches: dict[str, list[tuple]] = defaultdict(list)
         self.stage_oarc_remove: dict[tuple[str, int], set[str]] = defaultdict(set)
         self.stage_oarc_add: dict[tuple[str, int], set[str]] = defaultdict(set)
@@ -1034,7 +1034,7 @@ class StagePatchHandler:
                         patches.remove(patch)
 
     def create_oarc_cache(self):
-        extracts: dict[dict, dict] = dict(yaml_load(EXTRACTS_PATH))
+        extracts: dict[dict, dict] = yaml_load(EXTRACTS_PATH) # type: ignore
         OARC_CACHE_PATH.mkdir(parents=True, exist_ok=True)
 
         for extract in extracts:
