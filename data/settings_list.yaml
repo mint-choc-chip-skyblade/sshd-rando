@@ -136,7 +136,7 @@
 
 - name: open_thunderhead
   default_option: ballad
-  pretty_name: Upgraded Skyward Strike
+  pretty_name: Open Thunderhead
   pretty_options:
     - Ballad
     - Open
