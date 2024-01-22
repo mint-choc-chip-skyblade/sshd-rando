@@ -8,6 +8,7 @@ from constants.randoconstants import VERSION
 from filepathconstants import ICON_PATH
 
 from gui.accessibility import Accessibility
+from gui.dialogs.error_dialog import error, error_from_str
 from gui.guithreads import RandomizationThread
 from gui.options import Options
 from gui.dialogs.randomize_progress_dialog import RandomizerProgressDialog
@@ -19,6 +20,8 @@ class Main(QMainWindow):
         super().__init__()
 
         self.randomize_thread = RandomizationThread()
+
+        self.randomize_thread.error_abort.connect(self.thread_error)
 
         self.ui = Ui_main_window()
         self.ui.setupUi(self)
@@ -90,15 +93,21 @@ class Main(QMainWindow):
 
         return QMainWindow.eventFilter(self, target, event)
 
+    def thread_error(self, exception: str, traceback: str):
+        error_from_str(exception, traceback)
+        sys.exit()
 
-def start_gui():
-    app = QApplication([])
 
-    widget = Main()
-    widget.show()
+def start_gui(app: QApplication):
+    try:
+        widget = Main()
+        widget.show()
 
-    sys.exit(app.exec())
+        sys.exit(app.exec())
+    except Exception as e:
+        error(e)
+        sys.exit()
 
 
 if __name__ == "__main__":
-    start_gui()
+    start_gui(QApplication([]))

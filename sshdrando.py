@@ -37,7 +37,16 @@ if args.with_gui:
     from gui.main import start_gui
 
     if __name__ == "__main__":
-        start_gui()
+        # Before starting the gui, setup exception handling
+        from PySide6.QtWidgets import QApplication
+        from gui.dialogs.error_dialog import error
+
+        app = QApplication([])
+
+        try:
+            start_gui(app)
+        except Exception as e:
+            error(e)
 else:
     from randomize import randomize
 
