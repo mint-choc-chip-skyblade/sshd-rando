@@ -59,13 +59,17 @@ class ListPair(QObject):
         )
 
         self.non_option_list_proxy.setSourceModel(self.non_option_list_model)
-        self.non_option_list_model.setStringList(
-            [
-                option
-                for option in self.setting_options_list
-                if option not in current_setting_list
-            ]
-        )
+
+        current_setting_list_copy = current_setting_list.copy()
+        non_option_list = []
+
+        for option in self.setting_options_list:
+            if option not in current_setting_list_copy:
+                non_option_list.append(option)
+            else:
+                current_setting_list_copy.remove(option)
+
+        self.non_option_list_model.setStringList(non_option_list)
         self.non_settings_list_view.setModel(self.non_option_list_proxy)
 
         add_button.clicked.connect(self.add)
@@ -142,19 +146,26 @@ class ListPair(QObject):
     def get_added(self) -> list:
         # A little more complex than *necessary* so that the config file
         # remains ordered correctly
-        added_list = [
-            added
-            for added in self.option_list_proxy.full_list
-            if added in self.option_list_model.stringList()
-        ]
+        current_list = self.option_list_model.stringList()
+        added_list = []
+
+        for element in self.option_list_proxy.full_list:
+            if element in current_list:
+                added_list.append(element)
+                current_list.remove(element)
+
         return added_list
 
     def get_not_added(self) -> list:
-        not_added_list = [
-            added
-            for added in self.option_list_proxy.full_list
-            if added not in self.option_list_model.stringList()
-        ]
+        current_list = self.option_list_model.stringList()
+        not_added_list = []
+
+        for element in self.option_list_proxy.full_list:
+            if element not in current_list:
+                not_added_list.append(element)
+            else:
+                current_list.remove(element)
+
         return not_added_list
 
     def _store_and_remove_filters(self):
