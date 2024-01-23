@@ -455,14 +455,19 @@ class Options:
             )
             # self.ui.settings_current_option_description_label.setStyleSheet("")
 
-    def format_description(self, setting: Setting, setting_index: int) -> str:
-        formatted_description = (
-            "<b>"
-            + OPTION_PREFIX
-            + setting.info.pretty_options[setting_index]
-            + "</b>: "
-        )
-        formatted_description += setting.info.descriptions[setting_index]
+    def format_description(
+        self, setting: Setting, option_index: int, custom_option_name: str | None = None
+    ) -> str:
+        formatted_description = "<b>" + OPTION_PREFIX
+
+        if custom_option_name:
+            formatted_description += custom_option_name + "</b>: "
+        else:
+            formatted_description += (
+                setting.info.pretty_options[option_index] + "</b>: "
+            )
+
+        formatted_description += setting.info.descriptions[option_index]
         return formatted_description
 
     def update_descriptions(self, target: QObject | None) -> bool:
@@ -491,8 +496,30 @@ class Options:
         )
         description_text += "<br><br><b>All Options</b>:<br>"
 
-        for option_index in range(0, len(setting.info.options)):
-            description_text += self.format_description(setting, option_index) + "<br>"
+        try:
+            widget: QWidget = getattr(self.ui, "setting_" + setting.name)
+        except:
+            raise Exception(f"Could not find widget for setting: {setting.name}.")
+
+        if isinstance(widget, QSpinBox):
+            last_index = len(setting.info.options) - 1
+
+            if is_random := setting.info.options[last_index] == "random":
+                last_index -= 1
+
+            description_text += self.format_description(
+                setting,
+                0,
+                custom_option_name=f"{setting.info.options[0]}-{setting.info.options[last_index]}",
+            )
+
+            if is_random:
+                description_text += "<br>" + self.format_description(setting, -1)
+        else:
+            for option_index in range(0, len(setting.info.options)):
+                description_text += (
+                    self.format_description(setting, option_index) + "<br>"
+                )
 
         dialog_title = setting.info.pretty_name + " Options"
         description_dialog.about(target, dialog_title, description_text)
