@@ -92,15 +92,20 @@ World 1:
   groose_traps: random
   starting_sword: goddess_longsword
   starting_inventory:
-   - Scrapper
-   - Bomb Bag
-   - Goddess's Harp
-   - Fire Sanctuary Small Key
+  - Scrapper
+  - Bomb Bag
+  - Goddess's Harp
+  - Fire Sanctuary Small Key
   excluded_locations:
-   - Sky Keep - Sacred Power of Nayru
-   - Isle of Songs - Strike Crest with Goddess Sword
+  - Sky Keep - Sacred Power of Nayru
+  - Isle of Songs - Strike Crest with Goddess Sword
+  excluded_hint_locations:
+  - Central Skyloft - Gossip Stone on Waterfall Island
+  - Deep Woods - Gossip Stone
+  - Upper Eldin Cave - Gossip Stone
+  - Lanayru Caves - Gossip Stone towards Lanayru Gorge
   mixed_entrance_pools:
-   - - Dungeon
-     - Trial Gate
-   - - Door
-     - Interior
+  - - Dungeon
+    - Trial Gate
+  - - Door
+    - Interior

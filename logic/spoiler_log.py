@@ -201,6 +201,9 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 f"    excluded_locations: {world.setting_map.excluded_locations}\n"
             )
             spoiler_log.write(
+                f"    excluded_hint_locations: {world.setting_map.excluded_hint_locations}\n"
+            )
+            spoiler_log.write(
                 f"    mixed_entrance_pools: {world.setting_map.mixed_entrance_pools}\n"
             )
 

@@ -46,6 +46,7 @@ def create_default_config(filename: Path):
     setting_map = config.settings[0]
     setting_map.starting_inventory = get_default_setting("starting_inventory")
     setting_map.excluded_locations = get_default_setting("excluded_locations")
+    setting_map.excluded_hint_locations = get_default_setting("excluded_hint_locations")
     setting_map.mixed_entrance_pools = get_default_setting("mixed_entrance_pools")
 
     for setting_name in get_all_settings_info():
@@ -58,7 +59,7 @@ def create_default_setting(setting_name: str) -> Setting:
     all_settings_info = get_all_settings_info()
 
     if (setting_info := all_settings_info.get(setting_name)) is None:
-        raise Exception(f"Could not find setting info for setting: {setting_name}.")
+        raise ConfigError(f"Could not find setting info for setting: {setting_name}.")
 
     new_setting = Setting(
         setting_name,
@@ -103,6 +104,12 @@ def write_config_to_file(filename: Path, config: Config):
 
             for loc in setting_map.excluded_locations:
                 config_out[world_num]["excluded_locations"].append(loc)
+
+            # Map excluded hint locations
+            config_out[world_num]["excluded_hint_locations"] = []
+
+            for loc in setting_map.excluded_hint_locations:
+                config_out[world_num]["excluded_hint_locations"].append(loc)
 
             # Map mixed pools
             config_out[world_num]["mixed_entrance_pools"] = []
@@ -161,7 +168,7 @@ def load_config_from_file(
 
         # Create default World 1 if it doesn't exist already
         if world_num_str not in config_in:
-            config_in[world_num_str] = []
+            config_in[world_num_str] = {}
 
         settings_info = get_all_settings_info()
         while world_num_str in config_in:
@@ -172,6 +179,11 @@ def load_config_from_file(
                 # Special handling for starting inventory
                 if setting_name == "starting_inventory":
                     starting_inventory: list = config_in[world_num_str][setting_name]
+
+                    if not isinstance(starting_inventory, list):
+                        raise ConfigError(
+                            f"Could not read value for setting '{setting_name}'. Are you sure that {setting_name} is defined as a list? Current value: {starting_inventory}."
+                        )
 
                     # Verify starting inventory list is valid
                     invalid_starting_items = starting_inventory.copy()
@@ -202,14 +214,41 @@ def load_config_from_file(
                     excluded_locations: list[str] = config_in[world_num_str][
                         setting_name
                     ]
+
+                    if not isinstance(excluded_locations, list):
+                        raise ConfigError(
+                            f"Could not read value for setting '{setting_name}'. Are you sure that {setting_name} is defined as a list? Current value: {excluded_locations}."
+                        )
+
                     cur_world_settings.excluded_locations = excluded_locations
+                    continue
+
+                # Special handling for excluded hint locations
+                if setting_name == "excluded_hint_locations":
+                    excluded_hint_locations: list[str] = config_in[world_num_str][
+                        setting_name
+                    ]
+
+                    if not isinstance(excluded_hint_locations, list):
+                        raise ConfigError(
+                            f"Could not read value for setting '{setting_name}'. Are you sure that {setting_name} is defined as a list? Current value: {excluded_hint_locations}."
+                        )
+
+                    cur_world_settings.excluded_hint_locations = excluded_hint_locations
                     continue
 
                 # Special handling for mixed entrance pools
                 if setting_name == "mixed_entrance_pools":
                     mixed_pools = config_in[world_num_str][setting_name]
+
+                    if not isinstance(mixed_pools, list):
+                        raise ConfigError(
+                            f"Could not read value for setting '{setting_name}'. Are you sure that {setting_name} is defined as a list? Current value: {mixed_pools}."
+                        )
+
                     for pool in mixed_pools:
                         cur_world_settings.mixed_entrance_pools.append(pool)
+
                     # Turn mixed pools into a list of lists
                     if mixed_pools:
                         if type(mixed_pools[0]) is str:
@@ -240,6 +279,19 @@ def load_config_from_file(
                     default_value = info.options[info.default_option_index]
                     cur_world_settings.settings[setting_name] = Setting(
                         setting_name, default_value, info
+                    )
+                    rewrite_config = True
+
+            # Special handling for other settings
+            for setting_name in (
+                "starting_inventory",
+                "excluded_locations",
+                "excluded_hint_locations",
+                "mixed_entrance_pools",
+            ):
+                if config_in[world_num_str].get(setting_name) is None:
+                    cur_world_settings.__setattr__(
+                        setting_name, get_default_setting(setting_name)
                     )
                     rewrite_config = True
 

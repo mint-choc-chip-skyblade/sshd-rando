@@ -25,7 +25,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(1300, 900)
+        main_window.resize(1300, 800)
         main_window.setStyleSheet(u"QToolTip {\n"
 "color: #000000;\n"
 "background-color: #FFFFFF;\n"
@@ -140,11 +140,15 @@ class Ui_main_window(object):
 
         self.verticalLayout_4.addWidget(self.how_to_group_box)
 
+        self.gridLayout_7 = QGridLayout()
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.useful_info_group_box = QGroupBox(self.getting_started_tab)
         self.useful_info_group_box.setObjectName(u"useful_info_group_box")
-        self.horizontalLayout = QHBoxLayout(self.useful_info_group_box)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        sizePolicy3.setHeightForWidth(self.useful_info_group_box.sizePolicy().hasHeightForWidth())
+        self.useful_info_group_box.setSizePolicy(sizePolicy3)
+        self.horizontalLayout_7 = QHBoxLayout(self.useful_info_group_box)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.horizontalLayout_7.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.useful_choose_settings_group_box = QGroupBox(self.useful_info_group_box)
         self.useful_choose_settings_group_box.setObjectName(u"useful_choose_settings_group_box")
         sizePolicy3.setHeightForWidth(self.useful_choose_settings_group_box.sizePolicy().hasHeightForWidth())
@@ -162,7 +166,7 @@ class Ui_main_window(object):
         self.verticalLayout_8.addWidget(self.choose_settings_label)
 
 
-        self.horizontalLayout.addWidget(self.useful_choose_settings_group_box)
+        self.horizontalLayout_7.addWidget(self.useful_choose_settings_group_box)
 
         self.useful_links_group_box = QGroupBox(self.useful_info_group_box)
         self.useful_links_group_box.setObjectName(u"useful_links_group_box")
@@ -172,65 +176,154 @@ class Ui_main_window(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.links_label = QLabel(self.useful_links_group_box)
         self.links_label.setObjectName(u"links_label")
+        sizePolicy3.setHeightForWidth(self.links_label.sizePolicy().hasHeightForWidth())
+        self.links_label.setSizePolicy(sizePolicy3)
+        self.links_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.links_label.setOpenExternalLinks(True)
 
         self.horizontalLayout_2.addWidget(self.links_label)
 
-        self.links_hspacer = QSpacerItem(40, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
 
-        self.horizontalLayout_2.addItem(self.links_hspacer)
-
-
-        self.horizontalLayout.addWidget(self.useful_links_group_box)
+        self.horizontalLayout_7.addWidget(self.useful_links_group_box)
 
 
-        self.verticalLayout_4.addWidget(self.useful_info_group_box)
+        self.gridLayout_7.addWidget(self.useful_info_group_box, 0, 1, 1, 1)
 
-        self.file_setup_group_box = QGroupBox(self.getting_started_tab)
-        self.file_setup_group_box.setObjectName(u"file_setup_group_box")
-        self.gridLayout = QGridLayout(self.file_setup_group_box)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.extract_label = QLabel(self.file_setup_group_box)
-        self.extract_label.setObjectName(u"extract_label")
-        sizePolicy3.setHeightForWidth(self.extract_label.sizePolicy().hasHeightForWidth())
-        self.extract_label.setSizePolicy(sizePolicy3)
-
-        self.gridLayout.addWidget(self.extract_label, 1, 0, 1, 1)
-
-        self.extract_line_edit = QLineEdit(self.file_setup_group_box)
-        self.extract_line_edit.setObjectName(u"extract_line_edit")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        self.theming_group_box = QGroupBox(self.getting_started_tab)
+        self.theming_group_box.setObjectName(u"theming_group_box")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
         sizePolicy4.setHorizontalStretch(0)
         sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.extract_line_edit.sizePolicy().hasHeightForWidth())
-        self.extract_line_edit.setSizePolicy(sizePolicy4)
+        sizePolicy4.setHeightForWidth(self.theming_group_box.sizePolicy().hasHeightForWidth())
+        self.theming_group_box.setSizePolicy(sizePolicy4)
+        self.horizontalLayout_6 = QHBoxLayout(self.theming_group_box)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.groupBox = QGroupBox(self.theming_group_box)
+        self.groupBox.setObjectName(u"groupBox")
+        self.verticalLayout_3 = QVBoxLayout(self.groupBox)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.theme_mode_label = QLabel(self.groupBox)
+        self.theme_mode_label.setObjectName(u"theme_mode_label")
 
-        self.gridLayout.addWidget(self.extract_line_edit, 1, 2, 1, 1)
+        self.horizontalLayout.addWidget(self.theme_mode_label)
 
-        self.extract_button = QPushButton(self.file_setup_group_box)
-        self.extract_button.setObjectName(u"extract_button")
+        self.theme_mode_combo_box = QComboBox(self.groupBox)
+        self.theme_mode_combo_box.setObjectName(u"theme_mode_combo_box")
+        sizePolicy4.setHeightForWidth(self.theme_mode_combo_box.sizePolicy().hasHeightForWidth())
+        self.theme_mode_combo_box.setSizePolicy(sizePolicy4)
 
-        self.gridLayout.addWidget(self.extract_button, 1, 3, 1, 1)
-
-        self.output_line_edit = QLineEdit(self.file_setup_group_box)
-        self.output_line_edit.setObjectName(u"output_line_edit")
-
-        self.gridLayout.addWidget(self.output_line_edit, 2, 2, 1, 1)
-
-        self.output_label = QLabel(self.file_setup_group_box)
-        self.output_label.setObjectName(u"output_label")
-        sizePolicy3.setHeightForWidth(self.output_label.sizePolicy().hasHeightForWidth())
-        self.output_label.setSizePolicy(sizePolicy3)
-
-        self.gridLayout.addWidget(self.output_label, 2, 0, 1, 1)
-
-        self.output_button = QPushButton(self.file_setup_group_box)
-        self.output_button.setObjectName(u"output_button")
-
-        self.gridLayout.addWidget(self.output_button, 2, 3, 1, 1)
+        self.horizontalLayout.addWidget(self.theme_mode_combo_box)
 
 
-        self.verticalLayout_4.addWidget(self.file_setup_group_box)
+        self.verticalLayout_3.addLayout(self.horizontalLayout)
+
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.theme_presets_label = QLabel(self.groupBox)
+        self.theme_presets_label.setObjectName(u"theme_presets_label")
+
+        self.horizontalLayout_8.addWidget(self.theme_presets_label)
+
+        self.theme_presets_combo_box = QComboBox(self.groupBox)
+        self.theme_presets_combo_box.setObjectName(u"theme_presets_combo_box")
+        sizePolicy4.setHeightForWidth(self.theme_presets_combo_box.sizePolicy().hasHeightForWidth())
+        self.theme_presets_combo_box.setSizePolicy(sizePolicy4)
+
+        self.horizontalLayout_8.addWidget(self.theme_presets_combo_box)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_8)
+
+        self.use_custom_theme_check_box = QCheckBox(self.groupBox)
+        self.use_custom_theme_check_box.setObjectName(u"use_custom_theme_check_box")
+
+        self.verticalLayout_3.addWidget(self.use_custom_theme_check_box)
+
+        self.customize_theme_button = QPushButton(self.groupBox)
+        self.customize_theme_button.setObjectName(u"customize_theme_button")
+
+        self.verticalLayout_3.addWidget(self.customize_theme_button)
+
+        self.verticalSpacer_2 = QSpacerItem(1, 1, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_3.addItem(self.verticalSpacer_2)
+
+
+        self.horizontalLayout_6.addWidget(self.groupBox)
+
+        self.theming_fonts = QGroupBox(self.theming_group_box)
+        self.theming_fonts.setObjectName(u"theming_fonts")
+        self.verticalLayout_12 = QVBoxLayout(self.theming_fonts)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.font_family_label = QLabel(self.theming_fonts)
+        self.font_family_label.setObjectName(u"font_family_label")
+        sizePolicy3.setHeightForWidth(self.font_family_label.sizePolicy().hasHeightForWidth())
+        self.font_family_label.setSizePolicy(sizePolicy3)
+
+        self.horizontalLayout_9.addWidget(self.font_family_label)
+
+        self.font_family_combo_box = QFontComboBox(self.theming_fonts)
+        self.font_family_combo_box.setObjectName(u"font_family_combo_box")
+        sizePolicy4.setHeightForWidth(self.font_family_combo_box.sizePolicy().hasHeightForWidth())
+        self.font_family_combo_box.setSizePolicy(sizePolicy4)
+        self.font_family_combo_box.setEditable(False)
+        self.font_family_combo_box.setFontFilters(QFontComboBox.ScalableFonts)
+        font = QFont()
+        font.setFamilies([u"Arial"])
+        font.setPointSize(10)
+        self.font_family_combo_box.setCurrentFont(font)
+
+        self.horizontalLayout_9.addWidget(self.font_family_combo_box)
+
+
+        self.verticalLayout_12.addLayout(self.horizontalLayout_9)
+
+        self.font_size_layout = QHBoxLayout()
+        self.font_size_layout.setObjectName(u"font_size_layout")
+        self.font_size_label = QLabel(self.theming_fonts)
+        self.font_size_label.setObjectName(u"font_size_label")
+
+        self.font_size_layout.addWidget(self.font_size_label)
+
+        self.font_size_spin_box = QSpinBox(self.theming_fonts)
+        self.font_size_spin_box.setObjectName(u"font_size_spin_box")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Fixed)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.font_size_spin_box.sizePolicy().hasHeightForWidth())
+        self.font_size_spin_box.setSizePolicy(sizePolicy5)
+        self.font_size_spin_box.setMinimum(6)
+        self.font_size_spin_box.setMaximum(14)
+        self.font_size_spin_box.setValue(10)
+
+        self.font_size_layout.addWidget(self.font_size_spin_box)
+
+
+        self.verticalLayout_12.addLayout(self.font_size_layout)
+
+        self.font_reset_button = QPushButton(self.theming_fonts)
+        self.font_reset_button.setObjectName(u"font_reset_button")
+
+        self.verticalLayout_12.addWidget(self.font_reset_button)
+
+        self.verticalSpacer = QSpacerItem(1, 1, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_12.addItem(self.verticalSpacer)
+
+
+        self.horizontalLayout_6.addWidget(self.theming_fonts)
+
+
+        self.gridLayout_7.addWidget(self.theming_group_box, 0, 0, 1, 1)
+
+        self.gridLayout_7.setColumnStretch(0, 1)
+        self.gridLayout_7.setColumnStretch(1, 1)
+
+        self.verticalLayout_4.addLayout(self.gridLayout_7)
 
         self.tab_widget.addTab(self.getting_started_tab, "")
         self.world_tab = QWidget()
@@ -263,9 +356,6 @@ class Ui_main_window(object):
 
         self.setting_peatrice_conversations = QSpinBox(self.tweaks_group_box)
         self.setting_peatrice_conversations.setObjectName(u"setting_peatrice_conversations")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Fixed)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
         sizePolicy5.setHeightForWidth(self.setting_peatrice_conversations.sizePolicy().hasHeightForWidth())
         self.setting_peatrice_conversations.setSizePolicy(sizePolicy5)
 
@@ -507,124 +597,6 @@ class Ui_main_window(object):
 
 
         self.gridLayout_2.addWidget(self.open_world_group_box, 0, 1, 1, 1)
-
-        self.hints_group_box = QGroupBox(self.world_tab)
-        self.hints_group_box.setObjectName(u"hints_group_box")
-        self.verticalLayout_23 = QVBoxLayout(self.hints_group_box)
-        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
-        self.setting_gossip_stone_hints = QCheckBox(self.hints_group_box)
-        self.setting_gossip_stone_hints.setObjectName(u"setting_gossip_stone_hints")
-
-        self.verticalLayout_23.addWidget(self.setting_gossip_stone_hints)
-
-        self.setting_fi_hints = QCheckBox(self.hints_group_box)
-        self.setting_fi_hints.setObjectName(u"setting_fi_hints")
-
-        self.verticalLayout_23.addWidget(self.setting_fi_hints)
-
-        self.setting_impa_sot_hint = QCheckBox(self.hints_group_box)
-        self.setting_impa_sot_hint.setObjectName(u"setting_impa_sot_hint")
-
-        self.verticalLayout_23.addWidget(self.setting_impa_sot_hint)
-
-        self.song_hints_label = QLabel(self.hints_group_box)
-        self.song_hints_label.setObjectName(u"song_hints_label")
-
-        self.verticalLayout_23.addWidget(self.song_hints_label)
-
-        self.setting_song_hints = QComboBox(self.hints_group_box)
-        self.setting_song_hints.setObjectName(u"setting_song_hints")
-
-        self.verticalLayout_23.addWidget(self.setting_song_hints)
-
-        self.path_hints_layout = QHBoxLayout()
-        self.path_hints_layout.setSpacing(0)
-        self.path_hints_layout.setObjectName(u"path_hints_layout")
-        self.path_hints_label = QLabel(self.hints_group_box)
-        self.path_hints_label.setObjectName(u"path_hints_label")
-
-        self.path_hints_layout.addWidget(self.path_hints_label)
-
-        self.setting_path_hints = QSpinBox(self.hints_group_box)
-        self.setting_path_hints.setObjectName(u"setting_path_hints")
-        sizePolicy5.setHeightForWidth(self.setting_path_hints.sizePolicy().hasHeightForWidth())
-        self.setting_path_hints.setSizePolicy(sizePolicy5)
-
-        self.path_hints_layout.addWidget(self.setting_path_hints)
-
-
-        self.verticalLayout_23.addLayout(self.path_hints_layout)
-
-        self.barren_hints_layout = QHBoxLayout()
-        self.barren_hints_layout.setSpacing(0)
-        self.barren_hints_layout.setObjectName(u"barren_hints_layout")
-        self.barren_hints_label = QLabel(self.hints_group_box)
-        self.barren_hints_label.setObjectName(u"barren_hints_label")
-
-        self.barren_hints_layout.addWidget(self.barren_hints_label)
-
-        self.setting_barren_hints = QSpinBox(self.hints_group_box)
-        self.setting_barren_hints.setObjectName(u"setting_barren_hints")
-        sizePolicy5.setHeightForWidth(self.setting_barren_hints.sizePolicy().hasHeightForWidth())
-        self.setting_barren_hints.setSizePolicy(sizePolicy5)
-
-        self.barren_hints_layout.addWidget(self.setting_barren_hints)
-
-
-        self.verticalLayout_23.addLayout(self.barren_hints_layout)
-
-        self.location_hints_layout = QHBoxLayout()
-        self.location_hints_layout.setSpacing(0)
-        self.location_hints_layout.setObjectName(u"location_hints_layout")
-        self.location_hints_label = QLabel(self.hints_group_box)
-        self.location_hints_label.setObjectName(u"location_hints_label")
-
-        self.location_hints_layout.addWidget(self.location_hints_label)
-
-        self.setting_location_hints = QSpinBox(self.hints_group_box)
-        self.setting_location_hints.setObjectName(u"setting_location_hints")
-        sizePolicy5.setHeightForWidth(self.setting_location_hints.sizePolicy().hasHeightForWidth())
-        self.setting_location_hints.setSizePolicy(sizePolicy5)
-
-        self.location_hints_layout.addWidget(self.setting_location_hints)
-
-
-        self.verticalLayout_23.addLayout(self.location_hints_layout)
-
-        self.item_hints_layout = QHBoxLayout()
-        self.item_hints_layout.setSpacing(0)
-        self.item_hints_layout.setObjectName(u"item_hints_layout")
-        self.item_hints_label = QLabel(self.hints_group_box)
-        self.item_hints_label.setObjectName(u"item_hints_label")
-
-        self.item_hints_layout.addWidget(self.item_hints_label)
-
-        self.setting_item_hints = QSpinBox(self.hints_group_box)
-        self.setting_item_hints.setObjectName(u"setting_item_hints")
-        sizePolicy5.setHeightForWidth(self.setting_item_hints.sizePolicy().hasHeightForWidth())
-        self.setting_item_hints.setSizePolicy(sizePolicy5)
-
-        self.item_hints_layout.addWidget(self.setting_item_hints)
-
-
-        self.verticalLayout_23.addLayout(self.item_hints_layout)
-
-        self.setting_always_hints = QCheckBox(self.hints_group_box)
-        self.setting_always_hints.setObjectName(u"setting_always_hints")
-
-        self.verticalLayout_23.addWidget(self.setting_always_hints)
-
-        self.setting_cryptic_hint_text = QCheckBox(self.hints_group_box)
-        self.setting_cryptic_hint_text.setObjectName(u"setting_cryptic_hint_text")
-
-        self.verticalLayout_23.addWidget(self.setting_cryptic_hint_text)
-
-        self.hints_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_23.addItem(self.hints_vspacer)
-
-
-        self.gridLayout_2.addWidget(self.hints_group_box, 1, 1, 1, 1)
 
         self.hint_placements_group_box = QGroupBox(self.world_tab)
         self.hint_placements_group_box.setObjectName(u"hint_placements_group_box")
@@ -1065,6 +1037,220 @@ class Ui_main_window(object):
         self.gridLayout_4.setColumnStretch(2, 6)
         self.gridLayout_4.setColumnStretch(3, 4)
         self.tab_widget.addTab(self.inventory_tab, "")
+        self.hints_tab = QWidget()
+        self.hints_tab.setObjectName(u"hints_tab")
+        self.gridLayout_8 = QGridLayout(self.hints_tab)
+        self.gridLayout_8.setObjectName(u"gridLayout_8")
+        self.included_hint_locations_group_box = QGroupBox(self.hints_tab)
+        self.included_hint_locations_group_box.setObjectName(u"included_hint_locations_group_box")
+        sizePolicy3.setHeightForWidth(self.included_hint_locations_group_box.sizePolicy().hasHeightForWidth())
+        self.included_hint_locations_group_box.setSizePolicy(sizePolicy3)
+        self.verticalLayout_26 = QVBoxLayout(self.included_hint_locations_group_box)
+        self.verticalLayout_26.setObjectName(u"verticalLayout_26")
+        self.included_hint_locations_free_search = QLineEdit(self.included_hint_locations_group_box)
+        self.included_hint_locations_free_search.setObjectName(u"included_hint_locations_free_search")
+        self.included_hint_locations_free_search.setClearButtonEnabled(True)
+
+        self.verticalLayout_26.addWidget(self.included_hint_locations_free_search)
+
+        self.included_hint_locations_list_view = QListView(self.included_hint_locations_group_box)
+        self.included_hint_locations_list_view.setObjectName(u"included_hint_locations_list_view")
+        sizePolicy8.setHeightForWidth(self.included_hint_locations_list_view.sizePolicy().hasHeightForWidth())
+        self.included_hint_locations_list_view.setSizePolicy(sizePolicy8)
+        self.included_hint_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.included_hint_locations_list_view.setProperty("showDropIndicator", False)
+        self.included_hint_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.included_hint_locations_list_view.setSelectionRectVisible(False)
+
+        self.verticalLayout_26.addWidget(self.included_hint_locations_list_view)
+
+
+        self.gridLayout_8.addWidget(self.included_hint_locations_group_box, 0, 0, 1, 1)
+
+        self.hints_button_layout = QVBoxLayout()
+        self.hints_button_layout.setObjectName(u"hints_button_layout")
+        self.hints_button_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.hints_top_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.hints_button_layout.addItem(self.hints_top_vspacer)
+
+        self.include_hint_location_button = QPushButton(self.hints_tab)
+        self.include_hint_location_button.setObjectName(u"include_hint_location_button")
+        sizePolicy6.setHeightForWidth(self.include_hint_location_button.sizePolicy().hasHeightForWidth())
+        self.include_hint_location_button.setSizePolicy(sizePolicy6)
+
+        self.hints_button_layout.addWidget(self.include_hint_location_button)
+
+        self.hints_middle_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.hints_button_layout.addItem(self.hints_middle_vspacer)
+
+        self.exclude_hint_location_button = QPushButton(self.hints_tab)
+        self.exclude_hint_location_button.setObjectName(u"exclude_hint_location_button")
+        sizePolicy6.setHeightForWidth(self.exclude_hint_location_button.sizePolicy().hasHeightForWidth())
+        self.exclude_hint_location_button.setSizePolicy(sizePolicy6)
+
+        self.hints_button_layout.addWidget(self.exclude_hint_location_button)
+
+        self.hints_bottom_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.hints_button_layout.addItem(self.hints_bottom_vspacer)
+
+        self.hints_reset_button = QPushButton(self.hints_tab)
+        self.hints_reset_button.setObjectName(u"hints_reset_button")
+
+        self.hints_button_layout.addWidget(self.hints_reset_button)
+
+
+        self.gridLayout_8.addLayout(self.hints_button_layout, 0, 1, 1, 1)
+
+        self.excluded_hint_locations_group_box = QGroupBox(self.hints_tab)
+        self.excluded_hint_locations_group_box.setObjectName(u"excluded_hint_locations_group_box")
+        self.verticalLayout_27 = QVBoxLayout(self.excluded_hint_locations_group_box)
+        self.verticalLayout_27.setObjectName(u"verticalLayout_27")
+        self.excluded_hint_locations_free_search = QLineEdit(self.excluded_hint_locations_group_box)
+        self.excluded_hint_locations_free_search.setObjectName(u"excluded_hint_locations_free_search")
+        self.excluded_hint_locations_free_search.setClearButtonEnabled(True)
+
+        self.verticalLayout_27.addWidget(self.excluded_hint_locations_free_search)
+
+        self.excluded_hint_locations_list_view = QListView(self.excluded_hint_locations_group_box)
+        self.excluded_hint_locations_list_view.setObjectName(u"excluded_hint_locations_list_view")
+        sizePolicy8.setHeightForWidth(self.excluded_hint_locations_list_view.sizePolicy().hasHeightForWidth())
+        self.excluded_hint_locations_list_view.setSizePolicy(sizePolicy8)
+        self.excluded_hint_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.excluded_hint_locations_list_view.setProperty("showDropIndicator", False)
+        self.excluded_hint_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.excluded_hint_locations_list_view.setSelectionRectVisible(False)
+
+        self.verticalLayout_27.addWidget(self.excluded_hint_locations_list_view)
+
+
+        self.gridLayout_8.addWidget(self.excluded_hint_locations_group_box, 0, 2, 1, 1)
+
+        self.hints_group_box = QGroupBox(self.hints_tab)
+        self.hints_group_box.setObjectName(u"hints_group_box")
+        self.verticalLayout_23 = QVBoxLayout(self.hints_group_box)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.setting_gossip_stone_hints = QCheckBox(self.hints_group_box)
+        self.setting_gossip_stone_hints.setObjectName(u"setting_gossip_stone_hints")
+
+        self.verticalLayout_23.addWidget(self.setting_gossip_stone_hints)
+
+        self.setting_fi_hints = QCheckBox(self.hints_group_box)
+        self.setting_fi_hints.setObjectName(u"setting_fi_hints")
+
+        self.verticalLayout_23.addWidget(self.setting_fi_hints)
+
+        self.setting_impa_sot_hint = QCheckBox(self.hints_group_box)
+        self.setting_impa_sot_hint.setObjectName(u"setting_impa_sot_hint")
+
+        self.verticalLayout_23.addWidget(self.setting_impa_sot_hint)
+
+        self.song_hints_label = QLabel(self.hints_group_box)
+        self.song_hints_label.setObjectName(u"song_hints_label")
+
+        self.verticalLayout_23.addWidget(self.song_hints_label)
+
+        self.setting_song_hints = QComboBox(self.hints_group_box)
+        self.setting_song_hints.setObjectName(u"setting_song_hints")
+
+        self.verticalLayout_23.addWidget(self.setting_song_hints)
+
+        self.path_hints_layout = QHBoxLayout()
+        self.path_hints_layout.setSpacing(0)
+        self.path_hints_layout.setObjectName(u"path_hints_layout")
+        self.path_hints_label = QLabel(self.hints_group_box)
+        self.path_hints_label.setObjectName(u"path_hints_label")
+
+        self.path_hints_layout.addWidget(self.path_hints_label)
+
+        self.setting_path_hints = QSpinBox(self.hints_group_box)
+        self.setting_path_hints.setObjectName(u"setting_path_hints")
+        sizePolicy5.setHeightForWidth(self.setting_path_hints.sizePolicy().hasHeightForWidth())
+        self.setting_path_hints.setSizePolicy(sizePolicy5)
+
+        self.path_hints_layout.addWidget(self.setting_path_hints)
+
+
+        self.verticalLayout_23.addLayout(self.path_hints_layout)
+
+        self.barren_hints_layout = QHBoxLayout()
+        self.barren_hints_layout.setSpacing(0)
+        self.barren_hints_layout.setObjectName(u"barren_hints_layout")
+        self.barren_hints_label = QLabel(self.hints_group_box)
+        self.barren_hints_label.setObjectName(u"barren_hints_label")
+
+        self.barren_hints_layout.addWidget(self.barren_hints_label)
+
+        self.setting_barren_hints = QSpinBox(self.hints_group_box)
+        self.setting_barren_hints.setObjectName(u"setting_barren_hints")
+        sizePolicy5.setHeightForWidth(self.setting_barren_hints.sizePolicy().hasHeightForWidth())
+        self.setting_barren_hints.setSizePolicy(sizePolicy5)
+
+        self.barren_hints_layout.addWidget(self.setting_barren_hints)
+
+
+        self.verticalLayout_23.addLayout(self.barren_hints_layout)
+
+        self.location_hints_layout = QHBoxLayout()
+        self.location_hints_layout.setSpacing(0)
+        self.location_hints_layout.setObjectName(u"location_hints_layout")
+        self.location_hints_label = QLabel(self.hints_group_box)
+        self.location_hints_label.setObjectName(u"location_hints_label")
+
+        self.location_hints_layout.addWidget(self.location_hints_label)
+
+        self.setting_location_hints = QSpinBox(self.hints_group_box)
+        self.setting_location_hints.setObjectName(u"setting_location_hints")
+        sizePolicy5.setHeightForWidth(self.setting_location_hints.sizePolicy().hasHeightForWidth())
+        self.setting_location_hints.setSizePolicy(sizePolicy5)
+
+        self.location_hints_layout.addWidget(self.setting_location_hints)
+
+
+        self.verticalLayout_23.addLayout(self.location_hints_layout)
+
+        self.item_hints_layout = QHBoxLayout()
+        self.item_hints_layout.setSpacing(0)
+        self.item_hints_layout.setObjectName(u"item_hints_layout")
+        self.item_hints_label = QLabel(self.hints_group_box)
+        self.item_hints_label.setObjectName(u"item_hints_label")
+
+        self.item_hints_layout.addWidget(self.item_hints_label)
+
+        self.setting_item_hints = QSpinBox(self.hints_group_box)
+        self.setting_item_hints.setObjectName(u"setting_item_hints")
+        sizePolicy5.setHeightForWidth(self.setting_item_hints.sizePolicy().hasHeightForWidth())
+        self.setting_item_hints.setSizePolicy(sizePolicy5)
+
+        self.item_hints_layout.addWidget(self.setting_item_hints)
+
+
+        self.verticalLayout_23.addLayout(self.item_hints_layout)
+
+        self.setting_always_hints = QCheckBox(self.hints_group_box)
+        self.setting_always_hints.setObjectName(u"setting_always_hints")
+
+        self.verticalLayout_23.addWidget(self.setting_always_hints)
+
+        self.setting_cryptic_hint_text = QCheckBox(self.hints_group_box)
+        self.setting_cryptic_hint_text.setObjectName(u"setting_cryptic_hint_text")
+
+        self.verticalLayout_23.addWidget(self.setting_cryptic_hint_text)
+
+        self.hints_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_23.addItem(self.hints_vspacer)
+
+
+        self.gridLayout_8.addWidget(self.hints_group_box, 0, 3, 1, 1)
+
+        self.gridLayout_8.setColumnStretch(0, 6)
+        self.gridLayout_8.setColumnStretch(1, 1)
+        self.gridLayout_8.setColumnStretch(2, 6)
+        self.gridLayout_8.setColumnStretch(3, 4)
+        self.tab_widget.addTab(self.hints_tab, "")
         self.logic_tab = QWidget()
         self.logic_tab.setObjectName(u"logic_tab")
         self.gridLayout_5 = QGridLayout(self.logic_tab)
@@ -1358,112 +1544,51 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.logic_tab, "")
         self.advanced_tab = QWidget()
         self.advanced_tab.setObjectName(u"advanced_tab")
+        self.file_setup_group_box = QGroupBox(self.advanced_tab)
+        self.file_setup_group_box.setObjectName(u"file_setup_group_box")
+        self.file_setup_group_box.setGeometry(QRect(10, 100, 1282, 90))
+        self.gridLayout = QGridLayout(self.file_setup_group_box)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.extract_label = QLabel(self.file_setup_group_box)
+        self.extract_label.setObjectName(u"extract_label")
+        sizePolicy3.setHeightForWidth(self.extract_label.sizePolicy().hasHeightForWidth())
+        self.extract_label.setSizePolicy(sizePolicy3)
+
+        self.gridLayout.addWidget(self.extract_label, 1, 0, 1, 1)
+
+        self.extract_line_edit = QLineEdit(self.file_setup_group_box)
+        self.extract_line_edit.setObjectName(u"extract_line_edit")
+        sizePolicy9 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(0)
+        sizePolicy9.setHeightForWidth(self.extract_line_edit.sizePolicy().hasHeightForWidth())
+        self.extract_line_edit.setSizePolicy(sizePolicy9)
+
+        self.gridLayout.addWidget(self.extract_line_edit, 1, 2, 1, 1)
+
+        self.extract_button = QPushButton(self.file_setup_group_box)
+        self.extract_button.setObjectName(u"extract_button")
+
+        self.gridLayout.addWidget(self.extract_button, 1, 3, 1, 1)
+
+        self.output_line_edit = QLineEdit(self.file_setup_group_box)
+        self.output_line_edit.setObjectName(u"output_line_edit")
+
+        self.gridLayout.addWidget(self.output_line_edit, 2, 2, 1, 1)
+
+        self.output_label = QLabel(self.file_setup_group_box)
+        self.output_label.setObjectName(u"output_label")
+        sizePolicy3.setHeightForWidth(self.output_label.sizePolicy().hasHeightForWidth())
+        self.output_label.setSizePolicy(sizePolicy3)
+
+        self.gridLayout.addWidget(self.output_label, 2, 0, 1, 1)
+
+        self.output_button = QPushButton(self.file_setup_group_box)
+        self.output_button.setObjectName(u"output_button")
+
+        self.gridLayout.addWidget(self.output_button, 2, 3, 1, 1)
+
         self.tab_widget.addTab(self.advanced_tab, "")
-        self.accessibility_tab = QWidget()
-        self.accessibility_tab.setObjectName(u"accessibility_tab")
-        self.horizontalLayout_4 = QHBoxLayout(self.accessibility_tab)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.theming_group_box = QGroupBox(self.accessibility_tab)
-        self.theming_group_box.setObjectName(u"theming_group_box")
-        self.verticalLayout_3 = QVBoxLayout(self.theming_group_box)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.theme_mode_label = QLabel(self.theming_group_box)
-        self.theme_mode_label.setObjectName(u"theme_mode_label")
-
-        self.verticalLayout_3.addWidget(self.theme_mode_label)
-
-        self.theme_mode_combo_box = QComboBox(self.theming_group_box)
-        self.theme_mode_combo_box.setObjectName(u"theme_mode_combo_box")
-
-        self.verticalLayout_3.addWidget(self.theme_mode_combo_box)
-
-        self.theme_presets_label = QLabel(self.theming_group_box)
-        self.theme_presets_label.setObjectName(u"theme_presets_label")
-
-        self.verticalLayout_3.addWidget(self.theme_presets_label)
-
-        self.theme_presets_combo_box = QComboBox(self.theming_group_box)
-        self.theme_presets_combo_box.setObjectName(u"theme_presets_combo_box")
-
-        self.verticalLayout_3.addWidget(self.theme_presets_combo_box)
-
-        self.use_custom_theme_check_box = QCheckBox(self.theming_group_box)
-        self.use_custom_theme_check_box.setObjectName(u"use_custom_theme_check_box")
-
-        self.verticalLayout_3.addWidget(self.use_custom_theme_check_box)
-
-        self.customize_theme_button = QPushButton(self.theming_group_box)
-        self.customize_theme_button.setObjectName(u"customize_theme_button")
-
-        self.verticalLayout_3.addWidget(self.customize_theme_button)
-
-        self.theming_vspacer = QSpacerItem(20, 448, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_3.addItem(self.theming_vspacer)
-
-
-        self.horizontalLayout_4.addWidget(self.theming_group_box)
-
-        self.theming_fonts = QGroupBox(self.accessibility_tab)
-        self.theming_fonts.setObjectName(u"theming_fonts")
-        self.verticalLayout_12 = QVBoxLayout(self.theming_fonts)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.font_family_label = QLabel(self.theming_fonts)
-        self.font_family_label.setObjectName(u"font_family_label")
-
-        self.verticalLayout_12.addWidget(self.font_family_label)
-
-        self.font_family_combo_box = QFontComboBox(self.theming_fonts)
-        self.font_family_combo_box.setObjectName(u"font_family_combo_box")
-        sizePolicy3.setHeightForWidth(self.font_family_combo_box.sizePolicy().hasHeightForWidth())
-        self.font_family_combo_box.setSizePolicy(sizePolicy3)
-        self.font_family_combo_box.setEditable(False)
-        self.font_family_combo_box.setFontFilters(QFontComboBox.ScalableFonts)
-        font = QFont()
-        font.setFamilies([u"Arial"])
-        font.setPointSize(10)
-        self.font_family_combo_box.setCurrentFont(font)
-
-        self.verticalLayout_12.addWidget(self.font_family_combo_box)
-
-        self.font_size_layout = QHBoxLayout()
-        self.font_size_layout.setObjectName(u"font_size_layout")
-        self.font_size_label = QLabel(self.theming_fonts)
-        self.font_size_label.setObjectName(u"font_size_label")
-
-        self.font_size_layout.addWidget(self.font_size_label)
-
-        self.font_size_spin_box = QSpinBox(self.theming_fonts)
-        self.font_size_spin_box.setObjectName(u"font_size_spin_box")
-        sizePolicy5.setHeightForWidth(self.font_size_spin_box.sizePolicy().hasHeightForWidth())
-        self.font_size_spin_box.setSizePolicy(sizePolicy5)
-        self.font_size_spin_box.setMinimum(6)
-        self.font_size_spin_box.setMaximum(14)
-        self.font_size_spin_box.setValue(10)
-
-        self.font_size_layout.addWidget(self.font_size_spin_box)
-
-
-        self.verticalLayout_12.addLayout(self.font_size_layout)
-
-        self.font_reset_button = QPushButton(self.theming_fonts)
-        self.font_reset_button.setObjectName(u"font_reset_button")
-
-        self.verticalLayout_12.addWidget(self.font_reset_button)
-
-        self.fonts_vspacer = QSpacerItem(20, 494, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_12.addItem(self.fonts_vspacer)
-
-
-        self.horizontalLayout_4.addWidget(self.theming_fonts)
-
-        self.groupBox_6 = QGroupBox(self.accessibility_tab)
-        self.groupBox_6.setObjectName(u"groupBox_6")
-
-        self.horizontalLayout_4.addWidget(self.groupBox_6)
-
-        self.tab_widget.addTab(self.accessibility_tab, "")
 
         self.verticalLayout_2.addWidget(self.tab_widget)
 
@@ -1471,11 +1596,11 @@ class Ui_main_window(object):
         self.settings_descriptions_layout.setObjectName(u"settings_descriptions_layout")
         self.settings_current_option_description_label = QLabel(self.central_widget)
         self.settings_current_option_description_label.setObjectName(u"settings_current_option_description_label")
-        sizePolicy9 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
-        sizePolicy9.setHorizontalStretch(0)
-        sizePolicy9.setVerticalStretch(0)
-        sizePolicy9.setHeightForWidth(self.settings_current_option_description_label.sizePolicy().hasHeightForWidth())
-        self.settings_current_option_description_label.setSizePolicy(sizePolicy9)
+        sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(0)
+        sizePolicy10.setHeightForWidth(self.settings_current_option_description_label.sizePolicy().hasHeightForWidth())
+        self.settings_current_option_description_label.setSizePolicy(sizePolicy10)
         self.settings_current_option_description_label.setMinimumSize(QSize(0, 64))
         self.settings_current_option_description_label.setTextFormat(Qt.RichText)
         self.settings_current_option_description_label.setWordWrap(True)
@@ -1484,8 +1609,8 @@ class Ui_main_window(object):
 
         self.settings_default_option_description_label = QLabel(self.central_widget)
         self.settings_default_option_description_label.setObjectName(u"settings_default_option_description_label")
-        sizePolicy9.setHeightForWidth(self.settings_default_option_description_label.sizePolicy().hasHeightForWidth())
-        self.settings_default_option_description_label.setSizePolicy(sizePolicy9)
+        sizePolicy10.setHeightForWidth(self.settings_default_option_description_label.sizePolicy().hasHeightForWidth())
+        self.settings_default_option_description_label.setSizePolicy(sizePolicy10)
         self.settings_default_option_description_label.setMinimumSize(QSize(0, 64))
         self.settings_default_option_description_label.setWordWrap(True)
 
@@ -1496,35 +1621,15 @@ class Ui_main_window(object):
 
         self.footer_grid_layout = QGridLayout()
         self.footer_grid_layout.setObjectName(u"footer_grid_layout")
-        self.setting_seed = QLineEdit(self.central_widget)
-        self.setting_seed.setObjectName(u"setting_seed")
-
-        self.footer_grid_layout.addWidget(self.setting_seed, 1, 1, 1, 1)
-
         self.setting_setting_string = QLineEdit(self.central_widget)
         self.setting_setting_string.setObjectName(u"setting_setting_string")
 
         self.footer_grid_layout.addWidget(self.setting_setting_string, 0, 1, 1, 1)
 
-        self.seed_label = QLabel(self.central_widget)
-        self.seed_label.setObjectName(u"seed_label")
-
-        self.footer_grid_layout.addWidget(self.seed_label, 1, 0, 1, 1)
-
         self.setting_string_label = QLabel(self.central_widget)
         self.setting_string_label.setObjectName(u"setting_string_label")
 
         self.footer_grid_layout.addWidget(self.setting_string_label, 0, 0, 1, 1)
-
-        self.new_seed_button = QPushButton(self.central_widget)
-        self.new_seed_button.setObjectName(u"new_seed_button")
-
-        self.footer_grid_layout.addWidget(self.new_seed_button, 1, 2, 1, 1)
-
-        self.copy_setting_string_button = QPushButton(self.central_widget)
-        self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
-
-        self.footer_grid_layout.addWidget(self.copy_setting_string_button, 0, 2, 1, 1)
 
         self.about_button = QPushButton(self.central_widget)
         self.about_button.setObjectName(u"about_button")
@@ -1533,13 +1638,18 @@ class Ui_main_window(object):
 
         self.randomize_button = QPushButton(self.central_widget)
         self.randomize_button.setObjectName(u"randomize_button")
-        sizePolicy10 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy10.setHorizontalStretch(0)
-        sizePolicy10.setVerticalStretch(0)
-        sizePolicy10.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
-        self.randomize_button.setSizePolicy(sizePolicy10)
+        sizePolicy11 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy11.setHorizontalStretch(0)
+        sizePolicy11.setVerticalStretch(0)
+        sizePolicy11.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
+        self.randomize_button.setSizePolicy(sizePolicy11)
 
         self.footer_grid_layout.addWidget(self.randomize_button, 2, 2, 1, 1)
+
+        self.new_seed_button = QPushButton(self.central_widget)
+        self.new_seed_button.setObjectName(u"new_seed_button")
+
+        self.footer_grid_layout.addWidget(self.new_seed_button, 1, 2, 1, 1)
 
         self.reset_settings_to_default_hlayout = QHBoxLayout()
         self.reset_settings_to_default_hlayout.setObjectName(u"reset_settings_to_default_hlayout")
@@ -1559,6 +1669,21 @@ class Ui_main_window(object):
 
         self.footer_grid_layout.addLayout(self.reset_settings_to_default_hlayout, 2, 1, 1, 1)
 
+        self.seed_label = QLabel(self.central_widget)
+        self.seed_label.setObjectName(u"seed_label")
+
+        self.footer_grid_layout.addWidget(self.seed_label, 1, 0, 1, 1)
+
+        self.copy_setting_string_button = QPushButton(self.central_widget)
+        self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
+
+        self.footer_grid_layout.addWidget(self.copy_setting_string_button, 0, 2, 1, 1)
+
+        self.setting_seed = QLineEdit(self.central_widget)
+        self.setting_seed.setObjectName(u"setting_seed")
+
+        self.footer_grid_layout.addWidget(self.setting_seed, 1, 1, 1, 1)
+
 
         self.verticalLayout_2.addLayout(self.footer_grid_layout)
 
@@ -1566,7 +1691,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1599,21 +1724,28 @@ class Ui_main_window(object):
 "If you want to play the randomizer on the <a href=\"https://ryujinx.org/\">Ryujinx emulator</a>, copy the outputted <code>exeFS</code> and <code>romFS</code> folders into the <code>/Ryujinx/mods/contents/01002DA013484000</code> folder.", None))
         self.useful_info_group_box.setTitle(QCoreApplication.translate("main_window", u"Useful Information", None))
         self.useful_choose_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Choosing your Settings", None))
-        self.choose_settings_label.setText(QCoreApplication.translate("main_window", u"<b>\u279c</b> World: Customize how the world is randomized. Pick dungeon, completion, shuffle, entrance, and other fun settings.<br>\n"
-"<b>\u279c</b> Logic: Pick which locations and tricks are enabled.<br>\n"
-"<b>\u279c</b> Inventory: Pick what items you start with.<br>\n"
-"<b>\u279c</b> Cosmetic: Customize the music and how the player model will look in-game.", None))
+        self.choose_settings_label.setText(QCoreApplication.translate("main_window", u"<b>\u279c World</b>: Customize how the world is randomized. Pick dungeon, completion, shuffle, entrance, and other fun settings.<br>\n"
+"<b>\u279c Locations and Shuffles</b>: Pick which locations and shuffles are enabled.<br>\n"
+"<b>\u279c Items and Inventory</b>: Pick what items you start with.<br>\n"
+"<b>\u279c Logic and Tricks</b>: Pick which locations and tricks are enabled.<br>\n"
+"<b>\u279c Cosmetic</b>: Customize the music and how the player model will look in-game.", None))
         self.useful_links_group_box.setTitle(QCoreApplication.translate("main_window", u"Links", None))
         self.links_label.setText(QCoreApplication.translate("main_window", u"<b>TODO</b><br>\n"
 "\n"
 "<b>\u279c</b> <a href=\"https://discord.gg/zkm6yncD\">Discord Server</a><br>\n"
 "<b>\u279c</b> <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\">Report a Bug</a><br>\n"
 "<b>\u279c</b> <a href=\"\">Location Guide (todo)</a>", None))
-        self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"File Setup", None))
-        self.extract_label.setText(QCoreApplication.translate("main_window", u"Extract", None))
-        self.extract_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
-        self.output_label.setText(QCoreApplication.translate("main_window", u"Output", None))
-        self.output_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
+        self.theming_group_box.setTitle(QCoreApplication.translate("main_window", u"Accessibility", None))
+        self.groupBox.setTitle(QCoreApplication.translate("main_window", u"Theming", None))
+        self.theme_mode_label.setText(QCoreApplication.translate("main_window", u"Theme Mode:", None))
+        self.theme_presets_label.setText(QCoreApplication.translate("main_window", u"Theme Presets", None))
+        self.use_custom_theme_check_box.setText(QCoreApplication.translate("main_window", u"Use Custom Theme", None))
+        self.customize_theme_button.setText(QCoreApplication.translate("main_window", u"Customize Theme", None))
+        self.theming_fonts.setTitle(QCoreApplication.translate("main_window", u"Fonts", None))
+        self.font_family_label.setText(QCoreApplication.translate("main_window", u"Font Family", None))
+        self.font_family_combo_box.setPlaceholderText(QCoreApplication.translate("main_window", u"Select Font Family", None))
+        self.font_size_label.setText(QCoreApplication.translate("main_window", u"Font Size", None))
+        self.font_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.getting_started_tab), QCoreApplication.translate("main_window", u"Getting Started", None))
         self.tweaks_group_box.setTitle(QCoreApplication.translate("main_window", u"Tweaks and Cosmetics", None))
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
@@ -1647,17 +1779,6 @@ class Ui_main_window(object):
         self.open_lake_floria_label.setText(QCoreApplication.translate("main_window", u"Open Lake Floria", None))
         self.open_earth_temple_label.setText(QCoreApplication.translate("main_window", u"Open Earth Temple", None))
         self.open_lmf_label.setText(QCoreApplication.translate("main_window", u"Open Lanyru Mining Facility", None))
-        self.hints_group_box.setTitle(QCoreApplication.translate("main_window", u"Hints", None))
-        self.setting_gossip_stone_hints.setText(QCoreApplication.translate("main_window", u"Gossip Stone Hints", None))
-        self.setting_fi_hints.setText(QCoreApplication.translate("main_window", u"Fi Hints", None))
-        self.setting_impa_sot_hint.setText(QCoreApplication.translate("main_window", u"Past Impa Stone of Trials Hint", None))
-        self.song_hints_label.setText(QCoreApplication.translate("main_window", u"Song Hints", None))
-        self.path_hints_label.setText(QCoreApplication.translate("main_window", u"Path Hints", None))
-        self.barren_hints_label.setText(QCoreApplication.translate("main_window", u"Barren Hints", None))
-        self.location_hints_label.setText(QCoreApplication.translate("main_window", u"Location Hints", None))
-        self.item_hints_label.setText(QCoreApplication.translate("main_window", u"Item Hints", None))
-        self.setting_always_hints.setText(QCoreApplication.translate("main_window", u"Prioritize Remote Location Hints", None))
-        self.setting_cryptic_hint_text.setText(QCoreApplication.translate("main_window", u"Cryptic Hint Text", None))
         self.hint_placements_group_box.setTitle(QCoreApplication.translate("main_window", u"Traps", None))
         self.trap_mode_label.setText(QCoreApplication.translate("main_window", u"Trap Mode", None))
         self.trappable_items_label.setText(QCoreApplication.translate("main_window", u"Trappable Items", None))
@@ -1687,7 +1808,7 @@ class Ui_main_window(object):
         self.included_locations_type_filter.setPlaceholderText("")
         self.included_locations_free_search.setText("")
         self.included_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
-        self.tab_widget.setTabText(self.tab_widget.indexOf(self.locations_tab), QCoreApplication.translate("main_window", u"Locations", None))
+        self.tab_widget.setTabText(self.tab_widget.indexOf(self.locations_tab), QCoreApplication.translate("main_window", u"Locations and Shuffles", None))
         self.randomized_items_group_box.setTitle(QCoreApplication.translate("main_window", u"Randomized Items", None))
         self.randomized_items_free_search.setText("")
         self.randomized_items_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
@@ -1704,7 +1825,30 @@ class Ui_main_window(object):
         self.starting_sword_label.setText(QCoreApplication.translate("main_window", u"Starting Sword", None))
         self.random_starting_tablet_count_label.setText(QCoreApplication.translate("main_window", u"Random Starting Tablet Count", None))
         self.random_starting_item_count_label.setText(QCoreApplication.translate("main_window", u"Random Starting Item Count", None))
-        self.tab_widget.setTabText(self.tab_widget.indexOf(self.inventory_tab), QCoreApplication.translate("main_window", u"Inventory", None))
+        self.tab_widget.setTabText(self.tab_widget.indexOf(self.inventory_tab), QCoreApplication.translate("main_window", u"Items and Inventory", None))
+        self.included_hint_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Hint Locations", None))
+        self.included_hint_locations_free_search.setText("")
+        self.included_hint_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
+        self.include_hint_location_button.setText(QCoreApplication.translate("main_window", u"Remove\n"
+"<---", None))
+        self.exclude_hint_location_button.setText(QCoreApplication.translate("main_window", u"Add\n"
+"--->", None))
+        self.hints_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
+        self.excluded_hint_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Hint Locations", None))
+        self.excluded_hint_locations_free_search.setText("")
+        self.excluded_hint_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
+        self.hints_group_box.setTitle(QCoreApplication.translate("main_window", u"Hint Settings", None))
+        self.setting_gossip_stone_hints.setText(QCoreApplication.translate("main_window", u"Gossip Stone Hints", None))
+        self.setting_fi_hints.setText(QCoreApplication.translate("main_window", u"Fi Hints", None))
+        self.setting_impa_sot_hint.setText(QCoreApplication.translate("main_window", u"Past Impa Stone of Trials Hint", None))
+        self.song_hints_label.setText(QCoreApplication.translate("main_window", u"Song Hints", None))
+        self.path_hints_label.setText(QCoreApplication.translate("main_window", u"Path Hints", None))
+        self.barren_hints_label.setText(QCoreApplication.translate("main_window", u"Barren Hints", None))
+        self.location_hints_label.setText(QCoreApplication.translate("main_window", u"Location Hints", None))
+        self.item_hints_label.setText(QCoreApplication.translate("main_window", u"Item Hints", None))
+        self.setting_always_hints.setText(QCoreApplication.translate("main_window", u"Prioritize Remote Location Hints", None))
+        self.setting_cryptic_hint_text.setText(QCoreApplication.translate("main_window", u"Cryptic Hint Text", None))
+        self.tab_widget.setTabText(self.tab_widget.indexOf(self.hints_tab), QCoreApplication.translate("main_window", u"Hints", None))
         self.logic_rules_group_box.setTitle(QCoreApplication.translate("main_window", u"Logic", None))
         self.logic_rules_label.setText(QCoreApplication.translate("main_window", u"Logic Mode", None))
         self.tricks_group_box.setTitle(QCoreApplication.translate("main_window", u"Tricks", None))
@@ -1754,28 +1898,21 @@ class Ui_main_window(object):
         self.setting_logic_fs_practice_sword_ghirahim_2.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Ghirahim 2 with\n"
 "Practice Sword", None))
         self.setting_logic_itemless_first_timeshift_stone.setText(QCoreApplication.translate("main_window", u"Itemless First Timeshift Stone", None))
-        self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic", None))
+        self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic and Tricks", None))
+        self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"File Setup", None))
+        self.extract_label.setText(QCoreApplication.translate("main_window", u"Extract", None))
+        self.extract_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
+        self.output_label.setText(QCoreApplication.translate("main_window", u"Output", None))
+        self.output_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
-        self.theming_group_box.setTitle(QCoreApplication.translate("main_window", u"Theming", None))
-        self.theme_mode_label.setText(QCoreApplication.translate("main_window", u"Theme Mode", None))
-        self.theme_presets_label.setText(QCoreApplication.translate("main_window", u"Theme Presets", None))
-        self.use_custom_theme_check_box.setText(QCoreApplication.translate("main_window", u"Use Custom Theme", None))
-        self.customize_theme_button.setText(QCoreApplication.translate("main_window", u"Customize Theme", None))
-        self.theming_fonts.setTitle(QCoreApplication.translate("main_window", u"Fonts", None))
-        self.font_family_label.setText(QCoreApplication.translate("main_window", u"Font Family", None))
-        self.font_family_combo_box.setPlaceholderText(QCoreApplication.translate("main_window", u"Select Font Family", None))
-        self.font_size_label.setText(QCoreApplication.translate("main_window", u"Font Size", None))
-        self.font_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
-        self.groupBox_6.setTitle("")
-        self.tab_widget.setTabText(self.tab_widget.indexOf(self.accessibility_tab), QCoreApplication.translate("main_window", u"Accessibility", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))
-        self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
         self.setting_string_label.setText(QCoreApplication.translate("main_window", u"Setting String", None))
-        self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
-        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
         self.about_button.setText(QCoreApplication.translate("main_window", u"About", None))
         self.randomize_button.setText(QCoreApplication.translate("main_window", u"Randomize", None))
+        self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
         self.reset_settings_to_default_button.setText(QCoreApplication.translate("main_window", u"Reset Settings to Default", None))
+        self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
+        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
     # retranslateUi
 

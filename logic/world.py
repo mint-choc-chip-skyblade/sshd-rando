@@ -439,7 +439,10 @@ class World:
 
     def set_nonprogress_locations(self):
         # Set excluded locations as non-progress
-        for location_name in self.setting_map.excluded_locations:
+        for location_name in (
+            self.setting_map.excluded_locations
+            + self.setting_map.excluded_hint_locations
+        ):
             self.get_location(location_name).progression = False
 
         # Sky Keep will never be a required dungeon with empty unrequired dungeons
@@ -605,6 +608,7 @@ class World:
             for location in self.location_table.values()
             if "Hint Location" in location.types
             and location.name not in self.setting_map.excluded_locations
+            and location.name not in self.setting_map.excluded_hint_locations
         ]
 
     def get_area(self, area_name) -> Area:

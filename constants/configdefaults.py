@@ -53,6 +53,9 @@ DEFAULT_SETTINGS = {
         "Lanayru Silent Realm - Collect all Tears Reward",
         "Eldin Silent Realm - Collect all Tears Reward",
     ],
+    "excluded_hint_locations": [
+        "Shipyard - Gossip Stone",
+    ],
     "mixed_entrance_pools": [],
 }
 
