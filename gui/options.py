@@ -1,5 +1,6 @@
 from collections import Counter
 from functools import partial
+
 from PySide6.QtCore import QObject, Qt
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (
@@ -11,53 +12,16 @@ from PySide6.QtWidgets import (
     QSpinBox,
     QWidget,
 )
-from constants.configdefaults import get_default_setting, get_new_seed
-from constants.itemconstants import STARTABLE_ITEMS
 
+from constants.configdefaults import get_default_setting, get_new_seed
+from constants.guiconstants import *
+from constants.itemconstants import STARTABLE_ITEMS
 from filepathconstants import CONFIG_PATH, FI_ICON_PATH, ITEMS_PATH
 from gui.components.list_pair import ListPair
 from logic.config import load_config_from_file, write_config_to_file
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from logic.settings import Setting
 from sslib.yaml import yaml_load
-
-
-OPTION_PREFIX = "&nbsp;&nbsp;➜ "
-ITEM_FILTER_TYPES = (
-    "Major Items",
-    "Item Wheel Items",
-    "Main Quest Items",
-    "Side Quest Items",
-    "Dungeon Items",
-    "Boss Keys",
-    "Small Keys",
-    "Maps",
-    "Songs",
-)
-LOCATION_FILTER_TYPES = (
-    "Minigames",
-    "Goddess Chests",
-    "Gratitude Crystals",
-    "Batreaux's Rewards",
-    "Scrapper Deliveries",
-    "Silent Realms",
-    "Stamina Fruits",
-    "Closets",
-    "Digging Spots",
-    "Underground Rupees",
-    "Freestanding Rupees",
-    "Beginner Rupees",
-    "Intermediate Rupees",
-    "Advanced Rupees",
-    "Beedle's Shop",
-    "Shop (Cheap)",
-    "Shop (Medium)",
-    "Shop (Expensive)",
-    "Freestanding Items",
-    "Chests",
-    "NPC",
-    "Defeat Boss",
-)
 
 
 class Options:
