@@ -46,4 +46,6 @@ def error_from_str(exception: str, traceback: str):
     """
     error_dialog.setText(error_text.ljust(128))
     error_dialog.setDetailedText(f"```\n{traceback}\n```")
+
+    print(traceback)
     error_dialog.exec()

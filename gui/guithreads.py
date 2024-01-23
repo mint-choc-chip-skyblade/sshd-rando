@@ -31,8 +31,6 @@ class RandomizationThread(QThread):
             for child in mp.active_children():
                 child.kill()
 
-            print(traceback.format_exc())
-
             return
 
         self.randomization_complete.emit()
