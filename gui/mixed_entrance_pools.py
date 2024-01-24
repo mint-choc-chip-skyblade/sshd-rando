@@ -54,6 +54,9 @@ class MixedEntrancePools(QObject):
         self.remove_button: QAbstractButton = self.ui.remove_entrance_type_button
         self.remove_button.clicked.connect(self.remove_entrance_type)
 
+        self.reset_button: QAbstractButton = self.ui.mixed_entrance_pools_reset_button
+        self.reset_button.clicked.connect(self.reset)
+
         self.update_pools_label()
 
     def update_pools_label(self):
@@ -104,6 +107,13 @@ class MixedEntrancePools(QObject):
                 pool.remove(entrance_type)
                 break
 
+        self.mixedEntrancePoolsChanged.emit(self, self.mixed_entrance_pools)
+        self.update_pools_label()
+
+    def reset(self):
+        self.mixed_entrance_pools: list[list[str]] = [
+            list() for _ in range(1, len(ENTRANCE_TYPES))
+        ]
         self.mixedEntrancePoolsChanged.emit(self, self.mixed_entrance_pools)
         self.update_pools_label()
 

@@ -240,7 +240,11 @@ class Settings:
         self.update_settings()
 
     def update_settings(
-        self, from_widget=None, widget_info=None, update_descriptions=True, _=None
+        self,
+        from_widget=None,
+        widget_info=None,
+        update_descriptions: bool = True,
+        allow_rewrite: bool = True,
     ):
         should_update_location_counter = True
 
@@ -316,7 +320,8 @@ class Settings:
             mixed_entrance_pools = [pool for pool in widget_info if len(pool) > 0]
             self.config.settings[0].mixed_entrance_pools = mixed_entrance_pools
 
-        write_config_to_file(CONFIG_PATH, self.config)
+        if allow_rewrite:
+            write_config_to_file(CONFIG_PATH, self.config)
 
         # Has to be updated *after* the the config has been rewritten
         #
@@ -380,7 +385,9 @@ class Settings:
 
         write_config_to_file(CONFIG_PATH, self.config)
 
-    def reset_single(self, setting: Setting | None) -> bool:
+    def reset_single(
+        self, setting: Setting | None, from_reset_all: bool = False
+    ) -> bool:
         if setting is None:
             return False
 
@@ -410,7 +417,10 @@ class Settings:
         elif isinstance(widget, QSpinBox):
             widget.setValue(int(default_option))
 
-        self.update_settings(from_widget=widget, update_descriptions=False)
+        # Otherwise, the config file is re-written once for *every* setting
+        if not from_reset_all:
+            self.update_settings(from_widget=widget, update_descriptions=False)
+
         return True
 
     def reset(self):
@@ -424,7 +434,12 @@ class Settings:
             return
 
         for setting_name, setting in self.settings.items():
-            self.reset_single(setting)
+            self.reset_single(setting, from_reset_all=True)
+
+        self.mixed_entrance_pools.reset()
+        self.exclude_locations_pair.reset()
+        self.exclude_hints_locations_pair.reset()
+        self.starting_inventory_pair.reset()
 
     def get_setting_from_widget(self, widget: QObject | None) -> Setting | None:
         if not widget:

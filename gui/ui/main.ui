@@ -33,7 +33,7 @@ background-color: #FFFFFF;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -1119,6 +1119,13 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             </layout>
            </item>
            <item>
+            <widget class="QPushButton" name="mixed_entrance_pools_reset_button">
+             <property name="text">
+              <string>Reset</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <spacer name="verticalSpacer_4">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
@@ -1197,7 +1204,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
-               <height>133</height>
+               <height>3</height>
               </size>
              </property>
             </spacer>

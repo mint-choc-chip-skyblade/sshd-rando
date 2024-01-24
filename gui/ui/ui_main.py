@@ -744,6 +744,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_28.addLayout(self.entrance_pool_button_layout)
 
+        self.mixed_entrance_pools_reset_button = QPushButton(self.mixed_entrance_pools_group_box)
+        self.mixed_entrance_pools_reset_button.setObjectName(u"mixed_entrance_pools_reset_button")
+
+        self.verticalLayout_28.addWidget(self.mixed_entrance_pools_reset_button)
+
         self.verticalSpacer_4 = QSpacerItem(20, 4, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
         self.verticalLayout_28.addItem(self.verticalSpacer_4)
@@ -770,7 +775,7 @@ class Ui_main_window(object):
 
         self.verticalLayout_28.addWidget(self.mixed_entrance_pools_explainer_label)
 
-        self.mixed_entrance_pools_vspacer = QSpacerItem(20, 133, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.mixed_entrance_pools_vspacer = QSpacerItem(20, 3, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_28.addItem(self.mixed_entrance_pools_vspacer)
 
@@ -1816,7 +1821,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1922,6 +1927,7 @@ class Ui_main_window(object):
         self.selected_entrance_type_label.setText(QCoreApplication.translate("main_window", u"Selected Entrance Type:", None))
         self.add_entrance_type_button.setText(QCoreApplication.translate("main_window", u"Add Entrance Type", None))
         self.remove_entrance_type_button.setText(QCoreApplication.translate("main_window", u"Remove Entrance Type", None))
+        self.mixed_entrance_pools_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
         self.mixed_entrance_pools_explainer_label.setText(QCoreApplication.translate("main_window", u"<b>What are Mixed Entrance Pools?</b>\n"
 "<br>\n"
 "<br>Mixed entrance pools define how entrance types should be shuffled together.\n"
