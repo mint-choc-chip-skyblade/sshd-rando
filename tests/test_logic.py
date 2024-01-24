@@ -145,12 +145,32 @@ def test_default_multiworld_config() -> None:
     config_test("default_multiworld_config.yaml")
 
 
-def test_traps_all_config() -> None:
+def test_traps_all() -> None:
     config_test("traps_all.yaml")
 
 
-def test_traps_off_config() -> None:
+def test_traps_off() -> None:
     config_test("traps_off.yaml")
+
+
+def test_no_logic_config() -> None:
+    config_test("no_logic.yaml")
+
+
+def test_rupee_shuffle_off() -> None:
+    config_test("rupee_shuffle_off.yaml")
+
+
+def test_rupee_shuffle_beginner() -> None:
+    config_test("rupee_shuffle_beginner.yaml")
+
+
+def test_rupee_shuffle_intermediate() -> None:
+    config_test("rupee_shuffle_intermediate.yaml")
+
+
+def test_rupee_shuffle_advanced() -> None:
+    config_test("rupee_shuffle_advanced.yaml")
 
 
 def test_spoiler_as_config() -> None:
@@ -161,12 +181,12 @@ def test_spoiler_as_config() -> None:
 
     os.remove("Spoiler Log.txt")
 
-    with open("config2.yaml", "w") as config:
+    with open("spoiler_log_config_test.yaml", "w") as config:
         config.write(log1)
-        worlds = generate("config2.yaml")
+        worlds = generate("spoiler_log_config_test.yaml")
         assert all_locations_reachable(worlds)
+
+    os.remove("spoiler_log_config_test.yaml")
 
     with open("Spoiler Log.txt") as second_log:
         assert log1 == second_log.read()
-
-    os.remove("config2.yaml")

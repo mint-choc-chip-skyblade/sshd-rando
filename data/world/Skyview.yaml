@@ -10,11 +10,11 @@
 - name: SV First Room
   dungeon: Skyview Temple
   events:
-    Goddess Wall Trigger: Ballad_of_the_Goddess and Goddesss_Harp and Skyview_2
+    Goddess Wall Trigger: Ballad_of_the_Goddess and Goddesss_Harp
   exits:
     Skyview Entry: Can_Cut_Trees_And_Logs
     SV One Eye Room: Can_Hit_High_Skyview_Switches
-    SV First Hub Center Room: Skyview_2 or Bomb_Bag
+    SV First Hub Center Room: Bomb_Bag
 
 
 - name: SV One Eye Room
@@ -36,6 +36,14 @@
     SV First Hub Right Room Lower: Can_Hit_High_Skyview_Switches
     SV First Hub Right Room Upper: Clawshots or ('Skyview_Raise_East_Water' and 'Skyview_Raise_West_Water')
     SV Second Hub Center Room: (Skyview_Temple_Small_Key or small_keys == removed) and (Clawshots or 'One_Water_Raise')
+  locations:
+    # Water Dragon's Scale needed to make sure you can't lock yourself out of the checks
+    # by raising the water before getting them
+    Skyview Temple - Rupee under South Walkway before Hub Room: Water_Dragons_Scale
+    Skyview Temple - First Rupee under West Walkway before Hub Room: Water_Dragons_Scale
+    Skyview Temple - Second Rupee under West Walkway before Hub Room: Water_Dragons_Scale
+    Skyview Temple - Rupee on Lower Tree Branch before Hub Room: Water_Dragons_Scale
+    Skyview Temple - Rupee on Coiled Tree Branch before Hub Room: Beetle or (logic_skyview_coiled_rupee_jump and Practice_Sword)
 
 
 - name: SV First Hub Left Room
@@ -79,9 +87,14 @@
     SV Staldra Room: count(2, Skyview_Temple_Small_Key) or small_keys == removed
     SV Last Room Before Rope: can_access(SV Last Room Before Rope) and Can_Hit_High_Skyview_Switches
   locations:
+    Skyview Temple - Rupee on South Bird Pillar in Hub Room: Beetle
+    Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room: Beetle
     Skyview Temple - Rupee in Southeast Tunnel: Beetle
     Skyview Temple - Rupee in Southwest Tunnel: Beetle
     Skyview Temple - Rupee in East Tunnel: Beetle
+    Skyview Temple - First Rupee in Northeast Tunnel: Beetle
+    Skyview Temple - Second Rupee in Northeast Tunnel: Beetle
+    Skyview Temple - Third Rupee in Northeast Tunnel: Beetle
     Skyview Temple - Item behind Bars: Beetle or (Slingshot and logic_skyview_precise_slingshot) or Whip
 
 
@@ -90,7 +103,7 @@
   exits:
     SV Second Hub Center Room: Nothing
   locations:
-    Skyview Temple - Chest after Stalfos Fight: Can_Defeat_Stalfos or Skyview_2
+    Skyview Temple - Chest after Stalfos Fight: Can_Defeat_Stalfos
 
 
 # This is both rooms so assume you've gotten locked in the 3-eyes room
@@ -116,7 +129,7 @@
   dungeon: Skyview Temple
   exits:
     SV Staldra Room: Nothing
-    SV Last Room Before Rope: Goddess_Sword or Beetle or Bow or (Bomb_Bag and logic_bomb_throws) or Skyview_2
+    SV Last Room Before Rope: Goddess_Sword or Beetle or Bow or (Bomb_Bag and logic_bomb_throws)
     # A bomb knocks the Skulltula away. A skyward strike can knock it away too.
     # Both the Beetle and the bow can cut it down. There is no spider anymore in Skyview 2.
 
@@ -124,7 +137,7 @@
 - name: SV Last Room Before Rope
   dungeon: Skyview Temple
   exits:
-    SV Last Room Before Spider: Goddess_Sword or Beetle or Bow or (Bomb_Bag and logic_bomb_throws) or Skyview_2
+    SV Last Room Before Spider: Goddess_Sword or Beetle or Bow or (Bomb_Bag and logic_bomb_throws)
     SV Second Hub Center Room: Can_Hit_High_Skyview_Switches
     SV Last Room After Rope: Long_Range_Skyward_Strike or Hook_Beetle or Bow
 
@@ -159,7 +172,7 @@
 - name: Skyview Spring
   events:
     Can Collect Water: Bottle
-    Sacred Water: Bottle and Skyview_2
+    # Sacred Water: Bottle and Skyview_2
   exits:
     Skyview Boss Room: Nothing
     # Crest Hit: Ruby Tablet

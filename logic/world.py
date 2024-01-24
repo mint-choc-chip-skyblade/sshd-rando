@@ -201,7 +201,9 @@ class World:
         with open("data/macros.yaml", "r") as macros_data_file:
             macros_data = yaml.safe_load(macros_data_file)
             for macro_name, req_str in macros_data.items():
-                self.macros[macro_name] = parse_requirement_string(req_str, self)
+                self.macros[macro_name] = parse_requirement_string(
+                    req_str, self, force_logic=True
+                )
 
     def load_world_graph(self) -> None:
         logging.getLogger("").debug(f"Loading world graph for {self}")
@@ -374,7 +376,7 @@ class World:
             if item == None:
                 continue
 
-            # Small Keys, Boss Keys, Maps, Caves Key, Shop items, Single Crystals, Stamina Fruit
+            # Small Keys, Boss Keys, Maps, Caves Key, Shop items, Single Crystals, Stamina Fruit, Rupees, Closets
             if (
                 (
                     self.setting("small_keys") == "vanilla"
@@ -399,6 +401,28 @@ class World:
                 or (
                     self.setting("stamina_fruit") == "vanilla"
                     and "Stamina Fruit" in location.types
+                )
+                or (
+                    self.setting("npc_closets") == "vanilla"
+                    and "Closet" in location.types
+                )
+                or (
+                    self.setting("rupee_shuffle") == "vanilla"
+                    and "Freestanding Rupee" in location.types
+                )
+                or (
+                    self.setting("rupee_shuffle") == "beginner"
+                    and "Freestanding Rupee" in location.types
+                    and "Beginner Rupee" not in location.types
+                )
+                or (
+                    self.setting("rupee_shuffle") == "intermediate"
+                    and "Freestanding Rupee" in location.types
+                    and "Advanced Rupee" in location.types
+                )
+                or (
+                    self.setting("underground_rupee_shuffle") == "off"
+                    and "Underground Rupee" in location.types
                 )
             ):
                 location.set_current_item(item)

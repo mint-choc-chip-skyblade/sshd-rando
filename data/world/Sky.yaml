@@ -107,7 +107,7 @@
   locations:
     Beedle's Island - Crystal: Night and Beetle
     Beedle's Island - Beedle's Crystals: Night and Beedles_Insect_Cage
-    Beedle's Island - Top Goddess Chest: Day and Lanayru_Desert_Goddess_Cube_near_Temple_of_Time
+    Beedle's Island - Top Goddess Chest: Day and Temple_of_Time_Goddess_Cube
     Beedle's Island - Cage Goddess Chest: (Night or (Day and logic_beedles_island_cage_chest_dive)) and Deep_Woods_Goddess_Cube_on_top_of_Skyview
 
 
@@ -168,6 +168,7 @@
     Lumpy Pumpkin - Chandelier: Nothing
     Lumpy Pumpkin - Inside Crystal: Night
     Lumpy Pumpkin - Harp Minigame: Night and Goddesss_Harp and 'Pumpkin_Carrying'
+    Lumpy Pumpkin - Pumm and Kina's Closet: Nothing
 
 
 - name: Island Closest to Faron Pillar

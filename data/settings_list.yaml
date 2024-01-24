@@ -3,18 +3,16 @@
 ############################
 
 - name: logic_rules
-  default_option: glitchless
+  default_option: 'on'
   pretty_name: Logic Rules
   pretty_options:
-    - Glitchless
-    - Glitched
+    - 'On'
     - No Logic
-    - Vanilla
+    # - Vanilla
   options:
-    - glitchless:                      "Items are placed so that you do not need to perform any glitches in order to beat the seed."
-    - glitched:                        "Items are placed so that you may be expected to perform any and all glitches in order to beat the seed."
+    - 'on':                            "Logic is considered when placing Items. Generated seeds will always be beatable. Tricks and Glitches can be enabled for consideration below."
     - no_logic:                        "Maximize randomization, logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
-    - vanilla:                         "Items are placed in their vanilla locations."
+    # - vanilla:                         "Items are placed in their vanilla locations."
 
 
 - name: single_gratitude_crystals
@@ -37,6 +35,41 @@
   options:
     - vanilla:                         "Stamina Fruit will not be randomized."
     - randomized:                      "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
+
+- name: npc_closets
+  default_option: vanilla
+  pretty_name: NPC Closets
+  pretty_options:
+    - Vanilla
+    - Randomized
+  options:
+    - vanilla:                         "Closets will contain their vanilla items."
+    - randomized:                      "All NPC closets will contain randomized items."
+
+- name: rupee_shuffle
+  default_option: vanilla
+  pretty_name: Rupee Shuffle
+  pretty_options:
+    - Vanilla
+    - Beginner
+    - Intermediate
+    - Advanced
+  options:
+    - vanilla:                         "Freestanding Rupees will not be randomized."
+    - beginner:                        "Some freestanding Rupees can contain any item. These checks are easier to spot and collect, and there aren't lots of them. Perfect for trying out Rupee shuffle!"
+    - intermediate:                    "Most freestanding Rupees can contain any item. There's a lot of Rupee checks added and some may be more tricky to collect. Perfect for seasoned Rupee shufflers!"
+    - advanced:                        "All freestanding Rupees can contain any item. Only a few extra Rupee checks are added but these are the most obscure and difficult checks to collect. You have been warned!"
+
+
+- name: underground_rupee_shuffle
+  default_option: "off"
+  pretty_name: Underground Rupee Shuffle
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Underground Rupee locations will not be randomized."
+    - "on":                            "Underground Rupee locations that require burrowing into digspots with the Mogma Mitts can contain any item."
 
 
 - name: randomized_shops
@@ -861,6 +894,17 @@
   options:
     - "off":                           "You will only be expected to find an alternative path around Skultullas on their webs in the Skyview Temple."
     - "on":                            "You may need to roll next the Skultullas in the Skyview Temple while they are on their webs in order to get past them."
+
+
+- name: logic_skyview_coiled_rupee_jump
+  default_option: "off"
+  pretty_name: Skyview Coiled Rupee Jump
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "You will only be expected to get the Rupee check on the Coiled Branch in the Skyview Temple using the Beetle."
+    - "on":                            "You may need to front-hop or backflip into the Rupee check on the Coiled Branch in the Skyview Temple."
 
 
 - name: logic_skyview_precise_slingshot

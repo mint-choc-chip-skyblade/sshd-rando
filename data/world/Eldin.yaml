@@ -19,6 +19,15 @@
     Eldin Volcano - Rupee behind Bombable Wall in First Room: Nothing
     Eldin Volcano - Rupee in Crawlspace in First Room: Nothing
     Eldin Volcano - Stamina Fruit in Rising Lava Room: Nothing
+    Eldin Volcano - Underground Rupee in First Room 1: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in First Room 2: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in First Room 3: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in First Room 4: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in First Room 5: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in First Room 6: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in First Room 7: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in First Room 8: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in First Room 9: Mogma_Mitts
 
 
 - name: Volcano East
@@ -34,8 +43,32 @@
     Eldin Volcano - Chest after Crawlspace: Nothing
     Eldin Volcano - Chest behind Bombable Wall near Cliff: Nothing
     Eldin Volcano - Item on Cliff: Nothing
+    Eldin Volcano - Rupee in Old Pyrup Shell near Cliff: Nothing # Use nearby bomb flower
+    Eldin Volcano - Rupee in Old Pyrup Shell on Cliff: Nothing # Use nearby bomb flower
     Eldin Volcano - Southeast Rupee above Mogma Turf Entrance: Beetle
     Eldin Volcano - North Rupee above Mogma Turf Entrance: Beetle
+    Eldin Volcano - Underground Rupee before Bone Bridge 1: Mogma_Mitts
+    Eldin Volcano - Underground Rupee before Bone Bridge 2: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 1: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 2: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 3: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 4: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 5: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 6: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 7: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 8: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 9: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 10: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 11: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 12: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 13: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 14: Mogma_Mitts
+    Eldin Volcano - Underground Rupee in Cliff 15: Mogma_Mitts
+    # Removed as extra collision on Eldin layer 1 makes this digspot *very* buggy
+    # 
+    # Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1: Mogma_Mitts
+    # Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2: Mogma_Mitts
+    # Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3: Mogma_Mitts
     Eldin Volcano - Stamina Fruit near Volcano East Statue: Nothing
     Eldin Volcano - Stamina Fruit in front of Bone Bridge: Nothing
     Eldin Volcano - Stamina Fruit near Item on Cliff: Nothing
@@ -103,6 +136,16 @@
     Outside Upper Eldin Cave: "'Beaten_Boko_Base'"
   locations:
     Eldin Volcano - Digging Spot in front of Earth Temple: Digging_Mitts
+    Eldin Volcano - Underground Rupee West of Earth Temple 1: Mogma_Mitts
+    Eldin Volcano - Underground Rupee West of Earth Temple 2: Mogma_Mitts
+    Eldin Volcano - Underground Rupee West of Earth Temple 3: Mogma_Mitts
+    Eldin Volcano - Underground Rupee West of Earth Temple 4: Mogma_Mitts
+    Eldin Volcano - Underground Rupee West of Earth Temple 5: Mogma_Mitts
+    Eldin Volcano - Underground Rupee West of Earth Temple 6: Mogma_Mitts
+    Eldin Volcano - Underground Rupee West of Earth Temple 7: Mogma_Mitts
+    Eldin Volcano - Underground Rupee West of Earth Temple 8: Mogma_Mitts
+    Eldin Volcano - Underground Rupee West of Earth Temple 9: Mogma_Mitts
+    Eldin Volcano - Underground Rupee West of Earth Temple 10: Mogma_Mitts
     Eldin Volcano - Digging Spot below Tower: Digging_Mitts
     Eldin Volcano - Digging Spot behind Boulder on Sandy Slope: Digging_Mitts
     Eldin Volcano - Stamina Fruit in front of Second Slope 1: Nothing
@@ -146,6 +189,20 @@
   locations:
     Eldin Volcano - Digging Spot after Vents: Digging_Mitts
     Eldin Volcano - Goddess Cube on Sand Slide: Goddess_Sword
+    Eldin Volcano - Left Rupee on Sand Slide 1: Nothing
+    Eldin Volcano - Left Rupee on Sand Slide 2: Nothing
+    Eldin Volcano - Left Rupee on Sand Slide 3: Nothing
+    Eldin Volcano - Left Rupee on Sand Slide 4: Nothing
+    Eldin Volcano - Left Rupee on Sand Slide 5: Nothing
+    Eldin Volcano - Left Rupee on Sand Slide 6: Nothing
+    Eldin Volcano - Left Rupee on Sand Slide 7: Nothing
+    Eldin Volcano - Left Rupee on Sand Slide 8: Nothing
+    Eldin Volcano - Right Rupee on Sand Slide 1: Nothing
+    Eldin Volcano - Right Rupee on Sand Slide 2: Nothing
+    Eldin Volcano - Right Rupee on Sand Slide 3: Nothing
+    Eldin Volcano - Right Rupee on Sand Slide 4: Nothing
+    Eldin Volcano - Right Rupee on Sand Slide 5: Nothing
+    Eldin Volcano - Right Rupee on Sand Slide 6: Nothing
 
 - name: Past Sand Slide
   hint_region: Eldin Volcano
@@ -204,6 +261,7 @@
     Mogma Turf: Nothing
   locations:
     Mogma Turf - Chest behind Bombable Wall in Fire Maze: Nothing
+    Mogma Turf - Rupee in First Pyrup Hole in Fire Maze: Nothing
 
 
 - name: Sand Slide Platform
@@ -260,6 +318,8 @@
     Outside Fire Sanctuary: Clawshots and 'Can_Collect_Water'
   locations:
     Volcano Summit - Item behind Digging: Mogma_Mitts and 'Can_Collect_Water'
+    Volcano Summit - Underground Rupee 1: Mogma_Mitts and 'Can_Collect_Water'
+    Volcano Summit - Underground Rupee 2: Mogma_Mitts and 'Can_Collect_Water'
     Volcano Summit - Gossip Stone near Second Thirsty Frog: "'Can_Collect_Water'"
 
 

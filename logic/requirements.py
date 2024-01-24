@@ -64,10 +64,18 @@ def strip_outer_parenthesis(req_str: str):
 # Takes a logic expression and translates it into a requirement object
 # that's evaluated during the the search algorithm
 def parse_requirement_string(
-    req_str: str, world: "World", area_id: int = None
+    req_str: str,
+    world: "World",
+    area_id: int = None,
+    force_logic: bool = False,
 ) -> Requirement:
     # Get a new copy of an empty requirement
     req = copy.deepcopy(Requirement())
+
+    # If we're not considering logic and we're not forcing a logic check, return nothing
+    if world.setting("logic_rules") == "no_logic" and not force_logic:
+        req.type = RequirementType.NOTHING
+        return req
 
     assert len(req.args) == 0
 
@@ -245,7 +253,9 @@ def parse_requirement_string(
             # Get rid of parenthesis around expression if it has them
             if expression[0] == "(":
                 expression = expression[1:-1]
-            req.args.append(parse_requirement_string(expression, world, area_id))
+            req.args.append(
+                parse_requirement_string(expression, world, area_id, force_logic)
+            )
             return req
         else:
             raise RequirementError(
@@ -285,7 +295,7 @@ def parse_requirement_string(
         if arg[0] == "(":
             arg = strip_outer_parenthesis(arg)
         # Parse
-        req.args.append(parse_requirement_string(arg, world, area_id))
+        req.args.append(parse_requirement_string(arg, world, area_id, force_logic))
 
         # TODO: AND and OR short-circuiting
 
