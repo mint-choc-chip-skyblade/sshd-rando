@@ -65,6 +65,10 @@ def test_dungeon_items_removed() -> None:
     config_test("dungeon_items_removed.yaml")
 
 
+def test_random_starting_statues() -> None:
+    config_test("random_starting_statues.yaml")
+
+
 def test_random_starting_spawn_bird_statues() -> None:
     config_test("random_starting_spawn_bird_statues.yaml")
 
