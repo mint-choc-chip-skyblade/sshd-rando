@@ -10,7 +10,7 @@ from filepathconstants import ICON_PATH
 from gui.accessibility import Accessibility
 from gui.dialogs.error_dialog import error, error_from_str
 from gui.guithreads import RandomizationThread
-from gui.options import Options
+from gui.settings import Settings
 from gui.dialogs.randomize_progress_dialog import RandomizerProgressDialog
 from gui.ui.ui_main import Ui_main_window
 
@@ -35,7 +35,7 @@ class Main(QMainWindow):
         # Always open on the getting started tab
         self.ui.tab_widget.setCurrentIndex(0)
 
-        self.options = Options(self, self.ui)
+        self.settings = Settings(self, self.ui)
         self.accessibility = Accessibility(self, self.ui)
 
         self.ui.randomize_button.clicked.connect(self.randomize)
@@ -78,17 +78,17 @@ class Main(QMainWindow):
 
     def eventFilter(self, target: QWidget, event: QEvent) -> bool:
         if event.type() == QEvent.Type.Enter:
-            return self.options.update_descriptions(target)
+            return self.settings.update_descriptions(target)
         elif event.type() == QEvent.Type.Leave:
-            return self.options.update_descriptions(None)
+            return self.settings.update_descriptions(None)
         elif event.type() == QEvent.Type.ContextMenu:
-            return self.options.show_full_descriptions(target)
+            return self.settings.show_full_descriptions(target)
         elif (
             isinstance(event, QMouseEvent)
             and event.button() == Qt.MouseButton.MiddleButton
         ):
-            return self.options.reset_single(
-                self.options.get_setting_from_widget(target)
+            return self.settings.reset_single(
+                self.settings.get_setting_from_widget(target)
             )
 
         return QMainWindow.eventFilter(self, target, event)

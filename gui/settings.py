@@ -24,7 +24,7 @@ from logic.settings import Setting
 from sslib.yaml import yaml_load
 
 
-class Options:
+class Settings:
     def __init__(self, parent, ui):
         self.parent: QMainWindow = parent
         self.ui = ui
