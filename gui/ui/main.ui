@@ -23,21 +23,33 @@ background-color: #FFFFFF;
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QTabWidget" name="tab_widget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="tabShape">
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
         <string>Getting Started</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
+       <layout class="QVBoxLayout" name="verticalLayout_4" stretch="2,1">
         <item>
          <widget class="QGroupBox" name="how_to_group_box">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -186,7 +198,7 @@ When you are ready, click the &quot;Randomize&quot; button in the bottom right o
               <item>
                <widget class="QLabel" name="how_to_running_label">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+                 <sizepolicy hsizetype="Ignored" vsizetype="Minimum">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
@@ -201,6 +213,9 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
                 </property>
+                <property name="scaledContents">
+                 <bool>false</bool>
+                </property>
                 <property name="alignment">
                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                 </property>
@@ -214,19 +229,6 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                  <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
                 </property>
                </widget>
-              </item>
-              <item>
-               <spacer name="verticalSpacer_3">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
               </item>
              </layout>
             </widget>
@@ -551,7 +553,13 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="gameplay_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
         <string>Gameplay</string>
        </attribute>
@@ -855,6 +863,12 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
        </layout>
       </widget>
       <widget class="QWidget" name="world_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
         <string>World</string>
        </attribute>
@@ -1033,34 +1047,20 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
         </item>
         <item row="0" column="5">
          <widget class="QGroupBox" name="mixed_entrance_pools_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="title">
            <string>Mixed Entrance Pools</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_28">
            <item>
-            <widget class="QLabel" name="mixed_entrance_pools_explainer_label">
-             <property name="text">
-              <string>TODO: add explainer text</string>
-             </property>
-             <property name="textFormat">
-              <enum>Qt::RichText</enum>
-             </property>
-             <property name="textInteractionFlags">
-              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="Line" name="mixed_entrance_pools_hline">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="QLabel" name="mixed_entrance_pools_list_label">
              <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Mixed Entrance Pools Example:&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Pool 1: [] &lt;br/&gt;Pool 2: [] &lt;br/&gt;Pool 3: []&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Defined Entrance Pools:&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Pool 1: [] &lt;br/&gt;Pool 2: [] &lt;br/&gt;Pool 3: []&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="textFormat">
               <enum>Qt::RichText</enum>
@@ -1119,6 +1119,77 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             </layout>
            </item>
            <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>4</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="Line" name="line">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>4</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="mixed_entrance_pools_explainer_label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>&lt;b&gt;What are Mixed Entrance Pools?&lt;/b&gt;
+&lt;br&gt;
+&lt;br&gt;Mixed entrance pools define how entrance types should be shuffled together.
+&lt;br&gt;By default, turning on an entrance randomizer setting will only shuffle the entrances of that type with each other.
+&lt;br&gt; For example, randomizing dungeon entrances will only shuffle the dungeon entrances with each other. The Sandship entrance could &lt;i&gt;not&lt;/i&gt; be shuffled to Wryna's House door or a trial gate entrance.
+&lt;br&gt;
+&lt;br&gt;By defining mixed entrance pools, different entrance types can be shuffled together.
+&lt;br&gt;For example, if a mixed pool was defined as this: [Dungeon, Door, Trial Gate], the Sandship entrance &lt;i&gt;could&lt;/i&gt; be shuffled to Wryna's House door or a trial gate entrance.</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+             <property name="textInteractionFlags">
+              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+             </property>
+            </widget>
+           </item>
+           <item>
             <spacer name="mixed_entrance_pools_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
@@ -1126,7 +1197,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
-               <height>325</height>
+               <height>133</height>
               </size>
              </property>
             </spacer>
@@ -1137,6 +1208,12 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
        </layout>
       </widget>
       <widget class="QWidget" name="locations_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
         <string>Locations and Shuffles</string>
        </attribute>
@@ -1411,6 +1488,12 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
        </layout>
       </widget>
       <widget class="QWidget" name="inventory_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
         <string>Items and Inventory</string>
        </attribute>
@@ -1712,6 +1795,12 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
        </layout>
       </widget>
       <widget class="QWidget" name="hints_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
         <string>Hints</string>
        </attribute>
@@ -2060,6 +2149,12 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
        </layout>
       </widget>
       <widget class="QWidget" name="logic_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
         <string>Logic and Tricks</string>
        </attribute>
@@ -2511,6 +2606,12 @@ Practice Sword</string>
        </layout>
       </widget>
       <widget class="QWidget" name="advanced_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
         <string>Advanced</string>
        </attribute>
