@@ -27,7 +27,7 @@ background-color: #FFFFFF;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <attribute name="title">
@@ -1038,7 +1038,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_28">
            <item>
-            <widget class="QLabel" name="mixed_entrance_pools_explainer_text">
+            <widget class="QLabel" name="mixed_entrance_pools_explainer_label">
              <property name="text">
               <string>TODO: add explainer text</string>
              </property>
@@ -1051,6 +1051,74 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             </widget>
            </item>
            <item>
+            <widget class="Line" name="mixed_entrance_pools_hline">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="mixed_entrance_pools_list_label">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Mixed Entrance Pools Example:&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Pool 1: [] &lt;br/&gt;Pool 2: [] &lt;br/&gt;Pool 3: []&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+             <property name="textInteractionFlags">
+              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="entrance_pool_selection_layout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="highlighted_entrance_pool_label">
+               <property name="text">
+                <string>Highlighted Entrance Pool:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="highlighted_entrance_pool_combo_box"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="selected_entrance_type_label">
+               <property name="text">
+                <string>Selected Entrance Type:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="selected_entrance_type_combo_box"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="entrance_pool_button_layout">
+             <item>
+              <widget class="QPushButton" name="add_entrance_type_button">
+               <property name="text">
+                <string>Add Entrance Type</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="remove_entrance_type_button">
+               <property name="text">
+                <string>Remove Entrance Type</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
             <spacer name="mixed_entrance_pools_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
@@ -1058,7 +1126,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
-               <height>508</height>
+               <height>325</height>
               </size>
              </property>
             </spacer>

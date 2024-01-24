@@ -16,10 +16,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComboBox,
-    QFontComboBox, QGridLayout, QGroupBox, QHBoxLayout,
-    QLabel, QLayout, QLineEdit, QListView,
-    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
-    QSpinBox, QTabWidget, QVBoxLayout, QWidget)
+    QFontComboBox, QFrame, QGridLayout, QGroupBox,
+    QHBoxLayout, QLabel, QLayout, QLineEdit,
+    QListView, QMainWindow, QPushButton, QSizePolicy,
+    QSpacerItem, QSpinBox, QTabWidget, QVBoxLayout,
+    QWidget)
 
 class Ui_main_window(object):
     def setupUi(self, main_window):
@@ -685,14 +686,70 @@ class Ui_main_window(object):
         self.mixed_entrance_pools_group_box.setObjectName(u"mixed_entrance_pools_group_box")
         self.verticalLayout_28 = QVBoxLayout(self.mixed_entrance_pools_group_box)
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
-        self.mixed_entrance_pools_explainer_text = QLabel(self.mixed_entrance_pools_group_box)
-        self.mixed_entrance_pools_explainer_text.setObjectName(u"mixed_entrance_pools_explainer_text")
-        self.mixed_entrance_pools_explainer_text.setTextFormat(Qt.RichText)
-        self.mixed_entrance_pools_explainer_text.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+        self.mixed_entrance_pools_explainer_label = QLabel(self.mixed_entrance_pools_group_box)
+        self.mixed_entrance_pools_explainer_label.setObjectName(u"mixed_entrance_pools_explainer_label")
+        self.mixed_entrance_pools_explainer_label.setTextFormat(Qt.RichText)
+        self.mixed_entrance_pools_explainer_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
 
-        self.verticalLayout_28.addWidget(self.mixed_entrance_pools_explainer_text)
+        self.verticalLayout_28.addWidget(self.mixed_entrance_pools_explainer_label)
 
-        self.mixed_entrance_pools_vspacer = QSpacerItem(20, 508, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.mixed_entrance_pools_hline = QFrame(self.mixed_entrance_pools_group_box)
+        self.mixed_entrance_pools_hline.setObjectName(u"mixed_entrance_pools_hline")
+        self.mixed_entrance_pools_hline.setFrameShape(QFrame.HLine)
+        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_28.addWidget(self.mixed_entrance_pools_hline)
+
+        self.mixed_entrance_pools_list_label = QLabel(self.mixed_entrance_pools_group_box)
+        self.mixed_entrance_pools_list_label.setObjectName(u"mixed_entrance_pools_list_label")
+        self.mixed_entrance_pools_list_label.setTextFormat(Qt.RichText)
+        self.mixed_entrance_pools_list_label.setWordWrap(True)
+        self.mixed_entrance_pools_list_label.setOpenExternalLinks(True)
+        self.mixed_entrance_pools_list_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+
+        self.verticalLayout_28.addWidget(self.mixed_entrance_pools_list_label)
+
+        self.entrance_pool_selection_layout = QGridLayout()
+        self.entrance_pool_selection_layout.setObjectName(u"entrance_pool_selection_layout")
+        self.highlighted_entrance_pool_label = QLabel(self.mixed_entrance_pools_group_box)
+        self.highlighted_entrance_pool_label.setObjectName(u"highlighted_entrance_pool_label")
+
+        self.entrance_pool_selection_layout.addWidget(self.highlighted_entrance_pool_label, 0, 0, 1, 1)
+
+        self.highlighted_entrance_pool_combo_box = QComboBox(self.mixed_entrance_pools_group_box)
+        self.highlighted_entrance_pool_combo_box.setObjectName(u"highlighted_entrance_pool_combo_box")
+
+        self.entrance_pool_selection_layout.addWidget(self.highlighted_entrance_pool_combo_box, 0, 1, 1, 1)
+
+        self.selected_entrance_type_label = QLabel(self.mixed_entrance_pools_group_box)
+        self.selected_entrance_type_label.setObjectName(u"selected_entrance_type_label")
+
+        self.entrance_pool_selection_layout.addWidget(self.selected_entrance_type_label, 1, 0, 1, 1)
+
+        self.selected_entrance_type_combo_box = QComboBox(self.mixed_entrance_pools_group_box)
+        self.selected_entrance_type_combo_box.setObjectName(u"selected_entrance_type_combo_box")
+
+        self.entrance_pool_selection_layout.addWidget(self.selected_entrance_type_combo_box, 1, 1, 1, 1)
+
+
+        self.verticalLayout_28.addLayout(self.entrance_pool_selection_layout)
+
+        self.entrance_pool_button_layout = QHBoxLayout()
+        self.entrance_pool_button_layout.setObjectName(u"entrance_pool_button_layout")
+        self.add_entrance_type_button = QPushButton(self.mixed_entrance_pools_group_box)
+        self.add_entrance_type_button.setObjectName(u"add_entrance_type_button")
+
+        self.entrance_pool_button_layout.addWidget(self.add_entrance_type_button)
+
+        self.remove_entrance_type_button = QPushButton(self.mixed_entrance_pools_group_box)
+        self.remove_entrance_type_button.setObjectName(u"remove_entrance_type_button")
+
+        self.entrance_pool_button_layout.addWidget(self.remove_entrance_type_button)
+
+
+        self.verticalLayout_28.addLayout(self.entrance_pool_button_layout)
+
+        self.mixed_entrance_pools_vspacer = QSpacerItem(20, 325, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_28.addItem(self.mixed_entrance_pools_vspacer)
 
@@ -1725,7 +1782,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -1826,7 +1883,12 @@ class Ui_main_window(object):
         self.setting_decouple_double_doors.setText(QCoreApplication.translate("main_window", u"Decouple Double Door Entrances", None))
         self.setting_decouple_entrances.setText(QCoreApplication.translate("main_window", u"Decouple Entrances", None))
         self.mixed_entrance_pools_group_box.setTitle(QCoreApplication.translate("main_window", u"Mixed Entrance Pools", None))
-        self.mixed_entrance_pools_explainer_text.setText(QCoreApplication.translate("main_window", u"TODO: add explainer text", None))
+        self.mixed_entrance_pools_explainer_label.setText(QCoreApplication.translate("main_window", u"TODO: add explainer text", None))
+        self.mixed_entrance_pools_list_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-weight:700;\">Mixed Entrance Pools Example:</span><br/><br/>Pool 1: [] <br/>Pool 2: [] <br/>Pool 3: []</p></body></html>", None))
+        self.highlighted_entrance_pool_label.setText(QCoreApplication.translate("main_window", u"Highlighted Entrance Pool:", None))
+        self.selected_entrance_type_label.setText(QCoreApplication.translate("main_window", u"Selected Entrance Type:", None))
+        self.add_entrance_type_button.setText(QCoreApplication.translate("main_window", u"Add Entrance Type", None))
+        self.remove_entrance_type_button.setText(QCoreApplication.translate("main_window", u"Remove Entrance Type", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.world_tab), QCoreApplication.translate("main_window", u"World", None))
         self.include_location_button.setText(QCoreApplication.translate("main_window", u"Include\n"
 "<---", None))

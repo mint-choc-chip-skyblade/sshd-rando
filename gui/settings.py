@@ -18,6 +18,7 @@ from constants.guiconstants import *
 from constants.itemconstants import STARTABLE_ITEMS
 from filepathconstants import CONFIG_PATH, FI_ICON_PATH, ITEMS_PATH
 from gui.components.list_pair import ListPair
+from gui.mixed_entrance_pools import MixedEntrancePools
 from logic.config import load_config_from_file, write_config_to_file
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from logic.settings import Setting
@@ -42,6 +43,15 @@ class Settings:
 
         self.ui.new_seed_button.clicked.connect(self.new_seed)
         self.ui.reset_settings_to_default_button.clicked.connect(self.reset)
+
+        # Init mixed entrance pools
+        mixed_entrance_pools = self.config.settings[0].mixed_entrance_pools
+        self.mixed_entrance_pools = MixedEntrancePools(
+            self.parent, self.ui, mixed_entrance_pools
+        )
+        self.mixed_entrance_pools.mixedEntrancePoolsChanged.connect(
+            partial(self.update_settings, update_descriptions=False)
+        )
 
         # Init excluded locations
         excludable_locations = list(
@@ -230,7 +240,7 @@ class Settings:
         self.update_settings()
 
     def update_settings(
-        self, from_widget=None, widget_index=None, from_reset=False, _=None
+        self, from_widget=None, widget_info=None, update_descriptions=True, _=None
     ):
         should_update_location_counter = True
 
@@ -256,7 +266,7 @@ class Settings:
                 # Makes tristate buttons cycle: off, on, random
                 # instead of off, random, on
                 # but only when manually changed
-                if widget == from_widget and not from_reset:
+                if widget == from_widget and update_descriptions:
                     if widget.checkState() == Qt.CheckState.Checked:
                         widget.setCheckState(Qt.CheckState.Unchecked)
                         new_option = "off"
@@ -301,6 +311,11 @@ class Settings:
         starting_inventory = self.starting_inventory_pair.get_added()
         self.config.settings[0].starting_inventory = Counter(starting_inventory)
 
+        ## Mixed entrance pools
+        if isinstance(from_widget, MixedEntrancePools) and widget_info is not None:
+            mixed_entrance_pools = [pool for pool in widget_info if len(pool) > 0]
+            self.config.settings[0].mixed_entrance_pools = mixed_entrance_pools
+
         write_config_to_file(CONFIG_PATH, self.config)
 
         # Has to be updated *after* the the config has been rewritten
@@ -330,7 +345,7 @@ class Settings:
                 f"Included Locations ({included_loc_count} out of {total_loc_count})"
             )
 
-        if not from_reset:
+        if update_descriptions:
             self.update_descriptions(from_widget)
 
     def get_updated_setting(self, setting: Setting, value: str) -> Setting:
@@ -395,7 +410,7 @@ class Settings:
         elif isinstance(widget, QSpinBox):
             widget.setValue(int(default_option))
 
-        self.update_settings(from_widget=widget, from_reset=True)
+        self.update_settings(from_widget=widget, update_descriptions=False)
         return True
 
     def reset(self):
