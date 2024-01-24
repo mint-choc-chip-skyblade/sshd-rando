@@ -4,7 +4,7 @@ output_dir: ./output
 plandomizer: false
 plandomizer_file: null
 World 1:
-  logic_rules: 'on'
+  logic_rules: 'all_locations_reachable'
   single_gratitude_crystals: random
   stamina_fruit: random
   rupee_shuffle: random

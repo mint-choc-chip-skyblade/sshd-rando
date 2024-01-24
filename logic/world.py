@@ -652,6 +652,11 @@ class World:
             )
         return self.item_table[item_name]
 
+    def get_game_winning_item(self) -> Item:
+        for item in self.item_table.values():
+            if item.is_game_winning_item:
+                return item
+
     def get_location(self, location_name: str) -> Location:
         if location_name not in self.location_table:
             raise WrongInfoError(

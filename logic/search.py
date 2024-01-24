@@ -317,13 +317,40 @@ def game_beatable(worlds: list[World]) -> bool:
     return search.is_beatable
 
 
-def all_locations_reachable(worlds: list[World], item_pool: Counter[Item] = {}) -> bool:
-    total_locations = 0
-    for world in worlds:
-        total_locations += len(world.location_table)
+# Checks to see if each world's logic setting is currently satisfied
+def all_logic_satisfied(worlds: list[World], item_pool: Counter[Item] = {}) -> bool:
     search = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds, item_pool)
     search.search_worlds()
-    return len(search.visited_locations) == total_locations
+    for world in worlds:
+        if world.setting("logic_rules") == "all_locations_reachable":
+            visited_world_locations = [
+                l for l in search.visited_locations if l.world == world
+            ]
+            if len(visited_world_locations) != len(world.location_table):
+                return False
+        elif world.setting("logic_rules") == "beatable_only":
+            # We want to make sure that enough goal locations are still reachable for selecting
+            # required dungeons later. Remove goal locations that are irrelevant.
+            accessible_goal_locations = [
+                l for l in world.location_table.values() if l.is_goal_location
+            ]
+            accessible_goal_locations.remove(
+                world.get_location("Sky Keep - Sacred Power of Din")
+            )
+            accessible_goal_locations.remove(
+                world.get_location("Sky Keep - Sacred Power of Nayru")
+            )
+            accessible_goal_locations.remove(
+                world.get_location("Sky Keep - Sacred Power of Farore")
+            )
+            if (
+                world.get_game_winning_item() not in search.owned_items
+                or len(accessible_goal_locations)
+                < world.setting("required_dungeons").value_as_number()
+            ):
+                return False
+
+    return True
 
 
 def generate_playthrough(worlds: list[World]) -> None:

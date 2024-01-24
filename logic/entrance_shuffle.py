@@ -2,7 +2,7 @@ from .entrance import *
 from .item import Item
 from .item_pool import get_complete_item_pool
 from .world import World
-from .search import Search, SearchMode, all_locations_reachable
+from .search import Search, SearchMode, all_logic_satisfied
 from collections import Counter, OrderedDict
 
 
@@ -574,8 +574,8 @@ def validate_world(
     world: World, worlds: list[World], entrance: Entrance, item_pool: Counter[Item]
 ) -> None:
     # Validate that the world is still beatable
-    if not all_locations_reachable(worlds, item_pool):
-        raise EntranceShuffleError(f"Not all locations are reachable!")
+    if not all_logic_satisfied(worlds, item_pool):
+        raise EntranceShuffleError(f"Not all logic is satisfied!")
 
     # Check to make sure that there's at least 1 sphere 0 location reachable
     # with no items except the starting inventory
