@@ -50,6 +50,10 @@ class Requirement:
         self.type = type_
         self.args = args_
 
+    def set_as_nothing(self) -> None:
+        self.type = RequirementType.NOTHING
+        self.args = []
+
 
 # Helper to strip an expression down to whatever is inside
 # its outer most parenthesis

@@ -65,6 +65,10 @@ def test_dungeon_items_removed() -> None:
     config_test("dungeon_items_removed.yaml")
 
 
+def test_random_starting_statues() -> None:
+    config_test("random_starting_statues.yaml")
+
+
 def test_random_starting_spawn_bird_statues() -> None:
     config_test("random_starting_spawn_bird_statues.yaml")
 
@@ -157,10 +161,12 @@ def test_spoiler_as_config() -> None:
 
     os.remove("Spoiler Log.txt")
 
-    with open("config.yaml", "w") as config:
+    with open("config2.yaml", "w") as config:
         config.write(log1)
-        worlds = generate("config.yaml")
+        worlds = generate("config2.yaml")
         assert all_locations_reachable(worlds)
 
     with open("Spoiler Log.txt") as second_log:
         assert log1 == second_log.read()
+
+    os.remove("config2.yaml")
