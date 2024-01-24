@@ -48,11 +48,11 @@ def fill_worlds(worlds: list[World]):
     # Place the rest of the items with fast fill
     fast_fill(item_pool, all_locations)
 
-    if not game_beatable(worlds):
+    if not all_logic_satisfied(worlds):
         search = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds)
         search.search_worlds()
         search.dump_world_graph()
-        raise GameNotBeatableError("Game is not beatable after placing all items!")
+        raise GameNotBeatableError("Logic is not satisfied after placing all items!")
 
 
 def assumed_fill(

@@ -40,6 +40,19 @@ def shuffle_world_entrances(world: World, worlds: list[World]):
             world, worlds, entrance_pool, target_entrance_pools[entrance_type]
         )
 
+    # Unset goal locations that aren't reachable so they can't be chosen
+    search = Search(
+        SearchMode.ALL_LOCATIONS_REACHABLE, worlds, get_complete_item_pool(worlds)
+    )
+    search.search_worlds()
+    for world in worlds:
+        for location in world.get_all_item_locations():
+            if location.is_goal_location and location not in search.visited_locations:
+                location.is_goal_location = False
+                logging.getLogger("").debug(
+                    f"Removing {location} as goal location due to it being unreachable"
+                )
+
 
 def set_all_entrances_data(world: World) -> None:
     with open("data/entrance_shuffle_data.yaml") as entrance_data_file:

@@ -332,17 +332,10 @@ def all_logic_satisfied(worlds: list[World], item_pool: Counter[Item] = {}) -> b
             # We want to make sure that enough goal locations are still reachable for selecting
             # required dungeons later. Remove goal locations that are irrelevant.
             accessible_goal_locations = [
-                l for l in world.location_table.values() if l.is_goal_location
+                l
+                for l in world.location_table.values()
+                if l.is_goal_location and not l.name.startswith("Sky Keep")
             ]
-            accessible_goal_locations.remove(
-                world.get_location("Sky Keep - Sacred Power of Din")
-            )
-            accessible_goal_locations.remove(
-                world.get_location("Sky Keep - Sacred Power of Nayru")
-            )
-            accessible_goal_locations.remove(
-                world.get_location("Sky Keep - Sacred Power of Farore")
-            )
             if (
                 world.get_game_winning_item() not in search.owned_items
                 or len(accessible_goal_locations)

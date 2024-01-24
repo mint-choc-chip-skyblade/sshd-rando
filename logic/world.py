@@ -471,8 +471,11 @@ class World:
     def choose_required_dungeons(self):
         num_required_dungeons = self.setting("required_dungeons").value_as_number()
 
-        dungeons = list(self.dungeons.values())
-        dungeons.remove(self.dungeons["Sky Keep"])
+        dungeons = [
+            d
+            for d in self.dungeons.values()
+            if d.goal_location and d.name != "Sky Keep"
+        ]
 
         # Remove any dungeons which have non-major items plandomized to their goal locations
         # Also force require any dungeons which have a major item plandomized to their goal locations
