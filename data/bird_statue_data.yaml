@@ -1,0 +1,82 @@
+Faron Pillar:
+  - name: Sealed Grounds Statue
+    flag_space: Sealed Grounds
+    flag: 35
+  - name: Behind the Temple Statue
+    flag_space: Sealed Grounds
+    flag: 31
+  - name: Faron Woods Entry Statue
+    flag_space: Story
+    flag: 800
+  - name: In the Woods Statue
+    flag_space: Story
+    flag: 801
+  - name: Viewing Platform Statue
+    flag_space: Story
+    flag: 802
+  - name: Deep Woods Statue
+    flag_space: Faron Woods
+    flag: 103
+  - name: Forest Temple Statue
+    flag_space: Faron Woods
+    flag: 104
+  - name: The Great Tree Statue
+    flag_space: Story
+    flag: 803
+  - name: Lake Floria Statue
+    flag_space: Lake Floria
+    flag: 32
+  - name: Floria Waterfall Statue
+    flag_space: Lake Floria
+    flag: 33
+Eldin Pillar:
+  - name: Volcano Entrance Statue
+    flag_space: Story
+    flag: 804
+  - name: Volcano East Statue
+    flag_space: Story
+    flag: 805
+  - name: Volcano Ascent Statue
+    flag_space: Story
+    flag: 806
+  - name: Temple Entrance Statue
+    flag_space: Story
+    flag: 807
+  # Inside the Volcano and Inside the Fire Sanctuary not included
+Lanayru Pillar:
+  - name: Lanayru Mine Entry Statue
+    flag_space: Lanayru Desert
+    flag: 68
+  - name: Desert Entrance Statue
+    flag_space: Lanayru Desert
+    flag: 66
+  - name: West Desert Statue
+    flag_space: Lanayru Desert
+    flag: 51
+  - name: Desert Gorge Statue
+    flag_space: Lanayru Desert
+    flag: 77
+  - name: Temple of Time Statue
+    flag_space: Lanayru Desert
+    flag: 78
+  - name: North Desert Statue
+    flag_space: Lanayru Desert
+    flag: 67
+  - name: Stone Cache Statue
+    flag_space: Lanayru Desert
+    flag: 2
+  - name: Ancient Harbour Statue
+    flag_space: Lanayru Sand Sea
+    flag: 10
+  - name: Skipper's Retreat Statue
+    flag_space: Lanayru Sand Sea
+    flag: 28
+  - name: Shipyard Statue
+    flag_space: Lanayru Sand Sea
+    flag: 85
+  - name: Pirate Stronghold Statue
+    flag_space: Lanayru Sand Sea
+    flag: 84
+  - name: Lanayru Gorge Statue
+    flag_space: Lanayru Gorge
+    flag: 12

@@ -61,7 +61,8 @@ Storyflags:
     - 105 # Rupee Dowsing
     - 110 # Goddess Cube Dowsing
   - 792  # Watched Sealed Temple Big Door unlocking Cutscene
-  - 804  # Eldin entrance statue unlocked
+  - random_starting_statues == off:
+    - 804  # Eldin entrance statue unlocked
   - 1201 # Unlocked Amiibo
   # Cutscene flags
   ## Surface
@@ -172,7 +173,8 @@ Sceneflags:
     - 7  # Pushed first minecart in Mine
     - 50 # Watched Enter Lanayru Mining Facility (LMF) Cutscene
     - 55 # Watched Lanayru Desert Intro Cutscene
-    - 68 # Checked Desert statue
+    - random_starting_statues == off:
+      - 68 # Checked Desert statue
     - 79 # Revealed Gossip Stone near Temple of Time
     - open_lmf == open:
       - 30 # Watched LMF Rises Cutscene
@@ -200,6 +202,8 @@ Sceneflags:
     - 21 # Ballad of the Goddess played with Impa
     - 28 # Groose metting Impa first time cutscene
     - 29 # Harp Tutorial completed
+    - random_starting_statues == off:
+      - 35 # Sealed Grounds Statue
     - 39 # Log to Behind the Temple pushed down
     - 55 # Watched First time landing Cutscene
     - 72 # Revealed Behind the Temple Gossip Stone
