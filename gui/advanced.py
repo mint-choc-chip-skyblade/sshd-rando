@@ -1,0 +1,93 @@
+from PySide6.QtCore import Qt, QUrl
+from PySide6.QtGui import QDesktopServices, QIcon, QPixmap
+from PySide6.QtWidgets import (
+    QMainWindow,
+    QAbstractButton,
+    QMessageBox,
+    QCheckBox,
+    QComboBox,
+)
+
+from filepathconstants import CONFIG_PATH, FI_ICON_PATH, PLANDO_PATH
+from logic.config import Config, write_config_to_file
+
+NO_PLANDO_FILE = "~~ No Plandomizer File ~~"
+
+
+class Advanced:
+    def __init__(self, parent, ui):
+        self.parent: QMainWindow = parent
+        self.ui = ui
+        self.config: Config = parent.config
+
+        # TODO: Add configs for these
+        self.ui.random_settings_group_box.setTitle("")
+        self.ui.randomization_settings_group_box.setTitle("")
+
+        self.use_plando_button: QCheckBox = self.ui.config_use_plandomizer
+        self.use_plando_button.stateChanged.connect(self.toggle_plando)
+        self.toggle_plando()
+
+        self.selected_plando_file_combo: QComboBox = (
+            self.ui.selected_plandomizer_file_combo_box
+        )
+
+        if not PLANDO_PATH.exists():
+            PLANDO_PATH.mkdir()
+
+        plando_filenames = [
+            file.name
+            for file in PLANDO_PATH.glob("*.yaml")
+            if file.name.endswith(".yaml")
+        ]
+        self.selected_plando_file_combo.addItems([NO_PLANDO_FILE] + plando_filenames)
+        self.selected_plando_file_combo.currentTextChanged.connect(
+            self.change_plando_file
+        )
+        self.change_plando_file()
+
+        self.open_plando_folder_button: QAbstractButton = (
+            self.ui.open_plandomizer_folder_button
+        )
+        self.open_plando_folder_button.clicked.connect(self.open_plando_folder)
+
+    def update_config(self):
+        write_config_to_file(CONFIG_PATH, self.config)
+
+    def toggle_plando(self):
+        use_plando_state: Qt.CheckState = self.use_plando_button.checkState()
+        self.config.use_plandomizer = False
+
+        if use_plando_state == Qt.CheckState.Checked:
+            self.config.use_plandomizer = True
+
+        self.update_config()
+
+    def change_plando_file(self):
+        self.config.plandomizer_file = self.selected_plando_file_combo.currentText()
+
+        if self.config.plandomizer_file == NO_PLANDO_FILE:
+            self.config.plandomizer_file = None
+
+        self.update_config()
+
+    def open_plando_folder(self):
+        try:
+            if not PLANDO_PATH.exists():
+                PLANDO_PATH.mkdir()
+
+            QDesktopServices.openUrl(
+                QUrl(PLANDO_PATH.as_posix(), QUrl.ParsingMode.TolerantMode)
+            )
+        except:
+            self.show_file_error_dialog(
+                'Could not open or create the "plandomizers" folder.\n\nThe "plandomizers" folder should be in the same folder as this randomizer program.'
+            )
+
+    def show_file_error_dialog(self, file_text: str):
+        file_error_dialog = QMessageBox(self.parent)
+        file_error_dialog.setWindowIcon(QIcon(FI_ICON_PATH.as_posix()))
+        file_error_dialog.setIconPixmap(QPixmap(FI_ICON_PATH.as_posix()))
+        file_error_dialog.setWindowTitle("File not found!")
+        file_error_dialog.setText(file_text)
+        file_error_dialog.exec()

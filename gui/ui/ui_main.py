@@ -1674,17 +1674,37 @@ class Ui_main_window(object):
         self.advanced_tab.setObjectName(u"advanced_tab")
         sizePolicy.setHeightForWidth(self.advanced_tab.sizePolicy().hasHeightForWidth())
         self.advanced_tab.setSizePolicy(sizePolicy)
+        self.horizontalLayout_4 = QHBoxLayout(self.advanced_tab)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.file_setup_group_box = QGroupBox(self.advanced_tab)
         self.file_setup_group_box.setObjectName(u"file_setup_group_box")
-        self.file_setup_group_box.setGeometry(QRect(10, 100, 1282, 90))
+        sizePolicy2.setHeightForWidth(self.file_setup_group_box.sizePolicy().hasHeightForWidth())
+        self.file_setup_group_box.setSizePolicy(sizePolicy2)
         self.gridLayout = QGridLayout(self.file_setup_group_box)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.output_line_edit = QLineEdit(self.file_setup_group_box)
+        self.output_line_edit.setObjectName(u"output_line_edit")
+
+        self.gridLayout.addWidget(self.output_line_edit, 4, 0, 1, 1)
+
         self.extract_label = QLabel(self.file_setup_group_box)
         self.extract_label.setObjectName(u"extract_label")
         sizePolicy1.setHeightForWidth(self.extract_label.sizePolicy().hasHeightForWidth())
         self.extract_label.setSizePolicy(sizePolicy1)
 
         self.gridLayout.addWidget(self.extract_label, 1, 0, 1, 1)
+
+        self.output_button = QPushButton(self.file_setup_group_box)
+        self.output_button.setObjectName(u"output_button")
+
+        self.gridLayout.addWidget(self.output_button, 4, 2, 1, 1)
+
+        self.output_label = QLabel(self.file_setup_group_box)
+        self.output_label.setObjectName(u"output_label")
+        sizePolicy1.setHeightForWidth(self.output_label.sizePolicy().hasHeightForWidth())
+        self.output_label.setSizePolicy(sizePolicy1)
+
+        self.gridLayout.addWidget(self.output_label, 3, 0, 1, 1)
 
         self.extract_line_edit = QLineEdit(self.file_setup_group_box)
         self.extract_line_edit.setObjectName(u"extract_line_edit")
@@ -1694,29 +1714,78 @@ class Ui_main_window(object):
         sizePolicy10.setHeightForWidth(self.extract_line_edit.sizePolicy().hasHeightForWidth())
         self.extract_line_edit.setSizePolicy(sizePolicy10)
 
-        self.gridLayout.addWidget(self.extract_line_edit, 1, 2, 1, 1)
+        self.gridLayout.addWidget(self.extract_line_edit, 2, 0, 1, 1)
 
         self.extract_button = QPushButton(self.file_setup_group_box)
         self.extract_button.setObjectName(u"extract_button")
 
-        self.gridLayout.addWidget(self.extract_button, 1, 3, 1, 1)
+        self.gridLayout.addWidget(self.extract_button, 2, 2, 1, 1)
 
-        self.output_line_edit = QLineEdit(self.file_setup_group_box)
-        self.output_line_edit.setObjectName(u"output_line_edit")
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout.addWidget(self.output_line_edit, 2, 2, 1, 1)
+        self.gridLayout.addItem(self.verticalSpacer_3, 5, 0, 1, 1)
 
-        self.output_label = QLabel(self.file_setup_group_box)
-        self.output_label.setObjectName(u"output_label")
-        sizePolicy1.setHeightForWidth(self.output_label.sizePolicy().hasHeightForWidth())
-        self.output_label.setSizePolicy(sizePolicy1)
 
-        self.gridLayout.addWidget(self.output_label, 2, 0, 1, 1)
+        self.horizontalLayout_4.addWidget(self.file_setup_group_box)
 
-        self.output_button = QPushButton(self.file_setup_group_box)
-        self.output_button.setObjectName(u"output_button")
+        self.plandomizer_group_box = QGroupBox(self.advanced_tab)
+        self.plandomizer_group_box.setObjectName(u"plandomizer_group_box")
+        sizePolicy2.setHeightForWidth(self.plandomizer_group_box.sizePolicy().hasHeightForWidth())
+        self.plandomizer_group_box.setSizePolicy(sizePolicy2)
+        self.verticalLayout_30 = QVBoxLayout(self.plandomizer_group_box)
+        self.verticalLayout_30.setObjectName(u"verticalLayout_30")
+        self.plandomizer_warning_label = QLabel(self.plandomizer_group_box)
+        self.plandomizer_warning_label.setObjectName(u"plandomizer_warning_label")
+        self.plandomizer_warning_label.setTextFormat(Qt.RichText)
+        self.plandomizer_warning_label.setWordWrap(True)
+        self.plandomizer_warning_label.setOpenExternalLinks(True)
+        self.plandomizer_warning_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
 
-        self.gridLayout.addWidget(self.output_button, 2, 3, 1, 1)
+        self.verticalLayout_30.addWidget(self.plandomizer_warning_label)
+
+        self.config_use_plandomizer = QCheckBox(self.plandomizer_group_box)
+        self.config_use_plandomizer.setObjectName(u"config_use_plandomizer")
+
+        self.verticalLayout_30.addWidget(self.config_use_plandomizer)
+
+        self.selected_plandomizer_file_label = QLabel(self.plandomizer_group_box)
+        self.selected_plandomizer_file_label.setObjectName(u"selected_plandomizer_file_label")
+
+        self.verticalLayout_30.addWidget(self.selected_plandomizer_file_label)
+
+        self.selected_plandomizer_file_combo_box = QComboBox(self.plandomizer_group_box)
+        self.selected_plandomizer_file_combo_box.setObjectName(u"selected_plandomizer_file_combo_box")
+        sizePolicy10.setHeightForWidth(self.selected_plandomizer_file_combo_box.sizePolicy().hasHeightForWidth())
+        self.selected_plandomizer_file_combo_box.setSizePolicy(sizePolicy10)
+        self.selected_plandomizer_file_combo_box.setSizeAdjustPolicy(QComboBox.AdjustToContents)
+
+        self.verticalLayout_30.addWidget(self.selected_plandomizer_file_combo_box)
+
+        self.open_plandomizer_folder_button = QPushButton(self.plandomizer_group_box)
+        self.open_plandomizer_folder_button.setObjectName(u"open_plandomizer_folder_button")
+
+        self.verticalLayout_30.addWidget(self.open_plandomizer_folder_button)
+
+        self.plandomizer_vspacer = QSpacerItem(20, 369, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_30.addItem(self.plandomizer_vspacer)
+
+
+        self.horizontalLayout_4.addWidget(self.plandomizer_group_box)
+
+        self.random_settings_group_box = QGroupBox(self.advanced_tab)
+        self.random_settings_group_box.setObjectName(u"random_settings_group_box")
+        sizePolicy2.setHeightForWidth(self.random_settings_group_box.sizePolicy().hasHeightForWidth())
+        self.random_settings_group_box.setSizePolicy(sizePolicy2)
+
+        self.horizontalLayout_4.addWidget(self.random_settings_group_box)
+
+        self.randomization_settings_group_box = QGroupBox(self.advanced_tab)
+        self.randomization_settings_group_box.setObjectName(u"randomization_settings_group_box")
+        sizePolicy2.setHeightForWidth(self.randomization_settings_group_box.sizePolicy().hasHeightForWidth())
+        self.randomization_settings_group_box.setSizePolicy(sizePolicy2)
+
+        self.horizontalLayout_4.addWidget(self.randomization_settings_group_box)
 
         self.tab_widget.addTab(self.advanced_tab, "")
 
@@ -1821,7 +1890,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(2)
+        self.tab_widget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2048,10 +2117,17 @@ class Ui_main_window(object):
         self.setting_logic_itemless_first_timeshift_stone.setText(QCoreApplication.translate("main_window", u"Itemless First Timeshift Stone", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic and Tricks", None))
         self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"File Setup", None))
-        self.extract_label.setText(QCoreApplication.translate("main_window", u"Extract", None))
-        self.extract_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
-        self.output_label.setText(QCoreApplication.translate("main_window", u"Output", None))
+        self.extract_label.setText(QCoreApplication.translate("main_window", u"Vanilla Game Extract Path (v1.0.1):", None))
         self.output_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
+        self.output_label.setText(QCoreApplication.translate("main_window", u"Randomizer Patch Output Path:", None))
+        self.extract_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
+        self.plandomizer_group_box.setTitle(QCoreApplication.translate("main_window", u"Plandomizer", None))
+        self.plandomizer_warning_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-weight:700;\">WARNING</span>: The plandomizer settings will automatically <span style=\" font-weight:700;\">TURN THEMSELVES OFF</span> when reopening this randomizer program!</p></body></html>", None))
+        self.config_use_plandomizer.setText(QCoreApplication.translate("main_window", u"Use Plandomizer File", None))
+        self.selected_plandomizer_file_label.setText(QCoreApplication.translate("main_window", u"Selected Plandomizer File:", None))
+        self.open_plandomizer_folder_button.setText(QCoreApplication.translate("main_window", u"Open Plandomizer Folder", None))
+        self.random_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Random Settings", None))
+        self.randomization_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Randomization Settings", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))

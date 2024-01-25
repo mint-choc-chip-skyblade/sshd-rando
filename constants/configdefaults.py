@@ -22,7 +22,7 @@ DEFAULT_SETTINGS = {
     "output_dir": Path("./output"),
     "input_dir": Path("./title"),
     "seed": get_new_seed(),
-    "plandomizer": False,
+    "use_plandomizer": False,
     "plandomizer_file": "None",
     "generate_spoiler_log": True,
     "theme_mode": "Auto",

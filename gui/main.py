@@ -5,14 +5,16 @@ from PySide6.QtGui import QIcon, QMouseEvent
 from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow, QWidget
 
 from constants.randoconstants import VERSION
-from filepathconstants import ICON_PATH
+from filepathconstants import CONFIG_PATH, ICON_PATH
 
 from gui.accessibility import Accessibility
+from gui.advanced import Advanced
 from gui.dialogs.error_dialog import error, error_from_str
 from gui.guithreads import RandomizationThread
 from gui.settings import Settings
 from gui.dialogs.randomize_progress_dialog import RandomizerProgressDialog
 from gui.ui.ui_main import Ui_main_window
+from logic.config import load_config_from_file
 
 
 class Main(QMainWindow):
@@ -35,8 +37,11 @@ class Main(QMainWindow):
         # Always open on the getting started tab
         self.ui.tab_widget.setCurrentIndex(0)
 
+        self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
+
         self.settings = Settings(self, self.ui)
         self.accessibility = Accessibility(self, self.ui)
+        self.advanced = Advanced(self, self.ui)
 
         self.ui.randomize_button.clicked.connect(self.randomize)
         self.ui.about_button.clicked.connect(self.about)

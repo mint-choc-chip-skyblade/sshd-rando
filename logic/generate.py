@@ -1,3 +1,4 @@
+from filepathconstants import PLANDO_PATH
 from .world import World
 from .config import *
 from .settings import *
@@ -43,8 +44,13 @@ def generate_randomizer(config: Config) -> list[World]:
                 # If any non-standard settings are random, resolve them now before seeding
                 setting.resolve_if_random()
 
-    if config.plandomizer:
-        with open(config.plandomizer_file) as plando_file:
+    if config.use_plandomizer:
+        if config.plandomizer_file is None:
+            raise ConfigError(
+                f"Cannot use plandomizer file as the current plandomizer filename is invalid: {config.plandomizer_file}"
+            )
+
+        with open(PLANDO_PATH / config.plandomizer_file) as plando_file:
             hash_str += plando_file.read()
 
     if config.generate_spoiler_log:
@@ -72,8 +78,13 @@ def generate_randomizer(config: Config) -> list[World]:
         world.worlds = worlds
 
     # Process plando data for all worlds
-    if config.plandomizer:
-        load_plandomizer_data(worlds, config.plandomizer_file)
+    if config.use_plandomizer:
+        if config.plandomizer_file is None:
+            raise ConfigError(
+                f"Cannot use plandomizer file as the current plandomizer filename is invalid: {config.plandomizer_file}"
+            )
+
+        load_plandomizer_data(worlds, PLANDO_PATH / config.plandomizer_file)
 
     # All worlds must perform pre-entrance shuffle tasks
     # before any entrance shuffling takes place

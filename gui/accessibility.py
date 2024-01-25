@@ -20,7 +20,7 @@ from filepathconstants import (
     READABILITY_THEME_PATH,
 )
 from gui.dialogs.custom_theme_dialog import CustomThemeDialog
-from logic.config import load_config_from_file, write_config_to_file
+from logic.config import Config, write_config_to_file
 
 # Add stylesheet overrides here.
 BASE_STYLE_SHEET_OVERRIDES = ""
@@ -33,11 +33,10 @@ class Accessibility:
     def __init__(self, parent, ui):
         self.parent: QMainWindow = parent
         self.ui = ui
+        self.config: Config = parent.config
 
         QFontDatabase.addApplicationFont(LATO_FONT_PATH.as_posix())
         QFontDatabase.addApplicationFont(DYSLEXIC_FONT_PATH.as_posix())
-
-        self.config = load_config_from_file(CONFIG_PATH)
 
         # Accessibility setup.
         self.custom_theme_path = CUSTOM_THEME_PATH

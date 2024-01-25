@@ -18,8 +18,8 @@ class Config:
         self.generate_spoiler_log = True
         self.output_dir: Path = None  # type: ignore
         self.input_dir: Path = None  # type: ignore
-        self.plandomizer: bool = False
-        self.plandomizer_file: Path = None  # type: ignore
+        self.use_plandomizer: bool = False
+        self.plandomizer_file: str | None = None
         self.theme_mode: str = None  # type: ignore
         self.theme_presets: str = None  # type: ignore
         self.use_custom_theme: bool = False
@@ -32,7 +32,7 @@ def create_default_config(filename: Path):
     config.output_dir = get_default_setting("output_dir")
     config.input_dir = get_default_setting("input_dir")
     config.seed = get_default_setting("seed")
-    config.plandomizer = get_default_setting("plandomizer")
+    config.use_plandomizer = get_default_setting("use_plandomizer")
     config.plandomizer_file = get_default_setting("plandomizer_file")
     config.generate_spoiler_log = get_default_setting("generate_spoiler_log")
 
@@ -77,7 +77,7 @@ def write_config_to_file(filename: Path, config: Config):
         config_out["seed"] = config.seed
         config_out["input_dir"] = config.input_dir.as_posix()
         config_out["output_dir"] = config.output_dir.as_posix()
-        config_out["plandomizer"] = config.plandomizer
+        config_out["use_plandomizer"] = config.use_plandomizer
         config_out["plandomizer_file"] = config.plandomizer_file
 
         config_out["theme_mode"] = config.theme_mode
@@ -148,7 +148,9 @@ def load_config_from_file(
         config.output_dir = Path(
             load_or_get_default_from_config(config_in, "output_dir")
         )
-        config.plandomizer = load_or_get_default_from_config(config_in, "plandomizer")
+        config.use_plandomizer = load_or_get_default_from_config(
+            config_in, "use_plandomizer"
+        )
         config.plandomizer_file = load_or_get_default_from_config(
             config_in, "plandomizer_file"
         )

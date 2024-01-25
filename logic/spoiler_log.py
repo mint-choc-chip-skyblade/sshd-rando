@@ -176,7 +176,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
         spoiler_log.write(f"\n# Settings\n")
         spoiler_log.write(f"input_dir: {config.input_dir}\n")
         spoiler_log.write(f"output_dir: {config.output_dir}\n")
-        spoiler_log.write(f"plandomizer: {config.plandomizer}\n")
+        spoiler_log.write(f"plandomizer: {config.use_plandomizer}\n")
         spoiler_log.write(f"theme_mode: {config.theme_mode}\n")
         spoiler_log.write(f"theme_presets: {config.theme_presets}\n")
         spoiler_log.write(f"use_custom_theme: {config.use_custom_theme}\n")

@@ -19,7 +19,7 @@ from constants.itemconstants import STARTABLE_ITEMS
 from filepathconstants import CONFIG_PATH, FI_ICON_PATH, ITEMS_PATH
 from gui.components.list_pair import ListPair
 from gui.mixed_entrance_pools import MixedEntrancePools
-from logic.config import load_config_from_file, write_config_to_file
+from logic.config import Config, write_config_to_file
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from logic.settings import Setting
 from sslib.yaml import yaml_load
@@ -29,8 +29,8 @@ class Settings:
     def __init__(self, parent, ui):
         self.parent: QMainWindow = parent
         self.ui = ui
+        self.config: Config = parent.config
 
-        self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
         self.settings = self.config.settings[0].settings
         self.location_table = build_location_table()
 

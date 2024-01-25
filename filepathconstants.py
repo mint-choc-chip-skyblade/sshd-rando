@@ -15,6 +15,7 @@ OUTPUT_SDK_NSO = OUTPUT_PATH / "exefs" / "sdk"
 
 # Config
 CONFIG_PATH = RANDO_ROOT_PATH / "config.yaml"
+PLANDO_PATH = RANDO_ROOT_PATH / "plandomizers"
 
 # GUI Stuff
 THEME_INFO_PATH = RANDO_ROOT_PATH / "gui" / "custom_themes" / "default_theme_info.yaml"
