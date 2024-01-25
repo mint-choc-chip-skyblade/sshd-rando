@@ -7,6 +7,7 @@ from PySide6.QtWidgets import (
     QLabel,
     QLayout,
     QMainWindow,
+    QAbstractButton,
 )
 from filepathconstants import ICON_PATH, THEME_INFO_PATH
 
@@ -113,8 +114,9 @@ class CustomThemeDialog(QDialog):
             widget = layout.takeAt(1).widget()
             widget.deleteLater()
 
-    def save_custom_theme(self):
-        self.themeSaved.emit(self.custom_theme)
+    def save_custom_theme(self, button: QAbstractButton):
+        if button.text() == "Save":
+            self.themeSaved.emit(self.custom_theme)
 
     def eventFilter(self, target: QObject, event: QEvent) -> bool:
         if event.type() == QEvent.Enter and type(target) == QLabel:
