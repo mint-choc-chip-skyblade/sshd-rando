@@ -8,6 +8,7 @@ class SearchMode:
     GAME_BEATABLE: int = 1
     ALL_LOCATIONS_REACHABLE: int = 2
     GENERATE_PLAYTHROUGH: int = 3
+    SPHERE_ZERO: int = 4
 
 
 class Search:
@@ -36,6 +37,7 @@ class Search:
         self.visited_areas: set[Area] = set()
         self.successful_exits: set[Entrance] = set()
         self.playthrough_entrances: set[Entrance] = set()
+        self.found_disconnected_exit: bool = False
 
         self.playthrough_spheres: list[list[Location]] = []
         self.entrance_spheres: list[list[Entrance]] = []
@@ -57,6 +59,9 @@ class Search:
                 for root_exit in root.exits:
                     if not root_exit.disabled:
                         self.exits_to_try.append(root_exit)
+                    # Don't add non root exits if we're doing a sphere zero search
+                    if self.search_mode == SearchMode.SPHERE_ZERO:
+                        break
 
     def search_worlds(self) -> None:
         # Get all locations which fit criteria to test on each iteration
@@ -130,8 +135,8 @@ class Search:
                         self.explore(exit_.connected_area)
                 case EvalSuccess.NONE:
                     self.exits_to_try.append(exit_)
-                case _:
-                    pass
+                case EvalSuccess.UNNECESSARY:
+                    self.found_disconnected_exit = True
 
     def process_exits(self) -> None:
         # Search each exit in the exitsToTry list and explore any new areas found as well.

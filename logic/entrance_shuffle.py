@@ -647,7 +647,10 @@ def validate_world(
 
     # Check to make sure that there's at least 1 sphere 0 location reachable
     # with no items except the starting inventory
-    sphere_zero_search = Search(SearchMode.ACCESSIBLE_LOCATIONS, worlds)
+    sphere_zero_search = Search(SearchMode.SPHERE_ZERO, worlds)
     sphere_zero_search.search_worlds()
-    if len(sphere_zero_search.visited_locations) == 0:
+    if (
+        len(sphere_zero_search.visited_locations) == 0
+        and not sphere_zero_search.found_disconnected_exit
+    ):
         raise EntranceShuffleError(f"No Sphere 0 locations reachable at the start!")
