@@ -16,8 +16,13 @@ oarccache
 
 Spoiler Log.txt
 config.yaml
-*plandomizer.yaml
 custom_theme.json
+
+# Plandomizer
+*plandomizer.yaml
+plandomizers/*
+!plandomizers/examples/
+!plandomizers/vanilla_boko_base.yaml
 
 # asm
 target/
