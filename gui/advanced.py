@@ -1,24 +1,28 @@
 from PySide6.QtCore import Qt, QUrl
-from PySide6.QtGui import QDesktopServices, QIcon, QPixmap
+from PySide6.QtGui import QDesktopServices
 from PySide6.QtWidgets import (
-    QMainWindow,
     QAbstractButton,
-    QMessageBox,
     QCheckBox,
     QComboBox,
 )
 
-from filepathconstants import CONFIG_PATH, FI_ICON_PATH, PLANDO_PATH
+from filepathconstants import CONFIG_PATH, PLANDO_PATH
 from logic.config import Config, write_config_to_file
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from gui.main import Main
+    from gui.ui.ui_main import Ui_main_window
 
 NO_PLANDO_FILE = "~~ No Plandomizer File ~~"
 
 
 class Advanced:
-    def __init__(self, parent, ui):
-        self.parent: QMainWindow = parent
+    def __init__(self, main: "Main", ui: "Ui_main_window"):
+        self.main = main
         self.ui = ui
-        self.config: Config = parent.config
+        self.config: Config = main.config
 
         # TODO: Add configs for these
         self.ui.random_settings_group_box.setTitle("")
@@ -81,13 +85,8 @@ class Advanced:
             )
         except:
             self.show_file_error_dialog(
-                'Could not open or create the "plandomizers" folder.\n\nThe "plandomizers" folder should be in the same folder as this randomizer program.'
+                "Could not open or create the 'plandomizers' folder.\n\nThe 'plandomizers' folder should be in the same folder as this randomizer program."
             )
 
     def show_file_error_dialog(self, file_text: str):
-        file_error_dialog = QMessageBox(self.parent)
-        file_error_dialog.setWindowIcon(QIcon(FI_ICON_PATH.as_posix()))
-        file_error_dialog.setIconPixmap(QPixmap(FI_ICON_PATH.as_posix()))
-        file_error_dialog.setWindowTitle("File not found!")
-        file_error_dialog.setText(file_text)
-        file_error_dialog.exec()
+        self.main.fi_info_dialog.show_dialog(title="File not found!", text=file_text)

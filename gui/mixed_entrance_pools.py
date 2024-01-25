@@ -1,14 +1,15 @@
 from PySide6.QtCore import QObject, Signal
-from PySide6.QtGui import QIcon, QPixmap
 from PySide6.QtWidgets import (
-    QMainWindow,
     QComboBox,
     QAbstractButton,
     QLabel,
-    QMessageBox,
 )
 
-from filepathconstants import FI_ICON_PATH
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from gui.main import Main
+    from gui.ui.ui_main import Ui_main_window
 
 ENTRANCE_TYPES = (
     # "Spawn",
@@ -24,9 +25,14 @@ ENTRANCE_TYPES = (
 class MixedEntrancePools(QObject):
     mixedEntrancePoolsChanged = Signal(QObject, list)
 
-    def __init__(self, parent, ui, config_mixed_entrance_pools: list[list[str]]):
+    def __init__(
+        self,
+        main: "Main",
+        ui: "Ui_main_window",
+        config_mixed_entrance_pools: list[list[str]],
+    ):
         super().__init__()
-        self.parent: QMainWindow = parent
+        self.main = main
         self.ui = ui
 
         self.pools_label: QLabel = self.ui.mixed_entrance_pools_list_label
@@ -118,9 +124,6 @@ class MixedEntrancePools(QObject):
         self.update_pools_label()
 
     def show_invalid_dialog(self, invalid_text: str):
-        invalid_dialog = QMessageBox(self.parent)
-        invalid_dialog.setWindowIcon(QIcon(FI_ICON_PATH.as_posix()))
-        invalid_dialog.setIconPixmap(QPixmap(FI_ICON_PATH.as_posix()))
-        invalid_dialog.setWindowTitle("Invalid Entrance Pool Action")
-        invalid_dialog.setText(invalid_text)
-        invalid_dialog.exec()
+        self.main.fi_info_dialog.show_dialog(
+            title="Invalid Entrance Pool Action", text=invalid_text
+        )

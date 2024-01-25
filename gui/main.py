@@ -10,6 +10,7 @@ from filepathconstants import CONFIG_PATH, ICON_PATH
 from gui.accessibility import Accessibility
 from gui.advanced import Advanced
 from gui.dialogs.error_dialog import error, error_from_str
+from gui.dialogs.fi_info_dialog import FiInfoDialog
 from gui.guithreads import RandomizationThread
 from gui.settings import Settings
 from gui.dialogs.randomize_progress_dialog import RandomizerProgressDialog
@@ -36,6 +37,8 @@ class Main(QMainWindow):
 
         # Always open on the getting started tab
         self.ui.tab_widget.setCurrentIndex(0)
+
+        self.fi_info_dialog = FiInfoDialog(self)
 
         self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
 

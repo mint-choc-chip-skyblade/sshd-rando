@@ -6,7 +6,6 @@ from PySide6.QtWidgets import (
     QAbstractButton,
     QComboBox,
     QFontComboBox,
-    QMainWindow,
     QSpinBox,
 )
 
@@ -22,6 +21,12 @@ from filepathconstants import (
 from gui.dialogs.custom_theme_dialog import CustomThemeDialog
 from logic.config import Config, write_config_to_file
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from gui.main import Main
+    from gui.ui.ui_main import Ui_main_window
+
 # Add stylesheet overrides here.
 BASE_STYLE_SHEET_OVERRIDES = ""
 
@@ -30,10 +35,10 @@ THEME_PRESETS_OPTIONS = ("Default", "High Contrast", "Readability")
 
 
 class Accessibility:
-    def __init__(self, parent, ui):
-        self.parent: QMainWindow = parent
+    def __init__(self, main: "Main", ui: "Ui_main_window"):
+        self.main = main
         self.ui = ui
-        self.config: Config = parent.config
+        self.config: Config = main.config
 
         QFontDatabase.addApplicationFont(LATO_FONT_PATH.as_posix())
         QFontDatabase.addApplicationFont(DYSLEXIC_FONT_PATH.as_posix())
@@ -110,7 +115,6 @@ class Accessibility:
         else:
             self.disable_theme_interface()
 
-        write_config_to_file(CONFIG_PATH, self.config)
         self.update_theme()
 
     def update_theme(self):
@@ -149,7 +153,7 @@ class Accessibility:
 
     def open_custom_theme_picker(self):
         custom_theme_picker = CustomThemeDialog(
-            self.default_theme_path, self.custom_theme_path, self.parent.styleSheet()
+            self.default_theme_path, self.custom_theme_path, self.main.styleSheet()
         )
 
         custom_theme_picker.themeSaved.connect(self.update_custom_theme)
@@ -176,7 +180,7 @@ class Accessibility:
 
         write_config_to_file(CONFIG_PATH, self.config)
 
-        self.parent.setStyleSheet(
+        self.main.setStyleSheet(
             BASE_STYLE_SHEET_OVERRIDES
             + f"QWidget {{ font-family: { self.config.font_family }; font-size: { self.config.font_size }pt }}"
         )

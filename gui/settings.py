@@ -2,13 +2,11 @@ from collections import Counter
 from functools import partial
 
 from PySide6.QtCore import QObject, Qt
-from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (
     QCheckBox,
     QComboBox,
     QLineEdit,
     QMessageBox,
-    QMainWindow,
     QSpinBox,
     QWidget,
 )
@@ -16,7 +14,7 @@ from PySide6.QtWidgets import (
 from constants.configdefaults import get_default_setting, get_new_seed
 from constants.guiconstants import *
 from constants.itemconstants import STARTABLE_ITEMS
-from filepathconstants import CONFIG_PATH, FI_ICON_PATH, ITEMS_PATH
+from filepathconstants import CONFIG_PATH, ITEMS_PATH
 from gui.components.list_pair import ListPair
 from gui.mixed_entrance_pools import MixedEntrancePools
 from logic.config import Config, write_config_to_file
@@ -24,12 +22,18 @@ from logic.location_table import build_location_table, get_disabled_shuffle_loca
 from logic.settings import Setting
 from sslib.yaml import yaml_load
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from gui.main import Main
+    from gui.ui.ui_main import Ui_main_window
+
 
 class Settings:
-    def __init__(self, parent, ui):
-        self.parent: QMainWindow = parent
+    def __init__(self, main: "Main", ui: "Ui_main_window"):
+        self.main = main
         self.ui = ui
-        self.config: Config = parent.config
+        self.config: Config = main.config
 
         self.settings = self.config.settings[0].settings
         self.location_table = build_location_table()
@@ -47,7 +51,7 @@ class Settings:
         # Init mixed entrance pools
         mixed_entrance_pools = self.config.settings[0].mixed_entrance_pools
         self.mixed_entrance_pools = MixedEntrancePools(
-            self.parent, self.ui, mixed_entrance_pools
+            self.main, self.ui, mixed_entrance_pools
         )
         self.mixed_entrance_pools.mixedEntrancePoolsChanged.connect(
             partial(self.update_settings, update_descriptions=False)
@@ -187,12 +191,12 @@ class Settings:
                 continue
 
             # Used to change the settings description when mousing over a setting
-            widget.installEventFilter(self.parent)
+            widget.installEventFilter(self.main)
 
             try:
                 label = getattr(self.ui, setting_name + "_label")
                 label.setText(setting_info.info.pretty_name)
-                label.installEventFilter(self.parent)
+                label.installEventFilter(self.main)
             except:
                 pass
 
@@ -425,7 +429,7 @@ class Settings:
 
     def reset(self):
         confirm_choice = QMessageBox.question(
-            self.parent,
+            self.main,
             "Are you sure?",
             "Are you sure you want to reset EVERY option?",
         )
@@ -520,10 +524,6 @@ class Settings:
         if target is None or not (setting := self.get_setting_from_widget(target)):
             return True
 
-        description_dialog = QMessageBox(target)
-        description_dialog.setTextFormat(Qt.TextFormat.RichText)
-        target.setWindowIcon(QIcon(FI_ICON_PATH.as_posix()))
-
         description_text = "<b>Current Option</b>:<br>"
         description_text += self.format_description(
             setting, setting.current_option_index
@@ -560,7 +560,7 @@ class Settings:
                 )
 
         dialog_title = setting.info.pretty_name + " Options"
-        description_dialog.about(target, dialog_title, description_text)
+        self.main.fi_info_dialog.show_dialog(title=dialog_title, text=description_text)
         return True
 
     def get_disabled_shuffle_location_names(self) -> list[str]:
