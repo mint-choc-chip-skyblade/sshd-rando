@@ -48,7 +48,7 @@ if args.with_gui:
         except Exception as e:
             error(e)
 else:
-    from randomize import randomize
+    from randomizer.randomize import randomize
 
     if __name__ == "__main__":
         randomize()

@@ -17,7 +17,7 @@ class RandomizationThread(QThread):
     def run(self):
         try:
             # Import here to prevent circular dependency
-            from randomize import randomize
+            from randomizer.randomize import randomize
 
             RandomizationThread.callback = self
             randomize()

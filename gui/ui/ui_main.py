@@ -1680,50 +1680,53 @@ class Ui_main_window(object):
         self.file_setup_group_box.setObjectName(u"file_setup_group_box")
         sizePolicy2.setHeightForWidth(self.file_setup_group_box.sizePolicy().hasHeightForWidth())
         self.file_setup_group_box.setSizePolicy(sizePolicy2)
-        self.gridLayout = QGridLayout(self.file_setup_group_box)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.output_line_edit = QLineEdit(self.file_setup_group_box)
-        self.output_line_edit.setObjectName(u"output_line_edit")
-
-        self.gridLayout.addWidget(self.output_line_edit, 4, 0, 1, 1)
-
-        self.extract_label = QLabel(self.file_setup_group_box)
-        self.extract_label.setObjectName(u"extract_label")
-        sizePolicy1.setHeightForWidth(self.extract_label.sizePolicy().hasHeightForWidth())
-        self.extract_label.setSizePolicy(sizePolicy1)
-
-        self.gridLayout.addWidget(self.extract_label, 1, 0, 1, 1)
-
-        self.output_button = QPushButton(self.file_setup_group_box)
-        self.output_button.setObjectName(u"output_button")
-
-        self.gridLayout.addWidget(self.output_button, 4, 2, 1, 1)
-
+        self.verticalLayout_31 = QVBoxLayout(self.file_setup_group_box)
+        self.verticalLayout_31.setObjectName(u"verticalLayout_31")
         self.output_label = QLabel(self.file_setup_group_box)
         self.output_label.setObjectName(u"output_label")
         sizePolicy1.setHeightForWidth(self.output_label.sizePolicy().hasHeightForWidth())
         self.output_label.setSizePolicy(sizePolicy1)
 
-        self.gridLayout.addWidget(self.output_label, 3, 0, 1, 1)
+        self.verticalLayout_31.addWidget(self.output_label)
 
-        self.extract_line_edit = QLineEdit(self.file_setup_group_box)
-        self.extract_line_edit.setObjectName(u"extract_line_edit")
-        sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy10.setHorizontalStretch(0)
-        sizePolicy10.setVerticalStretch(0)
-        sizePolicy10.setHeightForWidth(self.extract_line_edit.sizePolicy().hasHeightForWidth())
-        self.extract_line_edit.setSizePolicy(sizePolicy10)
+        self.output_layout = QHBoxLayout()
+        self.output_layout.setObjectName(u"output_layout")
+        self.output_line_edit = QLineEdit(self.file_setup_group_box)
+        self.output_line_edit.setObjectName(u"output_line_edit")
 
-        self.gridLayout.addWidget(self.extract_line_edit, 2, 0, 1, 1)
+        self.output_layout.addWidget(self.output_line_edit)
 
-        self.extract_button = QPushButton(self.file_setup_group_box)
-        self.extract_button.setObjectName(u"extract_button")
+        self.output_button = QPushButton(self.file_setup_group_box)
+        self.output_button.setObjectName(u"output_button")
 
-        self.gridLayout.addWidget(self.extract_button, 2, 2, 1, 1)
+        self.output_layout.addWidget(self.output_button)
+
+
+        self.verticalLayout_31.addLayout(self.output_layout)
+
+        self.verify_extract_label = QLabel(self.file_setup_group_box)
+        self.verify_extract_label.setObjectName(u"verify_extract_label")
+
+        self.verticalLayout_31.addWidget(self.verify_extract_label)
+
+        self.verify_extract_layout = QHBoxLayout()
+        self.verify_extract_layout.setObjectName(u"verify_extract_layout")
+        self.verify_important_extract_button = QPushButton(self.file_setup_group_box)
+        self.verify_important_extract_button.setObjectName(u"verify_important_extract_button")
+
+        self.verify_extract_layout.addWidget(self.verify_important_extract_button)
+
+        self.verify_all_extract_button = QPushButton(self.file_setup_group_box)
+        self.verify_all_extract_button.setObjectName(u"verify_all_extract_button")
+
+        self.verify_extract_layout.addWidget(self.verify_all_extract_button)
+
+
+        self.verticalLayout_31.addLayout(self.verify_extract_layout)
 
         self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout.addItem(self.verticalSpacer_3, 5, 0, 1, 1)
+        self.verticalLayout_31.addItem(self.verticalSpacer_3)
 
 
         self.horizontalLayout_4.addWidget(self.file_setup_group_box)
@@ -1755,6 +1758,9 @@ class Ui_main_window(object):
 
         self.selected_plandomizer_file_combo_box = QComboBox(self.plandomizer_group_box)
         self.selected_plandomizer_file_combo_box.setObjectName(u"selected_plandomizer_file_combo_box")
+        sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(0)
         sizePolicy10.setHeightForWidth(self.selected_plandomizer_file_combo_box.sizePolicy().hasHeightForWidth())
         self.selected_plandomizer_file_combo_box.setSizePolicy(sizePolicy10)
         self.selected_plandomizer_file_combo_box.setSizeAdjustPolicy(QComboBox.AdjustToContents)
@@ -2116,11 +2122,12 @@ class Ui_main_window(object):
 "Practice Sword", None))
         self.setting_logic_itemless_first_timeshift_stone.setText(QCoreApplication.translate("main_window", u"Itemless First Timeshift Stone", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic and Tricks", None))
-        self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"File Setup", None))
-        self.extract_label.setText(QCoreApplication.translate("main_window", u"Vanilla Game Extract Path (v1.0.1):", None))
+        self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"Extract and Output Utilities", None))
+        self.output_label.setText(QCoreApplication.translate("main_window", u"Output Path:", None))
         self.output_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
-        self.output_label.setText(QCoreApplication.translate("main_window", u"Randomizer Patch Output Path:", None))
-        self.extract_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
+        self.verify_extract_label.setText(QCoreApplication.translate("main_window", u"Verify Extracted Game Files:", None))
+        self.verify_important_extract_button.setText(QCoreApplication.translate("main_window", u"Verify Important Files", None))
+        self.verify_all_extract_button.setText(QCoreApplication.translate("main_window", u"Verify All Files", None))
         self.plandomizer_group_box.setTitle(QCoreApplication.translate("main_window", u"Plandomizer", None))
         self.plandomizer_warning_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-weight:700;\">WARNING</span>: The plandomizer settings will automatically <span style=\" font-weight:700;\">TURN THEMSELVES OFF</span> when reopening this randomizer program!</p></body></html>", None))
         self.config_use_plandomizer.setText(QCoreApplication.translate("main_window", u"Use Plandomizer File", None))

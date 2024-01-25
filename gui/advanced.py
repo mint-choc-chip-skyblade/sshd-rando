@@ -1,3 +1,4 @@
+from functools import partial
 from PySide6.QtCore import Qt, QUrl
 from PySide6.QtGui import QDesktopServices
 from PySide6.QtWidgets import (
@@ -10,6 +11,8 @@ from filepathconstants import CONFIG_PATH, PLANDO_PATH
 from logic.config import Config, write_config_to_file
 
 from typing import TYPE_CHECKING
+
+from randomizer.verify_extract import verify_extract
 
 if TYPE_CHECKING:
     from gui.main import Main
@@ -27,6 +30,14 @@ class Advanced:
         # TODO: Add configs for these
         self.ui.random_settings_group_box.setTitle("")
         self.ui.randomization_settings_group_box.setTitle("")
+
+        self.verify_important_button = self.ui.verify_important_extract_button
+        self.verify_important_button.clicked.connect(verify_extract)
+
+        self.verify_all_button = self.ui.verify_all_extract_button
+        self.verify_all_button.clicked.connect(
+            partial(verify_extract, verify_all_files=True)
+        )
 
         self.use_plando_button: QCheckBox = self.ui.config_use_plandomizer
         self.use_plando_button.stateChanged.connect(self.toggle_plando)

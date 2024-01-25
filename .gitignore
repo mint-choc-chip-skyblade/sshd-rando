@@ -1,8 +1,11 @@
 # Don't commit the vanilla game files xD
 title
+sshd_extract/*
+!sshd_extract/README.md
 
 # Don't commit the modified game files either :p
 output
+sshdr_output
 
 # Seriously, don't commit Nintendo's IP
 oarccache
