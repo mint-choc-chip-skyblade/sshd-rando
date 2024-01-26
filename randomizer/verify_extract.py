@@ -1,7 +1,11 @@
 import hashlib
 from constants.verificationconstants import *
 from filepathconstants import EXEFS_EXTRACT_PATH, ROMFS_EXTRACT_PATH, SSHD_EXTRACT_PATH
-from gui.dialogs.dialog_header import print_progress_text
+from gui.dialogs.dialog_header import (
+    print_progress_text,
+    print_verify_text,
+    update_verify_value,
+)
 
 
 class SSHDExtractError(RuntimeError):
@@ -10,6 +14,7 @@ class SSHDExtractError(RuntimeError):
 
 def verify_extract(verify_all_files: bool = False):
     print_progress_text("Verifying game extract")
+    print_verify_text("Verifying game extract")
 
     # Verify top level stuff
     if not SSHD_EXTRACT_PATH.is_dir():
@@ -34,13 +39,19 @@ def verify_extract(verify_all_files: bool = False):
 
     if verify_all_files:
         print_progress_text("Verifying all extract files")
+        print_verify_text("Verifying all extract files")
         important_file_hashs = ALL_FILE_HASHES
 
     files_checked = []
+    all_files = tuple(SSHD_EXTRACT_PATH.rglob("*"))
+    all_files_count = len(all_files)
 
-    for filepath in SSHD_EXTRACT_PATH.rglob("*"):
+    for file_index, filepath in enumerate(all_files):
+        update_verify_value(int((file_index / all_files_count) * 100))
+
         if filepath.is_file():
             short_name = filepath.as_posix().split("sshd_extract/")[-1]
+            print_verify_text(f"Verifying {short_name}")
 
             if short_name in important_file_hashs:
                 files_checked.append(short_name)
@@ -69,8 +80,14 @@ Could not verify extract.
                     """
                     )
 
+            print_verify_text(f"Verified {short_name}")
+
+    print_verify_text(f"Verifying all files exist")
+
     for short_name in important_file_hashs:
         if short_name not in files_checked:
             raise SSHDExtractError(
                 f"File '{short_name}' is missing. Could not verify extract."
             )
+
+    update_verify_value(100)

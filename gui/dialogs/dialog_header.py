@@ -25,7 +25,7 @@ def get_progress_value_from_range(
 
 
 if args.with_gui:
-    from gui.guithreads import RandomizationThread
+    from gui.guithreads import RandomizationThread, VerificationThread
 
     def update_progress_value(value: int):
         if RandomizationThread.callback:
@@ -38,6 +38,16 @@ if args.with_gui:
         if RandomizationThread.callback:
             RandomizationThread.callback.dialog_label_update.emit(label_text)
 
+    def update_verify_value(value: int):
+        if VerificationThread.callback:
+            VerificationThread.callback.dialog_value_update.emit(value)
+
+    def print_verify_text(label_text: str):
+        logging.getLogger("").debug(label_text)
+
+        if VerificationThread.callback:
+            VerificationThread.callback.dialog_label_update.emit(label_text)
+
 else:  # Don't actually do anything since there's no gui to update
 
     def update_progress_value(value: int):
@@ -46,3 +56,9 @@ else:  # Don't actually do anything since there's no gui to update
     def print_progress_text(label_text: str):
         logging.getLogger("").debug(label_text)
         print(label_text)
+
+    def update_verify_value(value: int):
+        pass
+
+    def print_verify_text(label_text: str):
+        logging.getLogger("").debug(label_text)

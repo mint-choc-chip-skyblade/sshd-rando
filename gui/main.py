@@ -23,7 +23,6 @@ class Main(QMainWindow):
         super().__init__()
 
         self.randomize_thread = RandomizationThread()
-
         self.randomize_thread.error_abort.connect(self.thread_error)
 
         self.ui = Ui_main_window()

@@ -6,6 +6,7 @@ from randomizer.verify_extract import verify_extract
 
 
 def randomize():
+    print("Starting new randomization:")
     verify_extract()
     worlds = generate(CONFIG_PATH)
 

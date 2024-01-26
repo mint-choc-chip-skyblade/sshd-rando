@@ -1,4 +1,5 @@
 from functools import partial
+import sys
 from PySide6.QtCore import Qt, QUrl
 from PySide6.QtGui import QDesktopServices
 from PySide6.QtWidgets import (
@@ -8,6 +9,9 @@ from PySide6.QtWidgets import (
 )
 
 from filepathconstants import CONFIG_PATH, PLANDO_PATH
+from gui.dialogs.error_dialog import error_from_str
+from gui.dialogs.verify_files_progress_dialog import VerifyFilesProgressDialog
+from gui.guithreads import VerificationThread
 from logic.config import Config, write_config_to_file
 
 from typing import TYPE_CHECKING
@@ -31,12 +35,15 @@ class Advanced:
         self.ui.random_settings_group_box.setTitle("")
         self.ui.randomization_settings_group_box.setTitle("")
 
+        self.verify_thread = VerificationThread()
+        self.verify_thread.error_abort.connect(self.thread_error)
+
         self.verify_important_button = self.ui.verify_important_extract_button
-        self.verify_important_button.clicked.connect(verify_extract)
+        self.verify_important_button.clicked.connect(self.verify_extract)
 
         self.verify_all_button = self.ui.verify_all_extract_button
         self.verify_all_button.clicked.connect(
-            partial(verify_extract, verify_all_files=True)
+            partial(self.verify_extract, verify_all=True)
         )
 
         self.use_plando_button: QCheckBox = self.ui.config_use_plandomizer
@@ -99,5 +106,23 @@ class Advanced:
                 "Could not open or create the 'plandomizers' folder.\n\nThe 'plandomizers' folder should be in the same folder as this randomizer program."
             )
 
+    def verify_extract(self, verify_all: bool = False):
+        verify_dialog = VerifyFilesProgressDialog(self.main)
+        self.verify_thread.dialog_value_update.connect(verify_dialog.setValue)
+        self.verify_thread.dialog_label_update.connect(verify_dialog.setLabelText)
+
+        self.verify_thread.set_verify_all(verify_all)
+        self.verify_thread.setTerminationEnabled(True)
+        self.verify_thread.start()
+        verify_dialog.exec()
+
+        # Prevents old progress dialogs reappearing when verifying multiple
+        # times without reopening the entire program
+        verify_dialog.deleteLater()
+
     def show_file_error_dialog(self, file_text: str):
         self.main.fi_info_dialog.show_dialog(title="File not found!", text=file_text)
+
+    def thread_error(self, exception: str, traceback: str):
+        error_from_str(exception, traceback)
+        sys.exit()
