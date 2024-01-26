@@ -5,7 +5,7 @@ from PySide6.QtGui import QIcon, QMouseEvent
 from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow, QWidget
 
 from constants.randoconstants import VERSION
-from filepathconstants import CONFIG_PATH, ICON_PATH
+from filepathconstants import CONFIG_PATH, DEFAULT_OUTPUT_PATH, ICON_PATH
 
 from gui.accessibility import Accessibility
 from gui.advanced import Advanced
@@ -15,7 +15,7 @@ from gui.guithreads import RandomizationThread
 from gui.settings import Settings
 from gui.dialogs.randomize_progress_dialog import RandomizerProgressDialog
 from gui.ui.ui_main import Ui_main_window
-from logic.config import load_config_from_file
+from logic.config import load_config_from_file, write_config_to_file
 
 
 class Main(QMainWindow):
@@ -49,6 +49,9 @@ class Main(QMainWindow):
         self.ui.about_button.clicked.connect(self.about)
 
     def randomize(self):
+        if not self.check_output_dir():
+            return
+
         progress_dialog = RandomizerProgressDialog(self)
 
         self.randomize_thread.dialog_value_update.connect(progress_dialog.setValue)
@@ -61,6 +64,37 @@ class Main(QMainWindow):
         # Prevents old progress dialogs reappearing when generating another
         # seed without reopening the entire program
         progress_dialog.deleteLater()
+
+    def check_output_dir(self) -> bool:
+        output_dir = self.config.output_dir
+
+        if output_dir != DEFAULT_OUTPUT_PATH and (
+            not output_dir.exists() or not output_dir.is_dir()
+        ):
+            output_not_exists_dialog = QMessageBox.question(
+                self,
+                "Cannot find output folder",
+                f"""
+The output folder you have specified cannot be found.
+Would you like to continue and use the default output path?
+
+Your output path:
+{output_dir.as_posix()}
+
+Default output folder:
+{DEFAULT_OUTPUT_PATH.as_posix()}""",
+            )
+
+            if output_not_exists_dialog != QMessageBox.Yes:  # type: ignore (Qt is stupid)
+                return False
+
+            self.config.output_dir = DEFAULT_OUTPUT_PATH
+            self.advanced.output_dir_line_edit.setText(
+                self.config.output_dir.as_posix()
+            )
+            write_config_to_file(CONFIG_PATH, self.config)
+
+        return True
 
     def about(self):
         about_dialog = QMessageBox(self)

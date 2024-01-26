@@ -1,4 +1,4 @@
-from filepathconstants import PLANDO_PATH
+from filepathconstants import DEFAULT_OUTPUT_PATH, PLANDO_PATH
 from .world import World
 from .config import *
 from .settings import *
@@ -20,6 +20,15 @@ def generate(config_file: Path) -> list[World]:
     load_text_data()
 
     config = load_config_from_file(config_file, create_if_blank=True)
+
+    if config.output_dir != DEFAULT_OUTPUT_PATH and (
+        not config.output_dir.exists() or not config.output_dir.is_dir()
+    ):
+        raise ConfigError(
+            f"""
+The output folder you have specified cannot be found ({config.output_dir.as_posix()}).
+Please choose a valid folder and try again."""
+        )
 
     # If config has no seed, generate one
     if config.seed == "" or config.seed == "-1":

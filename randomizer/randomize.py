@@ -7,8 +7,14 @@ from randomizer.verify_extract import verify_extract
 
 def randomize():
     print("Starting new randomization:")
+
     verify_extract()
     worlds = generate(CONFIG_PATH)
 
     patch_handler = AllPatchHandler(worlds[0])
     patch_handler.do_all_patches()
+
+    print("Randomization complete!")
+    print(
+        f"\nThe randomizer patch can be found at: {worlds[0].config.output_dir.as_posix()}"
+    )
