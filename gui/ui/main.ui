@@ -33,7 +33,7 @@ background-color: #FFFFFF;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -1014,6 +1014,13 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
            </item>
            <item>
             <widget class="QComboBox" name="setting_random_starting_spawn"/>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="setting_random_starting_statues">
+             <property name="text">
+              <string>Random Starting Statues</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QCheckBox" name="setting_decouple_double_doors">

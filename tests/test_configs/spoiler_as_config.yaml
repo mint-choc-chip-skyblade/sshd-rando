@@ -1,6 +1,6 @@
 seed: TESTTESTTEST
 World 1:
-  logic_rules: "on"
+  logic_rules: all_locations_reachable
   # Can't be random as "minimal" causes 4 locations to be unreachable
   item_pool: standard
   gratitude_crystal_shuffle: random

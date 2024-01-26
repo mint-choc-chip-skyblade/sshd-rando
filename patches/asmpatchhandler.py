@@ -359,6 +359,16 @@ class ASMPatchHandler:
                 final_count = min(maximum, count)
                 start_counts[counter] += amount * final_count
 
+        for starting_statue in world.starting_bird_statues.values():
+            flag = starting_statue["flag"]
+            if starting_statue["flag_space"] == "Story":
+                storyflags.append(flag)
+            else:
+                scene = starting_statue["flag_space"]
+                if scene not in sceneflags:
+                    sceneflags[scene] = []
+                sceneflags[scene].append(flag)
+
         # Each section is delimited by 0xFFFF
         startflags_data = BytesIO()
 

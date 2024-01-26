@@ -30,8 +30,7 @@
 - name: Faron Pillar
   hint_region: None
   exits:
-    Sealed Grounds: Nothing
-    Sealed Grounds Statue: "'Unlock_Sealed_Grounds_Statue'"
+    Sealed Grounds Statue: Nothing
     Behind the Temple Statue: "'Unlock_Behind_the_Temple_Statue'"
     Faron Woods Entry Statue: "'Unlock_Faron_Woods_Entry_Statue'"
     Viewing Platform Statue:  "'Unlock_Viewing_Platform_Statue'"
@@ -46,8 +45,7 @@
 - name: Eldin Pillar
   hint_region: None
   exits:
-    Volcano Entrance: Nothing
-    Volcano Entrance Statue: "'Unlock_Volcano_Entrance_Statue'"
+    Volcano Entrance Statue: Nothing
     Volcano East Statue: "'Unlock_Volcano_East_Statue'"
     Volcano Ascent Statue: "'Unlock_Volcano_Ascent_Statue'"
     Temple Entrance Statue: "'Unlock_Temple_Entrance_Statue'"
@@ -58,8 +56,7 @@
 - name: Lanayru Pillar
   hint_region: None
   exits:
-    Lanayru Mine Entry: Nothing
-    Lanayru Mine Entry Statue: "'Unlock_Lanayru_Mine_Entry_Statue'"
+    Lanayru Mine Entry Statue: Nothing
     Desert Entrance Statue: "'Unlock_Desert_Entrance_Statue'"
     West Desert Statue: "'Unlock_West_Desert_Statue'"
     Desert Gorge Statue: "'Unlock_Desert_Gorge_Statue'"

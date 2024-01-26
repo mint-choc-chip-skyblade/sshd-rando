@@ -48,11 +48,11 @@ def fill_worlds(worlds: list[World]):
     # Place the rest of the items with fast fill
     fast_fill(item_pool, all_locations)
 
-    if not game_beatable(worlds):
+    if not all_logic_satisfied(worlds):
         search = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds)
         search.search_worlds()
         search.dump_world_graph()
-        raise GameNotBeatableError("Game is not beatable after placing all items!")
+        raise GameNotBeatableError("Logic is not satisfied after placing all items!")
 
 
 def assumed_fill(
@@ -94,12 +94,18 @@ def assumed_fill(
             )
             search.search_worlds()
 
-            # Loop through the shuffled locations until we find a valid one
+            # Loop through the shuffled locations until we find a valid one.
+            # If a world is only checking for beatable logic, then we can ignore
+            # any access checks and just choose a random location if the world is already beatable
+            can_choose_any_location = (
+                item_to_place.world.setting("logic_rules") == "beatable_only"
+                and item_to_place.world.get_game_winning_item() in search.owned_items
+            )
             for location in allowed_locations:
                 loc_acc_list = [
                     la
                     for la in location.loc_access_list
-                    if la.area in search.visited_areas
+                    if can_choose_any_location or la.area in search.visited_areas
                 ]
                 if not location.is_empty() or not loc_acc_list:
                     continue
@@ -108,7 +114,8 @@ def assumed_fill(
                     [
                         True
                         for la in loc_acc_list
-                        if evaluate_location_requirement(search, la)
+                        if can_choose_any_location
+                        or evaluate_location_requirement(search, la)
                         == EvalSuccess.COMPLETE
                     ]
                 ):

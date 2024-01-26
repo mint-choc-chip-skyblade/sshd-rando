@@ -2,7 +2,7 @@ from .entrance import *
 from .item import Item
 from .item_pool import get_complete_item_pool
 from .world import World
-from .search import Search, SearchMode, all_locations_reachable
+from .search import Search, SearchMode, all_logic_satisfied
 from collections import Counter, OrderedDict
 
 
@@ -31,11 +31,27 @@ def shuffle_world_entrances(world: World, worlds: list[World]):
     # Set plando entrances first
     set_plandomizer_entrances(world, worlds, entrance_pools, target_entrance_pools)
 
-    # Shuffle the entrances
+    # Then set random first statues
+    set_random_starting_statues(world, worlds)
+
+    # Then shuffle the entrances
     for entrance_type, entrance_pool in entrance_pools.items():
         shuffle_entrance_pool(
             world, worlds, entrance_pool, target_entrance_pools[entrance_type]
         )
+
+    # Unset goal locations that aren't reachable so they can't be chosen
+    search = Search(
+        SearchMode.ALL_LOCATIONS_REACHABLE, worlds, get_complete_item_pool(worlds)
+    )
+    search.search_worlds()
+    for world in worlds:
+        for location in world.get_all_item_locations():
+            if location.is_goal_location and location not in search.visited_locations:
+                location.is_goal_location = False
+                logging.getLogger("").debug(
+                    f"Removing {location} as goal location due to it being unreachable"
+                )
 
 
 def set_all_entrances_data(world: World) -> None:
@@ -429,6 +445,58 @@ def set_plandomizer_entrances(
     logging.getLogger("").debug("All plandomizer entrances have been placed")
 
 
+def set_random_starting_statues(
+    world: World, worlds: list[World], retries: int = 10
+) -> None:
+    # Don't change anything if no starting statues
+    if world.setting("random_starting_statues") == "off":
+        return
+
+    item_pool = get_complete_item_pool(worlds)
+
+    logging.getLogger("").debug(f"Setting starting bird statues for {world}")
+    with open("data/bird_statue_data.yaml", "r") as bird_statue_data_file:
+        bird_statue_data = yaml.safe_load(bird_statue_data_file)
+
+        while retries > 0:
+            world.starting_bird_statues.clear()
+            for pillar, statues in bird_statue_data.items():
+                # First, reset all statues to logically require their own unlocking event
+                for statue in statues:
+                    statue_name = statue["name"]
+                    statue_event_name = statue_name.replace(" ", "_").replace("'", "")
+                    statue_entrance = world.get_entrance(f"{pillar} -> {statue_name}")
+                    statue_entrance.requirement.type = RequirementType.EVENT
+                    statue_entrance.requirement.args = [
+                        world.events[f"Unlock_{statue_event_name}"]
+                    ]
+
+                # Then choose a random one to require nothing
+                starting_statue = random.choice(statues)
+                statue_entrance = world.get_entrance(
+                    f"{pillar} -> {starting_statue['name']}"
+                )
+                statue_entrance.requirement.set_as_nothing()
+                logging.getLogger("").debug(
+                    f"Setting {starting_statue['name']} as starting statue for {pillar}"
+                )
+
+                world.starting_bird_statues[pillar] = starting_statue
+
+            try:
+                validate_world(world, worlds, None, item_pool)
+                return
+            except EntranceShuffleError as e:
+                retries -= 1
+                logging.getLogger("").debug(
+                    f"Failed to set starting statues for {world}. Will retry {retries} more times"
+                )
+                if retries == 0:
+                    raise EntranceShuffleError(
+                        f"Failed to set starting statues for {world}. Reason: {e}"
+                    )
+
+
 def shuffle_entrance_pool(
     world: World,
     worlds: list[World],
@@ -574,12 +642,15 @@ def validate_world(
     world: World, worlds: list[World], entrance: Entrance, item_pool: Counter[Item]
 ) -> None:
     # Validate that the world is still beatable
-    if not all_locations_reachable(worlds, item_pool):
-        raise EntranceShuffleError(f"Not all locations are reachable!")
+    if not all_logic_satisfied(worlds, item_pool):
+        raise EntranceShuffleError(f"Not all logic is satisfied!")
 
     # Check to make sure that there's at least 1 sphere 0 location reachable
     # with no items except the starting inventory
-    sphere_zero_search = Search(SearchMode.ACCESSIBLE_LOCATIONS, worlds)
+    sphere_zero_search = Search(SearchMode.SPHERE_ZERO, worlds)
     sphere_zero_search.search_worlds()
-    if len(sphere_zero_search.visited_locations) == 0:
+    if (
+        len(sphere_zero_search.visited_locations) == 0
+        and not sphere_zero_search.found_disconnected_exit
+    ):
         raise EntranceShuffleError(f"No Sphere 0 locations reachable at the start!")

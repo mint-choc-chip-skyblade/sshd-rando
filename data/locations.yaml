@@ -3627,6 +3627,7 @@
   types:
     - Freestanding Rupees
     - Advanced Rupees
+    - Allowed Unreachable
   Paths:
     - stage/F301/r0/l0/Item/91
 
@@ -3635,6 +3636,7 @@
   types:
     - Freestanding Rupees
     - Advanced Rupees
+    - Allowed Unreachable
   Paths:
     - stage/F301/r0/l0/Item/93
 
@@ -3770,6 +3772,7 @@
   types:
     - Freestanding Rupees
     - Advanced Rupees
+    - Allowed Unreachable
   Paths:
     - stage/F301_6/r0/l0/Item/12
 
@@ -3778,6 +3781,7 @@
   types:
     - Freestanding Rupees
     - Advanced Rupees
+    - Allowed Unreachable
   Paths:
     - stage/F301_6/r0/l0/Item/11
 

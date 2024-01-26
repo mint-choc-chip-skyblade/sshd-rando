@@ -672,6 +672,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_17.addWidget(self.setting_random_starting_spawn)
 
+        self.setting_random_starting_statues = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_random_starting_statues.setObjectName(u"setting_random_starting_statues")
+
+        self.verticalLayout_17.addWidget(self.setting_random_starting_statues)
+
         self.setting_decouple_double_doors = QCheckBox(self.entrance_randomization_group_box)
         self.setting_decouple_double_doors.setObjectName(u"setting_decouple_double_doors")
 
@@ -1922,7 +1927,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(7)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2020,6 +2025,7 @@ class Ui_main_window(object):
         self.setting_randomize_dungeon_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Dungeon Entrances", None))
         self.setting_randomize_trial_gate_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Trial Gate Entrances", None))
         self.random_starting_spawn_label.setText(QCoreApplication.translate("main_window", u"Randomize Starting Spawn", None))
+        self.setting_random_starting_statues.setText(QCoreApplication.translate("main_window", u"Random Starting Statues", None))
         self.setting_decouple_double_doors.setText(QCoreApplication.translate("main_window", u"Decouple Double Door Entrances", None))
         self.setting_decouple_entrances.setText(QCoreApplication.translate("main_window", u"Decouple Entrances", None))
         self.mixed_entrance_pools_group_box.setTitle(QCoreApplication.translate("main_window", u"Mixed Entrance Pools", None))

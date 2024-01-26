@@ -77,6 +77,10 @@ class World:
         self.song_hints: dict[Item, Hint] = {}
         self.impa_sot_hint: Hint = None  # type: ignore
 
+        # Save which bird statues we start with for patching and printing to spoiler log
+        # Mapping of pillar to starting statue data
+        self.starting_bird_statues: dict[str, dict] = {}
+
     def __str__(self) -> str:
         return f"World {self.id + 1}"
 
@@ -400,8 +404,11 @@ class World:
     def choose_required_dungeons(self):
         num_required_dungeons = self.setting("required_dungeons").value_as_number()
 
-        dungeons = list(self.dungeons.values())
-        dungeons.remove(self.dungeons["Sky Keep"])
+        dungeons = [
+            d
+            for d in self.dungeons.values()
+            if d.goal_location and d.name != "Sky Keep"
+        ]
 
         # Remove any dungeons which have non-major items plandomized to their goal locations
         # Also force require any dungeons which have a major item plandomized to their goal locations
@@ -587,6 +594,11 @@ class World:
                 f'Item "{item_name}" is not defined in the item table for {self}'
             )
         return self.item_table[item_name]
+
+    def get_game_winning_item(self) -> Item:
+        for item in self.item_table.values():
+            if item.is_game_winning_item:
+                return item
 
     def get_location(self, location_name: str) -> Location:
         if location_name not in self.location_table:
