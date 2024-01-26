@@ -1,10 +1,9 @@
 from collections import Counter
-from pathlib import Path
 import random
 
 import yaml
 from constants.itemnames import *
-from filepathconstants import WORDS_PATH
+from filepathconstants import DEFAULT_OUTPUT_PATH, WORDS_PATH
 
 
 def get_new_seed() -> str:
@@ -18,9 +17,22 @@ def get_new_seed() -> str:
         return new_seed
 
 
+CONFIG_SETTINGS = (
+    "seed",
+    "output_dir",
+    "generate_spoiler_log",
+    "use_plandomizer",
+    "plandomizer_file",
+    "theme_mode",
+    "theme_presets",
+    "use_custom_theme",
+    "font_family",
+    "font_size",
+)
+
+
 DEFAULT_SETTINGS = {
-    "output_dir": Path("./output"),
-    "input_dir": Path("./title"),
+    "output_dir": DEFAULT_OUTPUT_PATH,
     "seed": get_new_seed(),
     "use_plandomizer": False,
     "plandomizer_file": "None",

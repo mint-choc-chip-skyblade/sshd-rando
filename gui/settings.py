@@ -11,7 +11,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from constants.configdefaults import get_default_setting, get_new_seed
+from constants.configconstants import get_default_setting, get_new_seed
 from constants.guiconstants import *
 from constants.itemconstants import STARTABLE_ITEMS
 from filepathconstants import CONFIG_PATH, ITEMS_PATH

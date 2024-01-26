@@ -1,6 +1,6 @@
 from pathlib import Path
 import yaml
-from constants.configdefaults import get_default_setting
+from constants.configconstants import CONFIG_SETTINGS, get_default_setting
 from constants.itemconstants import STARTABLE_ITEMS
 
 from .settings import *
@@ -17,7 +17,6 @@ class Config:
         self.num_worlds: int = 0
         self.generate_spoiler_log = True
         self.output_dir: Path = None  # type: ignore
-        self.input_dir: Path = None  # type: ignore
         self.use_plandomizer: bool = False
         self.plandomizer_file: str | None = None
         self.theme_mode: str = None  # type: ignore
@@ -29,18 +28,9 @@ class Config:
 
 def create_default_config(filename: Path):
     config = Config()
-    config.output_dir = get_default_setting("output_dir")
-    config.input_dir = get_default_setting("input_dir")
-    config.seed = get_default_setting("seed")
-    config.use_plandomizer = get_default_setting("use_plandomizer")
-    config.plandomizer_file = get_default_setting("plandomizer_file")
-    config.generate_spoiler_log = get_default_setting("generate_spoiler_log")
 
-    config.theme_mode = get_default_setting("theme_mode")
-    config.theme_presets = get_default_setting("theme_presets")
-    config.use_custom_theme = get_default_setting("use_custom_theme")
-    config.font_family = get_default_setting("font_family")
-    config.font_size = get_default_setting("font_size")
+    for config_setting in CONFIG_SETTINGS:
+        config.__setattr__(config_setting, get_default_setting(config_setting))
 
     config.settings.append(SettingMap())
     setting_map = config.settings[0]
@@ -74,17 +64,11 @@ def write_config_to_file(filename: Path, config: Config):
     with open(filename, "w") as config_file:
         config_out = {}
 
-        config_out["seed"] = config.seed
-        config_out["input_dir"] = config.input_dir.as_posix()
-        config_out["output_dir"] = config.output_dir.as_posix()
-        config_out["use_plandomizer"] = config.use_plandomizer
-        config_out["plandomizer_file"] = config.plandomizer_file
+        for config_setting in CONFIG_SETTINGS:
+            config_out[config_setting] = config.__getattribute__(config_setting)
 
-        config_out["theme_mode"] = config.theme_mode
-        config_out["theme_presets"] = config.theme_presets
-        config_out["use_custom_theme"] = config.use_custom_theme
-        config_out["font_family"] = config.font_family
-        config_out["font_size"] = config.font_size
+        # Make sure output_dir is always a string
+        config_out["output_dir"] = config_out["output_dir"].as_posix()
 
         for i, setting_map in enumerate(config.settings):
             world_num = f"World {i + 1}"
@@ -121,10 +105,13 @@ def write_config_to_file(filename: Path, config: Config):
 
 
 def load_or_get_default_from_config(config: dict, setting_name: str):
+    is_from_default = False
+
     if (setting_value := config.get(setting_name)) is None:
         setting_value = get_default_setting(setting_name)
+        is_from_default = True
 
-    return setting_value
+    return (setting_value, is_from_default)
 
 
 def load_config_from_file(
@@ -143,27 +130,17 @@ def load_config_from_file(
         if config_in is None:
             config_in = dict()
 
-        config.seed = load_or_get_default_from_config(config_in, "seed")
-        config.input_dir = Path(load_or_get_default_from_config(config_in, "input_dir"))
-        config.output_dir = Path(
-            load_or_get_default_from_config(config_in, "output_dir")
-        )
-        config.use_plandomizer = load_or_get_default_from_config(
-            config_in, "use_plandomizer"
-        )
-        config.plandomizer_file = load_or_get_default_from_config(
-            config_in, "plandomizer_file"
-        )
+        for config_setting in CONFIG_SETTINGS:
+            setting_value, is_from_default = load_or_get_default_from_config(
+                config_in, config_setting
+            )
+            config.__setattr__(config_setting, setting_value)
 
-        config.theme_mode = load_or_get_default_from_config(config_in, "theme_mode")
-        config.theme_presets = load_or_get_default_from_config(
-            config_in, "theme_presets"
-        )
-        config.use_custom_theme = load_or_get_default_from_config(
-            config_in, "use_custom_theme"
-        )
-        config.font_family = load_or_get_default_from_config(config_in, "font_family")
-        config.font_size = load_or_get_default_from_config(config_in, "font_size")
+            if is_from_default:
+                rewrite_config = True
+
+        # Make sure output_dir is always a Path object
+        config.output_dir = Path(config.output_dir)
 
         world_num = 1
         world_num_str = f"World {world_num}"
