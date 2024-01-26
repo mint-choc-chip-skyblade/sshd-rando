@@ -3,14 +3,16 @@
 ############################
 
 - name: logic_rules
-  default_option: 'on'
+  default_option: all_locations_reachable
   pretty_name: Logic Rules
   pretty_options:
-    - 'On'
+    - All Locations Reachable
+    - Beatable Only
     - No Logic
     # - Vanilla
   options:
-    - 'on':                            "Logic is considered when placing Items. Generated seeds will always be beatable. Tricks and Glitches can be enabled for consideration below."
+    - all_locations_reachable:         "Logic is considered when placing items. Tricks and Glitches can be enabled for consideration below."
+    - beatable_only:                   "Logic is considered when placing items only until the world is beatable. Remaining items are placed without logic consideration. Tricks and Glitches can be enabled for consideration below."
     - no_logic:                        "Maximize randomization, logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
     # - vanilla:                         "Items are placed in their vanilla locations."
 

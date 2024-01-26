@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 from logic.generate import generate
 from logic.config import *
-from logic.search import all_locations_reachable
+from logic.search import all_logic_satisfied
 from logic.world import World
 
 
@@ -16,7 +16,7 @@ def config_test(config_file_name: str) -> list[World]:
     )
     write_config_to_file(config_file_name, config)
     worlds = generate(config_file_name)
-    assert all_locations_reachable(worlds)
+    assert all_logic_satisfied(worlds)
     os.remove(config_file_name)
     return worlds
 
@@ -153,6 +153,10 @@ def test_traps_off() -> None:
     config_test("traps_off.yaml")
 
 
+def test_beatable_only_config() -> None:
+    config_test("beatable_only.yaml")
+
+
 def test_no_logic_config() -> None:
     config_test("no_logic.yaml")
 
@@ -184,7 +188,7 @@ def test_spoiler_as_config() -> None:
     with open("spoiler_log_config_test.yaml", "w") as config:
         config.write(log1)
         worlds = generate("spoiler_log_config_test.yaml")
-        assert all_locations_reachable(worlds)
+        assert all_logic_satisfied(worlds)
 
     os.remove("spoiler_log_config_test.yaml")
 
