@@ -2649,18 +2649,36 @@ Practice Sword</string>
             </widget>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="output_layout">
+            <widget class="QLineEdit" name="config_output">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="output_button_layout">
              <item>
-              <widget class="QLineEdit" name="output_line_edit"/>
+              <widget class="QPushButton" name="reset_output_button">
+               <property name="text">
+                <string>Reset</string>
+               </property>
+              </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="output_button">
+              <widget class="QPushButton" name="browse_output_button">
                <property name="text">
                 <string>Browse</string>
                </property>
               </widget>
              </item>
             </layout>
+           </item>
+           <item>
+            <widget class="Line" name="utils_hline">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QLabel" name="verify_extract_label">
@@ -2686,6 +2704,20 @@ Practice Sword</string>
               </widget>
              </item>
             </layout>
+           </item>
+           <item>
+            <widget class="Line" name="utils_hline_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="config_generate_spoiler_log">
+             <property name="text">
+              <string>Generate Spoiler Log</string>
+             </property>
+            </widget>
            </item>
            <item>
             <spacer name="verticalSpacer_3">
@@ -2868,7 +2900,11 @@ Practice Sword</string>
     <item>
      <layout class="QGridLayout" name="footer_grid_layout">
       <item row="0" column="1">
-       <widget class="QLineEdit" name="setting_setting_string"/>
+       <widget class="QLineEdit" name="setting_setting_string">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="setting_string_label">

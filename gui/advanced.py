@@ -1,22 +1,24 @@
 from functools import partial
+from pathlib import Path
 import sys
+
 from PySide6.QtCore import Qt, QUrl
 from PySide6.QtGui import QDesktopServices
 from PySide6.QtWidgets import (
     QAbstractButton,
     QCheckBox,
     QComboBox,
+    QLineEdit,
+    QFileDialog,
 )
 
-from filepathconstants import CONFIG_PATH, PLANDO_PATH
+from filepathconstants import CONFIG_PATH, DEFAULT_OUTPUT_PATH, PLANDO_PATH
 from gui.dialogs.error_dialog import error_from_str
 from gui.dialogs.verify_files_progress_dialog import VerifyFilesProgressDialog
 from gui.guithreads import VerificationThread
 from logic.config import Config, write_config_to_file
 
 from typing import TYPE_CHECKING
-
-from randomizer.verify_extract import verify_extract
 
 if TYPE_CHECKING:
     from gui.main import Main
@@ -34,6 +36,19 @@ class Advanced:
         # TODO: Add configs for these
         self.ui.random_settings_group_box.setTitle("")
         self.ui.randomization_settings_group_box.setTitle("")
+
+        self.output_dir_line_edit: QLineEdit = self.ui.config_output
+        self.output_dir_line_edit.setText(self.config.output_dir.as_posix())
+
+        self.reset_output_button: QAbstractButton = self.ui.reset_output_button
+        self.reset_output_button.clicked.connect(self.reset_output_dir)
+
+        self.browse_output_button: QAbstractButton = self.ui.browse_output_button
+        self.browse_output_button.clicked.connect(self.open_file_picker)
+
+        self.spoiler_log_check_box: QCheckBox = self.ui.config_generate_spoiler_log
+        self.spoiler_log_check_box.setChecked(self.config.generate_spoiler_log)
+        self.spoiler_log_check_box.stateChanged.connect(self.toggle_spoiler_log)
 
         self.verify_thread = VerificationThread()
         self.verify_thread.error_abort.connect(self.thread_error)
@@ -75,6 +90,28 @@ class Advanced:
 
     def update_config(self):
         write_config_to_file(CONFIG_PATH, self.config)
+
+    def open_file_picker(self):
+        if output_dir := QFileDialog.getExistingDirectory(
+            self.main, "Select output folder", self.config.output_dir.as_posix()
+        ):
+            self.output_dir_line_edit.setText(output_dir)
+            self.config.output_dir = Path(output_dir)
+            self.update_config()
+
+    def reset_output_dir(self):
+        self.config.output_dir = DEFAULT_OUTPUT_PATH
+        self.output_dir_line_edit.setText(self.config.output_dir.as_posix())
+        self.update_config()
+
+    def toggle_spoiler_log(self):
+        generate_spoiler_log: Qt.CheckState = self.spoiler_log_check_box.checkState()
+        self.config.generate_spoiler_log = False
+
+        if generate_spoiler_log == Qt.CheckState.Checked:
+            self.config.generate_spoiler_log = True
+
+        self.update_config()
 
     def toggle_plando(self):
         use_plando_state: Qt.CheckState = self.use_plando_button.checkState()

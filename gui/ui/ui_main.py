@@ -1689,20 +1689,33 @@ class Ui_main_window(object):
 
         self.verticalLayout_31.addWidget(self.output_label)
 
-        self.output_layout = QHBoxLayout()
-        self.output_layout.setObjectName(u"output_layout")
-        self.output_line_edit = QLineEdit(self.file_setup_group_box)
-        self.output_line_edit.setObjectName(u"output_line_edit")
+        self.config_output = QLineEdit(self.file_setup_group_box)
+        self.config_output.setObjectName(u"config_output")
+        self.config_output.setReadOnly(True)
 
-        self.output_layout.addWidget(self.output_line_edit)
+        self.verticalLayout_31.addWidget(self.config_output)
 
-        self.output_button = QPushButton(self.file_setup_group_box)
-        self.output_button.setObjectName(u"output_button")
+        self.output_button_layout = QHBoxLayout()
+        self.output_button_layout.setObjectName(u"output_button_layout")
+        self.reset_output_button = QPushButton(self.file_setup_group_box)
+        self.reset_output_button.setObjectName(u"reset_output_button")
 
-        self.output_layout.addWidget(self.output_button)
+        self.output_button_layout.addWidget(self.reset_output_button)
+
+        self.browse_output_button = QPushButton(self.file_setup_group_box)
+        self.browse_output_button.setObjectName(u"browse_output_button")
+
+        self.output_button_layout.addWidget(self.browse_output_button)
 
 
-        self.verticalLayout_31.addLayout(self.output_layout)
+        self.verticalLayout_31.addLayout(self.output_button_layout)
+
+        self.utils_hline = QFrame(self.file_setup_group_box)
+        self.utils_hline.setObjectName(u"utils_hline")
+        self.utils_hline.setFrameShape(QFrame.HLine)
+        self.utils_hline.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_31.addWidget(self.utils_hline)
 
         self.verify_extract_label = QLabel(self.file_setup_group_box)
         self.verify_extract_label.setObjectName(u"verify_extract_label")
@@ -1723,6 +1736,18 @@ class Ui_main_window(object):
 
 
         self.verticalLayout_31.addLayout(self.verify_extract_layout)
+
+        self.utils_hline_2 = QFrame(self.file_setup_group_box)
+        self.utils_hline_2.setObjectName(u"utils_hline_2")
+        self.utils_hline_2.setFrameShape(QFrame.HLine)
+        self.utils_hline_2.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_31.addWidget(self.utils_hline_2)
+
+        self.config_generate_spoiler_log = QCheckBox(self.file_setup_group_box)
+        self.config_generate_spoiler_log.setObjectName(u"config_generate_spoiler_log")
+
+        self.verticalLayout_31.addWidget(self.config_generate_spoiler_log)
 
         self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -1828,6 +1853,7 @@ class Ui_main_window(object):
         self.footer_grid_layout.setObjectName(u"footer_grid_layout")
         self.setting_setting_string = QLineEdit(self.central_widget)
         self.setting_setting_string.setObjectName(u"setting_setting_string")
+        self.setting_setting_string.setReadOnly(True)
 
         self.footer_grid_layout.addWidget(self.setting_setting_string, 0, 1, 1, 1)
 
@@ -2124,10 +2150,12 @@ class Ui_main_window(object):
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic and Tricks", None))
         self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"Extract and Output Utilities", None))
         self.output_label.setText(QCoreApplication.translate("main_window", u"Output Path:", None))
-        self.output_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
+        self.reset_output_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
+        self.browse_output_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
         self.verify_extract_label.setText(QCoreApplication.translate("main_window", u"Verify Extracted Game Files:", None))
         self.verify_important_extract_button.setText(QCoreApplication.translate("main_window", u"Verify Important Files", None))
         self.verify_all_extract_button.setText(QCoreApplication.translate("main_window", u"Verify All Files", None))
+        self.config_generate_spoiler_log.setText(QCoreApplication.translate("main_window", u"Generate Spoiler Log", None))
         self.plandomizer_group_box.setTitle(QCoreApplication.translate("main_window", u"Plandomizer", None))
         self.plandomizer_warning_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-weight:700;\">WARNING</span>: The plandomizer settings will automatically <span style=\" font-weight:700;\">TURN THEMSELVES OFF</span> when reopening this randomizer program!</p></body></html>", None))
         self.config_use_plandomizer.setText(QCoreApplication.translate("main_window", u"Use Plandomizer File", None))
