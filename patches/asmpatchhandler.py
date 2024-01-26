@@ -6,9 +6,6 @@ from filepathconstants import (
     ASM_PATCHES_DIFFS_PATH,
     ASM_SDK_DIFFS_PATH,
     MAIN_NSO_FILE_PATH,
-    OUTPUT_ADDITIONAL_SUBSDK,
-    OUTPUT_MAIN_NSO,
-    OUTPUT_SDK_NSO,
     SDK_FILE_PATH,
     STARTFLAGS_FILE_PATH,
     SUBSDK1_FILE_PATH,
@@ -38,6 +35,12 @@ ASM_DEBUG_PRINT = False
 
 
 class ASMPatchHandler:
+    def __init__(self, asm_output_path: Path) -> None:
+        self.asm_output_path = asm_output_path
+        self.main_nso_output_path = self.asm_output_path / "main"
+        self.subsdk8_nso_path = self.asm_output_path / "subsdk8"
+        self.sdk_nso_path = self.asm_output_path / "sdk"
+
     def compress(self, data: bytes) -> bytes:
         # Uses the lz4 compression.
         return compress(data)[4:]  # trims lz4 junk off the start
@@ -226,7 +229,7 @@ class ASMPatchHandler:
                 onlyif_handler,
                 SDK_FILE_PATH,
                 ASM_SDK_DIFFS_PATH,
-                OUTPUT_SDK_NSO,
+                self.sdk_nso_path,
                 SDK_NSO_OFFSETS,
             )
 
@@ -236,7 +239,7 @@ class ASMPatchHandler:
             onlyif_handler,
             MAIN_NSO_FILE_PATH,
             ASM_PATCHES_DIFFS_PATH,
-            OUTPUT_MAIN_NSO,
+            self.main_nso_output_path,
             MAIN_NSO_OFFSETS,
         )
 
@@ -270,7 +273,7 @@ class ASMPatchHandler:
                 onlyif_handler,
                 SUBSDK1_FILE_PATH,
                 ASM_ADDITIONS_DIFFS_PATH,
-                OUTPUT_ADDITIONAL_SUBSDK,
+                self.subsdk8_nso_path,
                 SUBSDK_NSO_OFFSETS,
                 extra_diffs_path=temp_dir_name,
             )

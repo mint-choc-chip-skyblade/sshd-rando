@@ -9,12 +9,7 @@ EXEFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "exefs"
 ROMFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "romfs"
 
 # Outputs
-OUTPUT_PATH = RANDO_ROOT_PATH / "sshdr_output"
-OUTPUT_STAGE_PATH = OUTPUT_PATH / "romfs" / "Stage"
-OUTPUT_EVENT_PATH = OUTPUT_PATH / "romfs" / "US" / "Object" / "en_US"
-OUTPUT_MAIN_NSO = OUTPUT_PATH / "exefs" / "main"
-OUTPUT_ADDITIONAL_SUBSDK = OUTPUT_PATH / "exefs" / "subsdk8"
-OUTPUT_SDK_NSO = OUTPUT_PATH / "exefs" / "sdk"
+DEFAULT_OUTPUT_PATH = RANDO_ROOT_PATH / "sshdr_output"
 
 # Config
 CONFIG_PATH = RANDO_ROOT_PATH / "config.yaml"
@@ -50,9 +45,8 @@ LOCATIONS_PATH = RANDO_ROOT_PATH / "data" / "locations.yaml"
 STAGE_FILES_PATH = ROMFS_EXTRACT_PATH / "Stage"
 EVENT_FILES_PATH = ROMFS_EXTRACT_PATH / "US" / "Object" / "en_US"
 
-OBJECTPACK_PATH = SSHD_EXTRACT_PATH / "romfs" / "Object" / "NX" / "ObjectPack.arc.LZ"
-
-MODIFIED_OBJECTPACK_PATH = OUTPUT_PATH / "romfs" / "Object" / "NX" / "ObjectPack.arc.LZ"
+OBJECTPACK_PATH_TAIL = Path("romfs") / "Object" / "NX" / "ObjectPack.arc.LZ"
+OBJECTPACK_PATH = SSHD_EXTRACT_PATH / OBJECTPACK_PATH_TAIL
 
 # Logo, Icon, and Words
 ICON_PATH = RANDO_ROOT_PATH / "assets" / "icon.png"
@@ -60,12 +54,7 @@ FI_ICON_PATH = RANDO_ROOT_PATH / "assets" / "fi.png"
 ERROR_ICON_PATH = RANDO_ROOT_PATH / "assets" / "error.png"
 
 TITLE2D_SOURCE_PATH = ROMFS_EXTRACT_PATH / "Layout" / "Title2D.arc"
-
 ENDROLL_SOURCE_PATH = ROMFS_EXTRACT_PATH / "Layout" / "EndRoll.arc"
-
-TITLE2D_OUTPUT_PATH = OUTPUT_PATH / "romfs" / "Layout" / "Title2D.arc"
-
-ENDROLL_OUTPUT_PATH = OUTPUT_PATH / "romfs" / "Layout" / "EndRoll.arc"
 
 WORDS_PATH = RANDO_ROOT_PATH / "data" / "skyward_sword_words.yaml"
 

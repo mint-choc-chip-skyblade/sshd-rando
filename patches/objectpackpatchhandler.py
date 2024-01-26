@@ -1,6 +1,6 @@
+from pathlib import Path
 from filepathconstants import (
     OBJECTPACK_PATH,
-    MODIFIED_OBJECTPACK_PATH,
     OBJECTPACK_PATCHES_PATH,
     OARC_CACHE_PATH,
 )
@@ -9,7 +9,7 @@ from sslib.yaml import yaml_load
 from sslib.u8file import U8File
 
 
-def patch_object_pack():
+def patch_object_pack(object_pack_output_path: Path):
     patches = yaml_load(OBJECTPACK_PATCHES_PATH)
     objectpack_arc = None
 
@@ -26,5 +26,5 @@ def patch_object_pack():
 
     if objectpack_arc is not None:
         write_bytes_create_dirs(
-            MODIFIED_OBJECTPACK_PATH, objectpack_arc.build_and_compress_U8()
+            object_pack_output_path, objectpack_arc.build_and_compress_U8()
         )

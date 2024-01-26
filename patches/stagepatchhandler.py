@@ -31,16 +31,13 @@ from constants.patchconstants import (
 
 from filepathconstants import (
     RANDO_ROOT_PATH,
-    OUTPUT_STAGE_PATH,
     STAGE_FILES_PATH,
     STAGE_PATCHES_PATH,
     OARC_CACHE_PATH,
     EXTRACTS_PATH,
     OBJECTPACK_PATH,
     TITLE2D_SOURCE_PATH,
-    TITLE2D_OUTPUT_PATH,
     ENDROLL_SOURCE_PATH,
-    ENDROLL_OUTPUT_PATH,
 )
 
 parser = argparse.ArgumentParser()
@@ -688,6 +685,7 @@ def layer_override(bzs: dict, patch: dict):
 # individually
 def patch_and_write_stage(
     stage_path: Path,
+    stage_output_path: Path,
     stage_patches,
     check_patches,
     stage_oarc_remove,
@@ -700,8 +698,8 @@ def patch_and_write_stage(
 
     stage = stage_match[1]
     layer = int(stage_match[2])
-    modified_stage_path = Path(
-        OUTPUT_STAGE_PATH / f"{stage}" / "NX" / f"{stage}_stg_l{layer}.arc.LZ"
+    modified_stage_path = (
+        stage_output_path / f"{stage}" / "NX" / f"{stage}_stg_l{layer}.arc.LZ"
     )
     # remove arcs
     remove_arcs = set(stage_oarc_remove.get((stage, layer), []))
@@ -947,7 +945,9 @@ def patch_and_write_stage(
 
 
 class StagePatchHandler:
-    def __init__(self):
+    def __init__(self, output_path: Path):
+        self.base_output_path = output_path
+        self.stage_output_path = self.base_output_path / "Stage"
         self.stage_patches: dict = yaml_load(STAGE_PATCHES_PATH)  # type: ignore
         self.check_patches: dict[str, list[tuple]] = defaultdict(list)
         self.stage_oarc_remove: dict[tuple[str, int], set[str]] = defaultdict(set)
@@ -983,6 +983,7 @@ class StagePatchHandler:
             # we're kicking off to the pool when using the pool.map method
             patch_stage_func = partial(
                 patch_and_write_stage,
+                stage_output_path=self.stage_output_path,
                 stage_patches=self.stage_patches,
                 check_patches=self.check_patches,
                 stage_oarc_remove=self.stage_oarc_remove,
@@ -1177,7 +1178,9 @@ class StagePatchHandler:
             )
             title_2d_arc.set_file_data("blyt/titleBG_00.brlyt", lyt_file)
 
-        write_bytes_create_dirs(TITLE2D_OUTPUT_PATH, title_2d_arc.build_U8())
+        write_bytes_create_dirs(
+            self.base_output_path / "Layout" / "Title2D.arc", title_2d_arc.build_U8()
+        )
 
         # Write credits logo
         print_progress_text("Patching Credits Logo")
@@ -1195,4 +1198,6 @@ class StagePatchHandler:
             )
             endroll_arc.set_file_data("blyt/endTitle_00.brlyt", lyt_file)
 
-        write_bytes_create_dirs(ENDROLL_OUTPUT_PATH, endroll_arc.build_U8())
+        write_bytes_create_dirs(
+            self.base_output_path / "Layout" / "EndRoll.arc", endroll_arc.build_U8()
+        )
