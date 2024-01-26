@@ -1,3 +1,4 @@
+import getpass
 import pyclip
 import traceback
 
@@ -45,7 +46,11 @@ def error_from_str(exception: str, traceback: str):
                     <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\">GitHub</a>
     """
     error_dialog.setText(error_text.ljust(128))
-    error_dialog.setDetailedText(f"```\n{traceback}\n```")
+
+    # Remove usernames for easier privacy when reporting issues
+    error_dialog.setDetailedText(
+        f"```\n{ traceback.replace(getpass.getuser(), '[user]') }\n```"
+    )
 
     print(traceback)
     error_dialog.exec()
