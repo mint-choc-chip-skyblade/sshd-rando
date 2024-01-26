@@ -57,7 +57,7 @@ background-color: #FFFFFF;
           <property name="title">
            <string>How to Randomize the Game</string>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,0,1,0,1,0,1">
            <item>
             <widget class="QGroupBox" name="how_to_extract_group_box">
              <property name="sizePolicy">
@@ -79,11 +79,7 @@ background-color: #FFFFFF;
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Before generating a seed, you need to have a valid extract of the vanilla version of the game.&lt;br&gt;&lt;br&gt;
-
-Specifically, you will need to extract the &lt;code&gt;exeFS&lt;/code&gt; and &lt;code&gt;romFS&lt;/code&gt; files of the 1.0.1 version of the game. You can do this with a modded Nintendo Switch console with a tool such as &lt;a href=&quot;https://github.com/DarkMatterCore/nxdumptool&quot;&gt;nxdumptool&lt;/a&gt; or with the &lt;a href=&quot;https://ryujinx.org&quot;&gt;Ryujinx emulator&lt;/a&gt; (yuzu cannot currently extract the &lt;code&gt;romFS&lt;/code&gt; folder)&lt;br&gt;&lt;br&gt;
-
-For help with this process, please ask on GitHub or join the Discord server linked below.</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Before generating a seed, you need to have a valid extract of the vanilla version of the game.&lt;br/&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;TODO: Add extract guide&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;For additional help with this process, please join the &lt;a href=&quot;https://discord.gg/zkm6yncD&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Discord Server&lt;/span&gt;&lt;/a&gt; or ask on &lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
@@ -122,6 +118,59 @@ For help with this process, please ask on GitHub or join the Discord server link
             </widget>
            </item>
            <item>
+            <widget class="QGroupBox" name="useful_choose_settings_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Choosing your Settings</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QLabel" name="choose_settings_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Quick start: &lt;/span&gt;You can select one of the settings presets below to jump straight in!&lt;/p&gt;&lt;p&gt;Don't worry if there's too much going on, the default settings are perfect for beginners.&lt;/p&gt;&lt;p&gt;Alternatively, you can customize every setting yourself. There's lots of buttons and switches, so get stuck in!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="openExternalLinks">
+                 <bool>true</bool>
+                </property>
+                <property name="textInteractionFlags">
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="how_to_middle_arrow_label">
+             <property name="text">
+              <string>➜</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QGroupBox" name="how_to_generate_group_box">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -142,13 +191,7 @@ For help with this process, please ask on GitHub or join the Discord server link
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>After you have obtained an extract of the vanilla game, you need to tell this randomizer program where the extract is located so that it can be used to generate a seed.&lt;br&gt;&lt;br&gt;
-
-Please go to the &quot;File Setup&quot; box below and click the &quot;Browse&quot; button on the &quot;Extract&quot; row. You will then be asked to find the location of your extract.&lt;br&gt;&lt;br&gt;
-
-Once the extract has been verified, you can browse the various tabs and customize the settings of your randomizer seed.&lt;br&gt;&lt;br&gt;
-
-When you are ready, click the &quot;Randomize&quot; button in the bottom right of the screen. By default, the output will be in the &lt;code&gt;output&lt;/code&gt; folder where this randomizer program is located.</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Once you're ready, click the &lt;span style=&quot; font-family:'Courier New';&quot;&gt;Randomize&lt;/span&gt; button in the bottom right.&lt;/p&gt;&lt;p&gt;The program will begin to generate a game patch that will allow you to play the randomizer.&lt;/p&gt;&lt;p&gt;If you encounter a problem, don't hesitate to ask for help! You can join the &lt;a href=&quot;https://discord.gg/zkm6yncD&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Discord Server&lt;/span&gt;&lt;/a&gt; or ask on &lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
@@ -181,6 +224,9 @@ When you are ready, click the &quot;Randomize&quot; button in the bottom right o
              <property name="text">
               <string>➜</string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
             </widget>
            </item>
            <item>
@@ -198,17 +244,13 @@ When you are ready, click the &quot;Randomize&quot; button in the bottom right o
               <item>
                <widget class="QLabel" name="how_to_running_label">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Ignored" vsizetype="Minimum">
+                 <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>If you want to play this randomizer on a modded Nintendo Switch console, copy the outputted &lt;code&gt;exeFS&lt;/code&gt; and &lt;code&gt;romFS&lt;/code&gt; folders into the &lt;code&gt;/atmosphere/contents/01002DA013484000&lt;/code&gt; folder on your Switch's SD card. You can then run the game like normal and the randomizer will be patched on top of the vanilla game.&lt;br&gt;&lt;br&gt;
-
-If you want to play this randomizer on the &lt;a href=&quot;https://yuzu-emu.org/&quot;&gt;yuzu emulator&lt;/a&gt;, open yuzu and right click on your copy of Skyward Sword HD. Click the &quot;Open Mod Data Location&quot; option and create a folder called &lt;code&gt;rando&lt;/code&gt;. Copy the outputted &lt;code&gt;exeFS&lt;/code&gt; and &lt;code&gt;romFS&lt;/code&gt; folders into the newly created &lt;code&gt;rando&lt;/code&gt; folder.&lt;br&gt;&lt;br&gt;
-
-If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&quot;&gt;Ryujinx emulator&lt;/a&gt;, copy the outputted &lt;code&gt;exeFS&lt;/code&gt; and &lt;code&gt;romFS&lt;/code&gt; folders into the &lt;code&gt;/Ryujinx/mods/contents/01002DA013484000&lt;/code&gt; folder.</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can play the randomizer either on a modded Nintendo Switch console or on an emulator.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;TODO: add guide links&lt;/span&gt;&lt;/p&gt;&lt;p&gt;If you want to play on console, please follow these instructions&lt;/p&gt;&lt;p&gt;If you want to play on emulator, please follow these instructions for yuzu or these instructions for Ryujinx.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
@@ -237,10 +279,77 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
          </widget>
         </item>
         <item>
-         <layout class="QGridLayout" name="gridLayout_7" columnstretch="1,1">
+         <layout class="QGridLayout" name="middle_grid_layout" columnstretch="1,1,2">
           <property name="bottomMargin">
            <number>0</number>
           </property>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="presets_group_box">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>Presets</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_34">
+             <item>
+              <layout class="QHBoxLayout" name="selected_preset_layout">
+               <item>
+                <widget class="QLabel" name="selected_preset_label">
+                 <property name="text">
+                  <string>Selected Preset:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="selected_preset_combo_box">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="presets_button_layout">
+               <item>
+                <widget class="QPushButton" name="presets_delete_button">
+                 <property name="text">
+                  <string>Delete</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="presets_save_new_button">
+                 <property name="text">
+                  <string>Save New</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="presets_vspacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>86</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
           <item row="0" column="1">
            <widget class="QGroupBox" name="useful_info_group_box">
             <property name="sizePolicy">
@@ -252,105 +361,40 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             <property name="title">
              <string>Useful Information</string>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_7">
-             <property name="sizeConstraint">
-              <enum>QLayout::SetDefaultConstraint</enum>
-             </property>
+            <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
-              <widget class="QGroupBox" name="useful_choose_settings_group_box">
+              <widget class="QLabel" name="community_label">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="title">
-                <string>Choosing your Settings</string>
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;TODO&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://discord.gg/zkm6yncD&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Discord Server&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Report a Bug&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;➜ Setup Guide (todo)&lt;br/&gt;➜ Location Guide (todo)&lt;br/&gt;➜ Tricks Guide (todo)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_8">
-                <item>
-                 <widget class="QLabel" name="choose_settings_label">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>&lt;b&gt;➜ Gameplay&lt;/b&gt;: Customize how the game is played and beaten.&lt;br&gt;
-&lt;b&gt;➜ World&lt;/b&gt;: Pick how open the world is, shortcuts, and entrance randomization.&lt;br&gt;
-&lt;b&gt;➜ Locations and Shuffles&lt;/b&gt;: Pick which locations and shuffles are enabled.&lt;br&gt;
-&lt;b&gt;➜ Items and Inventory&lt;/b&gt;: Pick what items you start with.&lt;br&gt;
-&lt;b&gt;➜ Hints&lt;/b&gt;: Customize the in-game hints that can help you to beat the game.&lt;br&gt;
-&lt;b&gt;➜ Logic and Tricks&lt;/b&gt;: Pick which locations and tricks are enabled.&lt;br&gt;
-&lt;b&gt;➜ Advanced&lt;/b&gt;: Control complex settings such as plandomizer and output folders.</string>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::RichText</enum>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                  </property>
-                  <property name="wordWrap">
-                   <bool>true</bool>
-                  </property>
-                  <property name="openExternalLinks">
-                   <bool>true</bool>
-                  </property>
-                  <property name="textInteractionFlags">
-                   <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="useful_links_group_box">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
                </property>
-               <property name="title">
-                <string>Links</string>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_2">
-                <item>
-                 <widget class="QLabel" name="links_label">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>&lt;b&gt;TODO&lt;/b&gt;&lt;br&gt;
-
-&lt;b&gt;➜&lt;/b&gt; &lt;a href=&quot;https://discord.gg/zkm6yncD&quot;&gt;Discord Server&lt;/a&gt;&lt;br&gt;
-&lt;b&gt;➜&lt;/b&gt; &lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;Report a Bug&lt;/a&gt;&lt;br&gt;
-&lt;b&gt;➜&lt;/b&gt; &lt;a href=&quot;&quot;&gt;Location Guide (todo)&lt;/a&gt;</string>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::RichText</enum>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                  </property>
-                  <property name="openExternalLinks">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+               <property name="textInteractionFlags">
+                <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+               </property>
               </widget>
              </item>
             </layout>
            </widget>
           </item>
-          <item row="0" column="0">
-           <widget class="QGroupBox" name="theming_group_box">
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="accessibility_group_box">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -362,7 +406,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1">
              <item>
-              <widget class="QGroupBox" name="groupBox">
+              <widget class="QGroupBox" name="theming_group_box">
                <property name="title">
                 <string>Theming</string>
                </property>
@@ -371,7 +415,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_3">
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout">
+                 <layout class="QHBoxLayout" name="theme_mode_layout">
                   <item>
                    <widget class="QLabel" name="theme_mode_label">
                     <property name="text">
@@ -392,7 +436,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <layout class="QHBoxLayout" name="theme_presets_layout">
                   <item>
                    <widget class="QLabel" name="theme_presets_label">
                     <property name="text">
@@ -427,7 +471,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                  </widget>
                 </item>
                 <item>
-                 <spacer name="verticalSpacer_2">
+                 <spacer name="theming_vspacer">
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
                   </property>
@@ -452,11 +496,11 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_12">
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <layout class="QHBoxLayout" name="font_family_layout">
                   <item>
                    <widget class="QLabel" name="font_family_label">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -469,7 +513,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                   <item>
                    <widget class="QFontComboBox" name="font_family_combo_box">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Maximum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -531,7 +575,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
                  </widget>
                 </item>
                 <item>
-                 <spacer name="verticalSpacer">
+                 <spacer name="fonts_vspacer">
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
                   </property>
@@ -1180,14 +1224,7 @@ If you want to play the randomizer on the &lt;a href=&quot;https://ryujinx.org/&
               </sizepolicy>
              </property>
              <property name="text">
-              <string>&lt;b&gt;What are Mixed Entrance Pools?&lt;/b&gt;
-&lt;br&gt;
-&lt;br&gt;Mixed entrance pools define how entrance types should be shuffled together.
-&lt;br&gt;By default, turning on an entrance randomizer setting will only shuffle the entrances of that type with each other.
-&lt;br&gt; For example, randomizing dungeon entrances will only shuffle the dungeon entrances with each other. The Sandship entrance could &lt;i&gt;not&lt;/i&gt; be shuffled to Wryna's House door or a trial gate entrance.
-&lt;br&gt;
-&lt;br&gt;By defining mixed entrance pools, different entrance types can be shuffled together.
-&lt;br&gt;For example, if a mixed pool was defined as this: [Dungeon, Door, Trial Gate], the Sandship entrance &lt;i&gt;could&lt;/i&gt; be shuffled to Wryna's House door or a trial gate entrance.</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;What are Mixed Entrance Pools?&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Mixed entrance pools define how entrance types are shuffled together. By default, turning on an entrance randomizer setting will only shuffle the entrances of that type with each other. For example, randomizing dungeon entrances will only shuffle the dungeon entrances with each other. The Sandship entrance could &lt;span style=&quot; font-style:italic;&quot;&gt;not&lt;/span&gt; be shuffled to Wryna's House door or a trial gate entrance. &lt;br/&gt;&lt;br/&gt;By defining mixed entrance pools, different entrance types can be shuffled together. For example, if a mixed pool was defined as this: [Dungeon, Door, Trial Gate], the Sandship entrance &lt;span style=&quot; font-style:italic;&quot;&gt;could&lt;/span&gt; be shuffled to Wryna's House door or a trial gate entrance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="textFormat">
               <enum>Qt::RichText</enum>

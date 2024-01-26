@@ -93,6 +93,33 @@ class Ui_main_window(object):
 
         self.horizontalLayout_3.addWidget(self.how_to_left_arrow_label)
 
+        self.useful_choose_settings_group_box = QGroupBox(self.how_to_group_box)
+        self.useful_choose_settings_group_box.setObjectName(u"useful_choose_settings_group_box")
+        sizePolicy2.setHeightForWidth(self.useful_choose_settings_group_box.sizePolicy().hasHeightForWidth())
+        self.useful_choose_settings_group_box.setSizePolicy(sizePolicy2)
+        self.verticalLayout_8 = QVBoxLayout(self.useful_choose_settings_group_box)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.choose_settings_label = QLabel(self.useful_choose_settings_group_box)
+        self.choose_settings_label.setObjectName(u"choose_settings_label")
+        sizePolicy3.setHeightForWidth(self.choose_settings_label.sizePolicy().hasHeightForWidth())
+        self.choose_settings_label.setSizePolicy(sizePolicy3)
+        self.choose_settings_label.setTextFormat(Qt.RichText)
+        self.choose_settings_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.choose_settings_label.setWordWrap(True)
+        self.choose_settings_label.setOpenExternalLinks(True)
+        self.choose_settings_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+
+        self.verticalLayout_8.addWidget(self.choose_settings_label)
+
+
+        self.horizontalLayout_3.addWidget(self.useful_choose_settings_group_box)
+
+        self.how_to_middle_arrow_label = QLabel(self.how_to_group_box)
+        self.how_to_middle_arrow_label.setObjectName(u"how_to_middle_arrow_label")
+        self.how_to_middle_arrow_label.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_3.addWidget(self.how_to_middle_arrow_label)
+
         self.how_to_generate_group_box = QGroupBox(self.how_to_group_box)
         self.how_to_generate_group_box.setObjectName(u"how_to_generate_group_box")
         sizePolicy2.setHeightForWidth(self.how_to_generate_group_box.sizePolicy().hasHeightForWidth())
@@ -118,6 +145,7 @@ class Ui_main_window(object):
         self.how_to_right_arrow_label.setObjectName(u"how_to_right_arrow_label")
         sizePolicy1.setHeightForWidth(self.how_to_right_arrow_label.sizePolicy().hasHeightForWidth())
         self.how_to_right_arrow_label.setSizePolicy(sizePolicy1)
+        self.how_to_right_arrow_label.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_3.addWidget(self.how_to_right_arrow_label)
 
@@ -129,11 +157,8 @@ class Ui_main_window(object):
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.how_to_running_label = QLabel(self.how_to_running_group_box)
         self.how_to_running_label.setObjectName(u"how_to_running_label")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Minimum)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.how_to_running_label.sizePolicy().hasHeightForWidth())
-        self.how_to_running_label.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.how_to_running_label.sizePolicy().hasHeightForWidth())
+        self.how_to_running_label.setSizePolicy(sizePolicy3)
         self.how_to_running_label.setTextFormat(Qt.RichText)
         self.how_to_running_label.setScaledContents(False)
         self.how_to_running_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
@@ -146,141 +171,170 @@ class Ui_main_window(object):
 
         self.horizontalLayout_3.addWidget(self.how_to_running_group_box)
 
+        self.horizontalLayout_3.setStretch(0, 1)
+        self.horizontalLayout_3.setStretch(2, 1)
+        self.horizontalLayout_3.setStretch(4, 1)
+        self.horizontalLayout_3.setStretch(6, 1)
 
         self.verticalLayout_4.addWidget(self.how_to_group_box)
 
-        self.gridLayout_7 = QGridLayout()
-        self.gridLayout_7.setObjectName(u"gridLayout_7")
-        self.gridLayout_7.setContentsMargins(-1, -1, -1, 0)
+        self.middle_grid_layout = QGridLayout()
+        self.middle_grid_layout.setObjectName(u"middle_grid_layout")
+        self.middle_grid_layout.setContentsMargins(-1, -1, -1, 0)
+        self.presets_group_box = QGroupBox(self.getting_started_tab)
+        self.presets_group_box.setObjectName(u"presets_group_box")
+        sizePolicy1.setHeightForWidth(self.presets_group_box.sizePolicy().hasHeightForWidth())
+        self.presets_group_box.setSizePolicy(sizePolicy1)
+        self.verticalLayout_34 = QVBoxLayout(self.presets_group_box)
+        self.verticalLayout_34.setObjectName(u"verticalLayout_34")
+        self.selected_preset_layout = QHBoxLayout()
+        self.selected_preset_layout.setObjectName(u"selected_preset_layout")
+        self.selected_preset_label = QLabel(self.presets_group_box)
+        self.selected_preset_label.setObjectName(u"selected_preset_label")
+
+        self.selected_preset_layout.addWidget(self.selected_preset_label)
+
+        self.selected_preset_combo_box = QComboBox(self.presets_group_box)
+        self.selected_preset_combo_box.setObjectName(u"selected_preset_combo_box")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.selected_preset_combo_box.sizePolicy().hasHeightForWidth())
+        self.selected_preset_combo_box.setSizePolicy(sizePolicy4)
+
+        self.selected_preset_layout.addWidget(self.selected_preset_combo_box)
+
+
+        self.verticalLayout_34.addLayout(self.selected_preset_layout)
+
+        self.presets_button_layout = QHBoxLayout()
+        self.presets_button_layout.setObjectName(u"presets_button_layout")
+        self.presets_delete_button = QPushButton(self.presets_group_box)
+        self.presets_delete_button.setObjectName(u"presets_delete_button")
+
+        self.presets_button_layout.addWidget(self.presets_delete_button)
+
+        self.presets_save_new_button = QPushButton(self.presets_group_box)
+        self.presets_save_new_button.setObjectName(u"presets_save_new_button")
+
+        self.presets_button_layout.addWidget(self.presets_save_new_button)
+
+
+        self.verticalLayout_34.addLayout(self.presets_button_layout)
+
+        self.presets_vspacer = QSpacerItem(20, 86, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_34.addItem(self.presets_vspacer)
+
+
+        self.middle_grid_layout.addWidget(self.presets_group_box, 0, 0, 1, 1)
+
         self.useful_info_group_box = QGroupBox(self.getting_started_tab)
         self.useful_info_group_box.setObjectName(u"useful_info_group_box")
         sizePolicy1.setHeightForWidth(self.useful_info_group_box.sizePolicy().hasHeightForWidth())
         self.useful_info_group_box.setSizePolicy(sizePolicy1)
-        self.horizontalLayout_7 = QHBoxLayout(self.useful_info_group_box)
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.useful_choose_settings_group_box = QGroupBox(self.useful_info_group_box)
-        self.useful_choose_settings_group_box.setObjectName(u"useful_choose_settings_group_box")
-        sizePolicy1.setHeightForWidth(self.useful_choose_settings_group_box.sizePolicy().hasHeightForWidth())
-        self.useful_choose_settings_group_box.setSizePolicy(sizePolicy1)
-        self.verticalLayout_8 = QVBoxLayout(self.useful_choose_settings_group_box)
-        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.choose_settings_label = QLabel(self.useful_choose_settings_group_box)
-        self.choose_settings_label.setObjectName(u"choose_settings_label")
-        sizePolicy2.setHeightForWidth(self.choose_settings_label.sizePolicy().hasHeightForWidth())
-        self.choose_settings_label.setSizePolicy(sizePolicy2)
-        self.choose_settings_label.setTextFormat(Qt.RichText)
-        self.choose_settings_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.choose_settings_label.setWordWrap(True)
-        self.choose_settings_label.setOpenExternalLinks(True)
-        self.choose_settings_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
-
-        self.verticalLayout_8.addWidget(self.choose_settings_label)
-
-
-        self.horizontalLayout_7.addWidget(self.useful_choose_settings_group_box)
-
-        self.useful_links_group_box = QGroupBox(self.useful_info_group_box)
-        self.useful_links_group_box.setObjectName(u"useful_links_group_box")
-        sizePolicy1.setHeightForWidth(self.useful_links_group_box.sizePolicy().hasHeightForWidth())
-        self.useful_links_group_box.setSizePolicy(sizePolicy1)
-        self.horizontalLayout_2 = QHBoxLayout(self.useful_links_group_box)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.links_label = QLabel(self.useful_links_group_box)
-        self.links_label.setObjectName(u"links_label")
-        sizePolicy1.setHeightForWidth(self.links_label.sizePolicy().hasHeightForWidth())
-        self.links_label.setSizePolicy(sizePolicy1)
-        self.links_label.setTextFormat(Qt.RichText)
-        self.links_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.links_label.setOpenExternalLinks(True)
-
-        self.horizontalLayout_2.addWidget(self.links_label)
-
-
-        self.horizontalLayout_7.addWidget(self.useful_links_group_box)
-
-
-        self.gridLayout_7.addWidget(self.useful_info_group_box, 0, 1, 1, 1)
-
-        self.theming_group_box = QGroupBox(self.getting_started_tab)
-        self.theming_group_box.setObjectName(u"theming_group_box")
-        sizePolicy1.setHeightForWidth(self.theming_group_box.sizePolicy().hasHeightForWidth())
-        self.theming_group_box.setSizePolicy(sizePolicy1)
-        self.horizontalLayout_6 = QHBoxLayout(self.theming_group_box)
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.groupBox = QGroupBox(self.theming_group_box)
-        self.groupBox.setObjectName(u"groupBox")
-        self.groupBox.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.verticalLayout_3 = QVBoxLayout(self.groupBox)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout = QHBoxLayout(self.useful_info_group_box)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.theme_mode_label = QLabel(self.groupBox)
+        self.community_label = QLabel(self.useful_info_group_box)
+        self.community_label.setObjectName(u"community_label")
+        sizePolicy1.setHeightForWidth(self.community_label.sizePolicy().hasHeightForWidth())
+        self.community_label.setSizePolicy(sizePolicy1)
+        self.community_label.setTextFormat(Qt.RichText)
+        self.community_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.community_label.setWordWrap(True)
+        self.community_label.setOpenExternalLinks(True)
+        self.community_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+
+        self.horizontalLayout.addWidget(self.community_label)
+
+
+        self.middle_grid_layout.addWidget(self.useful_info_group_box, 0, 1, 1, 1)
+
+        self.accessibility_group_box = QGroupBox(self.getting_started_tab)
+        self.accessibility_group_box.setObjectName(u"accessibility_group_box")
+        sizePolicy1.setHeightForWidth(self.accessibility_group_box.sizePolicy().hasHeightForWidth())
+        self.accessibility_group_box.setSizePolicy(sizePolicy1)
+        self.horizontalLayout_6 = QHBoxLayout(self.accessibility_group_box)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.theming_group_box = QGroupBox(self.accessibility_group_box)
+        self.theming_group_box.setObjectName(u"theming_group_box")
+        self.theming_group_box.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.verticalLayout_3 = QVBoxLayout(self.theming_group_box)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.theme_mode_layout = QHBoxLayout()
+        self.theme_mode_layout.setObjectName(u"theme_mode_layout")
+        self.theme_mode_label = QLabel(self.theming_group_box)
         self.theme_mode_label.setObjectName(u"theme_mode_label")
 
-        self.horizontalLayout.addWidget(self.theme_mode_label)
+        self.theme_mode_layout.addWidget(self.theme_mode_label)
 
-        self.theme_mode_combo_box = QComboBox(self.groupBox)
+        self.theme_mode_combo_box = QComboBox(self.theming_group_box)
         self.theme_mode_combo_box.setObjectName(u"theme_mode_combo_box")
         sizePolicy.setHeightForWidth(self.theme_mode_combo_box.sizePolicy().hasHeightForWidth())
         self.theme_mode_combo_box.setSizePolicy(sizePolicy)
 
-        self.horizontalLayout.addWidget(self.theme_mode_combo_box)
+        self.theme_mode_layout.addWidget(self.theme_mode_combo_box)
 
 
-        self.verticalLayout_3.addLayout(self.horizontalLayout)
+        self.verticalLayout_3.addLayout(self.theme_mode_layout)
 
-        self.horizontalLayout_8 = QHBoxLayout()
-        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.theme_presets_label = QLabel(self.groupBox)
+        self.theme_presets_layout = QHBoxLayout()
+        self.theme_presets_layout.setObjectName(u"theme_presets_layout")
+        self.theme_presets_label = QLabel(self.theming_group_box)
         self.theme_presets_label.setObjectName(u"theme_presets_label")
 
-        self.horizontalLayout_8.addWidget(self.theme_presets_label)
+        self.theme_presets_layout.addWidget(self.theme_presets_label)
 
-        self.theme_presets_combo_box = QComboBox(self.groupBox)
+        self.theme_presets_combo_box = QComboBox(self.theming_group_box)
         self.theme_presets_combo_box.setObjectName(u"theme_presets_combo_box")
         sizePolicy.setHeightForWidth(self.theme_presets_combo_box.sizePolicy().hasHeightForWidth())
         self.theme_presets_combo_box.setSizePolicy(sizePolicy)
 
-        self.horizontalLayout_8.addWidget(self.theme_presets_combo_box)
+        self.theme_presets_layout.addWidget(self.theme_presets_combo_box)
 
 
-        self.verticalLayout_3.addLayout(self.horizontalLayout_8)
+        self.verticalLayout_3.addLayout(self.theme_presets_layout)
 
-        self.use_custom_theme_check_box = QCheckBox(self.groupBox)
+        self.use_custom_theme_check_box = QCheckBox(self.theming_group_box)
         self.use_custom_theme_check_box.setObjectName(u"use_custom_theme_check_box")
 
         self.verticalLayout_3.addWidget(self.use_custom_theme_check_box)
 
-        self.customize_theme_button = QPushButton(self.groupBox)
+        self.customize_theme_button = QPushButton(self.theming_group_box)
         self.customize_theme_button.setObjectName(u"customize_theme_button")
 
         self.verticalLayout_3.addWidget(self.customize_theme_button)
 
-        self.verticalSpacer_2 = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.theming_vspacer = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_3.addItem(self.verticalSpacer_2)
+        self.verticalLayout_3.addItem(self.theming_vspacer)
 
 
-        self.horizontalLayout_6.addWidget(self.groupBox)
+        self.horizontalLayout_6.addWidget(self.theming_group_box)
 
-        self.theming_fonts = QGroupBox(self.theming_group_box)
+        self.theming_fonts = QGroupBox(self.accessibility_group_box)
         self.theming_fonts.setObjectName(u"theming_fonts")
         self.verticalLayout_12 = QVBoxLayout(self.theming_fonts)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.horizontalLayout_9 = QHBoxLayout()
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.font_family_layout = QHBoxLayout()
+        self.font_family_layout.setObjectName(u"font_family_layout")
         self.font_family_label = QLabel(self.theming_fonts)
         self.font_family_label.setObjectName(u"font_family_label")
-        sizePolicy1.setHeightForWidth(self.font_family_label.sizePolicy().hasHeightForWidth())
-        self.font_family_label.setSizePolicy(sizePolicy1)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.font_family_label.sizePolicy().hasHeightForWidth())
+        self.font_family_label.setSizePolicy(sizePolicy5)
 
-        self.horizontalLayout_9.addWidget(self.font_family_label)
+        self.font_family_layout.addWidget(self.font_family_label)
 
         self.font_family_combo_box = QFontComboBox(self.theming_fonts)
         self.font_family_combo_box.setObjectName(u"font_family_combo_box")
-        sizePolicy.setHeightForWidth(self.font_family_combo_box.sizePolicy().hasHeightForWidth())
-        self.font_family_combo_box.setSizePolicy(sizePolicy)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Maximum)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.font_family_combo_box.sizePolicy().hasHeightForWidth())
+        self.font_family_combo_box.setSizePolicy(sizePolicy6)
         self.font_family_combo_box.setEditable(False)
         self.font_family_combo_box.setFontFilters(QFontComboBox.ScalableFonts)
         font = QFont()
@@ -288,10 +342,10 @@ class Ui_main_window(object):
         font.setPointSize(10)
         self.font_family_combo_box.setCurrentFont(font)
 
-        self.horizontalLayout_9.addWidget(self.font_family_combo_box)
+        self.font_family_layout.addWidget(self.font_family_combo_box)
 
 
-        self.verticalLayout_12.addLayout(self.horizontalLayout_9)
+        self.verticalLayout_12.addLayout(self.font_family_layout)
 
         self.font_size_layout = QHBoxLayout()
         self.font_size_layout.setObjectName(u"font_size_layout")
@@ -302,11 +356,11 @@ class Ui_main_window(object):
 
         self.font_size_spin_box = QSpinBox(self.theming_fonts)
         self.font_size_spin_box.setObjectName(u"font_size_spin_box")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Fixed)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.font_size_spin_box.sizePolicy().hasHeightForWidth())
-        self.font_size_spin_box.setSizePolicy(sizePolicy5)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Fixed)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.font_size_spin_box.sizePolicy().hasHeightForWidth())
+        self.font_size_spin_box.setSizePolicy(sizePolicy7)
         self.font_size_spin_box.setMinimum(6)
         self.font_size_spin_box.setMaximum(14)
         self.font_size_spin_box.setValue(10)
@@ -321,9 +375,9 @@ class Ui_main_window(object):
 
         self.verticalLayout_12.addWidget(self.font_reset_button)
 
-        self.verticalSpacer = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.fonts_vspacer = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_12.addItem(self.verticalSpacer)
+        self.verticalLayout_12.addItem(self.fonts_vspacer)
 
 
         self.horizontalLayout_6.addWidget(self.theming_fonts)
@@ -331,12 +385,13 @@ class Ui_main_window(object):
         self.horizontalLayout_6.setStretch(0, 1)
         self.horizontalLayout_6.setStretch(1, 1)
 
-        self.gridLayout_7.addWidget(self.theming_group_box, 0, 0, 1, 1)
+        self.middle_grid_layout.addWidget(self.accessibility_group_box, 0, 2, 1, 1)
 
-        self.gridLayout_7.setColumnStretch(0, 1)
-        self.gridLayout_7.setColumnStretch(1, 1)
+        self.middle_grid_layout.setColumnStretch(0, 1)
+        self.middle_grid_layout.setColumnStretch(1, 1)
+        self.middle_grid_layout.setColumnStretch(2, 2)
 
-        self.verticalLayout_4.addLayout(self.gridLayout_7)
+        self.verticalLayout_4.addLayout(self.middle_grid_layout)
 
         self.verticalLayout_4.setStretch(0, 2)
         self.verticalLayout_4.setStretch(1, 1)
@@ -463,8 +518,8 @@ class Ui_main_window(object):
 
         self.setting_required_dungeons = QSpinBox(self.beat_the_game_group_box)
         self.setting_required_dungeons.setObjectName(u"setting_required_dungeons")
-        sizePolicy5.setHeightForWidth(self.setting_required_dungeons.sizePolicy().hasHeightForWidth())
-        self.setting_required_dungeons.setSizePolicy(sizePolicy5)
+        sizePolicy7.setHeightForWidth(self.setting_required_dungeons.sizePolicy().hasHeightForWidth())
+        self.setting_required_dungeons.setSizePolicy(sizePolicy7)
 
         self.required_dungeons_layout.addWidget(self.setting_required_dungeons)
 
@@ -524,8 +579,8 @@ class Ui_main_window(object):
 
         self.setting_peatrice_conversations = QSpinBox(self.tweaks_group_box)
         self.setting_peatrice_conversations.setObjectName(u"setting_peatrice_conversations")
-        sizePolicy5.setHeightForWidth(self.setting_peatrice_conversations.sizePolicy().hasHeightForWidth())
-        self.setting_peatrice_conversations.setSizePolicy(sizePolicy5)
+        sizePolicy7.setHeightForWidth(self.setting_peatrice_conversations.sizePolicy().hasHeightForWidth())
+        self.setting_peatrice_conversations.setSizePolicy(sizePolicy7)
 
         self.peatrice_conversations_layout.addWidget(self.setting_peatrice_conversations)
 
@@ -802,11 +857,11 @@ class Ui_main_window(object):
 
         self.include_location_button = QPushButton(self.locations_tab)
         self.include_location_button.setObjectName(u"include_location_button")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.include_location_button.sizePolicy().hasHeightForWidth())
-        self.include_location_button.setSizePolicy(sizePolicy6)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.include_location_button.sizePolicy().hasHeightForWidth())
+        self.include_location_button.setSizePolicy(sizePolicy8)
 
         self.locations_button_layout.addWidget(self.include_location_button)
 
@@ -816,8 +871,8 @@ class Ui_main_window(object):
 
         self.exclude_location_button = QPushButton(self.locations_tab)
         self.exclude_location_button.setObjectName(u"exclude_location_button")
-        sizePolicy6.setHeightForWidth(self.exclude_location_button.sizePolicy().hasHeightForWidth())
-        self.exclude_location_button.setSizePolicy(sizePolicy6)
+        sizePolicy8.setHeightForWidth(self.exclude_location_button.sizePolicy().hasHeightForWidth())
+        self.exclude_location_button.setSizePolicy(sizePolicy8)
 
         self.locations_button_layout.addWidget(self.exclude_location_button)
 
@@ -909,11 +964,11 @@ class Ui_main_window(object):
 
         self.excluded_locations_free_search = QLineEdit(self.excluded_locations_group_box)
         self.excluded_locations_free_search.setObjectName(u"excluded_locations_free_search")
-        sizePolicy7 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.excluded_locations_free_search.sizePolicy().hasHeightForWidth())
-        self.excluded_locations_free_search.setSizePolicy(sizePolicy7)
+        sizePolicy9 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(0)
+        sizePolicy9.setHeightForWidth(self.excluded_locations_free_search.sizePolicy().hasHeightForWidth())
+        self.excluded_locations_free_search.setSizePolicy(sizePolicy9)
         self.excluded_locations_free_search.setClearButtonEnabled(True)
 
         self.excluded_locations_filter_layout.addWidget(self.excluded_locations_free_search)
@@ -946,8 +1001,8 @@ class Ui_main_window(object):
 
         self.included_locations_free_search = QLineEdit(self.included_locations_group_box)
         self.included_locations_free_search.setObjectName(u"included_locations_free_search")
-        sizePolicy7.setHeightForWidth(self.included_locations_free_search.sizePolicy().hasHeightForWidth())
-        self.included_locations_free_search.setSizePolicy(sizePolicy7)
+        sizePolicy9.setHeightForWidth(self.included_locations_free_search.sizePolicy().hasHeightForWidth())
+        self.included_locations_free_search.setSizePolicy(sizePolicy9)
         self.included_locations_free_search.setClearButtonEnabled(True)
 
         self.included_locations_filter_layout.addWidget(self.included_locations_free_search)
@@ -1002,11 +1057,11 @@ class Ui_main_window(object):
 
         self.randomized_items_list_view = QListView(self.randomized_items_group_box)
         self.randomized_items_list_view.setObjectName(u"randomized_items_list_view")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy8.setHorizontalStretch(0)
-        sizePolicy8.setVerticalStretch(0)
-        sizePolicy8.setHeightForWidth(self.randomized_items_list_view.sizePolicy().hasHeightForWidth())
-        self.randomized_items_list_view.setSizePolicy(sizePolicy8)
+        sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(0)
+        sizePolicy10.setHeightForWidth(self.randomized_items_list_view.sizePolicy().hasHeightForWidth())
+        self.randomized_items_list_view.setSizePolicy(sizePolicy10)
         self.randomized_items_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.randomized_items_list_view.setProperty("showDropIndicator", False)
         self.randomized_items_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
@@ -1039,8 +1094,8 @@ class Ui_main_window(object):
 
         self.starting_items_list_view = QListView(self.starting_items_group_box)
         self.starting_items_list_view.setObjectName(u"starting_items_list_view")
-        sizePolicy8.setHeightForWidth(self.starting_items_list_view.sizePolicy().hasHeightForWidth())
-        self.starting_items_list_view.setSizePolicy(sizePolicy8)
+        sizePolicy10.setHeightForWidth(self.starting_items_list_view.sizePolicy().hasHeightForWidth())
+        self.starting_items_list_view.setSizePolicy(sizePolicy10)
         self.starting_items_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.starting_items_list_view.setProperty("showDropIndicator", False)
         self.starting_items_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
@@ -1060,8 +1115,8 @@ class Ui_main_window(object):
 
         self.randomize_item_button = QPushButton(self.inventory_tab)
         self.randomize_item_button.setObjectName(u"randomize_item_button")
-        sizePolicy6.setHeightForWidth(self.randomize_item_button.sizePolicy().hasHeightForWidth())
-        self.randomize_item_button.setSizePolicy(sizePolicy6)
+        sizePolicy8.setHeightForWidth(self.randomize_item_button.sizePolicy().hasHeightForWidth())
+        self.randomize_item_button.setSizePolicy(sizePolicy8)
 
         self.inventory_button_layout.addWidget(self.randomize_item_button)
 
@@ -1071,8 +1126,8 @@ class Ui_main_window(object):
 
         self.start_with_item_button = QPushButton(self.inventory_tab)
         self.start_with_item_button.setObjectName(u"start_with_item_button")
-        sizePolicy6.setHeightForWidth(self.start_with_item_button.sizePolicy().hasHeightForWidth())
-        self.start_with_item_button.setSizePolicy(sizePolicy6)
+        sizePolicy8.setHeightForWidth(self.start_with_item_button.sizePolicy().hasHeightForWidth())
+        self.start_with_item_button.setSizePolicy(sizePolicy8)
 
         self.inventory_button_layout.addWidget(self.start_with_item_button)
 
@@ -1124,8 +1179,8 @@ class Ui_main_window(object):
 
         self.setting_random_starting_tablet_count = QSpinBox(self.item_settings_group_box)
         self.setting_random_starting_tablet_count.setObjectName(u"setting_random_starting_tablet_count")
-        sizePolicy5.setHeightForWidth(self.setting_random_starting_tablet_count.sizePolicy().hasHeightForWidth())
-        self.setting_random_starting_tablet_count.setSizePolicy(sizePolicy5)
+        sizePolicy7.setHeightForWidth(self.setting_random_starting_tablet_count.sizePolicy().hasHeightForWidth())
+        self.setting_random_starting_tablet_count.setSizePolicy(sizePolicy7)
         self.setting_random_starting_tablet_count.setMaximumSize(QSize(16777215, 16777215))
 
         self.random_starting_tablet_count_layout.addWidget(self.setting_random_starting_tablet_count)
@@ -1143,8 +1198,8 @@ class Ui_main_window(object):
 
         self.setting_random_starting_item_count = QSpinBox(self.item_settings_group_box)
         self.setting_random_starting_item_count.setObjectName(u"setting_random_starting_item_count")
-        sizePolicy5.setHeightForWidth(self.setting_random_starting_item_count.sizePolicy().hasHeightForWidth())
-        self.setting_random_starting_item_count.setSizePolicy(sizePolicy5)
+        sizePolicy7.setHeightForWidth(self.setting_random_starting_item_count.sizePolicy().hasHeightForWidth())
+        self.setting_random_starting_item_count.setSizePolicy(sizePolicy7)
 
         self.random_starting_item_count_layout.addWidget(self.setting_random_starting_item_count)
 
@@ -1183,8 +1238,8 @@ class Ui_main_window(object):
 
         self.included_hint_locations_list_view = QListView(self.included_hint_locations_group_box)
         self.included_hint_locations_list_view.setObjectName(u"included_hint_locations_list_view")
-        sizePolicy8.setHeightForWidth(self.included_hint_locations_list_view.sizePolicy().hasHeightForWidth())
-        self.included_hint_locations_list_view.setSizePolicy(sizePolicy8)
+        sizePolicy10.setHeightForWidth(self.included_hint_locations_list_view.sizePolicy().hasHeightForWidth())
+        self.included_hint_locations_list_view.setSizePolicy(sizePolicy10)
         self.included_hint_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.included_hint_locations_list_view.setProperty("showDropIndicator", False)
         self.included_hint_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
@@ -1204,8 +1259,8 @@ class Ui_main_window(object):
 
         self.include_hint_location_button = QPushButton(self.hints_tab)
         self.include_hint_location_button.setObjectName(u"include_hint_location_button")
-        sizePolicy6.setHeightForWidth(self.include_hint_location_button.sizePolicy().hasHeightForWidth())
-        self.include_hint_location_button.setSizePolicy(sizePolicy6)
+        sizePolicy8.setHeightForWidth(self.include_hint_location_button.sizePolicy().hasHeightForWidth())
+        self.include_hint_location_button.setSizePolicy(sizePolicy8)
 
         self.hints_button_layout.addWidget(self.include_hint_location_button)
 
@@ -1215,8 +1270,8 @@ class Ui_main_window(object):
 
         self.exclude_hint_location_button = QPushButton(self.hints_tab)
         self.exclude_hint_location_button.setObjectName(u"exclude_hint_location_button")
-        sizePolicy6.setHeightForWidth(self.exclude_hint_location_button.sizePolicy().hasHeightForWidth())
-        self.exclude_hint_location_button.setSizePolicy(sizePolicy6)
+        sizePolicy8.setHeightForWidth(self.exclude_hint_location_button.sizePolicy().hasHeightForWidth())
+        self.exclude_hint_location_button.setSizePolicy(sizePolicy8)
 
         self.hints_button_layout.addWidget(self.exclude_hint_location_button)
 
@@ -1244,8 +1299,8 @@ class Ui_main_window(object):
 
         self.excluded_hint_locations_list_view = QListView(self.excluded_hint_locations_group_box)
         self.excluded_hint_locations_list_view.setObjectName(u"excluded_hint_locations_list_view")
-        sizePolicy8.setHeightForWidth(self.excluded_hint_locations_list_view.sizePolicy().hasHeightForWidth())
-        self.excluded_hint_locations_list_view.setSizePolicy(sizePolicy8)
+        sizePolicy10.setHeightForWidth(self.excluded_hint_locations_list_view.sizePolicy().hasHeightForWidth())
+        self.excluded_hint_locations_list_view.setSizePolicy(sizePolicy10)
         self.excluded_hint_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.excluded_hint_locations_list_view.setProperty("showDropIndicator", False)
         self.excluded_hint_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
@@ -1295,8 +1350,8 @@ class Ui_main_window(object):
 
         self.setting_path_hints = QSpinBox(self.hints_group_box)
         self.setting_path_hints.setObjectName(u"setting_path_hints")
-        sizePolicy5.setHeightForWidth(self.setting_path_hints.sizePolicy().hasHeightForWidth())
-        self.setting_path_hints.setSizePolicy(sizePolicy5)
+        sizePolicy7.setHeightForWidth(self.setting_path_hints.sizePolicy().hasHeightForWidth())
+        self.setting_path_hints.setSizePolicy(sizePolicy7)
 
         self.path_hints_layout.addWidget(self.setting_path_hints)
 
@@ -1313,8 +1368,8 @@ class Ui_main_window(object):
 
         self.setting_barren_hints = QSpinBox(self.hints_group_box)
         self.setting_barren_hints.setObjectName(u"setting_barren_hints")
-        sizePolicy5.setHeightForWidth(self.setting_barren_hints.sizePolicy().hasHeightForWidth())
-        self.setting_barren_hints.setSizePolicy(sizePolicy5)
+        sizePolicy7.setHeightForWidth(self.setting_barren_hints.sizePolicy().hasHeightForWidth())
+        self.setting_barren_hints.setSizePolicy(sizePolicy7)
 
         self.barren_hints_layout.addWidget(self.setting_barren_hints)
 
@@ -1331,8 +1386,8 @@ class Ui_main_window(object):
 
         self.setting_location_hints = QSpinBox(self.hints_group_box)
         self.setting_location_hints.setObjectName(u"setting_location_hints")
-        sizePolicy5.setHeightForWidth(self.setting_location_hints.sizePolicy().hasHeightForWidth())
-        self.setting_location_hints.setSizePolicy(sizePolicy5)
+        sizePolicy7.setHeightForWidth(self.setting_location_hints.sizePolicy().hasHeightForWidth())
+        self.setting_location_hints.setSizePolicy(sizePolicy7)
 
         self.location_hints_layout.addWidget(self.setting_location_hints)
 
@@ -1349,8 +1404,8 @@ class Ui_main_window(object):
 
         self.setting_item_hints = QSpinBox(self.hints_group_box)
         self.setting_item_hints.setObjectName(u"setting_item_hints")
-        sizePolicy5.setHeightForWidth(self.setting_item_hints.sizePolicy().hasHeightForWidth())
-        self.setting_item_hints.setSizePolicy(sizePolicy5)
+        sizePolicy7.setHeightForWidth(self.setting_item_hints.sizePolicy().hasHeightForWidth())
+        self.setting_item_hints.setSizePolicy(sizePolicy7)
 
         self.item_hints_layout.addWidget(self.setting_item_hints)
 
@@ -1408,11 +1463,11 @@ class Ui_main_window(object):
 
         self.tricks_group_box = QGroupBox(self.logic_tab)
         self.tricks_group_box.setObjectName(u"tricks_group_box")
-        sizePolicy9 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
-        sizePolicy9.setHorizontalStretch(0)
-        sizePolicy9.setVerticalStretch(0)
-        sizePolicy9.setHeightForWidth(self.tricks_group_box.sizePolicy().hasHeightForWidth())
-        self.tricks_group_box.setSizePolicy(sizePolicy9)
+        sizePolicy11 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
+        sizePolicy11.setHorizontalStretch(0)
+        sizePolicy11.setVerticalStretch(0)
+        sizePolicy11.setHeightForWidth(self.tricks_group_box.sizePolicy().hasHeightForWidth())
+        self.tricks_group_box.setSizePolicy(sizePolicy11)
         self.gridLayout_6 = QGridLayout(self.tricks_group_box)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.precise_items_group_box = QGroupBox(self.tricks_group_box)
@@ -1788,11 +1843,8 @@ class Ui_main_window(object):
 
         self.selected_plandomizer_file_combo_box = QComboBox(self.plandomizer_group_box)
         self.selected_plandomizer_file_combo_box.setObjectName(u"selected_plandomizer_file_combo_box")
-        sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy10.setHorizontalStretch(0)
-        sizePolicy10.setVerticalStretch(0)
-        sizePolicy10.setHeightForWidth(self.selected_plandomizer_file_combo_box.sizePolicy().hasHeightForWidth())
-        self.selected_plandomizer_file_combo_box.setSizePolicy(sizePolicy10)
+        sizePolicy4.setHeightForWidth(self.selected_plandomizer_file_combo_box.sizePolicy().hasHeightForWidth())
+        self.selected_plandomizer_file_combo_box.setSizePolicy(sizePolicy4)
         self.selected_plandomizer_file_combo_box.setSizeAdjustPolicy(QComboBox.AdjustToContents)
 
         self.verticalLayout_30.addWidget(self.selected_plandomizer_file_combo_box)
@@ -1831,11 +1883,11 @@ class Ui_main_window(object):
         self.settings_descriptions_layout.setObjectName(u"settings_descriptions_layout")
         self.settings_current_option_description_label = QLabel(self.central_widget)
         self.settings_current_option_description_label.setObjectName(u"settings_current_option_description_label")
-        sizePolicy11 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
-        sizePolicy11.setHorizontalStretch(0)
-        sizePolicy11.setVerticalStretch(0)
-        sizePolicy11.setHeightForWidth(self.settings_current_option_description_label.sizePolicy().hasHeightForWidth())
-        self.settings_current_option_description_label.setSizePolicy(sizePolicy11)
+        sizePolicy12 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
+        sizePolicy12.setHorizontalStretch(0)
+        sizePolicy12.setVerticalStretch(0)
+        sizePolicy12.setHeightForWidth(self.settings_current_option_description_label.sizePolicy().hasHeightForWidth())
+        self.settings_current_option_description_label.setSizePolicy(sizePolicy12)
         self.settings_current_option_description_label.setMinimumSize(QSize(0, 64))
         self.settings_current_option_description_label.setTextFormat(Qt.RichText)
         self.settings_current_option_description_label.setWordWrap(True)
@@ -1844,8 +1896,8 @@ class Ui_main_window(object):
 
         self.settings_default_option_description_label = QLabel(self.central_widget)
         self.settings_default_option_description_label.setObjectName(u"settings_default_option_description_label")
-        sizePolicy11.setHeightForWidth(self.settings_default_option_description_label.sizePolicy().hasHeightForWidth())
-        self.settings_default_option_description_label.setSizePolicy(sizePolicy11)
+        sizePolicy12.setHeightForWidth(self.settings_default_option_description_label.sizePolicy().hasHeightForWidth())
+        self.settings_default_option_description_label.setSizePolicy(sizePolicy12)
         self.settings_default_option_description_label.setMinimumSize(QSize(0, 64))
         self.settings_default_option_description_label.setWordWrap(True)
 
@@ -1874,11 +1926,11 @@ class Ui_main_window(object):
 
         self.randomize_button = QPushButton(self.central_widget)
         self.randomize_button.setObjectName(u"randomize_button")
-        sizePolicy12 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy12.setHorizontalStretch(0)
-        sizePolicy12.setVerticalStretch(0)
-        sizePolicy12.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
-        self.randomize_button.setSizePolicy(sizePolicy12)
+        sizePolicy13 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy13.setHorizontalStretch(0)
+        sizePolicy13.setVerticalStretch(0)
+        sizePolicy13.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
+        self.randomize_button.setSizePolicy(sizePolicy13)
 
         self.footer_grid_layout.addWidget(self.randomize_button, 2, 2, 1, 1)
 
@@ -1937,44 +1989,24 @@ class Ui_main_window(object):
         main_window.setWindowTitle(QCoreApplication.translate("main_window", u"The Legend of Zelda: Skyward Sword HD Randomizer", None))
         self.how_to_group_box.setTitle(QCoreApplication.translate("main_window", u"How to Randomize the Game", None))
         self.how_to_extract_group_box.setTitle(QCoreApplication.translate("main_window", u"Extract the Game", None))
-        self.how_to_extract_label.setText(QCoreApplication.translate("main_window", u"Before generating a seed, you need to have a valid extract of the vanilla version of the game.<br><br>\n"
-"\n"
-"Specifically, you will need to extract the <code>exeFS</code> and <code>romFS</code> files of the 1.0.1 version of the game. You can do this with a modded Nintendo Switch console with a tool such as <a href=\"https://github.com/DarkMatterCore/nxdumptool\">nxdumptool</a> or with the <a href=\"https://ryujinx.org\">Ryujinx emulator</a> (yuzu cannot currently extract the <code>romFS</code> folder)<br><br>\n"
-"\n"
-"For help with this process, please ask on GitHub or join the Discord server linked below.", None))
+        self.how_to_extract_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>Before generating a seed, you need to have a valid extract of the vanilla version of the game.<br/><br/><span style=\" font-weight:700;\">TODO: Add extract guide</span><br/><br/>For additional help with this process, please join the <a href=\"https://discord.gg/zkm6yncD\"><span style=\" text-decoration: underline; color:#9a0089;\">Discord Server</span></a> or ask on <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\"><span style=\" text-decoration: underline; color:#9a0089;\">GitHub</span></a>.</p></body></html>", None))
         self.how_to_left_arrow_label.setText(QCoreApplication.translate("main_window", u"\u279c", None))
+        self.useful_choose_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Choosing your Settings", None))
+        self.choose_settings_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-weight:700;\">Quick start: </span>You can select one of the settings presets below to jump straight in!</p><p>Don't worry if there's too much going on, the default settings are perfect for beginners.</p><p>Alternatively, you can customize every setting yourself. There's lots of buttons and switches, so get stuck in!</p></body></html>", None))
+        self.how_to_middle_arrow_label.setText(QCoreApplication.translate("main_window", u"\u279c", None))
         self.how_to_generate_group_box.setTitle(QCoreApplication.translate("main_window", u"Generate a Seed", None))
-        self.how_to_generate_label.setText(QCoreApplication.translate("main_window", u"After you have obtained an extract of the vanilla game, you need to tell this randomizer program where the extract is located so that it can be used to generate a seed.<br><br>\n"
-"\n"
-"Please go to the \"File Setup\" box below and click the \"Browse\" button on the \"Extract\" row. You will then be asked to find the location of your extract.<br><br>\n"
-"\n"
-"Once the extract has been verified, you can browse the various tabs and customize the settings of your randomizer seed.<br><br>\n"
-"\n"
-"When you are ready, click the \"Randomize\" button in the bottom right of the screen. By default, the output will be in the <code>output</code> folder where this randomizer program is located.", None))
+        self.how_to_generate_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>Once you're ready, click the <span style=\" font-family:'Courier New';\">Randomize</span> button in the bottom right.</p><p>The program will begin to generate a game patch that will allow you to play the randomizer.</p><p>If you encounter a problem, don't hesitate to ask for help! You can join the <a href=\"https://discord.gg/zkm6yncD\"><span style=\" text-decoration: underline; color:#9a0089;\">Discord Server</span></a> or ask on <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\"><span style=\" text-decoration: underline; color:#9a0089;\">GitHub</span></a>.!</p></body></html>", None))
         self.how_to_right_arrow_label.setText(QCoreApplication.translate("main_window", u"\u279c", None))
         self.how_to_running_group_box.setTitle(QCoreApplication.translate("main_window", u"Running the Seed", None))
-        self.how_to_running_label.setText(QCoreApplication.translate("main_window", u"If you want to play this randomizer on a modded Nintendo Switch console, copy the outputted <code>exeFS</code> and <code>romFS</code> folders into the <code>/atmosphere/contents/01002DA013484000</code> folder on your Switch's SD card. You can then run the game like normal and the randomizer will be patched on top of the vanilla game.<br><br>\n"
-"\n"
-"If you want to play this randomizer on the <a href=\"https://yuzu-emu.org/\">yuzu emulator</a>, open yuzu and right click on your copy of Skyward Sword HD. Click the \"Open Mod Data Location\" option and create a folder called <code>rando</code>. Copy the outputted <code>exeFS</code> and <code>romFS</code> folders into the newly created <code>rando</code> folder.<br><br>\n"
-"\n"
-"If you want to play the randomizer on the <a href=\"https://ryujinx.org/\">Ryujinx emulator</a>, copy the outputted <code>exeFS</code> and <code>romFS</code> folders into the <code>/Ryujinx/mods/contents/01002DA013484000</code> folder.", None))
+        self.how_to_running_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>You can play the randomizer either on a modded Nintendo Switch console or on an emulator.</p><p><span style=\" font-weight:700;\">TODO: add guide links</span></p><p>If you want to play on console, please follow these instructions</p><p>If you want to play on emulator, please follow these instructions for yuzu or these instructions for Ryujinx.</p></body></html>", None))
+        self.presets_group_box.setTitle(QCoreApplication.translate("main_window", u"Presets", None))
+        self.selected_preset_label.setText(QCoreApplication.translate("main_window", u"Selected Preset:", None))
+        self.presets_delete_button.setText(QCoreApplication.translate("main_window", u"Delete", None))
+        self.presets_save_new_button.setText(QCoreApplication.translate("main_window", u"Save New", None))
         self.useful_info_group_box.setTitle(QCoreApplication.translate("main_window", u"Useful Information", None))
-        self.useful_choose_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Choosing your Settings", None))
-        self.choose_settings_label.setText(QCoreApplication.translate("main_window", u"<b>\u279c Gameplay</b>: Customize how the game is played and beaten.<br>\n"
-"<b>\u279c World</b>: Pick how open the world is, shortcuts, and entrance randomization.<br>\n"
-"<b>\u279c Locations and Shuffles</b>: Pick which locations and shuffles are enabled.<br>\n"
-"<b>\u279c Items and Inventory</b>: Pick what items you start with.<br>\n"
-"<b>\u279c Hints</b>: Customize the in-game hints that can help you to beat the game.<br>\n"
-"<b>\u279c Logic and Tricks</b>: Pick which locations and tricks are enabled.<br>\n"
-"<b>\u279c Advanced</b>: Control complex settings such as plandomizer and output folders.", None))
-        self.useful_links_group_box.setTitle(QCoreApplication.translate("main_window", u"Links", None))
-        self.links_label.setText(QCoreApplication.translate("main_window", u"<b>TODO</b><br>\n"
-"\n"
-"<b>\u279c</b> <a href=\"https://discord.gg/zkm6yncD\">Discord Server</a><br>\n"
-"<b>\u279c</b> <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\">Report a Bug</a><br>\n"
-"<b>\u279c</b> <a href=\"\">Location Guide (todo)</a>", None))
-        self.theming_group_box.setTitle(QCoreApplication.translate("main_window", u"Accessibility", None))
-        self.groupBox.setTitle(QCoreApplication.translate("main_window", u"Theming", None))
+        self.community_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-weight:700;\">TODO</span><br/><span style=\" font-weight:700;\">\u279c </span><a href=\"https://discord.gg/zkm6yncD\"><span style=\" text-decoration: underline; color:#9a0089;\">Discord Server</span></a><br/><span style=\" font-weight:700;\">\u279c </span><a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\"><span style=\" text-decoration: underline; color:#9a0089;\">Report a Bug</span></a><br/><span style=\" font-weight:700;\">\u279c </span><a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando\"><span style=\" text-decoration: underline; color:#9a0089;\">GitHub</span></a><br/>\u279c Setup Guide (todo)<br/>\u279c Location Guide (todo)<br/>\u279c Tricks Guide (todo)</p></body></html>", None))
+        self.accessibility_group_box.setTitle(QCoreApplication.translate("main_window", u"Accessibility", None))
+        self.theming_group_box.setTitle(QCoreApplication.translate("main_window", u"Theming", None))
         self.theme_mode_label.setText(QCoreApplication.translate("main_window", u"Theme Mode:", None))
         self.theme_presets_label.setText(QCoreApplication.translate("main_window", u"Theme Presets", None))
         self.use_custom_theme_check_box.setText(QCoreApplication.translate("main_window", u"Use Custom Theme", None))
@@ -2035,14 +2067,7 @@ class Ui_main_window(object):
         self.add_entrance_type_button.setText(QCoreApplication.translate("main_window", u"Add Entrance Type", None))
         self.remove_entrance_type_button.setText(QCoreApplication.translate("main_window", u"Remove Entrance Type", None))
         self.mixed_entrance_pools_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
-        self.mixed_entrance_pools_explainer_label.setText(QCoreApplication.translate("main_window", u"<b>What are Mixed Entrance Pools?</b>\n"
-"<br>\n"
-"<br>Mixed entrance pools define how entrance types should be shuffled together.\n"
-"<br>By default, turning on an entrance randomizer setting will only shuffle the entrances of that type with each other.\n"
-"<br> For example, randomizing dungeon entrances will only shuffle the dungeon entrances with each other. The Sandship entrance could <i>not</i> be shuffled to Wryna's House door or a trial gate entrance.\n"
-"<br>\n"
-"<br>By defining mixed entrance pools, different entrance types can be shuffled together.\n"
-"<br>For example, if a mixed pool was defined as this: [Dungeon, Door, Trial Gate], the Sandship entrance <i>could</i> be shuffled to Wryna's House door or a trial gate entrance.", None))
+        self.mixed_entrance_pools_explainer_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-weight:700;\">What are Mixed Entrance Pools?</span><br/><br/>Mixed entrance pools define how entrance types are shuffled together. By default, turning on an entrance randomizer setting will only shuffle the entrances of that type with each other. For example, randomizing dungeon entrances will only shuffle the dungeon entrances with each other. The Sandship entrance could <span style=\" font-style:italic;\">not</span> be shuffled to Wryna's House door or a trial gate entrance. <br/><br/>By defining mixed entrance pools, different entrance types can be shuffled together. For example, if a mixed pool was defined as this: [Dungeon, Door, Trial Gate], the Sandship entrance <span style=\" font-style:italic;\">could</span> be shuffled to Wryna's House door or a trial gate entrance.</p></body></html>", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.world_tab), QCoreApplication.translate("main_window", u"World", None))
         self.include_location_button.setText(QCoreApplication.translate("main_window", u"Include\n"
 "<---", None))
