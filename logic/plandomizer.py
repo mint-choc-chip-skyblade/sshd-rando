@@ -28,9 +28,9 @@ def load_plandomizer_data(worlds: list[World], filepath: Path):
                 for location, item in world_data["locations"].items():
                     # If the item is a string, use it directly
                     if type(item) is str:
-                        world.plandomizer_locations[
-                            world.get_location(location)
-                        ] = world.get_item(item)
+                        world.plandomizer_locations[world.get_location(location)] = (
+                            world.get_item(item)
+                        )
                     else:
                         # If the item isn't a string, then it should have world and item specifications
                         for field in ["world", "item"]:
@@ -45,9 +45,9 @@ def load_plandomizer_data(worlds: list[World], filepath: Path):
                                 f'Incorrect world number "{item["world"]}". Only {len(worlds)} world(s) are being generated.'
                             )
 
-                        world.plandomizer_locations[
-                            world.get_location(location)
-                        ] = worlds[item["world"] - 1].get_item(item["item"])
+                        world.plandomizer_locations[world.get_location(location)] = (
+                            worlds[item["world"] - 1].get_item(item["item"])
+                        )
 
             if "entrances" in world_data:
                 for entrance_name, target_name in world_data["entrances"].items():

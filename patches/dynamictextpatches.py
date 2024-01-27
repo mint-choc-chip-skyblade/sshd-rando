@@ -55,9 +55,11 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
                     "type": "flowadd",
                     "flow": {
                         "type": "type1",
-                        "next": f"Display Fi Hints Text {ind + 1}"
-                        if ind < (len(fi_hint_chunks) - 1)
-                        else -1,
+                        "next": (
+                            f"Display Fi Hints Text {ind + 1}"
+                            if ind < (len(fi_hint_chunks) - 1)
+                            else -1
+                        ),
                         "param3": 68,
                         "param4": f"Fi Hints Text {ind}",
                     },
