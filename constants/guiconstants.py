@@ -1,5 +1,7 @@
 OPTION_PREFIX = "&nbsp;&nbsp;➜ "
 
+DEFAULT_PRESET = "~~ New Preset ~~"
+
 ITEM_FILTER_TYPES = (
     "Major Items",
     "Item Wheel Items",

@@ -14,6 +14,8 @@ DEFAULT_OUTPUT_PATH = RANDO_ROOT_PATH / "sshdr_output"
 # Config
 CONFIG_PATH = RANDO_ROOT_PATH / "config.yaml"
 PLANDO_PATH = RANDO_ROOT_PATH / "plandomizers"
+PRESETS_PATH = RANDO_ROOT_PATH / "presets"
+BASE_PRESETS_PATH = RANDO_ROOT_PATH / "data" / "presets"
 
 # GUI Stuff
 THEME_INFO_PATH = RANDO_ROOT_PATH / "gui" / "custom_themes" / "default_theme_info.yaml"

@@ -21,6 +21,9 @@ Spoiler Log.txt
 config.yaml
 custom_theme.json
 
+# Presets
+presets/*.yaml
+
 # Plandomizer
 *plandomizer.yaml
 plandomizers/*

@@ -9,12 +9,19 @@ from PySide6.QtWidgets import (
     QMessageBox,
     QSpinBox,
     QWidget,
+    QAbstractButton,
+    QInputDialog,
 )
+import yaml
 
-from constants.configconstants import get_default_setting, get_new_seed
+from constants.configconstants import (
+    SETTINGS_NOT_IN_SETTINGS_LIST,
+    get_default_setting,
+    get_new_seed,
+)
 from constants.guiconstants import *
 from constants.itemconstants import STARTABLE_ITEMS
-from filepathconstants import CONFIG_PATH, ITEMS_PATH
+from filepathconstants import BASE_PRESETS_PATH, CONFIG_PATH, ITEMS_PATH, PRESETS_PATH
 from gui.components.list_pair import ListPair
 from gui.mixed_entrance_pools import MixedEntrancePools
 from logic.config import Config, write_config_to_file
@@ -48,13 +55,49 @@ class Settings:
         self.ui.new_seed_button.clicked.connect(self.new_seed)
         self.ui.reset_settings_to_default_button.clicked.connect(self.reset)
 
+        # Init presets
+        self.preset_combo: QComboBox = self.ui.selected_preset_combo_box
+
+        if not PRESETS_PATH.exists():
+            PRESETS_PATH.mkdir()
+
+        # [:-5] removes the ".yaml" suffix
+        self.base_preset_names = [
+            preset.name[:-5] for preset in BASE_PRESETS_PATH.glob("*.yaml")
+        ]
+        self.user_preset_names = [
+            preset.name[:-5] for preset in PRESETS_PATH.glob("*.yaml")
+        ]
+
+        self.all_preset_names = (
+            [
+                DEFAULT_PRESET,
+            ]
+            + self.base_preset_names
+            + self.user_preset_names
+        )
+
+        self.preset_combo.addItems(self.all_preset_names)
+        self.preset_combo.currentTextChanged.connect(self.change_preset)
+
+        self.preset_delete_button: QAbstractButton = self.ui.presets_delete_button
+        self.preset_delete_button.clicked.connect(self.delete_preset)
+        self.preset_delete_button.setDisabled(True)
+
+        self.preset_save_new_button: QAbstractButton = self.ui.presets_save_new_button
+        self.preset_save_new_button.clicked.connect(self.save_new_preset)
+
+        self.preset_apply_button: QAbstractButton = self.ui.presets_apply_button
+        self.preset_apply_button.clicked.connect(self.apply_preset)
+        self.preset_apply_button.setDisabled(True)
+
         # Init mixed entrance pools
         mixed_entrance_pools = self.config.settings[0].mixed_entrance_pools
         self.mixed_entrance_pools = MixedEntrancePools(
             self.main, self.ui, mixed_entrance_pools
         )
         self.mixed_entrance_pools.mixedEntrancePoolsChanged.connect(
-            partial(self.update_settings, update_descriptions=False)
+            partial(self.update_from_gui, update_descriptions=False)
         )
 
         # Init excluded locations
@@ -75,7 +118,7 @@ class Settings:
             excludable_locations,
             excluder_list=self.get_disabled_shuffle_location_names(),
         )
-        self.exclude_locations_pair.listPairChanged.connect(self.update_settings)
+        self.exclude_locations_pair.listPairChanged.connect(self.update_from_gui)
 
         self.ui.excluded_locations_free_search.textChanged.connect(
             self.exclude_locations_pair.update_option_list_filter
@@ -113,7 +156,7 @@ class Settings:
             self.ui.hints_reset_button,
             excludable_hint_locations,
         )
-        self.exclude_hints_locations_pair.listPairChanged.connect(self.update_settings)
+        self.exclude_hints_locations_pair.listPairChanged.connect(self.update_from_gui)
 
         self.ui.excluded_hint_locations_free_search.textChanged.connect(
             self.exclude_hints_locations_pair.update_option_list_filter
@@ -156,7 +199,7 @@ class Settings:
             self.ui.inventory_reset_button,
             startable_items,
         )
-        self.starting_inventory_pair.listPairChanged.connect(self.update_settings)
+        self.starting_inventory_pair.listPairChanged.connect(self.update_from_gui)
 
         self.ui.starting_items_free_search.textChanged.connect(
             self.starting_inventory_pair.update_option_list_filter
@@ -215,7 +258,7 @@ class Settings:
                     )
 
                 widget.setText(setting_info.info.pretty_name)
-                widget.clicked.connect(partial(self.update_settings, widget))
+                widget.clicked.connect(partial(self.update_from_gui, widget))
             elif isinstance(widget, QComboBox):  # pick one option
                 for option in setting_info.info.pretty_options:
                     widget.addItem(option)
@@ -224,7 +267,7 @@ class Settings:
                     setting_info.info.options.index(setting_info.value)
                 )
                 widget.currentIndexChanged.connect(
-                    partial(self.update_settings, widget)
+                    partial(self.update_from_gui, widget)
                 )
             elif isinstance(widget, QSpinBox):  # pick a value
                 widget.setMinimum(
@@ -238,18 +281,19 @@ class Settings:
                 else:
                     widget.setValue(int(current_option_value))
 
-                widget.valueChanged.connect(partial(self.update_settings, widget))
+                widget.valueChanged.connect(partial(self.update_from_gui, widget))
 
         # Force descriptions to update before changing any setting
-        self.update_settings()
+        self.update_from_gui()
 
-    def update_settings(
+    def update_from_gui(
         self,
         from_widget=None,
         widget_info=None,
         update_descriptions: bool = True,
         allow_rewrite: bool = True,
     ):
+        print("!!!")
         should_update_location_counter = True
 
         for setting_name, setting in self.settings.items():
@@ -357,6 +401,70 @@ class Settings:
         if update_descriptions:
             self.update_descriptions(from_widget)
 
+    def update_from_config(self):
+        # Update mixed entrance pools
+        self.mixed_entrance_pools.update_from_config(
+            self.config.settings[0].mixed_entrance_pools
+        )
+
+        # Update list pairs
+        self.exclude_locations_pair.update(self.config.settings[0].excluded_locations)
+        self.exclude_hints_locations_pair.update(
+            self.config.settings[0].excluded_hint_locations
+        )
+        self.starting_inventory_pair.update(
+            list(self.config.settings[0].starting_inventory.elements())
+        )
+
+        # Update other settings
+        for setting_name, setting_info in self.settings.items():
+            current_option_value = setting_info.value
+
+            widget = None  # type: ignore
+            label = None  # type: ignore
+
+            try:
+                widget: QWidget = getattr(self.ui, "setting_" + setting_name)
+            except:
+                print(f"Could not find widget for setting: {setting_name}.")
+                continue
+
+            widget.blockSignals(True)
+
+            try:
+                label = getattr(self.ui, setting_name + "_label")
+                label.setText(setting_info.info.pretty_name)
+            except:
+                pass
+
+            if isinstance(widget, QCheckBox):  # on or off
+                if current_option_value == "on":
+                    widget.setChecked(True)
+                elif current_option_value == "random":
+                    widget.setCheckState(Qt.CheckState.PartiallyChecked)
+                elif current_option_value == "off":
+                    widget.setChecked(False)
+                else:
+                    raise TypeError(
+                        f"Setting '{setting_name}' has value '{current_option_value}' which is invalid for a QAbstractButton. Expected either 'on' or 'off'."
+                    )
+
+                widget.setText(setting_info.info.pretty_name)
+            elif isinstance(widget, QComboBox):  # pick one option
+                widget.setCurrentIndex(
+                    setting_info.info.options.index(setting_info.value)
+                )
+            elif isinstance(widget, QSpinBox):  # pick a value
+                if current_option_value == "random":
+                    widget.setValue(widget.minimum())
+                else:
+                    widget.setValue(int(current_option_value))
+
+            widget.blockSignals(False)
+
+        # Verifies all the settings and forces a config rewrite
+        self.update_from_gui()
+
     def get_updated_setting(self, setting: Setting, value: str) -> Setting:
         if value == "":
             raise ValueError(
@@ -423,7 +531,7 @@ class Settings:
 
         # Otherwise, the config file is re-written once for *every* setting
         if not from_reset_all:
-            self.update_settings(from_widget=widget, update_descriptions=False)
+            self.update_from_gui(from_widget=widget, update_descriptions=False)
 
         return True
 
@@ -570,3 +678,130 @@ class Settings:
                 self.location_table, self.config
             )
         ]
+
+    def change_preset(self):
+        selected_preset_name = self.preset_combo.currentText()
+
+        if selected_preset_name == DEFAULT_PRESET:
+            self.preset_delete_button.setDisabled(True)
+            self.preset_apply_button.setDisabled(True)
+        else:
+            confirm_preset_apply_dialog = QMessageBox.question(
+                self.main,
+                "Are you sure?",
+                "Would you like to apply this preset and overwrite all the current settings?",
+            )
+
+            if confirm_preset_apply_dialog == QMessageBox.Yes:  # type: ignore (Qt is stupid)
+                self.apply_preset()
+
+            self.preset_apply_button.setEnabled(True)
+
+            if selected_preset_name in self.base_preset_names:
+                self.preset_delete_button.setDisabled(True)
+            else:
+                self.preset_delete_button.setEnabled(True)
+
+    def delete_preset(self):
+        selected_preset_name = self.preset_combo.currentText()
+
+        if (
+            selected_preset_name == DEFAULT_PRESET
+            or selected_preset_name in self.base_preset_names
+        ):
+            return
+
+        confirm_preset_delete_dialog = QMessageBox.question(
+            self.main,
+            "Are you sure?",
+            f"Are you sure you would like to delete {selected_preset_name} FOREVER?",
+        )
+
+        if confirm_preset_delete_dialog == QMessageBox.Yes:  # type: ignore (Qt is stupid)
+            (PRESETS_PATH / (selected_preset_name + ".yaml")).unlink()
+            self.user_preset_names.remove(selected_preset_name)
+            self.all_preset_names.remove(selected_preset_name)
+
+            preset_index = self.preset_combo.currentIndex()
+            self.preset_combo.setCurrentIndex(0)
+            self.preset_combo.removeItem(preset_index)
+
+    def save_new_preset(self):
+        preset_name, did_confirm = QInputDialog.getText(
+            self.main,
+            "Create New Preset",
+            "Enter the name of your new preset:",
+            text="New Preset",
+            inputMethodHints=Qt.InputMethodHint.ImhPreferLatin,
+        )
+
+        if did_confirm:
+            if preset_name in self.all_preset_names:
+                self.main.fi_info_dialog.show_dialog(
+                    title="Could not save new preset!",
+                    text="The name you entered is already being used! Please try again with a different name.",
+                )
+            else:
+                self.preset_combo.addItem(preset_name)
+                self.preset_combo.setCurrentText(preset_name)
+
+                preset_file_path = PRESETS_PATH / (preset_name + ".yaml")
+
+                preset_settings: dict = {
+                    setting.name: setting.value for setting in self.settings.values()
+                }
+
+                for setting_name in SETTINGS_NOT_IN_SETTINGS_LIST:
+                    preset_settings[setting_name] = self.config.settings[
+                        0
+                    ].__getattribute__(setting_name)
+
+                # Make sure starting inventory is dealt with correctly
+                preset_settings["starting_inventory"] = tuple(
+                    self.config.settings[0].starting_inventory.elements()
+                )
+
+                with open(preset_file_path, "w") as preset_file:
+                    yaml.safe_dump(preset_settings, preset_file, sort_keys=False)
+
+    def apply_preset(self):
+        selected_preset = self.preset_combo.currentText()
+
+        if selected_preset == DEFAULT_PRESET:
+            return
+
+        if selected_preset in self.base_preset_names:
+            selected_preset_path = BASE_PRESETS_PATH / (selected_preset + ".yaml")
+        else:
+            selected_preset_path = PRESETS_PATH / (selected_preset + ".yaml")
+
+        with open(selected_preset_path, "r") as preset_file:
+            preset_data: dict = yaml.safe_load(preset_file)
+
+        for setting_name in preset_data:
+            if setting_name in self.settings:
+                self.settings[setting_name].value = preset_data[setting_name]
+            elif setting_name in SETTINGS_NOT_IN_SETTINGS_LIST:
+                value = preset_data[setting_name]
+
+                if setting_name == "starting_inventory":
+                    value = Counter(value)
+
+                self.config.settings[0].__setattr__(setting_name, value)
+            else:
+                # TODO: Handle this better
+                raise Exception(
+                    f"Setting '{setting_name}' is unknown. Cannot apply preset: {selected_preset}."
+                )
+
+        # Reset all settings not in the preset to default
+        for setting_name in tuple(self.settings) + SETTINGS_NOT_IN_SETTINGS_LIST:
+            if setting_name not in preset_data:
+                setting = self.settings[setting_name]
+                default_value = setting.info.options[setting.info.default_option_index]
+                self.settings[setting_name] = self.get_updated_setting(
+                    self.settings[setting_name], default_value
+                )
+
+        self.config.settings[0].settings = self.settings
+        self.update_from_config()

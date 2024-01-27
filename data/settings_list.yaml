@@ -34,7 +34,7 @@
 
 # Shuffles
 - name: gratitude_crystal_shuffle
-  default_option: "off"
+  default_option: "on"
   pretty_name: Gratitude Crystal Shuffle
   pretty_options:
     - "Off"

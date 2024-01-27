@@ -40,9 +40,6 @@ class MixedEntrancePools(QObject):
             list() for _ in range(1, len(ENTRANCE_TYPES))
         ]
 
-        for pool_index, pool in enumerate(config_mixed_entrance_pools):
-            self.mixed_entrance_pools[pool_index] = pool
-
         self.selected_pool_combo: QComboBox = (
             self.ui.highlighted_entrance_pool_combo_box
         )
@@ -62,6 +59,12 @@ class MixedEntrancePools(QObject):
 
         self.reset_button: QAbstractButton = self.ui.mixed_entrance_pools_reset_button
         self.reset_button.clicked.connect(self.reset)
+
+        self.update_from_config(config_mixed_entrance_pools)
+
+    def update_from_config(self, config_entrances: list[list[str]]):
+        for pool_index, pool in enumerate(config_entrances):
+            self.mixed_entrance_pools[pool_index] = pool
 
         self.update_pools_label()
 

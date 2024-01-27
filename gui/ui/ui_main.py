@@ -219,6 +219,11 @@ class Ui_main_window(object):
 
         self.presets_button_layout.addWidget(self.presets_save_new_button)
 
+        self.presets_apply_button = QPushButton(self.presets_group_box)
+        self.presets_apply_button.setObjectName(u"presets_apply_button")
+
+        self.presets_button_layout.addWidget(self.presets_apply_button)
+
 
         self.verticalLayout_34.addLayout(self.presets_button_layout)
 
@@ -1979,7 +1984,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(2)
+        self.tab_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2003,6 +2008,7 @@ class Ui_main_window(object):
         self.selected_preset_label.setText(QCoreApplication.translate("main_window", u"Selected Preset:", None))
         self.presets_delete_button.setText(QCoreApplication.translate("main_window", u"Delete", None))
         self.presets_save_new_button.setText(QCoreApplication.translate("main_window", u"Save New", None))
+        self.presets_apply_button.setText(QCoreApplication.translate("main_window", u"Apply", None))
         self.useful_info_group_box.setTitle(QCoreApplication.translate("main_window", u"Useful Information", None))
         self.community_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-weight:700;\">TODO</span><br/><span style=\" font-weight:700;\">\u279c </span><a href=\"https://discord.gg/zkm6yncD\"><span style=\" text-decoration: underline; color:#9a0089;\">Discord Server</span></a><br/><span style=\" font-weight:700;\">\u279c </span><a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\"><span style=\" text-decoration: underline; color:#9a0089;\">Report a Bug</span></a><br/><span style=\" font-weight:700;\">\u279c </span><a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando\"><span style=\" text-decoration: underline; color:#9a0089;\">GitHub</span></a><br/>\u279c Setup Guide (todo)<br/>\u279c Location Guide (todo)<br/>\u279c Tricks Guide (todo)</p></body></html>", None))
         self.accessibility_group_box.setTitle(QCoreApplication.translate("main_window", u"Accessibility", None))

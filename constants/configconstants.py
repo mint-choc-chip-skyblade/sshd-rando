@@ -31,6 +31,14 @@ CONFIG_SETTINGS = (
 )
 
 
+SETTINGS_NOT_IN_SETTINGS_LIST = (
+    "excluded_locations",
+    "excluded_hint_locations",
+    "starting_inventory",
+    "mixed_entrance_pools",
+)
+
+
 DEFAULT_SETTINGS = {
     "output_dir": DEFAULT_OUTPUT_PATH,
     "seed": get_new_seed(),
@@ -60,6 +68,21 @@ DEFAULT_SETTINGS = {
         # * 17
     ),
     "excluded_locations": [
+        "Knight Academy - Owlan's Crystals",
+        "Upper Skyloft - Pumpkin Archery -- 600 Points",
+        "Central Skyloft - Peater/Peatrice's Crystals",
+        "Batreaux - 70 Crystals",
+        "Batreaux - 70 Crystals Second Reward",
+        "Batreaux - 80 Crystals",
+        "Lumpy Pumpkin - Harp Minigame",
+        "Lumpy Pumpkin - Kina's Crystals",
+        "Fun Fun Island - Minigame -- 500 Rupees",
+        "The Sky - Form a Squirrel Ring above Volcanic Island",
+        "The Sky - Form a Squirrel Ring above Lumpy Pumpkin",
+        "The Sky - Form a Squirrel Ring above Bamboo Island",
+        "The Thunderhead - Song from Levias",
+        "Bug Heaven - Minigame -- 10 Bugs in 3 Minutes",
+        "Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05",
         "Skyloft Silent Realm - Collect all Tears Reward",
         "Faron Silent Realm - Collect all Tears Reward",
         "Lanayru Silent Realm - Collect all Tears Reward",

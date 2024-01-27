@@ -128,7 +128,7 @@ class ListPair(QObject):
 
         self._restore_filters()
 
-    def update(self, current_setting):
+    def update(self, current_setting: list[str]):
         self._store_and_remove_filters()
 
         not_chosen = self.setting_options_list.copy()
