@@ -411,6 +411,16 @@
    - "on":                             "The bird statue unlocked at the start for each surface region will be randomized. All overworld statues except Inside the Volcano and Inside the Fire Sanctuary may be chosen."
 
 
+- name: random_starting_statues
+  default_option: "off"
+  pretty_name: Random Starting Statues
+  pretty_options:
+   - "Off"
+   - "On"
+  options:
+   - "off/on":                         "If enabled, the starting statue for each surface region will be randomized. All overworld statues except Inside the Volcano and Inside the Fire Sanctuary may be chosen."
+
+
 - name: random_starting_spawn
   default_option: vanilla
   pretty_name: Randomize Starting Spawn

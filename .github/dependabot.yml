@@ -7,7 +7,7 @@ updates:
     target-branch: "main"
     groups:
       all-dependencies:
-        patters:
+        patterns:
           - "*"
     versioning-strategy: increase-if-necessary
   - package-ecosystem: github-actions
