@@ -35,7 +35,7 @@ class RandomizerProgressDialog(QProgressDialog):
             done_dialog.setText("Seed successfully generated!")
 
             open_output_button = done_dialog.addButton(
-                "Open Output Folder", QMessageBox.ButtonRole.NoRole
+                "Open", QMessageBox.ButtonRole.NoRole
             )
             open_output_button.clicked.connect(self.open_output_folder)
 
