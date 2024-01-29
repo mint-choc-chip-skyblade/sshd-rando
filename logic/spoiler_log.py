@@ -17,8 +17,11 @@ def spoiler_format_entrance(entrance: Entrance, longest_name_length: int) -> str
 
 
 def generate_spoiler_log(worlds: list[World]) -> None:
+    print_progress_text("Generating Spoiler Log")
+
     filepath = "Spoiler Log.txt"
     config = worlds[0].config
+
     with open(filepath, "w") as spoiler_log:
         spoiler_log.write(f"seed: {config.seed}\n")
         # Print starting inventories if there are any
@@ -213,5 +216,3 @@ def generate_spoiler_log(worlds: list[World]) -> None:
             spoiler_log.write(
                 f"    mixed_entrance_pools: {world.setting_map.mixed_entrance_pools}\n"
             )
-
-    print_progress_text(f"Generated Spoiler Log at {filepath}")
