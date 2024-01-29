@@ -293,7 +293,6 @@ class Settings:
         update_descriptions: bool = True,
         allow_rewrite: bool = True,
     ):
-        print("!!!")
         should_update_location_counter = True
 
         for setting_name, setting in self.settings.items():
