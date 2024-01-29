@@ -29,7 +29,7 @@ class Main(QMainWindow):
         self.ui.setupUi(self)
 
         self.setWindowTitle(
-            "The Legend of Zelda: Skyward Sword HD Randomizer " + VERSION
+            f"The Legend of Zelda: Skyward Sword HD Randomizer (Ver. {VERSION})"
         )
 
         self.setWindowIcon(QIcon(ICON_PATH.as_posix()))

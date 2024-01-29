@@ -1,1 +1,1 @@
-VERSION = "we need to figure out a version"
+VERSION = "1.0 dev"
