@@ -48,7 +48,7 @@ DEFAULT_SETTINGS = {
     "theme_mode": "Auto",
     "theme_presets": "Default",
     "use_custom_theme": False,
-    "font_family": "Lato",
+    "font_family": "Figtree",
     "font_size": 10,
     "starting_inventory": Counter(
         [

@@ -8,6 +8,7 @@ from PySide6.QtWidgets import (
     QFontComboBox,
     QSpinBox,
 )
+from constants.configconstants import DEFAULT_SETTINGS
 
 from filepathconstants import (
     CONFIG_PATH,
@@ -15,7 +16,7 @@ from filepathconstants import (
     DEFAULT_THEME_PATH,
     DYSLEXIC_FONT_PATH,
     HIGH_CONTRAST_THEME_PATH,
-    LATO_FONT_PATH,
+    RANDO_FONT_PATH,
     READABILITY_THEME_PATH,
 )
 from gui.dialogs.custom_theme_dialog import CustomThemeDialog
@@ -40,7 +41,7 @@ class Accessibility:
         self.ui = ui
         self.config: Config = main.config
 
-        QFontDatabase.addApplicationFont(LATO_FONT_PATH.as_posix())
+        QFontDatabase.addApplicationFont(RANDO_FONT_PATH.as_posix())
         QFontDatabase.addApplicationFont(DYSLEXIC_FONT_PATH.as_posix())
 
         # Accessibility setup.
@@ -105,6 +106,7 @@ class Accessibility:
         font_size_widget.valueChanged.connect(self.update_font)
         font_size_widget.setValue(self.config.font_size)
 
+        self.update_font()
         self.update_theme()
 
     def toggle_custom_theme(self, state: int):
@@ -186,6 +188,8 @@ class Accessibility:
         )
 
     def reset_font(self):
-        font_index = self.ui.font_family_combo_box.findText("Lato")
+        font_index = self.ui.font_family_combo_box.findText(
+            DEFAULT_SETTINGS["font_family"]
+        )
         self.ui.font_family_combo_box.setCurrentIndex(font_index)
         self.ui.font_size_spin_box.setValue(10)

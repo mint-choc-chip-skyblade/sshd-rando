@@ -29,7 +29,7 @@ READABILITY_THEME_PATH = (
 )
 CUSTOM_THEME_PATH = RANDO_ROOT_PATH / "custom_theme.json"
 
-LATO_FONT_PATH = RANDO_ROOT_PATH / "assets" / "Lato-Regular.ttf"
+RANDO_FONT_PATH = RANDO_ROOT_PATH / "assets" / "Figtree-Regular.ttf"
 DYSLEXIC_FONT_PATH = RANDO_ROOT_PATH / "assets" / "OpenDyslexic3-Regular.ttf"
 
 # Stage and event stuff
