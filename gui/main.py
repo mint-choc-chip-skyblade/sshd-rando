@@ -1,4 +1,5 @@
 import sys
+from types import TracebackType
 
 from PySide6.QtCore import QEvent, Qt
 from PySide6.QtGui import QIcon, QMouseEvent
@@ -149,6 +150,26 @@ def start_gui(app: QApplication):
         error(e)
         sys.exit()
 
+
+old_excepthook = sys.excepthook
+
+
+def excepthook(source, exception, traceback: TracebackType):
+    old_excepthook(source, exception, traceback)
+
+    traceback_str = "Qt caught and ignored exception:\n"
+    current_traceback = traceback
+
+    while current_traceback.tb_next is not None:
+        traceback_str += f"\n{current_traceback.tb_frame}"
+        current_traceback = current_traceback.tb_next
+
+    traceback_str += f"\n\n{source}: {exception}"
+    error_from_str(exception, traceback_str)
+    sys.exit()
+
+
+sys.excepthook = excepthook
 
 if __name__ == "__main__":
     start_gui(QApplication([]))
