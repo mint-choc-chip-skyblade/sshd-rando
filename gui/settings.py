@@ -55,9 +55,9 @@ class Settings:
         self.set_setting_descriptions(None)
 
         # Init seed
-        seed_line_edit: QLineEdit = self.ui.seed_line_edit
-        seed_line_edit.setText(self.config.seed)
-        seed_line_edit.textChanged.connect(self.update_seed)
+        self.seed_line_edit: QLineEdit = self.ui.seed_line_edit
+        self.seed_line_edit.setText(self.config.seed)
+        self.seed_line_edit.textChanged.connect(self.update_seed)
         self.ui.new_seed_button.clicked.connect(self.new_seed)
 
         # Init setting_string
@@ -489,13 +489,10 @@ class Settings:
         return new_setting
 
     def new_seed(self):
-        seed_widget: QLineEdit = getattr(self.ui, "setting_seed")
-        seed_widget.setText(get_new_seed())
+        self.seed_line_edit.setText(get_new_seed())
 
     def update_seed(self):
-        seed_widget: QLineEdit = getattr(self.ui, "setting_seed")
-        self.config.seed = seed_widget.text()
-
+        self.config.seed = self.seed_line_edit.text()
         write_config_to_file(CONFIG_PATH, self.config)
 
     def update_setting_string(self):
@@ -515,6 +512,17 @@ class Settings:
         )
         self.config = new_config
         self.settings = self.config.settings[0].settings
+        self.seed_line_edit.setText(self.config.seed)
+
+        if self.config.generate_spoiler_log:
+            self.main.advanced.spoiler_log_check_box.setCheckState(
+                Qt.CheckState.Checked
+            )
+        else:
+            self.main.advanced.spoiler_log_check_box.setCheckState(
+                Qt.CheckState.Unchecked
+            )
+
         self.update_from_config()
 
     def reset_single(
