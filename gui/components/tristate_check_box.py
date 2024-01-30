@@ -1,5 +1,6 @@
 from typing_extensions import override
-from PySide6.QtCore import Qt
+from PySide6.QtCore import QEvent, Qt
+from PySide6.QtGui import QMouseEvent
 from PySide6.QtWidgets import QCheckBox
 
 
@@ -9,7 +10,10 @@ class RandoTriStateCheckBox(QCheckBox):
         self.setTristate(True)
 
     @override
-    def mouseReleaseEvent(self, event) -> None:
+    def mouseReleaseEvent(self, event: QMouseEvent) -> None:
+        if event.button() != Qt.MouseButton.LeftButton:
+            return
+
         # Change tristate order
         # Usually: off -> mid -> on
         # Now:     off -> on  -> mid
@@ -20,4 +24,4 @@ class RandoTriStateCheckBox(QCheckBox):
         else:
             self.setCheckState(Qt.CheckState.PartiallyChecked)
 
-        super().mouseReleaseEvent(event)
+        return super().mouseReleaseEvent(event)
