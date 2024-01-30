@@ -33,7 +33,7 @@ background-color: #FFFFFF;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -283,80 +283,6 @@ background-color: #FFFFFF;
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <item row="0" column="0">
-           <widget class="QGroupBox" name="presets_group_box">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="title">
-             <string>Presets</string>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_34">
-             <item>
-              <layout class="QHBoxLayout" name="selected_preset_layout">
-               <item>
-                <widget class="QLabel" name="selected_preset_label">
-                 <property name="text">
-                  <string>Selected Preset:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QComboBox" name="selected_preset_combo_box">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="presets_button_layout">
-               <item>
-                <widget class="QPushButton" name="presets_delete_button">
-                 <property name="text">
-                  <string>Delete</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="presets_save_new_button">
-                 <property name="text">
-                  <string>Save New</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="presets_apply_button">
-                 <property name="text">
-                  <string>Apply</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <spacer name="presets_vspacer">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>86</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </widget>
-          </item>
           <item row="0" column="1">
            <widget class="QGroupBox" name="useful_info_group_box">
             <property name="sizePolicy">
@@ -600,6 +526,80 @@ background-color: #FFFFFF;
             </layout>
            </widget>
           </item>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="presets_group_box">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>Presets</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_34">
+             <item>
+              <layout class="QHBoxLayout" name="selected_preset_layout">
+               <item>
+                <widget class="QLabel" name="selected_preset_label">
+                 <property name="text">
+                  <string>Selected Preset:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="selected_preset_combo_box">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="presets_button_layout">
+               <item>
+                <widget class="QPushButton" name="presets_delete_button">
+                 <property name="text">
+                  <string>Delete</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="presets_save_new_button">
+                 <property name="text">
+                  <string>Save New</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="presets_apply_button">
+                 <property name="text">
+                  <string>Apply</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="presets_vspacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>86</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
          </layout>
         </item>
        </layout>
@@ -642,28 +642,28 @@ background-color: #FFFFFF;
             <widget class="QComboBox" name="setting_trappable_items"/>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_burn_traps">
+            <widget class="RandoTriStateCheckBox" name="setting_burn_traps">
              <property name="text">
               <string>Burn Traps</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_curse_traps">
+            <widget class="RandoTriStateCheckBox" name="setting_curse_traps">
              <property name="text">
               <string>Curse Traps</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_noise_traps">
+            <widget class="RandoTriStateCheckBox" name="setting_noise_traps">
              <property name="text">
               <string>Noise Traps</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_groose_traps">
+            <widget class="RandoTriStateCheckBox" name="setting_groose_traps">
              <property name="text">
               <string>Groose Traps</string>
              </property>
@@ -778,28 +778,28 @@ background-color: #FFFFFF;
             </layout>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_empty_unrequired_dungeons">
+            <widget class="RandoTriStateCheckBox" name="setting_empty_unrequired_dungeons">
              <property name="text">
               <string>Barren Unrequired Dungeons</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_skip_horde">
+            <widget class="RandoTriStateCheckBox" name="setting_skip_horde">
              <property name="text">
               <string>Skip The Horde Fight</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_skip_g3">
+            <widget class="RandoTriStateCheckBox" name="setting_skip_g3">
              <property name="text">
               <string>Skip Ghirahim 3 Fight</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_skip_demise">
+            <widget class="RandoTriStateCheckBox" name="setting_skip_demise">
              <property name="text">
               <string>Skip Demise Fight</string>
              </property>
@@ -868,28 +868,28 @@ background-color: #FFFFFF;
             </layout>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_full_wallet_upgrades">
+            <widget class="RandoTriStateCheckBox" name="setting_full_wallet_upgrades">
              <property name="text">
               <string>Full Wallet Upgrades</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_dowsing_after_whitesword">
+            <widget class="RandoTriStateCheckBox" name="setting_dowsing_after_whitesword">
              <property name="text">
               <string>Fill Dowsing on White Sword</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_tunic_swap">
+            <widget class="RandoTriStateCheckBox" name="setting_tunic_swap">
              <property name="text">
               <string>Tunic Swap</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_rotating_items">
+            <widget class="RandoTriStateCheckBox" name="setting_rotating_items">
              <property name="text">
               <string>Rotating Items</string>
              </property>
@@ -993,7 +993,7 @@ background-color: #FFFFFF;
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_25">
            <item>
-            <widget class="QCheckBox" name="setting_fs_lava_flow">
+            <widget class="RandoTriStateCheckBox" name="setting_fs_lava_flow">
              <property name="text">
               <string>Skip Fire Sanctuary Lava Chase</string>
              </property>
@@ -1022,35 +1022,35 @@ background-color: #FFFFFF;
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_17">
            <item>
-            <widget class="QCheckBox" name="setting_randomize_door_entrances">
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_door_entrances">
              <property name="text">
               <string>Randomize Door Entrances</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_randomize_interior_entrances">
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_interior_entrances">
              <property name="text">
               <string>Randomize Interior Entrances</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_randomize_overworld_entrances">
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_overworld_entrances">
              <property name="text">
               <string>Randomize Overworld Entrances</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_randomize_dungeon_entrances">
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_dungeon_entrances">
              <property name="text">
               <string>Randomize Dungeon Entrances</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_randomize_trial_gate_entrances">
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_trial_gate_entrances">
              <property name="text">
               <string>Randomize Trial Gate Entrances</string>
              </property>
@@ -1067,21 +1067,21 @@ background-color: #FFFFFF;
             <widget class="QComboBox" name="setting_random_starting_spawn"/>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_random_starting_statues">
+            <widget class="RandoTriStateCheckBox" name="setting_random_starting_statues">
              <property name="text">
               <string>Random Starting Statues</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_decouple_double_doors">
+            <widget class="RandoTriStateCheckBox" name="setting_decouple_double_doors">
              <property name="text">
               <string>Decouple Double Door Entrances</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_decouple_entrances">
+            <widget class="RandoTriStateCheckBox" name="setting_decouple_entrances">
              <property name="text">
               <string>Decouple Entrances</string>
              </property>
@@ -1387,28 +1387,28 @@ background-color: #FFFFFF;
             <widget class="QComboBox" name="setting_rupee_shuffle"/>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_underground_rupee_shuffle">
+            <widget class="RandoTriStateCheckBox" name="setting_underground_rupee_shuffle">
              <property name="text">
               <string>Underground Rupee Shuffle</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_goddess_chest_shuffle">
+            <widget class="RandoTriStateCheckBox" name="setting_goddess_chest_shuffle">
              <property name="text">
               <string>Goddess Chest Shuffle</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_gratitude_crystal_shuffle">
+            <widget class="RandoTriStateCheckBox" name="setting_gratitude_crystal_shuffle">
              <property name="text">
               <string>Gratitude Crystals Shuffle</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_stamina_fruit_shuffle">
+            <widget class="RandoTriStateCheckBox" name="setting_stamina_fruit_shuffle">
              <property name="text">
               <string>Stamina Fruits</string>
              </property>
@@ -2048,21 +2048,21 @@ background-color: #FFFFFF;
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_23">
            <item>
-            <widget class="QCheckBox" name="setting_gossip_stone_hints">
+            <widget class="RandoTriStateCheckBox" name="setting_gossip_stone_hints">
              <property name="text">
               <string>Gossip Stone Hints</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_fi_hints">
+            <widget class="RandoTriStateCheckBox" name="setting_fi_hints">
              <property name="text">
               <string>Fi Hints</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_impa_sot_hint">
+            <widget class="RandoTriStateCheckBox" name="setting_impa_sot_hint">
              <property name="text">
               <string>Past Impa Stone of Trials Hint</string>
              </property>
@@ -2175,14 +2175,14 @@ background-color: #FFFFFF;
             </layout>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_always_hints">
+            <widget class="RandoTriStateCheckBox" name="setting_always_hints">
              <property name="text">
               <string>Prioritize Remote Location Hints</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_cryptic_hint_text">
+            <widget class="RandoTriStateCheckBox" name="setting_cryptic_hint_text">
              <property name="text">
               <string>Cryptic Hint Text</string>
              </property>
@@ -2277,112 +2277,112 @@ background-color: #FFFFFF;
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_20">
               <item>
-               <widget class="QCheckBox" name="setting_logic_advanced_lizalfos_combat">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_advanced_lizalfos_combat">
                 <property name="text">
                  <string>Advanced Lizalfos Combat</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_skyview_precise_slingshot">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_skyview_precise_slingshot">
                 <property name="text">
                  <string>Skyview Temple Precise Slingshot</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_lmf_ceiling_precise_slingshot">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lmf_ceiling_precise_slingshot">
                 <property name="text">
                  <string>Lanayru Mining Facility Precise Slingshot</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_tot_slingshot">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_tot_slingshot">
                 <property name="text">
                  <string>Temple of Time Precise Slingshot</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_bomb_throws">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_bomb_throws">
                 <property name="text">
                  <string>Precise Bomb Throws</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_lanayru_mine_quick_bomb">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lanayru_mine_quick_bomb">
                 <property name="text">
                  <string>Lanayru Mine Quick Bomb</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_cactus_bomb_whip">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_cactus_bomb_whip">
                 <property name="text">
                  <string>Whip Bomb Flowers off Cacti</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_beedles_shop_with_bombs">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_beedles_shop_with_bombs">
                 <property name="text">
                  <string>Beedle's Shop with Bombs</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_bird_nest_item_from_beedles_shop">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_bird_nest_item_from_beedles_shop">
                 <property name="text">
                  <string>Bird's Nest from Beedle's Shop</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_precise_beetle">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_precise_beetle">
                 <property name="text">
                  <string>Precise Beetle Flying</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_skippers_fast_clawshots">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_skippers_fast_clawshots">
                 <property name="text">
                  <string>Skipper's Retreat Fast Clawshots</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_lmf_whip_switch">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lmf_whip_switch">
                 <property name="text">
                  <string>Lanayru Mining Facility Whip Switch</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_lmf_whip_armos_room_timeshift_stone">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lmf_whip_armos_room_timeshift_stone">
                 <property name="text">
                  <string>Lanayru Mining Facility Whip Timeshift Stone</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_lmf_minecart_jump">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lmf_minecart_jump">
                 <property name="text">
                  <string>Lanayru Mining Facility Ride on Minecart</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_present_bow_switches">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_present_bow_switches">
                 <property name="text">
                  <string>Present Bow Switch Shots</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_skykeep_vineclip">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_skykeep_vineclip">
                 <property name="text">
                  <string>Sky Keep Vine Clip</string>
                 </property>
@@ -2417,77 +2417,77 @@ background-color: #FFFFFF;
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_19">
               <item>
-               <widget class="QCheckBox" name="setting_logic_volcanic_island_dive">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_volcanic_island_dive">
                 <property name="text">
                  <string>Volcanic Island Dive</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_east_island_dive">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_east_island_dive">
                 <property name="text">
                  <string>Thunderhead East Island Dive</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_beedles_island_cage_chest_dive">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_beedles_island_cage_chest_dive">
                 <property name="text">
                  <string>Beedle's Island Cage Chest Dive</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_gravestone_jump">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_gravestone_jump">
                 <property name="text">
                  <string>Gravestone Jump</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_waterfall_cave_jump">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_waterfall_cave_jump">
                 <property name="text">
                  <string>Waterfall Cave Jump</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_early_lake_floria">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_early_lake_floria">
                 <property name="text">
                  <string>Early Lake Floria Jumpslash</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_skyview_coiled_rupee_jump">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_skyview_coiled_rupee_jump">
                 <property name="text">
                  <string>Skyview Coiled Rupee Jump</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_ac_lever_jump_trick">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_ac_lever_jump_trick">
                 <property name="text">
                  <string>Ancient Cistern Lever Jump</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_ac_chest_after_whip_hooks_jump">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_ac_chest_after_whip_hooks_jump">
                 <property name="text">
                  <string>Ancient Cistern Chest after Whip Hooks Jump</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_sandship_jump_to_stern">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_sandship_jump_to_stern">
                 <property name="text">
                  <string>Sandship Jump to Stern</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_fs_pillar_jump">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_fs_pillar_jump">
                 <property name="text">
                  <string>Fire Sanctuary Pillar Jump</string>
                 </property>
@@ -2522,28 +2522,28 @@ background-color: #FFFFFF;
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_21">
               <item>
-               <widget class="QCheckBox" name="setting_logic_stuttersprint">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_stuttersprint">
                 <property name="text">
                  <string>Stutter Sprinting</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_et_slope_stuttersprint">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_et_slope_stuttersprint">
                 <property name="text">
                  <string>Earth Temple Slope Stuttersprint</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_brakeslide">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_brakeslide">
                 <property name="text">
                  <string>Brakesliding</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_tot_skip_brakeslide">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_tot_skip_brakeslide">
                 <property name="text">
                  <string>Temple of Time Skip Brakeslide</string>
                 </property>
@@ -2578,35 +2578,35 @@ background-color: #FFFFFF;
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_22">
               <item>
-               <widget class="QCheckBox" name="setting_logic_fire_node_without_hook_beetle">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_fire_node_without_hook_beetle">
                 <property name="text">
                  <string>Fire Node without Hook Beetle</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_skyview_spider_roll">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_skyview_spider_roll">
                 <property name="text">
                  <string>Skyview Temple Spider Roll</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_et_keese_skyward_strike">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_et_keese_skyward_strike">
                 <property name="text">
                  <string>Earth Temple Keese Skyward Strike</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_et_bombless_scaldera">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_et_bombless_scaldera">
                 <property name="text">
                  <string>Earth Temple Bomb Flower Scaldera</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_lmf_bellowsless_moldarach">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lmf_bellowsless_moldarach">
                 <property name="text">
                  <string>Lanayru Mining Facility Moldarach
 without Gust Bellows</string>
@@ -2614,21 +2614,21 @@ without Gust Bellows</string>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_sandship_itemless_spume">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_sandship_itemless_spume">
                 <property name="text">
                  <string>Sandship Itemless Spume</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_sandship_no_combination_hint">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_sandship_no_combination_hint">
                 <property name="text">
                  <string>Sandship No Combination Hint</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_fs_practice_sword_ghirahim_2">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_fs_practice_sword_ghirahim_2">
                 <property name="text">
                  <string>Fire Sanctuary Ghirahim 2 with
 Practice Sword</string>
@@ -2636,7 +2636,7 @@ Practice Sword</string>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="setting_logic_itemless_first_timeshift_stone">
+               <widget class="RandoTriStateCheckBox" name="setting_logic_itemless_first_timeshift_stone">
                 <property name="text">
                  <string>Itemless First Timeshift Stone</string>
                 </property>
@@ -2950,24 +2950,10 @@ Practice Sword</string>
     </item>
     <item>
      <layout class="QGridLayout" name="footer_grid_layout">
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="setting_setting_string">
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="setting_string_label">
+      <item row="0" column="2">
+       <widget class="QPushButton" name="copy_setting_string_button">
         <property name="text">
-         <string>Setting String</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="about_button">
-        <property name="text">
-         <string>About</string>
+         <string>Copy</string>
         </property>
        </widget>
       </item>
@@ -2981,6 +2967,23 @@ Practice Sword</string>
         </property>
         <property name="text">
          <string>Randomize</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="seed_line_edit"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="about_button">
+        <property name="text">
+         <string>About</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="seed_label">
+        <property name="text">
+         <string>Seed:</string>
         </property>
        </widget>
       </item>
@@ -3028,28 +3031,55 @@ Practice Sword</string>
         </item>
        </layout>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="seed_label">
+      <item row="0" column="0">
+       <widget class="QLabel" name="setting_string_label">
         <property name="text">
-         <string>Seed:</string>
+         <string>Setting String</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="copy_setting_string_button">
-        <property name="text">
-         <string>Copy</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="setting_seed"/>
+      <item row="0" column="1">
+       <layout class="QHBoxLayout" name="setting_string_layout">
+        <item>
+         <widget class="QLineEdit" name="setting_string_line_edit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="paste_setting_string_button">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Paste</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>RandoTriStateCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>gui/components/tristate_check_box</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

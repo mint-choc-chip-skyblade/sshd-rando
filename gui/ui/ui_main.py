@@ -22,6 +22,8 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComb
     QSpacerItem, QSpinBox, QTabWidget, QVBoxLayout,
     QWidget)
 
+from gui.components.tristate_check_box import RandoTriStateCheckBox
+
 class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
@@ -181,59 +183,6 @@ class Ui_main_window(object):
         self.middle_grid_layout = QGridLayout()
         self.middle_grid_layout.setObjectName(u"middle_grid_layout")
         self.middle_grid_layout.setContentsMargins(-1, -1, -1, 0)
-        self.presets_group_box = QGroupBox(self.getting_started_tab)
-        self.presets_group_box.setObjectName(u"presets_group_box")
-        sizePolicy1.setHeightForWidth(self.presets_group_box.sizePolicy().hasHeightForWidth())
-        self.presets_group_box.setSizePolicy(sizePolicy1)
-        self.verticalLayout_34 = QVBoxLayout(self.presets_group_box)
-        self.verticalLayout_34.setObjectName(u"verticalLayout_34")
-        self.selected_preset_layout = QHBoxLayout()
-        self.selected_preset_layout.setObjectName(u"selected_preset_layout")
-        self.selected_preset_label = QLabel(self.presets_group_box)
-        self.selected_preset_label.setObjectName(u"selected_preset_label")
-
-        self.selected_preset_layout.addWidget(self.selected_preset_label)
-
-        self.selected_preset_combo_box = QComboBox(self.presets_group_box)
-        self.selected_preset_combo_box.setObjectName(u"selected_preset_combo_box")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.selected_preset_combo_box.sizePolicy().hasHeightForWidth())
-        self.selected_preset_combo_box.setSizePolicy(sizePolicy4)
-
-        self.selected_preset_layout.addWidget(self.selected_preset_combo_box)
-
-
-        self.verticalLayout_34.addLayout(self.selected_preset_layout)
-
-        self.presets_button_layout = QHBoxLayout()
-        self.presets_button_layout.setObjectName(u"presets_button_layout")
-        self.presets_delete_button = QPushButton(self.presets_group_box)
-        self.presets_delete_button.setObjectName(u"presets_delete_button")
-
-        self.presets_button_layout.addWidget(self.presets_delete_button)
-
-        self.presets_save_new_button = QPushButton(self.presets_group_box)
-        self.presets_save_new_button.setObjectName(u"presets_save_new_button")
-
-        self.presets_button_layout.addWidget(self.presets_save_new_button)
-
-        self.presets_apply_button = QPushButton(self.presets_group_box)
-        self.presets_apply_button.setObjectName(u"presets_apply_button")
-
-        self.presets_button_layout.addWidget(self.presets_apply_button)
-
-
-        self.verticalLayout_34.addLayout(self.presets_button_layout)
-
-        self.presets_vspacer = QSpacerItem(20, 86, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_34.addItem(self.presets_vspacer)
-
-
-        self.middle_grid_layout.addWidget(self.presets_group_box, 0, 0, 1, 1)
-
         self.useful_info_group_box = QGroupBox(self.getting_started_tab)
         self.useful_info_group_box.setObjectName(u"useful_info_group_box")
         sizePolicy1.setHeightForWidth(self.useful_info_group_box.sizePolicy().hasHeightForWidth())
@@ -325,21 +274,21 @@ class Ui_main_window(object):
         self.font_family_layout.setObjectName(u"font_family_layout")
         self.font_family_label = QLabel(self.theming_fonts)
         self.font_family_label.setObjectName(u"font_family_label")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.font_family_label.sizePolicy().hasHeightForWidth())
-        self.font_family_label.setSizePolicy(sizePolicy5)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.font_family_label.sizePolicy().hasHeightForWidth())
+        self.font_family_label.setSizePolicy(sizePolicy4)
 
         self.font_family_layout.addWidget(self.font_family_label)
 
         self.font_family_combo_box = QFontComboBox(self.theming_fonts)
         self.font_family_combo_box.setObjectName(u"font_family_combo_box")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Maximum)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.font_family_combo_box.sizePolicy().hasHeightForWidth())
-        self.font_family_combo_box.setSizePolicy(sizePolicy6)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Maximum)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.font_family_combo_box.sizePolicy().hasHeightForWidth())
+        self.font_family_combo_box.setSizePolicy(sizePolicy5)
         self.font_family_combo_box.setEditable(False)
         self.font_family_combo_box.setFontFilters(QFontComboBox.ScalableFonts)
         font = QFont()
@@ -361,11 +310,11 @@ class Ui_main_window(object):
 
         self.font_size_spin_box = QSpinBox(self.theming_fonts)
         self.font_size_spin_box.setObjectName(u"font_size_spin_box")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Fixed)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.font_size_spin_box.sizePolicy().hasHeightForWidth())
-        self.font_size_spin_box.setSizePolicy(sizePolicy7)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Fixed)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.font_size_spin_box.sizePolicy().hasHeightForWidth())
+        self.font_size_spin_box.setSizePolicy(sizePolicy6)
         self.font_size_spin_box.setMinimum(6)
         self.font_size_spin_box.setMaximum(14)
         self.font_size_spin_box.setValue(10)
@@ -391,6 +340,59 @@ class Ui_main_window(object):
         self.horizontalLayout_6.setStretch(1, 1)
 
         self.middle_grid_layout.addWidget(self.accessibility_group_box, 0, 2, 1, 1)
+
+        self.presets_group_box = QGroupBox(self.getting_started_tab)
+        self.presets_group_box.setObjectName(u"presets_group_box")
+        sizePolicy1.setHeightForWidth(self.presets_group_box.sizePolicy().hasHeightForWidth())
+        self.presets_group_box.setSizePolicy(sizePolicy1)
+        self.verticalLayout_34 = QVBoxLayout(self.presets_group_box)
+        self.verticalLayout_34.setObjectName(u"verticalLayout_34")
+        self.selected_preset_layout = QHBoxLayout()
+        self.selected_preset_layout.setObjectName(u"selected_preset_layout")
+        self.selected_preset_label = QLabel(self.presets_group_box)
+        self.selected_preset_label.setObjectName(u"selected_preset_label")
+
+        self.selected_preset_layout.addWidget(self.selected_preset_label)
+
+        self.selected_preset_combo_box = QComboBox(self.presets_group_box)
+        self.selected_preset_combo_box.setObjectName(u"selected_preset_combo_box")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.selected_preset_combo_box.sizePolicy().hasHeightForWidth())
+        self.selected_preset_combo_box.setSizePolicy(sizePolicy7)
+
+        self.selected_preset_layout.addWidget(self.selected_preset_combo_box)
+
+
+        self.verticalLayout_34.addLayout(self.selected_preset_layout)
+
+        self.presets_button_layout = QHBoxLayout()
+        self.presets_button_layout.setObjectName(u"presets_button_layout")
+        self.presets_delete_button = QPushButton(self.presets_group_box)
+        self.presets_delete_button.setObjectName(u"presets_delete_button")
+
+        self.presets_button_layout.addWidget(self.presets_delete_button)
+
+        self.presets_save_new_button = QPushButton(self.presets_group_box)
+        self.presets_save_new_button.setObjectName(u"presets_save_new_button")
+
+        self.presets_button_layout.addWidget(self.presets_save_new_button)
+
+        self.presets_apply_button = QPushButton(self.presets_group_box)
+        self.presets_apply_button.setObjectName(u"presets_apply_button")
+
+        self.presets_button_layout.addWidget(self.presets_apply_button)
+
+
+        self.verticalLayout_34.addLayout(self.presets_button_layout)
+
+        self.presets_vspacer = QSpacerItem(20, 86, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_34.addItem(self.presets_vspacer)
+
+
+        self.middle_grid_layout.addWidget(self.presets_group_box, 0, 0, 1, 1)
 
         self.middle_grid_layout.setColumnStretch(0, 1)
         self.middle_grid_layout.setColumnStretch(1, 1)
@@ -431,22 +433,22 @@ class Ui_main_window(object):
 
         self.verticalLayout_24.addWidget(self.setting_trappable_items)
 
-        self.setting_burn_traps = QCheckBox(self.hint_placements_group_box)
+        self.setting_burn_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
         self.setting_burn_traps.setObjectName(u"setting_burn_traps")
 
         self.verticalLayout_24.addWidget(self.setting_burn_traps)
 
-        self.setting_curse_traps = QCheckBox(self.hint_placements_group_box)
+        self.setting_curse_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
         self.setting_curse_traps.setObjectName(u"setting_curse_traps")
 
         self.verticalLayout_24.addWidget(self.setting_curse_traps)
 
-        self.setting_noise_traps = QCheckBox(self.hint_placements_group_box)
+        self.setting_noise_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
         self.setting_noise_traps.setObjectName(u"setting_noise_traps")
 
         self.verticalLayout_24.addWidget(self.setting_noise_traps)
 
-        self.setting_groose_traps = QCheckBox(self.hint_placements_group_box)
+        self.setting_groose_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
         self.setting_groose_traps.setObjectName(u"setting_groose_traps")
 
         self.verticalLayout_24.addWidget(self.setting_groose_traps)
@@ -523,30 +525,30 @@ class Ui_main_window(object):
 
         self.setting_required_dungeons = QSpinBox(self.beat_the_game_group_box)
         self.setting_required_dungeons.setObjectName(u"setting_required_dungeons")
-        sizePolicy7.setHeightForWidth(self.setting_required_dungeons.sizePolicy().hasHeightForWidth())
-        self.setting_required_dungeons.setSizePolicy(sizePolicy7)
+        sizePolicy6.setHeightForWidth(self.setting_required_dungeons.sizePolicy().hasHeightForWidth())
+        self.setting_required_dungeons.setSizePolicy(sizePolicy6)
 
         self.required_dungeons_layout.addWidget(self.setting_required_dungeons)
 
 
         self.verticalLayout_13.addLayout(self.required_dungeons_layout)
 
-        self.setting_empty_unrequired_dungeons = QCheckBox(self.beat_the_game_group_box)
+        self.setting_empty_unrequired_dungeons = RandoTriStateCheckBox(self.beat_the_game_group_box)
         self.setting_empty_unrequired_dungeons.setObjectName(u"setting_empty_unrequired_dungeons")
 
         self.verticalLayout_13.addWidget(self.setting_empty_unrequired_dungeons)
 
-        self.setting_skip_horde = QCheckBox(self.beat_the_game_group_box)
+        self.setting_skip_horde = RandoTriStateCheckBox(self.beat_the_game_group_box)
         self.setting_skip_horde.setObjectName(u"setting_skip_horde")
 
         self.verticalLayout_13.addWidget(self.setting_skip_horde)
 
-        self.setting_skip_g3 = QCheckBox(self.beat_the_game_group_box)
+        self.setting_skip_g3 = RandoTriStateCheckBox(self.beat_the_game_group_box)
         self.setting_skip_g3.setObjectName(u"setting_skip_g3")
 
         self.verticalLayout_13.addWidget(self.setting_skip_g3)
 
-        self.setting_skip_demise = QCheckBox(self.beat_the_game_group_box)
+        self.setting_skip_demise = RandoTriStateCheckBox(self.beat_the_game_group_box)
         self.setting_skip_demise.setObjectName(u"setting_skip_demise")
 
         self.verticalLayout_13.addWidget(self.setting_skip_demise)
@@ -584,30 +586,30 @@ class Ui_main_window(object):
 
         self.setting_peatrice_conversations = QSpinBox(self.tweaks_group_box)
         self.setting_peatrice_conversations.setObjectName(u"setting_peatrice_conversations")
-        sizePolicy7.setHeightForWidth(self.setting_peatrice_conversations.sizePolicy().hasHeightForWidth())
-        self.setting_peatrice_conversations.setSizePolicy(sizePolicy7)
+        sizePolicy6.setHeightForWidth(self.setting_peatrice_conversations.sizePolicy().hasHeightForWidth())
+        self.setting_peatrice_conversations.setSizePolicy(sizePolicy6)
 
         self.peatrice_conversations_layout.addWidget(self.setting_peatrice_conversations)
 
 
         self.verticalLayout.addLayout(self.peatrice_conversations_layout)
 
-        self.setting_full_wallet_upgrades = QCheckBox(self.tweaks_group_box)
+        self.setting_full_wallet_upgrades = RandoTriStateCheckBox(self.tweaks_group_box)
         self.setting_full_wallet_upgrades.setObjectName(u"setting_full_wallet_upgrades")
 
         self.verticalLayout.addWidget(self.setting_full_wallet_upgrades)
 
-        self.setting_dowsing_after_whitesword = QCheckBox(self.tweaks_group_box)
+        self.setting_dowsing_after_whitesword = RandoTriStateCheckBox(self.tweaks_group_box)
         self.setting_dowsing_after_whitesword.setObjectName(u"setting_dowsing_after_whitesword")
 
         self.verticalLayout.addWidget(self.setting_dowsing_after_whitesword)
 
-        self.setting_tunic_swap = QCheckBox(self.tweaks_group_box)
+        self.setting_tunic_swap = RandoTriStateCheckBox(self.tweaks_group_box)
         self.setting_tunic_swap.setObjectName(u"setting_tunic_swap")
 
         self.verticalLayout.addWidget(self.setting_tunic_swap)
 
-        self.setting_rotating_items = QCheckBox(self.tweaks_group_box)
+        self.setting_rotating_items = RandoTriStateCheckBox(self.tweaks_group_box)
         self.setting_rotating_items.setObjectName(u"setting_rotating_items")
 
         self.verticalLayout.addWidget(self.setting_rotating_items)
@@ -681,7 +683,7 @@ class Ui_main_window(object):
         self.mixed_pools_group_box.setObjectName(u"mixed_pools_group_box")
         self.verticalLayout_25 = QVBoxLayout(self.mixed_pools_group_box)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
-        self.setting_fs_lava_flow = QCheckBox(self.mixed_pools_group_box)
+        self.setting_fs_lava_flow = RandoTriStateCheckBox(self.mixed_pools_group_box)
         self.setting_fs_lava_flow.setObjectName(u"setting_fs_lava_flow")
 
         self.verticalLayout_25.addWidget(self.setting_fs_lava_flow)
@@ -697,27 +699,27 @@ class Ui_main_window(object):
         self.entrance_randomization_group_box.setObjectName(u"entrance_randomization_group_box")
         self.verticalLayout_17 = QVBoxLayout(self.entrance_randomization_group_box)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.setting_randomize_door_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_randomize_door_entrances = RandoTriStateCheckBox(self.entrance_randomization_group_box)
         self.setting_randomize_door_entrances.setObjectName(u"setting_randomize_door_entrances")
 
         self.verticalLayout_17.addWidget(self.setting_randomize_door_entrances)
 
-        self.setting_randomize_interior_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_randomize_interior_entrances = RandoTriStateCheckBox(self.entrance_randomization_group_box)
         self.setting_randomize_interior_entrances.setObjectName(u"setting_randomize_interior_entrances")
 
         self.verticalLayout_17.addWidget(self.setting_randomize_interior_entrances)
 
-        self.setting_randomize_overworld_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_randomize_overworld_entrances = RandoTriStateCheckBox(self.entrance_randomization_group_box)
         self.setting_randomize_overworld_entrances.setObjectName(u"setting_randomize_overworld_entrances")
 
         self.verticalLayout_17.addWidget(self.setting_randomize_overworld_entrances)
 
-        self.setting_randomize_dungeon_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_randomize_dungeon_entrances = RandoTriStateCheckBox(self.entrance_randomization_group_box)
         self.setting_randomize_dungeon_entrances.setObjectName(u"setting_randomize_dungeon_entrances")
 
         self.verticalLayout_17.addWidget(self.setting_randomize_dungeon_entrances)
 
-        self.setting_randomize_trial_gate_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_randomize_trial_gate_entrances = RandoTriStateCheckBox(self.entrance_randomization_group_box)
         self.setting_randomize_trial_gate_entrances.setObjectName(u"setting_randomize_trial_gate_entrances")
 
         self.verticalLayout_17.addWidget(self.setting_randomize_trial_gate_entrances)
@@ -732,17 +734,17 @@ class Ui_main_window(object):
 
         self.verticalLayout_17.addWidget(self.setting_random_starting_spawn)
 
-        self.setting_random_starting_statues = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_random_starting_statues = RandoTriStateCheckBox(self.entrance_randomization_group_box)
         self.setting_random_starting_statues.setObjectName(u"setting_random_starting_statues")
 
         self.verticalLayout_17.addWidget(self.setting_random_starting_statues)
 
-        self.setting_decouple_double_doors = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_decouple_double_doors = RandoTriStateCheckBox(self.entrance_randomization_group_box)
         self.setting_decouple_double_doors.setObjectName(u"setting_decouple_double_doors")
 
         self.verticalLayout_17.addWidget(self.setting_decouple_double_doors)
 
-        self.setting_decouple_entrances = QCheckBox(self.entrance_randomization_group_box)
+        self.setting_decouple_entrances = RandoTriStateCheckBox(self.entrance_randomization_group_box)
         self.setting_decouple_entrances.setObjectName(u"setting_decouple_entrances")
 
         self.verticalLayout_17.addWidget(self.setting_decouple_entrances)
@@ -919,22 +921,22 @@ class Ui_main_window(object):
 
         self.verticalLayout_10.addWidget(self.setting_rupee_shuffle)
 
-        self.setting_underground_rupee_shuffle = QCheckBox(self.shuffles_group_box)
+        self.setting_underground_rupee_shuffle = RandoTriStateCheckBox(self.shuffles_group_box)
         self.setting_underground_rupee_shuffle.setObjectName(u"setting_underground_rupee_shuffle")
 
         self.verticalLayout_10.addWidget(self.setting_underground_rupee_shuffle)
 
-        self.setting_goddess_chest_shuffle = QCheckBox(self.shuffles_group_box)
+        self.setting_goddess_chest_shuffle = RandoTriStateCheckBox(self.shuffles_group_box)
         self.setting_goddess_chest_shuffle.setObjectName(u"setting_goddess_chest_shuffle")
 
         self.verticalLayout_10.addWidget(self.setting_goddess_chest_shuffle)
 
-        self.setting_gratitude_crystal_shuffle = QCheckBox(self.shuffles_group_box)
+        self.setting_gratitude_crystal_shuffle = RandoTriStateCheckBox(self.shuffles_group_box)
         self.setting_gratitude_crystal_shuffle.setObjectName(u"setting_gratitude_crystal_shuffle")
 
         self.verticalLayout_10.addWidget(self.setting_gratitude_crystal_shuffle)
 
-        self.setting_stamina_fruit_shuffle = QCheckBox(self.shuffles_group_box)
+        self.setting_stamina_fruit_shuffle = RandoTriStateCheckBox(self.shuffles_group_box)
         self.setting_stamina_fruit_shuffle.setObjectName(u"setting_stamina_fruit_shuffle")
 
         self.verticalLayout_10.addWidget(self.setting_stamina_fruit_shuffle)
@@ -1184,8 +1186,8 @@ class Ui_main_window(object):
 
         self.setting_random_starting_tablet_count = QSpinBox(self.item_settings_group_box)
         self.setting_random_starting_tablet_count.setObjectName(u"setting_random_starting_tablet_count")
-        sizePolicy7.setHeightForWidth(self.setting_random_starting_tablet_count.sizePolicy().hasHeightForWidth())
-        self.setting_random_starting_tablet_count.setSizePolicy(sizePolicy7)
+        sizePolicy6.setHeightForWidth(self.setting_random_starting_tablet_count.sizePolicy().hasHeightForWidth())
+        self.setting_random_starting_tablet_count.setSizePolicy(sizePolicy6)
         self.setting_random_starting_tablet_count.setMaximumSize(QSize(16777215, 16777215))
 
         self.random_starting_tablet_count_layout.addWidget(self.setting_random_starting_tablet_count)
@@ -1203,8 +1205,8 @@ class Ui_main_window(object):
 
         self.setting_random_starting_item_count = QSpinBox(self.item_settings_group_box)
         self.setting_random_starting_item_count.setObjectName(u"setting_random_starting_item_count")
-        sizePolicy7.setHeightForWidth(self.setting_random_starting_item_count.sizePolicy().hasHeightForWidth())
-        self.setting_random_starting_item_count.setSizePolicy(sizePolicy7)
+        sizePolicy6.setHeightForWidth(self.setting_random_starting_item_count.sizePolicy().hasHeightForWidth())
+        self.setting_random_starting_item_count.setSizePolicy(sizePolicy6)
 
         self.random_starting_item_count_layout.addWidget(self.setting_random_starting_item_count)
 
@@ -1320,17 +1322,17 @@ class Ui_main_window(object):
         self.hints_group_box.setObjectName(u"hints_group_box")
         self.verticalLayout_23 = QVBoxLayout(self.hints_group_box)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
-        self.setting_gossip_stone_hints = QCheckBox(self.hints_group_box)
+        self.setting_gossip_stone_hints = RandoTriStateCheckBox(self.hints_group_box)
         self.setting_gossip_stone_hints.setObjectName(u"setting_gossip_stone_hints")
 
         self.verticalLayout_23.addWidget(self.setting_gossip_stone_hints)
 
-        self.setting_fi_hints = QCheckBox(self.hints_group_box)
+        self.setting_fi_hints = RandoTriStateCheckBox(self.hints_group_box)
         self.setting_fi_hints.setObjectName(u"setting_fi_hints")
 
         self.verticalLayout_23.addWidget(self.setting_fi_hints)
 
-        self.setting_impa_sot_hint = QCheckBox(self.hints_group_box)
+        self.setting_impa_sot_hint = RandoTriStateCheckBox(self.hints_group_box)
         self.setting_impa_sot_hint.setObjectName(u"setting_impa_sot_hint")
 
         self.verticalLayout_23.addWidget(self.setting_impa_sot_hint)
@@ -1355,8 +1357,8 @@ class Ui_main_window(object):
 
         self.setting_path_hints = QSpinBox(self.hints_group_box)
         self.setting_path_hints.setObjectName(u"setting_path_hints")
-        sizePolicy7.setHeightForWidth(self.setting_path_hints.sizePolicy().hasHeightForWidth())
-        self.setting_path_hints.setSizePolicy(sizePolicy7)
+        sizePolicy6.setHeightForWidth(self.setting_path_hints.sizePolicy().hasHeightForWidth())
+        self.setting_path_hints.setSizePolicy(sizePolicy6)
 
         self.path_hints_layout.addWidget(self.setting_path_hints)
 
@@ -1373,8 +1375,8 @@ class Ui_main_window(object):
 
         self.setting_barren_hints = QSpinBox(self.hints_group_box)
         self.setting_barren_hints.setObjectName(u"setting_barren_hints")
-        sizePolicy7.setHeightForWidth(self.setting_barren_hints.sizePolicy().hasHeightForWidth())
-        self.setting_barren_hints.setSizePolicy(sizePolicy7)
+        sizePolicy6.setHeightForWidth(self.setting_barren_hints.sizePolicy().hasHeightForWidth())
+        self.setting_barren_hints.setSizePolicy(sizePolicy6)
 
         self.barren_hints_layout.addWidget(self.setting_barren_hints)
 
@@ -1391,8 +1393,8 @@ class Ui_main_window(object):
 
         self.setting_location_hints = QSpinBox(self.hints_group_box)
         self.setting_location_hints.setObjectName(u"setting_location_hints")
-        sizePolicy7.setHeightForWidth(self.setting_location_hints.sizePolicy().hasHeightForWidth())
-        self.setting_location_hints.setSizePolicy(sizePolicy7)
+        sizePolicy6.setHeightForWidth(self.setting_location_hints.sizePolicy().hasHeightForWidth())
+        self.setting_location_hints.setSizePolicy(sizePolicy6)
 
         self.location_hints_layout.addWidget(self.setting_location_hints)
 
@@ -1409,20 +1411,20 @@ class Ui_main_window(object):
 
         self.setting_item_hints = QSpinBox(self.hints_group_box)
         self.setting_item_hints.setObjectName(u"setting_item_hints")
-        sizePolicy7.setHeightForWidth(self.setting_item_hints.sizePolicy().hasHeightForWidth())
-        self.setting_item_hints.setSizePolicy(sizePolicy7)
+        sizePolicy6.setHeightForWidth(self.setting_item_hints.sizePolicy().hasHeightForWidth())
+        self.setting_item_hints.setSizePolicy(sizePolicy6)
 
         self.item_hints_layout.addWidget(self.setting_item_hints)
 
 
         self.verticalLayout_23.addLayout(self.item_hints_layout)
 
-        self.setting_always_hints = QCheckBox(self.hints_group_box)
+        self.setting_always_hints = RandoTriStateCheckBox(self.hints_group_box)
         self.setting_always_hints.setObjectName(u"setting_always_hints")
 
         self.verticalLayout_23.addWidget(self.setting_always_hints)
 
-        self.setting_cryptic_hint_text = QCheckBox(self.hints_group_box)
+        self.setting_cryptic_hint_text = RandoTriStateCheckBox(self.hints_group_box)
         self.setting_cryptic_hint_text.setObjectName(u"setting_cryptic_hint_text")
 
         self.verticalLayout_23.addWidget(self.setting_cryptic_hint_text)
@@ -1481,82 +1483,82 @@ class Ui_main_window(object):
         self.precise_items_group_box.setSizePolicy(sizePolicy2)
         self.verticalLayout_20 = QVBoxLayout(self.precise_items_group_box)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.setting_logic_advanced_lizalfos_combat = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_advanced_lizalfos_combat = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_advanced_lizalfos_combat.setObjectName(u"setting_logic_advanced_lizalfos_combat")
 
         self.verticalLayout_20.addWidget(self.setting_logic_advanced_lizalfos_combat)
 
-        self.setting_logic_skyview_precise_slingshot = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_skyview_precise_slingshot = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_skyview_precise_slingshot.setObjectName(u"setting_logic_skyview_precise_slingshot")
 
         self.verticalLayout_20.addWidget(self.setting_logic_skyview_precise_slingshot)
 
-        self.setting_logic_lmf_ceiling_precise_slingshot = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_lmf_ceiling_precise_slingshot = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_lmf_ceiling_precise_slingshot.setObjectName(u"setting_logic_lmf_ceiling_precise_slingshot")
 
         self.verticalLayout_20.addWidget(self.setting_logic_lmf_ceiling_precise_slingshot)
 
-        self.setting_logic_tot_slingshot = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_tot_slingshot = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_tot_slingshot.setObjectName(u"setting_logic_tot_slingshot")
 
         self.verticalLayout_20.addWidget(self.setting_logic_tot_slingshot)
 
-        self.setting_logic_bomb_throws = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_bomb_throws = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_bomb_throws.setObjectName(u"setting_logic_bomb_throws")
 
         self.verticalLayout_20.addWidget(self.setting_logic_bomb_throws)
 
-        self.setting_logic_lanayru_mine_quick_bomb = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_lanayru_mine_quick_bomb = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_lanayru_mine_quick_bomb.setObjectName(u"setting_logic_lanayru_mine_quick_bomb")
 
         self.verticalLayout_20.addWidget(self.setting_logic_lanayru_mine_quick_bomb)
 
-        self.setting_logic_cactus_bomb_whip = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_cactus_bomb_whip = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_cactus_bomb_whip.setObjectName(u"setting_logic_cactus_bomb_whip")
 
         self.verticalLayout_20.addWidget(self.setting_logic_cactus_bomb_whip)
 
-        self.setting_logic_beedles_shop_with_bombs = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_beedles_shop_with_bombs = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_beedles_shop_with_bombs.setObjectName(u"setting_logic_beedles_shop_with_bombs")
 
         self.verticalLayout_20.addWidget(self.setting_logic_beedles_shop_with_bombs)
 
-        self.setting_logic_bird_nest_item_from_beedles_shop = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_bird_nest_item_from_beedles_shop = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_bird_nest_item_from_beedles_shop.setObjectName(u"setting_logic_bird_nest_item_from_beedles_shop")
 
         self.verticalLayout_20.addWidget(self.setting_logic_bird_nest_item_from_beedles_shop)
 
-        self.setting_logic_precise_beetle = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_precise_beetle = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_precise_beetle.setObjectName(u"setting_logic_precise_beetle")
 
         self.verticalLayout_20.addWidget(self.setting_logic_precise_beetle)
 
-        self.setting_logic_skippers_fast_clawshots = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_skippers_fast_clawshots = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_skippers_fast_clawshots.setObjectName(u"setting_logic_skippers_fast_clawshots")
 
         self.verticalLayout_20.addWidget(self.setting_logic_skippers_fast_clawshots)
 
-        self.setting_logic_lmf_whip_switch = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_lmf_whip_switch = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_lmf_whip_switch.setObjectName(u"setting_logic_lmf_whip_switch")
 
         self.verticalLayout_20.addWidget(self.setting_logic_lmf_whip_switch)
 
-        self.setting_logic_lmf_whip_armos_room_timeshift_stone = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_lmf_whip_armos_room_timeshift_stone = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_lmf_whip_armos_room_timeshift_stone.setObjectName(u"setting_logic_lmf_whip_armos_room_timeshift_stone")
 
         self.verticalLayout_20.addWidget(self.setting_logic_lmf_whip_armos_room_timeshift_stone)
 
-        self.setting_logic_lmf_minecart_jump = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_lmf_minecart_jump = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_lmf_minecart_jump.setObjectName(u"setting_logic_lmf_minecart_jump")
 
         self.verticalLayout_20.addWidget(self.setting_logic_lmf_minecart_jump)
 
-        self.setting_logic_present_bow_switches = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_present_bow_switches = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_present_bow_switches.setObjectName(u"setting_logic_present_bow_switches")
 
         self.verticalLayout_20.addWidget(self.setting_logic_present_bow_switches)
 
-        self.setting_logic_skykeep_vineclip = QCheckBox(self.precise_items_group_box)
+        self.setting_logic_skykeep_vineclip = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_skykeep_vineclip.setObjectName(u"setting_logic_skykeep_vineclip")
 
         self.verticalLayout_20.addWidget(self.setting_logic_skykeep_vineclip)
@@ -1574,57 +1576,57 @@ class Ui_main_window(object):
         self.dives_and_jumps_group_box.setSizePolicy(sizePolicy2)
         self.verticalLayout_19 = QVBoxLayout(self.dives_and_jumps_group_box)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
-        self.setting_logic_volcanic_island_dive = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_volcanic_island_dive = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_volcanic_island_dive.setObjectName(u"setting_logic_volcanic_island_dive")
 
         self.verticalLayout_19.addWidget(self.setting_logic_volcanic_island_dive)
 
-        self.setting_logic_east_island_dive = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_east_island_dive = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_east_island_dive.setObjectName(u"setting_logic_east_island_dive")
 
         self.verticalLayout_19.addWidget(self.setting_logic_east_island_dive)
 
-        self.setting_logic_beedles_island_cage_chest_dive = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_beedles_island_cage_chest_dive = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_beedles_island_cage_chest_dive.setObjectName(u"setting_logic_beedles_island_cage_chest_dive")
 
         self.verticalLayout_19.addWidget(self.setting_logic_beedles_island_cage_chest_dive)
 
-        self.setting_logic_gravestone_jump = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_gravestone_jump = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_gravestone_jump.setObjectName(u"setting_logic_gravestone_jump")
 
         self.verticalLayout_19.addWidget(self.setting_logic_gravestone_jump)
 
-        self.setting_logic_waterfall_cave_jump = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_waterfall_cave_jump = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_waterfall_cave_jump.setObjectName(u"setting_logic_waterfall_cave_jump")
 
         self.verticalLayout_19.addWidget(self.setting_logic_waterfall_cave_jump)
 
-        self.setting_logic_early_lake_floria = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_early_lake_floria = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_early_lake_floria.setObjectName(u"setting_logic_early_lake_floria")
 
         self.verticalLayout_19.addWidget(self.setting_logic_early_lake_floria)
 
-        self.setting_logic_skyview_coiled_rupee_jump = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_skyview_coiled_rupee_jump = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_skyview_coiled_rupee_jump.setObjectName(u"setting_logic_skyview_coiled_rupee_jump")
 
         self.verticalLayout_19.addWidget(self.setting_logic_skyview_coiled_rupee_jump)
 
-        self.setting_logic_ac_lever_jump_trick = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_ac_lever_jump_trick = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_ac_lever_jump_trick.setObjectName(u"setting_logic_ac_lever_jump_trick")
 
         self.verticalLayout_19.addWidget(self.setting_logic_ac_lever_jump_trick)
 
-        self.setting_logic_ac_chest_after_whip_hooks_jump = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_ac_chest_after_whip_hooks_jump = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_ac_chest_after_whip_hooks_jump.setObjectName(u"setting_logic_ac_chest_after_whip_hooks_jump")
 
         self.verticalLayout_19.addWidget(self.setting_logic_ac_chest_after_whip_hooks_jump)
 
-        self.setting_logic_sandship_jump_to_stern = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_sandship_jump_to_stern = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_sandship_jump_to_stern.setObjectName(u"setting_logic_sandship_jump_to_stern")
 
         self.verticalLayout_19.addWidget(self.setting_logic_sandship_jump_to_stern)
 
-        self.setting_logic_fs_pillar_jump = QCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_fs_pillar_jump = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_fs_pillar_jump.setObjectName(u"setting_logic_fs_pillar_jump")
 
         self.verticalLayout_19.addWidget(self.setting_logic_fs_pillar_jump)
@@ -1642,22 +1644,22 @@ class Ui_main_window(object):
         self.glitches_group_box.setSizePolicy(sizePolicy2)
         self.verticalLayout_21 = QVBoxLayout(self.glitches_group_box)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.setting_logic_stuttersprint = QCheckBox(self.glitches_group_box)
+        self.setting_logic_stuttersprint = RandoTriStateCheckBox(self.glitches_group_box)
         self.setting_logic_stuttersprint.setObjectName(u"setting_logic_stuttersprint")
 
         self.verticalLayout_21.addWidget(self.setting_logic_stuttersprint)
 
-        self.setting_logic_et_slope_stuttersprint = QCheckBox(self.glitches_group_box)
+        self.setting_logic_et_slope_stuttersprint = RandoTriStateCheckBox(self.glitches_group_box)
         self.setting_logic_et_slope_stuttersprint.setObjectName(u"setting_logic_et_slope_stuttersprint")
 
         self.verticalLayout_21.addWidget(self.setting_logic_et_slope_stuttersprint)
 
-        self.setting_logic_brakeslide = QCheckBox(self.glitches_group_box)
+        self.setting_logic_brakeslide = RandoTriStateCheckBox(self.glitches_group_box)
         self.setting_logic_brakeslide.setObjectName(u"setting_logic_brakeslide")
 
         self.verticalLayout_21.addWidget(self.setting_logic_brakeslide)
 
-        self.setting_logic_tot_skip_brakeslide = QCheckBox(self.glitches_group_box)
+        self.setting_logic_tot_skip_brakeslide = RandoTriStateCheckBox(self.glitches_group_box)
         self.setting_logic_tot_skip_brakeslide.setObjectName(u"setting_logic_tot_skip_brakeslide")
 
         self.verticalLayout_21.addWidget(self.setting_logic_tot_skip_brakeslide)
@@ -1675,47 +1677,47 @@ class Ui_main_window(object):
         self.miscellaneous_group_box.setSizePolicy(sizePolicy2)
         self.verticalLayout_22 = QVBoxLayout(self.miscellaneous_group_box)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
-        self.setting_logic_fire_node_without_hook_beetle = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_fire_node_without_hook_beetle = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_fire_node_without_hook_beetle.setObjectName(u"setting_logic_fire_node_without_hook_beetle")
 
         self.verticalLayout_22.addWidget(self.setting_logic_fire_node_without_hook_beetle)
 
-        self.setting_logic_skyview_spider_roll = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_skyview_spider_roll = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_skyview_spider_roll.setObjectName(u"setting_logic_skyview_spider_roll")
 
         self.verticalLayout_22.addWidget(self.setting_logic_skyview_spider_roll)
 
-        self.setting_logic_et_keese_skyward_strike = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_et_keese_skyward_strike = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_et_keese_skyward_strike.setObjectName(u"setting_logic_et_keese_skyward_strike")
 
         self.verticalLayout_22.addWidget(self.setting_logic_et_keese_skyward_strike)
 
-        self.setting_logic_et_bombless_scaldera = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_et_bombless_scaldera = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_et_bombless_scaldera.setObjectName(u"setting_logic_et_bombless_scaldera")
 
         self.verticalLayout_22.addWidget(self.setting_logic_et_bombless_scaldera)
 
-        self.setting_logic_lmf_bellowsless_moldarach = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_lmf_bellowsless_moldarach = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_lmf_bellowsless_moldarach.setObjectName(u"setting_logic_lmf_bellowsless_moldarach")
 
         self.verticalLayout_22.addWidget(self.setting_logic_lmf_bellowsless_moldarach)
 
-        self.setting_logic_sandship_itemless_spume = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_sandship_itemless_spume = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_sandship_itemless_spume.setObjectName(u"setting_logic_sandship_itemless_spume")
 
         self.verticalLayout_22.addWidget(self.setting_logic_sandship_itemless_spume)
 
-        self.setting_logic_sandship_no_combination_hint = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_sandship_no_combination_hint = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_sandship_no_combination_hint.setObjectName(u"setting_logic_sandship_no_combination_hint")
 
         self.verticalLayout_22.addWidget(self.setting_logic_sandship_no_combination_hint)
 
-        self.setting_logic_fs_practice_sword_ghirahim_2 = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_fs_practice_sword_ghirahim_2 = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_fs_practice_sword_ghirahim_2.setObjectName(u"setting_logic_fs_practice_sword_ghirahim_2")
 
         self.verticalLayout_22.addWidget(self.setting_logic_fs_practice_sword_ghirahim_2)
 
-        self.setting_logic_itemless_first_timeshift_stone = QCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_itemless_first_timeshift_stone = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_itemless_first_timeshift_stone.setObjectName(u"setting_logic_itemless_first_timeshift_stone")
 
         self.verticalLayout_22.addWidget(self.setting_logic_itemless_first_timeshift_stone)
@@ -1848,8 +1850,8 @@ class Ui_main_window(object):
 
         self.selected_plandomizer_file_combo_box = QComboBox(self.plandomizer_group_box)
         self.selected_plandomizer_file_combo_box.setObjectName(u"selected_plandomizer_file_combo_box")
-        sizePolicy4.setHeightForWidth(self.selected_plandomizer_file_combo_box.sizePolicy().hasHeightForWidth())
-        self.selected_plandomizer_file_combo_box.setSizePolicy(sizePolicy4)
+        sizePolicy7.setHeightForWidth(self.selected_plandomizer_file_combo_box.sizePolicy().hasHeightForWidth())
+        self.selected_plandomizer_file_combo_box.setSizePolicy(sizePolicy7)
         self.selected_plandomizer_file_combo_box.setSizeAdjustPolicy(QComboBox.AdjustToContents)
 
         self.verticalLayout_30.addWidget(self.selected_plandomizer_file_combo_box)
@@ -1913,21 +1915,10 @@ class Ui_main_window(object):
 
         self.footer_grid_layout = QGridLayout()
         self.footer_grid_layout.setObjectName(u"footer_grid_layout")
-        self.setting_setting_string = QLineEdit(self.central_widget)
-        self.setting_setting_string.setObjectName(u"setting_setting_string")
-        self.setting_setting_string.setReadOnly(True)
+        self.copy_setting_string_button = QPushButton(self.central_widget)
+        self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
 
-        self.footer_grid_layout.addWidget(self.setting_setting_string, 0, 1, 1, 1)
-
-        self.setting_string_label = QLabel(self.central_widget)
-        self.setting_string_label.setObjectName(u"setting_string_label")
-
-        self.footer_grid_layout.addWidget(self.setting_string_label, 0, 0, 1, 1)
-
-        self.about_button = QPushButton(self.central_widget)
-        self.about_button.setObjectName(u"about_button")
-
-        self.footer_grid_layout.addWidget(self.about_button, 2, 0, 1, 1)
+        self.footer_grid_layout.addWidget(self.copy_setting_string_button, 0, 2, 1, 1)
 
         self.randomize_button = QPushButton(self.central_widget)
         self.randomize_button.setObjectName(u"randomize_button")
@@ -1938,6 +1929,21 @@ class Ui_main_window(object):
         self.randomize_button.setSizePolicy(sizePolicy13)
 
         self.footer_grid_layout.addWidget(self.randomize_button, 2, 2, 1, 1)
+
+        self.seed_line_edit = QLineEdit(self.central_widget)
+        self.seed_line_edit.setObjectName(u"seed_line_edit")
+
+        self.footer_grid_layout.addWidget(self.seed_line_edit, 1, 1, 1, 1)
+
+        self.about_button = QPushButton(self.central_widget)
+        self.about_button.setObjectName(u"about_button")
+
+        self.footer_grid_layout.addWidget(self.about_button, 2, 0, 1, 1)
+
+        self.seed_label = QLabel(self.central_widget)
+        self.seed_label.setObjectName(u"seed_label")
+
+        self.footer_grid_layout.addWidget(self.seed_label, 1, 0, 1, 1)
 
         self.new_seed_button = QPushButton(self.central_widget)
         self.new_seed_button.setObjectName(u"new_seed_button")
@@ -1962,20 +1968,30 @@ class Ui_main_window(object):
 
         self.footer_grid_layout.addLayout(self.reset_settings_to_default_hlayout, 2, 1, 1, 1)
 
-        self.seed_label = QLabel(self.central_widget)
-        self.seed_label.setObjectName(u"seed_label")
+        self.setting_string_label = QLabel(self.central_widget)
+        self.setting_string_label.setObjectName(u"setting_string_label")
 
-        self.footer_grid_layout.addWidget(self.seed_label, 1, 0, 1, 1)
+        self.footer_grid_layout.addWidget(self.setting_string_label, 0, 0, 1, 1)
 
-        self.copy_setting_string_button = QPushButton(self.central_widget)
-        self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
+        self.setting_string_layout = QHBoxLayout()
+        self.setting_string_layout.setObjectName(u"setting_string_layout")
+        self.setting_string_line_edit = QLineEdit(self.central_widget)
+        self.setting_string_line_edit.setObjectName(u"setting_string_line_edit")
+        sizePolicy7.setHeightForWidth(self.setting_string_line_edit.sizePolicy().hasHeightForWidth())
+        self.setting_string_line_edit.setSizePolicy(sizePolicy7)
+        self.setting_string_line_edit.setReadOnly(True)
 
-        self.footer_grid_layout.addWidget(self.copy_setting_string_button, 0, 2, 1, 1)
+        self.setting_string_layout.addWidget(self.setting_string_line_edit)
 
-        self.setting_seed = QLineEdit(self.central_widget)
-        self.setting_seed.setObjectName(u"setting_seed")
+        self.paste_setting_string_button = QPushButton(self.central_widget)
+        self.paste_setting_string_button.setObjectName(u"paste_setting_string_button")
+        sizePolicy13.setHeightForWidth(self.paste_setting_string_button.sizePolicy().hasHeightForWidth())
+        self.paste_setting_string_button.setSizePolicy(sizePolicy13)
 
-        self.footer_grid_layout.addWidget(self.setting_seed, 1, 1, 1, 1)
+        self.setting_string_layout.addWidget(self.paste_setting_string_button)
+
+
+        self.footer_grid_layout.addLayout(self.setting_string_layout, 0, 1, 1, 1)
 
 
         self.verticalLayout_2.addLayout(self.footer_grid_layout)
@@ -1984,7 +2000,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2004,11 +2020,6 @@ class Ui_main_window(object):
         self.how_to_right_arrow_label.setText(QCoreApplication.translate("main_window", u"\u279c", None))
         self.how_to_running_group_box.setTitle(QCoreApplication.translate("main_window", u"Running the Seed", None))
         self.how_to_running_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>You can play the randomizer either on a modded Nintendo Switch console or on an emulator.</p><p><span style=\" font-weight:700;\">TODO: add guide links</span></p><p>If you want to play on console, please follow these instructions</p><p>If you want to play on emulator, please follow these instructions for yuzu or these instructions for Ryujinx.</p></body></html>", None))
-        self.presets_group_box.setTitle(QCoreApplication.translate("main_window", u"Presets", None))
-        self.selected_preset_label.setText(QCoreApplication.translate("main_window", u"Selected Preset:", None))
-        self.presets_delete_button.setText(QCoreApplication.translate("main_window", u"Delete", None))
-        self.presets_save_new_button.setText(QCoreApplication.translate("main_window", u"Save New", None))
-        self.presets_apply_button.setText(QCoreApplication.translate("main_window", u"Apply", None))
         self.useful_info_group_box.setTitle(QCoreApplication.translate("main_window", u"Useful Information", None))
         self.community_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-weight:700;\">TODO</span><br/><span style=\" font-weight:700;\">\u279c </span><a href=\"https://discord.gg/zkm6yncD\"><span style=\" text-decoration: underline; color:#9a0089;\">Discord Server</span></a><br/><span style=\" font-weight:700;\">\u279c </span><a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\"><span style=\" text-decoration: underline; color:#9a0089;\">Report a Bug</span></a><br/><span style=\" font-weight:700;\">\u279c </span><a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando\"><span style=\" text-decoration: underline; color:#9a0089;\">GitHub</span></a><br/>\u279c Setup Guide (todo)<br/>\u279c Location Guide (todo)<br/>\u279c Tricks Guide (todo)</p></body></html>", None))
         self.accessibility_group_box.setTitle(QCoreApplication.translate("main_window", u"Accessibility", None))
@@ -2022,6 +2033,11 @@ class Ui_main_window(object):
         self.font_family_combo_box.setPlaceholderText(QCoreApplication.translate("main_window", u"Select Font Family", None))
         self.font_size_label.setText(QCoreApplication.translate("main_window", u"Font Size", None))
         self.font_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
+        self.presets_group_box.setTitle(QCoreApplication.translate("main_window", u"Presets", None))
+        self.selected_preset_label.setText(QCoreApplication.translate("main_window", u"Selected Preset:", None))
+        self.presets_delete_button.setText(QCoreApplication.translate("main_window", u"Delete", None))
+        self.presets_save_new_button.setText(QCoreApplication.translate("main_window", u"Save New", None))
+        self.presets_apply_button.setText(QCoreApplication.translate("main_window", u"Apply", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.getting_started_tab), QCoreApplication.translate("main_window", u"Getting Started", None))
         self.hint_placements_group_box.setTitle(QCoreApplication.translate("main_window", u"Traps", None))
         self.trap_mode_label.setText(QCoreApplication.translate("main_window", u"Trap Mode", None))
@@ -2203,12 +2219,13 @@ class Ui_main_window(object):
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))
-        self.setting_string_label.setText(QCoreApplication.translate("main_window", u"Setting String", None))
-        self.about_button.setText(QCoreApplication.translate("main_window", u"About", None))
+        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
         self.randomize_button.setText(QCoreApplication.translate("main_window", u"Randomize", None))
+        self.about_button.setText(QCoreApplication.translate("main_window", u"About", None))
+        self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
         self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
         self.reset_settings_to_default_button.setText(QCoreApplication.translate("main_window", u"Reset Settings to Default", None))
-        self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
-        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
+        self.setting_string_label.setText(QCoreApplication.translate("main_window", u"Setting String", None))
+        self.paste_setting_string_button.setText(QCoreApplication.translate("main_window", u"Paste", None))
     # retranslateUi
 

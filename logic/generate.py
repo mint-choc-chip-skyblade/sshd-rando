@@ -1,4 +1,5 @@
 from filepathconstants import DEFAULT_OUTPUT_PATH, PLANDO_PATH
+from randomizer.setting_string import setting_string_from_config
 from .world import World
 from .config import *
 from .settings import *
@@ -85,6 +86,10 @@ def generate_randomizer(config: Config) -> list[World]:
 
     for world in worlds:
         world.worlds = worlds
+
+    print(
+        f"Setting String: {setting_string_from_config(config, worlds[0].location_table)}"
+    )
 
     # Process plando data for all worlds
     if config.use_plandomizer:

@@ -12,6 +12,8 @@ from PySide6.QtWidgets import (
     QAbstractButton,
     QInputDialog,
 )
+
+import pyclip
 import yaml
 
 from constants.configconstants import (
@@ -23,10 +25,15 @@ from constants.guiconstants import *
 from constants.itemconstants import STARTABLE_ITEMS
 from filepathconstants import BASE_PRESETS_PATH, CONFIG_PATH, ITEMS_PATH, PRESETS_PATH
 from gui.components.list_pair import ListPair
+from gui.components.tristate_check_box import RandoTriStateCheckBox
 from gui.mixed_entrance_pools import MixedEntrancePools
 from logic.config import Config, write_config_to_file
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from logic.settings import Setting
+from randomizer.setting_string import (
+    setting_string_from_config,
+    update_config_from_setting_string,
+)
 from sslib.yaml import yaml_load
 
 from typing import TYPE_CHECKING
@@ -48,11 +55,17 @@ class Settings:
         self.set_setting_descriptions(None)
 
         # Init seed
-        seed_widget: QLineEdit = getattr(self.ui, "setting_seed")
-        seed_widget.setText(self.config.seed)
-        seed_widget.textChanged.connect(self.update_seed)
-
+        seed_line_edit: QLineEdit = self.ui.seed_line_edit
+        seed_line_edit.setText(self.config.seed)
+        seed_line_edit.textChanged.connect(self.update_seed)
         self.ui.new_seed_button.clicked.connect(self.new_seed)
+
+        # Init setting_string
+        self.setting_string_line_edit: QLineEdit = self.ui.setting_string_line_edit
+        self.ui.copy_setting_string_button.clicked.connect(self.copy_setting_string)
+        self.ui.paste_setting_string_button.clicked.connect(self.paste_setting_string)
+        self.update_setting_string()
+
         self.ui.reset_settings_to_default_button.clicked.connect(self.reset)
 
         # Init presets
@@ -243,9 +256,7 @@ class Settings:
             except:
                 pass
 
-            if isinstance(widget, QCheckBox):  # on or off
-                widget.setTristate(True)
-
+            if isinstance(widget, RandoTriStateCheckBox):  # on or off
                 if current_option_value == "on":
                     widget.setChecked(True)
                 elif current_option_value == "random":
@@ -259,6 +270,10 @@ class Settings:
 
                 widget.setText(setting_info.info.pretty_name)
                 widget.clicked.connect(partial(self.update_from_gui, widget))
+            elif isinstance(widget, QCheckBox):
+                raise Exception(
+                    f"All settings mapped to QCheckBox objects need promoting to RandoTriStateCheckBox objects in the Qt Designer. Fix widget with name: {widget.objectName()}."
+                )
             elif isinstance(widget, QComboBox):  # pick one option
                 for option in setting_info.info.pretty_options:
                     widget.addItem(option)
@@ -313,27 +328,13 @@ class Settings:
             new_setting = setting
             new_option = ""
 
-            if isinstance(widget, QCheckBox):
-                # Makes tristate buttons cycle: off, on, random
-                # instead of off, random, on
-                # but only when manually changed
-                if widget == from_widget and update_descriptions:
-                    if widget.checkState() == Qt.CheckState.Checked:
-                        widget.setCheckState(Qt.CheckState.Unchecked)
-                        new_option = "off"
-                    elif widget.checkState() == Qt.CheckState.PartiallyChecked:
-                        widget.setCheckState(Qt.CheckState.Checked)
-                        new_option = "on"
-                    else:
-                        widget.setCheckState(Qt.CheckState.PartiallyChecked)
-                        new_option = "random"
+            if isinstance(widget, RandoTriStateCheckBox):
+                if widget.checkState() == Qt.CheckState.Checked:
+                    new_option = "on"
+                elif widget.checkState() == Qt.CheckState.PartiallyChecked:
+                    new_option = "random"
                 else:
-                    if widget.checkState() == Qt.CheckState.Checked:
-                        new_option = "on"
-                    elif widget.checkState() == Qt.CheckState.PartiallyChecked:
-                        new_option = "random"
-                    else:
-                        new_option = "off"
+                    new_option = "off"
             elif isinstance(widget, QComboBox):
                 new_option = new_setting.info.options[widget.currentIndex()]
             elif isinstance(widget, QSpinBox):
@@ -369,6 +370,8 @@ class Settings:
 
         if allow_rewrite:
             write_config_to_file(CONFIG_PATH, self.config)
+
+        self.update_setting_string()
 
         # Has to be updated *after* the the config has been rewritten
         #
@@ -481,8 +484,7 @@ class Settings:
             option_index = setting.info.options.index(value)
             new_setting.value = value
 
-        new_setting.current_option_index = option_index
-        new_setting.info.current_option_index = option_index
+        new_setting.update_current_value(option_index)
 
         return new_setting
 
@@ -495,6 +497,25 @@ class Settings:
         self.config.seed = seed_widget.text()
 
         write_config_to_file(CONFIG_PATH, self.config)
+
+    def update_setting_string(self):
+        setting_string = setting_string_from_config(self.config, self.location_table)
+        self.setting_string_line_edit.setText(setting_string)
+
+    def copy_setting_string(self):
+        setting_string = self.setting_string_line_edit.text()
+        pyclip.copy(setting_string)
+
+    def paste_setting_string(self):
+        setting_string = str(pyclip.paste(text=True))
+        self.setting_string_line_edit.setText(setting_string)
+
+        new_config = update_config_from_setting_string(
+            self.config, setting_string, self.location_table
+        )
+        self.config = new_config
+        self.settings = self.config.settings[0].settings
+        self.update_from_config()
 
     def reset_single(
         self, setting: Setting | None, from_reset_all: bool = False

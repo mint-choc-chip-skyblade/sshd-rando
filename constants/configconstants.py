@@ -39,6 +39,17 @@ SETTINGS_NOT_IN_SETTINGS_LIST = (
 )
 
 
+ENTRANCE_TYPES = (
+    # "Spawn",
+    # "Bird Statue",
+    "Dungeon",
+    "Door",
+    "Interior",
+    "Overworld",
+    "Trial Gate",
+)
+
+
 DEFAULT_SETTINGS = {
     "output_dir": DEFAULT_OUTPUT_PATH,
     "seed": get_new_seed(),

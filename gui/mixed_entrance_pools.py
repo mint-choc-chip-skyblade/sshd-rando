@@ -7,19 +7,11 @@ from PySide6.QtWidgets import (
 
 from typing import TYPE_CHECKING
 
+from constants.configconstants import ENTRANCE_TYPES
+
 if TYPE_CHECKING:
     from gui.main import Main
     from gui.ui.ui_main import Ui_main_window
-
-ENTRANCE_TYPES = (
-    # "Spawn",
-    # "Bird Statue",
-    "Dungeon",
-    "Door",
-    "Interior",
-    "Overworld",
-    "Trial Gate",
-)
 
 
 class MixedEntrancePools(QObject):

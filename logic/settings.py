@@ -75,6 +75,13 @@ class Setting:
     def __str__(self) -> str:
         return self.info.pretty_name
 
+    def update_current_value(self, option_index: int) -> None:
+        self.current_option_index = option_index
+
+        if self.info:
+            self.info.current_option_index = option_index
+            self.value = self.info.options[option_index]
+
     def resolve_if_random(self) -> None:
         if self.value == self.info.random_option:
             self.is_using_random_option = True
