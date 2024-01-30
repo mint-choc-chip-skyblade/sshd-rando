@@ -504,6 +504,15 @@ class Settings:
         pyclip.copy(setting_string)
 
     def paste_setting_string(self):
+        confirm_paste_setting_string_dialog = QMessageBox.question(
+            self.main,
+            "Are you sure?",
+            "Pasting a setting string will overwrite most of the current settings. Would you like to continue?",
+        )
+
+        if confirm_paste_setting_string_dialog != QMessageBox.Yes:  # type: ignore (Qt is stupid)
+            return
+
         setting_string = str(pyclip.paste(text=True))
         self.setting_string_line_edit.setText(setting_string)
 
