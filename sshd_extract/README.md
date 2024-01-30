@@ -56,7 +56,7 @@ was chosen as it fixes 2 notable bugs.
 
 To check which version of the game you have installed on your Nintendo Switch
 console, go to your installation of the game and press the + button. At the
-top of the screen, beneith the title, you will see on of the following:
+top of the screen, beneath the title, you will see one of the following:
 
 * Ver. 1.0.0 | Nintendo
 * Ver. 1.0.1 | Nintendo
