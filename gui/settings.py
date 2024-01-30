@@ -513,12 +513,23 @@ class Settings:
         if confirm_paste_setting_string_dialog != QMessageBox.Yes:  # type: ignore (Qt is stupid)
             return
 
-        setting_string = str(pyclip.paste(text=True))
-        self.setting_string_line_edit.setText(setting_string)
+        setting_string = pyclip.paste()
 
-        new_config = update_config_from_setting_string(
-            self.config, setting_string, self.location_table
-        )
+        if not isinstance(setting_string, str):
+            setting_string = bytes(setting_string).decode("ascii")
+
+        try:
+            new_config = update_config_from_setting_string(
+                self.config, setting_string, self.location_table
+            )
+        except Exception as e:
+            self.main.fi_info_dialog.show_dialog(
+                "Action Failed!",
+                f"Could not paste invalid setting string.<br>Tried to paste: {setting_string}<br><br>Error: {e}",
+            )
+            return
+
+        self.setting_string_line_edit.setText(setting_string)
         self.config = new_config
         self.settings = self.config.settings[0].settings
         self.seed_line_edit.setText(self.config.seed)
