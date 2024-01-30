@@ -12,6 +12,7 @@ from gui.accessibility import Accessibility
 from gui.advanced import Advanced
 from gui.dialogs.error_dialog import error, error_from_str
 from gui.dialogs.fi_info_dialog import FiInfoDialog
+from gui.dialogs.fi_question_dialog import FiQuestionDialog
 from gui.guithreads import RandomizationThread
 from gui.settings import Settings
 from gui.dialogs.randomize_progress_dialog import RandomizerProgressDialog
@@ -39,6 +40,7 @@ class Main(QMainWindow):
         self.ui.tab_widget.setCurrentIndex(0)
 
         self.fi_info_dialog = FiInfoDialog(self)
+        self.fi_question_dialog = FiQuestionDialog(self)
 
         self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
 
@@ -72,21 +74,20 @@ class Main(QMainWindow):
         if output_dir != DEFAULT_OUTPUT_PATH and (
             not output_dir.exists() or not output_dir.is_dir()
         ):
-            output_not_exists_dialog = QMessageBox.question(
-                self,
+            output_not_exists_dialog = self.fi_question_dialog.show_dialog(
                 "Cannot find output folder",
                 f"""
 The output folder you have specified cannot be found.
-Would you like to continue and use the default output path?
-
-Your output path:
-{output_dir.as_posix()}
-
-Default output folder:
-{DEFAULT_OUTPUT_PATH.as_posix()}""",
+<br>Would you like to continue and use the default output path?
+<br>
+<br>Your output path:
+<br>{output_dir.as_posix()}
+<br>
+<br>Default output folder:
+<br>{DEFAULT_OUTPUT_PATH.as_posix()}""",
             )
 
-            if output_not_exists_dialog != QMessageBox.Yes:  # type: ignore (Qt is stupid)
+            if output_not_exists_dialog != QMessageBox.StandardButton.Yes:
                 return False
 
             self.config.output_dir = DEFAULT_OUTPUT_PATH

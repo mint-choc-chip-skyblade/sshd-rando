@@ -505,13 +505,12 @@ class Settings:
         pyclip.copy(setting_string)
 
     def paste_setting_string(self):
-        confirm_paste_setting_string_dialog = QMessageBox.question(
-            self.main,
+        confirm_paste_setting_string_dialog = self.main.fi_question_dialog.show_dialog(
             "Are you sure?",
-            "Pasting a setting string will overwrite most of the current settings. Would you like to continue?",
+            "Pasting a setting string will overwrite most of the current settings.<br>Would you like to continue?",
         )
 
-        if confirm_paste_setting_string_dialog != QMessageBox.Yes:  # type: ignore (Qt is stupid)
+        if confirm_paste_setting_string_dialog != QMessageBox.StandardButton.Yes:
             return
 
         setting_string = pyclip.paste()
@@ -526,7 +525,7 @@ class Settings:
         except Exception as e:
             self.main.fi_info_dialog.show_dialog(
                 "Action Failed!",
-                f"Could not paste invalid setting string.<br>Tried to paste: {setting_string}<br><br>Error: {e}",
+                f"Could not paste invalid setting string.<br><br>Tried to paste: {setting_string}<br>Error: {e}",
             )
             return
 
@@ -585,13 +584,12 @@ class Settings:
         return True
 
     def reset(self):
-        confirm_choice = QMessageBox.question(
-            self.main,
+        confirm_choice = self.main.fi_question_dialog.show_dialog(
             "Are you sure?",
             "Are you sure you want to reset EVERY option?",
         )
 
-        if confirm_choice != QMessageBox.Yes:  # type: ignore (Qt is stupid)
+        if confirm_choice != QMessageBox.StandardButton.Yes:
             return
 
         for setting_name, setting in self.settings.items():
@@ -735,13 +733,12 @@ class Settings:
             self.preset_delete_button.setDisabled(True)
             self.preset_apply_button.setDisabled(True)
         else:
-            confirm_preset_apply_dialog = QMessageBox.question(
-                self.main,
+            confirm_preset_apply_dialog = self.main.fi_question_dialog.show_dialog(
                 "Are you sure?",
                 "Would you like to apply this preset and overwrite all the current settings?",
             )
 
-            if confirm_preset_apply_dialog == QMessageBox.Yes:  # type: ignore (Qt is stupid)
+            if confirm_preset_apply_dialog == QMessageBox.StandardButton.Yes:
                 self.apply_preset()
 
             self.preset_apply_button.setEnabled(True)
@@ -760,13 +757,12 @@ class Settings:
         ):
             return
 
-        confirm_preset_delete_dialog = QMessageBox.question(
-            self.main,
+        confirm_preset_delete_dialog = self.main.fi_question_dialog.show_dialog(
             "Are you sure?",
             f"Are you sure you would like to delete {selected_preset_name} FOREVER?",
         )
 
-        if confirm_preset_delete_dialog == QMessageBox.Yes:  # type: ignore (Qt is stupid)
+        if confirm_preset_delete_dialog == QMessageBox.StandardButton.Yes:
             (PRESETS_PATH / (selected_preset_name + ".yaml")).unlink()
             self.user_preset_names.remove(selected_preset_name)
             self.all_preset_names.remove(selected_preset_name)
