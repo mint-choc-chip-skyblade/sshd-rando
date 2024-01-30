@@ -6,7 +6,7 @@ from constants.randoconstants import VERSION
 from logic.config import Config
 from logic.location import Location
 from logic.location_table import build_location_table
-from logic.settings import Setting, SettingMap
+from logic.settings import Setting, SettingMap, SettingType
 from randomizer.packed_bits import PackedBitsReader, PackedBitsWriter
 
 SETTING_STRING_VERSION = f"SSHDR-{VERSION}"
@@ -51,6 +51,9 @@ def setting_string_from_config(
         bits_writer = PackedBitsWriter()
 
         for setting in world_settings.settings.values():
+            if setting.info.type == SettingType.COSMETIC:
+                continue
+
             bits_writer.write(
                 setting.current_option_index, get_bit_length_for_setting(setting)
             )
@@ -143,6 +146,9 @@ def update_config_from_setting_string(
         world_settings = config.settings[world_index]
 
         for setting in world_settings.settings.values():
+            if setting.info.type == SettingType.COSMETIC:
+                continue
+
             value_len = get_bit_length_for_setting(setting)
             value_index = bits_reader.read(value_len)
 
