@@ -3,6 +3,8 @@ import yaml
 import random
 import logging
 
+from gui.dialogs.dialog_header import print_progress_text
+
 
 class SettingInfoError(RuntimeError):
     pass
@@ -39,7 +41,8 @@ class SettingInfo:
         self.options: list[str] = []
         self.pretty_options: list[str] = []
         self.descriptions: list[str] = []
-        self.default_option: int = 0
+        self.default_option_index: int = 0
+        self.current_option_index: int = 0
 
         self.has_random_option: bool = True
         self.random_option: str = None  # name of random option
@@ -62,11 +65,22 @@ class Setting:
         self.value: str = value_
         self.info: SettingInfo = info_
         self.is_using_random_option: bool = False
-        self.current_option: int = 0
+        self.current_option_index: int = 0
         self.custom_value: str = None
+
+        if self.info:
+            self.info.current_option_index = self.info.options.index(self.value)
+            self.current_option_index = self.info.current_option_index
 
     def __str__(self) -> str:
         return self.info.pretty_name
+
+    def update_current_value(self, option_index: int) -> None:
+        self.current_option_index = option_index
+
+        if self.info:
+            self.info.current_option_index = option_index
+            self.value = self.info.options[option_index]
 
     def resolve_if_random(self) -> None:
         if self.value == self.info.random_option:
@@ -85,6 +99,7 @@ class SettingMap:
         self.settings: OrderedDict[str, Setting] = {}
         self.starting_inventory: Counter[str] = Counter()
         self.excluded_locations: list[str] = []
+        self.excluded_hint_locations: list[str] = []
         self.mixed_entrance_pools: list[list[str]] = []
 
 
@@ -135,10 +150,12 @@ class SettingGet:
 def get_all_settings_info() -> dict[str, SettingInfo]:
     # Load in settings if we haven't done so yet
     if len(settings_info_map) == 0:
-        print("Loading setting data")
+        print_progress_text("Loading setting data")
         path = "data/settings_list.yaml"
+
         with open(path, "r") as settings_file:
             settings_yaml = yaml.safe_load(settings_file)
+
             for setting_node in settings_yaml:
                 # Check for required fields
                 for field in [
@@ -214,7 +231,7 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                     s.name = names[i]
                     s.pretty_name = pretty_names[i]
                     s.type = setting_type
-                    s.default_option = options.index(
+                    s.default_option_index = options.index(
                         default_options[min(len(default_options) - 1, i)]
                     )
                     s.options = options
@@ -253,6 +270,8 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                         # This should only apply to non-aliased random selections currently
                         s.options.append(s.random_option)
                         s.pretty_options.append("Random")
-                        s.descriptions.append("")
+                        s.descriptions.append(
+                            "One of the other options will be selected at random."
+                        )
 
     return settings_info_map

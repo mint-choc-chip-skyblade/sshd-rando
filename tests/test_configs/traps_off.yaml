@@ -1,12 +1,8 @@
+seed: TESTTESTTEST
 World 1:
   trap_mode: no_traps
   trappable_items: major_items
-  burn_traps: 'on'
-  curse_traps: 'on'
-  noise_traps: 'off'
-  groose_traps: 'off'
-input_dir: ./base
-output_dir: ./output
-plandomizer: false
-plandomizer_file: null
-seed: TESTTESTTEST
+  burn_traps: "on"
+  curse_traps: "on"
+  noise_traps: "off"
+  groose_traps: "off"

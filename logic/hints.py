@@ -6,7 +6,7 @@ import math
 
 
 def generate_hints(worlds: list[World]) -> None:
-    print("Generating Hints")
+    print_progress_text("Generating Hints")
     calculate_possible_path_locations(worlds)
     calculate_possible_barren_regions(worlds)
 
@@ -421,6 +421,7 @@ def generate_path_hint_message(location: Location, goal_location: Location) -> N
             ]
         )
     )
+    hint_regions.sort()
     hint_region_text = make_text_listing(
         [
             get_text_data(region, "pretty").apply_text_color("b")
@@ -462,6 +463,7 @@ def generate_item_hint_message(location: Location) -> None:
             ]
         )
     )
+    hint_regions.sort()
     # Convert to Text objects
     hint_regions = [
         get_text_data(region, "pretty").apply_text_color("b+")
@@ -610,6 +612,7 @@ def generate_impa_sot_hint(world: World) -> None:
             ]
         )
     )
+    sot_regions.sort()
     sot_regions_text = make_text_listing(
         [
             get_text_data(region, "pretty").apply_text_color("b+")

@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -9,20 +9,45 @@ from logic.search import all_logic_satisfied
 from logic.world import World
 
 
-def config_test(config_file_name: str) -> list[World]:
-    assert os.path.exists(f"tests/test_configs/{config_file_name}")
+def config_test(
+    config_file_name: str | Path, assert_all_locations_reachable: bool = True
+) -> list[World]:
+    config_file_name = Path(config_file_name)
+
+    config_test_path = Path("tests") / "test_configs" / config_file_name
+    assert config_test_path.exists()
+
+    config = load_config_from_file(config_test_path, allow_rewrite=False)
+    write_config_to_file(config_file_name, config)
+    worlds = generate(config_file_name)
+
+    if assert_all_locations_reachable:
+        assert all_logic_satisfied(worlds)
+
+    config_file_name.unlink()
+    return worlds
+
+
+def test_default_empty_config() -> None:
+    config_test("default_empty_config.yaml")
+
+
+def test_default_undefined_config() -> None:
+    # This file does not exist intentionally to test that it behaves without it
+    config_file_name = Path("default_undefined_config.yaml")
+
     config = load_config_from_file(
-        f"tests/test_configs/{config_file_name}", allow_rewrite=False
+        config_file_name, create_if_blank=True, allow_rewrite=False
     )
     write_config_to_file(config_file_name, config)
     worlds = generate(config_file_name)
     assert all_logic_satisfied(worlds)
     os.remove(config_file_name)
-    return worlds
+    return
 
 
 def test_default_config() -> None:
-    config_test("default_config.yaml")
+    config_test("default_empty_config.yaml")
 
 
 def test_random_crystals() -> None:
@@ -161,6 +186,20 @@ def test_no_logic_config() -> None:
     config_test("no_logic.yaml")
 
 
+def test_item_pool_minimal() -> None:
+    # The minimal item pool can make the 2 Ancient Harbour Crown and the 2
+    # Pirate Stronghold Pillar rupee checks impossible to reach
+    config_test("item_pool_minimal.yaml", assert_all_locations_reachable=False)
+
+
+def test_item_pool_extra() -> None:
+    config_test("item_pool_extra.yaml")
+
+
+def test_item_pool_plentiful() -> None:
+    config_test("item_pool_plentiful.yaml")
+
+
 def test_rupee_shuffle_off() -> None:
     config_test("rupee_shuffle_off.yaml")
 
@@ -177,6 +216,34 @@ def test_rupee_shuffle_advanced() -> None:
     config_test("rupee_shuffle_advanced.yaml")
 
 
+def test_bad_starting_inventory() -> None:
+    worlds = config_test("starting_inventory_bad.yaml")
+    assert (
+        len(
+            [
+                item
+                for item in worlds[0].starting_item_pool.elements()
+                if item.name == "Progressive Sword"
+            ]
+        )
+        == 0
+    )
+
+
+def test_good_starting_inventory() -> None:
+    worlds = config_test("starting_inventory_good.yaml")
+    assert (
+        len(
+            [
+                item
+                for item in worlds[0].starting_item_pool.elements()
+                if item.name == "Progressive Sword"
+            ]
+        )
+        == 2
+    )
+
+
 def test_spoiler_as_config() -> None:
     config_test("spoiler_as_config.yaml")
     log1 = ""
@@ -187,7 +254,7 @@ def test_spoiler_as_config() -> None:
 
     with open("spoiler_log_config_test.yaml", "w") as config:
         config.write(log1)
-        worlds = generate("spoiler_log_config_test.yaml")
+        worlds = generate(Path("spoiler_log_config_test.yaml"))
         assert all_logic_satisfied(worlds)
 
     os.remove("spoiler_log_config_test.yaml")

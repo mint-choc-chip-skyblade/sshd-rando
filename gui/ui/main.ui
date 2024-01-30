@@ -1,0 +1,3108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_window</class>
+ <widget class="QMainWindow" name="main_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>The Legend of Zelda: Skyward Sword HD Randomizer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QToolTip {color: #000000; background-color: #FFFFFF;}</string>
+  </property>
+  <widget class="QWidget" name="central_widget">
+   <property name="styleSheet">
+    <string notr="true">QToolTip {color: #000000; background-color: #FFFFFF;}</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTabWidget" name="tab_widget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QToolTip {color: #000000; background-color: #FFFFFF;}</string>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="getting_started_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Getting Started</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4" stretch="2,1">
+        <item>
+         <widget class="QGroupBox" name="how_to_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>How to Randomize the Game</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,0,1,0,1,0,1">
+           <item>
+            <widget class="QGroupBox" name="how_to_extract_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Extract the Game</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QLabel" name="how_to_extract_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Before generating a seed, you need to have a valid extract of the vanilla version of the game.&lt;br/&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;TODO: Add extract guide&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;For additional help with this process, please join the &lt;a href=&quot;https://discord.gg/zkm6yncD&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Discord Server&lt;/span&gt;&lt;/a&gt; or ask on &lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="openExternalLinks">
+                 <bool>true</bool>
+                </property>
+                <property name="textInteractionFlags">
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="how_to_left_arrow_label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>➜</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="useful_choose_settings_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Choosing your Settings</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QLabel" name="choose_settings_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Quick start: &lt;/span&gt;You can select one of the settings presets below to jump straight in!&lt;/p&gt;&lt;p&gt;Don't worry if there's too much going on, the default settings are perfect for beginners.&lt;/p&gt;&lt;p&gt;Alternatively, you can customize every setting yourself. There's lots of buttons and switches, so get stuck in!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="openExternalLinks">
+                 <bool>true</bool>
+                </property>
+                <property name="textInteractionFlags">
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="how_to_middle_arrow_label">
+             <property name="text">
+              <string>➜</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="how_to_generate_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Generate a Seed</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QLabel" name="how_to_generate_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Once you're ready, click the &lt;span style=&quot; font-family:'Courier New';&quot;&gt;Randomize&lt;/span&gt; button in the bottom right.&lt;/p&gt;&lt;p&gt;The program will begin to generate a game patch that will allow you to play the randomizer.&lt;/p&gt;&lt;p&gt;If you encounter a problem, don't hesitate to ask for help! You can join the &lt;a href=&quot;https://discord.gg/zkm6yncD&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Discord Server&lt;/span&gt;&lt;/a&gt; or ask on &lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="openExternalLinks">
+                 <bool>true</bool>
+                </property>
+                <property name="textInteractionFlags">
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="how_to_right_arrow_label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>➜</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="how_to_running_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Running the Seed</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="QLabel" name="how_to_running_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can play the randomizer either on a modded Nintendo Switch console or on an emulator.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;TODO: add guide links&lt;/span&gt;&lt;/p&gt;&lt;p&gt;If you want to play on console, please follow these instructions&lt;/p&gt;&lt;p&gt;If you want to play on emulator, please follow these instructions for yuzu or these instructions for Ryujinx.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
+                <property name="scaledContents">
+                 <bool>false</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="openExternalLinks">
+                 <bool>true</bool>
+                </property>
+                <property name="textInteractionFlags">
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="middle_grid_layout" columnstretch="1,1,2">
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="useful_info_group_box">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>Useful Information</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLabel" name="community_label">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;TODO&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://discord.gg/zkm6yncD&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Discord Server&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Report a Bug&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;➜ Setup Guide (todo)&lt;br/&gt;➜ Location Guide (todo)&lt;br/&gt;➜ Tricks Guide (todo)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+               <property name="textInteractionFlags">
+                <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="accessibility_group_box">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>Accessibility</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1">
+             <item>
+              <widget class="QGroupBox" name="theming_group_box">
+               <property name="title">
+                <string>Theming</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <item>
+                 <layout class="QHBoxLayout" name="theme_mode_layout">
+                  <item>
+                   <widget class="QLabel" name="theme_mode_label">
+                    <property name="text">
+                     <string>Theme Mode:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="theme_mode_combo_box">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="theme_presets_layout">
+                  <item>
+                   <widget class="QLabel" name="theme_presets_label">
+                    <property name="text">
+                     <string>Theme Presets</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="theme_presets_combo_box">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="use_custom_theme_check_box">
+                  <property name="text">
+                   <string>Use Custom Theme</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="customize_theme_button">
+                  <property name="text">
+                   <string>Customize Theme</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="theming_vspacer">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Expanding</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="theming_fonts">
+               <property name="title">
+                <string>Fonts</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_12">
+                <item>
+                 <layout class="QHBoxLayout" name="font_family_layout">
+                  <item>
+                   <widget class="QLabel" name="font_family_label">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Font Family</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFontComboBox" name="font_family_combo_box">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Maximum">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="editable">
+                     <bool>false</bool>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Select Font Family</string>
+                    </property>
+                    <property name="fontFilters">
+                     <set>QFontComboBox::ScalableFonts</set>
+                    </property>
+                    <property name="currentFont">
+                     <font>
+                      <family>Arial</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="font_size_layout">
+                  <item>
+                   <widget class="QLabel" name="font_size_label">
+                    <property name="text">
+                     <string>Font Size</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="font_size_spin_box">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <number>6</number>
+                    </property>
+                    <property name="maximum">
+                     <number>14</number>
+                    </property>
+                    <property name="value">
+                     <number>10</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="font_reset_button">
+                  <property name="text">
+                   <string>Reset</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="fonts_vspacer">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="presets_group_box">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>Presets</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_34">
+             <item>
+              <layout class="QHBoxLayout" name="selected_preset_layout">
+               <item>
+                <widget class="QLabel" name="selected_preset_label">
+                 <property name="text">
+                  <string>Selected Preset:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="selected_preset_combo_box">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="presets_button_layout">
+               <item>
+                <widget class="QPushButton" name="presets_delete_button">
+                 <property name="text">
+                  <string>Delete</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="presets_save_new_button">
+                 <property name="text">
+                  <string>Save New</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="presets_apply_button">
+                 <property name="text">
+                  <string>Apply</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="presets_vspacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>86</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="gameplay_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Gameplay</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="hint_placements_group_box">
+          <property name="title">
+           <string>Traps</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_24">
+           <item>
+            <widget class="QLabel" name="trap_mode_label">
+             <property name="text">
+              <string>Trap Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_trap_mode"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="trappable_items_label">
+             <property name="text">
+              <string>Trappable Items</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_trappable_items"/>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_burn_traps">
+             <property name="text">
+              <string>Burn Traps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_curse_traps">
+             <property name="text">
+              <string>Curse Traps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_noise_traps">
+             <property name="text">
+              <string>Noise Traps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_groose_traps">
+             <property name="text">
+              <string>Groose Traps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="hint_placements_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="dungeons_group_box">
+          <property name="title">
+           <string>Dungeon Items</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QLabel" name="small_keys_label">
+             <property name="text">
+              <string>Small Keys</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_small_keys"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="boss_keys_label">
+             <property name="text">
+              <string>Boss Keys</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_boss_keys"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="map_mode_label">
+             <property name="text">
+              <string>Dungeon Maps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_map_mode"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="lanayru_caves_key_label">
+             <property name="text">
+              <string>Lanayru Caves Small Key</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_lanayru_caves_key"/>
+           </item>
+           <item>
+            <spacer name="dungeons_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="beat_the_game_group_box">
+          <property name="title">
+           <string>Beat the Game</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <layout class="QHBoxLayout" name="required_dungeons_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="required_dungeons_label">
+               <property name="text">
+                <string>Required Dungeons</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_required_dungeons">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_empty_unrequired_dungeons">
+             <property name="text">
+              <string>Barren Unrequired Dungeons</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_skip_horde">
+             <property name="text">
+              <string>Skip The Horde Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_skip_g3">
+             <property name="text">
+              <string>Skip Ghirahim 3 Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_skip_demise">
+             <property name="text">
+              <string>Skip Demise Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="beat_the_game_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QGroupBox" name="tweaks_group_box">
+          <property name="title">
+           <string>Tweaks and Cosmetics</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="ammo_availability_label">
+             <property name="text">
+              <string>Ammo Availability</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_ammo_availability"/>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="peatrice_conversations_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="peatrice_conversations_label">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Peatrice Conversations</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_peatrice_conversations">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_full_wallet_upgrades">
+             <property name="text">
+              <string>Full Wallet Upgrades</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_dowsing_after_whitesword">
+             <property name="text">
+              <string>Fill Dowsing on White Sword</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_tunic_swap">
+             <property name="text">
+              <string>Tunic Swap</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_rotating_items">
+             <property name="text">
+              <string>Rotating Items</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="tweaks_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>148</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="world_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>World</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="open_world_group_box">
+          <property name="title">
+           <string>Open World</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QLabel" name="open_thunderhead_label">
+             <property name="text">
+              <string>Open Thunderhead</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_thunderhead"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="open_lake_floria_label">
+             <property name="text">
+              <string>Open Lake Floria</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_lake_floria"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="open_earth_temple_label">
+             <property name="text">
+              <string>Open Earth Temple</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_earth_temple"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="open_lmf_label">
+             <property name="text">
+              <string>Open Lanyru Mining Facility</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_lmf"/>
+           </item>
+           <item>
+            <spacer name="open_world_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="mixed_pools_group_box">
+          <property name="title">
+           <string>Shortcuts</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_25">
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_fs_lava_flow">
+             <property name="text">
+              <string>Skip Fire Sanctuary Lava Chase</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="mixed_pools_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>148</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QGroupBox" name="entrance_randomization_group_box">
+          <property name="title">
+           <string>Entrance Randomization</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_17">
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_door_entrances">
+             <property name="text">
+              <string>Randomize Door Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_interior_entrances">
+             <property name="text">
+              <string>Randomize Interior Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_overworld_entrances">
+             <property name="text">
+              <string>Randomize Overworld Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_dungeon_entrances">
+             <property name="text">
+              <string>Randomize Dungeon Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_trial_gate_entrances">
+             <property name="text">
+              <string>Randomize Trial Gate Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="random_starting_spawn_label">
+             <property name="text">
+              <string>Randomize Starting Spawn</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_random_starting_spawn"/>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_random_starting_statues">
+             <property name="text">
+              <string>Random Starting Statues</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_decouple_double_doors">
+             <property name="text">
+              <string>Decouple Double Door Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_decouple_entrances">
+             <property name="text">
+              <string>Decouple Entrances</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="entrance_randomization_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QGroupBox" name="mixed_entrance_pools_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Mixed Entrance Pools</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_28">
+           <item>
+            <widget class="QLabel" name="mixed_entrance_pools_list_label">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Defined Entrance Pools:&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Pool 1: [] &lt;br/&gt;Pool 2: [] &lt;br/&gt;Pool 3: []&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+             <property name="textInteractionFlags">
+              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="entrance_pool_selection_layout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="highlighted_entrance_pool_label">
+               <property name="text">
+                <string>Highlighted Entrance Pool:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="highlighted_entrance_pool_combo_box"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="selected_entrance_type_label">
+               <property name="text">
+                <string>Selected Entrance Type:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="selected_entrance_type_combo_box"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="entrance_pool_button_layout">
+             <item>
+              <widget class="QPushButton" name="add_entrance_type_button">
+               <property name="text">
+                <string>Add Entrance Type</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="remove_entrance_type_button">
+               <property name="text">
+                <string>Remove Entrance Type</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="mixed_entrance_pools_reset_button">
+             <property name="text">
+              <string>Reset</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>4</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="Line" name="line">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>4</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="mixed_entrance_pools_explainer_label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;What are Mixed Entrance Pools?&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Mixed entrance pools define how entrance types are shuffled together. By default, turning on an entrance randomizer setting will only shuffle the entrances of that type with each other. For example, randomizing dungeon entrances will only shuffle the dungeon entrances with each other. The Sandship entrance could &lt;span style=&quot; font-style:italic;&quot;&gt;not&lt;/span&gt; be shuffled to Wryna's House door or a trial gate entrance. &lt;br/&gt;&lt;br/&gt;By defining mixed entrance pools, different entrance types can be shuffled together. For example, if a mixed pool was defined as this: [Dungeon, Door, Trial Gate], the Sandship entrance &lt;span style=&quot; font-style:italic;&quot;&gt;could&lt;/span&gt; be shuffled to Wryna's House door or a trial gate entrance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+             <property name="textInteractionFlags">
+              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="mixed_entrance_pools_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>3</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="locations_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Locations and Shuffles</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3" columnstretch="6,1,6,4">
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="locations_button_layout">
+          <item>
+           <spacer name="individual_locations_top_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="include_location_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Include
+&lt;---</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="individual_locations_middle_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="exclude_location_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Exclude
+---&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="individual_locations_bottom_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="locations_reset_button">
+            <property name="text">
+             <string>Reset</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="3">
+         <widget class="QGroupBox" name="shuffles_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Shuffles</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="QLabel" name="beedle_shop_shuffle_label">
+             <property name="text">
+              <string>Beedle's Shop Shuffle</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_beedle_shop_shuffle"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="rupee_shuffle_label">
+             <property name="text">
+              <string>Rupee Shuffle</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_rupee_shuffle"/>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_underground_rupee_shuffle">
+             <property name="text">
+              <string>Underground Rupee Shuffle</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_goddess_chest_shuffle">
+             <property name="text">
+              <string>Goddess Chest Shuffle</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_gratitude_crystal_shuffle">
+             <property name="text">
+              <string>Gratitude Crystals Shuffle</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_stamina_fruit_shuffle">
+             <property name="text">
+              <string>Stamina Fruits</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="npc_closet_shuffle_label">
+             <property name="text">
+              <string>NPC Closets</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_npc_closet_shuffle"/>
+           </item>
+           <item>
+            <spacer name="shuffles_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="excluded_locations_group_box">
+          <property name="title">
+           <string>Excluded Locations</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_18">
+           <item>
+            <layout class="QHBoxLayout" name="excluded_locations_filter_layout">
+             <item>
+              <widget class="QComboBox" name="excluded_locations_type_filter"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="excluded_locations_free_search">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="placeholderText">
+                <string>Search</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QListView" name="excluded_locations_list_view">
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="included_locations_group_box">
+          <property name="title">
+           <string>Included Locations</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <layout class="QHBoxLayout" name="included_locations_filter_layout">
+             <item>
+              <widget class="QComboBox" name="included_locations_type_filter">
+               <property name="placeholderText">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="included_locations_free_search">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Search</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QListView" name="included_locations_list_view">
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="inventory_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Items and Inventory</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4" columnstretch="6,1,6,4">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="randomized_items_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Randomized Items</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <layout class="QHBoxLayout" name="randomized_items_filter_layout">
+             <item>
+              <widget class="QComboBox" name="randomized_items_type_filter"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="randomized_items_free_search">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Search</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QListView" name="randomized_items_list_view">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="starting_items_group_box">
+          <property name="title">
+           <string>Starting Items</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <layout class="QHBoxLayout" name="starting_items_filter_layout">
+             <item>
+              <widget class="QComboBox" name="starting_items_type_filter"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="starting_items_free_search">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Search</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QListView" name="starting_items_list_view">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="inventory_button_layout">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
+          </property>
+          <item>
+           <spacer name="starting_items_top_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="randomize_item_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Remove
+&lt;---</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="starting_items_middle_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="start_with_item_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Add
+---&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="starting_items_bottom_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="inventory_reset_button">
+            <property name="text">
+             <string>Reset</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="3">
+         <widget class="QGroupBox" name="item_settings_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Item Settings</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_29">
+           <item>
+            <widget class="QLabel" name="item_pool_label">
+             <property name="text">
+              <string>Item Pool</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_item_pool"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="starting_sword_label">
+             <property name="text">
+              <string>Starting Sword</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_starting_sword"/>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="random_starting_tablet_count_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="random_starting_tablet_count_label">
+               <property name="text">
+                <string>Random Starting Tablet Count</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_random_starting_tablet_count">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="random_starting_item_count_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="random_starting_item_count_label">
+               <property name="text">
+                <string>Random Starting Item Count</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_random_starting_item_count">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="item_settings_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>137</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="hints_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Hints</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_8" columnstretch="6,1,6,4">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="included_hint_locations_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Included Hint Locations</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_26">
+           <item>
+            <widget class="QLineEdit" name="included_hint_locations_free_search">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>Search</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListView" name="included_hint_locations_list_view">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="hints_button_layout">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
+          </property>
+          <item>
+           <spacer name="hints_top_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="include_hint_location_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Remove
+&lt;---</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="hints_middle_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="exclude_hint_location_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Add
+---&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="hints_bottom_vspacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="hints_reset_button">
+            <property name="text">
+             <string>Reset</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="excluded_hint_locations_group_box">
+          <property name="title">
+           <string>Excluded Hint Locations</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_27">
+           <item>
+            <widget class="QLineEdit" name="excluded_hint_locations_free_search">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>Search</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListView" name="excluded_hint_locations_list_view">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QGroupBox" name="hints_group_box">
+          <property name="title">
+           <string>Hint Settings</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_23">
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_gossip_stone_hints">
+             <property name="text">
+              <string>Gossip Stone Hints</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_fi_hints">
+             <property name="text">
+              <string>Fi Hints</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_impa_sot_hint">
+             <property name="text">
+              <string>Past Impa Stone of Trials Hint</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="song_hints_label">
+             <property name="text">
+              <string>Song Hints</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_song_hints"/>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="path_hints_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="path_hints_label">
+               <property name="text">
+                <string>Path Hints</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_path_hints">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="barren_hints_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="barren_hints_label">
+               <property name="text">
+                <string>Barren Hints</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_barren_hints">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="location_hints_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="location_hints_label">
+               <property name="text">
+                <string>Location Hints</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_location_hints">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="item_hints_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="item_hints_label">
+               <property name="text">
+                <string>Item Hints</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_item_hints">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_always_hints">
+             <property name="text">
+              <string>Prioritize Remote Location Hints</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_cryptic_hint_text">
+             <property name="text">
+              <string>Cryptic Hint Text</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="hints_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="logic_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Logic and Tricks</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="logic_rules_group_box">
+          <property name="title">
+           <string>Logic</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="logic_rules_label">
+             <property name="text">
+              <string>Logic Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_logic_rules"/>
+           </item>
+           <item>
+            <spacer name="logic_rules_hspacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Expanding</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="tricks_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Tricks</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6" columnstretch="1,1,1,1">
+           <item row="0" column="0">
+            <widget class="QGroupBox" name="precise_items_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Precise Items</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_20">
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_advanced_lizalfos_combat">
+                <property name="text">
+                 <string>Advanced Lizalfos Combat</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_skyview_precise_slingshot">
+                <property name="text">
+                 <string>Skyview Temple Precise Slingshot</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lmf_ceiling_precise_slingshot">
+                <property name="text">
+                 <string>Lanayru Mining Facility Precise Slingshot</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_tot_slingshot">
+                <property name="text">
+                 <string>Temple of Time Precise Slingshot</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_bomb_throws">
+                <property name="text">
+                 <string>Precise Bomb Throws</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lanayru_mine_quick_bomb">
+                <property name="text">
+                 <string>Lanayru Mine Quick Bomb</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_cactus_bomb_whip">
+                <property name="text">
+                 <string>Whip Bomb Flowers off Cacti</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_beedles_shop_with_bombs">
+                <property name="text">
+                 <string>Beedle's Shop with Bombs</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_bird_nest_item_from_beedles_shop">
+                <property name="text">
+                 <string>Bird's Nest from Beedle's Shop</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_precise_beetle">
+                <property name="text">
+                 <string>Precise Beetle Flying</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_skippers_fast_clawshots">
+                <property name="text">
+                 <string>Skipper's Retreat Fast Clawshots</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lmf_whip_switch">
+                <property name="text">
+                 <string>Lanayru Mining Facility Whip Switch</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lmf_whip_armos_room_timeshift_stone">
+                <property name="text">
+                 <string>Lanayru Mining Facility Whip Timeshift Stone</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lmf_minecart_jump">
+                <property name="text">
+                 <string>Lanayru Mining Facility Ride on Minecart</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_present_bow_switches">
+                <property name="text">
+                 <string>Present Bow Switch Shots</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_skykeep_vineclip">
+                <property name="text">
+                 <string>Sky Keep Vine Clip</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="precise_items_vspacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>87</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QGroupBox" name="dives_and_jumps_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Dives and Jumps</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_19">
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_volcanic_island_dive">
+                <property name="text">
+                 <string>Volcanic Island Dive</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_east_island_dive">
+                <property name="text">
+                 <string>Thunderhead East Island Dive</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_beedles_island_cage_chest_dive">
+                <property name="text">
+                 <string>Beedle's Island Cage Chest Dive</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_gravestone_jump">
+                <property name="text">
+                 <string>Gravestone Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_waterfall_cave_jump">
+                <property name="text">
+                 <string>Waterfall Cave Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_early_lake_floria">
+                <property name="text">
+                 <string>Early Lake Floria Jumpslash</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_skyview_coiled_rupee_jump">
+                <property name="text">
+                 <string>Skyview Coiled Rupee Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_ac_lever_jump_trick">
+                <property name="text">
+                 <string>Ancient Cistern Lever Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_ac_chest_after_whip_hooks_jump">
+                <property name="text">
+                 <string>Ancient Cistern Chest after Whip Hooks Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_sandship_jump_to_stern">
+                <property name="text">
+                 <string>Sandship Jump to Stern</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_fs_pillar_jump">
+                <property name="text">
+                 <string>Fire Sanctuary Pillar Jump</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="dives_and_jumps_vspacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QGroupBox" name="glitches_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Glitches</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_21">
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_stuttersprint">
+                <property name="text">
+                 <string>Stutter Sprinting</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_et_slope_stuttersprint">
+                <property name="text">
+                 <string>Earth Temple Slope Stuttersprint</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_brakeslide">
+                <property name="text">
+                 <string>Brakesliding</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_tot_skip_brakeslide">
+                <property name="text">
+                 <string>Temple of Time Skip Brakeslide</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="glitches_vspacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>399</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QGroupBox" name="miscellaneous_group_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Miscellaneous</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_22">
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_fire_node_without_hook_beetle">
+                <property name="text">
+                 <string>Fire Node without Hook Beetle</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_skyview_spider_roll">
+                <property name="text">
+                 <string>Skyview Temple Spider Roll</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_et_keese_skyward_strike">
+                <property name="text">
+                 <string>Earth Temple Keese Skyward Strike</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_et_bombless_scaldera">
+                <property name="text">
+                 <string>Earth Temple Bomb Flower Scaldera</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_lmf_bellowsless_moldarach">
+                <property name="text">
+                 <string>Lanayru Mining Facility Moldarach
+without Gust Bellows</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_sandship_itemless_spume">
+                <property name="text">
+                 <string>Sandship Itemless Spume</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_sandship_no_combination_hint">
+                <property name="text">
+                 <string>Sandship No Combination Hint</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_fs_practice_sword_ghirahim_2">
+                <property name="text">
+                 <string>Fire Sanctuary Ghirahim 2 with
+Practice Sword</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_itemless_first_timeshift_stone">
+                <property name="text">
+                 <string>Itemless First Timeshift Stone</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="miscellaneous_vspacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>237</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="advanced_tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Advanced</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QGroupBox" name="file_setup_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Extract and Output Utilities</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_31">
+           <item>
+            <widget class="QLabel" name="output_label">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Output Path:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="config_output">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="output_button_layout">
+             <item>
+              <widget class="QPushButton" name="reset_output_button">
+               <property name="text">
+                <string>Reset</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="browse_output_button">
+               <property name="text">
+                <string>Browse</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="utils_hline">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="verify_extract_label">
+             <property name="text">
+              <string>Verify Extracted Game Files:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="verify_extract_layout">
+             <item>
+              <widget class="QPushButton" name="verify_important_extract_button">
+               <property name="text">
+                <string>Verify Important Files</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="verify_all_extract_button">
+               <property name="text">
+                <string>Verify All Files</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="utils_hline_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="config_generate_spoiler_log">
+             <property name="text">
+              <string>Generate Spoiler Log</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="plandomizer_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Plandomizer</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_30">
+           <item>
+            <widget class="QLabel" name="plandomizer_warning_label">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;WARNING&lt;/span&gt;: The plandomizer settings will automatically &lt;span style=&quot; font-weight:700;&quot;&gt;TURN THEMSELVES OFF&lt;/span&gt; when reopening this randomizer program!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+             <property name="textInteractionFlags">
+              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="config_use_plandomizer">
+             <property name="text">
+              <string>Use Plandomizer File</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="selected_plandomizer_file_label">
+             <property name="text">
+              <string>Selected Plandomizer File:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="selected_plandomizer_file_combo_box">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QComboBox::AdjustToContents</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="open_plandomizer_folder_button">
+             <property name="text">
+              <string>Open Plandomizer Folder</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="plandomizer_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>369</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="random_settings_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Random Settings</string>
+          </property>
+          <widget class="QWidget" name="horizontalLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>70</x>
+             <y>290</y>
+             <width>160</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="randomization_settings_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Randomization Settings</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="settings_descriptions_layout">
+      <item>
+       <widget class="QLabel" name="settings_current_option_description_label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>64</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Settings current option description</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::RichText</enum>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="settings_default_option_description_label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>64</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Settings default option description</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="footer_grid_layout" rowstretch="0,0,0">
+      <item row="2" column="1">
+       <layout class="QHBoxLayout" name="reset_settings_to_default_hlayout">
+        <item>
+         <spacer name="reset_settings_to_default_left_hspacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="reset_settings_to_default_button">
+          <property name="text">
+           <string>Reset Settings to Default</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="reset_settings_to_default_right_hspacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="seed_label">
+        <property name="text">
+         <string>Seed:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="new_seed_button">
+        <property name="text">
+         <string>New Seed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="randomize_button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Randomize</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <layout class="QHBoxLayout" name="setting_string_layout">
+        <item>
+         <widget class="QLineEdit" name="setting_string_line_edit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="paste_setting_string_button">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Paste</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="copy_setting_string_button">
+        <property name="text">
+         <string>Copy</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="about_button">
+        <property name="text">
+         <string>About</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="setting_string_label">
+        <property name="text">
+         <string>Setting String</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="seed_line_edit"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>RandoTriStateCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>gui/components/tristate_check_box</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

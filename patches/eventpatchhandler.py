@@ -7,10 +7,14 @@ from constants.patchconstants import (
     DEFAULT_FLOW_TYPE_LOOKUP,
 )
 
-from filepathconstants import EVENT_PATCHES_PATH, EVENT_FILES_PATH, OUTPUT_EVENT_PATH
+from filepathconstants import EVENT_PATCHES_PATH, EVENT_FILES_PATH
 
 from collections import defaultdict
 from pathlib import Path
+from gui.dialogs.dialog_header import (
+    get_progress_value_from_range,
+    update_progress_value,
+)
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 
 from sslib.msb import (
@@ -27,8 +31,9 @@ from util.text import get_text_data
 
 
 class EventPatchHandler:
-    def __init__(self):
-        self.event_patches: dict[str, list[dict]] = yaml_load(EVENT_PATCHES_PATH)
+    def __init__(self, event_output_path: Path):
+        self.event_output_path = event_output_path
+        self.event_patches: dict[str, list[dict]] = yaml_load(EVENT_PATCHES_PATH)  # type: ignore
         self.check_patches: dict[str, list[tuple[str, int, int]]] = defaultdict(list)
         self.flow_label_to_index_mapping = {}
         self.text_label_to_index_mapping = {}
@@ -38,7 +43,7 @@ class EventPatchHandler:
             self.event_patches[file_name] = []
         self.event_patches[file_name].append(event_patch)
 
-    def find_event(self, file_name: str, event_name: str) -> dict:
+    def find_event(self, file_name: str, event_name: str) -> dict | None:
         return next(
             (
                 patch
@@ -49,9 +54,18 @@ class EventPatchHandler:
         )
 
     def handle_event_patches(self, onlyif_handler: ConditionalPatchHandler):
-        for event_path in Path(EVENT_FILES_PATH).glob("*.arc"):
+        event_paths = tuple(Path(EVENT_FILES_PATH).glob("*.arc"))
+        total_event_file_count = len(event_paths)
+
+        for event_path in event_paths:
+            patched_event_file_count = event_paths.index(event_path)
+            progress_value = get_progress_value_from_range(
+                99, 7, patched_event_file_count, total_event_file_count
+            )
+            update_progress_value(progress_value)
+
             file_name = event_path.parts[-1]
-            modified_event_path = Path(OUTPUT_EVENT_PATH / file_name)
+            modified_event_path = self.event_output_path / file_name
 
             event_arc = U8File.get_parsed_U8_from_path(event_path, False)
 

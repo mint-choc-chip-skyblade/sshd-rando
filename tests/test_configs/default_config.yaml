@@ -1,7 +1,0 @@
-World 1:
-  setting: default_value # Dummy field to make World 1 a map
-input_dir: ./base
-output_dir: ./output
-plandomizer: false
-plandomizer_file: null
-seed: TESTTESTTEST

@@ -6,6 +6,7 @@ from constants.patchconstants import (
     OARC_ADD_PATH_REGEX,
     SHOP_PATCH_PATH_REGEX,
 )
+from gui.dialogs.dialog_header import print_progress_text
 from logic.world import World
 
 from patches.eventpatchhandler import EventPatchHandler
@@ -44,7 +45,7 @@ def determine_check_patches(
         if "Custom Flag" in location.types:
             custom_flag = custom_flags.pop()
 
-        if "Stamina Fruit" in location.types:
+        if "Stamina Fruits" in location.types:
             original_itemid = 1
 
             # Don't patch anything if the stamina fruit is vanilla
@@ -52,7 +53,10 @@ def determine_check_patches(
                 continue
 
         # Don't patch closets if they're off
-        if "Closet" in location.types and world.setting("npc_closets") == "vanilla":
+        if (
+            "Closets" in location.types
+            and world.setting("npc_closet_shuffle") == "vanilla"
+        ):
             continue
 
         # Deal with traps
@@ -88,7 +92,8 @@ def determine_check_patches(
                     ]
 
                 # Getting potion models from NPCs is broken rn
-                if "NPC" in location.types:
+                # Fi counts as an NPC for this so also include Crest
+                if "NPC" in location.types or "Crests" in location.types:
                     trappable_items = [
                         item for item in trappable_items if not "Potion" in item.name
                     ]
@@ -152,7 +157,7 @@ def determine_check_patches(
 
 
 def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
-    print("Creating Dungeon Item Patches")
+    print_progress_text("Creating Dungeon Item Patches")
 
     DUNGEON_ITEMIDS = [
         200,

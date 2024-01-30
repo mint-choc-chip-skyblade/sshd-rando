@@ -1,75 +1,129 @@
 - id: 1
   name: Small Key
+  types:
+    - Dungeon Items
+    - Small Keys
   oarc: null # ObjectPack
   shuffle: Dungeon
 - id: 2
   name: Green Rupee
+  types:
+    - Rupees
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 3
   name: Blue Rupee
+  types:
+    - Rupees
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 4
   name: Red Rupee
+  types:
+    - Rupees
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 6
   name: Heart
+  types:
+    - Minor Items
   oarc: null # ObjectPack
 - id: 9
   name: Goddess White Sword
+  types:
+    - Major Items
+    - Main Quest Items
+    - Swords
   oarc: null
   advancement: true
 - id: 10
   name: Progressive Sword
+  types:
+    - Major Items
+    - Main Quest Items
+    - Swords
   oarc: GetSwordA
   getarcname: GetSwordA
   getmodelname: GetSwordA
   advancement: true
 - id: 11
   name: Goddess Sword
+  types:
+    - Major Items
+    - Main Quest Items
+    - Swords
   oarc: null
   advancement: true
 - id: 12
   name: Goddess Longsword
+  types:
+    - Major Items
+    - Main Quest Items
+    - Swords
   oarc: null
   advancement: true
 - id: 13
   name: Master Sword
+  types:
+    - Major Items
+    - Main Quest Items
+    - Swords
   oarc: null
   advancement: true
 - id: 14
   name: True Master Sword
+  types:
+    - Major Items
+    - Main Quest Items
+    - Swords
   oarc: null
   advancement: true
 - id: 15
   name: Sailcloth
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: null # Placeholder (defaults to green rupee)
   advancement: true
 - id: 16
   name: Goddess's Harp
+  types:
+    - Major Items
+    - Main Quest Items
+    - Songs
   oarc: GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   advancement: true
 - id: 19
   name: Progressive Bow
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetBowA
   getarcname: GetBowA
   getmodelname: GetBowA
   advancement: true
 - id: 20
   name: Clawshots
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetHookShot
   getarcname: GetHookShot
   getmodelname: GetHookShot
   advancement: true
 - id: 21
   name: Spiral Charge
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetBirdStatue
   getarcname: GetBirdStatue
   getmodelname: GetBirdStatue
@@ -80,6 +134,9 @@
    - The Thunderhead - Song from Levias
 - id: 25
   name: Ancient Cistern Boss Key
+  types:
+    - Dungeon Items
+    - Boss Keys
   oarc: GetKeyBoss2A
   shuffle: Dungeon
   getarcname: GetKeyBoss2A
@@ -87,6 +144,9 @@
   advancement: true
 - id: 26
   name: Fire Sanctuary Boss Key
+  types:
+    - Dungeon Items
+    - Boss Keys
   oarc: GetKeyBoss2B
   shuffle: Dungeon
   getarcname: GetKeyBoss2B
@@ -94,6 +154,9 @@
   advancement: true
 - id: 27
   name: Sandship Boss Key
+  types:
+    - Dungeon Items
+    - Boss Keys
   oarc: GetKeyBoss2C
   shuffle: Dungeon
   getarcname: GetKeyBoss2C
@@ -101,12 +164,18 @@
   advancement: true
 - id: 28
   name: Key Piece
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetKeyKakera
   getarcname: GetKeyKakera
   getmodelname: GetKeyKakeraA
   advancement: true
 - id: 29
   name: Skyview Temple Boss Key
+  types:
+    - Dungeon Items
+    - Boss Keys
   oarc: GetKeyBossA
   shuffle: Dungeon
   getarcname: GetKeyBossA
@@ -114,6 +183,9 @@
   advancement: true
 - id: 30
   name: Earth Temple Boss Key
+  types:
+    - Dungeon Items
+    - Boss Keys
   oarc: GetKeyBossB
   shuffle: Dungeon
   getarcname: GetKeyBossB
@@ -121,6 +193,9 @@
   advancement: true
 - id: 31
   name: Lanayru Mining Facility Boss Key
+  types:
+    - Dungeon Items
+    - Boss Keys
   oarc: GetKeyBossC
   shuffle: Dungeon
   getarcname: GetKeyBossC
@@ -128,21 +203,32 @@
   advancement: true
 - id: 32
   name: Silver Rupee
+  types:
+    - Rupees
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 33
   name: Gold Rupee
+  types:
+    - Rupees
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 34
   name: Rupoor
+  types:
+    - Rupees
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetRupee
   getmodelname: GetRupee
 - id: 35
   name: Gratitude Crystal Pack
+  types:
+    - Side Quest Items
   oarc: null # ObjectPack
   getarcname: GetGenki
   getmodelname: GetGenki
@@ -159,19 +245,29 @@
    - Batreaux - 80 Crystals
 - id: 40
   name: 5 Bombs
+  types:
+    - Ammo
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetBombSet
   getmodelname: GetBombSet
 - id: 41
   name: 10 Bombs
+  types:
+    - Ammo
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetBombSet
   getmodelname: GetBombSet
 - id: 42
   name: Stamina Fruit
+  types:
+    - Minor Items
   oarc: null # ObjectPack
 - id: 48
   name: Gratitude Crystal
+  types:
+    - Side Quest Items
   oarc: null # ObjectPack
   getarcname: GetGenki
   getmodelname: GetGenki
@@ -188,16 +284,25 @@
    - Batreaux - 80 Crystals
 - id: 49
   name: Gust Bellows
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetVacuum
   getarcname: GetVacuum
   getmodelname: GetVacuum
   advancement: true
 - id: 50
   name: Map
+  types:
+    - Dungeon Items
+    - Maps
   oarc: null # ObjectPack
   shuffle: Dungeon
 - id: 52
   name: Progressive Slingshot
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc:
   - GetPachinkoA
   - GetPachinkoB # Fixes weirdness with traps
@@ -206,47 +311,72 @@
   advancement: true
 - id: 53
   name: Progressive Beetle
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetBeetleA
   getarcname: GetBeetleA
   getmodelname: GetBeetleA
   advancement: true
 - id: 56
   name: Progressive Mitts
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetMoleGloveA
   getarcname: GetMoleGloveA
   getmodelname: GetMoleGloveA
   advancement: true
 - id: 60
   name: 10 Deku Seeds
+  types:
+    - Ammo
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetSeedSet
   getmodelname: GetSeedSet
 - id: 63
-  name: Semi Rare Treasure
+  name: Uncommon Treasure
+  types:
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetSozaiL
   getmodelname: GetSozaiL
 - id: 64
   name: Rare Treasure
+  types:
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetSozaiP
   getmodelname: GetSozaiP
 - id: 65
   name: Guardian Potion
+  types:
+    - Potions
+    - Minor Items
   oarc: GetBottleMuteki
 - id: 68
   name: Water Dragon's Scale
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetUroko
   getarcname: GetUroko
   getmodelname: GetUroko
   advancement: true
 - id: 70
   name: Bug Medal
+  types:
+    - Medals
+    - Minor Items
   oarc: GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalReturn
 - id: 71
   name: Progressive Bug Net
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetNetA
   getarcname: GetNetA
   getmodelname: GetNetA
@@ -255,41 +385,70 @@
    - Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
 - id: 75
   name: Hook Beetle
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetBeetleB
   advancement: true
 - id: 76
   name: Quick Beetle
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetBeetleC
   advancement: true
 - id: 77
   name: Tough Beetle
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetBeetleD
   advancement: true
 - id: 78
   name: Heart Potion
+  types:
+    - Potions
+    - Minor Items
   oarc: GetBottleKusuri
 - id: 84
   name: Stamina Potion
+  types:
+    - Potions
+    - Minor Items
   oarc: GetBottleGuts
 - id: 86
   name: Air Potion
+  types:
+    - Potions
+    - Minor Items
   oarc: GetBottleAir
 - id: 90
   name: Iron Bow
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetBowB
   advancement: true
 - id: 91
   name: Sacred Bow
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetBowC
   advancement: true
 - id: 92
   name: Bomb Bag
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetBombBag
   getarcname: GetBombBag
   getmodelname: GetBombBag
   advancement: true
 - id: 93
   name: Heart Container
+  types:
+    - Minor Items
   oarc:
   - GetHeartUtuwa
   - PutHeartUtuwa
@@ -297,11 +456,16 @@
   getmodelname: GetHeartUtuwa
 - id: 94
   name: Heart Piece
+  types:
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetHeartKakera
   getmodelname: GetHeartKakera
 - id: 95
   name: Triforce of Courage
+  types:
+    - Major Items
+    - Main Quest Items
   oarc:
   - PutTriForceSingle
   - GetTriForceSingle
@@ -310,6 +474,9 @@
   advancement: true
 - id: 96
   name: Triforce of Power
+  types:
+    - Major Items
+    - Main Quest Items
   oarc:
   - PutTriForceSingle
   - GetTriForceSingle
@@ -318,6 +485,9 @@
   advancement: true
 - id: 97
   name: Triforce of Wisdom
+  types:
+    - Major Items
+    - Main Quest Items
   oarc:
   - PutTriForceSingle
   - GetTriForceSingle
@@ -326,45 +496,72 @@
   advancement: true
 - id: 98
   name: Sea Chart
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetMapSea
   getarcname: GetMapSea
   getmodelname: GetMapSea
   advancement: true
 - id: 99
   name: Mogma Mitts
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetMoleGloveB
   advancement: true
 - id: 100
   name: Heart Medal
+  types:
+    - Medals
+    - Minor Items
   oarc: GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalHeart
 - id: 101
   name: Rupee Medal
+  types:
+    - Medals
+    - Minor Items
   oarc: GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalLucky
 - id: 102
   name: Treasure Medal
+  types:
+    - Medals
+    - Minor Items
   oarc: GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalHunter # TODO double check
 - id: 103
   name: Potion Medal
+  types:
+    - Medals
+    - Minor Items
   oarc: GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalDurable
 - id: 104
   name: Cursed Medal
+  types:
+    - Medals
+    - Minor Items
   oarc: GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalDemon
 - id: 105
   name: Scattershot
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetPachinkoB
   advancement: true
 - id: 108
   name: Progressive Wallet # Medium Wallet
+  types:
+    - Wallets
+    - Minor Items
   oarc: GetPurseB
   getarcname: GetPurseB
   getmodelname: GetPurseB
@@ -376,82 +573,133 @@
    - Beedle's Shop - 1600 Rupee Item
 - id: 109
   name: Big Wallet
+  types:
+    - Wallets
+    - Minor Items
   oarc: GetPurseC
   advancement: true
 - id: 110
   name: Giant Wallet
+  types:
+    - Wallets
+    - Minor Items
   oarc: GetPurseD
   advancement: true
 - id: 111
   name: Tycoon Wallet
+  types:
+    - Wallets
+    - Minor Items
   oarc: GetPurseE
   advancement: true
 - id: 112
   name: Progressive Pouch
+  types:
+    - Major Items
+    - Side Quest Items
   oarc: GetPouchA
   getarcname: GetPouchA
   getmodelname: GetPorchA # yea, that's a typo in the game
   advancement: true
 - id: 113
   name: Pouch Expansion
+  types:
+    - Major Items
+    - Side Quest Items
   oarc: GetPouchB
 - id: 114
   name: Life Medal
+  types:
+    - Medals
+    - Minor Items
   oarc: GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalLife
 - id: 116
   name: Wooden Shield
+  types:
+    - Shields
+    - Minor Items
   oarc: GetShieldWood
   getarcname: GetShieldWood
   getmodelname: GetShieldWood
 - id: 125
   name: Hylian Shield
+  types:
+    - Shields
+    - Minor Items
   oarc: GetShieldHylia
   getarcname: GetShieldHylia
   getmodelname: GetShieldHylia
 - id: 126
   name: Revitalizing Potion
+  types:
+    - Potions
+    - Minor Items
   oarc: GetBottleRepair
 - id: 128
   name: Small Seed Satchel
+  types:
+    - Ammo
+    - Minor Items
   oarc: GetSpareSeedA # TODO upgrades?
   getarcname: GetSpareSeedA
   getmodelname: GetSpareSeedA
 - id: 131
   name: Small Quiver
+  types:
+    - Ammo
+    - Minor Items
   oarc: GetSpareQuiverA # TODO upgrades?
   getarcname: GetSpareQuiverA
   getmodelname: GetSpareQuiverA
 - id: 134
   name: Small Bomb Bag
+  types:
+    - Ammo
+    - Minor Items
   oarc: GetSpareBombBagA # TODO upgrades?
   getarcname: GetSpareBombBagA
   getmodelname: GetSpareBombBagA
 - id: 137
   name: Whip
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetWhip
   getarcname: GetWhip
   getmodelname: GetWhip
   advancement: true
 - id: 138
   name: Fireshield Earrings
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetEarring
   getarcname: GetEarring
   getmodelname: GetEarring
   advancement: true
 - id: 140
   name: Big Bug Net
+  types:
+    - Major Items
+    - Item Wheel Items
   oarc: GetNetB
   advancement: true
 - id: 153
   name: Empty Bottle
+  types:
+    - Major Items
+    - Side Quest Items
   oarc: null # ObjectPack
   getarcname: GetBottleEmpty
   getmodelname: GetBottleEmpty
   advancement: true
 - id: 158
   name: Cawlin's Letter
+  types:
+    - Major Items
+    - Side Quest Items
   oarc: GetKobunALetter
   getarcname: GetKobunALetter
   getmodelname: GetKobunALetter
@@ -460,6 +708,9 @@
    - Knight Academy - Ghost/Pipit's Crystals
 - id: 159
   name: Beedle's Insect Cage
+  types:
+    - Major Items
+    - Side Quest Items
   oarc: GetTerryCage
   getarcname: GetTerryCage
   getmodelname: GetTerryCage
@@ -468,6 +719,9 @@
    - Beedle's Island - Beedle's Crystals
 - id: 160
   name: Rattle
+  types:
+    - Major Items
+    - Side Quest Items
   oarc:
   - GetGaragara
   - PutGaragara
@@ -478,117 +732,188 @@
    - Skyloft Village - Bertie's Crystals
 - id: 163
   name: Tumbleweed
+  types:
+    - Treasures
+    - Minor Items
   oarc: GetSozaiC
   getarcname: GetSozaiC
   getmodelname: GetSozaiC
 - id: 165
   name: Eldin Ore
+  types:
+    - Treasures
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetSozaiE
   getmodelname: GetSozaiE
 - id: 168
   name: Dusk Relic
+  types:
+    - Treasures
+    - Minor Items
   oarc: GetSozaiH
   getarcname: GetSozaiH
   getmodelname: GetSozaiH
 - id: 171
   name: Monster Horn
+  types:
+    - Treasures
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetSozaiL
   getmodelname: GetSozaiL
 - id: 173
   name: Evil Crystal
+  types:
+    - Treasures
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetSozaiM
   getmodelname: GetSozaiM
 - id: 175
   name: Golden Skull
+  types:
+    - Treasures
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetSozaiO
   getmodelname: GetSozaiO
 - id: 176
   name: Goddess Plume
+  types:
+    - Treasures
+    - Minor Items
   oarc: null # ObjectPack
   getarcname: GetSozaiP
   getmodelname: GetSozaiP
 - id: 177
   name: Emerald Tablet
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetSekibanMapA
   getarcname: GetSekibanMapA
   getmodelname: SekibanMapA
   advancement: true
 - id: 178
   name: Ruby Tablet
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetSekibanMapB
   getarcname: GetSekibanMapB
   getmodelname: SekibanMapB
   advancement: true
 - id: 179
   name: Amber Tablet
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetSekibanMapC
   getarcname: GetSekibanMapC
   getmodelname: SekibanMapC
   advancement: true
 - id: 180
   name: Stone of Trials
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetSirenKey
   getarcname: GetSirenKey
   getmodelname: GetSirenKey
   advancement: true
 - id: 186
   name: Ballad of the Goddess
+  types:
+    - Major Items
+    - Main Quest Items
+    - Songs
   oarc: GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   advancement: true
 - id: 187
   name: Farore's Courage
+  types:
+    - Major Items
+    - Main Quest Items
+    - Songs
   oarc: GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   advancement: true
 - id: 188
   name: Nayru's Wisdom
+  types:
+    - Major Items
+    - Main Quest Items
+    - Songs
   oarc: GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   advancement: true
 - id: 189
   name: Din's Power
+  types:
+    - Major Items
+    - Main Quest Items
+    - Songs
   oarc: GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   advancement: true
 - id: 190
   name: Faron Song of the Hero Part
+  types:
+    - Major Items
+    - Main Quest Items
+    - Songs
   oarc: GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   advancement: true
 - id: 191
   name: Eldin Song of the Hero Part
+  types:
+    - Major Items
+    - Main Quest Items
+    - Songs
   oarc: GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   advancement: true
 - id: 192
   name: Lanayru Song of the Hero Part
+  types:
+    - Major Items
+    - Main Quest Items
+    - Songs
   oarc: GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   advancement: true
 - id: 193
   name: Song of the Hero
+  types:
+    - Major Items
+    - Main Quest Items
+    - Songs
   oarc: GetHarp
   advancement: true
 - id: 197
   name: Life Tree Seedling
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetSeedLife
   getarcname: GetSeedLife
   getmodelname: GetSeedLife
   advancement: true
 - id: 198
   name: Life Tree Fruit
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: GetFruitB
   getarcname: GetFruitB
   getmodelname: GetFruitB
@@ -597,6 +922,9 @@
    - Lanayru Gorge - Thunder Dragon's Reward
 - id: 199
   name: Extra Wallet
+  types:
+    - Wallets
+    - Minor Items
   oarc: GetSparePurse
   getarcname: GetSparePurse
   getmodelname: GetSparePurse
@@ -610,89 +938,137 @@
 # Custom rando items
 - id: 200
   name: Skyview Temple Small Key
+  types:
+    - Dungeon Items
+    - Small Keys
   oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 201
   name: Lanayru Mining Facility Small Key
+  types:
+    - Dungeon Items
+    - Small Keys
   oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 202
   name: Ancient Cistern Small Key
+  types:
+    - Dungeon Items
+    - Small Keys
   oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 203
   name: Fire Sanctuary Small Key
+  types:
+    - Dungeon Items
+    - Small Keys
   oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 204
   name: Sandship Small Key
+  types:
+    - Dungeon Items
+    - Small Keys
   oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 205
   name: Sky Keep Small Key
+  types:
+    - Dungeon Items
+    - Small Keys
   oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 206
   name: Lanayru Caves Small Key
+  types:
+    - Dungeon Items
+    - Small Keys
   oarc: null # ObjectPack
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   advancement: true
 - id: 207
   name: Skyview Temple Map
+  types:
+    - Dungeon Items
+    - Maps
   oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 208
   name: Earth Temple Map
+  types:
+    - Dungeon Items
+    - Maps
   oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 209
   name: Lanayru Mining Facility Map
+  types:
+    - Dungeon Items
+    - Maps
   oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 210
   name: Ancient Cistern Map
+  types:
+    - Dungeon Items
+    - Maps
   oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 211
   name: Fire Sanctuary Map
+  types:
+    - Dungeon Items
+    - Maps
   oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 212
   name: Sandship Map
+  types:
+    - Dungeon Items
+    - Maps
   oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 213
   name: Sky Keep Map
+  types:
+    - Dungeon Items
+    - Maps
   oarc: null # ObjectPack
   getarcname: GetMap
   getmodelname: GetMap
 - id: 214
   name: Group of Tadtones
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: Onp
   getarcname: Onp
   getmodelname: OnpB
   advancement: true
 - id: 215
   name: Scrapper
+  types:
+    - Major Items
+    - Main Quest Items
   oarc: DesertRobot
   getarcname: DesertRobot
   getmodelname: DesertRobot
@@ -709,17 +1085,25 @@
 
 - id: 251
   name: Groose Trap
+  types:
+    - Traps
   oarc:
     - RivalCmnAnm
     - RivalNpcAnm
 - id: 252
   name: Noise Trap
+  types:
+    - Traps
   oarc: null
 - id: 253
   name: Curse Trap
+  types:
+    - Traps
   oarc: null
 - id: 254
   name: Burn Trap
+  types:
+    - Traps
   oarc: null
 
 #####################################################################
@@ -730,168 +1114,224 @@
 # Dummy item to simulate game beatability for logic
 - id: 256
   name: Game Beatable
+  types:
+    - Game Beatable
   oarc: null
   game_winning_item: true
   advancement: true
 # Dummy items (for now) to simulate hitting goddess cubes
 - id: 257
   name: Faron Woods Goddess Cube on West Great Tree near Exit
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Central Skyloft - West Cliff Goddess Chest
 - id: 258
   name: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Volcanic Island - Inside Goddess Chest
 - id: 259
   name: Faron Woods Goddess Cube on East Great Tree with Rope
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Thunderhead East Island - Goddess Chest
 - id: 260
   name: Deep Woods Goddess Cube Near Goron
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Lumpy Pumpkin - Outside Goddess Chest
 - id: 261
   name: Deep Woods Goddess Cube in front of Skyview
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Island Closest to Faron Pillar - Goddess Chest
 - id: 262
   name: Deep Woods Goddess Cube on top of Skyview
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Beedle's Island - Cage Goddess Chest
 - id: 263
   name: Lake Floria Goddess Cube
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Central Skyloft - Floating Island Goddess Chest
 - id: 264
   name: Floria Waterfall Goddess Cube on High Ledge
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Fun Fun Island - Goddess Chest
 - id: 265
   name: Eldin Volcano Goddess Cube at Eldin Entrance
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Triple Island - Upper Goddess Chest
 - id: 266
   name: Eldin Volcano Goddess Cube near Mogma Turf Entrance
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Island near Bamboo Island - Goddess Chest
 - id: 267
   name: Eldin Volcano Goddess Cube West of Earth Temple Entrance
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Bamboo Island - Goddess Chest
 - id: 268
   name: Eldin Volcano Goddess Cube East of Earth Temple Entrance
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Northeast Island - Cage Goddess Chest
 - id: 269
   name: Eldin Volcano Goddess Cube on Sand Slide
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Central Skyloft - Shed Goddess Chest
 - id: 270
   name: Mogma Turf Goddess Cube
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Isle of Songs - Lower Goddess Chest
 - id: 271
   name: Volcano Summit Goddess Cube in Lava Lake
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Mogma Mitts Island - First Goddess Chest
 - id: 272
   name: Volcano Summit Goddess Cube at Summit Waterfall
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Bug Heaven - Goddess Chest
 - id: 273
   name: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Isle of Songs - Top Goddess Chest
 - id: 274
   name: Lanayru Mine Goddess Cube
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Northeast Island - Goddess Chest behind Bombable Rocks
 - id: 275
   name: Lanayru Desert Goddess Cube near Caged Robot
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Triple Island - Lower Goddess Chest
 - id: 276
   name: Lanayru Desert Goddess Cube in Sand Oasis
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Volcanic Island - Outside Goddess Chest
 - id: 277
   name: Lanayru Desert Goddess Cube in Secret Passageway
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Island near Bamboo Island - Goddess Chest in Cave
 - id: 278
   name: Temple of Time Goddess Cube
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Beedle's Island - Top Goddess Chest
 - id: 279
   name: Lanayru Gorge Goddess Cube
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Mogma Mitts Island - Second Goddess Chest
 - id: 280
   name: Ancient Harbour Goddess Cube
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Bazaar - Goddess Chest
 - id: 281
   name: Skipper's Retreat Goddess Cube
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Triple Island - Cage Goddess Chest
 - id: 282
   name: Pirate Stronghold Goddess Cube
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:
    - Central Skyloft - Waterfall Goddess Chest
 - id: 283
   name: Skyview Spring Goddess Cube
+  types:
+    - Cubes
   oarc: null
   advancement: true
   chain_locations:

@@ -332,6 +332,22 @@ def all_logic_satisfied(worlds: list[World], item_pool: Counter[Item] = {}) -> b
                 l for l in search.visited_locations if l.world == world
             ]
             if len(visited_world_locations) != len(world.location_table):
+                # Special case for minimal item pool as it removes 2 beetles
+                # and locks access to the Ancient Harbour crown rupees and the
+                # Pirate Stronghold pillar rupees
+                if world.setting("item_pool") == "minimal":
+                    missing_locs = [
+                        loc.name
+                        for loc in world.location_table.values()
+                        if loc not in visited_world_locations
+                        and "Allowed Unreachable" not in loc.types
+                    ]
+
+                    if len(missing_locs) > 0:
+                        print(f"Could not reach these locations: {missing_locs}")
+                    else:
+                        continue
+
                 return False
         elif world.setting("logic_rules") == "beatable_only":
             # We want to make sure that enough goal locations are still reachable for selecting
@@ -373,7 +389,7 @@ def generate_playthrough(worlds: list[World]) -> None:
             temp_empty_locations[location] = location.current_item
             location.remove_current_item()
 
-    print("Paring down playthrough")
+    print_progress_text("Paring down playthrough")
     # Reverse the playthrough so we're paring it down from highest to lowest sphere
     # This way, lower sphere items will be prioritized for the playthrough
     for sphere in reversed(playthrough_spheres):

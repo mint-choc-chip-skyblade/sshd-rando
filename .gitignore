@@ -1,19 +1,34 @@
 # Don't commit the vanilla game files xD
 title
+sshd_extract/*
+!sshd_extract/README.md
 
 # Don't commit the modified game files either :p
 output
+sshdr_output
 
 # Seriously, don't commit Nintendo's IP
 oarccache
 
 *__pycache__*
-config.yaml
+.pytest_cache
+
 *.log
 *.gv
 *.svg
+
 Spoiler Log.txt
+config.yaml
+custom_theme.json
+
+# Presets
+presets/*.yaml
+
+# Plandomizer
 *plandomizer.yaml
+plandomizers/*
+!plandomizers/examples/
+!plandomizers/vanilla_boko_base.yaml
 
 # asm
 target/

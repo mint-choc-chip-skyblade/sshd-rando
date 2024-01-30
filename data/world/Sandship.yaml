@@ -21,7 +21,7 @@
     Finish Mast Sequence: Bow and Sword
   exits:
     Sandship Main Deck: Nothing
-    Sandship Stern: Bow and (Clawshots or logic_sandship_mast_jump)
+    Sandship Stern: Bow and (Clawshots or logic_sandship_jump_to_stern)
 
 
 - name: Sandship Stern

@@ -1,8 +1,4 @@
-World 1:
-  randomize_door_entrances: 'on'
-  decouple_double_doors: 'on'
-input_dir: ./base
-output_dir: ./output
-plandomizer: false
-plandomizer_file: null
 seed: TESTTESTTEST
+World 1:
+  randomize_door_entrances: "on"
+  decouple_double_doors: "on"

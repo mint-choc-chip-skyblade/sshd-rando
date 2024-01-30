@@ -6,9 +6,6 @@ from filepathconstants import (
     ASM_PATCHES_DIFFS_PATH,
     ASM_SDK_DIFFS_PATH,
     MAIN_NSO_FILE_PATH,
-    OUTPUT_ADDITIONAL_SUBSDK,
-    OUTPUT_MAIN_NSO,
-    OUTPUT_SDK_NSO,
     SDK_FILE_PATH,
     STARTFLAGS_FILE_PATH,
     SUBSDK1_FILE_PATH,
@@ -20,6 +17,7 @@ from collections import Counter
 from constants.asmconstants import *
 
 from lz4.block import compress, decompress
+from gui.dialogs.dialog_header import print_progress_text
 from logic.world import World
 
 from patches.asmpatchhelper import NsoOffsets, SegmentHeader
@@ -37,6 +35,12 @@ ASM_DEBUG_PRINT = False
 
 
 class ASMPatchHandler:
+    def __init__(self, asm_output_path: Path) -> None:
+        self.asm_output_path = asm_output_path
+        self.main_nso_output_path = self.asm_output_path / "main"
+        self.subsdk8_nso_path = self.asm_output_path / "subsdk8"
+        self.sdk_nso_path = self.asm_output_path / "sdk"
+
     def compress(self, data: bytes) -> bytes:
         # Uses the lz4 compression.
         return compress(data)[4:]  # trims lz4 junk off the start
@@ -225,17 +229,17 @@ class ASMPatchHandler:
                 onlyif_handler,
                 SDK_FILE_PATH,
                 ASM_SDK_DIFFS_PATH,
-                OUTPUT_SDK_NSO,
+                self.sdk_nso_path,
                 SDK_NSO_OFFSETS,
             )
 
-        print("Applying asm patches")
+        print_progress_text("Applying asm patches")
         self.patch_asm(
             world,
             onlyif_handler,
             MAIN_NSO_FILE_PATH,
             ASM_PATCHES_DIFFS_PATH,
-            OUTPUT_MAIN_NSO,
+            self.main_nso_output_path,
             MAIN_NSO_OFFSETS,
         )
 
@@ -245,7 +249,7 @@ class ASMPatchHandler:
         with temp_dir as temp_dir_name:
             temp_dir_name = Path(temp_dir_name)
 
-            print("Assembling startflags")
+            print_progress_text("Assembling startflags")
             startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
             self.patch_startflags(startflags_diff_file_path, world, onlyif_handler)
 
@@ -259,15 +263,17 @@ class ASMPatchHandler:
             staring_entrance_diff_file_path = (
                 temp_dir_name / "starting-entrance-diff.yaml"
             )
+
+            print_progress_text("Patching Starting Entrance")
             self.patch_starting_entrance(staring_entrance_diff_file_path, world)
 
-            print("Applying asm additions")
+            print_progress_text("Applying asm additions")
             self.patch_asm(
                 world,
                 onlyif_handler,
                 SUBSDK1_FILE_PATH,
                 ASM_ADDITIONS_DIFFS_PATH,
-                OUTPUT_ADDITIONAL_SUBSDK,
+                self.subsdk8_nso_path,
                 SUBSDK_NSO_OFFSETS,
                 extra_diffs_path=temp_dir_name,
             )

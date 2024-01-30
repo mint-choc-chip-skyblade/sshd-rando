@@ -1,3 +1,4 @@
+from randomizer.setting_string import setting_string_from_config
 from .world import *
 from .entrance_shuffle import create_entrance_pools
 
@@ -17,10 +18,17 @@ def spoiler_format_entrance(entrance: Entrance, longest_name_length: int) -> str
 
 
 def generate_spoiler_log(worlds: list[World]) -> None:
+    print_progress_text("Generating Spoiler Log")
+
     filepath = "Spoiler Log.txt"
     config = worlds[0].config
+
     with open(filepath, "w") as spoiler_log:
-        spoiler_log.write(f"seed: {config.seed}\n")
+        spoiler_log.write(f"Seed: {config.seed}\n")
+        spoiler_log.write(
+            f"Setting String: {setting_string_from_config(config, worlds[0].location_table)}\n"
+        )
+
         # Print starting inventories if there are any
         if worlds_with_starting_inventories := [
             w for w in worlds if w.starting_item_pool.total() > 0
@@ -103,40 +111,15 @@ def generate_spoiler_log(worlds: list[World]) -> None:
         for world in worlds:
             spoiler_log.write(f"    {world}:\n")
 
-            rupee_shuffle_setting = world.setting_map.settings["rupee_shuffle"]
+            disabled_shuffle_locations = get_disabled_shuffle_locations(
+                world.location_table, world.config
+            )
 
             for location in world.location_table.values():
-                if (
-                    "Hint Location" not in location.types
+                if "Gratitude Crystals" in location.types or (
+                    location not in disabled_shuffle_locations
+                    and "Hint Location" not in location.types
                     and "Goddess Cube" not in location.types
-                    and not (
-                        "Stamina Fruit" in location.types
-                        and location.current_item == world.get_item("Stamina Fruit")
-                    )
-                    and not (
-                        "Closet" in location.types
-                        and world.setting("npc_closets") == "vanilla"
-                    )
-                    and not (
-                        rupee_shuffle_setting.value == "vanilla"
-                        and "Freestanding Rupee" in location.types
-                    )
-                    and not (
-                        rupee_shuffle_setting.value == "beginner"
-                        and (
-                            "Intermediate Rupee" in location.types
-                            or "Advanced Rupee" in location.types
-                        )
-                    )
-                    and not (
-                        rupee_shuffle_setting.value == "intermediate"
-                        and "Advanced Rupee" in location.types
-                    )
-                    and not (
-                        world.setting_map.settings["underground_rupee_shuffle"].value
-                        == "off"
-                        and "Underground Rupee" in location.types
-                    )
                 ):
                     spoiler_log.write(
                         "        "
@@ -207,9 +190,14 @@ def generate_spoiler_log(worlds: list[World]) -> None:
 
         # Settings
         spoiler_log.write(f"\n# Settings\n")
-        spoiler_log.write(f"input_dir: {config.input_dir}\n")
+        spoiler_log.write(f"seed: {config.seed}\n")
         spoiler_log.write(f"output_dir: {config.output_dir}\n")
-        spoiler_log.write(f"plandomizer: {config.plandomizer}\n")
+        spoiler_log.write(f"plandomizer: {config.use_plandomizer}\n")
+        spoiler_log.write(f"theme_mode: {config.theme_mode}\n")
+        spoiler_log.write(f"theme_presets: {config.theme_presets}\n")
+        spoiler_log.write(f"use_custom_theme: {config.use_custom_theme}\n")
+        spoiler_log.write(f"font_family: {config.font_family}\n")
+        spoiler_log.write(f"font_size: {config.font_size}\n")
         spoiler_log.write(
             f"plandomizer_file: {config.plandomizer_file if config.plandomizer_file else 'null'}\n"
         )
@@ -223,13 +211,14 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 else:
                     spoiler_log.write(f"    {setting.name}: '{setting.value}'\n")
             spoiler_log.write(
-                f"    starting_inventory: {sorted(world.setting_map.starting_inventory.elements())}\n"
+                f"    starting_inventory: {sorted(world.config.settings[0].starting_inventory.elements())}\n"
             )
             spoiler_log.write(
                 f"    excluded_locations: {world.setting_map.excluded_locations}\n"
             )
             spoiler_log.write(
+                f"    excluded_hint_locations: {world.setting_map.excluded_hint_locations}\n"
+            )
+            spoiler_log.write(
                 f"    mixed_entrance_pools: {world.setting_map.mixed_entrance_pools}\n"
             )
-
-    print(f"Generated Spoiler Log at {filepath}")

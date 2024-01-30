@@ -17,30 +17,46 @@
     # - vanilla:                         "Items are placed in their vanilla locations."
 
 
-- name: single_gratitude_crystals
-  default_option: vanilla
-  pretty_name: Single Gratitude Crystals
+- name: item_pool
+  default_option: standard
+  pretty_name: Item Pool
   pretty_options:
-    - Vanilla
-    - Randomized
+    - Minimal
+    - Standard
+    - Extra
+    - Plentiful
   options:
-    - vanilla:                         "Single Gratitude Crystal locations will only contain single gratitude crystals."
-    - randomized:                      "Single Gratitude Crystal locations can contain any item."
+    - minimal:                         "No item upgrades will be shuffled into the item pool. There will only be 2 Beetles, 1 Bow, 1 Slingshot, and 1 Bug Net in the item pool."
+    - standard:                        "All of Gondo's item upgrades will be shuffled into the item pool. There will be: 4 Beetles, 3 Bows, 2 Slingshots, and 2 Bug Nets."
+    - extra:                           "The standard item pool will be used plus 1 extra of the major items (Item-Wheel item, Tablets, Mitts, Water Dragon's Scale, and Fireshield Earrings)."
+    - plentiful:                       "The standard item pool will be used plus 100% extra of the major items. E.g. There will be 8 Beetles, 6 Bows, 4 Mitts, etc..."
 
 
-- name: stamina_fruit
-  default_option: vanilla
-  pretty_name: Stamina Fruit
+# Shuffles
+- name: gratitude_crystal_shuffle
+  default_option: "on"
+  pretty_name: Gratitude Crystal Shuffle
   pretty_options:
-    - Vanilla
-    - Randomized
+    - "Off"
+    - "On"
   options:
-    - vanilla:                         "Stamina Fruit will not be randomized."
-    - randomized:                      "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
+    - "off":                           "Single Gratitude Crystal locations will only contain single gratitude crystals."
+    - "on":                            "Single Gratitude Crystal locations can contain any item."
 
-- name: npc_closets
+
+- name: stamina_fruit_shuffle
+  default_option: "off"
+  pretty_name: Stamina Fruit Shuffle
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Stamina Fruit will not be randomized."
+    - "on":                            "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
+
+- name: npc_closet_shuffle
   default_option: vanilla
-  pretty_name: NPC Closets
+  pretty_name: NPC Closet Shuffle
   pretty_options:
     - Vanilla
     - Randomized
@@ -74,28 +90,28 @@
     - "on":                            "Underground Rupee locations that require burrowing into digspots with the Mogma Mitts can contain any item."
 
 
-- name: randomized_shops
+- name: beedle_shop_shuffle
   default_option: junk_only
-  pretty_name: Randomized Shops
+  pretty_name: Beedle's Shop Shuffle
   pretty_options:
     - Vanilla
     - Junk Only
     - Randomized
   options:
-    - vanilla:                         "Shops will contain their vanilla items."
-    - junk_only:                       "Shops will only contain junk items."
-    - randomized:                      "Shops can contain any items."
+    - vanilla:                         "Beedle's Shop will contain its vanilla items."
+    - junk_only:                       "Beedle's Shop will only contain junk items."
+    - randomized:                      "Beedle's Shop can contain any items."
 
 
-- name: scrap_shop_upgrades
-  default_option: "on"
-  pretty_name: Place Scrap Shop Upgrades
+- name: goddess_chest_shuffle
+  default_option: "off"
+  pretty_name: Goddess Chest Shuffle
   pretty_options:
     - "Off"
     - "On"
   options:
-    - "off":                           "Item upgrades from Gondo's Repair Shop can only be obtained by upgrading the corresponding vanilla item with treasures."
-    - "on":                            "Item upgrades from Gondo's Repair Shop will be added to the item pool."
+    - "off":                           "Activating and opening Goddess Chests will not be required."
+    - "on":                            "Goddess Chests can contain any item. Goddess Chests are activated by Skyward Striking their corresponding Goddess Cube."
     
 
 - name: full_wallet_upgrades
@@ -111,18 +127,18 @@
 
 - name: dowsing_after_whitesword
   default_option: "on"
-  pretty_name: Fill Dowsing on Whitesword
+  pretty_name: Fill Dowsing on White Sword
   pretty_options:
     - "Off"
     - "On"
   options:
-    - "off":                           "Obtaining the Goddess Whitesword won't unlock the additional dowsing options."
-    - "on":                            "Obtaining the Goddess Whitesword will immediately unlock rupee, crystal, treasure, and goddess cube dowsing."
+    - "off":                           "Obtaining the Goddess White Sword won't unlock the additional dowsing options."
+    - "on":                            "Obtaining the Goddess White Sword will immediately unlock rupee, crystal, treasure, and goddess cube dowsing."
 
 
 - name: open_thunderhead
   default_option: ballad
-  pretty_name: Upgraded Skyward Strike
+  pretty_name: Open Thunderhead
   pretty_options:
     - Ballad
     - Open
@@ -168,15 +184,16 @@
     - open:                            "The Lanayru Mining Facility will be raised from the start of the game."
 
 
-- name: skykeep_layout
-  default_option: vanilla
+# Will be put on the gui once this option actually changes behaviour
+- name: randomize_skykeep_layout
+  default_option: "off"
   pretty_name: Sky Keep Layout
   pretty_options:
-    - Vanilla
-    - Randomized
+    - "Off"
+    - "On"
   options:
-    - vanilla:                         "The Sky Keep rooms will start in their vanilla positions."
-    - randomized:                      "The Sky Keep rooms will start in a random order."
+    - "off":                           "The Sky Keep rooms will start in their vanilla positions."
+    - "on":                            "The Sky Keep rooms will start in a random order."
 
 
 - name: fs_lava_flow
@@ -258,7 +275,7 @@
 
 - name: map_mode
   default_option: own_dungeon_restricted
-  pretty_name: Map Mode
+  pretty_name: Dungeon Maps
   pretty_options:
     - Vanilla
     - Own Dungeon Restricted
@@ -278,104 +295,120 @@
 
 
 - name: path_hints
-  default_option: 0
+  default_option: 3
   pretty_name: Path Hints
   pretty_options:
-   - 0-7
+    - 0-7
   options:
-   - 0-7:                              "Select the number of path hints you would like to generate."
+    - 0-7:                             "Select the number of path hints you would like to generate."
   
 
 - name: barren_hints
-  default_option: 0
+  default_option: 2
   pretty_name: Barren Hints
   pretty_options:
-   - 0-7
+    - 0-7
   options:
-   - 0-7:                              "Select the number of barren hints you would like to generate."
+    - 0-7:                             "Select the number of barren hints you would like to generate."
 
 
 - name: location_hints
-  default_option: 0
+  default_option: 7 # assumes always_hints is on
   pretty_name: Location Hints
   pretty_options:
-   - 0-7
+    - 0-7
   options:
-   - 0-7:                              "Select the number of location hints you would like to generate."
+    - 0-7:                             "Select the number of location hints you would like to generate."
 
 
 - name: item_hints
-  default_option: 0
+  default_option: 3
   pretty_name: Item Hints
   pretty_options:
-   - 0-7
+    - 0-7
   options:
-   - 0-7:                              "Select the number of item hints you would like to generate."
+    - 0-7:                             "Select the number of item hints you would like to generate."
 
 
 - name: fi_hints
-  default_option: "off"
+  default_option: "on"
   pretty_name: Fi Hints
   pretty_options:
-   - "Off"
-   - "On"
+    - "Off"
+    - "On"
   options:
-   - "off/on":                         "Hints will be placed on Fi and can be seen by calling Fi and asking her for hints."
+    - "off":                           "Hints will not be placed on Fi."
+    - "on":                            "Hints will be placed on Fi and can be seen by calling Fi and asking her for hints."
 
   
 - name: gossip_stone_hints
   default_option: "off"
   pretty_name: Gossip Stone Hints
   pretty_options:
-   - "Off"
-   - "On"
+    - "Off"
+    - "On"
   options:
-   - "off/on":                         "Hints will be placed on gossip stones and can be seen by talking to them."
+    - "off":                           "Hints will not be placed on Gossip Stones."
+    - "on":                            "Hints will be placed on Gossip Stones and can be seen by talking to them."
 
 
 - name: song_hints
-  default_option: "off"
+  default_option: "direct"
   pretty_name: Song Hints
   pretty_options:
-   - "Off"
-   - Basic
-   - Advanced
-   - Direct
+    - "Off"
+    - Basic
+    - Advanced
+    - Direct
   options:
-   - "off":                            "Silent Realm rewards will potentially be hinted at other hint sources."
-   - basic:                            "The song text indicates if any progress items are within the associated silent realm."
-   - advanced:                         "The song text indicates if any SotS, or potentially required items are in the associated silent realm."
-   - direct:                           "The song text directly states which important items, if any, can be found in the silent realm."
+    - "off":                           "Silent Realm rewards will potentially be hinted at other hint sources."
+    - basic:                           "The song text indicates if any progress items are within the associated silent realm."
+    - advanced:                        "The song text indicates if any SotS, or potentially required items are in the associated silent realm."
+    - direct:                          "The song text directly states which important items, if any, can be found in the silent realm."
 
 
 - name: impa_sot_hint
   default_option: "on"
   pretty_name: Past Impa Stone of Trials Hint
   pretty_options:
-   - "Off"
-   - "On"
+    - "Off"
+    - "On"
   options:
-   - "off/on":                         "If enabled, Impa in Hylia's Temple will give a hint to the location of the Stone of Trials. Does not appear if the Stone of Trials is a starting item."
+    - "off":                           "Impa in Hylia's Temple will not give a hint to the location of the Stone of Trials."
+    - "on":                            "Impa in Hylia's Temple will give a hint to the location of the Stone of Trials. Does not appear if the Stone of Trials is a starting item."
 
 
 - name: cryptic_hint_text
   default_option: "off"
   pretty_name: Cryptic Hint Text
   pretty_options:
-   - "Off"
-   - "On"
+    - "Off"
+    - "On"
   options:
-   - "off/on":                         "When selected, item and location hints will use cryptic text for their items and locations."
+    - "off":                           "Item and location hints will use the normal, clear names for their items and locations."
+    - "on":                            "Item and location hints will use cryptic text for their items and locations."
 
 
 - name: always_hints
-  default_option: "off"
+  default_option: "on"
   pretty_name: Prioritize Remote Location Hints
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "All locations will be treated equally for location hints."
+    - "on":                            "Certain locations which are time-consuming to check will be given priority for location hints."
+
+
+- name: random_starting_statues
+  default_option: "off"
+  pretty_name: Random Starting Bird Statues
   pretty_options:
    - "Off"
    - "On"
   options:
-   - "off/on":                         "When selected, certain locations which are time-consuming to check will be given priority for location hints."
+   - "off":                            "The bird statue unlocked at the start for each surface region will be unchanged."
+   - "on":                             "The bird statue unlocked at the start for each surface region will be randomized. All overworld statues except Inside the Volcano and Inside the Fire Sanctuary may be chosen."
 
 
 - name: random_starting_statues
@@ -438,7 +471,7 @@
 
 - name: decouple_double_doors
   default_option: "off"
-  pretty_name: Decouple Double Doors
+  pretty_name: Decouple Double Door Entrances
   pretty_options:
     - "Off"
     - "On"
@@ -480,6 +513,7 @@
     - "on":                            "Entering a location and taking the entrance behind you will take you to a random location."
 
 
+# Not on the gui yet - wanna look into making this better first
 - name: natural_night_connections
   default_option: "on"
   pretty_name: Require Natural Night Connections
@@ -491,6 +525,7 @@
     - "on":                            "You will not be required to sleep to night and travel to the overworld to access nighttime-only checks."
 
 
+# Will be added to the gui once it actually changes behaviour
 - name: upgraded_skyward_strike
   default_option: "on"
   pretty_name: Upgraded Skyward Strike
@@ -504,7 +539,7 @@
 
 - name: skip_horde
   default_option: "off"
-  pretty_name: Skip Horde Fight
+  pretty_name: Skip The Horde Fight
   pretty_options:
     - "Off"
     - "On"
@@ -546,7 +581,7 @@
 
 - name: empty_unrequired_dungeons
   default_option: "on"
-  pretty_name: Empty Unrequired Dungeons
+  pretty_name: Barren Unrequired Dungeons
   pretty_options:
     - "Off"
     - "On"
@@ -669,7 +704,7 @@
 
 - name: logic_early_lake_floria
   default_option: "off"
-  pretty_name: Early lake Floria
+  pretty_name: Early Lake Floria Jumpslash
   pretty_options:
     - "Off"
     - "On"
@@ -702,7 +737,7 @@
 
 - name: logic_east_island_dive
   default_option: "off"
-  pretty_name: East Island Dive
+  pretty_name: Thunderhead East Island Dive
   pretty_options:
     - "Off"
     - "On"
@@ -746,7 +781,7 @@
 
 - name: logic_bird_nest_item_from_beedles_shop
   default_option: "off"
-  pretty_name: Bird's Nest Item from Beedle's Shop
+  pretty_name: Bird's Nest from Beedle's Shop
   pretty_options:
     - "Off"
     - "On"
@@ -779,7 +814,7 @@
 
 - name: logic_precise_beetle
   default_option: "off"
-  pretty_name: Precise Beetle
+  pretty_name: Precise Beetle Flying
   pretty_options:
     - "Off"
     - "On"
@@ -790,7 +825,7 @@
 
 - name: logic_bomb_throws
   default_option: "off"
-  pretty_name: precise Bomb Throws
+  pretty_name: Precise Bomb Throws
   pretty_options:
     - "Off"
     - "On"
@@ -812,7 +847,7 @@
 
 - name: logic_brakeslide
   default_option: "off"
-  pretty_name: Breakslide
+  pretty_name: Brakesliding
   pretty_options:
     - "Off"
     - "On"
@@ -845,7 +880,7 @@
 
 - name: logic_tot_slingshot
   default_option: "off"
-  pretty_name: Temple of Time Precise Slingshot Shot
+  pretty_name: Temple of Time Precise Slingshot
   pretty_options:
     - "Off"
     - "On"
@@ -867,7 +902,7 @@
 
 - name: logic_cactus_bomb_whip
   default_option: "off"
-  pretty_name: Cactus Bomb Whip Trick
+  pretty_name: Whip Bomb Flowers off Cacti
   pretty_options:
     - "Off"
     - "On"
@@ -889,7 +924,7 @@
 
 - name: logic_skyview_spider_roll
   default_option: "off"
-  pretty_name: Skyview Spider Roll
+  pretty_name: Skyview Temple Spider Roll
   pretty_options:
     - "Off"
     - "On"
@@ -911,7 +946,7 @@
 
 - name: logic_skyview_precise_slingshot
   default_option: "off"
-  pretty_name: Skyview Precise Slingshot Trick
+  pretty_name: Skyview Temple Precise Slingshot
   pretty_options:
     - "Off"
     - "On"
@@ -920,9 +955,9 @@
     - "on":                            "You may need to use the slingshot to precisely hit the crystal at the top of the second hub room to get the Skyview Temple - Item behind Bars."
 
 
-- name: logic_et_keese_yeet
+- name: logic_et_keese_skyward_strike
   default_option: "off"
-  pretty_name: Earth Temple Keese Yeet
+  pretty_name: Earth Temple Keese Skyward Strike
   pretty_options:
     - "Off"
     - "On"
@@ -944,7 +979,7 @@
 
 - name: logic_et_bombless_scaldera
   default_option: "off"
-  pretty_name: Earth Temple Bomb Bag-less Scaldera
+  pretty_name: Earth Temple Bomb Flower Scaldera
   pretty_options:
     - "Off"
     - "On"
@@ -966,7 +1001,7 @@
 
 - name: logic_lmf_ceiling_precise_slingshot
   default_option: "off"
-  pretty_name: Lanayru Mining Facility Precise Slingshot Aiming
+  pretty_name: Lanayru Mining Facility Precise Slingshot
   pretty_options:
     - "Off"
     - "On"
@@ -977,7 +1012,7 @@
 
 - name: logic_lmf_whip_armos_room_timeshift_stone
   default_option: "off"
-  pretty_name: Lanayru Mining Facility Whip Timeshift Stone in Armos Room
+  pretty_name: Lanayru Mining Facility Whip Timeshift Stone
   pretty_options:
     - "Off"
     - "On"
@@ -988,7 +1023,7 @@
 
 - name: logic_lmf_minecart_jump
   default_option: "off"
-  pretty_name: Lanayru Mining Facility Minecart Jump
+  pretty_name: Lanayru Mining Facility Ride on Minecart
   pretty_options:
     - "Off"
     - "On"
@@ -1030,9 +1065,9 @@
     - "on":                            "You may be expected to get the Ancient Cistern - Chest after Whip Hooks by jumping down from the higher platform after exiting the basement via the long thread."
 
 
-- name: logic_sandship_mast_jump
+- name: logic_sandship_jump_to_stern
   default_option: "off"
-  pretty_name: Sandship Mast Jump
+  pretty_name: Sandship Jump to Stern
   pretty_options:
     - "Off"
     - "On"
@@ -1105,3 +1140,45 @@
   options:
     - "off":                           "You well only be expected to use the Beetle and Clawshots to travel across the Fire Sanctuary room in Sky Keep."
     - "on":                            "You may need to use the Bomb Bag and Clawshots to clip through the vines in the Fire Sanctuary room in Sky Keep."
+
+#######################################
+## Extra Starting Inventory Settings ##
+#######################################
+
+- name: starting_sword
+  default_option: goddess_sword
+  pretty_name: Starting Sword
+  pretty_options:
+    - No Sword
+    - Practice Sword
+    - Goddess Sword
+    - Goddess Longsword
+    - Goddess White Sword
+    - Master Sword
+    - True Master Sword
+  options:
+    - no_sword:                        "You will start without a sword."
+    - practice_sword:                  "You will start with 1 sword upgrade. You will not be able to use the Skyward Strike ability until you find another sword."
+    - goddess_sword:                   "You will start with 2 sword upgrades. You can use the Skyward Strike ability from the start of the game."
+    - goddess_longsword:               "You will start with 3 sword upgrades. Your sword will do more damage from the start of the game."
+    - goddess_white_sword:             "You will start with 4 sword upgrades. You will have the completed dowsing wheel from the start of the game."
+    - master_sword:                    "You will start with 5 sword upgrades. You will deal maximum sword damage from the start of the game."
+    - true_master_sword:               "You will start with all 6 sword upgrades. You will stun regular enemies with the sword from the start of the game."
+
+
+- name: random_starting_tablet_count
+  default_option: 1
+  pretty_name: Random Starting Tablet Count
+  pretty_options:
+    - 0-3
+  options:
+    - 0-3:                             "Select the number of randomly chosen tablets you would like to start with. This is in addition to any tablets you have added to your starting inventory already."
+
+
+- name: random_starting_item_count
+  default_option: 0
+  pretty_name: Random Starting Item Count
+  pretty_options:
+    - 0-7
+  options:
+    - 0-7:                             "Select the number of randomly chosen items you would like to start with. Only a selection of the most useful items are able to be chosen to maximize the benefit of this setting."

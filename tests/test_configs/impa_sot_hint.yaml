@@ -1,7 +1,3 @@
+seed: TESTTESTTEST
 World 1:
   impa_hint: "on"
-input_dir: ./base
-output_dir: ./output
-plandomizer: false
-plandomizer_file: null
-seed: TESTTESTTEST

@@ -1,3 +1,9 @@
+import argparse
+from gui.dialogs.dialog_header import (
+    get_progress_value_from_range,
+    print_progress_text,
+    update_progress_value,
+)
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 from sslib.bzs import parse_bzs, build_bzs, get_entry_from_bzs, get_highest_object_id
 from sslib.utils import mask_shift_set, write_bytes_create_dirs
@@ -25,22 +31,30 @@ from constants.patchconstants import (
 
 from filepathconstants import (
     RANDO_ROOT_PATH,
-    OUTPUT_STAGE_PATH,
     STAGE_FILES_PATH,
     STAGE_PATCHES_PATH,
     OARC_CACHE_PATH,
     EXTRACTS_PATH,
     OBJECTPACK_PATH,
     TITLE2D_SOURCE_PATH,
-    TITLE2D_OUTPUT_PATH,
     ENDROLL_SOURCE_PATH,
-    ENDROLL_OUTPUT_PATH,
 )
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    "--with-gui",
+    dest="with_gui",
+    action="store_true",
+    help="Runs the randomizer through a gui.",
+)
+
+args = parser.parse_args()
 
 
 def patch_tbox(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str)
-    tbox = next(
+    tbox: dict | None = next(
         filter(lambda x: x["name"] == "TBox" and (x["anglez"] >> 9) == id, bzs["OBJS"]),
         None,
     )
@@ -82,7 +96,7 @@ def patch_freestanding_item(
     original_itemid: int,
 ):
     id = int(object_id_str, 0)
-    freestanding_item = next(
+    freestanding_item: dict | None = next(
         filter(
             lambda x: x["name"] == "Item"
             and (((x["params1"] >> 10) & 0xFF) == id or x["id"] == id),
@@ -128,7 +142,7 @@ def patch_freestanding_item(
 
 def patch_bucha(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str, 16)
-    bucha = next(
+    bucha: dict | None = next(
         filter(lambda x: x["name"] == "NpcKyuE" and x["id"] == id, bzs["OBJ "]), None
     )
 
@@ -146,7 +160,7 @@ def patch_closet(
     bzs: dict, itemid: int, object_id_str: str, trapid: int, room: int, stage: str
 ):
     id = int(object_id_str, 16)
-    closet: dict = next(
+    closet: dict | None = next(
         filter(lambda x: x["name"] == "chest" and x["id"] == id, bzs["OBJ "]),
         None,
     )
@@ -159,7 +173,7 @@ def patch_closet(
         raise Exception(f"No closet with id '{id}' found to patch.")
 
     # Mapping of each closet (scene, roomid, objectid) to the local scene flag we'll use
-    unused_scene_flags = {
+    unused_scene_flags: dict[tuple[str, int, int], int] = {
         ("F001r", 1, 0xFC08): 12,  # Link's Closet            0x10
         ("F001r", 1, 0xFC07): 24,  # Fledge's Closet          2x01
         ("F001r", 6, 0xFC07): 32,  # Zelda's Closet           5x01 (vanilla scene flag)
@@ -192,7 +206,7 @@ def patch_closet(
 
 def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str, 16)
-    boko = next(
+    boko: dict | None = next(
         filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
     )
 
@@ -207,7 +221,9 @@ def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 
 
 def patch_heart_container(bzs: dict, itemid: int, trapid: int):
-    heart_container = next(filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None)
+    heart_container: dict | None = next(
+        filter(lambda x: x["name"] == "HeartCo", bzs["OBJ "]), None
+    )
 
     if heart_container is None:
         raise Exception(f"No heart container found to patch.")
@@ -222,7 +238,9 @@ def patch_heart_container(bzs: dict, itemid: int, trapid: int):
 
 
 def patch_chandelier_item(bzs: dict, itemid: int, trapid: int):
-    chandelier = next(filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None)
+    chandelier: dict | None = next(
+        filter(lambda x: x["name"] == "Chandel", bzs["OBJ "]), None
+    )
 
     if chandelier is None:
         raise Exception(f"No chandelier found to patch.")
@@ -236,7 +254,7 @@ def patch_chandelier_item(bzs: dict, itemid: int, trapid: int):
 
 def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str)
-    digspot = next(
+    digspot: dict | None = next(
         filter(
             lambda x: x["name"] == "Soil" and ((x["params1"] >> 4) & 0xFF) == id,
             bzs["OBJ "],
@@ -257,10 +275,10 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 
 
 def patch_goddess_crest(bzs: dict, itemid: int, index: str, trapid: int):
-    crest = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
+    crest: dict | None = next(filter(lambda x: x["name"] == "SwSB", bzs["OBJ "]), None)
+
     if crest is None:
         raise Exception(f"No goddess crest found to patch.")
-        return
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
@@ -278,13 +296,12 @@ def patch_goddess_crest(bzs: dict, itemid: int, index: str, trapid: int):
 def patch_squirrels(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str, 16)
 
-    squirrel_tag = next(
+    squirrel_tag: dict | None = next(
         filter(lambda x: x["name"] == "MssbTag" and x["id"] == id, bzs["STAG"]), None
     )
 
     if squirrel_tag is None:
         raise Exception(f"No squirrel tag (MssbTag) found to patch.")
-        return
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
@@ -667,7 +684,12 @@ def layer_override(bzs: dict, patch: dict):
 # We have to pass all the various patch data to each process
 # individually
 def patch_and_write_stage(
-    stage_path: Path, stage_patches, check_patches, stage_oarc_remove, stage_oarc_add
+    stage_path: Path,
+    stage_output_path: Path,
+    stage_patches,
+    check_patches,
+    stage_oarc_remove,
+    stage_oarc_add,
 ):
     stage_match = STAGE_FILE_REGEX.match(stage_path.parts[-1])
 
@@ -676,8 +698,8 @@ def patch_and_write_stage(
 
     stage = stage_match[1]
     layer = int(stage_match[2])
-    modified_stage_path = Path(
-        OUTPUT_STAGE_PATH / f"{stage}" / "NX" / f"{stage}_stg_l{layer}.arc.LZ"
+    modified_stage_path = (
+        stage_output_path / f"{stage}" / "NX" / f"{stage}_stg_l{layer}.arc.LZ"
     )
     # remove arcs
     remove_arcs = set(stage_oarc_remove.get((stage, layer), []))
@@ -687,7 +709,7 @@ def patch_and_write_stage(
     if layer == 0 or remove_arcs or add_arcs:
         patches = stage_patches.get(stage, [])
 
-        print(f"Patching Stage: {stage}\tLayer: {layer}")
+        print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
         object_patches = []
         stage_u8 = None
 
@@ -923,8 +945,10 @@ def patch_and_write_stage(
 
 
 class StagePatchHandler:
-    def __init__(self):
-        self.stage_patches: dict = yaml_load(STAGE_PATCHES_PATH)
+    def __init__(self, output_path: Path):
+        self.base_output_path = output_path
+        self.stage_output_path = self.base_output_path / "Stage"
+        self.stage_patches: dict = yaml_load(STAGE_PATCHES_PATH)  # type: ignore
         self.check_patches: dict[str, list[tuple]] = defaultdict(list)
         self.stage_oarc_remove: dict[tuple[str, int], set[str]] = defaultdict(set)
         self.stage_oarc_add: dict[tuple[str, int], set[str]] = defaultdict(set)
@@ -947,6 +971,8 @@ class StagePatchHandler:
         print("Removing unecessary patches")
         self.remove_unnecessary_patches(onlyif_handler)
 
+        stages_patched_queue = mp.Queue()
+
         # Create the pool or worker processes
         with mp.Pool() as pool:
             # Create a function which emulates patch_and_write_stage except
@@ -957,18 +983,47 @@ class StagePatchHandler:
             # we're kicking off to the pool when using the pool.map method
             patch_stage_func = partial(
                 patch_and_write_stage,
+                stage_output_path=self.stage_output_path,
                 stage_patches=self.stage_patches,
                 check_patches=self.check_patches,
                 stage_oarc_remove=self.stage_oarc_remove,
                 stage_oarc_add=self.stage_oarc_add,
             )
-            pool.map(
-                patch_stage_func,
-                [
-                    stage_path
-                    for stage_path in Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ")
-                ],
+
+            # TODO: remove race condition - https://docs.python.org/3/library/multiprocessing.html#exchanging-objects-between-processes
+            total_stage_count = len(
+                tuple(Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ"))
             )
+
+            # imap *can* be slower so only use it with the gui (where we need a progress output)
+            if args.with_gui:
+                for _ in pool.imap_unordered(
+                    patch_stage_func,
+                    [
+                        stage_path
+                        for stage_path in Path(STAGE_FILES_PATH).rglob(
+                            "*_stg_l*.arc.LZ"
+                        )
+                    ],
+                ):
+                    stages_patched_queue.put(1)
+                    update_progress_value(
+                        get_progress_value_from_range(
+                            90, 70, stages_patched_queue.qsize(), total_stage_count
+                        )
+                    )
+            else:
+                pool.map(
+                    patch_stage_func,
+                    [
+                        stage_path
+                        for stage_path in Path(STAGE_FILES_PATH).rglob(
+                            "*_stg_l*.arc.LZ"
+                        )
+                    ],
+                )
+
+            stages_patched_queue.close()
 
     def remove_unnecessary_patches(
         self, onlyif_handler: ConditionalPatchHandler
@@ -980,7 +1035,7 @@ class StagePatchHandler:
                         patches.remove(patch)
 
     def create_oarc_cache(self):
-        extracts: dict[dict, dict] = yaml_load(EXTRACTS_PATH)
+        extracts: dict[dict, dict] = yaml_load(EXTRACTS_PATH)  # type: ignore
         OARC_CACHE_PATH.mkdir(parents=True, exist_ok=True)
 
         for extract in extracts:
@@ -999,7 +1054,7 @@ class StagePatchHandler:
                 objectpack_u8 = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH, True)
 
                 for arc in arcs_not_in_cache:
-                    print(f"Extracting {arc}")
+                    print_progress_text(f"Extracting {arc}")
                     arc_data = objectpack_u8.get_file_data(f"oarc/{arc}.arc")
 
                     if not arc_data:
@@ -1029,7 +1084,7 @@ class StagePatchHandler:
                     stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
 
                     for arc_name in arcs:
-                        print(f"Extracting {arc_name}")
+                        print_progress_text(f"Extracting {arc_name}")
                         arc_data = stage_u8.get_file_data(f"oarc/{arc_name}.arc")
 
                         if not arc_data:
@@ -1104,7 +1159,7 @@ class StagePatchHandler:
         )
 
     def patch_logo(self):
-        print("Patching Title Screen Logo")
+        print_progress_text("Patching Title Screen Logo")
         logo_data = (RANDO_ROOT_PATH / "assets" / "sshdr-logo.tpl").read_bytes()
         rogo_03_data = (RANDO_ROOT_PATH / "assets" / "th_rogo_03.tpl").read_bytes()
         rogo_04_data = (RANDO_ROOT_PATH / "assets" / "th_rogo_04.tpl").read_bytes()
@@ -1123,10 +1178,12 @@ class StagePatchHandler:
             )
             title_2d_arc.set_file_data("blyt/titleBG_00.brlyt", lyt_file)
 
-        write_bytes_create_dirs(TITLE2D_OUTPUT_PATH, title_2d_arc.build_U8())
+        write_bytes_create_dirs(
+            self.base_output_path / "Layout" / "Title2D.arc", title_2d_arc.build_U8()
+        )
 
         # Write credits logo
-        print("Patching Credits Logo")
+        print_progress_text("Patching Credits Logo")
         endroll_arc = U8File.get_parsed_U8_from_path(ENDROLL_SOURCE_PATH, False)
         endroll_arc.set_file_data("timg/th_zeldaRogoEnd_02.tpl", logo_data)
         endroll_arc.set_file_data("timg/th_rogo_03.tpl", rogo_03_data)
@@ -1141,4 +1198,6 @@ class StagePatchHandler:
             )
             endroll_arc.set_file_data("blyt/endTitle_00.brlyt", lyt_file)
 
-        write_bytes_create_dirs(ENDROLL_OUTPUT_PATH, endroll_arc.build_U8())
+        write_bytes_create_dirs(
+            self.base_output_path / "Layout" / "EndRoll.arc", endroll_arc.build_U8()
+        )

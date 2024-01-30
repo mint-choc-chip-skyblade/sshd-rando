@@ -1,58 +1,275 @@
-GRATITUDE_CRYSTAL_PACK = "Gratitude Crystal Pack"
-GRATITUDE_CRYSTAL = "Gratitude Crystal"
+from constants.itemnames import *
 
-PROGRESSIVE_SWORD = "Progressive Sword"
-PROGRESSIVE_MITTS = "Progressive Mitts"
-PROGRESSIVE_SLINGSHOT = "Progressive Slingshot"
-PROGRESSIVE_BEETLE = "Progressive Beetle"
-PROGRESSIVE_BOW = "Progressive Bow"
-PROGRESSIVE_BUG_NET = "Progressive Bug Net"
-PROGRESSIVE_POUCH = "Progressive Pouch"
-PROGRESSIVE_WALLET = "Progressive Wallet"
 
-EMERALD_TABLET = "Emerald Tablet"
-RUBY_TABLET = "Ruby Tablet"
-AMBER_TABLET = "Amber Tablet"
+# Item Groups
+ALL_TABLETS = (EMERALD_TABLET, RUBY_TABLET, AMBER_TABLET)
 
-BOMB_BAG = "Bomb Bag"
-CLAWSHOTS = "Clawshots"
-WHIP = "Whip"
-GUST_BELLOWS = "Gust Bellows"
-WATER_DRAGON_SCALE = "Water Dragon's Scale"
-FIRESHIELD_EARRINGS = "Fireshield Earrings"
-GODDESS_HARP = "Goddess's Harp"
-BALLAD_OF_THE_GODDESS = "Ballad of the Goddess"
-FARORES_COURAGE = "Farore's Courage"
-NAYRUS_WISDOM = "Nayru's Wisdom"
-DINS_POWER = "Din's Power"
-FARON_SOTH_PART = "Faron Song of the Hero Part"
-ELDIN_SOTH_PART = "Eldin Song of the Hero Part"
-LANAYRU_SOTH_PART = "Lanayru Song of the Hero Part"
-SONG_OF_THE_HERO = "Song of the Hero"
-LIFE_TREE_FRUIT = "Life Tree Fruit"
-LIFE_TREE_SEEDLING = "Life Tree Seedling"
-STONE_OF_TRIALS = "Stone of Trials"
-CAWLINS_LETTER = "Cawlin's Letter"
-BEEDLES_INSECT_CAGE = "Beedle's Insect Cage"
-RATTLE = "Rattle"
-SEA_CHART = "Sea Chart"
-SPIRAL_CHARGE = "Spiral Charge"
-HYLIAN_SHIELD = "Hylian Shield"
+# Item Pools
+ALL_JUNK_ITEMS: list[str] = [
+    GOLDEN_SKULL,
+    GODDESS_PLUME,
+    DUSK_RELIC,
+    TUMBLEWEED,
+    FIVE_BOMBS,
+    GREEN_RUPEE,
+    BLUE_RUPEE,
+    RED_RUPEE,
+    SILVER_RUPEE,
+    GOLD_RUPEE,
+    UNCOMMON_TREASURE,
+    RARE_TREASURE,
+    EVIL_CRYSTAL,
+    ELDIN_ORE,
+    RUPOOR,
+]
 
-HEART_CONTANER = "Heart Container"
-HEART_PIECE = "Heart Piece"
-TRIFORCE_OF_COURAGE = "Triforce of Courage"
-TRIFORCE_OF_POWER = "Triforce of Power"
-TRIFORCE_OF_WISDOM = "Triforce of Wisdom"
-COMPLETE_TRIFORCE = "Completed Triforce"
+MINIMAL_ITEM_POOL: list[str] = (
+    [
+        BOMB_BAG,
+        GUST_BELLOWS,
+        WHIP,
+        CLAWSHOTS,
+        PROGRESSIVE_SLINGSHOT,
+        PROGRESSIVE_BOW,
+        PROGRESSIVE_BUG_NET,
+        WATER_DRAGON_SCALE,
+        FIRESHIELD_EARRINGS,
+        STONE_OF_TRIALS,
+        SPIRAL_CHARGE,
+        GODDESS_HARP,
+        FARORES_COURAGE,
+        NAYRUS_WISDOM,
+        DINS_POWER,
+        BALLAD_OF_THE_GODDESS,
+        FARON_SOTH_PART,
+        ELDIN_SOTH_PART,
+        LANAYRU_SOTH_PART,
+        LIFE_TREE_FRUIT,
+        SCRAPPER,
+        EMERALD_TABLET,
+        RUBY_TABLET,
+        AMBER_TABLET,
+        RATTLE,
+        CAWLINS_LETTER,
+        BEEDLES_INSECT_CAGE,
+        SEA_CHART,
+        TRIFORCE_OF_COURAGE,
+        TRIFORCE_OF_WISDOM,
+        TRIFORCE_OF_POWER,
+        SV_BOSS_KEY,
+        ET_BOSS_KEY,
+        LMF_BOSS_KEY,
+        AC_BOSS_KEY,
+        SSH_BOSS_KEY,
+        FS_BOSS_KEY,
+        LMF_SMALL_KEY,
+        SK_SMALL_KEY,
+        LC_SMALL_KEY,
+    ]
+    + [PROGRESSIVE_POUCH] * 5
+    + [PROGRESSIVE_MITTS] * 2
+    + [PROGRESSIVE_BEETLE] * 2
+    + [PROGRESSIVE_SWORD] * 6
+    + [PROGRESSIVE_WALLET] * 4
+    + [EXTRA_WALLET] * 3
+    + [GRATITUDE_CRYSTAL_PACK] * 13
+    + [GRATITUDE_CRYSTAL] * 15
+    + [EMPTY_BOTTLE] * 5
+    # + [GROUP_OF_TADTONES] * 17
+    + [KEY_PIECE] * 5
+    + [SV_SMALL_KEY] * 2
+    + [AC_SMALL_KEY] * 2
+    + [SSH_SMALL_KEY] * 2
+    + [FS_SMALL_KEY] * 3
+    + [
+        WOODEN_SHIELD,  # Non Progress items
+        HYLIAN_SHIELD,
+        CURSED_MEDAL,
+        TREASURE_MEDAL,
+        POTION_MEDAL,
+        SMALL_SEED_SATCHEL,
+        SMALL_QUIVER,
+        SMALL_BOMB_BAG,
+        BUG_MEDAL,
+        GOLDEN_SKULL,
+        GODDESS_PLUME,
+        DUSK_RELIC,
+        TUMBLEWEED,
+        FIVE_BOMBS,
+    ]
+    + [HEART_MEDAL] * 2
+    + [RUPEE_MEDAL] * 2
+    + [HEART_PIECE] * 24
+    + [HEART_CONTANER] * 6
+    + [LIFE_MEDAL] * 2
+    + [GREEN_RUPEE] * 3
+    + [BLUE_RUPEE] * 11
+    + [RED_RUPEE] * 42
+    + [SILVER_RUPEE] * 22
+    + [GOLD_RUPEE] * 11
+    + [UNCOMMON_TREASURE] * 10
+    + [GOLDEN_SKULL] * 1
+    + [RARE_TREASURE] * 12
+    + [EVIL_CRYSTAL] * 2
+    + [ELDIN_ORE] * 2
+    + [RUPOOR] * 5
+    + [
+        SV_MAP,
+        ET_MAP,
+        LMF_MAP,
+        AC_MAP,
+        SSH_MAP,
+        FS_MAP,
+        SK_MAP,
+    ]
+)
 
-KEY_PIECE = "Key Piece"
-FULL_ET_KEY = "Full ET Key"
-SCRAPPER = "Scrapper"
-EMPTY_BOTTLE = "Empty Bottle"
-EXTRA_WALLET = "Extra Wallet"
-GROUP_OF_TADTONES = "Group of Tadtones"
+STANDARD_ITEM_POOL: list[str] = (
+    [
+        PROGRESSIVE_SLINGSHOT,
+        PROGRESSIVE_BUG_NET,
+    ]
+    + [PROGRESSIVE_BOW] * 2
+    + [PROGRESSIVE_BEETLE] * 2
+    + MINIMAL_ITEM_POOL
+)
 
+# + 1 extra of main items
+EXTRA_ITEM_POOL: list[str] = [
+    PROGRESSIVE_BOW,
+    BOMB_BAG,
+    PROGRESSIVE_BEETLE,
+    PROGRESSIVE_BUG_NET,
+    PROGRESSIVE_SLINGSHOT,
+    CLAWSHOTS,
+    WHIP,
+    GUST_BELLOWS,
+    # SAILCLOTH,
+    PROGRESSIVE_MITTS,
+    WATER_DRAGON_SCALE,
+    FIRESHIELD_EARRINGS,
+    EMERALD_TABLET,
+    RUBY_TABLET,
+    AMBER_TABLET,
+] + STANDARD_ITEM_POOL
+
+# + 100% extra of main items
+PLENTIFUL_ITEM_POOL: list[str] = (
+    [
+        BOMB_BAG,
+        CLAWSHOTS,
+        WHIP,
+        GUST_BELLOWS,
+        # SAILCLOTH,
+        WATER_DRAGON_SCALE,
+        FIRESHIELD_EARRINGS,
+        EMERALD_TABLET,
+        RUBY_TABLET,
+        AMBER_TABLET,
+    ]
+    + [PROGRESSIVE_BOW] * 3
+    + [PROGRESSIVE_BEETLE] * 4
+    + [PROGRESSIVE_BUG_NET] * 2
+    + [PROGRESSIVE_SLINGSHOT] * 2
+    + [PROGRESSIVE_MITTS] * 2
+    + STANDARD_ITEM_POOL
+)
+
+# The order the items are defined in here determines
+# the order they appear on the GUI
+STARTABLE_ITEMS: list[str] = (
+    [
+        EMERALD_TABLET,
+        RUBY_TABLET,
+        AMBER_TABLET,
+        TRIFORCE_OF_COURAGE,
+        TRIFORCE_OF_POWER,
+        TRIFORCE_OF_WISDOM,
+    ]
+    + [PROGRESSIVE_BOW] * 3
+    + [BOMB_BAG]
+    + [PROGRESSIVE_BEETLE] * 4
+    + [PROGRESSIVE_BUG_NET] * 2
+    + [PROGRESSIVE_SLINGSHOT] * 2
+    + [
+        CLAWSHOTS,
+        WHIP,
+        GUST_BELLOWS,
+    ]
+    + [PROGRESSIVE_POUCH] * 5
+    # + [SAILCLOTH]
+    + [PROGRESSIVE_MITTS] * 2
+    + [
+        WATER_DRAGON_SCALE,
+        FIRESHIELD_EARRINGS,
+        GODDESS_HARP,
+        BALLAD_OF_THE_GODDESS,
+        FARORES_COURAGE,
+        DINS_POWER,
+        NAYRUS_WISDOM,
+        FARON_SOTH_PART,
+        ELDIN_SOTH_PART,
+        LANAYRU_SOTH_PART,
+        STONE_OF_TRIALS,
+        BEEDLES_INSECT_CAGE,
+        CAWLINS_LETTER,
+        RATTLE,
+        LIFE_TREE_FRUIT,
+        # LIFE_TREE_SEEDLING,
+        SPIRAL_CHARGE,
+        SCRAPPER,
+        SEA_CHART,
+    ]
+    + [KEY_PIECE] * 5
+    + [PROGRESSIVE_WALLET] * 4
+    + [EXTRA_WALLET] * 3
+    + [LC_SMALL_KEY]
+    + [SV_SMALL_KEY] * 2
+    + [LMF_SMALL_KEY]
+    + [AC_SMALL_KEY] * 2
+    + [SSH_SMALL_KEY] * 2
+    + [FS_SMALL_KEY] * 3
+    + [SK_SMALL_KEY]
+    + [
+        SV_MAP,
+        ET_MAP,
+        LMF_MAP,
+        AC_MAP,
+        SSH_MAP,
+        FS_MAP,
+        SK_MAP,
+        SV_BOSS_KEY,
+        ET_BOSS_KEY,
+        LMF_BOSS_KEY,
+        AC_BOSS_KEY,
+        SSH_BOSS_KEY,
+        FS_BOSS_KEY,
+    ]
+)
+
+RANDOM_STARTABLE_ITEMS = (
+    [
+        PROGRESSIVE_BOW,
+        BOMB_BAG,
+        PROGRESSIVE_BUG_NET,
+        PROGRESSIVE_SLINGSHOT,
+        CLAWSHOTS,
+        WHIP,
+        GUST_BELLOWS,
+        PROGRESSIVE_POUCH,
+        # SAILCLOTH,
+        WATER_DRAGON_SCALE,
+        FIRESHIELD_EARRINGS,
+        GODDESS_HARP,
+        BALLAD_OF_THE_GODDESS,
+        SPIRAL_CHARGE,
+    ]
+    + [PROGRESSIVE_BEETLE] * 2
+    + [PROGRESSIVE_MITTS] * 2
+)
+
+# Itemflags
+#
 # lists are used for progressive items,
 # tuples for setting multiple flags for one item
 ITEM_ITEMFLAGS = {
@@ -137,7 +354,7 @@ ITEM_STORYFLAGS = {
     PROGRESSIVE_BOW: [944, 945, 946],  # Bow, Iron, Sacred
     PROGRESSIVE_SLINGSHOT: [947, 948],  # Slingshot, Scatershot
     PROGRESSIVE_BUG_NET: [949, 950],  # Bug Net, Big Bug Net
-    PROGRESSIVE_POUCH: [30, 932, 932, 932, 932]  # Adventure Pouch, Pouch Expansion * 4
+    PROGRESSIVE_POUCH: [30, 932, 932, 932, 932],  # Adventure Pouch, Pouch Expansion * 4
     # SAILCLOTH: 32
 }
 
@@ -153,8 +370,8 @@ ITEM_COUNTS = {
 }
 
 TRAP_SETTING_TO_ITEM = {
-    "burn_traps": "Burn Trap",
-    "curse_traps": "Curse Trap",
-    "noise_traps": "Noise Trap",
-    "groose_traps": "Groose Trap",
+    "burn_traps": BURN_TRAP,
+    "curse_traps": CURSE_TRAP,
+    "noise_traps": NOISE_TRAP,
+    "groose_traps": GROOSE_TRAP,
 }

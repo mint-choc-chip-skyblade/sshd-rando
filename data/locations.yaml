@@ -2,7 +2,8 @@
 
 - name: Knight Academy - Fledge's Gift
   original_item: Progressive Pouch
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/114-Friend/16
     - oarc/F001r/l3
@@ -10,80 +11,105 @@
 
 - name: Knight Academy - In Link's Closet
   original_item: Blue Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F001r/r1/l0/chest/0xFC08
 
 - name: Knight Academy - In Fledge's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F001r/r1/l0/chest/0xFC07
 
 - name: Knight Academy - In Groose's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F001r/r2/l0/chest/0xFC03
 
 - name: Knight Academy - In Owlan's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F001r/r5/l0/chest/0xFC05
 
 # Uncomment when Horwell's door is unlocked
 # - name: Knight Academy - In Horwell's Closet
 #   original_item: Green Rupee
-#   type:
+#   types:
+#     - Closets
 #   Paths:
 #     - stage/F001r/r5/l0/chest/0xFC03
 
 - name: Knight Academy - In Karane's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F001r/r6/l0/chest/0xFC06
 
 - name: Knight Academy - In Zelda's Closet
   original_item: Heart Piece
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F001r/r6/l0/chest/0xFC07
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 1
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F001r/r6/l0/Item/0xFC0D
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 2
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F001r/r6/l0/Item/0xFC0E
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 3
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F001r/r6/l0/Item/0xFC0F
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 4
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F001r/r6/l0/Item/0xFC10
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 5
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F001r/r6/l0/Item/0xFC11
 
 - name: Knight Academy - Owlan's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries, Gratitude Crystal Sidequests, Combat, NPC
+  types:
+    - Scrapper Deliveries
+    - Combat
+    - NPC
   hint: sometimes
   Paths:
     - event/118-Town3/157
@@ -91,20 +117,23 @@
 
 - name: Knight Academy - Fledge's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests, NPC
+  types:
+    - NPC
   Paths:
     - event/115-Town2/325
     - oarc/F001r/l0
 
 - name: Knight Academy - Item from Cawlin
   original_item: Cawlin's Letter
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/115-Town2/166
     - oarc/F001r/l0
 - name: Knight Academy - Ghost/Pipit's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests, NPC
+  types:
+    - NPC
   Paths:
     - event/115-Town2/522
     - event/115-Town2/641
@@ -112,25 +141,29 @@
 
 - name: Knight Academy - Crystal in Link's Room
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F001r/r1/l4/Item/104
 
 - name: Knight Academy - Crystal in Knight Academy Plant
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F001r/r0/l4/Item/102
 
 - name: Knight Academy - Crystal in Zelda's Room
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F001r/r6/l4/Item/103
 
 - name: Upper Skyloft - Owlan's Gift
   original_item: Wooden Shield
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/108-ShinkanA/168
     - oarc/F000/l4
@@ -138,7 +171,8 @@
 
 - name: Upper Skyloft - Rescue Remlit above Knight Academy
   original_item: Red Rupee
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/108-ShinkanA/292
     - oarc/F000/l4
@@ -146,7 +180,8 @@
 
 - name: Upper Skyloft - Chest near Goddess Statue
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F000/r0/l2/TBox/71
     - stage/F000/r0/l4/TBox/71
@@ -157,13 +192,17 @@
 
 - name: Upper Skyloft - Stamina Fruit near Upper Academy Gates
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCD7
 
 - name: Upper Skyloft - Stamina Fruit near Lower Academy Gates
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l4/Item/0xFDFB
     - stage/F000/r0/l5/Item/0xFE07
@@ -174,7 +213,9 @@
 
 - name: Upper Skyloft - Stamina Fruit near Sparring Hall
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l4/Item/0xFDFA
     - stage/F000/r0/l5/Item/0xFE06
@@ -185,7 +226,9 @@
 
 - name: Upper Skyloft - Stamina Fruit near Goddess Statue
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l1/Item/0xFDC2
     - stage/F000/r0/l2/Item/0xFDEB
@@ -197,7 +240,9 @@
 
 - name: Upper Skyloft - Pumpkin Archery -- 600 Points
   original_item: Heart Piece
-  type: Minigames, NPC
+  types:
+    - Minigames
+    - NPC
   hint: sometimes
   Paths:
     - event/114-Friend/99
@@ -206,27 +251,31 @@
 
 - name: Inside the Statue of the Goddess - First Goddess Sword Item
   original_item: Progressive Sword
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/107-Kanban/Fi give Goddess Statue item 1
     - oarc/F008r/l0
 
 - name: Inside the Statue of the Goddess - Second Goddess Sword Item
   original_item: Emerald Tablet
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/107-Kanban/Fi give Goddess Statue item 2
     - oarc/F008r/l0
 
 - name: Sparring Hall - Chest
   original_item: Progressive Sword
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F009r/r0/l0/TBox/66
 
 - name: Sparring Hall - Crystal
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F009r/r0/l2/Item/115
     - oarc/F009r/l0
@@ -235,101 +284,129 @@
 
 - name: Bazaar - Potion Lady's Gift
   original_item: Empty Bottle
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/106-DrugStore/44
     - oarc/F004r/l0
 
 - name: Bazaar - Goddess Chest
   original_item: Gold Rupee
-  type: goddess, Sand Sea Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F004r/r0/l0/TBox/93
   cube_region: Lanayru Sand Sea
 
 # - name: Bazaar - Upgrade to Quick Beetle
 #   original_item: Progressive Beetle
-#   type: Scrap Shop, NPC
+#   types:
+#     - Scrap Shop
+#     - NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Tough Beetle
 #   original_item: Progressive Beetle
-#   type: Scrap Shop, NPC
+#   types:
+#     - Scrap Shop
+#     - NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Scattershot
 #   original_item: Progressive Slingshot
-#   type: Scrap Shop, NPC
+#   types:
+#     - Scrap Shop
+#     - NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Iron Bow
 #   original_item: Progressive Bow
-#   type: Scrap Shop, NPC
+#   types:
+#     - Scrap Shop
+#     - NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Sacred Bow
 #   original_item: Progressive Bow
-#   type: Scrap Shop, NPC
+#   types:
+#     - Scrap Shop
+#     - NPC
 #   hint: never
 
 # - name: Bazaar - Upgrade to Big Bug Net
 #   original_item: Progressive Bug Net
-#   type: Scrap Shop, NPC
+#   types:
+#     - Scrap Shop
+#     - NPC
 #   hint: never
 
 # - name: Central Skyloft - Repair Gondo's Junk
 #   original_item: Scrapper
-#   type: NPC
+#   types:
+#     - NPC
 #   Paths:
 #     - event/113-RemodelStore/Give Repair Gondo Junk item
 #     - oarc/F004r/l0
 
 - name: Central Skyloft - Wryna's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests, NPC
+  types:
+    - NPC
   Paths:
     - event/118-Town3/144
     - oarc/F006r/l0
 
 - name: Central Skyloft - Wryna's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F006r/r0/l0/chest/0xFC16
 
 - name: Central Skyloft - Waterfall Cave First Chest
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D000/r0/l0/TBox/67
 
 - name: Central Skyloft - Waterfall Cave Second Chest
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D000/r0/l0/TBox/68
 
 - name: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
   original_item: Red Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/D000/r0/l0/Item/88
 
 - name: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
   original_item: Red Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D000/r0/l0/Item/0xFC14
 
 - name: Central Skyloft - Gossip Stone on Waterfall Island
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 124-Town6
   textindex: 18
 
 - name: Central Skyloft - Parrow's Gift
   original_item: Empty Bottle
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/115-Town2/230 # mushroom spores
     - event/115-Town2/733 # Empty Bottle
@@ -339,7 +416,8 @@
 
 - name: Central Skyloft - Parrow's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests, NPC
+  types:
+    - NPC
   Paths:
     - event/115-Town2/813
     - oarc/F000/l4
@@ -348,13 +426,15 @@
 
 - name: Central Skyloft - Orielle and Parrow's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F005r/r0/l0/chest/0xFC0E
 
 - name: Central Skyloft - Peater/Peatrice's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests, NPC
+  types:
+    - NPC
   hint: sometimes
   Paths:
     - event/109-TakeGoron/79
@@ -364,85 +444,113 @@
 
 - name: Central Skyloft - Peater's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F018r/r0/l0/chest/0xFC11
 
 - name: Central Skyloft - Peatrice's Closet
   original_item: Green Rupee
-  type: Peatrice's Closet
+  types:
+    - Closets
   Paths:
     - stage/F018r/r0/l0/chest/0xFC12
 
 - name: Central Skyloft - Item in Bird's Nest
   original_item: Rattle
-  type:
+  types:
+    - Freestanding Items
   Paths:
     - stage/F000/r0/l0/Item/13
 
 - name: Central Skyloft - North Rupee in Bird's Nest
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5D
 
 - name: Central Skyloft - East Rupee in Bird's Nest
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5C
 
 - name: Central Skyloft - South Rupee in Bird's Nest
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5B
 
 - name: Central Skyloft - West Rupee in Bird's Nest
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5E
 
 - name: Central Skyloft - Shed Chest
   original_item: Silver Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F000/r0/l0/TBox/70
 
 - name: Central Skyloft - Stamina Fruit between Wooden Planks
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDF
 
 - name: Central Skyloft - Stamina Fruit near Wryna's House
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDA
 
 - name: Central Skyloft - Stamina Fruit near River
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCD9
 
 - name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCD8
 
 - name: Central Skyloft - Stamina Fruit near Bazaar
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCD6
 
 - name: Central Skyloft - Stamina Fruit near Plaza
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDE
 
@@ -450,28 +558,36 @@
 
 - name: Central Skyloft - West Cliff Goddess Chest
   original_item: Silver Rupee
-  type: goddess, Faron Woods Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F000/r0/l0/TBox/78
   cube_region: Faron Woods
 
 - name: Central Skyloft - Shed Goddess Chest
   original_item: Heart Piece
-  type: goddess, Eldin Volcano Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F000/r0/l0/TBox/79
   cube_region: Eldin Volcano
 
 - name: Central Skyloft - Floating Island Goddess Chest
   original_item: Gold Rupee
-  type: goddess, Lake Floria Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F000/r0/l0/TBox/91
   cube_region: Lake Floria
 
 - name: Central Skyloft - Waterfall Goddess Chest
   original_item: Heart Piece
-  type: goddess, Sand Sea Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   hint: sometimes
   Paths:
     - stage/F000/r0/l0/TBox/80
@@ -479,13 +595,15 @@
 
 - name: Central Skyloft - Crystal in Orielle and Parrow's House
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F005r/r0/l2/Item/114
 
 - name: Central Skyloft - Crystal on West Cliff
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F000/r0/l2/Item/113
     - stage/F000/r0/l5/Item/113
@@ -494,7 +612,8 @@
 
 - name: Central Skyloft - Crystal between Wooden Planks
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F000/r0/l2/Item/112
     - stage/F000/r0/l5/Item/112
@@ -503,7 +622,8 @@
 
 - name: Central Skyloft - Crystal after Waterfall Cave
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F000/r0/l2/Item/111
     - stage/F000/r0/l5/Item/111
@@ -512,7 +632,8 @@
 
 - name: Central Skyloft - Crystal in Loftwing Prison
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F000/r0/l2/Item/110
     - stage/F000/r0/l5/Item/110
@@ -521,7 +642,8 @@
 
 - name: Central Skyloft - Crystal on Waterfall Island
   original_item: Gratitude Crystal
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F000/r0/l2/Item/109
     - stage/F000/r0/l5/Item/109
@@ -530,7 +652,8 @@
 
 - name: Central Skyloft - Crystal on Light Tower
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F000/r0/l2/Item/106
     - stage/F000/r0/l5/Item/106
@@ -541,45 +664,53 @@
 
 - name: Skyloft Village - Mallara's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests, NPC
+  types:
+    - NPC
   Paths:
     - event/123-Town5/186
     - oarc/F016r/l0
 
 - name: Skyloft Village - Mallara's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F016r/r0/l0/chest/0xFC28
 
 - name: Skyloft Village - Bertie's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests, NPC
+  types:
+    - NPC
   Paths:
     - event/115-Town2/125
     - oarc/F014r/l0
 
 - name: Skyloft Village - Luv and Bertie's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F014r/r0/l0/chest/0xFC12
 
 - name: Skyloft Village - Gondo's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F015r/r0/l0/chest/0xFC10
 
 - name: Skyloft Village - Rupin's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F017r/r0/l0/chest/0xFC1E
 
 - name: Skyloft Village - Sparrot's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries, Gratitude Crystal Sidequests, NPC
+  types:
+    - Scrapper Deliveries
+    - NPC
   hint: sometimes
   Paths:
     - event/118-Town3/141
@@ -587,13 +718,15 @@
 
 - name: Skyloft Village - Sparrot's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F013r/r0/l0/chest/0xFC0E
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F000/r0/l2/Item/108
     - stage/F000/r0/l5/Item/108
@@ -602,7 +735,9 @@
 
 - name: Skyloft Village - Stamina Fruit
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDB
 
@@ -610,41 +745,53 @@
 
 - name: Batreaux - 5 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards, NPC
+  types:
+    - Batreaux's Rewards
+    - NPC
   Paths:
     - event/121-AkumaKun/21
     - oarc/F012r/l0
 
 - name: Batreaux - 10 Crystals
   original_item: Heart Piece
-  type: Batreaux's Rewards, NPC
+  types:
+    - Batreaux's Rewards
+    - NPC
   Paths:
     - event/121-AkumaKun/42
     - oarc/F012r/l0
 
 - name: Batreaux - 30 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards, NPC
+  types:
+    - Batreaux's Rewards
+    - NPC
   Paths:
     - event/121-AkumaKun/24
     - oarc/F012r/l0
 
 - name: Batreaux - 30 Crystals Chest
   original_item: Cursed Medal
-  type: Batreaux's Rewards
+  types:
+    - Batreaux's Rewards
+    - Chest
   Paths:
     - stage/F012r/r0/l0/TBox/69
 
 - name: Batreaux - 40 Crystals
   original_item: Gold Rupee
-  type: Batreaux's Rewards, NPC
+  types:
+    - Batreaux's Rewards
+    - NPC
   Paths:
     - event/121-AkumaKun/49
     - oarc/F012r/l0
 
 - name: Batreaux - 50 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards, NPC
+  types:
+    - Batreaux's Rewards
+    - NPC
   hint: sometimes
   Paths:
     - event/121-AkumaKun/27
@@ -652,7 +799,9 @@
 
 - name: Batreaux - 70 Crystals
   original_item: Gold Rupee
-  type: Batreaux's Rewards, NPC
+  types:
+    - Batreaux's Rewards
+    - NPC
   hint: sometimes
   Paths:
     - event/121-AkumaKun/161
@@ -660,7 +809,9 @@
 
 - name: Batreaux - 70 Crystals Second Reward
   original_item: Gold Rupee
-  type: Batreaux's Rewards, NPC
+  types:
+    - Batreaux's Rewards
+    - NPC
   hint: sometimes
   Paths:
     - event/121-AkumaKun/163
@@ -668,7 +819,9 @@
 
 - name: Batreaux - 80 Crystals
   original_item: Progressive Wallet
-  type: Batreaux's Rewards, NPC
+  types:
+    - Batreaux's Rewards
+    - NPC
   hint: always
   Paths:
     - event/121-AkumaKun/37
@@ -678,63 +831,93 @@
 
 - name: Beedle's Shop - 300 Rupee Item
   original_item: Progressive Pouch 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
+  types:
+    - Beedle's Shop
+    - Shop (Cheap)
+    - NPC
   Paths:
     - ShpSmpl/20
 
 - name: Beedle's Shop - 600 Rupee Item
   original_item: Progressive Pouch 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium), NPC
+  types:
+    - Beedle's Shop
+    - Shop (Medium)
+    - NPC
   Paths:
     - ShpSmpl/21
 
 - name: Beedle's Shop - 1200 Rupee Item
   original_item: Progressive Pouch 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive), NPC
+  types:
+    - Beedle's Shop
+    - Shop (Expensive)
+    - NPC
   hint: always
   Paths:
     - ShpSmpl/22
 
 - name: Beedle's Shop - 800 Rupee Item
   original_item: Life Medal 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium), NPC
+  types:
+    - Beedle's Shop
+    - Shop (Medium)
+    - NPC
   Paths:
     - ShpSmpl/26
 
 - name: Beedle's Shop - 1600 Rupee Item
   original_item: Heart Piece 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Expensive), NPC
+  types:
+    - Beedle's Shop
+    - Shop (Expensive)
+    - NPC
   hint: always
   Paths:
     - ShpSmpl/23
 
 - name: Beedle's Shop - First 100 Rupee Item
   original_item: Extra Wallet 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
+  types:
+    - Beedle's Shop
+    - Shop (Cheap)
+    - NPC
   Paths:
     - ShpSmpl/24
 
 - name: Beedle's Shop - Second 100 Rupee Item
   original_item: Extra Wallet 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
+  types:
+    - Beedle's Shop
+    - Shop (Cheap)
+    - NPC
   Paths:
     - ShpSmpl/17
 
 - name: Beedle's Shop - Third 100 Rupee Item
   original_item: Extra Wallet 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
+  types:
+    - Beedle's Shop
+    - Shop (Cheap)
+    - NPC
   Paths:
     - ShpSmpl/18
 
 - name: Beedle's Shop - 50 Rupee Item
   original_item: Progressive Bug Net 
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Cheap), NPC
+  types:
+    - Beedle's Shop
+    - Shop (Cheap)
+    - NPC
   Paths:
     - ShpSmpl/25
 
 - name: Beedle's Shop - 1000 Rupee Item
   original_item: Bug Medal
-  type: Beedle's Shop Purchases, Beedle's Shop Purchase (Medium), NPC
+  types:
+    - Beedle's Shop
+    - Shop (Medium)
+    - NPC
   Paths:
     - ShpSmpl/27
 
@@ -742,19 +925,24 @@
 
 - name: Bamboo Island Interior - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 11
 
 - name: Lumpy Pumpkin - Chandelier
   original_item: Heart Piece
-  type:
+  types:
+    - Freestanding Items
   Paths:
     - stage/F011r/r0/l0/Chandel
 
 - name: Lumpy Pumpkin - Harp Minigame
   original_item: Heart Piece
-  type: Minigames, NPC
+  types:
+    - Minigames
+    - NPC
   hint: sometimes
   Paths:
     - event/117-Pumpkin/305
@@ -762,7 +950,9 @@
 
 - name: Lumpy Pumpkin - Kina's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries, Gratitude Crystal Sidequests, NPC
+  types:
+    - Scrapper Deliveries
+    - NPC
   hint: sometimes
   Paths:
     - event/117-Pumpkin/386
@@ -770,38 +960,45 @@
 
 - name: Lumpy Pumpkin - Pumm and Kina's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   Paths:
     - stage/F011r/r0/l0/chest/0xFC3B
 
 - name: Lumpy Pumpkin - Outside Crystal
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F020/r0/l4/Item/100
 
 - name: Lumpy Pumpkin - Inside Crystal
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F011r/r0/l2/Item/116
 
 - name: Lumpy Pumpkin - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 27
 
 - name: Orielle's Island - Orielle's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests, NPC
+  types:
+    - NPC
   Paths:
     - event/115-Town2/225
     - oarc/F020/l0
 
 - name: Beedle's Island - Beedle's Crystals
   original_item: Gratitude Crystal Pack
-  type: Gratitude Crystal Sidequests, NPC
+  types:
+    - NPC
   hint: sometimes
   Paths:
     - event/105-Terry/115
@@ -809,13 +1006,17 @@
 
 - name: Beedle's Island - Crystal
   original_item: Gratitude Crystal 
-  type: Loose Crystals
+  types:
+    - Gratitude Crystals
   Paths:
     - stage/F020/r0/l4/Item/119
 
 - name: Beedle's Island - Top Goddess Chest
   original_item: Heart Piece
-  type: goddess, Lanayru Desert Goddess Chests, Combat
+  types:
+    - Chests
+    - Goddess Chests
+    - Combat
   hint: sometimes
   Paths:
     - stage/F020/r0/l0/TBox/89
@@ -823,21 +1024,28 @@
 
 - name: Beedle's Island - Cage Goddess Chest
   original_item: Rupee Medal
-  type: goddess, Faron Woods Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/81
   cube_region: Faron Woods
 
 - name: Fun Fun Island - Dodoh's Crystals
   original_item: Gratitude Crystal Pack
-  type: Scrapper Deliveries, NPC
+  types:
+    - Scrapper Deliveries
+    - NPC
   Paths:
     - event/110-DivingGame/60
     - oarc/F020/l0
 
 - name: Fun Fun Island - Minigame -- 500 Rupees
   original_item: Heart Piece
-  type: Minigames, Scrapper Deliveries, NPC
+  types:
+    - Minigames
+    - Scrapper Deliveries
+    - NPC
   hint: sometimes
   Paths:
     - event/110-DivingGame/19
@@ -845,44 +1053,53 @@
 
 - name: Fun Fun Island - Goddess Chest
   original_item: Gold Rupee
-  type: goddess, Lake Floria Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/86
   cube_region: Lake Floria
 
 - name: The Sky - Form a Squirrel Ring above Volcanic Island
   original_item: Red Rupee
-  type: Squirrel
+  types:
+    - Squirrel
   Paths:
     - stage/F020/r0/l0/MssbTag/0xFCC8 # actor id
 
 - name: The Sky - Form a Squirrel Ring above Lumpy Pumpkin
   original_item: Red Rupee
-  type: Squirrel
+  types:
+    - Squirrel
   Paths:
     - stage/F020/r0/l0/MssbTag/0xFC9C # actor id
 
 - name: The Sky - Form a Squirrel Ring above Bamboo Island
   original_item: Red Rupee
-  type: Squirrel
+  types:
+    - Squirrel
   Paths:
     - stage/F020/r0/l0/MssbTag/0xFCA0 # actor id
 
 - name: The Sky - Chest in Breakable Boulder near Fun Fun Island
   original_item: Silver Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F020/r0/l0/TBox/70
 
 - name: The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
   original_item: Silver Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F020/r0/l0/TBox/69
 
 - name: Volcanic Island - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 30
 
@@ -890,91 +1107,117 @@
 
 - name: Bamboo Island - Goddess Chest
   original_item: Gold Rupee
-  type: goddess, Eldin Volcano Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/82
   cube_region: Eldin Volcano
 
 - name: Island near Bamboo Island - Goddess Chest
   original_item: Silver Rupee
-  type: goddess, Eldin Volcano Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/71
   cube_region: Eldin Volcano
 
 - name: Island near Bamboo Island - Goddess Chest in Cave
   original_item: Heart Medal
-  type: goddess, Lanayru Desert Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/83
   cube_region: Lanayru Desert
 
 - name: Northeast Island - Goddess Chest behind Bombable Rocks
   original_item: Silver Rupee
-  type: goddess, Lanayru Desert Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/72
   cube_region: Lanayru Mine
 
 - name: Northeast Island - Cage Goddess Chest
   original_item: Treasure Medal
-  type: goddess, Eldin Volcano Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/74
   cube_region: Eldin Volcano
 
 - name: Lumpy Pumpkin - Goddess Chest on Roof
   original_item: Gold Rupee
-  type: goddess, Faron Woods Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/87
   cube_region: Skyview
 
 - name: Lumpy Pumpkin - Outside Goddess Chest
   original_item: Progressive Pouch
-  type: goddess, Faron Woods Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/64
   cube_region: Faron Woods
 
 - name: Island Closest to Faron Pillar - Goddess Chest
   original_item: Heart Piece
-  type: goddess, Faron Woods Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/65
   cube_region: Faron Woods
 
 - name: Volcanic Island - Outside Goddess Chest
   original_item: Heart Medal
-  type: goddess, Lanayru Desert Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/67
   cube_region: Lanayru Desert
 
 - name: Volcanic Island - Inside Goddess Chest
   original_item: Heart Piece
-  type: goddess, Faron Woods Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/68
   cube_region: Faron Woods
 
 - name: Triple Island - Upper Goddess Chest
   original_item: Small Seed Satchel
-  type: goddess, Eldin Volcano Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/66
   cube_region: Eldin Volcano
 
 - name: Triple Island - Lower Goddess Chest
   original_item: Life Medal
-  type: goddess, Lanayru Desert Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/84
   cube_region: Lanayru Desert
 
 - name: Triple Island - Cage Goddess Chest
   original_item: Potion Medal
-  type: goddess, Sand Sea Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F020/r0/l0/TBox/75
   cube_region: Lanayru Sand Sea
@@ -983,39 +1226,49 @@
 
 - name: Isle of Songs - Strike Crest with Goddess Sword
   original_item: Farore's Courage
-  type:
+  types:
+    - Crests
   Paths:
     - stage/F010r/r0/l0/SwSB/0
 
 - name: Isle of Songs - Strike Crest with Longsword
   original_item: Nayru's Wisdom
-  type:
+  types:
+    - Crests
   Paths:
     - stage/F010r/r0/l0/SwSB/1
 
 - name: Isle of Songs - Strike Crest with White Sword
   original_item: Din's Power
-  type:
+  types:
+    - Crests
   Paths:
     - stage/F010r/r0/l0/SwSB/2
 
 - name: Isle of Songs - Top Goddess Chest
   original_item: Small Bomb Bag
-  type: goddess, Volcano Summit Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F023/r0/l0/TBox/85
   cube_region: Volcano Summit
 
 - name: Isle of Songs - Lower Goddess Chest
   original_item: Gold Rupee
-  type: goddess, Eldin Volcano Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F023/r0/l0/TBox/92
   cube_region: Mogma Turf
 
 - name: The Thunderhead - Song from Levias
   original_item: Song of the Hero
-  type: Scrapper Deliveries, Combat, NPC
+  types:
+    - Scrapper Deliveries
+    - Combat
+    - NPC
   hint: always
   Paths:
     - event/120-Nushi/give item after levias
@@ -1023,7 +1276,9 @@
 
 - name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
   original_item: Beedle's Insect Cage
-  type: Minigames, NPC
+  types:
+    - Minigames
+    - NPC
   hint: sometimes
   Paths:
     - event/116-InsectGame/69
@@ -1031,64 +1286,83 @@
 
 - name: Bug Heaven - Goddess Chest
   original_item: Heart Piece
-  type: goddess, Volcano Summit Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F023/r0/l0/TBox/88
   cube_region: Volcano Summit
 
 - name: Bug Heaven - Stamina Fruit near Start
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F023/r0/l0/Item/0xFC87
 
 - name: Bug Heaven - Stamina Fruit in front of Wooden Plank
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F023/r0/l0/Item/0xFC1C
 
 - name: Bug Heaven - Stamina Fruit in Center Room
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F023/r0/l0/Item/0xFC86
 
 - name: Bug Heaven - Stamina Fruit on top of Slope
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F023/r0/l0/Item/0xFC10
 
 - name: Bug Heaven - Nearby Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 12
 
 - name: Thunderhead East Island - Chest
   original_item: Evil Crystal
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F023/r0/l0/TBox/94
 
 - name: Thunderhead East Island - Goddess Chest
   original_item: Rupee Medal
-  type: goddess, Faron Woods Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F023/r0/l0/TBox/73
   cube_region: Faron Woods
 
 - name: Mogma Mitts Island - First Goddess Chest
   original_item: Empty Bottle
-  type: goddess, Volcano Summit Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
     - stage/F023/r0/l0/TBox/77
   cube_region: Volcano Summit
 
 - name: Mogma Mitts Island - Second Goddess Chest
   original_item: Small Quiver
-  type: goddess, Sand Sea Goddess Chests
+  types:
+    - Chests
+    - Goddess Chests
   Paths:
    - stage/F023/r0/l0/TBox/76
   cube_region: Lanayru Gorge
@@ -1097,163 +1371,214 @@
 
 - name: Sealed Grounds - Spiral Stamina Fruit 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1D
 
 - name: Sealed Grounds - Spiral Stamina Fruit 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC2C
 
 - name: Sealed Grounds - Spiral Stamina Fruit 3
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1C
 
 - name: Sealed Grounds - Spiral Stamina Fruit 4
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC2B
 
 - name: Sealed Grounds - Spiral Stamina Fruit 5
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1B
 
 - name: Sealed Grounds - Spiral Stamina Fruit 6
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC2A
 
 - name: Sealed Grounds - Spiral Stamina Fruit 7
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC29
 
 - name: Sealed Grounds - Spiral Stamina Fruit 8
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1A
 
 - name: Sealed Grounds - Spiral Stamina Fruit 9
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC28
 
 - name: Sealed Grounds - Spiral Stamina Fruit 10
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC27
 
 - name: Sealed Grounds - Spiral Stamina Fruit 11
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC19
 
 - name: Sealed Grounds - Spiral Stamina Fruit 12
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC26
 
 - name: Sealed Grounds - Spiral Stamina Fruit 13
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC25
 
 - name: Sealed Grounds - Spiral Stamina Fruit 14
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC18
 
 - name: Sealed Grounds - Spiral Stamina Fruit 15
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC24
 
 - name: Sealed Grounds - Spiral Stamina Fruit 16
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC23
 
 - name: Sealed Grounds - Spiral Stamina Fruit 17
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC2D
 
 - name: Sealed Grounds - Spiral Stamina Fruit 18
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC22
 
 - name: Sealed Grounds - Spiral Stamina Fruit 19
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC17
 
 - name: Sealed Grounds - Spiral Stamina Fruit 20
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC21
 
 - name: Sealed Grounds - Spiral Stamina Fruit 21
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC20
 
 - name: Sealed Grounds - Spiral Stamina Fruit 22
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC16
 
 - name: Sealed Grounds - Spiral Stamina Fruit 23
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1F
 
 - name: Sealed Grounds - Spiral Stamina Fruit 24
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
    - stage/F401/r1/l0/Item/0xFC1E
 
 - name: Sealed Temple - Chest
   original_item: Revitalizing Potion
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F402/r2/l0/TBox/64
 
 - name: Sealed Temple - Song from Impa
   original_item: Ballad of the Goddess
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/501-Inpa/267
     - oarc/F402/l0
 
 - name: Sealed Grounds - Gorko's Goddess Wall Reward
-  type: NPC
+  types:
+    - NPC
   original_item: Heart Piece
   hint: sometimes
   Paths:
@@ -1262,20 +1587,24 @@
 
 # Sealed Grounds - Behind the Temple Triforce on Goddess Wall:
 #   original_item: Gold Rupee
-#   type:
+#   types:
+#     - Goddess Walls
 #   Paths:
 #    - event/503-Goron/418
 #    - oarc/F400/l0
 
 - name: Sealed Grounds - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 13
 
 - name: Hylia's Temple - Zelda's Blessing
   original_item: Progressive Sword
-  type: NPC #TODO: this may need to be revisited as it doesnt really fit any other checks
+  types:
+    - NPC #TODO: this may need to be revisited as it doesnt really fit any other checks
   hint: sometimes
   Paths:
     - event/502-CenterFieldBack/17
@@ -1283,24 +1612,31 @@
 
 - name: Hylia's Realm - Defeat Demise
   original_item: Game Beatable
+  types:
+    - Game Beatable
+  is_gui_excluded_location: False
 
 # Faron Woods:
 
 - name: Faron Woods - Item behind Bombable Rock
   original_item: Heart Piece
-  type:
+  types:
+    - Freestanding Items
   Paths:
     - stage/F100/r0/l0/Item/33 #last thing is SceneflagID
 
 - name: Faron Woods - Item on Tree
   original_item: Heart Piece
-  type:
+  types:
+    - Freestanding Items
   Paths:
     - stage/F100/r0/l0/Item/68
 
 - name: Faron Woods - Kikwi Elder's Reward
   original_item: Progressive Slingshot
-  type: NPC, Combat # because of the Lopsa Bokoblin fight, this is a Combat reward
+  types:
+    - NPC
+    - Combat # this is a Combat reward because of the Machi and Lopsa Bokoblin fights
   hint: sometimes
   Paths:
     - stage/F100/r0/l1/NpcKyuE/0x1EBB # id is different from SD
@@ -1308,315 +1644,404 @@
 
 - name: Faron Woods - Rupee on Hollow Tree Root
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/F100/r0/l0/Item/42
 
 - name: Faron Woods - Rupee on Hollow Tree Branch
   original_item: Red Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/F100/r0/l0/Item/41
 
 - name: Faron Woods - Rupee on Platform near Floria Door
   original_item: Red Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/F100/r0/l0/Item/40
 
 - name: Faron Woods - Chest behind Bombable Rocks near Erla
-  original_item: Semi Rare Treasure
-  type:
+  original_item: Uncommon Treasure
+  types:
+    - Chests
   Paths:
     - stage/F100/r0/l0/TBox/64
 
 - name: Faron Woods - Rupee on Great Tree North Branch
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/F100/r0/l0/Item/43
 
 - name: Faron Woods - Rupee on Great Tree West Branch
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/F100/r0/l0/Item/44
 
 - name: Faron Woods - Stamina Fruit on Vines below First Log
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F100/r0/l0/Item/0x60E6
 
 - name: Faron Woods - Stamina Fruit past Empty Slope
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F100/r0/l0/Item/0x64E5
 
 - name: Faron Woods - Stamina Fruit past Baba Slope
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F100/r0/l0/Item/0x0CE7
 
 - name: Faron Woods - Stamina Fruit on Vines near Erla
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F100/r0/l0/Item/0x5CE4
 
 - name: Faron Woods - Stamina Fruit on Vines on Great Tree
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F100/r0/l0/Item/0x50E3
 
 - name: Faron Woods - Goddess Cube on West Great Tree near Exit
   original_item: Faron Woods Goddess Cube on West Great Tree near Exit
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Faron Woods - Goddess Cube on East Great Tree with Clawshots Target
   original_item: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Faron Woods - Goddess Cube on East Great Tree with Rope
   original_item: Faron Woods Goddess Cube on East Great Tree with Rope
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Great Tree - Chest
   original_item: Gold Rupee
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/F100_1/r0/l0/TBox/84
 
 - name: Deep Woods - Chest
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F101/r0/l0/TBox/74
 
 - name: Deep Woods - Stamina Fruit
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F101/r0/l0/Item/0xFC61
 
 - name: Deep Woods - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 15
 
 - name: Deep Woods - Goddess Cube Near Goron
   original_item: Deep Woods Goddess Cube Near Goron
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Deep Woods - Goddess Cube in front of Skyview
   original_item: Deep Woods Goddess Cube in front of Skyview
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Deep Woods - Goddess Cube on top of Skyview
   original_item: Deep Woods Goddess Cube on top of Skyview
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 # Lake Floria:
 
 - name: Lake Floria - Rupee under Central Boulder
   original_item: Silver Rupee
-  type: Freestanding Rupee, Advanced Rupee
+  types:
+    - Freestanding Rupees
+    - Advanced Rupees
   Paths:
     - stage/F102/r2/l0/Item/60
 
 - name: Lake Floria - Rupee behind Southwest Boulder
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/F102/r2/l0/Item/63
 
 - name: Lake Floria - Left Rupee behind Northwest Boulder
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/F102/r2/l0/Item/62
 
 - name: Lake Floria - Right Rupee behind Northwest Boulder
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/F102/r2/l0/Item/61
 
 - name: Lake Floria - Chest
   original_item: Goddess Plume
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F102/r3/l0/TBox/64
 
 - name: Lake Floria - Dragon Lair South Chest
   original_item: Silver Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F102_2/r0/l0/TBox/84
 
 - name: Lake Floria - Dragon Lair East Chest
-  original_item: Semi Rare Treasure
-  type:
+  original_item: Uncommon Treasure
+  types:
+    - Chests
   Paths:
     - stage/F102_2/r0/l0/TBox/85
 
 - name: Lake Floria - Goddess Cube
   original_item: Lake Floria Goddess Cube
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Floria Waterfall - Rupee on High Ledge
   original_item: Gold Rupee
-  type: Freestanding Rupee, Advanced Rupee
+  types:
+    - Freestanding Rupees
+    - Advanced Rupees
   Paths:
    - stage/F102_1/r0/l0/Item/64
 
 - name: Floria Waterfall - North Rupee in underwater Grass
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F102_1/r0/l0/Item/0xFC19
 
 - name: Floria Waterfall - South Rupee in underwater Grass
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F102_1/r0/l0/Item/0xFC1A
 
 - name: Floria Waterfall - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 28
 
 - name: Floria Waterfall - Goddess Cube on High Ledge
   original_item: Floria Waterfall Goddess Cube on High Ledge
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 # Flooded Faron Woods:
 
 # - name: Flooded Faron Woods - Yellow Tadtone under Lilypad
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/10 # group number
 
 # - name: Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/4 # group number
 
 # - name: Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/2 # group number
 
 # - name: Flooded Faron Woods - Red Moving Tadtone near Viewing Platform
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/1 # group number
 
 # - name: Flooded Faron Woods - Light Blue Tadtone under Great Tree Root
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/13 # group number
 
 # - name: Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/6 # group number
 
 # - name: Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/8 # group number
 
 # - name: Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/11 # group number
 
 # - name: Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/5 # group number
 
 # - name: Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/3 # group number
 
 # - name: Flooded Faron Woods - 8 Green Tadtones in West Tunnel
 #   original_item: Group of Tadtones
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/9 # group number
 
 # - name: Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/15 # group number
 
 # - name: Flooded Faron Woods - 16 Dark Blue Tadtones in the South West
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/17 # group number
 
 # - name: Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/16 # group number
 
 # - name: Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/7 # group number
 
 # - name: Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/14 # group number
 
 # - name: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
 #   original_item: Group of Tadtones 
-#   type: Tadtones
+#   types:
+#     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/12 # group number
 
 
 # - name: Flooded Faron Woods - Rupee 1
 #   original_item: Red Rupee
-#   type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+#   types:
+#     - Freestanding Rupees
+#     - Intermediate Rupees
+#     - Custom Flag
 #   Paths:
 #     - stage/F103_1/r0/l0/Item/0xFC44 # Needs moving to layer 0
 
 # - name: Flooded Faron Woods - Rupee 2
 #   original_item: Red Rupee
-#   type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+#   types:
+#     - Freestanding Rupees
+#     - Intermediate Rupees
+#     - Custom Flag
 #   Paths:
 #     - stage/F103_1/r0/l0/Item/0xFC45 # Needs moving to layer 0
 
 # - name: Flooded Faron Woods - Water Dragon's Reward
 #   original_item: Faron Song of the Hero Part
-#   type: Tadtones, NPC
+#   types:
+#     - Tadtones
+#     - NPC
 #   hint: sometimes
 #   Paths:
 #     - event/204-ForestF3/Give item after Faron SotH CS
@@ -1626,224 +2051,296 @@
 
 - name: Eldin Volcano - Rupee on Ledge before First Room
   original_item: Red Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/F200/r0/l0/Item/41
 
 - name: Eldin Volcano - Chest behind Bombable Wall in First Room
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F200/r1/l0/TBox/72
 
 - name: Eldin Volcano - Rupee behind Bombable Wall in First Room
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/F200/r1/l0/Item/13
 
 - name: Eldin Volcano - Rupee in Crawlspace in First Room
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/F200/r1/l0/Item/19
 
 - name: Eldin Volcano - Underground Rupee in First Room 1
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF1 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in First Room 2
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF2 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in First Room 3
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF3 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in First Room 4
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF6 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in First Room 5
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF5 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in First Room 6
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF4 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in First Room 7
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF7 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in First Room 8
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF8 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in First Room 9
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFFF9 # ids hardcoded in the objmove patches
 
 
 - name: Eldin Volcano - Chest after Crawlspace
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F200/r2/l0/TBox/66
 
 - name: Eldin Volcano - Southeast Rupee above Mogma Turf Entrance
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/F200/r2/l0/Item/125
 
 - name: Eldin Volcano - North Rupee above Mogma Turf Entrance
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/F200/r2/l0/Item/123
 
 - name: Eldin Volcano - Underground Rupee before Bone Bridge 1
   original_item: Red Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/152
 
 - name: Eldin Volcano - Underground Rupee before Bone Bridge 2
   original_item: Red Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/173
 
 - name: Eldin Volcano - Chest behind Bombable Wall near Cliff
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F200/r2/l0/TBox/73
 
 - name: Eldin Volcano - Item on Cliff
   original_item: Heart Piece
-  type:
+  types:
+    - Freestanding Items
   Paths:
     - stage/F200/r2/l0/Item/102 #sceneflagID
 
 - name: Eldin Volcano - Rupee in Old Pyrup Shell near Cliff
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/183
 
 - name: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/184
 
 - name: Eldin Volcano - Underground Rupee in Cliff 1
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFEF # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 2
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFEE # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 3
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE4 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 4
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFED # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 5
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFEC # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 6
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFEB # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 7
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE3 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 8
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFEA # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 9
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE9 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 10
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE8 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 11
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE2 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 12
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE7 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 13
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE6 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 14
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE5 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee in Cliff 15
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFFE1 # ids hardcoded in the objmove patches
 
@@ -1851,244 +2348,341 @@
 # 
 # - name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1
 #   original_item: Blue Rupee
-#   type: Underground Rupee, Custom Flag
+#   types:
+#     - Underground Rupees
+#     - Custom Flag
 #   Paths:
 #     - stage/F200/r2/l0/Item/0xFFFA # ids hardcoded in the objmove patches
 
 # - name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2
 #   original_item: Rupoor
-#   type: Underground Rupee, Custom Flag
+#   types:
+#     - Underground Rupees
+#     - Custom Flag
 #   Paths:
 #     - stage/F200/r2/l0/Item/0xFFFB # ids hardcoded in the objmove patches
 
 # - name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3
 #   original_item: Red Rupee
-#   type: Underground Rupee, Custom Flag
+#   types:
+#     - Underground Rupees
+#     - Custom Flag
 #   Paths:
 #     - stage/F200/r2/l0/Item/0xFFFC # ids hardcoded in the objmove patches
 
 
 - name: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F200/r2/l0/TBox/71
 
 - name: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/F200/r4/l0/Item/45
 
 - name: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/F200/r4/l0/Item/11
 
 - name: Thrill Digger Cave - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 16
 
 - name: Eldin Volcano - Gossip Stone next to Earth Temple
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 14
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 1
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFDA # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 2
   original_item: Rupoor
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD1 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 3
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD3 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 4
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD2 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 5
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD7 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 6
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD9 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 7
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD4 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 8
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD5 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 9
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD6 # ids hardcoded in the objmove patches
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 10
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFFD8 # ids hardcoded in the objmove patches
 
 - name: Upper Eldin Cave - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 21
 
 - name: Lower Eldin Cave - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 17
 
 - name: Eldin Volcano - Goddess Cube at Eldin Entrance
   original_item: Eldin Volcano Goddess Cube at Eldin Entrance
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Eldin Volcano - Goddess Cube near Mogma Turf Entrance
   original_item: Eldin Volcano Goddess Cube near Mogma Turf Entrance
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
   original_item: Eldin Volcano Goddess Cube West of Earth Temple Entrance
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
   original_item: Eldin Volcano Goddess Cube East of Earth Temple Entrance
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Eldin Volcano - Goddess Cube on Sand Slide
   original_item: Eldin Volcano Goddess Cube on Sand Slide
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 1
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C00
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 2
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C01
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 3
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C02
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 4
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C03
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 5
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C04
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 6
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C05
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 7
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C06
 
 - name: Eldin Volcano - Left Rupee on Sand Slide 8
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C07
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 1
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C08
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 2
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C09
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 3
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r6/l0/Item/0x2C0A
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 4
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r7/l0/Item/0xFC00
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 5
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r7/l0/Item/0xFC01
 
 - name: Eldin Volcano - Right Rupee on Sand Slide 6
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F200/r7/l0/Item/0xFC02
 
 - name: Eldin Volcano - Stamina Fruit in Rising Lava Room
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r1/l0/Item/0xFC1B
 
 - name: Eldin Volcano - Stamina Fruit near Volcano East Statue
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFC4D
 
 - name: Eldin Volcano - Stamina Fruit in front of Bone Bridge
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r2/l1/Item/0xFCC6
     - stage/F200/r2/l2/Item/0xFCBE
@@ -2097,85 +2691,113 @@
 
 - name: Eldin Volcano - Stamina Fruit near Item on Cliff
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFC4E
 
 - name: Eldin Volcano - Stamina Fruit in front of First Slope 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC2F
 
 - name: Eldin Volcano - Stamina Fruit in front of First Slope 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC30
 
 - name: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r8/l0/Item/0xFC02
 
 - name: Eldin Volcano - Stamina Fruit after First Slope
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC31
 
 - name: Eldin Volcano - Stamina Fruit next to Small Puddle
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC32
 
 - name: Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC33
 
 - name: Eldin Volcano - Stamina Fruit in front of Second Slope 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC36
 
 - name: Eldin Volcano - Stamina Fruit in front of Second Slope 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC34
 
 - name: Eldin Volcano - Stamina Fruit in front of Second Slope 3
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r4/l0/Item/0xFC35
 
 - name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r5/l0/Item/0xFC0B
 
 - name: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r5/l0/Item/0xFC0C
 
 - name: Eldin Volcano - Stamina Fruit on vines near Hot Cave
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r5/l0/Item/0x2805
 
 - name: Eldin Volcano - Stamina Fruit after Big Sand Slide
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFC4F
 
@@ -2183,31 +2805,36 @@
 
 - name: Eldin Volcano - Digging Spot in front of Earth Temple
   original_item: Key Piece
-  type:
+  types:
+    - Digging Spots
   Paths:
     - stage/F200/r4/l1/Soil/8
 
 - name: Eldin Volcano - Digging Spot below Tower
   original_item: Key Piece
-  type:
+  types:
+    - Digging Spots
   Paths:
     - stage/F200/r4/l1/Soil/9
 
 - name: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
   original_item: Key Piece
-  type:
+  types:
+    - Digging Spots
   Paths:
     - stage/F200/r4/l1/Soil/12
 
 - name: Eldin Volcano - Digging Spot after Vents
   original_item: Key Piece
-  type:
+  types:
+    - Digging Spots
   Paths:
     - stage/F200/r6/l1/Soil/10
 
 - name: Eldin Volcano - Digging Spot after Draining Lava
   original_item: Key Piece
-  type:
+  types:
+    - Digging Spots
   Paths:
     - stage/F200/r2/l1/Soil/64
 
@@ -2215,19 +2842,23 @@
 
 - name: Mogma Turf - Free Fall Chest
   original_item: Eldin Ore
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F210/r0/l0/TBox/64
 
 - name: Mogma Turf - Chest behind Bombable Wall at Entrance
   original_item: Golden Skull
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F210/r0/l0/TBox/65
 
 - name: Mogma Turf - Defeat Bokoblins
   original_item: Progressive Mitts
-  type: Combat, NPC
+  types:
+    - Combat
+    - NPC
   Paths:
     - event/300-Mountain/6
     - event/300-Mountain/135
@@ -2235,141 +2866,174 @@
 
 - name: Mogma Turf - Sand Slide Chest
   original_item: Eldin Ore
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F210/r0/l0/TBox/68
 
 - name: Mogma Turf - Rupee in First Pyrup Hole in Fire Maze
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F210/r0/l0/Item/169
 
 - name: Mogma Turf - Chest behind Bombable Wall in Fire Maze
   original_item: Silver Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F210/r0/l0/TBox/70
 
 - name: Mogma Turf - Goddess Cube
   original_item: Mogma Turf Goddess Cube
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 # Volcano Summit:
 
 - name: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
   original_item: Silver Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F201_4/r0/l0/TBox/95
 
 - name: Volcano Summit - Item behind Digging
   original_item: Heart Piece
-  type:
+  types:
+    - Freestanding Items
   hint: sometimes
   Paths:
     - stage/F201_3/r0/l0/Item/104 #sceneflagID
 
 - name: Volcano Summit - Underground Rupee 1
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F201_3/r0/l0/Item/135 #sceneflagID
 
 - name: Volcano Summit - Underground Rupee 2
   original_item: Green Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/F201_3/r0/l0/Item/136 #sceneflagID
 
 - name: Volcano Summit - Gossip Stone in Waterfall Area
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 26
 
 - name: Volcano Summit - Gossip Stone near Second Thirsty Frog
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 31
 
 - name: Volcano Summit - Goddess Cube in Lava Lake
   original_item: Volcano Summit Goddess Cube in Lava Lake
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Volcano Summit - Goddess Cube at Summit Waterfall
   original_item: Volcano Summit Goddess Cube at Summit Waterfall
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
   original_item: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 
 # Bokoblin Base:
 
 - name: Bokoblin Base - Plats' Gift
   original_item: Mogma Mitts
-  type: NPC
+  types:
+    - NPC
   Paths:
    - event/305-MountainF3/Plats' Gift
    - oarc/F202/l1
 
 - name: Bokoblin Base - Chest near Bone Bridge
   original_item: Gust Bellows
-  type:
+  types:
+    - Chests
   Paths:
    - stage/F202/r2/l1/TBox/70
 
 - name: Bokoblin Base - Chest on Cliff
   original_item: Clawshots
-  type:
+  types:
+    - Chests
   Paths:
    - stage/F202/r2/l1/TBox/66
 
 - name: Bokoblin Base - Chest near Drawbridge
   original_item: Whip
-  type:
+  types:
+    - Chests
   Paths:
    - stage/F202/r2/l1/TBox/67
 
 - name: Bokoblin Base - Chest East of Earth Temple Entrance
   original_item: Progressive Slingshot
-  type:
+  types:
+    - Chests
   Paths:
    - stage/F202/r4/l1/TBox/68
 
 - name: Bokoblin Base - Chest West of Earth Temple Entrance
   original_item: Bomb Bag
-  type:
+  types:
+    - Chests
   Paths:
    - stage/F202/r4/l1/TBox/69
 
 - name: Bokoblin Base - First Chest in Volcano Summit
   original_item: Blue Rupee
-  type:
+  types:
+    - Chests
   Paths:
    - stage/F201_2/r0/l0/TBox/72
    - stage/F201_1/r0/l4/TBox/72
 
 - name: Bokoblin Base - Raised Chest in Volcano Summit
   original_item: Progressive Sword
-  type:
+  types:
+    - Chests
   Paths:
    - stage/F201_2/r0/l0/TBox/73
    - stage/F201_1/r0/l4/TBox/73
 
 - name: Bokoblin Base - Chest in Volcano Summit Alcove
   original_item: Progressive Pouch
-  type:
+  types:
+    - Chests
   Paths:
    - stage/F201_2/r0/l0/TBox/71
    - stage/F201_1/r0/l4/TBox/71
 
 - name: Bokoblin Base - Fire Dragon's Reward
   original_item: Eldin Song of the Hero Part
-  type: NPC
+  types:
+    - NPC
   Paths:
    - event/305-MountainF3/Give item after Eldin SotH CS
    - oarc/F221/l0
@@ -2378,347 +3042,463 @@
 
 - name: Lanayru Mine - Chest behind First Landing
   original_item: Evil Crystal
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_1/r0/l0/TBox/64
 
 - name: Lanayru Mine - Chest near First Timeshift Stone
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_1/r1/l0/TBox/65
 
 - name: Lanayru Mine - Rupee on Southeast Conveyor 1
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/148
 
 - name: Lanayru Mine - Rupee on Southeast Conveyor 2
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/149
 
 - name: Lanayru Mine - Rupee on Southwest Conveyor 1
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/150
 
 - name: Lanayru Mine - Rupee on Southwest Conveyor 2
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/147
 
 - name: Lanayru Mine - Chest behind Northeast Statue
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_1/r2/l0/TBox/67
 
 - name: Lanayru Mine - Rupee behind Northeast Statue
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC37
 
 - name: Lanayru Mine - Rupee behind Southwest Statue
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC15
 
 - name: Lanayru Mine - Chest at the End of Mine
   original_item: Rare Treasure
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_1/r2/l0/TBox/66
 
 - name: Lanayru Mine - Stamina Fruit before Falling Statues
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC31
 
 - name: Lanayru Mine - Stamina Fruit after Falling Statues
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC19
 
 - name: Lanayru Mine - Stamina Fruit near Spumes 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC1A
 
 - name: Lanayru Mine - Stamina Fruit near Spumes 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC1B
 
 - name: Lanayru Mine - Stamina Fruit near Spumes 3
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC1C
 
 - name: Lanayru Mine - Goddess Cube
   original_item: Lanayru Mine Goddess Cube
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 # Lanayru Desert:
 
 - name: Lanayru Desert - Chest near Party Wheel
   original_item: Golden Skull
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300/r0/l0/TBox/70
 
 - name: Lanayru Desert - Chest near Caged Robot
   original_item: Tumbleweed
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300/r0/l0/TBox/84
 
 - name: Lanayru Desert - Rupee above Caged Robot 1
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFCC2
 
 - name: Lanayru Desert - Rupee above Caged Robot 2
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFCC3
 
 - name: Lanayru Desert - Rescue Caged Robot
   original_item: Progressive Beetle
-  type: Combat, NPC
+  types:
+    - Combat
+    - NPC
   Paths:
     - event/400-Desert/8
     - oarc/F300/l0
 
 - name: Lanayru Desert - Rupee behind South Statue near Caged Robot
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC34
 
 - name: Lanayru Desert - Rupee behind West Statue near Caged Robot
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC35
 
 - name: Lanayru Desert - Rupee behind East Statue before Sand Oasis
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC31
 
 - name: Lanayru Desert - Rupee behind West Statue before Sand Oasis
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC36
 
 - name: Lanayru Desert - Chest on Platform near Fire Node
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300/r0/l0/TBox/73
 
 - name: Lanayru Desert - Chest on Platform near Lightning Node
   original_item: Dusk Relic
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300/r0/l0/TBox/72
 
 - name: Lanayru Desert - Chest near Sand Oasis
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300/r0/l0/TBox/71
 
 - name: Lanayru Desert - Chest on top of Lanayru Mining Facility # actually spawns on raising LMF
   original_item: Rare Treasure # TODO check
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/F300/r0/l1/TBox/83
 
 - name: Lanayru Desert - Secret Passageway Chest
   original_item: Heart Piece
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/F300/r0/l0/TBox/74
 
 - name: Lanayru Desert - Stamina Fruit on Ledge to Party Wheel
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC3B
 
 - name: Lanayru Desert - Stamina Fruit on South LMF Ledge
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
-    - stage/F300/r0/l0/Item/0xFE2A
+    - stage/F300/r0/l0/Item/0xFFF0
 
 - name: Lanayru Desert - Stamina Fruit on West LMF Ledge
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
-    - stage/F300/r0/l0/Item/0xFE2B
+    - stage/F300/r0/l0/Item/0xFFF1
 
 - name: Lanayru Desert - Stamina Fruit on LMF Wall Vines
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
-    - stage/F300/r0/l0/Item/0xFE2C
+    - stage/F300/r0/l0/Item/0xFFF2
 
 - name: Lanayru Desert - Stamina Fruit in South Sand Oasis 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC32
 
 - name: Lanayru Desert - Stamina Fruit in South Sand Oasis 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC33
 
 - name: Lanayru Desert - Stamina Fruit in North Sand Oasis 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFCAF
 
 - name: Lanayru Desert - Stamina Fruit in North Sand Oasis 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC3C
 
 - name: Temple of Time - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 25
 
 - name: Temple of Time - Northwest Rupee on Tree Root
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC0A
 
 - name: Temple of Time - Northeast Rupee on Tree Root
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC09
 
 - name: Temple of Time - Southeast Rupee on Tree Root
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC08
 
 - name: Temple of Time - East Rupee on Tree Trunk
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC0B
 
 - name: Temple of Time - South Rupee on Tree Trunk
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC0C
 
 - name: Temple of Time - Rupee on North Gate of Time Pillar
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFFFD
 
 - name: Temple of Time - Rupee on Southwest Gate of Time Pillar
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFFFE
 
 - name: Lanayru Desert - Goddess Cube in Secret Passageway
   original_item: Lanayru Desert Goddess Cube in Secret Passageway
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Lanayru Desert - Goddess Cube near Caged Robot
   original_item: Lanayru Desert Goddess Cube near Caged Robot
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Lanayru Desert - Goddess Cube in Sand Oasis
   original_item: Lanayru Desert Goddess Cube in Sand Oasis
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Temple of Time - Goddess Cube
   original_item: Temple of Time Goddess Cube
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 ## Nodes
 
 - name: Fire Node - Shortcut Chest
   original_item: Rare Treasure # TODO check again
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/F300_3/r0/l0/TBox/79
 
 - name: Fire Node - First Small Chest
   original_item: Blue Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_3/r0/l0/TBox/78
 
 - name: Fire Node - Second Small Chest
   original_item: Blue Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_3/r0/l0/TBox/80
 
 - name: Fire Node - Left Ending Chest
   original_item: Golden Skull # TODO check again
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_3/r0/l0/TBox/81
 
 - name: Fire Node - Right Ending Chest
   original_item: Blue Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_3/r0/l0/TBox/82
 
 - name: Lightning Node - First Chest
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_2/r0/l0/TBox/75
 
 - name: Lightning Node - Second Chest
   original_item: Blue Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_2/r0/l0/TBox/76
 
 - name: Lightning Node - Raised Chest near Generator
   original_item: Rare Treasure # TODO check again
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F300_2/r0/l0/TBox/77
 
@@ -2726,26 +3506,32 @@
 
 - name: Lanayru Caves - Chest
   original_item: Golden Skull # TODO check again
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F303/r0/l0/TBox/127
 
 - name: Lanayru Caves - Golo's Gift
   original_item: Lanayru Caves Small Key
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/404-DesertF3/127
     - oarc/F303/l0
 
 - name: Lanayru Caves - Gossip Stone in Center
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 24
 
 - name: Lanayru Caves - Gossip Stone towards Lanayru Gorge
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 29
 
@@ -2753,162 +3539,219 @@
 
 - name: Lanayru Gorge - Thunder Dragon's Reward
   original_item: Lanayru Song of the Hero Part
-  type: NPC
+  types:
+    - NPC
   hint: sometimes
   Paths:
     - event/404-DesertF3/give item after Healing Thunderdragon
     - oarc/F302/l0
 
 - name: Lanayru Gorge - Item on Pillar
-  original_item: Red Rupee
-  type:
+  original_item: Lanayru Caves Small Key
+  types:
+    - Freestanding Items
   Paths:
     - stage/F302/r0/l0/Item/9
 
 - name: Lanayru Gorge - Digging Spot
   original_item: Life Tree Seedling
-  type:
+  types:
+    - Digging Spots
   Paths:
     - stage/F302/r0/l0/Soil/30
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F302/r0/l0/Item/0xFC2E
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F302/r0/l0/Item/0xFC29
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F302/r0/l0/Item/0xFC27
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F302/r0/l0/Item/0xFC28
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/F302/r0/l0/Item/0xFC2D
 
 - name: Lanayru Gorge - Goddess Cube
   original_item: Lanayru Gorge Goddess Cube
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 # Lanayru Sand Sea:
 ## Ancient Harbour
 
 - name: Ancient Harbour - Rupee on First Pillar
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/F301/r0/l0/Item/92
 
 - name: Ancient Harbour - Left Rupee on Entrance Crown
   original_item: Silver Rupee
-  type: Freestanding Rupee, Advanced Rupee
+  types:
+    - Freestanding Rupees
+    - Advanced Rupees
+    - Allowed Unreachable
   Paths:
     - stage/F301/r0/l0/Item/91
 
 - name: Ancient Harbour - Right Rupee on Entrance Crown
   original_item: Silver Rupee
-  type: Freestanding Rupee, Advanced Rupee
+  types:
+    - Freestanding Rupees
+    - Advanced Rupees
+    - Allowed Unreachable
   Paths:
     - stage/F301/r0/l0/Item/93
 
 - name: Ancient Harbour - Goddess Cube
   original_item: Ancient Harbour Goddess Cube
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 ## Skipper's Retreat
 
 - name: Skipper's Retreat - Chest after Moblin
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F301_3/r0/l0/TBox/78
 
 - name: Skipper's Retreat - Chest on top of Cacti Pillar
-  original_item: Semi Rare Treasure
-  type:
+  original_item: Uncommon Treasure
+  types:
+    - Chests
   Paths:
     - stage/F301_3/r0/l0/TBox/76
 
 - name: Skipper's Retreat - Chest in Shack
   original_item: Sea Chart
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/F301_5/r0/l0/TBox/65
 
 - name: Skipper's Retreat - Skipper's Closet
   original_item: Green Rupee
-  type: Closet
+  types:
+    - Closets
   hint: sometimes
   Paths:
     - stage/F301_5/r0/l0/chest/0xFC0C
     
 - name: Skipper's Retreat - Rupee under Sand in Shack 1
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC10
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 2
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC1A
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 3
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC19
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 4
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC08
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 5
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC09
 
 - name: Skipper's Retreat - Rupee under Sand in Shack 6
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/F301_5/r0/l0/Item/0xFC07
 
 - name: Skipper's Retreat - Skydive Chest
   original_item: Silver Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F301_3/r0/l0/TBox/77
 
 - name: Skipper's Retreat - Goddess Cube
   original_item: Skipper's Retreat Goddess Cube
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 ## Shipyard
 
 - name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
   original_item: Heart Piece
-  type: Minigames, NPC
+  types:
+    - Minigames
+    - NPC
   hint: sometimes
   Paths:
     - event/406-TrolleyRace/77
@@ -2916,7 +3759,9 @@
 
 - name: Shipyard - Gossip Stone
   original_item: Nothing
-  type: Hint Location
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 23
 
@@ -2924,19 +3769,27 @@
 
 - name: Pirate Stronghold - Rupee on East Sea Pillar
   original_item: Silver Rupee
-  type: Freestanding Rupee, Advanced Rupee
+  types:
+    - Freestanding Rupees
+    - Advanced Rupees
+    - Allowed Unreachable
   Paths:
     - stage/F301_6/r0/l0/Item/12
 
 - name: Pirate Stronghold - Rupee on West Sea Pillar
   original_item: Silver Rupee
-  type: Freestanding Rupee, Advanced Rupee
+  types:
+    - Freestanding Rupees
+    - Advanced Rupees
+    - Allowed Unreachable
   Paths:
     - stage/F301_6/r0/l0/Item/11
 
 - name: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
   original_item: Silver Rupee
-  type: Freestanding Rupee, Advanced Rupee
+  types:
+    - Freestanding Rupees
+    - Advanced Rupees
   Paths:
     - stage/F301_6/r0/l1/Item/13
     - stage/F301_6/r0/l2/Item/13
@@ -2944,41 +3797,52 @@
 
 - name: Pirate Stronghold - Stamina Fruit on Left Side
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F301_6/r0/l0/Item/0xFC1F
 
 - name: Pirate Stronghold - Stamina Fruit on Upper Right Side
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F301_6/r0/l0/Item/0xFC20
 
 - name: Pirate Stronghold - Stamina Fruit on Lower Right Side
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/F301_6/r0/l0/Item/0xFC1E
 
 - name: Pirate Stronghold - Goddess Cube
   original_item: Pirate Stronghold Goddess Cube
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Pirate Stronghold Interior - First Chest
   original_item: Silver Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/F301_2/r4/l0/TBox/75
 
 - name: Pirate Stronghold Interior - Second Chest
-  original_item: Semi Rare Treasure
-  type:
+  original_item: Uncommon Treasure
+  types:
+    - Chests
   Paths:
     - stage/F301_2/r5/l0/TBox/73
 
 - name: Pirate Stronghold Interior - Third Chest
-  original_item: Semi Rare Treasure
-  type:
+  original_item: Uncommon Treasure
+  types:
+    - Chests
   Paths:
     - stage/F301_2/r6/l0/TBox/74
 
@@ -2986,138 +3850,183 @@
 
 - name: Skyview Temple - Chest on Tree Branch
   original_item: Skyview Temple Map
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D100/r2/l0/TBox/64
 
 - name: Skyview Temple - Digging Spot in Crawlspace
   original_item: Skyview Temple Small Key
-  type:
+  types:
+    - Digging Spots
   hint: sometimes
   Paths:
     - stage/D100/r4/l0/Soil/15
 
 - name: Skyview Temple - Chest behind Two Eyes
   original_item: Skyview Temple Small Key 
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D100/r4/l0/TBox/67
 
 - name: Skyview Temple - Rupee under South Walkway before Hub Room
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D100/r2/l0/Item/0xFC3D
 
 - name: Skyview Temple - First Rupee under West Walkway before Hub Room
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     # Moved objects get given new ids so use the vanilla tempflag id instead
     - stage/D100/r2/l0/Item/159
 
 - name: Skyview Temple - Second Rupee under West Walkway before Hub Room
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     # Moved objects get given new ids so use the vanilla tempflag id instead
     - stage/D100/r2/l0/Item/158
 
 - name: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D100/r2/l0/Item/0xFC3B
 
 - name: Skyview Temple - Rupee on Coiled Tree Branch before Hub Room
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D100/r2/l0/Item/0xFC3C
 
 - name: Skyview Temple - Chest after Stalfos Fight
   original_item: Progressive Beetle
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D100/r10/l1/TBox/65
     - stage/D100/r10/l2/TBox/65
 
 - name: Skyview Temple - Item behind Bars
   original_item: Heart Piece
-  type:
+  types:
+    - Freestanding Items
   Paths:
     - stage/D100/r5/l0/Item/103
 
 - name: Skyview Temple - Rupee on South Bird Pillar in Hub Room
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC41
 
 - name: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC40
 
 - name: Skyview Temple - Rupee in Southeast Tunnel
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/D100/r5/l0/Item/65
 
 - name: Skyview Temple - Rupee in Southwest Tunnel
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/D100/r5/l0/Item/67
 
 - name: Skyview Temple - Rupee in East Tunnel
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/D100/r5/l0/Item/66
 
 - name: Skyview Temple - First Rupee in Northeast Tunnel
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC3F
 
 - name: Skyview Temple - Second Rupee in Northeast Tunnel
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC3E
 
 - name: Skyview Temple - Third Rupee in Northeast Tunnel
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC3D
 
 - name: Skyview Temple - Chest behind Three Eyes
   original_item: Skyview Temple Small Key 
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/D100/r7/l0/TBox/68
 
 - name: Skyview Temple - Chest near Boss Door
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D100/r9/l0/TBox/70
 
 - name: Skyview Temple - Chest after Vines
   original_item: Skyview Temple Boss Key
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D100/r9/l0/TBox/66
 
 - name: Skyview Temple - Defeat Boss
   original_item: Heart Container
-  type:
+  types:
+    - Defeat Boss
   Paths:
     - stage/B100/r0/l1/HeartCo
     - stage/B100/r0/l2/HeartCo
@@ -3126,113 +4035,139 @@
 
 - name: Skyview Spring - Rupee on Spring Pillar
   original_item: Red Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/B100_1/r0/l0/Item/109
 
 - name: Skyview Spring - Strike Crest
   original_item: Ruby Tablet
   goal_location: true
-  type: NPC
+  types:
+    - Crests
   Paths:
     - event/201-ForestD1/6
     - oarc/B100_1/l0
 
 - name: Skyview Spring - Goddess Cube
   original_item: Skyview Spring Goddess Cube
-  type: Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 # Earth Temple (ET):
 
 - name: Earth Temple - Vent Chest
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D200/r1/l0/TBox/66
 
 - name: Earth Temple - Rupee above Drawbridge
   original_item: Red Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/D200/r1/l0/Item/25
 
 - name: Earth Temple - Chest behind Bombable Rock
   original_item: Golden Skull
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D200/r1/l0/TBox/69
 
 - name: Earth Temple - Chest Left of Main Room Bridge
   original_item: Golden Skull # TODO check again
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D200/r1/l0/TBox/70
 
 - name: Earth Temple - Chest in West Room
   original_item: Earth Temple Map
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D200/r0/l0/TBox/64
 
 - name: Earth Temple - Chest after Double Lizalfos Fight
   original_item: Bomb Bag
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D200/r3/l0/TBox/65
 
 - name: Earth Temple - Ledd's Gift
   original_item: 5 Bombs
-  type: NPC
+  types:
+    - NPC
   Paths:
     - event/301-MountainD1/16
     - oarc/D200/l0
 
 - name: Earth Temple - Rupee in Lava Tunnel
   original_item: Silver Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/D200/r2/l0/Item/21
 
 - name: Earth Temple - Chest Guarded by Lizalfos
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D200/r1/l0/TBox/67
 
 - name: Earth Temple - Chest before Boulder Chase
   original_item: Earth Temple Boss Key
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/D200/r4/l0/TBox/68
 
 - name: Earth Temple - Stamina Fruit before Boulder Chase 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/D200/r4/l0/Item/0xFC02
 
 - name: Earth Temple - Stamina Fruit before Boulder Chase 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/D200/r4/l0/Item/0xFC22
 
 - name: Earth Temple - Stamina Fruit before Boulder Chase 3
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/D200/r4/l0/Item/0xFC27
 
 - name: Earth Temple - Stamina Fruit before Boulder Chase 4
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/D200/r4/l0/Item/0xFC13
 
 - name: Earth Temple - Defeat Boss
   original_item: Heart Container
-  type:
+  types:
+    - Defeat Boss
   Paths:
     - stage/B200/r10/l1/HeartCo
     - stage/B200/r10/l2/HeartCo
@@ -3240,7 +4175,8 @@
 - name: Earth Spring - Strike Crest
   original_item: Amber Tablet
   goal_location: true
-  type: NPC
+  types:
+    - Crests
   Paths:
     - event/301-MountainD1/22
     - oarc/B210/l0
@@ -3249,208 +4185,286 @@
 
 - name: Lanayru Mining Facility - Chest behind Bars
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D300/r0/l0/TBox/64
 
 - name: Lanayru Mining Facility - Left Front Rupee behind Statue
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC12
 
 - name: Lanayru Mining Facility - Left Middle Rupee behind Statue
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC20
 
 - name: Lanayru Mining Facility - Left Back Rupee behind Statue
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC21
 
 - name: Lanayru Mining Facility - Right Front Rupee behind Statue
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC0F
 
 - name: Lanayru Mining Facility - Right Middle Rupee behind Statue
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC0E
 
 - name: Lanayru Mining Facility - Right Back Rupee behind Statue
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D300/r0/l0/Item/0xFC22
 
 - name: Lanayru Mining Facility - First Chest in Hub Room
   original_item: Lanayru Mining Facility Small Key
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D300_1/r5/l0/TBox/70
 
 - name: Lanayru Mining Facility - Chest in First West Room
   original_item: Golden Skull # TODO check again
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D300/r3/l0/TBox/66
 
 - name: Lanayru Mining Facility - Chest after Armos Fight
   original_item: Lanayru Mining Facility Map
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D300/r6/l0/TBox/69
 
 - name: Lanayru Mining Facility - Chest in Key Locked Room
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D300/r2/l0/TBox/65
 
 - name: Lanayru Mining Facility - Hop across Boxes Raised Chest
   original_item: Gust Bellows
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D300/r4/l0/TBox/68
 
 - name: Lanayru Mining Facility - Hop across Boxes Lower Chest
   original_item: Golden Skull # TODO check again
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D300/r4/l0/TBox/76
 
 - name: Lanayru Mining Facility - Rupee in First Crawlspace
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r9/l0/Item/0xFC00
 
 - name: Lanayru Mining Facility - Chest behind First Crawlspace
   original_item: Golden Skull # TODO check again
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D300_1/r9/l0/TBox/72
     - stage/D300/r9/l0/TBox/72
 
 - name: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r9/l0/Item/0xFC07
 
 - name: Lanayru Mining Facility - Second Rupee in Crawlspace before Spike Maze
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r9/l0/Item/0xFC01
 
 - name: Lanayru Mining Facility - West Rupee in Spike Maze 1
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC33
 
 - name: Lanayru Mining Facility - West Rupee in Spike Maze 2
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC32
 
 - name: Lanayru Mining Facility - West Rupee in Spike Maze 3
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC1C
 
 - name: Lanayru Mining Facility - West Rupee in Spike Maze 4
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC27
 
 - name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 1
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC31
 
 - name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 2
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC30
 
 - name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 3
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC1B
 
 - name: Lanayru Mining Facility - Southeast Rupee in Spike Maze 4
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC1A
 
 - name: Lanayru Mining Facility - Central Rupee in Spike Maze 1
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC19
 
 - name: Lanayru Mining Facility - Central Rupee in Spike Maze 2
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC36
 
 - name: Lanayru Mining Facility - Central Rupee in Spike Maze 3
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC28
 
 - name: Lanayru Mining Facility - Northeast Rupee in Spike Maze
   original_item: Green Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r7/l0/Item/0xFC38
 
 - name: Lanayru Mining Facility - Chest in Spike Maze
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D300_1/r7/l0/TBox/73
     - stage/D300/r7/l0/TBox/73
 
 - name: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D300_1/r8/l0/Item/0xFC50
 
 - name: Lanayru Mining Facility - Chest after Double Armos Fight
   original_item: Lanayru Mining Facility Boss Key
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/D300_1/r8/l0/TBox/71
 
 - name: Lanayru Mining Facility - Shortcut Chest in Main Hub
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D300_1/r5/l0/TBox/74
 
 - name: Lanayru Mining Facility - Defeat Boss
   original_item: Heart Container
-  type:
+  types:
+    - Defeat Boss
   Paths:
     - stage/B300/r0/l1/HeartCo
     - stage/B300/r0/l3/HeartCo
@@ -3458,7 +4472,8 @@
 - name: Lanayru Mining Facility - Exit Hall of Ancient Robots
   original_item: Goddess's Harp
   goal_location: true
-  type: NPC
+  types:
+    - Crests
   Paths:
     - event/400-Desert/283
     - oarc/F300_5/l0
@@ -3467,110 +4482,140 @@
 
 - name: Ancient Cistern - Rupee in West Hand
   original_item: Silver Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/D101/r0/l0/Item/93
 
 - name: Ancient Cistern - Rupee in East Hand
   original_item: Silver Rupee
-  type: Freestanding Rupee, Intermediate Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
   Paths:
     - stage/D101/r0/l0/Item/92
 
 - name: Ancient Cistern - First Rupee in East Part in Short Tunnel
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/D101/r2/l0/Item/65
 
 - name: Ancient Cistern - Second Rupee in East Part in Short Tunnel
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/D101/r2/l0/Item/66
 
 - name: Ancient Cistern - Third Rupee in East Part in Short Tunnel
   original_item: Green Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/D101/r2/l0/Item/67
 
 - name: Ancient Cistern - Rupee in East Part in Cubby
   original_item: Red Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/D101/r2/l0/Item/68
 
 - name: Ancient Cistern - Rupee in East Part in Main Tunnel
   original_item: Red Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/D101/r2/l0/Item/34
 
 - name: Ancient Cistern - Chest in East Part
   original_item: Ancient Cistern Small Key 
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D101/r1/l0/TBox/67
 
 - name: Ancient Cistern - Chest after Whip Hooks
   original_item: Ancient Cistern Map
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D101/r0/l0/TBox/65
 
 - name: Ancient Cistern - Chest near Vines
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D101/r0/l0/TBox/66
 
 - name: Ancient Cistern - Chest behind the Waterfall
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D101/r3/l0/TBox/84
 
 - name: Ancient Cistern - Bokoblin
   original_item: Ancient Cistern Small Key 
-  type:
+  types:
+    - NPC
   Paths:
     - stage/D101/r4/l0/EBc/0xFC00
 
 - name: Ancient Cistern - Rupee under Lilypad
   original_item: Red Rupee
-  type: Freestanding Rupee, Beginner Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
   Paths:
     - stage/D101/r5/l0/Item/13
 
 - name: Ancient Cistern - Chest in Key Locked Room
   original_item: Whip
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D101/r7/l0/TBox/69
 
 - name: Ancient Cistern - Rupee in Basement Demon's Right Eye
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D101/r4/l0/Item/0xFC11
 
 - name: Ancient Cistern - Rupee in Basement Demon's Left Eye
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D101/r4/l0/Item/0xFC12
 
 - name: Ancient Cistern - Chest under Stone Statue
   original_item: Ancient Cistern Boss Key
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/D101/r4/l0/TBox/68
 
 - name: Ancient Cistern - Defeat Boss
   original_item: Heart Container
-  type:
+  types:
+    - Defeat Boss
   Paths:
     - stage/B101/r0/l1/HeartCo
     - stage/B101/r0/l3/HeartCo
@@ -3578,7 +4623,8 @@
 - name: Ancient Cistern - Farore's Flame
   original_item: Progressive Sword
   goal_location: true
-  type: NPC
+  types:
+    - Crests
   Paths:
     - event/202-ForestD2/give item after beating ancient cistern
     - oarc/B101_1/l0
@@ -3587,55 +4633,64 @@
 
 - name: Sandship - Chest at the Stern
   original_item: Heart Piece
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D301/r0/l0/TBox/127
 
 - name: Sandship - Chest before 4-Door Corridor
   original_item: Sandship Map
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D301/r3/l0/TBox/71
 
 - name: Sandship - Chest behind Combination Lock
   original_item: Sandship Small Key 
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D301/r10/l0/TBox/69
 
 - name: Sandship - Treasure Room First Chest
-  original_item: Semi Rare Treasure
-  type:
+  original_item: Uncommon Treasure
+  types:
+    - Chests
   Paths:
     - stage/D301/r9/l0/TBox/64
 
 - name: Sandship - Treasure Room Second Chest
   original_item: Silver Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D301/r9/l0/TBox/65
 
 - name: Sandship - Treasure Room Third Chest
-  original_item: Semi Rare Treasure
-  type:
+  original_item: Uncommon Treasure
+  types:
+    - Chests
   Paths:
     - stage/D301/r9/l0/TBox/66
 
 - name: Sandship - Treasure Room Fourth Chest
   original_item: Silver Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D301/r9/l0/TBox/67
 
 - name: Sandship - Treasure Room Fifth Chest
-  original_item: Semi Rare Treasure
-  type:
+  original_item: Uncommon Treasure
+  types:
+    - Chests
   Paths:
     - stage/D301/r9/l0/TBox/68
 
 - name: Sandship - Robot in Brig's Reward
   original_item: Sandship Small Key 
-  type: NPC
+  types:
+    - NPC
   hint: sometimes
   Paths:
     - event/401-DesertD2/14
@@ -3643,21 +4698,24 @@
 
 - name: Sandship - Chest after Scervo Fight
   original_item: Progressive Bow
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/D301/r15/l0/TBox/72
 
 - name: Sandship - Chest in Captain's Cabin
   original_item: Sandship Boss Key
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/D301/r14/l3/TBox/73
 
 - name: Sandship - Defeat Boss
   original_item: Heart Container
-  type:
+  types:
+    - Defeat Boss
   Paths:
     - stage/B301/r0/l1/HeartCo
     - stage/D301/r0/l1/HeartCo
@@ -3665,7 +4723,8 @@
 - name: Sandship - Nayru's Flame
   original_item: Progressive Sword
   goal_location: true
-  type: NPC
+  types:
+    - Crests
   Paths:
     - event/401-DesertD2/45
     - oarc/B301/l1
@@ -3675,117 +4734,153 @@
 
 - name: Fire Sanctuary - Chest in First Room
   original_item: Fire Sanctuary Small Key 
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D201/r0/l0/TBox/64
 
 - name: Fire Sanctuary - Chest in Second Room
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D201_1/r1/l0/TBox/74
     - stage/D201/r1/l0/TBox/74
 
 - name: Fire Sanctuary - Chest on Balcony
   original_item: Empty Bottle
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D201_1/r6/l0/TBox/70
     - stage/D201/r6/l0/TBox/70
 
 - name: Fire Sanctuary - Left Rupee above Blocked Lava Source
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC27
 
 - name: Fire Sanctuary - Right Rupee above Blocked Lava Source
   original_item: Red Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC26
 
 - name: Fire Sanctuary - Rupee in Alcove near Blocked Lava Source
   original_item: Blue Rupee
-  type: Freestanding Rupee, Beginner Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC25
 
 - name: Fire Sanctuary - First Rupee in Alcove opposite Blocked Lava Source
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC1F
 
 - name: Fire Sanctuary - Second Rupee in Alcove opposite Blocked Lava Source
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC23
 
 - name: Fire Sanctuary - Third Rupee in Alcove opposite Blocked Lava Source
   original_item: Blue Rupee
-  type: Freestanding Rupee, Intermediate Rupee, Custom Flag
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r8/l0/Item/0xFC24
 
 - name: Fire Sanctuary - Chest near First Trapped Mogma
   original_item: Fire Sanctuary Small Key 
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D201_1/r5/l0/TBox/69
 
 - name: Fire Sanctuary - First Chest in Water Fruit Room
   original_item: Red Rupee
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D201_1/r7/l0/TBox/73
 
 - name: Fire Sanctuary - Second Chest in Water Fruit Room
-  original_item: Semi Rare Treasure
-  type:
+  original_item: Uncommon Treasure
+  types:
+    - Chests
   Paths:
     - stage/D201_1/r7/l0/TBox/72
 
 - name: Fire Sanctuary - Rescue First Trapped Mogma Chest
   original_item: Progressive Mitts
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D201_1/r5/l0/TBox/68
 
 - name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 1
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r5/l0/Item/0xFC6A
 
 - name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 2
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r5/l0/Item/0xFC6B
 
 - name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 3
   original_item: Blue Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r5/l0/Item/0xFC6C
 
 - name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 4
   original_item: Red Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r5/l0/Item/0xFC6D
 
 - name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5
   original_item: Red Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r5/l0/Item/0xFC5E
 
 - name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
   original_item: Fire Sanctuary Map
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/D201_1/r2/l0/TBox/65
@@ -3793,38 +4888,45 @@
 
 - name: Fire Sanctuary - Underground Rupee behind Bombable Wall
   original_item: Red Rupee
-  type: Underground Rupee, Custom Flag
+  types:
+    - Underground Rupees
+    - Custom Flag
   Paths:
     - stage/D201_1/r2/l0/Item/0xFCCD
 
 - name: Fire Sanctuary - Chest after Bombable Wall
   original_item: Fire Sanctuary Small Key 
-  type:
+  types:
+    - Chests
   hint: sometimes
   Paths:
     - stage/D201_1/r11/l0/TBox/71
 
 - name: Fire Sanctuary - Plats' Chest
   original_item: Heart Piece
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D201/r3/l0/TBox/66
 
 - name: Fire Sanctuary - Chest in Staircase Room
-  original_item: Semi Rare Treasure
-  type:
+  original_item: Uncommon Treasure
+  types:
+    - Chests
   Paths:
     - stage/D201/r9/l0/TBox/75
 
 - name: Fire Sanctuary - Chest after Winged Torches
   original_item: Fire Sanctuary Boss Key
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D201/r4/l0/TBox/67
 
 - name: Fire Sanctuary - Defeat Boss
   original_item: Heart Container
-  type:
+  types:
+    - Defeat Boss
   Paths:
     - stage/B201/r0/l1/HeartCo
     - stage/B201/r0/l2/HeartCo
@@ -3832,7 +4934,8 @@
 - name: Fire Sanctuary - Din's Flame
   original_item: Progressive Sword
   goal_location: true
-  type: NPC
+  types:
+    - Crests
   Paths:
     - event/304-MountainD2/5
     - oarc/B201_1/l0
@@ -3841,40 +4944,47 @@
 
 - name: Sky Keep - First Chest
   original_item: Sky Keep Map
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D003_7/r0/l0/TBox/64
 
 - name: Sky Keep - Chest after Dreadfuse
   original_item: Sky Keep Small Key
-  type:
+  types:
+    - Chests
   Paths:
     - stage/D003_6/r0/l0/TBox/65
 
 - name: Sky Keep - Rupee in Fire Sanctuary Room in Alcove
   original_item: Silver Rupee
-  type: Freestanding Rupee, Advanced Rupee
+  types:
+    - Freestanding Rupees
+    - Advanced Rupees
   Paths:
     - stage/D003_2/r0/l0/Item/36
 
 - name: Sky Keep - Sacred Power of Din
   original_item: Triforce of Power
   goal_location: true
-  type:
+  types:
+    - Freestanding Items
   Paths:
   - stage/D003_8/r0/l2/Item/61
 
 - name: Sky Keep - Sacred Power of Nayru
   original_item: Triforce of Wisdom
   goal_location: true
-  type:
+  types:
+    - Freestanding Items
   Paths:
   - stage/D003_8/r0/l1/Item/62
 
 - name: Sky Keep - Sacred Power of Farore
   original_item: Triforce of Courage
   goal_location: true
-  type:
+  types:
+    - Freestanding Items
   Paths:
   - stage/D003_8/r0/l3/Item/64
 
@@ -3882,90 +4992,126 @@
 
 - name: Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Stamina Fruits
+    - Custom Flag
   Paths:
     - stage/S000/r0/l2/Item/0xFC55
 
 - name: Skyloft Silent Realm - Collect all Tears Reward
   original_item: Stone of Trials
-  type:
+  types:
+    - Silent Realms
   Paths:
     - stage/S000/r0/l2/WarpObj
 
 - name: Faron Silent Realm - Stamina Fruit on Vine Wall 1
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Silent Realms
+    - Stamina Fruit
+    - Custom Flag
   Paths:
     - stage/S100/r0/l2/Item/0xFC9A
 
 - name: Faron Silent Realm - Stamina Fruit on Vine Wall 2
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Silent Realms
+    - Stamina Fruit
+    - Custom Flag
   Paths:
     - stage/S100/r0/l2/Item/0xFC9B
 
 - name: Faron Silent Realm - Collect all Tears Reward
   original_item: Water Dragon's Scale
-  type:
+  types:
+    - Silent Realms
   Paths:
     - stage/S100/r0/l2/WarpObj
 
 - name: Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Silent Realms
+    - Stamina Fruit
+    - Custom Flag
   Paths:
     - stage/S300/r0/l2/Item/0xFC2D
 
 - name: Lanayru Silent Realm - Stamina Fruit on West LMF Vine Wall
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Silent Realms
+    - Stamina Fruit
+    - Custom Flag
   Paths:
     - stage/S300/r0/l2/Item/0xFC36
 
 - name: Lanayru Silent Realm - Stamina Fruit near Minecart
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Silent Realms
+    - Stamina Fruit
+    - Custom Flag
   Paths:
     - stage/S300/r0/l2/Item/0xFC30
 
 - name: Lanayru Silent Realm - Stamina Fruit between Watchers
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Silent Realms
+    - Stamina Fruit
+    - Custom Flag
   Paths:
     - stage/S300/r0/l2/Item/0xFC63
 
 - name: Lanayru Silent Realm - Stamina Fruit near Tree
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Silent Realms
+    - Stamina Fruit
+    - Custom Flag
   Paths:
     - stage/S300/r0/l2/Item/0xFC31
 
 - name: Lanayru Silent Realm - Collect all Tears Reward
   original_item: Clawshots
-  type:
+  types:
+    - Silent Realms
   Paths:
     - stage/S300/r0/l2/WarpObj
 
 - name: Eldin Silent Realm - Stamina Fruit on First Slope
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Silent Realms
+    - Stamina Fruit
+    - Custom Flag
   Paths:
     - stage/S200/r4/l2/Item/0xFC05
 
 - name: Eldin Silent Realm - Stamina Fruit near First Bone Bridge
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Silent Realms
+    - Stamina Fruit
+    - Custom Flag
   Paths:
     - stage/S200/r2/l2/Item/0xFC40
 
 - name: Eldin Silent Realm - Stamina Fruit near Tear on Vines
   original_item: Stamina Fruit
-  type: Stamina Fruit, Custom Flag
+  types:
+    - Silent Realms
+    - Stamina Fruit
+    - Custom Flag
   Paths:
     - stage/S200/r2/l2/Item/0xFC4D
 
 - name: Eldin Silent Realm - Collect all Tears Reward
   original_item: Fireshield Earrings
-  type:
+  types:
+    - Silent Realms
   Paths:
     - stage/S200/r2/l2/WarpObj

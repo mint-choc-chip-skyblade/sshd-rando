@@ -4,7 +4,7 @@
   dungeon_starting_area: true
   exits:
                  # Lower the drawbridge and Dislodge the boulder
-    ET Hub Room: "(Beetle or Bow or (Long_Range_Skyward_Strike and logic_et_keese_yeet)) and 
+    ET Hub Room: "(Beetle or Bow or (Long_Range_Skyward_Strike and logic_et_keese_skyward_strike)) and 
                   (Slingshot or Clawshots or Bow or Long_Range_Skyward_Strike or (Can_Defeat_Lizalfos and Beetle))"
     Near Temple Entrance: Nothing
   locations:

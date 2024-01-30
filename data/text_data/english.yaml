@@ -461,9 +461,9 @@
   cryptic: some <r<pellets>>
   plurality: Plural
 
-- name: Semi Rare Treasure
-  standard: Semi Rare Treasure
-  pretty: a <Semi Rare Treasure>
+- name: Uncommon Treasure
+  standard: Uncommon Treasure
+  pretty: a <Uncommon Treasure>
   cryptic: a <r<nice treasure>>
   plurality: Singular
 

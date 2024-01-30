@@ -1,4 +1,5 @@
-from constants.itemconstants import TRAP_SETTING_TO_ITEM
+from constants.itemconstants import ALL_JUNK_ITEMS, TRAP_SETTING_TO_ITEM
+from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from .config import Config
 from .settings import *
 from .item import Item
@@ -13,7 +14,6 @@ from collections import Counter, OrderedDict
 from typing import TYPE_CHECKING
 import logging
 import yaml
-import os
 
 if TYPE_CHECKING:
     from .search import Search
@@ -33,7 +33,7 @@ class World:
 
     def __init__(self, id_: int) -> None:
         self.id = id_
-        self.config: Config = None
+        self.config: Config = None  # type: ignore
         self.num_worlds: int = 0
         self.worlds: list = []
 
@@ -58,10 +58,10 @@ class World:
 
         self.item_pool: Counter[Item] = Counter()
         self.starting_item_pool: Counter[Item] = Counter()
-        self.root: Area = None
+        self.root: Area = None  # type: ignore
 
-        self.playthrough_spheres: list[list[Location]] = None
-        self.entrance_spheres: list[list[Entrance]] = None
+        self.playthrough_spheres: list[list[Location]] = None  # type: ignore
+        self.entrance_spheres: list[list[Entrance]] = None  # type: ignore
 
         self.plandomizer_locations: dict[Location, Item] = {}
         self.plandomizer_entrances: dict[Entrance, Entrance] = {}
@@ -75,7 +75,11 @@ class World:
         # gossip_stone_hints map each gossip stone location to the list of locations the stone is hinting at
         self.gossip_stone_hints: OrderedDict[Location, list[Location]] = OrderedDict()
         self.song_hints: dict[Item, Hint] = {}
-        self.impa_sot_hint: Hint = None
+        self.impa_sot_hint: Hint = None  # type: ignore
+
+        # Save which bird statues we start with for patching and printing to spoiler log
+        # Mapping of pillar to starting statue data
+        self.starting_bird_statues: dict[str, dict] = {}
 
         # Save which bird statues we start with for patching and printing to spoiler log
         # Mapping of pillar to starting statue data
@@ -155,46 +159,7 @@ class World:
     # Read locations.yaml and store all necessary data in a dict
     # for this world
     def build_location_table(self) -> None:
-        logging.getLogger("").debug(f"Building Location Table for {self}")
-        with open("data/locations.yaml", "r") as item_data_file:
-            location_id_counter = 0
-            location_data = yaml.safe_load(item_data_file)
-            for location_node in location_data:
-                # Check to make sure all required fields exist
-                for field in ["name", "original_item"]:
-                    if field not in location_node:
-                        raise MissingInfoError(
-                            f"location \"{location_node['name']}\" is missing the \"{field}\" field in locations.yaml"
-                        )
-
-                name = location_node["name"]
-                original_item = self.get_item(location_node["original_item"])
-                types = location_node.get("type", [])
-                if types == None:
-                    types = []
-                patch_paths = location_node.get("Paths", [])
-                goal_location = location_node.get("goal_location", False)
-                hint_priority = location_node.get("hint", "never")
-                hint_textfile = location_node.get("textfile", "")
-                hint_textindex = location_node.get("textindex", -1)
-                location_id = location_id_counter
-                location_id_counter += 1
-
-                self.location_table[name] = Location(
-                    location_id,
-                    name,
-                    types,
-                    self,
-                    original_item,
-                    patch_paths,
-                    goal_location,
-                    hint_priority,
-                    hint_textfile,
-                    hint_textindex,
-                )
-                logging.getLogger("").debug(
-                    f"Processing new location {name}\tid: {location_id}\toriginal item: {original_item}"
-                )
+        self.location_table = build_location_table(self)
 
     def load_logic_macros(self) -> None:
         logging.getLogger("").debug(f"Loading macros for {self}")
@@ -212,13 +177,11 @@ class World:
         defined_events: set[str] = set()
         defined_areas: set[Area] = set()
 
-        directory = "data/world"
+        directory = Path("data") / "world"
 
-        for filename in os.listdir(directory):
-            filepath = os.path.join(directory, filename)
-
+        for filepath in directory.iterdir():
             # Skip over any non-yaml files
-            if not filepath.endswith(".yaml"):
+            if not filepath.as_posix().endswith(".yaml"):
                 continue
 
             with open(filepath, "r") as world_data_file:
@@ -352,7 +315,7 @@ class World:
 
     def place_hardcoded_items(self) -> None:
         defeat_demise = self.get_location("Hylia's Realm - Defeat Demise")
-        defeat_demise.set_current_item(self.get_item("Game Beatable"))
+        defeat_demise.set_current_item(self.get_item(GAME_BEATABLE))
         defeat_demise.has_known_vanilla_item = True
 
     def place_plandomizer_items(self) -> None:
@@ -370,6 +333,13 @@ class World:
         # TODO: Initial entrance time cache
 
     def place_vanilla_items(self) -> None:
+        disabled_shuffle_locations = [
+            location
+            for location in get_disabled_shuffle_locations(
+                self.location_table, self.config
+            )
+        ]
+
         for location in self.location_table.values():
             item = location.original_item
 
@@ -388,42 +358,9 @@ class World:
                 or (self.setting("map_mode") == "vanilla" and item.is_dungeon_map)
                 or (
                     self.setting("lanayru_caves_key") == "vanilla"
-                    and item == self.get_item("Lanayru Caves Small Key")
+                    and item == self.get_item(LC_SMALL_KEY)
                 )
-                or (
-                    self.setting("randomized_shops") == "vanilla"
-                    and "Beedle's Shop Purchases" in location.types
-                )
-                or (
-                    self.setting("single_gratitude_crystals") == "vanilla"
-                    and "Loose Crystals" in location.types
-                )
-                or (
-                    self.setting("stamina_fruit") == "vanilla"
-                    and "Stamina Fruit" in location.types
-                )
-                or (
-                    self.setting("npc_closets") == "vanilla"
-                    and "Closet" in location.types
-                )
-                or (
-                    self.setting("rupee_shuffle") == "vanilla"
-                    and "Freestanding Rupee" in location.types
-                )
-                or (
-                    self.setting("rupee_shuffle") == "beginner"
-                    and "Freestanding Rupee" in location.types
-                    and "Beginner Rupee" not in location.types
-                )
-                or (
-                    self.setting("rupee_shuffle") == "intermediate"
-                    and "Freestanding Rupee" in location.types
-                    and "Advanced Rupee" in location.types
-                )
-                or (
-                    self.setting("underground_rupee_shuffle") == "off"
-                    and "Underground Rupee" in location.types
-                )
+                or location in disabled_shuffle_locations
             ):
                 location.set_current_item(item)
                 location.has_known_vanilla_item = True
@@ -433,11 +370,11 @@ class World:
 
             # Scrap Shop Upgrades
             if "Scrap Shop" in location.types:
-                if self.setting("scrap_shop_upgrades") == "off":
+                if self.setting("item_pool") == "minimum":
                     location.set_current_item(item)
                     self.item_pool[item] -= 1
                 else:
-                    location.set_current_item(self.get_item("Green Rupee"))
+                    location.set_current_item(self.get_item(GREEN_RUPEE))
 
             # Set Goddess Cubes as having their own item
             if "Goddess Cube" in location.types:
@@ -513,7 +450,10 @@ class World:
 
     def set_nonprogress_locations(self):
         # Set excluded locations as non-progress
-        for location_name in self.setting_map.excluded_locations:
+        for location_name in (
+            self.setting_map.excluded_locations
+            + self.setting_map.excluded_hint_locations
+        ):
             self.get_location(location_name).progression = False
 
         # Sky Keep will never be a required dungeon with empty unrequired dungeons
@@ -527,9 +467,9 @@ class World:
                     location.progression = False
 
         # Set beedle's shop items as nonprogress if they can only contain junk
-        if self.setting("randomized_shops") == "junk_only":
+        if self.setting("beedle_shop_shuffle") == "junk_only":
             for location in self.location_table.values():
-                if "Beedle's Shop Purchases" in location.types:
+                if "Beedle's Shop" in location.types:
                     location.progression = False
 
     # Remove or add junk to the item pool until the total number of
@@ -552,7 +492,7 @@ class World:
 
         if self.item_pool.total() > num_empty_locations:
             junk_to_remove = []
-            for junk in all_junk_items:
+            for junk in ALL_JUNK_ITEMS:
                 junk_item = self.get_item(junk)
                 junk_to_remove.extend([junk_item] * self.item_pool[junk_item])
 
@@ -652,7 +592,7 @@ class World:
     def get_item(self, item_name: str) -> Item:
         item_name = item_name.replace("_", " ").replace("'", "")
         if item_name == "Nothing":
-            return None
+            return None  # type: ignore
         if item_name not in self.item_table:
             raise WrongInfoError(
                 f'Item "{item_name}" is not defined in the item table for {self}'
@@ -684,6 +624,7 @@ class World:
             for location in self.location_table.values()
             if "Hint Location" in location.types
             and location.name not in self.setting_map.excluded_locations
+            and location.name not in self.setting_map.excluded_hint_locations
         ]
 
     def get_area(self, area_name) -> Area:
