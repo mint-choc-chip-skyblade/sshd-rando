@@ -1,3 +1,4 @@
+from randomizer.setting_string import setting_string_from_config
 from .world import *
 from .entrance_shuffle import create_entrance_pools
 
@@ -23,7 +24,11 @@ def generate_spoiler_log(worlds: list[World]) -> None:
     config = worlds[0].config
 
     with open(filepath, "w") as spoiler_log:
-        spoiler_log.write(f"seed: {config.seed}\n")
+        spoiler_log.write(f"Seed: {config.seed}\n")
+        spoiler_log.write(
+            f"Setting String: {setting_string_from_config(config, worlds[0].location_table)}\n"
+        )
+
         # Print starting inventories if there are any
         if worlds_with_starting_inventories := [
             w for w in worlds if w.starting_item_pool.total() > 0
@@ -185,6 +190,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
 
         # Settings
         spoiler_log.write(f"\n# Settings\n")
+        spoiler_log.write(f"seed: {config.seed}\n")
         spoiler_log.write(f"output_dir: {config.output_dir}\n")
         spoiler_log.write(f"plandomizer: {config.use_plandomizer}\n")
         spoiler_log.write(f"theme_mode: {config.theme_mode}\n")
