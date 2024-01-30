@@ -14,12 +14,12 @@
    <string>The Legend of Zelda: Skyward Sword HD Randomizer</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QToolTip {
-color: #000000;
-background-color: #FFFFFF;
-}</string>
+   <string notr="true">QToolTip {color: #000000; background-color: #FFFFFF;}</string>
   </property>
   <widget class="QWidget" name="central_widget">
+   <property name="styleSheet">
+    <string notr="true">QToolTip {color: #000000; background-color: #FFFFFF;}</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QTabWidget" name="tab_widget">
@@ -28,6 +28,9 @@ background-color: #FFFFFF;
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QToolTip {color: #000000; background-color: #FFFFFF;}</string>
       </property>
       <property name="tabShape">
        <enum>QTabWidget::Rounded</enum>

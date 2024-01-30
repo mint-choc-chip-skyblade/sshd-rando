@@ -29,12 +29,10 @@ class Ui_main_window(object):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
         main_window.resize(1300, 800)
-        main_window.setStyleSheet(u"QToolTip {\n"
-"color: #000000;\n"
-"background-color: #FFFFFF;\n"
-"}")
+        main_window.setStyleSheet(u"QToolTip {color: #000000; background-color: #FFFFFF;}")
         self.central_widget = QWidget(main_window)
         self.central_widget.setObjectName(u"central_widget")
+        self.central_widget.setStyleSheet(u"QToolTip {color: #000000; background-color: #FFFFFF;}")
         self.verticalLayout_2 = QVBoxLayout(self.central_widget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.tab_widget = QTabWidget(self.central_widget)
@@ -44,6 +42,7 @@ class Ui_main_window(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.tab_widget.sizePolicy().hasHeightForWidth())
         self.tab_widget.setSizePolicy(sizePolicy)
+        self.tab_widget.setStyleSheet(u"QToolTip {color: #000000; background-color: #FFFFFF;}")
         self.tab_widget.setTabShape(QTabWidget.Rounded)
         self.getting_started_tab = QWidget()
         self.getting_started_tab.setObjectName(u"getting_started_tab")
