@@ -112,6 +112,7 @@ class Advanced:
             self.config.generate_spoiler_log = True
 
         self.update_config()
+        self.main.settings.update_setting_string()
 
     def toggle_plando(self):
         use_plando_state: Qt.CheckState = self.use_plando_button.checkState()

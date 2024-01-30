@@ -493,6 +493,7 @@ class Settings:
 
     def update_seed(self):
         self.config.seed = self.seed_line_edit.text()
+        self.update_setting_string()
         write_config_to_file(CONFIG_PATH, self.config)
 
     def update_setting_string(self):
