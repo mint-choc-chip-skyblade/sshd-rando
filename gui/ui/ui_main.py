@@ -39,7 +39,7 @@ class Ui_main_window(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.tab_widget = QTabWidget(self.central_widget)
         self.tab_widget.setObjectName(u"tab_widget")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.tab_widget.sizePolicy().hasHeightForWidth())
@@ -47,17 +47,17 @@ class Ui_main_window(object):
         self.tab_widget.setTabShape(QTabWidget.Rounded)
         self.getting_started_tab = QWidget()
         self.getting_started_tab.setObjectName(u"getting_started_tab")
-        sizePolicy.setHeightForWidth(self.getting_started_tab.sizePolicy().hasHeightForWidth())
-        self.getting_started_tab.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.getting_started_tab.sizePolicy().hasHeightForWidth())
+        self.getting_started_tab.setSizePolicy(sizePolicy1)
         self.verticalLayout_4 = QVBoxLayout(self.getting_started_tab)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.how_to_group_box = QGroupBox(self.getting_started_tab)
         self.how_to_group_box.setObjectName(u"how_to_group_box")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.how_to_group_box.sizePolicy().hasHeightForWidth())
-        self.how_to_group_box.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.how_to_group_box.sizePolicy().hasHeightForWidth())
+        self.how_to_group_box.setSizePolicy(sizePolicy)
         self.horizontalLayout_3 = QHBoxLayout(self.how_to_group_box)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.how_to_extract_group_box = QGroupBox(self.how_to_group_box)
@@ -89,8 +89,8 @@ class Ui_main_window(object):
 
         self.how_to_left_arrow_label = QLabel(self.how_to_group_box)
         self.how_to_left_arrow_label.setObjectName(u"how_to_left_arrow_label")
-        sizePolicy1.setHeightForWidth(self.how_to_left_arrow_label.sizePolicy().hasHeightForWidth())
-        self.how_to_left_arrow_label.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.how_to_left_arrow_label.sizePolicy().hasHeightForWidth())
+        self.how_to_left_arrow_label.setSizePolicy(sizePolicy)
         self.how_to_left_arrow_label.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_3.addWidget(self.how_to_left_arrow_label)
@@ -145,8 +145,8 @@ class Ui_main_window(object):
 
         self.how_to_right_arrow_label = QLabel(self.how_to_group_box)
         self.how_to_right_arrow_label.setObjectName(u"how_to_right_arrow_label")
-        sizePolicy1.setHeightForWidth(self.how_to_right_arrow_label.sizePolicy().hasHeightForWidth())
-        self.how_to_right_arrow_label.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.how_to_right_arrow_label.sizePolicy().hasHeightForWidth())
+        self.how_to_right_arrow_label.setSizePolicy(sizePolicy)
         self.how_to_right_arrow_label.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_3.addWidget(self.how_to_right_arrow_label)
@@ -185,14 +185,14 @@ class Ui_main_window(object):
         self.middle_grid_layout.setContentsMargins(-1, -1, -1, 0)
         self.useful_info_group_box = QGroupBox(self.getting_started_tab)
         self.useful_info_group_box.setObjectName(u"useful_info_group_box")
-        sizePolicy1.setHeightForWidth(self.useful_info_group_box.sizePolicy().hasHeightForWidth())
-        self.useful_info_group_box.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.useful_info_group_box.sizePolicy().hasHeightForWidth())
+        self.useful_info_group_box.setSizePolicy(sizePolicy)
         self.horizontalLayout = QHBoxLayout(self.useful_info_group_box)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.community_label = QLabel(self.useful_info_group_box)
         self.community_label.setObjectName(u"community_label")
-        sizePolicy1.setHeightForWidth(self.community_label.sizePolicy().hasHeightForWidth())
-        self.community_label.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.community_label.sizePolicy().hasHeightForWidth())
+        self.community_label.setSizePolicy(sizePolicy)
         self.community_label.setTextFormat(Qt.RichText)
         self.community_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.community_label.setWordWrap(True)
@@ -206,8 +206,8 @@ class Ui_main_window(object):
 
         self.accessibility_group_box = QGroupBox(self.getting_started_tab)
         self.accessibility_group_box.setObjectName(u"accessibility_group_box")
-        sizePolicy1.setHeightForWidth(self.accessibility_group_box.sizePolicy().hasHeightForWidth())
-        self.accessibility_group_box.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.accessibility_group_box.sizePolicy().hasHeightForWidth())
+        self.accessibility_group_box.setSizePolicy(sizePolicy)
         self.horizontalLayout_6 = QHBoxLayout(self.accessibility_group_box)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.theming_group_box = QGroupBox(self.accessibility_group_box)
@@ -224,8 +224,8 @@ class Ui_main_window(object):
 
         self.theme_mode_combo_box = QComboBox(self.theming_group_box)
         self.theme_mode_combo_box.setObjectName(u"theme_mode_combo_box")
-        sizePolicy.setHeightForWidth(self.theme_mode_combo_box.sizePolicy().hasHeightForWidth())
-        self.theme_mode_combo_box.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.theme_mode_combo_box.sizePolicy().hasHeightForWidth())
+        self.theme_mode_combo_box.setSizePolicy(sizePolicy1)
 
         self.theme_mode_layout.addWidget(self.theme_mode_combo_box)
 
@@ -241,8 +241,8 @@ class Ui_main_window(object):
 
         self.theme_presets_combo_box = QComboBox(self.theming_group_box)
         self.theme_presets_combo_box.setObjectName(u"theme_presets_combo_box")
-        sizePolicy.setHeightForWidth(self.theme_presets_combo_box.sizePolicy().hasHeightForWidth())
-        self.theme_presets_combo_box.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.theme_presets_combo_box.sizePolicy().hasHeightForWidth())
+        self.theme_presets_combo_box.setSizePolicy(sizePolicy1)
 
         self.theme_presets_layout.addWidget(self.theme_presets_combo_box)
 
@@ -343,8 +343,8 @@ class Ui_main_window(object):
 
         self.presets_group_box = QGroupBox(self.getting_started_tab)
         self.presets_group_box.setObjectName(u"presets_group_box")
-        sizePolicy1.setHeightForWidth(self.presets_group_box.sizePolicy().hasHeightForWidth())
-        self.presets_group_box.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.presets_group_box.sizePolicy().hasHeightForWidth())
+        self.presets_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_34 = QVBoxLayout(self.presets_group_box)
         self.verticalLayout_34.setObjectName(u"verticalLayout_34")
         self.selected_preset_layout = QHBoxLayout()
@@ -405,8 +405,8 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.getting_started_tab, "")
         self.gameplay_tab = QWidget()
         self.gameplay_tab.setObjectName(u"gameplay_tab")
-        sizePolicy.setHeightForWidth(self.gameplay_tab.sizePolicy().hasHeightForWidth())
-        self.gameplay_tab.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.gameplay_tab.sizePolicy().hasHeightForWidth())
+        self.gameplay_tab.setSizePolicy(sizePolicy1)
         self.gridLayout_9 = QGridLayout(self.gameplay_tab)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.hint_placements_group_box = QGroupBox(self.gameplay_tab)
@@ -579,8 +579,8 @@ class Ui_main_window(object):
         self.peatrice_conversations_layout.setObjectName(u"peatrice_conversations_layout")
         self.peatrice_conversations_label = QLabel(self.tweaks_group_box)
         self.peatrice_conversations_label.setObjectName(u"peatrice_conversations_label")
-        sizePolicy1.setHeightForWidth(self.peatrice_conversations_label.sizePolicy().hasHeightForWidth())
-        self.peatrice_conversations_label.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.peatrice_conversations_label.sizePolicy().hasHeightForWidth())
+        self.peatrice_conversations_label.setSizePolicy(sizePolicy)
 
         self.peatrice_conversations_layout.addWidget(self.peatrice_conversations_label)
 
@@ -624,8 +624,8 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.gameplay_tab, "")
         self.world_tab = QWidget()
         self.world_tab.setObjectName(u"world_tab")
-        sizePolicy.setHeightForWidth(self.world_tab.sizePolicy().hasHeightForWidth())
-        self.world_tab.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.world_tab.sizePolicy().hasHeightForWidth())
+        self.world_tab.setSizePolicy(sizePolicy1)
         self.gridLayout_2 = QGridLayout(self.world_tab)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.open_world_group_box = QGroupBox(self.world_tab)
@@ -758,8 +758,8 @@ class Ui_main_window(object):
 
         self.mixed_entrance_pools_group_box = QGroupBox(self.world_tab)
         self.mixed_entrance_pools_group_box.setObjectName(u"mixed_entrance_pools_group_box")
-        sizePolicy1.setHeightForWidth(self.mixed_entrance_pools_group_box.sizePolicy().hasHeightForWidth())
-        self.mixed_entrance_pools_group_box.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.mixed_entrance_pools_group_box.sizePolicy().hasHeightForWidth())
+        self.mixed_entrance_pools_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_28 = QVBoxLayout(self.mixed_entrance_pools_group_box)
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
         self.mixed_entrance_pools_list_label = QLabel(self.mixed_entrance_pools_group_box)
@@ -852,8 +852,8 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.world_tab, "")
         self.locations_tab = QWidget()
         self.locations_tab.setObjectName(u"locations_tab")
-        sizePolicy.setHeightForWidth(self.locations_tab.sizePolicy().hasHeightForWidth())
-        self.locations_tab.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.locations_tab.sizePolicy().hasHeightForWidth())
+        self.locations_tab.setSizePolicy(sizePolicy1)
         self.gridLayout_3 = QGridLayout(self.locations_tab)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.locations_button_layout = QVBoxLayout()
@@ -897,8 +897,8 @@ class Ui_main_window(object):
 
         self.shuffles_group_box = QGroupBox(self.locations_tab)
         self.shuffles_group_box.setObjectName(u"shuffles_group_box")
-        sizePolicy1.setHeightForWidth(self.shuffles_group_box.sizePolicy().hasHeightForWidth())
-        self.shuffles_group_box.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.shuffles_group_box.sizePolicy().hasHeightForWidth())
+        self.shuffles_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_10 = QVBoxLayout(self.shuffles_group_box)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.beedle_shop_shuffle_label = QLabel(self.shuffles_group_box)
@@ -1036,14 +1036,14 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.locations_tab, "")
         self.inventory_tab = QWidget()
         self.inventory_tab.setObjectName(u"inventory_tab")
-        sizePolicy.setHeightForWidth(self.inventory_tab.sizePolicy().hasHeightForWidth())
-        self.inventory_tab.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.inventory_tab.sizePolicy().hasHeightForWidth())
+        self.inventory_tab.setSizePolicy(sizePolicy1)
         self.gridLayout_4 = QGridLayout(self.inventory_tab)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.randomized_items_group_box = QGroupBox(self.inventory_tab)
         self.randomized_items_group_box.setObjectName(u"randomized_items_group_box")
-        sizePolicy1.setHeightForWidth(self.randomized_items_group_box.sizePolicy().hasHeightForWidth())
-        self.randomized_items_group_box.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.randomized_items_group_box.sizePolicy().hasHeightForWidth())
+        self.randomized_items_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_15 = QVBoxLayout(self.randomized_items_group_box)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.randomized_items_filter_layout = QHBoxLayout()
@@ -1152,8 +1152,8 @@ class Ui_main_window(object):
 
         self.item_settings_group_box = QGroupBox(self.inventory_tab)
         self.item_settings_group_box.setObjectName(u"item_settings_group_box")
-        sizePolicy1.setHeightForWidth(self.item_settings_group_box.sizePolicy().hasHeightForWidth())
-        self.item_settings_group_box.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.item_settings_group_box.sizePolicy().hasHeightForWidth())
+        self.item_settings_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_29 = QVBoxLayout(self.item_settings_group_box)
         self.verticalLayout_29.setObjectName(u"verticalLayout_29")
         self.item_pool_label = QLabel(self.item_settings_group_box)
@@ -1227,14 +1227,14 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.inventory_tab, "")
         self.hints_tab = QWidget()
         self.hints_tab.setObjectName(u"hints_tab")
-        sizePolicy.setHeightForWidth(self.hints_tab.sizePolicy().hasHeightForWidth())
-        self.hints_tab.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.hints_tab.sizePolicy().hasHeightForWidth())
+        self.hints_tab.setSizePolicy(sizePolicy1)
         self.gridLayout_8 = QGridLayout(self.hints_tab)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.included_hint_locations_group_box = QGroupBox(self.hints_tab)
         self.included_hint_locations_group_box.setObjectName(u"included_hint_locations_group_box")
-        sizePolicy1.setHeightForWidth(self.included_hint_locations_group_box.sizePolicy().hasHeightForWidth())
-        self.included_hint_locations_group_box.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.included_hint_locations_group_box.sizePolicy().hasHeightForWidth())
+        self.included_hint_locations_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_26 = QVBoxLayout(self.included_hint_locations_group_box)
         self.verticalLayout_26.setObjectName(u"verticalLayout_26")
         self.included_hint_locations_free_search = QLineEdit(self.included_hint_locations_group_box)
@@ -1443,8 +1443,8 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.hints_tab, "")
         self.logic_tab = QWidget()
         self.logic_tab.setObjectName(u"logic_tab")
-        sizePolicy.setHeightForWidth(self.logic_tab.sizePolicy().hasHeightForWidth())
-        self.logic_tab.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.logic_tab.sizePolicy().hasHeightForWidth())
+        self.logic_tab.setSizePolicy(sizePolicy1)
         self.gridLayout_5 = QGridLayout(self.logic_tab)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.logic_rules_group_box = QGroupBox(self.logic_tab)
@@ -1739,8 +1739,8 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.logic_tab, "")
         self.advanced_tab = QWidget()
         self.advanced_tab.setObjectName(u"advanced_tab")
-        sizePolicy.setHeightForWidth(self.advanced_tab.sizePolicy().hasHeightForWidth())
-        self.advanced_tab.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.advanced_tab.sizePolicy().hasHeightForWidth())
+        self.advanced_tab.setSizePolicy(sizePolicy1)
         self.horizontalLayout_4 = QHBoxLayout(self.advanced_tab)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.file_setup_group_box = QGroupBox(self.advanced_tab)
@@ -1751,8 +1751,8 @@ class Ui_main_window(object):
         self.verticalLayout_31.setObjectName(u"verticalLayout_31")
         self.output_label = QLabel(self.file_setup_group_box)
         self.output_label.setObjectName(u"output_label")
-        sizePolicy1.setHeightForWidth(self.output_label.sizePolicy().hasHeightForWidth())
-        self.output_label.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.output_label.sizePolicy().hasHeightForWidth())
+        self.output_label.setSizePolicy(sizePolicy)
 
         self.verticalLayout_31.addWidget(self.output_label)
 
@@ -1872,6 +1872,12 @@ class Ui_main_window(object):
         self.random_settings_group_box.setObjectName(u"random_settings_group_box")
         sizePolicy2.setHeightForWidth(self.random_settings_group_box.sizePolicy().hasHeightForWidth())
         self.random_settings_group_box.setSizePolicy(sizePolicy2)
+        self.horizontalLayoutWidget = QWidget(self.random_settings_group_box)
+        self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
+        self.horizontalLayoutWidget.setGeometry(QRect(70, 290, 160, 80))
+        self.horizontalLayout_2 = QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
 
         self.horizontalLayout_4.addWidget(self.random_settings_group_box)
 
@@ -1915,41 +1921,6 @@ class Ui_main_window(object):
 
         self.footer_grid_layout = QGridLayout()
         self.footer_grid_layout.setObjectName(u"footer_grid_layout")
-        self.copy_setting_string_button = QPushButton(self.central_widget)
-        self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
-
-        self.footer_grid_layout.addWidget(self.copy_setting_string_button, 0, 2, 1, 1)
-
-        self.randomize_button = QPushButton(self.central_widget)
-        self.randomize_button.setObjectName(u"randomize_button")
-        sizePolicy13 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy13.setHorizontalStretch(0)
-        sizePolicy13.setVerticalStretch(0)
-        sizePolicy13.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
-        self.randomize_button.setSizePolicy(sizePolicy13)
-
-        self.footer_grid_layout.addWidget(self.randomize_button, 2, 2, 1, 1)
-
-        self.seed_line_edit = QLineEdit(self.central_widget)
-        self.seed_line_edit.setObjectName(u"seed_line_edit")
-
-        self.footer_grid_layout.addWidget(self.seed_line_edit, 1, 1, 1, 1)
-
-        self.about_button = QPushButton(self.central_widget)
-        self.about_button.setObjectName(u"about_button")
-
-        self.footer_grid_layout.addWidget(self.about_button, 2, 0, 1, 1)
-
-        self.seed_label = QLabel(self.central_widget)
-        self.seed_label.setObjectName(u"seed_label")
-
-        self.footer_grid_layout.addWidget(self.seed_label, 1, 0, 1, 1)
-
-        self.new_seed_button = QPushButton(self.central_widget)
-        self.new_seed_button.setObjectName(u"new_seed_button")
-
-        self.footer_grid_layout.addWidget(self.new_seed_button, 1, 2, 1, 1)
-
         self.reset_settings_to_default_hlayout = QHBoxLayout()
         self.reset_settings_to_default_hlayout.setObjectName(u"reset_settings_to_default_hlayout")
         self.reset_settings_to_default_left_hspacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
@@ -1968,10 +1939,25 @@ class Ui_main_window(object):
 
         self.footer_grid_layout.addLayout(self.reset_settings_to_default_hlayout, 2, 1, 1, 1)
 
-        self.setting_string_label = QLabel(self.central_widget)
-        self.setting_string_label.setObjectName(u"setting_string_label")
+        self.seed_label = QLabel(self.central_widget)
+        self.seed_label.setObjectName(u"seed_label")
 
-        self.footer_grid_layout.addWidget(self.setting_string_label, 0, 0, 1, 1)
+        self.footer_grid_layout.addWidget(self.seed_label, 1, 0, 1, 1)
+
+        self.new_seed_button = QPushButton(self.central_widget)
+        self.new_seed_button.setObjectName(u"new_seed_button")
+
+        self.footer_grid_layout.addWidget(self.new_seed_button, 1, 2, 1, 1)
+
+        self.randomize_button = QPushButton(self.central_widget)
+        self.randomize_button.setObjectName(u"randomize_button")
+        sizePolicy13 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy13.setHorizontalStretch(0)
+        sizePolicy13.setVerticalStretch(0)
+        sizePolicy13.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
+        self.randomize_button.setSizePolicy(sizePolicy13)
+
+        self.footer_grid_layout.addWidget(self.randomize_button, 2, 2, 1, 1)
 
         self.setting_string_layout = QHBoxLayout()
         self.setting_string_layout.setObjectName(u"setting_string_layout")
@@ -1985,13 +1971,38 @@ class Ui_main_window(object):
 
         self.paste_setting_string_button = QPushButton(self.central_widget)
         self.paste_setting_string_button.setObjectName(u"paste_setting_string_button")
-        sizePolicy13.setHeightForWidth(self.paste_setting_string_button.sizePolicy().hasHeightForWidth())
-        self.paste_setting_string_button.setSizePolicy(sizePolicy13)
+        self.paste_setting_string_button.setEnabled(True)
+        sizePolicy14 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy14.setHorizontalStretch(0)
+        sizePolicy14.setVerticalStretch(0)
+        sizePolicy14.setHeightForWidth(self.paste_setting_string_button.sizePolicy().hasHeightForWidth())
+        self.paste_setting_string_button.setSizePolicy(sizePolicy14)
+        self.paste_setting_string_button.setMinimumSize(QSize(80, 0))
 
         self.setting_string_layout.addWidget(self.paste_setting_string_button)
 
 
         self.footer_grid_layout.addLayout(self.setting_string_layout, 0, 1, 1, 1)
+
+        self.copy_setting_string_button = QPushButton(self.central_widget)
+        self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
+
+        self.footer_grid_layout.addWidget(self.copy_setting_string_button, 0, 2, 1, 1)
+
+        self.about_button = QPushButton(self.central_widget)
+        self.about_button.setObjectName(u"about_button")
+
+        self.footer_grid_layout.addWidget(self.about_button, 2, 0, 1, 1)
+
+        self.setting_string_label = QLabel(self.central_widget)
+        self.setting_string_label.setObjectName(u"setting_string_label")
+
+        self.footer_grid_layout.addWidget(self.setting_string_label, 0, 0, 1, 1)
+
+        self.seed_line_edit = QLineEdit(self.central_widget)
+        self.seed_line_edit.setObjectName(u"seed_line_edit")
+
+        self.footer_grid_layout.addWidget(self.seed_line_edit, 1, 1, 1, 1)
 
 
         self.verticalLayout_2.addLayout(self.footer_grid_layout)
@@ -2000,7 +2011,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2219,13 +2230,13 @@ class Ui_main_window(object):
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))
-        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
-        self.randomize_button.setText(QCoreApplication.translate("main_window", u"Randomize", None))
-        self.about_button.setText(QCoreApplication.translate("main_window", u"About", None))
+        self.reset_settings_to_default_button.setText(QCoreApplication.translate("main_window", u"Reset Settings to Default", None))
         self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
         self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
-        self.reset_settings_to_default_button.setText(QCoreApplication.translate("main_window", u"Reset Settings to Default", None))
-        self.setting_string_label.setText(QCoreApplication.translate("main_window", u"Setting String", None))
+        self.randomize_button.setText(QCoreApplication.translate("main_window", u"Randomize", None))
         self.paste_setting_string_button.setText(QCoreApplication.translate("main_window", u"Paste", None))
+        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
+        self.about_button.setText(QCoreApplication.translate("main_window", u"About", None))
+        self.setting_string_label.setText(QCoreApplication.translate("main_window", u"Setting String", None))
     # retranslateUi
 
