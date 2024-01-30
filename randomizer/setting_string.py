@@ -17,22 +17,22 @@ class SettingStringError(RuntimeError):
     pass
 
 
-# The setting string is made up of 3 major parts:
+# The setting string is made up of 2 major parts:
 # * The header
-# * Config settings that apply to all worlds
 # * World specific settings
 #
-# Each part is separated by a delimiter: ":".
+# Each part is separated by a delimiter: b"\0".
 #
-# The header contains the randomizer version that created the setting string
-# E.g. "SSHDR-1.0"
+# The header contains:
+# * The randomizer version that created the setting string
+# * The generate_spoiler_log config setting
+# * The seed
 #
-# The config settings contain things like whether to generate a spoiler log
-# and the seed.
+# Each section of the header is separated by a delimiter b"\0".
 #
 # The world specific settings are base64 encoded strings representing all the
 # settings for each world of a config. Each world is also separated by a
-# delimiter: "::W" + world_num. E.g. "::W1" for world 1.
+# delimiter: b"\0" + "W".
 def setting_string_from_config(
     config: Config, location_table: dict[str, Location] | None
 ) -> str:
