@@ -61,7 +61,9 @@ pub struct dAcTbox {
     pub goddess_chest_dowsing_target: [u8; 0x28],
     pub register_dowsing_target:      [u8; 0x10],
     pub unregister_dowsing_target:    [u8; 0x10],
-    pub _2:                           [u8; 0x58],
+    pub _2:                           [u8; 0x40],
+    pub anim_completion_amount:       f32,
+    pub _3:                           [u8; 0x14],
     pub itemid_0x1ff:                 flag::ITEMFLAGS,
     pub item_model_index:             u16,
     pub chest_opened:                 u8,
@@ -70,11 +72,11 @@ pub struct dAcTbox {
     pub chestflag:                    u8,
     pub unk:                          u8,
     pub chest_subtype:                u8,
-    pub _3:                           [u8; 2],
+    pub _4:                           [u8; 2],
     pub is_chest_opened_related:      u8,
-    pub _4:                           [u8; 4],
+    pub _5:                           [u8; 4],
     pub do_obstructed_check:          bool,
-    pub _5:                           [u8; 6],
+    pub _6:                           [u8; 6],
 }
 assert_eq_size!([u8; 0x19A8], dAcTbox);
 
@@ -136,6 +138,105 @@ pub fn give_item_with_sceneflag(itemid: u8, sceneflag: u8) {
 
         ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
         NUMBER_OF_ITEMS = 0;
+    }
+}
+
+#[no_mangle]
+pub fn init_appearing_chest_subtype(tbox: *mut dAcTbox) -> *mut dAcTbox {
+    unsafe {
+        let param1 = (*tbox).base.basebase.members.param1;
+        let spawn_sceneflag = (param1 >> 0x14) & 0xFF;
+
+        if spawn_sceneflag != 0xFF && flag::check_local_sceneflag(spawn_sceneflag.into()) == 0 {
+            (*tbox).chest_subtype = 0;
+        } else {
+            (*tbox).chest_subtype = ((param1 >> 4) & 0x3) as u8;
+        }
+
+        // Replaced instructions
+        asm!("mov w8, #0x1995", "mov w1, #0xFFFFFFFF");
+        return tbox;
+    }
+}
+
+// #[no_mangle]
+// pub fn init_appearing_chest_subtype() {
+//     unsafe {
+//         let tbox: *mut dAcTbox;
+//         asm!("mov {0:x}, x19", out(reg) tbox);
+
+//         // let param1 = (*tbox).base.basebase.members.param1;
+//         let spawn_sceneflag = (*tbox).spawn_sceneflag;
+
+//         if spawn_sceneflag != 0xFF
+//         // && flag::check_local_sceneflag(spawn_sceneflag.into()) == 0
+//         {
+//             // Always spawnable chest
+//             // Real chest type is still in param1
+//             (*tbox).chest_subtype = 0;
+//         }
+
+//         // Replaced instructions
+//         (*tbox).base.members.base.rot.z = 0;
+//         (*tbox).base.members.base.rot.x = 0;
+//         asm!("mov w8, {0:w}", in(reg) (*tbox).unk);
+//     }
+// }
+
+#[no_mangle]
+pub fn spawn_appeared_chest(tbox: *mut dAcTbox) -> *mut dAcTbox {
+    unsafe {
+        let w9_bkp: u32;
+        asm!("mov {0:w}, w9", out(reg) w9_bkp);
+        asm!("mov x19, {0:x}", in(reg) tbox);
+        // let tbox: *mut dAcTbox;
+        // asm!("mov {0:x}, x19", out(reg) tbox);
+
+        if 0.890 > (*tbox).anim_completion_amount && (*tbox).anim_completion_amount > 0.885 {
+            let mut new_param1 = (*tbox).base.basebase.members.param1;
+
+            let current_pos = (*tbox).base.members.base.pos;
+            let new_pos: *mut math::Vec3f = &mut math::Vec3f {
+                x: current_pos.x,
+                y: current_pos.y,
+                z: current_pos.z,
+            } as *mut math::Vec3f;
+
+            let current_rot = (*tbox).base.members.base.rot;
+            let new_rot: *mut math::Vec3s = &mut math::Vec3s {
+                x: 0xFF00 | (*tbox).set_sceneflag as u16,
+                y: current_rot.y,
+                z: (((*tbox).chestflag as u16) << 9) | ((*tbox).itemid_0x1ff as u16),
+            } as *mut math::Vec3s;
+
+            let new_scale: *mut math::Vec3f = &mut math::Vec3f {
+                x: 1.0,
+                y: 1.0,
+                z: 1.0,
+            } as *mut math::Vec3f;
+
+            actor::spawn_actor(
+                actor::ACTORID::TBOX,
+                (*ROOM_MGR).roomid.into(),
+                new_param1,
+                new_pos,
+                new_rot,
+                new_scale,
+                (*tbox).base.members.base.param2,
+            );
+        }
+
+        // asm!("ldr x0, [x19, #0x470]", "ldr x8, [x0]");
+        asm!("ldr w8, [{0:x}, #0x1988]", in(reg) tbox);
+        asm!("mov w9, {0:w}", in(reg) w9_bkp);
+        return tbox;
+    }
+}
+
+#[no_mangle]
+pub fn hide_appearing_chest(tbox: *mut dAcTbox) {
+    unsafe {
+        (*tbox).base.members.base.pos.y = (*tbox).base.members.base.pos.y - 10000.0;
     }
 }
 

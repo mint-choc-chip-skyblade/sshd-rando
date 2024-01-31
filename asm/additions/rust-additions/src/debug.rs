@@ -11,7 +11,7 @@
 // to see the output statements in real time.
 
 use core::arch::asm;
-use core::ffi::{c_char, c_void};
+use core::ffi::{c_char, c_double, c_void};
 use cstr::cstr;
 use static_assertions::assert_eq_size;
 
@@ -43,7 +43,7 @@ extern "C" {
 
 #[no_mangle]
 pub fn debug_print(string: *const c_char) {
-    // e.g. debug_print(cstr!("Test string").as_ptr());
+    // e.g. debug::debug_print(cstr!("Test string").as_ptr());
 
     unsafe {
         let buffer: [c_char; 128] = [0; 128];
@@ -53,7 +53,7 @@ pub fn debug_print(string: *const c_char) {
 
 #[no_mangle]
 pub fn debug_print_str(string: *const c_char, string_arg: *const c_char) {
-    // e.g. debug_print_str(cstr!("custom model name: %s").as_ptr(),
+    // e.g. debug::debug_print_str(cstr!("custom model name: %s").as_ptr(),
     // cstr!("DesertRobot").as_ptr());
 
     unsafe {
@@ -64,10 +64,20 @@ pub fn debug_print_str(string: *const c_char, string_arg: *const c_char) {
 
 #[no_mangle]
 pub fn debug_print_num(string: *const c_char, number: usize) {
-    // e.g. debug_print_num(cstr!("param1: %d").as_ptr(), param1 as usize);
+    // e.g. debug::debug_print_num(cstr!("param1: %d").as_ptr(), param1 as usize);
 
     unsafe {
         let buffer: [c_char; 128] = [0; 128];
         debugPrint_128(buffer.as_ptr(), string, number);
+    }
+}
+
+#[no_mangle]
+pub fn debug_print_float(string: *const c_char, float: f32) {
+    // e.g. debug::debug_print_float(cstr!("param1: %f").as_ptr(), param1 as f32);
+
+    unsafe {
+        let buffer: [c_char; 128] = [0; 128];
+        debugPrint_128(buffer.as_ptr(), string, float as c_double);
     }
 }

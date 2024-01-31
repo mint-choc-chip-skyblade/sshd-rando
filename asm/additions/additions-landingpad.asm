@@ -115,6 +115,15 @@ b.eq rotate_freestanding_items
 cmp w8, #33
 b.eq fix_items_in_sand_piles
 
+cmp w8, #34
+b.eq init_appearing_chest_subtype
+
+cmp w8, #35
+b.eq spawn_appeared_chest
+
+cmp w8, #36
+b.eq hide_appearing_chest
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
