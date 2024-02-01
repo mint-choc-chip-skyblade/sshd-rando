@@ -333,7 +333,7 @@ pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
         match current_item {
             // Green | Blue | Red Rupee | Heart, Arrows | Bombs, Stamina | Light Fruit | Seeds |
             // Uncommon | Rare Treasure | Bugs | Treasures
-            2 | 3 | 4 | 6..=8 | 40..=42 | 47 | 60 | 63 | 64 | 141..=152 | 161..=176 => {
+            2 | 3 | 4 | 6..=8 | 40..=42 | 47 | 57 | 60 | 63 | 64 | 141..=152 | 161..=176 => {
                 (*item_actor).base.basebase.members.param1 |= 0x200;
             },
             _ => {
