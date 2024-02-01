@@ -2866,6 +2866,12 @@ F202: # Bokoblin Base
       sizey: 2000
       sizez: 2000
       angle: 0
+  - name: Remove PlRsTags
+    type: objdelete
+    startid: 0xFC0D
+    endid: 0xFC13
+    layer: 1
+    objtype: STAG
   - name: Add ammo pot to Volcano Entry Bird Statue # Can't get to this one
     onlyif: ammo_availability == plentiful
     type: objadd
