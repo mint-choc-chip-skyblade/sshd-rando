@@ -4936,14 +4936,19 @@ D101: # Ancient Cistern
       posy: 7569.609863
       posz: 1370
       name: Tubo
-  - name: Remove Cutscenes
+  - name: Remove Inside Statue Cutscenes
     type: objdelete
     ids:
       - 0xFC1F # Inside statue
-      - 0xFC7D # In basement showing Boss Key chest
       - 0xFC1A # Water spout inside statue
     layer: 0
-    room: [10, 4, 10]
+    room: 10
+    objtype: STAG
+  - name: Remove BK panning Cutscene
+    type: objdelete
+    id: 0xFC7D # In basement showing Boss Key chest
+    layer: 0
+    room: 4
     objtype: STAG
   - name: Remove Waterfall switch Lily Pad Cutscene (room 0)
     type: objdelete
