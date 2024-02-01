@@ -192,7 +192,7 @@ pub fn spawn_appeared_chest(tbox: *mut dAcTbox) -> *mut dAcTbox {
         // let tbox: *mut dAcTbox;
         // asm!("mov {0:x}, x19", out(reg) tbox);
 
-        if 0.890 > (*tbox).anim_completion_amount && (*tbox).anim_completion_amount > 0.885 {
+        if 0.910 > (*tbox).anim_completion_amount && (*tbox).anim_completion_amount > 0.905 {
             let mut new_param1 = (*tbox).base.basebase.members.param1;
 
             let current_pos = (*tbox).base.members.base.pos;
