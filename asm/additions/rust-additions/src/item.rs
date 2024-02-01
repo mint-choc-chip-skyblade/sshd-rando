@@ -159,38 +159,12 @@ pub fn init_appearing_chest_subtype(tbox: *mut dAcTbox) -> *mut dAcTbox {
     }
 }
 
-// #[no_mangle]
-// pub fn init_appearing_chest_subtype() {
-//     unsafe {
-//         let tbox: *mut dAcTbox;
-//         asm!("mov {0:x}, x19", out(reg) tbox);
-
-//         // let param1 = (*tbox).base.basebase.members.param1;
-//         let spawn_sceneflag = (*tbox).spawn_sceneflag;
-
-//         if spawn_sceneflag != 0xFF
-//         // && flag::check_local_sceneflag(spawn_sceneflag.into()) == 0
-//         {
-//             // Always spawnable chest
-//             // Real chest type is still in param1
-//             (*tbox).chest_subtype = 0;
-//         }
-
-//         // Replaced instructions
-//         (*tbox).base.members.base.rot.z = 0;
-//         (*tbox).base.members.base.rot.x = 0;
-//         asm!("mov w8, {0:w}", in(reg) (*tbox).unk);
-//     }
-// }
-
 #[no_mangle]
 pub fn spawn_appeared_chest(tbox: *mut dAcTbox) -> *mut dAcTbox {
     unsafe {
         let w9_bkp: u32;
         asm!("mov {0:w}, w9", out(reg) w9_bkp);
         asm!("mov x19, {0:x}", in(reg) tbox);
-        // let tbox: *mut dAcTbox;
-        // asm!("mov {0:x}, x19", out(reg) tbox);
 
         if 0.910 > (*tbox).anim_completion_amount && (*tbox).anim_completion_amount > 0.905 {
             let mut new_param1 = (*tbox).base.basebase.members.param1;
@@ -226,7 +200,6 @@ pub fn spawn_appeared_chest(tbox: *mut dAcTbox) -> *mut dAcTbox {
             );
         }
 
-        // asm!("ldr x0, [x19, #0x470]", "ldr x8, [x0]");
         asm!("ldr w8, [{0:x}, #0x1988]", in(reg) tbox);
         asm!("mov w9, {0:w}", in(reg) w9_bkp);
         return tbox;
