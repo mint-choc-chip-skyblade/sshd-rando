@@ -1,4 +1,4 @@
-cmake~=3.27.2 # Needed to get nlzss11 v1.6
+cmake~=3.28.1 # Needed to get nlzss11 v1.6
 nlzss11 @ git+https://github.com/muzugalium/nlzss11@1.6 # Allows for compression of larger SSHD files
 PyYAML~=6.0.1
 lz4~=4.3.2

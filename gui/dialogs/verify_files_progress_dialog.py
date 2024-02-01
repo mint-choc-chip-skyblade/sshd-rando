@@ -16,7 +16,6 @@ class VerifyFilesProgressDialog(QProgressDialog):
         self.setCancelButton(None)  # type: ignore
         self.setValue(0)
         self.setMinimumWidth(500)
-        self.setAutoClose(False)
         self.setVisible(True)
 
     def exec(self):
@@ -24,7 +23,3 @@ class VerifyFilesProgressDialog(QProgressDialog):
 
     def setValue(self, value: int):
         super().setValue(value)
-
-        if value == 100:
-            self.setLabelText("Verification complete!")
-            print("Verification complete!")
