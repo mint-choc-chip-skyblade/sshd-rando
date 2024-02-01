@@ -20,6 +20,8 @@ World 1:
   lanayru_caves_key: random
   boss_keys: random
   map_mode: random
+  chest_type_matches_contents: random
+  small_keys_in_fancy_chests: random
   path_hints: random
   barren_hints: random
   location_hints: random

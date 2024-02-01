@@ -1,12 +1,30 @@
-# tboxes (chests) usually determine their own subtype (model like bk chest etc.) from their contents, this is a mapping of itemID to subtype
-# 0x00 are the regular blue chests
-# 0x01 are the small brown wooden chests
-# 0x02 are the boss key chests
-# 0x03 are the goddess chests
-# this is used to patch chests back to the corresponding subtype of their ORIGINAL item, their is an asm patch that makes tboxs check their params for this info instead
-# the main reason being that some subtypes don't have chest appearing animations, so if an appearing chest was patched to be one of those, it wouldn't appear
-# also having these defined here frees up the space in the game code where they were originally defined
-tbox_subtypes = [
+# Tbox actors (chests) usually determine their own subtype (which model to use
+# e.g. fancy boss key chest vs small brown chest) from their contents. The
+# game uses an array in the game code that maps itemids (indexes) to a Tbox
+# subtype which changes the model and animations.
+#
+# Tbox subtypes are as follows:
+# * 0x00 -> Big Blue Chests (the only chests that have an appearing animation)
+# * 0x01 -> Small Brown Chests
+# * 0x02 -> Fancy Boss Key Chests
+# * 0x03 -> Goddess Chests
+#
+# There is an asm patch that reads the chest subtype from param1 of the Tbox
+# actor. Therefore, it is possible to patch each Tbox actor with a stagepatch
+# to give it a specific chest subtype.
+#
+# The below list is a copy of the one in the vanilla game code. This allows
+# chests to be given an arbitrary subtype *or* its vanilla subtype based on
+# the ORIGINAL (vanilla) item the chest had.
+#
+# This means that the in-game array is now unused and the space can be
+# repurposed if needed.
+#
+# This was previously necessary as only big blue chests could spawn in with an
+# appearing animation. However, this has now been patched so that all chests
+# can appear. This patch is what makes Chest Type Matches Contents (CTMC) a
+# viable option for the randomizer.
+VANILLA_TBOX_SUBTYPES = (
     0x00,
     0x00,
     0x01,
@@ -519,4 +537,4 @@ tbox_subtypes = [
     0x00,
     0x00,
     0x00,
-]
+)

@@ -294,6 +294,30 @@
     - anywhere:                        "Maps can appear anywhere."
 
 
+- name: chest_type_matches_contents
+  default_option: "off"
+  pretty_name: Chest Type Matches Contents
+  pretty_options:
+    - "Off"
+    - "Only Dungeon Items"
+    - "All Contents"
+  options:
+    - "off":                           "Each chest will have the same type as it would in the vanilla game."
+    - "only_dungeon_items":            "Each chest will have the same type as it would in the vanilla game, unless it contains a dungeon item. If a chest contains a Boss Key, it will appear as a fancy chest. If it contains a Small Key, it will appear as a big blue chest. If it contains a Map, it will appear as a brown, wooden chest."
+    - "all_contents":                  "Each chest will have a different type based on the item inside. Important items will appear in big blue chests. Boss Keys will appear in fancy chests. Other items will appear in brown, wooden chests."
+
+
+- name: small_keys_in_fancy_chests
+  default_option: "off"
+  pretty_name: Small Keys in Fancy Chests
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "When Chest Type Matches Contents is not off, Small Keys will appear in big blue chests."
+    - "on":                            "When Chest Type Matches Contents is not off, Small Keys will appear in fancy chests."
+
+
 - name: path_hints
   default_option: 3
   pretty_name: Path Hints

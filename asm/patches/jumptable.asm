@@ -20,8 +20,8 @@
 ; Total available instructions:                     372 (decimal)
 ; 
 ; Please update this:
-; Total space used (bytes):                          52
-; Total instructions used:                           14
+; Total space used (bytes):                          72
+; Total instructions used:                           18
 
 ; startflags
 .offset 0x7100659ab0
@@ -36,6 +36,12 @@ b additions_jumptable
 ; Set Stone of Trials placed flag
 .offset 0x7100659ac0
 mov w8, #8
+b additions_jumptable
+
+; Hide spawnable chest after demo appear
+; Create dAcTbox::stateDemoAppearLeave function
+.offset 0x7100659ac8
+mov w8, #36
 b additions_jumptable
 
 

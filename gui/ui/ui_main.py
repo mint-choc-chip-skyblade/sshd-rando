@@ -1428,6 +1428,21 @@ class Ui_main_window(object):
 
         self.verticalLayout_23.addWidget(self.setting_cryptic_hint_text)
 
+        self.chest_size_matches_contents_label = QLabel(self.hints_group_box)
+        self.chest_size_matches_contents_label.setObjectName(u"chest_size_matches_contents_label")
+
+        self.verticalLayout_23.addWidget(self.chest_size_matches_contents_label)
+
+        self.setting_chest_type_matches_contents = QComboBox(self.hints_group_box)
+        self.setting_chest_type_matches_contents.setObjectName(u"setting_chest_type_matches_contents")
+
+        self.verticalLayout_23.addWidget(self.setting_chest_type_matches_contents)
+
+        self.setting_small_keys_in_fancy_chests = RandoTriStateCheckBox(self.hints_group_box)
+        self.setting_small_keys_in_fancy_chests.setObjectName(u"setting_small_keys_in_fancy_chests")
+
+        self.verticalLayout_23.addWidget(self.setting_small_keys_in_fancy_chests)
+
         self.hints_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_23.addItem(self.hints_vspacer)
@@ -2010,7 +2025,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2160,6 +2175,8 @@ class Ui_main_window(object):
         self.item_hints_label.setText(QCoreApplication.translate("main_window", u"Item Hints", None))
         self.setting_always_hints.setText(QCoreApplication.translate("main_window", u"Prioritize Remote Location Hints", None))
         self.setting_cryptic_hint_text.setText(QCoreApplication.translate("main_window", u"Cryptic Hint Text", None))
+        self.chest_size_matches_contents_label.setText(QCoreApplication.translate("main_window", u"Chest Type Matches Contents (CTMC)", None))
+        self.setting_small_keys_in_fancy_chests.setText(QCoreApplication.translate("main_window", u"Small Keys in Fancy Chests", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.hints_tab), QCoreApplication.translate("main_window", u"Hints", None))
         self.logic_rules_group_box.setTitle(QCoreApplication.translate("main_window", u"Logic", None))
         self.logic_rules_label.setText(QCoreApplication.translate("main_window", u"Logic Mode", None))

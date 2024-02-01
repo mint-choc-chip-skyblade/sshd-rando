@@ -16,7 +16,7 @@ from functools import partial
 import json
 import multiprocessing as mp
 
-from constants.tboxsubtypes import tbox_subtypes
+from constants.tboxsubtypes import VANILLA_TBOX_SUBTYPES
 from constants.patchconstants import (
     DEFAULT_SOBJ,
     DEFAULT_OBJ,
@@ -52,7 +52,9 @@ parser.add_argument(
 args = parser.parse_args()
 
 
-def patch_tbox(bzs: dict, itemid: int, object_id_str: str, trapid: int):
+def patch_tbox(
+    bzs: dict, itemid: int, object_id_str: str, trapid: int, tbox_subtype: int
+):
     id = int(object_id_str)
     tbox: dict | None = next(
         filter(lambda x: x["name"] == "TBox" and (x["anglez"] >> 9) == id, bzs["OBJS"]),
@@ -73,18 +75,27 @@ def patch_tbox(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 
     original_itemid = tbox["anglez"] & 0x1FF
 
-    # Goddess Chests (subtype 0x03) expect the signed negative number of
-    # the item id for the item they have (for some reason)
-    # 9 bits means 2^9 - 1 = 511
-    if tbox_subtypes[original_itemid] == 0x03:
-        itemid = 511 - itemid
+    # Patch chest subtype
+    #
+    ## 0 = Big Blue Chest
+    ## 1 = Small Brown Chest
+    ## 2 = Fancy Boss Key Chest
+    ## 3 = Goddess Chest
+    vanilla_tbox_subtype = VANILLA_TBOX_SUBTYPES[original_itemid]
 
-    # patches item
+    if vanilla_tbox_subtype == 3:
+        # Goddess Chests (subtype 0x03) expect the signed negative number of
+        # the item id for the item they have (for some reason)
+        # 9 bits means 2^9 - 1 = 511
+        itemid = 511 - itemid
+        tbox_subtype = 3
+    elif tbox_subtype == -1:
+        tbox_subtype = vanilla_tbox_subtype
+
+    tbox["params1"] = mask_shift_set(tbox["params1"], 0x3, 4, tbox_subtype)
+
+    # Patch itemid
     tbox["anglez"] = mask_shift_set(tbox["anglez"], 0x1FF, 0, itemid)
-    # patches chest type
-    tbox["params1"] = mask_shift_set(
-        tbox["params1"], 0x3, 4, tbox_subtypes[original_itemid]
-    )
 
 
 def patch_freestanding_item(
@@ -845,6 +856,7 @@ def patch_and_write_stage(
                             trapid,
                             custom_flag,
                             original_itemid,
+                            tbox_subtype,
                         ) in check_patches_for_current_room:
                             if object_name == "TBox":
                                 patch_tbox(
@@ -852,6 +864,7 @@ def patch_and_write_stage(
                                     itemid,
                                     objectid,
                                     trapid,
+                                    tbox_subtype,
                                 )
                             elif object_name == "Item":
                                 patch_freestanding_item(
@@ -1115,6 +1128,7 @@ class StagePatchHandler:
         trapid: int = 0,
         custom_flag: int = -1,
         original_itemid: int = 0,
+        tbox_subtype: int = -1,
     ):
         self.check_patches[stage].append(
             (
@@ -1126,6 +1140,7 @@ class StagePatchHandler:
                 trapid,
                 custom_flag,
                 original_itemid,
+                tbox_subtype,
             )
         )
 
