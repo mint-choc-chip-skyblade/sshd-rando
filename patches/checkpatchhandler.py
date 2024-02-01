@@ -125,6 +125,31 @@ def determine_check_patches(
                 layer = int(stage_patch_match.group("layer"))
                 object_name = stage_patch_match.group("objectName")
                 objectid = stage_patch_match.group("objectID")
+                tbox_subtype = -1
+
+                if object_name == "TBox":
+                    if (
+                        world.setting("chest_type_matches_contents").value()
+                        == "all_contents"
+                    ):
+                        if item.is_major_item or item.is_game_winning_item:
+                            tbox_subtype = 0
+                        else:
+                            tbox_subtype = 1
+
+                    if world.setting("chest_type_matches_contents").value() != "off":
+                        if item.is_boss_key:
+                            tbox_subtype = 2
+                        elif item.is_dungeon_small_key:
+                            if (
+                                world.setting("small_keys_in_fancy_chests").value()
+                                == "on"
+                            ):
+                                tbox_subtype = 2
+                            else:
+                                tbox_subtype = 0
+                        elif item.is_dungeon_map:
+                            tbox_subtype = 1
 
                 for oarc in item_oarcs:
                     stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
@@ -139,6 +164,7 @@ def determine_check_patches(
                     trapid,
                     custom_flag,
                     original_itemid,
+                    tbox_subtype,
                 )
 
             if event_patch_match := EVENT_PATCH_PATH_REGEX.match(path):

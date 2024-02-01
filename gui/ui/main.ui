@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -2188,6 +2188,23 @@
             <widget class="RandoTriStateCheckBox" name="setting_cryptic_hint_text">
              <property name="text">
               <string>Cryptic Hint Text</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="chest_size_matches_contents_label">
+             <property name="text">
+              <string>Chest Type Matches Contents (CTMC)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_chest_type_matches_contents"/>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_small_keys_in_fancy_chests">
+             <property name="text">
+              <string>Small Keys in Fancy Chests</string>
              </property>
             </widget>
            </item>
