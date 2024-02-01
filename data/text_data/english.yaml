@@ -463,7 +463,7 @@
 
 - name: Uncommon Treasure
   standard: Uncommon Treasure
-  pretty: a <Uncommon Treasure>
+  pretty: an <Uncommon Treasure>
   cryptic: a <r<nice treasure>>
   plurality: Singular
 

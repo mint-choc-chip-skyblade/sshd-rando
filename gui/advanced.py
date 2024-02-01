@@ -15,6 +15,7 @@ from PySide6.QtWidgets import (
 from filepathconstants import CONFIG_PATH, DEFAULT_OUTPUT_PATH, PLANDO_PATH
 from gui.dialogs.error_dialog import error_from_str
 from gui.dialogs.verify_files_progress_dialog import VerifyFilesProgressDialog
+from gui.dialogs.fi_info_dialog import FiInfoDialog
 from gui.guithreads import VerificationThread
 from logic.config import Config, write_config_to_file
 
@@ -157,6 +158,9 @@ class Advanced:
         # Prevents old progress dialogs reappearing when verifying multiple
         # times without reopening the entire program
         verify_dialog.deleteLater()
+
+        completion_dialog = FiInfoDialog(self.main)
+        completion_dialog.show_dialog("Done", "Verification Complete!")
 
     def show_file_error_dialog(self, file_text: str):
         self.main.fi_info_dialog.show_dialog(title="File not found!", text=file_text)
