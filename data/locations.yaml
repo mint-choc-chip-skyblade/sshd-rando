@@ -733,7 +733,7 @@
     - stage/F000/r0/l7/Item/108
     - stage/F000/r0/l9/Item/108
 
-- name: Skyloft Village - Stamina Fruits
+- name: Skyloft Village - Stamina Fruit
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -1762,7 +1762,7 @@
   Paths:
     - stage/F101/r0/l0/TBox/74
 
-- name: Deep Woods - Stamina Fruits
+- name: Deep Woods - Stamina Fruit
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
