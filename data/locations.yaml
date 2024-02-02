@@ -733,7 +733,7 @@
     - stage/F000/r0/l7/Item/108
     - stage/F000/r0/l9/Item/108
 
-- name: Skyloft Village - Stamina Fruit
+- name: Skyloft Village - Stamina Fruits
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -1762,7 +1762,7 @@
   Paths:
     - stage/F101/r0/l0/TBox/74
 
-- name: Deep Woods - Stamina Fruit
+- name: Deep Woods - Stamina Fruits
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -5009,7 +5009,7 @@
   original_item: Stamina Fruit
   types:
     - Silent Realms
-    - Stamina Fruit
+    - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/S100/r0/l2/Item/0xFC9A
@@ -5018,7 +5018,7 @@
   original_item: Stamina Fruit
   types:
     - Silent Realms
-    - Stamina Fruit
+    - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/S100/r0/l2/Item/0xFC9B
@@ -5034,7 +5034,7 @@
   original_item: Stamina Fruit
   types:
     - Silent Realms
-    - Stamina Fruit
+    - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/S300/r0/l2/Item/0xFC2D
@@ -5043,7 +5043,7 @@
   original_item: Stamina Fruit
   types:
     - Silent Realms
-    - Stamina Fruit
+    - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/S300/r0/l2/Item/0xFC36
@@ -5052,7 +5052,7 @@
   original_item: Stamina Fruit
   types:
     - Silent Realms
-    - Stamina Fruit
+    - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/S300/r0/l2/Item/0xFC30
@@ -5061,7 +5061,7 @@
   original_item: Stamina Fruit
   types:
     - Silent Realms
-    - Stamina Fruit
+    - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/S300/r0/l2/Item/0xFC63
@@ -5070,7 +5070,7 @@
   original_item: Stamina Fruit
   types:
     - Silent Realms
-    - Stamina Fruit
+    - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/S300/r0/l2/Item/0xFC31
@@ -5086,7 +5086,7 @@
   original_item: Stamina Fruit
   types:
     - Silent Realms
-    - Stamina Fruit
+    - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/S200/r4/l2/Item/0xFC05
@@ -5095,7 +5095,7 @@
   original_item: Stamina Fruit
   types:
     - Silent Realms
-    - Stamina Fruit
+    - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/S200/r2/l2/Item/0xFC40
@@ -5104,7 +5104,7 @@
   original_item: Stamina Fruit
   types:
     - Silent Realms
-    - Stamina Fruit
+    - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/S200/r2/l2/Item/0xFC4D
