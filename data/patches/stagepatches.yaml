@@ -3377,7 +3377,7 @@ F300_5: # Lanayru Mining Facility to Temple of Time
     objtype: SCEN
     object:
       layer: 2
-      entrance: 2
+      entrance: 5
       saveprompt: 1
   - name: End of LMF loadzone
     type: objpatch
