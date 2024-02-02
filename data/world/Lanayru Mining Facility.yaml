@@ -200,6 +200,6 @@
 
 - name: LMF End of Hall of Ancient Robots
   exits:
-    Temple of Time West Past Rubble: Nothing
+    Temple of Time West Post LMF Area: Nothing
   locations:
     Lanayru Mining Facility - Exit Hall of Ancient Robots: Nothing
