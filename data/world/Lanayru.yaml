@@ -288,6 +288,7 @@
   exits:
     Temple of Time Statue: Nothing
     Temple of Time West: Nothing
+    Temple of Time West Post LMF Area: Nothing
   locations:
     Temple of Time - Rupee on North Gate of Time Pillar: Beetle
     Temple of Time - Rupee on Southwest Gate of Time Pillar: Beetle
@@ -297,6 +298,7 @@
 - name: Temple of Time West Post LMF Area
   hint_region: None # TODO figure out what to do with this
   exits:
+    Temple of Time West Past Rubble: Nothing
     LMF End of Hall of Ancient Robots: Impossible # TODO
 
 
