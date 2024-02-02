@@ -145,11 +145,11 @@
       - stage: F300_5
         room: 0
         index: 0
-    secondary_spawn_info: # Spawn in Harp Cutindexe
+    secondary_spawn_info:
       - stage: F300_4
         layer: 2
         room: 0
-        entrance: 2
+        entrance: 5
 - type: Dungeon
   forward: 
     connection: Floria Waterfall Temple Ledge -> Ancient Cistern Lobby
