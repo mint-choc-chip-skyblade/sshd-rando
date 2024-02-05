@@ -1,5 +1,6 @@
 import logging
 import random
+from constants.itemconstants import CTMC_ITEMS_TO_FILTER_OUT, ITEMS_NOT_TO_TRAP
 from constants.patchconstants import (
     STAGE_PATCH_PATH_REGEX,
     EVENT_PATCH_PATH_REGEX,
@@ -34,6 +35,13 @@ def determine_check_patches(
     custom_flags.reverse()
 
     location_table = world.location_table
+
+    # A set is okay here because it doesn't touch any randomization
+    playthrough_items = set()
+
+    for sphere in world.playthrough_spheres:
+        for location in sphere:
+            playthrough_items.add(location.current_item.name)
 
     for location in location_table.values():
         item = location.current_item
@@ -75,9 +83,7 @@ def determine_check_patches(
                     item
                     for item in world.item_table.values()
                     if item.id < 200  # exclude custom items
-                    # Heart, Sailcloth, Non-Practice Swords, Stamina Fruit
-                    and item.id not in (6, 15, 9, 11, 12, 13, 14, 42)
-                    and not "Song of the Hero" in item.name
+                    and item.name not in ITEMS_NOT_TO_TRAP
                 ]
 
                 trappable_items_setting = world.setting("trappable_items")
@@ -138,7 +144,12 @@ def determine_check_patches(
                             tbox_subtype = 1
 
                     if world.setting("chest_type_matches_contents").value() != "off":
-                        if item.is_boss_key:
+                        if (
+                            item.name in CTMC_ITEMS_TO_FILTER_OUT
+                            and item.name not in playthrough_items
+                        ):
+                            tbox_subtype = 1
+                        elif item.is_boss_key:
                             tbox_subtype = 2
                         elif item.is_dungeon_small_key:
                             if (
