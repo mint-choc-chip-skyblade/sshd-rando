@@ -522,13 +522,13 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
     unsafe {
         let actor_param1 = (*item_actor).base.basebase.members.param1;
 
-        if (actor_param1 >> 9) & 0x1 == 0 {
+        if (*item_actor).itemid != 42 {
             let mut use_default_scaling = false;
             let mut y_offset = 0.0f32;
             let item_rot = (*item_actor).base.members.base.rot;
 
             // Item id
-            match actor_param1 & 0x1FF {
+            match dAcItem__determineFinalItemid((actor_param1 & 0x1FF).into()) {
                 // Sword + Sailcloth | Harp | Digging Mitts | Scattershot | Beedle's Insect Cage | Sot | Songs
                 9..=15 | 16 | 56 | 105 | 159 | 180 | 186..=193 => y_offset = 20.0,
                 // Bow | Iron Bow | Sacred Bow | Sea Chart | Wooden Shield | Hylian Shield

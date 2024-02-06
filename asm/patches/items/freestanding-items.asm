@@ -2,6 +2,22 @@
 b 0x71004e8f94
 
 
+; Always let triforces fall when bonked
+.offset 0x71004dc09c
+mov w8, #3 ; -> branch over code that prevents triforces falling
+
+; Allow Triforces and Heart Pieces to be whippable
+.offset 0x71004e4dd8
+nop ; heart piece check -> false
+mov w9, #3 ; triforce check -> false
+
+.offset 0x71004e3620
+mov w10, w11 ; triforce check -> false
+
+.offset 0x71004e4e14
+b 0x71004e4ea0 ; heart piece check -> false
+
+
 ; Increase freestanding item size only if there's no default value already
 .offset 0x71004e5128
 ldr x10, [x19, #0xC] ; get param1
