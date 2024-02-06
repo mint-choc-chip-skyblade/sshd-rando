@@ -2,6 +2,11 @@
 b 0x71004e8f94
 
 
+; Always let triforces fall when bonked
+.offset 0x71004dc09c
+mov w8, #3 ; -> branch over code that prevents triforces falling
+
+
 ; Increase freestanding item size only if there's no default value already
 .offset 0x71004e5128
 ldr x10, [x19, #0xC] ; get param1
