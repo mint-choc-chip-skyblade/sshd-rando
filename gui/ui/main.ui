@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -895,6 +895,13 @@
             </widget>
            </item>
            <item>
+            <widget class="RandoTriStateCheckBox" name="setting_rotating_items">
+             <property name="text">
+              <string>Rotating Items</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="RandoTriStateCheckBox" name="setting_tunic_swap">
              <property name="text">
               <string>Tunic Swap</string>
@@ -902,9 +909,9 @@
             </widget>
            </item>
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_rotating_items">
+            <widget class="RandoTriStateCheckBox" name="setting_starry_skies">
              <property name="text">
-              <string>Rotating Items</string>
+              <string>Starry Skies</string>
              </property>
             </widget>
            </item>
