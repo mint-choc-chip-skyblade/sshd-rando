@@ -735,6 +735,16 @@
             <widget class="QComboBox" name="setting_lanayru_caves_key"/>
            </item>
            <item>
+            <widget class="QLabel" name="boss_key_puzzles_label">
+             <property name="text">
+              <string>Boss Key Puzzles</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_boss_key_puzzles"/>
+           </item>
+           <item>
             <spacer name="dungeons_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>

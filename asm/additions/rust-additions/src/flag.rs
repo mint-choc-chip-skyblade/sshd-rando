@@ -605,11 +605,17 @@ pub fn handle_startflags() {
                 break;
             }
 
-            ((*(*ITEMFLAG_MGR).funcs).set_flag_or_counter_to_value)(
-                ITEMFLAG_MGR,
-                start_count.counter,
-                start_count.value,
-            );
+            // If the counter is less than 25, it's a dungeon scene
+            // for small key counts. Otherwise, it's a regular item flag counter
+            if start_count.counter <= 25 {
+                (*FILE_MGR).FA.dungeonflags[start_count.counter as usize][1] = start_count.value;
+            } else {
+                ((*(*ITEMFLAG_MGR).funcs).set_flag_or_counter_to_value)(
+                    ITEMFLAG_MGR,
+                    start_count.counter,
+                    start_count.value,
+                );
+            }
         }
 
         ((*(*STORYFLAG_MGR).funcs).do_commit)(STORYFLAG_MGR);

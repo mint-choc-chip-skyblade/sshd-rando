@@ -103,3 +103,9 @@
 
 .global give_squirrel_item
 .type give_squirrel_item, @function
+
+.global set_boss_key_positions
+.type set_boss_key_positions, @function
+
+.global set_random_key_positions
+.type set_random_key_positions, @function

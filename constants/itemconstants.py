@@ -382,7 +382,25 @@ ITEM_STORYFLAGS = {
     # SAILCLOTH: 32
 }
 
-# first value of tuple is the counter flag,
+# first value is dungeon name
+# second value is the flag to set at the scene
+ITEM_DUNGEONFLAGS = {
+    SV_MAP: ("Skyview Temple", 2),
+    ET_MAP: ("Earth Temple", 2),
+    LMF_MAP: ("Lanayru Mining Facility", 2),
+    AC_MAP: ("Ancient Cistern", 2),
+    SSH_MAP: ("Sandship", 2),
+    FS_MAP: ("Fire Sanctuary", 2),
+    SK_MAP: ("Sky Keep", 2),
+    SV_BOSS_KEY: ("Skyview Temple", 12),
+    ET_BOSS_KEY: ("Earth Temple", 12),
+    LMF_BOSS_KEY: ("Lanayru Mining Facility", 12),
+    AC_BOSS_KEY: ("Ancient Cistern", 12),
+    SSH_BOSS_KEY: ("Sandship", 12),
+    FS_BOSS_KEY: ("Fire Sanctuary", 12),
+}
+
+# first value of tuple is the counter flag or dungeon scene index for small keys
 # second is the amount to add
 # third is the maximum of the item
 ITEM_COUNTS = {
@@ -391,6 +409,13 @@ ITEM_COUNTS = {
     BOMB_BAG: (0x1F3, 10, 1),
     PROGRESSIVE_BOW: (0x1F2, 20, 1),
     PROGRESSIVE_SLINGSHOT: (0x1ED, 20, 1),
+    LC_SMALL_KEY: (9, 1, 1),
+    SV_SMALL_KEY: (11, 1, 2),
+    LMF_SMALL_KEY: (17, 1, 1),
+    AC_SMALL_KEY: (12, 1, 2),
+    SSH_SMALL_KEY: (18, 1, 2),
+    FS_SMALL_KEY: (15, 1, 3),
+    SK_SMALL_KEY: (20, 1, 1),
 }
 
 TRAP_SETTING_TO_ITEM = {

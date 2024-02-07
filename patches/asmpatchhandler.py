@@ -1,6 +1,11 @@
 import struct
 import tempfile
-from constants.itemconstants import ITEM_ITEMFLAGS, ITEM_STORYFLAGS, ITEM_COUNTS
+from constants.itemconstants import (
+    ITEM_ITEMFLAGS,
+    ITEM_STORYFLAGS,
+    ITEM_DUNGEONFLAGS,
+    ITEM_COUNTS,
+)
 from filepathconstants import (
     ASM_ADDITIONS_DIFFS_PATH,
     ASM_PATCHES_DIFFS_PATH,
@@ -13,6 +18,7 @@ from filepathconstants import (
 from io import BytesIO
 from pathlib import Path
 from collections import Counter
+import random
 
 from constants.asmconstants import *
 
@@ -354,6 +360,12 @@ class ASMPatchHandler:
                 else:
                     storyflags.append(storyflag_data)
 
+            if dungeonflag_data := ITEM_DUNGEONFLAGS.get(item_name, False):
+                scene, flag = dungeonflag_data
+                if scene not in dungeonflags:
+                    dungeonflags[scene] = []
+                dungeonflags[scene].append(flag)
+
             if start_count_data := ITEM_COUNTS.get(item_name, False):
                 counter, amount, maximum = start_count_data
                 final_count = min(maximum, count)
@@ -458,6 +470,13 @@ class ASMPatchHandler:
                 0x00,
                 0x00,
             ],  # TRAP_DURATION
+            0x712E54B6BC: [
+                random.randint(0, 0xFF),
+                random.randint(0, 0xFF),
+                random.randint(0, 0xFF),
+                random.randint(0, 0xFF),
+                # RNG_SEED
+            ],
         }
 
         yaml_write(output_path, init_globals_dict)
