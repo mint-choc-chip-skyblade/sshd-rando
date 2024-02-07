@@ -503,6 +503,16 @@ class Ui_main_window(object):
 
         self.verticalLayout_16.addWidget(self.setting_lanayru_caves_key)
 
+        self.boss_key_puzzles_label = QLabel(self.dungeons_group_box)
+        self.boss_key_puzzles_label.setObjectName(u"boss_key_puzzles_label")
+
+        self.verticalLayout_16.addWidget(self.boss_key_puzzles_label)
+
+        self.setting_boss_key_puzzles = QComboBox(self.dungeons_group_box)
+        self.setting_boss_key_puzzles.setObjectName(u"setting_boss_key_puzzles")
+
+        self.verticalLayout_16.addWidget(self.setting_boss_key_puzzles)
+
         self.dungeons_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_16.addItem(self.dungeons_vspacer)

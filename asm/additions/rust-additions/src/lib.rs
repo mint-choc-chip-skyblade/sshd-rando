@@ -22,6 +22,7 @@ mod item;
 mod lyt;
 mod math;
 mod player;
+mod rng;
 mod savefile;
 mod traps;
 

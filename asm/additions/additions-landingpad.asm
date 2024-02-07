@@ -124,6 +124,12 @@ b.eq spawn_appeared_chest
 cmp w8, #36
 b.eq hide_appearing_chest
 
+cmp w8, #37
+b.eq set_correct_boss_key_positions
+
+cmp w8, #38
+b.eq set_random_boss_key_positions
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

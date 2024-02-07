@@ -5,6 +5,7 @@
 use crate::debug;
 use crate::flag;
 use crate::math;
+use crate::rng;
 use crate::savefile;
 
 use core::arch::asm;
@@ -1085,6 +1086,8 @@ extern "C" {
 
     static mut CURRENT_STAGE_NAME: [u8; 8];
 
+    static mut INITIAL_INSERT_ANGLES: [math::Vec3s; 6];
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn allocateNewActor(
@@ -1147,5 +1150,27 @@ pub fn should_spawn_eldin_platforms(platform_actor_maybe: *mut dAcORockBoatMaybe
             }
         }
         return 0;
+    }
+}
+
+#[no_mangle]
+pub fn set_correct_boss_key_positions() {
+    unsafe {
+        for bk_angle in &mut INITIAL_INSERT_ANGLES[0..6] {
+            bk_angle.x = 0xC000;
+            bk_angle.y = 0x4700;
+            bk_angle.z = 0xB8E4;
+        }
+    }
+}
+
+#[no_mangle]
+pub fn set_random_boss_key_positions() {
+    unsafe {
+        for bk_angle in &mut INITIAL_INSERT_ANGLES[0..6] {
+            bk_angle.x = rng::simple_rng() as u16;
+            bk_angle.y = rng::simple_rng() as u16;
+            bk_angle.z = rng::simple_rng() as u16;
+        }
     }
 }
