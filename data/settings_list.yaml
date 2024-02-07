@@ -722,6 +722,18 @@
     - "off":                           "Only Heart Pieces, Heart Containers, and Triforces will rotate."
     - "on":                            "All freestanding items will rotate."
 
+
+- name: starry_skies
+  type: Cosmetic
+  default_option: "off"
+  pretty_name: Starry Skies
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Stars will only appear in the sky at night."
+    - "on":                            "Stars will appear in the sky during the day and night."
+
 ############################
 ## Logic options (tricks) ##
 ############################

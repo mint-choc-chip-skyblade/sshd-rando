@@ -603,15 +603,20 @@ class Ui_main_window(object):
 
         self.verticalLayout.addWidget(self.setting_dowsing_after_whitesword)
 
+        self.setting_rotating_items = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_rotating_items.setObjectName(u"setting_rotating_items")
+
+        self.verticalLayout.addWidget(self.setting_rotating_items)
+
         self.setting_tunic_swap = RandoTriStateCheckBox(self.tweaks_group_box)
         self.setting_tunic_swap.setObjectName(u"setting_tunic_swap")
 
         self.verticalLayout.addWidget(self.setting_tunic_swap)
 
-        self.setting_rotating_items = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_rotating_items.setObjectName(u"setting_rotating_items")
+        self.setting_starry_skies = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_starry_skies.setObjectName(u"setting_starry_skies")
 
-        self.verticalLayout.addWidget(self.setting_rotating_items)
+        self.verticalLayout.addWidget(self.setting_starry_skies)
 
         self.tweaks_vspacer = QSpacerItem(20, 148, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -2025,7 +2030,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(5)
+        self.tab_widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2087,8 +2092,9 @@ class Ui_main_window(object):
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
         self.setting_dowsing_after_whitesword.setText(QCoreApplication.translate("main_window", u"Fill Dowsing on White Sword", None))
-        self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
         self.setting_rotating_items.setText(QCoreApplication.translate("main_window", u"Rotating Items", None))
+        self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
+        self.setting_starry_skies.setText(QCoreApplication.translate("main_window", u"Starry Skies", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.gameplay_tab), QCoreApplication.translate("main_window", u"Gameplay", None))
         self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))
         self.open_thunderhead_label.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
