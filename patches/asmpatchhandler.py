@@ -470,7 +470,7 @@ class ASMPatchHandler:
                 0x00,
                 0x00,
             ],  # TRAP_DURATION
-            0x712E54B6BC: [
+            0x712E5FF02C: [
                 random.randint(0, 0xFF),
                 random.randint(0, 0xFF),
                 random.randint(0, 0xFF),
