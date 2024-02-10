@@ -93,6 +93,10 @@ World 1:
   noise_traps: random
   groose_traps: random
   starting_sword: goddess_longsword
+  upgraded_skyward_strike: random
+  faster_air_meter_depletion: random
+  spawn_hearts: random
+  damage_multiplier: random
   starting_inventory:
   - Scrapper
   - Bomb Bag
