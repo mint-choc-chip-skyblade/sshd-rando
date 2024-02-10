@@ -649,8 +649,9 @@ def validate_world(
     # with no items except the starting inventory
     sphere_zero_search = Search(SearchMode.SPHERE_ZERO, worlds)
     sphere_zero_search.search_worlds()
+    sphere_zero_locs = [l for l in sphere_zero_search.visited_locations if l.progression and "Goddess Cube" not in l.types]
     if (
-        len(sphere_zero_search.visited_locations) == 0
+        len(sphere_zero_locs) == 0
         and not sphere_zero_search.found_disconnected_exit
     ):
         raise EntranceShuffleError(f"No Sphere 0 locations reachable at the start!")
