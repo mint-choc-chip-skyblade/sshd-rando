@@ -134,7 +134,7 @@ Can Defeat Ghirahim 2: Goddess_Sword or logic_fs_practice_sword_ghirahim_2 # Pra
 
 # Area Specific Stuff
 
-Can Survive Hot Cave: Nothing # TODO: Check damage multiplier < 12 or Fireshield_Earrings
+Can Survive Hot Cave: damage_multiplier <= 11 or Fireshield_Earrings
 
 Raise Lanayru Mining Facility: open_lmf == open or 'Activate_Main_Node'
 

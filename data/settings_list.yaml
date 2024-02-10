@@ -549,18 +549,6 @@
     - "on":                            "You will not be required to sleep to night and travel to the overworld to access nighttime-only checks."
 
 
-# Will be added to the gui once it actually changes behaviour
-- name: upgraded_skyward_strike
-  default_option: "on"
-  pretty_name: Upgraded Skyward Strike
-  pretty_options:
-    - "Off"
-    - "On"
-  options:
-    - "off":                           "Only the True Master Sword will have the fully upgraded Skyward Strike."
-    - "on":                            "The Goddess Sword (and better swords) will have the fully upgraded Skyward Strike (charges quicker and travels farther). This has logical changes."
-
-
 - name: skip_horde
   default_option: "off"
   pretty_name: Skip The Horde Fight
@@ -709,6 +697,50 @@
     - vanilla_orientation:             "Boss Keys will start in their original orientations when you try to open boss doors."
     - random_orientation:              "Boss Keys will start in a random orientation when you try to open boss doors."
 
+
+- name: upgraded_skyward_strike
+  default_option: "on"
+  pretty_name: Upgraded Skyward Strike
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Only the True Master Sword will have the fully upgraded Skyward Strike."
+    - "on":                            "The Goddess Sword (and better swords) will have the fully upgraded Skyward Strike (charges quicker and travels farther). This has logical changes."
+
+
+- name: faster_air_meter_depletion
+  default_option: "off"
+  pretty_name: Faster Air Meter Depletion
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off/on":                        "If enabled, the air meter will deplete twice as fast when underwater."
+    
+
+- name: spawn_hearts
+  default_option: "on"
+  pretty_name: Spawn Hearts and Heart Flowers
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off/on":                        "If enabled, heart flowers will spawn and hearts may drop from defeated enemies, broken pots, broken barrels, cut grass, and digging spots."
+
+
+- name: damage_multiplier
+  default_option: "1"
+  pretty_name: Damage Multiplier
+  random_low: "1"
+  random_high: "4"
+  pretty_options:
+    - 1-80
+  options:
+    - 1-80:                            "Determines the overall damage multiplier.
+                                        **Normal Mode** (default) damage is x1.
+                                        **Hero Hode** (new game +) damage is x2.
+                                        At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
 ############################
 ##    Cosmetic Options    ##

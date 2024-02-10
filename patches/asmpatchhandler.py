@@ -239,6 +239,11 @@ class ASMPatchHandler:
                 SDK_NSO_OFFSETS,
             )
 
+        print_progress_text("Applying damage multiplier")
+        self.patch_damage_multiplier(
+            ASM_PATCHES_DIFFS_PATH / "damage-multiplier-diff.yaml", world
+        )
+
         print_progress_text("Applying asm patches")
         self.patch_asm(
             world,
@@ -483,6 +488,23 @@ class ASMPatchHandler:
 
         # Write the global variables binary to a non-temp file.
         # yaml_write(Path("./test-global-variables.yaml"), init_globals_dict)
+
+    def patch_damage_multiplier(self, output_path: Path, world: World):
+        multiplier = world.setting("damage_multiplier").value_as_number()
+        # bytes for instruction: mov w8, damage_multiplier
+        bytes = 0x52800008 | (multiplier << 5)
+
+        # Reverse order for proper endianess
+        damage_multiplier_dict = {
+            0x7100A6CD84: [
+                bytes & 0x000000FF,
+                (bytes & 0x0000FF00) >> 8,
+                (bytes & 0x00FF0000) >> 16,
+                (bytes & 0xFF000000) >> 24,
+            ]
+        }
+
+        yaml_write(output_path, damage_multiplier_dict)
 
     def _get_flags(
         self, startflag_section, onlyif_handler: ConditionalPatchHandler
