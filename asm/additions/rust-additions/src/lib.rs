@@ -21,6 +21,7 @@ mod flag;
 mod item;
 mod lyt;
 mod math;
+mod minigame;
 mod player;
 mod rng;
 mod savefile;

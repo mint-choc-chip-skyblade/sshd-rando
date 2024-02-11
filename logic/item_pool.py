@@ -42,7 +42,7 @@ def generate_item_pool(world: "World") -> None:
         ]
 
     if world.setting("lanayru_caves_key") == "removed":
-        item_pool.remove(LC_SMALL_KEY)
+        item_pool = [item for item in item_pool if item != LC_SMALL_KEY]
 
     if world.setting("boss_keys") == "removed":
         item_pool = [item for item in item_pool if not item.endswith(BOSS_KEY)]
