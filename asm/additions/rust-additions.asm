@@ -109,3 +109,6 @@
 
 .global set_random_key_positions
 .type set_random_key_positions, @function
+
+.global prevent_minigame_death
+.type prevent_minigame_death, @function
