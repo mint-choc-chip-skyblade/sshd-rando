@@ -39,7 +39,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn prevent_minigame_death(final_health: u32) -> u32 {
+pub fn prevent_minigame_death(final_health: i32) -> i32 {
     unsafe {
         let mut new_final_health = final_health;
         // Set final health to 1 if we're in the thrill digger or bug heaven minigames
