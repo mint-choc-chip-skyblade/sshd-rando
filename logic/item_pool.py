@@ -48,6 +48,9 @@ def generate_item_pool(world: "World") -> None:
         item_pool = [item for item in item_pool if not item.endswith(BOSS_KEY)]
 
     for item_name in item_pool:
+        if item_name in VANILLA_RANDOM_ITEM_TABLE:
+            item_name = random.choice(VANILLA_RANDOM_ITEM_TABLE[item_name])
+
         item = world.get_item(item_name)
         world.item_pool[item] += 1
 
@@ -126,8 +129,25 @@ def generate_starting_item_pool(world: "World"):
         world.starting_item_pool[world.get_item(SONG_OF_THE_HERO)] = 1
 
 
-def get_random_junk_item_name():
-    return random.choice([RED_RUPEE, SILVER_RUPEE, UNCOMMON_TREASURE, RARE_TREASURE])
+def get_random_junk_item_name() -> str:
+    random_junk_item = random.choice(
+        (
+            BLUE_RUPEE,
+            RED_RUPEE,
+            SILVER_RUPEE,
+            FIVE_BOMBS,
+            TEN_DEKU_SEEDS,
+            TEN_ARROWS,
+            COMMON_TREASURE,
+            UNCOMMON_TREASURE,
+            RARE_TREASURE,
+        )
+    )
+
+    if random_junk_item in VANILLA_RANDOM_ITEM_TABLE:
+        random_junk_item = random.choice(VANILLA_RANDOM_ITEM_TABLE[random_junk_item])
+
+    return random_junk_item
 
 
 def get_complete_item_pool(worlds: list["World"]) -> list[Item]:

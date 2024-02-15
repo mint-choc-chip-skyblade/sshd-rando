@@ -34,6 +34,14 @@
   types:
     - Minor Items
   oarc: null # ObjectPack
+- id: 8
+  name: 10 Arrows
+  oarc: null # ObjectPack
+  types:
+    - Ammo
+    - Minor Items
+  getarcname: GetArrow
+  getmodelname: GetArrowBundle
 - id: 9
   name: Goddess White Sword
   types:
@@ -332,7 +340,7 @@
   types:
     - Ammo
     - Minor Items
-  oarc: null # ObjectPack
+  oarc: GetSeedSet
   getarcname: GetSeedSet
   getmodelname: GetSeedSet
 - id: 63
@@ -746,6 +754,14 @@
   oarc: null # ObjectPack
   getarcname: GetSozaiE
   getmodelname: GetSozaiE
+- id: 166
+  name: Ancient Flower
+  types:
+    - Treasures
+    - Minor Items
+  oarc: GetSozaiF
+  getarcname: GetSozaiF
+  getmodelname: GetSozaiF
 - id: 168
   name: Dusk Relic
   types:
@@ -770,6 +786,14 @@
   oarc: null # ObjectPack
   getarcname: GetSozaiM
   getmodelname: GetSozaiM
+- id: 174
+  name: Blue Bird Feather
+  types:
+    - Treasures
+    - Minor Items
+  oarc: null # ObjectPack
+  getarcname: GetSozaiN
+  getmodelname: GetSozaiN
 - id: 175
   name: Golden Skull
   types:

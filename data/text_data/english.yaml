@@ -269,6 +269,12 @@
   cryptic: a <r<Band-Aid>>
   plurailty: Singular
 
+- name: 10 Arrows
+  standard: 10 Arrows
+  pretty: <10 Arrows>
+  cryptic: <r<pointy sticks>>
+  plurailty: Singular
+
 - name: Goddess White Sword
   standard: Goddess White Sword
   pretty: the <Goddess White Sword>
@@ -761,6 +767,12 @@
   cryptic: some <r<common metal>>
   plurality: Singular
 
+- name: Ancient Flower
+  standard: Ancient Flower
+  pretty: an <Ancient Flower>
+  cryptic: an <r<old plant>>
+  plurality: Singular
+
 - name: Dusk Relic
   standard: Dusk Relic
   pretty: a <Dusk Relic>
@@ -777,6 +789,12 @@
   standard: Evil Crystal
   pretty: an <Evil Crystal>
   cryptic: a <r<dark crystal>>
+  plurality: Singular
+
+- name: Blue Bird Feather
+  standard: Blue Bird Feather
+  pretty: a <Blue Bird Feather>
+  cryptic: a <r<valuable feather>>
   plurality: Singular
 
 - name: Golden Skull
