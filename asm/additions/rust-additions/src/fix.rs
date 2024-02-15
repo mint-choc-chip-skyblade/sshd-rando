@@ -197,3 +197,14 @@ pub fn horwell_always_interactable(horwell: *mut c_void) {
         asm!("ldr x8,[x19, #0xb60]");
     }
 }
+
+#[no_mangle]
+pub fn is_kikwi_found(dont_care: *mut c_void, found_storyflag: u16) -> bool {
+    unsafe {
+        if &CURRENT_STAGE_NAME[..5] == b"F100\0" {
+            return flag::check_storyflag(found_storyflag) == 1;
+        } else {
+            return true;
+        }
+    }
+}
