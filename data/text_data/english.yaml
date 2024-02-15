@@ -213,7 +213,7 @@
   standard: "You can't beat this\ndungeon at the present\ntime, I would suggest\ncoming back later"
 
 - name: Thunderdragon Thank you text
-  standard: "Thank you for saving me"
+  standard: "Thank you for saving me."
 
 - name: botg context text
   standard: "I see you have acquired the <y<harp>>.\nWell done. Let me teach you a <b<song>>,\nit will be useful for your adventure."
