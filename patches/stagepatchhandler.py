@@ -481,13 +481,19 @@ def object_add(bzs: dict, object_add: dict, nextid: int) -> int:
             new_object[prop] = value
 
             if prop == "id":
-                new_object["id"] = (new_object["id"] & ~0x3FF) | nextid
+                new_object["id"] = (new_object["id"] & ~0x3FF) | (
+                    nextid + return_nextid_increment
+                )
                 return_nextid_increment += 1
         # Allow creating new objects that *need* a known id
         elif prop == "hardcoded_id":
             new_object["id"] = value
         else:
             patch_additional_properties(obj=new_object, prop=prop, value=value)
+
+    if new_object.get("id") == 0:
+        new_object["id"] = nextid + return_nextid_increment
+        return_nextid_increment += 1
 
     # creates list for object types if don't already exist in bzs
     if layer is None:
