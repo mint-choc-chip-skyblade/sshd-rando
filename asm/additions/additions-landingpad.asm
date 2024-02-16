@@ -133,6 +133,9 @@ b.eq set_random_boss_key_positions
 cmp w8, #39
 b.eq prevent_minigame_death
 
+cmp w8, #40
+b.eq is_kikwi_found
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
