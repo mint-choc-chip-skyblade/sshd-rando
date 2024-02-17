@@ -51,3 +51,12 @@ movz w8, #0x47df, LSL #16 ; 114176.0 arbitrarily large value to stop despawn - t
 
 .offset 0x71009876a8
 str w8, [x19, #0x23c] ; store new culling distance value
+
+
+; Increase zipper speed cap
+.offset 0x710024c034
+mov w8, #0x43c80000 ; 60.0 -> 400.0
+.offset 0x710024c048
+mov w8, #0x43c80000 ; 60.0 -> 400.0
+.offset 0x710024c090
+mov w8, #0xc3c80000 ; -60.0 -> -400.0
