@@ -23,7 +23,7 @@ parser.add_argument(
 args = parser.parse_args()
 
 # Set specified log level
-if args.debug:
+if args.debug and __name__ == "__main__":
     print("Starting Debug Log")
     logging.basicConfig(
         filename="debug.log",
