@@ -1,4 +1,4 @@
-import argparse
+from util.arguments import get_program_args
 from gui.dialogs.dialog_header import (
     get_progress_value_from_range,
     print_progress_text,
@@ -40,17 +40,7 @@ from filepathconstants import (
     ENDROLL_SOURCE_PATH,
 )
 
-parser = argparse.ArgumentParser()
-
-parser.add_argument(
-    "--with-gui",
-    dest="with_gui",
-    action="store_true",
-    help="Runs the randomizer through a gui.",
-)
-
-args = parser.parse_args()
-
+args = get_program_args()
 
 def patch_tbox(
     bzs: dict, itemid: int, object_id_str: str, trapid: int, tbox_subtype: int

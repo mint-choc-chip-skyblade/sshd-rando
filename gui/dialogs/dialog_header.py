@@ -1,17 +1,8 @@
-import argparse
+from util.arguments import get_program_args
 import logging
 
 
-parser = argparse.ArgumentParser()
-
-parser.add_argument(
-    "--with-gui",
-    dest="with_gui",
-    action="store_true",
-    help="Runs the randomizer through a gui.",
-)
-
-args = parser.parse_args()
+args = get_program_args()
 
 
 def get_progress_value_from_range(
