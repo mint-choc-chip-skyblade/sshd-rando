@@ -42,6 +42,7 @@ from filepathconstants import (
 
 args = get_program_args()
 
+
 def patch_tbox(
     bzs: dict, itemid: int, object_id_str: str, trapid: int, tbox_subtype: int
 ):
