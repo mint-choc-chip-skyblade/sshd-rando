@@ -320,8 +320,10 @@ def load_preferences() -> Config:
                 preferences_in[field] = field_value
                 rewrite_preferences = True
 
-        # Make sure output_dir is always a Path object in config
+        # Make sure output_dir is always a Path object in config...
         config.output_dir = Path(config.output_dir)
+        # ...and a string if being dumped
+        preferences_in["output_dir"] = Path(preferences_in["output_dir"]).as_posix()
 
     if rewrite_preferences:
         with open(filepath, "w") as preferences_file:
