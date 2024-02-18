@@ -1,7 +1,12 @@
 from pathlib import Path
 import yaml
-from constants.configconstants import CONFIG_SETTINGS, get_default_setting
+from constants.configconstants import (
+    CONFIG_FIELDS,
+    PREFERENCE_FIELDS,
+    get_default_setting,
+)
 from constants.itemconstants import STARTABLE_ITEMS
+from filepathconstants import PREFERENCES_PATH
 
 from .settings import *
 
@@ -27,10 +32,10 @@ class Config:
 
 
 def create_default_config(filename: Path):
-    config = Config()
+    config = load_preferences()
 
-    for config_setting in CONFIG_SETTINGS:
-        config.__setattr__(config_setting, get_default_setting(config_setting))
+    for field in CONFIG_FIELDS:
+        config.__setattr__(field, get_default_setting(field))
 
     config.settings.append(SettingMap())
     setting_map = config.settings[0]
@@ -64,11 +69,8 @@ def write_config_to_file(filename: Path, config: Config):
     with open(filename, "w") as config_file:
         config_out = {}
 
-        for config_setting in CONFIG_SETTINGS:
-            config_out[config_setting] = config.__getattribute__(config_setting)
-
-        # Make sure output_dir is always a string
-        config_out["output_dir"] = config_out["output_dir"].as_posix()
+        for field in CONFIG_FIELDS:
+            config_out[field] = config.__getattribute__(field)
 
         for i, setting_map in enumerate(config.settings):
             world_num = f"World {i + 1}"
@@ -103,6 +105,17 @@ def write_config_to_file(filename: Path, config: Config):
 
         yaml.safe_dump(config_out, config_file, sort_keys=False)
 
+    with open(PREFERENCES_PATH, "w") as preferences_file:
+        preferences_out = {}
+
+        for field in PREFERENCE_FIELDS:
+            preferences_out[field] = config.__getattribute__(field)
+
+        # Make sure output_dir is always a string
+        preferences_out["output_dir"] = preferences_out["output_dir"].as_posix()
+
+        yaml.safe_dump(preferences_out, preferences_file, sort_keys=False)
+
 
 def load_or_get_default_from_config(config: dict, setting_name: str):
     is_from_default = False
@@ -121,7 +134,7 @@ def load_config_from_file(
         print("No config file found. Creating default config file.")
         create_default_config(filepath)
 
-    config = Config()
+    config = load_preferences()
     # If the config is missing any options, set defaults and resave it afterwards
     rewrite_config: bool = False
     with open(filepath) as config_file:
@@ -130,17 +143,15 @@ def load_config_from_file(
         if config_in is None:
             config_in = dict()
 
-        for config_setting in CONFIG_SETTINGS:
-            setting_value, is_from_default = load_or_get_default_from_config(
-                config_in, config_setting
+        for field in CONFIG_FIELDS:
+            field_value, is_from_default = load_or_get_default_from_config(
+                config_in, field
             )
-            config.__setattr__(config_setting, setting_value)
+            config.__setattr__(field, field_value)
 
             if is_from_default:
+                config_in[field] = field_value
                 rewrite_config = True
-
-        # Make sure output_dir is always a Path object
-        config.output_dir = Path(config.output_dir)
 
         world_num = 1
         world_num_str = f"World {world_num}"
@@ -279,5 +290,43 @@ def load_config_from_file(
 
     if rewrite_config and allow_rewrite:
         write_config_to_file(filepath, config)
+
+    return config
+
+
+def load_preferences() -> Config:
+    config = Config()
+    filepath = Path(PREFERENCES_PATH)
+
+    if not filepath.is_file():
+        with open(filepath, "w") as _:
+            pass
+
+    # If missing any options, set defaults and resave it afterwards
+    rewrite_preferences: bool = False
+    with open(filepath, "r") as preferences_file:
+        preferences_in = yaml.safe_load(preferences_file)
+
+        if preferences_in is None:
+            preferences_in = dict()
+
+        for field in PREFERENCE_FIELDS:
+            field_value, is_from_default = load_or_get_default_from_config(
+                preferences_in, field
+            )
+            config.__setattr__(field, field_value)
+
+            if is_from_default:
+                preferences_in[field] = field_value
+                rewrite_preferences = True
+
+        # Make sure output_dir is always a Path object in config...
+        config.output_dir = Path(config.output_dir)
+        # ...and a string if being dumped
+        preferences_in["output_dir"] = Path(preferences_in["output_dir"]).as_posix()
+
+    if rewrite_preferences:
+        with open(filepath, "w") as preferences_file:
+            yaml.safe_dump(preferences_in, preferences_file, sort_keys=False)
 
     return config

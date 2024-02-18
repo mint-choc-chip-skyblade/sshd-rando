@@ -17,12 +17,16 @@ def get_new_seed() -> str:
         return new_seed
 
 
-CONFIG_SETTINGS = (
+CONFIG_FIELDS = (
     "seed",
-    "output_dir",
     "generate_spoiler_log",
     "use_plandomizer",
     "plandomizer_file",
+)
+
+
+PREFERENCE_FIELDS = (
+    "output_dir",
     "theme_mode",
     "theme_presets",
     "use_custom_theme",
