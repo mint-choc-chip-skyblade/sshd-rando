@@ -40,7 +40,7 @@ HEART = "Heart"
 SINGLE_ARROW = "Single Arrow"
 
 # 8
-ARROW_BUNDLE = "Bundle of Arrows"
+TEN_ARROWS = "10 Arrows"
 
 # 9
 GODDESS_WHITE_SWORD = "Goddess White Sword"

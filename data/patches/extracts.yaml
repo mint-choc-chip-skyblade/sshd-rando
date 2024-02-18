@@ -132,6 +132,7 @@
     - GetBottleGuts
     - GetBottleAir
     - GetBottleRepair
+    - GetSeedSet
     - GetSpareQuiverA
     - GetSpareBombBagA
     - DesertRobot
@@ -242,6 +243,7 @@
     - GetBeetleB
     - GetSozaiH
     - GetSozaiC
+    - GetSozaiF
 
 - stage: F301_5
   layers:
