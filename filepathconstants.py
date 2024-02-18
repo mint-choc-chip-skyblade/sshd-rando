@@ -13,6 +13,7 @@ DEFAULT_OUTPUT_PATH = RANDO_ROOT_PATH / "sshdr_output"
 
 # Config
 CONFIG_PATH = RANDO_ROOT_PATH / "config.yaml"
+PREFERENCES_PATH = RANDO_ROOT_PATH / "preferences.yaml"
 PLANDO_PATH = RANDO_ROOT_PATH / "plandomizers"
 PRESETS_PATH = RANDO_ROOT_PATH / "presets"
 BASE_PRESETS_PATH = RANDO_ROOT_PATH / "data" / "presets"
