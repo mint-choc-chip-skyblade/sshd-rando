@@ -4531,6 +4531,9 @@
 - name: No Fi Hints Text
   standard: "Master, I unfortunately have <r<no hints>> for you."
 
+- name: Fi Note No More Information Text
+  standard: "Master, I have no further information for you."
+
 - name: Fi Warp Text
   standard: "Which warp would you like to use?\n[1]Warp to Start[2]Use amiibo[3-]Never mind."
 

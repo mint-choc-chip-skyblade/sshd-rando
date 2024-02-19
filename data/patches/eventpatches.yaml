@@ -775,7 +775,7 @@
     flow: {}
     cases:
      - Display Fi Hints Text 0 # Hints
-     - 8  # Rumors TODO: Notes (already seen hint stones)
+     - Check Fi Note 0 Found # Notes (other hints already found)
      - Display Required Dungeons
      - -1 # Never Mind
 

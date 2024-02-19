@@ -402,6 +402,7 @@
   is_gui_excluded_location: False
   textfile: 124-Town6
   textindex: 18
+  eventflowindex: 51
 
 - name: Central Skyloft - Parrow's Gift
   original_item: Empty Bottle
@@ -930,6 +931,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 11
+  eventflowindex: 18
 
 - name: Lumpy Pumpkin - Chandelier
   original_item: Heart Piece
@@ -986,6 +988,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 27
+  eventflowindex: 40
 
 - name: Orielle's Island - Orielle's Crystals
   original_item: Gratitude Crystal Pack
@@ -1102,6 +1105,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 30
+  eventflowindex: 64
 
 ## Goddess Chests
 
@@ -1332,6 +1336,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 12
+  eventflowindex: 20
 
 - name: Thunderhead East Island - Chest
   original_item: Evil Crystal
@@ -1600,6 +1605,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 13
+  eventflowindex: 22
 
 - name: Hylia's Temple - Zelda's Blessing
   original_item: Progressive Sword
@@ -1777,6 +1783,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 15
+  eventflowindex: 26
 
 - name: Deep Woods - Goddess Cube Near Goron
   original_item: Deep Woods Goddess Cube Near Goron
@@ -1890,6 +1897,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 28
+  eventflowindex: 42
 
 - name: Floria Waterfall - Goddess Cube on High Ledge
   original_item: Floria Waterfall Goddess Cube on High Ledge
@@ -2401,6 +2409,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 16
+  eventflowindex: 28
 
 - name: Eldin Volcano - Gossip Stone next to Earth Temple
   original_item: Nothing
@@ -2409,6 +2418,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 14
+  eventflowindex: 24
 
 - name: Eldin Volcano - Underground Rupee West of Earth Temple 1
   original_item: Blue Rupee
@@ -2497,6 +2507,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 21
+  eventflowindex: 30
 
 - name: Lower Eldin Cave - Gossip Stone
   original_item: Nothing
@@ -2505,6 +2516,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 17
+  eventflowindex: 56
 
 - name: Eldin Volcano - Goddess Cube at Eldin Entrance
   original_item: Eldin Volcano Goddess Cube at Eldin Entrance
@@ -2933,6 +2945,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 26
+  eventflowindex: 38
 
 - name: Volcano Summit - Gossip Stone near Second Thirsty Frog
   original_item: Nothing
@@ -2941,6 +2954,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 31
+  eventflowindex: 76
 
 - name: Volcano Summit - Goddess Cube in Lava Lake
   original_item: Volcano Summit Goddess Cube in Lava Lake
@@ -3355,6 +3369,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 25
+  eventflowindex: 36
 
 - name: Temple of Time - Northwest Rupee on Tree Root
   original_item: Green Rupee
@@ -3526,6 +3541,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 24
+  eventflowindex: 34
 
 - name: Lanayru Caves - Gossip Stone towards Lanayru Gorge
   original_item: Nothing
@@ -3534,6 +3550,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 29
+  eventflowindex: 44
 
 # Lanayru Gorge:
 
@@ -3764,6 +3781,7 @@
   is_gui_excluded_location: False
   textfile: 004-Object
   textindex: 23
+  eventflowindex: 32
 
 ## Pirate Stronghold
 
