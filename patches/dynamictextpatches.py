@@ -17,35 +17,70 @@ def add_dynamic_text_patches(
 
 
 def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) -> None:
-    # colorful_dungeon_text = [
-    #     DUNGEON_COLORS[dungeon] + dungeon + ">>"
-    #     for dungeon in self.placement_file.required_dungeons
-    # ]
+    DUNGEON_COLORS = {
+        "Skyview Temple": "<g<",
+        "Earth Temple": "<r+<",
+        "Lanayru Mining Facility": "<y<",
+        "Ancient Cistern": "<b<",
+        "Sandship": "<y+<",
+        "Fire Sanctuary": "<r<",
+        "Sky Keep": "<s<",
+    }
 
-    # required_dungeon_count = len(self.placement_file.required_dungeons)
-    # # patch required dungeon text in
-    # if required_dungeon_count == 0:
-    #     required_dungeons_text = "No Dungeons"
-    # elif required_dungeon_count == 6:
-    #     required_dungeons_text = "All Dungeons"
-    # elif required_dungeon_count < 5:
-    #     required_dungeons_text = "\n".join(colorful_dungeon_text)
-    # else:
-    #     required_dungeons_text = break_lines(", ".join(colorful_dungeon_text), 44)
+    colorful_dungeon_text = tuple(
+        DUNGEON_COLORS[dungeon] + dungeon + ">>\n"
+        for dungeon in DUNGEON_COLORS
+        if world.dungeons[dungeon].required
+    )
 
-    fi_hint_chunks = []
+    dungeon_text = ""
+    for text in colorful_dungeon_text:
+        dungeon_text += text
+
+    match len(colorful_dungeon_text):
+        case 0:
+            required_dungeons_text = get_text_data("No Required Dungeons Text")
+        case 6:
+            required_dungeons_text = get_text_data("All Required Dungeons Text")
+        case _:
+            required_dungeons_text = get_text_data("Some Required Dungeons Text")
+            required_dungeons_text = required_dungeons_text.replace(
+                "{dungeon_text}",
+                dungeon_text,
+            )
+
+    event_patch_handler.append_to_event_patches(
+        "006-8KenseiNormal",
+        {
+            "name": "Required Dungeons Text",
+            "type": "textadd",
+            "textboxtype": 2,
+        },
+    )
+    add_text_data(
+        "Required Dungeons Text",
+        required_dungeons_text,
+    )
+
+    event_patch_handler.append_to_event_patches(
+        "006-8KenseiNormal",
+        {
+            "name": "Display Required Dungeons",
+            "type": "flowadd",
+            "flow": {
+                "type": "type1",
+                "next": -1,
+                "param3": 68,
+                "param4": "Required Dungeons Text",
+            },
+        },
+    )
+
+    fi_hint_chunks: list[list[Text]] = []
     fi_hints = [loc.hint.text for loc in world.fi_hints]
     for i in range(0, len(fi_hints), 8):
         fi_hint_chunks.append(fi_hints[i : i + 8])
 
-    # event_patch_handler["006-8KenseiNormal"].append(
-    #     {
-    #         "name": "Fi Required Dungeon Text",
-    #         "type": "textadd",
-    #         "textboxtype": 2,
-    #         "text": required_dungeons_text,
-    #     }
-    # )
     if fi_hint_chunks:
         for ind, hints in enumerate(fi_hint_chunks):
             event_patch_handler.append_to_event_patches(
@@ -99,15 +134,21 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
             },
         )
 
-    # fi_objective_text = next(
-    #     filter(
-    #         lambda x: x["name"] == "Fi Objective Text",
-    #         event_patch_handler["006-8KenseiNormal"],
-    #     )
-    # )
-    # fi_objective_text["text"] = fi_objective_text["text"].replace(
-    #     "{required_sword}", self.placement_file.options["got-sword-requirement"]
-    # )
+    event_patch_handler.append_to_event_patches(
+        "006-8KenseiNormal",
+        {
+            "name": "Fi Objective Text",
+            "type": "textadd",
+            "textboxtype": 2,
+        },
+    )
+
+    fi_objective_text = get_text_data("Fi Objective Text Template")
+    fi_objective_text = fi_objective_text.replace("{required_sword}", "Master Sword")
+    add_text_data(
+        "Fi Objective Text",
+        fi_objective_text,
+    )
 
     # # dungeon status text for Fi
     # for dungeon_index, dungeon in enumerate(ALL_DUNGEONS):
