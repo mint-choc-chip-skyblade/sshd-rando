@@ -694,6 +694,39 @@
       next: 30
 
 006-8KenseiNormal:
+  - name: Entry for forced Required Dungeons Text
+    type: entryadd
+    entry:
+      name: "006_899"
+      value: Forced Required Dungeons Start
+  - name: Forced Required Dungeons Start
+    type: flowadd
+    flow:
+      type: start
+      next: Display Forced Required Dungeons Text
+  - name: Forced Required Dungeons Text
+    type: textadd
+    textboxtype: 2 # Fi text box background
+  - name: Display Forced Required Dungeons Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Give Forced Required Dungeon Text Storyflag
+      param3: 68
+      param4: Forced Required Dungeons Text
+  - name: Give Forced Required Dungeon Text Storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 954
+      next: Display Forced Objective Text
+  - name: Display Forced Objective Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Display Required Dungeons
+      param3: 68
+      param4: Fi Objective Text
+
   - name: Allow Amiibo Warp without actual Amiibo
     type: flowpatch
     index: 28
@@ -704,9 +737,6 @@
       - 13 # Skip amiibo
   
   # Main Fi menu
-  - name: Fi Call Text
-    type: textadd
-    textboxtype: 2 # Fi text box background
   - name: Show custom Fi text
     type: flowpatch
     index: 2
@@ -718,7 +748,7 @@
       type: type1
       next: Fi Option Switch
       param3: 68
-      param4: Fi Call Text
+      param4: 6 # text index 6
   - name: Fi Option Switch
     type: switchadd
     flow:
@@ -730,6 +760,10 @@
       - 5 # Play Time / Analysis
       - Display Fi Objective Text
       - Display Fi Warp choice
+      - -1
+  - name: Patch Fi Call Information Option
+    type: textpatch
+    index: 16
 
   # Fi Information
   - name: Fi Information Text Patch

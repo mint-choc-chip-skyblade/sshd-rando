@@ -8,7 +8,10 @@ from patches.checkpatchhandler import (
     determine_check_patches,
     append_dungeon_item_patches,
 )
-from patches.entrancepatchhandler import determine_entrance_patches
+from patches.entrancepatchhandler import (
+    determine_entrance_patches,
+    patch_required_dungeon_text_trigger,
+)
 from patches.objectpackpatchhandler import patch_object_pack
 from patches.stagepatchhandler import StagePatchHandler
 from patches.eventpatchhandler import EventPatchHandler
@@ -64,6 +67,7 @@ class AllPatchHandler:
         patch_object_pack(self.world.config.output_dir / OBJECTPACK_PATH_TAIL)
 
         print_progress_text("Patching Stages")
+        patch_required_dungeon_text_trigger(self.world, self.stage_patch_handler)
         self.stage_patch_handler.handle_stage_patches(self.conditional_patch_handler)
 
         update_progress_value(90)

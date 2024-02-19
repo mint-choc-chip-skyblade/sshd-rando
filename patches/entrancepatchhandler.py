@@ -2,6 +2,11 @@ from gui.dialogs.dialog_header import print_progress_text
 from logic.entrance import Entrance
 from patches.stagepatchhandler import StagePatchHandler
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from logic.world import World
+
 
 def determine_entrance_patches(
     shuffled_entrances: list[Entrance], stage_patch_handler: StagePatchHandler
@@ -43,4 +48,37 @@ def patch_entrance(
         spawn_layer,
         spawn_room,
         spawn_entrance,
+    )
+
+
+def patch_required_dungeon_text_trigger(
+    world: "World", stage_patch_handler: StagePatchHandler
+):
+    starting_entrance = world.get_entrance("Link's Spawn -> Knight Academy")
+
+    if starting_entrance.replaces is None:
+        entrance_info = starting_entrance.spawn_info[0]
+    else:
+        entrance_info = starting_entrance.replaces.spawn_info[0]
+
+    stage_patch_handler.stage_patches[entrance_info["stage"]].append(
+        {
+            "name": "Add NpcTke Required Dungeon Text Trigger",
+            "type": "objadd",
+            "room": entrance_info["room"],
+            "layer": 0,
+            "id": 0xFF00,
+            "objtype": "OBJ",
+            "object": {
+                "params1": 0xFFFFFF02,  # 02 = subtype make Fi appear
+                "params2": 0xFF1FFFFF,
+                "anglex": 0xFFFF,  # no (un)trigger sceneflags
+                "angley": 0xFFFF,  # trigger area index = -1
+                "anglez": 6899,  # entrypoint 006_899
+                "id": 0xFF00,
+                "name": "NpcTke",
+                "trigstoryfid": 226,  #  Always trigger
+                "untrigstoryfid": 954,
+            },
+        }
     )

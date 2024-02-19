@@ -80,6 +80,8 @@ Below is the list of all the flags that the randomizer changes:
 
 * 953: Group of Tadtones Counter
 
+* 954: Fi Required Dungeons Text
+
 ### Sceneflags
 
 #### Skyloft

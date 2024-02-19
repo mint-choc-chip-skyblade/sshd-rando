@@ -4534,8 +4534,11 @@
 - name: Fi Warp Text
   standard: "Which warp would you like to use?\n[1]Warp to Start[2]Use amiibo[3-]Never mind."
 
-- name: Fi Call Text
-  standard: "You called for me, Master?\n[1]Information[2]<string arg1>[3]<string arg2>[4]Warp"
+- name: Patch Fi Call Information Option
+  standard: "Information"
+
+- name: Forced Required Dungeons Text
+  standard: "Welcome to your new adventure, Master. I have\n<r<important information>> about your journey."
 
 - name: No Required Dungeons Text
   standard: "I detect no dungeons with strong readings."
