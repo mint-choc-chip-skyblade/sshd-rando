@@ -335,6 +335,7 @@ def patch_squirrels(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 #     for clef in clefs:
 #         clef["anglez"] = mask_shift_set(clef["anglez"], 0xFFFF, 0, itemid)
 
+
 def patch_trial_gate(bzs: dict, itemid: int, trapid: int):
     trial_gate: dict | None = next(
         filter(lambda x: x["name"] == "WarpObj", bzs["OBJ "]), None
@@ -347,9 +348,7 @@ def patch_trial_gate(bzs: dict, itemid: int, trapid: int):
     if trapid:
         itemid = 34  # rupoor
 
-    trial_gate["params1"] = mask_shift_set(
-        trial_gate["params1"], 0xFF, 0x18, itemid
-    )
+    trial_gate["params1"] = mask_shift_set(trial_gate["params1"], 0xFF, 0x18, itemid)
 
 
 def patch_additional_properties(obj: dict, prop: str, value: int):
