@@ -136,6 +136,9 @@ b.eq prevent_minigame_death
 cmp w8, #40
 b.eq is_kikwi_found
 
+cmp w8, #41
+b.eq check_and_set_trial_completion_flag
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
