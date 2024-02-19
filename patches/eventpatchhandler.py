@@ -30,6 +30,10 @@ from sslib.yaml import yaml_load
 from util.text import get_text_data
 
 
+class EventPatchError(RuntimeError):
+    pass
+
+
 class EventPatchHandler:
     def __init__(self, event_output_path: Path):
         self.event_output_path = event_output_path
@@ -143,18 +147,19 @@ class EventPatchHandler:
                         for eventid, itemid, trapid in self.check_patches[
                             msbf_file_name[:-5]
                         ]:
-                            try:
-                                eventid = int(eventid)
-                            except ValueError:
+                            if not eventid.isnumeric():
                                 index = self.flow_label_to_index_mapping.get(
                                     eventid, None
                                 )
+
                                 if index is None:
-                                    print(
-                                        f"ERROR: Flow label {eventid} not found when patching event check- File: {msbf_file_name} EventID: {eventid} ItemID: {itemid}"
+                                    raise EventPatchError(
+                                        f'Flow label "{eventid}" not found when patching event check.\nFile: {msbf_file_name}.\nEventID: {eventid}.\nItemID: {itemid}.'
                                     )
-                                    continue
+
                                 eventid = index
+
+                            eventid = int(eventid)
 
                             trapbits = 0
 
@@ -210,10 +215,9 @@ class EventPatchHandler:
                 flow_index = self.flow_label_to_index_mapping.get(value, None)
 
                 if flow_index is None:
-                    print(
-                        f"ERROR: flow label {value} not found in file- patch: {flow_add['name']}"
+                    raise EventPatchError(
+                        f"Flow label \"{value}\" not found in file.\nPatch: {flow_add['name']}."
                     )
-                    continue
 
                 value = flow_index
 
@@ -250,10 +254,9 @@ class EventPatchHandler:
                 if not isinstance(value, int):
                     flow_index = self.flow_label_to_index_mapping.get(value, None)
                     if flow_index is None:
-                        print(
-                            f"ERROR: flow label {value} not found in file- patch: {flow_add['name']}"
+                        raise EventPatchError(
+                            f"Flow label \"{value}\" not found in file.\nPatch: {flow_add['name']}."
                         )
-                        continue
 
                     cases[i] = flow_index
 
@@ -267,10 +270,9 @@ class EventPatchHandler:
                 flow_index = self.flow_label_to_index_mapping.get(value, None)
 
                 if flow_index is None:
-                    print(
-                        f"ERROR: flow label {value} not found in file- patch: {flow_patch['name']}"
+                    raise EventPatchError(
+                        f"Flow label \"{value}\" not found in file.\nPatch: {flow_patch['name']}."
                     )
-                    continue
 
                 value = flow_index
 
@@ -297,9 +299,11 @@ class EventPatchHandler:
                 for i, case in enumerate(cases):
                     if not isinstance(case, int):
                         case = self.flow_label_to_index_mapping.get(case, None)
-                        assert (
-                            case is not None
-                        ), f"ERROR: flow label {case} not found in file- patch: {flow_patch['name']}"
+
+                        if case is None:
+                            raise EventPatchError(
+                                f"Flow label \"{case}\" not found in file.\nPatch: {flow_patch['name']}."
+                            )
 
                     msbf["FLW3"]["branch_points"][branch_start + i] = case
 
@@ -310,10 +314,9 @@ class EventPatchHandler:
             flow_index = self.flow_label_to_index_mapping.get(value, None)
 
             if flow_index is None:
-                print(
-                    f"ERROR: flow label {value} not found in file- patch: {entry_add['entry']}"
+                raise EventPatchError(
+                    f"Flow label \"{value}\" not found in file.\nPatch: {entry_add['entry']}."
                 )
-                return
 
             value = flow_index
 
