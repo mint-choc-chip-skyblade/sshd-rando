@@ -338,6 +338,8 @@ extern "C" {
     static STARTFLAGS: [u16; 1000];
     static START_COUNTS: [StartCount; 50];
 
+    static mut TRIAL_GATE_EXIT_WAIT_TIMER: u32;
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn SceneflagMgr__setFlag(sceneflag_mgr: *mut SceneflagMgr, roomid: u32, flag: u32);
@@ -532,6 +534,33 @@ pub fn set_stone_of_trials_placed_flag(
     }
 
     set_storyflag(22); // 22 == Stone of Trials placed storyflag
+}
+
+#[no_mangle]
+pub fn check_and_set_trial_completion_flag(trial_gate_actor: *mut actor::dAcOWarp) -> u32 {
+    unsafe {
+        // Array of tuples (trial index, trial completion storyflag)
+        let indexes_and_flags = [(0, 919), (1, 921), (2, 920), (3, 922)];
+
+        // Set storyflag and reset counter
+        for (index, flag) in indexes_and_flags {
+            if (*trial_gate_actor).trialIndex == index && check_storyflag(flag) == 0 {
+                set_storyflag(flag);
+                TRIAL_GATE_EXIT_WAIT_TIMER = 0;
+            }
+        }
+
+        // Ensure that we wait long enough for link to receive the item being given
+        // to him before exiting the trial. Wait until counter reaches 45 before
+        // returning 1 to allow proceeding to exit the trial. Not sure exactly how long
+        // is necessary for this, but 45 hasn't failed so far.
+        TRIAL_GATE_EXIT_WAIT_TIMER += 1;
+        if TRIAL_GATE_EXIT_WAIT_TIMER > 45 {
+            TRIAL_GATE_EXIT_WAIT_TIMER = 45;
+            return 1;
+        }
+        return 0;
+    }
 }
 
 #[no_mangle]

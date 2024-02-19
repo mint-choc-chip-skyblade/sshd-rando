@@ -144,5 +144,8 @@ main:
     # Size: 4
     RNG_SEED: 0x712e5ff02c
 
+    # Size: 4
+    TRIAL_GATE_EXIT_WAIT_TIMER: 0x712e5ff030
+
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
     dAcItem__spawnRandoItemWithParams: 0x71005c2060

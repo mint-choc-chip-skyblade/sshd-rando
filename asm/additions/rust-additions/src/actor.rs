@@ -299,6 +299,16 @@ pub struct dAcORockBoatMaybe {
 }
 assert_eq_size!([u8; 0x204], dAcORockBoatMaybe);
 
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcOWarp {
+    pub base:       dAcOBase,
+    pub _0:         [u8; 0xE4C],
+    pub trialIndex: u8,
+    // TODO
+}
+assert_eq_size!([u8; 0x125D], dAcOWarp);
+
 // Tags
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]

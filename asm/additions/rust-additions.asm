@@ -112,3 +112,6 @@
 
 .global prevent_minigame_death
 .type prevent_minigame_death, @function
+
+.global check_and_set_trial_completion_flag
+.type check_and_set_trial_completion_flag, @function
