@@ -23,6 +23,7 @@ class Location:
         hint_priority_: str,
         hint_textfile_: str,
         hint_textindex_: int,
+        eventflowindex_: int,
     ) -> None:
         self.id: int = id_
         self.name: str = name_
@@ -41,6 +42,7 @@ class Location:
         self.hint_priority: str = hint_priority_
         self.hint_textfile: str = hint_textfile_
         self.hint_textindex: int = hint_textindex_
+        self.eventflowindex: int = eventflowindex_
 
     def __str__(self) -> str:
         return (

@@ -32,7 +32,6 @@ def build_location_table(world: "World | None" = None) -> dict[str, Location]:
         if world is not None:
             original_item = world.get_item(location_node["original_item"])
 
-        # TODO: Actually make into a list in locations.yaml
         types: list[str] = location_node.get("types", [])
         is_gui_excluded_location: bool = location_node.get(
             "is_gui_excluded_location", True
@@ -42,6 +41,7 @@ def build_location_table(world: "World | None" = None) -> dict[str, Location]:
         hint_priority: str = location_node.get("hint", "never")
         hint_textfile: str = location_node.get("textfile", "")
         hint_textindex: int = location_node.get("textindex", -1)
+        eventflowindex: int = location_node.get("eventflowindex", -1)
         location_id = location_id_counter
         location_id_counter += 1
 
@@ -57,6 +57,7 @@ def build_location_table(world: "World | None" = None) -> dict[str, Location]:
             hint_priority,
             hint_textfile,
             hint_textindex,
+            eventflowindex,
         )
         logging.getLogger("").debug(
             f"Processing new location {name}\tid: {location_id}\toriginal item: {original_item}"

@@ -120,6 +120,7 @@ Sceneflags:
     - 95 # Fi Text for Ruby Tablet
     - 96 # Fi Text for Amber Tablet
     # - 99 # Watched Sheikah Stone Cutscene
+    - 125 # Revealed Moonlight Merchant
 
   Faron Woods: # Scene Index 1
     - 14 # Skip Fi text in front of Viewing Platform statue
@@ -149,8 +150,10 @@ Sceneflags:
     - 58 # Watched Digging Mitts mogma Cutscene
 
   Eldin Volcano Summit: # Scene Index 5 (VS & Boko Base)
+    - 19 # Reveal Gossip Stone in lower Boko Base Cave
     - 20 # Set after initial panning Cutscene with Plats
     - 21 # Set after initial panning Cutscene
+    - 22 # Reveal Gossip Stone in upper Boko Base Cave
     - 34 # Watched panning Cutscene showing peahots
     - 37 # Watched panning Cutscene showing boko camp and clawshots chest
     - 38 # Watched panning Cutscene showing gust bellows chest

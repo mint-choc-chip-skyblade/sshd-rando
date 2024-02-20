@@ -17,64 +17,101 @@ def add_dynamic_text_patches(
 
 
 def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) -> None:
-    # colorful_dungeon_text = [
-    #     DUNGEON_COLORS[dungeon] + dungeon + ">>"
-    #     for dungeon in self.placement_file.required_dungeons
-    # ]
+    # Required dungeons
+    DUNGEON_COLORS = {
+        "Skyview Temple": "<g<",
+        "Earth Temple": "<r+<",
+        "Lanayru Mining Facility": "<y<",
+        "Ancient Cistern": "<b<",
+        "Sandship": "<y+<",
+        "Fire Sanctuary": "<r<",
+        "Sky Keep": "<s<",
+    }
 
-    # required_dungeon_count = len(self.placement_file.required_dungeons)
-    # # patch required dungeon text in
-    # if required_dungeon_count == 0:
-    #     required_dungeons_text = "No Dungeons"
-    # elif required_dungeon_count == 6:
-    #     required_dungeons_text = "All Dungeons"
-    # elif required_dungeon_count < 5:
-    #     required_dungeons_text = "\n".join(colorful_dungeon_text)
-    # else:
-    #     required_dungeons_text = break_lines(", ".join(colorful_dungeon_text), 44)
+    colorful_dungeon_text = tuple(
+        DUNGEON_COLORS[dungeon] + dungeon + ">>\n"
+        for dungeon in DUNGEON_COLORS
+        if world.dungeons[dungeon].required
+    )
 
-    fi_hint_chunks = []
+    dungeon_text = ""
+    for text in colorful_dungeon_text:
+        dungeon_text += text
+
+    match len(colorful_dungeon_text):
+        case 0:
+            required_dungeons_text = get_text_data("No Required Dungeons Text")
+        case 6:
+            required_dungeons_text = get_text_data("All Required Dungeons Text")
+        case _:
+            required_dungeons_text = get_text_data("Some Required Dungeons Text")
+            required_dungeons_text = required_dungeons_text.replace(
+                "{dungeon_text}",
+                dungeon_text,
+            )
+
+    event_patch_handler.append_to_event_patches(
+        "006-8KenseiNormal",
+        {
+            "name": "Required Dungeons Text",
+            "type": "textadd",
+            "textboxtype": 2,
+        },
+    )
+    add_text_data(
+        "Required Dungeons Text",
+        required_dungeons_text,
+    )
+
+    event_patch_handler.append_to_event_patches(
+        "006-8KenseiNormal",
+        {
+            "name": "Display Required Dungeons",
+            "type": "flowadd",
+            "flow": {
+                "type": "type1",
+                "next": -1,
+                "param3": 68,
+                "param4": "Required Dungeons Text",
+            },
+        },
+    )
+
+    # Fi hints
+    fi_hint_chunks: list[list[Text]] = []
     fi_hints = [loc.hint.text for loc in world.fi_hints]
     for i in range(0, len(fi_hints), 8):
         fi_hint_chunks.append(fi_hints[i : i + 8])
 
-    # event_patch_handler["006-8KenseiNormal"].append(
-    #     {
-    #         "name": "Fi Required Dungeon Text",
-    #         "type": "textadd",
-    #         "textboxtype": 2,
-    #         "text": required_dungeons_text,
-    #     }
-    # )
     if fi_hint_chunks:
-        for ind, hints in enumerate(fi_hint_chunks):
+        for chunk_index, hints in enumerate(fi_hint_chunks):
             event_patch_handler.append_to_event_patches(
                 "006-8KenseiNormal",
                 {
-                    "name": f"Display Fi Hints Text {ind}",
+                    "name": f"Display Fi Hints Text {chunk_index}",
                     "type": "flowadd",
                     "flow": {
                         "type": "type1",
                         "next": (
-                            f"Display Fi Hints Text {ind + 1}"
-                            if ind < (len(fi_hint_chunks) - 1)
+                            f"Display Fi Hints Text {chunk_index + 1}"
+                            if chunk_index < (len(fi_hint_chunks) - 1)
                             else -1
                         ),
                         "param3": 68,
-                        "param4": f"Fi Hints Text {ind}",
+                        "param4": f"Fi Hints Text {chunk_index}",
                     },
                 },
             )
             event_patch_handler.append_to_event_patches(
                 "006-8KenseiNormal",
                 {
-                    "name": f"Fi Hints Text {ind}",
+                    "name": f"Fi Hints Text {chunk_index}",
                     "type": "textadd",
                     "textboxtype": 2,
                 },
             )
             add_text_data(
-                f"Fi Hints Text {ind}", break_and_make_multiple_textboxes(hints)
+                f"Fi Hints Text {chunk_index}", break_and_make_multiple_textboxes(hints)
             )
     else:
         event_patch_handler.append_to_event_patches(
@@ -99,15 +136,90 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
             },
         )
 
-    # fi_objective_text = next(
-    #     filter(
-    #         lambda x: x["name"] == "Fi Objective Text",
-    #         event_patch_handler["006-8KenseiNormal"],
-    #     )
-    # )
-    # fi_objective_text["text"] = fi_objective_text["text"].replace(
-    #     "{required_sword}", self.placement_file.options["got-sword-requirement"]
-    # )
+    # Fi Notes (Gossip Stone hints that the player has already found)
+    all_stone_names = [stone.name for stone in world.get_gossip_stones()]
+    current_note_index = 0
+    for stone, locations in world.gossip_stone_hints.items():
+        hints = [loc.hint.text for loc in locations]
+
+        event_patch_handler.append_to_event_patches(
+            "006-8KenseiNormal",
+            {
+                "name": f"Check Fi Note {current_note_index} Found",
+                "type": "checkstoryflag",
+                "flow": {"checkstoryflag": 956 + all_stone_names.index(stone.name)},
+                "cases": [
+                    f"Display Fi Note {current_note_index}",
+                    f"Check Fi Note {current_note_index + 1} Found",
+                ],
+            },
+        )
+        event_patch_handler.append_to_event_patches(
+            "006-8KenseiNormal",
+            {
+                "name": f"Display Fi Note {current_note_index}",
+                "type": "flowadd",
+                "flow": {
+                    "type": "type1",
+                    "next": f"Check Fi Note {current_note_index + 1} Found",
+                    "param3": 68,
+                    "param4": f"Fi Note {current_note_index} Text",
+                },
+            },
+        )
+        event_patch_handler.append_to_event_patches(
+            "006-8KenseiNormal",
+            {
+                "name": f"Fi Note {current_note_index} Text",
+                "type": "textadd",
+                "textboxtype": 2,
+            },
+        )
+        add_text_data(
+            f"Fi Note {current_note_index} Text",
+            break_and_make_multiple_textboxes(hints),
+        )
+
+        current_note_index += 1
+
+    # Show end of notes text (yes, the name is inaccurate but there's no need to change it)
+    event_patch_handler.append_to_event_patches(
+        "006-8KenseiNormal",
+        {
+            "name": f"Check Fi Note {current_note_index} Found",
+            "type": "flowadd",
+            "flow": {
+                "type": "type1",
+                "next": -1,
+                "param3": 68,
+                "param4": "Fi Note No More Information Text",
+            },
+        },
+    )
+    event_patch_handler.append_to_event_patches(
+        "006-8KenseiNormal",
+        {
+            "name": "Fi Note No More Information Text",
+            "type": "textadd",
+            "textboxtype": 2,
+        },
+    )
+
+    # Objective text
+    event_patch_handler.append_to_event_patches(
+        "006-8KenseiNormal",
+        {
+            "name": "Fi Objective Text",
+            "type": "textadd",
+            "textboxtype": 2,
+        },
+    )
+    fi_objective_text = get_text_data("Fi Objective Text Template")
+    fi_objective_text = fi_objective_text.replace("{required_sword}", "Master Sword")
+    add_text_data(
+        "Fi Objective Text",
+        fi_objective_text,
+    )
 
     # # dungeon status text for Fi
     # for dungeon_index, dungeon in enumerate(ALL_DUNGEONS):
@@ -167,6 +279,8 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
 def add_gossip_stone_text_patches(
     world: World, event_patch_handler: EventPatchHandler
 ) -> None:
+    gossip_stones_in_order = [stone.name for stone in world.get_gossip_stones()]
+
     for stone, locations in world.gossip_stone_hints.items():
         hints = [loc.hint.text for loc in locations]
         event_patch_handler.append_to_event_patches(
@@ -178,6 +292,29 @@ def add_gossip_stone_text_patches(
             },
         )
         add_text_data(f"Hint {stone}", break_and_make_multiple_textboxes(hints))
+
+        event_patch_handler.append_to_event_patches(
+            stone.hint_textfile,
+            {
+                "name": f"Go to storyflag for {stone}",
+                "type": "flowpatch",
+                "index": stone.eventflowindex,
+                "flow": {
+                    "next": f"Set storyflag for {stone}",
+                },
+            },
+        )
+        event_patch_handler.append_to_event_patches(
+            stone.hint_textfile,
+            {
+                "name": f"Set storyflag for {stone}",
+                "type": "setstoryflag",
+                "flow": {
+                    "setstoryflag": 956 + gossip_stones_in_order.index(stone.name),
+                    "next": -1,
+                },
+            },
+        )
 
 
 def add_impa_text_patches(world: World, event_patch_handler: EventPatchHandler) -> None:
