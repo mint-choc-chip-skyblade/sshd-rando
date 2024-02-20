@@ -16,6 +16,7 @@ Storyflags:
   - 130  # Start with Beacon
   - 138  # Sealed Temple layer 1
   - 178  # Cutscene showing off Bokoblin Base with Plats
+  - 187  # Watered Big Frog outside Fire Sanctuary
   - 198  # Can jump off Loftwing
   - 199  # Skip Eagus Cutscene after Sparring Hall chest
   - 201  # Talked to Stritch at Bug Island (Beedle always lost HCB)
@@ -165,6 +166,7 @@ Sceneflags:
     - 63 # Watched panning Cutscene showing pouch chest
     - 68 # Have talked to Plats near Volcano East
     - 70 # Watched initial panning Cutscene
+    - 100 # Watered Big Frog
     - 118 # Reveal Gossip Stone in Waterfall Area
     - 119 # Reveal Gossip Stone Near 2nd Frog
 
