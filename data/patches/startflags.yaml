@@ -120,6 +120,7 @@ Sceneflags:
     - 95 # Fi Text for Ruby Tablet
     - 96 # Fi Text for Amber Tablet
     # - 99 # Watched Sheikah Stone Cutscene
+    - 125 # Revealed Moonlight Merchant
 
   Faron Woods: # Scene Index 1
     - 14 # Skip Fi text in front of Viewing Platform statue
