@@ -1,4 +1,4 @@
-import argparse
+from util.arguments import get_program_args
 from gui.dialogs.dialog_header import (
     get_progress_value_from_range,
     print_progress_text,
@@ -40,16 +40,7 @@ from filepathconstants import (
     ENDROLL_SOURCE_PATH,
 )
 
-parser = argparse.ArgumentParser()
-
-parser.add_argument(
-    "--with-gui",
-    dest="with_gui",
-    action="store_true",
-    help="Runs the randomizer through a gui.",
-)
-
-args = parser.parse_args()
+args = get_program_args()
 
 
 def patch_tbox(
@@ -344,7 +335,20 @@ def patch_squirrels(bzs: dict, itemid: int, object_id_str: str, trapid: int):
 #     for clef in clefs:
 #         clef["anglez"] = mask_shift_set(clef["anglez"], 0xFFFF, 0, itemid)
 
-### still need to do trials
+
+def patch_trial_gate(bzs: dict, itemid: int, trapid: int):
+    trial_gate: dict | None = next(
+        filter(lambda x: x["name"] == "WarpObj", bzs["OBJ "]), None
+    )
+
+    if trial_gate is None:
+        raise Exception(f"No WarpObj found to patch.")
+
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
+
+    trial_gate["params1"] = mask_shift_set(trial_gate["params1"], 0xFF, 0x18, itemid)
 
 
 def patch_additional_properties(obj: dict, prop: str, value: int):
@@ -935,6 +939,12 @@ def patch_and_write_stage(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
+                                    trapid,
+                                )
+                            elif object_name == "WarpObj":
+                                patch_trial_gate(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
                                     trapid,
                                 )
                             # elif object_name == "Clef":

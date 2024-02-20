@@ -32,3 +32,14 @@ b 0x71009d94f8
 ; Skip over dAcOWarp::stateGateClearUpdate
 .offset 0x71009d986c
 b 0x71009d9930
+
+; Load the itemid in from the trial gate params1 >> 0x18
+.offset 0x71009d80d0
+ldr w0, [x0, #0xC]
+lsr w0, w0, #0x18
+b 0x71009d80f8
+
+; Check to see if we should give the trial reward
+.offset 0x71009d81e0
+mov w8, #41
+bl additions_jumptable
