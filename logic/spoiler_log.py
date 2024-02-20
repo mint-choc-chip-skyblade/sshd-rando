@@ -191,13 +191,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
         # Settings
         spoiler_log.write(f"\n# Settings\n")
         spoiler_log.write(f"seed: {config.seed}\n")
-        spoiler_log.write(f"output_dir: {config.output_dir}\n")
         spoiler_log.write(f"plandomizer: {config.use_plandomizer}\n")
-        spoiler_log.write(f"theme_mode: {config.theme_mode}\n")
-        spoiler_log.write(f"theme_presets: {config.theme_presets}\n")
-        spoiler_log.write(f"use_custom_theme: {config.use_custom_theme}\n")
-        spoiler_log.write(f"font_family: {config.font_family}\n")
-        spoiler_log.write(f"font_size: {config.font_size}\n")
         spoiler_log.write(
             f"plandomizer_file: {config.plandomizer_file if config.plandomizer_file else 'null'}\n"
         )
