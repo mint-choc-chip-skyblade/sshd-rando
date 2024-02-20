@@ -175,7 +175,6 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
                 "textboxtype": 2,
             },
         )
-        print(stone, hints[0].text)
         add_text_data(
             f"Fi Note {current_note_index} Text",
             break_and_make_multiple_textboxes(hints),
