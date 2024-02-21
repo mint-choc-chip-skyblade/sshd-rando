@@ -24,6 +24,7 @@ LOCATION_FILTER_TYPES = (
     "Stamina Fruits",
     "Closets",
     "Digging Spots",
+    "Hidden Items",
     "Underground Rupees",
     "Freestanding Rupees",
     "Beginner Rupees",

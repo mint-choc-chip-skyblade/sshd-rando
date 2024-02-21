@@ -64,6 +64,16 @@
     - vanilla:                         "Closets will contain their vanilla items."
     - randomized:                      "All NPC closets will contain randomized items."
 
+- name: hidden_item_shuffle
+  default_option: "off"
+  pretty_name: Hidden Item Shuffle
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Hidden Item checks will only ever give their vanilla items."
+    - "on":                            "Hidden Item checks will give a randomized item the first time. After this, they will only give their vanilla item."
+
 - name: rupee_shuffle
   default_option: vanilla
   pretty_name: Rupee Shuffle

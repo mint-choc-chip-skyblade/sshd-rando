@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.5.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -997,6 +997,11 @@ class Ui_main_window(object):
         self.setting_stamina_fruit_shuffle.setObjectName(u"setting_stamina_fruit_shuffle")
 
         self.verticalLayout_10.addWidget(self.setting_stamina_fruit_shuffle)
+
+        self.setting_hidden_item_shuffle = RandoTriStateCheckBox(self.shuffles_group_box)
+        self.setting_hidden_item_shuffle.setObjectName(u"setting_hidden_item_shuffle")
+
+        self.verticalLayout_10.addWidget(self.setting_hidden_item_shuffle)
 
         self.npc_closet_shuffle_label = QLabel(self.shuffles_group_box)
         self.npc_closet_shuffle_label.setObjectName(u"npc_closet_shuffle_label")
@@ -2083,7 +2088,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2192,7 +2197,8 @@ class Ui_main_window(object):
         self.setting_underground_rupee_shuffle.setText(QCoreApplication.translate("main_window", u"Underground Rupee Shuffle", None))
         self.setting_goddess_chest_shuffle.setText(QCoreApplication.translate("main_window", u"Goddess Chest Shuffle", None))
         self.setting_gratitude_crystal_shuffle.setText(QCoreApplication.translate("main_window", u"Gratitude Crystals Shuffle", None))
-        self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruits", None))
+        self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruit Shuffle", None))
+        self.setting_hidden_item_shuffle.setText(QCoreApplication.translate("main_window", u"Hidden Item Shuffle", None))
         self.npc_closet_shuffle_label.setText(QCoreApplication.translate("main_window", u"NPC Closets", None))
         self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))
         self.excluded_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
