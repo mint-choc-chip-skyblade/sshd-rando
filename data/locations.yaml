@@ -9,6 +9,22 @@
     - oarc/F001r/l3
     - oarc/F001r/l4
 
+- name: Knight Academy - Bonk Classroom Bookshelf
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F001r/r0/l0/TgReact/0xFC5C
+
+- name: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F001r/r3/l0/TgReact/0xFC07
+
 - name: Knight Academy - In Link's Closet
   original_item: Blue Rupee
   types:

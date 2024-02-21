@@ -350,6 +350,33 @@ def patch_trial_gate(bzs: dict, itemid: int, trapid: int):
 
     trial_gate["params1"] = mask_shift_set(trial_gate["params1"], 0xFF, 0x18, itemid)
 
+def patch_tgreact(bzs: dict, itemid: int, object_id_str: str, trapid: int, custom_flag: int):
+    id = int(object_id_str, 16)
+
+    tgreact: dict | None = next(
+        filter(lambda x: x["name"] == "TgReact" and x["id"] == id, bzs["SOBJ"]), None
+    )
+
+    if tgreact is None:
+        raise Exception(f"No tag reaction (TgReact) found to patch.")
+
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
+
+    tgreact["params1"] = mask_shift_set(tgreact["params1"], 0xFF, 8, itemid)
+
+    if custom_flag != -1:
+        tgreact["params2"] = mask_shift_set(
+            tgreact["params2"], 0x3FF, 8, custom_flag
+        )
+    else:
+        tgreact["params2"] = mask_shift_set(
+            tgreact["params2"], 0x3FF, 8, 0x3FF
+        )
+    
+    print(tgreact["params2"])
+
 
 def patch_additional_properties(obj: dict, prop: str, value: int):
     unsupported_prop_execption = f"Cannot patch object with unsupported property.\nUnsupported property: {prop}\nObject: {obj}"
@@ -946,6 +973,14 @@ def patch_and_write_stage(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     trapid,
+                                )
+                            elif object_name == "TgReact":
+                                patch_tgreact(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                    custom_flag,
                                 )
                             # elif object_name == "Clef":
                             #     patch_tadtone_group(

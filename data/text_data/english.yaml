@@ -1189,6 +1189,16 @@
   pretty: Knight Academy - Fledge's Gift
   cryptic: a <r<gift from a friend>>
 
+- name: Knight Academy - Bonk Classroom Bookshelf
+  standard: Knight Academy - Bonk Classroom Bookshelf
+  pretty: Knight Academy - Bonk Classroom Bookshelf
+  cryptic: <r<disturbing the student library>>
+
+- name: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
+  standard: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
+  pretty: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
+  cryptic: <r<disturbing ancient tomes>>
+
 - name: Knight Academy - In Link's Closet
   standard: Knight Academy - In Link's Closet
   pretty: Knight Academy - In Link's Closet
