@@ -20,8 +20,8 @@
 ; Total available instructions:                     372 (decimal)
 ; 
 ; Please update this:
-; Total space used (bytes):                          72
-; Total instructions used:                           18
+; Total space used (bytes):                          80
+; Total instructions used:                           20
 
 ; startflags
 .offset 0x7100659ab0
@@ -42,6 +42,10 @@ b additions_jumptable
 ; Create dAcTbox::stateDemoAppearLeave function
 .offset 0x7100659ac8
 mov w8, #36
+b additions_jumptable
+
+.offset 0x7100659ad0
+mov w8, #42
 b additions_jumptable
 
 

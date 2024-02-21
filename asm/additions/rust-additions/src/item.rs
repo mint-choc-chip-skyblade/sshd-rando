@@ -41,7 +41,8 @@ pub struct dAcItem {
     pub rot_increment:           math::Vec3s,
     pub model_rot:               math::Vec3s,
     pub final_determined_itemid: u16,
-    pub _4:                      [u8; 10],
+    pub _4:                      [u8; 9],
+    pub prevent_timed_despawn:   u8,
     pub prevent_drop:            u8,
     pub _5:                      [u8; 3],
     pub no_longer_waiting:       u8,
@@ -107,6 +108,13 @@ extern "C" {
     fn getRotFromDegrees(deg: f32) -> u16;
     fn dAcItem__determineFinalItemid(itemid: u64) -> u64;
     fn dAcOmusasabi__stateWaitEnter();
+    fn checkParam2OnDestroy(
+        param2_s0x18: u8,
+        roomid: u32,
+        pos: *mut math::Vec3f,
+        param_4: *mut c_void,
+        param_5: *mut c_void,
+    ) -> u32;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -504,6 +512,82 @@ pub fn give_squirrel_item(musasabi_tag: *mut actor::dTgMusasabi) {
         {
             (*musasabi_tag).has_spawned_squirrels = false;
         }
+    }
+}
+
+#[no_mangle]
+pub fn tgreact_spawn_custom_item(
+    mut param2_s0x18: u8,
+    roomid: u32,
+    pos: *mut math::Vec3f,
+    param_4: *mut c_void,
+    param_5: *mut c_void,
+) -> u32 {
+    unsafe {
+        let tgreact: *mut actor::dAcOBase;
+        asm!("mov {0:x}, x19", out(reg) tgreact);
+
+        let param2 = (*tgreact).members.base.param2;
+        if flag::check_local_sceneflag((param2 & 0xFF).into()) == 0
+            && ((param2 >> 8) & 0x3FF != 0x3FF)
+        {
+            let flag: u32 = (param2 & (0x00007F00)) >> 8;
+
+            let mut sceneindex: u32 = (param2 & (0x00018000)) >> 15;
+            match sceneindex {
+                0 => sceneindex = 6,
+                1 => sceneindex = 13,
+                2 => sceneindex = 16,
+                3 => sceneindex = 19,
+                _ => {},
+            }
+
+            let flag_space_trigger: u32 = (param2 & (0x00020000)) >> 17;
+
+            // Check if the flag is on
+            let mut flag_is_on = 0;
+            match flag_space_trigger {
+                0 => flag_is_on = flag::check_global_sceneflag(sceneindex as u16, flag as u16),
+                1 => flag_is_on = flag::check_global_dungeonflag(sceneindex as u16, flag as u16),
+                _ => {},
+            }
+
+            if flag_is_on == 0 {
+                let tgreact_param1: u32 = (*tgreact).basebase.members.param1;
+                let new_itemid =
+                    dAcItem__determineFinalItemid(((tgreact_param1 >> 8) & 0xFF) as u64);
+                let item_actor_param1: u32 = (new_itemid as u32) | 0xFF1FFE00;
+
+                let mut actor_pos = (*tgreact).members.base.pos;
+                let actor_pos_ptr: *mut math::Vec3f = &mut actor_pos as *mut math::Vec3f;
+
+                // Prevent items spawning on top of or inside lanterns/bookshelves
+                let tgreact_subtype = (tgreact_param1 >> 28) & 0xF;
+                if tgreact_subtype == 0 || tgreact_subtype == 1 {
+                    let mut facing_angle = (*PLAYER_PTR).obj_base_members.base.rot.y;
+                    let facing_angle_radians: f32 =
+                        (facing_angle as f32 / 65535 as f32) * 2.0 * 3.14159;
+                    let xOffset = sinf(facing_angle_radians) * -100.0;
+                    let zOffset = cosf(facing_angle_radians) * -100.0;
+                    (*actor_pos_ptr).x += xOffset;
+                    (*actor_pos_ptr).z += zOffset;
+                }
+
+                let item_actor: *mut dAcItem = actor::spawn_actor(
+                    actor::ACTORID::ITEM,
+                    roomid,
+                    item_actor_param1,
+                    actor_pos_ptr,
+                    core::ptr::null_mut(),
+                    core::ptr::null_mut(),
+                    0xFF0000FF | (param2 & 0x3FF00),
+                ) as *mut dAcItem;
+                (*item_actor).prevent_timed_despawn = 1;
+                param2_s0x18 = 0xFF;
+            }
+        }
+
+        return checkParam2OnDestroy(param2_s0x18, roomid, pos, param_4, param_5);
     }
 }
 
