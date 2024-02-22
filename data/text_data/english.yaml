@@ -3773,6 +3773,26 @@
   pretty: Skyview Spring - Goddess Cube
   cryptic:
 
+- name: Earth Temple - Bonk Front Left Elephant Pillar
+  standard: Earth Temple - Bonk Front Left Elephant Pillar
+  pretty: Earth Temple - Bonk Front Left Elephant Pillar
+  cryptic: <r<disturbing a trumpeting statue>>
+
+- name: Earth Temple - Bonk Front Right Elephant Pillar
+  standard: Earth Temple - Bonk Front Right Elephant Pillar
+  pretty: Earth Temple - Bonk Front Right Elephant Pillar
+  cryptic: <r<disturbing a trumpeting statue>>
+
+- name: Earth Temple - Bonk Back Left Elephant Pillar
+  standard: Earth Temple - Bonk Back Left Elephant Pillar
+  pretty: Earth Temple - Bonk Back Left Elephant Pillar
+  cryptic: <r<disturbing a trumpeting statue>>
+
+- name: Earth Temple - Bonk Back Right Elephant Pillar
+  standard: Earth Temple - Bonk Back Right Elephant Pillar
+  pretty: Earth Temple - Bonk Back Right Elephant Pillar
+  cryptic: <r<disturbing a trumpeting statue>>
+
 - name: Earth Temple - Vent Chest
   standard: Earth Temple - Vent Chest
   pretty: Earth Temple - Vent Chest
@@ -3796,7 +3816,17 @@
 - name: Earth Temple - Chest in West Room
   standard: Earth Temple - Chest in West Room
   pretty: Earth Temple - Chest in West Room
-  cryptic: the <r<western wing in the Earth Temple>>
+  cryptic: a <r<western chest>> in a <r<temple atop a volcano>>
+
+- name: Earth Temple - Bonk Left Pillar in West Room
+  standard: Earth Temple - Bonk Left Pillar in West Room
+  pretty: Earth Temple - Bonk Left Pillar in West Room
+  cryptic: <r<disturbing a western statue>> in a <r<temple atop a volcano>>
+
+- name: Earth Temple - Bonk Right Pillar in West Room
+  standard: Earth Temple - Bonk Right Pillar in West Room
+  pretty: Earth Temple - Bonk Right Pillar in West Room
+  cryptic: <r<disturbing a western statue>> in a <r<temple atop a volcano>>
 
 - name: Earth Temple - Chest after Double Lizalfos Fight
   standard: Earth Temple - Chest after Double Lizalfos Fight
