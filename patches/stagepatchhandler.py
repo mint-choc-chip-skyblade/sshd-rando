@@ -374,8 +374,6 @@ def patch_tgreact(
     else:
         tgreact["params2"] = mask_shift_set(tgreact["params2"], 0x3FF, 8, 0x3FF)
 
-    print(tgreact["params2"])
-
 
 def patch_additional_properties(obj: dict, prop: str, value: int):
     unsupported_prop_execption = f"Cannot patch object with unsupported property.\nUnsupported property: {prop}\nObject: {obj}"
