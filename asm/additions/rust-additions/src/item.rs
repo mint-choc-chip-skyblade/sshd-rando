@@ -647,8 +647,8 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 | 178       // Ruby Tablet
                 | 198       // Life Tree Fruit
                 | 199 => y_offset = 16.0,
-                // Uncommon | Rare Treasure
-                63 | 64 => y_offset = 15.0,
+                // Seeds | Uncommon | Rare Treasure
+                60 | 63 | 64 => y_offset = 15.0,
                 // Beetle Upgrades
                 75..=77 => y_offset = 10.0,
                 // Heart Container
@@ -849,7 +849,7 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                     angle_change_y = 0xE000;
                 },
                 // All Treasures
-                63 | 64 | 165..=176 => h_offset = 25.0,
+                60 | 63 | 64 | 165..=176 => h_offset = 25.0,
                 // Tablets
                 177..=179 => {
                     h_offset = 10.0;
