@@ -3577,6 +3577,21 @@
   pretty: Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room
   cryptic: <r<shooting a lone eye socket>> in a <r<temple in the forest>>
 
+- name: Skyview Temple - Bonk Tree Branch with Chest
+  standard: Skyview Temple - Bonk Tree Branch with Chest
+  pretty: Skyview Temple - Bonk Tree Branch with Chest
+  cryptic: <r<disturb a tree>> within a <r<temple in the forest>>
+
+- name: Skyview Temple - Slingshot West Water Gate
+  standard: Skyview Temple - Slingshot West Water Gate
+  pretty: Skyview Temple - Slingshot West Water Gate
+  cryptic: <r<shooting a drain>> in a <r<temple in the forest>>
+
+- name: Skyview Temple - Slingshot East Water Gate
+  standard: Skyview Temple - Slingshot East Water Gate
+  pretty: Skyview Temple - Slingshot East Water Gate
+  cryptic: <r<shooting a drain>> in a <r<temple in the forest>>
+
 - name: Skyview Temple - Chest on Tree Branch
   standard: Skyview Temple - Chest on Tree Branch
   pretty: Skyview Temple - Chest on Tree Branch
@@ -3586,6 +3601,16 @@
   standard: Skyview Temple - Digging Spot in Crawlspace
   pretty: Skyview Temple - Digging Spot in Crawlspace
   cryptic: <r<soft soil>> in a <r<temple in the forest>>
+
+- name: Skyview Temple - Slingshot Left Deactivated Eye in Two Eyes Room
+  standard: Skyview Temple - Slingshot Left Deactivated Eye in Two Eyes Room
+  pretty: Skyview Temple - Slingshot Left Deactivated Eye in Two Eyes Room
+  cryptic: <r<shooting a pair of eye sockets>> in a <r<temple in the forest>>
+
+- name: Skyview Temple - Slingshot Right Deactivated Eye in Two Eyes Room
+  standard: Skyview Temple - Slingshot Right Deactivated Eye in Two Eyes Room
+  pretty: Skyview Temple - Slingshot Right Deactivated Eye in Two Eyes Room
+  cryptic: <r<shooting a pair of eye sockets>> in a <r<temple in the forest>>
 
 - name: Skyview Temple - Chest behind Two Eyes
   standard: Skyview Temple - Chest behind Two Eyes
@@ -3632,6 +3657,16 @@
   pretty: Skyview Temple - Rupee on South Bird Pillar in Hub Room
   cryptic: a <r<rupee on a forest bird>>
 
+- name: Skyview Temple - Bonk South Bird Pillar in Hub Room
+  standard: Skyview Temple - Bonk South Bird Pillar in Hub Room
+  pretty: Skyview Temple - Bonk South Bird Pillar in Hub Room
+  cryptic: <r<disturbing a bird>> in a <r<temple in the forest>>
+
+- name: Skyview Temple - Bonk East Bird Pillar in Hub Room
+  standard: Skyview Temple - Bonk East Bird Pillar in Hub Room
+  pretty: Skyview Temple - Bonk East Bird Pillar in Hub Room
+  cryptic: <r<disturbing a bird>> in a <r<temple in the forest>>
+
 - name: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
   standard: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
   pretty: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
@@ -3666,6 +3701,16 @@
   standard: Skyview Temple - Third Rupee in Northeast Tunnel
   pretty: Skyview Temple - Third Rupee in Northeast Tunnel
   cryptic: a <r<rupee in a high tunnel>>
+
+- name: Skyview Temple - Slingshot Southwest Wall Eye in Three Eyes Room
+  standard: Skyview Temple - Slingshot Southwest Wall Eye in Three Eyes Room
+  pretty: Skyview Temple - Slingshot Southwest Wall Eye in Three Eyes Room
+  cryptic: <r<shooting an eye>> in the <r<west>> of a <r<temple in the forest>>
+
+- name: Skyview Temple - Slingshot Deactivated Middle Eye in Three Eyes Room
+  standard: Skyview Temple - Slingshot Deactivated Middle Eye in Three Eyes Room
+  pretty: Skyview Temple - Slingshot Deactivated Middle Eye in Three Eyes Room
+  cryptic: <r<shooting a middle eye socket>> in a <r<temple in the forest>>
 
 - name: Skyview Temple - Chest behind Three Eyes
   standard: Skyview Temple - Chest behind Three Eyes

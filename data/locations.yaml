@@ -3930,6 +3930,30 @@
   Paths:
     - stage/D100/r1/l0/TgReact/0xFC13
 
+- name: Skyview Temple - Bonk Tree Branch with Chest
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r2/l0/TgReact/0xFC82
+
+- name: Skyview Temple - Slingshot West Water Gate
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r2/l0/TgReact/0xFC83
+
+- name: Skyview Temple - Slingshot East Water Gate
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r2/l0/TgReact/0xFC84
+
 - name: Skyview Temple - Chest on Tree Branch
   original_item: Skyview Temple Map
   types:
@@ -3944,6 +3968,22 @@
   hint: sometimes
   Paths:
     - stage/D100/r4/l0/Soil/15
+
+- name: Skyview Temple - Slingshot Left Deactivated Eye in Two Eyes Room
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r4/l0/TgReact/0xFC3F
+
+- name: Skyview Temple - Slingshot Right Deactivated Eye in Two Eyes Room
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r4/l0/TgReact/0xFC40
 
 - name: Skyview Temple - Chest behind Two Eyes
   original_item: Skyview Temple Small Key 
@@ -4023,6 +4063,22 @@
   Paths:
     - stage/D100/r5/l0/Item/0xFC41
 
+- name: Skyview Temple - Bonk South Bird Pillar in Hub Room
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r5/l0/TgReact/0xFC71
+
+- name: Skyview Temple - Bonk East Bird Pillar in Hub Room
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r5/l0/TgReact/0xFC72
+
 - name: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
   original_item: Green Rupee
   types:
@@ -4082,6 +4138,22 @@
     - Custom Flag
   Paths:
     - stage/D100/r5/l0/Item/0xFC3D
+
+- name: Skyview Temple - Slingshot Southwest Wall Eye in Three Eyes Room
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r7/l0/TgReact/0xFC2C
+
+- name: Skyview Temple - Slingshot Deactivated Middle Eye in Three Eyes Room
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r7/l0/TgReact/0xFC2D
 
 - name: Skyview Temple - Chest behind Three Eyes
   original_item: Skyview Temple Small Key 
