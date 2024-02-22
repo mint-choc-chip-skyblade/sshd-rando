@@ -552,10 +552,13 @@ pub fn tgreact_spawn_custom_item(
                 _ => {},
             }
 
-            if flag_is_on == 0 {
-                let tgreact_param1: u32 = (*tgreact).basebase.members.param1;
-                let new_itemid =
-                    dAcItem__determineFinalItemid(((tgreact_param1 >> 8) & 0xFF) as u64);
+            let tgreact_param1: u32 = (*tgreact).basebase.members.param1;
+            let new_itemid = dAcItem__determineFinalItemid(((tgreact_param1 >> 8) & 0xFF) as u64);
+
+            // If the tgreact would give hearts in vanilla and the randomized item is a
+            // heart, behave like the flag has already been set. This allows 3
+            // hearts to spawn instead
+            if flag_is_on == 0 && (((param2 >> 24) & 0xFF) != 6 || new_itemid != 6) {
                 let item_actor_param1: u32 = (new_itemid as u32) | 0xFF1FFE00;
 
                 let mut actor_pos = (*tgreact).members.base.pos;
