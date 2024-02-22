@@ -5014,6 +5014,38 @@
 
 # Fire Sanctuary (FS):
 
+- name: Fire Sanctuary - Slingshot Front Left Owl Statue
+  original_item: Red Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D201/r0/l0/TgReact/0xFC43
+
+- name: Fire Sanctuary - Slingshot Front Right Owl Statue
+  original_item: Red Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D201/r0/l0/TgReact/0xFC42
+
+- name: Fire Sanctuary - Slingshot Back Left Owl Statue
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D201/r0/l0/TgReact/0xFC45
+
+- name: Fire Sanctuary - Slingshot Back Right Owl Statue
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D201/r0/l0/TgReact/0xFC44
+
 - name: Fire Sanctuary - Chest in First Room
   original_item: Fire Sanctuary Small Key 
   types:

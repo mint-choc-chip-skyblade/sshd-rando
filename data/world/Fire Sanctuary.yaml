@@ -16,6 +16,10 @@
     Fire Sanctuary First Room: Can_Hit_High_Water_Plant
     FS First Outside Section: Fire_Sanctuary_Small_Key or small_keys == removed
   locations:
+    Fire Sanctuary - Slingshot Front Left Owl Statue: Slingshot
+    Fire Sanctuary - Slingshot Front Right Owl Statue: Slingshot
+    Fire Sanctuary - Slingshot Back Left Owl Statue: Slingshot
+    Fire Sanctuary - Slingshot Back Right Owl Statue: Slingshot
     Fire Sanctuary - Chest in First Room: Can_Defeat_Bokoblins and Can_Hit_High_Water_Plant
 
 

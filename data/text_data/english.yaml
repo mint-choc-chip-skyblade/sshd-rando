@@ -4247,10 +4247,30 @@
   cryptic: a <b+<flame traveling the sea>>
   goal_name: Tentalus
 
+- name: Fire Sanctuary - Slingshot Front Left Owl Statue
+  standard: Fire Sanctuary - Slingshot Front Left Owl Statue
+  pretty: Fire Sanctuary - Slingshot Front Left Owl Statue
+  cryptic: <r<shooting a sleeping bird>> in a <r<respite within a volcano>>
+
+- name: Fire Sanctuary - Slingshot Front Right Owl Statue
+  standard: Fire Sanctuary - Slingshot Front Right Owl Statue
+  pretty: Fire Sanctuary - Slingshot Front Right Owl Statue
+  cryptic: <r<shooting a sleeping bird>> in a <r<respite within a volcano>>
+
+- name: Fire Sanctuary - Slingshot Back Left Owl Statue
+  standard: Fire Sanctuary - Slingshot Back Left Owl Statue
+  pretty: Fire Sanctuary - Slingshot Back Left Owl Statue
+  cryptic: <r<shooting a sleeping bird>> in a <r<respite within a volcano>>
+
+- name: Fire Sanctuary - Slingshot Back Right Owl Statue
+  standard: Fire Sanctuary - Slingshot Back Right Owl Statue
+  pretty: Fire Sanctuary - Slingshot Back Right Owl Statue
+  cryptic: <r<shooting a sleeping bird>> in a <r<respite within a volcano>>
+
 - name: Fire Sanctuary - Chest in First Room
   standard: Fire Sanctuary - Chest in First Room
   pretty: Fire Sanctuary - Chest in First Room
-  cryptic: the <r<first chest in a sacntuary>>
+  cryptic: the <r<first chest>> in a <r<respite within a volcano>>
 
 - name: Fire Sanctuary - Chest in Second Room
   standard: Fire Sanctuary - Chest in Second Room
