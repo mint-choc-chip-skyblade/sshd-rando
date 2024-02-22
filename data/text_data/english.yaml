@@ -4068,12 +4068,7 @@
 - name: Ancient Cistern - Chest in East Part
   standard: Ancient Cistern - Chest in East Part
   pretty: Ancient Cistern - Chest in East Part
-  cryptic: the <r<lone east chest in the Ancient Cistern>>
-
-- name: Ancient Cistern - Rupee under Lilypad
-  standard: Ancient Cistern - Rupee under Lilypad
-  pretty: Ancient Cistern - Rupee under Lilypad
-  cryptic: a <r<rupee submerged under a lilypad>>
+  cryptic: the <r<lone east chest>> in an <<old waterway>>
 
 - name: Ancient Cistern - Chest after Whip Hooks
   standard: Ancient Cistern - Chest after Whip Hooks
@@ -4094,6 +4089,36 @@
   standard: Ancient Cistern - Bokoblin
   pretty: Ancient Cistern - Bokoblin
   cryptic: a <r<bokoblin watching water>>
+
+- name: Ancient Cistern - Rupee under Lilypad after Pipes
+  standard: Ancient Cistern - Rupee under Lilypad after Pipes
+  pretty: Ancient Cistern - Rupee under Lilypad after Pipes
+  cryptic: a <r<rupee submerged under a lilypad>>
+
+- name: Ancient Cistern - Slingshot East Lamp after Pipes 1
+  standard: Ancient Cistern - Slingshot East Lamp after Pipes 1
+  pretty: Ancient Cistern - Slingshot East Lamp after Pipes 1
+  cryptic: <r<shooting a flame>> in an <r<old waterway>>
+
+- name: Ancient Cistern - Slingshot East Lamp after Pipes 2
+  standard: Ancient Cistern - Slingshot East Lamp after Pipes 2
+  pretty: Ancient Cistern - Slingshot East Lamp after Pipes 2
+  cryptic: <r<shooting a flame>> in an <r<old waterway>>
+
+- name: Ancient Cistern - Slingshot West Lamp after Pipes 1
+  standard: Ancient Cistern - Slingshot West Lamp after Pipes 1
+  pretty: Ancient Cistern - Slingshot West Lamp after Pipes 1
+  cryptic: <r<shooting a flame>> in an <r<old waterway>>
+
+- name: Ancient Cistern - Slingshot West Lamp after Pipes 2
+  standard: Ancient Cistern - Slingshot West Lamp after Pipes 2
+  pretty: Ancient Cistern - Slingshot West Lamp after Pipes 2
+  cryptic: <r<shooting a flame>> in an <r<old waterway>>
+
+- name: Ancient Cistern - Slingshot West Lamp after Pipes 3
+  standard: Ancient Cistern - Slingshot West Lamp after Pipes 3
+  pretty: Ancient Cistern - Slingshot West Lamp after Pipes 3
+  cryptic: <r<shooting a flame>> in an <r<old waterway>>
 
 - name: Ancient Cistern - Chest in Key Locked Room
   standard: Ancient Cistern - Chest in Key Locked Room

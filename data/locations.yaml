@@ -4765,13 +4765,53 @@
   Paths:
     - stage/D101/r4/l0/EBc/0xFC00
 
-- name: Ancient Cistern - Rupee under Lilypad
+- name: Ancient Cistern - Rupee under Lilypad after Pipes
   original_item: Red Rupee
   types:
     - Freestanding Rupees
     - Beginner Rupees
   Paths:
     - stage/D101/r5/l0/Item/13
+
+- name: Ancient Cistern - Slingshot East Lamp after Pipes 1
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D101/r5/l0/TgReact/0xFC30
+
+- name: Ancient Cistern - Slingshot East Lamp after Pipes 2
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D101/r5/l0/TgReact/0xFC2F
+
+- name: Ancient Cistern - Slingshot West Lamp after Pipes 1
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D101/r5/l0/TgReact/0xFC33
+
+- name: Ancient Cistern - Slingshot West Lamp after Pipes 2
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D101/r5/l0/TgReact/0xFC32
+
+- name: Ancient Cistern - Slingshot West Lamp after Pipes 3
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D101/r5/l0/TgReact/0xFC31
 
 - name: Ancient Cistern - Chest in Key Locked Room
   original_item: Whip
