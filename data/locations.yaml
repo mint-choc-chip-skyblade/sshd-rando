@@ -3882,6 +3882,54 @@
 
 # Skyview (SV):
 
+- name: Skyview Temple - Slingshot Wall Eye behind First Bird Statue
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r0/l0/TgReact/0xFC41
+
+- name: Skyview Temple - Bonk Tree Root after First Skulltula Web
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r0/l0/TgReact/0xFC42
+
+- name: Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r1/l0/TgReact/0xFC10
+
+- name: Skyview Temple - Slingshot Northwest Wall Eye in One Eye Room
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r1/l0/TgReact/0xFC11
+
+- name: Skyview Temple - Slingshot East Wall Eye in One Eye Room
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r1/l0/TgReact/0xFC12
+
+- name: Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D100/r1/l0/TgReact/0xFC13
+
 - name: Skyview Temple - Chest on Tree Branch
   original_item: Skyview Temple Map
   types:

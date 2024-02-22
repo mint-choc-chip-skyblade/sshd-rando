@@ -458,10 +458,16 @@
   cryptic: <r<excavation tools>>
   plurality: Plural
 
+- name: 5 Deku Seeds
+  standard: 5 Deku Seeds
+  pretty: 5 Deku Seeds
+  cryptic: some <r<pellets>>
+  plurality: Plural
+
 - name: 10 Deku Seeds
   standard: 10 Deku Seeds
   pretty: 10 Deku Seeds
-  cryptic: some <r<pellets>>
+  cryptic: many <r<pellets>>
   plurality: Plural
 
 - name: Uncommon Treasure
@@ -3540,6 +3546,36 @@
   standard: Pirate Stronghold Interior - Third Chest
   pretty: Pirate Stronghold Interior - Third Chest
   cryptic: a <r<chest within a fortress>>
+
+- name: Skyview Temple - Slingshot Wall Eye behind First Bird Statue
+  standard: Skyview Temple - Slingshot Wall Eye behind First Bird Statue
+  pretty: Skyview Temple - Slingshot Wall Eye behind First Bird Statue
+  cryptic: <r<shooting an eye>> in a <r<forest temple entrance>>
+
+- name: Skyview Temple - Bonk Tree Root after First Skulltula Web
+  standard: Skyview Temple - Bonk Tree Root after First Skulltula Web
+  pretty: Skyview Temple - Bonk Tree Root after First Skulltula Web
+  cryptic: <r<disturbing a spider's tree root>>
+
+- name: Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room
+  standard: Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room
+  pretty: Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room
+  cryptic: <r<shooting an eye>> in a <r<temple in the forest>>
+
+- name: Skyview Temple - Slingshot Northwest Wall Eye in One Eye Room
+  standard: Skyview Temple - Slingshot Northwest Wall Eye in One Eye Room
+  pretty: Skyview Temple - Slingshot Northwest Wall Eye in One Eye Room
+  cryptic: <r<shooting an eye>> in a <r<temple in the forest>>
+
+- name: Skyview Temple - Slingshot East Wall Eye in One Eye Room
+  standard: Skyview Temple - Slingshot East Wall Eye in One Eye Room
+  pretty: Skyview Temple - Slingshot East Wall Eye in One Eye Room
+  cryptic: <r<shooting an eye>> in a <r<temple in the forest>>
+
+- name: Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room
+  standard: Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room
+  pretty: Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room
+  cryptic: <r<shooting a lone eye socket>> in a <r<temple in the forest>>
 
 - name: Skyview Temple - Chest on Tree Branch
   standard: Skyview Temple - Chest on Tree Branch

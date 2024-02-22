@@ -5,6 +5,9 @@
   exits:
     Deep Woods: Nothing
     SV First Room: Can_Cut_Trees_And_Logs
+  locations:
+    Skyview Temple - Slingshot Wall Eye behind First Bird Statue: Slingshot
+    Skyview Temple - Bonk Tree Root after First Skulltula Web: Nothing
 
 
 - name: SV First Room
@@ -22,6 +25,11 @@
   exits:
     SV First Room: Nothing
     SV First Hub Center Room: Sword
+  locations:
+    Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room: Slingshot
+    Skyview Temple - Slingshot Northwest Wall Eye in One Eye Room: Slingshot
+    Skyview Temple - Slingshot East Wall Eye in One Eye Room: Slingshot
+    Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room: Sword and Slingshot
 
 
 - name: SV First Hub Center Room

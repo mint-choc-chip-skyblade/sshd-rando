@@ -335,6 +335,14 @@
   getarcname: GetMoleGloveA
   getmodelname: GetMoleGloveA
   advancement: true
+- id: 57
+  name: 5 Deku Seeds
+  types:
+    - Ammo
+    - Minor Items
+  oarc: null # ObjectPack
+  getarcname: GetSeed
+  getmodelname: GetSeed
 - id: 60
   name: 10 Deku Seeds
   types:

@@ -136,7 +136,7 @@ def get_random_junk_item_name() -> str:
             RED_RUPEE,
             SILVER_RUPEE,
             FIVE_BOMBS,
-            TEN_DEKU_SEEDS,
+            FIVE_DEKU_SEEDS,
             TEN_ARROWS,
             COMMON_TREASURE,
             UNCOMMON_TREASURE,
