@@ -4067,6 +4067,30 @@
     - stage/B100/r0/l3/HeartCo
     - stage/B100/r0/l4/HeartCo
 
+- name: Skyview Spring - Slingshot top of Door
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/B100_1/r0/l0/TgReact/0xFC34
+
+- name: Skyview Spring - Bonk Broken Left Pillar
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/B100_1/r0/l0/TgReact/0xFC33
+
+- name: Skyview Spring - Bonk Broken Right Pillar
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/B100_1/r0/l0/TgReact/0xFC32
+
 - name: Skyview Spring - Rupee on Spring Pillar
   original_item: Red Rupee
   types:
@@ -4074,6 +4098,22 @@
     - Beginner Rupees
   Paths:
     - stage/B100_1/r0/l0/Item/109
+
+- name: Skyview Spring - Slingshot Post Left of Goddess Crest
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/B100_1/r0/l0/TgReact/0xFC35
+
+- name: Skyview Spring - Slingshot Post Right of Goddess Crest
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/B100_1/r0/l0/TgReact/0xFC36
 
 - name: Skyview Spring - Strike Crest
   original_item: Ruby Tablet

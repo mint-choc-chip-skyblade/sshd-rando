@@ -3651,10 +3651,35 @@
   pretty: Skyview Temple - Defeat Boss
   cryptic: the <r<first flamboyant fight>>
 
+- name: Skyview Spring - Slingshot top of Door
+  standard: Skyview Spring - Slingshot top of Door
+  pretty: Skyview Spring - Slingshot top of Door
+  cryptic: <r<shooting a sacred door>>
+
+- name: Skyview Spring - Bonk Broken Left Pillar
+  standard: Skyview Spring - Bonk Broken Left Pillar
+  pretty: Skyview Spring - Bonk Broken Left Pillar
+  cryptic: <r<disturbing a sacred ruin>>
+
+- name: Skyview Spring - Bonk Broken Right Pillar
+  standard: Skyview Spring - Bonk Broken Right Pillar
+  pretty: Skyview Spring - Bonk Broken Right Pillar
+  cryptic: <r<disturbing a sacred ruin>>
+
 - name: Skyview Spring - Rupee on Spring Pillar
   standard: Skyview Spring - Rupee on Spring Pillar
   pretty: Skyview Spring - Rupee on Spring Pillar
   cryptic: a <r<rupee on a humid pillar>>
+
+- name: Skyview Spring - Slingshot Post Left of Goddess Crest
+  standard: Skyview Spring - Slingshot Post Left of Goddess Crest
+  pretty: Skyview Spring - Slingshot Post Left of Goddess Crest
+  cryptic: <r<shooting a sacred monument>>
+
+- name: Skyview Spring - Slingshot Post Right of Goddess Crest
+  standard: Skyview Spring - Slingshot Post Right of Goddess Crest
+  pretty: Skyview Spring - Slingshot Post Right of Goddess Crest
+  cryptic: <r<shooting a sacred monument>>
 
 - name: Skyview Spring - Strike Crest
   standard: Skyview Spring - Strike Crest

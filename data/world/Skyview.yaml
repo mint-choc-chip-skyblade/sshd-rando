@@ -177,6 +177,11 @@
     Skyview Boss Room: Nothing
     # Crest Hit: Ruby Tablet
   locations:
+    Skyview Spring - Slingshot top of Door: Slingshot
+    Skyview Spring - Bonk Broken Left Pillar: Nothing
+    Skyview Spring - Bonk Broken Right Pillar: Nothing
     Skyview Spring - Rupee on Spring Pillar: Beetle
+    Skyview Spring - Slingshot Post Left of Goddess Crest: Slingshot
+    Skyview Spring - Slingshot Post Right of Goddess Crest: Slingshot
     Skyview Spring - Strike Crest: Goddess_Sword
     Skyview Spring - Goddess Cube: Goddess_Sword
