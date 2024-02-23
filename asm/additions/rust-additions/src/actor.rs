@@ -258,6 +258,14 @@ pub struct ListLink {
 }
 assert_eq_size!([u8; 0x10], ListLink);
 
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct ActorTreeProcess {
+    pub root:    *mut ActorTreeNode,
+    pub prepare: [u8; 16], // TODO
+}
+assert_eq_size!([u8; 0x18], ActorTreeProcess);
+
 // Actors
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -309,6 +317,16 @@ pub struct dAcOWarp {
 }
 assert_eq_size!([u8; 0x125D], dAcOWarp);
 
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcOBell {
+    pub base:        dAcOBase,
+    pub _0:          [u8; 0x450],
+    pub field_0x860: u8,
+    // TODO
+}
+assert_eq_size!([u8; 0x861], dAcOBell);
+
 // Tags
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -324,6 +342,19 @@ pub struct dTgMusasabi {
     pub has_spawned_squirrels_LOD: bool,
 }
 assert_eq_size!([u8; 0x1F8], dTgMusasabi);
+
+// NPCs
+// TODO: dAcOrdinaryNpc
+
+// Fledge during Pumpkin Archery
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcNpcPcs {
+    pub _0:                    [u8; 0x1650],
+    pub pumpkin_archery_timer: u64,
+    pub _1:                    [u8; 0x58],
+}
+assert_eq_size!([u8; 0x16B0], dAcNpcPcs);
 
 // Stage stuff
 #[repr(C, packed(1))]
@@ -1081,6 +1112,7 @@ extern "C" {
     static FILE_MGR: *mut savefile::FileMgr;
     static ROOM_MGR: *mut RoomMgr;
     static DUNGEONFLAG_MGR: *mut flag::DungeonflagMgr;
+    static CONNECT_MGR: ActorTreeProcess;
     static mut STATIC_DUNGEONFLAGS: [u16; 8];
 
     static mut ACTOR_PARAM_POS: *mut math::Vec3f;
@@ -1138,6 +1170,46 @@ pub fn spawn_actor(
         let group_type: u8 = 2; // 0 = other, 1 = scene, 2 = actor, 3 = unk
 
         return allocateNewActor(actorid, connect_parent, actor_param1, group_type);
+    }
+}
+
+// This function was inlined so we have to create our own
+#[no_mangle]
+pub fn find_actor_by_type(actorid: ACTORID, start_node: *mut ActorTreeNode) -> *mut dBase {
+    unsafe {
+        let mut cur_node: *mut ActorTreeNode = start_node;
+
+        if cur_node == core::ptr::null_mut() {
+            cur_node = CONNECT_MGR.root;
+        }
+
+        while cur_node != core::ptr::null_mut()
+            && (*(*cur_node).owner).members.members.actorid != actorid as u16
+        {
+            // Search the tree depth-first starting with the child node
+            if (*cur_node).tree_node.child != core::ptr::null_mut() {
+                cur_node = (*cur_node).tree_node.child as *mut ActorTreeNode;
+            // If there's no child node go to the next sibling node
+            } else if (*cur_node).tree_node.next != core::ptr::null_mut() {
+                cur_node = (*cur_node).tree_node.next as *mut ActorTreeNode;
+            // If there's no more sibling nodes, go up the tree until we hit
+            // a node which has an unexplored sibling
+            } else {
+                while (*cur_node).tree_node.next == core::ptr::null_mut() {
+                    cur_node = (*cur_node).tree_node.parent as *mut ActorTreeNode;
+                    if cur_node == core::ptr::null_mut() {
+                        return core::ptr::null_mut();
+                    }
+                }
+                cur_node = (*cur_node).tree_node.next as *mut ActorTreeNode;
+            }
+        }
+
+        if (cur_node == core::ptr::null_mut()) {
+            return core::ptr::null_mut();
+        }
+
+        return (*cur_node).owner;
     }
 }
 
