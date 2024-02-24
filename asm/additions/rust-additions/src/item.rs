@@ -564,29 +564,30 @@ pub fn tgreact_spawn_custom_item(
                 let mut actor_pos = (*tgreact).members.base.pos;
                 let actor_pos_ptr: *mut math::Vec3f = &mut actor_pos as *mut math::Vec3f;
 
-                // Prevent items spawning on top of or inside lanterns/bookshelves
                 let tgreact_subtype = (tgreact_param1 >> 28) & 0xF;
-                if tgreact_subtype == 0 || tgreact_subtype == 1 {
-                    let mut facing_angle = (*PLAYER_PTR).obj_base_members.base.rot.y;
-                    let facing_angle_radians: f32 =
-                        (facing_angle as f32 / 65535 as f32) * 2.0 * 3.14159;
-                    let mut additional_distance = -100.0;
 
-                    // Skyview Spring - Slingshot Post Left/Right of Goddess Crest checks
-                    // Need extra distrance so the item doesn't land high up and require a Beetle
-                    if &CURRENT_STAGE_NAME[..7] == b"B100_1\0"
-                        && (tgreact_param1 & 0xFF == 0x97 || tgreact_param1 & 0xFF == 0x98)
-                    {
-                        additional_distance = -500.0;
-                    } else if &CURRENT_STAGE_NAME[..5] == b"D201\0" {
-                        additional_distance = -200.0;
-                    }
+                // Prevent items spawning on top of or inside lanterns/bookshelves
+                let mut facing_angle = (*PLAYER_PTR).obj_base_members.base.rot.y;
+                let facing_angle_radians: f32 =
+                    (facing_angle as f32 / 65535 as f32) * 2.0 * 3.14159;
+                let mut additional_distance = -100.0;
 
-                    let xOffset = sinf(facing_angle_radians) * additional_distance;
-                    let zOffset = cosf(facing_angle_radians) * additional_distance;
-                    (*actor_pos_ptr).x += xOffset;
-                    (*actor_pos_ptr).z += zOffset;
+                // Skyview Spring - Slingshot Post Left/Right of Goddess Crest checks
+                // Need extra distrance so the item doesn't land high up and require a Beetle
+                if &CURRENT_STAGE_NAME[..7] == b"B100_1\0"
+                    && (tgreact_param1 & 0xFF == 0x97 || tgreact_param1 & 0xFF == 0x98)
+                {
+                    additional_distance = -500.0;
+                } else if &CURRENT_STAGE_NAME[..5] == b"D201\0"
+                    || (&CURRENT_STAGE_NAME[..5] == b"D300\0" && tgreact_subtype == 1)
+                {
+                    additional_distance = -200.0;
                 }
+
+                let xOffset = sinf(facing_angle_radians) * additional_distance;
+                let zOffset = cosf(facing_angle_radians) * additional_distance;
+                (*actor_pos_ptr).x += xOffset;
+                (*actor_pos_ptr).z += zOffset;
 
                 let item_actor: *mut dAcItem = actor::spawn_actor(
                     actor::ACTORID::ITEM,

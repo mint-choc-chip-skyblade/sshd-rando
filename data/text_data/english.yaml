@@ -3919,6 +3919,21 @@
   pretty: Lanayru Mining Facility - Right Back Rupee behind Statue
   cryptic: a <r<guarded rupee in a sandy temple>>
 
+- name: Lanayru Mining Facility - Bonk Bomb Flower Pillar
+  standard: Lanayru Mining Facility - Bonk Bomb Flower Pillar
+  pretty: Lanayru Mining Facility - Bonk Bomb Flower Pillar
+  cryptic: <r<disturbing a tall explosion plant>>
+
+- name: Lanayru Mining Facility - Slingshot Left Robot Eye in First Room
+  standard: Lanayru Mining Facility - Slingshot Left Robot Eye in First Room
+  pretty: Lanayru Mining Facility - Slingshot Left Robot Eye in First Room
+  cryptic: <r<shooting the guard>> of the <r<buried mine>>
+
+- name: Lanayru Mining Facility - Slingshot Right Robot Eye in First Room
+  standard: Lanayru Mining Facility - Slingshot Right Robot Eye in First Room
+  pretty: Lanayru Mining Facility - Slingshot Right Robot Eye in First Room
+  cryptic: <r<shooting the guard>> of the <r<buried mine>>
+
 - name: Lanayru Mining Facility - First Chest in Hub Room
   standard: Lanayru Mining Facility - First Chest in Hub Room
   pretty: Lanayru Mining Facility - First Chest in Hub Room
@@ -3933,6 +3948,21 @@
   standard: Lanayru Mining Facility - Chest after Armos Fight
   pretty: Lanayru Mining Facility - Chest after Armos Fight
   cryptic: a <r<chest past an armos>>
+
+- name: Lanayru Mining Facility - Slingshot Bomb Flower Pillar in Key Locked Room
+  standard: Lanayru Mining Facility - Slingshot Bomb Flower Pillar in Key Locked Room
+  pretty: Lanayru Mining Facility - Slingshot Bomb Flower Pillar in Key Locked Room
+  cryptic: <r<shooting a high, tall explosion plant>>
+
+- name: Lanayru Mining Facility - Slingshot Left Robot Eye in Key Locked Room
+  standard: Lanayru Mining Facility - Slingshot Left Robot Eye in Key Locked Room
+  pretty: Lanayru Mining Facility - Slingshot Left Robot Eye in Key Locked Room
+  cryptic: <r<shooting a guard>> deep within the <r<buried mine>>
+
+- name: Lanayru Mining Facility - Slingshot Right Robot Eye in Key Locked Room
+  standard: Lanayru Mining Facility - Slingshot Right Robot Eye in Key Locked Room
+  pretty: Lanayru Mining Facility - Slingshot Right Robot Eye in Key Locked Room
+  cryptic: <r<shooting a guard>> deep within the <r<buried mine>>
 
 - name: Lanayru Mining Facility - Chest in Key Locked Room
   standard: Lanayru Mining Facility - Chest in Key Locked Room
@@ -3958,6 +3988,11 @@
   standard: Lanayru Mining Facility - Chest behind First Crawlspace
   pretty: Lanayru Mining Facility - Chest behind First Crawlspace
   cryptic: a <r<chest past a sandy cralwspace>>
+
+- name: Lanayru Mining Facility - Blow Painting behind First Clawlspace
+  standard: Lanayru Mining Facility - Blow Painting behind First Clawlspace
+  pretty: Lanayru Mining Facility - Blow Painting behind First Clawlspace
+  cryptic: <r<dusting an old painting>>
 
 - name: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
   standard: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
@@ -4037,7 +4072,22 @@
 - name: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
   standard: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
   pretty: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
-  cryptic: rupee behind a <r<northern statue in a sandy temple>>
+  cryptic: rupee behind a <r<northern statue>> within the <<buried mine>>
+
+- name: Lanayru Mining Facility - Blow Robot behind Bottom Northwest Statue
+  standard: Lanayru Mining Facility - Blow Robot behind Bottom Northwest Statue
+  pretty: Lanayru Mining Facility - Blow Robot behind Bottom Northwest Statue
+  cryptic: <r<dusting the lower puzzling robot>>
+
+- name: Lanayru Mining Facility - Blow Robot behind Middle Northwest Statue
+  standard: Lanayru Mining Facility - Blow Robot behind Middle Northwest Statue
+  pretty: Lanayru Mining Facility - Blow Robot behind Middle Northwest Statue
+  cryptic: <r<dusting the middle puzzling robot>>
+
+- name: Lanayru Mining Facility - Blow Robot behind Top Northwest Statue
+  standard: Lanayru Mining Facility - Blow Robot behind Top Northwest Statue
+  pretty: Lanayru Mining Facility - Blow Robot behind Top Northwest Statue
+  cryptic: <r<dusting the higher puzzling robot>>
 
 - name: Lanayru Mining Facility - Chest after Double Armos Fight
   standard: Lanayru Mining Facility - Chest after Double Armos Fight

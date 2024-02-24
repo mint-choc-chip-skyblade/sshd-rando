@@ -4486,6 +4486,30 @@
   Paths:
     - stage/D300/r0/l0/Item/0xFC22
 
+- name: Lanayru Mining Facility - Bonk Bomb Flower Pillar
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D300/r0/l0/TgReact/0xFC27
+
+- name: Lanayru Mining Facility - Slingshot Left Robot Eye in First Room
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D300/r0/l0/TgReact/0xFC26
+
+- name: Lanayru Mining Facility - Slingshot Right Robot Eye in First Room
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D300/r0/l0/TgReact/0xFC25
+
 - name: Lanayru Mining Facility - First Chest in Hub Room
   original_item: Lanayru Mining Facility Small Key
   types:
@@ -4506,6 +4530,30 @@
     - Chests
   Paths:
     - stage/D300/r6/l0/TBox/69
+
+- name: Lanayru Mining Facility - Slingshot Bomb Flower Pillar in Key Locked Room
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D300/r2/l0/TgReact/0xFC49
+
+- name: Lanayru Mining Facility - Slingshot Left Robot Eye in Key Locked Room
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D300/r2/l0/TgReact/0xFC4C
+
+- name: Lanayru Mining Facility - Slingshot Right Robot Eye in Key Locked Room
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D300/r2/l0/TgReact/0xFC4B
 
 - name: Lanayru Mining Facility - Chest in Key Locked Room
   original_item: Red Rupee
@@ -4544,6 +4592,14 @@
   Paths:
     - stage/D300_1/r9/l0/TBox/72
     - stage/D300/r9/l0/TBox/72
+
+- name: Lanayru Mining Facility - Blow Painting behind First Clawlspace
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D300_1/r9/l0/TgReact/0xFC0B
 
 - name: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
   original_item: Green Rupee
@@ -4687,6 +4743,30 @@
     - Custom Flag
   Paths:
     - stage/D300_1/r8/l0/Item/0xFC50
+
+- name: Lanayru Mining Facility - Blow Robot behind Bottom Northwest Statue
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D300_1/r8/l0/TgReact/0xFC6C
+
+- name: Lanayru Mining Facility - Blow Robot behind Middle Northwest Statue
+  original_item: Red Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D300_1/r8/l0/TgReact/0xFC6A
+
+- name: Lanayru Mining Facility - Blow Robot behind Top Northwest Statue
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D300_1/r8/l0/TgReact/0xFC6B
 
 - name: Lanayru Mining Facility - Chest after Double Armos Fight
   original_item: Lanayru Mining Facility Boss Key

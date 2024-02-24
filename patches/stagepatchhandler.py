@@ -361,7 +361,9 @@ def patch_tgreact(
     )
 
     if tgreact is None:
-        raise Exception(f"No tag reaction (TgReact) found to patch.")
+        raise Exception(
+            f"No tag reaction (TgReact) with id '{hex(id)}' found to patch."
+        )
 
     # Don't use fake itemid yet, this needs patching properly first
     if trapid:
