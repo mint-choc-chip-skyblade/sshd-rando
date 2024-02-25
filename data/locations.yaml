@@ -194,6 +194,22 @@
     - oarc/F000/l4
     - oarc/F000/l6
 
+- name: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD37
+
+- name: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD38
+
 - name: Upper Skyloft - Chest near Goddess Statue
   original_item: Red Rupee
   types:
@@ -281,6 +297,22 @@
     - event/107-Kanban/Fi give Goddess Statue item 2
     - oarc/F008r/l0
 
+- name: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD39
+
+- name: Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD3A
+
 - name: Sparring Hall - Chest
   original_item: Progressive Sword
   types:
@@ -364,6 +396,86 @@
 #   Paths:
 #     - event/113-RemodelStore/Give Repair Gondo Junk item
 #     - oarc/F004r/l0
+
+- name: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD36
+
+- name: Central Skyloft - Bonk Tree before Lower Academy Stairs 2
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD34
+
+- name: Central Skyloft - Bonk Tree before Lower Academy Stairs 3
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD35
+
+- name: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD2D
+
+- name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD2E
+
+- name: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD30
+
+- name: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD2F
+
+- name: Central Skyloft - Blow Red Flag North of the Bazaar
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD1B
+
+- name: Central Skyloft - Blow Purple Flag North of the Bazaar
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD1C
+
+- name: Central Skyloft - Bonk Tree Southeast of the Bazaar
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD1D
 
 - name: Central Skyloft - Wryna's Crystals
   original_item: Gratitude Crystal Pack
@@ -523,6 +635,22 @@
   Paths:
     - stage/F000/r0/l0/TBox/70
 
+- name: Central Skyloft - Bonk Tree Left of Sky Keep Statue
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD32
+
+- name: Central Skyloft - Bonk Tree Right of Sky Keep Statue
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD33
+
 - name: Central Skyloft - Stamina Fruit between Wooden Planks
   original_item: Stamina Fruit
   types:
@@ -678,6 +806,14 @@
     - stage/F000/r0/l9/Item/106
 
 # Skyloft Village checks:
+
+- name: Skyloft Village - Bonk Tree near River
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD1E
 
 - name: Skyloft Village - Mallara's Crystals
   original_item: Gratitude Crystal Pack

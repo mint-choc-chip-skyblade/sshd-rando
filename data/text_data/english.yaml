@@ -1310,6 +1310,16 @@
   pretty: Upper Skyloft - Rescue Remlit above Knight Academy
   cryptic: disturbing a <r<sleepy cat>>
 
+- name: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
+  standard: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
+  pretty: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
+  cryptic: <r<shooting a schoolhouse light>>
+
+- name: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
+  standard: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
+  pretty: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
+  cryptic: <r<shooting a schoolhouse light>>
+
 - name: Upper Skyloft - Chest near Goddess Statue
   standard: Upper Skyloft - Chest near Goddess Statue
   pretty: Upper Skyloft - Chest near Goddess Statue
@@ -1349,6 +1359,16 @@
   standard: Inside the Statue of the Goddess - Second Goddess Sword Item
   pretty: Inside the Statue of the Goddess - Second Goddess Sword Item
   cryptic: the <r<goddess's second reward>>
+
+- name: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
+  standard: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
+  pretty: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
+  cryptic: <r<shooting a swordman's light>>
+
+- name: Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors
+  standard: Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors
+  pretty: Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors
+  cryptic: <r<shooting a swordman's light>>
 
 - name: Sparring Hall - Chest
   standard: Sparring Hall - Chest
@@ -1404,6 +1424,61 @@
   standard: Central Skyloft - Repair Gondo's Junk
   pretty: Central Skyloft - Repair Gondo's Junk
   cryptic: <r<fixing an ancient robot>>
+
+- name: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
+  standard: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
+  pretty: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
+  cryptic: <r<disturbing western sky wood>>
+
+- name: Central Skyloft - Bonk Tree before Lower Academy Stairs 2
+  standard: Central Skyloft - Bonk Tree before Lower Academy Stairs 2
+  pretty: Central Skyloft - Bonk Tree before Lower Academy Stairs 2
+  cryptic: <r<disturbing western sky wood>>
+
+- name: Central Skyloft - Bonk Tree before Lower Academy Stairs 3
+  standard: Central Skyloft - Bonk Tree before Lower Academy Stairs 3
+  pretty: Central Skyloft - Bonk Tree before Lower Academy Stairs 3
+  cryptic: <r<disturbing western sky wood>>
+
+- name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  standard: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  pretty: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  cryptic: <r<shooting a northern shop light>>
+
+- name: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
+  standard: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
+  pretty: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
+  cryptic: <r<shooting a northern shop light>>
+
+- name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  standard: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  pretty: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  cryptic: <r<shooting a northern shop light>>
+
+- name: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
+  standard: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
+  pretty: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
+  cryptic: <r<shooting a southern shop light>>
+
+- name: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
+  standard: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
+  pretty: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
+  cryptic: <r<shooting a southern shop light>>
+
+- name: Central Skyloft - Blow Red Flag North of the Bazaar
+  standard: Central Skyloft - Blow Red Flag North of the Bazaar
+  pretty: Central Skyloft - Blow Red Flag North of the Bazaar
+  cryptic: <r<dusting a red flag>>
+
+- name: Central Skyloft - Blow Purple Flag North of the Bazaar
+  standard: Central Skyloft - Blow Purple Flag North of the Bazaar
+  pretty: Central Skyloft - Blow Purple Flag North of the Bazaar
+  cryptic: <r<dusting a purple flag>>
+
+- name: Central Skyloft - Bonk Tree Southeast of the Bazaar
+  standard: Central Skyloft - Bonk Tree Southeast of the Bazaar
+  pretty: Central Skyloft - Bonk Tree Southeast of the Bazaar
+  cryptic: <r<disturbing sky wood below a market>>
 
 - name: Central Skyloft - Wryna's Crystals
   standard: Central Skyloft - Wryna's Crystals
@@ -1500,6 +1575,16 @@
   pretty: Central Skyloft - Shed Chest
   cryptic: a <r<chest next to a goddess chest>>
 
+- name: Central Skyloft - Bonk Tree Left of Sky Keep Statue
+  standard: Central Skyloft - Bonk Tree Left of Sky Keep Statue
+  pretty: Central Skyloft - Bonk Tree Left of Sky Keep Statue
+  cryptic: <r<disturbing sky wood>> near a <r<waterfall>>
+
+- name: Central Skyloft - Bonk Tree Right of Sky Keep Statue
+  standard: Central Skyloft - Bonk Tree Right of Sky Keep Statue
+  pretty: Central Skyloft - Bonk Tree Right of Sky Keep Statue
+  cryptic: <r<disturbing sky wood>> near a <r<waterfall>>
+
 - name: Central Skyloft - Stamina Fruit between Wooden Planks
   standard: Central Skyloft - Stamina Fruit between Wooden Planks
   pretty: Central Skyloft - Stamina Fruit between Wooden Planks
@@ -1584,6 +1669,11 @@
   standard: Central Skyloft - Crystal on Light Tower
   pretty: Central Skyloft - Crystal on Light Tower
   cryptic: a <r<crystal at the base of a tower>>
+
+- name: Skyloft Village - Bonk Tree near River
+  standard: Skyloft Village - Bonk Tree near River
+  pretty: Skyloft Village - Bonk Tree near River
+  cryptic: <r<disturbing sky wood>> in a <r<village>>
 
 - name: Skyloft Village - Mallara's Crystals
   standard: Skyloft Village - Mallara's Crystals
