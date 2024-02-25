@@ -403,7 +403,7 @@
    - Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
 - id: 72
   name: Fairy
-  type:
+  types:
     - Minor Items
   oarc: null # ObjectPack
   getarcname: GetFairy
