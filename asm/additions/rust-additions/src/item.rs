@@ -580,6 +580,7 @@ pub fn tgreact_spawn_custom_item(
                     additional_distance = -500.0;
                 } else if &CURRENT_STAGE_NAME[..5] == b"D201\0"
                     || (&CURRENT_STAGE_NAME[..5] == b"D300\0" && tgreact_subtype == 1)
+                    || (&CURRENT_STAGE_NAME[..5] == b"F100\0" && tgreact_subtype == 0)
                 {
                     additional_distance = -200.0;
                 }
@@ -588,6 +589,13 @@ pub fn tgreact_spawn_custom_item(
                 let zOffset = cosf(facing_angle_radians) * additional_distance;
                 (*actor_pos_ptr).x += xOffset;
                 (*actor_pos_ptr).z += zOffset;
+
+                // Fix for weird bellows tgreact on Great Tree
+                if &CURRENT_STAGE_NAME[..5] == b"F100\0" && (tgreact_param1 & 0xFF) == 0xA7 {
+                    (*actor_pos_ptr).x = 1350.0;
+                    (*actor_pos_ptr).y = (*tgreact).members.base.pos.y;
+                    (*actor_pos_ptr).z = -6750.0;
+                }
 
                 let item_actor: *mut dAcItem = actor::spawn_actor(
                     actor::ACTORID::ITEM,

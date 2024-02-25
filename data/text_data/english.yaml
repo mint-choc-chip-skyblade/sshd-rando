@@ -2307,6 +2307,26 @@
   cryptic: the <r<eradication of the demon king>>
   goal_name: Demise
 
+- name: Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing
+  standard: Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing
+  pretty: Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing
+  cryptic: <r<disturbing hollow tubes>> in an <r<open space>>
+
+- name: Faron Woods - Slingshot Archway after Kikwi in Clearing
+  standard: Faron Woods - Slingshot Archway after Kikwi in Clearing
+  pretty: Faron Woods - Slingshot Archway after Kikwi in Clearing
+  cryptic: <r<shooting a curve>> in an <r<open space>>
+
+- name: Faron Woods - Slingshot Archway before Mushroom Grove
+  standard: Faron Woods - Slingshot Archway before Mushroom Grove
+  pretty: Faron Woods - Slingshot Archway before Mushroom Grove
+  cryptic: <r<shooting a curve overlooking fungi>>
+
+- name: Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue
+  standard: Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue
+  pretty: Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue
+  cryptic: <r<disturbing fungi in the woods>>
+
 - name: Faron Woods - Item behind Bombable Rock
   standard: Faron Woods - Item behind Bombable Rock
   pretty: Faron Woods - Item behind Bombable Rock
@@ -2332,15 +2352,65 @@
   pretty: Faron Woods - Rupee on Hollow Tree Branch
   cryptic: an <r<item on a tree branch>>
 
+- name: Faron Woods - Bonk Tree next to Shortcut Rope to Floria Gates
+  standard: Faron Woods - Bonk Tree next to Shortcut Rope to Floria Gates
+  pretty: Faron Woods - Bonk Tree next to Shortcut Rope to Floria Gates
+  cryptic: <r<disturbing a tree>> near a <b<watery door>>
+
+- name: Faron Woods - Bonk Bamboo Blockade before Floria Gates
+  standard: Faron Woods - Bonk Bamboo Blockade before Floria Gates
+  pretty: Faron Woods - Bonk Bamboo Blockade before Floria Gates
+  cryptic: <r<disturbing hollow tubes>> near a <b<watery door>>
+
+- name: Faron Woods - Slingshot Floria Gates Archway
+  standard: Faron Woods - Slingshot Floria Gates Archway
+  pretty: Faron Woods - Slingshot Floria Gates Archway
+  cryptic: <r<shoorting>> a <b<watery door>>
+
 - name: Faron Woods - Rupee on Platform near Floria Door
   standard: Faron Woods - Rupee on Platform near Floria Door
   pretty: Faron Woods - Rupee on Platform near Floria Door
   cryptic: an <r<item on a far away ledge>>
 
+- name: Faron Woods - Bonk Raised Tree near Crooked Archway
+  standard: Faron Woods - Bonk Raised Tree near Crooked Archway
+  pretty: Faron Woods - Bonk Raised Tree near Crooked Archway
+  cryptic: <r<disturbing a high tree>> near <r<tilted stone>>
+
+- name: Faron Woods - Slingshot Main Viewing Platform Archway
+  standard: Faron Woods - Slingshot Main Viewing Platform Archway
+  pretty: Faron Woods - Slingshot Main Viewing Platform Archway
+  cryptic: <r<shooting a lookout point>>
+
+- name: Faron Woods - Blow Farore's Symbol on Viewing Platform
+  standard: Faron Woods - Blow Farore's Symbol on Viewing Platform
+  pretty: Faron Woods - Blow Farore's Symbol on Viewing Platform
+  cryptic: <r<dusting an ancient symbol>>
+
+- name: Faron Woods - Bonk Archway before Deep Woods
+  standard: Faron Woods - Bonk Archway before Deep Woods
+  pretty: Faron Woods - Bonk Archway before Deep Woods
+  cryptic: <r<disturbing a curve>> to a <g<deep place>>
+
+- name: Faron Woods - Bonk Tall Blue Northern Mushroom
+  standard: Faron Woods - Bonk Tall Blue Northern Mushroom
+  pretty: Faron Woods - Bonk Tall Blue Northern Mushroom
+  cryptic: <r<disturbing a fungi>> the <b<color of sky>>
+
+- name: Faron Woods - Slingshot Northwest Great Tree Trunk
+  standard: Faron Woods - Slingshot Northwest Great Tree Trunk
+  pretty: Faron Woods - Slingshot Northwest Great Tree Trunk
+  cryptic: <r<shooting ancient wood>>
+
 - name: Faron Woods - Chest behind Bombable Rocks near Erla
   standard: Faron Woods - Chest behind Bombable Rocks near Erla
   pretty: Faron Woods - Chest behind Bombable Rocks near Erla
   cryptic: a <r<chest behind some forest rocks>>
+
+- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue
+  standard: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue
+  pretty: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue
+  cryptic: <r<disturbing a tree>> above the <g<forest entrance>>
 
 - name: Faron Woods - Rupee on Great Tree North Branch
   standard: Faron Woods - Rupee on Great Tree North Branch
@@ -2351,6 +2421,11 @@
   standard: Faron Woods - Rupee on Great Tree West Branch
   pretty: Faron Woods - Rupee on Great Tree West Branch
   cryptic: an <r<item on a high up tree branch>>
+
+- name: Faron Woods - Blow Wooden Spiral near Goddess Cube near Rope
+  standard: Faron Woods - Blow Wooden Spiral near Goddess Cube near Rope
+  pretty: Faron Woods - Blow Wooden Spiral near Goddess Cube near Rope
+  cryptic: <r<dusting an ancient wooden swirl>>
 
 - name: Faron Woods - Stamina Fruit on Vines below First Log
   standard: Faron Woods - Stamina Fruit on Vines below First Log

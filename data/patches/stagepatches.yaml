@@ -1528,6 +1528,16 @@ F100: # Faron Woods
     destlayer: 0
     room: 0
     objtype: STAG
+  # Makes sure you can still hit it even when the gates are open
+  - name: Move Floria Gates TgReact up to Archway
+    type: objpatch
+    id: 0xFD65
+    layer: 0
+    room: 0
+    objtype: SOBJ
+    object:
+      params1: 0x1FE000AF # 0x......A3 -> 0x......AF = tempflag 175 0x4 80
+      posy: 1600
   - name: Remove Fi text Not letting you leave Machi
     type: objdelete
     ids:

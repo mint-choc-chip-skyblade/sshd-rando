@@ -147,6 +147,20 @@
     Faron Woods - Stamina Fruit past Baba Slope: Nothing
     Faron Woods - Stamina Fruit on Vines near Erla: Nothing
     Faron Woods - Stamina Fruit on Vines on Great Tree: Beetle # TODO: Check
+    Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing: Nothing
+    Faron Woods - Slingshot Archway after Kikwi in Clearing: Slingshot
+    Faron Woods - Slingshot Archway before Mushroom Grove: Slingshot
+    Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue: Nothing
+    Faron Woods - Bonk Tree next to Shortcut Rope to Floria Gates: Nothing
+    Faron Woods - Bonk Bamboo Blockade before Floria Gates: Nothing
+    Faron Woods - Slingshot Floria Gates Archway: Slingshot and 'Can_Get_To_Lake_Floria_Gates'
+    Faron Woods - Bonk Raised Tree near Crooked Archway: Nothing
+    Faron Woods - Slingshot Main Viewing Platform Archway: Slingshot
+    Faron Woods - Blow Farore's Symbol on Viewing Platform: Gust_Bellows
+    Faron Woods - Bonk Archway before Deep Woods: Distance_Activator
+    Faron Woods - Bonk Tall Blue Northern Mushroom: Nothing
+    Faron Woods - Slingshot Northwest Great Tree Trunk: Slingshot
+    Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue: Nothing
 
 
 - name: Faron Woods Floria Shortcut Ledge
@@ -176,26 +190,27 @@
 
 - name: Great Tree West Branch
   hint_region: Faron Woods
-  locations:
-    Faron Woods - Goddess Cube on West Great Tree near Exit: Goddess_Sword
   exits:
     Faron Woods: Nothing
+  locations:
+    Faron Woods - Goddess Cube on West Great Tree near Exit: Goddess_Sword
     
 
 - name: Great Tree Clawshot Target Branch
   hint_region: Faron Woods
-  locations:
-    Faron Woods - Goddess Cube on East Great Tree with Clawshots Target: Goddess_Sword
   exits:
     Faron Woods: Nothing
+  locations:
+    Faron Woods - Goddess Cube on East Great Tree with Clawshots Target: Goddess_Sword
     
 
 - name: Great Tree Rope Branch
   hint_region: Faron Woods
-  locations:
-    Faron Woods - Goddess Cube on East Great Tree with Rope: Goddess_Sword
   exits:
     Faron Woods: Nothing
+  locations:
+    Faron Woods - Blow Wooden Spiral near Goddess Cube near Rope: Gust_Bellows
+    Faron Woods - Goddess Cube on East Great Tree with Rope: Goddess_Sword
 
   
 # GREAT TREE

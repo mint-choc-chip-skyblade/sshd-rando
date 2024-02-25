@@ -1880,6 +1880,38 @@
 
 # Faron Woods:
 
+- name: Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD5A
+
+- name: Faron Woods - Slingshot Archway after Kikwi in Clearing
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD63
+
+- name: Faron Woods - Slingshot Archway before Mushroom Grove
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD64
+
+- name: Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD5B
+
 - name: Faron Woods - Item behind Bombable Rock
   original_item: Heart Piece
   types:
@@ -1920,6 +1952,33 @@
   Paths:
     - stage/F100/r0/l0/Item/41
 
+- name: Faron Woods - Bonk Tree next to Shortcut Rope to Floria Gates
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD5F
+
+- name: Faron Woods - Bonk Bamboo Blockade before Floria Gates
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD5C
+
+# In vanilla, this check is actually for shooting the closed Floria Gates
+# Since rando needs this check to always be accessible, there is a patch that
+# Moves this tgreact up a bit so you have to shoot the archway instead
+- name: Faron Woods - Slingshot Floria Gates Archway
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD65
+
 - name: Faron Woods - Rupee on Platform near Floria Door
   original_item: Red Rupee
   types:
@@ -1928,12 +1987,68 @@
   Paths:
     - stage/F100/r0/l0/Item/40
 
+- name: Faron Woods - Bonk Raised Tree near Crooked Archway
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD61
+
+- name: Faron Woods - Slingshot Main Viewing Platform Archway
+  original_item: Heart # actually 3 hearts
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD67
+
+- name: Faron Woods - Blow Farore's Symbol on Viewing Platform
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD68
+
+- name: Faron Woods - Bonk Archway before Deep Woods
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD62
+
+- name: Faron Woods - Bonk Tall Blue Northern Mushroom
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD60
+
+- name: Faron Woods - Slingshot Northwest Great Tree Trunk
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD66
+
 - name: Faron Woods - Chest behind Bombable Rocks near Erla
   original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
     - stage/F100/r0/l0/TBox/64
+
+- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue
+  original_item: 5 Deku Seeds # Technically 2 sets
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD5E
 
 - name: Faron Woods - Rupee on Great Tree North Branch
   original_item: Blue Rupee
@@ -1950,6 +2065,14 @@
     - Beginner Rupees
   Paths:
     - stage/F100/r0/l0/Item/44
+
+- name: Faron Woods - Blow Wooden Spiral near Goddess Cube near Rope
+  original_item: Red Rupee # actually a rupee shower
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD69
 
 - name: Faron Woods - Stamina Fruit on Vines below First Log
   original_item: Stamina Fruit
