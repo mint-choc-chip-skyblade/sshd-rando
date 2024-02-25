@@ -5000,12 +5000,68 @@
   Paths:
     - stage/D301/r0/l0/TBox/127
 
+- name: Sandship - Blow Ceiling Lamp below Scervo Fight
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D301/r2/l0/TgReact/0xFC06
+
 - name: Sandship - Chest before 4-Door Corridor
   original_item: Sandship Map
   types:
     - Chests
   Paths:
     - stage/D301/r3/l0/TBox/71
+
+- name: Sandship - Blow Front Ceiling Lamp in 4-Door Corridor
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D301/r3/l0/TgReact/0xFC26
+
+- name: Sandship - Blow Back Ceiling Lamp in 4-Door Corridor
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D301/r3/l0/TgReact/0xFC27
+
+- name: Sandship - Blow Ceiling Lamp in Right Generator Room
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D301/r5/l0/TgReact/0xFC07
+
+- name: Sandship - Blow Ceiling Lamp in Left Generator Room
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D301/r7/l0/TgReact/0xFC07
+
+- name: Sandship - Blow Ceiling Lamp Right of Boss Door
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D301/r9/l0/TgReact/0xFC14
+
+- name: Sandship - Blow Ceiling Lamp Left of Boss Door
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/D301/r9/l0/TgReact/0xFC13
 
 - name: Sandship - Chest behind Combination Lock
   original_item: Sandship Small Key 

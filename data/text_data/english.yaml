@@ -4236,10 +4236,45 @@
   pretty: Sandship - Chest at the Stern
   cryptic: a <r<chest trailing a ship>>
 
+- name: Sandship - Blow Ceiling Lamp below Scervo Fight
+  standard: Sandship - Blow Ceiling Lamp below Scervo Fight
+  pretty: Sandship - Blow Ceiling Lamp below Scervo Fight
+  cryptic: <r<dusting a light beneath a reanimated skeleton>>
+
 - name: Sandship - Chest before 4-Door Corridor
   standard: Sandship - Chest before 4-Door Corridor
   pretty: Sandship - Chest before 4-Door Corridor
   cryptic: a <r<chest before 4 doors>>
+
+- name: Sandship - Blow Front Ceiling Lamp in 4-Door Corridor
+  standard: Sandship - Blow Front Ceiling Lamp in 4-Door Corridor
+  pretty: Sandship - Blow Front Ceiling Lamp in 4-Door Corridor
+  cryptic: <r<dusting a light>> in a <r<hall with many doors>>
+
+- name: Sandship - Blow Back Ceiling Lamp in 4-Door Corridor
+  standard: Sandship - Blow Back Ceiling Lamp in 4-Door Corridor
+  pretty: Sandship - Blow Back Ceiling Lamp in 4-Door Corridor
+  cryptic: <r<dusting a light>> in a <r<hall with many doors>>
+
+- name: Sandship - Blow Ceiling Lamp in Right Generator Room
+  standard: Sandship - Blow Ceiling Lamp in Right Generator Room
+  pretty: Sandship - Blow Ceiling Lamp in Right Generator Room
+  cryptic: <r<dusting a light in a starboard room>>
+
+- name: Sandship - Blow Ceiling Lamp in Left Generator Room
+  standard: Sandship - Blow Ceiling Lamp in Left Generator Room
+  pretty: Sandship - Blow Ceiling Lamp in Left Generator Room
+  cryptic: <r<dusting a light in a port room>>
+
+- name: Sandship - Blow Ceiling Lamp Right of Boss Door
+  standard: Sandship - Blow Ceiling Lamp Right of Boss Door
+  pretty: Sandship - Blow Ceiling Lamp Right of Boss Door
+  cryptic: <r<dusting a light>> before an <r<important door>>
+
+- name: Sandship - Blow Ceiling Lamp Left of Boss Door
+  standard: Sandship - Blow Ceiling Lamp Left of Boss Door
+  pretty: Sandship - Blow Ceiling Lamp Left of Boss Door
+  cryptic: <r<dusting a light>> before an <r<important door>>
 
 - name: Sandship - Chest behind Combination Lock
   standard: Sandship - Chest behind Combination Lock
