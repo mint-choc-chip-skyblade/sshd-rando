@@ -502,8 +502,14 @@
 
 - name: Progressive Bug Net
   standard: Progressive Bug Net
-  pretty: a <Progressive Bug Net>
+  pretty: a <r<Progressive Bug Net>>
   cryptic: a <r<fun net>>
+  plurality: Singular
+
+- name: Fairy
+  standard: Fairy
+  pretty: Fairy
+  cryptic: a <r<magical friend>>
   plurality: Singular
 
 - name: Hook Beetle
@@ -1829,6 +1835,66 @@
   standard: Bamboo Island Interior - Gossip Stone
   pretty: Bamboo Island Interior - Gossip Stone
   cryptic:
+
+- name: Bamboo Island Interior - Bonk Southwest Sprout
+  standard: Bamboo Island Interior - Bonk Southwest Sprout
+  pretty: Bamboo Island Interior - Bonk Southwest Sprout
+  cryptic: <r<disturbing baby bamboo>>
+
+- name: Bamboo Island Interior - Bonk West Sprout
+  standard: Bamboo Island Interior - Bonk West Sprout
+  pretty: Bamboo Island Interior - Bonk West Sprout
+  cryptic: <r<disturbing baby bamboo>>
+
+- name: Bamboo Island Interior - Bonk East Sprout
+  standard: Bamboo Island Interior - Bonk East Sprout
+  pretty: Bamboo Island Interior - Bonk East Sprout
+  cryptic: <r<disturbing baby bamboo>>
+
+- name: Bamboo Island Interior - Bonk Southeast Sprout
+  standard: Bamboo Island Interior - Bonk Southeast Sprout
+  pretty: Bamboo Island Interior - Bonk Southeast Sprout
+  cryptic: <r<disturbing baby bamboo>>
+
+- name: Bamboo Island - Slingshot Left Lantern
+  standard: Bamboo Island - Slingshot Left Lantern
+  pretty: Bamboo Island - Slingshot Left Lantern
+  cryptic: <r<shooting the light>> of a <r<clean cut building>>
+
+- name: Bamboo Island - Slingshot Middle Lantern
+  standard: Bamboo Island - Slingshot Middle Lantern
+  pretty: Bamboo Island - Slingshot Middle Lantern
+  cryptic: <r<shooting the light>> of a <r<clean cut building>>
+
+- name: Bamboo Island - Slingshot Right Lantern
+  standard: Bamboo Island - Slingshot Right Lantern
+  pretty: Bamboo Island - Slingshot Right Lantern
+  cryptic: <r<shooting the light>> of a <r<clean cut building>>
+
+- name: Lumpy Pumpkin - Slingshot Left Canopy Lantern
+  standard: Lumpy Pumpkin - Slingshot Left Canopy Lantern
+  pretty: Lumpy Pumpkin - Slingshot Left Canopy Lantern
+  cryptic: <r<shooting a sheltered light>>
+
+- name: Lumpy Pumpkin - Slingshot Right Canopy Lantern
+  standard: Lumpy Pumpkin - Slingshot Right Canopy Lantern
+  pretty: Lumpy Pumpkin - Slingshot Right Canopy Lantern
+  cryptic: <r<shooting a sheltered light>>
+
+- name: Lumpy Pumpkin - Slingshot Lantern Left of Main Door
+  standard: Lumpy Pumpkin - Slingshot Lantern Left of Main Door
+  pretty: Lumpy Pumpkin - Slingshot Lantern Left of Main Door
+  cryptic: <r<shooting a welcome light>> at an <r<inn>>
+
+- name: Lumpy Pumpkin - Slingshot Lantern Right of Main Door
+  standard: Lumpy Pumpkin - Slingshot Lantern Right of Main Door
+  pretty: Lumpy Pumpkin - Slingshot Lantern Right of Main Door
+  cryptic: <r<shooting a welcome light>> at an <r<inn>>
+
+- name: Lumpy Pumpkin - Slingshot Lantern next to Back Door
+  standard: Lumpy Pumpkin - Slingshot Lantern next to Back Door
+  pretty: Lumpy Pumpkin - Slingshot Lantern next to Back Door
+  cryptic: <r<shooting the rear light>> at an <r<inn>>
 
 - name: Lumpy Pumpkin - Chandelier
   standard: Lumpy Pumpkin - Chandelier

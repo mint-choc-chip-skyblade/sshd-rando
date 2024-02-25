@@ -1093,6 +1093,102 @@
   textindex: 11
   eventflowindex: 18
 
+- name: Bamboo Island Interior - Bonk Southwest Sprout
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F019r/r0/l0/TgReact/0xFC08
+
+- name: Bamboo Island Interior - Bonk West Sprout
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F019r/r0/l0/TgReact/0xFC09
+
+- name: Bamboo Island Interior - Bonk East Sprout
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F019r/r0/l0/TgReact/0xFC0A
+
+- name: Bamboo Island Interior - Bonk Southeast Sprout
+  original_item: Fairy
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F019r/r0/l0/TgReact/0xFC07
+
+- name: Bamboo Island - Slingshot Left Lantern
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F020/r0/l0/TgReact/0xFCA3
+
+- name: Bamboo Island - Slingshot Middle Lantern
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F020/r0/l0/TgReact/0xFCA2
+
+- name: Bamboo Island - Slingshot Right Lantern
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F020/r0/l0/TgReact/0xFCA4
+
+- name: Lumpy Pumpkin - Slingshot Left Canopy Lantern
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F020/r0/l0/TgReact/0xFCA5
+
+- name: Lumpy Pumpkin - Slingshot Right Canopy Lantern
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F020/r0/l0/TgReact/0xFCA6
+
+- name: Lumpy Pumpkin - Slingshot Lantern Left of Main Door
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F020/r0/l0/TgReact/0xFCA8
+
+- name: Lumpy Pumpkin - Slingshot Lantern Right of Main Door
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F020/r0/l0/TgReact/0xFCA7
+
+- name: Lumpy Pumpkin - Slingshot Lantern next to Back Door
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F020/r0/l0/TgReact/0xFCA9
+
 - name: Lumpy Pumpkin - Chandelier
   original_item: Heart Piece
   types:

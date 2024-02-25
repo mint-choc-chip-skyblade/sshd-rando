@@ -34,6 +34,8 @@
   types:
     - Minor Items
   oarc: null # ObjectPack
+  getarcname: GetHeart
+  getmodelname: GetHeart
 - id: 8
   name: 10 Arrows
   oarc: null # ObjectPack
@@ -399,6 +401,13 @@
   advancement: true
   chain_locations:
    - Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
+- id: 72
+  name: Fairy
+  type:
+    - Minor Items
+  oarc: null # ObjectPack
+  getarcname: GetFairy
+  getmodelname: GetFairy
 - id: 75
   name: Hook Beetle
   types:
