@@ -876,6 +876,14 @@
   Paths:
     - stage/F013r/r0/l0/chest/0xFC0E
 
+- name: Skyloft Village - Bonk Sparrot's Valuables
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F013r/r0/l0/TgReact/0xFC14
+
 - name: Skyloft Village - Crystal near Pumpkin Patch
   original_item: Gratitude Crystal 
   types:

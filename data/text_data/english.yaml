@@ -1715,6 +1715,11 @@
   pretty: Skyloft Village - Sparrot's Closet
   cryptic: snooping through a <r<fortune teller's clothes>>
 
+- name: Skyloft Village - Bonk Sparrot's Valuables
+  standard: Skyloft Village - Bonk Sparrot's Valuables
+  pretty: Skyloft Village - Bonk Sparrot's Valuables
+  cryptic: <r<disturbing a fortune teller's fortune>>
+
 - name: Skyloft Village - Crystal near Pumpkin Patch
   standard: Skyloft Village - Crystal near Pumpkin Patch
   pretty: Skyloft Village - Crystal near Pumpkin Patch
