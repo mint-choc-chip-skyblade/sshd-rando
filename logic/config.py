@@ -6,7 +6,7 @@ from constants.configconstants import (
     get_default_setting,
 )
 from constants.itemconstants import STARTABLE_ITEMS
-from filepathconstants import PREFERENCES_PATH
+from filepathconstants import PREFERENCES_PATH, WORDS_PATH, PLANDO_PATH
 
 from .settings import *
 
@@ -29,6 +29,71 @@ class Config:
         self.use_custom_theme: bool = False
         self.font_family: str = None  # type: ignore
         self.font_size: int = 0
+        self.hash: str = ""
+
+    def get_hash(self) -> str:
+        if self.hash:
+            return self.hash
+
+        # Create hash if we haven't made it yet
+        with open(WORDS_PATH) as words_file:
+            words = yaml.safe_load(words_file)
+            hash_words = []
+            for _ in range(3):
+                hash_words.append(random.choice(words))
+                words.remove(hash_words[-1])
+
+            self.hash = " ".join(hash_words)
+
+        return self.hash
+
+
+def seed_rng(
+    config: Config,
+    resolve_non_standard_random: bool = False,
+    ignore_invalid_plandomizer: bool = True,
+) -> None:
+    # Seed with system time in-case we're choosing random cosmetics
+    random.seed()
+
+    # Seed RNG with combination of seed, standard settings, and plando file (if being used)
+    hash_str = config.seed
+    for setting_map in config.settings:
+        for name, setting in setting_map.settings.items():
+            if setting.info.type == SettingType.STANDARD:
+                hash_str += name + setting.value
+            elif resolve_non_standard_random:
+                # If any non-standard settings are random, resolve them now before seeding
+                setting.resolve_if_random()
+
+        # Special handling for other settings
+        for item in sorted(setting_map.starting_inventory):
+            hash_str += item
+
+        for loc in sorted(setting_map.excluded_locations):
+            hash_str += loc
+
+        for loc in sorted(setting_map.excluded_hint_locations):
+            hash_str += loc
+
+        for pool in setting_map.mixed_entrance_pools:
+            for entrance_type in sorted(pool):
+                hash_str += entrance_type
+
+    if config.use_plandomizer:
+        if config.plandomizer_file is None or config.plandomizer_file == "None":
+            if not ignore_invalid_plandomizer:
+                raise ConfigError(
+                    f"Cannot use plandomizer file as the current plandomizer filename is invalid: {config.plandomizer_file}"
+                )
+        else:
+            with open(PLANDO_PATH / config.plandomizer_file) as plando_file:
+                hash_str += plando_file.read()
+
+    if config.generate_spoiler_log:
+        hash_str += "spoilerlog"
+
+    random.seed(hash_str)
 
 
 def create_default_config(filename: Path):

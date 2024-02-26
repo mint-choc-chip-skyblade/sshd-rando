@@ -17,7 +17,7 @@ from gui.dialogs.error_dialog import error_from_str
 from gui.dialogs.verify_files_progress_dialog import VerifyFilesProgressDialog
 from gui.dialogs.fi_info_dialog import FiInfoDialog
 from gui.guithreads import VerificationThread
-from logic.config import Config, write_config_to_file
+from logic.config import Config, write_config_to_file, seed_rng
 
 from typing import TYPE_CHECKING
 
@@ -91,6 +91,7 @@ class Advanced:
 
     def update_config(self):
         write_config_to_file(CONFIG_PATH, self.config)
+        self.update_hash()
 
     def open_file_picker(self):
         if output_dir := QFileDialog.getExistingDirectory(
@@ -164,6 +165,11 @@ class Advanced:
 
     def show_file_error_dialog(self, file_text: str):
         self.main.fi_info_dialog.show_dialog(title="File not found!", text=file_text)
+
+    def update_hash(self):
+        self.config.hash = ""
+        seed_rng(self.config)
+        self.ui.hash_label.setText(f"Hash: {self.config.get_hash()}")
 
     def thread_error(self, exception: str, traceback: str):
         error_from_str(exception, traceback)
