@@ -1536,7 +1536,6 @@ F100: # Faron Woods
     room: 0
     objtype: SOBJ
     object:
-      params1: 0x1FE000AF # 0x......A3 -> 0x......AF = tempflag 175 0x4 80
       posy: 1600
   - name: Remove Fi text Not letting you leave Machi
     type: objdelete
@@ -1732,6 +1731,50 @@ F101: # Deep Woods
     layer: 0
     room: 0
     objtype: STAG
+  # Originally, both are on the door itself.
+  # Moving them so you can always hit them :p
+  - name: Move Skyview Temple Door TgReact 1 to Left Door Pillar
+    type: objpatch
+    id: 0xFD0A
+    layer: 1
+    room: 0
+    objtype: SOBJ
+    object:
+      posx: -500
+      posy: 1550
+      posz: 540
+      sizex: 1.5
+      sizey: 5.5
+      sizez: 1.5
+  - name: Move Skyview Temple Door TgReact 2 to Right Door Pillar
+    type: objpatch
+    id: 0xFD09
+    layer: 1
+    room: 0
+    objtype: SOBJ
+    object:
+      posx: 250
+      posy: 1550
+      posz: 540
+      sizex: 1.5
+      sizey: 5.5
+      sizez: 1.5
+  - name: Move Skyview Temple Door TgReact 1 to layer 1
+    type: objmove
+    id: 0xFD0A
+    hardcoded_id: 0xFDFE
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: SOBJ
+  - name: Move Skyview Temple Door TgReact 2 to layer 1
+    type: objmove
+    id: 0xFD09
+    hardcoded_id: 0xFDFF
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: SOBJ
 
 F102: # Lake Floria
   - name: Layer override

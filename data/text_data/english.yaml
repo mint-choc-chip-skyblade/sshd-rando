@@ -2502,10 +2502,70 @@
   pretty: Great Tree - Blow Tree Spiral on Highest Pathway
   cryptic: <r<dusting a wooden swirl>> inside a <g<giant tree>>
 
+- name: Deep Woods - Blow Flowers at Entrance
+  standard: Deep Woods - Blow Flowers at Entrance
+  pretty: Deep Woods - Blow Flowers at Entrance
+  cryptic: <r<dusting flora>> in a <g<deep forest>>
+
+- name: Deep Woods - Stamina Fruit
+  standard: Deep Woods - Stamina Fruit
+  pretty: Deep Woods - Stamina Fruit
+  cryptic: a <r<fruit deep in a forest>>
+
+- name: Deep Woods - Bonk Tree with Rope
+  standard: Deep Woods - Bonk Tree with Rope
+  pretty: Deep Woods - Bonk Tree with Rope
+  cryptic: <r<disturbing a tarzan tree>> in a <g<deep forest>>
+
 - name: Deep Woods - Chest
   standard: Deep Woods - Chest
   pretty: Deep Woods - Chest
   cryptic: a <r<chest deep in a forest>>
+
+- name: Deep Woods - Bonk Tree near Gossip Stone 1
+  standard: Deep Woods - Bonk Tree near Gossip Stone 1
+  pretty: Deep Woods - Bonk Tree near Gossip Stone 1
+  cryptic: <r<disturbing a tree>> near <g<idle gossip>>
+
+- name: Deep Woods - Bonk Tree near Gossip Stone 2
+  standard: Deep Woods - Bonk Tree near Gossip Stone 2
+  pretty: Deep Woods - Bonk Tree near Gossip Stone 2
+  cryptic: <r<disturbing a tree>> near <g<idle gossip>>
+
+- name: Deep Woods - Bonk East Pillar before Temple
+  standard: Deep Woods - Bonk East Pillar before Temple
+  pretty: Deep Woods - Bonk East Pillar before Temple
+  cryptic: <r<disturbing a tall stone>> before a <g<temple in the forest>>
+
+- name: Deep Woods - Bonk Tree East of Temple 1
+  standard: Deep Woods - Bonk Tree East of Temple 1
+  pretty: Deep Woods - Bonk Tree East of Temple 1
+  cryptic: <r<disturbing a tree>> near a <g<temple in the forest>>
+
+- name: Deep Woods - Bonk Tree East of Temple 2
+  standard: Deep Woods - Bonk Tree East of Temple 2
+  pretty: Deep Woods - Bonk Tree East of Temple 2
+  cryptic: <r<disturbing a tree>> near a <g<temple in the forest>>
+
+- name: Deep Woods - Blow Mixed Flowers above East Temple Stairs
+  standard: Deep Woods - Blow Mixed Flowers above East Temple Stairs
+  pretty: Deep Woods - Blow Mixed Flowers above East Temple Stairs
+  cryptic: <r<dusting some flora>> growing on a <g<temple in the forest>>
+
+- name: Deep Woods - Bonk Fence West of Temple
+  standard: Deep Woods - Bonk Fence West of Temple
+  pretty: Deep Woods - Bonk Fence West of Temple
+  cryptic: <r<disturbing iron bars>> near a <g<temple in the forest>>
+
+- name: Deep Woods - Slingshot Left Temple Door Frame
+  standard: Deep Woods - Slingshot Left Temple Door Frame
+  pretty: Deep Woods - Slingshot Left Temple Door Frame
+  cryptic: <r<shooting an entrance>> to a <g<temple in the forest>>
+
+- name: Deep Woods - Slingshot Right Temple Door Frame
+  standard: Deep Woods - Slingshot Right Temple Door Frame
+  pretty: Deep Woods - Slingshot Right Temple Door Frame
+  cryptic: <r<shooting an entrance>> to a <g<temple in the forest>>
 
 - name: Deep Woods - Gossip Stone
   standard: Deep Woods - Gossip Stone

@@ -583,6 +583,8 @@ pub fn tgreact_spawn_custom_item(
                     || (&CURRENT_STAGE_NAME[..7] == b"F100_1\0" && tgreact_subtype == 2)
                 {
                     additional_distance = -200.0;
+                } else if (&CURRENT_STAGE_NAME[..5] == b"F101\0" && tgreact_subtype == 0) {
+                    additional_distance = -300.0;
                 }
 
                 let xOffset = sinf(facing_angle_radians) * additional_distance;

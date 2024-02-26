@@ -2188,12 +2188,13 @@
   Paths:
     - stage/F100_1/r0/l0/TgReact/0xFC54
 
-- name: Deep Woods - Chest
-  original_item: Red Rupee
+- name: Deep Woods - Blow Flowers at Entrance
+  original_item: Heart
   types:
-    - Chests
+    - Hidden Items
+    - Custom Flag
   Paths:
-    - stage/F101/r0/l0/TBox/74
+    - stage/F101/r0/l0/TgReact/0xFCE1
 
 - name: Deep Woods - Stamina Fruit
   original_item: Stamina Fruit
@@ -2202,6 +2203,97 @@
     - Custom Flag
   Paths:
     - stage/F101/r0/l0/Item/0xFC61
+
+- name: Deep Woods - Bonk Tree with Rope
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F101/r0/l0/TgReact/0xFCE2
+
+- name: Deep Woods - Chest
+  original_item: Red Rupee
+  types:
+    - Chests
+  Paths:
+    - stage/F101/r0/l0/TBox/74
+
+- name: Deep Woods - Bonk Tree near Gossip Stone 1
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F101/r0/l0/TgReact/0xFCDE
+
+- name: Deep Woods - Bonk Tree near Gossip Stone 2
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F101/r0/l0/TgReact/0xFCDF
+
+- name: Deep Woods - Bonk East Pillar before Temple
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F101/r0/l0/TgReact/0xFCE3
+
+- name: Deep Woods - Bonk Tree East of Temple 1
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F101/r0/l0/TgReact/0xFCDC
+
+- name: Deep Woods - Bonk Tree East of Temple 2
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F101/r0/l0/TgReact/0xFCDD
+
+- name: Deep Woods - Blow Mixed Flowers above East Temple Stairs
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F101/r0/l0/TgReact/0xFCE0
+
+- name: Deep Woods - Bonk Fence West of Temple
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F101/r0/l0/TgReact/0xFCE4
+
+# Actually shooting the central blue gem on the door in vanilla
+# Has been moved with a stagepatch so it can always be accessed
+- name: Deep Woods - Slingshot Left Temple Door Frame
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F101/r0/l0/TgReact/0xFDFE
+
+# Actually shooting the central, lower green gem on the door in vanilla
+# Has been moved with a stagepatch so it can always be accessed
+- name: Deep Woods - Slingshot Right Temple Door Frame
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F101/r0/l0/TgReact/0xFDFF
 
 - name: Deep Woods - Gossip Stone
   original_item: Nothing

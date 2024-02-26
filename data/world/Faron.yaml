@@ -294,6 +294,8 @@
   exits:
     Deep Woods: Distance_Activator or Goddess_Sword or 'Push_Down_Deep_Woods_Shortcut_Logs' or logic_bomb_throws
     Faron Woods Ledge to Deep Woods: Nothing
+  locations:
+    Deep Woods - Blow Flowers at Entrance: Gust_Bellows
     
 
 - name: Deep Woods
@@ -305,8 +307,18 @@
     Skyview Entry: Distance_Activator
     Deep Woods Entry: Nothing
   locations:
-    Deep Woods - Chest: Nothing
     Deep Woods - Stamina Fruit: Nothing
+    Deep Woods - Bonk Tree with Rope: Nothing
+    Deep Woods - Chest: Nothing
+    Deep Woods - Bonk Tree near Gossip Stone 1: Nothing
+    Deep Woods - Bonk Tree near Gossip Stone 2: Nothing
+    Deep Woods - Bonk East Pillar before Temple: Nothing
+    Deep Woods - Bonk Tree East of Temple 1: Nothing
+    Deep Woods - Bonk Tree East of Temple 2: Nothing
+    Deep Woods - Blow Mixed Flowers above East Temple Stairs: Gust_Bellows
+    Deep Woods - Bonk Fence West of Temple: Nothing
+    Deep Woods - Slingshot Left Temple Door Frame: Slingshot
+    Deep Woods - Slingshot Right Temple Door Frame: Slingshot
     Deep Woods - Gossip Stone: Nothing
     Deep Woods - Goddess Cube Near Goron: Goddess_Sword
     Deep Woods - Goddess Cube in front of Skyview: Goddess_Sword
