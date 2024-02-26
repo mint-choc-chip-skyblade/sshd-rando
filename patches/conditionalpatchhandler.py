@@ -21,6 +21,9 @@ class ConditionalPatchHandler:
                 return all([self.evaluate_statements(arg) for arg in statement.args])
             elif statement.type == RequirementType.NOT:
                 return not ([self.evaluate_statements(arg) for arg in statement.args])
+            elif statement.type == RequirementType.ITEM:
+                item = statement.args[0]
+                return self.world.starting_item_pool[item] > 0
             elif statement.type == RequirementType.COUNT:
                 count = statement.args[0]
                 item = statement.args[1]
