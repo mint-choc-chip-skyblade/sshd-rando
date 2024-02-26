@@ -2042,8 +2042,16 @@
   Paths:
     - stage/F100/r0/l0/TBox/64
 
-- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue
-  original_item: 5 Deku Seeds # Technically 2 sets
+- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/TgReact/0xFD5D
+
+- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2
+  original_item: 5 Deku Seeds
   types:
     - Hidden Items
     - Custom Flag

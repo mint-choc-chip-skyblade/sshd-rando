@@ -2407,9 +2407,14 @@
   pretty: Faron Woods - Chest behind Bombable Rocks near Erla
   cryptic: a <r<chest behind some forest rocks>>
 
-- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue
-  standard: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue
-  pretty: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue
+- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1
+  standard: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1
+  pretty: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1
+  cryptic: <r<disturbing a tree>> above the <g<forest entrance>>
+
+- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2
+  standard: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2
+  pretty: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2
   cryptic: <r<disturbing a tree>> above the <g<forest entrance>>
 
 - name: Faron Woods - Rupee on Great Tree North Branch
