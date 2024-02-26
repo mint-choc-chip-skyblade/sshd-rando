@@ -48,7 +48,11 @@ class Config:
         return self.hash
 
 
-def seed_rng(config: Config, resolve_non_standard_random: bool = False, ignore_invalid_plandomizer: bool = True) -> None:
+def seed_rng(
+    config: Config,
+    resolve_non_standard_random: bool = False,
+    ignore_invalid_plandomizer: bool = True,
+) -> None:
     # Seed with system time in-case we're choosing random cosmetics
     random.seed()
 
@@ -65,19 +69,19 @@ def seed_rng(config: Config, resolve_non_standard_random: bool = False, ignore_i
         # Special handling for other settings
         for item in sorted(setting_map.starting_inventory):
             hash_str += item
-        
+
         for loc in sorted(setting_map.excluded_locations):
             hash_str += loc
-        
+
         for loc in sorted(setting_map.excluded_hint_locations):
             hash_str += loc
-        
+
         for pool in setting_map.mixed_entrance_pools:
             for entrance_type in sorted(pool):
                 hash_str += entrance_type
 
     if config.use_plandomizer:
-        if config.plandomizer_file is None or config.plandomizer_file == "None": 
+        if config.plandomizer_file is None or config.plandomizer_file == "None":
             if not ignore_invalid_plandomizer:
                 raise ConfigError(
                     f"Cannot use plandomizer file as the current plandomizer filename is invalid: {config.plandomizer_file}"

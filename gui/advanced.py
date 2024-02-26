@@ -171,7 +171,6 @@ class Advanced:
         seed_rng(self.config)
         self.ui.hash_label.setText(f"Hash: {self.config.get_hash()}")
 
-
     def thread_error(self, exception: str, traceback: str):
         error_from_str(exception, traceback)
         sys.exit()
