@@ -2642,6 +2642,46 @@
   pretty: Floria Waterfall - South Rupee in underwater Grass
   cryptic: a <r<soggy rupee outside a temple>>
 
+- name: Floria Waterfall - Bonk North Pillar near Bird Statue
+  standard: Floria Waterfall - Bonk North Pillar near Bird Statue
+  pretty: Floria Waterfall - Bonk North Pillar near Bird Statue
+  cryptic: <r<disturbing a post>> in a <b<soggy place>>
+
+- name: Floria Waterfall - Bonk South Pillar near Bird Statue
+  standard: Floria Waterfall - Bonk South Pillar near Bird Statue
+  pretty: Floria Waterfall - Bonk South Pillar near Bird Statue
+  cryptic: <r<disturbing a post>> in a <b<soggy place>>
+
+- name: Floria Waterfall - Slingshot Broken Spike on Bridge
+  standard: Floria Waterfall - Slingshot Broken Spike on Bridge
+  pretty: Floria Waterfall - Slingshot Broken Spike on Bridge
+  cryptic: <r<shooting a crumbled stone>> in a <b<soggy place>>
+
+- name: Floria Waterfall - Slingshot Northwest Spike on Bridge
+  standard: Floria Waterfall - Slingshot Northwest Spike on Bridge
+  pretty: Floria Waterfall - Slingshot Northwest Spike on Bridge
+  cryptic: <r<shooting a stone>> in a <b<soggy place>>
+
+- name: Floria Waterfall - Slingshot Left Cistern Door Frame
+  standard: Floria Waterfall - Slingshot Left Cistern Door Frame
+  pretty: Floria Waterfall - Slingshot Left Cistern Door Frame
+  cryptic: <r<shooting a soggy entrance>>
+
+- name: Floria Waterfall - Slingshot Right Cistern Door Frame
+  standard: Floria Waterfall - Slingshot Right Cistern Door Frame
+  pretty: Floria Waterfall - Slingshot Right Cistern Door Frame
+  cryptic: <r<shooting a soggy entrance>>
+
+- name: Floria Waterfall - Slingshot Left Cistern Eye
+  standard: Floria Waterfall - Slingshot Left Cistern Eye
+  pretty: Floria Waterfall - Slingshot Left Cistern Eye
+  cryptic: <r<shooting a soggy eye>>
+
+- name: Floria Waterfall - Slingshot Right Cistern Eye
+  standard: Floria Waterfall - Slingshot Right Cistern Eye
+  pretty: Floria Waterfall - Slingshot Right Cistern Eye
+  cryptic: <r<shooting a soggy eye>>
+
 - name: Floria Waterfall - Gossip Stone
   standard: Floria Waterfall - Gossip Stone
   pretty: Floria Waterfall - Gossip Stone

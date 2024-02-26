@@ -2409,6 +2409,70 @@
   Paths:
     - stage/F102_1/r0/l0/Item/0xFC1A
 
+- name: Floria Waterfall - Bonk North Pillar near Bird Statue
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC3C
+
+- name: Floria Waterfall - Bonk South Pillar near Bird Statue
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC3B
+
+- name: Floria Waterfall - Slingshot Broken Spike on Bridge
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC3D
+
+- name: Floria Waterfall - Slingshot Northwest Spike on Bridge
+  original_item: 5 Deku Seeds
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC3E
+
+- name: Floria Waterfall - Slingshot Left Cistern Door Frame
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC3F
+
+- name: Floria Waterfall - Slingshot Right Cistern Door Frame
+  original_item: Heart # actually spawns 3
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC40
+
+- name: Floria Waterfall - Slingshot Left Cistern Eye
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC41
+
+- name: Floria Waterfall - Slingshot Right Cistern Eye
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC42
+
 - name: Floria Waterfall - Gossip Stone
   original_item: Nothing
   types:
