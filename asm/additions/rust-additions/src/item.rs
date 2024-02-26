@@ -566,26 +566,36 @@ pub fn tgreact_spawn_custom_item(
                 let tgreact_subtype = (tgreact_param1 >> 28) & 0xF;
 
                 // Prevent items spawning on top of or inside lanterns/bookshelves
-                let mut facing_angle = (*PLAYER_PTR).obj_base_members.base.rot.y;
-                let facing_angle_radians: f32 =
-                    (facing_angle as f32 / 65535 as f32) * 2.0 * 3.14159;
-                let mut additional_distance = -100.0;
+                let mut facing_angle = (*tgreact).members.base.rot.y;
+                let mut additional_distance = 100.0;
+
+                if facing_angle == 0 {
+                    facing_angle = (*PLAYER_PTR).obj_base_members.base.rot.y;
+                    additional_distance *= -1.0;
+                }
 
                 // Skyview Spring - Slingshot Post Left/Right of Goddess Crest checks
                 // Need extra distrance so the item doesn't land high up and require a Beetle
                 if &CURRENT_STAGE_NAME[..7] == b"B100_1\0"
                     && (tgreact_param1 & 0xFF == 0x97 || tgreact_param1 & 0xFF == 0x98)
                 {
-                    additional_distance = -500.0;
+                    additional_distance *= 5.0;
                 } else if &CURRENT_STAGE_NAME[..5] == b"D201\0"
                     || (&CURRENT_STAGE_NAME[..5] == b"D300\0" && tgreact_subtype == 1)
                     || (&CURRENT_STAGE_NAME[..5] == b"F100\0" && tgreact_subtype == 0)
                     || (&CURRENT_STAGE_NAME[..7] == b"F100_1\0" && tgreact_subtype == 2)
                 {
-                    additional_distance = -200.0;
+                    additional_distance *= 2.0;
                 } else if (&CURRENT_STAGE_NAME[..5] == b"F101\0" && tgreact_subtype == 0) {
-                    additional_distance = -300.0;
+                    additional_distance *= 3.0;
+                } else if (&CURRENT_STAGE_NAME[..7] == b"F102_1\0"
+                    && ((tgreact_param1 & 0xFF) == 0x9C || (tgreact_param1 & 0xFF) == 0x9D))
+                {
+                    additional_distance *= 4.0;
                 }
+
+                let mut facing_angle_radians: f32 =
+                    (facing_angle as f32 / 65535 as f32) * 2.0 * 3.14159;
 
                 let xOffset = sinf(facing_angle_radians) * additional_distance;
                 let zOffset = cosf(facing_angle_radians) * additional_distance;
