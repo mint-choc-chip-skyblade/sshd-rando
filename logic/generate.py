@@ -44,29 +44,8 @@ Please choose a valid folder and try again."""
 def generate_randomizer(config: Config) -> list[World]:
     start = time.process_time()
 
-    # Seed RNG with combination of seed, standard settings, and plando file (if being used)
-    hash_str = config.seed
-    for setting_map in config.settings:
-        for name, setting in setting_map.settings.items():
-            if setting.info.type == SettingType.STANDARD:
-                hash_str += name + setting.value
-            else:
-                # If any non-standard settings are random, resolve them now before seeding
-                setting.resolve_if_random()
-
-    if config.use_plandomizer:
-        if config.plandomizer_file is None:
-            raise ConfigError(
-                f"Cannot use plandomizer file as the current plandomizer filename is invalid: {config.plandomizer_file}"
-            )
-
-        with open(PLANDO_PATH / config.plandomizer_file) as plando_file:
-            hash_str += plando_file.read()
-
-    if config.generate_spoiler_log:
-        hash_str += "spoilerlog"
-
-    random.seed(hash_str)
+    seed_rng(config, resolve_non_standard_random=True, ignore_invalid_plandomizer=False)
+    print(f"Hash: {config.get_hash()}")
 
     worlds: list[World] = []
 

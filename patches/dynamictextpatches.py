@@ -14,6 +14,7 @@ def add_dynamic_text_patches(
         add_impa_text_patches(world, event_patch_handler)
 
     add_song_text_patches(world, event_patch_handler)
+    add_rando_hash(world, event_patch_handler)
 
 
 def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) -> None:
@@ -370,3 +371,19 @@ def add_song_text_patches(world: World, event_patch_handler: EventPatchHandler) 
                 "index": inventory_text_idx,
             },
         )
+
+
+def add_rando_hash(world: World, event_patch_handler: EventPatchHandler) -> None:
+    hash = world.config.get_hash()
+
+    event_patch_handler.append_to_event_patches(
+        "002-System",
+        {"name": "Rando hash on file select", "type": "textpatch", "index": 66},
+    )
+    add_text_data("Rando hash on file select", Text("") + hash)
+
+    event_patch_handler.append_to_event_patches(
+        "002-System",
+        {"name": "Rando hash on new file", "type": "textpatch", "index": 69},  # Nice
+    )
+    add_text_data("Rando hash on new file", Text("") + hash)

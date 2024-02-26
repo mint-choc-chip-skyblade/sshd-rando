@@ -28,7 +28,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(1300, 800)
+        main_window.resize(1300, 843)
         main_window.setStyleSheet(u"QToolTip {color: #000000; background-color: #FFFFFF;}")
         self.central_widget = QWidget(main_window)
         self.central_widget.setObjectName(u"central_widget")
@@ -1995,18 +1995,28 @@ class Ui_main_window(object):
         self.footer_grid_layout.setObjectName(u"footer_grid_layout")
         self.reset_settings_to_default_hlayout = QHBoxLayout()
         self.reset_settings_to_default_hlayout.setObjectName(u"reset_settings_to_default_hlayout")
-        self.reset_settings_to_default_left_hspacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.layout_label = QLabel(self.central_widget)
+        self.layout_label.setObjectName(u"layout_label")
 
-        self.reset_settings_to_default_hlayout.addItem(self.reset_settings_to_default_left_hspacer)
+        self.horizontalLayout_7.addWidget(self.layout_label)
 
         self.reset_settings_to_default_button = QPushButton(self.central_widget)
         self.reset_settings_to_default_button.setObjectName(u"reset_settings_to_default_button")
+        sizePolicy6.setHeightForWidth(self.reset_settings_to_default_button.sizePolicy().hasHeightForWidth())
+        self.reset_settings_to_default_button.setSizePolicy(sizePolicy6)
 
-        self.reset_settings_to_default_hlayout.addWidget(self.reset_settings_to_default_button)
+        self.horizontalLayout_7.addWidget(self.reset_settings_to_default_button)
 
-        self.reset_settings_to_default_right_hspacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.hash_label = QLabel(self.central_widget)
+        self.hash_label.setObjectName(u"hash_label")
+        self.hash_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.reset_settings_to_default_hlayout.addItem(self.reset_settings_to_default_right_hspacer)
+        self.horizontalLayout_7.addWidget(self.hash_label)
+
+
+        self.reset_settings_to_default_hlayout.addLayout(self.horizontalLayout_7)
 
 
         self.footer_grid_layout.addLayout(self.reset_settings_to_default_hlayout, 2, 1, 1, 1)
@@ -2083,7 +2093,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2311,7 +2321,9 @@ class Ui_main_window(object):
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))
+        self.layout_label.setText("")
         self.reset_settings_to_default_button.setText(QCoreApplication.translate("main_window", u"Reset Settings to Default", None))
+        self.hash_label.setText(QCoreApplication.translate("main_window", u"Hash:", None))
         self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
         self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
         self.randomize_button.setText(QCoreApplication.translate("main_window", u"Randomize", None))
