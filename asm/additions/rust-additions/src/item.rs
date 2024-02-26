@@ -527,10 +527,10 @@ pub fn tgreact_spawn_custom_item(
         let tgreact: *mut actor::dAcOBase;
         asm!("mov {0:x}, x19", out(reg) tgreact);
 
+        let tgreact_param1: u32 = (*tgreact).basebase.members.param1;
         let param2 = (*tgreact).members.base.param2;
-        if flag::check_local_sceneflag((param2 & 0xFF).into()) == 0
-            && ((param2 >> 8) & 0x3FF != 0x3FF)
-        {
+
+        if (param2 >> 8) & 0x3FF != 0x3FF {
             let flag: u32 = (param2 & (0x00007F00)) >> 8;
 
             let mut sceneindex: u32 = (param2 & (0x00018000)) >> 15;
@@ -552,7 +552,6 @@ pub fn tgreact_spawn_custom_item(
                 _ => {},
             }
 
-            let tgreact_param1: u32 = (*tgreact).basebase.members.param1;
             let new_itemid = dAcItem__determineFinalItemid(((tgreact_param1 >> 8) & 0xFF) as u64);
 
             // If the tgreact would give hearts in vanilla and the randomized item is a
@@ -609,10 +608,21 @@ pub fn tgreact_spawn_custom_item(
                 ) as *mut dAcItem;
                 (*item_actor).prevent_timed_despawn = 1;
                 param2_s0x18 = 0xFF;
+                (*tgreact).members.base.param2 |= 0x3FF00;
             }
         }
 
-        return checkParam2OnDestroy(param2_s0x18, roomid, pos, param_4, param_5);
+        if param2_s0x18 == 0xFF {
+            return 1; // force hidden item jingle to play
+        }
+
+        if flag::check_local_sceneflag(tgreact_param1 & 0xFF) == 0 {
+            flag::set_local_sceneflag(tgreact_param1 & 0xFF);
+
+            return checkParam2OnDestroy(param2_s0x18, roomid, pos, param_4, param_5);
+        }
+
+        return 0;
     }
 }
 
