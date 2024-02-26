@@ -10,6 +10,7 @@ ROMFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "romfs"
 
 # Outputs
 DEFAULT_OUTPUT_PATH = RANDO_ROOT_PATH / "sshdr_output"
+LOGS_PATH = RANDO_ROOT_PATH / "logs"
 
 # Config
 CONFIG_PATH = RANDO_ROOT_PATH / "config.yaml"

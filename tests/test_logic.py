@@ -7,10 +7,13 @@ from logic.generate import generate
 from logic.config import *
 from logic.search import all_logic_satisfied
 from logic.world import World
+from filepathconstants import LOGS_PATH
 
 
 def config_test(
-    config_file_name: str | Path, assert_all_locations_reachable: bool = True
+    config_file_name: str | Path,
+    assert_all_locations_reachable: bool = True,
+    remove_spoiler: bool = True,
 ) -> list[World]:
     config_file_name = Path(config_file_name)
 
@@ -25,6 +28,11 @@ def config_test(
         assert all_logic_satisfied(worlds)
 
     config_file_name.unlink()
+
+    if remove_spoiler:
+        os.remove(f"{LOGS_PATH}/{worlds[0].config.get_hash()} Spoiler Log.txt")
+        os.remove(f"{LOGS_PATH}/{worlds[0].config.get_hash()} Anti Spoiler Log.txt")
+
     return worlds
 
 
@@ -245,12 +253,16 @@ def test_good_starting_inventory() -> None:
 
 
 def test_spoiler_as_config() -> None:
-    config_test("spoiler_as_config.yaml")
+    worlds = config_test("spoiler_as_config.yaml", remove_spoiler=False)
+    spoiler_path = f"{LOGS_PATH}/{worlds[0].config.get_hash()} Spoiler Log.txt"
+    anti_spoiler_path = (
+        f"{LOGS_PATH}/{worlds[0].config.get_hash()} Anti Spoiler Log.txt"
+    )
     log1 = ""
-    with open("Spoiler Log.txt", "r") as first_log:
+    with open(spoiler_path, "r") as first_log:
         log1 = first_log.read()
 
-    os.remove("Spoiler Log.txt")
+    os.remove(spoiler_path)
 
     with open("spoiler_log_config_test.yaml", "w") as config:
         config.write(log1)
@@ -259,5 +271,8 @@ def test_spoiler_as_config() -> None:
 
     os.remove("spoiler_log_config_test.yaml")
 
-    with open("Spoiler Log.txt") as second_log:
+    with open(spoiler_path) as second_log:
         assert log1 == second_log.read()
+
+    os.remove(spoiler_path)
+    os.remove(anti_spoiler_path)

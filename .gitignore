@@ -17,7 +17,7 @@ oarccache
 *.gv
 *.svg
 
-Spoiler Log.txt
+logs/
 config.yaml
 preferences.yaml
 custom_theme.json

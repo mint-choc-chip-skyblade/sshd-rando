@@ -5,7 +5,7 @@ from .config import *
 from .settings import *
 from .fill import fill_worlds
 from .search import generate_playthrough
-from .spoiler_log import generate_spoiler_log
+from .spoiler_log import generate_spoiler_log, generate_anti_spoiler_log
 from .plandomizer import load_plandomizer_data
 from .entrance_shuffle import shuffle_world_entrances
 from .hints import generate_hints
@@ -108,5 +108,7 @@ def generate_randomizer(config: Config) -> list[World]:
     generate_hints(worlds)
 
     update_progress_value(12)
-    generate_spoiler_log(worlds)
+    if config.generate_spoiler_log:
+        generate_spoiler_log(worlds)
+    generate_anti_spoiler_log(worlds)
     return worlds
