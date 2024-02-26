@@ -1616,13 +1616,7 @@ F100: # Faron Woods
 F100_1: # Great Tree
   - name: Layer override
     type: layeroverride
-    override: # change layer 2 trigger
-      - story_flag: 16
-        night: 0
-        layer: 3
-      - story_flag: 900 # new beat AC
-        night: 0
-        layer: 2
+    override:
       - story_flag: -1
         night: 0
         layer: 1

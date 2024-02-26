@@ -581,6 +581,7 @@ pub fn tgreact_spawn_custom_item(
                 } else if &CURRENT_STAGE_NAME[..5] == b"D201\0"
                     || (&CURRENT_STAGE_NAME[..5] == b"D300\0" && tgreact_subtype == 1)
                     || (&CURRENT_STAGE_NAME[..5] == b"F100\0" && tgreact_subtype == 0)
+                    || (&CURRENT_STAGE_NAME[..7] == b"F100_1\0" && tgreact_subtype == 2)
                 {
                     additional_distance = -200.0;
                 }

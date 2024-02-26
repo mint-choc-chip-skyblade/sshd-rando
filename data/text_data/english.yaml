@@ -2467,10 +2467,35 @@
   pretty: Faron Woods - Goddess Cube on East Great Tree with Rope
   cryptic:
 
+- name: Great Tree - Blow Small Yellow Mushroom after Vines
+  standard: Great Tree - Blow Small Yellow Mushroom after Vines
+  pretty: Great Tree - Blow Small Yellow Mushroom after Vines
+  cryptic: <r<dusting a young fungi>> inside a <g<giant tree>>
+
+- name: Great Tree - Blow Large Yellow Mushroom after Vines
+  standard: Great Tree - Blow Large Yellow Mushroom after Vines
+  pretty: Great Tree - Blow Large Yellow Mushroom after Vines
+  cryptic: <r<dusting a big fungi>> inside a <g<giant tree>>
+
+- name: Great Tree - Blow Red Mushroom after Swinging Platforms West
+  standard: Great Tree - Blow Red Mushroom after Swinging Platforms West
+  pretty: Great Tree - Blow Red Mushroom after Swinging Platforms West
+  cryptic: <r<dusting an angry fungi>> inside a <g<giant tree>>
+
+- name: Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
+  standard: Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
+  pretty: Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
+  cryptic: <r<dusting a sad fungi>> inside a <g<giant tree>>
+
+- name: Great Tree - Blow Tree Spiral on Highest Pathway
+  standard: Great Tree - Blow Tree Spiral on Highest Pathway
+  pretty: Great Tree - Blow Tree Spiral on Highest Pathway
+  cryptic: <r<dusting a wooden swirl>> inside a <g<giant tree>>
+
 - name: Great Tree - Chest
   standard: Great Tree - Chest
   pretty: Great Tree - Chest
-  cryptic: climbing inside an <r<old hermit's home>>
+  cryptic: finding a <r<hidden treasure>> inside a <g<giant tree>>
 
 - name: Deep Woods - Chest
   standard: Deep Woods - Chest

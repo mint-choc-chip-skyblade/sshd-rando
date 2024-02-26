@@ -224,6 +224,7 @@
     Great Tree Interior Lower: Water_Dragons_Scale
 
 
+# Bit with the swinging platforms and the shallow water
 - name: Great Tree Interior Lower
   hint_region: Great Tree
   events:
@@ -231,6 +232,9 @@
   exits:
     Great Tree Interior Underwater: Water_Dragons_Scale
     Great Tree Interior Middle: Gust_Bellows
+  locations:
+    Great Tree - Blow Small Yellow Mushroom after Vines: Gust_Bellows
+    Great Tree - Blow Large Yellow Mushroom after Vines: Gust_Bellows
 
 
 - name: Great Tree Interior Middle # area including the platforms and chest
@@ -239,6 +243,8 @@
     Great Tree Interior Lower: Nothing
     Great Tree Exterior Platforms: Nothing
   locations:
+    Great Tree - Blow Red Mushroom after Swinging Platforms West: Gust_Bellows
+    Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South: Gust_Bellows
     # It's quite precise to wait for this baba like the others and very frustrating to fail
     Great Tree - Chest: Can_Defeat_Baba or Slingshot # Slingshot to stun
 
@@ -257,10 +263,12 @@
 - name: Great Tree Interior Upper # top with the moblin
   hint_region: Great Tree
   exits:
-    Great Tree Interior Middle: Can_Defeat_Moblins or 'Can_Complete_Ancient_Cistern'
+    Great Tree Interior Lower: Can_Defeat_Moblins
     Flooded Great Tree Upper: Nothing
     Great Tree Exterior Top: Nothing
     Great Tree Exterior Platforms: Nothing
+  locations:
+    Great Tree - Blow Tree Spiral on Highest Pathway: Gust_Bellows
 
 
 - name: Great Tree Exterior Top
