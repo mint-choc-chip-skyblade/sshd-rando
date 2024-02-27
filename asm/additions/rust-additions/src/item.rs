@@ -112,7 +112,7 @@ extern "C" {
         param2_s0x18: u8,
         roomid: u32,
         pos: *mut math::Vec3f,
-        param_4: *mut c_void,
+        param_4: u32,
         param_5: *mut c_void,
     ) -> u32;
 }
@@ -520,7 +520,7 @@ pub fn tgreact_spawn_custom_item(
     mut param2_s0x18: u8,
     roomid: u32,
     pos: *mut math::Vec3f,
-    param_4: *mut c_void,
+    param_4: u32,
     param_5: *mut c_void,
 ) -> u32 {
     unsafe {
@@ -563,61 +563,41 @@ pub fn tgreact_spawn_custom_item(
                 let mut actor_pos = (*tgreact).members.base.pos;
                 let actor_pos_ptr: *mut math::Vec3f = &mut actor_pos as *mut math::Vec3f;
 
-                let tgreact_subtype = (tgreact_param1 >> 28) & 0xF;
-
-                // Prevent items spawning on top of or inside lanterns/bookshelves
                 let mut facing_angle = (*tgreact).members.base.rot.y;
-                let mut additional_distance = 100.0;
 
                 if facing_angle == 0 {
-                    facing_angle = (*PLAYER_PTR).obj_base_members.base.rot.y;
-                    additional_distance *= -1.0;
+                    facing_angle = (*PLAYER_PTR).obj_base_members.base.rot.y - 0x8000;
                 }
 
-                // Skyview Spring - Slingshot Post Left/Right of Goddess Crest checks
-                // Need extra distrance so the item doesn't land high up and require a Beetle
-                if &CURRENT_STAGE_NAME[..7] == b"B100_1\0"
-                    && (tgreact_param1 & 0xFF == 0x97 || tgreact_param1 & 0xFF == 0x98)
-                {
-                    additional_distance *= 5.0;
-                } else if &CURRENT_STAGE_NAME[..5] == b"D201\0"
-                    || (&CURRENT_STAGE_NAME[..5] == b"D300\0" && tgreact_subtype == 1)
-                    || (&CURRENT_STAGE_NAME[..5] == b"F100\0" && tgreact_subtype == 0)
-                    || (&CURRENT_STAGE_NAME[..7] == b"F100_1\0" && tgreact_subtype == 2)
-                {
-                    additional_distance *= 2.0;
-                } else if (&CURRENT_STAGE_NAME[..5] == b"F101\0" && tgreact_subtype == 0) {
-                    additional_distance *= 3.0;
-                } else if (&CURRENT_STAGE_NAME[..7] == b"F102_1\0"
-                    && ((tgreact_param1 & 0xFF) == 0x9C || (tgreact_param1 & 0xFF) == 0x9D))
-                {
-                    additional_distance *= 4.0;
-                }
-
-                let mut facing_angle_radians: f32 =
-                    (facing_angle as f32 / 65535 as f32) * 2.0 * 3.14159;
-
-                let xOffset = sinf(facing_angle_radians) * additional_distance;
-                let zOffset = cosf(facing_angle_radians) * additional_distance;
-                (*actor_pos_ptr).x += xOffset;
-                (*actor_pos_ptr).z += zOffset;
-
-                // Fix for weird bellows tgreact on Great Tree
-                if &CURRENT_STAGE_NAME[..5] == b"F100\0" && (tgreact_param1 & 0xFF) == 0xA7 {
-                    (*actor_pos_ptr).x = 1350.0;
-                    (*actor_pos_ptr).y = (*tgreact).members.base.pos.y;
-                    (*actor_pos_ptr).z = -6750.0;
-                }
+                let mut item_rot = math::Vec3s {
+                    x: 0,
+                    y: facing_angle,
+                    z: 0,
+                };
+                let item_rot_ptr: *mut math::Vec3s = &mut item_rot as *mut math::Vec3s;
 
                 let item_actor: *mut dAcItem = actor::spawn_actor(
                     actor::ACTORID::ITEM,
                     roomid,
                     item_actor_param1,
                     actor_pos_ptr,
-                    core::ptr::null_mut(),
+                    item_rot_ptr,
                     core::ptr::null_mut(),
                     0xFF0000FF | (param2 & 0x3FF00),
                 ) as *mut dAcItem;
+
+                let mut forward_speed = 0.0;
+                let mut velocity_y = 0.0;
+
+                if (tgreact_param1 >> 8) & 0xFF != 0xFF {
+                    forward_speed = 12.0;
+                    velocity_y = 19.5;
+                }
+
+                (*item_actor).base.members.forward_speed = forward_speed;
+                (*item_actor).base.members.velocity.x = 0.0;
+                (*item_actor).base.members.velocity.y = velocity_y;
+                (*item_actor).base.members.velocity.z = 0.0;
                 (*item_actor).prevent_timed_despawn = 1;
                 param2_s0x18 = 0xFF;
                 (*tgreact).members.base.param2 |= 0x3FF00;
