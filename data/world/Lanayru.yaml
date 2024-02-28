@@ -398,6 +398,10 @@
   locations:
     Lanayru Gorge - Item on Pillar: Beetle
     Lanayru Gorge - Thunder Dragon's Reward: Can_Hit_Timeshift_Stone_in_Minecart and Life_Tree_Fruit
+    Lanayru Gorge - Bonk Pillar near Thunder Dragon: Nothing
+    Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon: Slingshot
+    Lanayru Gorge - Slingshot Right Pillar behind the Thunder Dragon: Slingshot
+    Lanayru Gorge - Blow Grass near Lone Boulder: "'Blow_Up_Rock_to_Locked_Door' and Gust_Bellows"
     # Lanayru Gorge - Boss Rush -- 4 Bosses: Impossible # TODO
     # Lanayru Gorge - Boss Rush -- 8 Bosses: Impossible
 
@@ -405,6 +409,9 @@
   hint_region: Lanayru Gorge
   exits:
     Lanayru Gorge: (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)) and count(2, Lanayru_Caves_Small_Key)
+  locations:
+    Lanayru Gorge - Bonk Left Machine after Locked Door: Clawshots
+    Lanayru Gorge - Bonk Right Machine after Locked Door: Clawshots and Beetle
 
 - name: Lanayru Gorge Beyond Bridge
   hint_region: Lanayru Gorge
@@ -415,6 +422,8 @@
   locations:
     Lanayru Gorge - Digging Spot: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
     Lanayru Gorge - Goddess Cube: Goddess_Sword
+    Lanayru Gorge - Slingshot Left Sandfall Source: Slingshot
+    Lanayru Gorge - Slingshot Right Sandfall Source: Slingshot
     Lanayru Gorge - Rupee in High Tunnel after Bridge 1: Beetle
     Lanayru Gorge - Rupee in High Tunnel after Bridge 2: Beetle
     Lanayru Gorge - Rupee in High Tunnel after Bridge 3: Beetle

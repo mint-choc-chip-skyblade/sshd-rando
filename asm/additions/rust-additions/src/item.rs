@@ -589,7 +589,7 @@ pub fn tgreact_spawn_custom_item(
                 let mut forward_speed = 0.0;
                 let mut velocity_y = 0.0;
 
-                if (tgreact_param1 >> 8) & 0xFF != 0xFF {
+                if (param2 >> 18) & 1 == 1 {
                     forward_speed = 12.0;
                     velocity_y = 19.5;
                 }

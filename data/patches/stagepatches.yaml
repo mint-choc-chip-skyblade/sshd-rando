@@ -3848,6 +3848,14 @@ F302: # Lanayru Gorge
     layers: [0, 2]
     room: 0
     objtype: OBJ
+  - name: Move TgReacts to correct layer
+    type: objmove
+    id: 0xFCCE # Grass near rock
+    hardcoded_id: 0xFCCE
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: SOBJ
   - name: Yeet Lanayru Gorge Intro Cutscene
     type: objpatch
     index: 0
@@ -3856,14 +3864,6 @@ F302: # Lanayru Gorge
     object:
       storyflag: -1
       play_cutscene: -1
-  - name: Unlock Door
-    type: objpatch
-    id: 0x2BFF
-    index: 0
-    layer: 0
-    objtype: DOOR
-    object:
-      anglex: 0xFFFF # Always unlocked
   - name: Patch Entry of Thunderdragon after heal
     type: objpatch
     id: 0x10D0

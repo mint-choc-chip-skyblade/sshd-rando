@@ -369,6 +369,13 @@ def patch_tgreact(
     if trapid:
         itemid = 34  # rupoor
 
+    # Move vanilla velocity type indicator to free space in params2
+    if (tgreact["params1"] >> 8) & 0xFF == 0:
+        tgreact["params2"] = mask_shift_set(tgreact["params2"], 1, 18, 1)
+    else:
+        tgreact["params2"] = mask_shift_set(tgreact["params2"], 1, 18, 0)
+
+    # THEN, patch item id
     tgreact["params1"] = mask_shift_set(tgreact["params1"], 0xFF, 8, itemid)
 
     if custom_flag != -1:

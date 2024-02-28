@@ -4027,10 +4027,25 @@
   pretty: Lanayru Caves - Gossip Stone towards Lanayru Gorge
   cryptic:
 
+- name: Lanayru Gorge - Bonk Pillar near Thunder Dragon
+  standard: Lanayru Gorge - Bonk Pillar near Thunder Dragon
+  pretty: Lanayru Gorge - Bonk Pillar near Thunder Dragon
+  cryptic: <r<disturbing a pillar near sickness>>
+
 - name: Lanayru Gorge - Thunder Dragon's Reward
   standard: Lanayru Gorge - Thunder Dragon's Reward
   pretty: Lanayru Gorge - Thunder Dragon's Reward
   cryptic: <r<curing an ancient dragon>>
+
+- name: Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon
+  standard: Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon
+  pretty: Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon
+  cryptic: <r<shooting>> behind an <y<ancient dragon>>
+
+- name: Lanayru Gorge - Slingshot Right Pillar behind the Thunder Dragon
+  standard: Lanayru Gorge - Slingshot Right Pillar behind the Thunder Dragon
+  pretty: Lanayru Gorge - Slingshot Right Pillar behind the Thunder Dragon
+  cryptic: <r<shooting>> behind an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Item on Pillar
   standard: Lanayru Gorge - Item on Pillar
@@ -4042,35 +4057,60 @@
   pretty: Lanayru Gorge - Digging Spot
   cryptic: <r<soft soil in the desert>>
 
+- name: Lanayru Gorge - Slingshot Left Sandfall Source
+  standard: Lanayru Gorge - Slingshot Left Sandfall Source
+  pretty: Lanayru Gorge - Slingshot Left Sandfall Source
+  cryptic: <r<shooting a sandy opening>>
+
+- name: Lanayru Gorge - Slingshot Right Sandfall Source
+  standard: Lanayru Gorge - Slingshot Right Sandfall Source
+  pretty: Lanayru Gorge - Slingshot Right Sandfall Source
+  cryptic: <r<shooting a sandy opening>>
+
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
   standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
   pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
-  cryptic: a <r<high rupee near an ancient dragon>>
+  cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
   standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
   pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
-  cryptic: a <r<high rupee near an ancient dragon>>
+  cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
   standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
   pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
-  cryptic: a <r<high rupee near an ancient dragon>>
+  cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
   standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
   pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
-  cryptic: a <r<high rupee near an ancient dragon>>
+  cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
   standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
   pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
-  cryptic: a <r<high rupee near an ancient dragon>>
+  cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Goddess Cube
   standard: Lanayru Gorge - Goddess Cube
   pretty: Lanayru Gorge - Goddess Cube
   cryptic:
+
+- name: Lanayru Gorge - Blow Grass near Lone Boulder
+  standard: Lanayru Gorge - Blow Grass near Lone Boulder
+  pretty: Lanayru Gorge - Blow Grass near Lone Boulder
+  cryptic: <r<dusting the grass>> near an <y<ancient dragon>>
+
+- name: Lanayru Gorge - Bonk Left Machine after Locked Door
+  standard: Lanayru Gorge - Bonk Left Machine after Locked Door
+  pretty: Lanayru Gorge - Bonk Left Machine after Locked Door
+  cryptic: <r<disturbing a machine>> near an <y<ancient dragon>>
+
+- name: Lanayru Gorge - Bonk Right Machine after Locked Door
+  standard: Lanayru Gorge - Bonk Right Machine after Locked Door
+  pretty: Lanayru Gorge - Bonk Right Machine after Locked Door
+  cryptic: <r<disturbing a machine>> near an <y<ancient dragon>>
 
 - name: Ancient Harbour - Rupee on First Pillar
   standard: Ancient Harbour - Rupee on First Pillar
