@@ -4671,6 +4671,22 @@
   Paths:
     - stage/F302/r0/l0/Item/9
 
+- name: Lanayru Gorge - Bonk Wall Left of Stairs
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F302/r0/l0/TgReact/0xFC5F
+
+- name: Lanayru Gorge - Bonk Wall Right of Stairs
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F302/r0/l0/TgReact/0xFC5C
+
 - name: Lanayru Gorge - Digging Spot
   original_item: Life Tree Seedling
   types:

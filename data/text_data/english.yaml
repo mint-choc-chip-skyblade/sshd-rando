@@ -4052,6 +4052,16 @@
   pretty: Lanayru Gorge - Item on Pillar
   cryptic: an <r<item in a void>>
 
+- name: Lanayru Gorge - Bonk Wall Left of Stairs
+  standard: Lanayru Gorge - Bonk Wall Left of Stairs
+  pretty: Lanayru Gorge - Bonk Wall Left of Stairs
+  cryptic: <r<disturbing a some stairs>> near an <y<ancient dragon>>
+
+- name: Lanayru Gorge - Bonk Wall Right of Stairs
+  standard: Lanayru Gorge - Bonk Wall Right of Stairs
+  pretty: Lanayru Gorge - Bonk Wall Right of Stairs
+  cryptic: <r<disturbing a some stairs>> near an <y<ancient dragon>>
+
 - name: Lanayru Gorge - Digging Spot
   standard: Lanayru Gorge - Digging Spot
   pretty: Lanayru Gorge - Digging Spot
