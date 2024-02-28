@@ -9,16 +9,16 @@
     Eldin Volcano - Rupee on Ledge before First Room: Nothing
     Eldin Volcano - Goddess Cube at Eldin Entrance: Goddess_Sword
 
-
 - name: Volcano First Room # Until the rocks
   hint_region: Eldin Volcano
   exits:
     Volcano East: Nothing
   locations:
+    Eldin Volcano - Stamina Fruit in Rising Lava Room: Nothing
     Eldin Volcano - Chest behind Bombable Wall in First Room: Nothing
     Eldin Volcano - Rupee behind Bombable Wall in First Room: Nothing
     Eldin Volcano - Rupee in Crawlspace in First Room: Nothing
-    Eldin Volcano - Stamina Fruit in Rising Lava Room: Nothing
+    Eldin Volcano - Slingshot Ceiling in First Room: Slingshot
     Eldin Volcano - Underground Rupee in First Room 1: Mogma_Mitts
     Eldin Volcano - Underground Rupee in First Room 2: Mogma_Mitts
     Eldin Volcano - Underground Rupee in First Room 3: Mogma_Mitts
@@ -28,7 +28,6 @@
     Eldin Volcano - Underground Rupee in First Room 7: Mogma_Mitts
     Eldin Volcano - Underground Rupee in First Room 8: Mogma_Mitts
     Eldin Volcano - Underground Rupee in First Room 9: Mogma_Mitts
-
 
 - name: Volcano East
   hint_region: Eldin Volcano
@@ -41,14 +40,16 @@
     Bokoblin Base Prison: Nothing
   locations:
     Eldin Volcano - Chest after Crawlspace: Nothing
-    Eldin Volcano - Chest behind Bombable Wall near Cliff: Nothing
-    Eldin Volcano - Item on Cliff: Nothing
-    Eldin Volcano - Rupee in Old Pyrup Shell near Cliff: Nothing # Use nearby bomb flower
-    Eldin Volcano - Rupee in Old Pyrup Shell on Cliff: Nothing # Use nearby bomb flower
     Eldin Volcano - Southeast Rupee above Mogma Turf Entrance: Beetle
     Eldin Volcano - North Rupee above Mogma Turf Entrance: Beetle
     Eldin Volcano - Underground Rupee before Bone Bridge 1: Mogma_Mitts
     Eldin Volcano - Underground Rupee before Bone Bridge 2: Mogma_Mitts
+    Eldin Volcano - Chest behind Bombable Wall near Cliff: Nothing
+    Eldin Volcano - Rupee in Old Pyrup Shell near Cliff: Nothing # Use nearby bomb flower
+    Eldin Volcano - Bonk Hammer in Hut near Cliff: Nothing
+    Eldin Volcano - Blow Cloth above Hut near Cliff: Gust_Bellows
+    Eldin Volcano - Rupee in Old Pyrup Shell on Cliff: Nothing # Use nearby bomb flower
+    Eldin Volcano - Item on Cliff: Nothing
     Eldin Volcano - Underground Rupee in Cliff 1: Mogma_Mitts
     Eldin Volcano - Underground Rupee in Cliff 2: Mogma_Mitts
     Eldin Volcano - Underground Rupee in Cliff 3: Mogma_Mitts
@@ -74,14 +75,12 @@
     Eldin Volcano - Stamina Fruit near Item on Cliff: Nothing
     Eldin Volcano - Goddess Cube near Mogma Turf Entrance: Goddess_Sword
 
-
 - name: Past Mogma Turf
   hint_region: Eldin Volcano
   exits:
     Volcano East: Nothing
     Volcano Ascent: Nothing
     Mogma Turf Final Vent: Impossible # To satisfy entrance rando
-
 
 - name: Volcano Ascent
   hint_region: Eldin Volcano
@@ -100,7 +99,6 @@
     Eldin Volcano - Stamina Fruit in front of First Slope 2: Nothing
     Eldin Volcano - Stamina Fruit in front of First Slope Shortcut: Nothing
 
-
 - name: Outside Thrill Digger Cave
   hint_region: Eldin Volcano
   exits:
@@ -114,7 +112,6 @@
     Eldin Volcano - Stamina Fruit next to Small Puddle: Nothing
     Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger: Nothing
 
-
 - name: Thrill Digger Cave
   hint_region: Eldin Volcano
   events:
@@ -123,7 +120,23 @@
     Outside Thrill Digger Cave: Nothing
   locations:
     Thrill Digger Cave - Gossip Stone: Nothing
-
+    Thrill Digger Cave - Slingshot Left Blue Crystal 1: Slingshot
+    Thrill Digger Cave - Slingshot Left Green Crystal 1: Slingshot
+    Thrill Digger Cave - Slingshot Left Blue Crystal 2: Slingshot
+    Thrill Digger Cave - Slingshot Left Blue Crystal 3: Slingshot
+    Thrill Digger Cave - Slingshot Left Black Crystal: Slingshot
+    Thrill Digger Cave - Slingshot Left Green Crystal 2: Slingshot
+    Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 1: Slingshot
+    Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 2: Slingshot
+    Thrill Digger Cave - Slingshot Left Pillar Black Crystal: Slingshot
+    Thrill Digger Cave - Slingshot Back Blue Crystal 1: Slingshot
+    Thrill Digger Cave - Slingshot Back Blue Crystal 2: Slingshot
+    Thrill Digger Cave - Slingshot Back Blue Crystal 3: Slingshot
+    Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 1: Slingshot
+    Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 2: Slingshot
+    Thrill Digger Cave - Slingshot Right Pillar Green Crystal: Slingshot
+    Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 3: Slingshot
+    Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4: Slingshot
 
 - name: Near Temple Entrance
   hint_region: Eldin Volcano
@@ -135,6 +148,9 @@
     Hot Cave: Nothing # You can use the bomb flower in one of the boko huts to blow up the tower
     Outside Upper Eldin Cave: "'Beaten_Boko_Base'"
   locations:
+    Eldin Volcano - Blow Closest Torch West of Earth Temple: Gust_Bellows
+    Eldin Volcano - Blow Farthest Torch West of Earth Temple: Gust_Bellows
+    Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance: Slingshot
     Eldin Volcano - Digging Spot in front of Earth Temple: Digging_Mitts
     Eldin Volcano - Underground Rupee West of Earth Temple 1: Mogma_Mitts
     Eldin Volcano - Underground Rupee West of Earth Temple 2: Mogma_Mitts
@@ -151,6 +167,7 @@
     Eldin Volcano - Stamina Fruit in front of Second Slope 1: Nothing
     Eldin Volcano - Stamina Fruit in front of Second Slope 2: Nothing
     Eldin Volcano - Stamina Fruit in front of Second Slope 3: Nothing
+    Eldin Volcano - Bonk Campfire East of Earth Temple: Nothing
     Eldin Volcano - Stamina Fruit after Last Boko Camp Tower: Nothing
     Eldin Volcano - Stamina Fruit on ledge near Hot Cave: Nothing
     Eldin Volcano - Stamina Fruit on vines near Hot Cave: Nothing
@@ -158,13 +175,11 @@
     Eldin Volcano - Goddess Cube West of Earth Temple Entrance: Digging_Mitts and Goddess_Sword
     Eldin Volcano - Goddess Cube East of Earth Temple Entrance: Goddess_Sword
   
-
 - name: Outside Upper Eldin Cave
   hint_region: Eldin Volcano
   exits:
     Near Temple Entrance: Clawshots or 'Beaten_Boko_Base'
     Upper Eldin Cave: Nothing
-
 
 - name: Upper Eldin Cave
   hint_region: Eldin Volcano
@@ -173,14 +188,12 @@
   locations:
     Upper Eldin Cave - Gossip Stone: Nothing
 
-
 - name: Hot Cave
   hint_region: Eldin Volcano
   exits:
     Volcano Summit: Fireshield_Earrings
     Sand Slide: Can_Survive_Hot_Cave
     Near Temple Entrance: can_access(Near Temple Entrance) or (logic_bomb_throws and Bomb_Bag)
-
 
 - name: Sand Slide
   hint_region: Eldin Volcano
@@ -214,7 +227,6 @@
     Eldin Volcano - Digging Spot after Draining Lava: Digging_Mitts
     Eldin Volcano - Stamina Fruit after Big Sand Slide: Nothing
 
-
 - name: Outside Lower Eldin Cave
   hint_region: Eldin Volcano
   exits:
@@ -222,7 +234,6 @@
     Past Sand Slide: Clawshots
     Past Mogma Turf: "'Beaten_Boko_Base'"
     Volcano East: "'Beaten_Boko_Base'"
-
 
 - name: Lower Eldin Cave
   hint_region: Eldin Volcano
@@ -232,6 +243,7 @@
     Lower Eldin Cave - Gossip Stone: Nothing
 
 
+# MOGMA TURF
 - name: Mogma Turf Dive
   hint_region: Mogma Turf
   events:
@@ -242,7 +254,6 @@
     Mogma Turf - Free Fall Chest: Nothing
     Mogma Turf - Goddess Cube: Goddess_Sword
 
-
 - name: Mogma Turf
   hint_region: Mogma Turf
   exits:
@@ -251,7 +262,6 @@
   locations:
     Mogma Turf - Chest behind Bombable Wall at Entrance: Bomb_Bag or Hook_Beetle or can_access(Mogma Turf Dive)
     Mogma Turf - Defeat Bokoblins: Can_Defeat_Bokoblins
-
 
 - name: Mogma Turf Pyrup Maze
   hint_region: Mogma Turf
@@ -263,21 +273,26 @@
     Mogma Turf - Chest behind Bombable Wall in Fire Maze: Nothing
     Mogma Turf - Rupee in First Pyrup Hole in Fire Maze: Nothing
 
-
 - name: Sand Slide Platform
   hint_region: Mogma Turf
   exits:
     Mogma Turf: Nothing
     Mogma Turf Pyrup Maze: Nothing
   locations:
+    Mogma Turf - Bonk Campfire above Sand Slide: Nothing
+    Mogma Turf - Slingshot Skull on Hut above Sand Slide: Slingshot
+    Mogma Turf - Bonk Dusty Bag in Right Hut above Sand Slide: Nothing
+    Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide: Nothing
+    Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide: Nothing
+    Mogma Turf - Bonk Hammer in Left Hut above Sand Slide: Nothing
     Mogma Turf - Sand Slide Chest: Nothing
-
 
 - name: Mogma Turf Final Vent
   hint_region: Mogma Turf
   exits:
     Past Mogma Turf: Nothing
     Mogma Turf Pyrup Maze: Bomb_Bag # Can't use hook beetle or whip
+
 
 - name: Eldin Silent Realm
   hint_region: Eldin Silent Realm
@@ -289,6 +304,7 @@
     Eldin Silent Realm - Stamina Fruit near First Bone Bridge: Nothing
     Eldin Silent Realm - Stamina Fruit near Tear on Vines: Nothing
 
+
 # VOLCANO SUMMIT
 - name: Volcano Summit
   hint_region: Volcano Summit
@@ -298,7 +314,6 @@
     Past Volcano Summit: Fireshield_Earrings
   locations:
     Volcano Summit - Goddess Cube in Lava Lake: (Fireshield_Earrings and Long_Range_Skyward_Strike) or 'Beaten_Boko_Base'
-    
 
 - name: Volcano Summit Waterfall
   hint_region: Volcano Summit
@@ -307,10 +322,10 @@
   exits:
     Volcano Summit: Nothing
   locations:
+    Volcano Summit - Bonk Waterfall: Nothing
     Volcano Summit - Chest behind Bombable Wall in Waterfall Area: Clawshots
     Volcano Summit - Gossip Stone in Waterfall Area: Clawshots
     Volcano Summit - Goddess Cube at Summit Waterfall: Goddess_Sword # Bomb flower for death warp without claws
-
 
 - name: Past Volcano Summit
   exits:
@@ -322,23 +337,25 @@
     Volcano Summit - Underground Rupee 2: Mogma_Mitts and 'Can_Collect_Water'
     Volcano Summit - Gossip Stone near Second Thirsty Frog: "'Can_Collect_Water'"
 
-
 - name: Outside Fire Sanctuary
   exits:
     Inside the Volcano Statue: Nothing
     Fire Sanctuary First Room: Nothing
     Past Volcano Summit: can_access(Past Volcano Summit) and Clawshots and 'Can_Collect_Water'
   locations:
+    Volcano Summit - Blow Torch West of Fire Sanctuary: Gust_Bellows
+    Volcano Summit - Blow Torch East of Fire Sanctuary: Gust_Bellows
+    Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary: Slingshot
     Volcano Summit - Goddess Cube near Fire Sanctuary Entrance: Clawshots and Goddess_Sword
 
- # BOKOBLIN BASE
+
+# BOKOBLIN BASE
 - name: Bokoblin Base Prison
   hint_region: Bokoblin Base
   exits:
     Bokoblin Base Volcano East: Mogma_Mitts
   locations:
     Bokoblin Base - Plats' Gift: Nothing
-
 
 - name: Bokoblin Base Volcano East
   hint_region: Bokoblin Base
@@ -350,8 +367,9 @@
     Bokoblin Base After Drawbridge: Clawshots and Bomb_Bag
   locations:
     Bokoblin Base - Chest near Bone Bridge: Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts or Gust_Bellows
+    Bokoblin Base - Bonk Hammer in Hut near Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
+    Bokoblin Base - Blow Cloth above Hut near Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
     Bokoblin Base - Chest on Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
-
 
 - name: Bokoblin Base Before Drawbridge
   hint_region: Bokoblin Base
@@ -361,7 +379,6 @@
   locations:
     Bokoblin Base - Chest near Drawbridge: Clawshots or Can_Bypass_Boko_Base_Watch_Tower
 
-
 - name: Bokoblin Base After Drawbridge
   hint_region: Bokoblin Base
   exits:
@@ -369,7 +386,6 @@
     Bokoblin Base Outside Lower Eldin Cave: Nothing
     Bokoblin Base Volcano East: Nothing
     Bokoblin Base Outside Earth Temple: Nothing
-
 
 - name: Bokoblin Base Outside Lower Eldin Cave
   hint_region: Bokoblin Base
@@ -379,14 +395,12 @@
     Bokoblin Base Before Drawbridge: Nothing
     Bokoblin Base Volcano East: Nothing
 
-
 - name: Bokoblin Base Lower Eldin Cave
   hint_region: Bokoblin Base
   exits:
     Bokoblin Base Outside Lower Eldin Cave: Nothing
   locations:
     Lower Eldin Cave - Gossip Stone: Nothing
-
 
 - name: Bokoblin Base Outside Earth Temple
   hint_region: Bokoblin Base
@@ -397,16 +411,15 @@
     Bokoblin Base Hot Cave: Nothing
     Bokoblin Base Outside Upper Eldin Cave: Nothing
   locations:
+    Bokoblin Base - Bonk Campfire East of Earth Temple: Nothing
     Bokoblin Base - Chest East of Earth Temple Entrance: Nothing
     Bokoblin Base - Chest West of Earth Temple Entrance: (Slingshot or Bow or Bomb_Bag or Goddess_Sword) and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
     
-
 - name: Bokoblin Base Outside Upper Eldin Cave
   hint_region: Bokoblin Base
   exits:
     Bokoblin Base Outside Earth Temple: Nothing
     Bokoblin Base Upper Eldin Cave: Nothing
-
 
 - name: Bokoblin Base Upper Eldin Cave
   hint_region: Bokoblin Base
@@ -415,13 +428,11 @@
   locations:
     Upper Eldin Cave - Gossip Stone: Nothing
 
-
 - name: Bokoblin Base Hot Cave
   hint_region: Bokoblin Base
   exits:
     Bokoblin Base After Drawbridge: Fireshield_Earrings and Bomb_Bag
     Bokoblin Base Summit: Fireshield_Earrings and Bomb_Bag
-
 
 - name: Bokoblin Base Summit
   hint_region: Bokoblin Base
@@ -435,7 +446,6 @@
     Bokoblin Base - Raised Chest in Volcano Summit: Fireshield_Earrings
     Bokoblin Base - Chest in Volcano Summit Alcove: Fireshield_Earrings and Sword
     
-
 - name: Fire Dragon's Lair
   hint_region: Bokoblin Base
   events: 
@@ -445,6 +455,7 @@
   locations:
     Bokoblin Base - Fire Dragon's Reward: "'Beaten_Boko_Base'"
 
+
 # Bird Staues in Eldin
 - name: Volcano Entrance Statue
   events:
@@ -453,14 +464,12 @@
     The Sky: Day
     Volcano Entrance: Nothing
 
-
 - name: Volcano East Statue
   events:
     Unlock Volcano East Statue: Nothing
   exits:
     The Sky: Day
     Volcano East: Nothing
-
 
 - name: Volcano Ascent Statue
   events:
@@ -469,14 +478,12 @@
     The Sky: Day
     Volcano Ascent: Nothing
 
-
 - name: Temple Entrance Statue
   events:
     Unlock Temple Entrance Statue: Nothing
   exits:
     The Sky: Day
     Near Temple Entrance: Nothing
-
 
 - name: Inside the Volcano Statue
   events:
@@ -485,13 +492,9 @@
     The Sky: Day
     Outside Fire Sanctuary: Nothing
 
-
 - name: Inside the Fire Sanctuary Statue
   events:
     Unlock Inside the Fire Sanctuary Statue: Nothing
   exits:
     The Sky: Day
     FS In Front of Boss Door: Nothing
-
-
-

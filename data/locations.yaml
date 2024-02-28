@@ -156,21 +156,21 @@
     - oarc/F001r/l0
 
 - name: Knight Academy - Crystal in Link's Room
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
     - stage/F001r/r1/l4/Item/104
 
 - name: Knight Academy - Crystal in Knight Academy Plant
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
     - stage/F001r/r0/l4/Item/102
 
 - name: Knight Academy - Crystal in Zelda's Room
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
@@ -268,7 +268,7 @@
     - stage/F000/r0/l5/Item/0xFE04
     - stage/F000/r0/l6/Item/0xFDEA
     - stage/F000/r0/l7/Item/0xFDFF
-    
+
 
 - name: Upper Skyloft - Pumpkin Archery -- 600 Points
   original_item: Heart Piece
@@ -321,7 +321,7 @@
     - stage/F009r/r0/l0/TBox/66
 
 - name: Sparring Hall - Crystal
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
@@ -739,14 +739,14 @@
   cube_region: Lanayru Sand Sea
 
 - name: Central Skyloft - Crystal in Orielle and Parrow's House
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
     - stage/F005r/r0/l2/Item/114
 
 - name: Central Skyloft - Crystal on West Cliff
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
@@ -756,7 +756,7 @@
     - stage/F000/r0/l9/Item/113
 
 - name: Central Skyloft - Crystal between Wooden Planks
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
@@ -766,7 +766,7 @@
     - stage/F000/r0/l9/Item/112
 
 - name: Central Skyloft - Crystal after Waterfall Cave
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
@@ -776,7 +776,7 @@
     - stage/F000/r0/l9/Item/111
 
 - name: Central Skyloft - Crystal in Loftwing Prison
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
@@ -796,7 +796,7 @@
     - stage/F000/r0/l9/Item/109
 
 - name: Central Skyloft - Crystal on Light Tower
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
@@ -885,7 +885,7 @@
     - stage/F013r/r0/l0/TgReact/0xFC14
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
@@ -991,7 +991,7 @@
 # Beedle's Shop:
 
 - name: Beedle's Shop - 300 Rupee Item
-  original_item: Progressive Pouch 
+  original_item: Progressive Pouch
   types:
     - Beedle's Shop
     - Shop (Cheap)
@@ -1000,7 +1000,7 @@
     - ShpSmpl/20
 
 - name: Beedle's Shop - 600 Rupee Item
-  original_item: Progressive Pouch 
+  original_item: Progressive Pouch
   types:
     - Beedle's Shop
     - Shop (Medium)
@@ -1009,7 +1009,7 @@
     - ShpSmpl/21
 
 - name: Beedle's Shop - 1200 Rupee Item
-  original_item: Progressive Pouch 
+  original_item: Progressive Pouch
   types:
     - Beedle's Shop
     - Shop (Expensive)
@@ -1019,7 +1019,7 @@
     - ShpSmpl/22
 
 - name: Beedle's Shop - 800 Rupee Item
-  original_item: Life Medal 
+  original_item: Life Medal
   types:
     - Beedle's Shop
     - Shop (Medium)
@@ -1028,7 +1028,7 @@
     - ShpSmpl/26
 
 - name: Beedle's Shop - 1600 Rupee Item
-  original_item: Heart Piece 
+  original_item: Heart Piece
   types:
     - Beedle's Shop
     - Shop (Expensive)
@@ -1038,7 +1038,7 @@
     - ShpSmpl/23
 
 - name: Beedle's Shop - First 100 Rupee Item
-  original_item: Extra Wallet 
+  original_item: Extra Wallet
   types:
     - Beedle's Shop
     - Shop (Cheap)
@@ -1047,7 +1047,7 @@
     - ShpSmpl/24
 
 - name: Beedle's Shop - Second 100 Rupee Item
-  original_item: Extra Wallet 
+  original_item: Extra Wallet
   types:
     - Beedle's Shop
     - Shop (Cheap)
@@ -1056,7 +1056,7 @@
     - ShpSmpl/17
 
 - name: Beedle's Shop - Third 100 Rupee Item
-  original_item: Extra Wallet 
+  original_item: Extra Wallet
   types:
     - Beedle's Shop
     - Shop (Cheap)
@@ -1065,7 +1065,7 @@
     - ShpSmpl/18
 
 - name: Beedle's Shop - 50 Rupee Item
-  original_item: Progressive Bug Net 
+  original_item: Progressive Bug Net
   types:
     - Beedle's Shop
     - Shop (Cheap)
@@ -1224,14 +1224,14 @@
     - stage/F011r/r0/l0/chest/0xFC3B
 
 - name: Lumpy Pumpkin - Outside Crystal
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
     - stage/F020/r0/l4/Item/100
 
 - name: Lumpy Pumpkin - Inside Crystal
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
@@ -1264,7 +1264,7 @@
     - oarc/F020/l0
 
 - name: Beedle's Island - Crystal
-  original_item: Gratitude Crystal 
+  original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
   Paths:
@@ -2491,70 +2491,70 @@
 # Flooded Faron Woods:
 
 # - name: Flooded Faron Woods - Yellow Tadtone under Lilypad
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/10 # group number
 
 # - name: Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/4 # group number
 
 # - name: Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/2 # group number
 
 # - name: Flooded Faron Woods - Red Moving Tadtone near Viewing Platform
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/1 # group number
 
 # - name: Flooded Faron Woods - Light Blue Tadtone under Great Tree Root
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/13 # group number
 
 # - name: Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/6 # group number
 
 # - name: Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/8 # group number
 
 # - name: Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/11 # group number
 
 # - name: Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/5 # group number
 
 # - name: Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
@@ -2568,42 +2568,42 @@
 #     - stage/F103/r0/l2/Clef/9 # group number
 
 # - name: Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/15 # group number
 
 # - name: Flooded Faron Woods - 16 Dark Blue Tadtones in the South West
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/17 # group number
 
 # - name: Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/16 # group number
 
 # - name: Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/7 # group number
 
 # - name: Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/14 # group number
 
 # - name: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
-#   original_item: Group of Tadtones 
+#   original_item: Group of Tadtones
 #   types:
 #     - Tadtones
 #   Paths:
@@ -2640,6 +2640,8 @@
 
 # Eldin Volcano:
 
+## First Room
+
 - name: Eldin Volcano - Rupee on Ledge before First Room
   original_item: Red Rupee
   types:
@@ -2647,6 +2649,14 @@
     - Beginner Rupees
   Paths:
     - stage/F200/r0/l0/Item/41
+
+- name: Eldin Volcano - Stamina Fruit in Rising Lava Room
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r1/l0/Item/0xFC1B
 
 - name: Eldin Volcano - Chest behind Bombable Wall in First Room
   original_item: Red Rupee
@@ -2670,6 +2680,14 @@
     - Beginner Rupees
   Paths:
     - stage/F200/r1/l0/Item/19
+
+- name: Eldin Volcano - Slingshot Ceiling in First Room
+  original_item: Red Rupee # actually a rupee shower
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F200/r1/l0/TgReact/0xFC38
 
 - name: Eldin Volcano - Underground Rupee in First Room 1
   original_item: Green Rupee
@@ -2743,6 +2761,15 @@
   Paths:
     - stage/F200/r1/l0/Item/0xFFF9 # ids hardcoded in the objmove patches
 
+## Volcano East
+
+- name: Eldin Volcano - Stamina Fruit near Volcano East Statue
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFC4D
 
 - name: Eldin Volcano - Chest after Crawlspace
   original_item: Red Rupee
@@ -2767,6 +2794,17 @@
   Paths:
     - stage/F200/r2/l0/Item/123
 
+- name: Eldin Volcano - Stamina Fruit in front of Bone Bridge
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r2/l1/Item/0xFCC6
+    - stage/F200/r2/l2/Item/0xFCBE
+    - stage/F200/r2/l3/Item/0xFCCC
+    - oarc/F200/l0
+
 - name: Eldin Volcano - Underground Rupee before Bone Bridge 1
   original_item: Red Rupee
   types:
@@ -2790,13 +2828,6 @@
   Paths:
     - stage/F200/r2/l0/TBox/73
 
-- name: Eldin Volcano - Item on Cliff
-  original_item: Heart Piece
-  types:
-    - Freestanding Items
-  Paths:
-    - stage/F200/r2/l0/Item/102 #sceneflagID
-
 - name: Eldin Volcano - Rupee in Old Pyrup Shell near Cliff
   original_item: Blue Rupee
   types:
@@ -2806,6 +2837,30 @@
   Paths:
     - stage/F200/r2/l0/Item/183
 
+- name: Eldin Volcano - Bonk Hammer in Hut near Cliff
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F200/r2/l0/TgReact/0xFC94
+
+- name: Eldin Volcano - Blow Cloth above Hut near Cliff
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F200/r2/l0/TgReact/0xFC95
+
+- name: Eldin Volcano - Stamina Fruit near Item on Cliff
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r2/l0/Item/0xFC4E
+
 - name: Eldin Volcano - Rupee in Old Pyrup Shell on Cliff
   original_item: Blue Rupee
   types:
@@ -2814,6 +2869,13 @@
     - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/184
+
+- name: Eldin Volcano - Item on Cliff
+  original_item: Heart Piece
+  types:
+    - Freestanding Items
+  Paths:
+    - stage/F200/r2/l0/Item/102 #sceneflagID
 
 - name: Eldin Volcano - Underground Rupee in Cliff 1
   original_item: Blue Rupee
@@ -2936,7 +2998,7 @@
     - stage/F200/r2/l0/Item/0xFFE1 # ids hardcoded in the objmove patches
 
 # Removed as extra collision on Eldin layer 1 makes this digspot *very* buggy
-# 
+#
 # - name: Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1
 #   original_item: Blue Rupee
 #   types:
@@ -2961,6 +3023,7 @@
 #   Paths:
 #     - stage/F200/r2/l0/Item/0xFFFC # ids hardcoded in the objmove patches
 
+## Volcano Ascent
 
 - name: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
   original_item: Red Rupee
@@ -2968,6 +3031,47 @@
     - Chests
   Paths:
     - stage/F200/r2/l0/TBox/71
+
+- name: Lower Eldin Cave - Gossip Stone
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 17
+  eventflowindex: 56
+
+- name: Eldin Volcano - Stamina Fruit in front of First Slope 1
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC2F
+
+- name: Eldin Volcano - Stamina Fruit in front of First Slope 2
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC30
+
+- name: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r8/l0/Item/0xFC02
+
+- name: Eldin Volcano - Stamina Fruit after First Slope
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC31
 
 - name: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
   original_item: Red Rupee
@@ -2993,6 +3097,229 @@
   textfile: 004-Object
   textindex: 16
   eventflowindex: 28
+
+- name: Thrill Digger Cave - Slingshot Left Blue Crystal 1
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC68
+
+- name: Thrill Digger Cave - Slingshot Left Green Crystal 1
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC75
+
+- name: Thrill Digger Cave - Slingshot Left Blue Crystal 2
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC69
+
+- name: Thrill Digger Cave - Slingshot Left Blue Crystal 3
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC6A
+
+- name: Thrill Digger Cave - Slingshot Left Black Crystal
+  original_item: Rupoor
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC77
+
+- name: Thrill Digger Cave - Slingshot Left Green Crystal 2
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC76
+
+- name: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 1
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC6C
+
+- name: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 2
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC6B
+
+- name: Thrill Digger Cave - Slingshot Left Pillar Black Crystal
+  original_item: Rupoor
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC78
+
+- name: Thrill Digger Cave - Slingshot Back Blue Crystal 1
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC6D
+
+- name: Thrill Digger Cave - Slingshot Back Blue Crystal 2
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC71
+
+- name: Thrill Digger Cave - Slingshot Back Blue Crystal 3
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC6E
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 1
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC73
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 2
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC72
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Green Crystal
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC74
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 3
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC6F
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F211/r0/l1/TgReact/0xFC70
+
+- name: Eldin Volcano - Stamina Fruit next to Small Puddle
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC32
+
+- name: Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC33
+
+- name: Eldin Volcano - Stamina Fruit in front of Second Slope 1
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC36
+
+- name: Eldin Volcano - Stamina Fruit in front of Second Slope 2
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC34
+
+- name: Eldin Volcano - Stamina Fruit in front of Second Slope 3
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/Item/0xFC35
+
+## Outside Earth Temple
+
+- name: Eldin Volcano - Digging Spot in front of Earth Temple
+  original_item: Key Piece
+  types:
+    - Digging Spots
+  Paths:
+    - stage/F200/r4/l1/Soil/8
+
+- name: Eldin Volcano - Digging Spot below Tower
+  original_item: Key Piece
+  types:
+    - Digging Spots
+  Paths:
+    - stage/F200/r4/l1/Soil/9
+
+- name: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
+  original_item: Key Piece
+  types:
+    - Digging Spots
+  Paths:
+    - stage/F200/r4/l1/Soil/12
+
+- name: Eldin Volcano - Blow Closest Torch West of Earth Temple
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/TgReact/0xFC6A
+
+- name: Eldin Volcano - Blow Farthest Torch West of Earth Temple
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/TgReact/0xFC6B
+
+- name: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
+  original_item: Red Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/TgReact/0xFC69
 
 - name: Eldin Volcano - Gossip Stone next to Earth Temple
   original_item: Nothing
@@ -3083,6 +3410,14 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFD8 # ids hardcoded in the objmove patches
 
+- name: Eldin Volcano - Bonk Campfire East of Earth Temple
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F200/r4/l0/TgReact/0xFC68
+
 - name: Upper Eldin Cave - Gossip Stone
   original_item: Nothing
   types:
@@ -3092,14 +3427,29 @@
   textindex: 21
   eventflowindex: 30
 
-- name: Lower Eldin Cave - Gossip Stone
-  original_item: Nothing
+- name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
+  original_item: Stamina Fruit
   types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 17
-  eventflowindex: 56
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r5/l0/Item/0xFC0B
+
+- name: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r5/l0/Item/0xFC0C
+
+- name: Eldin Volcano - Stamina Fruit on vines near Hot Cave
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F200/r5/l0/Item/0x2805
 
 - name: Eldin Volcano - Goddess Cube at Eldin Entrance
   original_item: Eldin Volcano Goddess Cube at Eldin Entrance
@@ -3124,6 +3474,8 @@
   types:
     - Goddess Cube
   is_gui_excluded_location: False
+
+## Sand Slide
 
 - name: Eldin Volcano - Goddess Cube on Sand Slide
   original_item: Eldin Volcano Goddess Cube on Sand Slide
@@ -3257,136 +3609,12 @@
   Paths:
     - stage/F200/r7/l0/Item/0xFC02
 
-- name: Eldin Volcano - Stamina Fruit in Rising Lava Room
-  original_item: Stamina Fruit
+- name: Eldin Volcano - Digging Spot after Vents
+  original_item: Key Piece
   types:
-    - Stamina Fruits
-    - Custom Flag
+    - Digging Spots
   Paths:
-    - stage/F200/r1/l0/Item/0xFC1B
-
-- name: Eldin Volcano - Stamina Fruit near Volcano East Statue
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r2/l0/Item/0xFC4D
-
-- name: Eldin Volcano - Stamina Fruit in front of Bone Bridge
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r2/l1/Item/0xFCC6
-    - stage/F200/r2/l2/Item/0xFCBE
-    - stage/F200/r2/l3/Item/0xFCCC
-    - oarc/F200/l0
-
-- name: Eldin Volcano - Stamina Fruit near Item on Cliff
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r2/l0/Item/0xFC4E
-
-- name: Eldin Volcano - Stamina Fruit in front of First Slope 1
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r4/l0/Item/0xFC2F
-
-- name: Eldin Volcano - Stamina Fruit in front of First Slope 2
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r4/l0/Item/0xFC30
-
-- name: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r8/l0/Item/0xFC02
-
-- name: Eldin Volcano - Stamina Fruit after First Slope
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r4/l0/Item/0xFC31
-
-- name: Eldin Volcano - Stamina Fruit next to Small Puddle
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r4/l0/Item/0xFC32
-
-- name: Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r4/l0/Item/0xFC33
-
-- name: Eldin Volcano - Stamina Fruit in front of Second Slope 1
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r4/l0/Item/0xFC36
-
-- name: Eldin Volcano - Stamina Fruit in front of Second Slope 2
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r4/l0/Item/0xFC34
-
-- name: Eldin Volcano - Stamina Fruit in front of Second Slope 3
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r4/l0/Item/0xFC35
-
-- name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r5/l0/Item/0xFC0B
-
-- name: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r5/l0/Item/0xFC0C
-
-- name: Eldin Volcano - Stamina Fruit on vines near Hot Cave
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F200/r5/l0/Item/0x2805
+    - stage/F200/r6/l1/Soil/10
 
 - name: Eldin Volcano - Stamina Fruit after Big Sand Slide
   original_item: Stamina Fruit
@@ -3395,36 +3623,6 @@
     - Custom Flag
   Paths:
     - stage/F200/r2/l0/Item/0xFC4F
-
-## These checks are Digging Spots
-
-- name: Eldin Volcano - Digging Spot in front of Earth Temple
-  original_item: Key Piece
-  types:
-    - Digging Spots
-  Paths:
-    - stage/F200/r4/l1/Soil/8
-
-- name: Eldin Volcano - Digging Spot below Tower
-  original_item: Key Piece
-  types:
-    - Digging Spots
-  Paths:
-    - stage/F200/r4/l1/Soil/9
-
-- name: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
-  original_item: Key Piece
-  types:
-    - Digging Spots
-  Paths:
-    - stage/F200/r4/l1/Soil/12
-
-- name: Eldin Volcano - Digging Spot after Vents
-  original_item: Key Piece
-  types:
-    - Digging Spots
-  Paths:
-    - stage/F200/r6/l1/Soil/10
 
 - name: Eldin Volcano - Digging Spot after Draining Lava
   original_item: Key Piece
@@ -3459,6 +3657,54 @@
     - event/300-Mountain/135
     - oarc/F210/l0
 
+- name: Mogma Turf - Bonk Campfire above Sand Slide
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F210/r0/l0/TgReact/0xFC65
+
+- name: Mogma Turf - Slingshot Skull on Hut above Sand Slide
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F210/r0/l0/TgReact/0xFC66
+
+- name: Mogma Turf - Bonk Dusty Bag in Right Hut above Sand Slide
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F210/r0/l0/TgReact/0xFC67
+
+- name: Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F210/r0/l0/TgReact/0xFC68
+
+- name: Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F210/r0/l0/TgReact/0xFC69
+
+- name: Mogma Turf - Bonk Hammer in Left Hut above Sand Slide
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F210/r0/l0/TgReact/0xFC6A
+
 - name: Mogma Turf - Sand Slide Chest
   original_item: Eldin Ore
   types:
@@ -3489,6 +3735,14 @@
   is_gui_excluded_location: False
 
 # Volcano Summit:
+
+- name: Volcano Summit - Bonk Waterfall
+  original_item: Fairy
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F201_4/r0/l0/TgReact/0xFC15
 
 - name: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
   original_item: Silver Rupee
@@ -3551,6 +3805,30 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
+- name: Volcano Summit - Blow Torch West of Fire Sanctuary
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/TgReact/0xFC4A
+
+- name: Volcano Summit - Blow Torch East of Fire Sanctuary
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/TgReact/0xFC4B
+
+- name: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
+  original_item: Red Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/TgReact/0xFC4C
+
 - name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
   original_item: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
   types:
@@ -3575,6 +3853,22 @@
   Paths:
    - stage/F202/r2/l1/TBox/70
 
+- name: Bokoblin Base - Bonk Hammer in Hut near Cliff
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F202/r2/l0/TgReact/0x00AF
+
+- name: Bokoblin Base - Blow Cloth above Hut near Cliff
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F202/r2/l0/TgReact/0x00B0
+
 - name: Bokoblin Base - Chest on Cliff
   original_item: Clawshots
   types:
@@ -3588,6 +3882,14 @@
     - Chests
   Paths:
    - stage/F202/r2/l1/TBox/67
+
+- name: Bokoblin Base - Bonk Campfire East of Earth Temple
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F202/r4/l0/TgReact/0x005E
 
 - name: Bokoblin Base - Chest East of Earth Temple Entrance
   original_item: Progressive Slingshot
@@ -4277,7 +4579,7 @@
   hint: sometimes
   Paths:
     - stage/F301_5/r0/l0/chest/0xFC0C
-    
+
 - name: Skipper's Retreat - Rupee under Sand in Shack 1
   original_item: Green Rupee
   types:
@@ -4553,7 +4855,7 @@
     - stage/D100/r4/l0/TgReact/0xFC40
 
 - name: Skyview Temple - Chest behind Two Eyes
-  original_item: Skyview Temple Small Key 
+  original_item: Skyview Temple Small Key
   types:
     - Chests
   Paths:
@@ -4723,7 +5025,7 @@
     - stage/D100/r7/l0/TgReact/0xFC2D
 
 - name: Skyview Temple - Chest behind Three Eyes
-  original_item: Skyview Temple Small Key 
+  original_item: Skyview Temple Small Key
   types:
     - Chests
   hint: sometimes
@@ -5426,7 +5728,7 @@
     - stage/D101/r2/l0/Item/34
 
 - name: Ancient Cistern - Chest in East Part
-  original_item: Ancient Cistern Small Key 
+  original_item: Ancient Cistern Small Key
   types:
     - Chests
   Paths:
@@ -5454,7 +5756,7 @@
     - stage/D101/r3/l0/TBox/84
 
 - name: Ancient Cistern - Bokoblin
-  original_item: Ancient Cistern Small Key 
+  original_item: Ancient Cistern Small Key
   types:
     - NPC
   Paths:
@@ -5631,7 +5933,7 @@
     - stage/D301/r9/l0/TgReact/0xFC13
 
 - name: Sandship - Chest behind Combination Lock
-  original_item: Sandship Small Key 
+  original_item: Sandship Small Key
   types:
     - Chests
   Paths:
@@ -5673,7 +5975,7 @@
     - stage/D301/r9/l0/TBox/68
 
 - name: Sandship - Robot in Brig's Reward
-  original_item: Sandship Small Key 
+  original_item: Sandship Small Key
   types:
     - NPC
   hint: sometimes
@@ -5750,7 +6052,7 @@
     - stage/D201/r0/l0/TgReact/0xFC44
 
 - name: Fire Sanctuary - Chest in First Room
-  original_item: Fire Sanctuary Small Key 
+  original_item: Fire Sanctuary Small Key
   types:
     - Chests
   Paths:
@@ -5827,7 +6129,7 @@
     - stage/D201_1/r8/l0/Item/0xFC24
 
 - name: Fire Sanctuary - Chest near First Trapped Mogma
-  original_item: Fire Sanctuary Small Key 
+  original_item: Fire Sanctuary Small Key
   types:
     - Chests
   Paths:
@@ -5912,7 +6214,7 @@
     - stage/D201_1/r2/l0/Item/0xFCCD
 
 - name: Fire Sanctuary - Chest after Bombable Wall
-  original_item: Fire Sanctuary Small Key 
+  original_item: Fire Sanctuary Small Key
   types:
     - Chests
   hint: sometimes

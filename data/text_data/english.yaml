@@ -2812,6 +2812,21 @@
   pretty: Eldin Volcano - Rupee in Crawlspace in First Room
   cryptic: a <r<crawlspace rupee near a volcano>>
 
+- name: Eldin Volcano - Slingshot Ceiling in First Room
+  standard: Eldin Volcano - Slingshot Ceiling in First Room
+  pretty: Eldin Volcano - Slingshot Ceiling in First Room
+  cryptic: <r<shooting a volcanic ceiling>>
+
+- name: Eldin Volcano - Bonk Hammer in Hut near Cliff
+  standard: Eldin Volcano - Bonk Hammer in Hut near Cliff
+  pretty: Eldin Volcano - Bonk Hammer in Hut near Cliff
+  cryptic: <r<disturbing a hammer>>
+
+- name: Eldin Volcano - Blow Cloth above Hut near Cliff
+  standard: Eldin Volcano - Blow Cloth above Hut near Cliff
+  pretty: Eldin Volcano - Blow Cloth above Hut near Cliff
+  cryptic: <r<dusting fabric above a hut>>
+
 - name: Eldin Volcano - Underground Rupee in First Room 1
   standard: Eldin Volcano - Underground Rupee in First Room 1
   pretty: Eldin Volcano - Underground Rupee in First Room 1
@@ -3012,6 +3027,91 @@
   pretty: Thrill Digger Cave - Gossip Stone
   cryptic:
 
+- name: Thrill Digger Cave - Slingshot Left Blue Crystal 1
+  standard: Thrill Digger Cave - Slingshot Left Blue Crystal 1
+  pretty: Thrill Digger Cave - Slingshot Left Blue Crystal 1
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Green Crystal 1
+  standard: Thrill Digger Cave - Slingshot Left Green Crystal 1
+  pretty: Thrill Digger Cave - Slingshot Left Green Crystal 1
+  cryptic: <r<shooting a green gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Blue Crystal 2
+  standard: Thrill Digger Cave - Slingshot Left Blue Crystal 2
+  pretty: Thrill Digger Cave - Slingshot Left Blue Crystal 2
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Blue Crystal 3
+  standard: Thrill Digger Cave - Slingshot Left Blue Crystal 3
+  pretty: Thrill Digger Cave - Slingshot Left Blue Crystal 3
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Black Crystal
+  standard: Thrill Digger Cave - Slingshot Left Black Crystal
+  pretty: Thrill Digger Cave - Slingshot Left Black Crystal
+  cryptic: <r<shooting a black gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Green Crystal 2
+  standard: Thrill Digger Cave - Slingshot Left Green Crystal 2
+  pretty: Thrill Digger Cave - Slingshot Left Green Crystal 2
+  cryptic: <r<shooting a green gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 1
+  standard: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 1
+  pretty: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 1
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 2
+  standard: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 2
+  pretty: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 2
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Pillar Black Crystal
+  standard: Thrill Digger Cave - Slingshot Left Pillar Black Crystal
+  pretty: Thrill Digger Cave - Slingshot Left Pillar Black Crystal
+  cryptic: <r<shooting a black gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Back Blue Crystal 1
+  standard: Thrill Digger Cave - Slingshot Back Blue Crystal 1
+  pretty: Thrill Digger Cave - Slingshot Back Blue Crystal 1
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Back Blue Crystal 2
+  standard: Thrill Digger Cave - Slingshot Back Blue Crystal 2
+  pretty: Thrill Digger Cave - Slingshot Back Blue Crystal 2
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Back Blue Crystal 3
+  standard: Thrill Digger Cave - Slingshot Back Blue Crystal 3
+  pretty: Thrill Digger Cave - Slingshot Back Blue Crystal 3
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 1
+  standard: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 1
+  pretty: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 1
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 2
+  standard: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 2
+  pretty: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 2
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Green Crystal
+  standard: Thrill Digger Cave - Slingshot Right Pillar Green Crystal
+  pretty: Thrill Digger Cave - Slingshot Right Pillar Green Crystal
+  cryptic: <r<shooting a green gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 3
+  standard: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 3
+  pretty: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 3
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4
+  standard: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4
+  pretty: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
 - name: Eldin Volcano - Gossip Stone next to Earth Temple
   standard: Eldin Volcano - Gossip Stone next to Earth Temple
   pretty: Eldin Volcano - Gossip Stone next to Earth Temple
@@ -3097,6 +3197,26 @@
   pretty: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
   cryptic:
 
+- name: Eldin Volcano - Blow Closest Torch West of Earth Temple
+  standard: Eldin Volcano - Blow Closest Torch West of Earth Temple
+  pretty: Eldin Volcano - Blow Closest Torch West of Earth Temple
+  cryptic: <r<dusting a flame>> before a <r<temple>>
+
+- name: Eldin Volcano - Blow Farthest Torch West of Earth Temple
+  standard: Eldin Volcano - Blow Farthest Torch West of Earth Temple
+  pretty: Eldin Volcano - Blow Farthest Torch West of Earth Temple
+  cryptic: <r<dusting a flame>> before a <r<temple>>
+
+- name: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
+  standard: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
+  pretty: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
+  cryptic: <r<shooting a crimson circle>>
+
+- name: Eldin Volcano - Bonk Campfire East of Earth Temple
+  standard: Eldin Volcano - Bonk Campfire East of Earth Temple
+  pretty: Eldin Volcano - Bonk Campfire East of Earth Temple
+  cryptic: <r<disturbing a stove>> atop a <r<volcano>>
+
 - name: Eldin Volcano - Goddess Cube on Sand Slide
   standard: Eldin Volcano - Goddess Cube on Sand Slide
   pretty: Eldin Volcano - Goddess Cube on Sand Slide
@@ -3171,7 +3291,6 @@
   standard: Eldin Volcano - Right Rupee on Sand Slide 6
   pretty: Eldin Volcano - Right Rupee on Sand Slide 6
   cryptic: a <r<rupee on a sandy slope>>
-
 
 - name: Eldin Volcano - Stamina Fruit in Rising Lava Room
   standard: Eldin Volcano - Stamina Fruit in Rising Lava Room
@@ -3298,6 +3417,36 @@
   pretty: Mogma Turf - Defeat Bokoblins
   cryptic: helping <r<reclaim the mogmas' territory>>
 
+- name: Mogma Turf - Bonk Campfire above Sand Slide
+  standard: Mogma Turf - Bonk Campfire above Sand Slide
+  pretty: Mogma Turf - Bonk Campfire above Sand Slide
+  cryptic: <r<disturbing a stove in claimed territory>>
+
+- name: Mogma Turf - Slingshot Skull on Hut above Sand Slide
+  standard: Mogma Turf - Slingshot Skull on Hut above Sand Slide
+  pretty: Mogma Turf - Slingshot Skull on Hut above Sand Slide
+  cryptic: <r<shooting a skull in claimed territory>>
+
+- name: Mogma Turf - Bonk Dusty Bag in Right Hut above Sand Slide
+  standard: Mogma Turf - Bonk Dusty Bag in Right Hut above Sand Slide
+  pretty: Mogma Turf - Bonk Dusty Bag in Right Hut above Sand Slide
+  cryptic: <r<disturbing a hanging sack in claimed territory>>
+
+- name: Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide
+  standard: Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide
+  pretty: Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide
+  cryptic: <r<disturbing a hanging sack in claimed territory>>
+
+- name: Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide
+  standard: Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide
+  pretty: Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide
+  cryptic: <r<disturbing a hanging sack in claimed territory>>
+
+- name: Mogma Turf - Bonk Hammer in Left Hut above Sand Slide
+  standard: Mogma Turf - Bonk Hammer in Left Hut above Sand Slide
+  pretty: Mogma Turf - Bonk Hammer in Left Hut above Sand Slide
+  cryptic: <r<disturbing a hammer in claimed territory>>
+
 - name: Mogma Turf - Sand Slide Chest
   standard: Mogma Turf - Sand Slide Chest
   pretty: Mogma Turf - Sand Slide Chest
@@ -3317,6 +3466,11 @@
   standard: Mogma Turf - Goddess Cube
   pretty: Mogma Turf - Goddess Cube
   cryptic:
+
+- name: Volcano Summit - Bonk Waterfall
+  standard: Volcano Summit - Bonk Waterfall
+  pretty: Volcano Summit - Bonk Waterfall
+  cryptic: <r<disturbing a waterfall at the summit>>
 
 - name: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
   standard: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
@@ -3358,6 +3512,21 @@
   pretty: Volcano Summit - Goddess Cube at Summit Waterfall
   cryptic:
 
+- name: Volcano Summit - Blow Torch West of Fire Sanctuary
+  standard: Volcano Summit - Blow Torch West of Fire Sanctuary
+  pretty: Volcano Summit - Blow Torch West of Fire Sanctuary
+  cryptic: <r<dusting a flame>> in the <r<wall at the summit>>
+
+- name: Volcano Summit - Blow Torch East of Fire Sanctuary
+  standard: Volcano Summit - Blow Torch East of Fire Sanctuary
+  pretty: Volcano Summit - Blow Torch East of Fire Sanctuary
+  cryptic: <r<dusting a flame>> in the <r<wall at the summit>>
+
+- name: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
+  standard: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
+  pretty: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
+  cryptic: <r<shooting a large frog>>
+
 - name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
   standard: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
   pretty: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
@@ -3373,15 +3542,30 @@
   pretty: Bokoblin Base - Chest near Bone Bridge
   cryptic: a <r<captured chest near a bridge of bones>>
 
+- name: Bokoblin Base - Bonk Hammer in Hut near Cliff
+  standard: Bokoblin Base - Bonk Hammer in Hut near Cliff
+  pretty: Bokoblin Base - Bonk Hammer in Hut near Cliff
+  cryptic: <r<disturbing a hammer>> in <r<bokoblin turf>>
+
+- name: Bokoblin Base - Blow Cloth above Hut near Cliff
+  standard: Bokoblin Base - Blow Cloth above Hut near Cliff
+  pretty: Bokoblin Base - Blow Cloth above Hut near Cliff
+  cryptic: <r<dusting fabric above a hut>> in <r<bokoblin turf>>
+
 - name: Bokoblin Base - Chest on Cliff
   standard: Bokoblin Base - Chest on Cliff
   pretty: Bokoblin Base - Chest on Cliff
-  cryptic: a <r<captured chest on a clif>>
+  cryptic: a <r<captured chest on a cliff>>
 
 - name: Bokoblin Base - Chest near Drawbridge
   standard: Bokoblin Base - Chest near Drawbridge
   pretty: Bokoblin Base - Chest near Drawbridge
   cryptic: a <r<captured chest near a drawbridge>>
+
+- name: Bokoblin Base - Bonk Campfire East of Earth Temple
+  standard: Bokoblin Base - Bonk Campfire East of Earth Temple
+  pretty: Bokoblin Base - Bonk Campfire East of Earth Temple
+  cryptic: <r<disturbing a stove>> atop a <r<claimed volcano>>
 
 - name: Bokoblin Base - Chest East of Earth Temple Entrance
   standard: Bokoblin Base - Chest East of Earth Temple Entrance

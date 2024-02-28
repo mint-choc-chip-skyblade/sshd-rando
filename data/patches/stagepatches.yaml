@@ -3067,6 +3067,12 @@ F210: # Mogma Turf
       entrance_id: 100
 
 F211: # Thrill Digger
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1
   - name: Remove thrill digger entry CS
     type: objpatch
     index: 0
@@ -3075,6 +3081,19 @@ F211: # Thrill Digger
     object:
       storyflag: -1
       play_cutscene: -1
+  - name: Add ammo pot to Thrill Digger Gossip Stone
+    onlyif: (ammo_availability == useful and hidden_item_shuffle == on) or ammo_availability == plentiful
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
+      posx: 900
+      posy: 0
+      posz: 600
+      name: Tubo
 
 F221: # Fire Dragon Room
   - name: Patch exit trigger from Fire Dragon's Lair to normal Volcano Summit
