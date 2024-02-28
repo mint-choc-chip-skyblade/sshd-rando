@@ -17,7 +17,7 @@ randomize_skykeep_layout: 'off'
 fs_lava_flow: 'on'
 peatrice_conversations: '0'
 small_keys: removed
-lanayru_caves_key: vanilla
+lanayru_caves_keys: vanilla
 boss_keys: anywhere
 map_mode: own_dungeon_restricted
 path_hints: '3'

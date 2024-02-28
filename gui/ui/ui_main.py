@@ -491,15 +491,15 @@ class Ui_main_window(object):
 
         self.verticalLayout_16.addWidget(self.setting_map_mode)
 
-        self.lanayru_caves_key_label = QLabel(self.dungeons_group_box)
-        self.lanayru_caves_key_label.setObjectName(u"lanayru_caves_key_label")
+        self.lanayru_caves_keys_label = QLabel(self.dungeons_group_box)
+        self.lanayru_caves_keys_label.setObjectName(u"lanayru_caves_keys_label")
 
-        self.verticalLayout_16.addWidget(self.lanayru_caves_key_label)
+        self.verticalLayout_16.addWidget(self.lanayru_caves_keys_label)
 
-        self.setting_lanayru_caves_key = QComboBox(self.dungeons_group_box)
-        self.setting_lanayru_caves_key.setObjectName(u"setting_lanayru_caves_key")
+        self.setting_lanayru_caves_keys = QComboBox(self.dungeons_group_box)
+        self.setting_lanayru_caves_keys.setObjectName(u"setting_lanayru_caves_keys")
 
-        self.verticalLayout_16.addWidget(self.setting_lanayru_caves_key)
+        self.verticalLayout_16.addWidget(self.setting_lanayru_caves_keys)
 
         self.boss_key_puzzles_label = QLabel(self.dungeons_group_box)
         self.boss_key_puzzles_label.setObjectName(u"boss_key_puzzles_label")
@@ -2137,7 +2137,7 @@ class Ui_main_window(object):
         self.small_keys_label.setText(QCoreApplication.translate("main_window", u"Small Keys", None))
         self.boss_keys_label.setText(QCoreApplication.translate("main_window", u"Boss Keys", None))
         self.map_mode_label.setText(QCoreApplication.translate("main_window", u"Dungeon Maps", None))
-        self.lanayru_caves_key_label.setText(QCoreApplication.translate("main_window", u"Lanayru Caves Small Key", None))
+        self.lanayru_caves_keys_label.setText(QCoreApplication.translate("main_window", u"Lanayru Caves Small Key", None))
         self.boss_key_puzzles_label.setText(QCoreApplication.translate("main_window", u"Boss Key Puzzles", None))
         self.tweaks_group_box.setTitle(QCoreApplication.translate("main_window", u"Tweaks and Cosmetics", None))
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))

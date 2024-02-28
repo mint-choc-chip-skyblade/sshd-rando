@@ -360,7 +360,7 @@
 - name: Lanayru Caves
   hint_region: Lanayru Caves
   exits:
-    Lanayru Caves Past Locked Door: Clawshots and (Lanayru_Caves_Small_Key or lanayru_caves_key == removed)
+    Lanayru Caves Past Locked Door: Clawshots and (count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed)
     Lanayru Caves Past Crawlspace: Nothing
     Lanayru Mine Caves Platform: Nothing
     Sand Oasis Highest Platform: Nothing
@@ -373,7 +373,7 @@
 - name: Lanayru Caves Past Locked Door
   hint_region: Lanayru Caves
   exits:
-    Lanayru Caves: Lanayru_Caves_Small_Key or lanayru_caves_key == removed
+    Lanayru Caves: count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed
     Ancient Harbour Highest Platform: Nothing
 
 
@@ -388,8 +388,11 @@
 
 - name: Lanayru Gorge
   hint_region: Lanayru Gorge
+  events:
+    Blow Up Rock to Locked Door: Hook_Beetle or ((Bomb_Bag or (Whip and logic_cactus_bomb_whip)) and logic_bomb_throws)
   exits:
     Lanayru Gorge Statue: Nothing
+    Lanayru Gorge after Locked Door: "'Blow_Up_Rock_to_Locked_Door' and count(2, Lanayru_Caves_Small_Key)"
     Lanayru Gorge Beyond Bridge: Can_Hit_Timeshift_Stone_in_Minecart
     Lanayru Caves Past Crawlspace: Nothing
   locations:
@@ -398,6 +401,10 @@
     # Lanayru Gorge - Boss Rush -- 4 Bosses: Impossible # TODO
     # Lanayru Gorge - Boss Rush -- 8 Bosses: Impossible
 
+- name: Lanayru Gorge after Locked Door
+  hint_region: Lanayru Gorge
+  exits:
+    Lanayru Gorge: (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)) and count(2, Lanayru_Caves_Small_Key)
 
 - name: Lanayru Gorge Beyond Bridge
   hint_region: Lanayru Gorge

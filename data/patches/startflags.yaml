@@ -197,7 +197,8 @@ Sceneflags:
     - 16   # Watched Lanayru Gorge Intro Cutscene
     - 40   # Revealed Gossip Stone in Center of Caves
     - 41   # Revealed Gossip Stone near Lanayru Gorge Entrance
-    - lanayru_caves_key == removed:
+    - lanayru_caves_keys == removed:
+      - 14 # Unlocked door to Lanayru Gorge Minecart area
       - 28 # Unlocked door to Lanayru Sand Sea
 
   Sealed Grounds: # Scene Index 10

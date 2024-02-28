@@ -17,7 +17,7 @@ randomize_skykeep_layout: 'off'
 fs_lava_flow: 'on'
 peatrice_conversations: '0'
 small_keys: anywhere
-lanayru_caves_key: anywhere
+lanayru_caves_keys: anywhere
 boss_keys: anywhere
 map_mode: anywhere
 path_hints: '3'

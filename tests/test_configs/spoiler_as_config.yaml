@@ -17,7 +17,7 @@ World 1:
   fs_lava_flow: random
   peatrice_conversations: random
   small_keys: random
-  lanayru_caves_key: random
+  lanayru_caves_keys: random
   boss_keys: random
   map_mode: random
   chest_type_matches_contents: random

@@ -136,7 +136,6 @@ MINIMAL_ITEM_POOL: list[str] = (
         FS_BOSS_KEY,
         LMF_SMALL_KEY,
         SK_SMALL_KEY,
-        LC_SMALL_KEY,
     ]
     + [PROGRESSIVE_POUCH] * 5
     + [PROGRESSIVE_MITTS] * 2
@@ -153,6 +152,7 @@ MINIMAL_ITEM_POOL: list[str] = (
     + [AC_SMALL_KEY] * 2
     + [SSH_SMALL_KEY] * 2
     + [FS_SMALL_KEY] * 3
+    + [LC_SMALL_KEY] * 2
     + [
         WOODEN_SHIELD,  # Non Progress items
         HYLIAN_SHIELD,
@@ -295,7 +295,7 @@ STARTABLE_ITEMS: list[str] = (
     + [KEY_PIECE] * 5
     + [PROGRESSIVE_WALLET] * 4
     + [EXTRA_WALLET] * 3
-    + [LC_SMALL_KEY]
+    + [LC_SMALL_KEY] * 2
     + [SV_SMALL_KEY] * 2
     + [LMF_SMALL_KEY]
     + [AC_SMALL_KEY] * 2
@@ -458,7 +458,7 @@ ITEM_COUNTS = {
     BOMB_BAG: (0x1F3, 10, 1),
     PROGRESSIVE_BOW: (0x1F2, 20, 1),
     PROGRESSIVE_SLINGSHOT: (0x1ED, 20, 1),
-    LC_SMALL_KEY: (9, 1, 1),
+    LC_SMALL_KEY: (9, 1, 2),
     SV_SMALL_KEY: (11, 1, 2),
     LMF_SMALL_KEY: (17, 1, 1),
     AC_SMALL_KEY: (12, 1, 2),

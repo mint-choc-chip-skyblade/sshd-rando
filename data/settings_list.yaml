@@ -247,19 +247,19 @@
     - removed:                         "Small Keys will not appear anywhere in the world and their locks will start opened."
 
 
-- name: lanayru_caves_key
+- name: lanayru_caves_keys
   default_option: vanilla
-  pretty_name: Lanayru Caves Key
+  pretty_name: Lanayru Caves Small Keys
   pretty_options:
     - Vanilla
     - Overworld
     - Anywhere
     - Removed
   options:
-    - vanilla:                         "The Lanayru Caves Key will appear in its vanilla location."
-    - overworld:                       "The Lanayru Caves Key will only appear in the overworld."
-    - anywhere:                        "The Lanayru Caves Key can appear anywhere."
-    - removed:                         "The Lanayru Caves Key will not appear anywhere in the world and the lock will start opened."
+    - vanilla:                         "The Lanayru Caves Keys will appear in their vanilla location."
+    - overworld:                       "The Lanayru Caves Keys will only appear in the overworld."
+    - anywhere:                        "The Lanayru Caves Keys can appear anywhere."
+    - removed:                         "The Lanayru Caves Keys will not appear anywhere in the world and the locks will start opened."
 
 
 - name: boss_keys

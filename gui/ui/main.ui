@@ -729,14 +729,14 @@
             <widget class="QComboBox" name="setting_map_mode"/>
            </item>
            <item>
-            <widget class="QLabel" name="lanayru_caves_key_label">
+            <widget class="QLabel" name="lanayru_caves_keys_label">
              <property name="text">
               <string>Lanayru Caves Small Key</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="setting_lanayru_caves_key"/>
+            <widget class="QComboBox" name="setting_lanayru_caves_keys"/>
            </item>
            <item>
             <widget class="QLabel" name="boss_key_puzzles_label">

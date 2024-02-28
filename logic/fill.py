@@ -407,7 +407,7 @@ def place_overworld_items(world: World, worlds: list[World]):
             loc for loc in overworld_locations if loc not in dungeon.locations
         ]
 
-    if world.setting("lanayru_caves_key") == "overworld":
+    if world.setting("lanayru_caves_keys") == "overworld":
         caves_key = world.get_item("Lanayru Caves Small Key")
         overworld_items.extend([caves_key] * world.item_pool[caves_key])
         world.item_pool[caves_key] = 0
