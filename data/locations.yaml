@@ -3939,6 +3939,22 @@
 
 # Lanayru Mine:
 
+- name: Lanayru Mine - Slingshot Left Eye of First Landing Robot
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/TgReact/0xFC53
+
+- name: Lanayru Mine - Slingshot Right Eye of First Landing Robot
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/TgReact/0xFC54
+
 - name: Lanayru Mine - Chest behind First Landing
   original_item: Evil Crystal
   types:
@@ -3946,7 +3962,31 @@
   Paths:
     - stage/F300_1/r0/l0/TBox/64
 
-- name: Lanayru Mine - Chest near First Timeshift Stone
+- name: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/TgReact/0xFC57
+
+- name: Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r1/l0/TgReact/0xFC07
+
+- name: Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r1/l0/TgReact/0xFC08
+
+- name: Lanayru Mine - Chest in Side Room near First Timeshift Stone
   original_item: Red Rupee
   types:
     - Chests
@@ -3989,6 +4029,38 @@
   Paths:
     - stage/F300_1/r0/l0/Item/147
 
+- name: Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/TgReact/0xFC55
+
+- name: Lanayru Mine - Slingshot Right Robot Eye above First Minecart Doorway
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/TgReact/0xFC56
+
+- name: Lanayru Mine - Blow Left Digging Robot after First Minecart Ride
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/TgReact/0xFC60
+
+- name: Lanayru Mine - Blow Right Digging Robot after First Minecart Ride
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/TgReact/0xFC61
+
 - name: Lanayru Mine - Chest behind Northeast Statue
   original_item: Red Rupee
   types:
@@ -4013,6 +4085,22 @@
     - Custom Flag
   Paths:
     - stage/F300_1/r2/l0/Item/0xFC15
+
+- name: Lanayru Mine - Blow Digging Robot near Mine Exit
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/TgReact/0xFC6F
+
+- name: Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r2/l0/TgReact/0xFC5F
 
 - name: Lanayru Mine - Chest at the End of Mine
   original_item: Rare Treasure
@@ -4068,6 +4156,14 @@
   is_gui_excluded_location: False
 
 # Lanayru Desert:
+
+- name: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300/r0/l0/TgReact/0xFD39
 
 - name: Lanayru Desert - Chest near Party Wheel
   original_item: Golden Skull
@@ -4153,6 +4249,14 @@
   Paths:
     - stage/F300/r0/l0/TBox/73
 
+- name: Lanayru Desert - Bonk Main Node Generator
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300/r0/l0/TgReact/0xFD3F
+
 - name: Lanayru Desert - Chest on Platform near Lightning Node
   original_item: Dusk Relic
   types:
@@ -4160,12 +4264,52 @@
   Paths:
     - stage/F300/r0/l0/TBox/72
 
+- name: Lanayru Desert - Slingshot Right Robot Eye above Temple of Time Exit
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300/r0/l0/TgReact/0xFD3D
+
+- name: Lanayru Desert - Bonk Water Node Generator
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300/r0/l0/TgReact/0xFD3E
+
 - name: Lanayru Desert - Chest near Sand Oasis
   original_item: Red Rupee
   types:
     - Chests
   Paths:
     - stage/F300/r0/l0/TBox/71
+
+- name: Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300/r0/l0/TgReact/0xFD3B
+
+- name: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Caves Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300/r0/l0/TgReact/0xFD3C
+
+- name: Lanayru Desert - Slingshot Left Robot Eye above Temple of Time Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300/r0/l0/TgReact/0xFD3A
 
 - name: Lanayru Desert - Chest on top of Lanayru Mining Facility # actually spawns on raising LMF
   original_item: Rare Treasure # TODO check
@@ -4301,6 +4445,22 @@
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC0C
 
+- name: Temple of Time - Bonk Northeast Pillar
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/TgReact/0xFC49
+
+- name: Temple of Time - Bonk Southeast Pillar
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/TgReact/0xFC4A
+
 - name: Temple of Time - Rupee on North Gate of Time Pillar
   original_item: Blue Rupee
   types:
@@ -4367,6 +4527,22 @@
   Paths:
     - stage/F300_3/r0/l0/TBox/80
 
+- name: Fire Node - Bonk Fire Node Power Supply
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_3/r0/l0/TgReact/0xFC3F
+
+- name: Fire Node - Bonk Fire Node Generator
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_3/r0/l0/TgReact/0xFC3E
+
 - name: Fire Node - Left Ending Chest
   original_item: Golden Skull # TODO check again
   types:
@@ -4394,6 +4570,22 @@
     - Chests
   Paths:
     - stage/F300_2/r0/l0/TBox/76
+
+- name: Lightning Node - Bonk Lightning Node Power Supply
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_2/r0/l0/TgReact/0xFC36
+
+- name: Lightning Node - Bonk Lightning Node Generator
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_2/r0/l0/TgReact/0xFC35
 
 - name: Lightning Node - Raised Chest near Generator
   original_item: Rare Treasure # TODO check again

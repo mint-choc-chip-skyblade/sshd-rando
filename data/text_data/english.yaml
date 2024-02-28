@@ -3597,14 +3597,39 @@
   pretty: Bokoblin Base - Fire Dragon's Reward
   cryptic: <r<hearing a song atop the great mountain>>
 
+- name: Lanayru Mine - Slingshot Left Eye of First Landing Robot
+  standard: Lanayru Mine - Slingshot Left Eye of First Landing Robot
+  pretty: Lanayru Mine - Slingshot Left Eye of First Landing Robot
+  cryptic: <r<shooting the eye>> of a <y<welcoming robot>>
+
+- name: Lanayru Mine - Slingshot Right Eye of First Landing Robot
+  standard: Lanayru Mine - Slingshot Right Eye of First Landing Robot
+  pretty: Lanayru Mine - Slingshot Right Eye of First Landing Robot
+  cryptic: <r<shooting the eye>> of a <y<welcoming robot>>
+
 - name: Lanayru Mine - Chest behind First Landing
   standard: Lanayru Mine - Chest behind First Landing
   pretty: Lanayru Mine - Chest behind First Landing
   cryptic: a <r<chest at the entry to a mine>>
 
-- name: Lanayru Mine - Chest near First Timeshift Stone
-  standard: Lanayru Mine - Chest near First Timeshift Stone
-  pretty: Lanayru Mine - Chest near First Timeshift Stone
+- name: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
+  cryptic: <r<dusting a worker>> near a <y<large time distortion>>
+
+- name: Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone
+  cryptic: <r<dusting a worker>> near a <y<large time distortion>>
+
+- name: Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone
+  cryptic: <r<dusting a worker>> near a <y<large time distortion>>
+
+- name: Lanayru Mine - Chest in Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Chest in Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Chest in Side Room near First Timeshift Stone
   cryptic: a <r<chest passed an automatic door>>
 
 - name: Lanayru Mine - Rupee on Southeast Conveyor 1
@@ -3627,6 +3652,26 @@
   pretty: Lanayru Mine - Rupee on Southwest Conveyor 2
   cryptic: a <r<high rupee in a mine>>
 
+- name: Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway
+  standard: Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway
+  pretty: Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway
+  cryptic: <r<shooting the guardian>> of a <y<large time distortion>>
+
+- name: Lanayru Mine - Slingshot Right Robot Eye above First Minecart Doorway
+  standard: Lanayru Mine - Slingshot Right Robot Eye above First Minecart Doorway
+  pretty: Lanayru Mine - Slingshot Right Robot Eye above First Minecart Doorway
+  cryptic: <r<shooting the guardian>> of a <y<large time distortion>>
+
+- name: Lanayru Mine - Blow Left Digging Robot after First Minecart Ride
+  standard: Lanayru Mine - Blow Left Digging Robot after First Minecart Ride
+  pretty: Lanayru Mine - Blow Left Digging Robot after First Minecart Ride
+  cryptic: <r<dusting a worker>> before a <y<sandy tunnel>>
+
+- name: Lanayru Mine - Blow Right Digging Robot after First Minecart Ride
+  standard: Lanayru Mine - Blow Right Digging Robot after First Minecart Ride
+  pretty: Lanayru Mine - Blow Right Digging Robot after First Minecart Ride
+  cryptic: <r<dusting a worker>> before a <y<sandy tunnel>>
+
 - name: Lanayru Mine - Chest behind Northeast Statue
   standard: Lanayru Mine - Chest behind Northeast Statue
   pretty: Lanayru Mine - Chest behind Northeast Statue
@@ -3641,6 +3686,16 @@
   standard: Lanayru Mine - Rupee behind Southwest Statue
   pretty: Lanayru Mine - Rupee behind Southwest Statue
   cryptic: a <r<rupee hidden behind a falling statue>>
+
+- name: Lanayru Mine - Blow Digging Robot near Mine Exit
+  standard: Lanayru Mine - Blow Digging Robot near Mine Exit
+  pretty: Lanayru Mine - Blow Digging Robot near Mine Exit
+  cryptic: <r<dusting a worker>> near <y<rubble>>
+
+- name: Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone
+  standard: Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone
+  pretty: Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone
+  cryptic: <r<dusting a worker>> near a <y<small time distortion>>
 
 - name: Lanayru Mine - Chest at the End of Mine
   standard: Lanayru Mine - Chest at the End of Mine
@@ -3676,6 +3731,11 @@
   standard: Lanayru Mine - Goddess Cube
   pretty: Lanayru Mine - Goddess Cube
   cryptic:
+
+- name: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit
+  standard: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit
+  pretty: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit
+  cryptic: <r<shooting an eye>> of the <y<guardian of the mine>>
 
 - name: Lanayru Desert - Chest near Party Wheel
   standard: Lanayru Desert - Chest near Party Wheel
@@ -3727,15 +3787,45 @@
   pretty: Lanayru Desert - Chest on Platform near Fire Node
   cryptic: a <r<chest near a stone cache>>
 
+- name: Lanayru Desert - Bonk Main Node Generator
+  standard: Lanayru Desert - Bonk Main Node Generator
+  pretty: Lanayru Desert - Bonk Main Node Generator
+  cryptic: <r<disturbing a large generator>>
+
 - name: Lanayru Desert - Chest on Platform near Lightning Node
   standard: Lanayru Desert - Chest on Platform near Lightning Node
   pretty: Lanayru Desert - Chest on Platform near Lightning Node
   cryptic: a <r<chest near a buried building>>
 
+- name: Lanayru Desert - Slingshot Right Robot Eye above Temple of Time Exit
+  standard: Lanayru Desert - Slingshot Right Robot Eye above Temple of Time Exit
+  pretty: Lanayru Desert - Slingshot Right Robot Eye above Temple of Time Exit
+  cryptic: <r<shooting the eye guarding a monument to time>>
+
+- name: Lanayru Desert - Bonk Water Node Generator
+  standard: Lanayru Desert - Bonk Water Node Generator
+  pretty: Lanayru Desert - Bonk Water Node Generator
+  cryptic: <r<disturbing a watery generator>>
+
 - name: Lanayru Desert - Chest near Sand Oasis
   standard: Lanayru Desert - Chest near Sand Oasis
   pretty: Lanayru Desert - Chest near Sand Oasis
   cryptic: a <r<chest above a sandy paradise>>
+
+- name: Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue
+  standard: Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue
+  pretty: Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue
+  cryptic: <r<shooting an eye in a western desert>>
+
+- name: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Caves Entrance
+  standard: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Caves Entrance
+  pretty: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Caves Entrance
+  cryptic: <r<shooting the eye guarding a sandy cave>>
+
+- name: Lanayru Desert - Slingshot Left Robot Eye above Temple of Time Entrance
+  standard: Lanayru Desert - Slingshot Left Robot Eye above Temple of Time Entrance
+  pretty: Lanayru Desert - Slingshot Left Robot Eye above Temple of Time Entrance
+  cryptic: <r<shooting the eye guarding a monument to time>>
 
 - name: Lanayru Desert - Chest on top of Lanayru Mining Facility
   standard: Lanayru Desert - Chest on top of Lanayru Mining Facility
@@ -3817,6 +3907,16 @@
   pretty: Temple of Time - South Rupee on Tree Trunk
   cryptic: a <r<rupee on a time-travelling tree>>
 
+- name: Temple of Time - Bonk Northeast Pillar
+  standard: Temple of Time - Bonk Northeast Pillar
+  pretty: Temple of Time - Bonk Northeast Pillar
+  cryptic: <r<disturbing a statue of time>>
+
+- name: Temple of Time - Bonk Southeast Pillar
+  standard: Temple of Time - Bonk Southeast Pillar
+  pretty: Temple of Time - Bonk Southeast Pillar
+  cryptic: <r<disturbing a statue of time>>
+
 - name: Temple of Time - Rupee on North Gate of Time Pillar
   standard: Temple of Time - Rupee on North Gate of Time Pillar
   pretty: Temple of Time - Rupee on North Gate of Time Pillar
@@ -3862,6 +3962,16 @@
   pretty: Fire Node - Second Small Chest
   cryptic: a <r<chest in the middle of a stone cache>>
 
+- name: Fire Node - Bonk Fire Node Power Supply
+  standard: Fire Node - Bonk Fire Node Power Supply
+  pretty: Fire Node - Bonk Fire Node Power Supply
+  cryptic: <r<disturbing a fiery energy source>>
+
+- name: Fire Node - Bonk Fire Node Generator
+  standard: Fire Node - Bonk Fire Node Generator
+  pretty: Fire Node - Bonk Fire Node Generator
+  cryptic: <r<disturbing a fiery generator>>
+
 - name: Fire Node - Left Ending Chest
   standard: Fire Node - Left Ending Chest
   pretty: Fire Node - Left Ending Chest
@@ -3881,6 +3991,16 @@
   standard: Lightning Node - Second Chest
   pretty: Lightning Node - Second Chest
   cryptic: a <r<chest in a buried building>>
+
+- name: Lightning Node - Bonk Lightning Node Power Supply
+  standard: Lightning Node - Bonk Lightning Node Power Supply
+  pretty: Lightning Node - Bonk Lightning Node Power Supply
+  cryptic: <r<disturbing a shocking energy source>>
+
+- name: Lightning Node - Bonk Lightning Node Generator
+  standard: Lightning Node - Bonk Lightning Node Generator
+  pretty: Lightning Node - Bonk Lightning Node Generator
+  cryptic: <r<disturbing a shocking generator>>
 
 - name: Lightning Node - Raised Chest near Generator
   standard: Lightning Node - Raised Chest near Generator
