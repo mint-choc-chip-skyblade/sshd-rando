@@ -408,6 +408,7 @@ pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
         // Don't do anything for conveyor spawned stamina fruit in LMF
         let current_item = (*item_actor).base.basebase.members.param1 & 0x1FF;
         if current_item == 42 && &CURRENT_STAGE_NAME[..4] == b"D300" {
+            (*item_actor).base.basebase.members.param1 |= 0x200;
             return;
         }
 
