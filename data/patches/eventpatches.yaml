@@ -1878,10 +1878,11 @@
   # talk to the tablet and then lower the statue and reload
   - name: Statue Lower Question
     type: textpatch
-    index: 9
+    index: 4
+    textboxtype: 0
   - name: Replace Stone Tablet Fi Event
     type: flowpatch
-    index: 7
+    index: 5
     flow:
       next: Statue Lower Switch
   - name: Statue Lower Switch
