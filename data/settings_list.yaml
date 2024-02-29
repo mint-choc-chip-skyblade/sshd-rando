@@ -248,7 +248,7 @@
 
 
 - name: lanayru_caves_keys
-  default_option: vanilla
+  default_option: removed
   pretty_name: Lanayru Caves Small Keys
   pretty_options:
     - Vanilla
