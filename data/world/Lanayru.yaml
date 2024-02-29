@@ -392,7 +392,7 @@
     Blow Up Rock to Locked Door: Hook_Beetle or ((Bomb_Bag or (Whip and logic_cactus_bomb_whip)) and logic_bomb_throws)
   exits:
     Lanayru Gorge Statue: Nothing
-    Lanayru Gorge after Locked Door: "'Blow_Up_Rock_to_Locked_Door' and count(2, Lanayru_Caves_Small_Key)"
+    Lanayru Gorge after Locked Door: "'Blow_Up_Rock_to_Locked_Door' and (count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed)"
     Lanayru Gorge Beyond Bridge: Can_Hit_Timeshift_Stone_in_Minecart
     Lanayru Caves Past Crawlspace: Nothing
   locations:
@@ -410,7 +410,7 @@
 - name: Lanayru Gorge after Locked Door
   hint_region: Lanayru Gorge
   exits:
-    Lanayru Gorge: (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)) and count(2, Lanayru_Caves_Small_Key)
+    Lanayru Gorge: (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)) and (count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed)
   locations:
     Lanayru Gorge - Bonk Left Machine after Locked Door: Clawshots
     Lanayru Gorge - Bonk Right Machine after Locked Door: Clawshots and Beetle
@@ -420,7 +420,7 @@
   events:
     Ancient Flower Farming: Gust_Bellows and Can_Hit_Timeshift_Stone
   exits:
-    Lanayru Gorge: Beetle or Bow # To activate the main Timeshift Stone
+    Lanayru Gorge: Nothing # Death warp with bomb flower
   locations:
     Lanayru Gorge - Digging Spot: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
     Lanayru Gorge - Goddess Cube: Goddess_Sword
