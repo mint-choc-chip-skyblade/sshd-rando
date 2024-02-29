@@ -793,13 +793,6 @@
             </widget>
            </item>
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_rotating_items">
-             <property name="text">
-              <string>Rotating Items</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="RandoTriStateCheckBox" name="setting_tunic_swap">
              <property name="text">
               <string>Tunic Swap</string>

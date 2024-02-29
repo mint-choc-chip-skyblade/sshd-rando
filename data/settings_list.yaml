@@ -757,17 +757,6 @@
     - "off":                           "Link will be dressed in his green knight's uniform."
     - "on":                            "Link will be dressed in his Skyloft outfit seen at the start of the vanilla game."
 
-- name: rotating_items
-  type: Cosmetic
-  default_option: "on"
-  pretty_name: Rotating Items
-  pretty_options:
-    - "Off"
-    - "On"
-  options:
-    - "off":                           "Only Heart Pieces, Heart Containers, and Triforces will rotate."
-    - "on":                            "All freestanding items will rotate."
-
 
 - name: starry_skies
   type: Cosmetic
