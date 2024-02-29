@@ -168,6 +168,10 @@ class Advanced:
 
     def update_hash(self):
         self.config.hash = ""
+
+        if self.config.seed == "":
+            self.main.settings.new_seed()
+
         seed_rng(self.config)
         self.ui.hash_label.setText(f"Hash: {self.config.get_hash()}")
 

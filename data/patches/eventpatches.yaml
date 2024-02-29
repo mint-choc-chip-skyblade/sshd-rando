@@ -195,7 +195,6 @@
       next: -1
   - name: Give Dowsings after Whitesword
     type: flowpatch
-    onlyif: dowsing_after_whitesword == on
     index: 542
     flow:
       next: Rupee Dowsing
@@ -1205,24 +1204,16 @@
       param2: 96
 
 113-RemodelStore:
-  - name: Change switch for getting Treasure Dowsing
+  - name: remove Treasure Dowsing 1
     type: flowpatch
-    index: 143
+    index: 123
     flow:
-      param2: 909 # Whitesword
-  # don't have option yet
-  # - name: remove Treasure Dowsing 1
-  #   onlyif: dowsing_after_whitesword == on
-  #   type: flowpatch
-  #   index: 123
-  #   flow:
-  #     next: -1
-  # - name: remove Treasure Dowsing 2
-  #   onlyif: dowsing_after_whitesword == on
-  #   type: flowpatch
-  #   index: 13
-  #   flow:
-  #     next: -1
+      next: -1
+  - name: remove Treasure Dowsing 2
+    type: flowpatch
+    index: 13
+    flow:
+      next: -1
   - name: Gondo patch
     type: flowpatch
     index: 92

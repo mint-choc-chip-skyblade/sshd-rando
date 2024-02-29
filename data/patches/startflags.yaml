@@ -59,7 +59,6 @@ Storyflags:
   - 789  # Unlocked Dowsing (still needs Goddess Sword)
   - Goddess_White_Sword: # If starting with at least white sword
     - 583 # Unlocked 4 New Dowsing Slots
-  - Goddess_White_Sword and dowsing_after_whitesword == on:
     - 102 # Treasure Dowsing
     - 104 # Crystal Dowsing
     - 105 # Rupee Dowsing
@@ -200,7 +199,8 @@ Sceneflags:
     - 16   # Watched Lanayru Gorge Intro Cutscene
     - 40   # Revealed Gossip Stone in Center of Caves
     - 41   # Revealed Gossip Stone near Lanayru Gorge Entrance
-    - lanayru_caves_key == removed:
+    - lanayru_caves_keys == removed:
+      - 14 # Unlocked door to Lanayru Gorge Minecart area
       - 28 # Unlocked door to Lanayru Sand Sea
 
   Sealed Grounds: # Scene Index 10

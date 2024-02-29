@@ -41,7 +41,8 @@ pub struct dAcItem {
     pub rot_increment:           math::Vec3s,
     pub model_rot:               math::Vec3s,
     pub final_determined_itemid: u16,
-    pub _4:                      [u8; 10],
+    pub _4:                      [u8; 9],
+    pub prevent_timed_despawn:   u8,
     pub prevent_drop:            u8,
     pub _5:                      [u8; 3],
     pub no_longer_waiting:       u8,
@@ -107,6 +108,13 @@ extern "C" {
     fn getRotFromDegrees(deg: f32) -> u16;
     fn dAcItem__determineFinalItemid(itemid: u64) -> u64;
     fn dAcOmusasabi__stateWaitEnter();
+    fn checkParam2OnDestroy(
+        param2_s0x18: u8,
+        roomid: u32,
+        pos: *mut math::Vec3f,
+        param_4: u32,
+        param_5: *mut c_void,
+    ) -> u32;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -508,6 +516,109 @@ pub fn give_squirrel_item(musasabi_tag: *mut actor::dTgMusasabi) {
 }
 
 #[no_mangle]
+pub fn tgreact_spawn_custom_item(
+    mut param2_s0x18: u8,
+    roomid: u32,
+    pos: *mut math::Vec3f,
+    param_4: u32,
+    param_5: *mut c_void,
+) -> u32 {
+    unsafe {
+        let tgreact: *mut actor::dAcOBase;
+        asm!("mov {0:x}, x19", out(reg) tgreact);
+
+        let tgreact_param1: u32 = (*tgreact).basebase.members.param1;
+        let param2 = (*tgreact).members.base.param2;
+
+        if (param2 >> 8) & 0x3FF != 0x3FF {
+            let flag: u32 = (param2 & (0x00007F00)) >> 8;
+
+            let mut sceneindex: u32 = (param2 & (0x00018000)) >> 15;
+            match sceneindex {
+                0 => sceneindex = 6,
+                1 => sceneindex = 13,
+                2 => sceneindex = 16,
+                3 => sceneindex = 19,
+                _ => {},
+            }
+
+            let flag_space_trigger: u32 = (param2 & (0x00020000)) >> 17;
+
+            // Check if the flag is on
+            let mut flag_is_on = 0;
+            match flag_space_trigger {
+                0 => flag_is_on = flag::check_global_sceneflag(sceneindex as u16, flag as u16),
+                1 => flag_is_on = flag::check_global_dungeonflag(sceneindex as u16, flag as u16),
+                _ => {},
+            }
+
+            let new_itemid = dAcItem__determineFinalItemid(((tgreact_param1 >> 8) & 0xFF) as u64);
+
+            // If the tgreact would give hearts in vanilla and the randomized item is a
+            // heart, behave like the flag has already been set. This allows 3
+            // hearts to spawn instead
+            if flag_is_on == 0 && (((param2 >> 24) & 0xFF) != 6 || new_itemid != 6) {
+                let item_actor_param1: u32 = (new_itemid as u32) | 0xFF1FFE00;
+
+                let mut actor_pos = (*tgreact).members.base.pos;
+                let actor_pos_ptr: *mut math::Vec3f = &mut actor_pos as *mut math::Vec3f;
+
+                let mut facing_angle = (*tgreact).members.base.rot.y;
+
+                if facing_angle == 0 {
+                    facing_angle = (*PLAYER_PTR).obj_base_members.base.rot.y - 0x8000;
+                }
+
+                let mut item_rot = math::Vec3s {
+                    x: 0,
+                    y: facing_angle,
+                    z: 0,
+                };
+                let item_rot_ptr: *mut math::Vec3s = &mut item_rot as *mut math::Vec3s;
+
+                let item_actor: *mut dAcItem = actor::spawn_actor(
+                    actor::ACTORID::ITEM,
+                    roomid,
+                    item_actor_param1,
+                    actor_pos_ptr,
+                    item_rot_ptr,
+                    core::ptr::null_mut(),
+                    0xFF0000FF | (param2 & 0x3FF00),
+                ) as *mut dAcItem;
+
+                let mut forward_speed = 0.0;
+                let mut velocity_y = 0.0;
+
+                if (param2 >> 18) & 1 == 1 {
+                    forward_speed = 12.0;
+                    velocity_y = 19.5;
+                }
+
+                (*item_actor).base.members.forward_speed = forward_speed;
+                (*item_actor).base.members.velocity.x = 0.0;
+                (*item_actor).base.members.velocity.y = velocity_y;
+                (*item_actor).base.members.velocity.z = 0.0;
+                (*item_actor).prevent_timed_despawn = 1;
+                param2_s0x18 = 0xFF;
+                (*tgreact).members.base.param2 |= 0x3FF00;
+            }
+        }
+
+        if param2_s0x18 == 0xFF {
+            return 1; // force hidden item jingle to play
+        }
+
+        if flag::check_local_sceneflag(tgreact_param1 & 0xFF) == 0 {
+            flag::set_local_sceneflag(tgreact_param1 & 0xFF);
+
+            return checkParam2OnDestroy(param2_s0x18, roomid, pos, param_4, param_5);
+        }
+
+        return 0;
+    }
+}
+
+#[no_mangle]
 pub fn rotate_freestanding_items(item_actor: *mut dAcItem) {
     unsafe {
         // Spin items if not a stamina fruit
@@ -563,8 +674,8 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 | 178       // Ruby Tablet
                 | 198       // Life Tree Fruit
                 | 199 => y_offset = 16.0,
-                // Uncommon | Rare Treasure
-                63 | 64 => y_offset = 15.0,
+                // Seeds | Uncommon | Rare Treasure
+                57 | 60 | 63 | 64 => y_offset = 15.0,
                 // Beetle Upgrades
                 75..=77 => y_offset = 10.0,
                 // Heart Container
@@ -764,8 +875,8 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                     h_offset = 25.0;
                     angle_change_y = 0xE000;
                 },
-                // All Treasures
-                63 | 64 | 165..=176 => h_offset = 25.0,
+                // Seeds | All Treasures
+                57 | 60 | 63 | 64 | 165..=176 => h_offset = 25.0,
                 // Tablets
                 177..=179 => {
                     h_offset = 10.0;

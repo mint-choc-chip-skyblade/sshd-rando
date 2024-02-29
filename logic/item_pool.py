@@ -41,7 +41,7 @@ def generate_item_pool(world: "World") -> None:
             if not item.endswith(SMALL_KEY) or item == LC_SMALL_KEY
         ]
 
-    if world.setting("lanayru_caves_key") == "removed":
+    if world.setting("lanayru_caves_keys") == "removed":
         item_pool = [item for item in item_pool if item != LC_SMALL_KEY]
 
     if world.setting("boss_keys") == "removed":
@@ -136,7 +136,7 @@ def get_random_junk_item_name() -> str:
             RED_RUPEE,
             SILVER_RUPEE,
             FIVE_BOMBS,
-            TEN_DEKU_SEEDS,
+            FIVE_DEKU_SEEDS,
             TEN_ARROWS,
             COMMON_TREASURE,
             UNCOMMON_TREASURE,

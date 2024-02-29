@@ -1,6 +1,6 @@
 seed: TESTTESTTEST
 World 1:
   boss_keys: overworld
-  lanayru_caves_key: overworld
+  lanayru_caves_keys: overworld
   map_mode: overworld
   small_keys: overworld

@@ -8,7 +8,6 @@ underground_rupee_shuffle: 'off'
 beedle_shop_shuffle: junk_only
 goddess_chest_shuffle: 'off'
 full_wallet_upgrades: 'off'
-dowsing_after_whitesword: 'on'
 open_thunderhead: ballad
 open_lake_floria: vanilla
 open_earth_temple: 'off'
@@ -17,7 +16,7 @@ randomize_skykeep_layout: 'off'
 fs_lava_flow: 'on'
 peatrice_conversations: '0'
 small_keys: removed
-lanayru_caves_key: vanilla
+lanayru_caves_keys: vanilla
 boss_keys: anywhere
 map_mode: own_dungeon_restricted
 path_hints: '3'
@@ -53,7 +52,6 @@ curse_traps: 'on'
 noise_traps: 'off'
 groose_traps: 'off'
 ammo_availability: plentiful
-rotating_items: 'on'
 logic_early_lake_floria: 'off'
 logic_beedles_island_cage_chest_dive: 'off'
 logic_volcanic_island_dive: 'off'
@@ -155,7 +153,7 @@ excluded_locations:
 - Bokoblin Base - Raised Chest in Volcano Summit
 - Bokoblin Base - Chest in Volcano Summit Alcove
 - Lanayru Mine - Chest behind First Landing
-- Lanayru Mine - Chest near First Timeshift Stone
+- Lanayru Mine - Chest in Side Room near First Timeshift Stone
 - Lanayru Mine - Chest behind Northeast Statue
 - Lanayru Mine - Chest at the End of Mine
 - Lanayru Desert - Chest near Party Wheel
@@ -176,7 +174,7 @@ excluded_locations:
 - Lanayru Caves - Chest
 - Skipper's Retreat - Chest after Moblin
 - Skipper's Retreat - Chest on top of Cacti Pillar
-- Skipper's Retreat - Chest in Shack
+- Skipper's Retreat Shack - Chest under Sand
 - Skipper's Retreat - Skydive Chest
 - Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
 - Pirate Stronghold Interior - First Chest

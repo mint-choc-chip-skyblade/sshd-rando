@@ -5,6 +5,8 @@ World 1:
   item_pool: standard
   gratitude_crystal_shuffle: random
   stamina_fruit_shuffle: random
+  npc_closet_shuffle: random
+  hidden_item_shuffle: random
   rupee_shuffle: random
   underground_rupee_shuffle: random
   beedle_shop_shuffle: random
@@ -17,7 +19,7 @@ World 1:
   fs_lava_flow: random
   peatrice_conversations: random
   small_keys: random
-  lanayru_caves_key: random
+  lanayru_caves_keys: random
   boss_keys: random
   map_mode: random
   chest_type_matches_contents: random

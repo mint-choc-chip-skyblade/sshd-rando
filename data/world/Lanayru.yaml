@@ -11,11 +11,18 @@
     Lanayru Mine Statues Area: "'Lanayru_Mine_First_Timeshift_Stone'"
     Lanayru Mine Upper Area: Clawshots
   locations:
-    Lanayru Mine - Chest near First Timeshift Stone: "'Lanayru_Mine_First_Timeshift_Stone'"
+    Lanayru Mine - Slingshot Left Eye of First Landing Robot: Slingshot
+    Lanayru Mine - Slingshot Right Eye of First Landing Robot: Slingshot
+    Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone: Gust_Bellows
+    Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone: Gust_Bellows and 'Lanayru_Mine_First_Timeshift_Stone'
+    Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone: Gust_Bellows and 'Lanayru_Mine_First_Timeshift_Stone'
+    Lanayru Mine - Chest in Side Room near First Timeshift Stone: "'Lanayru_Mine_First_Timeshift_Stone'"
     Lanayru Mine - Rupee on Southeast Conveyor 1: Beetle
     Lanayru Mine - Rupee on Southeast Conveyor 2: Beetle
     Lanayru Mine - Rupee on Southwest Conveyor 1: Beetle
     Lanayru Mine - Rupee on Southwest Conveyor 2: Beetle
+    Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway: Slingshot
+    Lanayru Mine - Slingshot Right Robot Eye above First Minecart Doorway: Slingshot
     Lanayru Mine - Goddess Cube: Goddess_Sword
 
 
@@ -41,6 +48,8 @@
     Lanayru Mine Entry: "'Blow_Down_First_Mine_Statue'"
     Lanayru Mine End: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle) or 'Stamina_Potion' or logic_brakeslide
   locations:
+    Lanayru Mine - Blow Left Digging Robot after First Minecart Ride: Gust_Bellows
+    Lanayru Mine - Blow Right Digging Robot after First Minecart Ride: Gust_Bellows
     Lanayru Mine - Chest behind Northeast Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
     Lanayru Mine - Rupee behind Northeast Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
     Lanayru Mine - Rupee behind Southwest Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
@@ -60,6 +69,8 @@
     Lanayru Mine Statues Area: "'Blow_Down_First_Mine_Statue' or logic_brakeslide or 'Stamina_Potion'"
     Lanayru Mine In Minecart: Can_Hit_Timeshift_Stone
   locations:
+    Lanayru Mine - Blow Digging Robot near Mine Exit: Gust_Bellows
+    Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone: Gust_Bellows
     Lanayru Mine - Chest at the End of Mine: Nothing # There's a baba in the way
     Lanayru Mine - Stamina Fruit after Falling Statues: Nothing
     Lanayru Mine - Stamina Fruit near Spumes 1: Nothing
@@ -96,6 +107,7 @@
     Lanayru Desert West Courtyard: "'Get_Past_Spume_to_Sand_Oasis'"
     Lanayru Mine In Minecart: Blow_Up_Covered_Timeshift_Stone # I can't assume the minecart is available, right?
   locations:
+    Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit: Slingshot
     Lanayru Desert - Chest near Party Wheel: Blow_Up_Covered_Timeshift_Stone
     Lanayru Desert - Stamina Fruit on Ledge to Party Wheel: Blow_Up_Covered_Timeshift_Stone or Beetle
     Lanayru Desert - Rupee above Caged Robot 1: Beetle # You can (in theory) use a bomb flower to knock it down
@@ -154,6 +166,7 @@
     Lanayru Desert - Stamina Fruit in South Sand Oasis 2: Can_Navigate_in_Oasis or Beetle
     Lanayru Desert - Stamina Fruit in North Sand Oasis 1: Can_Navigate_in_Oasis or Beetle
     Lanayru Desert - Stamina Fruit in North Sand Oasis 2: Can_Navigate_in_Oasis or Beetle
+    Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue: Slingshot
 
 - name: Sand Oasis End
   hint_region: Lanayru Desert
@@ -166,6 +179,7 @@
   locations:
     Lanayru Desert - Stamina Fruit in North Sand Oasis 1: Nothing
     Lanayru Desert - Stamina Fruit in North Sand Oasis 2: Nothing
+    Lanayru Desert - Slingshot Left Robot Eye above Temple of Time Entrance: Slingshot
 
 
 - name: Sand Oasis Highest Platform
@@ -173,6 +187,8 @@
   exits:
     Sand Oasis End: Nothing
     Lanayru Caves: Nothing
+  locations:
+    Lanayru Desert - Slingshot Left Robot Eye above Lanayru Caves Entrance: Slingshot
 
 
 - name: Top of LMF
@@ -205,7 +221,10 @@
     Lanayru Desert West Wall: Clawshots
     Temple of Time North: Nothing
   locations:
+    Lanayru Desert - Bonk Main Node Generator: Nothing
     Lanayru Desert - Chest on Platform near Lightning Node: Clawshots
+    Lanayru Desert - Slingshot Right Robot Eye above Temple of Time Exit: Slingshot
+    Lanayru Desert - Bonk Water Node Generator: Nothing
 
 
 - name: Lightning Node
@@ -216,6 +235,8 @@
   locations:
     Lightning Node - First Chest: Bomb_Bag
     Lightning Node - Second Chest: Bomb_Bag
+    Lightning Node - Bonk Lightning Node Power Supply: Bomb_Bag
+    Lightning Node - Bonk Lightning Node Generator: Bomb_Bag
     Lightning Node - Raised Chest near Generator: Bomb_Bag and (Bow or Beetle or logic_bomb_throws)
 
 
@@ -250,6 +271,8 @@
     Fire Node - First Small Chest: Bomb_Bag
     Fire Node - Second Small Chest: Bomb_Bag
     Fire Node - Shortcut Chest: Can_Defeat_Ampilus or logic_brakeslide
+    Fire Node - Bonk Fire Node Power Supply: Can_Defeat_Ampilus or logic_brakeslide
+    Fire Node - Bonk Fire Node Generator: "'Can_Reach_Fire_Node_Activator'"
     Fire Node - Left Ending Chest: "'Can_Reach_Fire_Node_Activator'"
     Fire Node - Right Ending Chest: "'Can_Reach_Fire_Node_Activator'"
 
@@ -290,6 +313,8 @@
     Temple of Time West: Nothing
     Temple of Time West Post LMF Area: Nothing
   locations:
+    Temple of Time - Bonk Northeast Pillar: Nothing
+    Temple of Time - Bonk Southeast Pillar: Nothing
     Temple of Time - Rupee on North Gate of Time Pillar: Beetle
     Temple of Time - Rupee on Southwest Gate of Time Pillar: Beetle
 
@@ -335,7 +360,7 @@
 - name: Lanayru Caves
   hint_region: Lanayru Caves
   exits:
-    Lanayru Caves Past Locked Door: Clawshots and (Lanayru_Caves_Small_Key or lanayru_caves_key == removed)
+    Lanayru Caves Past Locked Door: Clawshots and (count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed)
     Lanayru Caves Past Crawlspace: Nothing
     Lanayru Mine Caves Platform: Nothing
     Sand Oasis Highest Platform: Nothing
@@ -348,7 +373,7 @@
 - name: Lanayru Caves Past Locked Door
   hint_region: Lanayru Caves
   exits:
-    Lanayru Caves: Lanayru_Caves_Small_Key or lanayru_caves_key == removed
+    Lanayru Caves: count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed
     Ancient Harbour Highest Platform: Nothing
 
 
@@ -363,26 +388,44 @@
 
 - name: Lanayru Gorge
   hint_region: Lanayru Gorge
+  events:
+    Blow Up Rock to Locked Door: Hook_Beetle or ((Bomb_Bag or (Whip and logic_cactus_bomb_whip)) and logic_bomb_throws)
   exits:
     Lanayru Gorge Statue: Nothing
+    Lanayru Gorge after Locked Door: "'Blow_Up_Rock_to_Locked_Door' and (count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed)"
     Lanayru Gorge Beyond Bridge: Can_Hit_Timeshift_Stone_in_Minecart
     Lanayru Caves Past Crawlspace: Nothing
   locations:
     Lanayru Gorge - Item on Pillar: Beetle
     Lanayru Gorge - Thunder Dragon's Reward: Can_Hit_Timeshift_Stone_in_Minecart and Life_Tree_Fruit
+    Lanayru Gorge - Bonk Pillar near Thunder Dragon: Nothing
+    Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon: Slingshot and Beetle
+    Lanayru Gorge - Slingshot Right Pillar behind the Thunder Dragon: Slingshot and Beetle
+    Lanayru Gorge - Bonk Wall Left of Stairs: Nothing
+    Lanayru Gorge - Bonk Wall Right of Stairs: Nothing
+    Lanayru Gorge - Blow Grass near Lone Boulder: "'Blow_Up_Rock_to_Locked_Door' and Gust_Bellows"
     # Lanayru Gorge - Boss Rush -- 4 Bosses: Impossible # TODO
     # Lanayru Gorge - Boss Rush -- 8 Bosses: Impossible
 
+- name: Lanayru Gorge after Locked Door
+  hint_region: Lanayru Gorge
+  exits:
+    Lanayru Gorge: (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)) and (count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed)
+  locations:
+    Lanayru Gorge - Bonk Left Machine after Locked Door: Clawshots
+    Lanayru Gorge - Bonk Right Machine after Locked Door: Clawshots and Beetle
 
 - name: Lanayru Gorge Beyond Bridge
   hint_region: Lanayru Gorge
   events:
     Ancient Flower Farming: Gust_Bellows and Can_Hit_Timeshift_Stone
   exits:
-    Lanayru Gorge: Beetle or Bow # To activate the main Timeshift Stone
+    Lanayru Gorge: Nothing # Death warp with bomb flower
   locations:
     Lanayru Gorge - Digging Spot: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
     Lanayru Gorge - Goddess Cube: Goddess_Sword
+    Lanayru Gorge - Slingshot Left Sandfall Source: Slingshot
+    Lanayru Gorge - Slingshot Right Sandfall Source: Slingshot
     Lanayru Gorge - Rupee in High Tunnel after Bridge 1: Beetle
     Lanayru Gorge - Rupee in High Tunnel after Bridge 2: Beetle
     Lanayru Gorge - Rupee in High Tunnel after Bridge 3: Beetle
@@ -396,9 +439,11 @@
     Lanayru Caves Past Locked Door: Nothing
     Ancient Harbour: Clawshots
   locations:
+    Ancient Harbour - Slingshot Left Nostril of Entrance Robot: Slingshot
+    Ancient Harbour - Slingshot Right Nostril of Entrance Robot: Slingshot
+    Ancient Harbour - Rupee on First Pillar: Beetle
     Ancient Harbour - Left Rupee on Entrance Crown: Quick_Beetle
     Ancient Harbour - Right Rupee on Entrance Crown: Quick_Beetle
-    Ancient Harbour - Rupee on First Pillar: Beetle
 
 
 - name: Ancient Harbour
@@ -409,6 +454,12 @@
     Ancient Harbour Statue: Nothing
     Ancient Harbour Highest Platform: Clawshots
   locations:
+    Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target: Slingshot
+    Ancient Harbour - Slingshot North Box Robot Left Eye: Slingshot
+    Ancient Harbour - Slingshot North Box Robot Right Eye: Slingshot
+    Ancient Harbour - Slingshot Southeast Box Robot Left Eye: Slingshot
+    Ancient Harbour - Slingshot Southeast Box Robot Right Eye: Slingshot
+    Ancient Harbour - Slingshot South Box Robot Eye: Slingshot
     Ancient Harbour - Goddess Cube: Clawshots and Goddess_Sword
   
 
@@ -447,20 +498,26 @@
     Skipper's Retreat Skydive Platform: Nothing
   locations:
     Skipper's Retreat - Chest on top of Cacti Pillar: Clawshots
+    Skipper's Retreat - Slingshot Left Eye of Shack: Slingshot
+    Skipper's Retreat - Slingshot Right Eye of Shack: Slingshot
+    Skipper's Retreat - Slingshot Nose of Shack: Slingshot
 
 
 - name: Skipper's Retreat Shack
   exits:
     Skipper's Retreat Top: Nothing
   locations:
-    Skipper's Retreat - Chest in Shack: Gust_Bellows
-    Skipper's Retreat - Skipper's Closet: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 1: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 2: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 3: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 4: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 5: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 6: Gust_Bellows
+    Skipper's Retreat Shack - Chest under Sand: Gust_Bellows
+    Skipper's Retreat Shack - Skipper's Closet: Gust_Bellows
+    Skipper's Retreat Shack - Blow Aeroplane: Gust_Bellows
+    Skipper's Retreat Shack - Blow Sombrero: Gust_Bellows
+    Skipper's Retreat Shack - Blow Fish: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 1: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 2: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 3: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 4: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 5: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 6: Gust_Bellows
 
 
 - name: Skipper's Retreat Skydive Platform
@@ -477,18 +534,25 @@
     Construction Bay Sand Pit: "'Defeat_Shipyard_Moldarach'"
     Lanayru Sand Sea: Nothing
   locations:
-    Shipyard - Gossip Stone: Nothing # Take the first cart and you've arrived
+    Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator: Nothing
     Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05: Nothing
+    Shipyard - Bonk Sign before Second Minecart Track: Nothing
+    Shipyard - Gossip Stone: Nothing # Take the first cart and you've arrived
 
 
 - name: Shipyard End of Minecart Ride
   exits:
     Construction Bay Upper Platform: Nothing
+  locations:
+    Shipyard - Bonk Sign after Second Minecart Track: Nothing
 
 - name: Construction Bay Upper Platform
   exits:
     Construction Bay Sand Pit: Nothing
     Shipyard End of Minecart Ride: Nothing
+  locations:
+    Construction Bay - Bonk Left Sign near Upper Door: Nothing
+    Construction Bay - Bonk Right Sign near Upper Door: Nothing
 
 - name: Construction Bay Sand Pit
   events:
@@ -507,6 +571,8 @@
     Pirate Stronghold - Rupee on West Sea Pillar: Quick_Beetle or (logic_precise_beetle and Beetle)
     Pirate Stronghold - Rupee on East Sea Pillar: Quick_Beetle or (logic_precise_beetle and Beetle)
     Pirate Stronghold - Rupee on Bird Statue Pillar or Nose: Beetle
+    Pirate Stronghold - Bonk Pillar Left of Shark's Head: Nothing
+    Pirate Stronghold - Bonk Pillar Right of Shark's Head: Nothing
     Pirate Stronghold - Stamina Fruit on Left Side: Nothing
     Pirate Stronghold - Stamina Fruit on Upper Right Side: Nothing
     Pirate Stronghold - Stamina Fruit on Lower Right Side: Nothing

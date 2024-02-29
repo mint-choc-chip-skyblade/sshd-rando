@@ -112,6 +112,7 @@ main:
     dAcItem__determineFinalItemid: 0x71004ea050
     dAcOlightLine__inUpdate: 0x7100836380
     dAcOmusasabi__stateWaitEnter: 0x7100861db4
+    checkParam2OnDestroy: 0x7100b93be4
 
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
     dAcItem__spawnItemWithParams: 0x71004eba70

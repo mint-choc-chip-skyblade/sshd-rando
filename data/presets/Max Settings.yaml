@@ -8,7 +8,6 @@ underground_rupee_shuffle: 'on'
 beedle_shop_shuffle: randomized
 goddess_chest_shuffle: 'on'
 full_wallet_upgrades: 'off'
-dowsing_after_whitesword: 'on'
 open_thunderhead: ballad
 open_lake_floria: vanilla
 open_earth_temple: 'off'
@@ -17,7 +16,7 @@ randomize_skykeep_layout: 'off'
 fs_lava_flow: 'on'
 peatrice_conversations: '0'
 small_keys: anywhere
-lanayru_caves_key: anywhere
+lanayru_caves_keys: anywhere
 boss_keys: anywhere
 map_mode: anywhere
 path_hints: '3'
@@ -53,7 +52,6 @@ curse_traps: 'on'
 noise_traps: 'on'
 groose_traps: 'on'
 ammo_availability: plentiful
-rotating_items: 'on'
 logic_early_lake_floria: 'off'
 logic_beedles_island_cage_chest_dive: 'off'
 logic_volcanic_island_dive: 'off'

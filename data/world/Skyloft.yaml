@@ -29,6 +29,8 @@
     # Knight Academy - In Horwell's Closet: Nothing
     Knight Academy - In Karane's Closet: Nothing
     Knight Academy - Fledge's Gift: Nothing
+    Knight Academy - Bonk Classroom Bookshelf: Nothing
+    Knight Academy - Bonk Headmaster Gaepora's Bookshelf: Nothing
     Knight Academy - Crystal in Knight Academy Plant: Night
     Knight Academy - Crystal in Link's Room: Night
     Knight Academy - Owlan's Crystals: Day and 'Retrieve_Oolo'
@@ -106,6 +108,10 @@
   locations:
     Upper Skyloft - Owlan's Gift: Day
     Upper Skyloft - Rescue Remlit above Knight Academy: Day
+    Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors: Slingshot
+    Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors: Slingshot
+    Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors: Slingshot
+    Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors: Slingshot
     Upper Skyloft - Chest near Goddess Statue: Nothing
     Upper Skyloft - Pumpkin Archery -- 600 Points: Bow and Day
     Upper Skyloft - Stamina Fruit near Upper Academy Gates: Nothing
@@ -177,6 +183,18 @@
     Central Skyloft - Crystal between Wooden Planks: Night
     Central Skyloft - Crystal on West Cliff: Night
     Central Skyloft - Crystal on Light Tower: Night
+    Central Skyloft - Bonk Tree before Lower Academy Stairs 1: Nothing
+    Central Skyloft - Bonk Tree before Lower Academy Stairs 2: Nothing
+    Central Skyloft - Bonk Tree before Lower Academy Stairs 3: Nothing
+    Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance: Slingshot
+    Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance: Slingshot
+    Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance: Slingshot
+    Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance: Slingshot
+    Central Skyloft - Blow Red Flag North of the Bazaar: Gust_Bellows
+    Central Skyloft - Blow Purple Flag North of the Bazaar: Gust_Bellows
+    Central Skyloft - Bonk Tree Southeast of the Bazaar: Nothing
+    Central Skyloft - Bonk Tree Left of Sky Keep Statue: Nothing
+    Central Skyloft - Bonk Tree Right of Sky Keep Statue: Nothing
     Central Skyloft - West Cliff Goddess Chest: Faron_Woods_Goddess_Cube_on_West_Great_Tree_near_Exit
     Central Skyloft - Parrow's Gift: Day and 'Talk_to_Orielle'
     Central Skyloft - Parrow's Crystals: Day and 'Save_Orielle'
@@ -365,6 +383,7 @@
     Skyloft Past Waterfall Cave Jump: logic_waterfall_cave_jump and Day
     Central Skyloft: Nothing
   locations:
+    Skyloft Village - Bonk Tree near River: Nothing
     Skyloft Village - Crystal near Pumpkin Patch: Night
     Skyloft Village - Stamina Fruit: Nothing
 
@@ -389,6 +408,7 @@
   locations:
     Skyloft Village - Sparrot's Crystals: "'Retrieve_Crystal_Ball'"
     Skyloft Village - Sparrot's Closet: Nothing
+    Skyloft Village - Bonk Sparrot's Valuables: Nothing
 
 
 - name: Mallara's House

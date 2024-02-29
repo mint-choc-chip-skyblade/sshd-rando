@@ -357,7 +357,7 @@ class World:
                 or (self.setting("boss_keys") == "vanilla" and item.is_boss_key)
                 or (self.setting("map_mode") == "vanilla" and item.is_dungeon_map)
                 or (
-                    self.setting("lanayru_caves_key") == "vanilla"
+                    self.setting("lanayru_caves_keys") == "vanilla"
                     and item == self.get_item(LC_SMALL_KEY)
                 )
                 or location in disabled_shuffle_locations

@@ -64,6 +64,16 @@
     - vanilla:                         "Closets will contain their vanilla items."
     - randomized:                      "All NPC closets will contain randomized items."
 
+- name: hidden_item_shuffle
+  default_option: "off"
+  pretty_name: Hidden Item Shuffle
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off":                           "Hidden Item checks will only ever give their vanilla items."
+    - "on":                            "Hidden Item checks will give a randomized item the first time. After this, they will only give their vanilla item."
+
 - name: rupee_shuffle
   default_option: vanilla
   pretty_name: Rupee Shuffle
@@ -123,17 +133,6 @@
   options:
     - "off":                           "Newly obtained wallets do not give any Rupees."
     - "on":                            "Newly obtained wallets will come pre-filled with Rupees."
-
-
-- name: dowsing_after_whitesword
-  default_option: "on"
-  pretty_name: Fill Dowsing on White Sword
-  pretty_options:
-    - "Off"
-    - "On"
-  options:
-    - "off":                           "Obtaining the Goddess White Sword won't unlock the additional dowsing options."
-    - "on":                            "Obtaining the Goddess White Sword will immediately unlock rupee, crystal, treasure, and goddess cube dowsing."
 
 
 - name: open_thunderhead
@@ -237,19 +236,19 @@
     - removed:                         "Small Keys will not appear anywhere in the world and their locks will start opened."
 
 
-- name: lanayru_caves_key
-  default_option: vanilla
-  pretty_name: Lanayru Caves Key
+- name: lanayru_caves_keys
+  default_option: removed
+  pretty_name: Lanayru Caves Small Keys
   pretty_options:
     - Vanilla
     - Overworld
     - Anywhere
     - Removed
   options:
-    - vanilla:                         "The Lanayru Caves Key will appear in its vanilla location."
-    - overworld:                       "The Lanayru Caves Key will only appear in the overworld."
-    - anywhere:                        "The Lanayru Caves Key can appear anywhere."
-    - removed:                         "The Lanayru Caves Key will not appear anywhere in the world and the lock will start opened."
+    - vanilla:                         "The Lanayru Caves Keys will appear in their vanilla location."
+    - overworld:                       "The Lanayru Caves Keys will only appear in the overworld."
+    - anywhere:                        "The Lanayru Caves Keys can appear anywhere."
+    - removed:                         "The Lanayru Caves Keys will not appear anywhere in the world and the locks will start opened."
 
 
 - name: boss_keys
@@ -746,17 +745,6 @@
   options:
     - "off":                           "Link will be dressed in his green knight's uniform."
     - "on":                            "Link will be dressed in his Skyloft outfit seen at the start of the vanilla game."
-
-- name: rotating_items
-  type: Cosmetic
-  default_option: "on"
-  pretty_name: Rotating Items
-  pretty_options:
-    - "Off"
-    - "On"
-  options:
-    - "off":                           "Only Heart Pieces, Heart Containers, and Triforces will rotate."
-    - "on":                            "All freestanding items will rotate."
 
 
 - name: starry_skies

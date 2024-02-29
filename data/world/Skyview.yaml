@@ -5,6 +5,9 @@
   exits:
     Deep Woods: Nothing
     SV First Room: Can_Cut_Trees_And_Logs
+  locations:
+    Skyview Temple - Slingshot Wall Eye behind First Bird Statue: Slingshot
+    Skyview Temple - Bonk Tree Root after First Skulltula Web: Nothing
 
 
 - name: SV First Room
@@ -22,6 +25,11 @@
   exits:
     SV First Room: Nothing
     SV First Hub Center Room: Sword
+  locations:
+    Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room: Slingshot
+    Skyview Temple - Slingshot Northwest Wall Eye in One Eye Room: Slingshot
+    Skyview Temple - Slingshot East Wall Eye in One Eye Room: Slingshot
+    Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room: Sword and Slingshot
 
 
 - name: SV First Hub Center Room
@@ -37,8 +45,11 @@
     SV First Hub Right Room Upper: Clawshots or ('Skyview_Raise_East_Water' and 'Skyview_Raise_West_Water')
     SV Second Hub Center Room: (Skyview_Temple_Small_Key or small_keys == removed) and (Clawshots or 'One_Water_Raise')
   locations:
+    Skyview Temple - Bonk Tree Branch with Chest: Nothing
     # Water Dragon's Scale needed to make sure you can't lock yourself out of the checks
     # by raising the water before getting them
+    Skyview Temple - Slingshot West Water Gate: Slingshot and Water_Dragons_Scale # items can sink into the water
+    Skyview Temple - Slingshot East Water Gate: Slingshot and Water_Dragons_Scale # items can sink into the water
     Skyview Temple - Rupee under South Walkway before Hub Room: Water_Dragons_Scale
     Skyview Temple - First Rupee under West Walkway before Hub Room: Water_Dragons_Scale
     Skyview Temple - Second Rupee under West Walkway before Hub Room: Water_Dragons_Scale
@@ -75,6 +86,8 @@
     SV First Hub Right Room Lower: Nothing
     SV First Hub Center Room: Nothing
   locations:
+    Skyview Temple - Slingshot Left Deactivated Eye in Two Eyes Room: Sword and Slingshot
+    Skyview Temple - Slingshot Right Deactivated Eye in Two Eyes Room: Sword and Slingshot
     Skyview Temple - Chest behind Two Eyes: Sword
 
 
@@ -88,6 +101,8 @@
     SV Last Room Before Rope: can_access(SV Last Room Before Rope) and Can_Hit_High_Skyview_Switches
   locations:
     Skyview Temple - Rupee on South Bird Pillar in Hub Room: Beetle
+    Skyview Temple - Bonk South Bird Pillar in Hub Room: Nothing
+    Skyview Temple - Bonk East Bird Pillar in Hub Room: Nothing
     Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room: Beetle
     Skyview Temple - Rupee in Southeast Tunnel: Beetle
     Skyview Temple - Rupee in Southwest Tunnel: Beetle
@@ -115,6 +130,8 @@
     # Projectile Item to hit the switch to get back to 2nd hub room
     SV Second Hub Center Room: Sword and (Beetle or Bow) and Projectile_Item
   locations:
+    Skyview Temple - Slingshot Southwest Wall Eye in Three Eyes Room: Slingshot
+    Skyview Temple - Slingshot Deactivated Middle Eye in Three Eyes Room: Sword and Slingshot
     Skyview Temple - Chest behind Three Eyes: (Beetle or Bow) and Sword
 
 
@@ -177,6 +194,11 @@
     Skyview Boss Room: Nothing
     # Crest Hit: Ruby Tablet
   locations:
+    Skyview Spring - Slingshot top of Door: Slingshot
+    Skyview Spring - Bonk Broken Left Pillar: Nothing
+    Skyview Spring - Bonk Broken Right Pillar: Nothing
     Skyview Spring - Rupee on Spring Pillar: Beetle
+    Skyview Spring - Slingshot Post Left of Goddess Crest: Slingshot
+    Skyview Spring - Slingshot Post Right of Goddess Crest: Slingshot
     Skyview Spring - Strike Crest: Goddess_Sword
     Skyview Spring - Goddess Cube: Goddess_Sword

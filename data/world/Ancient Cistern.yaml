@@ -82,7 +82,12 @@
     AC Lobby After Whip Hooks: Nothing # Run up wall to pull lever or leave dungeon
     AC Lobby Vines Area: Whip and Water_Dragons_Scale # The quadra-baba is kinda annoying but it's not too hard
   locations:
-    Ancient Cistern - Rupee under Lilypad: Water_Dragons_Scale # Flip lilypad and swim under
+    Ancient Cistern - Rupee under Lilypad after Pipes: Water_Dragons_Scale # Flip lilypad and swim under
+    Ancient Cistern - Slingshot East Lamp after Pipes 1: ((Water_Dragons_Scale and Whip) or Clawshots) and Slingshot
+    Ancient Cistern - Slingshot East Lamp after Pipes 2: ((Water_Dragons_Scale and Whip) or Clawshots) and Slingshot
+    Ancient Cistern - Slingshot West Lamp after Pipes 1: Water_Dragons_Scale and Slingshot
+    Ancient Cistern - Slingshot West Lamp after Pipes 2: Water_Dragons_Scale and Slingshot
+    Ancient Cistern - Slingshot West Lamp after Pipes 3: Water_Dragons_Scale and Slingshot
 
 
 - name: AC Inside Statue

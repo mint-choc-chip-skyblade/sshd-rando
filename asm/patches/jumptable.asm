@@ -20,8 +20,8 @@
 ; Total available instructions:                     372 (decimal)
 ; 
 ; Please update this:
-; Total space used (bytes):                          80
-; Total instructions used:                           20
+; Total space used (bytes):                          88
+; Total instructions used:                           22
 
 ; startflags
 .offset 0x7100659ab0
@@ -47,6 +47,10 @@ b additions_jumptable
 ; End Pumpkin Archery early by hitting the bell
 .offset 0x7100659ad0
 mov w8, #42
+b additions_jumptable
+
+.offset 0x7100659ad8
+mov w8, #43
 b additions_jumptable
 
 ; Actually branches to the rust additions landingpad

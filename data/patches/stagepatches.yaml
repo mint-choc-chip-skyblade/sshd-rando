@@ -1172,7 +1172,6 @@ F012r: # Batreaux House
     object:
       anglex: 0xFF00 # sets the flag to -1 (meaning open)
   - name: Remove Crystal Dowsing
-    onlyif: dowsing_after_whitesword == on
     type: objdelete
     id: 0xFC23
     layer: 1
@@ -1528,6 +1527,15 @@ F100: # Faron Woods
     destlayer: 0
     room: 0
     objtype: STAG
+  # Makes sure you can still hit it even when the gates are open
+  - name: Move Floria Gates TgReact up to Archway
+    type: objpatch
+    id: 0xFD65
+    layer: 0
+    room: 0
+    objtype: SOBJ
+    object:
+      posy: 1600
   - name: Remove Fi text Not letting you leave Machi
     type: objdelete
     ids:
@@ -1606,13 +1614,7 @@ F100: # Faron Woods
 F100_1: # Great Tree
   - name: Layer override
     type: layeroverride
-    override: # change layer 2 trigger
-      - story_flag: 16
-        night: 0
-        layer: 3
-      - story_flag: 900 # new beat AC
-        night: 0
-        layer: 2
+    override:
       - story_flag: -1
         night: 0
         layer: 1
@@ -1728,6 +1730,50 @@ F101: # Deep Woods
     layer: 0
     room: 0
     objtype: STAG
+  # Originally, both are on the door itself.
+  # Moving them so you can always hit them :p
+  - name: Move Skyview Temple Door TgReact 1 to Left Door Pillar
+    type: objpatch
+    id: 0xFD0A
+    layer: 1
+    room: 0
+    objtype: SOBJ
+    object:
+      posx: -500
+      posy: 1550
+      posz: 540
+      sizex: 1.5
+      sizey: 5.5
+      sizez: 1.5
+  - name: Move Skyview Temple Door TgReact 2 to Right Door Pillar
+    type: objpatch
+    id: 0xFD09
+    layer: 1
+    room: 0
+    objtype: SOBJ
+    object:
+      posx: 250
+      posy: 1550
+      posz: 540
+      sizex: 1.5
+      sizey: 5.5
+      sizez: 1.5
+  - name: Move Skyview Temple Door TgReact 1 to layer 1
+    type: objmove
+    id: 0xFD0A
+    hardcoded_id: 0xFDFE
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: SOBJ
+  - name: Move Skyview Temple Door TgReact 2 to layer 1
+    type: objmove
+    id: 0xFD09
+    hardcoded_id: 0xFDFF
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: SOBJ
 
 F102: # Lake Floria
   - name: Layer override
@@ -3003,7 +3049,6 @@ F210: # Mogma Turf
     room: 0
     objtype: SOBJ
   - name: Remove Rupee Dowsing
-    onlyif: dowsing_after_whitesword == on
     type: objdelete
     id: 0xFC3B
     layer: 0
@@ -3026,6 +3071,12 @@ F210: # Mogma Turf
       entrance_id: 100
 
 F211: # Thrill Digger
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 1
   - name: Remove thrill digger entry CS
     type: objpatch
     index: 0
@@ -3034,6 +3085,19 @@ F211: # Thrill Digger
     object:
       storyflag: -1
       play_cutscene: -1
+  - name: Add ammo pot to Thrill Digger Gossip Stone
+    onlyif: (ammo_availability == useful and hidden_item_shuffle == on) or ammo_availability == plentiful
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
+      posx: 900
+      posy: 0
+      posz: 600
+      name: Tubo
 
 F221: # Fire Dragon Room
   - name: Patch exit trigger from Fire Dragon's Lair to normal Volcano Summit
@@ -3688,7 +3752,7 @@ F301_4: # Shipyard
       storyflag: -1
       play_cutscene: -1
 
-F301_5: # Skipper's Shack
+F301_5: # Skipper's Retreat Shack
   - name: Text after chest
     type: objdelete
     id: 0xFC1B
@@ -3788,6 +3852,14 @@ F302: # Lanayru Gorge
     layers: [0, 2]
     room: 0
     objtype: OBJ
+  - name: Move TgReacts to correct layer
+    type: objmove
+    id: 0xFCCE # Grass near rock
+    hardcoded_id: 0xFCCE
+    layer: 1
+    destlayer: 0
+    room: 0
+    objtype: SOBJ
   - name: Yeet Lanayru Gorge Intro Cutscene
     type: objpatch
     index: 0
@@ -3796,14 +3868,6 @@ F302: # Lanayru Gorge
     object:
       storyflag: -1
       play_cutscene: -1
-  - name: Unlock Door
-    type: objpatch
-    id: 0x2BFF
-    index: 0
-    layer: 0
-    objtype: DOOR
-    object:
-      anglex: 0xFFFF # Always unlocked
   - name: Patch Entry of Thunderdragon after heal
     type: objpatch
     id: 0x10D0
@@ -4988,6 +5052,23 @@ D101: # Ancient Cistern
     layer: 0
     room: 4
     objtype: STAG
+  - name: Remove Lily Pad with Rupee Check Cutscene (room 5)
+    type: objdelete
+    ids:
+      - 0xFC37 # Cam2Tag
+      - 0xFC38 # Cam2Tag
+      - 0xFC49 # Evnt
+    layer: 0
+    room: 5
+    objtype: STAG
+  - name: Remove stone tablet text
+    type: objpatch
+    id: 0xFC11
+    layer: 0
+    room: 10
+    objtype: OBJ
+    object:
+      params1: 0xFF3C0000
   - name: Reload Exit
     type: objadd
     room: 10

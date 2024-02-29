@@ -13,6 +13,9 @@
     Lanayru Mining Facility - Right Front Rupee behind Statue: Bomb_Bag or Hook_Beetle
     Lanayru Mining Facility - Right Middle Rupee behind Statue: Nothing
     Lanayru Mining Facility - Right Back Rupee behind Statue: Nothing
+    Lanayru Mining Facility - Bonk Bomb Flower Pillar: Nothing
+    Lanayru Mining Facility - Slingshot Left Robot Eye in First Room: Slingshot
+    Lanayru Mining Facility - Slingshot Right Robot Eye in First Room: Slingshot
 
 
 - name: LMF First Hub
@@ -34,7 +37,12 @@
     LMF First Hub: Nothing
     LMF Hop Across Boxes Room: "'LMF_Key_Locked_Room_Timeshift_Stone'"
   locations:
-    Lanayru Mining Facility - Chest in Key Locked Room: "'LMF_Key_Locked_Room_Timeshift_Stone'"
+    Lanayru Mining Facility - Slingshot Bomb Flower Pillar in Key Locked Room: Slingshot
+    # (access to a position where you can shoot the eyes from) and Slingshot (to hit the eyes) and Beetle (to collect the item)
+    # Yes, the Beetle requirement is in vanilla too
+    Lanayru Mining Facility - Slingshot Left Robot Eye in Key Locked Room: (logic_stuttersprint or logic_brakeslide or 'LMF_Key_Locked_Room_Timeshift_Stone') and Slingshot and Beetle
+    Lanayru Mining Facility - Slingshot Right Robot Eye in Key Locked Room: (logic_stuttersprint or logic_brakeslide or 'LMF_Key_Locked_Room_Timeshift_Stone') and Slingshot and Beetle
+    Lanayru Mining Facility - Chest in Key Locked Room: logic_stuttersprint or logic_brakeslide or 'LMF_Key_Locked_Room_Timeshift_Stone'
 
 
 - name: LMF Hop Across Boxes Room
@@ -109,6 +117,7 @@
   locations:
     Lanayru Mining Facility - Rupee in First Crawlspace: Gust_Bellows
     Lanayru Mining Facility - Chest behind First Crawlspace: Gust_Bellows
+    Lanayru Mining Facility - Blow Painting behind First Clawlspace: Gust_Bellows
 
 
 - name: LMF Sand Spike Maze
@@ -166,6 +175,9 @@
     LMF Big Hub Near Boss Key Room North: Bomb_Bag and Gust_Bellows and Can_Defeat_Armos
   locations:
     Lanayru Mining Facility - Rupee behind South Statue in Northeast Room: Bomb_Bag
+    Lanayru Mining Facility - Blow Robot behind Bottom Northwest Statue: Bomb_Bag and Gust_Bellows
+    Lanayru Mining Facility - Blow Robot behind Middle Northwest Statue: Bomb_Bag and Gust_Bellows
+    Lanayru Mining Facility - Blow Robot behind Top Northwest Statue: Bomb_Bag and Gust_Bellows
     Lanayru Mining Facility - Chest after Double Armos Fight: Bomb_Bag and Gust_Bellows and Can_Defeat_Armos
 
 

@@ -103,12 +103,9 @@ bl additions_jumptable
 
 
 ; Make freestanding items spin
-; onlyif rotating_items == on
 .offset 0x71004eb0b0
 mov w8, #32
 b additions_jumptable
-
-; onlyif rotating_items == on
 .offset 0x71004e49ec
 add x9, x9, #0xb0 ; use above func for other default case
 

@@ -8,6 +8,10 @@
                   (Slingshot or Clawshots or Bow or Long_Range_Skyward_Strike or (Can_Defeat_Lizalfos and Beetle))"
     Near Temple Entrance: Nothing
   locations:
+    Earth Temple - Bonk Front Left Elephant Pillar: Nothing
+    Earth Temple - Bonk Front Right Elephant Pillar: Nothing
+    Earth Temple - Bonk Back Left Elephant Pillar: Nothing
+    Earth Temple - Bonk Back Right Elephant Pillar: Nothing
     Earth Temple - Vent Chest: Digging_Mitts
     Earth Temple - Rupee above Drawbridge: Beetle
 
@@ -56,6 +60,8 @@
     ET Hub Room: Bomb_Bag or Hook_Beetle # If you're somehow here first, you still need to blow up the rock
   locations:
     Earth Temple - Chest in West Room: Nothing
+    Earth Temple - Bonk Left Pillar in West Room: Nothing
+    Earth Temple - Bonk Right Pillar in West Room: Nothing
 
 
 - name: ET Room with Slopes

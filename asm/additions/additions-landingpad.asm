@@ -142,6 +142,9 @@ b.eq check_and_set_trial_completion_flag
 cmp w8, #42
 b.eq try_end_pumpkin_archery
 
+cmp w8, #43
+b.eq tgreact_spawn_custom_item
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

@@ -332,6 +332,14 @@ def all_logic_satisfied(worlds: list[World], item_pool: Counter[Item] = {}) -> b
                 l for l in search.visited_locations if l.world == world
             ]
             if len(visited_world_locations) != len(world.location_table):
+                print(
+                    "Missing locations:\n",
+                    [
+                        loc.name
+                        for loc in world.location_table.values()
+                        if loc not in visited_world_locations
+                    ],
+                )
                 # Special case for minimal item pool as it removes 2 beetles
                 # and locks access to the Ancient Harbour crown rupees and the
                 # Pirate Stronghold pillar rupees

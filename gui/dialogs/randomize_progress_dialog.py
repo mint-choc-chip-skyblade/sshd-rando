@@ -32,7 +32,9 @@ class RandomizerProgressDialog(QProgressDialog):
         if self.should_show_done:
             done_dialog = QMessageBox(self)
             done_dialog.setWindowTitle("Randomization Completed")
-            done_dialog.setText("Seed successfully generated!")
+            done_dialog.setText(
+                f"Seed successfully generated!\n\nHash: {self.main.config.get_hash()}"
+            )
 
             open_output_button = done_dialog.addButton(
                 "Open", QMessageBox.ButtonRole.NoRole

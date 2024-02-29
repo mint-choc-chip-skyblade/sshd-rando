@@ -76,6 +76,9 @@
     Bamboo Island Interior: Day
     The Sky: Day
   locations:
+    Bamboo Island - Slingshot Left Lantern: Slingshot
+    Bamboo Island - Slingshot Middle Lantern: Slingshot
+    Bamboo Island - Slingshot Right Lantern: Slingshot
     Bamboo Island - Goddess Chest: Eldin_Volcano_Goddess_Cube_West_of_Earth_Temple_Entrance
 
 
@@ -86,6 +89,10 @@
     Bamboo Island: Day
   locations:
     Bamboo Island Interior - Gossip Stone: Nothing
+    Bamboo Island Interior - Bonk Southwest Sprout: Nothing
+    Bamboo Island Interior - Bonk West Sprout: Nothing
+    Bamboo Island Interior - Bonk East Sprout: Nothing
+    Bamboo Island Interior - Bonk Southeast Sprout: Nothing
 
 
 - name: Island near Bamboo Island
@@ -131,6 +138,11 @@
     Lumpy Pumpkin Main West Door: Nothing
     The Sky: Day
   locations:
+    Lumpy Pumpkin - Slingshot Left Canopy Lantern: Slingshot
+    Lumpy Pumpkin - Slingshot Right Canopy Lantern: Slingshot
+    Lumpy Pumpkin - Slingshot Lantern Left of Main Door: Slingshot
+    Lumpy Pumpkin - Slingshot Lantern Right of Main Door: Slingshot
+    Lumpy Pumpkin - Slingshot Lantern next to Back Door: Slingshot
     Lumpy Pumpkin - Outside Crystal: Night
     Lumpy Pumpkin - Outside Goddess Chest: Deep_Woods_Goddess_Cube_Near_Goron
     Lumpy Pumpkin - Goddess Chest on Roof: Day and Skyview_Spring_Goddess_Cube

@@ -461,10 +461,16 @@
   cryptic: <r<excavation tools>>
   plurality: Plural
 
+- name: 5 Deku Seeds
+  standard: 5 Deku Seeds
+  pretty: 5 Deku Seeds
+  cryptic: some <r<pellets>>
+  plurality: Plural
+
 - name: 10 Deku Seeds
   standard: 10 Deku Seeds
   pretty: 10 Deku Seeds
-  cryptic: some <r<pellets>>
+  cryptic: many <r<pellets>>
   plurality: Plural
 
 - name: Uncommon Treasure
@@ -499,8 +505,14 @@
 
 - name: Progressive Bug Net
   standard: Progressive Bug Net
-  pretty: a <Progressive Bug Net>
+  pretty: a <r<Progressive Bug Net>>
   cryptic: a <r<fun net>>
+  plurality: Singular
+
+- name: Fairy
+  standard: Fairy
+  pretty: Fairy
+  cryptic: a <r<magical friend>>
   plurality: Singular
 
 - name: Hook Beetle
@@ -1192,6 +1204,16 @@
   pretty: Knight Academy - Fledge's Gift
   cryptic: a <r<gift from a friend>>
 
+- name: Knight Academy - Bonk Classroom Bookshelf
+  standard: Knight Academy - Bonk Classroom Bookshelf
+  pretty: Knight Academy - Bonk Classroom Bookshelf
+  cryptic: <r<disturbing the student library>>
+
+- name: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
+  standard: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
+  pretty: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
+  cryptic: <r<disturbing ancient tomes>>
+
 - name: Knight Academy - In Link's Closet
   standard: Knight Academy - In Link's Closet
   pretty: Knight Academy - In Link's Closet
@@ -1297,6 +1319,16 @@
   pretty: Upper Skyloft - Rescue Remlit above Knight Academy
   cryptic: disturbing a <r<sleepy cat>>
 
+- name: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
+  standard: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
+  pretty: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
+  cryptic: <r<shooting a schoolhouse light>>
+
+- name: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
+  standard: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
+  pretty: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
+  cryptic: <r<shooting a schoolhouse light>>
+
 - name: Upper Skyloft - Chest near Goddess Statue
   standard: Upper Skyloft - Chest near Goddess Statue
   pretty: Upper Skyloft - Chest near Goddess Statue
@@ -1337,6 +1369,16 @@
   pretty: Inside the Statue of the Goddess - Second Goddess Sword Item
   cryptic: the <r<goddess's second reward>>
 
+- name: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
+  standard: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
+  pretty: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
+  cryptic: <r<shooting a swordman's light>>
+
+- name: Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors
+  standard: Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors
+  pretty: Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors
+  cryptic: <r<shooting a swordman's light>>
+
 - name: Sparring Hall - Chest
   standard: Sparring Hall - Chest
   pretty: Sparring Hall - Chest
@@ -1355,7 +1397,7 @@
 - name: Bazaar - Goddess Chest
   standard: Bazaar - Goddess Chest
   pretty: Bazaar - Goddess Chest
-  cryptic: a <s<goddess cube>> in an <r<ancient harbor>>
+  cryptic: a <s<goddess cube>> in an <y<ancient harbor>>
 
 - name: Bazaar - Upgrade to Quick Beetle
   standard: Bazaar - Upgrade to Quick Beetle
@@ -1392,6 +1434,61 @@
   pretty: Central Skyloft - Repair Gondo's Junk
   cryptic: <r<fixing an ancient robot>>
 
+- name: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
+  standard: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
+  pretty: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
+  cryptic: <r<disturbing western sky wood>>
+
+- name: Central Skyloft - Bonk Tree before Lower Academy Stairs 2
+  standard: Central Skyloft - Bonk Tree before Lower Academy Stairs 2
+  pretty: Central Skyloft - Bonk Tree before Lower Academy Stairs 2
+  cryptic: <r<disturbing western sky wood>>
+
+- name: Central Skyloft - Bonk Tree before Lower Academy Stairs 3
+  standard: Central Skyloft - Bonk Tree before Lower Academy Stairs 3
+  pretty: Central Skyloft - Bonk Tree before Lower Academy Stairs 3
+  cryptic: <r<disturbing western sky wood>>
+
+- name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  standard: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  pretty: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  cryptic: <r<shooting a northern shop light>>
+
+- name: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
+  standard: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
+  pretty: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
+  cryptic: <r<shooting a northern shop light>>
+
+- name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  standard: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  pretty: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  cryptic: <r<shooting a northern shop light>>
+
+- name: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
+  standard: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
+  pretty: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
+  cryptic: <r<shooting a southern shop light>>
+
+- name: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
+  standard: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
+  pretty: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
+  cryptic: <r<shooting a southern shop light>>
+
+- name: Central Skyloft - Blow Red Flag North of the Bazaar
+  standard: Central Skyloft - Blow Red Flag North of the Bazaar
+  pretty: Central Skyloft - Blow Red Flag North of the Bazaar
+  cryptic: <r<dusting a red flag>>
+
+- name: Central Skyloft - Blow Purple Flag North of the Bazaar
+  standard: Central Skyloft - Blow Purple Flag North of the Bazaar
+  pretty: Central Skyloft - Blow Purple Flag North of the Bazaar
+  cryptic: <r<dusting a purple flag>>
+
+- name: Central Skyloft - Bonk Tree Southeast of the Bazaar
+  standard: Central Skyloft - Bonk Tree Southeast of the Bazaar
+  pretty: Central Skyloft - Bonk Tree Southeast of the Bazaar
+  cryptic: <r<disturbing sky wood below a market>>
+
 - name: Central Skyloft - Wryna's Crystals
   standard: Central Skyloft - Wryna's Crystals
   pretty: Central Skyloft - Wryna's Crystals
@@ -1405,22 +1502,22 @@
 - name: Central Skyloft - Waterfall Cave First Chest
   standard: Central Skyloft - Waterfall Cave First Chest
   pretty: Central Skyloft - Waterfall Cave First Chest
-  cryptic: the <r<higher chest>> in a <r<cave in the sky>>
+  cryptic: the <r<higher chest>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - Waterfall Cave Second Chest
   standard: Central Skyloft - Waterfall Cave Second Chest
   pretty: Central Skyloft - Waterfall Cave Second Chest
-  cryptic: the <r<lower chest>> in a <r<cave in the sky>>
+  cryptic: the <r<lower chest>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
   standard: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
   pretty: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
-  cryptic: a <r<rupee>> in a <r<cave in the sky>>
+  cryptic: a <r<rupee>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
   standard: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
   pretty: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
-  cryptic: a <r<rupee>> in a <r<cave in the sky>>
+  cryptic: a <r<rupee>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - Gossip Stone on Waterfall Island
   standard: Central Skyloft - Gossip Stone on Waterfall Island
@@ -1487,6 +1584,16 @@
   pretty: Central Skyloft - Shed Chest
   cryptic: a <r<chest next to a goddess chest>>
 
+- name: Central Skyloft - Bonk Tree Left of Sky Keep Statue
+  standard: Central Skyloft - Bonk Tree Left of Sky Keep Statue
+  pretty: Central Skyloft - Bonk Tree Left of Sky Keep Statue
+  cryptic: <r<disturbing sky wood>> near a <b<waterfall>>
+
+- name: Central Skyloft - Bonk Tree Right of Sky Keep Statue
+  standard: Central Skyloft - Bonk Tree Right of Sky Keep Statue
+  pretty: Central Skyloft - Bonk Tree Right of Sky Keep Statue
+  cryptic: <r<disturbing sky wood>> near a <b<waterfall>>
+
 - name: Central Skyloft - Stamina Fruit between Wooden Planks
   standard: Central Skyloft - Stamina Fruit between Wooden Planks
   pretty: Central Skyloft - Stamina Fruit between Wooden Planks
@@ -1520,17 +1627,17 @@
 - name: Central Skyloft - West Cliff Goddess Chest
   standard: Central Skyloft - West Cliff Goddess Chest
   pretty: Central Skyloft - West Cliff Goddess Chest
-  cryptic: a <ye<goddess cube>> <r<on a great tree's branch>>
+  cryptic: a <ye<goddess cube>> on a <r<great tree's branch>>
 
 - name: Central Skyloft - Shed Goddess Chest
   standard: Central Skyloft - Shed Goddess Chest
   pretty: Central Skyloft - Shed Goddess Chest
-  cryptic: a <ye<goddess cube>> <r<on a slippery slope>>
+  cryptic: a <ye<goddess cube>> on a <r<slippery slope>>
 
 - name: Central Skyloft - Floating Island Goddess Chest
   standard: Central Skyloft - Floating Island Goddess Chest
   pretty: Central Skyloft - Floating Island Goddess Chest
-  cryptic: a <ye<goddess cube>> <r<in a lake>>
+  cryptic: a <ye<goddess cube>> in a <b<lake>>
 
 - name: Central Skyloft - Waterfall Goddess Chest
   standard: Central Skyloft - Waterfall Goddess Chest
@@ -1572,6 +1679,11 @@
   pretty: Central Skyloft - Crystal on Light Tower
   cryptic: a <r<crystal at the base of a tower>>
 
+- name: Skyloft Village - Bonk Tree near River
+  standard: Skyloft Village - Bonk Tree near River
+  pretty: Skyloft Village - Bonk Tree near River
+  cryptic: <r<disturbing sky wood>> in a <b<village>>
+
 - name: Skyloft Village - Mallara's Crystals
   standard: Skyloft Village - Mallara's Crystals
   pretty: Skyloft Village - Mallara's Crystals
@@ -1611,6 +1723,11 @@
   standard: Skyloft Village - Sparrot's Closet
   pretty: Skyloft Village - Sparrot's Closet
   cryptic: snooping through a <r<fortune teller's clothes>>
+
+- name: Skyloft Village - Bonk Sparrot's Valuables
+  standard: Skyloft Village - Bonk Sparrot's Valuables
+  pretty: Skyloft Village - Bonk Sparrot's Valuables
+  cryptic: <r<disturbing a fortune teller's fortune>>
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
   standard: Skyloft Village - Crystal near Pumpkin Patch
@@ -1722,6 +1839,66 @@
   pretty: Bamboo Island Interior - Gossip Stone
   cryptic:
 
+- name: Bamboo Island Interior - Bonk Southwest Sprout
+  standard: Bamboo Island Interior - Bonk Southwest Sprout
+  pretty: Bamboo Island Interior - Bonk Southwest Sprout
+  cryptic: <r<disturbing baby bamboo>>
+
+- name: Bamboo Island Interior - Bonk West Sprout
+  standard: Bamboo Island Interior - Bonk West Sprout
+  pretty: Bamboo Island Interior - Bonk West Sprout
+  cryptic: <r<disturbing baby bamboo>>
+
+- name: Bamboo Island Interior - Bonk East Sprout
+  standard: Bamboo Island Interior - Bonk East Sprout
+  pretty: Bamboo Island Interior - Bonk East Sprout
+  cryptic: <r<disturbing baby bamboo>>
+
+- name: Bamboo Island Interior - Bonk Southeast Sprout
+  standard: Bamboo Island Interior - Bonk Southeast Sprout
+  pretty: Bamboo Island Interior - Bonk Southeast Sprout
+  cryptic: <r<disturbing baby bamboo>>
+
+- name: Bamboo Island - Slingshot Left Lantern
+  standard: Bamboo Island - Slingshot Left Lantern
+  pretty: Bamboo Island - Slingshot Left Lantern
+  cryptic: <r<shooting the light>> of a <g<clean cut building>>
+
+- name: Bamboo Island - Slingshot Middle Lantern
+  standard: Bamboo Island - Slingshot Middle Lantern
+  pretty: Bamboo Island - Slingshot Middle Lantern
+  cryptic: <r<shooting the light>> of a <g<clean cut building>>
+
+- name: Bamboo Island - Slingshot Right Lantern
+  standard: Bamboo Island - Slingshot Right Lantern
+  pretty: Bamboo Island - Slingshot Right Lantern
+  cryptic: <r<shooting the light>> of a <g<clean cut building>>
+
+- name: Lumpy Pumpkin - Slingshot Left Canopy Lantern
+  standard: Lumpy Pumpkin - Slingshot Left Canopy Lantern
+  pretty: Lumpy Pumpkin - Slingshot Left Canopy Lantern
+  cryptic: <r<shooting a sheltered light>>
+
+- name: Lumpy Pumpkin - Slingshot Right Canopy Lantern
+  standard: Lumpy Pumpkin - Slingshot Right Canopy Lantern
+  pretty: Lumpy Pumpkin - Slingshot Right Canopy Lantern
+  cryptic: <r<shooting a sheltered light>>
+
+- name: Lumpy Pumpkin - Slingshot Lantern Left of Main Door
+  standard: Lumpy Pumpkin - Slingshot Lantern Left of Main Door
+  pretty: Lumpy Pumpkin - Slingshot Lantern Left of Main Door
+  cryptic: <r<shooting a welcome light>> at an <r<inn>>
+
+- name: Lumpy Pumpkin - Slingshot Lantern Right of Main Door
+  standard: Lumpy Pumpkin - Slingshot Lantern Right of Main Door
+  pretty: Lumpy Pumpkin - Slingshot Lantern Right of Main Door
+  cryptic: <r<shooting a welcome light>> at an <r<inn>>
+
+- name: Lumpy Pumpkin - Slingshot Lantern next to Back Door
+  standard: Lumpy Pumpkin - Slingshot Lantern next to Back Door
+  pretty: Lumpy Pumpkin - Slingshot Lantern next to Back Door
+  cryptic: <r<shooting the rear light>> at an <r<inn>>
+
 - name: Lumpy Pumpkin - Chandelier
   standard: Lumpy Pumpkin - Chandelier
   pretty: Lumpy Pumpkin - Chandelier
@@ -1775,12 +1952,12 @@
 - name: Beedle's Island - Top Goddess Chest
   standard: Beedle's Island - Top Goddess Chest
   pretty: Beedle's Island - Top Goddess Chest
-  cryptic: a <s<goddess cube>> at the <r<monument to time>> reveals
+  cryptic: a <s<goddess cube>> at the <y+<monument to time>> reveals
 
 - name: Beedle's Island - Cage Goddess Chest
   standard: Beedle's Island - Cage Goddess Chest
   pretty: Beedle's Island - Cage Goddess Chest
-  cryptic: a <s<goddess cube>> <r<atop a temple>>
+  cryptic: a <s<goddess cube>> <g<atop a temple>>
 
 - name: Fun Fun Island - Dodoh's Crystals
   standard: Fun Fun Island - Dodoh's Crystals
@@ -1795,7 +1972,7 @@
 - name: Fun Fun Island - Goddess Chest
   standard: Fun Fun Island - Goddess Chest
   pretty: Fun Fun Island - Goddess Chest
-  cryptic: a <s<goddess cube>> <r<near an ancient purifier>>
+  cryptic: a <s<goddess cube>> <s<near an ancient purifier>>
 
 - name: The Sky - Form a Squirrel Ring above Volcanic Island
   standard: The Sky - Fly in Formation above Volcanic Island
@@ -1840,57 +2017,57 @@
 - name: Island near Bamboo Island - Goddess Chest in Cave
   standard: Island near Bamboo Island - Goddess Chest in Cave
   pretty: Island near Bamboo Island - Goddess Chest in Cave
-  cryptic: a <s<goddess cube>> <r<in a secret desert passageway>>
+  cryptic: a <s<goddess cube>> in a <y<secret desert passageway>>
 
 - name: Northeast Island - Goddess Chest behind Bombable Rocks
   standard: Northeast Island - Goddess Chest behind Bombable Rocks
   pretty: Northeast Island - Goddess Chest behind Bombable Rocks
-  cryptic: a <s<goddess cube>> <r<at a desert landing>>
+  cryptic: a <s<goddess cube>> at a <y<desert landing>>
 
 - name: Northeast Island - Cage Goddess Chest
   standard: Northeast Island - Cage Goddess Chest
   pretty: Northeast Island - Cage Goddess Chest
-  cryptic: a <s<goddess cube>> <r<next to a river of lava>>
+  cryptic: a <s<goddess cube>> next to a <r<river of lava>>
 
 - name: Lumpy Pumpkin - Goddess Chest on Roof
   standard: Lumpy Pumpkin - Goddess Chest on Roof
   pretty: Lumpy Pumpkin - Goddess Chest on Roof
-  cryptic: a <s<goddess cube>> <r<in a spring>>
+  cryptic: a <s<goddess cube>> in a <b<spring>>
 
 - name: Lumpy Pumpkin - Outside Goddess Chest
   standard: Lumpy Pumpkin - Outside Goddess Chest
   pretty: Lumpy Pumpkin - Outside Goddess Chest
-  cryptic: a <s<goddess cube>> <r<near an intrigued individual>>
+  cryptic: a <s<goddess cube>> near an <g<intrigued individual>>
 
 - name: Island Closest to Faron Pillar - Goddess Chest
   standard: Island Closest to Faron Pillar - Goddess Chest
   pretty: Island Closest to Faron Pillar - Goddess Chest
-  cryptic: a <s<goddess cube>> <r<in front of a temple in the forest>>
+  cryptic: a <s<goddess cube>> in front of a <g<temple in the forest>>
 
 - name: Volcanic Island - Outside Goddess Chest
   standard: Volcanic Island - Outside Goddess Chest
   pretty: Volcanic Island - Outside Goddess Chest
-  cryptic: a <s<goddess cube>> <r<among quicksand>>
+  cryptic: a <s<goddess cube>> <y<among quicksand>>
 
 - name: Volcanic Island - Inside Goddess Chest
   standard: Volcanic Island - Inside Goddess Chest
   pretty: Volcanic Island - Inside Goddess Chest
-  cryptic: a <s<goddess cube>> <r<on a great tree's west branch>>
+  cryptic: a <s<goddess cube>> on a <g<great tree's west branch>>
 
 - name: Triple Island - Upper Goddess Chest
   standard: Triple Island - Upper Goddess Chest
   pretty: Triple Island - Upper Goddess Chest
-  cryptic: a <s<goddess cube>> <r<at the entrance to a volcano>>
+  cryptic: a <s<goddess cube>> at the <r<entrance to a volcano>>
 
 - name: Triple Island - Lower Goddess Chest
   standard: Triple Island - Lower Goddess Chest
   pretty: Triple Island - Lower Goddess Chest
-  cryptic: a <s<goddess cube>> <r<near a caged friend>>
+  cryptic: a <s<goddess cube>> near a <y<caged friend>>
 
 - name: Triple Island - Cage Goddess Chest
   standard: Triple Island - Cage Goddess Chest
   pretty: Triple Island - Cage Goddess Chest
-  cryptic: a <s<goddess cube>> <r<in a retreat>>
+  cryptic: a <s<goddess cube>> in a <y<retreat>>
 
 - name: Isle of Songs - Strike Crest with Goddess Sword
   standard: Isle of Songs - Strike Crest with Goddess Sword
@@ -1915,12 +2092,12 @@
 - name: Isle of Songs - Lower Goddess Chest
   standard: Isle of Songs - Lower Goddess Chest
   pretty: Isle of Songs - Lower Goddess Chest
-  cryptic: a <s<goddess cube>> <r<in an underground cave>>
+  cryptic: a <s<goddess cube>> in a <r<underground cave>>
 
 - name: The Thunderhead - Song from Levias
   standard: The Thunderhead - Song from Levias
   pretty: The Thunderhead - Song from Levias
-  cryptic: the <r<ancient whale within a raging storm>>
+  cryptic: the <r<ancient whale>> within a <s<raging storm>>
 
 - name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
   standard: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
@@ -1930,7 +2107,7 @@
 - name: Bug Heaven - Goddess Chest
   standard: Bug Heaven - Goddess Chest
   pretty: Bug Heaven - Goddess Chest
-  cryptic: a <s<goddess cube>> <r<near a volcano's waterfall>>
+  cryptic: a <s<goddess cube>> near a <r<volcano's waterfall>>
 
 - name: Bug Heaven - Stamina Fruit near Start
   standard: Bug Heaven - Stamina Fruit near Start
@@ -1960,7 +2137,7 @@
 - name: Thunderhead East Island - Chest
   standard: Thunderhead East Island - Chest
   pretty: Thunderhead East Island - Chest
-  cryptic: a <r<chest within a raging storm>>
+  cryptic: a <r<chest>> within a <s<raging storm>>
 
 - name: Thunderhead East Island - Goddess Chest
   standard: Thunderhead East Island - Goddess Chest
@@ -1975,7 +2152,32 @@
 - name: Mogma Mitts Island - Second Goddess Chest
   standard: Mogma Mitts Island - Second Goddess Chest
   pretty: Mogma Mitts Island - Second Goddess Chest
-  cryptic: a <s<goddess cube>> <r<in a desert gorge>>
+  cryptic: a <s<goddess cube>> in a <ye<desert gorge>>
+
+- name: Sealed Grounds - Bonk Wall between Pillars near Bird Statue
+  standard: Sealed Grounds - Bonk Wall between Pillars near Bird Statue
+  pretty: Sealed Grounds - Bonk Wall between Pillars near Bird Statue
+  cryptic: <r<disturbing the pillars>> of a <g<sealed bird>>
+
+- name: Sealed Grounds - Bonk Wall Drawing of Hylia Raising Skyloft
+  standard: Sealed Grounds - Bonk Wall Drawing of Hylia Raising Skyloft
+  pretty: Sealed Grounds - Bonk Wall Drawing of Hylia Raising Skyloft
+  cryptic: <r<disturbing a mural Hylia>>
+
+- name: Sealed Grounds - Slingshot Sun in Wall Drawing of Worshippers
+  standard: Sealed Grounds - Slingshot Sun in Wall Drawing of Worshippers
+  pretty: Sealed Grounds - Slingshot Sun in Wall Drawing of Worshippers
+  cryptic: <r<shooting a painted sun>>
+
+- name: Sealed Grounds - Slingshot Mouth in Wall Drawing of Beast
+  standard: Sealed Grounds - Slingshot Mouth in Wall Drawing of Beast
+  pretty: Sealed Grounds - Slingshot Mouth in Wall Drawing of Beast
+  cryptic: <r<shooting a giant maw>>
+
+- name: Sealed Grounds - Bonk Rocks below Sealed Temple Entrance
+  standard: Sealed Grounds - Bonk Rocks below Sealed Temple Entrance
+  pretty: Sealed Grounds - Bonk Rocks below Sealed Temple Entrance
+  cryptic: <r<disturbing the stone>> beneath a <g<secure temple>>
 
 - name: Sealed Grounds - Spiral Stamina Fruit 1
   standard: Sealed Grounds - Spiral Stamina Fruit 1
@@ -2107,10 +2309,50 @@
   pretty: Sealed Temple - Chest
   cryptic: a <r<chest in an ancient building>>
 
-- name: Sealed Temple - Song from Impa
-  standard: Sealed Temple - Song from Impa
-  pretty: Sealed Temple - Song from Impa
-  cryptic: the <r<old one's song>>
+- name: Sealed Temple - Song from The Old One
+  standard: Sealed Temple - Song from The Old One
+  pretty: Sealed Temple - Song from The Old One
+  cryptic: <r<Impa's song>>
+
+- name: Sealed Temple - Slingshot above Doors to Sealed Grounds Whirlpool
+  standard: Sealed Temple - Slingshot above Doors to Sealed Grounds Whirlpool
+  pretty: Sealed Temple - Slingshot above Doors to Sealed Grounds Whirlpool
+  cryptic: <r<shooting sealed doors>>
+
+- name: Sealed Temple - Slingshot above Doors to Behind the Temple
+  standard: Sealed Temple - Slingshot above Doors to Behind the Temple
+  pretty: Sealed Temple - Slingshot above Doors to Behind the Temple
+  cryptic: <r<shooting sealed doors>>
+
+- name: Sealed Temple - Slingshot above Large Doors behind The Old One
+  standard: Sealed Temple - Slingshot above Large Doors behind The Old One
+  pretty: Sealed Temple - Slingshot above Large Doors behind The Old One
+  cryptic: <r<shooting sealed doors>>
+
+- name: Sealed Temple - Blow Triforce Symbol on Southeast Archway behind Bird Statue
+  standard: Sealed Temple - Blow Triforce Symbol on Southeast Archway behind Bird Statue
+  pretty: Sealed Temple - Blow Triforce Symbol on Southeast Archway behind Bird Statue
+  cryptic: <r<dusting a painted power>> in a <g<secure temple>>
+
+- name: Sealed Temple - Blow Triforce Symbol on Northeast Archway behind Bird Statue
+  standard: Sealed Temple - Blow Triforce Symbol on Northeast Archway behind Bird Statue
+  pretty: Sealed Temple - Blow Triforce Symbol on Northeast Archway behind Bird Statue
+  cryptic: <r<dusting a painted power>> in a <g<secure temple>>
+
+- name: Sealed Temple - Blow Triforce Symbol on Southwest Archway behind Bird Statue
+  standard: Sealed Temple - Blow Triforce Symbol on Southwest Archway behind Bird Statue
+  pretty: Sealed Temple - Blow Triforce Symbol on Southwest Archway behind Bird Statue
+  cryptic: <r<dusting a painted power>> in a <g<secure temple>>
+
+- name: Sealed Temple - Blow Triforce Symbol on Northwest Archway behind Bird Statue
+  standard: Sealed Temple - Blow Triforce Symbol on Northwest Archway behind Bird Statue
+  pretty: Sealed Temple - Blow Triforce Symbol on Northwest Archway behind Bird Statue
+  cryptic: <r<dusting a painted power>> in a <g<secure temple>>
+
+- name: Sealed Grounds - Slingshot above Doors Behind the Temple
+  standard: Sealed Grounds - Slingshot above Doors Behind the Temple
+  pretty: Sealed Grounds - Slingshot above Doors Behind the Temple
+  cryptic: <r<shooting the doors behind a temple>>
 
 - name: Sealed Grounds - Gorko's Goddess Wall Reward
   standard: Sealed Grounds - Gorko's Goddess Wall Reward
@@ -2122,6 +2364,31 @@
   pretty: Sealed Grounds - Gossip Stone
   cryptic:
 
+- name: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
+  standard: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
+  pretty: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
+  cryptic: <r<dusting the plantlife>> behind a <g<secure temple>>
+
+- name: Sealed Grounds - Slingshot Behind the Temple Gates Southwest Side
+  standard: Sealed Grounds - Slingshot Behind the Temple Gates Southwest Side
+  pretty: Sealed Grounds - Slingshot Behind the Temple Gates Southwest Side
+  cryptic: <r<shooting the gate>> behind a <g<secure temple>>
+
+- name: Sealed Grounds - Slingshot Behind the Temple Gates Northeast Side
+  standard: Sealed Grounds - Slingshot Behind the Temple Gates Northeast Side
+  pretty: Sealed Grounds - Slingshot Behind the Temple Gates Northeast Side
+  cryptic: <r<shooting the gate>> behind a <g<secure temple>>
+
+- name: Sealed Grounds - Bonk Large West Rock before Faron Woods
+  standard: Sealed Grounds - Bonk Large West Rock before Faron Woods
+  pretty: Sealed Grounds - Bonk Large West Rock before Faron Woods
+  cryptic: <r<disturbing a big rock>> behind a <g<secure temple>>
+
+- name: Sealed Grounds - Bonk Small East Rock before Faron Woods
+  standard: Sealed Grounds - Bonk Small East Rock before Faron Woods
+  pretty: Sealed Grounds - Bonk Small East Rock before Faron Woods
+  cryptic: <r<disturbing a small rock>> behind a <g<secure temple>>
+
 - name: Hylia's Temple - Zelda's Blessing
   standard: Hylia's Temple - Zelda's Blessing
   pretty: Hylia's Temple - Zelda's Blessing
@@ -2132,6 +2399,26 @@
   pretty: Hylia's Realm - Defeat Demise
   cryptic: the <r<eradication of the demon king>>
   goal_name: Demise
+
+- name: Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing
+  standard: Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing
+  pretty: Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing
+  cryptic: <r<disturbing hollow tubes>> in an <g<open space>>
+
+- name: Faron Woods - Slingshot Archway after Kikwi in Clearing
+  standard: Faron Woods - Slingshot Archway after Kikwi in Clearing
+  pretty: Faron Woods - Slingshot Archway after Kikwi in Clearing
+  cryptic: <r<shooting a curve>> in an <g<open space>>
+
+- name: Faron Woods - Slingshot Archway before Mushroom Grove
+  standard: Faron Woods - Slingshot Archway before Mushroom Grove
+  pretty: Faron Woods - Slingshot Archway before Mushroom Grove
+  cryptic: <r<shooting a curve overlooking fungi>>
+
+- name: Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue
+  standard: Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue
+  pretty: Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue
+  cryptic: <r<disturbing fungi in the woods>>
 
 - name: Faron Woods - Item behind Bombable Rock
   standard: Faron Woods - Item behind Bombable Rock
@@ -2158,15 +2445,70 @@
   pretty: Faron Woods - Rupee on Hollow Tree Branch
   cryptic: an <r<item on a tree branch>>
 
+- name: Faron Woods - Bonk Tree next to Shortcut Rope to Floria Gates
+  standard: Faron Woods - Bonk Tree next to Shortcut Rope to Floria Gates
+  pretty: Faron Woods - Bonk Tree next to Shortcut Rope to Floria Gates
+  cryptic: <r<disturbing a tree>> near a <b<watery door>>
+
+- name: Faron Woods - Bonk Bamboo Blockade before Floria Gates
+  standard: Faron Woods - Bonk Bamboo Blockade before Floria Gates
+  pretty: Faron Woods - Bonk Bamboo Blockade before Floria Gates
+  cryptic: <r<disturbing hollow tubes>> near a <b<watery door>>
+
+- name: Faron Woods - Slingshot Floria Gates Archway
+  standard: Faron Woods - Slingshot Floria Gates Archway
+  pretty: Faron Woods - Slingshot Floria Gates Archway
+  cryptic: <r<shoorting>> a <b<watery door>>
+
 - name: Faron Woods - Rupee on Platform near Floria Door
   standard: Faron Woods - Rupee on Platform near Floria Door
   pretty: Faron Woods - Rupee on Platform near Floria Door
   cryptic: an <r<item on a far away ledge>>
 
+- name: Faron Woods - Bonk Raised Tree near Crooked Archway
+  standard: Faron Woods - Bonk Raised Tree near Crooked Archway
+  pretty: Faron Woods - Bonk Raised Tree near Crooked Archway
+  cryptic: <r<disturbing a high tree>> near <g<tilted stone>>
+
+- name: Faron Woods - Slingshot Main Viewing Platform Archway
+  standard: Faron Woods - Slingshot Main Viewing Platform Archway
+  pretty: Faron Woods - Slingshot Main Viewing Platform Archway
+  cryptic: <r<shooting a lookout point>>
+
+- name: Faron Woods - Blow Farore's Symbol on Viewing Platform
+  standard: Faron Woods - Blow Farore's Symbol on Viewing Platform
+  pretty: Faron Woods - Blow Farore's Symbol on Viewing Platform
+  cryptic: <r<dusting an ancient symbol>>
+
+- name: Faron Woods - Bonk Archway before Deep Woods
+  standard: Faron Woods - Bonk Archway before Deep Woods
+  pretty: Faron Woods - Bonk Archway before Deep Woods
+  cryptic: <r<disturbing a curve>> to a <g<deep place>>
+
+- name: Faron Woods - Bonk Tall Blue Northern Mushroom
+  standard: Faron Woods - Bonk Tall Blue Northern Mushroom
+  pretty: Faron Woods - Bonk Tall Blue Northern Mushroom
+  cryptic: <r<disturbing a fungi>> the <b<color of sky>>
+
+- name: Faron Woods - Slingshot Northwest Great Tree Trunk
+  standard: Faron Woods - Slingshot Northwest Great Tree Trunk
+  pretty: Faron Woods - Slingshot Northwest Great Tree Trunk
+  cryptic: <r<shooting ancient wood>>
+
 - name: Faron Woods - Chest behind Bombable Rocks near Erla
   standard: Faron Woods - Chest behind Bombable Rocks near Erla
   pretty: Faron Woods - Chest behind Bombable Rocks near Erla
   cryptic: a <r<chest behind some forest rocks>>
+
+- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1
+  standard: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1
+  pretty: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1
+  cryptic: <r<disturbing a tree>> above the <g<forest entrance>>
+
+- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2
+  standard: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2
+  pretty: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2
+  cryptic: <r<disturbing a tree>> above the <g<forest entrance>>
 
 - name: Faron Woods - Rupee on Great Tree North Branch
   standard: Faron Woods - Rupee on Great Tree North Branch
@@ -2177,6 +2519,11 @@
   standard: Faron Woods - Rupee on Great Tree West Branch
   pretty: Faron Woods - Rupee on Great Tree West Branch
   cryptic: an <r<item on a high up tree branch>>
+
+- name: Faron Woods - Blow Wooden Spiral near Goddess Cube near Rope
+  standard: Faron Woods - Blow Wooden Spiral near Goddess Cube near Rope
+  pretty: Faron Woods - Blow Wooden Spiral near Goddess Cube near Rope
+  cryptic: <r<dusting an ancient wooden swirl>>
 
 - name: Faron Woods - Stamina Fruit on Vines below First Log
   standard: Faron Woods - Stamina Fruit on Vines below First Log
@@ -2218,20 +2565,100 @@
   pretty: Faron Woods - Goddess Cube on East Great Tree with Rope
   cryptic:
 
+- name: Great Tree - Blow Small Yellow Mushroom after Vines
+  standard: Great Tree - Blow Small Yellow Mushroom after Vines
+  pretty: Great Tree - Blow Small Yellow Mushroom after Vines
+  cryptic: <r<dusting a young fungi>> inside a <g<giant tree>>
+
+- name: Great Tree - Blow Large Yellow Mushroom after Vines
+  standard: Great Tree - Blow Large Yellow Mushroom after Vines
+  pretty: Great Tree - Blow Large Yellow Mushroom after Vines
+  cryptic: <r<dusting a big fungi>> inside a <g<giant tree>>
+
+- name: Great Tree - Blow Red Mushroom after Swinging Platforms West
+  standard: Great Tree - Blow Red Mushroom after Swinging Platforms West
+  pretty: Great Tree - Blow Red Mushroom after Swinging Platforms West
+  cryptic: <r<dusting an angry fungi>> inside a <g<giant tree>>
+
+- name: Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
+  standard: Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
+  pretty: Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
+  cryptic: <r<dusting a sad fungi>> inside a <g<giant tree>>
+
 - name: Great Tree - Chest
   standard: Great Tree - Chest
   pretty: Great Tree - Chest
-  cryptic: climbing inside an <r<old hermit's home>>
+  cryptic: finding a <r<hidden treasure>> inside a <g<giant tree>>
+
+- name: Great Tree - Blow Tree Spiral on Highest Pathway
+  standard: Great Tree - Blow Tree Spiral on Highest Pathway
+  pretty: Great Tree - Blow Tree Spiral on Highest Pathway
+  cryptic: <r<dusting a wooden swirl>> inside a <g<giant tree>>
+
+- name: Deep Woods - Blow Flowers at Entrance
+  standard: Deep Woods - Blow Flowers at Entrance
+  pretty: Deep Woods - Blow Flowers at Entrance
+  cryptic: <r<dusting flora>> in a <g<deep forest>>
+
+- name: Deep Woods - Stamina Fruit
+  standard: Deep Woods - Stamina Fruit
+  pretty: Deep Woods - Stamina Fruit
+  cryptic: a <r<fruit deep in a forest>>
+
+- name: Deep Woods - Bonk Tree with Rope
+  standard: Deep Woods - Bonk Tree with Rope
+  pretty: Deep Woods - Bonk Tree with Rope
+  cryptic: <r<disturbing a tarzan tree>> in a <g<deep forest>>
 
 - name: Deep Woods - Chest
   standard: Deep Woods - Chest
   pretty: Deep Woods - Chest
   cryptic: a <r<chest deep in a forest>>
 
-- name: Deep Woods - Stamina Fruit
-  standard: Deep Woods - Stamina Fruit
-  pretty: Deep Woods - Stamina Fruit
-  cryptic: a <r<fruit deep in a forest>>
+- name: Deep Woods - Bonk Tree near Gossip Stone 1
+  standard: Deep Woods - Bonk Tree near Gossip Stone 1
+  pretty: Deep Woods - Bonk Tree near Gossip Stone 1
+  cryptic: <r<disturbing a tree>> near <g<idle gossip>>
+
+- name: Deep Woods - Bonk Tree near Gossip Stone 2
+  standard: Deep Woods - Bonk Tree near Gossip Stone 2
+  pretty: Deep Woods - Bonk Tree near Gossip Stone 2
+  cryptic: <r<disturbing a tree>> near <g<idle gossip>>
+
+- name: Deep Woods - Bonk East Pillar before Temple
+  standard: Deep Woods - Bonk East Pillar before Temple
+  pretty: Deep Woods - Bonk East Pillar before Temple
+  cryptic: <r<disturbing a tall stone>> before a <g<temple in the forest>>
+
+- name: Deep Woods - Bonk Tree East of Temple 1
+  standard: Deep Woods - Bonk Tree East of Temple 1
+  pretty: Deep Woods - Bonk Tree East of Temple 1
+  cryptic: <r<disturbing a tree>> near a <g<temple in the forest>>
+
+- name: Deep Woods - Bonk Tree East of Temple 2
+  standard: Deep Woods - Bonk Tree East of Temple 2
+  pretty: Deep Woods - Bonk Tree East of Temple 2
+  cryptic: <r<disturbing a tree>> near a <g<temple in the forest>>
+
+- name: Deep Woods - Blow Mixed Flowers above East Temple Stairs
+  standard: Deep Woods - Blow Mixed Flowers above East Temple Stairs
+  pretty: Deep Woods - Blow Mixed Flowers above East Temple Stairs
+  cryptic: <r<dusting some flora>> growing on a <g<temple in the forest>>
+
+- name: Deep Woods - Bonk Fence West of Temple
+  standard: Deep Woods - Bonk Fence West of Temple
+  pretty: Deep Woods - Bonk Fence West of Temple
+  cryptic: <r<disturbing iron bars>> near a <g<temple in the forest>>
+
+- name: Deep Woods - Slingshot Left Temple Door Frame
+  standard: Deep Woods - Slingshot Left Temple Door Frame
+  pretty: Deep Woods - Slingshot Left Temple Door Frame
+  cryptic: <r<shooting an entrance>> to a <g<temple in the forest>>
+
+- name: Deep Woods - Slingshot Right Temple Door Frame
+  standard: Deep Woods - Slingshot Right Temple Door Frame
+  pretty: Deep Woods - Slingshot Right Temple Door Frame
+  cryptic: <r<shooting an entrance>> to a <g<temple in the forest>>
 
 - name: Deep Woods - Gossip Stone
   standard: Deep Woods - Gossip Stone
@@ -2307,6 +2734,46 @@
   standard: Floria Waterfall - South Rupee in underwater Grass
   pretty: Floria Waterfall - South Rupee in underwater Grass
   cryptic: a <r<soggy rupee outside a temple>>
+
+- name: Floria Waterfall - Bonk North Pillar near Bird Statue
+  standard: Floria Waterfall - Bonk North Pillar near Bird Statue
+  pretty: Floria Waterfall - Bonk North Pillar near Bird Statue
+  cryptic: <r<disturbing a post>> in a <b<soggy place>>
+
+- name: Floria Waterfall - Bonk South Pillar near Bird Statue
+  standard: Floria Waterfall - Bonk South Pillar near Bird Statue
+  pretty: Floria Waterfall - Bonk South Pillar near Bird Statue
+  cryptic: <r<disturbing a post>> in a <b<soggy place>>
+
+- name: Floria Waterfall - Slingshot Broken Spike on Bridge
+  standard: Floria Waterfall - Slingshot Broken Spike on Bridge
+  pretty: Floria Waterfall - Slingshot Broken Spike on Bridge
+  cryptic: <r<shooting a crumbled stone>> in a <b<soggy place>>
+
+- name: Floria Waterfall - Slingshot Northwest Spike on Bridge
+  standard: Floria Waterfall - Slingshot Northwest Spike on Bridge
+  pretty: Floria Waterfall - Slingshot Northwest Spike on Bridge
+  cryptic: <r<shooting a stone>> in a <b<soggy place>>
+
+- name: Floria Waterfall - Slingshot Left Cistern Door Frame
+  standard: Floria Waterfall - Slingshot Left Cistern Door Frame
+  pretty: Floria Waterfall - Slingshot Left Cistern Door Frame
+  cryptic: <r<shooting a soggy entrance>>
+
+- name: Floria Waterfall - Slingshot Right Cistern Door Frame
+  standard: Floria Waterfall - Slingshot Right Cistern Door Frame
+  pretty: Floria Waterfall - Slingshot Right Cistern Door Frame
+  cryptic: <r<shooting a soggy entrance>>
+
+- name: Floria Waterfall - Slingshot Left Cistern Eye
+  standard: Floria Waterfall - Slingshot Left Cistern Eye
+  pretty: Floria Waterfall - Slingshot Left Cistern Eye
+  cryptic: <r<shooting a soggy eye>>
+
+- name: Floria Waterfall - Slingshot Right Cistern Eye
+  standard: Floria Waterfall - Slingshot Right Cistern Eye
+  pretty: Floria Waterfall - Slingshot Right Cistern Eye
+  cryptic: <r<shooting a soggy eye>>
 
 - name: Floria Waterfall - Gossip Stone
   standard: Floria Waterfall - Gossip Stone
@@ -2437,6 +2904,21 @@
   standard: Eldin Volcano - Rupee in Crawlspace in First Room
   pretty: Eldin Volcano - Rupee in Crawlspace in First Room
   cryptic: a <r<crawlspace rupee near a volcano>>
+
+- name: Eldin Volcano - Slingshot Ceiling in First Room
+  standard: Eldin Volcano - Slingshot Ceiling in First Room
+  pretty: Eldin Volcano - Slingshot Ceiling in First Room
+  cryptic: <r<shooting a volcanic ceiling>>
+
+- name: Eldin Volcano - Bonk Hammer in Hut near Cliff
+  standard: Eldin Volcano - Bonk Hammer in Hut near Cliff
+  pretty: Eldin Volcano - Bonk Hammer in Hut near Cliff
+  cryptic: <r<disturbing a hammer>>
+
+- name: Eldin Volcano - Blow Cloth above Hut near Cliff
+  standard: Eldin Volcano - Blow Cloth above Hut near Cliff
+  pretty: Eldin Volcano - Blow Cloth above Hut near Cliff
+  cryptic: <r<dusting fabric above a hut>>
 
 - name: Eldin Volcano - Underground Rupee in First Room 1
   standard: Eldin Volcano - Underground Rupee in First Room 1
@@ -2638,6 +3120,91 @@
   pretty: Thrill Digger Cave - Gossip Stone
   cryptic:
 
+- name: Thrill Digger Cave - Slingshot Left Blue Crystal 1
+  standard: Thrill Digger Cave - Slingshot Left Blue Crystal 1
+  pretty: Thrill Digger Cave - Slingshot Left Blue Crystal 1
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Green Crystal 1
+  standard: Thrill Digger Cave - Slingshot Left Green Crystal 1
+  pretty: Thrill Digger Cave - Slingshot Left Green Crystal 1
+  cryptic: <r<shooting a green gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Blue Crystal 2
+  standard: Thrill Digger Cave - Slingshot Left Blue Crystal 2
+  pretty: Thrill Digger Cave - Slingshot Left Blue Crystal 2
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Blue Crystal 3
+  standard: Thrill Digger Cave - Slingshot Left Blue Crystal 3
+  pretty: Thrill Digger Cave - Slingshot Left Blue Crystal 3
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Black Crystal
+  standard: Thrill Digger Cave - Slingshot Left Black Crystal
+  pretty: Thrill Digger Cave - Slingshot Left Black Crystal
+  cryptic: <r<shooting a black gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Green Crystal 2
+  standard: Thrill Digger Cave - Slingshot Left Green Crystal 2
+  pretty: Thrill Digger Cave - Slingshot Left Green Crystal 2
+  cryptic: <r<shooting a green gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 1
+  standard: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 1
+  pretty: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 1
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 2
+  standard: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 2
+  pretty: Thrill Digger Cave - Slingshot Left Pillar Blue Crystal 2
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Left Pillar Black Crystal
+  standard: Thrill Digger Cave - Slingshot Left Pillar Black Crystal
+  pretty: Thrill Digger Cave - Slingshot Left Pillar Black Crystal
+  cryptic: <r<shooting a black gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Back Blue Crystal 1
+  standard: Thrill Digger Cave - Slingshot Back Blue Crystal 1
+  pretty: Thrill Digger Cave - Slingshot Back Blue Crystal 1
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Back Blue Crystal 2
+  standard: Thrill Digger Cave - Slingshot Back Blue Crystal 2
+  pretty: Thrill Digger Cave - Slingshot Back Blue Crystal 2
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Back Blue Crystal 3
+  standard: Thrill Digger Cave - Slingshot Back Blue Crystal 3
+  pretty: Thrill Digger Cave - Slingshot Back Blue Crystal 3
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 1
+  standard: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 1
+  pretty: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 1
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 2
+  standard: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 2
+  pretty: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 2
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Green Crystal
+  standard: Thrill Digger Cave - Slingshot Right Pillar Green Crystal
+  pretty: Thrill Digger Cave - Slingshot Right Pillar Green Crystal
+  cryptic: <r<shooting a green gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 3
+  standard: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 3
+  pretty: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 3
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
+- name: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4
+  standard: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4
+  pretty: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4
+  cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
+
 - name: Eldin Volcano - Gossip Stone next to Earth Temple
   standard: Eldin Volcano - Gossip Stone next to Earth Temple
   pretty: Eldin Volcano - Gossip Stone next to Earth Temple
@@ -2723,6 +3290,26 @@
   pretty: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
   cryptic:
 
+- name: Eldin Volcano - Blow Closest Torch West of Earth Temple
+  standard: Eldin Volcano - Blow Closest Torch West of Earth Temple
+  pretty: Eldin Volcano - Blow Closest Torch West of Earth Temple
+  cryptic: <r<dusting a flame>> before a <r<temple>>
+
+- name: Eldin Volcano - Blow Farthest Torch West of Earth Temple
+  standard: Eldin Volcano - Blow Farthest Torch West of Earth Temple
+  pretty: Eldin Volcano - Blow Farthest Torch West of Earth Temple
+  cryptic: <r<dusting a flame>> before a <r<temple>>
+
+- name: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
+  standard: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
+  pretty: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
+  cryptic: <r<shooting a crimson circle>>
+
+- name: Eldin Volcano - Bonk Campfire East of Earth Temple
+  standard: Eldin Volcano - Bonk Campfire East of Earth Temple
+  pretty: Eldin Volcano - Bonk Campfire East of Earth Temple
+  cryptic: <r<disturbing a stove>> atop a <r<volcano>>
+
 - name: Eldin Volcano - Goddess Cube on Sand Slide
   standard: Eldin Volcano - Goddess Cube on Sand Slide
   pretty: Eldin Volcano - Goddess Cube on Sand Slide
@@ -2797,7 +3384,6 @@
   standard: Eldin Volcano - Right Rupee on Sand Slide 6
   pretty: Eldin Volcano - Right Rupee on Sand Slide 6
   cryptic: a <r<rupee on a sandy slope>>
-
 
 - name: Eldin Volcano - Stamina Fruit in Rising Lava Room
   standard: Eldin Volcano - Stamina Fruit in Rising Lava Room
@@ -2924,6 +3510,36 @@
   pretty: Mogma Turf - Defeat Bokoblins
   cryptic: helping <r<reclaim the mogmas' territory>>
 
+- name: Mogma Turf - Bonk Campfire above Sand Slide
+  standard: Mogma Turf - Bonk Campfire above Sand Slide
+  pretty: Mogma Turf - Bonk Campfire above Sand Slide
+  cryptic: <r<disturbing a stove in claimed territory>>
+
+- name: Mogma Turf - Slingshot Skull on Hut above Sand Slide
+  standard: Mogma Turf - Slingshot Skull on Hut above Sand Slide
+  pretty: Mogma Turf - Slingshot Skull on Hut above Sand Slide
+  cryptic: <r<shooting a skull in claimed territory>>
+
+- name: Mogma Turf - Bonk Dusty Bag in Right Hut above Sand Slide
+  standard: Mogma Turf - Bonk Dusty Bag in Right Hut above Sand Slide
+  pretty: Mogma Turf - Bonk Dusty Bag in Right Hut above Sand Slide
+  cryptic: <r<disturbing a hanging sack in claimed territory>>
+
+- name: Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide
+  standard: Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide
+  pretty: Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide
+  cryptic: <r<disturbing a hanging sack in claimed territory>>
+
+- name: Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide
+  standard: Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide
+  pretty: Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide
+  cryptic: <r<disturbing a hanging sack in claimed territory>>
+
+- name: Mogma Turf - Bonk Hammer in Left Hut above Sand Slide
+  standard: Mogma Turf - Bonk Hammer in Left Hut above Sand Slide
+  pretty: Mogma Turf - Bonk Hammer in Left Hut above Sand Slide
+  cryptic: <r<disturbing a hammer in claimed territory>>
+
 - name: Mogma Turf - Sand Slide Chest
   standard: Mogma Turf - Sand Slide Chest
   pretty: Mogma Turf - Sand Slide Chest
@@ -2943,6 +3559,11 @@
   standard: Mogma Turf - Goddess Cube
   pretty: Mogma Turf - Goddess Cube
   cryptic:
+
+- name: Volcano Summit - Bonk Waterfall
+  standard: Volcano Summit - Bonk Waterfall
+  pretty: Volcano Summit - Bonk Waterfall
+  cryptic: <r<disturbing a waterfall at the summit>>
 
 - name: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
   standard: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
@@ -2984,6 +3605,21 @@
   pretty: Volcano Summit - Goddess Cube at Summit Waterfall
   cryptic:
 
+- name: Volcano Summit - Blow Torch West of Fire Sanctuary
+  standard: Volcano Summit - Blow Torch West of Fire Sanctuary
+  pretty: Volcano Summit - Blow Torch West of Fire Sanctuary
+  cryptic: <r<dusting a flame>> in the <r<wall at the summit>>
+
+- name: Volcano Summit - Blow Torch East of Fire Sanctuary
+  standard: Volcano Summit - Blow Torch East of Fire Sanctuary
+  pretty: Volcano Summit - Blow Torch East of Fire Sanctuary
+  cryptic: <r<dusting a flame>> in the <r<wall at the summit>>
+
+- name: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
+  standard: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
+  pretty: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
+  cryptic: <r<shooting a large frog>>
+
 - name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
   standard: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
   pretty: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
@@ -2999,15 +3635,30 @@
   pretty: Bokoblin Base - Chest near Bone Bridge
   cryptic: a <r<captured chest near a bridge of bones>>
 
+- name: Bokoblin Base - Bonk Hammer in Hut near Cliff
+  standard: Bokoblin Base - Bonk Hammer in Hut near Cliff
+  pretty: Bokoblin Base - Bonk Hammer in Hut near Cliff
+  cryptic: <r<disturbing a hammer>> in <r<bokoblin turf>>
+
+- name: Bokoblin Base - Blow Cloth above Hut near Cliff
+  standard: Bokoblin Base - Blow Cloth above Hut near Cliff
+  pretty: Bokoblin Base - Blow Cloth above Hut near Cliff
+  cryptic: <r<dusting fabric above a hut>> in <r<bokoblin turf>>
+
 - name: Bokoblin Base - Chest on Cliff
   standard: Bokoblin Base - Chest on Cliff
   pretty: Bokoblin Base - Chest on Cliff
-  cryptic: a <r<captured chest on a clif>>
+  cryptic: a <r<captured chest on a cliff>>
 
 - name: Bokoblin Base - Chest near Drawbridge
   standard: Bokoblin Base - Chest near Drawbridge
   pretty: Bokoblin Base - Chest near Drawbridge
   cryptic: a <r<captured chest near a drawbridge>>
+
+- name: Bokoblin Base - Bonk Campfire East of Earth Temple
+  standard: Bokoblin Base - Bonk Campfire East of Earth Temple
+  pretty: Bokoblin Base - Bonk Campfire East of Earth Temple
+  cryptic: <r<disturbing a stove>> atop a <r<claimed volcano>>
 
 - name: Bokoblin Base - Chest East of Earth Temple Entrance
   standard: Bokoblin Base - Chest East of Earth Temple Entrance
@@ -3039,14 +3690,39 @@
   pretty: Bokoblin Base - Fire Dragon's Reward
   cryptic: <r<hearing a song atop the great mountain>>
 
+- name: Lanayru Mine - Slingshot Left Eye of First Landing Robot
+  standard: Lanayru Mine - Slingshot Left Eye of First Landing Robot
+  pretty: Lanayru Mine - Slingshot Left Eye of First Landing Robot
+  cryptic: <r<shooting the eye>> of a <y<welcoming robot>>
+
+- name: Lanayru Mine - Slingshot Right Eye of First Landing Robot
+  standard: Lanayru Mine - Slingshot Right Eye of First Landing Robot
+  pretty: Lanayru Mine - Slingshot Right Eye of First Landing Robot
+  cryptic: <r<shooting the eye>> of a <y<welcoming robot>>
+
 - name: Lanayru Mine - Chest behind First Landing
   standard: Lanayru Mine - Chest behind First Landing
   pretty: Lanayru Mine - Chest behind First Landing
   cryptic: a <r<chest at the entry to a mine>>
 
-- name: Lanayru Mine - Chest near First Timeshift Stone
-  standard: Lanayru Mine - Chest near First Timeshift Stone
-  pretty: Lanayru Mine - Chest near First Timeshift Stone
+- name: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
+  cryptic: <r<dusting a worker>> near a <y<large time distortion>>
+
+- name: Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone
+  cryptic: <r<dusting a worker>> near a <y<large time distortion>>
+
+- name: Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone
+  cryptic: <r<dusting a worker>> near a <y<large time distortion>>
+
+- name: Lanayru Mine - Chest in Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Chest in Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Chest in Side Room near First Timeshift Stone
   cryptic: a <r<chest passed an automatic door>>
 
 - name: Lanayru Mine - Rupee on Southeast Conveyor 1
@@ -3069,6 +3745,26 @@
   pretty: Lanayru Mine - Rupee on Southwest Conveyor 2
   cryptic: a <r<high rupee in a mine>>
 
+- name: Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway
+  standard: Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway
+  pretty: Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway
+  cryptic: <r<shooting the guardian>> of a <y<large time distortion>>
+
+- name: Lanayru Mine - Slingshot Right Robot Eye above First Minecart Doorway
+  standard: Lanayru Mine - Slingshot Right Robot Eye above First Minecart Doorway
+  pretty: Lanayru Mine - Slingshot Right Robot Eye above First Minecart Doorway
+  cryptic: <r<shooting the guardian>> of a <y<large time distortion>>
+
+- name: Lanayru Mine - Blow Left Digging Robot after First Minecart Ride
+  standard: Lanayru Mine - Blow Left Digging Robot after First Minecart Ride
+  pretty: Lanayru Mine - Blow Left Digging Robot after First Minecart Ride
+  cryptic: <r<dusting a worker>> before a <y<sandy tunnel>>
+
+- name: Lanayru Mine - Blow Right Digging Robot after First Minecart Ride
+  standard: Lanayru Mine - Blow Right Digging Robot after First Minecart Ride
+  pretty: Lanayru Mine - Blow Right Digging Robot after First Minecart Ride
+  cryptic: <r<dusting a worker>> before a <y<sandy tunnel>>
+
 - name: Lanayru Mine - Chest behind Northeast Statue
   standard: Lanayru Mine - Chest behind Northeast Statue
   pretty: Lanayru Mine - Chest behind Northeast Statue
@@ -3083,6 +3779,16 @@
   standard: Lanayru Mine - Rupee behind Southwest Statue
   pretty: Lanayru Mine - Rupee behind Southwest Statue
   cryptic: a <r<rupee hidden behind a falling statue>>
+
+- name: Lanayru Mine - Blow Digging Robot near Mine Exit
+  standard: Lanayru Mine - Blow Digging Robot near Mine Exit
+  pretty: Lanayru Mine - Blow Digging Robot near Mine Exit
+  cryptic: <r<dusting a worker>> near <y<rubble>>
+
+- name: Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone
+  standard: Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone
+  pretty: Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone
+  cryptic: <r<dusting a worker>> near a <y<small time distortion>>
 
 - name: Lanayru Mine - Chest at the End of Mine
   standard: Lanayru Mine - Chest at the End of Mine
@@ -3118,6 +3824,11 @@
   standard: Lanayru Mine - Goddess Cube
   pretty: Lanayru Mine - Goddess Cube
   cryptic:
+
+- name: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit
+  standard: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit
+  pretty: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit
+  cryptic: <r<shooting an eye>> of the <y<guardian of the mine>>
 
 - name: Lanayru Desert - Chest near Party Wheel
   standard: Lanayru Desert - Chest near Party Wheel
@@ -3169,15 +3880,45 @@
   pretty: Lanayru Desert - Chest on Platform near Fire Node
   cryptic: a <r<chest near a stone cache>>
 
+- name: Lanayru Desert - Bonk Main Node Generator
+  standard: Lanayru Desert - Bonk Main Node Generator
+  pretty: Lanayru Desert - Bonk Main Node Generator
+  cryptic: <r<disturbing a large generator>>
+
 - name: Lanayru Desert - Chest on Platform near Lightning Node
   standard: Lanayru Desert - Chest on Platform near Lightning Node
   pretty: Lanayru Desert - Chest on Platform near Lightning Node
   cryptic: a <r<chest near a buried building>>
 
+- name: Lanayru Desert - Slingshot Right Robot Eye above Temple of Time Exit
+  standard: Lanayru Desert - Slingshot Right Robot Eye above Temple of Time Exit
+  pretty: Lanayru Desert - Slingshot Right Robot Eye above Temple of Time Exit
+  cryptic: <r<shooting the eye guarding a monument to time>>
+
+- name: Lanayru Desert - Bonk Water Node Generator
+  standard: Lanayru Desert - Bonk Water Node Generator
+  pretty: Lanayru Desert - Bonk Water Node Generator
+  cryptic: <r<disturbing a watery generator>>
+
 - name: Lanayru Desert - Chest near Sand Oasis
   standard: Lanayru Desert - Chest near Sand Oasis
   pretty: Lanayru Desert - Chest near Sand Oasis
   cryptic: a <r<chest above a sandy paradise>>
+
+- name: Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue
+  standard: Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue
+  pretty: Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue
+  cryptic: <r<shooting an eye in a western desert>>
+
+- name: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Caves Entrance
+  standard: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Caves Entrance
+  pretty: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Caves Entrance
+  cryptic: <r<shooting the eye guarding a sandy cave>>
+
+- name: Lanayru Desert - Slingshot Left Robot Eye above Temple of Time Entrance
+  standard: Lanayru Desert - Slingshot Left Robot Eye above Temple of Time Entrance
+  pretty: Lanayru Desert - Slingshot Left Robot Eye above Temple of Time Entrance
+  cryptic: <r<shooting the eye guarding a monument to time>>
 
 - name: Lanayru Desert - Chest on top of Lanayru Mining Facility
   standard: Lanayru Desert - Chest on top of Lanayru Mining Facility
@@ -3259,6 +4000,16 @@
   pretty: Temple of Time - South Rupee on Tree Trunk
   cryptic: a <r<rupee on a time-travelling tree>>
 
+- name: Temple of Time - Bonk Northeast Pillar
+  standard: Temple of Time - Bonk Northeast Pillar
+  pretty: Temple of Time - Bonk Northeast Pillar
+  cryptic: <r<disturbing a statue of time>>
+
+- name: Temple of Time - Bonk Southeast Pillar
+  standard: Temple of Time - Bonk Southeast Pillar
+  pretty: Temple of Time - Bonk Southeast Pillar
+  cryptic: <r<disturbing a statue of time>>
+
 - name: Temple of Time - Rupee on North Gate of Time Pillar
   standard: Temple of Time - Rupee on North Gate of Time Pillar
   pretty: Temple of Time - Rupee on North Gate of Time Pillar
@@ -3304,6 +4055,16 @@
   pretty: Fire Node - Second Small Chest
   cryptic: a <r<chest in the middle of a stone cache>>
 
+- name: Fire Node - Bonk Fire Node Power Supply
+  standard: Fire Node - Bonk Fire Node Power Supply
+  pretty: Fire Node - Bonk Fire Node Power Supply
+  cryptic: <r<disturbing a fiery energy source>>
+
+- name: Fire Node - Bonk Fire Node Generator
+  standard: Fire Node - Bonk Fire Node Generator
+  pretty: Fire Node - Bonk Fire Node Generator
+  cryptic: <r<disturbing a fiery generator>>
+
 - name: Fire Node - Left Ending Chest
   standard: Fire Node - Left Ending Chest
   pretty: Fire Node - Left Ending Chest
@@ -3323,6 +4084,16 @@
   standard: Lightning Node - Second Chest
   pretty: Lightning Node - Second Chest
   cryptic: a <r<chest in a buried building>>
+
+- name: Lightning Node - Bonk Lightning Node Power Supply
+  standard: Lightning Node - Bonk Lightning Node Power Supply
+  pretty: Lightning Node - Bonk Lightning Node Power Supply
+  cryptic: <r<disturbing a shocking energy source>>
+
+- name: Lightning Node - Bonk Lightning Node Generator
+  standard: Lightning Node - Bonk Lightning Node Generator
+  pretty: Lightning Node - Bonk Lightning Node Generator
+  cryptic: <r<disturbing a shocking generator>>
 
 - name: Lightning Node - Raised Chest near Generator
   standard: Lightning Node - Raised Chest near Generator
@@ -3349,50 +4120,110 @@
   pretty: Lanayru Caves - Gossip Stone towards Lanayru Gorge
   cryptic:
 
+- name: Lanayru Gorge - Bonk Pillar near Thunder Dragon
+  standard: Lanayru Gorge - Bonk Pillar near Thunder Dragon
+  pretty: Lanayru Gorge - Bonk Pillar near Thunder Dragon
+  cryptic: <r<disturbing a pillar near sickness>>
+
 - name: Lanayru Gorge - Thunder Dragon's Reward
   standard: Lanayru Gorge - Thunder Dragon's Reward
   pretty: Lanayru Gorge - Thunder Dragon's Reward
   cryptic: <r<curing an ancient dragon>>
+
+- name: Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon
+  standard: Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon
+  pretty: Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon
+  cryptic: <r<shooting>> behind an <y<ancient dragon>>
+
+- name: Lanayru Gorge - Slingshot Right Pillar behind the Thunder Dragon
+  standard: Lanayru Gorge - Slingshot Right Pillar behind the Thunder Dragon
+  pretty: Lanayru Gorge - Slingshot Right Pillar behind the Thunder Dragon
+  cryptic: <r<shooting>> behind an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Item on Pillar
   standard: Lanayru Gorge - Item on Pillar
   pretty: Lanayru Gorge - Item on Pillar
   cryptic: an <r<item in a void>>
 
+- name: Lanayru Gorge - Bonk Wall Left of Stairs
+  standard: Lanayru Gorge - Bonk Wall Left of Stairs
+  pretty: Lanayru Gorge - Bonk Wall Left of Stairs
+  cryptic: <r<disturbing a some stairs>> near an <y<ancient dragon>>
+
+- name: Lanayru Gorge - Bonk Wall Right of Stairs
+  standard: Lanayru Gorge - Bonk Wall Right of Stairs
+  pretty: Lanayru Gorge - Bonk Wall Right of Stairs
+  cryptic: <r<disturbing a some stairs>> near an <y<ancient dragon>>
+
 - name: Lanayru Gorge - Digging Spot
   standard: Lanayru Gorge - Digging Spot
   pretty: Lanayru Gorge - Digging Spot
   cryptic: <r<soft soil in the desert>>
 
+- name: Lanayru Gorge - Slingshot Left Sandfall Source
+  standard: Lanayru Gorge - Slingshot Left Sandfall Source
+  pretty: Lanayru Gorge - Slingshot Left Sandfall Source
+  cryptic: <r<shooting a sandy opening>>
+
+- name: Lanayru Gorge - Slingshot Right Sandfall Source
+  standard: Lanayru Gorge - Slingshot Right Sandfall Source
+  pretty: Lanayru Gorge - Slingshot Right Sandfall Source
+  cryptic: <r<shooting a sandy opening>>
+
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
   standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
   pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
-  cryptic: a <r<high rupee near an ancient dragon>>
+  cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
   standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
   pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
-  cryptic: a <r<high rupee near an ancient dragon>>
+  cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
   standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
   pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
-  cryptic: a <r<high rupee near an ancient dragon>>
+  cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
   standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
   pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
-  cryptic: a <r<high rupee near an ancient dragon>>
+  cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
   standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
   pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
-  cryptic: a <r<high rupee near an ancient dragon>>
+  cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Goddess Cube
   standard: Lanayru Gorge - Goddess Cube
   pretty: Lanayru Gorge - Goddess Cube
   cryptic:
+
+- name: Lanayru Gorge - Blow Grass near Lone Boulder
+  standard: Lanayru Gorge - Blow Grass near Lone Boulder
+  pretty: Lanayru Gorge - Blow Grass near Lone Boulder
+  cryptic: <r<dusting the grass>> near an <y<ancient dragon>>
+
+- name: Lanayru Gorge - Bonk Left Machine after Locked Door
+  standard: Lanayru Gorge - Bonk Left Machine after Locked Door
+  pretty: Lanayru Gorge - Bonk Left Machine after Locked Door
+  cryptic: <r<disturbing a machine>> near an <y<ancient dragon>>
+
+- name: Lanayru Gorge - Bonk Right Machine after Locked Door
+  standard: Lanayru Gorge - Bonk Right Machine after Locked Door
+  pretty: Lanayru Gorge - Bonk Right Machine after Locked Door
+  cryptic: <r<disturbing a machine>> near an <y<ancient dragon>>
+
+- name: Ancient Harbour - Slingshot Left Nostril of Entrance Robot
+  standard: Ancient Harbour - Slingshot Left Nostril of Entrance Robot
+  pretty: Ancient Harbour - Slingshot Left Nostril of Entrance Robot
+  cryptic: <r<shooting the nose>> of an <y<ancient harbourmaster>>
+
+- name: Ancient Harbour - Slingshot Right Nostril of Entrance Robot
+  standard: Ancient Harbour - Slingshot Right Nostril of Entrance Robot
+  pretty: Ancient Harbour - Slingshot Right Nostril of Entrance Robot
+  cryptic: <r<shooting the nose>> of an <y<ancient harbourmaster>>
 
 - name: Ancient Harbour - Rupee on First Pillar
   standard: Ancient Harbour - Rupee on First Pillar
@@ -3409,6 +4240,36 @@
   pretty: Ancient Harbour - Right Rupee on Entrance Crown
   cryptic: a <r<rupee atop a crown>>
 
+- name: Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target
+  standard: Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target
+  pretty: Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target
+  cryptic: <r<shooting a northeast dock worker's eye>>
+
+- name: Ancient Harbour - Slingshot North Box Robot Left Eye
+  standard: Ancient Harbour - Slingshot North Box Robot Left Eye
+  pretty: Ancient Harbour - Slingshot North Box Robot Left Eye
+  cryptic: <r<shooting a northern dock worker's eye>>
+
+- name: Ancient Harbour - Slingshot North Box Robot Right Eye
+  standard: Ancient Harbour - Slingshot North Box Robot Right Eye
+  pretty: Ancient Harbour - Slingshot North Box Robot Right Eye
+  cryptic: <r<shooting a northern dock worker's eye>>
+
+- name: Ancient Harbour - Slingshot Southeast Box Robot Left Eye
+  standard: Ancient Harbour - Slingshot Southeast Box Robot Left Eye
+  pretty: Ancient Harbour - Slingshot Southeast Box Robot Left Eye
+  cryptic: <r<shooting a southeast dock worker's eye>>
+
+- name: Ancient Harbour - Slingshot Southeast Box Robot Right Eye
+  standard: Ancient Harbour - Slingshot Southeast Box Robot Right Eye
+  pretty: Ancient Harbour - Slingshot Southeast Box Robot Right Eye
+  cryptic: <r<shooting a southeast dock worker's eye>>
+
+- name: Ancient Harbour - Slingshot South Box Robot Eye
+  standard: Ancient Harbour - Slingshot South Box Robot Eye
+  pretty: Ancient Harbour - Slingshot South Box Robot Eye
+  cryptic: <r<shooting a southern dock worker's eye>>
+
 - name: Ancient Harbour - Goddess Cube
   standard: Ancient Harbour - Goddess Cube
   pretty: Ancient Harbour - Goddess Cube
@@ -3419,60 +4280,95 @@
   pretty: Skipper's Retreat - Chest after Moblin
   cryptic: a <r<chest past an iron shield moblin>>
 
+- name: Skipper's Retreat - Goddess Cube
+  standard: Skipper's Retreat - Goddess Cube
+  pretty: Skipper's Retreat - Goddess Cube
+  cryptic:
+
 - name: Skipper's Retreat - Chest on top of Cacti Pillar
   standard: Skipper's Retreat - Chest on top of Cacti Pillar
   pretty: Skipper's Retreat - Chest on top of Cacti Pillar
   cryptic: a <r<chest amongst cacti>>
 
-- name: Skipper's Retreat - Chest in Shack
-  standard: Skipper's Retreat - Chest in Shack
-  pretty: Skipper's Retreat - Chest in Shack
-  cryptic: a <r<chest atop a sandy retreat>>
+- name: Skipper's Retreat - Slingshot Left Eye of Shack
+  standard: Skipper's Retreat - Slingshot Left Eye of Shack
+  pretty: Skipper's Retreat - Slingshot Left Eye of Shack
+  cryptic: <r<shooting an eye>> atop a <y<sandy retreat>>
 
-- name: Skipper's Retreat - Skipper's Closet
-  standard: Skipper's Retreat - Skipper's Closet
-  pretty: Skipper's Retreat - Skipper's Closet
-  cryptic: snooping through a <r<captain's clothes>>
-  
-- name: Skipper's Retreat - Rupee under Sand in Shack 1
-  standard: Skipper's Retreat - Rupee under Sand in Shack 1
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 1
-  cryptic: a <r<rupee atop a sandy retreat>>
+- name: Skipper's Retreat - Slingshot Right Eye of Shack
+  standard: Skipper's Retreat - Slingshot Right Eye of Shack
+  pretty: Skipper's Retreat - Slingshot Right Eye of Shack
+  cryptic: <r<shooting an eye>> atop a <y<sandy retreat>>
 
-- name: Skipper's Retreat - Rupee under Sand in Shack 2
-  standard: Skipper's Retreat - Rupee under Sand in Shack 2
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 2
-  cryptic: a <r<rupee atop a sandy retreat>>
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 3
-  standard: Skipper's Retreat - Rupee under Sand in Shack 3
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 3
-  cryptic: a <r<rupee atop a sandy retreat>>
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 4
-  standard: Skipper's Retreat - Rupee under Sand in Shack 4
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 4
-  cryptic: a <r<rupee atop a sandy retreat>>
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 5
-  standard: Skipper's Retreat - Rupee under Sand in Shack 5
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 5
-  cryptic: a <r<rupee atop a sandy retreat>>
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 6
-  standard: Skipper's Retreat - Rupee under Sand in Shack 6
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 6
-  cryptic: a <r<rupee atop a sandy retreat>>
+- name: Skipper's Retreat - Slingshot Nose of Shack
+  standard: Skipper's Retreat - Slingshot Nose of Shack
+  pretty: Skipper's Retreat - Slingshot Nose of Shack
+  cryptic: <r<shooting a nose>> atop a <y<sandy retreat>>
 
 - name: Skipper's Retreat - Skydive Chest
   standard: Skipper's Retreat - Skydive Chest
   pretty: Skipper's Retreat - Skydive Chest
   cryptic: a <r<chest surrounded by quicksand>>
 
-- name: Skipper's Retreat - Goddess Cube
-  standard: Skipper's Retreat - Goddess Cube
-  pretty: Skipper's Retreat - Goddess Cube
-  cryptic:
+- name: Skipper's Retreat Shack - Chest under Sand
+  standard: Skipper's Retreat Shack - Chest under Sand
+  pretty: Skipper's Retreat Shack - Chest under Sand
+  cryptic: a <r<chest atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Skipper's Closet
+  standard: Skipper's Retreat Shack - Skipper's Closet
+  pretty: Skipper's Retreat Shack - Skipper's Closet
+  cryptic: snooping through a <r<captain's clothes>>
+
+- name: Skipper's Retreat Shack - Blow Aeroplane
+  standard: Skipper's Retreat Shack - Blow Aeroplane
+  pretty: Skipper's Retreat Shack - Blow Aeroplane
+  cryptic: <r<dusting a captain's plane>>
+
+- name: Skipper's Retreat Shack - Blow Sombrero
+  standard: Skipper's Retreat Shack - Blow Sombrero
+  pretty: Skipper's Retreat Shack - Blow Sombrero
+  cryptic: <r<dusting a captain's hat>>
+
+- name: Skipper's Retreat Shack - Blow Fish
+  standard: Skipper's Retreat Shack - Blow Fish
+  pretty: Skipper's Retreat Shack - Blow Fish
+  cryptic: <r<dusting a captain's fish>>
+  
+- name: Skipper's Retreat Shack - Rupee under Sand 1
+  standard: Skipper's Retreat Shack - Rupee under Sand 1
+  pretty: Skipper's Retreat Shack - Rupee under Sand 1
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Rupee under Sand 2
+  standard: Skipper's Retreat Shack - Rupee under Sand 2
+  pretty: Skipper's Retreat Shack - Rupee under Sand 2
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Rupee under Sand 3
+  standard: Skipper's Retreat Shack - Rupee under Sand 3
+  pretty: Skipper's Retreat Shack - Rupee under Sand 3
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Rupee under Sand 4
+  standard: Skipper's Retreat Shack - Rupee under Sand 4
+  pretty: Skipper's Retreat Shack - Rupee under Sand 4
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Rupee under Sand 5
+  standard: Skipper's Retreat Shack - Rupee under Sand 5
+  pretty: Skipper's Retreat Shack - Rupee under Sand 5
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Rupee under Sand 6
+  standard: Skipper's Retreat Shack - Rupee under Sand 6
+  pretty: Skipper's Retreat Shack - Rupee under Sand 6
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator
+  standard: Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator
+  pretty: Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator
+  cryptic: <r<disturbing a sign>> to the <y<shipyard center>>
 
 - name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
   standard: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
@@ -3483,6 +4379,26 @@
   standard: Shipyard - Gossip Stone
   pretty: Shipyard - Gossip Stone
   cryptic:
+
+- name: Shipyard - Bonk Sign before Second Minecart Track
+  standard: Shipyard - Bonk Sign before Second Minecart Track
+  pretty: Shipyard - Bonk Sign before Second Minecart Track
+  cryptic: <r<disturbing a sign>> to the <y<construction bay>>
+
+- name: Shipyard - Bonk Sign after Second Minecart Track
+  standard: Shipyard - Bonk Sign after Second Minecart Track
+  pretty: Shipyard - Bonk Sign after Second Minecart Track
+  cryptic: <r<disturbing a sign>> to the <y<last stop>>
+
+- name: Construction Bay - Bonk Left Sign near Upper Door
+  standard: Construction Bay - Bonk Left Sign near Upper Door
+  pretty: Construction Bay - Bonk Left Sign near Upper Door
+  cryptic: <r<disturbing a sign>> warning against <y<pirates>>
+
+- name: Construction Bay - Bonk Right Sign near Upper Door
+  standard: Construction Bay - Bonk Right Sign near Upper Door
+  pretty: Construction Bay - Bonk Right Sign near Upper Door
+  cryptic: <r<disturbing a sign>> informing of a <y<track inspection>>
 
 - name: Pirate Stronghold - Rupee on East Sea Pillar
   standard: Pirate Stronghold - Rupee on East Sea Pillar
@@ -3498,6 +4414,16 @@
   standard: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
   pretty: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
   cryptic: a <r<rupee inside a nose>>
+
+- name: Pirate Stronghold - Bonk Pillar Left of Shark's Head
+  standard: Pirate Stronghold - Bonk Pillar Left of Shark's Head
+  pretty: Pirate Stronghold - Bonk Pillar Left of Shark's Head
+  cryptic: <r<disturbing a striped pole>> guarding a <y<formidable skull>>
+
+- name: Pirate Stronghold - Bonk Pillar Right of Shark's Head
+  standard: Pirate Stronghold - Bonk Pillar Right of Shark's Head
+  pretty: Pirate Stronghold - Bonk Pillar Right of Shark's Head
+  cryptic: <r<disturbing a striped pole>> guarding a <y<formidable skull>>
 
 - name: Pirate Stronghold - Stamina Fruit on Left Side
   standard: Pirate Stronghold - Stamina Fruit on Left Side
@@ -3534,6 +4460,51 @@
   pretty: Pirate Stronghold Interior - Third Chest
   cryptic: a <r<chest within a fortress>>
 
+- name: Skyview Temple - Slingshot Wall Eye behind First Bird Statue
+  standard: Skyview Temple - Slingshot Wall Eye behind First Bird Statue
+  pretty: Skyview Temple - Slingshot Wall Eye behind First Bird Statue
+  cryptic: <r<shooting an eye>> in a <g<forest temple entrance>>
+
+- name: Skyview Temple - Bonk Tree Root after First Skulltula Web
+  standard: Skyview Temple - Bonk Tree Root after First Skulltula Web
+  pretty: Skyview Temple - Bonk Tree Root after First Skulltula Web
+  cryptic: <r<disturbing a spider's tree root>>
+
+- name: Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room
+  standard: Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room
+  pretty: Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room
+  cryptic: <r<shooting an eye>> in a <g<temple in the forest>>
+
+- name: Skyview Temple - Slingshot Northwest Wall Eye in One Eye Room
+  standard: Skyview Temple - Slingshot Northwest Wall Eye in One Eye Room
+  pretty: Skyview Temple - Slingshot Northwest Wall Eye in One Eye Room
+  cryptic: <r<shooting an eye>> in a <g<temple in the forest>>
+
+- name: Skyview Temple - Slingshot East Wall Eye in One Eye Room
+  standard: Skyview Temple - Slingshot East Wall Eye in One Eye Room
+  pretty: Skyview Temple - Slingshot East Wall Eye in One Eye Room
+  cryptic: <r<shooting an eye>> in a <g<temple in the forest>>
+
+- name: Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room
+  standard: Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room
+  pretty: Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room
+  cryptic: <r<shooting a lone eye socket>> in a <g<temple in the forest>>
+
+- name: Skyview Temple - Bonk Tree Branch with Chest
+  standard: Skyview Temple - Bonk Tree Branch with Chest
+  pretty: Skyview Temple - Bonk Tree Branch with Chest
+  cryptic: <r<disturb a tree>> within a <g<temple in the forest>>
+
+- name: Skyview Temple - Slingshot West Water Gate
+  standard: Skyview Temple - Slingshot West Water Gate
+  pretty: Skyview Temple - Slingshot West Water Gate
+  cryptic: <r<shooting a drain>> in a <g<temple in the forest>>
+
+- name: Skyview Temple - Slingshot East Water Gate
+  standard: Skyview Temple - Slingshot East Water Gate
+  pretty: Skyview Temple - Slingshot East Water Gate
+  cryptic: <r<shooting a drain>> in a <g<temple in the forest>>
+
 - name: Skyview Temple - Chest on Tree Branch
   standard: Skyview Temple - Chest on Tree Branch
   pretty: Skyview Temple - Chest on Tree Branch
@@ -3542,7 +4513,17 @@
 - name: Skyview Temple - Digging Spot in Crawlspace
   standard: Skyview Temple - Digging Spot in Crawlspace
   pretty: Skyview Temple - Digging Spot in Crawlspace
-  cryptic: <r<soft soil>> in a <r<temple in the forest>>
+  cryptic: <r<soft soil>> in a <g<temple in the forest>>
+
+- name: Skyview Temple - Slingshot Left Deactivated Eye in Two Eyes Room
+  standard: Skyview Temple - Slingshot Left Deactivated Eye in Two Eyes Room
+  pretty: Skyview Temple - Slingshot Left Deactivated Eye in Two Eyes Room
+  cryptic: <r<shooting a pair of eye sockets>> in a <g<temple in the forest>>
+
+- name: Skyview Temple - Slingshot Right Deactivated Eye in Two Eyes Room
+  standard: Skyview Temple - Slingshot Right Deactivated Eye in Two Eyes Room
+  pretty: Skyview Temple - Slingshot Right Deactivated Eye in Two Eyes Room
+  cryptic: <r<shooting a pair of eye sockets>> in a <g<temple in the forest>>
 
 - name: Skyview Temple - Chest behind Two Eyes
   standard: Skyview Temple - Chest behind Two Eyes
@@ -3589,6 +4570,16 @@
   pretty: Skyview Temple - Rupee on South Bird Pillar in Hub Room
   cryptic: a <r<rupee on a forest bird>>
 
+- name: Skyview Temple - Bonk South Bird Pillar in Hub Room
+  standard: Skyview Temple - Bonk South Bird Pillar in Hub Room
+  pretty: Skyview Temple - Bonk South Bird Pillar in Hub Room
+  cryptic: <r<disturbing a bird>> in a <g<temple in the forest>>
+
+- name: Skyview Temple - Bonk East Bird Pillar in Hub Room
+  standard: Skyview Temple - Bonk East Bird Pillar in Hub Room
+  pretty: Skyview Temple - Bonk East Bird Pillar in Hub Room
+  cryptic: <r<disturbing a bird>> in a <g<temple in the forest>>
+
 - name: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
   standard: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
   pretty: Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room
@@ -3624,6 +4615,16 @@
   pretty: Skyview Temple - Third Rupee in Northeast Tunnel
   cryptic: a <r<rupee in a high tunnel>>
 
+- name: Skyview Temple - Slingshot Southwest Wall Eye in Three Eyes Room
+  standard: Skyview Temple - Slingshot Southwest Wall Eye in Three Eyes Room
+  pretty: Skyview Temple - Slingshot Southwest Wall Eye in Three Eyes Room
+  cryptic: <r<shooting an eye>> in the <r<west>> of a <g<temple in the forest>>
+
+- name: Skyview Temple - Slingshot Deactivated Middle Eye in Three Eyes Room
+  standard: Skyview Temple - Slingshot Deactivated Middle Eye in Three Eyes Room
+  pretty: Skyview Temple - Slingshot Deactivated Middle Eye in Three Eyes Room
+  cryptic: <r<shooting a middle eye socket>> in a <g<temple in the forest>>
+
 - name: Skyview Temple - Chest behind Three Eyes
   standard: Skyview Temple - Chest behind Three Eyes
   pretty: Skyview Temple - Chest behind Three Eyes
@@ -3644,10 +4645,35 @@
   pretty: Skyview Temple - Defeat Boss
   cryptic: the <r<first flamboyant fight>>
 
+- name: Skyview Spring - Slingshot top of Door
+  standard: Skyview Spring - Slingshot top of Door
+  pretty: Skyview Spring - Slingshot top of Door
+  cryptic: <r<shooting a sacred door>>
+
+- name: Skyview Spring - Bonk Broken Left Pillar
+  standard: Skyview Spring - Bonk Broken Left Pillar
+  pretty: Skyview Spring - Bonk Broken Left Pillar
+  cryptic: <r<disturbing a sacred ruin>>
+
+- name: Skyview Spring - Bonk Broken Right Pillar
+  standard: Skyview Spring - Bonk Broken Right Pillar
+  pretty: Skyview Spring - Bonk Broken Right Pillar
+  cryptic: <r<disturbing a sacred ruin>>
+
 - name: Skyview Spring - Rupee on Spring Pillar
   standard: Skyview Spring - Rupee on Spring Pillar
   pretty: Skyview Spring - Rupee on Spring Pillar
   cryptic: a <r<rupee on a humid pillar>>
+
+- name: Skyview Spring - Slingshot Post Left of Goddess Crest
+  standard: Skyview Spring - Slingshot Post Left of Goddess Crest
+  pretty: Skyview Spring - Slingshot Post Left of Goddess Crest
+  cryptic: <r<shooting a sacred monument>>
+
+- name: Skyview Spring - Slingshot Post Right of Goddess Crest
+  standard: Skyview Spring - Slingshot Post Right of Goddess Crest
+  pretty: Skyview Spring - Slingshot Post Right of Goddess Crest
+  cryptic: <r<shooting a sacred monument>>
 
 - name: Skyview Spring - Strike Crest
   standard: Skyview Spring - Strike Crest
@@ -3659,6 +4685,26 @@
   standard: Skyview Spring - Goddess Cube
   pretty: Skyview Spring - Goddess Cube
   cryptic:
+
+- name: Earth Temple - Bonk Front Left Elephant Pillar
+  standard: Earth Temple - Bonk Front Left Elephant Pillar
+  pretty: Earth Temple - Bonk Front Left Elephant Pillar
+  cryptic: <r<disturbing a trumpeting statue>>
+
+- name: Earth Temple - Bonk Front Right Elephant Pillar
+  standard: Earth Temple - Bonk Front Right Elephant Pillar
+  pretty: Earth Temple - Bonk Front Right Elephant Pillar
+  cryptic: <r<disturbing a trumpeting statue>>
+
+- name: Earth Temple - Bonk Back Left Elephant Pillar
+  standard: Earth Temple - Bonk Back Left Elephant Pillar
+  pretty: Earth Temple - Bonk Back Left Elephant Pillar
+  cryptic: <r<disturbing a trumpeting statue>>
+
+- name: Earth Temple - Bonk Back Right Elephant Pillar
+  standard: Earth Temple - Bonk Back Right Elephant Pillar
+  pretty: Earth Temple - Bonk Back Right Elephant Pillar
+  cryptic: <r<disturbing a trumpeting statue>>
 
 - name: Earth Temple - Vent Chest
   standard: Earth Temple - Vent Chest
@@ -3683,7 +4729,17 @@
 - name: Earth Temple - Chest in West Room
   standard: Earth Temple - Chest in West Room
   pretty: Earth Temple - Chest in West Room
-  cryptic: the <r<western wing in the Earth Temple>>
+  cryptic: a <r<western chest>> in a <r<temple atop a volcano>>
+
+- name: Earth Temple - Bonk Left Pillar in West Room
+  standard: Earth Temple - Bonk Left Pillar in West Room
+  pretty: Earth Temple - Bonk Left Pillar in West Room
+  cryptic: <r<disturbing a western statue>> in a <r<temple atop a volcano>>
+
+- name: Earth Temple - Bonk Right Pillar in West Room
+  standard: Earth Temple - Bonk Right Pillar in West Room
+  pretty: Earth Temple - Bonk Right Pillar in West Room
+  cryptic: <r<disturbing a western statue>> in a <r<temple atop a volcano>>
 
 - name: Earth Temple - Chest after Double Lizalfos Fight
   standard: Earth Temple - Chest after Double Lizalfos Fight
@@ -3776,6 +4832,21 @@
   pretty: Lanayru Mining Facility - Right Back Rupee behind Statue
   cryptic: a <r<guarded rupee in a sandy temple>>
 
+- name: Lanayru Mining Facility - Bonk Bomb Flower Pillar
+  standard: Lanayru Mining Facility - Bonk Bomb Flower Pillar
+  pretty: Lanayru Mining Facility - Bonk Bomb Flower Pillar
+  cryptic: <r<disturbing a tall explosion plant>>
+
+- name: Lanayru Mining Facility - Slingshot Left Robot Eye in First Room
+  standard: Lanayru Mining Facility - Slingshot Left Robot Eye in First Room
+  pretty: Lanayru Mining Facility - Slingshot Left Robot Eye in First Room
+  cryptic: <r<shooting the guard>> of the <y<buried mine>>
+
+- name: Lanayru Mining Facility - Slingshot Right Robot Eye in First Room
+  standard: Lanayru Mining Facility - Slingshot Right Robot Eye in First Room
+  pretty: Lanayru Mining Facility - Slingshot Right Robot Eye in First Room
+  cryptic: <r<shooting the guard>> of the <y<buried mine>>
+
 - name: Lanayru Mining Facility - First Chest in Hub Room
   standard: Lanayru Mining Facility - First Chest in Hub Room
   pretty: Lanayru Mining Facility - First Chest in Hub Room
@@ -3790,6 +4861,21 @@
   standard: Lanayru Mining Facility - Chest after Armos Fight
   pretty: Lanayru Mining Facility - Chest after Armos Fight
   cryptic: a <r<chest past an armos>>
+
+- name: Lanayru Mining Facility - Slingshot Bomb Flower Pillar in Key Locked Room
+  standard: Lanayru Mining Facility - Slingshot Bomb Flower Pillar in Key Locked Room
+  pretty: Lanayru Mining Facility - Slingshot Bomb Flower Pillar in Key Locked Room
+  cryptic: <r<shooting a high, tall explosion plant>>
+
+- name: Lanayru Mining Facility - Slingshot Left Robot Eye in Key Locked Room
+  standard: Lanayru Mining Facility - Slingshot Left Robot Eye in Key Locked Room
+  pretty: Lanayru Mining Facility - Slingshot Left Robot Eye in Key Locked Room
+  cryptic: <r<shooting a guard>> deep within the <y<buried mine>>
+
+- name: Lanayru Mining Facility - Slingshot Right Robot Eye in Key Locked Room
+  standard: Lanayru Mining Facility - Slingshot Right Robot Eye in Key Locked Room
+  pretty: Lanayru Mining Facility - Slingshot Right Robot Eye in Key Locked Room
+  cryptic: <r<shooting a guard>> deep within the <y<buried mine>>
 
 - name: Lanayru Mining Facility - Chest in Key Locked Room
   standard: Lanayru Mining Facility - Chest in Key Locked Room
@@ -3815,6 +4901,11 @@
   standard: Lanayru Mining Facility - Chest behind First Crawlspace
   pretty: Lanayru Mining Facility - Chest behind First Crawlspace
   cryptic: a <r<chest past a sandy cralwspace>>
+
+- name: Lanayru Mining Facility - Blow Painting behind First Clawlspace
+  standard: Lanayru Mining Facility - Blow Painting behind First Clawlspace
+  pretty: Lanayru Mining Facility - Blow Painting behind First Clawlspace
+  cryptic: <r<dusting an old painting>>
 
 - name: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
   standard: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze
@@ -3894,7 +4985,22 @@
 - name: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
   standard: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
   pretty: Lanayru Mining Facility - Rupee behind South Statue in Northeast Room
-  cryptic: rupee behind a <r<northern statue in a sandy temple>>
+  cryptic: rupee behind a <r<northern statue>> within the <y<buried mine>>
+
+- name: Lanayru Mining Facility - Blow Robot behind Bottom Northwest Statue
+  standard: Lanayru Mining Facility - Blow Robot behind Bottom Northwest Statue
+  pretty: Lanayru Mining Facility - Blow Robot behind Bottom Northwest Statue
+  cryptic: <r<dusting the lower puzzling robot>>
+
+- name: Lanayru Mining Facility - Blow Robot behind Middle Northwest Statue
+  standard: Lanayru Mining Facility - Blow Robot behind Middle Northwest Statue
+  pretty: Lanayru Mining Facility - Blow Robot behind Middle Northwest Statue
+  cryptic: <r<dusting the middle puzzling robot>>
+
+- name: Lanayru Mining Facility - Blow Robot behind Top Northwest Statue
+  standard: Lanayru Mining Facility - Blow Robot behind Top Northwest Statue
+  pretty: Lanayru Mining Facility - Blow Robot behind Top Northwest Statue
+  cryptic: <r<dusting the higher puzzling robot>>
 
 - name: Lanayru Mining Facility - Chest after Double Armos Fight
   standard: Lanayru Mining Facility - Chest after Double Armos Fight
@@ -3955,12 +5061,7 @@
 - name: Ancient Cistern - Chest in East Part
   standard: Ancient Cistern - Chest in East Part
   pretty: Ancient Cistern - Chest in East Part
-  cryptic: the <r<lone east chest in the Ancient Cistern>>
-
-- name: Ancient Cistern - Rupee under Lilypad
-  standard: Ancient Cistern - Rupee under Lilypad
-  pretty: Ancient Cistern - Rupee under Lilypad
-  cryptic: a <r<rupee submerged under a lilypad>>
+  cryptic: the <r<lone east chest>> in an <b<old waterway>>
 
 - name: Ancient Cistern - Chest after Whip Hooks
   standard: Ancient Cistern - Chest after Whip Hooks
@@ -3981,6 +5082,36 @@
   standard: Ancient Cistern - Bokoblin
   pretty: Ancient Cistern - Bokoblin
   cryptic: a <r<bokoblin watching water>>
+
+- name: Ancient Cistern - Rupee under Lilypad after Pipes
+  standard: Ancient Cistern - Rupee under Lilypad after Pipes
+  pretty: Ancient Cistern - Rupee under Lilypad after Pipes
+  cryptic: a <r<rupee submerged under a lilypad>>
+
+- name: Ancient Cistern - Slingshot East Lamp after Pipes 1
+  standard: Ancient Cistern - Slingshot East Lamp after Pipes 1
+  pretty: Ancient Cistern - Slingshot East Lamp after Pipes 1
+  cryptic: <r<shooting a flame>> in an <b<old waterway>>
+
+- name: Ancient Cistern - Slingshot East Lamp after Pipes 2
+  standard: Ancient Cistern - Slingshot East Lamp after Pipes 2
+  pretty: Ancient Cistern - Slingshot East Lamp after Pipes 2
+  cryptic: <r<shooting a flame>> in an <b<old waterway>>
+
+- name: Ancient Cistern - Slingshot West Lamp after Pipes 1
+  standard: Ancient Cistern - Slingshot West Lamp after Pipes 1
+  pretty: Ancient Cistern - Slingshot West Lamp after Pipes 1
+  cryptic: <r<shooting a flame>> in an <b<old waterway>>
+
+- name: Ancient Cistern - Slingshot West Lamp after Pipes 2
+  standard: Ancient Cistern - Slingshot West Lamp after Pipes 2
+  pretty: Ancient Cistern - Slingshot West Lamp after Pipes 2
+  cryptic: <r<shooting a flame>> in an <b<old waterway>>
+
+- name: Ancient Cistern - Slingshot West Lamp after Pipes 3
+  standard: Ancient Cistern - Slingshot West Lamp after Pipes 3
+  pretty: Ancient Cistern - Slingshot West Lamp after Pipes 3
+  cryptic: <r<shooting a flame>> in an <b<old waterway>>
 
 - name: Ancient Cistern - Chest in Key Locked Room
   standard: Ancient Cistern - Chest in Key Locked Room
@@ -4018,10 +5149,45 @@
   pretty: Sandship - Chest at the Stern
   cryptic: a <r<chest trailing a ship>>
 
+- name: Sandship - Blow Ceiling Lamp below Scervo Fight
+  standard: Sandship - Blow Ceiling Lamp below Scervo Fight
+  pretty: Sandship - Blow Ceiling Lamp below Scervo Fight
+  cryptic: <r<dusting a light beneath a reanimated skeleton>>
+
 - name: Sandship - Chest before 4-Door Corridor
   standard: Sandship - Chest before 4-Door Corridor
   pretty: Sandship - Chest before 4-Door Corridor
   cryptic: a <r<chest before 4 doors>>
+
+- name: Sandship - Blow Front Ceiling Lamp in 4-Door Corridor
+  standard: Sandship - Blow Front Ceiling Lamp in 4-Door Corridor
+  pretty: Sandship - Blow Front Ceiling Lamp in 4-Door Corridor
+  cryptic: <r<dusting a light>> in a <ye<hall with many doors>>
+
+- name: Sandship - Blow Back Ceiling Lamp in 4-Door Corridor
+  standard: Sandship - Blow Back Ceiling Lamp in 4-Door Corridor
+  pretty: Sandship - Blow Back Ceiling Lamp in 4-Door Corridor
+  cryptic: <r<dusting a light>> in a <ye<hall with many doors>>
+
+- name: Sandship - Blow Ceiling Lamp in Right Generator Room
+  standard: Sandship - Blow Ceiling Lamp in Right Generator Room
+  pretty: Sandship - Blow Ceiling Lamp in Right Generator Room
+  cryptic: <r<dusting a light in a starboard room>>
+
+- name: Sandship - Blow Ceiling Lamp in Left Generator Room
+  standard: Sandship - Blow Ceiling Lamp in Left Generator Room
+  pretty: Sandship - Blow Ceiling Lamp in Left Generator Room
+  cryptic: <r<dusting a light in a port room>>
+
+- name: Sandship - Blow Ceiling Lamp Right of Boss Door
+  standard: Sandship - Blow Ceiling Lamp Right of Boss Door
+  pretty: Sandship - Blow Ceiling Lamp Right of Boss Door
+  cryptic: <r<dusting a light>> before an <ye<important door>>
+
+- name: Sandship - Blow Ceiling Lamp Left of Boss Door
+  standard: Sandship - Blow Ceiling Lamp Left of Boss Door
+  pretty: Sandship - Blow Ceiling Lamp Left of Boss Door
+  cryptic: <r<dusting a light>> before an <ye<important door>>
 
 - name: Sandship - Chest behind Combination Lock
   standard: Sandship - Chest behind Combination Lock
@@ -4079,10 +5245,30 @@
   cryptic: a <b+<flame traveling the sea>>
   goal_name: Tentalus
 
+- name: Fire Sanctuary - Slingshot Front Left Owl Statue
+  standard: Fire Sanctuary - Slingshot Front Left Owl Statue
+  pretty: Fire Sanctuary - Slingshot Front Left Owl Statue
+  cryptic: <r<shooting a sleeping bird>> in a <r<respite within a volcano>>
+
+- name: Fire Sanctuary - Slingshot Front Right Owl Statue
+  standard: Fire Sanctuary - Slingshot Front Right Owl Statue
+  pretty: Fire Sanctuary - Slingshot Front Right Owl Statue
+  cryptic: <r<shooting a sleeping bird>> in a <r<respite within a volcano>>
+
+- name: Fire Sanctuary - Slingshot Back Left Owl Statue
+  standard: Fire Sanctuary - Slingshot Back Left Owl Statue
+  pretty: Fire Sanctuary - Slingshot Back Left Owl Statue
+  cryptic: <r<shooting a sleeping bird>> in a <r<respite within a volcano>>
+
+- name: Fire Sanctuary - Slingshot Back Right Owl Statue
+  standard: Fire Sanctuary - Slingshot Back Right Owl Statue
+  pretty: Fire Sanctuary - Slingshot Back Right Owl Statue
+  cryptic: <r<shooting a sleeping bird>> in a <r<respite within a volcano>>
+
 - name: Fire Sanctuary - Chest in First Room
   standard: Fire Sanctuary - Chest in First Room
   pretty: Fire Sanctuary - Chest in First Room
-  cryptic: the <r<first chest in a sacntuary>>
+  cryptic: the <r<first chest>> in a <r<respite within a volcano>>
 
 - name: Fire Sanctuary - Chest in Second Room
   standard: Fire Sanctuary - Chest in Second Room

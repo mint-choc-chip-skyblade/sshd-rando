@@ -46,6 +46,7 @@
     Sandship Ship's Bow: count(2, Sandship_Small_Key) or small_keys == removed
     Sandship Corridor: (Goddess_Sword or Bow or Bomb_Bag or Slingshot or logic_sandship_itemless_spume) or 'Sandship_Freely_Usable_Timeshift_Stone'
   locations:
+    Sandship - Blow Ceiling Lamp below Scervo Fight: Gust_Bellows
     Sandship - Chest before 4-Door Corridor: "'Sandship_Freely_Usable_Timeshift_Stone'"
 
 
@@ -64,6 +65,9 @@
     Sandship Starboard Rooms: "'Sandship_Freely_Usable_Timeshift_Stone'"
     Sandship Port Rooms: Bow
     Sandship Before Boss Door: Nothing
+  locations:
+    Sandship - Blow Front Ceiling Lamp in 4-Door Corridor: Gust_Bellows
+    Sandship - Blow Back Ceiling Lamp in 4-Door Corridor: Gust_Bellows
 
 
 - name: Sandship Starboard Rooms
@@ -75,6 +79,8 @@
     Sandship Main Deck: Bow and 'Open_Starboard_Windows'
     Sandship Brig: "'Open_Starboard_Windows'"
     Sandship Corridor: "'Sandship_Freely_Usable_Timeshift_Stone'"
+  locations:
+    Sandship - Blow Ceiling Lamp in Right Generator Room: Gust_Bellows and 'Open_Starboard_Windows' and 'Sandship_Freely_Usable_Timeshift_Stone'
 
 
 - name: Sandship Port Rooms
@@ -83,6 +89,8 @@
     Port Generator: Bow and 'Sandship_Freely_Usable_Timeshift_Stone'
   exits:
     Sandship Corridor: Bow
+  locations:
+    Sandship - Blow Ceiling Lamp in Left Generator Room: Bow and Gust_Bellows
     
 
 - name: Sandship Before Boss Door
@@ -91,6 +99,8 @@
     Sandship Corridor: Nothing
     Sandship Boss Room: (Sandship_Boss_Key or boss_keys == removed) and 'Sandship_Freely_Usable_Timeshift_Stone'
   locations:
+    Sandship - Blow Ceiling Lamp Right of Boss Door: Gust_Bellows
+    Sandship - Blow Ceiling Lamp Left of Boss Door: Gust_Bellows
     Sandship - Chest behind Combination Lock: (Gust_Bellows or 'Sandship_Freely_Usable_Timeshift_Stone' or logic_sandship_no_combination_hint) and Can_Unlock_Combination_Lock
 
 
