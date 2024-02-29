@@ -112,6 +112,9 @@
 - name: Item 213 Text
   standard: "You got the <s<Sky Keep>> Map!"
 
+- name: Beedle Half Off Bug Net Text
+  standard: "That's a <y<Bug Net>>. You know, for\ncatching bugs! Insects too.\n\n\nOK, so there aren't so many bugs here,\nbut you'll be able to catch tons with\nthis when there are some!\n\nAnd at half-price of only <r<25 Rupees>>,\nI'm sure you'll make a \"net profit\"!\nWant to buy it?\n[1]OK![2-]No, thanks."
+
 - name: Can't buy Pouch text
   standard: "You need an <y<Adventure Pouch>> to buy\nthis!"
 
