@@ -885,6 +885,9 @@
     index: 16
     flow:
       next: Check for Pouch
+  - name: Beedle Half Off Bug Net Text
+    type: textpatch
+    index: 26
   # shopsanity option stuff
   # - name: Second 100 Rupee Item
   #   onlyif: beedle_shop_shuffle != vanilla
