@@ -1774,6 +1774,14 @@ F101: # Deep Woods
     destlayer: 0
     room: 0
     objtype: SOBJ
+  - name: Don't despawn Gorko after beating Skyview Temple
+    type: objpatch
+    id: 0xFCF5
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      untrigstoryfid: -1
 
 F102: # Lake Floria
   - name: Layer override
