@@ -1,4 +1,4 @@
-seed: TESTTESTTESTTEST
+seed: TESTTESTTEST
 World 1:
   random_starting_spawn: anywhere
   randomize_dungeon_entrances: "on"
@@ -8,3 +8,4 @@ World 1:
   randomize_overworld_entrances: "on"
   decouple_entrances: "on"
   decouple_double_doors: "on"
+  random_starting_statues: "on"
