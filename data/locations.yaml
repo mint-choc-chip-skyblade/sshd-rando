@@ -4788,6 +4788,22 @@
 # Lanayru Sand Sea:
 ## Ancient Harbour
 
+- name: Ancient Harbour - Slingshot Left Nostril of Entrance Robot
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301/r0/l0/TgReact/0xFC42
+
+- name: Ancient Harbour - Slingshot Right Nostril of Entrance Robot
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301/r0/l0/TgReact/0xFC43
+
 - name: Ancient Harbour - Rupee on First Pillar
   original_item: Red Rupee
   types:
@@ -4814,6 +4830,54 @@
   Paths:
     - stage/F301/r0/l0/Item/93
 
+- name: Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301/r0/l0/TgReact/0xFC3E
+
+- name: Ancient Harbour - Slingshot North Box Robot Left Eye
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301/r0/l0/TgReact/0xFC3C
+
+- name: Ancient Harbour - Slingshot North Box Robot Right Eye
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301/r0/l0/TgReact/0xFC3D
+
+- name: Ancient Harbour - Slingshot Southeast Box Robot Left Eye
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301/r0/l0/TgReact/0xFC3F
+
+- name: Ancient Harbour - Slingshot Southeast Box Robot Right Eye
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301/r0/l0/TgReact/0xFC40
+
+- name: Ancient Harbour - Slingshot South Box Robot Eye
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301/r0/l0/TgReact/0xFC41
+
 - name: Ancient Harbour - Goddess Cube
   original_item: Ancient Harbour Goddess Cube
   types:
@@ -4829,6 +4893,12 @@
   Paths:
     - stage/F301_3/r0/l0/TBox/78
 
+- name: Skipper's Retreat - Goddess Cube
+  original_item: Skipper's Retreat Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Skipper's Retreat - Chest on top of Cacti Pillar
   original_item: Uncommon Treasure
   types:
@@ -4836,75 +4906,29 @@
   Paths:
     - stage/F301_3/r0/l0/TBox/76
 
-- name: Skipper's Retreat - Chest in Shack
-  original_item: Sea Chart
+- name: Skipper's Retreat - Slingshot Left Eye of Shack
+  original_item: Blue Rupee
   types:
-    - Chests
-  hint: sometimes
-  Paths:
-    - stage/F301_5/r0/l0/TBox/65
-
-- name: Skipper's Retreat - Skipper's Closet
-  original_item: Green Rupee
-  types:
-    - Closets
-  hint: sometimes
-  Paths:
-    - stage/F301_5/r0/l0/chest/0xFC0C
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 1
-  original_item: Green Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
+    - Hidden Items
     - Custom Flag
   Paths:
-    - stage/F301_5/r0/l0/Item/0xFC10
+    - stage/F301_3/r0/l0/TgReact/0xFC5A
 
-- name: Skipper's Retreat - Rupee under Sand in Shack 2
-  original_item: Green Rupee
+- name: Skipper's Retreat - Slingshot Right Eye of Shack
+  original_item: Blue Rupee
   types:
-    - Freestanding Rupees
-    - Beginner Rupees
+    - Hidden Items
     - Custom Flag
   Paths:
-    - stage/F301_5/r0/l0/Item/0xFC1A
+    - stage/F301_3/r0/l0/TgReact/0xFC59
 
-- name: Skipper's Retreat - Rupee under Sand in Shack 3
-  original_item: Green Rupee
+- name: Skipper's Retreat - Slingshot Nose of Shack
+  original_item: Blue Rupee
   types:
-    - Freestanding Rupees
-    - Beginner Rupees
+    - Hidden Items
     - Custom Flag
   Paths:
-    - stage/F301_5/r0/l0/Item/0xFC19
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 4
-  original_item: Green Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F301_5/r0/l0/Item/0xFC08
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 5
-  original_item: Green Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F301_5/r0/l0/Item/0xFC09
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 6
-  original_item: Green Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F301_5/r0/l0/Item/0xFC07
+    - stage/F301_3/r0/l0/TgReact/0xFC58
 
 - name: Skipper's Retreat - Skydive Chest
   original_item: Silver Rupee
@@ -4913,13 +4937,109 @@
   Paths:
     - stage/F301_3/r0/l0/TBox/77
 
-- name: Skipper's Retreat - Goddess Cube
-  original_item: Skipper's Retreat Goddess Cube
+- name: Skipper's Retreat Shack - Chest under Sand
+  original_item: Sea Chart
   types:
-    - Goddess Cube
-  is_gui_excluded_location: False
+    - Chests
+  hint: sometimes
+  Paths:
+    - stage/F301_5/r0/l0/TBox/65
+
+- name: Skipper's Retreat Shack - Skipper's Closet
+  original_item: Green Rupee
+  types:
+    - Closets
+  hint: sometimes
+  Paths:
+    - stage/F301_5/r0/l0/chest/0xFC0C
+
+- name: Skipper's Retreat Shack - Blow Aeroplane
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/TgReact/0xFC24
+
+- name: Skipper's Retreat Shack - Blow Sombrero
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/TgReact/0xFC23
+
+- name: Skipper's Retreat Shack - Blow Fish
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/TgReact/0xFC25
+
+- name: Skipper's Retreat Shack - Rupee under Sand 1
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC10
+
+- name: Skipper's Retreat Shack - Rupee under Sand 2
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC1A
+
+- name: Skipper's Retreat Shack - Rupee under Sand 3
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC19
+
+- name: Skipper's Retreat Shack - Rupee under Sand 4
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC08
+
+- name: Skipper's Retreat Shack - Rupee under Sand 5
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC09
+
+- name: Skipper's Retreat Shack - Rupee under Sand 6
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F301_5/r0/l0/Item/0xFC07
 
 ## Shipyard
+
+- name: Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301_4/r0/l0/TgReact/0xFC4B
 
 - name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
   original_item: Heart Piece
@@ -4939,6 +5059,38 @@
   textfile: 004-Object
   textindex: 23
   eventflowindex: 32
+
+- name: Shipyard - Bonk Sign before Second Minecart Track
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301_4/r0/l0/TgReact/0xFC4D
+
+- name: Shipyard - Bonk Sign after Second Minecart Track
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301_4/r0/l0/TgReact/0xFC4C
+
+- name: Construction Bay - Bonk Left Sign near Upper Door
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301_7/r0/l0/TgReact/0xFC09
+
+- name: Construction Bay - Bonk Right Sign near Upper Door
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301_7/r0/l0/TgReact/0xFC08
 
 ## Pirate Stronghold
 
@@ -4969,6 +5121,22 @@
     - stage/F301_6/r0/l1/Item/13
     - stage/F301_6/r0/l2/Item/13
     - oarc/F301_6/l0
+
+- name: Pirate Stronghold - Bonk Pillar Left of Shark's Head
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301_6/r0/l0/TgReact/0xFC27
+
+- name: Pirate Stronghold - Bonk Pillar Right of Shark's Head
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F301_6/r0/l0/TgReact/0xFC28
 
 - name: Pirate Stronghold - Stamina Fruit on Left Side
   original_item: Stamina Fruit

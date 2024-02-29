@@ -439,9 +439,11 @@
     Lanayru Caves Past Locked Door: Nothing
     Ancient Harbour: Clawshots
   locations:
+    Ancient Harbour - Slingshot Left Nostril of Entrance Robot: Slingshot
+    Ancient Harbour - Slingshot Right Nostril of Entrance Robot: Slingshot
+    Ancient Harbour - Rupee on First Pillar: Beetle
     Ancient Harbour - Left Rupee on Entrance Crown: Quick_Beetle
     Ancient Harbour - Right Rupee on Entrance Crown: Quick_Beetle
-    Ancient Harbour - Rupee on First Pillar: Beetle
 
 
 - name: Ancient Harbour
@@ -452,6 +454,12 @@
     Ancient Harbour Statue: Nothing
     Ancient Harbour Highest Platform: Clawshots
   locations:
+    Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target: Slingshot
+    Ancient Harbour - Slingshot North Box Robot Left Eye: Slingshot
+    Ancient Harbour - Slingshot North Box Robot Right Eye: Slingshot
+    Ancient Harbour - Slingshot Southeast Box Robot Left Eye: Slingshot
+    Ancient Harbour - Slingshot Southeast Box Robot Right Eye: Slingshot
+    Ancient Harbour - Slingshot South Box Robot Eye: Slingshot
     Ancient Harbour - Goddess Cube: Clawshots and Goddess_Sword
   
 
@@ -490,20 +498,26 @@
     Skipper's Retreat Skydive Platform: Nothing
   locations:
     Skipper's Retreat - Chest on top of Cacti Pillar: Clawshots
+    Skipper's Retreat - Slingshot Left Eye of Shack: Slingshot
+    Skipper's Retreat - Slingshot Right Eye of Shack: Slingshot
+    Skipper's Retreat - Slingshot Nose of Shack: Slingshot
 
 
 - name: Skipper's Retreat Shack
   exits:
     Skipper's Retreat Top: Nothing
   locations:
-    Skipper's Retreat - Chest in Shack: Gust_Bellows
-    Skipper's Retreat - Skipper's Closet: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 1: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 2: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 3: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 4: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 5: Gust_Bellows
-    Skipper's Retreat - Rupee under Sand in Shack 6: Gust_Bellows
+    Skipper's Retreat Shack - Chest under Sand: Gust_Bellows
+    Skipper's Retreat Shack - Skipper's Closet: Gust_Bellows
+    Skipper's Retreat Shack - Blow Aeroplane: Gust_Bellows
+    Skipper's Retreat Shack - Blow Sombrero: Gust_Bellows
+    Skipper's Retreat Shack - Blow Fish: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 1: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 2: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 3: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 4: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 5: Gust_Bellows
+    Skipper's Retreat Shack - Rupee under Sand 6: Gust_Bellows
 
 
 - name: Skipper's Retreat Skydive Platform
@@ -520,18 +534,25 @@
     Construction Bay Sand Pit: "'Defeat_Shipyard_Moldarach'"
     Lanayru Sand Sea: Nothing
   locations:
-    Shipyard - Gossip Stone: Nothing # Take the first cart and you've arrived
+    Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator: Nothing
     Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05: Nothing
+    Shipyard - Bonk Sign before Second Minecart Track: Nothing
+    Shipyard - Gossip Stone: Nothing # Take the first cart and you've arrived
 
 
 - name: Shipyard End of Minecart Ride
   exits:
     Construction Bay Upper Platform: Nothing
+  locations:
+    Shipyard - Bonk Sign after Second Minecart Track: Nothing
 
 - name: Construction Bay Upper Platform
   exits:
     Construction Bay Sand Pit: Nothing
     Shipyard End of Minecart Ride: Nothing
+  locations:
+    Construction Bay - Bonk Left Sign near Upper Door: Nothing
+    Construction Bay - Bonk Right Sign near Upper Door: Nothing
 
 - name: Construction Bay Sand Pit
   events:
@@ -550,6 +571,8 @@
     Pirate Stronghold - Rupee on West Sea Pillar: Quick_Beetle or (logic_precise_beetle and Beetle)
     Pirate Stronghold - Rupee on East Sea Pillar: Quick_Beetle or (logic_precise_beetle and Beetle)
     Pirate Stronghold - Rupee on Bird Statue Pillar or Nose: Beetle
+    Pirate Stronghold - Bonk Pillar Left of Shark's Head: Nothing
+    Pirate Stronghold - Bonk Pillar Right of Shark's Head: Nothing
     Pirate Stronghold - Stamina Fruit on Left Side: Nothing
     Pirate Stronghold - Stamina Fruit on Upper Right Side: Nothing
     Pirate Stronghold - Stamina Fruit on Lower Right Side: Nothing

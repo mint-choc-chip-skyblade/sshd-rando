@@ -3748,7 +3748,7 @@ F301_4: # Shipyard
       storyflag: -1
       play_cutscene: -1
 
-F301_5: # Skipper's Shack
+F301_5: # Skipper's Retreat Shack
   - name: Text after chest
     type: objdelete
     id: 0xFC1B

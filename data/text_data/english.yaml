@@ -4122,6 +4122,16 @@
   pretty: Lanayru Gorge - Bonk Right Machine after Locked Door
   cryptic: <r<disturbing a machine>> near an <y<ancient dragon>>
 
+- name: Ancient Harbour - Slingshot Left Nostril of Entrance Robot
+  standard: Ancient Harbour - Slingshot Left Nostril of Entrance Robot
+  pretty: Ancient Harbour - Slingshot Left Nostril of Entrance Robot
+  cryptic: <r<shooting the nose>> of an <y<ancient harbourmaster>>
+
+- name: Ancient Harbour - Slingshot Right Nostril of Entrance Robot
+  standard: Ancient Harbour - Slingshot Right Nostril of Entrance Robot
+  pretty: Ancient Harbour - Slingshot Right Nostril of Entrance Robot
+  cryptic: <r<shooting the nose>> of an <y<ancient harbourmaster>>
+
 - name: Ancient Harbour - Rupee on First Pillar
   standard: Ancient Harbour - Rupee on First Pillar
   pretty: Ancient Harbour - Rupee on First Pillar
@@ -4137,6 +4147,36 @@
   pretty: Ancient Harbour - Right Rupee on Entrance Crown
   cryptic: a <r<rupee atop a crown>>
 
+- name: Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target
+  standard: Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target
+  pretty: Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target
+  cryptic: <r<shooting a northeast dock worker's eye>>
+
+- name: Ancient Harbour - Slingshot North Box Robot Left Eye
+  standard: Ancient Harbour - Slingshot North Box Robot Left Eye
+  pretty: Ancient Harbour - Slingshot North Box Robot Left Eye
+  cryptic: <r<shooting a northern dock worker's eye>>
+
+- name: Ancient Harbour - Slingshot North Box Robot Right Eye
+  standard: Ancient Harbour - Slingshot North Box Robot Right Eye
+  pretty: Ancient Harbour - Slingshot North Box Robot Right Eye
+  cryptic: <r<shooting a northern dock worker's eye>>
+
+- name: Ancient Harbour - Slingshot Southeast Box Robot Left Eye
+  standard: Ancient Harbour - Slingshot Southeast Box Robot Left Eye
+  pretty: Ancient Harbour - Slingshot Southeast Box Robot Left Eye
+  cryptic: <r<shooting a southeast dock worker's eye>>
+
+- name: Ancient Harbour - Slingshot Southeast Box Robot Right Eye
+  standard: Ancient Harbour - Slingshot Southeast Box Robot Right Eye
+  pretty: Ancient Harbour - Slingshot Southeast Box Robot Right Eye
+  cryptic: <r<shooting a southeast dock worker's eye>>
+
+- name: Ancient Harbour - Slingshot South Box Robot Eye
+  standard: Ancient Harbour - Slingshot South Box Robot Eye
+  pretty: Ancient Harbour - Slingshot South Box Robot Eye
+  cryptic: <r<shooting a southern dock worker's eye>>
+
 - name: Ancient Harbour - Goddess Cube
   standard: Ancient Harbour - Goddess Cube
   pretty: Ancient Harbour - Goddess Cube
@@ -4147,60 +4187,95 @@
   pretty: Skipper's Retreat - Chest after Moblin
   cryptic: a <r<chest past an iron shield moblin>>
 
+- name: Skipper's Retreat - Goddess Cube
+  standard: Skipper's Retreat - Goddess Cube
+  pretty: Skipper's Retreat - Goddess Cube
+  cryptic:
+
 - name: Skipper's Retreat - Chest on top of Cacti Pillar
   standard: Skipper's Retreat - Chest on top of Cacti Pillar
   pretty: Skipper's Retreat - Chest on top of Cacti Pillar
   cryptic: a <r<chest amongst cacti>>
 
-- name: Skipper's Retreat - Chest in Shack
-  standard: Skipper's Retreat - Chest in Shack
-  pretty: Skipper's Retreat - Chest in Shack
-  cryptic: a <r<chest atop a sandy retreat>>
+- name: Skipper's Retreat - Slingshot Left Eye of Shack
+  standard: Skipper's Retreat - Slingshot Left Eye of Shack
+  pretty: Skipper's Retreat - Slingshot Left Eye of Shack
+  cryptic: <r<shooting an eye>> atop a <y<sandy retreat>>
 
-- name: Skipper's Retreat - Skipper's Closet
-  standard: Skipper's Retreat - Skipper's Closet
-  pretty: Skipper's Retreat - Skipper's Closet
-  cryptic: snooping through a <r<captain's clothes>>
-  
-- name: Skipper's Retreat - Rupee under Sand in Shack 1
-  standard: Skipper's Retreat - Rupee under Sand in Shack 1
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 1
-  cryptic: a <r<rupee atop a sandy retreat>>
+- name: Skipper's Retreat - Slingshot Right Eye of Shack
+  standard: Skipper's Retreat - Slingshot Right Eye of Shack
+  pretty: Skipper's Retreat - Slingshot Right Eye of Shack
+  cryptic: <r<shooting an eye>> atop a <y<sandy retreat>>
 
-- name: Skipper's Retreat - Rupee under Sand in Shack 2
-  standard: Skipper's Retreat - Rupee under Sand in Shack 2
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 2
-  cryptic: a <r<rupee atop a sandy retreat>>
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 3
-  standard: Skipper's Retreat - Rupee under Sand in Shack 3
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 3
-  cryptic: a <r<rupee atop a sandy retreat>>
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 4
-  standard: Skipper's Retreat - Rupee under Sand in Shack 4
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 4
-  cryptic: a <r<rupee atop a sandy retreat>>
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 5
-  standard: Skipper's Retreat - Rupee under Sand in Shack 5
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 5
-  cryptic: a <r<rupee atop a sandy retreat>>
-
-- name: Skipper's Retreat - Rupee under Sand in Shack 6
-  standard: Skipper's Retreat - Rupee under Sand in Shack 6
-  pretty: Skipper's Retreat - Rupee under Sand in Shack 6
-  cryptic: a <r<rupee atop a sandy retreat>>
+- name: Skipper's Retreat - Slingshot Nose of Shack
+  standard: Skipper's Retreat - Slingshot Nose of Shack
+  pretty: Skipper's Retreat - Slingshot Nose of Shack
+  cryptic: <r<shooting a nose>> atop a <y<sandy retreat>>
 
 - name: Skipper's Retreat - Skydive Chest
   standard: Skipper's Retreat - Skydive Chest
   pretty: Skipper's Retreat - Skydive Chest
   cryptic: a <r<chest surrounded by quicksand>>
 
-- name: Skipper's Retreat - Goddess Cube
-  standard: Skipper's Retreat - Goddess Cube
-  pretty: Skipper's Retreat - Goddess Cube
-  cryptic:
+- name: Skipper's Retreat Shack - Chest under Sand
+  standard: Skipper's Retreat Shack - Chest under Sand
+  pretty: Skipper's Retreat Shack - Chest under Sand
+  cryptic: a <r<chest atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Skipper's Closet
+  standard: Skipper's Retreat Shack - Skipper's Closet
+  pretty: Skipper's Retreat Shack - Skipper's Closet
+  cryptic: snooping through a <r<captain's clothes>>
+
+- name: Skipper's Retreat Shack - Blow Aeroplane
+  standard: Skipper's Retreat Shack - Blow Aeroplane
+  pretty: Skipper's Retreat Shack - Blow Aeroplane
+  cryptic: <r<dusting a captain's plane>>
+
+- name: Skipper's Retreat Shack - Blow Sombrero
+  standard: Skipper's Retreat Shack - Blow Sombrero
+  pretty: Skipper's Retreat Shack - Blow Sombrero
+  cryptic: <r<dusting a captain's hat>>
+
+- name: Skipper's Retreat Shack - Blow Fish
+  standard: Skipper's Retreat Shack - Blow Fish
+  pretty: Skipper's Retreat Shack - Blow Fish
+  cryptic: <r<dusting a captain's fish>>
+  
+- name: Skipper's Retreat Shack - Rupee under Sand 1
+  standard: Skipper's Retreat Shack - Rupee under Sand 1
+  pretty: Skipper's Retreat Shack - Rupee under Sand 1
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Rupee under Sand 2
+  standard: Skipper's Retreat Shack - Rupee under Sand 2
+  pretty: Skipper's Retreat Shack - Rupee under Sand 2
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Rupee under Sand 3
+  standard: Skipper's Retreat Shack - Rupee under Sand 3
+  pretty: Skipper's Retreat Shack - Rupee under Sand 3
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Rupee under Sand 4
+  standard: Skipper's Retreat Shack - Rupee under Sand 4
+  pretty: Skipper's Retreat Shack - Rupee under Sand 4
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Rupee under Sand 5
+  standard: Skipper's Retreat Shack - Rupee under Sand 5
+  pretty: Skipper's Retreat Shack - Rupee under Sand 5
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Skipper's Retreat Shack - Rupee under Sand 6
+  standard: Skipper's Retreat Shack - Rupee under Sand 6
+  pretty: Skipper's Retreat Shack - Rupee under Sand 6
+  cryptic: a <r<rupee atop a sandy retreat>>
+
+- name: Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator
+  standard: Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator
+  pretty: Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator
+  cryptic: <r<disturbing a sign>> to the <y<shipyard center>>
 
 - name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
   standard: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
@@ -4211,6 +4286,26 @@
   standard: Shipyard - Gossip Stone
   pretty: Shipyard - Gossip Stone
   cryptic:
+
+- name: Shipyard - Bonk Sign before Second Minecart Track
+  standard: Shipyard - Bonk Sign before Second Minecart Track
+  pretty: Shipyard - Bonk Sign before Second Minecart Track
+  cryptic: <r<disturbing a sign>> to the <y<construction bay>>
+
+- name: Shipyard - Bonk Sign after Second Minecart Track
+  standard: Shipyard - Bonk Sign after Second Minecart Track
+  pretty: Shipyard - Bonk Sign after Second Minecart Track
+  cryptic: <r<disturbing a sign>> to the <y<last stop>>
+
+- name: Construction Bay - Bonk Left Sign near Upper Door
+  standard: Construction Bay - Bonk Left Sign near Upper Door
+  pretty: Construction Bay - Bonk Left Sign near Upper Door
+  cryptic: <r<disturbing a sign>> warning against <y<pirates>>
+
+- name: Construction Bay - Bonk Right Sign near Upper Door
+  standard: Construction Bay - Bonk Right Sign near Upper Door
+  pretty: Construction Bay - Bonk Right Sign near Upper Door
+  cryptic: <r<disturbing a sign>> informing of a <y<track inspection>>
 
 - name: Pirate Stronghold - Rupee on East Sea Pillar
   standard: Pirate Stronghold - Rupee on East Sea Pillar
@@ -4226,6 +4321,16 @@
   standard: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
   pretty: Pirate Stronghold - Rupee on Bird Statue Pillar or Nose
   cryptic: a <r<rupee inside a nose>>
+
+- name: Pirate Stronghold - Bonk Pillar Left of Shark's Head
+  standard: Pirate Stronghold - Bonk Pillar Left of Shark's Head
+  pretty: Pirate Stronghold - Bonk Pillar Left of Shark's Head
+  cryptic: <r<disturbing a striped pole>> guarding a <y<formidable skull>>
+
+- name: Pirate Stronghold - Bonk Pillar Right of Shark's Head
+  standard: Pirate Stronghold - Bonk Pillar Right of Shark's Head
+  pretty: Pirate Stronghold - Bonk Pillar Right of Shark's Head
+  cryptic: <r<disturbing a striped pole>> guarding a <y<formidable skull>>
 
 - name: Pirate Stronghold - Stamina Fruit on Left Side
   standard: Pirate Stronghold - Stamina Fruit on Left Side
