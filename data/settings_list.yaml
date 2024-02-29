@@ -135,17 +135,6 @@
     - "on":                            "Newly obtained wallets will come pre-filled with Rupees."
 
 
-- name: dowsing_after_whitesword
-  default_option: "on"
-  pretty_name: Fill Dowsing on White Sword
-  pretty_options:
-    - "Off"
-    - "On"
-  options:
-    - "off":                           "Obtaining the Goddess White Sword won't unlock the additional dowsing options."
-    - "on":                            "Obtaining the Goddess White Sword will immediately unlock rupee, crystal, treasure, and goddess cube dowsing."
-
-
 - name: open_thunderhead
   default_option: ballad
   pretty_name: Open Thunderhead

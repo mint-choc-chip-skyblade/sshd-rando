@@ -786,13 +786,6 @@
             </widget>
            </item>
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_dowsing_after_whitesword">
-             <property name="text">
-              <string>Fill Dowsing on White Sword</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="RandoTriStateCheckBox" name="setting_tunic_swap">
              <property name="text">
               <string>Tunic Swap</string>

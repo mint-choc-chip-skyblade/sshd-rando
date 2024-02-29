@@ -1172,7 +1172,6 @@ F012r: # Batreaux House
     object:
       anglex: 0xFF00 # sets the flag to -1 (meaning open)
   - name: Remove Crystal Dowsing
-    onlyif: dowsing_after_whitesword == on
     type: objdelete
     id: 0xFC23
     layer: 1
@@ -3044,7 +3043,6 @@ F210: # Mogma Turf
     room: 0
     objtype: SOBJ
   - name: Remove Rupee Dowsing
-    onlyif: dowsing_after_whitesword == on
     type: objdelete
     id: 0xFC3B
     layer: 0

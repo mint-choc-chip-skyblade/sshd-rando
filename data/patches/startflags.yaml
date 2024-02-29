@@ -59,7 +59,6 @@ Storyflags:
   - 789  # Unlocked Dowsing (still needs Goddess Sword)
   - Goddess_White_Sword: # If starting with at least white sword
     - 583 # Unlocked 4 New Dowsing Slots
-  - Goddess_White_Sword and dowsing_after_whitesword == on:
     - 102 # Treasure Dowsing
     - 104 # Crystal Dowsing
     - 105 # Rupee Dowsing

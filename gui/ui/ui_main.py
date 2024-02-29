@@ -540,11 +540,6 @@ class Ui_main_window(object):
 
         self.verticalLayout.addWidget(self.setting_full_wallet_upgrades)
 
-        self.setting_dowsing_after_whitesword = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_dowsing_after_whitesword.setObjectName(u"setting_dowsing_after_whitesword")
-
-        self.verticalLayout.addWidget(self.setting_dowsing_after_whitesword)
-
         self.setting_tunic_swap = RandoTriStateCheckBox(self.tweaks_group_box)
         self.setting_tunic_swap.setObjectName(u"setting_tunic_swap")
 
@@ -2135,7 +2130,6 @@ class Ui_main_window(object):
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
-        self.setting_dowsing_after_whitesword.setText(QCoreApplication.translate("main_window", u"Fill Dowsing on White Sword", None))
         self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
         self.setting_starry_skies.setText(QCoreApplication.translate("main_window", u"Starry Skies", None))
         self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
