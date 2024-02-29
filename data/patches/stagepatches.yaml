@@ -4982,14 +4982,6 @@ D101: # Ancient Cistern
     layer: 0
     room: 4
     objtype: STAG
-  - name: Remove stone tablet text
-    type: objpatch
-    id: 0xFC11
-    layer: 0
-    room: 10
-    objtype: OBJ
-    object:
-      params1: 0xFF3C0000
   - name: Reload Exit
     type: objadd
     room: 10
