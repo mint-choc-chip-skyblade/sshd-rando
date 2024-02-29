@@ -14,6 +14,9 @@ Storyflags:
   - 122  # Collected Deku Hornet for 1st time
   - 129  # Updated Lanayru Desert map
   - 130  # Start with Beacon
+  - Goddess's_Harp and Ballad_of_the_Goddess:
+    - 132 # Can Target Gate of Time (Imp 2 Defeated)
+    - 340 # Gate of Time raised
   - 138  # Sealed Temple layer 1
   - 178  # Cutscene showing off Bokoblin Base with Plats
   - 187  # Watered Big Frog outside Fire Sanctuary
@@ -23,7 +26,7 @@ Storyflags:
   - 226  # Hero Mode
   - 304  # Batreaux Crystal Quest started
   - 329  # Slept after starting Batreaux Crystal Quest
-  # - 358  # Interface choice unlocked
+# - 358  # Interface choice unlocked
   - 386  # Skip first part of Bertie's Crystal Quest text
   - 493  # Unlocked Goddess Walls
   - 494  # Open gates to Faron Woods
@@ -213,8 +216,8 @@ Sceneflags:
     - 39 # Log to Behind the Temple pushed down
     - 55 # Watched First time landing Cutscene
     - 72 # Revealed Behind the Temple Gossip Stone
-    # - triforce_required == off:
-    #   - 50 # Unlocked Horde Door from Hylia's Temple
+    - Complete_Triforce:
+      - 50 # Unlocked Horde Door from Hylia's Temple
     - skip_horde == on:
       - 51 # Unlocked Horde Door from Hylia's Realm
 

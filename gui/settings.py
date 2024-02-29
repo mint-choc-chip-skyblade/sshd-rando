@@ -27,7 +27,7 @@ from filepathconstants import BASE_PRESETS_PATH, CONFIG_PATH, ITEMS_PATH, PRESET
 from gui.components.list_pair import ListPair
 from gui.components.tristate_check_box import RandoTriStateCheckBox
 from gui.mixed_entrance_pools import MixedEntrancePools
-from logic.config import Config, write_config_to_file
+from logic.config import Config, write_config_to_file, seed_rng
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from logic.settings import Setting
 from randomizer.setting_string import (
@@ -372,6 +372,7 @@ class Settings:
             write_config_to_file(CONFIG_PATH, self.config)
 
         self.update_setting_string()
+        self.update_hash()
 
         # Has to be updated *after* the the config has been rewritten
         #
@@ -494,6 +495,7 @@ class Settings:
     def update_seed(self):
         self.config.seed = self.seed_line_edit.text()
         self.update_setting_string()
+        self.update_hash()
         write_config_to_file(CONFIG_PATH, self.config)
 
     def update_setting_string(self):
@@ -850,3 +852,8 @@ class Settings:
 
         self.config.settings[0].settings = self.settings
         self.update_from_config()
+
+    def update_hash(self):
+        self.config.hash = ""
+        seed_rng(self.config)
+        self.ui.hash_label.setText(f"Hash: {self.config.get_hash()}")

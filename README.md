@@ -39,7 +39,5 @@ information related to the randomizer (usually checks)
 ### Not yet implemented
 * Shop randomization
 * Flooded Faron Woods randomization
-* Silent Realm rewards as checks
 * Chest Dowsing Matches Contents (CDMC)
 * Scrapper and Tadtones as items
-* Shooting the Knight Academy bell ends the archery minigame early

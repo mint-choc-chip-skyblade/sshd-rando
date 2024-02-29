@@ -115,3 +115,6 @@
 
 .global check_and_set_trial_completion_flag
 .type check_and_set_trial_completion_flag, @function
+
+.global try_end_pumpkin_archery
+.type try_end_pumpkin_archery, @function

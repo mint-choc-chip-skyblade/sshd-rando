@@ -2,8 +2,10 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use crate::actor;
 use crate::debug;
 use crate::flag;
+use crate::item;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
@@ -57,4 +59,22 @@ pub fn prevent_minigame_death(final_health: i32) -> i32 {
 
         return new_final_health;
     }
+}
+
+#[no_mangle]
+pub fn try_end_pumpkin_archery(bell_actor: *mut actor::dAcOBell) -> *mut actor::dAcOBell {
+    unsafe {
+        if ((*bell_actor).field_0x860 & 1) == 1 {
+            let npc_pcs = actor::find_actor_by_type(actor::ACTORID::NPC_PCS, core::ptr::null_mut())
+                as *mut actor::dAcNpcPcs;
+            if npc_pcs != core::ptr::null_mut() {
+                (*npc_pcs).pumpkin_archery_timer = 0;
+            }
+            asm!("mov w8, #1")
+        } else {
+            asm!("mov w8, #0")
+        }
+    }
+
+    return bell_actor;
 }

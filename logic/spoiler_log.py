@@ -1,6 +1,9 @@
 from randomizer.setting_string import setting_string_from_config
 from .world import *
 from .entrance_shuffle import create_entrance_pools
+from filepathconstants import LOGS_PATH
+from constants.randoconstants import VERSION
+import os
 
 
 def spoiler_format_location(location: Location, longest_name_length: int) -> str:
@@ -17,17 +20,55 @@ def spoiler_format_entrance(entrance: Entrance, longest_name_length: int) -> str
     return f"{entrance}: {spaces * ' '}{connected} from {parent}"
 
 
+def log_basic_info(log, config: Config, worlds: list[World]) -> None:
+    log.write(f"Skyward Sword HD Randomizer Version: {VERSION}\n")
+    log.write(f"Seed: {config.seed}\n")
+    log.write(
+        f"Setting String: {setting_string_from_config(config, worlds[0].location_table)}\n"
+    )
+    log.write(f"Hash: {config.get_hash()}\n")
+
+
+def log_settings(log, config: Config, worlds: list[World]) -> None:
+    # Settings
+    log.write(f"\n# Settings\n")
+    log.write(f"seed: {config.seed}\n")
+    log.write(f"plandomizer: {config.use_plandomizer}\n")
+    log.write(
+        f"plandomizer_file: {config.plandomizer_file if config.plandomizer_file else 'null'}\n"
+    )
+    for world in worlds:
+        log.write(f"{world}:\n")
+        for setting in world.setting_map.settings.values():
+            if setting.is_using_random_option:
+                log.write(
+                    f"    {setting.name}: '{setting.info.random_option}' # chose {setting.value}\n"
+                )
+            else:
+                log.write(f"    {setting.name}: '{setting.value}'\n")
+        log.write(
+            f"    starting_inventory: {sorted(world.config.settings[0].starting_inventory.elements())}\n"
+        )
+        log.write(f"    excluded_locations: {world.setting_map.excluded_locations}\n")
+        log.write(
+            f"    excluded_hint_locations: {world.setting_map.excluded_hint_locations}\n"
+        )
+        log.write(
+            f"    mixed_entrance_pools: {world.setting_map.mixed_entrance_pools}\n"
+        )
+
+
 def generate_spoiler_log(worlds: list[World]) -> None:
     print_progress_text("Generating Spoiler Log")
 
-    filepath = "Spoiler Log.txt"
+    # Create logs folder if it doesn't exist
+    os.makedirs(LOGS_PATH, exist_ok=True)
+
     config = worlds[0].config
+    filepath = f"{LOGS_PATH}/{config.get_hash()} Spoiler Log.txt"
 
     with open(filepath, "w") as spoiler_log:
-        spoiler_log.write(f"Seed: {config.seed}\n")
-        spoiler_log.write(
-            f"Setting String: {setting_string_from_config(config, worlds[0].location_table)}\n"
-        )
+        log_basic_info(spoiler_log, config, worlds)
 
         # Print starting inventories if there are any
         if worlds_with_starting_inventories := [
@@ -188,31 +229,17 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                     spoiler_log.write("        Impa Hint:\n")
                     spoiler_log.write(f"            {world.impa_sot_hint}\n")
 
-        # Settings
-        spoiler_log.write(f"\n# Settings\n")
-        spoiler_log.write(f"seed: {config.seed}\n")
-        spoiler_log.write(f"plandomizer: {config.use_plandomizer}\n")
-        spoiler_log.write(
-            f"plandomizer_file: {config.plandomizer_file if config.plandomizer_file else 'null'}\n"
-        )
-        for world in worlds:
-            spoiler_log.write(f"{world}:\n")
-            for setting in world.setting_map.settings.values():
-                if setting.is_using_random_option:
-                    spoiler_log.write(
-                        f"    {setting.name}: '{setting.info.random_option}' # chose {setting.value}\n"
-                    )
-                else:
-                    spoiler_log.write(f"    {setting.name}: '{setting.value}'\n")
-            spoiler_log.write(
-                f"    starting_inventory: {sorted(world.config.settings[0].starting_inventory.elements())}\n"
-            )
-            spoiler_log.write(
-                f"    excluded_locations: {world.setting_map.excluded_locations}\n"
-            )
-            spoiler_log.write(
-                f"    excluded_hint_locations: {world.setting_map.excluded_hint_locations}\n"
-            )
-            spoiler_log.write(
-                f"    mixed_entrance_pools: {world.setting_map.mixed_entrance_pools}\n"
-            )
+        log_settings(spoiler_log, config, worlds)
+
+
+def generate_anti_spoiler_log(worlds: list[World]) -> None:
+    print_progress_text("Generating Anti-Spoiler Log")
+
+    # Create logs folder if it doesn't exist
+    os.makedirs(LOGS_PATH, exist_ok=True)
+
+    config = worlds[0].config
+    filepath = f"{LOGS_PATH}/{config.get_hash()} Anti Spoiler Log.txt"
+    with open(filepath, "w") as anti_spoiler_log:
+        log_basic_info(anti_spoiler_log, config, worlds)
+        log_settings(anti_spoiler_log, config, worlds)

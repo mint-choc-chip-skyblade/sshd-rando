@@ -571,10 +571,20 @@ def assign_gossip_stone_hints(
 
         hint = duplicate_hints.pop()
         stone = next(
-            stone
-            for stone in available_gossip_stones
-            if hint not in world.gossip_stone_hints[stone]
+            (
+                stone
+                for stone in available_gossip_stones
+                if hint not in world.gossip_stone_hints[stone]
+            ),
+            None,
         )
+
+        if stone is None:
+            logging.getLogger("").debug(
+                f"Could not find any gossip stones to hint at {hint}. Trying a different hint."
+            )
+            continue
+
         world.gossip_stone_hints[stone].append(hint)
         logging.getLogger("").debug(f"Duplicating hint for {hint} to {stone}")
 

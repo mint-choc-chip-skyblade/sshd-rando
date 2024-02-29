@@ -885,6 +885,9 @@
     index: 16
     flow:
       next: Check for Pouch
+  - name: Beedle Half Off Bug Net Text
+    type: textpatch
+    index: 26
   # shopsanity option stuff
   # - name: Second 100 Rupee Item
   #   onlyif: beedle_shop_shuffle != vanilla
@@ -1875,10 +1878,11 @@
   # talk to the tablet and then lower the statue and reload
   - name: Statue Lower Question
     type: textpatch
-    index: 9
+    index: 4
+    textboxtype: 0
   - name: Replace Stone Tablet Fi Event
     type: flowpatch
-    index: 7
+    index: 5
     flow:
       next: Statue Lower Switch
   - name: Statue Lower Switch
