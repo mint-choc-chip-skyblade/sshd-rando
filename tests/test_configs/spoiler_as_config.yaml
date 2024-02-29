@@ -5,6 +5,8 @@ World 1:
   item_pool: standard
   gratitude_crystal_shuffle: random
   stamina_fruit_shuffle: random
+  npc_closet_shuffle: random
+  hidden_item_shuffle: random
   rupee_shuffle: random
   underground_rupee_shuffle: random
   beedle_shop_shuffle: random
