@@ -32,7 +32,7 @@ Please choose a valid folder and try again."""
         )
 
     # If config has no seed, generate one
-    if config.seed == "" or config.seed == "-1":
+    if config.seed == "":
         config.seed = str(random.randint(0, 0xFFFFFFFF))
         # write_config_to_file(config_file, config)
 
