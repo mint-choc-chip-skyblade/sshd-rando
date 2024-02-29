@@ -1630,6 +1630,46 @@
 
 # Sealed Grounds:
 
+- name: Sealed Grounds - Bonk Wall between Pillars near Bird Statue
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F401/r1/l0/TgReact/0xFC52
+
+- name: Sealed Grounds - Bonk Wall Drawing of Hylia Raising Skyloft
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F401/r1/l0/TgReact/0xFC53
+
+- name: Sealed Grounds - Slingshot Sun in Wall Drawing of Worshippers
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F401/r1/l0/TgReact/0xFC55
+
+- name: Sealed Grounds - Slingshot Mouth in Wall Drawing of Beast
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F401/r1/l0/TgReact/0xFC56
+
+- name: Sealed Grounds - Bonk Rocks below Sealed Temple Entrance
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F401/r1/l0/TgReact/0xFC54
+
 - name: Sealed Grounds - Spiral Stamina Fruit 1
   original_item: Stamina Fruit
   types:
@@ -1829,13 +1869,77 @@
   Paths:
     - stage/F402/r2/l0/TBox/64
 
-- name: Sealed Temple - Song from Impa
+- name: Sealed Temple - Song from The Old One
   original_item: Ballad of the Goddess
   types:
     - NPC
   Paths:
     - event/501-Inpa/267
     - oarc/F402/l0
+
+- name: Sealed Temple - Slingshot above Doors to Sealed Grounds Whirlpool
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F402/r2/l0/TgReact/0xFC43
+
+- name: Sealed Temple - Slingshot above Doors to Behind the Temple
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F402/r2/l0/TgReact/0xFC42
+
+- name: Sealed Temple - Slingshot above Large Doors behind The Old One
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F402/r2/l0/TgReact/0xFC41
+
+- name: Sealed Temple - Blow Triforce Symbol on Southeast Archway behind Bird Statue
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F402/r2/l0/TgReact/0xFC44
+
+- name: Sealed Temple - Blow Triforce Symbol on Northeast Archway behind Bird Statue
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F402/r2/l0/TgReact/0xFC45
+
+- name: Sealed Temple - Blow Triforce Symbol on Southwest Archway behind Bird Statue
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F402/r2/l0/TgReact/0xFC47
+
+- name: Sealed Temple - Blow Triforce Symbol on Northwest Archway behind Bird Statue
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F402/r2/l0/TgReact/0xFC46
+
+- name: Sealed Grounds - Slingshot above Doors Behind the Temple
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F400/r0/l0/TgReact/0xFC92
 
 - name: Sealed Grounds - Gorko's Goddess Wall Reward
   types:
@@ -1862,6 +1966,46 @@
   textfile: 004-Object
   textindex: 13
   eventflowindex: 22
+
+- name: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F400/r0/l0/TgReact/0xFC93
+
+- name: Sealed Grounds - Slingshot Behind the Temple Gates Southwest Side
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F400/r0/l0/TgReact/0xFC90
+
+- name: Sealed Grounds - Slingshot Behind the Temple Gates Northeast Side
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F400/r0/l0/TgReact/0xFC91
+
+- name: Sealed Grounds - Bonk Large West Rock before Faron Woods
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F400/r0/l0/TgReact/0xFC8E
+
+- name: Sealed Grounds - Bonk Small East Rock before Faron Woods
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F400/r0/l0/TgReact/0xFC8F
 
 - name: Hylia's Temple - Zelda's Blessing
   original_item: Progressive Sword
