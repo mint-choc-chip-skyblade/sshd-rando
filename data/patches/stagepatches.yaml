@@ -2696,6 +2696,12 @@ F201_3: # Outside Fire Sanctuary
     layer: 2
     room: 0
     objtype: OBJ
+  - name: Remove trigger for entering fire sanctuary cutscene
+    type: objdelete
+    id: 0xFC3E
+    layer: 0
+    room: 0
+    objtype: STAG
 
 F201_4: # Volcano Waterfall
   - name: Layer override
