@@ -618,80 +618,6 @@
         <string>Gameplay</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_9">
-        <item row="0" column="0">
-         <widget class="QGroupBox" name="beat_the_game_group_box">
-          <property name="title">
-           <string>Beat the Game</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_13">
-           <item>
-            <layout class="QHBoxLayout" name="required_dungeons_layout">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="required_dungeons_label">
-               <property name="text">
-                <string>Required Dungeons</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="setting_required_dungeons">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_empty_unrequired_dungeons">
-             <property name="text">
-              <string>Barren Unrequired Dungeons</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_skip_horde">
-             <property name="text">
-              <string>Skip The Horde Fight</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_skip_g3">
-             <property name="text">
-              <string>Skip Ghirahim 3 Fight</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_skip_demise">
-             <property name="text">
-              <string>Skip Demise Fight</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="beat_the_game_vspacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
         <item row="0" column="1">
          <widget class="QGroupBox" name="dungeons_group_box">
           <property name="title">
@@ -770,6 +696,48 @@
            <string>Tweaks and Cosmetics</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_spawn_hearts">
+             <property name="text">
+              <string>Spawn Hearts and Heart Flowers</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_upgraded_skyward_strike">
+             <property name="text">
+              <string>Upgraded Skyward Strike</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_faster_air_meter_depletion">
+             <property name="text">
+              <string>Faster Air Meter Depletion</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="damage_multiplier_layout">
+             <item>
+              <widget class="QLabel" name="damage_multiplier_label">
+               <property name="text">
+                <string>Damage Multiplier</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_damage_multiplier">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
            <item>
             <widget class="QLabel" name="ammo_availability_label">
              <property name="text">
@@ -861,6 +829,80 @@
           </layout>
          </widget>
         </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="beat_the_game_group_box">
+          <property name="title">
+           <string>Beat the Game</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <layout class="QHBoxLayout" name="required_dungeons_layout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="required_dungeons_label">
+               <property name="text">
+                <string>Required Dungeons</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="setting_required_dungeons">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_empty_unrequired_dungeons">
+             <property name="text">
+              <string>Barren Unrequired Dungeons</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_skip_horde">
+             <property name="text">
+              <string>Skip The Horde Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_skip_g3">
+             <property name="text">
+              <string>Skip Ghirahim 3 Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_skip_demise">
+             <property name="text">
+              <string>Skip Demise Fight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="beat_the_game_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
         <item row="0" column="2">
          <widget class="QGroupBox" name="hint_placements_group_box">
           <property name="title">
@@ -917,70 +959,6 @@
            </item>
            <item>
             <spacer name="hint_placements_vspacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="4">
-         <widget class="QGroupBox" name="hero_mode_changes_group_box">
-          <property name="title">
-           <string>Hero Mode Changes</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_32">
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_upgraded_skyward_strike">
-             <property name="text">
-              <string>Upgraded Skyward Strike</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_faster_air_meter_depletion">
-             <property name="text">
-              <string>Faster Air Meter Depletion</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_spawn_hearts">
-             <property name="text">
-              <string>Spawn Hearts and Heart Flowers</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="damage_multiplier_layout">
-             <item>
-              <widget class="QLabel" name="damage_multiplier_label">
-               <property name="text">
-                <string>Damage Multiplier</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="setting_damage_multiplier">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <spacer name="verticalSpacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>

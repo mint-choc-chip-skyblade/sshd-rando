@@ -408,55 +408,6 @@ class Ui_main_window(object):
         self.gameplay_tab.setSizePolicy(sizePolicy1)
         self.gridLayout_9 = QGridLayout(self.gameplay_tab)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
-        self.beat_the_game_group_box = QGroupBox(self.gameplay_tab)
-        self.beat_the_game_group_box.setObjectName(u"beat_the_game_group_box")
-        self.verticalLayout_13 = QVBoxLayout(self.beat_the_game_group_box)
-        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.required_dungeons_layout = QHBoxLayout()
-        self.required_dungeons_layout.setSpacing(0)
-        self.required_dungeons_layout.setObjectName(u"required_dungeons_layout")
-        self.required_dungeons_label = QLabel(self.beat_the_game_group_box)
-        self.required_dungeons_label.setObjectName(u"required_dungeons_label")
-
-        self.required_dungeons_layout.addWidget(self.required_dungeons_label)
-
-        self.setting_required_dungeons = QSpinBox(self.beat_the_game_group_box)
-        self.setting_required_dungeons.setObjectName(u"setting_required_dungeons")
-        sizePolicy6.setHeightForWidth(self.setting_required_dungeons.sizePolicy().hasHeightForWidth())
-        self.setting_required_dungeons.setSizePolicy(sizePolicy6)
-
-        self.required_dungeons_layout.addWidget(self.setting_required_dungeons)
-
-
-        self.verticalLayout_13.addLayout(self.required_dungeons_layout)
-
-        self.setting_empty_unrequired_dungeons = RandoTriStateCheckBox(self.beat_the_game_group_box)
-        self.setting_empty_unrequired_dungeons.setObjectName(u"setting_empty_unrequired_dungeons")
-
-        self.verticalLayout_13.addWidget(self.setting_empty_unrequired_dungeons)
-
-        self.setting_skip_horde = RandoTriStateCheckBox(self.beat_the_game_group_box)
-        self.setting_skip_horde.setObjectName(u"setting_skip_horde")
-
-        self.verticalLayout_13.addWidget(self.setting_skip_horde)
-
-        self.setting_skip_g3 = RandoTriStateCheckBox(self.beat_the_game_group_box)
-        self.setting_skip_g3.setObjectName(u"setting_skip_g3")
-
-        self.verticalLayout_13.addWidget(self.setting_skip_g3)
-
-        self.setting_skip_demise = RandoTriStateCheckBox(self.beat_the_game_group_box)
-        self.setting_skip_demise.setObjectName(u"setting_skip_demise")
-
-        self.verticalLayout_13.addWidget(self.setting_skip_demise)
-
-        self.beat_the_game_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_13.addItem(self.beat_the_game_vspacer)
-
-
-        self.gridLayout_9.addWidget(self.beat_the_game_group_box, 0, 0, 1, 1)
-
         self.dungeons_group_box = QGroupBox(self.gameplay_tab)
         self.dungeons_group_box.setObjectName(u"dungeons_group_box")
         self.verticalLayout_16 = QVBoxLayout(self.dungeons_group_box)
@@ -522,6 +473,38 @@ class Ui_main_window(object):
         self.tweaks_group_box.setObjectName(u"tweaks_group_box")
         self.verticalLayout = QVBoxLayout(self.tweaks_group_box)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.setting_spawn_hearts = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_spawn_hearts.setObjectName(u"setting_spawn_hearts")
+
+        self.verticalLayout.addWidget(self.setting_spawn_hearts)
+
+        self.setting_upgraded_skyward_strike = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_upgraded_skyward_strike.setObjectName(u"setting_upgraded_skyward_strike")
+
+        self.verticalLayout.addWidget(self.setting_upgraded_skyward_strike)
+
+        self.setting_faster_air_meter_depletion = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_faster_air_meter_depletion.setObjectName(u"setting_faster_air_meter_depletion")
+
+        self.verticalLayout.addWidget(self.setting_faster_air_meter_depletion)
+
+        self.damage_multiplier_layout = QHBoxLayout()
+        self.damage_multiplier_layout.setObjectName(u"damage_multiplier_layout")
+        self.damage_multiplier_label = QLabel(self.tweaks_group_box)
+        self.damage_multiplier_label.setObjectName(u"damage_multiplier_label")
+
+        self.damage_multiplier_layout.addWidget(self.damage_multiplier_label)
+
+        self.setting_damage_multiplier = QSpinBox(self.tweaks_group_box)
+        self.setting_damage_multiplier.setObjectName(u"setting_damage_multiplier")
+        sizePolicy6.setHeightForWidth(self.setting_damage_multiplier.sizePolicy().hasHeightForWidth())
+        self.setting_damage_multiplier.setSizePolicy(sizePolicy6)
+
+        self.damage_multiplier_layout.addWidget(self.setting_damage_multiplier)
+
+
+        self.verticalLayout.addLayout(self.damage_multiplier_layout)
+
         self.ammo_availability_label = QLabel(self.tweaks_group_box)
         self.ammo_availability_label.setObjectName(u"ammo_availability_label")
 
@@ -584,6 +567,55 @@ class Ui_main_window(object):
 
         self.gridLayout_9.addWidget(self.tweaks_group_box, 0, 3, 1, 1)
 
+        self.beat_the_game_group_box = QGroupBox(self.gameplay_tab)
+        self.beat_the_game_group_box.setObjectName(u"beat_the_game_group_box")
+        self.verticalLayout_13 = QVBoxLayout(self.beat_the_game_group_box)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.required_dungeons_layout = QHBoxLayout()
+        self.required_dungeons_layout.setSpacing(0)
+        self.required_dungeons_layout.setObjectName(u"required_dungeons_layout")
+        self.required_dungeons_label = QLabel(self.beat_the_game_group_box)
+        self.required_dungeons_label.setObjectName(u"required_dungeons_label")
+
+        self.required_dungeons_layout.addWidget(self.required_dungeons_label)
+
+        self.setting_required_dungeons = QSpinBox(self.beat_the_game_group_box)
+        self.setting_required_dungeons.setObjectName(u"setting_required_dungeons")
+        sizePolicy6.setHeightForWidth(self.setting_required_dungeons.sizePolicy().hasHeightForWidth())
+        self.setting_required_dungeons.setSizePolicy(sizePolicy6)
+
+        self.required_dungeons_layout.addWidget(self.setting_required_dungeons)
+
+
+        self.verticalLayout_13.addLayout(self.required_dungeons_layout)
+
+        self.setting_empty_unrequired_dungeons = RandoTriStateCheckBox(self.beat_the_game_group_box)
+        self.setting_empty_unrequired_dungeons.setObjectName(u"setting_empty_unrequired_dungeons")
+
+        self.verticalLayout_13.addWidget(self.setting_empty_unrequired_dungeons)
+
+        self.setting_skip_horde = RandoTriStateCheckBox(self.beat_the_game_group_box)
+        self.setting_skip_horde.setObjectName(u"setting_skip_horde")
+
+        self.verticalLayout_13.addWidget(self.setting_skip_horde)
+
+        self.setting_skip_g3 = RandoTriStateCheckBox(self.beat_the_game_group_box)
+        self.setting_skip_g3.setObjectName(u"setting_skip_g3")
+
+        self.verticalLayout_13.addWidget(self.setting_skip_g3)
+
+        self.setting_skip_demise = RandoTriStateCheckBox(self.beat_the_game_group_box)
+        self.setting_skip_demise.setObjectName(u"setting_skip_demise")
+
+        self.verticalLayout_13.addWidget(self.setting_skip_demise)
+
+        self.beat_the_game_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_13.addItem(self.beat_the_game_vspacer)
+
+
+        self.gridLayout_9.addWidget(self.beat_the_game_group_box, 0, 0, 1, 1)
+
         self.hint_placements_group_box = QGroupBox(self.gameplay_tab)
         self.hint_placements_group_box.setObjectName(u"hint_placements_group_box")
         self.verticalLayout_24 = QVBoxLayout(self.hint_placements_group_box)
@@ -634,49 +666,6 @@ class Ui_main_window(object):
 
 
         self.gridLayout_9.addWidget(self.hint_placements_group_box, 0, 2, 1, 1)
-
-        self.hero_mode_changes_group_box = QGroupBox(self.gameplay_tab)
-        self.hero_mode_changes_group_box.setObjectName(u"hero_mode_changes_group_box")
-        self.verticalLayout_32 = QVBoxLayout(self.hero_mode_changes_group_box)
-        self.verticalLayout_32.setObjectName(u"verticalLayout_32")
-        self.setting_upgraded_skyward_strike = RandoTriStateCheckBox(self.hero_mode_changes_group_box)
-        self.setting_upgraded_skyward_strike.setObjectName(u"setting_upgraded_skyward_strike")
-
-        self.verticalLayout_32.addWidget(self.setting_upgraded_skyward_strike)
-
-        self.setting_faster_air_meter_depletion = RandoTriStateCheckBox(self.hero_mode_changes_group_box)
-        self.setting_faster_air_meter_depletion.setObjectName(u"setting_faster_air_meter_depletion")
-
-        self.verticalLayout_32.addWidget(self.setting_faster_air_meter_depletion)
-
-        self.setting_spawn_hearts = RandoTriStateCheckBox(self.hero_mode_changes_group_box)
-        self.setting_spawn_hearts.setObjectName(u"setting_spawn_hearts")
-
-        self.verticalLayout_32.addWidget(self.setting_spawn_hearts)
-
-        self.damage_multiplier_layout = QHBoxLayout()
-        self.damage_multiplier_layout.setObjectName(u"damage_multiplier_layout")
-        self.damage_multiplier_label = QLabel(self.hero_mode_changes_group_box)
-        self.damage_multiplier_label.setObjectName(u"damage_multiplier_label")
-
-        self.damage_multiplier_layout.addWidget(self.damage_multiplier_label)
-
-        self.setting_damage_multiplier = QSpinBox(self.hero_mode_changes_group_box)
-        self.setting_damage_multiplier.setObjectName(u"setting_damage_multiplier")
-        sizePolicy6.setHeightForWidth(self.setting_damage_multiplier.sizePolicy().hasHeightForWidth())
-        self.setting_damage_multiplier.setSizePolicy(sizePolicy6)
-
-        self.damage_multiplier_layout.addWidget(self.setting_damage_multiplier)
-
-
-        self.verticalLayout_32.addLayout(self.damage_multiplier_layout)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_32.addItem(self.verticalSpacer)
-
-
-        self.gridLayout_9.addWidget(self.hero_mode_changes_group_box, 0, 4, 1, 1)
 
         self.tab_widget.addTab(self.gameplay_tab, "")
         self.world_tab = QWidget()
@@ -2137,12 +2126,6 @@ class Ui_main_window(object):
         self.presets_save_new_button.setText(QCoreApplication.translate("main_window", u"Save New", None))
         self.presets_apply_button.setText(QCoreApplication.translate("main_window", u"Apply", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.getting_started_tab), QCoreApplication.translate("main_window", u"Getting Started", None))
-        self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
-        self.required_dungeons_label.setText(QCoreApplication.translate("main_window", u"Required Dungeons", None))
-        self.setting_empty_unrequired_dungeons.setText(QCoreApplication.translate("main_window", u"Barren Unrequired Dungeons", None))
-        self.setting_skip_horde.setText(QCoreApplication.translate("main_window", u"Skip The Horde Fight", None))
-        self.setting_skip_g3.setText(QCoreApplication.translate("main_window", u"Skip Ghirahim 3 Fight", None))
-        self.setting_skip_demise.setText(QCoreApplication.translate("main_window", u"Skip Demise Fight", None))
         self.dungeons_group_box.setTitle(QCoreApplication.translate("main_window", u"Dungeon Items", None))
         self.small_keys_label.setText(QCoreApplication.translate("main_window", u"Small Keys", None))
         self.boss_keys_label.setText(QCoreApplication.translate("main_window", u"Boss Keys", None))
@@ -2150,6 +2133,10 @@ class Ui_main_window(object):
         self.lanayru_caves_keys_label.setText(QCoreApplication.translate("main_window", u"Lanayru Caves Small Key", None))
         self.boss_key_puzzles_label.setText(QCoreApplication.translate("main_window", u"Boss Key Puzzles", None))
         self.tweaks_group_box.setTitle(QCoreApplication.translate("main_window", u"Tweaks and Cosmetics", None))
+        self.setting_spawn_hearts.setText(QCoreApplication.translate("main_window", u"Spawn Hearts and Heart Flowers", None))
+        self.setting_upgraded_skyward_strike.setText(QCoreApplication.translate("main_window", u"Upgraded Skyward Strike", None))
+        self.setting_faster_air_meter_depletion.setText(QCoreApplication.translate("main_window", u"Faster Air Meter Depletion", None))
+        self.damage_multiplier_label.setText(QCoreApplication.translate("main_window", u"Damage Multiplier", None))
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
@@ -2157,6 +2144,12 @@ class Ui_main_window(object):
         self.setting_rotating_items.setText(QCoreApplication.translate("main_window", u"Rotating Items", None))
         self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
         self.setting_starry_skies.setText(QCoreApplication.translate("main_window", u"Starry Skies", None))
+        self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
+        self.required_dungeons_label.setText(QCoreApplication.translate("main_window", u"Required Dungeons", None))
+        self.setting_empty_unrequired_dungeons.setText(QCoreApplication.translate("main_window", u"Barren Unrequired Dungeons", None))
+        self.setting_skip_horde.setText(QCoreApplication.translate("main_window", u"Skip The Horde Fight", None))
+        self.setting_skip_g3.setText(QCoreApplication.translate("main_window", u"Skip Ghirahim 3 Fight", None))
+        self.setting_skip_demise.setText(QCoreApplication.translate("main_window", u"Skip Demise Fight", None))
         self.hint_placements_group_box.setTitle(QCoreApplication.translate("main_window", u"Traps", None))
         self.trap_mode_label.setText(QCoreApplication.translate("main_window", u"Trap Mode", None))
         self.trappable_items_label.setText(QCoreApplication.translate("main_window", u"Trappable Items", None))
@@ -2164,11 +2157,6 @@ class Ui_main_window(object):
         self.setting_curse_traps.setText(QCoreApplication.translate("main_window", u"Curse Traps", None))
         self.setting_noise_traps.setText(QCoreApplication.translate("main_window", u"Noise Traps", None))
         self.setting_groose_traps.setText(QCoreApplication.translate("main_window", u"Groose Traps", None))
-        self.hero_mode_changes_group_box.setTitle(QCoreApplication.translate("main_window", u"Hero Mode Changes", None))
-        self.setting_upgraded_skyward_strike.setText(QCoreApplication.translate("main_window", u"Upgraded Skyward Strike", None))
-        self.setting_faster_air_meter_depletion.setText(QCoreApplication.translate("main_window", u"Faster Air Meter Depletion", None))
-        self.setting_spawn_hearts.setText(QCoreApplication.translate("main_window", u"Spawn Hearts and Heart Flowers", None))
-        self.damage_multiplier_label.setText(QCoreApplication.translate("main_window", u"Damage Multiplier", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.gameplay_tab), QCoreApplication.translate("main_window", u"Gameplay", None))
         self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))
         self.open_thunderhead_label.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
