@@ -311,7 +311,7 @@
   events:
     Hornet Larvae Farming: Nothing # Bonk the tree
   exits:
-    Deep Woods: Distance_Activator or Goddess_Sword or 'Push_Down_Deep_Woods_Shortcut_Logs' or logic_bomb_throws
+    Deep Woods: Distance_Activator or Goddess_Sword or 'Push_Down_Deep_Woods_Shortcut_Logs' or (logic_bomb_throws and Bomb_Bag)
     Faron Woods Ledge to Deep Woods: Nothing
   locations:
     Deep Woods - Blow Flowers at Entrance: Gust_Bellows
