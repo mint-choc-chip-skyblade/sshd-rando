@@ -758,7 +758,7 @@
       - 6 # Information
       - 5 # Play Time / Analysis
       - Display Fi Objective Text
-      - Display Fi Warp choice
+      - 5
       - -1
   - name: Patch Fi Call Information Option
     type: textpatch
