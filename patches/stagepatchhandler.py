@@ -1041,6 +1041,10 @@ class StagePatchHandler:
         print("Removing unecessary patches")
         self.remove_unnecessary_patches(onlyif_handler)
 
+        # Required to make the multiprocessing stuff not infinitely hang when running a build
+        # version. See https://pyinstaller.org/en/stable/common-issues-and-pitfalls.html?highlight=multipr#multi-processing
+        # for more info.
+        mp.freeze_support()
         stages_patched_queue = mp.Queue()
 
         # Create the pool or worker processes
