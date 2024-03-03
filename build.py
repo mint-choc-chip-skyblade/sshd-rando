@@ -12,10 +12,10 @@ exe_ext = ""
 
 if platform.system() == "Windows":
     exe_ext = ".exe"
-    platform_name = "win"
+    platform_name = "windows"
 if platform.system() == "Darwin":
     exe_ext = ".app"
-    platform_name = "mac"
+    platform_name = "macos"
 if platform.system() == "Linux":
     platform_name = "linux"
 
