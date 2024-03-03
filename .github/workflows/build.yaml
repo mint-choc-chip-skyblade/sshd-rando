@@ -1,12 +1,19 @@
 name: Build
 
 on:
-  - push
-  - pull_request
-  # push:
-  #   branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
+  push:
+    branches: * # [ main ]
+  pull_request:
+    branches: * # [ main ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version
+      env:
+        description: Environment
+        type: environment
+        required: true
+        default: "Production"
 
 jobs:
   build:
@@ -30,6 +37,7 @@ jobs:
             upload_path_suffix: '/*'
     
     runs-on: ${{ matrix.os }}
+    environment: ${{ github.event.inputs.env || 'Development' }}
     
     defaults:
       run:
@@ -54,7 +62,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ./.venv
-          key: ${{ runner.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles("requirements.txt") }}
+          key: ${{ runner.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles("**/req*.txt") }}
       - name: Create venv
         if: steps.cache-venv.outputs.cache-hit != "true"
         run: |
