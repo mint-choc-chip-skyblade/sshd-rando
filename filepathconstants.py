@@ -59,6 +59,8 @@ EVENT_FILES_PATH = ROMFS_EXTRACT_PATH / "US" / "Object" / "en_US"
 OBJECTPACK_PATH_TAIL = Path("romfs") / "Object" / "NX" / "ObjectPack.arc.LZ"
 OBJECTPACK_PATH = SSHD_EXTRACT_PATH / OBJECTPACK_PATH_TAIL
 
+TEXT_DATA_PATH = RANDO_ROOT_PATH / "data" / "text_data"
+
 # Logo, Icon, and Words
 ICON_PATH = RANDO_ROOT_PATH / "assets" / "icon.png"
 FI_ICON_PATH = RANDO_ROOT_PATH / "assets" / "fi.png"

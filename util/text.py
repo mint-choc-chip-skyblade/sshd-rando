@@ -1,4 +1,5 @@
 from pathlib import Path
+from filepathconstants import TEXT_DATA_PATH
 from gui.dialogs.dialog_header import print_progress_text
 from sslib.msb import CONTROL_REPLACEMENTS
 from typing import Union
@@ -107,11 +108,10 @@ def load_text_data() -> None:
         text_table.clear()
 
     print_progress_text("Loading text data")
-    directory = Path("data") / "text_data"
 
     for language in Text.SUPPORTED_LANGUAGES:
         filename = f"{language}.yaml"
-        filepath = directory / filename
+        filepath = TEXT_DATA_PATH / filename
 
         with open(filepath, "r") as text_data_file:
             text_data = yaml.safe_load(text_data_file)
