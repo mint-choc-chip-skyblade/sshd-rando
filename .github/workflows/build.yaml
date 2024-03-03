@@ -54,7 +54,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ./.venv
-          key: ${{ runner.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles("**/req*.txt") }}
+          key: ${{ runner.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles("**/requirements.txt") }}
       - name: Create venv
         if: steps.cache-venv.outputs.cache-hit != "true"
         run: |
