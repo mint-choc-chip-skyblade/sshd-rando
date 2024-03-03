@@ -2,6 +2,7 @@ from collections import Counter, OrderedDict
 import yaml
 import random
 import logging
+from filepathconstants import SETTINGS_LIST_PATH
 
 from gui.dialogs.dialog_header import print_progress_text
 
@@ -151,9 +152,8 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
     # Load in settings if we haven't done so yet
     if len(settings_info_map) == 0:
         print_progress_text("Loading setting data")
-        path = "data/settings_list.yaml"
 
-        with open(path, "r") as settings_file:
+        with open(SETTINGS_LIST_PATH, "r") as settings_file:
             settings_yaml = yaml.safe_load(settings_file)
 
             for setting_node in settings_yaml:
