@@ -13,7 +13,7 @@ on:
         description: Environment
         type: environment
         required: true
-        default: "Production"
+        default: 'Production'
 
 jobs:
   build:
@@ -53,10 +53,10 @@ jobs:
         id: setup-py
         uses: actions/setup-python@v4
         with:
-          python-version: "3.12"
+          python-version: '3.12'
           check-latest: true
           architecture: ${{ matrix.architecture }}
-          cache: "pip" # Cache all pip dependency downloads
+          cache: 'pip' # Cache all pip dependency downloads
       - name: Cache venv
         id: cache-venv
         uses: actions/cache@v3
@@ -64,7 +64,7 @@ jobs:
           path: ./.venv
           key: ${{ runner.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles('**/req*.txt') }}
       - name: Create venv
-        if: steps.cache-venv.outputs.cache-hit != "true"
+        if: steps.cache-venv.outputs.cache-hit != 'true'
         run: |
           python -m venv ./.venv
       - name: Activate venv
@@ -72,7 +72,7 @@ jobs:
           source ./.venv/bin/activate || source ./.venv/Scripts/activate
           echo $PATH >> $GITHUB_PATH
       - name: Install venv dependencies
-        if: steps.cache-venv.outputs.cache-hit != "true"
+        if: steps.cache-venv.outputs.cache-hit != 'true'
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
@@ -90,8 +90,8 @@ jobs:
       - uses: SebRollen/toml-action@v1.2.0
         id: read_toml
         with:
-          file: "constants/randoconstants.py"
-          field: "VERSION"
+          file: 'constants/randoconstants.py'
+          field: 'VERSION'
       - uses: actions/upload-artifact@v4
         with:
           name: Skyward Sword Randomizer v${{ steps.read_toml.outputs.value }}
