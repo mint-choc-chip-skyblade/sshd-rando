@@ -8,10 +8,10 @@ def get_program_args():
     )
 
     parser.add_argument(
-        "--with-gui",
-        dest="with_gui",
+        "--nogui",
+        dest="nogui",
         action="store_true",
-        help="Runs the randomizer through a gui.",
+        help="Runs the randomizer without a GUI.",
     )
 
     parser.add_argument(

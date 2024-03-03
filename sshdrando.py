@@ -15,7 +15,7 @@ if args.debug and __name__ == "__main__":
     )
 
 # Imports here to prevent circular dependency
-if args.with_gui:
+if not args.nogui:
     from gui.main import start_gui
 
     if __name__ == "__main__":
