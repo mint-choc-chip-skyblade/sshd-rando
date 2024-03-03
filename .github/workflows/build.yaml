@@ -1,12 +1,10 @@
 name: Build
 
 on:
-  # - push
-  # - pull_request
-  # push:
-  #   branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
+  push:
+    branches: [ main, build ]
+  pull_request:
+    branches: [ main, build ]
   workflow_dispatch:
     inputs:
       version:
