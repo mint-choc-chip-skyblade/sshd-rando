@@ -24,7 +24,7 @@ exe_path = Path("dist") / (base_name + exe_ext)
 if not exe_path.is_file() or exe_path.is_dir():
     raise Exception("Executable not found: %s" % exe_path)
 
-release_archive_path = Path("dist") / ("release_archive_" + VERSION)
+release_archive_path = Path("dist") / f"release_archive_{VERSION}_{platform_name}"
 print(f"Writing build to path: {release_archive_path}")
 
 if release_archive_path.exists() and release_archive_path.is_dir():
