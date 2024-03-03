@@ -93,7 +93,7 @@ jobs:
           field: 'VERSION'
       - uses: actions/upload-artifact@v4
         with:
-          name: Skyward Sword Randomizer v${{ steps.read_toml.outputs.value }}
+          name: Skyward Sword Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }})
           path: dist
       - name: Upload Python App
         uses: actions/upload-artifact@v4
