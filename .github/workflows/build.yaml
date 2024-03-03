@@ -99,4 +99,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }}
-          path: dist/release_archive_v${{ steps.read_toml.outputs.value }}
+          path: dist/release_archive_${{ steps.read_toml.outputs.value }}

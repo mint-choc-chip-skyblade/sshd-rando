@@ -1,19 +1,12 @@
 #!/usr/bin/python3
 
-import os
 from pathlib import Path
 import platform
 import shutil
-import struct
 
 from constants.randoconstants import VERSION
 
 base_name = f"Skyward Sword HD Randomizer {VERSION}"
-
-if (struct.calcsize("P") * 8) == 64:
-    bitness_suffix = "_x64"
-else:
-    bitness_suffix = "_x86"
 
 exe_ext = ""
 
@@ -31,7 +24,7 @@ exe_path = Path("dist") / (base_name + exe_ext)
 if not exe_path.is_file() or exe_path.is_dir():
     raise Exception("Executable not found: %s" % exe_path)
 
-release_archive_path = Path("dist") / ("release_archive_" + VERSION + bitness_suffix)
+release_archive_path = Path("dist") / ("release_archive_" + VERSION)
 print(f"Writing build to path: {release_archive_path}")
 
 if release_archive_path.exists() and release_archive_path.is_dir():
