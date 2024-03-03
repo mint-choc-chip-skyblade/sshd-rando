@@ -60,6 +60,10 @@ OBJECTPACK_PATH_TAIL = Path("romfs") / "Object" / "NX" / "ObjectPack.arc.LZ"
 OBJECTPACK_PATH = SSHD_EXTRACT_PATH / OBJECTPACK_PATH_TAIL
 
 TEXT_DATA_PATH = RANDO_ROOT_PATH / "data" / "text_data"
+ENTRANCE_SHUFFLE_DATA_PATH = RANDO_ROOT_PATH / "data" / "entrance_shuffle_data.yaml"
+BIRD_STATUE_DATA_PATH = RANDO_ROOT_PATH / "data" / "bird_statue_data.yaml"
+WORLD_DATA_PATH = RANDO_ROOT_PATH / "data" / "world"
+MACROS_DATA_PATH = RANDO_ROOT_PATH / "data" / "macros.yaml"
 
 # Logo, Icon, and Words
 ICON_PATH = RANDO_ROOT_PATH / "assets" / "icon.png"

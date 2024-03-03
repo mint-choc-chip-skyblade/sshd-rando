@@ -1,4 +1,5 @@
 from constants.itemconstants import ALL_JUNK_ITEMS, TRAP_SETTING_TO_ITEM
+from filepathconstants import ITEMS_PATH, MACROS_DATA_PATH, WORLD_DATA_PATH
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from .config import Config
 from .settings import *
@@ -101,7 +102,7 @@ class World:
     # for this world
     def build_item_table(self) -> None:
         logging.getLogger("").debug(f"Building Item Table for {self}")
-        with open("data/items.yaml", "r") as item_data_file:
+        with open(ITEMS_PATH, "r") as item_data_file:
             item_data = yaml.safe_load(item_data_file)
             for item_node in item_data:
                 # Check to make sure all neccesary fields exist
@@ -163,7 +164,7 @@ class World:
 
     def load_logic_macros(self) -> None:
         logging.getLogger("").debug(f"Loading macros for {self}")
-        with open("data/macros.yaml", "r") as macros_data_file:
+        with open(MACROS_DATA_PATH, "r") as macros_data_file:
             macros_data = yaml.safe_load(macros_data_file)
             for macro_name, req_str in macros_data.items():
                 self.macros[macro_name] = parse_requirement_string(
@@ -177,9 +178,7 @@ class World:
         defined_events: set[str] = set()
         defined_areas: set[Area] = set()
 
-        directory = Path("data") / "world"
-
-        for filepath in directory.iterdir():
+        for filepath in WORLD_DATA_PATH.iterdir():
             # Skip over any non-yaml files
             if not filepath.as_posix().endswith(".yaml"):
                 continue

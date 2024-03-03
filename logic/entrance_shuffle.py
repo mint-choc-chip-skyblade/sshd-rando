@@ -1,3 +1,4 @@
+from filepathconstants import BIRD_STATUE_DATA_PATH, ENTRANCE_SHUFFLE_DATA_PATH
 from .entrance import *
 from .item import Item
 from .item_pool import get_complete_item_pool
@@ -55,7 +56,7 @@ def shuffle_world_entrances(world: World, worlds: list[World]):
 
 
 def set_all_entrances_data(world: World) -> None:
-    with open("data/entrance_shuffle_data.yaml") as entrance_data_file:
+    with open(ENTRANCE_SHUFFLE_DATA_PATH) as entrance_data_file:
         entrance_shuffle_list = yaml.safe_load(entrance_data_file)
 
         # Keep track of which double door entrances are together
@@ -455,7 +456,7 @@ def set_random_starting_statues(
     item_pool = get_complete_item_pool(worlds)
 
     logging.getLogger("").debug(f"Setting starting bird statues for {world}")
-    with open("data/bird_statue_data.yaml", "r") as bird_statue_data_file:
+    with open(BIRD_STATUE_DATA_PATH, "r") as bird_statue_data_file:
         bird_statue_data = yaml.safe_load(bird_statue_data_file)
 
         while retries > 0:
