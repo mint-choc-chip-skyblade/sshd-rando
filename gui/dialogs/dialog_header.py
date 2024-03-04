@@ -15,7 +15,7 @@ def get_progress_value_from_range(
     return int(end_value - (progress_made_ratio * range_size))
 
 
-if args.with_gui:
+if not args.nogui:
     from gui.guithreads import RandomizationThread, VerificationThread
 
     def update_progress_value(value: int):

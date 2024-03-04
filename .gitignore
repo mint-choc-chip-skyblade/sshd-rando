@@ -17,6 +17,8 @@ oarccache
 *.gv
 *.svg
 
+build/
+dist/
 logs/
 config.yaml
 preferences.yaml

@@ -1066,7 +1066,7 @@ class StagePatchHandler:
             )
 
             # imap *can* be slower so only use it with the gui (where we need a progress output)
-            if args.with_gui:
+            if not args.nogui:
                 for _ in pool.imap_unordered(
                     patch_stage_func,
                     [

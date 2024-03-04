@@ -1,0 +1,102 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version
+      env:
+        description: Environment
+        type: environment
+        required: true
+        default: "Production"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - name: Windows Build
+            os: windows-latest
+            architecture: x64
+            artifact: windows
+            upload_path_suffix: '/*'
+          # Removed since the version of nlzss11 that we have to use for HDR
+          # doesn't support mac. TODO: fix this xD
+          #
+          # - name: MacOS Build
+          #   os: macos-latest
+          #   architecture: x64
+          #   artifact: macos
+          #   upload_path_suffix: '.zip'
+          - name: Linux Build
+            os: ubuntu-latest
+            architecture: x64
+            artifact: linux
+            upload_path_suffix: '/*'
+    
+    runs-on: ${{ matrix.os }}
+    environment: ${{ github.event.inputs.env || 'Development' }}
+    
+    defaults:
+      run:
+        shell: bash
+    
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      MACOSX_DEPLOYMENT_TARGET: 10.15
+    
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        id: setup-py
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          check-latest: true
+          architecture: ${{ matrix.architecture }}
+          cache: 'pip' # Cache all pip dependency downloads
+      - name: Cache venv
+        id: cache-venv
+        uses: actions/cache@v4
+        with:
+          path: ./.venv
+          key: ${{ runner.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles('**/req*.txt') }}
+      - name: Create venv
+        if: steps.cache-venv.outputs.cache-hit != 'true'
+        run: |
+          python -m venv ./.venv
+      - name: Activate venv
+        run: |
+          source ./.venv/bin/activate || source ./.venv/Scripts/activate
+          echo $PATH >> $GITHUB_PATH
+      - name: Install venv dependencies
+        if: steps.cache-venv.outputs.cache-hit != 'true'
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Install any missing Qt dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qtbase5-dev
+          sudo apt-get install -y libxcb-cursor0
+      - name: Build Python App
+        run: python -m PyInstaller --log-level=WARN sshdrando.spec
+      - name: Bundle Python App
+        run: python build.py
+      - name: Read Version
+        uses: SebRollen/toml-action@v1.2.0
+        id: read_toml
+        with:
+          file: 'constants/randoconstants.py'
+          field: 'VERSION'
+      - name: Upload Python App
+        uses: actions/upload-artifact@v4
+        with:
+          name: Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }})
+          path: dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}

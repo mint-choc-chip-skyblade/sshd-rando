@@ -3,20 +3,27 @@ import os
 
 TITLE_ID = "01002DA013484000"
 
-RANDO_ROOT_PATH = Path(os.path.dirname(os.path.realpath(__file__)))
-SSHD_EXTRACT_PATH = RANDO_ROOT_PATH / "sshd_extract"
+try:
+    from sys import _MEIPASS  # @IgnoreException
+
+    RANDO_ROOT_PATH = Path(_MEIPASS)
+except ImportError:
+    RANDO_ROOT_PATH = Path(os.path.dirname(os.path.realpath(__file__)))
+
+SSHD_EXTRACT_PATH = Path("sshd_extract")
 EXEFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "exefs"
 ROMFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "romfs"
 
 # Outputs
-DEFAULT_OUTPUT_PATH = RANDO_ROOT_PATH / "sshdr_output"
-LOGS_PATH = RANDO_ROOT_PATH / "logs"
+DEFAULT_OUTPUT_PATH = Path("sshdr_output")
+LOGS_PATH = Path("logs")
 
 # Config
-CONFIG_PATH = RANDO_ROOT_PATH / "config.yaml"
-PREFERENCES_PATH = RANDO_ROOT_PATH / "preferences.yaml"
-PLANDO_PATH = RANDO_ROOT_PATH / "plandomizers"
-PRESETS_PATH = RANDO_ROOT_PATH / "presets"
+CONFIG_PATH = Path("config.yaml")
+PREFERENCES_PATH = Path("preferences.yaml")
+SETTINGS_LIST_PATH = RANDO_ROOT_PATH / "data" / "settings_list.yaml"
+PLANDO_PATH = Path("plandomizers")
+PRESETS_PATH = Path("presets")
 BASE_PRESETS_PATH = RANDO_ROOT_PATH / "data" / "presets"
 
 # GUI Stuff
@@ -29,13 +36,13 @@ HIGH_CONTRAST_THEME_PATH = (
 READABILITY_THEME_PATH = (
     RANDO_ROOT_PATH / "gui" / "custom_themes" / "readability_theme.json"
 )
-CUSTOM_THEME_PATH = RANDO_ROOT_PATH / "custom_theme.json"
+CUSTOM_THEME_PATH = Path("custom_theme.json")
 
 RANDO_FONT_PATH = RANDO_ROOT_PATH / "assets" / "Figtree-Regular.ttf"
 DYSLEXIC_FONT_PATH = RANDO_ROOT_PATH / "assets" / "OpenDyslexic3-Regular.ttf"
 
 # Stage and event stuff
-OARC_CACHE_PATH = RANDO_ROOT_PATH / "oarccache"
+OARC_CACHE_PATH = Path("oarccache")
 
 STAGE_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "stagepatches.yaml"
 EVENT_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "eventpatches.yaml"
@@ -51,6 +58,12 @@ EVENT_FILES_PATH = ROMFS_EXTRACT_PATH / "US" / "Object" / "en_US"
 
 OBJECTPACK_PATH_TAIL = Path("romfs") / "Object" / "NX" / "ObjectPack.arc.LZ"
 OBJECTPACK_PATH = SSHD_EXTRACT_PATH / OBJECTPACK_PATH_TAIL
+
+TEXT_DATA_PATH = RANDO_ROOT_PATH / "data" / "text_data"
+ENTRANCE_SHUFFLE_DATA_PATH = RANDO_ROOT_PATH / "data" / "entrance_shuffle_data.yaml"
+BIRD_STATUE_DATA_PATH = RANDO_ROOT_PATH / "data" / "bird_statue_data.yaml"
+WORLD_DATA_PATH = RANDO_ROOT_PATH / "data" / "world"
+MACROS_DATA_PATH = RANDO_ROOT_PATH / "data" / "macros.yaml"
 
 # Logo, Icon, and Words
 ICON_PATH = RANDO_ROOT_PATH / "assets" / "icon.png"

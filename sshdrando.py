@@ -1,3 +1,10 @@
+import multiprocessing as mp
+
+# Required to make the multiprocessing stuff not infinitely hang when running a build
+# version. See https://pyinstaller.org/en/stable/common-issues-and-pitfalls.html?highlight=multipr#multi-processing
+# for more info.
+mp.freeze_support()
+
 from util.arguments import get_program_args
 import logging
 
@@ -15,7 +22,7 @@ if args.debug and __name__ == "__main__":
     )
 
 # Imports here to prevent circular dependency
-if args.with_gui:
+if not args.nogui:
     from gui.main import start_gui
 
     if __name__ == "__main__":
