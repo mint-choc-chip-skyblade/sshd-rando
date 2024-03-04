@@ -1,3 +1,10 @@
+import multiprocessing as mp
+
+# Required to make the multiprocessing stuff not infinitely hang when running a build
+# version. See https://pyinstaller.org/en/stable/common-issues-and-pitfalls.html?highlight=multipr#multi-processing
+# for more info.
+mp.freeze_support()
+
 from PySide6.QtCore import QThread, Signal
 
 
@@ -26,13 +33,7 @@ class RandomizationThread(QThread):
 
             self.error_abort.emit(str(e), traceback.format_exc())
 
-            import multiprocessing as mp
-
-            # Required to make the multiprocessing stuff not infinitely hang when running a build
-            # version. See https://pyinstaller.org/en/stable/common-issues-and-pitfalls.html?highlight=multipr#multi-processing
-            # for more info.
             mp.freeze_support()
-
             for child in mp.active_children():
                 child.kill()
 
