@@ -25,6 +25,9 @@ jobs:
             architecture: x64
             artifact: windows
             upload_path_suffix: '/*'
+          # Removed since the version of nlzss11 that we have to use for HDR
+          # doesn't support mac. TODO: fix this xD
+          #
           # - name: MacOS Build
           #   os: macos-latest
           #   architecture: x64
@@ -51,7 +54,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Set up Python
         id: setup-py
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           check-latest: true
