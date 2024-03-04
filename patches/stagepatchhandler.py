@@ -1,10 +1,3 @@
-import multiprocessing as mp
-
-# Required to make the multiprocessing stuff not infinitely hang when running a build
-# version. See https://pyinstaller.org/en/stable/common-issues-and-pitfalls.html?highlight=multipr#multi-processing
-# for more info.
-mp.freeze_support()
-
 from util.arguments import get_program_args
 from gui.dialogs.dialog_header import (
     get_progress_value_from_range,
@@ -21,6 +14,7 @@ from collections import defaultdict
 from pathlib import Path
 from functools import partial
 import json
+import multiprocessing as mp
 
 from constants.tboxsubtypes import VANILLA_TBOX_SUBTYPES
 from constants.patchconstants import (
