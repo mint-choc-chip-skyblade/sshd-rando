@@ -25,14 +25,11 @@ jobs:
             architecture: x64
             artifact: windows
             upload_path_suffix: '/*'
-          # Removed since the version of nlzss11 that we have to use for HDR
-          # doesn't support mac. TODO: fix this xD
-          #
-          # - name: MacOS Build
-          #   os: macos-latest
-          #   architecture: x64
-          #   artifact: macos
-          #   upload_path_suffix: '.zip'
+          - name: MacOS Build
+            os: macos-latest
+            architecture: x64
+            artifact: macos
+            upload_path_suffix: '.zip'
           - name: Linux Build
             os: ubuntu-latest
             architecture: x64

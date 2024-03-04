@@ -21,8 +21,8 @@ if platform.system() == "Linux":
 
 exe_path = Path("dist") / (base_name + exe_ext)
 
-if not exe_path.is_file() or exe_path.is_dir():
-    raise Exception("Executable not found: %s" % exe_path)
+if not exe_path.is_file() and not exe_path.is_dir():
+    raise Exception(f"Executable not found: {exe_path}")
 
 release_archive_path = Path("dist") / f"release_archive_{VERSION}_{platform_name}"
 print(f"Writing build to path: {release_archive_path}")
