@@ -2,9 +2,9 @@ name: Build
 
 on:
   push:
-    branches: [ main, build ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, build ]
+    branches: [ main ]
   workflow_dispatch:
     inputs:
       version:
