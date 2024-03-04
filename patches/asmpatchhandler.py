@@ -239,10 +239,19 @@ class ASMPatchHandler:
                 SDK_NSO_OFFSETS,
             )
 
-        print_progress_text("Applying damage multiplier")
-        self.patch_damage_multiplier(
-            ASM_PATCHES_DIFFS_PATH / "damage-multiplier-diff.yaml", world
-        )
+        temp_dir = tempfile.TemporaryDirectory()
+
+        # Keeps the temporary directory only within this with block.
+        with temp_dir as temp_dir_name:
+            temp_dir_name = Path(temp_dir_name)
+
+            print_progress_text("Applying damage multiplier")
+            damage_multiplier_diff_file_path = (
+                temp_dir_name / "damage-multiplier-diff.yaml"
+            )
+            self.patch_damage_multiplier(
+                ASM_PATCHES_DIFFS_PATH / damage_multiplier_diff_file_path, world
+            )
 
         print_progress_text("Applying asm patches")
         self.patch_asm(
