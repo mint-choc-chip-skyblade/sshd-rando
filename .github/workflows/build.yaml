@@ -27,13 +27,13 @@ jobs:
             artifact_suffix: ""
             upload_path_suffix: "/*"
           - name: MacOS Build x64
-            os: macos-14-large
+            os: macos-13
             architecture: x64
             artifact: macos
             artifact_suffix: _intel
             upload_path_suffix: ".zip"
           - name: MacOS Build arm64
-            os: macos-14-large
+            os: macos-13
             architecture: arm64
             artifact: macos
             artifact_suffix: _apple_silicon
@@ -54,7 +54,7 @@ jobs:
 
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      MACOSX_DEPLOYMENT_TARGET: macos-14-large
+      MACOSX_DEPLOYMENT_TARGET: macos-13
 
     steps:
       - uses: actions/checkout@v4
