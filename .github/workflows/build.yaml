@@ -94,7 +94,7 @@ jobs:
           field: 'VERSION'
       - name: Tar Files if not Windows Build
         if: runner.os != 'Windows'
-        run: tar -cvf Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}).tar dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}
+        run: tar -cvf Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} \(${{ matrix.artifact }}\).tar dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}
       - name: Upload Artifact non-Windows Artifact
         if: runner.os != 'Windows'
         uses: actions/upload-artifact@v4
