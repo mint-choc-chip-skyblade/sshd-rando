@@ -1,29 +1,43 @@
-from pathlib import Path
+import appdirs
 import os
+import platform
+
+from pathlib import Path
 
 TITLE_ID = "01002DA013484000"
+
+userdata_path = "."
 
 try:
     from sys import _MEIPASS  # @IgnoreException
 
     RANDO_ROOT_PATH = Path(_MEIPASS)
+
+    if platform.system() == "Darwin":
+        userdata_path = appdirs.user_data_dir(
+            "Skyward Sword HD Randomizer", "SSHD Rando"
+        )
+
+        if not os.path.isdir(userdata_path):
+            os.mkdir(userdata_path)
+
 except ImportError:
     RANDO_ROOT_PATH = Path(os.path.dirname(os.path.realpath(__file__)))
 
-SSHD_EXTRACT_PATH = Path("sshd_extract")
+SSHD_EXTRACT_PATH = Path(userdata_path) / "sshd_extract"
 EXEFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "exefs"
 ROMFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "romfs"
 
 # Outputs
-DEFAULT_OUTPUT_PATH = Path("sshdr_output")
-LOGS_PATH = Path("logs")
+DEFAULT_OUTPUT_PATH = Path(userdata_path) / "sshdr_output"
+LOGS_PATH = Path(userdata_path) / "logs"
 
 # Config
-CONFIG_PATH = Path("config.yaml")
-PREFERENCES_PATH = Path("preferences.yaml")
+CONFIG_PATH = Path(userdata_path) / "config.yaml"
+PREFERENCES_PATH = Path(userdata_path) / "preferences.yaml"
 SETTINGS_LIST_PATH = RANDO_ROOT_PATH / "data" / "settings_list.yaml"
-PLANDO_PATH = Path("plandomizers")
-PRESETS_PATH = Path("presets")
+PLANDO_PATH = Path(userdata_path) / "plandomizers"
+PRESETS_PATH = Path(userdata_path) / "presets"
 BASE_PRESETS_PATH = RANDO_ROOT_PATH / "data" / "presets"
 
 # GUI Stuff
@@ -36,13 +50,13 @@ HIGH_CONTRAST_THEME_PATH = (
 READABILITY_THEME_PATH = (
     RANDO_ROOT_PATH / "gui" / "custom_themes" / "readability_theme.json"
 )
-CUSTOM_THEME_PATH = Path("custom_theme.json")
+CUSTOM_THEME_PATH = Path(userdata_path) / "custom_theme.json"
 
 RANDO_FONT_PATH = RANDO_ROOT_PATH / "assets" / "Figtree-Regular.ttf"
 DYSLEXIC_FONT_PATH = RANDO_ROOT_PATH / "assets" / "OpenDyslexic3-Regular.ttf"
 
 # Stage and event stuff
-OARC_CACHE_PATH = Path("oarccache")
+OARC_CACHE_PATH = Path(userdata_path) / "oarccache"
 
 STAGE_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "stagepatches.yaml"
 EVENT_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "eventpatches.yaml"
