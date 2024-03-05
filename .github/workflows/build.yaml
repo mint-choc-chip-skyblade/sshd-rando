@@ -27,13 +27,13 @@ jobs:
             artifact_suffix: ""
             upload_path_suffix: "/*"
           - name: MacOS Build x64
-            os: macos-latest
+            os: macos-14
             architecture: x64
             artifact: macos
             artifact_suffix: _intel
             upload_path_suffix: ".zip"
           - name: MacOS Build arm64
-            os: macos-latest
+            os: macos-14
             architecture: arm64
             artifact: macos
             artifact_suffix: _apple_silicon
