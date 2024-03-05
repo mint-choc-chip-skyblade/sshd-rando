@@ -2,9 +2,9 @@ name: Build
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
     inputs:
       version:
@@ -24,39 +24,39 @@ jobs:
             os: windows-latest
             architecture: x64
             artifact: windows
-            upload_path_suffix: '/*'
+            upload_path_suffix: "/*"
           - name: MacOS Build
             os: macos-latest
             architecture: x64
             artifact: macos
-            upload_path_suffix: '.zip'
+            upload_path_suffix: ".zip"
           - name: Linux Build
             os: ubuntu-latest
             architecture: x64
             artifact: linux
-            upload_path_suffix: '/*'
-    
+            upload_path_suffix: "/*"
+
     runs-on: ${{ matrix.os }}
     environment: ${{ github.event.inputs.env || 'Development' }}
-    
+
     defaults:
       run:
         shell: bash
-    
+
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       MACOSX_DEPLOYMENT_TARGET: 10.15
-    
+
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
         id: setup-py
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
           check-latest: true
           architecture: ${{ matrix.architecture }}
-          cache: 'pip' # Cache all pip dependency downloads
+          cache: "pip" # Cache all pip dependency downloads
       - name: Cache venv
         id: cache-venv
         uses: actions/cache@v4
@@ -90,11 +90,11 @@ jobs:
         uses: SebRollen/toml-action@v1.2.0
         id: read_toml
         with:
-          file: 'constants/randoconstants.py'
-          field: 'VERSION'
+          file: "constants/randoconstants.py"
+          field: "VERSION"
       - name: Tar Files if not Windows Build
         if: runner.os != 'Windows'
-        run: tar -cvf "dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}/Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}).tar" .
+        run: tar -C dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}/ -cvf "Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}).tar" .
       - name: Upload Artifact non-Windows Artifact
         if: runner.os != 'Windows'
         uses: actions/upload-artifact@v4
