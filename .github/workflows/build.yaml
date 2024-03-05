@@ -54,7 +54,7 @@ jobs:
 
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      MACOSX_DEPLOYMENT_TARGET: 10.15
+      MACOSX_DEPLOYMENT_TARGET: macos-14
 
     steps:
       - uses: actions/checkout@v4
