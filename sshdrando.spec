@@ -64,7 +64,7 @@ exe = EXE(
     [
         ("--nogui", None, "OPTION"),
     ],
-    [],
+    a.binaries,
     a.datas,
     name=f"Skyward Sword HD Randomizer {VERSION}",
     debug=False,
