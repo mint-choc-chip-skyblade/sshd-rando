@@ -71,7 +71,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ./.venv
-          key: ${{ runner.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles('**/req*.txt') }}
+          key: ${{ matrix.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles('**/req*.txt') }}
       - name: Create venv
         if: steps.cache-venv.outputs.cache-hit != 'true'
         run: |
