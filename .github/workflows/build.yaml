@@ -25,9 +25,14 @@ jobs:
             architecture: x64
             artifact: windows
             upload_path_suffix: "/*"
-          - name: MacOS Build
+          - name: MacOS Build x64
             os: macos-latest
             architecture: x64
+            artifact: macos
+            upload_path_suffix: ".zip"
+          - name: MacOS Build arm64
+            os: macos-latest
+            architecture: arm64
             artifact: macos
             upload_path_suffix: ".zip"
           - name: Linux Build
