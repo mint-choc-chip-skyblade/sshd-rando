@@ -93,16 +93,16 @@ jobs:
           file: 'constants/randoconstants.py'
           field: 'VERSION'
       - name: Tar Files if not Windows Build
-        if: matrix.artifact != windows
+        if: runner.os != "Windows"
         run: tar -cvf Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}).tar dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}
       - name: Upload Artifact non-Windows Artifact
-        if: matrix.artifact != windows
+        if: runner.os != "Windows"
         uses: actions/upload-artifact@v4
         with:
           name: Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }})
           path: Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}).tar
       - name: Upload Windows Artifact
-        if: matrix.artifact == windows
+        if: runner.os == "Windows"
         uses: actions/upload-artifact@v4
         with:
           name: Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }})
