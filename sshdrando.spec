@@ -73,7 +73,7 @@ exe = EXE(
     upx=True,
     runtime_tmpdir=None,
     console=False,
-    # icon="assets/icon.png",
+    # icon="assets/icon.png", # causes the exe to get flagged as a trojan :/
 )
 
 app = BUNDLE(
