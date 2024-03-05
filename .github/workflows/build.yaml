@@ -28,12 +28,12 @@ jobs:
           - name: MacOS Build x64
             os: macos-latest
             architecture: x64
-            artifact: macos
+            artifact: macos_x64
             upload_path_suffix: ".zip"
           - name: MacOS Build arm64
             os: macos-latest
             architecture: arm64
-            artifact: macos
+            artifact: macos_arm64
             upload_path_suffix: ".zip"
           - name: Linux Build
             os: ubuntu-latest
