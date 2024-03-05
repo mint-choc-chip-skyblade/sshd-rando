@@ -33,7 +33,7 @@ jobs:
             artifact_suffix: _intel
             upload_path_suffix: ".zip"
           - name: MacOS Build arm64
-            os: macos-13
+            os: macos-13-xlarge
             architecture: arm64
             artifact: macos
             artifact_suffix: _apple_silicon
