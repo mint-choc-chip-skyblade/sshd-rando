@@ -24,26 +24,30 @@ jobs:
           python-version: "3.12"
           check-latest: true
           cache: "pip" # Cache all pip dependency downloads
-      - name: Cache venv
-        id: cache-venv
-        uses: actions/cache@v4
-        with:
-          path: ./.venv
-          key: ${{ matrix.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles('**/req*.txt') }}
-      - name: Create venv
-        if: steps.cache-venv.outputs.cache-hit != 'true'
-        run: |
-          python -m venv ./.venv
-      - name: Activate venv
-        run: |
-          source ./.venv/bin/activate || source ./.venv/Scripts/activate
-          echo $PATH >> $GITHUB_PATH
-      - name: Install venv dependencies
-        if: steps.cache-venv.outputs.cache-hit != 'true'
+      # - name: Cache venv
+      #   id: cache-venv
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: ./.venv
+      #     key: ${{ matrix.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles('**/req*.txt') }}
+      # - name: Create venv
+      #   if: steps.cache-venv.outputs.cache-hit != 'true'
+      #   run: |
+      #     python -m venv ./.venv
+      # - name: Activate venv
+      #   run: |
+      #     source ./.venv/bin/activate || source ./.venv/Scripts/activate
+      #     echo $PATH >> $GITHUB_PATH
+      # - name: Install venv dependencies
+      #   if: steps.cache-venv.outputs.cache-hit != 'true'
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     python -m pip install wheel
+      #     python -m pip install -r requirements.txt
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install wheel
-          python -m pip install -r requirements.txt
+          pip install -r requirements_full.txt
       - name: Test formatting
         run: black . --check
       - name: Run tests
