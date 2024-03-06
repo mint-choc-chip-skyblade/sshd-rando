@@ -1,7 +1,7 @@
 from randomizer.setting_string import setting_string_from_config
 from .world import *
 from .entrance_shuffle import create_entrance_pools
-from filepathconstants import LOGS_PATH
+from filepathconstants import SPOILER_LOGS_PATH
 from constants.randoconstants import VERSION
 import os
 
@@ -62,10 +62,10 @@ def generate_spoiler_log(worlds: list[World]) -> None:
     print_progress_text("Generating Spoiler Log")
 
     # Create logs folder if it doesn't exist
-    os.makedirs(LOGS_PATH, exist_ok=True)
+    os.makedirs(SPOILER_LOGS_PATH, exist_ok=True)
 
     config = worlds[0].config
-    filepath = f"{LOGS_PATH}/{config.get_hash()} Spoiler Log.txt"
+    filepath = f"{SPOILER_LOGS_PATH}/{config.get_hash()} Spoiler Log.txt"
 
     with open(filepath, "w") as spoiler_log:
         log_basic_info(spoiler_log, config, worlds)
@@ -236,10 +236,10 @@ def generate_anti_spoiler_log(worlds: list[World]) -> None:
     print_progress_text("Generating Anti-Spoiler Log")
 
     # Create logs folder if it doesn't exist
-    os.makedirs(LOGS_PATH, exist_ok=True)
+    os.makedirs(SPOILER_LOGS_PATH, exist_ok=True)
 
     config = worlds[0].config
-    filepath = f"{LOGS_PATH}/{config.get_hash()} Anti Spoiler Log.txt"
+    filepath = f"{SPOILER_LOGS_PATH}/{config.get_hash()} Anti Spoiler Log.txt"
     with open(filepath, "w") as anti_spoiler_log:
         log_basic_info(anti_spoiler_log, config, worlds)
         log_settings(anti_spoiler_log, config, worlds)

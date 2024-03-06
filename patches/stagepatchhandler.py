@@ -1041,7 +1041,8 @@ class StagePatchHandler:
         print("Removing unecessary patches")
         self.remove_unnecessary_patches(onlyif_handler)
 
-        stages_patched_queue = mp.Queue()
+        mp_manager = mp.Manager()
+        stages_patched_queue = mp_manager.Queue()
 
         # Create the pool or worker processes
         with mp.Pool() as pool:
@@ -1092,8 +1093,6 @@ class StagePatchHandler:
                         )
                     ],
                 )
-
-            stages_patched_queue.close()
 
     def remove_unnecessary_patches(
         self, onlyif_handler: ConditionalPatchHandler

@@ -1,10 +1,8 @@
 name: Build
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       version:
@@ -24,48 +22,54 @@ jobs:
             os: windows-latest
             architecture: x64
             artifact: windows
-            upload_path_suffix: '/*'
-          # Removed since the version of nlzss11 that we have to use for HDR
-          # doesn't support mac. TODO: fix this xD
-          #
-          # - name: MacOS Build
-          #   os: macos-latest
-          #   architecture: x64
-          #   artifact: macos
-          #   upload_path_suffix: '.zip'
+            artifact_suffix: ""
+            upload_path_suffix: "/*"
+          - name: MacOS Build x64
+            os: macos-13
+            architecture: x64
+            artifact: macos
+            artifact_suffix: _intel
+            upload_path_suffix: ".zip"
+          - name: MacOS Build arm64
+            os: macos-14
+            architecture: arm64
+            artifact: macos
+            artifact_suffix: _apple_silicon
+            upload_path_suffix: ".zip"
           - name: Linux Build
             os: ubuntu-latest
             architecture: x64
             artifact: linux
-            upload_path_suffix: '/*'
-    
+            artifact_suffix: ""
+            upload_path_suffix: "/*"
+
     runs-on: ${{ matrix.os }}
     environment: ${{ github.event.inputs.env || 'Development' }}
-    
+
     defaults:
       run:
         shell: bash
-    
+
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      MACOSX_DEPLOYMENT_TARGET: 10.15
-    
+      MACOSX_DEPLOYMENT_TARGET: 13
+
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
         id: setup-py
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
           check-latest: true
           architecture: ${{ matrix.architecture }}
-          cache: 'pip' # Cache all pip dependency downloads
+          cache: "pip" # Cache all pip dependency downloads
       - name: Cache venv
         id: cache-venv
         uses: actions/cache@v4
         with:
           path: ./.venv
-          key: ${{ runner.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles('**/req*.txt') }}
+          key: ${{ matrix.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles('**/req*.txt') }}
       - name: Create venv
         if: steps.cache-venv.outputs.cache-hit != 'true'
         run: |
@@ -93,9 +97,19 @@ jobs:
         uses: SebRollen/toml-action@v1.2.0
         id: read_toml
         with:
-          file: 'constants/randoconstants.py'
-          field: 'VERSION'
-      - name: Upload Python App
+          file: "constants/randoconstants.py"
+          field: "VERSION"
+      - name: Tar Files if not Windows Build
+        if: runner.os != 'Windows'
+        run: tar -C dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}/ -cvf "Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}${{ matrix.artifact_suffix }}).tar" .
+      - name: Upload Artifact non-Windows Artifact
+        if: runner.os != 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}${{ matrix.artifact_suffix }})
+          path: Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}${{ matrix.artifact_suffix }}).tar
+      - name: Upload Windows Artifact
+        if: runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
           name: Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }})

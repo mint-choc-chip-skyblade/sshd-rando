@@ -1,2 +1,7 @@
 [tool.black]
-exclude = 'gui/ui/ui_.*.py'
+exclude = '''
+(
+    \.venv
+    | gui/ui/ui_.*.py
+)
+'''

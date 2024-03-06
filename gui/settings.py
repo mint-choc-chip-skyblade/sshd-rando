@@ -836,9 +836,9 @@ class Settings:
 
                 self.config.settings[0].__setattr__(setting_name, value)
             else:
-                # TODO: Handle this better
-                raise Exception(
-                    f"Setting '{setting_name}' is unknown. Cannot apply preset: {selected_preset}."
+                self.main.fi_info_dialog.show_dialog(
+                    "Unknown Setting",
+                    f"The setting <b>{setting_name}</b> is unknown and will be ignored.<br><br>Please update this preset ({selected_preset}).",
                 )
 
         # Reset all settings not in the preset to default

@@ -65,7 +65,6 @@ exe = EXE(
         ("--nogui", None, "OPTION"),
     ],
     a.binaries,
-    a.zipfiles,
     a.datas,
     name=f"Skyward Sword HD Randomizer {VERSION}",
     debug=False,
@@ -73,7 +72,7 @@ exe = EXE(
     upx=True,
     runtime_tmpdir=None,
     console=False,
-    icon="assets/icon.png",
+    # icon="assets/icon.png", # causes the exe to get flagged as a trojan :/
 )
 
 app = BUNDLE(

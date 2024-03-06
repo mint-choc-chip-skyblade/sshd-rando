@@ -1,4 +1,5 @@
 from collections import Counter
+import platform
 import random
 
 import yaml
@@ -108,6 +109,9 @@ DEFAULT_SETTINGS = {
     ],
     "mixed_entrance_pools": [],
 }
+
+if platform.system() == "Windows":
+    DEFAULT_SETTINGS["font_size"] = 13
 
 
 def get_default_setting(setting_name: str):

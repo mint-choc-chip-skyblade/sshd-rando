@@ -4,7 +4,7 @@ import traceback
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QMessageBox
-from PySide6.QtGui import QIcon, QPixmap
+from PySide6.QtGui import QCloseEvent, QIcon, QPixmap
 
 from filepathconstants import ERROR_ICON_PATH
 
@@ -19,9 +19,11 @@ def error_from_str(exception: str, traceback: str):
 
     error_dialog = QMessageBox()
     error_dialog.setWindowTitle("An error has occurred!")
+
     copy_error_button = error_dialog.addButton(
-        "Copy and Close", QMessageBox.ButtonRole.NoRole
+        "Copy Error", QMessageBox.ButtonRole.NoRole
     )
+    copy_error_button.clicked.disconnect()  # Prevent this from closing the error
     copy_error_button.clicked.connect(copy_error)
 
     try:
