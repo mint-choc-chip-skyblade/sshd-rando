@@ -91,6 +91,7 @@ class Main(QMainWindow):
         open_output_button = done_dialog.addButton(
             "Open", QMessageBox.ButtonRole.NoRole
         )
+        open_output_button.clicked.disconnect()  # Prevent from closing the done message
         open_output_button.clicked.connect(self.open_output_folder)
 
         done_dialog.addButton("OK", QMessageBox.ButtonRole.NoRole)
@@ -243,7 +244,6 @@ def excepthook(source, exception, traceback: TracebackType):
 
     traceback_str += f"\n\n{source}: {exception}"
     error_from_str(exception, traceback_str)
-    sys.exit()
 
 
 sys.excepthook = excepthook
