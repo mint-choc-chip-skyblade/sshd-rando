@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -2796,9 +2796,51 @@ Practice Sword</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_31">
            <item>
+            <widget class="QCheckBox" name="config_generate_spoiler_log">
+             <property name="text">
+              <string>Generate Spoiler Log</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="utils_hline">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="open_folders_label">
+             <property name="text">
+              <string>Open Folders</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="open_output_folder_button">
+             <property name="text">
+              <string>Open Output Folder</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="open_extract_folder_button">
              <property name="text">
               <string>Open Extract Folder</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="open_spoiler_logs_folder_button">
+             <property name="text">
+              <string>Open Spoiler Logs Folder</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="utils_hline_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -2841,7 +2883,7 @@ Practice Sword</string>
             </layout>
            </item>
            <item>
-            <widget class="Line" name="utils_hline">
+            <widget class="Line" name="utils_hline_3">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -2871,20 +2913,6 @@ Practice Sword</string>
               </widget>
              </item>
             </layout>
-           </item>
-           <item>
-            <widget class="Line" name="utils_hline_2">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="config_generate_spoiler_log">
-             <property name="text">
-              <string>Generate Spoiler Log</string>
-             </property>
-            </widget>
            </item>
            <item>
             <spacer name="file_setup_vspacer">

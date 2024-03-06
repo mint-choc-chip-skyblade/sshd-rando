@@ -30,7 +30,7 @@ ROMFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "romfs"
 
 # Outputs
 DEFAULT_OUTPUT_PATH = Path(userdata_path) / "sshdr_output"
-LOGS_PATH = Path(userdata_path) / "logs"
+SPOILER_LOGS_PATH = Path(userdata_path) / "logs"
 
 # Config
 CONFIG_PATH = Path(userdata_path) / "config.yaml"

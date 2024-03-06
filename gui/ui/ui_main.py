@@ -1817,10 +1817,44 @@ class Ui_main_window(object):
         self.file_setup_group_box.setSizePolicy(sizePolicy2)
         self.verticalLayout_31 = QVBoxLayout(self.file_setup_group_box)
         self.verticalLayout_31.setObjectName(u"verticalLayout_31")
+        self.config_generate_spoiler_log = QCheckBox(self.file_setup_group_box)
+        self.config_generate_spoiler_log.setObjectName(u"config_generate_spoiler_log")
+
+        self.verticalLayout_31.addWidget(self.config_generate_spoiler_log)
+
+        self.utils_hline = QFrame(self.file_setup_group_box)
+        self.utils_hline.setObjectName(u"utils_hline")
+        self.utils_hline.setFrameShape(QFrame.HLine)
+        self.utils_hline.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_31.addWidget(self.utils_hline)
+
+        self.open_folders_label = QLabel(self.file_setup_group_box)
+        self.open_folders_label.setObjectName(u"open_folders_label")
+
+        self.verticalLayout_31.addWidget(self.open_folders_label)
+
+        self.open_output_folder_button = QPushButton(self.file_setup_group_box)
+        self.open_output_folder_button.setObjectName(u"open_output_folder_button")
+
+        self.verticalLayout_31.addWidget(self.open_output_folder_button)
+
         self.open_extract_folder_button = QPushButton(self.file_setup_group_box)
         self.open_extract_folder_button.setObjectName(u"open_extract_folder_button")
 
         self.verticalLayout_31.addWidget(self.open_extract_folder_button)
+
+        self.open_spoiler_logs_folder_button = QPushButton(self.file_setup_group_box)
+        self.open_spoiler_logs_folder_button.setObjectName(u"open_spoiler_logs_folder_button")
+
+        self.verticalLayout_31.addWidget(self.open_spoiler_logs_folder_button)
+
+        self.utils_hline_2 = QFrame(self.file_setup_group_box)
+        self.utils_hline_2.setObjectName(u"utils_hline_2")
+        self.utils_hline_2.setFrameShape(QFrame.HLine)
+        self.utils_hline_2.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_31.addWidget(self.utils_hline_2)
 
         self.output_label = QLabel(self.file_setup_group_box)
         self.output_label.setObjectName(u"output_label")
@@ -1850,12 +1884,12 @@ class Ui_main_window(object):
 
         self.verticalLayout_31.addLayout(self.output_button_layout)
 
-        self.utils_hline = QFrame(self.file_setup_group_box)
-        self.utils_hline.setObjectName(u"utils_hline")
-        self.utils_hline.setFrameShape(QFrame.HLine)
-        self.utils_hline.setFrameShadow(QFrame.Sunken)
+        self.utils_hline_3 = QFrame(self.file_setup_group_box)
+        self.utils_hline_3.setObjectName(u"utils_hline_3")
+        self.utils_hline_3.setFrameShape(QFrame.HLine)
+        self.utils_hline_3.setFrameShadow(QFrame.Sunken)
 
-        self.verticalLayout_31.addWidget(self.utils_hline)
+        self.verticalLayout_31.addWidget(self.utils_hline_3)
 
         self.verify_extract_label = QLabel(self.file_setup_group_box)
         self.verify_extract_label.setObjectName(u"verify_extract_label")
@@ -1876,18 +1910,6 @@ class Ui_main_window(object):
 
 
         self.verticalLayout_31.addLayout(self.verify_extract_layout)
-
-        self.utils_hline_2 = QFrame(self.file_setup_group_box)
-        self.utils_hline_2.setObjectName(u"utils_hline_2")
-        self.utils_hline_2.setFrameShape(QFrame.HLine)
-        self.utils_hline_2.setFrameShadow(QFrame.Sunken)
-
-        self.verticalLayout_31.addWidget(self.utils_hline_2)
-
-        self.config_generate_spoiler_log = QCheckBox(self.file_setup_group_box)
-        self.config_generate_spoiler_log.setObjectName(u"config_generate_spoiler_log")
-
-        self.verticalLayout_31.addWidget(self.config_generate_spoiler_log)
 
         self.file_setup_vspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -2088,7 +2110,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2308,14 +2330,17 @@ class Ui_main_window(object):
         self.setting_logic_itemless_first_timeshift_stone.setText(QCoreApplication.translate("main_window", u"Itemless First Timeshift Stone", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic and Tricks", None))
         self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"Extract and Output Utilities", None))
+        self.config_generate_spoiler_log.setText(QCoreApplication.translate("main_window", u"Generate Spoiler Log", None))
+        self.open_folders_label.setText(QCoreApplication.translate("main_window", u"Open Folders", None))
+        self.open_output_folder_button.setText(QCoreApplication.translate("main_window", u"Open Output Folder", None))
         self.open_extract_folder_button.setText(QCoreApplication.translate("main_window", u"Open Extract Folder", None))
+        self.open_spoiler_logs_folder_button.setText(QCoreApplication.translate("main_window", u"Open Spoiler Logs Folder", None))
         self.output_label.setText(QCoreApplication.translate("main_window", u"Output Path:", None))
         self.reset_output_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
         self.browse_output_button.setText(QCoreApplication.translate("main_window", u"Browse", None))
         self.verify_extract_label.setText(QCoreApplication.translate("main_window", u"Verify Extracted Game Files:", None))
         self.verify_important_extract_button.setText(QCoreApplication.translate("main_window", u"Verify Important Files", None))
         self.verify_all_extract_button.setText(QCoreApplication.translate("main_window", u"Verify All Files", None))
-        self.config_generate_spoiler_log.setText(QCoreApplication.translate("main_window", u"Generate Spoiler Log", None))
         self.plandomizer_group_box.setTitle(QCoreApplication.translate("main_window", u"Plandomizer", None))
         self.plandomizer_warning_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-weight:700;\">WARNING</span>: The plandomizer settings will automatically <span style=\" font-weight:700;\">TURN THEMSELVES OFF</span> when reopening this randomizer program!</p></body></html>", None))
         self.config_use_plandomizer.setText(QCoreApplication.translate("main_window", u"Use Plandomizer File", None))

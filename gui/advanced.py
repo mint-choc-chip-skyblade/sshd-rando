@@ -16,6 +16,7 @@ from filepathconstants import (
     CONFIG_PATH,
     DEFAULT_OUTPUT_PATH,
     PLANDO_PATH,
+    SPOILER_LOGS_PATH,
     SSHD_EXTRACT_PATH,
 )
 from gui.dialogs.error_dialog import error_from_str
@@ -90,6 +91,7 @@ class Advanced:
         )
         self.change_plando_file()
 
+        # Open Folders buttons
         self.open_plando_folder_button: QAbstractButton = (
             self.ui.open_plandomizer_folder_button
         )
@@ -99,6 +101,18 @@ class Advanced:
             self.ui.open_extract_folder_button
         )
         self.open_extract_folder_button.clicked.connect(self.open_extract_folder)
+
+        self.open_output_folder_button: QAbstractButton = (
+            self.ui.open_output_folder_button
+        )
+        self.open_output_folder_button.clicked.connect(self.open_output_folder)
+
+        self.open_spoiler_logs_folder_button: QAbstractButton = (
+            self.ui.open_spoiler_logs_folder_button
+        )
+        self.open_spoiler_logs_folder_button.clicked.connect(
+            self.open_spoiler_logs_folder
+        )
 
     def update_config(self):
         write_config_to_file(CONFIG_PATH, self.config)
@@ -161,6 +175,16 @@ class Advanced:
         # If this fails, let the error get caught normally so the user can report it.
         QDesktopServices.openUrl(
             QUrl(SSHD_EXTRACT_PATH.as_posix(), QUrl.ParsingMode.TolerantMode)
+        )
+
+    def open_output_folder(self):
+        QDesktopServices.openUrl(
+            QUrl(self.config.output_dir.as_posix(), QUrl.ParsingMode.TolerantMode)
+        )
+
+    def open_spoiler_logs_folder(self):
+        QDesktopServices.openUrl(
+            QUrl(SPOILER_LOGS_PATH.as_posix(), QUrl.ParsingMode.TolerantMode)
         )
 
     def verify_extract(self, verify_all: bool = False) -> bool:
