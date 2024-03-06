@@ -66,6 +66,8 @@ class Advanced:
             partial(self.verify_extract, verify_all=True)
         )
 
+        self.verify_dialog = None
+
         self.use_plando_button: QCheckBox = self.ui.config_use_plandomizer
         self.use_plando_button.stateChanged.connect(self.toggle_plando)
         self.toggle_plando()
@@ -161,22 +163,35 @@ class Advanced:
             QUrl(SSHD_EXTRACT_PATH.as_posix(), QUrl.ParsingMode.TolerantMode)
         )
 
-    def verify_extract(self, verify_all: bool = False):
-        verify_dialog = VerifyFilesProgressDialog(self.main)
-        self.verify_thread.dialog_value_update.connect(verify_dialog.setValue)
-        self.verify_thread.dialog_label_update.connect(verify_dialog.setLabelText)
+    def verify_extract(self, verify_all: bool = False) -> bool:
+        self.verify_dialog = VerifyFilesProgressDialog(self.main, self.cancel_callback)
+        self.verify_thread.dialog_value_update.connect(self.verify_dialog.setValue)
+        self.verify_thread.dialog_label_update.connect(self.verify_dialog.setLabelText)
 
         self.verify_thread.set_verify_all(verify_all)
         self.verify_thread.setTerminationEnabled(True)
         self.verify_thread.start()
-        verify_dialog.exec()
+        self.verify_dialog.exec()
+
+        completion_dialog = FiInfoDialog(self.main)
+
+        if self.verify_dialog is None:
+            completion_dialog.show_dialog(
+                "Verification Failed",
+                "Verification could not be completed.<br><br>Randomization will not work.",
+            )
+            return False
+
+        completion_dialog.show_dialog("Done", "Verification Complete!")
 
         # Prevents old progress dialogs reappearing when verifying multiple
         # times without reopening the entire program
-        verify_dialog.deleteLater()
+        self.verify_dialog.deleteLater()
 
-        completion_dialog = FiInfoDialog(self.main)
-        completion_dialog.show_dialog("Done", "Verification Complete!")
+        return True
+
+    def cancel_callback(self):
+        VerificationThread.cancelled = True
 
     def show_file_error_dialog(self, file_text: str):
         self.main.fi_info_dialog.show_dialog(title="File not found!", text=file_text)
@@ -191,5 +206,11 @@ class Advanced:
         self.ui.hash_label.setText(f"Hash: {self.config.get_hash()}")
 
     def thread_error(self, exception: str, traceback: str):
-        error_from_str(exception, traceback)
-        sys.exit()
+        if self.verify_dialog is not None:
+            self.verify_dialog.deleteLater()
+            self.verify_dialog = None
+
+        if "ThreadCancelled" in traceback:
+            print(exception, "This should be ignored.")
+        else:
+            error_from_str(exception, traceback)

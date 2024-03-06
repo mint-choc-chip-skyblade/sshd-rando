@@ -170,8 +170,8 @@ def start_gui(app: QApplication):
             )
 
             if confirm_first_time_verify_dialog == QMessageBox.StandardButton.Yes:
-                widget.advanced.verify_extract(verify_all=True)
-                widget.ui.randomize_button.setDisabled(False)
+                if widget.advanced.verify_extract(verify_all=True):
+                    widget.ui.randomize_button.setDisabled(False)
         else:
             widget.ui.randomize_button.setDisabled(False)
 

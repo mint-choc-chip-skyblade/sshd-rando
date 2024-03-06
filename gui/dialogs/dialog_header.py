@@ -1,3 +1,4 @@
+from gui.guithreads import ThreadCancelled
 from util.arguments import get_program_args
 import logging
 
@@ -30,10 +31,18 @@ if not args.nogui:
             RandomizationThread.callback.dialog_label_update.emit(label_text)
 
     def update_verify_value(value: int):
+        if VerificationThread.cancelled:
+            VerificationThread.cancelled = False
+            raise ThreadCancelled
+
         if VerificationThread.callback:
             VerificationThread.callback.dialog_value_update.emit(value)
 
     def print_verify_text(label_text: str):
+        if VerificationThread.cancelled:
+            VerificationThread.cancelled = False
+            raise ThreadCancelled
+
         logging.getLogger("").debug(label_text)
 
         if VerificationThread.callback:
