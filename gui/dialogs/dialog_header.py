@@ -20,10 +20,18 @@ if not args.nogui:
     from gui.guithreads import RandomizationThread, VerificationThread
 
     def update_progress_value(value: int):
+        if RandomizationThread.cancelled:
+            RandomizationThread.cancelled = False
+            raise ThreadCancelled
+
         if RandomizationThread.callback:
             RandomizationThread.callback.dialog_value_update.emit(value)
 
     def print_progress_text(label_text: str):
+        if RandomizationThread.cancelled:
+            RandomizationThread.cancelled = False
+            raise ThreadCancelled
+
         logging.getLogger("").debug(label_text)
         print(label_text)
 

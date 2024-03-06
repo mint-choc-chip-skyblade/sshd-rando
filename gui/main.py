@@ -1,8 +1,8 @@
 import sys
 from types import TracebackType
 
-from PySide6.QtCore import QEvent, Qt
-from PySide6.QtGui import QIcon, QMouseEvent
+from PySide6.QtCore import QEvent, Qt, QSize, QUrl
+from PySide6.QtGui import QDesktopServices, QIcon, QMouseEvent, QPixmap
 from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow, QWidget
 
 from constants.randoconstants import VERSION
@@ -33,6 +33,8 @@ class Main(QMainWindow):
         self.randomize_thread = RandomizationThread()
         self.randomize_thread.error_abort.connect(self.thread_error)
 
+        self.progress_dialog = None
+
         self.ui = Ui_main_window()
         self.ui.setupUi(self)
 
@@ -62,18 +64,57 @@ class Main(QMainWindow):
         if not self.check_output_dir():
             return
 
-        progress_dialog = RandomizerProgressDialog(self)
+        self.progress_dialog = RandomizerProgressDialog(self, self.cancel_callback)
 
-        self.randomize_thread.dialog_value_update.connect(progress_dialog.setValue)
-        self.randomize_thread.dialog_label_update.connect(progress_dialog.setLabelText)
+        self.randomize_thread.dialog_value_update.connect(self.progress_dialog.setValue)
+        self.randomize_thread.dialog_label_update.connect(
+            self.progress_dialog.setLabelText
+        )
 
         self.randomize_thread.setTerminationEnabled(True)
         self.randomize_thread.start()
-        progress_dialog.exec()
+        self.progress_dialog.exec()
+
+        if self.progress_dialog is None:
+            self.fi_info_dialog.show_dialog(
+                "Randomization Failed",
+                "The randomization was unable to be completed and has been cancelled.",
+            )
+            return
+
+        done_dialog = QMessageBox(self)
+        done_dialog.setWindowTitle("Randomization Completed")
+        done_dialog.setText(
+            f"Seed successfully generated!\n\nHash: {self.config.get_hash()}"
+        )
+
+        open_output_button = done_dialog.addButton(
+            "Open", QMessageBox.ButtonRole.NoRole
+        )
+        open_output_button.clicked.connect(self.open_output_folder)
+
+        done_dialog.addButton("OK", QMessageBox.ButtonRole.NoRole)
+
+        done_dialog.setWindowIcon(QIcon(ICON_PATH.as_posix()))
+        icon_pixmap = QPixmap(ICON_PATH.as_posix()).scaled(
+            QSize(80, 80),
+            Qt.AspectRatioMode.IgnoreAspectRatio,
+            Qt.TransformationMode.SmoothTransformation,
+        )
+        done_dialog.setIconPixmap(icon_pixmap)
+        done_dialog.exec()
 
         # Prevents old progress dialogs reappearing when generating another
         # seed without reopening the entire program
-        progress_dialog.deleteLater()
+        self.progress_dialog.deleteLater()
+
+    def cancel_callback(self):
+        RandomizationThread.cancelled = True
+
+    def open_output_folder(self):
+        QDesktopServices.openUrl(
+            QUrl(self.config.output_dir.as_posix(), QUrl.ParsingMode.TolerantMode)
+        )
 
     def check_output_dir(self) -> bool:
         output_dir = self.config.output_dir
@@ -144,8 +185,14 @@ The output folder you have specified cannot be found.
         return QMainWindow.eventFilter(self, target, event)
 
     def thread_error(self, exception: str, traceback: str):
-        error_from_str(exception, traceback)
-        sys.exit()
+        if self.progress_dialog is not None:
+            self.progress_dialog.deleteLater()
+            self.progress_dialog = None
+
+        if "ThreadCancelled" in traceback:
+            print(exception, "This should be ignored.")
+        else:
+            error_from_str(exception, traceback)
 
 
 def start_gui(app: QApplication):

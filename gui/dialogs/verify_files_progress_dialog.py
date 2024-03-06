@@ -6,11 +6,16 @@ from PySide6.QtWidgets import QProgressDialog
 
 from filepathconstants import ICON_PATH
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from gui.main import Main
+
 
 class VerifyFilesProgressDialog(QProgressDialog):
-    def __init__(self, parent, cancel=None):
-        QProgressDialog.__init__(self, parent)
-        self.parent = parent
+    def __init__(self, main: "Main", cancel=None):
+        QProgressDialog.__init__(self, main)
+        self.main = main
         self.setWindowTitle("Verifying Files...")
         self.setWindowModality(Qt.WindowModality.WindowModal)
         self.setLabelText("Initializing...")

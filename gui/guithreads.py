@@ -14,6 +14,7 @@ class RandomizationThread(QThread):
     error_abort = Signal(str, str)
     randomization_complete = Signal()
 
+    cancelled = False
     callback = None
 
     def __init__(self):
