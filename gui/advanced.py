@@ -12,7 +12,12 @@ from PySide6.QtWidgets import (
     QFileDialog,
 )
 
-from filepathconstants import CONFIG_PATH, DEFAULT_OUTPUT_PATH, PLANDO_PATH
+from filepathconstants import (
+    CONFIG_PATH,
+    DEFAULT_OUTPUT_PATH,
+    PLANDO_PATH,
+    SSHD_EXTRACT_PATH,
+)
 from gui.dialogs.error_dialog import error_from_str
 from gui.dialogs.verify_files_progress_dialog import VerifyFilesProgressDialog
 from gui.dialogs.fi_info_dialog import FiInfoDialog
@@ -34,7 +39,6 @@ class Advanced:
         self.ui = ui
         self.config: Config = main.config
 
-        # TODO: Add configs for these
         self.ui.random_settings_group_box.setTitle("")
         self.ui.randomization_settings_group_box.setTitle("")
 
@@ -88,6 +92,11 @@ class Advanced:
             self.ui.open_plandomizer_folder_button
         )
         self.open_plando_folder_button.clicked.connect(self.open_plando_folder)
+
+        self.open_extract_folder_button: QAbstractButton = (
+            self.ui.open_extract_folder_button
+        )
+        self.open_extract_folder_button.clicked.connect(self.open_extract_folder)
 
     def update_config(self):
         write_config_to_file(CONFIG_PATH, self.config)
@@ -145,6 +154,12 @@ class Advanced:
             self.show_file_error_dialog(
                 "Could not open or create the 'plandomizers' folder.\n\nThe 'plandomizers' folder should be in the same folder as this randomizer program."
             )
+
+    def open_extract_folder(self):
+        # If this fails, let the error get caught normally so the user can report it.
+        QDesktopServices.openUrl(
+            QUrl(SSHD_EXTRACT_PATH.as_posix(), QUrl.ParsingMode.TolerantMode)
+        )
 
     def verify_extract(self, verify_all: bool = False):
         verify_dialog = VerifyFilesProgressDialog(self.main)
