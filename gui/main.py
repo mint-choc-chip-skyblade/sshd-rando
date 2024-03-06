@@ -157,7 +157,7 @@ The output folder you have specified cannot be found.
 
                         Created by:
                         <a href=\"https://github.com/covenesme\">CovenEsme</a>,
-                        <a href=\"https://github.com/muzugalium\">Muzugalium</a>,
+                        <a href=\"https://github.com/Kuonino\">Kuonino</a>,
                         <a href=\"https://github.com/gymnast86\">Gymnast86</a>, and
                         <a href=\"https://github.com/tbpixel\">tbpixel</a><br><br>
 
