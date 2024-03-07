@@ -1474,14 +1474,14 @@
   pretty: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
   cryptic: <r<shooting a southern shop light>>
 
-- name: Central Skyloft - Blow Red Flag North of the Bazaar
-  standard: Central Skyloft - Blow Red Flag North of the Bazaar
-  pretty: Central Skyloft - Blow Red Flag North of the Bazaar
+- name: Central Skyloft - Blow Red Flag South of the Bazaar
+  standard: Central Skyloft - Blow Red Flag South of the Bazaar
+  pretty: Central Skyloft - Blow Red Flag South of the Bazaar
   cryptic: <r<dusting a red flag>>
 
-- name: Central Skyloft - Blow Purple Flag North of the Bazaar
-  standard: Central Skyloft - Blow Purple Flag North of the Bazaar
-  pretty: Central Skyloft - Blow Purple Flag North of the Bazaar
+- name: Central Skyloft - Blow Purple Flag South of the Bazaar
+  standard: Central Skyloft - Blow Purple Flag South of the Bazaar
+  pretty: Central Skyloft - Blow Purple Flag South of the Bazaar
   cryptic: <r<dusting a purple flag>>
 
 - name: Central Skyloft - Bonk Tree Southeast of the Bazaar

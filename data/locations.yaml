@@ -453,7 +453,7 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD2F
 
-- name: Central Skyloft - Blow Red Flag North of the Bazaar
+- name: Central Skyloft - Blow Red Flag South of the Bazaar
   original_item: Blue Rupee
   types:
     - Hidden Items
@@ -461,7 +461,7 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD1B
 
-- name: Central Skyloft - Blow Purple Flag North of the Bazaar
+- name: Central Skyloft - Blow Purple Flag South of the Bazaar
   original_item: Blue Rupee
   types:
     - Hidden Items
