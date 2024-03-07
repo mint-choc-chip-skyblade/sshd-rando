@@ -76,7 +76,9 @@ class AllPatchHandler:
 
         update_progress_value(92)
         print_progress_text("Patching Events")
-        self.event_patch_handler.handle_event_patches(self.conditional_patch_handler)
+        self.event_patch_handler.handle_event_patches(
+            self.conditional_patch_handler, self.world.setting("language")
+        )
 
         update_progress_value(99)
         self.asm_patch_handler.patch_all_asm(self.world, self.conditional_patch_handler)

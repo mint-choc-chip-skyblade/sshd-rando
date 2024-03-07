@@ -266,3 +266,20 @@ STAGE_PATCH_PATH_REGEX = re.compile(
 EVENT_PATCH_PATH_REGEX = re.compile(r"event/(?P<eventFile>[^/]+)/(?P<eventID>[^/]+)")
 OARC_ADD_PATH_REGEX = re.compile(r"oarc/(?P<stage>[^/]+)/l(?P<layer>[^/]+)")
 SHOP_PATCH_PATH_REGEX = re.compile(r"ShpSmpl/(?P<index>[0-9]+)")
+
+LANGUAGE_NAME_TO_FILE_ID = {
+    "chinese": "zh_CN",
+    "dutch": "nl_NL",
+    "english_gb": "en_GB",
+    "english_us": "en_US",
+    "french_fr": "fr_FR",
+    "french_us": "fr_US",
+    "german": "de_DE",
+    "italian": "it_IT",
+    "japanese": "ja_JP",
+    "korean": "ko_KR",
+    "russian": "ru_RU",
+    "spanish_es": "es_ES",
+    "spanish_us": "es_US",
+    "taiwanese": "zh_TW",
+}

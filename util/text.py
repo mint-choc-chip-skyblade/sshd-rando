@@ -8,20 +8,25 @@ import yaml
 
 
 class Text:
+    # en_US is the default case. That *must* be in this list last as, if any text replacements
+    # happen to en_US before another language uses its text as a default, it will try and perform
+    # the replacement again. The same principle applies to fr_US and es_US (defaults for fr_FR and
+    # es_ES).
     SUPPORTED_LANGUAGES = [  # uncomment languages which get support
-        # "zh_CN", # Chinese
-        # "de_DE", # German
-        "en_GB",  # English
-        # "es_ES", # Spanish
-        # "fr_FR", # French
-        # "it_IT", # Italian
-        # "nl_NL", # Dutch
-        # "ja_JP", # Japanese
-        # "ko_KR", # Korean
-        # "zh_TW", # Taiwanese
+        # "zh_CN",  # Chinese
+        "nl_NL",  # Dutch
+        "fr_FR",  # French (FR)
+        "fr_US",  # French (US)
+        "de_DE",  # German
+        "it_IT",  # Italian
+        # "ja_JP",  # Japanese
+        # "ko_KR",  # Korean
+        # "ru_RU",  # Russian
+        "es_ES",  # Spanish (ES)
+        "es_US",  # Spanish (US)
+        # "zh_TW",  # Taiwanese
+        "en_GB",  # English (GB)
         "en_US",  # English (US)
-        # "es_US", # Spanish (US)
-        # "fr_US", # French (US)
     ]
 
     def __init__(self, text: str = "") -> None:
@@ -51,6 +56,11 @@ class Text:
 
     def get(self, lang: str) -> str:
         if lang not in Text.SUPPORTED_LANGUAGES or len(self.text[lang]) == 0:
+            if lang == "fr_FR":
+                return self.get("fr_US")
+            elif lang == "es_ES":
+                return self.get("es_US")
+
             return self.text["en_US"]  # Default to english if not found
             # raise RuntimeError(f'Unsupported language "{lang}"')
         return self.text[lang]
@@ -128,6 +138,10 @@ def load_text_data() -> None:
 
         with open(filepath, "r") as text_data_file:
             text_data = yaml.safe_load(text_data_file)
+
+            if text_data is None or len(text_data) == 0:
+                continue
+
             for element in text_data:
                 name = element["name"]
                 if name not in text_table:
@@ -201,7 +215,7 @@ def make_mutliple_textboxes(texts: list[Text]) -> Text:
             needed_linebreaks = -lines % 4 + 1
             text.text[lang] += "\n" * needed_linebreaks
         final_text += text
-    print(final_text)
+
     return final_text
 
 

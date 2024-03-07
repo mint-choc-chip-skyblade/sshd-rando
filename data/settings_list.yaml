@@ -11,11 +11,10 @@
     - No Logic
     # - Vanilla
   options:
-    - all_locations_reachable:         "Logic is considered when placing items. Tricks and Glitches can be enabled for consideration below."
-    - beatable_only:                   "Logic is considered when placing items only until the world is beatable. Remaining items are placed without logic consideration. Tricks and Glitches can be enabled for consideration below."
-    - no_logic:                        "Maximize randomization, logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
+    - all_locations_reachable: "Logic is considered when placing items. Tricks and Glitches can be enabled for consideration below."
+    - beatable_only: "Logic is considered when placing items only until the world is beatable. Remaining items are placed without logic consideration. Tricks and Glitches can be enabled for consideration below."
+    - no_logic: "Maximize randomization, logic is not considered when placing items. MAY BE IMPOSSIBLE TO BEAT."
     # - vanilla:                         "Items are placed in their vanilla locations."
-
 
 - name: item_pool
   default_option: standard
@@ -26,11 +25,10 @@
     - Extra
     - Plentiful
   options:
-    - minimal:                         "No item upgrades will be shuffled into the item pool. There will only be 2 Beetles, 1 Bow, 1 Slingshot, and 1 Bug Net in the item pool."
-    - standard:                        "All of Gondo's item upgrades will be shuffled into the item pool. There will be: 4 Beetles, 3 Bows, 2 Slingshots, and 2 Bug Nets."
-    - extra:                           "The standard item pool will be used plus 1 extra of the major items (Item-Wheel item, Tablets, Mitts, Water Dragon's Scale, and Fireshield Earrings)."
-    - plentiful:                       "The standard item pool will be used plus 100% extra of the major items. E.g. There will be 8 Beetles, 6 Bows, 4 Mitts, etc..."
-
+    - minimal: "No item upgrades will be shuffled into the item pool. There will only be 2 Beetles, 1 Bow, 1 Slingshot, and 1 Bug Net in the item pool."
+    - standard: "All of Gondo's item upgrades will be shuffled into the item pool. There will be: 4 Beetles, 3 Bows, 2 Slingshots, and 2 Bug Nets."
+    - extra: "The standard item pool will be used plus 1 extra of the major items (Item-Wheel item, Tablets, Mitts, Water Dragon's Scale, and Fireshield Earrings)."
+    - plentiful: "The standard item pool will be used plus 100% extra of the major items. E.g. There will be 8 Beetles, 6 Bows, 4 Mitts, etc..."
 
 # Shuffles
 - name: gratitude_crystal_shuffle
@@ -40,9 +38,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Single Gratitude Crystal locations will only contain single gratitude crystals."
-    - "on":                            "Single Gratitude Crystal locations can contain any item."
-
+    - "off": "Single Gratitude Crystal locations will only contain single gratitude crystals."
+    - "on": "Single Gratitude Crystal locations can contain any item."
 
 - name: stamina_fruit_shuffle
   default_option: "off"
@@ -51,8 +48,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Stamina Fruit will not be randomized."
-    - "on":                            "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
+    - "off": "Stamina Fruit will not be randomized."
+    - "on": "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
 
 - name: npc_closet_shuffle
   default_option: vanilla
@@ -61,8 +58,8 @@
     - Vanilla
     - Randomized
   options:
-    - vanilla:                         "Closets will contain their vanilla items."
-    - randomized:                      "All NPC closets will contain randomized items."
+    - vanilla: "Closets will contain their vanilla items."
+    - randomized: "All NPC closets will contain randomized items."
 
 - name: hidden_item_shuffle
   default_option: "off"
@@ -71,8 +68,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Hidden Item checks will only ever give their vanilla items."
-    - "on":                            "Hidden Item checks will give a randomized item the first time. After this, they will only give their vanilla item."
+    - "off": "Hidden Item checks will only ever give their vanilla items."
+    - "on": "Hidden Item checks will give a randomized item the first time. After this, they will only give their vanilla item."
 
 - name: rupee_shuffle
   default_option: vanilla
@@ -83,11 +80,10 @@
     - Intermediate
     - Advanced
   options:
-    - vanilla:                         "Freestanding Rupees will not be randomized."
-    - beginner:                        "Some freestanding Rupees can contain any item. These checks are easier to spot and collect, and there aren't lots of them. Perfect for trying out Rupee shuffle!"
-    - intermediate:                    "Most freestanding Rupees can contain any item. There's a lot of Rupee checks added and some may be more tricky to collect. Perfect for seasoned Rupee shufflers!"
-    - advanced:                        "All freestanding Rupees can contain any item. Only a few extra Rupee checks are added but these are the most obscure and difficult checks to collect. You have been warned!"
-
+    - vanilla: "Freestanding Rupees will not be randomized."
+    - beginner: "Some freestanding Rupees can contain any item. These checks are easier to spot and collect, and there aren't lots of them. Perfect for trying out Rupee shuffle!"
+    - intermediate: "Most freestanding Rupees can contain any item. There's a lot of Rupee checks added and some may be more tricky to collect. Perfect for seasoned Rupee shufflers!"
+    - advanced: "All freestanding Rupees can contain any item. Only a few extra Rupee checks are added but these are the most obscure and difficult checks to collect. You have been warned!"
 
 - name: underground_rupee_shuffle
   default_option: "off"
@@ -96,9 +92,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Underground Rupee locations will not be randomized."
-    - "on":                            "Underground Rupee locations that require burrowing into digspots with the Mogma Mitts can contain any item."
-
+    - "off": "Underground Rupee locations will not be randomized."
+    - "on": "Underground Rupee locations that require burrowing into digspots with the Mogma Mitts can contain any item."
 
 - name: beedle_shop_shuffle
   default_option: junk_only
@@ -108,10 +103,9 @@
     - Junk Only
     - Randomized
   options:
-    - vanilla:                         "Beedle's Shop will contain its vanilla items."
-    - junk_only:                       "Beedle's Shop will only contain junk items."
-    - randomized:                      "Beedle's Shop can contain any items."
-
+    - vanilla: "Beedle's Shop will contain its vanilla items."
+    - junk_only: "Beedle's Shop will only contain junk items."
+    - randomized: "Beedle's Shop can contain any items."
 
 - name: goddess_chest_shuffle
   default_option: "off"
@@ -120,9 +114,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Activating and opening Goddess Chests will not be required."
-    - "on":                            "Goddess Chests can contain any item. Goddess Chests are activated by Skyward Striking their corresponding Goddess Cube."
-    
+    - "off": "Activating and opening Goddess Chests will not be required."
+    - "on": "Goddess Chests can contain any item. Goddess Chests are activated by Skyward Striking their corresponding Goddess Cube."
 
 - name: full_wallet_upgrades
   default_option: "off"
@@ -131,9 +124,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Newly obtained wallets do not give any Rupees."
-    - "on":                            "Newly obtained wallets will come pre-filled with Rupees."
-
+    - "off": "Newly obtained wallets do not give any Rupees."
+    - "on": "Newly obtained wallets will come pre-filled with Rupees."
 
 - name: open_thunderhead
   default_option: ballad
@@ -142,9 +134,8 @@
     - Ballad
     - Open
   options:
-    - ballad:                          "You will need the Ballad of the Goddess before The Thunderhead will open."
-    - open:                            "The Thunderhead will be opened from the start of the game."
-
+    - ballad: "You will need the Ballad of the Goddess before The Thunderhead will open."
+    - open: "The Thunderhead will be opened from the start of the game."
 
 - name: open_lake_floria
   default_option: vanilla
@@ -154,10 +145,9 @@
     - Talk to Yerbal
     - Open
   options:
-    - vanilla:                         "You are expected to climb the Great Tree, talk to Yerbal, and open the Lake Floria Gates with the Goddess Sword in order to enter Lake Floria."
-    - yerbal:                          "You are expected to climb the Great Tree and talk to Yerbal in order to enter Lake Floria."
-    - open:                            "The Lake Floria Gates will be opened from the start of the game."
-
+    - vanilla: "You are expected to climb the Great Tree, talk to Yerbal, and open the Lake Floria Gates with the Goddess Sword in order to enter Lake Floria."
+    - yerbal: "You are expected to climb the Great Tree and talk to Yerbal in order to enter Lake Floria."
+    - open: "The Lake Floria Gates will be opened from the start of the game."
 
 - name: open_earth_temple
   default_option: "off"
@@ -166,9 +156,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will need to collect all the Earth Temple Key Pieces in order to open the Earth Temple Door."
-    - "on":                            "The Earth Temple Door will be opened from the start of the game."
-
+    - "off": "You will need to collect all the Earth Temple Key Pieces in order to open the Earth Temple Door."
+    - "on": "The Earth Temple Door will be opened from the start of the game."
 
 - name: open_lmf
   default_option: open
@@ -178,10 +167,9 @@
     - Main Node
     - Open
   options:
-    - nodes:                           "You will need to activate each of the 3 nodes and the main node in order to raise the Lanayru Mining Facility."
-    - main_node:                       "You will need to activate the main node in order to raise the Lanayru Mining Facility."
-    - open:                            "The Lanayru Mining Facility will be raised from the start of the game."
-
+    - nodes: "You will need to activate each of the 3 nodes and the main node in order to raise the Lanayru Mining Facility."
+    - main_node: "You will need to activate the main node in order to raise the Lanayru Mining Facility."
+    - open: "The Lanayru Mining Facility will be raised from the start of the game."
 
 # Will be put on the gui once this option actually changes behaviour
 - name: randomize_skykeep_layout
@@ -191,9 +179,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "The Sky Keep rooms will start in their vanilla positions."
-    - "on":                            "The Sky Keep rooms will start in a random order."
-
+    - "off": "The Sky Keep rooms will start in their vanilla positions."
+    - "on": "The Sky Keep rooms will start in a random order."
 
 - name: fs_lava_flow
   default_option: "on"
@@ -202,9 +189,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will need to blow up the rock and escape the lava chase in order for the lava river at the end of Fire Sanctuary to be flowing."
-    - "on":                            "The lava river at the end of Fire Sanctuary will be flowing from the start of the game."
-
+    - "off": "You will need to blow up the rock and escape the lava chase in order for the lava river at the end of Fire Sanctuary to be flowing."
+    - "on": "The lava river at the end of Fire Sanctuary will be flowing from the start of the game."
 
 - name: peatrice_conversations
   default_option: 0
@@ -212,8 +198,7 @@
   pretty_options:
     - 0-6
   options:
-    - 0-6:                           "How many times you need to talk to Peatrice before she calls you darling and you can start Peater's quest."
-
+    - 0-6: "How many times you need to talk to Peatrice before she calls you darling and you can start Peater's quest."
 
 - name: small_keys
   default_option: own_dungeon
@@ -227,14 +212,13 @@
     - Anywhere
     - Removed
   options:
-    - vanilla:                         "Small Keys will appear in their vanilla locations."
-    - own_dungeon:                     "Small Keys will appear inside their respective dungeon."
-    - any_dungeon:                     "Small Keys can appear inside any dungeon."
-    - own_region:                      "Small Keys will appear in their dungeon's region."
-    - overworld:                       "Small Keys will only appear in the overworld."
-    - anywhere:                        "Small Keys can appear anywhere."
-    - removed:                         "Small Keys will not appear anywhere in the world and their locks will start opened."
-
+    - vanilla: "Small Keys will appear in their vanilla locations."
+    - own_dungeon: "Small Keys will appear inside their respective dungeon."
+    - any_dungeon: "Small Keys can appear inside any dungeon."
+    - own_region: "Small Keys will appear in their dungeon's region."
+    - overworld: "Small Keys will only appear in the overworld."
+    - anywhere: "Small Keys can appear anywhere."
+    - removed: "Small Keys will not appear anywhere in the world and their locks will start opened."
 
 - name: lanayru_caves_keys
   default_option: removed
@@ -245,11 +229,10 @@
     - Anywhere
     - Removed
   options:
-    - vanilla:                         "The Lanayru Caves Keys will appear in their vanilla location."
-    - overworld:                       "The Lanayru Caves Keys will only appear in the overworld."
-    - anywhere:                        "The Lanayru Caves Keys can appear anywhere."
-    - removed:                         "The Lanayru Caves Keys will not appear anywhere in the world and the locks will start opened."
-
+    - vanilla: "The Lanayru Caves Keys will appear in their vanilla location."
+    - overworld: "The Lanayru Caves Keys will only appear in the overworld."
+    - anywhere: "The Lanayru Caves Keys can appear anywhere."
+    - removed: "The Lanayru Caves Keys will not appear anywhere in the world and the locks will start opened."
 
 - name: boss_keys
   default_option: own_dungeon
@@ -263,14 +246,13 @@
     - Anywhere
     - Removed
   options:
-    - vanilla:                         "Boss Keys will appear in their vanilla locations."
-    - own_dungeon:                     "Boss Keys will appear inside their respective dungeon."
-    - any_dungeon:                     "Boss Keys can appear inside any dungeon."
-    - own_region:                      "Boss Keys appear in their dungeon's region."
-    - overworld:                       "Boss Keys will only appear in the overworld."
-    - anywhere:                        "Boss Keys can appear anywhere."
-    - removed:                         "Boss Keys will not appear anywhere in the world and boss doors will start opened."
-
+    - vanilla: "Boss Keys will appear in their vanilla locations."
+    - own_dungeon: "Boss Keys will appear inside their respective dungeon."
+    - any_dungeon: "Boss Keys can appear inside any dungeon."
+    - own_region: "Boss Keys appear in their dungeon's region."
+    - overworld: "Boss Keys will only appear in the overworld."
+    - anywhere: "Boss Keys can appear anywhere."
+    - removed: "Boss Keys will not appear anywhere in the world and boss doors will start opened."
 
 - name: map_mode
   default_option: own_dungeon_restricted
@@ -284,14 +266,13 @@
     - Overworld
     - Anywhere
   options:
-    - vanilla:                         "Maps will appear in their vanilla locations."
-    - own_dungeon_restricted:          "Maps will appear inside their respective dungeon, but won't appear on the heart container or dungeon end check."
-    - own_dungeon_unrestricted:        "Maps can appear anywhere inside their respective dungeon."
-    - any_dungeon:                     "Maps can appear inside any dungeon."
-    - own_region:                      "Maps will appear in their dungeon's region."
-    - overworld:                       "Maps will only appear in the overworld."
-    - anywhere:                        "Maps can appear anywhere."
-
+    - vanilla: "Maps will appear in their vanilla locations."
+    - own_dungeon_restricted: "Maps will appear inside their respective dungeon, but won't appear on the heart container or dungeon end check."
+    - own_dungeon_unrestricted: "Maps can appear anywhere inside their respective dungeon."
+    - any_dungeon: "Maps can appear inside any dungeon."
+    - own_region: "Maps will appear in their dungeon's region."
+    - overworld: "Maps will only appear in the overworld."
+    - anywhere: "Maps can appear anywhere."
 
 - name: chest_type_matches_contents
   default_option: "off"
@@ -301,10 +282,9 @@
     - "Only Dungeon Items"
     - "All Contents"
   options:
-    - "off":                           "Each chest will have the same type as it would in the vanilla game."
-    - "only_dungeon_items":            "Each chest will have the same type as it would in the vanilla game, unless it contains a dungeon item. If a chest contains a Boss Key, it will appear as a fancy chest. If it contains a Small Key, it will appear as a big blue chest. If it contains a Map, it will appear as a brown, wooden chest."
-    - "all_contents":                  "Each chest will have a different type based on the item inside. Important items will appear in big blue chests. Boss Keys will appear in fancy chests. Other items will appear in brown, wooden chests."
-
+    - "off": "Each chest will have the same type as it would in the vanilla game."
+    - "only_dungeon_items": "Each chest will have the same type as it would in the vanilla game, unless it contains a dungeon item. If a chest contains a Boss Key, it will appear as a fancy chest. If it contains a Small Key, it will appear as a big blue chest. If it contains a Map, it will appear as a brown, wooden chest."
+    - "all_contents": "Each chest will have a different type based on the item inside. Important items will appear in big blue chests. Boss Keys will appear in fancy chests. Other items will appear in brown, wooden chests."
 
 - name: small_keys_in_fancy_chests
   default_option: "off"
@@ -313,9 +293,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "When Chest Type Matches Contents is not off, Small Keys will appear in big blue chests."
-    - "on":                            "When Chest Type Matches Contents is not off, Small Keys will appear in fancy chests."
-
+    - "off": "When Chest Type Matches Contents is not off, Small Keys will appear in big blue chests."
+    - "on": "When Chest Type Matches Contents is not off, Small Keys will appear in fancy chests."
 
 - name: path_hints
   default_option: 3
@@ -323,8 +302,7 @@
   pretty_options:
     - 0-7
   options:
-    - 0-7:                             "Select the number of path hints you would like to generate."
-  
+    - 0-7: "Select the number of path hints you would like to generate."
 
 - name: barren_hints
   default_option: 2
@@ -332,8 +310,7 @@
   pretty_options:
     - 0-7
   options:
-    - 0-7:                             "Select the number of barren hints you would like to generate."
-
+    - 0-7: "Select the number of barren hints you would like to generate."
 
 - name: location_hints
   default_option: 7 # assumes always_hints is on
@@ -341,8 +318,7 @@
   pretty_options:
     - 0-7
   options:
-    - 0-7:                             "Select the number of location hints you would like to generate."
-
+    - 0-7: "Select the number of location hints you would like to generate."
 
 - name: item_hints
   default_option: 3
@@ -350,8 +326,7 @@
   pretty_options:
     - 0-7
   options:
-    - 0-7:                             "Select the number of item hints you would like to generate."
-
+    - 0-7: "Select the number of item hints you would like to generate."
 
 - name: fi_hints
   default_option: "on"
@@ -360,10 +335,9 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Hints will not be placed on Fi."
-    - "on":                            "Hints will be placed on Fi and can be seen by calling Fi and asking her for hints."
+    - "off": "Hints will not be placed on Fi."
+    - "on": "Hints will be placed on Fi and can be seen by calling Fi and asking her for hints."
 
-  
 - name: gossip_stone_hints
   default_option: "off"
   pretty_name: Gossip Stone Hints
@@ -371,9 +345,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Hints will not be placed on Gossip Stones."
-    - "on":                            "Hints will be placed on Gossip Stones and can be seen by talking to them."
-
+    - "off": "Hints will not be placed on Gossip Stones."
+    - "on": "Hints will be placed on Gossip Stones and can be seen by talking to them."
 
 - name: song_hints
   default_option: "direct"
@@ -384,11 +357,10 @@
     - Advanced
     - Direct
   options:
-    - "off":                           "Silent Realm rewards will potentially be hinted at other hint sources."
-    - basic:                           "The song text indicates if any progress items are within the associated silent realm."
-    - advanced:                        "The song text indicates if any SotS, or potentially required items are in the associated silent realm."
-    - direct:                          "The song text directly states which important items, if any, can be found in the silent realm."
-
+    - "off": "Silent Realm rewards will potentially be hinted at other hint sources."
+    - basic: "The song text indicates if any progress items are within the associated silent realm."
+    - advanced: "The song text indicates if any SotS, or potentially required items are in the associated silent realm."
+    - direct: "The song text directly states which important items, if any, can be found in the silent realm."
 
 - name: impa_sot_hint
   default_option: "on"
@@ -397,9 +369,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Impa in Hylia's Temple will not give a hint to the location of the Stone of Trials."
-    - "on":                            "Impa in Hylia's Temple will give a hint to the location of the Stone of Trials. Does not appear if the Stone of Trials is a starting item."
-
+    - "off": "Impa in Hylia's Temple will not give a hint to the location of the Stone of Trials."
+    - "on": "Impa in Hylia's Temple will give a hint to the location of the Stone of Trials. Does not appear if the Stone of Trials is a starting item."
 
 - name: cryptic_hint_text
   default_option: "off"
@@ -408,9 +379,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Item and location hints will use the normal, clear names for their items and locations."
-    - "on":                            "Item and location hints will use cryptic text for their items and locations."
-
+    - "off": "Item and location hints will use the normal, clear names for their items and locations."
+    - "on": "Item and location hints will use cryptic text for their items and locations."
 
 - name: always_hints
   default_option: "on"
@@ -419,20 +389,18 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "All locations will be treated equally for location hints."
-    - "on":                            "Certain locations which are time-consuming to check will be given priority for location hints."
-
+    - "off": "All locations will be treated equally for location hints."
+    - "on": "Certain locations which are time-consuming to check will be given priority for location hints."
 
 - name: random_starting_statues
   default_option: "off"
   pretty_name: Random Starting Bird Statues
   pretty_options:
-   - "Off"
-   - "On"
+    - "Off"
+    - "On"
   options:
-   - "off":                            "The bird statue unlocked at the start for each surface region will be unchanged."
-   - "on":                             "The bird statue unlocked at the start for each surface region will be randomized. All overworld statues except Inside the Volcano and Inside the Fire Sanctuary may be chosen."
-
+    - "off": "The bird statue unlocked at the start for each surface region will be unchanged."
+    - "on": "The bird statue unlocked at the start for each surface region will be randomized. All overworld statues except Inside the Volcano and Inside the Fire Sanctuary may be chosen."
 
 - name: random_starting_spawn
   default_option: vanilla
@@ -443,11 +411,10 @@
     - Any Surface Region
     - Anywhere
   options:
-    - vanilla:                         "You will start the game in Link's Bedroom."
-    - bird_statues:                    "You will start the game at a random Bird Statue or in Link's Bedroom."
-    - any_surface_region:              "You will start the game at any surface region entrance or in Link's Bedroom."
-    - anywhere:                        "You will start the game at any valid entrance."
-
+    - vanilla: "You will start the game in Link's Bedroom."
+    - bird_statues: "You will start the game at a random Bird Statue or in Link's Bedroom."
+    - any_surface_region: "You will start the game at any surface region entrance or in Link's Bedroom."
+    - anywhere: "You will start the game at any valid entrance."
 
 - name: randomize_dungeon_entrances
   default_option: "off"
@@ -456,9 +423,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Entering a dungeon will lead to the vanilla dungeon."
-    - "on":                            "Entering a dungeon will lead to a random dungeon."
-    
+    - "off": "Entering a dungeon will lead to the vanilla dungeon."
+    - "on": "Entering a dungeon will lead to a random dungeon."
 
 - name: randomize_trial_gate_entrances
   default_option: "off"
@@ -467,9 +433,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Entering a Trial Gate will lead to the vanilla Silent Realm."
-    - "on":                            "Entering a Trial Gate will lead to a random Silent Realm."
-
+    - "off": "Entering a Trial Gate will lead to the vanilla Silent Realm."
+    - "on": "Entering a Trial Gate will lead to a random Silent Realm."
 
 - name: randomize_door_entrances
   default_option: "off"
@@ -478,9 +443,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Entering a door will lead to the vanilla exit on the other side."
-    - "on":                            "Entering a door will lead to a random door exit on the other side."
-
+    - "off": "Entering a door will lead to the vanilla exit on the other side."
+    - "on": "Entering a door will lead to a random door exit on the other side."
 
 - name: decouple_double_doors
   default_option: "off"
@@ -489,9 +453,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Entering a left door will lead to the same location as the corresponding right door."
-    - "on":                            "Entering a left door may lead somewhere different to the corresponding right door (only when Randomize Door Entrance is also enabled)."
-
+    - "off": "Entering a left door will lead to the same location as the corresponding right door."
+    - "on": "Entering a left door may lead somewhere different to the corresponding right door (only when Randomize Door Entrance is also enabled)."
 
 - name: randomize_interior_entrances
   default_option: "off"
@@ -500,9 +463,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Entering a doorway, pushup door, or loadzone that leads to an interior location in the vanilla game will lead to its vanilla location."
-    - "on":                            "Entering a doorway, pushup door, or loadzone that leads to an interior location in the vanilla game will lead to a random interior location."
-
+    - "off": "Entering a doorway, pushup door, or loadzone that leads to an interior location in the vanilla game will lead to its vanilla location."
+    - "on": "Entering a doorway, pushup door, or loadzone that leads to an interior location in the vanilla game will lead to a random interior location."
 
 - name: randomize_overworld_entrances
   default_option: "off"
@@ -511,9 +473,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Entering a doorway, pushup door, or loadzone that leads to an overworld location in the vanilla game will lead to its vanilla location."
-    - "on":                            "Entering a doorway, pushup door, or loadzone that leads to an overworld location in the vanilla game will lead to a random overworld location."
-
+    - "off": "Entering a doorway, pushup door, or loadzone that leads to an overworld location in the vanilla game will lead to its vanilla location."
+    - "on": "Entering a doorway, pushup door, or loadzone that leads to an overworld location in the vanilla game will lead to a random overworld location."
 
 - name: decouple_entrances
   default_option: "off"
@@ -522,9 +483,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Entering a location and taking the entrance behind you will take you back to where you came from."
-    - "on":                            "Entering a location and taking the entrance behind you will take you to a random location."
-
+    - "off": "Entering a location and taking the entrance behind you will take you back to where you came from."
+    - "on": "Entering a location and taking the entrance behind you will take you to a random location."
 
 # Not on the gui yet - wanna look into making this better first
 - name: natural_night_connections
@@ -534,9 +494,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You may be required to sleep to night and travel anywhere in the world to access nighttime-only checks, including flying at night."
-    - "on":                            "You will not be required to sleep to night and travel to the overworld to access nighttime-only checks."
-
+    - "off": "You may be required to sleep to night and travel anywhere in the world to access nighttime-only checks, including flying at night."
+    - "on": "You will not be required to sleep to night and travel to the overworld to access nighttime-only checks."
 
 - name: skip_horde
   default_option: "off"
@@ -545,9 +504,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will need to fight The Horde after exting the double doors in Hylia's Temple at the end of the game."
-    - "on":                            "The Horde fight after exiting the double doors in Hylia's Temple will be skipped."
-
+    - "off": "You will need to fight The Horde after exting the double doors in Hylia's Temple at the end of the game."
+    - "on": "The Horde fight after exiting the double doors in Hylia's Temple will be skipped."
 
 - name: skip_g3
   default_option: "off"
@@ -556,9 +514,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will need to fight Ghirahim 3 after defeating The Horde at the end of the game."
-    - "on":                            "The Ghirahim 3 fight after exiting the double doors in Hylia's Temple and after The Horde fight will be skipped."
-
+    - "off": "You will need to fight Ghirahim 3 after defeating The Horde at the end of the game."
+    - "on": "The Ghirahim 3 fight after exiting the double doors in Hylia's Temple and after The Horde fight will be skipped."
 
 - name: skip_demise
   default_option: "off"
@@ -567,9 +524,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will need to fight Demise after exiting the portal at the bottom of the whirlpool spiral in Hylia's Realm."
-    - "on":                            "The Demise fight after exiting the portal at the bottom of the whirlpool spiral in Hylia's Realm will be skipped."
-
+    - "off": "You will need to fight Demise after exiting the portal at the bottom of the whirlpool spiral in Hylia's Realm."
+    - "on": "The Demise fight after exiting the portal at the bottom of the whirlpool spiral in Hylia's Realm will be skipped."
 
 - name: required_dungeons
   default_option: 2
@@ -577,8 +533,7 @@
   pretty_options:
     - 0-6
   options:
-    - 0-6:                             "Choose how many dungeons will have required items on their dungeon completion checks. Triforces, then swords, then other progress items are chosen, in this order."
-
+    - 0-6: "Choose how many dungeons will have required items on their dungeon completion checks. Triforces, then swords, then other progress items are chosen, in this order."
 
 - name: empty_unrequired_dungeons
   default_option: "on"
@@ -587,8 +542,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Unrequired dungeons may contain items needed to beat the game."
-    - "on":                            "Unrequired dungeons will be barren."
+    - "off": "Unrequired dungeons may contain items needed to beat the game."
+    - "on": "Unrequired dungeons will be barren."
 
 - name: trap_mode
   default_option: "no_traps"
@@ -600,11 +555,11 @@
     - "Traps'O'Plenty"
     - "Traptacular"
   options:
-    - "no_traps":                      "All items in the game will be genuine."
-    - "trapish":                       "Up to 10 non-major items will be replaced with 'traps' that don't give the item they appear to be."
-    - "trapsome":                      "Approximately 25% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
-    - "traps_o_plenty":                "Approximately 50% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
-    - "traptacular":                   "All of the non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "no_traps": "All items in the game will be genuine."
+    - "trapish": "Up to 10 non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "trapsome": "Approximately 25% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "traps_o_plenty": "Approximately 50% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "traptacular": "All of the non-major items will be replaced with 'traps' that don't give the item they appear to be."
 
 - name: trappable_items
   default_option: "major_items"
@@ -614,9 +569,9 @@
     - "Non Major Items"
     - "Any Items"
   options:
-    - "major_items":                   "Traps can mimic any major item that could be necessary to beat the game."
-    - "non_major_items":               "Traps can only mimic non-major items that cannot be necessary to beat the game."
-    - "any_items":                     "Traps can mimic any item."
+    - "major_items": "Traps can mimic any major item that could be necessary to beat the game."
+    - "non_major_items": "Traps can only mimic non-major items that cannot be necessary to beat the game."
+    - "any_items": "Traps can mimic any item."
 
 - name: burn_traps
   default_option: "on"
@@ -625,8 +580,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Traps that set you on fire will not be added to the item pool."
-    - "on":                            "Traps that set you on fire can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+    - "off": "Traps that set you on fire will not be added to the item pool."
+    - "on": "Traps that set you on fire can be picked when replacing items with traps (controlled by the Trap Mode setting)."
 
 - name: curse_traps
   default_option: "on"
@@ -635,8 +590,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Traps that curse you (prevents you from using your items) will not be added to the item pool."
-    - "on":                            "Traps that curse you can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+    - "off": "Traps that curse you (prevents you from using your items) will not be added to the item pool."
+    - "on": "Traps that curse you can be picked when replacing items with traps (controlled by the Trap Mode setting)."
 
 - name: noise_traps
   default_option: "off"
@@ -645,8 +600,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Traps that create a lot of noise will not be added to the item pool."
-    - "on":                            "Traps that create a lot of noise can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+    - "off": "Traps that create a lot of noise will not be added to the item pool."
+    - "on": "Traps that create a lot of noise can be picked when replacing items with traps (controlled by the Trap Mode setting)."
 
 - name: groose_traps
   default_option: "off"
@@ -655,9 +610,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Traps that spawn Groose will not be added to the item pool."
-    - "on":                            "Traps that spawn Groose can be picked when replacing items with traps (controlled by the Trap Mode setting)."
-
+    - "off": "Traps that spawn Groose will not be added to the item pool."
+    - "on": "Traps that spawn Groose can be picked when replacing items with traps (controlled by the Trap Mode setting)."
 
 - name: ammo_availability
   default_option: plentiful
@@ -668,11 +622,10 @@
     - Useful
     - Plentiful
   options:
-    - scarce:                          "Ammo will only be available from chance-based drops and Rupin's Gear shop."
-    - vanilla:                         "Ammo will appear when breaking pots and barrels in the same way as the vanilla game."
-    - useful:                          "Ammo pots will be added in key places near checks requiring a specific ammo to reduce back-tracking."
-    - plentiful:                       "Ammo pots will be added next to all Bird Statues."
-
+    - scarce: "Ammo will only be available from chance-based drops and Rupin's Gear shop."
+    - vanilla: "Ammo will appear when breaking pots and barrels in the same way as the vanilla game."
+    - useful: "Ammo pots will be added in key places near checks requiring a specific ammo to reduce back-tracking."
+    - plentiful: "Ammo pots will be added next to all Bird Statues."
 
 - name: boss_key_puzzles
   default_option: vanilla_orientation
@@ -682,10 +635,9 @@
     - Vanilla Orientation
     - Random Orientation
   options:
-    - correct_orientation:             "Boss Keys will be oriented so that they can be immediately inserted into the boss doors."
-    - vanilla_orientation:             "Boss Keys will start in their original orientations when you try to open boss doors."
-    - random_orientation:              "Boss Keys will start in a random orientation when you try to open boss doors."
-
+    - correct_orientation: "Boss Keys will be oriented so that they can be immediately inserted into the boss doors."
+    - vanilla_orientation: "Boss Keys will start in their original orientations when you try to open boss doors."
+    - random_orientation: "Boss Keys will start in a random orientation when you try to open boss doors."
 
 - name: upgraded_skyward_strike
   default_option: "on"
@@ -694,9 +646,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Only the True Master Sword will have the fully upgraded Skyward Strike."
-    - "on":                            "The Goddess Sword (and better swords) will have the fully upgraded Skyward Strike (charges quicker and travels farther). This has logical changes."
-
+    - "off": "Only the True Master Sword will have the fully upgraded Skyward Strike."
+    - "on": "The Goddess Sword (and better swords) will have the fully upgraded Skyward Strike (charges quicker and travels farther). This has logical changes."
 
 - name: faster_air_meter_depletion
   default_option: "off"
@@ -705,8 +656,7 @@
     - "Off"
     - "On"
   options:
-    - "off/on":                        "If enabled, the air meter will deplete twice as fast when underwater."
-    
+    - "off/on": "If enabled, the air meter will deplete twice as fast when underwater."
 
 - name: spawn_hearts
   default_option: "on"
@@ -715,8 +665,7 @@
     - "Off"
     - "On"
   options:
-    - "off/on":                        "If enabled, heart flowers will spawn and hearts may drop from defeated enemies, broken pots, broken barrels, cut grass, and digging spots."
-
+    - "off/on": "If enabled, heart flowers will spawn and hearts may drop from defeated enemies, broken pots, broken barrels, cut grass, and digging spots."
 
 - name: damage_multiplier
   default_option: "1"
@@ -726,14 +675,49 @@
   pretty_options:
     - 1-80
   options:
-    - 1-80:                            "Determines the overall damage multiplier.
-                                        **Normal Mode** (default) damage is x1.
-                                        **Hero Hode** (new game +) damage is x2.
-                                        At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
+    - 1-80: "Determines the overall damage multiplier.
+        **Normal Mode** (default) damage is x1.
+        **Hero Hode** (new game +) damage is x2.
+        At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
 ############################
 ##    Cosmetic Options    ##
 ############################
+
+- name: language
+  type: Cosmetic
+  default_option: english_us
+  pretty_name: In-Game Language
+  pretty_options:
+    # - Chinese
+    - Dutch
+    - English (GB)
+    - English (US)
+    - French (FR)
+    - French (US)
+    - German
+    - Italian
+    # - Japanese
+    # - Korean
+    # - Russian
+    - Spanish (ES)
+    - Spanish (US)
+    # - Taiwanese
+  options:
+    # - chinese:                         "The randomized game will use the Chinese language files. Status: Broken, the game's text will have large section in English and some text may be cut off the screen."
+    - dutch:                           "The randomized game will use the Dutch language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
+    - english_gb:                      "The randomized game will use the British English language files. Status: Complete, the game's text will be displayed correctly."
+    - english_us:                      "The randomized game will use the American English language files. Status: Complete, the game's text will be displayed correctly."
+    - french_fr:                       "The randomized game will use the French language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
+    - french_us:                       "The randomized game will use the French language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
+    - german:                          "The randomized game will use the German language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
+    - italian:                         "The randomized game will use the Italian language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
+    # - japanese:                        "The randomized game will use the Japanese language files. Status: Broken, the game's text will have large section in English and some text may be cut off the screen."
+    # - korean:                          "The randomized game will use the Korean language files. Status: Broken, the game's text will have large section in English and some text may be cut off the screen."
+    # - russian:                         "The randomized game will use the Russian language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
+    - spanish_es:                      "The randomized game will use the Spanish language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
+    - spanish_us:                      "The randomized game will use the Spanish language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
+    # - taiwanese:                       "The randomized game will use the Taiwanese language files. Status: Broken, the game's text will have large section in English and some text may be cut off the screen."
 
 - name: tunic_swap
   type: Cosmetic
@@ -743,9 +727,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Link will be dressed in his green knight's uniform."
-    - "on":                            "Link will be dressed in his Skyloft outfit seen at the start of the vanilla game."
-
+    - "off": "Link will be dressed in his green knight's uniform."
+    - "on": "Link will be dressed in his Skyloft outfit seen at the start of the vanilla game."
 
 - name: starry_skies
   type: Cosmetic
@@ -755,8 +738,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "Stars will only appear in the sky at night."
-    - "on":                            "Stars will appear in the sky during the day and night."
+    - "off": "Stars will only appear in the sky at night."
+    - "on": "Stars will appear in the sky during the day and night."
 
 ############################
 ## Logic options (tricks) ##
@@ -769,9 +752,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will not be expected to enter Lake Floria using this trick."
-    - "on":                            "You may need to enter Lake Floria by jumpslashing onto the fence and running out of bounds."
-
+    - "off": "You will not be expected to enter Lake Floria using this trick."
+    - "on": "You may need to enter Lake Floria by jumpslashing onto the fence and running out of bounds."
 
 - name: logic_beedles_island_cage_chest_dive
   default_option: "off"
@@ -780,9 +762,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will not be expected to get the Beedle's Island - Cage Goddess Chest using this trick."
-    - "on":                            "You may need to dive off your loftwing and skydive into the cage on Beedle's Island to get the chest."
-
+    - "off": "You will not be expected to get the Beedle's Island - Cage Goddess Chest using this trick."
+    - "on": "You may need to dive off your loftwing and skydive into the cage on Beedle's Island to get the chest."
 
 - name: logic_volcanic_island_dive
   default_option: "off"
@@ -791,9 +772,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will not be expected to get the Volcanic Island - Inside Goddess Chest using this trick."
-    - "on":                            "You may need to skydive onto the raise ledge in the volcanic island to get the chest."
-
+    - "off": "You will not be expected to get the Volcanic Island - Inside Goddess Chest using this trick."
+    - "on": "You may need to skydive onto the raise ledge in the volcanic island to get the chest."
 
 - name: logic_east_island_dive
   default_option: "off"
@@ -802,9 +782,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will not be expected to get the Thunderhead East Island - Chest using this trick."
-    - "on":                            "You may need to skydive onto the archway to get the chest."
-
+    - "off": "You will not be expected to get the Thunderhead East Island - Chest using this trick."
+    - "on": "You may need to skydive onto the archway to get the chest."
 
 - name: logic_advanced_lizalfos_combat
   default_option: "off"
@@ -813,9 +792,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to defeat Lizalfos enemies with a sword."
-    - "on":                            "You may need to defeat Lizalfos enemies with only bombs or only the Bow."
-
+    - "off": "You will only be expected to defeat Lizalfos enemies with a sword."
+    - "on": "You may need to defeat Lizalfos enemies with only bombs or only the Bow."
 
 - name: logic_gravestone_jump
   default_option: "off"
@@ -824,9 +802,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get to the Batreaux's door entrance by sleeping to night and bonking into the back-left gravestone."
-    - "on":                            "You may need to jump onto the back-middle gravestone, then jump onto the back-right gravestone, then sidehop left in order to get to the Batreaux's door entrance during the daytime."
-
+    - "off": "You will only be expected to get to the Batreaux's door entrance by sleeping to night and bonking into the back-left gravestone."
+    - "on": "You may need to jump onto the back-middle gravestone, then jump onto the back-right gravestone, then sidehop left in order to get to the Batreaux's door entrance during the daytime."
 
 - name: logic_waterfall_cave_jump
   default_option: "off"
@@ -835,9 +812,8 @@
     - "Off"
     - "On"
   options:
-  - "off":                             "You will only be expected to enter the end Waterfall Cave entrance by first exiting out of it into the loftwing prison area."
-  - "on":                              "You may need to dive off the platform near Sparrot the Fortune-Teller's house and skydive towards the loftwing prison in order to enter the end Waterfall Cave entrance."
-
+    - "off": "You will only be expected to enter the end Waterfall Cave entrance by first exiting out of it into the loftwing prison area."
+    - "on": "You may need to dive off the platform near Sparrot the Fortune-Teller's house and skydive towards the loftwing prison in order to enter the end Waterfall Cave entrance."
 
 - name: logic_bird_nest_item_from_beedles_shop
   default_option: "off"
@@ -846,9 +822,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get the Item in Bird's Nest by diving from the top of the Waterfall."
-    - "on":                            "You may need to stop Beedle's Shop near to the Bird's Nest and get the item by climing the rope and using the Gust Bellows to blow away the dust and a Beetle to collect the item."
-
+    - "off": "You will only be expected to get the Item in Bird's Nest by diving from the top of the Waterfall."
+    - "on": "You may need to stop Beedle's Shop near to the Bird's Nest and get the item by climing the rope and using the Gust Bellows to blow away the dust and a Beetle to collect the item."
 
 - name: logic_beedles_shop_with_bombs
   default_option: "off"
@@ -857,9 +832,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to enter Beedle's Shop using the Slingshot, Bow, Clawshots, or a Beetle to hit the bell."
-    - "on":                            "You may need to precisely time a bomb explosion to hit the bell on Beedle's Shop."
-
+    - "off": "You will only be expected to enter Beedle's Shop using the Slingshot, Bow, Clawshots, or a Beetle to hit the bell."
+    - "on": "You may need to precisely time a bomb explosion to hit the bell on Beedle's Shop."
 
 - name: logic_stuttersprint
   default_option: "off"
@@ -868,9 +842,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to continuously hold the sprint button in order to travel across quicksand or up slopes."
-    - "on":                            "You may need to use short sprints in order to travel farther across quicksand or up slopes without the use of items."
-
+    - "off": "You will only be expected to continuously hold the sprint button in order to travel across quicksand or up slopes."
+    - "on": "You may need to use short sprints in order to travel farther across quicksand or up slopes without the use of items."
 
 - name: logic_precise_beetle
   default_option: "off"
@@ -879,9 +852,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to use the Beetle in the same way as the vanilla game expects."
-    - "on":                            "You may need to precisely move the Beetle to get distant checks or carry bomb flowers long distances."
-
+    - "off": "You will only be expected to use the Beetle in the same way as the vanilla game expects."
+    - "on": "You may need to precisely move the Beetle to get distant checks or carry bomb flowers long distances."
 
 - name: logic_bomb_throws
   default_option: "off"
@@ -890,9 +862,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to use the Slingshot, Bow, Clawshots, or a Beetle to activate distant switches and you will only be expected to use nearby bomb flowers with the Hook Beetle to blow up distant rocks."
-    - "on":                            "You may need to use the Bomb Bag and time bomb throws to activate switches or blowup distant rocks or towers."
-  
+    - "off": "You will only be expected to use the Slingshot, Bow, Clawshots, or a Beetle to activate distant switches and you will only be expected to use nearby bomb flowers with the Hook Beetle to blow up distant rocks."
+    - "on": "You may need to use the Bomb Bag and time bomb throws to activate switches or blowup distant rocks or towers."
 
 - name: logic_itemless_first_timeshift_stone
   default_option: "off"
@@ -901,9 +872,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to use an item to activate the first timeshift stone in Lanayru Mine."
-    - "on":                            "You may need to use the bomb flower near the Chus in order to activate the first timeshift stone in Lanayru Mine without items."
-
+    - "off": "You will only be expected to use an item to activate the first timeshift stone in Lanayru Mine."
+    - "on": "You may need to use the bomb flower near the Chus in order to activate the first timeshift stone in Lanayru Mine without items."
 
 - name: logic_brakeslide
   default_option: "off"
@@ -912,9 +882,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to use items to help travel across quicksand."
-    - "on":                            "You may need to use the brakeslide glitch in order to travel across quicksand."
-
+    - "off": "You will only be expected to use items to help travel across quicksand."
+    - "on": "You may need to use the brakeslide glitch in order to travel across quicksand."
 
 - name: logic_lanayru_mine_quick_bomb
   default_option: "off"
@@ -923,9 +892,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You are not expected to be able to enter Lanayru Mine from Lanayru Desert via the minecart."
-    - "on":                            "You may need to enter Lanayru Mine from Lanayru Desert and use Bomb Bag to blow up the rock on the minecart track."
-
+    - "off": "You are not expected to be able to enter Lanayru Mine from Lanayru Desert via the minecart."
+    - "on": "You may need to enter Lanayru Mine from Lanayru Desert and use Bomb Bag to blow up the rock on the minecart track."
 
 - name: logic_tot_skip_brakeslide
   default_option: "off"
@@ -934,9 +902,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get to east Lanayru Desert exiting from the Temple of Time area or one of the nodes, or with Clawshots."
-    - "on":                            "You may need to use the brakeslide glitch to travel across the quicksand near the Caged Robot to east Lanayru Desert."
-
+    - "off": "You will only be expected to get to east Lanayru Desert exiting from the Temple of Time area or one of the nodes, or with Clawshots."
+    - "on": "You may need to use the brakeslide glitch to travel across the quicksand near the Caged Robot to east Lanayru Desert."
 
 - name: logic_tot_slingshot
   default_option: "off"
@@ -945,9 +912,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to use the Hook Beetle to activate the timeshift stone in the big tree near the Temple of Time."
-    - "on":                            "You may need to use the slingshot to precisely activate the timeshift stone in the big tree near the Temple of Time."
-
+    - "off": "You will only be expected to use the Hook Beetle to activate the timeshift stone in the big tree near the Temple of Time."
+    - "on": "You may need to use the slingshot to precisely activate the timeshift stone in the big tree near the Temple of Time."
 
 - name: logic_fire_node_without_hook_beetle
   default_option: "off"
@@ -956,9 +922,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will not be expected to get to the back of Fire Node without Hook Beetle."
-    - "on":                            "You may need to throw a Baby Ampilus up onto the high ledge in Fire Node to lower the bars at the back."
-
+    - "off": "You will not be expected to get to the back of Fire Node without Hook Beetle."
+    - "on": "You may need to throw a Baby Ampilus up onto the high ledge in Fire Node to lower the bars at the back."
 
 - name: logic_cactus_bomb_whip
   default_option: "off"
@@ -967,9 +932,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to use bomb flowers that can be picked up off the ground or with the Hook Beetle."
-    - "on":                            "You may need to use the Whip to pick up bomb flowers from on top of cacti."
-
+    - "off": "You will only be expected to use bomb flowers that can be picked up off the ground or with the Hook Beetle."
+    - "on": "You may need to use the Whip to pick up bomb flowers from on top of cacti."
 
 - name: logic_skippers_fast_clawshots
   default_option: "off"
@@ -978,9 +942,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get to the top of Skipper's Retreat with an item to defeat the Deku Baba."
-    - "on":                            "You may need to use the Clawshots to stun the Deku Baba in-front of the clawshot target in Skipper's Retreat and quickly clawshot across the gaps."
-
+    - "off": "You will only be expected to get to the top of Skipper's Retreat with an item to defeat the Deku Baba."
+    - "on": "You may need to use the Clawshots to stun the Deku Baba in-front of the clawshot target in Skipper's Retreat and quickly clawshot across the gaps."
 
 - name: logic_skyview_spider_roll
   default_option: "off"
@@ -989,9 +952,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to find an alternative path around Skultullas on their webs in the Skyview Temple."
-    - "on":                            "You may need to roll next the Skultullas in the Skyview Temple while they are on their webs in order to get past them."
-
+    - "off": "You will only be expected to find an alternative path around Skultullas on their webs in the Skyview Temple."
+    - "on": "You may need to roll next the Skultullas in the Skyview Temple while they are on their webs in order to get past them."
 
 - name: logic_skyview_coiled_rupee_jump
   default_option: "off"
@@ -1000,9 +962,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get the Rupee check on the Coiled Branch in the Skyview Temple using the Beetle."
-    - "on":                            "You may need to front-hop or backflip into the Rupee check on the Coiled Branch in the Skyview Temple."
-
+    - "off": "You will only be expected to get the Rupee check on the Coiled Branch in the Skyview Temple using the Beetle."
+    - "on": "You may need to front-hop or backflip into the Rupee check on the Coiled Branch in the Skyview Temple."
 
 - name: logic_skyview_precise_slingshot
   default_option: "off"
@@ -1011,9 +972,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get the Skyview Temple - Item behind Bars by either using the Beetle to hit the crystal or by using the Whip."
-    - "on":                            "You may need to use the slingshot to precisely hit the crystal at the top of the second hub room to get the Skyview Temple - Item behind Bars."
-
+    - "off": "You will only be expected to get the Skyview Temple - Item behind Bars by either using the Beetle to hit the crystal or by using the Whip."
+    - "on": "You may need to use the slingshot to precisely hit the crystal at the top of the second hub room to get the Skyview Temple - Item behind Bars."
 
 - name: logic_et_keese_skyward_strike
   default_option: "off"
@@ -1022,9 +982,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to break the high rope on the first Earth Temple bridge using a Beetle or the Bow."
-    - "on":                            "You may need to precisely manipulate a specefic Keese's position and use a long range Skyward Strike to break the high rope on the first bridge in Earth Temple."
-
+    - "off": "You will only be expected to break the high rope on the first Earth Temple bridge using a Beetle or the Bow."
+    - "on": "You may need to precisely manipulate a specefic Keese's position and use a long range Skyward Strike to break the high rope on the first bridge in Earth Temple."
 
 - name: logic_et_slope_stuttersprint
   default_option: "off"
@@ -1033,9 +992,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get to the top of the second Earth Temple slope by opening the blocked cubby part-way up the slope so you can recover stamina."
-    - "on":                            "You may need to manipulate the boulders to fall on the second Earth Temple slope so that you can stuttersprint to the top without getting hit."
-
+    - "off": "You will only be expected to get to the top of the second Earth Temple slope by opening the blocked cubby part-way up the slope so you can recover stamina."
+    - "on": "You may need to manipulate the boulders to fall on the second Earth Temple slope so that you can stuttersprint to the top without getting hit."
 
 - name: logic_et_bombless_scaldera
   default_option: "off"
@@ -1044,9 +1002,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to defeat Scaldera using the Bomb Bag and a Sword."
-    - "on":                            "You may need to defeat Scaldera using only the bomb flowers at the top of the boss arena and the fully upgraded Skyward Strike."
-
+    - "off": "You will only be expected to defeat Scaldera using the Bomb Bag and a Sword."
+    - "on": "You may need to defeat Scaldera using only the bomb flowers at the top of the boss arena and the fully upgraded Skyward Strike."
 
 - name: logic_lmf_whip_switch
   default_option: "off"
@@ -1055,9 +1012,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to flip the left lever in the first room of Lanayru Mining Facility by using the Hook Beetle to knock down the statue platform."
-    - "on":                            "You may need to run into the quicksand and use the Whip to flip the left lever in the first room of Lanayru Mining Facility."
-
+    - "off": "You will only be expected to flip the left lever in the first room of Lanayru Mining Facility by using the Hook Beetle to knock down the statue platform."
+    - "on": "You may need to run into the quicksand and use the Whip to flip the left lever in the first room of Lanayru Mining Facility."
 
 - name: logic_lmf_ceiling_precise_slingshot
   default_option: "off"
@@ -1066,9 +1022,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to hit the timeshift stone in the key-locked room in Lanayru Mining Facility with the Beetle or Bow."
-    - "on":                            "You may need to precisely use the Slingshot to hit the timeshift stone in the key-locked room in Lanayru Mining Facility."
-
+    - "off": "You will only be expected to hit the timeshift stone in the key-locked room in Lanayru Mining Facility with the Beetle or Bow."
+    - "on": "You may need to precisely use the Slingshot to hit the timeshift stone in the key-locked room in Lanayru Mining Facility."
 
 - name: logic_lmf_whip_armos_room_timeshift_stone
   default_option: "off"
@@ -1077,9 +1032,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to hit the timeshift stone in the Armos room of Lanayru Mining Facility with a Skyward Strike, Slingshot, or Bow."
-    - "on":                            "You may need to use the Whip to hit the timeshift stone in the Armos room of Lanayru Mining Facility"
-
+    - "off": "You will only be expected to hit the timeshift stone in the Armos room of Lanayru Mining Facility with a Skyward Strike, Slingshot, or Bow."
+    - "on": "You may need to use the Whip to hit the timeshift stone in the Armos room of Lanayru Mining Facility"
 
 - name: logic_lmf_minecart_jump
   default_option: "off"
@@ -1088,9 +1042,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get to the vanilla boss key room by opening the Wind Gates and following the central minecart path."
-    - "on":                            "You may need to jump onto and ride the minecart in-front of the Lanayru Mining Facility boss door to get to the vanilla boss key room."
-
+    - "off": "You will only be expected to get to the vanilla boss key room by opening the Wind Gates and following the central minecart path."
+    - "on": "You may need to jump onto and ride the minecart in-front of the Lanayru Mining Facility boss door to get to the vanilla boss key room."
 
 - name: logic_lmf_bellowsless_moldarach
   default_option: "off"
@@ -1099,9 +1052,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to defeat Moldarach in Lanayru Mining Facility with the Gust Bellows."
-    - "on":                            "You may need to defeat Moldarach in Lanayru Mining Facility without the Gust Bellows."
-
+    - "off": "You will only be expected to defeat Moldarach in Lanayru Mining Facility with the Gust Bellows."
+    - "on": "You may need to defeat Moldarach in Lanayru Mining Facility without the Gust Bellows."
 
 - name: logic_ac_lever_jump_trick
   default_option: "off"
@@ -1110,9 +1062,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to use the Whip to flip the lever that stops the waterfall in Ancient Cistern."
-    - "on":                            "You may need to jump down from above to flip the lever that stops the waterfall in Ancient Cistern."
-
+    - "off": "You will only be expected to use the Whip to flip the lever that stops the waterfall in Ancient Cistern."
+    - "on": "You may need to jump down from above to flip the lever that stops the waterfall in Ancient Cistern."
 
 - name: logic_ac_chest_after_whip_hooks_jump
   default_option: "off"
@@ -1121,9 +1072,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get the Ancient Cistern - Chest after Whip Hooks by using the Whip."
-    - "on":                            "You may be expected to get the Ancient Cistern - Chest after Whip Hooks by jumping down from the higher platform after exiting the basement via the long thread."
-
+    - "off": "You will only be expected to get the Ancient Cistern - Chest after Whip Hooks by using the Whip."
+    - "on": "You may be expected to get the Ancient Cistern - Chest after Whip Hooks by jumping down from the higher platform after exiting the basement via the long thread."
 
 - name: logic_sandship_jump_to_stern
   default_option: "off"
@@ -1132,9 +1082,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get the Sandship - Chest at the Stern by using the Clawshots."
-    - "on":                            "You may need to get the Sandship - Chest at the Stern by sidehopping of the mast."
-
+    - "off": "You will only be expected to get the Sandship - Chest at the Stern by using the Clawshots."
+    - "on": "You may need to get the Sandship - Chest at the Stern by sidehopping of the mast."
 
 - name: logic_sandship_itemless_spume
   default_option: "off"
@@ -1143,9 +1092,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to get past the Spume in the Sandship corridor by defeating it or stunning it with the Slingshot."
-    - "on":                            "You may need to get past the Spume in the Sandship corridor without any items."
-
+    - "off": "You will only be expected to get past the Spume in the Sandship corridor by defeating it or stunning it with the Slingshot."
+    - "on": "You may need to get past the Spume in the Sandship corridor without any items."
 
 - name: logic_sandship_no_combination_hint
   default_option: "off"
@@ -1154,9 +1102,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to open the combination lock in the Sandship if you have the Gust Bellows to uncover the combination."
-    - "on":                            "You may need to open the combination lock in the Sandship without using the Gust Bellows to get the combination."
-
+    - "off": "You will only be expected to open the combination lock in the Sandship if you have the Gust Bellows to uncover the combination."
+    - "on": "You may need to open the combination lock in the Sandship without using the Gust Bellows to get the combination."
 
 - name: logic_fs_pillar_jump
   default_option: "off"
@@ -1165,20 +1112,18 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to cross the broken bridge in Fire Sanctuary with the Clawshots."
-    - "on":                            "You may need to precisely jump around the pillars on the broken bridge in Fire Sanctuary."
+    - "off": "You will only be expected to cross the broken bridge in Fire Sanctuary with the Clawshots."
+    - "on": "You may need to precisely jump around the pillars on the broken bridge in Fire Sanctuary."
 
-
-- name: logic_fs_practice_sword_ghirahim_2 
+- name: logic_fs_practice_sword_ghirahim_2
   default_option: "off"
   pretty_name: Fire Sanctuary Ghirahim 2 with Practice Sword
   pretty_options:
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to defeat Ghirahim 2 with Goddess Sword or better."
-    - "on":                            "You may need to defeat Ghirahim 2 with Practice Sword."
-
+    - "off": "You will only be expected to defeat Ghirahim 2 with Goddess Sword or better."
+    - "on": "You may need to defeat Ghirahim 2 with Practice Sword."
 
 - name: logic_present_bow_switches
   default_option: "off"
@@ -1187,9 +1132,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You will only be expected to hit Bow switches in the past when they are not covered by barbed wire."
-    - "on":                            "You may need to hit Bow switches in the present when they are covered by barbed wire."
-
+    - "off": "You will only be expected to hit Bow switches in the past when they are not covered by barbed wire."
+    - "on": "You may need to hit Bow switches in the present when they are covered by barbed wire."
 
 - name: logic_skykeep_vineclip
   default_option: "off"
@@ -1198,8 +1142,8 @@
     - "Off"
     - "On"
   options:
-    - "off":                           "You well only be expected to use the Beetle and Clawshots to travel across the Fire Sanctuary room in Sky Keep."
-    - "on":                            "You may need to use the Bomb Bag and Clawshots to clip through the vines in the Fire Sanctuary room in Sky Keep."
+    - "off": "You well only be expected to use the Beetle and Clawshots to travel across the Fire Sanctuary room in Sky Keep."
+    - "on": "You may need to use the Bomb Bag and Clawshots to clip through the vines in the Fire Sanctuary room in Sky Keep."
 
 #######################################
 ## Extra Starting Inventory Settings ##
@@ -1217,14 +1161,13 @@
     - Master Sword
     - True Master Sword
   options:
-    - no_sword:                        "You will start without a sword."
-    - practice_sword:                  "You will start with 1 sword upgrade. You will not be able to use the Skyward Strike ability until you find another sword."
-    - goddess_sword:                   "You will start with 2 sword upgrades. You can use the Skyward Strike ability from the start of the game."
-    - goddess_longsword:               "You will start with 3 sword upgrades. Your sword will do more damage from the start of the game."
-    - goddess_white_sword:             "You will start with 4 sword upgrades. You will have the completed dowsing wheel from the start of the game."
-    - master_sword:                    "You will start with 5 sword upgrades. You will deal maximum sword damage from the start of the game."
-    - true_master_sword:               "You will start with all 6 sword upgrades. You will stun regular enemies with the sword from the start of the game."
-
+    - no_sword: "You will start without a sword."
+    - practice_sword: "You will start with 1 sword upgrade. You will not be able to use the Skyward Strike ability until you find another sword."
+    - goddess_sword: "You will start with 2 sword upgrades. You can use the Skyward Strike ability from the start of the game."
+    - goddess_longsword: "You will start with 3 sword upgrades. Your sword will do more damage from the start of the game."
+    - goddess_white_sword: "You will start with 4 sword upgrades. You will have the completed dowsing wheel from the start of the game."
+    - master_sword: "You will start with 5 sword upgrades. You will deal maximum sword damage from the start of the game."
+    - true_master_sword: "You will start with all 6 sword upgrades. You will stun regular enemies with the sword from the start of the game."
 
 - name: random_starting_tablet_count
   default_option: 1
@@ -1232,8 +1175,7 @@
   pretty_options:
     - 0-3
   options:
-    - 0-3:                             "Select the number of randomly chosen tablets you would like to start with. This is in addition to any tablets you have added to your starting inventory already."
-
+    - 0-3: "Select the number of randomly chosen tablets you would like to start with. This is in addition to any tablets you have added to your starting inventory already."
 
 - name: random_starting_item_count
   default_option: 0
@@ -1241,4 +1183,4 @@
   pretty_options:
     - 0-7
   options:
-    - 0-7:                             "Select the number of randomly chosen items you would like to start with. Only a selection of the most useful items are able to be chosen to maximize the benefit of this setting."
+    - 0-7: "Select the number of randomly chosen items you would like to start with. Only a selection of the most useful items are able to be chosen to maximize the benefit of this setting."

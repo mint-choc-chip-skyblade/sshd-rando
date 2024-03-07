@@ -79,12 +79,15 @@ EVENT_FILE_PATH_TAILS = [
     Path("romfs") / "EU" / "Object" / "nl_NL",
     Path("romfs") / "JP" / "Object" / "ja_JP",
     Path("romfs") / "KR" / "Object" / "ko_KR",
+    Path("romfs") / "RU" / "Object" / "ru_RU",
     Path("romfs") / "TW" / "Object" / "zh_TW",
     Path("romfs") / "US" / "Object" / "en_US",
     Path("romfs") / "US" / "Object" / "es_US",
     Path("romfs") / "US" / "Object" / "fr_US",
 ]
-VANILLA_EVENT_FILE_PATHS = [SSHD_EXTRACT_PATH / tail for tail in EVENT_FILE_PATH_TAILS]
+VANILLA_EVENT_FILE_PATHS = {
+    tail.name: SSHD_EXTRACT_PATH / tail for tail in EVENT_FILE_PATH_TAILS
+}
 
 OBJECTPACK_PATH_TAIL = Path("romfs") / "Object" / "NX" / "ObjectPack.arc.LZ"
 OBJECTPACK_PATH = SSHD_EXTRACT_PATH / OBJECTPACK_PATH_TAIL
