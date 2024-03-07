@@ -1,0 +1,20 @@
+- name: Potion Lady Text Patch
+  standard: "Just so you know, I can't sell you a \npotion if you don't have an Empty \nBottle to pour it into!\n\n\x0E\x01\x09\x04\x09\x90For some reason, I like you, though, so\nI'll give you a spare item I've\nbeen keeping here behind the counter!\nOh, it's nothing. It's my little gift."
+
+- name: Blue Rupee
+  standard: Blue Rupee
+  pretty: a <Blue Rupee>
+  cryptic: a <b+<fiver>>
+  plurality: Singular
+
+- name: Red Rupee
+  standard: Red Rupee
+  pretty: a <Red Rupee>
+  cryptic: a <r<pair of tenners>>
+  plurality: Singular
+
+- name: Heart
+  standard: Heart
+  pretty: a <Heart>
+  cryptic: a <r<plaster>>
+  plurailty: Singular

@@ -2449,7 +2449,7 @@
   eventflowindex: 26
 
 - name: Deep Woods - Goddess Cube Near Goron
-  original_item: Deep Woods Goddess Cube Near Goron
+  original_item: Deep Woods Goddess Cube near Goron
   types:
     - Goddess Cube
   is_gui_excluded_location: False

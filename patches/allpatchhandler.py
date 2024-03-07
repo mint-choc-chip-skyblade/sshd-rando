@@ -29,9 +29,7 @@ class AllPatchHandler:
 
         self.conditional_patch_handler = ConditionalPatchHandler(self.world)
 
-        # TODO: patch other language files too
-        event_output_path = output_dir / "romfs" / "US" / "Object" / "en_US"
-        self.event_patch_handler = EventPatchHandler(event_output_path)
+        self.event_patch_handler = EventPatchHandler(output_dir)
 
         stage_output_path = output_dir / "romfs"
         self.stage_patch_handler = StagePatchHandler(stage_output_path)

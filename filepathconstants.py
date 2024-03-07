@@ -68,7 +68,23 @@ ITEMS_PATH = RANDO_ROOT_PATH / "data" / "items.yaml"
 LOCATIONS_PATH = RANDO_ROOT_PATH / "data" / "locations.yaml"
 
 STAGE_FILES_PATH = ROMFS_EXTRACT_PATH / "Stage"
-EVENT_FILES_PATH = ROMFS_EXTRACT_PATH / "US" / "Object" / "en_US"
+
+EVENT_FILE_PATH_TAILS = [
+    Path("romfs") / "CN" / "Object" / "zh_CN",
+    Path("romfs") / "EU" / "Object" / "de_DE",
+    Path("romfs") / "EU" / "Object" / "en_GB",
+    Path("romfs") / "EU" / "Object" / "es_ES",
+    Path("romfs") / "EU" / "Object" / "fr_FR",
+    Path("romfs") / "EU" / "Object" / "it_IT",
+    Path("romfs") / "EU" / "Object" / "nl_NL",
+    Path("romfs") / "JP" / "Object" / "ja_JP",
+    Path("romfs") / "KR" / "Object" / "ko_KR",
+    Path("romfs") / "TW" / "Object" / "zh_TW",
+    Path("romfs") / "US" / "Object" / "en_US",
+    Path("romfs") / "US" / "Object" / "es_US",
+    Path("romfs") / "US" / "Object" / "fr_US",
+]
+VANILLA_EVENT_FILE_PATHS = [SSHD_EXTRACT_PATH / tail for tail in EVENT_FILE_PATH_TAILS]
 
 OBJECTPACK_PATH_TAIL = Path("romfs") / "Object" / "NX" / "ObjectPack.arc.LZ"
 OBJECTPACK_PATH = SSHD_EXTRACT_PATH / OBJECTPACK_PATH_TAIL
