@@ -1,12 +1,18 @@
 import sys
 from types import TracebackType
 
-from PySide6.QtCore import QEvent, Qt
-from PySide6.QtGui import QIcon, QMouseEvent
+from PySide6.QtCore import QEvent, Qt, QSize, QUrl
+from PySide6.QtGui import QDesktopServices, QIcon, QMouseEvent, QPixmap
 from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow, QWidget
 
 from constants.randoconstants import VERSION
-from filepathconstants import CONFIG_PATH, DEFAULT_OUTPUT_PATH, ICON_PATH
+from filepathconstants import (
+    CONFIG_PATH,
+    DEFAULT_OUTPUT_PATH,
+    EXEFS_EXTRACT_PATH,
+    ICON_PATH,
+    ROMFS_EXTRACT_PATH,
+)
 
 from gui.accessibility import Accessibility
 from gui.advanced import Advanced
@@ -26,6 +32,8 @@ class Main(QMainWindow):
 
         self.randomize_thread = RandomizationThread()
         self.randomize_thread.error_abort.connect(self.thread_error)
+
+        self.progress_dialog = None
 
         self.ui = Ui_main_window()
         self.ui.setupUi(self)
@@ -48,6 +56,7 @@ class Main(QMainWindow):
         self.accessibility = Accessibility(self, self.ui)
         self.advanced = Advanced(self, self.ui)
 
+        self.ui.randomize_button.setDisabled(True)
         self.ui.randomize_button.clicked.connect(self.randomize)
         self.ui.about_button.clicked.connect(self.about)
 
@@ -55,18 +64,58 @@ class Main(QMainWindow):
         if not self.check_output_dir():
             return
 
-        progress_dialog = RandomizerProgressDialog(self)
+        self.progress_dialog = RandomizerProgressDialog(self, self.cancel_callback)
 
-        self.randomize_thread.dialog_value_update.connect(progress_dialog.setValue)
-        self.randomize_thread.dialog_label_update.connect(progress_dialog.setLabelText)
+        self.randomize_thread.dialog_value_update.connect(self.progress_dialog.setValue)
+        self.randomize_thread.dialog_label_update.connect(
+            self.progress_dialog.setLabelText
+        )
 
         self.randomize_thread.setTerminationEnabled(True)
         self.randomize_thread.start()
-        progress_dialog.exec()
+        self.progress_dialog.exec()
+
+        if self.progress_dialog is None:
+            self.fi_info_dialog.show_dialog(
+                "Randomization Failed",
+                "The randomization was unable to be completed and has been cancelled.",
+            )
+            return
+
+        done_dialog = QMessageBox(self)
+        done_dialog.setWindowTitle("Randomization Completed")
+        done_dialog.setText(
+            f"Seed successfully generated!\n\nHash: {self.config.get_hash()}"
+        )
+
+        open_output_button = done_dialog.addButton(
+            "Open", QMessageBox.ButtonRole.NoRole
+        )
+        open_output_button.clicked.disconnect()  # Prevent from closing the done message
+        open_output_button.clicked.connect(self.open_output_folder)
+
+        done_dialog.addButton("OK", QMessageBox.ButtonRole.NoRole)
+
+        done_dialog.setWindowIcon(QIcon(ICON_PATH.as_posix()))
+        icon_pixmap = QPixmap(ICON_PATH.as_posix()).scaled(
+            QSize(80, 80),
+            Qt.AspectRatioMode.IgnoreAspectRatio,
+            Qt.TransformationMode.SmoothTransformation,
+        )
+        done_dialog.setIconPixmap(icon_pixmap)
+        done_dialog.exec()
 
         # Prevents old progress dialogs reappearing when generating another
         # seed without reopening the entire program
-        progress_dialog.deleteLater()
+        self.progress_dialog.deleteLater()
+
+    def cancel_callback(self):
+        RandomizationThread.cancelled = True
+
+    def open_output_folder(self):
+        QDesktopServices.openUrl(
+            QUrl(self.config.output_dir.as_posix(), QUrl.ParsingMode.TolerantMode)
+        )
 
     def check_output_dir(self) -> bool:
         output_dir = self.config.output_dir
@@ -108,7 +157,7 @@ The output folder you have specified cannot be found.
 
                         Created by:
                         <a href=\"https://github.com/covenesme\">CovenEsme</a>,
-                        <a href=\"https://github.com/muzugalium\">Muzugalium</a>,
+                        <a href=\"https://github.com/Kuonino\">Kuonino</a>,
                         <a href=\"https://github.com/gymnast86\">Gymnast86</a>, and
                         <a href=\"https://github.com/tbpixel\">tbpixel</a><br><br>
 
@@ -137,14 +186,42 @@ The output folder you have specified cannot be found.
         return QMainWindow.eventFilter(self, target, event)
 
     def thread_error(self, exception: str, traceback: str):
-        error_from_str(exception, traceback)
-        sys.exit()
+        if self.progress_dialog is not None:
+            self.progress_dialog.deleteLater()
+            self.progress_dialog = None
+
+        if "ThreadCancelled" in traceback:
+            print(exception, "This should be ignored.")
+        else:
+            error_from_str(exception, traceback)
 
 
 def start_gui(app: QApplication):
     try:
         widget = Main()
         widget.show()
+
+        if not EXEFS_EXTRACT_PATH.exists() or not ROMFS_EXTRACT_PATH.exists():
+            get_extract_text = "Before you can begin, you will need to provide an extract of The Legend of Zelda: Skyward Sword HD"
+            get_extract_text += "<br><br>Instructions for how to do this can be found here: <a href='https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY'>The Legend of Zelda: Skyward Sword HD Randomizer - Setup Guide</a>"
+            get_extract_text += '<br><br>Once you are ready, click "OK" and the extract folder will open. Copy your extract of the base game into this folder'
+            get_extract_text += "<br><br>(If you just wish to look around, you can skip this step but you will be unable to randomize the game)."
+            widget.fi_info_dialog.show_dialog(
+                title="Getting Started", text=get_extract_text
+            )
+
+            widget.advanced.open_extract_folder()
+
+            confirm_first_time_verify_dialog = widget.fi_question_dialog.show_dialog(
+                "Perform Full Verification?",
+                f'Would you like to verify your extract (required for the randomizer to work)?<br><br>Answering "No" will prevent you from randomizing the game but you will still be able to look around.',
+            )
+
+            if confirm_first_time_verify_dialog == QMessageBox.StandardButton.Yes:
+                if widget.advanced.verify_extract(verify_all=True):
+                    widget.ui.randomize_button.setDisabled(False)
+        else:
+            widget.ui.randomize_button.setDisabled(False)
 
         sys.exit(app.exec())
     except Exception as e:
@@ -167,7 +244,6 @@ def excepthook(source, exception, traceback: TracebackType):
 
     traceback_str += f"\n\n{source}: {exception}"
     error_from_str(exception, traceback_str)
-    sys.exit()
 
 
 sys.excepthook = excepthook

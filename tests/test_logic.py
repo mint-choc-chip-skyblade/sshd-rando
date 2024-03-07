@@ -7,7 +7,7 @@ from logic.generate import generate
 from logic.config import *
 from logic.search import all_logic_satisfied
 from logic.world import World
-from filepathconstants import LOGS_PATH
+from filepathconstants import SPOILER_LOGS_PATH
 
 
 def config_test(
@@ -30,8 +30,10 @@ def config_test(
     config_file_name.unlink()
 
     if remove_spoiler:
-        os.remove(f"{LOGS_PATH}/{worlds[0].config.get_hash()} Spoiler Log.txt")
-        os.remove(f"{LOGS_PATH}/{worlds[0].config.get_hash()} Anti Spoiler Log.txt")
+        os.remove(f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Spoiler Log.txt")
+        os.remove(
+            f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Anti Spoiler Log.txt"
+        )
 
     return worlds
 
@@ -254,9 +256,9 @@ def test_good_starting_inventory() -> None:
 
 def test_spoiler_as_config() -> None:
     worlds = config_test("spoiler_as_config.yaml", remove_spoiler=False)
-    spoiler_path = f"{LOGS_PATH}/{worlds[0].config.get_hash()} Spoiler Log.txt"
+    spoiler_path = f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Spoiler Log.txt"
     anti_spoiler_path = (
-        f"{LOGS_PATH}/{worlds[0].config.get_hash()} Anti Spoiler Log.txt"
+        f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Anti Spoiler Log.txt"
     )
     log1 = ""
     with open(spoiler_path, "r") as first_log:

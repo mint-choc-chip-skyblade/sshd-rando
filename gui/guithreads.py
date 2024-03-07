@@ -1,6 +1,11 @@
 from PySide6.QtCore import QThread, Signal
 
 
+class ThreadCancelled(Exception):
+    def __str__(self):
+        return "Some QThread was cancelled."
+
+
 class RandomizationThread(QThread):
     dialog_value_update = Signal(int)
     dialog_label_update = Signal(str)
@@ -9,6 +14,7 @@ class RandomizationThread(QThread):
     error_abort = Signal(str, str)
     randomization_complete = Signal()
 
+    cancelled = False
     callback = None
 
     def __init__(self):
@@ -46,6 +52,7 @@ class VerificationThread(QThread):
     error_abort = Signal(str, str)
     verification_complete = Signal()
 
+    cancelled = False
     callback = None
 
     def __init__(self, verify_all: bool = False):
