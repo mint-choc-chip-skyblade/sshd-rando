@@ -32,7 +32,7 @@ a = Analysis(
         [
             "asm/*.*",  # includes assemble.py but it shouldn't matter
             "asm/additions/diffs/*.yaml",
-            "asm/patchs/diffs/*.yaml",
+            "asm/patches/diffs/*.yaml",
             "assets/**/*",
             "data/**/*",
             "gui/custom_themes/**/*",
