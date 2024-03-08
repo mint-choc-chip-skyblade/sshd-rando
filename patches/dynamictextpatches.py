@@ -20,24 +20,24 @@ def add_dynamic_text_patches(
 def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) -> None:
     # Required dungeons
     DUNGEON_COLORS = {
-        "Skyview Temple": "<g<",
-        "Earth Temple": "<r+<",
-        "Lanayru Mining Facility": "<y<",
-        "Ancient Cistern": "<b<",
-        "Sandship": "<y+<",
-        "Fire Sanctuary": "<r<",
-        "Sky Keep": "<s<",
+        get_text_data("Skyview Temple"): "g",
+        get_text_data("Earth Temple"): "r+",
+        get_text_data("Lanayru Mining Facility"): "y",
+        get_text_data("Ancient Cistern"): "b",
+        get_text_data("Sandship"): "y+",
+        get_text_data("Fire Sanctuary"): "r",
+        get_text_data("Sky Keep"): "s",
     }
 
     colorful_dungeon_text = tuple(
-        DUNGEON_COLORS[dungeon] + dungeon + ">>\n"
+        dungeon.apply_text_color(DUNGEON_COLORS[dungeon])
         for dungeon in DUNGEON_COLORS
-        if world.dungeons[dungeon].required
+        if world.dungeons[dungeon.text["en_US"]].required
     )
 
-    dungeon_text = ""
+    dungeon_text = Text()
     for text in colorful_dungeon_text:
-        dungeon_text += text
+        dungeon_text += text + Text("\n")
 
     match len(colorful_dungeon_text):
         case 0:

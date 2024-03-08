@@ -67,7 +67,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
     config = worlds[0].config
     filepath = f"{SPOILER_LOGS_PATH}/{config.get_hash()} Spoiler Log.txt"
 
-    with open(filepath, "w") as spoiler_log:
+    with open(filepath, "w", encoding="utf-8") as spoiler_log:
         log_basic_info(spoiler_log, config, worlds)
 
         # Print starting inventories if there are any
@@ -240,6 +240,6 @@ def generate_anti_spoiler_log(worlds: list[World]) -> None:
 
     config = worlds[0].config
     filepath = f"{SPOILER_LOGS_PATH}/{config.get_hash()} Anti Spoiler Log.txt"
-    with open(filepath, "w") as anti_spoiler_log:
+    with open(filepath, "w", encoding="utf-8") as anti_spoiler_log:
         log_basic_info(anti_spoiler_log, config, worlds)
         log_settings(anti_spoiler_log, config, worlds)

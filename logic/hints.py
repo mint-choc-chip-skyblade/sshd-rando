@@ -659,10 +659,10 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
 
     # Mapping of song item to trial gate entrance
     trial_gate_entrances = {
-        "Song of the Hero": "Central Skyloft -> Skyloft Silent Realm",
-        "Farore's Courage": "Faron Woods -> Faron Silent Realm",
-        "Din's Power": "Volcano Ascent -> Eldin Silent Realm",
-        "Nayru's Wisdom": "Lanayru Desert North -> Lanayru Silent Realm",
+        "Song of the Hero": "Central Skyloft -> The Goddess's Silent Realm",
+        "Farore's Courage": "Faron Woods -> Farore's Silent Realm",
+        "Din's Power": "Volcano Ascent -> Din's Silent Realm",
+        "Nayru's Wisdom": "Lanayru Desert North -> Nayru's Silent Realm",
     }
 
     # Mapping of song item to locations in associated silent realm

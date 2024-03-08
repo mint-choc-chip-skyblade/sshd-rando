@@ -3,14 +3,15 @@
 
 - name: Scrapper Item Get Text
   standard: "You found Gondo's robot, <y<Scrapper>>!
-            \n\n\n\nBe sure to take care of him.\n...even if he's a little mean."
+    \n\n\n\nBe sure to take care of him.\n...even if he's a little mean."
 
 - name: Some Tadtones Collected text
   standard: "You got a group of <y<Tadtones>>!\nOnly <r<<numeric arg0> >> left to find!"
 
 - name: All Tadtones Collected text
-  standard: "You got the last group of <y<Tadtones>>!\nYou found every last one of them!
-          \n\n\nHurry to <b<Flooded Faron Woods>> and talk\nto the <r<Water Dragon>> to claim your\nreward!"
+  standard:
+    "You got the last group of <y<Tadtones>>!\nYou found every last one of them!
+    \n\n\nHurry to <b<Flooded Faron Woods>> and talk\nto the <r<Water Dragon>> to claim your\nreward!"
 
 - name: Spiral Charge Text
   standard: "You learned the <y<Spiral Charge>>!"
@@ -134,19 +135,20 @@
   standard: "Hey, kid! Anything to upgrade today?\n[1]Upgrade gear.[2]Repair shield.[3-]No, thanks."
 
 - name: Gondo Options Text
-  standard: "Heyyyyy! Welcome to the Scrap Shop!\nI can use the stuff you find to upgrade\nyour gear and make it even stronger!
-            \n\nAnd if your shield takes a beating, no\nworries. I can fix that too.\nSo what'll it be?\n[1]Upgrade gear.[2]Fix shield.[3]<r<Repair Junk?>>[4-]Never mind."
+  standard:
+    "Heyyyyy! Welcome to the Scrap Shop!\nI can use the stuff you find to upgrade\nyour gear and make it even stronger!
+    \n\nAnd if your shield takes a beating, no\nworries. I can fix that too.\nSo what'll it be?\n[1]Upgrade gear.[2]Fix shield.[3]<r<Repair Junk?>>[4-]Never mind."
 
 - name: Patch Gondo Repair Scrapper Text 1
   standard: "Oh that?\nWell, my old Gramps did tell me this:
-            \n\n\n\"You can get this working again with\nthe extract from an <y<Ancient Flower>>.\"\nBut I've never even heard of, much less\nseen, any such thing!\n[1]Take mine![2-]Me neither."
+    \n\n\n\"You can get this working again with\nthe extract from an <y<Ancient Flower>>.\"\nBut I've never even heard of, much less\nseen, any such thing!\n[1]Take mine![2-]Me neither."
 
 - name: Patch Gondo Repair Scrapper Text 2
   standard: "So this is an <y<Ancient Flower>>?!\nI can feel some slick, oily stuff coming\nout of its stem! Great, with this we can\nfix my old Gramps' stuff!\n...Wait right here! I'll have it up and\nrunning in no time!"
 
 - name: Patch post Gondo Repair Text
   standard: "Well, here you are. All fixed up!
-            \n\n\n\nI couldn't have done it without your\nhelp. So, here, you have it...\nwhat ever this is..."
+    \n\n\n\nI couldn't have done it without your\nhelp. So, here, you have it...\nwhat ever this is..."
 
 - name: Rerandomize Treasure Question
   standard: "Want to sell something different?\n[1]Yes[2-]No"
@@ -179,14 +181,16 @@
   standard: "They used to call me <b<Yerbal>>. Now I'm\njust the old <b<Kikwi hermit>>."
 
 - name: Yerbal open floria gates text
-  standard: "However, <b<Faron>>, the Water Dragon,\nlet me know a secret of hers.\nKwwwwwwrk...
-            \n\nSee, she gave me a <r<spare key>> to the\nLake, kwwwrk!
-            \n\n\nDon't tell her I'm letting you in\nthough. I've heard stories of folks\nwho caught her in a fussy mood.
-            \n\nThey ended up as midmorning snacks,\nkwwwwrk!"
+  standard:
+    "However, <b<Faron>>, the Water Dragon,\nlet me know a secret of hers.\nKwwwwwwrk...
+    \n\nSee, she gave me a <r<spare key>> to the\nLake, kwwwrk!
+    \n\n\nDon't tell her I'm letting you in\nthough. I've heard stories of folks\nwho caught her in a fussy mood.
+    \n\nThey ended up as midmorning snacks,\nkwwwwrk!"
 
 - name: Patch Yerbal floria gates intro
-  standard: "See those gates over there? They\nlead to <b<Lake Floria>>. However, the\n<r<Water Dragon>> has sealed them shut to\nall those she judged unworthy...
-            \nBut don't worry, kwwwwrk. I'll let you\nin on the trick to opening the gate."
+  standard:
+    "See those gates over there? They\nlead to <b<Lake Floria>>. However, the\n<r<Water Dragon>> has sealed them shut to\nall those she judged unworthy...
+    \nBut don't worry, kwwwwrk. I'll let you\nin on the trick to opening the gate."
 
 - name: Flooded Faron Exit Question
   standard: "Leaving so soon? I can drain the forest\nif you wish to return later.\n[1]Yes[2-]No"
@@ -647,8 +651,8 @@
   cryptic: a <r<scattering device>>
   plurality: Singular
 
-- name: Progressive Wallet 
-  standard: Progressive Wallet 
+- name: Progressive Wallet
+  standard: Progressive Wallet
   pretty: a <Progressive Wallet>
   cryptic: a <r<rupee holder>>
   plurality: Singular
@@ -2303,7 +2307,7 @@
   standard: Sealed Grounds - Spiral Stamina Fruit 25
   pretty: Sealed Grounds - Spiral Stamina Fruit 25
   cryptic: a <r<fruit in a spiral>>
-  
+
 - name: Sealed Temple - Chest
   standard: Sealed Temple - Chest
   pretty: Sealed Temple - Chest
@@ -2389,9 +2393,9 @@
   pretty: Sealed Grounds - Bonk Small East Rock before Faron Woods
   cryptic: <r<disturbing a small rock>> behind a <g<secure temple>>
 
-- name: Hylia's Temple - Zelda's Blessing
-  standard: Hylia's Temple - Zelda's Blessing
-  pretty: Hylia's Temple - Zelda's Blessing
+- name: Temple of Hylia - Zelda's Blessing
+  standard: Temple of Hylia - Zelda's Blessing
+  pretty: Temple of Hylia - Zelda's Blessing
   cryptic: the <r<goddess's blessing>>
 
 - name: Hylia's Realm - Defeat Demise
@@ -3819,7 +3823,7 @@
   standard: Lanayru Mine - Stamina Fruit near Spumes 3
   pretty: Lanayru Mine - Stamina Fruit near Spumes 3
   cryptic: a <r<fruit surrounded by sandy spumes>>
-  
+
 - name: Lanayru Mine - Goddess Cube
   standard: Lanayru Mine - Goddess Cube
   pretty: Lanayru Mine - Goddess Cube
@@ -4334,7 +4338,7 @@
   standard: Skipper's Retreat Shack - Blow Fish
   pretty: Skipper's Retreat Shack - Blow Fish
   cryptic: <r<dusting a captain's fish>>
-  
+
 - name: Skipper's Retreat Shack - Rupee under Sand 1
   standard: Skipper's Retreat Shack - Rupee under Sand 1
   pretty: Skipper's Retreat Shack - Rupee under Sand 1
@@ -5426,93 +5430,92 @@
   pretty: Sky Keep - Sacred Power of Farore
   cryptic: the <r<courage of a goddess>>
 
-- name: Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge
-  standard: Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge
-  pretty: Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge
+- name: The Goddess's Silent Realm - Stamina Fruit on Knight Academy Ledge
+  standard: The Goddess's Silent Realm - Stamina Fruit on Knight Academy Ledge
+  pretty: The Goddess's Silent Realm - Stamina Fruit on Knight Academy Ledge
   cryptic: a <r<fruit on a silent school ledge>>
 
-- name: Skyloft Silent Realm - Collect all Tears Reward
-  standard: Skyloft Silent Realm - Collect all Tears Reward
-  pretty: Skyloft Silent Realm - Collect all Tears Reward
+- name: The Goddess's Silent Realm - Collect all Tears Reward
+  standard: The Goddess's Silent Realm - Collect all Tears Reward
+  pretty: The Goddess's Silent Realm - Collect all Tears Reward
   cryptic: the <r<goddess's final trial>>
 
-- name: Faron Silent Realm - Stamina Fruit on Vine Wall 1
-  standard: Faron Silent Realm - Stamina Fruit on Vine Wall 1
-  pretty: Faron Silent Realm - Stamina Fruit on Vine Wall 1
+- name: Farore's Silent Realm - Stamina Fruit on Vine Wall 1
+  standard: Farore's Silent Realm - Stamina Fruit on Vine Wall 1
+  pretty: Farore's Silent Realm - Stamina Fruit on Vine Wall 1
   cryptic: a <r<fruit on a silent forest wall>>
 
-- name: Faron Silent Realm - Stamina Fruit on Vine Wall 2
-  standard: Faron Silent Realm - Stamina Fruit on Vine Wall 2
-  pretty: Faron Silent Realm - Stamina Fruit on Vine Wall 2
+- name: Farore's Silent Realm - Stamina Fruit on Vine Wall 2
+  standard: Farore's Silent Realm - Stamina Fruit on Vine Wall 2
+  pretty: Farore's Silent Realm - Stamina Fruit on Vine Wall 2
   cryptic: a <r<fruit on a silent forest wall>>
 
-- name: Faron Silent Realm - Collect all Tears Reward
-  standard: Faron Silent Realm - Collect all Tears Reward
-  pretty: Faron Silent Realm - Collect all Tears Reward
+- name: Farore's Silent Realm - Collect all Tears Reward
+  standard: Farore's Silent Realm - Collect all Tears Reward
+  pretty: Farore's Silent Realm - Collect all Tears Reward
   cryptic: a <r<trial of courage>>
 
-- name: Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall
-  standard: Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall
-  pretty: Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall
+- name: Nayru's Silent Realm - Stamina Fruit on East LMF Vine Wall
+  standard: Nayru's Silent Realm - Stamina Fruit on East LMF Vine Wall
+  pretty: Nayru's Silent Realm - Stamina Fruit on East LMF Vine Wall
   cryptic: a <r<fruit on a silent desert wall>>
 
-- name: Lanayru Silent Realm - Stamina Fruit on West LMF Vine Wall
-  standard: Lanayru Silent Realm - Stamina Fruit on West LMF Vine Wall
-  pretty: Lanayru Silent Realm - Stamina Fruit on West LMF Vine Wall
+- name: Nayru's Silent Realm - Stamina Fruit on West LMF Vine Wall
+  standard: Nayru's Silent Realm - Stamina Fruit on West LMF Vine Wall
+  pretty: Nayru's Silent Realm - Stamina Fruit on West LMF Vine Wall
   cryptic: a <r<fruit on a silent desert wall>>
 
-- name: Lanayru Silent Realm - Stamina Fruit near Minecart
-  standard: Lanayru Silent Realm - Stamina Fruit near Minecart
-  pretty: Lanayru Silent Realm - Stamina Fruit near Minecart
+- name: Nayru's Silent Realm - Stamina Fruit near Minecart
+  standard: Nayru's Silent Realm - Stamina Fruit near Minecart
+  pretty: Nayru's Silent Realm - Stamina Fruit near Minecart
   cryptic: a <r<fruit near a silent minecart>>
 
-- name: Lanayru Silent Realm - Stamina Fruit between Watchers
-  standard: Lanayru Silent Realm - Stamina Fruit between Watchers
-  pretty: Lanayru Silent Realm - Stamina Fruit between Watchers
+- name: Nayru's Silent Realm - Stamina Fruit between Watchers
+  standard: Nayru's Silent Realm - Stamina Fruit between Watchers
+  pretty: Nayru's Silent Realm - Stamina Fruit between Watchers
   cryptic: a <r<fruit surrounded by silent watchers>>
 
-- name: Lanayru Silent Realm - Stamina Fruit near Tree
-  standard: Lanayru Silent Realm - Stamina Fruit near Tree
-  pretty: Lanayru Silent Realm - Stamina Fruit near Tree
+- name: Nayru's Silent Realm - Stamina Fruit near Tree
+  standard: Nayru's Silent Realm - Stamina Fruit near Tree
+  pretty: Nayru's Silent Realm - Stamina Fruit near Tree
   cryptic: a <r<fruit near a silent desert tree>>
 
-- name: Lanayru Silent Realm - Collect all Tears Reward
-  standard: Lanayru Silent Realm - Collect all Tears Reward
-  pretty: Lanayru Silent Realm - Collect all Tears Reward
+- name: Nayru's Silent Realm - Collect all Tears Reward
+  standard: Nayru's Silent Realm - Collect all Tears Reward
+  pretty: Nayru's Silent Realm - Collect all Tears Reward
   cryptic: a <r<trial of wisdom>>
 
-- name: Eldin Silent Realm - Stamina Fruit on First Slope
-  standard: Eldin Silent Realm - Stamina Fruit on First Slope
-  pretty: Eldin Silent Realm - Stamina Fruit on First Slope
+- name: Din's Silent Realm - Stamina Fruit on First Slope
+  standard: Din's Silent Realm - Stamina Fruit on First Slope
+  pretty: Din's Silent Realm - Stamina Fruit on First Slope
   cryptic: a <r<fruit on a silent sandy slope>>
 
-- name: Eldin Silent Realm - Stamina Fruit near First Bone Bridge
-  standard: Eldin Silent Realm - Stamina Fruit near First Bone Bridge
-  pretty: Eldin Silent Realm - Stamina Fruit near First Bone Bridge
+- name: Din's Silent Realm - Stamina Fruit near First Bone Bridge
+  standard: Din's Silent Realm - Stamina Fruit near First Bone Bridge
+  pretty: Din's Silent Realm - Stamina Fruit near First Bone Bridge
   cryptic: a <r<fruit near some silent bones>>
 
-- name: Eldin Silent Realm - Stamina Fruit near Tear on Vines
-  standard: Eldin Silent Realm - Stamina Fruit near Tear on Vines
-  pretty: Eldin Silent Realm - Stamina Fruit near Tear on Vines
+- name: Din's Silent Realm - Stamina Fruit near Tear on Vines
+  standard: Din's Silent Realm - Stamina Fruit near Tear on Vines
+  pretty: Din's Silent Realm - Stamina Fruit near Tear on Vines
   cryptic: a <r<fruit on a silent volcanic wall>>
 
-- name: Eldin Silent Realm - Collect all Tears Reward
-  standard: Eldin Silent Realm - Collect all Tears Reward
-  pretty: Eldin Silent Realm - Collect all Tears Reward
+- name: Din's Silent Realm - Collect all Tears Reward
+  standard: Din's Silent Realm - Collect all Tears Reward
+  pretty: Din's Silent Realm - Collect all Tears Reward
   cryptic: a <r<trial of power>>
-
 
 # Hint Areas
 
 - name: Knight Academy
   standard: Knight Academy
   pretty: the <Knight Academy>
-  cryptic: 
+  cryptic:
 
 - name: Upper Skyloft
   standard: Upper Skyloft
   pretty: Upper Skyloft
-  cryptic: 
+  cryptic:
 
 - name: Central Skyloft
   standard: Central Skyloft
@@ -5549,9 +5552,9 @@
   pretty: the <Sealed Grounds>
   cryptic:
 
-- name: Hylia's Temple
-  standard: Hylia's Temple
-  pretty: Hylia's Temple
+- name: Temple of Hylia
+  standard: Temple of Hylia
+  pretty: the <Temple of Hylia>
   cryptic:
 
 - name: Faron Woods
@@ -5589,8 +5592,8 @@
   pretty: Volcano Summit
   cryptic:
 
-- name: Bokoblin Base 
-  standard: Bokoblin Base 
+- name: Bokoblin Base
+  standard: Bokoblin Base
   pretty: Bokoblin Base
   cryptic:
 
@@ -5607,7 +5610,7 @@
 - name: Temple of Time
   standard: Temple of Time
   pretty: the <Temple of Time>
-  cryptic: 
+  cryptic:
 
 - name: Lanayru Caves
   standard: Lanayru Caves
@@ -5617,7 +5620,7 @@
 - name: Ancient Harbour
   standard: Ancient Harbour
   pretty: the <Ancient Harbour>
-  cryptic: 
+  cryptic:
 
 - name: Lanayru Sand Sea
   standard: Lanayru Sand Sea
@@ -5631,7 +5634,7 @@
 
 - name: Skyview Temple
   standard: Skyview Temple
-  pretty: Skyview Temple
+  pretty: the <Skyview Temple>
   cryptic:
 
 - name: Earth Temple
@@ -5664,24 +5667,24 @@
   pretty: Sky Keep
   cryptic:
 
-- name: Faron Silent Realm
-  standard: Faron Silent Realm
-  pretty: the <Faron Silent Realm>
+- name: Farore's Silent Realm
+  standard: Farore's Silent Realm
+  pretty: the <Farore's Silent Realm>
   cryptic:
 
-- name: Eldin Silent Realm
-  standard: Eldin Silent Realm
-  pretty: the <Eldin Silent Realm>
+- name: Din's Silent Realm
+  standard: Din's Silent Realm
+  pretty: the <Din's Silent Realm>
   cryptic:
 
-- name: Lanayru Silent Realm
-  standard: Lanayru Silent Realm
-  pretty: the <Lanayru Silent Realm>
+- name: Nayru's Silent Realm
+  standard: Nayru's Silent Realm
+  pretty: the <Nayru's Silent Realm>
   cryptic:
 
-- name: Skyloft Silent Realm
-  standard: Skyloft Silent Realm
-  pretty: the <Skyloft Silent Realm>
+- name: The Goddess's Silent Realm
+  standard: The Goddess's Silent Realm
+  pretty: the <The Goddess's Silent Realm>
   cryptic:
 
 - name: Trial Direct Nothing
@@ -5717,6 +5720,7 @@
 - name: Impa SoT Text
   standard: Do not fear for <b<Zelda>>. I will watch over her here. Go now to |regions|. The <r<item you need to fulfill your destiny>> is there.
 
+# Fi text
 - name: No Fi Hints Text
   standard: "Master, I unfortunately have <r<no hints>> for you."
 
@@ -5745,7 +5749,8 @@
   standard: "Yes, Master. What information do you seek?\n[1]Hints[2]Notes[3]Required Dungeons[4-]Never mind."
 
 - name: Fi Objective Text Template
-  standard: "Your objective is to exit the <b<Temple of Hylia>> in the\npast and defeat any bosses in your way.
+  standard:
+    "Your objective is to exit the <b<Temple of Hylia>> in the\npast and defeat any bosses in your way.
     \n\n\nTo do this, you need to raise and open the <r<Gate of\nTime>> in the <b<Sealed Temple>>.
     \n\n\nTo raise the <r<Gate of Time>>, you must acquire the\n<y<Goddess's Harp>> and the <s<Ballad of the Goddess>>.
     \n\n\nTo open the <r<Gate of Time>>, you must obtain the\n<y<{required_sword}>> and <b<Skyward Strike>> the <r<Gate of\nTime>>.

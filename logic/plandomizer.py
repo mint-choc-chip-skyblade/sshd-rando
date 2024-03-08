@@ -14,7 +14,7 @@ def load_plandomizer_data(worlds: list[World], filepath: Path):
     if not filepath.is_file():
         raise PlandomizerError(f"Could not find plandomizer file: {filepath}")
 
-    with open(filepath, "r") as plando_file:
+    with open(filepath, "r", encoding="utf-8") as plando_file:
         plando = yaml.safe_load(plando_file)
 
         # Load plando data for all worlds

@@ -36,7 +36,7 @@ class Config:
             return self.hash
 
         # Create hash if we haven't made it yet
-        with open(WORDS_PATH) as words_file:
+        with open(WORDS_PATH, encoding="utf-8") as words_file:
             words = yaml.safe_load(words_file)
             hash_words = []
             for _ in range(3):
@@ -87,7 +87,9 @@ def seed_rng(
                     f"Cannot use plandomizer file as the current plandomizer filename is invalid: {config.plandomizer_file}"
                 )
         else:
-            with open(PLANDO_PATH / config.plandomizer_file) as plando_file:
+            with open(
+                PLANDO_PATH / config.plandomizer_file, encoding="utf-8"
+            ) as plando_file:
                 hash_str += plando_file.read()
 
     if config.generate_spoiler_log:
@@ -131,7 +133,7 @@ def create_default_setting(setting_name: str) -> Setting:
 
 
 def write_config_to_file(filename: Path, config: Config):
-    with open(filename, "w") as config_file:
+    with open(filename, "w", encoding="utf-8") as config_file:
         config_out = {}
 
         for field in CONFIG_FIELDS:
@@ -170,7 +172,7 @@ def write_config_to_file(filename: Path, config: Config):
 
         yaml.safe_dump(config_out, config_file, sort_keys=False)
 
-    with open(PREFERENCES_PATH, "w") as preferences_file:
+    with open(PREFERENCES_PATH, "w", encoding="utf-8") as preferences_file:
         preferences_out = {}
 
         for field in PREFERENCE_FIELDS:
@@ -202,7 +204,7 @@ def load_config_from_file(
     config = load_preferences()
     # If the config is missing any options, set defaults and resave it afterwards
     rewrite_config: bool = False
-    with open(filepath) as config_file:
+    with open(filepath, encoding="utf-8") as config_file:
         config_in = yaml.safe_load(config_file)
 
         if config_in is None:
@@ -364,12 +366,12 @@ def load_preferences() -> Config:
     filepath = Path(PREFERENCES_PATH)
 
     if not filepath.is_file():
-        with open(filepath, "w") as _:
+        with open(filepath, "w", encoding="utf-8") as _:
             pass
 
     # If missing any options, set defaults and resave it afterwards
     rewrite_preferences: bool = False
-    with open(filepath, "r") as preferences_file:
+    with open(filepath, "r", encoding="utf-8") as preferences_file:
         preferences_in = yaml.safe_load(preferences_file)
 
         if preferences_in is None:
@@ -391,7 +393,7 @@ def load_preferences() -> Config:
         preferences_in["output_dir"] = Path(preferences_in["output_dir"]).as_posix()
 
     if rewrite_preferences:
-        with open(filepath, "w") as preferences_file:
+        with open(filepath, "w", encoding="utf-8") as preferences_file:
             yaml.safe_dump(preferences_in, preferences_file, sort_keys=False)
 
     return config

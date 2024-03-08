@@ -1,120 +1,120 @@
 Storyflags:
-  - 11   # Tracks spawned in Sealed Grounds
-  - 13   # Groosenator completed
-  - 24   # Skip Fi text around Faron Pillar
-  - 27   # Loftwing Unlocked
-  - 28   # Pratice Sword
-  - 32   # Sailcoth
-  - 36   # Hero's tunic
-  - 58   # B-Wheel Unlocked
-  - 81   # Tadtone Dowsing
-  - 82   # Tadtones music scroll
-  - 96   # Skip 1st time getting a map Fi text
-  - 115  # Full Lake Floria map
-  - 122  # Collected Deku Hornet for 1st time
-  - 129  # Updated Lanayru Desert map
-  - 130  # Start with Beacon
+  - 11 # Tracks spawned in Sealed Grounds
+  - 13 # Groosenator completed
+  - 24 # Skip Fi text around Faron Pillar
+  - 27 # Loftwing Unlocked
+  - 28 # Pratice Sword
+  - 32 # Sailcoth
+  - 36 # Hero's tunic
+  - 58 # B-Wheel Unlocked
+  - 81 # Tadtone Dowsing
+  - 82 # Tadtones music scroll
+  - 96 # Skip 1st time getting a map Fi text
+  - 115 # Full Lake Floria map
+  - 122 # Collected Deku Hornet for 1st time
+  - 129 # Updated Lanayru Desert map
+  - 130 # Start with Beacon
   - Goddess's_Harp and Ballad_of_the_Goddess:
-    - 132 # Can Target Gate of Time (Imp 2 Defeated)
-    - 340 # Gate of Time raised
-  - 138  # Sealed Temple layer 1
-  - 178  # Cutscene showing off Bokoblin Base with Plats
-  - 187  # Watered Big Frog outside Fire Sanctuary
-  - 198  # Can jump off Loftwing
-  - 199  # Skip Eagus Cutscene after Sparring Hall chest
-  - 201  # Talked to Stritch at Bug Island (Beedle always lost HCB)
-  - 226  # Hero Mode
-  - 304  # Batreaux Crystal Quest started
-  - 329  # Slept after starting Batreaux Crystal Quest
-# - 358  # Interface choice unlocked
-  - 386  # Skip first part of Bertie's Crystal Quest text
-  - 493  # Unlocked Goddess Walls
-  - 494  # Open gates to Faron Woods
-  - 496  # Skip Skipper's Cutscene after Sea Chart
-  - 519  # Updated Sand Sea map
-  - 545  # Watched toilet hand ask for help Cutscene
-  - 546  # Tried to open door to toilet hand
-  - 576  # Watched Pipit scold Mallara Cutscene
-  - 577  # Watched Pipit scold Mallara Cutscene
-  - 578  # Watched Pipit scold Mallara Cutscene
-  - 661  # Windmill Repaired (required for scrapper quests - TODO)
-  - 724  # Skip first time using Light Pillar Cutscene (always sends you to Sealed Grounds)
-  - 745  # Unlocked 5 Beacons
-  - 753  # Collected Hornet Larvae for 1st time
-  - 754  # Collected Bird Feather for 1st time
-  - 755  # Collected Tumbleweed for 1st time
-  - 756  # Collected Lizard Tail for 1st time
-  - 757  # Collected Eldin Ore for 1st time
-  - 758  # Collected Ancient Flower for 1st time
-  - 759  # Collected Amber Relic for 1st time
-  - 760  # Collected Dusk Relic for 1st time
-  - 761  # Collected Jelly Blob for 1st time
-  - 762  # Collected Monster Claw for 1st time
-  - 763  # Collected Monster Horn for 1st time
-  - 764  # Collected Ornamental Skull for 1st time
-  - 765  # Collected Evil Crystal for 1st time
-  - 766  # Collected Blue Bird Feather for 1st time
-  - 767  # Collected Golden Skull for 1st time
-  - 768  # Collected Goddess Plume for 1st time
-  - 789  # Unlocked Dowsing (still needs Goddess Sword)
+      - 132 # Can Target Gate of Time (Imp 2 Defeated)
+      - 340 # Gate of Time raised
+  - 138 # Sealed Temple layer 1
+  - 178 # Cutscene showing off Bokoblin Base with Plats
+  - 187 # Watered Big Frog outside Fire Sanctuary
+  - 198 # Can jump off Loftwing
+  - 199 # Skip Eagus Cutscene after Sparring Hall chest
+  - 201 # Talked to Stritch at Bug Island (Beedle always lost HCB)
+  - 226 # Hero Mode
+  - 304 # Batreaux Crystal Quest started
+  - 329 # Slept after starting Batreaux Crystal Quest
+  # - 358  # Interface choice unlocked
+  - 386 # Skip first part of Bertie's Crystal Quest text
+  - 493 # Unlocked Goddess Walls
+  - 494 # Open gates to Faron Woods
+  - 496 # Skip Skipper's Cutscene after Sea Chart
+  - 519 # Updated Sand Sea map
+  - 545 # Watched toilet hand ask for help Cutscene
+  - 546 # Tried to open door to toilet hand
+  - 576 # Watched Pipit scold Mallara Cutscene
+  - 577 # Watched Pipit scold Mallara Cutscene
+  - 578 # Watched Pipit scold Mallara Cutscene
+  - 661 # Windmill Repaired (required for scrapper quests - TODO)
+  - 724 # Skip first time using Light Pillar Cutscene (always sends you to Sealed Grounds)
+  - 745 # Unlocked 5 Beacons
+  - 753 # Collected Hornet Larvae for 1st time
+  - 754 # Collected Bird Feather for 1st time
+  - 755 # Collected Tumbleweed for 1st time
+  - 756 # Collected Lizard Tail for 1st time
+  - 757 # Collected Eldin Ore for 1st time
+  - 758 # Collected Ancient Flower for 1st time
+  - 759 # Collected Amber Relic for 1st time
+  - 760 # Collected Dusk Relic for 1st time
+  - 761 # Collected Jelly Blob for 1st time
+  - 762 # Collected Monster Claw for 1st time
+  - 763 # Collected Monster Horn for 1st time
+  - 764 # Collected Ornamental Skull for 1st time
+  - 765 # Collected Evil Crystal for 1st time
+  - 766 # Collected Blue Bird Feather for 1st time
+  - 767 # Collected Golden Skull for 1st time
+  - 768 # Collected Goddess Plume for 1st time
+  - 789 # Unlocked Dowsing (still needs Goddess Sword)
   - Goddess_White_Sword: # If starting with at least white sword
-    - 583 # Unlocked 4 New Dowsing Slots
-    - 102 # Treasure Dowsing
-    - 104 # Crystal Dowsing
-    - 105 # Rupee Dowsing
-    - 110 # Goddess Cube Dowsing
-  - 792  # Watched Sealed Temple Big Door unlocking Cutscene
+      - 583 # Unlocked 4 New Dowsing Slots
+      - 102 # Treasure Dowsing
+      - 104 # Crystal Dowsing
+      - 105 # Rupee Dowsing
+      - 110 # Goddess Cube Dowsing
+  - 792 # Watched Sealed Temple Big Door unlocking Cutscene
   - random_starting_statues == off:
-    - 804  # Eldin entrance statue unlocked
+      - 804 # Eldin entrance statue unlocked
   - 1201 # Unlocked Amiibo
   # Cutscene flags
   ## Surface
   - 137 # Sealed Grounds Intro Cutscene (enable statue select from start)
-  - 88  # Lake Floria Intro Cutscene
+  - 88 # Lake Floria Intro Cutscene
   - 182 # Eldin Volcano Intro Cutscene
   - 180 # Thrill Digger Intro Cutscene
   - 562 # Volcano Summit Intro Cutscene
   - 190 # Lanayru Mine Intro Cutscene
-  - 92  # Lanayru Desert Intro Cutscene (Dodoh always loses his wheel)
+  - 92 # Lanayru Desert Intro Cutscene (Dodoh always loses his wheel)
   - 157 # Ancient Harbour Intro Cutscene
-  - 80  # Water Dragon in Flooded Faron Cutscene
+  - 80 # Water Dragon in Flooded Faron Cutscene
   ## Silent Realms
-  - 70  # First time Light Fruit Cutscene
-  - 94  # Faron Silent Realm Intro Cutscene
-  - 205 # Lanayru Silent Realm Intro Cutscene
-  - 330 # Eldin Silent Realm Intro Cutscene
+  - 70 # First time Light Fruit Cutscene
+  - 94 # Farore's Silent Realm Intro Cutscene
+  - 205 # Nayru's Silent Realm Intro Cutscene
+  - 330 # Din's Silent Realm Intro Cutscene
   - 331 # Hylia's Silent Realm Intro Cutscene
   ## Dungeons
   - 172 # Entering Fire Sanctuary Intro Cutscene
   - 678 # Entering Sky Keep Cutscene
   - 159 # Sky Keep Intro Cutscene
   - open_thunderhead == open:
-    - 194 # Thunderhead open
+      - 194 # Thunderhead open
   - open_lmf == open:
-    - 8   # LMF rising Cutscene watched
+      - 8 # LMF rising Cutscene watched
   - skip_horde == on:
-    - 134 # Horde defeated
-    - 347 # Horde Cutscene watched
+      - 134 # Horde defeated
+      - 347 # Horde Cutscene watched
   - skip_g3 == on and skip_horde == on:
-    - 486 # Ghirahim 3 defeated
+      - 486 # Ghirahim 3 defeated
   ## Peatrice
-  - peatrice_conversations == 1 or peatrice_conversations == 3 or peatrice_conversations == 5:
-    - 631 # Peatrice intermediate step flag
+  - ? peatrice_conversations == 1 or peatrice_conversations == 3 or peatrice_conversations == 5
+    : - 631 # Peatrice intermediate step flag
   - peatrice_conversations <= 4:
-    - 628
-    - 689
+      - 628
+      - 689
   - peatrice_conversations <= 2:
-    - 629
-    - 690
+      - 629
+      - 690
   - peatrice_conversations == 0:
-    - 630
-    - 691
+      - 630
+      - 691
 Sceneflags:
   Skyloft: # Scene Index 0
-    - 0  # Lower Academy gates opened
-    - 1  # UA Doors open
-    - 7  # Revealed Gossip Stone above waterfall cave
-    - 8  # Seen Cutscene after getting Hero's Tunic
+    - 0 # Lower Academy gates opened
+    - 1 # UA Doors open
+    - 7 # Revealed Gossip Stone above waterfall cave
+    - 8 # Seen Cutscene after getting Hero's Tunic
     - 21 # Upper Academy gates opened
     - 26 # Watched Eye Cutscene in Bazaar
     - 66 # Batreaux Doors outside open
@@ -134,8 +134,8 @@ Sceneflags:
     - 52 # Fi text after opening floria gate
     - 66 # Reveal Gossip Stone in Deep Woods
     - open_lake_floria == open:
-      - 49 # Cutscene of Lake Floria Gates opening
-      - 50 # Open Lake Floria Gates
+        - 49 # Cutscene of Lake Floria Gates opening
+        - 50 # Open Lake Floria Gates
 
   Lake Floria: # Scene Index 2
     - 67 # Reveal Lake Floria Gossip Stone
@@ -143,7 +143,7 @@ Sceneflags:
   # Flooded Faron Woods: # Scene Index 3
 
   Eldin Volcano: # Scene Index 4
-    - 2  # Skip first Digging Mitts mogma text
+    - 2 # Skip first Digging Mitts mogma text
     - 14 # Reveal Gossip Stone near Earth Temple Entrance
     - 15 # Reveal Gossip Stone in Thrill Digger Cave
     - 52 # Reveal Gossip Stone in lower Eldin Cave
@@ -175,139 +175,139 @@ Sceneflags:
   # Unused: # Scene Index 6
 
   Lanayru Desert: # Scene Index 7
-    - 3  # Obtain map of the past from robot in ToT area
-    - 6  # Watched first time landing Cutscene
-    - 7  # Pushed first minecart in Mine
+    - 3 # Obtain map of the past from robot in ToT area
+    - 6 # Watched first time landing Cutscene
+    - 7 # Pushed first minecart in Mine
     - 50 # Watched Enter Lanayru Mining Facility (LMF) Cutscene
     - 55 # Watched Lanayru Desert Intro Cutscene
     - random_starting_statues == off:
-      - 68 # Checked Desert statue
+        - 68 # Checked Desert statue
     - 79 # Revealed Gossip Stone near Temple of Time
     - open_lmf == open:
-      - 30 # Watched LMF Rises Cutscene
-      - 31 # Watched LMF rising Cutscene
+        - 30 # Watched LMF Rises Cutscene
+        - 31 # Watched LMF rising Cutscene
     - open_lmf == main_node:
-      - 100 # Lightning node active
-      - 101 # Fire node active
-      - 102 # Water node active
+        - 100 # Lightning node active
+        - 101 # Fire node active
+        - 102 # Water node active
 
   Lanayru Sand Sea: # Scene Index 8
-    - 95   # Reveal Shipyard Gossip Stone
+    - 95 # Reveal Shipyard Gossip Stone
 
   Lanayru Gorge: # Scene Index 9 (Gorge & Caves)
-    - 10   # Minecart at end of Track
-    - 16   # Watched Lanayru Gorge Intro Cutscene
-    - 40   # Revealed Gossip Stone in Center of Caves
-    - 41   # Revealed Gossip Stone near Lanayru Gorge Entrance
+    - 10 # Minecart at end of Track
+    - 16 # Watched Lanayru Gorge Intro Cutscene
+    - 40 # Revealed Gossip Stone in Center of Caves
+    - 41 # Revealed Gossip Stone near Lanayru Gorge Entrance
     - lanayru_caves_keys == removed:
-      - 14 # Unlocked door to Lanayru Gorge Minecart area
-      - 28 # Unlocked door to Lanayru Sand Sea
+        - 14 # Unlocked door to Lanayru Gorge Minecart area
+        - 28 # Unlocked door to Lanayru Sand Sea
 
   Sealed Grounds: # Scene Index 10
-    - 4  # Pushed log from BtT to Faron Woods
-    - 7  # Activated vents
+    - 4 # Pushed log from BtT to Faron Woods
+    - 7 # Activated vents
     - 13 # Unlocked Sealed Temple big door
     - 21 # Ballad of the Goddess played with Impa
     - 28 # Groose metting Impa first time cutscene
     - 29 # Harp Tutorial completed
     - random_starting_statues == off:
-      - 35 # Sealed Grounds Statue
+        - 35 # Sealed Grounds Statue
     - 39 # Log to Behind the Temple pushed down
     - 55 # Watched First time landing Cutscene
     - 72 # Revealed Behind the Temple Gossip Stone
     - Complete_Triforce:
-      - 50 # Unlocked Horde Door from Hylia's Temple
+        - 50 # Unlocked Horde Door from Temple of Hylia
     - skip_horde == on:
-      - 51 # Unlocked Horde Door from Hylia's Realm
+        - 51 # Unlocked Horde Door from Hylia's Realm
 
   Skyview Temple: # Scene Index 11
     - small_keys == removed:
-      - 6   # Unlocked door into main room
-      - 7   # Unlocked door into Staldra room
+        - 6 # Unlocked door into main room
+        - 7 # Unlocked door into Staldra room
     - boss_keys == removed:
-      - 100 # Opened Boss Door
+        - 100 # Opened Boss Door
 
   Ancient Cistern: # Scene Index 12
-    - 62   # Watched Ancient Cistern Intro Cutscene
+    - 62 # Watched Ancient Cistern Intro Cutscene
     - small_keys == removed:
-      - 40  # Unlocked door next to whippable Bokoblin
-      - 113 # Unlocked door inside stone statue
+        - 40 # Unlocked door next to whippable Bokoblin
+        - 113 # Unlocked door inside stone statue
     - boss_keys == removed:
-      - 108 # Opened Boss Door
+        - 108 # Opened Boss Door
 
   # Unused: # Scene Index 13
 
   Earth Temple: # Scene Index 14
-    - 15   # Set boulder entering dragon's mouth Cutscene watched and removes lavafall in front of Boss Door
+    - 15 # Set boulder entering dragon's mouth Cutscene watched and removes lavafall in front of Boss Door
     - boss_keys == removed:
-      - 14 # Opened Boss Door
+        - 14 # Opened Boss Door
 
   Fire Sanctuary: # Scene Index 15
-    - 6    # Watched first water pod Cutscene
-    - 83   # Watched Cutscene showing the outside of the Fire Sanctuary
+    - 6 # Watched first water pod Cutscene
+    - 83 # Watched Cutscene showing the outside of the Fire Sanctuary
     - fs_lava_flow == on:
-      - 62 # Watched Cutscene after blowing up lava chase rock
-      - 64 # Blow up rock underground starting lava chase (back half lava flow)
+        - 62 # Watched Cutscene after blowing up lava chase rock
+        - 64 # Blow up rock underground starting lava chase (back half lava flow)
     - small_keys == removed:
-      - 2  # Unlocked 1st locked door
-      - 57 # Unlocked 3rd locked door
-      - 85 # Unlocked 2nd locked door
+        - 2 # Unlocked 1st locked door
+        - 57 # Unlocked 3rd locked door
+        - 85 # Unlocked 2nd locked door
     - boss_keys == removed:
-      - 61 # Opened Boss Door
+        - 61 # Opened Boss Door
 
   # Unused: # Scene Index 16
 
   Lanayru Mining Facility: # Scene Index 17
     - small_keys == removed:
-      - 0   # Unlocked door to room before hop across boxes room
+        - 0 # Unlocked door to room before hop across boxes room
     - boss_keys == removed:
-      - 127 # Opened Boss Door
+        - 127 # Opened Boss Door
 
   Sandship: # Scene Index 18
     - small_keys == removed:
-      - 119 # Unlocked door leading to Scervo
-      - 121 # Unlocked door leading to the Captain's Cabin
+        - 119 # Unlocked door leading to Scervo
+        - 121 # Unlocked door leading to the Captain's Cabin
     - boss_keys == removed:
-      - 20  # Opened Boss Door
+        - 20 # Opened Boss Door
 
   # Unused: # Scene Index 19
 
   Sky Keep: # Scene Index 20
     - small_keys == removed:
-      - 63 # Unlocked key locked door
+        - 63 # Unlocked key locked door
 
   The Sky: # Scene Index 21
-   - 43 # Revealed Gossip Stone in Thunderhead
-   - 44 # Revealed Gossip Stone in Volcanic Island
-   - 45 # Revealed Gossip Stone at Lumpy Pumpkin
-   - 46 # Revealed Gossip Stone on Bamboo Island
+    - 43 # Revealed Gossip Stone in Thunderhead
+    - 44 # Revealed Gossip Stone in Volcanic Island
+    - 45 # Revealed Gossip Stone at Lumpy Pumpkin
+    - 46 # Revealed Gossip Stone on Bamboo Island
 
-  # Faron Silent Realm: # Scene Index 22
+  # Farore's Silent Realm: # Scene Index 22
 
-  # Eldin Silent Realm: # Scene Index 23
+  # Din's Silent Realm: # Scene Index 23
 
-  # Lanayru Silent Realm: # Scene Index 24
+  # Nayru's Silent Realm: # Scene Index 24
 
-  # Skyloft Silent Realm: # Scene Index 25
+  # The Goddess's Silent Realm: # Scene Index 25
 Itemflags:
   # These are mainly for 1st time textbox skips
-  - 2   # Green Rupee
-  - 3   # Blue Rupee
-  - 4   # Red Rupee
-  - 6   # Heart
-  - 7   # Single Arrow
-  - 8   # Bundle of Arrows
-  - 15  # Sailcloth (actually the item in this case)
-  - 40  # 5 Bombs
-  - 41  # 10 Bombs
-  - 42  # Stamina Fruit
-  - 43  # Tear of Farore
-  - 44  # Tear of Din
-  - 45  # Tear of Nayru
-  - 46  # Sacred Tear
-  - 47  # Light Fruit
-  - 57  # 5 Deku Seeds
-  - 60  # 10 Deku Seeds
+  - 2 # Green Rupee
+  - 3 # Blue Rupee
+  - 4 # Red Rupee
+  - 6 # Heart
+  - 7 # Single Arrow
+  - 8 # Bundle of Arrows
+  - 15 # Sailcloth (actually the item in this case)
+  - 40 # 5 Bombs
+  - 41 # 10 Bombs
+  - 42 # Stamina Fruit
+  - 43 # Tear of Farore
+  - 44 # Tear of Din
+  - 45 # Tear of Nayru
+  - 46 # Sacred Tear
+  - 47 # Light Fruit
+  - 57 # 5 Deku Seeds
+  - 60 # 10 Deku Seeds
   - 141 # Faron Grasshopper
   - 142 # Woodland Rhino Beetle
   - 143 # Deku Hornet
@@ -361,31 +361,32 @@ Dungeonflags:
 
   Skyview Temple: # Scene Index 11
     - boss_keys == removed:
-      - 16 # Boss Key placed
+        - 16 # Boss Key placed
 
   Ancient Cistern: # Scene Index 12
     - boss_keys == removed:
-      - 16 # Boss Key placed
+        - 16 # Boss Key placed
 
   # Unused: # Scene Index 13
 
   Earth Temple: # Scene Index 14
     - boss_keys == removed:
-      - 16 # Boss Key placed
+        - 16 # Boss Key placed
 
   Fire Sanctuary: # Scene Index 15
     - boss_keys == removed:
-      - 16 # Boss Key placed
+        - 16 # Boss Key placed
 
   # Unused: # Scene Index 16
 
   Lanayru Mining Facility: # Scene Index 17
     - boss_keys == removed:
-      - 16 # Boss Key placed
+        - 16 # Boss Key placed
 
   Sandship: # Scene Index 18
     - boss_keys == removed:
-      - 16 # Boss Key placed
+        - 16 # Boss Key placed
+
 
   # Unused: # Scene Index 19
 
@@ -393,10 +394,10 @@ Dungeonflags:
 
   # The Sky: # Scene Index 21
 
-  # Faron Silent Realm: # Scene Index 22
+  # Farore's Silent Realm: # Scene Index 22
 
-  # Eldin Silent Realm: # Scene Index 23
+  # Din's Silent Realm: # Scene Index 23
 
-  # Lanayru Silent Realm: # Scene Index 24
+  # Nayru's Silent Realm: # Scene Index 24
 
-  # Skyloft Silent Realm: # Scene Index 25
+  # The Goddess's Silent Realm: # Scene Index 25

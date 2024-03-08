@@ -8,7 +8,7 @@ from filepathconstants import DEFAULT_OUTPUT_PATH, WORDS_PATH
 
 
 def get_new_seed() -> str:
-    with open(WORDS_PATH, "r") as words_file:
+    with open(WORDS_PATH, "r", encoding="utf-8") as words_file:
         words = yaml.safe_load(words_file)
         new_seed = ""
 
@@ -99,10 +99,10 @@ DEFAULT_SETTINGS = {
         "The Thunderhead - Song from Levias",
         "Bug Heaven - Minigame -- 10 Bugs in 3 Minutes",
         "Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05",
-        "Skyloft Silent Realm - Collect all Tears Reward",
-        "Faron Silent Realm - Collect all Tears Reward",
-        "Lanayru Silent Realm - Collect all Tears Reward",
-        "Eldin Silent Realm - Collect all Tears Reward",
+        "The Goddess's Silent Realm - Collect all Tears Reward",
+        "Farore's Silent Realm - Collect all Tears Reward",
+        "Nayru's Silent Realm - Collect all Tears Reward",
+        "Din's Silent Realm - Collect all Tears Reward",
     ],
     "excluded_hint_locations": [
         "Shipyard - Gossip Stone",

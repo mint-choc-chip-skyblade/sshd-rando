@@ -136,7 +136,7 @@ def load_text_data() -> None:
         filename = f"{language}.yaml"
         filepath = TEXT_DATA_PATH / filename
 
-        with open(filepath, "r") as text_data_file:
+        with open(filepath, "r", encoding="utf-8") as text_data_file:
             text_data = yaml.safe_load(text_data_file)
 
             if text_data is None or len(text_data) == 0:
@@ -223,32 +223,38 @@ def break_lines(text: str) -> str:
     # Widths of all characters in pixels
     char_widths = {
         "a": 17,
+        "á": 17,  # \u00e1
         "b": 17,
         "c": 15,
         "d": 18,
         "e": 15,
+        "é": 15,  # \u00e9
         "f": 15,
         "g": 17,
         "h": 18,
         "i": 9,
+        "í": 9,  # \u00ed
         "j": 10,
         "k": 20,
         "l": 10,
         "m": 27,
         "n": 19,
         "o": 17,
+        "ó": 17,  # \u00f3
         "p": 18,
         "q": 18,
         "r": 15,
         "s": 13,
         "t": 12,
         "u": 18,
+        "ú": 18,  # \u00fa
         "v": 16,
         "w": 24,
         "x": 17,
         "y": 16,
         "z": 15,
         "A": 23,
+        "Á": 23,  # \u00c1
         "B": 22,
         "C": 23,
         "D": 24,

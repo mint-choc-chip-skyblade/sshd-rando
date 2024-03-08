@@ -20,7 +20,7 @@
 ###############################
 
 - type: Dungeon
-  forward: 
+  forward:
     connection: Deep Woods -> Skyview Entry
     exit_infos:
       - stage: F101
@@ -31,7 +31,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return: 
+  return:
     connection: Skyview Entry -> Deep Woods
     exit_infos:
       - stage: D100
@@ -62,7 +62,7 @@
         room: 0
         index: 1
 - type: Dungeon
-  forward: 
+  forward:
     connection: Near Temple Entrance -> Earth Temple First Room
     exit_infos:
       - stage: F200
@@ -73,7 +73,7 @@
         layer: 0
         room: 1
         entrance: 0
-  return:  
+  return:
     connection: Earth Temple First Room -> Near Temple Entrance
     exit_infos:
       - stage: D200
@@ -96,9 +96,9 @@
     secondary_exit_infos: # Exit after striking goddess crest
       - stage: B210
         room: 0
-        index: 0 
+        index: 0
 - type: Dungeon
-  forward: 
+  forward:
     connection: Top of LMF -> LMF First Room
     exit_infos:
       - stage: F300
@@ -109,7 +109,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: LMF First Room -> Top of LMF
     exit_infos:
       - stage: D300
@@ -151,7 +151,7 @@
         room: 0
         entrance: 5
 - type: Dungeon
-  forward: 
+  forward:
     connection: Floria Waterfall Temple Ledge -> Ancient Cistern Lobby
     exit_infos:
       - stage: F102_1
@@ -162,7 +162,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Ancient Cistern Lobby -> Floria Waterfall Temple Ledge
     exit_infos:
       - stage: D101
@@ -190,7 +190,7 @@
         room: 0
         index: 2
 - type: Dungeon
-  forward: 
+  forward:
     connection: Lanayru Sand Sea -> Sandship Main Deck
     exit_infos:
       - stage: F301_1
@@ -207,7 +207,7 @@
         layer: 1
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Sandship Main Deck -> Lanayru Sand Sea
     exit_infos:
       - stage: D301
@@ -248,14 +248,14 @@
         index: 3
       - stage: D301 # Custom exit for striking crest on non-boss stage
         room: 0
-        index: 7 
+        index: 7
     secondary_spawn_info: # Spawn at Harbour where Skipper thanks you
       - stage: F301
         layer: 0
         room: 0
         entrance: 3
 - type: Dungeon
-  forward: 
+  forward:
     connection: Outside Fire Sanctuary -> Fire Sanctuary First Room
     exit_infos:
       - stage: F201_3
@@ -266,7 +266,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Fire Sanctuary First Room -> Outside Fire Sanctuary
     exit_infos:
       - stage: D201
@@ -300,7 +300,7 @@
         room: 0
         index: 1
 - type: Dungeon
-  forward: 
+  forward:
     connection: Sky Keep Entrance Platform -> Sky Keep Entryway
     exit_infos:
       - stage: F000
@@ -311,7 +311,7 @@
         layer: 0
         room: 0
         entrance: 4
-  return:  
+  return:
     connection: Sky Keep Entryway -> Sky Keep Entrance Platform
     exit_infos: # most of them not needed
       - stage: D003_0
@@ -382,8 +382,8 @@
 ###############################
 
 - type: Trial Gate
-  forward: 
-    connection: Central Skyloft -> Skyloft Silent Realm
+  forward:
+    connection: Central Skyloft -> The Goddess's Silent Realm
     exit_infos:
       - stage: F000
         room: 0
@@ -393,9 +393,9 @@
         layer: 2
         room: 0
         entrance: 0
-  return:  
-    connection: Skyloft Silent Realm -> Central Skyloft
-    exit_infos: 
+  return:
+    connection: The Goddess's Silent Realm -> Central Skyloft
+    exit_infos:
       - stage: S000
         room: 0
         index: 1
@@ -405,8 +405,8 @@
         room: 0
         entrance: 83
 - type: Trial Gate
-  forward: 
-    connection: Faron Woods -> Faron Silent Realm
+  forward:
+    connection: Faron Woods -> Farore's Silent Realm
     exit_infos:
       - stage: F100
         room: 0
@@ -416,9 +416,9 @@
         layer: 2
         room: 0
         entrance: 0
-  return:  
-    connection: Faron Silent Realm -> Faron Woods
-    exit_infos: 
+  return:
+    connection: Farore's Silent Realm -> Faron Woods
+    exit_infos:
       - stage: S100
         room: 0
         index: 1
@@ -428,8 +428,8 @@
         room: 0
         entrance: 48
 - type: Trial Gate
-  forward: 
-    connection: Volcano Ascent -> Eldin Silent Realm
+  forward:
+    connection: Volcano Ascent -> Din's Silent Realm
     exit_infos:
       - stage: F200
         room: 2
@@ -439,9 +439,9 @@
         layer: 2
         room: 2
         entrance: 0
-  return:  
-    connection: Eldin Silent Realm -> Volcano Ascent
-    exit_infos: 
+  return:
+    connection: Din's Silent Realm -> Volcano Ascent
+    exit_infos:
       - stage: S200
         room: 2
         index: 1
@@ -451,8 +451,8 @@
         room: 2
         entrance: 5
 - type: Trial Gate
-  forward: 
-    connection: Lanayru Desert North -> Lanayru Silent Realm
+  forward:
+    connection: Lanayru Desert North -> Nayru's Silent Realm
     exit_infos:
       - stage: F300
         room: 0
@@ -462,9 +462,9 @@
         layer: 2
         room: 0
         entrance: 0
-  return:  
-    connection: Lanayru Silent Realm -> Lanayru Desert North
-    exit_infos: 
+  return:
+    connection: Nayru's Silent Realm -> Lanayru Desert North
+    exit_infos:
       - stage: S300
         room: 0
         index: 1
@@ -480,9 +480,9 @@
 
 - type: Door
   door_couple_tag: Knight Academy Lower
-  forward: 
+  forward:
     connection: Upper Skyloft -> Knight Academy Lower East Door
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 3
@@ -506,7 +506,7 @@
   door_couple_tag: Knight Academy Lower
   forward:
     connection: Upper Skyloft -> Knight Academy Lower West Door
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 4
@@ -515,7 +515,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Knight Academy -> Knight Academy Lower West Door
     exit_infos:
       - stage: F001r
@@ -530,7 +530,7 @@
   door_couple_tag: Knight Academy Upper
   forward:
     connection: Upper Skyloft -> Knight Academy Upper North Door
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 24
@@ -539,7 +539,7 @@
         layer: 0
         room: 0
         entrance: 4
-  return:  
+  return:
     connection: Knight Academy -> Knight Academy Upper North Door
     exit_infos:
       - stage: F001r
@@ -554,7 +554,7 @@
   door_couple_tag: Knight Academy Upper
   forward:
     connection: Upper Skyloft -> Knight Academy Upper South Door
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 23
@@ -563,7 +563,7 @@
         layer: 0
         room: 0
         entrance: 3
-  return:  
+  return:
     connection: Knight Academy -> Knight Academy Upper South Door
     exit_infos:
       - stage: F001r
@@ -578,7 +578,7 @@
   door_couple_tag: Sparring Hall
   forward:
     connection: Upper Skyloft -> Sparring Hall North Door
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 27
@@ -587,7 +587,7 @@
         layer: 0
         room: 0
         entrance: 2
-  return:  
+  return:
     connection: Sparring Hall -> Sparring Hall North Door
     exit_infos:
       - stage: F009r
@@ -602,7 +602,7 @@
   door_couple_tag: Sparring Hall
   forward:
     connection: Upper Skyloft -> Sparring Hall South Door
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 20
@@ -611,7 +611,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Sparring Hall -> Sparring Hall South Door
     exit_infos:
       - stage: F009r
@@ -625,7 +625,7 @@
 - type: Door
   forward:
     connection: Central Skyloft -> Orielle and Parrow's House
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 31
@@ -634,7 +634,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Orielle and Parrow's House -> Central Skyloft
     exit_infos:
       - stage: F005r
@@ -648,7 +648,7 @@
 - type: Door
   forward:
     connection: Central Skyloft -> Peatrice's House
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 38
@@ -657,7 +657,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Peatrice's House -> Central Skyloft
     exit_infos:
       - stage: F018r
@@ -671,7 +671,7 @@
 - type: Door
   forward:
     connection: Central Skyloft -> Wryna's House
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 10
@@ -680,7 +680,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Wryna's House -> Central Skyloft
     exit_infos:
       - stage: F006r
@@ -694,7 +694,7 @@
 - type: Door
   forward:
     connection: Central Skyloft -> Piper's House
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 32
@@ -703,7 +703,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Piper's House -> Central Skyloft
     exit_infos:
       - stage: F007r
@@ -717,7 +717,7 @@
 - type: Door
   forward:
     connection: Skyloft Village -> Bertie's House
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 34
@@ -726,7 +726,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Bertie's House -> Skyloft Village
     exit_infos:
       - stage: F014r
@@ -740,7 +740,7 @@
 - type: Door
   forward:
     connection: Skyloft Village -> Sparrot's House
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 33
@@ -749,7 +749,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Sparrot's House -> Skyloft Village
     exit_infos:
       - stage: F013r
@@ -763,7 +763,7 @@
 - type: Door
   forward:
     connection: Skyloft Village -> Mallara's House
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 36
@@ -772,7 +772,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Mallara's House -> Skyloft Village
     exit_infos:
       - stage: F016r
@@ -786,7 +786,7 @@
 - type: Door
   forward:
     connection: Skyloft Village -> Gondo's House
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 35
@@ -795,7 +795,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Gondo's House -> Skyloft Village
     exit_infos:
       - stage: F015r
@@ -809,7 +809,7 @@
 - type: Door
   forward:
     connection: Skyloft Village -> Rupin's House
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 37
@@ -818,7 +818,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Rupin's House -> Skyloft Village
     exit_infos:
       - stage: F017r
@@ -832,7 +832,7 @@
 - type: Door
   forward:
     connection: Skyloft Village -> Batreaux's House
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 30
@@ -841,7 +841,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Batreaux's House -> Skyloft Village
     exit_infos:
       - stage: F012r
@@ -856,7 +856,7 @@
   door_couple_tag: Lumpy Pumpkin
   forward:
     connection: Lumpy Pumpkin Exterior -> Lumpy Pumpkin Main East Door
-    exit_infos: 
+    exit_infos:
       - stage: F020
         room: 0
         index: 18
@@ -865,7 +865,7 @@
         layer: 0
         room: 0
         entrance: 2
-  return:  
+  return:
     connection: Lumpy Pumpkin Interior -> Lumpy Pumpkin Main East Door
     exit_infos:
       - stage: F011r
@@ -880,7 +880,7 @@
   door_couple_tag: Lumpy Pumpkin
   forward:
     connection: Lumpy Pumpkin Exterior -> Lumpy Pumpkin Main West Door
-    exit_infos: 
+    exit_infos:
       - stage: F020
         room: 0
         index: 19
@@ -889,7 +889,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Lumpy Pumpkin Interior -> Lumpy Pumpkin Main West Door
     exit_infos:
       - stage: F011r
@@ -903,7 +903,7 @@
 - type: Door
   forward:
     connection: Lumpy Pumpkin Exterior -> Lumpy Pumpkin Back Door
-    exit_infos: 
+    exit_infos:
       - stage: F020
         room: 0
         index: 20
@@ -912,7 +912,7 @@
         layer: 0
         room: 0
         entrance: 3
-  return:  
+  return:
     connection: Lumpy Pumpkin Interior -> Lumpy Pumpkin Back Door
     exit_infos:
       - stage: F011r
@@ -926,7 +926,7 @@
 - type: Door
   forward:
     connection: Sealed Grounds Spiral -> Sealed Temple
-    exit_infos: 
+    exit_infos:
       - stage: F401
         room: 1
         index: 0
@@ -935,7 +935,7 @@
         layer: 0
         room: 2
         entrance: 0
-  return:  
+  return:
     connection: Sealed Temple -> Sealed Grounds Spiral
     exit_infos:
       - stage: F402
@@ -949,7 +949,7 @@
 - type: Door
   forward:
     connection: Behind the Temple -> Sealed Temple
-    exit_infos: 
+    exit_infos:
       - stage: F400
         room: 0
         index: 1
@@ -958,7 +958,7 @@
         layer: 0
         room: 2
         entrance: 1
-  return:  
+  return:
     connection: Sealed Temple -> Behind the Temple
     exit_infos:
       - stage: F402
@@ -972,7 +972,7 @@
 - type: Door
   forward:
     connection: Skipper's Retreat Top -> Skipper's Retreat Shack
-    exit_infos: 
+    exit_infos:
       - stage: F301_3
         room: 0
         index: 3
@@ -981,7 +981,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Skipper's Retreat Shack -> Skipper's Retreat Top
     exit_infos:
       - stage: F301_5
@@ -1000,7 +1000,7 @@
 - type: Interior
   forward:
     connection: Upper Skyloft -> Knight Academy Chimney
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 57
@@ -1009,7 +1009,7 @@
         layer: 0
         room: 6
         entrance: 1
-  return:  
+  return:
     connection: Knight Academy Chimney -> Upper Skyloft
     spawn_info:
       - stage: F000
@@ -1019,7 +1019,7 @@
 - type: Interior
   forward:
     connection: Upper Skyloft -> Inside the Statue of the Goddess
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 5
@@ -1028,7 +1028,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Inside the Statue of the Goddess -> Upper Skyloft
     exit_infos:
       - stage: F008r
@@ -1042,7 +1042,7 @@
 - type: Interior
   forward:
     connection: Central Skyloft -> Bazaar North
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 1
@@ -1051,7 +1051,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Bazaar North -> Central Skyloft
     exit_infos:
       - stage: F004r
@@ -1065,7 +1065,7 @@
 - type: Interior
   forward:
     connection: Central Skyloft -> Bazaar West
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 19
@@ -1074,7 +1074,7 @@
         layer: 0
         room: 0
         entrance: 2
-  return:  
+  return:
     connection: Bazaar West -> Central Skyloft
     exit_infos:
       - stage: F004r
@@ -1088,7 +1088,7 @@
 - type: Interior
   forward:
     connection: Central Skyloft -> Bazaar South
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 2
@@ -1097,7 +1097,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Bazaar South -> Central Skyloft
     exit_infos:
       - stage: F004r
@@ -1112,7 +1112,7 @@
 # - type: Interior
 #   forward:
 #     connection: Central Skyloft -> Beedle's Shop
-#     exit_infos: 
+#     exit_infos:
 #       - stage: F000
 #         room: 0
 #         index: 26
@@ -1121,7 +1121,7 @@
 #         layer: 0
 #         room: 0
 #         entrance: 0
-#   return:  
+#   return:
 #     connection: Beedle's Shop -> Central Skyloft
 #     exit_infos:
 #       - stage: F002r
@@ -1138,7 +1138,7 @@
 - type: Interior
   forward:
     connection: Central Skyloft -> Waterfall Cave
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 6
@@ -1147,7 +1147,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Waterfall Cave -> Central Skyloft
     exit_infos:
       - stage: D000
@@ -1161,7 +1161,7 @@
 - type: Interior
   forward:
     connection: Skyloft Past Waterfall Cave -> Waterfall Cave
-    exit_infos: 
+    exit_infos:
       - stage: F000
         room: 0
         index: 7
@@ -1170,7 +1170,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Waterfall Cave -> Skyloft Past Waterfall Cave
     exit_infos:
       - stage: D000
@@ -1184,7 +1184,7 @@
 - type: Interior
   forward:
     connection: Bamboo Island -> Bamboo Island Interior
-    exit_infos: 
+    exit_infos:
       - stage: F020
         room: 0
         index: 13
@@ -1193,7 +1193,7 @@
         layer: 1
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Bamboo Island Interior -> Bamboo Island
     exit_infos:
       - stage: F019r
@@ -1207,7 +1207,7 @@
 - type: Interior
   forward:
     connection: Isle of Songs -> Isle of Songs Interior
-    exit_infos: 
+    exit_infos:
       - stage: F023
         room: 0
         index: 2
@@ -1216,7 +1216,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Isle of Songs Interior -> Isle of Songs
     exit_infos:
       - stage: F010r
@@ -1231,7 +1231,7 @@
   forward:
     connection: Faron Woods -> Great Tree Interior Underwater
     can_start_at: false
-    exit_infos: 
+    exit_infos:
       - stage: F100
         room: 0
         index: 6
@@ -1240,7 +1240,7 @@
         layer: 0
         room: 0
         entrance: 4
-  return:  
+  return:
     connection: Great Tree Interior Underwater -> Faron Woods
     exit_infos:
       - stage: F100_1
@@ -1254,7 +1254,7 @@
 - type: Interior
   forward:
     connection: Great Tree Exterior Platforms -> Great Tree Interior Middle
-    exit_infos: 
+    exit_infos:
       - stage: F100
         room: 0
         index: 3
@@ -1263,7 +1263,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Great Tree Interior Middle -> Great Tree Exterior Platforms
     exit_infos:
       - stage: F100_1
@@ -1277,7 +1277,7 @@
 - type: Interior
   forward:
     connection: Great Tree Exterior Platforms -> Great Tree Interior Upper
-    exit_infos: 
+    exit_infos:
       - stage: F100
         room: 0
         index: 4
@@ -1286,7 +1286,7 @@
         layer: 0
         room: 0
         entrance: 2
-  return:  
+  return:
     connection: Great Tree Interior Upper -> Great Tree Exterior Platforms
     exit_infos:
       - stage: F100_1
@@ -1300,7 +1300,7 @@
 - type: Interior
   forward:
     connection: Great Tree Exterior Top -> Great Tree Interior Upper
-    exit_infos: 
+    exit_infos:
       - stage: F100
         room: 0
         index: 5
@@ -1309,7 +1309,7 @@
         layer: 0
         room: 0
         entrance: 3
-  return:  
+  return:
     connection: Great Tree Interior Upper -> Great Tree Exterior Top
     exit_infos:
       - stage: F100_1
@@ -1323,7 +1323,7 @@
 - type: Interior
   forward:
     connection: Outside Thrill Digger Cave -> Thrill Digger Cave
-    exit_infos: 
+    exit_infos:
       - stage: F200
         room: 4
         index: 1
@@ -1332,7 +1332,7 @@
         layer: 1
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Thrill Digger Cave -> Outside Thrill Digger Cave
     exit_infos:
       - stage: F211
@@ -1346,7 +1346,7 @@
 - type: Interior
   forward:
     connection: Lanayru Desert North -> Lightning Node
-    exit_infos: 
+    exit_infos:
       - stage: F300
         room: 0
         index: 0
@@ -1355,7 +1355,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Lightning Node -> Lanayru Desert North
     exit_infos:
       - stage: F300_2
@@ -1369,7 +1369,7 @@
 - type: Interior
   forward:
     connection: Lanayru Desert East -> Fire Node
-    exit_infos: 
+    exit_infos:
       - stage: F300
         room: 0
         index: 2
@@ -1378,7 +1378,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Fire Node -> Lanayru Desert East
     exit_infos:
       - stage: F300_3
@@ -1392,7 +1392,7 @@
 - type: Interior
   forward:
     connection: Lanayru Mine Caves Platform -> Lanayru Caves
-    exit_infos: 
+    exit_infos:
       - stage: F300_1
         room: 0
         index: 1
@@ -1401,7 +1401,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Lanayru Caves -> Lanayru Mine Caves Platform
     exit_infos:
       - stage: F303
@@ -1415,7 +1415,7 @@
 - type: Interior
   forward:
     connection: Sand Oasis Highest Platform -> Lanayru Caves
-    exit_infos: 
+    exit_infos:
       - stage: F300
         room: 0
         index: 8
@@ -1424,7 +1424,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Lanayru Caves -> Sand Oasis Highest Platform
     exit_infos:
       - stage: F303
@@ -1438,7 +1438,7 @@
 - type: Interior
   forward:
     connection: Ancient Harbour Highest Platform -> Lanayru Caves Past Locked Door
-    exit_infos: 
+    exit_infos:
       - stage: F301
         room: 0
         index: 1
@@ -1447,7 +1447,7 @@
         layer: 0
         room: 0
         entrance: 2
-  return:  
+  return:
     connection: Lanayru Caves Past Locked Door -> Ancient Harbour Highest Platform
     exit_infos:
       - stage: F303
@@ -1461,7 +1461,7 @@
 - type: Interior
   forward:
     connection: Lanayru Gorge -> Lanayru Caves Past Crawlspace
-    exit_infos: 
+    exit_infos:
       - stage: F302
         room: 0
         index: 0
@@ -1470,7 +1470,7 @@
         layer: 0
         room: 0
         entrance: 3
-  return:  
+  return:
     connection: Lanayru Caves Past Crawlspace -> Lanayru Gorge
     exit_infos:
       - stage: F303
@@ -1484,7 +1484,7 @@
 - type: Interior
   forward:
     connection: Shipyard End of Minecart Ride -> Construction Bay Upper Platform
-    exit_infos: 
+    exit_infos:
       - stage: F301_4
         room: 0
         index: 3
@@ -1493,7 +1493,7 @@
         layer: 0
         room: 0
         entrance: 4
-  return:  
+  return:
     connection: Construction Bay Upper Platform -> Shipyard End of Minecart Ride
     exit_infos:
       - stage: F301_7
@@ -1508,7 +1508,7 @@
   forward:
     connection: Shipyard Dock -> Construction Bay Sand Pit
     can_start_at: false
-    exit_infos: 
+    exit_infos:
       - stage: F301_4
         room: 0
         index: 4
@@ -1517,7 +1517,7 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Construction Bay Sand Pit -> Shipyard Dock
     exit_infos:
       - stage: F301_7
@@ -1531,7 +1531,7 @@
 - type: Interior
   forward:
     connection: Pirate Stronghold Dock -> Pirate Stronghold Side Door
-    exit_infos: 
+    exit_infos:
       - stage: F301_6
         room: 0
         index: 1
@@ -1540,7 +1540,7 @@
         layer: 0
         room: 1
         entrance: 0
-  return:  
+  return:
     connection: Pirate Stronghold Side Door -> Pirate Stronghold Dock
     exit_infos:
       - stage: F301_2
@@ -1554,7 +1554,7 @@
 - type: Interior
   forward:
     connection: Pirate Stronghold Inside the Shark Head -> Pirate Stronghold Top Door
-    exit_infos: 
+    exit_infos:
       - stage: F301_6
         room: 0
         index: 2
@@ -1563,7 +1563,7 @@
         layer: 0
         room: 1
         entrance: 1
-  return:  
+  return:
     connection: Pirate Stronghold Top Door -> Pirate Stronghold Inside the Shark Head
     exit_infos:
       - stage: F301_2
@@ -1582,7 +1582,7 @@
 - type: Overworld
   forward:
     connection: Sealed Grounds Upper Ledge -> Behind the Temple
-    exit_infos: 
+    exit_infos:
       - stage: F401
         room: 1
         index: 1
@@ -1591,7 +1591,7 @@
         layer: 0
         room: 0
         entrance: 2
-  return:  
+  return:
     connection: Behind the Temple -> Sealed Grounds Upper Ledge
     exit_infos:
       - stage: F400
@@ -1605,7 +1605,7 @@
 - type: Overworld
   forward:
     connection: Behind the Temple -> Faron Woods Entry
-    exit_infos: 
+    exit_infos:
       - stage: F400
         room: 0
         index: 2
@@ -1614,7 +1614,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Faron Woods Entry -> Behind the Temple
     exit_infos:
       - stage: F100
@@ -1628,7 +1628,7 @@
 - type: Overworld
   forward:
     connection: Faron Woods Ledge to Deep Woods -> Deep Woods Entry
-    exit_infos: 
+    exit_infos:
       - stage: F100
         room: 0
         index: 13
@@ -1637,7 +1637,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Deep Woods Entry -> Faron Woods Ledge to Deep Woods
     exit_infos:
       - stage: F101
@@ -1652,7 +1652,7 @@
   forward:
     connection: Faron Woods -> Lake Floria
     can_start_at: false
-    exit_infos: 
+    exit_infos:
       - stage: F100
         room: 0
         index: 9
@@ -1664,7 +1664,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Lake Floria -> Faron Woods
     spawn_info:
       - stage: F100
@@ -1674,7 +1674,7 @@
 - type: Overworld
   forward:
     connection: Lake Floria -> Farore's Lair
-    exit_infos: 
+    exit_infos:
       - stage: F102
         room: 4
         index: 0
@@ -1683,7 +1683,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Farore's Lair -> Lake Floria
     can_start_at: false
     exit_infos:
@@ -1698,7 +1698,7 @@
 - type: Overworld
   forward:
     connection: Farore's Lair -> Floria Waterfall
-    exit_infos: 
+    exit_infos:
       - stage: F102_2
         room: 0
         index: 1
@@ -1707,7 +1707,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Floria Waterfall -> Farore's Lair
     exit_infos:
       - stage: F102_1
@@ -1721,7 +1721,7 @@
 - type: Overworld
   forward:
     connection: Floria Waterfall -> Faron Woods Floria Shortcut Ledge
-    exit_infos: 
+    exit_infos:
       - stage: F102_1
         room: 0
         index: 2
@@ -1730,7 +1730,7 @@
         layer: 0
         room: 0
         entrance: 17
-  return:  
+  return:
     connection: Faron Woods Floria Shortcut Ledge -> Floria Waterfall
     exit_infos:
       - stage: F100
@@ -1744,7 +1744,7 @@
 - type: Overworld
   forward:
     connection: Volcano East -> Mogma Turf Dive
-    exit_infos: 
+    exit_infos:
       - stage: F200
         room: 2
         index: 1
@@ -1753,7 +1753,7 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Mogma Turf -> Volcano East
     exit_infos:
       - stage: F210
@@ -1767,7 +1767,7 @@
 - type: Overworld
   forward:
     connection: Mogma Turf Final Vent -> Past Mogma Turf
-    exit_infos: 
+    exit_infos:
       - stage: F210
         room: 0
         index: 1
@@ -1776,7 +1776,7 @@
         layer: 0
         room: 2
         entrance: 2
-  return:  
+  return:
     connection: Past Mogma Turf -> Mogma Turf Final Vent
     spawn_info:
       - stage: F210
@@ -1787,7 +1787,7 @@
   forward:
     connection: Hot Cave -> Volcano Summit
     can_start_at: false
-    exit_infos: 
+    exit_infos:
       - stage: F200
         room: 5
         index: 1
@@ -1796,9 +1796,9 @@
         layer: 0
         room: 0
         entrance: 4
-  return:  
+  return:
     connection: Volcano Summit -> Hot Cave
-    exit_infos: 
+    exit_infos:
       - stage: F201_1
         room: 0
         index: 0
@@ -1810,7 +1810,7 @@
 - type: Overworld
   forward:
     connection: Volcano Summit -> Volcano Summit Waterfall
-    exit_infos: 
+    exit_infos:
       - stage: F201_1
         room: 0
         index: 1
@@ -1819,10 +1819,10 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Volcano Summit Waterfall -> Volcano Summit
     can_start_at: false
-    exit_infos: 
+    exit_infos:
       - stage: F201_4
         room: 0
         index: 0
@@ -1834,7 +1834,7 @@
 - type: Overworld
   forward:
     connection: Volcano Summit -> Past Volcano Summit
-    exit_infos: 
+    exit_infos:
       - stage: F201_1
         room: 0
         index: 2
@@ -1843,10 +1843,10 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Past Volcano Summit -> Volcano Summit
     can_start_at: false
-    exit_infos: 
+    exit_infos:
       - stage: F201_3
         room: 0
         index: 0
@@ -1858,7 +1858,7 @@
 - type: Overworld
   forward:
     connection: Lanayru Mine In Minecart -> Lanayru Desert South
-    exit_infos: 
+    exit_infos:
       - stage: F300_1
         room: 2
         index: 0
@@ -1867,9 +1867,9 @@
         layer: 0
         room: 0
         entrance: 2
-  return:  
+  return:
     connection: Lanayru Desert South -> Lanayru Mine In Minecart
-    exit_infos: 
+    exit_infos:
       - stage: F300
         room: 0
         index: 1
@@ -1881,7 +1881,7 @@
 - type: Overworld
   forward:
     connection: Sand Oasis End -> Temple of Time South
-    exit_infos: 
+    exit_infos:
       - stage: F300
         room: 0
         index: 3
@@ -1890,9 +1890,9 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Temple of Time South -> Sand Oasis End
-    exit_infos: 
+    exit_infos:
       - stage: F300_4
         room: 0
         index: 0
@@ -1904,7 +1904,7 @@
 - type: Overworld
   forward:
     connection: Temple of Time North -> Lanayru Desert North
-    exit_infos: 
+    exit_infos:
       - stage: F300_4
         room: 0
         index: 1
@@ -1913,9 +1913,9 @@
         layer: 0
         room: 0
         entrance: 1
-  return:  
+  return:
     connection: Lanayru Desert North -> Temple of Time North
-    exit_infos: 
+    exit_infos:
       - stage: F300
         room: 0
         index: 4
@@ -1927,7 +1927,7 @@
 - type: Overworld
   forward:
     connection: Ancient Harbour -> Lanayru Sand Sea
-    exit_infos: 
+    exit_infos:
       - stage: F301
         room: 0
         index: 2
@@ -1936,9 +1936,9 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Lanayru Sand Sea -> Ancient Harbour
-    exit_infos: 
+    exit_infos:
       - stage: F301_1
         room: 0
         index: 0
@@ -1950,7 +1950,7 @@
 - type: Overworld
   forward:
     connection: Lanayru Sand Sea -> Skipper's Retreat Dock
-    exit_infos: 
+    exit_infos:
       - stage: F301_1
         room: 0
         index: 2
@@ -1959,9 +1959,9 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Skipper's Retreat Dock -> Lanayru Sand Sea
-    exit_infos: 
+    exit_infos:
       - stage: F301_3
         room: 0
         index: 2
@@ -1973,7 +1973,7 @@
 - type: Overworld
   forward:
     connection: Lanayru Sand Sea -> Shipyard Dock
-    exit_infos: 
+    exit_infos:
       - stage: F301_1
         room: 0
         index: 3
@@ -1982,9 +1982,9 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Shipyard Dock -> Lanayru Sand Sea
-    exit_infos: 
+    exit_infos:
       - stage: F301_4
         room: 0
         index: 2
@@ -1996,7 +1996,7 @@
 - type: Overworld
   forward:
     connection: Lanayru Sand Sea -> Pirate Stronghold Dock
-    exit_infos: 
+    exit_infos:
       - stage: F301_1
         room: 0
         index: 4
@@ -2005,9 +2005,9 @@
         layer: 0
         room: 0
         entrance: 0
-  return:  
+  return:
     connection: Pirate Stronghold Dock -> Lanayru Sand Sea
-    exit_infos: 
+    exit_infos:
       - stage: F301_6
         room: 0
         index: 0
@@ -2032,7 +2032,7 @@
       - stage: F401
         layer: 0
         room: 1
-        entrance: 8  
+        entrance: 8
 - type: Bird Statue
   forward:
     connection: Faron Pillar -> Behind the Temple Statue
@@ -2104,7 +2104,7 @@
       - stage: F101
         layer: 0
         room: 0
-        entrance: 13 
+        entrance: 13
 - type: Bird Statue
   forward:
     connection: Faron Pillar -> The Great Tree Statue
@@ -2116,7 +2116,7 @@
       - stage: F100
         layer: 0
         room: 0
-        entrance: 53 
+        entrance: 53
 - type: Bird Statue
   forward:
     connection: Faron Pillar -> Lake Floria Statue
@@ -2128,7 +2128,7 @@
       - stage: F102
         layer: 0
         room: 3
-        entrance: 2    
+        entrance: 2
 - type: Bird Statue
   forward:
     connection: Faron Pillar -> Floria Waterfall Statue
@@ -2248,7 +2248,7 @@
       - stage: F300
         layer: 0
         room: 0
-        entrance: 16    
+        entrance: 16
 - type: Bird Statue
   forward:
     connection: Lanayru Pillar -> Desert Gorge Statue
