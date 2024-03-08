@@ -2236,7 +2236,7 @@ F200: # Eldin main area
       anglex: 0x4000
       angley: 0x8000
       anglez: 0x0000
-  
+
   - name: Move Cliff Pyrup Shell Rupee to layer 0
     type: objmove
     id: 0x10BD
@@ -2352,9 +2352,9 @@ F200: # Eldin main area
     room: 2
     objtype: OBJ
   # Below Mogma Turf Entrance
-  # 
+  #
   # Removed as extra collision on Eldin layer 1 makes this digspot *very* buggy
-  # 
+  #
   # - name: Move below Turf Uground, InHole, and Bombf
   #   type: objmove
   #   ids:
@@ -4349,7 +4349,7 @@ F403: # Hylia's Realm
       night: 2
       byte5: 1
 
-F404: # Hylia's Temple
+F404: # Temple of Hylia
   - name: Layer override
     type: layeroverride
     override:
@@ -4362,7 +4362,7 @@ F404: # Hylia's Temple
     layer: 0
     room: 2
     objtype: OBJ
-  - name: Add ammo pot to Hylia's Temple Bird Statue
+  - name: Add ammo pot to Temple of Hylia Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
     layer: 0
@@ -5867,7 +5867,7 @@ D301: # Sandship A (main)
     layer: 1
     room: 5
     objtype: OBJ
-  - name: Remove Scervo Fi texts 
+  - name: Remove Scervo Fi texts
     type: objdelete
     ids:
       - 0xFC07 # After Scervo
@@ -6019,7 +6019,7 @@ B301: # after Sandship boss
       params1: 0xC303FF03 # change to zone temp flag 3
       anglez: 0xFFFF # no untrigger flag
 
-S100: # Faron Silent Realm
+S100: # Farore's Silent Realm
   - name: Fi text near waking water
     type: objdelete
     id: 0xFCDB

@@ -102,7 +102,7 @@ class World:
     # for this world
     def build_item_table(self) -> None:
         logging.getLogger("").debug(f"Building Item Table for {self}")
-        with open(ITEMS_PATH, "r") as item_data_file:
+        with open(ITEMS_PATH, "r", encoding="utf-8") as item_data_file:
             item_data = yaml.safe_load(item_data_file)
             for item_node in item_data:
                 # Check to make sure all neccesary fields exist
@@ -164,7 +164,7 @@ class World:
 
     def load_logic_macros(self) -> None:
         logging.getLogger("").debug(f"Loading macros for {self}")
-        with open(MACROS_DATA_PATH, "r") as macros_data_file:
+        with open(MACROS_DATA_PATH, "r", encoding="utf-8") as macros_data_file:
             macros_data = yaml.safe_load(macros_data_file)
             for macro_name, req_str in macros_data.items():
                 self.macros[macro_name] = parse_requirement_string(
@@ -183,7 +183,7 @@ class World:
             if not filepath.as_posix().endswith(".yaml"):
                 continue
 
-            with open(filepath, "r") as world_data_file:
+            with open(filepath, "r", encoding="utf-8") as world_data_file:
                 world_data = yaml.safe_load(world_data_file)
                 for area_node in world_data:
                     # Check to make sure all required fields exist

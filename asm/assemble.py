@@ -132,10 +132,10 @@ if not devkitA64_objcopy.is_file():
     )
 
 
-with open("symbols.yaml", "r") as f:
+with open("symbols.yaml", "r", encoding="utf-8") as f:
     defined_symbols = yaml.safe_load(f)
 
-with open("linker.ld", "r") as f:
+with open("linker.ld", "r", encoding="utf-8") as f:
     linker_script = f.read()
 
 for symbol, address in defined_symbols["main"].items():
@@ -165,7 +165,7 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
                 symbol + " = " + hex(custom_symbols[symbol]) + SEMICOLON + NEWLINE
             )
 
-        with open(asm_file_path, "r") as f:
+        with open(asm_file_path, "r", encoding="utf-8") as f:
             asm_block = f.read()
 
         for line in asm_block.splitlines():
@@ -232,14 +232,14 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
             temp_linker_file_name = temp_dir_name / "temp-linker.ld"
 
-            with open(temp_linker_file_name, "w") as f:
+            with open(temp_linker_file_name, "w", encoding="utf-8") as f:
                 f.write(temp_linker_script)
 
             assembler_code_file_name = (
                 temp_dir_name / f"{asm_file_name}-0x{code_block_offset}.asm"
             )
 
-            with open(assembler_code_file_name, "w") as f:
+            with open(assembler_code_file_name, "w", encoding="utf-8") as f:
                 for instruction in code:
                     f.write(instruction)
 
@@ -287,7 +287,7 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
                 linker_command.append("./" + ASM_RUST_ADDITIONS_TARGET_PATH.as_posix())
 
             if result := call(linker_command):
-                # with open(temp_linker_file_name, "r") as f:
+                # with open(temp_linker_file_name, "r", encoding="utf-8") as f:
                 #     print(f.readlines())
 
                 raise Exception(
@@ -296,7 +296,7 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
             if asm_file_path == ASM_RUST_ADDITIONS_PATH:
                 # Keep track of custom symbols so they can be passed in the linker script to future assembler calls.
-                with open(map_file_name) as f:
+                with open(map_file_name, encoding="utf-8") as f:
                     on_custom_symbols = False
 
                     for line in f.read().splitlines():
@@ -340,7 +340,7 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
                     f"Objcopy call {objcopy_command} failed with error code: {result}"
                 )
 
-            with open(binary_file_name, "rb") as f:
+            with open(binary_file_name, "rb", encoding="utf-8") as f:
                 binary_data = f.read()
 
             data_bytes = list(struct.unpack("B" * len(binary_data), binary_data))
@@ -383,7 +383,7 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
                 diff_dict[only_if][offset] = code_block
 
-        with open(diff_file_name, "w", newline="") as f:
+        with open(diff_file_name, "w", encoding="utf-8", newline="") as f:
             f.write(yaml.dump(diff_dict, Dumper=yaml.CDumper, line_break=NEWLINE))
 
 

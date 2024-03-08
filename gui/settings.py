@@ -808,7 +808,7 @@ class Settings:
                     self.config.settings[0].starting_inventory.elements()
                 )
 
-                with open(preset_file_path, "w") as preset_file:
+                with open(preset_file_path, "w", encoding="utf-8") as preset_file:
                     yaml.safe_dump(preset_settings, preset_file, sort_keys=False)
 
     def apply_preset(self):
@@ -822,7 +822,7 @@ class Settings:
         else:
             selected_preset_path = PRESETS_PATH / (selected_preset + ".yaml")
 
-        with open(selected_preset_path, "r") as preset_file:
+        with open(selected_preset_path, "r", encoding="utf-8") as preset_file:
             preset_data: dict = yaml.safe_load(preset_file)
 
         for setting_name in preset_data:

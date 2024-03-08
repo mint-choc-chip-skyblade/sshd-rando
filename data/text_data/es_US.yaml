@@ -1,0 +1,220 @@
+# Hint Areas
+
+- name: Knight Academy
+  standard: Academia de caballeros
+  pretty: la <Academia de caballeros>
+  cryptic:
+
+- name: Upper Skyloft
+  standard: Altárea del norte
+  pretty: Altárea del norte
+  cryptic:
+
+- name: Central Skyloft
+  standard: Altárea central
+  pretty: Altárea central
+  cryptic:
+
+- name: Skyloft Village
+  standard: Altárea pueblo
+  pretty: Altárea pueblo
+  cryptic:
+
+- name: Batreaux's House
+  standard: Casa de Batolo
+  pretty: la <Casa de Batolo>
+  cryptic:
+
+- name: Beedle's Shop
+  standard: Tienda de Terry
+  pretty: la <Tienda de Terry>
+  cryptic:
+
+- name: Sky
+  standard: Celéstea
+  pretty: a <Celéstea>
+  cryptic:
+
+- name: Thunderhead
+  standard: Cúmulo
+  pretty: el <Cúmulo>
+  cryptic:
+
+- name: Sealed Grounds
+  standard: Tierra del presidio
+  pretty: la <Tierra del presidio>
+  cryptic:
+
+- name: Temple of Hylia
+  standard: Templo de Hylia
+  pretty: el <Templo de Hylia>
+  cryptic:
+
+- name: Faron Woods
+  standard: Bosque de Farone
+  pretty: el <Bosque de Farone>
+  cryptic:
+
+- name: Great Tree
+  standard: Árbol gigante
+  pretty: el <Árbol gigante>
+  cryptic:
+
+- name: Flooded Faron Woods
+  standard: Bosque de Farone inundado
+  pretty: el <Bosque de Farone inundado>
+  cryptic:
+
+- name: Lake Floria
+  standard: Lago Faroria
+  pretty: Lago Faroria
+  cryptic:
+
+- name: Eldin Volcano
+  standard: Volcán de Eldin
+  pretty: el <Volcán de Eldin>
+  cryptic:
+
+# I hate how Mogma Turf is only a think in English (and not really even then)
+# If someone has a better translation for this, please let me know ^^'
+- name: Mogma Turf
+  standard: Territorio de los Mogumas
+  pretty: el <Territorio de los Mogumas>
+  cryptic:
+
+- name: Volcano Summit
+  standard: Cima del Volcán
+  pretty: la <Cima del Volcán>
+  cryptic:
+
+- name: Bokoblin Base
+  standard: Base de los Bokoblins
+  pretty: la <Base de los Bokoblins>
+  cryptic:
+
+- name: Lanayru Mine
+  standard: Minas de Lanayru
+  pretty: las <Minas de Lanayru>
+  cryptic:
+
+- name: Lanayru Desert
+  standard: Desierto de Lanayru
+  pretty: el <Desierto de Lanayru>
+  cryptic:
+
+- name: Temple of Time
+  standard: Templo del Tiempo
+  pretty: el <Templo del Tiempo>
+  cryptic:
+
+- name: Lanayru Caves
+  standard: Cuevas de Lanayru
+  pretty: las <Cuevas de Lanayru>
+  cryptic:
+
+- name: Ancient Harbour
+  standard: Antiguo atracadero
+  pretty: Antiguo atracadero
+  cryptic:
+
+- name: Lanayru Sand Sea
+  standard: Mar de arena de Lanayru
+  pretty: el <Mar de arena de Lanayru>
+  cryptic:
+
+- name: Lanayru Gorge
+  standard: Desfiladero de Lanayru
+  pretty: el <Desfiladero de Lanayru>
+  cryptic:
+
+- name: Skyview Temple
+  standard: Templo de la contemplación
+  pretty: el <Templo de la contemplación>
+  cryptic:
+
+- name: Earth Temple
+  standard: Templo terrenal
+  pretty: el <Templo terrenal>
+  cryptic:
+
+- name: Lanayru Mining Facility
+  standard: Refinería de Lanayru
+  pretty: la <Refinería de Lanayru>
+  cryptic:
+
+- name: Ancient Cistern
+  standard: Gran caverna ancestral
+  pretty: la <Gran caverna ancestral>
+  cryptic:
+
+- name: Sandship
+  standard: Galeón de las arenas
+  pretty: el <Galeón de las arenas>
+  cryptic:
+
+- name: Fire Sanctuary
+  standard: Gran santuario antiguo
+  pretty: el <Gran santuario antiguo>
+  cryptic:
+
+- name: Sky Keep
+  standard: Torre celestial
+  pretty: la <Torre celestial>
+  cryptic:
+
+- name: Farore's Silent Realm
+  standard: Hypnea de Farore
+  pretty: la <Hypnea de Farore>
+  cryptic:
+
+- name: Din's Silent Realm
+  standard: Hypnea de Din
+  pretty: la <Hypnea de Din>
+  cryptic:
+
+- name: Nayru's Silent Realm
+  standard: Hypnea de Nayru
+  pretty: la <Hypnea de Nayru>
+  cryptic:
+
+- name: The Goddess's Silent Realm
+  standard: Hypnea de la Diosa
+  pretty: la <Hypnea de la Diosa>
+  cryptic:
+
+# Fi text
+- name: No Fi Hints Text
+  standard: "Amo, <r<no tengo pistas>> para ti."
+
+- name: Fi Note No More Information Text
+  standard: "Esa es toda la información disponible, amo."
+
+- name: Fi Warp Text
+  standard: "¿Qué te gustaría hacer?\n[1]Warp empezar[2]Usar amiibo[3-]Olvídalo."
+
+- name: Patch Fi Call Information Option
+  standard: "Información"
+
+# - name: Forced Required Dungeons Text
+#   standard: "Welcome to your new adventure, Master. I have\n<r<important information>> about your journey."
+
+# - name: No Required Dungeons Text
+#   standard: "I detect no dungeons with strong readings."
+
+# - name: Some Required Dungeons Text
+#   standard: "I detect strong readings in the following dungeons:\n{dungeon_text}"
+
+# - name: All Required Dungeons Text
+#   standard: "I detect many strong readings. I recommend you\ncomplete all the dungeons."
+
+- name: Fi Information Text Patch
+  standard: "Sí, amo. ¿Qué información buscas?\n[1]Pistas[2]Notas[3]Necesario Mazmorras[4-]Olvídalo."
+
+# - name: Fi Objective Text Template
+#   standard:
+#     "Your objective is to exit el <b<Templo de Hylia>> in the\npast and defeat any bosses in your way.
+#     \n\n\nTo do this, you need to raise and open the <r<Gate of\nTime>> en el <b<Templo del presidio>>.
+#     \n\n\nTo raise the <r<Gate of Time>>, you must acquire the\n<y<Goddess's Harp>> and the <s<Ballad of the Goddess>>.
+#     \n\n\nTo open the <r<Gate of Time>>, you must obtain the\n<y<{required_sword}>> and <b<Skyward Strike>> the <r<Gate of\nTime>>.
+#     \n\nAfter travelling to the past, you will need to gather\nthe three pieces of the <y+<Triforce>>.
+#     \n\n\nThis will allow you to exit el <b<Templo de Hylia>>\nthrough the double doors and face the final bosses."

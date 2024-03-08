@@ -41,9 +41,9 @@ class CustomThemeDialog(QDialog):
         self.default_theme_path = default_theme
         self.custom_theme_path = custom_theme
 
-        with open(self.default_theme_path) as f:
+        with open(self.default_theme_path, encoding="utf-8") as f:
             self.default_theme = json.load(f)
-        with open(self.custom_theme_path) as f:
+        with open(self.custom_theme_path, encoding="utf-8") as f:
             self.custom_theme = json.load(f)
 
         self.ui.widget_category_choice.currentTextChanged.connect(

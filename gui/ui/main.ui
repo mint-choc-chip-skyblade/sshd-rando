@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -430,18 +430,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  </layout>
                 </item>
                 <item>
-                 <widget class="QCheckBox" name="use_custom_theme_check_box">
-                  <property name="text">
-                   <string>Use Custom Theme</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="customize_theme_button">
-                  <property name="text">
-                   <string>Customize Theme</string>
-                  </property>
-                 </widget>
+                 <layout class="QHBoxLayout" name="customize_theme_layout">
+                  <item>
+                   <widget class="QCheckBox" name="use_custom_theme_check_box">
+                    <property name="text">
+                     <string>Use Custom Theme</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="customize_theme_button">
+                    <property name="text">
+                     <string>Customize Theme</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </item>
                 <item>
                  <spacer name="theming_vspacer">
@@ -835,6 +839,23 @@ li.checked::marker { content: &quot;\2612&quot;; }
               <string>Starry Skies</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <widget class="Line" name="line_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="language_label">
+             <property name="text">
+              <string>In-Game Language</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_language"/>
            </item>
            <item>
             <spacer name="tweaks_vspacer">
@@ -3094,68 +3115,10 @@ Practice Sword</string>
     </item>
     <item>
      <layout class="QGridLayout" name="footer_grid_layout" rowstretch="0,0,0">
-      <item row="2" column="1">
-       <layout class="QHBoxLayout" name="reset_settings_to_default_hlayout">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_7">
-          <item>
-           <widget class="QLabel" name="layout_label">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="reset_settings_to_default_button">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Reset Settings to Default</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="hash_label">
-            <property name="text">
-             <string>Hash:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="seed_label">
+      <item row="0" column="2">
+       <widget class="QPushButton" name="copy_setting_string_button">
         <property name="text">
-         <string>Seed:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="new_seed_button">
-        <property name="text">
-         <string>New Seed</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QPushButton" name="randomize_button">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Randomize</string>
+         <string>Copy</string>
         </property>
        </widget>
       </item>
@@ -3198,17 +3161,33 @@ Practice Sword</string>
         </item>
        </layout>
       </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="copy_setting_string_button">
+      <item row="1" column="0">
+       <widget class="QLabel" name="seed_label">
         <property name="text">
-         <string>Copy</string>
+         <string>Seed:</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="about_button">
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="seed_line_edit"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="new_seed_button">
         <property name="text">
-         <string>About</string>
+         <string>New Seed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="randomize_button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Randomize</string>
         </property>
        </widget>
       </item>
@@ -3219,8 +3198,50 @@ Practice Sword</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="seed_line_edit"/>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="about_button">
+        <property name="text">
+         <string>About</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <layout class="QHBoxLayout" name="reset_settings_to_default_hlayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="layout_label">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="reset_settings_to_default_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Reset Settings to Default</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="hash_label">
+            <property name="text">
+             <string>Hash:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>

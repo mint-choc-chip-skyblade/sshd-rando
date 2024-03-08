@@ -267,7 +267,7 @@ class Search:
     # Then, open world.svg in a browser and CTRL + F to find the area of interest
     def dump_world_graph(self, world_num: int = 0, filename: str = "World"):
         world = self.worlds[world_num]
-        with open(filename + ".gv", "w") as world_graph:
+        with open(filename + ".gv", "w", encoding="utf-8") as world_graph:
             world_graph.write("digraph {\n\tcenter=true;\n")
 
             for area_id, area in world.areas.items():

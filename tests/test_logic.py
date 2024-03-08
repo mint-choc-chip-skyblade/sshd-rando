@@ -261,19 +261,19 @@ def test_spoiler_as_config() -> None:
         f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Anti Spoiler Log.txt"
     )
     log1 = ""
-    with open(spoiler_path, "r") as first_log:
+    with open(spoiler_path, "r", encoding="utf-8") as first_log:
         log1 = first_log.read()
 
     os.remove(spoiler_path)
 
-    with open("spoiler_log_config_test.yaml", "w") as config:
+    with open("spoiler_log_config_test.yaml", "w", encoding="utf-8") as config:
         config.write(log1)
         worlds = generate(Path("spoiler_log_config_test.yaml"))
         assert all_logic_satisfied(worlds)
 
     os.remove("spoiler_log_config_test.yaml")
 
-    with open(spoiler_path) as second_log:
+    with open(spoiler_path, encoding="utf-8") as second_log:
         assert log1 == second_log.read()
 
     os.remove(spoiler_path)

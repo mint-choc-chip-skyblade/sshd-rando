@@ -3,12 +3,10 @@
   exits:
     Link's Spawn: Nothing
 
-
 - name: Link's Spawn
   allowed_time_of_day: Day Only
   exits:
     Knight Academy: Nothing
-
 
 - name: Knight Academy
   hint_region: Knight Academy
@@ -38,7 +36,6 @@
     Knight Academy - Ghost/Pipit's Crystals: Day and Cawlins_Letter
     Knight Academy - Fledge's Crystals: Night and 'Stamina_Potion'
 
-
 - name: Knight Academy Chimney
   hint_region: Knight Academy
   allowed_time_of_day: All
@@ -52,7 +49,6 @@
     Knight Academy - Rupee in Chimney Crawlspace 4: Nothing
     Knight Academy - Rupee in Chimney Crawlspace 5: Nothing
 
-
 - name: Knight Academy Zelda's Room
   hint_region: Knight Academy
   allowed_time_of_day: All
@@ -63,13 +59,11 @@
     Knight Academy - Crystal in Zelda's Room: Night
     Knight Academy - In Zelda's Closet: Nothing
 
-
 - name: Knight Academy Upper North Door
   allowed_time_of_day: All
   exits:
     Knight Academy: Nothing
     Upper Skyloft: Nothing
-
 
 - name: Knight Academy Upper South Door
   allowed_time_of_day: All
@@ -77,20 +71,17 @@
     Knight Academy: Nothing
     Upper Skyloft: Nothing
 
-
 - name: Knight Academy Lower East Door
   allowed_time_of_day: All
   exits:
     Knight Academy: Nothing
     Upper Skyloft: Nothing
 
-
 - name: Knight Academy Lower West Door
   allowed_time_of_day: All
   exits:
     Knight Academy: Nothing
     Upper Skyloft: Nothing
-
 
 - name: Upper Skyloft
   allowed_time_of_day: All
@@ -119,7 +110,6 @@
     Upper Skyloft - Stamina Fruit near Sparring Hall: Nothing
     Upper Skyloft - Stamina Fruit near Goddess Statue: Nothing
 
-
 - name: Sparring Hall
   allowed_time_of_day: All
   events:
@@ -131,20 +121,17 @@
     Sparring Hall - Crystal: Beetle and Night
     Sparring Hall - Chest: Nothing
 
-
 - name: Sparring Hall North Door
   allowed_time_of_day: All
   exits:
     Sparring Hall: Nothing
     Upper Skyloft: Nothing
 
-
 - name: Sparring Hall South Door
   allowed_time_of_day: All
   exits:
     Sparring Hall: Nothing
     Upper Skyloft: Nothing
-
 
 - name: Inside the Statue of the Goddess
   allowed_time_of_day: All
@@ -153,7 +140,6 @@
   locations:
     Inside the Statue of the Goddess - First Goddess Sword Item: Nothing
     Inside the Statue of the Goddess - Second Goddess Sword Item: Nothing
-
 
 - name: Central Skyloft
   allowed_time_of_day: All
@@ -165,7 +151,7 @@
     Bazaar North: Day
     Bazaar West: Day
     Bazaar South: Day
-    Skyloft Silent Realm: Goddesss_Harp and Song_of_the_Hero
+    The Goddess's Silent Realm: Goddesss_Harp and Song_of_the_Hero
     Orielle and Parrow's House: Nothing
     Peatrice's House: Nothing
     Wryna's House: Nothing
@@ -214,7 +200,6 @@
     Central Skyloft - Crystal after Waterfall Cave: Night and Beetle and logic_precise_beetle
     Central Skyloft - Crystal in Loftwing Prison: Night and Beetle and logic_precise_beetle
 
-
 - name: Bird Nest
   hint_region: Central Skyloft
   allowed_time_of_day: All
@@ -226,7 +211,6 @@
     Central Skyloft - East Rupee in Bird's Nest: Nothing
     Central Skyloft - South Rupee in Bird's Nest: Nothing
     Central Skyloft - West Rupee in Bird's Nest: Nothing
-
 
 - name: Bazaar
   allowed_time_of_day: All
@@ -246,27 +230,23 @@
     # Bazaar - Upgrade to Sacred Bow: Bow and 'Can_Play_Clean_Cut_Minigame'
     # Bazaar - Upgrade to Big Bug Net: Bug_Net and 'Can_Play_Clean_Cut_Minigame'
 
-
 - name: Bazaar North
   allowed_time_of_day: All
-  exits: 
+  exits:
     Bazaar: Nothing
     Central Skyloft: Nothing
-
 
 - name: Bazaar South
   allowed_time_of_day: All
-  exits: 
+  exits:
     Bazaar: Nothing
     Central Skyloft: Nothing
-
 
 - name: Bazaar West
   allowed_time_of_day: All
-  exits: 
+  exits:
     Bazaar: Nothing
     Central Skyloft: Nothing
-
 
 - name: Orielle and Parrow's House
   allowed_time_of_day: All
@@ -279,7 +259,6 @@
     Central Skyloft - Parrow's Crystals: Night and 'Save_Orielle'
     Central Skyloft - Orielle and Parrow's Closet: Nothing
 
-
 - name: Peatrice's House
   allowed_time_of_day: All
   can_sleep: true
@@ -290,7 +269,6 @@
     Central Skyloft - Peater's Closet: Nothing
     Central Skyloft - Peatrice's Closet: Nothing
 
-
 - name: Wryna's House
   allowed_time_of_day: All
   can_sleep: true
@@ -299,7 +277,6 @@
   locations:
     Central Skyloft - Wryna's Crystals: Nothing
     Central Skyloft - Wryna's Closet: Nothing
-
 
 - name: Piper's House
   allowed_time_of_day: All
@@ -319,7 +296,6 @@
     Sky Keep Entryway: Stone_of_Trials
     Central Skyloft: Clawshots
 
-
 - name: Waterfall Island
   allowed_time_of_day: All
   events:
@@ -334,7 +310,6 @@
     Central Skyloft - Floating Island Goddess Chest: Lake_Floria_Goddess_Cube
     Central Skyloft - Gossip Stone on Waterfall Island: Nothing
 
-
 - name: Waterfall Cave
   allowed_time_of_day: All
   exits:
@@ -346,7 +321,6 @@
     Central Skyloft - First Rupee in Waterfall Cave Crawlspace: Nothing
     Central Skyloft - Second Rupee in Waterfall Cave Crawlspace: Nothing
 
-
 - name: Skyloft Past Waterfall Cave
   allowed_time_of_day: All
   exits:
@@ -356,16 +330,14 @@
     Central Skyloft - Crystal after Waterfall Cave: Night
     Central Skyloft - Crystal in Loftwing Prison: Night
 
-
-- name: Skyloft Silent Realm
+- name: The Goddess's Silent Realm
   allowed_time_of_day: All
-  hint_region: Skyloft Silent Realm
+  hint_region: The Goddess's Silent Realm
   exits:
     Central Skyloft: Nothing
   locations:
-    Skyloft Silent Realm - Collect all Tears Reward: Nothing
-    Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge: Nothing
-
+    The Goddess's Silent Realm - Collect all Tears Reward: Nothing
+    The Goddess's Silent Realm - Stamina Fruit on Knight Academy Ledge: Nothing
 
 - name: Skyloft Village
   allowed_time_of_day: All
@@ -387,7 +359,6 @@
     Skyloft Village - Crystal near Pumpkin Patch: Night
     Skyloft Village - Stamina Fruit: Nothing
 
-
 - name: Bertie's House
   allowed_time_of_day: All
   can_sleep: true
@@ -396,7 +367,6 @@
   locations:
     Skyloft Village - Bertie's Crystals: Rattle and Night
     Skyloft Village - Luv and Bertie's Closet: Nothing
-
 
 - name: Sparrot's House
   allowed_time_of_day: All
@@ -410,7 +380,6 @@
     Skyloft Village - Sparrot's Closet: Nothing
     Skyloft Village - Bonk Sparrot's Valuables: Nothing
 
-
 - name: Mallara's House
   allowed_time_of_day: All
   can_sleep: true
@@ -420,7 +389,6 @@
     Skyloft Village - Mallara's Crystals: Gust_Bellows
     Skyloft Village - Mallara's Closet: Nothing
 
-
 - name: Gondo's House
   allowed_time_of_day: All
   can_sleep: true
@@ -428,7 +396,6 @@
     Skyloft Village: Nothing
   locations:
     Skyloft Village - Gondo's Closet: Nothing
-
 
 - name: Rupin's House
   allowed_time_of_day: All
@@ -438,29 +405,26 @@
   locations:
     Skyloft Village - Rupin's Closet: Nothing
 
-
 - name: Batreaux's House
   allowed_time_of_day: All
   hint_region: Batreaux's House
   exits:
     Skyloft Village: Nothing
   locations:
-    Batreaux - 5 Crystals:                gratitude_crystals(5)
-    Batreaux - 10 Crystals:               gratitude_crystals(10)
-    Batreaux - 30 Crystals:               gratitude_crystals(30)
-    Batreaux - 30 Crystals Chest:         gratitude_crystals(30)
-    Batreaux - 40 Crystals:               gratitude_crystals(40)
-    Batreaux - 50 Crystals:               gratitude_crystals(50)
-    Batreaux - 70 Crystals:               gratitude_crystals(70)
+    Batreaux - 5 Crystals: gratitude_crystals(5)
+    Batreaux - 10 Crystals: gratitude_crystals(10)
+    Batreaux - 30 Crystals: gratitude_crystals(30)
+    Batreaux - 30 Crystals Chest: gratitude_crystals(30)
+    Batreaux - 40 Crystals: gratitude_crystals(40)
+    Batreaux - 50 Crystals: gratitude_crystals(50)
+    Batreaux - 70 Crystals: gratitude_crystals(70)
     Batreaux - 70 Crystals Second Reward: gratitude_crystals(70)
-    Batreaux - 80 Crystals:               gratitude_crystals(80)
-
+    Batreaux - 80 Crystals: gratitude_crystals(80)
 
 - name: Skyloft Past Waterfall Cave Jump
   hint_region: None # Prevent Skyloft Past Waterfall Cave from being assigned to Skyloft Village
   exits:
     Skyloft Past Waterfall Cave: Nothing
-
 
 # BEEDLES SHOP
 - name: Beedle's Shop

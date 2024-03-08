@@ -1186,7 +1186,7 @@
   chain_locations:
    - Thunderhead East Island - Goddess Chest
 - id: 260
-  name: Deep Woods Goddess Cube Near Goron
+  name: Deep Woods Goddess Cube near Goron
   types:
     - Cubes
   oarc: null

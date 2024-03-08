@@ -8,17 +8,25 @@ import yaml
 
 
 class Text:
+    # en_US is the default case. That *must* be in this list last as, if any text replacements
+    # happen to en_US before another language uses its text as a default, it will try and perform
+    # the replacement again. The same principle applies to fr_US and es_US (defaults for fr_FR and
+    # es_ES).
     SUPPORTED_LANGUAGES = [  # uncomment languages which get support
-        "english",
-        # "spanish",
-        # "french",
-        # "italian",
-        # "german",
-        # "dutch",
-        # "russian",
-        # "japanese",
-        # "chinese",
-        # "korean",
+        # "zh_CN",  # Chinese
+        "nl_NL",  # Dutch
+        "fr_FR",  # French (FR)
+        "fr_US",  # French (US)
+        "de_DE",  # German
+        "it_IT",  # Italian
+        # "ja_JP",  # Japanese
+        # "ko_KR",  # Korean
+        # "ru_RU",  # Russian
+        "es_ES",  # Spanish (ES)
+        "es_US",  # Spanish (US)
+        # "zh_TW",  # Taiwanese
+        "en_GB",  # English (GB)
+        "en_US",  # English (US)
     ]
 
     def __init__(self, text: str = "") -> None:
@@ -27,12 +35,12 @@ class Text:
             self.text[lang] = text
 
     def __str__(self) -> str:
-        return self.text["english"]
+        return self.text["en_US"]
 
     def __add__(self, text: Union[str, "Text"]) -> "Text":
         new_text = copy.deepcopy(self)
         for lang in Text.SUPPORTED_LANGUAGES:
-            if type(text) == str:
+            if type(text) != Text:
                 new_text.text[lang] += text
             else:
                 new_text.text[lang] += text.text[lang]
@@ -40,27 +48,42 @@ class Text:
 
     def __iadd__(self, text: Union[str, "Text"]) -> "Text":
         for lang in Text.SUPPORTED_LANGUAGES:
-            if type(text) == str:
+            if type(text) != Text:
                 self.text[lang] += text
             else:
                 self.text[lang] += text.text[lang]
         return self
 
     def get(self, lang: str) -> str:
-        if lang not in Text.SUPPORTED_LANGUAGES:
-            raise RuntimeError(f'Unsupported language "{lang}"')
+        if lang not in Text.SUPPORTED_LANGUAGES or len(self.text[lang]) == 0:
+            if lang == "fr_FR":
+                return self.get("fr_US")
+            elif lang == "es_ES":
+                return self.get("es_US")
+
+            return self.text["en_US"]  # Default to english if not found
+            # raise RuntimeError(f'Unsupported language "{lang}"')
         return self.text[lang]
 
     def replace(self, old: str, new: Union[str, "Text"], count: int = -1) -> "Text":
-        new_text = copy.deepcopy(self)
+        text_with_replace = copy.deepcopy(self)
+
         for lang in Text.SUPPORTED_LANGUAGES:
-            if type(new) == str:
-                new_text.text[lang] = self.text[lang].replace(old, new, count)
+            full_text = self.text[lang]
+
+            if full_text == "":
+                full_text = self.text["en_US"]
+
+            if type(new) != Text:
+                text_with_replace.text[lang] = full_text.replace(old, new, count)
             else:
-                new_text.text[lang] = self.text[lang].replace(
-                    old, new.text[lang], count
-                )
-        return new_text
+                new_text = new.text[lang]
+
+                if new_text == "":
+                    new_text = new.text["en_US"]
+
+                text_with_replace.text[lang] = full_text.replace(old, new_text, count)
+        return text_with_replace
 
     def apply_text_color(self, color: str) -> "Text":
         new_text = copy.deepcopy(self)
@@ -113,8 +136,12 @@ def load_text_data() -> None:
         filename = f"{language}.yaml"
         filepath = TEXT_DATA_PATH / filename
 
-        with open(filepath, "r") as text_data_file:
+        with open(filepath, "r", encoding="utf-8") as text_data_file:
             text_data = yaml.safe_load(text_data_file)
+
+            if text_data is None or len(text_data) == 0:
+                continue
+
             for element in text_data:
                 name = element["name"]
                 if name not in text_table:
@@ -152,21 +179,21 @@ def make_text_listing(texts: list[Text]) -> Text:
     if len(texts) == 1:
         return texts[0]
 
-    english = ""
+    en_US = ""
     # TODO: Add rules for other languages when we get to them
     for i, text in enumerate(texts):
         # Change formatting depending on how many items we're listing
         if i == 0:
-            english += text.get("english")
+            en_US += text.get("en_US")
         elif i == len(texts) - 1 and len(texts) == 2:
-            english += " and " + text.get("english")
+            en_US += " and " + text.get("en_US")
         elif i == len(texts) - 1:
-            english += ", and " + text.get("english")
+            en_US += ", and " + text.get("en_US")
         else:
-            english += ", " + text.get("english")
+            en_US += ", " + text.get("en_US")
 
     listing_text = Text()
-    listing_text.text["english"] = english
+    listing_text.text["en_US"] = en_US
     return listing_text
 
 
@@ -180,11 +207,15 @@ def make_mutliple_textboxes(texts: list[Text]) -> Text:
     final_text = Text()
     for text in texts:
         for lang in Text.SUPPORTED_LANGUAGES:
+            if text.text[lang] == "":
+                lang = "en_US"
+
             text.text[lang] = text.text[lang].rstrip("\n")
             lines = text.text[lang].count("\n") + 1
             needed_linebreaks = -lines % 4 + 1
             text.text[lang] += "\n" * needed_linebreaks
         final_text += text
+
     return final_text
 
 
@@ -192,32 +223,38 @@ def break_lines(text: str) -> str:
     # Widths of all characters in pixels
     char_widths = {
         "a": 17,
+        "á": 17,  # \u00e1
         "b": 17,
         "c": 15,
         "d": 18,
         "e": 15,
+        "é": 15,  # \u00e9
         "f": 15,
         "g": 17,
         "h": 18,
         "i": 9,
+        "í": 9,  # \u00ed
         "j": 10,
         "k": 20,
         "l": 10,
         "m": 27,
         "n": 19,
         "o": 17,
+        "ó": 17,  # \u00f3
         "p": 18,
         "q": 18,
         "r": 15,
         "s": 13,
         "t": 12,
         "u": 18,
+        "ú": 18,  # \u00fa
         "v": 16,
         "w": 24,
         "x": 17,
         "y": 16,
         "z": 15,
         "A": 23,
+        "Á": 23,  # \u00c1
         "B": 22,
         "C": 23,
         "D": 24,

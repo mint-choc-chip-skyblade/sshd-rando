@@ -269,7 +269,6 @@
     - stage/F000/r0/l6/Item/0xFDEA
     - stage/F000/r0/l7/Item/0xFDFF
 
-
 - name: Upper Skyloft - Pumpkin Archery -- 600 Points
   original_item: Heart Piece
   types:
@@ -1625,7 +1624,7 @@
     - Chests
     - Goddess Chests
   Paths:
-   - stage/F023/r0/l0/TBox/76
+    - stage/F023/r0/l0/TBox/76
   cube_region: Lanayru Gorge
 
 # Sealed Grounds:
@@ -1676,7 +1675,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC1D
+    - stage/F401/r1/l0/Item/0xFC1D
 
 - name: Sealed Grounds - Spiral Stamina Fruit 2
   original_item: Stamina Fruit
@@ -1684,7 +1683,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC2C
+    - stage/F401/r1/l0/Item/0xFC2C
 
 - name: Sealed Grounds - Spiral Stamina Fruit 3
   original_item: Stamina Fruit
@@ -1692,7 +1691,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC1C
+    - stage/F401/r1/l0/Item/0xFC1C
 
 - name: Sealed Grounds - Spiral Stamina Fruit 4
   original_item: Stamina Fruit
@@ -1700,7 +1699,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC2B
+    - stage/F401/r1/l0/Item/0xFC2B
 
 - name: Sealed Grounds - Spiral Stamina Fruit 5
   original_item: Stamina Fruit
@@ -1708,7 +1707,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC1B
+    - stage/F401/r1/l0/Item/0xFC1B
 
 - name: Sealed Grounds - Spiral Stamina Fruit 6
   original_item: Stamina Fruit
@@ -1716,7 +1715,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC2A
+    - stage/F401/r1/l0/Item/0xFC2A
 
 - name: Sealed Grounds - Spiral Stamina Fruit 7
   original_item: Stamina Fruit
@@ -1724,7 +1723,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC29
+    - stage/F401/r1/l0/Item/0xFC29
 
 - name: Sealed Grounds - Spiral Stamina Fruit 8
   original_item: Stamina Fruit
@@ -1732,7 +1731,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC1A
+    - stage/F401/r1/l0/Item/0xFC1A
 
 - name: Sealed Grounds - Spiral Stamina Fruit 9
   original_item: Stamina Fruit
@@ -1740,7 +1739,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC28
+    - stage/F401/r1/l0/Item/0xFC28
 
 - name: Sealed Grounds - Spiral Stamina Fruit 10
   original_item: Stamina Fruit
@@ -1748,7 +1747,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC27
+    - stage/F401/r1/l0/Item/0xFC27
 
 - name: Sealed Grounds - Spiral Stamina Fruit 11
   original_item: Stamina Fruit
@@ -1756,7 +1755,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC19
+    - stage/F401/r1/l0/Item/0xFC19
 
 - name: Sealed Grounds - Spiral Stamina Fruit 12
   original_item: Stamina Fruit
@@ -1764,7 +1763,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC26
+    - stage/F401/r1/l0/Item/0xFC26
 
 - name: Sealed Grounds - Spiral Stamina Fruit 13
   original_item: Stamina Fruit
@@ -1772,7 +1771,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC25
+    - stage/F401/r1/l0/Item/0xFC25
 
 - name: Sealed Grounds - Spiral Stamina Fruit 14
   original_item: Stamina Fruit
@@ -1780,7 +1779,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC18
+    - stage/F401/r1/l0/Item/0xFC18
 
 - name: Sealed Grounds - Spiral Stamina Fruit 15
   original_item: Stamina Fruit
@@ -1788,7 +1787,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC24
+    - stage/F401/r1/l0/Item/0xFC24
 
 - name: Sealed Grounds - Spiral Stamina Fruit 16
   original_item: Stamina Fruit
@@ -1796,7 +1795,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC23
+    - stage/F401/r1/l0/Item/0xFC23
 
 - name: Sealed Grounds - Spiral Stamina Fruit 17
   original_item: Stamina Fruit
@@ -1804,7 +1803,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC2D
+    - stage/F401/r1/l0/Item/0xFC2D
 
 - name: Sealed Grounds - Spiral Stamina Fruit 18
   original_item: Stamina Fruit
@@ -1812,7 +1811,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC22
+    - stage/F401/r1/l0/Item/0xFC22
 
 - name: Sealed Grounds - Spiral Stamina Fruit 19
   original_item: Stamina Fruit
@@ -1820,7 +1819,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC17
+    - stage/F401/r1/l0/Item/0xFC17
 
 - name: Sealed Grounds - Spiral Stamina Fruit 20
   original_item: Stamina Fruit
@@ -1828,7 +1827,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC21
+    - stage/F401/r1/l0/Item/0xFC21
 
 - name: Sealed Grounds - Spiral Stamina Fruit 21
   original_item: Stamina Fruit
@@ -1836,7 +1835,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC20
+    - stage/F401/r1/l0/Item/0xFC20
 
 - name: Sealed Grounds - Spiral Stamina Fruit 22
   original_item: Stamina Fruit
@@ -1844,7 +1843,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC16
+    - stage/F401/r1/l0/Item/0xFC16
 
 - name: Sealed Grounds - Spiral Stamina Fruit 23
   original_item: Stamina Fruit
@@ -1852,7 +1851,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC1F
+    - stage/F401/r1/l0/Item/0xFC1F
 
 - name: Sealed Grounds - Spiral Stamina Fruit 24
   original_item: Stamina Fruit
@@ -1860,7 +1859,7 @@
     - Stamina Fruits
     - Custom Flag
   Paths:
-   - stage/F401/r1/l0/Item/0xFC1E
+    - stage/F401/r1/l0/Item/0xFC1E
 
 - name: Sealed Temple - Chest
   original_item: Revitalizing Potion
@@ -2007,7 +2006,7 @@
   Paths:
     - stage/F400/r0/l0/TgReact/0xFC8F
 
-- name: Hylia's Temple - Zelda's Blessing
+- name: Temple of Hylia - Zelda's Blessing
   original_item: Progressive Sword
   types:
     - NPC #TODO: this may need to be revisited as it doesnt really fit any other checks
@@ -2449,7 +2448,7 @@
   eventflowindex: 26
 
 - name: Deep Woods - Goddess Cube Near Goron
-  original_item: Deep Woods Goddess Cube Near Goron
+  original_item: Deep Woods Goddess Cube near Goron
   types:
     - Goddess Cube
   is_gui_excluded_location: False
@@ -2533,7 +2532,7 @@
     - Freestanding Rupees
     - Advanced Rupees
   Paths:
-   - stage/F102_1/r0/l0/Item/64
+    - stage/F102_1/r0/l0/Item/64
 
 - name: Floria Waterfall - North Rupee in underwater Grass
   original_item: Blue Rupee
@@ -2752,7 +2751,6 @@
 #     - Tadtones
 #   Paths:
 #     - stage/F103/r0/l2/Clef/12 # group number
-
 
 # - name: Flooded Faron Woods - Rupee 1
 #   original_item: Red Rupee
@@ -3979,7 +3977,6 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-
 # Bokoblin Base:
 
 - name: Bokoblin Base - Plats' Gift
@@ -3987,15 +3984,15 @@
   types:
     - NPC
   Paths:
-   - event/305-MountainF3/Plats' Gift
-   - oarc/F202/l1
+    - event/305-MountainF3/Plats' Gift
+    - oarc/F202/l1
 
 - name: Bokoblin Base - Chest near Bone Bridge
   original_item: Gust Bellows
   types:
     - Chests
   Paths:
-   - stage/F202/r2/l1/TBox/70
+    - stage/F202/r2/l1/TBox/70
 
 - name: Bokoblin Base - Bonk Hammer in Hut near Cliff
   original_item: Green Rupee
@@ -4018,14 +4015,14 @@
   types:
     - Chests
   Paths:
-   - stage/F202/r2/l1/TBox/66
+    - stage/F202/r2/l1/TBox/66
 
 - name: Bokoblin Base - Chest near Drawbridge
   original_item: Whip
   types:
     - Chests
   Paths:
-   - stage/F202/r2/l1/TBox/67
+    - stage/F202/r2/l1/TBox/67
 
 - name: Bokoblin Base - Bonk Campfire East of Earth Temple
   original_item: Heart
@@ -4040,46 +4037,46 @@
   types:
     - Chests
   Paths:
-   - stage/F202/r4/l1/TBox/68
+    - stage/F202/r4/l1/TBox/68
 
 - name: Bokoblin Base - Chest West of Earth Temple Entrance
   original_item: Bomb Bag
   types:
     - Chests
   Paths:
-   - stage/F202/r4/l1/TBox/69
+    - stage/F202/r4/l1/TBox/69
 
 - name: Bokoblin Base - First Chest in Volcano Summit
   original_item: Blue Rupee
   types:
     - Chests
   Paths:
-   - stage/F201_2/r0/l0/TBox/72
-   - stage/F201_1/r0/l4/TBox/72
+    - stage/F201_2/r0/l0/TBox/72
+    - stage/F201_1/r0/l4/TBox/72
 
 - name: Bokoblin Base - Raised Chest in Volcano Summit
   original_item: Progressive Sword
   types:
     - Chests
   Paths:
-   - stage/F201_2/r0/l0/TBox/73
-   - stage/F201_1/r0/l4/TBox/73
+    - stage/F201_2/r0/l0/TBox/73
+    - stage/F201_1/r0/l4/TBox/73
 
 - name: Bokoblin Base - Chest in Volcano Summit Alcove
   original_item: Progressive Pouch
   types:
     - Chests
   Paths:
-   - stage/F201_2/r0/l0/TBox/71
-   - stage/F201_1/r0/l4/TBox/71
+    - stage/F201_2/r0/l0/TBox/71
+    - stage/F201_1/r0/l4/TBox/71
 
 - name: Bokoblin Base - Fire Dragon's Reward
   original_item: Eldin Song of the Hero Part
   types:
     - NPC
   Paths:
-   - event/305-MountainF3/Give item after Eldin SotH CS
-   - oarc/F221/l0
+    - event/305-MountainF3/Give item after Eldin SotH CS
+    - oarc/F221/l0
 
 # Lanayru Mine:
 
@@ -6873,7 +6870,7 @@
   types:
     - Freestanding Items
   Paths:
-  - stage/D003_8/r0/l2/Item/61
+    - stage/D003_8/r0/l2/Item/61
 
 - name: Sky Keep - Sacred Power of Nayru
   original_item: Triforce of Wisdom
@@ -6881,7 +6878,7 @@
   types:
     - Freestanding Items
   Paths:
-  - stage/D003_8/r0/l1/Item/62
+    - stage/D003_8/r0/l1/Item/62
 
 - name: Sky Keep - Sacred Power of Farore
   original_item: Triforce of Courage
@@ -6889,11 +6886,11 @@
   types:
     - Freestanding Items
   Paths:
-  - stage/D003_8/r0/l3/Item/64
+    - stage/D003_8/r0/l3/Item/64
 
 # Silent Realms:
 
-- name: Skyloft Silent Realm - Stamina Fruit on Knight Academy Ledge
+- name: The Goddess's Silent Realm - Stamina Fruit on Knight Academy Ledge
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -6901,14 +6898,14 @@
   Paths:
     - stage/S000/r0/l2/Item/0xFC55
 
-- name: Skyloft Silent Realm - Collect all Tears Reward
+- name: The Goddess's Silent Realm - Collect all Tears Reward
   original_item: Stone of Trials
   types:
     - Silent Realms
   Paths:
     - stage/S000/r0/l2/WarpObj
 
-- name: Faron Silent Realm - Stamina Fruit on Vine Wall 1
+- name: Farore's Silent Realm - Stamina Fruit on Vine Wall 1
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -6917,7 +6914,7 @@
   Paths:
     - stage/S100/r0/l2/Item/0xFC9A
 
-- name: Faron Silent Realm - Stamina Fruit on Vine Wall 2
+- name: Farore's Silent Realm - Stamina Fruit on Vine Wall 2
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -6926,14 +6923,14 @@
   Paths:
     - stage/S100/r0/l2/Item/0xFC9B
 
-- name: Faron Silent Realm - Collect all Tears Reward
+- name: Farore's Silent Realm - Collect all Tears Reward
   original_item: Water Dragon's Scale
   types:
     - Silent Realms
   Paths:
     - stage/S100/r0/l2/WarpObj
 
-- name: Lanayru Silent Realm - Stamina Fruit on East LMF Vine Wall
+- name: Nayru's Silent Realm - Stamina Fruit on East LMF Vine Wall
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -6942,7 +6939,7 @@
   Paths:
     - stage/S300/r0/l2/Item/0xFC2D
 
-- name: Lanayru Silent Realm - Stamina Fruit on West LMF Vine Wall
+- name: Nayru's Silent Realm - Stamina Fruit on West LMF Vine Wall
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -6951,7 +6948,7 @@
   Paths:
     - stage/S300/r0/l2/Item/0xFC36
 
-- name: Lanayru Silent Realm - Stamina Fruit near Minecart
+- name: Nayru's Silent Realm - Stamina Fruit near Minecart
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -6960,7 +6957,7 @@
   Paths:
     - stage/S300/r0/l2/Item/0xFC30
 
-- name: Lanayru Silent Realm - Stamina Fruit between Watchers
+- name: Nayru's Silent Realm - Stamina Fruit between Watchers
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -6969,7 +6966,7 @@
   Paths:
     - stage/S300/r0/l2/Item/0xFC63
 
-- name: Lanayru Silent Realm - Stamina Fruit near Tree
+- name: Nayru's Silent Realm - Stamina Fruit near Tree
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -6978,14 +6975,14 @@
   Paths:
     - stage/S300/r0/l2/Item/0xFC31
 
-- name: Lanayru Silent Realm - Collect all Tears Reward
+- name: Nayru's Silent Realm - Collect all Tears Reward
   original_item: Clawshots
   types:
     - Silent Realms
   Paths:
     - stage/S300/r0/l2/WarpObj
 
-- name: Eldin Silent Realm - Stamina Fruit on First Slope
+- name: Din's Silent Realm - Stamina Fruit on First Slope
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -6994,7 +6991,7 @@
   Paths:
     - stage/S200/r4/l2/Item/0xFC05
 
-- name: Eldin Silent Realm - Stamina Fruit near First Bone Bridge
+- name: Din's Silent Realm - Stamina Fruit near First Bone Bridge
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -7003,7 +7000,7 @@
   Paths:
     - stage/S200/r2/l2/Item/0xFC40
 
-- name: Eldin Silent Realm - Stamina Fruit near Tear on Vines
+- name: Din's Silent Realm - Stamina Fruit near Tear on Vines
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -7012,7 +7009,7 @@
   Paths:
     - stage/S200/r2/l2/Item/0xFC4D
 
-- name: Eldin Silent Realm - Collect all Tears Reward
+- name: Din's Silent Realm - Collect all Tears Reward
   original_item: Fireshield Earrings
   types:
     - Silent Realms

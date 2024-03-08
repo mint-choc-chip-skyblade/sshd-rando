@@ -65,8 +65,8 @@ SCENE_NAME_TO_SCENE_INDEX = {
     "-Unused-": 19,
     "Sky Keep": 20,
     "The Sky": 21,
-    "Faron Silent Realm": 22,
-    "Eldin Silent Realm": 23,
-    "Lanayru Silent Realm": 24,
-    "Skyloft Silent Realm": 25,
+    "Farore's Silent Realm": 22,
+    "Din's Silent Realm": 23,
+    "Nayru's Silent Realm": 24,
+    "The Goddess's Silent Realm": 25,
 }

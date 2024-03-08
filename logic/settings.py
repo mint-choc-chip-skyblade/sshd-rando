@@ -153,7 +153,7 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
     if len(settings_info_map) == 0:
         print_progress_text("Loading setting data")
 
-        with open(SETTINGS_LIST_PATH, "r") as settings_file:
+        with open(SETTINGS_LIST_PATH, "r", encoding="utf-8") as settings_file:
             settings_yaml = yaml.safe_load(settings_file)
 
             for setting_node in settings_yaml:

@@ -200,7 +200,7 @@ pub fn next_stage_is_valid_at_night() -> bool {
             ) ||
             // Waterfall Cave
             &NEXT_STAGE_NAME[..5] == b"D000\0" ||
-            // Skyloft Silent Realm
+            // The Goddess's Silent Realm
             &NEXT_STAGE_NAME[..5] == b"S000\0")
         {
             return true;

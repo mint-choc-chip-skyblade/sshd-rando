@@ -1,13 +1,18 @@
 from constants.itemconstants import *
 from constants.patchconstants import (
     FLOW_ADD_VARIATIONS,
+    LANGUAGE_NAME_TO_FILE_ID,
     SWITCH_ADD_VARIATIONS,
     PARAM1_ALIASES,
     PARAM2_ALIASES,
     DEFAULT_FLOW_TYPE_LOOKUP,
 )
 
-from filepathconstants import EVENT_PATCHES_PATH, EVENT_FILES_PATH
+from filepathconstants import (
+    EVENT_FILE_PATH_TAILS,
+    EVENT_PATCHES_PATH,
+    VANILLA_EVENT_FILE_PATHS,
+)
 
 from collections import defaultdict
 from pathlib import Path
@@ -15,6 +20,7 @@ from gui.dialogs.dialog_header import (
     get_progress_value_from_range,
     update_progress_value,
 )
+from logic.settings import SettingGet
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 
 from sslib.msb import (
@@ -35,8 +41,10 @@ class EventPatchError(RuntimeError):
 
 
 class EventPatchHandler:
-    def __init__(self, event_output_path: Path):
-        self.event_output_path = event_output_path
+    def __init__(self, output_path: Path):
+        self.event_output_paths: dict[str, Path] = {
+            tail.name: output_path / tail for tail in EVENT_FILE_PATH_TAILS
+        }
         self.event_patches: dict[str, list[dict]] = yaml_load(EVENT_PATCHES_PATH)  # type: ignore
         self.check_patches: dict[str, list[tuple[str, int, int]]] = defaultdict(list)
         self.flow_label_to_index_mapping = {}
@@ -57,8 +65,13 @@ class EventPatchHandler:
             None,
         )
 
-    def handle_event_patches(self, onlyif_handler: ConditionalPatchHandler):
-        event_paths = tuple(Path(EVENT_FILES_PATH).glob("*.arc"))
+    def handle_event_patches(
+        self, onlyif_handler: ConditionalPatchHandler, language: SettingGet
+    ):
+        language_event_path = VANILLA_EVENT_FILE_PATHS[
+            LANGUAGE_NAME_TO_FILE_ID[language.value()]
+        ]
+        event_paths = tuple(language_event_path.glob("*.arc"))
         total_event_file_count = len(event_paths)
 
         for event_path in event_paths:
@@ -69,7 +82,10 @@ class EventPatchHandler:
             update_progress_value(progress_value)
 
             file_name = event_path.parts[-1]
-            modified_event_path = self.event_output_path / file_name
+            modified_event_path = (
+                self.event_output_paths[LANGUAGE_NAME_TO_FILE_ID[language.value()]]
+                / file_name
+            )
 
             event_arc = U8File.get_parsed_U8_from_path(event_path, False)
 
@@ -99,9 +115,14 @@ class EventPatchHandler:
                                 msbt=parsed_msbt,
                                 text_add=patch,
                                 msbt_file_name=msbt_file_name,
+                                lang=language_event_path.name,
                             )
                         elif patch["type"] == "textpatch":
-                            self.text_patch(msbt=parsed_msbt, text_patch=patch)
+                            self.text_patch(
+                                msbt=parsed_msbt,
+                                text_patch=patch,
+                                lang=language_event_path.name,
+                            )
 
                     event_arc.set_file_data(event_file_path, build_msb(parsed_msbt))
 
@@ -329,13 +350,13 @@ class EventPatchHandler:
         )
         msbf["FEN1"][entry_point_hash].append(new_entry)
 
-    def text_add(self, msbt: ParsedMsb, text_add: dict, msbt_file_name: str):
+    def text_add(self, msbt: ParsedMsb, text_add: dict, msbt_file_name: str, lang: str):
         text_index = len(msbt["TXT2"])
         self.text_label_to_index_mapping[text_add["name"]] = text_index
         msbt["TXT2"].append(
-            process_control_sequences(
-                get_text_data(text_add["name"]).get("english")
-            ).encode("utf-16be")
+            process_control_sequences(get_text_data(text_add["name"]).get(lang)).encode(
+                "utf-16be"
+            )
         )
 
         # Had to add a 0 to the end to satisfy BuildMSB's length requirement, if text adds end up breaking, this may be overwriting a param?
@@ -350,9 +371,9 @@ class EventPatchHandler:
         entry_point_hash = entrypoint_hash(entry_name, len(msbt["LBL1"]))
         msbt["LBL1"][entry_point_hash].append(new_entry)
 
-    def text_patch(self, msbt: ParsedMsb, text_patch: dict):
+    def text_patch(self, msbt: ParsedMsb, text_patch: dict, lang: str):
         msbt["TXT2"][text_patch["index"]] = process_control_sequences(
-            get_text_data(text_patch["name"]).get("english")
+            get_text_data(text_patch["name"]).get(lang)
         ).encode("utf-16be")
 
         # Allow patching other textbox data

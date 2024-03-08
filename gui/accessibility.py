@@ -59,9 +59,9 @@ class Accessibility:
                 )
 
         if not self.custom_theme_path.is_file():
-            with open(self.default_theme_path) as f:
+            with open(self.default_theme_path, encoding="utf-8") as f:
                 default_theme_json = json.load(f)
-            with open(self.custom_theme_path, "w") as f:
+            with open(self.custom_theme_path, "w", encoding="utf-8") as f:
                 json.dump(default_theme_json, f)
 
         self.ui.customize_theme_button.clicked.connect(self.open_custom_theme_picker)
@@ -126,10 +126,10 @@ class Accessibility:
         write_config_to_file(CONFIG_PATH, self.config)
 
         if self.config.use_custom_theme:
-            with open(self.custom_theme_path) as f:
+            with open(self.custom_theme_path, encoding="utf-8") as f:
                 theme = json.load(f)
         else:
-            with open(self.default_theme_path) as f:
+            with open(self.default_theme_path, encoding="utf-8") as f:
                 theme = json.load(f)
 
         qdarktheme.setup_theme(
@@ -162,7 +162,7 @@ class Accessibility:
         custom_theme_picker.exec()
 
     def update_custom_theme(self, theme: dict):
-        with open(self.custom_theme_path, "w") as f:
+        with open(self.custom_theme_path, "w", encoding="utf-8") as f:
             json.dump(theme, f)
 
         self.update_theme()

@@ -1,4 +1,3 @@
-
 - name: Volcano Entrance
   hint_region: Eldin Volcano
   exits:
@@ -66,7 +65,7 @@
     Eldin Volcano - Underground Rupee in Cliff 14: Mogma_Mitts
     Eldin Volcano - Underground Rupee in Cliff 15: Mogma_Mitts
     # Removed as extra collision on Eldin layer 1 makes this digspot *very* buggy
-    # 
+    #
     # Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1: Mogma_Mitts
     # Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2: Mogma_Mitts
     # Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3: Mogma_Mitts
@@ -86,7 +85,7 @@
   hint_region: Eldin Volcano
   exits:
     Volcano Ascent Statue: Nothing
-    Eldin Silent Realm: Goddesss_Harp and Dins_Power
+    Din's Silent Realm: Goddesss_Harp and Dins_Power
 
     # Beetle can be used to scare the boko away but that's really not obvious
     Outside Thrill Digger Cave: Bow or Slingshot or logic_stuttersprint
@@ -174,7 +173,7 @@
     Eldin Volcano - Gossip Stone next to Earth Temple: Digging_Mitts
     Eldin Volcano - Goddess Cube West of Earth Temple Entrance: Digging_Mitts and Goddess_Sword
     Eldin Volcano - Goddess Cube East of Earth Temple Entrance: Goddess_Sword
-  
+
 - name: Outside Upper Eldin Cave
   hint_region: Eldin Volcano
   exits:
@@ -242,7 +241,6 @@
   locations:
     Lower Eldin Cave - Gossip Stone: Nothing
 
-
 # MOGMA TURF
 - name: Mogma Turf Dive
   hint_region: Mogma Turf
@@ -293,17 +291,15 @@
     Past Mogma Turf: Nothing
     Mogma Turf Pyrup Maze: Bomb_Bag # Can't use hook beetle or whip
 
-
-- name: Eldin Silent Realm
-  hint_region: Eldin Silent Realm
+- name: Din's Silent Realm
+  hint_region: Din's Silent Realm
   exits:
     Volcano Ascent: Nothing
   locations:
-    Eldin Silent Realm - Collect all Tears Reward: Nothing
-    Eldin Silent Realm - Stamina Fruit on First Slope: Nothing
-    Eldin Silent Realm - Stamina Fruit near First Bone Bridge: Nothing
-    Eldin Silent Realm - Stamina Fruit near Tear on Vines: Nothing
-
+    Din's Silent Realm - Collect all Tears Reward: Nothing
+    Din's Silent Realm - Stamina Fruit on First Slope: Nothing
+    Din's Silent Realm - Stamina Fruit near First Bone Bridge: Nothing
+    Din's Silent Realm - Stamina Fruit near Tear on Vines: Nothing
 
 # VOLCANO SUMMIT
 - name: Volcano Summit
@@ -347,7 +343,6 @@
     Volcano Summit - Blow Torch East of Fire Sanctuary: Gust_Bellows
     Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary: Slingshot
     Volcano Summit - Goddess Cube near Fire Sanctuary Entrance: Clawshots and Goddess_Sword
-
 
 # BOKOBLIN BASE
 - name: Bokoblin Base Prison
@@ -414,7 +409,7 @@
     Bokoblin Base - Bonk Campfire East of Earth Temple: Nothing
     Bokoblin Base - Chest East of Earth Temple Entrance: Nothing
     Bokoblin Base - Chest West of Earth Temple Entrance: (Slingshot or Bow or Bomb_Bag or Goddess_Sword) and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
-    
+
 - name: Bokoblin Base Outside Upper Eldin Cave
   hint_region: Bokoblin Base
   exits:
@@ -445,16 +440,15 @@
     Bokoblin Base - First Chest in Volcano Summit: Fireshield_Earrings
     Bokoblin Base - Raised Chest in Volcano Summit: Fireshield_Earrings
     Bokoblin Base - Chest in Volcano Summit Alcove: Fireshield_Earrings and Sword
-    
+
 - name: Fire Dragon's Lair
   hint_region: Bokoblin Base
-  events: 
+  events:
     Beaten Boko Base: Bow or Beetle
   exits:
     Bokoblin Base Summit: Nothing
   locations:
     Bokoblin Base - Fire Dragon's Reward: "'Beaten_Boko_Base'"
-
 
 # Bird Staues in Eldin
 - name: Volcano Entrance Statue
