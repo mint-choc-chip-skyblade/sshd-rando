@@ -485,7 +485,17 @@ def set_random_starting_statues(
                 world.starting_bird_statues[pillar] = starting_statue
 
             try:
-                validate_world(world, worlds, None, item_pool)
+                # If we're only also randomizing starting spawn, skip world validation until then
+                # TODO: Fix this better
+                if (
+                    world.setting("random_starting_spawn") == "vanilla"
+                    or world.setting("randomize_door_entrances") == "on"
+                    or world.setting("randomize_interior_entrances") == "on"
+                    or world.setting("randomize_overworld_entrances") == "on"
+                    or world.setting("randomize_dungeon_entrances") == "on"
+                    or world.setting("randomize_trial_gate_entrances") == "on"
+                ):
+                    validate_world(world, worlds, None, item_pool)
                 return
             except EntranceShuffleError as e:
                 retries -= 1
