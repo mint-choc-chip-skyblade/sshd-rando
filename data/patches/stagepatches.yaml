@@ -2601,6 +2601,15 @@ F200: # Eldin main area
     destlayer: 0
     room: 4
     objtype: OBJ
+  
+  - name: Rotate Farther Torch TgReact # So that items don't fall through the floor
+    type: objpatch
+    id: 0xFC6B
+    objtype: SOBJ
+    layer: 0
+    room: 4
+    object:
+      angley: 17000
 
 F201_1: # Inside volcano
   - name: Layer override
