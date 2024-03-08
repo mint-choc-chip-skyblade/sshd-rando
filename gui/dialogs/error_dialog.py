@@ -43,7 +43,7 @@ def error_from_str(exception: str, traceback: str):
     error_text += """
                     <br><br>If you are unsure how to fix this problem, please copy the
                     below error message and report the issue in the
-                    <a href=\"https://discord.com/invite/zkm6yncD\">Discord server</a>
+                    <a href=\"https://discord.gg/nNbpfH5jyG\">Discord server</a>
                     or create an issue on
                     <a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\">GitHub</a>
     """
