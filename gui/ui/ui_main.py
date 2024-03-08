@@ -567,6 +567,13 @@ class Ui_main_window(object):
 
         self.verticalLayout.addWidget(self.setting_starry_skies)
 
+        self.line_2 = QFrame(self.tweaks_group_box)
+        self.line_2.setObjectName(u"line_2")
+        self.line_2.setFrameShape(QFrame.HLine)
+        self.line_2.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout.addWidget(self.line_2)
+
         self.language_label = QLabel(self.tweaks_group_box)
         self.language_label.setObjectName(u"language_label")
 

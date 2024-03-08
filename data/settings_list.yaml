@@ -704,20 +704,20 @@
     - Spanish (US)
     # - Taiwanese
   options:
-    # - chinese:                         "The randomized game will use the Chinese language files. Status: Broken, the game's text will have large section in English and some text may be cut off the screen."
-    - dutch: "The randomized game will use the Dutch language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
-    - english_gb: "The randomized game will use the British English language files. Status: Complete, the game's text will be displayed correctly."
-    - english_us: "The randomized game will use the American English language files. Status: Complete, the game's text will be displayed correctly."
-    - french_fr: "The randomized game will use the French language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
-    - french_us: "The randomized game will use the French language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
-    - german: "The randomized game will use the German language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
-    - italian: "The randomized game will use the Italian language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
-    # - japanese:                        "The randomized game will use the Japanese language files. Status: Broken, the game's text will have large section in English and some text may be cut off the screen."
-    # - korean:                          "The randomized game will use the Korean language files. Status: Broken, the game's text will have large section in English and some text may be cut off the screen."
-    # - russian:                         "The randomized game will use the Russian language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
-    - spanish_es: "The randomized game will use the Spanish language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
-    - spanish_us: "The randomized game will use the Spanish language files. Status: Incomplete, the game's text will work but some text may be displayed in English."
-    # - taiwanese:                       "The randomized game will use the Taiwanese language files. Status: Broken, the game's text will have large section in English and some text may be cut off the screen."
+    # - chinese: "Status: Broken. The randomized game will use the Chinese language files."
+    - dutch: "Status: Incomplete. The randomized game will use the Dutch language files."
+    - english_gb: "Status: Complete. The randomized game will use the British English language files."
+    - english_us: "Status: Complete. The randomized game will use the American English language files."
+    - french_fr: "Status: Incomplete. The randomized game will use the French language files."
+    - french_us: "Status: Incomplete. The randomized game will use the French language files."
+    - german: "Status: Incomplete. The randomized game will use the German language files."
+    - italian: "Status: Incomplete. The randomized game will use the Italian language files."
+    # - japanese: "Status: Broken. The randomized game will use the Japanese language files."
+    # - korean: "Status: Broken. The randomized game will use the Korean language files."
+    # - russian: "Status: Broken. The randomized game will use the Russian language files."
+    - spanish_es: "Status: Incomplete. The randomized game will use the Spanish language files."
+    - spanish_us: "Status: Incomplete. The randomized game will use the Spanish language files."
+    # - taiwanese: "Status: Broken. The randomized game will use the Taiwanese language files."
 
 - name: tunic_swap
   type: Cosmetic
