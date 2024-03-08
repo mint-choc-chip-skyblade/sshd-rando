@@ -110,7 +110,7 @@ DEFAULT_SETTINGS = {
     "mixed_entrance_pools": [],
 }
 
-if platform.system() == "Windows":
+if platform.system() != "Windows":
     DEFAULT_SETTINGS["font_size"] = 13
 
 
