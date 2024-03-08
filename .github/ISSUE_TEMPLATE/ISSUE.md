@@ -3,13 +3,13 @@
 - [ ] Question/Support
 - [ ] Suggestion/Feedback
 
-## Description
-...
+## Issue Description
+
 
 ## Meta Information (if relevant)
-- SSHDR version     : 0.x.x
+- SSHDR version     : 0.0.0
 - OS Name           : Windows/MacOS/Linux
-- OS major version  : 11
+- OS major version  : 0
 
 ## Screenshots/External Links
 
