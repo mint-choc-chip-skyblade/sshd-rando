@@ -1,3 +1,4 @@
+import shutil
 from util.arguments import get_program_args
 from gui.dialogs.dialog_header import (
     get_progress_value_from_range,
@@ -760,258 +761,249 @@ def patch_and_write_stage(
     # add arcs
     add_arcs = set(stage_oarc_add.get((stage, layer), []))
 
-    if layer == 0 or remove_arcs or add_arcs:
-        patches = stage_patches.get(stage, [])
+    patches = stage_patches.get(stage, [])
 
-        print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
-        object_patches = []
-        stage_u8 = None
+    print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
+    object_patches = []
+    stage_u8 = None
 
-        # don't remove any arcs that are also set to be added
-        remove_arcs = remove_arcs - add_arcs
+    # don't remove any arcs that are also set to be added
+    remove_arcs = remove_arcs - add_arcs
 
-        if len(remove_arcs) > 0:
+    if len(remove_arcs) > 0:
+        stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+
+        for arc in remove_arcs:
+            stage_u8.delete_file(f"oarc/{arc}.arc")
+
+    if len(add_arcs) > 0:
+        if stage_u8 is None:
             stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
 
-            for arc in remove_arcs:
-                stage_u8.delete_file(f"oarc/{arc}.arc")
+        for arc in add_arcs:
+            arc_name = f"{arc}.arc"
+            oarc_path = OARC_CACHE_PATH / arc_name
 
-        if len(add_arcs) > 0:
+            if oarc_path.exists():
+                stage_u8.add_file_data(f"oarc/{arc_name}", oarc_path.read_bytes())
+            else:
+                raise Exception(
+                    f"Arc '{arc_name}' cannot be found in oarccache. Try adding the arc to extracts.yaml."
+                )
+
+    if layer == 0:
+        # handle layer overrides
+        layer_override_patches = list(
+            filter(lambda patch: patch["type"] == "layeroverride", patches)
+        )
+
+        if len(layer_override_patches) > 1:
+            raise Exception(
+                f"Multiple layeroverrides found. {len(layer_override_patches)} layer overrides found for stage {stage}, expected 1."
+            )
+        elif len(layer_override_patches) == 1:
             if stage_u8 is None:
                 stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
 
-            for arc in add_arcs:
-                arc_name = f"{arc}.arc"
-                oarc_path = OARC_CACHE_PATH / arc_name
+            stage_u8_data = stage_u8.get_file_data("dat/stage.bzs")
 
-                if oarc_path.exists():
-                    stage_u8.add_file_data(f"oarc/{arc_name}", oarc_path.read_bytes())
-                else:
-                    raise Exception(
-                        f"Arc '{arc_name}' cannot be found in oarccache. Try adding the arc to extracts.yaml."
-                    )
+            if not stage_u8_data:
+                raise TypeError("Expected type bytes but found None.")
 
-        if layer == 0:
-            # handle layer overrides
-            layer_override_patches = list(
-                filter(lambda patch: patch["type"] == "layeroverride", patches)
+            stage_bzs = parse_bzs(stage_u8_data)
+
+            layer_override(bzs=stage_bzs, patch=layer_override_patches[0])
+            stage_u8.set_file_data("dat/stage.bzs", build_bzs(stage_bzs))
+
+        for obj_patch in filter(
+            lambda patch: patch["type"]
+            in ["objadd", "objdelete", "objpatch", "objmove"],
+            patches,
+        ):
+            object_patches.append(obj_patch)
+
+        if len(object_patches) + len(check_patches[stage]) > 0:
+            if stage_u8 is None:
+                stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+
+            room_path_matches = (
+                ROOM_ARC_REGEX.match(path) for path in stage_u8.get_all_paths()
             )
 
-            if len(layer_override_patches) > 1:
-                raise Exception(
-                    f"Multiple layeroverrides found. {len(layer_override_patches)} layer overrides found for stage {stage}, expected 1."
-                )
-            elif len(layer_override_patches) == 1:
-                if stage_u8 is None:
-                    stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+            room_path_matches = (path for path in room_path_matches if path is not None)
 
-                stage_u8_data = stage_u8.get_file_data("dat/stage.bzs")
+            for room_path_match in room_path_matches:
+                roomid = int(room_path_match.group("roomID"))
 
-                if not stage_u8_data:
-                    raise TypeError("Expected type bytes but found None.")
-
-                stage_bzs = parse_bzs(stage_u8_data)
-
-                layer_override(bzs=stage_bzs, patch=layer_override_patches[0])
-                stage_u8.set_file_data("dat/stage.bzs", build_bzs(stage_bzs))
-
-            for obj_patch in filter(
-                lambda patch: patch["type"]
-                in ["objadd", "objdelete", "objpatch", "objmove"],
-                patches,
-            ):
-                object_patches.append(obj_patch)
-
-            if len(object_patches) + len(check_patches[stage]) > 0:
-                if stage_u8 is None:
-                    stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
-
-                room_path_matches = (
-                    ROOM_ARC_REGEX.match(path) for path in stage_u8.get_all_paths()
-                )
-
-                room_path_matches = (
-                    path for path in room_path_matches if path is not None
-                )
-
-                for room_path_match in room_path_matches:
-                    roomid = int(room_path_match.group("roomID"))
-
-                    patches_for_current_room = list(
-                        filter(
-                            lambda patch: patch.get("room") == roomid,
-                            object_patches,
-                        )
+                patches_for_current_room = list(
+                    filter(
+                        lambda patch: patch.get("room") == roomid,
+                        object_patches,
                     )
+                )
 
-                    check_patches_for_current_room = list(
-                        filter(
-                            lambda patch: patch[0] == roomid,
-                            check_patches[stage],
-                        )
+                check_patches_for_current_room = list(
+                    filter(
+                        lambda patch: patch[0] == roomid,
+                        check_patches[stage],
                     )
+                )
 
-                    if (
-                        len(patches_for_current_room)
-                        + len(check_patches_for_current_room)
-                        > 0
-                    ):
-                        room_u8 = stage_u8.get_parsed_U8_from_this_U8(
-                            path=room_path_match.group(0)
-                        )
-                        room_u8_data = room_u8.get_file_data("dat/room.bzs")
+                if (
+                    len(patches_for_current_room) + len(check_patches_for_current_room)
+                    > 0
+                ):
+                    room_u8 = stage_u8.get_parsed_U8_from_this_U8(
+                        path=room_path_match.group(0)
+                    )
+                    room_u8_data = room_u8.get_file_data("dat/room.bzs")
 
-                        if not room_u8_data:
-                            raise TypeError("Expected type bytes but found None.")
+                    if not room_u8_data:
+                        raise TypeError("Expected type bytes but found None.")
 
-                        room_bzs = parse_bzs(room_u8_data)
+                    room_bzs = parse_bzs(room_u8_data)
 
-                        nextid = get_highest_object_id(bzs=room_bzs) + 1
+                    nextid = get_highest_object_id(bzs=room_bzs) + 1
 
-                        for patch in patches_for_current_room:
-                            if patch["type"] == "objadd":
-                                nextid += object_add(
-                                    bzs=room_bzs,
-                                    object_add=patch,
-                                    nextid=nextid,
-                                )
-                            elif patch["type"] == "objdelete":
-                                object_delete(bzs=room_bzs, object_delete=patch)
-                            elif patch["type"] == "objpatch":
-                                object_patch(bzs=room_bzs, object_patch=patch)
-                            elif patch["type"] == "objmove":
-                                nextid += object_move(
-                                    bzs=room_bzs,
-                                    object_move=patch,
-                                    nextid=nextid,
-                                )
-                            else:
-                                raise Exception(
-                                    f"Unsupported patch type ({patch['type']}) found.\nPatch: {patch}"
-                                )
+                    for patch in patches_for_current_room:
+                        if patch["type"] == "objadd":
+                            nextid += object_add(
+                                bzs=room_bzs,
+                                object_add=patch,
+                                nextid=nextid,
+                            )
+                        elif patch["type"] == "objdelete":
+                            object_delete(bzs=room_bzs, object_delete=patch)
+                        elif patch["type"] == "objpatch":
+                            object_patch(bzs=room_bzs, object_patch=patch)
+                        elif patch["type"] == "objmove":
+                            nextid += object_move(
+                                bzs=room_bzs,
+                                object_move=patch,
+                                nextid=nextid,
+                            )
+                        else:
+                            raise Exception(
+                                f"Unsupported patch type ({patch['type']}) found.\nPatch: {patch}"
+                            )
 
-                        for (
-                            room,
-                            object_name,
-                            layer,
-                            objectid,
-                            itemid,
-                            trapid,
-                            custom_flag,
-                            original_itemid,
-                            tbox_subtype,
-                        ) in check_patches_for_current_room:
-                            if object_name == "TBox":
-                                patch_tbox(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    objectid,
-                                    trapid,
-                                    tbox_subtype,
-                                )
-                            elif object_name == "Item":
-                                patch_freestanding_item(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    objectid,
-                                    trapid,
-                                    custom_flag,
-                                    original_itemid,
-                                )
-                            elif object_name == "NpcKyuE":
-                                patch_bucha(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    objectid,
-                                    trapid,
-                                )
-                            elif object_name == "chest":
-                                patch_closet(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    objectid,
-                                    trapid,
-                                    room,
-                                    stage,
-                                )
-                            elif object_name == "EBc":
-                                patch_ac_key_boko(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    objectid,
-                                    trapid,
-                                )
-                            elif object_name == "HeartCo":
-                                patch_heart_container(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    trapid,
-                                )
-                            elif object_name == "Chandel":
-                                patch_chandelier_item(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    trapid,
-                                )
-                            elif object_name == "Soil":
-                                patch_digspot_item(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    objectid,
-                                    trapid,
-                                )
-                            elif object_name == "SwSB":
-                                patch_goddess_crest(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    objectid,
-                                    trapid,
-                                )
-                            elif object_name == "MssbTag":
-                                patch_squirrels(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    objectid,
-                                    trapid,
-                                )
-                            elif object_name == "WarpObj":
-                                patch_trial_gate(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    trapid,
-                                )
-                            elif object_name == "TgReact":
-                                patch_tgreact(
-                                    room_bzs["LAY "][f"l{layer}"],
-                                    itemid,
-                                    objectid,
-                                    trapid,
-                                    custom_flag,
-                                )
-                            # elif object_name == "Clef":
-                            #     patch_tadtone_group(
-                            #         room_bzs["LAY "][f"l{layer}"],
-                            #         itemid,
-                            #         objectid,
-                            #         trapid,
-                            #     )
-                            else:
-                                print(
-                                    f"Object name: {object_name} not currently supported for check patching."
-                                )
+                    for (
+                        room,
+                        object_name,
+                        layer,
+                        objectid,
+                        itemid,
+                        trapid,
+                        custom_flag,
+                        original_itemid,
+                        tbox_subtype,
+                    ) in check_patches_for_current_room:
+                        if object_name == "TBox":
+                            patch_tbox(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                objectid,
+                                trapid,
+                                tbox_subtype,
+                            )
+                        elif object_name == "Item":
+                            patch_freestanding_item(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                objectid,
+                                trapid,
+                                custom_flag,
+                                original_itemid,
+                            )
+                        elif object_name == "NpcKyuE":
+                            patch_bucha(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                objectid,
+                                trapid,
+                            )
+                        elif object_name == "chest":
+                            patch_closet(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                objectid,
+                                trapid,
+                                room,
+                                stage,
+                            )
+                        elif object_name == "EBc":
+                            patch_ac_key_boko(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                objectid,
+                                trapid,
+                            )
+                        elif object_name == "HeartCo":
+                            patch_heart_container(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                trapid,
+                            )
+                        elif object_name == "Chandel":
+                            patch_chandelier_item(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                trapid,
+                            )
+                        elif object_name == "Soil":
+                            patch_digspot_item(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                objectid,
+                                trapid,
+                            )
+                        elif object_name == "SwSB":
+                            patch_goddess_crest(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                objectid,
+                                trapid,
+                            )
+                        elif object_name == "MssbTag":
+                            patch_squirrels(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                objectid,
+                                trapid,
+                            )
+                        elif object_name == "WarpObj":
+                            patch_trial_gate(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                trapid,
+                            )
+                        elif object_name == "TgReact":
+                            patch_tgreact(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                objectid,
+                                trapid,
+                                custom_flag,
+                            )
+                        # elif object_name == "Clef":
+                        #     patch_tadtone_group(
+                        #         room_bzs["LAY "][f"l{layer}"],
+                        #         itemid,
+                        #         objectid,
+                        #         trapid,
+                        #     )
+                        else:
+                            print(
+                                f"Object name: {object_name} not currently supported for check patching."
+                            )
 
-                        room_u8.set_file_data("dat/room.bzs", build_bzs(room_bzs))
-                        stage_u8.set_file_data(
-                            room_path_match.group(0), room_u8.build_U8()
-                        )
+                    room_u8.set_file_data("dat/room.bzs", build_bzs(room_bzs))
+                    stage_u8.set_file_data(room_path_match.group(0), room_u8.build_U8())
 
-        if stage_u8 is not None:
-            write_bytes_create_dirs(
-                modified_stage_path, stage_u8.build_and_compress_U8()
-            )
-
-        # uncomment if you want to copy over all files for any reason
-        # write_bytes_create_dirs(modifiedStagePath, stagePath.read_bytes())
+    if stage_u8 is not None:
+        write_bytes_create_dirs(modified_stage_path, stage_u8.build_and_compress_U8())
+    else:
+        write_bytes_create_dirs(modified_stage_path, stage_path.read_bytes())
 
 
 class StagePatchHandler:
@@ -1062,9 +1054,7 @@ class StagePatchHandler:
             )
 
             # TODO: remove race condition - https://docs.python.org/3/library/multiprocessing.html#exchanging-objects-between-processes
-            total_stage_count = len(
-                tuple(Path(STAGE_FILES_PATH).rglob("*_stg_l*.arc.LZ"))
-            )
+            total_stage_count = len(tuple(STAGE_FILES_PATH.rglob("*_stg_l*.arc.LZ")))
 
             # imap *can* be slower so only use it with the gui (where we need a progress output)
             if not args.nogui:
@@ -1072,9 +1062,7 @@ class StagePatchHandler:
                     patch_stage_func,
                     [
                         stage_path
-                        for stage_path in Path(STAGE_FILES_PATH).rglob(
-                            "*_stg_l*.arc.LZ"
-                        )
+                        for stage_path in STAGE_FILES_PATH.rglob("*_stg_l*.arc.LZ")
                     ],
                 ):
                     stages_patched_queue.put(1)
@@ -1088,9 +1076,7 @@ class StagePatchHandler:
                     patch_stage_func,
                     [
                         stage_path
-                        for stage_path in Path(STAGE_FILES_PATH).rglob(
-                            "*_stg_l*.arc.LZ"
-                        )
+                        for stage_path in STAGE_FILES_PATH.rglob("*_stg_l*.arc.LZ")
                     ],
                 )
 
