@@ -168,15 +168,11 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                 location.is_goal_location
                 or (
                     item_at_location.is_dungeon_small_key
-                    and world.setting("small_keys").is_any_of(
-                        "vanilla", "own_dungeon", "own_region"
-                    )
+                    and world.setting("small_keys").is_any_of("vanilla", "own_dungeon")
                 )
                 or (
                     item_at_location.is_boss_key
-                    and world.setting("boss_keys").is_any_of(
-                        "vanilla", "own_dungeon", "own_region"
-                    )
+                    and world.setting("boss_keys").is_any_of("vanilla", "own_dungeon")
                 )
             ):
                 junk_locations.add(location)
