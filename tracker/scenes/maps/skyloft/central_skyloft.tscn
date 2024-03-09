@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0l8hs3v6v010"]
+
+[ext_resource type="Texture2D" uid="uid://s4i8tgqcyybw" path="res://assets/images/skyloft.png" id="2_prvu8"]
+
+[node name="CentralSkyloft" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -1066.0
+offset_right = 945.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_prvu8")
+expand_mode = 4
+stretch_mode = 4

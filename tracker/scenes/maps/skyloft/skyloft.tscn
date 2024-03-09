@@ -1,13 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmugiqudyuot6"]
+[gd_scene load_steps=6 format=3 uid="uid://cmugiqudyuot6"]
 
-[ext_resource type="Texture2D" uid="uid://bidhkqygbohc" path="res://assets/images/skyloft.png" id="1_vyvj7"]
+[ext_resource type="Texture2D" uid="uid://s4i8tgqcyybw" path="res://assets/images/skyloft.png" id="1_vyvj7"]
 [ext_resource type="Script" path="res://scenes/maps/Map.gd" id="2_5nb6n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1yhb"]
+radius = 203.01
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1iwce"]
+radius = 112.018
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uh1aw"]
+radius = 131.244
 
 [node name="Skyloft" type="Node"]
 
-[node name="Map" type="CanvasLayer" parent="."]
+[node name="UpperSkyloft" type="CanvasLayer" parent="."]
 script = ExtResource("2_5nb6n")
-parent_scene = "res://scenes/maps/world.tscn"
+child_scene = "res://scenes/maps/skyloft/upper_skyloft.tscn"
+
+[node name="Area2D" type="Area2D" parent="UpperSkyloft"]
+position = Vector2(492, 208)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperSkyloft/Area2D"]
+shape = SubResource("CircleShape2D_i1yhb")
+metadata/_edit_lock_ = true
+
+[node name="CentralSkyloft" type="CanvasLayer" parent="."]
+script = ExtResource("2_5nb6n")
+child_scene = "res://scenes/maps/skyloft/central_skyloft.tscn"
+
+[node name="Area2D" type="Area2D" parent="CentralSkyloft"]
+position = Vector2(602, 486)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CentralSkyloft/Area2D"]
+shape = SubResource("CircleShape2D_1iwce")
+
+[node name="LowerSkyloft" type="CanvasLayer" parent="."]
+script = ExtResource("2_5nb6n")
+child_scene = "res://scenes/maps/skyloft/lower_skyloft.tscn"
+
+[node name="Area2D" type="Area2D" parent="LowerSkyloft"]
+position = Vector2(832, 571)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerSkyloft/Area2D"]
+shape = SubResource("CircleShape2D_uh1aw")
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
