@@ -509,7 +509,7 @@
 
 - name: Progressive Bug Net
   standard: Progressive Bug Net
-  pretty: a <r<Progressive Bug Net>>
+  pretty: a <Progressive Bug Net>
   cryptic: a <r<fun net>>
   plurality: Singular
 
