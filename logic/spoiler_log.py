@@ -33,7 +33,10 @@ def log_settings(log, config: Config, worlds: list[World]) -> None:
     # Settings
     log.write(f"\n# Settings\n")
     log.write(f"seed: {config.seed}\n")
-    log.write(f"plandomizer: {config.use_plandomizer}\n")
+    log.write(
+        f"generate_spoiler_log: {'true' if config.generate_spoiler_log else 'false'}\n"
+    )
+    log.write(f"plandomizer: {'true' if config.use_plandomizer else 'false'}\n")
     log.write(
         f"plandomizer_file: {config.plandomizer_file if config.plandomizer_file else 'null'}\n"
     )
@@ -93,7 +96,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
 
         # Print random starting statues if there are any
         if worlds_with_random_statues := [w for w in worlds if w.starting_bird_statues]:
-            spoiler_log.write(f"\nStarting Bird Statues\n")
+            spoiler_log.write(f"\nStarting Bird Statues:\n")
             for world in worlds_with_random_statues:
                 spoiler_log.write(f"    {world}:\n")
                 for pillar, statue in world.starting_bird_statues.items():

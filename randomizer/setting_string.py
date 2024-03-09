@@ -45,7 +45,6 @@ def setting_string_from_config(
     setting_string += str(int(config.generate_spoiler_log)).encode("ascii")
     setting_string += b"\0"
     setting_string += config.seed.encode("ascii")
-    setting_string += b"\0"
 
     for world_index, world_settings in enumerate(config.settings):
         bits_writer = PackedBitsWriter()
