@@ -5,6 +5,7 @@ from constants.itemconstants import (
     ITEM_STORYFLAGS,
     ITEM_DUNGEONFLAGS,
     ITEM_COUNTS,
+    PROGRESSIVE_POUCH,
 )
 from filepathconstants import (
     ASM_ADDITIONS_DIFFS_PATH,
@@ -383,6 +384,8 @@ class ASMPatchHandler:
             if start_count_data := ITEM_COUNTS.get(item_name, False):
                 counter, amount, maximum = start_count_data
                 final_count = min(maximum, count)
+                if item_name == PROGRESSIVE_POUCH:
+                    final_count -= 1
                 start_counts[counter] += amount * final_count
 
         for starting_statue in world.starting_bird_statues.values():
