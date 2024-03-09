@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://mno21xt0us21"]
+
+[ext_resource type="Script" path="res://scenes/maps/Map.gd" id="1_fxe40"]
+[ext_resource type="Texture2D" uid="uid://s4i8tgqcyybw" path="res://assets/images/skyloft.png" id="2_t0vfo"]
+
+[node name="UpperSkyloft" type="Node"]
+
+[node name="Map" type="CanvasLayer" parent="."]
+script = ExtResource("1_fxe40")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 249.0
+offset_top = -142.0
+offset_right = 401.0
+offset_bottom = 603.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t0vfo")
+expand_mode = 4
+stretch_mode = 4
