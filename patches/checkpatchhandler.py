@@ -138,8 +138,24 @@ def determine_check_patches(
                         world.setting("chest_type_matches_contents").value()
                         == "all_contents"
                     ):
-                        if item.is_major_item or item.is_game_winning_item:
-                            tbox_subtype = 0
+                        if item.is_major_item:
+                            if len(item.chain_locations) > 0:
+                                if (
+                                    len(
+                                        [
+                                            loc
+                                            for loc in item.chain_locations
+                                            if loc in location_table
+                                            and location_table[loc].progression
+                                        ]
+                                    )
+                                    > 0
+                                ):
+                                    tbox_subtype = 0
+                                else:
+                                    tbox_subtype = 1
+                            else:
+                                tbox_subtype = 0
                         else:
                             tbox_subtype = 1
 
