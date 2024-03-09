@@ -5,7 +5,7 @@ from constants.itemconstants import (
     ITEM_STORYFLAGS,
     ITEM_DUNGEONFLAGS,
     ITEM_COUNTS,
-    PROGRESSIVE_POUCH
+    PROGRESSIVE_POUCH,
 )
 from filepathconstants import (
     ASM_ADDITIONS_DIFFS_PATH,
