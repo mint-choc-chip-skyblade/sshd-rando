@@ -458,6 +458,7 @@ ITEM_COUNTS = {
     BOMB_BAG: (0x1F3, 10, 1),
     PROGRESSIVE_BOW: (0x1F2, 20, 1),
     PROGRESSIVE_SLINGSHOT: (0x1ED, 20, 1),
+    KEY_PIECE: (0x1F9, 1, 5),
     LC_SMALL_KEY: (9, 1, 2),
     SV_SMALL_KEY: (11, 1, 2),
     LMF_SMALL_KEY: (17, 1, 1),
