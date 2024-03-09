@@ -449,7 +449,7 @@ ITEM_DUNGEONFLAGS = {
     FS_BOSS_KEY: ("Fire Sanctuary", 12),
 }
 
-# first value of tuple is the counter flag or dungeon scene index for small keys
+# first value of tuple is the counter flag (or dungeon scene index for small keys)
 # second is the amount to add
 # third is the maximum of the item
 ITEM_COUNTS = {
@@ -459,6 +459,8 @@ ITEM_COUNTS = {
     PROGRESSIVE_BOW: (0x1F2, 20, 1),
     PROGRESSIVE_SLINGSHOT: (0x1ED, 20, 1),
     KEY_PIECE: (0x1F9, 1, 5),
+    PROGRESSIVE_POUCH: (0x1EA, 1, 5),
+    EXTRA_WALLET: (0x1FC, 1, 3),
     LC_SMALL_KEY: (9, 1, 2),
     SV_SMALL_KEY: (11, 1, 2),
     LMF_SMALL_KEY: (17, 1, 1),
