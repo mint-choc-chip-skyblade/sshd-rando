@@ -340,7 +340,7 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
                     f"Objcopy call {objcopy_command} failed with error code: {result}"
                 )
 
-            with open(binary_file_name, "rb", encoding="utf-8") as f:
+            with open(binary_file_name, "rb") as f:
                 binary_data = f.read()
 
             data_bytes = list(struct.unpack("B" * len(binary_data), binary_data))
