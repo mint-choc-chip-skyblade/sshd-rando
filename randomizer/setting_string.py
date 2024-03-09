@@ -45,7 +45,6 @@ def setting_string_from_config(
     setting_string += str(int(config.generate_spoiler_log)).encode("ascii")
     setting_string += b"\0"
     setting_string += config.seed.encode("ascii")
-    setting_string += b"\0"
 
     for world_index, world_settings in enumerate(config.settings):
         bits_writer = PackedBitsWriter()
@@ -122,9 +121,6 @@ def update_config_from_setting_string(
 
     setting_string = base64.b64decode(encoded_setting_string)
     header, *worlds = setting_string.split(b"\0" + ":W".encode("ascii"))
-
-    # Remove extra null terminator from header
-    header = header[:-1]
 
     version, spoiler_log, seed = (
         value.decode("ascii") for value in header.split(b"\0", 2)
