@@ -168,15 +168,11 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                 location.is_goal_location
                 or (
                     item_at_location.is_dungeon_small_key
-                    and world.setting("small_keys").is_any_of(
-                        "vanilla", "own_dungeon", "own_region"
-                    )
+                    and world.setting("small_keys").is_any_of("vanilla", "own_dungeon")
                 )
                 or (
                     item_at_location.is_boss_key
-                    and world.setting("boss_keys").is_any_of(
-                        "vanilla", "own_dungeon", "own_region"
-                    )
+                    and world.setting("boss_keys").is_any_of("vanilla", "own_dungeon")
                 )
             ):
                 junk_locations.add(location)
@@ -296,12 +292,19 @@ def generate_barren_hint_locations(world: World, hint_locations: list) -> None:
     barren_pool = []
     barren_weights = []
     for region, locations in world.barren_regions.items():
+        barren_locs = [
+            loc
+            for loc in locations
+            if not loc.is_hinted and loc.progression and not loc.has_known_vanilla_item
+        ]
+
         # Skip over any regions that we're already hinting at with
         # the impa or song hints
-        if not any([loc for loc in locations if not loc.is_hinted]):
+        if not any(barren_locs):
             continue
+
         barren_pool.append(region)
-        barren_weights.append(math.sqrt(len(locations)))
+        barren_weights.append(math.sqrt(len(barren_locs)))
 
     for _ in range(world.setting("barren_hints").value_as_number()):
         if not barren_pool:
