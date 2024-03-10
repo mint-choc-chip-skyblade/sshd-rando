@@ -30,6 +30,16 @@ window/size/viewport_height=720
 
 run/main_run_args="-- --seed=TEST"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "blue",
+"res://scenes/": "orange",
+"res://scenes/checks/": "red",
+"res://scenes/maps/": "yellow",
+"res://systems/": "gray"
+}
+
 [input]
 
 interact={

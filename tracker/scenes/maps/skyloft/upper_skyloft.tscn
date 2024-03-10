@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://mno21xt0us21"]
+[gd_scene load_steps=6 format=3 uid="uid://mno21xt0us21"]
 
 [ext_resource type="Script" path="res://scenes/maps/Map.gd" id="1_fxe40"]
 [ext_resource type="Texture2D" uid="uid://s4i8tgqcyybw" path="res://assets/images/skyloft.png" id="2_t0vfo"]
+[ext_resource type="PackedScene" uid="uid://bqwnbo8tr4x1i" path="res://scenes/checks/check.tscn" id="3_uumte"]
+[ext_resource type="Texture2D" uid="uid://u7wyy6uehn18" path="res://assets/images/inventory-items/goddess-sword.png" id="4_4cu28"]
+[ext_resource type="Texture2D" uid="uid://telwm7611dyu" path="res://assets/images/b-wheel-items/bombs.png" id="5_njve6"]
 
 [node name="UpperSkyloft" type="Node"]
 
@@ -21,3 +24,21 @@ grow_vertical = 2
 texture = ExtResource("2_t0vfo")
 expand_mode = 4
 stretch_mode = 4
+
+[node name="GoddessSword" parent="." instance=ExtResource("3_uumte")]
+offset_left = 762.0
+offset_top = 58.0
+offset_right = 794.0
+offset_bottom = 91.0
+key = "goddess_sword"
+label = "Goddess Sword"
+texture = ExtResource("4_4cu28")
+
+[node name="StaminaFruit" parent="." instance=ExtResource("3_uumte")]
+offset_left = 730.0
+offset_top = 528.0
+offset_right = 762.0
+offset_bottom = 561.0
+key = "stamina_fruit"
+label = "Stamina Fruit"
+texture = ExtResource("5_njve6")

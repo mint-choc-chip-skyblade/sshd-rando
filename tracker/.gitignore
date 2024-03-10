@@ -1,4 +1,5 @@
 # General ignors
+.DS_Store
 .vscode/
 
 # Godot 4+ specific ignores
