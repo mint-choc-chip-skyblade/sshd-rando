@@ -1,7 +1,6 @@
-import appdirs
 import os
 import platform
-
+import sys
 from pathlib import Path
 
 TITLE_ID = "01002DA013484000"
@@ -14,12 +13,9 @@ try:
     RANDO_ROOT_PATH = Path(_MEIPASS)
 
     if platform.system() == "Darwin":
-        userdata_path = appdirs.user_data_dir(
-            "Skyward Sword HD Randomizer", "SSHD Rando"
-        )
-
-        if not os.path.isdir(userdata_path):
-            os.mkdir(userdata_path)
+        # Slicing with index -4 to remove the 'filename.app/Contents/MacOS/' packing in the Mac executable
+        # MacOS needs the absolute path of the local directory to work correctly in the build
+        userdata_path = os.path.sep.join(sys.argv[0].split(os.path.sep)[:-4])
 
 except ImportError:
     RANDO_ROOT_PATH = Path(os.path.dirname(os.path.realpath(__file__)))
