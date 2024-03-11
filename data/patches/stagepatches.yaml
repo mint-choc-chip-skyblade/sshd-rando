@@ -1614,6 +1614,14 @@ F100: # Faron Woods
       angley: 33000
       anglez: 0
       entrance_id: 100
+  - name: Move Item on Tree down
+    type: objpatch
+    id: 0xA100
+    room: 0
+    layer: 0
+    objtype: OBJ
+    object:
+      posy: 1570
 
 F100_1: # Great Tree
   - name: Layer override
