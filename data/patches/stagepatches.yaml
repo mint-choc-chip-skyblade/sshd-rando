@@ -3996,7 +3996,6 @@ F303: # Lanayru Caves
     type: objmove
     ids:
       - 0xFC5C # Golo
-      - 0xFC5D # Trigger
     layer: 1
     destlayer: 0
     room: 0
@@ -4030,6 +4029,12 @@ F303: # Lanayru Caves
     layer: 0
     room: 0
     objtype: STAG
+  - name: Delete Golo Trigger
+    type: objdelete
+    id: 0xFC5D
+    layer: 1
+    room: 0
+    objtype: OBJ
 
 F400: # Behind the Temple
   - name: Layer override

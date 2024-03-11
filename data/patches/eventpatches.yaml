@@ -2635,7 +2635,11 @@
     index: 108
     cases:
       - 123
-      - 128
+      - Show Attention Mark
+  - name: Show Attention Mark
+    type: attentionmark
+    flow:
+      next: 128
 
 406-TrolleyRace:
   - name: Always allow Minecart minigame
