@@ -113,9 +113,7 @@ class Main(QMainWindow):
         RandomizationThread.cancelled = True
 
     def open_output_folder(self):
-        QDesktopServices.openUrl(
-            QUrl(self.config.output_dir.as_posix(), QUrl.ParsingMode.TolerantMode)
-        )
+        QDesktopServices.openUrl(QUrl.fromLocalFile(self.config.output_dir.as_posix()))
 
     def check_output_dir(self) -> bool:
         output_dir = self.config.output_dir
