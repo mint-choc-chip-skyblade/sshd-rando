@@ -870,9 +870,11 @@ F000: # Skyloft
       name: Item
 
 F001r:
-  - name: Fi Text in Academy at night
+  - name: Remove nighttime NPCs
     type: objdelete
-    id: 0xFC80
+    ids:
+      - 0xFC80 # Fi text in Academy at night
+      - 0xFC7C # Pipit at night
     layer: 4
     room: 0
     objtype: OBJ
@@ -2601,7 +2603,7 @@ F200: # Eldin main area
     destlayer: 0
     room: 4
     objtype: OBJ
-  
+
   - name: Rotate Farther Torch TgReact # So that items don't fall through the floor
     type: objpatch
     id: 0xFC6B
