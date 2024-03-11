@@ -262,7 +262,7 @@ class ASMPatchHandler:
                 ASM_PATCHES_DIFFS_PATH,
                 self.main_nso_output_path,
                 MAIN_NSO_OFFSETS,
-                extra_diffs_path=temp_dir_name
+                extra_diffs_path=temp_dir_name,
             )
 
         temp_dir = tempfile.TemporaryDirectory()

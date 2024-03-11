@@ -41,7 +41,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn prevent_minigame_death(final_health: i32) -> i32 {
+pub fn prevent_minigame_death(final_health: i32) -> (u32, i32) {
     unsafe {
         let mut new_final_health = final_health;
         // Set final health to 1 if we're in the thrill digger or bug heaven minigames
@@ -50,14 +50,12 @@ pub fn prevent_minigame_death(final_health: i32) -> i32 {
         }
 
         // Replaced Code
-        if flag::check_storyflag(166) == 0 {
-            asm!("mov w0, 1");
-        } else {
-            asm!("mov w0, 0");
+        let mut restricted_pouch: u32 = 0;
+        if flag::check_storyflag(166) == 1 {
+            restricted_pouch = 1;
         }
-        asm!("tst w0, #0xFFFF");
 
-        return new_final_health;
+        return (restricted_pouch, new_final_health);
     }
 }
 
