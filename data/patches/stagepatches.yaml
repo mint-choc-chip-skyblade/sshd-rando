@@ -412,22 +412,6 @@ F000: # Skyloft
     objtype: OBJ
     object:
       trigstoryfid: 944 # bow
-  - name: Untrigger Fledge on academy after bow layer 4
-    type: objpatch
-    id: 0xFDCE
-    layer: 4
-    room: 0
-    objtype: OBJ
-    object:
-      untrigstoryfid: 944 # bow
-  - name: Untrigger Fledge on academy after bow layer 6
-    type: objpatch
-    id: 0xFDD2
-    layer: 6
-    room: 0
-    objtype: OBJ
-    object:
-      untrigstoryfid: 944 # bow
 
   # Pipit
   - name: Always spawn Pipit at night l5
