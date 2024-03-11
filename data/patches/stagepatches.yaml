@@ -242,6 +242,7 @@ F000: # Skyloft
       - 0xFDC6 # Parrow before Wryna
       - 0xFDF8 # Parrow cutscene
       - 0xFDD5 # Trial gate
+      - 0xFDCE # Fledge outside Upper Academy doors
     layer: 4
     room: 0
     objtype: OBJ
@@ -267,6 +268,7 @@ F000: # Skyloft
       - 0xFDCD # Orielle before Wryna
       - 0xFDCC # Parrow before Wryna
       - 0xFDE9 # Parrow cutscene
+      - 0xFDD2 # Fledge outside Upper Academy doors
     layer: 6
     room: 0
     objtype: OBJ
