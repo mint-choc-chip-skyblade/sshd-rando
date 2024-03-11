@@ -186,7 +186,7 @@ Sceneflags:
     - open_lmf == open:
         - 30 # Watched LMF Rises Cutscene
         - 31 # Watched LMF rising Cutscene
-    - open_lmf == main_node:
+    - open_lmf == main_node or open_lmf == open:
         - 100 # Lightning node active
         - 101 # Fire node active
         - 102 # Water node active
