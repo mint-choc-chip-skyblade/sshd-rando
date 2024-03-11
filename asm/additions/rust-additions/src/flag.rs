@@ -647,6 +647,9 @@ pub fn handle_startflags() {
             }
         }
 
+        // amiibo
+        (*FILE_MGR).game_options |= 1;
+
         ((*(*STORYFLAG_MGR).funcs).do_commit)(STORYFLAG_MGR);
         ((*(*ITEMFLAG_MGR).funcs).do_commit)(ITEMFLAG_MGR);
 
