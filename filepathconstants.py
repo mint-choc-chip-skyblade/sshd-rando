@@ -1,39 +1,45 @@
+import appdirs
 import os
 import platform
-import sys
+
 from pathlib import Path
 
 TITLE_ID = "01002DA013484000"
 
-userdata_path = Path(".").resolve()
+userdata_path = "."
 
 try:
     from sys import _MEIPASS  # @IgnoreException
 
     RANDO_ROOT_PATH = Path(_MEIPASS)
 
-    if (platform.system() == "Darwin") and getattr(sys, 'frozen', False):
-        userdata_path = Path(f"{os.path.dirname(sys.executable)}/../../..").resolve()
-        # Slicing with index -4 to remove the 'filename.app/Contents/MacOS/' packing in the Mac executable
-        # MacOS needs the absolute path of the local directory to work correctly in the build
-
 except ImportError:
     RANDO_ROOT_PATH = Path(os.path.dirname(os.path.realpath(__file__)))
 
-SSHD_EXTRACT_PATH = userdata_path / "sshd_extract"
+if platform.system() == "Darwin":
+    userdata_path = appdirs.user_data_dir(
+        "Skyward Sword HD Randomizer", "SSHD Rando"
+    )
+
+    if not os.path.isdir(userdata_path):
+        os.mkdir(userdata_path)
+    
+    print(f"You are running from source on macOS. Currently, macOS builds cannot reliably access data from the local directory, so, to keep things consistent, your data, such as all default paths and config, can be found at {userdata_path}")
+
+SSHD_EXTRACT_PATH = Path(userdata_path) / "sshd_extract"
 EXEFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "exefs"
 ROMFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "romfs"
 
 # Outputs
-DEFAULT_OUTPUT_PATH = userdata_path / "sshdr_output"
-SPOILER_LOGS_PATH = userdata_path / "logs"
+DEFAULT_OUTPUT_PATH = Path(userdata_path) / "sshdr_output"
+SPOILER_LOGS_PATH = Path(userdata_path) / "logs"
 
 # Config
-CONFIG_PATH = userdata_path / "config.yaml"
-PREFERENCES_PATH = userdata_path / "preferences.yaml"
+CONFIG_PATH = Path(userdata_path) / "config.yaml"
+PREFERENCES_PATH = Path(userdata_path) / "preferences.yaml"
 SETTINGS_LIST_PATH = RANDO_ROOT_PATH / "data" / "settings_list.yaml"
-PLANDO_PATH = userdata_path / "plandomizers"
-PRESETS_PATH = userdata_path / "presets"
+PLANDO_PATH = Path(userdata_path) / "plandomizers"
+PRESETS_PATH = Path(userdata_path) / "presets"
 BASE_PRESETS_PATH = RANDO_ROOT_PATH / "data" / "presets"
 
 # GUI Stuff
@@ -46,13 +52,13 @@ HIGH_CONTRAST_THEME_PATH = (
 READABILITY_THEME_PATH = (
     RANDO_ROOT_PATH / "gui" / "custom_themes" / "readability_theme.json"
 )
-CUSTOM_THEME_PATH = userdata_path / "custom_theme.json"
+CUSTOM_THEME_PATH = Path(userdata_path) / "custom_theme.json"
 
 RANDO_FONT_PATH = RANDO_ROOT_PATH / "assets" / "Figtree-Regular.ttf"
 DYSLEXIC_FONT_PATH = RANDO_ROOT_PATH / "assets" / "OpenDyslexic3-Regular.ttf"
 
 # Stage and event stuff
-OARC_CACHE_PATH = userdata_path / "oarccache"
+OARC_CACHE_PATH = Path(userdata_path) / "oarccache"
 
 STAGE_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "stagepatches.yaml"
 EVENT_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "eventpatches.yaml"
