@@ -17,14 +17,14 @@ except ImportError:
     RANDO_ROOT_PATH = Path(os.path.dirname(os.path.realpath(__file__)))
 
 if platform.system() == "Darwin":
-    userdata_path = appdirs.user_data_dir(
-        "Skyward Sword HD Randomizer", "SSHD Rando"
-    )
+    userdata_path = appdirs.user_data_dir("Skyward Sword HD Randomizer", "SSHD Rando")
 
     if not os.path.isdir(userdata_path):
         os.mkdir(userdata_path)
-    
-    print(f"You are running from source on macOS. Currently, macOS builds cannot reliably access data from the local directory, so, to keep things consistent, your data, such as all default paths and config, can be found at {userdata_path}")
+
+    print(
+        f"You are running from source on macOS. Currently, macOS builds cannot reliably access data from the local directory, so, to keep things consistent, your data, such as all default paths and config, can be found at {userdata_path}"
+    )
 
 SSHD_EXTRACT_PATH = Path(userdata_path) / "sshd_extract"
 EXEFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "exefs"
