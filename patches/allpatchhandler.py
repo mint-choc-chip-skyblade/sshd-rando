@@ -84,4 +84,3 @@ class AllPatchHandler:
         self.asm_patch_handler.patch_all_asm(self.world, self.conditional_patch_handler)
 
         print_progress_text("Patching completed")
-        update_progress_value(100)

@@ -20,6 +20,12 @@ def get_program_args():
         help="Generates a debug log when running the rando.",
     )
 
+    parser.add_argument(
+        "--dryrun",
+        action="store_true",
+        help="Skip generating patch files.",
+    )
+
     # parser.print_help()
     args = parser.parse_args()
 
