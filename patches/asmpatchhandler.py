@@ -254,15 +254,16 @@ class ASMPatchHandler:
                 ASM_PATCHES_DIFFS_PATH / damage_multiplier_diff_file_path, world
             )
 
-        print_progress_text("Applying asm patches")
-        self.patch_asm(
-            world,
-            onlyif_handler,
-            MAIN_NSO_FILE_PATH,
-            ASM_PATCHES_DIFFS_PATH,
-            self.main_nso_output_path,
-            MAIN_NSO_OFFSETS,
-        )
+            print_progress_text("Applying asm patches")
+            self.patch_asm(
+                world,
+                onlyif_handler,
+                MAIN_NSO_FILE_PATH,
+                ASM_PATCHES_DIFFS_PATH,
+                self.main_nso_output_path,
+                MAIN_NSO_OFFSETS,
+                extra_diffs_path=temp_dir_name
+            )
 
         temp_dir = tempfile.TemporaryDirectory()
 
