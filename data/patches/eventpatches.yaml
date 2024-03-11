@@ -40,7 +40,7 @@
       type: type3
       next: -1
       param3: 72 # custom command: give trap
-  
+
   - name: Patch Rupoor for Traps
     type: flowpatch
     index: 112
@@ -414,7 +414,7 @@
       param3: 7 # use result from previous check
     cases:
       - Check Eldin SotH 1 # true
-      - -1                 # false
+      - -1 # false
   - name: Check Eldin SotH 1
     type: flowadd
     flow:
@@ -432,7 +432,7 @@
       param3: 7 # use result from previous check
     cases:
       - Check Lanayru SotH 1 # true
-      - -1                   # false
+      - -1 # false
   - name: Check Lanayru SotH 1
     type: flowadd
     flow:
@@ -450,7 +450,7 @@
       param3: 7 # use result from previous check
     cases:
       - Give full SotH # true
-      - -1             # false
+      - -1 # false
   - name: Give full SotH
     type: flowadd
     flow:
@@ -585,7 +585,7 @@
   # - name: Set GoT flags on MS
   #   type: flowpatch
   #   index: 74
-  #   flow: 
+  #   flow:
   #     next: Set AC flag for GoT on required sword
   # - name: Set AC flag for GoT on required sword
   #   type: setstoryflag
@@ -734,7 +734,7 @@
       - 21 # Vanilla
       - 25 # Vanilla
       - 13 # Skip amiibo
-  
+
   # Main Fi menu
   - name: Show custom Fi text
     type: flowpatch
@@ -773,10 +773,10 @@
     index: 7
     flow: {}
     cases:
-     - Display Fi Hints Text 0 # Hints
-     - Check Fi Note 0 Found # Notes (other hints already found)
-     - Display Required Dungeons
-     - -1 # Never Mind
+      - Display Fi Hints Text 0 # Hints
+      - Check Fi Note 0 Found # Notes (other hints already found)
+      - Display Required Dungeons
+      - -1 # Never Mind
 
   # Fi Objective
   - name: Display Fi Objective Text
@@ -826,8 +826,8 @@
     index: 168
     flow: {}
     cases:
-     - 167
-     - 165
+      - 167
+      - 165
 
 101-Shop:
   - name: Remove pouch bipping after item seller
@@ -2200,6 +2200,15 @@
     index: 281
     flow:
       next: -1
+  - name: Patch in attentionmark to Nackle before bokos
+    type: flowpatch
+    index: 15
+    flow:
+      next: Add attentionmark to Nackle before bokos
+  - name: Add attentionmark to Nackle before bokos
+    type: attentionmark
+    flow:
+      next: -1
 
 301-MountainD1:
   - name: remove ghirahim text before scaldera
@@ -2716,7 +2725,7 @@
   #     next: Set sf 1
   # - name: Set sf 1
   #   type: setsceneflag
-  #   flow: 
+  #   flow:
   #     sceneindex: 10
   #     setsceneflag: 28 # groose cs watched
   #     next: Set sf 2
@@ -2816,7 +2825,7 @@
       param3: 7 # use result from previous check
     cases:
       - 122 # true, continue with bomb as drawing quest
-      - 224  # false, go to random select
+      - 224 # false, go to random select
   - name: To Bomb Bag Check II # when you do have bow
     type: flowpatch
     index: 259
@@ -2839,7 +2848,7 @@
       param3: 7 # use result from previous check
     cases:
       - 116 # true, continue with bomb as drawing quest
-      - 261  # false, go to random select
+      - 261 # false, go to random select
 
 599-Demo:
   - name: Skip setting sword itemflag
