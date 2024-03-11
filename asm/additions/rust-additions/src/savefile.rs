@@ -32,9 +32,11 @@ pub struct FileMgr {
     pub _0:             [u8; 36],
     pub amiibo_pos:     math::Vec3f,
     pub amiibo_stage:   u64,
-    pub _1:             [u8; 9534],
+    pub _1:             [u8; 8740],
+    pub game_options:   u8,
+    pub _2:             [u8; 793],
     pub prevent_commit: bool,
-    pub _2:             u8,
+    pub _3:             u8,
 }
 assert_eq_size!([u8; 52488], FileMgr);
 
