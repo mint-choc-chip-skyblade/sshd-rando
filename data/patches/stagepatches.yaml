@@ -861,7 +861,14 @@ F001r:
     ids:
       - 0xFC80 # Fi text in Academy at night
       - 0xFC7C # Pipit at night
+      - 0xFC7E # Fledge's Gift NpcTke
     layer: 4
+    room: 0
+    objtype: OBJ
+  - name: Remove Daytime Fledge's Gift NpcTke
+    type: objdelete
+    id: 0xFC78
+    layer: 3
     room: 0
     objtype: OBJ
   - name: Move Fledge closer to Link's room at night
@@ -873,16 +880,7 @@ F001r:
     object:
       posx: 850
       posz: -1700
-  - name: Fledge Pouch Check Storyflag at night
-    type: objpatch
-    id: 0xFC7E
-    layer: 4
-    room: 0
-    objtype: OBJ
-    object:
-      posx: 850
-      posz: -1700
-      untrigstoryfid: 923
+      talk_behaviour: 11401
   - name: Move Fledge closer to Link's room at day
     type: objpatch
     id: 0xFC77
@@ -892,16 +890,7 @@ F001r:
     object:
       posx: 850
       posz: -1700
-  - name: Fledge Pouch Check Storyflag at day
-    type: objpatch
-    id: 0xFC78
-    layer: 3
-    room: 0
-    objtype: OBJ
-    object:
-      posx: 850
-      posz: -1700
-      untrigstoryfid: 923
+      talk_behaviour: 11401
   - name: Fledge trains without Wryna
     type: objpatch
     id: 0xFC10

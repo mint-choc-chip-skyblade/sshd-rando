@@ -1286,6 +1286,27 @@
       param3: 9
 
 114-Friend:
+  - name: Patch Fledge's Gift
+    type: flowpatch
+    index: 14
+    flow:
+      next: Check if given item
+  - name: Check if given item
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 923 # Gotten Fledge's Gift
+    cases:
+      - 48 # Continue as normal
+      - Show Attention Mark
+  - name: Show Attention Mark
+    type: attentionmark
+    flow:
+      next: Set Fledge's Gift flag
+  - name: Set Fledge's Gift flag
+    type: setstoryflag
+    flow:
+      setstoryflag: 923 # Gotten Fledge's Gift
+      next: 15
   - name: Skip Fledge camera panning 1
     type: flowpatch
     index: 15
