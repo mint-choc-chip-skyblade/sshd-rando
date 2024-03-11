@@ -6801,6 +6801,7 @@
   hint: sometimes
   Paths:
     - stage/D201_1/r11/l0/TBox/71
+    - stage/D201/r11/l0/TBox/71 # so it is visible from staircase room
 
 - name: Fire Sanctuary - Plats' Chest
   original_item: Heart Piece

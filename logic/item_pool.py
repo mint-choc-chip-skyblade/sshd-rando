@@ -64,7 +64,10 @@ def generate_starting_item_pool(world: "World"):
     starting_sword_setting = world.setting_map.settings.get("starting_sword")
 
     if starting_sword_setting:
-        starting_items[PROGRESSIVE_SWORD] = starting_sword_setting.current_option_index
+        starting_sword_value = starting_sword_setting.value
+        starting_items[PROGRESSIVE_SWORD] = starting_sword_setting.info.options.index(
+            starting_sword_value
+        )
 
     # Deal with starting tablets
     starting_tablet_count = world.setting(

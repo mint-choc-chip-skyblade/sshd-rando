@@ -642,7 +642,7 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
             // Item id
             match dAcItem__determineFinalItemid((actor_param1 & 0x1FF).into()) {
                 // Sword + Sailcloth | Harp | Digging Mitts | Scattershot | Beedle's Insect Cage | Sot | Songs
-                9..=15 | 16 | 56 | 105 | 159 | 180 | 186..=193 => y_offset = 20.0,
+                9..=15 | 16 | 56 | 105 | 159 | 166 | 180 | 186..=193 => y_offset = 20.0,
                 // Bow | Iron Bow | Sacred Bow | Sea Chart | Wooden Shield | Hylian Shield
                 19 | 90 | 91 | 98 | 116 | 125 => y_offset = 23.0,
                 // Clawshots | Spiral Charge | Mogma Mitts | Life Tree Seedling
@@ -670,7 +670,7 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 | 126       // Revitalizing Potion
                 | 153       // Empty Bottle
                 | 161..=164 // Treasures
-                | 166..=170 // Treasures
+                | 167..=170 // Treasures
                 | 172..=174 // Treasures
                 | 178       // Ruby Tablet
                 | 198       // Life Tree Fruit
