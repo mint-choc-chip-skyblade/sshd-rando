@@ -56,8 +56,8 @@
   cryptic:
 
 - name: Great Tree
-  standard: Árbol gigante
-  pretty: el <Árbol gigante>
+  standard: Interior del Árbol gigante
+  pretty: el <Interior del Árbol gigante>
   cryptic:
 
 - name: Flooded Faron Woods
