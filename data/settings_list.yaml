@@ -656,7 +656,8 @@
     - "Off"
     - "On"
   options:
-    - "off/on": "If enabled, the air meter will deplete twice as fast when underwater."
+    - "off": "The air meter will deplete at the normal rate when underwater."
+    - "on": "The air meter will deplete at twice the normal rate when underwater like in Hero Mode."
 
 - name: spawn_hearts
   default_option: "on"
