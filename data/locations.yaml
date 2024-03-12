@@ -6055,7 +6055,7 @@
   original_item: Green Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Advanced Rupees
     - Custom Flag
   Paths:
     - stage/D300_1/r9/l0/Item/0xFC07
@@ -6064,7 +6064,7 @@
   original_item: Green Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Advanced Rupees
     - Custom Flag
   Paths:
     - stage/D300_1/r9/l0/Item/0xFC01
