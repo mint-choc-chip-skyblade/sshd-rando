@@ -10,7 +10,9 @@ Goddess White Sword: count(4, Progressive_Sword)
 
 Master Sword: count(5, Progressive_Sword)
 
-True MasterSword: count(6, Progressive_Sword)
+True Master Sword: count(6, Progressive_Sword)
+
+Gate of Time Sword Requirement: (Goddess_Sword and got_sword_requirement == goddess_sword) or (Goddess_Longsword and got_sword_requirement == goddess_longsword) or (Goddess_White_Sword and got_sword_requirement == goddess_white_sword) or (Master_Sword and got_sword_requirement == master_sword) or (True_Master_Sword and got_sword_requirement == true_master_sword)
 
 Beetle: count(1, Progressive_Beetle)
 

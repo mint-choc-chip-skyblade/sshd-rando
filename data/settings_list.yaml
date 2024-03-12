@@ -639,6 +639,22 @@
     - vanilla_orientation: "Boss Keys will start in their original orientations when you try to open boss doors."
     - random_orientation: "Boss Keys will start in a random orientation when you try to open boss doors."
 
+- name: got_sword_requirement
+  default_option: true_master_sword
+  pretty_name: Gate of Time Sword Requirement
+  pretty_options:
+    - Goddess Sword
+    - Goddess Longsword
+    - Goddess White Sword
+    - Master Sword
+    - True Master Sword
+  options:
+    - goddess_sword: "You will need at least Goddess Sword in order to open the Gate of Time."
+    - goddess_longsword: "You will need at least Goddess Longsword in order to open the Gate of Time."
+    - goddess_white_sword: "You will need at least Goddess White Sword in order to open the Gate of Time."
+    - master_sword: "You will need at least Master Sword in order to open the Gate of Time."
+    - true_master_sword: "You will need at least True Master Sword in order to open the Gate of Time."
+
 - name: upgraded_skyward_strike
   default_option: "on"
   pretty_name: Upgraded Skyward Strike

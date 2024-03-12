@@ -49,6 +49,7 @@ World 1:
   required_dungeons: random
   empty_unrequired_dungeons: random
   ammo_availability: random
+  got_sword_requirement: random
   logic_early_lake_floria: random
   logic_beedles_island_cage_chest_dive: random
   logic_volcanic_island_dive: random

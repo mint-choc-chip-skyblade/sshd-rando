@@ -216,7 +216,8 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
         },
     )
     fi_objective_text = get_text_data("Fi Objective Text Template")
-    fi_objective_text = fi_objective_text.replace("{required_sword}", "Master Sword")
+    sword_name = get_text_data(world.setting("got_sword_requirement").pretty_value())
+    fi_objective_text = fi_objective_text.replace("{required_sword}", sword_name)
     add_text_data(
         "Fi Objective Text",
         fi_objective_text,

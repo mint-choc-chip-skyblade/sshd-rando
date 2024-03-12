@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -879,6 +879,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <string>Beat the Game</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="QLabel" name="got_sword_requirement_label">
+             <property name="text">
+              <string>Gate of Time Sword Requirement</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_got_sword_requirement"/>
+           </item>
            <item>
             <layout class="QHBoxLayout" name="required_dungeons_layout">
              <property name="spacing">
