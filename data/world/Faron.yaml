@@ -10,8 +10,6 @@
 
 - name: Sealed Grounds Spiral
   hint_region: Sealed Grounds
-  events:
-    Can Defeat Imprisoned 2: Goddess_Sword and 'Start_Imprisoned_2'
   exits:
     Sealed Temple: Nothing
     Sealed Grounds: Nothing
@@ -57,8 +55,7 @@
   hint_region: Sealed Grounds
   events:
     Raise Gate of Time: Goddesss_Harp and Ballad_of_the_Goddess
-    Start Imprisoned 2: "'Raise_Gate_of_Time' and Master_Sword" # TODO
-    Open Gate of Time: "'Can_Defeat_Imprisoned_2' and Master_Sword" # TODO
+    Open Gate of Time: "Gate_of_Time_Sword_Requirement"
   exits:
     Sealed Grounds Spiral: Nothing
     Behind the Temple: Nothing

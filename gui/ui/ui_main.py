@@ -595,6 +595,16 @@ class Ui_main_window(object):
         self.beat_the_game_group_box.setObjectName(u"beat_the_game_group_box")
         self.verticalLayout_13 = QVBoxLayout(self.beat_the_game_group_box)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.got_sword_requirement_label = QLabel(self.beat_the_game_group_box)
+        self.got_sword_requirement_label.setObjectName(u"got_sword_requirement_label")
+
+        self.verticalLayout_13.addWidget(self.got_sword_requirement_label)
+
+        self.setting_got_sword_requirement = QComboBox(self.beat_the_game_group_box)
+        self.setting_got_sword_requirement.setObjectName(u"setting_got_sword_requirement")
+
+        self.verticalLayout_13.addWidget(self.setting_got_sword_requirement)
+
         self.required_dungeons_layout = QHBoxLayout()
         self.required_dungeons_layout.setSpacing(0)
         self.required_dungeons_layout.setObjectName(u"required_dungeons_layout")
@@ -2132,7 +2142,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2200,6 +2210,7 @@ class Ui_main_window(object):
         self.setting_starry_skies.setText(QCoreApplication.translate("main_window", u"Starry Skies", None))
         self.language_label.setText(QCoreApplication.translate("main_window", u"In-Game Language", None))
         self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
+        self.got_sword_requirement_label.setText(QCoreApplication.translate("main_window", u"Gate of Time Sword Requirement", None))
         self.required_dungeons_label.setText(QCoreApplication.translate("main_window", u"Required Dungeons", None))
         self.setting_empty_unrequired_dungeons.setText(QCoreApplication.translate("main_window", u"Barren Unrequired Dungeons", None))
         self.setting_skip_horde.setText(QCoreApplication.translate("main_window", u"Skip The Horde Fight", None))
