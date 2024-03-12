@@ -763,6 +763,9 @@
   - name: Patch Fi Call Information Option
     type: textpatch
     index: 16
+  - name: Patch Fi Call Use amiibo Option
+    type: textpatch
+    index: 17
 
   # Fi Information
   - name: Fi Information Text Patch

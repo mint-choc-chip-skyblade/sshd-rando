@@ -5733,6 +5733,9 @@
 - name: Patch Fi Call Information Option
   standard: "Information"
 
+- name: Patch Fi Call Use amiibo Option
+  standard: "Warp"
+
 - name: Forced Required Dungeons Text
   standard: "Welcome to your new adventure, Master. I have\n<r<important information>> about your journey."
 
