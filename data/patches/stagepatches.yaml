@@ -3462,6 +3462,7 @@ F300_5: # Lanayru Mining Facility to Temple of Time
       sizex: 1700
       sizez: 500
       trigstoryfid: 935
+      untrigstoryfid: 2047 # -1
   - name: End of LMF loadzone 2nd
     type: objdelete
     id: 0xFC04
