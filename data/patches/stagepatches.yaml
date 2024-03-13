@@ -4041,15 +4041,9 @@ F400: # Behind the Temple
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 13
+      - story_flag: -1
         night: 0
-        layer: 4
-      - story_flag: 9
-        night: 0
-        layer: 3
-      - story_flag: 36
-        night: 0
-        layer: 2
+        layer: 0
   - name: Add ammo pot to Behind the Temple Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
@@ -4080,6 +4074,16 @@ F400: # Behind the Temple
     object:
       trigstoryfid: 2047
       untrigstoryfid: 2047
+  - name: Move Gorko stuff to layer 0
+    type: objmove
+    ids:
+      - 0xFC94 # Gorko
+      - 0xFC95 # Gorko trigger
+      - 0xFC99 # BtT Gates
+    layer: 3
+    destlayer: 0
+    room: 0
+    objtype: OBJ
   - name: Remove extra Gorkos and Fi text
     type: objdelete
     ids:
@@ -4095,6 +4099,18 @@ F400: # Behind the Temple
     layer: 0
     room: 0
     objtype: STAG
+  - name: Move birds to layer 0
+    type: objmove
+    id: 0xFC98
+    layer: 3
+    destlayer: 0
+    room: 0
+    objtype: STAG
+  - name: Add Little Bird Arc
+    type: oarcadd
+    oarc:
+      - LittleBird
+    destlayer: 0
 
 F401: # Sealed Grounds Whirlpool
   - name: Layer override
