@@ -385,6 +385,23 @@ def patch_tgreact(
     else:
         tgreact["params2"] = mask_shift_set(tgreact["params2"], 0x3FF, 8, 0x3FF)
 
+def patch_academy_bell(
+    bzs: dict, itemid: int, trapid: int
+):
+
+    academy_bell: dict | None = next(
+        filter(lambda x: x["name"] == "Bell", bzs["OBJ "]), None
+    )
+
+    if academy_bell is None:
+        raise Exception(f"No Bell found to patch.")
+
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
+
+    academy_bell["params1"] = mask_shift_set(academy_bell["params1"], 0xFF, 0, itemid)
+
 
 def patch_additional_properties(obj: dict, prop: str, value: int):
     unsupported_prop_execption = f"Cannot patch object with unsupported property.\nUnsupported property: {prop}\nObject: {obj}"
@@ -984,6 +1001,12 @@ def patch_and_write_stage(
                                 objectid,
                                 trapid,
                                 custom_flag,
+                            )
+                        elif object_name == "Bell":
+                            patch_academy_bell(
+                                room_bzs["LAY "][f"l{layer}"],
+                                itemid,
+                                trapid,
                             )
                         # elif object_name == "Clef":
                         #     patch_tadtone_group(

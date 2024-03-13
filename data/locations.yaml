@@ -194,6 +194,17 @@
     - oarc/F000/l4
     - oarc/F000/l6
 
+- name: Upper Skyloft - Ring Knight Academy Bell
+  original_item: Green Rupee
+  types:
+    - Bell
+  Paths:
+    - stage/F000/r0/l2/Bell
+    - stage/F000/r0/l4/Bell
+    - stage/F000/r0/l5/Bell
+    - stage/F000/r0/l6/Bell
+    - stage/F000/r0/l7/Bell
+
 - name: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
   original_item: Green Rupee
   types:

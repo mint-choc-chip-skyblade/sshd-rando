@@ -101,6 +101,7 @@ Below is the list of all the flags that the randomizer changes:
 * 116: Obtained the item in Rupin's Closet
 * 117: Obtained the item in Peater's Closet
 * 118: Obtained the item in Peatrice's Closet
+* 127: Obtained the Academy Bell Item
 
 #### The Sky
 * 3: Obtained the item in Pumm and Kina's Closet
