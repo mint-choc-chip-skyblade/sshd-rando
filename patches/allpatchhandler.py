@@ -1,4 +1,4 @@
-from filepathconstants import OBJECTPACK_PATH_TAIL
+from filepathconstants import OBJECTPACK_PATH_TAIL, SSHD_EXTRACT_PATH
 from gui.dialogs.dialog_header import print_progress_text, update_progress_value
 from logic.world import World
 from patches.asmpatchhandler import ASMPatchHandler
@@ -39,10 +39,21 @@ class AllPatchHandler:
         print_progress_text("Patching started")
 
         output_dir = self.world.config.output_dir
+        if output_dir == SSHD_EXTRACT_PATH:
+            raise Exception(
+                f"Output path cannot be the same as extract path (the randomizer cannot overwrite its own extract)."
+            )
 
-        if output_dir.exists() and output_dir.is_dir():
+        exefs_output = output_dir / "exefs"
+        romfs_output = output_dir / "romfs"
+
+        if exefs_output.exists() and exefs_output.is_dir():
             print_progress_text("Removing previous output")
-            rmtree(output_dir.as_posix())
+            rmtree(exefs_output.as_posix())
+
+        if romfs_output.exists() and romfs_output.is_dir():
+            print_progress_text("Removing previous output")
+            rmtree(romfs_output.as_posix())
 
         update_progress_value(16)
         self.stage_patch_handler.create_oarc_cache()

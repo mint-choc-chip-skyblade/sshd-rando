@@ -385,9 +385,8 @@ def patch_tgreact(
     else:
         tgreact["params2"] = mask_shift_set(tgreact["params2"], 0x3FF, 8, 0x3FF)
 
-def patch_academy_bell(
-    bzs: dict, itemid: int, trapid: int
-):
+
+def patch_academy_bell(bzs: dict, itemid: int, trapid: int):
 
     academy_bell: dict | None = next(
         filter(lambda x: x["name"] == "Bell", bzs["OBJ "]), None
