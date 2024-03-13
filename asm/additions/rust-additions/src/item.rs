@@ -126,7 +126,7 @@ pub fn give_item(itemid: u8) {
 }
 
 #[no_mangle]
-pub fn give_item_with_sceneflag(itemid: u8, sceneflag: u8) {
+pub fn give_item_with_sceneflag(itemid: u8, sceneflag: u8) -> *mut dAcItem {
     unsafe {
         NUMBER_OF_ITEMS = 0;
         ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
@@ -134,7 +134,7 @@ pub fn give_item_with_sceneflag(itemid: u8, sceneflag: u8) {
         let new_itemid = dAcItem__determineFinalItemid(itemid as u64);
         let param1: u32 = (new_itemid as u32) | (sceneflag as u32) << 10 | 0x580000;
 
-        actor::spawn_actor(
+        let item_actor: *mut dAcItem = actor::spawn_actor(
             actor::ACTORID::ITEM,
             (*ROOM_MGR).roomid.into(),
             param1,
@@ -142,10 +142,12 @@ pub fn give_item_with_sceneflag(itemid: u8, sceneflag: u8) {
             core::ptr::null_mut(),
             core::ptr::null_mut(),
             0xFFFFFFFF,
-        );
+        ) as *mut dAcItem;
 
         ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
         NUMBER_OF_ITEMS = 0;
+
+        return item_actor;
     }
 }
 
@@ -616,6 +618,21 @@ pub fn tgreact_spawn_custom_item(
         }
 
         return 0;
+    }
+}
+
+#[no_mangle]
+pub fn academy_bell_give_custom_item() {
+    unsafe {
+        let bell_actor: *mut actor::dAcObell;
+        asm!("mov {0:x}, x19", out(reg) bell_actor);
+
+        let itemid = (*bell_actor).base.basebase.members.param1 & 0xFF;
+        let param1 = 0x19FC00 | itemid; // item will set sceneflag 127 on collection
+        asm!("mov w1, {0:w}", in(reg) param1);
+
+        // Replaced instructions
+        asm!("mov w4, #0xFFFFFFFF", "mov w5, wzr");
     }
 }
 

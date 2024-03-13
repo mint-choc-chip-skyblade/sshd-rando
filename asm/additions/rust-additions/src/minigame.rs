@@ -60,7 +60,7 @@ pub fn prevent_minigame_death(final_health: i32) -> (u32, i32) {
 }
 
 #[no_mangle]
-pub fn try_end_pumpkin_archery(bell_actor: *mut actor::dAcOBell) -> *mut actor::dAcOBell {
+pub fn try_end_pumpkin_archery(bell_actor: *mut actor::dAcObell) -> *mut actor::dAcObell {
     unsafe {
         if ((*bell_actor).field_0x860 & 1) == 1 {
             let npc_pcs = actor::find_actor_by_type(actor::ACTORID::NPC_PCS, core::ptr::null_mut())

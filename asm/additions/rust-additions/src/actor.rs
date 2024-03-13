@@ -319,13 +319,13 @@ assert_eq_size!([u8; 0x125D], dAcOWarp);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct dAcOBell {
+pub struct dAcObell {
     pub base:        dAcOBase,
     pub _0:          [u8; 0x450],
     pub field_0x860: u8,
     // TODO
 }
-assert_eq_size!([u8; 0x861], dAcOBell);
+assert_eq_size!([u8; 0x861], dAcObell);
 
 // Tags
 #[repr(C, packed(1))]
