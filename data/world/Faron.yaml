@@ -55,7 +55,7 @@
   hint_region: Sealed Grounds
   events:
     Raise Gate of Time: Goddesss_Harp and Ballad_of_the_Goddess
-    Open Gate of Time: "Gate_of_Time_Sword_Requirement"
+    Open Gate of Time: "'Raise_Gate_of_Time' and Gate_of_Time_Sword_Requirement"
   exits:
     Sealed Grounds Spiral: Nothing
     Behind the Temple: Nothing
