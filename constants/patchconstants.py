@@ -283,3 +283,16 @@ LANGUAGE_NAME_TO_FILE_ID = {
     "spanish_us": "es_US",
     "taiwanese": "zh_TW",
 }
+
+# Non-layer 0 stages that appear in entrance_shuffle_data.yaml
+STAGE_FILES_TO_ALWAYS_PATCH = {
+    "F001r": (3,),
+    "F300_4": (2,),
+    "D301": (1,),
+    "S000": (2,),
+    "S100": (2,),
+    "S200": (2,),
+    "S300": (2,),
+    "F211": (1,),
+    "F302": (2,),
+}

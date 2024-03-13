@@ -24,6 +24,7 @@ from constants.patchconstants import (
     DEFAULT_SCEN,
     DEFAULT_PLY,
     DEFAULT_AREA,
+    STAGE_FILES_TO_ALWAYS_PATCH,
     STAGE_OBJECT_NAMES,
     STAGE_FILE_REGEX,
     ROOM_ARC_REGEX,
@@ -1002,7 +1003,7 @@ def patch_and_write_stage(
     if stage_u8 is not None:
         print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
         write_bytes_create_dirs(modified_stage_path, stage_u8.build_and_compress_U8())
-    elif layer == 0:
+    elif layer == 0 or layer in STAGE_FILES_TO_ALWAYS_PATCH.get(stage, tuple()):
         print_progress_text(f"Copying Stage: {stage}\tLayer: {layer}")
         write_bytes_create_dirs(modified_stage_path, stage_path.read_bytes())
 
