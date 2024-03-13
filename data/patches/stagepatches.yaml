@@ -1885,6 +1885,12 @@ F102_1: # Outside Ancient Cistern
     objtype: SNDT
 
 F102_2: # Faron's Lair
+  - name: Layer override
+    type: layeroverride
+    override: # always layer 0
+      - story_flag: -1
+        night: 0
+        layer: 0
   - name: Remove Faron's Lair entry cs
     type: objpatch
     index: 0
