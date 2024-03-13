@@ -1190,7 +1190,7 @@
         index: 13
     spawn_info:
       - stage: F019r
-        layer: 1
+        layer: 0
         room: 0
         entrance: 0
   return:

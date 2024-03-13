@@ -763,7 +763,6 @@ def patch_and_write_stage(
 
     patches = stage_patches.get(stage, [])
 
-    print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
     object_patches = []
     stage_u8 = None
 
@@ -1001,8 +1000,10 @@ def patch_and_write_stage(
                     stage_u8.set_file_data(room_path_match.group(0), room_u8.build_U8())
 
     if stage_u8 is not None:
+        print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
         write_bytes_create_dirs(modified_stage_path, stage_u8.build_and_compress_U8())
-    else:
+    elif layer == 0:
+        print_progress_text(f"Copying Stage: {stage}\tLayer: {layer}")
         write_bytes_create_dirs(modified_stage_path, stage_path.read_bytes())
 
 
@@ -1053,17 +1054,16 @@ class StagePatchHandler:
                 stage_oarc_add=self.stage_oarc_add,
             )
 
+            all_stage_file_paths = tuple(STAGE_FILES_PATH.rglob("*_stg_l*.arc.LZ"))
+
             # TODO: remove race condition - https://docs.python.org/3/library/multiprocessing.html#exchanging-objects-between-processes
-            total_stage_count = len(tuple(STAGE_FILES_PATH.rglob("*_stg_l*.arc.LZ")))
+            total_stage_count = len(all_stage_file_paths)
 
             # imap *can* be slower so only use it with the gui (where we need a progress output)
             if not args.nogui:
                 for _ in pool.imap_unordered(
                     patch_stage_func,
-                    [
-                        stage_path
-                        for stage_path in STAGE_FILES_PATH.rglob("*_stg_l*.arc.LZ")
-                    ],
+                    [stage_path for stage_path in all_stage_file_paths],
                 ):
                     stages_patched_queue.put(1)
                     update_progress_value(
@@ -1074,10 +1074,7 @@ class StagePatchHandler:
             else:
                 pool.map(
                     patch_stage_func,
-                    [
-                        stage_path
-                        for stage_path in STAGE_FILES_PATH.rglob("*_stg_l*.arc.LZ")
-                    ],
+                    [stage_path for stage_path in all_stage_file_paths],
                 )
 
     def remove_unnecessary_patches(
