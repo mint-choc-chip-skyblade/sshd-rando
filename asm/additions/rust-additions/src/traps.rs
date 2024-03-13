@@ -199,8 +199,12 @@ pub fn handle_effect_timers() -> u32 {
             TRAP_DURATION -= 1;
 
             if TRAP_ID == 0 {
-                (*PLAYER_PTR).burn_timer = 32;
-                (*PLAYER_PTR).sheild_burn_timer = 32;
+                if (*PLAYER_PTR).burn_timer == 0 {
+                    (*PLAYER_PTR).burn_timer = 32;
+                }
+                if (*PLAYER_PTR).sheild_burn_timer == 0 {
+                    (*PLAYER_PTR).sheild_burn_timer = 32;
+                }
             } else if TRAP_ID == 1 {
                 (*PLAYER_PTR).cursed_timer = 512;
             }
