@@ -13,7 +13,8 @@ You will need:
 
 ## Helpful Hints
 
-* [🎮 Get going with our Setup Guide! 🎮](https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY)
+* [🎮 Get going with our emulator Setup Guide! 🎮](https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY)
+* [🎮 Or our console Setup Guide! 🎮](https://docs.google.com/document/d/1VXNME7SVD5EU7NNn9dQ15_Q9-v9OJAHOX-hSor0n2dg)
 * [🧭 Stay on track with the WIP Tracker! 🧭](https://gymnast86.github.io/)
 * [🗺️ Don't get lost with our Location Guide! 🗺️](https://docs.google.com/document/d/1bb6GoCBFVREc-wHscRBTfZrftN1OA639iML2azdXqXE)
 * [🪄 Learn cool techniques with our Tricks Guide! 🪄](https://docs.google.com/document/d/1Dm0jhwXWIvPLuvl-JoRqocTKjXM_jRRmryYqpQMO_6w)
