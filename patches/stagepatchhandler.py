@@ -550,6 +550,13 @@ def object_add(bzs: dict, object_add: dict, nextid: int) -> int:
         new_object["id"] = nextid + return_nextid_increment
         return_nextid_increment += 1
 
+    # Prevent ammo pots getting ids that collide with viewclip indexes
+    if new_object.get("name") == "Tubo":
+        id = new_object.get("id", -1)
+
+        if id != -1 and id < 0xF000:
+            new_object["id"] = id | 0xF000
+
     # creates list for object types if don't already exist in bzs
     if layer is None:
         if object_type not in bzs:  # check
