@@ -45,7 +45,10 @@ assert_eq_size!([u8; 52488], FileMgr);
 pub struct SaveFile {
     pub save_time:                 u64, // size is a guess
     pub unk:                       u64,
-    pub _0:                        [u8; 2244],
+    pub _0:                        [u8; 1968],
+    pub pouch_items:               [i32; 8],
+    pub item_check_items:          [i32; 60],
+    pub padding_maybe:             u32,
     pub player_name:               [u16; 8],
     pub storyflags:                [u16; 128],
     pub itemflags:                 [u16; 64],
