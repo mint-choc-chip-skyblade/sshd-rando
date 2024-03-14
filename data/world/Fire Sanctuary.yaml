@@ -52,7 +52,7 @@
   dungeon: Fire Sanctuary
   exits:
     FS First Magmanos Room: Can_Defeat_Lizalfos
-    FS North Bridge East Side: can_access(FS North Bridge East Side) # add shortcut option here
+    FS North Bridge East Side: shortcut_fs_outside_bars
     FS Room with First Lava River: Can_Defeat_Lizalfos
     
 
@@ -145,7 +145,7 @@
 - name: FS Under Magmanos Fight Room Past Sliding Door
   dungeon: Fire Sanctuary
   exits:
-    FS Under Magmanos Fight Room: "'Move_First_FS_Sliding_Gate'"
+    FS Under Magmanos Fight Room: can_access(FS Under Magmanos Fight Room) and 'Move_First_FS_Sliding_Gate'
     FS North Bridge West Side: Nothing
 
 
@@ -193,7 +193,7 @@
 - name: FS West of Boss Door
   dungeon: Fire Sanctuary
   events:
-    FS Release Second Lava River: (Can_Hit_High_Water_Plant and Mogma_Mitts) or fs_lava_flow
+    FS Release Second Lava River: (Can_Hit_High_Water_Plant and Mogma_Mitts) or shortcut_fs_lava_flow
   exits:
     FS In Front of Boss Door: Can_Hit_High_Water_Plant and 'FS_Release_Second_Lava_River'
     FS West of Boss Door Before Lava River: Can_Hit_High_Water_Plant

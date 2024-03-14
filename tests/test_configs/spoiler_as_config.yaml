@@ -11,12 +11,7 @@ World 1:
   underground_rupee_shuffle: random
   beedle_shop_shuffle: random
   full_wallet_upgrades: random
-  open_thunderhead: random
-  open_lake_floria: random
-  open_earth_temple: random
-  open_lmf: random
   skykeep_layout: vanilla
-  fs_lava_flow: random
   peatrice_conversations: random
   small_keys: random
   lanayru_caves_keys: random
@@ -50,6 +45,34 @@ World 1:
   empty_unrequired_dungeons: random
   ammo_availability: random
   got_sword_requirement: random
+  open_thunderhead: random
+  open_lake_floria: random
+  open_earth_temple: random
+  open_lmf: random
+  open_batreaux_shed: random
+  shortcut_spiral_log_to_btt: random
+  shortcut_logs_near_machi: random
+  shortcut_faron_log_to_floria: random
+  shortcut_deep_woods_log_before_tightrope: random
+  shortcut_deep_woods_log_before_temple: random
+  shortcut_eldin_entrance_boulder: random
+  shortcut_vs_flames: random
+  shortcut_lanayru_bars: random
+  shortcut_west_wall_minecart: random
+  shortcut_sand_oasis_minecart: random
+  shortcut_minecart_before_caves: random
+  shortcut_skyview_boards: random
+  shortcut_skyview_bars: random
+  shortcut_earth_temple_bridge: random
+  shortcut_lmf_wind_gates: random
+  shortcut_lmf_boxes: random
+  shortcut_lmf_bars_to_west_side: random
+  shortcut_ac_bridge: random
+  shortcut_ac_water_vents: random
+  shortcut_sandship_windows: random
+  shortcut_sandship_brig_bars: random
+  shortcut_fs_outside_bars: random
+  shortcut_fs_lava_flow: random
   logic_early_lake_floria: random
   logic_beedles_island_cage_chest_dive: random
   logic_volcanic_island_dive: random

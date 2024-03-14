@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1300</width>
-    <height>843</height>
+    <width>1275</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -1067,24 +1067,95 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <widget class="QComboBox" name="setting_open_lake_floria"/>
            </item>
            <item>
-            <widget class="QLabel" name="open_earth_temple_label">
+            <widget class="RandoTriStateCheckBox" name="setting_open_batreaux_shed">
              <property name="text">
-              <string>Open Earth Temple</string>
+              <string>Open Batreaux's Shed</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="setting_open_earth_temple"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="open_lmf_label">
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_spiral_log_to_btt">
              <property name="text">
-              <string>Open Lanyru Mining Facility</string>
+              <string>Sealed Spiral Log to Behind the Temple</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="setting_open_lmf"/>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_logs_near_machi">
+             <property name="text">
+              <string>Faron Woods Logs near First Kikwi</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_faron_log_to_floria">
+             <property name="text">
+              <string>Faron Woods Log to after Lake Floria</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_deep_woods_log_before_tightrope">
+             <property name="text">
+              <string>Deep Woods Log before Tightrope</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_deep_woods_log_before_temple">
+             <property name="text">
+              <string>Deep Woods Log before Temple</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_eldin_entrance_boulder">
+             <property name="text">
+              <string>Eldin Volcano Entrance Boulder</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_eldin_ascent_boulder">
+             <property name="text">
+              <string>Eldin Volcano Boulder near Ascent</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_vs_flames">
+             <property name="text">
+              <string>Volcano Summit Flames</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_lanayru_bars">
+             <property name="text">
+              <string>Lanayru Desert Bars near Stone Cache</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_west_wall_minecart">
+             <property name="text">
+              <string>Lanayru Desert Minecart on West Wall</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sand_oasis_minecart">
+             <property name="text">
+              <string>Lanayru Desert Minecart in Sand Oasis</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_minecart_before_caves">
+             <property name="text">
+              <string>Lanayru Desert Minecart before Lanayru Caves</string>
+             </property>
+            </widget>
            </item>
            <item>
             <spacer name="open_world_vspacer">
@@ -1103,20 +1174,121 @@ li.checked::marker { content: &quot;\2612&quot;; }
          </widget>
         </item>
         <item row="0" column="2">
-         <widget class="QGroupBox" name="mixed_pools_group_box">
+         <widget class="QGroupBox" name="open_dungeons_group_box">
           <property name="title">
-           <string>Shortcuts</string>
+           <string>Open Dungeons</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_25">
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_fs_lava_flow">
+            <widget class="RandoTriStateCheckBox" name="setting_open_earth_temple">
              <property name="text">
-              <string>Skip Fire Sanctuary Lava Chase</string>
+              <string>Open Earth Temple</string>
              </property>
             </widget>
            </item>
            <item>
-            <spacer name="mixed_pools_vspacer">
+            <widget class="QLabel" name="open_lmf_label">
+             <property name="text">
+              <string>Open Lanyru Mining Facility</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_lmf"/>
+           </item>
+           <item>
+            <widget class="Line" name="line">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_skyview_boards">
+             <property name="text">
+              <string>Skyview Temple Boarded Shortcut</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_skyview_bars">
+             <property name="text">
+              <string>Skyview Temple Bars before Boss Door</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_earth_temple_bridge">
+             <property name="text">
+              <string>Earth Temple Pegs Bridge</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_lmf_wind_gates">
+             <property name="text">
+              <string>Lanayru Mining Facility Wind Gates in Hub Room</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_lmf_boxes">
+             <property name="text">
+              <string>Lanayru Mining Facility Pushable Boxes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_lmf_bars_to_west_side">
+             <property name="text">
+              <string>Lanayru Mining Facility Bars to West Side</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_ac_bridge">
+             <property name="text">
+              <string>Ancient Cistern Bridge to Basement</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_ac_water_vents">
+             <property name="text">
+              <string>Ancient Cistern Water Vents</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sandship_windows">
+             <property name="text">
+              <string>Sandship Windows below Life Boat</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sandship_brig_bars">
+             <property name="text">
+              <string>Sandship Bars before Brig</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_fs_outside_bars">
+             <property name="text">
+              <string>Fire Sanctuary Bars between Outdoor Bridges</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_fs_lava_flow">
+             <property name="text">
+              <string>Fire Sanctuary Skip Lava Chase</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="shortcuts_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
@@ -1300,7 +1472,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             </widget>
            </item>
            <item>
-            <spacer name="verticalSpacer_4">
+            <spacer name="mixed_entrance_pools_vspacer1">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
@@ -1316,14 +1488,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
             </spacer>
            </item>
            <item>
-            <widget class="Line" name="line">
+            <widget class="Line" name="mixed_entrance_pools_hline">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
            <item>
-            <spacer name="verticalSpacer_5">
+            <spacer name="mixed_entrance_pools_vspacer2">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
@@ -1364,7 +1536,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             </widget>
            </item>
            <item>
-            <spacer name="mixed_entrance_pools_vspacer">
+            <spacer name="mixed_entrance_pools_vspacer3">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
