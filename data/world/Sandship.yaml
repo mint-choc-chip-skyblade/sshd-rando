@@ -10,7 +10,7 @@
   exits:
     Sandship Before Ship's Bow: Nothing # You can leave and re-enter to reset the timeshift stone and the bars on the door
     Sandship Captain's Cabin: (count(2, Sandship_Small_Key) or small_keys == removed) and ('Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone')
-    Sandship Starboard Rooms: Bow and 'Open_Starboard_Windows' # Add shortcut here
+    Sandship Starboard Rooms: Bow and ('Open_Starboard_Windows' or shortcut_sandship_windows)
     Sandship Mast: "'Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone'"
     Lanayru Sand Sea: Nothing # If stuck in the mast sequence, deathwarp
 
@@ -109,8 +109,8 @@
   dungeon: Sandship
   exits:
     Sandship Treasure Room: Whip and 'Starboard_Generator'
-    Sandship Brig Prison: Whip and 'Starboard_Generator' and 'Port_Generator'
-    Sandship Starboard Rooms: "'Open_Starboard_Windows'"
+    Sandship Brig Prison: (Whip and 'Starboard_Generator' and 'Port_Generator') or shortcut_sandship_brig_bars
+    Sandship Starboard Rooms: shortcut_sandship_windows or 'Open_Starboard_Windows'
 
 
 - name: Sandship Treasure Room

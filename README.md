@@ -91,7 +91,7 @@ checks in descending order of priority
 * `Knight Academy - Item from Cawlin` does not require talking to the Toilet Hand or the Goddess's
 Harp
 * You no longer need to beat Moldarach 2 in Shipyard to play the rickety coaster minigame
-* The Groosenator is always available in the Sealed Grounds Whirlpool
+* The Groosenator is always available in the Sealed Grounds Spiral
 * You can call Fi while on fire
 * Freestanding item models should all rest on the ground correctly without clipping into the floor
 * Speech bubbles will always and only appear above an NPC's head when they have some important

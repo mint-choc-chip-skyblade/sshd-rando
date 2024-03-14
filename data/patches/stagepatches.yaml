@@ -4118,7 +4118,7 @@ F400: # Behind the Temple
       - LittleBird
     destlayer: 0
 
-F401: # Sealed Grounds Whirlpool
+F401: # Sealed Grounds Spiral
   - name: Layer override
     type: layeroverride
     override:
@@ -4437,8 +4437,8 @@ F404: # Temple of Hylia
       id: 0xFC40
       name: NpcTke
 
-F405: # Sealed Grounds Whirlpool Cutscene (first cutscene)
-  - name: Skip from Whirlpool Cutscene to Link's room
+F405: # Sealed Grounds Spiral Cutscene (first cutscene)
+  - name: Skip from Spiral Cutscene to Link's room
     onlyif: random_starting_spawn == vanilla
     type: objpatch
     room: 0

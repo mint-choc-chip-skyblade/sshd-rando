@@ -4,7 +4,7 @@
   exits:
     Sealed Grounds Statue: Nothing
     Sealed Grounds Spiral: Nothing
-    Sealed Grounds Upper Ledge: Nothing
+    Sealed Grounds Upper Ledge: shortcut_spiral_log_to_btt or 'Push_Down_Sealed_Grounds_Log'
   locations:
     Sealed Grounds - Bonk Wall between Pillars near Bird Statue: Nothing
 
@@ -63,7 +63,7 @@
   locations:
     Sealed Temple - Chest: Nothing
     Sealed Temple - Song from The Old One: Goddesss_Harp
-    Sealed Temple - Slingshot above Doors to Sealed Grounds Whirlpool: Slingshot
+    Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral: Slingshot
     Sealed Temple - Slingshot above Doors to Behind the Temple: Slingshot
     Sealed Temple - Slingshot above Large Doors behind The Old One: Slingshot
     Sealed Temple - Blow Triforce Symbol on Southeast Archway behind Bird Statue: Gust_Bellows
@@ -112,7 +112,7 @@
   hint_region: Faron Woods
   exits:
     Faron Woods Entry Statue: Nothing
-    Faron Woods: Can_Cut_Trees_And_Logs or Clawshots or 'Push_Down_Faron_Woods_Entry_Log' # Either cut trees or clawshot vines
+    Faron Woods: Can_Cut_Trees_And_Logs or Clawshots or shortcut_logs_near_machi or 'Push_Down_Faron_Woods_Entry_Log' # Either cut trees or clawshot vines
     Behind the Temple: Nothing
 
 - name: Faron Woods
@@ -137,7 +137,7 @@
     Great Tree Exterior Platforms: Clawshots
     Great Tree Clawshot Target Branch: Clawshots
     Faron Woods Ledge to Deep Woods: Distance_Activator
-    Faron Woods Floria Shortcut Ledge: ('Can_Get_To_Lake_Floria_Gates' and Sword and logic_early_lake_floria) or 'Push_Down_Floria_Shortcut_Log'
+    Faron Woods Floria Shortcut Ledge: ('Can_Get_To_Lake_Floria_Gates' and Sword and logic_early_lake_floria) or shortcut_faron_log_to_floria or 'Push_Down_Floria_Shortcut_Log'
     Faron Woods Entry: Nothing
   locations:
     Faron Woods - Rupee on Hollow Tree Root: Nothing
@@ -284,7 +284,7 @@
   events:
     Hornet Larvae Farming: Nothing # Bonk the tree
   exits:
-    Deep Woods: Distance_Activator or Goddess_Sword or 'Push_Down_Deep_Woods_Shortcut_Logs' or (logic_bomb_throws and Bomb_Bag)
+    Deep Woods: Distance_Activator or Goddess_Sword or shortcut_deep_woods_log_before_tightrope or 'Push_Down_Deep_Woods_Shortcut_Logs' or (Bomb_Bag and logic_bomb_throws)
     Faron Woods Ledge to Deep Woods: Nothing
   locations:
     Deep Woods - Blow Flowers at Entrance: Gust_Bellows

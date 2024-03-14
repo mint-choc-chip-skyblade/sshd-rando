@@ -13,12 +13,14 @@ open_lake_floria: vanilla
 open_earth_temple: "off"
 open_lmf: open
 randomize_skykeep_layout: "off"
-fs_lava_flow: "on"
+shortcut_fs_lava_flow: "on"
 peatrice_conversations: "0"
 small_keys: own_dungeon
 lanayru_caves_keys: vanilla
 boss_keys: own_dungeon
 map_mode: own_dungeon_restricted
+chest_type_matches_contents: 'all_contents'
+small_keys_in_fancy_chests: 'off'
 path_hints: "3"
 barren_hints: "2"
 location_hints: "7"

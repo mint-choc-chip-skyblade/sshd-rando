@@ -48,11 +48,11 @@
 - name: LMF Hop Across Boxes Room
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Hop Across Boxes Room Near Exit: Can_Make_Froak_Explode
+    LMF Hop Across Boxes Room Near Exit: Can_Make_Froak_Explode or shortcut_lmf_boxes
     # Does not include the entry ledge you can only jump from
   locations:
-    Lanayru Mining Facility - Hop across Boxes Raised Chest: Can_Make_Froak_Explode
-    Lanayru Mining Facility - Hop across Boxes Lower Chest: Can_Make_Froak_Explode
+    Lanayru Mining Facility - Hop across Boxes Raised Chest: Can_Make_Froak_Explode or shortcut_lmf_boxes
+    Lanayru Mining Facility - Hop across Boxes Lower Chest: Can_Make_Froak_Explode or shortcut_lmf_boxes
 
 
 - name: LMF Hop Across Boxes Room Near Exit
@@ -88,15 +88,15 @@
   exits:
     LMF First Hub: Nothing
     LMF Big Hub After Wooden Boxes: Bomb_Bag or Hook_Beetle
-    LMF Big Hub Past West Gate: can_access(LMF Big Hub Past West Gate) # add shortcut here
-    LMF Big Hub Between Wind Gates: "'LMF_First_Wind_Gate'" # add shortcut here
+    LMF Big Hub Past West Gate: can_access(LMF Big Hub Past West Gate) or shortcut_lmf_bars_to_west_side
+    LMF Big Hub Between Wind Gates: "'LMF_First_Wind_Gate'"
 
 
 - name: LMF Big Hub After Wooden Boxes
   dungeon: Lanayru Mining Facility
   exits:
     LMF Big Hub South: Nothing
-    LMF Big Hub Near Hop Across Boxes Room: can_access(LMF Big Hub Near Hop Across Boxes Room) # Push the box
+    LMF Big Hub Near Hop Across Boxes Room: can_access(LMF Big Hub Near Hop Across Boxes Room) or shortcut_lmf_boxes
   locations:
     Lanayru Mining Facility - First Chest in Hub Room: Nothing
 
@@ -149,18 +149,17 @@
     LMF Boss Room: (Lanayru_Mining_Facility_Boss_Key or boss_keys == removed) and Can_Hit_Timeshift_Stone_in_Minecart
     LMF Big Hub Near Boss Key Room North: logic_lmf_minecart_jump and (Bomb_Bag or Beetle)
     LMF Big Hub Between Wind Gates: "Can_Hit_Timeshift_Stone_in_Minecart and
-                                     Can_Defeat_Sentrobe and Gust_Bellows and
-                                     Can_Defeat_Beamos"
+                                     ((Can_Defeat_Sentrobe and Gust_Bellows and Can_Defeat_Beamos) or shortcut_lmf_wind_gates)"
 
 
 - name: LMF Big Hub Between Wind Gates
   dungeon: Lanayru Mining Facility
   events:
-    LMF First Wind Gate: Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows
+    LMF First Wind Gate: (Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows) or shortcut_lmf_wind_gates
   exits:
     LMF Big Hub South: "'LMF_First_Wind_Gate'"
     LMF Big Hub Near Boss Key Room South: Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows
-    LMF Big Hub Near Boss Key Room North: can_access(LMF Big Hub Near Boss Key Room North) # Push Box
+    LMF Big Hub Near Boss Key Room North: can_access(LMF Big Hub Near Boss Key Room North) or shortcut_lmf_boxes
 
 
 - name: LMF Big Hub Near Boss Key Room South
