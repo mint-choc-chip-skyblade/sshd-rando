@@ -351,7 +351,7 @@
     Mallara's House: Nothing
     Gondo's House: Nothing
     Rupin's House: Nothing
-    Batreaux's House: "'Opened_Shed' or logic_gravestone_jump"
+    Batreaux's House: open_batreaux_shed or 'Opened_Shed' or logic_gravestone_jump
     The Sky: Day
     Skyloft Past Waterfall Cave Jump: logic_waterfall_cave_jump and Day
     Central Skyloft: Nothing

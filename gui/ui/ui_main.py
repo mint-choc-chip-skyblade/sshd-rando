@@ -28,7 +28,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(1300, 845)
+        main_window.resize(1275, 800)
         main_window.setStyleSheet(u"QToolTip {color: #000000; background-color: #FFFFFF;}")
         self.central_widget = QWidget(main_window)
         self.central_widget.setObjectName(u"central_widget")
@@ -732,25 +732,70 @@ class Ui_main_window(object):
 
         self.verticalLayout_14.addWidget(self.setting_open_lake_floria)
 
-        self.open_earth_temple_label = QLabel(self.open_world_group_box)
-        self.open_earth_temple_label.setObjectName(u"open_earth_temple_label")
+        self.setting_open_batreaux_shed = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_open_batreaux_shed.setObjectName(u"setting_open_batreaux_shed")
 
-        self.verticalLayout_14.addWidget(self.open_earth_temple_label)
+        self.verticalLayout_14.addWidget(self.setting_open_batreaux_shed)
 
-        self.setting_open_earth_temple = QComboBox(self.open_world_group_box)
-        self.setting_open_earth_temple.setObjectName(u"setting_open_earth_temple")
+        self.setting_shortcut_spiral_log_to_btt = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_spiral_log_to_btt.setObjectName(u"setting_shortcut_spiral_log_to_btt")
 
-        self.verticalLayout_14.addWidget(self.setting_open_earth_temple)
+        self.verticalLayout_14.addWidget(self.setting_shortcut_spiral_log_to_btt)
 
-        self.open_lmf_label = QLabel(self.open_world_group_box)
-        self.open_lmf_label.setObjectName(u"open_lmf_label")
+        self.setting_shortcut_logs_near_machi = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_logs_near_machi.setObjectName(u"setting_shortcut_logs_near_machi")
 
-        self.verticalLayout_14.addWidget(self.open_lmf_label)
+        self.verticalLayout_14.addWidget(self.setting_shortcut_logs_near_machi)
 
-        self.setting_open_lmf = QComboBox(self.open_world_group_box)
-        self.setting_open_lmf.setObjectName(u"setting_open_lmf")
+        self.setting_shortcut_faron_log_to_floria = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_faron_log_to_floria.setObjectName(u"setting_shortcut_faron_log_to_floria")
 
-        self.verticalLayout_14.addWidget(self.setting_open_lmf)
+        self.verticalLayout_14.addWidget(self.setting_shortcut_faron_log_to_floria)
+
+        self.setting_shortcut_deep_woods_log_before_tightrope = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_deep_woods_log_before_tightrope.setObjectName(u"setting_shortcut_deep_woods_log_before_tightrope")
+
+        self.verticalLayout_14.addWidget(self.setting_shortcut_deep_woods_log_before_tightrope)
+
+        self.setting_shortcut_deep_woods_log_before_temple = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_deep_woods_log_before_temple.setObjectName(u"setting_shortcut_deep_woods_log_before_temple")
+
+        self.verticalLayout_14.addWidget(self.setting_shortcut_deep_woods_log_before_temple)
+
+        self.setting_shortcut_eldin_entrance_boulder = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_eldin_entrance_boulder.setObjectName(u"setting_shortcut_eldin_entrance_boulder")
+
+        self.verticalLayout_14.addWidget(self.setting_shortcut_eldin_entrance_boulder)
+
+        self.setting_shortcut_eldin_ascent_boulder = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_eldin_ascent_boulder.setObjectName(u"setting_shortcut_eldin_ascent_boulder")
+
+        self.verticalLayout_14.addWidget(self.setting_shortcut_eldin_ascent_boulder)
+
+        self.setting_shortcut_vs_flames = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_vs_flames.setObjectName(u"setting_shortcut_vs_flames")
+
+        self.verticalLayout_14.addWidget(self.setting_shortcut_vs_flames)
+
+        self.setting_shortcut_lanayru_bars = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_lanayru_bars.setObjectName(u"setting_shortcut_lanayru_bars")
+
+        self.verticalLayout_14.addWidget(self.setting_shortcut_lanayru_bars)
+
+        self.setting_shortcut_west_wall_minecart = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_west_wall_minecart.setObjectName(u"setting_shortcut_west_wall_minecart")
+
+        self.verticalLayout_14.addWidget(self.setting_shortcut_west_wall_minecart)
+
+        self.setting_shortcut_sand_oasis_minecart = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_sand_oasis_minecart.setObjectName(u"setting_shortcut_sand_oasis_minecart")
+
+        self.verticalLayout_14.addWidget(self.setting_shortcut_sand_oasis_minecart)
+
+        self.setting_shortcut_minecart_before_caves = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_minecart_before_caves.setObjectName(u"setting_shortcut_minecart_before_caves")
+
+        self.verticalLayout_14.addWidget(self.setting_shortcut_minecart_before_caves)
 
         self.open_world_vspacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -759,21 +804,98 @@ class Ui_main_window(object):
 
         self.gridLayout_2.addWidget(self.open_world_group_box, 0, 0, 1, 1)
 
-        self.mixed_pools_group_box = QGroupBox(self.world_tab)
-        self.mixed_pools_group_box.setObjectName(u"mixed_pools_group_box")
-        self.verticalLayout_25 = QVBoxLayout(self.mixed_pools_group_box)
+        self.open_dungeons_group_box = QGroupBox(self.world_tab)
+        self.open_dungeons_group_box.setObjectName(u"open_dungeons_group_box")
+        self.verticalLayout_25 = QVBoxLayout(self.open_dungeons_group_box)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
-        self.setting_fs_lava_flow = RandoTriStateCheckBox(self.mixed_pools_group_box)
-        self.setting_fs_lava_flow.setObjectName(u"setting_fs_lava_flow")
+        self.setting_open_earth_temple = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_open_earth_temple.setObjectName(u"setting_open_earth_temple")
 
-        self.verticalLayout_25.addWidget(self.setting_fs_lava_flow)
+        self.verticalLayout_25.addWidget(self.setting_open_earth_temple)
 
-        self.mixed_pools_vspacer = QSpacerItem(20, 148, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.open_lmf_label = QLabel(self.open_dungeons_group_box)
+        self.open_lmf_label.setObjectName(u"open_lmf_label")
 
-        self.verticalLayout_25.addItem(self.mixed_pools_vspacer)
+        self.verticalLayout_25.addWidget(self.open_lmf_label)
+
+        self.setting_open_lmf = QComboBox(self.open_dungeons_group_box)
+        self.setting_open_lmf.setObjectName(u"setting_open_lmf")
+
+        self.verticalLayout_25.addWidget(self.setting_open_lmf)
+
+        self.line = QFrame(self.open_dungeons_group_box)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_25.addWidget(self.line)
+
+        self.setting_shortcut_skyview_boards = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_skyview_boards.setObjectName(u"setting_shortcut_skyview_boards")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_skyview_boards)
+
+        self.setting_shortcut_skyview_bars = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_skyview_bars.setObjectName(u"setting_shortcut_skyview_bars")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_skyview_bars)
+
+        self.setting_shortcut_earth_temple_bridge = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_earth_temple_bridge.setObjectName(u"setting_shortcut_earth_temple_bridge")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_earth_temple_bridge)
+
+        self.setting_shortcut_lmf_wind_gates = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_lmf_wind_gates.setObjectName(u"setting_shortcut_lmf_wind_gates")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_lmf_wind_gates)
+
+        self.setting_shortcut_lmf_boxes = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_lmf_boxes.setObjectName(u"setting_shortcut_lmf_boxes")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_lmf_boxes)
+
+        self.setting_shortcut_lmf_bars_to_west_side = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_lmf_bars_to_west_side.setObjectName(u"setting_shortcut_lmf_bars_to_west_side")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_lmf_bars_to_west_side)
+
+        self.setting_shortcut_ac_bridge = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_ac_bridge.setObjectName(u"setting_shortcut_ac_bridge")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_ac_bridge)
+
+        self.setting_shortcut_ac_water_vents = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_ac_water_vents.setObjectName(u"setting_shortcut_ac_water_vents")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_ac_water_vents)
+
+        self.setting_shortcut_sandship_windows = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_sandship_windows.setObjectName(u"setting_shortcut_sandship_windows")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_sandship_windows)
+
+        self.setting_shortcut_sandship_brig_bars = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_sandship_brig_bars.setObjectName(u"setting_shortcut_sandship_brig_bars")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_sandship_brig_bars)
+
+        self.setting_shortcut_fs_outside_bars = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_fs_outside_bars.setObjectName(u"setting_shortcut_fs_outside_bars")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_fs_outside_bars)
+
+        self.setting_shortcut_fs_lava_flow = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_fs_lava_flow.setObjectName(u"setting_shortcut_fs_lava_flow")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_fs_lava_flow)
+
+        self.shortcuts_vspacer = QSpacerItem(20, 148, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_25.addItem(self.shortcuts_vspacer)
 
 
-        self.gridLayout_2.addWidget(self.mixed_pools_group_box, 0, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.open_dungeons_group_box, 0, 2, 1, 1)
 
         self.entrance_randomization_group_box = QGroupBox(self.world_tab)
         self.entrance_randomization_group_box.setObjectName(u"entrance_randomization_group_box")
@@ -896,20 +1018,20 @@ class Ui_main_window(object):
 
         self.verticalLayout_28.addWidget(self.mixed_entrance_pools_reset_button)
 
-        self.verticalSpacer_4 = QSpacerItem(20, 4, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.mixed_entrance_pools_vspacer1 = QSpacerItem(20, 4, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
-        self.verticalLayout_28.addItem(self.verticalSpacer_4)
+        self.verticalLayout_28.addItem(self.mixed_entrance_pools_vspacer1)
 
-        self.line = QFrame(self.mixed_entrance_pools_group_box)
-        self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.HLine)
-        self.line.setFrameShadow(QFrame.Sunken)
+        self.mixed_entrance_pools_hline = QFrame(self.mixed_entrance_pools_group_box)
+        self.mixed_entrance_pools_hline.setObjectName(u"mixed_entrance_pools_hline")
+        self.mixed_entrance_pools_hline.setFrameShape(QFrame.HLine)
+        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Sunken)
 
-        self.verticalLayout_28.addWidget(self.line)
+        self.verticalLayout_28.addWidget(self.mixed_entrance_pools_hline)
 
-        self.verticalSpacer_5 = QSpacerItem(20, 4, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.mixed_entrance_pools_vspacer2 = QSpacerItem(20, 4, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
-        self.verticalLayout_28.addItem(self.verticalSpacer_5)
+        self.verticalLayout_28.addItem(self.mixed_entrance_pools_vspacer2)
 
         self.mixed_entrance_pools_explainer_label = QLabel(self.mixed_entrance_pools_group_box)
         self.mixed_entrance_pools_explainer_label.setObjectName(u"mixed_entrance_pools_explainer_label")
@@ -922,9 +1044,9 @@ class Ui_main_window(object):
 
         self.verticalLayout_28.addWidget(self.mixed_entrance_pools_explainer_label)
 
-        self.mixed_entrance_pools_vspacer = QSpacerItem(20, 3, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.mixed_entrance_pools_vspacer3 = QSpacerItem(20, 3, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
-        self.verticalLayout_28.addItem(self.mixed_entrance_pools_vspacer)
+        self.verticalLayout_28.addItem(self.mixed_entrance_pools_vspacer3)
 
 
         self.gridLayout_2.addWidget(self.mixed_entrance_pools_group_box, 0, 5, 1, 1)
@@ -2142,7 +2264,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2227,10 +2349,34 @@ class Ui_main_window(object):
         self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))
         self.open_thunderhead_label.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
         self.open_lake_floria_label.setText(QCoreApplication.translate("main_window", u"Open Lake Floria", None))
-        self.open_earth_temple_label.setText(QCoreApplication.translate("main_window", u"Open Earth Temple", None))
+        self.setting_open_batreaux_shed.setText(QCoreApplication.translate("main_window", u"Open Batreaux's Shed", None))
+        self.setting_shortcut_spiral_log_to_btt.setText(QCoreApplication.translate("main_window", u"Sealed Spiral Log to Behind the Temple", None))
+        self.setting_shortcut_logs_near_machi.setText(QCoreApplication.translate("main_window", u"Faron Woods Logs near First Kikwi", None))
+        self.setting_shortcut_faron_log_to_floria.setText(QCoreApplication.translate("main_window", u"Faron Woods Log to after Lake Floria", None))
+        self.setting_shortcut_deep_woods_log_before_tightrope.setText(QCoreApplication.translate("main_window", u"Deep Woods Log before Tightrope", None))
+        self.setting_shortcut_deep_woods_log_before_temple.setText(QCoreApplication.translate("main_window", u"Deep Woods Log before Temple", None))
+        self.setting_shortcut_eldin_entrance_boulder.setText(QCoreApplication.translate("main_window", u"Eldin Volcano Entrance Boulder", None))
+        self.setting_shortcut_eldin_ascent_boulder.setText(QCoreApplication.translate("main_window", u"Eldin Volcano Boulder near Ascent", None))
+        self.setting_shortcut_vs_flames.setText(QCoreApplication.translate("main_window", u"Volcano Summit Flames", None))
+        self.setting_shortcut_lanayru_bars.setText(QCoreApplication.translate("main_window", u"Lanayru Desert Bars near Stone Cache", None))
+        self.setting_shortcut_west_wall_minecart.setText(QCoreApplication.translate("main_window", u"Lanayru Desert Minecart on West Wall", None))
+        self.setting_shortcut_sand_oasis_minecart.setText(QCoreApplication.translate("main_window", u"Lanayru Desert Minecart in Sand Oasis", None))
+        self.setting_shortcut_minecart_before_caves.setText(QCoreApplication.translate("main_window", u"Lanayru Desert Minecart before Lanayru Caves", None))
+        self.open_dungeons_group_box.setTitle(QCoreApplication.translate("main_window", u"Open Dungeons", None))
+        self.setting_open_earth_temple.setText(QCoreApplication.translate("main_window", u"Open Earth Temple", None))
         self.open_lmf_label.setText(QCoreApplication.translate("main_window", u"Open Lanyru Mining Facility", None))
-        self.mixed_pools_group_box.setTitle(QCoreApplication.translate("main_window", u"Shortcuts", None))
-        self.setting_fs_lava_flow.setText(QCoreApplication.translate("main_window", u"Skip Fire Sanctuary Lava Chase", None))
+        self.setting_shortcut_skyview_boards.setText(QCoreApplication.translate("main_window", u"Skyview Temple Boarded Shortcut", None))
+        self.setting_shortcut_skyview_bars.setText(QCoreApplication.translate("main_window", u"Skyview Temple Bars before Boss Door", None))
+        self.setting_shortcut_earth_temple_bridge.setText(QCoreApplication.translate("main_window", u"Earth Temple Pegs Bridge", None))
+        self.setting_shortcut_lmf_wind_gates.setText(QCoreApplication.translate("main_window", u"Lanayru Mining Facility Wind Gates in Hub Room", None))
+        self.setting_shortcut_lmf_boxes.setText(QCoreApplication.translate("main_window", u"Lanayru Mining Facility Pushable Boxes", None))
+        self.setting_shortcut_lmf_bars_to_west_side.setText(QCoreApplication.translate("main_window", u"Lanayru Mining Facility Bars to West Side", None))
+        self.setting_shortcut_ac_bridge.setText(QCoreApplication.translate("main_window", u"Ancient Cistern Bridge to Basement", None))
+        self.setting_shortcut_ac_water_vents.setText(QCoreApplication.translate("main_window", u"Ancient Cistern Water Vents", None))
+        self.setting_shortcut_sandship_windows.setText(QCoreApplication.translate("main_window", u"Sandship Windows below Life Boat", None))
+        self.setting_shortcut_sandship_brig_bars.setText(QCoreApplication.translate("main_window", u"Sandship Bars before Brig", None))
+        self.setting_shortcut_fs_outside_bars.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Bars between Outdoor Bridges", None))
+        self.setting_shortcut_fs_lava_flow.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Skip Lava Chase", None))
         self.entrance_randomization_group_box.setTitle(QCoreApplication.translate("main_window", u"Entrance Randomization", None))
         self.setting_randomize_door_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Door Entrances", None))
         self.setting_randomize_interior_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Interior Entrances", None))

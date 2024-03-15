@@ -15,8 +15,8 @@ Storyflags:
   - 129 # Updated Lanayru Desert map
   - 130 # Start with Beacon
   - Goddess's_Harp and Ballad_of_the_Goddess:
-      - 132 # Can Target Gate of Time (Imp 2 Defeated)
-      - 340 # Gate of Time raised
+    - 132 # Can Target Gate of Time (Imp 2 Defeated)
+    - 340 # Gate of Time raised
   - 138 # Sealed Temple layer 1
   - 178 # Cutscene showing off Bokoblin Base with Plats
   - 187 # Watered Big Frog outside Fire Sanctuary
@@ -59,14 +59,14 @@ Storyflags:
   - 768 # Collected Goddess Plume for 1st time
   - 789 # Unlocked Dowsing (still needs Goddess Sword)
   - Goddess_White_Sword: # If starting with at least white sword
-      - 583 # Unlocked 4 New Dowsing Slots
-      - 102 # Treasure Dowsing
-      - 104 # Crystal Dowsing
-      - 105 # Rupee Dowsing
-      - 110 # Goddess Cube Dowsing
+    - 583 # Unlocked 4 New Dowsing Slots
+    - 102 # Treasure Dowsing
+    - 104 # Crystal Dowsing
+    - 105 # Rupee Dowsing
+    - 110 # Goddess Cube Dowsing
   - 792 # Watched Sealed Temple Big Door unlocking Cutscene
   - random_starting_statues == off:
-      - 804 # Eldin entrance statue unlocked
+    - 804 # Eldin entrance statue unlocked
   - 1201 # Unlocked Amiibo
   # Cutscene flags
   ## Surface
@@ -90,26 +90,26 @@ Storyflags:
   - 678 # Entering Sky Keep Cutscene
   - 159 # Sky Keep Intro Cutscene
   - open_thunderhead == open:
-      - 194 # Thunderhead open
+    - 194 # Thunderhead open
   - open_lmf == open:
-      - 8 # LMF rising Cutscene watched
+    - 8 # LMF rising Cutscene watched
   - skip_horde == on:
-      - 134 # Horde defeated
-      - 347 # Horde Cutscene watched
+    - 134 # Horde defeated
+    - 347 # Horde Cutscene watched
   - skip_g3 == on and skip_horde == on:
-      - 486 # Ghirahim 3 defeated
+    - 486 # Ghirahim 3 defeated
   ## Peatrice
-  - ? peatrice_conversations == 1 or peatrice_conversations == 3 or peatrice_conversations == 5
-    : - 631 # Peatrice intermediate step flag
+  - peatrice_conversations == 1 or peatrice_conversations == 3 or peatrice_conversations == 5:
+    - 631 # Peatrice intermediate step flag
   - peatrice_conversations <= 4:
-      - 628
-      - 689
+    - 628
+    - 689
   - peatrice_conversations <= 2:
-      - 629
-      - 690
+    - 629
+    - 690
   - peatrice_conversations == 0:
-      - 630
-      - 691
+    - 630
+    - 691
 Sceneflags:
   Skyloft: # Scene Index 0
     - 0 # Lower Academy gates opened
@@ -125,6 +125,8 @@ Sceneflags:
     - 96 # Fi Text for Amber Tablet
     # - 99 # Watched Sheikah Stone Cutscene
     - 125 # Revealed Moonlight Merchant
+    - open_batreaux_shed == on:
+      - 33 # Shed door to Batreaux's House opened
 
   Faron Woods: # Scene Index 1
     - 14 # Skip Fi text in front of Viewing Platform statue
@@ -134,9 +136,18 @@ Sceneflags:
     - 51 # Fi text before talking to Yerbal
     - 52 # Fi text after opening floria gate
     - 66 # Reveal Gossip Stone in Deep Woods
+    - shortcut_logs_near_machi == on:
+      - 20 # Log above Vines pushed down
+      - 23 # Log after First Rope Swing pushed down
+    - shortcut_faron_log_to_floria == on:
+      - 22 # Log to after Lake Floria pushed down
+    - shortcut_deep_woods_log_before_tightrope == on:
+      - 25 # Deep Woods Log before Tightrope pushed down
+    - shortcut_deep_woods_log_before_temple:
+      - 26 # Deep Woods Log before Temple pushed down
     - open_lake_floria == open:
-        - 49 # Cutscene of Lake Floria Gates opening
-        - 50 # Open Lake Floria Gates
+      - 49 # Cutscene of Lake Floria Gates opening
+      - 50 # Open Lake Floria Gates
 
   Lake Floria: # Scene Index 2
     - 67 # Reveal Lake Floria Gossip Stone
@@ -152,6 +163,10 @@ Sceneflags:
     - 16 # Watched first time landing Cutscene
     - 32 # Watched Impa Cutscene (bridge extended)
     - 58 # Watched Digging Mitts mogma Cutscene
+    - shortcut_eldin_entrance_boulder == on:
+      - 31 # Shortcut boulder at Eldin entrance blown up
+    - shortcut_eldin_ascent_boulder == on:
+      - 56 # Shortcut boulder near Volcano Ascent blown up
 
   Eldin Volcano Summit: # Scene Index 5 (VS & Boko Base)
     - 19 # Reveal Gossip Stone in lower Boko Base Cave
@@ -172,6 +187,10 @@ Sceneflags:
     - 100 # Watered Big Frog
     - 118 # Reveal Gossip Stone in Waterfall Area
     - 119 # Reveal Gossip Stone Near 2nd Frog
+    - shortcut_vs_flames == on:
+      - 98 # First frog watered
+      - 99 # Second frog watered and flames gone
+      - 116 # First flames gone
 
   # Unused: # Scene Index 6
 
@@ -181,16 +200,24 @@ Sceneflags:
     - 7 # Pushed first minecart in Mine
     - 50 # Watched Enter Lanayru Mining Facility (LMF) Cutscene
     - 55 # Watched Lanayru Desert Intro Cutscene
-    - random_starting_statues == off:
-        - 68 # Checked Desert statue
     - 79 # Revealed Gossip Stone near Temple of Time
     - open_lmf == open:
-        - 30 # Watched LMF Rises Cutscene
-        - 31 # Watched LMF rising Cutscene
+      - 30 # Watched LMF Rises Cutscene
+      - 31 # Watched LMF rising Cutscene
+    - shortcut_west_wall_minecart == on:
+      - 32 # Minecart on West Wall pushed down
+    - shortcut_minecart_before_caves == on:
+      - 33 # Minecart on Wall before Caves pushed down
+    - shortcut_lanayru_bars == on:
+      - 52 # Bars near Stone Cache lowered
+    - shortcut_sand_oasis_minecart == on:
+      - 65 # Minecart on Sand Oasis Wall pushed down
+    - random_starting_statues == off:
+      - 68 # Checked Desert statue
     - open_lmf == main_node or open_lmf == open:
-        - 100 # Lightning node active
-        - 101 # Fire node active
-        - 102 # Water node active
+      - 100 # Lightning node active
+      - 101 # Fire node active
+      - 102 # Water node active
 
   Lanayru Sand Sea: # Scene Index 8
     - 95 # Reveal Shipyard Gossip Stone
@@ -201,8 +228,8 @@ Sceneflags:
     - 40 # Revealed Gossip Stone in Center of Caves
     - 41 # Revealed Gossip Stone near Lanayru Gorge Entrance
     - lanayru_caves_keys == removed:
-        - 14 # Unlocked door to Lanayru Gorge Minecart area
-        - 28 # Unlocked door to Lanayru Sand Sea
+      - 14 # Unlocked door to Lanayru Gorge Minecart area
+      - 28 # Unlocked door to Lanayru Sand Sea
 
   Sealed Grounds: # Scene Index 10
     - 4 # Pushed log from BtT to Faron Woods
@@ -211,71 +238,110 @@ Sceneflags:
     - 21 # Ballad of the Goddess played with Impa
     - 28 # Groose metting Impa first time cutscene
     - 29 # Harp Tutorial completed
-    - random_starting_statues == off:
-        - 35 # Sealed Grounds Statue
-    - 39 # Log to Behind the Temple pushed down
     - 55 # Watched First time landing Cutscene
     - 72 # Revealed Behind the Temple Gossip Stone
+    - random_starting_statues == off:
+      - 35 # Sealed Grounds Statue
+    - shortcut_spiral_log_to_btt == on:
+      - 39 # Log to Behind the Temple pushed down
     - Complete_Triforce:
-        - 50 # Unlocked Horde Door from Temple of Hylia
+      - 50 # Unlocked Horde Door from Temple of Hylia
     - skip_horde == on:
-        - 51 # Unlocked Horde Door from Hylia's Realm
+      - 51 # Unlocked Horde Door from Hylia's Realm
 
   Skyview Temple: # Scene Index 11
     - small_keys == removed:
-        - 6 # Unlocked door into main room
-        - 7 # Unlocked door into Staldra room
+      - 6 # Unlocked door into main room
+      - 7 # Unlocked door into Staldra room
+    - shortcut_skyview_boards == on:
+      - 21 # 1st boards to first hub room destroyed
+      - 22 # 2nd boards to first hub room destroyed
+    - shortcut_skyview_bars == on:
+      - 23 # Switch raising bars hit
     - boss_keys == removed:
-        - 100 # Opened Boss Door
+      - 100 # Opened Boss Door
 
   Ancient Cistern: # Scene Index 12
     - 62 # Watched Ancient Cistern Intro Cutscene
+    - shortcut_ac_bridge == on:
+      - 4 # Flipped lever extending bridge to basement
+    - shortcut_ac_water_vents == on:
+      - 6 # Water vent up to giant statue lever opened
+      - 7 # Watched cutscene after taking water vent up to giant statue lever
+      - 42 # Water vent in basement opened
+      - 46 # Watched cutscene after taking water vent in basement
+      - 50 # Water vent in back room that raises lilypad opened
+      - 110 # Lowest water vent inside giant statue opened
+      - 111 # Middle water vent inside giant statue opened
+      - 112 # Highest water vent inside giant statue opened
     - small_keys == removed:
-        - 40 # Unlocked door next to whippable Bokoblin
-        - 113 # Unlocked door inside stone statue
+      - 40 # Unlocked door next to whippable Bokoblin
+      - 113 # Unlocked door inside stone statue
     - boss_keys == removed:
-        - 108 # Opened Boss Door
+      - 108 # Opened Boss Door
 
   # Unused: # Scene Index 13
 
   Earth Temple: # Scene Index 14
     - 15 # Set boulder entering dragon's mouth Cutscene watched and removes lavafall in front of Boss Door
     - boss_keys == removed:
-        - 14 # Opened Boss Door
+      - 14 # Opened Boss Door
+    - shortcut_earth_temple_bridge == on:
+      - 18 # Watched bridge raising cutscene
+      - 35 # Raised Bridge
 
   Fire Sanctuary: # Scene Index 15
     - 6 # Watched first water pod Cutscene
     - 83 # Watched Cutscene showing the outside of the Fire Sanctuary
-    - fs_lava_flow == on:
-        - 62 # Watched Cutscene after blowing up lava chase rock
-        - 64 # Blow up rock underground starting lava chase (back half lava flow)
+    - shortcut_fs_lava_flow == on:
+      - 62 # Watched Cutscene after blowing up lava chase rock
+      - 64 # Blow up rock underground starting lava chase (back half lava flow)
     - small_keys == removed:
-        - 2 # Unlocked 1st locked door
-        - 57 # Unlocked 3rd locked door
-        - 85 # Unlocked 2nd locked door
+      - 2 # Unlocked 1st locked door
+      - 57 # Unlocked 3rd locked door
+      - 85 # Unlocked 2nd locked door
     - boss_keys == removed:
-        - 61 # Opened Boss Door
+      - 61 # Opened Boss Door
+    - shortcut_fs_outside_bars == on:
+      - 72 # Bars between outside bridges raised
 
   # Unused: # Scene Index 16
 
   Lanayru Mining Facility: # Scene Index 17
     - small_keys == removed:
-        - 0 # Unlocked door to room before hop across boxes room
+      - 0 # Unlocked door to room before hop across boxes room
+    - shortcut_lmf_boxes == on:
+      - 23 # Box in hop across boxes room pushed
+      - 95 # Shortcut box after hop across boxes room pushed
+      - 96 # Shortcut box to boss key room pushed
+      - 114 # Box in boss key room pushed
+    - shortcut_lmf_wind_gates == on:
+      - 35 # Wind Gate near boss door raised
+      - 39 # Wind Gate near Bird Statue raised
+      - 44 # Sand pile on minecart dusted
+      - 119 # Beamos on minecart track destroyed
+    - shortcut_lmf_bars_to_west_side == on:
+      - 37 # Bars blocking access to crawlspaces raised
     - boss_keys == removed:
-        - 127 # Opened Boss Door
+      - 127 # Opened Boss Door
 
   Sandship: # Scene Index 18
+    - shortcut_sandship_windows == on:
+      - 42 # Windows below life boat opened
+      - 50 # Played animation of windows below life boat opening
+    - shortcut_sandship_brig_bars == on:
+      - 65 # Bars to brig raised
     - small_keys == removed:
-        - 119 # Unlocked door leading to Scervo
-        - 121 # Unlocked door leading to the Captain's Cabin
+      - 119 # Unlocked door leading to Scervo
+      - 121 # Unlocked door leading to the Captain's Cabin
     - boss_keys == removed:
-        - 20 # Opened Boss Door
+      - 20 # Opened Boss Door
 
   # Unused: # Scene Index 19
 
   Sky Keep: # Scene Index 20
     - small_keys == removed:
-        - 63 # Unlocked key locked door
+      - 63 # Unlocked key locked door
 
   The Sky: # Scene Index 21
     - 43 # Revealed Gossip Stone in Thunderhead
@@ -362,32 +428,31 @@ Dungeonflags:
 
   Skyview Temple: # Scene Index 11
     - boss_keys == removed:
-        - 16 # Boss Key placed
+      - 16 # Boss Key placed
 
   Ancient Cistern: # Scene Index 12
     - boss_keys == removed:
-        - 16 # Boss Key placed
+      - 16 # Boss Key placed
 
   # Unused: # Scene Index 13
 
   Earth Temple: # Scene Index 14
     - boss_keys == removed:
-        - 16 # Boss Key placed
+      - 16 # Boss Key placed
 
   Fire Sanctuary: # Scene Index 15
     - boss_keys == removed:
-        - 16 # Boss Key placed
+      - 16 # Boss Key placed
 
   # Unused: # Scene Index 16
 
   Lanayru Mining Facility: # Scene Index 17
     - boss_keys == removed:
-        - 16 # Boss Key placed
+      - 16 # Boss Key placed
 
   Sandship: # Scene Index 18
     - boss_keys == removed:
-        - 16 # Boss Key placed
-
+      - 16 # Boss Key placed
 
   # Unused: # Scene Index 19
 

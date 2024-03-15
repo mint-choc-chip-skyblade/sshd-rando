@@ -1,6 +1,6 @@
-############################
-##    Gameplay Options    ##
-############################
+######################
+## Gameplay Options ##
+######################
 
 - name: logic_rules
   default_option: all_locations_reachable
@@ -127,50 +127,6 @@
     - "off": "Newly obtained wallets do not give any Rupees."
     - "on": "Newly obtained wallets will come pre-filled with Rupees."
 
-- name: open_thunderhead
-  default_option: ballad
-  pretty_name: Open Thunderhead
-  pretty_options:
-    - Ballad
-    - Open
-  options:
-    - ballad: "You will need the Ballad of the Goddess before The Thunderhead will open."
-    - open: "The Thunderhead will be opened from the start of the game."
-
-- name: open_lake_floria
-  default_option: vanilla
-  pretty_name: Open Lake Floria
-  pretty_options:
-    - Vanilla
-    - Talk to Yerbal
-    - Open
-  options:
-    - vanilla: "You are expected to climb the Great Tree, talk to Yerbal, and open the Lake Floria Gates with the Goddess Sword in order to enter Lake Floria."
-    - yerbal: "You are expected to climb the Great Tree and talk to Yerbal in order to enter Lake Floria."
-    - open: "The Lake Floria Gates will be opened from the start of the game."
-
-- name: open_earth_temple
-  default_option: "off"
-  pretty_name: Open Earth Temple
-  pretty_options:
-    - "Off"
-    - "On"
-  options:
-    - "off": "You will need to collect all the Earth Temple Key Pieces in order to open the Earth Temple Door."
-    - "on": "The Earth Temple Door will be opened from the start of the game."
-
-- name: open_lmf
-  default_option: open
-  pretty_name: Open Lanayru Mining Facility
-  pretty_options:
-    - Nodes
-    - Main Node
-    - Open
-  options:
-    - nodes: "You will need to activate each of the 3 nodes and the main node in order to raise the Lanayru Mining Facility."
-    - main_node: "You will need to activate the main node in order to raise the Lanayru Mining Facility."
-    - open: "The Lanayru Mining Facility will be raised from the start of the game."
-
 # Will be put on the gui once this option actually changes behaviour
 - name: randomize_skykeep_layout
   default_option: "off"
@@ -181,16 +137,6 @@
   options:
     - "off": "The Sky Keep rooms will start in their vanilla positions."
     - "on": "The Sky Keep rooms will start in a random order."
-
-- name: fs_lava_flow
-  default_option: "on"
-  pretty_name: Fire Sanctuary Lava Flow
-  pretty_options:
-    - "Off"
-    - "On"
-  options:
-    - "off": "You will need to blow up the rock and escape the lava chase in order for the lava river at the end of Fire Sanctuary to be flowing."
-    - "on": "The lava river at the end of Fire Sanctuary will be flowing from the start of the game."
 
 - name: peatrice_conversations
   default_option: 0
@@ -524,8 +470,8 @@
     - "Off"
     - "On"
   options:
-    - "off": "You will need to fight Demise after exiting the portal at the bottom of the whirlpool spiral in Hylia's Realm."
-    - "on": "The Demise fight after exiting the portal at the bottom of the whirlpool spiral in Hylia's Realm will be skipped."
+    - "off": "You will need to fight Demise after exiting the portal at the bottom of the spiral in Hylia's Realm."
+    - "on": "The Demise fight after exiting the portal at the bottom of the spiral in Hylia's Realm will be skipped."
 
 - name: required_dungeons
   default_option: 2
@@ -697,9 +643,9 @@
         **Hero Hode** (new game +) damage is x2.
         At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
-############################
-##    Cosmetic Options    ##
-############################
+######################
+## Cosmetic Options ##
+######################
 
 - name: language
   type: Cosmetic
@@ -758,9 +704,307 @@
     - "off": "Stars will only appear in the sky at night."
     - "on": "Stars will appear in the sky during the day and night."
 
-############################
-## Logic options (tricks) ##
-############################
+###############
+## Shortcuts ##
+###############
+
+- name: open_thunderhead
+  default_option: ballad
+  pretty_name: Open Thunderhead
+  pretty_options:
+    - Ballad
+    - Open
+  options:
+    - ballad: "You will need the Ballad of the Goddess before The Thunderhead will open."
+    - open: "The Thunderhead will be opened from the start of the game."
+
+- name: open_lake_floria
+  default_option: vanilla
+  pretty_name: Open Lake Floria
+  pretty_options:
+    - Vanilla
+    - Talk to Yerbal
+    - Open
+  options:
+    - vanilla: "You are expected to climb the Great Tree, talk to Yerbal, and open the Lake Floria Gates with the Goddess Sword in order to enter Lake Floria."
+    - yerbal: "You are expected to climb the Great Tree and talk to Yerbal in order to enter Lake Floria."
+    - open: "The Lake Floria Gates will be opened from the start of the game."
+
+- name: open_earth_temple
+  default_option: "off"
+  pretty_name: Open Earth Temple
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to collect all the Earth Temple Key Pieces in order to open the Earth Temple Door."
+    - "on": "The Earth Temple Door will be opened from the start of the game."
+
+- name: open_lmf
+  default_option: open
+  pretty_name: Open Lanayru Mining Facility
+  pretty_options:
+    - Nodes
+    - Main Node
+    - Open
+  options:
+    - nodes: "You will need to activate each of the 3 nodes and the main node in order to raise the Lanayru Mining Facility."
+    - main_node: "You will need to activate the main node in order to raise the Lanayru Mining Facility."
+    - open: "The Lanayru Mining Facility will be raised from the start of the game."
+
+- name: open_batreaux_shed
+  default_option: "off"
+  pretty_name: Open Batreaux's Shed
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to bonk or sword-slash the back-leftmost gravestone at night to open the shed to Batreaux's House."
+    - "on": "The shed to Batreaux's House will be open from the start of the game."
+
+- name: shortcut_spiral_log_to_btt
+  default_option: "on"
+  pretty_name: Sealed Spiral Log to Behind the Temple
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will not be able to go through the entrance from the Sealed Grounds Spiral to Behind the Temple without entering from the other side where you can push down the log."
+    - "on": "The log between the Sealed Grounds Spiral and Behind the Temple will be pushed down from the start of the game."
+
+- name: shortcut_logs_near_machi
+  default_option: "off"
+  pretty_name: Faron Woods Logs near First Kikwi
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need a Sword or Clawshots to get to the main part of Faron Woods."
+    - "on": "The logs from the Faron Woods entrance to the main part of Faron Woods will be pushed down from the start of the game."
+
+- name: shortcut_faron_log_to_floria
+  default_option: "off"
+  pretty_name: Faron Woods Log to after Lake Floria
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will not be able to go through the entrance from Faron Woods to after Lake Floria without entering from the other side where you can push down the log."
+    - "on": "The log from the Faron Woods entrance to after Lake Floria will be pushed down from the start of the game."
+
+- name: shortcut_deep_woods_log_before_tightrope
+  default_option: "off"
+  pretty_name: Deep Woods Log before Tightrope
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to bypass the hornet's nest to get to the back part of Deep Woods."
+    - "on": "The log from the Deep Woods entrance to after the Tightrope will be pushed down from the start of the game."
+
+- name: shortcut_deep_woods_log_before_temple
+  default_option: "off"
+  pretty_name: Deep Woods Log before Temple
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to walk around to the Deep Woods bird statue to get to the Temple entrance."
+    - "on": "The log from after the Deep Woods Tightrope before the Temple will be pushed down from the start of the game."
+
+- name: shortcut_eldin_entrance_boulder
+  default_option: "off"
+  pretty_name: Eldin Volcano Entrance Boulder
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need Bomb Bag to blow up the boulder down the left path from the Eldin Volcano entrance."
+    - "on": "The boulder down the left path from the Eldin Volcano entrance will be blown up from the start of the game."
+
+- name: shortcut_eldin_ascent_boulder
+  default_option: "off"
+  pretty_name: Eldin Volcano Boulder near Ascent
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need Bomb Bag or Hook Beetle to blow up the boulder near the Volcano Ascent bird statue before the wind vent to Hot Cave."
+    - "on": "The boulder near Volcano Ascent will be blown up from the start of the game."
+
+- name: shortcut_vs_flames
+  default_option: "off"
+  pretty_name: Volcano Summit Flames
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need an Empty Bottle, access to water, and Clawshots to get past the flames in Volcano Summit."
+    - "on": "The two sets of flames in Volcano Summit will be removed from the start of the game."
+
+- name: shortcut_lanayru_bars
+  default_option: "off"
+  pretty_name: Lanayru Desert Bars near Stone Cache
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to find access the east side of Lanayru Desert before you can pull the lever and raise the bars."
+    - "on": "The bars separating Lanayru Desert from Stone Cache will be raised from the start of the game."
+
+- name: shortcut_west_wall_minecart
+  default_option: "off"
+  pretty_name: Lanayru Desert Minecart on West Wall
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to travel across the Sand Oasis to get to the West Desert bird statue."
+    - "on": "The minecart which allows access to the Western Wall of Lanayru Desert will be pushed down from the start of the game."
+
+- name: shortcut_sand_oasis_minecart
+  default_option: "off"
+  pretty_name: Lanayru Desert Minecart in Sand Oasis
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to use Clawshots to get onto the Sand Oasis wall."
+    - "on": "The minecart which allows access to the Sand Oasis wall will be pushed down from the start of the game."
+
+- name: shortcut_minecart_before_caves
+  default_option: "off"
+  pretty_name: Lanayru Desert Minecart before Lanayru Caves
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to use Clawshots or navigate across Sand Oasis to get to the end of Sand Oasis."
+    - "on": "The minecart which allows access to the wall below the entrance to Lanayru Caves will be pushed down from the start of the game."
+
+- name: shortcut_skyview_boards
+  default_option: "off"
+  pretty_name: Skyview Temple Boarded Shortcut
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to hit the crystal switch and use a Sword to deactivate the single eye to get to the first hub room."
+    - "on": "The wooden boards blocking access to the first hub room will be destroyed from the start of the game."
+
+- name: shortcut_skyview_bars
+  default_option: "off"
+  pretty_name: Skyview Temple Bars before Boss Door
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to use a 2nd Small Key and go through the 2nd Small Key locked room to get to the boss door."
+    - "on": "The bars blocking access to the boss door will be raised from the start of the game."
+
+- name: shortcut_earth_temple_bridge
+  default_option: "off"
+  pretty_name: Earth Temple Pegs Bridge
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to raise the bridge by rolling along the lava on the gaint boulder."
+    - "on": "The bridge in the main room of Earth Temple will be raised from the start of the game."
+
+- name: shortcut_lmf_wind_gates
+  default_option: "off"
+  pretty_name: Lanayru Mining Facility Wind Gates in Hub Room
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to reach the back of the hub room by going through the spike maze."
+    - "on": "The wind gates blocking the central minecart path will be raised from the start of the game."
+
+- name: shortcut_lmf_boxes
+  default_option: "off"
+  pretty_name: Lanayru Mining Facility Pushable Boxes
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to push any boxes in the dungeon yourself."
+    - "on": "All of the metal pushable boxes in the dungeon (that aren't covered in sand) will be pushed from the start of the game."
+
+- name: shortcut_lmf_bars_to_west_side
+  default_option: "off"
+  pretty_name: Lanayru Mining Facility Bars to West Side
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to travel through the west rooms and defeat the single armos in order to get to the crawlspaces."
+    - "on": "The bars blocking access to the crawlspaces will be raised from the start of the game."
+
+- name: shortcut_ac_bridge
+  default_option: "off"
+  pretty_name: Ancient Cistern Bridge to Basement
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to navigate the basement in order to freely move the giant statue."
+    - "on": "The the bridge to the long thread down to the basement will be extended from the start of the game. You will be able to freely move the giant statue without navigating the basement."
+
+- name: shortcut_ac_water_vents
+  default_option: "off"
+  pretty_name: Ancient Cistern Water Vents
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to use the Whip to open the water vent shortcuts throughout the Ancient Cistern."
+    - "on": "The water vents throughout the Ancient Cistern will be open from the start of the game."
+
+- name: shortcut_sandship_windows
+  default_option: "off"
+  pretty_name: Sandship Windows below Life Boat
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to free the timeshift stone and open the windows below the life boat manually."
+    - "on": "The windows below the life boat will be open from the start of the game."
+
+- name: shortcut_sandship_brig_bars
+  default_option: "off"
+  pretty_name: Sandship Bars before Brig
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to activate both generators to save the crew locked in the brig."
+    - "on": "The bars blocking access to the brig will be raised from the start of the game."
+
+- name: shortcut_fs_outside_bars
+  default_option: "off"
+  pretty_name: Fire Sanctuary Bars between Outdoor Bridges
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to fight the double Magmanos and use the Mogma Mitts to bury underground in order to get to the second trapped mogma."
+    - "on": "The bars between the two outside bridges will be raised from the start of the game."
+
+- name: shortcut_fs_lava_flow
+  default_option: "on"
+  pretty_name: Fire Sanctuary Skip Lava Flow
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to blow up the rock and escape the lava chase in order for the lava river at the end of Fire Sanctuary to be flowing."
+    - "on": "The lava river at the end of Fire Sanctuary will be flowing from the start of the game."
+
+#############################
+## Logic settings (tricks) ##
+#############################
 
 - name: logic_early_lake_floria
   default_option: "off"

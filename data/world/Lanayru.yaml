@@ -95,7 +95,7 @@
     Desert Entrance Statue: Nothing
     Lanayru Desert West Wall: Clawshots
     Top of LMF: Raise_Lanayru_Mining_Facility
-    Lanayru Desert East: Clawshots or 'Stamina_Potion' or can_access(Lanayru Desert East) or logic_tot_skip_brakeslide
+    Lanayru Desert East: Clawshots or 'Stamina_Potion' or shortcut_lanayru_bars or can_access(Lanayru Desert East) or logic_tot_skip_brakeslide
     Lanayru Desert West Courtyard: "'Get_Past_Spume_to_Sand_Oasis'"
     Lanayru Mine In Minecart: Blow_Up_Covered_Timeshift_Stone # I can't assume the minecart is available, right?
   locations:
@@ -119,8 +119,8 @@
   hint_region: Lanayru Desert
   exits:
     Lanayru Desert South: Nothing
-    Lanayru Desert West Wall: Clawshots or 'Push_Down_West_Wall_Minecart'
-    Sand Oasis Middle: Can_Navigate_in_Oasis or 'Push_Down_First_Sand_Oasis_Minecart'
+    Lanayru Desert West Wall: Clawshots or shortcut_west_wall_minecart or 'Push_Down_West_Wall_Minecart'
+    Sand Oasis Middle: Can_Navigate_in_Oasis or shortcut_sand_oasis_minecart or 'Push_Down_First_Sand_Oasis_Minecart'
   locations:
     Lanayru Desert - Goddess Cube in Sand Oasis: Can_Navigate_in_Oasis and Goddess_Sword
     Lanayru Desert - Rupee behind South Statue near Caged Robot: Bomb_Bag and logic_bomb_throws
@@ -148,7 +148,7 @@
     West Desert Statue: Nothing
     Lanayru Desert West Courtyard: Nothing
     Lanayru Desert West Wall: Clawshots
-    Sand Oasis End: Can_Navigate_in_Oasis or Clawshots or 'Push_Down_Second_Sand_Oasis_Minecart'
+    Sand Oasis End: Can_Navigate_in_Oasis or Clawshots or shortcut_minecart_before_caves or 'Push_Down_Second_Sand_Oasis_Minecart'
   locations:
     Lanayru Desert - Goddess Cube in Sand Oasis: Goddess_Sword
     Lanayru Desert - Stamina Fruit in South Sand Oasis 1: Can_Navigate_in_Oasis or Beetle

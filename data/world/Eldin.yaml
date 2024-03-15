@@ -2,7 +2,7 @@
   hint_region: Eldin Volcano
   exits:
     Volcano Entrance Statue: Nothing
-    Volcano Ascent: Bomb_Bag or can_access(Volcano Ascent) # No bomb flowers are close enough for even tough beetle
+    Volcano Ascent: Bomb_Bag or shortcut_eldin_entrance_boulder or can_access(Volcano Ascent) # No bomb flowers are close enough for even tough beetle
     Volcano First Room: Nothing
   locations:
     Eldin Volcano - Rupee on Ledge before First Room: Nothing
@@ -86,10 +86,9 @@
   exits:
     Volcano Ascent Statue: Nothing
     Din's Silent Realm: Goddesss_Harp and Dins_Power
-
     # Beetle can be used to scare the boko away but that's really not obvious
     Outside Thrill Digger Cave: Bow or Slingshot or logic_stuttersprint
-    Past Sand Slide: Bomb_Bag or Hook_Beetle or can_access(Past Sand Slide) # or (Whip and Whip Bomb Trick)
+    Past Sand Slide: shortcut_eldin_ascent_boulder or Bomb_Bag or Hook_Beetle or can_access(Past Sand Slide) # or (Whip and Whip Bomb Trick)
     Volcano Entrance: Nothing
     Past Mogma Turf: Nothing
   locations:
@@ -326,18 +325,18 @@
 - name: Past Volcano Summit
   exits:
     Volcano Summit: Nothing
-    Outside Fire Sanctuary: Clawshots and 'Can_Collect_Water'
+    Outside Fire Sanctuary: Clawshots and (shortcut_vs_flames or 'Can_Collect_Water')
   locations:
-    Volcano Summit - Item behind Digging: Mogma_Mitts and 'Can_Collect_Water'
-    Volcano Summit - Underground Rupee 1: Mogma_Mitts and 'Can_Collect_Water'
-    Volcano Summit - Underground Rupee 2: Mogma_Mitts and 'Can_Collect_Water'
-    Volcano Summit - Gossip Stone near Second Thirsty Frog: "'Can_Collect_Water'"
+    Volcano Summit - Item behind Digging: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
+    Volcano Summit - Underground Rupee 1: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
+    Volcano Summit - Underground Rupee 2: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
+    Volcano Summit - Gossip Stone near Second Thirsty Frog: shortcut_vs_flames or 'Can_Collect_Water'
 
 - name: Outside Fire Sanctuary
   exits:
     Inside the Volcano Statue: Nothing
     Fire Sanctuary First Room: Nothing
-    Past Volcano Summit: can_access(Past Volcano Summit) and Clawshots and 'Can_Collect_Water'
+    Past Volcano Summit: can_access(Past Volcano Summit) and Clawshots and (shortcut_vs_flames or 'Can_Collect_Water')
   locations:
     Volcano Summit - Blow Torch West of Fire Sanctuary: Gust_Bellows
     Volcano Summit - Blow Torch East of Fire Sanctuary: Gust_Bellows

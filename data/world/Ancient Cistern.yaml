@@ -8,7 +8,7 @@
   exits:
     AC East Rooms: Nothing
     AC Lobby After Whip Hooks: Whip
-    AC Lobby Vines Area: can_access(AC Lobby Vines Area) and Whip # Turn on the geyser
+    AC Lobby Vines Area: (can_access(AC Lobby Vines Area) and Whip) or shortcut_ac_water_vents
     AC Behind the Waterfall: Water_Dragons_Scale and 'Can_Pull_Waterfall_Lever'
     AC Inside Statue: count(2, Ancient_Cistern_Small_Key) or small_keys == removed or 'Can_Lower_Giant_Statue'
     Floria Waterfall Temple Ledge: Nothing
@@ -46,6 +46,7 @@
     Can Lower Giant Statue: Whip
     Can Pull Waterfall Lever: logic_ac_lever_jump_trick
   exits:
+    AC Platform with Thread to Basement: shortcut_ac_bridge
     # Can front hop and jump slash
     AC Lobby After Whip Hooks: Sword and logic_ac_chest_after_whip_hooks_jump
     Ancient Cistern Lobby: Nothing
@@ -80,22 +81,24 @@
   dungeon: Ancient Cistern
   exits:
     AC Lobby After Whip Hooks: Nothing # Run up wall to pull lever or leave dungeon
-    AC Lobby Vines Area: Whip and Water_Dragons_Scale # The quadra-baba is kinda annoying but it's not too hard
+    # The quadra-baba is kinda annoying but it's not too hard
+    AC Lobby Vines Area: Whip and (Water_Dragons_Scale or (shortcut_ac_water_vents and Clawshots))
   locations:
-    Ancient Cistern - Rupee under Lilypad after Pipes: Water_Dragons_Scale # Flip lilypad and swim under
+    Ancient Cistern - Rupee under Lilypad after Pipes: Water_Dragons_Scale and (Whip or Clawshots) # Flip lilypad and swim under
+    # You can clawshot from one of the lilypads and avoid having to use the scale (not that you can get here without it)
     Ancient Cistern - Slingshot East Lamp after Pipes 1: ((Water_Dragons_Scale and Whip) or Clawshots) and Slingshot
     Ancient Cistern - Slingshot East Lamp after Pipes 2: ((Water_Dragons_Scale and Whip) or Clawshots) and Slingshot
-    Ancient Cistern - Slingshot West Lamp after Pipes 1: Water_Dragons_Scale and Slingshot
-    Ancient Cistern - Slingshot West Lamp after Pipes 2: Water_Dragons_Scale and Slingshot
-    Ancient Cistern - Slingshot West Lamp after Pipes 3: Water_Dragons_Scale and Slingshot
+    Ancient Cistern - Slingshot West Lamp after Pipes 1: Water_Dragons_Scale and (Whip or Clawshots) and Slingshot
+    Ancient Cistern - Slingshot West Lamp after Pipes 2: Water_Dragons_Scale and (Whip or Clawshots) and Slingshot
+    Ancient Cistern - Slingshot West Lamp after Pipes 3: Water_Dragons_Scale and (Whip or Clawshots) and Slingshot
 
 
 - name: AC Inside Statue
   dungeon: Ancient Cistern
   exits:
     AC Basement: "'Can_Lower_Giant_Statue'"
-    Ancient Cistern Lobby: Whip
-    AC Platform Before Boss: (Ancient_Cistern_Boss_Key or boss_keys == removed) and Whip
+    Ancient Cistern Lobby: Whip or shortcut_ac_water_vents
+    AC Platform Before Boss: (Ancient_Cistern_Boss_Key or boss_keys == removed) and (Whip or shortcut_ac_water_vents)
   locations:
     Ancient Cistern - Chest in Key Locked Room: "(count(2, Ancient_Cistern_Small_Key) or small_keys == removed) and
                                                  (Can_Defeat_Stalmaster or 'Can_Lower_Giant_Statue')"
@@ -106,7 +109,7 @@
   dungeon: Ancient Cistern
   exits:
     AC Inside Statue: Nothing
-
+    AC Basement Bone Pile with Long Thread: shortcut_ac_water_vents
     # You can clawshot straight onto the rotating vines
     AC Basement Rotating Vines: "Clawshots or
                                 (Whip and (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)))" # TODO: Damage Multiplier Check?
