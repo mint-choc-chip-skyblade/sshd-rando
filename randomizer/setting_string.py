@@ -161,22 +161,23 @@ def update_config_from_setting_string(
                 setting.update_current_value(value_index)
 
         for location in location_table:
-            if bits_reader.read(1):
-                if "Hint Location" in location_table[location].types:
-                    list_to_add_to = world_settings.excluded_hint_locations
-                else:
-                    list_to_add_to = world_settings.excluded_locations
+            if "Hint Location" in location_table[location].types:
+                location_list = world_settings.excluded_hint_locations
+            else:
+                location_list = world_settings.excluded_locations
 
-                if location not in list_to_add_to:
-                    list_to_add_to.append(location)
+            if bits_reader.read(1):
+                if location not in location_list:
+                    location_list.append(location)
+            else:
+                if location in location_list:
+                    location_list.remove(location)
 
         startable_items = Counter(STARTABLE_ITEMS)
 
         for item in startable_items:
             item_count = bits_reader.read(startable_items[item].bit_length())
-
-            if item_count > 0:
-                world_settings.starting_inventory[item] = item_count
+            world_settings.starting_inventory[item] = item_count
 
         world_settings.mixed_entrance_pools = [
             list() for _ in range(len(ENTRANCE_TYPES) - 1)
