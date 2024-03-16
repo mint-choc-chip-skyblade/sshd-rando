@@ -358,7 +358,7 @@
   locations:
     Skyloft Village - Bonk Tree near River: Nothing
     Skyloft Village - Crystal near Pumpkin Patch: Night
-    Skyloft Village - Stamina Fruit: Nothing
+    Skyloft Village - Stamina Fruit above Mallara's House: Nothing
 
 - name: Bertie's House
   allowed_time_of_day: All

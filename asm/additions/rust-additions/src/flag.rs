@@ -569,6 +569,7 @@ pub fn handle_startflags() {
         (*FILE_MGR).prevent_commit = true;
 
         let mut delimiter_count = 0;
+        let mut pouch_item_counter = 0;
 
         for flag_ptr in STARTFLAGS.iter() {
             let mut flag = *flag_ptr;
@@ -600,6 +601,21 @@ pub fn handle_startflags() {
                 // Itemflags
                 2 => {
                     ((*(*ITEMFLAG_MGR).funcs).set_flag)(ITEMFLAG_MGR, flag.into());
+
+                    // Set pouch items if applicable
+                    match flag {
+                        // Hylian Shield
+                        125 => {
+                            (*FILE_MGR).FA.pouch_items[pouch_item_counter] = 125 | 0x30 << 0x10;
+                            pouch_item_counter += 1;
+                        },
+                        // Bottle
+                        153 => {
+                            (*FILE_MGR).FA.pouch_items[pouch_item_counter] = 153;
+                            pouch_item_counter += 1;
+                        },
+                        _ => {},
+                    }
                 },
 
                 // Dungeonflags

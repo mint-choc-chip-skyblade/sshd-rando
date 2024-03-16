@@ -1743,9 +1743,9 @@
   pretty: Skyloft Village - Crystal near Pumpkin Patch
   cryptic: a <r<crystal behind a tree>>
 
-- name: Skyloft Village - Stamina Fruit
-  standard: Skyloft Village - Stamina Fruit
-  pretty: Skyloft Village - Stamina Fruit
+- name: Skyloft Village - Stamina Fruit above Mallara's House
+  standard: Skyloft Village - Stamina Fruit above Mallara's House
+  pretty: Skyloft Village - Stamina Fruit above Mallara's House
   cryptic: a <r<fruit near some residences>>
 
 - name: Batreaux - 5 Crystals
@@ -2609,9 +2609,9 @@
   pretty: Deep Woods - Blow Flowers at Entrance
   cryptic: <r<dusting flora>> in a <g<deep forest>>
 
-- name: Deep Woods - Stamina Fruit
-  standard: Deep Woods - Stamina Fruit
-  pretty: Deep Woods - Stamina Fruit
+- name: Deep Woods - Stamina Fruit on Hanging Ledge
+  standard: Deep Woods - Stamina Fruit on Hanging Ledge
+  pretty: Deep Woods - Stamina Fruit on Hanging Ledge
   cryptic: a <r<fruit deep in a forest>>
 
 - name: Deep Woods - Bonk Tree with Rope
