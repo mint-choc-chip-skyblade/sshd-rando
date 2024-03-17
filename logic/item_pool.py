@@ -112,6 +112,16 @@ def generate_starting_item_pool(world: "World"):
             starting_items[random_item] = starting_items[random_item] + 1
             random_starting_item_pool.remove(random_item)
 
+    # Remove Heart Containers/Pieces for starting health
+    extra_hearts = world.setting("starting_hearts").value_as_number() - 6
+    for _ in range(extra_hearts):
+        # First add heart containers to the starting inventory
+        if starting_items[HEART_CONTAINER] < 6:
+            starting_items[HEART_CONTAINER] += 1
+        # Then add heart pieces in sets of 4
+        else:
+            starting_items[HEART_PIECE] += 4
+
     # Populate starting item pool
     for item_name, count in starting_items.items():
         item = world.get_item(item_name)

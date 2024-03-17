@@ -286,7 +286,7 @@ SACRED_BOW = "Sacred " + BOW
 BOMB_BAG = "Bomb Bag"
 
 # 93
-HEART_CONTANER = HEART + " Container"
+HEART_CONTAINER = HEART + " Container"
 
 # 94
 HEART_PIECE = HEART + " Piece"
