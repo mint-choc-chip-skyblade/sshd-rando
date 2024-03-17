@@ -2294,7 +2294,7 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Great Tree - Blow Small Yellow Mushroom after Vines
+- name: Inside the Great Tree - Blow Small Yellow Mushroom after Vines
   original_item: Green Rupee
   types:
     - Hidden Items
@@ -2302,7 +2302,7 @@
   Paths:
     - stage/F100_1/r0/l0/TgReact/0xFC56
 
-- name: Great Tree - Blow Large Yellow Mushroom after Vines
+- name: Inside the Great Tree - Blow Large Yellow Mushroom after Vines
   original_item: 5 Deku Seeds
   types:
     - Hidden Items
@@ -2310,7 +2310,7 @@
   Paths:
     - stage/F100_1/r0/l0/TgReact/0xFC55
 
-- name: Great Tree - Blow Red Mushroom after Swinging Platforms West
+- name: Inside the Great Tree - Blow Red Mushroom after Swinging Platforms West
   original_item: Heart
   types:
     - Hidden Items
@@ -2318,7 +2318,7 @@
   Paths:
     - stage/F100_1/r0/l0/TgReact/0xFC57
 
-- name: Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
+- name: Inside the Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
   original_item: Blue Rupee
   types:
     - Hidden Items
@@ -2326,7 +2326,7 @@
   Paths:
     - stage/F100_1/r0/l0/TgReact/0xFC58
 
-- name: Great Tree - Chest
+- name: Inside the Great Tree - Chest guarded by Deku Baba
   original_item: Gold Rupee
   types:
     - Chests
@@ -2334,7 +2334,7 @@
   Paths:
     - stage/F100_1/r0/l0/TBox/84
 
-- name: Great Tree - Blow Tree Spiral on Highest Pathway
+- name: Inside the Great Tree - Blow Tree Spiral on Highest Pathway
   original_item: Red Rupee # actually a rupee shower
   types:
     - Hidden Items

@@ -132,6 +132,12 @@ LOCATION_ALIASES = {
     "Sealed Temple - Slingshot above Doors to Sealed Grounds Whirlpool": "Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral",
     "Skyloft Village - Stamina Fruit": "Skyloft Village - Stamina Fruit above Mallara's House",
     "Deep Woods - Stamina Fruit": "Deep Woods - Stamina Fruit on Hanging Ledge",
+    "Great Tree - Blow Small Yellow Mushroom after Vines": "Inside the Great Tree - Blow Small Yellow Mushroom after Vines",
+    "Great Tree - Blow Large Yellow Mushroom after Vines": "Inside the Great Tree - Blow Large Yellow Mushroom after Vines",
+    "Great Tree - Blow Red Mushroom after Swinging Platforms West": "Inside the Great Tree - Blow Red Mushroom after Swinging Platforms West",
+    "Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South": "Inside the Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South",
+    "Great Tree - Chest": "Inside the Great Tree - Chest guarded by Deku Baba",
+    "Great Tree - Blow Tree Spiral on Highest Pathway": "Inside the Great Tree - Blow Tree Spiral on Highest Pathway",
 }
 
 SETTING_ALIASES = {
