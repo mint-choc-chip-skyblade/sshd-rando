@@ -1445,3 +1445,11 @@
     - 0-7
   options:
     - 0-7: "Select the number of randomly chosen items you would like to start with. Only a selection of the most useful items are able to be chosen to maximize the benefit of this setting."
+
+- name: starting_hearts
+  default_option: 6
+  pretty_name: Starting Hearts
+  pretty_options:
+    - 6-18
+  options:
+    - 6-18: "Select the number of hearts you want to start with."

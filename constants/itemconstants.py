@@ -183,7 +183,7 @@ MINIMAL_ITEM_POOL: list[str] = (
     + [HEART_MEDAL] * 2
     + [RUPEE_MEDAL] * 2
     + [HEART_PIECE] * 24
-    + [HEART_CONTANER] * 6
+    + [HEART_CONTAINER] * 6
     + [LIFE_MEDAL] * 2
     + [GREEN_RUPEE] * 3
     + [BLUE_RUPEE] * 11
@@ -483,6 +483,8 @@ ITEM_COUNTS = {
     SSH_SMALL_KEY: (18, 1, 2),
     FS_SMALL_KEY: (15, 1, 3),
     SK_SMALL_KEY: (20, 1, 1),
+    HEART_CONTAINER: (0x5D, 1, 6),
+    HEART_PIECE: (0x5E, 1, 32),
 }
 
 TRAP_SETTING_TO_ITEM = {

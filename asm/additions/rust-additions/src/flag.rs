@@ -645,14 +645,22 @@ pub fn handle_startflags() {
             }
         }
 
+        let mut starting_hearts: u16 = 6 * 4;
+
         for start_count in START_COUNTS.iter() {
             if start_count.counter == 0xFFFF {
                 break;
             }
 
+            // Total up Heart Pieces and Heart Containers for starting health
+            if start_count.counter == 0x5E {
+                starting_hearts += start_count.value;
+            } else if start_count.counter == 0x5D {
+                starting_hearts += start_count.value * 4;
+            }
             // If the counter is less than 25, it's a dungeon scene
             // for small key counts. Otherwise, it's a regular item flag counter
-            if start_count.counter <= 25 {
+            else if start_count.counter <= 25 {
                 (*FILE_MGR).FA.dungeonflags[start_count.counter as usize][1] = start_count.value;
             } else {
                 ((*(*ITEMFLAG_MGR).funcs).set_flag_or_counter_to_value)(
@@ -662,6 +670,10 @@ pub fn handle_startflags() {
                 );
             }
         }
+
+        // Apply starting hearts
+        (*FILE_MGR).FA.health_capacity = starting_hearts;
+        (*FILE_MGR).FA.current_health = starting_hearts;
 
         // amiibo
         (*FILE_MGR).game_options |= 1;
