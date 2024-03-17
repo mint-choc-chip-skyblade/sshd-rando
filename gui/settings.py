@@ -17,6 +17,7 @@ import pyclip
 import yaml
 
 from constants.configconstants import (
+    LOCATION_ALIASES,
     SETTINGS_NOT_IN_SETTINGS_LIST,
     get_default_setting,
     get_new_seed,
@@ -51,6 +52,35 @@ class Settings:
 
         self.settings = self.config.settings[0].settings
         self.location_table = build_location_table()
+
+        # Verify excluded locations
+        for location in self.config.settings[0].excluded_hint_locations:
+            if location not in self.location_table:
+                self.config.settings[0].excluded_hint_locations.remove(location)
+
+                if location in LOCATION_ALIASES:
+                    self.config.settings[0].excluded_hint_locations.append(
+                        LOCATION_ALIASES[location]
+                    )
+                else:
+                    self.main.fi_info_dialog.show_dialog(
+                        "Unknown location!",
+                        f"Could not exclude unknown location: {location}.\n\nThis location will be ignored and will not be excluded.",
+                    )
+
+        for location in self.config.settings[0].excluded_locations:
+            if location not in self.location_table:
+                self.config.settings[0].excluded_locations.remove(location)
+
+                if location in LOCATION_ALIASES:
+                    self.config.settings[0].excluded_locations.append(
+                        LOCATION_ALIASES[location]
+                    )
+                else:
+                    self.main.fi_info_dialog.show_dialog(
+                        "Unknown location!",
+                        f"Could not exclude unknown location: {location}.\n\nThis location will be ignored and will not be excluded.",
+                    )
 
         self.set_setting_descriptions(None)
 

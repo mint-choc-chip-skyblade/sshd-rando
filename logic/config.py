@@ -3,6 +3,7 @@ import yaml
 from constants.configconstants import (
     CONFIG_FIELDS,
     PREFERENCE_FIELDS,
+    SETTING_ALIASES,
     get_default_setting,
 )
 from constants.itemconstants import STARTABLE_ITEMS
@@ -314,12 +315,16 @@ def load_config_from_file(
                             ]
                     continue
 
-                if setting_name not in settings_info:
-                    rewrite_config = True
-                    continue
-
                 setting_value = config_in[world_num_str][setting_name]
                 # TODO: Hex codes
+
+                if setting_name not in settings_info:
+                    rewrite_config = True
+
+                    if setting_name in SETTING_ALIASES:
+                        setting_name = SETTING_ALIASES[setting_name]
+                    else:
+                        continue
 
                 if setting_value not in settings_info[setting_name].options:
                     raise ConfigError(

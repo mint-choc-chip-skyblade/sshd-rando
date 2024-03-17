@@ -126,3 +126,14 @@ def get_default_setting(setting_name: str):
         )
 
     return setting_value
+
+
+LOCATION_ALIASES = {
+    "Sealed Temple - Slingshot above Doors to Sealed Grounds Whirlpool": "Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral",
+    "Skyloft Village - Stamina Fruit": "Skyloft Village - Stamina Fruit above Mallara's House",
+    "Deep Woods - Stamina Fruit": "Deep Woods - Stamina Fruit on Hanging Ledge",
+}
+
+SETTING_ALIASES = {
+    "fs_lava_flow": "shortcut_fs_lava_flow",
+}

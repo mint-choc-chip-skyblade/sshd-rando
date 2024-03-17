@@ -52,8 +52,8 @@ class Main(QMainWindow):
 
         self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
 
-        self.settings = Settings(self, self.ui)
         self.accessibility = Accessibility(self, self.ui)
+        self.settings = Settings(self, self.ui)
         self.advanced = Advanced(self, self.ui)
 
         self.ui.randomize_button.setDisabled(True)
