@@ -22,12 +22,12 @@
   exits:
     Ancient Cistern Lobby: Nothing
   locations:
-    Ancient Cistern - Rupee in East Part in Cubby: Can_Unlock_Combination_Lock and Water_Dragons_Scale
-    Ancient Cistern - First Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
-    Ancient Cistern - Second Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
-    Ancient Cistern - Third Rupee in East Part in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
-    Ancient Cistern - Rupee in East Part in Main Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
-    Ancient Cistern - Chest in East Part: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Rupee in East Room in Cubby: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - First Rupee in East Room in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Second Rupee in East Room in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Third Rupee in East Room in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Rupee in East Room in Main Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
+    Ancient Cistern - Chest in East Room: Can_Unlock_Combination_Lock and Water_Dragons_Scale
 
 
 - name: AC Lobby After Whip Hooks
@@ -59,7 +59,7 @@
   exits:
     AC Red Pipe Basement: Whip
   locations:
-    Ancient Cistern - Chest behind the Waterfall: Nothing
+    Ancient Cistern - Chest behind Waterfall: Nothing
 
 
 - name: AC Red Pipe Basement
@@ -74,7 +74,7 @@
     AC Red Pipe Basement: Water_Dragons_Scale
     AC Back Room: count(2, Ancient_Cistern_Small_Key) or small_keys == removed
   locations:
-    Ancient Cistern - Bokoblin: Whip
+    Ancient Cistern - Whip Item from Bokoblin between Pipes: Whip
 
 
 - name: AC Back Room

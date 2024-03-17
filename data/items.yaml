@@ -1168,7 +1168,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Central Skyloft - West Cliff Goddess Chest
+   - Central Skyloft - Goddess Chest on West Cliff Island
 - id: 258
   name: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
   types:
@@ -1184,7 +1184,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Inside the Thunderhead - East Island Goddess Chest
+   - Inside the Thunderhead - Goddess Chest on East Island
 - id: 260
   name: Deep Woods Goddess Cube near Goron
   types:
@@ -1192,7 +1192,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Lumpy Pumpkin - Outside Goddess Chest
+   - Lumpy Pumpkin - Goddess Chest near Gossip Stone
 - id: 261
   name: Deep Woods Goddess Cube in front of Skyview
   types:
@@ -1208,7 +1208,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Beedle's Island - Cage Goddess Chest
+   - Beedle's Island - Goddess Chest in Cage
 - id: 263
   name: Lake Floria Goddess Cube
   types:
@@ -1216,7 +1216,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Central Skyloft - Floating Island Goddess Chest
+   - Central Skyloft - Goddess Chest on Island near Waterfall
 - id: 264
   name: Floria Waterfall Goddess Cube on High Ledge
   types:
@@ -1224,7 +1224,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Fun Fun Island - Goddess Chest
+   - Fun Fun Island - Goddess Chest below Island
 - id: 265
   name: Eldin Volcano Goddess Cube at Eldin Entrance
   types:
@@ -1240,7 +1240,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Island near Bamboo Island - Goddess Chest
+   - Island near Bamboo Island - Top Goddess Chest
 - id: 267
   name: Eldin Volcano Goddess Cube West of Earth Temple Entrance
   types:
@@ -1248,7 +1248,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Bamboo Island - Goddess Chest
+   - Bamboo Island - Goddess Chest behind Entrance
 - id: 268
   name: Eldin Volcano Goddess Cube East of Earth Temple Entrance
   types:
@@ -1256,7 +1256,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Northeast Island - Cage Goddess Chest
+   - Northeast Island - Goddess Chest in Cage
 - id: 269
   name: Eldin Volcano Goddess Cube on Sand Slide
   types:
@@ -1264,7 +1264,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Central Skyloft - Shed Goddess Chest
+   - Central Skyloft - Goddess Chest in Shed
 - id: 270
   name: Mogma Turf Goddess Cube
   types:
@@ -1360,7 +1360,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Triple Island - Cage Goddess Chest
+   - Triple Island - Goddess Chest in Cage
 - id: 282
   name: Pirate Stronghold Goddess Cube
   types:
@@ -1368,7 +1368,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Central Skyloft - Waterfall Goddess Chest
+   - Central Skyloft - Goddess Chest on Waterfall Island
 - id: 283
   name: Skyview Spring Goddess Cube
   types:

@@ -20,12 +20,12 @@
     Knight Academy Lower East Door: Day
     Knight Academy Lower West Door: Day
   locations:
-    Knight Academy - In Link's Closet: Nothing
-    Knight Academy - In Fledge's Closet: Nothing
-    Knight Academy - In Groose's Closet: Nothing
-    Knight Academy - In Owlan's Closet: Nothing
-    # Knight Academy - In Horwell's Closet: Nothing
-    Knight Academy - In Karane's Closet: Nothing
+    Knight Academy - Link's Closet: Nothing
+    Knight Academy - Fledge's Closet: Nothing
+    Knight Academy - Groose's Closet: Nothing
+    Knight Academy - Owlan's Closet: Nothing
+    # Knight Academy - Horwell's Closet: Nothing
+    Knight Academy - Karane's Closet: Nothing
     Knight Academy - Fledge's Gift: Nothing
     Knight Academy - Bonk Classroom Bookshelf: Nothing
     Knight Academy - Bonk Headmaster Gaepora's Bookshelf: Day
@@ -57,7 +57,7 @@
     Knight Academy: Nothing
   locations:
     Knight Academy - Crystal in Zelda's Room: Night
-    Knight Academy - In Zelda's Closet: Nothing
+    Knight Academy - Zelda's Closet: Nothing
 
 - name: Knight Academy Upper North Door
   allowed_time_of_day: All
@@ -104,7 +104,7 @@
     Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors: Slingshot
     Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors: Slingshot
     Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors: Slingshot
-    Upper Skyloft - Chest near Goddess Statue: Nothing
+    Upper Skyloft - Chest below Goddess Statue: Nothing
     Upper Skyloft - 600 Points in Pumpkin Pull: Bow and Day
     Upper Skyloft - Stamina Fruit near Upper Academy Gates: Nothing
     Upper Skyloft - Stamina Fruit near Lower Academy Gates: Nothing
@@ -119,8 +119,8 @@
     Sparring Hall North Door: Nothing
     Sparring Hall South Door: Nothing
   locations:
-    Sparring Hall - Crystal: Beetle and Night
-    Sparring Hall - Chest: Nothing
+    Sparring Hall - Crystal on Roof Beam: Beetle and Night
+    Sparring Hall - Chest in Back Room: Nothing
 
 - name: Sparring Hall North Door
   allowed_time_of_day: All
@@ -182,11 +182,11 @@
     Central Skyloft - Bonk Tree Southeast of the Bazaar: Nothing
     Central Skyloft - Bonk Tree Left of Sky Keep Statue: Nothing
     Central Skyloft - Bonk Tree Right of Sky Keep Statue: Nothing
-    Central Skyloft - West Cliff Goddess Chest: Faron_Woods_Goddess_Cube_on_West_Great_Tree_near_Exit
+    Central Skyloft - Goddess Chest on West Cliff Island: Faron_Woods_Goddess_Cube_on_West_Great_Tree_near_Exit
     Central Skyloft - Parrow's Gift: Day and 'Talk_to_Orielle'
     Central Skyloft - Parrow's Gratitude: Day and 'Save_Orielle'
-    Central Skyloft - Shed Chest: Water_Dragons_Scale
-    Central Skyloft - Shed Goddess Chest: Water_Dragons_Scale and Eldin_Volcano_Goddess_Cube_on_Sand_Slide
+    Central Skyloft - Chest in Shed: Water_Dragons_Scale
+    Central Skyloft - Goddess Chest in Shed: Water_Dragons_Scale and Eldin_Volcano_Goddess_Cube_on_Sand_Slide
     Central Skyloft - Stamina Fruit between Wooden Planks: Nothing
     Central Skyloft - Stamina Fruit near Wryna's House: Nothing
     Central Skyloft - Stamina Fruit near River: Nothing
@@ -307,8 +307,8 @@
     Bird Nest: Nothing
   locations:
     Central Skyloft - Crystal on Waterfall Island: Night
-    Central Skyloft - Waterfall Goddess Chest: Pirate_Stronghold_Goddess_Cube
-    Central Skyloft - Floating Island Goddess Chest: Lake_Floria_Goddess_Cube
+    Central Skyloft - Goddess Chest on Waterfall Island: Pirate_Stronghold_Goddess_Cube
+    Central Skyloft - Goddess Chest on Island near Waterfall: Lake_Floria_Goddess_Cube
     Central Skyloft - Gossip Stone on Waterfall Island: Nothing
 
 - name: Waterfall Cave

@@ -1023,7 +1023,7 @@
     - "Off"
     - "On"
   options:
-    - "off": "You will not be expected to get the Beedle's Island - Cage Goddess Chest using this trick."
+    - "off": "You will not be expected to get the Beedle's Island - Goddess Chest in Cage using this trick."
     - "on": "You may need to dive off your loftwing and skydive into the cage on Beedle's Island to get the chest."
 
 - name: logic_volcanic_island_dive
@@ -1043,7 +1043,7 @@
     - "Off"
     - "On"
   options:
-    - "off": "You will not be expected to get the Inside the Thunderhead - East Island Chest using this trick."
+    - "off": "You will not be expected to get the Inside the Thunderhead - Chest on East Island using this trick."
     - "on": "You may need to skydive onto the archway to get the chest."
 
 - name: logic_advanced_lizalfos_combat
@@ -1343,8 +1343,8 @@
     - "Off"
     - "On"
   options:
-    - "off": "You will only be expected to get the Sandship - Chest at the Stern by using the Clawshots."
-    - "on": "You may need to get the Sandship - Chest at the Stern by sidehopping of the mast."
+    - "off": "You will only be expected to get the Sandship - Chest at Ship's Stern by using the Clawshots."
+    - "on": "You may need to get the Sandship - Chest at Ship's Stern by sidehopping of the mast."
 
 - name: logic_sandship_itemless_spume
   default_option: "off"

@@ -45,7 +45,7 @@
   exits:
     FS First Magmanos Room: Mogma_Mitts # Assumes lava is lowered from defeating the Magmanos
   locations:
-    Fire Sanctuary - Chest on Balcony: Nothing
+    Fire Sanctuary - Chest on Balcony after Single Magmanos Fight: Nothing
 
 
 - name: FS South Bridge
@@ -93,8 +93,8 @@
     FS Room with First Lava River Past River: count(2, Fire_Sanctuary_Small_Key) or small_keys == removed
     FS Water Fruit Room After Frog: Sword
   locations:
-    Fire Sanctuary - First Chest in Water Fruit Room: Nothing
-    Fire Sanctuary - Second Chest in Water Fruit Room: Nothing
+    Fire Sanctuary - Lower Chest in Water Fruit Room: Nothing
+    Fire Sanctuary - Raised Chest in Water Fruit Room: Nothing
 
 
 - name: FS Water Fruit Room After Frog
@@ -122,7 +122,7 @@
     FS Magmanos Fight Room: "'Double_Magmanos_Defeated'"
     FS Under Magmanos Fight Room: Mogma_Mitts and 'Blow_Up_Rock_in_Tunnel'
   locations:
-    Fire Sanctuary - Rescue First Trapped Mogma Chest: Nothing # Lever lowered to match SD
+    Fire Sanctuary - Chest from First Trapped Mogma: Nothing # Lever lowered to match SD
 
 
 - name: FS Under Magmanos Fight Room
@@ -178,7 +178,7 @@
   exits:
     FS North Bridge East Side: Nothing
   locations:
-    Fire Sanctuary - Rescue Second Trapped Mogma Chest: Mogma_Mitts and Sword # Mitts to move gate; sword for water pod
+    Fire Sanctuary - Chest from Second Trapped Mogma: Mogma_Mitts and Sword # Mitts to move gate; sword for water pod
     Fire Sanctuary - Underground Rupee behind Bombable Wall: Mogma_Mitts and Sword and Bomb_Bag
     Fire Sanctuary - Chest after Bombable Wall: Mogma_Mitts and Sword and Bomb_Bag
     

@@ -1218,39 +1218,39 @@
   pretty: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
   cryptic: <r<disturbing ancient tomes>>
 
-- name: Knight Academy - In Link's Closet
-  standard: Knight Academy - In Link's Closet
-  pretty: Knight Academy - In Link's Closet
+- name: Knight Academy - Link's Closet
+  standard: Knight Academy - Link's Closet
+  pretty: Knight Academy - Link's Closet
   cryptic: <r<your closet>>
 
-- name: Knight Academy - In Fledge's Closet
-  standard: Knight Academy - In Fledge's Closet
-  pretty: Knight Academy - In Fledge's Closet
+- name: Knight Academy - Fledge's Closet
+  standard: Knight Academy - Fledge's Closet
+  pretty: Knight Academy - Fledge's Closet
   cryptic: snooping through a <r<friend's clothes>>
 
-- name: Knight Academy - In Groose's Closet
-  standard: Knight Academy - In Groose's Closet
-  pretty: Knight Academy - In Groose's Closet
+- name: Knight Academy - Groose's Closet
+  standard: Knight Academy - Groose's Closet
+  pretty: Knight Academy - Groose's Closet
   cryptic: snooping through a <r<rival's clothes>>
 
-- name: Knight Academy - In Owlan's Closet
-  standard: Knight Academy - In Owlan's Closet
-  pretty: Knight Academy - In Owlan's Closet
+- name: Knight Academy - Owlan's Closet
+  standard: Knight Academy - Owlan's Closet
+  pretty: Knight Academy - Owlan's Closet
   cryptic: snooping through a <r<professor's clothes>>
 
-- name: Knight Academy - In Horwell's Closet
-  standard: Knight Academy - In Horwell's Closet
-  pretty: Knight Academy - In Horwell's Closet
+- name: Knight Academy - Horwell's Closet
+  standard: Knight Academy - Horwell's Closet
+  pretty: Knight Academy - Horwell's Closet
   cryptic: snooping through a <r<professor's clothes>>
 
-- name: Knight Academy - In Karane's Closet
-  standard: Knight Academy - In Karane's Closet
-  pretty: Knight Academy - In Karane's Closet
+- name: Knight Academy - Karane's Closet
+  standard: Knight Academy - Karane's Closet
+  pretty: Knight Academy - Karane's Closet
   cryptic: snooping through a <r<popular student's clothes>>
 
-- name: Knight Academy - In Zelda's Closet
-  standard: Knight Academy - In Zelda's Closet
-  pretty: Knight Academy - In Zelda's Closet
+- name: Knight Academy - Zelda's Closet
+  standard: Knight Academy - Zelda's Closet
+  pretty: Knight Academy - Zelda's Closet
   cryptic: snooping through a <r<lover's clothes>>
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 1
@@ -1338,9 +1338,9 @@
   pretty: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
   cryptic: <r<shooting a schoolhouse light>>
 
-- name: Upper Skyloft - Chest near Goddess Statue
-  standard: Upper Skyloft - Chest near Goddess Statue
-  pretty: Upper Skyloft - Chest near Goddess Statue
+- name: Upper Skyloft - Chest below Goddess Statue
+  standard: Upper Skyloft - Chest below Goddess Statue
+  pretty: Upper Skyloft - Chest below Goddess Statue
   cryptic: the <r<northmost chest on Skyloft>>
 
 - name: Upper Skyloft - 600 Points in Pumpkin Pull
@@ -1388,14 +1388,14 @@
   pretty: Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors
   cryptic: <r<shooting a swordman's light>>
 
-- name: Sparring Hall - Chest
-  standard: Sparring Hall - Chest
-  pretty: Sparring Hall - Chest
+- name: Sparring Hall - Chest in Back Room
+  standard: Sparring Hall - Chest in Back Room
+  pretty: Sparring Hall - Chest in Back Room
   cryptic: a <r<training chest>>
 
-- name: Sparring Hall - Crystal
-  standard: Sparring Hall - Crystal
-  pretty: Sparring Hall - Crystal
+- name: Sparring Hall - Crystal on Roof Beam
+  standard: Sparring Hall - Crystal on Roof Beam
+  pretty: Sparring Hall - Crystal on Roof Beam
   cryptic: a <r<training crystal>>
 
 - name: Bazaar - Potion Lady's Gift
@@ -1588,9 +1588,9 @@
   pretty: Central Skyloft - West Rupee in Bird's Nest
   cryptic: a <r<nesting item>>
 
-- name: Central Skyloft - Shed Chest
-  standard: Central Skyloft - Shed Chest
-  pretty: Central Skyloft - Shed Chest
+- name: Central Skyloft - Chest in Shed
+  standard: Central Skyloft - Chest in Shed
+  pretty: Central Skyloft - Chest in Shed
   cryptic: a <r<chest next to a goddess chest>>
 
 - name: Central Skyloft - Bonk Tree Left of Sky Keep Statue
@@ -1633,24 +1633,24 @@
   pretty: Central Skyloft - Stamina Fruit near Plaza
   cryptic: a <r<fruit in a lively area>>
 
-- name: Central Skyloft - West Cliff Goddess Chest
-  standard: Central Skyloft - West Cliff Goddess Chest
-  pretty: Central Skyloft - West Cliff Goddess Chest
+- name: Central Skyloft - Goddess Chest on West Cliff Island
+  standard: Central Skyloft - Goddess Chest on West Cliff Island
+  pretty: Central Skyloft - Goddess Chest on West Cliff Island
   cryptic: a <ye<goddess cube>> on a <r<great tree's branch>>
 
-- name: Central Skyloft - Shed Goddess Chest
-  standard: Central Skyloft - Shed Goddess Chest
-  pretty: Central Skyloft - Shed Goddess Chest
+- name: Central Skyloft - Goddess Chest in Shed
+  standard: Central Skyloft - Goddess Chest in Shed
+  pretty: Central Skyloft - Goddess Chest in Shed
   cryptic: a <ye<goddess cube>> on a <r<slippery slope>>
 
-- name: Central Skyloft - Floating Island Goddess Chest
-  standard: Central Skyloft - Floating Island Goddess Chest
-  pretty: Central Skyloft - Floating Island Goddess Chest
+- name: Central Skyloft - Goddess Chest on Island near Waterfall
+  standard: Central Skyloft - Goddess Chest on Island near Waterfall
+  pretty: Central Skyloft - Goddess Chest on Island near Waterfall
   cryptic: a <ye<goddess cube>> in a <b<lake>>
 
-- name: Central Skyloft - Waterfall Goddess Chest
-  standard: Central Skyloft - Waterfall Goddess Chest
-  pretty: Central Skyloft - Waterfall Goddess Chest
+- name: Central Skyloft - Goddess Chest on Waterfall Island
+  standard: Central Skyloft - Goddess Chest on Waterfall Island
+  pretty: Central Skyloft - Goddess Chest on Waterfall Island
   cryptic: a <s<goddess cube>> <r<amongst the pirates>>
 
 - name: Central Skyloft - Crystal in Orielle and Parrow's House
@@ -1908,9 +1908,9 @@
   pretty: Lumpy Pumpkin - Slingshot Lantern next to Back Door
   cryptic: <r<shooting the rear light>> at an <r<inn>>
 
-- name: Lumpy Pumpkin - Chandelier
-  standard: Lumpy Pumpkin - Chandelier
-  pretty: Lumpy Pumpkin - Chandelier
+- name: Lumpy Pumpkin - Item on Chandelier
+  standard: Lumpy Pumpkin - Item on Chandelier
+  pretty: Lumpy Pumpkin - Item on Chandelier
   cryptic: <r<angering a bartender>>
 
 - name: Lumpy Pumpkin - Harp Duet with Kina
@@ -1953,9 +1953,9 @@
   pretty: Beedle's Island - Deliver Beedle's Insect Cage
   cryptic: <r<reuniting two Beedles>>
 
-- name: Beedle's Island - Crystal
-  standard: Beedle's Island - Crystal
-  pretty: Beedle's Island - Crystal
+- name: Beedle's Island - Crystal on Airshop Propeller
+  standard: Beedle's Island - Crystal on Airshop Propeller
+  pretty: Beedle's Island - Crystal on Airshop Propeller
   cryptic: a <r<crystal above propellors>>
 
 - name: Beedle's Island - Top Goddess Chest
@@ -1963,9 +1963,9 @@
   pretty: Beedle's Island - Top Goddess Chest
   cryptic: a <s<goddess cube>> at the <y+<monument to time>> reveals
 
-- name: Beedle's Island - Cage Goddess Chest
-  standard: Beedle's Island - Cage Goddess Chest
-  pretty: Beedle's Island - Cage Goddess Chest
+- name: Beedle's Island - Goddess Chest in Cage
+  standard: Beedle's Island - Goddess Chest in Cage
+  pretty: Beedle's Island - Goddess Chest in Cage
   cryptic: a <s<goddess cube>> <g<atop a temple>>
 
 - name: Fun Fun Island - Deliver Party Wheel to Dodoh
@@ -1978,9 +1978,9 @@
   pretty: Fun Fun Island - 500 Rupees in Dodoh's High Dive
   cryptic: <r<diving through 5 rings>>
 
-- name: Fun Fun Island - Goddess Chest
-  standard: Fun Fun Island - Goddess Chest
-  pretty: Fun Fun Island - Goddess Chest
+- name: Fun Fun Island - Goddess Chest below Island
+  standard: Fun Fun Island - Goddess Chest below Island
+  pretty: Fun Fun Island - Goddess Chest below Island
   cryptic: a <s<goddess cube>> <s<near an ancient purifier>>
 
 - name: The Sky - Form a Squirrel Ring above Volcanic Island
@@ -2013,14 +2013,14 @@
   pretty: Volcanic Island - Gossip Stone
   cryptic:
 
-- name: Bamboo Island - Goddess Chest
-  standard: Bamboo Island - Goddess Chest
-  pretty: Bamboo Island - Goddess Chest
+- name: Bamboo Island - Goddess Chest behind Entrance
+  standard: Bamboo Island - Goddess Chest behind Entrance
+  pretty: Bamboo Island - Goddess Chest behind Entrance
   cryptic: a <s<goddess cube>> <r<above an air vent>>
 
-- name: Island near Bamboo Island - Goddess Chest
-  standard: Island near Bamboo Island - Goddess Chest
-  pretty: Island near Bamboo Island - Goddess Chest
+- name: Island near Bamboo Island - Top Goddess Chest
+  standard: Island near Bamboo Island - Top Goddess Chest
+  pretty: Island near Bamboo Island - Top Goddess Chest
   cryptic: a <s<goddess cube>> <r<near a turf entrance>>
 
 - name: Island near Bamboo Island - Goddess Chest in Cave
@@ -2033,9 +2033,9 @@
   pretty: Northeast Island - Goddess Chest behind Bombable Rocks
   cryptic: a <s<goddess cube>> at a <y<desert landing>>
 
-- name: Northeast Island - Cage Goddess Chest
-  standard: Northeast Island - Cage Goddess Chest
-  pretty: Northeast Island - Cage Goddess Chest
+- name: Northeast Island - Goddess Chest in Cage
+  standard: Northeast Island - Goddess Chest in Cage
+  pretty: Northeast Island - Goddess Chest in Cage
   cryptic: a <s<goddess cube>> next to a <r<river of lava>>
 
 - name: Lumpy Pumpkin - Goddess Chest on Roof
@@ -2043,9 +2043,9 @@
   pretty: Lumpy Pumpkin - Goddess Chest on Roof
   cryptic: a <s<goddess cube>> in a <b<spring>>
 
-- name: Lumpy Pumpkin - Outside Goddess Chest
-  standard: Lumpy Pumpkin - Outside Goddess Chest
-  pretty: Lumpy Pumpkin - Outside Goddess Chest
+- name: Lumpy Pumpkin - Goddess Chest near Gossip Stone
+  standard: Lumpy Pumpkin - Goddess Chest near Gossip Stone
+  pretty: Lumpy Pumpkin - Goddess Chest near Gossip Stone
   cryptic: a <s<goddess cube>> near an <g<intrigued individual>>
 
 - name: Island Closest to Faron Pillar - Goddess Chest
@@ -2073,9 +2073,9 @@
   pretty: Triple Island - Lower Goddess Chest
   cryptic: a <s<goddess cube>> near a <y<caged friend>>
 
-- name: Triple Island - Cage Goddess Chest
-  standard: Triple Island - Cage Goddess Chest
-  pretty: Triple Island - Cage Goddess Chest
+- name: Triple Island - Goddess Chest in Cage
+  standard: Triple Island - Goddess Chest in Cage
+  pretty: Triple Island - Goddess Chest in Cage
   cryptic: a <s<goddess cube>> in a <y<retreat>>
 
 - name: Isle of Songs - Strike Crest with Goddess Sword
@@ -2143,14 +2143,14 @@
   pretty: Inside the Thunderhead - Gossip Stone near Bug Heaven
   cryptic:
 
-- name: Inside the Thunderhead - East Island Chest
-  standard: Inside the Thunderhead - East Island Chest
-  pretty: Inside the Thunderhead - East Island Chest
+- name: Inside the Thunderhead - Chest on East Island
+  standard: Inside the Thunderhead - Chest on East Island
+  pretty: Inside the Thunderhead - Chest on East Island
   cryptic: a <r<chest>> within a <s<raging storm>>
 
-- name: Inside the Thunderhead - East Island Goddess Chest
-  standard: Inside the Thunderhead - East Island Goddess Chest
-  pretty: Inside the Thunderhead - East Island Goddess Chest
+- name: Inside the Thunderhead - Goddess Chest on East Island
+  standard: Inside the Thunderhead - Goddess Chest on East Island
+  pretty: Inside the Thunderhead - Goddess Chest on East Island
   cryptic: a <s<goddess cube>> <r<near a rope>>
 
 - name: Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
@@ -2313,9 +2313,9 @@
   pretty: Sealed Grounds - Spiral Stamina Fruit 25
   cryptic: a <r<fruit in a spiral>>
 
-- name: Sealed Temple - Chest
-  standard: Sealed Temple - Chest
-  pretty: Sealed Temple - Chest
+- name: Sealed Temple - Chest near The Old One
+  standard: Sealed Temple - Chest near The Old One
+  pretty: Sealed Temple - Chest near The Old One
   cryptic: a <r<chest in an ancient building>>
 
 - name: Sealed Temple - Song from The Old One
@@ -2434,9 +2434,9 @@
   pretty: Faron Woods - Item behind Bombable Rock
   cryptic: an <r<item behind some forest rocks>>
 
-- name: Faron Woods - Item on Tree
-  standard: Faron Woods - Item on Tree
-  pretty: Faron Woods - Item on Tree
+- name: Faron Woods - Item on Great Tree
+  standard: Faron Woods - Item on Great Tree
+  pretty: Faron Woods - Item on Great Tree
   cryptic: an <r<item after a rope>>
 
 - name: Faron Woods - Kikwi Elder's Reward
@@ -2619,9 +2619,9 @@
   pretty: Deep Woods - Bonk Tree with Rope
   cryptic: <r<disturbing a tarzan tree>> in a <g<deep forest>>
 
-- name: Deep Woods - Chest
-  standard: Deep Woods - Chest
-  pretty: Deep Woods - Chest
+- name: Deep Woods - Chest near Bird Statue
+  standard: Deep Woods - Chest near Bird Statue
+  pretty: Deep Woods - Chest near Bird Statue
   cryptic: a <r<chest deep in a forest>>
 
 - name: Deep Woods - Bonk Tree near Gossip Stone 1
@@ -2709,9 +2709,9 @@
   pretty: Lake Floria - Right Rupee behind Northwest Boulder
   cryptic: an <r<item behind a boulder in a lake>>
 
-- name: Lake Floria - Chest
-  standard: Lake Floria - Chest
-  pretty: Lake Floria - Chest
+- name: Lake Floria - Chest near Bird Statue
+  standard: Lake Floria - Chest near Bird Statue
+  pretty: Lake Floria - Chest near Bird Statue
   cryptic: a <r<lonely chest in the lake>>
 
 - name: Lake Floria - Dragon Lair South Chest
@@ -2974,9 +2974,9 @@
   pretty: Eldin Volcano - Underground Rupee in First Room 9
   cryptic: an <r<underground rupee before a bokoblin's hidout>>
 
-- name: Eldin Volcano - Chest after Crawlspace
-  standard: Eldin Volcano - Chest after Crawlspace
-  pretty: Eldin Volcano - Chest after Crawlspace
+- name: Eldin Volcano - Chest after Blocked Crawlspace
+  standard: Eldin Volcano - Chest after Blocked Crawlspace
+  pretty: Eldin Volcano - Chest after Blocked Crawlspace
   cryptic: a <r<chest beyond a crawlspace near a volcano>>
 
 - name: Eldin Volcano - Southeast Rupee above Mogma Turf Entrance
@@ -3484,9 +3484,9 @@
   pretty: Eldin Volcano - Digging Spot in front of Earth Temple
   cryptic: <r<soft soil in front of a temple>>
 
-- name: Eldin Volcano - Digging Spot below Tower
-  standard: Eldin Volcano - Digging Spot below Tower
-  pretty: Eldin Volcano - Digging Spot below Tower
+- name: Eldin Volcano - Digging Spot below Tower West of Earth Temple
+  standard: Eldin Volcano - Digging Spot below Tower West of Earth Temple
+  pretty: Eldin Volcano - Digging Spot below Tower West of Earth Temple
   cryptic: <r<soft soil under a tower>>
 
 - name: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
@@ -3494,9 +3494,9 @@
   pretty: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
   cryptic: a <r<boulder on a sandy slope>>
 
-- name: Eldin Volcano - Digging Spot after Vents
-  standard: Eldin Volcano - Digging Spot after Vents
-  pretty: Eldin Volcano - Digging Spot after Vents
+- name: Eldin Volcano - Digging Spot after Sand Slide Vents
+  standard: Eldin Volcano - Digging Spot after Sand Slide Vents
+  pretty: Eldin Volcano - Digging Spot after Sand Slide Vents
   cryptic: <r<soft soil above a slide>>
 
 - name: Eldin Volcano - Digging Spot after Draining Lava
@@ -3549,9 +3549,9 @@
   pretty: Mogma Turf - Bonk Hammer in Left Hut above Sand Slide
   cryptic: <r<disturbing a hammer in claimed territory>>
 
-- name: Mogma Turf - Sand Slide Chest
-  standard: Mogma Turf - Sand Slide Chest
-  pretty: Mogma Turf - Sand Slide Chest
+- name: Mogma Turf - Chest after Sand Slide
+  standard: Mogma Turf - Chest after Sand Slide
+  pretty: Mogma Turf - Chest after Sand Slide
   cryptic: a <r<chest down a slide>>
 
 - name: Mogma Turf - Rupee in First Pyrup Hole in Fire Maze
@@ -3579,9 +3579,9 @@
   pretty: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
   cryptic: atop a <r<volcanic waterfall>>
 
-- name: Volcano Summit - Item behind Digging
-  standard: Volcano Summit - Item behind Digging
-  pretty: Volcano Summit - Item behind Digging
+- name: Volcano Summit - Item after Underground Tunnel near Gossip Stone
+  standard: Volcano Summit - Item after Underground Tunnel near Gossip Stone
+  pretty: Volcano Summit - Item after Underground Tunnel near Gossip Stone
   cryptic: <r<fairies at the summit>>
 
 - name: Volcano Summit - Underground Rupee 1
@@ -3909,9 +3909,9 @@
   pretty: Lanayru Desert - Bonk Water Node Generator
   cryptic: <r<disturbing a watery generator>>
 
-- name: Lanayru Desert - Chest near Sand Oasis
-  standard: Lanayru Desert - Chest near Sand Oasis
-  pretty: Lanayru Desert - Chest near Sand Oasis
+- name: Lanayru Desert - Chest on Sand Oasis Wall
+  standard: Lanayru Desert - Chest on Sand Oasis Wall
+  pretty: Lanayru Desert - Chest on Sand Oasis Wall
   cryptic: a <r<chest above a sandy paradise>>
 
 - name: Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue
@@ -3934,9 +3934,9 @@
   pretty: Lanayru Desert - Chest on top of Lanayru Mining Facility
   cryptic: the <r<midst of the desert>>
 
-- name: Lanayru Desert - Secret Passageway Chest
-  standard: Lanayru Desert - Secret Passageway Chest
-  pretty: Lanayru Desert - Secret Passageway Chest
+- name: Lanayru Desert - Chest in Northeast Secret Passageway
+  standard: Lanayru Desert - Chest in Northeast Secret Passageway
+  pretty: Lanayru Desert - Chest in Northeast Secret Passageway
   cryptic: a <r<secret passage in the desert>>
 
 - name: Lanayru Desert - Stamina Fruit on Ledge to Party Wheel
@@ -4049,9 +4049,9 @@
   pretty: Temple of Time - Goddess Cube
   cryptic:
 
-- name: Fire Node - Shortcut Chest
-  standard: Fire Node - Shortcut Chest
-  pretty: Fire Node - Shortcut Chest
+- name: Fire Node - Raised Chest
+  standard: Fire Node - Raised Chest
+  pretty: Fire Node - Raised Chest
   cryptic: a <r<raised chest in the Fire Node>>
 
 - name: Fire Node - First Small Chest
@@ -4084,14 +4084,14 @@
   pretty: Fire Node - Right Ending Chest
   cryptic: a <r<chest at the end of a stone cache>>
 
-- name: Lightning Node - First Chest
-  standard: Lightning Node - First Chest
-  pretty: Lightning Node - First Chest
+- name: Lightning Node - Front Chest
+  standard: Lightning Node - Front Chest
+  pretty: Lightning Node - Front Chest
   cryptic: a <r<chest in a buried building>>
 
-- name: Lightning Node - Second Chest
-  standard: Lightning Node - Second Chest
-  pretty: Lightning Node - Second Chest
+- name: Lightning Node - Middle Chest
+  standard: Lightning Node - Middle Chest
+  pretty: Lightning Node - Middle Chest
   cryptic: a <r<chest in a buried building>>
 
 - name: Lightning Node - Bonk Lightning Node Power Supply
@@ -4109,9 +4109,9 @@
   pretty: Lightning Node - Raised Chest near Generator
   cryptic: a <r<raised chest in the Lightning Node>>
 
-- name: Lanayru Caves - Chest
-  standard: Lanayru Caves - Chest
-  pretty: Lanayru Caves - Chest
+- name: Lanayru Caves - Chest near Golo
+  standard: Lanayru Caves - Chest near Golo
+  pretty: Lanayru Caves - Chest near Golo
   cryptic: a <r<chest in a cave system>>
 
 - name: Lanayru Caves - Golo's Gift
@@ -4149,9 +4149,9 @@
   pretty: Lanayru Gorge - Slingshot Right Pillar behind the Thunder Dragon
   cryptic: <r<shooting>> behind an <y<ancient dragon>>
 
-- name: Lanayru Gorge - Item on Pillar
-  standard: Lanayru Gorge - Item on Pillar
-  pretty: Lanayru Gorge - Item on Pillar
+- name: Lanayru Gorge - Item on Pillar below Dragon
+  standard: Lanayru Gorge - Item on Pillar below Dragon
+  pretty: Lanayru Gorge - Item on Pillar below Dragon
   cryptic: an <r<item in a void>>
 
 - name: Lanayru Gorge - Bonk Wall Left of Stairs
@@ -4164,44 +4164,44 @@
   pretty: Lanayru Gorge - Bonk Wall Right of Stairs
   cryptic: <r<disturbing a some stairs>> near an <y<ancient dragon>>
 
-- name: Lanayru Gorge - Digging Spot
-  standard: Lanayru Gorge - Digging Spot
-  pretty: Lanayru Gorge - Digging Spot
+- name: Lanayru Gorge - Life Tree Digging Spot
+  standard: Lanayru Gorge - Life Tree Digging Spot
+  pretty: Lanayru Gorge - Life Tree Digging Spot
   cryptic: <r<soft soil in the desert>>
 
-- name: Lanayru Gorge - Slingshot Left Sandfall Source
-  standard: Lanayru Gorge - Slingshot Left Sandfall Source
-  pretty: Lanayru Gorge - Slingshot Left Sandfall Source
+- name: Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree
+  standard: Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree
+  pretty: Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree
   cryptic: <r<shooting a sandy opening>>
 
-- name: Lanayru Gorge - Slingshot Right Sandfall Source
-  standard: Lanayru Gorge - Slingshot Right Sandfall Source
-  pretty: Lanayru Gorge - Slingshot Right Sandfall Source
+- name: Lanayru Gorge - Slingshot Right Sandfall Source near Life Tree
+  standard: Lanayru Gorge - Slingshot Right Sandfall Source near Life Tree
+  pretty: Lanayru Gorge - Slingshot Right Sandfall Source near Life Tree
   cryptic: <r<shooting a sandy opening>>
 
-- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
-  standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
-  pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
+- name: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 1
+  standard: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 1
+  pretty: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 1
   cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
-- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
-  standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
-  pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
+- name: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 2
+  standard: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 2
+  pretty: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 2
   cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
-- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
-  standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
-  pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
+- name: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 3
+  standard: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 3
+  pretty: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 3
   cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
-- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
-  standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
-  pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
+- name: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 4
+  standard: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 4
+  pretty: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 4
   cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
-- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
-  standard: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
-  pretty: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
+- name: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 5
+  standard: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 5
+  pretty: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 5
   cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
 - name: Lanayru Gorge - Goddess Cube
@@ -4234,19 +4234,19 @@
   pretty: Ancient Harbour - Slingshot Right Nostril of Entrance Robot
   cryptic: <r<shooting the nose>> of an <y<ancient harbourmaster>>
 
-- name: Ancient Harbour - Rupee on First Pillar
-  standard: Ancient Harbour - Rupee on First Pillar
-  pretty: Ancient Harbour - Rupee on First Pillar
+- name: Ancient Harbour - Rupee on Highest Clawshot Pillar
+  standard: Ancient Harbour - Rupee on Highest Clawshot Pillar
+  pretty: Ancient Harbour - Rupee on Highest Clawshot Pillar
   cryptic: a <r<rupee on a pillar in a harbour>>
 
-- name: Ancient Harbour - Left Rupee on Entrance Crown
-  standard: Ancient Harbour - Left Rupee on Entrance Crown
-  pretty: Ancient Harbour - Left Rupee on Entrance Crown
+- name: Ancient Harbour - North Rupee on Entrance Crown
+  standard: Ancient Harbour - North Rupee on Entrance Crown
+  pretty: Ancient Harbour - North Rupee on Entrance Crown
   cryptic: a <r<rupee atop a crown>>
 
-- name: Ancient Harbour - Right Rupee on Entrance Crown
-  standard: Ancient Harbour - Right Rupee on Entrance Crown
-  pretty: Ancient Harbour - Right Rupee on Entrance Crown
+- name: Ancient Harbour - South Rupee on Entrance Crown
+  standard: Ancient Harbour - South Rupee on Entrance Crown
+  pretty: Ancient Harbour - South Rupee on Entrance Crown
   cryptic: a <r<rupee atop a crown>>
 
 - name: Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target
@@ -4284,9 +4284,9 @@
   pretty: Ancient Harbour - Goddess Cube
   cryptic:
 
-- name: Skipper's Retreat - Chest after Moblin
-  standard: Skipper's Retreat - Chest after Moblin
-  pretty: Skipper's Retreat - Chest after Moblin
+- name: Skipper's Retreat - Chest near Low Zipline
+  standard: Skipper's Retreat - Chest near Low Zipline
+  pretty: Skipper's Retreat - Chest near Low Zipline
   cryptic: a <r<chest past an iron shield moblin>>
 
 - name: Skipper's Retreat - Goddess Cube
@@ -4294,9 +4294,9 @@
   pretty: Skipper's Retreat - Goddess Cube
   cryptic:
 
-- name: Skipper's Retreat - Chest on top of Cacti Pillar
-  standard: Skipper's Retreat - Chest on top of Cacti Pillar
-  pretty: Skipper's Retreat - Chest on top of Cacti Pillar
+- name: Skipper's Retreat - Chest on Cacti Pillar
+  standard: Skipper's Retreat - Chest on Cacti Pillar
+  pretty: Skipper's Retreat - Chest on Cacti Pillar
   cryptic: a <r<chest amongst cacti>>
 
 - name: Skipper's Retreat - Slingshot Left Eye of Shack
@@ -4454,19 +4454,19 @@
   pretty: Pirate Stronghold - Goddess Cube
   cryptic:
 
-- name: Pirate Stronghold Interior - First Chest
-  standard: Pirate Stronghold Interior - First Chest
-  pretty: Pirate Stronghold Interior - First Chest
+- name: Pirate Stronghold Interior - Chest behind Electric Fence
+  standard: Pirate Stronghold Interior - Chest behind Electric Fence
+  pretty: Pirate Stronghold Interior - Chest behind Electric Fence
   cryptic: a <r<chest within a fortress>>
 
-- name: Pirate Stronghold Interior - Second Chest
-  standard: Pirate Stronghold Interior - Second Chest
-  pretty: Pirate Stronghold Interior - Second Chest
+- name: Pirate Stronghold Interior - Chest before Deku Babas
+  standard: Pirate Stronghold Interior - Chest before Deku Babas
+  pretty: Pirate Stronghold Interior - Chest before Deku Babas
   cryptic: a <r<chest within a fortress>>
 
-- name: Pirate Stronghold Interior - Third Chest
-  standard: Pirate Stronghold Interior - Third Chest
-  pretty: Pirate Stronghold Interior - Third Chest
+- name: Pirate Stronghold Interior - Chest before Double Armos Fight
+  standard: Pirate Stronghold Interior - Chest before Double Armos Fight
+  pretty: Pirate Stronghold Interior - Chest before Double Armos Fight
   cryptic: a <r<chest within a fortress>>
 
 - name: Skyview Temple - Slingshot Wall Eye behind First Bird Statue
@@ -4554,9 +4554,9 @@
   pretty: Skyview Temple - Second Rupee under West Walkway before Hub Room
   cryptic: a <r<rupee under a temple bridge>>
 
-- name: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
-  standard: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
-  pretty: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
+- name: Skyview Temple - Rupee on Lower Tree Root before Hub Room
+  standard: Skyview Temple - Rupee on Lower Tree Root before Hub Room
+  pretty: Skyview Temple - Rupee on Lower Tree Root before Hub Room
   cryptic: a <r<rupee on a temple tree>>
 
 - name: Skyview Temple - Rupee on Coiled Tree Branch before Hub Room
@@ -4715,24 +4715,24 @@
   pretty: Earth Temple - Bonk Back Right Elephant Pillar
   cryptic: <r<disturbing a trumpeting statue>>
 
-- name: Earth Temple - Vent Chest
-  standard: Earth Temple - Vent Chest
-  pretty: Earth Temple - Vent Chest
+- name: Earth Temple - Chest after Air Vent in First Room
+  standard: Earth Temple - Chest after Air Vent in First Room
+  pretty: Earth Temple - Chest after Air Vent in First Room
   cryptic: a <r<chest above an air vent>>
 
-- name: Earth Temple - Rupee above Drawbridge
-  standard: Earth Temple - Rupee above Drawbridge
-  pretty: Earth Temple - Rupee above Drawbridge
+- name: Earth Temple - Rupee above First Drawbridge
+  standard: Earth Temple - Rupee above First Drawbridge
+  pretty: Earth Temple - Rupee above First Drawbridge
   cryptic: a <r<rupee above a drawbridge>>
 
-- name: Earth Temple - Chest behind Bombable Rock
-  standard: Earth Temple - Chest behind Bombable Rock
-  pretty: Earth Temple - Chest behind Bombable Rock
+- name: Earth Temple - Chest behind Southwest Bombable Rock
+  standard: Earth Temple - Chest behind Southwest Bombable Rock
+  pretty: Earth Temple - Chest behind Southwest Bombable Rock
   cryptic: a <r<chest past a lava spout>>
 
-- name: Earth Temple - Chest Left of Main Room Bridge
-  standard: Earth Temple - Chest Left of Main Room Bridge
-  pretty: Earth Temple - Chest Left of Main Room Bridge
+- name: Earth Temple - Northwest Chest Main Room
+  standard: Earth Temple - Northwest Chest Main Room
+  pretty: Earth Temple - Northwest Chest Main Room
   cryptic: a <r<chest surrounded by bridges>>
 
 - name: Earth Temple - Chest in West Room
@@ -4760,14 +4760,14 @@
   pretty: Earth Temple - Ledd's Gift
   cryptic: a <r<heavy gift>>
 
-- name: Earth Temple - Rupee in Lava Tunnel
-  standard: Earth Temple - Rupee in Lava Tunnel
-  pretty: Earth Temple - Rupee in Lava Tunnel
+- name: Earth Temple - Rupee in Dragon's Neck in Lava Tunnel
+  standard: Earth Temple - Rupee in Dragon's Neck in Lava Tunnel
+  pretty: Earth Temple - Rupee in Dragon's Neck in Lava Tunnel
   cryptic: the <r<neck of a dragon>>
 
-- name: Earth Temple - Chest Guarded by Lizalfos
-  standard: Earth Temple - Chest Guarded by Lizalfos
-  pretty: Earth Temple - Chest Guarded by Lizalfos
+- name: Earth Temple - Northeast Chest Guarded by Lizalfos
+  standard: Earth Temple - Northeast Chest Guarded by Lizalfos
+  pretty: Earth Temple - Northeast Chest Guarded by Lizalfos
   cryptic: a <r<single menacing lizalfos>>
 
 - name: Earth Temple - Chest before Boulder Chase
@@ -4856,9 +4856,9 @@
   pretty: Lanayru Mining Facility - Slingshot Right Robot Eye in First Room
   cryptic: <r<shooting the guard>> of the <y<buried mine>>
 
-- name: Lanayru Mining Facility - First Chest in Hub Room
-  standard: Lanayru Mining Facility - First Chest in Hub Room
-  pretty: Lanayru Mining Facility - First Chest in Hub Room
+- name: Lanayru Mining Facility - Chest after Breakable Boxes in Hub Room
+  standard: Lanayru Mining Facility - Chest after Breakable Boxes in Hub Room
+  pretty: Lanayru Mining Facility - Chest after Breakable Boxes in Hub Room
   cryptic: a <r<chest past a ladder in a giant room>>
 
 - name: Lanayru Mining Facility - Chest in First West Room
@@ -5016,9 +5016,9 @@
   pretty: Lanayru Mining Facility - Chest after Double Armos Fight
   cryptic: deep inside <r<Lanayru Mining Facility, a pair of Armos>>
 
-- name: Lanayru Mining Facility - Shortcut Chest in Main Hub
-  standard: Lanayru Mining Facility - Shortcut Chest in Main Hub
-  pretty: Lanayru Mining Facility - Shortcut Chest in Main Hub
+- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+  standard: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+  pretty: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
   cryptic: the <r<deepest chest in a mining facility>>
 
 - name: Lanayru Mining Facility - Defeat Boss
@@ -5042,34 +5042,34 @@
   pretty: Ancient Cistern - Rupee in East Hand
   cryptic: an <r<enlightened hand>>
 
-- name: Ancient Cistern - First Rupee in East Part in Short Tunnel
-  standard: Ancient Cistern - First Rupee in East Part in Short Tunnel
-  pretty: Ancient Cistern - First Rupee in East Part in Short Tunnel
+- name: Ancient Cistern - First Rupee in East Room in Short Tunnel
+  standard: Ancient Cistern - First Rupee in East Room in Short Tunnel
+  pretty: Ancient Cistern - First Rupee in East Room in Short Tunnel
   cryptic: a <r<rupee in an underwater tunnel>>
 
-- name: Ancient Cistern - Second Rupee in East Part in Short Tunnel
-  standard: Ancient Cistern - Second Rupee in East Part in Short Tunnel
-  pretty: Ancient Cistern - Second Rupee in East Part in Short Tunnel
+- name: Ancient Cistern - Second Rupee in East Room in Short Tunnel
+  standard: Ancient Cistern - Second Rupee in East Room in Short Tunnel
+  pretty: Ancient Cistern - Second Rupee in East Room in Short Tunnel
   cryptic: a <r<rupee in an underwater tunnel>>
 
-- name: Ancient Cistern - Third Rupee in East Part in Short Tunnel
-  standard: Ancient Cistern - Third Rupee in East Part in Short Tunnel
-  pretty: Ancient Cistern - Third Rupee in East Part in Short Tunnel
+- name: Ancient Cistern - Third Rupee in East Room in Short Tunnel
+  standard: Ancient Cistern - Third Rupee in East Room in Short Tunnel
+  pretty: Ancient Cistern - Third Rupee in East Room in Short Tunnel
   cryptic: a <r<rupee in an underwater tunnel>>
 
-- name: Ancient Cistern - Rupee in East Part in Cubby
-  standard: Ancient Cistern - Rupee in East Part in Cubby
-  pretty: Ancient Cistern - Rupee in East Part in Cubby
+- name: Ancient Cistern - Rupee in East Room in Cubby
+  standard: Ancient Cistern - Rupee in East Room in Cubby
+  pretty: Ancient Cistern - Rupee in East Room in Cubby
   cryptic: a <r<rupee in an underwater tunnel>>
 
-- name: Ancient Cistern - Rupee in East Part in Main Tunnel
-  standard: Ancient Cistern - Rupee in East Part in Main Tunnel
-  pretty: Ancient Cistern - Rupee in East Part in Main Tunnel
+- name: Ancient Cistern - Rupee in East Room in Main Tunnel
+  standard: Ancient Cistern - Rupee in East Room in Main Tunnel
+  pretty: Ancient Cistern - Rupee in East Room in Main Tunnel
   cryptic: a <r<rupee in an underwater tunnel>>
 
-- name: Ancient Cistern - Chest in East Part
-  standard: Ancient Cistern - Chest in East Part
-  pretty: Ancient Cistern - Chest in East Part
+- name: Ancient Cistern - Chest in East Room
+  standard: Ancient Cistern - Chest in East Room
+  pretty: Ancient Cistern - Chest in East Room
   cryptic: the <r<lone east chest>> in an <b<old waterway>>
 
 - name: Ancient Cistern - Chest after Whip Hooks
@@ -5082,14 +5082,14 @@
   pretty: Ancient Cistern - Chest near Vines
   cryptic: a <r<chest in front of a viney wall>>
 
-- name: Ancient Cistern - Chest behind the Waterfall
-  standard: Ancient Cistern - Chest behind the Waterfall
-  pretty: Ancient Cistern - Chest behind the Waterfall
+- name: Ancient Cistern - Chest behind Waterfall
+  standard: Ancient Cistern - Chest behind Waterfall
+  pretty: Ancient Cistern - Chest behind Waterfall
   cryptic: a <r<chest behind a golden fish>>
 
-- name: Ancient Cistern - Bokoblin
-  standard: Ancient Cistern - Bokoblin
-  pretty: Ancient Cistern - Bokoblin
+- name: Ancient Cistern - Whip Item from Bokoblin between Pipes
+  standard: Ancient Cistern - Whip Item from Bokoblin between Pipes
+  pretty: Ancient Cistern - Whip Item from Bokoblin between Pipes
   cryptic: a <r<bokoblin watching water>>
 
 - name: Ancient Cistern - Rupee under Lilypad after Pipes
@@ -5153,9 +5153,9 @@
   cryptic: a <g+<flame deep within a lake>>
   goal_name: Koloktos
 
-- name: Sandship - Chest at the Stern
-  standard: Sandship - Chest at the Stern
-  pretty: Sandship - Chest at the Stern
+- name: Sandship - Chest at Ship's Stern
+  standard: Sandship - Chest at Ship's Stern
+  pretty: Sandship - Chest at Ship's Stern
   cryptic: a <r<chest trailing a ship>>
 
 - name: Sandship - Blow Ceiling Lamp below Scervo Fight
@@ -5284,9 +5284,9 @@
   pretty: Fire Sanctuary - Chest in Second Room
   cryptic: a <r<chest near a hot hand>>
 
-- name: Fire Sanctuary - Chest on Balcony
-  standard: Fire Sanctuary - Chest on Balcony
-  pretty: Fire Sanctuary - Chest on Balcony
+- name: Fire Sanctuary - Chest on Balcony after Single Magmanos Fight
+  standard: Fire Sanctuary - Chest on Balcony after Single Magmanos Fight
+  pretty: Fire Sanctuary - Chest on Balcony after Single Magmanos Fight
   cryptic: a <r<chest on a lone balcony>>
 
 - name: Fire Sanctuary - Left Rupee above Blocked Lava Source
@@ -5324,19 +5324,19 @@
   pretty: Fire Sanctuary - Chest near First Trapped Mogma
   cryptic: a <r<chest past some hot rubble>>
 
-- name: Fire Sanctuary - First Chest in Water Fruit Room
-  standard: Fire Sanctuary - First Chest in Water Fruit Room
-  pretty: Fire Sanctuary - First Chest in Water Fruit Room
+- name: Fire Sanctuary - Lower Chest in Water Fruit Room
+  standard: Fire Sanctuary - Lower Chest in Water Fruit Room
+  pretty: Fire Sanctuary - Lower Chest in Water Fruit Room
   cryptic: a <r<chest surrounded by cool plants>>
 
-- name: Fire Sanctuary - Second Chest in Water Fruit Room
-  standard: Fire Sanctuary - Second Chest in Water Fruit Room
-  pretty: Fire Sanctuary - Second Chest in Water Fruit Room
+- name: Fire Sanctuary - Raised Chest in Water Fruit Room
+  standard: Fire Sanctuary - Raised Chest in Water Fruit Room
+  pretty: Fire Sanctuary - Raised Chest in Water Fruit Room
   cryptic: a <r<chest surrounded by cool plants>>
 
-- name: Fire Sanctuary - Rescue First Trapped Mogma Chest
-  standard: Fire Sanctuary - Rescue First Trapped Mogma Chest
-  pretty: Fire Sanctuary - Rescue First Trapped Mogma Chest
+- name: Fire Sanctuary - Chest from First Trapped Mogma
+  standard: Fire Sanctuary - Chest from First Trapped Mogma
+  pretty: Fire Sanctuary - Chest from First Trapped Mogma
   cryptic: saving a <r<mogma>> from a <r<fiery fate>>
 
 - name: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 1
@@ -5364,9 +5364,9 @@
   pretty: Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5
   cryptic: an <r<underground temple rupee>>
 
-- name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
-  standard: Fire Sanctuary - Rescue Second Trapped Mogma Chest
-  pretty: Fire Sanctuary - Rescue Second Trapped Mogma Chest
+- name: Fire Sanctuary - Chest from Second Trapped Mogma
+  standard: Fire Sanctuary - Chest from Second Trapped Mogma
+  pretty: Fire Sanctuary - Chest from Second Trapped Mogma
   cryptic: saving a <r<mogma>> from a <r<regular temperatured fate>>
 
 - name: Fire Sanctuary - Underground Rupee behind Bombable Wall
@@ -5405,14 +5405,14 @@
   cryptic: a <r<flame deep within a volcano>>
   goal_name: Ghirahim 2
 
-- name: Sky Keep - First Chest
-  standard: Sky Keep - First Chest
-  pretty: Sky Keep - First Chest
+- name: Sky Keep - Chest in First Room
+  standard: Sky Keep - Chest in First Room
+  pretty: Sky Keep - Chest in First Room
   cryptic: the <r<first sacred chest>>
 
-- name: Sky Keep - Chest after Dreadfuse
-  standard: Sky Keep - Chest after Dreadfuse
-  pretty: Sky Keep - Chest after Dreadfuse
+- name: Sky Keep - Chest after Dreadfuse Fight
+  standard: Sky Keep - Chest after Dreadfuse Fight
+  pretty: Sky Keep - Chest after Dreadfuse Fight
   cryptic: a <r<chest after a dark narrow fight>>
 
 - name: Sky Keep - Rupee in Fire Sanctuary Room in Alcove

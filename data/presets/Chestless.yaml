@@ -107,13 +107,13 @@ starting_inventory:
   - Sky Keep Map
 excluded_locations:
   - Knight Academy - Deliver Kikwi to Owlan
-  - Upper Skyloft - Chest near Goddess Statue
+  - Upper Skyloft - Chest below Goddess Statue
   - Upper Skyloft - 600 Points in Pumpkin Pull
-  - Sparring Hall - Chest
+  - Sparring Hall - Chest in Back Room
   - Central Skyloft - Waterfall Cave First Chest
   - Central Skyloft - Waterfall Cave Second Chest
   - Central Skyloft - Peatrice's Love
-  - Central Skyloft - Shed Chest
+  - Central Skyloft - Chest in Shed
   - Batreaux - 70 Crystals
   - Batreaux - 70 Crystals Second Reward
   - Batreaux - 80 Crystals
@@ -127,21 +127,21 @@ excluded_locations:
   - The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
   - Inside the Thunderhead - Song from Levias
   - Bug Heaven - 10 Bugs in 3 Minutes
-  - Inside the Thunderhead - East Island Chest
-  - Sealed Temple - Chest
+  - Inside the Thunderhead - Chest on East Island
+  - Sealed Temple - Chest near The Old One
   - Faron Woods - Chest behind Bombable Rocks near Erla
-  - Great Tree - Chest
-  - Deep Woods - Chest
-  - Lake Floria - Chest
+  - Inside the Great Tree - Chest guarded by Deku Baba
+  - Deep Woods - Chest near Bird Statue
+  - Lake Floria - Chest near Bird Statue
   - Lake Floria - Dragon Lair South Chest
   - Lake Floria - Dragon Lair East Chest
   - Eldin Volcano - Chest behind Bombable Wall in First Room
-  - Eldin Volcano - Chest after Crawlspace
+  - Eldin Volcano - Chest after Blocked Crawlspace
   - Eldin Volcano - Chest behind Bombable Wall near Cliff
   - Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
   - Mogma Turf - Free Fall Chest
   - Mogma Turf - Chest behind Bombable Wall at Entrance
-  - Mogma Turf - Sand Slide Chest
+  - Mogma Turf - Chest after Sand Slide
   - Mogma Turf - Chest behind Bombable Wall in Fire Maze
   - Volcano Summit - Chest behind Bombable Wall in Waterfall Area
   - Bokoblin Base - Chest near Bone Bridge
@@ -160,41 +160,41 @@ excluded_locations:
   - Lanayru Desert - Chest near Caged Robot
   - Lanayru Desert - Chest on Platform near Fire Node
   - Lanayru Desert - Chest on Platform near Lightning Node
-  - Lanayru Desert - Chest near Sand Oasis
+  - Lanayru Desert - Chest on Sand Oasis Wall
   - Lanayru Desert - Chest on top of Lanayru Mining Facility
-  - Lanayru Desert - Secret Passageway Chest
-  - Fire Node - Shortcut Chest
+  - Lanayru Desert - Chest in Northeast Secret Passageway
+  - Fire Node - Raised Chest
   - Fire Node - First Small Chest
   - Fire Node - Second Small Chest
   - Fire Node - Left Ending Chest
   - Fire Node - Right Ending Chest
-  - Lightning Node - First Chest
-  - Lightning Node - Second Chest
+  - Lightning Node - Front Chest
+  - Lightning Node - Middle Chest
   - Lightning Node - Raised Chest near Generator
-  - Lanayru Caves - Chest
-  - Skipper's Retreat - Chest after Moblin
-  - Skipper's Retreat - Chest on top of Cacti Pillar
+  - Lanayru Caves - Chest near Golo
+  - Skipper's Retreat - Chest near Low Zipline
+  - Skipper's Retreat - Chest on Cacti Pillar
   - Skipper's Retreat Shack - Chest under Sand
   - Skipper's Retreat - Skydive Chest
   - Shipyard - Heart Stopping Rickety Coaster Track in 1'05
-  - Pirate Stronghold Interior - First Chest
-  - Pirate Stronghold Interior - Second Chest
-  - Pirate Stronghold Interior - Third Chest
+  - Pirate Stronghold Interior - Chest behind Electric Fence
+  - Pirate Stronghold Interior - Chest before Deku Babas
+  - Pirate Stronghold Interior - Chest before Double Armos Fight
   - Skyview Temple - Chest on Tree Branch
   - Skyview Temple - Chest behind Two Eyes
   - Skyview Temple - Chest after Stalfos Fight
   - Skyview Temple - Chest behind Three Eyes
   - Skyview Temple - Chest near Boss Door
   - Skyview Temple - Chest after Vines
-  - Earth Temple - Vent Chest
-  - Earth Temple - Chest behind Bombable Rock
-  - Earth Temple - Chest Left of Main Room Bridge
+  - Earth Temple - Chest after Air Vent in First Room
+  - Earth Temple - Chest behind Southwest Bombable Rock
+  - Earth Temple - Northwest Chest Main Room
   - Earth Temple - Chest in West Room
   - Earth Temple - Chest after Double Lizalfos Fight
-  - Earth Temple - Chest Guarded by Lizalfos
+  - Earth Temple - Northeast Chest Guarded by Lizalfos
   - Earth Temple - Chest before Boulder Chase
   - Lanayru Mining Facility - Chest behind Bars
-  - Lanayru Mining Facility - First Chest in Hub Room
+  - Lanayru Mining Facility - Chest after Breakable Boxes in Hub Room
   - Lanayru Mining Facility - Chest in First West Room
   - Lanayru Mining Facility - Chest after Armos Fight
   - Lanayru Mining Facility - Chest in Key Locked Room
@@ -203,14 +203,14 @@ excluded_locations:
   - Lanayru Mining Facility - Chest behind First Crawlspace
   - Lanayru Mining Facility - Chest in Spike Maze
   - Lanayru Mining Facility - Chest after Double Armos Fight
-  - Lanayru Mining Facility - Shortcut Chest in Main Hub
-  - Ancient Cistern - Chest in East Part
+  - Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+  - Ancient Cistern - Chest in East Room
   - Ancient Cistern - Chest after Whip Hooks
   - Ancient Cistern - Chest near Vines
-  - Ancient Cistern - Chest behind the Waterfall
+  - Ancient Cistern - Chest behind Waterfall
   - Ancient Cistern - Chest in Key Locked Room
   - Ancient Cistern - Chest under Stone Statue
-  - Sandship - Chest at the Stern
+  - Sandship - Chest at Ship's Stern
   - Sandship - Chest before 4-Door Corridor
   - Sandship - Chest behind Combination Lock
   - Sandship - Treasure Room First Chest
@@ -222,18 +222,18 @@ excluded_locations:
   - Sandship - Chest in Captain's Cabin
   - Fire Sanctuary - Chest in First Room
   - Fire Sanctuary - Chest in Second Room
-  - Fire Sanctuary - Chest on Balcony
+  - Fire Sanctuary - Chest on Balcony after Single Magmanos Fight
   - Fire Sanctuary - Chest near First Trapped Mogma
-  - Fire Sanctuary - First Chest in Water Fruit Room
-  - Fire Sanctuary - Second Chest in Water Fruit Room
-  - Fire Sanctuary - Rescue First Trapped Mogma Chest
-  - Fire Sanctuary - Rescue Second Trapped Mogma Chest
+  - Fire Sanctuary - Lower Chest in Water Fruit Room
+  - Fire Sanctuary - Raised Chest in Water Fruit Room
+  - Fire Sanctuary - Chest from First Trapped Mogma
+  - Fire Sanctuary - Chest from Second Trapped Mogma
   - Fire Sanctuary - Chest after Bombable Wall
   - Fire Sanctuary - Plats' Chest
   - Fire Sanctuary - Chest in Staircase Room
   - Fire Sanctuary - Chest after Winged Torches
-  - Sky Keep - First Chest
-  - Sky Keep - Chest after Dreadfuse
+  - Sky Keep - Chest in First Room
+  - Sky Keep - Chest after Dreadfuse Fight
   - The Goddess's Silent Realm - Collect all Tears Reward
   - Farore's Silent Realm - Collect all Tears Reward
   - Nayru's Silent Realm - Collect all Tears Reward
