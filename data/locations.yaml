@@ -914,7 +914,7 @@
 
 # Batreaux Rewards:
 
-- name: Batreaux - 5 Crystals
+- name: Batreaux's House - 5 Crystals
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -923,7 +923,7 @@
     - event/121-AkumaKun/21
     - oarc/F012r/l0
 
-- name: Batreaux - 10 Crystals
+- name: Batreaux's House - 10 Crystals
   original_item: Heart Piece
   types:
     - Batreaux's Rewards
@@ -932,7 +932,7 @@
     - event/121-AkumaKun/42
     - oarc/F012r/l0
 
-- name: Batreaux - 30 Crystals
+- name: Batreaux's House - 30 Crystals
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -941,7 +941,7 @@
     - event/121-AkumaKun/24
     - oarc/F012r/l0
 
-- name: Batreaux - 30 Crystals Chest
+- name: Batreaux's House - 30 Crystals Chest
   original_item: Cursed Medal
   types:
     - Batreaux's Rewards
@@ -949,7 +949,7 @@
   Paths:
     - stage/F012r/r0/l0/TBox/69
 
-- name: Batreaux - 40 Crystals
+- name: Batreaux's House - 40 Crystals
   original_item: Gold Rupee
   types:
     - Batreaux's Rewards
@@ -958,7 +958,7 @@
     - event/121-AkumaKun/49
     - oarc/F012r/l0
 
-- name: Batreaux - 50 Crystals
+- name: Batreaux's House - 50 Crystals
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -968,7 +968,7 @@
     - event/121-AkumaKun/27
     - oarc/F012r/l0
 
-- name: Batreaux - 70 Crystals
+- name: Batreaux's House - 70 Crystals First Reward
   original_item: Gold Rupee
   types:
     - Batreaux's Rewards
@@ -978,7 +978,7 @@
     - event/121-AkumaKun/161
     - oarc/F012r/l0
 
-- name: Batreaux - 70 Crystals Second Reward
+- name: Batreaux's House - 70 Crystals Second Reward
   original_item: Gold Rupee
   types:
     - Batreaux's Rewards
@@ -988,7 +988,7 @@
     - event/121-AkumaKun/163
     - oarc/F012r/l0
 
-- name: Batreaux - 80 Crystals
+- name: Batreaux's House - 80 Crystals
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards

@@ -1748,49 +1748,49 @@
   pretty: Skyloft Village - Stamina Fruit above Mallara's House
   cryptic: a <r<fruit near some residences>>
 
-- name: Batreaux - 5 Crystals
-  standard: Batreaux - 5 Crystals
-  pretty: Batreaux - 5 Crystals
+- name: Batreaux's House - 5 Crystals
+  standard: Batreaux's House - 5 Crystals
+  pretty: Batreaux's House - 5 Crystals
   cryptic: <r<the demon's first reward>>
 
-- name: Batreaux - 10 Crystals
-  standard: Batreaux - 10 Crystals
-  pretty: Batreaux - 10 Crystals
+- name: Batreaux's House - 10 Crystals
+  standard: Batreaux's House - 10 Crystals
+  pretty: Batreaux's House - 10 Crystals
   cryptic: <ye<10>> <r<pieces of gratitude>>
 
-- name: Batreaux - 30 Crystals
-  standard: Batreaux - 30 Crystals
-  pretty: Batreaux - 30 Crystals
+- name: Batreaux's House - 30 Crystals
+  standard: Batreaux's House - 30 Crystals
+  pretty: Batreaux's House - 30 Crystals
   cryptic: <ye<30>> <r<pieces of gratitude>>
 
-- name: Batreaux - 30 Crystals Chest
-  standard: Batreaux - 30 Crystals Chest
-  pretty: Batreaux - 30 Crystals Chest
+- name: Batreaux's House - 30 Crystals Chest
+  standard: Batreaux's House - 30 Crystals Chest
+  pretty: Batreaux's House - 30 Crystals Chest
   cryptic: a <r<chest from a demon>>
 
-- name: Batreaux - 40 Crystals
-  standard: Batreaux - 40 Crystals
-  pretty: Batreaux - 40 Crystals
+- name: Batreaux's House - 40 Crystals
+  standard: Batreaux's House - 40 Crystals
+  pretty: Batreaux's House - 40 Crystals
   cryptic: <ye<40>> <r<pieces of gratitude>>
 
-- name: Batreaux - 50 Crystals
-  standard: Batreaux - 50 Crystals
-  pretty: Batreaux - 50 Crystals
+- name: Batreaux's House - 50 Crystals
+  standard: Batreaux's House - 50 Crystals
+  pretty: Batreaux's House - 50 Crystals
   cryptic: <ye<50>> <r<pieces of gratitude>>
 
-- name: Batreaux - 70 Crystals
-  standard: Batreaux - 70 Crystals
-  pretty: Batreaux - 70 Crystals
+- name: Batreaux's House - 70 Crystals First Reward
+  standard: Batreaux's House - 70 Crystals First Reward
+  pretty: Batreaux's House - 70 Crystals First Reward
   cryptic: the <r<demon's penultimate reward>>
 
-- name: Batreaux - 70 Crystals Second Reward
-  standard: Batreaux - 70 Crystals Second Reward
-  pretty: Batreaux - 70 Crystals Second Reward
+- name: Batreaux's House - 70 Crystals Second Reward
+  standard: Batreaux's House - 70 Crystals Second Reward
+  pretty: Batreaux's House - 70 Crystals Second Reward
   cryptic: the <r<demon's penultimate reward>>
 
-- name: Batreaux - 80 Crystals
-  standard: Batreaux - 80 Crystals
-  pretty: Batreaux - 80 Crystals
+- name: Batreaux's House - 80 Crystals
+  standard: Batreaux's House - 80 Crystals
+  pretty: Batreaux's House - 80 Crystals
   cryptic: a <r<demon in human form>>
 
 - name: Beedle's Shop - 300 Rupee Item

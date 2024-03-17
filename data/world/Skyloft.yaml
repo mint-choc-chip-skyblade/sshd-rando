@@ -412,15 +412,15 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Batreaux - 5 Crystals: gratitude_crystals(5)
-    Batreaux - 10 Crystals: gratitude_crystals(10)
-    Batreaux - 30 Crystals: gratitude_crystals(30)
-    Batreaux - 30 Crystals Chest: gratitude_crystals(30)
-    Batreaux - 40 Crystals: gratitude_crystals(40)
-    Batreaux - 50 Crystals: gratitude_crystals(50)
-    Batreaux - 70 Crystals: gratitude_crystals(70)
-    Batreaux - 70 Crystals Second Reward: gratitude_crystals(70)
-    Batreaux - 80 Crystals: gratitude_crystals(80)
+    Batreaux's House - 5 Crystals: gratitude_crystals(5)
+    Batreaux's House - 10 Crystals: gratitude_crystals(10)
+    Batreaux's House - 30 Crystals: gratitude_crystals(30)
+    Batreaux's House - 30 Crystals Chest: gratitude_crystals(30)
+    Batreaux's House - 40 Crystals: gratitude_crystals(40)
+    Batreaux's House - 50 Crystals: gratitude_crystals(50)
+    Batreaux's House - 70 Crystals First Reward: gratitude_crystals(70)
+    Batreaux's House - 70 Crystals Second Reward: gratitude_crystals(70)
+    Batreaux's House - 80 Crystals: gratitude_crystals(80)
 
 - name: Skyloft Past Waterfall Cave Jump
   hint_region: None # Prevent Skyloft Past Waterfall Cave from being assigned to Skyloft Village

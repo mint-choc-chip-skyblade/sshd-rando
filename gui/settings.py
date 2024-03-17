@@ -54,7 +54,8 @@ class Settings:
         self.location_table = build_location_table()
 
         # Verify excluded locations
-        for location in self.config.settings[0].excluded_hint_locations:
+        excluded_hint_locations = self.config.settings[0].excluded_hint_locations.copy()
+        for location in excluded_hint_locations:
             if location not in self.location_table:
                 self.config.settings[0].excluded_hint_locations.remove(location)
 
@@ -68,7 +69,8 @@ class Settings:
                         f"Could not exclude unknown location: {location}.\n\nThis location will be ignored and will not be excluded.",
                     )
 
-        for location in self.config.settings[0].excluded_locations:
+        excluded_locations = self.config.settings[0].excluded_locations.copy()
+        for location in excluded_locations:
             if location not in self.location_table:
                 self.config.settings[0].excluded_locations.remove(location)
 

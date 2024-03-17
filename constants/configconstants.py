@@ -138,6 +138,15 @@ LOCATION_ALIASES = {
     "Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South": "Inside the Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South",
     "Great Tree - Chest": "Inside the Great Tree - Chest guarded by Deku Baba",
     "Great Tree - Blow Tree Spiral on Highest Pathway": "Inside the Great Tree - Blow Tree Spiral on Highest Pathway",
+    "Batreaux - 5 Crystals": "Batreaux's House - 5 Crystals",
+    "Batreaux - 10 Crystals": "Batreaux's House - 10 Crystals",
+    "Batreaux - 30 Crystals": "Batreaux's House - 30 Crystals",
+    "Batreaux - 30 Crystals Chest": "Batreaux's House - 30 Crystals",
+    "Batreaux - 40 Crystals": "Batreaux's House - 40 Crystals",
+    "Batreaux - 50 Crystals": "Batreaux's House - 50 Crystals",
+    "Batreaux - 70 Crystals": "Batreaux's House - 70 Crystals First Reward",
+    "Batreaux - 70 Crystals Second Reward": "Batreaux's House - 70 Crystals Second Reward",
+    "Batreaux - 80 Crystals": "Batreaux's House - 80 Crystals",
 }
 
 SETTING_ALIASES = {
