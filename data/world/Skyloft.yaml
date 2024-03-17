@@ -31,10 +31,10 @@
     Knight Academy - Bonk Headmaster Gaepora's Bookshelf: Day
     Knight Academy - Crystal in Knight Academy Plant: Night
     Knight Academy - Crystal in Link's Room: Night
-    Knight Academy - Owlan's Crystals: Day and 'Retrieve_Oolo'
+    Knight Academy - Deliver Kikwi to Owlan: Day and 'Retrieve_Oolo'
     Knight Academy - Item from Cawlin: Day
-    Knight Academy - Ghost/Pipit's Crystals: Day and Cawlins_Letter
-    Knight Academy - Fledge's Crystals: Night and 'Stamina_Potion'
+    Knight Academy - Deliver Cawlin's Letter: Day and Cawlins_Letter
+    Knight Academy - Help Fledge Workout: Night and 'Stamina_Potion'
 
 - name: Knight Academy Chimney
   hint_region: Knight Academy
@@ -148,7 +148,7 @@
   events:
     Can Collect Water: Bottle
   exits:
-    Beedle's Shop: Day and (Distance_Activator or (logic_beedles_shop_with_bombs and Bomb_Bag))
+    Beedle's Airshop: Day and (Distance_Activator or (logic_beedles_shop_with_bombs and Bomb_Bag))
     Bazaar North: Day
     Bazaar West: Day
     Bazaar South: Day
@@ -184,7 +184,7 @@
     Central Skyloft - Bonk Tree Right of Sky Keep Statue: Nothing
     Central Skyloft - West Cliff Goddess Chest: Faron_Woods_Goddess_Cube_on_West_Great_Tree_near_Exit
     Central Skyloft - Parrow's Gift: Day and 'Talk_to_Orielle'
-    Central Skyloft - Parrow's Crystals: Day and 'Save_Orielle'
+    Central Skyloft - Parrow's Gratitude: Day and 'Save_Orielle'
     Central Skyloft - Shed Chest: Water_Dragons_Scale
     Central Skyloft - Shed Goddess Chest: Water_Dragons_Scale and Eldin_Volcano_Goddess_Cube_on_Sand_Slide
     Central Skyloft - Stamina Fruit between Wooden Planks: Nothing
@@ -257,7 +257,7 @@
   locations:
     Central Skyloft - Crystal in Orielle and Parrow's House: Nothing
     Central Skyloft - Parrow's Gift: Night and 'Talk_to_Orielle'
-    Central Skyloft - Parrow's Crystals: Night and 'Save_Orielle'
+    Central Skyloft - Parrow's Gratitude: Night and 'Save_Orielle'
     Central Skyloft - Orielle and Parrow's Closet: Nothing
 
 - name: Peatrice's House
@@ -266,7 +266,7 @@
   exits:
     Central Skyloft: Nothing
   locations:
-    Central Skyloft - Peater/Peatrice's Crystals: can_access(Bazaar) and Night
+    Central Skyloft - Peatrice's Love: can_access(Bazaar) and Night
     Central Skyloft - Peater's Closet: Nothing
     Central Skyloft - Peatrice's Closet: Nothing
 
@@ -276,7 +276,7 @@
   exits:
     Central Skyloft: Nothing
   locations:
-    Central Skyloft - Wryna's Crystals: Nothing
+    Central Skyloft - Wryna's Gratitude: Nothing
     Central Skyloft - Wryna's Closet: Nothing
 
 - name: Piper's House
@@ -366,7 +366,7 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Bertie's Crystals: Rattle and Night
+    Skyloft Village - Deliver Rattle to Bertie: Rattle and Night
     Skyloft Village - Luv and Bertie's Closet: Nothing
 
 - name: Sparrot's House
@@ -377,7 +377,7 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Sparrot's Crystals: "'Retrieve_Crystal_Ball'"
+    Skyloft Village - Deliver Crystal Ball to Sparrot: "'Retrieve_Crystal_Ball'"
     Skyloft Village - Sparrot's Closet: Nothing
     Skyloft Village - Bonk Sparrot's Valuables: Nothing
 
@@ -387,7 +387,7 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Mallara's Crystals: Gust_Bellows
+    Skyloft Village - Clean Mallara's House: Gust_Bellows
     Skyloft Village - Mallara's Closet: Nothing
 
 - name: Gondo's House
@@ -412,39 +412,39 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Batreaux's House - 5 Crystals: gratitude_crystals(5)
-    Batreaux's House - 10 Crystals: gratitude_crystals(10)
-    Batreaux's House - 30 Crystals: gratitude_crystals(30)
-    Batreaux's House - 30 Crystals Chest: gratitude_crystals(30)
-    Batreaux's House - 40 Crystals: gratitude_crystals(40)
-    Batreaux's House - 50 Crystals: gratitude_crystals(50)
-    Batreaux's House - 70 Crystals First Reward: gratitude_crystals(70)
-    Batreaux's House - 70 Crystals Second Reward: gratitude_crystals(70)
-    Batreaux's House - 80 Crystals: gratitude_crystals(80)
+    Batreaux's House - 5 Gratitude Crystals Reward: gratitude_crystals(5)
+    Batreaux's House - 10 Gratitude Crystals Reward: gratitude_crystals(10)
+    Batreaux's House - 30 Gratitude Crystals Reward: gratitude_crystals(30)
+    Batreaux's House - 30 Gratitude Crystals Reward Chest: gratitude_crystals(30)
+    Batreaux's House - 40 Gratitude Crystals Reward: gratitude_crystals(40)
+    Batreaux's House - 50 Gratitude Crystals Reward: gratitude_crystals(50)
+    Batreaux's House - 70 Gratitude Crystals First Reward: gratitude_crystals(70)
+    Batreaux's House - 70 Gratitude Crystals Second Reward: gratitude_crystals(70)
+    Batreaux's House - 80 Gratitude Crystals Reward: gratitude_crystals(80)
 
 - name: Skyloft Past Waterfall Cave Jump
   hint_region: None # Prevent Skyloft Past Waterfall Cave from being assigned to Skyloft Village
   exits:
     Skyloft Past Waterfall Cave: Nothing
 
-# BEEDLES SHOP
-- name: Beedle's Shop
+
+- name: Beedle's Airshop
   allowed_time_of_day: All
-  hint_region: Beedle's Shop
+  hint_region: Beedle's Airshop
   can_sleep: true
   exits:
     Beedle's Island: Night
     Central Skyloft: Day
   locations:
     # We don't want the pouch extensions to be the logical access to the pouch
-    Beedle's Shop - 300 Rupee Item: Can_Afford_300_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
-    Beedle's Shop - 600 Rupee Item: Can_Afford_600_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
-    Beedle's Shop - 1200 Rupee Item: Can_Afford_1200_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
-    Beedle's Shop - 800 Rupee Item: Can_Afford_800_Rupees
-    Beedle's Shop - 1600 Rupee Item: Can_Afford_1600_Rupees
-    Beedle's Shop - First 100 Rupee Item: Can_Afford_100_Rupees
-    Beedle's Shop - Second 100 Rupee Item: Can_Afford_100_Rupees
+    Beedle's Airshop - 300 Rupee Item: Can_Afford_300_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
+    Beedle's Airshop - 600 Rupee Item: Can_Afford_600_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
+    Beedle's Airshop - 1200 Rupee Item: Can_Afford_1200_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
+    Beedle's Airshop - 800 Rupee Item: Can_Afford_800_Rupees
+    Beedle's Airshop - 1600 Rupee Item: Can_Afford_1600_Rupees
+    Beedle's Airshop - First 100 Rupee Item: Can_Afford_100_Rupees
+    Beedle's Airshop - Second 100 Rupee Item: Can_Afford_100_Rupees
     # To reduce necessary rupee-farming at the start, the third item logically needs an efficient rupee-farming method
-    Beedle's Shop - Third 100 Rupee Item: Can_Afford_100_Rupees and Can_Medium_Rupee_Farm
-    Beedle's Shop - 50 Rupee Item: Can_Afford_50_Rupees
-    Beedle's Shop - 1000 Rupee Item: Can_Afford_1000_Rupees
+    Beedle's Airshop - Third 100 Rupee Item: Can_Afford_100_Rupees and Can_Medium_Rupee_Farm
+    Beedle's Airshop - 50 Rupee Item: Can_Afford_50_Rupees
+    Beedle's Airshop - 1000 Rupee Item: Can_Afford_1000_Rupees

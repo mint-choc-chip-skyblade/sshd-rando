@@ -120,7 +120,7 @@
   Paths:
     - stage/F001r/r6/l0/Item/0xFC11
 
-- name: Knight Academy - Owlan's Crystals
+- name: Knight Academy - Deliver Kikwi to Owlan
   original_item: Gratitude Crystal Pack
   types:
     - Scrapper Deliveries
@@ -131,7 +131,7 @@
     - event/118-Town3/157
     - oarc/F001r/l0
 
-- name: Knight Academy - Fledge's Crystals
+- name: Knight Academy - Help Fledge Workout
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -146,7 +146,7 @@
   Paths:
     - event/115-Town2/166
     - oarc/F001r/l0
-- name: Knight Academy - Ghost/Pipit's Crystals
+- name: Knight Academy - Deliver Cawlin's Letter
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -487,7 +487,7 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD1D
 
-- name: Central Skyloft - Wryna's Crystals
+- name: Central Skyloft - Wryna's Gratitude
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -553,7 +553,7 @@
     - oarc/F000/l6
     - oarc/F005r/l0
 
-- name: Central Skyloft - Parrow's Crystals
+- name: Central Skyloft - Parrow's Gratitude
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -570,7 +570,7 @@
   Paths:
     - stage/F005r/r0/l0/chest/0xFC0E
 
-- name: Central Skyloft - Peater/Peatrice's Crystals
+- name: Central Skyloft - Peatrice's Love
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -825,7 +825,7 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD1E
 
-- name: Skyloft Village - Mallara's Crystals
+- name: Skyloft Village - Clean Mallara's House
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -840,7 +840,7 @@
   Paths:
     - stage/F016r/r0/l0/chest/0xFC28
 
-- name: Skyloft Village - Bertie's Crystals
+- name: Skyloft Village - Deliver Rattle to Bertie
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -869,7 +869,7 @@
   Paths:
     - stage/F017r/r0/l0/chest/0xFC1E
 
-- name: Skyloft Village - Sparrot's Crystals
+- name: Skyloft Village - Deliver Crystal Ball to Sparrot
   original_item: Gratitude Crystal Pack
   types:
     - Scrapper Deliveries
@@ -914,7 +914,7 @@
 
 # Batreaux Rewards:
 
-- name: Batreaux's House - 5 Crystals
+- name: Batreaux's House - 5 Gratitude Crystals Reward
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -923,7 +923,7 @@
     - event/121-AkumaKun/21
     - oarc/F012r/l0
 
-- name: Batreaux's House - 10 Crystals
+- name: Batreaux's House - 10 Gratitude Crystals Reward
   original_item: Heart Piece
   types:
     - Batreaux's Rewards
@@ -932,7 +932,7 @@
     - event/121-AkumaKun/42
     - oarc/F012r/l0
 
-- name: Batreaux's House - 30 Crystals
+- name: Batreaux's House - 30 Gratitude Crystals Reward
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -941,7 +941,7 @@
     - event/121-AkumaKun/24
     - oarc/F012r/l0
 
-- name: Batreaux's House - 30 Crystals Chest
+- name: Batreaux's House - 30 Gratitude Crystals Reward Chest
   original_item: Cursed Medal
   types:
     - Batreaux's Rewards
@@ -949,7 +949,7 @@
   Paths:
     - stage/F012r/r0/l0/TBox/69
 
-- name: Batreaux's House - 40 Crystals
+- name: Batreaux's House - 40 Gratitude Crystals Reward
   original_item: Gold Rupee
   types:
     - Batreaux's Rewards
@@ -958,7 +958,7 @@
     - event/121-AkumaKun/49
     - oarc/F012r/l0
 
-- name: Batreaux's House - 50 Crystals
+- name: Batreaux's House - 50 Gratitude Crystals Reward
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -968,7 +968,7 @@
     - event/121-AkumaKun/27
     - oarc/F012r/l0
 
-- name: Batreaux's House - 70 Crystals First Reward
+- name: Batreaux's House - 70 Gratitude Crystals First Reward
   original_item: Gold Rupee
   types:
     - Batreaux's Rewards
@@ -978,7 +978,7 @@
     - event/121-AkumaKun/161
     - oarc/F012r/l0
 
-- name: Batreaux's House - 70 Crystals Second Reward
+- name: Batreaux's House - 70 Gratitude Crystals Second Reward
   original_item: Gold Rupee
   types:
     - Batreaux's Rewards
@@ -988,7 +988,7 @@
     - event/121-AkumaKun/163
     - oarc/F012r/l0
 
-- name: Batreaux's House - 80 Crystals
+- name: Batreaux's House - 80 Gratitude Crystals Reward
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -998,95 +998,95 @@
     - event/121-AkumaKun/37
     - oarc/F012r/l0
 
-# Beedle's Shop:
+# Beedle's Airshop:
 
-- name: Beedle's Shop - 300 Rupee Item
+- name: Beedle's Airshop - 300 Rupee Item
   original_item: Progressive Pouch
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Cheap)
     - NPC
   Paths:
     - ShpSmpl/20
 
-- name: Beedle's Shop - 600 Rupee Item
+- name: Beedle's Airshop - 600 Rupee Item
   original_item: Progressive Pouch
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Medium)
     - NPC
   Paths:
     - ShpSmpl/21
 
-- name: Beedle's Shop - 1200 Rupee Item
+- name: Beedle's Airshop - 1200 Rupee Item
   original_item: Progressive Pouch
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Expensive)
     - NPC
   hint: always
   Paths:
     - ShpSmpl/22
 
-- name: Beedle's Shop - 800 Rupee Item
+- name: Beedle's Airshop - 800 Rupee Item
   original_item: Life Medal
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Medium)
     - NPC
   Paths:
     - ShpSmpl/26
 
-- name: Beedle's Shop - 1600 Rupee Item
+- name: Beedle's Airshop - 1600 Rupee Item
   original_item: Heart Piece
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Expensive)
     - NPC
   hint: always
   Paths:
     - ShpSmpl/23
 
-- name: Beedle's Shop - First 100 Rupee Item
+- name: Beedle's Airshop - First 100 Rupee Item
   original_item: Extra Wallet
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Cheap)
     - NPC
   Paths:
     - ShpSmpl/24
 
-- name: Beedle's Shop - Second 100 Rupee Item
+- name: Beedle's Airshop - Second 100 Rupee Item
   original_item: Extra Wallet
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Cheap)
     - NPC
   Paths:
     - ShpSmpl/17
 
-- name: Beedle's Shop - Third 100 Rupee Item
+- name: Beedle's Airshop - Third 100 Rupee Item
   original_item: Extra Wallet
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Cheap)
     - NPC
   Paths:
     - ShpSmpl/18
 
-- name: Beedle's Shop - 50 Rupee Item
+- name: Beedle's Airshop - 50 Rupee Item
   original_item: Progressive Bug Net
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Cheap)
     - NPC
   Paths:
     - ShpSmpl/25
 
-- name: Beedle's Shop - 1000 Rupee Item
+- name: Beedle's Airshop - 1000 Rupee Item
   original_item: Bug Medal
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Medium)
     - NPC
   Paths:
@@ -1216,7 +1216,7 @@
     - event/117-Pumpkin/305
     - oarc/F011r/l0
 
-- name: Lumpy Pumpkin - Kina's Crystals
+- name: Lumpy Pumpkin - Deliver Mogma to Kina
   original_item: Gratitude Crystal Pack
   types:
     - Scrapper Deliveries
@@ -1256,7 +1256,7 @@
   textindex: 27
   eventflowindex: 40
 
-- name: Orielle's Island - Orielle's Crystals
+- name: Orielle's Island - Heal Orielle's Loftwing
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -1264,7 +1264,7 @@
     - event/115-Town2/225
     - oarc/F020/l0
 
-- name: Beedle's Island - Beedle's Crystals
+- name: Beedle's Island - Deliver Beedle's Insect Cage
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -1300,7 +1300,7 @@
     - stage/F020/r0/l0/TBox/81
   cube_region: Faron Woods
 
-- name: Fun Fun Island - Dodoh's Crystals
+- name: Fun Fun Island - Deliver Party Wheel to Dodoh
   original_item: Gratitude Crystal Pack
   types:
     - Scrapper Deliveries

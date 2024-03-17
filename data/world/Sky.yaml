@@ -109,11 +109,11 @@
 - name: Beedle's Island
   hint_region: Sky
   exits:
-    Beedle's Shop: Night
+    Beedle's Airshop: Night
     The Sky: Day
   locations:
     Beedle's Island - Crystal: Night and Beetle
-    Beedle's Island - Beedle's Crystals: Night and Beedles_Insect_Cage
+    Beedle's Island - Deliver Beedle's Insect Cage: Night and Beedles_Insect_Cage
     Beedle's Island - Top Goddess Chest: Day and Temple_of_Time_Goddess_Cube
     Beedle's Island - Cage Goddess Chest: (Night or (Day and logic_beedles_island_cage_chest_dive)) and Deep_Woods_Goddess_Cube_on_top_of_Skyview
 
@@ -146,7 +146,7 @@
     Lumpy Pumpkin - Outside Crystal: Night
     Lumpy Pumpkin - Outside Goddess Chest: Deep_Woods_Goddess_Cube_near_Goron
     Lumpy Pumpkin - Goddess Chest on Roof: Day and Skyview_Spring_Goddess_Cube
-    Lumpy Pumpkin - Kina's Crystals: Day and 'Pick_up_Guld'
+    Lumpy Pumpkin - Deliver Mogma to Kina: Day and 'Pick_up_Guld'
     Lumpy Pumpkin - Gossip Stone: Nothing
 
 
@@ -211,7 +211,7 @@
   exits:
     The Sky: Day
   locations:
-    Orielle's Island - Orielle's Crystals: "'Save_Orielle'"
+    Orielle's Island - Heal Orielle's Loftwing: "'Save_Orielle'"
 
 
 - name: Fun Fun Island
@@ -222,7 +222,7 @@
   exits:
     The Sky: Day
   locations:
-    Fun Fun Island - Dodoh's Crystals: "'Retrieve_Party_Wheel'"
+    Fun Fun Island - Deliver Party Wheel to Dodoh: "'Retrieve_Party_Wheel'"
     Fun Fun Island - 500 Rupees in Dodoh's High Dive: "'Can_Play_Fun_Fun_Island_Minigame'"
     Fun Fun Island - Goddess Chest: Day and Floria_Waterfall_Goddess_Cube_on_High_Ledge
 

@@ -1278,14 +1278,14 @@
   pretty: Knight Academy - Rupee in Chimney Crawlspace 5
   cryptic: sneaking above a <r<lover's bedroom>>
 
-- name: Knight Academy - Owlan's Crystals
-  standard: Knight Academy - Owlan's Crystals
-  pretty: Knight Academy - Owlan's Crystals
-  cryptic: delivering a <r<Kikwi>>
+- name: Knight Academy - Deliver Kikwi to Owlan
+  standard: Knight Academy - Deliver Kikwi to Owlan
+  pretty: Knight Academy - Deliver Kikwi to Owlan
+  cryptic: advancing a <r<professor's research>>
 
-- name: Knight Academy - Fledge's Crystals
-  standard: Knight Academy - Fledge's Crystals
-  pretty: Knight Academy - Fledge's Crystals
+- name: Knight Academy - Help Fledge Workout
+  standard: Knight Academy - Help Fledge Workout
+  pretty: Knight Academy - Help Fledge Workout
   cryptic: <r<lending strength to a friend>>
 
 - name: Knight Academy - Item from Cawlin
@@ -1293,10 +1293,10 @@
   pretty: Knight Academy - Item from Cawlin
   cryptic: a <r<disgruntled teenager>>
 
-- name: Knight Academy - Ghost/Pipit's Crystals
-  standard: Knight Academy - Ghost/Pipit's Crystals
-  pretty: Knight Academy - Ghost/Pipit's Crystals
-  cryptic: <r<delivering a letter>>
+- name: Knight Academy - Deliver Cawlin's Letter
+  standard: Knight Academy - Deliver Cawlin's Letter
+  pretty: Knight Academy - Deliver Cawlin's Letter
+  cryptic: <r<mailing a love letter>>
 
 - name: Knight Academy - Crystal in Link's Room
   standard: Knight Academy - Crystal in Link's Room
@@ -1498,9 +1498,9 @@
   pretty: Central Skyloft - Bonk Tree Southeast of the Bazaar
   cryptic: <r<disturbing sky wood below a market>>
 
-- name: Central Skyloft - Wryna's Crystals
-  standard: Central Skyloft - Wryna's Crystals
-  pretty: Central Skyloft - Wryna's Crystals
+- name: Central Skyloft - Wryna's Gratitude
+  standard: Central Skyloft - Wryna's Gratitude
+  pretty: Central Skyloft - Wryna's Gratitude
   cryptic: a <r<happy mother>>
 
 - name: Central Skyloft - Wryna's Closet
@@ -1538,9 +1538,9 @@
   pretty: Central Skyloft - Parrow's Gift
   cryptic: a <r<brother's distress>>
 
-- name: Central Skyloft - Parrow's Crystals
-  standard: Central Skyloft - Parrow's Crystals
-  pretty: Central Skyloft - Parrow's Crystals
+- name: Central Skyloft - Parrow's Gratitude
+  standard: Central Skyloft - Parrow's Gratitude
+  pretty: Central Skyloft - Parrow's Gratitude
   cryptic: a <r<brother's gratitude>>
 
 - name: Central Skyloft - Orielle and Parrow's Closet
@@ -1548,9 +1548,9 @@
   pretty: Central Skyloft - Orielle and Parrow's Closet
   cryptic: snooping through a <r<worried couple's clothes>>
 
-- name: Central Skyloft - Peater/Peatrice's Crystals
-  standard: Central Skyloft - Peater/Peatrice's Crystals
-  pretty: Central Skyloft - Peater/Peatrice's Crystals
+- name: Central Skyloft - Peatrice's Love
+  standard: Central Skyloft - Peatrice's Love
+  pretty: Central Skyloft - Peatrice's Love
   cryptic: the <r<item check girl>>
 
 - name: Central Skyloft - Peater's Closet
@@ -1693,9 +1693,9 @@
   pretty: Skyloft Village - Bonk Tree near River
   cryptic: <r<disturbing sky wood>> in a <b<village>>
 
-- name: Skyloft Village - Mallara's Crystals
-  standard: Skyloft Village - Mallara's Crystals
-  pretty: Skyloft Village - Mallara's Crystals
+- name: Skyloft Village - Clean Mallara's House
+  standard: Skyloft Village - Clean Mallara's House
+  pretty: Skyloft Village - Clean Mallara's House
   cryptic: a <r<mother's laziness>>
 
 - name: Skyloft Village - Mallara's Closet
@@ -1703,9 +1703,9 @@
   pretty: Skyloft Village - Mallara's Closet
   cryptic: snooping through a <r<dusty closet>>
 
-- name: Skyloft Village - Bertie's Crystals
-  standard: Skyloft Village - Bertie's Crystals
-  pretty: Skyloft Village - Bertie's Crystals
+- name: Skyloft Village - Deliver Rattle to Bertie
+  standard: Skyloft Village - Deliver Rattle to Bertie
+  pretty: Skyloft Village - Deliver Rattle to Bertie
   cryptic: helping an <r<exhausted parent>>
 
 - name: Skyloft Village - Luv and Bertie's Closet
@@ -1723,9 +1723,9 @@
   pretty: Skyloft Village - Rupin's Closet
   cryptic: snooping through a <r<greedy man's clothes>>
 
-- name: Skyloft Village - Sparrot's Crystals
-  standard: Skyloft Village - Sparrot's Crystals
-  pretty: Skyloft Village - Sparrot's Crystals
+- name: Skyloft Village - Deliver Crystal Ball to Sparrot
+  standard: Skyloft Village - Deliver Crystal Ball to Sparrot
+  pretty: Skyloft Village - Deliver Crystal Ball to Sparrot
   cryptic: delivering a <r<fortune telling device>>
 
 - name: Skyloft Village - Sparrot's Closet
@@ -1748,99 +1748,99 @@
   pretty: Skyloft Village - Stamina Fruit above Mallara's House
   cryptic: a <r<fruit near some residences>>
 
-- name: Batreaux's House - 5 Crystals
-  standard: Batreaux's House - 5 Crystals
-  pretty: Batreaux's House - 5 Crystals
+- name: Batreaux's House - 5 Gratitude Crystals Reward
+  standard: Batreaux's House - 5 Gratitude Crystals Reward
+  pretty: Batreaux's House - 5 Gratitude Crystals Reward
   cryptic: <r<the demon's first reward>>
 
-- name: Batreaux's House - 10 Crystals
-  standard: Batreaux's House - 10 Crystals
-  pretty: Batreaux's House - 10 Crystals
+- name: Batreaux's House - 10 Gratitude Crystals Reward
+  standard: Batreaux's House - 10 Gratitude Crystals Reward
+  pretty: Batreaux's House - 10 Gratitude Crystals Reward
   cryptic: <ye<10>> <r<pieces of gratitude>>
 
-- name: Batreaux's House - 30 Crystals
-  standard: Batreaux's House - 30 Crystals
-  pretty: Batreaux's House - 30 Crystals
+- name: Batreaux's House - 30 Gratitude Crystals Reward
+  standard: Batreaux's House - 30 Gratitude Crystals Reward
+  pretty: Batreaux's House - 30 Gratitude Crystals Reward
   cryptic: <ye<30>> <r<pieces of gratitude>>
 
-- name: Batreaux's House - 30 Crystals Chest
-  standard: Batreaux's House - 30 Crystals Chest
-  pretty: Batreaux's House - 30 Crystals Chest
+- name: Batreaux's House - 30 Gratitude Crystals Reward Chest
+  standard: Batreaux's House - 30 Gratitude Crystals Reward Chest
+  pretty: Batreaux's House - 30 Gratitude Crystals Reward Chest
   cryptic: a <r<chest from a demon>>
 
-- name: Batreaux's House - 40 Crystals
-  standard: Batreaux's House - 40 Crystals
-  pretty: Batreaux's House - 40 Crystals
+- name: Batreaux's House - 40 Gratitude Crystals Reward
+  standard: Batreaux's House - 40 Gratitude Crystals Reward
+  pretty: Batreaux's House - 40 Gratitude Crystals Reward
   cryptic: <ye<40>> <r<pieces of gratitude>>
 
-- name: Batreaux's House - 50 Crystals
-  standard: Batreaux's House - 50 Crystals
-  pretty: Batreaux's House - 50 Crystals
+- name: Batreaux's House - 50 Gratitude Crystals Reward
+  standard: Batreaux's House - 50 Gratitude Crystals Reward
+  pretty: Batreaux's House - 50 Gratitude Crystals Reward
   cryptic: <ye<50>> <r<pieces of gratitude>>
 
-- name: Batreaux's House - 70 Crystals First Reward
-  standard: Batreaux's House - 70 Crystals First Reward
-  pretty: Batreaux's House - 70 Crystals First Reward
+- name: Batreaux's House - 70 Gratitude Crystals First Reward
+  standard: Batreaux's House - 70 Gratitude Crystals First Reward
+  pretty: Batreaux's House - 70 Gratitude Crystals First Reward
   cryptic: the <r<demon's penultimate reward>>
 
-- name: Batreaux's House - 70 Crystals Second Reward
-  standard: Batreaux's House - 70 Crystals Second Reward
-  pretty: Batreaux's House - 70 Crystals Second Reward
+- name: Batreaux's House - 70 Gratitude Crystals Second Reward
+  standard: Batreaux's House - 70 Gratitude Crystals Second Reward
+  pretty: Batreaux's House - 70 Gratitude Crystals Second Reward
   cryptic: the <r<demon's penultimate reward>>
 
-- name: Batreaux's House - 80 Crystals
-  standard: Batreaux's House - 80 Crystals
-  pretty: Batreaux's House - 80 Crystals
+- name: Batreaux's House - 80 Gratitude Crystals Reward
+  standard: Batreaux's House - 80 Gratitude Crystals Reward
+  pretty: Batreaux's House - 80 Gratitude Crystals Reward
   cryptic: a <r<demon in human form>>
 
-- name: Beedle's Shop - 300 Rupee Item
-  standard: Beedle's Shop - 300 Rupee Item
-  pretty: Beedle's Shop - 300 Rupee Item
+- name: Beedle's Airshop - 300 Rupee Item
+  standard: Beedle's Airshop - 300 Rupee Item
+  pretty: Beedle's Airshop - 300 Rupee Item
   cryptic: for <g+<300 rupees>> <r<Beedle>>
 
-- name: Beedle's Shop - 600 Rupee Item
-  standard: Beedle's Shop - 600 Rupee Item
-  pretty: Beedle's Shop - 600 Rupee Item
+- name: Beedle's Airshop - 600 Rupee Item
+  standard: Beedle's Airshop - 600 Rupee Item
+  pretty: Beedle's Airshop - 600 Rupee Item
   cryptic: for <g+<600 rupees>> <r<Beedle>>
 
-- name: Beedle's Shop - 1200 Rupee Item
-  standard: Beedle's Shop - 1200 Rupee Item
-  pretty: Beedle's Shop - 1200 Rupee Item
+- name: Beedle's Airshop - 1200 Rupee Item
+  standard: Beedle's Airshop - 1200 Rupee Item
+  pretty: Beedle's Airshop - 1200 Rupee Item
   cryptic: for <g+<1200 rupees>> <r<Beedle>>
 
-- name: Beedle's Shop - 800 Rupee Item
-  standard: Beedle's Shop - 800 Rupee Item
-  pretty: Beedle's Shop - 800 Rupee Item
+- name: Beedle's Airshop - 800 Rupee Item
+  standard: Beedle's Airshop - 800 Rupee Item
+  pretty: Beedle's Airshop - 800 Rupee Item
   cryptic: for <g+<800 rupees>> <r<Beedle>>
 
-- name: Beedle's Shop - 1600 Rupee Item
-  standard: Beedle's Shop - 1600 Rupee Item
-  pretty: Beedle's Shop - 1600 Rupee Item
+- name: Beedle's Airshop - 1600 Rupee Item
+  standard: Beedle's Airshop - 1600 Rupee Item
+  pretty: Beedle's Airshop - 1600 Rupee Item
   cryptic: for <g+<1600 rupees>> <r<Beedle>>
 
-- name: Beedle's Shop - First 100 Rupee Item
-  standard: Beedle's Shop - First 100 Rupee Item
-  pretty: Beedle's Shop - First 100 Rupee Item
+- name: Beedle's Airshop - First 100 Rupee Item
+  standard: Beedle's Airshop - First 100 Rupee Item
+  pretty: Beedle's Airshop - First 100 Rupee Item
   cryptic: for <g+<100 rupees>> <r<Beedle>>
 
-- name: Beedle's Shop - Second 100 Rupee Item
-  standard: Beedle's Shop - Second 100 Rupee Item
-  pretty: Beedle's Shop - Second 100 Rupee Item
+- name: Beedle's Airshop - Second 100 Rupee Item
+  standard: Beedle's Airshop - Second 100 Rupee Item
+  pretty: Beedle's Airshop - Second 100 Rupee Item
   cryptic: for <g+<100 rupees>> <r<Beedle>>
 
-- name: Beedle's Shop - Third 100 Rupee Item
-  standard: Beedle's Shop - Third 100 Rupee Item
-  pretty: Beedle's Shop - Third 100 Rupee Item
+- name: Beedle's Airshop - Third 100 Rupee Item
+  standard: Beedle's Airshop - Third 100 Rupee Item
+  pretty: Beedle's Airshop - Third 100 Rupee Item
   cryptic: for <g+<100 rupees>> <r<Beedle>>
 
-- name: Beedle's Shop - 50 Rupee Item
-  standard: Beedle's Shop - 50 Rupee Item
-  pretty: Beedle's Shop - 50 Rupee Item
+- name: Beedle's Airshop - 50 Rupee Item
+  standard: Beedle's Airshop - 50 Rupee Item
+  pretty: Beedle's Airshop - 50 Rupee Item
   cryptic: for <g+<50 rupees>> <r<Beedle>>
 
-- name: Beedle's Shop - 1000 Rupee Item
-  standard: Beedle's Shop - 1000 Rupee Item
-  pretty: Beedle's Shop - 1000 Rupee Item
+- name: Beedle's Airshop - 1000 Rupee Item
+  standard: Beedle's Airshop - 1000 Rupee Item
+  pretty: Beedle's Airshop - 1000 Rupee Item
   cryptic: for <g+<1000 rupees>> <r<Beedle>>
 
 - name: Bamboo Island Interior - Gossip Stone
@@ -1918,9 +1918,9 @@
   pretty: Lumpy Pumpkin - Harp Duet with Kina
   cryptic: the <r<bartender>>
 
-- name: Lumpy Pumpkin - Kina's Crystals
-  standard: Lumpy Pumpkin - Kina's Crystals
-  pretty: Lumpy Pumpkin - Kina's Crystals
+- name: Lumpy Pumpkin - Deliver Mogma to Kina
+  standard: Lumpy Pumpkin - Deliver Mogma to Kina
+  pretty: Lumpy Pumpkin - Deliver Mogma to Kina
   cryptic: <r<delivering a mogma to the sky>>
 
 - name: Lumpy Pumpkin - Pumm and Kina's Closet
@@ -1943,14 +1943,14 @@
   pretty: Lumpy Pumpkin - Gossip Stone
   cryptic:
 
-- name: Orielle's Island - Orielle's Crystals
-  standard: Orielle's Island - Orielle's Crystals
-  pretty: Orielle's Island - Orielle's Crystals
+- name: Orielle's Island - Heal Orielle's Loftwing
+  standard: Orielle's Island - Heal Orielle's Loftwing
+  pretty: Orielle's Island - Heal Orielle's Loftwing
   cryptic: saving a <r<sick loftwing>>
 
-- name: Beedle's Island - Beedle's Crystals
-  standard: Beedle's Island - Beedle's Crystals
-  pretty: Beedle's Island - Beedle's Crystals
+- name: Beedle's Island - Deliver Beedle's Insect Cage
+  standard: Beedle's Island - Deliver Beedle's Insect Cage
+  pretty: Beedle's Island - Deliver Beedle's Insect Cage
   cryptic: <r<reuniting two Beedles>>
 
 - name: Beedle's Island - Crystal
@@ -1968,9 +1968,9 @@
   pretty: Beedle's Island - Cage Goddess Chest
   cryptic: a <s<goddess cube>> <g<atop a temple>>
 
-- name: Fun Fun Island - Dodoh's Crystals
-  standard: Fun Fun Island - Dodoh's Crystals
-  pretty: Fun Fun Island - Dodoh's Crystals
+- name: Fun Fun Island - Deliver Party Wheel to Dodoh
+  standard: Fun Fun Island - Deliver Party Wheel to Dodoh
+  pretty: Fun Fun Island - Deliver Party Wheel to Dodoh
   cryptic: delivering a <r<colorful wheel>>
 
 - name: Fun Fun Island - 500 Rupees in Dodoh's High Dive
@@ -5537,9 +5537,9 @@
   pretty: Batreaux's House
   cryptic:
 
-- name: Beedle's Shop
-  standard: Beedle's Shop
-  pretty: Beedle's Shop
+- name: Beedle's Airshop
+  standard: Beedle's Airshop
+  pretty: Beedle's Airshop
   cryptic:
 
 - name: Sky

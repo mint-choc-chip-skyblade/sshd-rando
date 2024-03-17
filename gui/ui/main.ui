@@ -1657,7 +1657,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="beedle_shop_shuffle_label">
              <property name="text">
-              <string>Beedle's Shop Shuffle</string>
+              <string>Beedle's Airshop Shuffle</string>
              </property>
             </widget>
            </item>
@@ -2661,14 +2661,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
               <item>
                <widget class="RandoTriStateCheckBox" name="setting_logic_beedles_shop_with_bombs">
                 <property name="text">
-                 <string>Beedle's Shop with Bombs</string>
+                 <string>Beedle's Airshop with Bombs</string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="RandoTriStateCheckBox" name="setting_logic_bird_nest_item_from_beedles_shop">
                 <property name="text">
-                 <string>Bird's Nest from Beedle's Shop</string>
+                 <string>Bird's Nest from Beedle's Airshop</string>
                 </property>
                </widget>
               </item>

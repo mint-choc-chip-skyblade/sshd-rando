@@ -468,7 +468,7 @@ class World:
         # Set beedle's shop items as nonprogress if they can only contain junk
         if self.setting("beedle_shop_shuffle") == "junk_only":
             for location in self.location_table.values():
-                if "Beedle's Shop" in location.types:
+                if "Beedle's Airshop" in location.types:
                     location.progression = False
 
     # Remove or add junk to the item pool until the total number of

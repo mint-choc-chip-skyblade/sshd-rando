@@ -244,15 +244,15 @@
   getmodelname: GetGenki
   advancement: true
   chain_locations:
-   - Batreaux's House - 5 Crystals
-   - Batreaux's House - 10 Crystals
-   - Batreaux's House - 30 Crystals
-   - Batreaux's House - 30 Crystals Chest
-   - Batreaux's House - 40 Crystals
-   - Batreaux's House - 50 Crystals
-   - Batreaux's House - 70 Crystals First Reward
-   - Batreaux's House - 70 Crystals Second Reward
-   - Batreaux's House - 80 Crystals
+   - Batreaux's House - 5 Gratitude Crystals Reward
+   - Batreaux's House - 10 Gratitude Crystals Reward
+   - Batreaux's House - 30 Gratitude Crystals Reward
+   - Batreaux's House - 30 Gratitude Crystals Reward Chest
+   - Batreaux's House - 40 Gratitude Crystals Reward
+   - Batreaux's House - 50 Gratitude Crystals Reward
+   - Batreaux's House - 70 Gratitude Crystals First Reward
+   - Batreaux's House - 70 Gratitude Crystals Second Reward
+   - Batreaux's House - 80 Gratitude Crystals Reward
 - id: 40
   name: 5 Bombs
   types:
@@ -283,15 +283,15 @@
   getmodelname: GetGenki
   advancement: true
   chain_locations:
-   - Batreaux's House - 5 Crystals
-   - Batreaux's House - 10 Crystals
-   - Batreaux's House - 30 Crystals
-   - Batreaux's House - 30 Crystals Chest
-   - Batreaux's House - 40 Crystals
-   - Batreaux's House - 50 Crystals
-   - Batreaux's House - 70 Crystals First Reward
-   - Batreaux's House - 70 Crystals Second Reward
-   - Batreaux's House - 80 Crystals
+   - Batreaux's House - 5 Gratitude Crystals Reward
+   - Batreaux's House - 10 Gratitude Crystals Reward
+   - Batreaux's House - 30 Gratitude Crystals Reward
+   - Batreaux's House - 30 Gratitude Crystals Reward Chest
+   - Batreaux's House - 40 Gratitude Crystals Reward
+   - Batreaux's House - 50 Gratitude Crystals Reward
+   - Batreaux's House - 70 Gratitude Crystals First Reward
+   - Batreaux's House - 70 Gratitude Crystals Second Reward
+   - Batreaux's House - 80 Gratitude Crystals Reward
 - id: 49
   name: Gust Bellows
   types:
@@ -592,10 +592,10 @@
   getmodelname: GetPurseB
   advancement: true
   chain_locations:
-   - Beedle's Shop - 600 Rupee Item
-   - Beedle's Shop - 1200 Rupee Item
-   - Beedle's Shop - 800 Rupee Item
-   - Beedle's Shop - 1600 Rupee Item
+   - Beedle's Airshop - 600 Rupee Item
+   - Beedle's Airshop - 1200 Rupee Item
+   - Beedle's Airshop - 800 Rupee Item
+   - Beedle's Airshop - 1600 Rupee Item
 - id: 109
   name: Big Wallet
   types:
@@ -730,7 +730,7 @@
   getmodelname: GetKobunALetter
   advancement: true
   chain_locations:
-   - Knight Academy - Ghost/Pipit's Crystals
+   - Knight Academy - Deliver Cawlin's Letter
 - id: 159
   name: Beedle's Insect Cage
   types:
@@ -741,7 +741,7 @@
   getmodelname: GetTerryCage
   advancement: true
   chain_locations:
-   - Beedle's Island - Beedle's Crystals
+   - Beedle's Island - Deliver Beedle's Insect Cage
 - id: 160
   name: Rattle
   types:
@@ -754,7 +754,7 @@
   getmodelname: GetGaragara
   advancement: true
   chain_locations:
-   - Skyloft Village - Bertie's Crystals
+   - Skyloft Village - Deliver Rattle to Bertie
 - id: 163
   name: Tumbleweed
   types:
@@ -971,10 +971,10 @@
   getmodelname: GetSparePurse
   advancement: true
   chain_locations:
-   - Beedle's Shop - 600 Rupee Item
-   - Beedle's Shop - 1200 Rupee Item
-   - Beedle's Shop - 800 Rupee Item
-   - Beedle's Shop - 1600 Rupee Item
+   - Beedle's Airshop - 600 Rupee Item
+   - Beedle's Airshop - 1200 Rupee Item
+   - Beedle's Airshop - 800 Rupee Item
+   - Beedle's Airshop - 1600 Rupee Item
 
 # Custom rando items
 - id: 200
@@ -1115,10 +1115,10 @@
   getmodelname: DesertRobot
   advancement: true
   chain_locations:
-   - Knight Academy - Owlan's Crystals
-   - Skyloft Village - Sparrot's Crystals
-   - Lumpy Pumpkin - Kina's Crystals
-   - Fun Fun Island - Dodoh's Crystals
+   - Knight Academy - Deliver Kikwi to Owlan
+   - Skyloft Village - Deliver Crystal Ball to Sparrot
+   - Lumpy Pumpkin - Deliver Mogma to Kina
+   - Fun Fun Island - Deliver Party Wheel to Dodoh
    - Fun Fun Island - 500 Rupees in Dodoh's High Dive
    - Inside the Thunderhead - Song from Levias
 

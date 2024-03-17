@@ -30,7 +30,7 @@ LOCATION_FILTER_TYPES = (
     "Beginner Rupees",
     "Intermediate Rupees",
     "Advanced Rupees",
-    "Beedle's Shop",
+    "Beedle's Airshop",
     "Shop (Cheap)",
     "Shop (Medium)",
     "Shop (Expensive)",

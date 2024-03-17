@@ -1111,7 +1111,7 @@
 # Include again once entrance issues have been fixed
 # - type: Interior
 #   forward:
-#     connection: Central Skyloft -> Beedle's Shop
+#     connection: Central Skyloft -> Beedle's Airshop
 #     exit_infos:
 #       - stage: F000
 #         room: 0
@@ -1122,7 +1122,7 @@
 #         room: 0
 #         entrance: 0
 #   return:
-#     connection: Beedle's Shop -> Central Skyloft
+#     connection: Beedle's Airshop -> Central Skyloft
 #     exit_infos:
 #       - stage: F002r
 #         room: 0

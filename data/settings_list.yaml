@@ -97,15 +97,15 @@
 
 - name: beedle_shop_shuffle
   default_option: junk_only
-  pretty_name: Beedle's Shop Shuffle
+  pretty_name: Beedle's Airshop Shuffle
   pretty_options:
     - Vanilla
     - Junk Only
     - Randomized
   options:
-    - vanilla: "Beedle's Shop will contain its vanilla items."
-    - junk_only: "Beedle's Shop will only contain junk items."
-    - randomized: "Beedle's Shop can contain any items."
+    - vanilla: "Beedle's Airshop will contain its vanilla items."
+    - junk_only: "Beedle's Airshop will only contain junk items."
+    - randomized: "Beedle's Airshop can contain any items."
 
 - name: goddess_chest_shuffle
   default_option: "off"
@@ -1078,23 +1078,23 @@
 
 - name: logic_bird_nest_item_from_beedles_shop
   default_option: "off"
-  pretty_name: Bird's Nest from Beedle's Shop
+  pretty_name: Bird's Nest from Beedle's Airshop
   pretty_options:
     - "Off"
     - "On"
   options:
     - "off": "You will only be expected to get the Item in Bird's Nest by diving from the top of the Waterfall."
-    - "on": "You may need to stop Beedle's Shop near to the Bird's Nest and get the item by climing the rope and using the Gust Bellows to blow away the dust and a Beetle to collect the item."
+    - "on": "You may need to stop Beedle's Airshop near to the Bird's Nest and get the item by climing the rope and using the Gust Bellows to blow away the dust and a Beetle to collect the item."
 
 - name: logic_beedles_shop_with_bombs
   default_option: "off"
-  pretty_name: Beedle's Shop with Bombs
+  pretty_name: Beedle's Airshop with Bombs
   pretty_options:
     - "Off"
     - "On"
   options:
-    - "off": "You will only be expected to enter Beedle's Shop using the Slingshot, Bow, Clawshots, or a Beetle to hit the bell."
-    - "on": "You may need to precisely time a bomb explosion to hit the bell on Beedle's Shop."
+    - "off": "You will only be expected to enter Beedle's Airshop using the Slingshot, Bow, Clawshots, or a Beetle to hit the bell."
+    - "on": "You may need to precisely time a bomb explosion to hit the bell on Beedle's Airshop."
 
 - name: logic_stuttersprint
   default_option: "off"
