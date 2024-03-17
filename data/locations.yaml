@@ -280,7 +280,7 @@
     - stage/F000/r0/l6/Item/0xFDEA
     - stage/F000/r0/l7/Item/0xFDFF
 
-- name: Upper Skyloft - Pumpkin Archery -- 600 Points
+- name: Upper Skyloft - 600 Points in Pumpkin Pull
   original_item: Heart Piece
   types:
     - Minigames
@@ -1206,7 +1206,7 @@
   Paths:
     - stage/F011r/r0/l0/Chandel
 
-- name: Lumpy Pumpkin - Harp Minigame
+- name: Lumpy Pumpkin - Harp Duet with Kina
   original_item: Heart Piece
   types:
     - Minigames
@@ -1309,7 +1309,7 @@
     - event/110-DivingGame/60
     - oarc/F020/l0
 
-- name: Fun Fun Island - Minigame -- 500 Rupees
+- name: Fun Fun Island - 500 Rupees in Dodoh's High Dive
   original_item: Heart Piece
   types:
     - Minigames
@@ -1503,7 +1503,7 @@
   textindex: 12
   eventflowindex: 20
 
-- name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
+- name: Bug Heaven - 10 Bugs in 3 Minutes
   original_item: Beedle's Insect Cage
   types:
     - Minigames
@@ -5193,7 +5193,7 @@
   Paths:
     - stage/F301_4/r0/l0/TgReact/0xFC4B
 
-- name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
+- name: Shipyard - Heart Stopping Rickety Coaster Track in 1'05
   original_item: Heart Piece
   types:
     - Minigames

@@ -179,7 +179,7 @@
   locations:
     Lumpy Pumpkin - Chandelier: Nothing
     Lumpy Pumpkin - Inside Crystal: Night
-    Lumpy Pumpkin - Harp Minigame: Night and Goddesss_Harp and 'Pumpkin_Carrying'
+    Lumpy Pumpkin - Harp Duet with Kina: Night and Goddesss_Harp and 'Pumpkin_Carrying'
     Lumpy Pumpkin - Pumm and Kina's Closet: Nothing
 
 
@@ -223,7 +223,7 @@
     The Sky: Day
   locations:
     Fun Fun Island - Dodoh's Crystals: "'Retrieve_Party_Wheel'"
-    Fun Fun Island - Minigame -- 500 Rupees: "'Can_Play_Fun_Fun_Island_Minigame'"
+    Fun Fun Island - 500 Rupees in Dodoh's High Dive: "'Can_Play_Fun_Fun_Island_Minigame'"
     Fun Fun Island - Goddess Chest: Day and Floria_Waterfall_Goddess_Cube_on_High_Ledge
 
 
@@ -295,7 +295,7 @@
   exits:
     Inside the Thunderhead: Day
   locations:
-    Bug Heaven - Minigame -- 10 Bugs in 3 Minutes: Bug_Net
+    Bug Heaven - 10 Bugs in 3 Minutes: Bug_Net
     Bug Heaven - Goddess Chest: Volcano_Summit_Goddess_Cube_at_Summit_Waterfall
     Bug Heaven - Stamina Fruit near Start: Nothing
     Bug Heaven - Stamina Fruit in front of Wooden Plank: Nothing

@@ -108,7 +108,7 @@ starting_inventory:
 excluded_locations:
   - Knight Academy - Owlan's Crystals
   - Upper Skyloft - Chest near Goddess Statue
-  - Upper Skyloft - Pumpkin Archery -- 600 Points
+  - Upper Skyloft - 600 Points in Pumpkin Pull
   - Sparring Hall - Chest
   - Central Skyloft - Waterfall Cave First Chest
   - Central Skyloft - Waterfall Cave Second Chest
@@ -117,16 +117,16 @@ excluded_locations:
   - Batreaux - 70 Crystals
   - Batreaux - 70 Crystals Second Reward
   - Batreaux - 80 Crystals
-  - Lumpy Pumpkin - Harp Minigame
+  - Lumpy Pumpkin - Harp Duet with Kina
   - Lumpy Pumpkin - Kina's Crystals
-  - Fun Fun Island - Minigame -- 500 Rupees
+  - Fun Fun Island - 500 Rupees in Dodoh's High Dive
   - The Sky - Form a Squirrel Ring above Volcanic Island
   - The Sky - Form a Squirrel Ring above Lumpy Pumpkin
   - The Sky - Form a Squirrel Ring above Bamboo Island
   - The Sky - Chest in Breakable Boulder near Fun Fun Island
   - The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
   - Inside the Thunderhead - Song from Levias
-  - Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
+  - Bug Heaven - 10 Bugs in 3 Minutes
   - Inside the Thunderhead - East Island Chest
   - Sealed Temple - Chest
   - Faron Woods - Chest behind Bombable Rocks near Erla
@@ -176,7 +176,7 @@ excluded_locations:
   - Skipper's Retreat - Chest on top of Cacti Pillar
   - Skipper's Retreat Shack - Chest under Sand
   - Skipper's Retreat - Skydive Chest
-  - Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
+  - Shipyard - Heart Stopping Rickety Coaster Track in 1'05
   - Pirate Stronghold Interior - First Chest
   - Pirate Stronghold Interior - Second Chest
   - Pirate Stronghold Interior - Third Chest

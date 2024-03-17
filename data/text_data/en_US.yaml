@@ -1343,9 +1343,9 @@
   pretty: Upper Skyloft - Chest near Goddess Statue
   cryptic: the <r<northmost chest on Skyloft>>
 
-- name: Upper Skyloft - Pumpkin Archery -- 600 Points
-  standard: Upper Skyloft - Pumpkin Archery -- 600 Points
-  pretty: Upper Skyloft - Pumpkin Archery -- 600 Points
+- name: Upper Skyloft - 600 Points in Pumpkin Pull
+  standard: Upper Skyloft - 600 Points in Pumpkin Pull
+  pretty: Upper Skyloft - 600 Points in Pumpkin Pull
   cryptic: <r<shooting pumpkings>>
 
 - name: Upper Skyloft - Stamina Fruit near Upper Academy Gates
@@ -1913,9 +1913,9 @@
   pretty: Lumpy Pumpkin - Chandelier
   cryptic: <r<angering a bartender>>
 
-- name: Lumpy Pumpkin - Harp Minigame
-  standard: Lumpy Pumpkin - Harp Minigame
-  pretty: Lumpy Pumpkin - Harp Minigame
+- name: Lumpy Pumpkin - Harp Duet with Kina
+  standard: Lumpy Pumpkin - Harp Duet with Kina
+  pretty: Lumpy Pumpkin - Harp Duet with Kina
   cryptic: the <r<bartender>>
 
 - name: Lumpy Pumpkin - Kina's Crystals
@@ -1973,9 +1973,9 @@
   pretty: Fun Fun Island - Dodoh's Crystals
   cryptic: delivering a <r<colorful wheel>>
 
-- name: Fun Fun Island - Minigame -- 500 Rupees
-  standard: Fun Fun Island - Minigame -- 500 Rupees
-  pretty: Fun Fun Island - Minigame -- 500 Rupees
+- name: Fun Fun Island - 500 Rupees in Dodoh's High Dive
+  standard: Fun Fun Island - 500 Rupees in Dodoh's High Dive
+  pretty: Fun Fun Island - 500 Rupees in Dodoh's High Dive
   cryptic: <r<diving through 5 rings>>
 
 - name: Fun Fun Island - Goddess Chest
@@ -2108,9 +2108,9 @@
   pretty: Inside the Thunderhead - Song from Levias
   cryptic: the <r<ancient whale>> within a <s<raging storm>>
 
-- name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
-  standard: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
-  pretty: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
+- name: Bug Heaven - 10 Bugs in 3 Minutes
+  standard: Bug Heaven - 10 Bugs in 3 Minutes
+  pretty: Bug Heaven - 10 Bugs in 3 Minutes
   cryptic: <r<true bug catchers>>
 
 - name: Bug Heaven - Goddess Chest
@@ -4379,9 +4379,9 @@
   pretty: Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator
   cryptic: <r<disturbing a sign>> to the <y<shipyard center>>
 
-- name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
-  standard: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
-  pretty: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
+- name: Shipyard - Heart Stopping Rickety Coaster Track in 1'05
+  standard: Shipyard - Heart Stopping Rickety Coaster Track in 1'05
+  pretty: Shipyard - Heart Stopping Rickety Coaster Track in 1'05
   cryptic: a <r<fast minecart time>>
 
 - name: Shipyard - Gossip Stone

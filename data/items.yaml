@@ -400,7 +400,7 @@
   getmodelname: GetNetA
   advancement: true
   chain_locations:
-   - Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
+   - Bug Heaven - 10 Bugs in 3 Minutes
 - id: 72
   name: Fairy
   types:
@@ -1119,7 +1119,7 @@
    - Skyloft Village - Sparrot's Crystals
    - Lumpy Pumpkin - Kina's Crystals
    - Fun Fun Island - Dodoh's Crystals
-   - Fun Fun Island - Minigame -- 500 Rupees
+   - Fun Fun Island - 500 Rupees in Dodoh's High Dive
    - Inside the Thunderhead - Song from Levias
 
 # - id: 240+ == traps
