@@ -35,9 +35,9 @@
   pretty: a <Celéstea>
   cryptic:
 
-- name: Thunderhead
-  standard: Cúmulo
-  pretty: el <Cúmulo>
+- name: Inside the Thunderhead
+  standard: Interior del Cúmulo
+  pretty: el <Interior del Cúmulo>
   cryptic:
 
 - name: Sealed Grounds

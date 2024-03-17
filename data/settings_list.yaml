@@ -715,7 +715,7 @@
     - Ballad
     - Open
   options:
-    - ballad: "You will need the Ballad of the Goddess before The Thunderhead will open."
+    - ballad: "You will need the Ballad of the Goddess before the Thunderhead will open."
     - open: "The Thunderhead will be opened from the start of the game."
 
 - name: open_lake_floria
@@ -1038,12 +1038,12 @@
 
 - name: logic_east_island_dive
   default_option: "off"
-  pretty_name: Thunderhead East Island Dive
+  pretty_name: Inside the Thunderhead East Island Dive
   pretty_options:
     - "Off"
     - "On"
   options:
-    - "off": "You will not be expected to get the Thunderhead East Island - Chest using this trick."
+    - "off": "You will not be expected to get the Inside the Thunderhead - East Island Chest using this trick."
     - "on": "You may need to skydive onto the archway to get the chest."
 
 - name: logic_advanced_lizalfos_combat

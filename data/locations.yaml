@@ -1494,55 +1494,14 @@
 
 # Thunderhead:
 
-- name: Isle of Songs - Strike Crest with Goddess Sword
-  original_item: Farore's Courage
+- name: Inside the Thunderhead - Gossip Stone near Bug Heaven
+  original_item: Nothing
   types:
-    - Crests
-  Paths:
-    - stage/F010r/r0/l0/SwSB/0
-
-- name: Isle of Songs - Strike Crest with Longsword
-  original_item: Nayru's Wisdom
-  types:
-    - Crests
-  Paths:
-    - stage/F010r/r0/l0/SwSB/1
-
-- name: Isle of Songs - Strike Crest with White Sword
-  original_item: Din's Power
-  types:
-    - Crests
-  Paths:
-    - stage/F010r/r0/l0/SwSB/2
-
-- name: Isle of Songs - Top Goddess Chest
-  original_item: Small Bomb Bag
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/85
-  cube_region: Volcano Summit
-
-- name: Isle of Songs - Lower Goddess Chest
-  original_item: Gold Rupee
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/92
-  cube_region: Mogma Turf
-
-- name: The Thunderhead - Song from Levias
-  original_item: Song of the Hero
-  types:
-    - Scrapper Deliveries
-    - Combat
-    - NPC
-  hint: always
-  Paths:
-    - event/120-Nushi/give item after levias
-    - oarc/F023/l0
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 12
+  eventflowindex: 20
 
 - name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
   original_item: Beedle's Insect Cage
@@ -1595,32 +1554,7 @@
   Paths:
     - stage/F023/r0/l0/Item/0xFC10
 
-- name: Bug Heaven - Nearby Gossip Stone
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 12
-  eventflowindex: 20
-
-- name: Thunderhead East Island - Chest
-  original_item: Evil Crystal
-  types:
-    - Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/94
-
-- name: Thunderhead East Island - Goddess Chest
-  original_item: Rupee Medal
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/73
-  cube_region: Faron Woods
-
-- name: Mogma Mitts Island - First Goddess Chest
+- name: Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
   original_item: Empty Bottle
   types:
     - Chests
@@ -1629,7 +1563,7 @@
     - stage/F023/r0/l0/TBox/77
   cube_region: Volcano Summit
 
-- name: Mogma Mitts Island - Second Goddess Chest
+- name: Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest
   original_item: Small Quiver
   types:
     - Chests
@@ -1637,6 +1571,72 @@
   Paths:
     - stage/F023/r0/l0/TBox/76
   cube_region: Lanayru Gorge
+
+- name: Isle of Songs - Top Goddess Chest
+  original_item: Small Bomb Bag
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/85
+  cube_region: Volcano Summit
+
+- name: Isle of Songs - Lower Goddess Chest
+  original_item: Gold Rupee
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/92
+  cube_region: Mogma Turf
+
+- name: Isle of Songs - Strike Crest with Goddess Sword
+  original_item: Farore's Courage
+  types:
+    - Crests
+  Paths:
+    - stage/F010r/r0/l0/SwSB/0
+
+- name: Isle of Songs - Strike Crest with Longsword
+  original_item: Nayru's Wisdom
+  types:
+    - Crests
+  Paths:
+    - stage/F010r/r0/l0/SwSB/1
+
+- name: Isle of Songs - Strike Crest with White Sword
+  original_item: Din's Power
+  types:
+    - Crests
+  Paths:
+    - stage/F010r/r0/l0/SwSB/2
+
+- name: Inside the Thunderhead - East Island Chest
+  original_item: Evil Crystal
+  types:
+    - Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/94
+
+- name: Inside the Thunderhead - East Island Goddess Chest
+  original_item: Rupee Medal
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/73
+  cube_region: Faron Woods
+
+- name: Inside the Thunderhead - Song from Levias
+  original_item: Song of the Hero
+  types:
+    - Scrapper Deliveries
+    - Combat
+    - NPC
+  hint: always
+  Paths:
+    - event/120-Nushi/give item after levias
+    - oarc/F023/l0
 
 # Sealed Grounds:
 

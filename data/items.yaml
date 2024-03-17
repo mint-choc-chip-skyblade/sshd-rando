@@ -141,7 +141,7 @@
   chain_locations:
    - The Sky - Chest in Breakable Boulder near Fun Fun Island
    - The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
-   - The Thunderhead - Song from Levias
+   - Inside the Thunderhead - Song from Levias
 - id: 25
   name: Ancient Cistern Boss Key
   types:
@@ -244,15 +244,15 @@
   getmodelname: GetGenki
   advancement: true
   chain_locations:
-   - Batreaux - 5 Crystals
-   - Batreaux - 10 Crystals
-   - Batreaux - 30 Crystals
-   - Batreaux - 30 Crystals Chest
-   - Batreaux - 40 Crystals
-   - Batreaux - 50 Crystals
-   - Batreaux - 70 Crystals
-   - Batreaux - 70 Crystals Second Reward
-   - Batreaux - 80 Crystals
+   - Batreaux's House - 5 Crystals
+   - Batreaux's House - 10 Crystals
+   - Batreaux's House - 30 Crystals
+   - Batreaux's House - 30 Crystals Chest
+   - Batreaux's House - 40 Crystals
+   - Batreaux's House - 50 Crystals
+   - Batreaux's House - 70 Crystals First Reward
+   - Batreaux's House - 70 Crystals Second Reward
+   - Batreaux's House - 80 Crystals
 - id: 40
   name: 5 Bombs
   types:
@@ -283,15 +283,15 @@
   getmodelname: GetGenki
   advancement: true
   chain_locations:
-   - Batreaux - 5 Crystals
-   - Batreaux - 10 Crystals
-   - Batreaux - 30 Crystals
-   - Batreaux - 30 Crystals Chest
-   - Batreaux - 40 Crystals
-   - Batreaux - 50 Crystals
-   - Batreaux - 70 Crystals
-   - Batreaux - 70 Crystals Second Reward
-   - Batreaux - 80 Crystals
+   - Batreaux's House - 5 Crystals
+   - Batreaux's House - 10 Crystals
+   - Batreaux's House - 30 Crystals
+   - Batreaux's House - 30 Crystals Chest
+   - Batreaux's House - 40 Crystals
+   - Batreaux's House - 50 Crystals
+   - Batreaux's House - 70 Crystals First Reward
+   - Batreaux's House - 70 Crystals Second Reward
+   - Batreaux's House - 80 Crystals
 - id: 49
   name: Gust Bellows
   types:
@@ -1120,7 +1120,7 @@
    - Lumpy Pumpkin - Kina's Crystals
    - Fun Fun Island - Dodoh's Crystals
    - Fun Fun Island - Minigame -- 500 Rupees
-   - The Thunderhead - Song from Levias
+   - Inside the Thunderhead - Song from Levias
 
 # - id: 240+ == traps
 
@@ -1184,7 +1184,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Thunderhead East Island - Goddess Chest
+   - Inside the Thunderhead - East Island Goddess Chest
 - id: 260
   name: Deep Woods Goddess Cube near Goron
   types:
@@ -1280,7 +1280,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Mogma Mitts Island - First Goddess Chest
+   - Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
 - id: 272
   name: Volcano Summit Goddess Cube at Summit Waterfall
   types:
@@ -1344,7 +1344,7 @@
   oarc: null
   advancement: true
   chain_locations:
-   - Mogma Mitts Island - Second Goddess Chest
+   - Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest
 - id: 280
   name: Ancient Harbour Goddess Cube
   types:

@@ -2103,9 +2103,9 @@
   pretty: Isle of Songs - Lower Goddess Chest
   cryptic: a <s<goddess cube>> in a <r<underground cave>>
 
-- name: The Thunderhead - Song from Levias
-  standard: The Thunderhead - Song from Levias
-  pretty: The Thunderhead - Song from Levias
+- name: Inside the Thunderhead - Song from Levias
+  standard: Inside the Thunderhead - Song from Levias
+  pretty: Inside the Thunderhead - Song from Levias
   cryptic: the <r<ancient whale>> within a <s<raging storm>>
 
 - name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
@@ -2138,29 +2138,29 @@
   pretty: Bug Heaven - Stamina Fruit on top of Slope
   cryptic: a <r<fruit in a buggy area>>
 
-- name: Bug Heaven - Nearby Gossip Stone
-  standard: Bug Heaven - Nearby Gossip Stone
-  pretty: Bug Heaven - Nearby Gossip Stone
+- name: Inside the Thunderhead - Gossip Stone near Bug Heaven
+  standard: Inside the Thunderhead - Gossip Stone near Bug Heaven
+  pretty: Inside the Thunderhead - Gossip Stone near Bug Heaven
   cryptic:
 
-- name: Thunderhead East Island - Chest
-  standard: Thunderhead East Island - Chest
-  pretty: Thunderhead East Island - Chest
+- name: Inside the Thunderhead - East Island Chest
+  standard: Inside the Thunderhead - East Island Chest
+  pretty: Inside the Thunderhead - East Island Chest
   cryptic: a <r<chest>> within a <s<raging storm>>
 
-- name: Thunderhead East Island - Goddess Chest
-  standard: Thunderhead East Island - Goddess Chest
-  pretty: Thunderhead East Island - Goddess Chest
+- name: Inside the Thunderhead - East Island Goddess Chest
+  standard: Inside the Thunderhead - East Island Goddess Chest
+  pretty: Inside the Thunderhead - East Island Goddess Chest
   cryptic: a <s<goddess cube>> <r<near a rope>>
 
-- name: Mogma Mitts Island - First Goddess Chest
-  standard: Mogma Mitts Island - First Goddess Chest
-  pretty: Mogma Mitts Island - First Goddess Chest
+- name: Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
+  standard: Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
+  pretty: Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
   cryptic: a <s<goddess cube>> <r<surrounded by lava>>
 
-- name: Mogma Mitts Island - Second Goddess Chest
-  standard: Mogma Mitts Island - Second Goddess Chest
-  pretty: Mogma Mitts Island - Second Goddess Chest
+- name: Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest
+  standard: Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest
+  pretty: Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest
   cryptic: a <s<goddess cube>> in a <ye<desert gorge>>
 
 - name: Sealed Grounds - Bonk Wall between Pillars near Bird Statue
@@ -5547,9 +5547,9 @@
   pretty: the <Sky>
   cryptic:
 
-- name: Thunderhead
-  standard: Thunderhead
-  pretty: the <Thunderhead>
+- name: Inside the Thunderhead
+  standard: Inside the Thunderhead
+  pretty: Inside the Thunderhead
   cryptic:
 
 - name: Sealed Grounds

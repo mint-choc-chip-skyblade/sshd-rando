@@ -2759,7 +2759,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
               <item>
                <widget class="RandoTriStateCheckBox" name="setting_logic_east_island_dive">
                 <property name="text">
-                 <string>Thunderhead East Island Dive</string>
+                 <string>Inside the Thunderhead East Island Dive</string>
                 </property>
                </widget>
               </item>

@@ -15,7 +15,7 @@
     Orielle's Island: Nothing
     Fun Fun Island: Nothing
     Triple Island: Nothing
-    The Thunderhead: Ballad_of_the_Goddess or open_thunderhead == open
+    Inside the Thunderhead: Ballad_of_the_Goddess or open_thunderhead == open
     Upper Skyloft: Nothing
     Central Skyloft: Nothing
     Skyloft Village: Nothing
@@ -237,23 +237,24 @@
     Triple Island - Cage Goddess Chest: Clawshots and Skippers_Retreat_Goddess_Cube
 
 # TODO: Check day/night stuff
-- name: The Thunderhead
+- name: Inside the Thunderhead
   allowed_time_of_day: Day Only
-  hint_region: Thunderhead
-  locations:
-    The Thunderhead - Song from Levias: Spiral_Charge and Scrapper and Sword and 'Pick_up_Levias_Soup'
+  hint_region: Inside the Thunderhead
   exits:
-    Thunderhead East Island: Nothing
+    Inside the Thunderhead East Island: Nothing
     Isle of Songs: Nothing
     Mogma Mitts Island: Nothing
     Bug Heaven: Nothing
     The Sky: Nothing
+  locations:
+    Inside the Thunderhead - Song from Levias: Spiral_Charge and Scrapper and Sword and 'Pick_up_Levias_Soup'
+    Inside the Thunderhead - Gossip Stone near Bug Heaven: Nothing
 
 
 - name: Isle of Songs
-  hint_region: Thunderhead
+  hint_region: Inside the Thunderhead
   exits:
-    The Thunderhead: Day
+    Inside the Thunderhead: Day
     Isle of Songs Interior: Sword
   locations:
     Isle of Songs - Top Goddess Chest: Day and Volcano_Summit_Goddess_Cube_near_Fire_Sanctuary_Entrance
@@ -269,30 +270,30 @@
     Isle of Songs - Strike Crest with White Sword: Goddess_White_Sword
 
 
-- name: Thunderhead East Island
-  hint_region: Thunderhead
+- name: Inside the Thunderhead East Island
+  hint_region: Inside the Thunderhead
   exits:
-    The Thunderhead: Day
+    Inside the Thunderhead: Day
   locations:
-    Thunderhead East Island - Goddess Chest: Faron_Woods_Goddess_Cube_on_East_Great_Tree_with_Rope
-    Thunderhead East Island - Chest: Digging_Mitts or logic_east_island_dive
+    Inside the Thunderhead - East Island Chest: Digging_Mitts or logic_east_island_dive
+    Inside the Thunderhead - East Island Goddess Chest: Faron_Woods_Goddess_Cube_on_East_Great_Tree_with_Rope
 
 
 - name: Mogma Mitts Island
-  hint_region: Thunderhead
+  hint_region: Inside the Thunderhead
   exits:
-    The Thunderhead: Day
+    Inside the Thunderhead: Day
   locations:
-    Mogma Mitts Island - First Goddess Chest: Mogma_Mitts and Volcano_Summit_Goddess_Cube_in_Lava_Lake
-    Mogma Mitts Island - Second Goddess Chest: Mogma_Mitts and Lanayru_Gorge_Goddess_Cube
+    Inside the Thunderhead - Mogma Mitts Island First Goddess Chest: Mogma_Mitts and Volcano_Summit_Goddess_Cube_in_Lava_Lake
+    Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest: Mogma_Mitts and Lanayru_Gorge_Goddess_Cube
 
 
 - name: Bug Heaven
-  hint_region: Thunderhead
+  hint_region: Inside the Thunderhead
   events:
     Can Collect Water: Bottle
   exits:
-    The Thunderhead: Day
+    Inside the Thunderhead: Day
   locations:
     Bug Heaven - Minigame -- 10 Bugs in 3 Minutes: Bug_Net
     Bug Heaven - Goddess Chest: Volcano_Summit_Goddess_Cube_at_Summit_Waterfall
@@ -300,4 +301,3 @@
     Bug Heaven - Stamina Fruit in front of Wooden Plank: Nothing
     Bug Heaven - Stamina Fruit in Center Room: Nothing
     Bug Heaven - Stamina Fruit on top of Slope: Nothing
-    Bug Heaven - Nearby Gossip Stone: Nothing

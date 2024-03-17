@@ -96,7 +96,7 @@ DEFAULT_SETTINGS = {
         "The Sky - Form a Squirrel Ring above Volcanic Island",
         "The Sky - Form a Squirrel Ring above Lumpy Pumpkin",
         "The Sky - Form a Squirrel Ring above Bamboo Island",
-        "The Thunderhead - Song from Levias",
+        "Inside the Thunderhead - Song from Levias",
         "Bug Heaven - Minigame -- 10 Bugs in 3 Minutes",
         "Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05",
         "The Goddess's Silent Realm - Collect all Tears Reward",
@@ -147,6 +147,12 @@ LOCATION_ALIASES = {
     "Batreaux - 70 Crystals": "Batreaux's House - 70 Crystals First Reward",
     "Batreaux - 70 Crystals Second Reward": "Batreaux's House - 70 Crystals Second Reward",
     "Batreaux - 80 Crystals": "Batreaux's House - 80 Crystals",
+    "The Thunderhead - Song from Levias": "Inside the Thunderhead - Song from Levias",
+    "Bug Heaven - Nearby Gossip Stone": "Inside the Thunderhead - Gossip Stone near Bug Heaven",
+    "Thunderhead East Island - Chest": "Inside the Thunderhead - East Island Chest",
+    "Thunderhead East Island - Goddess Chest": "Inside the Thunderhead - East Island Goddess Chest",
+    "Mogma Mitts Island - First Goddess Chest": "Inside the Thunderhead - Mogma Mitts Island First Goddess Chest",
+    "Mogma Mitts Island - Second Goddess Chest": "Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest",
 }
 
 SETTING_ALIASES = {

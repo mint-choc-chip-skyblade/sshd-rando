@@ -2499,7 +2499,7 @@ class Ui_main_window(object):
         self.setting_logic_skykeep_vineclip.setText(QCoreApplication.translate("main_window", u"Sky Keep Vine Clip", None))
         self.dives_and_jumps_group_box.setTitle(QCoreApplication.translate("main_window", u"Dives and Jumps", None))
         self.setting_logic_volcanic_island_dive.setText(QCoreApplication.translate("main_window", u"Volcanic Island Dive", None))
-        self.setting_logic_east_island_dive.setText(QCoreApplication.translate("main_window", u"Thunderhead East Island Dive", None))
+        self.setting_logic_east_island_dive.setText(QCoreApplication.translate("main_window", u"Inside the Thunderhead East Island Dive", None))
         self.setting_logic_beedles_island_cage_chest_dive.setText(QCoreApplication.translate("main_window", u"Beedle's Island Cage Chest Dive", None))
         self.setting_logic_gravestone_jump.setText(QCoreApplication.translate("main_window", u"Gravestone Jump", None))
         self.setting_logic_waterfall_cave_jump.setText(QCoreApplication.translate("main_window", u"Waterfall Cave Jump", None))
