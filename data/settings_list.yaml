@@ -502,7 +502,7 @@
     - "Traptacular"
   options:
     - "no_traps": "All items in the game will be genuine."
-    - "trapish": "Up to 10 non-major items will be replaced with 'traps' that don't give the item they appear to be."
+    - "trapish": "Approximately 10% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
     - "trapsome": "Approximately 25% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
     - "traps_o_plenty": "Approximately 50% of non-major items will be replaced with 'traps' that don't give the item they appear to be."
     - "traptacular": "All of the non-major items will be replaced with 'traps' that don't give the item they appear to be."

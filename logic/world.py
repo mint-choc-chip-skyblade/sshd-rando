@@ -525,7 +525,7 @@ class World:
 
         match self.setting("trap_mode"):
             case "trapish":
-                num_traps = 10
+                num_traps = len(non_major_item_pool) // 10
             case "trapsome":
                 num_traps = len(non_major_item_pool) // 4
             case "traps_o_plenty":
