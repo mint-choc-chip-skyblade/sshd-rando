@@ -2619,9 +2619,9 @@
   pretty: Deep Woods - Bonk Tree with Rope
   cryptic: <r<disturbing a tarzan tree>> in a <g<deep forest>>
 
-- name: Deep Woods - Chest near Bird Statue
-  standard: Deep Woods - Chest near Bird Statue
-  pretty: Deep Woods - Chest near Bird Statue
+- name: Deep Woods - Chest on High Ledge
+  standard: Deep Woods - Chest on High Ledge
+  pretty: Deep Woods - Chest on High Ledge
   cryptic: a <r<chest deep in a forest>>
 
 - name: Deep Woods - Bonk Tree near Gossip Stone 1
@@ -4284,9 +4284,9 @@
   pretty: Ancient Harbour - Goddess Cube
   cryptic:
 
-- name: Skipper's Retreat - Chest near Low Zipline
-  standard: Skipper's Retreat - Chest near Low Zipline
-  pretty: Skipper's Retreat - Chest near Low Zipline
+- name: Skipper's Retreat - Chest guarded by Quadro Baba
+  standard: Skipper's Retreat - Chest guarded by Quadro Baba
+  pretty: Skipper's Retreat - Chest guarded by Quadro Baba
   cryptic: a <r<chest past an iron shield moblin>>
 
 - name: Skipper's Retreat - Goddess Cube
@@ -4760,9 +4760,9 @@
   pretty: Earth Temple - Ledd's Gift
   cryptic: a <r<heavy gift>>
 
-- name: Earth Temple - Rupee in Dragon's Neck in Lava Tunnel
-  standard: Earth Temple - Rupee in Dragon's Neck in Lava Tunnel
-  pretty: Earth Temple - Rupee in Dragon's Neck in Lava Tunnel
+- name: Earth Temple - Rupee in Dragon's Mouth in Lava Tunnel
+  standard: Earth Temple - Rupee in Dragon's Mouth in Lava Tunnel
+  pretty: Earth Temple - Rupee in Dragon's Mouth in Lava Tunnel
   cryptic: the <r<neck of a dragon>>
 
 - name: Earth Temple - Northeast Chest Guarded by Lizalfos

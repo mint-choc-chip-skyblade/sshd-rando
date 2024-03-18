@@ -2366,7 +2366,7 @@
   Paths:
     - stage/F101/r0/l0/TgReact/0xFCE2
 
-- name: Deep Woods - Chest near Bird Statue
+- name: Deep Woods - Chest on High Ledge
   original_item: Red Rupee
   types:
     - Chests
@@ -5038,7 +5038,7 @@
 
 ## Skipper's Retreat
 
-- name: Skipper's Retreat - Chest near Low Zipline
+- name: Skipper's Retreat - Chest guarded by Quadro Baba
   original_item: Red Rupee
   types:
     - Chests
@@ -5812,7 +5812,7 @@
     - event/301-MountainD1/16
     - oarc/D200/l0
 
-- name: Earth Temple - Rupee in Dragon's Neck in Lava Tunnel
+- name: Earth Temple - Rupee in Dragon's Mouth in Lava Tunnel
   original_item: Silver Rupee
   types:
     - Freestanding Rupees
