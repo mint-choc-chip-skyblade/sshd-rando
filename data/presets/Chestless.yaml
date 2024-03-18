@@ -1,101 +1,142 @@
-logic_rules: all_locations_reachable
-item_pool: standard
-gratitude_crystal_shuffle: "on"
-stamina_fruit_shuffle: "off"
-npc_closet_shuffle: vanilla
-rupee_shuffle: beginner
-underground_rupee_shuffle: "off"
-beedle_shop_shuffle: junk_only
-goddess_chest_shuffle: "off"
-full_wallet_upgrades: "off"
-open_thunderhead: ballad
-open_lake_floria: vanilla
-open_earth_temple: "off"
-open_lmf: open
-randomize_skykeep_layout: "off"
-shortcut_fs_lava_flow: "on"
-peatrice_conversations: "0"
-small_keys: removed
-lanayru_caves_keys: vanilla
-boss_keys: anywhere
-map_mode: own_dungeon_restricted
-path_hints: "3"
-barren_hints: "2"
-location_hints: "7"
-item_hints: "3"
-fi_hints: "on"
-gossip_stone_hints: "off"
-song_hints: direct
-impa_sot_hint: "on"
-cryptic_hint_text: "off"
-always_hints: "on"
-random_starting_statues: "off"
-random_starting_spawn: vanilla
-randomize_dungeon_entrances: "off"
-randomize_trial_gate_entrances: "off"
-randomize_door_entrances: "off"
-decouple_double_doors: "off"
-randomize_interior_entrances: "off"
-randomize_overworld_entrances: "off"
-decouple_entrances: "off"
-natural_night_connections: "on"
-upgraded_skyward_strike: "on"
-skip_horde: "off"
-skip_g3: "off"
-skip_demise: "off"
-required_dungeons: "2"
-empty_unrequired_dungeons: "on"
-trap_mode: no_traps
-trappable_items: major_items
-burn_traps: "on"
-curse_traps: "on"
-noise_traps: "off"
-groose_traps: "off"
-ammo_availability: plentiful
-logic_early_lake_floria: "off"
-logic_beedles_island_cage_chest_dive: "off"
-logic_volcanic_island_dive: "off"
-logic_east_island_dive: "off"
-logic_advanced_lizalfos_combat: "off"
-logic_gravestone_jump: "off"
-logic_waterfall_cave_jump: "off"
-logic_bird_nest_item_from_beedles_shop: "off"
-logic_beedles_shop_with_bombs: "off"
-logic_stuttersprint: "off"
-logic_precise_beetle: "off"
-logic_bomb_throws: "off"
-logic_itemless_first_timeshift_stone: "off"
-logic_brakeslide: "off"
-logic_lanayru_mine_quick_bomb: "off"
-logic_tot_skip_brakeslide: "off"
-logic_tot_slingshot: "off"
-logic_fire_node_without_hook_beetle: "off"
-logic_cactus_bomb_whip: "off"
-logic_skippers_fast_clawshots: "off"
-logic_skyview_spider_roll: "off"
-logic_skyview_coiled_rupee_jump: "off"
-logic_skyview_precise_slingshot: "off"
-logic_et_keese_skyward_strike: "off"
-logic_et_slope_stuttersprint: "off"
-logic_et_bombless_scaldera: "off"
-logic_lmf_whip_switch: "off"
-logic_lmf_ceiling_precise_slingshot: "off"
-logic_lmf_whip_armos_room_timeshift_stone: "off"
-logic_lmf_minecart_jump: "off"
-logic_lmf_bellowsless_moldarach: "off"
-logic_ac_lever_jump_trick: "off"
-logic_ac_chest_after_whip_hooks_jump: "off"
-logic_sandship_jump_to_stern: "off"
-logic_sandship_itemless_spume: "off"
-logic_sandship_no_combination_hint: "off"
-logic_fs_pillar_jump: "off"
-logic_fs_practice_sword_ghirahim_2: "off"
-logic_present_bow_switches: "off"
-logic_skykeep_vineclip: "off"
-starting_sword: goddess_sword
-random_starting_tablet_count: "1"
-random_starting_item_count: "0"
-starting_inventory:
+seed: Chestless
+generate_spoiler_log: true
+use_plandomizer: false
+plandomizer_file: None
+World 1:
+  logic_rules: all_locations_reachable
+  item_pool: standard
+  gratitude_crystal_shuffle: 'on'
+  stamina_fruit_shuffle: 'off'
+  npc_closet_shuffle: vanilla
+  rupee_shuffle: beginner
+  underground_rupee_shuffle: 'off'
+  beedle_shop_shuffle: junk_only
+  goddess_chest_shuffle: 'off'
+  full_wallet_upgrades: 'off'
+  open_thunderhead: ballad
+  open_lake_floria: vanilla
+  open_earth_temple: 'off'
+  open_lmf: open
+  randomize_skykeep_layout: 'off'
+  shortcut_fs_lava_flow: 'on'
+  peatrice_conversations: '0'
+  small_keys: removed
+  lanayru_caves_keys: vanilla
+  boss_keys: anywhere
+  map_mode: own_dungeon_restricted
+  path_hints: '3'
+  barren_hints: '2'
+  location_hints: '7'
+  item_hints: '3'
+  fi_hints: 'on'
+  gossip_stone_hints: 'off'
+  song_hints: direct
+  impa_sot_hint: 'on'
+  cryptic_hint_text: 'off'
+  always_hints: 'on'
+  random_starting_statues: 'off'
+  random_starting_spawn: vanilla
+  randomize_dungeon_entrances: 'off'
+  randomize_trial_gate_entrances: 'off'
+  randomize_door_entrances: 'off'
+  decouple_double_doors: 'off'
+  randomize_interior_entrances: 'off'
+  randomize_overworld_entrances: 'off'
+  decouple_entrances: 'off'
+  natural_night_connections: 'on'
+  upgraded_skyward_strike: 'on'
+  skip_horde: 'off'
+  skip_g3: 'off'
+  skip_demise: 'off'
+  required_dungeons: '2'
+  empty_unrequired_dungeons: 'on'
+  trap_mode: no_traps
+  trappable_items: major_items
+  burn_traps: 'on'
+  curse_traps: 'on'
+  noise_traps: 'off'
+  groose_traps: 'off'
+  ammo_availability: plentiful
+  logic_early_lake_floria: 'off'
+  logic_beedles_island_cage_chest_dive: 'off'
+  logic_volcanic_island_dive: 'off'
+  logic_east_island_dive: 'off'
+  logic_advanced_lizalfos_combat: 'off'
+  logic_gravestone_jump: 'off'
+  logic_waterfall_cave_jump: 'off'
+  logic_bird_nest_item_from_beedles_shop: 'off'
+  logic_beedles_shop_with_bombs: 'off'
+  logic_stuttersprint: 'off'
+  logic_precise_beetle: 'off'
+  logic_bomb_throws: 'off'
+  logic_itemless_first_timeshift_stone: 'off'
+  logic_brakeslide: 'off'
+  logic_lanayru_mine_quick_bomb: 'off'
+  logic_tot_skip_brakeslide: 'off'
+  logic_tot_slingshot: 'off'
+  logic_fire_node_without_hook_beetle: 'off'
+  logic_cactus_bomb_whip: 'off'
+  logic_skippers_fast_clawshots: 'off'
+  logic_skyview_spider_roll: 'off'
+  logic_skyview_coiled_rupee_jump: 'off'
+  logic_skyview_precise_slingshot: 'off'
+  logic_et_keese_skyward_strike: 'off'
+  logic_et_slope_stuttersprint: 'off'
+  logic_et_bombless_scaldera: 'off'
+  logic_lmf_whip_switch: 'off'
+  logic_lmf_ceiling_precise_slingshot: 'off'
+  logic_lmf_whip_armos_room_timeshift_stone: 'off'
+  logic_lmf_minecart_jump: 'off'
+  logic_lmf_bellowsless_moldarach: 'off'
+  logic_ac_lever_jump_trick: 'off'
+  logic_ac_chest_after_whip_hooks_jump: 'off'
+  logic_sandship_jump_to_stern: 'off'
+  logic_sandship_itemless_spume: 'off'
+  logic_sandship_no_combination_hint: 'off'
+  logic_fs_pillar_jump: 'off'
+  logic_fs_practice_sword_ghirahim_2: 'off'
+  logic_present_bow_switches: 'off'
+  logic_skykeep_vineclip: 'off'
+  starting_sword: goddess_sword
+  random_starting_tablet_count: '1'
+  random_starting_item_count: '0'
+  hidden_item_shuffle: 'off'
+  chest_type_matches_contents: 'off'
+  small_keys_in_fancy_chests: 'off'
+  boss_key_puzzles: vanilla_orientation
+  got_sword_requirement: true_master_sword
+  faster_air_meter_depletion: 'off'
+  spawn_hearts: 'on'
+  damage_multiplier: '1'
+  language: english_us
+  tunic_swap: 'off'
+  starry_skies: 'off'
+  open_batreaux_shed: 'off'
+  shortcut_spiral_log_to_btt: 'on'
+  shortcut_logs_near_machi: 'off'
+  shortcut_faron_log_to_floria: 'off'
+  shortcut_deep_woods_log_before_tightrope: 'off'
+  shortcut_deep_woods_log_before_temple: 'off'
+  shortcut_eldin_entrance_boulder: 'off'
+  shortcut_eldin_ascent_boulder: 'off'
+  shortcut_vs_flames: 'off'
+  shortcut_lanayru_bars: 'off'
+  shortcut_west_wall_minecart: 'off'
+  shortcut_sand_oasis_minecart: 'off'
+  shortcut_minecart_before_caves: 'off'
+  shortcut_skyview_boards: 'off'
+  shortcut_skyview_bars: 'off'
+  shortcut_earth_temple_bridge: 'off'
+  shortcut_lmf_wind_gates: 'off'
+  shortcut_lmf_boxes: 'off'
+  shortcut_lmf_bars_to_west_side: 'off'
+  shortcut_ac_bridge: 'off'
+  shortcut_ac_water_vents: 'off'
+  shortcut_sandship_windows: 'off'
+  shortcut_sandship_brig_bars: 'off'
+  shortcut_fs_outside_bars: 'off'
+  starting_hearts: '6'
+  starting_inventory:
   - Progressive Pouch
   - Scrapper
   - Skyview Temple Map
@@ -105,43 +146,43 @@ starting_inventory:
   - Sandship Map
   - Fire Sanctuary Map
   - Sky Keep Map
-excluded_locations:
-  - Knight Academy - Owlan's Crystals
-  - Upper Skyloft - Chest near Goddess Statue
-  - Upper Skyloft - Pumpkin Archery -- 600 Points
-  - Sparring Hall - Chest
+  excluded_locations:
+  - Knight Academy - Deliver Kikwi to Owlan
+  - Upper Skyloft - Chest below Goddess Statue
+  - Upper Skyloft - 600 Points in Pumpkin Pull
+  - Sparring Hall - Chest in Back Room
   - Central Skyloft - Waterfall Cave First Chest
   - Central Skyloft - Waterfall Cave Second Chest
-  - Central Skyloft - Peater/Peatrice's Crystals
-  - Central Skyloft - Shed Chest
-  - Batreaux - 70 Crystals
-  - Batreaux - 70 Crystals Second Reward
-  - Batreaux - 80 Crystals
-  - Lumpy Pumpkin - Harp Minigame
-  - Lumpy Pumpkin - Kina's Crystals
-  - Fun Fun Island - Minigame -- 500 Rupees
-  - The Sky - Form a Squirrel Ring above Volcanic Island
-  - The Sky - Form a Squirrel Ring above Lumpy Pumpkin
-  - The Sky - Form a Squirrel Ring above Bamboo Island
+  - Central Skyloft - Peatrice's Love
+  - Central Skyloft - Chest in Shed
+  - Batreaux's House - 70 Gratitude Crystals First Reward
+  - Batreaux's House - 70 Gratitude Crystals Second Reward
+  - Batreaux's House - 80 Gratitude Crystals Reward
+  - Lumpy Pumpkin - Harp Duet with Kina
+  - Lumpy Pumpkin - Deliver Mogma to Kina
+  - Fun Fun Island - 500 Rupees in Dodoh's High Dive
+  - The Sky - Form a Swirrell Ring above Volcanic Island
+  - The Sky - Form a Swirrell Ring above Lumpy Pumpkin
+  - The Sky - Form a Swirrell Ring above Bamboo Island
   - The Sky - Chest in Breakable Boulder near Fun Fun Island
   - The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
-  - The Thunderhead - Song from Levias
-  - Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
-  - Thunderhead East Island - Chest
-  - Sealed Temple - Chest
+  - Inside the Thunderhead - Song from Levias
+  - Bug Heaven - 10 Bugs in 3 Minutes
+  - Inside the Thunderhead - Chest on East Island
+  - Sealed Temple - Chest near The Old One
   - Faron Woods - Chest behind Bombable Rocks near Erla
-  - Great Tree - Chest
-  - Deep Woods - Chest
-  - Lake Floria - Chest
+  - Inside the Great Tree - Chest guarded by Deku Baba
+  - Deep Woods - Chest on High Ledge
+  - Lake Floria - Chest near Bird Statue
   - Lake Floria - Dragon Lair South Chest
   - Lake Floria - Dragon Lair East Chest
   - Eldin Volcano - Chest behind Bombable Wall in First Room
-  - Eldin Volcano - Chest after Crawlspace
+  - Eldin Volcano - Chest after Blocked Crawlspace
   - Eldin Volcano - Chest behind Bombable Wall near Cliff
   - Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
   - Mogma Turf - Free Fall Chest
   - Mogma Turf - Chest behind Bombable Wall at Entrance
-  - Mogma Turf - Sand Slide Chest
+  - Mogma Turf - Chest after Sand Slide
   - Mogma Turf - Chest behind Bombable Wall in Fire Maze
   - Volcano Summit - Chest behind Bombable Wall in Waterfall Area
   - Bokoblin Base - Chest near Bone Bridge
@@ -160,41 +201,41 @@ excluded_locations:
   - Lanayru Desert - Chest near Caged Robot
   - Lanayru Desert - Chest on Platform near Fire Node
   - Lanayru Desert - Chest on Platform near Lightning Node
-  - Lanayru Desert - Chest near Sand Oasis
+  - Lanayru Desert - Chest on Sand Oasis Wall
   - Lanayru Desert - Chest on top of Lanayru Mining Facility
-  - Lanayru Desert - Secret Passageway Chest
-  - Fire Node - Shortcut Chest
+  - Lanayru Desert - Chest in Northeast Secret Passageway
+  - Fire Node - Raised Chest
   - Fire Node - First Small Chest
   - Fire Node - Second Small Chest
   - Fire Node - Left Ending Chest
   - Fire Node - Right Ending Chest
-  - Lightning Node - First Chest
-  - Lightning Node - Second Chest
+  - Lightning Node - Front Chest
+  - Lightning Node - Middle Chest
   - Lightning Node - Raised Chest near Generator
-  - Lanayru Caves - Chest
-  - Skipper's Retreat - Chest after Moblin
-  - Skipper's Retreat - Chest on top of Cacti Pillar
+  - Lanayru Caves - Chest near Golo
+  - Skipper's Retreat - Chest guarded by Quadro Baba
+  - Skipper's Retreat - Chest on Cacti Pillar
   - Skipper's Retreat Shack - Chest under Sand
   - Skipper's Retreat - Skydive Chest
-  - Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
-  - Pirate Stronghold Interior - First Chest
-  - Pirate Stronghold Interior - Second Chest
-  - Pirate Stronghold Interior - Third Chest
+  - Shipyard - Heart Stopping Rickety Coaster Track in 1'05
+  - Pirate Stronghold Interior - Chest behind Electric Fence
+  - Pirate Stronghold Interior - Chest before Deku Babas
+  - Pirate Stronghold Interior - Chest before Double Armos Fight
   - Skyview Temple - Chest on Tree Branch
   - Skyview Temple - Chest behind Two Eyes
   - Skyview Temple - Chest after Stalfos Fight
   - Skyview Temple - Chest behind Three Eyes
   - Skyview Temple - Chest near Boss Door
   - Skyview Temple - Chest after Vines
-  - Earth Temple - Vent Chest
-  - Earth Temple - Chest behind Bombable Rock
-  - Earth Temple - Chest Left of Main Room Bridge
+  - Earth Temple - Chest after Air Vent in First Room
+  - Earth Temple - Chest behind Southwest Bombable Rock
+  - Earth Temple - Northwest Chest Main Room
   - Earth Temple - Chest in West Room
   - Earth Temple - Chest after Double Lizalfos Fight
-  - Earth Temple - Chest Guarded by Lizalfos
+  - Earth Temple - Northeast Chest Guarded by Lizalfos
   - Earth Temple - Chest before Boulder Chase
   - Lanayru Mining Facility - Chest behind Bars
-  - Lanayru Mining Facility - First Chest in Hub Room
+  - Lanayru Mining Facility - Chest after Breakable Boxes in Hub Room
   - Lanayru Mining Facility - Chest in First West Room
   - Lanayru Mining Facility - Chest after Armos Fight
   - Lanayru Mining Facility - Chest in Key Locked Room
@@ -203,14 +244,14 @@ excluded_locations:
   - Lanayru Mining Facility - Chest behind First Crawlspace
   - Lanayru Mining Facility - Chest in Spike Maze
   - Lanayru Mining Facility - Chest after Double Armos Fight
-  - Lanayru Mining Facility - Shortcut Chest in Main Hub
-  - Ancient Cistern - Chest in East Part
+  - Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+  - Ancient Cistern - Chest in East Room
   - Ancient Cistern - Chest after Whip Hooks
   - Ancient Cistern - Chest near Vines
-  - Ancient Cistern - Chest behind the Waterfall
+  - Ancient Cistern - Chest behind Waterfall
   - Ancient Cistern - Chest in Key Locked Room
   - Ancient Cistern - Chest under Stone Statue
-  - Sandship - Chest at the Stern
+  - Sandship - Chest at Ship's Stern
   - Sandship - Chest before 4-Door Corridor
   - Sandship - Chest behind Combination Lock
   - Sandship - Treasure Room First Chest
@@ -222,22 +263,22 @@ excluded_locations:
   - Sandship - Chest in Captain's Cabin
   - Fire Sanctuary - Chest in First Room
   - Fire Sanctuary - Chest in Second Room
-  - Fire Sanctuary - Chest on Balcony
+  - Fire Sanctuary - Chest on Balcony after Single Magmanos Fight
   - Fire Sanctuary - Chest near First Trapped Mogma
-  - Fire Sanctuary - First Chest in Water Fruit Room
-  - Fire Sanctuary - Second Chest in Water Fruit Room
-  - Fire Sanctuary - Rescue First Trapped Mogma Chest
-  - Fire Sanctuary - Rescue Second Trapped Mogma Chest
+  - Fire Sanctuary - Lower Chest in Water Fruit Room
+  - Fire Sanctuary - Raised Chest in Water Fruit Room
+  - Fire Sanctuary - Chest from First Trapped Mogma
+  - Fire Sanctuary - Chest from Second Trapped Mogma
   - Fire Sanctuary - Chest after Bombable Wall
   - Fire Sanctuary - Plats' Chest
   - Fire Sanctuary - Chest in Staircase Room
   - Fire Sanctuary - Chest after Winged Torches
-  - Sky Keep - First Chest
-  - Sky Keep - Chest after Dreadfuse
+  - Sky Keep - Chest in First Room
+  - Sky Keep - Chest after Dreadfuse Fight
   - The Goddess's Silent Realm - Collect all Tears Reward
   - Farore's Silent Realm - Collect all Tears Reward
   - Nayru's Silent Realm - Collect all Tears Reward
   - Din's Silent Realm - Collect all Tears Reward
-excluded_hint_locations:
+  excluded_hint_locations:
   - Shipyard - Gossip Stone
-mixed_entrance_pools: []
+  mixed_entrance_pools: []

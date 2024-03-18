@@ -61,7 +61,7 @@
     Behind the Temple: Nothing
     Temple of Hylia: "'Open_Gate_of_Time'"
   locations:
-    Sealed Temple - Chest: Nothing
+    Sealed Temple - Chest near The Old One: Nothing
     Sealed Temple - Song from The Old One: Goddesss_Harp
     Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral: Slingshot
     Sealed Temple - Slingshot above Doors to Behind the Temple: Slingshot
@@ -144,7 +144,7 @@
     Faron Woods - Rupee on Hollow Tree Branch: Beetle
     Faron Woods - Rupee on Platform near Floria Door: Beetle
     Faron Woods - Kikwi Elder's Reward: "'All_Kikwis_Saved'"
-    Faron Woods - Item on Tree: Nothing
+    Faron Woods - Item on Great Tree: Nothing
     Faron Woods - Item behind Bombable Rock: Bomb_Bag
     Faron Woods - Chest behind Bombable Rocks near Erla: Bomb_Bag
     Faron Woods - Stamina Fruit on Vines below First Log: Nothing
@@ -231,8 +231,8 @@
     Great Tree Interior Underwater: Water_Dragons_Scale
     Great Tree Interior Middle: Gust_Bellows
   locations:
-    Great Tree - Blow Small Yellow Mushroom after Vines: Gust_Bellows
-    Great Tree - Blow Large Yellow Mushroom after Vines: Gust_Bellows
+    Inside the Great Tree - Blow Small Yellow Mushroom after Vines: Gust_Bellows
+    Inside the Great Tree - Blow Large Yellow Mushroom after Vines: Gust_Bellows
 
 - name: Great Tree Interior Middle # area including the platforms and chest
   hint_region: Great Tree
@@ -240,10 +240,10 @@
     Great Tree Interior Lower: Nothing
     Great Tree Exterior Platforms: Nothing
   locations:
-    Great Tree - Blow Red Mushroom after Swinging Platforms West: Gust_Bellows
-    Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South: Gust_Bellows
+    Inside the Great Tree - Blow Red Mushroom after Swinging Platforms West: Gust_Bellows
+    Inside the Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South: Gust_Bellows
     # It's quite precise to wait for this baba like the others and very frustrating to fail
-    Great Tree - Chest: Can_Defeat_Baba or Slingshot # Slingshot to stun
+    Inside the Great Tree - Chest guarded by Deku Baba: Can_Defeat_Baba or Slingshot # Slingshot to stun
 
 - name: Great Tree Exterior Platforms
   hint_region: Faron Woods
@@ -263,7 +263,7 @@
     Great Tree Exterior Top: Nothing
     Great Tree Exterior Platforms: Nothing
   locations:
-    Great Tree - Blow Tree Spiral on Highest Pathway: Gust_Bellows
+    Inside the Great Tree - Blow Tree Spiral on Highest Pathway: Gust_Bellows
 
 - name: Great Tree Exterior Top
   hint_region: Faron Woods
@@ -300,7 +300,7 @@
   locations:
     Deep Woods - Stamina Fruit on Hanging Ledge: Nothing
     Deep Woods - Bonk Tree with Rope: Nothing
-    Deep Woods - Chest: Nothing
+    Deep Woods - Chest on High Ledge: Nothing
     Deep Woods - Bonk Tree near Gossip Stone 1: Nothing
     Deep Woods - Bonk Tree near Gossip Stone 2: Nothing
     Deep Woods - Bonk East Pillar before Temple: Nothing
@@ -392,7 +392,7 @@
     Lake Floria Statue: Nothing
     Lake Floria: Water_Dragons_Scale
   locations:
-    Lake Floria - Chest: Nothing
+    Lake Floria - Chest near Bird Statue: Nothing
     Lake Floria - Goddess Cube: Goddess_Sword
 
 - name: Farore's Lair

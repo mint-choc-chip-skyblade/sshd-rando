@@ -334,7 +334,7 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
                 "Bazaar",
                 "Batreaux",
                 "The Sky",
-                "The Thunderhead",
+                "Inside the Thunderhead",
             }
             for entrance_type in ["Door", "Interior", "Overworld", "Spawn"]:
                 for entrance in world.get_shuffleable_entrances(entrance_type):

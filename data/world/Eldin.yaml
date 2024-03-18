@@ -38,7 +38,7 @@
     Past Mogma Turf: Bomb_Bag or Hook_Beetle
     Bokoblin Base Prison: Nothing
   locations:
-    Eldin Volcano - Chest after Crawlspace: Nothing
+    Eldin Volcano - Chest after Blocked Crawlspace: Nothing
     Eldin Volcano - Southeast Rupee above Mogma Turf Entrance: Beetle
     Eldin Volcano - North Rupee above Mogma Turf Entrance: Beetle
     Eldin Volcano - Underground Rupee before Bone Bridge 1: Mogma_Mitts
@@ -160,7 +160,7 @@
     Eldin Volcano - Underground Rupee West of Earth Temple 8: Mogma_Mitts
     Eldin Volcano - Underground Rupee West of Earth Temple 9: Mogma_Mitts
     Eldin Volcano - Underground Rupee West of Earth Temple 10: Mogma_Mitts
-    Eldin Volcano - Digging Spot below Tower: Digging_Mitts
+    Eldin Volcano - Digging Spot below Tower West of Earth Temple: Digging_Mitts
     Eldin Volcano - Digging Spot behind Boulder on Sandy Slope: Digging_Mitts
     Eldin Volcano - Stamina Fruit in front of Second Slope 1: Nothing
     Eldin Volcano - Stamina Fruit in front of Second Slope 2: Nothing
@@ -198,7 +198,7 @@
   exits:
     Past Sand Slide: Nothing
   locations:
-    Eldin Volcano - Digging Spot after Vents: Digging_Mitts
+    Eldin Volcano - Digging Spot after Sand Slide Vents: Digging_Mitts
     Eldin Volcano - Goddess Cube on Sand Slide: Goddess_Sword
     Eldin Volcano - Left Rupee on Sand Slide 1: Nothing
     Eldin Volcano - Left Rupee on Sand Slide 2: Nothing
@@ -282,7 +282,7 @@
     Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide: Nothing
     Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide: Nothing
     Mogma Turf - Bonk Hammer in Left Hut above Sand Slide: Nothing
-    Mogma Turf - Sand Slide Chest: Nothing
+    Mogma Turf - Chest after Sand Slide: Nothing
 
 - name: Mogma Turf Final Vent
   hint_region: Mogma Turf
@@ -327,7 +327,7 @@
     Volcano Summit: Nothing
     Outside Fire Sanctuary: Clawshots and (shortcut_vs_flames or 'Can_Collect_Water')
   locations:
-    Volcano Summit - Item behind Digging: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
+    Volcano Summit - Item after Underground Tunnel near Gossip Stone: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
     Volcano Summit - Underground Rupee 1: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
     Volcano Summit - Underground Rupee 2: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
     Volcano Summit - Gossip Stone near Second Thirsty Frog: shortcut_vs_flames or 'Can_Collect_Water'

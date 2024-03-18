@@ -25,28 +25,28 @@
   Paths:
     - stage/F001r/r3/l0/TgReact/0xFC07
 
-- name: Knight Academy - In Link's Closet
+- name: Knight Academy - Link's Closet
   original_item: Blue Rupee
   types:
     - Closets
   Paths:
     - stage/F001r/r1/l0/chest/0xFC08
 
-- name: Knight Academy - In Fledge's Closet
+- name: Knight Academy - Fledge's Closet
   original_item: Green Rupee
   types:
     - Closets
   Paths:
     - stage/F001r/r1/l0/chest/0xFC07
 
-- name: Knight Academy - In Groose's Closet
+- name: Knight Academy - Groose's Closet
   original_item: Green Rupee
   types:
     - Closets
   Paths:
     - stage/F001r/r2/l0/chest/0xFC03
 
-- name: Knight Academy - In Owlan's Closet
+- name: Knight Academy - Owlan's Closet
   original_item: Green Rupee
   types:
     - Closets
@@ -54,21 +54,21 @@
     - stage/F001r/r5/l0/chest/0xFC05
 
 # Uncomment when Horwell's door is unlocked
-# - name: Knight Academy - In Horwell's Closet
+# - name: Knight Academy - Horwell's Closet
 #   original_item: Green Rupee
 #   types:
 #     - Closets
 #   Paths:
 #     - stage/F001r/r5/l0/chest/0xFC03
 
-- name: Knight Academy - In Karane's Closet
+- name: Knight Academy - Karane's Closet
   original_item: Green Rupee
   types:
     - Closets
   Paths:
     - stage/F001r/r6/l0/chest/0xFC06
 
-- name: Knight Academy - In Zelda's Closet
+- name: Knight Academy - Zelda's Closet
   original_item: Heart Piece
   types:
     - Closets
@@ -120,7 +120,7 @@
   Paths:
     - stage/F001r/r6/l0/Item/0xFC11
 
-- name: Knight Academy - Owlan's Crystals
+- name: Knight Academy - Deliver Kikwi to Owlan
   original_item: Gratitude Crystal Pack
   types:
     - Scrapper Deliveries
@@ -131,7 +131,7 @@
     - event/118-Town3/157
     - oarc/F001r/l0
 
-- name: Knight Academy - Fledge's Crystals
+- name: Knight Academy - Help Fledge Workout
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -146,7 +146,7 @@
   Paths:
     - event/115-Town2/166
     - oarc/F001r/l0
-- name: Knight Academy - Ghost/Pipit's Crystals
+- name: Knight Academy - Deliver Cawlin's Letter
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -221,7 +221,7 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD38
 
-- name: Upper Skyloft - Chest near Goddess Statue
+- name: Upper Skyloft - Chest below Goddess Statue
   original_item: Red Rupee
   types:
     - Chests
@@ -280,7 +280,7 @@
     - stage/F000/r0/l6/Item/0xFDEA
     - stage/F000/r0/l7/Item/0xFDFF
 
-- name: Upper Skyloft - Pumpkin Archery -- 600 Points
+- name: Upper Skyloft - 600 Points in Pumpkin Pull
   original_item: Heart Piece
   types:
     - Minigames
@@ -323,14 +323,14 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD3A
 
-- name: Sparring Hall - Chest
+- name: Sparring Hall - Chest in Back Room
   original_item: Progressive Sword
   types:
     - Chests
   Paths:
     - stage/F009r/r0/l0/TBox/66
 
-- name: Sparring Hall - Crystal
+- name: Sparring Hall - Crystal on Roof Beam
   original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
@@ -487,7 +487,7 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD1D
 
-- name: Central Skyloft - Wryna's Crystals
+- name: Central Skyloft - Wryna's Gratitude
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -553,7 +553,7 @@
     - oarc/F000/l6
     - oarc/F005r/l0
 
-- name: Central Skyloft - Parrow's Crystals
+- name: Central Skyloft - Parrow's Gratitude
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -570,7 +570,7 @@
   Paths:
     - stage/F005r/r0/l0/chest/0xFC0E
 
-- name: Central Skyloft - Peater/Peatrice's Crystals
+- name: Central Skyloft - Peatrice's Love
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -638,7 +638,7 @@
   Paths:
     - stage/F000/r0/l0/Item/0xFC5E
 
-- name: Central Skyloft - Shed Chest
+- name: Central Skyloft - Chest in Shed
   original_item: Silver Rupee
   types:
     - Chests
@@ -711,7 +711,7 @@
 
 ## Goddess Chests
 
-- name: Central Skyloft - West Cliff Goddess Chest
+- name: Central Skyloft - Goddess Chest on West Cliff Island
   original_item: Silver Rupee
   types:
     - Chests
@@ -720,7 +720,7 @@
     - stage/F000/r0/l0/TBox/78
   cube_region: Faron Woods
 
-- name: Central Skyloft - Shed Goddess Chest
+- name: Central Skyloft - Goddess Chest in Shed
   original_item: Heart Piece
   types:
     - Chests
@@ -729,7 +729,7 @@
     - stage/F000/r0/l0/TBox/79
   cube_region: Eldin Volcano
 
-- name: Central Skyloft - Floating Island Goddess Chest
+- name: Central Skyloft - Goddess Chest on Island near Waterfall
   original_item: Gold Rupee
   types:
     - Chests
@@ -738,7 +738,7 @@
     - stage/F000/r0/l0/TBox/91
   cube_region: Lake Floria
 
-- name: Central Skyloft - Waterfall Goddess Chest
+- name: Central Skyloft - Goddess Chest on Waterfall Island
   original_item: Heart Piece
   types:
     - Chests
@@ -825,7 +825,7 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD1E
 
-- name: Skyloft Village - Mallara's Crystals
+- name: Skyloft Village - Clean Mallara's House
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -840,7 +840,7 @@
   Paths:
     - stage/F016r/r0/l0/chest/0xFC28
 
-- name: Skyloft Village - Bertie's Crystals
+- name: Skyloft Village - Deliver Rattle to Bertie
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -869,7 +869,7 @@
   Paths:
     - stage/F017r/r0/l0/chest/0xFC1E
 
-- name: Skyloft Village - Sparrot's Crystals
+- name: Skyloft Village - Deliver Crystal Ball to Sparrot
   original_item: Gratitude Crystal Pack
   types:
     - Scrapper Deliveries
@@ -914,7 +914,7 @@
 
 # Batreaux Rewards:
 
-- name: Batreaux - 5 Crystals
+- name: Batreaux's House - 5 Gratitude Crystals Reward
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -923,7 +923,7 @@
     - event/121-AkumaKun/21
     - oarc/F012r/l0
 
-- name: Batreaux - 10 Crystals
+- name: Batreaux's House - 10 Gratitude Crystals Reward
   original_item: Heart Piece
   types:
     - Batreaux's Rewards
@@ -932,7 +932,7 @@
     - event/121-AkumaKun/42
     - oarc/F012r/l0
 
-- name: Batreaux - 30 Crystals
+- name: Batreaux's House - 30 Gratitude Crystals Reward
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -941,7 +941,7 @@
     - event/121-AkumaKun/24
     - oarc/F012r/l0
 
-- name: Batreaux - 30 Crystals Chest
+- name: Batreaux's House - 30 Gratitude Crystals Reward Chest
   original_item: Cursed Medal
   types:
     - Batreaux's Rewards
@@ -949,7 +949,7 @@
   Paths:
     - stage/F012r/r0/l0/TBox/69
 
-- name: Batreaux - 40 Crystals
+- name: Batreaux's House - 40 Gratitude Crystals Reward
   original_item: Gold Rupee
   types:
     - Batreaux's Rewards
@@ -958,7 +958,7 @@
     - event/121-AkumaKun/49
     - oarc/F012r/l0
 
-- name: Batreaux - 50 Crystals
+- name: Batreaux's House - 50 Gratitude Crystals Reward
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -968,7 +968,7 @@
     - event/121-AkumaKun/27
     - oarc/F012r/l0
 
-- name: Batreaux - 70 Crystals
+- name: Batreaux's House - 70 Gratitude Crystals First Reward
   original_item: Gold Rupee
   types:
     - Batreaux's Rewards
@@ -978,7 +978,7 @@
     - event/121-AkumaKun/161
     - oarc/F012r/l0
 
-- name: Batreaux - 70 Crystals Second Reward
+- name: Batreaux's House - 70 Gratitude Crystals Second Reward
   original_item: Gold Rupee
   types:
     - Batreaux's Rewards
@@ -988,7 +988,7 @@
     - event/121-AkumaKun/163
     - oarc/F012r/l0
 
-- name: Batreaux - 80 Crystals
+- name: Batreaux's House - 80 Gratitude Crystals Reward
   original_item: Progressive Wallet
   types:
     - Batreaux's Rewards
@@ -998,95 +998,95 @@
     - event/121-AkumaKun/37
     - oarc/F012r/l0
 
-# Beedle's Shop:
+# Beedle's Airshop:
 
-- name: Beedle's Shop - 300 Rupee Item
+- name: Beedle's Airshop - 300 Rupee Item
   original_item: Progressive Pouch
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Cheap)
     - NPC
   Paths:
     - ShpSmpl/20
 
-- name: Beedle's Shop - 600 Rupee Item
+- name: Beedle's Airshop - 600 Rupee Item
   original_item: Progressive Pouch
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Medium)
     - NPC
   Paths:
     - ShpSmpl/21
 
-- name: Beedle's Shop - 1200 Rupee Item
+- name: Beedle's Airshop - 1200 Rupee Item
   original_item: Progressive Pouch
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Expensive)
     - NPC
   hint: always
   Paths:
     - ShpSmpl/22
 
-- name: Beedle's Shop - 800 Rupee Item
+- name: Beedle's Airshop - 800 Rupee Item
   original_item: Life Medal
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Medium)
     - NPC
   Paths:
     - ShpSmpl/26
 
-- name: Beedle's Shop - 1600 Rupee Item
+- name: Beedle's Airshop - 1600 Rupee Item
   original_item: Heart Piece
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Expensive)
     - NPC
   hint: always
   Paths:
     - ShpSmpl/23
 
-- name: Beedle's Shop - First 100 Rupee Item
+- name: Beedle's Airshop - First 100 Rupee Item
   original_item: Extra Wallet
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Cheap)
     - NPC
   Paths:
     - ShpSmpl/24
 
-- name: Beedle's Shop - Second 100 Rupee Item
+- name: Beedle's Airshop - Second 100 Rupee Item
   original_item: Extra Wallet
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Cheap)
     - NPC
   Paths:
     - ShpSmpl/17
 
-- name: Beedle's Shop - Third 100 Rupee Item
+- name: Beedle's Airshop - Third 100 Rupee Item
   original_item: Extra Wallet
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Cheap)
     - NPC
   Paths:
     - ShpSmpl/18
 
-- name: Beedle's Shop - 50 Rupee Item
+- name: Beedle's Airshop - 50 Rupee Item
   original_item: Progressive Bug Net
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Cheap)
     - NPC
   Paths:
     - ShpSmpl/25
 
-- name: Beedle's Shop - 1000 Rupee Item
+- name: Beedle's Airshop - 1000 Rupee Item
   original_item: Bug Medal
   types:
-    - Beedle's Shop
+    - Beedle's Airshop
     - Shop (Medium)
     - NPC
   Paths:
@@ -1199,14 +1199,14 @@
   Paths:
     - stage/F020/r0/l0/TgReact/0xFCA9
 
-- name: Lumpy Pumpkin - Chandelier
+- name: Lumpy Pumpkin - Item on Chandelier
   original_item: Heart Piece
   types:
     - Freestanding Items
   Paths:
     - stage/F011r/r0/l0/Chandel
 
-- name: Lumpy Pumpkin - Harp Minigame
+- name: Lumpy Pumpkin - Harp Duet with Kina
   original_item: Heart Piece
   types:
     - Minigames
@@ -1216,7 +1216,7 @@
     - event/117-Pumpkin/305
     - oarc/F011r/l0
 
-- name: Lumpy Pumpkin - Kina's Crystals
+- name: Lumpy Pumpkin - Deliver Mogma to Kina
   original_item: Gratitude Crystal Pack
   types:
     - Scrapper Deliveries
@@ -1256,7 +1256,7 @@
   textindex: 27
   eventflowindex: 40
 
-- name: Orielle's Island - Orielle's Crystals
+- name: Orielle's Island - Heal Orielle's Loftwing
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -1264,7 +1264,7 @@
     - event/115-Town2/225
     - oarc/F020/l0
 
-- name: Beedle's Island - Beedle's Crystals
+- name: Beedle's Island - Deliver Beedle's Insect Cage
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -1273,7 +1273,7 @@
     - event/105-Terry/115
     - oarc/F020/l0
 
-- name: Beedle's Island - Crystal
+- name: Beedle's Island - Crystal on Airshop Propeller
   original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
@@ -1291,7 +1291,7 @@
     - stage/F020/r0/l0/TBox/89
   cube_region: Lanayru Desert
 
-- name: Beedle's Island - Cage Goddess Chest
+- name: Beedle's Island - Goddess Chest in Cage
   original_item: Rupee Medal
   types:
     - Chests
@@ -1300,7 +1300,7 @@
     - stage/F020/r0/l0/TBox/81
   cube_region: Faron Woods
 
-- name: Fun Fun Island - Dodoh's Crystals
+- name: Fun Fun Island - Deliver Party Wheel to Dodoh
   original_item: Gratitude Crystal Pack
   types:
     - Scrapper Deliveries
@@ -1309,7 +1309,7 @@
     - event/110-DivingGame/60
     - oarc/F020/l0
 
-- name: Fun Fun Island - Minigame -- 500 Rupees
+- name: Fun Fun Island - 500 Rupees in Dodoh's High Dive
   original_item: Heart Piece
   types:
     - Minigames
@@ -1320,7 +1320,7 @@
     - event/110-DivingGame/19
     - oarc/F020/l2
 
-- name: Fun Fun Island - Goddess Chest
+- name: Fun Fun Island - Goddess Chest below Island
   original_item: Gold Rupee
   types:
     - Chests
@@ -1329,24 +1329,24 @@
     - stage/F020/r0/l0/TBox/86
   cube_region: Lake Floria
 
-- name: The Sky - Form a Squirrel Ring above Volcanic Island
+- name: The Sky - Form a Swirrell Ring above Volcanic Island
   original_item: Red Rupee
   types:
-    - Squirrel
+    - Swirrell
   Paths:
     - stage/F020/r0/l0/MssbTag/0xFCC8 # actor id
 
-- name: The Sky - Form a Squirrel Ring above Lumpy Pumpkin
+- name: The Sky - Form a Swirrell Ring above Lumpy Pumpkin
   original_item: Red Rupee
   types:
-    - Squirrel
+    - Swirrell
   Paths:
     - stage/F020/r0/l0/MssbTag/0xFC9C # actor id
 
-- name: The Sky - Form a Squirrel Ring above Bamboo Island
+- name: The Sky - Form a Swirrell Ring above Bamboo Island
   original_item: Red Rupee
   types:
-    - Squirrel
+    - Swirrell
   Paths:
     - stage/F020/r0/l0/MssbTag/0xFCA0 # actor id
 
@@ -1375,7 +1375,7 @@
 
 ## Goddess Chests
 
-- name: Bamboo Island - Goddess Chest
+- name: Bamboo Island - Goddess Chest behind Entrance
   original_item: Gold Rupee
   types:
     - Chests
@@ -1384,7 +1384,7 @@
     - stage/F020/r0/l0/TBox/82
   cube_region: Eldin Volcano
 
-- name: Island near Bamboo Island - Goddess Chest
+- name: Island near Bamboo Island - Top Goddess Chest
   original_item: Silver Rupee
   types:
     - Chests
@@ -1411,7 +1411,7 @@
     - stage/F020/r0/l0/TBox/72
   cube_region: Lanayru Mine
 
-- name: Northeast Island - Cage Goddess Chest
+- name: Northeast Island - Goddess Chest in Cage
   original_item: Treasure Medal
   types:
     - Chests
@@ -1429,7 +1429,7 @@
     - stage/F020/r0/l0/TBox/87
   cube_region: Skyview
 
-- name: Lumpy Pumpkin - Outside Goddess Chest
+- name: Lumpy Pumpkin - Goddess Chest near Gossip Stone
   original_item: Progressive Pouch
   types:
     - Chests
@@ -1483,7 +1483,7 @@
     - stage/F020/r0/l0/TBox/84
   cube_region: Lanayru Desert
 
-- name: Triple Island - Cage Goddess Chest
+- name: Triple Island - Goddess Chest in Cage
   original_item: Potion Medal
   types:
     - Chests
@@ -1494,57 +1494,16 @@
 
 # Thunderhead:
 
-- name: Isle of Songs - Strike Crest with Goddess Sword
-  original_item: Farore's Courage
+- name: Inside the Thunderhead - Gossip Stone near Bug Heaven
+  original_item: Nothing
   types:
-    - Crests
-  Paths:
-    - stage/F010r/r0/l0/SwSB/0
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 12
+  eventflowindex: 20
 
-- name: Isle of Songs - Strike Crest with Longsword
-  original_item: Nayru's Wisdom
-  types:
-    - Crests
-  Paths:
-    - stage/F010r/r0/l0/SwSB/1
-
-- name: Isle of Songs - Strike Crest with White Sword
-  original_item: Din's Power
-  types:
-    - Crests
-  Paths:
-    - stage/F010r/r0/l0/SwSB/2
-
-- name: Isle of Songs - Top Goddess Chest
-  original_item: Small Bomb Bag
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/85
-  cube_region: Volcano Summit
-
-- name: Isle of Songs - Lower Goddess Chest
-  original_item: Gold Rupee
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/92
-  cube_region: Mogma Turf
-
-- name: The Thunderhead - Song from Levias
-  original_item: Song of the Hero
-  types:
-    - Scrapper Deliveries
-    - Combat
-    - NPC
-  hint: always
-  Paths:
-    - event/120-Nushi/give item after levias
-    - oarc/F023/l0
-
-- name: Bug Heaven - Minigame -- 10 Bugs in 3 Minutes
+- name: Bug Heaven - 10 Bugs in 3 Minutes
   original_item: Beedle's Insect Cage
   types:
     - Minigames
@@ -1595,32 +1554,7 @@
   Paths:
     - stage/F023/r0/l0/Item/0xFC10
 
-- name: Bug Heaven - Nearby Gossip Stone
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 12
-  eventflowindex: 20
-
-- name: Thunderhead East Island - Chest
-  original_item: Evil Crystal
-  types:
-    - Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/94
-
-- name: Thunderhead East Island - Goddess Chest
-  original_item: Rupee Medal
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F023/r0/l0/TBox/73
-  cube_region: Faron Woods
-
-- name: Mogma Mitts Island - First Goddess Chest
+- name: Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
   original_item: Empty Bottle
   types:
     - Chests
@@ -1629,7 +1563,7 @@
     - stage/F023/r0/l0/TBox/77
   cube_region: Volcano Summit
 
-- name: Mogma Mitts Island - Second Goddess Chest
+- name: Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest
   original_item: Small Quiver
   types:
     - Chests
@@ -1637,6 +1571,72 @@
   Paths:
     - stage/F023/r0/l0/TBox/76
   cube_region: Lanayru Gorge
+
+- name: Isle of Songs - Top Goddess Chest
+  original_item: Small Bomb Bag
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/85
+  cube_region: Volcano Summit
+
+- name: Isle of Songs - Lower Goddess Chest
+  original_item: Gold Rupee
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/92
+  cube_region: Mogma Turf
+
+- name: Isle of Songs - Strike Crest with Goddess Sword
+  original_item: Farore's Courage
+  types:
+    - Crests
+  Paths:
+    - stage/F010r/r0/l0/SwSB/0
+
+- name: Isle of Songs - Strike Crest with Longsword
+  original_item: Nayru's Wisdom
+  types:
+    - Crests
+  Paths:
+    - stage/F010r/r0/l0/SwSB/1
+
+- name: Isle of Songs - Strike Crest with White Sword
+  original_item: Din's Power
+  types:
+    - Crests
+  Paths:
+    - stage/F010r/r0/l0/SwSB/2
+
+- name: Inside the Thunderhead - Chest on East Island
+  original_item: Evil Crystal
+  types:
+    - Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/94
+
+- name: Inside the Thunderhead - Goddess Chest on East Island
+  original_item: Rupee Medal
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/73
+  cube_region: Faron Woods
+
+- name: Inside the Thunderhead - Song from Levias
+  original_item: Song of the Hero
+  types:
+    - Scrapper Deliveries
+    - Combat
+    - NPC
+  hint: always
+  Paths:
+    - event/120-Nushi/give item after levias
+    - oarc/F023/l0
 
 # Sealed Grounds:
 
@@ -1872,7 +1872,7 @@
   Paths:
     - stage/F401/r1/l0/Item/0xFC1E
 
-- name: Sealed Temple - Chest
+- name: Sealed Temple - Chest near The Old One
   original_item: Revitalizing Potion
   types:
     - Chests
@@ -2020,7 +2020,7 @@
 - name: Temple of Hylia - Zelda's Blessing
   original_item: Progressive Sword
   types:
-    - NPC #TODO: this may need to be revisited as it doesnt really fit any other checks
+    - NPC
   hint: sometimes
   Paths:
     - event/502-CenterFieldBack/17
@@ -2073,7 +2073,7 @@
   Paths:
     - stage/F100/r0/l0/Item/33 #last thing is SceneflagID
 
-- name: Faron Woods - Item on Tree
+- name: Faron Woods - Item on Great Tree
   original_item: Heart Piece
   types:
     - Freestanding Items
@@ -2294,7 +2294,7 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Great Tree - Blow Small Yellow Mushroom after Vines
+- name: Inside the Great Tree - Blow Small Yellow Mushroom after Vines
   original_item: Green Rupee
   types:
     - Hidden Items
@@ -2302,7 +2302,7 @@
   Paths:
     - stage/F100_1/r0/l0/TgReact/0xFC56
 
-- name: Great Tree - Blow Large Yellow Mushroom after Vines
+- name: Inside the Great Tree - Blow Large Yellow Mushroom after Vines
   original_item: 5 Deku Seeds
   types:
     - Hidden Items
@@ -2310,7 +2310,7 @@
   Paths:
     - stage/F100_1/r0/l0/TgReact/0xFC55
 
-- name: Great Tree - Blow Red Mushroom after Swinging Platforms West
+- name: Inside the Great Tree - Blow Red Mushroom after Swinging Platforms West
   original_item: Heart
   types:
     - Hidden Items
@@ -2318,7 +2318,7 @@
   Paths:
     - stage/F100_1/r0/l0/TgReact/0xFC57
 
-- name: Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
+- name: Inside the Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
   original_item: Blue Rupee
   types:
     - Hidden Items
@@ -2326,7 +2326,7 @@
   Paths:
     - stage/F100_1/r0/l0/TgReact/0xFC58
 
-- name: Great Tree - Chest
+- name: Inside the Great Tree - Chest guarded by Deku Baba
   original_item: Gold Rupee
   types:
     - Chests
@@ -2334,7 +2334,7 @@
   Paths:
     - stage/F100_1/r0/l0/TBox/84
 
-- name: Great Tree - Blow Tree Spiral on Highest Pathway
+- name: Inside the Great Tree - Blow Tree Spiral on Highest Pathway
   original_item: Red Rupee # actually a rupee shower
   types:
     - Hidden Items
@@ -2366,7 +2366,7 @@
   Paths:
     - stage/F101/r0/l0/TgReact/0xFCE2
 
-- name: Deep Woods - Chest
+- name: Deep Woods - Chest on High Ledge
   original_item: Red Rupee
   types:
     - Chests
@@ -2510,7 +2510,7 @@
   Paths:
     - stage/F102/r2/l0/Item/61
 
-- name: Lake Floria - Chest
+- name: Lake Floria - Chest near Bird Statue
   original_item: Goddess Plume
   types:
     - Chests
@@ -2924,7 +2924,7 @@
   Paths:
     - stage/F200/r2/l0/Item/0xFC4D
 
-- name: Eldin Volcano - Chest after Crawlspace
+- name: Eldin Volcano - Chest after Blocked Crawlspace
   original_item: Red Rupee
   types:
     - Chests
@@ -3436,7 +3436,7 @@
   Paths:
     - stage/F200/r4/l1/Soil/8
 
-- name: Eldin Volcano - Digging Spot below Tower
+- name: Eldin Volcano - Digging Spot below Tower West of Earth Temple
   original_item: Key Piece
   types:
     - Digging Spots
@@ -3762,7 +3762,7 @@
   Paths:
     - stage/F200/r7/l0/Item/0xFC02
 
-- name: Eldin Volcano - Digging Spot after Vents
+- name: Eldin Volcano - Digging Spot after Sand Slide Vents
   original_item: Key Piece
   types:
     - Digging Spots
@@ -3858,7 +3858,7 @@
   Paths:
     - stage/F210/r0/l0/TgReact/0xFC6A
 
-- name: Mogma Turf - Sand Slide Chest
+- name: Mogma Turf - Chest after Sand Slide
   original_item: Eldin Ore
   types:
     - Chests
@@ -3904,7 +3904,7 @@
   Paths:
     - stage/F201_4/r0/l0/TBox/95
 
-- name: Volcano Summit - Item behind Digging
+- name: Volcano Summit - Item after Underground Tunnel near Gossip Stone
   original_item: Heart Piece
   types:
     - Freestanding Items
@@ -4432,7 +4432,7 @@
   Paths:
     - stage/F300/r0/l0/TgReact/0xFD3E
 
-- name: Lanayru Desert - Chest near Sand Oasis
+- name: Lanayru Desert - Chest on Sand Oasis Wall
   original_item: Red Rupee
   types:
     - Chests
@@ -4471,7 +4471,7 @@
   Paths:
     - stage/F300/r0/l1/TBox/83
 
-- name: Lanayru Desert - Secret Passageway Chest
+- name: Lanayru Desert - Chest in Northeast Secret Passageway
   original_item: Heart Piece
   types:
     - Chests
@@ -4657,7 +4657,7 @@
 
 ## Nodes
 
-- name: Fire Node - Shortcut Chest
+- name: Fire Node - Raised Chest
   original_item: Rare Treasure # TODO check again
   types:
     - Chests
@@ -4709,14 +4709,14 @@
   Paths:
     - stage/F300_3/r0/l0/TBox/82
 
-- name: Lightning Node - First Chest
+- name: Lightning Node - Front Chest
   original_item: Red Rupee
   types:
     - Chests
   Paths:
     - stage/F300_2/r0/l0/TBox/75
 
-- name: Lightning Node - Second Chest
+- name: Lightning Node - Middle Chest
   original_item: Blue Rupee
   types:
     - Chests
@@ -4748,7 +4748,7 @@
 
 # Lanayru Caves:
 
-- name: Lanayru Caves - Chest
+- name: Lanayru Caves - Chest near Golo
   original_item: Golden Skull # TODO check again
   types:
     - Chests
@@ -4816,7 +4816,7 @@
   Paths:
     - stage/F302/r0/l0/TgReact/0xFC5A
 
-- name: Lanayru Gorge - Item on Pillar
+- name: Lanayru Gorge - Item on Pillar below Dragon
   original_item: Lanayru Caves Small Key
   types:
     - Freestanding Items
@@ -4839,14 +4839,14 @@
   Paths:
     - stage/F302/r0/l0/TgReact/0xFC5C
 
-- name: Lanayru Gorge - Digging Spot
+- name: Lanayru Gorge - Life Tree Digging Spot
   original_item: Life Tree Seedling
   types:
     - Digging Spots
   Paths:
     - stage/F302/r0/l0/Soil/30
 
-- name: Lanayru Gorge - Slingshot Left Sandfall Source
+- name: Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree
   original_item: Green Rupee
   types:
     - Hidden Items
@@ -4854,7 +4854,7 @@
   Paths:
     - stage/F302/r0/l0/TgReact/0xFC5D
 
-- name: Lanayru Gorge - Slingshot Right Sandfall Source
+- name: Lanayru Gorge - Slingshot Right Sandfall Source near Life Tree
   original_item: Green Rupee
   types:
     - Hidden Items
@@ -4862,7 +4862,7 @@
   Paths:
     - stage/F302/r0/l0/TgReact/0xFC5E
 
-- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 1
+- name: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 1
   original_item: Green Rupee
   types:
     - Freestanding Rupees
@@ -4871,7 +4871,7 @@
   Paths:
     - stage/F302/r0/l0/Item/0xFC2E
 
-- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 2
+- name: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 2
   original_item: Blue Rupee
   types:
     - Freestanding Rupees
@@ -4880,7 +4880,7 @@
   Paths:
     - stage/F302/r0/l0/Item/0xFC29
 
-- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 3
+- name: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 3
   original_item: Red Rupee
   types:
     - Freestanding Rupees
@@ -4889,7 +4889,7 @@
   Paths:
     - stage/F302/r0/l0/Item/0xFC27
 
-- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 4
+- name: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 4
   original_item: Blue Rupee
   types:
     - Freestanding Rupees
@@ -4898,7 +4898,7 @@
   Paths:
     - stage/F302/r0/l0/Item/0xFC28
 
-- name: Lanayru Gorge - Rupee in High Tunnel after Bridge 5
+- name: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 5
   original_item: Green Rupee
   types:
     - Freestanding Rupees
@@ -4956,7 +4956,7 @@
   Paths:
     - stage/F301/r0/l0/TgReact/0xFC43
 
-- name: Ancient Harbour - Rupee on First Pillar
+- name: Ancient Harbour - Rupee on Highest Clawshot Pillar
   original_item: Red Rupee
   types:
     - Freestanding Rupees
@@ -4964,7 +4964,7 @@
   Paths:
     - stage/F301/r0/l0/Item/92
 
-- name: Ancient Harbour - Left Rupee on Entrance Crown
+- name: Ancient Harbour - North Rupee on Entrance Crown
   original_item: Silver Rupee
   types:
     - Freestanding Rupees
@@ -4973,7 +4973,7 @@
   Paths:
     - stage/F301/r0/l0/Item/91
 
-- name: Ancient Harbour - Right Rupee on Entrance Crown
+- name: Ancient Harbour - South Rupee on Entrance Crown
   original_item: Silver Rupee
   types:
     - Freestanding Rupees
@@ -5038,7 +5038,7 @@
 
 ## Skipper's Retreat
 
-- name: Skipper's Retreat - Chest after Moblin
+- name: Skipper's Retreat - Chest guarded by Quadro Baba
   original_item: Red Rupee
   types:
     - Chests
@@ -5051,7 +5051,7 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Skipper's Retreat - Chest on top of Cacti Pillar
+- name: Skipper's Retreat - Chest on Cacti Pillar
   original_item: Uncommon Treasure
   types:
     - Chests
@@ -5193,7 +5193,7 @@
   Paths:
     - stage/F301_4/r0/l0/TgReact/0xFC4B
 
-- name: Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05
+- name: Shipyard - Heart Stopping Rickety Coaster Track in 1'05
   original_item: Heart Piece
   types:
     - Minigames
@@ -5320,21 +5320,21 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Pirate Stronghold Interior - First Chest
+- name: Pirate Stronghold Interior - Chest behind Electric Fence
   original_item: Silver Rupee
   types:
     - Chests
   Paths:
     - stage/F301_2/r4/l0/TBox/75
 
-- name: Pirate Stronghold Interior - Second Chest
+- name: Pirate Stronghold Interior - Chest before Deku Babas
   original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
     - stage/F301_2/r5/l0/TBox/73
 
-- name: Pirate Stronghold Interior - Third Chest
+- name: Pirate Stronghold Interior - Chest before Double Armos Fight
   original_item: Uncommon Treasure
   types:
     - Chests
@@ -5482,7 +5482,7 @@
     # Moved objects get given new ids so use the vanilla tempflag id instead
     - stage/D100/r2/l0/Item/158
 
-- name: Skyview Temple - Rupee on Lower Tree Branch before Hub Room
+- name: Skyview Temple - Rupee on Lower Tree Root before Hub Room
   original_item: Green Rupee
   types:
     - Freestanding Rupees
@@ -5745,14 +5745,14 @@
   Paths:
     - stage/D200/r1/l0/TgReact/0xFCC0
 
-- name: Earth Temple - Vent Chest
+- name: Earth Temple - Chest after Air Vent in First Room
   original_item: Red Rupee
   types:
     - Chests
   Paths:
     - stage/D200/r1/l0/TBox/66
 
-- name: Earth Temple - Rupee above Drawbridge
+- name: Earth Temple - Rupee above First Drawbridge
   original_item: Red Rupee
   types:
     - Freestanding Rupees
@@ -5760,14 +5760,14 @@
   Paths:
     - stage/D200/r1/l0/Item/25
 
-- name: Earth Temple - Chest behind Bombable Rock
+- name: Earth Temple - Chest behind Southwest Bombable Rock
   original_item: Golden Skull
   types:
     - Chests
   Paths:
     - stage/D200/r1/l0/TBox/69
 
-- name: Earth Temple - Chest Left of Main Room Bridge
+- name: Earth Temple - Northwest Chest Main Room
   original_item: Golden Skull # TODO check again
   types:
     - Chests
@@ -5812,7 +5812,7 @@
     - event/301-MountainD1/16
     - oarc/D200/l0
 
-- name: Earth Temple - Rupee in Lava Tunnel
+- name: Earth Temple - Rupee in Dragon's Mouth in Lava Tunnel
   original_item: Silver Rupee
   types:
     - Freestanding Rupees
@@ -5820,7 +5820,7 @@
   Paths:
     - stage/D200/r2/l0/Item/21
 
-- name: Earth Temple - Chest Guarded by Lizalfos
+- name: Earth Temple - Northeast Chest Guarded by Lizalfos
   original_item: Red Rupee
   types:
     - Chests
@@ -5971,7 +5971,7 @@
   Paths:
     - stage/D300/r0/l0/TgReact/0xFC25
 
-- name: Lanayru Mining Facility - First Chest in Hub Room
+- name: Lanayru Mining Facility - Chest after Breakable Boxes in Hub Room
   original_item: Lanayru Mining Facility Small Key
   types:
     - Chests
@@ -6237,7 +6237,7 @@
   Paths:
     - stage/D300_1/r8/l0/TBox/71
 
-- name: Lanayru Mining Facility - Shortcut Chest in Main Hub
+- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
   original_item: Red Rupee
   types:
     - Chests
@@ -6279,7 +6279,7 @@
   Paths:
     - stage/D101/r0/l0/Item/92
 
-- name: Ancient Cistern - First Rupee in East Part in Short Tunnel
+- name: Ancient Cistern - First Rupee in East Room in Short Tunnel
   original_item: Green Rupee
   types:
     - Freestanding Rupees
@@ -6287,7 +6287,7 @@
   Paths:
     - stage/D101/r2/l0/Item/65
 
-- name: Ancient Cistern - Second Rupee in East Part in Short Tunnel
+- name: Ancient Cistern - Second Rupee in East Room in Short Tunnel
   original_item: Green Rupee
   types:
     - Freestanding Rupees
@@ -6295,7 +6295,7 @@
   Paths:
     - stage/D101/r2/l0/Item/66
 
-- name: Ancient Cistern - Third Rupee in East Part in Short Tunnel
+- name: Ancient Cistern - Third Rupee in East Room in Short Tunnel
   original_item: Green Rupee
   types:
     - Freestanding Rupees
@@ -6303,7 +6303,7 @@
   Paths:
     - stage/D101/r2/l0/Item/67
 
-- name: Ancient Cistern - Rupee in East Part in Cubby
+- name: Ancient Cistern - Rupee in East Room in Cubby
   original_item: Red Rupee
   types:
     - Freestanding Rupees
@@ -6311,7 +6311,7 @@
   Paths:
     - stage/D101/r2/l0/Item/68
 
-- name: Ancient Cistern - Rupee in East Part in Main Tunnel
+- name: Ancient Cistern - Rupee in East Room in Main Tunnel
   original_item: Red Rupee
   types:
     - Freestanding Rupees
@@ -6319,7 +6319,7 @@
   Paths:
     - stage/D101/r2/l0/Item/34
 
-- name: Ancient Cistern - Chest in East Part
+- name: Ancient Cistern - Chest in East Room
   original_item: Ancient Cistern Small Key
   types:
     - Chests
@@ -6340,14 +6340,14 @@
   Paths:
     - stage/D101/r0/l0/TBox/66
 
-- name: Ancient Cistern - Chest behind the Waterfall
+- name: Ancient Cistern - Chest behind Waterfall
   original_item: Red Rupee
   types:
     - Chests
   Paths:
     - stage/D101/r3/l0/TBox/84
 
-- name: Ancient Cistern - Bokoblin
+- name: Ancient Cistern - Whip Item from Bokoblin between Pipes
   original_item: Ancient Cistern Small Key
   types:
     - NPC
@@ -6454,7 +6454,7 @@
 
 # Sandship (SSH):
 
-- name: Sandship - Chest at the Stern
+- name: Sandship - Chest at Ship's Stern
   original_item: Heart Piece
   types:
     - Chests
@@ -6658,7 +6658,7 @@
     - stage/D201_1/r1/l0/TBox/74
     - stage/D201/r1/l0/TBox/74
 
-- name: Fire Sanctuary - Chest on Balcony
+- name: Fire Sanctuary - Chest on Balcony after Single Magmanos Fight
   original_item: Empty Bottle
   types:
     - Chests
@@ -6727,21 +6727,21 @@
   Paths:
     - stage/D201_1/r5/l0/TBox/69
 
-- name: Fire Sanctuary - First Chest in Water Fruit Room
+- name: Fire Sanctuary - Lower Chest in Water Fruit Room
   original_item: Red Rupee
   types:
     - Chests
   Paths:
     - stage/D201_1/r7/l0/TBox/73
 
-- name: Fire Sanctuary - Second Chest in Water Fruit Room
+- name: Fire Sanctuary - Raised Chest in Water Fruit Room
   original_item: Uncommon Treasure
   types:
     - Chests
   Paths:
     - stage/D201_1/r7/l0/TBox/72
 
-- name: Fire Sanctuary - Rescue First Trapped Mogma Chest
+- name: Fire Sanctuary - Chest from First Trapped Mogma
   original_item: Progressive Mitts
   types:
     - Chests
@@ -6788,7 +6788,7 @@
   Paths:
     - stage/D201_1/r5/l0/Item/0xFC5E
 
-- name: Fire Sanctuary - Rescue Second Trapped Mogma Chest
+- name: Fire Sanctuary - Chest from Second Trapped Mogma
   original_item: Fire Sanctuary Map
   types:
     - Chests
@@ -6854,14 +6854,14 @@
 
 # Sky Keep (SK):
 
-- name: Sky Keep - First Chest
+- name: Sky Keep - Chest in First Room
   original_item: Sky Keep Map
   types:
     - Chests
   Paths:
     - stage/D003_7/r0/l0/TBox/64
 
-- name: Sky Keep - Chest after Dreadfuse
+- name: Sky Keep - Chest after Dreadfuse Fight
   original_item: Sky Keep Small Key
   types:
     - Chests

@@ -98,7 +98,7 @@
     LMF Big Hub South: Nothing
     LMF Big Hub Near Hop Across Boxes Room: can_access(LMF Big Hub Near Hop Across Boxes Room) or shortcut_lmf_boxes
   locations:
-    Lanayru Mining Facility - First Chest in Hub Room: Nothing
+    Lanayru Mining Facility - Chest after Breakable Boxes in Hub Room: Nothing
 
 
 - name: LMF Big Hub Near Hop Across Boxes Room
@@ -187,7 +187,7 @@
     LMF Boss Key Room: Nothing
     LMF Big Hub Near Boss Door: (Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows) or (logic_lmf_minecart_jump and (Bomb_Bag or Beetle))
   locations:
-    Lanayru Mining Facility - Shortcut Chest in Main Hub: Nothing
+    Lanayru Mining Facility - Raised Chest in Hub Room after Minecart: Nothing
 
 
 - name: LMF Boss Room

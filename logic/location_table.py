@@ -80,7 +80,7 @@ def get_disabled_shuffle_locations(
         and (
             (
                 settings["beedle_shop_shuffle"].value == "vanilla"
-                and "Beedle's Shop" in location.types
+                and "Beedle's Airshop" in location.types
             )
             or (
                 settings["gratitude_crystal_shuffle"].value == "off"

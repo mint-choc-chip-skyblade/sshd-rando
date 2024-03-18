@@ -74,7 +74,7 @@ coupling, mixing pools
 * All the checks from Full Rupee, Single Gratitude Crystal, Stamina Fruit, Hidden Item, and NPC
 Closet shuffles
 * `Upper Skyloft - Rescue Remlit above Knight Academy`
-* `The Sky - Form a Squirrel Ring above Volcanic Island` / `Lumpy Pumpkin` / `Bamboo Island`
+* `The Sky - Form a Swirrell Ring above Volcanic Island` / `Lumpy Pumpkin` / `Bamboo Island`
 
 ### Changes
 * You can hold L to automatically quick charge the bow (even when using button controls)

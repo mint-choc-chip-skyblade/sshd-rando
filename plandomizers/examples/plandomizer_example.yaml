@@ -55,9 +55,9 @@ World 1:
 World 1:
   sometimes_hint_locations:
     - Knight Academy - Fledge's Gift
-    - Knight Academy - In Zelda's Closet
+    - Knight Academy - Zelda's Closet
     - Knight Academy - Crystal in Link's Room
-    - Knight Academy - Owlan's Crystals
+    - Knight Academy - Deliver Kikwi to Owlan
   always_hint_locations:
     - Inside the Statue of the Goddess - First Goddess Sword Item
     - Inside the Statue of the Goddess - Second Goddess Sword Item
@@ -79,12 +79,12 @@ World 2:
 # Using this format, the item being plandomized will be for the world that the
 # location is currently under. If we want to specify the item for a different
 # world we can use the "item" and "world" elements to do so. For example, if we want
-# to place the Bomb Bag for World 1 at World 2's Thunderhead East Island - Goddess Chest Chest
+# to place the Bomb Bag for World 1 at World 2's Inside the Thunderhead - Goddess Chest on East Island
 # and the Hylian Shield for World 1 at World 2's Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
 # we would type:
 World 2:
   locations:
-    Thunderhead East Island - Goddess Chest:
+    Inside the Thunderhead - Goddess Chest on East Island:
       item: Bomb Bag
       world: 1
     Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent:

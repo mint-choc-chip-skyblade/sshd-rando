@@ -137,7 +137,7 @@
     Sand Oasis Middle: Nothing
     Lanayru Desert North: Nothing
   locations:
-    Lanayru Desert - Chest near Sand Oasis: Nothing
+    Lanayru Desert - Chest on Sand Oasis Wall: Nothing
     Lanayru Desert - Goddess Cube near Caged Robot: Goddess_Sword
 
 - name: Sand Oasis Middle
@@ -218,8 +218,8 @@
   exits:
     Lanayru Desert North: Nothing
   locations:
-    Lightning Node - First Chest: Bomb_Bag
-    Lightning Node - Second Chest: Bomb_Bag
+    Lightning Node - Front Chest: Bomb_Bag
+    Lightning Node - Middle Chest: Bomb_Bag
     Lightning Node - Bonk Lightning Node Power Supply: Bomb_Bag
     Lightning Node - Bonk Lightning Node Generator: Bomb_Bag
     Lightning Node - Raised Chest near Generator: Bomb_Bag and (Bow or Beetle or logic_bomb_throws)
@@ -229,7 +229,7 @@
   exits:
     Lanayru Desert North: Nothing
   locations:
-    Lanayru Desert - Secret Passageway Chest: Nothing
+    Lanayru Desert - Chest in Northeast Secret Passageway: Nothing
     Lanayru Desert - Goddess Cube in Secret Passageway: Clawshots and Goddess_Sword
 
 - name: Lanayru Desert East
@@ -252,7 +252,7 @@
   locations:
     Fire Node - First Small Chest: Bomb_Bag
     Fire Node - Second Small Chest: Bomb_Bag
-    Fire Node - Shortcut Chest: Can_Defeat_Ampilus or logic_brakeslide
+    Fire Node - Raised Chest: Can_Defeat_Ampilus or logic_brakeslide
     Fire Node - Bonk Fire Node Power Supply: Can_Defeat_Ampilus or logic_brakeslide
     Fire Node - Bonk Fire Node Generator: "'Can_Reach_Fire_Node_Activator'"
     Fire Node - Left Ending Chest: "'Can_Reach_Fire_Node_Activator'"
@@ -339,7 +339,7 @@
     Lanayru Mine Caves Platform: Nothing
     Sand Oasis Highest Platform: Nothing
   locations:
-    Lanayru Caves - Chest: Nothing
+    Lanayru Caves - Chest near Golo: Nothing
     Lanayru Caves - Golo's Gift: Nothing
     Lanayru Caves - Gossip Stone in Center: Nothing
 
@@ -367,7 +367,7 @@
     Lanayru Gorge Beyond Bridge: Can_Hit_Timeshift_Stone_in_Minecart
     Lanayru Caves Past Crawlspace: Nothing
   locations:
-    Lanayru Gorge - Item on Pillar: Beetle
+    Lanayru Gorge - Item on Pillar below Dragon: Beetle
     Lanayru Gorge - Thunder Dragon's Reward: Can_Hit_Timeshift_Stone_in_Minecart and Life_Tree_Fruit
     Lanayru Gorge - Bonk Pillar near Thunder Dragon: Nothing
     Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon: Slingshot and Beetle
@@ -393,15 +393,15 @@
   exits:
     Lanayru Gorge: Nothing # Death warp with bomb flower
   locations:
-    Lanayru Gorge - Digging Spot: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
+    Lanayru Gorge - Life Tree Digging Spot: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
     Lanayru Gorge - Goddess Cube: Goddess_Sword
-    Lanayru Gorge - Slingshot Left Sandfall Source: Slingshot
-    Lanayru Gorge - Slingshot Right Sandfall Source: Slingshot
-    Lanayru Gorge - Rupee in High Tunnel after Bridge 1: Beetle
-    Lanayru Gorge - Rupee in High Tunnel after Bridge 2: Beetle
-    Lanayru Gorge - Rupee in High Tunnel after Bridge 3: Beetle
-    Lanayru Gorge - Rupee in High Tunnel after Bridge 4: Beetle
-    Lanayru Gorge - Rupee in High Tunnel after Bridge 5: Beetle
+    Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree: Slingshot
+    Lanayru Gorge - Slingshot Right Sandfall Source near Life Tree: Slingshot
+    Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 1: Beetle
+    Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 2: Beetle
+    Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 3: Beetle
+    Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 4: Beetle
+    Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 5: Beetle
 
 - name: Ancient Harbour Highest Platform
   hint_region: Ancient Harbour
@@ -411,9 +411,9 @@
   locations:
     Ancient Harbour - Slingshot Left Nostril of Entrance Robot: Slingshot
     Ancient Harbour - Slingshot Right Nostril of Entrance Robot: Slingshot
-    Ancient Harbour - Rupee on First Pillar: Beetle
-    Ancient Harbour - Left Rupee on Entrance Crown: Quick_Beetle
-    Ancient Harbour - Right Rupee on Entrance Crown: Quick_Beetle
+    Ancient Harbour - Rupee on Highest Clawshot Pillar: Beetle
+    Ancient Harbour - North Rupee on Entrance Crown: Quick_Beetle
+    Ancient Harbour - South Rupee on Entrance Crown: Quick_Beetle
 
 - name: Ancient Harbour
   hint_region: Ancient Harbour
@@ -453,7 +453,7 @@
     Skipper's Retreat Top: Clawshots and Whip and (Projectile_Item or logic_skippers_fast_clawshots)
     Skipper's Retreat Dock: Nothing
   locations:
-    Skipper's Retreat - Chest after Moblin: Nothing
+    Skipper's Retreat - Chest guarded by Quadro Baba: Nothing
     Skipper's Retreat - Goddess Cube: Clawshots and Goddess_Sword
 
 - name: Skipper's Retreat Top
@@ -462,7 +462,7 @@
     Skipper's Retreat Past Rock: Nothing
     Skipper's Retreat Skydive Platform: Nothing
   locations:
-    Skipper's Retreat - Chest on top of Cacti Pillar: Clawshots
+    Skipper's Retreat - Chest on Cacti Pillar: Clawshots
     Skipper's Retreat - Slingshot Left Eye of Shack: Slingshot
     Skipper's Retreat - Slingshot Right Eye of Shack: Slingshot
     Skipper's Retreat - Slingshot Nose of Shack: Slingshot
@@ -497,7 +497,7 @@
     Lanayru Sand Sea: Nothing
   locations:
     Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator: Nothing
-    Shipyard - Rickety Coaster -- Heart Stopping Track in 1'05: Nothing
+    Shipyard - Heart Stopping Rickety Coaster Track in 1'05: Nothing
     Shipyard - Bonk Sign before Second Minecart Track: Nothing
     Shipyard - Gossip Stone: Nothing # Take the first cart and you've arrived
 
@@ -561,9 +561,9 @@
     # You can run past the Beamos' without killing it. You can also run past the Deku Baba
     # Both only effect swordless which is a more advanced mode
     # So leave the logic as "Nothing" to make swordless more interesting
-    Pirate Stronghold Interior - First Chest: Nothing
-    Pirate Stronghold Interior - Second Chest: Nothing
-    Pirate Stronghold Interior - Third Chest: Nothing
+    Pirate Stronghold Interior - Chest behind Electric Fence: Nothing
+    Pirate Stronghold Interior - Chest before Deku Babas: Nothing
+    Pirate Stronghold Interior - Chest before Double Armos Fight: Nothing
 
 - name: Pirate Stronghold Side Door
   exits:

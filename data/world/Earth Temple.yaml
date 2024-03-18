@@ -12,8 +12,8 @@
     Earth Temple - Bonk Front Right Elephant Pillar: Nothing
     Earth Temple - Bonk Back Left Elephant Pillar: Nothing
     Earth Temple - Bonk Back Right Elephant Pillar: Nothing
-    Earth Temple - Vent Chest: Digging_Mitts
-    Earth Temple - Rupee above Drawbridge: Beetle
+    Earth Temple - Chest after Air Vent in First Room: Digging_Mitts
+    Earth Temple - Rupee above First Drawbridge: Beetle
 
       
 - name: ET Hub Room
@@ -26,11 +26,11 @@
     ET West Room: Bomb_Bag or Hook_Beetle
     ET Room with Slopes: shortcut_earth_temple_bridge or ('ET_Push_Left_Peg' and 'ET_Push_Right_Peg')
   locations:
-    Earth Temple - Rupee above Drawbridge: Beetle
-    Earth Temple - Chest behind Bombable Rock: Nothing # Use nearby bomb flowers
-    Earth Temple - Chest Left of Main Room Bridge: Nothing
+    Earth Temple - Rupee above First Drawbridge: Beetle
+    Earth Temple - Chest behind Southwest Bombable Rock: Nothing # Use nearby bomb flowers
+    Earth Temple - Northwest Chest Main Room: Nothing
     Earth Temple - Ledd's Gift: Can_Defeat_Lizalfos
-    Earth Temple - Rupee in Lava Tunnel: Beetle and (Bomb_Bag or Hook_Beetle) # Can use tough beetle and go round in reverse
+    Earth Temple - Rupee in Dragon's Mouth in Lava Tunnel: Beetle and (Bomb_Bag or Hook_Beetle) # Can use tough beetle and go round in reverse
 
 
 - name: ET Past Lava Section
@@ -40,7 +40,7 @@
   exits:
     ET Hub Room: Nothing
   locations:
-    Earth Temple - Chest Guarded by Lizalfos: Nothing
+    Earth Temple - Northeast Chest Guarded by Lizalfos: Nothing
 
 
 - name: ET East Room

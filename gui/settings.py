@@ -17,6 +17,7 @@ import pyclip
 import yaml
 
 from constants.configconstants import (
+    LOCATION_ALIASES,
     SETTINGS_NOT_IN_SETTINGS_LIST,
     get_default_setting,
     get_new_seed,
@@ -27,7 +28,7 @@ from filepathconstants import BASE_PRESETS_PATH, CONFIG_PATH, ITEMS_PATH, PRESET
 from gui.components.list_pair import ListPair
 from gui.components.tristate_check_box import RandoTriStateCheckBox
 from gui.mixed_entrance_pools import MixedEntrancePools
-from logic.config import Config, write_config_to_file, seed_rng
+from logic.config import Config, load_config_from_file, write_config_to_file, seed_rng
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from logic.settings import Setting
 from randomizer.setting_string import (
@@ -51,6 +52,7 @@ class Settings:
 
         self.settings = self.config.settings[0].settings
         self.location_table = build_location_table()
+        self.verify_excluded_locations()
 
         self.set_setting_descriptions(None)
 
@@ -720,6 +722,37 @@ class Settings:
         self.main.fi_info_dialog.show_dialog(title=dialog_title, text=description_text)
         return True
 
+    def verify_excluded_locations(self):
+        excluded_hint_locations = self.config.settings[0].excluded_hint_locations.copy()
+        for location in excluded_hint_locations:
+            if location not in self.location_table:
+                self.config.settings[0].excluded_hint_locations.remove(location)
+
+                if location in LOCATION_ALIASES:
+                    self.config.settings[0].excluded_hint_locations.append(
+                        LOCATION_ALIASES[location]
+                    )
+                else:
+                    self.main.fi_info_dialog.show_dialog(
+                        "Unknown location!",
+                        f"Could not exclude unknown location: {location}.\n\nThis location will be ignored and will not be excluded.",
+                    )
+
+        excluded_locations = self.config.settings[0].excluded_locations.copy()
+        for location in excluded_locations:
+            if location not in self.location_table:
+                self.config.settings[0].excluded_locations.remove(location)
+
+                if location in LOCATION_ALIASES:
+                    self.config.settings[0].excluded_locations.append(
+                        LOCATION_ALIASES[location]
+                    )
+                else:
+                    self.main.fi_info_dialog.show_dialog(
+                        "Unknown location!",
+                        f"Could not exclude unknown location: {location}.\n\nThis location will be ignored and will not be excluded.",
+                    )
+
     def get_disabled_shuffle_location_names(self) -> list[str]:
         return [
             location.name
@@ -735,13 +768,7 @@ class Settings:
             self.preset_delete_button.setDisabled(True)
             self.preset_apply_button.setDisabled(True)
         else:
-            confirm_preset_apply_dialog = self.main.fi_question_dialog.show_dialog(
-                "Are you sure?",
-                "Would you like to apply this preset and overwrite all the current settings?",
-            )
-
-            if confirm_preset_apply_dialog == QMessageBox.StandardButton.Yes:
-                self.apply_preset()
+            self.apply_preset()
 
             self.preset_apply_button.setEnabled(True)
 
@@ -789,27 +816,23 @@ class Settings:
                     text="The name you entered is already being used! Please try again with a different name.",
                 )
             else:
+                self.preset_combo.currentTextChanged.disconnect()
+
                 self.preset_combo.addItem(preset_name)
                 self.preset_combo.setCurrentText(preset_name)
 
                 preset_file_path = PRESETS_PATH / (preset_name + ".yaml")
+                current_seed = self.config.seed
+                self.config.seed = preset_name
+                write_config_to_file(preset_file_path, self.config)
+                self.config.seed = current_seed
 
-                preset_settings: dict = {
-                    setting.name: setting.value for setting in self.settings.values()
-                }
+                self.user_preset_names.append(preset_name)
+                self.all_preset_names.append(preset_name)
+                self.preset_apply_button.setEnabled(True)
+                self.preset_delete_button.setEnabled(True)
 
-                for setting_name in SETTINGS_NOT_IN_SETTINGS_LIST:
-                    preset_settings[setting_name] = self.config.settings[
-                        0
-                    ].__getattribute__(setting_name)
-
-                # Make sure starting inventory is dealt with correctly
-                preset_settings["starting_inventory"] = tuple(
-                    self.config.settings[0].starting_inventory.elements()
-                )
-
-                with open(preset_file_path, "w", encoding="utf-8") as preset_file:
-                    yaml.safe_dump(preset_settings, preset_file, sort_keys=False)
+                self.preset_combo.currentTextChanged.connect(self.change_preset)
 
     def apply_preset(self):
         selected_preset = self.preset_combo.currentText()
@@ -817,41 +840,24 @@ class Settings:
         if selected_preset == DEFAULT_PRESET:
             return
 
-        if selected_preset in self.base_preset_names:
-            selected_preset_path = BASE_PRESETS_PATH / (selected_preset + ".yaml")
-        else:
-            selected_preset_path = PRESETS_PATH / (selected_preset + ".yaml")
+        confirm_preset_apply_dialog = self.main.fi_question_dialog.show_dialog(
+            "Are you sure?",
+            f"Applying a preset will overwrite ALL of the current settings.<br>Would you like to continue?",
+        )
 
-        with open(selected_preset_path, "r", encoding="utf-8") as preset_file:
-            preset_data: dict = yaml.safe_load(preset_file)
-
-        for setting_name in preset_data:
-            if setting_name in self.settings:
-                self.settings[setting_name].value = preset_data[setting_name]
-            elif setting_name in SETTINGS_NOT_IN_SETTINGS_LIST:
-                value = preset_data[setting_name]
-
-                if setting_name == "starting_inventory":
-                    value = Counter(value)
-
-                self.config.settings[0].__setattr__(setting_name, value)
+        if confirm_preset_apply_dialog == QMessageBox.StandardButton.Yes:
+            if selected_preset in self.base_preset_names:
+                selected_preset_path = BASE_PRESETS_PATH / (selected_preset + ".yaml")
             else:
-                self.main.fi_info_dialog.show_dialog(
-                    "Unknown Setting",
-                    f"The setting <b>{setting_name}</b> is unknown and will be ignored.<br><br>Please update this preset ({selected_preset}).",
-                )
+                selected_preset_path = PRESETS_PATH / (selected_preset + ".yaml")
 
-        # Reset all settings not in the preset to default
-        for setting_name in tuple(self.settings) + SETTINGS_NOT_IN_SETTINGS_LIST:
-            if setting_name not in preset_data:
-                setting = self.settings[setting_name]
-                default_value = setting.info.options[setting.info.default_option_index]
-                self.settings[setting_name] = self.get_updated_setting(
-                    self.settings[setting_name], default_value
-                )
+            self.config = load_config_from_file(selected_preset_path)
+            self.verify_excluded_locations()
+            write_config_to_file(selected_preset_path, self.config)
+            self.settings = self.config.settings[0].settings
 
-        self.config.settings[0].settings = self.settings
-        self.update_from_config()
+            self.config.seed = get_new_seed()
+            self.update_from_config()
 
     def update_hash(self):
         self.config.hash = ""

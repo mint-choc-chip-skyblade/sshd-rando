@@ -33,7 +33,7 @@
   exits:
     SK First Room East: Nothing
   locations:
-    Sky Keep - First Chest: Nothing
+    Sky Keep - Chest in First Room: Nothing
 
 
 - name: SK First Room East
@@ -77,7 +77,7 @@
   exits:
     SK Dreadfuse Room West: Can_Defeat_Scervo_And_Dreadfuse and Clawshots
   locations:
-    Sky Keep - Chest after Dreadfuse: Nothing
+    Sky Keep - Chest after Dreadfuse Fight: Nothing
 
 
 - name: SK Dreadfuse Room West

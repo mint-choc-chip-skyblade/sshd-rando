@@ -29,7 +29,7 @@
   exits:
     Sandship Main Deck: Clawshots # Deathwarp possible
   locations:
-    Sandship - Chest at the Stern: "'Finish_Mast_Sequence'" # Can't keep the item otherwise
+    Sandship - Chest at Ship's Stern: "'Finish_Mast_Sequence'" # Can't keep the item otherwise
 
 
 - name: Sandship Captain's Cabin
