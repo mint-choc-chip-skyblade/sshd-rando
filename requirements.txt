@@ -8,7 +8,7 @@ typing_extensions~=4.10.0
 pyclip~=0.7.0
 
 # dev stuff
-black~=24.2.0
+black~=24.3.0
 pytest~=8.1.1
 PyInstaller~=6.5.0
 Pillow~=10.2.0
