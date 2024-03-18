@@ -113,13 +113,33 @@
 
 # Bosses
 - Ghirahim
+- Demon
+- Lord
+
 - Scaldera
+- Pyroclastic
+- Fiend
+
 - Moldarach
+- Arachnid
+
 - Koloktos
+- Automaton
+
 - Tentalus
+- Abyssal
+- Leviathan
+
 - Imprisoned
+
 - Bilocyte
+- Ocular
+- Parasite
+
 - Levias
+- Great
+- Spirit
+
 - Demise
 
 # Enemies
@@ -146,6 +166,8 @@
 - Guay
 - Cranioc
 - Lizalfos
+- Deku
+- Quadro
 - Baba
 - Sentrobe
 - Staldra
@@ -157,6 +179,7 @@
 # Items
 - Bow
 - Bomb
+- Bag
 - Beetle
 - Hook
 - Quick
@@ -204,6 +227,7 @@
 - Adventure
 - Pouch
 - Potion
+- Bottle
 - Stamina
 - Air
 - Revitalizing
@@ -214,10 +238,8 @@
 - Life
 - Treasure
 - Curse
-
-- Propeller
-- Party
-- Wheel
+- Seed
+- Quiver
 
 - Insect
 - Cage
@@ -257,11 +279,12 @@
 - Sand
 - Cicada
 - Gerudo
-- Dragonfly
+# - Dragonfly
 - Roller
 - Stag
 - Starry
 - Firefly
+- Fairy
 
 - Light
 - Fruit
@@ -271,54 +294,132 @@
 - Rupee
 - Shield
 - Iron
-- Hylian
+# - Hylian
 - Beacon
 - Key
 - Map
 
 # Locations
 - Skyloft
-- Sky
+- Knight
+- Academy
+- Sparring
+- Hall
+- Statue
+- Bazaar
+- Airshop
+- Plaza
+- Tower
+- Graveyard
+- House
+- Gear
+- Peddler
+- Item
+- Check
+- Girl
+- Fortune
+- Teller
+- Silent
+- Realm
+- Keep
+
+# - Sky
 - Bamboo
 - Lumpy
 - Pumpkin
+- Landing
+- Fun
+# - Island
+- Isle
+- Songs
+- Rock
+- Thunderhead
+- Inside
+
 - Faron
 - Sealed
+- Behind
+- Entry
 - Woods
+- Tree
+- Viewing
+- Platform
+- Forest
 - Deep
 - Lake
 - Floria
 - Lair
 - Flooded
 - Groosenator
+- Skyview
+- Temple
+- Spring
+- Cistern
+
 - Eldin
 - Turf
+- Thrill
 - Volcano
+- Ascent
 - Summit
 - Eruption
+- Earth
+- Sanctuary
+
 - Lanayru
+- Cache
 - Mine
 - Caves
 - Gorge
 - Sand
 - Sea
 - Time
+- Harbour
+- Retreat
 - Shipyard
 - Pirate
 - Stronghold
-- Silent
-- Realm
-- Temple
-- Skyview
-- Earth
 - Mining
 - Facility
-- Cistern
 - Sandship
-- Sanctuary
-- Keep
+
+# Minigames
+- Pull
+- High
+- Dive
+- Heaven
+- Rickety
+- Coaster
+- Clean
+- Cut
+- Round
+
+# Dowsing
+- Dowse
+- Aura
+- Detected
+- Windmill
+- Propeller
+- Party
+- Wheel
+- Generators
+- Gate
+- Basin
+- Patch
+- Plower
+- Plant
+- Species
 
 # Objects
 - Peahat
 - Chest
 - Pot
+- Barrel
+- Log
+- Sheikah
+- Tornado
+- Lava
+- Boat
+- Shed
+- Door
+- Mushroom
