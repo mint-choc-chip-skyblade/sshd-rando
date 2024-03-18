@@ -5270,9 +5270,10 @@ D200: # Earth Temple
   - name: Remove text triggers
     type: objdelete
     ids:
-      - 0xFC51 # Ledd text before Bomb Bag
-      - 0xFC52 # Bomb Bag from Ledd
-      - 0xFC5E # Fi text after bridge
+      - 0xFC51 # Ledd text before Bomb Bag (NpcTke)
+      - 0xFC52 # Bomb Bag from Ledd (NpcTke)
+      - 0xFC53 # 5 Bombs from Ledd (NpcTke)
+      - 0xFC5E # Fi text after bridge (NpcTke)
     layer: 0
     room: 1
     objtype: OBJ
