@@ -2932,6 +2932,16 @@ F202: # Bokoblin Base
     endid: 0xFC13
     layer: 1
     objtype: STAG
+  - name: Move loadzone into Boko Base Volcano Summit
+    type: objpatch
+    id: 0xFC22
+    layer: 1
+    room: 5
+    objtype: STAG
+    object:
+      posx: 13150
+      posy: 15000
+      posz: -23950
   - name: Add ammo pot to Volcano Entry Bird Statue # Can't get to this one
     onlyif: ammo_availability == plentiful
     type: objadd
