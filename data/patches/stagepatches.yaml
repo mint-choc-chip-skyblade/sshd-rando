@@ -5309,14 +5309,6 @@ D200: # Earth Temple
     objtype: OBJ
     object:
       untrigstoryfid: 2047
-  - name: Bombs from Ledd
-    type: objpatch
-    id: 0xFC53
-    layer: 0
-    room: 1
-    objtype: OBJ
-    object:
-      trigscenefid: 9
   - name: Change untrigger of lavafall in front of Boss Door
     type: objpatch
     id: 0xFC1F
