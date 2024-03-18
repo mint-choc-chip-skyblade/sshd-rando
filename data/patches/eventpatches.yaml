@@ -2257,6 +2257,46 @@
     index: 21
     flow:
       next: -1
+  - name: Patch Ledd text before Gift
+    type: flowpatch
+    index: 7
+    flow:
+      next: Check if already given Gift
+  - name: Check if already given Gift
+    type: checksceneflag
+    flow:
+      checksceneflag: 45 # Received Ledd's Gift
+    cases:
+      - 90 # Continue as normal
+      - Check if defeated Lizalfos
+  - name: Check if defeated Lizalfos
+    type: checksceneflag
+    flow:
+      checksceneflag: 2 # Double Lizalfos Defeated
+    cases:
+      - Show Attention Mark
+      - 90 # Continue as normal
+  - name: Show Attention Mark
+    type: attentionmark
+    flow:
+      next: 89 # Give item
+  - name: Goto Give sceneflag after Gift
+    type: flowpatch
+    index: 16
+    flow:
+      next: Give Gift sceneflag
+  - name: Give Gift sceneflag
+    type: setsceneflag
+    flow:
+      sceneindex: 14 # Earth Temple
+      setsceneflag: 45
+      next: 17 # post-Gift text
+  - name: Always give same post-gift text
+    type: flowpatch
+    index: 91
+    flow:
+      next: 12
+
 
 302-Anahori:
   - name: To Mitts Check
