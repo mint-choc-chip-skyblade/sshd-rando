@@ -77,7 +77,7 @@
     Sealed Temple: Nothing
   locations:
     Temple of Hylia - Zelda's Blessing: Nothing
-    Hylia's Realm - Defeat Demise: Sword and Complete_Triforce # TODO
+    Hylia's Realm - Defeat Demise: Goddess_Sword and Complete_Triforce and Can_Obtain_a_Shield
 
 # - name: Behind the Temple North Door
 #   exits:
