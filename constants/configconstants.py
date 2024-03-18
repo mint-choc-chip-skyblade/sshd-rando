@@ -93,9 +93,9 @@ DEFAULT_SETTINGS = {
         "Lumpy Pumpkin - Harp Duet with Kina",
         "Lumpy Pumpkin - Deliver Mogma to Kina",
         "Fun Fun Island - 500 Rupees in Dodoh's High Dive",
-        "The Sky - Form a Squirrel Ring above Volcanic Island",
-        "The Sky - Form a Squirrel Ring above Lumpy Pumpkin",
-        "The Sky - Form a Squirrel Ring above Bamboo Island",
+        "The Sky - Form a Swirrell Ring above Volcanic Island",
+        "The Sky - Form a Swirrell Ring above Lumpy Pumpkin",
+        "The Sky - Form a Swirrell Ring above Bamboo Island",
         "Inside the Thunderhead - Song from Levias",
         "Bug Heaven - 10 Bugs in 3 Minutes",
         "Shipyard - Heart Stopping Rickety Coaster Track in 1'05",
@@ -261,6 +261,9 @@ LOCATION_ALIASES = {
     "Fire Sanctuary - Rescue Second Trapped Mogma Chest": "Fire Sanctuary - Chest from Second Trapped Mogma",
     "Sky Keep - First Chest": "Sky Keep - Chest in First Room",
     "Sky Keep - Chest after Dreadfuse": "Sky Keep - Chest after Dreadfuse Fight",
+    "The Sky - Form a Squirrel Ring above Volcanic Island": "The Sky - Form a Swirrell Ring above Volcanic Island",
+    "The Sky - Form a Squirrel Ring above Lumpy Pumpkin": "The Sky - Form a Swirrell Ring above Lumpy Pumpkin",
+    "The Sky - Form a Squirrel Ring above Bamboo Island": "The Sky - Form a Swirrell Ring above Bamboo Island",
 }
 
 SETTING_ALIASES = {
