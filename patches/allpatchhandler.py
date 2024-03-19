@@ -1,4 +1,4 @@
-from filepathconstants import OBJECTPACK_PATH_TAIL, SSHD_EXTRACT_PATH
+from filepathconstants import SSHD_EXTRACT_PATH
 from gui.dialogs.dialog_header import print_progress_text, update_progress_value
 from logic.world import World
 from patches.asmpatchhandler import ASMPatchHandler
@@ -12,7 +12,6 @@ from patches.entrancepatchhandler import (
     determine_entrance_patches,
     patch_required_dungeon_text_trigger,
 )
-from patches.objectpackpatchhandler import patch_object_pack
 from patches.stagepatchhandler import StagePatchHandler
 from patches.eventpatchhandler import EventPatchHandler
 from patches.dynamictextpatches import add_dynamic_text_patches
@@ -72,8 +71,6 @@ class AllPatchHandler:
         determine_entrance_patches(
             self.world.get_shuffled_entrances(), self.stage_patch_handler
         )
-
-        patch_object_pack(self.world.config.output_dir / OBJECTPACK_PATH_TAIL)
 
         print_progress_text("Patching Stages")
         patch_required_dungeon_text_trigger(self.world, self.stage_patch_handler)
