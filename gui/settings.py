@@ -856,8 +856,9 @@ class Settings:
             write_config_to_file(selected_preset_path, self.config)
             self.settings = self.config.settings[0].settings
 
-            self.config.seed = get_new_seed()
+            self.new_seed()
             self.update_from_config()
+            self.main.config = self.config  # ¯\_(ツ)_/¯
 
     def update_hash(self):
         self.config.hash = ""
