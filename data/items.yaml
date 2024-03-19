@@ -792,7 +792,7 @@
   types:
     - Treasures
     - Minor Items
-  oarc: null # ObjectPack
+  oarc: GetSozaiL
   getarcname: GetSozaiL
   getmodelname: GetSozaiL
 - id: 173
@@ -808,7 +808,7 @@
   types:
     - Treasures
     - Minor Items
-  oarc: null # ObjectPack
+  oarc: GetSozaiN
   getarcname: GetSozaiN
   getmodelname: GetSozaiN
 - id: 175
@@ -816,7 +816,7 @@
   types:
     - Treasures
     - Minor Items
-  oarc: null # ObjectPack
+  oarc: GetSozaiO
   getarcname: GetSozaiO
   getmodelname: GetSozaiO
 - id: 176
@@ -824,7 +824,7 @@
   types:
     - Treasures
     - Minor Items
-  oarc: null # ObjectPack
+  oarc: GetSozaiP
   getarcname: GetSozaiP
   getmodelname: GetSozaiP
 - id: 177
