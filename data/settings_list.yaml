@@ -362,6 +362,16 @@
     - any_surface_region: "You will start the game at any surface region entrance or in Link's Bedroom."
     - anywhere: "You will start the game at any valid entrance."
 
+- name: limit_starting_spawn
+  default_option: "off"
+  pretty_name: Limit Starting Spawn
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "If you spawn in a surface region, you may spawn in any surface province."
+    - "on": "If you spawn in a surface region, you may only spawn in a province whose tablet you start with."
+
 - name: randomize_dungeon_entrances
   default_option: "off"
   pretty_name: Randomize Dungeon Entrances
