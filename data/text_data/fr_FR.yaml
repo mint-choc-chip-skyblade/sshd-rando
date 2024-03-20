@@ -56,8 +56,8 @@
   cryptic:
 
 - name: Great Tree
-  standard: Interieur de l'Arbre géant
-  pretty: l'<Interieur de l'Arbre géant>
+  standard: Intérieur de l'Arbre géant
+  pretty: l'<Intérieur de l'Arbre géant>
   cryptic:
 
 - name: Flooded Faron Woods
@@ -211,7 +211,7 @@
   standard: "Il y a beaucoup des lectures fortes. Je vous conseille\nde compléter tous les donjons."
 
 - name: Fi Information Text Patch
-  standard: "Oui, Maître. Quel information voulez-vous ?\n[1]Indices[2]Notes[3]Donjons Obligés[4-]Pas grave."
+  standard: "Oui, Maître. Quel information voulez-vous ?\n[1]Indices[2]Notes[3]Donjons requis[4-]Pas grave."
 
 - name: Fi Objective Text Template
   standard:

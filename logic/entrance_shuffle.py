@@ -326,7 +326,7 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
                 "Sealed Grounds",
                 "Faron Woods",
                 "Lake Floria",
-                "Inside the Great Tree",
+                "Great Tree",
             }
         if world.starting_item_pool[world.get_item(RUBY_TABLET)] == 0:
             banned_spawn_regions |= {
@@ -367,7 +367,7 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
                 "Skyloft Village",
                 "Bazaar",
                 "Batreaux's House",
-                "The Sky",
+                "Sky",
                 "Inside the Thunderhead",
             }
             for entrance_type in ["Door", "Interior", "Overworld", "Spawn"]:
