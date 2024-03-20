@@ -4859,29 +4859,33 @@ D100: # Skyview Temple
     room: 7
     objtype: OBJ
 
-  - name: Bar conected to chest
+  - name: Patch DieTag to Directly Open the Chest
     type: objpatch
-    id: 0x1018
-    layer: 2
-    room: 10
-    objtype: OBJS
-    object:
-      setscenefid: 13 # 0x0 20 (0xD)
-  - name: Bar conected to chest
-    type: objpatch
-    id: 0x1018
-    layer: 1
-    room: 10
-    objtype: OBJS
-    object:
-      setscenefid: 13 # 0x0 20
-  - name: Always open Bar from inside Beetle Room
-    type: objpatch
-    index: 6
+    id: 0xFC0B
     layer: 0
-    objtype: DOOR
+    room: 10
+    objtype: STAG
     object:
-      anglex: 0xFF09 # remove inside sceneflag
+      setscenefid: 14 # Chest spawned
+  - name: Add TgTimer to set door sceneflag
+    type: objadd
+    layer: 0
+    room: 10
+    objtype: STAG
+    object:
+      params1: 0 # will become 0x0D0E0101
+      params2: 0xFFFFFFFF
+      posx: 0
+      posy: -210
+      posz: -8115
+      sizex: 100
+      sizey: 100
+      sizez: 100
+      subtype: 1
+      timer: 1 # 1*30 (frames??)
+      trigscenefid: 14 # Chest spawned
+      setscenefid: 13 # Door opened from inside
+      name: TgTimer
 
 B100: # Skyview boss room
   - name: Layer override
