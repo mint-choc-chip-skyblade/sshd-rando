@@ -422,7 +422,6 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
                 obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 0, value)
             else:
                 raise Exception(unsupported_prop_execption)
-
         else:
             raise Exception(unsupported_prop_execption)
 
@@ -480,6 +479,24 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
         else:
             raise Exception(unsupported_prop_execption)
 
+    elif obj["name"] == "TgTimer":
+        if prop == "subtype":
+            obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 0, value)
+        elif prop == "timer":
+            obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 8, value)
+        elif prop == "trigscenefid":
+            obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 16, value)
+        elif prop == "setscenefid":
+            obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 24, value)
+        else:
+            raise Exception(unsupported_prop_execption)
+
+    elif obj["name"] == "DieTag":
+        if prop == "setscenefid":
+            obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 4, value)
+        else:
+            raise Exception(unsupported_prop_execption)
+
     elif obj["name"] == "PushBlk":
         if prop == "pathIdx":
             obj["params1"] = mask_shift_set(obj["params1"], 0xFF, 4, value)
@@ -498,8 +515,8 @@ def patch_additional_properties(obj: dict, prop: str, value: int):
 
 def object_add(bzs: dict, object_add: dict, nextid: int) -> int:
     layer = object_add.get("layer", None)
-    object_type = object_add["objtype"].ljust(4)
-    obj = object_add["object"]
+    object_type: str = object_add["objtype"].ljust(4)
+    obj: dict = object_add["object"]
     return_nextid_increment = 0
 
     # populate with default object as a base
@@ -529,6 +546,10 @@ def object_add(bzs: dict, object_add: dict, nextid: int) -> int:
             raise Exception(
                 f"Cannot use wrong index on added object: {json.dumps(object_add)}"
             )
+
+    # Assign the name first so additional properties can be listed in any order
+    if obj_name := obj.get("name"):
+        new_object["name"] = obj_name
 
     # populate provided properties
     for prop, value in obj.items():
