@@ -185,10 +185,10 @@
 
 # Fi text
 - name: No Fi Hints Text
-  standard: "Maître, <r<je n'ai malheureusement pas d'indices>> pour vous."
+  standard: "Maître, <r<je n'ai malheureusement pas d'indices>>\npour vous."
 
 - name: Fi Note No More Information Text
-  standard: "Maître, je n'ai pas d'autres informations à vous communiquer."
+  standard: "Maître, je n'ai pas d'autres informations à vous\ncommuniquer."
 
 - name: Fi Warp Text
   standard: "Que voulez-vous faire ?\n[1]Téléporter au début[2]Utiliser amiibo[3-]Pas grave."
