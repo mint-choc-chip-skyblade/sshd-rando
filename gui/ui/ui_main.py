@@ -936,6 +936,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_17.addWidget(self.setting_random_starting_spawn)
 
+        self.setting_limit_starting_spawn = RandoTriStateCheckBox(self.entrance_randomization_group_box)
+        self.setting_limit_starting_spawn.setObjectName(u"setting_limit_starting_spawn")
+
+        self.verticalLayout_17.addWidget(self.setting_limit_starting_spawn)
+
         self.setting_random_starting_statues = RandoTriStateCheckBox(self.entrance_randomization_group_box)
         self.setting_random_starting_statues.setObjectName(u"setting_random_starting_statues")
 
@@ -2401,6 +2406,7 @@ class Ui_main_window(object):
         self.setting_randomize_dungeon_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Dungeon Entrances", None))
         self.setting_randomize_trial_gate_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Trial Gate Entrances", None))
         self.random_starting_spawn_label.setText(QCoreApplication.translate("main_window", u"Randomize Starting Spawn", None))
+        self.setting_limit_starting_spawn.setText(QCoreApplication.translate("main_window", u"Limit Starting Spawn", None))
         self.setting_random_starting_statues.setText(QCoreApplication.translate("main_window", u"Random Starting Statues", None))
         self.setting_decouple_double_doors.setText(QCoreApplication.translate("main_window", u"Decouple Double Door Entrances", None))
         self.setting_decouple_entrances.setText(QCoreApplication.translate("main_window", u"Decouple Entrances", None))

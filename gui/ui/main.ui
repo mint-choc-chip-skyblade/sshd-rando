@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1275</width>
+    <width>1387</width>
     <height>845</height>
    </rect>
   </property>
@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -498,9 +498,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <property name="editable">
                      <bool>false</bool>
                     </property>
-                    <property name="placeholderText">
-                     <string>Select Font Family</string>
-                    </property>
                     <property name="fontFilters">
                      <set>QFontComboBox::ScalableFonts</set>
                     </property>
@@ -509,6 +506,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
                       <family>Arial</family>
                       <pointsize>10</pointsize>
                      </font>
+                    </property>
+                    <property name="placeholderText" stdset="0">
+                     <string>Select Font Family</string>
                     </property>
                    </widget>
                   </item>
@@ -1355,6 +1355,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <widget class="QComboBox" name="setting_random_starting_spawn"/>
            </item>
            <item>
+            <widget class="QCheckBox" name="setting_random_starting_spawn">
+             <property name="text">
+              <string>Limit Starting Spawn</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="RandoTriStateCheckBox" name="setting_random_starting_statues">
              <property name="text">
               <string>Random Starting Statues</string>
@@ -1793,7 +1800,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <layout class="QHBoxLayout" name="included_locations_filter_layout">
              <item>
               <widget class="QComboBox" name="included_locations_type_filter">
-               <property name="placeholderText">
+               <property name="placeholderText" stdset="0">
                 <string/>
                </property>
               </widget>

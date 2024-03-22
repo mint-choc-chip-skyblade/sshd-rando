@@ -1,0 +1,224 @@
+# Thanks to JadeMinibou for helping with the translation
+# Hint Areas
+
+- name: Knight Academy
+  standard: École de Chevalerie
+  pretty: l'<École de Chevalerie>
+  cryptic:
+
+- name: Upper Skyloft
+  standard: Célesbourg du nord
+  pretty: Célesbourg du nord
+  cryptic:
+
+- name: Central Skyloft
+  standard: Célesbourg central
+  pretty: Célesbourg central
+  cryptic:
+
+- name: Skyloft Village
+  standard: Village de Célesbourg
+  pretty: le <Village de Célesbourg>
+  cryptic:
+
+- name: Batreaux's House
+  standard: Maison de Morcego
+  pretty: la <Maison de Morcego>
+  cryptic:
+
+- name: Beedle's Shop
+  standard: Boutique de Terry
+  pretty: la <Boutique de Terry>
+  cryptic:
+
+- name: Sky
+  standard: Le Ciel
+  pretty: le <Ciel>
+  cryptic:
+
+- name: Inside the Thunderhead
+  standard: Cumulonimbus
+  pretty: le <Cumulonimbus>
+  cryptic:
+
+- name: Sealed Grounds
+  standard: Vallon du Sceau
+  pretty: le <Vallon du Sceau>
+  cryptic:
+
+- name: Temple of Hylia
+  standard: Temple d'Hylia
+  pretty: le <Temple d'Hylia>
+  cryptic:
+
+- name: Faron Woods
+  standard: Forêt de Firone
+  pretty: la <Forêt de Firone>
+  cryptic:
+
+- name: Great Tree
+  standard: Intérieur de l'Arbre géant
+  pretty: l'<Intérieur de l'Arbre géant>
+  cryptic:
+
+- name: Flooded Faron Woods
+  standard: Forêt de Firone inondée
+  pretty: la <Forêt de Firone inondée>
+  cryptic:
+
+- name: Lake Floria
+  standard: Lac Faroria
+  pretty: Lac Faroria
+  cryptic:
+
+- name: Eldin Volcano
+  standard: Volcan d'Ordinn
+  pretty: le <Volcan d'Ordinn>
+  cryptic:
+
+# I hate how Mogma Turf is only a think in English (and not really even then)
+# If someone has a better translation for this, please let me know ^^'
+- name: Mogma Turf
+  standard: Territoire des Mogmas
+  pretty: le <Territoire des Mogmas>
+  cryptic:
+
+- name: Volcano Summit
+  standard: Sommet du Volcan
+  pretty: le <Sommet du Volcan>
+  cryptic:
+
+- name: Bokoblin Base
+  standard: Base des Bokoblins
+  pretty: la <Base des Bokoblins>
+  cryptic:
+
+- name: Lanayru Mine
+  standard: Mines de Lanelle
+  pretty: les <Mines de Lanelle>
+  cryptic:
+
+- name: Lanayru Desert
+  standard: Désert de Lanelle
+  pretty: le <Désert de Lanelle>
+  cryptic:
+
+- name: Temple of Time
+  standard: Temple du Temps
+  pretty: le <Temple du Temps>
+  cryptic:
+
+- name: Lanayru Caves
+  standard: Grotte de Lanelle
+  pretty: la <Grotte de Lanelle>
+  cryptic:
+
+- name: Ancient Harbour
+  standard: Port Ancien
+  pretty: Port Ancien
+  cryptic:
+
+- name: Lanayru Sand Sea
+  standard: Mer de Sable de Lanelle
+  pretty: la <Mer de Sable de Lanelle>
+  cryptic:
+
+- name: Lanayru Gorge
+  standard: Gorges de Lanelle
+  pretty: les <Gorges de Lanelle>
+  cryptic:
+
+- name: Skyview Temple
+  standard: Temple de la Contemplation
+  pretty: le <Temple de la Contemplation>
+  cryptic:
+
+- name: Earth Temple
+  standard: Temple de la Terre
+  pretty: le <Temple de la Terre>
+  cryptic:
+
+- name: Lanayru Mining Facility
+  standard: Raffinerie de Lanelle
+  pretty: la <Raffinerie de Lanelle>
+  cryptic:
+
+- name: Ancient Cistern
+  standard: Grande Caverne Antique
+  pretty: la <Grande Caverne Antique>
+  cryptic:
+
+- name: Sandship
+  standard: Galion des Sables
+  pretty: le <Galion des Sables>
+  cryptic:
+
+- name: Fire Sanctuary
+  standard: Grand Sanctuaire Ancien
+  pretty: le <Grand Sanctuaire Ancien>
+  cryptic:
+
+- name: Sky Keep
+  standard: Tour des Cieux
+  pretty: la <Tour des Cieux>
+  cryptic:
+
+- name: Farore's Silent Realm
+  standard: Psysalis de Farore
+  pretty: la <Psysalis de Farore>
+  cryptic:
+
+- name: Din's Silent Realm
+  standard: Psysalis de Din
+  pretty: la <Psysalis de Din>
+  cryptic:
+
+- name: Nayru's Silent Realm
+  standard: Psysalis de Nayru
+  pretty: la <Psysalis de Nayru>
+  cryptic:
+
+- name: The Goddess's Silent Realm
+  standard: Psysalis de la Déesse
+  pretty: la <Psysalis de la Déesse>
+  cryptic:
+
+# Fi text
+- name: No Fi Hints Text
+  standard: "Maître, <r<je n'ai malheureusement pas d'indices>>\npour vous."
+
+- name: Fi Note No More Information Text
+  standard: "Maître, je n'ai pas d'autres informations à vous\ncommuniquer."
+
+- name: Fi Warp Text
+  standard: "Que voulez-vous faire ?\n[1]Téléporter au début[2]Utiliser amiibo[3-]Pas grave."
+
+- name: Patch Fi Call Information Option
+  standard: "Information"
+
+- name: Patch Fi Call Use amiibo Option
+  standard: "Téléporter"
+
+- name: Forced Required Dungeons Text
+  standard: "Bienvenue dans votre nouvelle aventure, Maître. J'ai\ndes <r<informations importantes>> sur votre voyage."
+
+- name: No Required Dungeons Text
+  standard: "Je ne détecte aucun donjon avec de fortes auras divines."
+
+- name: Some Required Dungeons Text
+  standard: "Je détecte de fortes auras divines dans les donjons\nsuivants : {dungeon_text}"
+
+- name: All Required Dungeons Text
+  standard: "Je détecte de nombreuses fortes auras divines. Je vous\nconseille de compléter tous les donjons."
+
+- name: Fi Information Text Patch
+  standard: "Oui, Maître. Quelle information voulez-vous ?\n[1]Indices[2]Notes[3]Donjons requis[4-]Pas grave."
+
+- name: Fi Objective Text Template
+  standard:
+      "Votre objectif est de sortir du <b<Temple d'Hylia>> dans\nle passé et de vaincre les boss sur votre chemin.
+      \n\n\nPour ce faire, vous devez élever et ouvrir la <r<Porte du\nTemps>> dans le <b<Temple du Sceau>>.
+      \n\n\nPour élever la <r<Porte du Temps>>, vous devez acquérir la\n<y<Lyre de la Déesse>> et le <s<Chant de la Déesse>>.
+      \n\n\nPour ouvrir la <r<porte du temps>>, vous devez projeter\nun <b<éclat céleste>> avec <y<{required_sword}>>.
+      \n\n\nAprès avoir voyagé dans le passé, vous devez rassembler les\ntrois morceaux de la <y+<Triforce>>.
+      \n\n\nCela vous permettra de sortir du <b<Temple d'Hylia>> dans\nle passé et de vaincre les boss sur votre chemin."

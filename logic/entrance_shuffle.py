@@ -1,3 +1,4 @@
+from constants.itemnames import AMBER_TABLET, EMERALD_TABLET, RUBY_TABLET
 from filepathconstants import BIRD_STATUE_DATA_PATH, ENTRANCE_SHUFFLE_DATA_PATH
 from .entrance import *
 from .item import Item
@@ -318,22 +319,55 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
     # Determine all possible starting targets depending on settings
     target_pool: list[Entrance] = []
     starting_spawn_value = world.setting("random_starting_spawn").value()
+    banned_spawn_regions = set[str]({})
+    if world.setting("limit_starting_spawn").value() == "on":
+        if world.starting_item_pool[world.get_item(EMERALD_TABLET)] == 0:
+            banned_spawn_regions |= {
+                "Sealed Grounds",
+                "Faron Woods",
+                "Lake Floria",
+                "Great Tree",
+            }
+        if world.starting_item_pool[world.get_item(RUBY_TABLET)] == 0:
+            banned_spawn_regions |= {
+                "Eldin Volcano",
+                "Mogma Turf",
+                "Volcano Summit",
+                "Bokoblin Base",
+            }
+        if world.starting_item_pool[world.get_item(AMBER_TABLET)] == 0:
+            banned_spawn_regions |= {
+                "Lanayru Mine",
+                "Lanayru Desert",
+                "Temple of Time",
+                "Lanayru Caves",
+                "Ancient Harbour",
+                "Lanayru Sand Sea",
+                "Lanayru Gorge",
+            }
+
     match starting_spawn_value:
         case "vanilla":
             assert False  # Should never be hit
         case "bird_statues":
             for entrance_type in ["Bird Statue", "Spawn"]:
                 for entrance in world.get_shuffleable_entrances(entrance_type):
-                    target_pool.append(entrance.get_new_target())
+                    if (
+                        entrance.can_start_at
+                        and not entrance.parent_area.get_regions().intersection(
+                            banned_spawn_regions
+                        )
+                    ):
+                        target_pool.append(entrance.get_new_target())
         case "any_surface_region":
-            banned_spawn_regions = {
+            banned_spawn_regions |= {
                 "Knight Academy",
                 "Upper Skyloft",
                 "Central Skyloft",
                 "Skyloft Village",
                 "Bazaar",
-                "Batreaux",
-                "The Sky",
+                "Batreaux's House",
+                "Sky",
                 "Inside the Thunderhead",
             }
             for entrance_type in ["Door", "Interior", "Overworld", "Spawn"]:
@@ -357,7 +391,12 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
                 "Spawn",
             ]:
                 for entrance in world.get_shuffleable_entrances(entrance_type):
-                    if entrance.can_start_at:
+                    if (
+                        entrance.can_start_at
+                        and not entrance.parent_area.get_regions().intersection(
+                            banned_spawn_regions
+                        )
+                    ):
                         target_pool.append(entrance.get_new_target())
         case _:
             raise EntranceShuffleError(
