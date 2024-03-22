@@ -72,6 +72,7 @@ class Search:
                     if not loc_access.location.is_empty() or self.search_mode in [
                         SearchMode.ACCESSIBLE_LOCATIONS,
                         SearchMode.ALL_LOCATIONS_REACHABLE,
+                        SearchMode.SPHERE_ZERO,
                     ]:
                         item_locations.append(loc_access)
 
