@@ -793,6 +793,26 @@ def patch_and_write_stage(
     # don't remove any arcs that are also set to be added
     remove_arcs = remove_arcs - add_arcs
 
+    # If this isn't layer 0, remove any arcs that layer 0 will have
+    if layer != 0:
+        stage_l0_path = Path(stage_path.as_posix().replace(f"l{layer}", "l0"))
+        stage_l0_u8 = U8File.get_parsed_U8_from_path(stage_l0_path, True)
+        # Get the arcs that layer 0 already has
+        l0_arcs = set([path.replace("/oarc/", "").replace(".arc", "") for path in stage_l0_u8.get_all_paths() if "oarc/" in path])
+        # Subtract the arcs which will be removed
+        l0_arcs -= set(stage_oarc_remove.get((stage, 0), []))
+        # Add the arcs which will be added
+        l0_arcs |= set(stage_oarc_add.get((stage, 0), []))
+
+        # Get the arcs for the current layer
+        stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+        this_layer_arcs = set([path.replace("/oarc/", "").replace(".arc", "") for path in stage_u8.get_all_paths() if "oarc/" in path])
+        # If any arcs are currently on this layer and layer 0, remove them from this layer
+        remove_arcs |= l0_arcs.intersection(this_layer_arcs)
+        # Don't add arcs which layer 0 already has
+        add_arcs -= l0_arcs
+        stage_u8 = None
+
     if len(remove_arcs) > 0:
         stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
 
@@ -1032,7 +1052,7 @@ def patch_and_write_stage(
     if stage_u8 is not None:
         print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
         write_bytes_create_dirs(modified_stage_path, stage_u8.build_and_compress_U8())
-    elif layer == 0 or layer in STAGE_FILES_TO_ALWAYS_PATCH.get(stage, tuple()):
+    else:
         print_progress_text(f"Copying Stage: {stage}\tLayer: {layer}")
         write_bytes_create_dirs(modified_stage_path, stage_path.read_bytes())
 
