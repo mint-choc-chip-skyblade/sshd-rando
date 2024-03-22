@@ -1629,27 +1629,6 @@ F100_1: # Great Tree
       layer: 2 # Layer with Water Dragon after Tadtones appear
       room: 0
       entrance: 5 # New GT -> Flooded GT entrance
-  - name: Waterdragon in Great Tree
-    type: oarcadd
-    destlayer: 0
-    oarc:
-      - Waterdragon
-  - name: Add WaterDragon to Inside Great Tree
-    type: objadd
-    layer: 0
-    room: 0
-    objtype: OBJ
-    object:
-      params1: 0xFFFFFCFF
-      params2: 0xFF5FFFFF
-      posx: -864.560546875
-      posy: 3350
-      posz: 513.1231689453125
-      anglex: 65535
-      angley: 19660
-      anglez: 20392
-      id: 0x0065
-      name: NpcAdr
 
 F101: # Deep Woods
   - name: Layer override
