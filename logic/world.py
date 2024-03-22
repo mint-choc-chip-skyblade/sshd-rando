@@ -329,6 +329,7 @@ class World:
         # with the pre-planned item placements
         self.place_plandomizer_items()
         self.place_vanilla_items()
+        self.set_nonprogress_locations()
         # TODO: Initial entrance time cache
 
     def place_vanilla_items(self) -> None:
@@ -383,7 +384,6 @@ class World:
     def perform_post_entrance_shuffle_tasks(self) -> None:
         self.assign_all_areas_hint_regions()
         self.choose_required_dungeons()
-        self.set_nonprogress_locations()
 
     def assign_all_areas_hint_regions(self):
         for area in self.areas.values():
@@ -447,6 +447,12 @@ class World:
             dungeon.required = True
             logging.getLogger("").debug(f"Chose {dungeon} as required dungeon")
 
+        # Set dungeon locations which should be barren as non-progress
+        for dungeon in self.dungeons.values():
+            if dungeon.should_be_barren():
+                for location in dungeon.locations:
+                    location.progression = False
+
     def set_nonprogress_locations(self):
         # Set excluded locations as non-progress
         for location_name in (
@@ -455,15 +461,15 @@ class World:
         ):
             self.get_location(location_name).progression = False
 
+        # Set disabled shuffle locations as non-progress
+        for location in get_disabled_shuffle_locations(
+            self.location_table, self.config
+        ):
+            location.progression = False
+
         # Sky Keep will never be a required dungeon with empty unrequired dungeons
         if self.setting("empty_unrequired_dungeons") == "on":
             self.dungeons["Sky Keep"].required = False
-
-        # Set dungeon locations which should be barren as non-progress
-        for dungeon in self.dungeons.values():
-            if dungeon.should_be_barren():
-                for location in dungeon.locations:
-                    location.progression = False
 
         # Set beedle's shop items as nonprogress if they can only contain junk
         if self.setting("beedle_shop_shuffle") == "junk_only":

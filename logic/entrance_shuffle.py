@@ -320,7 +320,7 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
     target_pool: list[Entrance] = []
     starting_spawn_value = world.setting("random_starting_spawn").value()
     banned_spawn_regions = set[str]({})
-    if world.setting("limit_starting_spawn").value() == "on":
+    if world.setting("limit_starting_spawn") == "on":
         if world.starting_item_pool[world.get_item(EMERALD_TABLET)] == 0:
             banned_spawn_regions |= {
                 "Sealed Grounds",
