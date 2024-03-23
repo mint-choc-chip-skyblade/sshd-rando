@@ -7,6 +7,7 @@ import math
 
 def generate_hints(worlds: list[World]) -> None:
     print_progress_text("Generating Hints")
+    sanitize_major_items(worlds)
     calculate_possible_path_locations(worlds)
     calculate_possible_barren_regions(worlds)
 
@@ -66,6 +67,55 @@ def generate_hints(worlds: list[World]) -> None:
             )
         if "fi_hints" in hints_for_category:
             world.fi_hints = hints_for_category["fi_hints"]
+
+
+# Set some items as non-major depending on certain conditions.
+# All items are placed at this point, so we'll loop through and check
+# all locations individually.
+def sanitize_major_items(worlds: list[World]) -> None:
+
+    # If the player starts with any item in this list
+    # then the rest of that item are not major items
+    one_then_junk_items = [
+        PROGRESSIVE_BOW,
+        PROGRESSIVE_BUG_NET,
+        PROGRESSIVE_SLINGSHOT,
+        PROGRESSIVE_POUCH,
+        EMPTY_BOTTLE,
+    ]
+
+    for world in worlds:
+        for location in world.get_all_item_locations():
+            item = location.current_item
+            if (
+                (
+                    item.name in one_then_junk_items
+                    and world.starting_item_pool[item] > 0
+                )
+                or (
+                    # If Earth Temple is not a required dungeon when Empty Unrequired
+                    # Dungeons is on and dungeon entrances aren't randomized, then
+                    # Key Pieces are not major items.
+                    item == world.get_item(KEY_PIECE)
+                    and world.get_dungeon("Earth Temple").should_be_barren()
+                    and world.setting("randomize_dungeon_entrances") == "off"
+                )
+                or (
+                    # If all of this item's chain locations are not progression, then
+                    # the item is not a major item.
+                    all(
+                        [
+                            True if not world.get_location(loc).progression else False
+                            for loc in item.chain_locations
+                        ]
+                    )
+                    and len(item.chain_locations) > 0
+                )
+            ):
+                item.is_major_item = False
+                logging.getLogger("").debug(
+                    f"{item} is not a major item anymore for {world}"
+                )
 
 
 def calculate_possible_path_locations(worlds: list[World]) -> None:
