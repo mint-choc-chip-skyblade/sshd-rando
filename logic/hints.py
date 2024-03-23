@@ -113,7 +113,9 @@ def sanitize_major_items(worlds: list[World]) -> None:
                 )
             ):
                 item.is_major_item = False
-                logging.getLogger("").debug(f"{item} is not a major item anymore for {world}")
+                logging.getLogger("").debug(
+                    f"{item} is not a major item anymore for {world}"
+                )
 
 
 def calculate_possible_path_locations(worlds: list[World]) -> None:
