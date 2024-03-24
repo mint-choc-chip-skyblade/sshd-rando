@@ -69,6 +69,7 @@ def build_location_table(world: "World | None" = None) -> dict[str, Location]:
 def get_disabled_shuffle_locations(
     location_table: dict[str, Location],
     config: Config,
+    ui_mode: bool = False,
 ) -> list[Location]:
     settings = config.settings[0].settings
 
@@ -91,7 +92,13 @@ def get_disabled_shuffle_locations(
                 and "Goddess Chests" in location.types
             )
             or (
-                settings["stamina_fruit_shuffle"].value == "off"
+                (
+                    settings["stamina_fruit_shuffle"].value == "off"
+                    or (
+                        not ui_mode
+                        and location.name in config.settings[0].excluded_locations
+                    )
+                )
                 and "Stamina Fruits" in location.types
             )
             or (
