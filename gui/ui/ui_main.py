@@ -1168,6 +1168,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_10.addWidget(self.setting_npc_closet_shuffle)
 
+        self.setting_vanilla_excluded_shuffles = RandoTriStateCheckBox(self.shuffles_group_box)
+        self.setting_vanilla_excluded_shuffles.setObjectName(u"setting_vanilla_excluded_shuffles")
+
+        self.verticalLayout_10.addWidget(self.setting_vanilla_excluded_shuffles)
+
         self.shuffles_vspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_10.addItem(self.shuffles_vspacer)
@@ -2439,6 +2444,7 @@ class Ui_main_window(object):
         self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruit Shuffle", None))
         self.setting_hidden_item_shuffle.setText(QCoreApplication.translate("main_window", u"Hidden Item Shuffle", None))
         self.npc_closet_shuffle_label.setText(QCoreApplication.translate("main_window", u"NPC Closets", None))
+        self.setting_vanilla_excluded_shuffles.setText(QCoreApplication.translate("main_window", u"Vanilla Excluded Shuffle Locations", None))
         self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))
         self.excluded_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.included_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Locations", None))

@@ -1734,6 +1734,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <widget class="QComboBox" name="setting_npc_closet_shuffle"/>
            </item>
            <item>
+            <widget class="QCheckBox" name="setting_vanilla_excluded_shuffles">
+             <property name="text">
+              <string>Vanilla Excluded Shuffle Locations</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <spacer name="shuffles_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>

@@ -117,6 +117,16 @@
     - "off": "Activating and opening Goddess Chests will not be required."
     - "on": "Goddess Chests can contain any item. Goddess Chests are activated by Skyward Striking their corresponding Goddess Cube."
 
+- name: vanilla_excluded_shuffles
+  default_option: "off"
+  pretty_name: Vanilla Excluded Shuffle Locations
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Enabled shuffles that are excluded in the location list will contain a random junk item."
+    - "on": "Enabled shuffles that are excluded in the location list will be vanilla."
+
 - name: full_wallet_upgrades
   default_option: "off"
   pretty_name: Full Wallet Upgrades

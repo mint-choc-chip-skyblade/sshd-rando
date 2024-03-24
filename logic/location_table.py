@@ -71,6 +71,8 @@ def get_disabled_shuffle_locations(
     config: Config,
 ) -> list[Location]:
     settings = config.settings[0].settings
+    vanilla_excluded = settings["vanilla_excluded_shuffles"].value == "on"
+    excluded_locs = config.settings[0].excluded_locations
 
     non_vanilla_locations = [
         location
@@ -79,46 +81,76 @@ def get_disabled_shuffle_locations(
         and "Hint Location" not in location.types
         and (
             (
-                settings["beedle_shop_shuffle"].value == "vanilla"
+                (
+                    settings["beedle_shop_shuffle"].value == "vanilla"
+                    or (vanilla_excluded and location.name in excluded_locs)
+                )
                 and "Beedle's Airshop" in location.types
             )
             or (
-                settings["gratitude_crystal_shuffle"].value == "off"
+                (
+                    settings["gratitude_crystal_shuffle"].value == "off"
+                    or (vanilla_excluded and location.name in excluded_locs)
+                )
                 and "Gratitude Crystals" in location.types
             )
             or (
-                settings["goddess_chest_shuffle"].value == "off"
+                (
+                    settings["goddess_chest_shuffle"].value == "off"
+                    or (vanilla_excluded and location.name in excluded_locs)
+                )
                 and "Goddess Chests" in location.types
             )
             or (
-                settings["stamina_fruit_shuffle"].value == "off"
+                (
+                    settings["stamina_fruit_shuffle"].value == "off"
+                    or (vanilla_excluded and location.name in excluded_locs)
+                )
                 and "Stamina Fruits" in location.types
             )
             or (
-                settings["npc_closet_shuffle"].value == "vanilla"
+                (
+                    settings["npc_closet_shuffle"].value == "vanilla"
+                    or (vanilla_excluded and location.name in excluded_locs)
+                )
                 and "Closets" in location.types
             )
             or (
-                settings["hidden_item_shuffle"].value == "off"
+                (
+                    settings["hidden_item_shuffle"].value == "off"
+                    or (vanilla_excluded and location.name in excluded_locs)
+                )
                 and "Hidden Items" in location.types
             )
             or (
-                settings["rupee_shuffle"].value == "vanilla"
+                (
+                    settings["rupee_shuffle"].value == "vanilla"
+                    or (vanilla_excluded and location.name in excluded_locs)
+                )
                 and "Freestanding Rupees" in location.types
             )
             or (
-                settings["rupee_shuffle"].value == "beginner"
+                (
+                    settings["rupee_shuffle"].value == "beginner"
+                    or (vanilla_excluded and location.name in excluded_locs)
+                )
                 and (
                     "Intermediate Rupees" in location.types
                     or "Advanced Rupees" in location.types
                 )
             )
             or (
-                settings["rupee_shuffle"].value == "intermediate"
+                (
+                    settings["rupee_shuffle"].value == "intermediate"
+                    or (vanilla_excluded and location.name in excluded_locs)
+                )
                 and "Advanced Rupees" in location.types
             )
             or (
-                settings["underground_rupee_shuffle"].value == "off"
+                (
+                    settings["underground_rupee_shuffle"].value == "off"
+                    or (vanilla_excluded and location.name in excluded_locs)
+                )
                 and "Underground Rupees" in location.types
             )
         )
