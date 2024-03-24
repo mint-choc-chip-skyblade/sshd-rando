@@ -29,7 +29,7 @@ from gui.components.list_pair import ListPair
 from gui.components.tristate_check_box import RandoTriStateCheckBox
 from gui.mixed_entrance_pools import MixedEntrancePools
 from logic.config import Config, load_config_from_file, write_config_to_file, seed_rng
-from logic.location_table import build_location_table, get_disabled_shuffle_locations
+from logic.location_table import build_location_table, get_disabled_shuffle_locations_for_ui
 from logic.settings import Setting
 from randomizer.setting_string import (
     setting_string_from_config,
@@ -756,7 +756,7 @@ class Settings:
     def get_disabled_shuffle_location_names(self) -> list[str]:
         return [
             location.name
-            for location in get_disabled_shuffle_locations(
+            for location in get_disabled_shuffle_locations_for_ui(
                 self.location_table, self.config
             )
         ]

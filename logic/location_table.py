@@ -157,3 +157,65 @@ def get_disabled_shuffle_locations(
     ]
 
     return non_vanilla_locations
+
+# separate function for the UI so locations still appear
+# in the excluded locations list if they're forced vanilla by the option
+def get_disabled_shuffle_locations_for_ui(
+    location_table: dict[str, Location],
+    config: Config,
+) -> list[Location]:
+    settings = config.settings[0].settings
+
+    non_vanilla_locations = [
+        location
+        for location in location_table.values()
+        if location.types is not None
+        and "Hint Location" not in location.types
+        and (
+            (
+                settings["beedle_shop_shuffle"].value == "vanilla"
+                and "Beedle's Airshop" in location.types
+            )
+            or (
+                settings["gratitude_crystal_shuffle"].value == "off"
+                and "Gratitude Crystals" in location.types
+            )
+            or (
+                settings["goddess_chest_shuffle"].value == "off"
+                and "Goddess Chests" in location.types
+            )
+            or (
+                settings["stamina_fruit_shuffle"].value == "off"
+                and "Stamina Fruits" in location.types
+            )
+            or (
+                settings["npc_closet_shuffle"].value == "vanilla"
+                and "Closets" in location.types
+            )
+            or (
+                settings["hidden_item_shuffle"].value == "off"
+                and "Hidden Items" in location.types
+            )
+            or (
+                settings["rupee_shuffle"].value == "vanilla"
+                and "Freestanding Rupees" in location.types
+            )
+            or (
+                settings["rupee_shuffle"].value == "beginner"
+                and (
+                    "Intermediate Rupees" in location.types
+                    or "Advanced Rupees" in location.types
+                )
+            )
+            or (
+                settings["rupee_shuffle"].value == "intermediate"
+                and "Advanced Rupees" in location.types
+            )
+            or (
+                settings["underground_rupee_shuffle"].value == "off"
+                and "Underground Rupees" in location.types
+            )
+        )
+    ]
+
+    return non_vanilla_locations
