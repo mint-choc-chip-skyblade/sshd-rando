@@ -158,6 +158,7 @@ def get_disabled_shuffle_locations(
 
     return non_vanilla_locations
 
+
 # separate function for the UI so locations still appear
 # in the excluded locations list if they're forced vanilla by the option
 def get_disabled_shuffle_locations_for_ui(
