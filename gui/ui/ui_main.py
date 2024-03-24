@@ -28,7 +28,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(1275, 845)
+        main_window.resize(1387, 845)
         main_window.setStyleSheet(u"QToolTip {color: #000000; background-color: #FFFFFF;}")
         self.central_widget = QWidget(main_window)
         self.central_widget.setObjectName(u"central_widget")
@@ -566,6 +566,11 @@ class Ui_main_window(object):
         self.setting_starry_skies.setObjectName(u"setting_starry_skies")
 
         self.verticalLayout.addWidget(self.setting_starry_skies)
+
+        self.setting_remove_enemy_music = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_remove_enemy_music.setObjectName(u"setting_remove_enemy_music")
+
+        self.verticalLayout.addWidget(self.setting_remove_enemy_music)
 
         self.line_2 = QFrame(self.tweaks_group_box)
         self.line_2.setObjectName(u"line_2")
@@ -2286,7 +2291,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2352,6 +2357,7 @@ class Ui_main_window(object):
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
         self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
         self.setting_starry_skies.setText(QCoreApplication.translate("main_window", u"Starry Skies", None))
+        self.setting_remove_enemy_music.setText(QCoreApplication.translate("main_window", u"Remove Enemy Music", None))
         self.language_label.setText(QCoreApplication.translate("main_window", u"In-Game Language", None))
         self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
         self.got_sword_requirement_label.setText(QCoreApplication.translate("main_window", u"Gate of Time Sword Requirement", None))

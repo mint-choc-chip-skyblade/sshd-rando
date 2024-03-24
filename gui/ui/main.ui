@@ -498,6 +498,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <property name="editable">
                      <bool>false</bool>
                     </property>
+                    <property name="placeholderText">
+                     <string>Select Font Family</string>
+                    </property>
                     <property name="fontFilters">
                      <set>QFontComboBox::ScalableFonts</set>
                     </property>
@@ -506,9 +509,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
                       <family>Arial</family>
                       <pointsize>10</pointsize>
                      </font>
-                    </property>
-                    <property name="placeholderText" stdset="0">
-                     <string>Select Font Family</string>
                     </property>
                    </widget>
                   </item>
@@ -837,6 +837,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <widget class="RandoTriStateCheckBox" name="setting_starry_skies">
              <property name="text">
               <string>Starry Skies</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_remove_enemy_music">
+             <property name="text">
+              <string>Remove Enemy Music</string>
              </property>
             </widget>
            </item>
@@ -1355,7 +1362,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <widget class="QComboBox" name="setting_random_starting_spawn"/>
            </item>
            <item>
-            <widget class="QCheckBox" name="setting_random_starting_spawn">
+            <widget class="RandoTriStateCheckBox" name="setting_limit_starting_spawn">
              <property name="text">
               <string>Limit Starting Spawn</string>
              </property>
@@ -1800,7 +1807,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <layout class="QHBoxLayout" name="included_locations_filter_layout">
              <item>
               <widget class="QComboBox" name="included_locations_type_filter">
-               <property name="placeholderText" stdset="0">
+               <property name="placeholderText">
                 <string/>
                </property>
               </widget>
