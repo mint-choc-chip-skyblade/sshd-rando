@@ -148,6 +148,9 @@ b.eq tgreact_spawn_custom_item
 cmp w8, #44
 b.eq academy_bell_give_custom_item
 
+cmp w8, #45
+b.eq after_item_collection_hook
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

@@ -208,3 +208,30 @@ pub fn is_kikwi_found(dont_care: *mut c_void, found_storyflag: u16) -> bool {
         }
     }
 }
+
+#[no_mangle]
+pub fn fix_ammo_counts(collected_item: flag::ITEMFLAGS) {
+    // Reset ammo counts to zero if we collect ammo, but don't
+    // have the item which corresponds to using the ammo
+    match collected_item {
+        // Bombs
+        flag::ITEMFLAGS::FIVE_BOMBS | flag::ITEMFLAGS::TEN_BOMBS => {
+            if flag::check_itemflag(flag::ITEMFLAGS::BOMB_BAG) == 0 {
+                flag::set_itemflag_or_counter_to_value(flag::ITEMFLAGS::BOMB_COUNTER, 0);
+            }
+        },
+        // Arrows
+        flag::ITEMFLAGS::SINGLE_ARROW | flag::ITEMFLAGS::BUNDLE_OF_ARROWS => {
+            if flag::check_itemflag(flag::ITEMFLAGS::BOW) == 0 {
+                flag::set_itemflag_or_counter_to_value(flag::ITEMFLAGS::ARROW_COUNTER, 0);
+            }
+        },
+        // Deku Seeds
+        flag::ITEMFLAGS::FIVE_DEKU_SEEDS | flag::ITEMFLAGS::TEN_DEKU_SEEDS => {
+            if flag::check_itemflag(flag::ITEMFLAGS::SLINGSHOT) == 0 {
+                flag::set_itemflag_or_counter_to_value(flag::ITEMFLAGS::DEKU_SEED_COUNTER, 0);
+            }
+        },
+        _ => {},
+    }
+}
