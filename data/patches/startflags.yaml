@@ -235,9 +235,6 @@ Sceneflags:
     - 4 # Pushed log from BtT to Faron Woods
     - 7 # Activated vents
     - 13 # Unlocked Sealed Temple big door
-    - 21 # Ballad of the Goddess played with Impa
-    - 28 # Groose metting Impa first time cutscene
-    - 29 # Harp Tutorial completed
     - 55 # Watched First time landing Cutscene
     - 72 # Revealed Behind the Temple Gossip Stone
     - random_starting_statues == off:
