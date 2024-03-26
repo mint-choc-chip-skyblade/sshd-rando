@@ -219,9 +219,6 @@
 - name: Thunderdragon Thank you text
   standard: "Thank you for saving me."
 
-- name: botg context text
-  standard: "I see you have acquired the <y<Goddess's\nHarp>>. Well done. Let me teach you a <b<song>>,\nit will be useful for your adventure."
-
 - name: Patch Fi text before Demise
   standard: "Master <heroname>, I have\nimportant information for you.\n\n\nMy analysis indicates a 100% chance\nthat entering this portal will\n<r<conclude>> your journey.\n\nAre you ready to proceed?\n[1]I'm ready![2-]Not yet..."
 

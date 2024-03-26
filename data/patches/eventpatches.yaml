@@ -2748,61 +2748,53 @@
       next: 492
 
 501-Inpa:
-  - name: botg context text
-    type: textadd
-  - name: show botg context text
-    type: flowadd
-    flow:
-      type: type1
-      next: set 2x20 in lieu of botg tutorial
-      param3: 302
-      param4: botg context text
-  - name: botg cutscene skip to harp
+  - name: Patch start of The Old One text
     type: flowpatch
-    index: 264
+    index: 1
+    flow: {}
+    cases:
+      - Check for Harp
+      - Check for Harp
+  - name: Check for Harp
+    type: checkstoryflag
     flow:
-      next: show botg context text
-  - name: set 2x20 in lieu of botg tutorial
-    type: flowadd
+      checkstoryflag: 9 # Has harp
+    cases:
+      - Check if already Received Item
+      - 132 # Continue as normal
+  - name: Check if already Received Item
+    type: checksceneflag
     flow:
-      type: type3
-      subType: 1
-      param1: 29
-      param2: 10
-      next: 267
-      param3: 2
-  - name: End after item get
+      checksceneflag: 29
+    cases:
+      - 132 # Continue as normal
+      - Show Attention Mark
+  - name: Show Attention Mark
+    type: attentionmark
+    flow:
+      next: 47 # Set camera
+  - name: Go from Set Camera to make Player Walk
     type: flowpatch
-    index: 267
+    index: 47
     flow:
+      next: 19 # Make player walk towards The Old One
+  - name: Start Harp Tutorial after Walking
+    type: flowpatch
+    index: 19
+    flow:
+      next: 44 # The Old One starts talking about the Harp
+  - name: Don't raise the Gate of Time afterwards
+    type: flowpatch
+    index: 268
+    flow:
+      next: Unset Watched Groose Cutscene Storyflag
+  # Prevents you being locked into playing the harp if you re-enter
+  - name: Unset Watched Groose Cutscene Storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 135 # Watch Groose Pre-Harp Tutorial Cutscene
+      param3: 1 # actually unset the flag
       next: -1
-  # - name: Raise GoT
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 0
-  #     param1: 0
-  #     param2: 340 # Raise GoT
-  #     next: 267
-  #     param3: 0
-
-  # - name: Groose 1
-  #   type: flowpatch
-  #   index: 56
-  #   flow:
-  #     next: Set sf 1
-  # - name: Set sf 1
-  #   type: setsceneflag
-  #   flow:
-  #     sceneindex: 10
-  #     setsceneflag: 28 # groose cs watched
-  #     next: Set sf 2
-  # - name: Set sf 2
-  #   type: setsceneflag
-  #   flow:
-  #     sceneindex: 10
-  #     setsceneflag: 21 # botg played
-  #     next: -1
 
 502-CenterFieldBack:
   - name: Zelda's Cutscene, give item from impa # this is overriding a set sceneflag, which is not needed anymore
