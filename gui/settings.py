@@ -757,7 +757,7 @@ class Settings:
         return [
             location.name
             for location in get_disabled_shuffle_locations(
-                self.location_table, self.config
+                self.location_table, self.config, True
             )
         ]
 
