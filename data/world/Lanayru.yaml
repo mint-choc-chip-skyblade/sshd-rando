@@ -453,7 +453,7 @@
     Skipper's Retreat Top: Clawshots and Whip and (Projectile_Item or logic_skippers_fast_clawshots)
     Skipper's Retreat Dock: Nothing
   locations:
-    Skipper's Retreat - Chest guarded by Quadro Baba: Nothing
+    Skipper's Retreat - Chest Guarded by Quadro Baba: Nothing
     Skipper's Retreat - Goddess Cube: Clawshots and Goddess_Sword
 
 - name: Skipper's Retreat Top
