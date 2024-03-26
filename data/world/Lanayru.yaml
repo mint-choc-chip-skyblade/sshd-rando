@@ -210,7 +210,7 @@
     Lanayru Desert - Bonk Main Node Generator: Nothing
     Lanayru Desert - Chest on Platform near Lightning Node: Clawshots
     Lanayru Desert - Slingshot Right Robot Eye above Temple of Time Exit: Slingshot
-    Lanayru Desert - Bonk Water Node Generator: Nothing
+    Lanayru Desert - Bonk Water Node Generator: Bomb_Bag or Hook_Beetle
 
 - name: Lightning Node
   events:
