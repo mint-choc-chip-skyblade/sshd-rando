@@ -266,7 +266,17 @@
         - GetFruitB
     - layerid: 2
       oarcs:
+        - Amber
+        - DoorF
+        - DoorG
         - GetHarp
+        - PLDoorLarge
+        - PLHarpPlay
+        - SwitchHarp
+        - TimeDoorA
+    - layerid: 4
+      oarcs:
+        - TimeDoorB
 
 - stage: S000
   layers:

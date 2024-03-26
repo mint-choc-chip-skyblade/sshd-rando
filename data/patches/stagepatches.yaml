@@ -4159,18 +4159,9 @@ F402: # Sealed Temple
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 132 # imp2 defeated
-        night: 0
-        layer: 4
-      # - story_flag: 13 # FS beaten
-      #   night: 0
-      #   layer: 3
-      - story_flag: 140 # groose lands in faron after harp
-        night: 0
-        layer: 2
       - story_flag: -1
-        night: 0
-        layer: 1
+        night: 2
+        layer: 0
   - name: Add ammo pot to Sealed Temple Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
@@ -4184,37 +4175,27 @@ F402: # Sealed Temple
       posy: 7599.990234
       posz: 10540
       name: Tubo
-  # objdeletes
-  - name: Remove extra Impas
-    type: objdelete
-    ids:
-      - 0xFC04 # Post-GoT raised
-      - 0xFC0B # Post-imp2
-      - 0xFC07 # Post-TMS
-      - 0xFC08 # Post-imp3
-      - 0xFC17 # Post-Levias
-    layer: 0
-    room: 2
-    objtype: OBJ
-  - name: Remove imp2 Cutscenes and extra Groose
-    type: objdelete
-    ids:
-      - 0xFC4B # Post-imp2 Groose
-      - 0xFC4C # imp2 beaten
-      - 0xFC4D # imp2 beaten
-      - 0xFC4E # Groose Tree Cutscene
-      - 0xFC4F # SotH start trigger
-    layer: 4
-    room: 2
-    objtype: OBJ
+  # - name: Remove imp2 Cutscenes and extra Groose
+  #   type: objdelete
+  #   ids:
+  #     - 0xFC4B # Post-imp2 Groose
+  #     - 0xFC4C # imp2 beaten
+  #     - 0xFC4D # imp2 beaten
+  #     - 0xFC4E # Groose Tree Cutscene
+  #     - 0xFC4F # SotH start trigger
+  #   layer: 4
+  #   room: 2
+  #   objtype: OBJ
   - name: Remove objects and triggers
     type: objdelete
     ids:
       - 0xFC06 # Tree of Life
-      - 0xFC4B # Groose before Harp Tutorial Cutscene
-      - 0xFC49 # Impa text near door after GoT
-      - 0xFC4C # Impa text before imp 2 trigger
-    layers: [0, 2, 2, 3]
+      # - 0xFC49 # Impa text near door after GoT
+      # - 0xFC4B # Groose before Harp Tutorial Cutscene
+      # - 0xFC4F # Pre-harp tutorial 1
+      # - 0xFC52 # Pre-harp tutorial 2
+      # - 0xFC4C # Impa text before imp 2 trigger
+    layers: [0,] # 2, 2, 2, 2, 3]
     room: 2
     objtype: OBJ
   - name: Remove fake Faron trial dowsing target
@@ -4255,6 +4236,62 @@ F402: # Sealed Temple
     objtype: STAG
     object:
       params1: 0xFF03FF05 # scenlink: 5 - skip cutscene of GoT opening
+  - name: Move open GoT stuff to layer 0
+    type: objmove
+    ids:
+      - 0xFC55 # GoT Opening cutscene
+      - 0xFC4A # Open GoT
+    layer: 4
+    destlayer: 0
+    room: 2
+    objtypes: [STAG, OBJ]
+  - name: Move objects from layer 2 to layer 0
+    type: objmove
+    ids:
+      - 0xFC4A # Closed Gate of Time
+      - 0xFC4E # BotG check
+      - 0xFC50 # Playing BotG SwHrp
+      - 0xFC51 # Harp Tutorial SwHrp
+      - 0xFC54 # Right Zelda door
+      - 0xFC55 # Left Zelda door
+      - 0xFC56 # Amber Zelda
+    layer: 2
+    destlayer: 0
+    room: 2
+    objtype: OBJ
+  - name: Move Cam2Tags and Main door
+    type: objmove
+    ids:
+      - 0xFC53 # Main Sealed Temple door
+      - 0xFC58 # Playing BotG Cam2Tag
+      - 0xFC59 # Harp Tutorial Cam2Tag
+    layer: 2
+    destlayer: 0
+    room: 2
+    objtypes: [OBJS, STAG, STAG,]
+  - name: Add layer 2 arcs to layer 0
+    type: oarcadd
+    oarc:
+      - Amber
+      - DoorF
+      - DoorG
+      - PLDoorLarge
+      - PLHarpPlay
+      - SwitchHarp
+      - TimeDoorA
+      - TimeDoorB
+    destlayer: 0
+  - name: Remove extra Impas
+    type: objdelete
+    ids:
+      - 0xFC04 # Post-GoT raised
+      - 0xFC0B # Post-imp2
+      - 0xFC07 # Post-TMS
+      - 0xFC08 # Post-imp3
+      - 0xFC17 # Post-Levias
+    layer: 0
+    room: 2
+    objtype: OBJ
 
   - name: Remove Music and shaking
     type: objpatch
@@ -4278,34 +4315,6 @@ F402: # Sealed Temple
     objtype: EVNT
     object:
       story_flag2: -1
-
-  - name: BotG item trigger in circle
-    type: objpatch
-    index: 1
-    room: 2
-    objtype: AREA
-    object:
-      posx: 0
-      posy: 7000
-      posz: 11000
-      sizex: 400
-      sizey: 2000
-      sizez: 400
-  - name: Patch BotG check to trigger on harp storyflag
-    type: objpatch
-    id: 0xFC4E
-    layer: 2
-    room: 2
-    objtype: OBJ
-    object:
-      trigstoryfid: 9
-  - name: Move BotG check to layer 0
-    type: objmove
-    id: 0xFC4E
-    layer: 2
-    destlayer: 0
-    room: 2
-    objtype: OBJ
 
 F403: # Hylia's Realm
   - name: Layer override
