@@ -178,7 +178,7 @@ class World:
         defined_events: set[str] = set()
         defined_areas: set[Area] = set()
 
-        for filepath in WORLD_DATA_PATH.iterdir():
+        for filepath in sorted(WORLD_DATA_PATH.iterdir()):
             # Skip over any non-yaml files
             if not filepath.as_posix().endswith(".yaml"):
                 continue
