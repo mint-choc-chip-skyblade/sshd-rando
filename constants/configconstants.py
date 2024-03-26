@@ -267,5 +267,5 @@ LOCATION_ALIASES = {
 }
 
 SETTING_ALIASES = {
-    "fs_lava_flow": "shortcut_fs_lava_flow",
+    "shortcut_fs_lava_flow": "fs_lava_flow",
 }
