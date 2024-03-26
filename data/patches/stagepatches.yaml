@@ -4175,27 +4175,10 @@ F402: # Sealed Temple
       posy: 7599.990234
       posz: 10540
       name: Tubo
-  # - name: Remove imp2 Cutscenes and extra Groose
-  #   type: objdelete
-  #   ids:
-  #     - 0xFC4B # Post-imp2 Groose
-  #     - 0xFC4C # imp2 beaten
-  #     - 0xFC4D # imp2 beaten
-  #     - 0xFC4E # Groose Tree Cutscene
-  #     - 0xFC4F # SotH start trigger
-  #   layer: 4
-  #   room: 2
-  #   objtype: OBJ
   - name: Remove objects and triggers
     type: objdelete
-    ids:
-      - 0xFC06 # Tree of Life
-      # - 0xFC49 # Impa text near door after GoT
-      # - 0xFC4B # Groose before Harp Tutorial Cutscene
-      # - 0xFC4F # Pre-harp tutorial 1
-      # - 0xFC52 # Pre-harp tutorial 2
-      # - 0xFC4C # Impa text before imp 2 trigger
-    layers: [0,] # 2, 2, 2, 2, 3]
+    id: 0xFC06 # Tree of Life
+    layer: 0
     room: 2
     objtype: OBJ
   - name: Remove fake Faron trial dowsing target
