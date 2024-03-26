@@ -264,6 +264,8 @@ LOCATION_ALIASES = {
     "The Sky - Form a Squirrel Ring above Volcanic Island": "The Sky - Form a Swirrell Ring above Volcanic Island",
     "The Sky - Form a Squirrel Ring above Lumpy Pumpkin": "The Sky - Form a Swirrell Ring above Lumpy Pumpkin",
     "The Sky - Form a Squirrel Ring above Bamboo Island": "The Sky - Form a Swirrell Ring above Bamboo Island",
+    "Inside the Great Tree - Chest guarded by Deku Baba": "Inside the Great Tree - Chest Guarded by Deku Baba",
+    "Skipper's Retreat - Chest guarded by Quadro Baba": "Skipper's Retreat - Chest Guarded by Quadro Baba",
 }
 
 SETTING_ALIASES = {

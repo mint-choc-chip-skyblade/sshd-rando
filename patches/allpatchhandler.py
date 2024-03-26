@@ -47,11 +47,11 @@ class AllPatchHandler:
         romfs_output = output_dir / "romfs"
 
         if exefs_output.exists() and exefs_output.is_dir():
-            print_progress_text("Removing previous output")
+            print_progress_text("Removing Old exefs Output")
             rmtree(exefs_output.as_posix())
 
         if romfs_output.exists() and romfs_output.is_dir():
-            print_progress_text("Removing previous output")
+            print_progress_text("Removing Old romfs Output")
             rmtree(romfs_output.as_posix())
 
         update_progress_value(16)

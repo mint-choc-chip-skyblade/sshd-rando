@@ -945,7 +945,7 @@
   original_item: Cursed Medal
   types:
     - Batreaux's Rewards
-    - Chest
+    - Chests
   Paths:
     - stage/F012r/r0/l0/TBox/69
 
@@ -2326,7 +2326,7 @@
   Paths:
     - stage/F100_1/r0/l0/TgReact/0xFC58
 
-- name: Inside the Great Tree - Chest guarded by Deku Baba
+- name: Inside the Great Tree - Chest Guarded by Deku Baba
   original_item: Gold Rupee
   types:
     - Chests
@@ -5038,7 +5038,7 @@
 
 ## Skipper's Retreat
 
-- name: Skipper's Retreat - Chest guarded by Quadro Baba
+- name: Skipper's Retreat - Chest Guarded by Quadro Baba
   original_item: Red Rupee
   types:
     - Chests

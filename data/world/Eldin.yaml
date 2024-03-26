@@ -139,7 +139,7 @@
 - name: Near Temple Entrance
   hint_region: Eldin Volcano
   events:
-    Retrieve Crystal Ball: Clawshots and Scrapper and 'Start_Sparrots_Quest'
+    Retrieve Crystal Ball: Digging_Mitts and Clawshots and Scrapper and 'Start_Sparrots_Quest'
   exits:
     Temple Entrance Statue: Nothing
     Earth Temple First Room: open_earth_temple or count(5, Key_Piece)

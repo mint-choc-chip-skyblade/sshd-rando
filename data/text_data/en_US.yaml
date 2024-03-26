@@ -2591,9 +2591,9 @@
   pretty: Inside the Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South
   cryptic: <r<dusting a sad fungi>> inside a <g<giant tree>>
 
-- name: Inside the Great Tree - Chest guarded by Deku Baba
-  standard: Inside the Great Tree - Chest guarded by Deku Baba
-  pretty: Inside the Great Tree - Chest guarded by Deku Baba
+- name: Inside the Great Tree - Chest Guarded by Deku Baba
+  standard: Inside the Great Tree - Chest Guarded by Deku Baba
+  pretty: Inside the Great Tree - Chest Guarded by Deku Baba
   cryptic: finding a <r<hidden treasure>> inside a <g<giant tree>>
 
 - name: Inside the Great Tree - Blow Tree Spiral on Highest Pathway
@@ -4281,9 +4281,9 @@
   pretty: Ancient Harbour - Goddess Cube
   cryptic:
 
-- name: Skipper's Retreat - Chest guarded by Quadro Baba
-  standard: Skipper's Retreat - Chest guarded by Quadro Baba
-  pretty: Skipper's Retreat - Chest guarded by Quadro Baba
+- name: Skipper's Retreat - Chest Guarded by Quadro Baba
+  standard: Skipper's Retreat - Chest Guarded by Quadro Baba
+  pretty: Skipper's Retreat - Chest Guarded by Quadro Baba
   cryptic: a <r<chest past an iron shield moblin>>
 
 - name: Skipper's Retreat - Goddess Cube
