@@ -467,6 +467,13 @@ pub fn set_itemflag(flag: ITEMFLAGS) {
 }
 
 #[no_mangle]
+pub fn set_itemflag_or_counter_to_value(flag: ITEMFLAGS, value: u16) {
+    unsafe {
+        ((*(*ITEMFLAG_MGR).funcs).set_flag_or_counter_to_value)(ITEMFLAG_MGR, flag as u16, value);
+    }
+}
+
+#[no_mangle]
 pub fn unset_itemflag(flag: ITEMFLAGS) {
     unsafe {
         ((*(*ITEMFLAG_MGR).funcs).unset_flag)(ITEMFLAG_MGR, flag as u16);

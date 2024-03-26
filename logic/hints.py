@@ -84,6 +84,15 @@ def sanitize_major_items(worlds: list[World]) -> None:
         EMPTY_BOTTLE,
     ]
 
+    # Maps items required to enter the corresponding
+    # dungeon (assuming no entrance rando). If the dungeon
+    # is known to be barren, then the item is non-major
+    dungeon_entry_items = {
+        KEY_PIECE: "Earth Temple",
+        SEA_CHART: "Sandship",
+        STONE_OF_TRIALS: "Sky Keep",
+    }
+
     for world in worlds:
         for location in world.get_all_item_locations():
             item = location.current_item
@@ -93,11 +102,10 @@ def sanitize_major_items(worlds: list[World]) -> None:
                     and world.starting_item_pool[item] > 0
                 )
                 or (
-                    # If Earth Temple is not a required dungeon when Empty Unrequired
-                    # Dungeons is on and dungeon entrances aren't randomized, then
-                    # Key Pieces are not major items.
-                    item == world.get_item(KEY_PIECE)
-                    and world.get_dungeon("Earth Temple").should_be_barren()
+                    item.name in dungeon_entry_items
+                    and world.get_dungeon(
+                        dungeon_entry_items[item.name]
+                    ).should_be_barren()
                     and world.setting("randomize_dungeon_entrances") == "off"
                 )
                 or (

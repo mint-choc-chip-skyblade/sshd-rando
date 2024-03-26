@@ -118,3 +118,6 @@
 
 .global try_end_pumpkin_archery
 .type try_end_pumpkin_archery, @function
+
+.global after_item_collection_hook
+.type after_item_collection_hook, @function

@@ -49,7 +49,7 @@
     - "On"
   options:
     - "off": "Stamina Fruit will not be randomized."
-    - "on": "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected."
+    - "on": "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected. Any Stamina Fruit locations that are manually excluded will also be vanilla."
 
 - name: npc_closet_shuffle
   default_option: vanilla

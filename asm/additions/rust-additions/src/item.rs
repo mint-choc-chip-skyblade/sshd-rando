@@ -5,6 +5,7 @@
 use crate::actor;
 use crate::debug;
 use crate::event;
+use crate::fix;
 use crate::flag;
 use crate::math;
 use crate::player;
@@ -946,5 +947,17 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
             (*item_actor).base.members.base.rot.y += angle_change_y;
             (*item_actor).base.members.base.rot.z += angle_change_z;
         }
+    }
+}
+
+#[no_mangle]
+pub fn after_item_collection_hook(collected_item: flag::ITEMFLAGS) -> flag::ITEMFLAGS {
+    unsafe {
+        fix::fix_ammo_counts(collected_item);
+
+        // Replaced code
+        asm!("mov w8, {0:w}", in(reg) ((collected_item as u16) - 2));
+
+        return collected_item;
     }
 }
