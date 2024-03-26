@@ -233,9 +233,55 @@ def load_config_from_file(
             config.settings.append(SettingMap())
             cur_world_settings = config.settings[world_num - 1]
 
-            for setting_name in config_in[world_num_str]:
+            # Loop through and parse all settings from the config
+            # in the order of the settings info
+            for setting_name, info in settings_info.items():
+
+                # If a setting does not exist, check old aliases
+                # or create a new entry for the setting
+                if setting_name not in config_in[world_num_str]:
+                    rewrite_config = True
+                    if old_setting_alias := SETTING_ALIASES.get(setting_name, False):
+                        if old_alias_value := config_in[world_num_str].get(
+                            old_setting_alias, False
+                        ):
+                            cur_world_settings.settings[setting_name] = Setting(
+                                setting_name, old_alias_value, info
+                            )
+                            continue
+                    default_value = info.options[info.default_option_index]
+                    cur_world_settings.settings[setting_name] = Setting(
+                        setting_name, default_value, info
+                    )
+                # Otherwise read in the setting normally
+                else:
+                    setting_value = config_in[world_num_str][setting_name]
+
+                    if setting_value not in settings_info[setting_name].options:
+                        raise ConfigError(
+                            f'"{setting_value}" is not a valid value for setting "{setting_name}"'
+                        )
+
+                    cur_world_settings.settings[setting_name] = Setting(
+                        setting_name, setting_value, settings_info[setting_name]
+                    )
+                # TODO: Hex codes
+
+            # Special handling for other settings
+            for setting_name in (
+                "starting_inventory",
+                "excluded_locations",
+                "excluded_hint_locations",
+                "mixed_entrance_pools",
+            ):
+                if config_in[world_num_str].get(setting_name) is None:
+                    cur_world_settings.__setattr__(
+                        setting_name, get_default_setting(setting_name)
+                    )
+                    rewrite_config = True
+
                 # Special handling for starting inventory
-                if setting_name == "starting_inventory":
+                elif setting_name == "starting_inventory":
                     starting_inventory: list = config_in[world_num_str][setting_name]
 
                     if not isinstance(starting_inventory, list):
@@ -268,7 +314,7 @@ def load_config_from_file(
                     continue
 
                 # Special handling for excluded locations
-                if setting_name == "excluded_locations":
+                elif setting_name == "excluded_locations":
                     excluded_locations: list[str] = config_in[world_num_str][
                         setting_name
                     ]
@@ -282,7 +328,7 @@ def load_config_from_file(
                     continue
 
                 # Special handling for excluded hint locations
-                if setting_name == "excluded_hint_locations":
+                elif setting_name == "excluded_hint_locations":
                     excluded_hint_locations: list[str] = config_in[world_num_str][
                         setting_name
                     ]
@@ -296,7 +342,7 @@ def load_config_from_file(
                     continue
 
                 # Special handling for mixed entrance pools
-                if setting_name == "mixed_entrance_pools":
+                elif setting_name == "mixed_entrance_pools":
                     mixed_pools = config_in[world_num_str][setting_name]
 
                     if not isinstance(mixed_pools, list):
@@ -314,48 +360,6 @@ def load_config_from_file(
                                 cur_world_settings.mixed_entrance_pools  # type: ignore
                             ]
                     continue
-
-                setting_value = config_in[world_num_str][setting_name]
-                # TODO: Hex codes
-
-                if setting_name not in settings_info:
-                    rewrite_config = True
-
-                    if setting_name in SETTING_ALIASES:
-                        setting_name = SETTING_ALIASES[setting_name]
-                    else:
-                        continue
-
-                if setting_value not in settings_info[setting_name].options:
-                    raise ConfigError(
-                        f'"{setting_value}" is not a valid value for setting "{setting_name}"'
-                    )
-
-                cur_world_settings.settings[setting_name] = Setting(
-                    setting_name, setting_value, settings_info[setting_name]
-                )
-
-            # Add in defaults settings that weren't listed
-            for setting_name, info in settings_info.items():
-                if setting_name not in cur_world_settings.settings:
-                    default_value = info.options[info.default_option_index]
-                    cur_world_settings.settings[setting_name] = Setting(
-                        setting_name, default_value, info
-                    )
-                    rewrite_config = True
-
-            # Special handling for other settings
-            for setting_name in (
-                "starting_inventory",
-                "excluded_locations",
-                "excluded_hint_locations",
-                "mixed_entrance_pools",
-            ):
-                if config_in[world_num_str].get(setting_name) is None:
-                    cur_world_settings.__setattr__(
-                        setting_name, get_default_setting(setting_name)
-                    )
-                    rewrite_config = True
 
             world_num += 1
             world_num_str = f"World {world_num}"
