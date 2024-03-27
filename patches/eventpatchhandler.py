@@ -157,7 +157,7 @@ class EventPatchHandler:
                             if statement := patch.get("onlyif", False):
                                 if not onlyif_handler.evaluate_onlyif(statement):
                                     continue
-                                
+
                             if (
                                 patch["type"]
                                 in FLOW_ADD_VARIATIONS + SWITCH_ADD_VARIATIONS
