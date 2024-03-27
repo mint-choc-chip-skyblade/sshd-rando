@@ -2615,6 +2615,11 @@
       param2: 0 # current room
       next: -1
       param3: 10
+  - name: Remove opening the map after saving the crew
+    type: flowpatch
+    index: 43
+    flow:
+      next: 28
 
 402-DesertF2:
   - name: Override Skipper check for first time conversation
