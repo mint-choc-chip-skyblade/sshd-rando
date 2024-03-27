@@ -154,6 +154,10 @@ class EventPatchHandler:
                         )
 
                         for patch in self.event_patches[msbf_file_name[:-5]]:
+                            if statement := patch.get("onlyif", False):
+                                if not onlyif_handler.evaluate_onlyif(statement):
+                                    continue
+
                             if (
                                 patch["type"]
                                 in FLOW_ADD_VARIATIONS + SWITCH_ADD_VARIATIONS
