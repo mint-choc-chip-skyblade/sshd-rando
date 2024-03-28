@@ -362,7 +362,7 @@ class World:
                 )
                 or (
                     location in disabled_shuffle_locations
-                    and "Goddess Chests" in location.types
+                    and "Goddess Chests" not in location.types
                 )
             ):
                 location.set_current_item(item)
