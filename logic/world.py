@@ -360,7 +360,10 @@ class World:
                     self.setting("lanayru_caves_keys") == "vanilla"
                     and item == self.get_item(LC_SMALL_KEY)
                 )
-                or location in disabled_shuffle_locations
+                or (
+                    location in disabled_shuffle_locations
+                    and "Goddess Chests" in location.types
+                )
             ):
                 location.set_current_item(item)
                 location.has_known_vanilla_item = True
