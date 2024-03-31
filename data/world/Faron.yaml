@@ -295,7 +295,7 @@
   exits:
     Deep Woods Statue: Nothing
     Forest Temple Statue: Nothing
-    Skyview Entry: Distance_Activator
+    Skyview Entry: Can_Hit_High_Skyview_Switches
     Deep Woods Entry: Nothing
   locations:
     Deep Woods - Stamina Fruit on Hanging Ledge: Nothing
