@@ -2506,14 +2506,14 @@
   pretty: Faron Woods - Chest behind Bombable Rocks near Erla
   cryptic: a <r<chest behind some forest rocks>>
 
-- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1
-  standard: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1
-  pretty: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1
+- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1
+  standard: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1
+  pretty: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1
   cryptic: <r<disturbing a tree>> above the <g<forest entrance>>
 
-- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2
-  standard: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2
-  pretty: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2
+- name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 2
+  standard: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 2
+  pretty: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 2
   cryptic: <r<disturbing a tree>> above the <g<forest entrance>>
 
 - name: Faron Woods - Rupee on Great Tree North Branch
@@ -2621,14 +2621,14 @@
   pretty: Deep Woods - Chest on High Ledge
   cryptic: a <r<chest deep in a forest>>
 
-- name: Deep Woods - Bonk Tree near Gossip Stone 1
-  standard: Deep Woods - Bonk Tree near Gossip Stone 1
-  pretty: Deep Woods - Bonk Tree near Gossip Stone 1
+- name: Deep Woods - Bonk Tree near Gossip Stone Item 1
+  standard: Deep Woods - Bonk Tree near Gossip Stone Item 1
+  pretty: Deep Woods - Bonk Tree near Gossip Stone Item 1
   cryptic: <r<disturbing a tree>> near <g<idle gossip>>
 
-- name: Deep Woods - Bonk Tree near Gossip Stone 2
-  standard: Deep Woods - Bonk Tree near Gossip Stone 2
-  pretty: Deep Woods - Bonk Tree near Gossip Stone 2
+- name: Deep Woods - Bonk Tree near Gossip Stone Item 2
+  standard: Deep Woods - Bonk Tree near Gossip Stone Item 2
+  pretty: Deep Woods - Bonk Tree near Gossip Stone Item 2
   cryptic: <r<disturbing a tree>> near <g<idle gossip>>
 
 - name: Deep Woods - Bonk East Pillar before Temple
@@ -2636,14 +2636,14 @@
   pretty: Deep Woods - Bonk East Pillar before Temple
   cryptic: <r<disturbing a tall stone>> before a <g<temple in the forest>>
 
-- name: Deep Woods - Bonk Tree East of Temple 1
-  standard: Deep Woods - Bonk Tree East of Temple 1
-  pretty: Deep Woods - Bonk Tree East of Temple 1
+- name: Deep Woods - Bonk Tree East of Temple Item 1
+  standard: Deep Woods - Bonk Tree East of Temple Item 1
+  pretty: Deep Woods - Bonk Tree East of Temple Item 1
   cryptic: <r<disturbing a tree>> near a <g<temple in the forest>>
 
-- name: Deep Woods - Bonk Tree East of Temple 2
-  standard: Deep Woods - Bonk Tree East of Temple 2
-  pretty: Deep Woods - Bonk Tree East of Temple 2
+- name: Deep Woods - Bonk Tree East of Temple Item 2
+  standard: Deep Woods - Bonk Tree East of Temple Item 2
+  pretty: Deep Woods - Bonk Tree East of Temple Item 2
   cryptic: <r<disturbing a tree>> near a <g<temple in the forest>>
 
 - name: Deep Woods - Blow Mixed Flowers above East Temple Stairs
@@ -2651,9 +2651,9 @@
   pretty: Deep Woods - Blow Mixed Flowers above East Temple Stairs
   cryptic: <r<dusting some flora>> growing on a <g<temple in the forest>>
 
-- name: Deep Woods - Bonk Fence West of Temple
-  standard: Deep Woods - Bonk Fence West of Temple
-  pretty: Deep Woods - Bonk Fence West of Temple
+- name: Deep Woods - Bonk Fence furthest West of Temple
+  standard: Deep Woods - Bonk Fence furthest West of Temple
+  pretty: Deep Woods - Bonk Fence furthest West of Temple
   cryptic: <r<disturbing iron bars>> near a <g<temple in the forest>>
 
 - name: Deep Woods - Slingshot Left Temple Door Frame
@@ -2721,9 +2721,9 @@
   pretty: Lake Floria - Dragon Lair East Chest
   cryptic: a <r<chest in a watery lair>>
 
-- name: Lake Floria - Goddess Cube
-  standard: Lake Floria - Goddess Cube
-  pretty: Lake Floria - Goddess Cube
+- name: Lake Floria - Goddess Cube near Bird Statue
+  standard: Lake Floria - Goddess Cube near Bird Statue
+  pretty: Lake Floria - Goddess Cube near Bird Statue
   cryptic:
 
 - name: Floria Waterfall - Rupee on High Ledge
@@ -5467,9 +5467,9 @@
   pretty: Nayru's Silent Realm - Stamina Fruit on Mining Facility West Vine Wall
   cryptic: a <r<fruit on a silent desert wall>>
 
-- name: Nayru's Silent Realm - Stamina Fruit near Minecart
-  standard: Nayru's Silent Realm - Stamina Fruit near Minecart
-  pretty: Nayru's Silent Realm - Stamina Fruit near Minecart
+- name: Nayru's Silent Realm - Stamina Fruit near Minecart in Waking Water
+  standard: Nayru's Silent Realm - Stamina Fruit near Minecart in Waking Water
+  pretty: Nayru's Silent Realm - Stamina Fruit near Minecart in Waking Water
   cryptic: a <r<fruit near a silent minecart>>
 
 - name: Nayru's Silent Realm - Stamina Fruit between Watchers
@@ -5477,9 +5477,9 @@
   pretty: Nayru's Silent Realm - Stamina Fruit between Watchers
   cryptic: a <r<fruit surrounded by silent watchers>>
 
-- name: Nayru's Silent Realm - Stamina Fruit near Tree
-  standard: Nayru's Silent Realm - Stamina Fruit near Tree
-  pretty: Nayru's Silent Realm - Stamina Fruit near Tree
+- name: Nayru's Silent Realm - Stamina Fruit below Tree near Mine Entrance
+  standard: Nayru's Silent Realm - Stamina Fruit below Tree near Mine Entrance
+  pretty: Nayru's Silent Realm - Stamina Fruit below Tree near Mine Entrance
   cryptic: a <r<fruit near a silent desert tree>>
 
 - name: Nayru's Silent Realm - Collect all Tears Reward

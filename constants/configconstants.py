@@ -319,6 +319,16 @@ LOCATION_ALIASES = {
     "Bokoblin Base - Bonk Campfire East of Earth Temple": "Bokoblin Base - Bonk Campfire East of Temple",
     "Bokoblin Base - Chest East of Earth Temple Entrance": "Bokoblin Base - Chest East of Temple down Lava River",
     "Bokoblin Base - Chest West of Earth Temple Entrance": "Bokoblin Base - Chest West of Temple behind Watch Tower",
+    "Nayru's Silent Realm - Stamina Fruit near Minecart": "Nayru's Silent Realm - Stamina Fruit near Minecart in Waking Water",
+    "Nayru's Silent Realm - Stamina Fruit near Tree": "Nayru's Silent Realm - Stamina Fruit below Tree near Mine Entrance",
+    "Lake Floria - Goddess Cube": "Lake Floria - Goddess Cube near Bird Statue",
+    "Deep Woods - Bonk Fence West of Temple": "Deep Woods - Bonk Fence furthest West of Temple",
+    "Deep Woods - Bonk Tree near Gossip Stone 1": "Deep Woods - Bonk Tree near Gossip Stone Item 1",
+    "Deep Woods - Bonk Tree near Gossip Stone 2": "Deep Woods - Bonk Tree near Gossip Stone Item 2",
+    "Deep Woods - Bonk Tree East of Temple 1": "Deep Woods - Bonk Tree East of Temple Item 1",
+    "Deep Woods - Bonk Tree East of Temple 2": "Deep Woods - Bonk Tree East of Temple Item 2",
+    "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1": "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1",
+    "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2": "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 2",
 }
 
 SETTING_ALIASES = {

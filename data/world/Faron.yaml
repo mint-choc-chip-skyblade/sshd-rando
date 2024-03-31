@@ -165,8 +165,8 @@
     Faron Woods - Bonk Archway before Deep Woods: Distance_Activator
     Faron Woods - Bonk Tall Blue Northern Mushroom: Nothing
     Faron Woods - Slingshot Northwest Great Tree Trunk: Slingshot
-    Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1: Nothing
-    Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2: Nothing
+    Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1: Nothing
+    Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 2: Nothing
 
 - name: Faron Woods Floria Shortcut Ledge
   hint_region: Faron Woods
@@ -301,13 +301,13 @@
     Deep Woods - Stamina Fruit on Hanging Ledge: Nothing
     Deep Woods - Bonk Tree with Rope: Nothing
     Deep Woods - Chest on High Ledge: Nothing
-    Deep Woods - Bonk Tree near Gossip Stone 1: Nothing
-    Deep Woods - Bonk Tree near Gossip Stone 2: Nothing
+    Deep Woods - Bonk Tree near Gossip Stone Item 1: Nothing
+    Deep Woods - Bonk Tree near Gossip Stone Item 2: Nothing
     Deep Woods - Bonk East Pillar before Temple: Nothing
-    Deep Woods - Bonk Tree East of Temple 1: Nothing
-    Deep Woods - Bonk Tree East of Temple 2: Nothing
+    Deep Woods - Bonk Tree East of Temple Item 1: Nothing
+    Deep Woods - Bonk Tree East of Temple Item 2: Nothing
     Deep Woods - Blow Mixed Flowers above East Temple Stairs: Gust_Bellows
-    Deep Woods - Bonk Fence West of Temple: Nothing
+    Deep Woods - Bonk Fence furthest West of Temple: Nothing
     Deep Woods - Slingshot Left Temple Door Frame: Slingshot
     Deep Woods - Slingshot Right Temple Door Frame: Slingshot
     Deep Woods - Gossip Stone before Temple: Nothing
@@ -393,7 +393,7 @@
     Lake Floria: Water_Dragons_Scale
   locations:
     Lake Floria - Chest near Bird Statue: Nothing
-    Lake Floria - Goddess Cube: Goddess_Sword
+    Lake Floria - Goddess Cube near Bird Statue: Goddess_Sword
 
 - name: Farore's Lair
   events:
