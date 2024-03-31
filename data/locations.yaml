@@ -727,7 +727,7 @@
   original_item: Green Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5D
@@ -736,7 +736,7 @@
   original_item: Blue Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5C
@@ -745,7 +745,7 @@
   original_item: Green Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5B
@@ -754,7 +754,7 @@
   original_item: Blue Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFC5E
@@ -2487,7 +2487,7 @@
   original_item: Silver Rupee
   types:
     - Freestanding Rupees
-    - Advanced Rupees
+    - Intermediate Rupees
   Paths:
     - stage/F102/r2/l0/Item/60
 
@@ -2495,7 +2495,7 @@
   original_item: Blue Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
   Paths:
     - stage/F102/r2/l0/Item/63
 
@@ -2503,7 +2503,7 @@
   original_item: Red Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
   Paths:
     - stage/F102/r2/l0/Item/62
 
@@ -2511,7 +2511,7 @@
   original_item: Red Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
   Paths:
     - stage/F102/r2/l0/Item/61
 
@@ -2950,7 +2950,7 @@
   original_item: Blue Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
   Paths:
     - stage/F200/r2/l0/Item/125
 
@@ -2958,7 +2958,7 @@
   original_item: Red Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
   Paths:
     - stage/F200/r2/l0/Item/123
 
@@ -4149,7 +4149,7 @@
   original_item: Green Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/148
@@ -4158,7 +4158,7 @@
   original_item: Blue Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/149
@@ -4167,7 +4167,7 @@
   original_item: Blue Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/150
@@ -4176,7 +4176,7 @@
   original_item: Green Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/147
@@ -4556,7 +4556,7 @@
   original_item: Green Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC0A
@@ -4565,7 +4565,7 @@
   original_item: Green Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC09
@@ -4574,7 +4574,7 @@
   original_item: Green Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC08
@@ -6410,7 +6410,7 @@
   original_item: Blue Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/D101/r4/l0/Item/0xFC11
@@ -6419,7 +6419,7 @@
   original_item: Blue Rupee
   types:
     - Freestanding Rupees
-    - Intermediate Rupees
+    - Beginner Rupees
     - Custom Flag
   Paths:
     - stage/D101/r4/l0/Item/0xFC12
