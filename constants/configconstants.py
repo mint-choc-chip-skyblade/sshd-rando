@@ -60,6 +60,7 @@ DEFAULT_SETTINGS = {
     "font_size": 10,
     "starting_inventory": Counter(
         [
+            HYLIAN_SHIELD,
             PROGRESSIVE_POUCH,
             SCRAPPER,
             SV_MAP,

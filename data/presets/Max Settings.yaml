@@ -34,6 +34,7 @@ World 1:
   always_hints: 'on'
   random_starting_statues: 'off'
   random_starting_spawn: vanilla
+  limit_starting_spawn: 'off'
   randomize_dungeon_entrances: 'off'
   randomize_trial_gate_entrances: 'off'
   randomize_door_entrances: 'off'
@@ -55,14 +56,19 @@ World 1:
   groose_traps: 'on'
   ammo_availability: plentiful
   boss_key_puzzles: random_orientation
+  got_sword_requirement: true_master_sword
   upgraded_skyward_strike: 'on'
   faster_air_meter_depletion: 'off'
   spawn_hearts: 'on'
   damage_multiplier: '1'
+  language: english_us
+  tunic_swap: 'off'
+  starry_skies: 'off'
+  remove_enemy_music: 'off'
   open_thunderhead: ballad
   open_lake_floria: vanilla
   open_earth_temple: 'off'
-  open_lmf: open
+  open_lmf: nodes
   open_batreaux_shed: 'off'
   shortcut_spiral_log_to_btt: 'on'
   shortcut_logs_near_machi: 'off'
@@ -131,10 +137,6 @@ World 1:
   starting_sword: no_sword
   random_starting_tablet_count: '1'
   random_starting_item_count: '0'
-  got_sword_requirement: true_master_sword
-  language: english_us
-  tunic_swap: 'off'
-  starry_skies: 'off'
   starting_hearts: '6'
   starting_inventory: []
   excluded_locations: []
