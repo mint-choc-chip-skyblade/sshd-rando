@@ -28,7 +28,7 @@
   locations:
     Earth Temple - Rupee above First Drawbridge: Beetle
     Earth Temple - Chest behind Southwest Bombable Rock: Nothing # Use nearby bomb flowers
-    Earth Temple - Northwest Chest Main Room: Nothing
+    Earth Temple - Northwest Chest in Main Room: Nothing
     Earth Temple - Ledd's Gift: Can_Defeat_Lizalfos
     Earth Temple - Rupee in Dragon's Mouth in Lava Tunnel: Beetle and (Bomb_Bag or Hook_Beetle) # Can use tough beetle and go round in reverse
 

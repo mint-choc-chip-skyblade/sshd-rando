@@ -755,7 +755,7 @@
   Paths:
     - stage/F005r/r0/l2/Item/114
 
-- name: Central Skyloft - Crystal on West Cliff
+- name: Central Skyloft - Crystal below West Cliff
   original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
@@ -1094,7 +1094,7 @@
 
 # Sky:
 
-- name: Bamboo Island Interior - Gossip Stone
+- name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
   original_item: Nothing
   types:
     - Hint Location
@@ -1159,7 +1159,7 @@
   Paths:
     - stage/F020/r0/l0/TgReact/0xFCA4
 
-- name: Lumpy Pumpkin - Slingshot Left Canopy Lantern
+- name: Lumpy Pumpkin - Slingshot Left Porch Lantern
   original_item: Blue Rupee
   types:
     - Hidden Items
@@ -1167,7 +1167,7 @@
   Paths:
     - stage/F020/r0/l0/TgReact/0xFCA5
 
-- name: Lumpy Pumpkin - Slingshot Right Canopy Lantern
+- name: Lumpy Pumpkin - Slingshot Right Porch Lantern
   original_item: Blue Rupee
   types:
     - Hidden Items
@@ -1247,7 +1247,7 @@
   Paths:
     - stage/F011r/r0/l2/Item/116
 
-- name: Lumpy Pumpkin - Gossip Stone
+- name: Lumpy Pumpkin - Gossip Stone near Back Door
   original_item: Nothing
   types:
     - Hint Location
@@ -1364,7 +1364,7 @@
   Paths:
     - stage/F020/r0/l0/TBox/69
 
-- name: Volcanic Island - Gossip Stone
+- name: Volcanic Island - Gossip Stone inside Island
   original_item: Nothing
   types:
     - Hint Location
@@ -1968,7 +1968,7 @@
 #    - event/503-Goron/418
 #    - oarc/F400/l0
 
-- name: Sealed Grounds - Gossip Stone
+- name: Sealed Grounds - Gossip Stone Behind the Temple
   original_item: Nothing
   types:
     - Hint Location
@@ -2073,7 +2073,7 @@
   Paths:
     - stage/F100/r0/l0/Item/33 #last thing is SceneflagID
 
-- name: Faron Woods - Item on Great Tree
+- name: Faron Woods - Item on Great Tree after Tightrope
   original_item: Heart Piece
   types:
     - Freestanding Items
@@ -2244,7 +2244,7 @@
   Paths:
     - stage/F100/r0/l0/Item/0x60E6
 
-- name: Faron Woods - Stamina Fruit past Empty Slope
+- name: Faron Woods - Stamina Fruit after Kiwki in Clearing
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -2252,7 +2252,7 @@
   Paths:
     - stage/F100/r0/l0/Item/0x64E5
 
-- name: Faron Woods - Stamina Fruit past Baba Slope
+- name: Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -2449,7 +2449,7 @@
   Paths:
     - stage/F101/r0/l0/TgReact/0xFDFF
 
-- name: Deep Woods - Gossip Stone
+- name: Deep Woods - Gossip Stone before Temple
   original_item: Nothing
   types:
     - Hint Location
@@ -2627,7 +2627,7 @@
   Paths:
     - stage/F102_1/r0/l0/TgReact/0xFC42
 
-- name: Floria Waterfall - Gossip Stone
+- name: Floria Waterfall - Gossip Stone near Bird Statue
   original_item: Nothing
   types:
     - Hint Location
@@ -3185,7 +3185,7 @@
   Paths:
     - stage/F200/r2/l0/TBox/71
 
-- name: Lower Eldin Cave - Gossip Stone
+- name: Lower Eldin Cave - East Gossip Stone
   original_item: Nothing
   types:
     - Hint Location
@@ -3194,7 +3194,7 @@
   textindex: 17
   eventflowindex: 56
 
-- name: Eldin Volcano - Stamina Fruit in front of First Slope 1
+- name: Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 1
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -3202,7 +3202,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFC2F
 
-- name: Eldin Volcano - Stamina Fruit in front of First Slope 2
+- name: Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 2
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -3210,7 +3210,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFC30
 
-- name: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
+- name: Eldin Volcano - Stamina Fruit below Slope after Entrance Shortcut
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -3218,7 +3218,7 @@
   Paths:
     - stage/F200/r8/l0/Item/0xFC02
 
-- name: Eldin Volcano - Stamina Fruit after First Slope
+- name: Eldin Volcano - Stamina Fruit above Slope after Volcano Ascent
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -3226,7 +3226,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFC31
 
-- name: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
+- name: Eldin Volcano - Left Rupee behind Bombable Wall near Thrill Digger Cave
   original_item: Red Rupee
   types:
     - Freestanding Rupees
@@ -3234,7 +3234,7 @@
   Paths:
     - stage/F200/r4/l0/Item/45
 
-- name: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
+- name: Eldin Volcano - Right Rupee behind Bombable Wall near Thrill Digger Cave
   original_item: Red Rupee
   types:
     - Freestanding Rupees
@@ -3242,7 +3242,7 @@
   Paths:
     - stage/F200/r4/l0/Item/11
 
-- name: Thrill Digger Cave - Gossip Stone
+- name: Thrill Digger Cave - Gossip Stone near Tubert
   original_item: Nothing
   types:
     - Hint Location
@@ -3403,7 +3403,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFC33
 
-- name: Eldin Volcano - Stamina Fruit in front of Second Slope 1
+- name: Eldin Volcano - Stamina Fruit below Slope before Temple 1
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -3411,7 +3411,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFC36
 
-- name: Eldin Volcano - Stamina Fruit in front of Second Slope 2
+- name: Eldin Volcano - Stamina Fruit below Slope before Temple 2
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -3419,7 +3419,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFC34
 
-- name: Eldin Volcano - Stamina Fruit in front of Second Slope 3
+- name: Eldin Volcano - Stamina Fruit below Slope before Temple 3
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -3429,28 +3429,28 @@
 
 ## Outside Earth Temple
 
-- name: Eldin Volcano - Digging Spot in front of Earth Temple
+- name: Eldin Volcano - Digging Spot West of Temple
   original_item: Key Piece
   types:
     - Digging Spots
   Paths:
     - stage/F200/r4/l1/Soil/8
 
-- name: Eldin Volcano - Digging Spot below Tower West of Earth Temple
+- name: Eldin Volcano - Digging Spot below Tower West of Temple
   original_item: Key Piece
   types:
     - Digging Spots
   Paths:
     - stage/F200/r4/l1/Soil/9
 
-- name: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
+- name: Eldin Volcano - Digging Spot behind Boulder on Slope before Temple
   original_item: Key Piece
   types:
     - Digging Spots
   Paths:
     - stage/F200/r4/l1/Soil/12
 
-- name: Eldin Volcano - Blow Closest Torch West of Earth Temple
+- name: Eldin Volcano - Blow Closest Torch West of Temple
   original_item: Green Rupee
   types:
     - Hidden Items
@@ -3458,7 +3458,7 @@
   Paths:
     - stage/F200/r4/l0/TgReact/0xFC6A
 
-- name: Eldin Volcano - Blow Farthest Torch West of Earth Temple
+- name: Eldin Volcano - Blow Farthest Torch West of Temple
   original_item: Green Rupee
   types:
     - Hidden Items
@@ -3466,7 +3466,7 @@
   Paths:
     - stage/F200/r4/l0/TgReact/0xFC6B
 
-- name: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
+- name: Eldin Volcano - Slingshot Red Jewel above Temple Entrance
   original_item: Red Rupee
   types:
     - Hidden Items
@@ -3474,7 +3474,7 @@
   Paths:
     - stage/F200/r4/l0/TgReact/0xFC69
 
-- name: Eldin Volcano - Gossip Stone next to Earth Temple
+- name: Eldin Volcano - Gossip Stone on Cliff West of Temple
   original_item: Nothing
   types:
     - Hint Location
@@ -3483,7 +3483,7 @@
   textindex: 14
   eventflowindex: 24
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 1
+- name: Eldin Volcano - Underground Rupee West of Temple 1
   original_item: Blue Rupee
   types:
     - Underground Rupees
@@ -3491,7 +3491,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFDA # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 2
+- name: Eldin Volcano - Underground Rupee West of Temple 2
   original_item: Rupoor
   types:
     - Underground Rupees
@@ -3499,7 +3499,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFD1 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 3
+- name: Eldin Volcano - Underground Rupee West of Temple 3
   original_item: Green Rupee
   types:
     - Underground Rupees
@@ -3507,7 +3507,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFD3 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 4
+- name: Eldin Volcano - Underground Rupee West of Temple 4
   original_item: Green Rupee
   types:
     - Underground Rupees
@@ -3515,7 +3515,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFD2 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 5
+- name: Eldin Volcano - Underground Rupee West of Temple 5
   original_item: Green Rupee
   types:
     - Underground Rupees
@@ -3523,7 +3523,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFD7 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 6
+- name: Eldin Volcano - Underground Rupee West of Temple 6
   original_item: Green Rupee
   types:
     - Underground Rupees
@@ -3531,7 +3531,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFD9 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 7
+- name: Eldin Volcano - Underground Rupee West of Temple 7
   original_item: Green Rupee
   types:
     - Underground Rupees
@@ -3539,7 +3539,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFD4 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 8
+- name: Eldin Volcano - Underground Rupee West of Temple 8
   original_item: Green Rupee
   types:
     - Underground Rupees
@@ -3547,7 +3547,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFD5 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 9
+- name: Eldin Volcano - Underground Rupee West of Temple 9
   original_item: Green Rupee
   types:
     - Underground Rupees
@@ -3555,7 +3555,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFD6 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 10
+- name: Eldin Volcano - Underground Rupee West of Temple 10
   original_item: Green Rupee
   types:
     - Underground Rupees
@@ -3563,7 +3563,7 @@
   Paths:
     - stage/F200/r4/l0/Item/0xFFD8 # ids hardcoded in the objmove patches
 
-- name: Eldin Volcano - Bonk Campfire East of Earth Temple
+- name: Eldin Volcano - Bonk Campfire East of Temple
   original_item: Heart
   types:
     - Hidden Items
@@ -3571,7 +3571,7 @@
   Paths:
     - stage/F200/r4/l0/TgReact/0xFC68
 
-- name: Upper Eldin Cave - Gossip Stone
+- name: Upper Eldin Cave - West Gossip Stone
   original_item: Nothing
   types:
     - Hint Location
@@ -3588,7 +3588,7 @@
   Paths:
     - stage/F200/r5/l0/Item/0xFC0B
 
-- name: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
+- name: Eldin Volcano - Stamina Fruit on Ledge near Hot Cave
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -3596,7 +3596,7 @@
   Paths:
     - stage/F200/r5/l0/Item/0xFC0C
 
-- name: Eldin Volcano - Stamina Fruit on vines near Hot Cave
+- name: Eldin Volcano - Stamina Fruit on Vines near Hot Cave
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -3616,14 +3616,14 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
-  original_item: Eldin Volcano Goddess Cube West of Earth Temple Entrance
+- name: Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple
+  original_item: Eldin Volcano Goddess Cube West of Temple
   types:
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
-  original_item: Eldin Volcano Goddess Cube East of Earth Temple Entrance
+- name: Eldin Volcano - Goddess Cube East of Temple
+  original_item: Eldin Volcano Goddess Cube East of Temple
   types:
     - Goddess Cube
   is_gui_excluded_location: False
@@ -3897,7 +3897,7 @@
   Paths:
     - stage/F201_4/r0/l0/TgReact/0xFC15
 
-- name: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
+- name: Volcano Summit - Chest on Cliff behind Bombable Wall near Waterfall
   original_item: Silver Rupee
   types:
     - Chests
@@ -3928,7 +3928,7 @@
   Paths:
     - stage/F201_3/r0/l0/Item/136 #sceneflagID
 
-- name: Volcano Summit - Gossip Stone in Waterfall Area
+- name: Volcano Summit - Gossip Stone on Cliff near Waterfall
   original_item: Nothing
   types:
     - Hint Location
@@ -3937,7 +3937,7 @@
   textindex: 26
   eventflowindex: 38
 
-- name: Volcano Summit - Gossip Stone near Second Thirsty Frog
+- name: Volcano Summit - Gossip Stone between Small Thirsty Frogs
   original_item: Nothing
   types:
     - Hint Location
@@ -4035,7 +4035,7 @@
   Paths:
     - stage/F202/r2/l1/TBox/67
 
-- name: Bokoblin Base - Bonk Campfire East of Earth Temple
+- name: Bokoblin Base - Bonk Campfire East of Temple
   original_item: Heart
   types:
     - Hidden Items
@@ -4043,14 +4043,14 @@
   Paths:
     - stage/F202/r4/l0/TgReact/0x005E
 
-- name: Bokoblin Base - Chest East of Earth Temple Entrance
+- name: Bokoblin Base - Chest East of Temple down Lava River
   original_item: Progressive Slingshot
   types:
     - Chests
   Paths:
     - stage/F202/r4/l1/TBox/68
 
-- name: Bokoblin Base - Chest West of Earth Temple Entrance
+- name: Bokoblin Base - Chest West of Temple behind Watch Tower
   original_item: Bomb Bag
   types:
     - Chests
@@ -4487,7 +4487,7 @@
   Paths:
     - stage/F300/r0/l0/Item/0xFC3B
 
-- name: Lanayru Desert - Stamina Fruit on South LMF Ledge
+- name: Lanayru Desert - Stamina Fruit on Mining Facility South Ledge
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -4495,7 +4495,7 @@
   Paths:
     - stage/F300/r0/l0/Item/0xFFF0
 
-- name: Lanayru Desert - Stamina Fruit on West LMF Ledge
+- name: Lanayru Desert - Stamina Fruit on Mining Facility West Ledge
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -4503,7 +4503,7 @@
   Paths:
     - stage/F300/r0/l0/Item/0xFFF1
 
-- name: Lanayru Desert - Stamina Fruit on LMF Wall Vines
+- name: Lanayru Desert - Stamina Fruit on Mining Facility Wall Vines
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -4543,7 +4543,7 @@
   Paths:
     - stage/F300/r0/l0/Item/0xFC3C
 
-- name: Temple of Time - Gossip Stone
+- name: Temple of Time - Gossip Stone near Robot
   original_item: Nothing
   types:
     - Hint Location
@@ -5203,7 +5203,7 @@
     - event/406-TrolleyRace/77
     - oarc/F301_4/l0
 
-- name: Shipyard - Gossip Stone
+- name: Shipyard - Gossip Stone after First Minecart Track
   original_item: Nothing
   types:
     - Hint Location
@@ -5767,7 +5767,7 @@
   Paths:
     - stage/D200/r1/l0/TBox/69
 
-- name: Earth Temple - Northwest Chest Main Room
+- name: Earth Temple - Northwest Chest in Main Room
   original_item: Golden Skull # TODO check again
   types:
     - Chests
@@ -6943,7 +6943,7 @@
   Paths:
     - stage/S100/r0/l2/WarpObj
 
-- name: Nayru's Silent Realm - Stamina Fruit on East LMF Vine Wall
+- name: Nayru's Silent Realm - Stamina Fruit on Mining Facility East Vine Wall
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -6952,7 +6952,7 @@
   Paths:
     - stage/S300/r0/l2/Item/0xFC2D
 
-- name: Nayru's Silent Realm - Stamina Fruit on West LMF Vine Wall
+- name: Nayru's Silent Realm - Stamina Fruit on Mining Facility West Vine Wall
   original_item: Stamina Fruit
   types:
     - Silent Realms
@@ -6995,7 +6995,7 @@
   Paths:
     - stage/S300/r0/l2/WarpObj
 
-- name: Din's Silent Realm - Stamina Fruit on First Slope
+- name: Din's Silent Realm - Stamina Fruit on Slope after Volcano Ascent
   original_item: Stamina Fruit
   types:
     - Silent Realms

@@ -139,5 +139,5 @@ World 1:
   starting_inventory: []
   excluded_locations: []
   excluded_hint_locations:
-  - Shipyard - Gossip Stone
+  - Shipyard - Gossip Stone after First Minecart Track
   mixed_entrance_pools: []

@@ -133,8 +133,8 @@ World 1:
   - Isle of Songs - Strike Crest with Goddess Sword
   excluded_hint_locations:
   - Central Skyloft - Gossip Stone on Waterfall Island
-  - Deep Woods - Gossip Stone
-  - Upper Eldin Cave - Gossip Stone
+  - Deep Woods - Gossip Stone before Temple
+  - Upper Eldin Cave - West Gossip Stone
   - Lanayru Caves - Gossip Stone towards Lanayru Gorge
   mixed_entrance_pools:
   - - Dungeon

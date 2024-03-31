@@ -14,11 +14,9 @@ from PySide6.QtWidgets import (
 )
 
 import pyclip
-import yaml
 
 from constants.configconstants import (
     LOCATION_ALIASES,
-    SETTINGS_NOT_IN_SETTINGS_LIST,
     get_default_setting,
     get_new_seed,
 )

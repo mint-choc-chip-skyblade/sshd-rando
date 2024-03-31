@@ -184,12 +184,12 @@ World 1:
   - Mogma Turf - Chest behind Bombable Wall at Entrance
   - Mogma Turf - Chest after Sand Slide
   - Mogma Turf - Chest behind Bombable Wall in Fire Maze
-  - Volcano Summit - Chest behind Bombable Wall in Waterfall Area
+  - Volcano Summit - Chest on Cliff behind Bombable Wall near Waterfall
   - Bokoblin Base - Chest near Bone Bridge
   - Bokoblin Base - Chest on Cliff
   - Bokoblin Base - Chest near Drawbridge
-  - Bokoblin Base - Chest East of Earth Temple Entrance
-  - Bokoblin Base - Chest West of Earth Temple Entrance
+  - Bokoblin Base - Chest East of Temple down Lava River
+  - Bokoblin Base - Chest West of Temple behind Watch Tower
   - Bokoblin Base - First Chest in Volcano Summit
   - Bokoblin Base - Raised Chest in Volcano Summit
   - Bokoblin Base - Chest in Volcano Summit Alcove
@@ -229,7 +229,7 @@ World 1:
   - Skyview Temple - Chest after Vines
   - Earth Temple - Chest after Air Vent in First Room
   - Earth Temple - Chest behind Southwest Bombable Rock
-  - Earth Temple - Northwest Chest Main Room
+  - Earth Temple - Northwest Chest in Main Room
   - Earth Temple - Chest in West Room
   - Earth Temple - Chest after Double Lizalfos Fight
   - Earth Temple - Northeast Chest Guarded by Lizalfos
@@ -280,5 +280,5 @@ World 1:
   - Nayru's Silent Realm - Collect all Tears Reward
   - Din's Silent Realm - Collect all Tears Reward
   excluded_hint_locations:
-  - Shipyard - Gossip Stone
+  - Shipyard - Gossip Stone after First Minecart Track
   mixed_entrance_pools: []

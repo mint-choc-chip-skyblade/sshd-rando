@@ -1098,15 +1098,15 @@
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Eldin Volcano Goddess Cube West of Earth Temple Entrance
-  standard: Eldin Volcano Goddess Cube West of Earth Temple Entrance
-  pretty: the <Eldin Volcano Goddess Cube West of Earth Temple Entrance>
+- name: Eldin Volcano Goddess Cube West of Temple
+  standard: Eldin Volcano Goddess Cube West of Temple
+  pretty: the <Eldin Volcano Goddess Cube West of Temple>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Eldin Volcano Goddess Cube East of Earth Temple Entrance
-  standard: Eldin Volcano Goddess Cube East of Earth Temple Entrance
-  pretty: the <Eldin Volcano Goddess Cube East of Earth Temple Entrance>
+- name: Eldin Volcano Goddess Cube East of Temple
+  standard: Eldin Volcano Goddess Cube East of Temple
+  pretty: the <Eldin Volcano Goddess Cube East of Temple>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
@@ -1655,9 +1655,9 @@
   pretty: Central Skyloft - Crystal in Orielle and Parrow's House
   cryptic: a <r<crystal in a home corner>>
 
-- name: Central Skyloft - Crystal on West Cliff
-  standard: Central Skyloft - Crystal on West Cliff
-  pretty: Central Skyloft - Crystal on West Cliff
+- name: Central Skyloft - Crystal below West Cliff
+  standard: Central Skyloft - Crystal below West Cliff
+  pretty: Central Skyloft - Crystal below West Cliff
   cryptic: a <r<crystal down west>>
 
 - name: Central Skyloft - Crystal between Wooden Planks
@@ -1840,9 +1840,9 @@
   pretty: Beedle's Airshop - 1000 Rupee Item
   cryptic: for <g+<1000 rupees>> <r<Beedle>>
 
-- name: Bamboo Island Interior - Gossip Stone
-  standard: Bamboo Island Interior - Gossip Stone
-  pretty: Bamboo Island Interior - Gossip Stone
+- name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
+  standard: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
+  pretty: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
   cryptic:
 
 - name: Bamboo Island Interior - Bonk Southwest Sprout
@@ -1880,14 +1880,14 @@
   pretty: Bamboo Island - Slingshot Right Lantern
   cryptic: <r<shooting the light>> of a <g<clean cut building>>
 
-- name: Lumpy Pumpkin - Slingshot Left Canopy Lantern
-  standard: Lumpy Pumpkin - Slingshot Left Canopy Lantern
-  pretty: Lumpy Pumpkin - Slingshot Left Canopy Lantern
+- name: Lumpy Pumpkin - Slingshot Left Porch Lantern
+  standard: Lumpy Pumpkin - Slingshot Left Porch Lantern
+  pretty: Lumpy Pumpkin - Slingshot Left Porch Lantern
   cryptic: <r<shooting a sheltered light>>
 
-- name: Lumpy Pumpkin - Slingshot Right Canopy Lantern
-  standard: Lumpy Pumpkin - Slingshot Right Canopy Lantern
-  pretty: Lumpy Pumpkin - Slingshot Right Canopy Lantern
+- name: Lumpy Pumpkin - Slingshot Right Porch Lantern
+  standard: Lumpy Pumpkin - Slingshot Right Porch Lantern
+  pretty: Lumpy Pumpkin - Slingshot Right Porch Lantern
   cryptic: <r<shooting a sheltered light>>
 
 - name: Lumpy Pumpkin - Slingshot Lantern Left of Main Door
@@ -1935,9 +1935,9 @@
   pretty: Lumpy Pumpkin - Inside Crystal
   cryptic: a <r<crystal in a bar>>
 
-- name: Lumpy Pumpkin - Gossip Stone
-  standard: Lumpy Pumpkin - Gossip Stone
-  pretty: Lumpy Pumpkin - Gossip Stone
+- name: Lumpy Pumpkin - Gossip Stone near Back Door
+  standard: Lumpy Pumpkin - Gossip Stone near Back Door
+  pretty: Lumpy Pumpkin - Gossip Stone near Back Door
   cryptic:
 
 - name: Orielle's Island - Heal Orielle's Loftwing
@@ -2005,9 +2005,9 @@
   pretty: The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
   cryptic: a <r<western chest in a floating rock>>
 
-- name: Volcanic Island - Gossip Stone
-  standard: Volcanic Island - Gossip Stone
-  pretty: Volcanic Island - Gossip Stone
+- name: Volcanic Island - Gossip Stone inside Island
+  standard: Volcanic Island - Gossip Stone inside Island
+  pretty: Volcanic Island - Gossip Stone inside Island
   cryptic:
 
 - name: Bamboo Island - Goddess Chest behind Entrance
@@ -2365,9 +2365,9 @@
   pretty: Sealed Grounds - Gorko's Goddess Wall Reward
   cryptic: <r<drawing upon a magical wall>>
 
-- name: Sealed Grounds - Gossip Stone
-  standard: Sealed Grounds - Gossip Stone
-  pretty: Sealed Grounds - Gossip Stone
+- name: Sealed Grounds - Gossip Stone Behind the Temple
+  standard: Sealed Grounds - Gossip Stone Behind the Temple
+  pretty: Sealed Grounds - Gossip Stone Behind the Temple
   cryptic:
 
 - name: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
@@ -2431,9 +2431,9 @@
   pretty: Faron Woods - Item behind Bombable Rock
   cryptic: an <r<item behind some forest rocks>>
 
-- name: Faron Woods - Item on Great Tree
-  standard: Faron Woods - Item on Great Tree
-  pretty: Faron Woods - Item on Great Tree
+- name: Faron Woods - Item on Great Tree after Tightrope
+  standard: Faron Woods - Item on Great Tree after Tightrope
+  pretty: Faron Woods - Item on Great Tree after Tightrope
   cryptic: an <r<item after a rope>>
 
 - name: Faron Woods - Kikwi Elder's Reward
@@ -2536,14 +2536,14 @@
   pretty: Faron Woods - Stamina Fruit on Vines below First Log
   cryptic: a <r<fruit below a forest log>>
 
-- name: Faron Woods - Stamina Fruit past Empty Slope
-  standard: Faron Woods - Stamina Fruit past Empty Slope
-  pretty: Faron Woods - Stamina Fruit past Empty Slope
+- name: Faron Woods - Stamina Fruit after Kiwki in Clearing
+  standard: Faron Woods - Stamina Fruit after Kiwki in Clearing
+  pretty: Faron Woods - Stamina Fruit after Kiwki in Clearing
   cryptic: a <r<fruit beyond a forest slope>>
 
-- name: Faron Woods - Stamina Fruit past Baba Slope
-  standard: Faron Woods - Stamina Fruit past Baba Slope
-  pretty: Faron Woods - Stamina Fruit past Baba Slope
+- name: Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba
+  standard: Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba
+  pretty: Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba
   cryptic: a <r<fruit above a forest slope>>
 
 - name: Faron Woods - Stamina Fruit on Vines near Erla
@@ -2666,9 +2666,9 @@
   pretty: Deep Woods - Slingshot Right Temple Door Frame
   cryptic: <r<shooting an entrance>> to a <g<temple in the forest>>
 
-- name: Deep Woods - Gossip Stone
-  standard: Deep Woods - Gossip Stone
-  pretty: Deep Woods - Gossip Stone
+- name: Deep Woods - Gossip Stone before Temple
+  standard: Deep Woods - Gossip Stone before Temple
+  pretty: Deep Woods - Gossip Stone before Temple
   cryptic:
 
 - name: Deep Woods - Goddess Cube Near Goron
@@ -2781,9 +2781,9 @@
   pretty: Floria Waterfall - Slingshot Right Cistern Eye
   cryptic: <r<shooting a soggy eye>>
 
-- name: Floria Waterfall - Gossip Stone
-  standard: Floria Waterfall - Gossip Stone
-  pretty: Floria Waterfall - Gossip Stone
+- name: Floria Waterfall - Gossip Stone near Bird Statue
+  standard: Floria Waterfall - Gossip Stone near Bird Statue
+  pretty: Floria Waterfall - Gossip Stone near Bird Statue
   cryptic:
 
 - name: Floria Waterfall - Goddess Cube on High Ledge
@@ -3111,19 +3111,19 @@
   pretty: Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent
   cryptic: a <r<chest behind a fallen tower>>
 
-- name: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
-  standard: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
-  pretty: Eldin Volcano - Left Rupee behind Bombable Wall on First Slope
+- name: Eldin Volcano - Left Rupee behind Bombable Wall near Thrill Digger Cave
+  standard: Eldin Volcano - Left Rupee behind Bombable Wall near Thrill Digger Cave
+  pretty: Eldin Volcano - Left Rupee behind Bombable Wall near Thrill Digger Cave
   cryptic: a <r<rupee behind a hidden wall>>
 
-- name: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
-  standard: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
-  pretty: Eldin Volcano - Right Rupee behind Bombable Wall on First Slope
+- name: Eldin Volcano - Right Rupee behind Bombable Wall near Thrill Digger Cave
+  standard: Eldin Volcano - Right Rupee behind Bombable Wall near Thrill Digger Cave
+  pretty: Eldin Volcano - Right Rupee behind Bombable Wall near Thrill Digger Cave
   cryptic: a <r<rupee behind a hidden wall>>
 
-- name: Thrill Digger Cave - Gossip Stone
-  standard: Thrill Digger Cave - Gossip Stone
-  pretty: Thrill Digger Cave - Gossip Stone
+- name: Thrill Digger Cave - Gossip Stone near Tubert
+  standard: Thrill Digger Cave - Gossip Stone near Tubert
+  pretty: Thrill Digger Cave - Gossip Stone near Tubert
   cryptic:
 
 - name: Thrill Digger Cave - Slingshot Left Blue Crystal 1
@@ -3211,19 +3211,19 @@
   pretty: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4
   cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
 
-- name: Eldin Volcano - Gossip Stone next to Earth Temple
-  standard: Eldin Volcano - Gossip Stone next to Earth Temple
-  pretty: Eldin Volcano - Gossip Stone next to Earth Temple
+- name: Eldin Volcano - Gossip Stone on Cliff West of Temple
+  standard: Eldin Volcano - Gossip Stone on Cliff West of Temple
+  pretty: Eldin Volcano - Gossip Stone on Cliff West of Temple
   cryptic:
 
-- name: Upper Eldin Cave - Gossip Stone
-  standard: Upper Eldin Cave - Gossip Stone
-  pretty: Upper Eldin Cave - Gossip Stone
+- name: Upper Eldin Cave - West Gossip Stone
+  standard: Upper Eldin Cave - West Gossip Stone
+  pretty: Upper Eldin Cave - West Gossip Stone
   cryptic:
 
-- name: Lower Eldin Cave - Gossip Stone
-  standard: Lower Eldin Cave - Gossip Stone
-  pretty: Lower Eldin Cave - Gossip Stone
+- name: Lower Eldin Cave - East Gossip Stone
+  standard: Lower Eldin Cave - East Gossip Stone
+  pretty: Lower Eldin Cave - East Gossip Stone
   cryptic:
 
 - name: Eldin Volcano - Goddess Cube at Eldin Entrance
@@ -3236,84 +3236,84 @@
   pretty: Eldin Volcano - Goddess Cube near Mogma Turf Entrance
   cryptic:
 
-- name: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
-  standard: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
-  pretty: Eldin Volcano - Goddess Cube West of Earth Temple Entrance
+- name: Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple
+  standard: Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple
+  pretty: Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple
   cryptic:
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 1
-  standard: Eldin Volcano - Underground Rupee West of Earth Temple 1
-  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 1
+- name: Eldin Volcano - Underground Rupee West of Temple 1
+  standard: Eldin Volcano - Underground Rupee West of Temple 1
+  pretty: Eldin Volcano - Underground Rupee West of Temple 1
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 2
-  standard: Eldin Volcano - Underground Rupee West of Earth Temple 2
-  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 2
+- name: Eldin Volcano - Underground Rupee West of Temple 2
+  standard: Eldin Volcano - Underground Rupee West of Temple 2
+  pretty: Eldin Volcano - Underground Rupee West of Temple 2
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 3
-  standard: Eldin Volcano - Underground Rupee West of Earth Temple 3
-  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 3
+- name: Eldin Volcano - Underground Rupee West of Temple 3
+  standard: Eldin Volcano - Underground Rupee West of Temple 3
+  pretty: Eldin Volcano - Underground Rupee West of Temple 3
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 4
-  standard: Eldin Volcano - Underground Rupee West of Earth Temple 4
-  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 4
+- name: Eldin Volcano - Underground Rupee West of Temple 4
+  standard: Eldin Volcano - Underground Rupee West of Temple 4
+  pretty: Eldin Volcano - Underground Rupee West of Temple 4
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 5
-  standard: Eldin Volcano - Underground Rupee West of Earth Temple 5
-  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 5
+- name: Eldin Volcano - Underground Rupee West of Temple 5
+  standard: Eldin Volcano - Underground Rupee West of Temple 5
+  pretty: Eldin Volcano - Underground Rupee West of Temple 5
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 6
-  standard: Eldin Volcano - Underground Rupee West of Earth Temple 6
-  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 6
+- name: Eldin Volcano - Underground Rupee West of Temple 6
+  standard: Eldin Volcano - Underground Rupee West of Temple 6
+  pretty: Eldin Volcano - Underground Rupee West of Temple 6
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 7
-  standard: Eldin Volcano - Underground Rupee West of Earth Temple 7
-  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 7
+- name: Eldin Volcano - Underground Rupee West of Temple 7
+  standard: Eldin Volcano - Underground Rupee West of Temple 7
+  pretty: Eldin Volcano - Underground Rupee West of Temple 7
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 8
-  standard: Eldin Volcano - Underground Rupee West of Earth Temple 8
-  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 8
+- name: Eldin Volcano - Underground Rupee West of Temple 8
+  standard: Eldin Volcano - Underground Rupee West of Temple 8
+  pretty: Eldin Volcano - Underground Rupee West of Temple 8
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 9
-  standard: Eldin Volcano - Underground Rupee West of Earth Temple 9
-  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 9
+- name: Eldin Volcano - Underground Rupee West of Temple 9
+  standard: Eldin Volcano - Underground Rupee West of Temple 9
+  pretty: Eldin Volcano - Underground Rupee West of Temple 9
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Underground Rupee West of Earth Temple 10
-  standard: Eldin Volcano - Underground Rupee West of Earth Temple 10
-  pretty: Eldin Volcano - Underground Rupee West of Earth Temple 10
+- name: Eldin Volcano - Underground Rupee West of Temple 10
+  standard: Eldin Volcano - Underground Rupee West of Temple 10
+  pretty: Eldin Volcano - Underground Rupee West of Temple 10
   cryptic: an <r<underground rupee near a temple>>
 
-- name: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
-  standard: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
-  pretty: Eldin Volcano - Goddess Cube East of Earth Temple Entrance
+- name: Eldin Volcano - Goddess Cube East of Temple
+  standard: Eldin Volcano - Goddess Cube East of Temple
+  pretty: Eldin Volcano - Goddess Cube East of Temple
   cryptic:
 
-- name: Eldin Volcano - Blow Closest Torch West of Earth Temple
-  standard: Eldin Volcano - Blow Closest Torch West of Earth Temple
-  pretty: Eldin Volcano - Blow Closest Torch West of Earth Temple
+- name: Eldin Volcano - Blow Closest Torch West of Temple
+  standard: Eldin Volcano - Blow Closest Torch West of Temple
+  pretty: Eldin Volcano - Blow Closest Torch West of Temple
   cryptic: <r<dusting a flame>> before a <r<temple>>
 
-- name: Eldin Volcano - Blow Farthest Torch West of Earth Temple
-  standard: Eldin Volcano - Blow Farthest Torch West of Earth Temple
-  pretty: Eldin Volcano - Blow Farthest Torch West of Earth Temple
+- name: Eldin Volcano - Blow Farthest Torch West of Temple
+  standard: Eldin Volcano - Blow Farthest Torch West of Temple
+  pretty: Eldin Volcano - Blow Farthest Torch West of Temple
   cryptic: <r<dusting a flame>> before a <r<temple>>
 
-- name: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
-  standard: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
-  pretty: Eldin Volcano - Slingshot Red Jewel above Earth Temple Entrance
+- name: Eldin Volcano - Slingshot Red Jewel above Temple Entrance
+  standard: Eldin Volcano - Slingshot Red Jewel above Temple Entrance
+  pretty: Eldin Volcano - Slingshot Red Jewel above Temple Entrance
   cryptic: <r<shooting a crimson circle>>
 
-- name: Eldin Volcano - Bonk Campfire East of Earth Temple
-  standard: Eldin Volcano - Bonk Campfire East of Earth Temple
-  pretty: Eldin Volcano - Bonk Campfire East of Earth Temple
+- name: Eldin Volcano - Bonk Campfire East of Temple
+  standard: Eldin Volcano - Bonk Campfire East of Temple
+  pretty: Eldin Volcano - Bonk Campfire East of Temple
   cryptic: <r<disturbing a stove>> atop a <r<volcano>>
 
 - name: Eldin Volcano - Goddess Cube on Sand Slide
@@ -3411,24 +3411,24 @@
   pretty: Eldin Volcano - Stamina Fruit near Item on Cliff
   cryptic: a <r<fruit near some fire turtles>>
 
-- name: Eldin Volcano - Stamina Fruit in front of First Slope 1
-  standard: Eldin Volcano - Stamina Fruit in front of First Slope 1
-  pretty: Eldin Volcano - Stamina Fruit in front of First Slope 1
+- name: Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 1
+  standard: Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 1
+  pretty: Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 1
   cryptic: a <r<fruit in front of a sandy slope>>
 
-- name: Eldin Volcano - Stamina Fruit in front of First Slope 2
-  standard: Eldin Volcano - Stamina Fruit in front of First Slope 2
-  pretty: Eldin Volcano - Stamina Fruit in front of First Slope 2
+- name: Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 2
+  standard: Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 2
+  pretty: Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 2
   cryptic: a <r<fruit in front of a sandy slope>>
 
-- name: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
-  standard: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
-  pretty: Eldin Volcano - Stamina Fruit in front of First Slope Shortcut
+- name: Eldin Volcano - Stamina Fruit below Slope after Entrance Shortcut
+  standard: Eldin Volcano - Stamina Fruit below Slope after Entrance Shortcut
+  pretty: Eldin Volcano - Stamina Fruit below Slope after Entrance Shortcut
   cryptic: a <r<fruit in front of a sandy slope>>
 
-- name: Eldin Volcano - Stamina Fruit after First Slope
-  standard: Eldin Volcano - Stamina Fruit after First Slope
-  pretty: Eldin Volcano - Stamina Fruit after First Slope
+- name: Eldin Volcano - Stamina Fruit above Slope after Volcano Ascent
+  standard: Eldin Volcano - Stamina Fruit above Slope after Volcano Ascent
+  pretty: Eldin Volcano - Stamina Fruit above Slope after Volcano Ascent
   cryptic: a <r<fruit on top of a sandy slope>>
 
 - name: Eldin Volcano - Stamina Fruit next to Small Puddle
@@ -3441,19 +3441,19 @@
   pretty: Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger
   cryptic: a <r<fruit above a circle of water>>
 
-- name: Eldin Volcano - Stamina Fruit in front of Second Slope 1
-  standard: Eldin Volcano - Stamina Fruit in front of Second Slope 1
-  pretty: Eldin Volcano - Stamina Fruit in front of Second Slope 1
+- name: Eldin Volcano - Stamina Fruit below Slope before Temple 1
+  standard: Eldin Volcano - Stamina Fruit below Slope before Temple 1
+  pretty: Eldin Volcano - Stamina Fruit below Slope before Temple 1
   cryptic: a <r<fruit in front of a sandy slope>>
 
-- name: Eldin Volcano - Stamina Fruit in front of Second Slope 2
-  standard: Eldin Volcano - Stamina Fruit in front of Second Slope 2
-  pretty: Eldin Volcano - Stamina Fruit in front of Second Slope 2
+- name: Eldin Volcano - Stamina Fruit below Slope before Temple 2
+  standard: Eldin Volcano - Stamina Fruit below Slope before Temple 2
+  pretty: Eldin Volcano - Stamina Fruit below Slope before Temple 2
   cryptic: a <r<fruit in front of a sandy slope>>
 
-- name: Eldin Volcano - Stamina Fruit in front of Second Slope 3
-  standard: Eldin Volcano - Stamina Fruit in front of Second Slope 3
-  pretty: Eldin Volcano - Stamina Fruit in front of Second Slope 3
+- name: Eldin Volcano - Stamina Fruit below Slope before Temple 3
+  standard: Eldin Volcano - Stamina Fruit below Slope before Temple 3
+  pretty: Eldin Volcano - Stamina Fruit below Slope before Temple 3
   cryptic: a <r<fruit in front of a sandy slope>>
 
 - name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
@@ -3461,14 +3461,14 @@
   pretty: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
   cryptic: a <r<fruit past a fallen tower>>
 
-- name: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
-  standard: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
-  pretty: Eldin Volcano - Stamina Fruit on ledge near Hot Cave
+- name: Eldin Volcano - Stamina Fruit on Ledge near Hot Cave
+  standard: Eldin Volcano - Stamina Fruit on Ledge near Hot Cave
+  pretty: Eldin Volcano - Stamina Fruit on Ledge near Hot Cave
   cryptic: a <r<fruit over a hot ledge>>
 
-- name: Eldin Volcano - Stamina Fruit on vines near Hot Cave
-  standard: Eldin Volcano - Stamina Fruit on vines near Hot Cave
-  pretty: Eldin Volcano - Stamina Fruit on vines near Hot Cave
+- name: Eldin Volcano - Stamina Fruit on Vines near Hot Cave
+  standard: Eldin Volcano - Stamina Fruit on Vines near Hot Cave
+  pretty: Eldin Volcano - Stamina Fruit on Vines near Hot Cave
   cryptic: a <r<fruit near a hot cave>>
 
 - name: Eldin Volcano - Stamina Fruit after Big Sand Slide
@@ -3476,19 +3476,19 @@
   pretty: Eldin Volcano - Stamina Fruit after Big Sand Slide
   cryptic: a <r<fruit down a long slide>>
 
-- name: Eldin Volcano - Digging Spot in front of Earth Temple
-  standard: Eldin Volcano - Digging Spot in front of Earth Temple
-  pretty: Eldin Volcano - Digging Spot in front of Earth Temple
+- name: Eldin Volcano - Digging Spot West of Temple
+  standard: Eldin Volcano - Digging Spot West of Temple
+  pretty: Eldin Volcano - Digging Spot West of Temple
   cryptic: <r<soft soil in front of a temple>>
 
-- name: Eldin Volcano - Digging Spot below Tower West of Earth Temple
-  standard: Eldin Volcano - Digging Spot below Tower West of Earth Temple
-  pretty: Eldin Volcano - Digging Spot below Tower West of Earth Temple
+- name: Eldin Volcano - Digging Spot below Tower West of Temple
+  standard: Eldin Volcano - Digging Spot below Tower West of Temple
+  pretty: Eldin Volcano - Digging Spot below Tower West of Temple
   cryptic: <r<soft soil under a tower>>
 
-- name: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
-  standard: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
-  pretty: Eldin Volcano - Digging Spot behind Boulder on Sandy Slope
+- name: Eldin Volcano - Digging Spot behind Boulder on Slope before Temple
+  standard: Eldin Volcano - Digging Spot behind Boulder on Slope before Temple
+  pretty: Eldin Volcano - Digging Spot behind Boulder on Slope before Temple
   cryptic: a <r<boulder on a sandy slope>>
 
 - name: Eldin Volcano - Digging Spot after Sand Slide Vents
@@ -3571,9 +3571,9 @@
   pretty: Volcano Summit - Bonk Waterfall
   cryptic: <r<disturbing a waterfall at the summit>>
 
-- name: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
-  standard: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
-  pretty: Volcano Summit - Chest behind Bombable Wall in Waterfall Area
+- name: Volcano Summit - Chest on Cliff behind Bombable Wall near Waterfall
+  standard: Volcano Summit - Chest on Cliff behind Bombable Wall near Waterfall
+  pretty: Volcano Summit - Chest on Cliff behind Bombable Wall near Waterfall
   cryptic: atop a <r<volcanic waterfall>>
 
 - name: Volcano Summit - Item after Underground Tunnel near Gossip Stone
@@ -3591,14 +3591,14 @@
   pretty: Volcano Summit - Underground Rupee 2
   cryptic: an <r<underground rupee at the summit>>
 
-- name: Volcano Summit - Gossip Stone in Waterfall Area
-  standard: Volcano Summit - Gossip Stone in Waterfall Area
-  pretty: Volcano Summit - Gossip Stone in Waterfall Area
+- name: Volcano Summit - Gossip Stone on Cliff near Waterfall
+  standard: Volcano Summit - Gossip Stone on Cliff near Waterfall
+  pretty: Volcano Summit - Gossip Stone on Cliff near Waterfall
   cryptic:
 
-- name: Volcano Summit - Gossip Stone near Second Thirsty Frog
-  standard: Volcano Summit - Gossip Stone near Second Thirsty Frog
-  pretty: Volcano Summit - Gossip Stone near Second Thirsty Frog
+- name: Volcano Summit - Gossip Stone between Small Thirsty Frogs
+  standard: Volcano Summit - Gossip Stone between Small Thirsty Frogs
+  pretty: Volcano Summit - Gossip Stone between Small Thirsty Frogs
   cryptic:
 
 - name: Volcano Summit - Goddess Cube in Lava Lake
@@ -3661,19 +3661,19 @@
   pretty: Bokoblin Base - Chest near Drawbridge
   cryptic: a <r<captured chest near a drawbridge>>
 
-- name: Bokoblin Base - Bonk Campfire East of Earth Temple
-  standard: Bokoblin Base - Bonk Campfire East of Earth Temple
-  pretty: Bokoblin Base - Bonk Campfire East of Earth Temple
+- name: Bokoblin Base - Bonk Campfire East of Temple
+  standard: Bokoblin Base - Bonk Campfire East of Temple
+  pretty: Bokoblin Base - Bonk Campfire East of Temple
   cryptic: <r<disturbing a stove>> atop a <r<claimed volcano>>
 
-- name: Bokoblin Base - Chest East of Earth Temple Entrance
-  standard: Bokoblin Base - Chest East of Earth Temple Entrance
-  pretty: Bokoblin Base - Chest East of Earth Temple Entrance
+- name: Bokoblin Base - Chest East of Temple down Lava River
+  standard: Bokoblin Base - Chest East of Temple down Lava River
+  pretty: Bokoblin Base - Chest East of Temple down Lava River
   cryptic: a <r<captured chest past a river of lava>>
 
-- name: Bokoblin Base - Chest West of Earth Temple Entrance
-  standard: Bokoblin Base - Chest West of Earth Temple Entrance
-  pretty: Bokoblin Base - Chest West of Earth Temple Entrance
+- name: Bokoblin Base - Chest West of Temple behind Watch Tower
+  standard: Bokoblin Base - Chest West of Temple behind Watch Tower
+  pretty: Bokoblin Base - Chest West of Temple behind Watch Tower
   cryptic: a <r<captured chest past an excavated tunnel>>
 
 - name: Bokoblin Base - First Chest in Volcano Summit
@@ -3941,19 +3941,19 @@
   pretty: Lanayru Desert - Stamina Fruit on Ledge to Party Wheel
   cryptic: a <r<fruit on a sandy ledge>>
 
-- name: Lanayru Desert - Stamina Fruit on South LMF Ledge
-  standard: Lanayru Desert - Stamina Fruit on South LMF Ledge
-  pretty: Lanayru Desert - Stamina Fruit on South LMF Ledge
+- name: Lanayru Desert - Stamina Fruit on Mining Facility South Ledge
+  standard: Lanayru Desert - Stamina Fruit on Mining Facility South Ledge
+  pretty: Lanayru Desert - Stamina Fruit on Mining Facility South Ledge
   cryptic: a <r<fruit on a south temple ledge>>
 
-- name: Lanayru Desert - Stamina Fruit on West LMF Ledge
-  standard: Lanayru Desert - Stamina Fruit on West LMF Ledge
-  pretty: Lanayru Desert - Stamina Fruit on West LMF Ledge
+- name: Lanayru Desert - Stamina Fruit on Mining Facility West Ledge
+  standard: Lanayru Desert - Stamina Fruit on Mining Facility West Ledge
+  pretty: Lanayru Desert - Stamina Fruit on Mining Facility West Ledge
   cryptic: a <r<fruit on a west temple ledge>>
 
-- name: Lanayru Desert - Stamina Fruit on LMF Wall Vines
-  standard: Lanayru Desert - Stamina Fruit on LMF Wall Vines
-  pretty: Lanayru Desert - Stamina Fruit on LMF Wall Vines
+- name: Lanayru Desert - Stamina Fruit on Mining Facility Wall Vines
+  standard: Lanayru Desert - Stamina Fruit on Mining Facility Wall Vines
+  pretty: Lanayru Desert - Stamina Fruit on Mining Facility Wall Vines
   cryptic: a <r<fruit on a temple vine wall>>
 
 - name: Lanayru Desert - Stamina Fruit in South Sand Oasis 1
@@ -3976,9 +3976,9 @@
   pretty: Lanayru Desert - Stamina Fruit in North Sand Oasis 2
   cryptic: a <r<fruit in a sandy paradise>>
 
-- name: Temple of Time - Gossip Stone
-  standard: Temple of Time - Gossip Stone
-  pretty: Temple of Time - Gossip Stone
+- name: Temple of Time - Gossip Stone near Robot
+  standard: Temple of Time - Gossip Stone near Robot
+  pretty: Temple of Time - Gossip Stone near Robot
   cryptic:
 
 - name: Temple of Time - Northwest Rupee on Tree Root
@@ -4381,9 +4381,9 @@
   pretty: Shipyard - Heart Stopping Rickety Coaster Track in 1'05
   cryptic: a <r<fast minecart time>>
 
-- name: Shipyard - Gossip Stone
-  standard: Shipyard - Gossip Stone
-  pretty: Shipyard - Gossip Stone
+- name: Shipyard - Gossip Stone after First Minecart Track
+  standard: Shipyard - Gossip Stone after First Minecart Track
+  pretty: Shipyard - Gossip Stone after First Minecart Track
   cryptic:
 
 - name: Shipyard - Bonk Sign before Second Minecart Track
@@ -4727,9 +4727,9 @@
   pretty: Earth Temple - Chest behind Southwest Bombable Rock
   cryptic: a <r<chest past a lava spout>>
 
-- name: Earth Temple - Northwest Chest Main Room
-  standard: Earth Temple - Northwest Chest Main Room
-  pretty: Earth Temple - Northwest Chest Main Room
+- name: Earth Temple - Northwest Chest in Main Room
+  standard: Earth Temple - Northwest Chest in Main Room
+  pretty: Earth Temple - Northwest Chest in Main Room
   cryptic: a <r<chest surrounded by bridges>>
 
 - name: Earth Temple - Chest in West Room
@@ -5457,14 +5457,14 @@
   pretty: Farore's Silent Realm - Collect all Tears Reward
   cryptic: a <r<trial of courage>>
 
-- name: Nayru's Silent Realm - Stamina Fruit on East LMF Vine Wall
-  standard: Nayru's Silent Realm - Stamina Fruit on East LMF Vine Wall
-  pretty: Nayru's Silent Realm - Stamina Fruit on East LMF Vine Wall
+- name: Nayru's Silent Realm - Stamina Fruit on Mining Facility East Vine Wall
+  standard: Nayru's Silent Realm - Stamina Fruit on Mining Facility East Vine Wall
+  pretty: Nayru's Silent Realm - Stamina Fruit on Mining Facility East Vine Wall
   cryptic: a <r<fruit on a silent desert wall>>
 
-- name: Nayru's Silent Realm - Stamina Fruit on West LMF Vine Wall
-  standard: Nayru's Silent Realm - Stamina Fruit on West LMF Vine Wall
-  pretty: Nayru's Silent Realm - Stamina Fruit on West LMF Vine Wall
+- name: Nayru's Silent Realm - Stamina Fruit on Mining Facility West Vine Wall
+  standard: Nayru's Silent Realm - Stamina Fruit on Mining Facility West Vine Wall
+  pretty: Nayru's Silent Realm - Stamina Fruit on Mining Facility West Vine Wall
   cryptic: a <r<fruit on a silent desert wall>>
 
 - name: Nayru's Silent Realm - Stamina Fruit near Minecart
@@ -5487,9 +5487,9 @@
   pretty: Nayru's Silent Realm - Collect all Tears Reward
   cryptic: a <r<trial of wisdom>>
 
-- name: Din's Silent Realm - Stamina Fruit on First Slope
-  standard: Din's Silent Realm - Stamina Fruit on First Slope
-  pretty: Din's Silent Realm - Stamina Fruit on First Slope
+- name: Din's Silent Realm - Stamina Fruit on Slope after Volcano Ascent
+  standard: Din's Silent Realm - Stamina Fruit on Slope after Volcano Ascent
+  pretty: Din's Silent Realm - Stamina Fruit on Slope after Volcano Ascent
   cryptic: a <r<fruit on a silent sandy slope>>
 
 - name: Din's Silent Realm - Stamina Fruit near First Bone Bridge

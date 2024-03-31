@@ -99,7 +99,7 @@
   locations:
     Sealed Grounds - Slingshot above Doors Behind the Temple: Slingshot
     Sealed Grounds - Gorko's Goddess Wall Reward: Goddesss_Harp and Ballad_of_the_Goddess and Goddess_Sword
-    Sealed Grounds - Gossip Stone: Nothing
+    Sealed Grounds - Gossip Stone Behind the Temple: Nothing
     Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone: Gust_Bellows
     Sealed Grounds - Slingshot Behind the Temple Gates Southwest Side: Slingshot
     Sealed Grounds - Slingshot Behind the Temple Gates Northeast Side: Slingshot
@@ -144,12 +144,12 @@
     Faron Woods - Rupee on Hollow Tree Branch: Beetle
     Faron Woods - Rupee on Platform near Floria Door: Beetle
     Faron Woods - Kikwi Elder's Reward: "'All_Kikwis_Saved'"
-    Faron Woods - Item on Great Tree: Nothing
+    Faron Woods - Item on Great Tree after Tightrope: Nothing
     Faron Woods - Item behind Bombable Rock: Bomb_Bag
     Faron Woods - Chest behind Bombable Rocks near Erla: Bomb_Bag
     Faron Woods - Stamina Fruit on Vines below First Log: Nothing
-    Faron Woods - Stamina Fruit past Empty Slope: Nothing
-    Faron Woods - Stamina Fruit past Baba Slope: Nothing
+    Faron Woods - Stamina Fruit after Kiwki in Clearing: Nothing
+    Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba: Nothing
     Faron Woods - Stamina Fruit on Vines near Erla: Nothing
     Faron Woods - Stamina Fruit on Vines on Great Tree: Beetle # TODO: Check
     Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing: Nothing
@@ -310,7 +310,7 @@
     Deep Woods - Bonk Fence West of Temple: Nothing
     Deep Woods - Slingshot Left Temple Door Frame: Slingshot
     Deep Woods - Slingshot Right Temple Door Frame: Slingshot
-    Deep Woods - Gossip Stone: Nothing
+    Deep Woods - Gossip Stone before Temple: Nothing
     Deep Woods - Goddess Cube Near Goron: Goddess_Sword
     Deep Woods - Goddess Cube in front of Skyview: Goddess_Sword
     Deep Woods - Goddess Cube on top of Skyview: Goddess_Sword and Clawshots
@@ -416,7 +416,7 @@
     Faron Woods Floria Shortcut Ledge: Nothing
     Farore's Lair: Nothing
   locations:
-    Floria Waterfall - Gossip Stone: Nothing
+    Floria Waterfall - Gossip Stone near Bird Statue: Nothing
     Floria Waterfall - Rupee on High Ledge: Beetle
     Floria Waterfall - North Rupee in underwater Grass: Water_Dragons_Scale
     Floria Waterfall - South Rupee in underwater Grass: Water_Dragons_Scale
