@@ -399,13 +399,13 @@
 #     - NPC
 #   hint: never
 
-# - name: Central Skyloft - Repair Gondo's Junk
-#   original_item: Scrapper
-#   types:
-#     - NPC
-#   Paths:
-#     - event/113-RemodelStore/Give Repair Gondo Junk item
-#     - oarc/F004r/l0
+- name: Bazaar - Repair Gondo's Junk
+  original_item: Scrapper
+  types:
+    - NPC
+  Paths:
+    - event/113-RemodelStore/Give Repair Gondo Junk item
+    - oarc/F004r/l0
 
 - name: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
   original_item: Blue Rupee

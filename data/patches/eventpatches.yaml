@@ -1177,6 +1177,11 @@
       param4: No Sword Text
 
 110-DivingGame:
+  - name: Require Scrapper before starting quest
+    type: flowpatch
+    index: 44
+    flow:
+      param2: 323 # Replace check for windmill repaired with scrapper obtained
   - name: Fun Fun Owner's Quest requirement
     type: flowpatch
     index: 38
@@ -1629,9 +1634,26 @@
       param2: 0
       param3: 0
     cases:
-      - 96 # mogma quest switch
+      - Kina Scrapper Check
       - 200 # pumpkin carrying
       - -1 # nothing
+  - name: Kina Scrapper Check
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 323 # Scrapper check
+      param3: 3 # check storyflag
+    cases:
+      - 96 # continue to mogma quest prompt if true
+      - Kina Scrapper Hint # else lament about transport
+  - name: Kina Scrapper Hint
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param4: Kina Scrapper Hint Text
+  - name: Kina Scrapper Hint Text
+    type: textadd
   - name: Show Kina Option
     type: flowpatch
     index: 605
@@ -1646,11 +1668,41 @@
       next: 103
 
 118-Town3:
+  - name: Sparrot Scrapper check
+    type: flowpatch
+    index: 99
+    flow:
+      param2: 323
+    cases:
+      - Normal Sparrot Storyflag Check
+      - 98
+  - name: Normal Sparrot Storyflag Check
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 371
+      param3: 3
+      param4: 2
+      param5: 44
+    cases:
+      - 425
+      - 100
   - name: Remove reference to Windmill in Sparrot Quest starting text
     type: flowpatch
     index: 122
     flow:
       next: 255
+  - name: Owlan Scrapper Check
+    type: flowpatch
+    index: 111
+    flow:
+      param2: 323 # Check for scrapper instead of having started batreaux quest
+    cases:
+      - 318
+      - 110
+  - name: Owlan Scrapper Hint Text
+    type: textpatch
+    index: 135
   - name: Remove reference to Levias in Owlan Quest starting text
     type: flowpatch
     index: 320

@@ -121,3 +121,12 @@
 
 .global after_item_collection_hook
 .type after_item_collection_hook, @function
+
+.global get_arc_model_from_item
+.type get_arc_model_from_item, @function
+
+.global get_item_model_name_ptr
+.type get_item_model_name_ptr, @function
+
+.global change_model_scale
+.type change_model_scale, @function

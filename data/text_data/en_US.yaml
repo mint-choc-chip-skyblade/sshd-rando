@@ -162,6 +162,12 @@
 - name: New Kina Text Option
   standard: "Hey, kid, what do you need from me?\n[1]Plowing the fields?[2]Carrying pumpkins![3-]Nothing."
 
+- name: Kina Scrapper Hint Text
+  standard: "I wish someone could help plow these fields...\nBut even if I found someone, I'd need <r<a way to\ntransport them>> first..."
+
+- name: Owlan Scrapper Hint Text
+  standard: "Actually, let's talk about this matter\nanother time. Even if we found what I\nwanted, we'd have no <r<way to transport it>>\nback here." 
+
 - name: Statue Lower Question
   standard: "Do you want to reset the statue?\n[1]Yes[2-]No"
 
@@ -1435,9 +1441,9 @@
   pretty: Bazaar - Upgrade to Big Bug Net
   cryptic: <r<increasing your net size>>
 
-- name: Central Skyloft - Repair Gondo's Junk
-  standard: Central Skyloft - Repair Gondo's Junk
-  pretty: Central Skyloft - Repair Gondo's Junk
+- name: Bazaar - Repair Gondo's Junk
+  standard: Bazaar - Repair Gondo's Junk
+  pretty: Bazaar - Repair Gondo's Junk
   cryptic: <r<fixing an ancient robot>>
 
 - name: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
