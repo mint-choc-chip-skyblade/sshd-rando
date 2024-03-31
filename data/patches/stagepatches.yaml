@@ -5072,6 +5072,7 @@ D101: # Ancient Cistern
     ids:
       - 0xFC37 # Cam2Tag
       - 0xFC38 # Cam2Tag
+      - 0xFC43 # Evnt
       - 0xFC49 # Evnt
     layer: 0
     room: 5
