@@ -33,7 +33,7 @@ pub struct dAcItem {
     pub base:                    actor::dAcOBase,
     pub itemid:                  u16,
     pub _0:                      [u8; 6],
-    pub item_model_ptr:          u64,
+    pub item_model_ptr:          *mut itemModel,
     pub _1:                      [u8; 2784],
     pub actor_list_element:      u32,
     pub _2:                      [u8; 816],
@@ -50,6 +50,22 @@ pub struct dAcItem {
     pub _6:                      [u8; 19],
 }
 assert_eq_size!([u8; 0x1288], dAcItem);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct itemModel {
+    pub vtable: *mut itemModelVtable,
+}
+assert_eq_size!([u8; 0x8], itemModel);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct itemModelVtable {
+    pub _0:               [u8; 0x28],
+    pub set_local_matrix:
+        extern "C" fn(item_model_ptr: *mut itemModel, world_matrix: *const c_void),
+}
+assert_eq_size!([u8; 0x30], itemModelVtable);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -116,6 +132,11 @@ extern "C" {
         param_4: u32,
         param_5: *mut c_void,
     ) -> u32;
+    fn getArcModelFromName(
+        arc_table: *mut c_void,
+        model_name: *const c_char,
+        model_path: *const c_char,
+    ) -> u64;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -959,5 +980,64 @@ pub fn after_item_collection_hook(collected_item: flag::ITEMFLAGS) -> flag::ITEM
         asm!("mov w8, {0:w}", in(reg) ((collected_item as u16) - 2));
 
         return collected_item;
+    }
+}
+
+#[no_mangle]
+pub fn get_arc_model_from_item(
+    arc_table: *mut c_void,
+    model_name: *const c_char,
+    item_id: u16,
+) -> u64 {
+    unsafe {
+        let resolved_model_name = match item_id {
+            214 => cstr!("Onp").as_ptr(),
+            215 => cstr!("DesertRobot").as_ptr(),
+            _ => model_name,
+        };
+
+        return getArcModelFromName(
+            arc_table,
+            resolved_model_name,
+            cstr!("g3d/model.brres").as_ptr(),
+        );
+    }
+}
+
+#[no_mangle]
+pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *const c_char {
+    unsafe {
+        let resolved_model_name = match item_id {
+            214 => cstr!("OnpB").as_ptr(),
+            215 => cstr!("DesertRobot").as_ptr(),
+            _ => model_name,
+        };
+
+        // Replaced code
+        asm!("mov x1, {0:x}", in(reg) item_id);
+        asm!("cmp x1, #0x1C");
+
+        return resolved_model_name;
+    }
+}
+
+#[no_mangle]
+pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *const c_void) {
+    unsafe {
+        let scale = match (*item_actor).final_determined_itemid {
+            214 => 0.5f32, // Tadtone
+            215 => 0.3f32, // Scrapper
+            _ => 1.0f32,
+        };
+
+        (*item_actor).base.members.base.scale.x *= scale;
+        (*item_actor).base.members.base.scale.y *= scale;
+        (*item_actor).base.members.base.scale.z *= scale;
+
+        // Replaced code
+        ((*(*(*item_actor).item_model_ptr).vtable).set_local_matrix)(
+            (*item_actor).item_model_ptr,
+            world_matrix,
+        );
     }
 }

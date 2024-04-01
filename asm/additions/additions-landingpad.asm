@@ -151,6 +151,15 @@ b.eq academy_bell_give_custom_item
 cmp w8, #45
 b.eq after_item_collection_hook
 
+cmp w8, #46
+b.eq get_arc_model_from_item
+
+cmp w8, #47
+b.eq get_item_model_name_ptr
+
+cmp w8, #48
+b.eq change_model_scale
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

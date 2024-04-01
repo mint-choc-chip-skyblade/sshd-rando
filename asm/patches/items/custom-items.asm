@@ -138,3 +138,39 @@ b.lt 0x71004e3360 ; pretend like it's not a dungeonflag item
 cmp w8, #46 ; last tear item
 b.gt 0x71004e3360 ; pretend like it's not a dungeonflag item
 b 0x71004e3454 ; continue on to set dungeonflag
+
+; Allow loading any arc for items instead of just Put/Get ones
+.offset 0x7100b936fc
+mov x2, x24 ; move item id into param 3
+mov w8, #46
+bl additions_jumptable
+
+; Get name of arc from item id
+.offset 0x7100b93784
+ldr x0, [x8, #0x8]
+mov x1, x23
+mov w8, #47
+bl additions_jumptable
+mov x24, x0
+
+; Custom item alloc
+; inserts a cmp and branch before
+; a bunch of other instructions that get pushed
+; down into nops. Comparing for < 512 was already
+; done previously
+.offset 0x71004e6c70
+cmp w8, #200
+b.ge 0x71004e77dc
+cmp w8, #0x2f
+b.ne 0x71004e7bb8
+adrp x8, DAT_7102c01000
+ldr x8, [x8, #0xa40]
+mov x0, #0x18
+
+; Scaling
+.offset 0x71004e9090
+mov x0, x19
+add x1, sp, #0x20
+mov w8, #48
+bl additions_jumptable
+nop
