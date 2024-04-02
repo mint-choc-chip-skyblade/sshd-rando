@@ -1242,7 +1242,7 @@
   chain_locations:
    - Island near Bamboo Island - Top Goddess Chest
 - id: 267
-  name: Eldin Volcano Goddess Cube West of Earth Temple Entrance
+  name: Eldin Volcano Goddess Cube West of Temple
   types:
     - Cubes
   oarc: null
@@ -1250,7 +1250,7 @@
   chain_locations:
    - Bamboo Island - Goddess Chest behind Entrance
 - id: 268
-  name: Eldin Volcano Goddess Cube East of Earth Temple Entrance
+  name: Eldin Volcano Goddess Cube East of Temple
   types:
     - Cubes
   oarc: null

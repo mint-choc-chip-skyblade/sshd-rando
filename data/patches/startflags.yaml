@@ -40,6 +40,7 @@ Storyflags:
   - 647 # Watched panning cutscene after exiting Pirate Stronghold
   - 661 # Windmill Repaired (required for scrapper quests - TODO)
   - 724 # Skip first time using Light Pillar Cutscene (always sends you to Sealed Grounds)
+  - 738 # Fi text after sitting on Skipper's Shack stool
   - 745 # Unlocked 5 Beacons
   - 753 # Collected Hornet Larvae for 1st time
   - 754 # Collected Bird Feather for 1st time

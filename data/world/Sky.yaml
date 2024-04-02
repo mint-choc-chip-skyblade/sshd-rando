@@ -79,7 +79,7 @@
     Bamboo Island - Slingshot Left Lantern: Slingshot
     Bamboo Island - Slingshot Middle Lantern: Slingshot
     Bamboo Island - Slingshot Right Lantern: Slingshot
-    Bamboo Island - Goddess Chest behind Entrance: Eldin_Volcano_Goddess_Cube_West_of_Earth_Temple_Entrance
+    Bamboo Island - Goddess Chest behind Entrance: Eldin_Volcano_Goddess_Cube_West_of_Temple
 
 
 - name: Bamboo Island Interior
@@ -88,7 +88,7 @@
   exits:
     Bamboo Island: Day
   locations:
-    Bamboo Island Interior - Gossip Stone: Nothing
+    Bamboo Island Interior - Gossip Stone behind Bamboo Pole: Nothing
     Bamboo Island Interior - Bonk Southwest Sprout: Nothing
     Bamboo Island Interior - Bonk West Sprout: Nothing
     Bamboo Island Interior - Bonk East Sprout: Nothing
@@ -124,7 +124,7 @@
     The Sky: Day
   locations:
     Northeast Island - Goddess Chest behind Bombable Rocks: Bomb_Bag and Lanayru_Mine_Goddess_Cube
-    Northeast Island - Goddess Chest in Cage: Eldin_Volcano_Goddess_Cube_East_of_Earth_Temple_Entrance
+    Northeast Island - Goddess Chest in Cage: Eldin_Volcano_Goddess_Cube_East_of_Temple
 
 
 - name: Lumpy Pumpkin Exterior
@@ -138,8 +138,8 @@
     Lumpy Pumpkin Main West Door: Nothing
     The Sky: Day
   locations:
-    Lumpy Pumpkin - Slingshot Left Canopy Lantern: Slingshot
-    Lumpy Pumpkin - Slingshot Right Canopy Lantern: Slingshot
+    Lumpy Pumpkin - Slingshot Left Porch Lantern: Slingshot
+    Lumpy Pumpkin - Slingshot Right Porch Lantern: Slingshot
     Lumpy Pumpkin - Slingshot Lantern Left of Main Door: Slingshot
     Lumpy Pumpkin - Slingshot Lantern Right of Main Door: Slingshot
     Lumpy Pumpkin - Slingshot Lantern next to Back Door: Slingshot
@@ -147,7 +147,7 @@
     Lumpy Pumpkin - Goddess Chest near Gossip Stone: Deep_Woods_Goddess_Cube_near_Goron
     Lumpy Pumpkin - Goddess Chest on Roof: Day and Skyview_Spring_Goddess_Cube
     Lumpy Pumpkin - Deliver Mogma to Kina: Day and 'Pick_up_Guld'
-    Lumpy Pumpkin - Gossip Stone: Nothing
+    Lumpy Pumpkin - Gossip Stone near Back Door: Nothing
 
 
 - name: Lumpy Pumpkin Back Door
@@ -200,7 +200,7 @@
   locations:
     Volcanic Island - Outside Goddess Chest: Lanayru_Desert_Goddess_Cube_in_Sand_Oasis
     Volcanic Island - Inside Goddess Chest: (Clawshots or logic_volcanic_island_dive) and Faron_Woods_Goddess_Cube_on_East_Great_Tree_with_Clawshots_Target
-    Volcanic Island - Gossip Stone: Nothing
+    Volcanic Island - Gossip Stone inside Island: Nothing
 
 
 - name: Orielle's Island

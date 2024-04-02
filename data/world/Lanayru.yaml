@@ -187,9 +187,9 @@
     LMF First Room: Nothing
   locations:
     Lanayru Desert - Chest on top of Lanayru Mining Facility: Nothing
-    Lanayru Desert - Stamina Fruit on South LMF Ledge: Nothing
-    Lanayru Desert - Stamina Fruit on West LMF Ledge: Nothing
-    Lanayru Desert - Stamina Fruit on LMF Wall Vines: Nothing
+    Lanayru Desert - Stamina Fruit on Mining Facility South Ledge: Nothing
+    Lanayru Desert - Stamina Fruit on Mining Facility West Ledge: Nothing
+    Lanayru Desert - Stamina Fruit on Mining Facility Wall Vines: Nothing
 
 - name: Lanayru Desert North
   hint_region: Lanayru Desert
@@ -282,7 +282,7 @@
     Temple of Time West Past Rubble: can_access(Temple of Time West Past Rubble)
     Temple of Time North Minecart Ride: Long_Range_Skyward_Strike or Distance_Activator
   locations:
-    Temple of Time - Gossip Stone: Nothing
+    Temple of Time - Gossip Stone near Robot: Nothing
     # Save Robot: Can_Defeat_Bokoblins and 'ToT_West_Timeshift_Stone'
 
 - name: Temple of Time West Past Rubble
@@ -325,11 +325,11 @@
     Lanayru Desert North: Nothing
   locations:
     Nayru's Silent Realm - Collect all Tears Reward: Nothing
-    Nayru's Silent Realm - Stamina Fruit on East LMF Vine Wall: Nothing
-    Nayru's Silent Realm - Stamina Fruit on West LMF Vine Wall: Nothing
-    Nayru's Silent Realm - Stamina Fruit near Minecart: Nothing
+    Nayru's Silent Realm - Stamina Fruit on Mining Facility East Vine Wall: Nothing
+    Nayru's Silent Realm - Stamina Fruit on Mining Facility West Vine Wall: Nothing
+    Nayru's Silent Realm - Stamina Fruit near Minecart in Waking Water: Nothing
     Nayru's Silent Realm - Stamina Fruit between Watchers: Nothing
-    Nayru's Silent Realm - Stamina Fruit near Tree: Nothing
+    Nayru's Silent Realm - Stamina Fruit below Tree near Mine Entrance: Nothing
 
 - name: Lanayru Caves
   hint_region: Lanayru Caves
@@ -499,7 +499,7 @@
     Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator: Nothing
     Shipyard - Heart Stopping Rickety Coaster Track in 1'05: Nothing
     Shipyard - Bonk Sign before Second Minecart Track: Nothing
-    Shipyard - Gossip Stone: Nothing # Take the first cart and you've arrived
+    Shipyard - Gossip Stone after First Minecart Track: Nothing # Take the first cart and you've arrived
 
 - name: Shipyard End of Minecart Ride
   exits:
