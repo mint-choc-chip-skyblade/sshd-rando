@@ -61,7 +61,11 @@ def patch_required_dungeon_text_trigger(
     else:
         entrance_info = starting_entrance.replaces.spawn_info[0]
 
-    stage_patch_handler.stage_patches[entrance_info["stage"]].append(
+    stage = entrance_info["stage"]
+    if stage not in stage_patch_handler.stage_patches:
+        stage_patch_handler.stage_patches[stage] = []
+
+    stage_patch_handler.stage_patches[stage].append(
         {
             "name": "Add NpcTke Required Dungeon Text Trigger",
             "type": "objadd",
