@@ -41,7 +41,6 @@ class Advanced:
         self.config: Config = main.config
 
         self.ui.random_settings_group_box.setTitle("")
-        self.ui.randomization_settings_group_box.setTitle("")
 
         self.output_dir_line_edit: QLineEdit = self.ui.config_output
         self.output_dir_line_edit.setText(self.config.output_dir.as_posix())

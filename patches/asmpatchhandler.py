@@ -279,7 +279,7 @@ class ASMPatchHandler:
             global_variables_diff_file_path = (
                 temp_dir_name / "global-variables-diff.yaml"
             )
-            self.patch_global_variables(global_variables_diff_file_path)
+            self.init_global_variables(global_variables_diff_file_path)
 
             print("Patching starting entrance")
             staring_entrance_diff_file_path = (
@@ -468,7 +468,7 @@ class ASMPatchHandler:
         # If this fails, the rust struct size will need increasing
         assert len(startflags_data_bytes) < MAX_STARTFLAGS
 
-    def patch_global_variables(self, output_path: Path):
+    def init_global_variables(self, output_path: Path):
         init_globals_dict = {
             0x712E5FF020: [
                 0xFF,

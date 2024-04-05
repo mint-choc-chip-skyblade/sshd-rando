@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -3254,7 +3254,7 @@ Practice Sword</string>
          </widget>
         </item>
         <item>
-         <widget class="QGroupBox" name="randomization_settings_group_box">
+         <widget class="QGroupBox" name="other_settings_group_box">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -3262,8 +3262,30 @@ Practice Sword</string>
            </sizepolicy>
           </property>
           <property name="title">
-           <string>Randomization Settings</string>
+           <string>Other Settings</string>
           </property>
+          <layout class="QVBoxLayout" name="verticalLayout_32">
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_enable_back_in_time">
+             <property name="text">
+              <string>Enable Back in Time (BiT)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -3323,12 +3345,74 @@ Practice Sword</string>
     </item>
     <item>
      <layout class="QGridLayout" name="footer_grid_layout" rowstretch="0,0,0">
+      <item row="0" column="0">
+       <widget class="QLabel" name="setting_string_label">
+        <property name="text">
+         <string>Setting String</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="about_button">
+        <property name="text">
+         <string>About</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="new_seed_button">
+        <property name="text">
+         <string>New Seed</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="2">
        <widget class="QPushButton" name="copy_setting_string_button">
         <property name="text">
          <string>Copy</string>
         </property>
        </widget>
+      </item>
+      <item row="2" column="1">
+       <layout class="QHBoxLayout" name="reset_settings_to_default_hlayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="layout_label">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="reset_settings_to_default_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Reset Settings to Default</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="hash_label">
+            <property name="text">
+             <string>Hash:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="seed_line_edit"/>
       </item>
       <item row="0" column="1">
        <layout class="QHBoxLayout" name="setting_string_layout">
@@ -3376,16 +3460,6 @@ Practice Sword</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="seed_line_edit"/>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="new_seed_button">
-        <property name="text">
-         <string>New Seed</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="2">
        <widget class="QPushButton" name="randomize_button">
         <property name="sizePolicy">
@@ -3398,58 +3472,6 @@ Practice Sword</string>
          <string>Randomize</string>
         </property>
        </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="setting_string_label">
-        <property name="text">
-         <string>Setting String</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="about_button">
-        <property name="text">
-         <string>About</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <layout class="QHBoxLayout" name="reset_settings_to_default_hlayout">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_7">
-          <item>
-           <widget class="QLabel" name="layout_label">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="reset_settings_to_default_button">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Reset Settings to Default</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="hash_label">
-            <property name="text">
-             <string>Hash:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
       </item>
      </layout>
     </item>

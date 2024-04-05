@@ -3,6 +3,8 @@
 #![allow(unused)]
 
 use crate::debug;
+use crate::entrance;
+use crate::traps;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
@@ -100,6 +102,9 @@ assert_eq_size!([u8; 0x10], EventFlowElement);
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
+    // Custom symbols
+    static mut TRAP_ID: u8;
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
 }
@@ -108,6 +113,29 @@ extern "C" {
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
 
-////////////////////////
-// ADD FUNCTIONS HERE //
-////////////////////////
+#[no_mangle]
+pub fn custom_event_commands(
+    actor_event_flow_mgr: *mut ActorEventFlowMgr,
+    p_event_flow_element: *const EventFlowElement,
+) {
+    let event_flow_element = unsafe { &*p_event_flow_element };
+    match event_flow_element.param3 {
+        // Fi Warp
+        70 => entrance::warp_to_start(),
+        // Get trap type
+        71 => unsafe {
+            if TRAP_ID != u8::MAX {
+                (*actor_event_flow_mgr).result_from_previous_check = 1;
+            } else {
+                (*actor_event_flow_mgr).result_from_previous_check = 0;
+            }
+        },
+        72 => traps::update_traps(),
+        _ => (),
+    }
+
+    unsafe {
+        // Replaced instructions
+        asm!("mov w21, #1", "cmp w8, #0x3f",);
+    }
+}

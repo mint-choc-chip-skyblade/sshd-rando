@@ -160,6 +160,12 @@ b.eq get_item_model_name_ptr
 cmp w8, #48
 b.eq change_model_scale
 
+cmp w8, #49
+b.eq main_loop_inject
+
+cmp w8, #50
+b.eq activate_back_in_time
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
