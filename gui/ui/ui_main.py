@@ -2151,12 +2151,23 @@ class Ui_main_window(object):
 
         self.horizontalLayout_4.addWidget(self.random_settings_group_box)
 
-        self.randomization_settings_group_box = QGroupBox(self.advanced_tab)
-        self.randomization_settings_group_box.setObjectName(u"randomization_settings_group_box")
-        sizePolicy2.setHeightForWidth(self.randomization_settings_group_box.sizePolicy().hasHeightForWidth())
-        self.randomization_settings_group_box.setSizePolicy(sizePolicy2)
+        self.other_settings_group_box = QGroupBox(self.advanced_tab)
+        self.other_settings_group_box.setObjectName(u"other_settings_group_box")
+        sizePolicy2.setHeightForWidth(self.other_settings_group_box.sizePolicy().hasHeightForWidth())
+        self.other_settings_group_box.setSizePolicy(sizePolicy2)
+        self.verticalLayout_32 = QVBoxLayout(self.other_settings_group_box)
+        self.verticalLayout_32.setObjectName(u"verticalLayout_32")
+        self.setting_enable_back_in_time = RandoTriStateCheckBox(self.other_settings_group_box)
+        self.setting_enable_back_in_time.setObjectName(u"setting_enable_back_in_time")
 
-        self.horizontalLayout_4.addWidget(self.randomization_settings_group_box)
+        self.verticalLayout_32.addWidget(self.setting_enable_back_in_time)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_32.addItem(self.verticalSpacer)
+
+
+        self.horizontalLayout_4.addWidget(self.other_settings_group_box)
 
         self.tab_widget.addTab(self.advanced_tab, "")
 
@@ -2191,10 +2202,58 @@ class Ui_main_window(object):
 
         self.footer_grid_layout = QGridLayout()
         self.footer_grid_layout.setObjectName(u"footer_grid_layout")
+        self.setting_string_label = QLabel(self.central_widget)
+        self.setting_string_label.setObjectName(u"setting_string_label")
+
+        self.footer_grid_layout.addWidget(self.setting_string_label, 0, 0, 1, 1)
+
+        self.about_button = QPushButton(self.central_widget)
+        self.about_button.setObjectName(u"about_button")
+
+        self.footer_grid_layout.addWidget(self.about_button, 2, 0, 1, 1)
+
+        self.new_seed_button = QPushButton(self.central_widget)
+        self.new_seed_button.setObjectName(u"new_seed_button")
+
+        self.footer_grid_layout.addWidget(self.new_seed_button, 1, 2, 1, 1)
+
         self.copy_setting_string_button = QPushButton(self.central_widget)
         self.copy_setting_string_button.setObjectName(u"copy_setting_string_button")
 
         self.footer_grid_layout.addWidget(self.copy_setting_string_button, 0, 2, 1, 1)
+
+        self.reset_settings_to_default_hlayout = QHBoxLayout()
+        self.reset_settings_to_default_hlayout.setObjectName(u"reset_settings_to_default_hlayout")
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.layout_label = QLabel(self.central_widget)
+        self.layout_label.setObjectName(u"layout_label")
+
+        self.horizontalLayout_7.addWidget(self.layout_label)
+
+        self.reset_settings_to_default_button = QPushButton(self.central_widget)
+        self.reset_settings_to_default_button.setObjectName(u"reset_settings_to_default_button")
+        sizePolicy6.setHeightForWidth(self.reset_settings_to_default_button.sizePolicy().hasHeightForWidth())
+        self.reset_settings_to_default_button.setSizePolicy(sizePolicy6)
+
+        self.horizontalLayout_7.addWidget(self.reset_settings_to_default_button)
+
+        self.hash_label = QLabel(self.central_widget)
+        self.hash_label.setObjectName(u"hash_label")
+        self.hash_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_7.addWidget(self.hash_label)
+
+
+        self.reset_settings_to_default_hlayout.addLayout(self.horizontalLayout_7)
+
+
+        self.footer_grid_layout.addLayout(self.reset_settings_to_default_hlayout, 2, 1, 1, 1)
+
+        self.seed_line_edit = QLineEdit(self.central_widget)
+        self.seed_line_edit.setObjectName(u"seed_line_edit")
+
+        self.footer_grid_layout.addWidget(self.seed_line_edit, 1, 1, 1, 1)
 
         self.setting_string_layout = QHBoxLayout()
         self.setting_string_layout.setObjectName(u"setting_string_layout")
@@ -2226,16 +2285,6 @@ class Ui_main_window(object):
 
         self.footer_grid_layout.addWidget(self.seed_label, 1, 0, 1, 1)
 
-        self.seed_line_edit = QLineEdit(self.central_widget)
-        self.seed_line_edit.setObjectName(u"seed_line_edit")
-
-        self.footer_grid_layout.addWidget(self.seed_line_edit, 1, 1, 1, 1)
-
-        self.new_seed_button = QPushButton(self.central_widget)
-        self.new_seed_button.setObjectName(u"new_seed_button")
-
-        self.footer_grid_layout.addWidget(self.new_seed_button, 1, 2, 1, 1)
-
         self.randomize_button = QPushButton(self.central_widget)
         self.randomize_button.setObjectName(u"randomize_button")
         sizePolicy14 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
@@ -2246,44 +2295,6 @@ class Ui_main_window(object):
 
         self.footer_grid_layout.addWidget(self.randomize_button, 2, 2, 1, 1)
 
-        self.setting_string_label = QLabel(self.central_widget)
-        self.setting_string_label.setObjectName(u"setting_string_label")
-
-        self.footer_grid_layout.addWidget(self.setting_string_label, 0, 0, 1, 1)
-
-        self.about_button = QPushButton(self.central_widget)
-        self.about_button.setObjectName(u"about_button")
-
-        self.footer_grid_layout.addWidget(self.about_button, 2, 0, 1, 1)
-
-        self.reset_settings_to_default_hlayout = QHBoxLayout()
-        self.reset_settings_to_default_hlayout.setObjectName(u"reset_settings_to_default_hlayout")
-        self.horizontalLayout_7 = QHBoxLayout()
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.layout_label = QLabel(self.central_widget)
-        self.layout_label.setObjectName(u"layout_label")
-
-        self.horizontalLayout_7.addWidget(self.layout_label)
-
-        self.reset_settings_to_default_button = QPushButton(self.central_widget)
-        self.reset_settings_to_default_button.setObjectName(u"reset_settings_to_default_button")
-        sizePolicy6.setHeightForWidth(self.reset_settings_to_default_button.sizePolicy().hasHeightForWidth())
-        self.reset_settings_to_default_button.setSizePolicy(sizePolicy6)
-
-        self.horizontalLayout_7.addWidget(self.reset_settings_to_default_button)
-
-        self.hash_label = QLabel(self.central_widget)
-        self.hash_label.setObjectName(u"hash_label")
-        self.hash_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.horizontalLayout_7.addWidget(self.hash_label)
-
-
-        self.reset_settings_to_default_hlayout.addLayout(self.horizontalLayout_7)
-
-
-        self.footer_grid_layout.addLayout(self.reset_settings_to_default_hlayout, 2, 1, 1, 1)
-
 
         self.verticalLayout_2.addLayout(self.footer_grid_layout)
 
@@ -2291,7 +2302,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2549,19 +2560,20 @@ class Ui_main_window(object):
         self.selected_plandomizer_file_label.setText(QCoreApplication.translate("main_window", u"Selected Plandomizer File:", None))
         self.open_plandomizer_folder_button.setText(QCoreApplication.translate("main_window", u"Open Plandomizer Folder", None))
         self.random_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Random Settings", None))
-        self.randomization_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Randomization Settings", None))
+        self.other_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Settings", None))
+        self.setting_enable_back_in_time.setText(QCoreApplication.translate("main_window", u"Enable Back in Time (BiT)", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))
-        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
-        self.paste_setting_string_button.setText(QCoreApplication.translate("main_window", u"Paste", None))
-        self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
-        self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
-        self.randomize_button.setText(QCoreApplication.translate("main_window", u"Randomize", None))
         self.setting_string_label.setText(QCoreApplication.translate("main_window", u"Setting String", None))
         self.about_button.setText(QCoreApplication.translate("main_window", u"About", None))
+        self.new_seed_button.setText(QCoreApplication.translate("main_window", u"New Seed", None))
+        self.copy_setting_string_button.setText(QCoreApplication.translate("main_window", u"Copy", None))
         self.layout_label.setText("")
         self.reset_settings_to_default_button.setText(QCoreApplication.translate("main_window", u"Reset Settings to Default", None))
         self.hash_label.setText(QCoreApplication.translate("main_window", u"Hash:", None))
+        self.paste_setting_string_button.setText(QCoreApplication.translate("main_window", u"Paste", None))
+        self.seed_label.setText(QCoreApplication.translate("main_window", u"Seed:", None))
+        self.randomize_button.setText(QCoreApplication.translate("main_window", u"Randomize", None))
     # retranslateUi
 

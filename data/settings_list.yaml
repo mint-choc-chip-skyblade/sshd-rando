@@ -30,6 +30,16 @@
     - extra: "The standard item pool will be used plus 1 extra of the major items (Item-Wheel item, Tablets, Mitts, Water Dragon's Scale, and Fireshield Earrings)."
     - plentiful: "The standard item pool will be used plus 100% extra of the major items. E.g. There will be 8 Beetles, 6 Bows, 4 Mitts, etc..."
 
+- name: enable_back_in_time
+  default_option: "off"
+  pretty_name: Enable Back in Time (BiT)
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will not be able to perform the Back in Time (BiT) glitch from the Wii version of the game."
+    - "on": "You will be able to activate the Back in Time (BiT) glitch by soft-resetting the game (hold R+A+LeftStick) while also holding the L button."
+
 # Shuffles
 - name: gratitude_crystal_shuffle
   default_option: "on"
