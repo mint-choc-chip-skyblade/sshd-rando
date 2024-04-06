@@ -333,6 +333,13 @@ class Settings:
                     new_option = "on"
                 elif widget.checkState() == Qt.CheckState.PartiallyChecked:
                     new_option = "random"
+
+                    if not self.config.tutorial_random_settings and from_widget:
+                        self.main.fi_info_dialog.show_dialog(
+                            "Random Setting Information",
+                            f"Checkboxes have 3 states: off, on, and 'random'. Checkboxes that have a dash (-) instead of a tick mean that the randomizer will randomly pick if that setting is on or off when you click 'Randomize'.<br><br>You can middle-click any setting to quickly reset it back to its default or right-click to view a description of the possible options for a setting.",
+                        )
+                        self.config.tutorial_random_settings = True
                 else:
                     new_option = "off"
             elif isinstance(widget, QComboBox):
