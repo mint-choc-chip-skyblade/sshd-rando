@@ -196,30 +196,32 @@ The output folder you have specified cannot be found.
 
 def start_gui(app: QApplication):
     try:
-        widget = Main()
-        widget.show()
+        main = Main()
+        main.show()
 
-        if not EXEFS_EXTRACT_PATH.exists() or not ROMFS_EXTRACT_PATH.exists():
+        if not main.config.verified_extract:
             get_extract_text = "Before you can begin, you will need to provide an extract of The Legend of Zelda: Skyward Sword HD"
             get_extract_text += "<br><br>Instructions for how to do this can be found here: <a href='https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY'>The Legend of Zelda: Skyward Sword HD Randomizer - Setup Guide</a>"
             get_extract_text += '<br><br>Once you are ready, click "OK" and the extract folder will open. Copy your extract of the base game into this folder'
             get_extract_text += "<br><br>(If you just wish to look around, you can skip this step but you will be unable to randomize the game)."
-            widget.fi_info_dialog.show_dialog(
+            main.fi_info_dialog.show_dialog(
                 title="Getting Started", text=get_extract_text
             )
 
-            widget.advanced.open_extract_folder()
+            main.advanced.open_extract_folder()
 
-            confirm_first_time_verify_dialog = widget.fi_question_dialog.show_dialog(
+            confirm_first_time_verify_dialog = main.fi_question_dialog.show_dialog(
                 "Perform Full Verification?",
                 f'Would you like to verify your extract (required for the randomizer to work)?<br><br>Answering "No" will prevent you from randomizing the game but you will still be able to look around.',
             )
 
             if confirm_first_time_verify_dialog == QMessageBox.StandardButton.Yes:
-                if widget.advanced.verify_extract(verify_all=True):
-                    widget.ui.randomize_button.setDisabled(False)
+                if main.advanced.verify_extract(verify_all=True):
+                    main.ui.randomize_button.setDisabled(False)
+                    main.config.verified_extract = True
+                    main.settings.update_from_config()
         else:
-            widget.ui.randomize_button.setDisabled(False)
+            main.ui.randomize_button.setDisabled(False)
 
         sys.exit(app.exec())
     except Exception as e:
