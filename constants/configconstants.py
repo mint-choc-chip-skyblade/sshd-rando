@@ -34,6 +34,7 @@ PREFERENCE_FIELDS = (
     "font_family",
     "font_size",
     "verified_extract",
+    "tutorial_random_settings",
 )
 
 
@@ -60,6 +61,7 @@ DEFAULT_SETTINGS = {
     "font_family": "Figtree",
     "font_size": 10,
     "verified_extract": False,
+    "tutorial_random_settings": False,
     "starting_inventory": Counter(
         [
             HYLIAN_SHIELD,
