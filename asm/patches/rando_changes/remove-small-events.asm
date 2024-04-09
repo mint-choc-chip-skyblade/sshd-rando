@@ -39,13 +39,9 @@ b 0x7100bf0674 ; skip to the end of the function
 
 ; Timeshift Stones
 ; Don't play first time timeshift stone cutscenes
-.offset 0x710097eabc
+.offset 0x710097ef50
 mov w8, #18
 bl additions_jumptable
-
-; Always set isFirstStone to false
-.offset 0x710097eadc
-strb wzr, [x23, #0xc1]
 
 
 ; Skip basketball statue cutscenes
