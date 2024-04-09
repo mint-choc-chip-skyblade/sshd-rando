@@ -31,9 +31,11 @@ mov w8, #0xFF
 ; .offset 0x71006f5aac
 ; mov w8, #0xFF
 
+
 ; Don't open collection screen when getting treasures/gratitude crystals
 .offset 0x7100bf0590
 b 0x7100bf0674 ; skip to the end of the function
+
 
 ; Timeshift Stones
 ; Don't play first time timeshift stone cutscenes
@@ -45,6 +47,12 @@ bl additions_jumptable
 .offset 0x710097eadc
 strb wzr, [x23, #0xc1]
 
+
 ; Skip basketball statue cutscenes
 .offset 0x710090cbcc
 mov w8, #0xFF
+
+
+; Don't play event when breaking ropes holding boxes in the air
+.offset 0x71007397d8
+b 0x71007396d8
