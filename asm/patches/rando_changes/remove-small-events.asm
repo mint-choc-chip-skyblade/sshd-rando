@@ -56,3 +56,11 @@ mov w8, #0xFF
 ; Don't play event when breaking ropes holding boxes in the air
 .offset 0x71007397d8
 b 0x71007396d8
+
+
+; Minecarts
+; Don't play event when pushing minecarts off ledges
+.offset 0x71009a2ec4 ; in dAcOTrolley::statePushPullEnter
+b 0x71009a30bc
+.offset 0x71009a310c ; dAcOTrolley::statePushPullUpdate
+b 0x71009a31a8
