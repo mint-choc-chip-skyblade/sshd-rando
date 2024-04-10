@@ -1466,6 +1466,50 @@ F100: # Faron Woods
       posy: 2102.997295
       posz: -9485
       name: Tubo
+  - name: Always spawn Lopsa
+    type: objpatch
+    id: 0x56B9
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 226 # hero mode (aka always)
+  - name: Always spawn Erla
+    type: objpatch
+    id: 0x5EBA
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 226 # hero mode (aka always)
+  - name: Always spawn Oolo
+    type: objpatch
+    id: 0x0AB8
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 226 # hero mode (aka always)
+  # These patches make it so that the bokos around Machi don't trigger a cutscene.
+  # This is necessary to allow the Kikwis to be saved in any order (specifically,
+  # triggering the Lopsa bokos breaks the Machi bokos and requires the area be reloaded).
+  # If this seems like voodoo magic, that's because it is :p
+  - name: Patch Machi boko 1
+    type: objpatch
+    id: 0x66D1
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF1FFFF20 # 0xF0... -> 0xF1...
+  - name: Patch Machi boko 2
+    type: objpatch
+    id: 0x66D2
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF1FFFF20 # 0xF0... -> 0xF1...
   - name: Remove Faron Woods Intro Cutscene
     type: objpatch
     index: 0
