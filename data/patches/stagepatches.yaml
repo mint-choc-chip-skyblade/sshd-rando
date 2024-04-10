@@ -3025,6 +3025,24 @@ F210: # Mogma Turf
       - story_flag: -1
         night: 0
         layer: 1
+  - name: Add air vent to Guld platform
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: SOBJ
+    object:
+      params1: 0x7FFFF027
+      params2: 0xFFDFFFFF
+      posx: 2500
+      posy: -7390
+      posz: 2200
+      sizex: 1.5
+      sizey: 8.5
+      sizez: 1.5
+      anglex: 364
+      angley: 25000
+      anglez: 1023
+      name: Wind
   - name: Add ammo pot to Mogma Turf Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
     type: objadd
