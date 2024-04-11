@@ -1923,6 +1923,13 @@ F102_2: # Faron's Lair
       play_cutscene: -1
 
 F103: # Flooded Faron Woods
+  - name: Don't play intro cutscene
+    type: objpatch
+    room: 0
+    index: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
   - name: Add ammo pot to Faron Woods Entry Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
