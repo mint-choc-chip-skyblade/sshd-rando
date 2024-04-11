@@ -2803,6 +2803,30 @@
     index: 495
     flow:
       next: 492
+  - name: Always offer Groosenator choices
+    type: flowpatch
+    index: 78
+    flow: {}
+    cases:
+      - Show Groose Attention Mark
+      - Show Groose Attention Mark
+  - name: Show Groose Attention Mark
+    type: attentionmark
+    flow:
+      next: 194 # offer Groosenator choices
+  - name: First Groosenator Choice Text
+    type: textpatch
+    index: 100
+  - name: Patch First Groosenator Choice Switch
+    type: flowpatch
+    index: 195
+    flow:
+      param4: 4 # number of choices
+    cases:
+      - 196 # The Sky!
+      - 198 # The Surface.
+      - 79  # Flooded Faron Woods
+      - 200 # Never mind!
 
 501-Inpa:
   - name: Patch start of The Old One text

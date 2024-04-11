@@ -5728,6 +5728,9 @@
 - name: Impa SoT Text
   standard: Do not fear for <b<Zelda>>. I will watch over her here. Go now to |regions|. The <r<item you need to fulfill your destiny>> is there.
 
+- name: First Groosenator Choice Text
+  standard: "So, where you flying to today?\n[1]The sky![2]The surface.[3]<b<Flooded Faron Woods>>[4-]Never mind!"
+
 # Fi text
 - name: No Fi Hints Text
   standard: "Master, I unfortunately have <r<no hints>> for you."
