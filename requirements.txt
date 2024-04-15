@@ -2,14 +2,14 @@ cmake~=3.29.0 # Needed to get nlzss11 v1.7
 nlzss11 @ git+https://github.com/CovenEsme/nlzss11@1.7 # Allows for compression of larger SSHD files
 PyYAML~=6.0.1
 lz4~=4.3.2
-PySide6~=6.6.1
+PySide6~=6.7.0
 pyqtdarktheme @ git+https://github.com/CovenEsme/PyQtDarkTheme/@v2.2.0 # Includes support for python 3.12
 typing_extensions~=4.11.0
 pyclip~=0.7.0
 
 # dev stuff
-black~=24.3.0
+black~=24.4.0
 pytest~=8.1.1
-PyInstaller~=6.5.0
+PyInstaller~=6.6.0
 Pillow~=10.3.0
 appdirs~=1.4.4
