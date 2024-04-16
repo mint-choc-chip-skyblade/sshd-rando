@@ -663,6 +663,16 @@
         **Hero Hode** (new game +) damage is x2.
         At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
+- name: unlock_all_groosenator_destinations
+  default_option: "off"
+  pretty_name: Unlock all Groosenator Destinations
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will only be able to use the Groosenator to fling yourself somewhere after you have been there once before. This DOES NOT apply to Flooded Faron Woods."
+    - "on": "You will be able and expected to use the Groosenator to access new locations - even if you haven't been there before."
+
 ######################
 ## Cosmetic Options ##
 ######################
