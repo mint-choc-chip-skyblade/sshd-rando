@@ -2808,19 +2808,23 @@
     index: 78
     flow: {}
     cases:
-      - Show Groose Attention Mark
-      - Show Groose Attention Mark
-  - name: Show Groose Attention Mark
-    type: attentionmark
-    flow:
-      next: 194 # offer Groosenator choices
+      - 194
+      - 194
+  # Add FFW as a fling option
   - name: First Groosenator Choice Text
     type: textpatch
     index: 100
-  - name: Patch First Groosenator Choice Switch
+  - name: Goto Custom First Groosenator Choice Switch
     type: flowpatch
-    index: 195
+    index: 194
     flow:
+      next: Custom First Groosenator Choice Switch
+  - name: Custom First Groosenator Choice Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 2
       param4: 4 # number of choices
     cases:
       - 196 # The Sky!
