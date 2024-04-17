@@ -344,6 +344,7 @@
     Can Watch Completed Tadtones Cutscene: Nothing
     Can Collect Water: Bottle
   exits:
+    Sealed Grounds: Nothing # Talk to Bucha
     Flooded Great Tree Upper: Clawshots
     Flooded Great Tree Lower: Water_Dragons_Scale
   # locations:
