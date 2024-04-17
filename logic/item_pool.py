@@ -98,11 +98,9 @@ def generate_starting_item_pool(world: "World"):
     ).value_as_number()
 
     if random_starting_count > 0:
-        random_starting_item_pool = RANDOM_STARTABLE_ITEMS
-
-        for item in starting_items:
-            if item in random_starting_item_pool:
-                random_starting_item_pool.remove(item)
+        random_starting_item_pool = [
+            item for item in RANDOM_STARTABLE_ITEMS if item not in starting_items
+        ]
 
         for _ in range(random_starting_count):
             if len(random_starting_item_pool) < 1:

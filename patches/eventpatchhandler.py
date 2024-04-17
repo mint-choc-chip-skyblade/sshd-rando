@@ -250,10 +250,9 @@ class EventPatchHandler:
                 flow_index = self.text_label_to_index_mapping.get(value, None)
 
                 if flow_index is None:
-                    print(
-                        f"ERROR: text label {value} not found in file- patch: {flow_add['name']}"
+                    raise Exception(
+                        f"Text with label '{value}' not found.\nError caused by this patch: {flow_add['name']}.\nDid you forget to add a 'textadd' patch for this text?"
                     )
-                    continue
 
                 value = flow_index
             # handle macro properties
@@ -305,10 +304,9 @@ class EventPatchHandler:
                 flow_index = self.text_label_to_index_mapping.get(value, None)
 
                 if flow_index is None:
-                    print(
-                        f"ERROR: text label {value} not found in file- patch: {flow_patch['name']}"
+                    raise Exception(
+                        f"Text with label '{value}' not found.\nError caused by this patch: {flow_patch['name']}.\nDid you forget to add a 'textadd' patch for this text?"
                     )
-                    continue
 
                 value = flow_index
 

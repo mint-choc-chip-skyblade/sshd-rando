@@ -2255,6 +2255,66 @@
     flow:
       param2: 82 # Tadtones Scroll storyflag
       param3: 0 # set (not unset) flag
+  - name: FFW Bucha leave question text
+    type: textadd
+  - name: FFW Bucha leave text
+    type: textadd
+  - name: FFW Bucha stay text
+    type: textadd
+  - name: Always goto Bucha's normal text
+    type: flowpatch
+    index: 12
+    flow:
+      next: Show Attention Mark
+  - name: Show Attention Mark
+    type: attentionmark
+    flow:
+      next: 164 # Bucha's normal text
+  - name: Goto Show FFW Bucha leave question text
+    type: flowpatch
+    index: 164
+    flow:
+      next: Show FFW Bucha leave question text
+  - name: Show FFW Bucha leave question text
+    type: flowadd
+    flow:
+      type: type1
+      next: FFW Bucha leave switch
+      param3: 140
+      param4: FFW Bucha leave question text
+  - name: FFW Bucha leave switch
+    type: switchadd
+    flow:
+      type: switch
+      subType: 6
+      param2: 0
+      param3: 2
+    cases:
+      - Show FFW Bucha leave text # Yes
+      - Show FFW Bucha stay text # No
+  - name: Show FFW Bucha stay text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 140
+      param4: FFW Bucha stay text
+  - name: Show FFW Bucha leave text
+    type: flowadd
+    flow:
+      type: type1
+      next: Trigger FFW Bucha exit back to Groosenator
+      param3: 140
+      param4: FFW Bucha leave text
+  - name: Trigger FFW Bucha exit back to Groosenator
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 4 # SCEN index
+      param2: 0
+      next: -1
+      param3: 10 # Triggers an exit
 
 250-ForestSiren:
   - name: Remove first time trial Fi text
@@ -2803,6 +2863,194 @@
     index: 495
     flow:
       next: 492
+
+  # Groosenator
+  - name: Always offer Groosenator choices
+    type: flowpatch
+    index: 78
+    flow: {}
+    cases:
+      - 194
+      - 194
+  # Add FFW as a fling option
+  - name: First Groosenator Choice Text
+    type: textpatch
+    index: 100
+  - name: Goto Custom First Groosenator Choice Switch
+    type: flowpatch
+    index: 194
+    flow:
+      next: Custom First Groosenator Choice Switch
+  - name: Custom First Groosenator Choice Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 2
+      param4: 4 # number of choices
+    cases:
+      - 196 # The Sky!
+      - 198 # The Surface.
+      - 79  # Flooded Faron Woods
+      - 200 # Never mind!
+
+  - name: Groosenator can't fling text
+    type: textadd
+  - name: Show Groosenator can't fling Text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 188
+      param4: Groosenator can't fling text
+
+  # Skydiving entrance requirement check
+  - name: Access requirement for Skydiving choice
+    onlyif: unlock_all_groosenator_destinations == off
+    type: flowpatch
+    index: 209
+    flow:
+      next: Check if previously landed on Fun Fun Island for Skydiving
+  - name: Check if previously landed on Fun Fun Island for Skydiving
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 281 # Has landed on Fun Fun Island before
+    cases:
+      - 204 # true
+      - Don't fling for Skydiving # false
+  - name: Don't fling for Skydiving
+    type: unsetzoneflag
+    flow:
+      unsetzoneflag: 1
+      sceneindex: 10 # Sealed Grounds scene index
+      next: Show Groosenator can't fling Text
+
+  # Bug Hunting entrance requirement check
+  - name: Access requirement for Bug Hunting choice
+    onlyif: unlock_all_groosenator_destinations == off
+    type: flowpatch
+    index: 202
+    flow:
+      next: Check if previously accessed Inside the Thunderhead for Bug Hunting
+  - name: Check if previously accessed Inside the Thunderhead for Bug Hunting
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 379 # Has entered Inside the Thunderhead for the first time
+    cases:
+      - 204 # true
+      - Don't fling for Bug Hunting # false
+  - name: Don't fling for Bug Hunting
+    type: unsetzoneflag
+    flow:
+      unsetzoneflag: 2
+      sceneindex: 10 # Sealed Grounds scene index
+      next: Show Groosenator can't fling Text
+
+  # Cutting entrance requirement check
+  - name: Access requirement for Cutting choice
+    onlyif: unlock_all_groosenator_destinations == off
+    type: flowpatch
+    index: 203
+    flow:
+      next: Check if previously landed on Bamboo Island for Cutting
+  - name: Check if previously landed on Bamboo Island for Cutting
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 284 # Has landed on Bamboo Island before
+    cases:
+      - 204 # true
+      - Don't fling for Cutting # false
+  - name: Don't fling for Cutting
+    type: unsetzoneflag
+    flow:
+      unsetzoneflag: 3
+      sceneindex: 10 # Sealed Grounds scene index
+      next: Show Groosenator can't fling Text
+
+  # Shooting entrance requirement check
+  - name: Access requirement for Shooting choice
+    onlyif: unlock_all_groosenator_destinations == off
+    type: flowpatch
+    index: 205
+    flow:
+      next: Check if previously spoken to Fledge about Pumpkin Pull
+  - name: Check if previously spoken to Fledge about Pumpkin Pull
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 400 # Talked to Fledge about Pumpkin Pull
+    cases:
+      - 204 # true
+      - Don't fling for Shooting # false
+  - name: Don't fling for Shooting
+    type: unsetzoneflag
+    flow:
+      unsetzoneflag: 4
+      sceneindex: 10 # Sealed Grounds scene index
+      next: Show Groosenator can't fling Text
+
+  # Lightning Round entrance requirement check
+  - name: Access requirement for Lightning Round choice
+    onlyif: unlock_all_groosenator_destinations == off
+    type: flowpatch
+    index: 206
+    flow:
+      next: Check if previously spoken to Lanayru about Lightning Round
+  - name: Check if previously spoken to Lanayru about Lightning Round
+    type: checkstoryflag
+    flow:
+      # TODO: replace with Lightning Round flag once that's added back to rando
+      checkstoryflag: 462 # Given Life Tree Fruit to Thunder Dragon
+    cases:
+      - 204 # true
+      - Don't fling for Lightning Round # false
+  - name: Don't fling for Lightning Round
+    type: unsetzoneflag
+    flow:
+      unsetzoneflag: 5
+      sceneindex: 10 # Sealed Grounds scene index
+      next: Show Groosenator can't fling Text
+
+  # Thrill Digger entrance requirement check
+  - name: Access requirement for Thrill Digger choice
+    onlyif: unlock_all_groosenator_destinations == off
+    type: flowpatch
+    index: 207
+    flow:
+      next: Check if previously walked past Thrill Digger cave entrance
+  - name: Check if previously walked past Thrill Digger cave entrance
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 1076 # Walked past Thrill Digger cave entrance
+    cases:
+      - 204 # true
+      - Don't fling for Thrill Digger # false
+  - name: Don't fling for Thrill Digger
+    type: unsetzoneflag
+    flow:
+      unsetzoneflag: 6
+      sceneindex: 10 # Sealed Grounds scene index
+      next: Show Groosenator can't fling Text
+
+  # Rickety Coaster entrance requirement check
+  - name: Access requirement for Rickety Coaster choice
+    onlyif: unlock_all_groosenator_destinations == off
+    type: flowpatch
+    index: 208
+    flow:
+      next: Check if previously spoken to Gortram about Rickety Coaster
+  - name: Check if previously spoken to Gortram about Rickety Coaster
+    type: checkstoryflag
+    flow:
+      checkstoryflag: 274 # Talked to Gortram about Rickety Coaster
+    cases:
+      - 204 # true
+      - Don't fling for Rickety Coaster # false
+  - name: Don't fling for Rickety Coaster
+    type: unsetzoneflag
+    flow:
+      unsetzoneflag: 7
+      sceneindex: 10 # Sealed Grounds scene index
+      next: Show Groosenator can't fling Text
 
 501-Inpa:
   - name: Patch start of The Old One text
