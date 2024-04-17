@@ -1930,6 +1930,16 @@ F103: # Flooded Faron Woods
     objtype: PLY
     object:
       play_cutscene: -1
+  - name: Exit from FFW to Groosenator
+    type: objadd
+    index: 4
+    room: 0
+    objtype: SCEN
+    object:
+      name: F401
+      layer: 0
+      room: 1
+      entrance: 11 # custom entrance in F401
   - name: Add ammo pot to Faron Woods Entry Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
@@ -1982,22 +1992,6 @@ F103: # Flooded Faron Woods
       posy: 2102.997295
       posz: -9485
       name: Tubo
-  - name: Add bomb flower on lilypad near Bucha
-    type: objadd
-    layer: 0
-    room: 0
-    objtype: OBJ
-    object:
-      params1: 0xFFF0FFF0
-      params2: 0xFFFFFFFF
-      posx: -2296.102783203125
-      posy: 4500
-      posz: -1793.0338134765625
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0xFF00
-      name: Bombf
   - name: Remove Tadtone Dowsing Trigger # is a start flag
     type: objdelete
     id: 0xFDE5
@@ -4195,6 +4189,22 @@ F401: # Sealed Grounds Spiral
       - story_flag: -1 # So the Groosenator behaves properly
         night: 0
         layer: 3
+  - name: Add entrance from FFW Bucha
+    type: objadd
+    index: 11
+    room: 1
+    objtype: PLY
+    object:
+      storyflag: 2047
+      play_cutscene: -1
+      byte4: -1
+      posx: 3569
+      posy: 8437.794922
+      posz: 6269
+      anglex: 0
+      angley: 0x8000
+      anglez: 0
+      entrance_id: 11
   - name: Add ammo pot to Sealed Grounds Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd

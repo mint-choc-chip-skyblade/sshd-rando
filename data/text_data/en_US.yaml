@@ -5734,6 +5734,15 @@
 - name: Groosenator can't fling text
   standard: "Sorry, <heroname>. I can't fling you\nsomewhere you haven't been before."
 
+- name: FFW Bucha leave question text
+  standard: "Kewwww... Is the water not to your liking?\nI know a secret way out of the forest,\nwould you like me to show you?\n[1]Yes please![2-]No thanks."
+
+- name: FFW Bucha leave text
+  standard: "Kewwwww!\nFollow me!"
+
+- name: FFW Bucha stay text
+  standard: "Talk to me again if you change your\nmind, kewwwwww."
+
 # Fi text
 - name: No Fi Hints Text
   standard: "Master, I unfortunately have <r<no hints>> for you."
