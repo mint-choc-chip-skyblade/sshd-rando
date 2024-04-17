@@ -38,6 +38,32 @@ def config_test(
     return worlds
 
 
+def test_spoiler_as_config() -> None:
+    worlds = config_test("spoiler_as_config.yaml", remove_spoiler=False)
+    spoiler_path = f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Spoiler Log.txt"
+    anti_spoiler_path = (
+        f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Anti Spoiler Log.txt"
+    )
+    log1 = ""
+    with open(spoiler_path, "r", encoding="utf-8") as first_log:
+        log1 = first_log.read()
+
+    os.remove(spoiler_path)
+
+    with open("spoiler_log_config_test.yaml", "w", encoding="utf-8") as config:
+        config.write(log1)
+        worlds = generate(Path("spoiler_log_config_test.yaml"))
+        assert all_logic_satisfied(worlds)
+
+    os.remove("spoiler_log_config_test.yaml")
+
+    with open(spoiler_path, encoding="utf-8") as second_log:
+        assert log1 == second_log.read()
+
+    os.remove(spoiler_path)
+    os.remove(anti_spoiler_path)
+
+
 def test_default_empty_config() -> None:
     config_test("default_empty_config.yaml")
 
@@ -252,29 +278,3 @@ def test_good_starting_inventory() -> None:
         )
         == 2
     )
-
-
-def test_spoiler_as_config() -> None:
-    worlds = config_test("spoiler_as_config.yaml", remove_spoiler=False)
-    spoiler_path = f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Spoiler Log.txt"
-    anti_spoiler_path = (
-        f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Anti Spoiler Log.txt"
-    )
-    log1 = ""
-    with open(spoiler_path, "r", encoding="utf-8") as first_log:
-        log1 = first_log.read()
-
-    os.remove(spoiler_path)
-
-    with open("spoiler_log_config_test.yaml", "w", encoding="utf-8") as config:
-        config.write(log1)
-        worlds = generate(Path("spoiler_log_config_test.yaml"))
-        assert all_logic_satisfied(worlds)
-
-    os.remove("spoiler_log_config_test.yaml")
-
-    with open(spoiler_path, encoding="utf-8") as second_log:
-        assert log1 == second_log.read()
-
-    os.remove(spoiler_path)
-    os.remove(anti_spoiler_path)
