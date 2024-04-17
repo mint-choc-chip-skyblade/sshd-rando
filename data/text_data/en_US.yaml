@@ -5735,13 +5735,13 @@
   standard: "Sorry, <heroname>. I can't fling you\nsomewhere you haven't been before."
 
 - name: FFW Bucha leave question text
-  standard: "Kewwww... Is the water not to your liking?\nI know a secret way out of the forest,\nwould you like me to show you?\n[1]Yes please![2-]No thanks."
+  standard: "<action6 \x03>Kewwww... Is the water not to your liking?\nI know a secret way out of the forest,\nwould you like me to show you?\n[1]Yes please![2-]No thanks."
 
 - name: FFW Bucha leave text
-  standard: "Kewwwww!\nFollow me!"
+  standard: "Kewwwww!\nFollow me!<action2 \x0e>"
 
 - name: FFW Bucha stay text
-  standard: "Talk to me again if you change your\nmind, kewwwwww."
+  standard: "Talk to me again if you change your\nmind, kewwwwww.<action0 \x0c>"
 
 # Fi text
 - name: No Fi Hints Text

@@ -2269,10 +2269,10 @@
   - name: Show Attention Mark
     type: attentionmark
     flow:
-      next: 15 # Bucha's normal text
+      next: 164 # Bucha's normal text
   - name: Goto Show FFW Bucha leave question text
     type: flowpatch
-    index: 15
+    index: 164
     flow:
       next: Show FFW Bucha leave question text
   - name: Show FFW Bucha leave question text
