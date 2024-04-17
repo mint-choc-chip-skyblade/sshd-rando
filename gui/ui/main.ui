@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -1044,6 +1044,13 @@
            <string>Open World</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_unlock_all_groosenator_destinations">
+             <property name="text">
+              <string>Unlock all Groosenator Destinations</string>
+             </property>
+            </widget>
+           </item>
            <item>
             <widget class="QLabel" name="open_thunderhead_label">
              <property name="text">

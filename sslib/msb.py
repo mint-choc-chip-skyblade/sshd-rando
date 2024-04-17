@@ -46,12 +46,34 @@ CONTROL_REPLACEMENTS = {
     "<slowtext>": "\x0e\x01\x05\x04\x1e\x00",
     "<pause 5>": "\x0e\x01\x04\x02\x05",  # only works with <slowtext> in rando
     "<pause 15>": "\x0e\x01\x04\x02\x0f",  # only works with <slowtext> in rando
+    # These are the different actions NPCs can do while talking
+    # Must be paired with a sound effect index (?)
+    # e.g. <action6 \x03> would perform the NPC action 6 with sound effect 3
+    "<action0 ": "\x0e\x01\x09\x04\x00",
+    "<action1 ": "\x0e\x01\x09\x04\x01",
+    "<action2 ": "\x0e\x01\x09\x04\x02",
+    "<action3 ": "\x0e\x01\x09\x04\x03",
+    "<action4 ": "\x0e\x01\x09\x04\x04",
+    "<action5 ": "\x0e\x01\x09\x04\x05",
+    "<action6 ": "\x0e\x01\x09\x04\x06",
+    "<action7 ": "\x0e\x01\x09\x04\x07",
+    "<action8 ": "\x0e\x01\x09\x04\x08",
+    "<action9 ": "\x0e\x01\x09\x04\x09",
+    "<actionA ": "\x0e\x01\x09\x04\x0a",
+    "<actionB ": "\x0e\x01\x09\x04\x0b",
+    "<actionC ": "\x0e\x01\x09\x04\x0c",
+    "<actionD ": "\x0e\x01\x09\x04\x0d",
+    "<actionE ": "\x0e\x01\x09\x04\x0e",
+    "<actionF ": "\x0e\x01\x09\x04\x0f",
 }
 
 
 def process_control_sequences(data: str) -> str:
     for orig, replaced in CONTROL_REPLACEMENTS.items():
         data = data.replace(orig, replaced)
+
+    # Catch any closing brackets (only expected from "sound" control codes)
+    data = data.replace(">", "")
 
     return data
 

@@ -1466,6 +1466,50 @@ F100: # Faron Woods
       posy: 2102.997295
       posz: -9485
       name: Tubo
+  - name: Always spawn Lopsa
+    type: objpatch
+    id: 0x56B9
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 226 # hero mode (aka always)
+  - name: Always spawn Erla
+    type: objpatch
+    id: 0x5EBA
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 226 # hero mode (aka always)
+  - name: Always spawn Oolo
+    type: objpatch
+    id: 0x0AB8
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      trigstoryfid: 226 # hero mode (aka always)
+  # These patches make it so that the bokos around Machi don't trigger a cutscene.
+  # This is necessary to allow the Kikwis to be saved in any order (specifically,
+  # triggering the Lopsa bokos breaks the Machi bokos and requires the area be reloaded).
+  # If this seems like voodoo magic, that's because it is :p
+  - name: Patch Machi boko 1
+    type: objpatch
+    id: 0x66D1
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF1FFFF20 # 0xF0... -> 0xF1...
+  - name: Patch Machi boko 2
+    type: objpatch
+    id: 0x66D2
+    layer: 1
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF1FFFF20 # 0xF0... -> 0xF1...
   - name: Remove Faron Woods Intro Cutscene
     type: objpatch
     index: 0
@@ -1879,6 +1923,23 @@ F102_2: # Faron's Lair
       play_cutscene: -1
 
 F103: # Flooded Faron Woods
+  - name: Don't play intro cutscene
+    type: objpatch
+    room: 0
+    index: 0
+    objtype: PLY
+    object:
+      play_cutscene: -1
+  - name: Exit from FFW to Groosenator
+    type: objadd
+    index: 4
+    room: 0
+    objtype: SCEN
+    object:
+      name: F401
+      layer: 0
+      room: 1
+      entrance: 11 # custom entrance in F401
   - name: Add ammo pot to Faron Woods Entry Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
@@ -1931,22 +1992,6 @@ F103: # Flooded Faron Woods
       posy: 2102.997295
       posz: -9485
       name: Tubo
-  - name: Add bomb flower on lilypad near Bucha
-    type: objadd
-    layer: 0
-    room: 0
-    objtype: OBJ
-    object:
-      params1: 0xFFF0FFF0
-      params2: 0xFFFFFFFF
-      posx: -2296.102783203125
-      posy: 4500
-      posz: -1793.0338134765625
-      anglex: 0
-      angley: 0
-      anglez: 0
-      id: 0xFF00
-      name: Bombf
   - name: Remove Tadtone Dowsing Trigger # is a start flag
     type: objdelete
     id: 0xFDE5
@@ -1978,6 +2023,16 @@ F103_1: # Flooded Great Tree
     objtype: PLY
     object:
       play_cutscene: -1
+  - name: Move First Rupee to layer 0
+    type: objmove
+    ids:
+      - 0xFC44
+      - 0xFC45
+    hardcoded_id: 0xFFF0
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
 
 F200: # Eldin main area
   - name: Layer override
@@ -2981,6 +3036,24 @@ F210: # Mogma Turf
       - story_flag: -1
         night: 0
         layer: 1
+  - name: Add air vent to Guld platform
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: SOBJ
+    object:
+      params1: 0x7FFFF027
+      params2: 0xFFDFFFFF
+      posx: 2500
+      posy: -7390
+      posz: 2200
+      sizex: 1.5
+      sizey: 8.5
+      sizez: 1.5
+      anglex: 364
+      angley: 25000
+      anglez: 1023
+      name: Wind
   - name: Add ammo pot to Mogma Turf Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
     type: objadd
@@ -4126,6 +4199,22 @@ F401: # Sealed Grounds Spiral
       - story_flag: -1 # So the Groosenator behaves properly
         night: 0
         layer: 3
+  - name: Add entrance from FFW Bucha
+    type: objadd
+    index: 11
+    room: 1
+    objtype: PLY
+    object:
+      storyflag: 2047
+      play_cutscene: -1
+      byte4: -1
+      posx: 3569
+      posy: 8437.794922
+      posz: 6269
+      anglex: 0
+      angley: 0x8000
+      anglez: 0
+      entrance_id: 11
   - name: Add ammo pot to Sealed Grounds Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd

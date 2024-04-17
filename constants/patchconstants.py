@@ -180,6 +180,17 @@ DEFAULT_SET_ZONEFLAG_FLOW = {
     "next": -1,
 }
 
+DEFAULT_UNSET_ZONEFLAG_FLOW = {
+    "type": "type3",
+    "subType": 1,
+    "param1": -1,  # zoneflag id
+    "param2": -1,  # scene index
+    "param3": 5,  # remove zoneflag command
+    "param4": 0,
+    "param5": 0,
+    "next": -1,
+}
+
 DEFAULT_ATTENTION_MARK_FLOW = {
     "type": "type3",
     "subType": 0,
@@ -221,6 +232,7 @@ FLOW_ADD_VARIATIONS = (
     "setsceneflag",
     "settempflag",
     "setzoneflag",
+    "unsetzoneflag",
     "attentionmark",
 )
 SWITCH_ADD_VARIATIONS = ("switchadd", "checkstoryflag", "checksceneflag")
@@ -229,6 +241,7 @@ PARAM1_ALIASES = (
     "setsceneflag",
     "settempflag",
     "setzoneflag",
+    "unsetzoneflag",
 )
 PARAM2_ALIASES = (
     "itemid",
@@ -246,6 +259,7 @@ DEFAULT_FLOW_TYPE_LOOKUP = {
     "setsceneflag": DEFAULT_SET_SCENEFLAG_FLOW,
     "settempflag": DEFAULT_SET_TEMPFLAG_FLOW,
     "setzoneflag": DEFAULT_SET_ZONEFLAG_FLOW,
+    "unsetzoneflag": DEFAULT_UNSET_ZONEFLAG_FLOW,
     "attentionmark": DEFAULT_ATTENTION_MARK_FLOW,
     "switchadd": DEFAULT_FLOW,
     "checkstoryflag": DEFAULT_CHECK_STORYFLAG_FLOW,

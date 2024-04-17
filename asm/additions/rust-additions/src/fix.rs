@@ -129,20 +129,27 @@ pub fn fix_sandship_boat() -> u32 {
 
 #[no_mangle]
 pub fn remove_timeshift_stone_cutscenes() {
-    let mut param1: u32;
-
     unsafe {
+        let mut subtypeBitfield: u8;
         asm!(
-            "ldr {0:w}, [x19, #0xc]",
-            out(reg) param1,
+            "ldrb {0:w}, [x23, #0xce]",
+            out(reg) subtypeBitfield,
         );
 
-        let is_sandship_stone = param1 >> 10 & 0xFF == 1;
+        // If not Sandship stone
+        if (subtypeBitfield & 2) == 0 {
+            asm!(
+                "mov w8, #0",
+                "strb w8, [x23, #0xba]", // playFirstTimeCS
+                "strb w8, [x23, #0xc1]", // isFirstStone
+            );
+        }
 
-        // set value for playFirstTimeCutscene
+        // Replaced instructions
         asm!(
-            "strb {0:w}, [x23, #0xba]",
-            in(reg) is_sandship_stone as u8,
+            "mov w9, #0xc2960000",
+            "mov w8, {0:w}",
+            in(reg) subtypeBitfield,
         );
     }
 }

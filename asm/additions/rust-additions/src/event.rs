@@ -135,7 +135,14 @@ pub fn custom_event_commands(
     }
 
     unsafe {
-        // Replaced instructions
-        asm!("mov w21, #1", "cmp w8, #0x3f",);
+        asm!(
+            "mov x0, {0:x}",
+            "mov x1, {1:x}",
+            // Replaced instructions
+            "ldrh w8, [x1, #0xa]",
+            "mov w21, #1",
+            in(reg) actor_event_flow_mgr,
+            in(reg) p_event_flow_element,
+        );
     }
 }

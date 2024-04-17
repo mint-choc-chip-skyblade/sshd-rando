@@ -31,20 +31,32 @@ mov w8, #0xFF
 ; .offset 0x71006f5aac
 ; mov w8, #0xFF
 
+
 ; Don't open collection screen when getting treasures/gratitude crystals
 .offset 0x7100bf0590
 b 0x7100bf0674 ; skip to the end of the function
 
+
 ; Timeshift Stones
 ; Don't play first time timeshift stone cutscenes
-.offset 0x710097eabc
+.offset 0x710097ef50
 mov w8, #18
 bl additions_jumptable
 
-; Always set isFirstStone to false
-.offset 0x710097eadc
-strb wzr, [x23, #0xc1]
 
 ; Skip basketball statue cutscenes
 .offset 0x710090cbcc
 mov w8, #0xFF
+
+
+; Don't play event when breaking ropes holding boxes in the air
+.offset 0x71007397d8
+b 0x71007396d8
+
+
+; Minecarts
+; Don't play event when pushing minecarts off ledges
+.offset 0x71009a2ec4 ; in dAcOTrolley::statePushPullEnter
+b 0x71009a30bc
+.offset 0x71009a310c ; dAcOTrolley::statePushPullUpdate
+b 0x71009a31a8
