@@ -3,6 +3,7 @@ World 1:
   logic_rules: all_locations_reachable
   # Can't be random as "minimal" causes 4 locations to be unreachable
   item_pool: standard
+  enable_back_in_time: random
   gratitude_crystal_shuffle: random
   stamina_fruit_shuffle: random
   npc_closet_shuffle: random
@@ -10,8 +11,9 @@ World 1:
   rupee_shuffle: random
   underground_rupee_shuffle: random
   beedle_shop_shuffle: random
+  goddess_chest_shuffle: random
   full_wallet_upgrades: random
-  skykeep_layout: vanilla
+  randomize_skykeep_layout: "off"
   peatrice_conversations: random
   small_keys: random
   lanayru_caves_keys: random
@@ -29,7 +31,9 @@ World 1:
   impa_sot_hint: random
   cryptic_hint_text: random
   always_hints: random
+  random_starting_statues: random
   random_starting_spawn: random
+  limit_starting_spawn: random
   randomize_dungeon_entrances: "on"
   randomize_trial_gate_entrances: "on"
   randomize_door_entrances: "on"
@@ -43,8 +47,20 @@ World 1:
   skip_demise: random
   required_dungeons: random
   empty_unrequired_dungeons: random
+  trap_mode: random
+  trappable_items: random
+  burn_traps: random
+  curse_traps: random
+  noise_traps: random
+  groose_traps: random
   ammo_availability: random
+  boss_key_puzzles: random
   got_sword_requirement: random
+  upgraded_skyward_strike: random
+  faster_air_meter_depletion: random
+  spawn_hearts: random
+  damage_multiplier: random
+  unlock_all_groosenator_destinations: random
   open_thunderhead: random
   open_lake_floria: random
   open_earth_temple: random
@@ -112,17 +128,10 @@ World 1:
   logic_fs_practice_sword_ghirahim_2: random
   logic_present_bow_switches: random
   logic_skykeep_vineclip: random
-  trap_mode: random
-  trappable_items: random
-  burn_traps: random
-  curse_traps: random
-  noise_traps: random
-  groose_traps: random
-  starting_sword: goddess_longsword
-  upgraded_skyward_strike: random
-  faster_air_meter_depletion: random
-  spawn_hearts: random
-  damage_multiplier: random
+  starting_sword: random
+  random_starting_tablet_count: random
+  random_starting_item_count: random
+  starting_hearts: random
   starting_inventory:
   - Scrapper
   - Bomb Bag
