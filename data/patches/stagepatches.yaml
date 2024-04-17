@@ -2023,6 +2023,16 @@ F103_1: # Flooded Great Tree
     objtype: PLY
     object:
       play_cutscene: -1
+  - name: Move First Rupee to layer 0
+    type: objmove
+    ids:
+      - 0xFC44
+      - 0xFC45
+    hardcoded_id: 0xFFF0
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
 
 F200: # Eldin main area
   - name: Layer override

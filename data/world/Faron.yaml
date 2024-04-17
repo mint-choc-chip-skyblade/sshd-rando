@@ -373,14 +373,15 @@
     Flooded Great Tree Lower: Water_Dragons_Scale
   # locations:
   #   Flooded Faron Woods - Water Dragon's Reward: count(17, Group_of_Tadtones) and 'Can_Watch_Completed_Tadtones_Cutscene'
-  #   Flooded Faron Woods - Rupee 1
-  #   Flooded Faron Woods - Rupee 2
 
 - name: Flooded Great Tree Lower
   hint_region: Flooded Faron Woods
   exits:
-    Flooded Faron Woods: Nothing
+    Flooded Faron Woods: Water_Dragons_Scale
     Flooded Great Tree Upper: Water_Dragons_Scale
+  locations:
+    Flooded Faron Woods - Rupee behind West Breakable Rocks 1: Water_Dragons_Scale
+    Flooded Faron Woods - Rupee behind West Breakable Rocks 2: Water_Dragons_Scale
 
 # LAKE FLORIA
 - name: Lake Floria
