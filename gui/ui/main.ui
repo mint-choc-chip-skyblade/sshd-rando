@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -3287,6 +3287,207 @@ Practice Sword</string>
            </item>
           </layout>
          </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tracker_tab">
+       <property name="styleSheet">
+        <string notr="true">QWidget {
+  background: black;
+}</string>
+       </property>
+       <attribute name="title">
+        <string>Tracker</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="inventory_layout">
+          <item row="1" column="0">
+           <layout class="QGridLayout" name="middle_inventory_layout">
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="inventory_tablet_layout">
+              <item>
+               <widget class="QWidget" name="tablet_widget" native="true">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>141</width>
+                  <height>195</height>
+                 </size>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_7"/>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QGridLayout" name="inventory_b_wheel_layout"/>
+            </item>
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="inventory_sword_layout"/>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <layout class="QGridLayout" name="lower_inventory_layout"/>
+          </item>
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="dungeon_inventory_layout">
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_sv_layout">
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_sv_keys_layout"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_et_layout">
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_et_keys_layout"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_lmf_layout">
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_lmf_keys_layout"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_ac_layout">
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_ac_keys_layout"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_ssh_layout">
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_ssh_keys_layout"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_fs_layout">
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_fs_keys_layout"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_sk_layout">
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_sk_keys_layout"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="2">
+         <layout class="QGridLayout" name="tracker_info_layout">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
+          </property>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="start_new_tracker_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Start New Tracker</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="tracker_map_layout">
+          <item>
+           <widget class="QWidget" name="map_widget" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>546</width>
+              <height>300</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QScrollArea" name="tracker_locations_scroll_area">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>546</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="tracker_locations_scroll_widget">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>546</width>
+               <height>301</height>
+              </rect>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>546</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <layout class="QHBoxLayout" name="tracker_locations_scroll_layout">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>

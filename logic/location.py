@@ -44,6 +44,9 @@ class Location:
         self.hint_textindex: int = hint_textindex_
         self.eventflowindex: int = eventflowindex_
 
+        # Tracker variables
+        self.marked: bool = False
+
     def __str__(self) -> str:
         return (
             self.name

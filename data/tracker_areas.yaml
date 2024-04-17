@@ -1,0 +1,81 @@
+- name: Root
+  image: Sky.png
+  children:
+    - Skyloft
+    - Sky
+    - Inside the Thunderhead
+
+- name: Sky
+  area: Sky
+  x: 465
+  y: 35
+
+- name: Inside the Thunderhead
+  area: Inside the Thunderhead
+  x: 90
+  y: 35
+
+- name: Skyloft
+  image: Skyloft.png
+  x: 265
+  y: 145
+  children:
+    - Knight Academy
+    - Upper Skyloft
+    - Central Skyloft
+    - The Goddess's Silent Realm
+    - Sky Keep
+
+- name: Knight Academy
+  area: Knight Academy
+  x: 175
+  y: 110
+
+- name: Upper Skyloft
+  area: Upper Skyloft
+  x: 235
+  y: 105
+
+- name: Central Skyloft
+  area: Central Skyloft
+  x: 240
+  y: 170
+
+- name: The Goddess's Silent Realm
+  area: The Goddess's Silent Realm
+  x: 220
+  y: 250
+
+- name: Sky Keep
+  area: Sky Keep
+  x: 300
+  y: 110
+
+
+    # - name: Faron
+    #   image: Faron.png
+    #   x: 200
+    #   y: 150
+    #   children:
+    #     - name: Sealed Grounds
+    #       area: Sealed Grounds
+    #       x: 50
+    #       y: 200
+    # - name: Eldin
+    #   image: Eldin.png
+    #   x: 100
+    #   y: 10
+    #   children:
+    #     - name: Eldin Volcano
+    #       area: Eldin Volcano
+    #       x: 30
+    #       y: 150
+    # - name: Lanayru
+    #   image: Lanayru.png
+    #   x: 50
+    #   y: 200
+    #   children:
+    #     - name: Lanayru Mine
+    #       area: Lanayru Mine
+    #       x: 200
+    #       y: 150

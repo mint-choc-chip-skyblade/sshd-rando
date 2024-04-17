@@ -18,9 +18,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComboBox,
     QFontComboBox, QFrame, QGridLayout, QGroupBox,
     QHBoxLayout, QLabel, QLayout, QLineEdit,
-    QListView, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QSpinBox, QTabWidget, QVBoxLayout,
-    QWidget)
+    QListView, QMainWindow, QPushButton, QScrollArea,
+    QSizePolicy, QSpacerItem, QSpinBox, QTabWidget,
+    QVBoxLayout, QWidget)
 
 from gui.components.tristate_check_box import RandoTriStateCheckBox
 
@@ -2170,6 +2170,184 @@ class Ui_main_window(object):
         self.horizontalLayout_4.addWidget(self.other_settings_group_box)
 
         self.tab_widget.addTab(self.advanced_tab, "")
+        self.tracker_tab = QWidget()
+        self.tracker_tab.setObjectName(u"tracker_tab")
+        self.tracker_tab.setStyleSheet(u"QWidget {\n"
+"  background: black;\n"
+"}")
+        self.gridLayout = QGridLayout(self.tracker_tab)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.inventory_layout = QGridLayout()
+        self.inventory_layout.setObjectName(u"inventory_layout")
+        self.middle_inventory_layout = QGridLayout()
+        self.middle_inventory_layout.setObjectName(u"middle_inventory_layout")
+        self.inventory_tablet_layout = QVBoxLayout()
+        self.inventory_tablet_layout.setObjectName(u"inventory_tablet_layout")
+        self.tablet_widget = QWidget(self.tracker_tab)
+        self.tablet_widget.setObjectName(u"tablet_widget")
+        sizePolicy12 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+        sizePolicy12.setHorizontalStretch(0)
+        sizePolicy12.setVerticalStretch(0)
+        sizePolicy12.setHeightForWidth(self.tablet_widget.sizePolicy().hasHeightForWidth())
+        self.tablet_widget.setSizePolicy(sizePolicy12)
+        self.tablet_widget.setMinimumSize(QSize(141, 195))
+        self.gridLayout_7 = QGridLayout(self.tablet_widget)
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+
+        self.inventory_tablet_layout.addWidget(self.tablet_widget)
+
+
+        self.middle_inventory_layout.addLayout(self.inventory_tablet_layout, 0, 2, 1, 1)
+
+        self.inventory_b_wheel_layout = QGridLayout()
+        self.inventory_b_wheel_layout.setObjectName(u"inventory_b_wheel_layout")
+
+        self.middle_inventory_layout.addLayout(self.inventory_b_wheel_layout, 0, 1, 1, 1)
+
+        self.inventory_sword_layout = QVBoxLayout()
+        self.inventory_sword_layout.setObjectName(u"inventory_sword_layout")
+
+        self.middle_inventory_layout.addLayout(self.inventory_sword_layout, 0, 0, 1, 1)
+
+
+        self.inventory_layout.addLayout(self.middle_inventory_layout, 1, 0, 1, 1)
+
+        self.lower_inventory_layout = QGridLayout()
+        self.lower_inventory_layout.setObjectName(u"lower_inventory_layout")
+
+        self.inventory_layout.addLayout(self.lower_inventory_layout, 2, 0, 1, 1)
+
+        self.dungeon_inventory_layout = QHBoxLayout()
+        self.dungeon_inventory_layout.setObjectName(u"dungeon_inventory_layout")
+        self.dungeon_sv_layout = QVBoxLayout()
+        self.dungeon_sv_layout.setObjectName(u"dungeon_sv_layout")
+        self.dungeon_sv_keys_layout = QHBoxLayout()
+        self.dungeon_sv_keys_layout.setObjectName(u"dungeon_sv_keys_layout")
+
+        self.dungeon_sv_layout.addLayout(self.dungeon_sv_keys_layout)
+
+
+        self.dungeon_inventory_layout.addLayout(self.dungeon_sv_layout)
+
+        self.dungeon_et_layout = QVBoxLayout()
+        self.dungeon_et_layout.setObjectName(u"dungeon_et_layout")
+        self.dungeon_et_keys_layout = QHBoxLayout()
+        self.dungeon_et_keys_layout.setObjectName(u"dungeon_et_keys_layout")
+
+        self.dungeon_et_layout.addLayout(self.dungeon_et_keys_layout)
+
+
+        self.dungeon_inventory_layout.addLayout(self.dungeon_et_layout)
+
+        self.dungeon_lmf_layout = QVBoxLayout()
+        self.dungeon_lmf_layout.setObjectName(u"dungeon_lmf_layout")
+        self.dungeon_lmf_keys_layout = QHBoxLayout()
+        self.dungeon_lmf_keys_layout.setObjectName(u"dungeon_lmf_keys_layout")
+
+        self.dungeon_lmf_layout.addLayout(self.dungeon_lmf_keys_layout)
+
+
+        self.dungeon_inventory_layout.addLayout(self.dungeon_lmf_layout)
+
+        self.dungeon_ac_layout = QVBoxLayout()
+        self.dungeon_ac_layout.setObjectName(u"dungeon_ac_layout")
+        self.dungeon_ac_keys_layout = QHBoxLayout()
+        self.dungeon_ac_keys_layout.setObjectName(u"dungeon_ac_keys_layout")
+
+        self.dungeon_ac_layout.addLayout(self.dungeon_ac_keys_layout)
+
+
+        self.dungeon_inventory_layout.addLayout(self.dungeon_ac_layout)
+
+        self.dungeon_ssh_layout = QVBoxLayout()
+        self.dungeon_ssh_layout.setObjectName(u"dungeon_ssh_layout")
+        self.dungeon_ssh_keys_layout = QHBoxLayout()
+        self.dungeon_ssh_keys_layout.setObjectName(u"dungeon_ssh_keys_layout")
+
+        self.dungeon_ssh_layout.addLayout(self.dungeon_ssh_keys_layout)
+
+
+        self.dungeon_inventory_layout.addLayout(self.dungeon_ssh_layout)
+
+        self.dungeon_fs_layout = QVBoxLayout()
+        self.dungeon_fs_layout.setObjectName(u"dungeon_fs_layout")
+        self.dungeon_fs_keys_layout = QHBoxLayout()
+        self.dungeon_fs_keys_layout.setObjectName(u"dungeon_fs_keys_layout")
+
+        self.dungeon_fs_layout.addLayout(self.dungeon_fs_keys_layout)
+
+
+        self.dungeon_inventory_layout.addLayout(self.dungeon_fs_layout)
+
+        self.dungeon_sk_layout = QVBoxLayout()
+        self.dungeon_sk_layout.setObjectName(u"dungeon_sk_layout")
+        self.dungeon_sk_keys_layout = QHBoxLayout()
+        self.dungeon_sk_keys_layout.setObjectName(u"dungeon_sk_keys_layout")
+
+        self.dungeon_sk_layout.addLayout(self.dungeon_sk_keys_layout)
+
+
+        self.dungeon_inventory_layout.addLayout(self.dungeon_sk_layout)
+
+
+        self.inventory_layout.addLayout(self.dungeon_inventory_layout, 0, 0, 1, 1)
+
+
+        self.gridLayout.addLayout(self.inventory_layout, 0, 0, 1, 1)
+
+        self.tracker_info_layout = QGridLayout()
+        self.tracker_info_layout.setObjectName(u"tracker_info_layout")
+        self.tracker_info_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.start_new_tracker_button = QPushButton(self.tracker_tab)
+        self.start_new_tracker_button.setObjectName(u"start_new_tracker_button")
+        sizePolicy6.setHeightForWidth(self.start_new_tracker_button.sizePolicy().hasHeightForWidth())
+        self.start_new_tracker_button.setSizePolicy(sizePolicy6)
+
+        self.tracker_info_layout.addWidget(self.start_new_tracker_button, 0, 0, 1, 1)
+
+
+        self.gridLayout.addLayout(self.tracker_info_layout, 0, 2, 1, 1)
+
+        self.tracker_map_layout = QVBoxLayout()
+        self.tracker_map_layout.setObjectName(u"tracker_map_layout")
+        self.map_widget = QWidget(self.tracker_tab)
+        self.map_widget.setObjectName(u"map_widget")
+        sizePolicy13 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy13.setHorizontalStretch(0)
+        sizePolicy13.setVerticalStretch(0)
+        sizePolicy13.setHeightForWidth(self.map_widget.sizePolicy().hasHeightForWidth())
+        self.map_widget.setSizePolicy(sizePolicy13)
+        self.map_widget.setMinimumSize(QSize(546, 300))
+
+        self.tracker_map_layout.addWidget(self.map_widget)
+
+        self.tracker_locations_scroll_area = QScrollArea(self.tracker_tab)
+        self.tracker_locations_scroll_area.setObjectName(u"tracker_locations_scroll_area")
+        sizePolicy14 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Expanding)
+        sizePolicy14.setHorizontalStretch(0)
+        sizePolicy14.setVerticalStretch(0)
+        sizePolicy14.setHeightForWidth(self.tracker_locations_scroll_area.sizePolicy().hasHeightForWidth())
+        self.tracker_locations_scroll_area.setSizePolicy(sizePolicy14)
+        self.tracker_locations_scroll_area.setMaximumSize(QSize(546, 16777215))
+        self.tracker_locations_scroll_area.setFrameShape(QFrame.NoFrame)
+        self.tracker_locations_scroll_area.setLineWidth(0)
+        self.tracker_locations_scroll_area.setWidgetResizable(True)
+        self.tracker_locations_scroll_widget = QWidget()
+        self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 301))
+        self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
+        self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
+        self.tracker_locations_scroll_layout.setSpacing(0)
+        self.tracker_locations_scroll_layout.setObjectName(u"tracker_locations_scroll_layout")
+        self.tracker_locations_scroll_layout.setContentsMargins(0, 0, 0, 0)
+        self.tracker_locations_scroll_area.setWidget(self.tracker_locations_scroll_widget)
+
+        self.tracker_map_layout.addWidget(self.tracker_locations_scroll_area)
+
+
+        self.gridLayout.addLayout(self.tracker_map_layout, 0, 1, 1, 1)
+
+        self.tab_widget.addTab(self.tracker_tab, "")
 
         self.verticalLayout_2.addWidget(self.tab_widget)
 
@@ -2177,11 +2355,11 @@ class Ui_main_window(object):
         self.settings_descriptions_layout.setObjectName(u"settings_descriptions_layout")
         self.settings_current_option_description_label = QLabel(self.central_widget)
         self.settings_current_option_description_label.setObjectName(u"settings_current_option_description_label")
-        sizePolicy12 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Maximum)
-        sizePolicy12.setHorizontalStretch(0)
-        sizePolicy12.setVerticalStretch(0)
-        sizePolicy12.setHeightForWidth(self.settings_current_option_description_label.sizePolicy().hasHeightForWidth())
-        self.settings_current_option_description_label.setSizePolicy(sizePolicy12)
+        sizePolicy15 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Maximum)
+        sizePolicy15.setHorizontalStretch(0)
+        sizePolicy15.setVerticalStretch(0)
+        sizePolicy15.setHeightForWidth(self.settings_current_option_description_label.sizePolicy().hasHeightForWidth())
+        self.settings_current_option_description_label.setSizePolicy(sizePolicy15)
         self.settings_current_option_description_label.setMinimumSize(QSize(0, 64))
         self.settings_current_option_description_label.setTextFormat(Qt.RichText)
         self.settings_current_option_description_label.setWordWrap(True)
@@ -2190,8 +2368,8 @@ class Ui_main_window(object):
 
         self.settings_default_option_description_label = QLabel(self.central_widget)
         self.settings_default_option_description_label.setObjectName(u"settings_default_option_description_label")
-        sizePolicy12.setHeightForWidth(self.settings_default_option_description_label.sizePolicy().hasHeightForWidth())
-        self.settings_default_option_description_label.setSizePolicy(sizePolicy12)
+        sizePolicy15.setHeightForWidth(self.settings_default_option_description_label.sizePolicy().hasHeightForWidth())
+        self.settings_default_option_description_label.setSizePolicy(sizePolicy15)
         self.settings_default_option_description_label.setMinimumSize(QSize(0, 64))
         self.settings_default_option_description_label.setWordWrap(True)
 
@@ -2268,9 +2446,6 @@ class Ui_main_window(object):
         self.paste_setting_string_button = QPushButton(self.central_widget)
         self.paste_setting_string_button.setObjectName(u"paste_setting_string_button")
         self.paste_setting_string_button.setEnabled(True)
-        sizePolicy13 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
-        sizePolicy13.setHorizontalStretch(0)
-        sizePolicy13.setVerticalStretch(0)
         sizePolicy13.setHeightForWidth(self.paste_setting_string_button.sizePolicy().hasHeightForWidth())
         self.paste_setting_string_button.setSizePolicy(sizePolicy13)
         self.paste_setting_string_button.setMinimumSize(QSize(80, 0))
@@ -2287,11 +2462,11 @@ class Ui_main_window(object):
 
         self.randomize_button = QPushButton(self.central_widget)
         self.randomize_button.setObjectName(u"randomize_button")
-        sizePolicy14 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-        sizePolicy14.setHorizontalStretch(0)
-        sizePolicy14.setVerticalStretch(0)
-        sizePolicy14.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
-        self.randomize_button.setSizePolicy(sizePolicy14)
+        sizePolicy16 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy16.setHorizontalStretch(0)
+        sizePolicy16.setVerticalStretch(0)
+        sizePolicy16.setHeightForWidth(self.randomize_button.sizePolicy().hasHeightForWidth())
+        self.randomize_button.setSizePolicy(sizePolicy16)
 
         self.footer_grid_layout.addWidget(self.randomize_button, 2, 2, 1, 1)
 
@@ -2302,7 +2477,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(7)
+        self.tab_widget.setCurrentIndex(8)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2563,6 +2738,8 @@ class Ui_main_window(object):
         self.other_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Settings", None))
         self.setting_enable_back_in_time.setText(QCoreApplication.translate("main_window", u"Enable Back in Time (BiT)", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
+        self.start_new_tracker_button.setText(QCoreApplication.translate("main_window", u"Start New Tracker", None))
+        self.tab_widget.setTabText(self.tab_widget.indexOf(self.tracker_tab), QCoreApplication.translate("main_window", u"Tracker", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))
         self.setting_string_label.setText(QCoreApplication.translate("main_window", u"Setting String", None))
