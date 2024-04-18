@@ -5,6 +5,7 @@ from PySide6.QtCore import Signal
 
 from filepathconstants import TRACKER_ASSETS_PATH
 
+
 class TrackerDungeonLabel(QLabel):
 
     hylia_font_id: int = -1
@@ -15,7 +16,9 @@ class TrackerDungeonLabel(QLabel):
     def __init__(self, abbreviation: str) -> None:
 
         if TrackerDungeonLabel.hylia_font_id == -1:
-            TrackerDungeonLabel.hylia_font_id = QFontDatabase.addApplicationFont((TRACKER_ASSETS_PATH / "HyliaSerifBeta-Regular.otf").as_posix())
+            TrackerDungeonLabel.hylia_font_id = QFontDatabase.addApplicationFont(
+                (TRACKER_ASSETS_PATH / "HyliaSerifBeta-Regular.otf").as_posix()
+            )
             if TrackerDungeonLabel.hylia_font_id == -1:
                 print("Could not load Hylia Serif Font")
 
@@ -29,9 +32,13 @@ class TrackerDungeonLabel(QLabel):
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
         if ev.button() in [QtCore.Qt.LeftButton, QtCore.Qt.RightButton]:
             if self.active:
-                self.setStyleSheet(TrackerDungeonLabel.default_style.replace("COLOR", "gray"))
+                self.setStyleSheet(
+                    TrackerDungeonLabel.default_style.replace("COLOR", "gray")
+                )
             else:
-                self.setStyleSheet(TrackerDungeonLabel.default_style.replace("COLOR", "blue"))
+                self.setStyleSheet(
+                    TrackerDungeonLabel.default_style.replace("COLOR", "blue")
+                )
             self.active = not self.active
             self.clicked.emit(self.text())
         return super().mouseReleaseEvent(ev)

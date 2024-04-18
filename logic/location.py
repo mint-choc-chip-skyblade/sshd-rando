@@ -46,6 +46,7 @@ class Location:
 
         # Tracker variables
         self.marked: bool = False
+        self.eud_progression: bool = True
 
     def __str__(self) -> str:
         return (
