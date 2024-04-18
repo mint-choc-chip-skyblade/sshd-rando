@@ -621,6 +621,12 @@ pub fn tgreact_spawn_custom_item(
                     velocity_y = 19.5;
                 }
 
+                // Give items that are normally Deku Seeds a bit of an extra push xD
+                if ((param2 >> 24) & 0xFF) == 0x0D {
+                    forward_speed += 2.0;
+                    velocity_y += 3.0;
+                }
+
                 (*item_actor).base.members.forward_speed = forward_speed;
                 (*item_actor).base.members.velocity.x = 0.0;
                 (*item_actor).base.members.velocity.y = velocity_y;
