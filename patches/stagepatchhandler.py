@@ -367,9 +367,14 @@ def patch_tgreact(
             f"No tag reaction (TgReact) with id '{hex(id)}' found to patch."
         )
 
-    # Don't use fake itemid yet, this needs patching properly first
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
     if trapid:
-        itemid = 34  # rupoor
+        trapbits = 254 - trapid
+        # Unsets bit 0x00780000 of params2
+        tgreact["params2"] = mask_shift_set(tgreact["params2"], 0xF, 19, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        tgreact["params2"] = mask_shift_set(tgreact["params2"], 0xF, 19, 0xF)
 
     # Move vanilla velocity type indicator to free space in params2
     if (tgreact["params1"] >> 8) & 0xFF == 0:
