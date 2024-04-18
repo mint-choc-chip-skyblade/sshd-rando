@@ -276,3 +276,18 @@ pub fn spawned_actor_traps(
         asm!("mov x8, {0:x}", in(reg) ACTOR_ALLOCATOR_DEFINITIONS_PTR);
     }
 }
+
+#[no_mangle]
+pub fn handle_closet_traps(item_id: u32) -> u32 {
+    unsafe {
+        let closet_actor: *mut actor::dAcOBase;
+        asm!("mov {0:x}, x19", out(reg) closet_actor);
+
+        let trapid = ((*closet_actor).members.base.param2 >> 4) & 0xF;
+
+        ACTORBASE_PARAM2 &= 0xFFFFFF0F;
+        ACTORBASE_PARAM2 |= trapid << 4;
+
+        return item_id;
+    }
+}

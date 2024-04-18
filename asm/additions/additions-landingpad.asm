@@ -166,6 +166,9 @@ b.eq main_loop_inject
 cmp w8, #50
 b.eq activate_back_in_time
 
+cmp w8, #51
+b.eq handle_closet_traps
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

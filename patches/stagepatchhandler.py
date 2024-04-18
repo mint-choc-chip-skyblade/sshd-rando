@@ -169,12 +169,17 @@ def patch_closet(
         None,
     )
 
-    # Don't use fake itemid yet, this needs patching properly first
-    if trapid:
-        itemid = 34  # rupoor
-
     if closet is None:
         raise Exception(f"No closet with id '{id}' found to patch.")
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        closet["params2"] = mask_shift_set(closet["params2"], 0xF, 4, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        closet["params2"] = mask_shift_set(closet["params2"], 0xF, 4, 0xF)
 
     # Mapping of each closet (scene, roomid, objectid) to the local scene flag we'll use
     unused_scene_flags: dict[tuple[str, int, int], int] = {
