@@ -5,6 +5,7 @@ from PySide6.QtCore import Signal
 
 from filepathconstants import TRACKER_ASSETS_PATH
 
+
 class TrackerBackButton(QLabel):
 
     clicked = Signal()
