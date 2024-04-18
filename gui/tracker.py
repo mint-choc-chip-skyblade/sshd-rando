@@ -233,7 +233,22 @@ class Tracker:
             ["Nothing", SPIRAL_CHARGE], ["no_bird_statuette.png", "bird_statuette.png"]
         )
         self.adventure_pouch_button = TrackerInventoryButton(
-            ["Nothing", PROGRESSIVE_POUCH], ["no_pouch.png", "pouch.png"]
+            [
+                "Nothing",
+                PROGRESSIVE_POUCH,
+                PROGRESSIVE_POUCH,
+                PROGRESSIVE_POUCH,
+                PROGRESSIVE_POUCH,
+                PROGRESSIVE_POUCH,
+            ],
+            [
+                "no_pouch.png",
+                "pouch.png",
+                "pouch.png",
+                "pouch.png",
+                "pouch.png",
+                "pouch.png",
+            ],
         )
         self.bottle_button = TrackerInventoryButton(
             ["Nothing", EMPTY_BOTTLE], ["no_bottle.png", "bottle.png"]
@@ -673,6 +688,9 @@ class Tracker:
         self.update_tracker()
 
     def on_back_button_clicked(self) -> None:
+        # need to update the tracker so that subarea markers
+        # have the correct counters
+        self.update_tracker()
         self.set_map_area(self.active_area.area_parent.area)
 
     def update_tracker(self) -> None:

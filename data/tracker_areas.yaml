@@ -76,6 +76,7 @@
     - Faron Woods
     - Lake Floria
     - Great Tree
+    - Flooded Faron Woods
     - Skyview Temple
     - Ancient Cistern
     - Farore's Silent Realm
@@ -99,6 +100,11 @@
   area: Great Tree
   x: 293
   y: 110
+
+- name: Flooded Faron Woods
+  area: Flooded Faron Woods
+  x: 440
+  y: 90
 
 - name: Skyview Temple
   area: Skyview Temple
