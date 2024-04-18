@@ -46,6 +46,7 @@ extern "C" {
 
     static ACTOR_ALLOCATOR_DEFINITIONS_PTR: *mut c_void;
 
+    static mut ACTOR_PARAM_POS: *mut math::Vec3f;
     static mut ACTORBASE_PARAM2: u32;
     static mut ITEM_GET_BOTTLE_POUCH_SLOT: u32;
 
@@ -289,5 +290,21 @@ pub fn handle_closet_traps(item_id: u32) -> u32 {
         ACTORBASE_PARAM2 |= trapid << 4;
 
         return item_id;
+    }
+}
+
+#[no_mangle]
+pub fn handle_bucha_traps() {
+    unsafe {
+        let bucha: *mut actor::dAcOBase;
+        asm!("mov {0:x}, x19", out(reg) bucha);
+
+        let trapid = ((*bucha).members.base.param2 >> 4) & 0xF;
+
+        ACTORBASE_PARAM2 &= 0xFFFFFF0F;
+        ACTORBASE_PARAM2 |= trapid << 4;
+
+        // Replaced instructions
+        asm!("ldr x8, [x19]", "mov x0, x19");
     }
 }
