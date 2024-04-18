@@ -694,6 +694,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_24.addWidget(self.setting_noise_traps)
 
+        self.setting_health_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
+        self.setting_health_traps.setObjectName(u"setting_health_traps")
+
+        self.verticalLayout_24.addWidget(self.setting_health_traps)
+
         self.setting_groose_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
         self.setting_groose_traps.setObjectName(u"setting_groose_traps")
 
@@ -2307,7 +2312,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(2)
+        self.tab_widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2380,6 +2385,7 @@ class Ui_main_window(object):
         self.setting_burn_traps.setText(QCoreApplication.translate("main_window", u"Burn Traps", None))
         self.setting_curse_traps.setText(QCoreApplication.translate("main_window", u"Curse Traps", None))
         self.setting_noise_traps.setText(QCoreApplication.translate("main_window", u"Noise Traps", None))
+        self.setting_health_traps.setText(QCoreApplication.translate("main_window", u"Health Traps", None))
         self.setting_groose_traps.setText(QCoreApplication.translate("main_window", u"Groose Traps", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.gameplay_tab), QCoreApplication.translate("main_window", u"Gameplay", None))
         self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))

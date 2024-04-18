@@ -79,15 +79,10 @@ pub fn setup_traps(item_actor: *mut item::dAcItem) -> u16 {
             (*item_actor).itemid = 34;
             (*item_actor).final_determined_itemid = 34;
 
-            match trapid {
-                0 => {
-                    TRAP_ID = 0;
-                    TRAP_DURATION = 255;
-                },
-                1 => TRAP_ID = 1,
-                2 => TRAP_ID = 2,
-                3 => TRAP_ID = 3,
-                _ => (),
+            TRAP_ID = trapid as u8;
+
+            if trapid == 0 {
+                TRAP_DURATION = 255;
             }
         } else {
             // Just to be sure, reset the trap values
@@ -124,10 +119,6 @@ pub fn update_traps() {
             },
             // Noise trap
             2 => {
-                (*FILE_MGR).FA.current_health = 1;
-                (*PLAYER_PTR).stamina_amount = 0;
-                (*PLAYER_PTR).something_we_use_for_stamina = 0x5A; // Make player exhausted?
-                (*PLAYER_PTR).stamina_recovery_timer = 64;
                 flag::set_storyflag(565); // z button bipping
                 flag::set_storyflag(566); // c button bipping
                 flag::set_storyflag(567); // map button bipping
@@ -171,6 +162,13 @@ pub fn update_traps() {
                 );
 
                 playFanfareMaybe(FANFARE_SOUND_MGR, 0x1705); // Groose's theme
+            },
+            // Health Trap
+            4 => {
+                (*FILE_MGR).FA.current_health = 1;
+                (*PLAYER_PTR).stamina_amount = 0;
+                (*PLAYER_PTR).something_we_use_for_stamina = 0x5A; // Make player exhausted?
+                (*PLAYER_PTR).stamina_recovery_timer = 64;
             },
             _ => (),
         }
