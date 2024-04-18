@@ -310,7 +310,7 @@ pub fn handle_bucha_traps() {
 }
 
 #[no_mangle]
-pub fn handle_ac_boko_traps() {
+pub fn handle_ac_boko_and_heartco_traps() {
     unsafe {
         let ac_boko: *mut actor::dAcOBase;
         asm!("mov {0:x}, x19", out(reg) ac_boko);

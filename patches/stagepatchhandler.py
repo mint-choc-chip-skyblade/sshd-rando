@@ -227,7 +227,7 @@ def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     if boko is None:
         raise Exception(f"No Bokoblin (EBc) with id '{id}' found to patch.")
 
-    ## Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
     if trapid:
         trapbits = 254 - trapid
         # Unsets bit 0x000000F0 of params2
@@ -247,9 +247,18 @@ def patch_heart_container(bzs: dict, itemid: int, trapid: int):
     if heart_container is None:
         raise Exception(f"No heart container found to patch.")
 
-    # Don't use fake itemid yet, this needs patching properly first
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
     if trapid:
-        itemid = 34  # rupoor
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        heart_container["params2"] = mask_shift_set(
+            heart_container["params2"], 0xF, 8, trapbits
+        )
+    else:
+        # Makes sure the bit is set if not a trap
+        heart_container["params2"] = mask_shift_set(
+            heart_container["params2"], 0xF, 8, 0xF
+        )
 
     heart_container["params1"] = mask_shift_set(
         heart_container["params1"], 0xFF, 16, itemid

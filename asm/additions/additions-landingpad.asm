@@ -173,7 +173,7 @@ cmp w8, #52
 b.eq handle_bucha_traps
 
 cmp w8, #53
-b.eq handle_ac_boko_traps
+b.eq handle_ac_boko_and_heartco_traps
 
 ret ; this should never be reached
 
