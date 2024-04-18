@@ -17,7 +17,17 @@ bl additions_jumptable
 .offset 0x71002bbeec
 ldrb w2, [x19, #0x12C] ; load 00 00 00 FF from param2 (the patched itemid)
 
+; handle traps
+.offset 0x71002bbefc
+mov w8, #53
+bl additions_jumptable
+
 ; Get item id to give from boko and put it in the register that will become
 ; param1 of the dAcItem actor from the boko.
 .offset 0x71002bb8f4
 ldrb w2, [x19, #0x12C] ; load 00 00 00 FF from param2 (the patched itemid)
+
+; handle traps
+.offset 0x71002bb904
+mov w8, #53
+bl additions_jumptable

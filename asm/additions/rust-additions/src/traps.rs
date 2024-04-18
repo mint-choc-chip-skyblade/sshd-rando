@@ -308,3 +308,19 @@ pub fn handle_bucha_traps() {
         asm!("ldr x8, [x19]", "mov x0, x19");
     }
 }
+
+#[no_mangle]
+pub fn handle_ac_boko_traps() {
+    unsafe {
+        let ac_boko: *mut actor::dAcOBase;
+        asm!("mov {0:x}, x19", out(reg) ac_boko);
+
+        let trapid = ((*ac_boko).members.base.param2 >> 8) & 0xF;
+
+        ACTORBASE_PARAM2 &= 0xFFFFFF0F;
+        ACTORBASE_PARAM2 |= trapid << 4;
+
+        // Replaced instructions
+        asm!("mov w0, #0x281", "mov w3, #2");
+    }
+}

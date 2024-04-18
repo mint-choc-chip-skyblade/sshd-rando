@@ -172,6 +172,9 @@ b.eq handle_closet_traps
 cmp w8, #52
 b.eq handle_bucha_traps
 
+cmp w8, #53
+b.eq handle_ac_boko_traps
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

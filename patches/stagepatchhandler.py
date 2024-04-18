@@ -224,12 +224,17 @@ def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
         filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
     )
 
-    # Don't use fake itemid yet, this needs patching properly first
-    if trapid:
-        itemid = 34  # rupoor
-
     if boko is None:
         raise Exception(f"No Bokoblin (EBc) with id '{id}' found to patch.")
+
+    ## Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        boko["params2"] = mask_shift_set(boko["params2"], 0xF, 8, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        boko["params2"] = mask_shift_set(boko["params2"], 0xF, 8, 0xF)
 
     boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemid)
 
