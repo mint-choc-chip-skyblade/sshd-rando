@@ -577,7 +577,7 @@ class Tracker:
             right_layout = QVBoxLayout()
 
             for i, loc in enumerate(locations):
-                if i < len(locations) // 2:
+                if i <= len(locations) // 2:
                     left_layout.addWidget(
                         TrackerLocationLabel(
                             loc, area_button.recent_search, area_button
