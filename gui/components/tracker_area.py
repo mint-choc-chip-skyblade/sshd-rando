@@ -39,6 +39,7 @@ class TrackerArea(QLabel):
         self.setFixedSize(30, 30)
         self.move(self.tracker_x, self.tracker_y)
         self.setVisible(False)
+        self.setToolTip(f"{self.area} (0/0)")
 
     # Recursively iterate through all this area's locations and children and return all locations
     def get_all_locations(self) -> list[Location]:
@@ -74,6 +75,7 @@ class TrackerArea(QLabel):
         if not all_unmarked_locations:
             self.setStyleSheet(TrackerArea.default_stylesheet.replace("COLOR", "gray"))
             self.setText("")
+            self.setToolTip(f"{self.area} (0/0)")
             return
 
         num_available_locations = sum(
@@ -96,6 +98,8 @@ class TrackerArea(QLabel):
                 TrackerArea.default_stylesheet.replace("COLOR", "orange")
             )
             self.setText(str(num_available_locations))
+        
+        self.setToolTip(f"{self.area} ({num_available_locations}/{len(all_unmarked_locations)})")
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
 

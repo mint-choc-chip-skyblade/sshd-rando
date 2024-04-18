@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -3307,9 +3307,132 @@ Practice Sword</string>
         <string>Tracker</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="horizontalSpacing">
+         <number>3</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>0</number>
+        </property>
         <item row="0" column="0">
-         <layout class="QGridLayout" name="inventory_layout">
-          <item row="1" column="0">
+         <layout class="QVBoxLayout" name="inventory_layout">
+          <item>
+           <layout class="QHBoxLayout" name="dungeon_inventory_layout">
+            <property name="spacing">
+             <number>2</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_sv_layout">
+              <property name="spacing">
+               <number>1</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_sv_keys_layout">
+                <property name="spacing">
+                 <number>1</number>
+                </property>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_et_layout">
+              <property name="spacing">
+               <number>1</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_et_keys_layout">
+                <property name="spacing">
+                 <number>1</number>
+                </property>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_lmf_layout">
+              <property name="spacing">
+               <number>1</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_lmf_keys_layout">
+                <property name="spacing">
+                 <number>1</number>
+                </property>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_ac_layout">
+              <property name="spacing">
+               <number>1</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_ac_keys_layout">
+                <property name="spacing">
+                 <number>1</number>
+                </property>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_ssh_layout">
+              <property name="spacing">
+               <number>1</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_ssh_keys_layout">
+                <property name="spacing">
+                 <number>1</number>
+                </property>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_fs_layout">
+              <property name="spacing">
+               <number>1</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_fs_keys_layout">
+                <property name="spacing">
+                 <number>1</number>
+                </property>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="dungeon_sk_layout">
+              <property name="spacing">
+               <number>1</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="dungeon_sk_keys_layout">
+                <property name="spacing">
+                 <number>1</number>
+                </property>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
            <layout class="QGridLayout" name="middle_inventory_layout">
             <item row="0" column="2">
              <layout class="QVBoxLayout" name="inventory_tablet_layout">
@@ -3333,80 +3456,35 @@ Practice Sword</string>
              </layout>
             </item>
             <item row="0" column="1">
-             <layout class="QGridLayout" name="inventory_b_wheel_layout"/>
+             <layout class="QGridLayout" name="inventory_b_wheel_layout">
+              <property name="spacing">
+               <number>1</number>
+              </property>
+             </layout>
             </item>
             <item row="0" column="0">
              <layout class="QVBoxLayout" name="inventory_sword_layout"/>
             </item>
            </layout>
           </item>
-          <item row="2" column="0">
-           <layout class="QGridLayout" name="lower_inventory_layout"/>
-          </item>
-          <item row="0" column="0">
-           <layout class="QHBoxLayout" name="dungeon_inventory_layout">
-            <item>
-             <layout class="QVBoxLayout" name="dungeon_sv_layout">
-              <item>
-               <layout class="QHBoxLayout" name="dungeon_sv_keys_layout"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="dungeon_et_layout">
-              <item>
-               <layout class="QHBoxLayout" name="dungeon_et_keys_layout"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="dungeon_lmf_layout">
-              <item>
-               <layout class="QHBoxLayout" name="dungeon_lmf_keys_layout"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="dungeon_ac_layout">
-              <item>
-               <layout class="QHBoxLayout" name="dungeon_ac_keys_layout"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="dungeon_ssh_layout">
-              <item>
-               <layout class="QHBoxLayout" name="dungeon_ssh_keys_layout"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="dungeon_fs_layout">
-              <item>
-               <layout class="QHBoxLayout" name="dungeon_fs_keys_layout"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="dungeon_sk_layout">
-              <item>
-               <layout class="QHBoxLayout" name="dungeon_sk_keys_layout"/>
-              </item>
-             </layout>
-            </item>
+          <item>
+           <layout class="QGridLayout" name="lower_inventory_layout">
+            <property name="spacing">
+             <number>1</number>
+            </property>
            </layout>
           </item>
          </layout>
         </item>
         <item row="0" column="2">
-         <layout class="QGridLayout" name="tracker_info_layout">
+         <layout class="QVBoxLayout" name="tracker_info_layout">
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <item row="0" column="0">
+          <item>
            <widget class="QPushButton" name="start_new_tracker_button">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -3415,6 +3493,19 @@ Practice Sword</string>
              <string>Start New Tracker</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <spacer name="tracker_info_layout_spacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </item>
@@ -3465,7 +3556,7 @@ Practice Sword</string>
                <x>0</x>
                <y>0</y>
                <width>546</width>
-               <height>301</height>
+               <height>319</height>
               </rect>
              </property>
              <property name="maximumSize">
