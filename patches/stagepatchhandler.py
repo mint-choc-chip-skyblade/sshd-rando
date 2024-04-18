@@ -290,12 +290,17 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
         None,
     )
 
-    # Don't use fake itemid yet, this needs patching properly first
-    if trapid:
-        itemid = 34  # rupoor
-
     if digspot is None:
         raise Exception(f"No digspot with id '{id}' found to patch.")
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        digspot["params2"] = mask_shift_set(digspot["params2"], 0xF, 8, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        digspot["params2"] = mask_shift_set(digspot["params2"], 0xF, 8, 0xF)
 
     # patch digspot to be the same as key piece digspots in all ways except it keeps it's initial sceneflag
     digspot["params1"] = (digspot["params1"] & 0xFF0) | 0xFF0B1004
