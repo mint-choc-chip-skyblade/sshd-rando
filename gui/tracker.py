@@ -640,6 +640,10 @@ class Tracker:
         self.autosave_tracker()
 
     def update_areas_locations(self) -> None:
+        # Clear all locations before reassigning
+        for area_button in self.ui.tracker_tab.findChildren(TrackerArea):
+            area_button.locations.clear()
+
         self.world.assign_all_areas_hint_regions()
         for location in self.world.get_all_item_locations():
             for area_name in set(
