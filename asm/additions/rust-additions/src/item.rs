@@ -601,6 +601,8 @@ pub fn tgreact_spawn_custom_item(
                 };
                 let item_rot_ptr: *mut math::Vec3s = &mut item_rot as *mut math::Vec3s;
 
+                let trapid = (param2 >> 19) & 0xF;
+
                 let item_actor: *mut dAcItem = actor::spawn_actor(
                     actor::ACTORID::ITEM,
                     roomid,
@@ -608,7 +610,7 @@ pub fn tgreact_spawn_custom_item(
                     actor_pos_ptr,
                     item_rot_ptr,
                     core::ptr::null_mut(),
-                    0xFF0000FF | (param2 & 0x3FF00),
+                    0xFF00000F | (param2 & 0x3FF00) | (trapid << 4),
                 ) as *mut dAcItem;
 
                 let mut forward_speed = 0.0;
@@ -617,6 +619,12 @@ pub fn tgreact_spawn_custom_item(
                 if (param2 >> 18) & 1 == 1 {
                     forward_speed = 12.0;
                     velocity_y = 19.5;
+                }
+
+                // Give items that are normally Deku Seeds a bit of an extra push xD
+                if ((param2 >> 24) & 0xFF) == 0x0D {
+                    forward_speed += 2.0;
+                    velocity_y += 3.0;
                 }
 
                 (*item_actor).base.members.forward_speed = forward_speed;

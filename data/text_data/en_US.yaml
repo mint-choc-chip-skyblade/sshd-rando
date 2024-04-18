@@ -1014,6 +1014,11 @@
   cryptic: a <r<transport friend>>
   plurality: Singular
 
+- name: Health Trap
+  standard: Trap
+  pretty: a Health Trap
+  cryptic: a <r<life drain>>
+
 - name: Groose Trap
   standard: Trap
   pretty: a Groose Trap
@@ -1023,14 +1028,14 @@
 - name: Noise Trap
   standard: Trap
   pretty: a Noise Trap
-  cryptic: a <r<audiophile's delight>>
+  cryptic: an <r<audiophile's delight>>
   plurality: Singular
 
 - name: Curse Trap
   standard: Trap
-  pretty: a Curse Trap
-  cryptic: a <r<magical hand-tie>>
-  plurality: Singular
+  pretty: Curse Trap
+  cryptic: some <r<magical hand-ties>>
+  plurality: Plural
 
 - name: Burn Trap
   standard: Trap

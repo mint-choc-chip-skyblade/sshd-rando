@@ -560,7 +560,7 @@
     - "on": "Traps that curse you can be picked when replacing items with traps (controlled by the Trap Mode setting)."
 
 - name: noise_traps
-  default_option: "off"
+  default_option: "on"
   pretty_name: Noise Traps
   pretty_options:
     - "Off"
@@ -578,6 +578,16 @@
   options:
     - "off": "Traps that spawn Groose will not be added to the item pool."
     - "on": "Traps that spawn Groose can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+
+- name: health_traps
+  default_option: "off"
+  pretty_name: Health Traps
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Traps that reduce your health to 1 will not be added to the item pool."
+    - "on": "Traps that reduce your health to 1 can be picked when replacing items with traps (controlled by the Trap Mode setting)."
 
 - name: ammo_availability
   default_option: plentiful

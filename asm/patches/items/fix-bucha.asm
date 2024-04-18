@@ -36,6 +36,27 @@ nop
 
 
 
+; handle traps
+; these patches are quite far away from when the item actually gets created
+; but will still always get called
+; in dAcNpcKyuiElder::init
+.offset 0x71005c1ef0
+mov w8, #52
+bl additions_jumptable
+
+.offset 0x71005c20b0
+nop ; don't overwrite dAcBase::param2
+
+; in dAcNpcKyuiElder::spawnSlingshot??
+.offset 0x71005c4cc8
+mov w8, #52
+bl additions_jumptable
+
+.offset 0x71005c4e90
+nop ; don't overwrite dAcBase::param2
+
+
+
 ; Replace check for slingshot item with a sceneflag check for the Kikwi Elder's Reward
 
 ; In function that checks each of the Kikwi storyflags

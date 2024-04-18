@@ -2,6 +2,11 @@
 # the specific text being added is
 
 003-ItemGet:
+  - name: Health Trap Entry
+    type: entryadd
+    entry:
+      name: "003_250"
+      value: Show Trap Text
   - name: Groose Trap Entry
     type: entryadd
     entry:
