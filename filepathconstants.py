@@ -58,6 +58,7 @@ RANDO_FONT_PATH = RANDO_ROOT_PATH / "assets" / "Figtree-Regular.ttf"
 DYSLEXIC_FONT_PATH = RANDO_ROOT_PATH / "assets" / "OpenDyslexic3-Regular.ttf"
 
 TRACKER_AREAS_PATH = RANDO_ROOT_PATH / "data" / "tracker_areas.yaml"
+TRACKER_AUTOSAVE_PATH = RANDO_ROOT_PATH / "tracker_autosave_RANDOMIZER_VERSION.yaml"
 
 # Stage and event stuff
 OARC_CACHE_PATH = Path(userdata_path) / "oarccache"
