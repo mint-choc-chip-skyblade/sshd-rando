@@ -51,6 +51,11 @@ class Tracker:
         self.areas: dict[str, TrackerArea] = {}
         self.active_area: TrackerArea = None
 
+        # Display the Sky if there's no active tracker
+        self.ui.map_widget.setStyleSheet(
+            Tracker.map_widget_stylesheet.replace("IMAGE_FILENAME", "Sky.png")
+        )
+
         self.init_buttons()
         self.assign_buttons_to_layout()
         self.load_tracker_autosave()
@@ -64,7 +69,7 @@ class Tracker:
         self.sv_small_key_button = TrackerInventoryButton(
             ["Nothing", SV_SMALL_KEY, SV_SMALL_KEY],
             [
-                "dungeons/noSmallKey.png",
+                "dungeons/0_smallKey.png",
                 "dungeons/1_smallKey.png",
                 "dungeons/2_smallKey.png",
             ],
@@ -82,12 +87,12 @@ class Tracker:
         )
         self.lmf_small_key_button = TrackerInventoryButton(
             ["Nothing", LMF_SMALL_KEY],
-            ["dungeons/noSmallKey.png", "dungeons/1_smallKey.png"],
+            ["dungeons/0_smallKey.png", "dungeons/1_smallKey.png"],
         )
         self.ac_small_key_button = TrackerInventoryButton(
             ["Nothing", AC_SMALL_KEY, AC_SMALL_KEY],
             [
-                "dungeons/noSmallKey.png",
+                "dungeons/0_smallKey.png",
                 "dungeons/1_smallKey.png",
                 "dungeons/2_smallKey.png",
             ],
@@ -95,7 +100,7 @@ class Tracker:
         self.ssh_small_key_button = TrackerInventoryButton(
             ["Nothing", SSH_SMALL_KEY, SSH_SMALL_KEY],
             [
-                "dungeons/noSmallKey.png",
+                "dungeons/0_smallKey.png",
                 "dungeons/1_smallKey.png",
                 "dungeons/2_smallKey.png",
             ],
@@ -103,7 +108,7 @@ class Tracker:
         self.fs_small_key_button = TrackerInventoryButton(
             ["Nothing", FS_SMALL_KEY, FS_SMALL_KEY, FS_SMALL_KEY],
             [
-                "dungeons/noSmallKey.png",
+                "dungeons/0_smallKey.png",
                 "dungeons/1_smallKey.png",
                 "dungeons/2_smallKey.png",
                 "dungeons/3_smallKey.png",
@@ -111,7 +116,7 @@ class Tracker:
         )
         self.sk_small_key_button = TrackerInventoryButton(
             ["Nothing", SK_SMALL_KEY],
-            ["dungeons/noSmallKey.png", "dungeons/1_smallKey.png"],
+            ["dungeons/0_smallKey.png", "dungeons/1_smallKey.png"],
         )
 
         self.sv_boss_key_button = TrackerInventoryButton(
@@ -216,7 +221,7 @@ class Tracker:
         self.lanayru_caves_key_button = TrackerInventoryButton(
             ["Nothing", LC_SMALL_KEY, LC_SMALL_KEY],
             [
-                "dungeons/noSmallKey.png",
+                "dungeons/0_smallKey.png",
                 "dungeons/1_smallKey.png",
                 "dungeons/2_smallKey.png",
             ],
@@ -278,7 +283,7 @@ class Tracker:
             ["Nothing", DINS_POWER], ["songs/no_power_grid.png", "songs/Dins_Power.png"]
         )
         self.song_of_the_hero_button = TrackerInventoryButton(
-            ["Nothing", SONG_OF_THE_HERO], ["songs/no_song.png", "songs/SOTH4.png"]
+            ["Nothing", FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART], ["songs/no_soth_grid.png", "songs/soth_grid_1.png", "songs/soth_grid_2.png", "songs/soth_grid_3.png"]
         )
         self.triforce_button = TrackerInventoryButton(
             ["Nothing", TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER],
@@ -311,8 +316,8 @@ class Tracker:
             ["sidequests/no_rattle_grid.png", "sidequests/rattle.png"],
         )
         self.gratitude_crystals_button = TrackerInventoryButton(
-            ["Nothing", GRATITUDE_CRYSTAL_PACK],
-            ["sidequests/no_crystal_grid.png", "sidequests/crystal.png"],
+            ["Nothing"] + [GRATITUDE_CRYSTAL_PACK] * 16,
+            ["sidequests/no_crystal_grid.png"] + [f"sidequests/crystal_{i * 5}.png" for i in range(1, 17)],
         )
         self.life_tree_fruit_button = TrackerInventoryButton(
             ["Nothing", LIFE_TREE_FRUIT],
@@ -392,6 +397,12 @@ class Tracker:
         )
         self.back_button.clicked.connect(self.on_back_button_clicked)
         self.back_button.setVisible(False)
+
+        # Set size policy for start new tracker button to push everything left
+        self.ui.start_new_tracker_button.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
+
+        # Add vertical spacer to the inventory button layout to push all the buttons up
+        self.ui.inventory_layout.addSpacerItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
 
     def assign_buttons_to_layout(self) -> None:
         self.ui.dungeon_sv_keys_layout.addWidget(self.sv_small_key_button)
@@ -498,13 +509,55 @@ class Tracker:
         self.world.perform_pre_entrance_shuffle_tasks()
 
         # Hide specific inventory buttons depending on settings
-        if self.world.setting("open_earth_temple") == "on":
-            self.et_key_piece_button.setVisible(False)
-        else:
-            self.et_key_piece_button.setVisible(True)
+        # ET Key Pieces
+        visible = self.world.setting("open_earth_temple") == "off"
+        self.et_key_piece_button.setVisible(visible)
+
+        # Small Key buttons
+        visible = self.world.setting("small_keys") != "removed"
+        self.sv_small_key_button.setVisible(visible)
+        self.lmf_small_key_button.setVisible(visible)
+        self.ac_small_key_button.setVisible(visible)
+        self.ssh_small_key_button.setVisible(visible)
+        self.fs_small_key_button.setVisible(visible)
+        self.sk_small_key_button.setVisible(visible)
+        
+        # Boss Key buttons
+        visible = self.world.setting("boss_keys") != "removed"
+        self.sv_boss_key_button.setVisible(visible)
+        self.et_boss_key_button.setVisible(visible)
+        self.lmf_boss_key_button.setVisible(visible)
+        self.ac_boss_key_button.setVisible(visible)
+        self.ssh_boss_key_button.setVisible(visible)
+        self.fs_boss_key_button.setVisible(visible)
+
+        # Lanayru Caves Keys
+        visible = self.world.setting("lanayru_caves_keys") != "removed"
+        self.lanayru_caves_key_button.setVisible(visible)
+
+        self.inventory = self.world.starting_item_pool.copy()
+
+        # If the inventory contains the song of the hero, split it into its
+        # three parts for the inventory button
+        if self.inventory[self.world.get_item(SONG_OF_THE_HERO)]:
+            self.inventory[self.world.get_item(SONG_OF_THE_HERO)] = 0
+            self.inventory[self.world.get_item(FARON_SOTH_PART)] = 1 
+            self.inventory[self.world.get_item(ELDIN_SOTH_PART)] = 1
+            self.inventory[self.world.get_item(LANAYRU_SOTH_PART)] = 1
+
+        # Some item groups can be obtained in any order, so we normalize the orders here
+        # to match what their corresponding button has
+        soth_order = [FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART]
+        triforce_order = [TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER]
+        for group in (soth_order, triforce_order):
+            num_group_parts = sum([1 for item in self.inventory.elements() if item.name in group])
+            for i, item_name in enumerate(group):
+                item = self.world.get_item(item_name)
+                self.inventory[item] = 0
+                if i < num_group_parts:
+                    self.inventory[item] += 1
 
         # Apply starting inventory to inventory buttons and assign world
-        self.inventory = self.world.starting_item_pool.copy()
         for inventory_button in self.ui.tracker_tab.findChildren(
             TrackerInventoryButton
         ):
@@ -560,7 +613,7 @@ class Tracker:
             else:
                 child.setVisible(False)
 
-        # Remove the back button if we're at the root
+        # Don't display the back button if we're at the root
         if area_name == "Root":
             self.back_button.setVisible(False)
         else:
@@ -577,7 +630,7 @@ class Tracker:
             right_layout = QVBoxLayout()
 
             for i, loc in enumerate(locations):
-                if i <= len(locations) // 2:
+                if i < len(locations) / 2:
                     left_layout.addWidget(
                         TrackerLocationLabel(
                             loc, area_button.recent_search, area_button

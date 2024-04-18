@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QLabel, QSizePolicy
-from PySide6.QtGui import QCursor, QMouseEvent
+from PySide6.QtGui import QCursor, QMouseEvent, QImageReader
 from PySide6 import QtCore
 from PySide6.QtCore import Signal
 
@@ -28,12 +28,30 @@ class TrackerInventoryButton(QLabel):
         assert len(self.items) == len(self.filenames)
 
         self.setSizePolicy(QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding))
+        self.max_width = 0
+        self.max_height = 0
+        for filename in self.filenames:
+            image = QImageReader(f"{(TRACKER_ASSETS_PATH / filename).as_posix()}")
+            image = image.read()
+            width = image.rect().width()
+            height = image.rect().height()
+            if height > self.max_height:
+                self.max_height = height
+            if width > self.max_width:
+                self.max_width = width
+
+        self.setMinimumHeight(self.max_height)
+        self.setMinimumWidth(self.max_width)
 
         self.state: int = 0
         self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.update_icon()
 
     def update_icon(self) -> None:
+        if self.state >= len(self.filenames):
+            print(f"Out of range for {self.items[-1]} {self.state}")
+            self.state = len(self.filenames) - 1
+
         self.setStyleSheet(
             f'background-image: url("{(TRACKER_ASSETS_PATH / self.filenames[self.state]).as_posix()}");'
             + "background-repeat: none;"
