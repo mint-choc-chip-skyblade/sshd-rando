@@ -468,7 +468,11 @@ class Tracker:
             dungeon_label.clicked.connect(self.update_dungeon_progress_locations)
 
     def initialize_tracker_world(
-        self, tracker_config: Config = None, marked_items=[], marked_locations=[], connected_entrances=[]
+        self,
+        tracker_config: Config = None,
+        marked_items=[],
+        marked_locations=[],
+        connected_entrances=[],
     ) -> None:
         self.started = True
 
@@ -513,7 +517,7 @@ class Tracker:
                     inventory_button.add_forbidden_state(inventory_button.state)
                     inventory_button.state += 1
                     self.inventory[item] -= 1
-                    
+
             # Then update the buttons with any marked items from an autosave
             for item_name in marked_items:
                 if item_name in inventory_button.items:
@@ -598,9 +602,10 @@ class Tracker:
             self.ui.tracker_locations_scroll_layout.addLayout(right_layout)
 
             # Set clicking labels to update tracker
-            for location_label in self.ui.tracker_tab.findChildren(TrackerLocationLabel):
+            for location_label in self.ui.tracker_tab.findChildren(
+                TrackerLocationLabel
+            ):
                 location_label.clicked.connect(self.update_tracker)
-
 
     def on_start_new_tracker_button_clicked(self) -> None:
         confirm_choice = self.main.fi_question_dialog.show_dialog(
@@ -633,7 +638,7 @@ class Tracker:
             location_label.update_color(search)
 
         self.autosave_tracker()
-        
+
     def update_areas_locations(self) -> None:
         self.world.assign_all_areas_hint_regions()
         for location in self.world.get_all_item_locations():
@@ -680,7 +685,9 @@ class Tracker:
     def autosave_tracker(self) -> None:
         # write config to file
         version = VERSION.replace("+", "_")
-        filename = Path(TRACKER_AUTOSAVE_PATH.as_posix().replace("RANDOMIZER_VERSION", version))
+        filename = Path(
+            TRACKER_AUTOSAVE_PATH.as_posix().replace("RANDOMIZER_VERSION", version)
+        )
         write_config_to_file(filename, self.world.config)
 
         # Then read it again to input extra data
@@ -698,15 +705,16 @@ class Tracker:
         with open(filename, "w") as autosave_file:
             yaml.safe_dump(autosave, autosave_file)
 
-
     def load_tracker_autosave(self) -> None:
         version = VERSION.replace("+", "_")
-        filename = Path(TRACKER_AUTOSAVE_PATH.as_posix().replace("RANDOMIZER_VERSION", version))
+        filename = Path(
+            TRACKER_AUTOSAVE_PATH.as_posix().replace("RANDOMIZER_VERSION", version)
+        )
 
         # If no autosave, don't do anything
         if not filename.exists():
             return
-        
+
         tracker_config = load_config_from_file(filename, allow_rewrite=False)
 
         autosave = yaml_load(filename)
@@ -715,8 +723,6 @@ class Tracker:
 
         self.initialize_tracker_world(tracker_config, marked_items, marked_locations)
         self.update_tracker()
-
-
 
     def clear_layout(self, layout: QLayout, remove_nested_layouts=False) -> None:
         # Recursively clear nested layouts
