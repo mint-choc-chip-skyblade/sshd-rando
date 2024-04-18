@@ -228,7 +228,22 @@ class Tracker:
             ["Nothing", SPIRAL_CHARGE], ["no_bird_statuette.png", "bird_statuette.png"]
         )
         self.adventure_pouch_button = TrackerInventoryButton(
-            ["Nothing", PROGRESSIVE_POUCH], ["no_pouch.png", "pouch.png"]
+            [
+                "Nothing",
+                PROGRESSIVE_POUCH,
+                PROGRESSIVE_POUCH,
+                PROGRESSIVE_POUCH,
+                PROGRESSIVE_POUCH,
+                PROGRESSIVE_POUCH,
+            ],
+            [
+                "no_pouch.png",
+                "pouch.png",
+                "pouch.png",
+                "pouch.png",
+                "pouch.png",
+                "pouch.png",
+            ],
         )
         self.bottle_button = TrackerInventoryButton(
             ["Nothing", EMPTY_BOTTLE], ["no_bottle.png", "bottle.png"]
@@ -503,6 +518,36 @@ class Tracker:
         else:
             self.et_key_piece_button.setVisible(True)
 
+        if self.world.setting("small_keys") == "removed":
+            self.sv_small_key_button.setVisible(False)
+            self.lmf_small_key_button.setVisible(False)
+            self.ac_small_key_button.setVisible(False)
+            self.ssh_small_key_button.setVisible(False)
+            self.fs_small_key_button.setVisible(False)
+            self.sk_small_key_button.setVisible(False)
+        else:
+            self.sv_small_key_button.setVisible(True)
+            self.lmf_small_key_button.setVisible(True)
+            self.ac_small_key_button.setVisible(True)
+            self.ssh_small_key_button.setVisible(True)
+            self.fs_small_key_button.setVisible(True)
+            self.sk_small_key_button.setVisible(True)
+
+        if self.world.setting("boss_keys") == "removed":
+            self.sv_boss_key_button.setVisible(False)
+            self.et_boss_key_button.setVisible(False)
+            self.lmf_boss_key_button.setVisible(False)
+            self.ac_boss_key_button.setVisible(False)
+            self.ssh_boss_key_button.setVisible(False)
+            self.fs_boss_key_button.setVisible(False)
+        else:
+            self.sv_boss_key_button.setVisible(True)
+            self.et_boss_key_button.setVisible(True)
+            self.lmf_boss_key_button.setVisible(True)
+            self.ac_boss_key_button.setVisible(True)
+            self.ssh_boss_key_button.setVisible(True)
+            self.fs_boss_key_button.setVisible(True)
+
         # Apply starting inventory to inventory buttons and assign world
         self.inventory = self.world.starting_item_pool.copy()
         for inventory_button in self.ui.tracker_tab.findChildren(
@@ -620,6 +665,9 @@ class Tracker:
         self.update_tracker()
 
     def on_back_button_clicked(self) -> None:
+        # need to update the tracker so that subarea markers
+        # have the correct counters
+        self.update_tracker()
         self.set_map_area(self.active_area.area_parent.area)
 
     def update_tracker(self) -> None:
