@@ -10,7 +10,7 @@ from logic.search import Search
 class TrackerLocationLabel(QLabel):
 
     default_stylesheet = "border-width: 1px; border-color: gray;"
-    clicked = Signal()
+    clicked = Signal(str)
 
     def __init__(
         self, location_: Location, search: Search, parent_area_button_
@@ -59,6 +59,6 @@ class TrackerLocationLabel(QLabel):
         if ev.button() == QtCore.Qt.LeftButton:
             self.location.marked = not self.location.marked
             self.update_color(self.recent_search)
-            self.clicked.emit()
+            self.clicked.emit(self.parent_area_button.area)
 
         return super().mouseReleaseEvent(ev)

@@ -70,6 +70,16 @@ class TrackerArea(QLabel):
             and "Goddess Cube" not in loc.types
         ]
 
+    def get_unmarked_locations(self) -> list[Location]:
+        return [loc for loc in self.get_included_locations() if not loc.marked]
+
+    def get_available_locations(self) -> list[Location]:
+        return [
+            loc
+            for loc in self.get_unmarked_locations()
+            if loc in self.recent_search.visited_locations
+        ]
+
     def update(self, search: "Search" = None) -> None:
         if search is not None:
             self.recent_search = search
@@ -81,8 +91,7 @@ class TrackerArea(QLabel):
         ):
             return
 
-        all_locations = self.get_included_locations()
-        all_unmarked_locations = [loc for loc in all_locations if not loc.marked]
+        all_unmarked_locations = self.get_unmarked_locations()
         # If we don't have any possible locations at all then change to gray
         if not all_unmarked_locations:
             self.setStyleSheet(
@@ -94,13 +103,7 @@ class TrackerArea(QLabel):
             self.tooltip = f"{self.area} (0/0)"
             return
 
-        num_available_locations = sum(
-            [
-                1
-                for loc in all_unmarked_locations
-                if loc in self.recent_search.visited_locations
-            ]
-        )
+        num_available_locations = len(self.get_available_locations())
         if num_available_locations == 0:
             self.setStyleSheet(
                 TrackerArea.default_stylesheet.replace("COLOR", "red").replace(
@@ -139,8 +142,6 @@ class TrackerArea(QLabel):
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
 
-        QToolTip.showText(
-            QCursor.pos() + QPoint(-15, 50), self.tooltip, self
-        )
+        QToolTip.showText(QCursor.pos() + QPoint(-15, 50), self.tooltip, self)
 
         return super().mouseMoveEvent(ev)

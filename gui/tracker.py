@@ -712,6 +712,7 @@ class Tracker:
 
     def show_area_locations(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, False):
+            self.show_area_location_info(area_name)
             self.clear_layout(
                 self.ui.tracker_locations_scroll_layout, remove_nested_layouts=True
             )
@@ -749,7 +750,31 @@ class Tracker:
             for location_label in self.ui.tracker_tab.findChildren(
                 TrackerLocationLabel
             ):
-                location_label.clicked.connect(self.update_tracker)
+                location_label.clicked.connect(self.on_click_location_label)
+
+    def show_area_location_info(self, area_name: str) -> None:
+        if area_button := self.areas.get(area_name, False):
+            # Show the area name and checks in the space above the list
+            pt_size = 20
+            self.clear_layout(
+                self.ui.tracker_locations_info_layout, remove_nested_layouts=True
+            )
+            area_name_label = QLabel(area_button.area)
+            area_name_label.setStyleSheet(f"font-size: {pt_size}pt")
+            area_name_label.setMargin(10)
+            locations_remaining_label = QLabel(
+                f"({len(area_button.get_available_locations())}/{len(area_button.get_unmarked_locations())})"
+            )
+            locations_remaining_label.setStyleSheet(
+                f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignRight)};"
+            )
+            locations_remaining_label.setMargin(10)
+            self.ui.tracker_locations_info_layout.addWidget(area_name_label)
+            self.ui.tracker_locations_info_layout.addWidget(locations_remaining_label)
+
+    def on_click_location_label(self, location_area: str) -> None:
+        self.update_tracker()
+        self.show_area_location_info(location_area)
 
     def on_start_new_tracker_button_clicked(self) -> None:
         confirm_choice = self.main.fi_question_dialog.show_dialog(
@@ -849,11 +874,15 @@ class Tracker:
         for area_button in self.areas.values():
             area_button.update(search)
 
+        location_label_area_name = ""
         for location_label in self.ui.tracker_locations_scroll_area.findChildren(
             TrackerLocationLabel
         ):
             location_label.update_color(search)
+            if not location_label_area_name:
+                location_label_area_name = location_label.parent_area_button.area
 
+        self.show_area_location_info(location_label_area_name)
         self.autosave_tracker()
 
     def update_areas_locations(self) -> None:
@@ -905,7 +934,7 @@ class Tracker:
             self.areas[dungeon_name].update()
         else:
             print(f'No marker made for dungeon "{dungeon_name}" yet')
-        
+
         # autosave to save active dungeons
         self.autosave_tracker()
 
