@@ -1,7 +1,7 @@
-from PySide6.QtWidgets import QLabel, QSizePolicy
+from PySide6.QtWidgets import QLabel, QSizePolicy, QToolTip
 from PySide6.QtGui import QCursor, QMouseEvent
 from PySide6 import QtCore
-from PySide6.QtCore import Signal
+from PySide6.QtCore import Signal, QPoint
 
 from logic.search import Search
 from logic.location import Location
@@ -12,7 +12,7 @@ class TrackerArea(QLabel):
     show_locations = Signal(str)
     change_map_area = Signal(str)
 
-    default_stylesheet = f"background-color: COLOR; border-image: none; border-color: black; border-radius: 6px; color: black; qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
+    default_stylesheet = f"background-color: COLOR; border-image: none; border-color: black; border-radius: RADIUSpx; color: black; qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
 
     def __init__(
         self,
@@ -22,6 +22,8 @@ class TrackerArea(QLabel):
         x_: int = -1,
         y_: int = -1,
         parent_=None,
+        border_radius_="6",
+        alias_: str = "",
     ):
         super().__init__(parent=parent_)
         self.area = area_
@@ -32,14 +34,21 @@ class TrackerArea(QLabel):
         self.area_parent: "TrackerArea" = None
         self.locations: list = []
         self.recent_search: Search = None
+        self.border_radius = border_radius_
+        self.alias = alias_
 
-        self.setStyleSheet(TrackerArea.default_stylesheet.replace("COLOR", "gray"))
+        self.setStyleSheet(
+            TrackerArea.default_stylesheet.replace("COLOR", "gray").replace(
+                "RADIUS", self.border_radius
+            )
+        )
         self.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.setFixedSize(30, 30)
         self.move(self.tracker_x, self.tracker_y)
         self.setVisible(False)
-        self.setToolTip(f"{self.area} (0/0)")
+        self.tooltip = f"{self.area} (0/0)"
+        self.setMouseTracking(True)
 
     # Recursively iterate through all this area's locations and children and return all locations
     def get_all_locations(self) -> list[Location]:
@@ -76,9 +85,13 @@ class TrackerArea(QLabel):
         all_unmarked_locations = [loc for loc in all_locations if not loc.marked]
         # If we don't have any possible locations at all then change to gray
         if not all_unmarked_locations:
-            self.setStyleSheet(TrackerArea.default_stylesheet.replace("COLOR", "gray"))
+            self.setStyleSheet(
+                TrackerArea.default_stylesheet.replace("COLOR", "gray").replace(
+                    "RADIUS", self.border_radius
+                )
+            )
             self.setText("")
-            self.setToolTip(f"{self.area} (0/0)")
+            self.tooltip = f"{self.area} (0/0)"
             return
 
         num_available_locations = sum(
@@ -89,20 +102,28 @@ class TrackerArea(QLabel):
             ]
         )
         if num_available_locations == 0:
-            self.setStyleSheet(TrackerArea.default_stylesheet.replace("COLOR", "red"))
+            self.setStyleSheet(
+                TrackerArea.default_stylesheet.replace("COLOR", "red").replace(
+                    "RADIUS", self.border_radius
+                )
+            )
             self.setText("")
         elif num_available_locations == len(all_unmarked_locations):
             self.setStyleSheet(
-                TrackerArea.default_stylesheet.replace("COLOR", "dodgerblue")
+                TrackerArea.default_stylesheet.replace("COLOR", "dodgerblue").replace(
+                    "RADIUS", self.border_radius
+                )
             )
             self.setText(str(num_available_locations))
         else:
             self.setStyleSheet(
-                TrackerArea.default_stylesheet.replace("COLOR", "orange")
+                TrackerArea.default_stylesheet.replace("COLOR", "orange").replace(
+                    "RADIUS", self.border_radius
+                )
             )
             self.setText(str(num_available_locations))
 
-        self.setToolTip(
+        self.tooltip = (
             f"{self.area} ({num_available_locations}/{len(all_unmarked_locations)})"
         )
 
@@ -115,3 +136,11 @@ class TrackerArea(QLabel):
                 self.show_locations.emit(self.area)
 
         return super().mouseReleaseEvent(ev)
+
+    def mouseMoveEvent(self, ev: QMouseEvent) -> None:
+
+        QToolTip.showText(
+            ev.windowPos().toPoint() + QPoint(-15, 50), self.tooltip, self
+        )
+
+        return super().mouseMoveEvent(ev)

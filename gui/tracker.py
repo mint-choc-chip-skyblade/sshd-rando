@@ -250,6 +250,7 @@ class Tracker:
                 PROGRESSIVE_POUCH,
                 PROGRESSIVE_POUCH,
             ],
+            # TODO - separate images for each pouch
             [
                 "no_pouch.png",
                 "pouch.png",
@@ -260,7 +261,23 @@ class Tracker:
             ],
         )
         self.bottle_button = TrackerInventoryButton(
-            ["Nothing", EMPTY_BOTTLE], ["no_bottle.png", "bottle.png"]
+            [
+                "Nothing",
+                EMPTY_BOTTLE,
+                EMPTY_BOTTLE,
+                EMPTY_BOTTLE,
+                EMPTY_BOTTLE,
+                EMPTY_BOTTLE,
+            ],
+            # TODO - separate images for each bottle
+            [
+                "no_bottle.png",
+                "bottle.png",
+                "bottle.png",
+                "bottle.png",
+                "bottle.png",
+                "bottle.png",
+            ],
         )
         self.wallet_button = TrackerInventoryButton(
             [
@@ -403,8 +420,22 @@ class Tracker:
             area_children = area_button_node.get("children", [])
             area_x = area_button_node.get("x", -1)
             area_y = area_button_node.get("y", -1)
+            border_radius = "6"
+            if area_type := area_button_node.get("type", None):
+                if area_type == "Dungeon Entrance":
+                    border_radius = "0"
+                elif area_type == "Trial Gate":
+                    border_radius = "15"
+            alias = area_button_node.get("alias", "")
             self.areas[area_name] = TrackerArea(
-                area_name, area_image, area_children, area_x, area_y, self.ui.map_widget
+                area_name,
+                area_image,
+                area_children,
+                area_x,
+                area_y,
+                self.ui.map_widget,
+                border_radius,
+                alias,
             )
             self.areas[area_name].change_map_area.connect(self.set_map_area)
             self.areas[area_name].show_locations.connect(self.show_area_locations)
