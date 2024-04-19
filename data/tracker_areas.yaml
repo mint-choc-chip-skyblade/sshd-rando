@@ -9,12 +9,10 @@
     - Inside the Thunderhead
 
 - name: Sky
-  area: Sky
   x: 465
   y: 35
 
 - name: Inside the Thunderhead
-  area: Inside the Thunderhead
   x: 90
   y: 35
 
@@ -32,37 +30,32 @@
     - Batreaux's House
 
 - name: Knight Academy
-  area: Knight Academy
   x: 185
   y: 110
 
 - name: Upper Skyloft
-  area: Upper Skyloft
   x: 235
   y: 105
 
 - name: Central Skyloft
-  area: Central Skyloft
   x: 235
   y: 170
 
 - name: The Goddess's Silent Realm
-  area: The Goddess's Silent Realm
+  type: Trial Gate
   x: 245
   y: 250
 
 - name: Sky Keep
-  area: Sky Keep
+  type: Dungeon Entrance
   x: 300
   y: 105
 
 - name: Skyloft Village
-  area: Skyloft Village
   x: 350
   y: 210
 
 - name: Batreaux's House
-  area: Batreaux's House
   x: 320
   y: 250
 
@@ -82,42 +75,37 @@
     - Farore's Silent Realm
 
 - name: Sealed Grounds
-  area: Sealed Grounds
   x: 127
   y: 186
 
 - name: Faron Woods
-  area: Faron Woods
   x: 245
   y: 145
 
 - name: Lake Floria
-  area: Lake Floria
   x: 320
   y: 226
 
 - name: Great Tree
-  area: Great Tree
   x: 293
   y: 110
 
 - name: Flooded Faron Woods
-  area: Flooded Faron Woods
   x: 440
   y: 90
 
 - name: Skyview Temple
-  area: Skyview Temple
+  type: Dungeon Entrance
   x: 320
   y: 42
 
 - name: Ancient Cistern
-  area: Ancient Cistern
+  type: Dungeon Entrance
   x: 245
   y: 215
 
 - name: Farore's Silent Realm
-  area: Farore's Silent Realm
+  type: Trial Gate
   x: 325
   y: 120
 
@@ -135,37 +123,33 @@
     - Din's Silent Realm
 
 - name: Eldin Volcano
-  area: Eldin Volcano
   x: 152
   y: 219
 
 - name: Mogma Turf
-  area: Mogma Turf
   x: 217
   y: 216
 
 - name: Volcano Summit
-  area: Volcano Summit
   x: 325
   y: 120
 
 - name: Bokoblin Base
-  area: Bokoblin Base
   x: 439
   y: 216
 
 - name: Earth Temple
-  area: Earth Temple
+  type: Dungeon Entrance
   x: 225
   y: 171
 
 - name: Fire Sanctuary
-  area: Fire Sanctuary
+  type: Dungeon Entrance
   x: 392
   y: 90
 
 - name: Din's Silent Realm
-  area: Din's Silent Realm
+  type: Trial Gate
   x: 195
   y: 186
 
@@ -186,51 +170,44 @@
     - Nayru's Silent Realm
 
 - name: Lanayru Mine
-  area: Lanayru Mine
   x: 390
   y: 185
 
 - name: Lanayru Desert
-  area: Lanayru Desert
   x: 347
   y: 114
 
 - name: Temple of Time
-  area: Temple of Time
   x: 255
   y: 81
 
 - name: Lanayru Caves
-  area: Lanayru Caves
   x: 298
   y: 120
 
 - name: Ancient Harbour
-  area: Ancient Harbour
   x: 210
   y: 150
 
 - name: Lanayru Sand Sea
-  area: Lanayru Sand Sea
   x: 160
   y: 170
 
 - name: Lanayru Gorge
-  area: Lanayru Gorge
   x: 298
   y: 210
 
 - name: Lanayru Mining Facility
-  area: Lanayru Mining Facility
+  type: Dungeon Entrance
   x: 347
   y: 78
 
 - name: Sandship
-  area: Sandship
+  type: Dungeon Entrance
   x: 146
   y: 135
 
 - name: Nayru's Silent Realm
-  area: Nayru's Silent Realm
+  type: Trial Gate
   x: 347
   y: 42
