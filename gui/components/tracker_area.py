@@ -23,6 +23,7 @@ class TrackerArea(QLabel):
         y_: int = -1,
         parent_=None,
         border_radius_="6",
+        alias_: str = "",
     ):
         super().__init__(parent=parent_)
         self.area = area_
@@ -34,6 +35,7 @@ class TrackerArea(QLabel):
         self.locations: list = []
         self.recent_search: Search = None
         self.border_radius = border_radius_
+        self.alias = alias_
 
         self.setStyleSheet(
             TrackerArea.default_stylesheet.replace("COLOR", "gray").replace(

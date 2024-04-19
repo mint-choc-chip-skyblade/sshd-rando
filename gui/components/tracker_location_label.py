@@ -30,6 +30,12 @@ class TrackerLocationLabel(QLabel):
             self.setText(
                 self.location.name.replace(f"{self.parent_area_button.area} - ", "")
             )
+        elif self.parent_area_button.alias and self.location.name.startswith(
+            self.parent_area_button.alias
+        ):
+            self.setText(
+                self.location.name.replace(f"{self.parent_area_button.alias} - ", "")
+            )
         else:
             self.setText(self.location.name)
 
