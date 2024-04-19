@@ -674,15 +674,15 @@ class Tracker:
                 for loc in dungeon.locations:
                     loc.eud_progression = False
 
+        # Set the active area to that of the autosave or the Root if there is no autosave
+        self.set_map_area(autosave.get("active_area", "Root"))
+        self.clear_layout(self.ui.tracker_locations_scroll_layout)
+
         # Reset dungeon selectors
         for label in self.ui.tracker_tab.findChildren(TrackerDungeonLabel):
             label.reset()
             if label.abbreviation in autosave.get("active_dungeons", []):
                 label.on_clicked()
-
-        # Set the active area to that of the autosave or the Root if there is no autosave
-        self.set_map_area(autosave.get("active_area", "Root"))
-        self.clear_layout(self.ui.tracker_locations_scroll_layout)
 
     def set_map_area(self, area_name: str) -> None:
         area = self.areas.get(area_name, "")
@@ -706,6 +706,9 @@ class Tracker:
             self.back_button.setVisible(False)
         else:
             self.back_button.setVisible(True)
+
+        # Save current area in the autosave
+        self.autosave_tracker()
 
     def show_area_locations(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, False):
@@ -871,6 +874,9 @@ class Tracker:
                     area_button.locations.append(location)
 
     def update_dungeon_progress_locations(self, abbreviation: str) -> None:
+        if not self.started:
+            return
+
         # Don't change anything if dungeons aren't guaranteed empty
         if self.world.setting("empty_unrequired_dungeons") == "off":
             return
@@ -899,6 +905,9 @@ class Tracker:
             self.areas[dungeon_name].update()
         else:
             print(f'No marker made for dungeon "{dungeon_name}" yet')
+        
+        # autosave to save active dungeons
+        self.autosave_tracker()
 
     def autosave_tracker(self) -> None:
         # write config to file
