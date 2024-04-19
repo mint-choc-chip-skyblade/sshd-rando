@@ -3299,8 +3299,10 @@ Practice Sword</string>
       </widget>
       <widget class="QWidget" name="tracker_tab">
        <property name="styleSheet">
-        <string notr="true">QWidget {
-  background: black;
+        <string notr="true">background: black;
+
+QPushButton {
+  background: gray;
 }</string>
        </property>
        <attribute name="title">
@@ -3495,6 +3497,13 @@ Practice Sword</string>
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="set_random_settings_button">
+            <property name="text">
+             <string>Set Random Settings</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="tracker_info_layout_spacer">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -3528,6 +3537,9 @@ Practice Sword</string>
            </widget>
           </item>
           <item>
+           <layout class="QHBoxLayout" name="tracker_locations_info_layout"/>
+          </item>
+          <item>
            <widget class="QScrollArea" name="tracker_locations_scroll_area">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
@@ -3556,7 +3568,7 @@ Practice Sword</string>
                <x>0</x>
                <y>0</y>
                <width>546</width>
-               <height>319</height>
+               <height>311</height>
               </rect>
              </property>
              <property name="maximumSize">

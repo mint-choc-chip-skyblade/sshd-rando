@@ -66,7 +66,10 @@ class TrackerArea(QLabel):
             self.recent_search = search
 
         # Don't bother trying to update areas with no locations
-        if len(self.locations) + len(self.tracker_children) == 0:
+        if (
+            len(self.locations) + len(self.tracker_children) == 0
+            or self.recent_search is None
+        ):
             return
 
         all_locations = self.get_included_locations()
@@ -98,8 +101,10 @@ class TrackerArea(QLabel):
                 TrackerArea.default_stylesheet.replace("COLOR", "orange")
             )
             self.setText(str(num_available_locations))
-        
-        self.setToolTip(f"{self.area} ({num_available_locations}/{len(all_unmarked_locations)})")
+
+        self.setToolTip(
+            f"{self.area} ({num_available_locations}/{len(all_unmarked_locations)})"
+        )
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
 

@@ -2177,8 +2177,10 @@ class Ui_main_window(object):
         self.tab_widget.addTab(self.advanced_tab, "")
         self.tracker_tab = QWidget()
         self.tracker_tab.setObjectName(u"tracker_tab")
-        self.tracker_tab.setStyleSheet(u"QWidget {\n"
-"  background: black;\n"
+        self.tracker_tab.setStyleSheet(u"background: black;\n"
+"\n"
+"QPushButton {\n"
+"  background: gray;\n"
 "}")
         self.gridLayout = QGridLayout(self.tracker_tab)
         self.gridLayout.setObjectName(u"gridLayout")
@@ -2333,6 +2335,11 @@ class Ui_main_window(object):
 
         self.tracker_info_layout.addWidget(self.start_new_tracker_button)
 
+        self.set_random_settings_button = QPushButton(self.tracker_tab)
+        self.set_random_settings_button.setObjectName(u"set_random_settings_button")
+
+        self.tracker_info_layout.addWidget(self.set_random_settings_button)
+
         self.tracker_info_layout_spacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.tracker_info_layout.addItem(self.tracker_info_layout_spacer)
@@ -2353,6 +2360,11 @@ class Ui_main_window(object):
 
         self.tracker_map_layout.addWidget(self.map_widget)
 
+        self.tracker_locations_info_layout = QHBoxLayout()
+        self.tracker_locations_info_layout.setObjectName(u"tracker_locations_info_layout")
+
+        self.tracker_map_layout.addLayout(self.tracker_locations_info_layout)
+
         self.tracker_locations_scroll_area = QScrollArea(self.tracker_tab)
         self.tracker_locations_scroll_area.setObjectName(u"tracker_locations_scroll_area")
         sizePolicy15 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Expanding)
@@ -2366,7 +2378,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 319))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 311))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2769,6 +2781,7 @@ class Ui_main_window(object):
         self.setting_enable_back_in_time.setText(QCoreApplication.translate("main_window", u"Enable Back in Time (BiT)", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
         self.start_new_tracker_button.setText(QCoreApplication.translate("main_window", u"Start New Tracker", None))
+        self.set_random_settings_button.setText(QCoreApplication.translate("main_window", u"Set Random Settings", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.tracker_tab), QCoreApplication.translate("main_window", u"Tracker", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))

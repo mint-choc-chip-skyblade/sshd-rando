@@ -23,6 +23,7 @@ class TrackerDungeonLabel(QLabel):
                 print("Could not load Hylia Serif Font")
 
         super().__init__()
+        self.abbreviation = abbreviation
         self.setText(abbreviation)
         self.setStyleSheet(TrackerDungeonLabel.default_style)
         self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
@@ -32,14 +33,21 @@ class TrackerDungeonLabel(QLabel):
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
         if ev.button() in [QtCore.Qt.LeftButton, QtCore.Qt.RightButton]:
-            if self.active:
-                self.setStyleSheet(
-                    TrackerDungeonLabel.default_style.replace("COLOR", "gray")
-                )
-            else:
-                self.setStyleSheet(
-                    TrackerDungeonLabel.default_style.replace("COLOR", "dodgerblue")
-                )
-            self.active = not self.active
-            self.clicked.emit(self.text())
+            self.on_clicked()
         return super().mouseReleaseEvent(ev)
+
+    def on_clicked(self) -> None:
+        if self.active:
+            self.setStyleSheet(
+                TrackerDungeonLabel.default_style.replace("COLOR", "gray")
+            )
+        else:
+            self.setStyleSheet(
+                TrackerDungeonLabel.default_style.replace("COLOR", "dodgerblue")
+            )
+        self.active = not self.active
+        self.clicked.emit(self.text())
+
+    def reset(self) -> None:
+        self.active = False
+        self.setStyleSheet(TrackerDungeonLabel.default_style.replace("COLOR", "gray"))

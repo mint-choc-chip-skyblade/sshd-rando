@@ -12,6 +12,8 @@ from PySide6.QtWidgets import (
     QSizePolicy,
     QMessageBox,
     QLabel,
+    QComboBox,
+    QPushButton,
     QLayout,
     QSpacerItem,
     QVBoxLayout,
@@ -50,11 +52,15 @@ class Tracker:
         self.started: bool = False
         self.areas: dict[str, TrackerArea] = {}
         self.active_area: TrackerArea = None
+        self.random_settings: list = []
 
         # Display the Sky if there's no active tracker
         self.ui.map_widget.setStyleSheet(
             Tracker.map_widget_stylesheet.replace("IMAGE_FILENAME", "Sky.png")
         )
+
+        # Hide the set random settings button until a tracker is loaded with random settings
+        self.ui.set_random_settings_button.setVisible(False)
 
         self.init_buttons()
         self.assign_buttons_to_layout()
@@ -62,6 +68,9 @@ class Tracker:
 
         self.ui.start_new_tracker_button.clicked.connect(
             self.on_start_new_tracker_button_clicked
+        )
+        self.ui.set_random_settings_button.clicked.connect(
+            self.on_set_random_settings_button_clicked
         )
 
     def init_buttons(self):
@@ -298,7 +307,13 @@ class Tracker:
             ["Nothing", DINS_POWER], ["songs/no_power_grid.png", "songs/Dins_Power.png"]
         )
         self.song_of_the_hero_button = TrackerInventoryButton(
-            ["Nothing", FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART], ["songs/no_soth_grid.png", "songs/soth_grid_1.png", "songs/soth_grid_2.png", "songs/soth_grid_3.png"]
+            ["Nothing", FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART],
+            [
+                "songs/no_soth_grid.png",
+                "songs/soth_grid_1.png",
+                "songs/soth_grid_2.png",
+                "songs/soth_grid_3.png",
+            ],
         )
         self.triforce_button = TrackerInventoryButton(
             ["Nothing", TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER],
@@ -332,7 +347,8 @@ class Tracker:
         )
         self.gratitude_crystals_button = TrackerInventoryButton(
             ["Nothing"] + [GRATITUDE_CRYSTAL_PACK] * 16,
-            ["sidequests/no_crystal_grid.png"] + [f"sidequests/crystal_{i * 5}.png" for i in range(1, 17)],
+            ["sidequests/no_crystal_grid.png"]
+            + [f"sidequests/crystal_{i * 5}.png" for i in range(1, 17)],
         )
         self.life_tree_fruit_button = TrackerInventoryButton(
             ["Nothing", LIFE_TREE_FRUIT],
@@ -414,10 +430,14 @@ class Tracker:
         self.back_button.setVisible(False)
 
         # Set size policy for start new tracker button to push everything left
-        self.ui.start_new_tracker_button.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
+        self.ui.start_new_tracker_button.setSizePolicy(
+            QSizePolicy.MinimumExpanding, QSizePolicy.Fixed
+        )
 
         # Add vertical spacer to the inventory button layout to push all the buttons up
-        self.ui.inventory_layout.addSpacerItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
+        self.ui.inventory_layout.addSpacerItem(
+            QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        )
 
     def assign_buttons_to_layout(self) -> None:
         self.ui.dungeon_sv_keys_layout.addWidget(self.sv_small_key_button)
@@ -494,11 +514,7 @@ class Tracker:
             dungeon_label.clicked.connect(self.update_dungeon_progress_locations)
 
     def initialize_tracker_world(
-        self,
-        tracker_config: Config = None,
-        marked_items=[],
-        marked_locations=[],
-        connected_entrances=[],
+        self, tracker_config: Config = None, autosave: dict = {}
     ) -> None:
         self.started = True
 
@@ -508,24 +524,40 @@ class Tracker:
         if tracker_config is not None:
             config = tracker_config
 
-        # Modify some settings to remove adding random items to the pool
-        config.settings[0].settings[
-            "random_starting_tablet_count"
-        ].update_current_value(0)
-        config.settings[0].settings["random_starting_item_count"].update_current_value(
-            0
-        )
-
+        # Initialize the world
         self.world = World(0)
         self.world.setting_map = config.settings[0]
         self.world.num_worlds = 1
         self.world.config = config
+
+        # Modify some settings to prevent adding random items to the pool
+        self.world.setting("random_starting_tablet_count").set_value("0")
+        self.world.setting("random_starting_item_count").set_value("0")
+
+        # Build the world (only as necessary)
         self.world.build()
         self.world.perform_pre_entrance_shuffle_tasks()
 
+        # Get any random settings. If any are passed in from the autosave
+        # load those instead of loading them from the world
+        if autosave_random_settings := autosave.get("random_settings", False):
+            self.random_settings = [
+                s
+                for s in self.world.config.settings[0].settings.values()
+                if s.name in autosave_random_settings
+            ]
+        else:
+            self.random_settings = [
+                s
+                for s in self.world.config.settings[0].settings.values()
+                if s.value == s.info.random_option and s.info.tracker_important
+            ]
+        # If no settings are random, then hide the set random settings button
+        self.ui.set_random_settings_button.setVisible(any(self.random_settings))
+
         # Hide specific inventory buttons depending on settings
         # ET Key Pieces
-        visible = self.world.setting("open_earth_temple") == "off"
+        visible = self.world.setting("open_earth_temple") != "on"
         self.et_key_piece_button.setVisible(visible)
 
         # Small Key buttons
@@ -536,7 +568,7 @@ class Tracker:
         self.ssh_small_key_button.setVisible(visible)
         self.fs_small_key_button.setVisible(visible)
         self.sk_small_key_button.setVisible(visible)
-        
+
         # Boss Key buttons
         visible = self.world.setting("boss_keys") != "removed"
         self.sv_boss_key_button.setVisible(visible)
@@ -556,7 +588,7 @@ class Tracker:
         # three parts for the inventory button
         if self.inventory[self.world.get_item(SONG_OF_THE_HERO)]:
             self.inventory[self.world.get_item(SONG_OF_THE_HERO)] = 0
-            self.inventory[self.world.get_item(FARON_SOTH_PART)] = 1 
+            self.inventory[self.world.get_item(FARON_SOTH_PART)] = 1
             self.inventory[self.world.get_item(ELDIN_SOTH_PART)] = 1
             self.inventory[self.world.get_item(LANAYRU_SOTH_PART)] = 1
 
@@ -565,7 +597,9 @@ class Tracker:
         soth_order = [FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART]
         triforce_order = [TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER]
         for group in (soth_order, triforce_order):
-            num_group_parts = sum([1 for item in self.inventory.elements() if item.name in group])
+            num_group_parts = sum(
+                [1 for item in self.inventory.elements() if item.name in group]
+            )
             for i, item_name in enumerate(group):
                 item = self.world.get_item(item_name)
                 self.inventory[item] = 0
@@ -587,7 +621,8 @@ class Tracker:
                     self.inventory[item] -= 1
 
             # Then update the buttons with any marked items from an autosave
-            for item_name in marked_items:
+            for item_name in autosave.get("marked_items", []):
+                item = self.world.get_item(item_name)
                 if item_name in inventory_button.items:
                     inventory_button.state += 1
                     self.inventory[item] += 1
@@ -595,7 +630,7 @@ class Tracker:
             inventory_button.update_icon()
 
         # Mark any locations marked from an autosave
-        for loc_name in marked_locations:
+        for loc_name in autosave.get("marked_locations", []):
             loc = self.world.get_location(loc_name)
             loc.marked = True
 
@@ -608,7 +643,14 @@ class Tracker:
                 for loc in dungeon.locations:
                     loc.eud_progression = False
 
-        self.set_map_area("Root")
+        # Reset dungeon selectors
+        for label in self.ui.tracker_tab.findChildren(TrackerDungeonLabel):
+            label.reset()
+            if label.abbreviation in autosave.get("active_dungeons", []):
+                label.on_clicked()
+
+        # Set the active area to that of the autosave or the Root if there is no autosave
+        self.set_map_area(autosave.get("active_area", "Root"))
         self.clear_layout(self.ui.tracker_locations_scroll_layout)
 
     def set_map_area(self, area_name: str) -> None:
@@ -686,6 +728,76 @@ class Tracker:
 
         self.initialize_tracker_world()
         self.update_tracker()
+
+    def on_set_random_settings_button_clicked(self) -> None:
+        # Don't do anything if the tracker isn't started
+        if not self.started:
+            return
+
+        self.show_random_setting_choices()
+
+    def show_random_setting_choices(self) -> None:
+
+        # Put Update and Cancel buttons in the area info layout
+        self.clear_layout(
+            self.ui.tracker_locations_info_layout, remove_nested_layouts=True
+        )
+
+        update_button = QPushButton(text="Update Settings")
+        update_button.clicked.connect(self.on_random_settings_update_button_clicked)
+
+        cancel_button = QPushButton(text="Close")
+        cancel_button.clicked.connect(self.on_random_settings_cancel_button_clicked)
+
+        self.ui.tracker_locations_info_layout.addWidget(cancel_button)
+        self.ui.tracker_locations_info_layout.addWidget(update_button)
+
+        self.clear_layout(
+            self.ui.tracker_locations_scroll_layout, remove_nested_layouts=True
+        )
+
+        # Put a vertical layout inside the scroll area
+        outer_layout = QVBoxLayout()
+
+        # Add a label and combobox for each random setting
+        for setting in self.random_settings:
+            layout = QHBoxLayout()
+            layout.addWidget(QLabel(setting.info.pretty_name))
+
+            combo_box = QComboBox()
+            combo_box.addItems(setting.info.pretty_options)
+            combo_box.setCurrentIndex(setting.info.options.index(setting.value))
+            combo_box.setObjectName(f"tracker_setting_{setting.name}")
+            layout.addWidget(combo_box)
+            outer_layout.addLayout(layout)
+
+        # Add a vertical spacer to push the labels and comboboxes up
+        outer_layout.addSpacerItem(
+            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        )
+        self.ui.tracker_locations_scroll_layout.addLayout(outer_layout)
+
+    def on_random_settings_update_button_clicked(self) -> None:
+        # Change settings
+        for setting_combobox in self.ui.tracker_tab.findChildren(QComboBox):
+            object_name: str = setting_combobox.objectName()
+            if object_name.startswith("tracker_setting_"):
+                setting_name = object_name.replace("tracker_setting_", "")
+                setting_value = setting_combobox.currentIndex()
+                self.world.setting(setting_name).set_value(setting_value)
+
+        # Then trigger and immediately reload an autosave
+        self.autosave_tracker()
+        self.load_tracker_autosave()
+        self.show_random_setting_choices()
+
+    def on_random_settings_cancel_button_clicked(self) -> None:
+        self.clear_layout(
+            self.ui.tracker_locations_info_layout, remove_nested_layouts=True
+        )
+        self.clear_layout(
+            self.ui.tracker_locations_scroll_layout, remove_nested_layouts=True
+        )
 
     def on_back_button_clicked(self) -> None:
         # need to update the tracker so that subarea markers
@@ -767,15 +879,18 @@ class Tracker:
 
         # Then read it again to input extra data
         autosave = yaml_load(filename)
-        autosave["World 1"]["marked_locations"] = []
-        autosave["World 1"]["marked_items"] = []
-
-        for loc in self.world.get_all_item_locations():
-            if loc.marked:
-                autosave["World 1"]["marked_locations"].append(loc.name)
-
-        for item in self.inventory.elements():
-            autosave["World 1"]["marked_items"].append(item.name)
+        autosave["marked_locations"] = [
+            loc.name for loc in self.world.get_all_item_locations() if loc.marked
+        ]
+        autosave["marked_items"] = [item.name for item in self.inventory.elements()]
+        autosave["connected_entrances"] = []
+        autosave["random_settings"] = [s.name for s in self.random_settings]
+        autosave["active_area"] = self.active_area.area
+        autosave["active_dungeons"] = [
+            dungeon.abbreviation
+            for dungeon in self.ui.tracker_tab.findChildren(TrackerDungeonLabel)
+            if dungeon.active
+        ]
 
         with open(filename, "w") as autosave_file:
             yaml.safe_dump(autosave, autosave_file)
@@ -793,10 +908,8 @@ class Tracker:
         tracker_config = load_config_from_file(filename, allow_rewrite=False)
 
         autosave = yaml_load(filename)
-        marked_locations = autosave["World 1"].get("marked_locations", [])
-        marked_items = autosave["World 1"].get("marked_items", [])
 
-        self.initialize_tracker_world(tracker_config, marked_items, marked_locations)
+        self.initialize_tracker_world(tracker_config, autosave)
         self.update_tracker()
 
     def clear_layout(self, layout: QLayout, remove_nested_layouts=False) -> None:
