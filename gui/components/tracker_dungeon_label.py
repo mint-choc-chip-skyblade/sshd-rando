@@ -9,7 +9,7 @@ from filepathconstants import TRACKER_ASSETS_PATH
 class TrackerDungeonLabel(QLabel):
 
     hylia_font_id: int = -1
-    default_style = f"color: COLOR; font-size: 24pt; font-family: Hylia Serif Beta; text-align: center; qproperty-alignment: {int(QtCore.Qt.AlignCenter) | int(QtCore.Qt.AlignBottom)};"
+    default_style = f"color: COLOR; font-size: 32pt; font-family: Hylia Serif Beta; text-align: center; qproperty-alignment: {int(QtCore.Qt.AlignCenter) | int(QtCore.Qt.AlignBottom)};"
 
     clicked = Signal(str)
 

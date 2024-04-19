@@ -241,6 +241,7 @@ class Tracker:
                 PROGRESSIVE_POUCH,
                 PROGRESSIVE_POUCH,
             ],
+            # TODO - separate images for each pouch
             [
                 "no_pouch.png",
                 "pouch.png",
@@ -251,7 +252,23 @@ class Tracker:
             ],
         )
         self.bottle_button = TrackerInventoryButton(
-            ["Nothing", EMPTY_BOTTLE], ["no_bottle.png", "bottle.png"]
+            [
+                "Nothing",
+                EMPTY_BOTTLE,
+                EMPTY_BOTTLE,
+                EMPTY_BOTTLE,
+                EMPTY_BOTTLE,
+                EMPTY_BOTTLE,
+            ],
+            # TODO - separate images for each bottle
+            [
+                "no_bottle.png",
+                "bottle.png",
+                "bottle.png",
+                "bottle.png",
+                "bottle.png",
+                "bottle.png",
+            ],
         )
         self.wallet_button = TrackerInventoryButton(
             [
@@ -298,7 +315,13 @@ class Tracker:
             ["Nothing", DINS_POWER], ["songs/no_power_grid.png", "songs/Dins_Power.png"]
         )
         self.song_of_the_hero_button = TrackerInventoryButton(
-            ["Nothing", FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART], ["songs/no_soth_grid.png", "songs/soth_grid_1.png", "songs/soth_grid_2.png", "songs/soth_grid_3.png"]
+            ["Nothing", FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART],
+            [
+                "songs/no_soth_grid.png",
+                "songs/soth_grid_1.png",
+                "songs/soth_grid_2.png",
+                "songs/soth_grid_3.png",
+            ],
         )
         self.triforce_button = TrackerInventoryButton(
             ["Nothing", TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER],
@@ -332,7 +355,8 @@ class Tracker:
         )
         self.gratitude_crystals_button = TrackerInventoryButton(
             ["Nothing"] + [GRATITUDE_CRYSTAL_PACK] * 16,
-            ["sidequests/no_crystal_grid.png"] + [f"sidequests/crystal_{i * 5}.png" for i in range(1, 17)],
+            ["sidequests/no_crystal_grid.png"]
+            + [f"sidequests/crystal_{i * 5}.png" for i in range(1, 17)],
         )
         self.life_tree_fruit_button = TrackerInventoryButton(
             ["Nothing", LIFE_TREE_FRUIT],
@@ -387,8 +411,22 @@ class Tracker:
             area_children = area_button_node.get("children", [])
             area_x = area_button_node.get("x", -1)
             area_y = area_button_node.get("y", -1)
+            border_radius = "6"
+            if area_type := area_button_node.get("type", None):
+                if area_type == "Dungeon Entrance":
+                    border_radius = "0"
+                elif area_type == "Trial Gate":
+                    border_radius = "15"
+            alias = area_button_node.get("alias", "")
             self.areas[area_name] = TrackerArea(
-                area_name, area_image, area_children, area_x, area_y, self.ui.map_widget
+                area_name,
+                area_image,
+                area_children,
+                area_x,
+                area_y,
+                self.ui.map_widget,
+                border_radius,
+                alias,
             )
             self.areas[area_name].change_map_area.connect(self.set_map_area)
             self.areas[area_name].show_locations.connect(self.show_area_locations)
@@ -414,10 +452,14 @@ class Tracker:
         self.back_button.setVisible(False)
 
         # Set size policy for start new tracker button to push everything left
-        self.ui.start_new_tracker_button.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
+        self.ui.start_new_tracker_button.setSizePolicy(
+            QSizePolicy.MinimumExpanding, QSizePolicy.Fixed
+        )
 
         # Add vertical spacer to the inventory button layout to push all the buttons up
-        self.ui.inventory_layout.addSpacerItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
+        self.ui.inventory_layout.addSpacerItem(
+            QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        )
 
     def assign_buttons_to_layout(self) -> None:
         self.ui.dungeon_sv_keys_layout.addWidget(self.sv_small_key_button)
@@ -536,7 +578,7 @@ class Tracker:
         self.ssh_small_key_button.setVisible(visible)
         self.fs_small_key_button.setVisible(visible)
         self.sk_small_key_button.setVisible(visible)
-        
+
         # Boss Key buttons
         visible = self.world.setting("boss_keys") != "removed"
         self.sv_boss_key_button.setVisible(visible)
@@ -556,7 +598,7 @@ class Tracker:
         # three parts for the inventory button
         if self.inventory[self.world.get_item(SONG_OF_THE_HERO)]:
             self.inventory[self.world.get_item(SONG_OF_THE_HERO)] = 0
-            self.inventory[self.world.get_item(FARON_SOTH_PART)] = 1 
+            self.inventory[self.world.get_item(FARON_SOTH_PART)] = 1
             self.inventory[self.world.get_item(ELDIN_SOTH_PART)] = 1
             self.inventory[self.world.get_item(LANAYRU_SOTH_PART)] = 1
 
@@ -565,7 +607,9 @@ class Tracker:
         soth_order = [FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART]
         triforce_order = [TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER]
         for group in (soth_order, triforce_order):
-            num_group_parts = sum([1 for item in self.inventory.elements() if item.name in group])
+            num_group_parts = sum(
+                [1 for item in self.inventory.elements() if item.name in group]
+            )
             for i, item_name in enumerate(group):
                 item = self.world.get_item(item_name)
                 self.inventory[item] = 0
