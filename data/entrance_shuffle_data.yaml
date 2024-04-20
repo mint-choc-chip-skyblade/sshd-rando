@@ -2204,6 +2204,7 @@
 - type: Bird Statue
   forward:
     connection: Eldin Pillar -> Inside the Fire Sanctuary Statue
+    can_start_at: false
     exit_infos:
       - stage: F020
         room: 0
@@ -2357,3 +2358,25 @@
         layer: 0
         room: 0
         entrance: 12
+
+###############################
+#      Pillar Entrances       #
+###############################
+
+- type: Faron Region Entrance
+  forward:
+    connection: Faron Region Entrance -> Sealed Grounds Statue
+    can_start_at: false
+    spawn_info: 0
+
+- type: Eldin Region Entrance
+  forward:
+    connection: Eldin Region Entrance -> Volcano Entrance Statue
+    can_start_at: false
+    spawn_info: 0
+
+- type: Lanayru Region Entrance
+  forward:
+    connection: Lanayru Region Entrance -> Lanayru Mine Entry Statue
+    can_start_at: false
+    spawn_info: 0

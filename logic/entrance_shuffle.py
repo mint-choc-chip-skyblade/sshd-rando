@@ -33,10 +33,12 @@ def shuffle_world_entrances(world: World, worlds: list[World]):
     # Set plando entrances first
     set_plandomizer_entrances(world, worlds, entrance_pools, target_entrance_pools)
 
-    # Then set random first statues
-    set_random_starting_statues(world, worlds)
+    # Then shuffle entrance pools with non-assumed target pools
+    shuffle_non_assumed_entrance_pools(
+        world, worlds, entrance_pools, target_entrance_pools
+    )
 
-    # Then shuffle the entrances
+    # Then shuffle the rest of the entrances
     for entrance_type, entrance_pool in entrance_pools.items():
         shuffle_entrance_pool(
             world, worlds, entrance_pool, target_entrance_pools[entrance_type]
@@ -102,46 +104,40 @@ def set_all_entrances_data(world: World) -> None:
 
             forward_entrance.type = entrance_type
             forward_entrance.original_type = entrance_type
-            forward_entrance.exit_infos = entrance_data["forward"]["exit_infos"]
+            forward_entrance.exit_infos = entrance_data["forward"].get(
+                "exit_infos", None
+            )
             forward_entrance.spawn_info = entrance_data["forward"]["spawn_info"]
-            forward_entrance.secondary_exit_infos = (
-                entrance_data["forward"]["secondary_exit_infos"]
-                if "secondary_exit_infos" in entrance_data["forward"]
-                else None
+            forward_entrance.secondary_exit_infos = entrance_data["forward"].get(
+                "secondary_exit_infos", None
             )
-            forward_entrance.secondary_spawn_info = (
-                entrance_data["forward"]["secondary_spawn_info"]
-                if "secondary_spawn_info" in entrance_data["forward"]
-                else None
+            forward_entrance.secondary_spawn_info = entrance_data["forward"].get(
+                "secondary_spawn_infos", None
             )
-            if "can_start_at" in entrance_data["forward"]:
-                forward_entrance.can_start_at = entrance_data["forward"]["can_start_at"]
+            forward_entrance.can_start_at = entrance_data["forward"].get(
+                "can_start_at", True
+            )
             forward_entrance.primary = True
             forward_entrance.sort_priority = Entrance.sort_counter
             Entrance.sort_counter += 1
             if return_entrance != None:
                 return_entrance.type = entrance_type
                 return_entrance.original_type = entrance_type
-                return_entrance.exit_infos = (
-                    entrance_data["return"]["exit_infos"]
-                    if "exit_infos" in entrance_data["return"]
-                    else None
+                return_entrance.exit_infos = entrance_data["return"].get(
+                    "exit_infos", None
                 )
-                return_entrance.spawn_info = entrance_data["return"]["spawn_info"]
-                return_entrance.secondary_exit_infos = (
-                    entrance_data["return"]["secondary_exit_infos"]
-                    if "secondary_exit_infos" in entrance_data["return"]
-                    else None
+                return_entrance.spawn_info = entrance_data["return"].get(
+                    "spawn_info", None
                 )
-                return_entrance.secondary_spawn_info = (
-                    entrance_data["return"]["secondary_spawn_info"]
-                    if "secondary_spawn_info" in entrance_data["return"]
-                    else None
+                return_entrance.secondary_exit_infos = entrance_data["return"].get(
+                    "secondary_exit_infos", None
                 )
-                if "can_start_at" in entrance_data["return"]:
-                    return_entrance.can_start_at = entrance_data["return"][
-                        "can_start_at"
-                    ]
+                return_entrance.secondary_spawn_info = entrance_data["return"].get(
+                    "secondary_spawn_info", None
+                )
+                return_entrance.can_start_at = entrance_data["return"].get(
+                    "can_start_at", True
+                )
                 return_entrance.sort_priority = Entrance.sort_counter
                 Entrance.sort_counter += 1
                 forward_entrance.bind_two_way(return_entrance)
@@ -192,6 +188,19 @@ def create_entrance_pools(world: World) -> EntrancePools:
     if world.setting("random_starting_spawn") != "vanilla":
         entrance_pools["Spawn"] = world.get_shuffleable_entrances(
             "Spawn", only_primary=False
+        )
+
+    if world.setting("random_starting_statues") == "on":
+        # These need to be separate pools since they have different
+        # target entrances
+        entrance_pools["Faron Region Entrance"] = world.get_shuffleable_entrances(
+            "Faron Region Entrance", only_primary=False
+        )
+        entrance_pools["Eldin Region Entrance"] = world.get_shuffleable_entrances(
+            "Eldin Region Entrance", only_primary=False
+        )
+        entrance_pools["Lanayru Region Entrance"] = world.get_shuffleable_entrances(
+            "Lanayru Region Entrance", only_primary=False
         )
 
     if world.setting("randomize_dungeon_entrances") == "on":
@@ -310,6 +319,13 @@ def create_target_pools(entrance_pools: EntrancePools) -> EntrancePools:
             )
             for entrance in entrance_pool:
                 entrance.disconnect()
+        elif entrance_type.endswith(" Region Entrance"):
+            target_entrance_pools[entrance_type] = create_starting_statue_target_pool(
+                region=entrance_type.replace(" Region Entrance", ""),
+                world=entrance_pool[0].world,
+            )
+            for entrance in entrance_pool:
+                entrance.disconnect()
         else:
             target_entrance_pools[entrance_type] = assume_entrance_pool(entrance_pool)
     return target_entrance_pools
@@ -370,8 +386,7 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
         case "vanilla":
             assert False  # Should never be hit
         case "bird_statues":
-            shuffled_entrance_types.add("Bird Statue")
-            shuffled_entrance_types.add("Spawn")
+            shuffled_entrance_types |= {"Bird Statue", "Spawn"}
         case "any_surface_region":
             banned_spawn_regions |= {
                 "Knight Academy",
@@ -383,18 +398,16 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
                 "Sky",
                 "Inside the Thunderhead",
             }
-            shuffled_entrance_types.add("Door")
-            shuffled_entrance_types.add("Interior")
-            shuffled_entrance_types.add("Overworld")
-            shuffled_entrance_types.add("Spawn")
+            shuffled_entrance_types |= {"Door", "Interior", "Overworld", "Spawn"}
         case "anywhere":
-            shuffled_entrance_types.add("Dungeon")
-            shuffled_entrance_types.add("Trial Gate")
-            shuffled_entrance_types.add("Door")
-            shuffled_entrance_types.add("Interior")
-            shuffled_entrance_types.add("Overworld")
-            shuffled_entrance_types.add("Bird Statue")
-            shuffled_entrance_types.add("Spawn")
+            shuffled_entrance_types |= {
+                "Trial Gate",
+                "Door",
+                "Interior",
+                "Overworld",
+                "Bird Statue",
+                "Spawn",
+            }
         case _:
             raise EntranceShuffleError(
                 f"Unknown value for random starting spawn: '{starting_spawn_value}'"
@@ -408,6 +421,23 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
 
                 # Don't assume we have access to the random spawn targets
                 new_target_entrance.requirement.type = RequirementType.IMPOSSIBLE
+
+    return target_pool
+
+
+def create_starting_statue_target_pool(region: str, world: World) -> list[Entrance]:
+    target_pool: list[Entrance] = []
+    for entrance in world.get_shuffleable_entrances("Bird Statue"):
+        if (
+            entrance.can_start_at
+            and entrance.original_name != "Eldin Pillar -> Inside the Volcano Statue"
+            and entrance.original_name.startswith(region)
+        ):
+            new_target_entrance = entrance.get_new_target()
+            target_pool.append(new_target_entrance)
+
+            # Don't assume we have access to any of the pillar targets
+            new_target_entrance.requirement.type = RequirementType.IMPOSSIBLE
 
     return target_pool
 
@@ -487,66 +517,67 @@ def set_plandomizer_entrances(
     logging.getLogger("").debug("All plandomizer entrances have been placed")
 
 
-def set_random_starting_statues(
-    world: World, worlds: list[World], retries: int = 10
-) -> None:
-    # Don't change anything if no starting statues
-    if world.setting("random_starting_statues") == "off":
-        return
+def shuffle_non_assumed_entrance_pools(
+    world: World,
+    worlds: list[World],
+    entrance_pools: EntrancePools,
+    target_entrance_pools: EntrancePools,
+):
+    non_assumed_entrance_types = [
+        "Spawn",
+        "Faron Region Entrance",
+        "Eldin Region Entrance",
+        "Lanayru Region Entrance",
+    ]
+    non_assumed_entrances = {
+        pool[0]: target_entrance_pools[type]
+        for type, pool in entrance_pools.items()
+        if type in non_assumed_entrance_types
+    }
 
     item_pool = get_complete_item_pool(worlds)
 
-    logging.getLogger("").debug(f"Setting starting bird statues for {world}")
-    with open(BIRD_STATUE_DATA_PATH, "r", encoding="utf-8") as bird_statue_data_file:
-        bird_statue_data = yaml.safe_load(bird_statue_data_file)
+    # The idea here is we want to try shuffling all the non-assumed entrances
+    # at the same time since we can't validate the world after each one individually
+    # (That would require assuming access to entrances which we can't guarantee access to)
+    # Realistically, this should never take more than 1 or 2 tries unless there's some wacky
+    # plandomizer stuff going on
 
-        while retries > 0:
-            world.starting_bird_statues.clear()
-            for pillar, statues in bird_statue_data.items():
-                # First, reset all statues to logically require their own unlocking event
-                for statue in statues:
-                    statue_name = statue["name"]
-                    statue_event_name = statue_name.replace(" ", "_").replace("'", "")
-                    statue_entrance = world.get_entrance(f"{pillar} -> {statue_name}")
-                    statue_entrance.requirement.type = RequirementType.EVENT
-                    statue_entrance.requirement.args = [
-                        world.events[f"Unlock_{statue_event_name}"]
-                    ]
+    retries = 20
+    while retries > 0:
+        rollbacks = []
+        # Connect each entrance to a random target in its pool
+        for entrance, targets in non_assumed_entrances.items():
+            random_target = random.choice(targets)
+            rollbacks.append((entrance, random_target))
+            change_connections(entrance, random_target)
 
-                # Then choose a random one to require nothing
-                starting_statue = random.choice(statues)
-                statue_entrance = world.get_entrance(
-                    f"{pillar} -> {starting_statue['name']}"
-                )
-                statue_entrance.requirement.set_as_nothing()
-                logging.getLogger("").debug(
-                    f"Setting {starting_statue['name']} as starting statue for {pillar}"
-                )
+        try:
+            # Then try to validate the world
+            validate_world(world, worlds, None, item_pool)
+            # If we're successful, we can confirm our replacements
+            # and break out of the loop
+            for entrance, target in rollbacks:
+                confirm_replacement(entrance, target)
+            break
+        except EntranceShuffleError as e:
+            # If we're unsuccessful, restore the invalid connections
+            # and try again
+            logging.getLogger("").debug(
+                f"Failed to connect non-assumed entrances. Reason {e}"
+            )
+            retries -= 1
+            for entrance, target in rollbacks:
+                restore_connections(entrance, target)
 
-                world.starting_bird_statues[pillar] = starting_statue
+    if retries <= 0:
+        raise EntranceShuffleError(
+            "Ran out of retries when attempting to place non-assumed entrances"
+        )
 
-            try:
-                # If we're only also randomizing starting spawn, skip world validation until then
-                # TODO: Fix this better
-                if (
-                    world.setting("random_starting_spawn") == "vanilla"
-                    or world.setting("randomize_door_entrances") == "on"
-                    or world.setting("randomize_interior_entrances") == "on"
-                    or world.setting("randomize_overworld_entrances") == "on"
-                    or world.setting("randomize_dungeon_entrances") == "on"
-                    or world.setting("randomize_trial_gate_entrances") == "on"
-                ):
-                    validate_world(world, worlds, None, item_pool)
-                return
-            except EntranceShuffleError as e:
-                retries -= 1
-                logging.getLogger("").debug(
-                    f"Failed to set starting statues for {world}. Will retry {retries} more times"
-                )
-                if retries == 0:
-                    raise EntranceShuffleError(
-                        f"Failed to set starting statues for {world}. Reason: {e}"
-                    )
+    # Remove the non-assumed types from the original entrance pools
+    for type in non_assumed_entrance_types:
+        entrance_pools.pop(type, None)
 
 
 def shuffle_entrance_pool(

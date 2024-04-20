@@ -30,7 +30,8 @@
 - name: Faron Pillar
   hint_region: None
   exits:
-    Sealed Grounds Statue: Nothing
+    Faron Region Entrance: Nothing
+    Sealed Grounds Statue: "'Unlock_Sealed_Grounds_Statue'"
     Behind the Temple Statue: "'Unlock_Behind_the_Temple_Statue'"
     Faron Woods Entry Statue: "'Unlock_Faron_Woods_Entry_Statue'"
     Viewing Platform Statue:  "'Unlock_Viewing_Platform_Statue'"
@@ -41,22 +42,32 @@
     Lake Floria Statue: "'Unlock_Lake_Floria_Statue'"
     Floria Waterfall Statue: "'Unlock_Floria_Waterfall_Statue'"
 
+- name: Faron Region Entrance
+  hint_region: None
+  exits:
+    Sealed Grounds Statue: Nothing
 
 - name: Eldin Pillar
   hint_region: None
   exits:
-    Volcano Entrance Statue: Nothing
+    Eldin Region Entrance: Nothing
+    Volcano Entrance Statue: "'Unlock_Volcano_Entrance_Statue'"
     Volcano East Statue: "'Unlock_Volcano_East_Statue'"
     Volcano Ascent Statue: "'Unlock_Volcano_Ascent_Statue'"
     Temple Entrance Statue: "'Unlock_Temple_Entrance_Statue'"
     Inside the Volcano Statue: "'Unlock_Inside_the_Volcano_Statue'"
     Inside the Fire Sanctuary Statue: "'Unlock_Inside_the_Fire_Sanctuary_Statue'"
 
+- name: Eldin Region Entrance
+  hint_region: None
+  exits:
+    Volcano Entrance Statue: Nothing
 
 - name: Lanayru Pillar
   hint_region: None
   exits:
-    Lanayru Mine Entry Statue: Nothing
+    Lanayru Region Entrance: Nothing
+    Lanayru Mine Entry Statue: "'Unlock_Lanayru_Mine_Entry_Statue'"
     Desert Entrance Statue: "'Unlock_Desert_Entrance_Statue'"
     West Desert Statue: "'Unlock_West_Desert_Statue'"
     Desert Gorge Statue: "'Unlock_Desert_Gorge_Statue'"
@@ -69,6 +80,10 @@
     Pirate Stronghold Statue: "'Unlock_Pirate_Stronghold_Statue'"
     Lanayru Gorge Statue: "'Unlock_Lanayru_Gorge_Statue'"
 
+- name: Lanayru Region Entrance
+  hint_region: None
+  exits:
+    Lanayru Mine Entry Statue: Nothing
 
 - name: Bamboo Island
   hint_region: Sky

@@ -15,6 +15,7 @@ from filepathconstants import (
     SDK_FILE_PATH,
     STARTFLAGS_FILE_PATH,
     SUBSDK1_FILE_PATH,
+    BIRD_STATUE_DATA_PATH,
 )
 from io import BytesIO
 from pathlib import Path
@@ -389,12 +390,27 @@ class ASMPatchHandler:
                     final_count -= 1
                 start_counts[counter] += amount * final_count
 
-        for starting_statue in world.starting_bird_statues.values():
-            flag = starting_statue["flag"]
-            if starting_statue["flag_space"] == "Story":
+        # Set flags for random starting statues
+        bird_statue_data = yaml_load(BIRD_STATUE_DATA_PATH)
+        faron_starting_statue = world.get_entrance(
+            "Faron Region Entrance -> Sealed Grounds Statue"
+        ).connected_area.name
+        eldin_starting_statue = world.get_entrance(
+            "Eldin Region Entrance -> Volcano Entrance Statue"
+        ).connected_area.name
+        lanayru_starting_statue = world.get_entrance(
+            "Lanayru Region Entrance -> Lanayru Mine Entry Statue"
+        ).connected_area.name
+        for statue in (
+            faron_starting_statue,
+            eldin_starting_statue,
+            lanayru_starting_statue,
+        ):
+            flag = bird_statue_data[statue]["flag"]
+            if bird_statue_data[statue]["flag_space"] == "Story":
                 storyflags.append(flag)
             else:
-                scene = starting_statue["flag_space"]
+                scene = bird_statue_data[statue]["flag_space"]
                 if scene not in sceneflags:
                     sceneflags[scene] = []
                 sceneflags[scene].append(flag)
