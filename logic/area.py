@@ -85,6 +85,37 @@ class Area:
 
         return hint_regions
 
+    # Will return which provinces an area is a part of
+    def get_provinces(self) -> set[str]:
+        provinces: set[str] = set()
+        already_checked: set["Area"] = set()
+        area_queue: list["Area"] = [self]
+
+        while len(area_queue) > 0:
+            area = area_queue.pop(0)
+            already_checked.add(area)
+
+            prev_num_provinces = len(provinces)
+
+            if "Sky" in area.hint_regions:
+                provinces.add("Sky")
+            if "Skyloft" in area.hint_regions:
+                provinces.add("Skyloft")
+            if area.name == "Faron Pillar":
+                provinces.add("Faron")
+            if area.name == "Eldin Pillar":
+                provinces.add("Eldin")
+            if area.name == "Lanayru Pillar":
+                provinces.add("Lanayru")
+
+            # Only continue searching if no provinces were found
+            if prev_num_provinces == len(provinces):
+                for entrance in area.entrances:
+                    if entrance.parent_area not in already_checked:
+                        area_queue.append(entrance.parent_area)
+
+        return provinces
+
 
 # Will perform a search from the starting area until all
 # possibly connected hint regions have been found.
@@ -104,7 +135,7 @@ def assign_hint_regions_and_dungeon_locations(starting_area: Area):
         area = area_queue.pop(0)
         already_checked.add(area)
 
-        if len(area.hint_regions) > 0:
+        if len(area.hint_regions) > 0 or area.name == "Root":
             for region in area.hint_regions:
                 # Don't add None if we come across it
                 if region != "None":

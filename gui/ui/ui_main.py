@@ -2340,6 +2340,11 @@ class Ui_main_window(object):
 
         self.tracker_info_layout.addWidget(self.set_random_settings_button)
 
+        self.set_starting_entrance_button = QPushButton(self.tracker_tab)
+        self.set_starting_entrance_button.setObjectName(u"set_starting_entrance_button")
+
+        self.tracker_info_layout.addWidget(self.set_starting_entrance_button)
+
         self.tracker_info_layout_spacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.tracker_info_layout.addItem(self.tracker_info_layout_spacer)
@@ -2782,6 +2787,7 @@ class Ui_main_window(object):
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
         self.start_new_tracker_button.setText(QCoreApplication.translate("main_window", u"Start New Tracker", None))
         self.set_random_settings_button.setText(QCoreApplication.translate("main_window", u"Set Random Settings", None))
+        self.set_starting_entrance_button.setText(QCoreApplication.translate("main_window", u"Set Starting Entrance", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.tracker_tab), QCoreApplication.translate("main_window", u"Tracker", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))

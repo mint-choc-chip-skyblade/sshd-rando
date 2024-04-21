@@ -82,7 +82,7 @@
 - name: Lanayru Desert South
   hint_region: Lanayru Desert
   events:
-    Retrieve Party Wheel: Scrapper and 'Start_Dodohs_Quest'
+    Retrieve Party Wheel: Scrapper and 'Start_Dodohs_Quest' and Blow_Up_Covered_Timeshift_Stone
     Ancient Flower Farming: Blow_Up_Covered_Timeshift_Stone
 
     # Hook Beetle to knock down statue platforms

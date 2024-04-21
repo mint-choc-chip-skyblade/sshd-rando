@@ -5,12 +5,15 @@ from PySide6.QtCore import Signal, QPoint
 
 from logic.search import Search
 from logic.location import Location
+from logic.entrance import Entrance
 
 
 class TrackerArea(QLabel):
 
     show_locations = Signal(str)
     change_map_area = Signal(str)
+    show_entrances = Signal(str)
+    set_main_entrance_target = Signal(Entrance)
 
     default_stylesheet = f"background-color: COLOR; border-image: none; border-color: black; border-radius: RADIUSpx; color: black; qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
 
@@ -24,6 +27,7 @@ class TrackerArea(QLabel):
         parent_=None,
         border_radius_="6",
         alias_: str = "",
+        main_entrance_name_: Entrance = None,
     ):
         super().__init__(parent=parent_)
         self.area = area_
@@ -36,6 +40,9 @@ class TrackerArea(QLabel):
         self.recent_search: Search = None
         self.border_radius = border_radius_
         self.alias = alias_
+        self.main_entrance_name = main_entrance_name_
+        self.main_entrance: Entrance = None
+        self.entrances: list[Entrance] = []
 
         self.setStyleSheet(
             TrackerArea.default_stylesheet.replace("COLOR", "gray").replace(
@@ -91,6 +98,21 @@ class TrackerArea(QLabel):
         ):
             return
 
+        # If there's a "main" entrance this area has which hasn't been
+        # set then list the area with a question mark
+        if self.main_entrance and self.main_entrance.connected_area is None:
+            self.setText("?")
+            self.tooltip = f"{self.area}\nClick to Expand\nRight click to set entrance"
+            color = "red"
+            if self.get_available_locations():
+                color = "orange"
+            self.setStyleSheet(
+                TrackerArea.default_stylesheet.replace("COLOR", color).replace(
+                    "RADIUS", self.border_radius
+                )
+            )
+            return
+
         all_unmarked_locations = self.get_unmarked_locations()
         # If we don't have any possible locations at all then change to gray
         if not all_unmarked_locations:
@@ -126,9 +148,7 @@ class TrackerArea(QLabel):
             )
             self.setText(str(num_available_locations))
 
-        self.tooltip = (
-            f"{self.area} ({num_available_locations}/{len(all_unmarked_locations)})"
-        )
+        self.tooltip = f"{self.area} ({num_available_locations}/{len(all_unmarked_locations)})\nClick to Expand{'\nRight click to set entrance' if self.main_entrance else ''}"
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
 
@@ -137,6 +157,9 @@ class TrackerArea(QLabel):
                 self.change_map_area.emit(self.area)
             else:
                 self.show_locations.emit(self.area)
+        elif ev.button() == QtCore.Qt.RightButton:
+            if self.main_entrance:
+                self.set_main_entrance_target.emit(self.main_entrance)
 
         return super().mouseReleaseEvent(ev)
 

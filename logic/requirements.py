@@ -54,6 +54,10 @@ class Requirement:
         self.type = RequirementType.NOTHING
         self.args = []
 
+    def set_as_impossible(self) -> None:
+        self.type = RequirementType.IMPOSSIBLE
+        self.args = []
+
 
 # Helper to strip an expression down to whatever is inside
 # its outer most parenthesis
