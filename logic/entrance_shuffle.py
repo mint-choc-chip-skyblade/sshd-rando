@@ -216,7 +216,6 @@ def create_entrance_pools(world: World) -> EntrancePools:
         entrance_pools["Trial Gate"] = world.get_shuffleable_entrances(
             "Trial Gate", only_primary=True
         )
-        # TODO: Make Trials stay open permanently
         if world.setting("decouple_entrances") == "on":
             entrance_pools["Trial Gate Reverse"] = [
                 entrance.reverse for entrance in entrance_pools["Trial Gate"]
@@ -248,6 +247,11 @@ def create_entrance_pools(world: World) -> EntrancePools:
         entrance_pools["Overworld"] = world.get_shuffleable_entrances(
             "Overworld", only_primary=exclude_overworld_reverse
         )
+
+    # Match pool types
+    for type, pool in entrance_pools.items():
+        for entrance in pool:
+            entrance.type = type
 
     set_shuffled_entrances(entrance_pools)
 
@@ -420,7 +424,7 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
                 target_pool.append(new_target_entrance)
 
                 # Don't assume we have access to the random spawn targets
-                new_target_entrance.requirement.type = RequirementType.IMPOSSIBLE
+                new_target_entrance.requirement.set_as_impossible()
 
     return target_pool
 
@@ -437,7 +441,7 @@ def create_starting_statue_target_pool(region: str, world: World) -> list[Entran
             target_pool.append(new_target_entrance)
 
             # Don't assume we have access to any of the pillar targets
-            new_target_entrance.requirement.type = RequirementType.IMPOSSIBLE
+            new_target_entrance.requirement.set_as_impossible()
 
     return target_pool
 

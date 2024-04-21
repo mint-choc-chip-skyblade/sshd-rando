@@ -1,5 +1,12 @@
 from logic.world import World
-from logic.settings import SettingMap
+from logic.entrance_shuffle import (
+    set_all_entrances_data,
+    create_entrance_pools,
+    create_target_pools,
+    EntrancePools,
+    change_connections,
+    restore_connections,
+)
 from logic.search import *
 from util.text import load_text_data
 from typing import TYPE_CHECKING
@@ -26,6 +33,10 @@ from gui.components.tracker_dungeon_label import TrackerDungeonLabel
 from gui.components.tracker_area import TrackerArea
 from gui.components.tracker_back_button import TrackerBackButton
 from gui.components.tracker_location_label import TrackerLocationLabel
+from gui.components.tracker_entrance_label import TrackerEntranceLabel
+from gui.components.tracker_target_label import TrackerTargetLabel
+from gui.components.tracker_show_entrances_button import TrackerShowEntrancesButton
+from gui.components.tracker_show_locations_button import TrackerShowLocationsButton
 from gui.dialogs.fi_question_dialog import FiQuestionDialog
 
 from constants.itemconstants import *
@@ -54,6 +65,11 @@ class Tracker:
         self.active_area: TrackerArea = None
         self.random_settings: list = []
 
+        # Holds which entrance is connected to which target
+        self.connected_entrances: dict[Entrance, Entrance] = {}
+        # Holds available targets for disconnected entrances
+        self.target_entrance_pools: EntrancePools = {}
+
         # Display the Sky if there's no active tracker
         self.ui.map_widget.setStyleSheet(
             Tracker.map_widget_stylesheet.replace("IMAGE_FILENAME", "Sky.png")
@@ -61,6 +77,8 @@ class Tracker:
 
         # Hide the set random settings button until a tracker is loaded with random settings
         self.ui.set_random_settings_button.setVisible(False)
+        # Same for setting starting entrance
+        self.ui.set_starting_entrance_button.setVisible(False)
 
         self.init_buttons()
         self.assign_buttons_to_layout()
@@ -71,6 +89,9 @@ class Tracker:
         )
         self.ui.set_random_settings_button.clicked.connect(
             self.on_set_random_settings_button_clicked
+        )
+        self.ui.set_starting_entrance_button.clicked.connect(
+            self.on_set_starting_entrance_button_clicked
         )
 
     def init_buttons(self):
@@ -427,7 +448,8 @@ class Tracker:
                 elif area_type == "Trial Gate":
                     border_radius = "15"
             alias = area_button_node.get("alias", "")
-            self.areas[area_name] = TrackerArea(
+            area_entrance_name = area_button_node.get("entrance", "")
+            area_button = TrackerArea(
                 area_name,
                 area_image,
                 area_children,
@@ -436,9 +458,14 @@ class Tracker:
                 self.ui.map_widget,
                 border_radius,
                 alias,
+                area_entrance_name,
             )
-            self.areas[area_name].change_map_area.connect(self.set_map_area)
-            self.areas[area_name].show_locations.connect(self.show_area_locations)
+            area_button.change_map_area.connect(self.set_map_area)
+            area_button.show_locations.connect(self.show_area_locations)
+            area_button.set_main_entrance_target.connect(
+                self.show_target_selection_info
+            )
+            self.areas[area_name] = area_button
 
         # Set parent areas of tracker area buttons
         for area_name, area_button in self.areas.items():
@@ -561,9 +588,21 @@ class Tracker:
         self.world.num_worlds = 1
         self.world.config = config
 
-        # Modify some settings to prevent adding random items to the pool
+        # Modify settings for various purposes
+
+        # Don't include random starting items in the tracker world
         self.world.setting("random_starting_tablet_count").set_value("0")
         self.world.setting("random_starting_item_count").set_value("0")
+
+        # Set random starting spawn and random starting statues to on if they're
+        # random since we're going to ask the user for the entrances either way
+        if self.world.setting("random_starting_spawn") == "random":
+            self.world.setting("random_starting_spawn").set_value("anywhere")
+        if self.world.setting("random_starting_statues") == "random":
+            self.world.setting("random_starting_statues").set_value("on")
+        # Set limit starting statues off since we want to ask the user about
+        # the most possible entrances
+        self.world.setting("limit_starting_spawn").set_value("off")
 
         # Build the world (only as necessary)
         self.world.build()
@@ -585,6 +624,10 @@ class Tracker:
             ]
         # If no settings are random, then hide the set random settings button
         self.ui.set_random_settings_button.setVisible(any(self.random_settings))
+        # If the starting entrance isn't being shuffled, then hide that button also
+        self.ui.set_starting_entrance_button.setVisible(
+            self.world.setting("random_starting_spawn") != "vanilla"
+        )
 
         # Hide specific inventory buttons depending on settings
         # ET Key Pieces
@@ -612,6 +655,22 @@ class Tracker:
         # Lanayru Caves Keys
         visible = self.world.setting("lanayru_caves_keys") != "removed"
         self.lanayru_caves_key_button.setVisible(visible)
+
+        # Setup Entrances
+        self.setup_tracker_entrances()
+
+        # Connect autosaved entrances
+        if autosaved_entrances := autosave.get("connected_entrances", None):
+            for entrance in self.world.get_shuffled_entrances(
+                only_primary=self.world.setting("decouple_entrances") == "off"
+            ):
+                if saved_target := autosaved_entrances.get(
+                    entrance.original_name, None
+                ):
+                    for target in self.target_entrance_pools[entrance.type]:
+                        if target.replaces.original_name == saved_target:
+                            change_connections(entrance, target)
+                            self.connected_entrances[entrance] = target
 
         self.inventory = self.world.starting_item_pool.copy()
 
@@ -667,6 +726,7 @@ class Tracker:
 
         # Assign the initial locations for all regions
         self.update_areas_locations()
+        self.update_areas_entrances()
 
         # If barren unrequired dungeons is on then set all dungeon locations as non-progression
         if self.world.setting("empty_unrequired_dungeons") == "on":
@@ -676,13 +736,55 @@ class Tracker:
 
         # Set the active area to that of the autosave or the Root if there is no autosave
         self.set_map_area(autosave.get("active_area", "Root"))
-        self.clear_layout(self.ui.tracker_locations_scroll_layout)
 
         # Reset dungeon selectors
         for label in self.ui.tracker_tab.findChildren(TrackerDungeonLabel):
             label.reset()
             if label.abbreviation in autosave.get("active_dungeons", []):
                 label.on_clicked()
+
+        self.update_tracker()
+        self.clear_layout(self.ui.tracker_locations_info_layout)
+        self.clear_layout(self.ui.tracker_locations_scroll_layout)
+        # If the starting entrance is random, prompt the user to enter it
+        starting_spawn = self.world.get_entrance("Link's Spawn -> Knight Academy")
+        if (
+            self.world.setting("random_starting_spawn") != "vanilla"
+            and starting_spawn.connected_area is None
+        ):
+            self.on_set_starting_entrance_button_clicked()
+
+    def setup_tracker_entrances(self) -> None:
+        self.connected_entrances.clear()
+
+        set_all_entrances_data(self.world)
+        entrance_pools = create_entrance_pools(self.world)
+        self.target_entrance_pools = create_target_pools(entrance_pools)
+
+        # Prevent implicit access to any target entrances
+        for target_pool in self.target_entrance_pools.values():
+            for target in target_pool:
+                target.requirement.set_as_impossible()
+                if target.reverse:
+                    target.reverse.requirement.set_as_impossible()
+
+    def update_areas_entrances(self) -> None:
+        # Clear previous entrance associations and set any areas' "main" entrance
+        for area_button in self.ui.tracker_tab.findChildren(TrackerArea):
+            area_button.entrances.clear()
+            if area_button.main_entrance_name:
+                area_button.main_entrance = self.world.get_entrance(
+                    area_button.main_entrance_name
+                )
+
+        # Then redistribute entrances to each button
+        for entrance in self.world.get_shuffled_entrances(
+            only_primary=self.world.setting("decouple_entrances") == "off"
+        ):
+            if entrance.requirement.type != RequirementType.IMPOSSIBLE:
+                for region in entrance.parent_area.hint_regions:
+                    if area_button := self.areas.get(region, None):
+                        area_button.entrances.append(entrance)
 
     def set_map_area(self, area_name: str) -> None:
         area = self.areas.get(area_name, "")
@@ -713,9 +815,7 @@ class Tracker:
     def show_area_locations(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, False):
             self.show_area_location_info(area_name)
-            self.clear_layout(
-                self.ui.tracker_locations_scroll_layout, remove_nested_layouts=True
-            )
+            self.clear_layout(self.ui.tracker_locations_scroll_layout)
             locations = area_button.get_included_locations()
 
             left_layout = QVBoxLayout()
@@ -754,11 +854,9 @@ class Tracker:
 
     def show_area_location_info(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, False):
-            # Show the area name and checks in the space above the list
+            # Show the area name and how many non-marked locations are available
             pt_size = 20
-            self.clear_layout(
-                self.ui.tracker_locations_info_layout, remove_nested_layouts=True
-            )
+            self.clear_layout(self.ui.tracker_locations_info_layout)
             area_name_label = QLabel(area_button.area)
             area_name_label.setStyleSheet(f"font-size: {pt_size}pt")
             area_name_label.setMargin(10)
@@ -772,9 +870,161 @@ class Tracker:
             self.ui.tracker_locations_info_layout.addWidget(area_name_label)
             self.ui.tracker_locations_info_layout.addWidget(locations_remaining_label)
 
+            if area_button.entrances:
+                show_entrances_button = TrackerShowEntrancesButton(area_button.area)
+                show_entrances_button.show_area_entrances.connect(
+                    self.show_area_entrances
+                )
+                self.ui.tracker_locations_info_layout.addWidget(show_entrances_button)
+
+    def show_area_entrances(self, area_name: str) -> None:
+        if area_button := self.areas.get(area_name, None):
+            self.show_area_entrance_info(area_name)
+            self.clear_layout(self.ui.tracker_locations_scroll_layout)
+            entrances = area_button.entrances
+
+            left_layout = QVBoxLayout()
+            right_layout = QVBoxLayout()
+
+            for i, entrance in enumerate(entrances):
+                entrance_label = TrackerEntranceLabel(
+                    entrance, area_name, area_button.recent_search
+                )
+                entrance_label.choose_target.connect(self.show_target_selection_info)
+                entrance_label.disconnect_entrance.connect(
+                    self.on_right_click_entrance_label
+                )
+
+                if i < len(entrances) / 2:
+                    left_layout.addWidget(entrance_label)
+                else:
+                    right_layout.addWidget(entrance_label)
+
+            # Add vertical spacers to push labels up
+            left_layout.addSpacerItem(
+                QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            )
+            right_layout.addSpacerItem(
+                QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            )
+
+            self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
+            self.ui.tracker_locations_scroll_layout.addLayout(right_layout)
+        else:
+            self.clear_layout(self.ui.tracker_locations_scroll_layout)
+            self.clear_layout(self.ui.tracker_locations_info_layout)
+
+    def show_area_entrance_info(self, area_name: str):
+        if area_button := self.areas.get(area_name, None):
+            # Show the area name and how many entrances have been connected
+            pt_size = 20
+            self.clear_layout(self.ui.tracker_locations_info_layout)
+            area_name_label = QLabel(area_button.area)
+            area_name_label.setStyleSheet(f"font-size: {pt_size}pt")
+            area_name_label.setMargin(10)
+            disconnected_entrances_label = QLabel(
+                f"({sum([1 for e in area_button.entrances if e.connected_area])}/{len(area_button.entrances)})"
+            )
+            disconnected_entrances_label.setStyleSheet(
+                f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignRight)};"
+            )
+            disconnected_entrances_label.setMargin(10)
+            show_locations_button = TrackerShowLocationsButton(area_name)
+            show_locations_button.show_area_locations.connect(self.show_area_locations)
+
+            self.ui.tracker_locations_info_layout.addWidget(area_name_label)
+            self.ui.tracker_locations_info_layout.addWidget(
+                disconnected_entrances_label
+            )
+            self.ui.tracker_locations_info_layout.addWidget(show_locations_button)
+
+    def show_target_selection_info(
+        self, entrance: Entrance, parent_area_name: str = ""
+    ) -> None:
+        self.clear_layout(self.ui.tracker_locations_info_layout)
+        lead_to_label = QLabel(f"Where did {entrance.original_name} lead to?")
+        lead_to_label.setStyleSheet(
+            f"qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
+        )
+        lead_to_label.setMargin(10)
+        back_button = TrackerShowEntrancesButton(parent_area_name, "Back")
+        back_button.show_area_entrances.connect(self.show_area_entrances)
+
+        self.ui.tracker_locations_info_layout.addWidget(lead_to_label)
+        self.ui.tracker_locations_info_layout.addWidget(back_button)
+
+        self.clear_layout(self.ui.tracker_locations_scroll_layout)
+
+        left_layout = QVBoxLayout()
+        right_layout = QVBoxLayout()
+
+        targets = self.target_entrance_pools[entrance.type]
+
+        for i, target in enumerate(targets):
+            # Only show targets which haven't been connected yet
+            if target.connected_area is not None:
+                target_label = TrackerTargetLabel(entrance, target, parent_area_name)
+                target_label.clicked.connect(self.on_click_target_label)
+
+                if i < len(targets) / 2:
+                    left_layout.addWidget(target_label)
+                else:
+                    right_layout.addWidget(target_label)
+
+        # Add vertical spacers to push labels up
+        left_layout.addSpacerItem(
+            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        )
+        right_layout.addSpacerItem(
+            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        )
+
+        self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
+        self.ui.tracker_locations_scroll_layout.addLayout(right_layout)
+
     def on_click_location_label(self, location_area: str) -> None:
         self.update_tracker()
         self.show_area_location_info(location_area)
+
+    def on_click_target_label(
+        self, entrance: Entrance, target: Entrance, parent_area_name: str
+    ) -> None:
+        self.tracker_change_entrance_connections(entrance, target)
+
+        # Re-list the parent areas entrances if there are any
+        parent_area = self.areas.get(parent_area_name, None)
+        if parent_area and parent_area.entrances:
+            self.show_area_entrances(parent_area_name)
+        # Otherwise clear the scroll area
+        else:
+            self.clear_layout(self.ui.tracker_locations_info_layout)
+            self.clear_layout(self.ui.tracker_locations_scroll_layout)
+
+    def on_right_click_entrance_label(self, entrance: Entrance, area_name: str) -> None:
+        self.tracker_disconnect_entrance(entrance)
+        self.show_area_entrance_info(area_name)
+
+    def tracker_change_entrance_connections(
+        self, entrance: Entrance, target: Entrance
+    ) -> None:
+        # Disconnect the entrance incase it was previously connected to something
+        self.tracker_disconnect_entrance(entrance)
+
+        change_connections(entrance, target)
+        self.connected_entrances[entrance] = target
+
+        # Update everything after making a connection
+        self.update_areas_locations()
+        self.update_areas_entrances()
+        self.update_tracker()
+
+    def tracker_disconnect_entrance(self, entrance: Entrance) -> None:
+        if target := self.connected_entrances.get(entrance, None):
+            restore_connections(entrance, target)
+            del self.connected_entrances[entrance]
+            self.update_areas_locations()
+            self.update_areas_entrances()
+            self.update_tracker()
 
     def on_start_new_tracker_button_clicked(self) -> None:
         confirm_choice = self.main.fi_question_dialog.show_dialog(
@@ -786,7 +1036,6 @@ class Tracker:
             return
 
         self.initialize_tracker_world()
-        self.update_tracker()
 
     def on_set_random_settings_button_clicked(self) -> None:
         # Don't do anything if the tracker isn't started
@@ -795,12 +1044,15 @@ class Tracker:
 
         self.show_random_setting_choices()
 
+    def on_set_starting_entrance_button_clicked(self) -> None:
+        self.show_target_selection_info(
+            self.world.get_entrance("Link's Spawn -> Knight Academy")
+        )
+
     def show_random_setting_choices(self) -> None:
 
         # Put Update and Cancel buttons in the area info layout
-        self.clear_layout(
-            self.ui.tracker_locations_info_layout, remove_nested_layouts=True
-        )
+        self.clear_layout(self.ui.tracker_locations_info_layout)
 
         update_button = QPushButton(text="Update Settings")
         update_button.clicked.connect(self.on_random_settings_update_button_clicked)
@@ -811,9 +1063,7 @@ class Tracker:
         self.ui.tracker_locations_info_layout.addWidget(cancel_button)
         self.ui.tracker_locations_info_layout.addWidget(update_button)
 
-        self.clear_layout(
-            self.ui.tracker_locations_scroll_layout, remove_nested_layouts=True
-        )
+        self.clear_layout(self.ui.tracker_locations_scroll_layout)
 
         # Put a vertical layout inside the scroll area
         outer_layout = QVBoxLayout()
@@ -851,12 +1101,8 @@ class Tracker:
         self.show_random_setting_choices()
 
     def on_random_settings_cancel_button_clicked(self) -> None:
-        self.clear_layout(
-            self.ui.tracker_locations_info_layout, remove_nested_layouts=True
-        )
-        self.clear_layout(
-            self.ui.tracker_locations_scroll_layout, remove_nested_layouts=True
-        )
+        self.clear_layout(self.ui.tracker_locations_info_layout)
+        self.clear_layout(self.ui.tracker_locations_scroll_layout)
 
     def on_back_button_clicked(self) -> None:
         # need to update the tracker so that subarea markers
@@ -881,6 +1127,11 @@ class Tracker:
             location_label.update_color(search)
             if not location_label_area_name:
                 location_label_area_name = location_label.parent_area_button.area
+
+        for entrance_label in self.ui.tracker_locations_scroll_area.findChildren(
+            TrackerEntranceLabel
+        ):
+            entrance_label.update(search)
 
         self.show_area_location_info(location_label_area_name)
         self.autosave_tracker()
@@ -935,8 +1186,8 @@ class Tracker:
         else:
             print(f'No marker made for dungeon "{dungeon_name}" yet')
 
-        # autosave to save active dungeons
-        self.autosave_tracker()
+        # update and autosave to save active dungeons
+        self.update_tracker()
 
     def autosave_tracker(self) -> None:
         # write config to file
@@ -952,7 +1203,9 @@ class Tracker:
             loc.name for loc in self.world.get_all_item_locations() if loc.marked
         ]
         autosave["marked_items"] = [item.name for item in self.inventory.elements()]
-        autosave["connected_entrances"] = []
+        autosave["connected_entrances"] = {
+            f"{e}": f"{t.replaces}" for e, t in self.connected_entrances.items()
+        }
         autosave["random_settings"] = [s.name for s in self.random_settings]
         autosave["active_area"] = self.active_area.area
         autosave["active_dungeons"] = [
@@ -981,10 +1234,10 @@ class Tracker:
         self.initialize_tracker_world(tracker_config, autosave)
         self.update_tracker()
 
-    def clear_layout(self, layout: QLayout, remove_nested_layouts=False) -> None:
+    def clear_layout(self, layout: QLayout, remove_nested_layouts=True) -> None:
         # Recursively clear nested layouts
         for nested_layout in layout.findChildren(QLayout):
-            self.clear_layout(nested_layout)
+            self.clear_layout(nested_layout, remove_nested_layouts)
 
         while item := layout.takeAt(0):
             if widget := item.widget():

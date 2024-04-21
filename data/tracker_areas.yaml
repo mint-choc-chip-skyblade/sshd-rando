@@ -73,6 +73,7 @@
     - Skyview Temple
     - Ancient Cistern
     - Farore's Silent Realm
+  entrance: Faron Region Entrance -> Sealed Grounds Statue
 
 - name: Sealed Grounds
   x: 127
@@ -122,6 +123,7 @@
     - Earth Temple
     - Fire Sanctuary
     - Din's Silent Realm
+  entrance: Eldin Region Entrance -> Volcano Entrance Statue
 
 - name: Eldin Volcano
   x: 152
@@ -169,6 +171,7 @@
     - Lanayru Mining Facility
     - Sandship
     - Nayru's Silent Realm
+  entrance: Lanayru Region Entrance -> Lanayru Mine Entry Statue
 
 - name: Lanayru Mine
   x: 390

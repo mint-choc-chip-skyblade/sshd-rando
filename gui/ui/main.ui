@@ -3504,6 +3504,13 @@ QPushButton {
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="set_starting_entrance_button">
+            <property name="text">
+             <string>Set Starting Entrance</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="tracker_info_layout_spacer">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
