@@ -98,21 +98,6 @@ class TrackerArea(QLabel):
         ):
             return
 
-        # If there's a "main" entrance this area has which hasn't been
-        # set then list the area with a question mark
-        if self.main_entrance and self.main_entrance.connected_area is None:
-            self.setText("?")
-            self.tooltip = f"{self.area}\nClick to Expand\nRight click to set entrance"
-            color = "red"
-            if self.get_available_locations():
-                color = "orange"
-            self.setStyleSheet(
-                TrackerArea.default_stylesheet.replace("COLOR", color).replace(
-                    "RADIUS", self.border_radius
-                )
-            )
-            return
-
         all_unmarked_locations = self.get_unmarked_locations()
         # If we don't have any possible locations at all then change to gray
         if not all_unmarked_locations:
@@ -127,12 +112,18 @@ class TrackerArea(QLabel):
 
         num_available_locations = len(self.get_available_locations())
         if num_available_locations == 0:
+            # If there's a "main" entrance this area has which hasn't been
+            # set then list the area with a question mark
+            if self.main_entrance and self.main_entrance.connected_area is None:
+                self.setText("?")
+            else:
+                self.setText("")
+            
             self.setStyleSheet(
                 TrackerArea.default_stylesheet.replace("COLOR", "red").replace(
                     "RADIUS", self.border_radius
                 )
             )
-            self.setText("")
         elif num_available_locations == len(all_unmarked_locations):
             self.setStyleSheet(
                 TrackerArea.default_stylesheet.replace("COLOR", "dodgerblue").replace(
@@ -148,7 +139,7 @@ class TrackerArea(QLabel):
             )
             self.setText(str(num_available_locations))
 
-        self.tooltip = f"{self.area} ({num_available_locations}/{len(all_unmarked_locations)})\nClick to Expand{'\nRight click to set entrance' if self.main_entrance else ''}"
+        self.tooltip = f"{self.area} ({num_available_locations}/{len(all_unmarked_locations)})\nClick to Expand{chr(10) + 'Right click to set entrance' if self.main_entrance else ''}"
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
 
@@ -157,14 +148,16 @@ class TrackerArea(QLabel):
                 self.change_map_area.emit(self.area)
             else:
                 self.show_locations.emit(self.area)
+            
+            return super().mouseReleaseEvent(ev)
         elif ev.button() == QtCore.Qt.RightButton:
             if self.main_entrance:
                 self.set_main_entrance_target.emit(self.main_entrance)
+            # don't propagate the event -- this prevents right-clicks from going back to the root
 
-        return super().mouseReleaseEvent(ev)
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
 
-        QToolTip.showText(QCursor.pos() + QPoint(-15, -10), self.tooltip, self)
+        QToolTip.showText(QCursor.pos() + QPoint(-50, -15), self.tooltip, self)
 
         return super().mouseMoveEvent(ev)

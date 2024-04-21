@@ -27,6 +27,7 @@ from PySide6.QtWidgets import (
     QHBoxLayout,
 )
 from PySide6 import QtCore
+from PySide6.QtGui import QMouseEvent
 
 from gui.components.tracker_inventory_button import TrackerInventoryButton
 from gui.components.tracker_dungeon_label import TrackerDungeonLabel
@@ -75,6 +76,8 @@ class Tracker:
             Tracker.map_widget_stylesheet.replace("IMAGE_FILENAME", "Sky.png")
         )
 
+        self.ui.map_widget.mouseReleaseEvent = self.handle_right_click
+
         # Hide the set random settings button until a tracker is loaded with random settings
         self.ui.set_random_settings_button.setVisible(False)
         # Same for setting starting entrance
@@ -93,6 +96,8 @@ class Tracker:
         self.ui.set_starting_entrance_button.clicked.connect(
             self.on_set_starting_entrance_button_clicked
         )
+
+        self.update_statistics()
 
     def init_buttons(self):
 
@@ -1135,6 +1140,7 @@ class Tracker:
 
         self.show_area_location_info(location_label_area_name)
         self.autosave_tracker()
+        self.update_statistics()
 
     def update_areas_locations(self) -> None:
         # Clear all locations before reassigning
@@ -1247,3 +1253,15 @@ class Tracker:
         if remove_nested_layouts:
             for nested_layout in layout.findChildren(QLayout):
                 layout.removeItem(nested_layout)
+    
+    def handle_right_click(self, event: QMouseEvent) -> None:
+        if event.button() == QtCore.Qt.RightButton and not self.active_area.area == "Root":
+            self.on_back_button_clicked()
+    
+    def update_statistics(self) -> None:
+        num_accessible_locations = len(self.areas["Root"].get_available_locations())
+        num_remaining_locations = len(self.areas["Root"].get_unmarked_locations())
+        num_checked_locations = len(self.areas["Root"].get_included_locations()) - num_remaining_locations
+        self.ui.tracker_stats_checked.setText(f"{num_checked_locations: {3}}")
+        self.ui.tracker_stats_accessible.setText(f"{num_accessible_locations: {3}}")
+        self.ui.tracker_stats_remaining.setText(f"{num_remaining_locations: {3}}")

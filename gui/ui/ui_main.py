@@ -2276,6 +2276,13 @@ class Ui_main_window(object):
 
         self.dungeon_inventory_layout.addLayout(self.dungeon_sk_layout)
 
+        self.dungeon_inventory_layout.setStretch(0, 1)
+        self.dungeon_inventory_layout.setStretch(1, 1)
+        self.dungeon_inventory_layout.setStretch(2, 1)
+        self.dungeon_inventory_layout.setStretch(3, 1)
+        self.dungeon_inventory_layout.setStretch(4, 1)
+        self.dungeon_inventory_layout.setStretch(5, 1)
+        self.dungeon_inventory_layout.setStretch(6, 1)
 
         self.inventory_layout.addLayout(self.dungeon_inventory_layout)
 
@@ -2325,6 +2332,47 @@ class Ui_main_window(object):
         self.tracker_info_layout = QVBoxLayout()
         self.tracker_info_layout.setObjectName(u"tracker_info_layout")
         self.tracker_info_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.tracker_statistics_grid = QGridLayout()
+        self.tracker_statistics_grid.setObjectName(u"tracker_statistics_grid")
+        self.tracker_statistics_grid.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.tracker_stats_accessible = QLabel(self.tracker_tab)
+        self.tracker_stats_accessible.setObjectName(u"tracker_stats_accessible")
+        self.tracker_stats_accessible.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.tracker_statistics_grid.addWidget(self.tracker_stats_accessible, 1, 0, 1, 1)
+
+        self.tracker_stats_accessible_label = QLabel(self.tracker_tab)
+        self.tracker_stats_accessible_label.setObjectName(u"tracker_stats_accessible_label")
+
+        self.tracker_statistics_grid.addWidget(self.tracker_stats_accessible_label, 1, 1, 1, 1)
+
+        self.tracker_stats_checked = QLabel(self.tracker_tab)
+        self.tracker_stats_checked.setObjectName(u"tracker_stats_checked")
+        self.tracker_stats_checked.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.tracker_statistics_grid.addWidget(self.tracker_stats_checked, 0, 0, 1, 1)
+
+        self.tracker_stats_checked_label = QLabel(self.tracker_tab)
+        self.tracker_stats_checked_label.setObjectName(u"tracker_stats_checked_label")
+
+        self.tracker_statistics_grid.addWidget(self.tracker_stats_checked_label, 0, 1, 1, 1)
+
+        self.tracker_stats_remaining = QLabel(self.tracker_tab)
+        self.tracker_stats_remaining.setObjectName(u"tracker_stats_remaining")
+        self.tracker_stats_remaining.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining, 2, 0, 1, 1)
+
+        self.tracker_stats_remaining_label = QLabel(self.tracker_tab)
+        self.tracker_stats_remaining_label.setObjectName(u"tracker_stats_remaining_label")
+
+        self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining_label, 2, 1, 1, 1)
+
+        self.tracker_statistics_grid.setColumnStretch(0, 4)
+        self.tracker_statistics_grid.setColumnStretch(1, 50)
+
+        self.tracker_info_layout.addLayout(self.tracker_statistics_grid)
+
         self.start_new_tracker_button = QPushButton(self.tracker_tab)
         self.start_new_tracker_button.setObjectName(u"start_new_tracker_button")
         sizePolicy13 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
@@ -2785,6 +2833,12 @@ class Ui_main_window(object):
         self.other_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Settings", None))
         self.setting_enable_back_in_time.setText(QCoreApplication.translate("main_window", u"Enable Back in Time (BiT)", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
+        self.tracker_stats_accessible.setText("")
+        self.tracker_stats_accessible_label.setText(QCoreApplication.translate("main_window", u"Locations Accessible", None))
+        self.tracker_stats_checked.setText("")
+        self.tracker_stats_checked_label.setText(QCoreApplication.translate("main_window", u"Locations Checked", None))
+        self.tracker_stats_remaining.setText("")
+        self.tracker_stats_remaining_label.setText(QCoreApplication.translate("main_window", u"Locations Remaining", None))
         self.start_new_tracker_button.setText(QCoreApplication.translate("main_window", u"Start New Tracker", None))
         self.set_random_settings_button.setText(QCoreApplication.translate("main_window", u"Set Random Settings", None))
         self.set_starting_entrance_button.setText(QCoreApplication.translate("main_window", u"Set Starting Entrance", None))
