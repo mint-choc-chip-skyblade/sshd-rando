@@ -1253,15 +1253,20 @@ class Tracker:
         if remove_nested_layouts:
             for nested_layout in layout.findChildren(QLayout):
                 layout.removeItem(nested_layout)
-    
+
     def handle_right_click(self, event: QMouseEvent) -> None:
-        if event.button() == QtCore.Qt.RightButton and not self.active_area.area == "Root":
+        if (
+            event.button() == QtCore.Qt.RightButton
+            and not self.active_area.area == "Root"
+        ):
             self.on_back_button_clicked()
-    
+
     def update_statistics(self) -> None:
         num_accessible_locations = len(self.areas["Root"].get_available_locations())
         num_remaining_locations = len(self.areas["Root"].get_unmarked_locations())
-        num_checked_locations = len(self.areas["Root"].get_included_locations()) - num_remaining_locations
+        num_checked_locations = (
+            len(self.areas["Root"].get_included_locations()) - num_remaining_locations
+        )
         self.ui.tracker_stats_checked.setText(f"{num_checked_locations: {3}}")
         self.ui.tracker_stats_accessible.setText(f"{num_accessible_locations: {3}}")
         self.ui.tracker_stats_remaining.setText(f"{num_remaining_locations: {3}}")

@@ -118,7 +118,7 @@ class TrackerArea(QLabel):
                 self.setText("?")
             else:
                 self.setText("")
-            
+
             self.setStyleSheet(
                 TrackerArea.default_stylesheet.replace("COLOR", "red").replace(
                     "RADIUS", self.border_radius
@@ -148,13 +148,12 @@ class TrackerArea(QLabel):
                 self.change_map_area.emit(self.area)
             else:
                 self.show_locations.emit(self.area)
-            
+
             return super().mouseReleaseEvent(ev)
         elif ev.button() == QtCore.Qt.RightButton:
             if self.main_entrance:
                 self.set_main_entrance_target.emit(self.main_entrance)
             # don't propagate the event -- this prevents right-clicks from going back to the root
-
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
 
