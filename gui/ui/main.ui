@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -999,6 +999,13 @@
             <widget class="RandoTriStateCheckBox" name="setting_noise_traps">
              <property name="text">
               <string>Noise Traps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_health_traps">
+             <property name="text">
+              <string>Health Traps</string>
              </property>
             </widget>
            </item>
