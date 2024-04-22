@@ -1124,6 +1124,11 @@
 
 # - id: 240+ == traps
 
+- id: 250
+  name: Health Trap
+  types:
+    - Traps
+  oarc: null
 - id: 251
   name: Groose Trap
   types:

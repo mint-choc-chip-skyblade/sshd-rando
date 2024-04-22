@@ -150,12 +150,17 @@ def patch_bucha(bzs: dict, itemid: int, object_id_str: str, trapid: int):
         filter(lambda x: x["name"] == "NpcKyuE" and x["id"] == id, bzs["OBJ "]), None
     )
 
-    # Don't use fake itemid yet, this needs patching properly first
-    if trapid:
-        itemid = 34  # rupoor
-
     if bucha is None:
         raise Exception(f"Bucha's id '{id}' not found. Cannot patch this check.")
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        bucha["params2"] = mask_shift_set(bucha["params2"], 0xF, 4, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        bucha["params2"] = mask_shift_set(bucha["params2"], 0xF, 4, 0xF)
 
     bucha["params2"] = mask_shift_set(bucha["params2"], 0xFF, 0x8, itemid)
 
@@ -169,12 +174,17 @@ def patch_closet(
         None,
     )
 
-    # Don't use fake itemid yet, this needs patching properly first
-    if trapid:
-        itemid = 34  # rupoor
-
     if closet is None:
         raise Exception(f"No closet with id '{id}' found to patch.")
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        closet["params2"] = mask_shift_set(closet["params2"], 0xF, 4, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        closet["params2"] = mask_shift_set(closet["params2"], 0xF, 4, 0xF)
 
     # Mapping of each closet (scene, roomid, objectid) to the local scene flag we'll use
     unused_scene_flags: dict[tuple[str, int, int], int] = {
@@ -214,12 +224,17 @@ def patch_ac_key_boko(bzs: dict, itemid: int, object_id_str: str, trapid: int):
         filter(lambda x: x["name"] == "EBc" and x["id"] == id, bzs["OBJ "]), None
     )
 
-    # Don't use fake itemid yet, this needs patching properly first
-    if trapid:
-        itemid = 34  # rupoor
-
     if boko is None:
         raise Exception(f"No Bokoblin (EBc) with id '{id}' found to patch.")
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        boko["params2"] = mask_shift_set(boko["params2"], 0xF, 8, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        boko["params2"] = mask_shift_set(boko["params2"], 0xF, 8, 0xF)
 
     boko["params2"] = mask_shift_set(boko["params2"], 0xFF, 0x0, itemid)
 
@@ -232,9 +247,18 @@ def patch_heart_container(bzs: dict, itemid: int, trapid: int):
     if heart_container is None:
         raise Exception(f"No heart container found to patch.")
 
-    # Don't use fake itemid yet, this needs patching properly first
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
     if trapid:
-        itemid = 34  # rupoor
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        heart_container["params2"] = mask_shift_set(
+            heart_container["params2"], 0xF, 8, trapbits
+        )
+    else:
+        # Makes sure the bit is set if not a trap
+        heart_container["params2"] = mask_shift_set(
+            heart_container["params2"], 0xF, 8, 0xF
+        )
 
     heart_container["params1"] = mask_shift_set(
         heart_container["params1"], 0xFF, 16, itemid
@@ -266,12 +290,17 @@ def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
         None,
     )
 
-    # Don't use fake itemid yet, this needs patching properly first
-    if trapid:
-        itemid = 34  # rupoor
-
     if digspot is None:
         raise Exception(f"No digspot with id '{id}' found to patch.")
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        digspot["params2"] = mask_shift_set(digspot["params2"], 0xF, 8, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        digspot["params2"] = mask_shift_set(digspot["params2"], 0xF, 8, 0xF)
 
     # patch digspot to be the same as key piece digspots in all ways except it keeps it's initial sceneflag
     digspot["params1"] = (digspot["params1"] & 0xFF0) | 0xFF0B1004
@@ -367,9 +396,14 @@ def patch_tgreact(
             f"No tag reaction (TgReact) with id '{hex(id)}' found to patch."
         )
 
-    # Don't use fake itemid yet, this needs patching properly first
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
     if trapid:
-        itemid = 34  # rupoor
+        trapbits = 254 - trapid
+        # Unsets bit 0x00780000 of params2
+        tgreact["params2"] = mask_shift_set(tgreact["params2"], 0xF, 19, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        tgreact["params2"] = mask_shift_set(tgreact["params2"], 0xF, 19, 0xF)
 
     # Move vanilla velocity type indicator to free space in params2
     if (tgreact["params1"] >> 8) & 0xFF == 0:

@@ -46,6 +46,7 @@ extern "C" {
 
     static ACTOR_ALLOCATOR_DEFINITIONS_PTR: *mut c_void;
 
+    static mut ACTOR_PARAM_POS: *mut math::Vec3f;
     static mut ACTORBASE_PARAM2: u32;
     static mut ITEM_GET_BOTTLE_POUCH_SLOT: u32;
 
@@ -79,15 +80,10 @@ pub fn setup_traps(item_actor: *mut item::dAcItem) -> u16 {
             (*item_actor).itemid = 34;
             (*item_actor).final_determined_itemid = 34;
 
-            match trapid {
-                0 => {
-                    TRAP_ID = 0;
-                    TRAP_DURATION = 255;
-                },
-                1 => TRAP_ID = 1,
-                2 => TRAP_ID = 2,
-                3 => TRAP_ID = 3,
-                _ => (),
+            TRAP_ID = trapid as u8;
+
+            if trapid == 0 {
+                TRAP_DURATION = 255;
             }
         } else {
             // Just to be sure, reset the trap values
@@ -124,10 +120,6 @@ pub fn update_traps() {
             },
             // Noise trap
             2 => {
-                (*FILE_MGR).FA.current_health = 1;
-                (*PLAYER_PTR).stamina_amount = 0;
-                (*PLAYER_PTR).something_we_use_for_stamina = 0x5A; // Make player exhausted?
-                (*PLAYER_PTR).stamina_recovery_timer = 64;
                 flag::set_storyflag(565); // z button bipping
                 flag::set_storyflag(566); // c button bipping
                 flag::set_storyflag(567); // map button bipping
@@ -171,6 +163,13 @@ pub fn update_traps() {
                 );
 
                 playFanfareMaybe(FANFARE_SOUND_MGR, 0x1705); // Groose's theme
+            },
+            // Health Trap
+            4 => {
+                (*FILE_MGR).FA.current_health = 1;
+                (*PLAYER_PTR).stamina_amount = 0;
+                (*PLAYER_PTR).something_we_use_for_stamina = 0x5A; // Make player exhausted?
+                (*PLAYER_PTR).stamina_recovery_timer = 64;
             },
             _ => (),
         }
@@ -276,5 +275,52 @@ pub fn spawned_actor_traps(
 
         // Replaced instructions
         asm!("mov x8, {0:x}", in(reg) ACTOR_ALLOCATOR_DEFINITIONS_PTR);
+    }
+}
+
+#[no_mangle]
+pub fn handle_closet_traps(item_id: u32) -> u32 {
+    unsafe {
+        let closet_actor: *mut actor::dAcOBase;
+        asm!("mov {0:x}, x19", out(reg) closet_actor);
+
+        let trapid = ((*closet_actor).members.base.param2 >> 4) & 0xF;
+
+        ACTORBASE_PARAM2 &= 0xFFFFFF0F;
+        ACTORBASE_PARAM2 |= trapid << 4;
+
+        return item_id;
+    }
+}
+
+#[no_mangle]
+pub fn handle_bucha_traps() {
+    unsafe {
+        let bucha: *mut actor::dAcOBase;
+        asm!("mov {0:x}, x19", out(reg) bucha);
+
+        let trapid = ((*bucha).members.base.param2 >> 4) & 0xF;
+
+        ACTORBASE_PARAM2 &= 0xFFFFFF0F;
+        ACTORBASE_PARAM2 |= trapid << 4;
+
+        // Replaced instructions
+        asm!("ldr x8, [x19]", "mov x0, x19");
+    }
+}
+
+#[no_mangle]
+pub fn handle_ac_boko_and_heartco_and_digspot_traps() {
+    unsafe {
+        let ac_boko: *mut actor::dAcOBase;
+        asm!("mov {0:x}, x19", out(reg) ac_boko);
+
+        let trapid = ((*ac_boko).members.base.param2 >> 8) & 0xF;
+
+        ACTORBASE_PARAM2 &= 0xFFFFFF0F;
+        ACTORBASE_PARAM2 |= trapid << 4;
+
+        // Replaced instructions
+        asm!("mov w0, #0x281", "mov w3, #2");
     }
 }
