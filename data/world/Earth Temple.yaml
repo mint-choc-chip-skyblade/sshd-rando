@@ -21,7 +21,7 @@
   events:
     ET Push Left Peg: Nothing
   exits:
-    ET Past Lava Section: (Bomb_Bag or Hook_Beetle) and Beetle
+    ET Past Lava Section: ((Bomb_Bag or Hook_Beetle) and Beetle) or shortcut_earth_temple_bridge # Can go under bridge
     ET East Room: Nothing # Use bomb flowers to blow up rock
     ET West Room: Bomb_Bag or Hook_Beetle
     ET Room with Slopes: shortcut_earth_temple_bridge or ('ET_Push_Left_Peg' and 'ET_Push_Right_Peg')
