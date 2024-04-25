@@ -583,7 +583,7 @@ class Tracker:
 
         # Generate a new config from the current settings, but if we
         # passed in one from an autosave, use that instead
-        config = copy.copy(self.main.config)
+        config = copy.deepcopy(self.main.config)
         if tracker_config is not None:
             config = tracker_config
 
