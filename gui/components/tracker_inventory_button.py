@@ -1,5 +1,12 @@
 from PySide6.QtWidgets import QLabel, QSizePolicy
-from PySide6.QtGui import QCursor, QMouseEvent, QImageReader, QPaintEvent, QPainter, QPixmap
+from PySide6.QtGui import (
+    QCursor,
+    QMouseEvent,
+    QImageReader,
+    QPaintEvent,
+    QPainter,
+    QPixmap,
+)
 from PySide6 import QtCore
 from PySide6.QtCore import Signal, QPoint
 
@@ -43,11 +50,12 @@ class TrackerInventoryButton(QLabel):
             print(f"Out of range for {self.items[-1]} {self.state}")
             self.state = len(self.filenames) - 1
 
-        if not self.pixmap.load(f"{(TRACKER_ASSETS_PATH / self.filenames[self.state]).as_posix()}"):
+        if not self.pixmap.load(
+            f"{(TRACKER_ASSETS_PATH / self.filenames[self.state]).as_posix()}"
+        ):
             print(f"Could not load pixmap for {self.items[-1]}")
 
-        self.update() # Calls paintEvent
-
+        self.update()  # Calls paintEvent
 
     def paintEvent(self, arg__1: QPaintEvent) -> None:
 

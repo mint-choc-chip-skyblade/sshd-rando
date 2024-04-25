@@ -176,7 +176,10 @@ class Tracker:
         )
         self.fs_boss_key_button = TrackerInventoryButton(
             ["Nothing", FS_BOSS_KEY],
-            ["dungeons/mysterious_crystals_gray.png", "dungeons/mysterious_crystals.png"],
+            [
+                "dungeons/mysterious_crystals_gray.png",
+                "dungeons/mysterious_crystals.png",
+            ],
         )
         self.sk_sot_button = TrackerInventoryButton(
             ["Nothing", STONE_OF_TRIALS],
@@ -251,7 +254,8 @@ class Tracker:
             ["Nothing", SEA_CHART], ["sea_chart_gray.png", "sea_chart.png"]
         )
         self.spiral_charge_button = TrackerInventoryButton(
-            ["Nothing", SPIRAL_CHARGE], ["bird_statuette_gray.png", "bird_statuette.png"]
+            ["Nothing", SPIRAL_CHARGE],
+            ["bird_statuette_gray.png", "bird_statuette.png"],
         )
         self.adventure_pouch_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_POUCH] * 5,
@@ -305,7 +309,8 @@ class Tracker:
             ["songs/nayrus_wisdom_gray.png", "songs/nayrus_wisdom.png"],
         )
         self.dins_power_button = TrackerInventoryButton(
-            ["Nothing", DINS_POWER], ["songs/dins_power_gray.png", "songs/dins_power.png"]
+            ["Nothing", DINS_POWER],
+            ["songs/dins_power_gray.png", "songs/dins_power.png"],
         )
         self.song_of_the_hero_button = TrackerInventoryButton(
             ["Nothing", FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART],
@@ -323,11 +328,17 @@ class Tracker:
 
         self.water_dragon_scale_button = TrackerInventoryButton(
             ["Nothing", WATER_DRAGON_SCALE],
-            ["main quest/water_dragon_scale_gray.png", "main quest/water_dragon_scale.png"],
+            [
+                "main quest/water_dragon_scale_gray.png",
+                "main quest/water_dragon_scale.png",
+            ],
         )
         self.fireshield_earrings_button = TrackerInventoryButton(
             ["Nothing", FIRESHIELD_EARRINGS],
-            ["main quest/fireshield_earrings_gray.png", "main quest/fireshield_earrings.png"],
+            [
+                "main quest/fireshield_earrings_gray.png",
+                "main quest/fireshield_earrings.png",
+            ],
         )
         self.cawlins_latter_button = TrackerInventoryButton(
             ["Nothing", CAWLINS_LETTER],
@@ -335,7 +346,10 @@ class Tracker:
         )
         self.insect_cage_button = TrackerInventoryButton(
             ["Nothing", BEEDLES_INSECT_CAGE],
-            ["sidequests/beedle_insect_cage_gray.png", "sidequests/beedle_insect_cage.png"],
+            [
+                "sidequests/beedle_insect_cage_gray.png",
+                "sidequests/beedle_insect_cage.png",
+            ],
         )
         self.rattle_button = TrackerInventoryButton(
             ["Nothing", RATTLE],
@@ -807,10 +821,16 @@ class Tracker:
             # This prevents us from having to clear the layout and making
             # the scroll bar on the list of locations sometimes jump up
             area_name_label = self.ui.tracker_tab.findChild(QLabel, "area_name_label")
-            locations_remaining_label = self.ui.tracker_tab.findChild(QLabel, "area_things_remaining_label")
-            show_entrances_button = self.ui.tracker_tab.findChild(TrackerShowEntrancesButton)
-            show_locations_button = self.ui.tracker_tab.findChild(TrackerShowLocationsButton)
-            
+            locations_remaining_label = self.ui.tracker_tab.findChild(
+                QLabel, "area_things_remaining_label"
+            )
+            show_entrances_button = self.ui.tracker_tab.findChild(
+                TrackerShowEntrancesButton
+            )
+            show_locations_button = self.ui.tracker_tab.findChild(
+                TrackerShowLocationsButton
+            )
+
             pt_size = 20
 
             if area_name_label is None:
@@ -819,7 +839,7 @@ class Tracker:
                 area_name_label.setStyleSheet(f"font-size: {pt_size}pt")
                 area_name_label.setMargin(10)
                 self.ui.tracker_locations_info_layout.addWidget(area_name_label)
-            
+
             if locations_remaining_label is None:
                 locations_remaining_label = QLabel()
                 locations_remaining_label.setObjectName("area_things_remaining_label")
@@ -827,7 +847,9 @@ class Tracker:
                     f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignRight)};"
                 )
                 locations_remaining_label.setMargin(10)
-                self.ui.tracker_locations_info_layout.addWidget(locations_remaining_label)
+                self.ui.tracker_locations_info_layout.addWidget(
+                    locations_remaining_label
+                )
 
             if show_entrances_button is None:
                 show_entrances_button = TrackerShowEntrancesButton(area_button.area)
@@ -850,7 +872,6 @@ class Tracker:
             show_entrances_button.area_name = area_button.area
             show_entrances_button.setVisible(bool(area_button.entrances))
             show_locations_button.setVisible(False)
-
 
     def show_area_entrances(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, None):
@@ -898,9 +919,15 @@ class Tracker:
             # This prevents us from having to clear the layout and making
             # the scroll bar on the list of locations sometimes jump up
             area_name_label = self.ui.tracker_tab.findChild(QLabel, "area_name_label")
-            disconnected_entrances_label = self.ui.tracker_tab.findChild(QLabel, "area_things_remaining_label")
-            show_entrances_button = self.ui.tracker_tab.findChild(TrackerShowEntrancesButton)
-            show_locations_button = self.ui.tracker_tab.findChild(TrackerShowLocationsButton)
+            disconnected_entrances_label = self.ui.tracker_tab.findChild(
+                QLabel, "area_things_remaining_label"
+            )
+            show_entrances_button = self.ui.tracker_tab.findChild(
+                TrackerShowEntrancesButton
+            )
+            show_locations_button = self.ui.tracker_tab.findChild(
+                TrackerShowLocationsButton
+            )
 
             area_name_label.setText(area_name)
             disconnected_entrances_label.setText(
