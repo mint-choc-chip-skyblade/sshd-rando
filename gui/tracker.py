@@ -618,13 +618,13 @@ class Tracker:
         if autosave_random_settings := autosave.get("random_settings", False):
             self.random_settings = [
                 s
-                for s in self.world.config.settings[0].settings.values()
+                for s in self.world.setting_map.settings.values()
                 if s.name in autosave_random_settings
             ]
         else:
             self.random_settings = [
                 s
-                for s in self.world.config.settings[0].settings.values()
+                for s in self.world.setting_map.settings.values()
                 if s.value == s.info.random_option and s.info.tracker_important
             ]
         # If no settings are random, then hide the set random settings button
@@ -859,28 +859,46 @@ class Tracker:
 
     def show_area_location_info(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, False):
-            # Show the area name and how many non-marked locations are available
+            # Show the area name and how many non-marked locations are available.
+            # Get the labels if they were previously created to reuse them.
+            # This prevents us from having to clear the layout and making
+            # the scroll bar on the list of locations sometimes jump up
+            area_name_label = self.ui.tracker_tab.findChild(QLabel, "area_name_label")
+            locations_remaining_label = self.ui.tracker_tab.findChild(QLabel, "area_locations_remaining_label")
+            show_entrances_button = self.ui.tracker_tab.findChild(TrackerShowEntrancesButton)
+            
             pt_size = 20
-            self.clear_layout(self.ui.tracker_locations_info_layout)
-            area_name_label = QLabel(area_button.area)
-            area_name_label.setStyleSheet(f"font-size: {pt_size}pt")
-            area_name_label.setMargin(10)
-            locations_remaining_label = QLabel(
-                f"({len(area_button.get_available_locations())}/{len(area_button.get_unmarked_locations())})"
-            )
-            locations_remaining_label.setStyleSheet(
-                f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignRight)};"
-            )
-            locations_remaining_label.setMargin(10)
-            self.ui.tracker_locations_info_layout.addWidget(area_name_label)
-            self.ui.tracker_locations_info_layout.addWidget(locations_remaining_label)
 
-            if area_button.entrances:
+            if area_name_label is None:
+                area_name_label = QLabel()
+                area_name_label.setObjectName("area_name_label")
+                area_name_label.setStyleSheet(f"font-size: {pt_size}pt")
+                area_name_label.setMargin(10)
+                self.ui.tracker_locations_info_layout.addWidget(area_name_label)
+            
+            if locations_remaining_label is None:
+                locations_remaining_label = QLabel()
+                locations_remaining_label.setObjectName("area_locations_remaining_label")
+                locations_remaining_label.setStyleSheet(
+                    f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignRight)};"
+                )
+                locations_remaining_label.setMargin(10)
+                self.ui.tracker_locations_info_layout.addWidget(locations_remaining_label)
+
+            if show_entrances_button is None:
                 show_entrances_button = TrackerShowEntrancesButton(area_button.area)
                 show_entrances_button.show_area_entrances.connect(
                     self.show_area_entrances
                 )
                 self.ui.tracker_locations_info_layout.addWidget(show_entrances_button)
+
+            area_name_label.setText(area_button.area)
+            locations_remaining_label.setText(
+                f"({len(area_button.get_available_locations())}/{len(area_button.get_unmarked_locations())})"
+            )
+            show_entrances_button.area_name = area_button.area
+            show_entrances_button.setVisible(bool(area_button.entrances))
+
 
     def show_area_entrances(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, None):
