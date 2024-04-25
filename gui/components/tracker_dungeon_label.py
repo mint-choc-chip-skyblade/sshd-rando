@@ -9,7 +9,7 @@ from filepathconstants import TRACKER_ASSETS_PATH
 class TrackerDungeonLabel(QLabel):
 
     hylia_font_id: int = -1
-    default_style = f"color: COLOR; font-size: 32pt; font-family: Hylia Serif Beta; text-align: center; qproperty-alignment: {int(QtCore.Qt.AlignCenter) | int(QtCore.Qt.AlignBottom)};"
+    default_style = f"color: COLOR; font-size: 24pt; font-family: Hylia Serif Beta; text-align: center; qproperty-alignment: {int(QtCore.Qt.AlignCenter) | int(QtCore.Qt.AlignBottom)};"
 
     clicked = Signal(str)
 
@@ -29,7 +29,7 @@ class TrackerDungeonLabel(QLabel):
         self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.active: bool = False
         self.setStyleSheet(TrackerDungeonLabel.default_style.replace("COLOR", "gray"))
-        self.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
+        self.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
         if ev.button() in [QtCore.Qt.LeftButton, QtCore.Qt.RightButton]:

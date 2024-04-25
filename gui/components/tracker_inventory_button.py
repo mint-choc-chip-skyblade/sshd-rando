@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QLabel, QSizePolicy
-from PySide6.QtGui import QCursor, QMouseEvent, QImageReader
+from PySide6.QtGui import QCursor, QMouseEvent, QImageReader, QPaintEvent, QPainter, QPixmap
 from PySide6 import QtCore
-from PySide6.QtCore import Signal
+from PySide6.QtCore import Signal, QPoint
 
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -28,23 +28,14 @@ class TrackerInventoryButton(QLabel):
         assert len(self.items) == len(self.filenames)
 
         self.setSizePolicy(QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding))
-        self.max_width = 0
-        self.max_height = 0
-        for filename in self.filenames:
-            image = QImageReader(f"{(TRACKER_ASSETS_PATH / filename).as_posix()}")
-            image = image.read()
-            width = image.rect().width()
-            height = image.rect().height()
-            if height > self.max_height:
-                self.max_height = height
-            if width > self.max_width:
-                self.max_width = width
 
-        self.setMinimumHeight(self.max_height)
-        self.setMinimumWidth(self.max_width)
+        self.setMinimumHeight(10)
+        self.setMinimumWidth(10)
 
         self.state: int = 0
+        self.pixmap = QPixmap()
         self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.setStyleSheet("background-color: rgba(0, 0, 0, 0);")
         self.update_icon()
 
     def update_icon(self) -> None:
@@ -52,12 +43,30 @@ class TrackerInventoryButton(QLabel):
             print(f"Out of range for {self.items[-1]} {self.state}")
             self.state = len(self.filenames) - 1
 
-        self.setStyleSheet(
-            f'background-image: url("{(TRACKER_ASSETS_PATH / self.filenames[self.state]).as_posix()}");'
-            + "background-repeat: none;"
-            + "background-position: center;"
-            + "background-color: rgba(0, 0, 0, 0);"
-        )
+        if not self.pixmap.load(f"{(TRACKER_ASSETS_PATH / self.filenames[self.state]).as_posix()}"):
+            print(f"Could not load pixmap for {self.items[-1]}")
+
+        self.update() # Calls paintEvent
+
+
+    def paintEvent(self, arg__1: QPaintEvent) -> None:
+
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.SmoothPixmapTransform)
+
+        pixmap_ratio = self.pixmap.width() / self.pixmap.height()
+        widget_ratio = self.width() / self.height()
+
+        if pixmap_ratio < widget_ratio:
+            new_width = int(self.height() * pixmap_ratio)
+            offset = (new_width - self.width()) / -2
+            painter.drawPixmap(offset, 0, new_width, self.height(), self.pixmap)
+        else:
+            new_height = int(self.width() / pixmap_ratio)
+            offset = (new_height - self.height()) / -2
+            painter.drawPixmap(0, offset, self.width(), new_height, self.pixmap)
+
+        return super().paintEvent(arg__1)
 
     def get_current_item(self) -> Item:
         if self.items[self.state] == "Nothing" or self.world is None:
