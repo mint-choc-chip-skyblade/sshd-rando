@@ -918,6 +918,8 @@ class Tracker:
             left_layout = QVBoxLayout()
             right_layout = QVBoxLayout()
 
+            entrances.sort()
+
             for i, entrance in enumerate(entrances):
                 entrance_label = TrackerEntranceLabel(
                     entrance, area_name, area_button.recent_search
@@ -986,6 +988,8 @@ class Tracker:
         right_layout = QVBoxLayout()
 
         targets = self.target_entrance_pools[entrance.type]
+
+        targets.sort(key=lambda e: e.replaces.sort_priority)
 
         for i, target in enumerate(targets):
             # Only show targets which haven't been connected yet
