@@ -157,6 +157,7 @@ class TrackerArea(QLabel):
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
 
-        QToolTip.showText(QCursor.pos() + QPoint(-50, -15), self.tooltip, self)
+        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(0, self.height())
+        QToolTip.showText(coords, self.tooltip, self)
 
         return super().mouseMoveEvent(ev)
