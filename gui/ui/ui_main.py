@@ -2200,9 +2200,11 @@ class Ui_main_window(object):
         self.dungeon_sv_layout = QVBoxLayout()
         self.dungeon_sv_layout.setSpacing(1)
         self.dungeon_sv_layout.setObjectName(u"dungeon_sv_layout")
+        self.dungeon_sv_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.dungeon_sv_keys_layout = QHBoxLayout()
         self.dungeon_sv_keys_layout.setSpacing(1)
         self.dungeon_sv_keys_layout.setObjectName(u"dungeon_sv_keys_layout")
+        self.dungeon_sv_keys_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
 
         self.dungeon_sv_layout.addLayout(self.dungeon_sv_keys_layout)
 
@@ -2212,6 +2214,7 @@ class Ui_main_window(object):
         self.dungeon_et_layout = QVBoxLayout()
         self.dungeon_et_layout.setSpacing(1)
         self.dungeon_et_layout.setObjectName(u"dungeon_et_layout")
+        self.dungeon_et_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.dungeon_et_keys_layout = QHBoxLayout()
         self.dungeon_et_keys_layout.setSpacing(1)
         self.dungeon_et_keys_layout.setObjectName(u"dungeon_et_keys_layout")
@@ -2224,6 +2227,7 @@ class Ui_main_window(object):
         self.dungeon_lmf_layout = QVBoxLayout()
         self.dungeon_lmf_layout.setSpacing(1)
         self.dungeon_lmf_layout.setObjectName(u"dungeon_lmf_layout")
+        self.dungeon_lmf_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.dungeon_lmf_keys_layout = QHBoxLayout()
         self.dungeon_lmf_keys_layout.setSpacing(1)
         self.dungeon_lmf_keys_layout.setObjectName(u"dungeon_lmf_keys_layout")
@@ -2236,6 +2240,7 @@ class Ui_main_window(object):
         self.dungeon_ac_layout = QVBoxLayout()
         self.dungeon_ac_layout.setSpacing(1)
         self.dungeon_ac_layout.setObjectName(u"dungeon_ac_layout")
+        self.dungeon_ac_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.dungeon_ac_keys_layout = QHBoxLayout()
         self.dungeon_ac_keys_layout.setSpacing(1)
         self.dungeon_ac_keys_layout.setObjectName(u"dungeon_ac_keys_layout")
@@ -2248,6 +2253,7 @@ class Ui_main_window(object):
         self.dungeon_ssh_layout = QVBoxLayout()
         self.dungeon_ssh_layout.setSpacing(1)
         self.dungeon_ssh_layout.setObjectName(u"dungeon_ssh_layout")
+        self.dungeon_ssh_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.dungeon_ssh_keys_layout = QHBoxLayout()
         self.dungeon_ssh_keys_layout.setSpacing(1)
         self.dungeon_ssh_keys_layout.setObjectName(u"dungeon_ssh_keys_layout")
@@ -2260,6 +2266,7 @@ class Ui_main_window(object):
         self.dungeon_fs_layout = QVBoxLayout()
         self.dungeon_fs_layout.setSpacing(1)
         self.dungeon_fs_layout.setObjectName(u"dungeon_fs_layout")
+        self.dungeon_fs_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.dungeon_fs_keys_layout = QHBoxLayout()
         self.dungeon_fs_keys_layout.setSpacing(1)
         self.dungeon_fs_keys_layout.setObjectName(u"dungeon_fs_keys_layout")
@@ -2272,22 +2279,17 @@ class Ui_main_window(object):
         self.dungeon_sk_layout = QVBoxLayout()
         self.dungeon_sk_layout.setSpacing(1)
         self.dungeon_sk_layout.setObjectName(u"dungeon_sk_layout")
+        self.dungeon_sk_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.dungeon_sk_keys_layout = QHBoxLayout()
         self.dungeon_sk_keys_layout.setSpacing(1)
         self.dungeon_sk_keys_layout.setObjectName(u"dungeon_sk_keys_layout")
+        self.dungeon_sk_keys_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
 
         self.dungeon_sk_layout.addLayout(self.dungeon_sk_keys_layout)
 
 
         self.dungeon_inventory_layout.addLayout(self.dungeon_sk_layout)
 
-        self.dungeon_inventory_layout.setStretch(0, 1)
-        self.dungeon_inventory_layout.setStretch(1, 1)
-        self.dungeon_inventory_layout.setStretch(2, 1)
-        self.dungeon_inventory_layout.setStretch(3, 1)
-        self.dungeon_inventory_layout.setStretch(4, 1)
-        self.dungeon_inventory_layout.setStretch(5, 1)
-        self.dungeon_inventory_layout.setStretch(6, 1)
 
         self.inventory_layout.addLayout(self.dungeon_inventory_layout)
 
@@ -2331,6 +2333,9 @@ class Ui_main_window(object):
 
         self.inventory_layout.addLayout(self.lower_inventory_layout)
 
+        self.inventory_layout.setStretch(0, 1)
+        self.inventory_layout.setStretch(1, 3)
+        self.inventory_layout.setStretch(2, 3)
 
         self.gridLayout.addLayout(self.inventory_layout, 0, 0, 1, 1)
 
@@ -2342,17 +2347,23 @@ class Ui_main_window(object):
         self.tracker_statistics_grid.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.tracker_stats_accessible = QLabel(self.tracker_tab)
         self.tracker_stats_accessible.setObjectName(u"tracker_stats_accessible")
+        sizePolicy4.setHeightForWidth(self.tracker_stats_accessible.sizePolicy().hasHeightForWidth())
+        self.tracker_stats_accessible.setSizePolicy(sizePolicy4)
         self.tracker_stats_accessible.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_accessible, 1, 0, 1, 1)
 
         self.tracker_stats_accessible_label = QLabel(self.tracker_tab)
         self.tracker_stats_accessible_label.setObjectName(u"tracker_stats_accessible_label")
+        sizePolicy12.setHeightForWidth(self.tracker_stats_accessible_label.sizePolicy().hasHeightForWidth())
+        self.tracker_stats_accessible_label.setSizePolicy(sizePolicy12)
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_accessible_label, 1, 1, 1, 1)
 
         self.tracker_stats_checked = QLabel(self.tracker_tab)
         self.tracker_stats_checked.setObjectName(u"tracker_stats_checked")
+        sizePolicy4.setHeightForWidth(self.tracker_stats_checked.sizePolicy().hasHeightForWidth())
+        self.tracker_stats_checked.setSizePolicy(sizePolicy4)
         self.tracker_stats_checked.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_checked, 0, 0, 1, 1)
@@ -2364,6 +2375,8 @@ class Ui_main_window(object):
 
         self.tracker_stats_remaining = QLabel(self.tracker_tab)
         self.tracker_stats_remaining.setObjectName(u"tracker_stats_remaining")
+        sizePolicy4.setHeightForWidth(self.tracker_stats_remaining.sizePolicy().hasHeightForWidth())
+        self.tracker_stats_remaining.setSizePolicy(sizePolicy4)
         self.tracker_stats_remaining.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining, 2, 0, 1, 1)
@@ -2373,8 +2386,6 @@ class Ui_main_window(object):
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining_label, 2, 1, 1, 1)
 
-        self.tracker_statistics_grid.setColumnStretch(0, 4)
-        self.tracker_statistics_grid.setColumnStretch(1, 50)
 
         self.tracker_info_layout.addLayout(self.tracker_statistics_grid)
 
@@ -2390,11 +2401,15 @@ class Ui_main_window(object):
 
         self.set_random_settings_button = QPushButton(self.tracker_tab)
         self.set_random_settings_button.setObjectName(u"set_random_settings_button")
+        sizePolicy13.setHeightForWidth(self.set_random_settings_button.sizePolicy().hasHeightForWidth())
+        self.set_random_settings_button.setSizePolicy(sizePolicy13)
 
         self.tracker_info_layout.addWidget(self.set_random_settings_button)
 
         self.set_starting_entrance_button = QPushButton(self.tracker_tab)
         self.set_starting_entrance_button.setObjectName(u"set_starting_entrance_button")
+        sizePolicy13.setHeightForWidth(self.set_starting_entrance_button.sizePolicy().hasHeightForWidth())
+        self.set_starting_entrance_button.setSizePolicy(sizePolicy13)
 
         self.tracker_info_layout.addWidget(self.set_starting_entrance_button)
 
@@ -2449,6 +2464,9 @@ class Ui_main_window(object):
 
         self.gridLayout.addLayout(self.tracker_map_layout, 0, 1, 1, 1)
 
+        self.gridLayout.setColumnStretch(0, 2)
+        self.gridLayout.setColumnStretch(1, 1)
+        self.gridLayout.setColumnStretch(2, 1)
         self.tab_widget.addTab(self.tracker_tab, "")
 
         self.verticalLayout_2.addWidget(self.tab_widget)
@@ -2576,7 +2594,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(8)
 
 
         QMetaObject.connectSlotsByName(main_window)

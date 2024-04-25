@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -3315,7 +3315,7 @@ QPushButton {
        <attribute name="title">
         <string>Tracker</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout">
+       <layout class="QGridLayout" name="gridLayout" columnstretch="2,1,1">
         <property name="leftMargin">
          <number>0</number>
         </property>
@@ -3335,9 +3335,9 @@ QPushButton {
          <number>0</number>
         </property>
         <item row="0" column="0">
-         <layout class="QVBoxLayout" name="inventory_layout">
+         <layout class="QVBoxLayout" name="inventory_layout" stretch="1,3,3">
           <item>
-           <layout class="QHBoxLayout" name="dungeon_inventory_layout" stretch="1,1,1,1,1,1,1">
+           <layout class="QHBoxLayout" name="dungeon_inventory_layout" stretch="0,0,0,0,0,0,0">
             <property name="spacing">
              <number>2</number>
             </property>
@@ -3346,10 +3346,16 @@ QPushButton {
               <property name="spacing">
                <number>1</number>
               </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetDefaultConstraint</enum>
+              </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_sv_keys_layout">
                 <property name="spacing">
                  <number>1</number>
+                </property>
+                <property name="sizeConstraint">
+                 <enum>QLayout::SetDefaultConstraint</enum>
                 </property>
                </layout>
               </item>
@@ -3359,6 +3365,9 @@ QPushButton {
              <layout class="QVBoxLayout" name="dungeon_et_layout">
               <property name="spacing">
                <number>1</number>
+              </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_et_keys_layout">
@@ -3374,6 +3383,9 @@ QPushButton {
               <property name="spacing">
                <number>1</number>
               </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetDefaultConstraint</enum>
+              </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_lmf_keys_layout">
                 <property name="spacing">
@@ -3387,6 +3399,9 @@ QPushButton {
              <layout class="QVBoxLayout" name="dungeon_ac_layout">
               <property name="spacing">
                <number>1</number>
+              </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_ac_keys_layout">
@@ -3402,6 +3417,9 @@ QPushButton {
               <property name="spacing">
                <number>1</number>
               </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetDefaultConstraint</enum>
+              </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_ssh_keys_layout">
                 <property name="spacing">
@@ -3415,6 +3433,9 @@ QPushButton {
              <layout class="QVBoxLayout" name="dungeon_fs_layout">
               <property name="spacing">
                <number>1</number>
+              </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_fs_keys_layout">
@@ -3430,10 +3451,16 @@ QPushButton {
               <property name="spacing">
                <number>1</number>
               </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetDefaultConstraint</enum>
+              </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_sk_keys_layout">
                 <property name="spacing">
                  <number>1</number>
+                </property>
+                <property name="sizeConstraint">
+                 <enum>QLayout::SetDefaultConstraint</enum>
                 </property>
                </layout>
               </item>
@@ -3491,12 +3518,18 @@ QPushButton {
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
           <item>
-           <layout class="QGridLayout" name="tracker_statistics_grid" rowstretch="0,0,0" columnstretch="4,50" columnminimumwidth="0,0">
+           <layout class="QGridLayout" name="tracker_statistics_grid" rowstretch="0,0,0" columnstretch="0,0" columnminimumwidth="0,0">
             <property name="sizeConstraint">
              <enum>QLayout::SetDefaultConstraint</enum>
             </property>
             <item row="1" column="0">
              <widget class="QLabel" name="tracker_stats_accessible">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -3507,6 +3540,12 @@ QPushButton {
             </item>
             <item row="1" column="1">
              <widget class="QLabel" name="tracker_stats_accessible_label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
                <string>Locations Accessible</string>
               </property>
@@ -3514,6 +3553,12 @@ QPushButton {
             </item>
             <item row="0" column="0">
              <widget class="QLabel" name="tracker_stats_checked">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -3531,6 +3576,12 @@ QPushButton {
             </item>
             <item row="2" column="0">
              <widget class="QLabel" name="tracker_stats_remaining">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -3563,6 +3614,12 @@ QPushButton {
           </item>
           <item>
            <widget class="QPushButton" name="set_random_settings_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Set Random Settings</string>
             </property>
@@ -3570,6 +3627,12 @@ QPushButton {
           </item>
           <item>
            <widget class="QPushButton" name="set_starting_entrance_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Set Starting Entrance</string>
             </property>
