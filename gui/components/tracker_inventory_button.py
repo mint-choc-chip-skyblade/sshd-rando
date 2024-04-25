@@ -59,6 +59,8 @@ class TrackerInventoryButton(QLabel):
 
     def paintEvent(self, arg__1: QPaintEvent) -> None:
 
+        # Paint the appropriate image scaled to fit inside
+        # of the widget
         painter = QPainter(self)
         painter.setRenderHint(QPainter.SmoothPixmapTransform)
 
