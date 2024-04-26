@@ -1170,7 +1170,6 @@ class Tracker:
         search.search_worlds()
         semi_logic_locations = search.visited_locations - main_available_locations
         search.visited_locations -= semi_logic_locations
-        print([l.name for l in semi_logic_locations])
         for location in self.areas["Root"].get_included_locations(remove_special_types=False):
             location.in_semi_logic = location in semi_logic_locations
 
