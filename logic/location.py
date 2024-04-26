@@ -87,3 +87,6 @@ class Location:
     
     def is_gossip_stone(self) -> bool:
         return self.hint_textfile != ""
+    
+    def has_vanilla_dungeon_key(self) -> bool:
+        return self.has_known_vanilla_item and self.original_item.name.endswith("Small Key") and self.original_item.name != "Lanayru Caves Small Key"

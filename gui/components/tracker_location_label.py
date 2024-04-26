@@ -53,6 +53,8 @@ class TrackerLocationLabel(QLabel):
             self.pixmap.load((TRACKER_ASSETS_PATH / "sidequests" / "goddess_cube.png").as_posix())
         elif self.location.is_gossip_stone():
             self.pixmap.load((TRACKER_ASSETS_PATH / "sidequests" / "gossip_stone.png").as_posix())
+        elif self.location.has_vanilla_dungeon_key():
+            self.pixmap.load((TRACKER_ASSETS_PATH / "dungeons" / "small_key.png").as_posix())
         else:
             self.styling = TrackerLocationLabel.default_stylesheet
 

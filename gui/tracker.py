@@ -66,6 +66,7 @@ class Tracker:
         self.active_area: TrackerArea = None
         self.random_settings: list = []
         self.items_on_mark: dict[Location, Item] = {}
+        self.own_dungeon_key_locations: list[tuple[Item, list[Location]]] = []
 
         # Holds which entrance is connected to which target
         self.connected_entrances: dict[Entrance, Entrance] = {}
@@ -476,13 +477,13 @@ class Tracker:
         self.ui.dungeon_sk_keys_layout.addWidget(self.sk_small_key_button)
         self.ui.dungeon_sk_keys_layout.addWidget(self.sk_sot_button)
 
-        self.ui.dungeon_sv_layout.addWidget(TrackerDungeonLabel("SV"))
-        self.ui.dungeon_et_layout.addWidget(TrackerDungeonLabel("ET"))
-        self.ui.dungeon_lmf_layout.addWidget(TrackerDungeonLabel("LMF"))
-        self.ui.dungeon_ac_layout.addWidget(TrackerDungeonLabel("AC"))
-        self.ui.dungeon_ssh_layout.addWidget(TrackerDungeonLabel("SSH"))
-        self.ui.dungeon_fs_layout.addWidget(TrackerDungeonLabel("FS"))
-        self.ui.dungeon_sk_layout.addWidget(TrackerDungeonLabel("SK"))
+        self.ui.dungeon_sv_layout.addWidget(TrackerDungeonLabel("SV", "Skyview Temple"))
+        self.ui.dungeon_et_layout.addWidget(TrackerDungeonLabel("ET", "Earth Temple"))
+        self.ui.dungeon_lmf_layout.addWidget(TrackerDungeonLabel("LMF", "Lanayru Mining Facility"))
+        self.ui.dungeon_ac_layout.addWidget(TrackerDungeonLabel("AC", "Ancient Cistern"))
+        self.ui.dungeon_ssh_layout.addWidget(TrackerDungeonLabel("SSH", "Sandship"))
+        self.ui.dungeon_fs_layout.addWidget(TrackerDungeonLabel("FS", "Fire Sanctuary"))
+        self.ui.dungeon_sk_layout.addWidget(TrackerDungeonLabel("SK", "Sky Keep"))
 
         self.ui.inventory_b_wheel_layout.addWidget(self.beetle_button, 0, 0)
         self.ui.inventory_b_wheel_layout.addWidget(self.slingshot_button, 0, 1)
@@ -717,6 +718,8 @@ class Tracker:
         self.update_areas_locations()
         self.update_areas_entrances()
 
+        self.calculate_own_dungeon_key_locations()
+
         # If barren unrequired dungeons is on then set all dungeon locations as non-progression
         if self.world.setting("empty_unrequired_dungeons") == "on":
             for dungeon in self.world.dungeons.values():
@@ -728,6 +731,7 @@ class Tracker:
 
         # Reset dungeon selectors
         for label in self.ui.tracker_tab.findChildren(TrackerDungeonLabel):
+            label.world = self.world
             label.reset()
             if label.abbreviation in autosave.get("active_dungeons", []):
                 label.on_clicked()
@@ -1166,13 +1170,20 @@ class Tracker:
             if location not in already_added and location in main_available_locations:
                 search.owned_items[item] += 1
 
-        # Search again until no new locations are found. Any new found locations are in semi-logic
+        # Add own dungeon keys if all their associated locations are in logic
         search.search_worlds()
+        for key, locations in self.own_dungeon_key_locations:
+            if all([loc in search.visited_locations for loc in locations]):
+                search.owned_items[key] += 1
+                search.search_worlds()
+        
+        # Any new found locations are in semi-logic
         semi_logic_locations = search.visited_locations - main_available_locations
         search.visited_locations -= semi_logic_locations
         for location in self.areas["Root"].get_included_locations(remove_special_types=False):
             location.in_semi_logic = location in semi_logic_locations
 
+        # Update any labels that are currently shown
         location_label_area_name = ""
         for location_label in self.ui.tracker_locations_scroll_area.findChildren(
             TrackerLocationLabel
@@ -1185,6 +1196,9 @@ class Tracker:
             TrackerEntranceLabel
         ):
             entrance_label.update_text(search)
+
+        for dungeon_label in self.ui.tracker_tab.findChildren(TrackerDungeonLabel):
+            dungeon_label.update_style()
 
         self.show_area_location_info(location_label_area_name)
         self.autosave_tracker()
@@ -1210,30 +1224,13 @@ class Tracker:
                 if area_button := self.areas.get(area_name, False):
                     area_button.locations.append(location)
 
-    def update_dungeon_progress_locations(self, abbreviation: str) -> None:
+    def update_dungeon_progress_locations(self, dungeon_name: str) -> None:
         if not self.started:
             return
 
         # Don't change anything if dungeons aren't guaranteed empty
         if self.world.setting("empty_unrequired_dungeons") == "off":
             return
-
-        dungeon_name = ""
-        match abbreviation:
-            case "SV":
-                dungeon_name = "Skyview Temple"
-            case "ET":
-                dungeon_name = "Earth Temple"
-            case "LMF":
-                dungeon_name = "Lanayru Mining Facility"
-            case "AC":
-                dungeon_name = "Ancient Cistern"
-            case "SSH":
-                dungeon_name = "Sandship"
-            case "FS":
-                dungeon_name = "Fire Sanctuary"
-            case "SK":
-                dungeon_name = "Sky Keep"
 
         for loc in self.world.get_dungeon(dungeon_name).locations:
             loc.eud_progression = not loc.eud_progression
@@ -1290,6 +1287,37 @@ class Tracker:
 
         self.initialize_tracker_world(tracker_config, autosave)
         self.update_tracker()
+
+    def calculate_own_dungeon_key_locations(self) -> None:
+        self.own_dungeon_key_locations.clear()
+
+        small_keys: bool = self.world.setting("small_keys") == "own_dungeon"
+        boss_keys: bool = self.world.setting("boss_keys") == "own_dungeon"
+
+        item_pool = get_complete_item_pool([self.world])
+        # Filter out keys from the item pool
+        # Small Keys must be first
+        own_dungeon_keys = [item for item in item_pool if (item.is_dungeon_small_key and small_keys)]
+        own_dungeon_keys += [item for item in item_pool if (item.is_boss_key and boss_keys)]
+        for key in own_dungeon_keys:
+            item_pool.remove(key)
+
+        search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], item_pool)
+        # Now go through and make the list of possible locations for each key
+        for key in own_dungeon_keys:
+            current_dungeon = None
+            for dungeon in self.world.dungeons.values():
+                if key in [dungeon.small_key, dungeon.boss_key]:
+                    current_dungeon = dungeon
+                    break
+
+            # Find all possible locations for this key in the dungeon
+            search.search_worlds()
+            possible_dungeon_locations = [loc for loc in current_dungeon.locations if loc in search.visited_locations and loc.progression]
+            self.own_dungeon_key_locations.append((key, possible_dungeon_locations))
+
+            # Add the key in for the next search
+            search.owned_items[key] += 1
 
     def clear_layout(self, layout: QLayout, remove_nested_layouts=True) -> None:
         # Recursively clear nested layouts

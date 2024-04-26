@@ -5,6 +5,7 @@ from PySide6.QtCore import Signal
 
 from filepathconstants import TRACKER_ASSETS_PATH
 
+from logic.world import World
 
 class TrackerDungeonLabel(QLabel):
 
@@ -13,7 +14,7 @@ class TrackerDungeonLabel(QLabel):
 
     clicked = Signal(str)
 
-    def __init__(self, abbreviation: str) -> None:
+    def __init__(self, abbreviation_: str, dungeon_name_: str) -> None:
 
         if TrackerDungeonLabel.hylia_font_id == -1:
             TrackerDungeonLabel.hylia_font_id = QFontDatabase.addApplicationFont(
@@ -23,8 +24,10 @@ class TrackerDungeonLabel(QLabel):
                 print("Could not load Hylia Serif Font")
 
         super().__init__()
-        self.abbreviation = abbreviation
-        self.setText(abbreviation)
+        self.abbreviation = abbreviation_
+        self.dungeon_name = dungeon_name_
+        self.world: World = None
+        self.setText(abbreviation_)
         self.setStyleSheet(TrackerDungeonLabel.default_style)
         self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.active: bool = False
@@ -37,16 +40,24 @@ class TrackerDungeonLabel(QLabel):
         return super().mouseReleaseEvent(ev)
 
     def on_clicked(self) -> None:
+        self.active = not self.active
+        self.update_style()
+        self.clicked.emit(self.dungeon_name)
+
+    def update_style(self) -> None:
         if self.active:
-            self.setStyleSheet(
-                TrackerDungeonLabel.default_style.replace("COLOR", "gray")
-            )
-        else:
             self.setStyleSheet(
                 TrackerDungeonLabel.default_style.replace("COLOR", "dodgerblue")
             )
-        self.active = not self.active
-        self.clicked.emit(self.text())
+            # Add a strikethrough if the dungeon has been completed
+            if self.world:
+                dungeon = self.world.get_dungeon(self.dungeon_name)
+                if dungeon.goal_location.marked:
+                    self.setStyleSheet(f"{self.styleSheet()} text-decoration: line-through;")
+        else:
+            self.setStyleSheet(
+                TrackerDungeonLabel.default_style.replace("COLOR", "gray")
+            )
 
     def reset(self) -> None:
         self.active = False
