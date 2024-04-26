@@ -9,6 +9,7 @@ from logic.entrance import Entrance
 
 from filepathconstants import TRACKER_ASSETS_PATH
 
+
 class TrackerArea(QLabel):
 
     show_locations = Signal(str)
@@ -70,7 +71,9 @@ class TrackerArea(QLabel):
                     locations_set.add(loc)
         return all_locations
 
-    def get_included_locations(self, remove_special_types: bool = True) -> list[Location]:
+    def get_included_locations(
+        self, remove_special_types: bool = True
+    ) -> list[Location]:
         included = [
             loc
             for loc in self.get_all_locations()
@@ -78,14 +81,30 @@ class TrackerArea(QLabel):
         ]
 
         if remove_special_types:
-            included = [l for l in included if not (l.has_vanilla_goddess_cube() or l.has_vanilla_gratitude_crystal() or l.is_gossip_stone())]
-        
+            included = [
+                l
+                for l in included
+                if not (
+                    l.has_vanilla_goddess_cube()
+                    or l.has_vanilla_gratitude_crystal()
+                    or l.is_gossip_stone()
+                )
+            ]
+
         return included
 
-    def get_unmarked_locations(self, remove_special_types: bool = True) -> list[Location]:
-        return [loc for loc in self.get_included_locations(remove_special_types) if not loc.marked]
+    def get_unmarked_locations(
+        self, remove_special_types: bool = True
+    ) -> list[Location]:
+        return [
+            loc
+            for loc in self.get_included_locations(remove_special_types)
+            if not loc.marked
+        ]
 
-    def get_available_locations(self, remove_special_types: bool = True) -> list[Location]:
+    def get_available_locations(
+        self, remove_special_types: bool = True
+    ) -> list[Location]:
         return [
             loc
             for loc in self.get_unmarked_locations(remove_special_types)
@@ -128,11 +147,19 @@ class TrackerArea(QLabel):
 
             # If there are available goddess cubes or crystals though,
             # indicate those instead
-            available_locations = self.get_available_locations(remove_special_types=False)
+            available_locations = self.get_available_locations(
+                remove_special_types=False
+            )
             if any([l for l in available_locations if l.has_vanilla_goddess_cube()]):
-                self.setText(f'<img src="{(TRACKER_ASSETS_PATH / "sidequests" / "goddess_cube.png").as_posix()}" width="23" height="25">')
-            elif any([l for l in available_locations if l.has_vanilla_gratitude_crystal()]):
-                self.setText(f'<img src="{(TRACKER_ASSETS_PATH / "sidequests" / "crystal.png").as_posix()}" width="25" height="25">')
+                self.setText(
+                    f'<img src="{(TRACKER_ASSETS_PATH / "sidequests" / "goddess_cube.png").as_posix()}" width="23" height="25">'
+                )
+            elif any(
+                [l for l in available_locations if l.has_vanilla_gratitude_crystal()]
+            ):
+                self.setText(
+                    f'<img src="{(TRACKER_ASSETS_PATH / "sidequests" / "crystal.png").as_posix()}" width="25" height="25">'
+                )
 
             self.setStyleSheet(
                 TrackerArea.default_stylesheet.replace("COLOR", "red").replace(

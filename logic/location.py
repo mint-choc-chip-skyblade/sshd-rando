@@ -78,15 +78,21 @@ class Location:
 
     def get_goal_name(self, language: str) -> str:
         return self.get_text_data(self.name, "goal_name", language)
-    
+
     def has_vanilla_gratitude_crystal(self) -> bool:
-        return self.has_known_vanilla_item and self.original_item.name == GRATITUDE_CRYSTAL
-    
+        return (
+            self.has_known_vanilla_item and self.original_item.name == GRATITUDE_CRYSTAL
+        )
+
     def has_vanilla_goddess_cube(self) -> bool:
         return self.has_known_vanilla_item and "Goddess Cube" in self.original_item.name
-    
+
     def is_gossip_stone(self) -> bool:
         return self.hint_textfile != ""
-    
+
     def has_vanilla_dungeon_key(self) -> bool:
-        return self.has_known_vanilla_item and self.original_item.name.endswith("Small Key") and self.original_item.name != "Lanayru Caves Small Key"
+        return (
+            self.has_known_vanilla_item
+            and self.original_item.name.endswith("Small Key")
+            and self.original_item.name != "Lanayru Caves Small Key"
+        )

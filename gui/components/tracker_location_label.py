@@ -1,5 +1,12 @@
 from PySide6.QtWidgets import QLabel
-from PySide6.QtGui import QCursor, QMouseEvent, QPaintEvent, QPixmap, QFontMetrics, QPainter
+from PySide6.QtGui import (
+    QCursor,
+    QMouseEvent,
+    QPaintEvent,
+    QPixmap,
+    QFontMetrics,
+    QPainter,
+)
 from PySide6 import QtCore
 from PySide6.QtCore import Signal
 
@@ -8,6 +15,7 @@ from logic.search import Search
 
 from filepathconstants import TRACKER_ASSETS_PATH
 from constants.itemconstants import GRATITUDE_CRYSTAL
+
 
 class TrackerLocationLabel(QLabel):
 
@@ -46,15 +54,25 @@ class TrackerLocationLabel(QLabel):
         # Add padding and crystal/goddess cube/gossip stone icon if necessary
         self.icon_size = QFontMetrics(self.font()).height()
         self.pixmap = QPixmap()
-        self.styling = TrackerLocationLabel.icon_stylesheet.replace("PADDING", f"{self.icon_size + 2}")
+        self.styling = TrackerLocationLabel.icon_stylesheet.replace(
+            "PADDING", f"{self.icon_size + 2}"
+        )
         if self.location.has_vanilla_gratitude_crystal():
-            self.pixmap.load((TRACKER_ASSETS_PATH / "sidequests" / "crystal.png").as_posix())
+            self.pixmap.load(
+                (TRACKER_ASSETS_PATH / "sidequests" / "crystal.png").as_posix()
+            )
         elif self.location.has_vanilla_goddess_cube():
-            self.pixmap.load((TRACKER_ASSETS_PATH / "sidequests" / "goddess_cube.png").as_posix())
+            self.pixmap.load(
+                (TRACKER_ASSETS_PATH / "sidequests" / "goddess_cube.png").as_posix()
+            )
         elif self.location.is_gossip_stone():
-            self.pixmap.load((TRACKER_ASSETS_PATH / "sidequests" / "gossip_stone.png").as_posix())
+            self.pixmap.load(
+                (TRACKER_ASSETS_PATH / "sidequests" / "gossip_stone.png").as_posix()
+            )
         elif self.location.has_vanilla_dungeon_key():
-            self.pixmap.load((TRACKER_ASSETS_PATH / "dungeons" / "small_key.png").as_posix())
+            self.pixmap.load(
+                (TRACKER_ASSETS_PATH / "dungeons" / "small_key.png").as_posix()
+            )
         else:
             self.styling = TrackerLocationLabel.default_stylesheet
 

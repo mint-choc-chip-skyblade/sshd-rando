@@ -7,6 +7,7 @@ from filepathconstants import TRACKER_ASSETS_PATH
 
 from logic.world import World
 
+
 class TrackerDungeonLabel(QLabel):
 
     hylia_font_id: int = -1
@@ -53,7 +54,9 @@ class TrackerDungeonLabel(QLabel):
             if self.world:
                 dungeon = self.world.get_dungeon(self.dungeon_name)
                 if dungeon.goal_location.marked:
-                    self.setStyleSheet(f"{self.styleSheet()} text-decoration: line-through;")
+                    self.setStyleSheet(
+                        f"{self.styleSheet()} text-decoration: line-through;"
+                    )
         else:
             self.setStyleSheet(
                 TrackerDungeonLabel.default_style.replace("COLOR", "gray")

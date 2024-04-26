@@ -479,8 +479,12 @@ class Tracker:
 
         self.ui.dungeon_sv_layout.addWidget(TrackerDungeonLabel("SV", "Skyview Temple"))
         self.ui.dungeon_et_layout.addWidget(TrackerDungeonLabel("ET", "Earth Temple"))
-        self.ui.dungeon_lmf_layout.addWidget(TrackerDungeonLabel("LMF", "Lanayru Mining Facility"))
-        self.ui.dungeon_ac_layout.addWidget(TrackerDungeonLabel("AC", "Ancient Cistern"))
+        self.ui.dungeon_lmf_layout.addWidget(
+            TrackerDungeonLabel("LMF", "Lanayru Mining Facility")
+        )
+        self.ui.dungeon_ac_layout.addWidget(
+            TrackerDungeonLabel("AC", "Ancient Cistern")
+        )
         self.ui.dungeon_ssh_layout.addWidget(TrackerDungeonLabel("SSH", "Sandship"))
         self.ui.dungeon_fs_layout.addWidget(TrackerDungeonLabel("FS", "Fire Sanctuary"))
         self.ui.dungeon_sk_layout.addWidget(TrackerDungeonLabel("SK", "Sky Keep"))
@@ -707,7 +711,12 @@ class Tracker:
             # Only display goddess cubes when goddess chest shuffle is on
             if location.has_vanilla_goddess_cube():
                 # Only list goddess cubes whose associated goddess chests aren't excluded
-                if self.world.setting("goddess_chest_shuffle") == "on" and self.world.get_location(location.original_item.chain_locations[0]).progression:
+                if (
+                    self.world.setting("goddess_chest_shuffle") == "on"
+                    and self.world.get_location(
+                        location.original_item.chain_locations[0]
+                    ).progression
+                ):
                     location.progression = True
                     self.items_on_mark[location] = location.current_item
                     location.remove_current_item()
@@ -816,7 +825,9 @@ class Tracker:
 
             for i, loc in enumerate(locations):
 
-                location_label = TrackerLocationLabel(loc, area_button.recent_search, area_button)
+                location_label = TrackerLocationLabel(
+                    loc, area_button.recent_search, area_button
+                )
                 # Split locations evenly among the left and right layouts
                 if i < len(locations) / 2:
                     left_layout.addWidget(location_label)
@@ -884,20 +895,14 @@ class Tracker:
                 f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignRight)};"
             )
             locations_remaining_label.setMargin(10)
-            self.ui.tracker_locations_info_layout.addWidget(
-                locations_remaining_label
-            )
+            self.ui.tracker_locations_info_layout.addWidget(locations_remaining_label)
 
             show_entrances_button = TrackerShowEntrancesButton("")
-            show_entrances_button.show_area_entrances.connect(
-                self.show_area_entrances
-            )
+            show_entrances_button.show_area_entrances.connect(self.show_area_entrances)
             self.ui.tracker_locations_info_layout.addWidget(show_entrances_button)
 
             show_locations_button = TrackerShowLocationsButton("")
-            show_locations_button.show_area_locations.connect(
-                self.show_area_locations
-            )
+            show_locations_button.show_area_locations.connect(self.show_area_locations)
             self.ui.tracker_locations_info_layout.addWidget(show_locations_button)
 
     def show_area_entrances(self, area_name: str) -> None:
@@ -1176,11 +1181,13 @@ class Tracker:
             if all([loc in search.visited_locations for loc in locations]):
                 search.owned_items[key] += 1
                 search.search_worlds()
-        
+
         # Any new found locations are in semi-logic
         semi_logic_locations = search.visited_locations - main_available_locations
         search.visited_locations -= semi_logic_locations
-        for location in self.areas["Root"].get_included_locations(remove_special_types=False):
+        for location in self.areas["Root"].get_included_locations(
+            remove_special_types=False
+        ):
             location.in_semi_logic = location in semi_logic_locations
 
         # Update any labels that are currently shown
@@ -1297,8 +1304,12 @@ class Tracker:
         item_pool = get_complete_item_pool([self.world])
         # Filter out keys from the item pool
         # Small Keys must be first
-        own_dungeon_keys = [item for item in item_pool if (item.is_dungeon_small_key and small_keys)]
-        own_dungeon_keys += [item for item in item_pool if (item.is_boss_key and boss_keys)]
+        own_dungeon_keys = [
+            item for item in item_pool if (item.is_dungeon_small_key and small_keys)
+        ]
+        own_dungeon_keys += [
+            item for item in item_pool if (item.is_boss_key and boss_keys)
+        ]
         for key in own_dungeon_keys:
             item_pool.remove(key)
 
@@ -1313,7 +1324,11 @@ class Tracker:
 
             # Find all possible locations for this key in the dungeon
             search.search_worlds()
-            possible_dungeon_locations = [loc for loc in current_dungeon.locations if loc in search.visited_locations and loc.progression]
+            possible_dungeon_locations = [
+                loc
+                for loc in current_dungeon.locations
+                if loc in search.visited_locations and loc.progression
+            ]
             self.own_dungeon_key_locations.append((key, possible_dungeon_locations))
 
             # Add the key in for the next search
