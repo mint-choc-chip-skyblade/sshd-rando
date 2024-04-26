@@ -4,6 +4,8 @@ from .hint_class import Hint
 import logging
 from typing import TYPE_CHECKING
 
+from constants.itemconstants import GRATITUDE_CRYSTAL
+
 if TYPE_CHECKING:
     from .world import World
     from .area import LocationAccess
@@ -47,6 +49,7 @@ class Location:
         # Tracker variables
         self.marked: bool = False
         self.eud_progression: bool = True
+        self.in_semi_logic: bool = False
 
     def __str__(self) -> str:
         return (
@@ -75,3 +78,12 @@ class Location:
 
     def get_goal_name(self, language: str) -> str:
         return self.get_text_data(self.name, "goal_name", language)
+    
+    def has_vanilla_gratitude_crystal(self) -> bool:
+        return self.has_known_vanilla_item and self.original_item.name == GRATITUDE_CRYSTAL
+    
+    def has_vanilla_goddess_cube(self) -> bool:
+        return self.has_known_vanilla_item and "Goddess Cube" in self.original_item.name
+    
+    def is_gossip_stone(self) -> bool:
+        return self.hint_textfile != ""

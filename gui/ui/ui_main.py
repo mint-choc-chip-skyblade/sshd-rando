@@ -2304,7 +2304,8 @@ class Ui_main_window(object):
         sizePolicy12.setVerticalStretch(0)
         sizePolicy12.setHeightForWidth(self.tablet_widget.sizePolicy().hasHeightForWidth())
         self.tablet_widget.setSizePolicy(sizePolicy12)
-        self.tablet_widget.setMinimumSize(QSize(141, 195))
+        self.tablet_widget.setMinimumSize(QSize(141, 141))
+        self.tablet_widget.setStyleSheet(u"")
         self.gridLayout_7 = QGridLayout(self.tablet_widget)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
 
@@ -2347,8 +2348,8 @@ class Ui_main_window(object):
         self.tracker_statistics_grid.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.tracker_stats_accessible = QLabel(self.tracker_tab)
         self.tracker_stats_accessible.setObjectName(u"tracker_stats_accessible")
-        sizePolicy4.setHeightForWidth(self.tracker_stats_accessible.sizePolicy().hasHeightForWidth())
-        self.tracker_stats_accessible.setSizePolicy(sizePolicy4)
+        sizePolicy2.setHeightForWidth(self.tracker_stats_accessible.sizePolicy().hasHeightForWidth())
+        self.tracker_stats_accessible.setSizePolicy(sizePolicy2)
         self.tracker_stats_accessible.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_accessible, 1, 0, 1, 1)
@@ -2362,8 +2363,8 @@ class Ui_main_window(object):
 
         self.tracker_stats_checked = QLabel(self.tracker_tab)
         self.tracker_stats_checked.setObjectName(u"tracker_stats_checked")
-        sizePolicy4.setHeightForWidth(self.tracker_stats_checked.sizePolicy().hasHeightForWidth())
-        self.tracker_stats_checked.setSizePolicy(sizePolicy4)
+        sizePolicy2.setHeightForWidth(self.tracker_stats_checked.sizePolicy().hasHeightForWidth())
+        self.tracker_stats_checked.setSizePolicy(sizePolicy2)
         self.tracker_stats_checked.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_checked, 0, 0, 1, 1)
@@ -2375,8 +2376,8 @@ class Ui_main_window(object):
 
         self.tracker_stats_remaining = QLabel(self.tracker_tab)
         self.tracker_stats_remaining.setObjectName(u"tracker_stats_remaining")
-        sizePolicy4.setHeightForWidth(self.tracker_stats_remaining.sizePolicy().hasHeightForWidth())
-        self.tracker_stats_remaining.setSizePolicy(sizePolicy4)
+        sizePolicy2.setHeightForWidth(self.tracker_stats_remaining.sizePolicy().hasHeightForWidth())
+        self.tracker_stats_remaining.setSizePolicy(sizePolicy2)
         self.tracker_stats_remaining.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining, 2, 0, 1, 1)
@@ -2386,6 +2387,8 @@ class Ui_main_window(object):
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining_label, 2, 1, 1, 1)
 
+        self.tracker_statistics_grid.setColumnStretch(0, 4)
+        self.tracker_statistics_grid.setColumnStretch(1, 50)
 
         self.tracker_info_layout.addLayout(self.tracker_statistics_grid)
 

@@ -7,6 +7,7 @@ from logic.search import Search
 from logic.location import Location
 from logic.entrance import Entrance
 
+from filepathconstants import TRACKER_ASSETS_PATH
 
 class TrackerArea(QLabel):
 
@@ -49,6 +50,7 @@ class TrackerArea(QLabel):
                 "RADIUS", self.border_radius
             )
         )
+        self.setTextFormat(QtCore.Qt.RichText)
         self.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.setFixedSize(30, 30)
@@ -68,22 +70,25 @@ class TrackerArea(QLabel):
                     locations_set.add(loc)
         return all_locations
 
-    def get_included_locations(self) -> list[Location]:
-        return [
+    def get_included_locations(self, remove_special_types: bool = True) -> list[Location]:
+        included = [
             loc
             for loc in self.get_all_locations()
             if loc.progression and loc.eud_progression
-            # should probably be a special location type eventually
-            and "Goddess Cube" not in loc.types
         ]
 
-    def get_unmarked_locations(self) -> list[Location]:
-        return [loc for loc in self.get_included_locations() if not loc.marked]
+        if remove_special_types:
+            included = [l for l in included if not (l.has_vanilla_goddess_cube() or l.has_vanilla_gratitude_crystal() or l.is_gossip_stone())]
+        
+        return included
 
-    def get_available_locations(self) -> list[Location]:
+    def get_unmarked_locations(self, remove_special_types: bool = True) -> list[Location]:
+        return [loc for loc in self.get_included_locations(remove_special_types) if not loc.marked]
+
+    def get_available_locations(self, remove_special_types: bool = True) -> list[Location]:
         return [
             loc
-            for loc in self.get_unmarked_locations()
+            for loc in self.get_unmarked_locations(remove_special_types)
             if loc in self.recent_search.visited_locations
         ]
 
@@ -98,7 +103,7 @@ class TrackerArea(QLabel):
         ):
             return
 
-        all_unmarked_locations = self.get_unmarked_locations()
+        all_unmarked_locations = self.get_unmarked_locations(remove_special_types=False)
         # If we don't have any possible locations at all then change to gray
         if not all_unmarked_locations:
             self.setStyleSheet(
@@ -111,6 +116,8 @@ class TrackerArea(QLabel):
             return
 
         num_available_locations = len(self.get_available_locations())
+        num_unmarked_locations = len(self.get_unmarked_locations())
+
         if num_available_locations == 0:
             # If there's a "main" entrance this area has which hasn't been
             # set then list the area with a question mark
@@ -119,12 +126,20 @@ class TrackerArea(QLabel):
             else:
                 self.setText("")
 
+            # If there are available goddess cubes or crystals though,
+            # indicate those instead
+            available_locations = self.get_available_locations(remove_special_types=False)
+            if any([l for l in available_locations if l.has_vanilla_goddess_cube()]):
+                self.setText(f'<img src="{(TRACKER_ASSETS_PATH / "sidequests" / "goddess_cube.png").as_posix()}" width="23" height="25">')
+            elif any([l for l in available_locations if l.has_vanilla_gratitude_crystal()]):
+                self.setText(f'<img src="{(TRACKER_ASSETS_PATH / "sidequests" / "crystal.png").as_posix()}" width="25" height="25">')
+
             self.setStyleSheet(
                 TrackerArea.default_stylesheet.replace("COLOR", "red").replace(
                     "RADIUS", self.border_radius
                 )
             )
-        elif num_available_locations == len(all_unmarked_locations):
+        elif num_available_locations == num_unmarked_locations:
             self.setStyleSheet(
                 TrackerArea.default_stylesheet.replace("COLOR", "dodgerblue").replace(
                     "RADIUS", self.border_radius
@@ -139,7 +154,7 @@ class TrackerArea(QLabel):
             )
             self.setText(str(num_available_locations))
 
-        self.tooltip = f"{self.area} ({num_available_locations}/{len(all_unmarked_locations)})\nClick to Expand{chr(10) + 'Right click to set entrance' if self.main_entrance else ''}"
+        self.tooltip = f"{self.area} ({num_available_locations}/{num_unmarked_locations})\nClick to Expand{chr(10) + 'Right click to set entrance' if self.main_entrance else ''}"
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
 

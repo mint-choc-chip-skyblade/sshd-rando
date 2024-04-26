@@ -65,6 +65,7 @@ class Tracker:
         self.areas: dict[str, TrackerArea] = {}
         self.active_area: TrackerArea = None
         self.random_settings: list = []
+        self.items_on_mark: dict[Location, Item] = {}
 
         # Holds which entrance is connected to which target
         self.connected_entrances: dict[Entrance, Entrance] = {}
@@ -658,6 +659,11 @@ class Tracker:
                 if i < num_group_parts:
                     self.inventory[item] += 1
 
+        # Replace individual starting crystals with crystal packs
+        packs_to_add = self.inventory[self.world.get_item(GRATITUDE_CRYSTAL)] // 5
+        self.inventory[self.world.get_item(GRATITUDE_CRYSTAL_PACK)] += packs_to_add
+        self.inventory[self.world.get_item(GRATITUDE_CRYSTAL)] = 0
+
         # Apply starting inventory to inventory buttons and assign world
         for inventory_button in self.ui.tracker_tab.findChildren(
             TrackerInventoryButton
@@ -681,10 +687,31 @@ class Tracker:
 
             inventory_button.update_icon()
 
+        self.items_on_mark.clear()
+
         # Mark any locations marked from an autosave
         for loc_name in autosave.get("marked_locations", []):
             loc = self.world.get_location(loc_name)
             loc.marked = True
+
+        # Change progression status of some locations
+        for location in self.world.get_all_item_locations():
+            # Always display single crystal locations when
+            # shuffle single crystals is off
+            if location.has_vanilla_gratitude_crystal() and location.progression:
+                location.progression = True
+                self.items_on_mark[location] = location.current_item
+                location.remove_current_item()
+
+            # Only display goddess cubes when goddess chest shuffle is on
+            if location.has_vanilla_goddess_cube():
+                # Only list goddess cubes whose associated goddess chests aren't excluded
+                if self.world.setting("goddess_chest_shuffle") == "on" and self.world.get_location(location.original_item.chain_locations[0]).progression:
+                    location.progression = True
+                    self.items_on_mark[location] = location.current_item
+                    location.remove_current_item()
+                else:
+                    location.progression = False
 
         # Assign the initial locations for all regions
         self.update_areas_locations()
@@ -778,24 +805,19 @@ class Tracker:
         if area_button := self.areas.get(area_name, False):
             self.show_area_location_info(area_name)
             self.clear_layout(self.ui.tracker_locations_scroll_layout)
-            locations = area_button.get_included_locations()
+            locations = area_button.get_included_locations(remove_special_types=False)
 
             left_layout = QVBoxLayout()
             right_layout = QVBoxLayout()
 
             for i, loc in enumerate(locations):
+
+                location_label = TrackerLocationLabel(loc, area_button.recent_search, area_button)
+                # Split locations evenly among the left and right layouts
                 if i < len(locations) / 2:
-                    left_layout.addWidget(
-                        TrackerLocationLabel(
-                            loc, area_button.recent_search, area_button
-                        )
-                    )
+                    left_layout.addWidget(location_label)
                 else:
-                    right_layout.addWidget(
-                        TrackerLocationLabel(
-                            loc, area_button.recent_search, area_button
-                        )
-                    )
+                    right_layout.addWidget(location_label)
 
             # Add vertical spacers to push labels up
             left_layout.addSpacerItem(
@@ -820,6 +842,8 @@ class Tracker:
             # Get the labels if they were previously created to reuse them.
             # This prevents us from having to clear the layout and making
             # the scroll bar on the list of locations sometimes jump up
+            self.create_info_widgets_if_none()
+
             area_name_label = self.ui.tracker_tab.findChild(QLabel, "area_name_label")
             locations_remaining_label = self.ui.tracker_tab.findChild(
                 QLabel, "area_things_remaining_label"
@@ -831,40 +855,6 @@ class Tracker:
                 TrackerShowLocationsButton
             )
 
-            pt_size = 20
-
-            if area_name_label is None:
-                area_name_label = QLabel()
-                area_name_label.setObjectName("area_name_label")
-                area_name_label.setStyleSheet(f"font-size: {pt_size}pt")
-                area_name_label.setMargin(10)
-                self.ui.tracker_locations_info_layout.addWidget(area_name_label)
-
-            if locations_remaining_label is None:
-                locations_remaining_label = QLabel()
-                locations_remaining_label.setObjectName("area_things_remaining_label")
-                locations_remaining_label.setStyleSheet(
-                    f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignRight)};"
-                )
-                locations_remaining_label.setMargin(10)
-                self.ui.tracker_locations_info_layout.addWidget(
-                    locations_remaining_label
-                )
-
-            if show_entrances_button is None:
-                show_entrances_button = TrackerShowEntrancesButton(area_button.area)
-                show_entrances_button.show_area_entrances.connect(
-                    self.show_area_entrances
-                )
-                self.ui.tracker_locations_info_layout.addWidget(show_entrances_button)
-
-            if show_locations_button is None:
-                show_locations_button = TrackerShowLocationsButton(area_name)
-                show_locations_button.show_area_locations.connect(
-                    self.show_area_locations
-                )
-                self.ui.tracker_locations_info_layout.addWidget(show_locations_button)
-
             area_name_label.setText(area_button.area)
             locations_remaining_label.setText(
                 f"({len(area_button.get_available_locations())}/{len(area_button.get_unmarked_locations())})"
@@ -872,6 +862,39 @@ class Tracker:
             show_entrances_button.area_name = area_button.area
             show_entrances_button.setVisible(bool(area_button.entrances))
             show_locations_button.setVisible(False)
+
+    def create_info_widgets_if_none(self) -> None:
+        if not self.ui.tracker_tab.findChild(QLabel, "area_name_label"):
+            self.clear_layout(self.ui.tracker_locations_info_layout)
+            pt_size = 20
+
+            area_name_label = QLabel()
+            area_name_label.setObjectName("area_name_label")
+            area_name_label.setStyleSheet(f"font-size: {pt_size}pt")
+            area_name_label.setMargin(10)
+            self.ui.tracker_locations_info_layout.addWidget(area_name_label)
+
+            locations_remaining_label = QLabel()
+            locations_remaining_label.setObjectName("area_things_remaining_label")
+            locations_remaining_label.setStyleSheet(
+                f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignRight)};"
+            )
+            locations_remaining_label.setMargin(10)
+            self.ui.tracker_locations_info_layout.addWidget(
+                locations_remaining_label
+            )
+
+            show_entrances_button = TrackerShowEntrancesButton("")
+            show_entrances_button.show_area_entrances.connect(
+                self.show_area_entrances
+            )
+            self.ui.tracker_locations_info_layout.addWidget(show_entrances_button)
+
+            show_locations_button = TrackerShowLocationsButton("")
+            show_locations_button.show_area_locations.connect(
+                self.show_area_locations
+            )
+            self.ui.tracker_locations_info_layout.addWidget(show_locations_button)
 
     def show_area_entrances(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, None):
@@ -914,6 +937,7 @@ class Tracker:
 
     def show_area_entrance_info(self, area_name: str):
         if area_button := self.areas.get(area_name, None):
+            self.create_info_widgets_if_none()
             # Show the area name and how many entrances have been connected.
             # Get the labels if they were previously created to reuse them.
             # This prevents us from having to clear the layout and making
@@ -922,9 +946,11 @@ class Tracker:
             disconnected_entrances_label = self.ui.tracker_tab.findChild(
                 QLabel, "area_things_remaining_label"
             )
-            show_entrances_button = self.ui.tracker_tab.findChild(
+            # For some reason, the previous back button still exists at this point?
+            # Get the last in the list of show entrances button children
+            show_entrances_button = self.ui.tracker_tab.findChildren(
                 TrackerShowEntrancesButton
-            )
+            )[-1]
             show_locations_button = self.ui.tracker_tab.findChild(
                 TrackerShowLocationsButton
             )
@@ -1115,11 +1141,38 @@ class Tracker:
         if not self.started:
             return
 
-        search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], self.inventory)
+        # Make a copy of the inventory to modify
+        inventory = self.inventory.copy()
+
+        # Add in items from certain marked locations (except gratitude crystals,
+        # the user will be responsible for updating their crystal count)
+        already_added = set()
+        for location, item in self.items_on_mark.items():
+            if location.marked and not location.has_vanilla_gratitude_crystal():
+                inventory[item] += 1
+                already_added.add(location)
+
+        # Use modified inventory for main search
+        search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], inventory)
         search.search_worlds()
 
         for area_button in self.areas.values():
             area_button.update(search)
+
+        main_available_locations = search.visited_locations.copy()
+
+        # Add items to inventory for semi-logic search
+        for location, item in self.items_on_mark.items():
+            if location not in already_added and location in main_available_locations:
+                search.owned_items[item] += 1
+
+        # Search again until no new locations are found. Any new found locations are in semi-logic
+        search.search_worlds()
+        semi_logic_locations = search.visited_locations - main_available_locations
+        search.visited_locations -= semi_logic_locations
+        print([l.name for l in semi_logic_locations])
+        for location in self.areas["Root"].get_included_locations(remove_special_types=False):
+            location.in_semi_logic = location in semi_logic_locations
 
         location_label_area_name = ""
         for location_label in self.ui.tracker_locations_scroll_area.findChildren(
@@ -1132,7 +1185,7 @@ class Tracker:
         for entrance_label in self.ui.tracker_locations_scroll_area.findChildren(
             TrackerEntranceLabel
         ):
-            entrance_label.update(search)
+            entrance_label.update_text(search)
 
         self.show_area_location_info(location_label_area_name)
         self.autosave_tracker()
@@ -1144,7 +1197,10 @@ class Tracker:
             area_button.locations.clear()
 
         self.world.assign_all_areas_hint_regions()
-        for location in self.world.get_all_item_locations():
+        all_locations = self.world.get_all_item_locations()
+        if self.world.setting("gossip_stone_hints") == "on":
+            all_locations.extend(self.world.get_gossip_stones())
+        for location in all_locations:
             for area_name in set(
                 [
                     area

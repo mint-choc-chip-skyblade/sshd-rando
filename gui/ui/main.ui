@@ -3483,8 +3483,11 @@ QPushButton {
                 <property name="minimumSize">
                  <size>
                   <width>141</width>
-                  <height>195</height>
+                  <height>141</height>
                  </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_7"/>
                </widget>
@@ -3518,14 +3521,14 @@ QPushButton {
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
           <item>
-           <layout class="QGridLayout" name="tracker_statistics_grid" rowstretch="0,0,0" columnstretch="0,0" columnminimumwidth="0,0">
+           <layout class="QGridLayout" name="tracker_statistics_grid" rowstretch="0,0,0" columnstretch="4,50" columnminimumwidth="0,0">
             <property name="sizeConstraint">
              <enum>QLayout::SetDefaultConstraint</enum>
             </property>
             <item row="1" column="0">
              <widget class="QLabel" name="tracker_stats_accessible">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -3554,7 +3557,7 @@ QPushButton {
             <item row="0" column="0">
              <widget class="QLabel" name="tracker_stats_checked">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -3577,7 +3580,7 @@ QPushButton {
             <item row="2" column="0">
              <widget class="QLabel" name="tracker_stats_remaining">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>

@@ -26,9 +26,9 @@ class TrackerEntranceLabel(QLabel):
         self.setMinimumHeight(30)
         self.setMaximumWidth(273)
         self.setWordWrap(True)
-        self.update()
+        self.update_text()
 
-    def update(self, recent_search_: Search = None) -> None:
+    def update_text(self, recent_search_: Search = None) -> None:
         if recent_search_ is not None:
             self.recent_search = recent_search_
         connected_area = self.entrance.connected_area
