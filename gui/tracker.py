@@ -25,6 +25,7 @@ from PySide6.QtWidgets import (
     QSpacerItem,
     QVBoxLayout,
     QHBoxLayout,
+    QLineEdit,
 )
 from PySide6 import QtCore
 from PySide6.QtGui import QMouseEvent
@@ -976,16 +977,32 @@ class Tracker:
         self, entrance: Entrance, parent_area_name: str = ""
     ) -> None:
         self.clear_layout(self.ui.tracker_locations_info_layout)
+
+        # Layouts used for the info area
+        info_outer_layout = QVBoxLayout()
+        info_inner_top_layout = QHBoxLayout()
+        info_inner_bottom_layout = QHBoxLayout()
+
         lead_to_label = QLabel(f"Where did {entrance.original_name} lead to?")
-        lead_to_label.setStyleSheet(
-            f"qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
-        )
         lead_to_label.setMargin(10)
         back_button = TrackerShowEntrancesButton(parent_area_name, "Back")
         back_button.show_area_entrances.connect(self.show_area_entrances)
 
-        self.ui.tracker_locations_info_layout.addWidget(lead_to_label)
-        self.ui.tracker_locations_info_layout.addWidget(back_button)
+        # Add a way to filter entrance targets
+        filter_label = QLabel("Filter:")
+        filter_label.setMargin(10)
+        filter_line_edit = QLineEdit("")
+        filter_line_edit.textChanged.connect(self.on_filter_text_changed)
+
+        # Add everything to the layouts
+        info_inner_top_layout.addWidget(lead_to_label)
+        info_inner_top_layout.addWidget(back_button)
+        info_inner_bottom_layout.addWidget(filter_label)
+        info_inner_bottom_layout.addWidget(filter_line_edit)
+
+        info_outer_layout.addLayout(info_inner_top_layout)
+        info_outer_layout.addLayout(info_inner_bottom_layout)
+        self.ui.tracker_locations_info_layout.addLayout(info_outer_layout)
 
         self.clear_layout(self.ui.tracker_locations_scroll_layout)
 
@@ -1017,6 +1034,10 @@ class Tracker:
 
         self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
         self.ui.tracker_locations_scroll_layout.addLayout(right_layout)
+
+    def on_filter_text_changed(self, filter: str) -> None:
+        for label in self.ui.tracker_tab.findChildren(TrackerTargetLabel):
+            label.setVisible(filter in label.text())
 
     def on_click_location_label(self, location_area: str) -> None:
         self.update_tracker()
