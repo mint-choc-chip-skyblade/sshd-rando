@@ -262,18 +262,11 @@ class Tracker:
         )
         self.adventure_pouch_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_POUCH] * 5,
-            [
-                "pouch_gray.png",
-                "pouch1.png",
-                "pouch2.png",
-                "pouch3.png",
-                "pouch4.png",
-                "pouch5.png",
-            ],
+            ["pouch_gray.png"] + [f"pouch{i}.png" for i in range(1, 6)],
         )
         self.bottle_button = TrackerInventoryButton(
             ["Nothing"] + [EMPTY_BOTTLE] * 5,
-            ["bottle_gray.png"] + [f"bottle{i}" for i in range(1, 6)],
+            ["bottle_gray.png"] + [f"bottle{i}.png" for i in range(1, 6)],
         )
         self.wallet_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_WALLET] * 4,
