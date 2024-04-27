@@ -1012,9 +1012,17 @@ class Tracker:
 
         targets.sort(key=lambda e: e.replaces.sort_priority)
 
+        areas_shown = set()
         for i, target in enumerate(targets):
             # Only show targets which haven't been connected yet
-            if target.connected_area is not None:
+            # and don't show multiple targets that lead to the same
+            # area
+
+            if (
+                target.connected_area is not None
+                and target.connected_area not in areas_shown
+            ):
+                areas_shown.add(target.connected_area)
                 target_label = TrackerTargetLabel(entrance, target, parent_area_name)
                 target_label.clicked.connect(self.on_click_target_label)
 
@@ -1200,7 +1208,9 @@ class Tracker:
         # Add own dungeon keys if all their associated locations are in logic
         search.search_worlds()
         for key, locations in self.own_dungeon_key_locations:
-            if all([loc in search.visited_locations or loc.marked for loc in locations]):
+            if all(
+                [loc in search.visited_locations or loc.marked for loc in locations]
+            ):
                 search.owned_items[key] += 1
                 search.search_worlds()
 

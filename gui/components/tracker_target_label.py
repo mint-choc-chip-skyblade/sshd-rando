@@ -25,7 +25,7 @@ class TrackerTargetLabel(QLabel):
         self.setMaximumWidth(273)
         self.setWordWrap(True)
 
-        self.setText(self.target.connected_area.name)
+        self.setText(self.target.replaces.original_name.split(" -> ")[1])
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
         if ev.button() == QtCore.Qt.LeftButton:
