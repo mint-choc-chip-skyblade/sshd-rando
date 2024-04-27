@@ -262,14 +262,13 @@ class Tracker:
         )
         self.adventure_pouch_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_POUCH] * 5,
-            # TODO - separate images for each pouch
             [
-                "no_pouch.png",
-                "pouch.png",
-                "pouch.png",
-                "pouch.png",
-                "pouch.png",
-                "pouch.png",
+                "pouch_gray.png",
+                "pouch1.png",
+                "pouch2.png",
+                "pouch3.png",
+                "pouch4.png",
+                "pouch5.png",
             ],
         )
         self.bottle_button = TrackerInventoryButton(
