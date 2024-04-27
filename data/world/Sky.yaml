@@ -148,9 +148,9 @@
     Start Kinas Quest: Day and 'Complete_Hot_Soup_Delivery'
     Pumpkin Carrying: Day and 'Complete_Hot_Soup_Delivery'
   exits:
-    Lumpy Pumpkin Back Door: Nothing
-    Lumpy Pumpkin Main East Door: Nothing
-    Lumpy Pumpkin Main West Door: Nothing
+    Lumpy Pumpkin Back Door Exterior: Nothing
+    Lumpy Pumpkin Main East Door Exterior: Nothing
+    Lumpy Pumpkin Main West Door Exterior: Nothing
     The Sky: Day
   locations:
     Lumpy Pumpkin - Slingshot Left Porch Lantern: Slingshot
@@ -165,20 +165,35 @@
     Lumpy Pumpkin - Gossip Stone near Back Door: Nothing
 
 
-- name: Lumpy Pumpkin Back Door
+- name: Lumpy Pumpkin Back Door Exterior
   exits:
     Lumpy Pumpkin Exterior: Nothing
-    Lumpy Pumpkin Interior: Nothing
+    Lumpy Pumpkin Back Door Interior: Nothing
 
-- name: Lumpy Pumpkin Main East Door
+- name: Lumpy Pumpkin Main East Door Exterior
   exits:
     Lumpy Pumpkin Exterior: Nothing
-    Lumpy Pumpkin Interior: Nothing
+    Lumpy Pumpkin Main East Door Interior: Nothing
 
-- name: Lumpy Pumpkin Main West Door
+- name: Lumpy Pumpkin Main West Door Exterior
   exits:
     Lumpy Pumpkin Exterior: Nothing
+    Lumpy Pumpkin Main West Door Interior: Nothing
+
+- name: Lumpy Pumpkin Back Door Interior
+  exits:
     Lumpy Pumpkin Interior: Nothing
+    Lumpy Pumpkin Back Door Exterior: Nothing
+
+- name: Lumpy Pumpkin Main East Door Interior
+  exits:
+    Lumpy Pumpkin Interior: Nothing
+    Lumpy Pumpkin Main East Door Exterior: Nothing
+
+- name: Lumpy Pumpkin Main West Door Interior
+  exits:
+    Lumpy Pumpkin Interior: Nothing
+    Lumpy Pumpkin Main West Door Exterior: Nothing
 
 
 - name: Lumpy Pumpkin Interior
@@ -188,9 +203,9 @@
     Complete Hot Soup Delivery: "'Delivered_Hot_Soup'"
     Pick up Levias Soup: Spiral_Charge
   exits:
-    Lumpy Pumpkin Back Door: Nothing
-    Lumpy Pumpkin Main East Door: Nothing
-    Lumpy Pumpkin Main West Door: Nothing
+    Lumpy Pumpkin Back Door Interior: Nothing
+    Lumpy Pumpkin Main East Door Interior: Nothing
+    Lumpy Pumpkin Main West Door Interior: Nothing
   locations:
     Lumpy Pumpkin - Item on Chandelier: Nothing
     Lumpy Pumpkin - Inside Crystal: Night
