@@ -703,7 +703,7 @@ class Tracker:
         for location in self.world.get_all_item_locations():
             # Always display single crystal locations when
             # shuffle single crystals is off
-            if location.has_vanilla_gratitude_crystal() and location.progression:
+            if location.has_vanilla_gratitude_crystal():
                 location.progression = True
                 self.items_on_mark[location] = location.current_item
                 location.remove_current_item()
@@ -1052,6 +1052,7 @@ class Tracker:
         # Update everything after making a connection
         self.update_areas_locations()
         self.update_areas_entrances()
+        self.calculate_own_dungeon_key_locations()
         self.update_tracker()
 
     def tracker_disconnect_entrance(self, entrance: Entrance) -> None:
@@ -1061,6 +1062,7 @@ class Tracker:
             self.update_areas_locations()
             self.update_areas_entrances()
             self.update_tracker()
+            self.calculate_own_dungeon_key_locations()
 
     def on_start_new_tracker_button_clicked(self) -> None:
         confirm_choice = self.main.fi_question_dialog.show_dialog(
@@ -1178,16 +1180,14 @@ class Tracker:
         # Add own dungeon keys if all their associated locations are in logic
         search.search_worlds()
         for key, locations in self.own_dungeon_key_locations:
-            if all([loc in search.visited_locations for loc in locations]):
+            if all([loc in search.visited_locations or loc.marked for loc in locations]):
                 search.owned_items[key] += 1
                 search.search_worlds()
 
         # Any new found locations are in semi-logic
         semi_logic_locations = search.visited_locations - main_available_locations
         search.visited_locations -= semi_logic_locations
-        for location in self.areas["Root"].get_included_locations(
-            remove_special_types=False
-        ):
+        for location in self.world.get_all_item_locations():
             location.in_semi_logic = location in semi_logic_locations
 
         # Update any labels that are currently shown
@@ -1312,6 +1312,9 @@ class Tracker:
         ]
         for key in own_dungeon_keys:
             item_pool.remove(key)
+
+        # Remove boss keys if they're still in
+        item_pool = [item for item in item_pool if not item.is_boss_key]
 
         search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], item_pool)
         # Now go through and make the list of possible locations for each key
