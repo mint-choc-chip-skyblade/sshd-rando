@@ -1,0 +1,218 @@
+- name: Root
+  image: Sky.png
+  children:
+    - Skyloft
+    - Faron
+    - Eldin
+    - Lanayru
+    - Sky
+    - Inside the Thunderhead
+
+- name: Sky
+  alias: The Sky
+  x: 465
+  y: 35
+
+- name: Inside the Thunderhead
+  x: 90
+  y: 35
+
+- name: Skyloft
+  image: Skyloft.png
+  x: 265
+  y: 145
+  children:
+    - Knight Academy
+    - Upper Skyloft
+    - Central Skyloft
+    - The Goddess's Silent Realm
+    - Sky Keep
+    - Skyloft Village
+    - Batreaux's House
+
+- name: Knight Academy
+  x: 185
+  y: 110
+
+- name: Upper Skyloft
+  x: 235
+  y: 105
+
+- name: Central Skyloft
+  x: 235
+  y: 170
+
+- name: The Goddess's Silent Realm
+  type: Trial Gate
+  x: 245
+  y: 250
+
+- name: Sky Keep
+  type: Dungeon Entrance
+  x: 300
+  y: 105
+
+- name: Skyloft Village
+  x: 350
+  y: 210
+
+- name: Batreaux's House
+  x: 320
+  y: 250
+
+
+- name: Faron
+  image: Faron.png
+  x: 365
+  y: 174
+  children:
+    - Sealed Grounds
+    - Faron Woods
+    - Lake Floria
+    - Great Tree
+    - Flooded Faron Woods
+    - Skyview Temple
+    - Ancient Cistern
+    - Farore's Silent Realm
+  entrance: Faron Region Entrance -> Sealed Grounds Statue
+
+- name: Sealed Grounds
+  x: 127
+  y: 186
+
+- name: Faron Woods
+  x: 245
+  y: 145
+
+- name: Lake Floria
+  x: 320
+  y: 226
+
+- name: Great Tree
+  alias: Inside the Great Tree
+  x: 293
+  y: 110
+
+- name: Flooded Faron Woods
+  x: 440
+  y: 90
+
+- name: Skyview Temple
+  type: Dungeon Entrance
+  x: 320
+  y: 42
+
+- name: Ancient Cistern
+  type: Dungeon Entrance
+  x: 245
+  y: 215
+
+- name: Farore's Silent Realm
+  type: Trial Gate
+  x: 325
+  y: 120
+
+- name: Eldin
+  image: Eldin.png
+  x: 265
+  y: 66
+  children:
+    - Eldin Volcano
+    - Mogma Turf
+    - Volcano Summit
+    - Bokoblin Base
+    - Earth Temple
+    - Fire Sanctuary
+    - Din's Silent Realm
+  entrance: Eldin Region Entrance -> Volcano Entrance Statue
+
+- name: Eldin Volcano
+  x: 152
+  y: 219
+
+- name: Mogma Turf
+  x: 217
+  y: 216
+
+- name: Volcano Summit
+  x: 325
+  y: 120
+
+- name: Bokoblin Base
+  x: 439
+  y: 216
+
+- name: Earth Temple
+  type: Dungeon Entrance
+  x: 225
+  y: 171
+
+- name: Fire Sanctuary
+  type: Dungeon Entrance
+  x: 392
+  y: 90
+
+- name: Din's Silent Realm
+  type: Trial Gate
+  x: 195
+  y: 186
+
+- name: Lanayru
+  image: Lanayru.png
+  x: 147
+  y: 145
+  children:
+    - Lanayru Mine
+    - Lanayru Desert
+    - Temple of Time
+    - Lanayru Caves
+    - Ancient Harbour
+    - Lanayru Sand Sea
+    - Lanayru Gorge
+    - Lanayru Mining Facility
+    - Sandship
+    - Nayru's Silent Realm
+  entrance: Lanayru Region Entrance -> Lanayru Mine Entry Statue
+
+- name: Lanayru Mine
+  x: 390
+  y: 185
+
+- name: Lanayru Desert
+  x: 347
+  y: 114
+
+- name: Temple of Time
+  x: 255
+  y: 81
+
+- name: Lanayru Caves
+  x: 298
+  y: 120
+
+- name: Ancient Harbour
+  x: 210
+  y: 150
+
+- name: Lanayru Sand Sea
+  x: 160
+  y: 170
+
+- name: Lanayru Gorge
+  x: 298
+  y: 210
+
+- name: Lanayru Mining Facility
+  type: Dungeon Entrance
+  x: 347
+  y: 78
+
+- name: Sandship
+  type: Dungeon Entrance
+  x: 146
+  y: 135
+
+- name: Nayru's Silent Realm
+  type: Trial Gate
+  x: 347
+  y: 42

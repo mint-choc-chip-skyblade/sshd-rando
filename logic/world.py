@@ -78,14 +78,6 @@ class World:
         self.song_hints: dict[Item, Hint] = {}
         self.impa_sot_hint: Hint = None  # type: ignore
 
-        # Save which bird statues we start with for patching and printing to spoiler log
-        # Mapping of pillar to starting statue data
-        self.starting_bird_statues: dict[str, dict] = {}
-
-        # Save which bird statues we start with for patching and printing to spoiler log
-        # Mapping of pillar to starting statue data
-        self.starting_bird_statues: dict[str, dict] = {}
-
     def __str__(self) -> str:
         return f"World {self.id + 1}"
 

@@ -42,6 +42,7 @@
 
 # Shuffles
 - name: gratitude_crystal_shuffle
+  tracker_important: true
   default_option: "on"
   pretty_name: Gratitude Crystal Shuffle
   pretty_options:
@@ -52,6 +53,7 @@
     - "on": "Single Gratitude Crystal locations can contain any item."
 
 - name: stamina_fruit_shuffle
+  tracker_important: true
   default_option: "off"
   pretty_name: Stamina Fruit Shuffle
   pretty_options:
@@ -62,6 +64,7 @@
     - "on": "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected. Any Stamina Fruit locations that are manually excluded will also be vanilla."
 
 - name: npc_closet_shuffle
+  tracker_important: true
   default_option: vanilla
   pretty_name: NPC Closet Shuffle
   pretty_options:
@@ -72,6 +75,7 @@
     - randomized: "All NPC closets will contain randomized items."
 
 - name: hidden_item_shuffle
+  tracker_important: true
   default_option: "off"
   pretty_name: Hidden Item Shuffle
   pretty_options:
@@ -82,6 +86,7 @@
     - "on": "Hidden Item checks will give a randomized item the first time. After this, they will only give their vanilla item."
 
 - name: rupee_shuffle
+  tracker_important: true
   default_option: vanilla
   pretty_name: Rupee Shuffle
   pretty_options:
@@ -96,6 +101,7 @@
     - advanced: "All freestanding Rupees can contain any item. Only a few extra Rupee checks are added but these are the most obscure and difficult checks to collect. You have been warned!"
 
 - name: underground_rupee_shuffle
+  tracker_important: true
   default_option: "off"
   pretty_name: Underground Rupee Shuffle
   pretty_options:
@@ -106,6 +112,7 @@
     - "on": "Underground Rupee locations that require burrowing into digspots with the Mogma Mitts can contain any item."
 
 - name: beedle_shop_shuffle
+  tracker_important: true
   default_option: junk_only
   pretty_name: Beedle's Airshop Shuffle
   pretty_options:
@@ -118,6 +125,7 @@
     - randomized: "Beedle's Airshop can contain any items."
 
 - name: goddess_chest_shuffle
+  tracker_important: true
   default_option: "off"
   pretty_name: Goddess Chest Shuffle
   pretty_options:
@@ -157,6 +165,7 @@
     - 0-6: "How many times you need to talk to Peatrice before she calls you darling and you can start Peater's quest."
 
 - name: small_keys
+  tracker_important: true
   default_option: own_dungeon
   pretty_name: Small Keys
   pretty_options:
@@ -177,6 +186,7 @@
     - removed: "Small Keys will not appear anywhere in the world and their locks will start opened."
 
 - name: lanayru_caves_keys
+  tracker_important: true
   default_option: removed
   pretty_name: Lanayru Caves Small Keys
   pretty_options:
@@ -191,6 +201,7 @@
     - removed: "The Lanayru Caves Keys will not appear anywhere in the world and the locks will start opened."
 
 - name: boss_keys
+  tracker_important: true
   default_option: own_dungeon
   pretty_name: Boss Keys
   pretty_options:
@@ -383,6 +394,7 @@
     - "on": "If you spawn in a surface region, you may only spawn in a province whose tablet you start with."
 
 - name: randomize_dungeon_entrances
+  tracker_important: true
   default_option: "off"
   pretty_name: Randomize Dungeon Entrances
   pretty_options:
@@ -393,6 +405,7 @@
     - "on": "Entering a dungeon will lead to a random dungeon."
 
 - name: randomize_trial_gate_entrances
+  tracker_important: true
   default_option: "off"
   pretty_name: Randomize Trial Gate Entrances
   pretty_options:
@@ -403,6 +416,7 @@
     - "on": "Entering a Trial Gate will lead to a random Silent Realm."
 
 - name: randomize_door_entrances
+  tracker_important: true
   default_option: "off"
   pretty_name: Randomize Door Entrances
   pretty_options:
@@ -413,6 +427,7 @@
     - "on": "Entering a door will lead to a random door exit on the other side."
 
 - name: decouple_double_doors
+  tracker_important: true
   default_option: "off"
   pretty_name: Decouple Double Door Entrances
   pretty_options:
@@ -423,6 +438,7 @@
     - "on": "Entering a left door may lead somewhere different to the corresponding right door (only when Randomize Door Entrance is also enabled)."
 
 - name: randomize_interior_entrances
+  tracker_important: true
   default_option: "off"
   pretty_name: Randomize Interior Entrances
   pretty_options:
@@ -433,6 +449,7 @@
     - "on": "Entering a doorway, pushup door, or loadzone that leads to an interior location in the vanilla game will lead to a random interior location."
 
 - name: randomize_overworld_entrances
+  tracker_important: true
   default_option: "off"
   pretty_name: Randomize Overworld Entrances
   pretty_options:
@@ -443,6 +460,7 @@
     - "on": "Entering a doorway, pushup door, or loadzone that leads to an overworld location in the vanilla game will lead to a random overworld location."
 
 - name: decouple_entrances
+  tracker_important: true
   default_option: "off"
   pretty_name: Decouple Entrances
   pretty_options:
@@ -502,6 +520,7 @@
     - 0-6: "Choose how many dungeons will have required items on their dungeon completion checks. Triforces, then swords, then other progress items are chosen, in this order."
 
 - name: empty_unrequired_dungeons
+  tracker_important: true
   default_option: "on"
   pretty_name: Barren Unrequired Dungeons
   pretty_options:
@@ -616,6 +635,7 @@
     - random_orientation: "Boss Keys will start in a random orientation when you try to open boss doors."
 
 - name: got_sword_requirement
+  tracker_important: true
   default_option: true_master_sword
   pretty_name: Gate of Time Sword Requirement
   pretty_options:
@@ -632,6 +652,7 @@
     - true_master_sword: "You will need at least True Master Sword in order to open the Gate of Time."
 
 - name: upgraded_skyward_strike
+  tracker_important: true
   default_option: "on"
   pretty_name: Upgraded Skyward Strike
   pretty_options:
@@ -674,6 +695,7 @@
         At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
 - name: unlock_all_groosenator_destinations
+  tracker_important: true
   default_option: "off"
   pretty_name: Unlock all Groosenator Destinations
   pretty_options:
@@ -760,6 +782,7 @@
 ###############
 
 - name: open_thunderhead
+  tracker_important: true
   default_option: ballad
   pretty_name: Open Thunderhead
   pretty_options:
@@ -770,6 +793,7 @@
     - open: "The Thunderhead will be opened from the start of the game."
 
 - name: open_lake_floria
+  tracker_important: true
   default_option: vanilla
   pretty_name: Open Lake Floria
   pretty_options:
@@ -782,6 +806,7 @@
     - open: "The Lake Floria Gates will be opened from the start of the game."
 
 - name: open_earth_temple
+  tracker_important: true
   default_option: "off"
   pretty_name: Open Earth Temple
   pretty_options:
@@ -792,6 +817,7 @@
     - "on": "The Earth Temple Door will be opened from the start of the game."
 
 - name: open_lmf
+  tracker_important: true
   default_option: open
   pretty_name: Open Lanayru Mining Facility
   pretty_options:
@@ -804,6 +830,7 @@
     - open: "The Lanayru Mining Facility will be raised from the start of the game."
 
 - name: open_batreaux_shed
+  tracker_important: true
   default_option: "off"
   pretty_name: Open Batreaux's Shed
   pretty_options:
@@ -814,6 +841,7 @@
     - "on": "The shed to Batreaux's House will be open from the start of the game."
 
 - name: shortcut_spiral_log_to_btt
+  tracker_important: true
   default_option: "on"
   pretty_name: Sealed Spiral Log to Behind the Temple
   pretty_options:
@@ -824,6 +852,7 @@
     - "on": "The log between the Sealed Grounds Spiral and Behind the Temple will be pushed down from the start of the game."
 
 - name: shortcut_logs_near_machi
+  tracker_important: true
   default_option: "off"
   pretty_name: Faron Woods Logs near First Kikwi
   pretty_options:
@@ -834,6 +863,7 @@
     - "on": "The logs from the Faron Woods entrance to the main part of Faron Woods will be pushed down from the start of the game."
 
 - name: shortcut_faron_log_to_floria
+  tracker_important: true
   default_option: "off"
   pretty_name: Faron Woods Log to after Lake Floria
   pretty_options:
@@ -844,6 +874,7 @@
     - "on": "The log from the Faron Woods entrance to after Lake Floria will be pushed down from the start of the game."
 
 - name: shortcut_deep_woods_log_before_tightrope
+  tracker_important: true
   default_option: "off"
   pretty_name: Deep Woods Log before Tightrope
   pretty_options:
@@ -854,6 +885,7 @@
     - "on": "The log from the Deep Woods entrance to after the Tightrope will be pushed down from the start of the game."
 
 - name: shortcut_deep_woods_log_before_temple
+  tracker_important: true
   default_option: "off"
   pretty_name: Deep Woods Log before Temple
   pretty_options:
@@ -864,6 +896,7 @@
     - "on": "The log from after the Deep Woods Tightrope before the Temple will be pushed down from the start of the game."
 
 - name: shortcut_eldin_entrance_boulder
+  tracker_important: true
   default_option: "off"
   pretty_name: Eldin Volcano Entrance Boulder
   pretty_options:
@@ -874,6 +907,7 @@
     - "on": "The boulder down the left path from the Eldin Volcano entrance will be blown up from the start of the game."
 
 - name: shortcut_eldin_ascent_boulder
+  tracker_important: true
   default_option: "off"
   pretty_name: Eldin Volcano Boulder near Ascent
   pretty_options:
@@ -884,6 +918,7 @@
     - "on": "The boulder near Volcano Ascent will be blown up from the start of the game."
 
 - name: shortcut_vs_flames
+  tracker_important: true
   default_option: "off"
   pretty_name: Volcano Summit Flames
   pretty_options:
@@ -894,6 +929,7 @@
     - "on": "The two sets of flames in Volcano Summit will be removed from the start of the game."
 
 - name: shortcut_lanayru_bars
+  tracker_important: true
   default_option: "off"
   pretty_name: Lanayru Desert Bars near Stone Cache
   pretty_options:
@@ -904,6 +940,7 @@
     - "on": "The bars separating Lanayru Desert from Stone Cache will be raised from the start of the game."
 
 - name: shortcut_west_wall_minecart
+  tracker_important: true
   default_option: "off"
   pretty_name: Lanayru Desert Minecart on West Wall
   pretty_options:
@@ -914,6 +951,7 @@
     - "on": "The minecart which allows access to the Western Wall of Lanayru Desert will be pushed down from the start of the game."
 
 - name: shortcut_sand_oasis_minecart
+  tracker_important: true
   default_option: "off"
   pretty_name: Lanayru Desert Minecart in Sand Oasis
   pretty_options:
@@ -924,6 +962,7 @@
     - "on": "The minecart which allows access to the Sand Oasis wall will be pushed down from the start of the game."
 
 - name: shortcut_minecart_before_caves
+  tracker_important: true
   default_option: "off"
   pretty_name: Lanayru Desert Minecart before Lanayru Caves
   pretty_options:
@@ -934,6 +973,7 @@
     - "on": "The minecart which allows access to the wall below the entrance to Lanayru Caves will be pushed down from the start of the game."
 
 - name: shortcut_skyview_boards
+  tracker_important: true
   default_option: "off"
   pretty_name: Skyview Temple Boarded Shortcut
   pretty_options:
@@ -944,6 +984,7 @@
     - "on": "The wooden boards blocking access to the first hub room will be destroyed from the start of the game."
 
 - name: shortcut_skyview_bars
+  tracker_important: true
   default_option: "off"
   pretty_name: Skyview Temple Bars before Boss Door
   pretty_options:
@@ -954,6 +995,7 @@
     - "on": "The bars blocking access to the boss door will be raised from the start of the game."
 
 - name: shortcut_earth_temple_bridge
+  tracker_important: true
   default_option: "off"
   pretty_name: Earth Temple Pegs Bridge
   pretty_options:
@@ -964,6 +1006,7 @@
     - "on": "The bridge in the main room of Earth Temple will be raised from the start of the game."
 
 - name: shortcut_lmf_wind_gates
+  tracker_important: true
   default_option: "off"
   pretty_name: Lanayru Mining Facility Wind Gates in Hub Room
   pretty_options:
@@ -974,6 +1017,7 @@
     - "on": "The wind gates blocking the central minecart path will be raised from the start of the game."
 
 - name: shortcut_lmf_boxes
+  tracker_important: true
   default_option: "off"
   pretty_name: Lanayru Mining Facility Pushable Boxes
   pretty_options:
@@ -984,6 +1028,7 @@
     - "on": "All of the metal pushable boxes in the dungeon (that aren't covered in sand) will be pushed from the start of the game."
 
 - name: shortcut_lmf_bars_to_west_side
+  tracker_important: true
   default_option: "off"
   pretty_name: Lanayru Mining Facility Bars to West Side
   pretty_options:
@@ -994,6 +1039,7 @@
     - "on": "The bars blocking access to the crawlspaces will be raised from the start of the game."
 
 - name: shortcut_ac_bridge
+  tracker_important: true
   default_option: "off"
   pretty_name: Ancient Cistern Bridge to Basement
   pretty_options:
@@ -1004,6 +1050,7 @@
     - "on": "The the bridge to the long thread down to the basement will be extended from the start of the game. You will be able to freely move the giant statue without navigating the basement."
 
 - name: shortcut_ac_water_vents
+  tracker_important: true
   default_option: "off"
   pretty_name: Ancient Cistern Water Vents
   pretty_options:
@@ -1014,6 +1061,7 @@
     - "on": "The water vents throughout the Ancient Cistern will be open from the start of the game."
 
 - name: shortcut_sandship_windows
+  tracker_important: true
   default_option: "off"
   pretty_name: Sandship Windows below Life Boat
   pretty_options:
@@ -1024,6 +1072,7 @@
     - "on": "The windows below the life boat will be open from the start of the game."
 
 - name: shortcut_sandship_brig_bars
+  tracker_important: true
   default_option: "off"
   pretty_name: Sandship Bars before Brig
   pretty_options:
@@ -1034,6 +1083,7 @@
     - "on": "The bars blocking access to the brig will be raised from the start of the game."
 
 - name: shortcut_fs_outside_bars
+  tracker_important: true
   default_option: "off"
   pretty_name: Fire Sanctuary Bars between Outdoor Bridges
   pretty_options:
@@ -1044,6 +1094,7 @@
     - "on": "The bars between the two outside bridges will be raised from the start of the game."
 
 - name: shortcut_fs_lava_flow
+  tracker_important: true
   default_option: "on"
   pretty_name: Fire Sanctuary Skip Lava Flow
   pretty_options:

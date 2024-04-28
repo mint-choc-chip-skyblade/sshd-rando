@@ -16,6 +16,7 @@ from filepathconstants import (
 
 from gui.accessibility import Accessibility
 from gui.advanced import Advanced
+from gui.tracker import Tracker
 from gui.dialogs.error_dialog import error, error_from_str
 from gui.dialogs.fi_info_dialog import FiInfoDialog
 from gui.dialogs.fi_question_dialog import FiQuestionDialog
@@ -55,6 +56,7 @@ class Main(QMainWindow):
         self.accessibility = Accessibility(self, self.ui)
         self.settings = Settings(self, self.ui)
         self.advanced = Advanced(self, self.ui)
+        self.tracker = Tracker(self, self.ui)
 
         self.ui.randomize_button.setDisabled(True)
         self.ui.randomize_button.clicked.connect(self.randomize)

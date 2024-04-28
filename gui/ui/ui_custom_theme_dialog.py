@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'custom_theme_dialog.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.2
+## Created by: Qt User Interface Compiler version 6.6.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -47,7 +47,7 @@ class Ui_CustomThemeDialog(object):
 
         self.widget_category_choice = QComboBox(self.custom_colors_tab)
         self.widget_category_choice.setObjectName(u"widget_category_choice")
-        sizePolicy = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.widget_category_choice.sizePolicy().hasHeightForWidth())
@@ -55,7 +55,7 @@ class Ui_CustomThemeDialog(object):
 
         self.hlay_widget_catergory.addWidget(self.widget_category_choice)
 
-        self.hspace_widget_category = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.hspace_widget_category = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.hlay_widget_catergory.addItem(self.hspace_widget_category)
 
@@ -69,7 +69,7 @@ class Ui_CustomThemeDialog(object):
         self.vlay_widget_name.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.widget_name_label = QLabel(self.custom_colors_tab)
         self.widget_name_label.setObjectName(u"widget_name_label")
-        sizePolicy1 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Preferred)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Preferred)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.widget_name_label.sizePolicy().hasHeightForWidth())
@@ -79,7 +79,7 @@ class Ui_CustomThemeDialog(object):
 
         self.vlay_widget_name.addWidget(self.widget_name_label)
 
-        self.vspace_widget_name = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.vspace_widget_name = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.vlay_widget_name.addItem(self.vspace_widget_name)
 
@@ -94,7 +94,7 @@ class Ui_CustomThemeDialog(object):
 
         self.vlay_color_light.addWidget(self.color_light_label)
 
-        self.vspace_color_light = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.vspace_color_light = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.vlay_color_light.addItem(self.vspace_color_light)
 
@@ -110,7 +110,7 @@ class Ui_CustomThemeDialog(object):
 
         self.vlay_color_dark.addWidget(self.color_dark_label)
 
-        self.vspace_color_dark = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.vspace_color_dark = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.vlay_color_dark.addItem(self.vspace_color_dark)
 
@@ -132,7 +132,7 @@ class Ui_CustomThemeDialog(object):
         self.vlay_demo_left.setObjectName(u"vlay_demo_left")
         self.demo_group_box = QGroupBox(self.demo_widgets_tab)
         self.demo_group_box.setObjectName(u"demo_group_box")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.demo_group_box.sizePolicy().hasHeightForWidth())
@@ -174,7 +174,7 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line = QFrame(self.demo_group_box)
         self.demo_line.setObjectName(u"demo_line")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         sizePolicy3.setHorizontalStretch(0)
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.demo_line.sizePolicy().hasHeightForWidth())
@@ -277,7 +277,7 @@ class Ui_CustomThemeDialog(object):
 
         self.vlay_demo_group_box.addWidget(self.demo_dialogButtonBox)
 
-        self.vspace_demo = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.vspace_demo = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.vlay_demo_group_box.addItem(self.vspace_demo)
 
@@ -292,7 +292,7 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_separator_left = QFrame(self.demo_widgets_tab)
         self.demo_line_separator_left.setObjectName(u"demo_line_separator_left")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
         sizePolicy4.setHorizontalStretch(0)
         sizePolicy4.setVerticalStretch(0)
         sizePolicy4.setHeightForWidth(self.demo_line_separator_left.sizePolicy().hasHeightForWidth())

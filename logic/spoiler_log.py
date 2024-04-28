@@ -94,14 +94,6 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                     if dungeon.required:
                         spoiler_log.write(f"      - {dungeon.name}\n")
 
-        # Print random starting statues if there are any
-        if worlds_with_random_statues := [w for w in worlds if w.starting_bird_statues]:
-            spoiler_log.write(f"\nStarting Bird Statues:\n")
-            for world in worlds_with_random_statues:
-                spoiler_log.write(f"    {world}:\n")
-                for pillar, statue in world.starting_bird_statues.items():
-                    spoiler_log.write(f"        {pillar}: {statue['name']}\n")
-
         # Get name lengths for pretty formating
         longest_name_length = 0
         for sphere in worlds[0].playthrough_spheres:

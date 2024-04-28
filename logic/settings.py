@@ -50,6 +50,8 @@ class SettingInfo:
         self.random_low: int = 0  # lower bound when choosing random option
         self.random_high: int = 0  # upper bound when choosing random option
 
+        self.tracker_important: bool = False
+
     def __str__(self) -> str:
         return self.pretty_name | self.name
 
@@ -113,6 +115,24 @@ class SettingGet:
 
     def value(self) -> str:
         return self.setting.value
+
+    def set_value(self, value_: str | int) -> None:
+        if type(value_) is str:
+            if value_ not in self.setting.info.options:
+                raise SettingInfoError(
+                    f'ERROR: "{value_}" is not a known value for {self.setting_name}'
+                )
+            self.setting.update_current_value(self.setting.info.options.index(value_))
+        elif type(value_) is int:
+            if value_ >= len(self.setting.info.options):
+                raise SettingInfoError(
+                    f"ERROR: Index {value_} is out of bounds for {self.setting_name}"
+                )
+            self.setting.update_current_value(value_)
+        else:
+            raise SettingInfoError(
+                f"ERROR: Type {type(value_)} is not handled for {self.setting_name}"
+            )
 
     def pretty_value(self) -> str:
         return self.setting.info.pretty_options[self.value_index()]
@@ -220,9 +240,10 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                                 descriptions.append(description)
 
                 assert len(pretty_names) == len(names)
-                assert len(options) == len(descriptions) and len(options) == len(
-                    pretty_options
-                )
+                assert len(options) == len(descriptions)
+                assert len(options) == len(pretty_options)
+
+                tracker_important = setting_node.get("tracker_important", False)
 
                 # Insert all the data now
                 for i in range(len(names)):
@@ -237,6 +258,7 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                     s.options = options
                     s.pretty_options = pretty_options
                     s.descriptions = descriptions
+                    s.tracker_important = tracker_important
 
                     if "no_autogenerate_random" in setting_node:
                         s.has_random_option = False

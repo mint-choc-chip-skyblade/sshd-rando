@@ -57,6 +57,9 @@ CUSTOM_THEME_PATH = Path(userdata_path) / "custom_theme.json"
 RANDO_FONT_PATH = RANDO_ROOT_PATH / "assets" / "Figtree-Regular.ttf"
 DYSLEXIC_FONT_PATH = RANDO_ROOT_PATH / "assets" / "OpenDyslexic3-Regular.ttf"
 
+TRACKER_AREAS_PATH = RANDO_ROOT_PATH / "data" / "tracker_areas.yaml"
+TRACKER_AUTOSAVE_PATH = RANDO_ROOT_PATH / "tracker_autosave_RANDOMIZER_VERSION.yaml"
+
 # Stage and event stuff
 OARC_CACHE_PATH = Path(userdata_path) / "oarccache"
 
@@ -104,6 +107,7 @@ MACROS_DATA_PATH = RANDO_ROOT_PATH / "data" / "macros.yaml"
 ICON_PATH = RANDO_ROOT_PATH / "assets" / "icon.png"
 FI_ICON_PATH = RANDO_ROOT_PATH / "assets" / "fi.png"
 ERROR_ICON_PATH = RANDO_ROOT_PATH / "assets" / "error.png"
+TRACKER_ASSETS_PATH = RANDO_ROOT_PATH / "assets" / "tracker"
 
 TITLE2D_SOURCE_PATH = ROMFS_EXTRACT_PATH / "Layout" / "Title2D.arc"
 ENDROLL_SOURCE_PATH = ROMFS_EXTRACT_PATH / "Layout" / "EndRoll.arc"

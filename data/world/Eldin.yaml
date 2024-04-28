@@ -325,7 +325,7 @@
 - name: Past Volcano Summit
   exits:
     Volcano Summit: Nothing
-    Outside Fire Sanctuary: Clawshots and (shortcut_vs_flames or 'Can_Collect_Water')
+    Outside Fire Sanctuary: shortcut_vs_flames or (Clawshots and 'Can_Collect_Water')
   locations:
     Volcano Summit - Item after Underground Tunnel near Gossip Stone: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
     Volcano Summit - Underground Rupee 1: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')

@@ -23,6 +23,7 @@ logs/
 config.yaml
 preferences.yaml
 custom_theme.json
+tracker_autosave*
 
 # Presets
 presets/*.yaml

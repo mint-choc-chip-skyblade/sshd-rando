@@ -61,7 +61,6 @@
     Behind the Temple: Nothing
 
 - name: Sealed Temple
-  hint_region: Sealed Grounds
   events:
     Raise Gate of Time: Goddesss_Harp and Ballad_of_the_Goddess
     Open Gate of Time: "'Raise_Gate_of_Time' and Gate_of_Time_Sword_Requirement"
@@ -81,7 +80,6 @@
     Sealed Temple - Blow Triforce Symbol on Northwest Archway behind Bird Statue: Gust_Bellows
 
 - name: Temple of Hylia
-  hint_region: Temple of Hylia
   exits:
     Sealed Temple: Nothing
   locations:
@@ -289,6 +287,7 @@
 
 # DEEP WOODS
 - name: Deep Woods Entry
+  hint_region: Faron Woods
   events:
     Hornet Larvae Farming: Nothing # Bonk the tree
   exits:
@@ -298,6 +297,7 @@
     Deep Woods - Blow Flowers at Entrance: Gust_Bellows
 
 - name: Deep Woods
+  hint_region: Faron Woods
   events:
     Push Down Deep Woods Shortcut Logs: Nothing
   exits:

@@ -15,10 +15,10 @@
   events:
     Start Owlans Quest: "'All_Kikwis_Saved'"
   exits:
-    Knight Academy Upper North Door: Nothing
-    Knight Academy Upper South Door: Nothing
-    Knight Academy Lower East Door: Day
-    Knight Academy Lower West Door: Day
+    Knight Academy Upper North Door Interior: Nothing
+    Knight Academy Upper South Door Interior: Nothing
+    Knight Academy Lower East Door Interior: Nothing
+    Knight Academy Lower West Door Interior: Nothing
   locations:
     Knight Academy - Link's Closet: Nothing
     Knight Academy - Fledge's Closet: Nothing
@@ -59,41 +59,65 @@
     Knight Academy - Crystal in Zelda's Room: Night
     Knight Academy - Zelda's Closet: Nothing
 
-- name: Knight Academy Upper North Door
+- name: Knight Academy Upper North Door Interior
   allowed_time_of_day: All
   exits:
     Knight Academy: Nothing
-    Upper Skyloft: Nothing
+    Knight Academy Upper North Door Exterior: Nothing
 
-- name: Knight Academy Upper South Door
+- name: Knight Academy Upper South Door Interior
   allowed_time_of_day: All
   exits:
     Knight Academy: Nothing
-    Upper Skyloft: Nothing
+    Knight Academy Upper South Door Exterior: Nothing
 
-- name: Knight Academy Lower East Door
+- name: Knight Academy Lower East Door Interior
   allowed_time_of_day: All
   exits:
     Knight Academy: Nothing
-    Upper Skyloft: Nothing
+    Knight Academy Lower East Door Exterior: Day
 
-- name: Knight Academy Lower West Door
+- name: Knight Academy Lower West Door Interior
   allowed_time_of_day: All
   exits:
     Knight Academy: Nothing
+    Knight Academy Lower West Door Exterior: Day
+
+- name: Knight Academy Upper North Door Exterior
+  allowed_time_of_day: All
+  exits:
     Upper Skyloft: Nothing
+    Knight Academy Upper North Door Interior: Nothing
+
+- name: Knight Academy Upper South Door Exterior
+  allowed_time_of_day: All
+  exits:
+    Upper Skyloft: Nothing
+    Knight Academy Upper South Door Interior: Nothing
+
+- name: Knight Academy Lower East Door Exterior
+  allowed_time_of_day: All
+  exits:
+    Upper Skyloft: Nothing
+    Knight Academy Lower East Door Interior: Day
+
+- name: Knight Academy Lower West Door Exterior
+  allowed_time_of_day: All
+  exits:
+    Upper Skyloft: Nothing
+    Knight Academy Lower West Door Interior: Day
 
 - name: Upper Skyloft
   allowed_time_of_day: All
   hint_region: Upper Skyloft
   exits:
-    Knight Academy Upper North Door: Nothing
-    Knight Academy Upper South Door: Nothing
-    Knight Academy Lower East Door: Day
-    Knight Academy Lower West Door: Day
+    Knight Academy Upper North Door Exterior: Nothing
+    Knight Academy Upper South Door Exterior: Nothing
+    Knight Academy Lower East Door Exterior: Nothing
+    Knight Academy Lower West Door Exterior: Nothing
     Knight Academy Chimney: Clawshots
-    Sparring Hall North Door: Nothing
-    Sparring Hall South Door: Nothing
+    Sparring Hall North Door Exterior: Nothing
+    Sparring Hall South Door Exterior: Nothing
     Inside the Statue of the Goddess: Nothing
     Central Skyloft: Nothing
   locations:
@@ -116,23 +140,35 @@
   events:
     Delivered Hot Soup: "'Start_Hot_Soup_Delivery'"
   exits:
-    Sparring Hall North Door: Nothing
-    Sparring Hall South Door: Nothing
+    Sparring Hall North Door Interior: Nothing
+    Sparring Hall South Door Interior: Nothing
   locations:
     Sparring Hall - Crystal on Roof Beam: Beetle and Night
     Sparring Hall - Chest in Back Room: Nothing
 
-- name: Sparring Hall North Door
+- name: Sparring Hall North Door Interior
   allowed_time_of_day: All
   exits:
     Sparring Hall: Nothing
-    Upper Skyloft: Nothing
+    Sparring Hall North Door Exterior: Nothing
 
-- name: Sparring Hall South Door
+- name: Sparring Hall South Door Interior
   allowed_time_of_day: All
   exits:
     Sparring Hall: Nothing
+    Sparring Hall South Door Exterior: Nothing
+
+- name: Sparring Hall North Door Exterior
+  allowed_time_of_day: All
+  exits:
     Upper Skyloft: Nothing
+    Sparring Hall North Door Interior: Nothing
+
+- name: Sparring Hall South Door Exterior
+  allowed_time_of_day: All
+  exits:
+    Upper Skyloft: Nothing
+    Sparring Hall South Door Interior: Nothing
 
 - name: Inside the Statue of the Goddess
   allowed_time_of_day: All
