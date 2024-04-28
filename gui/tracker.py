@@ -281,8 +281,8 @@ class Tracker:
         )
         self.extra_wallet_button = TrackerInventoryButton(
             ["Nothing"] + [EXTRA_WALLET] * 3,
-            ["wallets/extra_wallet_gray.png"] +
-            [f"wallets/extra_wallet_{i}.png" for i in range(1,4)],
+            ["wallets/extra_wallet_gray.png"]
+            + [f"wallets/extra_wallet_{i}.png" for i in range(1, 4)],
         )
         self.mitts_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_MITTS] * 2,

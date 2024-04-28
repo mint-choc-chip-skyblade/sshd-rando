@@ -1,4 +1,3 @@
-
 from PySide6.QtGui import QPaintEvent, QResizeEvent
 from PySide6.QtWidgets import QWidget, QSizePolicy
 
@@ -7,6 +6,7 @@ from gui.components.tracker_inventory_button import TrackerInventoryButton
 from constants.itemconstants import EMERALD_TABLET, RUBY_TABLET, AMBER_TABLET
 
 import math
+
 
 class TrackerTabletWidget(QWidget):
 
@@ -53,21 +53,25 @@ class TrackerTabletWidget(QWidget):
         # If the widget is taller than the tablets, scale based on width
         if current_aspect_ratio < TrackerTabletWidget.TABLET_ASPECT_RATIO:
             total_tablet_width = self.width() - 5
-            total_tablet_height = total_tablet_width / TrackerTabletWidget.TABLET_ASPECT_RATIO
+            total_tablet_height = (
+                total_tablet_width / TrackerTabletWidget.TABLET_ASPECT_RATIO
+            )
             tablet_x = 5
             tablet_y = (self.height() - total_tablet_height) / 2
         # Otherwise, scale based on height
         else:
             total_tablet_height = self.height()
-            total_tablet_width = total_tablet_height * TrackerTabletWidget.TABLET_ASPECT_RATIO
+            total_tablet_width = (
+                total_tablet_height * TrackerTabletWidget.TABLET_ASPECT_RATIO
+            )
             tablet_x = (self.width() - total_tablet_width) / 2
-            tablet_y = 0 
-        
+            tablet_y = 0
+
         amber_aspect_ratio = amber.pixmap.width() / amber.pixmap.height()
         amber_height = total_tablet_height
         amber_width = amber_height * amber_aspect_ratio
         amber.setFixedSize(amber_width, amber_height)
-        
+
         # We can pull the size modifier from the amber tablet
         # since its height should always match the total tablet height
         size_modifier = amber_height / amber.pixmap.height()
@@ -82,7 +86,10 @@ class TrackerTabletWidget(QWidget):
 
         amber.move(tablet_x, tablet_y)
         ruby.move(tablet_x + total_tablet_width - ruby.width() - 1, tablet_y)
-        emerald.move(tablet_x + total_tablet_width - emerald.width() - 1, tablet_y + total_tablet_height - emerald.height() - 1)
+        emerald.move(
+            tablet_x + total_tablet_width - emerald.width() - 1,
+            tablet_y + total_tablet_height - emerald.height() - 1,
+        )
 
     def paintEvent(self, event: QPaintEvent) -> None:
 
