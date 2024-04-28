@@ -1,0 +1,5 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "yaml.maxItemsComputed": 50000,
+    "yaml.format.enable": false
+}
