@@ -1015,7 +1015,7 @@ class Tracker:
 
     def on_filter_text_changed(self, filter: str) -> None:
         for label in self.ui.tracker_tab.findChildren(TrackerTargetLabel):
-            label.setVisible(filter in label.text())
+            label.setVisible(filter.lower() in label.text().lower())
 
     def on_click_location_label(self, location_area: str) -> None:
         self.update_tracker()
