@@ -250,7 +250,7 @@
     Inside the Great Tree - Blow Red Mushroom after Swinging Platforms West: Gust_Bellows
     Inside the Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South: Gust_Bellows
     # It's quite precise to wait for this baba like the others and very frustrating to fail
-    Inside the Great Tree - Chest Guarded by Deku Baba: Can_Defeat_Baba or Slingshot # Slingshot to stun
+    Inside the Great Tree - Chest Guarded by Deku Baba: Gust_Bellows and (Can_Defeat_Baba or Slingshot) # Slingshot to stun
 
 - name: Great Tree Exterior Platforms
   hint_region: Faron Woods
