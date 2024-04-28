@@ -50,18 +50,22 @@ class TrackerDungeonLabel(QLabel):
             self.setStyleSheet(
                 TrackerDungeonLabel.default_style.replace("COLOR", "dodgerblue")
             )
-            # Add a strikethrough if the dungeon has been completed
-            if self.world:
-                dungeon = self.world.get_dungeon(self.dungeon_name)
-                if dungeon.goal_location.marked:
-                    self.setStyleSheet(
-                        f"{self.styleSheet()} text-decoration: line-through;"
-                    )
         else:
             self.setStyleSheet(
                 TrackerDungeonLabel.default_style.replace("COLOR", "gray")
             )
+        # Add a strikethrough if the dungeon has been completed
+        # Completion is indicated by either the goal location being
+        # marked or all the locations in the dungeon being marked
+        if self.world:
+            dungeon = self.world.get_dungeon(self.dungeon_name)
+            if (dungeon.goal_location and dungeon.goal_location.marked) or all(
+                [loc.marked for loc in dungeon.locations if loc.progression]
+            ):
+                self.setStyleSheet(
+                    f"{self.styleSheet()} text-decoration: line-through;"
+                )
 
     def reset(self) -> None:
         self.active = False
-        self.setStyleSheet(TrackerDungeonLabel.default_style.replace("COLOR", "gray"))
+        self.update_style()
