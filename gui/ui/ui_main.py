@@ -2295,25 +2295,6 @@ class Ui_main_window(object):
 
         self.middle_inventory_layout = QGridLayout()
         self.middle_inventory_layout.setObjectName(u"middle_inventory_layout")
-        self.inventory_tablet_layout = QVBoxLayout()
-        self.inventory_tablet_layout.setObjectName(u"inventory_tablet_layout")
-        self.tablet_widget = QWidget(self.tracker_tab)
-        self.tablet_widget.setObjectName(u"tablet_widget")
-        sizePolicy12 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
-        sizePolicy12.setHorizontalStretch(0)
-        sizePolicy12.setVerticalStretch(0)
-        sizePolicy12.setHeightForWidth(self.tablet_widget.sizePolicy().hasHeightForWidth())
-        self.tablet_widget.setSizePolicy(sizePolicy12)
-        self.tablet_widget.setMinimumSize(QSize(141, 141))
-        self.tablet_widget.setStyleSheet(u"")
-        self.gridLayout_7 = QGridLayout(self.tablet_widget)
-        self.gridLayout_7.setObjectName(u"gridLayout_7")
-
-        self.inventory_tablet_layout.addWidget(self.tablet_widget)
-
-
-        self.middle_inventory_layout.addLayout(self.inventory_tablet_layout, 0, 2, 1, 1)
-
         self.inventory_b_wheel_layout = QGridLayout()
         self.inventory_b_wheel_layout.setSpacing(1)
         self.inventory_b_wheel_layout.setObjectName(u"inventory_b_wheel_layout")
@@ -2325,6 +2306,14 @@ class Ui_main_window(object):
 
         self.middle_inventory_layout.addLayout(self.inventory_sword_layout, 0, 0, 1, 1)
 
+        self.inventory_tablet_layout = QVBoxLayout()
+        self.inventory_tablet_layout.setObjectName(u"inventory_tablet_layout")
+
+        self.middle_inventory_layout.addLayout(self.inventory_tablet_layout, 0, 2, 1, 1)
+
+        self.middle_inventory_layout.setColumnStretch(0, 2)
+        self.middle_inventory_layout.setColumnStretch(1, 10)
+        self.middle_inventory_layout.setColumnStretch(2, 4)
 
         self.inventory_layout.addLayout(self.middle_inventory_layout)
 
@@ -2356,6 +2345,9 @@ class Ui_main_window(object):
 
         self.tracker_stats_accessible_label = QLabel(self.tracker_tab)
         self.tracker_stats_accessible_label.setObjectName(u"tracker_stats_accessible_label")
+        sizePolicy12 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+        sizePolicy12.setHorizontalStretch(0)
+        sizePolicy12.setVerticalStretch(0)
         sizePolicy12.setHeightForWidth(self.tracker_stats_accessible_label.sizePolicy().hasHeightForWidth())
         self.tracker_stats_accessible_label.setSizePolicy(sizePolicy12)
 

@@ -3469,31 +3469,7 @@ QPushButton {
            </layout>
           </item>
           <item>
-           <layout class="QGridLayout" name="middle_inventory_layout">
-            <item row="0" column="2">
-             <layout class="QVBoxLayout" name="inventory_tablet_layout">
-              <item>
-               <widget class="QWidget" name="tablet_widget" native="true">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>141</width>
-                  <height>141</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true"/>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_7"/>
-               </widget>
-              </item>
-             </layout>
-            </item>
+           <layout class="QGridLayout" name="middle_inventory_layout" columnstretch="2,10,4">
             <item row="0" column="1">
              <layout class="QGridLayout" name="inventory_b_wheel_layout">
               <property name="spacing">
@@ -3503,6 +3479,9 @@ QPushButton {
             </item>
             <item row="0" column="0">
              <layout class="QVBoxLayout" name="inventory_sword_layout"/>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="inventory_tablet_layout"/>
             </item>
            </layout>
           </item>

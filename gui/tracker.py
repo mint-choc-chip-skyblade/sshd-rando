@@ -39,6 +39,7 @@ from gui.components.tracker_entrance_label import TrackerEntranceLabel
 from gui.components.tracker_target_label import TrackerTargetLabel
 from gui.components.tracker_show_entrances_button import TrackerShowEntrancesButton
 from gui.components.tracker_show_locations_button import TrackerShowLocationsButton
+from gui.components.tracker_tablet_widget import TrackerTabletWidget
 from gui.dialogs.fi_question_dialog import FiQuestionDialog
 
 from constants.itemconstants import *
@@ -369,37 +370,6 @@ class Tracker:
             ["main quest/scrapper_gray.png", "main quest/scrapper.png"],
         )
 
-        # Delcare amber tablet first so it placed below the ruby and emerald tablets.
-        # Due to how the pictures are arranged, it makes more sense for the ruby and
-        # emerald tablets to be above the amber tablet.
-        self.amber_tablet_button = TrackerInventoryButton(
-            ["Nothing", AMBER_TABLET],
-            ["tablets/amber_tablet_gray.png", "tablets/amber_tablet.png"],
-            self.ui.tablet_widget,
-        )
-        self.emerald_tablet_button = TrackerInventoryButton(
-            ["Nothing", EMERALD_TABLET],
-            ["tablets/emerald_tablet_gray.png", "tablets/emerald_tablet.png"],
-            self.ui.tablet_widget,
-        )
-        self.ruby_tablet_button = TrackerInventoryButton(
-            ["Nothing", RUBY_TABLET],
-            ["tablets/ruby_tablet_gray.png", "tablets/ruby_tablet.png"],
-            self.ui.tablet_widget,
-        )
-
-        # Manually set the positions of the tablet buttons so they can overlap
-        # each other and fit together
-        self.emerald_tablet_button.setFixedSize(74, 66)
-        self.emerald_tablet_button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        self.emerald_tablet_button.move(68, 90)
-        self.ruby_tablet_button.setFixedSize(101, 52)
-        self.ruby_tablet_button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        self.ruby_tablet_button.move(40, 49)
-        self.amber_tablet_button.setFixedSize(70, 107)
-        self.amber_tablet_button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        self.amber_tablet_button.move(3, 49)
-
         # Load in tracker area buttons
         area_button_data = yaml_load(TRACKER_AREAS_PATH)
         for area_button_node in area_button_data:
@@ -482,6 +452,8 @@ class Tracker:
         self.ui.dungeon_fs_layout.addWidget(TrackerDungeonLabel("FS", "Fire Sanctuary"))
         self.ui.dungeon_sk_layout.addWidget(TrackerDungeonLabel("SK", "Sky Keep"))
 
+        self.ui.inventory_sword_layout.addWidget(self.sword_button)
+
         self.ui.inventory_b_wheel_layout.addWidget(self.beetle_button, 0, 0)
         self.ui.inventory_b_wheel_layout.addWidget(self.slingshot_button, 0, 1)
         self.ui.inventory_b_wheel_layout.addWidget(self.bombs_button, 0, 2)
@@ -491,7 +463,8 @@ class Tracker:
         self.ui.inventory_b_wheel_layout.addWidget(self.whip_button, 1, 2)
         self.ui.inventory_b_wheel_layout.addWidget(self.gust_bellows_button, 1, 3)
 
-        self.ui.inventory_sword_layout.addWidget(self.sword_button)
+        self.ui.inventory_tablet_layout.addWidget(TrackerTabletWidget())
+        self.ui.inventory_tablet_layout.addWidget(self.triforce_button)
 
         self.ui.lower_inventory_layout.addWidget(self.lanayru_caves_key_button, 0, 0)
         self.ui.lower_inventory_layout.addWidget(self.sea_chart_button, 0, 1)
