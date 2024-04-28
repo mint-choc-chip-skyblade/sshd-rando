@@ -66,6 +66,7 @@ class Tracker:
         self.started: bool = False
         self.areas: dict[str, TrackerArea] = {}
         self.active_area: TrackerArea = None
+        self.last_opened_region: TrackerArea = None
         self.random_settings: list = []
         self.items_on_mark: dict[Location, Item] = {}
         self.own_dungeon_key_locations: list[tuple[Item, list[Location]]] = []
@@ -100,6 +101,11 @@ class Tracker:
         self.ui.set_starting_entrance_button.clicked.connect(
             self.on_set_starting_entrance_button_clicked
         )
+        self.ui.check_all_button.clicked.connect(self.on_check_all_clicked)
+        self.ui.check_all_in_logic_button.clicked.connect(
+            self.on_check_all_in_logic_clicked
+        )
+        self.ui.uncheck_all_button.clicked.connect(self.on_uncheck_all_clicked)
 
         self.update_statistics()
 
@@ -567,6 +573,9 @@ class Tracker:
         self.ui.set_starting_entrance_button.setVisible(
             self.world.setting("random_starting_spawn") != "vanilla"
         )
+        self.ui.check_all_button.setVisible(False)
+        self.ui.check_all_in_logic_button.setVisible(False)
+        self.ui.uncheck_all_button.setVisible(False)
 
         # Hide specific inventory buttons depending on settings
         # ET Key Pieces
@@ -777,16 +786,14 @@ class Tracker:
                 child.setVisible(False)
 
         # Don't display the back button if we're at the root
-        if area_name == "Root":
-            self.back_button.setVisible(False)
-        else:
-            self.back_button.setVisible(True)
+        self.back_button.setVisible(area_name != "Root")
 
         # Save current area in the autosave
         self.autosave_tracker()
 
     def show_area_locations(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, False):
+            self.last_opened_region = area_button
             self.show_area_location_info(area_name)
             self.clear_layout(self.ui.tracker_locations_scroll_layout)
             locations = area_button.get_included_locations(remove_special_types=False)
@@ -821,6 +828,10 @@ class Tracker:
                 TrackerLocationLabel
             ):
                 location_label.clicked.connect(self.on_click_location_label)
+
+            self.ui.check_all_button.setVisible(area_name != "Root")
+            self.ui.check_all_in_logic_button.setVisible(area_name != "Root")
+            self.ui.uncheck_all_button.setVisible(area_name != "Root")
 
     def show_area_location_info(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, False):
@@ -1368,3 +1379,22 @@ class Tracker:
         self.ui.tracker_stats_checked.setText(f"{num_checked_locations: {3}}")
         self.ui.tracker_stats_accessible.setText(f"{num_accessible_locations: {3}}")
         self.ui.tracker_stats_remaining.setText(f"{num_remaining_locations: {3}}")
+
+    def on_check_all_clicked(self):
+        self.handle_check_all(False, True)
+
+    def on_check_all_in_logic_clicked(self):
+        self.handle_check_all(True, True)
+
+    def on_uncheck_all_clicked(self):
+        self.handle_check_all()
+
+    def handle_check_all(self, in_logic_only=False, check=False):
+        assert self.last_opened_region != None
+        if in_logic_only:
+            location_list = self.last_opened_region.get_available_locations()
+        else:
+            location_list = self.last_opened_region.get_included_locations()
+        for location in location_list:
+            location.marked = check
+        self.update_tracker()
