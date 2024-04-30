@@ -549,9 +549,19 @@ class Tracker:
         # the most possible entrances
         self.world.setting("limit_starting_spawn").set_value("off")
 
+        # Temporarily set starting hearts to not random if it is.
+        # Otherwise the item pool will fail to build.
+        starting_hearts = self.world.setting("starting_hearts")
+        starting_hearts_value = starting_hearts.value()
+        if starting_hearts == "random":
+            starting_hearts.set_value("6")
+
         # Build the world (only as necessary)
         self.world.build()
         self.world.perform_pre_entrance_shuffle_tasks()
+
+        # Restore starting hearts value
+        starting_hearts.set_value(starting_hearts_value)
 
         # Get any random settings. If any are passed in from the autosave
         # load those instead of loading them from the world
