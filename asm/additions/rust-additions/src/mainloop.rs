@@ -2,6 +2,7 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use crate::color;
 use crate::debug;
 use crate::input;
 
@@ -57,13 +58,13 @@ pub fn main_loop_inject() -> *mut c_void {
             && input::check_button_held(input::BUTTON_INPUTS::A_BUTTON)
             && input::check_button_held(input::BUTTON_INPUTS::R_BUTTON))
         {
-            unsafe {
-                (*reload_color_fader).other_state = 1;
-                (*reload_color_fader).previous_state = (*reload_color_fader).current_state;
-                (*reload_color_fader).current_state = 1;
-                do_soft_reset(reload_color_fader);
-            }
+            (*reload_color_fader).other_state = 1;
+            (*reload_color_fader).previous_state = (*reload_color_fader).current_state;
+            (*reload_color_fader).current_state = 1;
+            do_soft_reset(reload_color_fader);
         }
+
+        color::handle_colors();
 
         return dSystem;
     }

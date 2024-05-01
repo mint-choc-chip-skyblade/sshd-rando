@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -725,7 +725,7 @@
         <item row="0" column="3">
          <widget class="QGroupBox" name="tweaks_group_box">
           <property name="title">
-           <string>Tweaks and Cosmetics</string>
+           <string>Tweaks</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
            <item>
@@ -816,44 +816,6 @@
               <string>Full Wallet Upgrades</string>
              </property>
             </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_tunic_swap">
-             <property name="text">
-              <string>Tunic Swap</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_starry_skies">
-             <property name="text">
-              <string>Starry Skies</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_remove_enemy_music">
-             <property name="text">
-              <string>Remove Enemy Music</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="Line" name="line_2">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="language_label">
-             <property name="text">
-              <string>In-Game Language</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_language"/>
            </item>
            <item>
             <spacer name="tweaks_vspacer">
@@ -3015,6 +2977,172 @@ Practice Sword</string>
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="cosmetics_tab">
+       <attribute name="title">
+        <string>Cosmetics</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="environment_cosmetics_group_box">
+          <property name="title">
+           <string>Environment Cosmetics</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_33">
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_starry_skies">
+             <property name="text">
+              <string>Starry Skies</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="daytime_sky_color_label">
+             <property name="text">
+              <string>Daytime Sky Color</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_daytime_sky_color"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="nighttime_sky_color_label">
+             <property name="text">
+              <string>Nighttime Sky Color</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_nighttime_sky_color"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="daytime_cloud_color_label">
+             <property name="text">
+              <string>Daytime Cloud Color</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_daytime_cloud_color"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="nighttime_cloud_color_label">
+             <property name="text">
+              <string>Nighttime Cloud Color</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_nighttime_cloud_color"/>
+           </item>
+           <item>
+            <spacer name="environment_cosmetics_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="player_cosmetics_group_box">
+          <property name="title">
+           <string>Player Cosmetics</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_37">
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_tunic_swap">
+             <property name="text">
+              <string>Tunic Swap</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="player_cosmetics_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>545</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="audio_cosmetics_group_box">
+          <property name="title">
+           <string>Audio Cosmetics</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_35">
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_remove_enemy_music">
+             <property name="text">
+              <string>Remove Enemy Music</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="audio_cosmetics_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>545</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="text_cosmetics_group_box">
+          <property name="title">
+           <string>Text Cosmetics</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_36">
+           <item>
+            <widget class="QLabel" name="language_label">
+             <property name="text">
+              <string>In-Game Language</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_language"/>
+           </item>
+           <item>
+            <spacer name="text_cosmetics_vspacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>522</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="advanced_tab">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -3685,7 +3813,7 @@ QPushButton {
                <x>0</x>
                <y>0</y>
                <width>546</width>
-               <height>311</height>
+               <height>312</height>
               </rect>
              </property>
              <property name="maximumSize">
