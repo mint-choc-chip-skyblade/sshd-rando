@@ -3101,6 +3101,16 @@ Practice Sword</string>
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="low_health_beeping_speed_label">
+             <property name="text">
+              <string>Low Health Beeping Speed</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_low_health_beeping_speed"/>
+           </item>
+           <item>
             <spacer name="audio_cosmetics_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>

@@ -912,6 +912,27 @@
     - "off": "The background music will be interrupted by enemy drums when you get near to an enemy. Additionally, the intense music when Scaldera and Tentalus are vulnerable will play as normal."
     - "on": "The background music will continue to play when you get near to enemies. Additionally, the intense music when Scaldera and Tentalus are vulnerable will not play and the background music will continue uninterrupted."
 
+- name: low_health_beeping_speed
+  type: Cosmetic
+  default_option: normal
+  pretty_name: Low Health Beeping Speed
+  pretty_options:
+    - Very Fast
+    - Fast
+    - Normal
+    - Slow
+    - Very Slow
+    - No Beeping
+    - No Beeping or Flashing
+  options:
+    - very_fast: "The game will play the low health beep sound every time Link flashes red."
+    - fast: "The game will play the low health beep sound every other time Link flashes red."
+    - normal: "The game will play the low health beep sound every 3rd time Link flashes red."
+    - slow: "The game will play the low health beep sound every 6th time Link flashes red."
+    - very_slow: "The game will play the low health beep sound every 12th time Link flashes red."
+    - no_beeping: "The game will not play the low health beep sound. Link will still flash red."
+    - no_beeping_or_flashing: "The game will not play the low health beep sound. Link will not flash red either."
+
 ###############
 ## Shortcuts ##
 ###############
