@@ -3065,6 +3065,13 @@ Practice Sword</string>
             </widget>
            </item>
            <item>
+            <widget class="RandoTriStateCheckBox" name="setting_lightning_skyward_strike">
+             <property name="text">
+              <string>Lightning Skyward Strike</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <spacer name="player_cosmetics_vspacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
@@ -3812,8 +3819,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>546</width>
-               <height>312</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <property name="maximumSize">

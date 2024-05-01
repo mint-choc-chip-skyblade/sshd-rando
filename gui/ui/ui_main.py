@@ -2033,6 +2033,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_37.addWidget(self.setting_tunic_swap)
 
+        self.setting_lightning_skyward_strike = RandoTriStateCheckBox(self.player_cosmetics_group_box)
+        self.setting_lightning_skyward_strike.setObjectName(u"setting_lightning_skyward_strike")
+
+        self.verticalLayout_37.addWidget(self.setting_lightning_skyward_strike)
+
         self.player_cosmetics_vspacer = QSpacerItem(20, 545, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_37.addItem(self.player_cosmetics_vspacer)
@@ -2528,7 +2533,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 312))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2917,6 +2922,7 @@ class Ui_main_window(object):
         self.nighttime_cloud_color_label.setText(QCoreApplication.translate("main_window", u"Nighttime Cloud Color", None))
         self.player_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Player Cosmetics", None))
         self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
+        self.setting_lightning_skyward_strike.setText(QCoreApplication.translate("main_window", u"Lightning Skyward Strike", None))
         self.audio_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Audio Cosmetics", None))
         self.setting_remove_enemy_music.setText(QCoreApplication.translate("main_window", u"Remove Enemy Music", None))
         self.text_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Text Cosmetics", None))

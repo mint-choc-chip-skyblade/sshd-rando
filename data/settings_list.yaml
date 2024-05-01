@@ -755,6 +755,17 @@
     - "off": "Link will be dressed in his green knight's uniform."
     - "on": "Link will be dressed in his Skyloft outfit seen at the start of the vanilla game."
 
+- name: lightning_skyward_strike
+  type: Cosmetic
+  default_option: "off"
+  pretty_name: Lightning Skyward Strike
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Skyward strikes will only have the lightning effect when in the Demise fight."
+    - "on": "Skyward strikes will have the lighting particle effects at all times."
+
 - name: starry_skies
   type: Cosmetic
   default_option: "off"
