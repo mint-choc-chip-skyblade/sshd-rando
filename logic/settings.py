@@ -91,7 +91,9 @@ class Setting:
             random_options = self.info.options[
                 self.info.random_low : self.info.random_high + 1
             ]
-            self.value = random.choice(random_options)
+            self.update_current_value(
+                self.info.options.index(random.choice(random_options))
+            )
             logging.getLogger("").debug(
                 f"Chose {self.value} as random option for {self.name}"
             )
