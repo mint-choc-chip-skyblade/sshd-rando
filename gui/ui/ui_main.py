@@ -2054,6 +2054,16 @@ class Ui_main_window(object):
 
         self.verticalLayout_35.addWidget(self.setting_remove_enemy_music)
 
+        self.low_health_beeping_speed_label = QLabel(self.audio_cosmetics_group_box)
+        self.low_health_beeping_speed_label.setObjectName(u"low_health_beeping_speed_label")
+
+        self.verticalLayout_35.addWidget(self.low_health_beeping_speed_label)
+
+        self.setting_low_health_beeping_speed = QComboBox(self.audio_cosmetics_group_box)
+        self.setting_low_health_beeping_speed.setObjectName(u"setting_low_health_beeping_speed")
+
+        self.verticalLayout_35.addWidget(self.setting_low_health_beeping_speed)
+
         self.audio_cosmetics_vspacer = QSpacerItem(20, 545, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_35.addItem(self.audio_cosmetics_vspacer)
@@ -2940,6 +2950,7 @@ class Ui_main_window(object):
         self.setting_lightning_skyward_strike.setText(QCoreApplication.translate("main_window", u"Lightning Skyward Strike", None))
         self.audio_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Audio Cosmetics", None))
         self.setting_remove_enemy_music.setText(QCoreApplication.translate("main_window", u"Remove Enemy Music", None))
+        self.low_health_beeping_speed_label.setText(QCoreApplication.translate("main_window", u"Low Health Beeping Speed", None))
         self.text_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Text Cosmetics", None))
         self.language_label.setText(QCoreApplication.translate("main_window", u"In-Game Language", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.cosmetics_tab), QCoreApplication.translate("main_window", u"Cosmetics", None))
