@@ -909,8 +909,8 @@
     - "Off"
     - "On"
   options:
-    - "off": "The background music will be interrupted by enemy drums when you get near to an enemy."
-    - "on": "The background music will continue to play when you get near to enemies."
+    - "off": "The background music will be interrupted by enemy drums when you get near to an enemy. Additionally, the intense music when Scaldera and Tentalus are vulnerable will play as normal."
+    - "on": "The background music will continue to play when you get near to enemies. Additionally, the intense music when Scaldera and Tentalus are vulnerable will not play and the background music will continue uninterrupted."
 
 ###############
 ## Shortcuts ##
