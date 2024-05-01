@@ -3756,6 +3756,27 @@ QPushButton {
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="check_all_button">
+            <property name="text">
+             <string>Check All</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="check_all_in_logic_button">
+            <property name="text">
+             <string>Check All in Logic</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="uncheck_all_button">
+            <property name="text">
+             <string>Uncheck All</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="tracker_info_layout_spacer">
             <property name="orientation">
              <enum>Qt::Vertical</enum>

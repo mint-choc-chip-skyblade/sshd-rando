@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'custom_theme_dialog.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.7.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -150,8 +150,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_3 = QFrame(self.demo_group_box)
         self.demo_line_3.setObjectName(u"demo_line_3")
-        self.demo_line_3.setFrameShape(QFrame.HLine)
-        self.demo_line_3.setFrameShadow(QFrame.Sunken)
+        self.demo_line_3.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_3.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_3)
 
@@ -162,8 +162,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_2 = QFrame(self.demo_group_box)
         self.demo_line_2.setObjectName(u"demo_line_2")
-        self.demo_line_2.setFrameShape(QFrame.HLine)
-        self.demo_line_2.setFrameShadow(QFrame.Sunken)
+        self.demo_line_2.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_2.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_2)
 
@@ -179,8 +179,8 @@ class Ui_CustomThemeDialog(object):
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.demo_line.sizePolicy().hasHeightForWidth())
         self.demo_line.setSizePolicy(sizePolicy3)
-        self.demo_line.setFrameShape(QFrame.HLine)
-        self.demo_line.setFrameShadow(QFrame.Sunken)
+        self.demo_line.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line)
 
@@ -191,8 +191,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_10 = QFrame(self.demo_group_box)
         self.demo_line_10.setObjectName(u"demo_line_10")
-        self.demo_line_10.setFrameShape(QFrame.HLine)
-        self.demo_line_10.setFrameShadow(QFrame.Sunken)
+        self.demo_line_10.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_10.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_10)
 
@@ -203,8 +203,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_9 = QFrame(self.demo_group_box)
         self.demo_line_9.setObjectName(u"demo_line_9")
-        self.demo_line_9.setFrameShape(QFrame.HLine)
-        self.demo_line_9.setFrameShadow(QFrame.Sunken)
+        self.demo_line_9.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_9.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_9)
 
@@ -215,8 +215,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_8 = QFrame(self.demo_group_box)
         self.demo_line_8.setObjectName(u"demo_line_8")
-        self.demo_line_8.setFrameShape(QFrame.HLine)
-        self.demo_line_8.setFrameShadow(QFrame.Sunken)
+        self.demo_line_8.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_8.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_8)
 
@@ -227,8 +227,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_7 = QFrame(self.demo_group_box)
         self.demo_line_7.setObjectName(u"demo_line_7")
-        self.demo_line_7.setFrameShape(QFrame.HLine)
-        self.demo_line_7.setFrameShadow(QFrame.Sunken)
+        self.demo_line_7.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_7.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_7)
 
@@ -239,8 +239,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_6 = QFrame(self.demo_group_box)
         self.demo_line_6.setObjectName(u"demo_line_6")
-        self.demo_line_6.setFrameShape(QFrame.HLine)
-        self.demo_line_6.setFrameShadow(QFrame.Sunken)
+        self.demo_line_6.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_6.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_6)
 
@@ -252,8 +252,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_5 = QFrame(self.demo_group_box)
         self.demo_line_5.setObjectName(u"demo_line_5")
-        self.demo_line_5.setFrameShape(QFrame.HLine)
-        self.demo_line_5.setFrameShadow(QFrame.Sunken)
+        self.demo_line_5.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_5.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_5)
 
@@ -265,8 +265,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_4 = QFrame(self.demo_group_box)
         self.demo_line_4.setObjectName(u"demo_line_4")
-        self.demo_line_4.setFrameShape(QFrame.HLine)
-        self.demo_line_4.setFrameShadow(QFrame.Sunken)
+        self.demo_line_4.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_4.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_4)
 
@@ -297,8 +297,8 @@ class Ui_CustomThemeDialog(object):
         sizePolicy4.setVerticalStretch(0)
         sizePolicy4.setHeightForWidth(self.demo_line_separator_left.sizePolicy().hasHeightForWidth())
         self.demo_line_separator_left.setSizePolicy(sizePolicy4)
-        self.demo_line_separator_left.setFrameShape(QFrame.VLine)
-        self.demo_line_separator_left.setFrameShadow(QFrame.Sunken)
+        self.demo_line_separator_left.setFrameShape(QFrame.Shape.VLine)
+        self.demo_line_separator_left.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.horizontalLayout_2.addWidget(self.demo_line_separator_left)
 
@@ -312,8 +312,8 @@ class Ui_CustomThemeDialog(object):
         self.demo_line_separator_right.setObjectName(u"demo_line_separator_right")
         sizePolicy4.setHeightForWidth(self.demo_line_separator_right.sizePolicy().hasHeightForWidth())
         self.demo_line_separator_right.setSizePolicy(sizePolicy4)
-        self.demo_line_separator_right.setFrameShape(QFrame.VLine)
-        self.demo_line_separator_right.setFrameShadow(QFrame.Sunken)
+        self.demo_line_separator_right.setFrameShape(QFrame.Shape.VLine)
+        self.demo_line_separator_right.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.horizontalLayout_2.addWidget(self.demo_line_separator_right)
 
@@ -326,8 +326,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_11 = QFrame(self.demo_widgets_tab)
         self.demo_line_11.setObjectName(u"demo_line_11")
-        self.demo_line_11.setFrameShape(QFrame.HLine)
-        self.demo_line_11.setFrameShadow(QFrame.Sunken)
+        self.demo_line_11.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_11.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_right.addWidget(self.demo_line_11)
 
