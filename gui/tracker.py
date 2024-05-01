@@ -76,6 +76,11 @@ class Tracker:
         # Holds available targets for disconnected entrances
         self.target_entrance_pools: EntrancePools = {}
 
+        # Hide the check/uncheck all buttons until an area is selected
+        self.ui.check_all_button.setVisible(False)
+        self.ui.check_all_in_logic_button.setVisible(False)
+        self.ui.uncheck_all_button.setVisible(False)
+
         # Display the Sky if there's no active tracker
         self.ui.map_widget.setStyleSheet(
             Tracker.map_widget_stylesheet.replace("IMAGE_FILENAME", "Sky.png")
@@ -583,9 +588,6 @@ class Tracker:
         self.ui.set_starting_entrance_button.setVisible(
             self.world.setting("random_starting_spawn") != "vanilla"
         )
-        self.ui.check_all_button.setVisible(False)
-        self.ui.check_all_in_logic_button.setVisible(False)
-        self.ui.uncheck_all_button.setVisible(False)
 
         # Hide specific inventory buttons depending on settings
         # ET Key Pieces

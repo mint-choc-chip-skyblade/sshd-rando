@@ -280,7 +280,7 @@ class ASMPatchHandler:
             global_variables_diff_file_path = (
                 temp_dir_name / "global-variables-diff.yaml"
             )
-            self.init_global_variables(global_variables_diff_file_path)
+            self.init_global_variables(global_variables_diff_file_path, world)
 
             print("Patching starting entrance")
             staring_entrance_diff_file_path = (
@@ -484,8 +484,28 @@ class ASMPatchHandler:
         # If this fails, the rust struct size will need increasing
         assert len(startflags_data_bytes) < MAX_STARTFLAGS
 
-    def init_global_variables(self, output_path: Path):
-        init_globals_dict = {
+    def init_global_variables(self, output_path: Path, world: World):
+
+        daytime_sky_color_index = world.setting_map.settings[
+            "daytime_sky_color"
+        ].current_option_index
+        nighttime_sky_color_index = world.setting_map.settings[
+            "nighttime_sky_color"
+        ].current_option_index
+        daytime_cloud_color_index = world.setting_map.settings[
+            "daytime_cloud_color"
+        ].current_option_index
+        nighttime_cloud_color_index = world.setting_map.settings[
+            "nighttime_cloud_color"
+        ].current_option_index
+
+        init_rw_globals_dict = {
+            0x712E54B6BC: [
+                daytime_sky_color_index,
+                nighttime_sky_color_index,
+                daytime_cloud_color_index,
+                nighttime_cloud_color_index,
+            ],  # SKY_CLOUD_COLORS
             0x712E5FF020: [
                 0xFF,
                 0xFF,
@@ -509,11 +529,16 @@ class ASMPatchHandler:
                 random.randint(0, 0xFF),
                 random.randint(0, 0xFF),
                 random.randint(0, 0xFF),
-                # RNG_SEED
-            ],
+            ],  # RNG_SEED
+            0x712E5FF034: [
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+            ],  # COLOR_CHANGE_DELAY
         }
 
-        yaml_write(output_path, init_globals_dict)
+        yaml_write(output_path, init_rw_globals_dict)
 
         # Write the global variables binary to a non-temp file.
         # yaml_write(Path("./test-global-variables.yaml"), init_globals_dict)

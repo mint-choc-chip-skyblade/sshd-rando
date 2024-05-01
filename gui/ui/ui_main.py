@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.7.0
+## Created by: Qt User Interface Compiler version 6.6.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -557,38 +557,6 @@ class Ui_main_window(object):
 
         self.verticalLayout.addWidget(self.setting_full_wallet_upgrades)
 
-        self.setting_tunic_swap = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_tunic_swap.setObjectName(u"setting_tunic_swap")
-
-        self.verticalLayout.addWidget(self.setting_tunic_swap)
-
-        self.setting_starry_skies = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_starry_skies.setObjectName(u"setting_starry_skies")
-
-        self.verticalLayout.addWidget(self.setting_starry_skies)
-
-        self.setting_remove_enemy_music = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_remove_enemy_music.setObjectName(u"setting_remove_enemy_music")
-
-        self.verticalLayout.addWidget(self.setting_remove_enemy_music)
-
-        self.line_2 = QFrame(self.tweaks_group_box)
-        self.line_2.setObjectName(u"line_2")
-        self.line_2.setFrameShape(QFrame.Shape.HLine)
-        self.line_2.setFrameShadow(QFrame.Shadow.Sunken)
-
-        self.verticalLayout.addWidget(self.line_2)
-
-        self.language_label = QLabel(self.tweaks_group_box)
-        self.language_label.setObjectName(u"language_label")
-
-        self.verticalLayout.addWidget(self.language_label)
-
-        self.setting_language = QComboBox(self.tweaks_group_box)
-        self.setting_language.setObjectName(u"setting_language")
-
-        self.verticalLayout.addWidget(self.setting_language)
-
         self.tweaks_vspacer = QSpacerItem(20, 148, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.tweaks_vspacer)
@@ -840,8 +808,8 @@ class Ui_main_window(object):
 
         self.line = QFrame(self.open_dungeons_group_box)
         self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.Shape.HLine)
-        self.line.setFrameShadow(QFrame.Shadow.Sunken)
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_25.addWidget(self.line)
 
@@ -1044,8 +1012,8 @@ class Ui_main_window(object):
 
         self.mixed_entrance_pools_hline = QFrame(self.mixed_entrance_pools_group_box)
         self.mixed_entrance_pools_hline.setObjectName(u"mixed_entrance_pools_hline")
-        self.mixed_entrance_pools_hline.setFrameShape(QFrame.Shape.HLine)
-        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Shadow.Sunken)
+        self.mixed_entrance_pools_hline.setFrameShape(QFrame.HLine)
+        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_28.addWidget(self.mixed_entrance_pools_hline)
 
@@ -1996,6 +1964,135 @@ class Ui_main_window(object):
         self.gridLayout_5.addWidget(self.tricks_group_box, 1, 0, 1, 1)
 
         self.tab_widget.addTab(self.logic_tab, "")
+        self.cosmetics_tab = QWidget()
+        self.cosmetics_tab.setObjectName(u"cosmetics_tab")
+        self.horizontalLayout_2 = QHBoxLayout(self.cosmetics_tab)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.environment_cosmetics_group_box = QGroupBox(self.cosmetics_tab)
+        self.environment_cosmetics_group_box.setObjectName(u"environment_cosmetics_group_box")
+        self.verticalLayout_33 = QVBoxLayout(self.environment_cosmetics_group_box)
+        self.verticalLayout_33.setObjectName(u"verticalLayout_33")
+        self.setting_starry_skies = RandoTriStateCheckBox(self.environment_cosmetics_group_box)
+        self.setting_starry_skies.setObjectName(u"setting_starry_skies")
+
+        self.verticalLayout_33.addWidget(self.setting_starry_skies)
+
+        self.daytime_sky_color_label = QLabel(self.environment_cosmetics_group_box)
+        self.daytime_sky_color_label.setObjectName(u"daytime_sky_color_label")
+
+        self.verticalLayout_33.addWidget(self.daytime_sky_color_label)
+
+        self.setting_daytime_sky_color = QComboBox(self.environment_cosmetics_group_box)
+        self.setting_daytime_sky_color.setObjectName(u"setting_daytime_sky_color")
+
+        self.verticalLayout_33.addWidget(self.setting_daytime_sky_color)
+
+        self.nighttime_sky_color_label = QLabel(self.environment_cosmetics_group_box)
+        self.nighttime_sky_color_label.setObjectName(u"nighttime_sky_color_label")
+
+        self.verticalLayout_33.addWidget(self.nighttime_sky_color_label)
+
+        self.setting_nighttime_sky_color = QComboBox(self.environment_cosmetics_group_box)
+        self.setting_nighttime_sky_color.setObjectName(u"setting_nighttime_sky_color")
+
+        self.verticalLayout_33.addWidget(self.setting_nighttime_sky_color)
+
+        self.daytime_cloud_color_label = QLabel(self.environment_cosmetics_group_box)
+        self.daytime_cloud_color_label.setObjectName(u"daytime_cloud_color_label")
+
+        self.verticalLayout_33.addWidget(self.daytime_cloud_color_label)
+
+        self.setting_daytime_cloud_color = QComboBox(self.environment_cosmetics_group_box)
+        self.setting_daytime_cloud_color.setObjectName(u"setting_daytime_cloud_color")
+
+        self.verticalLayout_33.addWidget(self.setting_daytime_cloud_color)
+
+        self.nighttime_cloud_color_label = QLabel(self.environment_cosmetics_group_box)
+        self.nighttime_cloud_color_label.setObjectName(u"nighttime_cloud_color_label")
+
+        self.verticalLayout_33.addWidget(self.nighttime_cloud_color_label)
+
+        self.setting_nighttime_cloud_color = QComboBox(self.environment_cosmetics_group_box)
+        self.setting_nighttime_cloud_color.setObjectName(u"setting_nighttime_cloud_color")
+
+        self.verticalLayout_33.addWidget(self.setting_nighttime_cloud_color)
+
+        self.environment_cosmetics_vspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_33.addItem(self.environment_cosmetics_vspacer)
+
+
+        self.horizontalLayout_2.addWidget(self.environment_cosmetics_group_box)
+
+        self.player_cosmetics_group_box = QGroupBox(self.cosmetics_tab)
+        self.player_cosmetics_group_box.setObjectName(u"player_cosmetics_group_box")
+        self.verticalLayout_37 = QVBoxLayout(self.player_cosmetics_group_box)
+        self.verticalLayout_37.setObjectName(u"verticalLayout_37")
+        self.setting_tunic_swap = RandoTriStateCheckBox(self.player_cosmetics_group_box)
+        self.setting_tunic_swap.setObjectName(u"setting_tunic_swap")
+
+        self.verticalLayout_37.addWidget(self.setting_tunic_swap)
+
+        self.setting_lightning_skyward_strike = RandoTriStateCheckBox(self.player_cosmetics_group_box)
+        self.setting_lightning_skyward_strike.setObjectName(u"setting_lightning_skyward_strike")
+
+        self.verticalLayout_37.addWidget(self.setting_lightning_skyward_strike)
+
+        self.player_cosmetics_vspacer = QSpacerItem(20, 545, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_37.addItem(self.player_cosmetics_vspacer)
+
+
+        self.horizontalLayout_2.addWidget(self.player_cosmetics_group_box)
+
+        self.audio_cosmetics_group_box = QGroupBox(self.cosmetics_tab)
+        self.audio_cosmetics_group_box.setObjectName(u"audio_cosmetics_group_box")
+        self.verticalLayout_35 = QVBoxLayout(self.audio_cosmetics_group_box)
+        self.verticalLayout_35.setObjectName(u"verticalLayout_35")
+        self.setting_remove_enemy_music = RandoTriStateCheckBox(self.audio_cosmetics_group_box)
+        self.setting_remove_enemy_music.setObjectName(u"setting_remove_enemy_music")
+
+        self.verticalLayout_35.addWidget(self.setting_remove_enemy_music)
+
+        self.low_health_beeping_speed_label = QLabel(self.audio_cosmetics_group_box)
+        self.low_health_beeping_speed_label.setObjectName(u"low_health_beeping_speed_label")
+
+        self.verticalLayout_35.addWidget(self.low_health_beeping_speed_label)
+
+        self.setting_low_health_beeping_speed = QComboBox(self.audio_cosmetics_group_box)
+        self.setting_low_health_beeping_speed.setObjectName(u"setting_low_health_beeping_speed")
+
+        self.verticalLayout_35.addWidget(self.setting_low_health_beeping_speed)
+
+        self.audio_cosmetics_vspacer = QSpacerItem(20, 545, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_35.addItem(self.audio_cosmetics_vspacer)
+
+
+        self.horizontalLayout_2.addWidget(self.audio_cosmetics_group_box)
+
+        self.text_cosmetics_group_box = QGroupBox(self.cosmetics_tab)
+        self.text_cosmetics_group_box.setObjectName(u"text_cosmetics_group_box")
+        self.verticalLayout_36 = QVBoxLayout(self.text_cosmetics_group_box)
+        self.verticalLayout_36.setObjectName(u"verticalLayout_36")
+        self.language_label = QLabel(self.text_cosmetics_group_box)
+        self.language_label.setObjectName(u"language_label")
+
+        self.verticalLayout_36.addWidget(self.language_label)
+
+        self.setting_language = QComboBox(self.text_cosmetics_group_box)
+        self.setting_language.setObjectName(u"setting_language")
+
+        self.verticalLayout_36.addWidget(self.setting_language)
+
+        self.text_cosmetics_vspacer = QSpacerItem(20, 522, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_36.addItem(self.text_cosmetics_vspacer)
+
+
+        self.horizontalLayout_2.addWidget(self.text_cosmetics_group_box)
+
+        self.tab_widget.addTab(self.cosmetics_tab, "")
         self.advanced_tab = QWidget()
         self.advanced_tab.setObjectName(u"advanced_tab")
         sizePolicy1.setHeightForWidth(self.advanced_tab.sizePolicy().hasHeightForWidth())
@@ -2015,8 +2112,8 @@ class Ui_main_window(object):
 
         self.utils_hline = QFrame(self.file_setup_group_box)
         self.utils_hline.setObjectName(u"utils_hline")
-        self.utils_hline.setFrameShape(QFrame.Shape.HLine)
-        self.utils_hline.setFrameShadow(QFrame.Shadow.Sunken)
+        self.utils_hline.setFrameShape(QFrame.HLine)
+        self.utils_hline.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline)
 
@@ -2042,8 +2139,8 @@ class Ui_main_window(object):
 
         self.utils_hline_2 = QFrame(self.file_setup_group_box)
         self.utils_hline_2.setObjectName(u"utils_hline_2")
-        self.utils_hline_2.setFrameShape(QFrame.Shape.HLine)
-        self.utils_hline_2.setFrameShadow(QFrame.Shadow.Sunken)
+        self.utils_hline_2.setFrameShape(QFrame.HLine)
+        self.utils_hline_2.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline_2)
 
@@ -2077,8 +2174,8 @@ class Ui_main_window(object):
 
         self.utils_hline_3 = QFrame(self.file_setup_group_box)
         self.utils_hline_3.setObjectName(u"utils_hline_3")
-        self.utils_hline_3.setFrameShape(QFrame.Shape.HLine)
-        self.utils_hline_3.setFrameShadow(QFrame.Shadow.Sunken)
+        self.utils_hline_3.setFrameShape(QFrame.HLine)
+        self.utils_hline_3.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline_3)
 
@@ -2461,7 +2558,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 311))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2604,7 +2701,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(8)
+        self.tab_widget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2652,7 +2749,7 @@ class Ui_main_window(object):
         self.map_mode_label.setText(QCoreApplication.translate("main_window", u"Dungeon Maps", None))
         self.lanayru_caves_keys_label.setText(QCoreApplication.translate("main_window", u"Lanayru Caves Small Key", None))
         self.boss_key_puzzles_label.setText(QCoreApplication.translate("main_window", u"Boss Key Puzzles", None))
-        self.tweaks_group_box.setTitle(QCoreApplication.translate("main_window", u"Tweaks and Cosmetics", None))
+        self.tweaks_group_box.setTitle(QCoreApplication.translate("main_window", u"Tweaks", None))
         self.setting_spawn_hearts.setText(QCoreApplication.translate("main_window", u"Spawn Hearts and Heart Flowers", None))
         self.setting_upgraded_skyward_strike.setText(QCoreApplication.translate("main_window", u"Upgraded Skyward Strike", None))
         self.setting_faster_air_meter_depletion.setText(QCoreApplication.translate("main_window", u"Faster Air Meter Depletion", None))
@@ -2660,10 +2757,6 @@ class Ui_main_window(object):
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
-        self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
-        self.setting_starry_skies.setText(QCoreApplication.translate("main_window", u"Starry Skies", None))
-        self.setting_remove_enemy_music.setText(QCoreApplication.translate("main_window", u"Remove Enemy Music", None))
-        self.language_label.setText(QCoreApplication.translate("main_window", u"In-Game Language", None))
         self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
         self.got_sword_requirement_label.setText(QCoreApplication.translate("main_window", u"Gate of Time Sword Requirement", None))
         self.required_dungeons_label.setText(QCoreApplication.translate("main_window", u"Required Dungeons", None))
@@ -2846,6 +2939,21 @@ class Ui_main_window(object):
 "Practice Sword", None))
         self.setting_logic_itemless_first_timeshift_stone.setText(QCoreApplication.translate("main_window", u"Itemless First Timeshift Stone", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic and Tricks", None))
+        self.environment_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Environment Cosmetics", None))
+        self.setting_starry_skies.setText(QCoreApplication.translate("main_window", u"Starry Skies", None))
+        self.daytime_sky_color_label.setText(QCoreApplication.translate("main_window", u"Daytime Sky Color", None))
+        self.nighttime_sky_color_label.setText(QCoreApplication.translate("main_window", u"Nighttime Sky Color", None))
+        self.daytime_cloud_color_label.setText(QCoreApplication.translate("main_window", u"Daytime Cloud Color", None))
+        self.nighttime_cloud_color_label.setText(QCoreApplication.translate("main_window", u"Nighttime Cloud Color", None))
+        self.player_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Player Cosmetics", None))
+        self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
+        self.setting_lightning_skyward_strike.setText(QCoreApplication.translate("main_window", u"Lightning Skyward Strike", None))
+        self.audio_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Audio Cosmetics", None))
+        self.setting_remove_enemy_music.setText(QCoreApplication.translate("main_window", u"Remove Enemy Music", None))
+        self.low_health_beeping_speed_label.setText(QCoreApplication.translate("main_window", u"Low Health Beeping Speed", None))
+        self.text_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Text Cosmetics", None))
+        self.language_label.setText(QCoreApplication.translate("main_window", u"In-Game Language", None))
+        self.tab_widget.setTabText(self.tab_widget.indexOf(self.cosmetics_tab), QCoreApplication.translate("main_window", u"Cosmetics", None))
         self.file_setup_group_box.setTitle(QCoreApplication.translate("main_window", u"Extract and Output Utilities", None))
         self.config_generate_spoiler_log.setText(QCoreApplication.translate("main_window", u"Generate Spoiler Log", None))
         self.open_folders_label.setText(QCoreApplication.translate("main_window", u"Open Folders", None))

@@ -755,6 +755,17 @@
     - "off": "Link will be dressed in his green knight's uniform."
     - "on": "Link will be dressed in his Skyloft outfit seen at the start of the vanilla game."
 
+- name: lightning_skyward_strike
+  type: Cosmetic
+  default_option: "off"
+  pretty_name: Lightning Skyward Strike
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Skyward strikes will only have the lightning effect when in the Demise fight."
+    - "on": "Skyward strikes will have the lighting particle effects at all times."
+
 - name: starry_skies
   type: Cosmetic
   default_option: "off"
@@ -766,6 +777,130 @@
     - "off": "Stars will only appear in the sky at night."
     - "on": "Stars will appear in the sky during the day and night."
 
+- name: daytime_sky_color
+  type: Cosmetic
+  default_option: default
+  pretty_name: Daytime Sky Color
+  pretty_options:
+    - Default
+    - Blue
+    - Green
+    - Yellow
+    - Orange
+    - Red
+    - Purple
+    - Pink
+    - White
+    - Black
+    - Grey
+    - Rainbow
+  options:
+    - default: "The daytime sky color will be unchanged."
+    - blue: "The daytime sky color will be a pastel blue color."
+    - green: "The daytime sky color will be a pastel green color."
+    - yellow: "The daytime sky color will be a pastel yellow color."
+    - orange: "The daytime sky color will be a pastel orange color."
+    - red: "The daytime sky color will be a pastel red color."
+    - purple: "The daytime sky color will be a pastel purple color."
+    - pink: "The daytime sky color will be a pastel pink color."
+    - white: "The daytime sky color will be a white color."
+    - black: "The daytime sky color will be a black color."
+    - grey: "The daytime sky color will be a grey color."
+    - rainbow: "The daytime sky color will fade between different colors over time."
+
+- name: nighttime_sky_color
+  type: Cosmetic
+  default_option: default
+  pretty_name: Nighttime Sky Color
+  pretty_options:
+    - Default
+    - Blue
+    - Green
+    - Yellow
+    - Orange
+    - Red
+    - Purple
+    - Pink
+    - White
+    - Black
+    - Grey
+    - Rainbow
+  options:
+    - default: "The nighttime sky color will be unchanged."
+    - blue: "The nighttime sky color will be a pastel blue color."
+    - green: "The nighttime sky color will be a pastel green color."
+    - yellow: "The nighttime sky color will be a pastel yellow color."
+    - orange: "The nighttime sky color will be a pastel orange color."
+    - red: "The nighttime sky color will be a pastel red color."
+    - purple: "The nighttime sky color will be a pastel purple color."
+    - pink: "The nighttime sky color will be a pastel pink color."
+    - white: "The nighttime sky color will be a white color."
+    - black: "The nighttime sky color will be a black color."
+    - grey: "The nighttime sky color will be a grey color."
+    - rainbow: "The nighttime sky color will fade between different colors over time."
+
+- name: daytime_cloud_color
+  type: Cosmetic
+  default_option: default
+  pretty_name: Daytime Cloud Color
+  pretty_options:
+    - Default
+    - Blue
+    - Green
+    - Yellow
+    - Orange
+    - Red
+    - Purple
+    - Pink
+    - White
+    - Black
+    - Grey
+    - Rainbow
+  options:
+    - default: "The daytime cloud color will be unchanged."
+    - blue: "The daytime cloud color will be a pastel blue color."
+    - green: "The daytime cloud color will be a pastel green color."
+    - yellow: "The daytime cloud color will be a pastel yellow color."
+    - orange: "The daytime cloud color will be a pastel orange color."
+    - red: "The daytime cloud color will be a pastel red color."
+    - purple: "The daytime cloud color will be a pastel purple color."
+    - pink: "The daytime cloud color will be a pastel pink color."
+    - white: "The daytime cloud color will be a white color."
+    - black: "The daytime cloud color will be a black color."
+    - grey: "The daytime cloud color will be a grey color."
+    - rainbow: "The daytime cloud color will fade between different colors over time."
+
+- name: nighttime_cloud_color
+  type: Cosmetic
+  default_option: default
+  pretty_name: Nighttime Cloud Color
+  pretty_options:
+    - Default
+    - Blue
+    - Green
+    - Yellow
+    - Orange
+    - Red
+    - Purple
+    - Pink
+    - White
+    - Black
+    - Grey
+    - Rainbow
+  options:
+    - default: "The nighttime cloud color will be unchanged."
+    - blue: "The nighttime cloud color will be a pastel blue color."
+    - green: "The nighttime cloud color will be a pastel green color."
+    - yellow: "The nighttime cloud color will be a pastel yellow color."
+    - orange: "The nighttime cloud color will be a pastel orange color."
+    - red: "The nighttime cloud color will be a pastel red color."
+    - purple: "The nighttime cloud color will be a pastel purple color."
+    - pink: "The nighttime cloud color will be a pastel pink color."
+    - white: "The nighttime cloud color will be a white color."
+    - black: "The nighttime cloud color will be a black color."
+    - grey: "The nighttime cloud color will be a grey color."
+    - rainbow: "The nighttime cloud color will fade between different colors over time."
+
 - name: remove_enemy_music
   type: Cosmetic
   default_option: "off"
@@ -774,8 +909,29 @@
     - "Off"
     - "On"
   options:
-    - "off": "The background music will be interrupted by enemy drums when you get near to an enemy."
-    - "on": "The background music will continue to play when you get near to enemies."
+    - "off": "The background music will be interrupted by enemy drums when you get near to an enemy. Additionally, the intense music when Scaldera and Tentalus are vulnerable will play as normal."
+    - "on": "The background music will continue to play when you get near to enemies. Additionally, the intense music when Scaldera and Tentalus are vulnerable will not play and the background music will continue uninterrupted."
+
+- name: low_health_beeping_speed
+  type: Cosmetic
+  default_option: normal
+  pretty_name: Low Health Beeping Speed
+  pretty_options:
+    - Very Fast
+    - Fast
+    - Normal
+    - Slow
+    - Very Slow
+    - No Beeping
+    - No Beeping or Flashing
+  options:
+    - very_fast: "The game will play the low health beep sound every time Link flashes red."
+    - fast: "The game will play the low health beep sound every other time Link flashes red."
+    - normal: "The game will play the low health beep sound every 3rd time Link flashes red."
+    - slow: "The game will play the low health beep sound every 6th time Link flashes red."
+    - very_slow: "The game will play the low health beep sound every 12th time Link flashes red."
+    - no_beeping: "The game will not play the low health beep sound. Link will still flash red."
+    - no_beeping_or_flashing: "The game will not play the low health beep sound. Link will not flash red either."
 
 ###############
 ## Shortcuts ##

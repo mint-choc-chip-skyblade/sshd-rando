@@ -28,6 +28,14 @@ pub struct dLytMsgWindow {
 }
 assert_eq_size!([u8; 0xA98], dLytMsgWindow);
 
+#[repr(C, packed(1))]
+pub struct dLytPauseDisp {
+    pub _0:        [u8; 0xC5E],
+    pub is_paused: bool,
+    pub _1:        [u8; 0x11],
+}
+assert_eq_size!([u8; 0xC70], dLytPauseDisp);
+
 // Text stuff
 #[repr(C, packed(1))]
 pub struct TextManagerMaybe {
