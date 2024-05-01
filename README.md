@@ -54,6 +54,7 @@ coupling, mixing pools
 * Traps!
 * Hints are now controlled by their own settings
 * Ammo Availability to control how careful you need to be with deku seeds, bombs, and arrows
+* Lots of shortcuts
 * In-Game Language
 * Item Pool options for minimal, standard, extra, or plentiful amounts of progress items
 * Chest Type Matches Contents (CTMC)
@@ -62,6 +63,8 @@ coupling, mixing pools
 * Stamina Fruit Shuffle
 * Hidden Item Shuffle
 * NPC Closet Shuffle
+* Unlock all Groosenator Destinations
+* Sky and Cloud color cosmetic settings
 
 ### New Setting Options
 * Beatable Only logic option
@@ -69,6 +72,8 @@ coupling, mixing pools
 * Removed option for all Key shuffles which unlocks their doors from the start
 * Goddess Chest Shuffle to turn on/off randomization of the items inside Goddess Chests easily
 * Correct Orientation option for Randomized Boss Key Puzzles
+* The `Random Starting Item` setting is now a count where you can select how many random items you
+would like to start with
 
 ### New Checks
 * All the checks from Full Rupee, Single Gratitude Crystal, Stamina Fruit, Hidden Item, and NPC
@@ -97,18 +102,19 @@ Harp
 * Freestanding item models should all rest on the ground correctly without clipping into the floor
 * Speech bubbles will always and only appear above an NPC's head when they have some important
 information related to the randomizer (usually checks)
+* The `Remove Enemy Music` setting also removes the music which plays when Scaldera and Tentalus
+are vulnerable
+* All locations and items have cryptic hint text
 
 ### Not yet implemented
-* Gate of Time Sword requirement setting
 * Shop randomization
 * Flooded Faron Woods randomization
 * Chest Dowsing Matches Contents (CDMC) (we *do* have CTMC though)
 * Custom Models and Music (you can use the files from SDR to achieve this)
 * Random Music (you can use the files from SDR to achieve this)
-* Scrapper and Tadtones as items
+* Tadtones as items
 * Your loftwing moves very fast during the Levias fight (instead of being slowed to vanilla speed)
 * Trial Object Shuffle
 * Trial Treasure Shuffle
-* Starting with a Shield, Bottles, Gratitude Crystals, Heart Containers/Pieces, Treasures, Bugs
+* Starting with a Treasures or Bugs
 * Save File text isn't updated for the randomizer
-* Lightning Skyward Strike cosmetic setting
