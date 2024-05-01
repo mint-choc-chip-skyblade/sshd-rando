@@ -175,6 +175,9 @@ b.eq handle_bucha_traps
 cmp w8, #53
 b.eq handle_ac_boko_and_heartco_and_digspot_traps
 
+cmp w8, #54
+b.eq init_rainbow_colors
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

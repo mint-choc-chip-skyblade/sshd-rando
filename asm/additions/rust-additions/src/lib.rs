@@ -13,6 +13,7 @@ use static_assertions::assert_eq_size;
 
 mod actor;
 mod ammo;
+mod color;
 mod debug;
 mod entrance;
 mod event;
