@@ -417,7 +417,7 @@ def create_spawn_target_pool(world: World) -> list[Entrance]:
                 f"Unknown value for random starting spawn: '{starting_spawn_value}'"
             )
 
-    for entrance_type in shuffled_entrance_types:
+    for entrance_type in sorted(shuffled_entrance_types):
         for entrance in world.get_shuffleable_entrances(entrance_type):
             if can_start_at_entrance(entrance):
                 new_target_entrance = entrance.get_new_target()
