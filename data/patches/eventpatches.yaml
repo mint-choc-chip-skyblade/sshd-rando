@@ -2426,11 +2426,23 @@
       param3: 10 # Triggers an exit
 
 250-ForestSiren:
+  - name: Faron Trial Fi Questions Text
+    type: textpatch
+    index: 4
   - name: Remove first time trial Fi text
     type: flowpatch
     index: 3
     flow:
-      next: 67
+      next: Trial Questions Switch
+  - name: Trial Questions Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 77 # Fi question text
+      - 83 # End of Fi's text
 
 299-Demo:
   - name: Skip setting sword itemflag

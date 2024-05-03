@@ -5700,6 +5700,10 @@
   pretty: the <The Goddess's Silent Realm>
   cryptic:
 
+- name: Faron Trial Fi Questions Text
+  standard: "When your vessel is full, your spirit\nwill grow and you will be entrusted\nwith a <r<new power>> by the goddess.
+             \n\nDo you have any questions?[1]Yes![2-]No."
+
 - name: Trial Direct Nothing
   standard: The realm beyond holds <r<nothing>>.
 
