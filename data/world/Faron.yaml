@@ -387,8 +387,7 @@
 - name: Lake Floria
   hint_region: Lake Floria
   exits:
-    Lake Floria Emerged Area: Water_Dragons_Scale
-    Farore's Lair: Water_Dragons_Scale
+    Lake Floria Emerged Area: Water_Dragons_Scale # blow up rock with froak
     Faron Woods: Impossible # To satisfy entrance rando
   locations:
     Lake Floria - Rupee behind Southwest Boulder: Water_Dragons_Scale
@@ -400,7 +399,8 @@
   hint_region: Lake Floria
   exits:
     Lake Floria Statue: Nothing
-    Lake Floria: Water_Dragons_Scale
+    Lake Floria: can_access(Lake Floria) and Water_Dragons_Scale
+    Farore's Lair: Water_Dragons_Scale
   locations:
     Lake Floria - Chest near Bird Statue: Nothing
     Lake Floria - Goddess Cube near Bird Statue: Goddess_Sword
@@ -411,7 +411,7 @@
     Can Collect Water: Bottle
   exits:
     Floria Waterfall: Nothing
-    Lake Floria: Water_Dragons_Scale
+    Lake Floria Emerged Area: Water_Dragons_Scale
   locations:
     Lake Floria - Dragon Lair South Chest: Water_Dragons_Scale
     Lake Floria - Dragon Lair East Chest: Nothing
