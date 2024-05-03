@@ -435,7 +435,7 @@ ITEM_STORYFLAGS = {
         323,  # Scrapper
         371,  # Started Sparrot Quest
         396,  # Started Dodoh Quest
-        470,  # Started Kina Quest
+        # 470,  # Started Kina Quest - need to deliver soup first
         # 479,  # No Owlan Quest - need Kikwi Elder check first
     ),
     PROGRESSIVE_SWORD: [
