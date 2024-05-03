@@ -431,15 +431,21 @@ ITEM_STORYFLAGS = {
     TRIFORCE_OF_WISDOM: 730,
     COMPLETE_TRIFORCE: 645,
     FULL_ET_KEY: 120,
-    SCRAPPER: 323,
+    SCRAPPER: (
+        323,  # Scrapper
+        371,  # Started Sparrot Quest
+        396,  # Started Dodoh Quest
+        470,  # Started Kina Quest
+        # 479,  # No Owlan Quest - need Kikwi Elder check first
+    ),
     PROGRESSIVE_SWORD: [
-        906,
-        907,
-        908,
-        909,
-        910,
-        911,
-    ],  # Practice, Goddess, Long, White, MS, TMS
+        906,  # Practice Sword
+        907,  # Goddess Sword
+        908,  # Goddess Longsword
+        909,  # Goddess White Sword
+        910,  # Master Sword
+        911,  # True Master Sword
+    ],
     PROGRESSIVE_MITTS: [904, 905],  # Digging Mitts, Mogma Mitts
     PROGRESSIVE_BEETLE: [912, 913, 942, 943],  # Beetle, Heetle, Queetle, Teetle
     PROGRESSIVE_WALLET: [915, 916, 917, 918],  # Medium, Big, Giant, Tycoon
