@@ -536,7 +536,7 @@ def shuffle_non_assumed_entrance_pools(
     non_assumed_entrances = {
         pool[0]: target_entrance_pools[type]
         for type, pool in entrance_pools.items()
-        if type in non_assumed_entrance_types
+        if len(pool) > 0 and type in non_assumed_entrance_types
     }
 
     item_pool = get_complete_item_pool(worlds)

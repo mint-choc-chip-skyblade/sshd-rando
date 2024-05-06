@@ -5701,22 +5701,22 @@
   cryptic:
 
 - name: Trial Direct Nothing
-  standard: The realm beyond holds <r<nothing>>.
+  standard: " The realm beyond holds <r<nothing>>."
 
 - name: Trial Direct One
-  standard: The realm beyond holds |item|.
+  standard: " The realm beyond holds |item|."
 
 - name: Trial Direct Two Plus
-  standard: The realm beyond holds |item| and <r<%d more items>>.
+  standard: " The realm beyond holds |item| and <r<%d more items>>."
 
 - name: Trial Useless
-  standard: You probably don't need to use it...
+  standard: " You probably don't need to use it..."
 
 - name: Trial Useful
-  standard: It looks like it can unlock some useful items...
+  standard: " It looks like it can unlock some useful items..."
 
 - name: Trial Required
-  standard: Your spirit will grow by entering the realm beyond this song.
+  standard: " Your spirit will grow by entering the realm beyond this song."
 
 - name: Farore's Courage Inventory
   standard: This song opens the trial located in <b+<Faron Woods>>.

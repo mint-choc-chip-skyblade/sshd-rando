@@ -357,7 +357,7 @@ def add_song_text_patches(world: World, event_patch_handler: EventPatchHandler) 
         inventory_text_idx,
     ) in song_items.items():
         if song_item in world.song_hints:
-            useful_text = Text(" ") + world.song_hints[song_item].text
+            useful_text = world.song_hints[song_item].text
             inventory_text = get_text_data(f"{song_item} Inventory")
             inventory_text += useful_text
             inventory_text.break_lines()
