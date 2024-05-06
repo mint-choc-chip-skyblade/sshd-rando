@@ -411,9 +411,7 @@ class World:
 
         # Disable the Eldin Pillar -> Fire Sanctuary entrance so that
         # it doesn't erroneously give "access" to fire sanctuary in no logic
-        self.get_entrance(
-            "Eldin Pillar -> Inside the Fire Sanctuary Statue"
-        ).disable()
+        self.get_entrance("Eldin Pillar -> Inside the Fire Sanctuary Statue").disable()
         # Also disable Sky Keep's entrance if it's not required
         sky_keep = self.get_dungeon("Sky Keep")
         sky_keep.starting_entrance.disabled = not sky_keep.required
