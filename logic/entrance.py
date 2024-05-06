@@ -58,6 +58,12 @@ class Entrance:
             return self.parent_area < other.parent_area
         return self.connected_area < other.connected_area
 
+    def disable(self) -> None:
+        self.disabled = True
+
+    def enable(self) -> None:
+        self.disabled = False
+
     def connect(self, new_connected_area: "Area") -> None:
         self.connected_area = new_connected_area
         new_connected_area.entrances.append(self)

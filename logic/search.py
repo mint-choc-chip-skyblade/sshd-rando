@@ -1,6 +1,14 @@
-from .world import *
-
 import logging
+from collections import Counter
+from .item import *
+from .area import *
+
+from gui.dialogs.dialog_header import print_progress_text, update_progress_value
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .world import *
 
 
 class SearchMode:
@@ -15,12 +23,12 @@ class Search:
     def __init__(
         self,
         search_mode_: int,
-        worlds_: list[World],
+        worlds_: list["World"],
         items_: list[Item] = [],
         world_to_search_: int = -1,
     ) -> None:
         self.search_mode: int = search_mode_
-        self.worlds: list[World] = worlds_
+        self.worlds: list["World"] = worlds_
         self.world_to_search: int = world_to_search_
 
         # Search variables
@@ -317,14 +325,14 @@ class Search:
             world_graph.write("}")
 
 
-def game_beatable(worlds: list[World]) -> bool:
-    search = Search(SearchMode.GAME_BEATABLE, worlds)
+def game_beatable(worlds: list["World"], item_pool: list[Item] = []) -> bool:
+    search = Search(SearchMode.GAME_BEATABLE, worlds, item_pool)
     search.search_worlds()
     return search.is_beatable
 
 
 # Checks to see if each world's logic setting is currently satisfied
-def all_logic_satisfied(worlds: list[World], item_pool: Counter[Item] = {}) -> bool:
+def all_logic_satisfied(worlds: list["World"], item_pool: Counter[Item] = {}) -> bool:
     search = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds, item_pool)
     search.search_worlds()
     for world in worlds:
@@ -376,7 +384,7 @@ def all_logic_satisfied(worlds: list[World], item_pool: Counter[Item] = {}) -> b
     return True
 
 
-def generate_playthrough(worlds: list[World]) -> None:
+def generate_playthrough(worlds: list["World"]) -> None:
     logging.getLogger("").debug("Generating Playthrough")
     # Generate initial playthrough
     playthrough_search = Search(SearchMode.GENERATE_PLAYTHROUGH, worlds)
