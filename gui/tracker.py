@@ -1,4 +1,4 @@
-from logic.world import World
+from logic.world import *
 from logic.entrance_shuffle import (
     set_all_entrances_data,
     create_entrance_pools,
