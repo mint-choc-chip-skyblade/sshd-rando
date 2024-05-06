@@ -395,6 +395,9 @@ def evaluate_exit_requirement(search: "Search", exit_: "Entrance") -> int:
         # in the entrance shuffling algorithm
         return EvalSuccess.UNNECESSARY
 
+    if exit_.disabled:
+        return EvalSuccess.NONE
+
     parent_area = exit_.parent_area
     connected_area = exit_.connected_area
     parent_area_time = search.area_time[parent_area.id]

@@ -279,7 +279,7 @@
     Ancient Flower Farming: Hook_Beetle # For timeshift stone
     # ToT West Timeshift Stone: Hook_Beetle or (logic_bomb_throws and (Bomb_Bag or (logic_cactus_bomb_whip and Whip)))
   exits:
-    Temple of Time West Past Rubble: can_access(Temple of Time West Past Rubble)
+    Temple of Time West Past Rubble: Nothing
     Temple of Time North Minecart Ride: Long_Range_Skyward_Strike or Distance_Activator
   locations:
     Temple of Time - Gossip Stone near Robot: Nothing

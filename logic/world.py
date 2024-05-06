@@ -9,6 +9,7 @@ from .area import *
 from .requirements import *
 from .item_pool import *
 from .dungeon import *
+from .search import game_beatable, Search, SearchMode
 from util.text import *
 
 from collections import Counter, OrderedDict
@@ -399,7 +400,7 @@ class World:
                         ):
                             dungeon.starting_entrance = exit_
 
-    def choose_required_dungeons(self):
+    def choose_required_dungeons(self) -> None:
         num_required_dungeons = self.setting("required_dungeons").value_as_number()
 
         dungeons = [
@@ -408,17 +409,44 @@ class World:
             if d.goal_location and d.name != "Sky Keep"
         ]
 
+        # Disable the Eldin Pillar -> Fire Sanctuary entrance so that
+        # it doesn't erroneously give "access" to fire sanctuary in no logic
+        self.get_entrance("Eldin Pillar -> Inside the Fire Sanctuary Statue").disable()
+        # Also disable Sky Keep's entrance if it's not required
+        sky_keep = self.get_dungeon("Sky Keep")
+        sky_keep.starting_entrance.disabled = not sky_keep.required
+
+        random.shuffle(dungeons)
+        item_pool = get_complete_item_pool(self.worlds)
         # Remove any dungeons which have non-major items plandomized to their goal locations
-        # Also force require any dungeons which have a major item plandomized to their goal locations
+        # Also force any dungeons which have major items plandomized in them to be required
+        # If going through any dungeon is required due to entrance randomizer, then
+        # require that dungeon
         for dungeon in dungeons.copy():
+            # If disconnecting this dungeon's entrance makes the game unbeatable,
+            # then this dungeon is required. This should only happen in extreme
+            # entrance rando and plandomizer situations
+            dungeon.starting_entrance.disable()
+            if not game_beatable(self.worlds, item_pool):
+                dungeon.starting_entrance.enable()
+
             if (
                 not dungeon.goal_location.is_empty()
                 and not dungeon.goal_location.current_item.is_major_item
             ):
+                if not dungeon.starting_entrance.disabled:
+                    raise RuntimeError(
+                        f"Dungeon {dungeon.name} is required to go through, but has a junk goal location. Either roll a new seed or change your plandomizer to allow this dungeon to be required."
+                    )
                 dungeons.remove(dungeon)
-            elif (
-                not dungeon.goal_location.is_empty()
-                and dungeon.goal_location.current_item.is_major_item
+            elif not dungeon.starting_entrance.disabled or any(
+                [
+                    loc
+                    for loc in dungeon.locations
+                    if not loc.is_empty()
+                    and loc.current_item.is_major_item
+                    and not loc.has_known_vanilla_item
+                ]
             ):
                 dungeon.required = True
                 num_required_dungeons -= 1
@@ -429,24 +457,42 @@ class World:
                     raise WrongInfoError(
                         "There are more major items plandomized at the end of dungeons than there are required dungeons. Please remove some plandomized major items at the end of dungeons"
                     )
-                logging.getLogger("").debug(f"Chose {dungeons} as required dungeon")
+                logging.getLogger("").debug(
+                    f"Chose {dungeon} as force required dungeon"
+                )
 
         if num_required_dungeons > len(dungeons):
             raise WrongInfoError(
                 "Not enough free goal locations to satisfy required dungeons. Please remove junk that has been plandomized at the end of dungeons"
             )
 
-        random.shuffle(dungeons)
-        for i in range(num_required_dungeons):
+        for _ in range(num_required_dungeons):
             dungeon = dungeons.pop()
             dungeon.required = True
+            dungeon.starting_entrance.enable()
             logging.getLogger("").debug(f"Chose {dungeon} as required dungeon")
 
-        # Set dungeon locations which should be barren as non-progress
-        for dungeon in self.dungeons.values():
-            if dungeon.should_be_barren():
-                for location in dungeon.locations:
-                    location.progression = False
+        # Now run a search and set any non-accessible locations as non-progress.
+        # This sets the barren dungeon locations as non-progress, but also sets
+        # locations only accessible through barren dungeons as non-progress so
+        # that players are never required to enter them at all
+        search = Search(SearchMode.ACCESSIBLE_LOCATIONS, self.worlds, item_pool)
+        search.search_worlds()
+        for location in self.location_table.values():
+            if location not in search.visited_locations:
+                location.progression = False
+                logging.getLogger("").debug(
+                    f"Location {location} is not progression due to requiring barren dungeon access"
+                )
+
+        # Now re-enable barren dungeon entrances
+        for dungeon in dungeons:
+            dungeon.starting_entrance.enable()
+        sky_keep.starting_entrance.enable()
+        # And re-enable the fire sanctuary bird statue
+        self.get_entrance(
+            "Eldin Pillar -> Inside the Fire Sanctuary Statue"
+        ).disabled = False
 
     def set_nonprogress_locations(self):
         # Set excluded locations as non-progress
