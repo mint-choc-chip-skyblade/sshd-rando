@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -1637,13 +1637,20 @@
           <layout class="QVBoxLayout" name="verticalLayout_10">
            <item>
             <widget class="QLabel" name="beedle_shop_shuffle_label">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="text">
               <string>Beedle's Airshop Shuffle</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="setting_beedle_shop_shuffle"/>
+            <widget class="QComboBox" name="setting_beedle_shop_shuffle">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QLabel" name="rupee_shuffle_label">
