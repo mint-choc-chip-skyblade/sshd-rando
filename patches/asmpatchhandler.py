@@ -505,12 +505,12 @@ class ASMPatchHandler:
                 daytime_sky_color_index,
                 nighttime_sky_color_index,
                 daytime_cloud_color_index,
-                nighttime_cloud_color_index, # SKY_CLOUD_COLORS
+                nighttime_cloud_color_index,  # SKY_CLOUD_COLORS
                 skip_harp_playing,
                 0xFF,
                 0xFF,
                 0xFF,
-            ],  
+            ],
             0x712E5FF020: [
                 0xFF,
                 0xFF,
