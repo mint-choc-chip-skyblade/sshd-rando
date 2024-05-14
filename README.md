@@ -1,6 +1,6 @@
 # The Legend of Zelda: Skyward Sword HD Randomizer
 
-## Getting Started
+## Getting Started 🧩
 
 You will need:
 
@@ -11,7 +11,7 @@ You will need:
 
 [🎲 Download the latest version of the Randomizer here! 🎲](https://github.com/mint-choc-chip-skyblade/sshd-rando/releases)
 
-## Helpful Hints
+## Helpful Hints 💡
 
 * [🎮 Get going with our emulator Setup Guide! 🎮](https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY)
 * [🎮 Or our console Setup Guide! 🎮](https://docs.google.com/document/d/1VXNME7SVD5EU7NNn9dQ15_Q9-v9OJAHOX-hSor0n2dg)
@@ -20,7 +20,7 @@ You will need:
 * [🪄 Learn cool techniques with our Tricks Guide! 🪄](https://docs.google.com/document/d/1Dm0jhwXWIvPLuvl-JoRqocTKjXM_jRRmryYqpQMO_6w)
 * [💬 Join our Discord Server! 💬](https://discord.gg/nNbpfH5jyG)
 
-## Frequently Asked Questions (FAQ)
+## Frequently Asked Questions (FAQ) 🗂️
 
 ### What are all these acronyms about (SSR, SSHDR, SDR, HDR)?
 
@@ -46,7 +46,7 @@ as well when applied to HDR.
 
 [🎲 Go to the full list of differences 🎲](#Differences-from-the-Wii-version)
 
-## Differences from the Wii version
+## Differences from the Wii version 🔀
 
 ### New Settings
 * Entrance Randomizer with individual settings to control randomized entrance types, entrance
@@ -118,3 +118,25 @@ are vulnerable
 * Trial Treasure Shuffle
 * Starting with a Treasures or Bugs
 * Save File text isn't updated for the randomizer
+
+## Shoutouts 📣
+
+* All of the amazing people who have directly contributed to this project can be found here - check them out!
+
+[![Contributors Profile Pictures](https://contrib.rocks/image?repo=mint-choc-chip-skyblade/sshd-rando)](https://github.com/mint-choc-chip-skyblade/sshd-rando/graphs/contributors)
+
+* Our lovely beta testers:
+  * Mario_Runner
+  * Kitcot
+  * Tomomodachi
+  * CrystalBellis
+  * YourAverageLink
+  * TheKingsPride
+  * PippyInATopHat
+  * JadeMinibou
+
+* Everyone who has helped create community resources such as the setup guides, the locations guide, and the tricks guide!
+
+* All the people who have added to the cumulative knowledge of Skyward Sword as a game through reverse engineering and modding - this project couldn't have advanced anywhere near as quickly without their work!
+
+* The developers of [The Legend of Zelda: Skyward Sword Randomizer for the Nintendo Wii](https://github.com/ssrando/ssrando)!
