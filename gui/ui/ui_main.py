@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.7.0
+## Created by: Qt User Interface Compiler version 6.6.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -43,7 +43,7 @@ class Ui_main_window(object):
         sizePolicy.setHeightForWidth(self.tab_widget.sizePolicy().hasHeightForWidth())
         self.tab_widget.setSizePolicy(sizePolicy)
         self.tab_widget.setStyleSheet(u"QToolTip {color: #000000; background-color: #FFFFFF;}")
-        self.tab_widget.setTabShape(QTabWidget.Rounded)
+        self.tab_widget.setTabShape(QTabWidget.TabShape.Rounded)
         self.getting_started_tab = QWidget()
         self.getting_started_tab.setObjectName(u"getting_started_tab")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Maximum)
@@ -75,11 +75,11 @@ class Ui_main_window(object):
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.how_to_extract_label.sizePolicy().hasHeightForWidth())
         self.how_to_extract_label.setSizePolicy(sizePolicy3)
-        self.how_to_extract_label.setTextFormat(Qt.RichText)
-        self.how_to_extract_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.how_to_extract_label.setTextFormat(Qt.TextFormat.RichText)
+        self.how_to_extract_label.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.how_to_extract_label.setWordWrap(True)
         self.how_to_extract_label.setOpenExternalLinks(True)
-        self.how_to_extract_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+        self.how_to_extract_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
         self.verticalLayout_5.addWidget(self.how_to_extract_label)
 
@@ -90,7 +90,7 @@ class Ui_main_window(object):
         self.how_to_left_arrow_label.setObjectName(u"how_to_left_arrow_label")
         sizePolicy.setHeightForWidth(self.how_to_left_arrow_label.sizePolicy().hasHeightForWidth())
         self.how_to_left_arrow_label.setSizePolicy(sizePolicy)
-        self.how_to_left_arrow_label.setAlignment(Qt.AlignCenter)
+        self.how_to_left_arrow_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_3.addWidget(self.how_to_left_arrow_label)
 
@@ -104,11 +104,11 @@ class Ui_main_window(object):
         self.choose_settings_label.setObjectName(u"choose_settings_label")
         sizePolicy3.setHeightForWidth(self.choose_settings_label.sizePolicy().hasHeightForWidth())
         self.choose_settings_label.setSizePolicy(sizePolicy3)
-        self.choose_settings_label.setTextFormat(Qt.RichText)
-        self.choose_settings_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.choose_settings_label.setTextFormat(Qt.TextFormat.RichText)
+        self.choose_settings_label.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.choose_settings_label.setWordWrap(True)
         self.choose_settings_label.setOpenExternalLinks(True)
-        self.choose_settings_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+        self.choose_settings_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
         self.verticalLayout_8.addWidget(self.choose_settings_label)
 
@@ -117,7 +117,7 @@ class Ui_main_window(object):
 
         self.how_to_middle_arrow_label = QLabel(self.how_to_group_box)
         self.how_to_middle_arrow_label.setObjectName(u"how_to_middle_arrow_label")
-        self.how_to_middle_arrow_label.setAlignment(Qt.AlignCenter)
+        self.how_to_middle_arrow_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_3.addWidget(self.how_to_middle_arrow_label)
 
@@ -131,11 +131,11 @@ class Ui_main_window(object):
         self.how_to_generate_label.setObjectName(u"how_to_generate_label")
         sizePolicy3.setHeightForWidth(self.how_to_generate_label.sizePolicy().hasHeightForWidth())
         self.how_to_generate_label.setSizePolicy(sizePolicy3)
-        self.how_to_generate_label.setTextFormat(Qt.RichText)
-        self.how_to_generate_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.how_to_generate_label.setTextFormat(Qt.TextFormat.RichText)
+        self.how_to_generate_label.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.how_to_generate_label.setWordWrap(True)
         self.how_to_generate_label.setOpenExternalLinks(True)
-        self.how_to_generate_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+        self.how_to_generate_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
         self.verticalLayout_6.addWidget(self.how_to_generate_label)
 
@@ -146,7 +146,7 @@ class Ui_main_window(object):
         self.how_to_right_arrow_label.setObjectName(u"how_to_right_arrow_label")
         sizePolicy.setHeightForWidth(self.how_to_right_arrow_label.sizePolicy().hasHeightForWidth())
         self.how_to_right_arrow_label.setSizePolicy(sizePolicy)
-        self.how_to_right_arrow_label.setAlignment(Qt.AlignCenter)
+        self.how_to_right_arrow_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_3.addWidget(self.how_to_right_arrow_label)
 
@@ -160,12 +160,12 @@ class Ui_main_window(object):
         self.how_to_running_label.setObjectName(u"how_to_running_label")
         sizePolicy3.setHeightForWidth(self.how_to_running_label.sizePolicy().hasHeightForWidth())
         self.how_to_running_label.setSizePolicy(sizePolicy3)
-        self.how_to_running_label.setTextFormat(Qt.RichText)
+        self.how_to_running_label.setTextFormat(Qt.TextFormat.RichText)
         self.how_to_running_label.setScaledContents(False)
-        self.how_to_running_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.how_to_running_label.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.how_to_running_label.setWordWrap(True)
         self.how_to_running_label.setOpenExternalLinks(True)
-        self.how_to_running_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+        self.how_to_running_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
         self.verticalLayout_7.addWidget(self.how_to_running_label)
 
@@ -192,11 +192,11 @@ class Ui_main_window(object):
         self.guides_label.setObjectName(u"guides_label")
         sizePolicy.setHeightForWidth(self.guides_label.sizePolicy().hasHeightForWidth())
         self.guides_label.setSizePolicy(sizePolicy)
-        self.guides_label.setTextFormat(Qt.RichText)
-        self.guides_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.guides_label.setTextFormat(Qt.TextFormat.RichText)
+        self.guides_label.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.guides_label.setWordWrap(True)
         self.guides_label.setOpenExternalLinks(True)
-        self.guides_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+        self.guides_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
         self.horizontalLayout.addWidget(self.guides_label)
 
@@ -204,11 +204,11 @@ class Ui_main_window(object):
         self.community_label.setObjectName(u"community_label")
         sizePolicy.setHeightForWidth(self.community_label.sizePolicy().hasHeightForWidth())
         self.community_label.setSizePolicy(sizePolicy)
-        self.community_label.setTextFormat(Qt.RichText)
-        self.community_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.community_label.setTextFormat(Qt.TextFormat.RichText)
+        self.community_label.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.community_label.setWordWrap(True)
         self.community_label.setOpenExternalLinks(True)
-        self.community_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+        self.community_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
         self.horizontalLayout.addWidget(self.community_label)
 
@@ -223,7 +223,7 @@ class Ui_main_window(object):
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.theming_group_box = QGroupBox(self.accessibility_group_box)
         self.theming_group_box.setObjectName(u"theming_group_box")
-        self.theming_group_box.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.theming_group_box.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.verticalLayout_3 = QVBoxLayout(self.theming_group_box)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.theme_mode_layout = QHBoxLayout()
@@ -306,7 +306,8 @@ class Ui_main_window(object):
         sizePolicy5.setHeightForWidth(self.font_family_combo_box.sizePolicy().hasHeightForWidth())
         self.font_family_combo_box.setSizePolicy(sizePolicy5)
         self.font_family_combo_box.setEditable(False)
-        self.font_family_combo_box.setFontFilters(QFontComboBox.ScalableFonts)
+        self.font_family_combo_box.setMinimumContentsLength(1)
+        self.font_family_combo_box.setFontFilters(QFontComboBox.FontFilter.ScalableFonts)
         font = QFont()
         font.setFamilies([u"Arial"])
         font.setPointSize(10)
@@ -377,6 +378,7 @@ class Ui_main_window(object):
         sizePolicy7.setVerticalStretch(0)
         sizePolicy7.setHeightForWidth(self.selected_preset_combo_box.sizePolicy().hasHeightForWidth())
         self.selected_preset_combo_box.setSizePolicy(sizePolicy7)
+        self.selected_preset_combo_box.setMinimumContentsLength(1)
 
         self.selected_preset_layout.addWidget(self.selected_preset_combo_box)
 
@@ -679,6 +681,10 @@ class Ui_main_window(object):
 
         self.gridLayout_9.addWidget(self.hint_placements_group_box, 0, 2, 1, 1)
 
+        self.gridLayout_9.setColumnStretch(0, 1)
+        self.gridLayout_9.setColumnStretch(1, 1)
+        self.gridLayout_9.setColumnStretch(2, 1)
+        self.gridLayout_9.setColumnStretch(3, 1)
         self.tab_widget.addTab(self.gameplay_tab, "")
         self.world_tab = QWidget()
         self.world_tab.setObjectName(u"world_tab")
@@ -808,8 +814,8 @@ class Ui_main_window(object):
 
         self.line = QFrame(self.open_dungeons_group_box)
         self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.Shape.HLine)
-        self.line.setFrameShadow(QFrame.Shadow.Sunken)
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_25.addWidget(self.line)
 
@@ -878,7 +884,7 @@ class Ui_main_window(object):
         self.verticalLayout_25.addItem(self.shortcuts_vspacer)
 
 
-        self.gridLayout_2.addWidget(self.open_dungeons_group_box, 0, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.open_dungeons_group_box, 0, 1, 1, 1)
 
         self.entrance_randomization_group_box = QGroupBox(self.world_tab)
         self.entrance_randomization_group_box.setObjectName(u"entrance_randomization_group_box")
@@ -944,7 +950,7 @@ class Ui_main_window(object):
         self.verticalLayout_17.addItem(self.entrance_randomization_vspacer)
 
 
-        self.gridLayout_2.addWidget(self.entrance_randomization_group_box, 0, 4, 1, 1)
+        self.gridLayout_2.addWidget(self.entrance_randomization_group_box, 0, 2, 1, 1)
 
         self.mixed_entrance_pools_group_box = QGroupBox(self.world_tab)
         self.mixed_entrance_pools_group_box.setObjectName(u"mixed_entrance_pools_group_box")
@@ -954,10 +960,10 @@ class Ui_main_window(object):
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
         self.mixed_entrance_pools_list_label = QLabel(self.mixed_entrance_pools_group_box)
         self.mixed_entrance_pools_list_label.setObjectName(u"mixed_entrance_pools_list_label")
-        self.mixed_entrance_pools_list_label.setTextFormat(Qt.RichText)
+        self.mixed_entrance_pools_list_label.setTextFormat(Qt.TextFormat.RichText)
         self.mixed_entrance_pools_list_label.setWordWrap(True)
         self.mixed_entrance_pools_list_label.setOpenExternalLinks(True)
-        self.mixed_entrance_pools_list_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+        self.mixed_entrance_pools_list_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
         self.verticalLayout_28.addWidget(self.mixed_entrance_pools_list_label)
 
@@ -1012,8 +1018,8 @@ class Ui_main_window(object):
 
         self.mixed_entrance_pools_hline = QFrame(self.mixed_entrance_pools_group_box)
         self.mixed_entrance_pools_hline.setObjectName(u"mixed_entrance_pools_hline")
-        self.mixed_entrance_pools_hline.setFrameShape(QFrame.Shape.HLine)
-        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Shadow.Sunken)
+        self.mixed_entrance_pools_hline.setFrameShape(QFrame.HLine)
+        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_28.addWidget(self.mixed_entrance_pools_hline)
 
@@ -1025,10 +1031,10 @@ class Ui_main_window(object):
         self.mixed_entrance_pools_explainer_label.setObjectName(u"mixed_entrance_pools_explainer_label")
         sizePolicy3.setHeightForWidth(self.mixed_entrance_pools_explainer_label.sizePolicy().hasHeightForWidth())
         self.mixed_entrance_pools_explainer_label.setSizePolicy(sizePolicy3)
-        self.mixed_entrance_pools_explainer_label.setTextFormat(Qt.RichText)
+        self.mixed_entrance_pools_explainer_label.setTextFormat(Qt.TextFormat.RichText)
         self.mixed_entrance_pools_explainer_label.setWordWrap(True)
         self.mixed_entrance_pools_explainer_label.setOpenExternalLinks(True)
-        self.mixed_entrance_pools_explainer_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+        self.mixed_entrance_pools_explainer_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
         self.verticalLayout_28.addWidget(self.mixed_entrance_pools_explainer_label)
 
@@ -1037,8 +1043,12 @@ class Ui_main_window(object):
         self.verticalLayout_28.addItem(self.mixed_entrance_pools_vspacer3)
 
 
-        self.gridLayout_2.addWidget(self.mixed_entrance_pools_group_box, 0, 5, 1, 1)
+        self.gridLayout_2.addWidget(self.mixed_entrance_pools_group_box, 0, 3, 1, 1)
 
+        self.gridLayout_2.setColumnStretch(0, 1)
+        self.gridLayout_2.setColumnStretch(1, 1)
+        self.gridLayout_2.setColumnStretch(2, 1)
+        self.gridLayout_2.setColumnStretch(3, 1)
         self.tab_widget.addTab(self.world_tab, "")
         self.locations_tab = QWidget()
         self.locations_tab.setObjectName(u"locations_tab")
@@ -1182,9 +1192,9 @@ class Ui_main_window(object):
 
         self.excluded_locations_list_view = QListView(self.excluded_locations_group_box)
         self.excluded_locations_list_view.setObjectName(u"excluded_locations_list_view")
-        self.excluded_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.excluded_locations_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.excluded_locations_list_view.setProperty("showDropIndicator", False)
-        self.excluded_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.excluded_locations_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.excluded_locations_list_view.setSelectionRectVisible(False)
 
         self.verticalLayout_18.addWidget(self.excluded_locations_list_view)
@@ -1216,9 +1226,9 @@ class Ui_main_window(object):
 
         self.included_locations_list_view = QListView(self.included_locations_group_box)
         self.included_locations_list_view.setObjectName(u"included_locations_list_view")
-        self.included_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.included_locations_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.included_locations_list_view.setProperty("showDropIndicator", False)
-        self.included_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.included_locations_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.included_locations_list_view.setSelectionRectVisible(False)
 
         self.verticalLayout_9.addWidget(self.included_locations_list_view)
@@ -1266,9 +1276,9 @@ class Ui_main_window(object):
         sizePolicy10.setVerticalStretch(0)
         sizePolicy10.setHeightForWidth(self.randomized_items_list_view.sizePolicy().hasHeightForWidth())
         self.randomized_items_list_view.setSizePolicy(sizePolicy10)
-        self.randomized_items_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.randomized_items_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.randomized_items_list_view.setProperty("showDropIndicator", False)
-        self.randomized_items_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.randomized_items_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.randomized_items_list_view.setSelectionRectVisible(False)
 
         self.verticalLayout_15.addWidget(self.randomized_items_list_view)
@@ -1300,9 +1310,9 @@ class Ui_main_window(object):
         self.starting_items_list_view.setObjectName(u"starting_items_list_view")
         sizePolicy10.setHeightForWidth(self.starting_items_list_view.sizePolicy().hasHeightForWidth())
         self.starting_items_list_view.setSizePolicy(sizePolicy10)
-        self.starting_items_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.starting_items_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.starting_items_list_view.setProperty("showDropIndicator", False)
-        self.starting_items_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.starting_items_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.starting_items_list_view.setSelectionRectVisible(False)
 
         self.verticalLayout_11.addWidget(self.starting_items_list_view)
@@ -1312,7 +1322,7 @@ class Ui_main_window(object):
 
         self.inventory_button_layout = QVBoxLayout()
         self.inventory_button_layout.setObjectName(u"inventory_button_layout")
-        self.inventory_button_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.inventory_button_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.starting_items_top_vspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.inventory_button_layout.addItem(self.starting_items_top_vspacer)
@@ -1461,9 +1471,9 @@ class Ui_main_window(object):
         self.included_hint_locations_list_view.setObjectName(u"included_hint_locations_list_view")
         sizePolicy10.setHeightForWidth(self.included_hint_locations_list_view.sizePolicy().hasHeightForWidth())
         self.included_hint_locations_list_view.setSizePolicy(sizePolicy10)
-        self.included_hint_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.included_hint_locations_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.included_hint_locations_list_view.setProperty("showDropIndicator", False)
-        self.included_hint_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.included_hint_locations_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.included_hint_locations_list_view.setSelectionRectVisible(False)
 
         self.verticalLayout_26.addWidget(self.included_hint_locations_list_view)
@@ -1473,7 +1483,7 @@ class Ui_main_window(object):
 
         self.hints_button_layout = QVBoxLayout()
         self.hints_button_layout.setObjectName(u"hints_button_layout")
-        self.hints_button_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.hints_button_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.hints_top_vspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.hints_button_layout.addItem(self.hints_top_vspacer)
@@ -1522,9 +1532,9 @@ class Ui_main_window(object):
         self.excluded_hint_locations_list_view.setObjectName(u"excluded_hint_locations_list_view")
         sizePolicy10.setHeightForWidth(self.excluded_hint_locations_list_view.sizePolicy().hasHeightForWidth())
         self.excluded_hint_locations_list_view.setSizePolicy(sizePolicy10)
-        self.excluded_hint_locations_list_view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.excluded_hint_locations_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.excluded_hint_locations_list_view.setProperty("showDropIndicator", False)
-        self.excluded_hint_locations_list_view.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.excluded_hint_locations_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.excluded_hint_locations_list_view.setSelectionRectVisible(False)
 
         self.verticalLayout_27.addWidget(self.excluded_hint_locations_list_view)
@@ -1708,8 +1718,8 @@ class Ui_main_window(object):
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.precise_items_group_box = QGroupBox(self.tricks_group_box)
         self.precise_items_group_box.setObjectName(u"precise_items_group_box")
-        sizePolicy2.setHeightForWidth(self.precise_items_group_box.sizePolicy().hasHeightForWidth())
-        self.precise_items_group_box.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.precise_items_group_box.sizePolicy().hasHeightForWidth())
+        self.precise_items_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_20 = QVBoxLayout(self.precise_items_group_box)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.setting_logic_advanced_lizalfos_combat = RandoTriStateCheckBox(self.precise_items_group_box)
@@ -1801,8 +1811,8 @@ class Ui_main_window(object):
 
         self.dives_and_jumps_group_box = QGroupBox(self.tricks_group_box)
         self.dives_and_jumps_group_box.setObjectName(u"dives_and_jumps_group_box")
-        sizePolicy2.setHeightForWidth(self.dives_and_jumps_group_box.sizePolicy().hasHeightForWidth())
-        self.dives_and_jumps_group_box.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.dives_and_jumps_group_box.sizePolicy().hasHeightForWidth())
+        self.dives_and_jumps_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_19 = QVBoxLayout(self.dives_and_jumps_group_box)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.setting_logic_volcanic_island_dive = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
@@ -1869,8 +1879,8 @@ class Ui_main_window(object):
 
         self.glitches_group_box = QGroupBox(self.tricks_group_box)
         self.glitches_group_box.setObjectName(u"glitches_group_box")
-        sizePolicy2.setHeightForWidth(self.glitches_group_box.sizePolicy().hasHeightForWidth())
-        self.glitches_group_box.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.glitches_group_box.sizePolicy().hasHeightForWidth())
+        self.glitches_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_21 = QVBoxLayout(self.glitches_group_box)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
         self.setting_logic_stuttersprint = RandoTriStateCheckBox(self.glitches_group_box)
@@ -1902,8 +1912,8 @@ class Ui_main_window(object):
 
         self.miscellaneous_group_box = QGroupBox(self.tricks_group_box)
         self.miscellaneous_group_box.setObjectName(u"miscellaneous_group_box")
-        sizePolicy2.setHeightForWidth(self.miscellaneous_group_box.sizePolicy().hasHeightForWidth())
-        self.miscellaneous_group_box.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.miscellaneous_group_box.sizePolicy().hasHeightForWidth())
+        self.miscellaneous_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_22 = QVBoxLayout(self.miscellaneous_group_box)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.setting_logic_fire_node_without_hook_beetle = RandoTriStateCheckBox(self.miscellaneous_group_box)
@@ -2094,6 +2104,10 @@ class Ui_main_window(object):
 
         self.horizontalLayout_2.addWidget(self.text_cosmetics_group_box)
 
+        self.horizontalLayout_2.setStretch(0, 1)
+        self.horizontalLayout_2.setStretch(1, 1)
+        self.horizontalLayout_2.setStretch(2, 1)
+        self.horizontalLayout_2.setStretch(3, 1)
         self.tab_widget.addTab(self.cosmetics_tab, "")
         self.advanced_tab = QWidget()
         self.advanced_tab.setObjectName(u"advanced_tab")
@@ -2103,8 +2117,8 @@ class Ui_main_window(object):
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.file_setup_group_box = QGroupBox(self.advanced_tab)
         self.file_setup_group_box.setObjectName(u"file_setup_group_box")
-        sizePolicy2.setHeightForWidth(self.file_setup_group_box.sizePolicy().hasHeightForWidth())
-        self.file_setup_group_box.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.file_setup_group_box.sizePolicy().hasHeightForWidth())
+        self.file_setup_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_31 = QVBoxLayout(self.file_setup_group_box)
         self.verticalLayout_31.setObjectName(u"verticalLayout_31")
         self.config_generate_spoiler_log = QCheckBox(self.file_setup_group_box)
@@ -2114,8 +2128,8 @@ class Ui_main_window(object):
 
         self.utils_hline = QFrame(self.file_setup_group_box)
         self.utils_hline.setObjectName(u"utils_hline")
-        self.utils_hline.setFrameShape(QFrame.Shape.HLine)
-        self.utils_hline.setFrameShadow(QFrame.Shadow.Sunken)
+        self.utils_hline.setFrameShape(QFrame.HLine)
+        self.utils_hline.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline)
 
@@ -2141,8 +2155,8 @@ class Ui_main_window(object):
 
         self.utils_hline_2 = QFrame(self.file_setup_group_box)
         self.utils_hline_2.setObjectName(u"utils_hline_2")
-        self.utils_hline_2.setFrameShape(QFrame.Shape.HLine)
-        self.utils_hline_2.setFrameShadow(QFrame.Shadow.Sunken)
+        self.utils_hline_2.setFrameShape(QFrame.HLine)
+        self.utils_hline_2.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline_2)
 
@@ -2176,8 +2190,8 @@ class Ui_main_window(object):
 
         self.utils_hline_3 = QFrame(self.file_setup_group_box)
         self.utils_hline_3.setObjectName(u"utils_hline_3")
-        self.utils_hline_3.setFrameShape(QFrame.Shape.HLine)
-        self.utils_hline_3.setFrameShadow(QFrame.Shadow.Sunken)
+        self.utils_hline_3.setFrameShape(QFrame.HLine)
+        self.utils_hline_3.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline_3)
 
@@ -2210,16 +2224,16 @@ class Ui_main_window(object):
 
         self.plandomizer_group_box = QGroupBox(self.advanced_tab)
         self.plandomizer_group_box.setObjectName(u"plandomizer_group_box")
-        sizePolicy2.setHeightForWidth(self.plandomizer_group_box.sizePolicy().hasHeightForWidth())
-        self.plandomizer_group_box.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.plandomizer_group_box.sizePolicy().hasHeightForWidth())
+        self.plandomizer_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_30 = QVBoxLayout(self.plandomizer_group_box)
         self.verticalLayout_30.setObjectName(u"verticalLayout_30")
         self.plandomizer_warning_label = QLabel(self.plandomizer_group_box)
         self.plandomizer_warning_label.setObjectName(u"plandomizer_warning_label")
-        self.plandomizer_warning_label.setTextFormat(Qt.RichText)
+        self.plandomizer_warning_label.setTextFormat(Qt.TextFormat.RichText)
         self.plandomizer_warning_label.setWordWrap(True)
         self.plandomizer_warning_label.setOpenExternalLinks(True)
-        self.plandomizer_warning_label.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse)
+        self.plandomizer_warning_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
         self.verticalLayout_30.addWidget(self.plandomizer_warning_label)
 
@@ -2237,7 +2251,8 @@ class Ui_main_window(object):
         self.selected_plandomizer_file_combo_box.setObjectName(u"selected_plandomizer_file_combo_box")
         sizePolicy7.setHeightForWidth(self.selected_plandomizer_file_combo_box.sizePolicy().hasHeightForWidth())
         self.selected_plandomizer_file_combo_box.setSizePolicy(sizePolicy7)
-        self.selected_plandomizer_file_combo_box.setSizeAdjustPolicy(QComboBox.AdjustToContents)
+        self.selected_plandomizer_file_combo_box.setSizeAdjustPolicy(QComboBox.SizeAdjustPolicy.AdjustToContentsOnFirstShow)
+        self.selected_plandomizer_file_combo_box.setMinimumContentsLength(1)
 
         self.verticalLayout_30.addWidget(self.selected_plandomizer_file_combo_box)
 
@@ -2255,15 +2270,15 @@ class Ui_main_window(object):
 
         self.random_settings_group_box = QGroupBox(self.advanced_tab)
         self.random_settings_group_box.setObjectName(u"random_settings_group_box")
-        sizePolicy2.setHeightForWidth(self.random_settings_group_box.sizePolicy().hasHeightForWidth())
-        self.random_settings_group_box.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.random_settings_group_box.sizePolicy().hasHeightForWidth())
+        self.random_settings_group_box.setSizePolicy(sizePolicy)
 
         self.horizontalLayout_4.addWidget(self.random_settings_group_box)
 
         self.other_settings_group_box = QGroupBox(self.advanced_tab)
         self.other_settings_group_box.setObjectName(u"other_settings_group_box")
-        sizePolicy2.setHeightForWidth(self.other_settings_group_box.sizePolicy().hasHeightForWidth())
-        self.other_settings_group_box.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.other_settings_group_box.sizePolicy().hasHeightForWidth())
+        self.other_settings_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_32 = QVBoxLayout(self.other_settings_group_box)
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
         self.setting_enable_back_in_time = RandoTriStateCheckBox(self.other_settings_group_box)
@@ -2278,6 +2293,10 @@ class Ui_main_window(object):
 
         self.horizontalLayout_4.addWidget(self.other_settings_group_box)
 
+        self.horizontalLayout_4.setStretch(0, 1)
+        self.horizontalLayout_4.setStretch(1, 1)
+        self.horizontalLayout_4.setStretch(2, 1)
+        self.horizontalLayout_4.setStretch(3, 1)
         self.tab_widget.addTab(self.advanced_tab, "")
         self.tracker_tab = QWidget()
         self.tracker_tab.setObjectName(u"tracker_tab")
@@ -2299,11 +2318,11 @@ class Ui_main_window(object):
         self.dungeon_sv_layout = QVBoxLayout()
         self.dungeon_sv_layout.setSpacing(1)
         self.dungeon_sv_layout.setObjectName(u"dungeon_sv_layout")
-        self.dungeon_sv_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.dungeon_sv_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.dungeon_sv_keys_layout = QHBoxLayout()
         self.dungeon_sv_keys_layout.setSpacing(1)
         self.dungeon_sv_keys_layout.setObjectName(u"dungeon_sv_keys_layout")
-        self.dungeon_sv_keys_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.dungeon_sv_keys_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
 
         self.dungeon_sv_layout.addLayout(self.dungeon_sv_keys_layout)
 
@@ -2313,7 +2332,7 @@ class Ui_main_window(object):
         self.dungeon_et_layout = QVBoxLayout()
         self.dungeon_et_layout.setSpacing(1)
         self.dungeon_et_layout.setObjectName(u"dungeon_et_layout")
-        self.dungeon_et_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.dungeon_et_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.dungeon_et_keys_layout = QHBoxLayout()
         self.dungeon_et_keys_layout.setSpacing(1)
         self.dungeon_et_keys_layout.setObjectName(u"dungeon_et_keys_layout")
@@ -2326,7 +2345,7 @@ class Ui_main_window(object):
         self.dungeon_lmf_layout = QVBoxLayout()
         self.dungeon_lmf_layout.setSpacing(1)
         self.dungeon_lmf_layout.setObjectName(u"dungeon_lmf_layout")
-        self.dungeon_lmf_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.dungeon_lmf_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.dungeon_lmf_keys_layout = QHBoxLayout()
         self.dungeon_lmf_keys_layout.setSpacing(1)
         self.dungeon_lmf_keys_layout.setObjectName(u"dungeon_lmf_keys_layout")
@@ -2339,7 +2358,7 @@ class Ui_main_window(object):
         self.dungeon_ac_layout = QVBoxLayout()
         self.dungeon_ac_layout.setSpacing(1)
         self.dungeon_ac_layout.setObjectName(u"dungeon_ac_layout")
-        self.dungeon_ac_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.dungeon_ac_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.dungeon_ac_keys_layout = QHBoxLayout()
         self.dungeon_ac_keys_layout.setSpacing(1)
         self.dungeon_ac_keys_layout.setObjectName(u"dungeon_ac_keys_layout")
@@ -2352,7 +2371,7 @@ class Ui_main_window(object):
         self.dungeon_ssh_layout = QVBoxLayout()
         self.dungeon_ssh_layout.setSpacing(1)
         self.dungeon_ssh_layout.setObjectName(u"dungeon_ssh_layout")
-        self.dungeon_ssh_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.dungeon_ssh_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.dungeon_ssh_keys_layout = QHBoxLayout()
         self.dungeon_ssh_keys_layout.setSpacing(1)
         self.dungeon_ssh_keys_layout.setObjectName(u"dungeon_ssh_keys_layout")
@@ -2365,7 +2384,7 @@ class Ui_main_window(object):
         self.dungeon_fs_layout = QVBoxLayout()
         self.dungeon_fs_layout.setSpacing(1)
         self.dungeon_fs_layout.setObjectName(u"dungeon_fs_layout")
-        self.dungeon_fs_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.dungeon_fs_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.dungeon_fs_keys_layout = QHBoxLayout()
         self.dungeon_fs_keys_layout.setSpacing(1)
         self.dungeon_fs_keys_layout.setObjectName(u"dungeon_fs_keys_layout")
@@ -2378,11 +2397,11 @@ class Ui_main_window(object):
         self.dungeon_sk_layout = QVBoxLayout()
         self.dungeon_sk_layout.setSpacing(1)
         self.dungeon_sk_layout.setObjectName(u"dungeon_sk_layout")
-        self.dungeon_sk_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.dungeon_sk_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.dungeon_sk_keys_layout = QHBoxLayout()
         self.dungeon_sk_keys_layout.setSpacing(1)
         self.dungeon_sk_keys_layout.setObjectName(u"dungeon_sk_keys_layout")
-        self.dungeon_sk_keys_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.dungeon_sk_keys_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
 
         self.dungeon_sk_layout.addLayout(self.dungeon_sk_keys_layout)
 
@@ -2430,15 +2449,15 @@ class Ui_main_window(object):
 
         self.tracker_info_layout = QVBoxLayout()
         self.tracker_info_layout.setObjectName(u"tracker_info_layout")
-        self.tracker_info_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.tracker_info_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.tracker_statistics_grid = QGridLayout()
         self.tracker_statistics_grid.setObjectName(u"tracker_statistics_grid")
-        self.tracker_statistics_grid.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.tracker_statistics_grid.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.tracker_stats_accessible = QLabel(self.tracker_tab)
         self.tracker_stats_accessible.setObjectName(u"tracker_stats_accessible")
         sizePolicy2.setHeightForWidth(self.tracker_stats_accessible.sizePolicy().hasHeightForWidth())
         self.tracker_stats_accessible.setSizePolicy(sizePolicy2)
-        self.tracker_stats_accessible.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.tracker_stats_accessible.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_accessible, 1, 0, 1, 1)
 
@@ -2456,7 +2475,7 @@ class Ui_main_window(object):
         self.tracker_stats_checked.setObjectName(u"tracker_stats_checked")
         sizePolicy2.setHeightForWidth(self.tracker_stats_checked.sizePolicy().hasHeightForWidth())
         self.tracker_stats_checked.setSizePolicy(sizePolicy2)
-        self.tracker_stats_checked.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.tracker_stats_checked.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_checked, 0, 0, 1, 1)
 
@@ -2469,7 +2488,7 @@ class Ui_main_window(object):
         self.tracker_stats_remaining.setObjectName(u"tracker_stats_remaining")
         sizePolicy2.setHeightForWidth(self.tracker_stats_remaining.sizePolicy().hasHeightForWidth())
         self.tracker_stats_remaining.setSizePolicy(sizePolicy2)
-        self.tracker_stats_remaining.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.tracker_stats_remaining.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining, 2, 0, 1, 1)
 
@@ -2555,12 +2574,12 @@ class Ui_main_window(object):
         sizePolicy15.setHeightForWidth(self.tracker_locations_scroll_area.sizePolicy().hasHeightForWidth())
         self.tracker_locations_scroll_area.setSizePolicy(sizePolicy15)
         self.tracker_locations_scroll_area.setMaximumSize(QSize(546, 16777215))
-        self.tracker_locations_scroll_area.setFrameShape(QFrame.NoFrame)
+        self.tracker_locations_scroll_area.setFrameShape(QFrame.Shape.NoFrame)
         self.tracker_locations_scroll_area.setLineWidth(0)
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 283))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2590,7 +2609,7 @@ class Ui_main_window(object):
         sizePolicy16.setHeightForWidth(self.settings_current_option_description_label.sizePolicy().hasHeightForWidth())
         self.settings_current_option_description_label.setSizePolicy(sizePolicy16)
         self.settings_current_option_description_label.setMinimumSize(QSize(0, 64))
-        self.settings_current_option_description_label.setTextFormat(Qt.RichText)
+        self.settings_current_option_description_label.setTextFormat(Qt.TextFormat.RichText)
         self.settings_current_option_description_label.setWordWrap(True)
 
         self.settings_descriptions_layout.addWidget(self.settings_current_option_description_label)
@@ -2647,7 +2666,7 @@ class Ui_main_window(object):
 
         self.hash_label = QLabel(self.central_widget)
         self.hash_label.setObjectName(u"hash_label")
-        self.hash_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.hash_label.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_7.addWidget(self.hash_label)
 
@@ -2703,7 +2722,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(3)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
