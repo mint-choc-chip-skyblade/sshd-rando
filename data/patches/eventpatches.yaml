@@ -90,6 +90,60 @@
       subType: 0
       param1: 0
       param2: 323 # Scrapper Storyflag
+      next: Give Sparrot Quest Storyflag
+      param3: 0
+  - name: Give Sparrot Quest Storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 371 # Sparrot Quest Storyflag
+      next: Give Dodoh Quest Storyflag
+      param3: 0
+  - name: Give Dodoh Quest Storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 396 # Dodoh Quest Storyflag
+      next: Check Pumm Pumpkin Carry Quest Storyflag
+      param3: 0
+  - name: Check Pumm Pumpkin Carry Quest Storyflag
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 293 # Pumm gives Pumpkin Carry Storyflag
+      param3: 3
+    cases:
+      - Give Kina Quest Storyflag
+      - Check for Kikwi Elder Storyflag
+  - name: Give Kina Quest Storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 470 # Kina Storyflag
+      next: Check for Kikwi Elder Storyflag
+      param3: 0
+  - name: Check for Kikwi Elder Storyflag
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 898 # Obtained Item from Bucha
+      param3: 3
+    cases:
+      - Give Owlan Quest Storyflag
+      - -1
+  - name: Give Owlan Quest Storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 479 # Started Owlan Quest Storyflag
       next: -1
       param3: 0
 
@@ -1536,6 +1590,29 @@
       param2: 925
 
 117-Pumpkin:
+  - name: Check if Pumm should give Kina Quest Storyflag
+    type: flowpatch
+    index: 52
+    flow:
+      next: Check for Scrapper Storyflag
+  - name: Check for Scrapper Storyflag
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 323 # Scrapper Storyflag
+      param3: 3
+    cases:
+      - Give Kina Quest Storyflag
+      - -1
+  - name: Give Kina Quest Storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 470 # Kina Storyflag
+      next: -1
+      param3: 0
   - name: Kina's Crystal
     type: flowpatch
     index: 386
@@ -1824,7 +1901,34 @@
     type: flowpatch
     index: 140
     flow:
-      next: 369
+      next: Give Kikwi Elder Item Obtained Storyflag
+  - name: Give Kikwi Elder Item Obtained Storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 898 # Obtained Item from Bucha Storyflag
+      next: Check for Scrapper Storyflag
+      param3: 0
+  - name: Check for Scrapper Storyflag
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 323 # Scrapper Storyflag
+      param3: 3
+    cases:
+      - Give Owlan Quest Storyflag
+      - 369 # normal text
+  - name: Give Owlan Quest Storyflag
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 479 # Started Owlan Quest Storyflag
+      next: 369 # normal text
+      param3: 0
   - name: Use string without reference to Slingshot when talking again after Bucha check
     type: flowpatch
     index: 119
@@ -2322,11 +2426,23 @@
       param3: 10 # Triggers an exit
 
 250-ForestSiren:
+  - name: Faron Trial Fi Questions Text
+    type: textpatch
+    index: 4
   - name: Remove first time trial Fi text
     type: flowpatch
     index: 3
     flow:
-      next: 67
+      next: Trial Questions Switch
+  - name: Trial Questions Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 77 # Fi question text
+      - 83 # End of Fi's text
 
 299-Demo:
   - name: Skip setting sword itemflag

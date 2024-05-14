@@ -9,8 +9,9 @@ Below is the list of all the flags that the randomizer changes:
 
 ### Storyflags
 
-* 322: Repair Gondo's Junk Check (repurposed: "Learn about Scrapper near Village Windmill")
+* 323: Repair Gondo's Junk Check (repurposed: "Learn about Scrapper near Village Windmill")
 
+* 898: Obtained Item from Bucha
 * 899: Is Night
 
 * 11 & 13: Imp2 Requirements reached
