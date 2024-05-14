@@ -3093,6 +3093,25 @@
     index: 19
     flow:
       next: 44 # The Old One starts talking about the Harp
+  # This one only gets hit if we're skipping the harp playing
+  - name: Set flag for obtaining Song from the Old One
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 29 # obtained item scene flag
+      param2: 2
+      next: 267 # Give the item without going through the tutorial
+      param3: 2
+  - name: Skip Harp Tutorial if setting is on
+    onlyif: skip_harp_playing == on
+    type: flowpatch
+    index: 44
+    flow:
+      next: Set flag for obtaining Song from the Old One
+  - name: The Old One skip harp playing text
+    type: textpatch
+    index: 112
   - name: Don't raise the Gate of Time afterwards
     type: flowpatch
     index: 268

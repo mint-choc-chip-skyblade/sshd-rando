@@ -498,14 +498,19 @@ class ASMPatchHandler:
         nighttime_cloud_color_index = world.setting_map.settings[
             "nighttime_cloud_color"
         ].current_option_index
+        skip_harp_playing = world.setting("skip_harp_playing").value_index()
 
         init_rw_globals_dict = {
             0x712E54B6BC: [
                 daytime_sky_color_index,
                 nighttime_sky_color_index,
                 daytime_cloud_color_index,
-                nighttime_cloud_color_index,
-            ],  # SKY_CLOUD_COLORS
+                nighttime_cloud_color_index, # SKY_CLOUD_COLORS
+                skip_harp_playing,
+                0xFF,
+                0xFF,
+                0xFF,
+            ],  
             0x712E5FF020: [
                 0xFF,
                 0xFF,

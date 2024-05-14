@@ -234,6 +234,9 @@
 - name: Impa Complete Triforce text
   standard: "Though your wish has been granted by\nthe <y+<Triforce>>, <b<Ghirahim>> escaped with\nZelda through the <r<great doors\nat the front of the temple>>.\nYou may yet catch him before it's too\nlate. Hurry, <heroname>!"
 
+- name: The Old One skip harp playing text
+  standard: "I see you have acquired the <y<harp>>. Well done.\nLet me teach you a <b<song>>, it will be useful for\nyour adventure."
+
 - name: Path Hint
   standard: They say that |regions| |is/are| on the path to |goal_name|.
 

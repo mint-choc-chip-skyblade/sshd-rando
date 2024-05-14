@@ -557,6 +557,11 @@ class Ui_main_window(object):
 
         self.verticalLayout.addWidget(self.setting_full_wallet_upgrades)
 
+        self.setting_skip_harp_playing = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_skip_harp_playing.setObjectName(u"setting_skip_harp_playing")
+
+        self.verticalLayout.addWidget(self.setting_skip_harp_playing)
+
         self.tweaks_vspacer = QSpacerItem(20, 148, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.tweaks_vspacer)
@@ -2703,7 +2708,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(3)
+        self.tab_widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2759,6 +2764,7 @@ class Ui_main_window(object):
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
+        self.setting_skip_harp_playing.setText(QCoreApplication.translate("main_window", u"Skip Harp Playing", None))
         self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
         self.got_sword_requirement_label.setText(QCoreApplication.translate("main_window", u"Gate of Time Sword Requirement", None))
         self.required_dungeons_label.setText(QCoreApplication.translate("main_window", u"Required Dungeons", None))
