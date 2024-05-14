@@ -513,14 +513,10 @@ def set_plandomizer_entrances(
             valid_target_found = False
             for target_entrance in target_pool:
                 if target_to_connect == target_entrance.replaces:
-                    check_entrances_compatibility(
-                        entrance_to_connect, target_entrance
-                    )
+                    check_entrances_compatibility(entrance_to_connect, target_entrance)
                     change_connections(entrance_to_connect, target_entrance)
                     if not unset_non_assumed_entrances:
-                        validate_world(
-                            world, worlds, entrance_to_connect, item_pool
-                        )
+                        validate_world(world, worlds, entrance_to_connect, item_pool)
                     valid_target_found = True
                     entrance_pool.remove(entrance_to_connect)
                     target_pool.remove(target_entrance)
