@@ -455,6 +455,19 @@ def set_plandomizer_entrances(
     logging.getLogger("").debug("Now Placing plandomized entrances")
     item_pool = get_complete_item_pool(worlds)
 
+    # Check to see if we'll have any disconnected, non-assumed entrances while
+    # setting plandomizer entrances. If we do, then we can't validate the world
+    # while setting plandomzier entrances since the non-assumed entrances aren't set
+    unset_non_assumed_entrances: bool = any(
+        [
+            True
+            for type, pool in entrance_pools.items()
+            if type in Entrance.NON_ASSUMED_ENTRANCE_TYPES
+            for entrance in pool
+            if entrance not in world.plandomizer_entrances
+        ]
+    )
+
     # Attempt to connect each plandomized entrance
     for entrance, target in world.plandomizer_entrances.items():
         entrance_to_connect = entrance
@@ -500,9 +513,10 @@ def set_plandomizer_entrances(
             valid_target_found = False
             for target_entrance in target_pool:
                 if target_to_connect == target_entrance.replaces:
-                    replace_entrance(
-                        worlds, entrance_to_connect, target_entrance, [], item_pool
-                    )
+                    check_entrances_compatibility(entrance_to_connect, target_entrance)
+                    change_connections(entrance_to_connect, target_entrance)
+                    if not unset_non_assumed_entrances:
+                        validate_world(world, worlds, entrance_to_connect, item_pool)
                     valid_target_found = True
                     entrance_pool.remove(entrance_to_connect)
                     target_pool.remove(target_entrance)
@@ -527,16 +541,10 @@ def shuffle_non_assumed_entrance_pools(
     entrance_pools: EntrancePools,
     target_entrance_pools: EntrancePools,
 ):
-    non_assumed_entrance_types = [
-        "Spawn",
-        "Faron Region Entrance",
-        "Eldin Region Entrance",
-        "Lanayru Region Entrance",
-    ]
     non_assumed_entrances = {
         pool[0]: target_entrance_pools[type]
         for type, pool in entrance_pools.items()
-        if len(pool) > 0 and type in non_assumed_entrance_types
+        if len(pool) > 0 and type in Entrance.NON_ASSUMED_ENTRANCE_TYPES
     }
 
     item_pool = get_complete_item_pool(worlds)
@@ -580,7 +588,7 @@ def shuffle_non_assumed_entrance_pools(
         )
 
     # Remove the non-assumed types from the original entrance pools
-    for type in non_assumed_entrance_types:
+    for type in Entrance.NON_ASSUMED_ENTRANCE_TYPES:
         entrance_pools.pop(type, None)
 
 

@@ -122,6 +122,8 @@ Sceneflags:
     - 26 # Watched Eye Cutscene in Bazaar
     - 66 # Batreaux Doors outside open
     - 67 # Inside Doors open
+    - skip_harp_playing == on and Goddesss_Harp and Song_of_the_Hero:
+      - 69 # Goddess's Silent Realm Trial Gate Open
     - 76 # Watched Pipit scold Mallara Cutscene
     - 95 # Fi Text for Ruby Tablet
     - 96 # Fi Text for Amber Tablet
@@ -133,6 +135,8 @@ Sceneflags:
   Faron Woods: # Scene Index 1
     - 14 # Skip Fi text in front of Viewing Platform statue
     - 15 # Skip Fi text after vine to Deep Woods
+    - skip_harp_playing == on and Goddesss_Harp and Farores_Courage:
+      - 17 # Faron Silent Realm Trial Gate Open
     - 19 # Watched Great Tree Intro Cutscene
     - 30 # Watched Enter Skyview Cutscene
     - 51 # Fi text before talking to Yerbal
@@ -169,6 +173,8 @@ Sceneflags:
       - 31 # Shortcut boulder at Eldin entrance blown up
     - shortcut_eldin_ascent_boulder == on:
       - 56 # Shortcut boulder near Volcano Ascent blown up
+    - skip_harp_playing == on and Goddesss_Harp and Dins_Power:
+      - 70 # Eldin Silent Realm Trial Gate Open
 
   Eldin Volcano Summit: # Scene Index 5 (VS & Boko Base)
     - 19 # Reveal Gossip Stone in lower Boko Base Cave
@@ -216,6 +222,8 @@ Sceneflags:
       - 65 # Minecart on Sand Oasis Wall pushed down
     - random_starting_statues == off:
       - 68 # Checked Desert statue
+    - skip_harp_playing == on and Goddesss_Harp and Nayrus_Wisdom:
+      - 91 # Lanayru Silent Realm Trial Gate Open
     - open_lmf == main_node or open_lmf == open:
       - 100 # Lightning node active
       - 101 # Fire node active

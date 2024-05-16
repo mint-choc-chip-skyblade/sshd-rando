@@ -1,35 +1,13 @@
-#![no_std]
-#![feature(ptr_from_ref)]
-#![feature(split_array)]
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use crate::debug;
+
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
-use core::str;
 use cstr::cstr;
 use static_assertions::assert_eq_size;
-
-mod actor;
-mod ammo;
-mod color;
-mod debug;
-mod entrance;
-mod event;
-mod fix;
-mod flag;
-mod input;
-mod item;
-mod lyt;
-mod mainloop;
-mod math;
-mod minigame;
-mod player;
-mod rng;
-mod savefile;
-mod settings;
-mod traps;
 
 // repr(C) prevents rust from reordering struct fields.
 // packed(1) prevents rust from aligning structs to the size of the largest
@@ -42,9 +20,12 @@ mod traps;
 // Always add an assert_eq_size!() macro after defining a struct to ensure it's
 // the size you expect it to be.
 
-//////////////////////
-// ADD STRUCTS HERE //
-//////////////////////
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct RandomizerSettings {
+    pub skip_harp_playing: u8,
+}
+assert_eq_size!([u8; 0x1], RandomizerSettings);
 
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
@@ -57,7 +38,6 @@ extern "C" {
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
 
-#[panic_handler]
-fn panic(_: &core::panic::PanicInfo) -> ! {
-    loop {}
-}
+////////////////////////
+// ADD FUNCTIONS HERE //
+////////////////////////

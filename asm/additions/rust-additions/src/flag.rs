@@ -551,7 +551,7 @@ pub fn check_and_set_trial_completion_flag(trial_gate_actor: *mut actor::dAcOWar
 
         // Set storyflag and reset counter
         for (index, flag) in indexes_and_flags {
-            if (*trial_gate_actor).trialIndex == index && check_storyflag(flag) == 0 {
+            if (*trial_gate_actor).trial_index == index && check_storyflag(flag) == 0 {
                 set_storyflag(flag);
                 TRIAL_GATE_EXIT_WAIT_TIMER = 0;
             }
