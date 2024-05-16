@@ -1075,17 +1075,87 @@ pub fn after_item_collection_hook(collected_item: flag::ITEMFLAGS) -> flag::ITEM
 }
 
 #[no_mangle]
+pub fn resolve_progressive_item_models(model_name: *const c_char, item_id: u16) -> *const c_char {
+    unsafe {
+        match item_id {
+            // Progressive Bow
+            19 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::BOW) == 0 {
+                    return cstr!("GetBowA").as_ptr();
+                }
+                if flag::check_itemflag(flag::ITEMFLAGS::IRON_BOW) == 0 {
+                    return cstr!("GetBowB").as_ptr();
+                }
+                return cstr!("GetBowC").as_ptr();
+            },
+            // Progressive Slingshot
+            52 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::SLINGSHOT) == 0 {
+                    return cstr!("GetPachinkoA").as_ptr();
+                }
+                return cstr!("GetPachinkoB").as_ptr();
+            },
+            // Progressive Beetle
+            53 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::BEETLE) == 0 {
+                    return cstr!("GetBeetleA").as_ptr();
+                }
+                if flag::check_itemflag(flag::ITEMFLAGS::HOOK_BEETLE) == 0 {
+                    return cstr!("GetBeetleB").as_ptr();
+                }
+                if flag::check_itemflag(flag::ITEMFLAGS::QUICK_BEETLE) == 0 {
+                    return cstr!("GetBeetleC").as_ptr();
+                }
+                return cstr!("GetBeetleD").as_ptr();
+            },
+            // Progressive Mitts
+            56 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::DIGGING_MITTS) == 0 {
+                    return cstr!("GetMoleGloveA").as_ptr();
+                }
+                return cstr!("GetMoleGloveB").as_ptr();
+            },
+            // Progressive Bug Net
+            71 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::BUG_NET) == 0 {
+                    return cstr!("GetNetA").as_ptr();
+                }
+                return cstr!("GetNetB").as_ptr();
+            },
+            // Progressive Wallet
+            108 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::MEDIUM_WALLET) == 0 {
+                    return cstr!("GetPurseB").as_ptr();
+                }
+                if flag::check_itemflag(flag::ITEMFLAGS::BIG_WALLET) == 0 {
+                    return cstr!("GetPurseC").as_ptr();
+                }
+                if flag::check_itemflag(flag::ITEMFLAGS::GIANT_WALLET) == 0 {
+                    return cstr!("GetPurseD").as_ptr();
+                }
+                return cstr!("GetPurseE").as_ptr();
+            },
+            _ => {
+                return model_name;
+            },
+        }
+    }
+}
+
+#[no_mangle]
 pub fn get_arc_model_from_item(
     arc_table: *mut c_void,
     model_name: *const c_char,
     item_id: u16,
 ) -> u64 {
     unsafe {
-        let resolved_model_name = match item_id {
+        let initial_model_name = match item_id {
             214 => cstr!("Onp").as_ptr(),
             215 => cstr!("DesertRobot").as_ptr(),
             _ => model_name,
         };
+
+        let resolved_model_name = resolve_progressive_item_models(initial_model_name, item_id);
 
         return getArcModelFromName(
             arc_table,
@@ -1098,11 +1168,13 @@ pub fn get_arc_model_from_item(
 #[no_mangle]
 pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *const c_char {
     unsafe {
-        let resolved_model_name = match item_id {
+        let initial_model_name = match item_id {
             214 => cstr!("OnpB").as_ptr(),
             215 => cstr!("DesertRobot").as_ptr(),
             _ => model_name,
         };
+
+        let resolved_model_name = resolve_progressive_item_models(initial_model_name, item_id);
 
         // Replaced code
         asm!("mov x1, {0:x}", in(reg) item_id);

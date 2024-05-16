@@ -116,7 +116,10 @@
   types:
     - Major Items
     - Item Wheel Items
-  oarc: GetBowA
+  oarc: 
+    - GetBowA
+    - GetBowB
+    - GetBowC
   getarcname: GetBowA
   getmodelname: GetBowA
   advancement: true
@@ -324,7 +327,11 @@
   types:
     - Major Items
     - Item Wheel Items
-  oarc: GetBeetleA
+  oarc: 
+  - GetBeetleA
+  - GetBeetleB
+  - GetBeetleC
+  - GetBeetleD
   getarcname: GetBeetleA
   getmodelname: GetBeetleA
   advancement: true
@@ -333,7 +340,9 @@
   types:
     - Major Items
     - Main Quest Items
-  oarc: GetMoleGloveA
+  oarc:
+  - GetMoleGloveA
+  - GetMoleGloveB
   getarcname: GetMoleGloveA
   getmodelname: GetMoleGloveA
   advancement: true
@@ -395,7 +404,9 @@
   types:
     - Major Items
     - Item Wheel Items
-  oarc: GetNetA
+  oarc:
+  - GetNetA
+  - GetNetB
   getarcname: GetNetA
   getmodelname: GetNetA
   advancement: true
@@ -587,7 +598,11 @@
   types:
     - Wallets
     - Minor Items
-  oarc: GetPurseB
+  oarc: 
+  - GetPurseB
+  - GetPurseC
+  - GetPurseD
+  - GetPurseE
   getarcname: GetPurseB
   getmodelname: GetPurseB
   advancement: true
