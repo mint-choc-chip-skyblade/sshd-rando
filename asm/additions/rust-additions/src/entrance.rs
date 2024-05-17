@@ -37,6 +37,8 @@ assert_eq_size!([u8; 12], WarpToStartInfo);
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
+    static FILE_MGR: *mut c_void;
+    static STORYFLAG_MGR: *mut flag::FlagMgr;
     static STAGE_MGR: *mut actor::dStageMgr;
 
     static mut GAME_RELOADER_PTR: *mut actor::GameReloader;
@@ -46,10 +48,11 @@ extern "C" {
     static mut CURRENT_STAGE_SUFFIX: [u8; 4];
     static mut CURRENT_FADE_FRAMES: u16;
     static mut CURRENT_ROOM: u8;
+    static mut CURRENT_TRIAL: u8;
     static mut CURRENT_LAYER: u8;
     static mut CURRENT_ENTRANCE: u8;
     static mut CURRENT_NIGHT: u8;
-    static mut CURRENT_SOMETHING: u8;
+    static mut CURRENT_UNK: u8;
     static mut NEXT_STAGE_NAME: [u8; 8];
     static mut NEXT_STAGE_SUFFIX: [u8; 4];
     static mut NEXT_TRANSITION_FADE_FRAMES: u16;
@@ -293,5 +296,48 @@ pub fn fix_sky_keep_exit(
                 unk11,
             );
         }
+    }
+}
+
+#[no_mangle]
+pub fn allow_saving_respawn_info_on_new_file_start() {
+    unsafe {
+        // Storyflag 1201 is the "can use amiibo" flag.
+        // This is used as a check for setting the respawn info and forcing an
+        // autosave when starting a new game file.
+        if flag::check_storyflag(1201) == 0 {
+            (*GAME_RELOADER_PTR).prevent_set_respawn_info = 0;
+        }
+
+        // Replaced instructions
+        CURRENT_STAGE_NAME = *b"\0\0\0\0\0\0\0\0";
+        CURRENT_ROOM = 0;
+    }
+}
+
+#[no_mangle]
+pub fn allow_autosave_on_new_file_start(param1: u64) -> u64 {
+    unsafe {
+        let mut w21: u32;
+        asm!("mov {0:w}, w21", out(reg) w21);
+
+        // If flag 1201 isn't set, this must be the 1st time loading a new game file.
+        // Exclude layer 28 so the game doesn't autosave on the titlescreen.
+        if flag::check_storyflag(1201) == 0 && CURRENT_LAYER != 28 {
+            flag::set_storyflag(1201);
+            // Commit the flag so that the game doesn't autosave when loading an autosave made
+            // when starting a new game file.
+            ((*(*STORYFLAG_MGR).funcs).do_commit)(STORYFLAG_MGR);
+            w21 = 0;
+            asm!("mov w8, #1");
+        } else if (*GAME_RELOADER_PTR).is_reloading != 0 { // vanilla case
+            asm!("mov w8, #1");
+        } else {
+            asm!("mov w8, #0");
+        }
+
+        asm!("mov w21, {0:w}", in(reg) w21);
+
+        return param1;
     }
 }

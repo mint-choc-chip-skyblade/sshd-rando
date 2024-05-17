@@ -181,6 +181,12 @@ b.eq init_rainbow_colors
 cmp w8, #55
 b.eq check_stage_on_bucha_interaction
 
+cmp w8, #56
+b.eq allow_saving_respawn_info_on_new_file_start
+
+cmp w8, #57
+b.eq allow_autosave_on_new_file_start
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

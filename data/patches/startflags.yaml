@@ -69,7 +69,7 @@ Storyflags:
   - 792 # Watched Sealed Temple Big Door unlocking Cutscene
   - random_starting_statues == off:
     - 804 # Eldin entrance statue unlocked
-  - 1201 # Unlocked Amiibo
+  # - 1201 # Unlocked Amiibo
   # Cutscene flags
   ## Surface
   - 137 # Sealed Grounds Intro Cutscene (enable statue select from start)
