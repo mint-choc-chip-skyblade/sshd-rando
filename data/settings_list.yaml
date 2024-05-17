@@ -145,6 +145,16 @@
     - "off": "Newly obtained wallets do not give any Rupees."
     - "on": "Newly obtained wallets will come pre-filled with Rupees."
 
+- name: skip_harp_playing
+  default_option: "off"
+  pretty_name: Skip Harp Playing
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Opening up Trial Gates and receiving the item from The Old One will require strumming the harp."
+    - "on": "Trial Gates will automatically open up when you have obtained the harp and the appropriate song. Additionally, The Old One will not require you to play the harp to receive their item."
+
 # Will be put on the gui once this option actually changes behaviour
 - name: randomize_skykeep_layout
   default_option: "off"

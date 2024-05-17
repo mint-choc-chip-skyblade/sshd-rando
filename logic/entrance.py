@@ -10,6 +10,13 @@ if TYPE_CHECKING:
 class Entrance:
     sort_counter: int = 1
 
+    NON_ASSUMED_ENTRANCE_TYPES = [
+        "Spawn",
+        "Faron Region Entrance",
+        "Eldin Region Entrance",
+        "Lanayru Region Entrance",
+    ]
+
     def __init__(
         self,
         parent_area_: "Area" = None,

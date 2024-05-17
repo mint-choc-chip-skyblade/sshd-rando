@@ -85,7 +85,8 @@ main:
 
     INITIAL_INSERT_ANGLES: 0x7101827cc0 # For Boss Keys
 
-
+    dAcOWarp__StateGateOpen: 0x7101636748
+    
     # Item Stuff
     EQUIPPED_SWORD: 0x7101675c6c
     ITEM_GET_BOTTLE_POUCH_SLOT: 0x71015904e8
@@ -169,6 +170,9 @@ main:
 
     ## Size: 4
     SKY_CLOUD_COLORS: 0x712e54b6bc
+
+    ## Size: 50 (who knows how many settings we'll get in the future)
+    RANDOMIZER_SETTINGS: 0x712e54b6c0
 
     # Writable
     ## Size: 1

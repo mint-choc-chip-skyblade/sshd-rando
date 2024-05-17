@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -820,6 +820,13 @@
             <widget class="RandoTriStateCheckBox" name="setting_full_wallet_upgrades">
              <property name="text">
               <string>Full Wallet Upgrades</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_skip_harp_playing">
+             <property name="text">
+              <string>Skip Harp Playing</string>
              </property>
             </widget>
            </item>

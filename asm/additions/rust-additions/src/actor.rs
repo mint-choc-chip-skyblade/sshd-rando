@@ -266,6 +266,31 @@ pub struct ActorTreeProcess {
 }
 assert_eq_size!([u8; 0x18], ActorTreeProcess);
 
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct StageMgrvtable {
+    pub unk:                   u64,
+    pub dtor:                  u64,
+    pub initialize_state:      u64,
+    pub execute_state:         u64,
+    pub finalize_state:        u64,
+    pub change_state:          extern "C" fn(*mut StateMgr, *mut c_void),
+    pub refresh_state:         u64,
+    pub get_state:             u64,
+    pub get_new_state_id:      u64,
+    pub get_current_state_id:  u64,
+    pub get_previous_state_id: u64,
+}
+assert_eq_size!([u8; 0x58], StageMgrvtable);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct StateMgr {
+    pub vtable: *mut StageMgrvtable,
+    pub _0:     [u8; 0x68],
+}
+assert_eq_size!([u8; 0x70], StateMgr);
+
 // Actors
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -310,12 +335,17 @@ assert_eq_size!([u8; 0x204], dAcORockBoatMaybe);
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct dAcOWarp {
-    pub base:       dAcOBase,
-    pub _0:         [u8; 0xE4C],
-    pub trialIndex: u8,
+    pub base:                dAcOBase,
+    pub _0:                  [u8; 0xAD8],
+    pub state_mgr:           StateMgr,
+    pub _1:                  [u8; 0x2EE],
+    pub trial_index_bitmask: u8,
+    pub _2:                  [u8; 0x15],
+    pub trial_index:         u8,
+    pub _3:                  [u8; 3],
     // TODO
 }
-assert_eq_size!([u8; 0x125D], dAcOWarp);
+assert_eq_size!([u8; 0x1260], dAcOWarp);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]

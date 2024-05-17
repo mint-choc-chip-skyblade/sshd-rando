@@ -10,6 +10,7 @@ use crate::flag;
 use crate::math;
 use crate::player;
 use crate::savefile;
+use crate::settings;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
@@ -108,6 +109,7 @@ extern "C" {
     static HARP_RELATED: *mut event::HarpRelated;
 
     static DUNGEONFLAG_MGR: *mut flag::DungeonflagMgr;
+    static SCENEFLAG_MGR: *mut flag::SceneflagMgr;
 
     static mut STATIC_DUNGEONFLAGS: [u16; 8];
     static mut CURRENT_STAGE_NAME: [u8; 8];
@@ -118,6 +120,8 @@ extern "C" {
 
     static mut SQUIRRELS_CAUGHT_THIS_PLAY_SESSION: bool;
 
+    static RANDOMIZER_SETTINGS: settings::RandomizerSettings;
+    static mut dAcOWarp__StateGateOpen: c_void;
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn sinf(x: f32) -> f32;
@@ -980,14 +984,161 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
 }
 
 #[no_mangle]
+pub fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
+    unsafe {
+        // Don't try to open any trial gates if the setting isn't on
+        if RANDOMIZER_SETTINGS.skip_harp_playing == 0 {
+            return;
+        }
+
+        // Return early if we aren't collecting any relevant items
+        let relevant_items = [
+            flag::ITEMFLAGS::GODDESS_HARP,
+            flag::ITEMFLAGS::FARORE_COURAGE,
+            flag::ITEMFLAGS::NAYRU_WISDOM,
+            flag::ITEMFLAGS::DIN_POWER,
+            flag::ITEMFLAGS::SONG_OF_THE_HERO,
+        ];
+        if !relevant_items.iter().any(|&item| item == collected_item) {
+            return;
+        }
+
+        let mut open_trial_gate = false;
+        // If we have the Goddess Harp and the appropriate song, set
+        // the scene flag for the trial gate being open. If we're in
+        // the scene index where the trial is, set the flag locally
+        // and then try to find the trial gate actor and open it.
+        if flag::check_itemflag(flag::ITEMFLAGS::GODDESS_HARP) == 1 {
+            if flag::check_itemflag(flag::ITEMFLAGS::FARORE_COURAGE) == 1 {
+                if (*SCENEFLAG_MGR).sceneindex == 1 {
+                    flag::set_local_sceneflag(17);
+                    open_trial_gate = true;
+                } else {
+                    flag::set_global_sceneflag(1, 17);
+                }
+            }
+            if flag::check_itemflag(flag::ITEMFLAGS::NAYRU_WISDOM) == 1 {
+                if (*SCENEFLAG_MGR).sceneindex == 7 {
+                    flag::set_local_sceneflag(91);
+                    open_trial_gate = true;
+                } else {
+                    flag::set_global_sceneflag(7, 91);
+                }
+            }
+            if flag::check_itemflag(flag::ITEMFLAGS::DIN_POWER) == 1 {
+                if (*SCENEFLAG_MGR).sceneindex == 4 {
+                    flag::set_local_sceneflag(70);
+                    open_trial_gate = true;
+                } else {
+                    flag::set_global_sceneflag(4, 70);
+                }
+            }
+            if flag::check_itemflag(flag::ITEMFLAGS::SONG_OF_THE_HERO) == 1 {
+                if (*SCENEFLAG_MGR).sceneindex == 0 {
+                    flag::set_local_sceneflag(69);
+                    open_trial_gate = true;
+                } else {
+                    flag::set_global_sceneflag(0, 69);
+                }
+            }
+        }
+
+        // Open the trial gate if we're potentially on the same stage as the one that
+        // we're opening
+        if open_trial_gate {
+            // Try to find the trial gate actor
+            let mut trial_gate_actor =
+                actor::find_actor_by_type(actor::ACTORID::OBJ_WARP, core::ptr::null_mut())
+                    as *mut actor::dAcOWarp;
+            // If it exists, change it's state to open
+            if trial_gate_actor != core::ptr::null_mut() {
+                ((*(*trial_gate_actor).state_mgr.vtable).change_state)(
+                    &mut (*trial_gate_actor).state_mgr as *mut actor::StateMgr,
+                    &mut dAcOWarp__StateGateOpen as *mut c_void,
+                );
+            }
+        }
+    }
+}
+
+#[no_mangle]
 pub fn after_item_collection_hook(collected_item: flag::ITEMFLAGS) -> flag::ITEMFLAGS {
     unsafe {
         fix::fix_ammo_counts(collected_item);
+        check_and_open_trial_gates(collected_item);
 
         // Replaced code
         asm!("mov w8, {0:w}", in(reg) ((collected_item as u16) - 2));
 
         return collected_item;
+    }
+}
+
+#[no_mangle]
+pub fn resolve_progressive_item_models(model_name: *const c_char, item_id: u16) -> *const c_char {
+    unsafe {
+        match item_id {
+            // Progressive Bow
+            19 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::BOW) == 0 {
+                    return cstr!("GetBowA").as_ptr();
+                }
+                if flag::check_itemflag(flag::ITEMFLAGS::IRON_BOW) == 0 {
+                    return cstr!("GetBowB").as_ptr();
+                }
+                return cstr!("GetBowC").as_ptr();
+            },
+            // Progressive Slingshot
+            52 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::SLINGSHOT) == 0 {
+                    return cstr!("GetPachinkoA").as_ptr();
+                }
+                return cstr!("GetPachinkoB").as_ptr();
+            },
+            // Progressive Beetle
+            53 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::BEETLE) == 0 {
+                    return cstr!("GetBeetleA").as_ptr();
+                }
+                if flag::check_itemflag(flag::ITEMFLAGS::HOOK_BEETLE) == 0 {
+                    return cstr!("GetBeetleB").as_ptr();
+                }
+                if flag::check_itemflag(flag::ITEMFLAGS::QUICK_BEETLE) == 0 {
+                    return cstr!("GetBeetleC").as_ptr();
+                }
+                return cstr!("GetBeetleD").as_ptr();
+            },
+            // Progressive Mitts
+            56 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::DIGGING_MITTS) == 0 {
+                    return cstr!("GetMoleGloveA").as_ptr();
+                }
+                return cstr!("GetMoleGloveB").as_ptr();
+            },
+            // Progressive Bug Net
+            71 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::BUG_NET) == 0 {
+                    return cstr!("GetNetA").as_ptr();
+                }
+                return cstr!("GetNetB").as_ptr();
+            },
+            // Progressive Wallet
+            108 => {
+                if flag::check_itemflag(flag::ITEMFLAGS::MEDIUM_WALLET) == 0 {
+                    return cstr!("GetPurseB").as_ptr();
+                }
+                if flag::check_itemflag(flag::ITEMFLAGS::BIG_WALLET) == 0 {
+                    return cstr!("GetPurseC").as_ptr();
+                }
+                if flag::check_itemflag(flag::ITEMFLAGS::GIANT_WALLET) == 0 {
+                    return cstr!("GetPurseD").as_ptr();
+                }
+                return cstr!("GetPurseE").as_ptr();
+            },
+            _ => {
+                return model_name;
+            },
+        }
     }
 }
 
@@ -998,11 +1149,13 @@ pub fn get_arc_model_from_item(
     item_id: u16,
 ) -> u64 {
     unsafe {
-        let resolved_model_name = match item_id {
+        let initial_model_name = match item_id {
             214 => cstr!("Onp").as_ptr(),
             215 => cstr!("DesertRobot").as_ptr(),
             _ => model_name,
         };
+
+        let resolved_model_name = resolve_progressive_item_models(initial_model_name, item_id);
 
         return getArcModelFromName(
             arc_table,
@@ -1015,11 +1168,13 @@ pub fn get_arc_model_from_item(
 #[no_mangle]
 pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *const c_char {
     unsafe {
-        let resolved_model_name = match item_id {
+        let initial_model_name = match item_id {
             214 => cstr!("OnpB").as_ptr(),
             215 => cstr!("DesertRobot").as_ptr(),
             _ => model_name,
         };
+
+        let resolved_model_name = resolve_progressive_item_models(initial_model_name, item_id);
 
         // Replaced code
         asm!("mov x1, {0:x}", in(reg) item_id);
