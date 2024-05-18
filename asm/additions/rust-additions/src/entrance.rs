@@ -300,6 +300,20 @@ pub fn fix_sky_keep_exit(
 }
 
 #[no_mangle]
+pub fn require_sword_to_enter_trial_gate() -> bool {
+    unsafe {
+        let scen_link: u8;
+        asm!("ldrb {0:w}, [x23, #0x4]", out(reg) scen_link);
+
+        if scen_link == 0xFF || flag::check_itemflag(flag::ITEMFLAGS::PRACTICE_SWORD) == 0 {
+            return false;
+        }
+
+        return true;
+    }
+}
+
+#[no_mangle]
 pub fn allow_saving_respawn_info_on_new_file_start() {
     unsafe {
         // Storyflag 1201 is the "can use amiibo" flag.

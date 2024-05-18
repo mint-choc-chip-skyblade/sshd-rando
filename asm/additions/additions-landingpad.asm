@@ -187,6 +187,9 @@ b.eq allow_saving_respawn_info_on_new_file_start
 cmp w8, #57
 b.eq allow_autosave_on_new_file_start
 
+cmp w8, #58
+b.eq require_sword_to_enter_trial_gate
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

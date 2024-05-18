@@ -85,7 +85,7 @@
   hint_region: Eldin Volcano
   exits:
     Volcano Ascent Statue: Nothing
-    Din's Silent Realm: Goddesss_Harp and Dins_Power
+    Din's Silent Realm: Goddesss_Harp and Dins_Power and Progressive_Sword
     # Beetle can be used to scare the boko away but that's really not obvious
     Outside Thrill Digger Cave: Bow or Slingshot or logic_stuttersprint
     Past Sand Slide: shortcut_eldin_ascent_boulder or Bomb_Bag or Hook_Beetle or can_access(Past Sand Slide) # or (Whip and Whip Bomb Trick)
