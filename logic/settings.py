@@ -298,4 +298,6 @@ def get_all_settings_info() -> dict[str, SettingInfo]:
                             "One of the other options will be selected at random."
                         )
 
+        print_progress_text("Setting data loaded")
+
     return settings_info_map
