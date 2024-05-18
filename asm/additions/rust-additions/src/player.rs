@@ -300,6 +300,16 @@ pub struct dPlayer {
 }
 assert_eq_size!([u8; 0x64DC], dPlayer);
 
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dBird {
+    pub vtable:           u64,
+    pub base:             actor::dBasemembers,
+    pub obj_base_members: actor::dAcOBasemembers,
+    pub _0:               [u8; 0x1640],
+}
+assert_eq_size!([u8; 0x1A50], dBird);
+
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {

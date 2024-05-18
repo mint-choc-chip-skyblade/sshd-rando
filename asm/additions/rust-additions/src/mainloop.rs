@@ -4,6 +4,7 @@
 
 use crate::color;
 use crate::debug;
+use crate::fix;
 use crate::input;
 
 use core::arch::asm;
@@ -54,6 +55,7 @@ extern "C" {
 #[no_mangle]
 pub fn main_loop_inject() -> *mut c_void {
     unsafe {
+        // Soft-reset button combo
         if (input::check_button_held(input::BUTTON_INPUTS::LEFT_STICK_BUTTON)
             && input::check_button_held(input::BUTTON_INPUTS::A_BUTTON)
             && input::check_button_held(input::BUTTON_INPUTS::R_BUTTON))
@@ -65,6 +67,8 @@ pub fn main_loop_inject() -> *mut c_void {
         }
 
         color::handle_colors();
+
+        fix::apply_loftwing_speed_override();
 
         return dSystem;
     }

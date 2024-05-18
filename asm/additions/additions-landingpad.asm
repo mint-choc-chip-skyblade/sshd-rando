@@ -50,7 +50,7 @@ cmp w8, #11
 b.eq fix_sky_keep_exit
 
 cmp w8, #12
-b.eq check_local_sceneflag
+b.eq check_bucha_local_sceneflag
 
 cmp w8, #13
 b.eq handle_crest_hit_give_item
@@ -177,6 +177,18 @@ b.eq handle_ac_boko_and_heartco_and_digspot_traps
 
 cmp w8, #54
 b.eq init_rainbow_colors
+
+cmp w8, #55
+b.eq check_stage_on_bucha_interaction
+
+cmp w8, #56
+b.eq allow_saving_respawn_info_on_new_file_start
+
+cmp w8, #57
+b.eq allow_autosave_on_new_file_start
+
+cmp w8, #58
+b.eq require_sword_to_enter_trial_gate
 
 ret ; this should never be reached
 

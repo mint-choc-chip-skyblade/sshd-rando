@@ -69,7 +69,7 @@ def seed_rng(
 
         # Special handling for other settings
         for item in sorted(setting_map.starting_inventory):
-            hash_str += item
+            hash_str += item * setting_map.starting_inventory[item]
 
         for loc in sorted(setting_map.excluded_locations):
             hash_str += loc

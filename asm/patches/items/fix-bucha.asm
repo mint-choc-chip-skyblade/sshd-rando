@@ -147,3 +147,11 @@ nop
 nop
 nop
 nop
+
+
+; Check current stage in dAcNpcKyuiElder::performInteraction
+.offset 0x71005c2c78
+mov w8, #55
+
+.offset 0x71005c2c80
+bl additions_jumptable

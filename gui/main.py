@@ -16,6 +16,7 @@ from filepathconstants import (
 
 from gui.accessibility import Accessibility
 from gui.advanced import Advanced
+from gui.dialogs.dialog_header import print_progress_text
 from gui.tracker import Tracker
 from gui.dialogs.error_dialog import error, error_from_str
 from gui.dialogs.fi_info_dialog import FiInfoDialog
@@ -30,6 +31,7 @@ from logic.config import load_config_from_file, write_config_to_file
 class Main(QMainWindow):
     def __init__(self):
         super().__init__()
+        print_progress_text("Initializing GUI")
 
         self.randomize_thread = RandomizationThread()
         self.randomize_thread.error_abort.connect(self.thread_error)
@@ -53,14 +55,19 @@ class Main(QMainWindow):
 
         self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
 
+        print_progress_text("Initializing GUI: accessibility")
         self.accessibility = Accessibility(self, self.ui)
+        print_progress_text("Initializing GUI: settings")
         self.settings = Settings(self, self.ui)
+        print_progress_text("Initializing GUI: advanced")
         self.advanced = Advanced(self, self.ui)
+        print_progress_text("Initializing GUI: tracker")
         self.tracker = Tracker(self, self.ui)
 
         self.ui.randomize_button.setDisabled(True)
         self.ui.randomize_button.clicked.connect(self.randomize)
         self.ui.about_button.clicked.connect(self.about)
+        print_progress_text("GUI initialized")
 
     def randomize(self):
         if not self.check_output_dir():

@@ -566,6 +566,7 @@ NAYRUS_WISDOM = "Nayru's Wisdom"
 DINS_POWER = "Din's Power"
 
 # 190
+SOTH_PART = "Song of the Hero Part"
 FARON_SOTH_PART = "Faron Song of the Hero Part"
 
 # 191

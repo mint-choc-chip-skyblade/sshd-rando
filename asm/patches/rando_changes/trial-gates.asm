@@ -43,3 +43,10 @@ b 0x71009d80f8
 .offset 0x71009d81e0
 mov w8, #41
 bl additions_jumptable
+
+; Don't allow thrusting a sword into a trial gate if
+; the player doesn't actually have a sword
+.offset 0x71009d94f8
+mov w8, #58
+bl additions_jumptable
+cbz w0, 0x71009d9534

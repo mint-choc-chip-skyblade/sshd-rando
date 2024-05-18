@@ -23,14 +23,39 @@ use static_assertions::assert_eq_size;
 // Always add an assert_eq_size!() macro after defining a struct to ensure it's
 // the size you expect it to be.
 
-//////////////////////
-// ADD STRUCTS HERE //
-//////////////////////
+#[repr(i32)]
+#[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub enum MinigameState {
+    State0,
+    BambooCutting,
+    FunFunIsland,
+    ThrillDigger,
+    PumpkinCarry,
+    BugHeaven,
+    PumpkinArchery,
+    RicketyCoaster,
+    SilentRealmTimeTrial,
+    BossRush,
+    HouseCleaning,
+    SpiralChargeTutorial,
+    HarpPlaying,
+    StateNone = -1,
+}
+
+impl MinigameState {
+    pub fn get() -> Self {
+        unsafe { MINIGAME_STATE }
+    }
+
+    pub fn is_current(self) -> bool {
+        Self::get() == self
+    }
+}
 
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
-    static MINIGAME_STATE: u32;
+    static mut MINIGAME_STATE: MinigameState;
 
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
@@ -45,7 +70,9 @@ pub fn prevent_minigame_death(final_health: i32) -> (u32, i32) {
     unsafe {
         let mut new_final_health = final_health;
         // Set final health to 1 if we're in the thrill digger or bug heaven minigames
-        if new_final_health <= 0 && (MINIGAME_STATE == 3 || MINIGAME_STATE == 5) {
+        if new_final_health <= 0
+            && (MinigameState::ThrillDigger.is_current() || MinigameState::BugHeaven.is_current())
+        {
             new_final_health = 1;
         }
 

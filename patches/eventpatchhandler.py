@@ -507,6 +507,15 @@ def handle_progressive_items(msbf: ParsedMsb):
         ITEM_STORYFLAGS[PROGRESSIVE_WALLET],
     )
 
+    # Song of the Hero parts
+    make_progressive_item_events(
+        msbf,
+        474,
+        (472, 471, 475, 477),
+        ITEM_ITEMFLAGS[SOTH_PART],
+        ITEM_STORYFLAGS[SOTH_PART],
+    )
+
 
 def entrypoint_hash(name: str, entries: int) -> int:
     hash = 0

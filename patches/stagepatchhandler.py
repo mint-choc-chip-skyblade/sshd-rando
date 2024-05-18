@@ -1009,7 +1009,7 @@ def patch_and_write_stage(
         print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
         write_bytes_create_dirs(modified_stage_path, stage_u8.build_and_compress_U8())
     else:
-        print_progress_text(f"Copying Stage: {stage}\tLayer: {layer}")
+        print_progress_text(f"Copying  Stage: {stage}\tLayer: {layer}")
         write_bytes_create_dirs(modified_stage_path, stage_path.read_bytes())
 
 

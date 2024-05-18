@@ -671,6 +671,33 @@ pub fn academy_bell_give_custom_item() {
 }
 
 #[no_mangle]
+pub fn check_bucha_local_sceneflag(flag: u32) -> u16 {
+    unsafe {
+        if &CURRENT_STAGE_NAME[..5] == b"F100\0" {
+            return flag::check_local_sceneflag(flag);
+        }
+        return 1;
+    }
+}
+
+#[no_mangle]
+pub fn check_stage_on_bucha_interaction(param1: u64) -> u64 {
+    unsafe {
+        if &CURRENT_STAGE_NAME[..5] != b"F100\0" {
+            asm!("add lr, lr, #0x234");
+        }
+
+        // Replaced intructions
+        asm!(
+            "mov x19, {0:x}",
+            "mov w8, #0x2651",
+            in(reg) param1,
+        );
+        return param1;
+    }
+}
+
+#[no_mangle]
 pub fn rotate_freestanding_items(item_actor: *mut dAcItem) {
     unsafe {
         // Spin items if not a stamina fruit
@@ -997,6 +1024,7 @@ pub fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
             flag::ITEMFLAGS::FARORE_COURAGE,
             flag::ITEMFLAGS::NAYRU_WISDOM,
             flag::ITEMFLAGS::DIN_POWER,
+            flag::ITEMFLAGS::FARON_SONG_OF_THE_HERO_PART,
             flag::ITEMFLAGS::SONG_OF_THE_HERO,
         ];
         if !relevant_items.iter().any(|&item| item == collected_item) {
