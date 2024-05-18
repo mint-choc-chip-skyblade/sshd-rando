@@ -325,12 +325,13 @@ pub fn allow_autosave_on_new_file_start(param1: u64) -> u64 {
         // Exclude layer 28 so the game doesn't autosave on the titlescreen.
         if flag::check_storyflag(1201) == 0 && CURRENT_LAYER != 28 {
             flag::set_storyflag(1201);
-            // Commit the flag so that the game doesn't autosave when loading an autosave made
-            // when starting a new game file.
+            // Commit the flag so that the game doesn't autosave when loading an autosave
+            // made when starting a new game file.
             ((*(*STORYFLAG_MGR).funcs).do_commit)(STORYFLAG_MGR);
             w21 = 0;
             asm!("mov w8, #1");
-        } else if (*GAME_RELOADER_PTR).is_reloading != 0 { // vanilla case
+        } else if (*GAME_RELOADER_PTR).is_reloading != 0 {
+            // vanilla case
             asm!("mov w8, #1");
         } else {
             asm!("mov w8, #0");

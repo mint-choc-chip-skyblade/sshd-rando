@@ -1,5 +1,6 @@
 main:
     PLAYER_PTR: 0x7102bfd940
+    LOFTWING_PTR: 0x7101821fa0
 
 
     # MGRs

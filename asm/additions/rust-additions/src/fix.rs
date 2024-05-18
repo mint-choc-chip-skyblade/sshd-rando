@@ -6,6 +6,7 @@ use crate::actor;
 use crate::debug;
 use crate::flag;
 use crate::lyt;
+use crate::minigame;
 use crate::player;
 
 use core::arch::asm;
@@ -32,6 +33,7 @@ use static_assertions::assert_eq_size;
 // symbols.yaml and then added to this extern block.
 extern "C" {
     static PLAYER_PTR: *mut player::dPlayer;
+    static LOFTWING_PTR: *mut player::dBird;
 
     static STORYFLAG_MGR: *mut flag::FlagMgr;
 
@@ -240,5 +242,20 @@ pub fn fix_ammo_counts(collected_item: flag::ITEMFLAGS) {
             }
         },
         _ => {},
+    }
+}
+
+#[no_mangle]
+pub fn apply_loftwing_speed_override() {
+    unsafe {
+        if (&CURRENT_STAGE_NAME[..5] == b"F023\0"
+            && flag::check_storyflag(368) == 1 // Pumpkin Soup delivered to rainbow island
+            && flag::check_storyflag(200) == 0) // Levias defeated
+            || minigame::MinigameState::SpiralChargeTutorial.is_current()
+        {
+            if (*LOFTWING_PTR).obj_base_members.forward_speed > 80.0 {
+                (*LOFTWING_PTR).obj_base_members.forward_speed = 80.0;
+            }
+        }
     }
 }
