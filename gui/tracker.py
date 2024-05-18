@@ -331,7 +331,7 @@ class Tracker:
                 "songs/song_of_the_hero_1.png",
                 "songs/song_of_the_hero_2.png",
                 "songs/song_of_the_hero_3.png",
-                "songs/song_of_the_hero.png",
+                "songs/song_of_the_hero_4.png",
             ],
         )
         self.triforce_button = TrackerInventoryButton(
