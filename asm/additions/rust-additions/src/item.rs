@@ -1024,6 +1024,7 @@ pub fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
             flag::ITEMFLAGS::FARORE_COURAGE,
             flag::ITEMFLAGS::NAYRU_WISDOM,
             flag::ITEMFLAGS::DIN_POWER,
+            flag::ITEMFLAGS::FARON_SONG_OF_THE_HERO_PART,
             flag::ITEMFLAGS::SONG_OF_THE_HERO,
         ];
         if !relevant_items.iter().any(|&item| item == collected_item) {
@@ -1060,7 +1061,9 @@ pub fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
                     flag::set_global_sceneflag(4, 70);
                 }
             }
-            if flag::check_itemflag(flag::ITEMFLAGS::SONG_OF_THE_HERO) == 1 {
+            if flag::check_itemflag(flag::ITEMFLAGS::SONG_OF_THE_HERO) == 1
+                || flag::check_itemflag(flag::ITEMFLAGS::FARON_SONG_OF_THE_HERO_PART) == 1
+            {
                 if (*SCENEFLAG_MGR).sceneindex == 0 {
                     flag::set_local_sceneflag(69);
                     open_trial_gate = true;

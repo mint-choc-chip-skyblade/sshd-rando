@@ -58,7 +58,7 @@ Can Afford 1200 Rupees: Can_High_Rupee_Farm and wallet_capacity(1200)
 
 Can Afford 1600 Rupees: Can_High_Rupee_Farm and wallet_capacity(1600)
 
-Song of the Hero: (Faron_Song_of_the_Hero_Part and Eldin_Song_of_the_Hero_Part and Lanayru_Song_of_the_Hero_Part) or Song_of_the_Hero # Starting Item
+Full Song of the Hero: count(4, Song_of_the_Hero_Part) or Song_of_the_Hero # Starting Item
 
 Complete Triforce: Triforce_of_Courage and Triforce_of_Wisdom and Triforce_of_Power
 

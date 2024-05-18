@@ -59,7 +59,7 @@
   standard: "You learned the <y<Thunder Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
 
 - name: Full SotH text
-  standard: "The <y<Song of the Hero>> is now complete!"
+  standard: "You learned the <y<final part of the\nSong of the Hero>>...\n\n\nThe <y<Song of the Hero>> is now complete!"
 
 - name: Five Gratitude crystal counter
   standard: "You got <r<five>> <y<Gratitude Crystals>>!\nThat is <r<<numeric arg1> >>in Total!"
@@ -877,6 +877,12 @@
   standard: Din's Power
   pretty: Din's Power
   cryptic: a <r<powerful tune>>
+  plurality: Singular
+
+- name: Song of the Hero Part
+  standard: Song of the Hero Part
+  pretty: Song of the Hero Part
+  cryptic: a <r<dragon's tune>>
   plurality: Singular
 
 - name: Faron Song of the Hero Part

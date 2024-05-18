@@ -122,7 +122,7 @@ Sceneflags:
     - 26 # Watched Eye Cutscene in Bazaar
     - 66 # Batreaux Doors outside open
     - 67 # Inside Doors open
-    - skip_harp_playing == on and Goddesss_Harp and Song_of_the_Hero:
+    - skip_harp_playing == on and Goddesss_Harp and Full_Song_of_the_Hero:
       - 69 # Goddess's Silent Realm Trial Gate Open
     - 76 # Watched Pipit scold Mallara Cutscene
     - 95 # Fi Text for Ruby Tablet

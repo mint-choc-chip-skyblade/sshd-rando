@@ -919,7 +919,7 @@
   getmodelname: GetHarp
   advancement: true
 - id: 190
-  name: Faron Song of the Hero Part
+  name: Song of the Hero Part
   types:
     - Major Items
     - Main Quest Items

@@ -325,12 +325,13 @@ class Tracker:
             ["songs/dins_power_gray.png", "songs/dins_power.png"],
         )
         self.song_of_the_hero_button = TrackerInventoryButton(
-            ["Nothing", FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART],
+            ["Nothing"] + [SOTH_PART] * 4,
             [
                 "songs/song_of_the_hero_gray.png",
                 "songs/song_of_the_hero_1.png",
                 "songs/song_of_the_hero_2.png",
                 "songs/song_of_the_hero_3.png",
+                "songs/song_of_the_hero.png",
             ],
         )
         self.triforce_button = TrackerInventoryButton(
@@ -635,18 +636,15 @@ class Tracker:
         self.inventory = self.world.starting_item_pool.copy()
 
         # If the inventory contains the song of the hero, split it into its
-        # three parts for the inventory button
+        # four parts for the inventory button
         if self.inventory[self.world.get_item(SONG_OF_THE_HERO)]:
             self.inventory[self.world.get_item(SONG_OF_THE_HERO)] = 0
-            self.inventory[self.world.get_item(FARON_SOTH_PART)] = 1
-            self.inventory[self.world.get_item(ELDIN_SOTH_PART)] = 1
-            self.inventory[self.world.get_item(LANAYRU_SOTH_PART)] = 1
+            self.inventory[self.world.get_item(SOTH_PART)] = 4
 
         # Some item groups can be obtained in any order, so we normalize the orders here
         # to match what their corresponding button has
-        soth_order = [FARON_SOTH_PART, ELDIN_SOTH_PART, LANAYRU_SOTH_PART]
         triforce_order = [TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER]
-        for group in (soth_order, triforce_order):
+        for group in (triforce_order,):
             num_group_parts = sum(
                 [1 for item in self.inventory.elements() if item.name in group]
             )
