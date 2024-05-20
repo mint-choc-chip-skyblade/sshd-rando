@@ -12,6 +12,7 @@
   hint_region: Eldin Volcano
   exits:
     Volcano East: Nothing
+    Bokoblin Base Prison: Nothing
   locations:
     Eldin Volcano - Stamina Fruit in Rising Lava Room: Nothing
     Eldin Volcano - Chest behind Bombable Wall in First Room: Nothing
@@ -36,7 +37,6 @@
     Volcano First Room: Bomb_Bag
     Mogma Turf Dive: Nothing
     Past Mogma Turf: Bomb_Bag or Hook_Beetle
-    Bokoblin Base Prison: Nothing
   locations:
     Eldin Volcano - Chest after Blocked Crawlspace: Nothing
     Eldin Volcano - Southeast Rupee above Mogma Turf Entrance: Beetle
