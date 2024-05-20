@@ -16,6 +16,7 @@ class TrackerArea(QLabel):
     change_map_area = Signal(str)
     show_entrances = Signal(str)
     set_main_entrance_target = Signal(Entrance)
+    check_all = Signal(list)
 
     default_stylesheet = f"background-color: COLOR; border-image: none; border-color: black; border-radius: RADIUSpx; color: black; qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
 
@@ -195,6 +196,9 @@ class TrackerArea(QLabel):
         elif ev.button() == QtCore.Qt.RightButton:
             if self.main_entrance:
                 self.set_main_entrance_target.emit(self.main_entrance)
+            elif len(self.tracker_children) == 0:
+                # check all locations when right-clicked if this has no child regions
+                self.check_all.emit(self.get_included_locations())
             # don't propagate the event -- this prevents right-clicks from going back to the root
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:

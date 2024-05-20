@@ -419,6 +419,7 @@ class Tracker:
             area_button.set_main_entrance_target.connect(
                 self.show_target_selection_info
             )
+            area_button.check_all.connect(self.check_all_locations_in_list)
             self.areas[area_name] = area_button
 
         # Set parent areas of tracker area buttons
@@ -1391,20 +1392,23 @@ class Tracker:
         self.ui.tracker_stats_remaining.setText(f"{num_remaining_locations: {3}}")
 
     def on_check_all_clicked(self):
-        self.handle_check_all(False, True)
+        self.handle_check_all()
 
     def on_check_all_in_logic_clicked(self):
         self.handle_check_all(True, True)
 
     def on_uncheck_all_clicked(self):
-        self.handle_check_all()
+        self.handle_check_all(False, False)
 
-    def handle_check_all(self, in_logic_only=False, check=False):
+    def handle_check_all(self, in_logic_only=False, check=True):
         assert self.last_opened_region != None
         if in_logic_only:
             location_list = self.last_opened_region.get_available_locations()
         else:
             location_list = self.last_opened_region.get_included_locations()
+        self.check_all_locations_in_list(location_list, check)
+
+    def check_all_locations_in_list(self, location_list: list[Location], check=True):
         for location in location_list:
             location.marked = check
         self.update_tracker()
