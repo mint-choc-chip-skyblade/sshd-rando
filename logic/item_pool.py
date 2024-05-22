@@ -143,6 +143,18 @@ def generate_starting_item_pool(world: "World"):
     # Populate starting item pool
     for item_name, count in starting_items.items():
         item = world.get_item(item_name)
+
+        if item_name == EMPTY_BOTTLE:
+            world.starting_item_pool[item] += count
+
+            while count > 0:
+                bottle_item_name = random.choice(BOTTLE_ITEMS)
+
+                if world.item_pool[world.get_item(bottle_item_name)] > 0:
+                    world.item_pool[world.get_item(bottle_item_name)] -= 1
+                    count -= 1
+            continue
+
         world.starting_item_pool[item] += count
         world.item_pool[item] -= count
 
