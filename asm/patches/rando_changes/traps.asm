@@ -55,12 +55,3 @@ nop
 ; bl additions_jumptable
 ; mov w8, w0
 ; nop
-
-
-
-.offset 0x7100516e64
-mov w8, #59
-bl additions_jumptable
-
-.offset 0x7100516914
-b 0x7100516db0
