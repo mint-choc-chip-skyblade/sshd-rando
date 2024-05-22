@@ -52,26 +52,6 @@ def generate_item_pool(world: "World") -> None:
             item_name = random.choice(VANILLA_RANDOM_ITEM_TABLE[item_name])
 
         item = world.get_item(item_name)
-
-        if (
-            world.setting("random_bottle_contents") == "on"
-            and item_name in BOTTLE_ITEMS
-        ):
-            item = world.get_item(random.choice(BOTTLE_ITEMS))
-        elif item_name in BOTTLE_ITEMS:
-            # Assign vanilla bottle contents
-            if (
-                world.item_pool[
-                    revitalizing_potion := world.get_item(REVITALIZING_POTION)
-                ]
-                == 0
-            ):
-                item = revitalizing_potion
-            elif (
-                world.item_pool[mushroom_spores := world.get_item(MUSHROOM_SPORES)] == 0
-            ):
-                item = mushroom_spores
-
         world.item_pool[item] += 1
 
 
@@ -143,18 +123,6 @@ def generate_starting_item_pool(world: "World"):
     # Populate starting item pool
     for item_name, count in starting_items.items():
         item = world.get_item(item_name)
-
-        if item_name == EMPTY_BOTTLE:
-            world.starting_item_pool[item] += count
-
-            while count > 0:
-                bottle_item_name = random.choice(BOTTLE_ITEMS)
-
-                if world.item_pool[world.get_item(bottle_item_name)] > 0:
-                    world.item_pool[world.get_item(bottle_item_name)] -= 1
-                    count -= 1
-            continue
-
         world.starting_item_pool[item] += count
         world.item_pool[item] -= count
 
