@@ -547,8 +547,8 @@
     - "Off"
     - "On"
   options:
-    - "off": ""
-    - "on": ""
+    - "off": "There will be 3 Empty Bottles, 1 Revitalizing Potion, and 1 Bottle of Mushroom Spores in the item pool."
+    - "on": "There will be 5 Bottles in the item pool - each with random contents (e.g. Heart Potion, Hot Pumpkin Soup, Sacred Water, etc...)."
 
 - name: trap_mode
   default_option: "no_traps"
