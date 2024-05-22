@@ -554,6 +554,11 @@ class Ui_main_window(object):
 
         self.verticalLayout.addLayout(self.peatrice_conversations_layout)
 
+        self.setting_random_bottle_contents = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_random_bottle_contents.setObjectName(u"setting_random_bottle_contents")
+
+        self.verticalLayout.addWidget(self.setting_random_bottle_contents)
+
         self.setting_full_wallet_upgrades = RandoTriStateCheckBox(self.tweaks_group_box)
         self.setting_full_wallet_upgrades.setObjectName(u"setting_full_wallet_upgrades")
 
@@ -2584,7 +2589,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 283))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2727,7 +2732,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2782,6 +2787,7 @@ class Ui_main_window(object):
         self.damage_multiplier_label.setText(QCoreApplication.translate("main_window", u"Damage Multiplier", None))
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
+        self.setting_random_bottle_contents.setText(QCoreApplication.translate("main_window", u"Random Bottle Contents", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
         self.setting_skip_harp_playing.setText(QCoreApplication.translate("main_window", u"Skip Harp Playing", None))
         self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))

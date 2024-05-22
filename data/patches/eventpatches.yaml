@@ -347,6 +347,9 @@
   - name: Full SotH text
     type: textpatch
     index: 243
+  - name: Cold Pumpkin Soup text
+    type: textpatch
+    index: 246
   - name: Five Gratitude crystal counter
     type: textpatch
     index: 45

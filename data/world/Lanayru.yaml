@@ -41,7 +41,7 @@
   hint_region: Lanayru Mine
   exits:
     Lanayru Mine Entry: "'Blow_Down_First_Mine_Statue'"
-    Lanayru Mine End: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle) or 'Stamina_Potion' or logic_brakeslide
+    Lanayru Mine End: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle) or 'Obtain_Stamina_Potion' or logic_brakeslide
   locations:
     Lanayru Mine - Blow Left Digging Robot after First Minecart Ride: Gust_Bellows
     Lanayru Mine - Blow Right Digging Robot after First Minecart Ride: Gust_Bellows
@@ -60,7 +60,7 @@
     Blow up Rock on Track: Nothing
     Ancient Flower Farming: Can_Hit_Timeshift_Stone # Nothing?
   exits:
-    Lanayru Mine Statues Area: "'Blow_Down_First_Mine_Statue' or logic_brakeslide or 'Stamina_Potion'"
+    Lanayru Mine Statues Area: "'Blow_Down_First_Mine_Statue' or logic_brakeslide or 'Obtain_Stamina_Potion'"
     Lanayru Mine In Minecart: Can_Hit_Timeshift_Stone
   locations:
     Lanayru Mine - Blow Digging Robot near Mine Exit: Gust_Bellows
@@ -89,13 +89,13 @@
     # Stamina Potion to run past the Spume
     # or defeat Spume and brakeslide through
     Get Past Spume to Sand Oasis: "Hook_Beetle or
-      'Stamina_Potion' or
+      'Obtain_Stamina_Potion' or
       (logic_brakeslide and (Bomb_Bag or Bow or Long_Range_Skyward_Strike))"
   exits:
     Desert Entrance Statue: Nothing
     Lanayru Desert West Wall: Clawshots
     Top of LMF: Raise_Lanayru_Mining_Facility
-    Lanayru Desert East: Clawshots or 'Stamina_Potion' or shortcut_lanayru_bars or can_access(Lanayru Desert East) or logic_tot_skip_brakeslide
+    Lanayru Desert East: Clawshots or 'Obtain_Stamina_Potion' or shortcut_lanayru_bars or can_access(Lanayru Desert East) or logic_tot_skip_brakeslide
     Lanayru Desert West Courtyard: "'Get_Past_Spume_to_Sand_Oasis'"
     Lanayru Mine In Minecart: Blow_Up_Covered_Timeshift_Stone # I can't assume the minecart is available, right?
   locations:

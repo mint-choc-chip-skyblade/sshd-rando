@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -817,6 +817,13 @@
             </layout>
            </item>
            <item>
+            <widget class="RandoTriStateCheckBox" name="setting_random_bottle_contents">
+             <property name="text">
+              <string>Random Bottle Contents</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="RandoTriStateCheckBox" name="setting_full_wallet_upgrades">
              <property name="text">
               <string>Full Wallet Upgrades</string>
@@ -1019,7 +1026,7 @@
        <attribute name="title">
         <string>World</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,1,1,1,0,0">
+       <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,1,1,1">
         <item row="0" column="0">
          <widget class="QGroupBox" name="open_world_group_box">
           <property name="title">
@@ -3873,8 +3880,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>546</width>
-               <height>283</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <property name="maximumSize">

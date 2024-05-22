@@ -698,6 +698,16 @@ pub fn check_stage_on_bucha_interaction(param1: u64) -> u64 {
 }
 
 #[no_mangle]
+pub fn fix_bottle_items_from_npcs(param1: u64, param2: u64, param3: u32) {
+    unsafe {
+        ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
+
+        // Replaced instructions
+        asm!("mov w0, #0x281", "mov w3, #2", "mov x1, {0:x}", "mov w2, {1:w}", in(reg) param2, in(reg) param3);
+    }
+}
+
+#[no_mangle]
 pub fn rotate_freestanding_items(item_actor: *mut dAcItem) {
     unsafe {
         // Spin items if not a stamina fruit
@@ -736,21 +746,33 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 // Bellows | Bug Net | Bomb Bag
                 49 | 71 | 92 => y_offset = 26.0,
                 52          // Slingshot
+                | 54        // Bottle of Water
                 | 65        // Guardian Potion
+                | 66        // Guardian Potion+
                 | 68        // Water Dragon's Scale
                 | 70        // Bug Medal
+                | 74        // Sacred Water
                 | 78        // Heart Potion
+                | 79        // Heart Potion+
+                | 81        // Heart Potion++
                 | 84        // Stamina Potion
+                | 85        // Stamina Potion+
                 | 86        // Air Potion
+                | 87        // Air Potion+
+                | 88        // Fairy in a Bottle
                 | 100..=104 // Medals
                 | 108..=111 // Wallets
                 | 114       // Life Medal
                 | 126       // Revitalizing Potion
+                | 127       // Revitalizing Potion+
                 | 153       // Empty Bottle
                 | 161..=164 // Treasures
                 | 167..=170 // Treasures
                 | 172..=174 // Treasures
                 | 178       // Ruby Tablet
+                | 194       // Revitalizing Potion++
+                | 195       // Hot Pumpkin Soup
+                | 196       // Cold Pumpkin Soup
                 | 198       // Life Tree Fruit
                 | 199 => y_offset = 16.0,
                 // Seeds | Uncommon | Rare Treasure

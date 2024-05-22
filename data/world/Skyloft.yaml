@@ -34,7 +34,7 @@
     Knight Academy - Deliver Kikwi to Owlan: Day and 'Retrieve_Oolo'
     Knight Academy - Item from Cawlin: Day
     Knight Academy - Deliver Cawlin's Letter: Day and Cawlins_Letter
-    Knight Academy - Help Fledge Workout: Night and 'Stamina_Potion'
+    Knight Academy - Help Fledge Workout: Night and 'Obtain_Stamina_Potion'
 
 - name: Knight Academy Chimney
   hint_region: Knight Academy
@@ -252,7 +252,7 @@
 - name: Bazaar
   allowed_time_of_day: All
   events:
-    Stamina Potion: Bottle and Raise_Lanayru_Mining_Facility
+    Obtain Stamina Potion: Bottle and Raise_Lanayru_Mining_Facility
   exits:
     Bazaar North: Nothing
     Bazaar West: Nothing

@@ -11,6 +11,9 @@
       oarcs:
         - GetSekibanMapB
         - LittleBird
+    - layerid: 3
+      oarcs:
+        - GetBottleHoly
 
 - stage: B210
   layers:
@@ -130,9 +133,11 @@
         - GetSpareSeedA
         - GetBottleMuteki
         - GetBottleKusuri
+        - GetBottleKusuriS
         - GetBottleGuts
         - GetBottleAir
         - GetBottleRepair
+        - GetBottleRepairS
         - GetSeedSet
         - GetSpareQuiverA
         - GetSpareBombBagA
@@ -149,6 +154,12 @@
     - layerid: 0
       oarcs:
         - GetSwordA
+
+- stage: F011r
+  layers:
+    - layerid: 0
+      oarcs:
+        - GetBottlePumpkin
 
 - stage: F012r
   layers:

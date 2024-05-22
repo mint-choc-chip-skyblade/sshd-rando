@@ -256,6 +256,16 @@
    - Batreaux's House - 70 Gratitude Crystals First Reward
    - Batreaux's House - 70 Gratitude Crystals Second Reward
    - Batreaux's House - 80 Gratitude Crystals Reward
+- id: 36
+  name: Glittering Spores
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: null # ObjectPack
+  getarcname: GetBottleKinokoA
+  getmodelname: GetBottleKinokoA
+  advancement: true
 - id: 40
   name: 5 Bombs
   types:
@@ -335,6 +345,26 @@
   getarcname: GetBeetleA
   getmodelname: GetBeetleA
   advancement: true
+- id: 54
+  name: Bottle of Water
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: null # ObjectPack
+  getarcname: GetBottleWater
+  getmodelname: GetBottleWater
+  advancement: true
+- id: 55
+  name: Mushroom Spores
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: null # ObjectPack
+  getarcname: GetBottleKinokoB
+  getmodelname: GetBottleKinokoB
+  advancement: true
 - id: 56
   name: Progressive Mitts
   types:
@@ -379,9 +409,19 @@
 - id: 65
   name: Guardian Potion
   types:
-    - Potions
-    - Minor Items
+    - Bottles
+    - Major Items
+    - Side Quest Items
   oarc: GetBottleMuteki
+  advancement: true
+- id: 66
+  name: Guardian Potion Plus
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: GetBottleMuteki
+  advancement: true
 - id: 68
   name: Water Dragon's Scale
   types:
@@ -419,6 +459,16 @@
   oarc: null # ObjectPack
   getarcname: GetFairy
   getmodelname: GetFairy
+- id: 74
+  name: Sacred Water
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: GetBottleHoly
+  getarcname: GetBottleHoly
+  getmodelname: GetBottleHoly
+  advancement: true
 - id: 75
   name: Hook Beetle
   types:
@@ -443,21 +493,69 @@
 - id: 78
   name: Heart Potion
   types:
-    - Potions
-    - Minor Items
+    - Bottles
+    - Major Items
+    - Side Quest Items
   oarc: GetBottleKusuri
+  advancement: true
+- id: 79
+  name: Heart Potion Plus
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: GetBottleKusuriS
+  advancement: true
+- id: 81
+  name: Heart Potion Plus Plus
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: GetBottleKusuriS
+  advancement: true
 - id: 84
   name: Stamina Potion
   types:
-    - Potions
-    - Minor Items
+    - Bottles
+    - Major Items
+    - Side Quest Items
   oarc: GetBottleGuts
+  advancement: true
+- id: 85
+  name: Stamina Potion Plus
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: GetBottleGuts
+  advancement: true
 - id: 86
   name: Air Potion
   types:
-    - Potions
-    - Minor Items
+    - Bottles
+    - Major Items
+    - Side Quest Items
   oarc: GetBottleAir
+  advancement: true
+- id: 87
+  name: Air Potion Plus
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: GetBottleAir
+  advancement: true
+- id: 88
+  name: Fairy in a Bottle
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: null # ObjectPack
+  getarcname: GetBottleFairy
+  getmodelname: GetBottleFairy
+  advancement: true
 - id: 90
   name: Iron Bow
   types:
@@ -674,9 +772,19 @@
 - id: 126
   name: Revitalizing Potion
   types:
-    - Potions
-    - Minor Items
+    - Bottles
+    - Major Items
+    - Side Quest Items
   oarc: GetBottleRepair
+  advancement: true
+- id: 127
+  name: Revitalizing Potion Plus
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: GetBottleRepairS
+  advancement: true
 - id: 128
   name: Small Seed Satchel
   types:
@@ -955,6 +1063,30 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
+  advancement: true
+- id: 194
+  name: Revitalizing Potion Plus Plus
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: GetBottleRepairS
+  advancement: true
+- id: 195
+  name: Hot Pumpkin Soup
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: GetBottlePumpkin
+  advancement: true
+- id: 196
+  name: Cold Pumpkin Soup
+  types:
+    - Bottles
+    - Major Items
+    - Side Quest Items
+  oarc: GetBottlePumpkin
   advancement: true
 - id: 197
   name: Life Tree Seedling
