@@ -540,6 +540,16 @@
     - "off": "Unrequired dungeons may contain items needed to beat the game."
     - "on": "Unrequired dungeons will be barren."
 
+- name: random_bottle_contents
+  default_option: "off"
+  pretty_name: Random Bottle Contents
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": ""
+    - "on": ""
+
 - name: trap_mode
   default_option: "no_traps"
   pretty_name: Trap Mode

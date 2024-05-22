@@ -190,6 +190,9 @@ b.eq allow_autosave_on_new_file_start
 cmp w8, #58
 b.eq require_sword_to_enter_trial_gate
 
+cmp w8, #59
+b.eq fix_bottle_items_from_npcs
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

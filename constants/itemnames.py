@@ -273,6 +273,7 @@ AIR_POTION = "Air " + POTION
 AIR_POTION_PLUS = AIR_POTION + " Plus"
 
 # 88
+FAIRY_IN_A_BOTTLE = "Fairy in a Bottle"
 
 # 89
 

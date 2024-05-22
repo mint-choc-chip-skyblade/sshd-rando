@@ -61,6 +61,9 @@
 - name: Full SotH text
   standard: "You learned the <y<final part of the\nSong of the Hero>>...\n\n\nThe <y<Song of the Hero>> is now complete!"
 
+- name: Cold Pumpkin Soup text
+  standard: "You got some <y<Cold Pumpkin Soup>>!\nThis homemade soup is Pumm's specialty,\nbut someone's get it get cold..."
+
 - name: Five Gratitude crystal counter
   standard: "You got <r<five>> <y<Gratitude Crystals>>!\nThat is <r<<numeric arg1> >>in Total!"
 
@@ -277,13 +280,13 @@
   standard: Heart
   pretty: a <Heart>
   cryptic: a <r<Band-Aid>>
-  plurailty: Singular
+  plurality: Singular
 
 - name: 10 Arrows
   standard: 10 Arrows
   pretty: <10 Arrows>
   cryptic: <r<pointy sticks>>
-  plurailty: Singular
+  plurality: Singular
 
 - name: Goddess White Sword
   standard: Goddess White Sword
@@ -417,6 +420,12 @@
   cryptic: a <r<pack of gratitude>>
   plurality: Singular
 
+- name: Glittering Spores
+  standard: Glittering Spores
+  pretty: some <Glittering Spores>
+  cryptic: <r<sparkly powder>>
+  plurality: Plural
+
 - name: 5 Bombs
   standard: 5 Bombs
   pretty: 5 Bombs
@@ -465,6 +474,18 @@
   cryptic: a <r<remote controlled insect>>
   plurality: Singular
 
+- name: Bottle of Water
+  standard: Bottle of Water
+  pretty: a <Bottle of Water>
+  cryptic: <b<hydration>>
+  plurality: Singular
+
+- name: Mushroom Spores
+  standard: Mushroom Spores
+  pretty: some <Mushroom Spores>
+  cryptic: <r<fungal powder>>
+  plurality: Plural
+
 - name: Progressive Mitts
   standard: Progressive Mitts
   pretty: Progressive Mitts
@@ -498,7 +519,13 @@
 - name: Guardian Potion
   standard: Guardian Potion
   pretty: a <Guardian Potion>
-  cryptic: <r<immunity>>
+  cryptic: <r<partial immunity>>
+  plurality: Singular
+
+- name: Guardian Potion Plus
+  standard: Guardian Potion+
+  pretty: a <Guardian Potion+>
+  cryptic: <r<full immunity>>
   plurality: Singular
 
 - name: Water Dragon's Scale
@@ -525,6 +552,12 @@
   cryptic: a <r<magical friend>>
   plurality: Singular
 
+- name: Sacred Water
+  standard: Sacred Water
+  pretty: <Sacred Water>
+  cryptic: <r<blessed liquid>>
+  plurality: Singular
+
 - name: Hook Beetle
   standard: Hook Beetle
   pretty: the <Hook Beetle>
@@ -549,16 +582,46 @@
   cryptic: <r<medicine>>
   plurality: Singular
 
+- name: Heart Potion Plus
+  standard: Heart Potion+
+  pretty: a <Heart Potion+>
+  cryptic: <r<strong medicine>>
+  plurality: Singular
+
+- name: Heart Potion Plus Plus
+  standard: Heart Potion++
+  pretty: a <Heart Potion++>
+  cryptic: <r<very strong medicine>>
+  plurality: Singular
+
 - name: Stamina Potion
   standard: Stamina Potion
   pretty: a <Stamina Potion>
   cryptic: <r<stimulants>>
   plurality: Singular
 
+- name: Stamina Potion Plus
+  standard: Stamina Potion+
+  pretty: a <Stamina Potion+>
+  cryptic: <r<strong stimulants>>
+  plurality: Singular
+
 - name: Air Potion
   standard: Air Potion
   pretty: a <Air Potion>
   cryptic: a <r<snorkel>>
+  plurality: Singular
+
+- name: Air Potion Plus
+  standard: Air Potion+
+  pretty: a <Air Potion+>
+  cryptic: a <r<strong snorkel>>
+  plurality: Singular
+
+- name: Fairy in a Bottle
+  standard: Fairy in a Bottle
+  pretty: <Fairy in a Bottle>
+  cryptic: a <r<revive>>
   plurality: Singular
 
 - name: Iron Bow
@@ -613,7 +676,7 @@
   standard: Sea Chart
   pretty: a <Sea Chart>
   cryptic: a <r<ship finder>>
-  plurailty: Singular
+  plurality: Singular
 
 - name: Mogma Mitts
   standard: Mogma Mitts
@@ -715,6 +778,12 @@
   standard: Revitalizing Potion
   pretty: a <Revitalizing Potion>
   cryptic: a <r<cure-all>>
+  plurality: Singular
+
+- name: Revitalizing Potion Plus
+  standard: Revitalizing Potion+
+  pretty: a <Revitalizing Potion+>
+  cryptic: a <r<strong cure-all>>
   plurality: Singular
 
 - name: Small Seed Satchel
@@ -907,6 +976,24 @@
   standard: Song of the Hero
   pretty: the <Song of the Hero>
   cryptic: a <r<tune for the chosen one>>
+  plurality: Singular
+
+- name: Revitalizing Potion Plus Plus
+  standard: Revitalizing Potion++
+  pretty: a <Revitalizing Potion++>
+  cryptic: a <r<very strong cure-all>>
+  plurality: Singular
+
+- name: Hot Pumpkin Soup
+  standard: Hot Pumpkin Soup
+  pretty: <Hot Pumpkin Soup>
+  cryptic: <r<steaming nourishment>>
+  plurality: Singular
+
+- name: Cold Pumpkin Soup
+  standard: Cold Pumpkin Soup
+  pretty: <Cold Pumpkin Soup>
+  cryptic: <r<tepid nourishment>>
   plurality: Singular
 
 - name: Life Tree Seedling

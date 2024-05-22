@@ -62,9 +62,32 @@ Full Song of the Hero: count(4, Song_of_the_Hero_Part) or Song_of_the_Hero # Sta
 
 Complete Triforce: Triforce_of_Courage and Triforce_of_Wisdom and Triforce_of_Power
 
+# Don't use this. Only used by the Bottle macro.
+# Separated out to make it easier to verify correctness.
+bottletypes: "Empty_Bottle
+  or Fairy_in_a_Bottle
+  or Guardian_Potion
+  or Guardian_Potion_Plus
+  or Heart_Potion
+  or Heart_Potion_Plus
+  or Heart_Potion_Plus_Plus
+  or Stamina_Potion
+  or Stamina_Potion_Plus
+  or Air_Potion
+  or Air_Potion_Plus
+  or Revitalizing_Potion
+  or Revitalizing_Potion_Plus
+  or Revitalizing_Potion_Plus_Plus
+  or Hot_Pumpkin_Soup
+  or Cold_Pumpkin_Soup
+  or Bottle_of_Water
+  or Sacred_Water
+  or Glittering_Spores
+  or Mushroom_Spores"
+
 # Need access to the item check incase the user has a full pouch
 # or they picked up the cursed medal somewhere already
-Bottle: can_access(Bazaar) and Empty_Bottle and Pouch
+Bottle: "can_access(Bazaar) and Pouch and bottletypes"
 
 Can Obtain a Shield: Pouch and can_access(Bazaar) # To buy a shield and dispose of Cursed Medal
 
@@ -140,7 +163,7 @@ Can Survive Hot Cave: damage_multiplier <= 11 or Fireshield_Earrings
 
 Raise Lanayru Mining Facility: open_lmf == open or 'Activate_Main_Node'
 
-Can Navigate in Oasis: Can_Defeat_Ampilus or Hook_Beetle or 'Stamina_Potion' or logic_brakeslide or logic_stuttersprint
+Can Navigate in Oasis: Can_Defeat_Ampilus or Hook_Beetle or 'Obtain_Stamina_Potion' or logic_brakeslide or logic_stuttersprint
 
 Blow Up Covered Timeshift Stone: Bomb_Bag
 
