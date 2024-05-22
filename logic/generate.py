@@ -101,6 +101,9 @@ def generate_randomizer(config: Config) -> list[World]:
     end = time.process_time()
     print(f"Fill took {(end - start)} seconds")
 
+    for world in worlds:
+        world.perform_post_fill_tasks()
+
     update_progress_value(8)
     generate_playthrough(worlds)
 

@@ -1,4 +1,4 @@
-from constants.itemconstants import ALL_JUNK_ITEMS, TRAP_SETTING_TO_ITEM
+from constants.itemconstants import ALL_JUNK_ITEMS, TRAP_SETTING_TO_ITEM, BOTTLE_ITEMS
 from filepathconstants import ITEMS_PATH, MACROS_DATA_PATH, WORLD_DATA_PATH
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from .config import Config
@@ -37,7 +37,7 @@ class World:
         self.id = id_
         self.config: Config = None  # type: ignore
         self.num_worlds: int = 0
-        self.worlds: list = []
+        self.worlds: list["World"] = []
 
         self.setting_map: SettingMap = SettingMap()
 
@@ -313,7 +313,13 @@ class World:
     def place_plandomizer_items(self) -> None:
         for location, item in self.plandomizer_locations.items():
             location.set_current_item(item)
-            self.item_pool[item] -= 1
+            world = item.world
+            # If this is a bottled item, subtract an empty bottle from the pool
+            if item.name in BOTTLE_ITEMS:
+                world.item_pool[world.get_item(EMPTY_BOTTLE)] -= 1
+            # Otherwise, just subtract the item itself
+            else:
+                world.item_pool[item] -= 1
 
     def perform_pre_entrance_shuffle_tasks(self) -> None:
         # Plandomizer items and vanilla items must
@@ -555,6 +561,31 @@ class World:
                     f"Removing {junk_item} from item pool in {self}"
                 )
                 self.item_pool[junk_item] -= 1
+
+    def perform_post_fill_tasks(self) -> None:
+        self.set_bottle_contents()
+
+    def set_bottle_contents(self) -> None:
+        logging.getLogger("").debug(f"Setting bottle contents for {self}")
+        # Vanilla bottle pool
+        bottle_pool = [EMPTY_BOTTLE] * 3 + [REVITALIZING_POTION, MUSHROOM_SPORES]
+
+        # Change to five random contents if random contents is on
+        if self.setting("random_bottle_contents") == "on":
+            bottle_pool = [random.choice(BOTTLE_ITEMS) for _ in range(5)]
+
+        random.shuffle(bottle_pool)
+        # Go through all worlds and replace any empty bottles for this
+        # world with the bottle pool items
+        for world in self.worlds:
+            for location in world.get_all_item_locations():
+                item = location.current_item
+                if (
+                    item == self.get_item(EMPTY_BOTTLE)
+                    and location not in world.plandomizer_locations
+                ):
+                    location.remove_current_item()
+                    location.set_current_item(self.get_item(bottle_pool.pop()))
 
     # Replaces a portion of the non-major item pool with traps.
     def add_traps(self) -> None:
