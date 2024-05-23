@@ -1031,7 +1031,7 @@
 - name: shortcut_logs_near_machi
   tracker_important: true
   default_option: "off"
-  pretty_name: Faron Woods Logs near First Kikwi
+  pretty_name: Faron Woods Logs near Entry Bird Statue
   pretty_options:
     - "Off"
     - "On"

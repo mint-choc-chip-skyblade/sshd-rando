@@ -2812,7 +2812,7 @@ class Ui_main_window(object):
         self.open_lake_floria_label.setText(QCoreApplication.translate("main_window", u"Open Lake Floria", None))
         self.setting_open_batreaux_shed.setText(QCoreApplication.translate("main_window", u"Open Batreaux's Shed", None))
         self.setting_shortcut_spiral_log_to_btt.setText(QCoreApplication.translate("main_window", u"Sealed Spiral Log to Behind the Temple", None))
-        self.setting_shortcut_logs_near_machi.setText(QCoreApplication.translate("main_window", u"Faron Woods Logs near First Kikwi", None))
+        self.setting_shortcut_logs_near_machi.setText(QCoreApplication.translate("main_window", u"Faron Woods Logs near Entry Bird Statue", None))
         self.setting_shortcut_faron_log_to_floria.setText(QCoreApplication.translate("main_window", u"Faron Woods Log to after Lake Floria", None))
         self.setting_shortcut_deep_woods_log_before_tightrope.setText(QCoreApplication.translate("main_window", u"Deep Woods Log before Tightrope", None))
         self.setting_shortcut_deep_woods_log_before_temple.setText(QCoreApplication.translate("main_window", u"Deep Woods Log before Temple", None))
