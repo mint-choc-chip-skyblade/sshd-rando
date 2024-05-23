@@ -470,7 +470,7 @@ ITEM_STORYFLAGS = {
     PROGRESSIVE_SLINGSHOT: [947, 948],  # Slingshot, Scatershot
     PROGRESSIVE_BUG_NET: [949, 950],  # Bug Net, Big Bug Net
     PROGRESSIVE_POUCH: [30, 932, 932, 932, 932],  # Adventure Pouch, Pouch Expansion * 4
-    SOTH_PART: [896, 897, 462, 369],
+    SOTH_PART: [895, 896, 897, 369],
     # SAILCLOTH: 32,
 }
 

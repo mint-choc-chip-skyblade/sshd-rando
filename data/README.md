@@ -11,11 +11,11 @@ Below is the list of all the flags that the randomizer changes:
 
 * 323: Repair Gondo's Junk Check (repurposed: "Learn about Scrapper near Village Windmill")
 
-* 895: Should fill bottle not create new
+* 894: Should fill bottle not create new
 
-* 896: Progressive SotH Part 1
-* 897: Progressive SotH Part 2
-* 462: Progressive SotH Part 3
+* 895: Progressive SotH Part 1
+* 896: Progressive SotH Part 2
+* 897: Progressive SotH Part 3
 * 369: Progressive SotH Part 4
 
 * 898: Obtained Item from Bucha

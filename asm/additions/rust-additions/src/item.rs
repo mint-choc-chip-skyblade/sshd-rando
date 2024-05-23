@@ -700,7 +700,7 @@ pub fn check_stage_on_bucha_interaction(param1: u64) -> u64 {
 #[no_mangle]
 pub fn fix_bottle_items_from_npcs(param1: u64, param2: u64, param3: u32) {
     unsafe {
-        if flag::check_storyflag(895) == 0 {
+        if flag::check_storyflag(894) == 0 {
             ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
         }
 

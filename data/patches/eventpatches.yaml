@@ -1760,7 +1760,7 @@
   - name: Set fill bottle storyflag for soup 1
     type: setstoryflag
     flow:
-      setstoryflag: 895 # Should fill bottle not create new
+      setstoryflag: 894 # Should fill bottle not create new
       next: 322
   - name: Goto unset fill bottle storyflag for giving soup 1
     type: flowpatch
@@ -1770,7 +1770,7 @@
   - name: Unset fill bottle storyflag for soup 1
     type: setstoryflag
     flow:
-      setstoryflag: 895 # Should fill bottle not create new
+      setstoryflag: 894 # Should fill bottle not create new
       param3: 1 # actually unset the flag
       next: 550
 
@@ -1782,7 +1782,7 @@
   - name: Set fill bottle storyflag for soup 2
     type: setstoryflag
     flow:
-      setstoryflag: 895 # Should fill bottle not create new
+      setstoryflag: 894 # Should fill bottle not create new
       next: 117
   - name: Goto unset fill bottle storyflag for giving soup 2
     type: flowpatch
@@ -1792,7 +1792,7 @@
   - name: Unset fill bottle storyflag for soup 2
     type: setstoryflag
     flow:
-      setstoryflag: 895 # Should fill bottle not create new
+      setstoryflag: 894 # Should fill bottle not create new
       param3: 1 # actually unset the flag
       next: 549
 
@@ -1804,7 +1804,7 @@
   - name: Set fill bottle storyflag for soup 3
     type: setstoryflag
     flow:
-      setstoryflag: 895 # Should fill bottle not create new
+      setstoryflag: 894 # Should fill bottle not create new
       next: 29
   - name: Goto unset fill bottle storyflag for giving soup 3
     type: flowpatch
@@ -1814,7 +1814,7 @@
   - name: Unset fill bottle storyflag for soup 3
     type: setstoryflag
     flow:
-      setstoryflag: 895 # Should fill bottle not create new
+      setstoryflag: 894 # Should fill bottle not create new
       param3: 1 # actually unset the flag
       next: 156
   
@@ -1826,7 +1826,7 @@
   - name: Set fill bottle storyflag for soup 4
     type: setstoryflag
     flow:
-      setstoryflag: 895 # Should fill bottle not create new
+      setstoryflag: 894 # Should fill bottle not create new
       next: 30
   - name: Goto unset fill bottle storyflag for giving soup 4
     type: flowpatch
@@ -1836,7 +1836,7 @@
   - name: Unset fill bottle storyflag for soup 4
     type: setstoryflag
     flow:
-      setstoryflag: 895 # Should fill bottle not create new
+      setstoryflag: 894 # Should fill bottle not create new
       param3: 1 # actually unset the flag
       next: 77
 
