@@ -699,7 +699,8 @@
     - "Off"
     - "On"
   options:
-    - "off/on": "If enabled, heart flowers will spawn and hearts may drop from defeated enemies, broken pots, broken barrels, cut grass, and digging spots."
+    - "off": "Heart flowers will not spawn and defeating enemies, breaking pots or barrels, cutting grass, and digging spots will not produce hearts."
+    - "on": "Hearts will be obtainable by: defeating enemies, breaking pots or barrels, cutting grass, and digging up digging spots. Heart flowers will also spawn."
 
 - name: damage_multiplier
   default_option: "1"
@@ -710,8 +711,8 @@
     - 1-80
   options:
     - 1-80: "Determines the overall damage multiplier.
-        **Normal Mode** (default) damage is x1.
-        **Hero Hode** (new game +) damage is x2.
+        <b>Normal Mode</b> (default) damage is x1.
+        <b>Hero Hode</b> (new game +) damage is x2.
         At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
 - name: unlock_all_groosenator_destinations
@@ -1030,7 +1031,7 @@
 - name: shortcut_logs_near_machi
   tracker_important: true
   default_option: "off"
-  pretty_name: Faron Woods Logs near First Kikwi
+  pretty_name: Faron Woods Logs near Entry Bird Statue
   pretty_options:
     - "Off"
     - "On"
@@ -1178,7 +1179,7 @@
     - "Off"
     - "On"
   options:
-    - "off": "You will need to raise the bridge by rolling along the lava on the gaint boulder."
+    - "off": "You will need to raise the bridge by rolling along the lava on the giant boulder."
     - "on": "The bridge in the main room of Earth Temple will be raised from the start of the game."
 
 - name: shortcut_lmf_wind_gates
@@ -1223,7 +1224,7 @@
     - "On"
   options:
     - "off": "You will need to navigate the basement in order to freely move the giant statue."
-    - "on": "The the bridge to the long thread down to the basement will be extended from the start of the game. You will be able to freely move the giant statue without navigating the basement."
+    - "on": "The bridge to the long thread down to the basement will be extended from the start of the game. You will be able to freely move the giant statue without navigating the basement."
 
 - name: shortcut_ac_water_vents
   tracker_important: true
@@ -1312,7 +1313,7 @@
     - "On"
   options:
     - "off": "You will not be expected to get the Volcanic Island - Inside Goddess Chest using this trick."
-    - "on": "You may need to skydive onto the raise ledge in the volcanic island to get the chest."
+    - "on": "You may need to skydive onto the raised ledge in the volcanic island to get the chest."
 
 - name: logic_east_island_dive
   default_option: "off"
@@ -1362,7 +1363,7 @@
     - "On"
   options:
     - "off": "You will only be expected to get the Item in Bird's Nest by diving from the top of the Waterfall."
-    - "on": "You may need to stop Beedle's Airshop near to the Bird's Nest and get the item by climing the rope and using the Gust Bellows to blow away the dust and a Beetle to collect the item."
+    - "on": "You may need to stop Beedle's Airshop near to the Bird's Nest and get the item by climbing the rope and using the Gust Bellows to blow away the dust and a Beetle to collect the item."
 
 - name: logic_beedles_shop_with_bombs
   default_option: "off"
@@ -1402,7 +1403,7 @@
     - "On"
   options:
     - "off": "You will only be expected to use the Slingshot, Bow, Clawshots, or a Beetle to activate distant switches and you will only be expected to use nearby bomb flowers with the Hook Beetle to blow up distant rocks."
-    - "on": "You may need to use the Bomb Bag and time bomb throws to activate switches or blowup distant rocks or towers."
+    - "on": "You may need to use the Bomb Bag and time bomb throws to activate switches or blow up distant rocks or towers."
 
 - name: logic_itemless_first_timeshift_stone
   default_option: "off"
@@ -1452,7 +1453,7 @@
     - "On"
   options:
     - "off": "You will only be expected to use the Hook Beetle to activate the timeshift stone in the big tree near the Temple of Time."
-    - "on": "You may need to use the slingshot to precisely activate the timeshift stone in the big tree near the Temple of Time."
+    - "on": "You may need to use the Slingshot to precisely activate the timeshift stone in the big tree near the Temple of Time."
 
 - name: logic_fire_node_without_hook_beetle
   default_option: "off"
@@ -1502,7 +1503,7 @@
     - "On"
   options:
     - "off": "You will only be expected to get the Rupee check on the Coiled Branch in the Skyview Temple using the Beetle."
-    - "on": "You may need to front-hop or backflip into the Rupee check on the Coiled Branch in the Skyview Temple."
+    - "on": "You may need to use a Sword to jump-slash into the Rupee check on the Coiled Branch in the Skyview Temple."
 
 - name: logic_skyview_precise_slingshot
   default_option: "off"
@@ -1512,7 +1513,7 @@
     - "On"
   options:
     - "off": "You will only be expected to get the Skyview Temple - Item behind Bars by either using the Beetle to hit the crystal or by using the Whip."
-    - "on": "You may need to use the slingshot to precisely hit the crystal at the top of the second hub room to get the Skyview Temple - Item behind Bars."
+    - "on": "You may need to use the Slingshot to precisely hit the crystal at the top of the second hub room to get the Skyview Temple - Item behind Bars."
 
 - name: logic_et_keese_skyward_strike
   default_option: "off"
@@ -1522,7 +1523,7 @@
     - "On"
   options:
     - "off": "You will only be expected to break the high rope on the first Earth Temple bridge using a Beetle or the Bow."
-    - "on": "You may need to precisely manipulate a specefic Keese's position and use a long range Skyward Strike to break the high rope on the first bridge in Earth Temple."
+    - "on": "You may need to precisely manipulate a specific Keese's position and use a long range Skyward Strike to break the high rope on the first bridge in Earth Temple."
 
 - name: logic_et_slope_stuttersprint
   default_option: "off"
@@ -1622,7 +1623,7 @@
     - "On"
   options:
     - "off": "You will only be expected to get the Sandship - Chest at Ship's Stern by using the Clawshots."
-    - "on": "You may need to get the Sandship - Chest at Ship's Stern by sidehopping of the mast."
+    - "on": "You may need to get the Sandship - Chest at Ship's Stern by side-hopping from the to of the mast."
 
 - name: logic_sandship_itemless_spume
   default_option: "off"
@@ -1681,7 +1682,7 @@
     - "Off"
     - "On"
   options:
-    - "off": "You well only be expected to use the Beetle and Clawshots to travel across the Fire Sanctuary room in Sky Keep."
+    - "off": "You will only be expected to use the Beetle and Clawshots to travel across the Fire Sanctuary room in Sky Keep."
     - "on": "You may need to use the Bomb Bag and Clawshots to clip through the vines in the Fire Sanctuary room in Sky Keep."
 
 #######################################

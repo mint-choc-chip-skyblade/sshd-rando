@@ -1077,7 +1077,7 @@
            <item>
             <widget class="RandoTriStateCheckBox" name="setting_shortcut_logs_near_machi">
              <property name="text">
-              <string>Faron Woods Logs near First Kikwi</string>
+              <string>Faron Woods Logs near Entry Bird Statue</string>
              </property>
             </widget>
            </item>
