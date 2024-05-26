@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -1041,14 +1041,11 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="open_thunderhead_label">
+            <widget class="RandoTriStateCheckBox" name="setting_open_thunderhead">
              <property name="text">
               <string>Open Thunderhead</string>
              </property>
             </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_open_thunderhead"/>
            </item>
            <item>
             <widget class="QLabel" name="open_lake_floria_label">

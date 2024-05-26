@@ -151,6 +151,7 @@ class EventPatchHandler:
                         self.create_flow_label_to_index_mapping(
                             flow_patches=self.event_patches[msbf_file_name[:-5]],
                             msbf=parsed_msbf,
+                            onlyif_handler=onlyif_handler,
                         )
 
                         for patch in self.event_patches[msbf_file_name[:-5]]:
@@ -209,7 +210,10 @@ class EventPatchHandler:
             write_bytes_create_dirs(modified_event_path, event_arc.build_U8())
 
     def create_flow_label_to_index_mapping(
-        self, flow_patches: list[dict], msbf: ParsedMsb
+        self,
+        flow_patches: list[dict],
+        msbf: ParsedMsb,
+        onlyif_handler: ConditionalPatchHandler,
     ):
         self.flow_label_to_index_mapping = {}
         next_index = len(msbf["FLW3"]["flow"])
@@ -218,6 +222,10 @@ class EventPatchHandler:
             lambda patch: patch["type"] in FLOW_ADD_VARIATIONS + SWITCH_ADD_VARIATIONS,
             flow_patches,
         ):
+            if statement := flow_add.get("onlyif", False):
+                if not onlyif_handler.evaluate_onlyif(statement):
+                    continue
+
             self.flow_label_to_index_mapping[flow_add["name"]] = next_index
             next_index += 1
 

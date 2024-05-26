@@ -15,7 +15,7 @@
     Orielle's Island: Nothing
     Fun Fun Island: Nothing
     Triple Island: Nothing
-    Inside the Thunderhead: Ballad_of_the_Goddess or open_thunderhead == open
+    Inside the Thunderhead: (Goddesss_Harp and Ballad_of_the_Goddess and can_access(Central Skyloft)) or open_thunderhead == on
     Upper Skyloft: Nothing
     Central Skyloft: Nothing
     Skyloft Village: Nothing

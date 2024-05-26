@@ -40,6 +40,7 @@ Storyflags:
   - 578 # Watched Pipit scold Mallara Cutscene
   - 647 # Watched panning cutscene after exiting Pirate Stronghold
   - 661 # Windmill Repaired (required for scrapper quests - TODO)
+  - 662 # Light Tower Raised
   - 724 # Skip first time using Light Pillar Cutscene (always sends you to Sealed Grounds)
   - 738 # Fi text after sitting on Skipper's Shack stool
   - 745 # Unlocked 5 Beacons
@@ -91,7 +92,7 @@ Storyflags:
   - 172 # Entering Fire Sanctuary Intro Cutscene
   - 678 # Entering Sky Keep Cutscene
   - 159 # Sky Keep Intro Cutscene
-  - open_thunderhead == open:
+  - open_thunderhead == on or (Goddess's_Harp and Ballad_of_the_Goddess and skip_harp_playing == on):
     - 194 # Thunderhead open
   - open_lmf == open:
     - 8 # LMF rising Cutscene watched
@@ -120,6 +121,8 @@ Sceneflags:
     - 8 # Seen Cutscene after getting Hero's Tunic
     - 21 # Upper Academy gates opened
     - 26 # Watched Eye Cutscene in Bazaar
+    - open_thunderhead == on or (Goddess's_Harp and Ballad_of_the_Goddess and skip_harp_playing == on):
+      - 29 # Played BotG on Light Tower
     - 66 # Batreaux Doors outside open
     - 67 # Inside Doors open
     - skip_harp_playing == on and Goddesss_Harp and Full_Song_of_the_Hero:
@@ -127,6 +130,8 @@ Sceneflags:
     - 76 # Watched Pipit scold Mallara Cutscene
     - 95 # Fi Text for Ruby Tablet
     - 96 # Fi Text for Amber Tablet
+    - 97 # West Windmill blown into place
+    - 98 # East Windmill blown into place
     # - 99 # Watched Sheikah Stone Cutscene
     - 125 # Revealed Moonlight Merchant
     - open_batreaux_shed == on:
