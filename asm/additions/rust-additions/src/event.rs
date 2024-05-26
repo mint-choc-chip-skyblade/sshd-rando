@@ -4,6 +4,7 @@
 
 use crate::debug;
 use crate::entrance;
+use crate::fix;
 use crate::traps;
 
 use core::arch::asm;
@@ -131,6 +132,7 @@ pub fn custom_event_commands(
             }
         },
         72 => traps::update_traps(),
+        73 => fix::set_skyloft_thunderhead_sceneflag(),
         _ => (),
     }
 

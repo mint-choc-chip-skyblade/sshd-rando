@@ -711,12 +711,7 @@ class Ui_main_window(object):
 
         self.verticalLayout_14.addWidget(self.setting_unlock_all_groosenator_destinations)
 
-        self.open_thunderhead_label = QLabel(self.open_world_group_box)
-        self.open_thunderhead_label.setObjectName(u"open_thunderhead_label")
-
-        self.verticalLayout_14.addWidget(self.open_thunderhead_label)
-
-        self.setting_open_thunderhead = QComboBox(self.open_world_group_box)
+        self.setting_open_thunderhead = RandoTriStateCheckBox(self.open_world_group_box)
         self.setting_open_thunderhead.setObjectName(u"setting_open_thunderhead")
 
         self.verticalLayout_14.addWidget(self.setting_open_thunderhead)
@@ -2732,7 +2727,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2808,7 +2803,7 @@ class Ui_main_window(object):
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.gameplay_tab), QCoreApplication.translate("main_window", u"Gameplay", None))
         self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))
         self.setting_unlock_all_groosenator_destinations.setText(QCoreApplication.translate("main_window", u"Unlock all Groosenator Destinations", None))
-        self.open_thunderhead_label.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
+        self.setting_open_thunderhead.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
         self.open_lake_floria_label.setText(QCoreApplication.translate("main_window", u"Open Lake Floria", None))
         self.setting_open_batreaux_shed.setText(QCoreApplication.translate("main_window", u"Open Batreaux's Shed", None))
         self.setting_shortcut_spiral_log_to_btt.setText(QCoreApplication.translate("main_window", u"Sealed Spiral Log to Behind the Temple", None))

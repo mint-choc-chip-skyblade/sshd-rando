@@ -65,7 +65,7 @@ World 1:
   tunic_swap: 'off'
   starry_skies: 'off'
   remove_enemy_music: 'off'
-  open_thunderhead: ballad
+  open_thunderhead: 'off'
   open_lake_floria: vanilla
   open_earth_temple: 'off'
   open_lmf: open

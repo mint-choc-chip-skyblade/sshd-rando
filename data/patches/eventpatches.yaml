@@ -365,11 +365,11 @@
     type: flowpatch
     index: 464
     flow:
-      next: BotG opens Thunderhead
-  - name: BotG opens Thunderhead
+      next: Give rando BotG storyflag
+  - name: Give rando BotG storyflag
     type: setstoryflag
     flow:
-      setstoryflag: 194 # Thunderhead open flag
+      setstoryflag: 893 # Rando storyflag for BotG item
       next: Check harp storyflag
   - name: Check harp storyflag
     type: checkstoryflag
@@ -384,10 +384,28 @@
       setstoryflag: 340
       next: Set imp2 defeated
   - name: Set imp2 defeated
+    onlyif: skip_harp_playing == on
+    type: setstoryflag
+    flow:
+      setstoryflag: 132
+      next: Set Thunderhead Open storyflag
+  - name: Set imp2 defeated
+    onlyif: skip_harp_playing == off
     type: setstoryflag
     flow:
       setstoryflag: 132
       next: -1
+  - name: Set Thunderhead Open storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 194 # Thunderhead is open
+      next: Set Skyloft Thunderhead sceneflag
+  - name: Set Skyloft Thunderhead sceneflag
+    type: flowadd
+    flow:
+      type: type3
+      next: -1
+      param3: 73 # Custom command
   - name: Don't change to Skyloft layer 8/9 after getting the Triforce
     type: flowpatch
     index: 540 # before storyflag
@@ -411,7 +429,7 @@
   - name: Check BotG storyflag
     type: checkstoryflag
     flow:
-      checkstoryflag: 194
+      checkstoryflag: 893
     cases:
       - Set GoT raised
       - -1

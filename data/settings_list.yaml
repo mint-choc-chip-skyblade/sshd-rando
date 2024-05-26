@@ -960,14 +960,14 @@
 
 - name: open_thunderhead
   tracker_important: true
-  default_option: ballad
+  default_option: "off"
   pretty_name: Open Thunderhead
   pretty_options:
-    - Ballad
-    - Open
+    - "Off"
+    - "On"
   options:
-    - ballad: "You will need the Ballad of the Goddess before the Thunderhead will open."
-    - open: "The Thunderhead will be opened from the start of the game."
+    - "off": "You will need the Ballad of the Goddess and Goddess's Harp before the Thunderhead can be opened."
+    - "on": "The Thunderhead will be opened from the start of the game."
 
 - name: open_lake_floria
   tracker_important: true

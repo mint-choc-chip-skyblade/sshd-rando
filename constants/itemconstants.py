@@ -441,7 +441,7 @@ ITEM_STORYFLAGS = {
     CLAWSHOTS: 208,  # Completed Lanayru Trial
     STONE_OF_TRIALS: (210, 209),  # Obtained SoT, Completed Hylia's Trial
     GODDESS_HARP: (9, 140),  # Harp, Watched Groose CS
-    BALLAD_OF_THE_GODDESS: 194,
+    BALLAD_OF_THE_GODDESS: 893,
     SONG_OF_THE_HERO: 369,
     TRIFORCE_OF_COURAGE: 729,
     TRIFORCE_OF_POWER: 728,
