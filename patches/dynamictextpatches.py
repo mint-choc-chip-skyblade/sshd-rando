@@ -356,14 +356,15 @@ def add_song_text_patches(world: World, event_patch_handler: EventPatchHandler) 
         obtain_text_name,
         inventory_text_idx,
     ) in song_items.items():
+        inventory_text = get_text_data(f"{song_item} Inventory")
+        item_get_text = get_text_data(obtain_text_name)
+        # If we have extra hint text, add it onto the song text
         if song_item in world.song_hints:
             useful_text = world.song_hints[song_item].text
-            inventory_text = get_text_data(f"{song_item} Inventory")
             inventory_text += useful_text
-            inventory_text.break_lines()
-            item_get_text = get_text_data(obtain_text_name)
             item_get_text += useful_text
-            item_get_text.break_lines()
+        inventory_text.break_lines()
+        item_get_text.break_lines()
         event_patch_handler.append_to_event_patches(
             "003-ItemGet",
             {
