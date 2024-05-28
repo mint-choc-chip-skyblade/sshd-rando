@@ -17,8 +17,18 @@ class TrackerArea(QLabel):
     show_entrances = Signal(str)
     set_main_entrance_target = Signal(Entrance)
     check_all = Signal(list)
+    mouse_hover = Signal(str)
 
-    default_stylesheet = f"background-color: COLOR; border-image: none; border-color: black; border-radius: RADIUSpx; color: black; qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
+    default_stylesheet = (
+        "QLabel { "
+        + f"background-color: COLOR; border-image: none; background-image: none; border-color: black; border-radius: RADIUSpx; color: black; qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
+        + " }\n"
+    )
+    tooltip_stylesheet = (
+        "QToolTip { color: white; background-color: black; border-image: none; border-color: white; "
+        + f"qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
+        + " }"
+    )
 
     def __init__(
         self,
@@ -47,11 +57,7 @@ class TrackerArea(QLabel):
         self.main_entrance: Entrance = None
         self.entrances: list[Entrance] = []
 
-        self.setStyleSheet(
-            TrackerArea.default_stylesheet.replace("COLOR", "gray").replace(
-                "RADIUS", self.border_radius
-            )
-        )
+        self.update_color("gray")
         self.setTextFormat(QtCore.Qt.RichText)
         self.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
@@ -126,11 +132,7 @@ class TrackerArea(QLabel):
         all_unmarked_locations = self.get_unmarked_locations(remove_special_types=False)
         # If we don't have any possible locations at all then change to gray
         if not all_unmarked_locations:
-            self.setStyleSheet(
-                TrackerArea.default_stylesheet.replace("COLOR", "gray").replace(
-                    "RADIUS", self.border_radius
-                )
-            )
+            self.update_color("gray")
             self.setText("")
             self.tooltip = f"{self.area} (0/0)"
             return
@@ -162,24 +164,12 @@ class TrackerArea(QLabel):
                     f'<img src="{(TRACKER_ASSETS_PATH / "sidequests" / "crystal.png").as_posix()}" width="25" height="25">'
                 )
 
-            self.setStyleSheet(
-                TrackerArea.default_stylesheet.replace("COLOR", "red").replace(
-                    "RADIUS", self.border_radius
-                )
-            )
+            self.update_color("red")
         elif num_available_locations == num_unmarked_locations:
-            self.setStyleSheet(
-                TrackerArea.default_stylesheet.replace("COLOR", "dodgerblue").replace(
-                    "RADIUS", self.border_radius
-                )
-            )
+            self.update_color("dodgerblue")
             self.setText(str(num_available_locations))
         else:
-            self.setStyleSheet(
-                TrackerArea.default_stylesheet.replace("COLOR", "orange").replace(
-                    "RADIUS", self.border_radius
-                )
-            )
+            self.update_color("orange")
             self.setText(str(num_available_locations))
 
         self.tooltip = f"{self.area} ({num_available_locations}/{num_unmarked_locations})\nClick to Expand{chr(10) + 'Right click to set entrance' if self.main_entrance else ''}"
@@ -203,7 +193,22 @@ class TrackerArea(QLabel):
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
 
-        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(0, self.height())
+        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-25, self.height() / 2)
         QToolTip.showText(coords, self.tooltip, self)
+        self.update_hover_text()
 
         return super().mouseMoveEvent(ev)
+
+    def update_hover_text(self) -> None:
+        num_available_locations = len(self.get_available_locations())
+        num_unmarked_locations = len(self.get_unmarked_locations())
+
+        self.mouse_hover.emit(
+            f"{self.area}\n{num_available_locations} Available, {num_unmarked_locations} Remaining"
+        )
+
+    def update_color(self, color: str) -> None:
+        stylesheet = TrackerArea.default_stylesheet.replace("COLOR", color)
+        stylesheet = stylesheet.replace("RADIUS", self.border_radius)
+        stylesheet = stylesheet + TrackerArea.tooltip_stylesheet
+        self.setStyleSheet(stylesheet)

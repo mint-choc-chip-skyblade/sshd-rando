@@ -21,7 +21,7 @@ class TrackerLocationLabel(QLabel):
 
     default_stylesheet = "border-width: 1px; border-color: gray;"
     icon_stylesheet = f"{default_stylesheet} padding-left: PADDINGpx;"
-    clicked = Signal(str)
+    clicked = Signal(str, Location)
 
     def __init__(
         self, location_: Location, search: Search, parent_area_button_
@@ -40,16 +40,21 @@ class TrackerLocationLabel(QLabel):
         # as the region it's in
         if self.location.name.startswith(self.parent_area_button.area):
             self.setText(
-                self.location.name.replace(f"{self.parent_area_button.area} - ", "")
+                f"[{'?' if self.location.sphere == None else self.location.sphere}] "
+                + self.location.name.replace(f"{self.parent_area_button.area} - ", "")
             )
         elif self.parent_area_button.alias and self.location.name.startswith(
             self.parent_area_button.alias
         ):
             self.setText(
-                self.location.name.replace(f"{self.parent_area_button.alias} - ", "")
+                f"[{'?' if self.location.sphere == None else self.location.sphere}] "
+                + self.location.name.replace(f"{self.parent_area_button.alias} - ", "")
             )
         else:
-            self.setText(self.location.name)
+            self.setText(
+                f"[{'?' if self.location.sphere == None else self.location.sphere}] "
+                + self.location.name
+            )
 
         # Add padding and crystal/goddess cube/gossip stone icon if necessary
         self.icon_size = QFontMetrics(self.font()).height()
@@ -73,6 +78,8 @@ class TrackerLocationLabel(QLabel):
             self.pixmap.load(
                 (TRACKER_ASSETS_PATH / "dungeons" / "small_key.png").as_posix()
             )
+        elif (image := self.location.tracked_item_image) is not None:
+            self.pixmap.load((TRACKER_ASSETS_PATH / image).as_posix())
         else:
             self.styling = TrackerLocationLabel.default_stylesheet
 
@@ -107,6 +114,6 @@ class TrackerLocationLabel(QLabel):
         if ev.button() == QtCore.Qt.LeftButton:
             self.location.marked = not self.location.marked
             self.update_color(self.recent_search)
-            self.clicked.emit(self.parent_area_button.area)
+            self.clicked.emit(self.parent_area_button.area, self.location)
 
         return super().mouseReleaseEvent(ev)

@@ -3810,6 +3810,20 @@ QPushButton {
            </widget>
           </item>
           <item>
+          <widget class="QLabel" name="tracker_sphere_tracking_label">
+              <property name="text">
+               <string>Sphere Tracking</string>
+              </property>
+             </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="cancel_sphere_tracking_button">
+            <property name="text">
+             <string>Cancel Sphere Tracking for Location</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="tracker_info_layout_spacer">
             <property name="orientation">
              <enum>Qt::Orientation::Vertical</enum>

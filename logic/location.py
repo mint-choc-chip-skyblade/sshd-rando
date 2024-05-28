@@ -50,6 +50,9 @@ class Location:
         self.marked: bool = False
         self.eud_progression: bool = True
         self.in_semi_logic: bool = False
+        self.sphere: int = None
+        self.tracked_item: Item = None
+        self.tracked_item_image: str = None
 
     def __str__(self) -> str:
         return (

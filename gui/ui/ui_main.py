@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.7.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -819,8 +819,8 @@ class Ui_main_window(object):
 
         self.line = QFrame(self.open_dungeons_group_box)
         self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.HLine)
-        self.line.setFrameShadow(QFrame.Sunken)
+        self.line.setFrameShape(QFrame.Shape.HLine)
+        self.line.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_25.addWidget(self.line)
 
@@ -1023,8 +1023,8 @@ class Ui_main_window(object):
 
         self.mixed_entrance_pools_hline = QFrame(self.mixed_entrance_pools_group_box)
         self.mixed_entrance_pools_hline.setObjectName(u"mixed_entrance_pools_hline")
-        self.mixed_entrance_pools_hline.setFrameShape(QFrame.HLine)
-        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Sunken)
+        self.mixed_entrance_pools_hline.setFrameShape(QFrame.Shape.HLine)
+        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_28.addWidget(self.mixed_entrance_pools_hline)
 
@@ -2133,8 +2133,8 @@ class Ui_main_window(object):
 
         self.utils_hline = QFrame(self.file_setup_group_box)
         self.utils_hline.setObjectName(u"utils_hline")
-        self.utils_hline.setFrameShape(QFrame.HLine)
-        self.utils_hline.setFrameShadow(QFrame.Sunken)
+        self.utils_hline.setFrameShape(QFrame.Shape.HLine)
+        self.utils_hline.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline)
 
@@ -2160,8 +2160,8 @@ class Ui_main_window(object):
 
         self.utils_hline_2 = QFrame(self.file_setup_group_box)
         self.utils_hline_2.setObjectName(u"utils_hline_2")
-        self.utils_hline_2.setFrameShape(QFrame.HLine)
-        self.utils_hline_2.setFrameShadow(QFrame.Sunken)
+        self.utils_hline_2.setFrameShape(QFrame.Shape.HLine)
+        self.utils_hline_2.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline_2)
 
@@ -2195,8 +2195,8 @@ class Ui_main_window(object):
 
         self.utils_hline_3 = QFrame(self.file_setup_group_box)
         self.utils_hline_3.setObjectName(u"utils_hline_3")
-        self.utils_hline_3.setFrameShape(QFrame.HLine)
-        self.utils_hline_3.setFrameShadow(QFrame.Sunken)
+        self.utils_hline_3.setFrameShape(QFrame.Shape.HLine)
+        self.utils_hline_3.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline_3)
 
@@ -2545,6 +2545,16 @@ class Ui_main_window(object):
         self.uncheck_all_button.setObjectName(u"uncheck_all_button")
 
         self.tracker_info_layout.addWidget(self.uncheck_all_button)
+
+        self.tracker_sphere_tracking_label = QLabel(self.tracker_tab)
+        self.tracker_sphere_tracking_label.setObjectName(u"tracker_sphere_tracking_label")
+
+        self.tracker_info_layout.addWidget(self.tracker_sphere_tracking_label)
+
+        self.cancel_sphere_tracking_button = QPushButton(self.tracker_tab)
+        self.cancel_sphere_tracking_button.setObjectName(u"cancel_sphere_tracking_button")
+
+        self.tracker_info_layout.addWidget(self.cancel_sphere_tracking_button)
 
         self.tracker_info_layout_spacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -3014,6 +3024,8 @@ class Ui_main_window(object):
         self.check_all_button.setText(QCoreApplication.translate("main_window", u"Check All", None))
         self.check_all_in_logic_button.setText(QCoreApplication.translate("main_window", u"Check All in Logic", None))
         self.uncheck_all_button.setText(QCoreApplication.translate("main_window", u"Uncheck All", None))
+        self.tracker_sphere_tracking_label.setText(QCoreApplication.translate("main_window", u"Sphere Tracking", None))
+        self.cancel_sphere_tracking_button.setText(QCoreApplication.translate("main_window", u"Cancel Sphere Tracking for Location", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.tracker_tab), QCoreApplication.translate("main_window", u"Tracker", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))
