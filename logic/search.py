@@ -259,8 +259,6 @@ class Search:
                     ]
                 self.is_beatable = True
 
-        # location.sphere = self.sphere_num
-
     def add_exit_to_entrance_spheres(self, exit_: Entrance) -> None:
         if (
             self.search_mode
