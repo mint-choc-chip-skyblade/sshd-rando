@@ -42,7 +42,6 @@ class TrackerInventoryButton(QLabel):
         self.item_names: list[str] = item_names_
         self.forbidden_states: set[int] = set()
         self.world: World = None
-        # self.item_location_mapping: dict[str, list[Location]] = {}
         self.sphere_tracked_items: dict[Location, str] = {}
         self.inventory: Counter[Item]
         assert len(self.items) == len(self.filenames)

@@ -2546,6 +2546,11 @@ class Ui_main_window(object):
 
         self.tracker_info_layout.addWidget(self.uncheck_all_button)
 
+        self.set_hints_button = QPushButton(self.tracker_tab)
+        self.set_hints_button.setObjectName(u"set_hints_button")
+
+        self.tracker_info_layout.addWidget(self.set_hints_button)
+
         self.tracker_sphere_tracking_label = QLabel(self.tracker_tab)
         self.tracker_sphere_tracking_label.setObjectName(u"tracker_sphere_tracking_label")
 
@@ -3024,6 +3029,7 @@ class Ui_main_window(object):
         self.check_all_button.setText(QCoreApplication.translate("main_window", u"Check All", None))
         self.check_all_in_logic_button.setText(QCoreApplication.translate("main_window", u"Check All in Logic", None))
         self.uncheck_all_button.setText(QCoreApplication.translate("main_window", u"Uncheck All", None))
+        self.set_hints_button.setText(QCoreApplication.translate("main_window", u"Set Hints", None))
         self.tracker_sphere_tracking_label.setText(QCoreApplication.translate("main_window", u"Sphere Tracking", None))
         self.cancel_sphere_tracking_button.setText(QCoreApplication.translate("main_window", u"Cancel Sphere Tracking for Location", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.tracker_tab), QCoreApplication.translate("main_window", u"Tracker", None))

@@ -56,6 +56,7 @@ class TrackerArea(QLabel):
         self.main_entrance_name = main_entrance_name_
         self.main_entrance: Entrance = None
         self.entrances: list[Entrance] = []
+        self.hints: set[str] = set()
 
         self.update_color("gray")
         self.setTextFormat(QtCore.Qt.RichText)
@@ -194,7 +195,7 @@ class TrackerArea(QLabel):
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
 
         coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-25, self.height() / 2)
-        QToolTip.showText(coords, self.tooltip, self)
+        QToolTip.showText(coords, self.tooltip + self.get_hint_tooltip_text(), self)
         self.update_hover_text()
 
         return super().mouseMoveEvent(ev)
@@ -212,3 +213,12 @@ class TrackerArea(QLabel):
         stylesheet = stylesheet.replace("RADIUS", self.border_radius)
         stylesheet = stylesheet + TrackerArea.tooltip_stylesheet
         self.setStyleSheet(stylesheet)
+
+    def get_hint_tooltip_text(self) -> str:
+        text = ""
+        for hint in self.hints:
+            text += "\n" + hint
+        for child in self.tracker_children:
+            for hint in child.hints:
+                text += "\n" + f"{child.area} - {hint}"
+        return text

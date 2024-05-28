@@ -3810,6 +3810,13 @@ QPushButton {
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="set_hints_button">
+            <property name="text">
+             <string>Set Hints</string>
+            </property>
+           </widget>
+          </item>
+          <item>
           <widget class="QLabel" name="tracker_sphere_tracking_label">
               <property name="text">
                <string>Sphere Tracking</string>

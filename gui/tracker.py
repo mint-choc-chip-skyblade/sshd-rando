@@ -40,6 +40,7 @@ from gui.components.tracker_target_label import TrackerTargetLabel
 from gui.components.tracker_show_entrances_button import TrackerShowEntrancesButton
 from gui.components.tracker_show_locations_button import TrackerShowLocationsButton
 from gui.components.tracker_tablet_widget import TrackerTabletWidget
+from gui.components.tracker_hint_label import TrackerHintLabel
 from gui.dialogs.fi_question_dialog import FiQuestionDialog
 
 from constants.itemconstants import *
@@ -71,7 +72,6 @@ class Tracker:
         self.random_settings: list = []
         self.items_on_mark: dict[Location, Item] = {}
         self.own_dungeon_key_locations: list[tuple[Item, list[Location]]] = []
-        # self.item_location_mapping: dict[str, list[Location]] = {}
         self.sphere_tracked_items: dict[Location, str]
 
         # Holds which entrance is connected to which target
@@ -83,6 +83,7 @@ class Tracker:
         self.ui.check_all_button.setVisible(False)
         self.ui.check_all_in_logic_button.setVisible(False)
         self.ui.uncheck_all_button.setVisible(False)
+        self.ui.set_hints_button.setVisible(False)
 
         # Hide the sphere tracking info/buttons until a location is marked
         self.ui.tracker_sphere_tracking_label.setVisible(False)
@@ -120,6 +121,7 @@ class Tracker:
         self.ui.cancel_sphere_tracking_button.setCursor(
             QCursor(QtCore.Qt.PointingHandCursor)
         )
+        self.ui.set_hints_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
 
         self.init_buttons()
         self.assign_buttons_to_layout()
@@ -142,6 +144,7 @@ class Tracker:
         self.ui.cancel_sphere_tracking_button.clicked.connect(
             self.cancel_sphere_tracking
         )
+        self.ui.set_hints_button.clicked.connect(self.show_hint_options)
 
         self.update_statistics()
 
@@ -633,8 +636,9 @@ class Tracker:
         # Reset some internal variables
         self.last_opened_region = None
         self.last_checked_location = None
-        # self.item_location_mapping = {}
         self.sphere_tracked_items = {}
+        for area in self.areas.values():
+            area.hints.clear()
 
         # Modify settings for various purposes
 
@@ -764,7 +768,6 @@ class Tracker:
             inventory_button.inventory = self.inventory
             inventory_button.state = 0
             inventory_button.forbidden_states.clear()
-            # inventory_button.item_location_mapping = self.item_location_mapping
             inventory_button.sphere_tracked_items = self.sphere_tracked_items
             for item in self.inventory.elements():
                 if item.name in inventory_button.items:
@@ -797,7 +800,10 @@ class Tracker:
             loc.tracked_item = item
             loc.tracked_item_image = image
             self.sphere_tracked_items[loc] = item.name
-            # self.item_location_mapping.setdefault(item_name, []).append(loc)
+
+        # Restore any hints from an autosave
+        for area_name, hints in autosave.get("hints", {}).items():
+            self.areas[area_name].hints = set(hints)
 
         # Change progression status of some locations
         for location in self.world.get_all_item_locations():
@@ -952,6 +958,7 @@ class Tracker:
             self.ui.check_all_button.setVisible(area_name != "Root")
             self.ui.check_all_in_logic_button.setVisible(area_name != "Root")
             self.ui.uncheck_all_button.setVisible(area_name != "Root")
+            self.ui.set_hints_button.setVisible(area_name != "Root")
 
     def show_area_location_info(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, False):
@@ -1153,7 +1160,6 @@ class Tracker:
             # stop sphere tracking if unmarking a location
             self.last_checked_location = None
             if location.tracked_item is not None:
-                # self.item_location_mapping[location.tracked_item.name].remove(location)
                 location.tracked_item = None
                 location.tracked_item_image = None
                 del self.sphere_tracked_items[location]
@@ -1430,6 +1436,11 @@ class Tracker:
             loc.name: (item_name, loc.tracked_item_image)
             for loc, item_name in self.sphere_tracked_items.items()
         }
+        autosave["hints"] = {
+            area_name: area.hints
+            for area_name, area in self.areas.items()
+            if area_name != "Root"
+        }
 
         with open(filename, "w") as autosave_file:
             yaml.safe_dump(autosave, autosave_file)
@@ -1546,7 +1557,6 @@ class Tracker:
             self.last_checked_location = None
             for location in location_list:
                 if location.tracked_item is not None:
-                    # self.item_location_mapping[location.tracked_item.name].remove(location)
                     del self.sphere_tracked_items[location]
                     location.tracked_item = None
                     location.tracked_item_image = None
@@ -1570,22 +1580,28 @@ class Tracker:
         if self.last_checked_location is not None and item is not None:
             self.last_checked_location.tracked_item = item
             self.last_checked_location.tracked_item_image = item_image
-            # self.item_location_mapping.setdefault(item.name, []).append(self.last_checked_location)
             self.sphere_tracked_items[self.last_checked_location] = item.name
         self.update_tracker()
         if self.last_opened_region is not None:
             self.show_area_locations(self.last_opened_region.area)
 
     def update_spheres(self):
-        inventory: Counter[Item] = Counter()
+        # Copy the current inventory to pass into the search
+        # This gives logical support for items that are tracked
+        # but not assigned to a location (such as random starting items)
+        inventory = self.inventory.copy()
         for loc in self.world.location_table.values():
             loc.sphere = None
-        sphere_search = Search(SearchMode.TRACKER_SPHERES, [self.world])
+            if (item := loc.tracked_item) is not None:
+                # Remove any sphere-tracked items
+                if inventory[item] > 0:
+                    inventory[item] -= 1
+
+        sphere_search = Search(SearchMode.TRACKER_SPHERES, [self.world], inventory)
         sphere_search.search_worlds()
         for num, sphere in enumerate(sphere_search.playthrough_spheres):
             for loc in sphere:
                 loc.sphere = num
-        self.world
 
     def show_sphere_tracking_info(self):
         if self.last_checked_location is not None:
@@ -1604,3 +1620,72 @@ class Tracker:
     def cancel_sphere_tracking(self):
         self.last_checked_location = None
         self.show_sphere_tracking_info()
+
+    def show_hint_options(self):
+        self.clear_layout(self.ui.tracker_locations_info_layout)
+
+        # Layout used for the info area
+        info_layout = QHBoxLayout()
+
+        hint_info_label = QLabel(f"Select a hint for {self.last_opened_region.area}.")
+        hint_info_label.setMargin(10)
+        back_button = TrackerShowLocationsButton(self.last_opened_region.area)
+        back_button.setText("Back")
+        back_button.show_area_locations.connect(self.show_area_locations)
+
+        # Add everything to the layouts
+        info_layout.addWidget(hint_info_label)
+        info_layout.addWidget(back_button)
+
+        self.ui.tracker_locations_info_layout.addLayout(info_layout)
+
+        self.clear_layout(self.ui.tracker_locations_scroll_layout)
+
+        left_layout = QVBoxLayout()
+        right_layout = QVBoxLayout()
+
+        ALL_HINTS = [
+            "Clear Hints",
+            "Path to Ghirahim 1",
+            "Path to Scaldera",
+            "Path to Moldarach",
+            "Path to Koloktos",
+            "Path to Tentalus",
+            "Path to Ghirahim 2",
+            "Path to Demise",
+            "Barren",
+        ]
+
+        # skip hints that are already in the area's hint list
+        hints = [
+            hint for hint in ALL_HINTS if hint not in self.last_opened_region.hints
+        ]
+
+        for i, hint in enumerate(hints):
+
+            hint_label = TrackerHintLabel(hint, self.last_opened_region)
+            hint_label.clicked.connect(self.on_click_hint_label)
+
+            if i < len(hints) / 2:
+                left_layout.addWidget(hint_label)
+            else:
+                right_layout.addWidget(hint_label)
+
+        # Add vertical spacers to push labels up
+        left_layout.addSpacerItem(
+            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        )
+        right_layout.addSpacerItem(
+            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        )
+
+        self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
+        self.ui.tracker_locations_scroll_layout.addLayout(right_layout)
+
+    def on_click_hint_label(self, hint: str, area: TrackerArea):
+        if hint == "Clear Hints":
+            area.hints.clear()
+        else:
+            area.hints.add(hint)
+
+        self.show_area_locations(area.area)
