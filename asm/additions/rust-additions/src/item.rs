@@ -747,8 +747,10 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 35 | 40 | 41 | 48 | 53 | 112 | 113 | 134 | 140 | 165 => y_offset = 18.0,
                 // Bellows | Bug Net | Bomb Bag
                 49 | 71 | 92 => y_offset = 26.0,
-                52          // Slingshot
+                36          // Glittering Spores
+                | 52        // Slingshot
                 | 54        // Bottle of Water
+                | 55        // Mushroom Spores
                 | 65        // Guardian Potion
                 | 66        // Guardian Potion+
                 | 68        // Water Dragon's Scale
@@ -944,8 +946,29 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                     angle_change_y = 0x4000;
                     angle_change_z = 0x0A00;
                 },
-                // Progressive Wallet | Bottle | Tumbleweed | Extra Wallet
-                108..=111 | 153 | 163 | 199 => h_offset = 20.0,
+                36          // Glittering Spores
+                | 54        // Bottle of Water
+                | 55        // Mushroom Spores
+                | 65        // Guardian Potion
+                | 66        // Guardian Potion+
+                | 74        // Sacred Water
+                | 78        // Heart Potion
+                | 79        // Heart Potion+
+                | 81        // Heart Potion++
+                | 84        // Stamina Potion
+                | 85        // Stamina Potion+
+                | 86        // Air Potion
+                | 87        // Air Potion+
+                | 88        // Fairy in a Bottle
+                | 108..=111 // Wallets
+                | 126       // Revitalizing Potion
+                | 127       // Revitalizing Potion+
+                | 153       // Empty Bottle
+                | 163       // Tumbleweed
+                | 194       // Revitalizing Potion++
+                | 195       // Hot Pumpkin Soup
+                | 196       // Cold Pumpkin Soup
+                | 199 => h_offset = 20.0, // Extra Wallet
                 // Wooden Shield | Hylian Shield
                 116 | 125 => {
                     h_offset = 25.0;
