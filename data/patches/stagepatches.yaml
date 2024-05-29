@@ -854,6 +854,15 @@ F000: # Skyloft
       posz: -1688.4466552734375
       id: 0xFC9D
       name: Item
+  
+  - name: Move Stamina Fruit near Orielle and Parrow's House
+    type: objpatch
+    id: 0xFCD8
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posy: 114
 
 F001r:
   - name: Remove nighttime NPCs
@@ -1673,6 +1682,14 @@ F100: # Faron Woods
     objtype: OBJ
     object:
       posy: 1570
+  - name: Move Item behind Bombable Rock down
+    type: objpatch
+    id: 0xFCFF
+    room: 0
+    layer: 0
+    objtype: OBJ
+    object:
+      posy: -398
 
 F100_1: # Great Tree
   - name: Layer override
@@ -4988,6 +5005,15 @@ D100: # Skyview Temple
     layer: 1
     room: 10
     objtype: OBJ
+
+  - name: Move Item behind Bars down
+    type: objpatch
+    id: 0xFC2B
+    layer: 0
+    room: 5
+    objtype: OBJ
+    object:
+      posy: -210
 
 B100: # Skyview boss room
   - name: Layer override

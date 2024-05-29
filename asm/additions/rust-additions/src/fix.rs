@@ -36,6 +36,7 @@ extern "C" {
     static LOFTWING_PTR: *mut player::dBird;
 
     static STORYFLAG_MGR: *mut flag::FlagMgr;
+    static SCENEFLAG_MGR: *mut flag::SceneflagMgr;
 
     static mut CURRENT_STAGE_NAME: [u8; 8];
 
@@ -258,4 +259,32 @@ pub fn apply_loftwing_speed_override() {
             }
         }
     }
+}
+
+#[no_mangle]
+pub fn check_for_botg_itemflag_for_light_tower(param1: u64, param2: u64, param3: u64) {
+    unsafe {
+        let actor: *mut c_void;
+        asm!("mov {0:x}, x19", out(reg) actor);
+
+        if flag::check_itemflag(flag::ITEMFLAGS::BALLAD_OF_THE_GODDESS) == 1 {
+            asm!("mov w8, 1");
+        } else {
+            asm!("mov w8, wzr");
+        }
+
+        // Replaced instructions
+        asm!("mov x0, {0:x}", in(reg) param1);
+        asm!("mov x2, {0:x}", in(reg) param3);
+        asm!("mov x1, {0:x}", "mov w3, wzr", "mov x4, xzr", in(reg) actor);
+    }
+}
+
+#[no_mangle]
+pub fn set_skyloft_thunderhead_sceneflag() {
+    if unsafe { (*SCENEFLAG_MGR).sceneindex } == 0 {
+        flag::set_local_sceneflag(29);
+    }
+
+    flag::set_global_sceneflag(0, 29);
 }

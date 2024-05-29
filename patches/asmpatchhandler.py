@@ -434,6 +434,8 @@ class ASMPatchHandler:
         startflags_data.write(bytes.fromhex("FFFF"))
 
         # Itemflags
+        itemflags.sort()  # Forces Hylian Shield to always be the top slot of the pouch wheel
+
         for flag in self._get_flags(itemflags, onlyif_handler):
             startflags_data.write(struct.pack("<H", flag))
 

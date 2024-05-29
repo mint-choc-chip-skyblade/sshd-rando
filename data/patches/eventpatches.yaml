@@ -347,6 +347,9 @@
   - name: Full SotH text
     type: textpatch
     index: 243
+  - name: Cold Pumpkin Soup text
+    type: textpatch
+    index: 246
   - name: Five Gratitude crystal counter
     type: textpatch
     index: 45
@@ -362,11 +365,11 @@
     type: flowpatch
     index: 464
     flow:
-      next: BotG opens Thunderhead
-  - name: BotG opens Thunderhead
+      next: Give rando BotG storyflag
+  - name: Give rando BotG storyflag
     type: setstoryflag
     flow:
-      setstoryflag: 194 # Thunderhead open flag
+      setstoryflag: 893 # Rando storyflag for BotG item
       next: Check harp storyflag
   - name: Check harp storyflag
     type: checkstoryflag
@@ -381,10 +384,28 @@
       setstoryflag: 340
       next: Set imp2 defeated
   - name: Set imp2 defeated
+    onlyif: skip_harp_playing == on
+    type: setstoryflag
+    flow:
+      setstoryflag: 132
+      next: Set Thunderhead Open storyflag
+  - name: Set imp2 defeated
+    onlyif: skip_harp_playing == off
     type: setstoryflag
     flow:
       setstoryflag: 132
       next: -1
+  - name: Set Thunderhead Open storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 194 # Thunderhead is open
+      next: Set Skyloft Thunderhead sceneflag
+  - name: Set Skyloft Thunderhead sceneflag
+    type: flowadd
+    flow:
+      type: type3
+      next: -1
+      param3: 73 # Custom command
   - name: Don't change to Skyloft layer 8/9 after getting the Triforce
     type: flowpatch
     index: 540 # before storyflag
@@ -408,7 +429,7 @@
   - name: Check BotG storyflag
     type: checkstoryflag
     flow:
-      checkstoryflag: 194
+      checkstoryflag: 893
     cases:
       - Set GoT raised
       - -1
@@ -1748,6 +1769,94 @@
     index: 97
     flow:
       next: 103
+  # Fix pumpkin soup from Pumm
+  - name: Goto set fill bottle storyflag for giving soup 1
+    type: flowpatch
+    index: 535
+    flow:
+      next: Set fill bottle storyflag for soup 1
+  - name: Set fill bottle storyflag for soup 1
+    type: setstoryflag
+    flow:
+      setstoryflag: 894 # Should fill bottle not create new
+      next: 322
+  - name: Goto unset fill bottle storyflag for giving soup 1
+    type: flowpatch
+    index: 322
+    flow:
+      next: Unset fill bottle storyflag for soup 1
+  - name: Unset fill bottle storyflag for soup 1
+    type: setstoryflag
+    flow:
+      setstoryflag: 894 # Should fill bottle not create new
+      param3: 1 # actually unset the flag
+      next: 550
+
+  - name: Goto set fill bottle storyflag for giving soup 2
+    type: flowpatch
+    index: 530
+    flow:
+      next: Set fill bottle storyflag for soup 2
+  - name: Set fill bottle storyflag for soup 2
+    type: setstoryflag
+    flow:
+      setstoryflag: 894 # Should fill bottle not create new
+      next: 117
+  - name: Goto unset fill bottle storyflag for giving soup 2
+    type: flowpatch
+    index: 117
+    flow:
+      next: Unset fill bottle storyflag for soup 2
+  - name: Unset fill bottle storyflag for soup 2
+    type: setstoryflag
+    flow:
+      setstoryflag: 894 # Should fill bottle not create new
+      param3: 1 # actually unset the flag
+      next: 549
+
+  - name: Goto set fill bottle storyflag for giving soup 3
+    type: flowpatch
+    index: 532
+    flow:
+      next: Set fill bottle storyflag for soup 3
+  - name: Set fill bottle storyflag for soup 3
+    type: setstoryflag
+    flow:
+      setstoryflag: 894 # Should fill bottle not create new
+      next: 29
+  - name: Goto unset fill bottle storyflag for giving soup 3
+    type: flowpatch
+    index: 29
+    flow:
+      next: Unset fill bottle storyflag for soup 3
+  - name: Unset fill bottle storyflag for soup 3
+    type: setstoryflag
+    flow:
+      setstoryflag: 894 # Should fill bottle not create new
+      param3: 1 # actually unset the flag
+      next: 156
+  
+  - name: Goto set fill bottle storyflag for giving soup 4
+    type: flowpatch
+    index: 533
+    flow:
+      next: Set fill bottle storyflag for soup 4
+  - name: Set fill bottle storyflag for soup 4
+    type: setstoryflag
+    flow:
+      setstoryflag: 894 # Should fill bottle not create new
+      next: 30
+  - name: Goto unset fill bottle storyflag for giving soup 4
+    type: flowpatch
+    index: 30
+    flow:
+      next: Unset fill bottle storyflag for soup 4
+  - name: Unset fill bottle storyflag for soup 4
+    type: setstoryflag
+    flow:
+      setstoryflag: 894 # Should fill bottle not create new
+      param3: 1 # actually unset the flag
+      next: 77
 
 118-Town3:
   - name: Sparrot Scrapper check

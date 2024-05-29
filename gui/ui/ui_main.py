@@ -554,6 +554,11 @@ class Ui_main_window(object):
 
         self.verticalLayout.addLayout(self.peatrice_conversations_layout)
 
+        self.setting_random_bottle_contents = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_random_bottle_contents.setObjectName(u"setting_random_bottle_contents")
+
+        self.verticalLayout.addWidget(self.setting_random_bottle_contents)
+
         self.setting_full_wallet_upgrades = RandoTriStateCheckBox(self.tweaks_group_box)
         self.setting_full_wallet_upgrades.setObjectName(u"setting_full_wallet_upgrades")
 
@@ -706,12 +711,7 @@ class Ui_main_window(object):
 
         self.verticalLayout_14.addWidget(self.setting_unlock_all_groosenator_destinations)
 
-        self.open_thunderhead_label = QLabel(self.open_world_group_box)
-        self.open_thunderhead_label.setObjectName(u"open_thunderhead_label")
-
-        self.verticalLayout_14.addWidget(self.open_thunderhead_label)
-
-        self.setting_open_thunderhead = QComboBox(self.open_world_group_box)
+        self.setting_open_thunderhead = RandoTriStateCheckBox(self.open_world_group_box)
         self.setting_open_thunderhead.setObjectName(u"setting_open_thunderhead")
 
         self.verticalLayout_14.addWidget(self.setting_open_thunderhead)
@@ -2599,7 +2599,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 283))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2742,7 +2742,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2797,6 +2797,7 @@ class Ui_main_window(object):
         self.damage_multiplier_label.setText(QCoreApplication.translate("main_window", u"Damage Multiplier", None))
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
+        self.setting_random_bottle_contents.setText(QCoreApplication.translate("main_window", u"Random Bottle Contents", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
         self.setting_skip_harp_playing.setText(QCoreApplication.translate("main_window", u"Skip Harp Playing", None))
         self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
@@ -2817,11 +2818,11 @@ class Ui_main_window(object):
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.gameplay_tab), QCoreApplication.translate("main_window", u"Gameplay", None))
         self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))
         self.setting_unlock_all_groosenator_destinations.setText(QCoreApplication.translate("main_window", u"Unlock all Groosenator Destinations", None))
-        self.open_thunderhead_label.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
+        self.setting_open_thunderhead.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
         self.open_lake_floria_label.setText(QCoreApplication.translate("main_window", u"Open Lake Floria", None))
         self.setting_open_batreaux_shed.setText(QCoreApplication.translate("main_window", u"Open Batreaux's Shed", None))
         self.setting_shortcut_spiral_log_to_btt.setText(QCoreApplication.translate("main_window", u"Sealed Spiral Log to Behind the Temple", None))
-        self.setting_shortcut_logs_near_machi.setText(QCoreApplication.translate("main_window", u"Faron Woods Logs near First Kikwi", None))
+        self.setting_shortcut_logs_near_machi.setText(QCoreApplication.translate("main_window", u"Faron Woods Logs near Entry Bird Statue", None))
         self.setting_shortcut_faron_log_to_floria.setText(QCoreApplication.translate("main_window", u"Faron Woods Log to after Lake Floria", None))
         self.setting_shortcut_deep_woods_log_before_tightrope.setText(QCoreApplication.translate("main_window", u"Deep Woods Log before Tightrope", None))
         self.setting_shortcut_deep_woods_log_before_temple.setText(QCoreApplication.translate("main_window", u"Deep Woods Log before Temple", None))

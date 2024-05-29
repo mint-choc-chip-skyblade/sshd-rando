@@ -181,7 +181,7 @@ pub enum ITEMFLAGS {
     STAMINA_POTION_PLUS              = 0x55,
     AIR_POTION                       = 0x56,
     AIR_POTION_PLUS                  = 0x57,
-    FAIRY_                           = 0x58,
+    FAIRY_IN_A_BOTTLE                = 0x58,
     UNK89                            = 0x59,
     IRON_BOW                         = 0x5A,
     SACRED_BOW                       = 0x5B,
@@ -246,7 +246,7 @@ pub enum ITEMFLAGS {
     ELDIN_ROLLER                     = 0x96,
     SKY_STAG_BEETLE                  = 0x97,
     STARRY_FIREFLY                   = 0x98,
-    BOTTLE                           = 0x99,
+    EMPTY_BOTTLE                     = 0x99,
     RUPEE_MEDAL_                     = 0x9A,
     HEART_MEDAL_                     = 0x9B,
     UNK156                           = 0x9C,
@@ -651,6 +651,9 @@ pub fn handle_startflags() {
                 },
             }
         }
+
+        // Always set the empty bottle itemflag to allow buying potions from Luv
+        ((*(*ITEMFLAG_MGR).funcs).set_flag)(ITEMFLAG_MGR, ITEMFLAGS::EMPTY_BOTTLE as u16);
 
         let mut starting_hearts: u16 = 6 * 4;
 
