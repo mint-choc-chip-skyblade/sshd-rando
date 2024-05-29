@@ -249,7 +249,11 @@ pub fn warp_to_start() {
 
         (*STAGE_MGR).set_in_actually_trigger_entrance = 0;
 
-        NEXT_STAGE_NAME = (*start_info).stage_name; // *b"F001r\0\0\0";
+        NEXT_STAGE_NAME = (*start_info).stage_name;
+        NEXT_ROOM = (*start_info).room;
+        NEXT_LAYER = (*start_info).layer;
+        NEXT_ENTRANCE = (*start_info).entrance;
+        NEXT_NIGHT = (*start_info).night;
 
         if (*GAME_RELOADER_PTR).reload_trigger == 0x2BF {
             (*GAME_RELOADER_PTR).reload_trigger = 5;
