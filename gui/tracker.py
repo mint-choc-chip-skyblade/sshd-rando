@@ -40,6 +40,7 @@ from gui.components.tracker_target_label import TrackerTargetLabel
 from gui.components.tracker_show_entrances_button import TrackerShowEntrancesButton
 from gui.components.tracker_show_locations_button import TrackerShowLocationsButton
 from gui.components.tracker_tablet_widget import TrackerTabletWidget
+from gui.dialogs.fi_info_dialog import FiInfoDialog
 from gui.dialogs.fi_question_dialog import FiQuestionDialog
 
 from constants.itemconstants import *
@@ -95,7 +96,16 @@ class Tracker:
 
         self.init_buttons()
         self.assign_buttons_to_layout()
-        self.load_tracker_autosave()
+        try:
+            self.load_tracker_autosave()
+        except Exception as e:
+            self.fi_dialog = FiInfoDialog(self.main)
+            self.fi_dialog.show_dialog(
+                "Error loading tracker autosave",
+                "There was an error loading the autosave from the tracker.<br>"
+                + f"{e}.<br>"
+                + "The tracker must be loaded from scratch.",
+            )
 
         self.ui.start_new_tracker_button.clicked.connect(
             self.on_start_new_tracker_button_clicked
