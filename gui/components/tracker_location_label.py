@@ -10,6 +10,7 @@ from PySide6.QtGui import (
 from PySide6 import QtCore
 from PySide6.QtCore import Signal
 
+from constants.itemnames import PROGRESSIVE_SWORD
 from logic.location import Location
 from logic.search import Search
 
@@ -57,11 +58,9 @@ class TrackerLocationLabel(QLabel):
             )
 
         # Add padding and crystal/goddess cube/gossip stone icon if necessary
-        self.icon_size = QFontMetrics(self.font()).height()
+        self.icon_width = QFontMetrics(self.font()).height()
         self.pixmap = QPixmap()
-        self.styling = TrackerLocationLabel.icon_stylesheet.replace(
-            "PADDING", f"{self.icon_size + 2}"
-        )
+        has_icon = True
         if self.location.has_vanilla_gratitude_crystal():
             self.pixmap.load(
                 (TRACKER_ASSETS_PATH / "sidequests" / "crystal.png").as_posix()
@@ -81,7 +80,20 @@ class TrackerLocationLabel(QLabel):
         elif (image := self.location.tracked_item_image) is not None:
             self.pixmap.load((TRACKER_ASSETS_PATH / image).as_posix())
         else:
+            has_icon = False
+            self.icon_height = self.icon_width
             self.styling = TrackerLocationLabel.default_stylesheet
+        if has_icon:
+            self.icon_height = (
+                self.icon_width * self.pixmap.height() / self.pixmap.width()
+            )
+            if self.location.tracked_item is not None:
+                if self.location.tracked_item.name == PROGRESSIVE_SWORD:
+                    # Swords are a bit too tall
+                    self.icon_height *= 0.8
+            self.styling = TrackerLocationLabel.icon_stylesheet.replace(
+                "PADDING", f"{self.icon_width + 2}"
+            )
 
         self.update_color(search)
 
@@ -104,9 +116,11 @@ class TrackerLocationLabel(QLabel):
         painter.setRenderHint(QPainter.SmoothPixmapTransform)
 
         draw_x = self.margin()
-        draw_y = (self.height() / 2) - (self.icon_size / 2) + 1
+        draw_y = (self.height() / 2) - (self.icon_height / 2) + 1
 
-        painter.drawPixmap(draw_x, draw_y, self.icon_size, self.icon_size, self.pixmap)
+        painter.drawPixmap(
+            draw_x, draw_y, self.icon_width, self.icon_height, self.pixmap
+        )
         return super().paintEvent(arg__1)
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
