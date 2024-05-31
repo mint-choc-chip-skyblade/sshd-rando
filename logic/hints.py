@@ -142,7 +142,10 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
                 world.path_locations[dungeon.goal_location] = []
 
         for location in world.location_table.values():
-            if not location.progression:
+            if not location.progression and not (
+                location.has_known_vanilla_item
+                and location.current_item.name == GRATITUDE_CRYSTAL
+            ):
                 non_required_locations[location] = location.current_item
                 location.remove_current_item()
 
