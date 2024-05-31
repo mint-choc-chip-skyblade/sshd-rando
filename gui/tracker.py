@@ -41,6 +41,7 @@ from gui.components.tracker_show_entrances_button import TrackerShowEntrancesBut
 from gui.components.tracker_show_locations_button import TrackerShowLocationsButton
 from gui.components.tracker_tablet_widget import TrackerTabletWidget
 from gui.components.tracker_hint_label import TrackerHintLabel
+from gui.components.tracker_toggle_st_button import TrackerToggleSTButton
 from gui.dialogs.fi_info_dialog import FiInfoDialog
 from gui.dialogs.fi_question_dialog import FiQuestionDialog
 
@@ -74,6 +75,7 @@ class Tracker:
         self.items_on_mark: dict[Location, Item] = {}
         self.own_dungeon_key_locations: list[tuple[Item, list[Location]]] = []
         self.sphere_tracked_items: dict[Location, str]
+        self.allow_sphere_tracking: bool = False
 
         # Holds which entrance is connected to which target
         self.connected_entrances: dict[Entrance, Entrance] = {}
@@ -129,13 +131,13 @@ class Tracker:
         try:
             self.load_tracker_autosave()
         except Exception as e:
-            self.fi_dialog = FiInfoDialog(self.main)
-            self.fi_dialog.show_dialog(
+            self.main.fi_info_dialog.show_dialog(
                 "Error loading tracker autosave",
                 "There was an error loading the autosave from the tracker.<br>"
                 + f"{e}.<br>"
                 + "The tracker must be loaded from scratch.",
             )
+            self.initialize_tracker_world()
 
         self.ui.start_new_tracker_button.clicked.connect(
             self.on_start_new_tracker_button_clicked
@@ -155,6 +157,12 @@ class Tracker:
             self.cancel_sphere_tracking
         )
         self.ui.set_hints_button.clicked.connect(self.show_hint_options)
+        self.ui.toggle_sphere_tracking_button.left_clicked.connect(
+            self.toggle_sphere_tracking
+        )
+        self.ui.toggle_sphere_tracking_button.right_clicked.connect(
+            self.display_sphere_tracking_popup
+        )
 
         self.update_statistics()
 
@@ -770,6 +778,12 @@ class Tracker:
         self.inventory[self.world.get_item(GRATITUDE_CRYSTAL_PACK)] += packs_to_add
         self.inventory[self.world.get_item(GRATITUDE_CRYSTAL)] = 0
 
+        # Remember if the user was tracking spheres
+        self.allow_sphere_tracking |= autosave.get("allow_sphere_tracking", False)
+
+        if self.allow_sphere_tracking:
+            self.ui.toggle_sphere_tracking_button.setText("Disable Sphere Tracking")
+
         # Apply starting inventory to inventory buttons and assign world
         for inventory_button in self.ui.tracker_tab.findChildren(
             TrackerInventoryButton
@@ -779,6 +793,7 @@ class Tracker:
             inventory_button.state = 0
             inventory_button.forbidden_states.clear()
             inventory_button.sphere_tracked_items = self.sphere_tracked_items
+            inventory_button.allow_sphere_tracking = self.allow_sphere_tracking
             for item in self.inventory.elements():
                 if item.name in inventory_button.items:
                     inventory_button.add_forbidden_state(inventory_button.state)
@@ -940,7 +955,10 @@ class Tracker:
             for i, loc in enumerate(locations):
 
                 location_label = TrackerLocationLabel(
-                    loc, area_button.recent_search, area_button
+                    loc,
+                    area_button.recent_search,
+                    area_button,
+                    self.allow_sphere_tracking,
                 )
                 # Split locations evenly among the left and right layouts
                 if i < len(locations) / 2:
@@ -1169,17 +1187,20 @@ class Tracker:
         if not location.marked:
             # stop sphere tracking if unmarking a location
             self.last_checked_location = None
-            if location.tracked_item is not None:
+            if location.tracked_item is not None and self.allow_sphere_tracking:
                 location.tracked_item = None
                 location.tracked_item_image = None
                 del self.sphere_tracked_items[location]
                 # update the location list to remove the item
                 self.show_area_locations(location_area)
         # only start sphere-tracking "normal" locations
-        elif not (
-            location.has_vanilla_goddess_cube()
-            or location.has_vanilla_gratitude_crystal()
-            or location.is_gossip_stone()
+        elif (
+            not (
+                location.has_vanilla_goddess_cube()
+                or location.has_vanilla_gratitude_crystal()
+                or location.is_gossip_stone()
+            )
+            and self.allow_sphere_tracking
         ):
             self.last_checked_location = location
         self.update_tracker()
@@ -1376,8 +1397,9 @@ class Tracker:
         self.show_area_location_info(location_label_area_name)
         self.autosave_tracker()
         self.update_statistics()
-        self.update_spheres()
-        self.show_sphere_tracking_info()
+        if self.allow_sphere_tracking:
+            self.update_spheres()
+            self.show_sphere_tracking_info()
 
     def update_areas_locations(self) -> None:
         # Clear all locations before reassigning
@@ -1442,6 +1464,7 @@ class Tracker:
             for dungeon in self.ui.tracker_tab.findChildren(TrackerDungeonLabel)
             if dungeon.active
         ]
+        autosave["allow_sphere_tracking"] = self.allow_sphere_tracking
         autosave["sphere_tracked_items"] = {
             loc.name: (item_name, loc.tracked_item_image)
             for loc, item_name in self.sphere_tracked_items.items()
@@ -1553,7 +1576,6 @@ class Tracker:
         self.handle_check_all(True, True)
 
     def on_uncheck_all_clicked(self):
-
         self.handle_check_all(False, False)
 
     def handle_check_all(self, in_logic_only=False, check=True):
@@ -1562,7 +1584,7 @@ class Tracker:
             location_list = self.last_opened_region.get_available_locations()
         else:
             location_list = self.last_opened_region.get_included_locations()
-        if check == False:
+        if check == False and self.allow_sphere_tracking:
             # untrack all sphere-tracked items in this area
             self.last_checked_location = None
             for location in location_list:
@@ -1617,6 +1639,7 @@ class Tracker:
         if self.last_checked_location is not None:
             self.ui.tracker_sphere_tracking_label.setVisible(True)
             self.ui.cancel_sphere_tracking_button.setVisible(True)
+            self.ui.toggle_sphere_tracking_button.setVisible(False)
             item = self.last_checked_location.tracked_item
             self.ui.tracker_sphere_tracking_label.setText(
                 self.last_checked_location.name
@@ -1626,6 +1649,7 @@ class Tracker:
         else:
             self.ui.tracker_sphere_tracking_label.setVisible(False)
             self.ui.cancel_sphere_tracking_button.setVisible(False)
+            self.ui.toggle_sphere_tracking_button.setVisible(True)
 
     def cancel_sphere_tracking(self):
         self.last_checked_location = None
@@ -1699,3 +1723,53 @@ class Tracker:
             area.hints.add(hint)
 
         self.show_area_locations(area.area)
+
+    def toggle_sphere_tracking(self):
+        self.allow_sphere_tracking = not self.allow_sphere_tracking
+        for inventory_button in self.ui.tracker_tab.findChildren(
+            TrackerInventoryButton
+        ):
+            inventory_button.allow_sphere_tracking = self.allow_sphere_tracking
+        if self.allow_sphere_tracking:
+            self.ui.toggle_sphere_tracking_button.setText("Disable Sphere Tracking")
+            self.update_spheres()
+        else:
+            self.ui.toggle_sphere_tracking_button.setText("Enable Sphere Tracking")
+            self.cancel_sphere_tracking()
+        if self.last_opened_region is not None:
+            self.show_area_locations(self.last_opened_region.area)
+
+        self.update_tracker()
+
+    def display_sphere_tracking_popup(self):
+        self.main.fi_info_dialog.show_dialog(
+            "How to use Sphere Tracking",
+            """
+            <b>What is sphere tracking?</b><br><br>
+            Sphere tracking is a feature of the tracker
+            that allows you to keep track of where you found
+            certain items, and the 'sphere' of logic that each
+            check is in. A sphere describes the rough number of
+            'steps' to take or items to find to access a specific
+            check. For example, locations avaiable from the start
+            are listed as 'Sphere 0' locations, and any locations
+            unlocked by items found in sphere 0 are sphere 1
+            locations, and so on.<br><br>
+
+            (It's important to note that SSHD Randomizer's logic
+            does not inherently account for spheres; they are
+            merely a helpful way to visualize progression and
+            requirements throughout a seed.)<br><br>
+
+            <b>Instructions</b><br><br>
+
+            To start sphere tracking, mark off a location, then select an item.
+            The item will now be bound to that location, and the tracker will
+            take that item placement into account for sphere
+            calculations. The item's icon (at the time that you marked it off)
+            will now appear next to the check in the location list.
+            Unmarking the location will also unbind the item that was tracked there.
+            When you mouse over an item in the inventory section, a tooltip will
+            appear with all the locations you tracked that item to appear in.
+            """,
+        )

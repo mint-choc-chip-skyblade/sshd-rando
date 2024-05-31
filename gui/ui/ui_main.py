@@ -22,6 +22,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComb
     QSizePolicy, QSpacerItem, QSpinBox, QTabWidget,
     QVBoxLayout, QWidget)
 
+from gui.components.tracker_toggle_st_button import TrackerToggleSTButton
 from gui.components.tristate_check_box import RandoTriStateCheckBox
 
 class Ui_main_window(object):
@@ -2551,6 +2552,11 @@ class Ui_main_window(object):
 
         self.tracker_info_layout.addWidget(self.set_hints_button)
 
+        self.toggle_sphere_tracking_button = TrackerToggleSTButton(self.tracker_tab)
+        self.toggle_sphere_tracking_button.setObjectName(u"toggle_sphere_tracking_button")
+
+        self.tracker_info_layout.addWidget(self.toggle_sphere_tracking_button)
+
         self.tracker_sphere_tracking_label = QLabel(self.tracker_tab)
         self.tracker_sphere_tracking_label.setObjectName(u"tracker_sphere_tracking_label")
 
@@ -3031,6 +3037,7 @@ class Ui_main_window(object):
         self.check_all_in_logic_button.setText(QCoreApplication.translate("main_window", u"Check All in Logic", None))
         self.uncheck_all_button.setText(QCoreApplication.translate("main_window", u"Uncheck All", None))
         self.set_hints_button.setText(QCoreApplication.translate("main_window", u"Set Hints", None))
+        self.toggle_sphere_tracking_button.setText(QCoreApplication.translate("main_window", u"Enable Sphere Tracking", None))
         self.tracker_sphere_tracking_label.setText(QCoreApplication.translate("main_window", u"Sphere Tracking", None))
         self.cancel_sphere_tracking_button.setText(QCoreApplication.translate("main_window", u"Cancel Sphere Tracking for Location", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.tracker_tab), QCoreApplication.translate("main_window", u"Tracker", None))

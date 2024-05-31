@@ -44,6 +44,7 @@ class TrackerInventoryButton(QLabel):
         self.world: World = None
         self.sphere_tracked_items: dict[Location, str] = {}
         self.inventory: Counter[Item]
+        self.allow_sphere_tracking: bool = False
         assert len(self.items) == len(self.filenames)
 
         self.setSizePolicy(QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding))
@@ -138,7 +139,7 @@ class TrackerInventoryButton(QLabel):
         self.forbidden_states.add(state)
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
-        should_sphere_track = True
+        should_sphere_track = self.allow_sphere_tracking
         if ev.button() == QtCore.Qt.LeftButton:
             first_iteration = True
             while first_iteration or self.state in self.forbidden_states:
@@ -171,9 +172,11 @@ class TrackerInventoryButton(QLabel):
         return super().mouseReleaseEvent(ev)
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
-        self.calculate_tooltip()
-        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-60, self.height() * 3 / 4)
-        QToolTip.showText(coords, self.tooltip, self)
+        if self.allow_sphere_tracking:
+            self.calculate_tooltip()
+            coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-60, self.height() * 3 / 4)
+            QToolTip.showText(coords, self.tooltip, self)
+
         self.update_hover_text()
 
         return super().mouseMoveEvent(ev)

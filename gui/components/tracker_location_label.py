@@ -25,7 +25,11 @@ class TrackerLocationLabel(QLabel):
     clicked = Signal(str, Location)
 
     def __init__(
-        self, location_: Location, search: Search, parent_area_button_
+        self,
+        location_: Location,
+        search: Search,
+        parent_area_button_,
+        allow_sphere_tracking_,
     ) -> None:
         super().__init__()
         self.location = location_
@@ -36,24 +40,37 @@ class TrackerLocationLabel(QLabel):
         self.setWordWrap(True)
         self.recent_search: Search = search
         self.parent_area_button = parent_area_button_
+        self.allow_sphere_tracking: bool = allow_sphere_tracking_
 
         # Chop off the location's area in the name if it's the same
         # as the region it's in
         if self.location.name.startswith(self.parent_area_button.area):
             self.setText(
-                f"[{'?' if self.location.sphere == None else self.location.sphere}] "
+                (
+                    f"[{'?' if self.location.sphere == None else self.location.sphere}] "
+                    if self.allow_sphere_tracking
+                    else ""
+                )
                 + self.location.name.replace(f"{self.parent_area_button.area} - ", "")
             )
         elif self.parent_area_button.alias and self.location.name.startswith(
             self.parent_area_button.alias
         ):
             self.setText(
-                f"[{'?' if self.location.sphere == None else self.location.sphere}] "
+                (
+                    f"[{'?' if self.location.sphere == None else self.location.sphere}] "
+                    if self.allow_sphere_tracking
+                    else ""
+                )
                 + self.location.name.replace(f"{self.parent_area_button.alias} - ", "")
             )
         else:
             self.setText(
-                f"[{'?' if self.location.sphere == None else self.location.sphere}] "
+                (
+                    f"[{'?' if self.location.sphere == None else self.location.sphere}] "
+                    if self.allow_sphere_tracking
+                    else ""
+                )
                 + self.location.name
             )
 
@@ -77,7 +94,9 @@ class TrackerLocationLabel(QLabel):
             self.pixmap.load(
                 (TRACKER_ASSETS_PATH / "dungeons" / "small_key.png").as_posix()
             )
-        elif (image := self.location.tracked_item_image) is not None:
+        elif (
+            image := self.location.tracked_item_image
+        ) is not None and self.allow_sphere_tracking:
             self.pixmap.load((TRACKER_ASSETS_PATH / image).as_posix())
         else:
             has_icon = False
