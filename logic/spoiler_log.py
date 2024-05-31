@@ -113,7 +113,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 longest_name_length = max(longest_name_length, len(f"{location}"))
 
         # Print playthrough
-        sphere_num = 1
+        sphere_num = 0
         spoiler_log.write("\nPlaythrough:\n")
         for sphere in worlds[0].playthrough_spheres:
             sphere = sorted(sphere)

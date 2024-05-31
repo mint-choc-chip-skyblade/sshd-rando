@@ -28,7 +28,7 @@ from PySide6.QtWidgets import (
     QLineEdit,
 )
 from PySide6 import QtCore
-from PySide6.QtGui import QMouseEvent
+from PySide6.QtGui import QMouseEvent, QCursor
 
 from gui.components.tracker_inventory_button import TrackerInventoryButton
 from gui.components.tracker_dungeon_label import TrackerDungeonLabel
@@ -40,6 +40,8 @@ from gui.components.tracker_target_label import TrackerTargetLabel
 from gui.components.tracker_show_entrances_button import TrackerShowEntrancesButton
 from gui.components.tracker_show_locations_button import TrackerShowLocationsButton
 from gui.components.tracker_tablet_widget import TrackerTabletWidget
+from gui.components.tracker_hint_label import TrackerHintLabel
+from gui.components.tracker_toggle_st_button import TrackerToggleSTButton
 from gui.dialogs.fi_info_dialog import FiInfoDialog
 from gui.dialogs.fi_question_dialog import FiQuestionDialog
 
@@ -68,9 +70,12 @@ class Tracker:
         self.areas: dict[str, TrackerArea] = {}
         self.active_area: TrackerArea = None
         self.last_opened_region: TrackerArea = None
+        self.last_checked_location: Location = None
         self.random_settings: list = []
         self.items_on_mark: dict[Location, Item] = {}
         self.own_dungeon_key_locations: list[tuple[Item, list[Location]]] = []
+        self.sphere_tracked_items: dict[Location, str]
+        self.allow_sphere_tracking: bool = False
 
         # Holds which entrance is connected to which target
         self.connected_entrances: dict[Entrance, Entrance] = {}
@@ -81,6 +86,13 @@ class Tracker:
         self.ui.check_all_button.setVisible(False)
         self.ui.check_all_in_logic_button.setVisible(False)
         self.ui.uncheck_all_button.setVisible(False)
+        self.ui.set_hints_button.setVisible(False)
+
+        # Hide the sphere tracking info/buttons until a location is marked
+        self.ui.tracker_sphere_tracking_label.setVisible(False)
+        self.ui.cancel_sphere_tracking_button.setVisible(False)
+
+        self.ui.tracker_sphere_tracking_label.setWordWrap(True)
 
         # Display the Sky if there's no active tracker
         self.ui.map_widget.setStyleSheet(
@@ -94,18 +106,38 @@ class Tracker:
         # Same for setting starting entrance
         self.ui.set_starting_entrance_button.setVisible(False)
 
+        # Set all sidebar buttons to use the click mouse cursor
+        self.ui.start_new_tracker_button.setCursor(
+            QCursor(QtCore.Qt.PointingHandCursor)
+        )
+        self.ui.check_all_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.ui.check_all_in_logic_button.setCursor(
+            QCursor(QtCore.Qt.PointingHandCursor)
+        )
+        self.ui.uncheck_all_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.ui.set_random_settings_button.setCursor(
+            QCursor(QtCore.Qt.PointingHandCursor)
+        )
+        self.ui.set_starting_entrance_button.setCursor(
+            QCursor(QtCore.Qt.PointingHandCursor)
+        )
+        self.ui.cancel_sphere_tracking_button.setCursor(
+            QCursor(QtCore.Qt.PointingHandCursor)
+        )
+        self.ui.set_hints_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+
         self.init_buttons()
         self.assign_buttons_to_layout()
         try:
             self.load_tracker_autosave()
         except Exception as e:
-            self.fi_dialog = FiInfoDialog(self.main)
-            self.fi_dialog.show_dialog(
+            self.main.fi_info_dialog.show_dialog(
                 "Error loading tracker autosave",
                 "There was an error loading the autosave from the tracker.<br>"
                 + f"{e}.<br>"
                 + "The tracker must be loaded from scratch.",
             )
+            self.initialize_tracker_world()
 
         self.ui.start_new_tracker_button.clicked.connect(
             self.on_start_new_tracker_button_clicked
@@ -121,6 +153,16 @@ class Tracker:
             self.on_check_all_in_logic_clicked
         )
         self.ui.uncheck_all_button.clicked.connect(self.on_uncheck_all_clicked)
+        self.ui.cancel_sphere_tracking_button.clicked.connect(
+            self.cancel_sphere_tracking
+        )
+        self.ui.set_hints_button.clicked.connect(self.show_hint_options)
+        self.ui.toggle_sphere_tracking_button.left_clicked.connect(
+            self.toggle_sphere_tracking
+        )
+        self.ui.toggle_sphere_tracking_button.right_clicked.connect(
+            self.display_sphere_tracking_popup
+        )
 
         self.update_statistics()
 
@@ -133,6 +175,8 @@ class Tracker:
                 "dungeons/small_key_1.png",
                 "dungeons/small_key_2_complete.png",
             ],
+            None,
+            [f"Skyview Temple Small Key ({i}/2)" for i in range(3)],
         )
         self.et_key_piece_button = TrackerInventoryButton(
             ["Nothing"] + [KEY_PIECE] * 5,
@@ -144,10 +188,14 @@ class Tracker:
                 "dungeons/et_key_4.png",
                 "dungeons/et_key_5.png",
             ],
+            None,
+            [f"Key Piece ({i}/5)" for i in range(6)],
         )
         self.lmf_small_key_button = TrackerInventoryButton(
             ["Nothing", LMF_SMALL_KEY],
             ["dungeons/small_key_0.png", "dungeons/small_key_1_complete.png"],
+            None,
+            [f"Lanayru Mining Facility Small Key ({i}/1)" for i in range(2)],
         )
         self.ac_small_key_button = TrackerInventoryButton(
             ["Nothing", AC_SMALL_KEY, AC_SMALL_KEY],
@@ -156,6 +204,8 @@ class Tracker:
                 "dungeons/small_key_1.png",
                 "dungeons/small_key_2_complete.png",
             ],
+            None,
+            [f"Ancient Cistern Small Key ({i}/2)" for i in range(3)],
         )
         self.ssh_small_key_button = TrackerInventoryButton(
             ["Nothing"] + [SSH_SMALL_KEY] * 2,
@@ -164,6 +214,8 @@ class Tracker:
                 "dungeons/small_key_1.png",
                 "dungeons/small_key_2_complete.png",
             ],
+            None,
+            [f"Sandship Small Key ({i}/2)" for i in range(3)],
         )
         self.fs_small_key_button = TrackerInventoryButton(
             ["Nothing"] + [FS_SMALL_KEY] * 3,
@@ -173,10 +225,14 @@ class Tracker:
                 "dungeons/small_key_2.png",
                 "dungeons/small_key_3_complete.png",
             ],
+            None,
+            [f"Fire Sanctuary Small Key ({i}/3)" for i in range(4)],
         )
         self.sk_small_key_button = TrackerInventoryButton(
             ["Nothing", SK_SMALL_KEY],
             ["dungeons/small_key_0.png", "dungeons/small_key_1_complete.png"],
+            None,
+            [f"Sky Keep Small Key ({i}/1)" for i in range(2)],
         )
 
         self.sv_boss_key_button = TrackerInventoryButton(
@@ -217,6 +273,8 @@ class Tracker:
         self.slingshot_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_SLINGSHOT] * 2,
             ["slingshot_gray.png", "slingshot.png", "scattershot.png"],
+            None,
+            ["No Slingshot", "Slingshot", "Scattershot"],
         )
         self.beetle_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_BEETLE] * 4,
@@ -227,10 +285,14 @@ class Tracker:
                 "quick_beetle.png",
                 "tough_beetle.png",
             ],
+            None,
+            ["No Beetle", "Beetle", "Hook Beetle", "Quick Beetle", "Tough Beetle"],
         )
         self.bug_net_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_BUG_NET] * 2,
             ["bug_net_gray.png", "bug_net.png", "big_bug_net.png"],
+            None,
+            ["No Bug Net", "Bug Net", "Big Bug Net"],
         )
         self.bow_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_BOW] * 3,
@@ -240,6 +302,8 @@ class Tracker:
                 "iron_bow.png",
                 "sacred_bow.png",
             ],
+            None,
+            ["No Bow", "Bow", "Iron Bow", "Sacred Bow"],
         )
         self.clawshots_button = TrackerInventoryButton(
             ["Nothing", CLAWSHOTS], ["clawshots_gray.png", "clawshots.png"]
@@ -263,6 +327,16 @@ class Tracker:
                 "swords/master_sword.png",
                 "swords/true_master_sword.png",
             ],
+            None,
+            [
+                "No Sword",
+                "Practice Sword",
+                "Goddess Sword",
+                "Goddess Longsword",
+                "Goddess White Sword",
+                "Master Sword",
+                "True Master Sword",
+            ],
         )
         self.sword_button.setMinimumWidth(65)
         self.sword_button.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
@@ -274,6 +348,8 @@ class Tracker:
                 "dungeons/small_key_1.png",
                 "dungeons/small_key_2_complete.png",
             ],
+            None,
+            [f"Lanayru Caves Small Key ({i}/2)" for i in range(3)],
         )
         self.sea_chart_button = TrackerInventoryButton(
             ["Nothing", SEA_CHART], ["sea_chart_gray.png", "sea_chart.png"]
@@ -285,10 +361,15 @@ class Tracker:
         self.adventure_pouch_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_POUCH] * 5,
             ["pouch_gray.png"] + [f"pouch{i}.png" for i in range(1, 6)],
+            None,
+            ["Adventure Pouch (0 Slots)"]
+            + [f"Adventure Pouch ({i + 4} Slots)" for i in range(5)],
         )
         self.bottle_button = TrackerInventoryButton(
             ["Nothing"] + [EMPTY_BOTTLE] * 5,
             ["bottle_gray.png"] + [f"bottle{i}.png" for i in range(1, 6)],
+            None,
+            [f"Empty Bottle ({i}/5)" for i in range(6)],
         )
         self.wallet_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_WALLET] * 4,
@@ -299,11 +380,21 @@ class Tracker:
                 "wallets/giant_wallet.png",
                 "wallets/tycoon_wallet.png",
             ],
+            None,
+            [
+                "Wallet (300 Rupees)",
+                "Medium Wallet (500 Rupees)",
+                "Large Wallet (1000 Rupees)",
+                "Giant Wallet (5000 Rupees)",
+                "Tycoon Wallet (9000 Rupees)",
+            ],
         )
         self.extra_wallet_button = TrackerInventoryButton(
             ["Nothing"] + [EXTRA_WALLET] * 3,
             ["wallets/extra_wallet_gray.png"]
             + [f"wallets/extra_wallet_{i}.png" for i in range(1, 4)],
+            None,
+            [f"Extra Wallet (+{i*300} Rupees)" for i in range(4)],
         )
         self.mitts_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_MITTS] * 2,
@@ -312,6 +403,8 @@ class Tracker:
                 "main quest/digging_mitts.png",
                 "main quest/mogma_mitts.png",
             ],
+            None,
+            ["No Mitts", "Digging Mitts", "Mogma Mitts"],
         )
 
         self.harp_button = TrackerInventoryButton(
@@ -343,10 +436,14 @@ class Tracker:
                 "songs/song_of_the_hero_3.png",
                 "songs/song_of_the_hero_4.png",
             ],
+            None,
+            [f"Song of the Hero ({i}/4)" for i in range(5)],
         )
         self.triforce_button = TrackerInventoryButton(
             ["Nothing", TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER],
             [f"main quest/triforce_{i}.png" for i in range(4)],
+            None,
+            [f"Triforce ({i}/3)" for i in range(4)],
         )
 
         self.water_dragon_scale_button = TrackerInventoryButton(
@@ -382,16 +479,18 @@ class Tracker:
             ["Nothing"] + [GRATITUDE_CRYSTAL_PACK] * 16,
             ["sidequests/crystal_gray.png"]
             + [f"sidequests/crystal_{i * 5}.png" for i in range(1, 17)],
+            None,
+            [f"Gratitude Crystals ({i*5}/80)" for i in range(18)],
         )
         self.life_tree_fruit_button = TrackerInventoryButton(
             ["Nothing", LIFE_TREE_FRUIT],
             ["main quest/life_tree_fruit_gray.png", "main quest/life_tree_fruit.png"],
         )
 
-        self.tadtones_button = TrackerInventoryButton(
-            ["Nothing", GROUP_OF_TADTONES],
-            ["main quest/tadtones_gray.png", "main quest/tadtones.png"],
-        )
+        # self.tadtones_button = TrackerInventoryButton(
+        #    ["Nothing", GROUP_OF_TADTONES],
+        #    ["main quest/tadtones_gray.png", "main quest/tadtones.png"],
+        # )
         self.scrapper_button = TrackerInventoryButton(
             ["Nothing", SCRAPPER],
             ["main quest/scrapper_gray.png", "main quest/scrapper.png"],
@@ -429,6 +528,8 @@ class Tracker:
             area_button.set_main_entrance_target.connect(
                 self.show_target_selection_info
             )
+            area_button.check_all.connect(self.check_all_locations_in_list)
+            area_button.mouse_hover.connect(self.update_hover_text)
             self.areas[area_name] = area_button
 
         # Set parent areas of tracker area buttons
@@ -520,17 +621,20 @@ class Tracker:
         self.ui.lower_inventory_layout.addWidget(self.gratitude_crystals_button, 2, 6)
 
         self.ui.lower_inventory_layout.addWidget(self.life_tree_fruit_button, 3, 0)
-        self.ui.lower_inventory_layout.addWidget(self.tadtones_button, 3, 1)
+        # self.ui.lower_inventory_layout.addWidget(self.tadtones_button, 3, 1)
 
         # Connect clicking a tracker inventory button to updating the tracker
         for inventory_button in self.ui.tracker_tab.findChildren(
             TrackerInventoryButton
         ):
-            inventory_button.clicked.connect(self.update_tracker)
+            inventory_button.clicked.connect(self.on_click_inventory_button)
+            inventory_button.mouse_hover.connect(self.update_hover_text)
 
         # Connect dungeon labels to adding and removing dungeon locations
+        # and display the dungeon name and status on the bottom section when hovered over
         for dungeon_label in self.ui.tracker_tab.findChildren(TrackerDungeonLabel):
             dungeon_label.clicked.connect(self.update_dungeon_progress_locations)
+            dungeon_label.mouse_hover.connect(self.update_hover_text)
 
     def initialize_tracker_world(
         self, tracker_config: Config = None, autosave: dict = {}
@@ -548,6 +652,13 @@ class Tracker:
         self.world.setting_map = config.settings[0]
         self.world.num_worlds = 1
         self.world.config = config
+
+        # Reset some internal variables
+        self.last_opened_region = None
+        self.last_checked_location = None
+        self.sphere_tracked_items = {}
+        for area in self.areas.values():
+            area.hints.clear()
 
         # Modify settings for various purposes
 
@@ -669,6 +780,12 @@ class Tracker:
         self.inventory[self.world.get_item(GRATITUDE_CRYSTAL_PACK)] += packs_to_add
         self.inventory[self.world.get_item(GRATITUDE_CRYSTAL)] = 0
 
+        # Remember if the user was tracking spheres
+        self.allow_sphere_tracking |= autosave.get("allow_sphere_tracking", False)
+
+        if self.allow_sphere_tracking:
+            self.ui.toggle_sphere_tracking_button.setText("Disable Sphere Tracking")
+
         # Apply starting inventory to inventory buttons and assign world
         for inventory_button in self.ui.tracker_tab.findChildren(
             TrackerInventoryButton
@@ -677,6 +794,8 @@ class Tracker:
             inventory_button.inventory = self.inventory
             inventory_button.state = 0
             inventory_button.forbidden_states.clear()
+            inventory_button.sphere_tracked_items = self.sphere_tracked_items
+            inventory_button.allow_sphere_tracking = self.allow_sphere_tracking
             for item in self.inventory.elements():
                 if item.name in inventory_button.items:
                     inventory_button.add_forbidden_state(inventory_button.state)
@@ -698,6 +817,20 @@ class Tracker:
         for loc_name in autosave.get("marked_locations", []):
             loc = self.world.get_location(loc_name)
             loc.marked = True
+
+        # Bind any sphere-tracked items from an autosave
+        for loc_name, (item_name, image) in autosave.get(
+            "sphere_tracked_items", {}
+        ).items():
+            item = self.world.get_item(item_name)
+            loc = self.world.get_location(loc_name)
+            loc.tracked_item = item
+            loc.tracked_item_image = image
+            self.sphere_tracked_items[loc] = item.name
+
+        # Restore any hints from an autosave
+        for area_name, hints in autosave.get("hints", {}).items():
+            self.areas[area_name].hints = set(hints)
 
         # Change progression status of some locations
         for location in self.world.get_all_item_locations():
@@ -824,7 +957,10 @@ class Tracker:
             for i, loc in enumerate(locations):
 
                 location_label = TrackerLocationLabel(
-                    loc, area_button.recent_search, area_button
+                    loc,
+                    area_button.recent_search,
+                    area_button,
+                    self.allow_sphere_tracking,
                 )
                 # Split locations evenly among the left and right layouts
                 if i < len(locations) / 2:
@@ -852,6 +988,7 @@ class Tracker:
             self.ui.check_all_button.setVisible(area_name != "Root")
             self.ui.check_all_in_logic_button.setVisible(area_name != "Root")
             self.ui.uncheck_all_button.setVisible(area_name != "Root")
+            self.ui.set_hints_button.setVisible(area_name != "Root")
 
     def show_area_location_info(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, False):
@@ -1048,9 +1185,29 @@ class Tracker:
         for label in self.ui.tracker_tab.findChildren(TrackerTargetLabel):
             label.setVisible(filter.lower() in label.text().lower())
 
-    def on_click_location_label(self, location_area: str) -> None:
+    def on_click_location_label(self, location_area: str, location: Location) -> None:
+        if not location.marked:
+            # stop sphere tracking if unmarking a location
+            self.last_checked_location = None
+            if location.tracked_item is not None and self.allow_sphere_tracking:
+                location.tracked_item = None
+                location.tracked_item_image = None
+                del self.sphere_tracked_items[location]
+                # update the location list to remove the item
+                self.show_area_locations(location_area)
+        # only start sphere-tracking "normal" locations
+        elif (
+            not (
+                location.has_vanilla_goddess_cube()
+                or location.has_vanilla_gratitude_crystal()
+                or location.is_gossip_stone()
+            )
+            and self.allow_sphere_tracking
+        ):
+            self.last_checked_location = location
         self.update_tracker()
         self.show_area_location_info(location_area)
+        self.last_opened_region.update_hover_text()
 
     def on_click_target_label(
         self, entrance: Entrance, target: Entrance, parent_area_name: str
@@ -1242,6 +1399,9 @@ class Tracker:
         self.show_area_location_info(location_label_area_name)
         self.autosave_tracker()
         self.update_statistics()
+        if self.allow_sphere_tracking:
+            self.update_spheres()
+            self.show_sphere_tracking_info()
 
     def update_areas_locations(self) -> None:
         # Clear all locations before reassigning
@@ -1306,6 +1466,16 @@ class Tracker:
             for dungeon in self.ui.tracker_tab.findChildren(TrackerDungeonLabel)
             if dungeon.active
         ]
+        autosave["allow_sphere_tracking"] = self.allow_sphere_tracking
+        autosave["sphere_tracked_items"] = {
+            loc.name: (item_name, loc.tracked_item_image)
+            for loc, item_name in self.sphere_tracked_items.items()
+        }
+        autosave["hints"] = {
+            area_name: area.hints
+            for area_name, area in self.areas.items()
+            if area_name != "Root"
+        }
 
         with open(filename, "w") as autosave_file:
             yaml.safe_dump(autosave, autosave_file)
@@ -1389,6 +1559,7 @@ class Tracker:
             and not self.active_area.area == "Root"
         ):
             self.on_back_button_clicked()
+            self.update_hover_text("")
 
     def update_statistics(self) -> None:
         num_accessible_locations = len(self.areas["Root"].get_available_locations())
@@ -1401,20 +1572,206 @@ class Tracker:
         self.ui.tracker_stats_remaining.setText(f"{num_remaining_locations: {3}}")
 
     def on_check_all_clicked(self):
-        self.handle_check_all(False, True)
+        self.handle_check_all()
 
     def on_check_all_in_logic_clicked(self):
         self.handle_check_all(True, True)
 
     def on_uncheck_all_clicked(self):
-        self.handle_check_all()
+        self.handle_check_all(False, False)
 
-    def handle_check_all(self, in_logic_only=False, check=False):
+    def handle_check_all(self, in_logic_only=False, check=True):
         assert self.last_opened_region != None
         if in_logic_only:
             location_list = self.last_opened_region.get_available_locations()
         else:
             location_list = self.last_opened_region.get_included_locations()
+        if check == False and self.allow_sphere_tracking:
+            # untrack all sphere-tracked items in this area
+            self.last_checked_location = None
+            for location in location_list:
+                if location.tracked_item is not None:
+                    del self.sphere_tracked_items[location]
+                    location.tracked_item = None
+                    location.tracked_item_image = None
+
+            # update the location list to remove the item images
+            self.show_area_locations(self.last_opened_region.area)
+
+        self.check_all_locations_in_list(location_list, check)
+        self.last_opened_region.update_hover_text()
+
+    def check_all_locations_in_list(self, location_list: list[Location], check=True):
         for location in location_list:
             location.marked = check
         self.update_tracker()
+
+    def update_hover_text(self, text: str):
+        self.ui.settings_default_option_description_label.setText(text)
+        # print([item.name for item in self.world.item_table.values() if item.is_game_winning_item])
+
+    def on_click_inventory_button(self, item: Item, item_image: str):
+        if self.last_checked_location is not None and item is not None:
+            self.last_checked_location.tracked_item = item
+            self.last_checked_location.tracked_item_image = item_image
+            self.sphere_tracked_items[self.last_checked_location] = item.name
+        self.update_tracker()
+        if self.last_opened_region is not None:
+            self.show_area_locations(self.last_opened_region.area)
+
+    def update_spheres(self):
+        # Copy the current inventory to pass into the search
+        # This gives logical support for items that are tracked
+        # but not assigned to a location (such as random starting items)
+        inventory = self.inventory.copy()
+        for loc in self.world.location_table.values():
+            loc.sphere = None
+            if (item := loc.tracked_item) is not None:
+                # Remove any sphere-tracked items
+                if inventory[item] > 0:
+                    inventory[item] -= 1
+
+        sphere_search = Search(SearchMode.TRACKER_SPHERES, [self.world], inventory)
+        sphere_search.search_worlds()
+        for num, sphere in enumerate(sphere_search.playthrough_spheres):
+            for loc in sphere:
+                loc.sphere = num
+
+    def show_sphere_tracking_info(self):
+        if self.last_checked_location is not None:
+            self.ui.tracker_sphere_tracking_label.setVisible(True)
+            self.ui.cancel_sphere_tracking_button.setVisible(True)
+            self.ui.toggle_sphere_tracking_button.setVisible(False)
+            item = self.last_checked_location.tracked_item
+            self.ui.tracker_sphere_tracking_label.setText(
+                self.last_checked_location.name
+                + "\n"
+                + (item.name if item is not None else "Select an item.")
+            )
+        else:
+            self.ui.tracker_sphere_tracking_label.setVisible(False)
+            self.ui.cancel_sphere_tracking_button.setVisible(False)
+            self.ui.toggle_sphere_tracking_button.setVisible(True)
+
+    def cancel_sphere_tracking(self):
+        self.last_checked_location = None
+        self.show_sphere_tracking_info()
+
+    def show_hint_options(self):
+        self.clear_layout(self.ui.tracker_locations_info_layout)
+
+        # Layout used for the info area
+        info_layout = QHBoxLayout()
+
+        hint_info_label = QLabel(f"Select a hint for {self.last_opened_region.area}.")
+        hint_info_label.setMargin(10)
+        back_button = TrackerShowLocationsButton(self.last_opened_region.area)
+        back_button.setText("Back")
+        back_button.show_area_locations.connect(self.show_area_locations)
+
+        # Add everything to the layouts
+        info_layout.addWidget(hint_info_label)
+        info_layout.addWidget(back_button)
+
+        self.ui.tracker_locations_info_layout.addLayout(info_layout)
+
+        self.clear_layout(self.ui.tracker_locations_scroll_layout)
+
+        left_layout = QVBoxLayout()
+        right_layout = QVBoxLayout()
+
+        ALL_HINTS = [
+            "Clear Hints",
+            "Path to Ghirahim 1",
+            "Path to Scaldera",
+            "Path to Moldarach",
+            "Path to Koloktos",
+            "Path to Tentalus",
+            "Path to Ghirahim 2",
+            "Path to Demise",
+            "Barren",
+        ]
+
+        # skip hints that are already in the area's hint list
+        hints = [
+            hint for hint in ALL_HINTS if hint not in self.last_opened_region.hints
+        ]
+
+        for i, hint in enumerate(hints):
+
+            hint_label = TrackerHintLabel(hint, self.last_opened_region)
+            hint_label.clicked.connect(self.on_click_hint_label)
+
+            if i < len(hints) / 2:
+                left_layout.addWidget(hint_label)
+            else:
+                right_layout.addWidget(hint_label)
+
+        # Add vertical spacers to push labels up
+        left_layout.addSpacerItem(
+            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        )
+        right_layout.addSpacerItem(
+            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        )
+
+        self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
+        self.ui.tracker_locations_scroll_layout.addLayout(right_layout)
+
+    def on_click_hint_label(self, hint: str, area: TrackerArea):
+        if hint == "Clear Hints":
+            area.hints.clear()
+        else:
+            area.hints.add(hint)
+
+        self.show_area_locations(area.area)
+
+    def toggle_sphere_tracking(self):
+        self.allow_sphere_tracking = not self.allow_sphere_tracking
+        for inventory_button in self.ui.tracker_tab.findChildren(
+            TrackerInventoryButton
+        ):
+            inventory_button.allow_sphere_tracking = self.allow_sphere_tracking
+        if self.allow_sphere_tracking:
+            self.ui.toggle_sphere_tracking_button.setText("Disable Sphere Tracking")
+            self.update_spheres()
+        else:
+            self.ui.toggle_sphere_tracking_button.setText("Enable Sphere Tracking")
+            self.cancel_sphere_tracking()
+        if self.last_opened_region is not None:
+            self.show_area_locations(self.last_opened_region.area)
+
+        self.update_tracker()
+
+    def display_sphere_tracking_popup(self):
+        self.main.fi_info_dialog.show_dialog(
+            "How to use Sphere Tracking",
+            """
+            <b>What is sphere tracking?</b><br><br>
+            Sphere tracking is a feature of the tracker
+            that allows you to keep track of where you found
+            certain items, and the 'sphere' of logic that each
+            check is in. A sphere describes the rough number of
+            'steps' to take or items to find to access a specific
+            check. For example, locations avaiable from the start
+            are listed as 'Sphere 0' locations, and any locations
+            unlocked by items found in sphere 0 are sphere 1
+            locations, and so on.<br><br>
+
+            (It's important to note that SSHD Randomizer's logic
+            does not inherently account for spheres; they are
+            merely a helpful way to visualize progression and
+            requirements throughout a seed.)<br><br>
+
+            <b>Instructions</b><br><br>
+
+            To start sphere tracking, mark off a location, then select an item.
+            The item will now be bound to that location, and the tracker will
+            take that item placement into account for sphere
+            calculations. The item's icon (at the time that you marked it off)
+            will now appear next to the check in the location list.
+            Unmarking the location will also unbind the item that was tracked there.
+            When you mouse over an item in the inventory section, a tooltip will
+            appear with all the locations you tracked that item to appear in.
+            """,
+        )

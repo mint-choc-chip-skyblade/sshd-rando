@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QLabel, QSizePolicy
+from PySide6.QtWidgets import QLabel, QSizePolicy, QToolTip
 from PySide6.QtGui import (
     QCursor,
     QMouseEvent,
@@ -15,23 +15,36 @@ from typing import TYPE_CHECKING
 
 from filepathconstants import TRACKER_ASSETS_PATH
 
-from logic.world import World, Counter
+from logic.world import World, Counter, Location
 from logic.item import Item
 
 
 class TrackerInventoryButton(QLabel):
 
-    clicked = Signal()
+    clicked = Signal(Item, str)
+    mouse_hover = Signal(str)
+    tooltip_stylesheet = (
+        "QToolTip { color: white; background-color: black; border-image: none; border-color: white; "
+        + f"qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
+        + " }"
+    )
 
     def __init__(
-        self, items_: list[str] = [], filenames_: list[Path] = [], parent_=None
+        self,
+        items_: list[str] = [],
+        filenames_: list[Path] = [],
+        parent_=None,
+        item_names_: list[str] = [],
     ) -> None:
         super().__init__(parent=parent_)
         self.items: list[str] = items_
         self.filenames: list[str] = filenames_
+        self.item_names: list[str] = item_names_
         self.forbidden_states: set[int] = set()
         self.world: World = None
+        self.sphere_tracked_items: dict[Location, str] = {}
         self.inventory: Counter[Item]
+        self.allow_sphere_tracking: bool = False
         assert len(self.items) == len(self.filenames)
 
         self.setSizePolicy(QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding))
@@ -42,8 +55,13 @@ class TrackerInventoryButton(QLabel):
         self.state: int = 0
         self.pixmap = QPixmap()
         self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
-        self.setStyleSheet("background-color: rgba(0, 0, 0, 0);")
+        self.setStyleSheet(
+            "QLabel {background-color: rgba(0, 0, 0, 0);}"
+            + TrackerInventoryButton.tooltip_stylesheet
+        )
         self.update_icon()
+        self.setMouseTracking(True)
+        self.tooltip = ""
 
     def update_icon(self) -> None:
         if self.state >= len(self.filenames):
@@ -121,6 +139,7 @@ class TrackerInventoryButton(QLabel):
         self.forbidden_states.add(state)
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
+        should_sphere_track = self.allow_sphere_tracking
         if ev.button() == QtCore.Qt.LeftButton:
             first_iteration = True
             while first_iteration or self.state in self.forbidden_states:
@@ -129,8 +148,10 @@ class TrackerInventoryButton(QLabel):
                 if self.state >= len(self.items):
                     self.state = 0
                     self.remove_all_items()
+                    should_sphere_track = False
                 self.add_current_item()
         elif ev.button() == QtCore.Qt.RightButton:
+            should_sphere_track = False
             first_iteration = True
             while first_iteration or self.state in self.forbidden_states:
                 first_iteration = False
@@ -140,6 +161,47 @@ class TrackerInventoryButton(QLabel):
                     self.state = len(self.items) - 1
                     self.add_all_items()
 
+        # don't try to sphere-track when removing an item or resetting an item all the way
+        if should_sphere_track:
+            self.clicked.emit(self.get_current_item(), self.filenames[self.state])
+        else:
+            self.clicked.emit(None, None)
+
         self.update_icon()
-        self.clicked.emit()
+        self.update_hover_text()
         return super().mouseReleaseEvent(ev)
+
+    def mouseMoveEvent(self, ev: QMouseEvent) -> None:
+        if self.allow_sphere_tracking:
+            self.calculate_tooltip()
+            coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-60, self.height() * 3 / 4)
+            QToolTip.showText(coords, self.tooltip, self)
+
+        self.update_hover_text()
+
+        return super().mouseMoveEvent(ev)
+
+    def update_hover_text(self) -> None:
+        if any(self.item_names):
+            self.mouse_hover.emit(f"{self.item_names[self.state]}")
+        else:
+            self.mouse_hover.emit(f"{self.items[-1]}")
+
+    def calculate_tooltip(self) -> None:
+        self.tooltip = ""
+        locations = [
+            loc
+            for loc, item_name in self.sphere_tracked_items.items()
+            if item_name in self.items[1:]
+        ]
+
+        if any(locations):
+            self.tooltip = "Locations found at:"
+            locations.sort(
+                key=lambda loc: loc.sphere if loc.sphere is not None else 1000000
+            )
+            for loc in locations:
+                self.tooltip += (
+                    "\n"
+                    + f"[{loc.sphere if loc.sphere is not None else '?'}] {loc.name}"
+                )

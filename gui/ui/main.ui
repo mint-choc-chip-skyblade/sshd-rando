@@ -3814,6 +3814,34 @@ QPushButton {
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="set_hints_button">
+            <property name="text">
+             <string>Set Hints</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="TrackerToggleSTButton" name="toggle_sphere_tracking_button">
+            <property name="text">
+             <string>Enable Sphere Tracking</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+          <widget class="QLabel" name="tracker_sphere_tracking_label">
+              <property name="text">
+               <string>Sphere Tracking</string>
+              </property>
+             </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="cancel_sphere_tracking_button">
+            <property name="text">
+             <string>Cancel Sphere Tracking for Location</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="tracker_info_layout_spacer">
             <property name="orientation">
              <enum>Qt::Orientation::Vertical</enum>
@@ -4104,6 +4132,11 @@ QPushButton {
    <class>RandoTriStateCheckBox</class>
    <extends>QCheckBox</extends>
    <header>gui/components/tristate_check_box</header>
+  </customwidget>
+  <customwidget>
+   <class>TrackerToggleSTButton</class>
+   <extends>QPushButton</extends>
+   <header>gui/components/tracker_toggle_st_button</header>
   </customwidget>
  </customwidgets>
  <resources/>

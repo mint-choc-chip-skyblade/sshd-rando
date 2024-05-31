@@ -17,6 +17,7 @@ class SearchMode:
     ALL_LOCATIONS_REACHABLE: int = 2
     GENERATE_PLAYTHROUGH: int = 3
     SPHERE_ZERO: int = 4
+    TRACKER_SPHERES: int = 5
 
 
 class Search:
@@ -81,6 +82,7 @@ class Search:
                         SearchMode.ACCESSIBLE_LOCATIONS,
                         SearchMode.ALL_LOCATIONS_REACHABLE,
                         SearchMode.SPHERE_ZERO,
+                        SearchMode.TRACKER_SPHERES,
                     ]:
                         item_locations.append(loc_access)
 
@@ -98,8 +100,11 @@ class Search:
             # looping as long as we're finding new things on each iteration
             self.new_things_found = False
 
-            # Add an empty sphere if we're generating the playthrough
-            if self.search_mode == SearchMode.GENERATE_PLAYTHROUGH:
+            # Add an empty sphere if we're generating the playthrough or tracker spheres
+            if self.search_mode in [
+                SearchMode.GENERATE_PLAYTHROUGH,
+                SearchMode.TRACKER_SPHERES,
+            ]:
                 self.playthrough_spheres.append([])
                 self.entrance_spheres.append([])
 
@@ -110,7 +115,8 @@ class Search:
             # we need to keep looping over exits and events until
             # nothing new is found in them (and then process locations)
             while (
-                self.search_mode == SearchMode.GENERATE_PLAYTHROUGH
+                self.search_mode
+                in [SearchMode.GENERATE_PLAYTHROUGH, SearchMode.TRACKER_SPHERES]
                 and self.new_things_found
             ):
                 self.new_things_found = False
@@ -205,7 +211,10 @@ class Search:
             if evaluate_location_requirement(self, loc_access) == EvalSuccess.COMPLETE:
                 self.visited_locations.add(loc)
                 self.new_things_found = True
-                if self.search_mode == SearchMode.GENERATE_PLAYTHROUGH:
+                if self.search_mode in [
+                    SearchMode.GENERATE_PLAYTHROUGH,
+                    SearchMode.TRACKER_SPHERES,
+                ]:
                     accessible_this_iteration.append(loc)
                 else:
                     self.process_location(loc)
@@ -218,11 +227,14 @@ class Search:
     def process_location(self, location: Location) -> None:
         if not self.collect_items:
             return
-
-        self.owned_items[location.current_item] += 1
+        if self.search_mode == SearchMode.TRACKER_SPHERES:
+            self.owned_items[location.tracked_item] += 1
+        else:
+            self.owned_items[location.current_item] += 1
         if (
             self.search_mode == SearchMode.GENERATE_PLAYTHROUGH
             and location.current_item.is_major_item
+            or self.search_mode == SearchMode.TRACKER_SPHERES
         ):
             self.playthrough_spheres[-1].append(location)
 
@@ -248,7 +260,11 @@ class Search:
                 self.is_beatable = True
 
     def add_exit_to_entrance_spheres(self, exit_: Entrance) -> None:
-        if self.search_mode == SearchMode.GENERATE_PLAYTHROUGH and exit_.shuffled:
+        if (
+            self.search_mode
+            in [SearchMode.GENERATE_PLAYTHROUGH, SearchMode.TRACKER_SPHERES]
+            and exit_.shuffled
+        ):
             if exit_ not in self.playthrough_entrances:
                 self.entrance_spheres[-1].append(exit_)
                 self.playthrough_entrances.add(exit_)

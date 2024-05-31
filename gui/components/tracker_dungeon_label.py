@@ -14,6 +14,7 @@ class TrackerDungeonLabel(QLabel):
     default_style = f"color: COLOR; font-size: 24pt; font-family: Hylia Serif Beta; text-align: center; qproperty-alignment: {int(QtCore.Qt.AlignCenter) | int(QtCore.Qt.AlignBottom)};"
 
     clicked = Signal(str)
+    mouse_hover = Signal(str)
 
     def __init__(self, abbreviation_: str, dungeon_name_: str) -> None:
 
@@ -32,8 +33,15 @@ class TrackerDungeonLabel(QLabel):
         self.setStyleSheet(TrackerDungeonLabel.default_style)
         self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
         self.active: bool = False
+        self.complete: bool = False
         self.setStyleSheet(TrackerDungeonLabel.default_style.replace("COLOR", "gray"))
         self.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
+        self.setMouseTracking(True)
+
+    def mouseMoveEvent(self, ev: QMouseEvent) -> None:
+        self.update_hover_text()
+
+        return super().mouseMoveEvent(ev)
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
         if ev.button() in [QtCore.Qt.LeftButton, QtCore.Qt.RightButton]:
@@ -46,6 +54,7 @@ class TrackerDungeonLabel(QLabel):
         self.clicked.emit(self.dungeon_name)
 
     def update_style(self) -> None:
+        self.complete = False
         if self.active:
             self.setStyleSheet(
                 TrackerDungeonLabel.default_style.replace("COLOR", "dodgerblue")
@@ -62,6 +71,7 @@ class TrackerDungeonLabel(QLabel):
             if (dungeon.goal_location and dungeon.goal_location.marked) or all(
                 [loc.marked for loc in dungeon.locations if loc.progression]
             ):
+                self.complete = True
                 self.setStyleSheet(
                     f"{self.styleSheet()} text-decoration: line-through;"
                 )
@@ -69,3 +79,12 @@ class TrackerDungeonLabel(QLabel):
     def reset(self) -> None:
         self.active = False
         self.update_style()
+
+    def update_hover_text(self):
+        if self.active:
+            if self.complete:
+                self.mouse_hover.emit(f"{self.dungeon_name} (Complete)")
+            else:
+                self.mouse_hover.emit(f"{self.dungeon_name} (Incomplete)")
+        else:
+            self.mouse_hover.emit(f"{self.dungeon_name} (Unrequired)")
