@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqwnbo8tr4x1i"]
+
+[ext_resource type="Script" path="res://scenes/checks/check.gd" id="1_u0pow"]
+
+[node name="Check" type="Button"]
+offset_right = 32.0
+offset_bottom = 33.0
+script = ExtResource("1_u0pow")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
