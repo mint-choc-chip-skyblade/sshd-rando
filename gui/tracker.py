@@ -631,8 +631,10 @@ class Tracker:
             inventory_button.mouse_hover.connect(self.update_hover_text)
 
         # Connect dungeon labels to adding and removing dungeon locations
+        # and display the dungeon name and status on the bottom section when hovered over
         for dungeon_label in self.ui.tracker_tab.findChildren(TrackerDungeonLabel):
             dungeon_label.clicked.connect(self.update_dungeon_progress_locations)
+            dungeon_label.mouse_hover.connect(self.update_hover_text)
 
     def initialize_tracker_world(
         self, tracker_config: Config = None, autosave: dict = {}
