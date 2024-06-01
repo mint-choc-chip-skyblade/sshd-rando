@@ -66,7 +66,9 @@ class Main(QMainWindow):
         self.fi_info_dialog = FiInfoDialog(self)
         self.fi_question_dialog = FiQuestionDialog(self)
 
-        self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
+        self.config = load_config_from_file(
+            CONFIG_PATH, create_if_blank=True, default_on_invalid_value=True
+        )
 
         print_progress_text("Initializing GUI: accessibility")
         self.accessibility = Accessibility(self, self.ui)
