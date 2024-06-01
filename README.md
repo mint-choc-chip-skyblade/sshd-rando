@@ -22,6 +22,14 @@ You will need:
 
 ## Frequently Asked Questions (FAQ) 🗂️
 
+### Does this work on a Nintendo Switch console?
+
+Yep!
+
+### Does this work on an emulator?
+
+Yep!
+
 ### What are all these acronyms about (SSR, SSHDR, SDR, HDR)?
 
 Broadly, these are all different terms for the 2 randomizers for Skyward Sword:
@@ -44,80 +52,7 @@ features that can't be easily achieved in the Wii version. There are also other 
 have made because the decisions made by the SDR devs (some of us are *also* devs there) don't work
 as well when applied to HDR.
 
-[🎲 Go to the full list of differences 🎲](#Differences-from-the-Wii-version)
-
-## Differences from the Wii version 🔀
-
-### New Settings
-* Entrance Randomizer with individual settings to control randomized entrance types, entrance
-coupling, mixing pools
-* Traps!
-* Hints are now controlled by their own settings
-* Ammo Availability to control how careful you need to be with deku seeds, bombs, and arrows
-* Lots of shortcuts
-* In-Game Language
-* Item Pool options for minimal, standard, extra, or plentiful amounts of progress items
-* Chest Type Matches Contents (CTMC)
-* Full Rupee Shuffle
-* Single Gratitude Crystal Shuffle
-* Stamina Fruit Shuffle
-* Hidden Item Shuffle
-* NPC Closet Shuffle
-* Unlock all Groosenator Destinations
-* Sky and Cloud color cosmetic settings
-
-### New Setting Options
-* Beatable Only logic option
-* Any Dungeon, Own Region, and Overworld options for Small Key and Boss Key shuffles
-* Removed option for all Key shuffles which unlocks their doors from the start
-* Goddess Chest Shuffle to turn on/off randomization of the items inside Goddess Chests easily
-* Correct Orientation option for Randomized Boss Key Puzzles
-* The `Random Starting Item` setting is now a count where you can select how many random items you
-would like to start with
-
-### New Checks
-* All the checks from Full Rupee, Single Gratitude Crystal, Stamina Fruit, Hidden Item, and NPC
-Closet shuffles
-* `Upper Skyloft - Rescue Remlit above Knight Academy`
-* `The Sky - Form a Swirrell Ring above Volcanic Island` / `Lumpy Pumpkin` / `Bamboo Island`
-
-### Changes
-* You can hold L to automatically quick charge the bow (even when using button controls)
-* Fi will keep track of any Gossip Stone hints you find. Call her and select "Information" and
-then "Notes". She will only tell you hints that you have already found
-* All freestanding items spin like Heart Pieces and Triforces so that they are easier to peak
-* Several small event cutscenes have been removed (e.g. pushing logs, freeing ropes)
-* Required dungeons aren't based on striking the Goddess Crest at the end (or running out the end
-entrance of LMF). Required dungeons are only required due to the items placed on their final check
-* Required dungeons will place Triforces, then Swords, then other progress items on their final
-checks in descending order of priority
-* Triforces are *always* required to unlock the doors to the end-game bosses
-* You need the Goddess's Harp *and* Ballad of the Goddess to raise the Gate of Time
-* You must climb onto Bucha's back to get the `Faron Woods - Kikwi Elder Reward` check
-* `Knight Academy - Item from Cawlin` does not require talking to the Toilet Hand or the Goddess's
-Harp
-* You no longer need to beat Moldarach 2 in Shipyard to play the rickety coaster minigame
-* The Groosenator is always available in the Sealed Grounds Spiral
-* You can call Fi while on fire
-* Freestanding item models should all rest on the ground correctly without clipping into the floor
-* Speech bubbles will always and only appear above an NPC's head when they have some important
-information related to the randomizer (usually checks)
-* The `Remove Enemy Music` setting also removes the music which plays when Scaldera and Tentalus
-are vulnerable
-* All locations and items have cryptic hint text
-
-### Not yet implemented
-* Shop randomization
-* Flooded Faron Woods randomization
-* Chest Dowsing Matches Contents (CDMC) (we *do* have CTMC though)
-* Custom Models and Music (you can use the files from SDR to achieve this)
-* Random Music (you can use the files from SDR to achieve this)
-* Tadtones as items
-* Your loftwing moves very fast during the Levias fight (instead of being slowed to vanilla speed)
-* Trial Object Shuffle
-* Trial Treasure Shuffle
-* Starting with a Treasures or Bugs
-* Save File text isn't updated for the randomizer
+[🎲 Go to the full list of differences 🎲](https://github.com/mint-choc-chip-skyblade/sshd-rando/blob/main/data/differences_between_hdr_and_sdr.md)
 
 ## Shoutouts 📣
 
