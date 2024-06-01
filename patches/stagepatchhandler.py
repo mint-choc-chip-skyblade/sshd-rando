@@ -19,6 +19,8 @@ import multiprocessing as mp
 
 from constants.tboxsubtypes import VANILLA_TBOX_SUBTYPES
 from constants.patchconstants import (
+    DEFAULT_PATH,
+    DEFAULT_PNT,
     DEFAULT_SOBJ,
     DEFAULT_OBJ,
     DEFAULT_SCEN,
@@ -690,6 +692,26 @@ def object_move(bzs: dict, object_move: dict, nextid: int) -> int:
     return return_nextid_increment
 
 
+def pathadd(bzs: dict, path: dict):
+    next_pnt = len(bzs["PNT "])
+
+    new_path = DEFAULT_PATH.copy()
+    new_path["pnt_start_idx"] = next_pnt
+    new_path["pnt_total_count"] = len(path["pnts"])
+    bzs["PATH"].append(new_path)
+
+    pnts_to_add = path["pnts"]
+
+    for pnt in pnts_to_add:
+        new_pnt = DEFAULT_PNT.copy()
+
+        for key, val in pnt.items():
+            if key in new_pnt:
+                new_pnt[key] = val
+
+        bzs["PNT "].append(new_pnt)
+
+
 def layer_override(bzs: dict, patch: dict):
     layer_override = [
         {
@@ -816,7 +838,13 @@ def patch_and_write_stage(
 
         for obj_patch in filter(
             lambda patch: patch["type"]
-            in ["objadd", "objdelete", "objpatch", "objmove"],
+            in [
+                "objadd",
+                "objdelete",
+                "objpatch",
+                "objmove",
+                "pathadd",
+            ],
             patches,
         ):
             object_patches.append(obj_patch)
@@ -881,6 +909,8 @@ def patch_and_write_stage(
                                 object_move=patch,
                                 nextid=nextid,
                             )
+                        elif patch["type"] == "pathadd":
+                            pathadd(bzs=room_bzs, path=patch)
                         else:
                             raise Exception(
                                 f"Unsupported patch type ({patch['type']}) found.\nPatch: {patch}"
