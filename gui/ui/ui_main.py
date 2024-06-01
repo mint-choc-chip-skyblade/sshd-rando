@@ -731,6 +731,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_14.addWidget(self.setting_open_batreaux_shed)
 
+        self.setting_shortcut_ios_bridge_complete = RandoTriStateCheckBox(self.open_world_group_box)
+        self.setting_shortcut_ios_bridge_complete.setObjectName(u"setting_shortcut_ios_bridge_complete")
+
+        self.verticalLayout_14.addWidget(self.setting_shortcut_ios_bridge_complete)
+
         self.setting_shortcut_spiral_log_to_btt = RandoTriStateCheckBox(self.open_world_group_box)
         self.setting_shortcut_spiral_log_to_btt.setObjectName(u"setting_shortcut_spiral_log_to_btt")
 
@@ -883,6 +888,11 @@ class Ui_main_window(object):
         self.setting_shortcut_fs_lava_flow.setObjectName(u"setting_shortcut_fs_lava_flow")
 
         self.verticalLayout_25.addWidget(self.setting_shortcut_fs_lava_flow)
+
+        self.setting_shortcut_sky_keep_sv_room_bars = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_sky_keep_sv_room_bars.setObjectName(u"setting_shortcut_sky_keep_sv_room_bars")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_sky_keep_sv_room_bars)
 
         self.shortcuts_vspacer = QSpacerItem(20, 148, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -2806,6 +2816,7 @@ class Ui_main_window(object):
         self.setting_open_thunderhead.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
         self.open_lake_floria_label.setText(QCoreApplication.translate("main_window", u"Open Lake Floria", None))
         self.setting_open_batreaux_shed.setText(QCoreApplication.translate("main_window", u"Open Batreaux's Shed", None))
+        self.setting_shortcut_ios_bridge_complete.setText(QCoreApplication.translate("main_window", u"Isle of Songs Bridge Complete", None))
         self.setting_shortcut_spiral_log_to_btt.setText(QCoreApplication.translate("main_window", u"Sealed Spiral Log to Behind the Temple", None))
         self.setting_shortcut_logs_near_machi.setText(QCoreApplication.translate("main_window", u"Faron Woods Logs near Entry Bird Statue", None))
         self.setting_shortcut_faron_log_to_floria.setText(QCoreApplication.translate("main_window", u"Faron Woods Log to after Lake Floria", None))
@@ -2833,6 +2844,7 @@ class Ui_main_window(object):
         self.setting_shortcut_sandship_brig_bars.setText(QCoreApplication.translate("main_window", u"Sandship Bars before Brig", None))
         self.setting_shortcut_fs_outside_bars.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Bars between Outdoor Bridges", None))
         self.setting_shortcut_fs_lava_flow.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Skip Lava Chase", None))
+        self.setting_shortcut_sky_keep_sv_room_bars.setText(QCoreApplication.translate("main_window", u"Sky Keep Bars in Skyview Room", None))
         self.entrance_randomization_group_box.setTitle(QCoreApplication.translate("main_window", u"Entrance Randomization", None))
         self.setting_randomize_door_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Door Entrances", None))
         self.setting_randomize_interior_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Interior Entrances", None))

@@ -39,19 +39,19 @@
 - name: SK First Room East
   dungeon: Sky Keep
   exits:
-    SK First Room South: can_access(SK First Room South) # open chest
+    SK First Room South: can_access(SK First Room South)
 
 
 - name: SK Skyview Room West
   dungeon: Sky Keep
   exits:
-    SK Skyview Room North: Whip and (Beetle or Bow) and Clawshots and (Bomb_Bag or Hook_Beetle or Bow) and Gust_Bellows
+    SK Skyview Room North: shortcut_sky_keep_sv_room_bars or (Whip and (Beetle or Bow) and Clawshots and (Bomb_Bag or Hook_Beetle or Bow) and Gust_Bellows)
 
 
 - name: SK Skyview Room North
   dungeon: Sky Keep
   exits:
-    SK Skyview Room West: Nothing
+    SK Skyview Room West: Nothing # pull lever to raise bars
 
 
 - name: SK LMF Room South
