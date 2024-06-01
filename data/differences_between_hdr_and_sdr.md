@@ -54,6 +54,7 @@ similarly to SotS
 * Song hints will hint items in the entire Silent Realm beyond the trial gate instead of just the
 trial's reward check
 * Several small event cutscenes have been removed (e.g. pushing logs, freeing ropes)
+* You can save the four Kikwis for the `Faron Woods - Kikwi Elder Reward` check in any order
 * You must climb onto Bucha's back to get the `Faron Woods - Kikwi Elder Reward` check
 * The Groosenator is always available in the Sealed Grounds Spiral
 * You can call Fi while on fire
@@ -67,6 +68,8 @@ are vulnerable
 Mushroom Spores
 * The Imprissoned 2 fight after trying to open the Gate of Time has been removed
 * Obtaining Scrapper will automatically activate all the quests associated with him
+* `Earth Temple - Ledd's Gift` only requires defeating the double Lizalfos fight and not opening
+the chest
 
 ## Logic Changes
 * Required dungeons aren't based on striking the Goddess Crest at the end (or running out the end
