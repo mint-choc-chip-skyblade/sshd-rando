@@ -4,7 +4,13 @@ from types import TracebackType
 
 from PySide6.QtCore import QEvent, Qt, QSize, QUrl
 from PySide6.QtGui import QDesktopServices, QIcon, QMouseEvent, QPixmap
-from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow, QWidget, QSpinBox, QLineEdit
+from PySide6.QtWidgets import (
+    QApplication,
+    QMessageBox,
+    QMainWindow,
+    QWidget,
+    QSpinBox,
+)
 
 from constants.randoconstants import VERSION
 from filepathconstants import (
