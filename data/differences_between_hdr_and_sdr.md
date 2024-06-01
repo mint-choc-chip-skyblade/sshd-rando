@@ -66,6 +66,7 @@ are vulnerable
 * Instead of 5 Empty Bottles, HDR has 3 Empty Bottles, a Revitalizing Potion, and a bottle of
 Mushroom Spores
 * The Imprissoned 2 fight after trying to open the Gate of Time has been removed
+* Obtaining Scrapper will automatically activate all the quests associated with him
 
 ## Logic Changes
 * Required dungeons aren't based on striking the Goddess Crest at the end (or running out the end
