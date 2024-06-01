@@ -8,6 +8,7 @@ VALID_STAGE_PATCH_TYPES = (
     "objmove",
     "oarcadd",
     "oarcdelete",
+    "pathadd",
 )
 
 STAGE_OBJECT_NAMES = [

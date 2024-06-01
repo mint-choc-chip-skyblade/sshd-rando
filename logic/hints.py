@@ -820,10 +820,14 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                         hint.text += get_text_data("Trial Direct One").replace(
                             "|item|", first_item_text
                         )
+                    elif len(useful_locations) == 2:
+                        hint.text += get_text_data("Trial Direct Two").replace(
+                            "|item|", first_item_text
+                        )
                     else:
                         useful_locations.remove(most_useful_location)
                         hint.text += (
-                            get_text_data("Trial Direct Two Plus")
+                            get_text_data("Trial Direct Three Plus")
                             .replace("|item|", first_item_text)
                             .replace("%d", str(len(useful_locations)))
                         )

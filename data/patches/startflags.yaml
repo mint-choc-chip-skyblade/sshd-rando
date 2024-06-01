@@ -354,8 +354,12 @@ Sceneflags:
   Sky Keep: # Scene Index 20
     - small_keys == removed:
       - 63 # Unlocked key locked door
+    - shortcut_sky_keep_sv_room_bars == on:
+      - 70 # Bars in Skyview room raised
 
   The Sky: # Scene Index 21
+    - shortcut_ios_bridge_complete == on:
+      - 1 # Isle of Songs bridge completed
     - 43 # Revealed Gossip Stone in Thunderhead
     - 44 # Revealed Gossip Stone in Volcanic Island
     - 45 # Revealed Gossip Stone at Lumpy Pumpkin

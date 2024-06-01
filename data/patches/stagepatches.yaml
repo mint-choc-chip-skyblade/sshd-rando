@@ -3470,24 +3470,24 @@ F300_3: # Fire Node
     layer: 0
     room: 0
     objtype: OBJ
-  # - name: Add Path Idx and SceneFlag to Fire Node Box
-  #   type: objpatch
-  #   objtype: OBJ
-  #   id: 0xFC07
-  #   layer: 0
-  #   room: 0
-  #   object:
-  #     pathIdx: 1
-  #     goalscenefid: 127
-  #     useLargerRadius: 1
-  #     isSwitchGoal: 0
-  # - name: Add Path For Fire Node Push Block
-  #   type: pathadd
-  #   room: 0
-  #   pnts:
-  #     - posx: -1275.0
-  #       posy: 240.0
-  #       posz: -4150.0
+  - name: Add Path Idx and SceneFlag to Fire Node Box
+    type: objpatch
+    objtype: OBJ
+    id: 0xFC07
+    layer: 0
+    room: 0
+    object:
+      pathIdx: 1
+      goalscenefid: 127
+      useLargerRadius: 1
+      isSwitchGoal: 0
+  - name: Add Path For Fire Node Push Block
+    type: pathadd
+    room: 0
+    pnts:
+      - posx: -1275.0
+        posy: 240.0
+        posz: -4150.0
 
 F300_4: # Temple of Time
   - name: Layer override

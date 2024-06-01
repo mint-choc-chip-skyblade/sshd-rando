@@ -1065,6 +1065,13 @@
             </widget>
            </item>
            <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_ios_bridge_complete">
+             <property name="text">
+              <string>Isle of Songs Bridge Complete</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="RandoTriStateCheckBox" name="setting_shortcut_spiral_log_to_btt">
              <property name="text">
               <string>Sealed Spiral Log to Behind the Temple</string>
@@ -1275,6 +1282,13 @@
             <widget class="RandoTriStateCheckBox" name="setting_shortcut_fs_lava_flow">
              <property name="text">
               <string>Fire Sanctuary Skip Lava Chase</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_sv_room_bars">
+             <property name="text">
+              <string>Sky Keep Bars in Skyview Room</string>
              </property>
             </widget>
            </item>

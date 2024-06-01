@@ -285,7 +285,7 @@
   hint_region: Inside the Thunderhead
   exits:
     Inside the Thunderhead: Day
-    Isle of Songs Interior: Sword
+    Isle of Songs Interior: Sword or Distance_Activator or Whip or shortcut_ios_bridge_complete # bomb bag doesn't work
   locations:
     Isle of Songs - Top Goddess Chest: Day and Volcano_Summit_Goddess_Cube_near_Fire_Sanctuary_Entrance
     Isle of Songs - Lower Goddess Chest: Day and Mogma_Turf_Goddess_Cube

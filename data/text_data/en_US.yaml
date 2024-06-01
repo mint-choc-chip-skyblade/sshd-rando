@@ -5806,7 +5806,10 @@
 - name: Trial Direct One
   standard: " The realm beyond holds |item|."
 
-- name: Trial Direct Two Plus
+- name: Trial Direct Two
+  standard: " The realm beyond holds |item| and <r<1 more item>>."
+
+- name: Trial Direct Three Plus
   standard: " The realm beyond holds |item| and <r<%d more items>>."
 
 - name: Trial Useless

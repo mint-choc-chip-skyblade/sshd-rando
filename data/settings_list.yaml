@@ -1017,6 +1017,17 @@
     - "off": "You will need to bonk or sword-slash the back-leftmost gravestone at night to open the shed to Batreaux's House."
     - "on": "The shed to Batreaux's House will be open from the start of the game."
 
+- name: shortcut_ios_bridge_complete
+  tracker_important: true
+  default_option: "off"
+  pretty_name: Isle of Songs Bridge Complete
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to solve the bridge puzzle in order to enter inside of the Isle of Songs."
+    - "on": "The bridge puzzle will be solved from the start of the game."
+
 - name: shortcut_spiral_log_to_btt
   tracker_important: true
   default_option: "on"
@@ -1280,6 +1291,17 @@
   options:
     - "off": "You will need to blow up the rock and escape the lava chase in order for the lava river at the end of Fire Sanctuary to be flowing."
     - "on": "The lava river at the end of Fire Sanctuary will be flowing from the start of the game."
+
+- name: shortcut_sky_keep_sv_room_bars
+  tracker_important: true
+  default_option: "on"
+  pretty_name: Sky Keep Bars in Skyview Room
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to traverse the Skyview room in Sky Keep using most items in the item wheel to continue through Sky Keep."
+    - "on": "The bars in the Skyview room in Sky Keep will already be raised allowing you to skip traversing the room."
 
 #############################
 ## Logic settings (tricks) ##
