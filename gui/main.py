@@ -193,7 +193,11 @@ The output folder you have specified cannot be found.
             return self.settings.update_descriptions(target)
         elif event.type() == QEvent.Type.Leave:
             return self.settings.update_descriptions(None)
-        elif event.type() == QEvent.Type.ContextMenu:
+        elif (
+            isinstance(event, QMouseEvent)
+            and event.type() == QEvent.Type.MouseButtonRelease
+            and event.button() == Qt.MouseButton.RightButton
+        ):
             return self.settings.show_full_descriptions(target)
         elif (
             isinstance(event, QMouseEvent)
