@@ -196,7 +196,10 @@ def load_or_get_default_from_config(config: dict, setting_name: str):
 
 
 def load_config_from_file(
-    filepath: Path, allow_rewrite: bool = True, create_if_blank: bool = False
+    filepath: Path,
+    allow_rewrite: bool = True,
+    create_if_blank: bool = False,
+    default_on_invalid_value: bool = False,
 ) -> Config:
     if create_if_blank and not filepath.is_file():
         print("No config file found. Creating default config file.")
@@ -258,9 +261,17 @@ def load_config_from_file(
                     setting_value = config_in[world_num_str][setting_name]
 
                     if setting_value not in settings_info[setting_name].options:
-                        raise ConfigError(
-                            f'"{setting_value}" is not a valid value for setting "{setting_name}"'
-                        )
+                        if default_on_invalid_value:
+                            rewrite_config = True
+                            default_value = info.options[info.default_option_index]
+                            print(
+                                f'"{setting_value}" is not a valid value for setting "{setting_name}". Defaulting to "{default_value}"'
+                            )
+                            setting_value = default_value
+                        else:
+                            raise ConfigError(
+                                f'"{setting_value}" is not a valid value for setting "{setting_name}"'
+                            )
 
                     cur_world_settings.settings[setting_name] = Setting(
                         setting_name, setting_value, settings_info[setting_name]

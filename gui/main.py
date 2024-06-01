@@ -1,9 +1,16 @@
 import sys
+import platform
 from types import TracebackType
 
 from PySide6.QtCore import QEvent, Qt, QSize, QUrl
 from PySide6.QtGui import QDesktopServices, QIcon, QMouseEvent, QPixmap
-from PySide6.QtWidgets import QApplication, QMessageBox, QMainWindow, QWidget
+from PySide6.QtWidgets import (
+    QApplication,
+    QMessageBox,
+    QMainWindow,
+    QWidget,
+    QSpinBox,
+)
 
 from constants.randoconstants import VERSION
 from filepathconstants import (
@@ -41,6 +48,12 @@ class Main(QMainWindow):
         self.ui = Ui_main_window()
         self.ui.setupUi(self)
 
+        # On Windows 11, qt calculates the size hint for spinbox line-edits incorrectly.
+        # Set negative content margins here to correct it until qt fixes it.
+        if platform.system() == "Windows" and platform.release() == "11":
+            for spinbox in self.findChildren(QSpinBox):
+                spinbox.lineEdit().setTextMargins(-10, 0, -10, 0)
+
         self.setWindowTitle(
             f"The Legend of Zelda: Skyward Sword HD Randomizer (Ver. {VERSION})"
         )
@@ -53,7 +66,9 @@ class Main(QMainWindow):
         self.fi_info_dialog = FiInfoDialog(self)
         self.fi_question_dialog = FiQuestionDialog(self)
 
-        self.config = load_config_from_file(CONFIG_PATH, create_if_blank=True)
+        self.config = load_config_from_file(
+            CONFIG_PATH, create_if_blank=True, default_on_invalid_value=True
+        )
 
         print_progress_text("Initializing GUI: accessibility")
         self.accessibility = Accessibility(self, self.ui)
@@ -180,7 +195,11 @@ The output folder you have specified cannot be found.
             return self.settings.update_descriptions(target)
         elif event.type() == QEvent.Type.Leave:
             return self.settings.update_descriptions(None)
-        elif event.type() == QEvent.Type.ContextMenu:
+        elif (
+            isinstance(event, QMouseEvent)
+            and event.type() == QEvent.Type.MouseButtonRelease
+            and event.button() == Qt.MouseButton.RightButton
+        ):
             return self.settings.show_full_descriptions(target)
         elif (
             isinstance(event, QMouseEvent)
