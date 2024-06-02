@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -307,7 +307,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Guides&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/document/d/1VXNME7SVD5EU7NNn9dQ15_Q9-v9OJAHOX-hSor0n2dg&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#9a0089;&quot;&gt;Setup Guide (Console)&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;&lt;br/&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#9a0089;&quot;&gt;Setup Guide (Emulator)&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;&lt;br/&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/document/d/1bb6GoCBFVREc-wHscRBTfZrftN1OA639iML2azdXqXE&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#9a0089;&quot;&gt;Location Guide&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;&lt;br/&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/document/d/1Dm0jhwXWIvPLuvl-JoRqocTKjXM_jRRmryYqpQMO_6w&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#9a0089;&quot;&gt;Tricks Guide&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Guides&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/document/d/1VXNME7SVD5EU7NNn9dQ15_Q9-v9OJAHOX-hSor0n2dg&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#9a0089;&quot;&gt;Setup Guide (Console)&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;&lt;br/&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#9a0089;&quot;&gt;Setup Guide (Emulator)&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;&lt;br/&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/document/d/1bb6GoCBFVREc-wHscRBTfZrftN1OA639iML2azdXqXE&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#9a0089;&quot;&gt;Location Guide&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;&lt;br/&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://docs.google.com/document/d/1Dm0jhwXWIvPLuvl-JoRqocTKjXM_jRRmryYqpQMO_6w&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#9a0089;&quot;&gt;Tricks Guide&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;➜ &lt;a href=&quot;https://docs.google.com/document/d/1Eq1rXcjwRpVjp-5ugpQAsjmZy5QuGi7KAOkvpWoQkqc&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Texture Replacement Guide&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="textFormat">
                 <enum>Qt::TextFormat::RichText</enum>
@@ -3106,6 +3106,32 @@ Practice Sword</string>
             <widget class="RandoTriStateCheckBox" name="setting_lightning_skyward_strike">
              <property name="text">
               <string>Lightning Skyward Strike</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="player_cosmetics_hline">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="player_cosmetics_texture_gude_label">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can also edit the textures of Link and the Loftwing by following this &lt;a href=&quot;https://docs.google.com/document/d/1Eq1rXcjwRpVjp-5ugpQAsjmZy5QuGi7KAOkvpWoQkqc&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Texture Replacements Guide&lt;/span&gt;&lt;/a&gt;. The same principles shown there can also be used with custom models.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::TextFormat::RichText</enum>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+             <property name="textInteractionFlags">
+              <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
              </property>
             </widget>
            </item>
