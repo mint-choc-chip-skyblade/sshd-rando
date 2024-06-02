@@ -20,11 +20,6 @@ class TrackerInventoryButton(QLabel):
 
     clicked = Signal(Item, str)
     mouse_hover = Signal(str)
-    tooltip_stylesheet = (
-        "QToolTip { color: black; border-image: none; border-color: white; "
-        + f"qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignCenter)};"
-        + " }"
-    )
 
     def __init__(
         self,
@@ -54,10 +49,7 @@ class TrackerInventoryButton(QLabel):
         self.state: int = 0
         self.pixmap = QPixmap()
         self.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.setStyleSheet(
-            "QLabel {background-color: rgba(0, 0, 0, 0);}"
-            + TrackerInventoryButton.tooltip_stylesheet
-        )
+        self.setStyleSheet("QLabel {background-color: rgba(0, 0, 0, 0);}")
         self.update_icon()
         self.setMouseTracking(True)
         self.tooltip = ""

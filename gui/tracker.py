@@ -1373,7 +1373,8 @@ class Tracker:
                 already_added.add(location)
 
         # Use modified inventory for main search
-        search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], list(inventory))
+        # TODO: Fix weird typing
+        search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], inventory)
         search.search_worlds()
 
         for area_button in self.areas.values():
