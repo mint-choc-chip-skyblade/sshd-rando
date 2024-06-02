@@ -11,6 +11,7 @@ from PySide6.QtCore import QEvent, QPoint, Signal
 
 
 from filepathconstants import TRACKER_ASSETS_PATH
+from constants.guiconstants import TRACKER_TOOLTIP_STYLESHEET
 
 from logic.world import World, Counter, Location
 from logic.item import Item
@@ -49,7 +50,9 @@ class TrackerInventoryButton(QLabel):
         self.state: int = 0
         self.pixmap = QPixmap()
         self.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.setStyleSheet("QLabel {background-color: rgba(0, 0, 0, 0);}")
+        self.setStyleSheet(
+            "QLabel {background-color: rgba(0, 0, 0, 0);}" + TRACKER_TOOLTIP_STYLESHEET
+        )
         self.update_icon()
         self.setMouseTracking(True)
         self.tooltip = ""

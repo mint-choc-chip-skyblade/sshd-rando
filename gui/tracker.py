@@ -1658,9 +1658,8 @@ class Tracker:
                 if inventory[item] > 0:
                     inventory[item] -= 1
 
-        sphere_search = Search(
-            SearchMode.TRACKER_SPHERES, [self.world], list(inventory)
-        )
+        # TODO: Fix weird typing
+        sphere_search = Search(SearchMode.TRACKER_SPHERES, [self.world], inventory)
         sphere_search.search_worlds()
         for num, sphere in enumerate(sphere_search.playthrough_spheres):
             for loc in sphere:

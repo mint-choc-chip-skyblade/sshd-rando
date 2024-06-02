@@ -1,3 +1,5 @@
+from PySide6 import QtCore
+
 OPTION_PREFIX = "&nbsp;&nbsp;➜ "
 
 DEFAULT_PRESET = "~~ New Preset ~~"
@@ -38,4 +40,10 @@ LOCATION_FILTER_TYPES = (
     "Chests",
     "NPC",
     "Defeat Boss",
+)
+
+TRACKER_TOOLTIP_STYLESHEET = (
+    "QToolTip { color: black; background-color: white; border-image: none; border-color: white; "
+    + f"qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignCenter)};"
+    + " }"
 )

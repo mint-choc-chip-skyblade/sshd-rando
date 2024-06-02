@@ -3,6 +3,7 @@ from PySide6.QtGui import QCursor, QMouseEvent
 from PySide6 import QtCore
 from PySide6.QtCore import QEvent, QPoint, Signal
 
+from constants.guiconstants import TRACKER_TOOLTIP_STYLESHEET
 from logic.search import Search
 from logic.location import Location
 from logic.entrance import Entrance
@@ -23,11 +24,6 @@ class TrackerArea(QLabel):
         "QLabel { "
         + f"background-color: COLOR; border-image: none; background-image: none; border-color: black; border-radius: RADIUSpx; color: black; qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignCenter)};"
         + " }\n"
-    )
-    tooltip_stylesheet = (
-        "QToolTip { color: black; background-color: white; border-image: none; border-color: white; "
-        + f"qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignCenter)};"
-        + " }"
     )
 
     def __init__(
@@ -212,7 +208,7 @@ class TrackerArea(QLabel):
     def update_color(self, color: str) -> None:
         stylesheet = TrackerArea.default_stylesheet.replace("COLOR", color)
         stylesheet = stylesheet.replace("RADIUS", self.border_radius)
-        stylesheet = stylesheet + TrackerArea.tooltip_stylesheet
+        stylesheet = stylesheet + TRACKER_TOOLTIP_STYLESHEET
         self.setStyleSheet(stylesheet)
 
     def get_hint_tooltip_text(self) -> str:
