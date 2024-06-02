@@ -86,6 +86,7 @@ Harp
 * At least Practice Sword is required for entering Trial Gates with the "Thrust Sword" action
 * At least Goddess Sword is (only logically) required to defeat Ghirahim 2 (G2). You can still
 physically defeat G2 with Practice Sword but the randomizer does not expect you to do so
+* Skyview Temple is always on layer 1. It is impossible to get to layer 2 and logic expects layer 1
 * You logically need to defeat the Sentrobe in the Lanayru Mining Facility to use the minecart to
 get to the northeast room (the vanilla boss key room)
 * You logically need to be able to have and use a Shield to defeat Demise, Scervo/Dreadfuse, and
