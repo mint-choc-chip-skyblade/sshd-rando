@@ -2066,6 +2066,22 @@ class Ui_main_window(object):
 
         self.verticalLayout_37.addWidget(self.setting_lightning_skyward_strike)
 
+        self.player_cosmetics_hline = QFrame(self.player_cosmetics_group_box)
+        self.player_cosmetics_hline.setObjectName(u"player_cosmetics_hline")
+        self.player_cosmetics_hline.setFrameShape(QFrame.HLine)
+        self.player_cosmetics_hline.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_37.addWidget(self.player_cosmetics_hline)
+
+        self.player_cosmetics_texture_gude_label = QLabel(self.player_cosmetics_group_box)
+        self.player_cosmetics_texture_gude_label.setObjectName(u"player_cosmetics_texture_gude_label")
+        self.player_cosmetics_texture_gude_label.setTextFormat(Qt.TextFormat.RichText)
+        self.player_cosmetics_texture_gude_label.setWordWrap(True)
+        self.player_cosmetics_texture_gude_label.setOpenExternalLinks(True)
+        self.player_cosmetics_texture_gude_label.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse)
+
+        self.verticalLayout_37.addWidget(self.player_cosmetics_texture_gude_label)
+
         self.player_cosmetics_vspacer = QSpacerItem(20, 545, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_37.addItem(self.player_cosmetics_vspacer)
@@ -2758,7 +2774,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2781,7 +2797,7 @@ class Ui_main_window(object):
         self.how_to_running_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-size:10pt;\">You can play the randomizer either on a modded Nintendo Switch console or on an emulator.</span></p><p><span style=\" font-size:10pt;\">Please follow the instructions in our setup guides for </span><a href=\"https://docs.google.com/document/d/1VXNME7SVD5EU7NNn9dQ15_Q9-v9OJAHOX-hSor0n2dg\"><span style=\" text-decoration: underline; color:#9a0089;\">Nintendo Switch console</span></a><span style=\" font-size:10pt;\"> or for </span><a href=\"https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY\"><span style=\" text-decoration: underline; color:#9a0089;\">emuator</span></a><span style=\" font-size:10pt;\"> to find instructions on running the randomizer patch.</span></p></body></html>", None))
         self.useful_info_group_box.setTitle(QCoreApplication.translate("main_window", u"Useful Information", None))
         self.guides_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-size:10pt;\">Guides</span></p><p><span style=\" font-size:10pt;\">\u279c </span><a href=\"https://docs.google.com/document/d/1VXNME7SVD5EU7NNn9dQ15_Q9-v9OJAHOX-hSor0n2dg\"><span style=\" font-size:10pt; text-decoration: underline; color:#9a0089;\">Setup Guide (Console)</span></a><span style=\" font-size:10pt;\"><br/>\u279c </span><a href=\"https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY\"><span style=\" font-size:10pt; text-decoration: underline; color:#9a0089;\">Setup Guide (Emulator)</span></a><span style=\" font-size:10pt;\"><br/>\u279c </span><a href=\"https://docs.google.com/document/d/1bb6GoCBFVREc-wHscRBTfZrftN1OA639iML2azdXqXE\"><span style=\" font-size:10pt; text-decoration: underline; color:#9a0089;\">Location Guide</span></a><span style=\" font-size:10pt;\"><br/>\u279c </span><a href=\"https://docs.google.com/document/d/1Dm0jhwXWIvPLuvl-JoRqocTKjXM_jRRmryYqpQMO_6w\"><span style=\" font-size:10pt; text-decoration: underline; co"
-                        "lor:#9a0089;\">Tricks Guide</span></a></p></body></html>", None))
+                        "lor:#9a0089;\">Tricks Guide</span></a><br/>\u279c <a href=\"https://docs.google.com/document/d/1Eq1rXcjwRpVjp-5ugpQAsjmZy5QuGi7KAOkvpWoQkqc\"><span style=\" text-decoration: underline; color:#9a0089;\">Texture Replacement Guide</span></a></p></body></html>", None))
         self.community_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p><span style=\" font-size:10pt;\">Community</span></p><p><span style=\" font-size:10pt; font-weight:700;\">\u279c </span><a href=\"https://discord.gg/nNbpfH5jyG\"><span style=\" font-size:10pt; text-decoration: underline; color:#9a0089;\">Discord Server</span></a><span style=\" font-size:10pt;\"><br/></span><span style=\" font-size:10pt; font-weight:700;\">\u279c </span><a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando/issues\"><span style=\" font-size:10pt; text-decoration: underline; color:#9a0089;\">Report a Bug</span></a><span style=\" font-size:10pt;\"><br/></span><span style=\" font-size:10pt; font-weight:700;\">\u279c </span><a href=\"https://github.com/mint-choc-chip-skyblade/sshd-rando\"><span style=\" font-size:10pt; text-decoration: underline; color:#9a0089;\">GitHub</span></a></p></body></html>", None))
         self.accessibility_group_box.setTitle(QCoreApplication.translate("main_window", u"Accessibility", None))
         self.theming_group_box.setTitle(QCoreApplication.translate("main_window", u"Theming", None))
@@ -3009,6 +3025,7 @@ class Ui_main_window(object):
         self.player_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Player Cosmetics", None))
         self.setting_tunic_swap.setText(QCoreApplication.translate("main_window", u"Tunic Swap", None))
         self.setting_lightning_skyward_strike.setText(QCoreApplication.translate("main_window", u"Lightning Skyward Strike", None))
+        self.player_cosmetics_texture_gude_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>You can also edit the textures of Link and the Loftwing by following this <a href=\"https://docs.google.com/document/d/1Eq1rXcjwRpVjp-5ugpQAsjmZy5QuGi7KAOkvpWoQkqc\"><span style=\" text-decoration: underline; color:#9a0089;\">Texture Replacements Guide</span></a>. The same principles shown there can also be used with custom models.</p></body></html>", None))
         self.audio_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Audio Cosmetics", None))
         self.setting_remove_enemy_music.setText(QCoreApplication.translate("main_window", u"Remove Enemy Music", None))
         self.low_health_beeping_speed_label.setText(QCoreApplication.translate("main_window", u"Low Health Beeping Speed", None))
