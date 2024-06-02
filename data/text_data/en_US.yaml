@@ -65,10 +65,10 @@
   standard: "You got some <y<Cold Pumpkin Soup>>!\nThis homemade soup is Pumm's specialty,\nbut someone's get it get cold..."
 
 - name: Five Gratitude crystal counter
-  standard: "You got <r<five>> <y<Gratitude Crystals>>!\nThat is <r<<numeric arg1> >>in Total!"
+  standard: "You got <r<five>> <y<Gratitude Crystals>>!\nThat is <r<<numeric arg1> >>in total!"
 
 - name: Single Gratitude crystal counter
-  standard: "You got <r<one>> <y<Gratitude Crystal>>!\nThat is <r<<numeric arg1> >>in Total!"
+  standard: "You got <r<one>> <y<Gratitude Crystal>>!\nThat is <r<<numeric arg1> >>in total!"
 
 - name: Skyview Key Text
   standard: "You got a <g<Skyview Temple>> Small Key!"
