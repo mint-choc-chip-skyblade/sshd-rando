@@ -731,7 +731,7 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
 
             // Item id
             match dAcItem__determineFinalItemid((actor_param1 & 0x1FF).into()) {
-                // Sword + Sailcloth | Harp | Digging Mitts | Scattershot | Beedle's Insect Cage | Sot | Songs
+                // Sword + Sailcloth | Harp | Digging Mitts | Scattershot | Beedle's Insect Cage | Ancient Flower | Sot | Songs
                 9..=15 | 16 | 56 | 105 | 159 | 166 | 180 | 186..=193 => y_offset = 20.0,
                 // Bow | Iron Bow | Sacred Bow | Sea Chart | Wooden Shield | Hylian Shield
                 19 | 90 | 91 | 98 | 116 | 125 => y_offset = 23.0,
@@ -1262,11 +1262,33 @@ pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *cons
 #[no_mangle]
 pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *const c_void) {
     unsafe {
-        let scale = match (*item_actor).final_determined_itemid {
+        let mut scale = match (*item_actor).final_determined_itemid {
             214 => 0.5f32, // Tadtone
             215 => 0.3f32, // Scrapper
             _ => 1.0f32,
         };
+
+        // Hacky fix for treasures being really smol
+        // The y_offsets here aren't in the same scale as
+        let mut multiplier = 1.0;
+
+        let itemid = (*item_actor).final_determined_itemid;
+        match itemid {
+            // Bird Feather, Tumbleweed, Amber Relic, Dusk Relic, Blue Bird Feather, Goddess Plume
+            162 | 163 | 167 | 168 | 174 | 176 => {
+                multiplier = 2.0;
+            },
+            // Ancient Flower
+            166 => {
+                multiplier = 1.5;
+            },
+            _ => {},
+        };
+
+        if (*item_actor).freestanding_y_offset <= 20.0 {
+            (*item_actor).freestanding_y_offset *= multiplier;
+        }
+        scale *= multiplier;
 
         (*item_actor).base.members.base.scale.x *= scale;
         (*item_actor).base.members.base.scale.y *= scale;
