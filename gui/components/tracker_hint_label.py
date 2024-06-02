@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QLabel, QSizePolicy
+from PySide6.QtWidgets import QLabel
 from PySide6.QtGui import QCursor, QMouseEvent
 from PySide6 import QtCore
 from PySide6.QtCore import Signal
@@ -15,7 +15,7 @@ class TrackerHintLabel(QLabel):
         super().__init__()
         self.hint = hint_
         self.area = area_
-        self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.setStyleSheet(TrackerHintLabel.default_stylesheet)
         self.setMargin(10)
         self.setMinimumHeight(30)
@@ -25,6 +25,6 @@ class TrackerHintLabel(QLabel):
         self.setText(self.hint)
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
-        if ev.button() == QtCore.Qt.LeftButton:
+        if ev.button() == QtCore.Qt.MouseButton.LeftButton:
             self.clicked.emit(self.hint, self.area)
         return super().mouseReleaseEvent(ev)

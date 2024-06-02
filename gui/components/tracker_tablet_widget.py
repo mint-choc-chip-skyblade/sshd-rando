@@ -1,11 +1,9 @@
-from PySide6.QtGui import QPaintEvent, QResizeEvent
+from PySide6.QtGui import QPaintEvent
 from PySide6.QtWidgets import QWidget, QSizePolicy
 
 from gui.components.tracker_inventory_button import TrackerInventoryButton
 
 from constants.itemconstants import EMERALD_TABLET, RUBY_TABLET, AMBER_TABLET
-
-import math
 
 
 class TrackerTabletWidget(QWidget):
@@ -32,10 +30,10 @@ class TrackerTabletWidget(QWidget):
             ["tablets/ruby_tablet_gray.png", "tablets/ruby_tablet.png"],
             self,
         )
-        self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        self.amber_tablet_button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        self.emerald_tablet_button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        self.ruby_tablet_button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        self.amber_tablet_button.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        self.emerald_tablet_button.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        self.ruby_tablet_button.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
 
     def update_buttons(self) -> None:
         amber = self.amber_tablet_button
@@ -53,18 +51,18 @@ class TrackerTabletWidget(QWidget):
         # If the widget is taller than the tablets, scale based on width
         if current_aspect_ratio < TrackerTabletWidget.TABLET_ASPECT_RATIO:
             total_tablet_width = self.width() - 5
-            total_tablet_height = (
+            total_tablet_height = int(
                 total_tablet_width / TrackerTabletWidget.TABLET_ASPECT_RATIO
             )
             tablet_x = 5
-            tablet_y = (self.height() - total_tablet_height) / 2
+            tablet_y = int((self.height() - total_tablet_height) / 2)
         # Otherwise, scale based on height
         else:
             total_tablet_height = self.height()
-            total_tablet_width = (
+            total_tablet_width = int(
                 total_tablet_height * TrackerTabletWidget.TABLET_ASPECT_RATIO
             )
-            tablet_x = (self.width() - total_tablet_width) / 2
+            tablet_x = int((self.width() - total_tablet_width) / 2)
             tablet_y = 0
 
         amber_aspect_ratio = amber.pixmap.width() / amber.pixmap.height()
