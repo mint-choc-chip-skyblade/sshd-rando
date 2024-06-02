@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QLabel, QSizePolicy
+from PySide6.QtWidgets import QLabel
 from PySide6.QtGui import QCursor, QMouseEvent
 from PySide6 import QtCore
 from PySide6.QtCore import Signal
@@ -21,14 +21,14 @@ class TrackerEntranceLabel(QLabel):
         self.entrance = entrance_
         self.parent_area_name = parent_area_name_
         self.recent_search = recent_search_
-        self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.setMargin(10)
         self.setMinimumHeight(30)
         self.setMaximumWidth(273)
         self.setWordWrap(True)
         self.update_text()
 
-    def update_text(self, recent_search_: Search = None) -> None:
+    def update_text(self, recent_search_: Search | None = None) -> None:
         if recent_search_ is not None:
             self.recent_search = recent_search_
         connected_area = self.entrance.connected_area
@@ -60,9 +60,9 @@ class TrackerEntranceLabel(QLabel):
         )
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
-        if ev.button() == QtCore.Qt.LeftButton:
+        if ev.button() == QtCore.Qt.MouseButton.LeftButton:
             self.choose_target.emit(self.entrance, self.parent_area_name)
-        elif ev.button() == QtCore.Qt.RightButton:
+        elif ev.button() == QtCore.Qt.MouseButton.RightButton:
             self.disconnect_entrance.emit(self.entrance, self.parent_area_name)
             self.update_text()
         return super().mouseReleaseEvent(ev)

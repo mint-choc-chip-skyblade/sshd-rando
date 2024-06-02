@@ -12,13 +12,12 @@ from PySide6.QtWidgets import (
     QSpinBox,
 )
 
+from constants.guiconstants import OPTION_PREFIX
 from constants.randoconstants import VERSION
 from filepathconstants import (
     CONFIG_PATH,
     DEFAULT_OUTPUT_PATH,
-    EXEFS_EXTRACT_PATH,
     ICON_PATH,
-    ROMFS_EXTRACT_PATH,
 )
 
 from gui.accessibility import Accessibility
@@ -82,6 +81,7 @@ class Main(QMainWindow):
         self.ui.randomize_button.setDisabled(True)
         self.ui.randomize_button.clicked.connect(self.randomize)
         self.ui.about_button.clicked.connect(self.about)
+        self.ui.tab_widget.currentChanged.connect(self.on_tab_change)
         print_progress_text("GUI initialized")
 
     def randomize(self):
@@ -135,6 +135,31 @@ class Main(QMainWindow):
 
     def cancel_callback(self):
         RandomizationThread.cancelled = True
+
+    def on_tab_change(self):
+        # Handle tracker tooltips
+        # Why does Qt not let us read the currentTabName variable??
+        if (
+            self.ui.tab_widget.tabText(self.ui.tab_widget.currentIndex()).lower()
+            == "tracker"
+        ):
+            default_description = (
+                OPTION_PREFIX
+                + "Left or Right click items to cycle through them and update your inventory.<br>"
+            )
+            default_description += (
+                OPTION_PREFIX + "Hover over something to see what it is.<br>"
+            )
+            default_description += (
+                OPTION_PREFIX
+                + 'Click a dungeon label (e.g. "SV") to set it as a required dungeon.'
+            )
+
+            self.ui.settings_current_option_description_label.setText(
+                default_description
+            )
+        else:
+            self.settings.set_setting_descriptions(None)
 
     def open_output_folder(self):
         QDesktopServices.openUrl(QUrl.fromLocalFile(self.config.output_dir.as_posix()))

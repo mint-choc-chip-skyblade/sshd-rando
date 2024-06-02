@@ -2,16 +2,13 @@ from PySide6.QtWidgets import QLabel, QSizePolicy, QToolTip
 from PySide6.QtGui import (
     QCursor,
     QMouseEvent,
-    QImageReader,
     QPaintEvent,
     QPainter,
     QPixmap,
 )
 from PySide6 import QtCore
-from PySide6.QtCore import Signal, QPoint
+from PySide6.QtCore import QEvent, QPoint, Signal
 
-from pathlib import Path
-from typing import TYPE_CHECKING
 
 from filepathconstants import TRACKER_ASSETS_PATH
 
@@ -24,15 +21,15 @@ class TrackerInventoryButton(QLabel):
     clicked = Signal(Item, str)
     mouse_hover = Signal(str)
     tooltip_stylesheet = (
-        "QToolTip { color: white; background-color: black; border-image: none; border-color: white; "
-        + f"qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
+        "QToolTip { color: black; border-image: none; border-color: white; "
+        + f"qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignCenter)};"
         + " }"
     )
 
     def __init__(
         self,
         items_: list[str] = [],
-        filenames_: list[Path] = [],
+        filenames_: list[str] = [],
         parent_=None,
         item_names_: list[str] = [],
     ) -> None:
@@ -47,14 +44,16 @@ class TrackerInventoryButton(QLabel):
         self.allow_sphere_tracking: bool = False
         assert len(self.items) == len(self.filenames)
 
-        self.setSizePolicy(QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding))
+        self.setSizePolicy(
+            QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        )
 
         self.setMinimumHeight(10)
         self.setMinimumWidth(10)
 
         self.state: int = 0
         self.pixmap = QPixmap()
-        self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.setStyleSheet(
             "QLabel {background-color: rgba(0, 0, 0, 0);}"
             + TrackerInventoryButton.tooltip_stylesheet
@@ -62,6 +61,7 @@ class TrackerInventoryButton(QLabel):
         self.update_icon()
         self.setMouseTracking(True)
         self.tooltip = ""
+        self.installEventFilter(self)
 
     def update_icon(self) -> None:
         if self.state >= len(self.filenames):
@@ -80,18 +80,18 @@ class TrackerInventoryButton(QLabel):
         # Paint the appropriate image scaled to fit inside
         # of the widget
         painter = QPainter(self)
-        painter.setRenderHint(QPainter.SmoothPixmapTransform)
+        painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform)
 
         pixmap_ratio = self.pixmap.width() / self.pixmap.height()
         widget_ratio = self.width() / self.height()
 
         if pixmap_ratio < widget_ratio:
             new_width = int(self.height() * pixmap_ratio)
-            offset = (new_width - self.width()) / -2
+            offset = int((new_width - self.width()) / -2)
             painter.drawPixmap(offset, 0, new_width, self.height(), self.pixmap)
         else:
             new_height = int(self.width() / pixmap_ratio)
-            offset = (new_height - self.height()) / -2
+            offset = int((new_height - self.height()) / -2)
             painter.drawPixmap(0, offset, self.width(), new_height, self.pixmap)
 
         return super().paintEvent(arg__1)
@@ -140,7 +140,7 @@ class TrackerInventoryButton(QLabel):
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
         should_sphere_track = self.allow_sphere_tracking
-        if ev.button() == QtCore.Qt.LeftButton:
+        if ev.button() == QtCore.Qt.MouseButton.LeftButton:
             first_iteration = True
             while first_iteration or self.state in self.forbidden_states:
                 first_iteration = False
@@ -150,7 +150,7 @@ class TrackerInventoryButton(QLabel):
                     self.remove_all_items()
                     should_sphere_track = False
                 self.add_current_item()
-        elif ev.button() == QtCore.Qt.RightButton:
+        elif ev.button() == QtCore.Qt.MouseButton.RightButton:
             should_sphere_track = False
             first_iteration = True
             while first_iteration or self.state in self.forbidden_states:
@@ -174,7 +174,9 @@ class TrackerInventoryButton(QLabel):
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
         if self.allow_sphere_tracking:
             self.calculate_tooltip()
-            coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-60, self.height() * 3 / 4)
+            coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(
+                -60, int(self.height() * 3 / 4)
+            )
             QToolTip.showText(coords, self.tooltip, self)
 
         self.update_hover_text()
@@ -186,6 +188,12 @@ class TrackerInventoryButton(QLabel):
             self.mouse_hover.emit(f"{self.item_names[self.state]}")
         else:
             self.mouse_hover.emit(f"{self.items[-1]}")
+
+    def eventFilter(self, target: QLabel, event: QEvent) -> bool:
+        if event.type() == QEvent.Type.Leave:
+            self.mouse_hover.emit("")
+
+        return super().eventFilter(target, event)
 
     def calculate_tooltip(self) -> None:
         self.tooltip = ""

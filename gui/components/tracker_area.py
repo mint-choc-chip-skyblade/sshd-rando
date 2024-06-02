@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QLabel, QSizePolicy, QToolTip
 from PySide6.QtGui import QCursor, QMouseEvent
 from PySide6 import QtCore
-from PySide6.QtCore import Signal, QPoint
+from PySide6.QtCore import QEvent, QPoint, Signal
 
 from logic.search import Search
 from logic.location import Location
@@ -21,12 +21,12 @@ class TrackerArea(QLabel):
 
     default_stylesheet = (
         "QLabel { "
-        + f"background-color: COLOR; border-image: none; background-image: none; border-color: black; border-radius: RADIUSpx; color: black; qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
+        + f"background-color: COLOR; border-image: none; background-image: none; border-color: black; border-radius: RADIUSpx; color: black; qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignCenter)};"
         + " }\n"
     )
     tooltip_stylesheet = (
-        "QToolTip { color: white; background-color: black; border-image: none; border-color: white; "
-        + f"qproperty-alignment: {int(QtCore.Qt.AlignCenter)};"
+        "QToolTip { color: black; border-image: none; border-color: white; "
+        + f"qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignCenter)};"
         + " }"
     )
 
@@ -34,13 +34,13 @@ class TrackerArea(QLabel):
         self,
         area_: str = "",
         image_filename_: str = "",
-        children_: list[str] = [],
+        children_: list["TrackerArea"] = [],
         x_: int = -1,
         y_: int = -1,
         parent_=None,
         border_radius_="6",
         alias_: str = "",
-        main_entrance_name_: Entrance = None,
+        main_entrance_name_: Entrance = None,  # type: ignore
     ):
         super().__init__(parent=parent_)
         self.area = area_
@@ -59,14 +59,15 @@ class TrackerArea(QLabel):
         self.hints: set[str] = set()
 
         self.update_color("gray")
-        self.setTextFormat(QtCore.Qt.RichText)
-        self.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.setTextFormat(QtCore.Qt.TextFormat.RichText)
+        self.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        self.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.setFixedSize(30, 30)
         self.move(self.tracker_x, self.tracker_y)
         self.setVisible(False)
         self.tooltip = f"{self.area} (0/0)"
         self.setMouseTracking(True)
+        self.installEventFilter(self)
 
     # Recursively iterate through all this area's locations and children and return all locations
     def get_all_locations(self) -> list[Location]:
@@ -119,7 +120,7 @@ class TrackerArea(QLabel):
             if loc in self.recent_search.visited_locations
         ]
 
-    def update(self, search: "Search" = None) -> None:
+    def update(self, search: "Search | None" = None) -> None:
         if search is not None:
             self.recent_search = search
 
@@ -177,14 +178,14 @@ class TrackerArea(QLabel):
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
 
-        if ev.button() == QtCore.Qt.LeftButton:
+        if ev.button() == QtCore.Qt.MouseButton.LeftButton:
             if self.image_filename != "":
                 self.change_map_area.emit(self.area)
             else:
                 self.show_locations.emit(self.area)
 
             return super().mouseReleaseEvent(ev)
-        elif ev.button() == QtCore.Qt.RightButton:
+        elif ev.button() == QtCore.Qt.MouseButton.RightButton:
             if self.main_entrance:
                 self.set_main_entrance_target.emit(self.main_entrance)
             elif len(self.tracker_children) == 0:
@@ -194,7 +195,7 @@ class TrackerArea(QLabel):
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
 
-        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-25, self.height() / 2)
+        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-25, int(self.height() / 2))
         QToolTip.showText(coords, self.tooltip + self.get_hint_tooltip_text(), self)
         self.update_hover_text()
 
@@ -222,3 +223,9 @@ class TrackerArea(QLabel):
             for hint in child.hints:
                 text += "\n" + f"{child.area} - {hint}"
         return text
+
+    def eventFilter(self, target: QLabel, event: QEvent) -> bool:
+        if event.type() == QEvent.Type.Leave:
+            self.mouse_hover.emit("")
+
+        return super().eventFilter(target, event)

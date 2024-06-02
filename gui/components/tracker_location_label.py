@@ -15,7 +15,6 @@ from logic.location import Location
 from logic.search import Search
 
 from filepathconstants import TRACKER_ASSETS_PATH
-from constants.itemconstants import GRATITUDE_CRYSTAL
 
 
 class TrackerLocationLabel(QLabel):
@@ -33,7 +32,7 @@ class TrackerLocationLabel(QLabel):
     ) -> None:
         super().__init__()
         self.location = location_
-        self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.setMargin(10)
         self.setMinimumHeight(30)
         self.setMaximumWidth(273)
@@ -132,10 +131,10 @@ class TrackerLocationLabel(QLabel):
     def paintEvent(self, arg__1: QPaintEvent) -> None:
         # Draw icon pixmap in the alloted space
         painter = QPainter(self)
-        painter.setRenderHint(QPainter.SmoothPixmapTransform)
+        painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform)
 
         draw_x = self.margin()
-        draw_y = (self.height() / 2) - (self.icon_height / 2) + 1
+        draw_y = int((self.height() / 2) - (self.icon_height / 2) + 1)
 
         painter.drawPixmap(
             draw_x, draw_y, self.icon_width, self.icon_height, self.pixmap
@@ -144,7 +143,7 @@ class TrackerLocationLabel(QLabel):
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
 
-        if ev.button() == QtCore.Qt.LeftButton:
+        if ev.button() == QtCore.Qt.MouseButton.LeftButton:
             self.location.marked = not self.location.marked
             self.update_color(self.recent_search)
             self.clicked.emit(self.parent_area_button.area, self.location)

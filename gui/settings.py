@@ -640,7 +640,6 @@ class Settings:
                 default_description
             )
             self.ui.settings_default_option_description_label.setText("")
-            # self.ui.settings_current_option_description_label.setStyleSheet("color: grey;")
         else:
             current_option_description = (
                 "<b>Current Option</b> (<i>Right-click to see all the options</i>):<br>"
@@ -659,7 +658,6 @@ class Settings:
             self.ui.settings_default_option_description_label.setText(
                 default_option_description
             )
-            # self.ui.settings_current_option_description_label.setStyleSheet("")
 
     def format_description(
         self, setting: Setting, option_index: int, custom_option_name: str | None = None

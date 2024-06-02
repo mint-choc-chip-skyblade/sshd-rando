@@ -41,9 +41,6 @@ from gui.components.tracker_show_entrances_button import TrackerShowEntrancesBut
 from gui.components.tracker_show_locations_button import TrackerShowLocationsButton
 from gui.components.tracker_tablet_widget import TrackerTabletWidget
 from gui.components.tracker_hint_label import TrackerHintLabel
-from gui.components.tracker_toggle_st_button import TrackerToggleSTButton
-from gui.dialogs.fi_info_dialog import FiInfoDialog
-from gui.dialogs.fi_question_dialog import FiQuestionDialog
 
 from constants.itemconstants import *
 from filepathconstants import *
@@ -64,13 +61,13 @@ class Tracker:
         load_text_data()
         self.main = main
         self.ui = ui
-        self.world: World = None
+        self.world: World = None  # type: ignore
         self.inventory: Counter[Item] = Counter()
         self.started: bool = False
         self.areas: dict[str, TrackerArea] = {}
-        self.active_area: TrackerArea = None
-        self.last_opened_region: TrackerArea = None
-        self.last_checked_location: Location = None
+        self.active_area: TrackerArea = None  # type: ignore
+        self.last_opened_region: TrackerArea = None  # type: ignore
+        self.last_checked_location: Location = None  # type: ignore
         self.random_settings: list = []
         self.items_on_mark: dict[Location, Item] = {}
         self.own_dungeon_key_locations: list[tuple[Item, list[Location]]] = []
@@ -80,7 +77,7 @@ class Tracker:
         # Holds which entrance is connected to which target
         self.connected_entrances: dict[Entrance, Entrance] = {}
         # Holds available targets for disconnected entrances
-        self.target_entrance_pools: EntrancePools = {}
+        self.target_entrance_pools: EntrancePools = OrderedDict()
 
         # Hide the check/uncheck all buttons until an area is selected
         self.ui.check_all_button.setVisible(False)
@@ -108,23 +105,29 @@ class Tracker:
 
         # Set all sidebar buttons to use the click mouse cursor
         self.ui.start_new_tracker_button.setCursor(
-            QCursor(QtCore.Qt.PointingHandCursor)
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.ui.check_all_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.ui.check_all_button.setCursor(
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        )
         self.ui.check_all_in_logic_button.setCursor(
-            QCursor(QtCore.Qt.PointingHandCursor)
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.ui.uncheck_all_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.ui.uncheck_all_button.setCursor(
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        )
         self.ui.set_random_settings_button.setCursor(
-            QCursor(QtCore.Qt.PointingHandCursor)
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
         self.ui.set_starting_entrance_button.setCursor(
-            QCursor(QtCore.Qt.PointingHandCursor)
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
         self.ui.cancel_sphere_tracking_button.setCursor(
-            QCursor(QtCore.Qt.PointingHandCursor)
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.ui.set_hints_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.ui.set_hints_button.setCursor(
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        )
 
         self.init_buttons()
         self.assign_buttons_to_layout()
@@ -339,7 +342,9 @@ class Tracker:
             ],
         )
         self.sword_button.setMinimumWidth(65)
-        self.sword_button.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        self.sword_button.setSizePolicy(
+            QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred
+        )
 
         self.lanayru_caves_key_button = TrackerInventoryButton(
             ["Nothing"] + [LC_SMALL_KEY] * 2,
@@ -637,7 +642,7 @@ class Tracker:
             dungeon_label.mouse_hover.connect(self.update_hover_text)
 
     def initialize_tracker_world(
-        self, tracker_config: Config = None, autosave: dict = {}
+        self, tracker_config: Config | None = None, autosave: dict = {}
     ) -> None:
         self.started = True
 
@@ -922,10 +927,11 @@ class Tracker:
                         area_button.entrances.append(entrance)
 
     def set_map_area(self, area_name: str) -> None:
-        area = self.areas.get(area_name, "")
-        if area == "":
+        area = self.areas.get(area_name, None)
+        if area is None:
             print(f"Unknown area {area_name}")
             return
+
         self.active_area = area
         # set area background
         self.ui.map_widget.setStyleSheet(
@@ -945,7 +951,8 @@ class Tracker:
         self.autosave_tracker()
 
     def show_area_locations(self, area_name: str) -> None:
-        if area_button := self.areas.get(area_name, False):
+        area_button = self.areas.get(area_name, None)
+        if area_button is not None:
             self.last_opened_region = area_button
             self.show_area_location_info(area_name)
             self.clear_layout(self.ui.tracker_locations_scroll_layout)
@@ -970,10 +977,14 @@ class Tracker:
 
             # Add vertical spacers to push labels up
             left_layout.addSpacerItem(
-                QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+                QSpacerItem(
+                    40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+                )
             )
             right_layout.addSpacerItem(
-                QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+                QSpacerItem(
+                    40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+                )
             )
 
             self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
@@ -991,7 +1002,8 @@ class Tracker:
             self.ui.set_hints_button.setVisible(area_name != "Root")
 
     def show_area_location_info(self, area_name: str) -> None:
-        if area_button := self.areas.get(area_name, False):
+        area_button = self.areas.get(area_name, None)
+        if area_button is not None:
             # Show the area name and how many non-marked locations are available.
             # Get the labels if they were previously created to reuse them.
             # This prevents us from having to clear the layout and making
@@ -1031,7 +1043,7 @@ class Tracker:
             locations_remaining_label = QLabel()
             locations_remaining_label.setObjectName("area_things_remaining_label")
             locations_remaining_label.setStyleSheet(
-                f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignRight)};"
+                f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignRight)};"
             )
             locations_remaining_label.setMargin(10)
             self.ui.tracker_locations_info_layout.addWidget(locations_remaining_label)
@@ -1071,10 +1083,14 @@ class Tracker:
 
             # Add vertical spacers to push labels up
             left_layout.addSpacerItem(
-                QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+                QSpacerItem(
+                    40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+                )
             )
             right_layout.addSpacerItem(
-                QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+                QSpacerItem(
+                    40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+                )
             )
 
             self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
@@ -1172,10 +1188,14 @@ class Tracker:
 
         # Add vertical spacers to push labels up
         left_layout.addSpacerItem(
-            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            QSpacerItem(
+                40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
         right_layout.addSpacerItem(
-            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            QSpacerItem(
+                40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
 
         self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
@@ -1307,7 +1327,9 @@ class Tracker:
 
         # Add a vertical spacer to push the labels and comboboxes up
         outer_layout.addSpacerItem(
-            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            QSpacerItem(
+                40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
         self.ui.tracker_locations_scroll_layout.addLayout(outer_layout)
 
@@ -1351,7 +1373,7 @@ class Tracker:
                 already_added.add(location)
 
         # Use modified inventory for main search
-        search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], inventory)
+        search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], list(inventory))
         search.search_worlds()
 
         for area_button in self.areas.values():
@@ -1420,7 +1442,8 @@ class Tracker:
                     for area in la.area.hint_regions
                 ]
             ):
-                if area_button := self.areas.get(area_name, False):
+                area_button = self.areas.get(area_name, None)
+                if area_button is not None:
                     area_button.locations.append(location)
 
     def update_dungeon_progress_locations(self, dungeon_name: str) -> None:
@@ -1451,7 +1474,7 @@ class Tracker:
         write_config_to_file(filename, self.world.config)
 
         # Then read it again to input extra data
-        autosave = yaml_load(filename)
+        autosave: dict = yaml_load(filename)
         autosave["marked_locations"] = [
             loc.name for loc in self.world.get_all_item_locations() if loc.marked
         ]
@@ -1492,7 +1515,7 @@ class Tracker:
 
         tracker_config = load_config_from_file(filename, allow_rewrite=False)
 
-        autosave = yaml_load(filename)
+        autosave: dict = yaml_load(filename)
 
         self.initialize_tracker_world(tracker_config, autosave)
         self.update_tracker()
@@ -1527,6 +1550,9 @@ class Tracker:
                     current_dungeon = dungeon
                     break
 
+            if current_dungeon is None:
+                continue
+
             # Find all possible locations for this key in the dungeon
             search.search_worlds()
             possible_dungeon_locations = [
@@ -1555,7 +1581,7 @@ class Tracker:
 
     def handle_right_click(self, event: QMouseEvent) -> None:
         if (
-            event.button() == QtCore.Qt.RightButton
+            event.button() == QtCore.Qt.MouseButton.RightButton
             and not self.active_area.area == "Root"
         ):
             self.on_back_button_clicked()
@@ -1631,7 +1657,9 @@ class Tracker:
                 if inventory[item] > 0:
                     inventory[item] -= 1
 
-        sphere_search = Search(SearchMode.TRACKER_SPHERES, [self.world], inventory)
+        sphere_search = Search(
+            SearchMode.TRACKER_SPHERES, [self.world], list(inventory)
+        )
         sphere_search.search_worlds()
         for num, sphere in enumerate(sphere_search.playthrough_spheres):
             for loc in sphere:
@@ -1709,10 +1737,14 @@ class Tracker:
 
         # Add vertical spacers to push labels up
         left_layout.addSpacerItem(
-            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            QSpacerItem(
+                40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
         right_layout.addSpacerItem(
-            QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            QSpacerItem(
+                40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
 
         self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
@@ -1753,7 +1785,7 @@ class Tracker:
             certain items, and the 'sphere' of logic that each
             check is in. A sphere describes the rough number of
             'steps' to take or items to find to access a specific
-            check. For example, locations avaiable from the start
+            check. For example, locations available from the start
             are listed as 'Sphere 0' locations, and any locations
             unlocked by items found in sphere 0 are sphere 1
             locations, and so on.<br><br>

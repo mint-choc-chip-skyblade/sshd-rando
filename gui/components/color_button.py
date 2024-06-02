@@ -64,12 +64,12 @@ class ColorButton(QPushButton):
     ) -> str:
         match format:
             case ColorFormat.RGB:
-                return color.name(QColor.HexRgb)
+                return color.name(QColor.NameFormat.HexRgb)
             case ColorFormat.RGBA:
-                argb = color.name(QColor.HexArgb)
+                argb = color.name(QColor.NameFormat.HexArgb)
                 return argb[0] + argb[3:] + argb[1:3]
             case ColorFormat.ARGB:
-                return color.name(QColor.HexArgb)
+                return color.name(QColor.NameFormat.HexArgb)
 
     def color_str_from_int(
         self, color_int: int, format: ColorFormat = ColorFormat.RGBA

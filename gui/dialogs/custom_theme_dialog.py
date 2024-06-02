@@ -36,7 +36,7 @@ class CustomThemeDialog(QDialog):
         self.setWindowIcon(QIcon(ICON_PATH.as_posix()))
 
         self.theme_info_path = THEME_INFO_PATH
-        self.theme_info = yaml_load(self.theme_info_path)
+        self.theme_info: dict = yaml_load(self.theme_info_path)
 
         self.default_theme_path = default_theme
         self.custom_theme_path = custom_theme
@@ -119,17 +119,17 @@ class CustomThemeDialog(QDialog):
             self.themeSaved.emit(self.custom_theme)
 
     def eventFilter(self, target: QObject, event: QEvent) -> bool:
-        if event.type() == QEvent.Enter and type(target) == QLabel:
+        if event.type() == QEvent.Type.Enter and type(target) == QLabel:
             widget_name = target.text()
             description = self.theme_info[self.category][widget_name]["description"]
             self.set_widget_description(description)
             return True
 
-        elif event.type() == QEvent.Leave:
+        elif event.type() == QEvent.Type.Leave:
             self.set_widget_description(self.theme_info[self.category]["description"])
             return True
 
-        return QMainWindow.eventFilter(self, target, event)
+        return super().eventFilter(target, event)
 
     def set_widget_description(self, description: str):
         description_label = getattr(self.ui, "widget_description")
@@ -139,4 +139,4 @@ class CustomThemeDialog(QDialog):
         if tab_index == 0:
             self.set_widget_description(self.theme_info[self.category]["description"])
         else:
-            self.set_widget_description(None)
+            self.set_widget_description("")

@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -3842,11 +3842,11 @@ QPushButton {
            </widget>
           </item>
           <item>
-          <widget class="QLabel" name="tracker_sphere_tracking_label">
-              <property name="text">
-               <string>Sphere Tracking</string>
-              </property>
-             </widget>
+           <widget class="QLabel" name="tracker_sphere_tracking_label">
+            <property name="text">
+             <string>Sphere Tracking</string>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QPushButton" name="cancel_sphere_tracking_button">
@@ -3919,8 +3919,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>100</width>
-               <height>30</height>
+               <width>546</width>
+               <height>312</height>
               </rect>
              </property>
              <property name="maximumSize">
