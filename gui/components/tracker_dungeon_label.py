@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QLabel, QSizePolicy
 from PySide6.QtGui import QFontDatabase, QCursor, QMouseEvent
 from PySide6 import QtCore
-from PySide6.QtCore import Signal
+from PySide6.QtCore import QEvent, Signal
 
 from filepathconstants import TRACKER_ASSETS_PATH
 
@@ -11,7 +11,7 @@ from logic.world import World
 class TrackerDungeonLabel(QLabel):
 
     hylia_font_id: int = -1
-    default_style = f"color: COLOR; font-size: 24pt; font-family: Hylia Serif Beta; text-align: center; qproperty-alignment: {int(QtCore.Qt.AlignCenter) | int(QtCore.Qt.AlignBottom)};"
+    default_style = f"color: COLOR; font-size: 24pt; font-family: Hylia Serif Beta; text-align: center; qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignCenter) | int(QtCore.Qt.AlignmentFlag.AlignBottom)};"
 
     clicked = Signal(str)
     mouse_hover = Signal(str)
@@ -31,12 +31,15 @@ class TrackerDungeonLabel(QLabel):
         self.world: World = None
         self.setText(abbreviation_)
         self.setStyleSheet(TrackerDungeonLabel.default_style)
-        self.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.active: bool = False
         self.complete: bool = False
         self.setStyleSheet(TrackerDungeonLabel.default_style.replace("COLOR", "gray"))
-        self.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
+        self.setSizePolicy(
+            QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Fixed
+        )
         self.setMouseTracking(True)
+        self.installEventFilter(self)
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
         self.update_hover_text()
@@ -44,13 +47,17 @@ class TrackerDungeonLabel(QLabel):
         return super().mouseMoveEvent(ev)
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
-        if ev.button() in [QtCore.Qt.LeftButton, QtCore.Qt.RightButton]:
+        if ev.button() in [
+            QtCore.Qt.MouseButton.LeftButton,
+            QtCore.Qt.MouseButton.RightButton,
+        ]:
             self.on_clicked()
         return super().mouseReleaseEvent(ev)
 
     def on_clicked(self) -> None:
         self.active = not self.active
         self.update_style()
+        self.update_hover_text()
         self.clicked.emit(self.dungeon_name)
 
     def update_style(self) -> None:
@@ -88,3 +95,9 @@ class TrackerDungeonLabel(QLabel):
                 self.mouse_hover.emit(f"{self.dungeon_name} (Incomplete)")
         else:
             self.mouse_hover.emit(f"{self.dungeon_name} (Unrequired)")
+
+    def eventFilter(self, target: QLabel, event: QEvent) -> bool:
+        if event.type() == QEvent.Type.Leave:
+            self.mouse_hover.emit("")
+
+        return super().eventFilter(target, event)

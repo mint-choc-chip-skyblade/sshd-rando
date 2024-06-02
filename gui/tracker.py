@@ -61,13 +61,13 @@ class Tracker:
         load_text_data()
         self.main = main
         self.ui = ui
-        self.world: World = None # type: ignore
+        self.world: World = None  # type: ignore
         self.inventory: Counter[Item] = Counter()
         self.started: bool = False
         self.areas: dict[str, TrackerArea] = {}
-        self.active_area: TrackerArea = None # type: ignore
-        self.last_opened_region: TrackerArea = None # type: ignore
-        self.last_checked_location: Location = None # type: ignore
+        self.active_area: TrackerArea = None  # type: ignore
+        self.last_opened_region: TrackerArea = None  # type: ignore
+        self.last_checked_location: Location = None  # type: ignore
         self.random_settings: list = []
         self.items_on_mark: dict[Location, Item] = {}
         self.own_dungeon_key_locations: list[tuple[Item, list[Location]]] = []
@@ -107,11 +107,15 @@ class Tracker:
         self.ui.start_new_tracker_button.setCursor(
             QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.ui.check_all_button.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.ui.check_all_button.setCursor(
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        )
         self.ui.check_all_in_logic_button.setCursor(
             QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.ui.uncheck_all_button.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.ui.uncheck_all_button.setCursor(
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        )
         self.ui.set_random_settings_button.setCursor(
             QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
@@ -121,7 +125,9 @@ class Tracker:
         self.ui.cancel_sphere_tracking_button.setCursor(
             QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.ui.set_hints_button.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.ui.set_hints_button.setCursor(
+            QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        )
 
         self.init_buttons()
         self.assign_buttons_to_layout()
@@ -336,7 +342,9 @@ class Tracker:
             ],
         )
         self.sword_button.setMinimumWidth(65)
-        self.sword_button.setSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
+        self.sword_button.setSizePolicy(
+            QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred
+        )
 
         self.lanayru_caves_key_button = TrackerInventoryButton(
             ["Nothing"] + [LC_SMALL_KEY] * 2,
@@ -969,10 +977,14 @@ class Tracker:
 
             # Add vertical spacers to push labels up
             left_layout.addSpacerItem(
-                QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+                QSpacerItem(
+                    40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+                )
             )
             right_layout.addSpacerItem(
-                QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+                QSpacerItem(
+                    40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+                )
             )
 
             self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
@@ -1071,10 +1083,14 @@ class Tracker:
 
             # Add vertical spacers to push labels up
             left_layout.addSpacerItem(
-                QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+                QSpacerItem(
+                    40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+                )
             )
             right_layout.addSpacerItem(
-                QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+                QSpacerItem(
+                    40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+                )
             )
 
             self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
@@ -1172,10 +1188,14 @@ class Tracker:
 
         # Add vertical spacers to push labels up
         left_layout.addSpacerItem(
-            QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+            QSpacerItem(
+                40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
         right_layout.addSpacerItem(
-            QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+            QSpacerItem(
+                40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
 
         self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
@@ -1307,7 +1327,9 @@ class Tracker:
 
         # Add a vertical spacer to push the labels and comboboxes up
         outer_layout.addSpacerItem(
-            QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+            QSpacerItem(
+                40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
         self.ui.tracker_locations_scroll_layout.addLayout(outer_layout)
 
@@ -1635,7 +1657,9 @@ class Tracker:
                 if inventory[item] > 0:
                     inventory[item] -= 1
 
-        sphere_search = Search(SearchMode.TRACKER_SPHERES, [self.world], list(inventory))
+        sphere_search = Search(
+            SearchMode.TRACKER_SPHERES, [self.world], list(inventory)
+        )
         sphere_search.search_worlds()
         for num, sphere in enumerate(sphere_search.playthrough_spheres):
             for loc in sphere:
@@ -1713,10 +1737,14 @@ class Tracker:
 
         # Add vertical spacers to push labels up
         left_layout.addSpacerItem(
-            QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+            QSpacerItem(
+                40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
         right_layout.addSpacerItem(
-            QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+            QSpacerItem(
+                40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
 
         self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
