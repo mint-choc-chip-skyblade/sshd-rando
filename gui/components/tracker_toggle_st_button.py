@@ -14,7 +14,7 @@ class TrackerToggleSTButton(QPushButton):
         self.setText("Enable Sphere Tracking")
         self.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.setStyleSheet(
-            "QToolTip { color: black; border-image: none; border-color: white; }"
+            "QToolTip { color: black; background-color: white; border-image: none; border-color: white; }"
         )
         self.setMouseTracking(True)
 

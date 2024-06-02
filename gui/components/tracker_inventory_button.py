@@ -21,7 +21,7 @@ class TrackerInventoryButton(QLabel):
     clicked = Signal(Item, str)
     mouse_hover = Signal(str)
     tooltip_stylesheet = (
-        "QToolTip { color: black; border-image: none; border-color: white; "
+        "QToolTip { color: black; background-color: white; border-image: none; border-color: white; "
         + f"qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignCenter)};"
         + " }"
     )
