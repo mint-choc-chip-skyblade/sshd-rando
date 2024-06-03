@@ -1,4 +1,6 @@
 import multiprocessing as mp
+import os
+import sys
 
 # Required to make the multiprocessing stuff not infinitely hang when running a build
 # version. See https://pyinstaller.org/en/stable/common-issues-and-pitfalls.html?highlight=multipr#multi-processing
@@ -30,7 +32,10 @@ if not args.nogui:
         from PySide6.QtWidgets import QApplication
         from gui.dialogs.error_dialog import error
 
-        app = QApplication([])
+        # Adding these lines helps fix the GUI on Retina displays
+        os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
+        sys.argv += ['--style', 'fusion']
+        app = QApplication(sys.argv)
 
         try:
             start_gui(app)
