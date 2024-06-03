@@ -440,19 +440,16 @@ pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
             return;
         }
 
-        // Force a textbox for every item
-        (*item_actor).base.basebase.members.param1 &= !0x200u32;
-
-        // If the item isn't a trap and it's a minor item, don't force a textbox
-        if ((*item_actor).base.members.base.param2 >> 4) & 0xF == 0xF {
-            match current_item {
-                // Green | Blue | Red Rupee | Heart, Arrows | Bombs, Stamina, Tears, Light Fruit |
-                // Seeds | Uncommon | Rare Treasure | Bugs | Treasures
-                2 | 3 | 4 | 6..=8 | 40..=47 | 57 | 60 | 63 | 64 | 141..=152 | 161..=176 => {
-                    (*item_actor).base.basebase.members.param1 |= 0x200;
-                },
-                _ => {},
-            }
+        // Don't give a textbox for the specified items, otherwise, force a textbox
+        match current_item {
+            // Green | Blue | Red Rupee | Heart, Arrows | Bombs, Stamina, Tears, Light Fruit | Seeds
+            // | Uncommon | Rare Treasure | Bugs | Treasures
+            2 | 3 | 4 | 6..=8 | 40..=47 | 57 | 60 | 63 | 64 | 141..=152 | 161..=176 => {
+                (*item_actor).base.basebase.members.param1 |= 0x200;
+            },
+            _ => {
+                (*item_actor).base.basebase.members.param1 &= !0x200u32;
+            },
         }
 
         // Despawn the item if it's one of the stamina fruit on LMF that
@@ -1288,12 +1285,10 @@ pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *const c_void)
             _ => {},
         };
 
-        if ((*item_actor).base.members.base.param2 >> 4) & 0xF == 0xF {
-            if (*item_actor).freestanding_y_offset <= 20.0 {
-                (*item_actor).freestanding_y_offset *= multiplier;
-            }
-            scale *= multiplier;
+        if (*item_actor).freestanding_y_offset <= 20.0 {
+            (*item_actor).freestanding_y_offset *= multiplier;
         }
+        scale *= multiplier;
 
         (*item_actor).base.members.base.scale.x *= scale;
         (*item_actor).base.members.base.scale.y *= scale;
