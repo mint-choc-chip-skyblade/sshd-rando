@@ -34,7 +34,7 @@ if not args.nogui:
 
         # Adding these lines helps fix the GUI on Retina displays
         os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
-        sys.argv += ['--style', 'fusion']
+        sys.argv += ["--style", "fusion"]
         app = QApplication(sys.argv)
 
         try:
