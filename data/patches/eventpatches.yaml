@@ -461,85 +461,6 @@
       param2: 476
       next: -1
       param3: 0
-  # full SotH will be given once all 3 Parts are collected
-  # - name: For Faron To Check Full SotH
-  #   type: flowpatch
-  #   index: 472
-  #   flow:
-  #     next: Check Faron SotH 1
-  # - name: For Eldin To Check Full SotH
-  #   type: flowpatch
-  #   index: 471
-  #   flow:
-  #     next: Check Faron SotH 1
-  # - name: For Lanayru To Check Full SotH
-  #   type: flowpatch
-  #   index: 475
-  #   flow:
-  #     next: Check Faron SotH 1
-  # - name: Check Faron SotH 1
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 1
-  #     param1: 190 # item id
-  #     param2: 1 # seems to be some count, always 1 for items
-  #     next: Check Faron SotH 2
-  #     param3: 23 # check_item_flag command, result is carried to next switch
-  # - name: Check Faron SotH 2
-  #   type: switchadd
-  #   flow:
-  #     subType: 6
-  #     param2: 0
-  #     param3: 7 # use result from previous check
-  #   cases:
-  #     - Check Eldin SotH 1 # true
-  #     - -1 # false
-  # - name: Check Eldin SotH 1
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 1
-  #     param1: 191 # item id
-  #     param2: 1 # seems to be some count, always 1 for items
-  #     next: Check Eldin SotH 2
-  #     param3: 23 # check_item_flag command, result is carried to next switch
-  # - name: Check Eldin SotH 2
-  #   type: switchadd
-  #   flow:
-  #     subType: 6
-  #     param2: 0
-  #     param3: 7 # use result from previous check
-  #   cases:
-  #     - Check Lanayru SotH 1 # true
-  #     - -1 # false
-  # - name: Check Lanayru SotH 1
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 1
-  #     param1: 192 # item id
-  #     param2: 1 # seems to be some count, always 1 for items
-  #     next: Check Lanayru SotH 2
-  #     param3: 23 # check_item_flag command, result is carried to next switch
-  # - name: Check Lanayru SotH 2
-  #   type: switchadd
-  #   flow:
-  #     subType: 6
-  #     param2: 0
-  #     param3: 7 # use result from previous check
-  #   cases:
-  #     - Give full SotH # true
-  #     - -1 # false
-  # - name: Give full SotH
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 0
-  #     param1: 0
-  #     param2: 193 # item
-  #     param3: 9
-  #     next: 477 # to full SotH text
   - name: To Set Adventure Pouch Storyflag
     type: flowpatch
     index: 603
@@ -610,6 +531,16 @@
       param2: 48 # Lanayru Pillar
       next: -1
       param3: 0
+  - name: Always show 5 Deku Seeds text
+    type: flowpatch
+    index: 92
+    flow:
+      next: 16
+  - name: Always show single Arrow text
+    type: flowpatch
+    index: 139
+    flow:
+      next: 80
   - name: Always same Bomb text
     type: flowpatch
     index: 180
