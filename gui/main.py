@@ -47,12 +47,6 @@ class Main(QMainWindow):
         self.ui = Ui_main_window()
         self.ui.setupUi(self)
 
-        # On Windows 11, qt calculates the size hint for spinbox line-edits incorrectly.
-        # Set negative content margins here to correct it until qt fixes it.
-        if platform.system() == "Windows" and platform.release() == "11":
-            for spinbox in self.findChildren(QSpinBox):
-                spinbox.lineEdit().setTextMargins(-10, 0, -10, 0)
-
         self.setWindowTitle(
             f"The Legend of Zelda: Skyward Sword HD Randomizer (Ver. {VERSION})"
         )
