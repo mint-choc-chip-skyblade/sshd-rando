@@ -51,7 +51,7 @@ features that can't be easily achieved in the Wii version. There are also other 
 have made because the decisions made by the SDR devs (some of us are *also* devs there) don't work
 as well when applied to HDR.
 
-[🎲 Go to the full list of differences 🎲](https://github.com/mint-choc-chip-skyblade/sshd-rando/blob/main/data/differences_between_hdr_and_sdr.md)
+[🎲 Go to the full list of differences 🎲](https://github.com/mint-choc-chip-skyblade/sshd-rando/blob/main/docs/differences_between_hdr_and_sdr.md)
 
 ## Shoutouts 📣
 
