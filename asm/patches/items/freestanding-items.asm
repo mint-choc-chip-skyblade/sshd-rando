@@ -32,6 +32,10 @@ b 0x71004e4864 ; act like slingshot for rando-patched items
 .offset 0x71004ea2c8
 fmov s0, 0x40000000 ; 2.0
 
+.offset 0x71004ea2e8
+mov w8, #62
+b additions_jumptable
+
 
 ; Prevent spawned items acting like rando-patched items
 .offset 0x71004eba84 ; store actorParam1Base early to save instructions later
@@ -112,7 +116,8 @@ add x9, x9, #0xb0 ; use above func for other default case
 
 ; Prevent picking up Skyview Temple - Item behind Bars
 ; with a Skyward Spin Attack
+; Also use this to remove textboxes from common items
 .offset 0x71004e621c
-nop
-nop
-nop
+mov x0, x19
+mov w8, #61
+bl additions_jumptable

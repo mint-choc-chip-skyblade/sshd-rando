@@ -743,8 +743,8 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 27..=30 | 99 | 179 => y_offset = 24.0,
                 // LMF BK
                 31 => y_offset = 27.0,
-                // Crystal Pack | 5 Bombs | 10 Bombs | Single Crystal | Beetle | Pouch | Pouch Expansion | Small Bomb Bag | Big Bug Net | Eldin Ore
-                35 | 40 | 41 | 48 | 53 | 112 | 113 | 134 | 140 | 165 => y_offset = 18.0,
+                // Crystal Pack | 5 Bombs | Single Crystal | Beetle | Pouch | Pouch Expansion | Small Bomb Bag | Big Bug Net | Eldin Ore
+                35 | 40 | 48 | 53 | 112 | 113 | 134 | 140 | 165 => y_offset = 18.0,
                 // Bellows | Bug Net | Bomb Bag
                 49 | 71 | 92 => y_offset = 26.0,
                 36          // Glittering Spores
@@ -779,8 +779,11 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 | 196       // Cold Pumpkin Soup
                 | 198       // Life Tree Fruit
                 | 199 => y_offset = 16.0,
-                // Seeds | Uncommon | Rare Treasure
-                57 | 60 | 63 | 64 => y_offset = 15.0,
+                // 10 Deku Seeds
+                60 => {
+                    y_offset = 15.0;
+                    use_default_scaling = true;
+                },
                 // Beetle Upgrades
                 75..=77 => y_offset = 10.0,
                 // Heart Container
@@ -805,6 +808,10 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 },
                 // Goddess Plume
                 176 => y_offset = 17.0,
+                // 10 Bombs | 5 Deku Seeds
+                41 | 57 => use_default_scaling = true,
+                // Heart | 10 Arrows
+                6 | 8 => use_default_scaling = true,
                 _ => y_offset = 0.0,
             }
 
@@ -1259,6 +1266,7 @@ pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *cons
     }
 }
 
+// Applys a fixed value for the scale of a model in dAcItem::update
 #[no_mangle]
 pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *const c_void) {
     unsafe {
@@ -1267,28 +1275,6 @@ pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *const c_void)
             215 => 0.3f32, // Scrapper
             _ => 1.0f32,
         };
-
-        // Hacky fix for treasures being really smol
-        // The y_offsets here aren't in the same scale as
-        let mut multiplier = 1.0;
-
-        let itemid = (*item_actor).final_determined_itemid;
-        match itemid {
-            // Bird Feather, Tumbleweed, Amber Relic, Dusk Relic, Blue Bird Feather, Goddess Plume
-            162 | 163 | 167 | 168 | 174 | 176 => {
-                multiplier = 2.0;
-            },
-            // Ancient Flower
-            166 => {
-                multiplier = 1.5;
-            },
-            _ => {},
-        };
-
-        if (*item_actor).freestanding_y_offset <= 20.0 {
-            (*item_actor).freestanding_y_offset *= multiplier;
-        }
-        scale *= multiplier;
 
         (*item_actor).base.members.base.scale.x *= scale;
         (*item_actor).base.members.base.scale.y *= scale;
@@ -1299,5 +1285,61 @@ pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *const c_void)
             (*item_actor).item_model_ptr,
             world_matrix,
         );
+    }
+}
+
+// This specifically happens after item scaling stuff has been determined so
+// there isn't weird inconsistencies between items that have textboxes and
+// those that don't
+#[no_mangle]
+pub fn force_traps_to_have_textboxes(item_actor: *mut dAcItem) {
+    unsafe {
+        // If the item isn't a trap and it's a minor item, don't force a textbox
+        if ((*item_actor).base.members.base.param2 >> 4) & 0xF != 0xF
+            && (*item_actor).final_determined_itemid != 42
+        {
+            (*item_actor).base.basebase.members.param1 &= !0x200u32;
+        }
+    }
+}
+
+#[no_mangle]
+pub fn get_custom_freestanding_item_scale() -> f32 {
+    // dAcItem->freestandingModelScale gets bound to different functions depending
+    // on the itemid during dAcItem::init. The function for "small" items gets
+    // patched to call this function.
+    //
+    // However, these functions literally just return a float. They don't have any
+    // references to the item actor they are being used for. Through some
+    // Ghidra wizardry, it is know that the item actor of interest is stored
+    // either in x19 or x20. So, this function first assumes that x19 is correct.
+    // It checks for the actorid field to verify that x19 holds an item actor.
+    // If this check fails, the item actor must be in x20 so that gets used
+    // instead.
+    //
+    // After all this, the item id can then be used to return unique freestanding
+    // item scales for each item. That this works at all is ridiculous...
+    unsafe {
+        let mut actorid: u16;
+        asm!("ldrh {0:w}, [x19, #0x10]", out(reg) actorid);
+
+        let item_actor: *mut dAcItem;
+        if actorid == 641 {
+            asm!("mov {0:x}, x19", out(reg) item_actor);
+        } else {
+            asm!("mov {0:x}, x20", out(reg) item_actor);
+        }
+
+        // Just to be extra safe
+        if item_actor == core::ptr::null_mut() {
+            return 1.0;
+        }
+
+        return match (*item_actor).final_determined_itemid {
+            40 => 1.5, // 5 Bombs
+            // Tumbleweed, Ancient Flower, Blue Bird Feather, Goddess Plume
+            60 | 163 | 166 | 174 | 176 => 2.0,
+            _ => 1.0,
+        };
     }
 }
