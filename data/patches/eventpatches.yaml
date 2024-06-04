@@ -2468,10 +2468,10 @@
 250-ForestSiren:
   - name: Faron Trial Fi Questions Text
     type: textpatch
-    index: 4
+    index: 5
   - name: Remove first time trial Fi text
     type: flowpatch
-    index: 3
+    index: 6
     flow:
       next: Trial Questions Switch
   - name: Trial Questions Switch
@@ -2483,6 +2483,11 @@
     cases:
       - 77 # Fi question text
       - 83 # End of Fi's text
+  - name: Don't show Spirit Vessel UI early
+    type: flowpatch
+    index: 5
+    flow:
+      next: 6
 
 299-Demo:
   - name: Skip setting sword itemflag
