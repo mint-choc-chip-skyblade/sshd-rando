@@ -774,7 +774,9 @@ class Settings:
         return [
             item
             for item in STARTABLE_ITEMS
-            if self.config.settings[0].settings["gratitude_crystal_shuffle"].value != "on" and item == "Gratitude Crystal"
+            if self.config.settings[0].settings["gratitude_crystal_shuffle"].value
+            != "on"
+            and item == "Gratitude Crystal"
         ]
 
     def change_preset(self):
