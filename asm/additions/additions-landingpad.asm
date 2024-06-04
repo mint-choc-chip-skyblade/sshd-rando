@@ -196,6 +196,12 @@ b.eq fix_bottle_items_from_npcs
 cmp w8, #60
 b.eq check_for_botg_itemflag_for_light_tower
 
+cmp w8, #61
+b.eq force_traps_to_have_textboxes
+
+cmp w8, #62
+b.eq get_custom_freestanding_item_scale
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
