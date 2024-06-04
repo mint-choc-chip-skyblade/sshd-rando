@@ -5,6 +5,7 @@ plandomizer_file: None
 World 1:
   logic_rules: all_locations_reachable
   item_pool: standard
+  enable_back_in_time: 'off'
   gratitude_crystal_shuffle: 'on'
   stamina_fruit_shuffle: 'off'
   npc_closet_shuffle: vanilla
@@ -14,6 +15,7 @@ World 1:
   beedle_shop_shuffle: junk_only
   goddess_chest_shuffle: 'off'
   full_wallet_upgrades: 'off'
+  skip_harp_playing: 'off'
   randomize_skykeep_layout: 'off'
   peatrice_conversations: '0'
   small_keys: removed
@@ -48,12 +50,14 @@ World 1:
   skip_demise: 'off'
   required_dungeons: '2'
   empty_unrequired_dungeons: 'on'
+  random_bottle_contents: 'off'
   trap_mode: no_traps
   trappable_items: major_items
   burn_traps: 'on'
   curse_traps: 'on'
   noise_traps: 'off'
   groose_traps: 'off'
+  health_traps: 'off'
   ammo_availability: plentiful
   boss_key_puzzles: vanilla_orientation
   got_sword_requirement: true_master_sword
@@ -61,15 +65,23 @@ World 1:
   faster_air_meter_depletion: 'off'
   spawn_hearts: 'on'
   damage_multiplier: '1'
+  unlock_all_groosenator_destinations: 'off'
   language: english_us
   tunic_swap: 'off'
+  lightning_skyward_strike: 'off'
   starry_skies: 'off'
+  daytime_sky_color: default
+  nighttime_sky_color: default
+  daytime_cloud_color: default
+  nighttime_cloud_color: default
   remove_enemy_music: 'off'
+  low_health_beeping_speed: normal
   open_thunderhead: 'off'
   open_lake_floria: vanilla
   open_earth_temple: 'off'
   open_lmf: open
   open_batreaux_shed: 'off'
+  shortcut_ios_bridge_complete: 'off'
   shortcut_spiral_log_to_btt: 'on'
   shortcut_logs_near_machi: 'off'
   shortcut_faron_log_to_floria: 'off'
@@ -94,6 +106,7 @@ World 1:
   shortcut_sandship_brig_bars: 'off'
   shortcut_fs_outside_bars: 'off'
   shortcut_fs_lava_flow: 'on'
+  shortcut_sky_keep_sv_room_bars: 'on'
   logic_early_lake_floria: 'off'
   logic_beedles_island_cage_chest_dive: 'off'
   logic_volcanic_island_dive: 'off'
