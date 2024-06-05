@@ -2,7 +2,6 @@ name: Feature Suggestion
 description: Suggest a new feature or enhancement.
 title: "[Suggestion]: "
 labels: ["suggestion"]
-projects: ["mint-choc-chip-skyblade/1"]
 body:
   - type: markdown
     attributes:
