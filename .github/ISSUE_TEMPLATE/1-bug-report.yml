@@ -52,6 +52,7 @@ body:
       options:
         - Console
         - Emulator
+        - N/A
       default: 0
     validations:
       required: true
