@@ -55,6 +55,7 @@ def fill_worlds(worlds: list[World]):
         # search.dump_world_graph()
         raise GameNotBeatableError("Logic is not satisfied after placing all items!")
 
+
 # Assumed fill is an algorithm which statistically places items more
 # evenly across the world compared to forward fill. The idea is that
 # we first startwith all the items, take an item out, search for
@@ -135,7 +136,7 @@ def assumed_fill(
                 ):
                     spot_to_fill = location
                     break
-            
+
             # If we couldn't find a spot to place this item, undo
             # all item placements within this fill attempt and try
             # again from the top.
@@ -435,6 +436,7 @@ def place_overworld_items(world: World, worlds: list[World]):
     # plandomized items that are required to get to this dungeon
     complete_item_pool = get_complete_item_pool(worlds)
     assumed_fill(worlds, overworld_items, complete_item_pool, overworld_locations)
+
 
 # Cache all the possible times of day for each area and exit.
 # This way, the search algorithm doesn't end up testing for

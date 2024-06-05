@@ -147,6 +147,7 @@ def get_random_junk_item_name() -> str:
 
     return random_junk_item
 
+
 # Returns the complete item pool for all worlds in the passed
 # in world list
 def get_complete_item_pool(worlds: list["World"]) -> list[Item]:
