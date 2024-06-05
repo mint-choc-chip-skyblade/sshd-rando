@@ -1,26 +1,16 @@
-## What does this PR do?
+## What does this address?
 
-The fundamental code changes and what they translate to functionally.
-
-- .
-- .
-- ...
-
-
-## How do you test this changes?
-
-How to test/recreate the issue/verify the changes.
-
-
-## What issues does this address?
-
-Please link to relevant issues here.
+Please link to relevant GitHub issues here, if any.
 
 - .
 - .
-- ...
+- .
+
+
+## How did/do you test these changes?
+
+...
 
 
 ## Notes
 
-Any notes, additional thoughts, concerns or comments. Please include screenshots or videos in the notes section, if relevant.
