@@ -1231,11 +1231,19 @@ pub fn get_arc_model_from_item(
     item_id: u16,
 ) -> u64 {
     unsafe {
-        let initial_model_name = match item_id {
+        let mut initial_model_name = match item_id {
             214 => cstr!("Onp").as_ptr(),
             215 => cstr!("DesertRobot").as_ptr(),
             _ => model_name,
         };
+
+        if item_id == 112 {
+            if flag::check_itemflag(flag::ITEMFLAGS::ADVENTURE_POUCH) == 0 {
+                initial_model_name = cstr!("GetPouchA").as_ptr();
+            } else {
+                initial_model_name = cstr!("GetPouchB").as_ptr();
+            }
+        }
 
         let resolved_model_name = resolve_progressive_item_models(initial_model_name, item_id);
 
@@ -1250,11 +1258,19 @@ pub fn get_arc_model_from_item(
 #[no_mangle]
 pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *const c_char {
     unsafe {
-        let initial_model_name = match item_id {
+        let mut initial_model_name = match item_id {
             214 => cstr!("OnpB").as_ptr(),
             215 => cstr!("DesertRobot").as_ptr(),
             _ => model_name,
         };
+
+        if item_id == 112 {
+            if flag::check_itemflag(flag::ITEMFLAGS::ADVENTURE_POUCH) == 0 {
+                initial_model_name = cstr!("GetPorchA").as_ptr();
+            } else {
+                initial_model_name = cstr!("GetPorchB").as_ptr();
+            }
+        }
 
         let resolved_model_name = resolve_progressive_item_models(initial_model_name, item_id);
 

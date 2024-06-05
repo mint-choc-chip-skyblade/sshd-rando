@@ -735,7 +735,9 @@
   types:
     - Major Items
     - Side Quest Items
-  oarc: GetPouchA
+  oarc:
+    - GetPouchA
+    - GetPouchB
   getarcname: GetPouchA
   getmodelname: GetPorchA # yea, that's a typo in the game
   advancement: true
