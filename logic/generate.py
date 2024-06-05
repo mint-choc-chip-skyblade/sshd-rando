@@ -63,6 +63,7 @@ def generate_randomizer(config: Config) -> list[World]:
         worlds[i].config = config
         worlds[i].build()
 
+    # Give each world a reference back to the list of all worlds
     for world in worlds:
         world.worlds = worlds
 
