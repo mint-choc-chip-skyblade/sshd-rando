@@ -504,7 +504,7 @@
     - Bottles
     - Major Items
     - Side Quest Items
-  oarc: GetBottleKusuriS
+  oarc: GetBottleKusuri
   advancement: true
 - id: 81
   name: Heart Potion Plus Plus
@@ -783,7 +783,7 @@
     - Bottles
     - Major Items
     - Side Quest Items
-  oarc: GetBottleRepairS
+  oarc: GetBottleRepair
   advancement: true
 - id: 128
   name: Small Seed Satchel
