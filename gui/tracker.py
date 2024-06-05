@@ -665,6 +665,12 @@ class Tracker:
         for area in self.areas.values():
             area.hints.clear()
 
+        # Re-hide the check/uncheck all buttons
+        self.ui.check_all_button.setVisible(False)
+        self.ui.check_all_in_logic_button.setVisible(False)
+        self.ui.uncheck_all_button.setVisible(False)
+        self.ui.set_hints_button.setVisible(False)
+
         # Modify settings for various purposes
 
         # Don't include random starting items in the tracker world
