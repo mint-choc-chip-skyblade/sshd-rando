@@ -6051,7 +6051,7 @@
     - stage/D300_1/r9/l0/TBox/72
     - stage/D300/r9/l0/TBox/72
 
-- name: Lanayru Mining Facility - Blow Painting behind First Clawlspace
+- name: Lanayru Mining Facility - Blow Painting behind First Crawlspace
   original_item: Blue Rupee
   types:
     - Hidden Items

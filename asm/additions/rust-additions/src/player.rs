@@ -125,7 +125,7 @@ pub enum PLAYER_ACTIONS {
     FINAL_BLOW_FINISH           = 0x61,
     BACKFLIP                    = 0x62,
     LAND_BACKFLIP               = 0x63,
-    AUTO_ENTER_CLAWL_           = 0x64,
+    AUTO_ENTER_CRAWL_           = 0x64,
     ENTER_CRAWL                 = 0x65,
     CRAWLING                    = 0x66,
     EXIT_CRAWL                  = 0x67,
