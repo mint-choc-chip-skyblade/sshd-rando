@@ -950,7 +950,7 @@
 
 - name: Song of the Hero Part
   standard: Song of the Hero Part
-  pretty: Song of the Hero Part
+  pretty: a <Song of the Hero Part>
   cryptic: a <r<dragon's tune>>
   plurality: Singular
 
@@ -5015,9 +5015,9 @@
   pretty: Lanayru Mining Facility - Chest behind First Crawlspace
   cryptic: a <r<chest past a sandy cralwspace>>
 
-- name: Lanayru Mining Facility - Blow Painting behind First Clawlspace
-  standard: Lanayru Mining Facility - Blow Painting behind First Clawlspace
-  pretty: Lanayru Mining Facility - Blow Painting behind First Clawlspace
+- name: Lanayru Mining Facility - Blow Painting behind First Crawlspace
+  standard: Lanayru Mining Facility - Blow Painting behind First Crawlspace
+  pretty: Lanayru Mining Facility - Blow Painting behind First Crawlspace
   cryptic: <r<dusting an old painting>>
 
 - name: Lanayru Mining Facility - First Rupee in Crawlspace before Spike Maze

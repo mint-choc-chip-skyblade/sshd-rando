@@ -334,6 +334,7 @@ LOCATION_ALIASES = {
     "Deep Woods - Bonk Tree East of Temple 2": "Deep Woods - Bonk Tree East of Temple Item 2",
     "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1": "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1",
     "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2": "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 2",
+    "Lanayru Mining Facility - Blow Painting behind First Clawlspace": "Lanayru Mining Facility - Blow Painting behind First Crawlspace",
 }
 
 SETTING_ALIASES = {
