@@ -49,7 +49,7 @@
     - "Off"
     - "On"
   options:
-    - "off": "Single Gratitude Crystal locations will only contain single gratitude crystals."
+    - "off": "Single Gratitude Crystal locations will only contain single gratitude crystals. You will not be able to start with single gratitude crystals in your inventory with this option selected."
     - "on": "Single Gratitude Crystal locations can contain any item."
 
 - name: stamina_fruit_shuffle

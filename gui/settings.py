@@ -21,7 +21,7 @@ from constants.configconstants import (
     get_new_seed,
 )
 from constants.guiconstants import *
-from constants.itemconstants import STARTABLE_ITEMS
+from constants.itemconstants import STARTABLE_ITEMS, GRATITUDE_CRYSTAL
 from filepathconstants import BASE_PRESETS_PATH, CONFIG_PATH, ITEMS_PATH, PRESETS_PATH
 from gui.components.list_pair import ListPair
 from gui.components.tristate_check_box import RandoTriStateCheckBox
@@ -368,6 +368,9 @@ class Settings:
 
         ## Starting inventory
         starting_inventory = self.starting_inventory_pair.get_added()
+        if self.config.settings[0].settings["gratitude_crystal_shuffle"].value != "on":
+            while GRATITUDE_CRYSTAL in starting_inventory:
+                starting_inventory.remove(GRATITUDE_CRYSTAL)
         self.config.settings[0].starting_inventory = Counter(starting_inventory)
 
         ## Mixed entrance pools
@@ -407,6 +410,9 @@ class Settings:
             self.ui.included_locations_group_box.setTitle(
                 f"Included Locations ({included_loc_count} out of {total_loc_count})"
             )
+
+        disabled_starting_items = self.get_disabled_starting_item_names()
+        self.starting_inventory_pair.update_excluder_list(disabled_starting_items)
 
         if update_descriptions:
             self.update_descriptions(from_widget)
@@ -762,6 +768,15 @@ class Settings:
             for location in get_disabled_shuffle_locations(
                 self.location_table, self.config, True
             )
+        ]
+
+    def get_disabled_starting_item_names(self) -> list[str]:
+        return [
+            item
+            for item in STARTABLE_ITEMS
+            if self.config.settings[0].settings["gratitude_crystal_shuffle"].value
+            != "on"
+            and item == GRATITUDE_CRYSTAL
         ]
 
     def change_preset(self):
