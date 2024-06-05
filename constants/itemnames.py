@@ -714,6 +714,7 @@ SCRAPPER = "Scrapper"
 # 249
 
 # 250
+HEALTH_TRAP = "Health " + TRAP
 
 # 251
 GROOSE_TRAP = "Groose " + TRAP
