@@ -12,10 +12,12 @@ oarccache
 
 *__pycache__*
 .pytest_cache
+.venv
 
 *.log
 *.gv
 *.svg
+!.github/assets/icons/*.svg
 
 build/
 dist/
