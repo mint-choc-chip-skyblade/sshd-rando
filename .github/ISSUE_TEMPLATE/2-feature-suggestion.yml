@@ -1,0 +1,41 @@
+name: Feature Suggestion
+description: Suggest a new feature or enhancement.
+title: "[Suggestion]: "
+labels: ["suggestion"]
+projects: ["mint-choc-chip-skyblade/1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature suggestion!
+  - type: input
+    id: contact
+    attributes:
+      label: Discord ID / GitHub Username
+      description: How can we get in touch with you if we need more info?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What is your idea?
+      description: Tell us any details about your feature suggestion.
+      placeholder: Rupees should be replaced with cookies!
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Idea Consent
+      description: By submitting this suggestion, you agree that the randomizer devs may choose to implement, modify, or reject your idea.
+      options:
+        - label: I consent to allowing the randomizer devs to use my idea, modify it, or reject it at their discretion.
+          required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this suggestion, you agree to follow our [Code of Conduct](https://github.com/mint-choc-chip-skyblade/sshd-rando?tab=coc-ov-file#readme). 
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
