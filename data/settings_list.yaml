@@ -984,7 +984,7 @@
 
 - name: open_earth_temple
   tracker_important: true
-  default_option: "off"
+  default_option: "on"
   pretty_name: Open Earth Temple
   pretty_options:
     - "Off"
@@ -1008,7 +1008,7 @@
 
 - name: open_batreaux_shed
   tracker_important: true
-  default_option: "off"
+  default_option: "on"
   pretty_name: Open Batreaux's Shed
   pretty_options:
     - "Off"
