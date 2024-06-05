@@ -950,7 +950,7 @@
 
 - name: Song of the Hero Part
   standard: Song of the Hero Part
-  pretty: Song of the Hero Part
+  pretty: a <Song of the Hero Part>
   cryptic: a <r<dragon's tune>>
   plurality: Singular
 
