@@ -62,7 +62,7 @@
   standard: "You learned the <y<final part of the\nSong of the Hero>>...\n\n\nThe <y<Song of the Hero>> is now complete!"
 
 - name: Cold Pumpkin Soup text
-  standard: "You got some <y<Cold Pumpkin Soup>>!\nThis homemade soup is Pumm's specialty,\nbut someone's get it get cold..."
+  standard: "You got some <y<Cold Pumpkin Soup>>!\nThis homemade soup is Pumm's specialty,\nbut someone's let it get cold..."
 
 - name: Five Gratitude crystal counter
   standard: "You got <r<five>> <y<Gratitude Crystals>>!\nThat is <r<<numeric arg1> >>in total!"
