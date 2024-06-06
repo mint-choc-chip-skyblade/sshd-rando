@@ -39,3 +39,6 @@ plandomizers/*
 # asm
 target/
 damage-multiplier-diff.yaml
+
+# OS BS
+.DS_Store
