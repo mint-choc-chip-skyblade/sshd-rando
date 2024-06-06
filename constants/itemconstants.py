@@ -520,4 +520,5 @@ TRAP_SETTING_TO_ITEM = {
     "curse_traps": CURSE_TRAP,
     "noise_traps": NOISE_TRAP,
     "groose_traps": GROOSE_TRAP,
+    "health_traps": HEALTH_TRAP,
 }

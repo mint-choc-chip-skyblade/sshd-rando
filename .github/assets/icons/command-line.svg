@@ -1,0 +1,24 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#white-glow)">
+     <path d="M15 24L32.1592 39.2526C32.6067 39.6504 32.6067 40.3496 32.1592 40.7474L15 56" stroke="url(#paint0_linear_556_2668)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M65 56L54.0909 56L51.9091 56L41 56" stroke="url(#paint0_linear_556_2668)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <defs>
+    <!-- color gradient -->
+    <linearGradient id="paint0_linear_556_2668" x1="31.0812" y1="30.1655" x2="34.9606" y2="80.0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0026B4"/>
+      <stop offset="1" stop-color="#007BE9"/>
+    </linearGradient>
+    <!-- filter glow outline -->
+    <filter id="white-glow" x="-500%" y="-500%" width="1000%" height="1000%">
+      <feFlood result="flood" flood-color="#BAF1FC" flood-opacity="1"></feFlood>
+      <feComposite in="flood" result="mask" in2="SourceGraphic" operator="in"></feComposite>
+      <feMorphology in="mask" result="dilated" operator="dilate" radius="2"></feMorphology>
+      <feGaussianBlur in="dilated" result="blurred" stdDeviation="2"></feGaussianBlur>
+      <feMerge>
+          <feMergeNode in="blurred"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>

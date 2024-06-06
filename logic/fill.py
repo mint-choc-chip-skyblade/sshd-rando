@@ -234,8 +234,12 @@ def fill_required_dungeon_goal_locations(world: World, worlds: list[World]):
             goal_location_items.append(triforce_pieces.pop())
         elif len(swords) > 0:
             goal_location_items.append(swords.pop())
-        else:
+        elif len(major_items) > 0:
             goal_location_items.append(major_items.pop())
+        else:
+            raise FillError(
+                "Could not generate a seed because there are no more items left to make enough required dungeons.\nThis could be because the current settings start with too many items."
+            )
 
         # Then take it out of the world's item pool
         world.item_pool[goal_location_items[-1]] -= 1
