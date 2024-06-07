@@ -1,9 +1,6 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       # we don't currently take in the input version, instead
