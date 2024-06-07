@@ -1136,6 +1136,10 @@ class Tracker:
     def show_target_selection_info(
         self, entrance: Entrance, parent_area_name: str = ""
     ) -> None:
+        # Don't show entrance stuff if the entrance type isn't randomized
+        if entrance.type not in self.target_entrance_pools:
+            return
+
         self.clear_layout(self.ui.tracker_locations_info_layout)
 
         # Layouts used for the info area
