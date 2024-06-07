@@ -23,13 +23,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Read Version
-        uses: SebRollen/toml-action@v1.2.0
-        id: read_toml
-        with:
-          file: "constants/randoconstants.py"
-          field: "VERSION"
       
       - name: Download all Artifacts
         uses: actions/download-artifact@v4
@@ -37,12 +30,19 @@ jobs:
           run-id: ${{ github.run_id }}
           github-token: ${{ github.token }}
           merge-multiple: true
+      
+      # filter the artifacts by name, ignoring the version
+      - name: Filter artifacts
+        id: filter_artifacts
+        run: |
+          echo 'builds<<EOF' >> $GITHUB_OUTPUT
+          echo "$(find . -name "Skyward Sword HD Randomizer*")" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
   
+      # create a release
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
+          prerelease: ${{ contains(github.ref, '-') }}
           files: |
-            ./Skyward Sword HD Randomizer 1.0 Pre-release2.exe
-            ./Skyward Sword HD Randomizer v1.0 Pre-release2 (linux).tar
-            ./Skyward Sword HD Randomizer v1.0 Pre-release2 (macos_apple_silicon).tar
-            ./Skyward Sword HD Randomizer v1.0 Pre-release2 (macos_intel).tar
+            ${{ steps.filter_artifacts.outputs.builds }}
