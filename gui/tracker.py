@@ -498,7 +498,7 @@ class Tracker:
         # )
         self.scrapper_button = TrackerInventoryButton(
             ["Nothing", SCRAPPER],
-            ["main quest/scrapper_gray.png", "main quest/scrapper.png"],
+            ["main quest/scrapper_gray.png", "main quest/Scrapper.png"],
         )
 
         # Load in tracker area buttons
