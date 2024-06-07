@@ -23,7 +23,7 @@ Skyward Sword HD Randomizer (SSHDR) is a mod for Skyward Sword HD that randomly 
 
 The randomizer shuffles items following a set of logic which ensures that, without tricks or glitches, every seed is logically beatable in the intended way.
 
-https://github.com/TBPixel/sshd-rando/assets/9409276/7fbc303f-575b-415e-9462-b881233d1b33
+https://github.com/mint-choc-chip-skyblade/sshd-rando/assets/9409276/de6798b4-ef9b-42aa-acee-743186b8cdbe
 
 <table>
   <tr>
@@ -117,7 +117,9 @@ have made because the decisions made by the SDR devs (some of us are *also* devs
 
 All the amazing people who have directly contributed to this project can be found here - check them out!
 
-[![Contributors Profile Pictures](https://contrib.rocks/image?repo=mint-choc-chip-skyblade/sshd-rando)](https://github.com/mint-choc-chip-skyblade/sshd-rando/graphs/contributors)
+<a href="https://github.com/mint-choc-chip-skyblade/sshd-rando/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mint-choc-chip-skyblade/sshd-rando" alt="Contributor profile pictures" />
+</a>
 
 ### Beta Testers
 
