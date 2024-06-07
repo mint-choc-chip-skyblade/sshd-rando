@@ -164,7 +164,7 @@ class Main(QMainWindow):
             self.settings.set_setting_descriptions(None)
 
     def open_output_folder(self):
-        QDesktopServices.openUrl(QUrl.fromLocalFile(self.config.output_dir.as_posix()))
+        QDesktopServices.openUrl(QUrl.fromLocalFile(self.config.output_dir.absolute()))
 
     def check_output_dir(self) -> bool:
         output_dir = self.config.output_dir

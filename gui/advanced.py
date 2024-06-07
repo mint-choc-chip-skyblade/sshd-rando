@@ -161,7 +161,7 @@ class Advanced:
             if not PLANDO_PATH.exists():
                 PLANDO_PATH.mkdir()
 
-            QDesktopServices.openUrl(QUrl.fromLocalFile(PLANDO_PATH.as_posix()))
+            QDesktopServices.openUrl(QUrl.fromLocalFile(PLANDO_PATH.absolute()))
         except:
             self.show_file_error_dialog(
                 "Could not open or create the 'plandomizers' folder.\n\nThe 'plandomizers' folder should be in the same folder as this randomizer program."
@@ -169,19 +169,19 @@ class Advanced:
 
     def open_extract_folder(self):
         # If this fails, let the error get caught normally so the user can report it.
-        QDesktopServices.openUrl(QUrl.fromLocalFile(SSHD_EXTRACT_PATH.as_posix()))
+        QDesktopServices.openUrl(QUrl.fromLocalFile(SSHD_EXTRACT_PATH.absolute()))
 
     def open_output_folder(self):
         if not self.config.output_dir.exists():
             self.config.output_dir.mkdir()
 
-        QDesktopServices.openUrl(QUrl.fromLocalFile(self.config.output_dir.as_posix()))
+        QDesktopServices.openUrl(QUrl.fromLocalFile(self.config.output_dir.absolute()))
 
     def open_spoiler_logs_folder(self):
         if not SPOILER_LOGS_PATH.exists():
             SPOILER_LOGS_PATH.mkdir()
 
-        QDesktopServices.openUrl(QUrl.fromLocalFile(SPOILER_LOGS_PATH.as_posix()))
+        QDesktopServices.openUrl(QUrl.fromLocalFile(SPOILER_LOGS_PATH.absolute()))
 
     def verify_extract(self, verify_all: bool = False) -> bool:
         self.verify_dialog = VerifyFilesProgressDialog(self.main, self.cancel_callback)
