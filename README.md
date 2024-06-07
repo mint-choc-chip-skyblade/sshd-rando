@@ -117,7 +117,9 @@ have made because the decisions made by the SDR devs (some of us are *also* devs
 
 All the amazing people who have directly contributed to this project can be found here - check them out!
 
-[![Contributors Profile Pictures](https://contrib.rocks/image?repo=mint-choc-chip-skyblade/sshd-rando)](https://github.com/mint-choc-chip-skyblade/sshd-rando/graphs/contributors)
+<a href="https://github.com/mint-choc-chip-skyblade/sshd-rando/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mint-choc-chip-skyblade/sshd-rando" alt="Contributor profile pictures" />
+</a>
 
 ### Beta Testers
 
