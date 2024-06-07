@@ -1,1 +1,1 @@
-VERSION = "1.0 Pre-release2"
+VERSION = "1.0"
