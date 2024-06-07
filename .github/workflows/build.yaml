@@ -1,7 +1,9 @@
 name: Build
 
-# TODO: run on push to main when public (action limits will be gone then)
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       # we don't currently take in the input version, instead
@@ -52,7 +54,7 @@ jobs:
             artifact_suffix: ""
 
     runs-on: ${{ matrix.os }}
-    environment: ${{ github.event.inputs.env || 'Development' }}
+    environment: ${{ github.event.inputs.env || 'Production' }}
 
     defaults:
       run:
@@ -64,6 +66,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      
+      # Setup Python
       - name: Set up Python
         id: setup-py
         uses: actions/setup-python@v5
@@ -86,6 +90,8 @@ jobs:
         run: |
           source ./.venv/bin/activate || source ./.venv/Scripts/activate
           echo $PATH >> $GITHUB_PATH
+      
+      # Build and compile
       - name: Install venv dependencies
         if: steps.cache-venv.outputs.cache-hit != 'true'
         run: |
@@ -101,12 +107,15 @@ jobs:
         run: python -m PyInstaller --log-level=WARN sshdrando.spec
       - name: Bundle Python App
         run: python build.py
+
       - name: Read Version
         uses: SebRollen/toml-action@v1.2.0
         id: read_toml
         with:
           file: "constants/randoconstants.py"
           field: "VERSION"
+
+      # Archive and upload artifacts
       - name: Tar Files if not Windows Build
         if: runner.os != 'Windows'
         run: tar -C "dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}/" -cvf "Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}${{ matrix.artifact_suffix }}).tar" .
