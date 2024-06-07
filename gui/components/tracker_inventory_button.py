@@ -67,6 +67,9 @@ class TrackerInventoryButton(QLabel):
             f"{(TRACKER_ASSETS_PATH / self.filenames[self.state]).as_posix()}"
         ):
             print(f"Could not load pixmap for {self.items[-1]}")
+            print(
+                f"File: {(TRACKER_ASSETS_PATH / self.filenames[self.state]).as_posix()}"
+            )
 
         self.update()  # Calls paintEvent
 
