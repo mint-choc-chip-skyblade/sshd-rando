@@ -433,7 +433,10 @@ class World:
             # then this dungeon is required. This should only happen in extreme
             # entrance rando and plandomizer situations
             dungeon.starting_entrance.disable()
-            if not game_beatable(self.worlds, item_pool) or self.setting("empty_unrequired_dungeons") == "off":
+            if (
+                not game_beatable(self.worlds, item_pool)
+                or self.setting("empty_unrequired_dungeons") == "off"
+            ):
                 dungeon.starting_entrance.enable()
 
             if (
