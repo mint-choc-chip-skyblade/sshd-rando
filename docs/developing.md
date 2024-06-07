@@ -9,7 +9,7 @@ If you want to contribute, develop or otherwise run SSHDR from source, you'll ne
 
 - [Pre-requisites](#️-pre-requisites)
 - [Python Setup](#python-setup)
-- [ASM Setup](../asm/README.md)
+- [ASM Setup](#asm-setup)
   - [Rust Setup](#rust-setup)
 - [Troubleshooting](#troubleshooting)
 
@@ -69,8 +69,12 @@ python ./sshdrando.py
 python3 ./sshdrando.py
 ```
 
+### ASM Setup
 
-### Rust Setup
+Compiling ASM **requires** `devkitpro` to be installed. See [ASM Readme](../asm/README.md) for full instructions.
+
+
+#### Rust Setup
 
 Setting up rust requires installing [rustup](https://rustup.rs/), which will bring `cargo` and `rustc` with it, among other essential rust tools.
 
@@ -79,11 +83,13 @@ All rust source can be found within `./asm/additions/rust-additions`.
 Rather than compiling these with rust ourselves, these are compiled alongside all other assembly with a python script. You can use:
 
 ```sh
-py ./asm/assemble.py
+cd ./asm # must be in asm directory
+
+py ./assemble.py
 # or 
-python ./asm/assemble.py
+python ./assemble.py
 # or
-python3 ./asm/assemble.py
+python3 ./assemble.py
 ```
 
 
@@ -94,9 +100,13 @@ For the most part, it's recommended to just compile from GitHub Actions. They're
 
 ### Troubleshooting
 
-#### cmake causing trouble
+> #### nlzss11 failed to install
 
-Occasionally, cmake causes issues. We specifically care about the cmake installed via the pip toolchain in order to run from source and develop locally. One thing that can help resolve this is installing cmake directly via pip.
+Occasionally, `cmake` causes issues when trying to install `nlzss11`. The error is never very clear, but when `nlzss11` fails with a pip install, it is often `cmake`.
+
+We specifically care about the `cmake` installed via the pip toolchain in order to run from source and develop locally.
+
+One thing that can help resolve this is installing cmake directly via pip.
 
 ```sh
 pip install cmake

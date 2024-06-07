@@ -1,15 +1,27 @@
 name: Build
 
+# TODO: run on push to main when public (action limits will be gone then)
 on:
-  release:
-    types: [published]
   workflow_dispatch:
     inputs:
-      version:
-        description: Version
+      # we don't currently take in the input version, instead
+      # we read the version from the constants/randoconstants.py file
+      # version:
+      #   description: Version
+      #   type: string
       env:
         description: Environment
-        type: environment
+        type: string
+        required: true
+        default: "Production"
+  workflow_call: # allows the workflow to be called from other workflows
+    inputs:
+      # version:
+      #   description: Version
+      #   type: string
+      env:
+        description: Environment
+        type: string
         required: true
         default: "Production"
 
@@ -23,25 +35,21 @@ jobs:
             architecture: x64
             artifact: windows
             artifact_suffix: ""
-            upload_path_suffix: "/*"
           - name: MacOS Build x64
             os: macos-13
             architecture: x64
             artifact: macos
             artifact_suffix: _intel
-            upload_path_suffix: ".zip"
           - name: MacOS Build arm64
             os: macos-14
             architecture: arm64
             artifact: macos
             artifact_suffix: _apple_silicon
-            upload_path_suffix: ".zip"
           - name: Linux Build
             os: ubuntu-latest
             architecture: x64
             artifact: linux
             artifact_suffix: ""
-            upload_path_suffix: "/*"
 
     runs-on: ${{ matrix.os }}
     environment: ${{ github.event.inputs.env || 'Development' }}
@@ -102,7 +110,7 @@ jobs:
       - name: Tar Files if not Windows Build
         if: runner.os != 'Windows'
         run: tar -C "dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}/" -cvf "Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}${{ matrix.artifact_suffix }}).tar" .
-      - name: Upload Artifact non-Windows Artifact
+      - name: Upload non-Windows Artifact
         if: runner.os != 'Windows'
         uses: actions/upload-artifact@v4
         with:
