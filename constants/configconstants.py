@@ -35,6 +35,7 @@ PREFERENCE_FIELDS = (
     "font_size",
     "verified_extract",
     "tutorial_random_settings",
+    "first_time_seed_gen_text",
 )
 
 
@@ -62,6 +63,7 @@ DEFAULT_SETTINGS = {
     "font_size": 10,
     "verified_extract": False,
     "tutorial_random_settings": False,
+    "first_time_seed_gen_text": False,
     "starting_inventory": Counter(
         [
             HYLIAN_SHIELD,

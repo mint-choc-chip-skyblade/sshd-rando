@@ -102,9 +102,14 @@ class Main(QMainWindow):
 
         done_dialog = QMessageBox(self)
         done_dialog.setWindowTitle("Randomization Completed")
-        done_dialog.setText(
+        done_dialog_text = (
             f"Seed successfully generated!\n\nHash: {self.config.get_hash()}"
         )
+
+        if not self.config.first_time_seed_gen_text:
+            done_dialog_text += "\n\nPlease note that the item which spawns after defeating a boss will always look like a Heart Container. This item is actually randomized even though it doesn't look different and could be a useful item.\n\nAlso, the Tablets shown in the inventory screen do not accurately show which Tablet items you currently have. You will need to look at which light pillars are glowing in The Sky to know for sure which Tablets you currently have."
+
+        done_dialog.setText(done_dialog_text)
 
         open_output_button = done_dialog.addButton(
             "Open", QMessageBox.ButtonRole.NoRole
@@ -122,6 +127,9 @@ class Main(QMainWindow):
         )
         done_dialog.setIconPixmap(icon_pixmap)
         done_dialog.exec()
+
+        self.config.first_time_seed_gen_text = True
+        write_config_to_file(CONFIG_PATH, self.config)
 
         # Prevents old progress dialogs reappearing when generating another
         # seed without reopening the entire program
