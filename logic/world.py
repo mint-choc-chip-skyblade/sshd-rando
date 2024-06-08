@@ -242,9 +242,10 @@ class World:
                             )
                             # Add the location to the dungeon if this area is part of one
                             if dungeon_name := area_node.get("dungeon", False):
-                                self.get_dungeon(dungeon_name).locations.append(
-                                    self.get_location(location_name)
-                                )
+                                dungeon = self.get_dungeon(dungeon_name)
+                                location = self.get_location(location_name)
+                                if location not in dungeon.locations:
+                                    dungeon.locations.append(location)
 
                     if "exits" in area_node:
                         for connected_area_name, req_str in area_node["exits"].items():
