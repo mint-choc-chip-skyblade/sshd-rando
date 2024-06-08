@@ -113,6 +113,7 @@ ITEMS_NOT_TO_TRAP = (
 
 # Item Pools
 ALL_JUNK_ITEMS: list[str] = [
+    MONSTER_HORN,
     GOLDEN_SKULL,
     GODDESS_PLUME,
     DUSK_RELIC,
