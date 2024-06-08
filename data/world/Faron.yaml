@@ -5,7 +5,13 @@
     Sealed Grounds Statue: Nothing
     Sealed Grounds Spiral: Nothing
     Sealed Grounds Upper Ledge: shortcut_spiral_log_to_btt or 'Push_Down_Sealed_Grounds_Log'
-    # Groosenator
+    Sealed Grounds Groosenator: Nothing
+  locations:
+    Sealed Grounds - Bonk Wall between Pillars near Bird Statue: Nothing
+
+- name: Sealed Grounds Groosenator
+  hint_region: None # Don't allow sealed grounds to be the parent area of any areas reached with the groosenator
+  exits:
     Flooded Faron Woods: Nothing
     Fun Fun Island: unlock_all_groosenator_destinations
     Bug Heaven: unlock_all_groosenator_destinations
@@ -14,8 +20,6 @@
     Lanayru Gorge: unlock_all_groosenator_destinations
     Shipyard Dock: unlock_all_groosenator_destinations
     Outside Thrill Digger Cave: unlock_all_groosenator_destinations
-  locations:
-    Sealed Grounds - Bonk Wall between Pillars near Bird Statue: Nothing
 
 - name: Sealed Grounds Spiral
   hint_region: Sealed Grounds
