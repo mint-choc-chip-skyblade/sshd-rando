@@ -448,14 +448,17 @@ class World:
                         f"Dungeon {dungeon.name} is required to go through, but has a junk goal location. Either roll a new seed or change your plandomizer to allow this dungeon to be required."
                     )
                 dungeons.remove(dungeon)
-            elif not dungeon.starting_entrance.disabled or any(
-                [
-                    loc
-                    for loc in dungeon.locations
-                    if not loc.is_empty()
-                    and loc.current_item.is_major_item
-                    and not loc.has_known_vanilla_item
-                ]
+            elif not dungeon.starting_entrance.disabled or (
+                any(
+                    [
+                        loc
+                        for loc in dungeon.locations
+                        if not loc.is_empty()
+                        and loc.current_item.is_major_item
+                        and not loc.has_known_vanilla_item
+                    ]
+                )
+                and self.setting("empty_unrequired_dungeons") == "on"
             ):
                 dungeon.required = True
                 num_required_dungeons -= 1
@@ -464,13 +467,16 @@ class World:
                     and self.setting("empty_unrequired_dungeons") == "on"
                 ):
                     raise WrongInfoError(
-                        "There are more major items plandomized at the end of dungeons than there are required dungeons. Please remove some plandomized major items at the end of dungeons"
+                        "There are more major items plandomized at the end of dungeons than there are required dungeons. Please remove some plandomized major items at the end of dungeons or disable Barren Unrequired Dungeons."
                     )
                 logging.getLogger("").debug(
                     f"Chose {dungeon} as force required dungeon"
                 )
 
-        if num_required_dungeons > len(dungeons):
+        if (
+            num_required_dungeons > len(dungeons)
+            and self.setting("empty_unrequired_dungeons") == "on"
+        ):
             raise WrongInfoError(
                 "Not enough free goal locations to satisfy required dungeons. Please remove junk that has been plandomized at the end of dungeons"
             )
