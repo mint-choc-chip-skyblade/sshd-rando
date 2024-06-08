@@ -12,7 +12,7 @@ class ItemPoolError(RuntimeError):
     pass
 
 
-# Generates the item pool for a single world
+# Generates the item pool for a single world.
 # Items being placed in vanilla or restricted
 # location sets will be filtered out later. Items
 # that need to be removed and not placed anywhere
@@ -148,6 +148,8 @@ def get_random_junk_item_name() -> str:
     return random_junk_item
 
 
+# Returns the complete item pool for all worlds in the passed
+# in world list
 def get_complete_item_pool(worlds: list["World"]) -> list[Item]:
     complete_item_pool: list[Item] = []
     for world in worlds:

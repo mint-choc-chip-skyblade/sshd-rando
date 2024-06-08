@@ -420,7 +420,7 @@ class World:
         self.get_entrance("Eldin Pillar -> Inside the Fire Sanctuary Statue").disable()
         # Also disable Sky Keep's entrance if it's not required
         sky_keep = self.get_dungeon("Sky Keep")
-        sky_keep.starting_entrance.disabled = not sky_keep.required
+        sky_keep.starting_entrance.disabled = sky_keep.should_be_barren()
 
         random.shuffle(dungeons)
         item_pool = get_complete_item_pool(self.worlds)
@@ -433,7 +433,10 @@ class World:
             # then this dungeon is required. This should only happen in extreme
             # entrance rando and plandomizer situations
             dungeon.starting_entrance.disable()
-            if not game_beatable(self.worlds, item_pool):
+            if (
+                not game_beatable(self.worlds, item_pool)
+                or self.setting("empty_unrequired_dungeons") == "off"
+            ):
                 dungeon.starting_entrance.enable()
 
             if (

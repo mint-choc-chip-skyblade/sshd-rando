@@ -86,6 +86,8 @@ class Area:
         return hint_regions
 
     # Will return which provinces an area is a part of
+    # TODO: This isn't used anywhere and wasn never tested, so be
+    # careful if you decide to try it out
     def get_provinces(self) -> set[str]:
         provinces: set[str] = set()
         already_checked: set["Area"] = set()
