@@ -70,6 +70,9 @@ class Entrance:
         # Only potentially shuffled entrances will have a sort priority set
         self.sort_priority: int = 0
 
+        # Additional Entrances that can only be allowed if this entrance is vanilla
+        self.conditional_vanilla_connections: list["Entrance"] = []
+
     def __str__(self) -> str:
         return self.original_name
 
@@ -91,11 +94,16 @@ class Entrance:
     def connect(self, new_connected_area: "Area") -> None:
         self.connected_area = new_connected_area
         new_connected_area.entrances.append(self)
+        if new_connected_area == self.original_connected_area:
+            for entrance in self.conditional_vanilla_connections:
+                entrance.connect(entrance.original_connected_area)
 
     def disconnect(self) -> "Area":
         self.connected_area.entrances.remove(self)
         previously_connected = self.connected_area
         self.connected_area = None
+        for entrance in self.conditional_vanilla_connections:
+            entrance.disconnect()
         return previously_connected
 
     def bind_two_way(self, return_entrance: "Entrance") -> None:

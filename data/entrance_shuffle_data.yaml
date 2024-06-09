@@ -111,6 +111,10 @@
         entrance: 0
   return:
     connection: LMF First Room -> Top of LMF
+    # Conditional connections may only stay if the above connection
+    # is vanilla
+    conditional_vanilla_connections:
+     - LMF End of Hall of Ancient Robots -> Temple of Time West Post LMF Area
     exit_infos:
       - stage: D300
         room: 0
