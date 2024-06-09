@@ -202,6 +202,12 @@ b.eq force_traps_to_have_textboxes
 cmp w8, #62
 b.eq get_custom_freestanding_item_scale
 
+cmp w8, #63
+b.eq not_should_pyrup_breathe_fire
+
+cmp w8, #64
+b.eq prevent_pyrup_fire_when_underground2
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

@@ -288,3 +288,35 @@ pub fn set_skyloft_thunderhead_sceneflag() {
 
     flag::set_global_sceneflag(0, 29);
 }
+
+// prevent_pyrup_fire_when_underground1
+#[no_mangle]
+pub fn not_should_pyrup_breathe_fire(player: *mut player::dPlayer) -> bool {
+    unsafe {
+        let current_action = (*player).current_action;
+
+        if !((*(*player).vtable).is_recovering_related)(player)
+            && current_action != player::PLAYER_ACTIONS::CRAWLSPACE
+        {
+            return false;
+        }
+        return true;
+    }
+}
+
+#[no_mangle]
+pub fn prevent_pyrup_fire_when_underground2(some_value: i16) -> bool {
+    unsafe {
+        let mut should_prevent_fire = true;
+        let current_action = (*PLAYER_PTR).current_action;
+
+        if current_action != player::PLAYER_ACTIONS::CRAWLSPACE {
+            should_prevent_fire = false;
+
+            // Replaced instructions
+            asm!("strh {0:w}, [x19, #0x1d6]", "strh {0:w}, [x19, #0x13e]", in(reg) some_value);
+        }
+
+        return should_prevent_fire;
+    }
+}
