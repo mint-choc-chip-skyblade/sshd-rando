@@ -242,9 +242,10 @@ class World:
                             )
                             # Add the location to the dungeon if this area is part of one
                             if dungeon_name := area_node.get("dungeon", False):
-                                self.get_dungeon(dungeon_name).locations.append(
-                                    self.get_location(location_name)
-                                )
+                                dungeon = self.get_dungeon(dungeon_name)
+                                location = self.get_location(location_name)
+                                if location not in dungeon.locations:
+                                    dungeon.locations.append(location)
 
                     if "exits" in area_node:
                         for connected_area_name, req_str in area_node["exits"].items():
@@ -420,7 +421,7 @@ class World:
         self.get_entrance("Eldin Pillar -> Inside the Fire Sanctuary Statue").disable()
         # Also disable Sky Keep's entrance if it's not required
         sky_keep = self.get_dungeon("Sky Keep")
-        sky_keep.starting_entrance.disabled = not sky_keep.required
+        sky_keep.starting_entrance.disabled = sky_keep.should_be_barren()
 
         random.shuffle(dungeons)
         item_pool = get_complete_item_pool(self.worlds)
@@ -433,7 +434,10 @@ class World:
             # then this dungeon is required. This should only happen in extreme
             # entrance rando and plandomizer situations
             dungeon.starting_entrance.disable()
-            if not game_beatable(self.worlds, item_pool):
+            if (
+                not game_beatable(self.worlds, item_pool)
+                or self.setting("empty_unrequired_dungeons") == "off"
+            ):
                 dungeon.starting_entrance.enable()
 
             if (
@@ -445,14 +449,17 @@ class World:
                         f"Dungeon {dungeon.name} is required to go through, but has a junk goal location. Either roll a new seed or change your plandomizer to allow this dungeon to be required."
                     )
                 dungeons.remove(dungeon)
-            elif not dungeon.starting_entrance.disabled or any(
-                [
-                    loc
-                    for loc in dungeon.locations
-                    if not loc.is_empty()
-                    and loc.current_item.is_major_item
-                    and not loc.has_known_vanilla_item
-                ]
+            elif not dungeon.starting_entrance.disabled or (
+                any(
+                    [
+                        loc
+                        for loc in dungeon.locations
+                        if not loc.is_empty()
+                        and loc.current_item.is_major_item
+                        and not loc.has_known_vanilla_item
+                    ]
+                )
+                and self.setting("empty_unrequired_dungeons") == "on"
             ):
                 dungeon.required = True
                 num_required_dungeons -= 1
@@ -461,13 +468,16 @@ class World:
                     and self.setting("empty_unrequired_dungeons") == "on"
                 ):
                     raise WrongInfoError(
-                        "There are more major items plandomized at the end of dungeons than there are required dungeons. Please remove some plandomized major items at the end of dungeons"
+                        "There are more major items plandomized at the end of dungeons than there are required dungeons. Please remove some plandomized major items at the end of dungeons or disable Barren Unrequired Dungeons."
                     )
                 logging.getLogger("").debug(
                     f"Chose {dungeon} as force required dungeon"
                 )
 
-        if num_required_dungeons > len(dungeons):
+        if (
+            num_required_dungeons > len(dungeons)
+            and self.setting("empty_unrequired_dungeons") == "on"
+        ):
             raise WrongInfoError(
                 "Not enough free goal locations to satisfy required dungeons. Please remove junk that has been plandomized at the end of dungeons"
             )

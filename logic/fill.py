@@ -49,12 +49,19 @@ def fill_worlds(worlds: list[World]):
     fast_fill(item_pool, all_locations)
 
     if not all_logic_satisfied(worlds):
-        search = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds)
-        search.search_worlds()
-        search.dump_world_graph()
+        # Uncomment if necessary for debugging
+        # search = Search(SearchMode.ALL_LOCATIONS_REACHABLE, worlds)
+        # search.search_worlds()
+        # search.dump_world_graph()
         raise GameNotBeatableError("Logic is not satisfied after placing all items!")
 
 
+# Assumed fill is an algorithm which statistically places items more
+# evenly across the world compared to forward fill. The idea is that
+# we first startwith all the items, take an item out, search for
+# available locations (picking up any placed items along the way),
+# and choose a random location of the available ones to place the item.
+# Repeat for all items in the items_to_place_list.
 def assumed_fill(
     worlds: list[World],
     items_to_place_list: list[Item],
@@ -65,6 +72,11 @@ def assumed_fill(
     # Sort locations to keep consistency incase a set
     # was passed in
     allowed_locations.sort()
+
+    # Assumed Fill will sometimes place items in such a way
+    # that accidentally locks out being able to place specific
+    # items anywhere. Allow the algorithm to retry a reasonable
+    # amount of times before throwing an error.
     retries: int = 10
     unsuccessful_placement: bool = True
     while unsuccessful_placement:
@@ -102,11 +114,14 @@ def assumed_fill(
                 and item_to_place.world.get_game_winning_item() in search.owned_items
             )
             for location in allowed_locations:
+                # Get all reachable Location Access spots for this location
                 loc_acc_list = [
                     la
                     for la in location.loc_access_list
                     if can_choose_any_location or la.area in search.visited_areas
                 ]
+                # If this location is not empty, or has no potentially reachable
+                # Location Access spot, then we can't place the item here
                 if not location.is_empty() or not loc_acc_list:
                     continue
 
@@ -122,6 +137,9 @@ def assumed_fill(
                     spot_to_fill = location
                     break
 
+            # If we couldn't find a spot to place this item, undo
+            # all item placements within this fill attempt and try
+            # again from the top.
             if spot_to_fill == None:
                 logging.getLogger("").debug(
                     f"No accessible locations to place {item_to_place}. Retrying {retries} more times."
@@ -142,6 +160,8 @@ def assumed_fill(
             rollbacks.append(spot_to_fill)
 
 
+# Place the items in items_to_place completel randomly within the allowed locations.
+# There are no logic checks with this fill.
 def fast_fill(items_to_place: list[Item], allowed_locations: list[Location]) -> None:
     empty_locations = [
         location for location in allowed_locations if location.is_empty()
@@ -170,7 +190,7 @@ def fill_required_dungeon_goal_locations(world: World, worlds: list[World]):
     # Get all required goal locations
     required_goal_locations = []
     for dungeon in world.dungeons.values():
-        if dungeon.required:
+        if dungeon.required and dungeon.goal_location.is_empty():
             required_goal_locations.append(dungeon.goal_location)
 
     # Return early if there are no goal locations
@@ -422,7 +442,12 @@ def place_overworld_items(world: World, worlds: list[World]):
     assumed_fill(worlds, overworld_items, complete_item_pool, overworld_locations)
 
 
+# Cache all the possible times of day for each area and exit.
+# This way, the search algorithm doesn't end up testing for
+# times of day that we know ahead of time wouldn't be possible
+# anyway.
 def cache_area_and_exit_times(worlds: list[World]) -> None:
+    # Search with the complete item pool to get all possible times
     search_with_items = Search(
         SearchMode.ALL_LOCATIONS_REACHABLE, worlds, get_complete_item_pool(worlds)
     )

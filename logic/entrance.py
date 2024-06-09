@@ -42,16 +42,36 @@ class Entrance:
 
         # Variables used for entrance shuffling
         self.shuffled: bool = False
-        self.primary: bool = False
         self.decoupled: bool = False
         self.disabled: bool = False
+
+        # Primary entrances are those that we think of as
+        # "going into" areas. Entering dungeons, entering trials,
+        # and entering doors are all primary entrances. The opposite
+        # idea, "leaving" areas, are not primary entrances.
+        self.primary: bool = False
+
+        # The reverse is the entrance that sends the player in the
+        # natural opposite direction of this entrance. The reverse entrance
+        # of entering a trial would be the entrance that leaves the trial
         self.reverse: Entrance = None
+
+        # If the entrance is shuffled, self.replaces is the target entrance that replaces
+        # this one. If this *is* a target entrance, then self.replaces holds the
+        # entrance that this target *corresponds* to.
         self.replaces: Entrance = None
+
+        # If the entrance is shuffled, self.assumed is the target entrance that *corresponds*
+        # to this one. So if the entrance is Central Skyloft -> Goddess's Silent Realm,
+        # then self.assumed is the target entrance Root -> Goddess's Silent Realm
         self.assumed: Entrance = None
 
         # Used to sort shuffled entrances in an intuitive order
         # Only potentially shuffled entrances will have a sort priority set
         self.sort_priority: int = 0
+
+        # Additional Entrances that can only be allowed if this entrance is vanilla
+        self.conditional_vanilla_connections: list["Entrance"] = []
 
     def __str__(self) -> str:
         return self.original_name
@@ -74,17 +94,24 @@ class Entrance:
     def connect(self, new_connected_area: "Area") -> None:
         self.connected_area = new_connected_area
         new_connected_area.entrances.append(self)
+        if new_connected_area == self.original_connected_area:
+            for entrance in self.conditional_vanilla_connections:
+                entrance.connect(entrance.original_connected_area)
 
     def disconnect(self) -> "Area":
         self.connected_area.entrances.remove(self)
         previously_connected = self.connected_area
         self.connected_area = None
+        for entrance in self.conditional_vanilla_connections:
+            entrance.disconnect()
         return previously_connected
 
     def bind_two_way(self, return_entrance: "Entrance") -> None:
         self.reverse = return_entrance
         return_entrance.reverse = self
 
+    # Create a new target entrance that corresponds to where this one
+    # leads, and attach it to the root of the world graph.
     def get_new_target(self) -> "Entrance":
         target_entrance = Entrance(
             self.world.root, None, Requirement(RequirementType.NOTHING), self.world
@@ -94,6 +121,9 @@ class Entrance:
         target_entrance.replaces = self
         return target_entrance
 
+    # Create this entrance's target and disconnect the original entrance
+    # This assumes reachable access to the entrance for the entrance shuffling
+    # algorithm.
     def assume_reachable(self) -> "Entrance":
         if self.assumed == None:
             self.assumed = self.get_new_target()

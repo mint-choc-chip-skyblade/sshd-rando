@@ -119,6 +119,12 @@ def set_all_entrances_data(world: World) -> None:
             )
             forward_entrance.primary = True
             forward_entrance.sort_priority = Entrance.sort_counter
+            if conditional_vanilla_connections := entrance_data["forward"].get(
+                "conditional_vanilla_connections", None
+            ):
+                forward_entrance.conditional_vanilla_connections.extend(
+                    [world.get_entrance(e) for e in conditional_vanilla_connections]
+                )
             Entrance.sort_counter += 1
             if return_entrance != None:
                 return_entrance.type = entrance_type
@@ -140,6 +146,12 @@ def set_all_entrances_data(world: World) -> None:
                 )
                 return_entrance.sort_priority = Entrance.sort_counter
                 Entrance.sort_counter += 1
+                if conditional_vanilla_connections := entrance_data["return"].get(
+                    "conditional_vanilla_connections", None
+                ):
+                    return_entrance.conditional_vanilla_connections.extend(
+                        [world.get_entrance(e) for e in conditional_vanilla_connections]
+                    )
                 forward_entrance.bind_two_way(return_entrance)
 
         # If double doors are to be coupled, add the coupled door's
