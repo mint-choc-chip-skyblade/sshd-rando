@@ -186,7 +186,7 @@
 - name: Declined Flooded Faron Offer Text
   standard: "Very well. Talk to me again if you\nchange your mind."
 
-- name: Patch Yerbal intro text
+- name: Yerbal intro text
   standard: "They used to call me <b<Yerbal>>. Now I'm\njust the old <b<Kikwi hermit>>."
 
 - name: Yerbal open floria gates text
@@ -196,7 +196,7 @@
     \n\n\nDon't tell her I'm letting you in\nthough. I've heard stories of folks\nwho caught her in a fussy mood.
     \n\nThey ended up as midmorning snacks,\nkwwwwrk!"
 
-- name: Patch Yerbal floria gates intro
+- name: Yerbal floria gates intro text
   standard:
     "See those gates over there? They\nlead to <b<Lake Floria>>. However, the\n<r<Water Dragon>> has sealed them shut to\nall those she judged unworthy...
     \nBut don't worry, kwwwwrk. I'll let you\nin on the trick to opening the gate."
