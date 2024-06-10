@@ -48,7 +48,7 @@ extern "C" {
     fn strncmp(dest: *mut u8, src: *mut u8, size: u64) -> u64;
     fn dAcOlightLine__inUpdate(light_pillar_actor: *mut actor::dAcOlightLine, unk: u64);
     fn dAcOrdinaryNpc__update(npc: *mut c_void) -> u64;
-    fn dAcNpcSkn2__addInteractionTarget(horwell: *mut c_void);
+    fn dAcNpcSkn2__addInteractionTarget(horwell: *mut c_void, some_val: u32);
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -200,7 +200,7 @@ pub fn update_crystal_count(itemid: u32) {
 #[no_mangle]
 pub fn horwell_always_interactable(horwell: *mut c_void) {
     unsafe {
-        dAcNpcSkn2__addInteractionTarget(horwell);
+        dAcNpcSkn2__addInteractionTarget(horwell, 2);
 
         // Replaced instructions
         dAcOrdinaryNpc__update(horwell);

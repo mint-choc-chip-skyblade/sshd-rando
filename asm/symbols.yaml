@@ -127,7 +127,7 @@ main:
     playFanfareMaybe: 0x7100f37c5c
 
     dAcOrdinaryNpc__update: 0x7100a0cd7c
-    dAcNpcSkn2__addInteractionTarget: 0x710065ff60
+    dAcNpcSkn2__addInteractionTarget: 0x710051224c # 0x710065ff60
 
     do_soft_reset: 0x7100deab00
     reload_color_fader: 0x7102bfd808
