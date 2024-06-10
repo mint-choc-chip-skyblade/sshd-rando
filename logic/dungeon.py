@@ -31,15 +31,25 @@ class Dungeon:
             not self.required
             and self.world.setting("empty_unrequired_dungeons") == "on"
         )
-    
+
     def goal_location_has_non_major_item(self) -> bool:
-        return not self.goal_location.is_empty() and not self.goal_location.current_item.is_major_item
-    
+        return (
+            not self.goal_location.is_empty()
+            and not self.goal_location.current_item.is_major_item
+        )
+
     def goal_location_has_major_item(self) -> bool:
-        return not self.goal_location.is_empty() and self.goal_location.current_item.is_major_item
-    
+        return (
+            not self.goal_location.is_empty()
+            and self.goal_location.current_item.is_major_item
+        )
+
     def has_any_major_items(self) -> bool:
         for loc in self.locations:
-            if not loc.is_empty() and loc.current_item.is_major_item and not loc.has_known_vanilla_item:
+            if (
+                not loc.is_empty()
+                and loc.current_item.is_major_item
+                and not loc.has_known_vanilla_item
+            ):
                 return True
         return False

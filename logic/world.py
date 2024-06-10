@@ -414,8 +414,7 @@ class World:
         dungeons = [
             d
             for d in self.dungeons.values()
-            if d.goal_location
-            and d.name != "Sky Keep"
+            if d.goal_location and d.name != "Sky Keep"
         ]
 
         # Disable the Eldin Pillar -> Fire Sanctuary entrance so that
@@ -475,14 +474,18 @@ class World:
 
             # If this dungeon's goal location is excluded, then we have to force unrequire it
             if dungeon.goal_location.name in self.setting_map.excluded_locations:
-                dungeon.unrequired_reasons = "- Dungeon's goal location is excluded<br>\n"
+                dungeon.unrequired_reasons += (
+                    "- Dungeon's goal location is excluded<br>\n"
+                )
 
             # If a dungeon must be both force required and force unrequired, that's an error
             if dungeon.required_reasons and dungeon.unrequired_reasons:
-                raise RuntimeError(f"Seed cannot generate because dungeon {dungeon} needs to be both force required and force unrequired.<br>\n" +
-                                   f"Reason(s) to be force required:<br>\n{dungeon.required_reasons}" +
-                                   f"Reason(s) to be force unrequired:<br>\n{dungeon.unrequired_reasons}" +
-                                   f"Please change your settings and/or plandomizer file if applicable.")
+                raise RuntimeError(
+                    f"Seed cannot generate because dungeon {dungeon} needs to be both force required and force unrequired.<br>\n"
+                    + f"Reason(s) to be force required:<br>\n{dungeon.required_reasons}"
+                    + f"Reason(s) to be force unrequired:<br>\n{dungeon.unrequired_reasons}"
+                    + f"Please change your settings and/or plandomizer file if applicable."
+                )
 
         # Set dungeons that have to be force required
         for dungeon in dungeons:
@@ -491,17 +494,23 @@ class World:
                     dungeon.required = True
                     dungeon.starting_entrance.enable()
                     num_chosen_dungeons += 1
-                    logging.getLogger("").debug(f"Chose {dungeon} as force required dungeon")
+                    logging.getLogger("").debug(
+                        f"Chose {dungeon} as force required dungeon"
+                    )
                 # If empty unrequired dungeons is on, and we have to force require more dungeons
                 # than there are the number of required dungeons, then that's an error
                 elif self.setting("empty_unrequired_dungeons") == "on":
                     required_reason_list = ""
                     for dungeon in dungeons:
                         if dungeon.required_reasons:
-                            required_reason_list += f"{dungeon}:<br>\n{dungeon.required_reasons}"
-                    raise RuntimeError(f"Seed cannot generate because more than {num_required_dungeons} dungeons have to be required with the given settings.<br>\n" +
-                                       f"Required Dungeons:<br>\n{required_reason_list}<br>\n" +
-                                       f"Please change your settings and/or plandomizer file if applicable.")
+                            required_reason_list += (
+                                f"{dungeon}:<br>\n{dungeon.required_reasons}"
+                            )
+                    raise RuntimeError(
+                        f"Seed cannot generate because more than {num_required_dungeons} dungeons have to be required with the given settings.<br>\n"
+                        + f"Required Dungeons:<br>\n{required_reason_list}<br>\n"
+                        + f"Please change your settings and/or plandomizer file if applicable."
+                    )
                 # If empty unrequired dungeons is off, then just treat any more required dungeons
                 # as unrequired since that's still valid
 
@@ -509,18 +518,22 @@ class World:
         unrequired_reason_list = ""
         for dungeon in dungeons.copy():
             if dungeon.unrequired_reasons:
-                unrequired_reason_list += f"{dungeon}:<br>\n{dungeon.unrequired_reasons}"
+                unrequired_reason_list += (
+                    f"{dungeon}:<br>\n{dungeon.unrequired_reasons}"
+                )
                 dungeons.remove(dungeon)
 
         for _ in range(num_chosen_dungeons, num_required_dungeons):
             # If there are no more dungeons that can be chosen, that means that
             # there were too many dungeons that had to be unrequired to satisfy
             # the requirement
-            if not dungeons:  
-                raise RuntimeError(f"Seed cannot generate because there are not enough dungeons to choose to be required.<br>\n" +
-                                   f"The following dungeons must be unrequired with the given settings and/or plandomizer file:<br>\n" +
-                                   f"{unrequired_reason_list}" + 
-                                   f"Please change your settings and/or plandomizer file if applicable.")
+            if not dungeons:
+                raise RuntimeError(
+                    f"Seed cannot generate because there are not enough dungeons to choose to be required.<br>\n"
+                    + f"The following dungeons must be unrequired with the given settings and/or plandomizer file:<br>\n"
+                    + f"{unrequired_reason_list}"
+                    + f"Please change your settings and/or plandomizer file if applicable."
+                )
             dungeon = dungeons.pop()
             dungeon.required = True
             dungeon.starting_entrance.enable()
