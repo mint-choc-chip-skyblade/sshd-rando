@@ -50,3 +50,7 @@ bl additions_jumptable
 mov w8, #58
 bl additions_jumptable
 cbz w0, 0x71009d9534
+
+; fix pouch items not working properly from trial gates :p
+.offset 0x71009d8104
+nop

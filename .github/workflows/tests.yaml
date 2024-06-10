@@ -26,7 +26,8 @@ jobs:
         id: setup-py
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          # TODO: Unfreeze python version when this is resolved: https://github.com/actions/setup-python/issues/886
+          python-version: "3.12.3"
           check-latest: true
           cache: "pip" # Cache all pip dependency downloads
       - name: Cache venv
