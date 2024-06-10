@@ -3,6 +3,7 @@
 #![allow(unused)]
 
 use crate::debug;
+use crate::flag;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
@@ -47,6 +48,8 @@ assert_eq_size!([u8; 0x8C0], TextManagerMaybe);
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
+    static mut CURRENT_STAGE_NAME: [u8; 8];
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
 }
@@ -55,6 +58,15 @@ extern "C" {
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
 
-////////////////////////
-// ADD FUNCTIONS HERE //
-////////////////////////
+#[no_mangle]
+pub fn set_top_dowsing_icon() -> u32 {
+    unsafe {
+        if &CURRENT_STAGE_NAME[..5] == b"F103\0" {
+            return 0x11; // Tadtones
+        }
+        if flag::check_storyflag(271) != 0 {
+            return 0x12; // Sandship
+        }
+        return 0x13; // Zelda
+    }
+}

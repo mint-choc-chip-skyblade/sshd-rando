@@ -208,6 +208,9 @@ b.eq not_should_pyrup_breathe_fire
 cmp w8, #64
 b.eq prevent_pyrup_fire_when_underground2
 
+cmp w8, #65
+b.eq set_top_dowsing_icon
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
