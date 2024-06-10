@@ -2270,60 +2270,52 @@
     index: 356
     flow:
       next: 357
-  # don't have open floria options yet
-  # - name: Patch Yerbal intro text
-  #   type: textpatch
-  #   index: 4
-  #   text: "They used to call me <b<Yerbal>>. Now I'm\njust the old <b<Kikwi hermit>>."
-  # - name: Go to explanation of floria gates
-  #   onlyif: open_lake_floria != yerbal
-  #   type: flowpatch
-  #   index: 357
-  #   flow:
-  #     next: 373
-  # - name: Make Yerbal open the floria gates
-  #   onlyif: open_lake_floria == yerbal
-  #   type: flowpatch
-  #   index: 357
-  #   flow:
-  #     next: Show Yerbal open floria gates text
-  # - name: Yerbal open floria gates text
-  #   type: textadd
-  #   text: "However, <b<Faron>>, the Water Dragon,\nlet me know a secret of hers.\nKwwwwwwrk...
-  #         \n\nSee, she gave me a <r<spare key>> to the\nLake, kwwwrk!
-  #         \n\n\nDon't tell her I'm letting you in\nthough. I've heard stories of folks\nwho caught her in a fussy mood.
-  #         \n\nThey ended up as midmorning snacks,\nkwwwwrk!"
-  # - name: Show Yerbal open floria gates text
-  #   type: flowadd
-  #   flow:
-  #     type: type1
-  #     next: Open floria gates
-  #     param3: 302
-  #     param4: Yerbal open floria gates text
-  # - name: Open floria gates
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 1
-  #     param1: 49 # Floria gates opening cutscene scene flag
-  #     param2: 2
-  #     next: -1
-  #     param3: 2
-  # - name: Patch Yerbal floria gates intro
-  #   type: textpatch
-  #   index: 24
-  #   text: "See those gates over there? They\nlead to <b<Lake Floria>>. However, the\n<r<Water Dragon>> has sealed them shut to\nall those she judged unworthy...
-  #         \nBut don't worry, kwwwwrk. I'll let you\nin on the trick to opening the gate."
-  # - name: Remove end of Yerbal's text 1
-  #   type: flowpatch
-  #   index: 390
-  #   flow:
-  #     next: -1
-  # - name: Remove end of Yerbal's text 2
-  #   type: flowpatch
-  #   index: 31
-  #   flow:
-  #     next: -1
+  - name: Yerbal intro text
+    type: textpatch
+    index: 4
+  - name: Go to explanation of floria gates
+    onlyif: open_lake_floria != yerbal
+    type: flowpatch
+    index: 357
+    flow:
+      next: 373
+  - name: Make Yerbal open the floria gates
+    onlyif: open_lake_floria == yerbal
+    type: flowpatch
+    index: 357
+    flow:
+      next: Show Yerbal open floria gates text
+  - name: Yerbal open floria gates text
+    type: textadd
+  - name: Show Yerbal open floria gates text
+    type: flowadd
+    flow:
+      type: type1
+      next: Open floria gates
+      param3: 302
+      param4: Yerbal open floria gates text
+  - name: Open floria gates
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 49 # Floria gates opening cutscene scene flag
+      param2: 2
+      next: -1
+      param3: 2
+  - name: Yerbal floria gates intro text
+    type: textpatch
+    index: 24
+  - name: Remove end of Yerbal's text 1
+    type: flowpatch
+    index: 390
+    flow:
+      next: -1
+  - name: Remove end of Yerbal's text 2
+    type: flowpatch
+    index: 31
+    flow:
+      next: -1
 
 204-ForestF3:
   - name: Talk to Water Dragon in Flooded Faron

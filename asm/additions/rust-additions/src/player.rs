@@ -292,7 +292,7 @@ pub struct dPlayer {
     pub idle_anim_timer:                u16,
     pub shit_smell_timer:               u16,
     pub burn_timer:                     u16,
-    pub sheild_burn_timer:              u16,
+    pub shield_burn_timer:              u16,
     pub cursed_timer:                   u16,
     pub shock_effect_timer:             u16,
     pub _13:                            [u8; 0xA6],
