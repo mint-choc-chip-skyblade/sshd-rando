@@ -409,11 +409,13 @@ class World:
 
     def choose_required_dungeons(self) -> None:
         num_required_dungeons = self.setting("required_dungeons").value_as_number()
+        num_chosen_dungeons = 0
 
         dungeons = [
             d
             for d in self.dungeons.values()
-            if d.goal_location and d.name != "Sky Keep"
+            if d.goal_location
+            and d.name != "Sky Keep"
         ]
 
         # Disable the Eldin Pillar -> Fire Sanctuary entrance so that
@@ -425,64 +427,100 @@ class World:
 
         random.shuffle(dungeons)
         item_pool = get_complete_item_pool(self.worlds)
-        # Remove any dungeons which have non-major items plandomized to their goal locations
-        # Also force any dungeons which have major items plandomized in them to be required
-        # If going through any dungeon is required due to entrance randomizer, then
-        # require that dungeon
+
+        # There's a lot of sanity checking that we need to do to choose
+        # required dungeons based on various plandomizer and setting
+        # combinations. Depending on certain situations, we may have to
+        # force require or force unrequire certain dungeons.
         for dungeon in dungeons.copy():
-            # If disconnecting this dungeon's entrance makes the game unbeatable,
-            # then this dungeon is required. This should only happen in extreme
-            # entrance rando and plandomizer situations
-            dungeon.starting_entrance.disable()
-            if (
-                not game_beatable(self.worlds, item_pool)
-                or self.setting("empty_unrequired_dungeons") == "off"
-            ):
-                dungeon.starting_entrance.enable()
+            dungeon.required_reasons = ""
+            dungeon.unrequired_reasons = ""
 
-            if (
-                not dungeon.goal_location.is_empty()
-                and not dungeon.goal_location.current_item.is_major_item
-            ):
-                if not dungeon.starting_entrance.disabled:
-                    raise RuntimeError(
-                        f"Dungeon {dungeon.name} is required to go through, but has a junk goal location. Either roll a new seed or change your plandomizer to allow this dungeon to be required."
-                    )
+            # Checks for empty unrequired dungeons being on
+            if self.setting("empty_unrequired_dungeons") == "on":
+                # If empty unrequired dungeons is on, then start by disabling this
+                # dungeon's starting entrance. If the dungeon is chosen as required,
+                # we'll re-enable the entrance. If the dungeon isn't chosen as required
+                # then this allows us to exclude any locations which may only be in logic
+                # as a result of needing to go into the dungeon.
+                dungeon.starting_entrance.disable()
+
+                # If disabling this dungeon's entrance makes the game unbeatable,
+                # then this dungeon *has* to be required. This should only happen in extreme
+                # entrance rando and plandomizer situations (i.e if Lumpy Pumpkin Roof Goddess
+                # Chest gets plando'd a triforce piece, then skyview has to be required).
+                if not game_beatable(self.worlds, item_pool):
+                    dungeon.required_reasons += "- Game is not beatable without accessing dungeon while Barren Unrequired Dungeons is on<br>\n"
+                    dungeon.starting_entrance.enable()
+
+                # If this dungeon has any major items plando'd inside of it,
+                # then it has to be a required dungeon.
+                if dungeon.has_any_major_items():
+                    dungeon.required_reasons += "- Dungeon has major items plandomized while Barren Unrequired Dungeons is on<br>\n"
+                    dungeon.starting_entrance.enable()
+
+            # Checks for empty unrequired dungeons being off
+            elif self.setting("empty_unrequired_dungeons") == "off":
+                # If this dungeon has a major item plando'd at its goal location,
+                # then we have to force require it
+                if dungeon.goal_location_has_major_item():
+                    dungeon.required_reasons += "- Dungeon has major item plandomized at its goal location while Barren Unrequired Dungeons is off<br>\n"
+
+            # Checks that happen regardless of empty unrequired dungeons
+
+            # If this dungeon has a non-major item plando'd to its goal location,
+            # then we have to force unrequire it
+            if dungeon.goal_location_has_non_major_item():
+                dungeon.unrequired_reasons += "- Dungeon has a non-major item plandomized at its goal location<br>\n"
+
+            # If this dungeon's goal location is excluded, then we have to force unrequire it
+            if dungeon.goal_location.name in self.setting_map.excluded_locations:
+                dungeon.unrequired_reasons = "- Dungeon's goal location is excluded<br>\n"
+
+            # If a dungeon must be both force required and force unrequired, that's an error
+            if dungeon.required_reasons and dungeon.unrequired_reasons:
+                raise RuntimeError(f"Seed cannot generate because dungeon {dungeon} needs to be both force required and force unrequired.<br>\n" +
+                                   f"Reason(s) to be force required:<br>\n{dungeon.required_reasons}" +
+                                   f"Reason(s) to be force unrequired:<br>\n{dungeon.unrequired_reasons}" +
+                                   f"Please change your settings and/or plandomizer file if applicable.")
+
+        # Set dungeons that have to be force required
+        for dungeon in dungeons:
+            if dungeon.required_reasons:
+                if num_chosen_dungeons < num_required_dungeons:
+                    dungeon.required = True
+                    dungeon.starting_entrance.enable()
+                    num_chosen_dungeons += 1
+                    logging.getLogger("").debug(f"Chose {dungeon} as force required dungeon")
+                # If empty unrequired dungeons is on, and we have to force require more dungeons
+                # than there are the number of required dungeons, then that's an error
+                elif self.setting("empty_unrequired_dungeons") == "on":
+                    required_reason_list = ""
+                    for dungeon in dungeons:
+                        if dungeon.required_reasons:
+                            required_reason_list += f"{dungeon}:<br>\n{dungeon.required_reasons}"
+                    raise RuntimeError(f"Seed cannot generate because more than {num_required_dungeons} dungeons have to be required with the given settings.<br>\n" +
+                                       f"Required Dungeons:<br>\n{required_reason_list}<br>\n" +
+                                       f"Please change your settings and/or plandomizer file if applicable.")
+                # If empty unrequired dungeons is off, then just treat any more required dungeons
+                # as unrequired since that's still valid
+
+        # Prevent unrequired dungeons from being chosen
+        unrequired_reason_list = ""
+        for dungeon in dungeons.copy():
+            if dungeon.unrequired_reasons:
+                unrequired_reason_list += f"{dungeon}:<br>\n{dungeon.unrequired_reasons}"
                 dungeons.remove(dungeon)
-            elif not dungeon.starting_entrance.disabled or (
-                any(
-                    [
-                        loc
-                        for loc in dungeon.locations
-                        if not loc.is_empty()
-                        and loc.current_item.is_major_item
-                        and not loc.has_known_vanilla_item
-                    ]
-                )
-                and self.setting("empty_unrequired_dungeons") == "on"
-            ):
-                dungeon.required = True
-                num_required_dungeons -= 1
-                if (
-                    num_required_dungeons < 0
-                    and self.setting("empty_unrequired_dungeons") == "on"
-                ):
-                    raise WrongInfoError(
-                        "There are more major items plandomized at the end of dungeons than there are required dungeons. Please remove some plandomized major items at the end of dungeons or disable Barren Unrequired Dungeons."
-                    )
-                logging.getLogger("").debug(
-                    f"Chose {dungeon} as force required dungeon"
-                )
 
-        if (
-            num_required_dungeons > len(dungeons)
-            and self.setting("empty_unrequired_dungeons") == "on"
-        ):
-            raise WrongInfoError(
-                "Not enough free goal locations to satisfy required dungeons. Please remove junk that has been plandomized at the end of dungeons"
-            )
-
-        for _ in range(num_required_dungeons):
+        for _ in range(num_chosen_dungeons, num_required_dungeons):
+            # If there are no more dungeons that can be chosen, that means that
+            # there were too many dungeons that had to be unrequired to satisfy
+            # the requirement
+            if not dungeons:  
+                raise RuntimeError(f"Seed cannot generate because there are not enough dungeons to choose to be required.<br>\n" +
+                                   f"The following dungeons must be unrequired with the given settings and/or plandomizer file:<br>\n" +
+                                   f"{unrequired_reason_list}" + 
+                                   f"Please change your settings and/or plandomizer file if applicable.")
             dungeon = dungeons.pop()
             dungeon.required = True
             dungeon.starting_entrance.enable()
@@ -501,10 +539,9 @@ class World:
                     f"Location {location} is not progression due to requiring barren dungeon access"
                 )
 
-        # Now re-enable barren dungeon entrances
-        for dungeon in dungeons:
+        # Now re-enable all dungeon entrances
+        for dungeon in self.dungeons.values():
             dungeon.starting_entrance.enable()
-        sky_keep.starting_entrance.enable()
         # And re-enable the fire sanctuary bird statue
         self.get_entrance(
             "Eldin Pillar -> Inside the Fire Sanctuary Statue"
