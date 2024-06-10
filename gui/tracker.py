@@ -1623,24 +1623,26 @@ class Tracker:
             location_list = self.last_opened_region.get_available_locations()
         else:
             location_list = self.last_opened_region.get_included_locations()
-        if check == False and self.allow_sphere_tracking:
-            # untrack all sphere-tracked items in this area
-            self.last_checked_location = None
-            for location in location_list:
-                if location.tracked_item is not None:
-                    del self.sphere_tracked_items[location]
-                    location.tracked_item = None
-                    location.tracked_item_image = None
-
-            # update the location list to remove the item images
-            self.show_area_locations(self.last_opened_region.area)
 
         self.check_all_locations_in_list(location_list, check)
         self.last_opened_region.update_hover_text()
 
     def check_all_locations_in_list(self, location_list: list[Location], check=True):
+        should_undo_sphere_tracking = check == False and self.allow_sphere_tracking
+
         for location in location_list:
             location.marked = check
+            if should_undo_sphere_tracking and location.tracked_item is not None:
+                # untrack sphere-tracked items
+                del self.sphere_tracked_items[location]
+                location.tracked_item = None
+                location.tracked_item_image = None
+
+        if should_undo_sphere_tracking:
+            self.last_checked_location = None
+            if self.last_opened_region is not None:
+                # update the location list to remove the item images
+                self.show_area_locations(self.last_opened_region.area)
         self.update_tracker()
 
     def update_hover_text(self, text: str):
