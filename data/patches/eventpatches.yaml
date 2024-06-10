@@ -369,7 +369,7 @@
   - name: Give rando BotG storyflag
     type: setstoryflag
     flow:
-      setstoryflag: 893 # Rando storyflag for BotG item
+      setstoryflag: 493 # Unlocked Goddess Walls / BotG flag
       next: Check harp storyflag
   - name: Check harp storyflag
     type: checkstoryflag
@@ -429,7 +429,7 @@
   - name: Check BotG storyflag
     type: checkstoryflag
     flow:
-      checkstoryflag: 893
+      checkstoryflag: 493 # Unlocked Goddess Walls / BotG flag
     cases:
       - Set GoT raised
       - -1
