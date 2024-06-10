@@ -17,7 +17,7 @@ class TrackerArea(QLabel):
     change_map_area = Signal(str)
     show_entrances = Signal(str)
     set_main_entrance_target = Signal(Entrance)
-    check_all = Signal(list)
+    check_all = Signal(list, bool)
     mouse_hover = Signal(str)
 
     default_stylesheet = (
@@ -53,6 +53,7 @@ class TrackerArea(QLabel):
         self.main_entrance: Entrance = None
         self.entrances: list[Entrance] = []
         self.hints: set[str] = set()
+        self.color: str = "gray"
 
         self.update_color("gray")
         self.setTextFormat(QtCore.Qt.TextFormat.RichText)
@@ -170,7 +171,7 @@ class TrackerArea(QLabel):
             self.update_color("orange")
             self.setText(str(num_available_locations))
 
-        self.tooltip = f"{self.area} ({num_available_locations}/{num_unmarked_locations})\nClick to Expand{chr(10) + 'Right click to set entrance' if self.main_entrance else ''}"
+        self.tooltip = f"{self.area} ({num_available_locations}/{num_unmarked_locations})\nClick to Expand"
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
 
@@ -185,14 +186,21 @@ class TrackerArea(QLabel):
             if self.main_entrance:
                 self.set_main_entrance_target.emit(self.main_entrance)
             elif len(self.tracker_children) == 0:
-                # check all locations when right-clicked if this has no child regions
-                self.check_all.emit(self.get_included_locations())
+                if self.color == "orange":
+                    # if not all locations are in logic, check all in logic
+                    self.check_all.emit(self.get_available_locations(), True)
+                elif len(self.get_unmarked_locations()) == 0:
+                    # uncheck all locations if all are marked
+                    self.check_all.emit(self.get_included_locations(), False)
+                else:
+                    # check all locations if none or all are in logic
+                    self.check_all.emit(self.get_included_locations(), True)
             # don't propagate the event -- this prevents right-clicks from going back to the root
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
 
-        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-25, int(self.height() / 2))
-        QToolTip.showText(coords, self.tooltip + self.get_hint_tooltip_text(), self)
+        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-35, int(self.height() / 2))
+        QToolTip.showText(coords, self.tooltip + self.get_extra_tooltip_text(), self)
         self.update_hover_text()
 
         return super().mouseMoveEvent(ev)
@@ -206,13 +214,25 @@ class TrackerArea(QLabel):
         )
 
     def update_color(self, color: str) -> None:
-        stylesheet = TrackerArea.default_stylesheet.replace("COLOR", color)
+        self.color = color
+        stylesheet = TrackerArea.default_stylesheet.replace("COLOR", self.color)
         stylesheet = stylesheet.replace("RADIUS", self.border_radius)
         stylesheet = stylesheet + TRACKER_TOOLTIP_STYLESHEET
         self.setStyleSheet(stylesheet)
 
-    def get_hint_tooltip_text(self) -> str:
-        text = ""
+    def get_extra_tooltip_text(self) -> str:
+        if self.main_entrance:
+            text = "\nRight-click to set entrance"
+        elif len(self.tracker_children) == 0:
+            if self.color == "orange":
+                text = "\nRight-click to check all in logic"
+            elif len(self.get_unmarked_locations()) == 0:
+                text = "\nRight-click to uncheck all"
+            else:
+                text = "\nRight-click to check all"
+        else:
+            text = ""
+
         for hint in self.hints:
             text += "\n" + hint
         for child in self.tracker_children:
