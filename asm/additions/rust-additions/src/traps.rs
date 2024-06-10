@@ -102,7 +102,11 @@ pub fn update_traps() {
             // Burn trap
             0 => {
                 (*PLAYER_PTR).burn_timer = 32;
-                (*PLAYER_PTR).sheild_burn_timer = 32;
+
+                if trap_should_burn_shield() {
+                    (*PLAYER_PTR).shield_burn_timer = 32;
+                }
+
                 TRAP_DURATION = 256;
             },
             // Curse trap
@@ -201,8 +205,8 @@ pub fn handle_effect_timers() -> u32 {
                 if (*PLAYER_PTR).burn_timer == 0 {
                     (*PLAYER_PTR).burn_timer = 32;
                 }
-                if (*PLAYER_PTR).sheild_burn_timer == 0 {
-                    (*PLAYER_PTR).sheild_burn_timer = 32;
+                if (*PLAYER_PTR).shield_burn_timer == 0 && trap_should_burn_shield() {
+                    (*PLAYER_PTR).shield_burn_timer = 32;
                 }
             } else if TRAP_ID == 1 {
                 (*PLAYER_PTR).cursed_timer = 512;
@@ -212,6 +216,21 @@ pub fn handle_effect_timers() -> u32 {
         }
 
         return 0;
+    }
+}
+
+#[no_mangle]
+pub fn trap_should_burn_shield() -> bool {
+    unsafe {
+        let shield_pouch_slot = (*FILE_MGR).FA.shield_pouch_slot as usize;
+        if shield_pouch_slot < 8 {
+            let current_shield = (*FILE_MGR).FA.pouch_items[shield_pouch_slot] & 0xFF;
+            // Wooden Shield, Banded Shield, Braced Shield
+            if current_shield == 116 || current_shield == 117 || current_shield == 118 {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
