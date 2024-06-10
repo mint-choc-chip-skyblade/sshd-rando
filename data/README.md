@@ -11,7 +11,7 @@ Below is the list of all the flags that the randomizer changes:
 
 * 323: Repair Gondo's Junk Check (repurposed: "Learn about Scrapper near Village Windmill")
 
-* 893: Ballad of the Goddess item
+* 493: Ballad of the Goddess item / Unlocked Goddess Walls
 
 * 894: Should fill bottle not create new
 

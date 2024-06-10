@@ -60,6 +60,22 @@ F000: # Skyloft
     layer: 6
 
   # F000 objadds
+  - name: Light Tower SwHrp on layer 6
+    type: objadd
+    layer: 6
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFF0F021D
+      params2: 0xFFFFFFFF
+      posx: 3040
+      posy: 2175
+      posz: 6084
+      anglex: 0
+      angley: 3276
+      anglez: 0
+      id: 0xFDC3
+      name: SwHrp
   - name: Horwell on layer 4
     type: objadd
     layer: 4
