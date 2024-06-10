@@ -288,3 +288,44 @@ pub fn set_skyloft_thunderhead_sceneflag() {
 
     flag::set_global_sceneflag(0, 29);
 }
+
+// prevent_pyrup_fire_when_underground1
+#[no_mangle]
+pub fn not_should_pyrup_breathe_fire(player: *mut player::dPlayer) -> bool {
+    unsafe {
+        if !((*(*player).vtable).is_recovering_related)(player) && !is_player_in_tunnel() {
+            return false;
+        }
+        return true;
+    }
+}
+
+#[no_mangle]
+pub fn prevent_pyrup_fire_when_underground2(some_value: i16) -> bool {
+    unsafe {
+        let mut should_prevent_fire = true;
+
+        if !is_player_in_tunnel() {
+            should_prevent_fire = false;
+
+            // Replaced instructions
+            asm!("strh {0:w}, [x19, #0x1d6]", "strh {0:w}, [x19, #0x13e]", in(reg) some_value);
+        }
+
+        return should_prevent_fire;
+    }
+}
+
+#[no_mangle]
+pub fn is_player_in_tunnel() -> bool {
+    let current_action = unsafe { (*PLAYER_PTR).current_action };
+
+    if current_action == player::PLAYER_ACTIONS::ATTACK_CRAWL
+        || current_action == player::PLAYER_ACTIONS::DAMAGE_CRAWL
+        || current_action == player::PLAYER_ACTIONS::CRAWLSPACE
+    {
+        return true;
+    }
+
+    return false;
+}
