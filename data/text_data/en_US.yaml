@@ -3818,19 +3818,19 @@
   pretty: Lanayru Mine - Chest behind First Landing Robot
   cryptic: a <r<chest at the entry to a mine>>
 
-- name: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
-  standard: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
-  pretty: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
+- name: Lanayru Mine - Blow Digging Robot's Wall before Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Blow Digging Robot's Wall before Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Blow Digging Robot's Wall before Side Room near First Timeshift Stone
   cryptic: <r<dusting a worker>> near a <y<large time distortion>>
 
-- name: Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone
-  standard: Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone
-  pretty: Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone
+- name: Lanayru Mine - Blow Left Digging Robot's Wall in Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Blow Left Digging Robot's Wall in Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Blow Left Digging Robot's Wall in Side Room near First Timeshift Stone
   cryptic: <r<dusting a worker>> near a <y<large time distortion>>
 
-- name: Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone
-  standard: Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone
-  pretty: Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone
+- name: Lanayru Mine - Blow Right Digging Robot's Wall in Side Room near First Timeshift Stone
+  standard: Lanayru Mine - Blow Right Digging Robot's Wall in Side Room near First Timeshift Stone
+  pretty: Lanayru Mine - Blow Right Digging Robot's Wall in Side Room near First Timeshift Stone
   cryptic: <r<dusting a worker>> near a <y<large time distortion>>
 
 - name: Lanayru Mine - Chest in Side Room near First Timeshift Stone
@@ -3868,14 +3868,14 @@
   pretty: Lanayru Mine - Slingshot Right Robot Eye above First Minecart Doorway
   cryptic: <r<shooting the guardian>> of a <y<large time distortion>>
 
-- name: Lanayru Mine - Blow Left Digging Robot after First Minecart Ride
-  standard: Lanayru Mine - Blow Left Digging Robot after First Minecart Ride
-  pretty: Lanayru Mine - Blow Left Digging Robot after First Minecart Ride
+- name: Lanayru Mine - Blow Left Digging Robot's Wall after First Minecart Ride
+  standard: Lanayru Mine - Blow Left Digging Robot's Wall after First Minecart Ride
+  pretty: Lanayru Mine - Blow Left Digging Robot's Wall after First Minecart Ride
   cryptic: <r<dusting a worker>> before a <y<sandy tunnel>>
 
-- name: Lanayru Mine - Blow Right Digging Robot after First Minecart Ride
-  standard: Lanayru Mine - Blow Right Digging Robot after First Minecart Ride
-  pretty: Lanayru Mine - Blow Right Digging Robot after First Minecart Ride
+- name: Lanayru Mine - Blow Right Digging Robot's Wall after First Minecart Ride
+  standard: Lanayru Mine - Blow Right Digging Robot's Wall after First Minecart Ride
+  pretty: Lanayru Mine - Blow Right Digging Robot's Wall after First Minecart Ride
   cryptic: <r<dusting a worker>> before a <y<sandy tunnel>>
 
 - name: Lanayru Mine - Chest behind Northeast Statue
@@ -3893,14 +3893,14 @@
   pretty: Lanayru Mine - Rupee behind Southwest Statue
   cryptic: a <r<rupee hidden behind a falling statue>>
 
-- name: Lanayru Mine - Blow Digging Robot near Mine Exit
-  standard: Lanayru Mine - Blow Digging Robot near Mine Exit
-  pretty: Lanayru Mine - Blow Digging Robot near Mine Exit
+- name: Lanayru Mine - Blow Digging Robot's Wall near Mine Exit
+  standard: Lanayru Mine - Blow Digging Robot's Wall near Mine Exit
+  pretty: Lanayru Mine - Blow Digging Robot's Wall near Mine Exit
   cryptic: <r<dusting a worker>> near <y<rubble>>
 
-- name: Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone
-  standard: Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone
-  pretty: Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone
+- name: Lanayru Mine - Blow Digging Robot's Wall near Last Mine Timeshift Stone
+  standard: Lanayru Mine - Blow Digging Robot's Wall near Last Mine Timeshift Stone
+  pretty: Lanayru Mine - Blow Digging Robot's Wall near Last Mine Timeshift Stone
   cryptic: <r<dusting a worker>> near a <y<small time distortion>>
 
 - name: Lanayru Mine - Chest at the End of Mine
