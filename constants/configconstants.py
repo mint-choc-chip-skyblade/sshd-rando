@@ -350,6 +350,7 @@ LOCATION_ALIASES = {
     "Skipper's Retreat - Goddess Cube": "Skipper's Retreat - Goddess Cube on Southwest Pillar",
     "Skipper's Retreat - Chest on Cacti Pillar": "Skipper's Retreat - Chest on North Cacti Pillar",
     "Pirate Stronghold - Goddess Cube": "Pirate Stronghold - Goddess Cube on top of Shark Head",
+    "Skyview Spring - Goddess Cube": "",
 }
 
 SETTING_ALIASES = {

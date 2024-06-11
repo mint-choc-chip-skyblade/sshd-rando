@@ -4794,9 +4794,9 @@
   cryptic: a <r<crest deep in a forest>>
   goal_name: Ghirahim 1
 
-- name: Skyview Spring - Goddess Cube
-  standard: Skyview Spring - Goddess Cube
-  pretty: Skyview Spring - Goddess Cube
+- name: Skyview Spring - Goddess Cube behind Crest
+  standard: Skyview Spring - Goddess Cube behind Crest
+  pretty: Skyview Spring - Goddess Cube behind Crest
   cryptic:
 
 - name: Earth Temple - Bonk Front Left Elephant Pillar
