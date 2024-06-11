@@ -309,7 +309,7 @@
   exits:
     Temple of Time North: Nothing
   locations:
-    Temple of Time - Goddess Cube: Goddess_Sword
+    Temple of Time - Goddess Cube on High Platform North of Tree: Goddess_Sword
 
 - name: Temple of Time North
   hint_region: Temple of Time

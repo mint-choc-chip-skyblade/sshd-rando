@@ -4649,7 +4649,7 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Temple of Time - Goddess Cube
+- name: Temple of Time - Goddess Cube on High Platform North of Tree
   original_item: Temple of Time Goddess Cube
   types:
     - Goddess Cube

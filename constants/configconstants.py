@@ -343,6 +343,7 @@ LOCATION_ALIASES = {
     "Flooded Faron Woods - Rupee behind West Breakable Rocks 2": "Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2",
     "Lanayru Mine - Goddess Cube": "Lanayru Mine - Goddess Cube behind First Landing Robot",
     "Lanayru Mine - Chest behind First Landing": "Lanayru Mine - Chest behind First Landing Robot",
+    "Temple of Time - Goddess Cube": "Temple of Time - Goddess Cube on High Platform North of Tree",
 }
 
 SETTING_ALIASES = {
