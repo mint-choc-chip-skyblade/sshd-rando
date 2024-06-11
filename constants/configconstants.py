@@ -350,7 +350,9 @@ LOCATION_ALIASES = {
     "Skipper's Retreat - Goddess Cube": "Skipper's Retreat - Goddess Cube on Southwest Pillar",
     "Skipper's Retreat - Chest on Cacti Pillar": "Skipper's Retreat - Chest on North Cacti Pillar",
     "Pirate Stronghold - Goddess Cube": "Pirate Stronghold - Goddess Cube on top of Shark Head",
-    "Skyview Spring - Goddess Cube": "",
+    "Skyview Spring - Goddess Cube": "Skyview Spring - Goddess Cube behind Crest",
+    "Temple of Time - Bonk Northeast Pillar": "Temple of Time - Bonk Northeast Bird Pillar near Gate of Time",
+    "Temple of Time - Bonk Southeast Pillar": "Temple of Time - Bonk Southeast Bird Pillar near Gate of Time",
 }
 
 SETTING_ALIASES = {

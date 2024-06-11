@@ -4597,7 +4597,7 @@
   Paths:
     - stage/F300_4/r0/l0/Item/0xFC0C
 
-- name: Temple of Time - Bonk Northeast Pillar
+- name: Temple of Time - Bonk Northeast Bird Pillar near Gate of Time
   original_item: Blue Rupee
   types:
     - Hidden Items
@@ -4605,7 +4605,7 @@
   Paths:
     - stage/F300_4/r0/l0/TgReact/0xFC49
 
-- name: Temple of Time - Bonk Southeast Pillar
+- name: Temple of Time - Bonk Southeast Bird Pillar near Gate of Time
   original_item: Blue Rupee
   types:
     - Hidden Items

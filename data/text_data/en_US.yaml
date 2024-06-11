@@ -4113,14 +4113,14 @@
   pretty: Temple of Time - South Rupee on Tree Trunk
   cryptic: a <r<rupee on a time-travelling tree>>
 
-- name: Temple of Time - Bonk Northeast Pillar
-  standard: Temple of Time - Bonk Northeast Pillar
-  pretty: Temple of Time - Bonk Northeast Pillar
+- name: Temple of Time - Bonk Northeast Bird Pillar near Gate of Time
+  standard: Temple of Time - Bonk Northeast Bird Pillar near Gate of Time
+  pretty: Temple of Time - Bonk Northeast Bird Pillar near Gate of Time
   cryptic: <r<disturbing a statue of time>>
 
-- name: Temple of Time - Bonk Southeast Pillar
-  standard: Temple of Time - Bonk Southeast Pillar
-  pretty: Temple of Time - Bonk Southeast Pillar
+- name: Temple of Time - Bonk Southeast Bird Pillar near Gate of Time
+  standard: Temple of Time - Bonk Southeast Bird Pillar near Gate of Time
+  pretty: Temple of Time - Bonk Southeast Bird Pillar near Gate of Time
   cryptic: <r<disturbing a statue of time>>
 
 - name: Temple of Time - Rupee on North Gate of Time Pillar
