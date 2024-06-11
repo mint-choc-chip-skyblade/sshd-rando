@@ -1199,7 +1199,14 @@ pub fn spawn_actor(
             from_ref(&(*ROOM_MGR).base.members.members.actor_mgr.connect_node);
         let group_type: u8 = 2; // 0 = other, 1 = scene, 2 = actor, 3 = unk
 
-        return allocateNewActor(actorid, connect_parent, actor_param1, group_type);
+        let actor = allocateNewActor(actorid, connect_parent, actor_param1, group_type);
+
+        // Reset globals
+        ACTORBASE_PARAM2 = 0xFFFFFFFF;
+        ACTOR_PARAM_POS = core::ptr::null_mut();
+        ACTOR_PARAM_ROT = core::ptr::null_mut();
+        ACTOR_PARAM_SCALE = core::ptr::null_mut();
+        return actor;
     }
 }
 
