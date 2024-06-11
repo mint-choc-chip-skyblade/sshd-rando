@@ -308,7 +308,7 @@
     Volcano Summit Waterfall: Fireshield_Earrings
     Past Volcano Summit: Fireshield_Earrings
   locations:
-    Volcano Summit - Goddess Cube in Lava Lake: (Fireshield_Earrings and Long_Range_Skyward_Strike) or 'Beaten_Boko_Base'
+    Volcano Summit - Goddess Cube in Lava Lake: Fireshield_Earrings and (Long_Range_Skyward_Strike or ('Beaten_Boko_Base' and Goddess_Sword))
 
 - name: Volcano Summit Waterfall
   hint_region: Volcano Summit
@@ -353,8 +353,6 @@
 
 - name: Bokoblin Base Volcano East
   hint_region: Bokoblin Base
-  events:
-    Goddess Cube near Mogma Turf Entrance: Goddess_Sword
   exits:
     Bokoblin Base Prison: Mogma_Mitts
     Bokoblin Base Before Drawbridge: Nothing
@@ -364,6 +362,7 @@
     Bokoblin Base - Bonk Hammer in Hut near Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
     Bokoblin Base - Blow Cloth above Hut near Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
     Bokoblin Base - Chest on Cliff: (Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts) and Gust_Bellows
+    Eldin Volcano - Goddess Cube near Mogma Turf Entrance: Goddess_Sword
 
 - name: Bokoblin Base Before Drawbridge
   hint_region: Bokoblin Base
@@ -398,9 +397,6 @@
 
 - name: Bokoblin Base Outside Earth Temple
   hint_region: Bokoblin Base
-  events:
-    Goddess Cube East of Earth Temple Entrance: Goddess_Sword
-    Goddess Cube West of Earth Temple Entrance: Goddess_Sword and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
   exits:
     Bokoblin Base Hot Cave: Nothing
     Bokoblin Base Outside Upper Eldin Cave: Nothing
@@ -408,6 +404,8 @@
     Bokoblin Base - Bonk Campfire East of Temple: Nothing
     Bokoblin Base - Chest East of Temple down Lava River: Nothing
     Bokoblin Base - Chest West of Temple behind Watch Tower: (Slingshot or Bow or Bomb_Bag or Goddess_Sword) and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
+    Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple: Digging_Mitts and Goddess_Sword and Can_Bypass_Boko_Base_Watch_Tower 
+    Eldin Volcano - Goddess Cube East of Temple: Goddess_Sword
 
 - name: Bokoblin Base Outside Upper Eldin Cave
   hint_region: Bokoblin Base
@@ -430,8 +428,6 @@
 
 - name: Bokoblin Base Summit
   hint_region: Bokoblin Base
-  events:
-    Goddess Cube inside Volcano Summit: Fireshield_Earrings
   exits:
     Bokoblin Base Hot Cave: Fireshield_Earrings
     Fire Dragon's Lair: Fireshield_Earrings
@@ -439,6 +435,7 @@
     Bokoblin Base - First Chest in Volcano Summit: Fireshield_Earrings
     Bokoblin Base - Raised Chest in Volcano Summit: Fireshield_Earrings
     Bokoblin Base - Chest in Volcano Summit Alcove: Fireshield_Earrings and Sword
+    Volcano Summit - Goddess Cube in Lava Lake: Fireshield_Earrings and Goddess_Sword
 
 - name: Fire Dragon's Lair
   hint_region: Bokoblin Base
