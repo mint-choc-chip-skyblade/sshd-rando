@@ -3933,9 +3933,9 @@
   pretty: Lanayru Mine - Stamina Fruit near Spumes 3
   cryptic: a <r<fruit surrounded by sandy spumes>>
 
-- name: Lanayru Mine - Goddess Cube
-  standard: Lanayru Mine - Goddess Cube
-  pretty: Lanayru Mine - Goddess Cube
+- name: Lanayru Mine - Goddess Cube behind First Landing Robot
+  standard: Lanayru Mine - Goddess Cube behind First Landing Robot
+  pretty: Lanayru Mine - Goddess Cube behind First Landing Robot
   cryptic:
 
 - name: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit
