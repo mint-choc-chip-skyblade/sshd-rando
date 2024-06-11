@@ -305,7 +305,7 @@ def break_lines(text: str) -> str:
         "!": 7,
     }
 
-    max_line_length = 700
+    max_line_length = 695
     cur_line_width = 0
 
     i = 0
