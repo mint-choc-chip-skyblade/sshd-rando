@@ -616,7 +616,7 @@
     - "On"
   options:
     - "off": "Traps that spawn Groose will not be added to the item pool."
-    - "on": "Traps that spawn Groose can be picked when replacing items with traps (controlled by the Trap Mode setting)."
+    - "on": "Traps that spawn Groose can be picked when replacing items with traps (controlled by the Trap Mode setting). To prevent performance issues, Groose will not spawn in Silent Realms."
 
 - name: health_traps
   default_option: "off"

@@ -50,6 +50,8 @@ extern "C" {
     static mut ACTORBASE_PARAM2: u32;
     static mut ITEM_GET_BOTTLE_POUCH_SLOT: u32;
 
+    static mut CURRENT_STAGE_NAME: [u8; 8];
+
     // Custom symbols
     static mut TRAP_ID: u8;
     static mut NEXT_TRAP_ID: u8;
@@ -156,15 +158,18 @@ pub fn update_traps() {
                     z: 1.0,
                 } as *mut math::Vec3f;
 
-                actor::spawn_actor(
-                    actor::ACTORID::NPC_RVL,
-                    (*ROOM_MGR).roomid.into(),
-                    0xFFFFFFFF,
-                    actor_pos,
-                    actor_rot,
-                    actor_scale,
-                    0xFFFFFFFF,
-                );
+                // Only spawn Groose if not in a Silent Realm because it lags for 2-3 seconds
+                if &CURRENT_STAGE_NAME[..1] != b"S" {
+                    actor::spawn_actor(
+                        actor::ACTORID::NPC_RVL,
+                        (*ROOM_MGR).roomid.into(),
+                        0xFFFFFFFF,
+                        actor_pos,
+                        actor_rot,
+                        actor_scale,
+                        0xFFFFFFFF,
+                    );
+                }
 
                 playFanfareMaybe(FANFARE_SOUND_MGR, 0x1705); // Groose's theme
             },
