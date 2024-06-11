@@ -293,7 +293,7 @@ LOCATION_ALIASES = {
     "Volcano Summit - Gossip Stone near Second Thirsty Frog": "Volcano Summit - Gossip Stone between Small Thirsty Frogs",
     "Temple of Time - Gossip Stone": "Temple of Time - Gossip Stone near Robot",
     "Din's Silent Realm - Stamina Fruit on First Slope": "Din's Silent Realm - Stamina Fruit on Slope after Volcano Ascent",
-    "Faron Woods - Stamina Fruit past Empty Slope": "Faron Woods - Stamina Fruit after Kiwki in Clearing",
+    "Faron Woods - Stamina Fruit past Empty Slope": "Faron Woods - Stamina Fruit after Kikwi in Clearing",
     "Faron Woods - Stamina Fruit past Baba Slope": "Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba",
     "Eldin Volcano - Stamina Fruit in front of First Slope 1": "Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 1",
     "Eldin Volcano - Stamina Fruit in front of First Slope 2": "Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 2",
@@ -337,6 +337,7 @@ LOCATION_ALIASES = {
     "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1": "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1",
     "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2": "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 2",
     "Lanayru Mining Facility - Blow Painting behind First Clawlspace": "Lanayru Mining Facility - Blow Painting behind First Crawlspace",
+    "Faron Woods - Stamina Fruit after Kiwki in Clearing": "Faron Woods - Stamina Fruit after Kikwi in Clearing"
 }
 
 SETTING_ALIASES = {

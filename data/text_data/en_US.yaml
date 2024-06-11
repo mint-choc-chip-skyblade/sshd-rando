@@ -2643,9 +2643,9 @@
   pretty: Faron Woods - Stamina Fruit on Vines below First Log
   cryptic: a <r<fruit below a forest log>>
 
-- name: Faron Woods - Stamina Fruit after Kiwki in Clearing
-  standard: Faron Woods - Stamina Fruit after Kiwki in Clearing
-  pretty: Faron Woods - Stamina Fruit after Kiwki in Clearing
+- name: Faron Woods - Stamina Fruit after Kikwi in Clearing
+  standard: Faron Woods - Stamina Fruit after Kikwi in Clearing
+  pretty: Faron Woods - Stamina Fruit after Kikwi in Clearing
   cryptic: a <r<fruit beyond a forest slope>>
 
 - name: Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba
