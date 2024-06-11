@@ -123,7 +123,7 @@
   locations:
     Upper Skyloft - Owlan's Gift: Day
     Upper Skyloft - Rescue Remlit above Knight Academy: Day
-    Upper Skyloft - Ring Knight Academy Bell: Distance_Activator or (Bomb_Bag and logic_bomb_throws)
+    Upper Skyloft - Ring Knight Academy Bell: Distance_Activator or Gust_Bellows or (Bomb_Bag and logic_bomb_throws)
     Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors: Slingshot
     Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors: Slingshot
     Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors: Slingshot
