@@ -337,7 +337,9 @@ LOCATION_ALIASES = {
     "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 1": "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1",
     "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue 2": "Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 2",
     "Lanayru Mining Facility - Blow Painting behind First Clawlspace": "Lanayru Mining Facility - Blow Painting behind First Crawlspace",
-    "Faron Woods - Stamina Fruit after Kiwki in Clearing": "Faron Woods - Stamina Fruit after Kikwi in Clearing"
+    "Faron Woods - Stamina Fruit after Kiwki in Clearing": "Faron Woods - Stamina Fruit after Kikwi in Clearing",
+    "Flooded Faron Woods - Rupee behind West Breakable Rocks 1": "Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1",
+    "Flooded Faron Woods - Rupee behind West Breakable Rocks 2": "Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2",
 }
 
 SETTING_ALIASES = {
