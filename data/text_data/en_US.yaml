@@ -1247,9 +1247,9 @@
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Lanayru Mine Goddess Cube
-  standard: Lanayru Mine Goddess Cube
-  pretty: the <Lanayru Mine Goddess Cube>
+- name: Lanayru Mine Goddess Cube behind First Landing Robot
+  standard: Lanayru Mine Goddess Cube behind First Landing Robot
+  pretty: the <Lanayru Mine Goddess Cube behind First Landing Robot>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
@@ -3813,9 +3813,9 @@
   pretty: Lanayru Mine - Slingshot Right Eye of First Landing Robot
   cryptic: <r<shooting the eye>> of a <y<welcoming robot>>
 
-- name: Lanayru Mine - Chest behind First Landing
-  standard: Lanayru Mine - Chest behind First Landing
-  pretty: Lanayru Mine - Chest behind First Landing
+- name: Lanayru Mine - Chest behind First Landing Robot
+  standard: Lanayru Mine - Chest behind First Landing Robot
+  pretty: Lanayru Mine - Chest behind First Landing Robot
   cryptic: a <r<chest at the entry to a mine>>
 
 - name: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
