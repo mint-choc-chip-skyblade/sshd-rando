@@ -11,9 +11,9 @@
   locations:
     Lanayru Mine - Slingshot Left Eye of First Landing Robot: Slingshot
     Lanayru Mine - Slingshot Right Eye of First Landing Robot: Slingshot
-    Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone: Gust_Bellows
-    Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone: Gust_Bellows and 'Lanayru_Mine_First_Timeshift_Stone'
-    Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone: Gust_Bellows and 'Lanayru_Mine_First_Timeshift_Stone'
+    Lanayru Mine - Blow Digging Robot's Wall before Side Room near First Timeshift Stone: Gust_Bellows
+    Lanayru Mine - Blow Left Digging Robot's Wall in Side Room near First Timeshift Stone: Gust_Bellows and 'Lanayru_Mine_First_Timeshift_Stone'
+    Lanayru Mine - Blow Right Digging Robot's Wall in Side Room near First Timeshift Stone: Gust_Bellows and 'Lanayru_Mine_First_Timeshift_Stone'
     Lanayru Mine - Chest in Side Room near First Timeshift Stone: "'Lanayru_Mine_First_Timeshift_Stone'"
     Lanayru Mine - Rupee on Southeast Conveyor 1: Beetle
     Lanayru Mine - Rupee on Southeast Conveyor 2: Beetle
@@ -43,8 +43,8 @@
     Lanayru Mine Entry: "'Blow_Down_First_Mine_Statue'"
     Lanayru Mine End: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle) or 'Obtain_Stamina_Potion' or logic_brakeslide
   locations:
-    Lanayru Mine - Blow Left Digging Robot after First Minecart Ride: Gust_Bellows
-    Lanayru Mine - Blow Right Digging Robot after First Minecart Ride: Gust_Bellows
+    Lanayru Mine - Blow Left Digging Robot's Wall after First Minecart Ride: Gust_Bellows
+    Lanayru Mine - Blow Right Digging Robot's Wall after First Minecart Ride: Gust_Bellows
     Lanayru Mine - Chest behind Northeast Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
     Lanayru Mine - Rupee behind Northeast Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
     Lanayru Mine - Rupee behind Southwest Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
@@ -63,8 +63,8 @@
     Lanayru Mine Statues Area: "'Blow_Down_First_Mine_Statue' or logic_brakeslide or 'Obtain_Stamina_Potion'"
     Lanayru Mine In Minecart: Can_Hit_Timeshift_Stone
   locations:
-    Lanayru Mine - Blow Digging Robot near Mine Exit: Gust_Bellows
-    Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone: Gust_Bellows
+    Lanayru Mine - Blow Digging Robot's Wall near Mine Exit: Gust_Bellows
+    Lanayru Mine - Blow Digging Robot's Wall near Last Mine Timeshift Stone: Gust_Bellows
     Lanayru Mine - Chest at the End of Mine: Nothing # There's a baba in the way
     Lanayru Mine - Stamina Fruit after Falling Statues: Nothing
     Lanayru Mine - Stamina Fruit near Spumes 1: Nothing

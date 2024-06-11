@@ -145,6 +145,13 @@ LOCATION_ALIASES = {
     "Temple of Time - Bonk Northeast Pillar": "Temple of Time - Bonk Northeast Bird Pillar near Gate of Time",
     "Temple of Time - Bonk Southeast Pillar": "Temple of Time - Bonk Southeast Bird Pillar near Gate of Time",
     "Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone": "Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone",
+    "Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone": "Lanayru Mine - Blow Digging Robot's Wall before Side Room near First Timeshift Stone",
+    "Lanayru Mine - Blow Left Digging Robot in Side Room near First Timeshift Stone": "Lanayru Mine - Blow Left Digging Robot's Wall in Side Room near First Timeshift Stone",
+    "Lanayru Mine - Blow Right Digging Robot in Side Room near First Timeshift Stone": "Lanayru Mine - Blow Right Digging Robot's Wall in Side Room near First Timeshift Stone",
+    "Lanayru Mine - Blow Left Digging Robot after First Minecart Ride": "Lanayru Mine - Blow Left Digging Robot's Wall after First Minecart Ride",
+    "Lanayru Mine - Blow Right Digging Robot after First Minecart Ride": "Lanayru Mine - Blow Right Digging Robot's Wall after First Minecart Ride",
+    "Lanayru Mine - Blow Digging Robot near Mine Exit": "Lanayru Mine - Blow Digging Robot's Wall near Mine Exit",
+    "Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone": "Lanayru Mine - Blow Digging Robot's Wall near Last Mine Timeshift Stone",
 }
 
 SETTING_ALIASES = {
