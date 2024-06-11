@@ -4838,7 +4838,7 @@
   Paths:
     - stage/F302/r0/l0/TgReact/0xFC5C
 
-- name: Lanayru Gorge - Life Tree Digging Spot
+- name: Lanayru Gorge - Life Tree Digging Spot near Sandfalls
   original_item: Life Tree Seedling
   types:
     - Digging Spots
@@ -4906,7 +4906,7 @@
   Paths:
     - stage/F302/r0/l0/Item/0xFC2D
 
-- name: Lanayru Gorge - Goddess Cube
+- name: Lanayru Gorge - Goddess Cube near Sandfalls
   original_item: Lanayru Gorge Goddess Cube
   types:
     - Goddess Cube
@@ -5028,7 +5028,7 @@
   Paths:
     - stage/F301/r0/l0/TgReact/0xFC41
 
-- name: Ancient Harbour - Goddess Cube
+- name: Ancient Harbour - Goddess Cube in North Cave
   original_item: Ancient Harbour Goddess Cube
   types:
     - Goddess Cube
@@ -5044,13 +5044,13 @@
   Paths:
     - stage/F301_3/r0/l0/TBox/78
 
-- name: Skipper's Retreat - Goddess Cube
+- name: Skipper's Retreat - Goddess Cube on Southwest Pillar
   original_item: Skipper's Retreat Goddess Cube
   types:
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Skipper's Retreat - Chest on Cacti Pillar
+- name: Skipper's Retreat - Chest on North Cacti Pillar
   original_item: Uncommon Treasure
   types:
     - Chests
@@ -5311,7 +5311,7 @@
   Paths:
     - stage/F301_6/r0/l0/Item/0xFC1E
 
-- name: Pirate Stronghold - Goddess Cube
+- name: Pirate Stronghold - Goddess Cube on top of Shark Head
   original_item: Pirate Stronghold Goddess Cube
   types:
     - Goddess Cube

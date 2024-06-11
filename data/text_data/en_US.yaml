@@ -4268,10 +4268,10 @@
   pretty: Lanayru Gorge - Bonk Wall Right of Stairs
   cryptic: <r<disturbing a some stairs>> near an <y<ancient dragon>>
 
-- name: Lanayru Gorge - Life Tree Digging Spot
-  standard: Lanayru Gorge - Life Tree Digging Spot
-  pretty: Lanayru Gorge - Life Tree Digging Spot
-  cryptic: <r<soft soil in the desert>>
+- name: Lanayru Gorge - Life Tree Digging Spot near Sandfalls
+  standard: Lanayru Gorge - Life Tree Digging Spot near Sandfalls
+  pretty: Lanayru Gorge - Life Tree Digging Spot near Sandfalls
+  cryptic: <r<soft soil beneath a sandy tree>>
 
 - name: Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree
   standard: Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree
@@ -4308,9 +4308,9 @@
   pretty: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 5
   cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
-- name: Lanayru Gorge - Goddess Cube
-  standard: Lanayru Gorge - Goddess Cube
-  pretty: Lanayru Gorge - Goddess Cube
+- name: Lanayru Gorge - Goddess Cube near Sandfalls
+  standard: Lanayru Gorge - Goddess Cube near Sandfalls
+  pretty: Lanayru Gorge - Goddess Cube near Sandfalls
   cryptic:
 
 - name: Lanayru Gorge - Blow Grass near Lone Boulder
@@ -4383,9 +4383,9 @@
   pretty: Ancient Harbour - Slingshot South Box Robot Eye
   cryptic: <r<shooting a southern dock worker's eye>>
 
-- name: Ancient Harbour - Goddess Cube
-  standard: Ancient Harbour - Goddess Cube
-  pretty: Ancient Harbour - Goddess Cube
+- name: Ancient Harbour - Goddess Cube in North Cave
+  standard: Ancient Harbour - Goddess Cube in North Cave
+  pretty: Ancient Harbour - Goddess Cube in North Cave
   cryptic:
 
 - name: Skipper's Retreat - Chest Guarded by Quadro Baba
@@ -4393,14 +4393,14 @@
   pretty: Skipper's Retreat - Chest Guarded by Quadro Baba
   cryptic: a <r<chest past an iron shield moblin>>
 
-- name: Skipper's Retreat - Goddess Cube
-  standard: Skipper's Retreat - Goddess Cube
-  pretty: Skipper's Retreat - Goddess Cube
+- name: Skipper's Retreat - Goddess Cube on Southwest Pillar
+  standard: Skipper's Retreat - Goddess Cube on Southwest Pillar
+  pretty: Skipper's Retreat - Goddess Cube on Southwest Pillar
   cryptic:
 
-- name: Skipper's Retreat - Chest on Cacti Pillar
-  standard: Skipper's Retreat - Chest on Cacti Pillar
-  pretty: Skipper's Retreat - Chest on Cacti Pillar
+- name: Skipper's Retreat - Chest on North Cacti Pillar
+  standard: Skipper's Retreat - Chest on North Cacti Pillar
+  pretty: Skipper's Retreat - Chest on North Cacti Pillar
   cryptic: a <r<chest amongst cacti>>
 
 - name: Skipper's Retreat - Slingshot Left Eye of Shack
@@ -4553,9 +4553,9 @@
   pretty: Pirate Stronghold - Stamina Fruit on Lower Right Side
   cryptic: a <r<fruit outside a fortress>>
 
-- name: Pirate Stronghold - Goddess Cube
-  standard: Pirate Stronghold - Goddess Cube
-  pretty: Pirate Stronghold - Goddess Cube
+- name: Pirate Stronghold - Goddess Cube on top of Shark Head
+  standard: Pirate Stronghold - Goddess Cube on top of Shark Head
+  pretty: Pirate Stronghold - Goddess Cube on top of Shark Head
   cryptic:
 
 - name: Pirate Stronghold Interior - Chest behind Electric Fence

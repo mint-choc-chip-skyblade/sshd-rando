@@ -219,7 +219,7 @@ LOCATION_ALIASES = {
     "Lightning Node - Second Chest": "Lightning Node - Middle Chest",
     "Lanayru Caves - Chest": "Lanayru Caves - Chest near Golo",
     "Lanayru Gorge - Item on Pillar": "Lanayru Gorge - Item on Pillar below Dragon",
-    "Lanayru Gorge - Digging Spot": "Lanayru Gorge - Life Tree Digging Spot",
+    "Lanayru Gorge - Digging Spot": "Lanayru Gorge - Life Tree Digging Spot near Sandfalls",
     "Lanayru Gorge - Slingshot Left Sandfall Source": "Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree",
     "Lanayru Gorge - Slingshot Right Sandfall Source": "Lanayru Gorge - Slingshot Right Sandfall Source near Life Tree",
     "Lanayru Gorge - Rupee in High Tunnel after Bridge 1": "Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 1",
@@ -231,7 +231,7 @@ LOCATION_ALIASES = {
     "Ancient Harbour - Left Rupee on Entrance Crown": "Ancient Harbour - North Rupee on Entrance Crown",
     "Ancient Harbour - Right Rupee on Entrance Crown": "Ancient Harbour - South Rupee on Entrance Crown",
     "Skipper's Retreat - Chest after Moblin": "Skipper's Retreat - Chest Guarded by Quadro Baba",
-    "Skipper's Retreat - Chest on top of Cacti Pillar": "Skipper's Retreat - Chest on Cacti Pillar",
+    "Skipper's Retreat - Chest on top of Cacti Pillar": "Skipper's Retreat - Chest on North Cacti Pillar",
     "Pirate Stronghold Interior - First Chest": "Pirate Stronghold Interior - Chest behind Electric Fence",
     "Pirate Stronghold Interior - Second Chest": "Pirate Stronghold Interior - Chest before Deku Babas",
     "Pirate Stronghold Interior - Third Chest": "Pirate Stronghold Interior - Chest before Double Armos Fight",
@@ -344,6 +344,12 @@ LOCATION_ALIASES = {
     "Lanayru Mine - Goddess Cube": "Lanayru Mine - Goddess Cube behind First Landing Robot",
     "Lanayru Mine - Chest behind First Landing": "Lanayru Mine - Chest behind First Landing Robot",
     "Temple of Time - Goddess Cube": "Temple of Time - Goddess Cube on High Platform North of Tree",
+    "Lanayru Gorge - Life Tree Digging Spot": "Lanayru Gorge - Life Tree Digging Spot near Sandfalls",
+    "Lanayru Gorge - Goddess Cube": "Lanayru Gorge - Goddess Cube near Sandfalls",
+    "Ancient Harbour - Goddess Cube": "Ancient Harbour - Goddess Cube in North Cave",
+    "Skipper's Retreat - Goddess Cube": "Skipper's Retreat - Goddess Cube on Southwest Pillar",
+    "Skipper's Retreat - Chest on Cacti Pillar": "Skipper's Retreat - Chest on North Cacti Pillar",
+    "Pirate Stronghold - Goddess Cube": "Pirate Stronghold - Goddess Cube on top of Shark Head",
 }
 
 SETTING_ALIASES = {
