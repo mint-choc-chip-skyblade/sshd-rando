@@ -1978,7 +1978,7 @@
   textindex: 13
   eventflowindex: 22
 
-- name: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
+- name: Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone
   original_item: Green Rupee
   types:
     - Hidden Items

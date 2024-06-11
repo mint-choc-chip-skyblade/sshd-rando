@@ -2477,9 +2477,9 @@
   pretty: Sealed Grounds - Gossip Stone Behind the Temple
   cryptic:
 
-- name: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
-  standard: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
-  pretty: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
+- name: Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone
+  standard: Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone
+  pretty: Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone
   cryptic: <r<dusting the plantlife>> behind a <g<secure temple>>
 
 - name: Sealed Grounds - Slingshot Behind the Temple Gates Southwest Side

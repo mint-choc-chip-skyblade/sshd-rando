@@ -353,6 +353,7 @@ LOCATION_ALIASES = {
     "Skyview Spring - Goddess Cube": "Skyview Spring - Goddess Cube behind Crest",
     "Temple of Time - Bonk Northeast Pillar": "Temple of Time - Bonk Northeast Bird Pillar near Gate of Time",
     "Temple of Time - Bonk Southeast Pillar": "Temple of Time - Bonk Southeast Bird Pillar near Gate of Time",
+    "Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone": "Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone",
 }
 
 SETTING_ALIASES = {
