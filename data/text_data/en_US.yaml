@@ -1247,9 +1247,9 @@
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Lanayru Mine Goddess Cube
-  standard: Lanayru Mine Goddess Cube
-  pretty: the <Lanayru Mine Goddess Cube>
+- name: Lanayru Mine Goddess Cube behind First Landing Robot
+  standard: Lanayru Mine Goddess Cube behind First Landing Robot
+  pretty: the <Lanayru Mine Goddess Cube behind First Landing Robot>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
@@ -2477,9 +2477,9 @@
   pretty: Sealed Grounds - Gossip Stone Behind the Temple
   cryptic:
 
-- name: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
-  standard: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
-  pretty: Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone
+- name: Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone
+  standard: Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone
+  pretty: Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone
   cryptic: <r<dusting the plantlife>> behind a <g<secure temple>>
 
 - name: Sealed Grounds - Slingshot Behind the Temple Gates Southwest Side
@@ -2643,9 +2643,9 @@
   pretty: Faron Woods - Stamina Fruit on Vines below First Log
   cryptic: a <r<fruit below a forest log>>
 
-- name: Faron Woods - Stamina Fruit after Kiwki in Clearing
-  standard: Faron Woods - Stamina Fruit after Kiwki in Clearing
-  pretty: Faron Woods - Stamina Fruit after Kiwki in Clearing
+- name: Faron Woods - Stamina Fruit after Kikwi in Clearing
+  standard: Faron Woods - Stamina Fruit after Kikwi in Clearing
+  pretty: Faron Woods - Stamina Fruit after Kikwi in Clearing
   cryptic: a <r<fruit beyond a forest slope>>
 
 - name: Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba
@@ -2983,14 +2983,14 @@
   pretty: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
   cryptic: a <r<group of 8 tadtones>>
 
-- name: Flooded Faron Woods - Rupee behind West Breakable Rocks 1
-  standard: Flooded Faron Woods - Rupee behind West Breakable Rocks 1
-  pretty: Flooded Faron Woods - Rupee behind West Breakable Rocks 1
+- name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1
+  standard: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1
+  pretty: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1
   cryptic: a <r<flooded rupee>>
 
-- name: Flooded Faron Woods - Rupee behind West Breakable Rocks 2
-  standard: Flooded Faron Woods - Rupee behind West Breakable Rocks 2
-  pretty: Flooded Faron Woods - Rupee behind West Breakable Rocks 2
+- name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2
+  standard: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2
+  pretty: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2
   cryptic: a <r<flooded rupee>>
 
 - name: Flooded Faron Woods - Water Dragon's Reward
@@ -3813,9 +3813,9 @@
   pretty: Lanayru Mine - Slingshot Right Eye of First Landing Robot
   cryptic: <r<shooting the eye>> of a <y<welcoming robot>>
 
-- name: Lanayru Mine - Chest behind First Landing
-  standard: Lanayru Mine - Chest behind First Landing
-  pretty: Lanayru Mine - Chest behind First Landing
+- name: Lanayru Mine - Chest behind First Landing Robot
+  standard: Lanayru Mine - Chest behind First Landing Robot
+  pretty: Lanayru Mine - Chest behind First Landing Robot
   cryptic: a <r<chest at the entry to a mine>>
 
 - name: Lanayru Mine - Blow Digging Robot before Side Room near First Timeshift Stone
@@ -3933,9 +3933,9 @@
   pretty: Lanayru Mine - Stamina Fruit near Spumes 3
   cryptic: a <r<fruit surrounded by sandy spumes>>
 
-- name: Lanayru Mine - Goddess Cube
-  standard: Lanayru Mine - Goddess Cube
-  pretty: Lanayru Mine - Goddess Cube
+- name: Lanayru Mine - Goddess Cube behind First Landing Robot
+  standard: Lanayru Mine - Goddess Cube behind First Landing Robot
+  pretty: Lanayru Mine - Goddess Cube behind First Landing Robot
   cryptic:
 
 - name: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit
@@ -4113,14 +4113,14 @@
   pretty: Temple of Time - South Rupee on Tree Trunk
   cryptic: a <r<rupee on a time-travelling tree>>
 
-- name: Temple of Time - Bonk Northeast Pillar
-  standard: Temple of Time - Bonk Northeast Pillar
-  pretty: Temple of Time - Bonk Northeast Pillar
+- name: Temple of Time - Bonk Northeast Bird Pillar near Gate of Time
+  standard: Temple of Time - Bonk Northeast Bird Pillar near Gate of Time
+  pretty: Temple of Time - Bonk Northeast Bird Pillar near Gate of Time
   cryptic: <r<disturbing a statue of time>>
 
-- name: Temple of Time - Bonk Southeast Pillar
-  standard: Temple of Time - Bonk Southeast Pillar
-  pretty: Temple of Time - Bonk Southeast Pillar
+- name: Temple of Time - Bonk Southeast Bird Pillar near Gate of Time
+  standard: Temple of Time - Bonk Southeast Bird Pillar near Gate of Time
+  pretty: Temple of Time - Bonk Southeast Bird Pillar near Gate of Time
   cryptic: <r<disturbing a statue of time>>
 
 - name: Temple of Time - Rupee on North Gate of Time Pillar
@@ -4148,9 +4148,9 @@
   pretty: Lanayru Desert - Goddess Cube in Secret Passageway
   cryptic:
 
-- name: Temple of Time - Goddess Cube
-  standard: Temple of Time - Goddess Cube
-  pretty: Temple of Time - Goddess Cube
+- name: Temple of Time - Goddess Cube on High Platform North of Tree
+  standard: Temple of Time - Goddess Cube on High Platform North of Tree
+  pretty: Temple of Time - Goddess Cube on High Platform North of Tree
   cryptic:
 
 - name: Fire Node - Raised Chest
@@ -4268,10 +4268,10 @@
   pretty: Lanayru Gorge - Bonk Wall Right of Stairs
   cryptic: <r<disturbing a some stairs>> near an <y<ancient dragon>>
 
-- name: Lanayru Gorge - Life Tree Digging Spot
-  standard: Lanayru Gorge - Life Tree Digging Spot
-  pretty: Lanayru Gorge - Life Tree Digging Spot
-  cryptic: <r<soft soil in the desert>>
+- name: Lanayru Gorge - Life Tree Digging Spot near Sandfalls
+  standard: Lanayru Gorge - Life Tree Digging Spot near Sandfalls
+  pretty: Lanayru Gorge - Life Tree Digging Spot near Sandfalls
+  cryptic: <r<soft soil beneath a sandy tree>>
 
 - name: Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree
   standard: Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree
@@ -4308,9 +4308,9 @@
   pretty: Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 5
   cryptic: a <r<high rupee>> near an <y<ancient dragon>>
 
-- name: Lanayru Gorge - Goddess Cube
-  standard: Lanayru Gorge - Goddess Cube
-  pretty: Lanayru Gorge - Goddess Cube
+- name: Lanayru Gorge - Goddess Cube near Sandfalls
+  standard: Lanayru Gorge - Goddess Cube near Sandfalls
+  pretty: Lanayru Gorge - Goddess Cube near Sandfalls
   cryptic:
 
 - name: Lanayru Gorge - Blow Grass near Lone Boulder
@@ -4383,9 +4383,9 @@
   pretty: Ancient Harbour - Slingshot South Box Robot Eye
   cryptic: <r<shooting a southern dock worker's eye>>
 
-- name: Ancient Harbour - Goddess Cube
-  standard: Ancient Harbour - Goddess Cube
-  pretty: Ancient Harbour - Goddess Cube
+- name: Ancient Harbour - Goddess Cube in North Cave
+  standard: Ancient Harbour - Goddess Cube in North Cave
+  pretty: Ancient Harbour - Goddess Cube in North Cave
   cryptic:
 
 - name: Skipper's Retreat - Chest Guarded by Quadro Baba
@@ -4393,14 +4393,14 @@
   pretty: Skipper's Retreat - Chest Guarded by Quadro Baba
   cryptic: a <r<chest past an iron shield moblin>>
 
-- name: Skipper's Retreat - Goddess Cube
-  standard: Skipper's Retreat - Goddess Cube
-  pretty: Skipper's Retreat - Goddess Cube
+- name: Skipper's Retreat - Goddess Cube on Southwest Pillar
+  standard: Skipper's Retreat - Goddess Cube on Southwest Pillar
+  pretty: Skipper's Retreat - Goddess Cube on Southwest Pillar
   cryptic:
 
-- name: Skipper's Retreat - Chest on Cacti Pillar
-  standard: Skipper's Retreat - Chest on Cacti Pillar
-  pretty: Skipper's Retreat - Chest on Cacti Pillar
+- name: Skipper's Retreat - Chest on North Cacti Pillar
+  standard: Skipper's Retreat - Chest on North Cacti Pillar
+  pretty: Skipper's Retreat - Chest on North Cacti Pillar
   cryptic: a <r<chest amongst cacti>>
 
 - name: Skipper's Retreat - Slingshot Left Eye of Shack
@@ -4553,9 +4553,9 @@
   pretty: Pirate Stronghold - Stamina Fruit on Lower Right Side
   cryptic: a <r<fruit outside a fortress>>
 
-- name: Pirate Stronghold - Goddess Cube
-  standard: Pirate Stronghold - Goddess Cube
-  pretty: Pirate Stronghold - Goddess Cube
+- name: Pirate Stronghold - Goddess Cube on top of Shark Head
+  standard: Pirate Stronghold - Goddess Cube on top of Shark Head
+  pretty: Pirate Stronghold - Goddess Cube on top of Shark Head
   cryptic:
 
 - name: Pirate Stronghold Interior - Chest behind Electric Fence
@@ -4794,9 +4794,9 @@
   cryptic: a <r<crest deep in a forest>>
   goal_name: Ghirahim 1
 
-- name: Skyview Spring - Goddess Cube
-  standard: Skyview Spring - Goddess Cube
-  pretty: Skyview Spring - Goddess Cube
+- name: Skyview Spring - Goddess Cube behind Crest
+  standard: Skyview Spring - Goddess Cube behind Crest
+  pretty: Skyview Spring - Goddess Cube behind Crest
   cryptic:
 
 - name: Earth Temple - Bonk Front Left Elephant Pillar

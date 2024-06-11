@@ -1452,7 +1452,7 @@
   chain_locations:
    - Isle of Songs - Top Goddess Chest
 - id: 274
-  name: Lanayru Mine Goddess Cube
+  name: Lanayru Mine Goddess Cube behind First Landing Robot
   types:
     - Cubes
   oarc: null

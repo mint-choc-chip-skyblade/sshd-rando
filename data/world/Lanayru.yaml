@@ -21,7 +21,7 @@
     Lanayru Mine - Rupee on Southwest Conveyor 2: Beetle
     Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway: Slingshot
     Lanayru Mine - Slingshot Right Robot Eye above First Minecart Doorway: Slingshot
-    Lanayru Mine - Goddess Cube: Goddess_Sword
+    Lanayru Mine - Goddess Cube behind First Landing Robot: Goddess_Sword
 
 - name: Lanayru Mine Upper Area
   hint_region: Lanayru Mine
@@ -29,7 +29,7 @@
     Lanayru Mine Entry: Nothing
     Lanayru Mine Caves Platform: Clawshots
   locations:
-    Lanayru Mine - Chest behind First Landing: Nothing
+    Lanayru Mine - Chest behind First Landing Robot: Nothing
 
 - name: Lanayru Mine Caves Platform
   hint_region: Lanayru Mine
@@ -292,8 +292,8 @@
     Temple of Time West: Nothing
     Temple of Time West Post LMF Area: Nothing
   locations:
-    Temple of Time - Bonk Northeast Pillar: Nothing
-    Temple of Time - Bonk Southeast Pillar: Nothing
+    Temple of Time - Bonk Northeast Bird Pillar near Gate of Time: Nothing
+    Temple of Time - Bonk Southeast Bird Pillar near Gate of Time: Nothing
     Temple of Time - Rupee on North Gate of Time Pillar: Beetle
     Temple of Time - Rupee on Southwest Gate of Time Pillar: Beetle
 
@@ -309,7 +309,7 @@
   exits:
     Temple of Time North: Nothing
   locations:
-    Temple of Time - Goddess Cube: Goddess_Sword
+    Temple of Time - Goddess Cube on High Platform North of Tree: Goddess_Sword
 
 - name: Temple of Time North
   hint_region: Temple of Time
@@ -393,8 +393,8 @@
   exits:
     Lanayru Gorge: Nothing # Death warp with bomb flower
   locations:
-    Lanayru Gorge - Life Tree Digging Spot: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
-    Lanayru Gorge - Goddess Cube: Goddess_Sword
+    Lanayru Gorge - Life Tree Digging Spot near Sandfalls: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
+    Lanayru Gorge - Goddess Cube near Sandfalls: Goddess_Sword
     Lanayru Gorge - Slingshot Left Sandfall Source near Life Tree: Slingshot
     Lanayru Gorge - Slingshot Right Sandfall Source near Life Tree: Slingshot
     Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 1: Beetle
@@ -429,7 +429,7 @@
     Ancient Harbour - Slingshot Southeast Box Robot Left Eye: Slingshot
     Ancient Harbour - Slingshot Southeast Box Robot Right Eye: Slingshot
     Ancient Harbour - Slingshot South Box Robot Eye: Slingshot
-    Ancient Harbour - Goddess Cube: Clawshots and Goddess_Sword
+    Ancient Harbour - Goddess Cube in North Cave: Clawshots and Goddess_Sword
 
 - name: Lanayru Sand Sea
   hint_region: Lanayru Sand Sea
@@ -454,7 +454,7 @@
     Skipper's Retreat Dock: Nothing
   locations:
     Skipper's Retreat - Chest Guarded by Quadro Baba: Nothing
-    Skipper's Retreat - Goddess Cube: Clawshots and Goddess_Sword
+    Skipper's Retreat - Goddess Cube on Southwest Pillar: Clawshots and Goddess_Sword
 
 - name: Skipper's Retreat Top
   exits:
@@ -462,7 +462,7 @@
     Skipper's Retreat Past Rock: Nothing
     Skipper's Retreat Skydive Platform: Nothing
   locations:
-    Skipper's Retreat - Chest on Cacti Pillar: Clawshots
+    Skipper's Retreat - Chest on North Cacti Pillar: Clawshots
     Skipper's Retreat - Slingshot Left Eye of Shack: Slingshot
     Skipper's Retreat - Slingshot Right Eye of Shack: Slingshot
     Skipper's Retreat - Slingshot Nose of Shack: Slingshot
@@ -548,7 +548,7 @@
     Pirate Stronghold - Rupee on West Sea Pillar: Quick_Beetle
     Pirate Stronghold - Rupee on East Sea Pillar: Quick_Beetle
     Pirate Stronghold - Rupee on Bird Statue Pillar or Nose: Beetle # Still possible
-    Pirate Stronghold - Goddess Cube: Clawshots and Goddess_Sword
+    Pirate Stronghold - Goddess Cube on top of Shark Head: Clawshots and Goddess_Sword
 
 - name: Pirate Stronghold Interior
   events:

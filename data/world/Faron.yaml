@@ -111,7 +111,7 @@
     Sealed Grounds - Slingshot above Doors Behind the Temple: Slingshot
     Sealed Grounds - Gorko's Goddess Wall Reward: Goddesss_Harp and Ballad_of_the_Goddess and Goddess_Sword
     Sealed Grounds - Gossip Stone Behind the Temple: Nothing
-    Sealed Grounds - Blow Bushes in Corner Left of Gossip Stone: Gust_Bellows
+    Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone: Gust_Bellows
     Sealed Grounds - Slingshot Behind the Temple Gates Southwest Side: Slingshot
     Sealed Grounds - Slingshot Behind the Temple Gates Northeast Side: Slingshot
     Sealed Grounds - Bonk Large West Rock before Faron Woods: Nothing
@@ -159,7 +159,7 @@
     Faron Woods - Item behind Bombable Rock: Bomb_Bag
     Faron Woods - Chest behind Bombable Rocks near Erla: Bomb_Bag
     Faron Woods - Stamina Fruit on Vines below First Log: Nothing
-    Faron Woods - Stamina Fruit after Kiwki in Clearing: Nothing
+    Faron Woods - Stamina Fruit after Kikwi in Clearing: Nothing
     Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba: Nothing
     Faron Woods - Stamina Fruit on Vines near Erla: Nothing
     Faron Woods - Stamina Fruit on Vines on Great Tree: Beetle # TODO: Check
@@ -384,8 +384,8 @@
     Flooded Faron Woods: Water_Dragons_Scale
     Flooded Great Tree Upper: Water_Dragons_Scale
   locations:
-    Flooded Faron Woods - Rupee behind West Breakable Rocks 1: Water_Dragons_Scale
-    Flooded Faron Woods - Rupee behind West Breakable Rocks 2: Water_Dragons_Scale
+    Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1: Water_Dragons_Scale
+    Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2: Water_Dragons_Scale
 
 # LAKE FLORIA
 - name: Lake Floria
