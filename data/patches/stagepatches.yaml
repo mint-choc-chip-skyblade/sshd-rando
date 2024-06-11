@@ -3344,6 +3344,16 @@ F300: # Lanayru Desert
     layer: 0
     room: 0
     objtype: STAG
+  - name: Move caged robot NpcTke
+    type: objpatch
+    id: 0xFC50
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 450
+      posy: -40
+      posz: 8192
 
   - name: Chest Spawns after LMF
     type: objpatch
