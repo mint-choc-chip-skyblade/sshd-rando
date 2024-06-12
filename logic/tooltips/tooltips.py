@@ -93,7 +93,6 @@ class TooltipsSearch:
         start = time.time()
         self.new_things_found = True
         while self.new_things_found:
-            print("round")
             self.recently_updated_areas = self.newly_updated_areas
             self.recently_updated_events = self.newly_updated_events
             self.newly_updated_areas = set()
@@ -114,6 +113,10 @@ class TooltipsSearch:
                     item_locations[loc_access.location.id] = []
                 item_locations[loc_access.location.id].append(loc_access)
 
+        # TODO this immediately combines the "local" requirements with the implicit
+        # area requirement. It has been hypothesized that converting them
+        # separately may produce better tooltips, but at that point you need the
+        # TWWR-Tracker boolean-expression multi-level simplification code
         for loc_id, access_list in item_locations.items():
             expr = DNF.false()
             for access in access_list:
@@ -124,18 +127,6 @@ class TooltipsSearch:
                 )
             expr = expr.dedup()
             self.loc_reqs[loc_id] = expr
-            if access.location.name == "Lanayru Mine - Chest at the End of Mine":
-                print(access.location.name)
-                for term in expr.terms:
-                    str = ",".join(
-                        [
-                            '"' + print_req(self.bitindex.reverse_index[bit]) + '"'
-                            for bit in range(self.bitindex.counter)
-                            if (term & (1 << bit))
-                        ]
-                    )
-                    print("[", str, "],")
-            print(access.location.name, print_req(dnf_to_expr(self.bitindex, expr)))
 
         for req, id in self.world.events.items():
             print(req, print_req(dnf_to_expr(self.bitindex, self.event_exprs[id])))
@@ -268,7 +259,9 @@ def evaluate_partial_requirement(
             return DNF([1 << bit_index.req_bit(req)])
 
         case RequirementType.COUNT:
-            # count requirements frequently have to unify with weaker terms
+            # count requirements frequently have to unify with weaker terms,
+            # so a count requirement always requires all lesser item counts too.
+            # this ensures redundant terms can be eliminated
             [count, item] = req.args
             bits = 0
             for i in range(1, count + 1):
