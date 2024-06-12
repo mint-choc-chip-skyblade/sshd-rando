@@ -81,8 +81,9 @@ class TooltipsSearch:
         self.new_things_found = True
 
         for exit in self.world.root.exits:
-            self.exits_to_try.add(exit)
-            assert exit.parent_area == self.world.root
+            if exit.connected_area is not None:
+                self.exits_to_try.add(exit)
+                assert exit.parent_area == self.world.root
 
         # output, computed at the end
         self.loc_reqs: dict[int, DNF] = {}
@@ -127,6 +128,7 @@ class TooltipsSearch:
                 )
             expr = expr.dedup()
             self.loc_reqs[loc_id] = expr
+            print(access.location.name, print_req(dnf_to_expr(self.bitindex, expr)))
 
         for req, id in self.world.events.items():
             print(req, print_req(dnf_to_expr(self.bitindex, self.event_exprs[id])))
@@ -172,7 +174,13 @@ class TooltipsSearch:
                     self.new_things_found = True
                     self.area_exprs_tod[tod][exit.connected_area.id] = new_expr.dedup()
                     self.events_to_try.update(exit.connected_area.events)
-                    self.exits_to_try.update(exit.connected_area.exits)
+                    self.exits_to_try.update(
+                        [
+                            e
+                            for e in exit.connected_area.exits
+                            if e.connected_area is not None
+                        ]
+                    )
                     self.areas_to_try.add(exit.connected_area)
 
     def try_events(self):
