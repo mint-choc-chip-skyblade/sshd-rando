@@ -29,7 +29,10 @@
   standard: "You got the <y<True Master Sword>>!\nThe goddess has blessed your blade, and\nthe Master Sword has at last achieved its\nultimate form!"
 
 - name: Harp Text
-  standard: "You got the <y<Goddess's Harp>>!\nBut there's no time to admire it!"
+  standard: "You got the <y<Goddess's Harp>>!\nBut there's no time to admire it!\nYou can play it with <icon 30>."
+
+- name: Harp Inventory Text
+  standard: "A traditional instrument from Skyloft. You\ncan play it with <icon 30>."
 
 - name: Emerald Tablet text
   standard: "You got the <y<Emerald Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."

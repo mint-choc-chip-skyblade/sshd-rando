@@ -317,6 +317,9 @@
   - name: Harp Text
     type: textpatch
     index: 21
+  - name: Harp Inventory Text
+    type: textpatch
+    index: 477
   - name: Emerald Tablet text
     type: textpatch
     index: 227
