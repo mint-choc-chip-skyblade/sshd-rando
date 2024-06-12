@@ -8,6 +8,7 @@ Storyflags:
   - 32 # Sailcoth
   - 36 # Hero's tunic
   - 58 # B-Wheel Unlocked
+  - 60 # Fi text before Yerbal
   - 81 # Tadtone Dowsing
   - 82 # Tadtones music scroll
   - 96 # Skip 1st time getting a map Fi text
@@ -82,6 +83,7 @@ Storyflags:
   - 190 # Lanayru Mine Intro Cutscene
   - 92 # Lanayru Desert Intro Cutscene (Dodoh always loses his wheel)
   - 157 # Ancient Harbour Intro Cutscene
+  - 526 # Lanayru Gorge Intro Cutscene
   - 80 # Water Dragon in Flooded Faron Cutscene
   ## Silent Realms
   - 70 # First time Light Fruit Cutscene
