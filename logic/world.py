@@ -79,6 +79,8 @@ class World:
         self.song_hints: dict[Item, Hint] = {}
         self.impa_sot_hint: Hint = None  # type: ignore
 
+        self.is_tracker = False
+
     def __str__(self) -> str:
         return f"World {self.id + 1}"
 

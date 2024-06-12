@@ -239,6 +239,12 @@ def parse_requirement_string(
         # Check Impossible last since it's least common
         elif arg == "Impossible":
             req.type = RequirementType.IMPOSSIBLE
+        elif arg == "not_tracker":
+            req.type = (
+                RequirementType.IMPOSSIBLE
+                if world.is_tracker
+                else RequirementType.NOTHING
+            )
 
         # If the requirement doesn't have a type, then something is wrong with it
         if req.type == None:

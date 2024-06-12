@@ -27,6 +27,11 @@ def get_program_args():
     )
 
     # parser.print_help()
-    args = parser.parse_args()
+    import sys
+
+    if "pytest" in sys.modules:
+        args, _unknown = parser.parse_known_args()
+    else:
+        args = parser.parse_args()
 
     return args

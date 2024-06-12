@@ -8,6 +8,7 @@ from logic.entrance_shuffle import (
     restore_connections,
 )
 from logic.search import *
+from logic.tooltips.tooltips import TooltipsSearch
 from util.text import load_text_data
 from typing import TYPE_CHECKING
 import copy
@@ -654,6 +655,7 @@ class Tracker:
 
         # Initialize the world
         self.world = World(0)
+        self.world.is_tracker = True
         self.world.setting_map = config.settings[0]
         self.world.num_worlds = 1
         self.world.config = config
@@ -1386,6 +1388,10 @@ class Tracker:
         # TODO: Fix weird typing
         search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], inventory)
         search.search_worlds()
+
+        # TODO optimize: only do this when needed (after changing settings or mapping entrances)
+        tooltips_search = TooltipsSearch(self.world)
+        tooltips_search.do_search()
 
         for area_button in self.areas.values():
             area_button.update(search)

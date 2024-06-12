@@ -44,7 +44,7 @@ from filepathconstants import (
     ENDROLL_SOURCE_PATH,
 )
 
-args = get_program_args()
+args = None
 
 
 def patch_tbox(
@@ -1096,6 +1096,9 @@ class StagePatchHandler:
             total_stage_count = len(all_stage_file_paths)
 
             # imap *can* be slower so only use it with the gui (where we need a progress output)
+            global args
+            if not args:
+                args = get_program_args()
             if not args.nogui:
                 for _ in pool.imap_unordered(
                     patch_stage_func,
