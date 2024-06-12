@@ -1743,6 +1743,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_20.addWidget(self.setting_logic_advanced_lizalfos_combat)
 
+        self.setting_logic_long_ranged_skyward_strikes = RandoTriStateCheckBox(self.precise_items_group_box)
+        self.setting_logic_long_ranged_skyward_strikes.setObjectName(u"setting_logic_long_ranged_skyward_strikes")
+
+        self.verticalLayout_20.addWidget(self.setting_logic_long_ranged_skyward_strikes)
+
         self.setting_logic_skyview_precise_slingshot = RandoTriStateCheckBox(self.precise_items_group_box)
         self.setting_logic_skyview_precise_slingshot.setObjectName(u"setting_logic_skyview_precise_slingshot")
 
@@ -2774,7 +2779,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2969,6 +2974,7 @@ class Ui_main_window(object):
         self.tricks_group_box.setTitle(QCoreApplication.translate("main_window", u"Tricks", None))
         self.precise_items_group_box.setTitle(QCoreApplication.translate("main_window", u"Precise Items", None))
         self.setting_logic_advanced_lizalfos_combat.setText(QCoreApplication.translate("main_window", u"Advanced Lizalfos Combat", None))
+        self.setting_logic_long_ranged_skyward_strikes.setText(QCoreApplication.translate("main_window", u"Long Range Skyward Strikes", None))
         self.setting_logic_skyview_precise_slingshot.setText(QCoreApplication.translate("main_window", u"Skyview Temple Precise Slingshot", None))
         self.setting_logic_lmf_ceiling_precise_slingshot.setText(QCoreApplication.translate("main_window", u"Lanayru Mining Facility Precise Slingshot", None))
         self.setting_logic_tot_slingshot.setText(QCoreApplication.translate("main_window", u"Temple of Time Precise Slingshot", None))

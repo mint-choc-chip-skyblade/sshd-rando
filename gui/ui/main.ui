@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -2632,6 +2632,13 @@
                <widget class="RandoTriStateCheckBox" name="setting_logic_advanced_lizalfos_combat">
                 <property name="text">
                  <string>Advanced Lizalfos Combat</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_long_ranged_skyward_strikes">
+                <property name="text">
+                 <string>Long Range Skyward Strikes</string>
                 </property>
                </widget>
               </item>

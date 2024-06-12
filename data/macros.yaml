@@ -93,7 +93,7 @@ Can Obtain a Shield: Pouch and can_access(Bazaar) # To buy a shield and dispose 
 
 Sword: Practice_Sword
 
-Long Range Skyward Strike: (Goddess_Sword and upgraded_skyward_strike) or True_Master_Sword
+Long Range Skyward Strike: logic_long_ranged_skyward_strikes and ((Goddess_Sword and upgraded_skyward_strike) or True_Master_Sword)
 
 Damaging Item: Sword or Bomb_Bag or Bow
 
