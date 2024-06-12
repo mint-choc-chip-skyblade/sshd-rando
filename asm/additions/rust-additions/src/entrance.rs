@@ -40,6 +40,7 @@ extern "C" {
     static FILE_MGR: *mut c_void;
     static STORYFLAG_MGR: *mut flag::FlagMgr;
     static STAGE_MGR: *mut actor::dStageMgr;
+    static FANFARE_SOUND_MGR: *mut c_void;
 
     static mut GAME_RELOADER_PTR: *mut actor::GameReloader;
 
@@ -102,6 +103,8 @@ extern "C" {
         transition_fade_frames: u16,
         param_9: u8,
     );
+
+    fn playFanfareMaybe(soundMgr: *mut c_void, soundIndex: u16) -> u64;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -175,6 +178,8 @@ pub fn handle_er_cases() {
             // debug::debug_print("Should not be night");
             NEXT_NIGHT = 0;
         }
+
+        playFanfareMaybe(FANFARE_SOUND_MGR, 0);
 
         // Replaced code sets these
         (*GAME_RELOADER_PTR).item_to_use_after_reload = 0xFF;
