@@ -46,18 +46,28 @@ def dnf_to_expr(bit_index: BitIndex, dnf: DNF) -> Requirement:
     # really make sure no dupes exist, not sure if needed
     dnf = dnf.dedup()
 
-    # TODO at this point we must remove weaker requirements. E.g.
-    # imagine Beedle existed in this rando and an item required
-    # (Wallet x1 and Wallet x2) or (Wallet x1 and ExtraWallet x1 and ExtraWallet x2)
-    # then this code would pull out Wallet x1 first, resulting in
-    # Wallet x1 and (Wallet x2 or ExtraWallet x1 and ExtraWallet x2) which is not
-    # reasonable at all and at that point not even the TWWR-Tracker simplifications can save us
-
     # map to bitvec
     expr = [
         BitVector([bit for bit in range(bit_index.counter) if ((1 << bit) & t)])
         for t in dnf.terms
     ]
+
+    # at this point we must remove weaker requirements. E.g.
+    # imagine Beedle existed in this rando and an item required
+    # (Wallet x1 and Wallet x2) or (Wallet x1 and ExtraWallet x1 and ExtraWallet x2)
+    # then this code would pull out Wallet x1 first, resulting in
+    # Wallet x1 and (Wallet x2 or ExtraWallet x1 and ExtraWallet x2) which is not
+    # reasonable at all and at that point not even the TWWR-Tracker simplifications can save us
+    for term in expr:
+        for bit in term.ints():
+            req = bit_index.reverse_index[bit]
+            if req.type == RequirementType.COUNT:
+                count, item = req.args
+                for i in range(1, count):
+                    lesser_bit = bit_index.req_bit(
+                        Requirement(RequirementType.COUNT, [i, item])
+                    )
+                    term.clear(lesser_bit)
 
     common_factors_: set[int] = set(expr[0].ints())
     for term in expr:

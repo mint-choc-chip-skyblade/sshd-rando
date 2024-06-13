@@ -26,8 +26,9 @@ class BitVector:
         self.intset.add(i)
 
     def clear(self, i: int):
-        self.intset.remove(i)
-        self.bitset = self.bitset & ~(1 << i)
+        if i in self.intset:
+            self.intset.remove(i)
+            self.bitset = self.bitset & ~(1 << i)
 
     def test(self, i: int):
         return bool(i in self.intset)
@@ -160,7 +161,7 @@ class BitIndex:
         self.item_bits = {}
         self.wallet_cap = {}
         self.crystal_count = {}
-        self.reverse_index = []
+        self.reverse_index: list[Requirement] = []
         self.counter = 0
 
     def bump(self):
