@@ -1,3 +1,4 @@
+from logic.requirements import Requirement, RequirementType
 from .item import Item
 from .hint_class import Hint
 
@@ -53,6 +54,7 @@ class Location:
         self.sphere: int = None
         self.tracked_item: Item = None
         self.tracked_item_image: str = None
+        self.computed_requirement: Requirement = Requirement(RequirementType.IMPOSSIBLE)
 
     def __str__(self) -> str:
         return (

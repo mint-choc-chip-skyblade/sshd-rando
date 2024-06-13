@@ -974,6 +974,7 @@ class Tracker:
                 location_label = TrackerLocationLabel(
                     loc,
                     area_button.recent_search,
+                    self.world,
                     area_button,
                     self.allow_sphere_tracking,
                 )

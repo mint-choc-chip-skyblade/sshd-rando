@@ -127,7 +127,8 @@ class TooltipsSearch:
                     )
                 )
             expr = expr.dedup()
-            self.loc_reqs[loc_id] = dnf_to_expr(self.bitindex, expr)
+            access.location.computed_requirement = dnf_to_expr(self.bitindex, expr)
+            self.loc_reqs[loc_id] = access.location.computed_requirement
             # print(access.location.name, self.loc_reqs[loc_id])
 
         for req, id in self.world.events.items():
