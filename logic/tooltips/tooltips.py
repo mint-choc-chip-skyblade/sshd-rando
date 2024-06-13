@@ -159,9 +159,7 @@ class TooltipsSearch:
                 if not (valid_tods & tod):
                     continue
 
-                old_expr = self.area_exprs_tod[tod].get(
-                    exit.connected_area.id, DNF.false()
-                )
+                old_expr = self.area_exprs_tod[tod][exit.connected_area.id]
                 exit_only = evaluate_partial_requirement(
                     self.bitindex, exit.requirement, self, tod
                 )
