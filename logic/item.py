@@ -36,6 +36,9 @@ class Item:
             else f"{self.name} [W{self.world.id + 1}]"
         )
 
+    def __repr__(self):
+        return str(self)
+
     def __eq__(self, other) -> bool:
         if other == None:
             return False

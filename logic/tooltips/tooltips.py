@@ -86,7 +86,7 @@ class TooltipsSearch:
                 assert exit.parent_area == self.world.root
 
         # output, computed at the end
-        self.loc_reqs: dict[int, DNF] = {}
+        self.loc_reqs: dict[int, Requirement] = {}
 
     def do_search(self):
         import time
@@ -127,11 +127,12 @@ class TooltipsSearch:
                     )
                 )
             expr = expr.dedup()
-            self.loc_reqs[loc_id] = expr
-            print(access.location.name, print_req(dnf_to_expr(self.bitindex, expr)))
+            self.loc_reqs[loc_id] = dnf_to_expr(self.bitindex, expr)
+            # print(access.location.name, self.loc_reqs[loc_id])
 
         for req, id in self.world.events.items():
-            print(req, print_req(dnf_to_expr(self.bitindex, self.event_exprs[id])))
+            pass
+            # print(req, print_req(dnf_to_expr(self.bitindex, self.event_exprs[id])))
 
         print("final propagation", time.time() - start)
 

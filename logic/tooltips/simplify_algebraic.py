@@ -65,9 +65,7 @@ def dnf_to_expr(bit_index: BitIndex, dnf: DNF) -> Requirement:
     variables = sorted(list(var_set))
 
     if not variables:
-        return Requirement(
-            RequirementType.AND, [bit_index.reverse_index[i] for i in common_factors]
-        )
+        return create_and([bit_index.reverse_index[i] for i in common_factors])
 
     kernels = find_kernels(expr, variables, BitVector([]))
     kernels = [k for k in kernels if not k.co_kernel.is_empty()]
@@ -160,12 +158,7 @@ def dnf_to_expr(bit_index: BitIndex, dnf: DNF) -> Requirement:
 
     terms = Requirement(
         RequirementType.OR,
-        [
-            Requirement(
-                RequirementType.AND, [bit_index.reverse_index[i] for i in c.ints()]
-            )
-            for c in expr
-        ],
+        [create_and([bit_index.reverse_index[i] for i in c.ints()]) for c in expr],
     )
     if common_factors:
         return Requirement(
@@ -200,6 +193,18 @@ def gen_rectangles(
             callback(ones, [col])
 
     gen_rectangles_recursive(rows, cols, matrix, 0, [], [], callback)
+
+
+def create_and(terms: list[Requirement]):
+    if len(terms) > 1:
+        return Requirement(RequirementType.AND, terms)
+    return terms[0]
+
+
+def create_or(terms: list[Requirement]):
+    if len(terms) > 1:
+        return Requirement(RequirementType.OR, terms)
+    return terms[0]
 
 
 def gen_rectangles_recursive(
@@ -280,7 +285,7 @@ def find_kernels(
 
 
 def algebraic_division(expr: list[BitVector], divisor: list[BitVector]):
-    quot: list[BitVector] = None
+    quot: list[BitVector] = None  # type: ignore
     for div_cube in divisor:
         c = [e.copy() for e in expr if div_cube.is_subset_of(e)]
         if not c:

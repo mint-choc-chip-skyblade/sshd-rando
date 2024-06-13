@@ -62,7 +62,7 @@ def log_settings(log, config: Config, worlds: list[World]) -> None:
             else:
                 log.write(f"    {setting.name}: '{setting.value}'\n")
         log.write(
-            f"    starting_inventory: {sorted(world.config.settings[0].starting_inventory.elements())}\n"
+            f"    starting_inventory: {sorted(world.setting_map.starting_inventory.elements())}\n"
         )
         log.write(f"    excluded_locations: {world.setting_map.excluded_locations}\n")
         log.write(
@@ -171,7 +171,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
             spoiler_log.write(f"    {world}:\n")
 
             disabled_shuffle_locations = get_disabled_shuffle_locations(
-                world.location_table, world.config
+                world.location_table, world.config.settings[0]
             )
 
             for location in world.location_table.values():

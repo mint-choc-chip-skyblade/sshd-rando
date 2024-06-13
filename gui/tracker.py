@@ -1385,7 +1385,6 @@ class Tracker:
                 already_added.add(location)
 
         # Use modified inventory for main search
-        # TODO: Fix weird typing
         search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], inventory)
         search.search_worlds()
 
@@ -1676,7 +1675,6 @@ class Tracker:
                 if inventory[item] > 0:
                     inventory[item] -= 1
 
-        # TODO: Fix weird typing
         sphere_search = Search(SearchMode.TRACKER_SPHERES, [self.world], inventory)
         sphere_search.search_worlds()
         for num, sphere in enumerate(sphere_search.playthrough_spheres):
