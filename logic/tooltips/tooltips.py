@@ -278,7 +278,7 @@ def evaluate_partial_requirement(
                 if i == 1:
                     new_req = Requirement(RequirementType.ITEM, [item])
                 else:
-                    new_req = Requirement(RequirementType.COUNT, [count, item])
+                    new_req = Requirement(RequirementType.COUNT, [i, item])
                 bits |= 1 << bit_index.req_bit(new_req)
             return DNF([bits])
 
