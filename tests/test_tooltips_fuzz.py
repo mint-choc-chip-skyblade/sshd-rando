@@ -6,6 +6,7 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from constants.configconstants import get_default_setting
+from constants.itemconstants import STARTABLE_ITEMS
 from logic.item import Item
 from logic.requirements import evaluate_requirement_at_time
 from logic.search import Search, SearchMode
@@ -69,8 +70,17 @@ def test_default_settings():
     tooltips.do_search()
 
     empty_inventory: Counter[Item] = Counter()
-    # TODO how to generate varied legal inventories?
+
     inventories = [empty_inventory]
+    for i in range(len(STARTABLE_ITEMS)):
+        inventory = empty_inventory.copy()
+        pool = STARTABLE_ITEMS.copy()
+        random.shuffle(pool)
+        take_items = pool[0:i]
+        for i in take_items:
+            item = logic_world.get_item(i)
+            inventory[item] += 1
+        inventories.append(inventory)
 
     for inventory in inventories:
         search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [logic_world], inventory)
@@ -80,12 +90,12 @@ def test_default_settings():
         for item, count in tracker_world.starting_item_pool.items():
             tooltip_inventory[item] += count
 
-        print(tooltip_inventory)
-
         # have to mock the search a bit for the inventory (areas are eliminated)
         mock_search: Search = MockSearch(tooltip_inventory)  # type: ignore
         # time of days are eliminated here
         mock_tod: int = None  # type: ignore
+
+        i = 0
 
         for location in logic_world.get_all_item_locations():
             is_in_logic = location in search.visited_locations
@@ -97,3 +107,7 @@ def test_default_settings():
             assert (
                 is_in_logic == is_tooltip_in_logic
             ), f"{location.name} - {print_req(tooltip_requirement)}"
+            if is_in_logic:
+                i += 1
+
+        print("matching locations in logic: ", i)
