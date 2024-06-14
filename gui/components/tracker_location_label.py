@@ -185,7 +185,7 @@ class TrackerLocationLabel(QLabel):
         req = self.location.computed_requirement
         match req.type:
             case RequirementType.AND:
-                # Computed requirements are in Conjunctive Normal Form
+                # Computed requirements have a top-level AND requirement
                 # We display them as a list of bullet points to the user
                 # This fetches a list of the terms ANDed together
                 text = [self.format_requirement(a) for a in req.args]

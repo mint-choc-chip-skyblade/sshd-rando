@@ -3,7 +3,7 @@ Algebraic simplification techniques treat all requirements as unrelated variable
 and allow us to turn our two-level DNF/sum-of-products form into a simpler
 multi-level expression.
 
-The aprroach taken here is mostly used in hardware logic synthesis, and described in:
+The approach taken here is mostly used in hardware logic synthesis, and described in:
 
  * https://faculty.sist.shanghaitech.edu.cn/faculty/zhoupq/Teaching/Spr16/07-Multi-Level-Logic-Synthesis.pdf
    * Some lecture slides about the topic. These make the concepts of kernels,
@@ -20,7 +20,7 @@ so we may use different techniques for those.
 """
 
 from dataclasses import dataclass
-from typing import Callable
+from typing import Callable, Iterable
 
 from .bits import BitIndex, DNF, BitVector, included_in
 from ..requirements import Requirement, RequirementType
@@ -46,7 +46,10 @@ def dnf_to_expr(bit_index: BitIndex, dnf: DNF) -> Requirement:
     # really make sure no dupes exist, not sure if needed
     dnf = dnf.dedup()
 
-    # map to bitvec
+    # Map to BitVectors. Since DNFs don't offer bit-level access,
+    # we have to manually go through every bit to build BitVectors.
+    # This is definitely not cheap but it probably saves more time
+    # than keeping the intsets around during search
     expr = [
         BitVector([bit for bit in range(bit_index.counter) if ((1 << bit) & t)])
         for t in dnf.terms
@@ -73,6 +76,8 @@ def dnf_to_expr(bit_index: BitIndex, dnf: DNF) -> Requirement:
     for term in expr:
         common_factors_.intersection_update(term.ints())
 
+    # build a list of variables that appear in our expression,
+    # excluding common factors.
     var_set: set[int] = set()
     for term in expr:
         for c in common_factors_:
@@ -84,8 +89,14 @@ def dnf_to_expr(bit_index: BitIndex, dnf: DNF) -> Requirement:
 
     variables = sorted(list(var_set))
 
+    def lookup_requirements(r: Iterable[int]):
+        return [bit_index.reverse_index[bit] for bit in r]
+
     if not variables:
-        return create_and([bit_index.reverse_index[i] for i in common_factors])
+        # expr consists entirely of common factors - since we deduped,
+        # this is only possible for single-term DNFs, but we want to do this
+        # here since we needed to clear lesser count requirements
+        return create_and(lookup_requirements(common_factors))
 
     kernels = find_kernels(expr, variables, BitVector([]))
     kernels = [k for k in kernels if not k.co_kernel.is_empty()]
@@ -104,7 +115,7 @@ def dnf_to_expr(bit_index: BitIndex, dnf: DNF) -> Requirement:
         for _ in rows:
             matrix.append([0 for _ in columns])
 
-        # create a matrix that is 1 where column cubes appear in row kernels
+        # create a matrix that is 1 where column cubes appear in row kernels.
         # since kernels are the result of a single division (by the co-kernel),
         # this essentially creates ones where division by another cube would be possible
         for col, k_cube in enumerate(columns):
@@ -112,7 +123,9 @@ def dnf_to_expr(bit_index: BitIndex, dnf: DNF) -> Requirement:
                 if any(k_cube.equals(k) for k in co_kernel.kernel):
                     matrix[row][col] = 1
 
-        # find the best rectangle
+        # Find the best rectangle. This optimizes for #literals saved
+        # in the resulting expression, which is a good heuristic for
+        # minimizing the length of the expression.
 
         row_weight = lambda row: rows[row].co_kernel.size() + 1
         col_weight = lambda col: columns[col].size()
@@ -173,39 +186,22 @@ def dnf_to_expr(bit_index: BitIndex, dnf: DNF) -> Requirement:
             else:
                 sum = product
 
-            if common_factors:
-                return Requirement(
-                    RequirementType.AND,
-                    [*[bit_index.reverse_index[bit] for bit in common_factors], sum],
-                )
-            else:
-                return sum
+            return create_and([*lookup_requirements(common_factors), sum])
 
+    # here we didn't do our complicated rectangle extraction, so just extract
+    # the common factors
     terms = Requirement(
         RequirementType.OR,
-        [create_and([bit_index.reverse_index[i] for i in c.ints()]) for c in expr],
+        [create_and(lookup_requirements(c.ints())) for c in expr],
     )
-    if common_factors:
-        return Requirement(
-            RequirementType.AND,
-            [
-                *[bit_index.reverse_index[i] for i in common_factors],
-                terms,
-            ],
-        )
-    else:
-        return terms
+
+    # common_factor1 AND common_factor2 AND ... AND (terms without common factors ORed)
+    return create_and([*lookup_requirements(common_factors), terms])
 
 
 def create_and(terms: list[Requirement]):
     if len(terms) > 1:
         return Requirement(RequirementType.AND, terms)
-    return terms[0]
-
-
-def create_or(terms: list[Requirement]):
-    if len(terms) > 1:
-        return Requirement(RequirementType.OR, terms)
     return terms[0]
 
 
@@ -322,7 +318,9 @@ def find_kernels(
     A co-kernel is a cube (product term) such that for `expr / co-kernel = kernel`,
     `kernel` contains at least two terms but there's no factor to factor out.
 
-
+    This effectively tries every combination of variables in this expression
+    as a co-kernel. seen_co_kernels is a bit of book-keeping to not create
+    duplicate kernels, and min_idx ensures we don't try e.g. ab and ba separately
     """
     if seen_co_kernels is None:
         seen_co_kernels = []
