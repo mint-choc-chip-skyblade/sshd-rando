@@ -886,7 +886,7 @@ class Tracker:
         for label in self.ui.tracker_tab.findChildren(TrackerDungeonLabel):
             label.world = self.world
             label.reset()
-            if label.abbreviation in autosave.get("active_dungeons", []):
+            if label.abbreviation not in autosave.get("not_active_dungeons", []):
                 label.on_clicked()
 
         self.update_tracker()
@@ -1495,10 +1495,10 @@ class Tracker:
         }
         autosave["random_settings"] = [s.name for s in self.random_settings]
         autosave["active_area"] = self.active_area.area
-        autosave["active_dungeons"] = [
+        autosave["not_active_dungeons"] = [
             dungeon.abbreviation
             for dungeon in self.ui.tracker_tab.findChildren(TrackerDungeonLabel)
-            if dungeon.active
+            if not dungeon.active
         ]
         autosave["allow_sphere_tracking"] = self.allow_sphere_tracking
         autosave["sphere_tracked_items"] = {
