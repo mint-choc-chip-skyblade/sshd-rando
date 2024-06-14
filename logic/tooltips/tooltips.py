@@ -85,9 +85,6 @@ class TooltipsSearch:
                 self.exits_to_try.add(exit)
                 assert exit.parent_area == self.world.root
 
-        # output, computed at the end
-        self.loc_reqs: dict[int, Requirement] = {}
-
     def do_search(self):
         # This algorithm works in three stages:
         # 1. Compute area and event requirements -> DNFs
@@ -130,7 +127,7 @@ class TooltipsSearch:
         # TWWR-Tracker boolean-expression multi-level simplification code
 
         # step 2: for every location, OR all the ways to access it
-        for loc_id, access_list in item_locations.items():
+        for access_list in item_locations.values():
             expr = DNF.false()
             for access in access_list:
                 expr = expr.or_(
@@ -140,8 +137,19 @@ class TooltipsSearch:
                 )
             # step 3: simplify
             access.location.computed_requirement = dnf_to_expr(self.bitindex, expr)
-            self.loc_reqs[loc_id] = access.location.computed_requirement
-            # print(access.location.name, print_req(self.loc_reqs[loc_id]))
+
+        # same thing for exits
+        for exit in self.exits_to_try:
+            # TODO is there a good way to tell
+            # whether an entrance is a possible randomized map entrance here?
+            expr = DNF.false()
+            for tod in ALL_TODS:
+                valid_tods = self.world.exit_time_cache.get(exit, TOD.ALL)
+                if not (valid_tods & tod):
+                    continue
+                expr = expr.or_(self.try_exit_at_time(exit, tod))
+
+            exit.computed_requirement = dnf_to_expr(self.bitindex, expr)
 
         print("location requirements search and simplification", time.time() - start)
 
@@ -177,14 +185,7 @@ class TooltipsSearch:
                     continue
 
                 old_expr = self.area_exprs_tod[tod][exit.connected_area.id]
-                exit_only = evaluate_partial_requirement(
-                    self.bitindex, exit.requirement, self, tod
-                )
-                if exit_only.is_trivially_false():
-                    continue
-                new_partial = self.area_exprs_tod[tod][exit.parent_area.id].and_(
-                    exit_only
-                )
+                new_partial = self.try_exit_at_time(exit, tod)
                 useful, new_expr = old_expr.or_useful(new_partial)
                 if useful:
                     self.newly_updated_areas.add(exit.connected_area.id)
@@ -236,6 +237,15 @@ class TooltipsSearch:
     ) -> DNF:
         return self.area_exprs_tod[tod][event.area.id].and_(
             evaluate_partial_requirement(self.bitindex, event.req, self, tod)
+        )
+
+    def try_exit_at_time(
+        self,
+        exit: Entrance,
+        tod: int,
+    ):
+        return self.area_exprs_tod[tod][exit.parent_area.id].and_(
+            evaluate_partial_requirement(self.bitindex, exit.requirement, self, tod)
         )
 
 

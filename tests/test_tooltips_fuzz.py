@@ -97,7 +97,9 @@ def test_default_settings():
 
         for location in logic_world.get_all_item_locations():
             is_in_logic = location in search.visited_locations
-            tooltip_requirement = tooltips.loc_reqs[location.id]
+            tooltip_requirement = tracker_world.get_location(
+                location.name
+            ).computed_requirement
             is_tooltip_in_logic = evaluate_requirement_at_time(
                 tooltip_requirement, mock_search, mock_tod, tracker_world
             )
