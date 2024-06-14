@@ -1357,6 +1357,16 @@
     - "off": "You will only be expected to defeat Lizalfos enemies with a sword."
     - "on": "You may need to defeat Lizalfos enemies with only bombs or only the Bow."
 
+- name: logic_long_ranged_skyward_strikes
+  default_option: "off"
+  pretty_name: "Long Ranged Skyward Strikes"
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will not need to perform any Skyward Strikes that travel long distances."
+    - "on": "You may need to perform ranged Skyward Strikes to hit distant Goddess Cubes, enemies, or switches."
+
 - name: logic_gravestone_jump
   default_option: "off"
   pretty_name: Gravestone Jump
