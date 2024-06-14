@@ -801,6 +801,7 @@ class Tracker:
         for inventory_button in self.ui.tracker_tab.findChildren(
             TrackerInventoryButton
         ):
+            assert isinstance(inventory_button, TrackerInventoryButton)
             inventory_button.world = self.world
             inventory_button.inventory = self.inventory
             inventory_button.state = 0
@@ -812,6 +813,11 @@ class Tracker:
                     inventory_button.add_forbidden_state(inventory_button.state)
                     inventory_button.state += 1
                     self.inventory[item] -= 1
+
+                    # Must have been set to random or something else is bugging out
+                    if inventory_button.state > len(inventory_button.items) - 1:
+                        inventory_button.state = 0
+                        inventory_button.forbidden_states = set()
 
             # Then update the buttons with any marked items from an autosave
             for item_name in autosave.get("marked_items", []):
