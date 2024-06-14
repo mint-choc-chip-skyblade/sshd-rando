@@ -14,7 +14,6 @@
     Volcano East: Nothing
     Bokoblin Base Prison: Nothing
   locations:
-    Eldin Volcano - Rupee on Ledge before First Room: Beetle
     Eldin Volcano - Stamina Fruit in Rising Lava Room: Nothing
     Eldin Volcano - Chest behind Bombable Wall in First Room: Nothing
     Eldin Volcano - Rupee behind Bombable Wall in First Room: Nothing
@@ -39,6 +38,7 @@
     Mogma Turf Dive: Nothing
     Past Mogma Turf: Bomb_Bag or Hook_Beetle
   locations:
+    Eldin Volcano - Rupee on Ledge before First Room: Beetle
     Eldin Volcano - Chest after Blocked Crawlspace: Nothing
     Eldin Volcano - Southeast Rupee above Mogma Turf Entrance: Beetle
     Eldin Volcano - North Rupee above Mogma Turf Entrance: Beetle
