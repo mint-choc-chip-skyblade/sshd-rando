@@ -139,17 +139,19 @@ class TooltipsSearch:
             access.location.computed_requirement = dnf_to_expr(self.bitindex, expr)
 
         # same thing for exits
-        for exit in self.exits_to_try:
-            # TODO is there a good way to tell
-            # whether an entrance is a possible randomized map entrance here?
-            expr = DNF.false()
-            for tod in ALL_TODS:
-                valid_tods = self.world.exit_time_cache.get(exit, TOD.ALL)
-                if not (valid_tods & tod):
+        for area in self.areas_to_try:
+            for exit in area.exits:
+                if not exit.shuffled:
+                    # only shuffled entrances are shown in the tracker UI
                     continue
-                expr = expr.or_(self.try_exit_at_time(exit, tod))
+                expr = DNF.false()
+                for tod in ALL_TODS:
+                    valid_tods = self.world.exit_time_cache.get(exit, TOD.ALL)
+                    if not (valid_tods & tod):
+                        continue
+                    expr = expr.or_(self.try_exit_at_time(exit, tod))
 
-            exit.computed_requirement = dnf_to_expr(self.bitindex, expr)
+                exit.computed_requirement = dnf_to_expr(self.bitindex, expr)
 
         print("location requirements search and simplification", time.time() - start)
 
