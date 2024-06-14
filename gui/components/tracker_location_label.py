@@ -187,6 +187,7 @@ class TrackerLocationLabel(QLabel):
 
     def get_tooltip_text(self) -> str:
         req = self.location.computed_requirement
+        sort_requirement(req)
         match req.type:
             case RequirementType.AND:
                 # Computed requirements have a top-level AND requirement
@@ -239,10 +240,8 @@ class TrackerLocationLabel(QLabel):
                     else "red"
                 )
                 # Get a pretty name for the item if it is the first stage of a progressive item
-                item = req.args[0].name
-                if (pretty_name := PRETTY_ITEM_NAMES.get((item, 1), None)) is not None:
-                    item = pretty_name
-                return f'<span style="color:{color}">{item}</span>'
+                name = pretty_name(req.args[0].name, 1)
+                return f'<span style="color:{color}">{name}</span>'
             case RequirementType.COUNT:
                 # Determine if the user has enough of this item marked
                 color = (
@@ -253,12 +252,8 @@ class TrackerLocationLabel(QLabel):
                     else "red"
                 )
                 # Get a pretty name for the progressive item
-                item = req.args[1].name
-                if (
-                    pretty_name := PRETTY_ITEM_NAMES.get((item, req.args[0]), None)
-                ) is None:
-                    pretty_name = f"{item} x {req.args[0]}"
-                return f'<span style="color:{color}">{pretty_name}</span>'
+                name = pretty_name(req.args[1].name, req.args[0])
+                return f'<span style="color:{color}">{name}</span>'
             case RequirementType.WALLET_CAPACITY:
                 # Determine if the user has enough wallet capacity for this requirement
                 color = (
@@ -300,3 +295,35 @@ class TrackerLocationLabel(QLabel):
                 )
             case _:
                 raise ValueError("unreachable")
+
+
+def sort_requirement(req: Requirement):
+    def by_length(req: Requirement):
+        if req.type == RequirementType.AND or req.type == RequirementType.OR:
+            return len(req.args)
+        return -1
+
+    def by_item(req: Requirement):
+        if req.type == RequirementType.ITEM:
+            return pretty_name(req.args[0].name, 1)
+        elif req.type == RequirementType.COUNT:
+            return pretty_name(req.args[1].name, req.args[0])
+        return ""
+
+    def sort_key(req: Requirement):
+        return (by_length(req), by_item(req))
+
+    if req.type == RequirementType.AND or req.type == RequirementType.OR:
+        for expr in req.args:
+            sort_requirement(expr)
+        req.args.sort(key=sort_key)
+
+
+def pretty_name(item, count):
+    if (pretty_name := PRETTY_ITEM_NAMES.get((item, count), None)) is not None:
+        return pretty_name
+
+    if count > 1:
+        return f"{item} x {count}"
+    else:
+        return item
