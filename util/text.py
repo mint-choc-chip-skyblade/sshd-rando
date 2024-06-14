@@ -29,8 +29,17 @@ class Text:
         "en_US",  # English (US)
     ]
 
+    MALE = "Male"
+    FEMALE = "Female"
+    SINGULAR = "Singular"
+    PLURAL = "Plural"
+
+    TYPES = ["standard", "pretty", "cryptic", "goal_name"]
+
     def __init__(self, text: str = "") -> None:
         self.text: dict[str, str] = {}
+        self.plurality: dict[str, str] = {}
+        self.gender: dict[str, str] = {}
         for lang in Text.SUPPORTED_LANGUAGES:
             self.text[lang] = text
 
@@ -64,6 +73,12 @@ class Text:
             return self.text["en_US"]  # Default to english if not found
             # raise RuntimeError(f'Unsupported language "{lang}"')
         return self.text[lang]
+
+    def plurality(self, lang: str) -> str:
+        return self.plurality[lang]
+
+    def gender(self, lang: str) -> str:
+        return self.gender[lang]
 
     def replace(self, old: str, new: Union[str, "Text"], count: int = -1) -> "Text":
         text_with_replace = copy.deepcopy(self)
@@ -125,6 +140,24 @@ class Text:
 text_table: dict[str, dict[str, Text]] = {}
 
 
+def verify_plurality(plurality: str) -> None:
+    ALL_PLURALITIES = [Text.SINGULAR, Text.PLURAL, ""]
+    if plurality not in ALL_PLURALITIES:
+        raise RuntimeError(
+            f"Unknown plurality {plurality}. Plurality must be one of {ALL_PLURALITIES}"
+        )
+
+
+# This function is not a statement about human gender, but instead
+# one about the gender of words in text in various languages
+def verify_gender(gender: str) -> None:
+    ALL_TEXT_GENDERS = [Text.MALE, Text.FEMALE, ""]
+    if gender not in ALL_TEXT_GENDERS:
+        raise RuntimeError(
+            f"Unknown text gender {gender}. Text gender must be one of {ALL_TEXT_GENDERS}"
+        )
+
+
 def load_text_data() -> None:
     # Clear the text table for multiple generations
     if text_table:
@@ -150,13 +183,38 @@ def load_text_data() -> None:
                 for field, text in element.items():
                     if field == "name":
                         continue
-                    if field not in text_table[name]:
-                        text_table[name][field] = Text()
-                    # Insert the text into the appropriate Text objects
-                    # language
-                    text_table[name][field].text[language] = (
-                        text if text is not None else ""
-                    )
+                    elif field in Text.TYPES:
+                        if field not in text_table[name]:
+                            text_table[name][field] = Text()
+                        text_entry = text_table[name][field]
+                        if type(text) == dict:
+                            if "text" not in text:
+                                raise RuntimeError(
+                                    f"Could not find required 'text' field for object {name}: {field}: {text} for language {language}"
+                                )
+                            plurality = text.get("plurality", "")
+                            verify_plurality(plurality)
+                            gender = text.get("gender", "")
+                            verify_gender(gender)
+                            text = text["text"]
+                            text_entry.plurality[language] = plurality
+                            text_entry.gender[language] = gender
+
+                        # Insert the text into the appropriate Text objects
+                        # language
+                        text_entry.text[language] = text if text is not None else ""
+                    elif field == "plurality":
+                        verify_plurality(text)
+                        for text_object in text_table[name].values():
+                            text_object.plurality[language] = text
+                    elif field == "gender":
+                        verify_gender(text)
+                        for text_object in text_table[name].values():
+                            text_object.gender[language] = text
+                    else:
+                        raise RuntimeError(
+                            f'Unknown field "{field}" in text data object {element} for language {language}'
+                        )
 
 
 def get_text_data(key: str, type_: str = "standard") -> Text:

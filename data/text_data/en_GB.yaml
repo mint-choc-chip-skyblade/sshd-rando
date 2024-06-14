@@ -9,12 +9,15 @@
 
 - name: Red Rupee
   standard: Red Rupee
-  pretty: a <Red Rupee>
-  cryptic: a <r<pair of tenners>>
-  plurality: Singular
+  pretty: 
+    text: a <Red Rupee>
+    plurality: Singular
+  cryptic: 
+    text: a <r<pair of tenners>>
+    plurality: Plural
 
 - name: Heart
   standard: Heart
   pretty: a <Heart>
   cryptic: a <r<plaster>>
-  plurailty: Singular
+  plurality: Singular
