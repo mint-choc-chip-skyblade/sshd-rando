@@ -712,9 +712,16 @@ pub fn fix_bottle_items_from_npcs(param1: u64, param2: u64, param3: u32) {
 #[no_mangle]
 pub fn rotate_freestanding_items(item_actor: *mut dAcItem) {
     unsafe {
+        let mut degrees = 1.5f32;
+
+        // If is trap
+        if ((*item_actor).base.members.base.param2 >> 4) & 0xF != 0xF {
+            degrees = -1.5;
+        }
+
         // Spin items if not a stamina or light fruit
         if (*item_actor).itemid != 42 && (*item_actor).itemid != 47 {
-            (*item_actor).rot_increment.x = getRotFromDegrees(1.5);
+            (*item_actor).rot_increment.x = getRotFromDegrees(degrees);
         }
     }
 }
