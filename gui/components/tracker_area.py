@@ -9,6 +9,7 @@ from logic.location import Location
 from logic.entrance import Entrance
 
 from filepathconstants import TRACKER_ASSETS_PATH
+import platform
 
 
 class TrackerArea(QLabel):
@@ -199,7 +200,11 @@ class TrackerArea(QLabel):
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
 
-        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(-35, int(self.height() / 2))
+        coords = self.mapToGlobal(QPoint(-35, self.height() // 2))
+        # For whatever reason, MacOS calculates this position differently,
+        # so we must offset the height to compensate
+        if platform.system() == "Darwin":
+            coords.setY(coords.y() - 18)
         QToolTip.showText(coords, self.tooltip + self.get_extra_tooltip_text(), self)
         self.update_hover_text()
 

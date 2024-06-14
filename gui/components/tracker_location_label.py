@@ -1,4 +1,5 @@
 from collections import Counter
+import platform
 from PySide6.QtWidgets import QLabel, QToolTip
 from PySide6.QtGui import (
     QCursor,
@@ -175,8 +176,11 @@ class TrackerLocationLabel(QLabel):
         return super().mouseReleaseEvent(ev)
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
-
-        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(0, int(self.height() / 4))
+        coords = self.mapToGlobal(QPoint(-2, self.height() - 15))
+        # For whatever reason, MacOS calculates this position differently,
+        # so we must offset the height to compensate
+        if platform.system() == "Darwin":
+            coords.setY(coords.y() - 18)
         QToolTip.showText(coords, self.get_tooltip_text(), self)
 
         return super().mouseMoveEvent(ev)
@@ -209,8 +213,8 @@ class TrackerLocationLabel(QLabel):
         # Set the tooltip's min and max width to ensure the tooltip is the right size and line-breaks properly
         self.setStyleSheet(
             self.styleSheet()
-            .replace("MINWIDTH", str(min(max_line_width, self.width())))
-            .replace("MAXWIDTH", str(self.width()))
+            .replace("MINWIDTH", str(min(max_line_width, self.width() - 3)))
+            .replace("MAXWIDTH", str(self.width() - 3))
         )
         return (
             "Item Requirements:"

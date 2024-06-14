@@ -15,6 +15,7 @@ from constants.guiconstants import TRACKER_TOOLTIP_STYLESHEET
 
 from logic.world import World, Counter, Location
 from logic.item import Item
+import platform
 
 
 class TrackerInventoryButton(QLabel):
@@ -172,9 +173,11 @@ class TrackerInventoryButton(QLabel):
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
         if self.allow_sphere_tracking:
             self.calculate_tooltip()
-            coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(
-                -60, int(self.height() * 3 / 4)
-            )
+            coords = self.mapToGlobal(QPoint(-60, self.height() * 3 // 4))
+            # For whatever reason, MacOS calculates this position differently,
+            # so we must offset the height to compensate
+            if platform.system() == "Darwin":
+                coords.setY(coords.y() - 18)
             QToolTip.showText(coords, self.tooltip, self)
 
         self.update_hover_text()

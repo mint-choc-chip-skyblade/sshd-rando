@@ -3,6 +3,7 @@ from PySide6.QtGui import QCursor, QMouseEvent
 from PySide6 import QtCore
 from PySide6.QtCore import Signal, QPoint
 from constants.guiconstants import TRACKER_TOOLTIP_STYLESHEET
+import platform
 
 
 class TrackerToggleSTButton(QPushButton):
@@ -18,7 +19,11 @@ class TrackerToggleSTButton(QPushButton):
         self.setStyleSheet(TRACKER_TOOLTIP_STYLESHEET)
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
-        coords = self.mapToGlobal(QPoint(0, 0)) + QPoint(100, int(self.height() / 4))
+        coords = self.mapToGlobal(QPoint(100, self.height() // 2))
+        # For whatever reason, MacOS calculates this position differently,
+        # so we must offset the height to compensate
+        if platform.system() == "Darwin":
+            coords.setY(coords.y() - 18)
         QToolTip.showText(coords, "Right-click for info", self)
 
         return super().mouseMoveEvent(ev)
