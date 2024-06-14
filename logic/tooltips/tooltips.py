@@ -15,7 +15,7 @@ class TooltipsSearch:
 
     Instead of exploring the area graph until no new things are in logic,
     we explore the area graph until tooltip requirements don't change,
-    at which point we have closed-form logical expressions
+    at which point we have closed-form logical expressions.
     """
 
     def __init__(
@@ -89,9 +89,16 @@ class TooltipsSearch:
         self.loc_reqs: dict[int, Requirement] = {}
 
     def do_search(self):
+        # This algorithm works in three stages:
+        # 1. Compute area and event requirements -> DNFs
+        # 2. Compute location requirement -> DNF
+        # 3. Simplify location requirement -> Requirement
         import time
 
         start = time.time()
+        # This is step 1. This computes everything that requirements
+        # can depend on in a fixpoint algorithm - namely, areas at given
+        # times-of-day and events.
         self.new_things_found = True
         while self.new_things_found:
             self.recently_updated_areas = self.newly_updated_areas
@@ -99,11 +106,14 @@ class TooltipsSearch:
             self.newly_updated_areas = set()
             self.newly_updated_events = set()
             self.new_things_found = False
+            # try to reach areas in new ways through exits
             self.try_exits()
+            # try to acquire events in new ways
             self.try_events()
+            # try to reach areas in new ways by sleeping
             self.try_sleep()
 
-        print("bottom-up propagation", time.time() - start)
+        print("area/event requirements search", time.time() - start)
 
         start = time.time()
 
@@ -118,33 +128,40 @@ class TooltipsSearch:
         # area requirement. It has been hypothesized that converting them
         # separately may produce better tooltips, but at that point you need the
         # TWWR-Tracker boolean-expression multi-level simplification code
+
+        # step 2: for every location, OR all the ways to access it
         for loc_id, access_list in item_locations.items():
             expr = DNF.false()
             for access in access_list:
                 expr = expr.or_(
-                    self.try_event_at_time(access, TOD.DAY).or_(
-                        self.try_event_at_time(access, TOD.NIGHT)
+                    self.try_access_at_time(access, TOD.DAY).or_(
+                        self.try_access_at_time(access, TOD.NIGHT)
                     )
                 )
-            expr = expr.dedup()
+            # step 3: simplify
             access.location.computed_requirement = dnf_to_expr(self.bitindex, expr)
             self.loc_reqs[loc_id] = access.location.computed_requirement
-            # print(access.location.name, self.loc_reqs[loc_id])
+            # print(access.location.name, print_req(self.loc_reqs[loc_id]))
 
-        for req, id in self.world.events.items():
-            pass
-            # print(req, print_req(dnf_to_expr(self.bitindex, self.event_exprs[id])))
-
-        print("final propagation", time.time() - start)
+        print("location requirements search and simplification", time.time() - start)
 
     def was_updated(self, area: Area, thing: "Entrance|EventAccess"):
+        """Check for a thing in area whether its logical dependencies
+        have recently been updated.
+        """
         if area.id in self.recently_updated_areas:
+            # if the parent area's computed requirements changed,
+            # this thing's computed requirements may change too
             return True
         remote_event_req = self.remote_requirements["event"][thing]
         if self.recently_updated_events & remote_event_req:
+            # if the expression mentions an event and that event's computed
+            # requirements changed, this thing's requirements may change
             return True
         remote_area_req = self.remote_requirements["area"][thing]
         if self.recently_updated_areas & remote_area_req:
+            # if the expression requires can_access(area) and that area's computed
+            # requirements changed, this thing's requirements may change
             return True
 
         return False
@@ -189,8 +206,8 @@ class TooltipsSearch:
                 continue
 
             old_expr = self.event_exprs[event.id]
-            new_partial = self.try_event_at_time(event, TOD.DAY).or_(
-                self.try_event_at_time(event, TOD.NIGHT)
+            new_partial = self.try_access_at_time(event, TOD.DAY).or_(
+                self.try_access_at_time(event, TOD.NIGHT)
             )
             useful, new_expr = old_expr.or_useful(new_partial)
             if useful:
@@ -214,7 +231,9 @@ class TooltipsSearch:
                             self.new_things_found = True
                             self.area_exprs_tod[tod][area.id] = new_expr.dedup()
 
-    def try_event_at_time(self, event: "EventAccess | LocationAccess", tod: int) -> DNF:
+    def try_access_at_time(
+        self, event: "EventAccess | LocationAccess", tod: int
+    ) -> DNF:
         return self.area_exprs_tod[tod][event.area.id].and_(
             evaluate_partial_requirement(self.bitindex, event.req, self, tod)
         )
@@ -254,6 +273,10 @@ def print_req(req: Requirement) -> str:
 def evaluate_partial_requirement(
     bit_index: BitIndex, req: Requirement, search: "TooltipsSearch", time: int
 ) -> DNF:
+    """Turns the requirement `req` at a given time of day into a DNF expression
+    that depends only on items. can_access and event requirements are inlined
+    from the computed requirements in `search`.
+    """
     match req.type:
         case RequirementType.IMPOSSIBLE:
             return DNF.false()
