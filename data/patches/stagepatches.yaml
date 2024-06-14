@@ -3485,8 +3485,16 @@ F300_2: # Lightning Node
     layer: 0
     room: 0
     objtype: OBJ
+  - name: Increase power supply TgReact size
+    type: objpatch
+    id: 0xFC36
+    layer: 0
+    room: 0
+    objtype: SOBJ
+    object:
+      sizex: 2.5
+      sizez: 2
 
-# TODO: block staying down stuff needs uncommenting when path add stuff ready
 F300_3: # Fire Node
   - name: Fi text for generator
     type: objdelete
@@ -3514,6 +3522,15 @@ F300_3: # Fire Node
       - posx: -1275.0
         posy: 240.0
         posz: -4150.0
+  - name: Increase power supply TgReact size
+    type: objpatch
+    id: 0xFC3F
+    layer: 0
+    room: 0
+    objtype: SOBJ
+    object:
+      sizex: 2.5
+      sizez: 2
 
 F300_4: # Temple of Time
   - name: Layer override

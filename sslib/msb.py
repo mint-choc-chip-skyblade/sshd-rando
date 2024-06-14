@@ -65,6 +65,8 @@ CONTROL_REPLACEMENTS = {
     "<actionD ": "\x0e\x01\x09\x04\x0d",
     "<actionE ": "\x0e\x01\x09\x04\x0e",
     "<actionF ": "\x0e\x01\x09\x04\x0f",
+    # Different icons within text
+    "<icon 30>": "\x0e\x02\x04\x02\u1ecd",  # X button icon
 }
 
 
