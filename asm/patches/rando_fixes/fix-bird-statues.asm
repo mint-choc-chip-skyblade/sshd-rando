@@ -29,3 +29,11 @@ mov x0, #0x0
 ; Change HD progression storyflag for Temple of Time bird statue
 .offset 0x71013a25c8
 .short -1 ; rando exit out of LMF for first time storyflag
+
+; Don't give great tree bird statue from storyflag
+.offset 0x71013a24a8
+.short -1
+
+; Don't give lanayru gorge bird statue from storyflag
+.offset 0x71013a25f0
+.short -1
