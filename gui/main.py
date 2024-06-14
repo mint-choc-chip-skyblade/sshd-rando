@@ -154,7 +154,7 @@ class Main(QMainWindow):
             )
             default_description += (
                 OPTION_PREFIX
-                + 'Click a dungeon label (e.g. "SV") to set it as a required dungeon.'
+                + 'Click a dungeon label (e.g. "SV") to toggle if it is a required dungeon.'
             )
 
             self.ui.settings_current_option_description_label.setText(
