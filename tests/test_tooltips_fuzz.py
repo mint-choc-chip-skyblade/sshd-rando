@@ -29,14 +29,14 @@ true if and only if search puts them in logic.
 def default_tracker_settings() -> SettingMap:
     load_text_data()
     setting_map = SettingMap()
+    setting_map.starting_inventory = get_default_setting("starting_inventory")
+    setting_map.excluded_locations = get_default_setting("excluded_locations")
+    setting_map.excluded_hint_locations = get_default_setting(
+        "excluded_hint_locations"
+    )
+    setting_map.mixed_entrance_pools = get_default_setting("mixed_entrance_pools")
     all_settings_info = get_all_settings_info()
     for setting, info in all_settings_info.items():
-        setting_map.starting_inventory = get_default_setting("starting_inventory")
-        setting_map.excluded_locations = get_default_setting("excluded_locations")
-        setting_map.excluded_hint_locations = get_default_setting(
-            "excluded_hint_locations"
-        )
-        setting_map.mixed_entrance_pools = get_default_setting("mixed_entrance_pools")
         setting_map.settings[setting] = Setting(
             setting, info.options[info.default_option_index], info
         )
