@@ -166,7 +166,8 @@ def generate_spoiler_log(worlds: list[World]) -> None:
             if "Goddess Cube" not in location.types:
                 longest_name_length = max(longest_name_length, len(f"{location}"))
 
-        spoiler_log.write("\nAll Locations:\n")
+        # Output all enabled locations
+        spoiler_log.write("\nEnabled Locations:\n")
         for world in worlds:
             spoiler_log.write(f"    {world}:\n")
 
@@ -180,19 +181,12 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                     and "Hint Location" not in location.types
                     and "Goddess Cube" not in location.types
                 ):
-                    override_item_name = None
-                    if (
-                        location.current_item.name in BOTTLE_ITEMS
-                        and location.current_item.name != EMPTY_BOTTLE
-                    ):
-                        override_item_name = EMPTY_BOTTLE
-
                     spoiler_log.write(
                         "        "
                         + spoiler_format_location(
                             location,
                             longest_name_length,
-                            override_item_name=override_item_name,
+                            override_item_name=get_item_override_name(location),
                         )
                         + "\n"
                     )
@@ -258,6 +252,33 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                     spoiler_log.write("        Impa Hint:\n")
                     spoiler_log.write(f"            {world.impa_sot_hint}\n")
 
+        # Recalculate longest name length for all locations
+        longest_name_length = 0
+        for location in worlds[0].location_table.values():
+            if "Goddess Cube" not in location.types:
+                longest_name_length = max(longest_name_length, len(f"{location}"))
+
+        # Output all disabled locations
+        spoiler_log.write("\nDisabled Locations:\n")
+        for world in worlds:
+            spoiler_log.write(f"    {world}:\n")
+
+            disabled_shuffle_locations = get_disabled_shuffle_locations(
+                world.location_table, world.config
+            )
+
+            for location in world.location_table.values():
+                if location in disabled_shuffle_locations:
+                    spoiler_log.write(
+                        "        "
+                        + spoiler_format_location(
+                            location,
+                            longest_name_length,
+                            override_item_name=get_item_override_name(location),
+                        )
+                        + "\n"
+                    )
+
         log_settings(spoiler_log, config, worlds)
 
 
@@ -272,3 +293,12 @@ def generate_anti_spoiler_log(worlds: list[World]) -> None:
     with open(filepath, "w", encoding="utf-8") as anti_spoiler_log:
         log_basic_info(anti_spoiler_log, config, worlds)
         log_settings(anti_spoiler_log, config, worlds)
+
+
+def get_item_override_name(location: Location) -> str | None:
+    if (
+        location.current_item.name in BOTTLE_ITEMS
+        and location.current_item.name != EMPTY_BOTTLE
+    ):
+        return EMPTY_BOTTLE
+    return None
