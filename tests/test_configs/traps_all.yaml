@@ -6,3 +6,4 @@ World 1:
   curse_traps: "on"
   noise_traps: "on"
   groose_traps: "on"
+  starting_inventory: []

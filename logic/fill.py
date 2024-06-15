@@ -45,6 +45,17 @@ def fill_worlds(worlds: list[World]):
     # Remove major items from item pool
     item_pool = [item for item in item_pool if not item.is_major_item]
 
+    # Ensure that at least *some* traps get placed in progress locations if possible
+    traps = [item for item in item_pool if item.name in TRAP_SETTING_TO_ITEM.values()]
+
+    if len(traps) > 3:
+        traps = traps[:3]
+    fast_fill(traps.copy(), progress_locations)
+
+    # Remove placed traps from item pool
+    for trap in traps:
+        item_pool.remove(trap)
+
     # Place the rest of the items with fast fill
     fast_fill(item_pool, all_locations)
 
