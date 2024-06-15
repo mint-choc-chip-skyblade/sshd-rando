@@ -501,8 +501,8 @@ def generate_path_hint_message(location: Location, goal_location: Location) -> N
     )
     full_text = (
         get_text_data("Path Hint")
-        .replace("|regions|", hint_region_text)
-        .replace("|goal_name|", goal_name_text)
+        .replace("<regions>", hint_region_text)
+        .replace("<goal_name>", goal_name_text)
     )
 
     for lang in full_text.SUPPORTED_LANGUAGES:
@@ -516,7 +516,7 @@ def generate_path_hint_message(location: Location, goal_location: Location) -> N
 
 
 def generate_barren_hint_message(location: Location, barren_region: Text) -> None:
-    location.hint.text = get_text_data("Barren Hint").replace("|region|", barren_region)
+    location.hint.text = get_text_data("Barren Hint").replace("<region>", barren_region)
     location.hint.type = "Barren"
 
 
@@ -548,8 +548,8 @@ def generate_item_hint_message(location: Location) -> None:
 
     location.hint.text = (
         get_text_data("Item Hint")
-        .replace("|item|", item_text)
-        .replace("|regions|", hint_region_text)
+        .replace("<item_pretty_or_cryptic_name>", item_text)
+        .replace("<regions>", hint_region_text)
     )
     location.hint.type = "Item"
 
@@ -566,8 +566,8 @@ def generate_location_hint_message(location: Location) -> None:
 
     location.hint.text = (
         get_text_data("Location Hint")
-        .replace("|location|", location_text)
-        .replace("|item|", item_text)
+        .replace("<location_pretty_or_cryptic_name>", location_text)
+        .replace("<item_pretty_or_cryptic_name>", item_text)
     )
 
 
@@ -702,7 +702,7 @@ def generate_impa_sot_hint(world: World) -> None:
     impa_hint = Hint()
     impa_hint.type = "Impa"
     impa_hint.text = get_text_data("Impa SoT Text").replace(
-        "|regions|", sot_regions_text
+        "<regions>", sot_regions_text
     )
 
     world.impa_sot_hint = impa_hint

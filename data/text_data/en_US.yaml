@@ -244,16 +244,16 @@
   standard: "I see you have acquired the <y<harp>>. Well done.\nLet me teach you a <b<song>>, it will be useful for\nyour adventure."
 
 - name: Path Hint
-  standard: They say that |regions| |is/are| on the path to |goal_name|.
+  standard: They say that <regions> |is/are| on the path to <goal_name>.
 
 - name: Barren Hint
-  standard: They say that visiting |region| is a foolish choice.
+  standard: They say that visiting <region> is a foolish choice.
 
 - name: Item Hint
-  standard: They say that |item| can be found at |regions|.
+  standard: They say that <item_pretty_or_cryptic_name> can be found at <regions>.
 
 - name: Location Hint
-  standard: They say that |location| rewards |item|.
+  standard: They say that <location_pretty_or_cryptic_name> rewards <item_pretty_or_cryptic_name>.
 
 - name: Small Key
   standard: Small Key
@@ -289,7 +289,7 @@
   standard: 10 Arrows
   pretty: <10 Arrows>
   cryptic: <r<pointy sticks>>
-  plurality: Singular
+  plurality: Plural
 
 - name: Goddess White Sword
   standard: Goddess White Sword
@@ -335,9 +335,12 @@
 
 - name: Goddess's Harp
   standard: Goddess's Harp
-  pretty: the <Goddess's Harp>
-  cryptic: the <r<strings of a goddess>>
-  plurality: Singular
+  pretty: 
+    text: the <Goddess's Harp>
+    plurality: Singular
+  cryptic: 
+    text: the <r<strings of a goddess>>
+    plurality: Plural
 
 - name: Progressive Bow
   standard: Progressive Bow
@@ -365,9 +368,12 @@
 
 - name: Fire Sanctuary Boss Key
   standard: Fire Sanctuary Boss Key
-  pretty: the <Fire Sanctuary Boss Key>
-  cryptic: some <r<mysterious crystals>>
-  plurality: Plural
+  pretty: 
+    text: the <Fire Sanctuary Boss Key>
+    plurality: Singular
+  cryptic: 
+    text: some <r<mysterious crystals>>
+    plurality: Plural
 
 - name: Sandship Boss Key
   standard: Sandship Boss Key
@@ -407,9 +413,12 @@
 
 - name: Gold Rupee
   standard: Gold Rupee
-  pretty: a <Gold Rupee>
-  cryptic: <ye<many riches>>
-  plurality: Singular
+  pretty: 
+    text: a <Gold Rupee>
+    plurality: Singular
+  cryptic: 
+    text: <ye<many riches>>
+    plurality: Plural
 
 - name: Rupoor
   standard: Rupoor
@@ -599,15 +608,21 @@
 
 - name: Stamina Potion
   standard: Stamina Potion
-  pretty: a <Stamina Potion>
-  cryptic: <r<stimulants>>
-  plurality: Singular
+  pretty: 
+    text: a <Stamina Potion>
+    plurality: Singular
+  cryptic: 
+    text: <r<stimulants>>
+    plurality: Plural
 
 - name: Stamina Potion Plus
   standard: Stamina Potion+
-  pretty: a <Stamina Potion+>
-  cryptic: <r<strong stimulants>>
-  plurality: Singular
+  pretty: 
+    text: a <Stamina Potion+>
+    plurality: Singular
+  cryptic: 
+    text: <r<strong stimulants>>
+    plurality: Plural
 
 - name: Air Potion
   standard: Air Potion
@@ -851,9 +866,12 @@
 
 - name: Tumbleweed
   standard: Tumbleweed
-  pretty: a <Tumbleweed>
-  cryptic: some <r<conjoined twigs>>
-  plurality: Singular
+  pretty: 
+    text: a <Tumbleweed>
+    plurality: Singular
+  cryptic: 
+    text: some <r<conjoined twigs>>
+    plurality: Plural
 
 - name: Eldin Ore
   standard: Eldin Ore
@@ -1105,7 +1123,7 @@
   standard: Group of Tadtones
   pretty: a <Group of Tadtones>
   cryptic: some <r<music notes>>
-  plurality: Singular
+  plurality: Plural
 
 - name: Scrapper
   standard: Scrapper
@@ -1132,9 +1150,12 @@
 
 - name: Curse Trap
   standard: Trap
-  pretty: Curse Trap
-  cryptic: some <r<magical hand-ties>>
-  plurality: Plural
+  pretty:
+    text: a <Curse Trap>
+    plurality: Singular
+  cryptic: 
+    text: some <r<magical hand-ties>>
+    plurality: Plural
 
 - name: Burn Trap
   standard: Trap
@@ -2068,7 +2089,7 @@
 - name: Beedle's Island - Top Goddess Chest
   standard: Beedle's Island - Top Goddess Chest
   pretty: Beedle's Island - Top Goddess Chest
-  cryptic: a <s<goddess cube>> at the <y+<monument to time>> reveals
+  cryptic: a <s<goddess cube>> at the <y+<monument to time>>
 
 - name: Beedle's Island - Goddess Chest in Cage
   standard: Beedle's Island - Goddess Chest in Cage
@@ -5837,7 +5858,7 @@
   standard: The song that leads you to the final trial on <b+<Skyloft>>.
 
 - name: Impa SoT Text
-  standard: Do not fear for <b<Zelda>>. I will watch over her here. Go now to |regions|. The <r<item you need to fulfill your destiny>> is there.
+  standard: Do not fear for <b<Zelda>>. I will watch over her here. Go now to <regions>. The <r<item you need to fulfill your destiny>> is there.
 
 - name: First Groosenator Choice Text
   standard: "So, where you flying to today?\n[1]The sky![2]The surface.[3]<b<Flooded Faron Woods>>[4-]Never mind!"
