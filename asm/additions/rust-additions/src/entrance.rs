@@ -179,7 +179,7 @@ pub fn handle_er_cases() {
             NEXT_NIGHT = 0;
         }
 
-        playFanfareMaybe(FANFARE_SOUND_MGR, 0);
+        playFanfareMaybe(FANFARE_SOUND_MGR, 0xFFFF);
 
         // Replaced code sets these
         (*GAME_RELOADER_PTR).item_to_use_after_reload = 0xFF;
