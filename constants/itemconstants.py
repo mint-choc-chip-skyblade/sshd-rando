@@ -112,24 +112,30 @@ ITEMS_NOT_TO_TRAP = (
 )
 
 # Item Pools
-ALL_JUNK_ITEMS: list[str] = [
-    MONSTER_HORN,
-    GOLDEN_SKULL,
-    GODDESS_PLUME,
-    DUSK_RELIC,
-    TUMBLEWEED,
-    FIVE_BOMBS,
-    GREEN_RUPEE,
-    BLUE_RUPEE,
-    RED_RUPEE,
-    SILVER_RUPEE,
-    GOLD_RUPEE,
-    UNCOMMON_TREASURE,
-    RARE_TREASURE,
-    EVIL_CRYSTAL,
-    ELDIN_ORE,
-    RUPOOR,
-]
+ALL_JUNK_ITEMS: list[str] = (
+    [
+        # HEART,
+        # SINGLE_ARROW,
+        TEN_ARROWS,
+        FIVE_BOMBS,
+        TEN_BOMBS,
+        # STAMINA_FRUIT,
+        # LIGHT_FRUIT,
+        FIVE_DEKU_SEEDS,
+        TEN_DEKU_SEEDS,
+        # FAIRY,
+        GREEN_RUPEE,
+        BLUE_RUPEE,
+        RED_RUPEE,
+        RUPOOR,
+    ]
+    + list(COMMON_TREASURES)
+    + list(UNCOMMON_TREASURES)
+    + list(RARE_TREASURES)
+    # + list(COMMON_BUGS)
+    # + list(UNCOMMON_BUGS)
+    # + list(RARE_BUGS)
+)
 
 MINIMAL_ITEM_POOL: list[str] = (
     [
