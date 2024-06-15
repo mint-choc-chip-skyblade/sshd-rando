@@ -3,6 +3,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+from constants.itemnames import *
 from logic.generate import generate
 from logic.config import *
 from logic.search import all_logic_satisfied
@@ -207,11 +208,13 @@ def test_default_multiworld_config() -> None:
 
 
 def test_traps_all() -> None:
-    config_test("traps_all.yaml")
+    worlds = config_test("traps_all.yaml")
+    _check_inventory_items_were_placed(worlds)
 
 
 def test_traps_off() -> None:
-    config_test("traps_off.yaml")
+    worlds = config_test("traps_off.yaml")
+    _check_inventory_items_were_placed(worlds)
 
 
 def test_beatable_only_config() -> None:
@@ -278,3 +281,38 @@ def test_good_starting_inventory() -> None:
         )
         == 2
     )
+
+
+def _check_inventory_items_were_placed(worlds: list[World]):
+    for world in worlds:
+        logicless_inventory_items: list[str] = (
+            [
+                HYLIAN_SHIELD,
+                CURSED_MEDAL,
+                TREASURE_MEDAL,
+                POTION_MEDAL,
+                BUG_MEDAL,
+                SV_MAP,
+                ET_MAP,
+                LMF_MAP,
+                AC_MAP,
+                SSH_MAP,
+                FS_MAP,
+                SK_MAP,
+            ]
+            + [HEART_MEDAL] * 2
+            + [RUPEE_MEDAL] * 2
+            + [HEART_PIECE] * 24
+            + [HEART_CONTAINER] * 6
+            + [LIFE_MEDAL] * 2
+        )
+
+        for location in world.location_table.values():
+            if (
+                location.current_item is not None
+                and location.current_item.name in logicless_inventory_items
+            ):
+                logicless_inventory_items.remove(location.current_item.name)
+
+        print(logicless_inventory_items)
+        assert len(logicless_inventory_items) == 0
