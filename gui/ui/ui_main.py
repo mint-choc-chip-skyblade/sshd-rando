@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.7.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComb
     QHBoxLayout, QLabel, QLayout, QLineEdit,
     QListView, QMainWindow, QPushButton, QScrollArea,
     QSizePolicy, QSpacerItem, QSpinBox, QTabWidget,
-    QVBoxLayout, QWidget)
+    QTextEdit, QVBoxLayout, QWidget)
 
 from gui.components.tracker_toggle_st_button import TrackerToggleSTButton
 from gui.components.tristate_check_box import RandoTriStateCheckBox
@@ -29,7 +29,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(1387, 845)
+        main_window.resize(1387, 873)
         main_window.setStyleSheet(u"QToolTip {color: #000000; background-color: #FFFFFF;}")
         self.central_widget = QWidget(main_window)
         self.central_widget.setObjectName(u"central_widget")
@@ -825,8 +825,8 @@ class Ui_main_window(object):
 
         self.line = QFrame(self.open_dungeons_group_box)
         self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.HLine)
-        self.line.setFrameShadow(QFrame.Sunken)
+        self.line.setFrameShape(QFrame.Shape.HLine)
+        self.line.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_25.addWidget(self.line)
 
@@ -1034,8 +1034,8 @@ class Ui_main_window(object):
 
         self.mixed_entrance_pools_hline = QFrame(self.mixed_entrance_pools_group_box)
         self.mixed_entrance_pools_hline.setObjectName(u"mixed_entrance_pools_hline")
-        self.mixed_entrance_pools_hline.setFrameShape(QFrame.HLine)
-        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Sunken)
+        self.mixed_entrance_pools_hline.setFrameShape(QFrame.Shape.HLine)
+        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_28.addWidget(self.mixed_entrance_pools_hline)
 
@@ -2073,8 +2073,8 @@ class Ui_main_window(object):
 
         self.player_cosmetics_hline = QFrame(self.player_cosmetics_group_box)
         self.player_cosmetics_hline.setObjectName(u"player_cosmetics_hline")
-        self.player_cosmetics_hline.setFrameShape(QFrame.HLine)
-        self.player_cosmetics_hline.setFrameShadow(QFrame.Sunken)
+        self.player_cosmetics_hline.setFrameShape(QFrame.Shape.HLine)
+        self.player_cosmetics_hline.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_37.addWidget(self.player_cosmetics_hline)
 
@@ -2165,8 +2165,8 @@ class Ui_main_window(object):
 
         self.utils_hline = QFrame(self.file_setup_group_box)
         self.utils_hline.setObjectName(u"utils_hline")
-        self.utils_hline.setFrameShape(QFrame.HLine)
-        self.utils_hline.setFrameShadow(QFrame.Sunken)
+        self.utils_hline.setFrameShape(QFrame.Shape.HLine)
+        self.utils_hline.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline)
 
@@ -2192,8 +2192,8 @@ class Ui_main_window(object):
 
         self.utils_hline_2 = QFrame(self.file_setup_group_box)
         self.utils_hline_2.setObjectName(u"utils_hline_2")
-        self.utils_hline_2.setFrameShape(QFrame.HLine)
-        self.utils_hline_2.setFrameShadow(QFrame.Sunken)
+        self.utils_hline_2.setFrameShape(QFrame.Shape.HLine)
+        self.utils_hline_2.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline_2)
 
@@ -2227,8 +2227,8 @@ class Ui_main_window(object):
 
         self.utils_hline_3 = QFrame(self.file_setup_group_box)
         self.utils_hline_3.setObjectName(u"utils_hline_3")
-        self.utils_hline_3.setFrameShape(QFrame.HLine)
-        self.utils_hline_3.setFrameShadow(QFrame.Sunken)
+        self.utils_hline_3.setFrameShape(QFrame.Shape.HLine)
+        self.utils_hline_3.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline_3)
 
@@ -2487,9 +2487,32 @@ class Ui_main_window(object):
         self.tracker_info_layout = QVBoxLayout()
         self.tracker_info_layout.setObjectName(u"tracker_info_layout")
         self.tracker_info_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
+        self.tracker_info_top_half_layout = QVBoxLayout()
+        self.tracker_info_top_half_layout.setObjectName(u"tracker_info_top_half_layout")
         self.tracker_statistics_grid = QGridLayout()
         self.tracker_statistics_grid.setObjectName(u"tracker_statistics_grid")
         self.tracker_statistics_grid.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
+        self.tracker_stats_remaining_label = QLabel(self.tracker_tab)
+        self.tracker_stats_remaining_label.setObjectName(u"tracker_stats_remaining_label")
+
+        self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining_label, 2, 1, 1, 1)
+
+        self.tracker_stats_remaining = QLabel(self.tracker_tab)
+        self.tracker_stats_remaining.setObjectName(u"tracker_stats_remaining")
+        sizePolicy2.setHeightForWidth(self.tracker_stats_remaining.sizePolicy().hasHeightForWidth())
+        self.tracker_stats_remaining.setSizePolicy(sizePolicy2)
+        self.tracker_stats_remaining.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining, 2, 0, 1, 1)
+
+        self.tracker_stats_checked = QLabel(self.tracker_tab)
+        self.tracker_stats_checked.setObjectName(u"tracker_stats_checked")
+        sizePolicy2.setHeightForWidth(self.tracker_stats_checked.sizePolicy().hasHeightForWidth())
+        self.tracker_stats_checked.setSizePolicy(sizePolicy2)
+        self.tracker_stats_checked.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.tracker_statistics_grid.addWidget(self.tracker_stats_checked, 0, 0, 1, 1)
+
         self.tracker_stats_accessible = QLabel(self.tracker_tab)
         self.tracker_stats_accessible.setObjectName(u"tracker_stats_accessible")
         sizePolicy2.setHeightForWidth(self.tracker_stats_accessible.sizePolicy().hasHeightForWidth())
@@ -2508,36 +2531,15 @@ class Ui_main_window(object):
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_accessible_label, 1, 1, 1, 1)
 
-        self.tracker_stats_checked = QLabel(self.tracker_tab)
-        self.tracker_stats_checked.setObjectName(u"tracker_stats_checked")
-        sizePolicy2.setHeightForWidth(self.tracker_stats_checked.sizePolicy().hasHeightForWidth())
-        self.tracker_stats_checked.setSizePolicy(sizePolicy2)
-        self.tracker_stats_checked.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
-
-        self.tracker_statistics_grid.addWidget(self.tracker_stats_checked, 0, 0, 1, 1)
-
         self.tracker_stats_checked_label = QLabel(self.tracker_tab)
         self.tracker_stats_checked_label.setObjectName(u"tracker_stats_checked_label")
 
         self.tracker_statistics_grid.addWidget(self.tracker_stats_checked_label, 0, 1, 1, 1)
 
-        self.tracker_stats_remaining = QLabel(self.tracker_tab)
-        self.tracker_stats_remaining.setObjectName(u"tracker_stats_remaining")
-        sizePolicy2.setHeightForWidth(self.tracker_stats_remaining.sizePolicy().hasHeightForWidth())
-        self.tracker_stats_remaining.setSizePolicy(sizePolicy2)
-        self.tracker_stats_remaining.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
-
-        self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining, 2, 0, 1, 1)
-
-        self.tracker_stats_remaining_label = QLabel(self.tracker_tab)
-        self.tracker_stats_remaining_label.setObjectName(u"tracker_stats_remaining_label")
-
-        self.tracker_statistics_grid.addWidget(self.tracker_stats_remaining_label, 2, 1, 1, 1)
-
         self.tracker_statistics_grid.setColumnStretch(0, 4)
         self.tracker_statistics_grid.setColumnStretch(1, 50)
 
-        self.tracker_info_layout.addLayout(self.tracker_statistics_grid)
+        self.tracker_info_top_half_layout.addLayout(self.tracker_statistics_grid)
 
         self.start_new_tracker_button = QPushButton(self.tracker_tab)
         self.start_new_tracker_button.setObjectName(u"start_new_tracker_button")
@@ -2547,61 +2549,81 @@ class Ui_main_window(object):
         sizePolicy13.setHeightForWidth(self.start_new_tracker_button.sizePolicy().hasHeightForWidth())
         self.start_new_tracker_button.setSizePolicy(sizePolicy13)
 
-        self.tracker_info_layout.addWidget(self.start_new_tracker_button)
+        self.tracker_info_top_half_layout.addWidget(self.start_new_tracker_button)
 
         self.set_random_settings_button = QPushButton(self.tracker_tab)
         self.set_random_settings_button.setObjectName(u"set_random_settings_button")
         sizePolicy13.setHeightForWidth(self.set_random_settings_button.sizePolicy().hasHeightForWidth())
         self.set_random_settings_button.setSizePolicy(sizePolicy13)
 
-        self.tracker_info_layout.addWidget(self.set_random_settings_button)
+        self.tracker_info_top_half_layout.addWidget(self.set_random_settings_button)
 
         self.set_starting_entrance_button = QPushButton(self.tracker_tab)
         self.set_starting_entrance_button.setObjectName(u"set_starting_entrance_button")
         sizePolicy13.setHeightForWidth(self.set_starting_entrance_button.sizePolicy().hasHeightForWidth())
         self.set_starting_entrance_button.setSizePolicy(sizePolicy13)
 
-        self.tracker_info_layout.addWidget(self.set_starting_entrance_button)
+        self.tracker_info_top_half_layout.addWidget(self.set_starting_entrance_button)
 
         self.check_all_button = QPushButton(self.tracker_tab)
         self.check_all_button.setObjectName(u"check_all_button")
 
-        self.tracker_info_layout.addWidget(self.check_all_button)
+        self.tracker_info_top_half_layout.addWidget(self.check_all_button)
 
         self.check_all_in_logic_button = QPushButton(self.tracker_tab)
         self.check_all_in_logic_button.setObjectName(u"check_all_in_logic_button")
 
-        self.tracker_info_layout.addWidget(self.check_all_in_logic_button)
+        self.tracker_info_top_half_layout.addWidget(self.check_all_in_logic_button)
 
         self.uncheck_all_button = QPushButton(self.tracker_tab)
         self.uncheck_all_button.setObjectName(u"uncheck_all_button")
 
-        self.tracker_info_layout.addWidget(self.uncheck_all_button)
+        self.tracker_info_top_half_layout.addWidget(self.uncheck_all_button)
 
         self.set_hints_button = QPushButton(self.tracker_tab)
         self.set_hints_button.setObjectName(u"set_hints_button")
 
-        self.tracker_info_layout.addWidget(self.set_hints_button)
+        self.tracker_info_top_half_layout.addWidget(self.set_hints_button)
 
         self.toggle_sphere_tracking_button = TrackerToggleSTButton(self.tracker_tab)
         self.toggle_sphere_tracking_button.setObjectName(u"toggle_sphere_tracking_button")
 
-        self.tracker_info_layout.addWidget(self.toggle_sphere_tracking_button)
+        self.tracker_info_top_half_layout.addWidget(self.toggle_sphere_tracking_button)
 
         self.tracker_sphere_tracking_label = QLabel(self.tracker_tab)
         self.tracker_sphere_tracking_label.setObjectName(u"tracker_sphere_tracking_label")
 
-        self.tracker_info_layout.addWidget(self.tracker_sphere_tracking_label)
+        self.tracker_info_top_half_layout.addWidget(self.tracker_sphere_tracking_label)
 
         self.cancel_sphere_tracking_button = QPushButton(self.tracker_tab)
         self.cancel_sphere_tracking_button.setObjectName(u"cancel_sphere_tracking_button")
 
-        self.tracker_info_layout.addWidget(self.cancel_sphere_tracking_button)
+        self.tracker_info_top_half_layout.addWidget(self.cancel_sphere_tracking_button)
 
         self.tracker_info_layout_spacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
-        self.tracker_info_layout.addItem(self.tracker_info_layout_spacer)
+        self.tracker_info_top_half_layout.addItem(self.tracker_info_layout_spacer)
 
+
+        self.tracker_info_layout.addLayout(self.tracker_info_top_half_layout)
+
+        self.tracker_info_bottom_half = QVBoxLayout()
+        self.tracker_info_bottom_half.setObjectName(u"tracker_info_bottom_half")
+        self.tracker_notes_label = QLabel(self.tracker_tab)
+        self.tracker_notes_label.setObjectName(u"tracker_notes_label")
+
+        self.tracker_info_bottom_half.addWidget(self.tracker_notes_label)
+
+        self.tracker_notes_textedit = QTextEdit(self.tracker_tab)
+        self.tracker_notes_textedit.setObjectName(u"tracker_notes_textedit")
+
+        self.tracker_info_bottom_half.addWidget(self.tracker_notes_textedit)
+
+
+        self.tracker_info_layout.addLayout(self.tracker_info_bottom_half)
+
+        self.tracker_info_layout.setStretch(0, 55)
+        self.tracker_info_layout.setStretch(1, 45)
 
         self.gridLayout.addLayout(self.tracker_info_layout, 0, 2, 1, 1)
 
@@ -2636,7 +2658,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 312))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 340))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2779,7 +2801,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(6)
+        self.tab_widget.setCurrentIndex(9)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3057,12 +3079,12 @@ class Ui_main_window(object):
         self.other_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Settings", None))
         self.setting_enable_back_in_time.setText(QCoreApplication.translate("main_window", u"Enable Back in Time (BiT)", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
+        self.tracker_stats_remaining_label.setText(QCoreApplication.translate("main_window", u"Locations Remaining", None))
+        self.tracker_stats_remaining.setText("")
+        self.tracker_stats_checked.setText("")
         self.tracker_stats_accessible.setText("")
         self.tracker_stats_accessible_label.setText(QCoreApplication.translate("main_window", u"Locations Accessible", None))
-        self.tracker_stats_checked.setText("")
         self.tracker_stats_checked_label.setText(QCoreApplication.translate("main_window", u"Locations Checked", None))
-        self.tracker_stats_remaining.setText("")
-        self.tracker_stats_remaining_label.setText(QCoreApplication.translate("main_window", u"Locations Remaining", None))
         self.start_new_tracker_button.setText(QCoreApplication.translate("main_window", u"Start New Tracker", None))
         self.set_random_settings_button.setText(QCoreApplication.translate("main_window", u"Set Random Settings", None))
         self.set_starting_entrance_button.setText(QCoreApplication.translate("main_window", u"Set Starting Entrance", None))
@@ -3073,6 +3095,7 @@ class Ui_main_window(object):
         self.toggle_sphere_tracking_button.setText(QCoreApplication.translate("main_window", u"Enable Sphere Tracking", None))
         self.tracker_sphere_tracking_label.setText(QCoreApplication.translate("main_window", u"Sphere Tracking", None))
         self.cancel_sphere_tracking_button.setText(QCoreApplication.translate("main_window", u"Cancel Sphere Tracking for Location", None))
+        self.tracker_notes_label.setText(QCoreApplication.translate("main_window", u"Notes", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.tracker_tab), QCoreApplication.translate("main_window", u"Tracker", None))
         self.settings_current_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings current option description", None))
         self.settings_default_option_description_label.setText(QCoreApplication.translate("main_window", u"Settings default option description", None))

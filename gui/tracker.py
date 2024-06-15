@@ -849,6 +849,10 @@ class Tracker:
         for area_name, hints in autosave.get("hints", {}).items():
             self.areas[area_name].hints = set(hints)
 
+        # Restore notes from an autosave
+        if "notes" in autosave:
+            self.ui.tracker_notes_textedit.setText(autosave["notes"])
+
         # Change progression status of some locations
         for location in self.world.get_all_item_locations():
             # Always display single crystal locations when
@@ -1516,6 +1520,7 @@ class Tracker:
             for area_name, area in self.areas.items()
             if area_name != "Root"
         }
+        autosave["notes"] = self.ui.tracker_notes_textedit.toPlainText()
 
         with open(filename, "w") as autosave_file:
             yaml.safe_dump(autosave, autosave_file)
