@@ -297,10 +297,16 @@ class TrackerLocationLabel(QLabel):
                 raise ValueError("unreachable")
 
 
+def num_terms(req: Requirement):
+    if req.type == RequirementType.AND or req.type == RequirementType.OR:
+        return sum(map(num_terms, req.args))
+    return 1
+
+
 def sort_requirement(req: Requirement):
     def by_length(req: Requirement):
         if req.type == RequirementType.AND or req.type == RequirementType.OR:
-            return len(req.args)
+            return num_terms(req)
         return -1
 
     def by_item(req: Requirement):
@@ -308,6 +314,8 @@ def sort_requirement(req: Requirement):
             return pretty_name(req.args[0].name, 1)
         elif req.type == RequirementType.COUNT:
             return pretty_name(req.args[1].name, req.args[0])
+        elif req.type == RequirementType.AND or req.type == RequirementType.OR:
+            return by_item(req.args[0])
         return ""
 
     def sort_key(req: Requirement):
