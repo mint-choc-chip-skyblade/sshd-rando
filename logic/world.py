@@ -656,20 +656,20 @@ class World:
             item_pool_copy.extend([item] * count)
 
         # Remove major items from item pool
-        major_item_pool = [item for item in item_pool_copy if item.is_major_item]
-        non_major_item_pool = [
-            item for item in item_pool_copy if not item.is_major_item
+        non_junk_pool = [
+            item for item in item_pool_copy if item.name not in ALL_JUNK_ITEMS
         ]
+        junk_pool = [item for item in item_pool_copy if item.name in ALL_JUNK_ITEMS]
 
         match self.setting("trap_mode"):
             case "trapish":
-                num_traps = len(non_major_item_pool) // 10
+                num_traps = len(junk_pool) // 10
             case "trapsome":
-                num_traps = len(non_major_item_pool) // 4
+                num_traps = len(junk_pool) // 4
             case "traps_o_plenty":
-                num_traps = len(non_major_item_pool) // 2
+                num_traps = len(junk_pool) // 2
             case "traptacular":
-                num_traps = len(non_major_item_pool)
+                num_traps = len(junk_pool)
             case _:
                 num_traps = 0
 
@@ -683,16 +683,16 @@ class World:
             return
 
         # Replace non-major items with traps
-        random.shuffle(non_major_item_pool)
+        random.shuffle(junk_pool)
 
         for replace_index in range(0, num_traps):
-            if replace_index >= len(non_major_item_pool):
+            if replace_index >= len(junk_pool):
                 break
 
             trap_item = TRAP_SETTING_TO_ITEM[random.choice(possible_traps)]
-            non_major_item_pool[replace_index] = self.get_item(trap_item)
+            junk_pool[replace_index] = self.get_item(trap_item)
 
-        new_item_pool = major_item_pool + non_major_item_pool
+        new_item_pool = non_junk_pool + junk_pool
 
         assert len(item_pool_copy) == len(new_item_pool)
 
