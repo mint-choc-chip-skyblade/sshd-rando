@@ -481,12 +481,13 @@ class Tracker:
             ["sidequests/rattle_gray.png", "sidequests/rattle.png"],
         )
         self.gratitude_crystals_button = TrackerInventoryButton(
-            ["Nothing"] + [GRATITUDE_CRYSTAL_PACK] * 16,
+            ["Nothing"] + [GRATITUDE_CRYSTAL] * 80,
             ["sidequests/crystal_gray.png"]
-            + [f"sidequests/crystal_{i * 5}.png" for i in range(1, 17)],
+            + [f"sidequests/crystal.png" for i in range(0, 80)],
             None,
-            [f"Gratitude Crystals ({i*5}/80)" for i in range(18)],
+            [f"Gratitude Crystals ({i}/80)" for i in range(0, 81)],
         )
+        self.gratitude_crystals_button.create_number_label()
         self.life_tree_fruit_button = TrackerInventoryButton(
             ["Nothing", LIFE_TREE_FRUIT],
             ["main quest/life_tree_fruit_gray.png", "main quest/life_tree_fruit.png"],

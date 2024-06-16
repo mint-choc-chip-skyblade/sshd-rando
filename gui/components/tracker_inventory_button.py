@@ -1,17 +1,12 @@
 from PySide6.QtWidgets import QLabel, QSizePolicy, QToolTip
-from PySide6.QtGui import (
-    QCursor,
-    QMouseEvent,
-    QPaintEvent,
-    QPainter,
-    QPixmap,
-)
+from PySide6.QtGui import *
 from PySide6 import QtCore
 from PySide6.QtCore import QEvent, QPoint, Signal
 
 
 from filepathconstants import TRACKER_ASSETS_PATH
 from constants.guiconstants import TRACKER_TOOLTIP_STYLESHEET
+from gui.components.outlined_label import OutlinedLabel
 
 from logic.world import World, Counter, Location
 from logic.item import Item
@@ -38,6 +33,7 @@ class TrackerInventoryButton(QLabel):
         self.sphere_tracked_items: dict[Location, str] = {}
         self.inventory: Counter[Item]
         self.allow_sphere_tracking: bool = False
+        self.number_label: OutlinedLabel = None
         assert len(self.items) == len(self.filenames)
 
         self.setSizePolicy(
@@ -73,6 +69,10 @@ class TrackerInventoryButton(QLabel):
 
         self.update()  # Calls paintEvent
 
+    def create_number_label(self) -> None:
+        self.number_label = OutlinedLabel(self)
+        self.number_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+
     def paintEvent(self, arg__1: QPaintEvent) -> None:
 
         # Paint the appropriate image scaled to fit inside
@@ -91,6 +91,22 @@ class TrackerInventoryButton(QLabel):
             new_height = int(self.width() / pixmap_ratio)
             offset = int((new_height - self.height()) / -2)
             painter.drawPixmap(0, offset, self.width(), new_height, self.pixmap)
+
+        # Adjust the label if it exists
+        if self.number_label:
+            # Keep the font size reasonable
+            self.number_label.setStyleSheet(
+                f"font-size: {min(self.width(), self.height()) // 2.7}pt;"
+            )
+            # If the count is maxed, set the number as green
+            if self.state == len(self.items) - 1:
+                self.number_label.setBrush(Qt.green)
+            else:
+                self.number_label.setBrush(Qt.white)
+            # Set the proper text
+            self.number_label.setText(str(self.state))
+            # Keep the label centered
+            self.number_label.setGeometry(9, 9, self.width() - 20, self.height() - 20)
 
         return super().paintEvent(arg__1)
 

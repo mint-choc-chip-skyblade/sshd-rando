@@ -255,6 +255,7 @@ The output folder you have specified cannot be found.
             self.tracker.autosave_tracker()
         event.accept()
 
+
 def start_gui(app: QApplication):
     try:
         main = Main()
