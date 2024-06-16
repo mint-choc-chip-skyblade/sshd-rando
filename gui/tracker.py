@@ -787,10 +787,10 @@ class Tracker:
                 if i < num_group_parts:
                     self.inventory[item] += 1
 
-        # Replace individual starting crystals with crystal packs
-        packs_to_add = self.inventory[self.world.get_item(GRATITUDE_CRYSTAL)] // 5
-        self.inventory[self.world.get_item(GRATITUDE_CRYSTAL_PACK)] += packs_to_add
-        self.inventory[self.world.get_item(GRATITUDE_CRYSTAL)] = 0
+        # Replace packs with individual crystals
+        packs = self.inventory[self.world.get_item(GRATITUDE_CRYSTAL_PACK)]
+        self.inventory[self.world.get_item(GRATITUDE_CRYSTAL_PACK)] = 0
+        self.inventory[self.world.get_item(GRATITUDE_CRYSTAL)] += packs * 5
 
         # Remember if the user was tracking spheres
         self.allow_sphere_tracking |= autosave.get("allow_sphere_tracking", False)
