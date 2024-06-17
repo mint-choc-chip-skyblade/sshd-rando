@@ -367,17 +367,22 @@ class Tracker:
         )
         self.adventure_pouch_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_POUCH] * 5,
-            ["pouch_gray.png"] + [f"pouch{i}.png" for i in range(1, 6)],
+            ["pouch_gray.png"] + ["pouch.png"] * 5,
             None,
             ["Adventure Pouch (0 Slots)"]
             + [f"Adventure Pouch ({i + 4} Slots)" for i in range(5)],
         )
+        self.adventure_pouch_button.create_number_label()
+        self.adventure_pouch_button.set_label_offset_ratios(0.2, 0.05)
+        self.adventure_pouch_button.set_label_scale(1.25)
         self.bottle_button = TrackerInventoryButton(
             ["Nothing"] + [EMPTY_BOTTLE] * 5,
-            ["bottle_gray.png"] + [f"bottle{i}.png" for i in range(1, 6)],
+            ["bottle_gray.png"] + ["bottle.png"] * 5,
             None,
             [f"Empty Bottle ({i}/5)" for i in range(6)],
         )
+        self.bottle_button.create_number_label()
+        self.bottle_button.set_label_offset_ratios(0.02, 0.15)
         self.wallet_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_WALLET] * 4,
             [
@@ -398,11 +403,12 @@ class Tracker:
         )
         self.extra_wallet_button = TrackerInventoryButton(
             ["Nothing"] + [EXTRA_WALLET] * 3,
-            ["wallets/extra_wallet_gray.png"]
-            + [f"wallets/extra_wallet_{i}.png" for i in range(1, 4)],
+            ["wallets/extra_wallet_gray.png"] + ["wallets/extra_wallet.png"] * 3,
             None,
             [f"Extra Wallet (+{i*300} Rupees)" for i in range(4)],
         )
+        self.extra_wallet_button.create_number_label()
+        self.extra_wallet_button.set_label_offset_ratios(-0.05, 0.2)
         self.mitts_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_MITTS] * 2,
             [
@@ -436,16 +442,12 @@ class Tracker:
         )
         self.song_of_the_hero_button = TrackerInventoryButton(
             ["Nothing"] + [SOTH_PART] * 4,
-            [
-                "songs/song_of_the_hero_gray.png",
-                "songs/song_of_the_hero_1.png",
-                "songs/song_of_the_hero_2.png",
-                "songs/song_of_the_hero_3.png",
-                "songs/song_of_the_hero_4.png",
-            ],
+            ["songs/song_of_the_hero_gray.png"] + ["songs/song_of_the_hero.png"] * 4,
             None,
             [f"Song of the Hero ({i}/4)" for i in range(5)],
         )
+        self.song_of_the_hero_button.create_number_label()
+        self.song_of_the_hero_button.set_label_scale(1.1)
         self.triforce_button = TrackerInventoryButton(
             ["Nothing", TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER],
             [f"main quest/triforce_{i}.png" for i in range(4)],
