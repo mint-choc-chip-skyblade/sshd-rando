@@ -1685,6 +1685,9 @@ class Tracker:
                         crystals_button.state += 1
                         if crystals_button.state >= len(crystals_button.items):
                             crystals_button.state = 0
+                            crystals_button.remove_all_items()
+                        else:
+                            crystals_button.add_current_item()
                     crystals_button.update_icon()
                     crystals_button.update_hover_text()
 
