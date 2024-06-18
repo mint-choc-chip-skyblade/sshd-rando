@@ -1671,25 +1671,35 @@ class Tracker:
             self.last_checked_location.tracked_item_image = item_image
             # If this is a crystal, ask the user if it was 1 or 5
             if item.name == GRATITUDE_CRYSTAL:
+                item = self.world.get_item(GRATITUDE_CRYSTAL_PACK)
+                crystals_button = self.gratitude_crystals_button
+                # Gets incremented in mouseReleaseEvent
+                # This prevents the counter updating before the user selects how many crystals they found
+                crystals_button.state -= 1
+
                 single_crystal_question = FiQuestionDialog(self.main)
-                single_crystal_question.show_dialog(
+                single_crystal_question = single_crystal_question.show_dialog(
                     "Gratitude Crystal Amount?",
                     "Did you find 1 crystal or 5 crystals?",
                     "1 crystal",
                     "5 crystals",
+                    x_button_is_separate=True,
                 )
-                if single_crystal_question != QMessageBox.StandardButton.Yes:
-                    item = self.world.get_item(GRATITUDE_CRYSTAL_PACK)
-                    crystals_button = self.gratitude_crystals_button
+
+                if single_crystal_question == QMessageBox.StandardButton.Cancel:
+                    return
+
+                if single_crystal_question == QMessageBox.StandardButton.No:
                     for _ in range(4):
                         crystals_button.state += 1
                         if crystals_button.state >= len(crystals_button.items):
                             crystals_button.state = 0
                             crystals_button.remove_all_items()
-                        else:
-                            crystals_button.add_current_item()
-                    crystals_button.update_icon()
-                    crystals_button.update_hover_text()
+                        crystals_button.add_current_item()
+
+                crystals_button.state += 1
+                crystals_button.update_icon()
+                crystals_button.update_hover_text()
 
             self.sphere_tracked_items[self.last_checked_location] = item.name
         self.update_tracker()
