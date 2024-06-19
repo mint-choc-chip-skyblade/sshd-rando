@@ -112,7 +112,6 @@
     Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger: Nothing
 
 - name: Thrill Digger Cave
-  hint_region: Eldin Volcano
   events:
     Can Play Thrill Digger Minigame: Digging_Mitts
   exits:
