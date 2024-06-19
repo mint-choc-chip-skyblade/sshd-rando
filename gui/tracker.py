@@ -42,6 +42,8 @@ from gui.components.tracker_show_locations_button import TrackerShowLocationsBut
 from gui.components.tracker_tablet_widget import TrackerTabletWidget
 from gui.components.tracker_hint_label import TrackerHintLabel
 
+from gui.dialogs.fi_question_dialog import FiQuestionDialog
+
 from constants.itemconstants import *
 from filepathconstants import *
 from constants.randoconstants import VERSION
@@ -365,17 +367,22 @@ class Tracker:
         )
         self.adventure_pouch_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_POUCH] * 5,
-            ["pouch_gray.png"] + [f"pouch{i}.png" for i in range(1, 6)],
+            ["pouch_gray.png"] + ["pouch.png"] * 5,
             None,
             ["Adventure Pouch (0 Slots)"]
             + [f"Adventure Pouch ({i + 4} Slots)" for i in range(5)],
         )
+        self.adventure_pouch_button.create_number_label()
+        self.adventure_pouch_button.set_label_offset_ratios(0.2, 0.05)
+        self.adventure_pouch_button.set_label_scale(1.25)
         self.bottle_button = TrackerInventoryButton(
             ["Nothing"] + [EMPTY_BOTTLE] * 5,
-            ["bottle_gray.png"] + [f"bottle{i}.png" for i in range(1, 6)],
+            ["bottle_gray.png"] + ["bottle.png"] * 5,
             None,
             [f"Empty Bottle ({i}/5)" for i in range(6)],
         )
+        self.bottle_button.create_number_label()
+        self.bottle_button.set_label_offset_ratios(0.02, 0.15)
         self.wallet_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_WALLET] * 4,
             [
@@ -396,11 +403,12 @@ class Tracker:
         )
         self.extra_wallet_button = TrackerInventoryButton(
             ["Nothing"] + [EXTRA_WALLET] * 3,
-            ["wallets/extra_wallet_gray.png"]
-            + [f"wallets/extra_wallet_{i}.png" for i in range(1, 4)],
+            ["wallets/extra_wallet_gray.png"] + ["wallets/extra_wallet.png"] * 3,
             None,
             [f"Extra Wallet (+{i*300} Rupees)" for i in range(4)],
         )
+        self.extra_wallet_button.create_number_label()
+        self.extra_wallet_button.set_label_offset_ratios(-0.05, 0.2)
         self.mitts_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_MITTS] * 2,
             [
@@ -434,16 +442,12 @@ class Tracker:
         )
         self.song_of_the_hero_button = TrackerInventoryButton(
             ["Nothing"] + [SOTH_PART] * 4,
-            [
-                "songs/song_of_the_hero_gray.png",
-                "songs/song_of_the_hero_1.png",
-                "songs/song_of_the_hero_2.png",
-                "songs/song_of_the_hero_3.png",
-                "songs/song_of_the_hero_4.png",
-            ],
+            ["songs/song_of_the_hero_gray.png"] + ["songs/song_of_the_hero.png"] * 4,
             None,
             [f"Song of the Hero ({i}/4)" for i in range(5)],
         )
+        self.song_of_the_hero_button.create_number_label()
+        self.song_of_the_hero_button.set_label_scale(1.1)
         self.triforce_button = TrackerInventoryButton(
             ["Nothing", TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER],
             [f"main quest/triforce_{i}.png" for i in range(4)],
@@ -481,12 +485,13 @@ class Tracker:
             ["sidequests/rattle_gray.png", "sidequests/rattle.png"],
         )
         self.gratitude_crystals_button = TrackerInventoryButton(
-            ["Nothing"] + [GRATITUDE_CRYSTAL_PACK] * 16,
+            ["Nothing"] + [GRATITUDE_CRYSTAL] * 80,
             ["sidequests/crystal_gray.png"]
-            + [f"sidequests/crystal_{i * 5}.png" for i in range(1, 17)],
+            + [f"sidequests/crystal.png" for i in range(0, 80)],
             None,
-            [f"Gratitude Crystals ({i*5}/80)" for i in range(18)],
+            [f"Gratitude Crystals ({i}/80)" for i in range(0, 81)],
         )
+        self.gratitude_crystals_button.create_number_label()
         self.life_tree_fruit_button = TrackerInventoryButton(
             ["Nothing", LIFE_TREE_FRUIT],
             ["main quest/life_tree_fruit_gray.png", "main quest/life_tree_fruit.png"],
@@ -786,10 +791,10 @@ class Tracker:
                 if i < num_group_parts:
                     self.inventory[item] += 1
 
-        # Replace individual starting crystals with crystal packs
-        packs_to_add = self.inventory[self.world.get_item(GRATITUDE_CRYSTAL)] // 5
-        self.inventory[self.world.get_item(GRATITUDE_CRYSTAL_PACK)] += packs_to_add
-        self.inventory[self.world.get_item(GRATITUDE_CRYSTAL)] = 0
+        # Replace packs with individual crystals
+        packs = self.inventory[self.world.get_item(GRATITUDE_CRYSTAL_PACK)]
+        self.inventory[self.world.get_item(GRATITUDE_CRYSTAL_PACK)] = 0
+        self.inventory[self.world.get_item(GRATITUDE_CRYSTAL)] += packs * 5
 
         # Remember if the user was tracking spheres
         self.allow_sphere_tracking |= autosave.get("allow_sphere_tracking", False)
@@ -848,6 +853,10 @@ class Tracker:
         # Restore any hints from an autosave
         for area_name, hints in autosave.get("hints", {}).items():
             self.areas[area_name].hints = set(hints)
+
+        # Restore notes from an autosave
+        if "notes" in autosave:
+            self.ui.tracker_notes_textedit.setText(autosave["notes"])
 
         # Change progression status of some locations
         for location in self.world.get_all_item_locations():
@@ -1516,6 +1525,7 @@ class Tracker:
             for area_name, area in self.areas.items()
             if area_name != "Root"
         }
+        autosave["notes"] = self.ui.tracker_notes_textedit.toPlainText()
 
         with open(filename, "w") as autosave_file:
             yaml.safe_dump(autosave, autosave_file)
@@ -1659,6 +1669,38 @@ class Tracker:
         if self.last_checked_location is not None and item is not None:
             self.last_checked_location.tracked_item = item
             self.last_checked_location.tracked_item_image = item_image
+            # If this is a crystal, ask the user if it was 1 or 5
+            if item.name == GRATITUDE_CRYSTAL:
+                item = self.world.get_item(GRATITUDE_CRYSTAL_PACK)
+                crystals_button = self.gratitude_crystals_button
+                # Gets incremented in mouseReleaseEvent
+                # This prevents the counter updating before the user selects how many crystals they found
+                crystals_button.state -= 1
+
+                single_crystal_question = FiQuestionDialog(self.main)
+                single_crystal_question = single_crystal_question.show_dialog(
+                    "Gratitude Crystal Amount?",
+                    "Did you find 1 crystal or 5 crystals?",
+                    "1 crystal",
+                    "5 crystals",
+                    x_button_is_separate=True,
+                )
+
+                if single_crystal_question == QMessageBox.StandardButton.Cancel:
+                    return
+
+                if single_crystal_question == QMessageBox.StandardButton.No:
+                    for _ in range(4):
+                        crystals_button.state += 1
+                        if crystals_button.state >= len(crystals_button.items):
+                            crystals_button.state = 0
+                            crystals_button.remove_all_items()
+                        crystals_button.add_current_item()
+
+                crystals_button.state += 1
+                crystals_button.update_icon()
+                crystals_button.update_hover_text()
+
             self.sphere_tracked_items[self.last_checked_location] = item.name
         self.update_tracker()
         if self.last_opened_region is not None:

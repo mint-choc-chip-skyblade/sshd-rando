@@ -3,7 +3,7 @@ import platform
 from types import TracebackType
 
 from PySide6.QtCore import QEvent, Qt, QSize, QUrl
-from PySide6.QtGui import QDesktopServices, QIcon, QMouseEvent, QPixmap
+from PySide6.QtGui import QDesktopServices, QIcon, QMouseEvent, QPixmap, QCloseEvent
 from PySide6.QtWidgets import (
     QApplication,
     QMessageBox,
@@ -247,6 +247,13 @@ The output folder you have specified cannot be found.
             print(exception, "This should be ignored.")
         else:
             error_from_str(exception, traceback)
+
+    def closeEvent(self, event: QCloseEvent) -> None:
+        # Autosave tracker on window close if it's active
+        # This guarantees that the notes will be properly saved
+        if self.tracker.started:
+            self.tracker.autosave_tracker()
+        event.accept()
 
 
 def start_gui(app: QApplication):

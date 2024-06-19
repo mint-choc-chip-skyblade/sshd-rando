@@ -1,20 +1,17 @@
 from PySide6.QtWidgets import QLabel, QSizePolicy, QToolTip
-from PySide6.QtGui import (
-    QCursor,
-    QMouseEvent,
-    QPaintEvent,
-    QPainter,
-    QPixmap,
-)
+from PySide6.QtGui import *
 from PySide6 import QtCore
 from PySide6.QtCore import QEvent, QPoint, Signal
 
 
 from filepathconstants import TRACKER_ASSETS_PATH
 from constants.guiconstants import TRACKER_TOOLTIP_STYLESHEET
+from gui.components.outlined_label import OutlinedLabel
 
 from logic.world import World, Counter, Location
 from logic.item import Item
+
+import math
 
 
 class TrackerInventoryButton(QLabel):
@@ -38,6 +35,10 @@ class TrackerInventoryButton(QLabel):
         self.sphere_tracked_items: dict[Location, str] = {}
         self.inventory: Counter[Item]
         self.allow_sphere_tracking: bool = False
+        self.number_label: OutlinedLabel = None
+        self.label_offset_x_ratio: float = 0
+        self.label_offset_y_ratio: float = 0
+        self.label_scale: float = 1.0
         assert len(self.items) == len(self.filenames)
 
         self.setSizePolicy(
@@ -73,6 +74,17 @@ class TrackerInventoryButton(QLabel):
 
         self.update()  # Calls paintEvent
 
+    def create_number_label(self) -> None:
+        self.number_label = OutlinedLabel(self)
+        self.number_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+
+    def set_label_offset_ratios(self, x: float, y: float) -> None:
+        self.label_offset_x_ratio = x
+        self.label_offset_y_ratio = y
+
+    def set_label_scale(self, scale: float) -> None:
+        self.label_scale = scale
+
     def paintEvent(self, arg__1: QPaintEvent) -> None:
 
         # Paint the appropriate image scaled to fit inside
@@ -91,6 +103,42 @@ class TrackerInventoryButton(QLabel):
             new_height = int(self.width() / pixmap_ratio)
             offset = int((new_height - self.height()) / -2)
             painter.drawPixmap(0, offset, self.width(), new_height, self.pixmap)
+
+        # Adjust the label if it exists
+        if self.number_label is not None:
+            # Keep the font size reasonable. e scales well for whatever reason
+            pt_size = (min(self.width(), self.height()) // math.e) * self.label_scale
+            self.number_label.setStyleSheet(f"font-size: {pt_size}pt;")
+            # If count is 0, don't display the number
+            if self.state == 0:
+                self.number_label.setBrush(Qt.transparent)
+                self.number_label.setPen(Qt.transparent)
+            # If the count is maxed, set the number as green
+            elif self.state == len(self.items) - 1:
+                self.number_label.setBrush(Qt.green)
+                self.number_label.setPen(Qt.black)
+            # Otherwise, set it as white
+            else:
+                self.number_label.setBrush(Qt.white)
+                self.number_label.setPen(Qt.black)
+            # Set the proper text
+            self.number_label.setText(str(self.state))
+
+            # Now we have to do some math to properly center the number regardless of font
+            font = self.number_label.font()
+            font.setPointSize(pt_size)
+            # This is the *font* width of the characters in the string added together
+            number_advance = QFontMetrics(font).horizontalAdvance(str(self.state))
+            # This is the *actual* pixel width of the individual number string
+            number_width = QFontMetrics(font).boundingRect(str(self.state)).width()
+            # Keep the label centered and adjusted by the offset
+            x_offset = int(self.label_offset_x_ratio * self.width()) + int(
+                self.width() / 2 - (number_advance - number_width / 2)
+            )
+            y_offset = int(self.label_offset_y_ratio * self.height())
+            self.number_label.setGeometry(
+                x_offset - 10, 9 + y_offset, number_advance + 20, self.height() - 20
+            )
 
         return super().paintEvent(arg__1)
 
