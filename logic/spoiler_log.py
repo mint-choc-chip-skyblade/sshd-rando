@@ -264,7 +264,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
             spoiler_log.write(f"    {world}:\n")
 
             disabled_shuffle_locations = get_disabled_shuffle_locations(
-                world.location_table, world.config
+                world.location_table, world.config.settings[0]
             )
 
             for location in world.location_table.values():
