@@ -8,6 +8,7 @@ from logic.entrance_shuffle import (
     restore_connections,
 )
 from logic.search import *
+from logic.tooltips.tooltips import TooltipsSearch
 from util.text import load_text_data
 from typing import TYPE_CHECKING
 import copy
@@ -659,6 +660,7 @@ class Tracker:
 
         # Initialize the world
         self.world = World(0)
+        self.world.is_tracker = True
         self.world.setting_map = config.settings[0]
         self.world.num_worlds = 1
         self.world.config = config
@@ -887,6 +889,7 @@ class Tracker:
         self.update_areas_entrances()
 
         self.calculate_own_dungeon_key_locations()
+        self.compute_tooltips()
 
         # If barren unrequired dungeons is on then set all dungeon locations as non-progression
         if self.world.setting("empty_unrequired_dungeons") == "on":
@@ -987,6 +990,7 @@ class Tracker:
                 location_label = TrackerLocationLabel(
                     loc,
                     area_button.recent_search,
+                    self.world,
                     area_button,
                     self.allow_sphere_tracking,
                 )
@@ -1286,6 +1290,7 @@ class Tracker:
         self.update_areas_entrances()
         self.calculate_own_dungeon_key_locations()
         self.update_tracker()
+        self.compute_tooltips()
 
     def tracker_disconnect_entrance(self, entrance: Entrance) -> None:
         if target := self.connected_entrances.get(entrance, None):
@@ -1294,6 +1299,7 @@ class Tracker:
             self.update_areas_locations()
             self.update_areas_entrances()
             self.update_tracker()
+            self.compute_tooltips()
             self.calculate_own_dungeon_key_locations()
 
     def on_start_new_tracker_button_clicked(self) -> None:
@@ -1382,6 +1388,14 @@ class Tracker:
         self.update_tracker()
         self.set_map_area(self.active_area.area_parent.area)
 
+    def compute_tooltips(self) -> None:
+        """Updates item requirements shown in tooltips.
+        This needs to be called whenever the world structure changes
+        in some way (entrances change, settings change, ...).
+        """
+        tooltips_search = TooltipsSearch(self.world)
+        tooltips_search.do_search()
+
     def update_tracker(self) -> None:
         if not self.started:
             return
@@ -1398,7 +1412,6 @@ class Tracker:
                 already_added.add(location)
 
         # Use modified inventory for main search
-        # TODO: Fix weird typing
         search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], inventory)
         search.search_worlds()
 
@@ -1718,7 +1731,6 @@ class Tracker:
                 if inventory[item] > 0:
                     inventory[item] -= 1
 
-        # TODO: Fix weird typing
         sphere_search = Search(SearchMode.TRACKER_SPHERES, [self.world], inventory)
         sphere_search.search_worlds()
         for num, sphere in enumerate(sphere_search.playthrough_spheres):

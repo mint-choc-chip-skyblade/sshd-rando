@@ -64,8 +64,7 @@ Complete Triforce: Triforce_of_Courage and Triforce_of_Wisdom and Triforce_of_Po
 
 # Don't use this. Only used by the Bottle macro.
 # Separated out to make it easier to verify correctness.
-bottletypes: "Empty_Bottle
-  or Fairy_in_a_Bottle
+filledbottletypes: "Fairy_in_a_Bottle
   or Guardian_Potion
   or Guardian_Potion_Plus
   or Heart_Potion
@@ -84,6 +83,10 @@ bottletypes: "Empty_Bottle
   or Sacred_Water
   or Glittering_Spores
   or Mushroom_Spores"
+
+# the tracker logic only ever models empty bottles and excluding these
+# other bottle types speeds up the tooltips code A LOT
+bottletypes: "Empty_Bottle or (not_tracker and filledbottletypes)"
 
 # Need access to the item check incase the user has a full pouch
 # or they picked up the cursed medal somewhere already

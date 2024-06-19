@@ -5,7 +5,7 @@ from .area import *
 
 from gui.dialogs.dialog_header import print_progress_text, update_progress_value
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Iterable
 
 if TYPE_CHECKING:
     from .world import *
@@ -25,7 +25,7 @@ class Search:
         self,
         search_mode_: int,
         worlds_: list["World"],
-        items_: list[Item] = [],
+        items_: Iterable[Item] = [],
         world_to_search_: int = -1,
     ) -> None:
         self.search_mode: int = search_mode_

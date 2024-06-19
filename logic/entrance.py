@@ -73,6 +73,9 @@ class Entrance:
         # Additional Entrances that can only be allowed if this entrance is vanilla
         self.conditional_vanilla_connections: list["Entrance"] = []
 
+        # Tracker variables
+        self.computed_requirement: Requirement = Requirement(RequirementType.IMPOSSIBLE)
+
     def __str__(self) -> str:
         return self.original_name
 

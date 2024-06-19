@@ -1,7 +1,7 @@
 import logging
 from filepathconstants import LOCATIONS_PATH
-from logic.config import Config
 from logic.location import Location
+from logic.settings import SettingMap
 
 from sslib.yaml import yaml_load
 
@@ -68,10 +68,10 @@ def build_location_table(world: "World | None" = None) -> dict[str, Location]:
 
 def get_disabled_shuffle_locations(
     location_table: dict[str, Location],
-    config: Config,
+    settings_map: SettingMap,
     ui_mode: bool = False,
 ) -> list[Location]:
-    settings = config.settings[0].settings
+    settings = settings_map.settings
 
     non_vanilla_locations = [
         location
@@ -95,8 +95,7 @@ def get_disabled_shuffle_locations(
                 (
                     settings["stamina_fruit_shuffle"].value == "off"
                     or (
-                        not ui_mode
-                        and location.name in config.settings[0].excluded_locations
+                        not ui_mode and location.name in settings_map.excluded_locations
                     )
                 )
                 and "Stamina Fruits" in location.types

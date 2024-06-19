@@ -21,8 +21,8 @@ class LocationAccess:
         self.location: Location = location_
         self.req: Requirement = req_
         self.area: "Area" = area_
-        self.id = self.id_counter
-        self.id_counter += 1
+        self.id = LocationAccess.id_counter
+        LocationAccess.id_counter += 1
 
 
 # Same for events

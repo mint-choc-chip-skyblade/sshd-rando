@@ -79,6 +79,8 @@ class World:
         self.song_hints: dict[Item, Hint] = {}
         self.impa_sot_hint: Hint = None  # type: ignore
 
+        self.is_tracker = False
+
     def __str__(self) -> str:
         return f"World {self.id + 1}"
 
@@ -336,7 +338,7 @@ class World:
         disabled_shuffle_locations = [
             location
             for location in get_disabled_shuffle_locations(
-                self.location_table, self.config
+                self.location_table, self.setting_map
             )
         ]
 
@@ -570,7 +572,7 @@ class World:
 
         # Set disabled shuffle locations as non-progress
         for location in get_disabled_shuffle_locations(
-            self.location_table, self.config
+            self.location_table, self.setting_map
         ):
             location.progression = False
 

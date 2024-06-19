@@ -47,3 +47,10 @@ TRACKER_TOOLTIP_STYLESHEET = (
     + f"qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignCenter)};"
     + " }"
 )
+
+TRACKER_LOCATION_TOOLTIP_STYLESHEET = (
+    "QToolTip { color: white; background-color: black; border-image: none; border-color: gray; "
+    + " border: 2px solid gray; max-width: MAXWIDTHpx; min-width: MINWIDTHpx;"
+    + f"qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignLeft)};"
+    + " }"
+)
