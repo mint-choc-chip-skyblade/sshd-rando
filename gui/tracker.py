@@ -1514,8 +1514,10 @@ class Tracker:
 
         # Then read it again to input extra data
         autosave: dict = yaml_load(filename)
+        # Marked locations includes gossip stones, so read directly from
+        # the location table to include those
         autosave["marked_locations"] = [
-            loc.name for loc in self.world.get_all_item_locations() if loc.marked
+            loc.name for loc in self.world.location_table.values() if loc.marked
         ]
         autosave["marked_items"] = [item.name for item in self.inventory.elements()]
         autosave["connected_entrances"] = {
