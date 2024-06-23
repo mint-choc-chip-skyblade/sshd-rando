@@ -78,6 +78,7 @@ class TrackerInventoryButton(QLabel):
     def create_number_label(self) -> None:
         self.number_label = OutlinedLabel(self)
         self.number_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.update_number_label_font_size()
 
     def set_label_offset_ratios(self, x: float, y: float) -> None:
         self.label_offset_x_ratio = x
@@ -86,8 +87,20 @@ class TrackerInventoryButton(QLabel):
     def set_label_scale(self, scale: float) -> None:
         self.label_scale = scale
 
-    def paintEvent(self, arg__1: QPaintEvent) -> None:
+    def get_number_label_font_size(self) -> float:
+        # Keep the font size reasonable. e scales well for whatever reason
+        return (min(self.width(), self.height()) // math.e) * self.label_scale
 
+    def update_number_label_font_size(self) -> None:
+        if self.number_label is not None:
+            pt_size = self.get_number_label_font_size()
+            self.number_label.setStyleSheet(f"font-size: {pt_size}pt;")
+
+    def resizeEvent(self, arg__1: QResizeEvent) -> None:
+        self.update_number_label_font_size()
+        return super().resizeEvent(arg__1)
+
+    def paintEvent(self, arg__1: QPaintEvent) -> None:
         # Paint the appropriate image scaled to fit inside
         # of the widget
         painter = QPainter(self)
@@ -107,9 +120,6 @@ class TrackerInventoryButton(QLabel):
 
         # Adjust the label if it exists
         if self.number_label is not None:
-            # Keep the font size reasonable. e scales well for whatever reason
-            pt_size = (min(self.width(), self.height()) // math.e) * self.label_scale
-            self.number_label.setStyleSheet(f"font-size: {pt_size}pt;")
             # If count is 0, don't display the number
             if self.state == 0:
                 self.number_label.setBrush(Qt.transparent)
@@ -126,6 +136,7 @@ class TrackerInventoryButton(QLabel):
             self.number_label.setText(str(self.state))
 
             # Now we have to do some math to properly center the number regardless of font
+            pt_size = self.get_number_label_font_size()
             font = self.number_label.font()
             font.setPointSize(pt_size)
             # This is the *font* width of the characters in the string added together
