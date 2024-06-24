@@ -108,8 +108,6 @@
     Eldin Volcano - Left Rupee behind Bombable Wall near Thrill Digger Cave: Nothing
     Eldin Volcano - Right Rupee behind Bombable Wall near Thrill Digger Cave: Nothing
     Eldin Volcano - Stamina Fruit above Slope after Volcano Ascent: Nothing
-    Eldin Volcano - Stamina Fruit next to Small Puddle: Nothing
-    Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger: Nothing
 
 - name: Thrill Digger Cave
   events:
@@ -145,6 +143,7 @@
     Earth Temple First Room: open_earth_temple or count(5, Key_Piece)
     Hot Cave: Nothing # You can use the bomb flower in one of the boko huts to blow up the tower
     Outside Upper Eldin Cave: "'Beaten_Boko_Base'"
+    Outside Thrill Digger Cave: can_access(Outside Thrill Digger Cave) or (logic_bomb_throws and Bomb_Bag)
   locations:
     Eldin Volcano - Blow Closest Torch West of Temple: Gust_Bellows
     Eldin Volcano - Blow Farthest Torch West of Temple: Gust_Bellows
@@ -162,6 +161,8 @@
     Eldin Volcano - Underground Rupee West of Temple 10: Mogma_Mitts
     Eldin Volcano - Digging Spot below Tower West of Temple: Digging_Mitts
     Eldin Volcano - Digging Spot behind Boulder on Slope before Temple: Digging_Mitts
+    Eldin Volcano - Stamina Fruit next to Small Puddle: Nothing
+    Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger: Nothing
     Eldin Volcano - Stamina Fruit below Slope before Temple 1: Nothing
     Eldin Volcano - Stamina Fruit below Slope before Temple 2: Nothing
     Eldin Volcano - Stamina Fruit below Slope before Temple 3: Nothing
