@@ -1168,7 +1168,9 @@ class Tracker:
 
         lead_to_label = QLabel(f"Where did {entrance.original_name} lead to?")
         lead_to_label.setMargin(10)
+        lead_to_label.setWordWrap(True)
         back_button = TrackerShowEntrancesButton(parent_area_name, "Back")
+        back_button.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
         back_button.show_area_entrances.connect(self.show_area_entrances)
 
         # Add a way to filter entrance targets
