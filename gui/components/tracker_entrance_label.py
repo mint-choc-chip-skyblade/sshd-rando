@@ -15,12 +15,17 @@ class TrackerEntranceLabel(QLabel):
     disconnect_entrance = Signal(Entrance, str)
 
     def __init__(
-        self, entrance_: Entrance, parent_area_name_: str, recent_search_: Search
+        self,
+        entrance_: Entrance,
+        parent_area_name_: str,
+        recent_search_: Search,
+        show_full_connection_: bool,
     ) -> None:
         super().__init__()
         self.entrance = entrance_
         self.parent_area_name = parent_area_name_
         self.recent_search = recent_search_
+        self.show_full_connection = show_full_connection_
         self.setCursor(QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.setMargin(10)
         self.setMinimumHeight(30)
@@ -34,7 +39,10 @@ class TrackerEntranceLabel(QLabel):
         connected_area = self.entrance.connected_area
         original_parent, original_connected = self.entrance.original_name.split(" -> ")
         first_part = (
-            f"{original_parent} to " if original_parent != self.parent_area_name else ""
+            f"{original_parent} to "
+            if self.entrance.parent_area.hard_assigned_region != self.parent_area_name
+            or self.show_full_connection
+            else ""
         )
         self.setText(
             f"{first_part}{original_connected} -> {connected_area.name if connected_area else '?'}"

@@ -210,10 +210,12 @@ class World:
                     if dungeon_name := area_node.get("dungeon", False):
                         self.add_dungeon(dungeon_name)
                         new_area.hint_regions.add(dungeon_name)
+                        new_area.hard_assigned_region = dungeon_name
                         if "dungeon_starting_area" in area_node:
                             self.get_dungeon(dungeon_name).starting_area = new_area
                     elif hint_region := area_node.get("hint_region", False):
                         new_area.hint_regions.add(hint_region)
+                        new_area.hard_assigned_region = hint_region
 
                     if "events" in area_node:
                         for event_name, req_str in area_node["events"].items():

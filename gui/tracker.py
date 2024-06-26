@@ -765,9 +765,7 @@ class Tracker:
 
         # Connect autosaved entrances
         if autosaved_entrances := autosave.get("connected_entrances", None):
-            for entrance in self.world.get_shuffled_entrances(
-                only_primary=self.world.setting("decouple_entrances") == "off"
-            ):
+            for entrance in self.world.get_shuffled_entrances():
                 if saved_target := autosaved_entrances.get(
                     entrance.original_name, None
                 ):
@@ -929,6 +927,22 @@ class Tracker:
         entrance_pools = create_entrance_pools(self.world)
         self.target_entrance_pools = create_target_pools(entrance_pools)
 
+        # Create reverse pools for each pool if entrances are not already decoupled.
+        # This allows users to map any entrance that comes up, and allows us
+        # to only display the entrances that are possible to connect to
+        for type, pool in self.target_entrance_pools.copy().items():
+            reverse_targets: list[Entrance] = []
+            reverse_type = f"{type} Reverse"
+            for target in pool:
+                reverse_target = target.replaces.reverse.assumed
+                if not target.replaces.decoupled and reverse_target not in pool:
+                    reverse_targets.append(reverse_target)
+                    target.replaces.reverse.type = reverse_type
+
+            if reverse_targets:
+                self.target_entrance_pools[reverse_type] = reverse_targets
+                print(f"Added {len(reverse_targets)} targets to {reverse_type}")
+
         # Prevent implicit access to any target entrances
         for target_pool in self.target_entrance_pools.values():
             for target in target_pool:
@@ -945,14 +959,19 @@ class Tracker:
                     area_button.main_entrance_name
                 )
 
-        # Then redistribute entrances to each button
-        for entrance in self.world.get_shuffled_entrances(
-            only_primary=self.world.setting("decouple_entrances") == "off"
-        ):
-            if entrance.requirement.type != RequirementType.IMPOSSIBLE:
-                for region in entrance.parent_area.hint_regions:
-                    if area_button := self.areas.get(region, None):
-                        area_button.entrances.append(entrance)
+            # Find all the shuffled entrances for each area
+            if not area_button.tracker_children:
+                hard_assigned_areas: list[Area] = []
+                for area in self.world.areas.values():
+                    if area.hard_assigned_region == area_button.area:
+                        hard_assigned_areas.append(area)
+
+                if hard_assigned_areas:
+                    entrance_spheres = hard_assigned_areas[0].find_shuffled_entrances(
+                        hard_assigned_areas
+                    )
+                    for sphere in entrance_spheres:
+                        area_button.entrances.extend(sphere)
 
     def set_map_area(self, area_name: str) -> None:
         area = self.areas.get(area_name, None)
@@ -1097,8 +1116,19 @@ class Tracker:
             entrances.sort()
 
             for i, entrance in enumerate(entrances):
+                # If there are multiple entrances which lead to the same
+                # area, then show the full connection to differentiate them
+                show_full_connection = any(
+                    [
+                        e
+                        for e in entrances
+                        if e != entrance
+                        and e.original_connected_area
+                        == entrance.original_connected_area
+                    ]
+                )
                 entrance_label = TrackerEntranceLabel(
-                    entrance, area_name, area_button.recent_search
+                    entrance, area_name, area_button.recent_search, show_full_connection
                 )
                 entrance_label.choose_target.connect(self.show_target_selection_info)
                 entrance_label.disconnect_entrance.connect(
@@ -1202,18 +1232,22 @@ class Tracker:
 
         targets.sort(key=lambda e: e.replaces.sort_priority)
 
-        areas_shown = set()
         for i, target in enumerate(targets):
             # Only show targets which haven't been connected yet
-            # and don't show multiple targets that lead to the same
-            # area
-
-            if (
-                target.connected_area is not None
-                and target.connected_area not in areas_shown
-            ):
-                areas_shown.add(target.connected_area)
-                target_label = TrackerTargetLabel(entrance, target, parent_area_name)
+            if target.connected_area is not None:
+                # If this target leads to the same area as other targets
+                # show the full entrance name to distinguish them from
+                # one another
+                show_full_connection = any(
+                    [
+                        t
+                        for t in targets
+                        if t != target and target.connected_area == t.connected_area
+                    ]
+                )
+                target_label = TrackerTargetLabel(
+                    entrance, target, parent_area_name, show_full_connection
+                )
                 target_label.clicked.connect(self.on_click_target_label)
 
                 if i < len(targets) / 2:
@@ -1235,6 +1269,16 @@ class Tracker:
 
         self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
         self.ui.tracker_locations_scroll_layout.addLayout(right_layout)
+
+    def show_current_area(self) -> None:
+        if location_label := self.ui.tracker_locations_scroll_area.findChild(
+            TrackerLocationLabel
+        ):
+            self.show_area_locations(location_label.parent_area_button.area)
+        elif entrance_label := self.ui.tracker_locations_scroll_area.findChild(
+            TrackerEntranceLabel
+        ):
+            self.show_area_entrances(entrance_label.parent_area_name)
 
     def on_filter_text_changed(self, filter: str) -> None:
         for label in self.ui.tracker_tab.findChildren(TrackerTargetLabel):
@@ -1447,13 +1491,10 @@ class Tracker:
             location.in_semi_logic = location in semi_logic_locations
 
         # Update any labels that are currently shown
-        location_label_area_name = ""
         for location_label in self.ui.tracker_locations_scroll_area.findChildren(
             TrackerLocationLabel
         ):
             location_label.update_color(search)
-            if not location_label_area_name:
-                location_label_area_name = location_label.parent_area_button.area
 
         for entrance_label in self.ui.tracker_locations_scroll_area.findChildren(
             TrackerEntranceLabel
@@ -1463,7 +1504,7 @@ class Tracker:
         for dungeon_label in self.ui.tracker_tab.findChildren(TrackerDungeonLabel):
             dungeon_label.update_style()
 
-        self.show_area_location_info(location_label_area_name)
+        self.show_current_area()
         self.autosave_tracker()
         self.update_statistics()
         if self.allow_sphere_tracking:
@@ -1725,7 +1766,7 @@ class Tracker:
             self.sphere_tracked_items[self.last_checked_location] = item.name
         self.update_tracker()
         if self.last_opened_region is not None:
-            self.show_area_locations(self.last_opened_region.area)
+            self.show_current_area()
 
     def update_spheres(self):
         # Copy the current inventory to pass into the search
@@ -1836,7 +1877,7 @@ class Tracker:
         else:
             area.hints.add(hint)
 
-        self.show_area_locations(area.area)
+        self.show_current_area()
 
     def toggle_sphere_tracking(self):
         self.allow_sphere_tracking = not self.allow_sphere_tracking
@@ -1851,7 +1892,7 @@ class Tracker:
             self.ui.toggle_sphere_tracking_button.setText("Enable Sphere Tracking")
             self.cancel_sphere_tracking()
         if self.last_opened_region is not None:
-            self.show_area_locations(self.last_opened_region.area)
+            self.show_current_area()
 
         self.update_tracker()
 
