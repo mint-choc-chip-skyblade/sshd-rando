@@ -312,7 +312,6 @@
     Volcano Summit - Goddess Cube in Lava Lake: Fireshield_Earrings and (Long_Range_Skyward_Strike or ('Beaten_Boko_Base' and Goddess_Sword))
 
 - name: Volcano Summit Waterfall
-  hint_region: Volcano Summit
   events:
     Can Collect Water: Bottle
   exits:
