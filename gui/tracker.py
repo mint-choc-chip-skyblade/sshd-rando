@@ -701,6 +701,10 @@ class Tracker:
         if starting_hearts == "random":
             starting_hearts.set_value("6")
 
+        # Set starting sword as No Sword if it's random
+        if self.world.setting("starting_sword") == "random":
+            self.world.setting("starting_sword").set_value("no_sword")
+
         # Build the world (only as necessary)
         self.world.build()
         self.world.perform_pre_entrance_shuffle_tasks()
