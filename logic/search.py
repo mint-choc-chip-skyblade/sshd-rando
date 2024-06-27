@@ -286,6 +286,25 @@ class Search:
             self.playthrough_spheres.pop(index)
             self.entrance_spheres.pop(index)
 
+    # Will return all areas which have a non-impossible connection
+    # from the root of the world graph
+    def get_all_connected_areas(self) -> set[Area]:
+        found_areas = set()
+        area_queue: list[Area] = [world.root for world in self.worlds]
+
+        while len(area_queue) > 0:
+            area = area_queue.pop(0)
+
+            for entrance in area.exits:
+                if entrance.requirement.type == RequirementType.IMPOSSIBLE:
+                    continue
+                if connected_area := entrance.connected_area:
+                    if connected_area not in found_areas:
+                        area_queue.append(connected_area)
+                        found_areas.add(connected_area)
+
+        return found_areas
+
     # Will dump a file which can be turned into a visual graph using graphviz
     # https://graphviz.org/download/
     # Use this command to generate the graph: dot -Tsvg <filename> -o world.svg

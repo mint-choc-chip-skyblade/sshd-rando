@@ -76,6 +76,15 @@ class TrackerArea(QLabel):
                 if loc not in locations_set:
                     all_locations.append(loc)
                     locations_set.add(loc)
+        # If this is the "Everything Discovered" area, then get everything which has been discovered
+        # in the world
+        if self.recent_search and self.area == "Everything Discovered":
+            connected_areas = self.recent_search.get_all_connected_areas()
+            for loc in self.recent_search.worlds[0].location_table.values():
+                if any(
+                    [la for la in loc.loc_access_list if la.area in connected_areas]
+                ):
+                    all_locations.append(loc)
         return all_locations
 
     def get_included_locations(
@@ -126,7 +135,7 @@ class TrackerArea(QLabel):
         if (
             len(self.locations) + len(self.tracker_children) == 0
             or self.recent_search is None
-        ):
+        ) and self.area != "Everything Discovered":
             return
 
         all_unmarked_locations = self.get_unmarked_locations(remove_special_types=False)

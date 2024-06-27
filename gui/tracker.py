@@ -931,6 +931,11 @@ class Tracker:
         # This allows users to map any entrance that comes up, and allows us
         # to only display the entrances that are possible to connect to
         for type, pool in self.target_entrance_pools.copy().items():
+
+            # Reverse pools can't exist for non-assumed entrance types
+            if type in Entrance.NON_ASSUMED_ENTRANCE_TYPES:
+                continue
+
             reverse_targets: list[Entrance] = []
             reverse_type = f"{type} Reverse"
             for target in pool:
@@ -959,7 +964,7 @@ class Tracker:
                     area_button.main_entrance_name
                 )
 
-            # Find all the shuffled entrances for each area
+            # Find all the shuffled entrances for each area and add them
             if not area_button.tracker_children:
                 hard_assigned_areas: list[Area] = []
                 for area in self.world.areas.values():
@@ -972,6 +977,14 @@ class Tracker:
                     )
                     for sphere in entrance_spheres:
                         area_button.entrances.extend(sphere)
+
+                # Add all discovered entrances to "Everything Discovered"
+                if area_button.area == "Everything Discovered":
+                    search, _ = self.get_tracker_search()
+                    connected_areas = search.get_all_connected_areas()
+                    for entrance in self.world.get_shuffled_entrances():
+                        if entrance.parent_area in connected_areas:
+                            area_button.entrances.append(entrance)
 
     def set_map_area(self, area_name: str) -> None:
         area = self.areas.get(area_name, None)
@@ -1446,10 +1459,7 @@ class Tracker:
         tooltips_search = TooltipsSearch(self.world)
         tooltips_search.do_search()
 
-    def update_tracker(self) -> None:
-        if not self.started:
-            return
-
+    def get_tracker_search(self) -> tuple:
         # Make a copy of the inventory to modify
         inventory = self.inventory.copy()
 
@@ -1463,6 +1473,13 @@ class Tracker:
 
         # Use modified inventory for main search
         search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], inventory)
+        return (search, already_added)
+
+    def update_tracker(self) -> None:
+        if not self.started:
+            return
+
+        search, already_added = self.get_tracker_search()
         search.search_worlds()
 
         for area_button in self.areas.values():
