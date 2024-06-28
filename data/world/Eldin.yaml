@@ -110,7 +110,6 @@
     Eldin Volcano - Stamina Fruit above Slope after Volcano Ascent: Nothing
 
 - name: Thrill Digger Cave
-  hint_region: Eldin Volcano
   events:
     Can Play Thrill Digger Minigame: Digging_Mitts
   exits:
@@ -313,7 +312,6 @@
     Volcano Summit - Goddess Cube in Lava Lake: Fireshield_Earrings and (Long_Range_Skyward_Strike or ('Beaten_Boko_Base' and Goddess_Sword))
 
 - name: Volcano Summit Waterfall
-  hint_region: Volcano Summit
   events:
     Can Collect Water: Bottle
   exits:

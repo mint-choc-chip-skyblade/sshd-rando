@@ -7,6 +7,11 @@
     - Lanayru
     - Sky
     - Inside the Thunderhead
+    - Everything Discovered
+
+- name: Everything Discovered
+  x: 10
+  y: 263
 
 - name: Sky
   alias: The Sky

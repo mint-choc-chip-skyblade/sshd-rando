@@ -12,7 +12,11 @@ class TrackerTargetLabel(QLabel):
     clicked = Signal(Entrance, Entrance, str)
 
     def __init__(
-        self, entrance_: Entrance, target_: Entrance, parent_area_name_: str
+        self,
+        entrance_: Entrance,
+        target_: Entrance,
+        parent_area_name_: str,
+        show_full_connection: bool,
     ) -> None:
         super().__init__()
         self.entrance = entrance_
@@ -25,7 +29,12 @@ class TrackerTargetLabel(QLabel):
         self.setMaximumWidth(273)
         self.setWordWrap(True)
 
-        self.setText(self.target.replaces.original_name.split(" -> ")[1])
+        if show_full_connection:
+            self.setText(
+                f"{self.target.connected_area} from {self.target.replaces.parent_area}"
+            )
+        else:
+            self.setText(self.target.replaces.original_name.split(" -> ")[1])
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
         if ev.button() == QtCore.Qt.MouseButton.LeftButton:

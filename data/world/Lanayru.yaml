@@ -493,7 +493,7 @@
   exits:
     Shipyard Statue: Nothing
     Shipyard End of Minecart Ride: Nothing
-    Construction Bay Sand Pit: "'Defeat_Shipyard_Moldarach'"
+    Construction Bay Sand Pit: Nothing
     Lanayru Sand Sea: Nothing
   locations:
     Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator: Nothing

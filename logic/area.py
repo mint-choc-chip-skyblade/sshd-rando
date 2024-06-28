@@ -37,6 +37,7 @@ class Area:
     def __init__(self) -> None:
         self.id: int = None
         self.name: str = None
+        self.hard_assigned_region: str = None
         self.hint_regions: set[str] = set()
         self.events: list[EventAccess] = []
         self.locations: list[LocationAccess] = []
@@ -117,6 +118,78 @@ class Area:
                         area_queue.append(entrance.parent_area)
 
         return provinces
+
+    # Performs a breadth first search to find all the shuffled entrances
+    # within a given area. The area must have a defined hint region.
+    # Returns the shuffled entrances in the order they were discovered by
+    # shuffled entrance spheres.
+    def find_shuffled_entrances(self, starting_queue: list["Area"] = []):
+        if not self.hard_assigned_region:
+            return
+
+        shuffled_entrances: list[list[Entrance]] = []
+        already_checked_areas: set["Area"] = set()
+        already_checked_entrances: set[Entrance] = set()
+        area_queue: list["Area"] = starting_queue
+        if not area_queue:
+            area_queue.append(self)
+
+        entrances_to_try: list[Entrance] = []
+        first_iteration = True
+        while entrances_to_try or first_iteration:
+            first_iteration = False
+            entrances_to_try.clear()
+
+            for area in area_queue:
+                for entrance in area.exits:
+                    if entrance in already_checked_entrances:
+                        continue
+
+                    # Only add entrances which fit the following criteria
+                    # - The entrance is shuffled and not impossible
+                    # - The entrance is decoupled or the entrance insn't connected or the entrance's replaced reverse hasn't been added yet
+                    if (
+                        entrance.shuffled
+                        and entrance.requirement.type != RequirementType.IMPOSSIBLE
+                    ):
+                        if (
+                            entrance.decoupled
+                            or entrance.replaces is None
+                            or entrance.replaces.reverse
+                            not in already_checked_entrances
+                        ):
+                            entrances_to_try.append(entrance)
+                    # Else, append this entrances connected area to the area queue
+                    else:
+                        connected_area = entrance.connected_area
+                        if connected_area:
+                            if connected_area not in already_checked_areas and (
+                                self.hard_assigned_region in connected_area.hint_regions
+                                or not connected_area.hint_regions
+                            ):
+                                area_queue.append(connected_area)
+                                already_checked_areas.add(connected_area)
+
+                    already_checked_entrances.add(entrance)
+
+            # Clear the area queue and append the list of entrances to try
+            # if there were any
+            area_queue.clear()
+            if entrances_to_try:
+                shuffled_entrances.append(entrances_to_try.copy())
+
+            # Gather all the new areas we can find to try for shuffled entrances
+            for entrance in entrances_to_try:
+                connected_area = entrance.connected_area
+                if connected_area:
+                    if connected_area not in already_checked_areas and (
+                        self.hard_assigned_region in connected_area.hint_regions
+                        or not connected_area.hint_regions
+                    ):
+                        area_queue.append(connected_area)
+                        already_checked_areas.add(connected_area)
+
+        return shuffled_entrances
 
 
 # Will perform a search from the starting area until all

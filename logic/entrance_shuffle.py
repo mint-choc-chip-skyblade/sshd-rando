@@ -252,6 +252,11 @@ def create_entrance_pools(world: World) -> EntrancePools:
             ]
 
     if world.setting("randomize_overworld_entrances") == "on":
+        # Normally we allow any overworld entrances to link together.
+        # However, if overworld entrances are mixed with other entrance types
+        # that expect to only match with exclusively primary or non-primary
+        # entrances, we have to separate overworld entrances by their primary/
+        # non-primary distinction to fit with the other entrances
         exclude_overworld_reverse = (
             any("Overworld" in pool for pool in world.setting_map.mixed_entrance_pools)
             and world.setting("decouple_entrances") == "off"
