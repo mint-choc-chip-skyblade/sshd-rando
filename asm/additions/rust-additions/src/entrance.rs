@@ -240,6 +240,13 @@ pub fn warp_to_start() {
     unsafe {
         let start_info = &*(&WARP_TO_START_INFO as *const WarpToStartInfo);
 
+        // Make sure the night storyflag remains in-sync with the actual time of day
+        if (*start_info).night == 0 {
+            flag::unset_storyflag(737);
+        } else {
+            flag::set_storyflag(737);
+        }
+
         GameReloader__actuallyTriggerEntrance(
             STAGE_MGR,
             (*start_info).room.into(),
