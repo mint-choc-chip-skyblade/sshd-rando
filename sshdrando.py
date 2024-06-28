@@ -7,6 +7,7 @@ import sys
 # for more info.
 mp.freeze_support()
 
+from filepathconstants import PLANDO_PATH, PRESETS_PATH, SSHD_EXTRACT_PATH
 from util.arguments import get_program_args
 import logging
 
@@ -22,6 +23,16 @@ if args.debug and __name__ == "__main__":
         level=logging.DEBUG,
         filemode="w",
     )
+
+# Ensure the necessary directories are created
+if not SSHD_EXTRACT_PATH.exists():
+    SSHD_EXTRACT_PATH.mkdir()
+
+if not PLANDO_PATH.exists():
+    PLANDO_PATH.mkdir()
+
+if not PRESETS_PATH.exists():
+    PRESETS_PATH.mkdir()
 
 # Imports here to prevent circular dependency
 if not args.nogui:
