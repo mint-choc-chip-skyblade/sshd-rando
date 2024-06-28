@@ -2296,19 +2296,19 @@
   pretty: Sealed Grounds - Bonk Wall between Pillars near Bird Statue
   cryptic: <r<disturbing the pillars>> of a <g<sealed bird>>
 
-- name: Sealed Grounds - Bonk Wall Drawing of Hylia Raising Skyloft
-  standard: Sealed Grounds - Bonk Wall Drawing of Hylia Raising Skyloft
-  pretty: Sealed Grounds - Bonk Wall Drawing of Hylia Raising Skyloft
+- name: Sealed Grounds - Bonk Wall Drawing of Hylia Raising Sword and Harp
+  standard: Sealed Grounds - Bonk Wall Drawing of Hylia Raising Sword and Harp
+  pretty: Sealed Grounds - Bonk Wall Drawing of Hylia Raising Sword and Harp
   cryptic: <r<disturbing a mural Hylia>>
 
-- name: Sealed Grounds - Slingshot Sun in Wall Drawing of Worshippers
-  standard: Sealed Grounds - Slingshot Sun in Wall Drawing of Worshippers
-  pretty: Sealed Grounds - Slingshot Sun in Wall Drawing of Worshippers
-  cryptic: <r<shooting a painted sun>>
+- name: Sealed Grounds - Slingshot Light of Ultimate Power in Wall Drawing of Worshippers
+  standard: Sealed Grounds - Slingshot Light of Ultimate Power in Wall Drawing of Worshippers
+  pretty: Sealed Grounds - Slingshot Light of Ultimate Power in Wall Drawing of Worshippers
+  cryptic: <r<shooting a mural of ultimate power>>
 
-- name: Sealed Grounds - Slingshot Mouth in Wall Drawing of Beast
-  standard: Sealed Grounds - Slingshot Mouth in Wall Drawing of Beast
-  pretty: Sealed Grounds - Slingshot Mouth in Wall Drawing of Beast
+- name: Sealed Grounds - Slingshot Open Mouth in Wall Drawing of Beast
+  standard: Sealed Grounds - Slingshot Open Mouth in Wall Drawing of Beast
+  pretty: Sealed Grounds - Slingshot Open Mouth in Wall Drawing of Beast
   cryptic: <r<shooting a giant maw>>
 
 - name: Sealed Grounds - Bonk Rocks below Sealed Temple Entrance

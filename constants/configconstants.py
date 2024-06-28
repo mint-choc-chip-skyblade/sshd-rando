@@ -152,6 +152,10 @@ LOCATION_ALIASES = {
     "Lanayru Mine - Blow Right Digging Robot after First Minecart Ride": "Lanayru Mine - Blow Right Digging Robot's Wall after First Minecart Ride",
     "Lanayru Mine - Blow Digging Robot near Mine Exit": "Lanayru Mine - Blow Digging Robot's Wall near Mine Exit",
     "Lanayru Mine - Blow Digging Robot near Last Mine Timeshift Stone": "Lanayru Mine - Blow Digging Robot's Wall near Last Mine Timeshift Stone",
+    # Since v1.1
+    "Sealed Grounds - Slingshot Mouth in Wall Drawing of Beast": "Sealed Grounds - Slingshot Open Mouth in Wall Drawing of Beast",
+    "Sealed Grounds - Bonk Wall Drawing of Hylia Raising Skyloft": "Sealed Grounds - Bonk Wall Drawing of Hylia Raising Sword and Harp",
+    "Sealed Grounds - Slingshot Sun in Wall Drawing of Worshippers": "Sealed Grounds - Slingshot Light of Ultimate Power in Wall Drawing of Worshippers",
 }
 
 SETTING_ALIASES = {
