@@ -90,9 +90,9 @@ bottletypes: "Empty_Bottle or (not_tracker and filledbottletypes)"
 
 # Need access to the item check incase the user has a full pouch
 # or they picked up the cursed medal somewhere already
-Bottle: "can_access(Bazaar) and Pouch and bottletypes"
+Bottle: "'Access_Item_Check' and Pouch and bottletypes"
 
-Can Obtain a Shield: Pouch and can_access(Bazaar) # To buy a shield and dispose of Cursed Medal
+Can Obtain a Shield: Pouch and 'Purchase_Shield' and 'Access_Item_Check' # To buy a shield and dispose of Cursed Medal
 
 Sword: Practice_Sword
 

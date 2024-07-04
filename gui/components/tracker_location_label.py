@@ -275,6 +275,15 @@ class TrackerLocationLabel(QLabel):
                     else "red"
                 )
                 return f'<span style="color:{color}">{req.args[0]} Gratitude Crystals</span>'
+            case RequirementType.TRACKER_NOTE:
+                color = (
+                    "dodgerblue"
+                    if evaluate_requirement_at_time(
+                        req.args[1], self.recent_search, TOD.ALL, self.world
+                    )
+                    else "red"
+                )
+                return f'<span style="color:{color}">{req.args[2]}</span>'
             case RequirementType.OR:
                 # Recursively join requirements with "or"
                 # Only include parentheses if not at the top level (where they'd be redundant)
@@ -316,6 +325,8 @@ def sort_requirement(req: Requirement):
             return pretty_name(req.args[1].name, req.args[0])
         elif req.type == RequirementType.AND or req.type == RequirementType.OR:
             return by_item(req.args[0])
+        elif req.type == RequirementType.TRACKER_NOTE:
+            return req.args[2]
         return ""
 
     def sort_key(req: Requirement):

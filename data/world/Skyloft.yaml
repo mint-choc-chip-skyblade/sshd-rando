@@ -253,6 +253,9 @@
   allowed_time_of_day: All
   events:
     Obtain Stamina Potion: Bottle and Raise_Lanayru_Mining_Facility
+    # important Tracker events
+    Access Item Check: Nothing
+    Purchase Shield: Nothing
   exits:
     Bazaar North: Nothing
     Bazaar West: Nothing

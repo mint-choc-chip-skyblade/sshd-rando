@@ -1,11 +1,23 @@
 from collections import defaultdict
-from typing import Callable
-from ..requirements import Requirement, RequirementType, ALL_TODS
+from dataclasses import dataclass
+
+from constants.configconstants import TRACKER_NOTE_EVENTS
+from ..item_pool import get_complete_item_pool
+from ..search import Search, SearchMode
+from ..requirements import Requirement, RequirementType, ALL_TODS, visit_requirement
 from ..world import World, TOD, LocationAccess
 from ..entrance import Entrance
 from ..area import EventAccess, Area
 from .bits import BitIndex, DNF
 from .simplify_algebraic import dnf_to_expr
+
+
+@dataclass
+class TrackerNoteEvent:
+    id: int
+    name: str
+    internal_name: str
+    known_unreachable: bool
 
 
 class TooltipsSearch:
@@ -22,8 +34,21 @@ class TooltipsSearch:
         self,
         world_: "World",
     ) -> None:
-
         self.world = world_
+
+        # figure out if we can possibly reach the bazaar, to provide more helpful
+        # tooltips for stuff that depends on item check access or shield purchases
+        item_pool = get_complete_item_pool([self.world])
+        search = Search(SearchMode.ACCESSIBLE_LOCATIONS, [self.world], item_pool)
+        search.search_worlds()
+
+        self.note_event_ids: dict[int, TrackerNoteEvent] = {}
+        for internal_name, name in TRACKER_NOTE_EVENTS.items():
+            id = self.world.events[internal_name]
+            self.note_event_ids[id] = TrackerNoteEvent(
+                id, name, internal_name, id not in search.owned_events
+            )
+
         self.bitindex = BitIndex()
 
         # partially computed requirements for areas at a
@@ -67,11 +92,11 @@ class TooltipsSearch:
 
             for exit in area.exits:
                 visit = visitor(exit)
-                visit_req(exit.requirement, visit)
+                visit_requirement(exit.requirement, visit)
 
             for event in area.events:
                 visit = visitor(event)
-                visit_req(event.req, visit)
+                visit_requirement(event.req, visit)
 
         # we start with the starting exit, both day and night following
         # the comment in Search
@@ -235,10 +260,10 @@ class TooltipsSearch:
                             self.area_exprs_tod[tod][area.id] = new_expr.dedup()
 
     def try_access_at_time(
-        self, event: "EventAccess | LocationAccess", tod: int
+        self, access: "EventAccess | LocationAccess", tod: int
     ) -> DNF:
-        return self.area_exprs_tod[tod][event.area.id].and_(
-            evaluate_partial_requirement(self.bitindex, event.req, self, tod)
+        return self.area_exprs_tod[tod][access.area.id].and_(
+            evaluate_partial_requirement(self.bitindex, access.req, self, tod)
         )
 
     def try_exit_at_time(
@@ -251,14 +276,8 @@ class TooltipsSearch:
         )
 
 
-def visit_req(req: Requirement, f: Callable[[Requirement], None]):
-    f(req)
-    if req.type == RequirementType.AND or req.type == RequirementType.OR:
-        for r in req.args:
-            visit_req(r, f)
-
-
 def print_req(req: Requirement) -> str:
+    """Debugging function for tests."""
     match req.type:
         case RequirementType.IMPOSSIBLE:
             return "Impossible"
@@ -272,6 +291,8 @@ def print_req(req: Requirement) -> str:
             return "Wallet >= " + str(req.args[0])
         case RequirementType.GRATITUDE_CRYSTALS:
             return "Gratitude Crystals >= " + str(req.args[0])
+        case RequirementType.TRACKER_NOTE:
+            return req.args[2]
         case RequirementType.OR:
             return "(" + " or ".join([print_req(a) for a in req.args]) + ")"
 
@@ -332,7 +353,28 @@ def evaluate_partial_requirement(
 
         case RequirementType.EVENT:
             id = req.args[0]
-            return search.event_exprs[id]
+            expr = search.event_exprs[id]
+            if id in search.note_event_ids:
+                note = search.note_event_ids[id]
+                # for the item check (and similar), we adjust the
+                # displayed logic by creating an opaque wrapper
+                # requirement for this event
+                bazaar_req = Requirement(
+                    RequirementType.TRACKER_NOTE, [id, req, note.name]
+                )
+                bazaar_dnf = DNF([1 << bit_index.req_bit(bazaar_req)])
+                if note.known_unreachable:
+                    # If the user cannot reach the item check ever, simply return
+                    # an "item check" requirement that will ensure the path
+                    # isn't discarded entirely with "Impossible"
+                    # Double check that there really is no path
+                    assert expr.is_trivially_false()
+                    return bazaar_dnf
+                else:
+                    # otherwise add an *additional* requirement that
+                    # won't be useful but will be shown in tooltips
+                    expr = expr.and_(bazaar_dnf)
+            return expr
 
         case RequirementType.CAN_ACCESS:
             area_id = req.args[0]
