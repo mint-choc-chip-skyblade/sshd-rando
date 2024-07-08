@@ -544,10 +544,6 @@
     Pirate Stronghold Dock: Clawshots or 'Finish_Pirate_Stronghold'
     Pirate Stronghold Top Door: Nothing
   locations:
-    # You *just* can't make it. If the Shark Head is lowered, it's easy but we can't check for it being lowered
-    Pirate Stronghold - Rupee on West Sea Pillar: Quick_Beetle
-    Pirate Stronghold - Rupee on East Sea Pillar: Quick_Beetle
-    Pirate Stronghold - Rupee on Bird Statue Pillar or Nose: Beetle # Still possible
     Pirate Stronghold - Goddess Cube on top of Shark Head: Clawshots and Goddess_Sword
 
 - name: Pirate Stronghold Interior
