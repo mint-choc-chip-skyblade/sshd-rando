@@ -635,7 +635,9 @@ def shuffle_entrance_pool(
             )
             logging.getLogger("").debug(f"\t{error}")
 
-    raise EntranceShuffleError("Ran out of retries when shuffling entrances")
+    raise EntranceShuffleError(
+        "Ran out of retries when shuffling entrances. If you see this error, try using a few different seeds to see if any generate successfully"
+    )
 
 
 def shuffle_entrances(

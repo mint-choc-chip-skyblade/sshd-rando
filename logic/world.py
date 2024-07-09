@@ -199,7 +199,9 @@ class World:
                     # doesn't have an All specification is considered to only
                     # be accessible during the Day
                     if self.setting("natural_night_connections") == "on":
-                        new_area.allowed_tod = TOD.from_str(area_node.get("allowed_time_of_day", "Day Only"))
+                        new_area.allowed_tod = TOD.from_str(
+                            area_node.get("allowed_time_of_day", "Day Only")
+                        )
 
                     new_area.can_sleep = area_node.get("can_sleep", False)
 
