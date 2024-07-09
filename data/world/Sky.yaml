@@ -86,9 +86,10 @@
     Lanayru Mine Entry Statue: Nothing
 
 - name: Bamboo Island
+  allowed_time_of_day: All
   hint_region: Sky
   exits:
-    Bamboo Island Interior: Day
+    Bamboo Island Interior: Nothing
     The Sky: Day
   locations:
     Bamboo Island - Slingshot Left Lantern: Slingshot
@@ -122,6 +123,7 @@
 
 
 - name: Beedle's Island
+  allowed_time_of_day: All
   hint_region: Sky
   exits:
     Beedle's Airshop: Night
@@ -143,6 +145,7 @@
 
 
 - name: Lumpy Pumpkin Exterior
+  allowed_time_of_day: All
   hint_region: Sky
   events:
     Start Kinas Quest: Day and 'Complete_Hot_Soup_Delivery'
@@ -166,37 +169,44 @@
 
 
 - name: Lumpy Pumpkin Back Door Exterior
+  allowed_time_of_day: All
   exits:
     Lumpy Pumpkin Exterior: Nothing
     Lumpy Pumpkin Back Door Interior: Nothing
 
 - name: Lumpy Pumpkin Main East Door Exterior
+  allowed_time_of_day: All
   exits:
     Lumpy Pumpkin Exterior: Nothing
     Lumpy Pumpkin Main East Door Interior: Nothing
 
 - name: Lumpy Pumpkin Main West Door Exterior
+  allowed_time_of_day: All
   exits:
     Lumpy Pumpkin Exterior: Nothing
     Lumpy Pumpkin Main West Door Interior: Nothing
 
 - name: Lumpy Pumpkin Back Door Interior
+  allowed_time_of_day: All
   exits:
     Lumpy Pumpkin Interior: Nothing
     Lumpy Pumpkin Back Door Exterior: Nothing
 
 - name: Lumpy Pumpkin Main East Door Interior
+  allowed_time_of_day: All
   exits:
     Lumpy Pumpkin Interior: Nothing
     Lumpy Pumpkin Main East Door Exterior: Nothing
 
 - name: Lumpy Pumpkin Main West Door Interior
+  allowed_time_of_day: All
   exits:
     Lumpy Pumpkin Interior: Nothing
     Lumpy Pumpkin Main West Door Exterior: Nothing
 
 
 - name: Lumpy Pumpkin Interior
+  allowed_time_of_day: All
   can_sleep: true
   events:
     Start Hot Soup Delivery: Bottle

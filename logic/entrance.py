@@ -106,7 +106,8 @@ class Entrance:
         previously_connected = self.connected_area
         self.connected_area = None
         for entrance in self.conditional_vanilla_connections:
-            entrance.disconnect()
+            if entrance.connected_area:
+                entrance.disconnect()
         return previously_connected
 
     def bind_two_way(self, return_entrance: "Entrance") -> None:
