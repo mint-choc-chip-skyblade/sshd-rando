@@ -4,6 +4,13 @@ from PySide6 import QtCore
 from PySide6.QtCore import QEvent, QPoint, Signal
 
 
+from constants.itemnames import (
+    GRATITUDE_CRYSTAL,
+    GRATITUDE_CRYSTAL_PACK,
+    TRIFORCE_OF_COURAGE,
+    TRIFORCE_OF_POWER,
+    TRIFORCE_OF_WISDOM,
+)
 from filepathconstants import TRACKER_ASSETS_PATH
 from constants.guiconstants import TRACKER_TOOLTIP_STYLESHEET
 from gui.components.outlined_label import OutlinedLabel
@@ -31,7 +38,7 @@ class TrackerInventoryButton(QLabel):
         self.items: list[str] = items_
         self.filenames: list[str] = filenames_
         self.item_names: list[str] = item_names_
-        self.forbidden_states: set[int] = set()
+        self.minimum_state: int = 0
         self.world: World = None
         self.sphere_tracked_items: dict[Location, str] = {}
         self.inventory: Counter[Item]
@@ -161,67 +168,74 @@ class TrackerInventoryButton(QLabel):
 
     def remove_current_item(self) -> None:
         current_item = self.get_current_item()
-        if current_item is not None and self.state - 1 not in self.forbidden_states:
+        if current_item is not None and self.state - 1 >= self.minimum_state:
             self.inventory[current_item] -= 1
             if self.inventory[current_item] < 0:
                 self.inventory[current_item] = 0
 
     def add_current_item(self) -> None:
         current_item = self.get_current_item()
-        if current_item is not None and self.state - 1 not in self.forbidden_states:
+        if current_item is not None and self.state - 1 >= self.minimum_state:
             self.inventory[current_item] += 1
 
     def remove_all_items(self) -> None:
         current_state = self.state
-        for i in range(len(self.items)):
-
-            if i - 1 in self.forbidden_states:
-                continue
-
+        for i in range(self.minimum_state, len(self.items)):
             self.state = i
             self.remove_current_item()
         self.state = current_state
 
     def add_all_items(self) -> None:
         current_state = self.state
-        for i in range(len(self.items)):
-
-            if i - 1 in self.forbidden_states:
-                continue
-
+        for i in range(self.minimum_state, len(self.items)):
             self.state = i
             self.add_current_item()
         self.state = current_state
 
-    def add_forbidden_state(self, state: int) -> None:
-        self.forbidden_states.add(state)
-
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
         should_sphere_track = self.allow_sphere_tracking
+        must_be_five_pack = (
+            self.world.setting("gratitude_crystal_shuffle") == "off"
+            and self.items[-1] == GRATITUDE_CRYSTAL
+        )
         if ev.button() == QtCore.Qt.MouseButton.LeftButton:
-            first_iteration = True
-            while first_iteration or self.state in self.forbidden_states:
-                first_iteration = False
-                self.state += 1
-                if self.state >= len(self.items):
-                    self.state = 0
-                    self.remove_all_items()
-                    should_sphere_track = False
-                self.add_current_item()
+            if must_be_five_pack:
+                for _ in range(5):
+                    original_state = self.state
+                    should_sphere_track &= self.increment_item_state()
+                    # Stop adding crystals once the count overflows
+                    if original_state == len(self.items) - 1:
+                        break
+            else:
+                should_sphere_track &= self.increment_item_state()
         elif ev.button() == QtCore.Qt.MouseButton.RightButton:
-            should_sphere_track = False
-            first_iteration = True
-            while first_iteration or self.state in self.forbidden_states:
-                first_iteration = False
-                self.remove_current_item()
-                self.state -= 1
-                if self.state < 0:
-                    self.state = len(self.items) - 1
-                    self.add_all_items()
+            if must_be_five_pack:
+                for _ in range(5):
+                    should_sphere_track = self.decrement_item_state()
+                    # Stop removing crystals once the count is congruent
+                    # to the number of tracked loose crystals mod 5
+                    # That way, the number of manually tracked crystals
+                    # is still divisble by 5, to line up with tracked
+                    # crystal packs.
+                    if self.state == 76 + (self.minimum_state - 1) % 5:
+                        break
+            else:
+                should_sphere_track = self.decrement_item_state()
 
         # don't try to sphere-track when removing an item or resetting an item all the way
         if should_sphere_track:
-            self.clicked.emit(self.get_current_item(), self.filenames[self.state])
+            self.clicked.emit(
+                (
+                    self.world.get_item(GRATITUDE_CRYSTAL_PACK)
+                    if must_be_five_pack
+                    else self.get_current_item()
+                ),
+                (
+                    "sidequests/crystal_pack.png"
+                    if must_be_five_pack
+                    else self.filenames[self.state]
+                ),
+            )
         else:
             self.clicked.emit(None, None)
 
@@ -257,10 +271,16 @@ class TrackerInventoryButton(QLabel):
 
     def calculate_tooltip(self) -> None:
         self.tooltip = ""
+        matching_item_names = self.items[-1:]
+        # Add special cases for Triforces and Gratitude Crystals
+        if matching_item_names[0] == TRIFORCE_OF_POWER:
+            matching_item_names.extend([TRIFORCE_OF_WISDOM, TRIFORCE_OF_COURAGE])
+        elif matching_item_names[0] == GRATITUDE_CRYSTAL:
+            matching_item_names.append(GRATITUDE_CRYSTAL_PACK)
         locations = [
             loc
             for loc, item_name in self.sphere_tracked_items.items()
-            if item_name in self.items[1:]
+            if item_name in matching_item_names
         ]
 
         if any(locations):
@@ -271,5 +291,33 @@ class TrackerInventoryButton(QLabel):
             for loc in locations:
                 self.tooltip += (
                     "\n"
-                    + f"[{loc.sphere if loc.sphere is not None else '?'}] {loc.name}"
+                    + f"[{loc.sphere if loc.sphere is not None else '?'}] {'(5 Pack) ' if loc.tracked_item.name == GRATITUDE_CRYSTAL_PACK else ''}{loc.name}"
                 )
+
+    # The following functions return whether or not sphere tracking should initiate
+
+    def increment_item_state(self) -> bool:
+        first_iteration = True
+        should_sphere_track = True
+        while first_iteration or self.state < self.minimum_state:
+            first_iteration = False
+            self.state += 1
+            if self.state >= len(self.items):
+                self.state = self.minimum_state
+                self.remove_all_items()
+                should_sphere_track = False
+            self.add_current_item()
+        # sphere tracking should start only if the user didn't overflow the item counter
+        return should_sphere_track
+
+    def decrement_item_state(self) -> bool:
+        first_iteration = True
+        while first_iteration or self.state < self.minimum_state:
+            first_iteration = False
+            self.remove_current_item()
+            self.state -= 1
+            if self.state < self.minimum_state:
+                self.state = len(self.items) - 1
+                self.add_all_items()
+        # sphere tracking shouldn't start when decrementing
+        return False
