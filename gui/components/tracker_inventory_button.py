@@ -201,10 +201,9 @@ class TrackerInventoryButton(QLabel):
         if ev.button() == QtCore.Qt.MouseButton.LeftButton:
             if must_be_five_pack:
                 for _ in range(5):
-                    original_state = self.state
                     should_sphere_track &= self.increment_item_state()
                     # Stop adding crystals once the count overflows
-                    if original_state == len(self.items) - 1:
+                    if self.state == self.minimum_state:
                         break
             else:
                 should_sphere_track &= self.increment_item_state()
