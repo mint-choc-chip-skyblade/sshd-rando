@@ -487,10 +487,9 @@ class Tracker:
         )
         self.gratitude_crystals_button = TrackerInventoryButton(
             ["Nothing"] + [GRATITUDE_CRYSTAL] * 80,
-            ["sidequests/crystal_gray.png"]
-            + [f"sidequests/crystal.png" for i in range(0, 80)],
+            ["sidequests/crystal_gray.png"] + ["sidequests/crystal.png"] * 80,
             None,
-            [f"Gratitude Crystals ({i}/80)" for i in range(0, 81)],
+            [f"Gratitude Crystals ({i}/80)" for i in range(81)],
         )
         self.gratitude_crystals_button.create_number_label()
         self.life_tree_fruit_button = TrackerInventoryButton(
@@ -814,19 +813,19 @@ class Tracker:
             inventory_button.world = self.world
             inventory_button.inventory = self.inventory
             inventory_button.state = 0
-            inventory_button.forbidden_states.clear()
+            inventory_button.minimum_state = 0
             inventory_button.sphere_tracked_items = self.sphere_tracked_items
             inventory_button.allow_sphere_tracking = self.allow_sphere_tracking
             for item in self.inventory.elements():
                 if item.name in inventory_button.items:
-                    inventory_button.add_forbidden_state(inventory_button.state)
+                    inventory_button.minimum_state += 1
                     inventory_button.state += 1
                     self.inventory[item] -= 1
 
                     # Must have been set to random or something else is bugging out
                     if inventory_button.state > len(inventory_button.items) - 1:
                         inventory_button.state = 0
-                        inventory_button.forbidden_states = set()
+                        inventory_button.minimum_state = 0
 
             # Then update the buttons with any marked items from an autosave
             for item_name in autosave.get("marked_items", []):
@@ -840,8 +839,11 @@ class Tracker:
         self.items_on_mark.clear()
 
         # Mark any locations marked from an autosave
+        # and update the crystal button for marked vanilla crystals
         for loc_name in autosave.get("marked_locations", []):
             loc = self.world.get_location(loc_name)
+            if loc.has_vanilla_gratitude_crystal():
+                self.gratitude_crystals_button.minimum_state += 1
             loc.marked = True
 
         # Bind any sphere-tracked items from an autosave
@@ -1298,6 +1300,33 @@ class Tracker:
             label.setVisible(filter.lower() in label.text().lower())
 
     def on_click_location_label(self, location_area: str, location: Location) -> None:
+        should_handle_crystal = location.has_vanilla_gratitude_crystal()
+        # auto-track vanilla loose crystals
+        if should_handle_crystal:
+            crystals_button = self.gratitude_crystals_button
+            if location.marked:
+                if crystals_button.state == 80:
+                    self.main.fi_info_dialog.show_dialog(
+                        "Exceeded Crystal Limit",
+                        """
+                        Vanilla loose crystals are automatically tracked by marking the location.
+                        You have previously marked more than the maximum 13 crystal packs, so the crystal counter
+                        will wrap around to the number of vanilla crystals you have marked.
+                        Consider unmarking some packs if your count is incorrect.
+                        """,
+                    )
+                    crystals_button.minimum_state += 1
+                    crystals_button.increment_item_state()
+                else:
+                    crystals_button.increment_item_state()
+                    crystals_button.minimum_state += 1
+            elif crystals_button.state > 0:
+                crystals_button.minimum_state -= 1
+                crystals_button.decrement_item_state()
+            crystals_button.update_icon()
+        # TODO: add the same behavior for vanilla dungeon keys
+        # Though, it's not quite as necessary since sphere tracking
+        # still works on vanilla key locations
         if not location.marked:
             # stop sphere tracking if unmarking a location
             self.last_checked_location = None
@@ -1307,16 +1336,16 @@ class Tracker:
                 del self.sphere_tracked_items[location]
                 # update the location list to remove the item
                 self.show_area_locations(location_area)
-        # only start sphere-tracking "normal" locations
-        elif (
-            not (
-                location.has_vanilla_goddess_cube()
-                or location.has_vanilla_gratitude_crystal()
-                or location.is_gossip_stone()
-            )
-            and self.allow_sphere_tracking
-        ):
-            self.last_checked_location = location
+        elif self.allow_sphere_tracking:
+            # auto-sphere-track a crystal for vanilla crystals
+            if should_handle_crystal:
+                location.tracked_item = self.world.get_item(GRATITUDE_CRYSTAL)
+                self.sphere_tracked_items[location] = GRATITUDE_CRYSTAL
+            # otherwise, only activate sphere tracking for "normal" locations
+            elif not (
+                location.has_vanilla_goddess_cube() or location.is_gossip_stone()
+            ):
+                self.last_checked_location = location
         self.update_tracker()
         self.show_area_location_info(location_area)
         self.last_opened_region.update_hover_text()
@@ -1488,8 +1517,13 @@ class Tracker:
         main_available_locations = search.visited_locations.copy()
 
         # Add items to inventory for semi-logic search
+        # Exclude marked vanilla loose crystals
         for location, item in self.items_on_mark.items():
-            if location not in already_added and location in main_available_locations:
+            if (
+                location not in already_added
+                and location in main_available_locations
+                and not location.marked
+            ):
                 search.owned_items[item] += 1
 
         # Add own dungeon keys if all their associated locations are in logic
@@ -1746,11 +1780,8 @@ class Tracker:
 
     def on_click_inventory_button(self, item: Item, item_image: str):
         if self.last_checked_location is not None and item is not None:
-            self.last_checked_location.tracked_item = item
-            self.last_checked_location.tracked_item_image = item_image
             # If this is a crystal, ask the user if it was 1 or 5
             if item.name == GRATITUDE_CRYSTAL:
-                item = self.world.get_item(GRATITUDE_CRYSTAL_PACK)
                 crystals_button = self.gratitude_crystals_button
                 # Gets incremented in mouseReleaseEvent
                 # This prevents the counter updating before the user selects how many crystals they found
@@ -1769,17 +1800,18 @@ class Tracker:
                     return
 
                 if single_crystal_question == QMessageBox.StandardButton.No:
+                    # Change sphere-tracked item to a pack
+                    item = self.world.get_item(GRATITUDE_CRYSTAL_PACK)
+                    item_image = "sidequests/crystal_pack.png"
                     for _ in range(4):
-                        crystals_button.state += 1
-                        if crystals_button.state >= len(crystals_button.items):
-                            crystals_button.state = 0
-                            crystals_button.remove_all_items()
-                        crystals_button.add_current_item()
+                        crystals_button.increment_item_state()
 
                 crystals_button.state += 1
                 crystals_button.update_icon()
                 crystals_button.update_hover_text()
 
+            self.last_checked_location.tracked_item = item
+            self.last_checked_location.tracked_item_image = item_image
             self.sphere_tracked_items[self.last_checked_location] = item.name
         self.update_tracker()
         if self.last_opened_region is not None:
@@ -1794,7 +1826,11 @@ class Tracker:
             loc.sphere = None
             if (item := loc.tracked_item) is not None:
                 # Remove any sphere-tracked items
-                if inventory[item] > 0:
+                if item.name == GRATITUDE_CRYSTAL_PACK:
+                    # Convert sphere-tracked crystal packs to 5 crystals
+                    item = self.world.get_item(GRATITUDE_CRYSTAL)
+                    inventory[item] -= min(5, inventory[item])
+                elif inventory[item] > 0:
                     inventory[item] -= 1
 
         sphere_search = Search(SearchMode.TRACKER_SPHERES, [self.world], inventory)
