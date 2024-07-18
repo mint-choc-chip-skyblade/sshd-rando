@@ -8,7 +8,12 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 from constants.configconstants import get_default_setting
 from constants.itemconstants import STARTABLE_ITEMS
 from logic.item import Item
-from logic.requirements import evaluate_requirement_at_time
+from logic.requirements import (
+    Requirement,
+    RequirementType,
+    evaluate_requirement_at_time,
+    visit_requirement,
+)
 from logic.search import Search, SearchMode
 from logic.settings import Setting, SettingMap, get_all_settings_info
 from logic.tooltips.tooltips import TooltipsSearch, print_req
@@ -40,11 +45,6 @@ def default_tracker_settings() -> SettingMap:
         )
 
     return setting_map
-
-
-class MockSearch:
-    def __init__(self, inventory: Counter[Item]):
-        self.owned_items = inventory
 
 
 def test_default_settings():
@@ -88,8 +88,10 @@ def test_default_settings():
         for item, count in tracker_world.starting_item_pool.items():
             tooltip_inventory[item] += count
 
-        # have to mock the search a bit for the inventory (areas are eliminated)
-        mock_search: Search = MockSearch(tooltip_inventory)  # type: ignore
+        tooltips_world_search = Search(
+            SearchMode.ACCESSIBLE_LOCATIONS, [tracker_world], inventory
+        )
+        tooltips_world_search.search_worlds()
         # time of days are eliminated here
         mock_tod: int = None  # type: ignore
 
@@ -100,8 +102,24 @@ def test_default_settings():
             tooltip_requirement = tracker_world.get_location(
                 location.name
             ).computed_requirement
+
+            def assert_requirement_type(req: Requirement):
+                assert (
+                    req.type == RequirementType.TRACKER_NOTE
+                    or req.type == RequirementType.AND
+                    or req.type == RequirementType.OR
+                    or req.type == RequirementType.WALLET_CAPACITY
+                    or req.type == RequirementType.GRATITUDE_CRYSTALS
+                    or req.type == RequirementType.ITEM
+                    or req.type == RequirementType.COUNT
+                    or req.type == RequirementType.IMPOSSIBLE
+                    or req.type == RequirementType.NOTHING
+                )
+
+            visit_requirement(tooltip_requirement, assert_requirement_type)
+
             is_tooltip_in_logic = evaluate_requirement_at_time(
-                tooltip_requirement, mock_search, mock_tod, tracker_world
+                tooltip_requirement, tooltips_world_search, mock_tod, tracker_world
             )
 
             assert (

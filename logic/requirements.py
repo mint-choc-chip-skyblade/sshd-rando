@@ -1,5 +1,5 @@
 import copy
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Callable
 
 if TYPE_CHECKING:
     from .world import World
@@ -22,6 +22,7 @@ class RequirementType:
     NIGHT: int = 12
     WALLET_CAPACITY: int = 13
     GRATITUDE_CRYSTALS: int = 14
+    TRACKER_NOTE: int = 15
 
 
 class EvalSuccess:
@@ -393,6 +394,16 @@ def evaluate_requirement_at_time(
                 world.get_item("Gratitude Crystal Pack")
             ]
             return num_single_crystals + (num_crystal_packs * 5) >= expected_crystals
+
+        case RequirementType.TRACKER_NOTE:
+            return evaluate_requirement_at_time(req.args[1], search, time, world)
+
+
+def visit_requirement(req: Requirement, f: Callable[[Requirement], None]):
+    f(req)
+    if req.type == RequirementType.AND or req.type == RequirementType.OR:
+        for r in req.args:
+            visit_requirement(r, f)
 
 
 def evaluate_exit_requirement(search: "Search", exit_: "Entrance") -> int:

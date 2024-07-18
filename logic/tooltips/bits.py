@@ -161,6 +161,7 @@ class BitIndex:
         self.item_bits = {}
         self.wallet_cap = {}
         self.crystal_count = {}
+        self.notes = {}
         self.reverse_index: list[Requirement] = []
         self.counter = 0
 
@@ -207,6 +208,14 @@ class BitIndex:
                     return self.crystal_count[req_str]
                 else:
                     self.crystal_count[req_str] = self.counter
+                    self.reverse_index.append(req)
+                    return self.bump()
+            case RequirementType.TRACKER_NOTE:
+                req_str = f"{req.args[0]}"
+                if req_str in self.notes:
+                    return self.notes[req_str]
+                else:
+                    self.notes[req_str] = self.counter
                     self.reverse_index.append(req)
                     return self.bump()
             case _:

@@ -158,6 +158,11 @@ LOCATION_ALIASES = {
     "Sealed Grounds - Slingshot Sun in Wall Drawing of Worshippers": "Sealed Grounds - Slingshot Light of Ultimate Power in Wall Drawing of Worshippers",
 }
 
+TRACKER_NOTE_EVENTS = {
+    "Access_Item_Check": "Access Item Check",
+    "Purchase_Shield": "Purchase Shield",
+}
+
 SETTING_ALIASES = {
     "shortcut_fs_lava_flow": "fs_lava_flow",
 }
