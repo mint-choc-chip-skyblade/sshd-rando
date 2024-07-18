@@ -164,13 +164,13 @@ class TrackerArea(QLabel):
             )
             if any([l for l in available_locations if l.has_vanilla_goddess_cube()]):
                 self.setText(
-                    f'<img src="{(TRACKER_ASSETS_PATH / "sidequests" / "goddess_cube.png").as_posix()}" width="23" height="25">'
+                    f'<img src="{(TRACKER_ASSETS_PATH / "side_quests" / "goddess_cube.png").as_posix()}" width="23" height="25">'
                 )
             elif any(
                 [l for l in available_locations if l.has_vanilla_gratitude_crystal()]
             ):
                 self.setText(
-                    f'<img src="{(TRACKER_ASSETS_PATH / "sidequests" / "crystal.png").as_posix()}" width="25" height="25">'
+                    f'<img src="{(TRACKER_ASSETS_PATH / "side_quests" / "crystal.png").as_posix()}" width="25" height="25">'
                 )
 
             self.update_color("red")
