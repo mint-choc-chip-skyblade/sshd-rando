@@ -2,6 +2,7 @@ from pathlib import Path
 import yaml
 from constants.configconstants import (
     CONFIG_FIELDS,
+    ENTRANCE_TYPES,
     PREFERENCE_FIELDS,
     SETTING_ALIASES,
     get_default_setting,
@@ -166,10 +167,12 @@ def write_config_to_file(filename: Path, config: Config):
                 config_out[world_num]["excluded_hint_locations"].append(loc)
 
             # Map mixed pools
-            config_out[world_num]["mixed_entrance_pools"] = []
+            config_out[world_num]["mixed_entrance_pools"] = [
+                list() for _ in range(len(ENTRANCE_TYPES) - 1)
+            ]
 
-            for pool in setting_map.mixed_entrance_pools:
-                config_out[world_num]["mixed_entrance_pools"].append(pool)
+            for pool_index, pool in enumerate(setting_map.mixed_entrance_pools):
+                config_out[world_num]["mixed_entrance_pools"][pool_index] = pool
 
         yaml.safe_dump(config_out, config_file, sort_keys=False)
 
