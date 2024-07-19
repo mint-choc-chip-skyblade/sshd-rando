@@ -42,17 +42,19 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
     for text in colorful_dungeon_text:
         dungeon_text += text + Text("\n")
 
-    match len(colorful_dungeon_text):
-        case 0:
-            required_dungeons_text = get_text_data("No Required Dungeons Text")
-        case 6:
-            required_dungeons_text = get_text_data("All Required Dungeons Text")
-        case _:
-            required_dungeons_text = get_text_data("Some Required Dungeons Text")
-            required_dungeons_text = required_dungeons_text.replace(
-                "{dungeon_text}",
-                dungeon_text,
-            )
+    num_dungeons = len(colorful_dungeon_text)
+    if num_dungeons == 0:
+        required_dungeons_text = get_text_data("No Required Dungeons Text")
+    elif num_dungeons == 7 or (
+        num_dungeons == 6 and world.setting("dungeons_include_sky_keep") == "off"
+    ):
+        required_dungeons_text = get_text_data("All Required Dungeons Text")
+    else:
+        required_dungeons_text = get_text_data("Some Required Dungeons Text")
+        required_dungeons_text = required_dungeons_text.replace(
+            "{dungeon_text}",
+            dungeon_text,
+        )
 
     event_patch_handler.append_to_event_patches(
         "006-8KenseiNormal",
