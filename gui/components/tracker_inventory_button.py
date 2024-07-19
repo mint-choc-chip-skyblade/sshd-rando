@@ -230,7 +230,7 @@ class TrackerInventoryButton(QLabel):
                     else self.get_current_item()
                 ),
                 (
-                    "sidequests/crystal_pack.png"
+                    "side_quests/crystal_pack.png"
                     if must_be_five_pack
                     else self.filenames[self.state]
                 ),

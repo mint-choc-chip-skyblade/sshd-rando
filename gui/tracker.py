@@ -96,7 +96,7 @@ class Tracker:
 
         # Display the Sky if there's no active tracker
         self.ui.map_widget.setStyleSheet(
-            Tracker.map_widget_stylesheet.replace("IMAGE_FILENAME", "Sky.png")
+            Tracker.map_widget_stylesheet.replace("IMAGE_FILENAME", "sky.png")
         )
 
         self.ui.map_widget.mouseReleaseEvent = self.handle_right_click
@@ -274,52 +274,61 @@ class Tracker:
         )
 
         self.bombs_button = TrackerInventoryButton(
-            ["Nothing", BOMB_BAG], ["bombs_gray.png", "bombs.png"]
+            ["Nothing", BOMB_BAG], ["item_wheel/bombs_gray.png", "item_wheel/bombs.png"]
         )
         self.slingshot_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_SLINGSHOT] * 2,
-            ["slingshot_gray.png", "slingshot.png", "scattershot.png"],
+            [
+                "item_wheel/slingshot_gray.png",
+                "item_wheel/slingshot.png",
+                "item_wheel/scattershot.png",
+            ],
             None,
             ["No Slingshot", "Slingshot", "Scattershot"],
         )
         self.beetle_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_BEETLE] * 4,
             [
-                "beetle_gray.png",
-                "beetle.png",
-                "hook_beetle.png",
-                "quick_beetle.png",
-                "tough_beetle.png",
+                "item_wheel/beetle_gray.png",
+                "item_wheel/beetle.png",
+                "item_wheel/hook_beetle.png",
+                "item_wheel/quick_beetle.png",
+                "item_wheel/tough_beetle.png",
             ],
             None,
             ["No Beetle", "Beetle", "Hook Beetle", "Quick Beetle", "Tough Beetle"],
         )
         self.bug_net_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_BUG_NET] * 2,
-            ["bug_net_gray.png", "bug_net.png", "big_bug_net.png"],
+            [
+                "item_wheel/bug_net_gray.png",
+                "item_wheel/bug_net.png",
+                "item_wheel/big_bug_net.png",
+            ],
             None,
             ["No Bug Net", "Bug Net", "Big Bug Net"],
         )
         self.bow_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_BOW] * 3,
             [
-                "bow_gray.png",
-                "bow.png",
-                "iron_bow.png",
-                "sacred_bow.png",
+                "item_wheel/bow_gray.png",
+                "item_wheel/bow.png",
+                "item_wheel/iron_bow.png",
+                "item_wheel/sacred_bow.png",
             ],
             None,
             ["No Bow", "Bow", "Iron Bow", "Sacred Bow"],
         )
         self.clawshots_button = TrackerInventoryButton(
-            ["Nothing", CLAWSHOTS], ["clawshots_gray.png", "clawshots.png"]
+            ["Nothing", CLAWSHOTS],
+            ["item_wheel/clawshots_gray.png", "item_wheel/clawshots.png"],
         )
         self.whip_button = TrackerInventoryButton(
-            ["Nothing", WHIP], ["whip_gray.png", "whip.png"]
+            ["Nothing", WHIP], ["item_wheel/whip_gray.png", "item_wheel/whip.png"]
         )
         self.gust_bellows_button = TrackerInventoryButton(
             ["Nothing", GUST_BELLOWS],
-            ["gust_bellows_gray.png", "gust_bellows.png"],
+            ["item_wheel/gust_bellows_gray.png", "item_wheel/gust_bellows.png"],
         )
 
         self.sword_button = TrackerInventoryButton(
@@ -360,15 +369,16 @@ class Tracker:
             [f"Lanayru Caves Small Key ({i}/2)" for i in range(3)],
         )
         self.sea_chart_button = TrackerInventoryButton(
-            ["Nothing", SEA_CHART], ["sea_chart_gray.png", "sea_chart.png"]
+            ["Nothing", SEA_CHART],
+            ["main_quest/sea_chart_gray.png", "main_quest/sea_chart.png"],
         )
         self.spiral_charge_button = TrackerInventoryButton(
             ["Nothing", SPIRAL_CHARGE],
-            ["bird_statuette_gray.png", "bird_statuette.png"],
+            ["main_quest/bird_statuette_gray.png", "main_quest/bird_statuette.png"],
         )
         self.adventure_pouch_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_POUCH] * 5,
-            ["pouch_gray.png"] + ["pouch.png"] * 5,
+            ["main_quest/pouch_gray.png"] + ["main_quest/pouch.png"] * 5,
             None,
             ["Adventure Pouch (0 Slots)"]
             + [f"Adventure Pouch ({i + 4} Slots)" for i in range(5)],
@@ -378,7 +388,7 @@ class Tracker:
         self.adventure_pouch_button.set_label_scale(1.25)
         self.bottle_button = TrackerInventoryButton(
             ["Nothing"] + [EMPTY_BOTTLE] * 5,
-            ["bottle_gray.png"] + ["bottle.png"] * 5,
+            ["main_quest/bottle_gray.png"] + ["main_quest/bottle.png"] * 5,
             None,
             [f"Empty Bottle ({i}/5)" for i in range(6)],
         )
@@ -413,9 +423,9 @@ class Tracker:
         self.mitts_button = TrackerInventoryButton(
             ["Nothing"] + [PROGRESSIVE_MITTS] * 2,
             [
-                "main quest/digging_mitts_gray.png",
-                "main quest/digging_mitts.png",
-                "main quest/mogma_mitts.png",
+                "main_quest/digging_mitts_gray.png",
+                "main_quest/digging_mitts.png",
+                "main_quest/mogma_mitts.png",
             ],
             None,
             ["No Mitts", "Digging Mitts", "Mogma Mitts"],
@@ -423,7 +433,7 @@ class Tracker:
 
         self.harp_button = TrackerInventoryButton(
             ["Nothing", GODDESS_HARP],
-            ["main quest/goddess_harp_gray.png", "main quest/goddess_harp.png"],
+            ["main_quest/goddess_harp_gray.png", "main_quest/goddess_harp.png"],
         )
         self.ballad_of_the_goddess_button = TrackerInventoryButton(
             ["Nothing", BALLAD_OF_THE_GODDESS],
@@ -451,7 +461,7 @@ class Tracker:
         self.song_of_the_hero_button.set_label_scale(1.1)
         self.triforce_button = TrackerInventoryButton(
             ["Nothing", TRIFORCE_OF_COURAGE, TRIFORCE_OF_WISDOM, TRIFORCE_OF_POWER],
-            [f"main quest/triforce_{i}.png" for i in range(4)],
+            [f"main_quest/triforce_{i}.png" for i in range(4)],
             None,
             [f"Triforce ({i}/3)" for i in range(4)],
         )
@@ -459,51 +469,51 @@ class Tracker:
         self.water_dragon_scale_button = TrackerInventoryButton(
             ["Nothing", WATER_DRAGON_SCALE],
             [
-                "main quest/water_dragon_scale_gray.png",
-                "main quest/water_dragon_scale.png",
+                "main_quest/water_dragon_scale_gray.png",
+                "main_quest/water_dragon_scale.png",
             ],
         )
         self.fireshield_earrings_button = TrackerInventoryButton(
             ["Nothing", FIRESHIELD_EARRINGS],
             [
-                "main quest/fireshield_earrings_gray.png",
-                "main quest/fireshield_earrings.png",
+                "main_quest/fireshield_earrings_gray.png",
+                "main_quest/fireshield_earrings.png",
             ],
         )
         self.cawlins_latter_button = TrackerInventoryButton(
             ["Nothing", CAWLINS_LETTER],
-            ["sidequests/cawlin_letter_gray.png", "sidequests/cawlin_letter.png"],
+            ["side_quests/cawlin_letter_gray.png", "side_quests/cawlin_letter.png"],
         )
         self.insect_cage_button = TrackerInventoryButton(
             ["Nothing", BEEDLES_INSECT_CAGE],
             [
-                "sidequests/beedle_insect_cage_gray.png",
-                "sidequests/beedle_insect_cage.png",
+                "side_quests/beedle_insect_cage_gray.png",
+                "side_quests/beedle_insect_cage.png",
             ],
         )
         self.rattle_button = TrackerInventoryButton(
             ["Nothing", RATTLE],
-            ["sidequests/rattle_gray.png", "sidequests/rattle.png"],
+            ["side_quests/rattle_gray.png", "side_quests/rattle.png"],
         )
         self.gratitude_crystals_button = TrackerInventoryButton(
             ["Nothing"] + [GRATITUDE_CRYSTAL] * 80,
-            ["sidequests/crystal_gray.png"] + ["sidequests/crystal.png"] * 80,
+            ["side_quests/crystal_gray.png"] + ["side_quests/crystal.png"] * 80,
             None,
             [f"Gratitude Crystals ({i}/80)" for i in range(81)],
         )
         self.gratitude_crystals_button.create_number_label()
         self.life_tree_fruit_button = TrackerInventoryButton(
             ["Nothing", LIFE_TREE_FRUIT],
-            ["main quest/life_tree_fruit_gray.png", "main quest/life_tree_fruit.png"],
+            ["main_quest/life_tree_fruit_gray.png", "main_quest/life_tree_fruit.png"],
         )
 
         # self.tadtones_button = TrackerInventoryButton(
         #    ["Nothing", GROUP_OF_TADTONES],
-        #    ["main quest/tadtones_gray.png", "main quest/tadtones.png"],
+        #    ["main_quest/tadtones_gray.png", "main_quest/tadtones.png"],
         # )
         self.scrapper_button = TrackerInventoryButton(
             ["Nothing", SCRAPPER],
-            ["main quest/scrapper_gray.png", "main quest/Scrapper.png"],
+            ["main_quest/scrapper_gray.png", "main_quest/scrapper.png"],
         )
 
         # Load in tracker area buttons
@@ -1802,7 +1812,7 @@ class Tracker:
                 if single_crystal_question == QMessageBox.StandardButton.No:
                     # Change sphere-tracked item to a pack
                     item = self.world.get_item(GRATITUDE_CRYSTAL_PACK)
-                    item_image = "sidequests/crystal_pack.png"
+                    item_image = "side_quests/crystal_pack.png"
                     for _ in range(4):
                         crystals_button.increment_item_state()
 

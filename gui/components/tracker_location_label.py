@@ -94,15 +94,15 @@ class TrackerLocationLabel(QLabel):
         has_icon = True
         if self.location.has_vanilla_gratitude_crystal():
             self.pixmap.load(
-                (TRACKER_ASSETS_PATH / "sidequests" / "crystal.png").as_posix()
+                (TRACKER_ASSETS_PATH / "side_quests" / "crystal.png").as_posix()
             )
         elif self.location.has_vanilla_goddess_cube():
             self.pixmap.load(
-                (TRACKER_ASSETS_PATH / "sidequests" / "goddess_cube.png").as_posix()
+                (TRACKER_ASSETS_PATH / "side_quests" / "goddess_cube.png").as_posix()
             )
         elif self.location.is_gossip_stone():
             self.pixmap.load(
-                (TRACKER_ASSETS_PATH / "sidequests" / "gossip_stone.png").as_posix()
+                (TRACKER_ASSETS_PATH / "side_quests" / "gossip_stone.png").as_posix()
             )
         elif self.location.has_vanilla_dungeon_key():
             self.pixmap.load(
