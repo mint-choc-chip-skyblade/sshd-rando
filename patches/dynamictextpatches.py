@@ -14,6 +14,9 @@ def add_dynamic_text_patches(
         add_impa_text_patches(world, event_patch_handler)
 
     add_song_text_patches(world, event_patch_handler)
+
+    add_sky_keep_goal_loc_patches(world)
+
     add_rando_hash(world, event_patch_handler)
 
 
@@ -373,6 +376,26 @@ def add_song_text_patches(world: World, event_patch_handler: EventPatchHandler) 
                 "index": inventory_text_idx,
             },
         )
+
+
+def add_sky_keep_goal_loc_patches(world: World) -> None:
+    sky_keep = world.get_dungeon("Sky Keep")
+    goal = sky_keep.goal_location
+    goal_text = get_text_data("Sky Keep No Goal Location Text")
+
+    if sky_keep.required and goal is not None:
+        if goal.name.endswith("Farore"):
+            goal_text = get_text_data(
+                "Sky Keep Goal Location Sacred Power of Farore Text"
+            )
+        elif goal.name.endswith("Nayru"):
+            goal_text = get_text_data(
+                "Sky Keep Goal Location Sacred Power of Nayru Text"
+            )
+        elif goal.name.endswith("Din"):
+            goal_text = get_text_data("Sky Keep Goal Location Sacred Power of Din Text")
+
+    add_text_data("Sky Keep goal location sign text with replaced text", goal_text)
 
 
 def add_rando_hash(world: World, event_patch_handler: EventPatchHandler) -> None:
