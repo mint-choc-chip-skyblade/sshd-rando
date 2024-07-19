@@ -1474,7 +1474,7 @@
 - name: Upper Skyloft - 600 Points in Pumpkin Pull
   standard: Upper Skyloft - 600 Points in Pumpkin Pull
   pretty: Upper Skyloft - 600 Points in Pumpkin Pull
-  cryptic: <r<shooting pumpkings>>
+  cryptic: <r<shooting pumpkins>>
 
 - name: Upper Skyloft - Stamina Fruit near Upper Academy Gates
   standard: Upper Skyloft - Stamina Fruit near Upper Academy Gates
@@ -1585,11 +1585,6 @@
   standard: Central Skyloft - Bonk Tree before Lower Academy Stairs 3
   pretty: Central Skyloft - Bonk Tree before Lower Academy Stairs 3
   cryptic: <r<disturbing western sky wood>>
-
-- name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
-  standard: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
-  pretty: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
-  cryptic: <r<shooting a northern shop light>>
 
 - name: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
   standard: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
@@ -2595,7 +2590,7 @@
 - name: Faron Woods - Slingshot Floria Gates Archway
   standard: Faron Woods - Slingshot Floria Gates Archway
   pretty: Faron Woods - Slingshot Floria Gates Archway
-  cryptic: <r<shoorting>> a <b<watery door>>
+  cryptic: <r<shooting>> a <b<watery door>>
 
 - name: Faron Woods - Rupee on Platform near Floria Door
   standard: Faron Woods - Rupee on Platform near Floria Door
@@ -3060,47 +3055,47 @@
 - name: Eldin Volcano - Underground Rupee in First Room 1
   standard: Eldin Volcano - Underground Rupee in First Room 1
   pretty: Eldin Volcano - Underground Rupee in First Room 1
-  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+  cryptic: an <r<underground rupee before a bokoblin's hideout>>
 
 - name: Eldin Volcano - Underground Rupee in First Room 2
   standard: Eldin Volcano - Underground Rupee in First Room 2
   pretty: Eldin Volcano - Underground Rupee in First Room 2
-  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+  cryptic: an <r<underground rupee before a bokoblin's hideout>>
 
 - name: Eldin Volcano - Underground Rupee in First Room 3
   standard: Eldin Volcano - Underground Rupee in First Room 3
   pretty: Eldin Volcano - Underground Rupee in First Room 3
-  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+  cryptic: an <r<underground rupee before a bokoblin's hideout>>
 
 - name: Eldin Volcano - Underground Rupee in First Room 4
   standard: Eldin Volcano - Underground Rupee in First Room 4
   pretty: Eldin Volcano - Underground Rupee in First Room 4
-  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+  cryptic: an <r<underground rupee before a bokoblin's hideout>>
 
 - name: Eldin Volcano - Underground Rupee in First Room 5
   standard: Eldin Volcano - Underground Rupee in First Room 5
   pretty: Eldin Volcano - Underground Rupee in First Room 5
-  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+  cryptic: an <r<underground rupee before a bokoblin's hideout>>
 
 - name: Eldin Volcano - Underground Rupee in First Room 6
   standard: Eldin Volcano - Underground Rupee in First Room 6
   pretty: Eldin Volcano - Underground Rupee in First Room 6
-  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+  cryptic: an <r<underground rupee before a bokoblin's hideout>>
 
 - name: Eldin Volcano - Underground Rupee in First Room 7
   standard: Eldin Volcano - Underground Rupee in First Room 7
   pretty: Eldin Volcano - Underground Rupee in First Room 7
-  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+  cryptic: an <r<underground rupee before a bokoblin's hideout>>
 
 - name: Eldin Volcano - Underground Rupee in First Room 8
   standard: Eldin Volcano - Underground Rupee in First Room 8
   pretty: Eldin Volcano - Underground Rupee in First Room 8
-  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+  cryptic: an <r<underground rupee before a bokoblin's hideout>>
 
 - name: Eldin Volcano - Underground Rupee in First Room 9
   standard: Eldin Volcano - Underground Rupee in First Room 9
   pretty: Eldin Volcano - Underground Rupee in First Room 9
-  cryptic: an <r<underground rupee before a bokoblin's hidout>>
+  cryptic: an <r<underground rupee before a bokoblin's hideout>>
 
 - name: Eldin Volcano - Chest after Blocked Crawlspace
   standard: Eldin Volcano - Chest after Blocked Crawlspace
@@ -5037,7 +5032,7 @@
 - name: Lanayru Mining Facility - Chest behind First Crawlspace
   standard: Lanayru Mining Facility - Chest behind First Crawlspace
   pretty: Lanayru Mining Facility - Chest behind First Crawlspace
-  cryptic: a <r<chest past a sandy cralwspace>>
+  cryptic: a <r<chest past a sandy crawlspace>>
 
 - name: Lanayru Mining Facility - Blow Painting behind First Crawlspace
   standard: Lanayru Mining Facility - Blow Painting behind First Crawlspace
@@ -5828,13 +5823,13 @@
   standard: " The realm beyond holds <r<nothing>>."
 
 - name: Trial Direct One
-  standard: " The realm beyond holds |item|."
+  standard: " The realm beyond holds <item>."
 
 - name: Trial Direct Two
-  standard: " The realm beyond holds |item| and <r<1 more item>>."
+  standard: " The realm beyond holds <item> and <r<1 more item>>."
 
 - name: Trial Direct Three Plus
-  standard: " The realm beyond holds |item| and <r<%d more items>>."
+  standard: " The realm beyond holds <item> and <r<%d more items>>."
 
 - name: Trial Useless
   standard: " You probably don't need to use it..."
