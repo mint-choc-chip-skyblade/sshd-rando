@@ -110,7 +110,7 @@
         room: 0
         entrance: 0
   return:
-    connection: LMF First Room -> Top of LMF
+    connection: LMF First Room -> Lanayru Desert North
     # Conditional connections may only stay if the above connection
     # is vanilla
     conditional_vanilla_connections:

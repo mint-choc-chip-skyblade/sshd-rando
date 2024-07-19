@@ -210,7 +210,7 @@ def assign_hint_regions_and_dungeon_locations(starting_area: Area):
         area = area_queue.pop(0)
         already_checked.add(area)
 
-        if len(area.hint_regions) > 0 or area.name == "Root":
+        if area.hard_assigned_region or area.name == "Root":
             for region in area.hint_regions:
                 # Don't add None if we come across it
                 if region != "None":

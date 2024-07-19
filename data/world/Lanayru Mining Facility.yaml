@@ -4,7 +4,7 @@
   dungeon_starting_area: true
   exits:
     LMF First Hub: Hook_Beetle or (Whip and logic_lmf_whip_switch)
-    Top of LMF: Nothing
+    Lanayru Desert North: Nothing
   locations:
     Lanayru Mining Facility - Chest behind Bars: Nothing
     Lanayru Mining Facility - Left Front Rupee behind Statue: Nothing

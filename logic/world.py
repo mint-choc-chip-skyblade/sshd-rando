@@ -195,14 +195,12 @@ class World:
                     new_area.world = self
                     defined_areas.add(new_area)
 
-                    if (
-                        "allowed_time_of_day" in area_node
-                        and self.setting("natural_night_connections") == "on"
-                    ):
-                        new_area.allowed_tod = (
-                            TOD.DAY
-                            if area_node["allowed_time_of_day"] == "Day Only"
-                            else TOD.ALL
+                    # If natural night connections are enforced, any area which
+                    # doesn't have an All specification is considered to only
+                    # be accessible during the Day
+                    if self.setting("natural_night_connections") == "on":
+                        new_area.allowed_tod = TOD.from_str(
+                            area_node.get("allowed_time_of_day", "Day Only")
                         )
 
                     new_area.can_sleep = area_node.get("can_sleep", False)

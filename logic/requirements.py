@@ -38,6 +38,17 @@ class TOD:
     NIGHT: int = 0b10
     ALL: int = 0b11
 
+    def from_str(str) -> int:
+        match str:
+            case "Day Only":
+                return TOD.DAY
+            case "Night Only":
+                return TOD.NIGHT
+            case "All":
+                return TOD.ALL
+            case _:
+                raise RuntimeError(f"Unknown time of day specifier {str}")
+
 
 ALL_TODS = [TOD.DAY, TOD.NIGHT]
 
@@ -441,7 +452,7 @@ def evaluate_exit_requirement(search: "Search", exit_: "Entrance") -> int:
         return EvalSuccess.NONE
 
     for time in ALL_TODS:
-        if potential_time_spread & time:
+        if potential_time_spread & time & parent_area.allowed_tod:
             eval_test = evaluate_requirement_at_time(
                 exit_.requirement, search, time, exit_.world
             )
