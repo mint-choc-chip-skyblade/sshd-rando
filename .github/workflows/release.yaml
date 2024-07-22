@@ -29,14 +29,27 @@ jobs:
         with:
           run-id: ${{ github.run_id }}
           github-token: ${{ github.token }}
-          merge-multiple: true
+      
+      - name: Read Version
+        uses: SebRollen/toml-action@v1.2.0
+        id: read_toml
+        with:
+          file: "constants/randoconstants.py"
+          field: "VERSION"
+
+      - name: Zip windows build
+        run: |
+          cd "Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (windows)"
+          zip "Skyward_Sword_HD_Randomizer_v${{ steps.read_toml.outputs.value }}_windows.zip" ./* -r
+          rm *.exe
+          cd ..
       
       # filter the artifacts by name, ignoring the version
       - name: Filter artifacts
         id: filter_artifacts
         run: |
           echo 'builds<<EOF' >> $GITHUB_OUTPUT
-          echo "$(find . -name "Skyward Sword HD Randomizer*")" >> $GITHUB_OUTPUT
+          echo "$(find . -name "Skyward_Sword_HD_Randomizer*")" >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
   
       # create a release
