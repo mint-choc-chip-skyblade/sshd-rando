@@ -208,7 +208,7 @@ class TooltipsSearch:
 
             for tod in ALL_TODS:
                 valid_tods = self.world.exit_time_cache.get(exit, TOD.ALL)
-                if not (valid_tods & tod):
+                if not (valid_tods & tod & exit.connected_area.allowed_tod):
                     continue
 
                 old_expr = self.area_exprs_tod[tod][exit.connected_area.id]
@@ -249,6 +249,8 @@ class TooltipsSearch:
                 if not area.id in self.recently_updated_areas:
                     continue
                 for tod in ALL_TODS:
+                    # NB no need to check allowed_tod since can_sleep should
+                    # imply that both TODs are valid
                     old_expr = self.area_exprs_tod[tod][area.id]
                     opposite_tod = TOD.DAY if tod == TOD.NIGHT else TOD.NIGHT
                     new_partial = self.area_exprs_tod[opposite_tod][area.id]
