@@ -340,13 +340,15 @@
 - name: Flooded Faron Woods
   hint_region: Flooded Faron Woods
   events:
-    Unlock In the Woods Statue: Water_Dragons_Scale
-    Unlock Viewing Platform Statue: Water_Dragons_Scale
-    Unlock Faron Woods Entry Statue: Water_Dragons_Scale
-    Unlock The Great Tree Statue: Clawshots or Water_Dragons_Scale
     Retrieve Oolo: Scrapper and 'Start_Owlans_Quest'
     Can Watch Completed Tadtones Cutscene: Nothing
     Can Collect Water: Bottle
+    # Leads to some obscure logic when paired with the Groosenator
+    #
+    # Unlock In the Woods Statue: Water_Dragons_Scale
+    # Unlock Viewing Platform Statue: Water_Dragons_Scale
+    # Unlock Faron Woods Entry Statue: Water_Dragons_Scale
+    # Unlock The Great Tree Statue: Clawshots or Water_Dragons_Scale
   exits:
     Sealed Grounds: Nothing # Talk to Bucha
     Flooded Great Tree Upper: Clawshots
