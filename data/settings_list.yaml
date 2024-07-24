@@ -1437,6 +1437,16 @@
     - "off": "You will only be expected to use the Slingshot, Bow, Clawshots, or a Beetle to activate distant switches and you will only be expected to use nearby bomb flowers with the Hook Beetle to blow up distant rocks."
     - "on": "You may need to use the Bomb Bag and time bomb throws to activate switches or blow up distant rocks or towers."
 
+- name: logic_faron_woods_with_groosenator
+  default_option: "off"
+  pretty_name: Faron Woods with Groosenator
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will never be expected to use the Groosenator to access Faron Woods by unlocking bird statues in Flooded Faron Woods."
+    - "on": "You may need to use the Groosenator to unlock the bird statues in Flooded Faron Woods to land at those bird statues in normal Faron Woods."
+
 - name: logic_itemless_first_timeshift_stone
   default_option: "off"
   pretty_name: Itemless First Timeshift Stone

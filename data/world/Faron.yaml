@@ -345,10 +345,10 @@
     Can Collect Water: Bottle
     # Leads to some obscure logic when paired with the Groosenator
     #
-    # Unlock In the Woods Statue: Water_Dragons_Scale
-    # Unlock Viewing Platform Statue: Water_Dragons_Scale
-    # Unlock Faron Woods Entry Statue: Water_Dragons_Scale
-    # Unlock The Great Tree Statue: Clawshots or Water_Dragons_Scale
+    Unlock In the Woods Statue: logic_faron_woods_with_groosenator and Water_Dragons_Scale
+    Unlock Viewing Platform Statue: logic_faron_woods_with_groosenator and Water_Dragons_Scale
+    Unlock Faron Woods Entry Statue: logic_faron_woods_with_groosenator and Water_Dragons_Scale
+    Unlock The Great Tree Statue: logic_faron_woods_with_groosenator and (Clawshots or Water_Dragons_Scale)
   exits:
     Sealed Grounds: Nothing # Talk to Bucha
     Flooded Great Tree Upper: Clawshots
