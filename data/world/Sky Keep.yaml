@@ -103,7 +103,6 @@
 
 
 - name: SK Sacred Power of Farore Room
-  dungeon: Sky Keep
   exits:
     SK Ancient Cistern Room South: Nothing
   locations:
@@ -127,7 +126,6 @@
     
 
 - name: SK Sacred Power of Din Room
-  dungeon: Sky Keep
   exits:
     SK Fire Sanctuary Room End Platform: Nothing
   locations:
@@ -147,7 +145,6 @@
 
 
 - name: SK Sacred Power of Nayru Room
-  dungeon: Sky Keep
   exits:
     SK Sandship Room West: Nothing
   locations:

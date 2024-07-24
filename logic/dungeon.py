@@ -27,6 +27,13 @@ class Dungeon:
         return self.name
 
     def should_be_barren(self) -> bool:
+        # If Sky Keep is explicitly disabled it should always be barren regardless of other settings.
+        if (
+            self.name == "Sky Keep"
+            and self.world.setting("dungeons_include_sky_keep") == "off"
+        ):
+            return True
+
         return (
             not self.required
             and self.world.setting("empty_unrequired_dungeons") == "on"

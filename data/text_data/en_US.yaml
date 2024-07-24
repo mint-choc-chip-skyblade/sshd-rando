@@ -5547,16 +5547,19 @@
   standard: Sky Keep - Sacred Power of Din
   pretty: Sky Keep - Sacred Power of Din
   cryptic: the <r<power of a goddess>>
+  goal_name: a Sacred Power
 
 - name: Sky Keep - Sacred Power of Nayru
   standard: Sky Keep - Sacred Power of Nayru
   pretty: Sky Keep - Sacred Power of Nayru
   cryptic: the <r<wisdom of a goddess>>
+  goal_name: a Sacred Power
 
 - name: Sky Keep - Sacred Power of Farore
   standard: Sky Keep - Sacred Power of Farore
   pretty: Sky Keep - Sacred Power of Farore
   cryptic: the <r<courage of a goddess>>
+  goal_name: a Sacred Power
 
 - name: The Goddess's Silent Realm - Stamina Fruit on Knight Academy Ledge
   standard: The Goddess's Silent Realm - Stamina Fruit on Knight Academy Ledge
@@ -5870,6 +5873,18 @@
 - name: FFW Bucha stay text
   standard: "Talk to me again if you change your\nmind, kewwwwww.<action0 \x0c>"
 
+- name: Sky Keep No Goal Location Text
+  standard: "Hero of the Goddess!\nSeek now the exit."
+
+- name: Sky Keep Goal Location Sacred Power of Farore Text
+  standard: "Hero of the Goddess!\nSeek now the <g<Sacred Power of Farore>>."
+
+- name: Sky Keep Goal Location Sacred Power of Nayru Text
+  standard: "Hero of the Goddess!\nSeek now the <b<Sacred Power of Nayru>>."
+
+- name: Sky Keep Goal Location Sacred Power of Din Text
+  standard: "Hero of the Goddess!\nSeek now the <r<Sacred Power of Din>>."
+
 # Fi text
 - name: No Fi Hints Text
   standard: "Master, I unfortunately have <r<no hints>> for you."
@@ -5890,13 +5905,13 @@
   standard: "Welcome to your new adventure, Master. I have\n<r<important information>> about your journey."
 
 - name: No Required Dungeons Text
-  standard: "I detect no dungeons with strong readings."
+  standard: "I detect <r<no dungeons>> with strong readings."
 
 - name: Some Required Dungeons Text
   standard: "I detect strong readings in the following dungeons:\n{dungeon_text}"
 
 - name: All Required Dungeons Text
-  standard: "I detect many strong readings. I recommend you\ncomplete all the dungeons."
+  standard: "I detect many strong readings. I recommend you\n<r<complete all the dungeons>>."
 
 - name: Fi Information Text Patch
   standard: "Yes, Master. What information do you seek?\n[1]Hints[2]Notes[3]Required Dungeons[4-]Never mind."

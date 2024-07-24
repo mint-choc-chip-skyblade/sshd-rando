@@ -1074,6 +1074,25 @@
       param2: 3 # item
       next: -1
       param3: 9
+  - name: Add flow for Sky Keep goal location sign
+    type: entryadd
+    entry:
+      name: "107_99"
+      value: Sky Keep goal location sign start
+  - name: Sky Keep goal location sign start
+    type: flowadd
+    flow:
+      type: start
+      next: Show Sky Keep goal location sign text 
+  - name: Sky Keep goal location sign text with replaced text
+    type: textadd
+  - name: Show Sky Keep goal location sign text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 88
+      param4: Sky Keep goal location sign text with replaced text
 
 108-ShinkanA:
   - name: Owlans Shield

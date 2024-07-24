@@ -185,7 +185,6 @@ pub fn handle_er_cases() {
         (*GAME_RELOADER_PTR).item_to_use_after_reload = 0xFF;
         (*GAME_RELOADER_PTR).beedle_shop_spawn_state = 0;
         (*GAME_RELOADER_PTR).action_index = 0xFF;
-        (*GAME_RELOADER_PTR).area_type = 0xFF;
     }
 }
 
