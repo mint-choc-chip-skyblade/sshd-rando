@@ -4771,6 +4771,19 @@ D003_7: # Sky Keep Entrance Room
     layer: 0
     room: 0
     objtype: OBJ
+  - name: Add stone statue to tell goal location
+    type: objadd
+    layer: 0
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFF2A2F # entrypoint 107_99
+      params2: 0xFFFFFFFF
+      posx: 650
+      posy: 0
+      posz: 2070
+      angley: 0xC000
+      name: KanbanS
   - name: Remove bars opening cs
     type: objpatch
     id: 0xFC16

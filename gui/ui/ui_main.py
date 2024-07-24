@@ -609,6 +609,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_13.addLayout(self.required_dungeons_layout)
 
+        self.setting_dungeons_include_sky_keep = RandoTriStateCheckBox(self.beat_the_game_group_box)
+        self.setting_dungeons_include_sky_keep.setObjectName(u"setting_dungeons_include_sky_keep")
+
+        self.verticalLayout_13.addWidget(self.setting_dungeons_include_sky_keep)
+
         self.setting_empty_unrequired_dungeons = RandoTriStateCheckBox(self.beat_the_game_group_box)
         self.setting_empty_unrequired_dungeons.setObjectName(u"setting_empty_unrequired_dungeons")
 
@@ -2663,7 +2668,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 340))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2806,7 +2811,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(6)
+        self.tab_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2865,6 +2870,7 @@ class Ui_main_window(object):
         self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
         self.got_sword_requirement_label.setText(QCoreApplication.translate("main_window", u"Gate of Time Sword Requirement", None))
         self.required_dungeons_label.setText(QCoreApplication.translate("main_window", u"Required Dungeons", None))
+        self.setting_dungeons_include_sky_keep.setText(QCoreApplication.translate("main_window", u"Include Sky Keep as a Dungeon", None))
         self.setting_empty_unrequired_dungeons.setText(QCoreApplication.translate("main_window", u"Barren Unrequired Dungeons", None))
         self.setting_skip_horde.setText(QCoreApplication.translate("main_window", u"Skip The Horde Fight", None))
         self.setting_skip_g3.setText(QCoreApplication.translate("main_window", u"Skip Ghirahim 3 Fight", None))
