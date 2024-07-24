@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -892,6 +892,13 @@
               </widget>
              </item>
             </layout>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_dungeons_include_sky_keep">
+             <property name="text">
+              <string>Include Sky Keep as a Dungeon</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="RandoTriStateCheckBox" name="setting_empty_unrequired_dungeons">
@@ -3970,8 +3977,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>546</width>
-               <height>340</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <property name="maximumSize">

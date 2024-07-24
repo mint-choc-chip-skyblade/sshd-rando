@@ -525,9 +525,19 @@
   default_option: 2
   pretty_name: Required Dungeons
   pretty_options:
-    - 0-6
+    - 0-7
   options:
-    - 0-6: "Choose how many dungeons will have required items on their dungeon completion checks. Triforces, then swords, then other progress items are chosen, in this order."
+    - 0-7: "Choose how many dungeons will have required items on their dungeon completion checks. Triforces, then swords, then other progress items are chosen, in this order."
+
+- name: dungeons_include_sky_keep
+  default_option: "off"
+  pretty_name: Include Sky Keep as a Dungeon
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Only the 6 main dungeons may be selected as required dungeons."
+    - "on": "Sky Keep may be selected as a required dungeon needed to beat the seed. If selected, one of the \"Sacred Power\" locations will be chosen as the \"Goal Location\" containing an important item (shown on a stone tablet in the 1st room of Sky Keep)."
 
 - name: empty_unrequired_dungeons
   tracker_important: true
