@@ -4,6 +4,8 @@
     - Dungeon Items
     - Small Keys
   oarc: null # ObjectPack
+  getarcname: GetKeySmall
+  getmodelname: GetKeySmallNormal
   shuffle: Dungeon
 - id: 2
   name: Green Rupee
@@ -94,6 +96,7 @@
     - Swords
   oarc: null
   advancement: true
+# TODO: Get model to work
 - id: 15
   name: Sailcloth
   types:
@@ -320,6 +323,8 @@
     - Dungeon Items
     - Maps
   oarc: null # ObjectPack
+  getarcname: GetMap
+  getmodelname: GetMap
   shuffle: Dungeon
 - id: 52
   name: Progressive Slingshot
@@ -413,6 +418,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleMuteki
+  getarcname: GetBottleMuteki
+  getmodelname: GetBottleMuteki
   advancement: true
 - id: 66
   name: Guardian Potion Plus
@@ -421,6 +428,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleMuteki
+  getarcname: GetBottleMuteki
+  getmodelname: GetBottleMuteki
   advancement: true
 - id: 68
   name: Water Dragon's Scale
@@ -475,6 +484,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBeetleB
+  getarcname: GetBeetleB
+  getmodelname: GetBeetleB
   advancement: true
 - id: 76
   name: Quick Beetle
@@ -482,6 +493,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBeetleC
+  getarcname: GetBeetleC
+  getmodelname: GetBeetleC
   advancement: true
 - id: 77
   name: Tough Beetle
@@ -489,6 +502,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBeetleD
+  getarcname: GetBeetleD
+  getmodelname: GetBeetleD
   advancement: true
 - id: 78
   name: Heart Potion
@@ -497,6 +512,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleKusuri
+  getarcname: GetBottleKusuri
+  getmodelname: GetBottleKusuri
   advancement: true
 - id: 79
   name: Heart Potion Plus
@@ -505,6 +522,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleKusuri
+  getarcname: GetBottleKusuri
+  getmodelname: GetBottleKusuri
   advancement: true
 - id: 81
   name: Heart Potion Plus Plus
@@ -513,6 +532,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleKusuriS
+  getarcname: GetBottleKusuriS
+  getmodelname: GetBottleKusuriS
   advancement: true
 - id: 84
   name: Stamina Potion
@@ -521,6 +542,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleGuts
+  getarcname: GetBottleGuts
+  getmodelname: GetBottleGuts
   advancement: true
 - id: 85
   name: Stamina Potion Plus
@@ -529,6 +552,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleGuts
+  getarcname: GetBottleGuts
+  getmodelname: GetBottleGuts
   advancement: true
 - id: 86
   name: Air Potion
@@ -537,6 +562,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleAir
+  getarcname: GetBottleAir
+  getmodelname: GetBottleAir
   advancement: true
 - id: 87
   name: Air Potion Plus
@@ -545,6 +572,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleAir
+  getarcname: GetBottleAir
+  getmodelname: GetBottleAir
   advancement: true
 - id: 88
   name: Fairy in a Bottle
@@ -562,6 +591,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBowB
+  getarcname: GetBowB
+  getmodelname: GetBowB
   advancement: true
 - id: 91
   name: Sacred Bow
@@ -569,6 +600,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBowC
+  getarcname: GetBowC
+  getmodelname: GetBowC
   advancement: true
 - id: 92
   name: Bomb Bag
@@ -643,6 +676,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetMoleGloveB
+  getarcname: GetMoleGloveB
+  getmodelname: GetMoleGloveB
   advancement: true
 - id: 100
   name: Heart Medal
@@ -690,6 +725,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetPachinkoB
+  getarcname: GetPachinkoB
+  getmodelname: GetPachinkoB
   advancement: true
 - id: 108
   name: Progressive Wallet # Medium Wallet
@@ -715,6 +752,8 @@
     - Wallets
     - Minor Items
   oarc: GetPurseC
+  getarcname: GetPurseC
+  getmodelname: GetPurseC
   advancement: true
 - id: 110
   name: Giant Wallet
@@ -722,6 +761,8 @@
     - Wallets
     - Minor Items
   oarc: GetPurseD
+  getarcname: GetPurseD
+  getmodelname: GetPurseD
   advancement: true
 - id: 111
   name: Tycoon Wallet
@@ -729,6 +770,8 @@
     - Wallets
     - Minor Items
   oarc: GetPurseE
+  getarcname: GetPurseE
+  getmodelname: GetPurseE
   advancement: true
 - id: 112
   name: Progressive Pouch
@@ -747,6 +790,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetPouchB
+  getarcname: GetPouchB
+  getmodelname: GetPorchB # yea, that's a typo in the game
 - id: 114
   name: Life Medal
   types:
@@ -778,6 +823,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleRepair
+  getarcname: GetBottleRepair
+  getmodelname: GetBottleRepair
   advancement: true
 - id: 127
   name: Revitalizing Potion Plus
@@ -786,6 +833,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleRepair
+  getarcname: GetBottleRepair
+  getmodelname: GetBottleRepair
   advancement: true
 - id: 128
   name: Small Seed Satchel
@@ -835,6 +884,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetNetB
+  getarcname: GetNetB
+  getmodelname: GetNetB
   advancement: true
 - id: 153
   name: Empty Bottle
@@ -1065,6 +1116,8 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
+  getarcname: GetHarp
+  getmodelname: GetHarp
   advancement: true
 - id: 194
   name: Revitalizing Potion Plus Plus
@@ -1073,6 +1126,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleRepairS
+  getarcname: GetBottleRepairS
+  getmodelname: GetBottleRepairS
   advancement: true
 - id: 195
   name: Hot Pumpkin Soup
@@ -1081,6 +1136,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottlePumpkin
+  getarcname: GetBottlePumpkin
+  getmodelname: GetBottlePumpkin
   advancement: true
 - id: 196
   name: Cold Pumpkin Soup
@@ -1089,6 +1146,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottlePumpkin
+  getarcname: GetBottlePumpkin
+  getmodelname: GetBottlePumpkin
   advancement: true
 - id: 197
   name: Life Tree Seedling
