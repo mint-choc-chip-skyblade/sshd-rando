@@ -27,6 +27,7 @@ from logic.requirements import (
 from logic.search import Search
 
 from filepathconstants import TRACKER_ASSETS_PATH
+from logic.tooltips.tooltips import pretty_name, sort_requirement
 
 
 class TrackerLocationLabel(QLabel):
