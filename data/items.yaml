@@ -704,11 +704,11 @@
   getarcname: GetPurseB
   getmodelname: GetPurseB
   advancement: true
-  # chain_locations:
-  #  - Beedle's Airshop - 600 Rupee Item
-  #  - Beedle's Airshop - 1200 Rupee Item
-  #  - Beedle's Airshop - 800 Rupee Item
-  #  - Beedle's Airshop - 1600 Rupee Item
+  chain_locations:
+   - Beedle's Airshop - 600 Rupee Item
+   - Beedle's Airshop - 1200 Rupee Item
+   - Beedle's Airshop - 800 Rupee Item
+   - Beedle's Airshop - 1600 Rupee Item
 - id: 109
   name: Big Wallet
   types:
@@ -1119,11 +1119,11 @@
   getarcname: GetSparePurse
   getmodelname: GetSparePurse
   advancement: true
-  # chain_locations:
-  #  - Beedle's Airshop - 600 Rupee Item
-  #  - Beedle's Airshop - 1200 Rupee Item
-  #  - Beedle's Airshop - 800 Rupee Item
-  #  - Beedle's Airshop - 1600 Rupee Item
+  chain_locations:
+   - Beedle's Airshop - 600 Rupee Item
+   - Beedle's Airshop - 1200 Rupee Item
+   - Beedle's Airshop - 800 Rupee Item
+   - Beedle's Airshop - 1600 Rupee Item
 
 # Custom rando items
 - id: 200

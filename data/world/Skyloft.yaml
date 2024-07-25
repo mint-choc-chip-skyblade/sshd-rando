@@ -475,16 +475,16 @@
   exits:
     Beedle's Island: Night
     Central Skyloft: Day
-  # locations:
-  #   # We don't want the pouch extensions to be the logical access to the pouch
-  #   Beedle's Airshop - 300 Rupee Item: Can_Afford_300_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
-  #   Beedle's Airshop - 600 Rupee Item: Can_Afford_600_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
-  #   Beedle's Airshop - 1200 Rupee Item: Can_Afford_1200_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
-  #   Beedle's Airshop - 800 Rupee Item: Can_Afford_800_Rupees
-  #   Beedle's Airshop - 1600 Rupee Item: Can_Afford_1600_Rupees
-  #   Beedle's Airshop - First 100 Rupee Item: Can_Afford_100_Rupees
-  #   Beedle's Airshop - Second 100 Rupee Item: Can_Afford_100_Rupees
-  #   # To reduce necessary rupee-farming at the start, the third item logically needs an efficient rupee-farming method
-  #   Beedle's Airshop - Third 100 Rupee Item: Can_Afford_100_Rupees and Can_Medium_Rupee_Farm
-  #   Beedle's Airshop - 50 Rupee Item: Can_Afford_50_Rupees
-  #   Beedle's Airshop - 1000 Rupee Item: Can_Afford_1000_Rupees
+  locations:
+    # We don't want the pouch extensions to be the logical access to the pouch
+    Beedle's Airshop - 300 Rupee Item: Can_Afford_300_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
+    Beedle's Airshop - 600 Rupee Item: Can_Afford_600_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
+    Beedle's Airshop - 1200 Rupee Item: Can_Afford_1200_Rupees and (Pouch or beedle_shop_shuffle != vanilla)
+    Beedle's Airshop - 800 Rupee Item: Can_Afford_800_Rupees
+    Beedle's Airshop - 1600 Rupee Item: Can_Afford_1600_Rupees
+    Beedle's Airshop - First 100 Rupee Item: Can_Afford_100_Rupees
+    Beedle's Airshop - Second 100 Rupee Item: Can_Afford_100_Rupees
+    # To reduce necessary rupee-farming at the start, the third item logically needs an efficient rupee-farming method
+    Beedle's Airshop - Third 100 Rupee Item: Can_Afford_100_Rupees and Can_Medium_Rupee_Farm
+    Beedle's Airshop - 50 Rupee Item: Can_Afford_50_Rupees
+    Beedle's Airshop - 1000 Rupee Item: Can_Afford_1000_Rupees
