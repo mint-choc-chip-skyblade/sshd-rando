@@ -1942,6 +1942,16 @@ class Ui_main_window(object):
         self.miscellaneous_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_22 = QVBoxLayout(self.miscellaneous_group_box)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.setting_logic_faron_woods_with_groosenator = RandoTriStateCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_faron_woods_with_groosenator.setObjectName(u"setting_logic_faron_woods_with_groosenator")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_faron_woods_with_groosenator)
+
+        self.setting_logic_itemless_first_timeshift_stone = RandoTriStateCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_itemless_first_timeshift_stone.setObjectName(u"setting_logic_itemless_first_timeshift_stone")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_itemless_first_timeshift_stone)
+
         self.setting_logic_fire_node_without_hook_beetle = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_fire_node_without_hook_beetle.setObjectName(u"setting_logic_fire_node_without_hook_beetle")
 
@@ -1981,11 +1991,6 @@ class Ui_main_window(object):
         self.setting_logic_fs_practice_sword_ghirahim_2.setObjectName(u"setting_logic_fs_practice_sword_ghirahim_2")
 
         self.verticalLayout_22.addWidget(self.setting_logic_fs_practice_sword_ghirahim_2)
-
-        self.setting_logic_itemless_first_timeshift_stone = RandoTriStateCheckBox(self.miscellaneous_group_box)
-        self.setting_logic_itemless_first_timeshift_stone.setObjectName(u"setting_logic_itemless_first_timeshift_stone")
-
-        self.verticalLayout_22.addWidget(self.setting_logic_itemless_first_timeshift_stone)
 
         self.miscellaneous_vspacer = QSpacerItem(20, 237, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -2806,7 +2811,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3036,6 +3041,8 @@ class Ui_main_window(object):
         self.setting_logic_brakeslide.setText(QCoreApplication.translate("main_window", u"Brakesliding", None))
         self.setting_logic_tot_skip_brakeslide.setText(QCoreApplication.translate("main_window", u"Temple of Time Skip Brakeslide", None))
         self.miscellaneous_group_box.setTitle(QCoreApplication.translate("main_window", u"Miscellaneous", None))
+        self.setting_logic_faron_woods_with_groosenator.setText(QCoreApplication.translate("main_window", u"Faron Woods with Groosenator", None))
+        self.setting_logic_itemless_first_timeshift_stone.setText(QCoreApplication.translate("main_window", u"Itemless First Timeshift Stone", None))
         self.setting_logic_fire_node_without_hook_beetle.setText(QCoreApplication.translate("main_window", u"Fire Node without Hook Beetle", None))
         self.setting_logic_skyview_spider_roll.setText(QCoreApplication.translate("main_window", u"Skyview Temple Spider Roll", None))
         self.setting_logic_et_keese_skyward_strike.setText(QCoreApplication.translate("main_window", u"Earth Temple Keese Skyward Strike", None))
@@ -3046,7 +3053,6 @@ class Ui_main_window(object):
         self.setting_logic_sandship_no_combination_hint.setText(QCoreApplication.translate("main_window", u"Sandship No Combination Hint", None))
         self.setting_logic_fs_practice_sword_ghirahim_2.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Ghirahim 2 with\n"
 "Practice Sword", None))
-        self.setting_logic_itemless_first_timeshift_stone.setText(QCoreApplication.translate("main_window", u"Itemless First Timeshift Stone", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.logic_tab), QCoreApplication.translate("main_window", u"Logic and Tricks", None))
         self.environment_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Environment Cosmetics", None))
         self.setting_starry_skies.setText(QCoreApplication.translate("main_window", u"Starry Skies", None))
