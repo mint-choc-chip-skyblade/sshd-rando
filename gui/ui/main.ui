@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -892,6 +892,13 @@
               </widget>
              </item>
             </layout>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_dungeons_include_sky_keep">
+             <property name="text">
+              <string>Include Sky Keep as a Dungeon</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="RandoTriStateCheckBox" name="setting_empty_unrequired_dungeons">
@@ -2937,6 +2944,20 @@
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_22">
               <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_faron_woods_with_groosenator">
+                <property name="text">
+                 <string>Faron Woods with Groosenator</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_itemless_first_timeshift_stone">
+                <property name="text">
+                 <string>Itemless First Timeshift Stone</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="RandoTriStateCheckBox" name="setting_logic_fire_node_without_hook_beetle">
                 <property name="text">
                  <string>Fire Node without Hook Beetle</string>
@@ -2991,13 +3012,6 @@ without Gust Bellows</string>
                 <property name="text">
                  <string>Fire Sanctuary Ghirahim 2 with
 Practice Sword</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="RandoTriStateCheckBox" name="setting_logic_itemless_first_timeshift_stone">
-                <property name="text">
-                 <string>Itemless First Timeshift Stone</string>
                 </property>
                </widget>
               </item>
@@ -3970,8 +3984,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>546</width>
-               <height>340</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <property name="maximumSize">

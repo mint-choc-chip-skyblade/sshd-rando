@@ -407,7 +407,11 @@ def all_logic_satisfied(worlds: list["World"], item_pool: Counter[Item] = {}) ->
             accessible_goal_locations = [
                 l
                 for l in world.location_table.values()
-                if l.is_goal_location and not l.name.startswith("Sky Keep")
+                if l.is_goal_location
+                and (
+                    world.setting("dungeons_include_sky_keep") == "on"
+                    or not l.name.startswith("Sky Keep")
+                )
             ]
             if (
                 world.get_game_winning_item() not in search.owned_items

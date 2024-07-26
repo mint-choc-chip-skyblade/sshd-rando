@@ -525,9 +525,19 @@
   default_option: 2
   pretty_name: Required Dungeons
   pretty_options:
-    - 0-6
+    - 0-7
   options:
-    - 0-6: "Choose how many dungeons will have required items on their dungeon completion checks. Triforces, then swords, then other progress items are chosen, in this order."
+    - 0-7: "Choose how many dungeons will have required items on their dungeon completion checks. Triforces, then swords, then other progress items are chosen, in this order."
+
+- name: dungeons_include_sky_keep
+  default_option: "off"
+  pretty_name: Include Sky Keep as a Dungeon
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Only the 6 main dungeons may be selected as required dungeons."
+    - "on": "Sky Keep may be selected as a required dungeon needed to beat the seed. If selected, one of the \"Sacred Power\" locations will be chosen as the \"Goal Location\" containing an important item (shown on a stone tablet in the 1st room of Sky Keep)."
 
 - name: empty_unrequired_dungeons
   tracker_important: true
@@ -1436,6 +1446,16 @@
   options:
     - "off": "You will only be expected to use the Slingshot, Bow, Clawshots, or a Beetle to activate distant switches and you will only be expected to use nearby bomb flowers with the Hook Beetle to blow up distant rocks."
     - "on": "You may need to use the Bomb Bag and time bomb throws to activate switches or blow up distant rocks or towers."
+
+- name: logic_faron_woods_with_groosenator
+  default_option: "off"
+  pretty_name: Faron Woods with Groosenator
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will never be expected to use the Groosenator to access Faron Woods by unlocking bird statues in Flooded Faron Woods."
+    - "on": "You may need to use the Groosenator to unlock the bird statues in Flooded Faron Woods to land at those bird statues in normal Faron Woods."
 
 - name: logic_itemless_first_timeshift_stone
   default_option: "off"

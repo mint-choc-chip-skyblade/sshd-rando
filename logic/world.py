@@ -304,9 +304,13 @@ class World:
                 setting.resolve_if_random()
 
     def resolve_conflicting_settings(self) -> None:
-        # Resolve any conflicting settings here if we ever
-        # find any
-        pass
+        if (
+            self.setting("required_dungeons") == "7"
+            and self.setting("dungeons_include_sky_keep") == "off"
+        ):
+            raise ValueError(
+                "Cannot require 7 dungeons when Sky Keep is not a dungeon. Please either reduce the required dungeon count or enable Sky Keep to be a required dungeon."
+            )
 
     def place_hardcoded_items(self) -> None:
         defeat_demise = self.get_location("Hylia's Realm - Defeat Demise")
@@ -433,18 +437,17 @@ class World:
         num_required_dungeons = self.setting("required_dungeons").value_as_number()
         num_chosen_dungeons = 0
 
-        dungeons = [
-            d
-            for d in self.dungeons.values()
-            if d.goal_location and d.name != "Sky Keep"
-        ]
+        dungeons = [d for d in self.dungeons.values() if d.goal_location]
 
         # Disable the Eldin Pillar -> Fire Sanctuary entrance so that
         # it doesn't erroneously give "access" to fire sanctuary in no logic
         self.get_entrance("Eldin Pillar -> Inside the Fire Sanctuary Statue").disable()
+
         # Also disable Sky Keep's entrance if it's not required
-        sky_keep = self.get_dungeon("Sky Keep")
-        sky_keep.starting_entrance.disabled = sky_keep.should_be_barren()
+        if self.setting("dungeons_include_sky_keep") == "off":
+            sky_keep = self.get_dungeon("Sky Keep")
+            sky_keep.starting_entrance.disabled = True
+            dungeons.remove(sky_keep)
 
         random.shuffle(dungeons)
         item_pool = get_complete_item_pool(self.worlds)
@@ -595,10 +598,6 @@ class World:
             self.location_table, self.setting_map
         ):
             location.progression = False
-
-        # Sky Keep will never be a required dungeon with empty unrequired dungeons
-        if self.setting("empty_unrequired_dungeons") == "on":
-            self.dungeons["Sky Keep"].required = False
 
         # Set beedle's shop items as nonprogress if they can only contain junk
         if self.setting("beedle_shop_shuffle") == "junk_only":

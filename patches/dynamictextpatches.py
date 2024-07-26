@@ -14,6 +14,9 @@ def add_dynamic_text_patches(
         add_impa_text_patches(world, event_patch_handler)
 
     add_song_text_patches(world, event_patch_handler)
+
+    add_sky_keep_goal_loc_patches(world)
+
     add_rando_hash(world, event_patch_handler)
 
 
@@ -39,17 +42,19 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
     for text in colorful_dungeon_text:
         dungeon_text += text + Text("\n")
 
-    match len(colorful_dungeon_text):
-        case 0:
-            required_dungeons_text = get_text_data("No Required Dungeons Text")
-        case 6:
-            required_dungeons_text = get_text_data("All Required Dungeons Text")
-        case _:
-            required_dungeons_text = get_text_data("Some Required Dungeons Text")
-            required_dungeons_text = required_dungeons_text.replace(
-                "{dungeon_text}",
-                dungeon_text,
-            )
+    num_dungeons = len(colorful_dungeon_text)
+    if num_dungeons == 0:
+        required_dungeons_text = get_text_data("No Required Dungeons Text")
+    elif num_dungeons == 7 or (
+        num_dungeons == 6 and world.setting("dungeons_include_sky_keep") == "off"
+    ):
+        required_dungeons_text = get_text_data("All Required Dungeons Text")
+    else:
+        required_dungeons_text = get_text_data("Some Required Dungeons Text")
+        required_dungeons_text = required_dungeons_text.replace(
+            "{dungeon_text}",
+            dungeon_text,
+        )
 
     event_patch_handler.append_to_event_patches(
         "006-8KenseiNormal",
@@ -373,6 +378,26 @@ def add_song_text_patches(world: World, event_patch_handler: EventPatchHandler) 
                 "index": inventory_text_idx,
             },
         )
+
+
+def add_sky_keep_goal_loc_patches(world: World) -> None:
+    sky_keep = world.get_dungeon("Sky Keep")
+    goal = sky_keep.goal_location
+    goal_text = get_text_data("Sky Keep No Goal Location Text")
+
+    if sky_keep.required and goal is not None:
+        if goal.name.endswith("Farore"):
+            goal_text = get_text_data(
+                "Sky Keep Goal Location Sacred Power of Farore Text"
+            )
+        elif goal.name.endswith("Nayru"):
+            goal_text = get_text_data(
+                "Sky Keep Goal Location Sacred Power of Nayru Text"
+            )
+        elif goal.name.endswith("Din"):
+            goal_text = get_text_data("Sky Keep Goal Location Sacred Power of Din Text")
+
+    add_text_data("Sky Keep goal location sign text with replaced text", goal_text)
 
 
 def add_rando_hash(world: World, event_patch_handler: EventPatchHandler) -> None:
