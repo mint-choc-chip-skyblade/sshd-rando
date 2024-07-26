@@ -7,7 +7,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; additions begin here ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-.offset 0x712e0a7000
+.offset 0x712e0a8000
 .global handle_custom_item_get
 .type handle_custom_item_get, @function
 

@@ -7,9 +7,12 @@ from constants.patchconstants import (
     OARC_ADD_PATH_REGEX,
     SHOP_PATCH_PATH_REGEX,
 )
+from constants.shopconstants import *
 from gui.dialogs.dialog_header import print_progress_text
+from logic.location import Location
 from logic.world import World
 
+from patches.asmpatchhandler import ASMPatchHandler
 from patches.eventpatchhandler import EventPatchHandler
 from patches.stagepatchhandler import StagePatchHandler
 
@@ -18,6 +21,7 @@ def determine_check_patches(
     world: World,
     stage_patch_handler: StagePatchHandler,
     event_patch_handler: EventPatchHandler,
+    asm_patch_handler: ASMPatchHandler,
 ):
     # Custom flags currently use 10 total bits as follows
     # in order of most significant to least significant bits:
@@ -207,6 +211,19 @@ def determine_check_patches(
 
                 for oarc in item_oarcs:
                     stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
+            
+            if shop_match := SHOP_PATCH_PATH_REGEX.match(path):
+                shop_index = int(shop_match.group("index"))
+                stage = "F002r" # Beedle's Airshop
+                layer = 0
+
+                if shop_index < 20 or shop_index >= 30:
+                    stage = "F004r" # Bazaar
+                
+                for oarc in item_oarcs:
+                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
+
+                create_shop_data(asm_patch_handler, shop_index, location, trapid)
 
 
 def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
@@ -271,3 +288,26 @@ def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
         event_patch_handler.append_to_event_patches("003-ItemGet", textadd_patch)
         event_patch_handler.append_to_event_patches("003-ItemGet", flowadd_patch)
         event_patch_handler.append_to_event_patches("003-ItemGet", entryadd_patch)
+
+def create_shop_data(asm_patch_handler: ASMPatchHandler, shop_index: int, location: Location, trapid: int):
+    itemid = location.current_item.id
+    price = PRICES.get(shop_index, -1)
+
+    # TODO: add price randomization here
+
+    asm_patch_handler.add_shop_data(
+        shop_index,
+        BUY_DECIDE_SCALES.get(itemid, DEFAULT_BUY_DECIDE_SCALE),
+        PUT_SCALES.get(itemid, DEFAULT_PUT_SCALE),
+        TARGET_ARROW_HEIGHT_OFFSETS.get(shop_index, -1),
+        itemid,
+        price,
+        EVENT_ENTRYPOINTS.get(shop_index, -1),
+        NEXT_SHOP_INDEXES.get(shop_index, -1),
+        0xFFFF,
+        location.current_item.shop_arc_name,
+        location.current_item.shop_model_name,
+        DISPLAY_HEIGHT_OFFSETS.get(itemid, DEFAULT_DISPLAY_HEIGHT_OFFSET),
+        254 - trapid,
+        SOLD_OUT_STORYFLAGS.get(shop_index, -1),
+    )

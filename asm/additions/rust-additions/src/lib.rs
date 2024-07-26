@@ -29,6 +29,7 @@ mod player;
 mod rng;
 mod savefile;
 mod settings;
+mod shop;
 mod traps;
 
 // repr(C) prevents rust from reordering struct fields.

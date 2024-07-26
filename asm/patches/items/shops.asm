@@ -17,3 +17,14 @@
 ; Unlock Small Bomb Bag
 .offset 0x71016406f0
 .short 0xFFFF
+
+
+; Rotate shop items
+.offset 0x7100b0595c
+mov w8, #66
+bl additions_jumptable
+
+; Set shop item height
+.offset 0x7100afff98
+mov w8, #67
+bl additions_jumptable
