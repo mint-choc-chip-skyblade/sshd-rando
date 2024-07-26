@@ -1065,7 +1065,7 @@
     - Shop (Cheap)
     - NPC
   Paths:
-    - ShpSmpl/17
+    - ShpSmpl/28
 
 - name: Beedle's Airshop - Third 100 Rupee Item
   original_item: Extra Wallet
@@ -1074,7 +1074,7 @@
     - Shop (Cheap)
     - NPC
   Paths:
-    - ShpSmpl/18
+    - ShpSmpl/29
 
 - name: Beedle's Airshop - 50 Rupee Item
   original_item: Progressive Bug Net

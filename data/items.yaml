@@ -4,8 +4,8 @@
     - Dungeon Items
     - Small Keys
   oarc: null # ObjectPack
-  getarcname: GetKeySmall
-  getmodelname: GetKeySmallNormal
+  shop_arc_name: GetKeySmall
+  shop_model_name: GetKeySmallNormal
   shuffle: Dungeon
 - id: 2
   name: Green Rupee
@@ -13,39 +13,39 @@
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetRupee
-  getmodelname: GetRupee
+  shop_arc_name: GetRupee
+  shop_model_name: GetRupee
 - id: 3
   name: Blue Rupee
   types:
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetRupee
-  getmodelname: GetRupee
+  shop_arc_name: GetRupee
+  shop_model_name: GetRupee
 - id: 4
   name: Red Rupee
   types:
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetRupee
-  getmodelname: GetRupee
+  shop_arc_name: GetRupee
+  shop_model_name: GetRupee
 - id: 6
   name: Heart
   types:
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetHeart
-  getmodelname: GetHeart
+  shop_arc_name: GetHeart
+  shop_model_name: GetHeart
 - id: 8
   name: 10 Arrows
   oarc: null # ObjectPack
   types:
     - Ammo
     - Minor Items
-  getarcname: GetArrow
-  getmodelname: GetArrowBundle
+  shop_arc_name: GetArrow
+  shop_model_name: GetArrowBundle
 - id: 9
   name: Goddess White Sword
   types:
@@ -61,8 +61,8 @@
     - Main Quest Items
     - Swords
   oarc: GetSwordA
-  getarcname: GetSwordA
-  getmodelname: GetSwordA
+  shop_arc_name: GetSwordA
+  shop_model_name: GetSwordA
   advancement: true
 - id: 11
   name: Goddess Sword
@@ -111,8 +111,8 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
-  getarcname: GetHarp
-  getmodelname: GetHarp
+  shop_arc_name: GetHarp
+  shop_model_name: GetHarp
   advancement: true
 - id: 19
   name: Progressive Bow
@@ -123,8 +123,8 @@
     - GetBowA
     - GetBowB
     - GetBowC
-  getarcname: GetBowA
-  getmodelname: GetBowA
+  shop_arc_name: GetBowA
+  shop_model_name: GetBowA
   advancement: true
 - id: 20
   name: Clawshots
@@ -132,8 +132,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetHookShot
-  getarcname: GetHookShot
-  getmodelname: GetHookShot
+  shop_arc_name: GetHookShot
+  shop_model_name: GetHookShot
   advancement: true
 - id: 21
   name: Spiral Charge
@@ -141,8 +141,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetBirdStatue
-  getarcname: GetBirdStatue
-  getmodelname: GetBirdStatue
+  shop_arc_name: GetBirdStatue
+  shop_model_name: GetBirdStatue
   advancement: true
   chain_locations:
    - The Sky - Chest in Breakable Boulder near Fun Fun Island
@@ -155,8 +155,8 @@
     - Boss Keys
   oarc: GetKeyBoss2A
   shuffle: Dungeon
-  getarcname: GetKeyBoss2A
-  getmodelname: GetKeyBoss2A
+  shop_arc_name: GetKeyBoss2A
+  shop_model_name: GetKeyBoss2A
   advancement: true
 - id: 26
   name: Fire Sanctuary Boss Key
@@ -165,8 +165,8 @@
     - Boss Keys
   oarc: GetKeyBoss2B
   shuffle: Dungeon
-  getarcname: GetKeyBoss2B
-  getmodelname: GetKeyBoss2B
+  shop_arc_name: GetKeyBoss2B
+  shop_model_name: GetKeyBoss2B
   advancement: true
 - id: 27
   name: Sandship Boss Key
@@ -175,8 +175,8 @@
     - Boss Keys
   oarc: GetKeyBoss2C
   shuffle: Dungeon
-  getarcname: GetKeyBoss2C
-  getmodelname: GetKeyBoss2C
+  shop_arc_name: GetKeyBoss2C
+  shop_model_name: GetKeyBoss2C
   advancement: true
 - id: 28
   name: Key Piece
@@ -184,8 +184,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetKeyKakera
-  getarcname: GetKeyKakera
-  getmodelname: GetKeyKakeraA
+  shop_arc_name: GetKeyKakera
+  shop_model_name: GetKeyKakeraA
   advancement: true
 - id: 29
   name: Skyview Temple Boss Key
@@ -194,8 +194,8 @@
     - Boss Keys
   oarc: GetKeyBossA
   shuffle: Dungeon
-  getarcname: GetKeyBossA
-  getmodelname: GetKeyBossA
+  shop_arc_name: GetKeyBossA
+  shop_model_name: GetKeyBossA
   advancement: true
 - id: 30
   name: Earth Temple Boss Key
@@ -204,8 +204,8 @@
     - Boss Keys
   oarc: GetKeyBossB
   shuffle: Dungeon
-  getarcname: GetKeyBossB
-  getmodelname: GetKeyBossB
+  shop_arc_name: GetKeyBossB
+  shop_model_name: GetKeyBossB
   advancement: true
 - id: 31
   name: Lanayru Mining Facility Boss Key
@@ -214,8 +214,8 @@
     - Boss Keys
   oarc: GetKeyBossC
   shuffle: Dungeon
-  getarcname: GetKeyBossC
-  getmodelname: GetKeyBossC
+  shop_arc_name: GetKeyBossC
+  shop_model_name: GetKeyBossC
   advancement: true
 - id: 32
   name: Silver Rupee
@@ -223,31 +223,31 @@
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetRupee
-  getmodelname: GetRupee
+  shop_arc_name: GetRupee
+  shop_model_name: GetRupee
 - id: 33
   name: Gold Rupee
   types:
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetRupee
-  getmodelname: GetRupee
+  shop_arc_name: GetRupee
+  shop_model_name: GetRupee
 - id: 34
   name: Rupoor
   types:
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetRupee
-  getmodelname: GetRupee
+  shop_arc_name: GetRupee
+  shop_model_name: GetRupee
 - id: 35
   name: Gratitude Crystal Pack
   types:
     - Side Quest Items
   oarc: null # ObjectPack
-  getarcname: GetGenki
-  getmodelname: GetGenki
+  shop_arc_name: GetGenki
+  shop_model_name: GetGenki
   advancement: true
   chain_locations:
    - Batreaux's House - 5 Gratitude Crystals Reward
@@ -266,8 +266,8 @@
     - Major Items
     - Side Quest Items
   oarc: null # ObjectPack
-  getarcname: GetBottleKinokoA
-  getmodelname: GetBottleKinokoA
+  shop_arc_name: GetBottleKinokoA
+  shop_model_name: GetBottleKinokoA
   advancement: true
 - id: 40
   name: 5 Bombs
@@ -275,16 +275,16 @@
     - Ammo
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetBombSet
-  getmodelname: GetBombSet
+  shop_arc_name: GetBombSet
+  shop_model_name: GetBombSet
 - id: 41
   name: 10 Bombs
   types:
     - Ammo
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetBombSet
-  getmodelname: GetBombSet
+  shop_arc_name: GetBombSet
+  shop_model_name: GetBombSet
 - id: 42
   name: Stamina Fruit
   types:
@@ -295,8 +295,8 @@
   types:
     - Side Quest Items
   oarc: null # ObjectPack
-  getarcname: GetGenki
-  getmodelname: GetGenki
+  shop_arc_name: GetGenki
+  shop_model_name: GetGenki
   advancement: true
   chain_locations:
    - Batreaux's House - 5 Gratitude Crystals Reward
@@ -314,8 +314,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetVacuum
-  getarcname: GetVacuum
-  getmodelname: GetVacuum
+  shop_arc_name: GetVacuum
+  shop_model_name: GetVacuum
   advancement: true
 - id: 50
   name: Map
@@ -323,8 +323,8 @@
     - Dungeon Items
     - Maps
   oarc: null # ObjectPack
-  getarcname: GetMap
-  getmodelname: GetMap
+  shop_arc_name: GetMap
+  shop_model_name: GetMap
   shuffle: Dungeon
 - id: 52
   name: Progressive Slingshot
@@ -334,8 +334,8 @@
   oarc:
   - GetPachinkoA
   - GetPachinkoB # Fixes weirdness with traps
-  getarcname: GetPachinkoA
-  getmodelname: GetPachinkoA
+  shop_arc_name: GetPachinkoA
+  shop_model_name: GetPachinkoA
   advancement: true
 - id: 53
   name: Progressive Beetle
@@ -347,8 +347,8 @@
   - GetBeetleB
   - GetBeetleC
   - GetBeetleD
-  getarcname: GetBeetleA
-  getmodelname: GetBeetleA
+  shop_arc_name: GetBeetleA
+  shop_model_name: GetBeetleA
   advancement: true
 - id: 54
   name: Bottle of Water
@@ -357,8 +357,8 @@
     - Major Items
     - Side Quest Items
   oarc: null # ObjectPack
-  getarcname: GetBottleWater
-  getmodelname: GetBottleWater
+  shop_arc_name: GetBottleWater
+  shop_model_name: GetBottleWater
   advancement: true
 - id: 55
   name: Mushroom Spores
@@ -367,8 +367,8 @@
     - Major Items
     - Side Quest Items
   oarc: null # ObjectPack
-  getarcname: GetBottleKinokoB
-  getmodelname: GetBottleKinokoB
+  shop_arc_name: GetBottleKinokoB
+  shop_model_name: GetBottleKinokoB
   advancement: true
 - id: 56
   name: Progressive Mitts
@@ -378,8 +378,8 @@
   oarc:
   - GetMoleGloveA
   - GetMoleGloveB
-  getarcname: GetMoleGloveA
-  getmodelname: GetMoleGloveA
+  shop_arc_name: GetMoleGloveA
+  shop_model_name: GetMoleGloveA
   advancement: true
 - id: 57
   name: 5 Deku Seeds
@@ -387,30 +387,30 @@
     - Ammo
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetSeed
-  getmodelname: GetSeed
+  shop_arc_name: GetSeed
+  shop_model_name: GetSeed
 - id: 60
   name: 10 Deku Seeds
   types:
     - Ammo
     - Minor Items
   oarc: GetSeedSet
-  getarcname: GetSeedSet
-  getmodelname: GetSeedSet
+  shop_arc_name: GetSeedSet
+  shop_model_name: GetSeedSet
 - id: 63
   name: Uncommon Treasure
   types:
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetSozaiL
-  getmodelname: GetSozaiL
+  shop_arc_name: GetSozaiL
+  shop_model_name: GetSozaiL
 - id: 64
   name: Rare Treasure
   types:
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetSozaiP
-  getmodelname: GetSozaiP
+  shop_arc_name: GetSozaiP
+  shop_model_name: GetSozaiP
 - id: 65
   name: Guardian Potion
   types:
@@ -418,8 +418,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleMuteki
-  getarcname: GetBottleMuteki
-  getmodelname: GetBottleMuteki
+  shop_arc_name: GetBottleMuteki
+  shop_model_name: GetBottleMuteki
   advancement: true
 - id: 66
   name: Guardian Potion Plus
@@ -428,8 +428,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleMuteki
-  getarcname: GetBottleMuteki
-  getmodelname: GetBottleMuteki
+  shop_arc_name: GetBottleMuteki
+  shop_model_name: GetBottleMuteki
   advancement: true
 - id: 68
   name: Water Dragon's Scale
@@ -437,8 +437,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetUroko
-  getarcname: GetUroko
-  getmodelname: GetUroko
+  shop_arc_name: GetUroko
+  shop_model_name: GetUroko
   advancement: true
 - id: 70
   name: Bug Medal
@@ -446,8 +446,8 @@
     - Medals
     - Minor Items
   oarc: GetMedal
-  getarcname: GetMedal
-  getmodelname: GetMedalReturn
+  shop_arc_name: GetMedal
+  shop_model_name: GetMedalReturn
 - id: 71
   name: Progressive Bug Net
   types:
@@ -456,8 +456,8 @@
   oarc:
   - GetNetA
   - GetNetB
-  getarcname: GetNetA
-  getmodelname: GetNetA
+  shop_arc_name: GetNetA
+  shop_model_name: GetNetA
   advancement: true
   chain_locations:
    - Bug Heaven - 10 Bugs in 3 Minutes
@@ -466,8 +466,8 @@
   types:
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetFairy
-  getmodelname: GetFairy
+  shop_arc_name: GetFairy
+  shop_model_name: GetFairy
 - id: 74
   name: Sacred Water
   types:
@@ -475,8 +475,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleHoly
-  getarcname: GetBottleHoly
-  getmodelname: GetBottleHoly
+  shop_arc_name: GetBottleHoly
+  shop_model_name: GetBottleHoly
   advancement: true
 - id: 75
   name: Hook Beetle
@@ -484,8 +484,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBeetleB
-  getarcname: GetBeetleB
-  getmodelname: GetBeetleB
+  shop_arc_name: GetBeetleB
+  shop_model_name: GetBeetleB
   advancement: true
 - id: 76
   name: Quick Beetle
@@ -493,8 +493,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBeetleC
-  getarcname: GetBeetleC
-  getmodelname: GetBeetleC
+  shop_arc_name: GetBeetleC
+  shop_model_name: GetBeetleC
   advancement: true
 - id: 77
   name: Tough Beetle
@@ -502,8 +502,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBeetleD
-  getarcname: GetBeetleD
-  getmodelname: GetBeetleD
+  shop_arc_name: GetBeetleD
+  shop_model_name: GetBeetleD
   advancement: true
 - id: 78
   name: Heart Potion
@@ -512,8 +512,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleKusuri
-  getarcname: GetBottleKusuri
-  getmodelname: GetBottleKusuri
+  shop_arc_name: GetBottleKusuri
+  shop_model_name: GetBottleKusuri
   advancement: true
 - id: 79
   name: Heart Potion Plus
@@ -522,8 +522,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleKusuri
-  getarcname: GetBottleKusuri
-  getmodelname: GetBottleKusuri
+  shop_arc_name: GetBottleKusuri
+  shop_model_name: GetBottleKusuri
   advancement: true
 - id: 81
   name: Heart Potion Plus Plus
@@ -532,8 +532,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleKusuriS
-  getarcname: GetBottleKusuriS
-  getmodelname: GetBottleKusuriS
+  shop_arc_name: GetBottleKusuriS
+  shop_model_name: GetBottleKusuriS
   advancement: true
 - id: 84
   name: Stamina Potion
@@ -542,8 +542,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleGuts
-  getarcname: GetBottleGuts
-  getmodelname: GetBottleGuts
+  shop_arc_name: GetBottleGuts
+  shop_model_name: GetBottleGuts
   advancement: true
 - id: 85
   name: Stamina Potion Plus
@@ -552,8 +552,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleGuts
-  getarcname: GetBottleGuts
-  getmodelname: GetBottleGuts
+  shop_arc_name: GetBottleGuts
+  shop_model_name: GetBottleGuts
   advancement: true
 - id: 86
   name: Air Potion
@@ -562,8 +562,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleAir
-  getarcname: GetBottleAir
-  getmodelname: GetBottleAir
+  shop_arc_name: GetBottleAir
+  shop_model_name: GetBottleAir
   advancement: true
 - id: 87
   name: Air Potion Plus
@@ -572,8 +572,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleAir
-  getarcname: GetBottleAir
-  getmodelname: GetBottleAir
+  shop_arc_name: GetBottleAir
+  shop_model_name: GetBottleAir
   advancement: true
 - id: 88
   name: Fairy in a Bottle
@@ -582,8 +582,8 @@
     - Major Items
     - Side Quest Items
   oarc: null # ObjectPack
-  getarcname: GetBottleFairy
-  getmodelname: GetBottleFairy
+  shop_arc_name: GetBottleFairy
+  shop_model_name: GetBottleFairy
   advancement: true
 - id: 90
   name: Iron Bow
@@ -591,8 +591,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBowB
-  getarcname: GetBowB
-  getmodelname: GetBowB
+  shop_arc_name: GetBowB
+  shop_model_name: GetBowB
   advancement: true
 - id: 91
   name: Sacred Bow
@@ -600,8 +600,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBowC
-  getarcname: GetBowC
-  getmodelname: GetBowC
+  shop_arc_name: GetBowC
+  shop_model_name: GetBowC
   advancement: true
 - id: 92
   name: Bomb Bag
@@ -609,8 +609,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetBombBag
-  getarcname: GetBombBag
-  getmodelname: GetBombBag
+  shop_arc_name: GetBombBag
+  shop_model_name: GetBombBag
   advancement: true
 - id: 93
   name: Heart Container
@@ -619,15 +619,15 @@
   oarc:
   - GetHeartUtuwa
   - PutHeartUtuwa
-  getarcname: GetHeartUtuwa
-  getmodelname: GetHeartUtuwa
+  shop_arc_name: GetHeartUtuwa
+  shop_model_name: GetHeartUtuwa
 - id: 94
   name: Heart Piece
   types:
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetHeartKakera
-  getmodelname: GetHeartKakera
+  shop_arc_name: GetHeartKakera
+  shop_model_name: GetHeartKakera
 - id: 95
   name: Triforce of Courage
   types:
@@ -636,8 +636,8 @@
   oarc:
   - PutTriForceSingle
   - GetTriForceSingle
-  getarcname: GetTriForceSingle
-  getmodelname: GetTriForceSingle
+  shop_arc_name: GetTriForceSingle
+  shop_model_name: GetTriForceSingle
   advancement: true
 - id: 96
   name: Triforce of Power
@@ -647,8 +647,8 @@
   oarc:
   - PutTriForceSingle
   - GetTriForceSingle
-  getarcname: GetTriForceSingle
-  getmodelname: GetTriForceSingle
+  shop_arc_name: GetTriForceSingle
+  shop_model_name: GetTriForceSingle
   advancement: true
 - id: 97
   name: Triforce of Wisdom
@@ -658,8 +658,8 @@
   oarc:
   - PutTriForceSingle
   - GetTriForceSingle
-  getarcname: GetTriForceSingle
-  getmodelname: GetTriForceSingle
+  shop_arc_name: GetTriForceSingle
+  shop_model_name: GetTriForceSingle
   advancement: true
 - id: 98
   name: Sea Chart
@@ -667,8 +667,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetMapSea
-  getarcname: GetMapSea
-  getmodelname: GetMapSea
+  shop_arc_name: GetMapSea
+  shop_model_name: GetMapSea
   advancement: true
 - id: 99
   name: Mogma Mitts
@@ -676,8 +676,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetMoleGloveB
-  getarcname: GetMoleGloveB
-  getmodelname: GetMoleGloveB
+  shop_arc_name: GetMoleGloveB
+  shop_model_name: GetMoleGloveB
   advancement: true
 - id: 100
   name: Heart Medal
@@ -685,48 +685,48 @@
     - Medals
     - Minor Items
   oarc: GetMedal
-  getarcname: GetMedal
-  getmodelname: GetMedalHeart
+  shop_arc_name: GetMedal
+  shop_model_name: GetMedalHeart
 - id: 101
   name: Rupee Medal
   types:
     - Medals
     - Minor Items
   oarc: GetMedal
-  getarcname: GetMedal
-  getmodelname: GetMedalLucky
+  shop_arc_name: GetMedal
+  shop_model_name: GetMedalLucky
 - id: 102
   name: Treasure Medal
   types:
     - Medals
     - Minor Items
   oarc: GetMedal
-  getarcname: GetMedal
-  getmodelname: GetMedalHunter # TODO double check
+  shop_arc_name: GetMedal
+  shop_model_name: GetMedalHunter # TODO double check
 - id: 103
   name: Potion Medal
   types:
     - Medals
     - Minor Items
   oarc: GetMedal
-  getarcname: GetMedal
-  getmodelname: GetMedalDurable
+  shop_arc_name: GetMedal
+  shop_model_name: GetMedalDurable
 - id: 104
   name: Cursed Medal
   types:
     - Medals
     - Minor Items
   oarc: GetMedal
-  getarcname: GetMedal
-  getmodelname: GetMedalDemon
+  shop_arc_name: GetMedal
+  shop_model_name: GetMedalDemon
 - id: 105
   name: Scattershot
   types:
     - Major Items
     - Item Wheel Items
   oarc: GetPachinkoB
-  getarcname: GetPachinkoB
-  getmodelname: GetPachinkoB
+  shop_arc_name: GetPachinkoB
+  shop_model_name: GetPachinkoB
   advancement: true
 - id: 108
   name: Progressive Wallet # Medium Wallet
@@ -738,8 +738,8 @@
   - GetPurseC
   - GetPurseD
   - GetPurseE
-  getarcname: GetPurseB
-  getmodelname: GetPurseB
+  shop_arc_name: GetPurseB
+  shop_model_name: GetPurseB
   advancement: true
   chain_locations:
    - Beedle's Airshop - 600 Rupee Item
@@ -752,8 +752,8 @@
     - Wallets
     - Minor Items
   oarc: GetPurseC
-  getarcname: GetPurseC
-  getmodelname: GetPurseC
+  shop_arc_name: GetPurseC
+  shop_model_name: GetPurseC
   advancement: true
 - id: 110
   name: Giant Wallet
@@ -761,8 +761,8 @@
     - Wallets
     - Minor Items
   oarc: GetPurseD
-  getarcname: GetPurseD
-  getmodelname: GetPurseD
+  shop_arc_name: GetPurseD
+  shop_model_name: GetPurseD
   advancement: true
 - id: 111
   name: Tycoon Wallet
@@ -770,8 +770,8 @@
     - Wallets
     - Minor Items
   oarc: GetPurseE
-  getarcname: GetPurseE
-  getmodelname: GetPurseE
+  shop_arc_name: GetPurseE
+  shop_model_name: GetPurseE
   advancement: true
 - id: 112
   name: Progressive Pouch
@@ -781,8 +781,8 @@
   oarc:
     - GetPouchA
     - GetPouchB
-  getarcname: GetPouchA
-  getmodelname: GetPorchA # yea, that's a typo in the game
+  shop_arc_name: GetPouchA
+  shop_model_name: GetPorchA # yea, that's a typo in the game
   advancement: true
 - id: 113
   name: Pouch Expansion
@@ -790,32 +790,32 @@
     - Major Items
     - Side Quest Items
   oarc: GetPouchB
-  getarcname: GetPouchB
-  getmodelname: GetPorchB # yea, that's a typo in the game
+  shop_arc_name: GetPouchB
+  shop_model_name: GetPorchB # yea, that's a typo in the game
 - id: 114
   name: Life Medal
   types:
     - Medals
     - Minor Items
   oarc: GetMedal
-  getarcname: GetMedal
-  getmodelname: GetMedalLife
+  shop_arc_name: GetMedal
+  shop_model_name: GetMedalLife
 - id: 116
   name: Wooden Shield
   types:
     - Shields
     - Minor Items
   oarc: GetShieldWood
-  getarcname: GetShieldWood
-  getmodelname: GetShieldWood
+  shop_arc_name: GetShieldWood
+  shop_model_name: GetShieldWood
 - id: 125
   name: Hylian Shield
   types:
     - Shields
     - Minor Items
   oarc: GetShieldHylia
-  getarcname: GetShieldHylia
-  getmodelname: GetShieldHylia
+  shop_arc_name: GetShieldHylia
+  shop_model_name: GetShieldHylia
 - id: 126
   name: Revitalizing Potion
   types:
@@ -823,8 +823,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleRepair
-  getarcname: GetBottleRepair
-  getmodelname: GetBottleRepair
+  shop_arc_name: GetBottleRepair
+  shop_model_name: GetBottleRepair
   advancement: true
 - id: 127
   name: Revitalizing Potion Plus
@@ -833,8 +833,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleRepair
-  getarcname: GetBottleRepair
-  getmodelname: GetBottleRepair
+  shop_arc_name: GetBottleRepair
+  shop_model_name: GetBottleRepair
   advancement: true
 - id: 128
   name: Small Seed Satchel
@@ -842,32 +842,32 @@
     - Ammo
     - Minor Items
   oarc: GetSpareSeedA # TODO upgrades?
-  getarcname: GetSpareSeedA
-  getmodelname: GetSpareSeedA
+  shop_arc_name: GetSpareSeedA
+  shop_model_name: GetSpareSeedA
 - id: 131
   name: Small Quiver
   types:
     - Ammo
     - Minor Items
   oarc: GetSpareQuiverA # TODO upgrades?
-  getarcname: GetSpareQuiverA
-  getmodelname: GetSpareQuiverA
+  shop_arc_name: GetSpareQuiverA
+  shop_model_name: GetSpareQuiverA
 - id: 134
   name: Small Bomb Bag
   types:
     - Ammo
     - Minor Items
   oarc: GetSpareBombBagA # TODO upgrades?
-  getarcname: GetSpareBombBagA
-  getmodelname: GetSpareBombBagA
+  shop_arc_name: GetSpareBombBagA
+  shop_model_name: GetSpareBombBagA
 - id: 137
   name: Whip
   types:
     - Major Items
     - Item Wheel Items
   oarc: GetWhip
-  getarcname: GetWhip
-  getmodelname: GetWhip
+  shop_arc_name: GetWhip
+  shop_model_name: GetWhip
   advancement: true
 - id: 138
   name: Fireshield Earrings
@@ -875,8 +875,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetEarring
-  getarcname: GetEarring
-  getmodelname: GetEarring
+  shop_arc_name: GetEarring
+  shop_model_name: GetEarring
   advancement: true
 - id: 140
   name: Big Bug Net
@@ -884,8 +884,8 @@
     - Major Items
     - Item Wheel Items
   oarc: GetNetB
-  getarcname: GetNetB
-  getmodelname: GetNetB
+  shop_arc_name: GetNetB
+  shop_model_name: GetNetB
   advancement: true
 - id: 153
   name: Empty Bottle
@@ -893,8 +893,8 @@
     - Major Items
     - Side Quest Items
   oarc: null # ObjectPack
-  getarcname: GetBottleEmpty
-  getmodelname: GetBottleEmpty
+  shop_arc_name: GetBottleEmpty
+  shop_model_name: GetBottleEmpty
   advancement: true
 - id: 158
   name: Cawlin's Letter
@@ -902,8 +902,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetKobunALetter
-  getarcname: GetKobunALetter
-  getmodelname: GetKobunALetter
+  shop_arc_name: GetKobunALetter
+  shop_model_name: GetKobunALetter
   advancement: true
   chain_locations:
    - Knight Academy - Deliver Cawlin's Letter
@@ -913,8 +913,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetTerryCage
-  getarcname: GetTerryCage
-  getmodelname: GetTerryCage
+  shop_arc_name: GetTerryCage
+  shop_model_name: GetTerryCage
   advancement: true
   chain_locations:
    - Beedle's Island - Deliver Beedle's Insect Cage
@@ -926,8 +926,8 @@
   oarc:
   - GetGaragara
   - PutGaragara
-  getarcname: GetGaragara
-  getmodelname: GetGaragara
+  shop_arc_name: GetGaragara
+  shop_model_name: GetGaragara
   advancement: true
   chain_locations:
    - Skyloft Village - Deliver Rattle to Bertie
@@ -937,80 +937,80 @@
     - Treasures
     - Minor Items
   oarc: GetSozaiC
-  getarcname: GetSozaiC
-  getmodelname: GetSozaiC
+  shop_arc_name: GetSozaiC
+  shop_model_name: GetSozaiC
 - id: 165
   name: Eldin Ore
   types:
     - Treasures
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetSozaiE
-  getmodelname: GetSozaiE
+  shop_arc_name: GetSozaiE
+  shop_model_name: GetSozaiE
 - id: 166
   name: Ancient Flower
   types:
     - Treasures
     - Minor Items
   oarc: GetSozaiF
-  getarcname: GetSozaiF
-  getmodelname: GetSozaiF
+  shop_arc_name: GetSozaiF
+  shop_model_name: GetSozaiF
 - id: 168
   name: Dusk Relic
   types:
     - Treasures
     - Minor Items
   oarc: GetSozaiH
-  getarcname: GetSozaiH
-  getmodelname: GetSozaiH
+  shop_arc_name: GetSozaiH
+  shop_model_name: GetSozaiH
 - id: 171
   name: Monster Horn
   types:
     - Treasures
     - Minor Items
   oarc: GetSozaiL
-  getarcname: GetSozaiL
-  getmodelname: GetSozaiL
+  shop_arc_name: GetSozaiL
+  shop_model_name: GetSozaiL
 - id: 173
   name: Evil Crystal
   types:
     - Treasures
     - Minor Items
   oarc: null # ObjectPack
-  getarcname: GetSozaiM
-  getmodelname: GetSozaiM
+  shop_arc_name: GetSozaiM
+  shop_model_name: GetSozaiM
 - id: 174
   name: Blue Bird Feather
   types:
     - Treasures
     - Minor Items
   oarc: GetSozaiN
-  getarcname: GetSozaiN
-  getmodelname: GetSozaiN
+  shop_arc_name: GetSozaiN
+  shop_model_name: GetSozaiN
 - id: 175
   name: Golden Skull
   types:
     - Treasures
     - Minor Items
   oarc: GetSozaiO
-  getarcname: GetSozaiO
-  getmodelname: GetSozaiO
+  shop_arc_name: GetSozaiO
+  shop_model_name: GetSozaiO
 - id: 176
   name: Goddess Plume
   types:
     - Treasures
     - Minor Items
   oarc: GetSozaiP
-  getarcname: GetSozaiP
-  getmodelname: GetSozaiP
+  shop_arc_name: GetSozaiP
+  shop_model_name: GetSozaiP
 - id: 177
   name: Emerald Tablet
   types:
     - Major Items
     - Main Quest Items
   oarc: GetSekibanMapA
-  getarcname: GetSekibanMapA
-  getmodelname: SekibanMapA
+  shop_arc_name: GetSekibanMapA
+  shop_model_name: SekibanMapA
   advancement: true
 - id: 178
   name: Ruby Tablet
@@ -1018,8 +1018,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetSekibanMapB
-  getarcname: GetSekibanMapB
-  getmodelname: SekibanMapB
+  shop_arc_name: GetSekibanMapB
+  shop_model_name: SekibanMapB
   advancement: true
 - id: 179
   name: Amber Tablet
@@ -1027,8 +1027,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetSekibanMapC
-  getarcname: GetSekibanMapC
-  getmodelname: SekibanMapC
+  shop_arc_name: GetSekibanMapC
+  shop_model_name: SekibanMapC
   advancement: true
 - id: 180
   name: Stone of Trials
@@ -1036,8 +1036,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetSirenKey
-  getarcname: GetSirenKey
-  getmodelname: GetSirenKey
+  shop_arc_name: GetSirenKey
+  shop_model_name: GetSirenKey
   advancement: true
 - id: 186
   name: Ballad of the Goddess
@@ -1046,8 +1046,8 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
-  getarcname: GetHarp
-  getmodelname: GetHarp
+  shop_arc_name: GetHarp
+  shop_model_name: GetHarp
   advancement: true
 - id: 187
   name: Farore's Courage
@@ -1056,8 +1056,8 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
-  getarcname: GetHarp
-  getmodelname: GetHarp
+  shop_arc_name: GetHarp
+  shop_model_name: GetHarp
   advancement: true
 - id: 188
   name: Nayru's Wisdom
@@ -1066,8 +1066,8 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
-  getarcname: GetHarp
-  getmodelname: GetHarp
+  shop_arc_name: GetHarp
+  shop_model_name: GetHarp
   advancement: true
 - id: 189
   name: Din's Power
@@ -1076,8 +1076,8 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
-  getarcname: GetHarp
-  getmodelname: GetHarp
+  shop_arc_name: GetHarp
+  shop_model_name: GetHarp
   advancement: true
 - id: 190
   name: Song of the Hero Part
@@ -1086,8 +1086,8 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
-  getarcname: GetHarp
-  getmodelname: GetHarp
+  shop_arc_name: GetHarp
+  shop_model_name: GetHarp
   advancement: true
 - id: 191
   name: Eldin Song of the Hero Part
@@ -1096,8 +1096,8 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
-  getarcname: GetHarp
-  getmodelname: GetHarp
+  shop_arc_name: GetHarp
+  shop_model_name: GetHarp
   advancement: true
 - id: 192
   name: Lanayru Song of the Hero Part
@@ -1106,8 +1106,8 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
-  getarcname: GetHarp
-  getmodelname: GetHarp
+  shop_arc_name: GetHarp
+  shop_model_name: GetHarp
   advancement: true
 - id: 193
   name: Song of the Hero
@@ -1116,8 +1116,8 @@
     - Main Quest Items
     - Songs
   oarc: GetHarp
-  getarcname: GetHarp
-  getmodelname: GetHarp
+  shop_arc_name: GetHarp
+  shop_model_name: GetHarp
   advancement: true
 - id: 194
   name: Revitalizing Potion Plus Plus
@@ -1126,8 +1126,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottleRepairS
-  getarcname: GetBottleRepairS
-  getmodelname: GetBottleRepairS
+  shop_arc_name: GetBottleRepairS
+  shop_model_name: GetBottleRepairS
   advancement: true
 - id: 195
   name: Hot Pumpkin Soup
@@ -1136,8 +1136,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottlePumpkin
-  getarcname: GetBottlePumpkin
-  getmodelname: GetBottlePumpkin
+  shop_arc_name: GetBottlePumpkin
+  shop_model_name: GetBottlePumpkin
   advancement: true
 - id: 196
   name: Cold Pumpkin Soup
@@ -1146,8 +1146,8 @@
     - Major Items
     - Side Quest Items
   oarc: GetBottlePumpkin
-  getarcname: GetBottlePumpkin
-  getmodelname: GetBottlePumpkin
+  shop_arc_name: GetBottlePumpkin
+  shop_model_name: GetBottlePumpkin
   advancement: true
 - id: 197
   name: Life Tree Seedling
@@ -1155,8 +1155,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetSeedLife
-  getarcname: GetSeedLife
-  getmodelname: GetSeedLife
+  shop_arc_name: GetSeedLife
+  shop_model_name: GetSeedLife
   advancement: true
 - id: 198
   name: Life Tree Fruit
@@ -1164,8 +1164,8 @@
     - Major Items
     - Main Quest Items
   oarc: GetFruitB
-  getarcname: GetFruitB
-  getmodelname: GetFruitB
+  shop_arc_name: GetFruitB
+  shop_model_name: GetFruitB
   advancement: true
   chain_locations:
    - Lanayru Gorge - Thunder Dragon's Reward
@@ -1175,8 +1175,8 @@
     - Wallets
     - Minor Items
   oarc: GetSparePurse
-  getarcname: GetSparePurse
-  getmodelname: GetSparePurse
+  shop_arc_name: GetSparePurse
+  shop_model_name: GetSparePurse
   advancement: true
   chain_locations:
    - Beedle's Airshop - 600 Rupee Item
@@ -1191,8 +1191,8 @@
     - Dungeon Items
     - Small Keys
   oarc: null # ObjectPack
-  getarcname: GetKeySmall
-  getmodelname: GetKeySmallNormal
+  shop_arc_name: GetKeySmall
+  shop_model_name: GetKeySmallNormal
   advancement: true
 - id: 201
   name: Lanayru Mining Facility Small Key
@@ -1200,8 +1200,8 @@
     - Dungeon Items
     - Small Keys
   oarc: null # ObjectPack
-  getarcname: GetKeySmall
-  getmodelname: GetKeySmallNormal
+  shop_arc_name: GetKeySmall
+  shop_model_name: GetKeySmallNormal
   advancement: true
 - id: 202
   name: Ancient Cistern Small Key
@@ -1209,8 +1209,8 @@
     - Dungeon Items
     - Small Keys
   oarc: null # ObjectPack
-  getarcname: GetKeySmall
-  getmodelname: GetKeySmallNormal
+  shop_arc_name: GetKeySmall
+  shop_model_name: GetKeySmallNormal
   advancement: true
 - id: 203
   name: Fire Sanctuary Small Key
@@ -1218,8 +1218,8 @@
     - Dungeon Items
     - Small Keys
   oarc: null # ObjectPack
-  getarcname: GetKeySmall
-  getmodelname: GetKeySmallNormal
+  shop_arc_name: GetKeySmall
+  shop_model_name: GetKeySmallNormal
   advancement: true
 - id: 204
   name: Sandship Small Key
@@ -1227,8 +1227,8 @@
     - Dungeon Items
     - Small Keys
   oarc: null # ObjectPack
-  getarcname: GetKeySmall
-  getmodelname: GetKeySmallNormal
+  shop_arc_name: GetKeySmall
+  shop_model_name: GetKeySmallNormal
   advancement: true
 - id: 205
   name: Sky Keep Small Key
@@ -1236,8 +1236,8 @@
     - Dungeon Items
     - Small Keys
   oarc: null # ObjectPack
-  getarcname: GetKeySmall
-  getmodelname: GetKeySmallNormal
+  shop_arc_name: GetKeySmall
+  shop_model_name: GetKeySmallNormal
   advancement: true
 - id: 206
   name: Lanayru Caves Small Key
@@ -1245,8 +1245,8 @@
     - Dungeon Items
     - Small Keys
   oarc: null # ObjectPack
-  getarcname: GetKeySmall
-  getmodelname: GetKeySmallNormal
+  shop_arc_name: GetKeySmall
+  shop_model_name: GetKeySmallNormal
   advancement: true
 - id: 207
   name: Skyview Temple Map
@@ -1254,64 +1254,64 @@
     - Dungeon Items
     - Maps
   oarc: null # ObjectPack
-  getarcname: GetMap
-  getmodelname: GetMap
+  shop_arc_name: GetMap
+  shop_model_name: GetMap
 - id: 208
   name: Earth Temple Map
   types:
     - Dungeon Items
     - Maps
   oarc: null # ObjectPack
-  getarcname: GetMap
-  getmodelname: GetMap
+  shop_arc_name: GetMap
+  shop_model_name: GetMap
 - id: 209
   name: Lanayru Mining Facility Map
   types:
     - Dungeon Items
     - Maps
   oarc: null # ObjectPack
-  getarcname: GetMap
-  getmodelname: GetMap
+  shop_arc_name: GetMap
+  shop_model_name: GetMap
 - id: 210
   name: Ancient Cistern Map
   types:
     - Dungeon Items
     - Maps
   oarc: null # ObjectPack
-  getarcname: GetMap
-  getmodelname: GetMap
+  shop_arc_name: GetMap
+  shop_model_name: GetMap
 - id: 211
   name: Fire Sanctuary Map
   types:
     - Dungeon Items
     - Maps
   oarc: null # ObjectPack
-  getarcname: GetMap
-  getmodelname: GetMap
+  shop_arc_name: GetMap
+  shop_model_name: GetMap
 - id: 212
   name: Sandship Map
   types:
     - Dungeon Items
     - Maps
   oarc: null # ObjectPack
-  getarcname: GetMap
-  getmodelname: GetMap
+  shop_arc_name: GetMap
+  shop_model_name: GetMap
 - id: 213
   name: Sky Keep Map
   types:
     - Dungeon Items
     - Maps
   oarc: null # ObjectPack
-  getarcname: GetMap
-  getmodelname: GetMap
+  shop_arc_name: GetMap
+  shop_model_name: GetMap
 - id: 214
   name: Group of Tadtones
   types:
     - Major Items
     - Main Quest Items
   oarc: Onp
-  getarcname: Onp
-  getmodelname: OnpB
+  shop_arc_name: Onp
+  shop_model_name: OnpB
   advancement: true
 - id: 215
   name: Scrapper
@@ -1319,8 +1319,8 @@
     - Major Items
     - Main Quest Items
   oarc: DesertRobot
-  getarcname: DesertRobot
-  getmodelname: DesertRobot
+  shop_arc_name: DesertRobot
+  shop_model_name: DesertRobot
   advancement: true
   chain_locations:
    - Knight Academy - Deliver Kikwi to Owlan

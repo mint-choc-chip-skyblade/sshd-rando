@@ -110,6 +110,8 @@ class World:
                 item_id = int(item_node["id"])
                 name = item_node["name"]
                 oarcs = item_node["oarc"]
+                shop_arc_name = item_node.get("shop_arc_name", None)
+                shop_model_name = item_node.get("shop_model_name", None)
                 major_item = item_node.get("advancement", False)
                 game_winning_item = item_node.get("game_winning_item", False)
                 chain_locations = item_node.get("chain_locations", [])
@@ -119,6 +121,8 @@ class World:
                     item_id,
                     name,
                     oarcs,
+                    shop_arc_name,
+                    shop_model_name,
                     self,
                     major_item,
                     game_winning_item,
