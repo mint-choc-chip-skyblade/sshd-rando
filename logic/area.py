@@ -251,12 +251,3 @@ def assign_hint_regions_and_dungeon_locations(starting_area: Area):
                     f"{[l.name for l in locations]} have been assigned to dungeon {region}"
                 )
 
-                # Also assign goal locations
-                goal_locations = [loc for loc in locations if loc.is_goal_location]
-                random.shuffle(goal_locations)
-                for goal_location in goal_locations:
-                    if not dungeon.goal_location:
-                        dungeon.goal_location = goal_location
-                    else:
-                        if random.randint(0, 1):
-                            dungeon.goal_location = goal_location

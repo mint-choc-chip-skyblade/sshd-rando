@@ -1577,7 +1577,7 @@ class Tracker:
         for area_button in self.ui.tracker_tab.findChildren(TrackerArea):
             area_button.locations.clear()
 
-        self.world.assign_all_areas_hint_regions()
+        self.world.assign_hint_regions_and_goal_locations()
         all_locations = self.world.get_all_item_locations()
         if self.world.setting("gossip_stone_hints") == "on":
             all_locations.extend(self.world.get_gossip_stones())
