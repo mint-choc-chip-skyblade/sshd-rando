@@ -17,7 +17,7 @@ from logic.location import Location
 from logic.search import Search
 
 from filepathconstants import TRACKER_ASSETS_PATH
-from logic.tooltips.tooltips import get_tooltip_text
+from .tooltip_formatting import get_tooltip_text
 
 
 class TrackerLocationLabel(QLabel):

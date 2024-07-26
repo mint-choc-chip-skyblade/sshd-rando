@@ -9,7 +9,7 @@ from logic.search import Search
 from logic.requirements import *
 
 from constants.guiconstants import TRACKER_LOCATION_TOOLTIP_STYLESHEET
-from logic.tooltips.tooltips import get_tooltip_text
+from .tooltip_formatting import get_tooltip_text
 
 
 class TrackerEntranceLabel(QLabel):
