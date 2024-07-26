@@ -427,7 +427,9 @@ class World:
         # Set a single goal location for each dungeon
         for dungeon in self.dungeons.values():
             dungeon.goal_location = random.choice(dungeon_goal_locations[dungeon.name])
-            logging.getLogger("").debug(f"{dungeon.goal_location} chosen as goal location for {dungeon}")
+            logging.getLogger("").debug(
+                f"{dungeon.goal_location} chosen as goal location for {dungeon}"
+            )
 
     def assign_hint_regions_and_goal_locations(self):
         self.assign_hint_regions()

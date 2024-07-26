@@ -250,4 +250,3 @@ def assign_hint_regions_and_dungeon_locations(starting_area: Area):
                 logging.getLogger("").debug(
                     f"{[l.name for l in locations]} have been assigned to dungeon {region}"
                 )
-
