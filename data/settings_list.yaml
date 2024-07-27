@@ -1675,7 +1675,7 @@
     - "On"
   options:
     - "off": "You will only be expected to get the Sandship - Chest at Ship's Stern by using the Clawshots."
-    - "on": "You may need to get the Sandship - Chest at Ship's Stern by side-hopping from the to of the mast."
+    - "on": "You may need to get the Sandship - Chest at Ship's Stern by side-hopping from the top of the mast."
 
 - name: logic_sandship_itemless_spume
   default_option: "off"
