@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 1.3
+
+### Fixes
+* Fixed issue beatable-only logic could cause errors due to dungeons being inaccessible
+
+
+
 ## Version 1.2
 
 ### Additions and Changes
