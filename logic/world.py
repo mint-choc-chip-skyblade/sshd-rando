@@ -391,10 +391,10 @@ class World:
                 location.has_known_vanilla_item = True
 
     def perform_post_entrance_shuffle_tasks(self) -> None:
-        self.assign_all_areas_hint_regions()
+        self.assign_hint_regions_and_goal_locations()
         self.choose_required_dungeons()
 
-    def assign_all_areas_hint_regions(self):
+    def assign_hint_regions(self) -> None:
         for area in self.areas.values():
             # Assign hint regions to all areas which don't
             # have them at this point. This will also finalize
@@ -412,6 +412,28 @@ class World:
                             and dungeon.name not in exit_regions
                         ):
                             dungeon.starting_entrance = exit_
+
+    def assign_goal_locations(self) -> None:
+        # Collect all the possible goal locations for each dungeon
+        dungeon_goal_locations = {d: [] for d in self.dungeons}
+        for area in self.areas.values():
+            for loc_access in area.locations:
+                loc = loc_access.location
+                if loc.is_goal_location:
+                    for region in area.hint_regions:
+                        if region in dungeon_goal_locations:
+                            dungeon_goal_locations[region].append(loc)
+
+        # Set a single goal location for each dungeon
+        for dungeon in self.dungeons.values():
+            dungeon.goal_location = random.choice(dungeon_goal_locations[dungeon.name])
+            logging.getLogger("").debug(
+                f"{dungeon.goal_location} chosen as goal location for {dungeon}"
+            )
+
+    def assign_hint_regions_and_goal_locations(self):
+        self.assign_hint_regions()
+        self.assign_goal_locations()
 
     def choose_required_dungeons(self) -> None:
         num_required_dungeons = self.setting("required_dungeons").value_as_number()
