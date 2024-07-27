@@ -1153,7 +1153,11 @@ class Tracker:
                     ]
                 )
                 entrance_label = TrackerEntranceLabel(
-                    entrance, area_name, area_button.recent_search, show_full_connection
+                    entrance,
+                    area_name,
+                    area_button.recent_search,
+                    self.world,
+                    show_full_connection,
                 )
                 entrance_label.choose_target.connect(self.show_target_selection_info)
                 entrance_label.disconnect_entrance.connect(

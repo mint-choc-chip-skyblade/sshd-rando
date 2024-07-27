@@ -4,7 +4,15 @@ from dataclasses import dataclass
 from constants.configconstants import TRACKER_NOTE_EVENTS
 from ..item_pool import get_complete_item_pool
 from ..search import Search, SearchMode
-from ..requirements import Requirement, RequirementType, ALL_TODS, visit_requirement
+from ..requirements import (
+    Requirement,
+    RequirementType,
+    ALL_TODS,
+    evaluate_requirement_at_time,
+    visit_requirement,
+)
+from typing import Callable
+from constants.trackerprettyitems import PRETTY_ITEM_NAMES
 from ..world import World, TOD, LocationAccess
 from ..entrance import Entrance
 from ..area import EventAccess, Area
@@ -393,3 +401,45 @@ def evaluate_partial_requirement(
 
         case RequirementType.NIGHT:
             return DNF.true() if time & TOD.NIGHT else DNF.false()
+
+
+def num_terms(req: Requirement):
+    if req.type == RequirementType.AND or req.type == RequirementType.OR:
+        return sum(map(num_terms, req.args))
+    return 1
+
+
+def sort_requirement(req: Requirement):
+    def by_length(req: Requirement):
+        if req.type == RequirementType.AND or req.type == RequirementType.OR:
+            return num_terms(req)
+        return -1
+
+    def by_item(req: Requirement):
+        if req.type == RequirementType.ITEM:
+            return pretty_name(req.args[0].name, 1)
+        elif req.type == RequirementType.COUNT:
+            return pretty_name(req.args[1].name, req.args[0])
+        elif req.type == RequirementType.AND or req.type == RequirementType.OR:
+            return by_item(req.args[0])
+        elif req.type == RequirementType.TRACKER_NOTE:
+            return req.args[2]
+        return ""
+
+    def sort_key(req: Requirement):
+        return (by_length(req), by_item(req))
+
+    if req.type == RequirementType.AND or req.type == RequirementType.OR:
+        for expr in req.args:
+            sort_requirement(expr)
+        req.args.sort(key=sort_key)
+
+
+def pretty_name(item, count):
+    if (pretty_name := PRETTY_ITEM_NAMES.get((item, count), None)) is not None:
+        return pretty_name
+
+    if count > 1:
+        return f"{item} x {count}"
+    else:
+        return item
