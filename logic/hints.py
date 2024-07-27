@@ -583,7 +583,14 @@ def assign_gossip_stone_hints(
     # Keep trying to place hints until all have been logically placed
     # at least once
     successfully_placed_hints = False
+    retry_count = 50
     while not successfully_placed_hints:
+        retry_count -= 1
+        if retry_count < 0:
+            raise RuntimeError(
+                "Failed to properly place gossip stone hints. Try using a different seed for generation."
+            )
+
         random.shuffle(hint_locations)
         successfully_placed_hints = True
         for stone in gossip_stone_locations:
