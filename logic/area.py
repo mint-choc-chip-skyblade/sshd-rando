@@ -246,7 +246,9 @@ def assign_hint_regions_and_dungeon_locations(starting_area: Area):
             if region in dungeon_regions:
                 locations = [la.location for la in area.locations]
                 dungeon = area.world.get_dungeon(region)
-                dungeon.locations.extend(locations)
-                logging.getLogger("").debug(
-                    f"{[l.name for l in locations]} have been assigned to dungeon {region}"
-                )
+                for loc in locations:
+                    if loc not in dungeon.locations:
+                        dungeon.locations.append(loc)
+                        logging.getLogger("").debug(
+                            f"{loc} has been assigned to dungeon {region}"
+                        )
