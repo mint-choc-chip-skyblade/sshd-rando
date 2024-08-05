@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 1.4-beta
+
+### Fixes
+* Fixes dungeon end locations not appearing on the tracker
+* Fixes the tracker errors when playing on Linux (actually for real this time)
+  * Fixes the map assets being missing
+  * Fixes the errors when trying to mark various items
+* Fixes hint region assignment
+  * Shipyard locations should now be correctly hinted to account for not being able to ride the minecart backwards
+
+
+
 ## Version 1.3
 
 ### Fixes
