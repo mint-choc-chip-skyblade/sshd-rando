@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.6.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -1674,6 +1674,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_23.addWidget(self.setting_cryptic_hint_text)
 
+        self.setting_hint_importance = RandoTriStateCheckBox(self.hints_group_box)
+        self.setting_hint_importance.setObjectName(u"setting_hint_importance")
+
+        self.verticalLayout_23.addWidget(self.setting_hint_importance)
+
         self.chest_size_matches_contents_label = QLabel(self.hints_group_box)
         self.chest_size_matches_contents_label.setObjectName(u"chest_size_matches_contents_label")
 
@@ -2999,6 +3004,7 @@ class Ui_main_window(object):
         self.item_hints_label.setText(QCoreApplication.translate("main_window", u"Item Hints", None))
         self.setting_always_hints.setText(QCoreApplication.translate("main_window", u"Prioritize Remote Location Hints", None))
         self.setting_cryptic_hint_text.setText(QCoreApplication.translate("main_window", u"Cryptic Hint Text", None))
+        self.setting_hint_importance.setText(QCoreApplication.translate("main_window", u"Hint Importance", None))
         self.chest_size_matches_contents_label.setText(QCoreApplication.translate("main_window", u"Chest Type Matches Contents (CTMC)", None))
         self.setting_small_keys_in_fancy_chests.setText(QCoreApplication.translate("main_window", u"Small Keys in Fancy Chests", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.hints_tab), QCoreApplication.translate("main_window", u"Hints", None))

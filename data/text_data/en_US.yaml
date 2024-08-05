@@ -250,10 +250,10 @@
   standard: They say that visiting <region> is a foolish choice.
 
 - name: Item Hint
-  standard: They say that <item_pretty_or_cryptic_name> can be found at <regions>.
+  standard: They say that <item_pretty_or_cryptic_name><importance> can be found at <regions>.
 
 - name: Location Hint
-  standard: They say that <location_pretty_or_cryptic_name> rewards <item_pretty_or_cryptic_name>.
+  standard: They say that <location_pretty_or_cryptic_name> rewards <item_pretty_or_cryptic_name><importance>.
 
 - name: Small Key
   standard: Small Key

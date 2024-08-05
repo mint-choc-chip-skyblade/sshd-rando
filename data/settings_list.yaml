@@ -369,6 +369,16 @@
     - "off": "All locations will be treated equally for location hints."
     - "on": "Certain locations which are time-consuming to check will be given priority for location hints."
 
+- name: hint_importance
+  default_option: "off"
+  pretty_name: Hint Importance
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Location and item hints will not specify whether or not an item is required."
+    - "on": "Location and item hints will specify if the item hinted at is required, not required, or possibly required. Junk items will not have any specifier, as they are trivially unrequired."
+
 - name: random_starting_statues
   default_option: "off"
   pretty_name: Random Starting Bird Statues

@@ -2531,6 +2531,13 @@
             </widget>
            </item>
            <item>
+            <widget class="RandoTriStateCheckBox" name="setting_hint_importance">
+             <property name="text">
+              <string>Hint Importance</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLabel" name="chest_size_matches_contents_label">
              <property name="text">
               <string>Chest Type Matches Contents (CTMC)</string>

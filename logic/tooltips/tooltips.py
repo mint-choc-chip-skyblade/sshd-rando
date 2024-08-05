@@ -11,13 +11,16 @@ from ..requirements import (
     evaluate_requirement_at_time,
     visit_requirement,
 )
-from typing import Callable
+from typing import Callable, TYPE_CHECKING
 from constants.trackerprettyitems import PRETTY_ITEM_NAMES
-from ..world import World, TOD, LocationAccess
+from ..requirements import TOD
 from ..entrance import Entrance
 from ..area import EventAccess, Area
 from .bits import BitIndex, DNF
 from .simplify_algebraic import dnf_to_expr
+
+if TYPE_CHECKING:
+    from ..world import World, LocationAccess
 
 
 @dataclass

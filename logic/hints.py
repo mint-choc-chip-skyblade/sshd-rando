@@ -11,6 +11,7 @@ def generate_hints(worlds: list[World]) -> None:
     sanitize_major_items(worlds)
     calculate_possible_path_locations(worlds)
     calculate_possible_barren_regions(worlds)
+    assign_importance_to_locations(worlds)
 
     for world in worlds:
         hint_locations = []
@@ -550,6 +551,7 @@ def generate_item_hint_message(location: Location) -> None:
         get_text_data("Item Hint")
         .replace("<item_pretty_or_cryptic_name>", item_text)
         .replace("<regions>", hint_region_text)
+        .replace("<importance>", location.hint_importance_text)
     )
     location.hint.type = "Item"
 
@@ -568,6 +570,7 @@ def generate_location_hint_message(location: Location) -> None:
         get_text_data("Location Hint")
         .replace("<location_pretty_or_cryptic_name>", location_text)
         .replace("<item_pretty_or_cryptic_name>", item_text)
+        .replace("<importance>", location.hint_importance_text)
     )
 
 
@@ -842,12 +845,54 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
         logging.getLogger("").debug(f'Generated hint "{hint.text}" for song {song}')
 
 
-def locations_are_all_junk(locations: list[Location]) -> None:
-    return all([not loc.current_item.is_major_item for loc in locations])
+def locations_are_all_junk(locations: list[Location]) -> bool:
+    return all(
+        [
+            not loc.current_item or not loc.current_item.is_major_item
+            for loc in locations
+        ]
+    )
 
 
-def get_hintable_location(locations: list[Location]) -> Location:
+def get_hintable_location(locations: list[Location]) -> Location | None:
     for location in locations:
         if not location.is_hinted:
             return location
     return None
+
+
+def assign_importance_to_locations(worlds: list[World]) -> None:
+    for world in worlds:
+        if world.setting("hint_importance") == "off":
+            # Don't include any importance text if the option isn't enabled
+            continue
+        for location in world.location_table.values():
+            current_item = location.current_item
+            if (
+                not location.progression
+                or not current_item
+                or not current_item.is_major_item
+            ):
+                # Skip nonprogress locations or locations without major items
+                continue
+
+            location.remove_current_item()
+            is_required = not game_beatable(worlds)
+            location.set_current_item(current_item)
+            if is_required:
+                # The location is required if the game is unbeatable without its item
+                location.hint_importance_text = " (<g+<required>>)"
+            else:
+                original_items = []
+                for chain_loc in current_item.chain_locations:
+                    loc = world.get_location(chain_loc)
+                    original_items.append(loc.current_item)
+                    loc.remove_current_item()
+                if game_beatable(worlds):
+                    location.hint_importance_text = " (<blk<not required>>)"
+                else:
+                    # The location has a non-goal item that does still unlock useful items and thus may be required
+                    location.hint_importance_text = " (<ye<possibly required>>)"
+                for i, chain_loc in enumerate(current_item.chain_locations):
+                    loc = world.get_location(chain_loc)
+                    loc.set_current_item(original_items[i])

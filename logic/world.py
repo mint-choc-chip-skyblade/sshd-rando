@@ -1,6 +1,7 @@
 from constants.itemconstants import ALL_JUNK_ITEMS, TRAP_SETTING_TO_ITEM, BOTTLE_ITEMS
 from filepathconstants import ITEMS_PATH, MACROS_DATA_PATH, WORLD_DATA_PATH
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
+from logic.tooltips.tooltips import TooltipsSearch
 from .config import Config
 from .settings import *
 from .item import Item
@@ -658,6 +659,7 @@ class World:
 
     def perform_post_fill_tasks(self) -> None:
         self.set_bottle_contents()
+        self.calculate_chain_locations()
 
     def set_bottle_contents(self) -> None:
         logging.getLogger("").debug(f"Setting bottle contents for {self}")
@@ -858,3 +860,14 @@ class World:
     ) -> list[Entrance]:
         entrances = self.get_shuffleable_entrances(entrance_type, only_primary)
         return [e for e in entrances if e.shuffled]
+
+    def calculate_chain_locations(self):
+        logging.getLogger("").debug(f"Calculating chain locations for {self}")
+        tooltip_search = TooltipsSearch(self)
+        tooltip_search.do_search()
+
+        for name, location in self.location_table.items():
+            if not location.progression:
+                continue
+            for item_name in location.computed_requirement.get_items():
+                self.item_table[item_name].chain_locations.add(name)
