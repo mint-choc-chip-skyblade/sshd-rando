@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 1.4
+## Version 1.4-beta
 
 ### Fixes
 * Fixes dungeon end locations not appearing on the tracker
