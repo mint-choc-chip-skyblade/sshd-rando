@@ -215,6 +215,7 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
 def calculate_possible_barren_regions(worlds: list[World]) -> None:
     logging.getLogger("").debug("Calculating Barren Regions")
     for world in worlds:
+        non_barren_blockers = set()
         for location in world.get_all_item_locations():
             # If this location is progression, then add its hint regions to
             # the set of potentially barren regions
@@ -224,6 +225,7 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                         world.barren_regions[hint_region] = []
 
             # Prevent small keys and big keys in known places from being barren blockers
+            # They won't be automatically marked as junk locations, otherwise the hint importance may be misleading
             item_at_location = location.current_item
             if (
                 location.is_goal_location
@@ -236,7 +238,7 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                     and world.setting("boss_keys").is_any_of("vanilla", "own_dungeon")
                 )
             ):
-                world.junk_locations.add(location)
+                non_barren_blockers.add(location)
             # Depending on how items were placed, set certain
             # items as junk items if all of the item's chain locations also
             # only contain junk or are ultimately not required
@@ -260,6 +262,9 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
             for i, loc in enumerate(chain_locations):
                 loc.set_current_item(original_items[i])
 
+        # Account for the excluded barren blockers in the final region calculations
+        junk_set = world.junk_locations.union(non_barren_blockers)
+
         # Now loop through all the progression locations again and remove
         # any regions from the barren regions which have non-junk items at
         # any of their locations. Otherwise add the location to the list
@@ -270,7 +275,7 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                     if (
                         location.progression
                         and location.current_item.is_major_item
-                        and location not in world.junk_locations
+                        and location not in junk_set
                         and hint_region in world.barren_regions
                     ):
                         del world.barren_regions[hint_region]
