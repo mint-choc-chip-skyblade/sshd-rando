@@ -45,6 +45,7 @@ class Location:
         self.hint_priority: str = hint_priority_
         self.hint_textfile: str = hint_textfile_
         self.hint_textindex: int = hint_textindex_
+        self.hint_importance_text: str = ""
         self.eventflowindex: int = eventflowindex_
 
         # Tracker variables

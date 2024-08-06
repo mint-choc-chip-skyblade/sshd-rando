@@ -11,6 +11,7 @@ def generate_hints(worlds: list[World]) -> None:
     sanitize_major_items(worlds)
     calculate_possible_path_locations(worlds)
     calculate_possible_barren_regions(worlds)
+    assign_importance_to_locations(worlds)
 
     for world in worlds:
         hint_locations = []
@@ -214,8 +215,7 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
 def calculate_possible_barren_regions(worlds: list[World]) -> None:
     logging.getLogger("").debug("Calculating Barren Regions")
     for world in worlds:
-        potentially_junk_locations = set()
-        junk_locations = set()
+        non_barren_blockers = set()
         for location in world.get_all_item_locations():
             # If this location is progression, then add its hint regions to
             # the set of potentially barren regions
@@ -225,6 +225,7 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                         world.barren_regions[hint_region] = []
 
             # Prevent small keys and big keys in known places from being barren blockers
+            # They won't be automatically marked as junk locations, otherwise the hint importance may be misleading
             item_at_location = location.current_item
             if (
                 location.is_goal_location
@@ -237,37 +238,32 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                     and world.setting("boss_keys").is_any_of("vanilla", "own_dungeon")
                 )
             ):
-                junk_locations.add(location)
-            # Depending on how items were placed, temporarily set certain
+                non_barren_blockers.add(location)
+            # Depending on how items were placed, set certain
             # items as junk items if all of the item's chain locations also
-            # only contain junk
+            # only contain junk or are ultimately not required
             chain_locations = [
                 world.get_location(loc_name)
                 for loc_name in location.current_item.chain_locations
             ]
-            if location.progression and len(chain_locations) > 0:
-                if locations_are_all_junk(chain_locations):
-                    junk_locations.add(location)
-                    logging.getLogger("").debug(f"{location.current_item} is now junk")
-                else:
-                    potentially_junk_locations.add(location)
+            original_items = []
+            # Remove the items from the chain locations and check if the world is still beatable
+            for loc in chain_locations:
+                original_items.append(loc.current_item)
+                loc.remove_current_item()
+            if (
+                location.progression
+                and len(chain_locations) > 0
+                and game_beatable(worlds)
+            ):
+                # The chain locations weren't required so this item shouldn't be a barren blocker
+                world.junk_locations.add(location)
+                logging.getLogger("").debug(f"{location.current_item} is now junk")
+            for i, loc in enumerate(chain_locations):
+                loc.set_current_item(original_items[i])
 
-        # Iterate through all the potentially_junk_locations until
-        # no new junk locations are set
-        new_junk_locations = True
-        while new_junk_locations:
-            new_junk_locations = False
-            for location in potentially_junk_locations:
-                chain_locations = [
-                    world.get_location(loc_name)
-                    for loc_name in location.current_item.chain_locations
-                ]
-                if location.current_item.is_major_item and locations_are_all_junk(
-                    chain_locations
-                ):
-                    new_junk_locations = True
-                    junk_locations.add(location)
-                    logging.getLogger("").debug(f"{location.current_item} is now junk")
+        # Account for the excluded barren blockers in the final region calculations
+        junk_set = world.junk_locations.union(non_barren_blockers)
 
         # Now loop through all the progression locations again and remove
         # any regions from the barren regions which have non-junk items at
@@ -279,7 +275,7 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                     if (
                         location.progression
                         and location.current_item.is_major_item
-                        and location not in junk_locations
+                        and location not in junk_set
                         and hint_region in world.barren_regions
                     ):
                         del world.barren_regions[hint_region]
@@ -550,6 +546,7 @@ def generate_item_hint_message(location: Location) -> None:
         get_text_data("Item Hint")
         .replace("<item_pretty_or_cryptic_name>", item_text)
         .replace("<regions>", hint_region_text)
+        .replace("<importance>", location.hint_importance_text)
     )
     location.hint.type = "Item"
 
@@ -568,6 +565,7 @@ def generate_location_hint_message(location: Location) -> None:
         get_text_data("Location Hint")
         .replace("<location_pretty_or_cryptic_name>", location_text)
         .replace("<item_pretty_or_cryptic_name>", item_text)
+        .replace("<importance>", location.hint_importance_text)
     )
 
 
@@ -842,12 +840,46 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
         logging.getLogger("").debug(f'Generated hint "{hint.text}" for song {song}')
 
 
-def locations_are_all_junk(locations: list[Location]) -> None:
-    return all([not loc.current_item.is_major_item for loc in locations])
+def locations_are_all_junk(locations: list[Location]) -> bool:
+    return all(
+        [
+            not loc.current_item or not loc.current_item.is_major_item
+            for loc in locations
+        ]
+    )
 
 
-def get_hintable_location(locations: list[Location]) -> Location:
+def get_hintable_location(locations: list[Location]) -> Location | None:
     for location in locations:
         if not location.is_hinted:
             return location
     return None
+
+
+def assign_importance_to_locations(worlds: list[World]) -> None:
+    for world in worlds:
+        if world.setting("hint_importance") == "off":
+            # Don't include any importance text if the option isn't enabled
+            continue
+        for location in world.location_table.values():
+            current_item = location.current_item
+            if (
+                not location.progression
+                or not current_item
+                or not current_item.is_major_item
+            ):
+                # Skip nonprogress locations or locations without major items
+                continue
+
+            location.remove_current_item()
+            is_required = not game_beatable(worlds)
+            location.set_current_item(current_item)
+            if is_required:
+                # The location is required if the game is unbeatable without its item
+                location.hint_importance_text = " (<g+<required>>)"
+            elif location in world.junk_locations:
+                # The location is not required if all of the checks the item could unlock are ultimately useless
+                location.hint_importance_text = " (<blk<not required>>)"
+            else:
+                # The location has a non-path item that does still unlock useful items and thus may be required
+                location.hint_importance_text = " (<ye<possibly required>>)"

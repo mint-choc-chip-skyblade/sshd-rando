@@ -1,6 +1,13 @@
 import copy
 from typing import TYPE_CHECKING, Callable
 
+from constants.itemnames import (
+    EXTRA_WALLET,
+    GRATITUDE_CRYSTAL,
+    GRATITUDE_CRYSTAL_PACK,
+    PROGRESSIVE_WALLET,
+)
+
 if TYPE_CHECKING:
     from .world import World
     from .search import Search
@@ -69,6 +76,25 @@ class Requirement:
     def set_as_impossible(self) -> None:
         self.type = RequirementType.IMPOSSIBLE
         self.args = []
+
+    def get_items(self) -> set[str]:
+        item_set = set()
+        match self.type:
+            case RequirementType.ITEM:
+                item_set.add(self.args[0].name.replace("'", ""))
+            case RequirementType.COUNT:
+                item_set.add(self.args[1].name.replace("'", ""))
+            case RequirementType.GRATITUDE_CRYSTALS:
+                item_set.add(GRATITUDE_CRYSTAL_PACK)
+                item_set.add(GRATITUDE_CRYSTAL)
+            case RequirementType.WALLET_CAPACITY:
+                item_set.add(EXTRA_WALLET)
+                item_set.add(PROGRESSIVE_WALLET)
+            case RequirementType.OR | RequirementType.AND:
+                for req in self.args:
+                    item_set |= req.get_items()
+
+        return item_set
 
 
 # Helper to strip an expression down to whatever is inside
