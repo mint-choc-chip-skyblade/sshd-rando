@@ -74,6 +74,8 @@ class World:
         self.path_locations: dict[Location, list[Location]] = {}
         # barren_regions maps a hint region to the list of all locations in the region
         self.barren_regions: OrderedDict[str, list[Location]] = OrderedDict()
+        # junk_locations is populated prior to hint generation to be referenced later by hint importance
+        self.junk_locations: set[Location] = set()
         self.fi_hints: list[Location] = []
         # gossip_stone_hints map each gossip stone location to the list of locations the stone is hinting at
         self.gossip_stone_hints: OrderedDict[Location, list[Location]] = OrderedDict()

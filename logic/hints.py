@@ -215,8 +215,6 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
 def calculate_possible_barren_regions(worlds: list[World]) -> None:
     logging.getLogger("").debug("Calculating Barren Regions")
     for world in worlds:
-        potentially_junk_locations = set()
-        junk_locations = set()
         for location in world.get_all_item_locations():
             # If this location is progression, then add its hint regions to
             # the set of potentially barren regions
@@ -238,37 +236,29 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                     and world.setting("boss_keys").is_any_of("vanilla", "own_dungeon")
                 )
             ):
-                junk_locations.add(location)
-            # Depending on how items were placed, temporarily set certain
+                world.junk_locations.add(location)
+            # Depending on how items were placed, set certain
             # items as junk items if all of the item's chain locations also
-            # only contain junk
+            # only contain junk or are ultimately not required
             chain_locations = [
                 world.get_location(loc_name)
                 for loc_name in location.current_item.chain_locations
             ]
-            if location.progression and len(chain_locations) > 0:
-                if locations_are_all_junk(chain_locations):
-                    junk_locations.add(location)
-                    logging.getLogger("").debug(f"{location.current_item} is now junk")
-                else:
-                    potentially_junk_locations.add(location)
-
-        # Iterate through all the potentially_junk_locations until
-        # no new junk locations are set
-        new_junk_locations = True
-        while new_junk_locations:
-            new_junk_locations = False
-            for location in potentially_junk_locations:
-                chain_locations = [
-                    world.get_location(loc_name)
-                    for loc_name in location.current_item.chain_locations
-                ]
-                if location.current_item.is_major_item and locations_are_all_junk(
-                    chain_locations
-                ):
-                    new_junk_locations = True
-                    junk_locations.add(location)
-                    logging.getLogger("").debug(f"{location.current_item} is now junk")
+            original_items = []
+            # Remove the items from the chain locations and check if the world is still beatable
+            for loc in chain_locations:
+                original_items.append(loc.current_item)
+                loc.remove_current_item()
+            if (
+                location.progression
+                and len(chain_locations) > 0
+                and game_beatable(worlds)
+            ):
+                # The chain locations weren't required so this item shouldn't be a barren blocker
+                world.junk_locations.add(location)
+                logging.getLogger("").debug(f"{location.current_item} is now junk")
+            for i, loc in enumerate(chain_locations):
+                loc.set_current_item(original_items[i])
 
         # Now loop through all the progression locations again and remove
         # any regions from the barren regions which have non-junk items at
@@ -280,7 +270,7 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                     if (
                         location.progression
                         and location.current_item.is_major_item
-                        and location not in junk_locations
+                        and location not in world.junk_locations
                         and hint_region in world.barren_regions
                     ):
                         del world.barren_regions[hint_region]
@@ -882,17 +872,9 @@ def assign_importance_to_locations(worlds: list[World]) -> None:
             if is_required:
                 # The location is required if the game is unbeatable without its item
                 location.hint_importance_text = " (<g+<required>>)"
+            elif location in world.junk_locations:
+                # The location is not required if all of the checks the item could unlock are ultimately useless
+                location.hint_importance_text = " (<blk<not required>>)"
             else:
-                original_items = []
-                for chain_loc in current_item.chain_locations:
-                    loc = world.get_location(chain_loc)
-                    original_items.append(loc.current_item)
-                    loc.remove_current_item()
-                if game_beatable(worlds):
-                    location.hint_importance_text = " (<blk<not required>>)"
-                else:
-                    # The location has a non-goal item that does still unlock useful items and thus may be required
-                    location.hint_importance_text = " (<ye<possibly required>>)"
-                for i, chain_loc in enumerate(current_item.chain_locations):
-                    loc = world.get_location(chain_loc)
-                    loc.set_current_item(original_items[i])
+                # The location has a non-path item that does still unlock useful items and thus may be required
+                location.hint_importance_text = " (<ye<possibly required>>)"
