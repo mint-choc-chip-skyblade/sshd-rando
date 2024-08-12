@@ -11,6 +11,6 @@ pyclip~=0.7.0
 # dev stuff
 black~=24.8.0
 pytest~=8.3.1
-PyInstaller~=6.9.0
+PyInstaller~=6.10.0
 Pillow~=10.4.0
 appdirs~=1.4.4
