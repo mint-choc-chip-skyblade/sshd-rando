@@ -217,6 +217,12 @@ b.eq rotate_shop_items
 cmp w8, #67
 b.eq set_shop_display_height
 
+cmp w8, #68
+b.eq set_shop_sold_out_storyflag
+
+cmp w8, #69
+b.eq check_shop_sold_out_storyflag
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a8000

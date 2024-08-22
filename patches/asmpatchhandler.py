@@ -613,7 +613,7 @@ class ASMPatchHandler:
         yaml_write(output_path, shop_data_dict)
 
         # Write the shop data binary to a non-temp file.
-        # yaml_write(Path("./test-shop-data.yaml"), shop_data_dict)
+        yaml_write(Path("./test-shop-data.yaml"), shop_data_dict)
 
     def _get_flags(
         self, startflag_section, onlyif_handler: ConditionalPatchHandler

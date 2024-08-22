@@ -19,6 +19,8 @@ EVENT_ENTRYPOINTS = {
 }
 
 SOLD_OUT_STORYFLAGS = {
+    26: 814, # 800R
+    23: 813, # 1600R
     24: 937, # 100R1
     28: 938, # 100R2
     29: 939, # 100R3

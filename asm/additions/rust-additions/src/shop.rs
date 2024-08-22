@@ -101,10 +101,9 @@ pub fn rotate_shop_items() {
         let mut degrees = -0.3f32;
         let item_index = (*(*shop_sample).model_holder.current_model).item_index as usize;
 
-        if item_index == 0x7F
-            || (*shop_sample).model_holder.current_model
-                == (*shop_sample).model_holder.sold_out_model
-        {
+        // TODO: fix sold out signs rotating
+        if item_index == 0x7F {
+            // doesn't work
             degrees = 0.0f32;
             (*shop_sample).base.members.base.rot.y = 0;
         } else if SHOP_ITEMS[item_index].trapbits != 0 {
@@ -125,8 +124,40 @@ pub fn set_shop_display_height() {
         asm!("mov {0:x}, x20", out(reg) shop_sample);
 
         let item_index = (*(*shop_sample).model_holder.current_model).item_index as usize;
+        let mut display_height_offset = 0.0f32;
+
+        if item_index != 0x7F {
+            display_height_offset = SHOP_ITEMS[item_index].display_height_offset;
+        }
 
         // Replaced instructions
-        asm!("str s1, [x19]", "str {0:w}, [x19, #4]", "str s0, [x19, #8]", in(reg) SHOP_ITEMS[item_index].display_height_offset);
+        asm!("str s1, [x19]", "str {0:w}, [x19, #4]", "str s0, [x19, #8]", in(reg) display_height_offset);
+    }
+}
+
+#[no_mangle]
+pub fn set_shop_sold_out_storyflag() {
+    unsafe {
+        let item_index: usize;
+        asm!("ldrh {0:w}, [x20, #8]", out(reg) item_index);
+
+        if item_index != 0x7F {
+            let storyflag = SHOP_ITEMS[item_index].sold_out_storyflag;
+
+            if storyflag != 0 {
+                flag::set_storyflag(storyflag);
+            }
+        }
+    }
+}
+
+#[no_mangle]
+pub fn check_shop_sold_out_storyflag(item_index: usize) -> bool {
+    unsafe {
+        if item_index != 0x7F {
+            return flag::check_storyflag(SHOP_ITEMS[item_index].sold_out_storyflag) != 0;
+        }
+
+        return false;
     }
 }
