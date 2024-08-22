@@ -32,18 +32,20 @@ pub struct dAcShopSample {
     pub event_flow_mgr:      [u8; 0xD0],
     pub actor_event_related: [u8; 0x68],
     pub model_holder:        dAcShopSampleModelHolder,
-    pub _1:                  [u8; 0x700],
+    pub main_substruct:      dAcShopSampleSubclassHolder,
+    pub _1:                  [u8; 0x6D8],
 }
 assert_eq_size!([u8; 0x13E0], dAcShopSample);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct dAcShopSampleModelHolder {
-    pub model_list:     *mut dAcShopSampleModel,
-    pub current_model:  *mut dAcShopSampleModel,
-    pub sold_out_model: *mut dAcShopSampleModel,
-    pub model_count:    i16,
-    pub _0:             [u8; 6],
+    pub model_list:         *mut dAcShopSampleModel,
+    pub current_model:      *mut dAcShopSampleModel,
+    pub sold_out_model:     *mut dAcShopSampleModel,
+    pub model_count:        i16,
+    pub use_sold_out_model: bool,
+    pub _0:                 [u8; 5],
 }
 assert_eq_size!([u8; 0x20], dAcShopSampleModelHolder);
 
@@ -57,6 +59,47 @@ pub struct dAcShopSampleModel {
     pub next_model: *mut dAcShopSampleModel,
 }
 assert_eq_size!([u8; 0x40], dAcShopSampleModel);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcShopSampleSubclassHolder {
+    pub vtable:                     *mut c_void,
+    pub _0:                         [u8; 0x10],
+    pub shop_sample_subclass_array: *mut [*mut dAcShopSampleSubclass; 35],
+    pub shop_sample_sold_out:       *mut *mut dAcShopSampleSubclass,
+}
+assert_eq_size!([u8; 0x28], dAcShopSampleSubclassHolder);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcShopSampleSubclass {
+    pub vtable:     *mut dAcShopSampleSubclassvtable,
+    pub shop_index: u16,
+    pub _0:         [u8; 6],
+}
+assert_eq_size!([u8; 0x10], dAcShopSampleSubclass);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcShopSampleSubclassvtable {
+    pub unk_func1:               extern "C" fn(),
+    pub unk_func2:               extern "C" fn(),
+    pub check_pouch_space:       extern "C" fn() -> u32,
+    pub unk_func4:               extern "C" fn(),
+    pub unk_func5:               extern "C" fn(),
+    pub unk_func6:               extern "C" fn(),
+    pub check_can_buy:           extern "C" fn() -> u32,
+    pub check_has_enough_rupees: extern "C" fn(*mut dAcShopSampleSubclass) -> u32,
+    pub is_sold_out:             extern "C" fn(*mut dAcShopSampleSubclass) -> u32,
+    pub is_at_end_of_item_chain: extern "C" fn(*mut dAcShopSampleSubclass) -> bool,
+    pub unk_func11:              extern "C" fn(),
+    pub unk_func12:              extern "C" fn(),
+    pub unk_func13:              extern "C" fn(),
+    pub give_item:               extern "C" fn(*mut dAcShopSampleSubclass),
+    pub get_x_offset:            extern "C" fn(*mut dAcShopSampleSubclass) -> f32,
+    pub get_scale:               extern "C" fn(*mut dAcShopSampleSubclass) -> f32,
+}
+assert_eq_size!([u8; 0x80], dAcShopSampleSubclassvtable);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -101,9 +144,7 @@ pub fn rotate_shop_items() {
         let mut degrees = -0.3f32;
         let item_index = (*(*shop_sample).model_holder.current_model).item_index as usize;
 
-        // TODO: fix sold out signs rotating
-        if item_index == 0x7F {
-            // doesn't work
+        if item_index == 0x7F || (*shop_sample).model_holder.use_sold_out_model {
             degrees = 0.0f32;
             (*shop_sample).base.members.base.rot.y = 0;
         } else if SHOP_ITEMS[item_index].trapbits != 0 {
@@ -113,7 +154,7 @@ pub fn rotate_shop_items() {
         (*shop_sample).base.members.base.rot.y += getRotFromDegrees(degrees);
 
         // Replaced instructions
-        asm!("add x21, x19, #0xC58", "mov x0, x21");
+        asm!("add x21, {0:x}, #0xC58", "mov x0, x21", in(reg) shop_sample);
     }
 }
 
@@ -124,7 +165,7 @@ pub fn set_shop_display_height() {
         asm!("mov {0:x}, x20", out(reg) shop_sample);
 
         let item_index = (*(*shop_sample).model_holder.current_model).item_index as usize;
-        let mut display_height_offset = 0.0f32;
+        let mut display_height_offset = -25.0f32;
 
         if item_index != 0x7F {
             display_height_offset = SHOP_ITEMS[item_index].display_height_offset;
@@ -155,7 +196,11 @@ pub fn set_shop_sold_out_storyflag() {
 pub fn check_shop_sold_out_storyflag(item_index: usize) -> bool {
     unsafe {
         if item_index != 0x7F {
-            return flag::check_storyflag(SHOP_ITEMS[item_index].sold_out_storyflag) != 0;
+            let sold_out_storyflag = SHOP_ITEMS[item_index].sold_out_storyflag;
+
+            if sold_out_storyflag != 0 && sold_out_storyflag != 0xFFFF {
+                return flag::check_storyflag(sold_out_storyflag) != 0;
+            }
         }
 
         return false;

@@ -79,6 +79,8 @@ b 0x7100b04400
 ; Check sold out storyflag to show correct item on the shop sample
 .offset 0x7100b04220
 ; x0 has the dAcShopSample__Subclass so get the shop_index from it
+cmp x0, #0
+b.eq 0x7100b04250 ; ret
 ldrh w0, [x0, #8]
 mov w8, #69
 b additions_jumptable
