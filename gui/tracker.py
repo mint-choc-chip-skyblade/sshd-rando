@@ -1371,9 +1371,12 @@ class Tracker:
         if unchecked_checkbox:
             self.only_unchecked = unchecked_checkbox.isChecked()
 
+        # Only filter target labels by filter text
         for label in self.ui.tracker_tab.findChildren(TrackerTargetLabel):
             label.setVisible(filter_text in label.text().lower())
 
+        # Filter entrance labels by whether they're accessible and/or unchecked
+        # as well as the text filter
         for label in self.ui.tracker_tab.findChildren(TrackerEntranceLabel):
             visible = (
                 (not self.only_accessible or label.entrance_is_accessible())
@@ -1382,6 +1385,7 @@ class Tracker:
             )
             label.setVisible(visible)
 
+        # Same for location labels
         for label in self.ui.tracker_tab.findChildren(TrackerLocationLabel):
             visible = (
                 (
