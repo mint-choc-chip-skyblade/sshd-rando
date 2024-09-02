@@ -406,10 +406,16 @@
   exits:
     Lake Floria Statue: Nothing
     Lake Floria: can_access(Lake Floria) and Water_Dragons_Scale
-    Farore's Lair: Water_Dragons_Scale
+    Lake Floria After Emerged Area: Water_Dragons_Scale
   locations:
     Lake Floria - Chest near Bird Statue: Nothing
     Lake Floria - Goddess Cube near Bird Statue: Goddess_Sword
+
+- name: Lake Floria After Emerged Area
+  hint_region: Lake Floria
+  exits:
+    Lake Floria Emerged Area: Water_Dragons_Scale
+    Farore's Lair: Water_Dragons_Scale
 
 - name: Farore's Lair
   events:
@@ -417,7 +423,7 @@
     Can Collect Water: Bottle
   exits:
     Floria Waterfall: Nothing
-    Lake Floria Emerged Area: Water_Dragons_Scale
+    Lake Floria After Emerged Area: Water_Dragons_Scale
   locations:
     Lake Floria - Dragon Lair South Chest: Water_Dragons_Scale
     Lake Floria - Dragon Lair East Chest: Nothing
