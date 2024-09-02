@@ -29,7 +29,7 @@ class Entrance:
         self.original_connected_area: "Area" = connected_area_
         self.type: str = "None"
         self.original_type: str = "None"
-        self.original_name: str = f"{parent_area_} -> {connected_area_}"
+        self.original_name: str = self.current_name()
 
         self.requirement: Requirement = requirement_
         self.world: "World" = world_
@@ -75,6 +75,9 @@ class Entrance:
 
         # Tracker variables
         self.computed_requirement: Requirement = Requirement(RequirementType.IMPOSSIBLE)
+
+    def current_name(self) -> str:
+        return f"{self.parent_area} -> {self.connected_area}"
 
     def __str__(self) -> str:
         return self.original_name

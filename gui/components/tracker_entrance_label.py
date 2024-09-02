@@ -42,6 +42,21 @@ class TrackerEntranceLabel(QLabel):
         self.setMouseTracking(True)
         self.update_text()
 
+    def entrance_is_accessible(self) -> bool:
+        if (
+            self.recent_search is not None
+            and self.entrance.parent_area in self.recent_search.visited_areas
+        ):
+            for tod in ALL_TODS:
+                if evaluate_requirement_at_time(
+                    self.entrance.requirement,
+                    self.recent_search,
+                    tod,
+                    self.entrance.world,
+                ):
+                    return True
+        return False
+
     def update_text(self, recent_search_: Search | None = None) -> None:
         if recent_search_ is not None:
             self.recent_search = recent_search_
@@ -64,18 +79,8 @@ class TrackerEntranceLabel(QLabel):
             self.recent_search = recent_search_
         # Set the color as blue if accessible, or red if not
         color = "red"
-        if (
-            self.recent_search is not None
-            and self.entrance.parent_area in self.recent_search.visited_areas
-        ):
-            for tod in ALL_TODS:
-                if evaluate_requirement_at_time(
-                    self.entrance.requirement,
-                    self.recent_search,
-                    tod,
-                    self.entrance.world,
-                ):
-                    color = "dodgerblue"
+        if self.entrance_is_accessible():
+            color = "dodgerblue"
 
         self.setStyleSheet(
             TrackerEntranceLabel.default_stylesheet.replace("COLOR", color)
