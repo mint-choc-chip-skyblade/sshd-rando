@@ -62,12 +62,14 @@ class TrackerEntranceLabel(QLabel):
             self.recent_search = recent_search_
 
         # Take the name of the connected area to start (or just "?" if it isn't connected)
-        connected_area_name = self.entrance.connected_area.name if self.entrance.connected_area else "?"
+        connected_area_name = (
+            self.entrance.connected_area.name if self.entrance.connected_area else "?"
+        )
         # If this entrance has a replacement, then use the second part of the replacement's
         # original name (this takes into account undecoupled double door names)
         if self.entrance.replaces:
             connected_area_name = self.entrance.replaces.original_name.split(" -> ")[1]
-            
+
         original_parent, original_connected = self.entrance.original_name.split(" -> ")
         first_part = (
             f"{original_parent} to "
@@ -75,9 +77,7 @@ class TrackerEntranceLabel(QLabel):
             or self.show_full_connection
             else ""
         )
-        self.setText(
-            f"{first_part}{original_connected} -> {connected_area_name}"
-        )
+        self.setText(f"{first_part}{original_connected} -> {connected_area_name}")
 
         self.update_color(recent_search_)
 
