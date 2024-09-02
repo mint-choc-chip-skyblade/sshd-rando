@@ -1398,10 +1398,27 @@ class Tracker:
         self.update_tracker()
         self.compute_tooltips()
 
+    # Disconnect the passed in entrance from it's proper target entrance
     def tracker_disconnect_entrance(self, entrance: Entrance) -> None:
-        if target := self.connected_entrances.get(entrance, None):
+        # Check the regular entrance first
+        target = None
+        if entrance in self.connected_entrances:
+            target = self.connected_entrances[entrance]
             restore_connections(entrance, target)
             del self.connected_entrances[entrance]
+        # If the entrance is coupled and instead saved as the reverse connection
+        # check for that instead
+        elif (
+            not entrance.decoupled
+            and entrance.replaces
+            and entrance.replaces.reverse in self.connected_entrances
+        ):
+            reverse = entrance.replaces.reverse
+            target = self.connected_entrances[reverse]
+            restore_connections(reverse, target)
+            del self.connected_entrances[reverse]
+
+        if target:
             self.update_areas_locations()
             self.update_areas_entrances()
             self.update_tracker()
