@@ -1,4 +1,4 @@
-.offset 0x712e0a7500
+.offset 0x712e0a6500
 ldrb w22, [x27, #0x10b] ; replaced instruction (get sceneflag)
 cmp w22, #0xFF
 b.eq not_set_flag

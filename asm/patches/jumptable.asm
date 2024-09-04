@@ -56,4 +56,4 @@ b additions_jumptable
 ; Actually branches to the rust additions landingpad
 ; additions_jumptable
 .offset 0x710065a070 ; uses 10 instructions
-b 0x712e0a6500
+b 0x712e0a5500

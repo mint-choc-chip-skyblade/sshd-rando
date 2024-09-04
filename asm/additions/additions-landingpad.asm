@@ -1,7 +1,7 @@
 ; Start using subsdk8 0x500 bytes into the .text section
 ; Please leave 0x1000 bytes for this landingpad
 
-.offset 0x712e0a6500
+.offset 0x712e0a5500
 
 ; custom item gets
 cmp w8, #0
@@ -9,7 +9,7 @@ b.eq handle_custom_item_get
 
 ; don't set AC boko flag on death
 cmp w8, #1
-b.eq 0x712e0a7500
+b.eq 0x712e0a6500
 
 ; startflags
 cmp w8, #2
@@ -225,4 +225,4 @@ b.eq check_shop_sold_out_storyflag
 
 ret ; this should never be reached
 
-; ends at 0x712e0a8000
+; ends at 0x712e0a7000

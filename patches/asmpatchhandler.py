@@ -60,7 +60,7 @@ class ASMPatchHandler:
 
     def get_segments(self, nso):
         size = SegmentHeader.SEGMENT_HEADER_SIZE
-        nso.seek(size)  # Start of .text SegmentHeader
+        nso.seek(0x10)  # Start of .text SegmentHeader
         text_header = SegmentHeader.bytes_to_segment_header(nso.read(size))
         rodata_header = SegmentHeader.bytes_to_segment_header(nso.read(size))
         data_header = SegmentHeader.bytes_to_segment_header(nso.read(size))
@@ -147,8 +147,9 @@ class ASMPatchHandler:
         #
         # Each segment size can change due to the compression.
         # If the new size is smaller, don't bother updating it - there's no point.
+        # The MemoryOffset and Size fields are left unchanged as this doesn't appear to cause problems.
         if new_text_size_diff > 0:
-            # Update rodata and data segment headers.
+            # Update rodata and data file offsets in their segment headers.
             write_u32(
                 nso,
                 SegmentHeader.SEGMENT_HEADER_SIZE * 2,
@@ -162,24 +163,15 @@ class ASMPatchHandler:
                 is_little_endian=True,
             )
 
-            # Update segment headers in case the rodata size is different too.
+            # Update the local segment headers in case the rodata size is different too.
             text_header, rodata_header, data_header = self.get_segments(nso)
 
         if new_rodata_size_diff > 0:
-            # Update data segment header.
+            # Update data file offset in its segment header.
             write_u32(
                 nso,
                 SegmentHeader.SEGMENT_HEADER_SIZE * 3,
                 data_header.get_file_offset() + new_rodata_size_diff,
-                is_little_endian=True,
-            )
-
-        if new_data_size_diff > 0:
-            # Update .bss size.
-            write_u32(
-                nso,
-                (SegmentHeader.SEGMENT_HEADER_SIZE * 3) + 0xC,
-                data_header.get_other() + new_data_size_diff,
                 is_little_endian=True,
             )
 
@@ -511,7 +503,7 @@ class ASMPatchHandler:
         skip_harp_playing = world.setting("skip_harp_playing").value_index()
 
         init_rw_globals_dict = {
-            0x712E54C6BC: [
+            0x712E54B6BC: [
                 daytime_sky_color_index,
                 nighttime_sky_color_index,
                 daytime_cloud_color_index,
@@ -521,31 +513,31 @@ class ASMPatchHandler:
                 0xFF,
                 0xFF,
             ],
-            0x712E600020: [
+            0x712E5FF020: [
                 0xFF,
                 0xFF,
                 0xFF,
                 0xFF,
             ],  # NEXT_TRAP_ID
-            0x712E600024: [
+            0x712E5FF024: [
                 0xFF,
                 0xFF,
                 0xFF,
                 0xFF,
             ],  # TRAP_ID
-            0x712E600028: [
+            0x712E5FF028: [
                 0x00,
                 0x00,
                 0x00,
                 0x00,
             ],  # TRAP_DURATION
-            0x712E60002C: [
+            0x712E5FF02C: [
                 random.randint(0, 0xFF),
                 random.randint(0, 0xFF),
                 random.randint(0, 0xFF),
                 random.randint(0, 0xFF),
             ],  # RNG_SEED
-            0x712E600034: [
+            0x712E5FF034: [
                 0x00,
                 0x00,
                 0x00,
@@ -613,7 +605,7 @@ class ASMPatchHandler:
         yaml_write(output_path, shop_data_dict)
 
         # Write the shop data binary to a non-temp file.
-        yaml_write(Path("./test-shop-data.yaml"), shop_data_dict)
+        # yaml_write(Path("./test-shop-data.yaml"), shop_data_dict)
 
     def _get_flags(
         self, startflag_section, onlyif_handler: ConditionalPatchHandler
