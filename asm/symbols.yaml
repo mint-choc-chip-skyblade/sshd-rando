@@ -100,6 +100,9 @@ main:
     # Functions
     debugPrint_128: 0x710051bf54
     strlen: 0x710105f5c0
+    strlen_const: 0x710105f5c0
+    strcmp: 0x710105f6b0
+    strncmp: 0x710105f680
     sinf: 0x710105f830
     cosf: 0x710105f820
     getRotFromDegrees: 0x710002e9a4
@@ -119,6 +122,8 @@ main:
     dAcOmusasabi__stateWaitEnter: 0x7100861db4
     checkParam2OnDestroy: 0x7100b93be4
     getArcModelFromName: 0x7100deb990
+    getArcOrLoadFromDisk: 0x7100deb2a0
+    loadArcFromStageFile: 0x7100deb60c
 
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
     dAcItem__spawnItemWithParams: 0x71004eba70
@@ -137,6 +142,7 @@ main:
     # Misc
     DAT_7102c01000: 0x7102c01000
     BOOT_PTR: 0x7102bfda58
+    WORK2_HEAP: 0x7101834560
 
     CURRENT_SKY_COLOR: 0x7101838838
     DAYTIME_SKY_COLOR: 0x7101838a40
@@ -192,6 +198,14 @@ main:
 
     ## Size: 1
     COLOR_CHANGE_DELAY: 0x712e5ff034
+
+    ## Size: 32
+    BZS_STRING: 0x712e5ff038
+
+    ## Size: 4
+    OBJECTPACK_ARC_NAME_COUNT: 0x712e600000
+    ## Size: variable (big)
+    OBJECTPACK_ARC_NAMES: 0x712e600008
 
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
     dAcItem__spawnRandoItemWithParams: 0x71005c2060

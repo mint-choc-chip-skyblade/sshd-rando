@@ -53,6 +53,14 @@ b additions_jumptable
 mov w8, #43
 b additions_jumptable
 
+.offset 0x7100659ae0
+mov w8, #66
+b additions_jumptable
+
+.offset 0x7100659ae8
+mov w8, #67
+b additions_jumptable
+
 ; Actually branches to the rust additions landingpad
 ; additions_jumptable
 .offset 0x710065a070 ; uses 10 instructions

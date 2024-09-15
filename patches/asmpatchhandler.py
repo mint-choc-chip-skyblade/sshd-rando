@@ -1,5 +1,6 @@
 import struct
 import tempfile
+import time
 from constants.itemconstants import (
     ITEM_ITEMFLAGS,
     ITEM_STORYFLAGS,
@@ -25,7 +26,7 @@ import random
 from constants.asmconstants import *
 
 from lz4.block import compress, decompress
-from gui.dialogs.dialog_header import print_progress_text
+from gui.dialogs.dialog_header import print_progress_text, update_progress_value
 from logic.world import World
 
 from patches.asmpatchhelper import NsoOffsets, SegmentHeader
@@ -48,6 +49,7 @@ class ASMPatchHandler:
         self.main_nso_output_path = self.asm_output_path / "main"
         self.subsdk8_nso_path = self.asm_output_path / "subsdk8"
         self.sdk_nso_path = self.asm_output_path / "sdk"
+        self.objectpack_arc_names: list[str] = []
 
     def compress(self, data: bytes) -> bytes:
         # Uses the lz4 compression.
@@ -230,8 +232,10 @@ class ASMPatchHandler:
 
     # Applies both asm patches and additions.
     def patch_all_asm(self, world: World, onlyif_handler: ConditionalPatchHandler):
+        asm_patching_start_time = time.process_time()
         if ASM_DEBUG_PRINT:
             print("Debug print asm patches")
+
             self.patch_asm(
                 world,
                 onlyif_handler,
@@ -241,6 +245,9 @@ class ASMPatchHandler:
                 SDK_NSO_OFFSETS,
             )
 
+            print(f"Patching sdk.nso took {(time.process_time() - asm_patching_start_time)} seconds")
+
+        start_main_patching_time = time.process_time()
         temp_dir = tempfile.TemporaryDirectory()
 
         # Keeps the temporary directory only within this with block.
@@ -265,6 +272,10 @@ class ASMPatchHandler:
                 MAIN_NSO_OFFSETS,
                 extra_diffs_path=temp_dir_name,
             )
+        
+        update_progress_value(93)
+        print(f"Patching main.nso took {(time.process_time() - start_main_patching_time)} seconds")
+        start_subsdk8_patching_time = time.process_time()
 
         temp_dir = tempfile.TemporaryDirectory()
 
@@ -276,20 +287,24 @@ class ASMPatchHandler:
             startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
             self.patch_startflags(startflags_diff_file_path, world, onlyif_handler)
 
+            update_progress_value(94)
             print("Initializing global variables")
             global_variables_diff_file_path = (
                 temp_dir_name / "global-variables-diff.yaml"
             )
             self.init_global_variables(global_variables_diff_file_path, world)
 
+            update_progress_value(95)
             print("Patching starting entrance")
             staring_entrance_diff_file_path = (
                 temp_dir_name / "starting-entrance-diff.yaml"
             )
 
+            update_progress_value(96)
             print_progress_text("Patching Starting Entrance")
             self.patch_starting_entrance(staring_entrance_diff_file_path, world)
 
+            update_progress_value(97)
             print_progress_text("Applying asm additions")
             self.patch_asm(
                 world,
@@ -300,6 +315,10 @@ class ASMPatchHandler:
                 SUBSDK_NSO_OFFSETS,
                 extra_diffs_path=temp_dir_name,
             )
+        
+        asm_patching_end_time = time.process_time()
+        print(f"Patching subsdk8.nso took {(asm_patching_end_time - start_subsdk8_patching_time)} seconds")
+        print(f"Total asm patching took {(asm_patching_end_time - asm_patching_start_time)} seconds")
 
     def patch_starting_entrance(self, output_path: Path, world: World):
         try:
@@ -545,10 +564,19 @@ class ASMPatchHandler:
             ],  # COLOR_CHANGE_DELAY
         }
 
+        init_rw_globals_dict[0x712e600000] = [int(byte) for byte in struct.pack("<I", len(self.objectpack_arc_names))]
+
+        max_name_len = 24
+        for name_index, name in enumerate(self.objectpack_arc_names):
+            name_bytes = [ord(char) for char in name.ljust(max_name_len, "\0")]
+            init_rw_globals_dict[0x712e600008 + (max_name_len * name_index)] = name_bytes
+        
+        init_rw_globals_dict[0x712e600008 + (max_name_len * (name_index + 1))] = [0]*max_name_len
+
         yaml_write(output_path, init_rw_globals_dict)
 
         # Write the global variables binary to a non-temp file.
-        # yaml_write(Path("./test-global-variables.yaml"), init_globals_dict)
+        # yaml_write(Path("./test-global-variables.yaml"), init_rw_globals_dict)
 
     def patch_damage_multiplier(self, output_path: Path, world: World):
         multiplier = world.setting("damage_multiplier").value_as_number()

@@ -140,7 +140,7 @@ extern "C" {
         arc_table: *mut c_void,
         model_name: *const c_char,
         model_path: *const c_char,
-    ) -> u64;
+    ) -> *mut c_void;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -1236,7 +1236,7 @@ pub fn get_arc_model_from_item(
     arc_table: *mut c_void,
     model_name: *const c_char,
     item_id: u16,
-) -> u64 {
+) -> *mut c_void {
     unsafe {
         let mut initial_model_name = match item_id {
             214 => cstr!("Onp").as_ptr(),

@@ -10,7 +10,7 @@ use crate::minigame;
 use crate::player;
 
 use core::arch::asm;
-use core::ffi::{c_char, c_void};
+use core::ffi::{c_char, c_void, CStr};
 use cstr::cstr;
 use static_assertions::assert_eq_size;
 
@@ -39,16 +39,42 @@ extern "C" {
     static SCENEFLAG_MGR: *mut flag::SceneflagMgr;
 
     static mut CURRENT_STAGE_NAME: [u8; 8];
+    static mut NEXT_STAGE_NAME: [u8; 8];
+    static mut NEXT_ROOM: u8;
 
     static LYT_MSG_WINDOW: *mut lyt::dLytMsgWindow;
+
+    static mut BZS_STRING: [i8; 32];
+
+    static OBJECTPACK_ARC_NAME_COUNT: u32;
+    static OBJECTPACK_ARC_NAMES: [[c_char; 24]; 400]; // max 400 different 24 chararcter strings
 
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn strlen(string: *mut u8) -> u64;
-    fn strncmp(dest: *mut u8, src: *mut u8, size: u64) -> u64;
+    fn strlen_const(string: *const c_char) -> u64;
+    fn strcmp(s1: *const c_char, s2: *const c_char) -> u32;
+    fn strncmp(s1: *const c_char, s2: *const c_char, size: u64) -> bool;
     fn dAcOlightLine__inUpdate(light_pillar_actor: *mut actor::dAcOlightLine, unk: u64);
     fn dAcOrdinaryNpc__update(npc: *mut c_void) -> u64;
     fn dAcNpcSkn2__addInteractionTarget(horwell: *mut c_void, some_val: u32);
+    fn getArcOrLoadFromDisk(
+        arc_table: *mut c_void,
+        arc_name: *const c_char,
+        parent_dir_name: *const c_char,
+        heap: *mut c_void,
+    );
+    fn getArcModelFromName(
+        arc_table: *mut c_void,
+        arc_name: *const c_char,
+        model_path: *const c_char,
+    ) -> *mut c_void; // actually *mut ResFile
+    fn loadArcFromStageFile(
+        arc_table: *mut c_void,
+        arc_name: *const c_char,
+        some_ptr: *mut c_void,
+        heap: *mut c_void,
+    );
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -328,4 +354,134 @@ pub fn is_player_in_tunnel() -> bool {
     }
 
     return false;
+}
+
+#[no_mangle]
+pub fn use_custom_objectpack_arc_names(
+    arc_table: *mut c_void,
+    arc_name: *const c_char,
+    parent_dir_name: *const c_char,
+    heap: *mut c_void,
+) {
+    unsafe {
+        // Replaced instruction
+        asm!("mov x3, x22");
+
+        for name in OBJECTPACK_ARC_NAMES {
+            getArcOrLoadFromDisk(arc_table, name.as_ptr(), parent_dir_name, heap);
+        }
+    }
+}
+
+#[no_mangle]
+pub fn load_custom_bzs(
+    arc_table: *mut c_void,
+    arc_name: *const c_char,
+    parent_dir_name: *const c_char,
+    heap: *mut c_void,
+) {
+    unsafe {
+        getArcOrLoadFromDisk(arc_table, arc_name, parent_dir_name, heap);
+        getArcOrLoadFromDisk(
+            arc_table,
+            cstr!("bzs").as_ptr(),
+            cstr!("Stage").as_ptr(),
+            heap,
+        );
+    }
+}
+
+#[no_mangle]
+pub fn use_custom_bzs(
+    arc_table: *mut c_void,
+    arc_name: *const c_char,
+    model_path: *const c_char,
+) -> *mut c_void {
+    unsafe {
+        if strcmp(model_path, (*c"dat/stage.bzs").as_ptr()) == 0 {
+            let new_arc_name = (*c"bzs").as_ptr();
+            let mut current_char_index = 0;
+
+            for character in b"dat/" {
+                BZS_STRING[current_char_index] = *character as i8;
+                current_char_index += 1;
+            }
+
+            let mut found_string_terminator = false;
+            for stage_char in &mut NEXT_STAGE_NAME[0..6] {
+                if !found_string_terminator && *stage_char != 0 {
+                    BZS_STRING[current_char_index] = *stage_char as i8;
+                    current_char_index += 1;
+                } else {
+                    found_string_terminator = true;
+                }
+            }
+
+            for character in b"_stage.bzs\0" {
+                BZS_STRING[current_char_index] = *character as i8;
+                current_char_index += 1;
+            }
+
+            asm!("mov x2, {0:x}", in(reg) &BZS_STRING);
+            asm!("mov x1, {0:x}", in(reg) new_arc_name);
+        } else if strcmp(model_path, (*c"dat/room.bzs").as_ptr()) == 0 {
+            let new_arc_name = (*c"bzs").as_ptr();
+            let mut current_char_index = 0;
+
+            for character in b"dat/" {
+                BZS_STRING[current_char_index] = *character as i8;
+                current_char_index += 1;
+            }
+
+            let mut found_string_terminator = false;
+            for stage_char in &mut NEXT_STAGE_NAME[0..8] {
+                if !found_string_terminator && *stage_char != 0 {
+                    BZS_STRING[current_char_index] = *stage_char as i8;
+                    current_char_index += 1;
+                } else {
+                    found_string_terminator = true;
+                }
+            }
+
+            for character in b"_room_" {
+                BZS_STRING[current_char_index] = *character as i8;
+                current_char_index += 1;
+            }
+
+            let indexable_arc_name = core::slice::from_raw_parts(arc_name, 16);
+            let mut roomid_char_index = 0;
+
+            // Get the roomid from the arc_name string
+            while indexable_arc_name[roomid_char_index] != 0 {
+                roomid_char_index += 1;
+            }
+
+            // b"0"
+            if indexable_arc_name[roomid_char_index - 2] != 48 {
+                BZS_STRING[current_char_index] = indexable_arc_name[roomid_char_index - 2];
+                current_char_index += 1;
+            }
+
+            BZS_STRING[current_char_index] = indexable_arc_name[roomid_char_index - 1];
+            current_char_index += 1;
+
+            for character in b".bzs\0" {
+                BZS_STRING[current_char_index] = *character as i8;
+                current_char_index += 1;
+            }
+
+            asm!("mov x2, {0:x}", in(reg) &BZS_STRING);
+            asm!("mov x1, {0:x}", in(reg) new_arc_name);
+        } else {
+            asm!("mov x2, {0:x}", in(reg) model_path);
+            asm!("mov x1, {0:x}", in(reg) arc_name);
+        }
+
+        asm!("mov x0, {0:x}", in(reg) arc_table);
+
+        // Replaced instructions
+        asm!("ldrh w23, [x0, #0x8]");
+
+        return arc_table;
+    }
 }

@@ -316,7 +316,7 @@ def get_entry_from_bzs(
     else:
         object_list = bzs["LAY "][f"l{layer}"][object_type]
 
-    if not id is None:
+    if id is not None:
         objs = [x for x in object_list if x["id"] == id]
 
         if len(objs) != 1:
