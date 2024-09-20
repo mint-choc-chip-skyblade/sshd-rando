@@ -368,6 +368,10 @@ pub fn use_custom_objectpack_arc_names(
         asm!("mov x3, x22");
 
         for name in OBJECTPACK_ARC_NAMES {
+            if name[0] == 0 {
+                return;
+            }
+
             getArcOrLoadFromDisk(arc_table, name.as_ptr(), parent_dir_name, heap);
         }
     }
