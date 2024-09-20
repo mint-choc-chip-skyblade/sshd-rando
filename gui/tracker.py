@@ -21,6 +21,7 @@ from PySide6.QtWidgets import (
     QMessageBox,
     QLabel,
     QComboBox,
+    QCheckBox,
     QPushButton,
     QLayout,
     QSpacerItem,
@@ -76,6 +77,8 @@ class Tracker:
         self.own_dungeon_key_locations: list[tuple[Item, list[Location]]] = []
         self.sphere_tracked_items: dict[Location, str]
         self.allow_sphere_tracking: bool = False
+        self.only_accessible: bool = False
+        self.only_unchecked: bool = False
 
         # Holds which entrance is connected to which target
         self.connected_entrances: dict[Entrance, Entrance] = {}
@@ -812,6 +815,10 @@ class Tracker:
         # Remember if the user was tracking spheres
         self.allow_sphere_tracking |= autosave.get("allow_sphere_tracking", False)
 
+        # Load back in accessible and unchecked options
+        self.only_accessible |= autosave.get("only_accessible", False)
+        self.only_unchecked |= autosave.get("only_unchecked", False)
+
         if self.allow_sphere_tracking:
             self.ui.toggle_sphere_tracking_button.setText("Disable Sphere Tracking")
 
@@ -1073,6 +1080,7 @@ class Tracker:
             self.ui.check_all_in_logic_button.setVisible(area_name != "Root")
             self.ui.uncheck_all_button.setVisible(area_name != "Root")
             self.ui.set_hints_button.setVisible(area_name != "Root")
+            self.set_label_visibility()
 
     def show_area_location_info(self, area_name: str) -> None:
         area_button = self.areas.get(area_name, None)
@@ -1107,11 +1115,32 @@ class Tracker:
             self.clear_layout(self.ui.tracker_locations_info_layout)
             pt_size = 20
 
+            # Layouts used for the info area
+            info_outer_layout = QVBoxLayout()
+            info_inner_top_layout = QHBoxLayout()
+            info_inner_bottom_layout = QHBoxLayout()
+
             area_name_label = QLabel()
             area_name_label.setObjectName("area_name_label")
             area_name_label.setStyleSheet(f"font-size: {pt_size}pt")
             area_name_label.setMargin(10)
-            self.ui.tracker_locations_info_layout.addWidget(area_name_label)
+
+            # Add a way to filter labels for Everything Discovered
+            filter_label = QLabel("Filter:")
+            filter_label.setObjectName("location_filter_label")
+            filter_line_edit = QLineEdit("")
+            filter_line_edit.setObjectName("label_filter_lineedit")
+            filter_line_edit.textChanged.connect(self.set_label_visibility)
+
+            # Add checkboxes to filter for only accessible locations and/or only unchecked locations
+            accessible_checkbox = QCheckBox("Accessible")
+            accessible_checkbox.setObjectName("accessible_checkbox")
+            accessible_checkbox.clicked.connect(self.set_label_visibility)
+            accessible_checkbox.setChecked(self.only_accessible)
+            unchecked_checkbox = QCheckBox("Unchecked")
+            unchecked_checkbox.setObjectName("unchecked_checkbox")
+            unchecked_checkbox.clicked.connect(self.set_label_visibility)
+            unchecked_checkbox.setChecked(self.only_unchecked)
 
             locations_remaining_label = QLabel()
             locations_remaining_label.setObjectName("area_things_remaining_label")
@@ -1119,15 +1148,27 @@ class Tracker:
                 f"font-size: {pt_size}pt; qproperty-alignment: {int(QtCore.Qt.AlignmentFlag.AlignRight)};"
             )
             locations_remaining_label.setMargin(10)
-            self.ui.tracker_locations_info_layout.addWidget(locations_remaining_label)
 
             show_entrances_button = TrackerShowEntrancesButton("")
             show_entrances_button.show_area_entrances.connect(self.show_area_entrances)
-            self.ui.tracker_locations_info_layout.addWidget(show_entrances_button)
 
             show_locations_button = TrackerShowLocationsButton("")
             show_locations_button.show_area_locations.connect(self.show_area_locations)
-            self.ui.tracker_locations_info_layout.addWidget(show_locations_button)
+
+            # Add everything to the layouts
+            info_inner_top_layout.addWidget(area_name_label)
+            info_inner_top_layout.addWidget(locations_remaining_label)
+            info_inner_top_layout.addWidget(show_entrances_button)
+            info_inner_top_layout.addWidget(show_locations_button)
+            info_inner_bottom_layout.addWidget(filter_label)
+            info_inner_bottom_layout.addWidget(filter_line_edit)
+            info_inner_bottom_layout.addWidget(accessible_checkbox)
+            info_inner_bottom_layout.addWidget(unchecked_checkbox)
+            info_inner_bottom_layout.setSpacing(10)
+            info_inner_bottom_layout.setContentsMargins(10, 10, 10, 10)
+            info_outer_layout.addLayout(info_inner_top_layout)
+            info_outer_layout.addLayout(info_inner_bottom_layout)
+            self.ui.tracker_locations_info_layout.addLayout(info_outer_layout)
 
     def show_area_entrances(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, None):
@@ -1183,6 +1224,7 @@ class Tracker:
 
             self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
             self.ui.tracker_locations_scroll_layout.addLayout(right_layout)
+            self.set_label_visibility()
         else:
             self.clear_layout(self.ui.tracker_locations_scroll_layout)
             self.clear_layout(self.ui.tracker_locations_info_layout)
@@ -1240,7 +1282,8 @@ class Tracker:
         filter_label = QLabel("Filter:")
         filter_label.setMargin(10)
         filter_line_edit = QLineEdit("")
-        filter_line_edit.textChanged.connect(self.on_filter_text_changed)
+        filter_line_edit.setObjectName("label_filter_lineedit")
+        filter_line_edit.textChanged.connect(self.set_label_visibility)
 
         # Add everything to the layouts
         info_inner_top_layout.addWidget(lead_to_label)
@@ -1298,6 +1341,7 @@ class Tracker:
 
         self.ui.tracker_locations_scroll_layout.addLayout(left_layout)
         self.ui.tracker_locations_scroll_layout.addLayout(right_layout)
+        filter_line_edit.setFocus()
 
     def show_current_area(self) -> None:
         if location_label := self.ui.tracker_locations_scroll_area.findChild(
@@ -1309,9 +1353,52 @@ class Tracker:
         ):
             self.show_area_entrances(entrance_label.parent_area_name)
 
-    def on_filter_text_changed(self, filter: str) -> None:
+    # Sets the appropriate entrance and location labels depending on the combination
+    # of the filter text and filter checkboxes
+    def set_label_visibility(self) -> None:
+        filter = self.ui.tracker_tab.findChild(QLineEdit, "label_filter_lineedit")
+        filter_text = filter.text().lower() if filter else ""
+
+        accessible_checkbox = self.ui.tracker_tab.findChild(
+            QCheckBox, "accessible_checkbox"
+        )
+        unchecked_checkbox = self.ui.tracker_tab.findChild(
+            QCheckBox, "unchecked_checkbox"
+        )
+
+        if accessible_checkbox:
+            self.only_accessible = accessible_checkbox.isChecked()
+        if unchecked_checkbox:
+            self.only_unchecked = unchecked_checkbox.isChecked()
+
+        # Only filter target labels by filter text
         for label in self.ui.tracker_tab.findChildren(TrackerTargetLabel):
-            label.setVisible(filter.lower() in label.text().lower())
+            label.setVisible(filter_text in label.text().lower())
+
+        # Filter entrance labels by whether they're accessible and/or unchecked
+        # as well as the text filter
+        for label in self.ui.tracker_tab.findChildren(TrackerEntranceLabel):
+            visible = (
+                (not self.only_accessible or label.entrance_is_accessible())
+                and (not self.only_unchecked or label.entrance.connected_area is None)
+                and (filter_text in label.text().lower())
+            )
+            label.setVisible(visible)
+
+        # Same for location labels
+        for label in self.ui.tracker_tab.findChildren(TrackerLocationLabel):
+            visible = (
+                (
+                    not self.only_accessible
+                    or (
+                        label.recent_search
+                        and label.location in label.recent_search.visited_locations
+                    )
+                )
+                and (not self.only_unchecked or not label.location.marked)
+                and (filter_text in label.text().lower())
+            )
+            label.setVisible(visible)
 
     def on_click_location_label(self, location_area: str, location: Location) -> None:
         should_handle_crystal = location.has_vanilla_gratitude_crystal()
@@ -1369,6 +1456,11 @@ class Tracker:
     ) -> None:
         self.tracker_change_entrance_connections(entrance, target)
 
+        # Clear the filter after connecting an entrance so it doesn't
+        # bleed into filtering the entrances
+        filter = self.ui.tracker_tab.findChild(QLineEdit, "label_filter_lineedit")
+        filter.clear()
+
         # Re-list the parent areas entrances if there are any
         parent_area = self.areas.get(parent_area_name, None)
         if parent_area and parent_area.entrances:
@@ -1398,10 +1490,27 @@ class Tracker:
         self.update_tracker()
         self.compute_tooltips()
 
+    # Disconnect the passed in entrance from it's proper target entrance
     def tracker_disconnect_entrance(self, entrance: Entrance) -> None:
-        if target := self.connected_entrances.get(entrance, None):
+        # Check the regular entrance first
+        target = None
+        if entrance in self.connected_entrances:
+            target = self.connected_entrances[entrance]
             restore_connections(entrance, target)
             del self.connected_entrances[entrance]
+        # If the entrance is coupled and instead saved as the reverse connection
+        # check for that instead
+        elif (
+            not entrance.decoupled
+            and entrance.replaces
+            and entrance.replaces.reverse in self.connected_entrances
+        ):
+            reverse = entrance.replaces.reverse
+            target = self.connected_entrances[reverse]
+            restore_connections(reverse, target)
+            del self.connected_entrances[reverse]
+
+        if target:
             self.update_areas_locations()
             self.update_areas_entrances()
             self.update_tracker()
@@ -1575,6 +1684,7 @@ class Tracker:
         if self.allow_sphere_tracking:
             self.update_spheres()
             self.show_sphere_tracking_info()
+        self.set_label_visibility()
 
     def update_areas_locations(self) -> None:
         # Clear all locations before reassigning
@@ -1643,6 +1753,8 @@ class Tracker:
             if not dungeon.active
         ]
         autosave["allow_sphere_tracking"] = self.allow_sphere_tracking
+        autosave["only_accessible"] = self.only_accessible
+        autosave["only_unchecked"] = self.only_unchecked
         autosave["sphere_tracked_items"] = {
             loc.name: (item_name, loc.tracked_item_image)
             for loc, item_name in self.sphere_tracked_items.items()

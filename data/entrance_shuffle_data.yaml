@@ -1677,7 +1677,7 @@
         entrance: 100 # Entrance added for rando
 - type: Overworld
   forward:
-    connection: Lake Floria Emerged Area -> Farore's Lair
+    connection: Lake Floria After Emerged Area -> Farore's Lair
     exit_infos:
       - stage: F102
         room: 4
@@ -1688,7 +1688,7 @@
         room: 0
         entrance: 0
   return:
-    connection: Farore's Lair -> Lake Floria Emerged Area
+    connection: Farore's Lair -> Lake Floria After Emerged Area
     can_start_at: false
     exit_infos:
       - stage: F102_2

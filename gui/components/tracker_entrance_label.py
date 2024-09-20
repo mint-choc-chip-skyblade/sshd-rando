@@ -42,28 +42,7 @@ class TrackerEntranceLabel(QLabel):
         self.setMouseTracking(True)
         self.update_text()
 
-    def update_text(self, recent_search_: Search | None = None) -> None:
-        if recent_search_ is not None:
-            self.recent_search = recent_search_
-        connected_area = self.entrance.connected_area
-        original_parent, original_connected = self.entrance.original_name.split(" -> ")
-        first_part = (
-            f"{original_parent} to "
-            if self.entrance.parent_area.hard_assigned_region != self.parent_area_name
-            or self.show_full_connection
-            else ""
-        )
-        self.setText(
-            f"{first_part}{original_connected} -> {connected_area.name if connected_area else '?'}"
-        )
-
-        self.update_color(recent_search_)
-
-    def update_color(self, recent_search_: Search | None = None) -> None:
-        if recent_search_ is not None:
-            self.recent_search = recent_search_
-        # Set the color as blue if accessible, or red if not
-        color = "red"
+    def entrance_is_accessible(self) -> bool:
         if (
             self.recent_search is not None
             and self.entrance.parent_area in self.recent_search.visited_areas
@@ -75,7 +54,40 @@ class TrackerEntranceLabel(QLabel):
                     tod,
                     self.entrance.world,
                 ):
-                    color = "dodgerblue"
+                    return True
+        return False
+
+    def update_text(self, recent_search_: Search | None = None) -> None:
+        if recent_search_ is not None:
+            self.recent_search = recent_search_
+
+        # Take the name of the connected area to start (or just "?" if it isn't connected)
+        connected_area_name = (
+            self.entrance.connected_area.name if self.entrance.connected_area else "?"
+        )
+        # If this entrance has a replacement, then use the second part of the replacement's
+        # original name (this takes into account undecoupled double door names)
+        if self.entrance.replaces:
+            connected_area_name = self.entrance.replaces.original_name.split(" -> ")[1]
+
+        original_parent, original_connected = self.entrance.original_name.split(" -> ")
+        first_part = (
+            f"{original_parent} to "
+            if self.entrance.parent_area.hard_assigned_region != self.parent_area_name
+            or self.show_full_connection
+            else ""
+        )
+        self.setText(f"{first_part}{original_connected} -> {connected_area_name}")
+
+        self.update_color(recent_search_)
+
+    def update_color(self, recent_search_: Search | None = None) -> None:
+        if recent_search_ is not None:
+            self.recent_search = recent_search_
+        # Set the color as blue if accessible, or red if not
+        color = "red"
+        if self.entrance_is_accessible():
+            color = "dodgerblue"
 
         self.setStyleSheet(
             TrackerEntranceLabel.default_stylesheet.replace("COLOR", color)
