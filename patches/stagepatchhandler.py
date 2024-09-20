@@ -623,7 +623,9 @@ def object_delete(bzs: dict, object_delete: dict):
         obj = get_entry_from_bzs(bzs=bzs, object_def=object_to_delete, remove=True)
 
         if obj is None:
-            raise Exception(f"Cannot find object:\nObject: {obj}\nPatch: {object_delete}")
+            raise Exception(
+                f"Cannot find object:\nObject: {obj}\nPatch: {object_delete}"
+            )
 
 
 def object_patch(bzs: dict, object_patch: dict):
@@ -796,7 +798,6 @@ class StagePatchHandler:
             ):
                 object_patches.append(obj_patch)
 
-
             for room_bzs_path in (CACHE_BZS_PATH / stage_name).glob("room*"):
                 roomid = int(room_bzs_path.name.split(".bzs")[0][5:])
 
@@ -959,15 +960,23 @@ class StagePatchHandler:
                             f"Object name: {object_name} not currently supported for check patching."
                         )
 
-                bzs_u8.add_file_data(f"dat/{stage_name}_room_{roomid}.bzs", build_bzs(room_bzs))
+                bzs_u8.add_file_data(
+                    f"dat/{stage_name}_room_{roomid}.bzs", build_bzs(room_bzs)
+                )
 
-            update_progress_value(get_progress_value_from_range(
-                80, 20, current_stage_num, len(bzs_cache_stage_paths)
-            ))
+            update_progress_value(
+                get_progress_value_from_range(
+                    80, 20, current_stage_num, len(bzs_cache_stage_paths)
+                )
+            )
 
-        write_bytes_create_dirs(self.base_output_path / "Stage" / "bzs.arc", bzs_u8.build_U8())
+        write_bytes_create_dirs(
+            self.base_output_path / "Stage" / "bzs.arc", bzs_u8.build_U8()
+        )
 
-        print(f"Patching stages took {(time.process_time() - start_stage_patching_time)} seconds")
+        print(
+            f"Patching stages took {(time.process_time() - start_stage_patching_time)} seconds"
+        )
 
     def remove_unnecessary_patches(
         self, onlyif_handler: ConditionalPatchHandler
@@ -1001,7 +1010,11 @@ class StagePatchHandler:
             for bzs_file_name in BZS_FILE_HASHES[stage_name]:
                 bzs_stage_file_path = bzs_stage_dir_path / bzs_file_name
 
-                if not bzs_stage_file_path.exists() or BZS_FILE_HASHES[stage_name][bzs_file_name] != hashlib.sha256(bzs_stage_file_path.read_bytes()).hexdigest():
+                if (
+                    not bzs_stage_file_path.exists()
+                    or BZS_FILE_HASHES[stage_name][bzs_file_name]
+                    != hashlib.sha256(bzs_stage_file_path.read_bytes()).hexdigest()
+                ):
                     files_to_extract.append(bzs_file_name)
 
             if len(files_to_extract) > 0:
@@ -1011,7 +1024,7 @@ class StagePatchHandler:
 
                     if bzs_stage_file_path.exists():
                         bzs_stage_file_path.unlink()
-                    
+
                     full_stage_path = stage_path / "NX" / f"{stage_name}_stg_l0.arc.LZ"
                     stage_u8 = U8File.get_parsed_U8_from_path(full_stage_path, True)
 
@@ -1019,26 +1032,39 @@ class StagePatchHandler:
                         bzs = stage_u8.get_file_data("dat/stage.bzs")
                     else:
                         roomid = bzs_file_name.split(".bzs")[0][-2:]
-                        
+
                         if roomid.startswith("_"):
                             roomid = "0" + roomid[-1]
 
-                        room_u8 = stage_u8.get_parsed_U8_from_this_U8(f"rarc/{stage_name}_r{roomid}.arc")
+                        room_u8 = stage_u8.get_parsed_U8_from_this_U8(
+                            f"rarc/{stage_name}_r{roomid}.arc"
+                        )
                         bzs = room_u8.get_file_data("dat/room.bzs")
-                    
-                    if bzs is None:
-                        raise Exception(f"Failed to extract data from stage {stage_name}.\nCould not read bzs data for {bzs_stage_file_path}.")
 
-                    if BZS_FILE_HASHES[stage_name][bzs_file_name] != hashlib.sha256(bzs).hexdigest():
-                        raise Exception(f"The bzs data extracted from stage {stage_name} is not correct and cannot be used. Please verify your stage files are correct and try again.")
+                    if bzs is None:
+                        raise Exception(
+                            f"Failed to extract data from stage {stage_name}.\nCould not read bzs data for {bzs_stage_file_path}."
+                        )
+
+                    if (
+                        BZS_FILE_HASHES[stage_name][bzs_file_name]
+                        != hashlib.sha256(bzs).hexdigest()
+                    ):
+                        raise Exception(
+                            f"The bzs data extracted from stage {stage_name} is not correct and cannot be used. Please verify your stage files are correct and try again."
+                        )
 
                     bzs_stage_file_path.write_bytes(bzs)
 
             update_progress_value(
-                get_progress_value_from_range(40, 10, current_stage_file_num, len(stage_file_paths))
+                get_progress_value_from_range(
+                    40, 10, current_stage_file_num, len(stage_file_paths)
+                )
             )
-        
-        print(f"Verifying bzs cache took {(time.process_time() - start_cache_time)} seconds")
+
+        print(
+            f"Verifying bzs cache took {(time.process_time() - start_cache_time)} seconds"
+        )
         start_arc_patching_time = time.process_time()
 
         for current_extract_num, extract in enumerate(extracts):
@@ -1090,14 +1116,18 @@ class StagePatchHandler:
                             raise TypeError("Expected type bytes but found None.")
 
                         (CACHE_OARC_PATH / f"{arc_name}.arc").write_bytes(arc_data)
-            
+
             update_progress_value(
                 get_progress_value_from_range(45, 5, current_extract_num, len(extracts))
             )
 
         end_cache_time = time.process_time()
-        print(f"Arc extraction took {(end_cache_time - start_arc_patching_time)} seconds")
-        print(f"Total cache building took {(end_cache_time - start_cache_time)} seconds")
+        print(
+            f"Arc extraction took {(end_cache_time - start_arc_patching_time)} seconds"
+        )
+        print(
+            f"Total cache building took {(end_cache_time - start_cache_time)} seconds"
+        )
 
     def set_oarc_add_remove_from_patches(self):
         for stage, stage_patches in self.stage_patches.items():
@@ -1106,7 +1136,9 @@ class StagePatchHandler:
                     if patch["type"] == "oarcadd":
                         self.stage_oarc_add[(stage, patch["destlayer"])].add(oarc)
                     elif patch["type"] == "oarcdelete":
-                        print(f"Patch with type 'oarcdelete' will be ignored. Stages are no longer patched and arcs cannot be removed from them.\n\tPatch: {patch}")
+                        print(
+                            f"Patch with type 'oarcdelete' will be ignored. Stages are no longer patched and arcs cannot be removed from them.\n\tPatch: {patch}"
+                        )
                         # self.stage_oarc_remove[(stage, patch["layer"])].add(oarc)
 
     def add_oarc_for_check(self, stage: str, layer: int, oarc: str):

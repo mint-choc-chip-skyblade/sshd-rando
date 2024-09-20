@@ -68,7 +68,9 @@ def generate_randomizer(config: Config) -> list[World]:
         worlds[i].build()
 
         end_world_build_time = time.process_time()
-        print(f"Building World {i+1} took {(end_world_build_time - start_world_build_time)} seconds")
+        print(
+            f"Building World {i+1} took {(end_world_build_time - start_world_build_time)} seconds"
+        )
 
     # Give each world a reference back to the list of all worlds
     for world in worlds:

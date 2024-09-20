@@ -81,7 +81,9 @@ class AllPatchHandler:
         )
 
         update_progress_value(50)
-        objectpack_arc_names = patch_object_pack(self.world.config.output_dir / OBJECTPACK_PATH_TAIL)
+        objectpack_arc_names = patch_object_pack(
+            self.world.config.output_dir / OBJECTPACK_PATH_TAIL
+        )
         self.asm_patch_handler.objectpack_arc_names = objectpack_arc_names
 
         update_progress_value(60)
@@ -104,7 +106,9 @@ class AllPatchHandler:
             self.conditional_patch_handler, self.world.setting("language")
         )
 
-        print(f"Patching events took {(time.process_time() - start_event_patching_time)} seconds")
+        print(
+            f"Patching events took {(time.process_time() - start_event_patching_time)} seconds"
+        )
 
         update_progress_value(90)
         self.asm_patch_handler.patch_all_asm(self.world, self.conditional_patch_handler)

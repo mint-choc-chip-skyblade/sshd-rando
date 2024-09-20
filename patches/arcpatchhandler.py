@@ -20,8 +20,10 @@ def patch_object_pack(object_pack_output_path: Path) -> list[str]:
         oarc_path = CACHE_OARC_PATH / arc_name
 
         objectpack_arc.add_file_data(f"oarc/{arc_name}", oarc_path.read_bytes())
-    
-    print(f"Creating ObjectPack took {(time.process_time() - start_objectpack_creation_time)} seconds")
+
+    print(
+        f"Creating ObjectPack took {(time.process_time() - start_objectpack_creation_time)} seconds"
+    )
     start_objectpack_rebuilding_time = time.process_time()
 
     print_progress_text("Rebuilding ObjectPack")
@@ -30,7 +32,11 @@ def patch_object_pack(object_pack_output_path: Path) -> list[str]:
     )
 
     end_objectpack_patching_time = time.process_time()
-    print(f"Rebuilding ObjectPack took {(end_objectpack_patching_time - start_objectpack_rebuilding_time)} seconds")
-    print(f"Total ObjectPack creation took {(end_objectpack_patching_time - start_objectpack_creation_time)} seconds")
+    print(
+        f"Rebuilding ObjectPack took {(end_objectpack_patching_time - start_objectpack_rebuilding_time)} seconds"
+    )
+    print(
+        f"Total ObjectPack creation took {(end_objectpack_patching_time - start_objectpack_creation_time)} seconds"
+    )
 
     return [arc_name[6:-4] for arc_name in objectpack_arc.get_all_paths()]

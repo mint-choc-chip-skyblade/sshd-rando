@@ -245,7 +245,9 @@ class ASMPatchHandler:
                 SDK_NSO_OFFSETS,
             )
 
-            print(f"Patching sdk.nso took {(time.process_time() - asm_patching_start_time)} seconds")
+            print(
+                f"Patching sdk.nso took {(time.process_time() - asm_patching_start_time)} seconds"
+            )
 
         start_main_patching_time = time.process_time()
         temp_dir = tempfile.TemporaryDirectory()
@@ -272,9 +274,11 @@ class ASMPatchHandler:
                 MAIN_NSO_OFFSETS,
                 extra_diffs_path=temp_dir_name,
             )
-        
+
         update_progress_value(93)
-        print(f"Patching main.nso took {(time.process_time() - start_main_patching_time)} seconds")
+        print(
+            f"Patching main.nso took {(time.process_time() - start_main_patching_time)} seconds"
+        )
         start_subsdk8_patching_time = time.process_time()
 
         temp_dir = tempfile.TemporaryDirectory()
@@ -315,10 +319,14 @@ class ASMPatchHandler:
                 SUBSDK_NSO_OFFSETS,
                 extra_diffs_path=temp_dir_name,
             )
-        
+
         asm_patching_end_time = time.process_time()
-        print(f"Patching subsdk8.nso took {(asm_patching_end_time - start_subsdk8_patching_time)} seconds")
-        print(f"Total asm patching took {(asm_patching_end_time - asm_patching_start_time)} seconds")
+        print(
+            f"Patching subsdk8.nso took {(asm_patching_end_time - start_subsdk8_patching_time)} seconds"
+        )
+        print(
+            f"Total asm patching took {(asm_patching_end_time - asm_patching_start_time)} seconds"
+        )
 
     def patch_starting_entrance(self, output_path: Path, world: World):
         try:
@@ -564,14 +572,20 @@ class ASMPatchHandler:
             ],  # COLOR_CHANGE_DELAY
         }
 
-        init_rw_globals_dict[0x712e600000] = [int(byte) for byte in struct.pack("<I", len(self.objectpack_arc_names))]
+        init_rw_globals_dict[0x712E600000] = [
+            int(byte) for byte in struct.pack("<I", len(self.objectpack_arc_names))
+        ]
 
         max_name_len = 24
         for name_index, name in enumerate(self.objectpack_arc_names):
             name_bytes = [ord(char) for char in name.ljust(max_name_len, "\0")]
-            init_rw_globals_dict[0x712e600008 + (max_name_len * name_index)] = name_bytes
-        
-        init_rw_globals_dict[0x712e600008 + (max_name_len * (name_index + 1))] = [0]*max_name_len
+            init_rw_globals_dict[0x712E600008 + (max_name_len * name_index)] = (
+                name_bytes
+            )
+
+        init_rw_globals_dict[0x712E600008 + (max_name_len * (name_index + 1))] = [
+            0
+        ] * max_name_len
 
         yaml_write(output_path, init_rw_globals_dict)
 

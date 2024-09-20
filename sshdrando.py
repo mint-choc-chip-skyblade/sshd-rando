@@ -54,4 +54,6 @@ else:
 
         randomize()
 
-        print(f"Total randomization took {(time.process_time() - start_randomization_time)} seconds")
+        print(
+            f"Total randomization took {(time.process_time() - start_randomization_time)} seconds"
+        )
