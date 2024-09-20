@@ -253,6 +253,9 @@ class U8File:
         path = path.lstrip("/")
 
         for part in path.split("/"):
+            if foundindex == total_nodes:
+                return None
+
             currnode = self.nodes[foundindex]
 
             if isinstance(currnode, DirNode):
@@ -310,6 +313,11 @@ class U8File:
         foundindex = 1
 
         for part in path.split("/"):
+            # Handle empty U8
+            if len(self.nodes) == foundindex:
+                new_node.set_name(part)
+                continue
+
             currnode = self.nodes[foundindex]
 
             if isinstance(currnode, DirNode):
