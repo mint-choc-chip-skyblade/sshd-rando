@@ -64,7 +64,6 @@ TRACKER_AUTOSAVE_PATH = Path(userdata_path) / "tracker_autosave_RANDOMIZER_VERSI
 CACHE_PATH = Path(userdata_path) / "cache"
 CACHE_OARC_PATH = CACHE_PATH / "oarc"
 CACHE_BZS_PATH = CACHE_PATH / "bzs"
-U8_TEMPLATE_PATH = RANDO_ROOT_PATH / "assets" / "U8_Template.arc"
 BZS_TEMPLATE_PATH = RANDO_ROOT_PATH / "assets" / "BZS_Template.arc"
 
 STAGE_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "stagepatches.yaml"
