@@ -237,7 +237,9 @@ def assign_hint_regions_and_dungeon_locations(starting_area: Area):
     # if there are any dungeon regions
     for region in hint_regions:
         if region in dungeon_regions:
-            locations = [la.location for la in area.locations]
+            locations = [
+                la.location for area in already_checked for la in area.locations
+            ]
             dungeon = area.world.get_dungeon(region)
             for loc in locations:
                 if loc not in dungeon.locations:
