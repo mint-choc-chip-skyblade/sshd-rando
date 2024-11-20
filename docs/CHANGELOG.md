@@ -1,14 +1,17 @@
 # Changelog
 
-## Version 1.4-beta
+## Version 1.4
 
 ### Fixes
-* Fixes dungeon end locations not appearing on the tracker
-* Fixes the tracker errors when playing on Linux (actually for real this time)
-  * Fixes the map assets being missing
-  * Fixes the errors when trying to mark various items
-* Fixes hint region assignment
+* Fixed dungeon end locations not appearing on the tracker
+* Fixed the tracker errors when playing on Linux (actually for real this time)
+  * Fixed the map assets being missing
+  * Fixed the errors when trying to mark various items
+* Fixed incorrect logic for the `Lake Floria - Chest near Bird Statue`
+* Fixed hint region assignment
   * Shipyard locations should now be correctly hinted to account for not being able to ride the minecart backwards
+* Fixed incorrect labelling of double doors when the `Decouple Double Doors` setting is disabled
+* Fixed error when re-assigning entrances when the `Decouple Entrances` setting is disabled
 
 
 
