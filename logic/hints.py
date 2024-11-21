@@ -476,6 +476,26 @@ def generate_location_hint_locations(
         )
 
 
+def _process_hint_plurality(hint_text: str, is_plural: bool) -> str:
+    plural_start_index = hint_text.index("|")
+    plural_end_index = hint_text.index("|", plural_start_index + 1)
+
+    # Removes the pipes as well
+    plural_substring = hint_text[plural_start_index + 1 : plural_end_index]
+    plural_substring_parts = plural_substring.split("/")
+    plural_substring_final = (
+        plural_substring_parts[1] if is_plural else plural_substring_parts[0]
+    )
+
+    hint_text = (
+        hint_text[:plural_start_index]
+        + plural_substring_final
+        + hint_text[plural_end_index + 1 :]
+    )
+
+    return hint_text
+
+
 def generate_path_hint_message(location: Location, goal_location: Location) -> None:
     hint_regions = list(
         set(
@@ -494,8 +514,6 @@ def generate_path_hint_message(location: Location, goal_location: Location) -> N
         ]
     )
 
-    plurality_en = "is" if len(hint_regions) == 1 else "are"
-
     goal_name_text = get_text_data(goal_location.name, "goal_name").apply_text_color(
         "r"
     )
@@ -505,10 +523,11 @@ def generate_path_hint_message(location: Location, goal_location: Location) -> N
         .replace("<goal_name>", goal_name_text)
     )
 
+    # Handle plurality
     for lang in full_text.SUPPORTED_LANGUAGES:
-        if full_text.text[lang] != "":
-            full_text.text[lang] = full_text.text[lang].replace(
-                "|is/are|", plurality_en
+        if full_text.text[lang] != "" and "|" in full_text.text[lang]:
+            full_text.text[lang] = _process_hint_plurality(
+                full_text.text[lang], len(hint_regions) > 1
             )
 
     location.hint.text = full_text
@@ -546,11 +565,20 @@ def generate_item_hint_message(location: Location) -> None:
         item_text_color
     )
 
-    location.hint.text = (
+    full_text = (
         get_text_data("Item Hint")
         .replace("<item_pretty_or_cryptic_name>", item_text)
         .replace("<regions>", hint_region_text)
     )
+
+    # Handle plurality
+    for lang in full_text.SUPPORTED_LANGUAGES:
+        if full_text.text[lang] != "" and "|" in full_text.text[lang]:
+            full_text.text[lang] = _process_hint_plurality(
+                full_text.text[lang], item_text.is_plural(lang)
+            )
+
+    location.hint.text = full_text
     location.hint.type = "Item"
 
 
@@ -564,11 +592,20 @@ def generate_location_hint_message(location: Location) -> None:
     location_text = get_text_data(location.name, type_).apply_text_color(color)
     item_text = get_text_data(item.name, type_).apply_text_color(color)
 
-    location.hint.text = (
+    full_text = (
         get_text_data("Location Hint")
         .replace("<location_pretty_or_cryptic_name>", location_text)
         .replace("<item_pretty_or_cryptic_name>", item_text)
     )
+
+    # Handle plurality
+    for lang in full_text.SUPPORTED_LANGUAGES:
+        if full_text.text[lang] != "" and "|" in full_text.text[lang]:
+            full_text.text[lang] = _process_hint_plurality(
+                full_text.text[lang], item_text.is_plural(lang)
+            )
+
+    location.hint.text = full_text
 
 
 def assign_gossip_stone_hints(
@@ -824,29 +861,42 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                     ).apply_text_color("r")
                     # If there are still more useful locations in the silent realm, then list how many there are
                     if len(useful_locations) == 1:
-                        hint.text += get_text_data("Trial Direct One").replace(
+                        hint_text_to_append = get_text_data("Trial Direct One").replace(
                             "<item>", first_item_text
                         )
                     elif len(useful_locations) == 2:
-                        hint.text += get_text_data("Trial Direct Two").replace(
+                        hint_text_to_append = get_text_data("Trial Direct Two").replace(
                             "<item>", first_item_text
                         )
                     else:
                         useful_locations.remove(most_useful_location)
-                        hint.text += (
+                        hint_text_to_append = (
                             get_text_data("Trial Direct Three Plus")
                             .replace("<item>", first_item_text)
                             .replace("%d", str(len(useful_locations)))
                         )
 
+                    # Handle plurality
+                    for lang in hint_text_to_append.SUPPORTED_LANGUAGES:
+                        if (
+                            hint_text_to_append.text[lang] != ""
+                            and "|" in hint_text_to_append.text[lang]
+                        ):
+                            hint_text_to_append.text[lang] = _process_hint_plurality(
+                                hint_text_to_append.text[lang],
+                                first_item_text.is_plural(lang),
+                            )
+
+                    hint.text += hint_text_to_append
+
         logging.getLogger("").debug(f'Generated hint "{hint.text}" for song {song}')
 
 
-def locations_are_all_junk(locations: list[Location]) -> None:
+def locations_are_all_junk(locations: list[Location]) -> bool:
     return all([not loc.current_item.is_major_item for loc in locations])
 
 
-def get_hintable_location(locations: list[Location]) -> Location:
+def get_hintable_location(locations: list[Location]) -> Location | None:
     for location in locations:
         if not location.is_hinted:
             return location
