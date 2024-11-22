@@ -12,8 +12,10 @@ def randomize():
     args = get_program_args()
 
     if not args.dryrun:
+        update_progress_value(0)
         verify_extract()
 
+    update_progress_value(5)
     worlds = generate(CONFIG_PATH)
 
     if not args.dryrun:

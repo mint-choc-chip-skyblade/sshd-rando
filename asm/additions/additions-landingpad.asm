@@ -211,6 +211,15 @@ b.eq prevent_pyrup_fire_when_underground2
 cmp w8, #65
 b.eq set_top_dowsing_icon
 
+cmp w8, #66
+b.eq load_custom_bzs
+
+cmp w8, #67
+b.eq use_custom_bzs
+
+cmp w8, #68
+b.eq use_custom_objectpack_arc_names
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

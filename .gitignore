@@ -9,6 +9,7 @@ sshdr_output
 
 # Seriously, don't commit Nintendo's IP
 oarccache
+cache
 
 *__pycache__*
 .pytest_cache

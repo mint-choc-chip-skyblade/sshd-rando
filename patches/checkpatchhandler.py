@@ -19,6 +19,7 @@ def determine_check_patches(
     stage_patch_handler: StagePatchHandler,
     event_patch_handler: EventPatchHandler,
 ):
+    print_progress_text("Creating Location Patches")
     # Custom flags currently use 10 total bits as follows
     # in order of most significant to least significant bits:
 
