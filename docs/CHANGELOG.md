@@ -2,6 +2,9 @@
 
 ## Version 1.4
 
+### Additions and Changes
+* Added community German language translations for the text added and changed by the randomizer
+
 ### Fixes
 * Fixed dungeon end locations not appearing on the tracker
 * Fixed the tracker errors when playing on Linux (actually for real this time)
