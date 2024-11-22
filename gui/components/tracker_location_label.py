@@ -1,4 +1,3 @@
-from collections import Counter
 import platform
 from PySide6.QtWidgets import QLabel, QToolTip
 from PySide6.QtGui import (
@@ -8,25 +7,17 @@ from PySide6.QtGui import (
     QPixmap,
     QFontMetrics,
     QPainter,
-    QTextDocumentFragment,
 )
 from PySide6 import QtCore
 from PySide6.QtCore import Signal, QPoint
 
 from constants.guiconstants import TRACKER_LOCATION_TOOLTIP_STYLESHEET
 from constants.itemnames import PROGRESSIVE_SWORD
-from constants.trackerprettyitems import PRETTY_ITEM_NAMES
-from logic.item import Item
 from logic.location import Location
-from logic.requirements import (
-    TOD,
-    Requirement,
-    RequirementType,
-    evaluate_requirement_at_time,
-)
 from logic.search import Search
 
 from filepathconstants import TRACKER_ASSETS_PATH
+from .tooltip_formatting import get_tooltip_text
 
 
 class TrackerLocationLabel(QLabel):
@@ -181,168 +172,8 @@ class TrackerLocationLabel(QLabel):
         # so we must offset the height to compensate
         if platform.system() == "Darwin":
             coords.setY(coords.y() - 18)
-        QToolTip.showText(coords, self.get_tooltip_text(), self)
+        QToolTip.showText(
+            coords, get_tooltip_text(self, self.location.computed_requirement), self
+        )
 
         return super().mouseMoveEvent(ev)
-
-    def get_tooltip_text(self) -> str:
-        req = self.location.computed_requirement
-        sort_requirement(req)
-        match req.type:
-            case RequirementType.AND:
-                # Computed requirements have a top-level AND requirement
-                # We display them as a list of bullet points to the user
-                # This fetches a list of the terms ANDed together
-                text = [self.format_requirement(a) for a in req.args]
-            case _:
-                # The requirement is just one term, so format the requirement
-                text = [self.format_requirement(req)]
-
-        tooltip_font_metrics = QFontMetrics(QToolTip.font())
-        # Find the width of the longest requirement description, adding a 16px buffer for the bullet point
-        max_line_width = (
-            max(
-                [
-                    tooltip_font_metrics.horizontalAdvance(
-                        QTextDocumentFragment.fromHtml(line).toPlainText()
-                    )
-                    for line in text + ["Item Requirements:"]
-                ]
-            )
-            + 16
-        )
-        # Set the tooltip's min and max width to ensure the tooltip is the right size and line-breaks properly
-        self.setStyleSheet(
-            self.styleSheet()
-            .replace("MINWIDTH", str(min(max_line_width, self.width() - 3)))
-            .replace("MAXWIDTH", str(self.width() - 3))
-        )
-        return (
-            "Item Requirements:"
-            + '<ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 8px; margin-right: 0px; -qt-list-indent:0;"><li>'
-            + "</li><li>".join(text)
-            + "</li></ul>"
-        )
-
-    def format_requirement(self, req: Requirement, is_top_level=True) -> str:
-        match req.type:
-            case RequirementType.IMPOSSIBLE:
-                return '<span style="color:red">Impossible (please discover an entrance first)</span>'
-            case RequirementType.NOTHING:
-                return '<span style="color:dodgerblue">Nothing</span>'
-            case RequirementType.ITEM:
-                # Determine if the user has marked this item
-                color = (
-                    "dodgerblue"
-                    if evaluate_requirement_at_time(
-                        req, self.recent_search, TOD.ALL, self.world
-                    )
-                    else "red"
-                )
-                # Get a pretty name for the item if it is the first stage of a progressive item
-                name = pretty_name(req.args[0].name, 1)
-                return f'<span style="color:{color}">{name}</span>'
-            case RequirementType.COUNT:
-                # Determine if the user has enough of this item marked
-                color = (
-                    "dodgerblue"
-                    if evaluate_requirement_at_time(
-                        req, self.recent_search, TOD.ALL, self.world
-                    )
-                    else "red"
-                )
-                # Get a pretty name for the progressive item
-                name = pretty_name(req.args[1].name, req.args[0])
-                return f'<span style="color:{color}">{name}</span>'
-            case RequirementType.WALLET_CAPACITY:
-                # Determine if the user has enough wallet capacity for this requirement
-                color = (
-                    "dodgerblue"
-                    if evaluate_requirement_at_time(
-                        req, self.recent_search, TOD.ALL, self.world
-                    )
-                    else "red"
-                )
-                # TODO: Properly expand into wallet combinations
-                return f'<span style="color:{color}">Wallet >= {req.args[0]}</span>'
-            case RequirementType.GRATITUDE_CRYSTALS:
-                # Determine if the user has enough gratitude crystals marked
-                color = (
-                    "dodgerblue"
-                    if evaluate_requirement_at_time(
-                        req, self.recent_search, TOD.ALL, self.world
-                    )
-                    else "red"
-                )
-                return f'<span style="color:{color}">{req.args[0]} Gratitude Crystals</span>'
-            case RequirementType.TRACKER_NOTE:
-                color = (
-                    "dodgerblue"
-                    if evaluate_requirement_at_time(
-                        req.args[1], self.recent_search, TOD.ALL, self.world
-                    )
-                    else "red"
-                )
-                return f'<span style="color:{color}">{req.args[2]}</span>'
-            case RequirementType.OR:
-                # Recursively join requirements with "or"
-                # Only include parentheses if not at the top level (where they'd be redundant)
-                return (
-                    ("" if is_top_level else "(")
-                    + " or ".join([self.format_requirement(a, False) for a in req.args])
-                    + ("" if is_top_level else ")")
-                )
-            case RequirementType.AND:
-                # Recursively join requirements with "and"
-                # Only include parentheses if not at the top level (where they'd be redundant)
-                return (
-                    ("" if is_top_level else "(")
-                    + " and ".join(
-                        [self.format_requirement(a, False) for a in req.args]
-                    )
-                    + ("" if is_top_level else ")")
-                )
-            case _:
-                raise ValueError("unreachable")
-
-
-def num_terms(req: Requirement):
-    if req.type == RequirementType.AND or req.type == RequirementType.OR:
-        return sum(map(num_terms, req.args))
-    return 1
-
-
-def sort_requirement(req: Requirement):
-    def by_length(req: Requirement):
-        if req.type == RequirementType.AND or req.type == RequirementType.OR:
-            return num_terms(req)
-        return -1
-
-    def by_item(req: Requirement):
-        if req.type == RequirementType.ITEM:
-            return pretty_name(req.args[0].name, 1)
-        elif req.type == RequirementType.COUNT:
-            return pretty_name(req.args[1].name, req.args[0])
-        elif req.type == RequirementType.AND or req.type == RequirementType.OR:
-            return by_item(req.args[0])
-        elif req.type == RequirementType.TRACKER_NOTE:
-            return req.args[2]
-        return ""
-
-    def sort_key(req: Requirement):
-        return (by_length(req), by_item(req))
-
-    if req.type == RequirementType.AND or req.type == RequirementType.OR:
-        for expr in req.args:
-            sort_requirement(expr)
-        req.args.sort(key=sort_key)
-
-
-def pretty_name(item, count):
-    if (pretty_name := PRETTY_ITEM_NAMES.get((item, count), None)) is not None:
-        return pretty_name
-
-    if count > 1:
-        return f"{item} x {count}"
-    else:
-        return item

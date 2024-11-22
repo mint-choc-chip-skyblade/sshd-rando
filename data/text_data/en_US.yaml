@@ -120,13 +120,16 @@
   standard: "You got the <s<Sky Keep>> Map!"
 
 - name: Beedle Half Off Bug Net Text
-  standard: "That's a <y<Bug Net>>. You know, for\ncatching bugs! Insects too.\n\n\nOK, so there aren't so many bugs here,\nbut you'll be able to catch tons with\nthis when there are some!\n\nAnd at half-price of only <r<25 Rupees>>,\nI'm sure you'll make a \"net profit\"!\nWant to buy it?\n[1]OK![2-]No, thanks."
+  standard: "That's a <y<Bug Net>>. You know, for\ncatching bugs! Insects too.
+             \n\n\nOK, so there aren't so many bugs here,\nbut you'll be able to catch tons with\nthis when there are some!
+             \n\nAnd at half-price of only <r<25 Rupees>>,\nI'm sure you'll make a \"net profit\"!\nWant to buy it?\n[1]OK![2-]No, thanks."
 
 - name: Can't buy Pouch text
   standard: "You need an <y<Adventure Pouch>> to buy\nthis!"
 
 - name: Potion Lady Text Patch
-  standard: "Just so you know, I can't sell you a \npotion if you don't have an Empty \nBottle to pour it into!\n\n\x0E\x01\x09\x04\x09\x90For some reason, I like you, though, so\nI'll give you a spare item I've\nbeen keeping here in the stall!\nOh, it's nothing. It's my little gift."
+  standard: "Just so you know, I can't sell you a \npotion if you don't have an Empty \nBottle to pour it into!
+             \n\n\x0E\x01\x09\x04\x09\x90For some reason, I like you, though, so\nI'll give you a spare item I've\nbeen keeping here in the stall!\nOh, it's nothing. It's my little gift."
 
 - name: Does not have slingshot
   standard: "\x0E\x01\x09\x04\x00\x01By the way, <heroname>, I have been \nlooking for new sources of research\nabout <b<plant life>>.\n\nIf you ever find something, please meet\nme <r<in the Knight Academy>>!"
@@ -2204,12 +2207,12 @@
 - name: Isle of Songs - Strike Crest with Goddess Sword
   standard: Isle of Songs - Strike Crest with Goddess Sword
   pretty: Isle of Songs - Strike Crest with Goddess Sword
-  cryptic: the <r<goddess' blade>> reveals
+  cryptic: the <r<goddess' blade>>
 
 - name: Isle of Songs - Strike Crest with Longsword
   standard: Isle of Songs - Strike Crest with Longsword
   pretty: Isle of Songs - Strike Crest with Longsword
-  cryptic: a <r<longsword>> reveals
+  cryptic: a <r<longsword>>
 
 - name: Isle of Songs - Strike Crest with White Sword
   standard: Isle of Songs - Strike Crest with White Sword
@@ -3015,7 +3018,7 @@
 - name: Flooded Faron Woods - Water Dragon's Reward
   standard: Flooded Faron Woods - Water Dragon's Reward
   pretty: Flooded Faron Woods - Water Dragon's Reward
-  cryptic: completing a <r<watery song>> reveals
+  cryptic: completing a <r<watery song>>
 
 - name: Eldin Volcano - Rupee on Ledge before First Room
   standard: Eldin Volcano - Rupee on Ledge before First Room

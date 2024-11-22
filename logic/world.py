@@ -395,10 +395,10 @@ class World:
                 location.has_known_vanilla_item = True
 
     def perform_post_entrance_shuffle_tasks(self) -> None:
-        self.assign_all_areas_hint_regions()
+        self.assign_hint_regions_and_goal_locations()
         self.choose_required_dungeons()
 
-    def assign_all_areas_hint_regions(self):
+    def assign_hint_regions(self) -> None:
         for area in self.areas.values():
             # Assign hint regions to all areas which don't
             # have them at this point. This will also finalize
@@ -417,6 +417,37 @@ class World:
                         ):
                             dungeon.starting_entrance = exit_
 
+    def assign_goal_locations(self) -> None:
+        # Collect all the possible goal locations for each dungeon
+        dungeon_goal_locations = {d: [] for d in self.dungeons}
+        for area in self.areas.values():
+            for loc_access in area.locations:
+                loc = loc_access.location
+                if loc.is_goal_location:
+                    for region in area.hint_regions:
+                        if region in dungeon_goal_locations:
+                            dungeon_goal_locations[region].append(loc)
+
+        # Set a single goal location for each dungeon
+        for dungeon in self.dungeons.values():
+            possible_goal_locations = dungeon_goal_locations[dungeon.name]
+            # If a goal location becomes unreachable due to beatable only logic,
+            # then it's possible a dungeon may not be assigned a goal location.
+            # Dungeons without a goal location cannot be chosen as required dungeons
+            if possible_goal_locations:
+                dungeon.goal_location = random.choice(possible_goal_locations)
+                logging.getLogger("").debug(
+                    f"{dungeon.goal_location} chosen as goal location for {dungeon}"
+                )
+            else:
+                logging.getLogger("").debug(
+                    f"No goal location could be chosen for {dungeon}"
+                )
+
+    def assign_hint_regions_and_goal_locations(self):
+        self.assign_hint_regions()
+        self.assign_goal_locations()
+
     def choose_required_dungeons(self) -> None:
         num_required_dungeons = self.setting("required_dungeons").value_as_number()
         num_chosen_dungeons = 0
@@ -431,7 +462,9 @@ class World:
         if self.setting("dungeons_include_sky_keep") == "off":
             sky_keep = self.get_dungeon("Sky Keep")
             sky_keep.starting_entrance.disabled = True
-            dungeons.remove(sky_keep)
+            # Sky Keep may not be in the list already if it was never assigned a goal location
+            if sky_keep in dungeons:
+                dungeons.remove(sky_keep)
 
         random.shuffle(dungeons)
         item_pool = get_complete_item_pool(self.worlds)
