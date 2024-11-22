@@ -74,10 +74,13 @@ class Text:
             # raise RuntimeError(f'Unsupported language "{lang}"')
         return self.text[lang]
 
-    def plurality(self, lang: str) -> str:
+    def get_plurality(self, lang: str) -> str:
         return self.plurality[lang]
 
-    def gender(self, lang: str) -> str:
+    def is_plural(self, lang: str) -> bool:
+        return self.plurality[lang] == Text.PLURAL
+
+    def get_gender(self, lang: str) -> str:
         return self.gender[lang]
 
     def replace(self, old: str, new: Union[str, "Text"], count: int = -1) -> "Text":
@@ -281,67 +284,111 @@ def break_lines(text: str) -> str:
     # Widths of all characters in pixels
     char_widths = {
         "a": 17,
+        "à": 17,  # \u00e0
         "á": 17,  # \u00e1
         "â": 17,
+        "â": 17,  # \u00e2
+        "ã": 17,  # \u00e3
+        "ä": 17,  # \u00e3
+        "å": 17,  # \u00e4
         "b": 17,
         "c": 15,
-        "ç": 15,
+        "ç": 15,  # \u00e7
         "d": 18,
         "e": 15,
-        "ê": 15,
+        "è": 15,  # \u00e8
         "é": 15,  # \u00e9
+        "ê": 15,  # \u00ea
+        "ë": 15,  # \u00eb
         "f": 15,
         "g": 17,
         "h": 18,
         "i": 9,
+        "ì": 9,  # \u00ec
         "í": 9,  # \u00ed
-        "î": 9,
+        "î": 9,  # \u00ee
+        "ï": 9,  # \u00ef
         "j": 10,
         "k": 20,
         "l": 10,
         "m": 27,
         "n": 19,
+        "ñ": 19,  # \u00f1
         "o": 17,
+        "ò": 17,  # \u00f2
         "ó": 17,  # \u00f3
+        "ô": 17,  # \u00f4
+        "õ": 17,  # \u00f5
+        "ö": 17,  # \u00f6
         "p": 18,
         "q": 18,
         "r": 15,
         "s": 13,
         "t": 12,
         "u": 18,
+        "ù": 18,  # \u00f9
         "ú": 18,  # \u00fa
+        "û": 18,  # \u00fb
+        "ü": 18,  # \u00fc
         "v": 16,
         "w": 24,
         "x": 17,
         "y": 16,
+        "ý": 16,  # \u00fd
+        "ÿ": 16,  # \u00ff
         "z": 15,
         "A": 23,
+        "À": 23,  # \u00c0
         "Á": 23,  # \u00c1
+        "Â": 23,  # \u00c2
+        "Ã": 23,  # \u00c3
+        "Ä": 23,  # \u00c4
+        "Å": 23,  # \u00c5
         "B": 22,
+        "ß": 20,  # \u00df
         "C": 23,
+        "Ç": 23,  # \u00c7
         "D": 24,
         "E": 22,
-        "É": 22,
+        "È": 22,  # \u00c8
+        "É": 22,  # \u00c9
+        "Ê": 22,  # \u00ca
+        "Ë": 22,  # \u00cb
         "F": 20,
         "G": 26,
         "H": 27,
         "I": 13,
+        "Ì": 13,  # \u00cc
+        "Í": 13,  # \u00cd
+        "Î": 13,  # \u00ce
+        "Ï": 13,  # \u00cf
         "J": 18,
         "K": 26,
         "L": 21,
         "M": 30,
         "N": 24,
+        "Ñ": 24,  # \u00d1
         "O": 25,
+        "Ò": 25,  # \u00d2
+        "Ó": 25,  # \u00d3
+        "Ô": 25,  # \u00d4
+        "Õ": 25,  # \u00d5
+        "Ö": 25,  # \u00d6
         "P": 21,
         "Q": 24,
         "R": 24,
         "S": 18,
         "T": 22,
         "U": 24,
+        "Ù": 24,  # \u00d9
+        "Ú": 24,  # \u00da
+        "Û": 24,  # \u00db
+        "Ü": 24,  # \u00dc
         "V": 24,
         "W": 30,
         "X": 23,
         "Y": 24,
+        "Ý": 24,  # \u00dd
         "Z": 21,
         "0": 18,
         "1": 18,
@@ -361,6 +408,10 @@ def break_lines(text: str) -> str:
         ".": 7,
         ",": 7,
         "!": 7,
+        ":": 7,
+        ";": 7,
+        "(": 10,  # NEEDS CONFIRMING
+        ")": 10,  # NEEDS CONFIRMING
     }
 
     max_line_length = 695

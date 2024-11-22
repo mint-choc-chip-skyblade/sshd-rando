@@ -84,10 +84,15 @@ def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) ->
     )
 
     # Fi hints
+    # Determines how many hints will be shown back-to-back before a new
+    # eventflow is created. The main limiting factor is the number of
+    # characters the game can fit into the text buffer ~500 iirc
+    FI_HINTS_PER_EVENTFLOW = 6
+
     fi_hint_chunks: list[list[Text]] = []
     fi_hints = [loc.hint.text for loc in world.fi_hints]
-    for i in range(0, len(fi_hints), 8):
-        fi_hint_chunks.append(fi_hints[i : i + 8])
+    for i in range(0, len(fi_hints), FI_HINTS_PER_EVENTFLOW):
+        fi_hint_chunks.append(fi_hints[i : i + FI_HINTS_PER_EVENTFLOW])
 
     if fi_hint_chunks:
         for chunk_index, hints in enumerate(fi_hint_chunks):
