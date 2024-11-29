@@ -147,7 +147,7 @@ class Area:
 
                     # Only add entrances which fit the following criteria
                     # - The entrance is shuffled and not impossible
-                    # - The entrance is decoupled or the entrance insn't connected or the entrance's replaced reverse hasn't been added yet
+                    # - The entrance is decoupled or the entrance isn't connected or the entrance's replaced reverse hasn't been added yet
                     if (
                         entrance.shuffled
                         and entrance.requirement.type != RequirementType.IMPOSSIBLE
