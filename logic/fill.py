@@ -69,7 +69,7 @@ def fill_worlds(worlds: list[World]):
 
 # Assumed fill is an algorithm which statistically places items more
 # evenly across the world compared to forward fill. The idea is that
-# we first startwith all the items, take an item out, search for
+# we first start with all the items, take an item out, search for
 # available locations (picking up any placed items along the way),
 # and choose a random location of the available ones to place the item.
 # Repeat for all items in the items_to_place_list.
@@ -171,7 +171,7 @@ def assumed_fill(
             rollbacks.append(spot_to_fill)
 
 
-# Place the items in items_to_place completel randomly within the allowed locations.
+# Place the items in items_to_place completely randomly within the allowed locations.
 # There are no logic checks with this fill.
 def fast_fill(items_to_place: list[Item], allowed_locations: list[Location]) -> None:
     empty_locations = [
