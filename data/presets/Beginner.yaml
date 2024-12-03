@@ -78,7 +78,7 @@ World 1:
   remove_enemy_music: 'off'
   low_health_beeping_speed: normal
   open_thunderhead: 'off'
-  open_lake_floria: vanilla
+  open_lake_floria: open
   open_earth_temple: 'on'
   open_lmf: open
   open_batreaux_shed: 'on'
