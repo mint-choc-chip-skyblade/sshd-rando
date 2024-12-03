@@ -981,7 +981,7 @@
 
 - name: open_lake_floria
   tracker_important: true
-  default_option: vanilla
+  default_option: open
   pretty_name: Open Lake Floria
   pretty_options:
     - Vanilla
