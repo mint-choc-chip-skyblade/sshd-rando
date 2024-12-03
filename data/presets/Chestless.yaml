@@ -81,13 +81,13 @@ World 1:
   open_lake_floria: vanilla
   open_earth_temple: 'off'
   open_lmf: open
-  open_batreaux_shed: 'off'
+  open_batreaux_shed: 'on'
   shortcut_ios_bridge_complete: 'off'
   shortcut_spiral_log_to_btt: 'on'
   shortcut_logs_near_machi: 'off'
   shortcut_faron_log_to_floria: 'off'
   shortcut_deep_woods_log_before_tightrope: 'off'
-  shortcut_deep_woods_log_before_temple: 'off'
+  shortcut_deep_woods_log_before_temple: 'on'
   shortcut_eldin_entrance_boulder: 'off'
   shortcut_eldin_ascent_boulder: 'off'
   shortcut_vs_flames: 'off'

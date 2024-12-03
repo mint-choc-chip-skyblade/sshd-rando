@@ -22,7 +22,7 @@ World 1:
   lanayru_caves_keys: removed
   boss_keys: own_dungeon
   map_mode: own_dungeon_restricted
-  chest_type_matches_contents: 'all_contents'
+  chest_type_matches_contents: all_contents
   small_keys_in_fancy_chests: 'off'
   path_hints: '3'
   barren_hints: '2'
