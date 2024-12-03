@@ -1084,7 +1084,7 @@
 
 - name: shortcut_deep_woods_log_before_temple
   tracker_important: true
-  default_option: "off"
+  default_option: "on"
   pretty_name: Deep Woods Log before Temple
   pretty_options:
     - "Off"
