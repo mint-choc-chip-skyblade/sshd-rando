@@ -4,7 +4,7 @@ use_plandomizer: false
 plandomizer_file: None
 World 1:
   logic_rules: all_locations_reachable
-  item_pool: extra
+  item_pool: standard
   enable_back_in_time: 'off'
   gratitude_crystal_shuffle: 'on'
   stamina_fruit_shuffle: 'off'
