@@ -48,8 +48,8 @@ World 1:
   skip_horde: 'off'
   skip_g3: 'off'
   skip_demise: 'off'
-  required_dungeons: '6'
-  dungeons_include_sky_keep: 'off'
+  required_dungeons: '7'
+  dungeons_include_sky_keep: 'on'
   empty_unrequired_dungeons: 'off'
   random_bottle_contents: 'on'
   trap_mode: trapsome
