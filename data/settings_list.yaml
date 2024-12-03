@@ -252,7 +252,7 @@
     - anywhere: "Maps can appear anywhere."
 
 - name: chest_type_matches_contents
-  default_option: "off"
+  default_option: "all_contents"
   pretty_name: Chest Type Matches Contents
   pretty_options:
     - "Off"
