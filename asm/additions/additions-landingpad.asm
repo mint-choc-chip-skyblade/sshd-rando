@@ -211,6 +211,12 @@ b.eq prevent_pyrup_fire_when_underground2
 cmp w8, #65
 b.eq set_top_dowsing_icon
 
+cmp w8, #66
+b.eq load_additional_sfx
+
+cmp w8, #67
+b.eq assign_item_textbox_collection_sfx
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
