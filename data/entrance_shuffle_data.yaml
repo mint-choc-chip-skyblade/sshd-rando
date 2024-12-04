@@ -1164,17 +1164,6 @@
         entrance: 7
 - type: Interior
   forward:
-    connection: Skyloft Past Waterfall Cave -> Waterfall Cave
-    exit_infos:
-      - stage: F000
-        room: 0
-        index: 7
-    spawn_info:
-      - stage: D000
-        layer: 0
-        room: 0
-        entrance: 1
-  return:
     connection: Waterfall Cave -> Skyloft Past Waterfall Cave
     exit_infos:
       - stage: D000
@@ -1185,6 +1174,17 @@
         layer: 0
         room: 0
         entrance: 8
+  return:
+    connection: Skyloft Past Waterfall Cave -> Waterfall Cave
+    exit_infos:
+      - stage: F000
+        room: 0
+        index: 7
+    spawn_info:
+      - stage: D000
+        layer: 0
+        room: 0
+        entrance: 1
 - type: Interior
   forward:
     connection: Bamboo Island -> Bamboo Island Interior
