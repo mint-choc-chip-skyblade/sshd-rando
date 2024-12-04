@@ -928,6 +928,10 @@ class Tracker:
             if label.abbreviation not in autosave.get("not_active_dungeons", []):
                 label.on_clicked()
 
+        # The above on_clicked() call changes the hover text - even when the current gui tab isn't
+        # the tracker one. This ensures that the hover text is cleared when opening the program
+        self.update_hover_text("")
+
         self.update_tracker()
         self.clear_layout(self.ui.tracker_locations_info_layout)
         self.clear_layout(self.ui.tracker_locations_scroll_layout)
