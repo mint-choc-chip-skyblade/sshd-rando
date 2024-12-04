@@ -1106,6 +1106,7 @@ F005r: # Orielle and Parrow's House
     objtype: OBJ
 
 F008r: # Goddess Statue
+  # Removed all flags and default to layer 0
   - name: Layer override
     type: layeroverride
     override:
@@ -1451,10 +1452,11 @@ F023: # Thunderhead
       params1: 0xFFFF01C5 # 00 FF 00 00 yeets the event call
 
 F100: # Faron Woods
+  # Removed all but Owlan's flag and default to layer 1
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 479 #owlan quest started
+      - story_flag: 479 # Owlan's Crystal Quest Started
         night: 0
         layer: 5
       - story_flag: -1
@@ -1708,6 +1710,7 @@ F100: # Faron Woods
       posy: -398
 
 F100_1: # Great Tree
+  # Removed all flags and default to layer 1
   - name: Layer override
     type: layeroverride
     override:
@@ -1742,9 +1745,10 @@ F100_1: # Great Tree
       entrance: 5 # New GT -> Flooded GT entrance
 
 F101: # Deep Woods
+  # Removed all flags and default to layer 1
   - name: Layer override
     type: layeroverride
-    override: # always
+    override:
       - story_flag: -1
         night: 0
         layer: 1
@@ -1859,9 +1863,10 @@ F101: # Deep Woods
       untrigstoryfid: -1
 
 F102: # Lake Floria
+  # Removed all flags and default to layer 1
   - name: Layer override
     type: layeroverride
-    override: # force layer 1
+    override:
       - story_flag: -1
         night: 0
         layer: 1
@@ -1931,9 +1936,10 @@ F102: # Lake Floria
     objtype: STAG
 
 F102_1: # Outside Ancient Cistern
+  # Removed all flags and default to layer 0
   - name: Layer override
     type: layeroverride
-    override: # always layer 0
+    override:
       - story_flag: -1
         night: 0
         layer: 0
@@ -1975,9 +1981,10 @@ F102_1: # Outside Ancient Cistern
     objtype: SNDT
 
 F102_2: # Faron's Lair
+  # Removed all flags and default to layer 0
   - name: Layer override
     type: layeroverride
-    override: # always layer 0
+    override:
       - story_flag: -1
         night: 0
         layer: 0
@@ -2101,7 +2108,8 @@ F103_1: # Flooded Great Tree
     room: 0
     objtype: OBJ
 
-F200: # Eldin main area
+F200: # Eldin Volcano
+  # Removed all flags and default to layer 1
   - name: Layer override
     type: layeroverride
     override:
@@ -2704,21 +2712,20 @@ F200: # Eldin main area
       angley: 17000
 
 F201_1: # Inside volcano
+  # Removed flags 48 (Lanayru pillar opened)
+  # Change default layer to 2
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 19
+      - story_flag: 19 # Fire Dragon SotH CS
         night: 0
         layer: 4
-      - story_flag: 677
+      - story_flag: 677 # Water Basin Collected (Scrapper Escort Active)
         night: 0
         layer: 3
-      - story_flag: 207
-        night: 0
-        layer: 2
       - story_flag: -1
         night: 0
-        layer: 1
+        layer: 2
   - name: Add ammo pot to Volcano Summit Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
@@ -2810,21 +2817,21 @@ F201_2: # Inside Volcano (Bokoblin Base)
     objtype: STAG
 
 F201_3: # Outside Fire Sanctuary
+  # Change flag 13 (Can open GoT / old FS Beaten) to 901 (rando FS Beaten)
+  # Removed flags 48 (Lanayru pillar open), and 5 (Beat Skyview Temple)
+  # Change default layer to 2
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 901
+      - story_flag: 901 # Beat Fire Sanctuary
         night: 0
         layer: 4
-      - story_flag: 677
+      - story_flag: 677 # Water Basin Collected (Scrapper Escort Active)
         night: 0
         layer: 3
-      - story_flag: 207
-        night: 0
-        layer: 2
       - story_flag: -1
         night: 0
-        layer: 1
+        layer: 2
   - name: Add ammo pot to Inside the Volcano Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
@@ -2859,18 +2866,14 @@ F201_3: # Outside Fire Sanctuary
     objtype: STAG
 
 F201_4: # Volcano Waterfall
+  # Removed flags 48 (Lanayru pillar opened), and 19 (Fire Dragon SotH CS)
+  # Change flag 5 (Beat Skyview Temple) to -1
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 19
-        night: 0
-        layer: 4
-      - story_flag: 677
+      - story_flag: 677 # Water Basin Collected (Scrapper Escort Active)
         night: 0
         layer: 3
-      - story_flag: 207
-        night: 0
-        layer: 2
       - story_flag: -1
         night: 0
         layer: 1
@@ -2892,6 +2895,7 @@ F201_4: # Volcano Waterfall
       name: Bombf
 
 F202: # Bokoblin Base
+  # TODO: figure out vanilla layeroverride with flag 200 (Levias SotH)
   - name: Add Arcs
     type: oarcadd
     oarc:
@@ -3097,6 +3101,7 @@ F202: # Bokoblin Base
       name: Tubo
 
 F210: # Mogma Turf
+  # Removed all flags and default to layer 1
   - name: Layer override
     type: layeroverride
     override:
@@ -3208,6 +3213,7 @@ F210: # Mogma Turf
       entrance_id: 100
 
 F211: # Thrill Digger
+  # Change flag 5 (Beat Skyview Temple) to -1
   - name: Layer override
     type: layeroverride
     override:
@@ -3268,6 +3274,7 @@ F221: # Fire Dragon Room
     objtype: STAG
 
 F300: # Lanayru Desert
+  # Removed all flags and default to layer 1
   - name: Layer override
     type: layeroverride
     override:
@@ -3414,6 +3421,7 @@ F300: # Lanayru Desert
     objtype: OBJ
 
 F300_1: # Lanayru Mine
+  # Removed all flags and default to layer 1
   - name: Layer override
     type: layeroverride
     override:
@@ -3533,9 +3541,10 @@ F300_3: # Fire Node
       sizez: 2
 
 F300_4: # Temple of Time
+  # Removed all flags and default to layer 2
   - name: Layer override
     type: layeroverride
-    override: # always be layer 2
+    override:
       - story_flag: -1
         night: 0
         layer: 2
@@ -3749,6 +3758,7 @@ F301_1: # Lanayru Sand Sea
     layer: 0
     room: 0
     objtype: STAG
+  # TODO: layeroverride instead of removing entrances?
   - name: Remove excess entrances to Sandship
     type: objdelete
     ids:
@@ -3990,9 +4000,10 @@ F301_7: # Construction Bay
       params1: 0xF7FFFC20
 
 F302: # Lanayru Gorge
+  # Removed all flags and default to layer 2 (post-minecart escort)
   - name: Layer override
     type: layeroverride
-    override: # always be layer 2
+    override:
       - story_flag: -1
         night: 0
         layer: 2
@@ -4115,6 +4126,7 @@ F302: # Lanayru Gorge
       name: Bombf
 
 F303: # Lanayru Caves
+  # Removed all flags and default to layer 0
   - name: Layer override
     type: layeroverride
     override:
@@ -4200,6 +4212,7 @@ F303: # Lanayru Caves
     objtype: OBJ
 
 F400: # Behind the Temple
+  # Removed all flags and default to layer 0
   - name: Layer override
     type: layeroverride
     override:
@@ -4275,19 +4288,21 @@ F400: # Behind the Temple
     destlayer: 0
 
 F401: # Sealed Grounds Spiral
+  # Removed flags 134 (Defeated The Horde), 175 (in Lanayru SotH Quest), 200 (Defeated Levias),
+  #               13 (Can open GoT / FS Beaten), 141 (Played BotG for Impa), 36 (Tunic)
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 705
+      - story_flag: 705 # Refighting Imp 3
         night: 0
         layer: 4
-      - story_flag: 704
+      - story_flag: 704 # Refighting Imp 2
         night: 0
         layer: 3
-      - story_flag: 703
+      - story_flag: 703 # Refighting Imp 1
         night: 0
         layer: 2
-      - story_flag: 133
+      - story_flag: 133 # Defeated Imp 3
         night: 0
         layer: 5
       - story_flag: -1 # So the Groosenator behaves properly
@@ -4339,6 +4354,7 @@ F401: # Sealed Grounds Spiral
     objtype: STAG
 
 F402: # Sealed Temple
+  # Removed all flags and default to layer 0
   - name: Layer override
     type: layeroverride
     override:
@@ -4483,15 +4499,17 @@ F402: # Sealed Temple
       story_flag2: -1
 
 F403: # Hylia's Realm
+  # Removed Boss Rush layeroverride
+  # Change flag 342 (Beat Sky Keep) to -1
   - name: Layer override
     type: layeroverride
     override:
       - story_flag: 726 # Refight G3
         night: 0
         layer: 4
-      - story_flag: 530 # Boss Rush
-        night: 0
-        layer: 1
+      # - story_flag: 530 # Boss Rush
+      #   night: 0
+      #   layer: 1
       - story_flag: 486 # G3 Defeated
         night: 0
         layer: 3
@@ -4501,7 +4519,7 @@ F403: # Hylia's Realm
       - story_flag: 347 # Horde Cutscene watched
         night: 0
         layer: 1
-      - story_flag: -1
+      - story_flag: -1 # instead of 342
         night: 0
         layer: 13
   - name: Skip Ghirahim 3 Fight
@@ -4527,6 +4545,8 @@ F403: # Hylia's Realm
       byte5: 1
 
 F404: # Temple of Hylia
+  # Removed flags 486 (G3 Defeated), 342 (Beat Sky Keep), and 341 (GoT opened)
+  # Force layer 1
   - name: Layer override
     type: layeroverride
     override:
@@ -4577,13 +4597,6 @@ F404: # Temple of Hylia
     objtype: PLY
     object:
       play_cutscene: -1
-  - name: Remove TMS from CS
-    type: objpatch
-    room: 2
-    index: 0
-    objtype: EVNT
-    object:
-      item: -1 # no TMS anymore
   - name: Trigger to Check Triforces
     type: objadd
     room: 2
@@ -4632,6 +4645,17 @@ F407: # Sky Keep beaten CS
       story_flag2: -1
 
 D000: # Waterfall Cave
+  # Use Midnight Merchant layer at night after completing SotH
+  # Might not be necessary?
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 369 # Obtained the Song of the Hero
+        night: 1 # Just at night tho
+        layer: 1
+      - story_flag: -1
+        night: 2
+        layer: 0
   - name: Remove flag from Crawlspace Rupee
     type: objpatch
     id: 0xFC14
@@ -4704,12 +4728,13 @@ D003_2: # Sky Keep Power Room
       name: Tubo
 
 D003_3: # Sky Keep Wisdom Room
+  # Removed flag 730 (Obtained Triforce of Wisdom)
   - name: Layer override
     type: layeroverride
     override:
       - story_flag: -1
         night: 0
-        layer: 1 # always use layer 1,
+        layer: 1
   - name: Remove Fi texts
     type: objdelete
     ids:
@@ -4761,6 +4786,8 @@ D003_5: # Sky Keep Skyview Temple Room
       posy: 0
       posz: -2860
       name: Tubo
+
+# D003_6: # Dreadfuse Room
 
 D003_7: # Sky Keep Entrance Room
   - name: Remove objects
@@ -4879,12 +4906,14 @@ D003_8: # Triforce Room
       layer: 2 # force layer 2 so the barbed wire is gone
 
 D100: # Skyview Temple
+  # Removed flags 11 (Beat Ancient Cistern / Rail tracks), 206 (Obtained Water Dragon's Scale), and 4 (Watched Enter SV CS)
+  # Change default layer to 1 instead of 0
   - name: Layer override
     type: layeroverride
     override:
       - story_flag: -1
         night: 0
-        layer: 1
+        layer: 1 # Force layer 1 instead of 0
   - name: Yeet Skyview Temple Intro Cutscene
     type: objpatch
     index: 0
@@ -4999,14 +5028,6 @@ D100: # Skyview Temple
     destlayer: 0
     room: 1
     objtypes: [OBJ, STAG, STAG]
-  - name: Remove First Eye SwAreaTs on layer 2
-    type: objdelete
-    ids:
-      - 0xFC22
-      - 0xFC23
-    layer: 2
-    room: 1
-    objtype: STAG
   ## 2 eyes
   - name: Move Right Room Eyes to layer 0
     type: objmove
@@ -5071,20 +5092,16 @@ D100: # Skyview Temple
     object:
       posy: -210
 
-B100: # Skyview boss room
+B100: # Ghirahim 1 Boss Room
+  # Removed Boss Rush layeroverride
+  # Removed flags 67 (Triple Stalfos Defeated), 206 (Obtained Water Dragon's Scale), and 5 (Beat Skyview Temple)
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 530
-        night: 0
-        layer: 5
-      - story_flag: 67
-        night: 0
-        layer: 4
-      - story_flag: 206
-        night: 0
-        layer: 3
-      - story_flag: 83
+      # - story_flag: 530 # Boss Rush
+      #   night: 0
+      #   layer: 5
+      - story_flag: 83 # Ghirahim 1 Defeated
         night: 0
         layer: 1
       - story_flag: -1
@@ -5106,18 +5123,17 @@ B100: # Skyview boss room
     objtype: STAG
 
 B100_1: # Skyview Spring
+  # Removed flags 65 (Healed Water Dragon), 206 (Obtained Water Dragon's Scale), and 83 (G1 Defeated)
+  # Change default layer from 0 to 1
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 65 # Set when healing Water Dragon
-        night: 0
-        layer: 4
-      - story_flag: 5 # Beat Skyview
+      - story_flag: 5 # Beat Skyview Temple
         night: 0
         layer: 2
       - story_flag: -1
         night: 0
-        layer: 1
+        layer: 1 # Force layer 1 instead of 0
   - name: Patch Goddess Crest to not play Cutscene
     type: objpatch
     id: 0xFC05
@@ -5174,19 +5190,6 @@ D101: # Ancient Cistern
       posx: -560
       posy: 0
       posz: -5020
-      name: Tubo
-  - name: Add ammo pot to Ancient Cistern in Whirlpool Room Bird Statue
-    onlyif: ammo_availability == plentiful
-    type: objadd
-    layer: 5
-    room: 3
-    objtype: OBJ
-    object:
-      params1: 0xFFFFFFF0
-      params2: 0xFEFFFFFF # 0xFE000000 -> arrows, bombs, and seeds
-      posx: -12290
-      posy: 1481.52002
-      posz: 1510
       name: Tubo
   - name: Add ammo pot to Ancient Cistern Pipes Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
@@ -5349,6 +5352,19 @@ D101: # Ancient Cistern
       name: Bombf
 
 B101: # Koloktos Boss Room
+  # Removed Boss Rush layeroverride
+  - name: Layer override
+    type: layeroverride
+    override:
+      # - story_flag: 530 # Boss Rush
+      #   night: 0
+      #   layer: 2
+      - story_flag: 648 # Koloktos Defeated
+        night: 0
+        layer: 3
+      - story_flag: -1
+        night: 0
+        layer: 1
   - name: Open door after boss
     type: objpatch
     room: 0
@@ -5366,7 +5382,7 @@ B101: # Koloktos Boss Room
     object:
       params1: 0xFFFD3000
 
-B101_1: # after AC boss
+B101_1: # Ancient Cistern Crest Room
   - name: Remove Farore's Flame Cutscene
     type: objpatch
     room: 0
@@ -5507,10 +5523,15 @@ D200: # Earth Temple
     object:
       params1: 0x3F02050F
 
-B200: # ET Boss Room
+B200: # Scaldera Boss Room
+  # Removed Boss Rush layeroverride
+  # Change flag 5 (Beat Skyview Temple) to -1
   - name: Layer override
     type: layeroverride
     override:
+      # - story_flag: 530 # Boss Rush
+      #   night: 0
+      #   layer: 3
       - story_flag: 7 # Beat ET
         night: 0
         layer: 1
@@ -5746,24 +5767,25 @@ D201_1: # Fire Sanctuary B (inner)
     room: 1
     objtype: STAG
 
-B201: # FS Boss Room
+B201: # Ghirahim 2 Boss Room
+  # Change FS beaten flag from 13 to 901
   - name: Layer override
     type: layeroverride
     override:
-      - story_flag: 530
-        night: 0
-        layer: 3
-      - story_flag: 901
+      # - story_flag: 530 # Boss Rush
+      #   night: 0
+      #   layer: 3
+      - story_flag: 901 # Fire Sanctuary Beaten
         night: 0
         layer: 2
-      - story_flag: 84
+      - story_flag: 84 # G2 Defeated
         night: 0
         layer: 1
       - story_flag: -1
         night: 0
         layer: 13
 
-B201_1: # after FS boss
+B201_1: # Fire Sanctuary Crest Room
   - name: Remove Din's Flame Cutscene
     type: objpatch
     room: 0
@@ -5958,6 +5980,21 @@ D300_1: # Lanayru Mining Facility B (back)
       id: 0xFC00
       name: Bombf
 
+B300: # Moldarach Boss Room
+  # Removed Boss Rush layeroverride
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: 812 # Opened door after defeating Moldy
+        night: 0
+        layer: 3
+      # - story_flag: 530 # Boss Rush
+      #   night: 0
+      #   layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
+
 D301: # Sandship A (main)
   - name: Yeet Sandship Intro Cutscene 1
     type: objpatch
@@ -6149,7 +6186,17 @@ D301_1: # Sandship B (escape)
     room: 0
     objtype: OBJ
 
-B301: # after Sandship boss
+B301: # Tentalus Boss Room
+  # Removed Boss Rush layeroverride
+  - name: Layer override
+    type: layeroverride
+    override:
+      # - story_flag: 530 # Boss Rush
+      #   night: 0
+      #   layer: 2
+      - story_flag: -1
+        night: 0
+        layer: 1
   - name: Sandship CS remove item
     type: objpatch
     room: 0
@@ -6216,6 +6263,10 @@ B301: # after Sandship boss
       params1: 0xC303FF03 # change to zone temp flag 3
       anglez: 0xFFFF # no untrigger flag
 
+# B400: Demise Boss Room
+
+# S000: # The Goddess's Silent Realm
+
 S100: # Farore's Silent Realm
   - name: Fi text near waking water
     type: objdelete
@@ -6224,7 +6275,7 @@ S100: # Farore's Silent Realm
     room: 0
     objtype: OBJ
 
-S200:
+S200: # Din's Silent Realm
   - name: Unforce layer
     type: objpatch
     room: 2
@@ -6235,7 +6286,7 @@ S200:
 
 # Patch stamina fruit to keep assumption
 # of rot.x being the tilt
-S300:
+S300: # Nayru's Silent Realm
   - name: Patch vine stamina fruit 1
     type: objpatch
     id: 0xFC36

@@ -49,6 +49,7 @@ World 1:
   skip_g3: 'off'
   skip_demise: 'off'
   required_dungeons: '2'
+  dungeons_include_sky_keep: 'off'
   empty_unrequired_dungeons: 'on'
   random_bottle_contents: 'off'
   trap_mode: no_traps
@@ -80,13 +81,13 @@ World 1:
   open_lake_floria: vanilla
   open_earth_temple: 'off'
   open_lmf: open
-  open_batreaux_shed: 'off'
+  open_batreaux_shed: 'on'
   shortcut_ios_bridge_complete: 'off'
   shortcut_spiral_log_to_btt: 'on'
   shortcut_logs_near_machi: 'off'
   shortcut_faron_log_to_floria: 'off'
   shortcut_deep_woods_log_before_tightrope: 'off'
-  shortcut_deep_woods_log_before_temple: 'off'
+  shortcut_deep_woods_log_before_temple: 'on'
   shortcut_eldin_entrance_boulder: 'off'
   shortcut_eldin_ascent_boulder: 'off'
   shortcut_vs_flames: 'off'
@@ -112,6 +113,7 @@ World 1:
   logic_volcanic_island_dive: 'off'
   logic_east_island_dive: 'off'
   logic_advanced_lizalfos_combat: 'off'
+  logic_long_ranged_skyward_strikes: 'off'
   logic_gravestone_jump: 'off'
   logic_waterfall_cave_jump: 'off'
   logic_bird_nest_item_from_beedles_shop: 'off'
@@ -119,6 +121,7 @@ World 1:
   logic_stuttersprint: 'off'
   logic_precise_beetle: 'off'
   logic_bomb_throws: 'off'
+  logic_faron_woods_with_groosenator: 'off'
   logic_itemless_first_timeshift_stone: 'off'
   logic_brakeslide: 'off'
   logic_lanayru_mine_quick_bomb: 'off'
@@ -297,4 +300,8 @@ World 1:
   - Din's Silent Realm - Collect all Tears Reward
   excluded_hint_locations:
   - Shipyard - Gossip Stone after First Minecart Track
-  mixed_entrance_pools: []
+  mixed_entrance_pools:
+  - []
+  - []
+  - []
+  - []

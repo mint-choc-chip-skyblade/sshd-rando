@@ -928,6 +928,10 @@ class Tracker:
             if label.abbreviation not in autosave.get("not_active_dungeons", []):
                 label.on_clicked()
 
+        # The above on_clicked() call changes the hover text - even when the current gui tab isn't
+        # the tracker one. This ensures that the hover text is cleared when opening the program
+        self.update_hover_text("")
+
         self.update_tracker()
         self.clear_layout(self.ui.tracker_locations_info_layout)
         self.clear_layout(self.ui.tracker_locations_scroll_layout)
@@ -1732,7 +1736,7 @@ class Tracker:
         filename = Path(
             TRACKER_AUTOSAVE_PATH.as_posix().replace("RANDOMIZER_VERSION", version)
         )
-        write_config_to_file(filename, self.world.config)
+        write_config_to_file(filename, self.world.config, write_preferences=False)
 
         # Then read it again to input extra data
         autosave: dict = yaml_load(filename)
