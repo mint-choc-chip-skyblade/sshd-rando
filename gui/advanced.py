@@ -202,6 +202,15 @@ class Advanced:
             )
             return False
 
+        if verify_all:
+            self.main.config.verified_extract = True
+            self.update_config()
+
+            # Make sure the "Randomize" button no longer has the "Verify Extract" label
+            self.main.ui.randomize_button.setText("Randomize")
+            self.main.ui.randomize_button.clicked.disconnect()
+            self.main.ui.randomize_button.clicked.connect(self.main.randomize)
+
         completion_dialog.show_dialog("Done", "Verification Complete!")
 
         # Prevents old progress dialogs reappearing when verifying multiple

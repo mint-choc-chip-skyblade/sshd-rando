@@ -1732,7 +1732,7 @@ class Tracker:
         filename = Path(
             TRACKER_AUTOSAVE_PATH.as_posix().replace("RANDOMIZER_VERSION", version)
         )
-        write_config_to_file(filename, self.world.config)
+        write_config_to_file(filename, self.world.config, write_preferences=False)
 
         # Then read it again to input extra data
         autosave: dict = yaml_load(filename)
