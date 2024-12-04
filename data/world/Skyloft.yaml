@@ -250,7 +250,7 @@
     Central Skyloft - West Rupee in Bird's Nest: Nothing
 
 - name: Bazaar
-  allowed_time_of_day: All
+  allowed_time_of_day: Day Only
   events:
     Obtain Stamina Potion: Bottle and Raise_Lanayru_Mining_Facility
     # important Tracker events
@@ -272,19 +272,19 @@
     # Bazaar - Upgrade to Big Bug Net: Bug_Net and 'Can_Play_Clean_Cut_Minigame'
 
 - name: Bazaar North
-  allowed_time_of_day: All
+  allowed_time_of_day: Day Only
   exits:
     Bazaar: Nothing
     Central Skyloft: Nothing
 
 - name: Bazaar South
-  allowed_time_of_day: All
+  allowed_time_of_day: Day Only
   exits:
     Bazaar: Nothing
     Central Skyloft: Nothing
 
 - name: Bazaar West
-  allowed_time_of_day: All
+  allowed_time_of_day: Day Only
   exits:
     Bazaar: Nothing
     Central Skyloft: Nothing
