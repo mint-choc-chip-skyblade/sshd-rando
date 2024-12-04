@@ -31,6 +31,9 @@ class Config:
         self.use_custom_theme: bool = False
         self.font_family: str = None  # type: ignore
         self.font_size: int = 0
+        self.verified_extract: bool = False
+        self.tutorial_random_settings: bool = False
+        self.first_time_seed_gen_text: bool = False
         self.hash: str = ""
 
     def get_hash(self) -> str:
@@ -134,7 +137,9 @@ def create_default_setting(setting_name: str) -> Setting:
     return new_setting
 
 
-def write_config_to_file(filename: Path, config: Config):
+def write_config_to_file(
+    filename: Path, config: Config, write_preferences: bool = True
+):
     with open(filename, "w", encoding="utf-8") as config_file:
         config_out = {}
 
@@ -175,6 +180,9 @@ def write_config_to_file(filename: Path, config: Config):
                 config_out[world_num]["mixed_entrance_pools"][pool_index] = pool
 
         yaml.safe_dump(config_out, config_file, sort_keys=False)
+
+    if not write_preferences:
+        return
 
     with open(PREFERENCES_PATH, "w", encoding="utf-8") as preferences_file:
         preferences_out = {}

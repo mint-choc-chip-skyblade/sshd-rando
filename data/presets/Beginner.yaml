@@ -4,7 +4,7 @@ use_plandomizer: false
 plandomizer_file: None
 World 1:
   logic_rules: all_locations_reachable
-  item_pool: extra
+  item_pool: standard
   enable_back_in_time: 'off'
   gratitude_crystal_shuffle: 'on'
   stamina_fruit_shuffle: 'off'
@@ -22,7 +22,7 @@ World 1:
   lanayru_caves_keys: removed
   boss_keys: own_dungeon
   map_mode: own_dungeon_restricted
-  chest_type_matches_contents: 'off'
+  chest_type_matches_contents: all_contents
   small_keys_in_fancy_chests: 'off'
   path_hints: '3'
   barren_hints: '2'
@@ -49,6 +49,7 @@ World 1:
   skip_g3: 'off'
   skip_demise: 'off'
   required_dungeons: '2'
+  dungeons_include_sky_keep: 'off'
   empty_unrequired_dungeons: 'on'
   random_bottle_contents: 'off'
   trap_mode: no_traps
@@ -77,7 +78,7 @@ World 1:
   remove_enemy_music: 'off'
   low_health_beeping_speed: normal
   open_thunderhead: 'off'
-  open_lake_floria: vanilla
+  open_lake_floria: open
   open_earth_temple: 'on'
   open_lmf: open
   open_batreaux_shed: 'on'
@@ -86,20 +87,20 @@ World 1:
   shortcut_logs_near_machi: 'off'
   shortcut_faron_log_to_floria: 'off'
   shortcut_deep_woods_log_before_tightrope: 'off'
-  shortcut_deep_woods_log_before_temple: 'off'
+  shortcut_deep_woods_log_before_temple: 'on'
   shortcut_eldin_entrance_boulder: 'off'
   shortcut_eldin_ascent_boulder: 'off'
-  shortcut_vs_flames: 'on'
-  shortcut_lanayru_bars: 'on'
+  shortcut_vs_flames: 'off'
+  shortcut_lanayru_bars: 'off'
   shortcut_west_wall_minecart: 'off'
   shortcut_sand_oasis_minecart: 'off'
   shortcut_minecart_before_caves: 'off'
   shortcut_skyview_boards: 'on'
   shortcut_skyview_bars: 'off'
   shortcut_earth_temple_bridge: 'on'
-  shortcut_lmf_wind_gates: 'off'
+  shortcut_lmf_wind_gates: 'on'
   shortcut_lmf_boxes: 'off'
-  shortcut_lmf_bars_to_west_side: 'on'
+  shortcut_lmf_bars_to_west_side: 'off'
   shortcut_ac_bridge: 'off'
   shortcut_ac_water_vents: 'off'
   shortcut_sandship_windows: 'off'
@@ -112,6 +113,7 @@ World 1:
   logic_volcanic_island_dive: 'off'
   logic_east_island_dive: 'off'
   logic_advanced_lizalfos_combat: 'off'
+  logic_long_ranged_skyward_strikes: 'off'
   logic_gravestone_jump: 'off'
   logic_waterfall_cave_jump: 'off'
   logic_bird_nest_item_from_beedles_shop: 'off'
@@ -119,6 +121,7 @@ World 1:
   logic_stuttersprint: 'off'
   logic_precise_beetle: 'off'
   logic_bomb_throws: 'off'
+  logic_faron_woods_with_groosenator: 'off'
   logic_itemless_first_timeshift_stone: 'off'
   logic_brakeslide: 'off'
   logic_lanayru_mine_quick_bomb: 'off'
@@ -169,6 +172,7 @@ World 1:
   excluded_locations:
   - Knight Academy - Deliver Kikwi to Owlan
   - Upper Skyloft - 600 Points in Pumpkin Pull
+  - Bazaar - Repair Gondo's Junk
   - Central Skyloft - Peatrice's Love
   - Batreaux's House - 70 Gratitude Crystals First Reward
   - Batreaux's House - 70 Gratitude Crystals Second Reward
@@ -188,4 +192,8 @@ World 1:
   - Din's Silent Realm - Collect all Tears Reward
   excluded_hint_locations:
   - Shipyard - Gossip Stone after First Minecart Track
-  mixed_entrance_pools: []
+  mixed_entrance_pools:
+  - []
+  - []
+  - []
+  - []

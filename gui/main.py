@@ -1,5 +1,5 @@
+from functools import partial
 import sys
-import platform
 from types import TracebackType
 
 from PySide6.QtCore import QEvent, Qt, QSize, QUrl
@@ -9,7 +9,6 @@ from PySide6.QtWidgets import (
     QMessageBox,
     QMainWindow,
     QWidget,
-    QSpinBox,
 )
 
 from constants.guiconstants import OPTION_PREFIX
@@ -72,8 +71,6 @@ class Main(QMainWindow):
         print_progress_text("Initializing GUI: tracker")
         self.tracker = Tracker(self, self.ui)
 
-        self.ui.randomize_button.setDisabled(True)
-        self.ui.randomize_button.clicked.connect(self.randomize)
         self.ui.about_button.clicked.connect(self.about)
         self.ui.tab_widget.currentChanged.connect(self.on_tab_change)
         print_progress_text("GUI initialized")
@@ -259,6 +256,12 @@ The output folder you have specified cannot be found.
 def start_gui(app: QApplication):
     try:
         main = Main()
+
+        main.ui.randomize_button.setText("Verify Extract")
+        main.ui.randomize_button.clicked.connect(
+            partial(main.advanced.verify_extract, verify_all=True)
+        )
+
         main.show()
 
         if not main.config.verified_extract:
@@ -279,11 +282,12 @@ def start_gui(app: QApplication):
 
             if confirm_first_time_verify_dialog == QMessageBox.StandardButton.Yes:
                 if main.advanced.verify_extract(verify_all=True):
-                    main.ui.randomize_button.setDisabled(False)
                     main.config.verified_extract = True
                     main.settings.update_from_config()
         else:
-            main.ui.randomize_button.setDisabled(False)
+            main.ui.randomize_button.setText("Randomize")
+            main.ui.randomize_button.clicked.disconnect()
+            main.ui.randomize_button.clicked.connect(main.randomize)
 
         sys.exit(app.exec())
     except Exception as e:

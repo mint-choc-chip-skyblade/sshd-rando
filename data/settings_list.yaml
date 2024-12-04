@@ -252,7 +252,7 @@
     - anywhere: "Maps can appear anywhere."
 
 - name: chest_type_matches_contents
-  default_option: "off"
+  default_option: "all_contents"
   pretty_name: Chest Type Matches Contents
   pretty_options:
     - "Off"
@@ -981,7 +981,7 @@
 
 - name: open_lake_floria
   tracker_important: true
-  default_option: vanilla
+  default_option: open
   pretty_name: Open Lake Floria
   pretty_options:
     - Vanilla
@@ -1084,7 +1084,7 @@
 
 - name: shortcut_deep_woods_log_before_temple
   tracker_important: true
-  default_option: "off"
+  default_option: "on"
   pretty_name: Deep Woods Log before Temple
   pretty_options:
     - "Off"
