@@ -12,9 +12,11 @@ World 1:
   underground_rupee_shuffle: random
   beedle_shop_shuffle: random
   goddess_chest_shuffle: random
+  trial_treasuresanity: random
   full_wallet_upgrades: random
   randomize_skykeep_layout: "off"
   peatrice_conversations: random
+  trial_object_shuffle: random
   small_keys: random
   lanayru_caves_keys: random
   boss_keys: random

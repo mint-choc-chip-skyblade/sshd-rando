@@ -1366,3 +1366,26 @@ pub fn get_custom_freestanding_item_scale() -> f32 {
         };
     }
 }
+
+#[no_mangle]
+pub fn get_silent_realm_item_glow_color(item_id: u32) -> u32 {
+    unsafe {
+        // Only proceed if in a silent realm
+        if CURRENT_STAGE_NAME[0] == b'S' {
+            // Return the proper tear subtype depending on the passed in item
+            match item_id {
+                // Item is a tear, return expected subtype
+                43..=46 => return ((CURRENT_STAGE_NAME[1] as u32) + 3) & 3,
+
+                // Item is spirit vessel | stamina fruit | light fruit | dusk relic, return 4 for no
+                // glow
+                17 | 42 | 47 | 168 => return 4,
+
+                // For all other cases, return the subtype for the opposite color from the expected
+                // one for this realm
+                _ => return ((CURRENT_STAGE_NAME[1] as u32) + 1) & 3,
+            }
+        }
+    }
+    return 4;
+}

@@ -6908,6 +6908,86 @@
   Paths:
     - stage/S000/r0/l2/Item/0xFC55
 
+- name: The Goddess's Silent Realm - Relic 1
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S000/r0/l2/AncJwls/0xFC1C-103
+
+- name: The Goddess's Silent Realm - Relic 2
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S000/r0/l2/AncJwls/0xFC1D-104
+
+- name: The Goddess's Silent Realm - Relic 3
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S000/r0/l2/AncJwls/0xFC1E-105
+
+- name: The Goddess's Silent Realm - Relic 4
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S000/r0/l2/AncJwls/0xFC1F-106
+
+- name: The Goddess's Silent Realm - Relic 5
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S000/r0/l2/AncJwls/0xFC20-107
+
+- name: The Goddess's Silent Realm - Relic 6
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S000/r0/l2/AncJwls/0xFC21-108
+
+- name: The Goddess's Silent Realm - Relic 7
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S000/r0/l2/AncJwls/0xFC22-109
+
+- name: The Goddess's Silent Realm - Relic 8
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S000/r0/l2/AncJwls/0xFC23-110
+
+- name: The Goddess's Silent Realm - Relic 9
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S000/r0/l2/AncJwls/0xFC24-111
+
+- name: The Goddess's Silent Realm - Relic 10
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S000/r0/l2/AncJwls/0xFC25-112
+
 - name: The Goddess's Silent Realm - Collect all Tears Reward
   original_item: Stone of Trials
   types:
@@ -6932,6 +7012,86 @@
     - Custom Flag
   Paths:
     - stage/S100/r0/l2/Item/0xFC9B
+
+- name: Farore's Silent Realm - Relic 1
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S100/r0/l2/AncJwls/0xFC78-103
+
+- name: Farore's Silent Realm - Relic 2
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S100/r0/l2/AncJwls/0xFC79-104
+
+- name: Farore's Silent Realm - Relic 3
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S100/r0/l2/AncJwls/0xFC7A-105
+
+- name: Farore's Silent Realm - Relic 4
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S100/r0/l2/AncJwls/0xFC7B-106
+
+- name: Farore's Silent Realm - Relic 5
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S100/r0/l2/AncJwls/0xFC7C-107
+
+- name: Farore's Silent Realm - Relic 6
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S100/r0/l2/AncJwls/0xFC7D-108
+
+- name: Farore's Silent Realm - Relic 7
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S100/r0/l2/AncJwls/0xFC7E-109
+
+- name: Farore's Silent Realm - Relic 8
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S100/r0/l2/AncJwls/0xFC7F-110
+
+- name: Farore's Silent Realm - Relic 9
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S100/r0/l2/AncJwls/0xFC80-111
+
+- name: Farore's Silent Realm - Relic 10
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S100/r0/l2/AncJwls/0xFC81-112
 
 - name: Farore's Silent Realm - Collect all Tears Reward
   original_item: Water Dragon's Scale
@@ -6985,6 +7145,86 @@
   Paths:
     - stage/S300/r0/l2/Item/0xFC36
 
+- name: Nayru's Silent Realm - Relic 1
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S300/r0/l2/AncJwls/0xFC00-103
+
+- name: Nayru's Silent Realm - Relic 2
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S300/r0/l2/AncJwls/0xFC01-104
+
+- name: Nayru's Silent Realm - Relic 3
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S300/r0/l2/AncJwls/0xFC02-105
+
+- name: Nayru's Silent Realm - Relic 4
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S300/r0/l2/AncJwls/0xFC03-106
+
+- name: Nayru's Silent Realm - Relic 5
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S300/r0/l2/AncJwls/0xFC04-107
+
+- name: Nayru's Silent Realm - Relic 6
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S300/r0/l2/AncJwls/0xFC05-108
+
+- name: Nayru's Silent Realm - Relic 7
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S300/r0/l2/AncJwls/0xFC06-109
+
+- name: Nayru's Silent Realm - Relic 8
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S300/r0/l2/AncJwls/0xFC07-110
+
+- name: Nayru's Silent Realm - Relic 9
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S300/r0/l2/AncJwls/0xFC08-111
+
+- name: Nayru's Silent Realm - Relic 10
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S300/r0/l2/AncJwls/0xFC73-112
+
 - name: Nayru's Silent Realm - Collect all Tears Reward
   original_item: Clawshots
   types:
@@ -7018,6 +7258,86 @@
     - Custom Flag
   Paths:
     - stage/S200/r2/l2/Item/0xFC4D
+
+- name: Din's Silent Realm - Relic 1
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S200/r2/l2/AncJwls/0xFC00-103
+
+- name: Din's Silent Realm - Relic 2
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S200/r2/l2/AncJwls/0xFC01-104
+
+- name: Din's Silent Realm - Relic 3
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S200/r2/l2/AncJwls/0xFC02-105
+
+- name: Din's Silent Realm - Relic 4
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S200/r2/l2/AncJwls/0xFC03-106
+
+- name: Din's Silent Realm - Relic 5
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S200/r2/l2/AncJwls/0xFC04-107
+
+- name: Din's Silent Realm - Relic 6
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S200/r2/l2/AncJwls/0xFC05-108
+
+- name: Din's Silent Realm - Relic 7
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S200/r2/l2/AncJwls/0xFC06-109
+
+- name: Din's Silent Realm - Relic 8
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S200/r2/l2/AncJwls/0xFC07-110
+
+- name: Din's Silent Realm - Relic 9
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S200/r2/l2/AncJwls/0xFC08-111
+
+- name: Din's Silent Realm - Relic 10
+  original_item: Dusk Relic
+  types:
+    - Silent Realm
+    - Dusk Relic
+  Paths:
+    - stage/S200/r2/l2/AncJwls/0xFC09-112
 
 - name: Din's Silent Realm - Collect all Tears Reward
   original_item: Fireshield Earrings
