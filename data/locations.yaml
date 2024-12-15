@@ -6908,6 +6908,7 @@
   Paths:
     - stage/S000/r0/l2/Item/0xFC55
 
+# Relics are identified by 0x<objectid>-<scene flag to use>
 - name: The Goddess's Silent Realm - Relic 1
   original_item: Dusk Relic
   types:
