@@ -102,7 +102,5 @@ the chest
 * Custom Models and Music (you can use the files from SDR to achieve this)
 * Random Music (you can use the files from SDR to achieve this)
 * Tadtones as items
-* Trial Object Shuffle
-* Trial Treasure Shuffle
 * Starting with a Treasures or Bugs
 * Save File text isn't updated for the randomizer

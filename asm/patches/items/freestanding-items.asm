@@ -2,6 +2,10 @@
 b 0x71004e8f94
 
 
+; Allow Wood Tags to drop any item
+.offset 0x7100b08cec
+nop
+
 ; Always let triforces fall when bonked
 .offset 0x71004dc09c
 mov w8, #3 ; -> branch over code that prevents triforces falling

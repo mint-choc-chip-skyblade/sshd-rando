@@ -1,4 +1,4 @@
-; Prevent Trial Gates from closing even if they flag
+; Prevent Trial Gates from closing even if the flag
 ; to close them is set
 
 ; Faron Trial Gate
@@ -54,3 +54,18 @@ cbz w0, 0x71009d9534
 ; fix pouch items not working properly from trial gates :p
 .offset 0x71009d8104
 nop
+
+; Skip branching away from generating a glow around an item if it isn't a tear
+.offset 0x71004e5bd4
+nop
+
+; Set the tear subtype (which determines the glow color) using our custom function
+.offset 0x71004e5c3c
+nop ; Skip a branching away from the code if the item isn't a tear
+mov w0, w8
+mov w8, #68
+bl additions_jumptable
+cmp w0, #3
+b.hi 0x71004e5e28 ; If we returned greater than 3, don't generate a glow
+mov w8, w0 ; move the tear subtype back into the register the code expects
+b 0x71004e5c90 ; Branch to the code which spawns in the glow actor

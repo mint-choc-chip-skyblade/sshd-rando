@@ -130,3 +130,6 @@
 
 .global change_model_scale
 .type change_model_scale, @function
+
+.global get_silent_realm_item_glow_color
+.type get_silent_realm_item_glow_color @function

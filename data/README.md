@@ -130,3 +130,51 @@ Below is the list of all the flags that the randomizer changes:
 
 #### Sandship
 * 87: After receiving Item from flame CS
+
+#### The Goddess's Silent Realm
+* 103: Obtained Relic 1
+* 104: Obtained Relic 2
+* 105: Obtained Relic 3
+* 106: Obtained Relic 4
+* 107: Obtained Relic 5
+* 108: Obtained Relic 6
+* 109: Obtained Relic 7
+* 110: Obtained Relic 8
+* 111: Obtained Relic 9
+* 112: Obtained Relic 10
+
+#### Farore's Silent Realm
+* 103: Obtained Relic 1
+* 104: Obtained Relic 2
+* 105: Obtained Relic 3
+* 106: Obtained Relic 4
+* 107: Obtained Relic 5
+* 108: Obtained Relic 6
+* 109: Obtained Relic 7
+* 110: Obtained Relic 8
+* 111: Obtained Relic 9
+* 112: Obtained Relic 10
+
+#### Din's Silent Realm
+* 103: Obtained Relic 1
+* 104: Obtained Relic 2
+* 105: Obtained Relic 3
+* 106: Obtained Relic 4
+* 107: Obtained Relic 5
+* 108: Obtained Relic 6
+* 109: Obtained Relic 7
+* 110: Obtained Relic 8
+* 111: Obtained Relic 9
+* 112: Obtained Relic 10
+
+#### Nayru's Silent Realm
+* 103: Obtained Relic 1
+* 104: Obtained Relic 2
+* 105: Obtained Relic 3
+* 106: Obtained Relic 4
+* 107: Obtained Relic 5
+* 108: Obtained Relic 6
+* 109: Obtained Relic 7
+* 110: Obtained Relic 8
+* 111: Obtained Relic 9
+* 112: Obtained Relic 10
