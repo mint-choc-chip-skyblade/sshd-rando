@@ -16,6 +16,11 @@ from patches.asmpatchhandler import ASMPatchHandler
 from patches.eventpatchhandler import EventPatchHandler
 from patches.stagepatchhandler import StagePatchHandler
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from logic.item import Item
+
 
 def determine_check_patches(
     world: World,
@@ -211,19 +216,19 @@ def determine_check_patches(
 
                 for oarc in item_oarcs:
                     stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
-            
+
             if shop_match := SHOP_PATCH_PATH_REGEX.match(path):
                 shop_index = int(shop_match.group("index"))
-                stage = "F002r" # Beedle's Airshop
+                stage = "F002r"  # Beedle's Airshop
                 layer = 0
 
                 if shop_index < 20 or shop_index >= 30:
-                    stage = "F004r" # Bazaar
-                
+                    stage = "F004r"  # Bazaar
+
                 for oarc in item_oarcs:
                     stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
 
-                create_shop_data(asm_patch_handler, shop_index, location, trapid)
+                create_shop_data(asm_patch_handler, shop_index, item, trapid)
 
 
 def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
@@ -289,9 +294,16 @@ def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
         event_patch_handler.append_to_event_patches("003-ItemGet", flowadd_patch)
         event_patch_handler.append_to_event_patches("003-ItemGet", entryadd_patch)
 
-def create_shop_data(asm_patch_handler: ASMPatchHandler, shop_index: int, location: Location, trapid: int):
-    itemid = location.current_item.id
+
+def create_shop_data(
+    asm_patch_handler: ASMPatchHandler, shop_index: int, item: "Item", trapid: int
+):
+    itemid = item.id
     price = PRICES.get(shop_index, -1)
+    trapbits = 0xF
+
+    if trapid > 0:
+        trapbits = 254 - trapid
 
     # TODO: add price randomization here
 
@@ -305,9 +317,9 @@ def create_shop_data(asm_patch_handler: ASMPatchHandler, shop_index: int, locati
         EVENT_ENTRYPOINTS.get(shop_index, -1),
         NEXT_SHOP_INDEXES.get(shop_index, -1),
         0xFFFF,
-        location.current_item.shop_arc_name,
-        location.current_item.shop_model_name,
+        item.shop_arc_name,
+        item.shop_model_name,
         DISPLAY_HEIGHT_OFFSETS.get(itemid, DEFAULT_DISPLAY_HEIGHT_OFFSET),
-        254 - trapid,
+        trapbits,
         SOLD_OUT_STORYFLAGS.get(shop_index, -1),
     )

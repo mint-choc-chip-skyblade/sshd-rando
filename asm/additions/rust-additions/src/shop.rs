@@ -125,6 +125,10 @@ assert_eq_size!([u8; 0x54], dAcShopSampleShopItem);
 // symbols.yaml and then added to this extern block.
 extern "C" {
     static SHOP_ITEMS: [dAcShopSampleShopItem; 35];
+    static mut ACTORBASE_PARAM2: u32;
+
+    static mut ITEM_GET_BOTTLE_POUCH_SLOT: u32;
+    static mut NUMBER_OF_ITEMS: u32;
 
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
@@ -204,5 +208,17 @@ pub fn check_shop_sold_out_storyflag(item_index: usize) -> bool {
         }
 
         return false;
+    }
+}
+
+#[no_mangle]
+pub fn handle_shop_traps() {
+    unsafe {
+        let shop_item: *mut dAcShopSampleShopItem;
+        asm!("mov {0:x}, x20", out(reg) shop_item);
+
+        ACTORBASE_PARAM2 = 0xFFFFFF0F | (((*shop_item).trapbits << 4) as u32);
+        ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
+        NUMBER_OF_ITEMS = 0;
     }
 }

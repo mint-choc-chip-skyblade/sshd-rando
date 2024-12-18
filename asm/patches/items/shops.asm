@@ -84,3 +84,46 @@ b.eq 0x7100b04250 ; ret
 ldrh w0, [x0, #8]
 mov w8, #69
 b additions_jumptable
+
+
+; handle traps for extra wallet shop class
+.offset 0x7100b04314
+csel x20, x10, x9, eq ; change out reg to x20 instead of x8
+mov w19, w0
+mov w8, #70
+bl additions_jumptable
+ldrh w8, [x20, #0xC]
+mov w0, w19
+nop
+nop
+
+; don't overwrite ACTORBASE_PARAM2
+.offset 0x7100b04360
+nop
+
+; don't try and reset ITEM_GET_BOTTLE_POUCH_SLOT and NUMBER_OF_ITEMS
+; with a value that never gets set anymore
+.offset 0x7100b043d4
+nop
+nop
+
+; handle traps for pouch shop class
+.offset 0x7100b03210
+csel x20, x10, x9, eq ; change out reg to x20 instead of x8
+mov w19, w0
+mov w8, #70
+bl additions_jumptable
+ldrh w8, [x20, #0xC]
+mov w0, w19
+nop
+nop
+
+; don't overwrite ACTORBASE_PARAM2
+.offset 0x7100b0325c
+nop
+
+; don't try and reset ITEM_GET_BOTTLE_POUCH_SLOT and NUMBER_OF_ITEMS
+; with a value that never gets set anymore
+.offset 0x7100b032d0
+nop
+nop

@@ -228,6 +228,9 @@ b.eq set_shop_sold_out_storyflag
 cmp w8, #69
 b.eq check_shop_sold_out_storyflag
 
+cmp w8, #70
+b.eq handle_shop_traps
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
