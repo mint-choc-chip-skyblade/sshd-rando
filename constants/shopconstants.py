@@ -1,6 +1,6 @@
 NEXT_SHOP_INDEXES = {
-    24: 28, # extra wallet -> unused1
-    28: 29, # unused1 -> unused2
+    24: 28,  # extra wallet -> unused1
+    28: 29,  # unused1 -> unused2
 }
 
 TARGET_ARROW_HEIGHT_OFFSETS = {
@@ -19,13 +19,13 @@ EVENT_ENTRYPOINTS = {
 }
 
 SOLD_OUT_STORYFLAGS = {
-    26: 814, # 800R
-    23: 813, # 1600R
-    24: 937, # 100R1
-    28: 938, # 100R2
-    29: 939, # 100R3
-    25: 940, # 50R
-    27: 941, # 1000R
+    26: 814,  # 800R
+    23: 813,  # 1600R
+    24: 937,  # 100R1
+    28: 938,  # 100R2
+    29: 939,  # 100R3
+    25: 940,  # 50R
+    27: 941,  # 1000R
 }
 
 # Buy Decide Scale

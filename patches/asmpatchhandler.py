@@ -243,10 +243,10 @@ class ASMPatchHandler:
             temp_dir_name = Path(temp_dir_name)
 
             print_progress_text("Creating shop shuffle patches")
-            shop_shuffle_diff_file_path = (
-                temp_dir_name / "shop-shuffle-diff.yaml"
+            shop_shuffle_diff_file_path = temp_dir_name / "shop-shuffle-diff.yaml"
+            self.create_shop_data_patch(
+                ASM_PATCHES_DIFFS_PATH / shop_shuffle_diff_file_path
             )
-            self.create_shop_data_patch(ASM_PATCHES_DIFFS_PATH / shop_shuffle_diff_file_path)
 
             print_progress_text("Creating damage multiplier patch")
             damage_multiplier_diff_file_path = (
@@ -276,7 +276,9 @@ class ASMPatchHandler:
 
             print_progress_text("Creating startflag additions")
             startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
-            self.create_startflag_patches(startflags_diff_file_path, world, onlyif_handler)
+            self.create_startflag_patches(
+                startflags_diff_file_path, world, onlyif_handler
+            )
 
             print("Initializing global variables")
             global_variables_diff_file_path = (
@@ -567,7 +569,8 @@ class ASMPatchHandler:
 
         yaml_write(output_path, damage_multiplier_dict)
 
-    def add_shop_data(self,
+    def add_shop_data(
+        self,
         shop_index: int,
         buy_decide_scale: float,
         put_scale: float,
@@ -583,24 +586,42 @@ class ASMPatchHandler:
         trapbits: int,
         sold_out_storyflag: int,
     ):
-        self.shop_data[shop_index] = (buy_decide_scale, put_scale, target_arrow_height_offset, itemid, price, event_entrypoint, next_shop_index, spawn_storyflag, shop_arc_name, shop_model_name, display_height_offset, trapbits, sold_out_storyflag,)
+        self.shop_data[shop_index] = (
+            buy_decide_scale,
+            put_scale,
+            target_arrow_height_offset,
+            itemid,
+            price,
+            event_entrypoint,
+            next_shop_index,
+            spawn_storyflag,
+            shop_arc_name,
+            shop_model_name,
+            display_height_offset,
+            trapbits,
+            sold_out_storyflag,
+        )
 
     def create_shop_data_patch(self, output_path: Path):
-        shop_item_table_start_address = 0x710164043c
+        shop_item_table_start_address = 0x710164043C
         shop_item_size = 0x54
         shop_data_dict = {}
 
         for shop_index in self.shop_data:
-            item_start_address = shop_item_table_start_address + (shop_item_size * shop_index)
+            item_start_address = shop_item_table_start_address + (
+                shop_item_size * shop_index
+            )
 
             for value_index, value in enumerate(self.shop_data[shop_index]):
                 if value != -1:
                     if (format := SHOP_ITEM_DATA_FORMATS[value_index]) is not None:
                         value = list(struct.pack(format, value))
-                    else: # must be a string
+                    else:  # must be a string
                         value = list(bytes(value + "\0", "ascii"))
 
-                    shop_data_dict[item_start_address + SHOP_ITEM_DATA_OFFSETS[value_index]] = value
+                    shop_data_dict[
+                        item_start_address + SHOP_ITEM_DATA_OFFSETS[value_index]
+                    ] = value
 
         yaml_write(output_path, shop_data_dict)
 

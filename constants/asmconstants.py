@@ -43,34 +43,34 @@ NSO_FLAGS_OFFSET = 0xC
 COMPRESSED_SEGMENT_NSO_OFFSET = 0x60
 
 SHOP_ITEM_DATA_OFFSETS = (
-    0x0, # Buy Decide Scale
-    0x4, # Put Scale
-    0x8, # Target Arrow Height Offset
-    0xC, # Item ID
-    0xE, # Price
-    0x10, # Event Entrypoint
-    0x12, # Next Shop Item Index
-    0x14, # Spawn Storyflag
-    0x16, # Arc Name
-    0x34, # Model Name
-    0x4C, # Display Height Offset
-    0x50, # Trapbits
-    0x52, # Sold Out Storyflag
+    0x0,  # Buy Decide Scale
+    0x4,  # Put Scale
+    0x8,  # Target Arrow Height Offset
+    0xC,  # Item ID
+    0xE,  # Price
+    0x10,  # Event Entrypoint
+    0x12,  # Next Shop Item Index
+    0x14,  # Spawn Storyflag
+    0x16,  # Arc Name
+    0x34,  # Model Name
+    0x4C,  # Display Height Offset
+    0x50,  # Trapbits
+    0x52,  # Sold Out Storyflag
 )
 SHOP_ITEM_DATA_FORMATS = (
-    "<f", # float  - Buy Decide Scale
-    "<f", # float  - Put Scale
-    "<f", # float  - Target Arrow Height Offset
-    "<H", # short  - Item ID
-    "<H", # short  - Price
-    "<H", # short  - Event Entrypoint
-    "<H", # short  - Next Shop Item Index
-    "<H", # short  - Spawn Storyflag
-    None, # custom - Arc Name
-    None, # custom - Model Name
-    "<f", # Display Height Offset
-    "<B", # byte   - Trapbits
-    "<H", # short - Sold Out Storyflag
+    "<f",  # float  - Buy Decide Scale
+    "<f",  # float  - Put Scale
+    "<f",  # float  - Target Arrow Height Offset
+    "<H",  # short  - Item ID
+    "<H",  # short  - Price
+    "<H",  # short  - Event Entrypoint
+    "<H",  # short  - Next Shop Item Index
+    "<H",  # short  - Spawn Storyflag
+    None,  # custom - Arc Name
+    None,  # custom - Model Name
+    "<f",  # Display Height Offset
+    "<B",  # byte   - Trapbits
+    "<H",  # short - Sold Out Storyflag
 )
 
 SCENE_NAME_TO_SCENE_INDEX = {
