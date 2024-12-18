@@ -61,7 +61,7 @@
     - "On"
   options:
     - "off": "Stamina Fruit will not be randomized."
-    - "on": "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected. Any Stamina Fruit locations that are manually excluded will also be vanilla. In silent realms, items other than dusk relics will glow in Silent Realms (Yellow in Faron, Blue in Eldin, Green in Lanayru, and Red on Skyloft)."
+    - "on": "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected. Any Stamina Fruit locations that are manually excluded will also be vanilla. In silent realms, items other than dusk relics will glow (Yellow in Faron, Blue in Eldin, Green in Lanayru, and Red on Skyloft)."
 
 - name: npc_closet_shuffle
   tracker_important: true
