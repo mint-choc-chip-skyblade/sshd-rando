@@ -131,9 +131,9 @@ def get_disabled_shuffle_locations(
             # If it's higher than the trial treasuresanity number it'll be a vanilla location
             or (
                 "Dusk Relic" in location.types
-                and settings["trial_treasuresanity"].value != "random"
+                and settings["trial_treasure_shuffle"].value != "random"
                 and int(location.name.split(" ")[-1], 0)
-                > int(settings["trial_treasuresanity"].value, 0)
+                > int(settings["trial_treasure_shuffle"].value, 0)
             )
         )
     ]

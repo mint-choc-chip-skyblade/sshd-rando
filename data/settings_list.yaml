@@ -61,7 +61,7 @@
     - "On"
   options:
     - "off": "Stamina Fruit will not be randomized."
-    - "on": "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected. Any Stamina Fruit locations that are manually excluded will also be vanilla."
+    - "on": "Stamina Fruit locations can contain any item. Locations will revert back to Stamina Fruit after the item has been collected. Any Stamina Fruit locations that are manually excluded will also be vanilla. In silent realms, items other than dusk relics will glow in Silent Realms (Yellow in Faron, Blue in Eldin, Green in Lanayru, and Red on Skyloft)."
 
 - name: npc_closet_shuffle
   tracker_important: true
@@ -135,14 +135,14 @@
     - "off": "Activating and opening Goddess Chests will not be required."
     - "on": "Goddess Chests can contain any item. Goddess Chests are activated by Skyward Striking their corresponding Goddess Cube."
 
-- name: trial_treasuresanity
+- name: trial_treasure_shuffle
   tracker_important: true
   default_option: 0
-  pretty_name: Trial Treasuresanity
+  pretty_name: Trial Treasure Shuffle
   pretty_options:
    - 0-10
   options:
-   - 0-10: "Randomizes treasures in Silent Realms to items. Items other than relics will glow in Silent Realms (Yellow in Faron, Blue in Eldin, Green in Lanayru, and Red on Skyloft). Choose the amount you want to randomize"
+   - 0-10: "Randomizes treasures in Silent Realms to items. Items other than dusk relics will glow in Silent Realms (Yellow in Faron, Blue in Eldin, Green in Lanayru, and Red on Skyloft). Choose the amount you want to randomize."
 
 - name: full_wallet_upgrades
   default_option: "off"
@@ -164,9 +164,9 @@
     - "off": "Opening up Trial Gates and receiving the item from The Old One will require strumming the harp."
     - "on": "Trial Gates will automatically open up when you have obtained the harp and the appropriate song. Additionally, The Old One will not require you to play the harp to receive their item."
 
-- name: trial_object_shuffle
+- name: random_trial_object_positions
   default_option: none
-  pretty_name: Trial Object Shuffle
+  pretty_name: Random Trial Object Positions
   pretty_options:
     - None
     - Simple

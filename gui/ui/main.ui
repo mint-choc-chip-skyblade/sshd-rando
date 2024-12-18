@@ -838,14 +838,14 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="trial_object_shuffle_label">
+            <widget class="QLabel" name="random_trial_object_positions_label">
              <property name="text">
-              <string>Trial Object Shuffle</string>
+              <string>Random Trial Object Positions</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="setting_trial_object_shuffle"/>
+            <widget class="QComboBox" name="setting_random_trial_object_positions"/>
            </item>
            <item>
             <spacer name="tweaks_vspacer">
@@ -1758,7 +1758,7 @@
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_8">
              <item>
-              <widget class="QLabel" name="trial_treasuresanity_label">
+              <widget class="QLabel" name="trial_treasure_shuffle_label">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -1766,12 +1766,12 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>Trial Treasuresanity</string>
+                <string>Trial Treasure Shuffle</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QSpinBox" name="setting_trial_treasuresanity">
+              <widget class="QSpinBox" name="setting_trial_treasure_shuffle">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                  <horstretch>0</horstretch>

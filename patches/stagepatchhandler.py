@@ -1361,7 +1361,7 @@ def create_shuffled_trial_object_patches(
 
     # Go through each stage and collect all the item object positions
     silent_realm_stages = ["S000", "S100", "S200", "S300"]
-    shuffle = world.setting("trial_object_shuffle")
+    shuffle = world.setting("random_trial_object_positions")
 
     for stage in silent_realm_stages:
         shuffle_objects: list[tuple[int, int]] = []

@@ -322,11 +322,7 @@ class Settings:
             if not widget:
                 continue
 
-            if (
-                widget == from_widget
-                and "shuffle" not in setting_name
-                and "treasuresanity" not in setting_name
-            ):
+            if widget == from_widget and "shuffle" not in setting_name:
                 should_update_location_counter = False
 
             new_setting = setting
