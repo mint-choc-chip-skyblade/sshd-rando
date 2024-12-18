@@ -6,6 +6,11 @@ from gui.dialogs.dialog_header import (
     update_progress_value,
 )
 from patches.conditionalpatchhandler import ConditionalPatchHandler
+from patches.othermods import (
+    get_other_file_path,
+    get_resolved_game_file_path,
+    get_oarc_cache_path,
+)
 from sslib.bzs import parse_bzs, build_bzs, get_entry_from_bzs, get_highest_object_id
 from sslib.utils import mask_shift_set, write_bytes_create_dirs
 from sslib.yaml import yaml_load
@@ -16,6 +21,7 @@ from pathlib import Path
 from functools import partial
 import json
 import multiprocessing as mp
+import os
 
 from constants.tboxsubtypes import VANILLA_TBOX_SUBTYPES
 from constants.patchconstants import (
@@ -39,9 +45,11 @@ from filepathconstants import (
     STAGE_PATCHES_PATH,
     OARC_CACHE_PATH,
     EXTRACTS_PATH,
+    OBJECTPACK_PATH_TAIL,
     OBJECTPACK_PATH,
     TITLE2D_SOURCE_PATH,
     ENDROLL_SOURCE_PATH,
+    OTHER_MODS_PATH,
 )
 
 args = get_program_args()
@@ -735,6 +743,7 @@ def patch_and_write_stage(
     check_patches,
     stage_oarc_remove,
     stage_oarc_add,
+    other_mods,
 ):
     stage_match = STAGE_FILE_REGEX.match(stage_path.parts[-1])
 
@@ -759,298 +768,331 @@ def patch_and_write_stage(
     # don't remove any arcs that are also set to be added
     remove_arcs = remove_arcs - add_arcs
 
-    # If this isn't layer 0, remove any arcs that layer 0 will have
-    if layer != 0:
-        stage_l0_path = Path(stage_path.as_posix().replace(f"l{layer}", "l0"))
-        stage_l0_u8 = U8File.get_parsed_U8_from_path(stage_l0_path, True)
-        # Get the arcs that layer 0 already has
-        l0_arcs = set(
-            [
-                path.replace("/oarc/", "").replace(".arc", "")
-                for path in stage_l0_u8.get_all_paths()
-                if "oarc/" in path
-            ]
-        )
-        # Subtract the arcs which will be removed
-        l0_arcs -= set(stage_oarc_remove.get((stage, 0), []))
-        # Add the arcs which will be added
-        l0_arcs |= set(stage_oarc_add.get((stage, 0), []))
+    mod = ""
+    try:
+        # If this isn't layer 0, remove any arcs that layer 0 will have
+        if layer != 0:
+            stage_l0_path = Path(stage_path.as_posix().replace(f"l{layer}", "l0"))
+            stage_l0_path, mod = get_resolved_game_file_path(stage_l0_path, other_mods)
 
-        # Get the arcs for the current layer
-        stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
-        this_layer_arcs = set(
-            [
-                path.replace("/oarc/", "").replace(".arc", "")
-                for path in stage_u8.get_all_paths()
-                if "oarc/" in path
-            ]
-        )
-        # If any arcs are currently on this layer and layer 0, remove them from this layer
-        remove_arcs |= l0_arcs.intersection(this_layer_arcs)
-        # Don't add arcs which layer 0 already has
-        add_arcs -= l0_arcs
-        stage_u8 = None
+            stage_l0_u8 = U8File.get_parsed_U8_from_path(stage_l0_path)
+            oarc_path = stage_l0_u8.get_oarc_path()
+            # Get the arcs that layer 0 already has
+            l0_arcs = set(
+                [
+                    path.replace(f"/{oarc_path}/", "").replace(".arc", "")
+                    for path in stage_l0_u8.get_all_paths()
+                    if "oarc/" in path
+                ]
+            )
+            # Subtract the arcs which will be removed
+            l0_arcs -= set(stage_oarc_remove.get((stage, 0), []))
+            # Add the arcs which will be added
+            l0_arcs |= set(stage_oarc_add.get((stage, 0), []))
 
-    if len(remove_arcs) > 0:
-        stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+            # Get the arcs for the current layer
+            stage_u8_path, mod = get_resolved_game_file_path(stage_path, other_mods)
+            stage_u8 = U8File.get_parsed_U8_from_path(stage_u8_path)
+            oarc_path = stage_u8.get_oarc_path()
+            this_layer_arcs = set(
+                [
+                    path.replace(f"/{oarc_path}/", "").replace(".arc", "")
+                    for path in stage_u8.get_all_paths()
+                    if "oarc/" in path
+                ]
+            )
+            # If any arcs are currently on this layer and layer 0, remove them from this layer
+            remove_arcs |= l0_arcs.intersection(this_layer_arcs)
+            # Don't add arcs which layer 0 already has
+            add_arcs -= l0_arcs
+            stage_u8 = None
 
-        for arc in remove_arcs:
-            stage_u8.delete_file(f"oarc/{arc}.arc")
+        if len(remove_arcs) > 0:
+            stage_u8_path, mod = get_resolved_game_file_path(stage_path, other_mods)
+            stage_u8 = U8File.get_parsed_U8_from_path(stage_u8_path)
+            oarc_path = stage_u8.get_oarc_path()
 
-    if len(add_arcs) > 0:
-        if stage_u8 is None:
-            stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+            for arc in remove_arcs:
+                stage_u8.delete_file(f"{oarc_path}/{arc}.arc")
 
-        for arc in add_arcs:
-            arc_name = f"{arc}.arc"
-            oarc_path = OARC_CACHE_PATH / arc_name
+        if len(add_arcs) > 0:
+            if stage_u8 is None:
+                stage_u8_path, mod = get_resolved_game_file_path(stage_path, other_mods)
+                stage_u8 = U8File.get_parsed_U8_from_path(stage_u8_path)
 
-            if oarc_path.exists():
-                stage_u8.add_file_data(f"oarc/{arc_name}", oarc_path.read_bytes())
-            else:
+            for arc in add_arcs:
+                arc_name = f"{arc}.arc"
+                arc_path = get_oarc_cache_path(arc_name, other_mods)
+                stage_oarc_path = stage_u8.get_oarc_path()
+
+                if arc_path.exists():
+                    stage_u8.add_file_data(
+                        f"{stage_oarc_path}/{arc_name}", arc_path.read_bytes()
+                    )
+                else:
+                    raise Exception(
+                        f"Arc '{arc_name}' cannot be found in oarccache. Try adding the arc to extracts.yaml."
+                    )
+
+        if layer == 0:
+            # handle layer overrides
+            layer_override_patches = list(
+                filter(lambda patch: patch["type"] == "layeroverride", patches)
+            )
+
+            if len(layer_override_patches) > 1:
                 raise Exception(
-                    f"Arc '{arc_name}' cannot be found in oarccache. Try adding the arc to extracts.yaml."
+                    f"Multiple layeroverrides found. {len(layer_override_patches)} layer overrides found for stage {stage}, expected 1."
+                )
+            elif len(layer_override_patches) == 1:
+                if stage_u8 is None:
+                    stage_u8_path, mod = get_resolved_game_file_path(
+                        stage_path, other_mods
+                    )
+                    stage_u8 = U8File.get_parsed_U8_from_path(stage_u8_path)
+
+                stage_u8_data = stage_u8.get_file_data("dat/stage.bzs")
+
+                if not stage_u8_data:
+                    raise TypeError("Expected type bytes but found None.")
+
+                stage_bzs = parse_bzs(stage_u8_data)
+
+                layer_override(bzs=stage_bzs, patch=layer_override_patches[0])
+                stage_u8.set_file_data("dat/stage.bzs", build_bzs(stage_bzs))
+
+            for obj_patch in filter(
+                lambda patch: patch["type"]
+                in [
+                    "objadd",
+                    "objdelete",
+                    "objpatch",
+                    "objmove",
+                    "pathadd",
+                ],
+                patches,
+            ):
+                object_patches.append(obj_patch)
+
+            if len(object_patches) + len(check_patches[stage]) > 0:
+                if stage_u8 is None:
+                    stage_u8_path, mod = get_resolved_game_file_path(
+                        stage_path, other_mods
+                    )
+                    stage_u8 = U8File.get_parsed_U8_from_path(stage_u8_path)
+
+                room_path_matches = (
+                    ROOM_ARC_REGEX.match(path) for path in stage_u8.get_all_paths()
                 )
 
-    if layer == 0:
-        # handle layer overrides
-        layer_override_patches = list(
-            filter(lambda patch: patch["type"] == "layeroverride", patches)
-        )
+                room_path_matches = (
+                    path for path in room_path_matches if path is not None
+                )
 
-        if len(layer_override_patches) > 1:
-            raise Exception(
-                f"Multiple layeroverrides found. {len(layer_override_patches)} layer overrides found for stage {stage}, expected 1."
+                for room_path_match in room_path_matches:
+                    roomid = int(room_path_match.group("roomID"))
+
+                    patches_for_current_room = list(
+                        filter(
+                            lambda patch: patch.get("room") == roomid,
+                            object_patches,
+                        )
+                    )
+
+                    check_patches_for_current_room = list(
+                        filter(
+                            lambda patch: patch[0] == roomid,
+                            check_patches[stage],
+                        )
+                    )
+
+                    if (
+                        len(patches_for_current_room)
+                        + len(check_patches_for_current_room)
+                        > 0
+                    ):
+                        room_u8 = stage_u8.get_parsed_U8_from_this_U8(
+                            path=room_path_match.group(0)
+                        )
+                        room_u8_data = room_u8.get_file_data("dat/room.bzs")
+
+                        if not room_u8_data:
+                            raise TypeError("Expected type bytes but found None.")
+
+                        room_bzs = parse_bzs(room_u8_data)
+
+                        nextid = get_highest_object_id(bzs=room_bzs) + 1
+
+                        for patch in patches_for_current_room:
+                            if patch["type"] == "objadd":
+                                nextid += object_add(
+                                    bzs=room_bzs,
+                                    object_add=patch,
+                                    nextid=nextid,
+                                )
+                            elif patch["type"] == "objdelete":
+                                object_delete(bzs=room_bzs, object_delete=patch)
+                            elif patch["type"] == "objpatch":
+                                object_patch(bzs=room_bzs, object_patch=patch)
+                            elif patch["type"] == "objmove":
+                                nextid += object_move(
+                                    bzs=room_bzs,
+                                    object_move=patch,
+                                    nextid=nextid,
+                                )
+                            elif patch["type"] == "pathadd":
+                                pathadd(bzs=room_bzs, path=patch)
+                            else:
+                                raise Exception(
+                                    f"Unsupported patch type ({patch['type']}) found.\nPatch: {patch}"
+                                )
+
+                        for (
+                            room,
+                            object_name,
+                            layer,
+                            objectid,
+                            itemid,
+                            trapid,
+                            custom_flag,
+                            original_itemid,
+                            tbox_subtype,
+                        ) in check_patches_for_current_room:
+                            if object_name == "TBox":
+                                patch_tbox(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                    tbox_subtype,
+                                )
+                            elif object_name == "Item":
+                                patch_freestanding_item(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                    custom_flag,
+                                    original_itemid,
+                                )
+                            elif object_name == "NpcKyuE":
+                                patch_bucha(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
+                            elif object_name == "chest":
+                                patch_closet(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                    room,
+                                    stage,
+                                )
+                            elif object_name == "EBc":
+                                patch_ac_key_boko(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
+                            elif object_name == "HeartCo":
+                                patch_heart_container(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    trapid,
+                                )
+                            elif object_name == "Chandel":
+                                patch_chandelier_item(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    trapid,
+                                )
+                            elif object_name == "Soil":
+                                patch_digspot_item(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
+                            elif object_name == "SwSB":
+                                patch_goddess_crest(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
+                            elif object_name == "MssbTag":
+                                patch_squirrels(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
+                            elif object_name == "WarpObj":
+                                patch_trial_gate(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    trapid,
+                                )
+                            elif object_name == "TgReact":
+                                patch_tgreact(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                    custom_flag,
+                                )
+                            elif object_name == "Bell":
+                                patch_academy_bell(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    trapid,
+                                )
+                            # elif object_name == "Clef":
+                            #     patch_tadtone_group(
+                            #         room_bzs["LAY "][f"l{layer}"],
+                            #         itemid,
+                            #         objectid,
+                            #         trapid,
+                            #     )
+                            else:
+                                print(
+                                    f"Object name: {object_name} not currently supported for check patching."
+                                )
+
+                        room_u8.set_file_data("dat/room.bzs", build_bzs(room_bzs))
+                        stage_u8.set_file_data(
+                            room_path_match.group(0), room_u8.build_U8()
+                        )
+
+        if stage_u8 is not None:
+            print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
+            write_bytes_create_dirs(
+                modified_stage_path, stage_u8.build_and_compress_U8()
             )
-        elif len(layer_override_patches) == 1:
-            if stage_u8 is None:
-                stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
-
-            stage_u8_data = stage_u8.get_file_data("dat/stage.bzs")
-
-            if not stage_u8_data:
-                raise TypeError("Expected type bytes but found None.")
-
-            stage_bzs = parse_bzs(stage_u8_data)
-
-            layer_override(bzs=stage_bzs, patch=layer_override_patches[0])
-            stage_u8.set_file_data("dat/stage.bzs", build_bzs(stage_bzs))
-
-        for obj_patch in filter(
-            lambda patch: patch["type"]
-            in [
-                "objadd",
-                "objdelete",
-                "objpatch",
-                "objmove",
-                "pathadd",
-            ],
-            patches,
-        ):
-            object_patches.append(obj_patch)
-
-        if len(object_patches) + len(check_patches[stage]) > 0:
-            if stage_u8 is None:
-                stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
-
-            room_path_matches = (
-                ROOM_ARC_REGEX.match(path) for path in stage_u8.get_all_paths()
+        else:
+            print_progress_text(f"Copying  Stage: {stage}\tLayer: {layer}")
+            write_bytes_create_dirs(modified_stage_path, stage_path.read_bytes())
+    except Exception as e:
+        if mod:
+            e.add_note(
+                f'This was caused by the "{mod}" mod. This mod is currently incompatible with the randomizer.'
             )
-
-            room_path_matches = (path for path in room_path_matches if path is not None)
-
-            for room_path_match in room_path_matches:
-                roomid = int(room_path_match.group("roomID"))
-
-                patches_for_current_room = list(
-                    filter(
-                        lambda patch: patch.get("room") == roomid,
-                        object_patches,
-                    )
-                )
-
-                check_patches_for_current_room = list(
-                    filter(
-                        lambda patch: patch[0] == roomid,
-                        check_patches[stage],
-                    )
-                )
-
-                if (
-                    len(patches_for_current_room) + len(check_patches_for_current_room)
-                    > 0
-                ):
-                    room_u8 = stage_u8.get_parsed_U8_from_this_U8(
-                        path=room_path_match.group(0)
-                    )
-                    room_u8_data = room_u8.get_file_data("dat/room.bzs")
-
-                    if not room_u8_data:
-                        raise TypeError("Expected type bytes but found None.")
-
-                    room_bzs = parse_bzs(room_u8_data)
-
-                    nextid = get_highest_object_id(bzs=room_bzs) + 1
-
-                    for patch in patches_for_current_room:
-                        if patch["type"] == "objadd":
-                            nextid += object_add(
-                                bzs=room_bzs,
-                                object_add=patch,
-                                nextid=nextid,
-                            )
-                        elif patch["type"] == "objdelete":
-                            object_delete(bzs=room_bzs, object_delete=patch)
-                        elif patch["type"] == "objpatch":
-                            object_patch(bzs=room_bzs, object_patch=patch)
-                        elif patch["type"] == "objmove":
-                            nextid += object_move(
-                                bzs=room_bzs,
-                                object_move=patch,
-                                nextid=nextid,
-                            )
-                        elif patch["type"] == "pathadd":
-                            pathadd(bzs=room_bzs, path=patch)
-                        else:
-                            raise Exception(
-                                f"Unsupported patch type ({patch['type']}) found.\nPatch: {patch}"
-                            )
-
-                    for (
-                        room,
-                        object_name,
-                        layer,
-                        objectid,
-                        itemid,
-                        trapid,
-                        custom_flag,
-                        original_itemid,
-                        tbox_subtype,
-                    ) in check_patches_for_current_room:
-                        if object_name == "TBox":
-                            patch_tbox(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                objectid,
-                                trapid,
-                                tbox_subtype,
-                            )
-                        elif object_name == "Item":
-                            patch_freestanding_item(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                objectid,
-                                trapid,
-                                custom_flag,
-                                original_itemid,
-                            )
-                        elif object_name == "NpcKyuE":
-                            patch_bucha(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                objectid,
-                                trapid,
-                            )
-                        elif object_name == "chest":
-                            patch_closet(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                objectid,
-                                trapid,
-                                room,
-                                stage,
-                            )
-                        elif object_name == "EBc":
-                            patch_ac_key_boko(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                objectid,
-                                trapid,
-                            )
-                        elif object_name == "HeartCo":
-                            patch_heart_container(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                trapid,
-                            )
-                        elif object_name == "Chandel":
-                            patch_chandelier_item(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                trapid,
-                            )
-                        elif object_name == "Soil":
-                            patch_digspot_item(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                objectid,
-                                trapid,
-                            )
-                        elif object_name == "SwSB":
-                            patch_goddess_crest(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                objectid,
-                                trapid,
-                            )
-                        elif object_name == "MssbTag":
-                            patch_squirrels(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                objectid,
-                                trapid,
-                            )
-                        elif object_name == "WarpObj":
-                            patch_trial_gate(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                trapid,
-                            )
-                        elif object_name == "TgReact":
-                            patch_tgreact(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                objectid,
-                                trapid,
-                                custom_flag,
-                            )
-                        elif object_name == "Bell":
-                            patch_academy_bell(
-                                room_bzs["LAY "][f"l{layer}"],
-                                itemid,
-                                trapid,
-                            )
-                        # elif object_name == "Clef":
-                        #     patch_tadtone_group(
-                        #         room_bzs["LAY "][f"l{layer}"],
-                        #         itemid,
-                        #         objectid,
-                        #         trapid,
-                        #     )
-                        else:
-                            print(
-                                f"Object name: {object_name} not currently supported for check patching."
-                            )
-
-                    room_u8.set_file_data("dat/room.bzs", build_bzs(room_bzs))
-                    stage_u8.set_file_data(room_path_match.group(0), room_u8.build_U8())
-
-    if stage_u8 is not None:
-        print_progress_text(f"Patching Stage: {stage}\tLayer: {layer}")
-        write_bytes_create_dirs(modified_stage_path, stage_u8.build_and_compress_U8())
-    else:
-        print_progress_text(f"Copying  Stage: {stage}\tLayer: {layer}")
-        write_bytes_create_dirs(modified_stage_path, stage_path.read_bytes())
+        raise e
 
 
 class StagePatchHandler:
-    def __init__(self, output_path: Path):
+    def __init__(self, output_path: Path, other_mods: list[str] = []):
         self.base_output_path = output_path
         self.stage_output_path = self.base_output_path / "Stage"
         self.stage_patches: dict = yaml_load(STAGE_PATCHES_PATH)  # type: ignore
         self.check_patches: dict[str, list[tuple]] = defaultdict(list)
         self.stage_oarc_remove: dict[tuple[str, int], set[str]] = defaultdict(set)
         self.stage_oarc_add: dict[tuple[str, int], set[str]] = defaultdict(set)
+        self.other_mods = other_mods
 
     def handle_stage_patches(self, onlyif_handler: ConditionalPatchHandler):
         for stage in self.stage_patches:
@@ -1088,6 +1130,7 @@ class StagePatchHandler:
                 check_patches=self.check_patches,
                 stage_oarc_remove=self.stage_oarc_remove,
                 stage_oarc_add=self.stage_oarc_add,
+                other_mods=self.other_mods,
             )
 
             all_stage_file_paths = tuple(STAGE_FILES_PATH.rglob("*_stg_l*.arc.LZ"))
@@ -1126,59 +1169,131 @@ class StagePatchHandler:
         extracts: dict[dict, dict] = yaml_load(EXTRACTS_PATH)  # type: ignore
         OARC_CACHE_PATH.mkdir(parents=True, exist_ok=True)
 
-        for extract in extracts:
-            # objectpack is a special case (not a stage)
-            if "objectpack" in extract:
-                arcs = extract["objectpack"]
-                arcs_not_in_cache = [
-                    arc_name
-                    for arc_name in arcs
-                    if not (OARC_CACHE_PATH / f"{arc_name}.arc").exists()
-                ]
+        mods = [""]  # Empty string represents default game extract
+        mods.extend(self.other_mods)
 
-                if len(arcs_not_in_cache) == 0:
-                    continue
+        default_objectpack_u8 = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH)
 
-                objectpack_u8 = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH, True)
+        for mod in mods:
+            oarc_cache_path = OARC_CACHE_PATH / mod
+            if not oarc_cache_path.exists():
+                oarc_cache_path.mkdir(parents=True, exist_ok=True)
 
-                for arc in arcs_not_in_cache:
-                    print_progress_text(f"Extracting {arc}")
-                    arc_data = objectpack_u8.get_file_data(f"oarc/{arc}.arc")
+            objectpack_path, _ = get_resolved_game_file_path(
+                OBJECTPACK_PATH, self.other_mods, mod
+            )
 
-                    if not arc_data:
-                        raise TypeError("Expected type bytes but found None.")
+            for extract in extracts:
+                # objectpack is a special case (not a stage)
+                if "objectpack" in extract and objectpack_path.exists():
+                    arcs = extract["objectpack"]
+                    arcs_not_in_cache = [
+                        arc_name
+                        for arc_name in arcs
+                        if not (oarc_cache_path / f"{arc_name}.arc").exists()
+                    ]
 
-                    (OARC_CACHE_PATH / f"{arc}.arc").write_bytes(arc_data)
-            else:
-                stage = extract["stage"]
-
-                for layer in extract["layers"]:
-                    layerid = layer["layerid"]
-                    arcs = layer["oarcs"]
-
-                    all_already_in_cache = all(
-                        ((OARC_CACHE_PATH / f"{arc}.arc").exists() for arc in arcs)
-                    )
-
-                    if all_already_in_cache:
+                    if len(arcs_not_in_cache) == 0:
                         continue
 
-                    stage_path = Path(
-                        STAGE_FILES_PATH
-                        / f"{stage}"
-                        / "NX"
-                        / f"{stage}_stg_l{layerid}.arc.LZ"
-                    )
-                    stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+                    # If a mod doesn't have an objectpack, then skip it
+                    if mod and os.path.samefile(OBJECTPACK_PATH, objectpack_path):
+                        continue
 
-                    for arc_name in arcs:
-                        print_progress_text(f"Extracting {arc_name}")
-                        arc_data = stage_u8.get_file_data(f"oarc/{arc_name}.arc")
+                    objectpack_u8 = U8File.get_parsed_U8_from_path(objectpack_path)
+                    oarc_path = objectpack_u8.get_oarc_path()
+
+                    for arc in arcs_not_in_cache:
+                        arc_data = objectpack_u8.get_file_data(f"{oarc_path}/{arc}.arc")
 
                         if not arc_data:
-                            raise TypeError("Expected type bytes but found None.")
+                            raise TypeError(
+                                f"Expected type bytes but found None for {mod}/{arc}."
+                            )
 
-                        (OARC_CACHE_PATH / f"{arc_name}.arc").write_bytes(arc_data)
+                        # If we're extracting arcs from a mod, don't rewrite the arcs if they're the same
+                        # as the original game
+                        if mod:
+                            default_arc_data = default_objectpack_u8.get_file_data(
+                                f"oarc/{arc}.arc"
+                            )
+                            if arc_data == default_arc_data:
+                                print(f"{arc} for {mod} is the same as default. {objectpack_path} {OBJECTPACK_PATH}")
+                                continue
+
+                        print_progress_text(
+                            f"Extracting {mod + "/" if mod else ""}{arc_name}"
+                        )
+                        (oarc_cache_path / f"{arc}.arc").write_bytes(arc_data)
+                else:
+                    stage = extract["stage"]
+
+                    for layer in extract["layers"]:
+                        layerid = layer["layerid"]
+                        arcs = layer["oarcs"]
+
+                        all_already_in_cache = all(
+                            ((oarc_cache_path / f"{arc}.arc").exists() for arc in arcs)
+                        )
+
+                        if all_already_in_cache:
+                            continue
+
+                        original_stage_path = (
+                            STAGE_FILES_PATH
+                            / f"{stage}"
+                            / "NX"
+                            / f"{stage}_stg_l{layerid}.arc.LZ"
+                        )
+                        stage_path, _ = get_resolved_game_file_path(
+                            original_stage_path, self.other_mods, mod
+                        )
+
+                        # If this mod doesn't have the specified stage file, then skip it
+                        if mod and os.path.samefile(original_stage_path, stage_path):
+                            continue
+
+                        stage_u8 = U8File.get_parsed_U8_from_path(stage_path)
+                        oarc_path = stage_u8.get_oarc_path()
+
+                        # If we're extracting from a mod, get the original game's stage file to compare arcs against
+                        if mod:
+                            original_stage_u8 = U8File.get_parsed_U8_from_path(
+                                original_stage_path
+                            )
+
+                        for arc_name in arcs:
+                            arc_data = stage_u8.get_file_data(
+                                f"{oarc_path}/{arc_name}.arc"
+                            )
+
+                            if not arc_data:
+                                raise TypeError(
+                                    f"Expected type bytes but found None for {mod}/{arc_name}."
+                                )
+
+                            # If we're extracting arcs from a mod, don't cache them if they're the same as the base game
+                            if mod:
+                                default_arc_data = original_stage_u8.get_file_data(
+                                    f"oarc/{arc_name}.arc"
+                                )
+                                if arc_data == default_arc_data:
+                                    continue
+
+                            print_progress_text(
+                                f"Extracting {mod + "/" if mod else ""}{arc_name}"
+                            )
+                            (oarc_cache_path / f"{arc_name}.arc").write_bytes(arc_data)
+
+        # Once we've extracted all the arcs, look for conflicts between different mods
+        mod_arcs = {}
+        for mod in self.other_mods:
+            for arc in os.listdir(OARC_CACHE_PATH / mod):
+                if arc in mod_arcs:
+                    raise Exception(
+                        f'Mods "{mod_arcs[arc]}" and "{mod}" conflict and cannot be used together.'
+                    )
+                mod_arcs[arc] = mod
 
     def set_oarc_add_remove_from_patches(self):
         for stage, stage_patches in self.stage_patches.items():
@@ -1255,7 +1370,7 @@ class StagePatchHandler:
         rogo_04_data = (RANDO_ROOT_PATH / "assets" / "th_rogo_04.tpl").read_bytes()
 
         # Write title screen logo
-        title_2d_arc = U8File.get_parsed_U8_from_path(TITLE2D_SOURCE_PATH, False)
+        title_2d_arc = U8File.get_parsed_U8_from_path(TITLE2D_SOURCE_PATH)
         title_2d_arc.set_file_data("timg/tr_wiiKing2Logo_00.tpl", logo_data)
         title_2d_arc.set_file_data("timg/th_rogo_03.tpl", rogo_03_data)
         title_2d_arc.set_file_data("timg/th_rogo_04.tpl", rogo_04_data)
@@ -1274,7 +1389,7 @@ class StagePatchHandler:
 
         # Write credits logo
         print_progress_text("Patching Credits Logo")
-        endroll_arc = U8File.get_parsed_U8_from_path(ENDROLL_SOURCE_PATH, False)
+        endroll_arc = U8File.get_parsed_U8_from_path(ENDROLL_SOURCE_PATH)
         endroll_arc.set_file_data("timg/th_zeldaRogoEnd_02.tpl", logo_data)
         endroll_arc.set_file_data("timg/th_rogo_03.tpl", rogo_03_data)
         endroll_arc.set_file_data("timg/th_rogo_04.tpl", rogo_04_data)
@@ -1291,3 +1406,31 @@ class StagePatchHandler:
         write_bytes_create_dirs(
             self.base_output_path / "Layout" / "EndRoll.arc", endroll_arc.build_U8()
         )
+
+    def verify_other_mods(self) -> bool:
+        mod_files: dict[Path, str] = {}
+        for mod in self.other_mods:
+            # Don't allow patching if we can't find the other mod
+            if not (OTHER_MODS_PATH / mod).exists():
+                raise Exception(
+                    f'Could not find mod "{mod}". Please make sure it\'s in the "other_mods" folder.'
+                )
+
+            # Look for conflicts between mods and don't allow patching if there are conflicts
+            for root, dirs, files in os.walk(OTHER_MODS_PATH / mod):
+                for file in files:
+                    file_path = os.path.join(root, file)
+
+                    # Get the part of the path which just involves the game folders
+                    for i, part in enumerate(reversed(file_path)):
+                        if part in ("romfs", "exefs"):
+                            file_path = "/".join(file_path[-1 - i :])
+                            break
+
+                    # Allow multiple mods to have objectpack though since we recompress the objectpack anyway
+                    if file_path in mod_files and "ObjectPack.arc" not in file_path:
+                        raise Exception(
+                            f'Mods "{mod_files[file_path]}" and "{mod}" both modify the file {file_path} and cannot be used together.'
+                        )
+                    mod_files[file_path] = mod
+                    mod_files[get_other_file_path(file_path)] = mod

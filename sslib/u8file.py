@@ -386,11 +386,20 @@ class U8File:
 
         return map(lambda x: dir_name + "/" + x, all_paths)
 
+    # Some mods have a weird extra directory before the oarc folder, so this function is necessary to account for that
+    def get_oarc_path(self) -> str:
+        oarc_path = "oarc"
+        for path in self.get_all_paths():
+            if "oarc/" in path:
+                oarc_path = path.split(oarc_path)[0][1:] + oarc_path
+                break
+        return oarc_path
+
     @staticmethod
-    def get_parsed_U8_from_path(path: Path, decompress: bool):
+    def get_parsed_U8_from_path(path: Path):
         data = path.read_bytes()
 
-        if decompress:
+        if data[0] == 0x11:
             data = nlzss11.decompress(data)
 
         return U8File.parse_u8(BytesIO(data))

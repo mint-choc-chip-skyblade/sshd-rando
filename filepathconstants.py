@@ -29,6 +29,7 @@ if platform.system() == "Darwin":
 SSHD_EXTRACT_PATH = Path(userdata_path) / "sshd_extract"
 EXEFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "exefs"
 ROMFS_EXTRACT_PATH = SSHD_EXTRACT_PATH / "romfs"
+OTHER_MODS_PATH = Path(userdata_path) / "other_mods"
 
 # Outputs
 DEFAULT_OUTPUT_PATH = Path(userdata_path) / "sshdr_output"

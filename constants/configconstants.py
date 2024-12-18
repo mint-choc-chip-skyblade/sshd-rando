@@ -107,6 +107,7 @@ DEFAULT_SETTINGS = {
         "Shipyard - Gossip Stone after First Minecart Track",
     ],
     "mixed_entrance_pools": [],
+    "other_mods": [],
 }
 
 if platform.system() != "Windows":

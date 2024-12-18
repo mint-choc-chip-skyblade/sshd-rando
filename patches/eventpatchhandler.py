@@ -87,7 +87,7 @@ class EventPatchHandler:
                 / file_name
             )
 
-            event_arc = U8File.get_parsed_U8_from_path(event_path, False)
+            event_arc = U8File.get_parsed_U8_from_path(event_path)
 
             # patch text files first
             for event_file_path in filter(
