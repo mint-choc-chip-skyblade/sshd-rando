@@ -1,3 +1,4 @@
+from constants.shopconstants import BEEDLE_TEXT_PATCHES
 from patches.eventpatchhandler import *
 from logic.world import *
 
@@ -18,6 +19,8 @@ def add_dynamic_text_patches(
     add_sky_keep_goal_loc_patches(world)
 
     add_rando_hash(world, event_patch_handler)
+
+    apply_shop_text_patches(world, event_patch_handler)
 
 
 def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) -> None:
@@ -419,3 +422,82 @@ def add_rando_hash(world: World, event_patch_handler: EventPatchHandler) -> None
         {"name": "Rando hash on new file", "type": "textpatch", "index": 69},  # Nice
     )
     add_text_data("Rando hash on new file", Text("") + hash)
+
+
+def apply_shop_text_patches(
+    world: World, event_patch_handler: EventPatchHandler
+) -> None:
+    # TODO: add price randomization here
+
+    for location_name in BEEDLE_TEXT_PATCHES:
+        location = world.get_location(location_name)
+        sold_item_text = get_text_data(location.current_item.name, "pretty")
+        normal_text_index, discounted_text_index, normal_price, discounted_price = (
+            BEEDLE_TEXT_PATCHES[location_name]
+        )
+
+        # Normal shop text
+        patch_name = f"{location_name} Normal Text"
+
+        if type(normal_text_index) != int:
+            patch_name = normal_text_index
+            event_patch_handler.append_to_event_patches(
+                "105-Terry",
+                {
+                    "name": patch_name,
+                    "type": "textadd",
+                },
+            )
+        else:
+            event_patch_handler.append_to_event_patches(
+                "105-Terry",
+                {
+                    "name": patch_name,
+                    "type": "textpatch",
+                    "index": normal_text_index,
+                },
+            )
+
+        shop_normal_text = get_text_data("Beedle Normal Shop Text Template")
+
+        shop_normal_text = shop_normal_text.replace(
+            "{sold_item}", Text.apply_text_color(sold_item_text, "y")
+        )
+        shop_normal_text = shop_normal_text.replace("{normal_price}", str(normal_price))
+        shop_normal_text.resolve_plurality(sold_item_text)
+
+        add_text_data(patch_name, shop_normal_text)
+
+        # Discounted shop text
+        patch_name = f"{location_name} Discounted Text"
+
+        if type(discounted_text_index) != int:
+            patch_name = discounted_text_index
+            event_patch_handler.append_to_event_patches(
+                "105-Terry",
+                {
+                    "name": patch_name,
+                    "type": "textadd",
+                },
+            )
+        else:
+            event_patch_handler.append_to_event_patches(
+                "105-Terry",
+                {
+                    "name": patch_name,
+                    "type": "textpatch",
+                    "index": discounted_text_index,
+                },
+            )
+
+        shop_discounted_text = get_text_data("Beedle Discounted Shop Text Template")
+
+        shop_discounted_text = shop_discounted_text.replace(
+            "{sold_item}", Text.apply_text_color(sold_item_text, "y")
+        )
+        shop_discounted_text = shop_discounted_text.replace(
+            "{discounted_price}", str(discounted_price)
+        )
+        shop_discounted_text.resolve_plurality(sold_item_text)
+
+        add_text_data(patch_name, shop_discounted_text)

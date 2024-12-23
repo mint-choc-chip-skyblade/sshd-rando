@@ -28,6 +28,30 @@ SOLD_OUT_STORYFLAGS = {
     27: 941,  # 1000R
 }
 
+# (undiscounted text index, discounted text index, normal price, discounted price)
+BEEDLE_TEXT_PATCHES = {
+    "Beedle's Airshop - 50 Rupee Item": (25, 26, 50, 25),
+    "Beedle's Airshop - First 100 Rupee Item": (23, 24, 100, 50),
+    "Beedle's Airshop - Second 100 Rupee Item": (
+        "Second 100R undiscounted Text",
+        "Second 100R discounted Text",
+        100,
+        50,
+    ),
+    "Beedle's Airshop - Third 100 Rupee Item": (
+        "Third 100R undiscounted Text",
+        "Third 100R discounted Text",
+        100,
+        50,
+    ),
+    "Beedle's Airshop - 300 Rupee Item": (19, 20, 300, 150),
+    "Beedle's Airshop - 600 Rupee Item": (29, 30, 600, 300),
+    "Beedle's Airshop - 800 Rupee Item": (27, 28, 800, 400),
+    "Beedle's Airshop - 1000 Rupee Item": (33, 34, 1000, 500),
+    "Beedle's Airshop - 1200 Rupee Item": (31, 32, 1200, 600),
+    "Beedle's Airshop - 1600 Rupee Item": (21, 22, 1600, 800),
+}
+
 # Buy Decide Scale
 DEFAULT_BUY_DECIDE_SCALE = 1.5
 BUY_DECIDE_SCALES = {
