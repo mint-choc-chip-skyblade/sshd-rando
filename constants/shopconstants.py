@@ -1,3 +1,85 @@
+# (undiscounted text index, discounted text index)
+BEEDLE_TEXT_PATCHES = {
+    "Beedle's Airshop - 50 Rupee Item": (
+        25,
+        26,
+    ),
+    "Beedle's Airshop - First 100 Rupee Item": (
+        23,
+        24,
+    ),
+    "Beedle's Airshop - Second 100 Rupee Item": (
+        "Second 100R undiscounted Text",
+        "Second 100R discounted Text",
+    ),
+    "Beedle's Airshop - Third 100 Rupee Item": (
+        "Third 100R undiscounted Text",
+        "Third 100R discounted Text",
+    ),
+    "Beedle's Airshop - 300 Rupee Item": (
+        19,
+        20,
+    ),
+    "Beedle's Airshop - 600 Rupee Item": (
+        29,
+        30,
+    ),
+    "Beedle's Airshop - 800 Rupee Item": (
+        27,
+        28,
+    ),
+    "Beedle's Airshop - 1000 Rupee Item": (
+        33,
+        34,
+    ),
+    "Beedle's Airshop - 1200 Rupee Item": (
+        31,
+        32,
+    ),
+    "Beedle's Airshop - 1600 Rupee Item": (
+        21,
+        22,
+    ),
+}
+
+VANILLA_SHOP_PRICES = {
+    "Beedle's Airshop - 50 Rupee Item": 50,
+    "Beedle's Airshop - First 100 Rupee Item": 100,
+    "Beedle's Airshop - Second 100 Rupee Item": 100,
+    "Beedle's Airshop - Third 100 Rupee Item": 100,
+    "Beedle's Airshop - 300 Rupee Item": 300,
+    "Beedle's Airshop - 600 Rupee Item": 600,
+    "Beedle's Airshop - 800 Rupee Item": 800,
+    "Beedle's Airshop - 1000 Rupee Item": 1000,
+    "Beedle's Airshop - 1200 Rupee Item": 1200,
+    "Beedle's Airshop - 1600 Rupee Item": 1600,
+}
+
+# Each main wallet size +300, +600, +900
+WALLET_CAPACITY_BOUNDARIES = [
+    300,  # Base Wallet
+    600,
+    900,
+    1200,
+    500,  # Medium Wallet
+    800,
+    1100,
+    1400,
+    1000,  # Big Wallet
+    1300,
+    1600,
+    1900,
+    5000,  # Giant Wallet
+    5300,
+    5600,
+    5900,
+    9000,  # Tycoon Wallet
+    9300,
+    9600,
+    9900,
+]
+
+
 NEXT_SHOP_INDEXES = {
     24: 28,  # extra wallet -> unused1
     28: 29,  # unused1 -> unused2
@@ -26,30 +108,6 @@ SOLD_OUT_STORYFLAGS = {
     29: 939,  # 100R3
     25: 940,  # 50R
     27: 941,  # 1000R
-}
-
-# (undiscounted text index, discounted text index, normal price, discounted price)
-BEEDLE_TEXT_PATCHES = {
-    "Beedle's Airshop - 50 Rupee Item": (25, 26, 50, 25),
-    "Beedle's Airshop - First 100 Rupee Item": (23, 24, 100, 50),
-    "Beedle's Airshop - Second 100 Rupee Item": (
-        "Second 100R undiscounted Text",
-        "Second 100R discounted Text",
-        100,
-        50,
-    ),
-    "Beedle's Airshop - Third 100 Rupee Item": (
-        "Third 100R undiscounted Text",
-        "Third 100R discounted Text",
-        100,
-        50,
-    ),
-    "Beedle's Airshop - 300 Rupee Item": (19, 20, 300, 150),
-    "Beedle's Airshop - 600 Rupee Item": (29, 30, 600, 300),
-    "Beedle's Airshop - 800 Rupee Item": (27, 28, 800, 400),
-    "Beedle's Airshop - 1000 Rupee Item": (33, 34, 1000, 500),
-    "Beedle's Airshop - 1200 Rupee Item": (31, 32, 1200, 600),
-    "Beedle's Airshop - 1600 Rupee Item": (21, 22, 1600, 800),
 }
 
 # Buy Decide Scale

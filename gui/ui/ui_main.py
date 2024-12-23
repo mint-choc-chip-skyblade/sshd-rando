@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.6.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -554,6 +554,11 @@ class Ui_main_window(object):
 
 
         self.verticalLayout.addLayout(self.peatrice_conversations_layout)
+
+        self.setting_randomize_shop_prices = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_randomize_shop_prices.setObjectName(u"setting_randomize_shop_prices")
+
+        self.verticalLayout.addWidget(self.setting_randomize_shop_prices)
 
         self.setting_random_bottle_contents = RandoTriStateCheckBox(self.tweaks_group_box)
         self.setting_random_bottle_contents.setObjectName(u"setting_random_bottle_contents")
@@ -2811,7 +2816,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(3)
+        self.tab_widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -2864,6 +2869,7 @@ class Ui_main_window(object):
         self.damage_multiplier_label.setText(QCoreApplication.translate("main_window", u"Damage Multiplier", None))
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
+        self.setting_randomize_shop_prices.setText(QCoreApplication.translate("main_window", u"Randomize Shop Prices", None))
         self.setting_random_bottle_contents.setText(QCoreApplication.translate("main_window", u"Random Bottle Contents", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
         self.setting_skip_harp_playing.setText(QCoreApplication.translate("main_window", u"Skip Harp Playing", None))

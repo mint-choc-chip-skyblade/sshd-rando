@@ -228,7 +228,9 @@ def determine_check_patches(
                 for oarc in item_oarcs:
                     stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
 
-                create_shop_data(asm_patch_handler, shop_index, item, trapid)
+                create_shop_data(
+                    world, asm_patch_handler, location, shop_index, item, trapid
+                )
 
 
 def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
@@ -296,16 +298,19 @@ def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
 
 
 def create_shop_data(
-    asm_patch_handler: ASMPatchHandler, shop_index: int, item: "Item", trapid: int
+    world: World,
+    asm_patch_handler: ASMPatchHandler,
+    location: Location,
+    shop_index: int,
+    item: "Item",
+    trapid: int,
 ):
     itemid = item.id
-    price = PRICES.get(shop_index, -1)
+    item_price = world.shop_prices[location.name]
     trapbits = 0xF
 
     if trapid > 0:
         trapbits = 254 - trapid
-
-    # TODO: add price randomization here
 
     asm_patch_handler.add_shop_data(
         shop_index,
@@ -313,7 +318,7 @@ def create_shop_data(
         PUT_SCALES.get(itemid, DEFAULT_PUT_SCALE),
         TARGET_ARROW_HEIGHT_OFFSETS.get(shop_index, -1),
         itemid,
-        price,
+        item_price,
         EVENT_ENTRYPOINTS.get(shop_index, -1),
         NEXT_SHOP_INDEXES.get(shop_index, -1),
         0xFFFF,

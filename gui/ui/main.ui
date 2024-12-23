@@ -36,7 +36,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -815,6 +815,13 @@
               </widget>
              </item>
             </layout>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_shop_prices">
+             <property name="text">
+              <string>Randomize Shop Prices</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="RandoTriStateCheckBox" name="setting_random_bottle_contents">

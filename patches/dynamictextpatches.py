@@ -427,14 +427,12 @@ def add_rando_hash(world: World, event_patch_handler: EventPatchHandler) -> None
 def apply_shop_text_patches(
     world: World, event_patch_handler: EventPatchHandler
 ) -> None:
-    # TODO: add price randomization here
-
     for location_name in BEEDLE_TEXT_PATCHES:
         location = world.get_location(location_name)
         sold_item_text = get_text_data(location.current_item.name, "pretty")
-        normal_text_index, discounted_text_index, normal_price, discounted_price = (
-            BEEDLE_TEXT_PATCHES[location_name]
-        )
+        normal_text_index, discounted_text_index = BEEDLE_TEXT_PATCHES[location_name]
+        normal_price = world.shop_prices[location_name]
+        discounted_price = normal_price // 2
 
         # Normal shop text
         patch_name = f"{location_name} Normal Text"
