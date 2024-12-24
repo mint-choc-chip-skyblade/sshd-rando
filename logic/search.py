@@ -414,7 +414,7 @@ def all_logic_satisfied(worlds: list["World"], item_pool: Counter[Item] = {}) ->
                     or not l.name.startswith("Sky Keep")
                 )
             ]
-            
+
             # Filter so that there's only one sky keep goal location
             found_sky_keep_goal = False
             for loc in accessible_goal_locations.copy():
