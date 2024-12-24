@@ -75,6 +75,10 @@ pub fn assign_item_textbox_collection_sfx(
             flag::ITEMFLAGS::EMERALD_TABLET
             | flag::ITEMFLAGS::RUBY_TABLET
             | flag::ITEMFLAGS::AMBER_TABLET => 0x1882,
+            flag::ITEMFLAGS::TEAR_OF_FARORE
+            | flag::ITEMFLAGS::TEAR_OF_DIN
+            | flag::ITEMFLAGS::TEAR_OF_NAYRU
+            | flag::ITEMFLAGS::SACRED_TEAR => 0x1529,
             _ => 0,
         };
 
