@@ -217,6 +217,9 @@ b.eq load_additional_sfx
 cmp w8, #67
 b.eq assign_item_textbox_collection_sfx
 
+cmp w8, #68
+b.eq get_silent_realm_item_glow_color
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
