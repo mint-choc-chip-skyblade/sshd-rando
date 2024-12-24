@@ -184,7 +184,7 @@ def write_config_to_file(
             config_out[world_num]["other_mods"] = []
 
             for other_mod in setting_map.other_mods:
-                config_out["other_mods"].append(other_mod)
+                config_out[world_num]["other_mods"].append(other_mod)
 
         yaml.safe_dump(config_out, config_file, sort_keys=False)
 

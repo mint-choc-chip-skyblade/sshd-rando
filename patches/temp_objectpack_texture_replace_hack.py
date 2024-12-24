@@ -11,8 +11,8 @@ from .stagepatchhandler import get_oarc_cache_path
 def patch_object_pack(object_pack_output_path: Path, other_mods: list[str] = []):
     objectpack_arc = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH)
 
-    for arc in ("Alink", "Bird_Link"):
-        arc_name = f"{arc}.arc"
+    for path in objectpack_arc.get_all_paths():
+        arc_name = path.split("/")[-1]
         oarc_path = get_oarc_cache_path(arc_name, other_mods)
 
         if oarc_path.exists():

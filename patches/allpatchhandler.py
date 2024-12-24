@@ -1,4 +1,7 @@
-from filepathconstants import OBJECTPACK_PATH_TAIL, SSHD_EXTRACT_PATH, OTHER_MODS_PATH
+from filepathconstants import (
+    OBJECTPACK_PATH_TAIL,
+    SSHD_EXTRACT_PATH,
+)
 from gui.dialogs.dialog_header import print_progress_text, update_progress_value
 from logic.world import World
 from patches.asmpatchhandler import ASMPatchHandler
@@ -15,9 +18,8 @@ from patches.entrancepatchhandler import (
 from patches.stagepatchhandler import StagePatchHandler
 from patches.eventpatchhandler import EventPatchHandler
 from patches.dynamictextpatches import add_dynamic_text_patches
-from sslib.utils import write_bytes_create_dirs
+from patches.othermods import verify_other_mods, copy_extra_mod_files
 from shutil import rmtree
-import os
 
 from patches.temp_objectpack_texture_replace_hack import patch_object_pack
 
@@ -32,7 +34,9 @@ class AllPatchHandler:
 
         self.conditional_patch_handler = ConditionalPatchHandler(self.world)
 
-        self.event_patch_handler = EventPatchHandler(output_dir)
+        self.event_patch_handler = EventPatchHandler(
+            output_dir, world.setting_map.other_mods
+        )
 
         stage_output_path = output_dir / "romfs"
         self.stage_patch_handler = StagePatchHandler(
@@ -61,7 +65,7 @@ class AllPatchHandler:
             rmtree(romfs_output.as_posix())
 
         update_progress_value(16)
-        self.stage_patch_handler.verify_other_mods()
+        verify_other_mods(self.world.setting_map.other_mods)
         self.stage_patch_handler.create_oarc_cache()
         self.stage_patch_handler.set_oarc_add_remove_from_patches()
 
@@ -102,35 +106,8 @@ class AllPatchHandler:
 
         update_progress_value(99)
         self.asm_patch_handler.patch_all_asm(self.world, self.conditional_patch_handler)
-        self.copy_extra_mod_files(self.stage_patch_handler.other_mods)
+        copy_extra_mod_files(
+            self.world.setting_map.other_mods, self.world.config.output_dir
+        )
 
         print_progress_text("Patching completed")
-
-    # If any active mods modify extra files not touched by the randomizer, then copy them over here
-    def copy_extra_mod_files(self, other_mods: list[str] = []):
-
-        if not other_mods:
-            return
-
-        print_progress_text("Copying Other Mod Files")
-        for mod in other_mods:
-            for root, dirs, files in os.walk(OTHER_MODS_PATH / mod):
-                for file in files:
-                    file_path = os.path.join(root, file)
-                    if "exefs" in file_path:
-                        file_path = file_path[file_path.index("exefs") :]
-                    elif "romfs" in file_path:
-                        file_path = file_path[file_path.index("romfs") :]
-
-                    output = self.world.config.output_dir
-                    path = output / file_path
-                    other_path = (
-                        output / f"{file_path[:-3]}"
-                        if file_path.endswith(".LZ")
-                        else output / f"{file_path}.LZ"
-                    )
-
-                    if not path.exists() and not other_path.exists():
-                        write_bytes_create_dirs(
-                            path, (OTHER_MODS_PATH / mod / file_path).read_bytes()
-                        )

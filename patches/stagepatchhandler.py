@@ -7,7 +7,6 @@ from gui.dialogs.dialog_header import (
 )
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 from patches.othermods import (
-    get_other_file_path,
     get_resolved_game_file_path,
     get_oarc_cache_path,
 )
@@ -49,7 +48,6 @@ from filepathconstants import (
     OBJECTPACK_PATH,
     TITLE2D_SOURCE_PATH,
     ENDROLL_SOURCE_PATH,
-    OTHER_MODS_PATH,
 )
 
 args = get_program_args()
@@ -1203,28 +1201,29 @@ class StagePatchHandler:
                     objectpack_u8 = U8File.get_parsed_U8_from_path(objectpack_path)
                     oarc_path = objectpack_u8.get_oarc_path()
 
-                    for arc in arcs_not_in_cache:
-                        arc_data = objectpack_u8.get_file_data(f"{oarc_path}/{arc}.arc")
+                    for arc_name in arcs_not_in_cache:
+                        arc_data = objectpack_u8.get_file_data(
+                            f"{oarc_path}/{arc_name}.arc"
+                        )
 
                         if not arc_data:
                             raise TypeError(
-                                f"Expected type bytes but found None for {mod}/{arc}."
+                                f"Expected type bytes but found None for {mod}/{arc_name}."
                             )
 
                         # If we're extracting arcs from a mod, don't rewrite the arcs if they're the same
                         # as the original game
                         if mod:
                             default_arc_data = default_objectpack_u8.get_file_data(
-                                f"oarc/{arc}.arc"
+                                f"oarc/{arc_name}.arc"
                             )
                             if arc_data == default_arc_data:
-                                print(f"{arc} for {mod} is the same as default. {objectpack_path} {OBJECTPACK_PATH}")
                                 continue
 
                         print_progress_text(
                             f"Extracting {mod + "/" if mod else ""}{arc_name}"
                         )
-                        (oarc_cache_path / f"{arc}.arc").write_bytes(arc_data)
+                        (oarc_cache_path / f"{arc_name}.arc").write_bytes(arc_data)
                 else:
                     stage = extract["stage"]
 
@@ -1406,31 +1405,3 @@ class StagePatchHandler:
         write_bytes_create_dirs(
             self.base_output_path / "Layout" / "EndRoll.arc", endroll_arc.build_U8()
         )
-
-    def verify_other_mods(self) -> bool:
-        mod_files: dict[Path, str] = {}
-        for mod in self.other_mods:
-            # Don't allow patching if we can't find the other mod
-            if not (OTHER_MODS_PATH / mod).exists():
-                raise Exception(
-                    f'Could not find mod "{mod}". Please make sure it\'s in the "other_mods" folder.'
-                )
-
-            # Look for conflicts between mods and don't allow patching if there are conflicts
-            for root, dirs, files in os.walk(OTHER_MODS_PATH / mod):
-                for file in files:
-                    file_path = os.path.join(root, file)
-
-                    # Get the part of the path which just involves the game folders
-                    for i, part in enumerate(reversed(file_path)):
-                        if part in ("romfs", "exefs"):
-                            file_path = "/".join(file_path[-1 - i :])
-                            break
-
-                    # Allow multiple mods to have objectpack though since we recompress the objectpack anyway
-                    if file_path in mod_files and "ObjectPack.arc" not in file_path:
-                        raise Exception(
-                            f'Mods "{mod_files[file_path]}" and "{mod}" both modify the file {file_path} and cannot be used together.'
-                        )
-                    mod_files[file_path] = mod
-                    mod_files[get_other_file_path(file_path)] = mod
