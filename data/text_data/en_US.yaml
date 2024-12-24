@@ -1133,6 +1133,7 @@
   standard: Trap
   pretty: a <Health Trap>
   cryptic: a <r<life drain>>
+  plurality: Singular
 
 - name: Groose Trap
   standard: Trap
