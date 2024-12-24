@@ -693,34 +693,38 @@ class World:
 
         for world in self.worlds:
             for location in world.get_all_item_locations():
-                if (
-                    world.setting("randomize_shop_prices") == "on"
-                    and location.name in VANILLA_SHOP_PRICES
-                ):
-                    WALLET_CAPACITY_BOUNDARIES.sort()
-                    vanilla_price = VANILLA_SHOP_PRICES[location.name]
-
-                    upper_price_bound = WALLET_CAPACITY_BOUNDARIES[-1]
-
-                    # Relies on WALLET_CAPACITY_BOUNDARIES being sorted
-                    for boundary_price in WALLET_CAPACITY_BOUNDARIES:
-                        if boundary_price >= vanilla_price:
-                            upper_price_bound = boundary_price
-                            break
-
-                    boundary_price_index = WALLET_CAPACITY_BOUNDARIES.index(
-                        upper_price_bound
-                    )
-
-                    if boundary_price_index > 0:
-                        lower_price_bound = WALLET_CAPACITY_BOUNDARIES[
-                            boundary_price_index - 1
+                if location.name in VANILLA_SHOP_PRICES:
+                    if world.setting("randomize_shop_prices") == "off":
+                        world.shop_prices[location.name] = VANILLA_SHOP_PRICES[
+                            location.name
                         ]
                     else:
-                        lower_price_bound = 0
+                        WALLET_CAPACITY_BOUNDARIES.sort()
+                        vanilla_price = VANILLA_SHOP_PRICES[location.name]
 
-                    item_price = random.randrange(lower_price_bound, upper_price_bound)
-                    world.shop_prices[location.name] = item_price
+                        upper_price_bound = WALLET_CAPACITY_BOUNDARIES[-1]
+
+                        # Relies on WALLET_CAPACITY_BOUNDARIES being sorted
+                        for boundary_price in WALLET_CAPACITY_BOUNDARIES:
+                            if boundary_price >= vanilla_price:
+                                upper_price_bound = boundary_price
+                                break
+
+                        boundary_price_index = WALLET_CAPACITY_BOUNDARIES.index(
+                            upper_price_bound
+                        )
+
+                        if boundary_price_index > 0:
+                            lower_price_bound = WALLET_CAPACITY_BOUNDARIES[
+                                boundary_price_index - 1
+                            ]
+                        else:
+                            lower_price_bound = 0
+
+                        item_price = random.randrange(
+                            lower_price_bound, upper_price_bound
+                        )
+                        world.shop_prices[location.name] = item_price
 
     # Replaces a portion of the non-major item pool with traps.
     def add_traps(self) -> None:
