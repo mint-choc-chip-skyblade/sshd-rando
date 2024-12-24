@@ -57,18 +57,6 @@ def shuffle_world_entrances(world: World, worlds: list[World]):
                     f"Removing {location} as goal location due to it being unreachable"
                 )
 
-                for d in world.dungeons.values():
-                    goal_location_found = False
-
-                    for l in d.locations:
-                        if l.is_goal_location:
-                            goal_location_found = True
-
-                    if not goal_location_found:
-                        raise EntranceShuffleError(
-                            f"Could not generate seed because '{location}' could not be accessed and there are now not enough goal locations.<br><br>\nIf you are playing with randomized entrances, try changing your seed and re-randomizing.<br><br>\nIf not, please report this error on Discord or GitHub."
-                        )
-
 
 def set_all_entrances_data(world: World) -> None:
     with open(ENTRANCE_SHUFFLE_DATA_PATH, encoding="utf-8") as entrance_data_file:

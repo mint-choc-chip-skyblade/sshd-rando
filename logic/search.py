@@ -408,11 +408,21 @@ def all_logic_satisfied(worlds: list["World"], item_pool: Counter[Item] = {}) ->
                 l
                 for l in world.location_table.values()
                 if l.is_goal_location
+                and l in search.visited_locations
                 and (
                     world.setting("dungeons_include_sky_keep") == "on"
                     or not l.name.startswith("Sky Keep")
                 )
             ]
+            
+            # Filter so that there's only one sky keep goal location
+            found_sky_keep_goal = False
+            for loc in accessible_goal_locations.copy():
+                if "Sky Keep" in loc.name and not found_sky_keep_goal:
+                    found_sky_keep_goal = True
+                elif "Sky Keep" in loc.name and found_sky_keep_goal:
+                    accessible_goal_locations.remove(loc)
+
             if (
                 world.get_game_winning_item() not in search.owned_items
                 or len(accessible_goal_locations)
