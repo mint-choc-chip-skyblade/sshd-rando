@@ -519,12 +519,16 @@ def set_plandomizer_entrances(
                 entrance_type = entrance_to_connect.type
             else:
                 raise EntranceShuffleError(
-                    f"Entrance {entrance}'s type is not being shuffled and thus can't be plandomized"
+                    f"Entrance {entrance}'s type ({entrance.type}) is not being shuffled and thus can't be plandomized"
                 )
 
         # Get the appropriate pools
         entrance_pool = entrance_pools[entrance_type]
         target_pool = target_entrance_pools[entrance_type]
+
+        if entrance_to_connect.reverse in entrance_pool:
+            entrance_to_connect = entrance_to_connect.reverse
+            target_to_connect = target_to_connect.reverse
 
         if entrance_to_connect in entrance_pool:
             valid_target_found = False
@@ -546,7 +550,7 @@ def set_plandomizer_entrances(
                 )
         else:
             raise EntranceShuffleError(
-                f"Entrance {entrance}'s type is not being shuffled and thus can't be plandomized"
+                f"Entrance {entrance}'s type ({entrance.type}) is not being shuffled and thus can't be plandomized"
             )
 
     logging.getLogger("").debug("All plandomizer entrances have been placed")

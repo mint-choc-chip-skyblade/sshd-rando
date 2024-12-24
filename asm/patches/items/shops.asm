@@ -21,12 +21,12 @@
 
 ; Rotate shop items
 .offset 0x7100b0595c
-mov w8, #66
+mov w8, #69
 bl additions_jumptable
 
 ; Set shop item height
 .offset 0x7100afff98
-mov w8, #67
+mov w8, #70
 bl additions_jumptable
 
 ; Init dAcShopSample__Subclasses based on their shop_index instead of the item
@@ -68,7 +68,7 @@ mov w8, w20
 ; Set sold out storyflag when giving item
 ; and ignore the extra wallet storyflag counter
 .offset 0x7100b042d4
-mov w8, #68
+mov w8, #71
 bl additions_jumptable
 b 0x7100b042f4
 
@@ -82,7 +82,7 @@ b 0x7100b04400
 cmp x0, #0
 b.eq 0x7100b04250 ; ret
 ldrh w0, [x0, #8]
-mov w8, #69
+mov w8, #72
 b additions_jumptable
 
 
@@ -90,7 +90,7 @@ b additions_jumptable
 .offset 0x7100b04314
 csel x20, x10, x9, eq ; change out reg to x20 instead of x8
 mov w19, w0
-mov w8, #70
+mov w8, #73
 bl additions_jumptable
 ldrh w8, [x20, #0xC]
 mov w0, w19
@@ -111,7 +111,7 @@ nop
 .offset 0x7100b03210
 csel x20, x10, x9, eq ; change out reg to x20 instead of x8
 mov w19, w0
-mov w8, #70
+mov w8, #73
 bl additions_jumptable
 ldrh w8, [x20, #0xC]
 mov w0, w19

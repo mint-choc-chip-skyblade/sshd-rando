@@ -12,7 +12,10 @@ from patches.entrancepatchhandler import (
     determine_entrance_patches,
     patch_required_dungeon_text_trigger,
 )
-from patches.stagepatchhandler import StagePatchHandler
+from patches.stagepatchhandler import (
+    StagePatchHandler,
+    create_shuffled_trial_object_patches,
+)
 from patches.eventpatchhandler import EventPatchHandler
 from patches.dynamictextpatches import add_dynamic_text_patches
 from shutil import rmtree
@@ -74,6 +77,8 @@ class AllPatchHandler:
         determine_entrance_patches(
             self.world.get_shuffled_entrances(), self.stage_patch_handler
         )
+
+        create_shuffled_trial_object_patches(self.world, self.stage_patch_handler)
 
         patch_object_pack(self.world.config.output_dir / OBJECTPACK_PATH_TAIL)
 

@@ -127,6 +127,14 @@ def get_disabled_shuffle_locations(
                 settings["underground_rupee_shuffle"].value == "off"
                 and "Underground Rupees" in location.types
             )
+            # Split off the relic number for the check name and compare it to the number of treasures being allowed.
+            # If it's higher than the trial treasuresanity number it'll be a vanilla location
+            or (
+                "Dusk Relic" in location.types
+                and settings["trial_treasure_shuffle"].value != "random"
+                and int(location.name.split(" ")[-1], 0)
+                > int(settings["trial_treasure_shuffle"].value, 0)
+            )
         )
     ]
 

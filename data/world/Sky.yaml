@@ -285,7 +285,7 @@
     Isle of Songs: Nothing
     Mogma Mitts Island: Nothing
     Bug Heaven: Nothing
-    The Sky: Nothing
+    The Sky: (Goddesss_Harp and Ballad_of_the_Goddess and can_access(Central Skyloft)) or open_thunderhead == on
   locations:
     Inside the Thunderhead - Song from Levias: Spiral_Charge and Scrapper and Sword and 'Pick_up_Levias_Soup'
     Inside the Thunderhead - Gossip Stone near Bug Heaven: Nothing

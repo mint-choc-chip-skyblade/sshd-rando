@@ -217,18 +217,27 @@ cmp w8, #65
 b.eq set_top_dowsing_icon
 
 cmp w8, #66
-b.eq rotate_shop_items
+b.eq load_additional_sfx
 
 cmp w8, #67
-b.eq set_shop_display_height
+b.eq assign_item_textbox_collection_sfx
 
 cmp w8, #68
-b.eq set_shop_sold_out_storyflag
+b.eq get_silent_realm_item_glow_color
 
 cmp w8, #69
-b.eq check_shop_sold_out_storyflag
+b.eq rotate_shop_items
 
 cmp w8, #70
+b.eq set_shop_display_height
+
+cmp w8, #71
+b.eq set_shop_sold_out_storyflag
+
+cmp w8, #72
+b.eq check_shop_sold_out_storyflag
+
+cmp w8, #73
 b.eq handle_shop_traps
 
 ret ; this should never be reached
