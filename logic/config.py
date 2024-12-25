@@ -396,7 +396,7 @@ def load_config_from_file(
 
                     if not isinstance(other_mods, list):
                         raise ConfigError(
-                            f"Could not read value for setting '{setting_name}'. Are you sure that {setting_name} is defined as a list? Current value: {mixed_pools}."
+                            f"Could not read value for setting '{setting_name}'. Are you sure that {setting_name} is defined as a list? Current value: {other_mods}."
                         )
 
                     cur_world_settings.other_mods = other_mods
