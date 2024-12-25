@@ -15,7 +15,10 @@ from patches.entrancepatchhandler import (
     determine_entrance_patches,
     patch_required_dungeon_text_trigger,
 )
-from patches.stagepatchhandler import StagePatchHandler
+from patches.stagepatchhandler import (
+    StagePatchHandler,
+    create_shuffled_trial_object_patches,
+)
 from patches.eventpatchhandler import EventPatchHandler
 from patches.dynamictextpatches import add_dynamic_text_patches
 from patches.othermods import verify_other_mods, copy_extra_mod_files
@@ -87,6 +90,8 @@ class AllPatchHandler:
             self.world.config.output_dir / OBJECTPACK_PATH_TAIL,
             self.stage_patch_handler.other_mods,
         )
+
+        create_shuffled_trial_object_patches(self.world, self.stage_patch_handler)
 
         print_progress_text("Patching Stages")
         patch_required_dungeon_text_trigger(self.world, self.stage_patch_handler)

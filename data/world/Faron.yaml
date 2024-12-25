@@ -125,6 +125,8 @@
     Faron Woods Entry Statue: Nothing
     Faron Woods: Can_Cut_Trees_And_Logs or Clawshots or shortcut_logs_near_machi or 'Push_Down_Faron_Woods_Entry_Log' # Either cut trees or clawshot vines
     Behind the Temple: Nothing
+  locations:
+    Faron Woods - Stamina Fruit on Vines below First Log: Beetle
 
 - name: Faron Woods
   hint_region: Faron Woods
@@ -162,7 +164,7 @@
     Faron Woods - Stamina Fruit after Kikwi in Clearing: Nothing
     Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba: Nothing
     Faron Woods - Stamina Fruit on Vines near Erla: Nothing
-    Faron Woods - Stamina Fruit on Vines on Great Tree: Beetle # TODO: Check
+    Faron Woods - Stamina Fruit on Vines on Great Tree: Clawshots or Quick_Beetle
     Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing: Nothing
     Faron Woods - Slingshot Archway after Kikwi in Clearing: Slingshot
     Faron Woods - Slingshot Archway before Mushroom Grove: Slingshot
@@ -335,6 +337,16 @@
     Farore's Silent Realm - Collect all Tears Reward: Nothing
     Farore's Silent Realm - Stamina Fruit on Vine Wall 1: Nothing
     Farore's Silent Realm - Stamina Fruit on Vine Wall 2: Nothing
+    Farore's Silent Realm - Relic 1: Nothing
+    Farore's Silent Realm - Relic 2: Nothing
+    Farore's Silent Realm - Relic 3: Nothing
+    Farore's Silent Realm - Relic 4: Nothing
+    Farore's Silent Realm - Relic 5: Nothing
+    Farore's Silent Realm - Relic 6: Nothing
+    Farore's Silent Realm - Relic 7: Nothing
+    Farore's Silent Realm - Relic 8: Nothing
+    Farore's Silent Realm - Relic 9: Nothing
+    Farore's Silent Realm - Relic 10: Nothing
 
 # FLOODED FARON WOODS
 - name: Flooded Faron Woods

@@ -14,6 +14,7 @@ from sslib.bzs import parse_bzs, build_bzs, get_entry_from_bzs, get_highest_obje
 from sslib.utils import mask_shift_set, write_bytes_create_dirs
 from sslib.yaml import yaml_load
 from sslib.u8file import U8File
+from logic.world import World
 
 from collections import defaultdict
 from pathlib import Path
@@ -21,6 +22,7 @@ from functools import partial
 import json
 import multiprocessing as mp
 import os
+import random
 
 from constants.tboxsubtypes import VANILLA_TBOX_SUBTYPES
 from constants.patchconstants import (
@@ -150,6 +152,59 @@ def patch_freestanding_item(
         freestanding_item["params2"] = mask_shift_set(
             freestanding_item["params2"], 0x3F, 18, original_itemid
         )
+
+
+def patch_dusk_relic(
+    bzs: dict,
+    itemid: int,
+    object_id_and_scene_flag_str: str,
+    trapid: int,
+) -> None:
+
+    # Don't change anything if this is a dusk relic
+    if itemid == 168:
+        return
+
+    object_id_str, sceneflag_str = object_id_and_scene_flag_str.split("-")
+    id = int(object_id_str, 0)
+    scene_flag = int(sceneflag_str, 0)
+
+    freestanding_item: dict | None = next(
+        filter(
+            lambda x: x["name"] == "AncJwls" and x["id"] == id,
+            bzs["OBJ "],
+        ),
+        None,
+    )
+    if freestanding_item is None:
+        raise Exception(
+            f"No freestanding item with id '{id}({hex(id)})' found to patch."
+        )
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        freestanding_item["params2"] = mask_shift_set(
+            freestanding_item["params2"], 0xF, 4, trapbits
+        )
+    else:
+        # Makes sure the bit is set if not a trap
+        freestanding_item["params2"] = mask_shift_set(
+            freestanding_item["params2"], 0xF, 4, 0xF
+        )
+
+    # Change the actor into an Item instead of AncJwls
+    freestanding_item["name"] = "Item"
+
+    # Set the scene flag and item id to use in the params
+    params1 = 0xFF9C0200
+    params1 = mask_shift_set(params1, 0xFF, 0, itemid)
+    params1 = mask_shift_set(params1, 0xFF, 10, scene_flag)
+    # Unset 9th bit of param1 to force a textbox for freestanding items.
+    params1 = mask_shift_set(params1, 0x1, 9, 0)
+
+    freestanding_item["params1"] = params1
 
 
 def patch_bucha(bzs: dict, itemid: int, object_id_str: str, trapid: int):
@@ -1405,3 +1460,100 @@ class StagePatchHandler:
         write_bytes_create_dirs(
             self.base_output_path / "Layout" / "EndRoll.arc", endroll_arc.build_U8()
         )
+
+
+def create_shuffled_trial_object_patches(
+    world: World, stage_patch_handler: StagePatchHandler
+) -> None:
+
+    # Go through each stage and collect all the item object positions
+    silent_realm_stages = ["S000", "S100", "S200", "S300"]
+    shuffle = world.setting("random_trial_object_positions")
+
+    for stage in silent_realm_stages:
+        shuffle_objects: list[tuple[int, int]] = []
+        shuffle_positions: list[dict[str, float]] = []
+
+        dusk_relic_objects: list[tuple[int, int]] = []
+        dusk_relic_positions: list[dict[str, float]] = []
+
+        stage_path = STAGE_FILES_PATH / f"{stage}" / "NX" / f"{stage}_stg_l0.arc.LZ"
+        stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+
+        room_path_matches = (
+            ROOM_ARC_REGEX.match(path) for path in stage_u8.get_all_paths()
+        )
+        room_path_matches = (path for path in room_path_matches if path is not None)
+
+        # Go through all the rooms in the silent realm to collect each item
+        for room_path_match in room_path_matches:
+            room_id = int(room_path_match.group("roomID"))
+            room_u8 = stage_u8.get_parsed_U8_from_this_U8(path=room_path_match.group(0))
+
+            room_u8_data = room_u8.get_file_data("dat/room.bzs")
+            room_bzs = parse_bzs(room_u8_data)
+
+            for obj in room_bzs["LAY "]["l2"].get("OBJ ", []):
+
+                # Shuffle dusk relics amongst each other even if the shuffle is off. If trial treasuresanity is on
+                # this gives the illusion that random dusk relics were chosen for items when in reality we just
+                # switched around their positions
+                if obj["name"] == "AncJwls" and shuffle.is_any_of("none", "simple"):
+                    dusk_relic_objects.append((obj["id"], room_id))
+                    dusk_relic_positions.append(
+                        {"x": obj["posx"], "y": obj["posy"], "z": obj["posz"]}
+                    )
+
+                itemid = obj["params1"] & 0xFF
+                if (
+                    obj["name"] == "AncJwls" and shuffle.is_any_of("advanced", "full")
+                ) or (
+                    obj["name"] == "Item"
+                    and (
+                        (itemid == 0x2A and shuffle == "full")
+                        or (
+                            itemid == 0x2F
+                            and shuffle.is_any_of("simple", "advanced", "full")
+                        )
+                        or (
+                            itemid in (0x2B, 0x2C, 0x2D, 0x2E)
+                            and shuffle.is_any_of("simple", "advanced", "full")
+                        )
+                    )
+                ):
+                    shuffle_objects.append((obj["id"], room_id))
+                    shuffle_positions.append(
+                        {"x": obj["posx"], "y": obj["posy"], "z": obj["posz"]}
+                    )
+
+        # Once we've collected all the objects and positions we're going to shuffle, shuffle them
+        for patch_objects, patch_positions in [
+            (dusk_relic_objects, dusk_relic_positions),
+            (shuffle_objects, shuffle_positions),
+        ]:
+
+            # Shuffle the trial objects for this stage
+            random.shuffle(patch_objects)
+            assert len(patch_objects) == len(patch_positions)
+
+            # Then pop a position off the list of positions to match with each object
+            for object_id, room_id in patch_objects:
+                pos = patch_positions.pop()
+                position_patch = {
+                    "name": f"Position shuffle for {object_id} on {stage}",
+                    "type": "objpatch",
+                    "id": object_id,
+                    "room": room_id,
+                    "layer": 2,
+                    "objtype": "OBJ",
+                    "object": {
+                        "posx": pos["x"],
+                        "posy": pos["y"],
+                        "posz": pos["z"],
+                    },
+                }
+
+                if stage not in stage_patch_handler.stage_patches:
+                    stage_patch_handler.stage_patches[stage] = []
+
+                stage_patch_handler.stage_patches[stage].append(position_patch)

@@ -570,6 +570,16 @@ class Ui_main_window(object):
 
         self.verticalLayout.addWidget(self.setting_skip_harp_playing)
 
+        self.random_trial_object_positions_label = QLabel(self.tweaks_group_box)
+        self.random_trial_object_positions_label.setObjectName(u"random_trial_object_positions_label")
+
+        self.verticalLayout.addWidget(self.random_trial_object_positions_label)
+
+        self.setting_random_trial_object_positions = QComboBox(self.tweaks_group_box)
+        self.setting_random_trial_object_positions.setObjectName(u"setting_random_trial_object_positions")
+
+        self.verticalLayout.addWidget(self.setting_random_trial_object_positions)
+
         self.tweaks_vspacer = QSpacerItem(20, 148, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.tweaks_vspacer)
@@ -1178,6 +1188,25 @@ class Ui_main_window(object):
         self.setting_npc_closet_shuffle.setObjectName(u"setting_npc_closet_shuffle")
 
         self.verticalLayout_10.addWidget(self.setting_npc_closet_shuffle)
+
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.trial_treasure_shuffle_label = QLabel(self.shuffles_group_box)
+        self.trial_treasure_shuffle_label.setObjectName(u"trial_treasure_shuffle_label")
+        sizePolicy.setHeightForWidth(self.trial_treasure_shuffle_label.sizePolicy().hasHeightForWidth())
+        self.trial_treasure_shuffle_label.setSizePolicy(sizePolicy)
+
+        self.horizontalLayout_8.addWidget(self.trial_treasure_shuffle_label)
+
+        self.setting_trial_treasure_shuffle = QSpinBox(self.shuffles_group_box)
+        self.setting_trial_treasure_shuffle.setObjectName(u"setting_trial_treasure_shuffle")
+        sizePolicy6.setHeightForWidth(self.setting_trial_treasure_shuffle.sizePolicy().hasHeightForWidth())
+        self.setting_trial_treasure_shuffle.setSizePolicy(sizePolicy6)
+
+        self.horizontalLayout_8.addWidget(self.setting_trial_treasure_shuffle)
+
+
+        self.verticalLayout_10.addLayout(self.horizontalLayout_8)
 
         self.shuffles_vspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -2892,6 +2921,7 @@ class Ui_main_window(object):
         self.setting_random_bottle_contents.setText(QCoreApplication.translate("main_window", u"Random Bottle Contents", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
         self.setting_skip_harp_playing.setText(QCoreApplication.translate("main_window", u"Skip Harp Playing", None))
+        self.random_trial_object_positions_label.setText(QCoreApplication.translate("main_window", u"Random Trial Object Positions", None))
         self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
         self.got_sword_requirement_label.setText(QCoreApplication.translate("main_window", u"Gate of Time Sword Requirement", None))
         self.required_dungeons_label.setText(QCoreApplication.translate("main_window", u"Required Dungeons", None))
@@ -2977,6 +3007,7 @@ class Ui_main_window(object):
         self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruit Shuffle", None))
         self.setting_hidden_item_shuffle.setText(QCoreApplication.translate("main_window", u"Hidden Item Shuffle", None))
         self.npc_closet_shuffle_label.setText(QCoreApplication.translate("main_window", u"NPC Closets", None))
+        self.trial_treasure_shuffle_label.setText(QCoreApplication.translate("main_window", u"Trial Treasure Shuffle", None))
         self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))
         self.excluded_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.included_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Locations", None))
