@@ -1028,6 +1028,13 @@ def patch_and_write_stage(
                                     custom_flag,
                                     original_itemid,
                                 )
+                            elif object_name == "AncJwls":
+                                patch_dusk_relic(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
                             elif object_name == "NpcKyuE":
                                 patch_bucha(
                                     room_bzs["LAY "][f"l{layer}"],
@@ -1478,7 +1485,7 @@ def create_shuffled_trial_object_patches(
         dusk_relic_positions: list[dict[str, float]] = []
 
         stage_path = STAGE_FILES_PATH / f"{stage}" / "NX" / f"{stage}_stg_l0.arc.LZ"
-        stage_u8 = U8File.get_parsed_U8_from_path(stage_path, True)
+        stage_u8 = U8File.get_parsed_U8_from_path(stage_path)
 
         room_path_matches = (
             ROOM_ARC_REGEX.match(path) for path in stage_u8.get_all_paths()
