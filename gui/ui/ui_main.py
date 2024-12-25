@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.6.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -2315,13 +2315,6 @@ class Ui_main_window(object):
 
         self.horizontalLayout_4.addWidget(self.plandomizer_group_box)
 
-        self.random_settings_group_box = QGroupBox(self.advanced_tab)
-        self.random_settings_group_box.setObjectName(u"random_settings_group_box")
-        sizePolicy.setHeightForWidth(self.random_settings_group_box.sizePolicy().hasHeightForWidth())
-        self.random_settings_group_box.setSizePolicy(sizePolicy)
-
-        self.horizontalLayout_4.addWidget(self.random_settings_group_box)
-
         self.other_settings_group_box = QGroupBox(self.advanced_tab)
         self.other_settings_group_box.setObjectName(u"other_settings_group_box")
         sizePolicy.setHeightForWidth(self.other_settings_group_box.sizePolicy().hasHeightForWidth())
@@ -2339,6 +2332,38 @@ class Ui_main_window(object):
 
 
         self.horizontalLayout_4.addWidget(self.other_settings_group_box)
+
+        self.other_mods_group_box = QGroupBox(self.advanced_tab)
+        self.other_mods_group_box.setObjectName(u"other_mods_group_box")
+        sizePolicy.setHeightForWidth(self.other_mods_group_box.sizePolicy().hasHeightForWidth())
+        self.other_mods_group_box.setSizePolicy(sizePolicy)
+        self.verticalLayout_38 = QVBoxLayout(self.other_mods_group_box)
+        self.verticalLayout_38.setObjectName(u"verticalLayout_38")
+        self.other_mods_explanation_text = QLabel(self.other_mods_group_box)
+        self.other_mods_explanation_text.setObjectName(u"other_mods_explanation_text")
+        self.other_mods_explanation_text.setWordWrap(True)
+
+        self.verticalLayout_38.addWidget(self.other_mods_explanation_text)
+
+        self.refresh_mod_list_button = QPushButton(self.other_mods_group_box)
+        self.refresh_mod_list_button.setObjectName(u"refresh_mod_list_button")
+
+        self.verticalLayout_38.addWidget(self.refresh_mod_list_button)
+
+        self.other_mods_scroll_area = QScrollArea(self.other_mods_group_box)
+        self.other_mods_scroll_area.setObjectName(u"other_mods_scroll_area")
+        self.other_mods_scroll_area.setWidgetResizable(True)
+        self.other_mods_scroll_widget = QWidget()
+        self.other_mods_scroll_widget.setObjectName(u"other_mods_scroll_widget")
+        self.other_mods_scroll_widget.setGeometry(QRect(0, 0, 306, 336))
+        self.other_mods_scroll_layout = QVBoxLayout(self.other_mods_scroll_widget)
+        self.other_mods_scroll_layout.setObjectName(u"other_mods_scroll_layout")
+        self.other_mods_scroll_area.setWidget(self.other_mods_scroll_widget)
+
+        self.verticalLayout_38.addWidget(self.other_mods_scroll_area)
+
+
+        self.horizontalLayout_4.addWidget(self.other_mods_group_box)
 
         self.horizontalLayout_4.setStretch(0, 1)
         self.horizontalLayout_4.setStretch(1, 1)
@@ -2668,7 +2693,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 339))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2811,7 +2836,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(8)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3087,9 +3112,11 @@ class Ui_main_window(object):
         self.config_use_plandomizer.setText(QCoreApplication.translate("main_window", u"Use Plandomizer File", None))
         self.selected_plandomizer_file_label.setText(QCoreApplication.translate("main_window", u"Selected Plandomizer File:", None))
         self.open_plandomizer_folder_button.setText(QCoreApplication.translate("main_window", u"Open Plandomizer Folder", None))
-        self.random_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Random Settings", None))
         self.other_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Settings", None))
         self.setting_enable_back_in_time.setText(QCoreApplication.translate("main_window", u"Enable Back in Time (BiT)", None))
+        self.other_mods_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Mods", None))
+        self.other_mods_explanation_text.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>The randomizer modifies a lot of files the game uses. To better integrate other mods with the randomizer, you can put them in separate folders in the <span style=\" font-weight:700;\">other_mods</span> directory and choose which ones you want to apply together. For example, if you have a mod which changes Link's tunic color, you can create a new folder in the <span style=\" font-weight:700;\">other_mods</span> directory named &quot;Other Tunic Color&quot; and put the <span style=\" font-weight:700;\">romfs</span> folder of that mod into the new folder. Then refresh the mod list and it should appear below. We do not currently support mods that modify any files in the <span style=\" font-weight:700;\">exefs</span> folder.</p><p>Note that this feature is EXPERIMENTAL and we do not guarantee that you won't run into bugs when using other mods, but the randomizer will try it's best.</p></body></html>", None))
+        self.refresh_mod_list_button.setText(QCoreApplication.translate("main_window", u"Refresh Mod List", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
         self.tracker_stats_remaining_label.setText(QCoreApplication.translate("main_window", u"Locations Remaining", None))
         self.tracker_stats_remaining.setText("")

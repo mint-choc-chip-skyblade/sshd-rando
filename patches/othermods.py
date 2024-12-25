@@ -82,6 +82,11 @@ def verify_other_mods(other_mods: list[str]) -> bool:
                 f'Could not find mod "{mod}". Please make sure it\'s in the "other_mods" folder.'
             )
 
+        if not (OTHER_MODS_PATH / mod / "romfs").exists():
+            raise Exception(
+                f'Mod "{mod}" does not contain a romfs folder. Please make sure the romfs folder is directly within the mod folder.'
+            )
+
         # Find all the individual game files that each mod modifies
         for root, dirs, files in os.walk(OTHER_MODS_PATH / mod):
             for file in files:
@@ -106,7 +111,7 @@ def verify_other_mods(other_mods: list[str]) -> bool:
             and (SSHD_EXTRACT_PATH / file_path).exists()
             and "ObjectPack.arc" not in file_path
         ):
-            if not file_path.endswith(".arc.LZ") and not file_path.endswith(".LZ"):
+            if not file_path.endswith(".arc") and not file_path.endswith(".LZ"):
                 raise RuntimeError(
                     f"Unable to combine mods {mods} due to conflicts in file {file_path}"
                 )
@@ -154,10 +159,10 @@ def combine_mod_files(
     for path in base_file.get_all_paths():
         base_game_data = base_file.get_file_data(path)
         modded_files: list[tuple[bytes, str]] = []
-        mod_file_path = copy.deepcopy(path)
         for mod_file, mod in files_to_combine:
 
-            # Some mods have an extra directory in their archive files. Account for this
+            mod_file_path = copy.deepcopy(path)
+            # Some mods have an extra directory named "." in their archive files for some reason. Account for this
             if next(mod_file.get_all_paths()).startswith("/."):
                 mod_file_path = f"/.{mod_file_path}"
 
@@ -183,6 +188,8 @@ def copy_extra_mod_files(other_mods: list[str], output_dir: Path):
     if not other_mods:
         return
 
+    print_progress_text(f"Copying Extra Mod Files")
+
     # Check the combined mods folder first before any individual mods
     mod_folders = [COMBINED_MODS_FOLDER] + other_mods
 
@@ -190,10 +197,11 @@ def copy_extra_mod_files(other_mods: list[str], output_dir: Path):
         for root, dirs, files in os.walk(OTHER_MODS_PATH / mod):
             for file in files:
                 file_path = os.path.join(root, file)
-                if "exefs" in file_path:
-                    file_path = file_path[file_path.index("exefs") :]
-                elif "romfs" in file_path:
-                    file_path = file_path[file_path.index("romfs") :]
+                # Get the part of the path which just involves the game folders
+                for i, part in enumerate(reversed(Path(file_path).parts)):
+                    if part in ("romfs", "exefs"):
+                        file_path = "/".join(Path(file_path).parts[-1 - i :])
+                        break
 
                 path = output_dir / file_path
                 other_path = (
@@ -203,10 +211,11 @@ def copy_extra_mod_files(other_mods: list[str], output_dir: Path):
                 )
 
                 if not path.exists() and not other_path.exists():
-                    print_progress_text(f"Copying {mod}/{file_path} to output")
+                    print(f"Copying {mod}/{file_path} to output")
                     write_bytes_create_dirs(
                         path, (OTHER_MODS_PATH / mod / file_path).read_bytes()
                     )
 
     # Since this is the last step in the process, we can delete the temporary combined mods folder here
-    rmtree(COMBINED_MODS_PATH)
+    if Path(COMBINED_MODS_PATH).exists():
+        rmtree(COMBINED_MODS_PATH)
