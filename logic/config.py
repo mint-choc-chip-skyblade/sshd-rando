@@ -115,6 +115,7 @@ def create_default_config(filename: Path):
     setting_map.excluded_locations = get_default_setting("excluded_locations")
     setting_map.excluded_hint_locations = get_default_setting("excluded_hint_locations")
     setting_map.mixed_entrance_pools = get_default_setting("mixed_entrance_pools")
+    setting_map.other_mods = get_default_setting("other_mods")
 
     for setting_name in get_all_settings_info():
         setting_map.settings[setting_name] = create_default_setting(setting_name)
@@ -178,6 +179,12 @@ def write_config_to_file(
 
             for pool_index, pool in enumerate(setting_map.mixed_entrance_pools):
                 config_out[world_num]["mixed_entrance_pools"][pool_index] = pool
+
+            # Map other mods
+            config_out[world_num]["other_mods"] = []
+
+            for other_mod in setting_map.other_mods:
+                config_out[world_num]["other_mods"].append(other_mod)
 
         yaml.safe_dump(config_out, config_file, sort_keys=False)
 
@@ -295,6 +302,7 @@ def load_config_from_file(
                 "excluded_locations",
                 "excluded_hint_locations",
                 "mixed_entrance_pools",
+                "other_mods",
             ):
                 if config_in[world_num_str].get(setting_name) is None:
                     cur_world_settings.__setattr__(
@@ -382,6 +390,16 @@ def load_config_from_file(
                                 cur_world_settings.mixed_entrance_pools  # type: ignore
                             ]
                     continue
+
+                elif setting_name == "other_mods":
+                    other_mods = config_in[world_num_str][setting_name]
+
+                    if not isinstance(other_mods, list):
+                        raise ConfigError(
+                            f"Could not read value for setting '{setting_name}'. Are you sure that {setting_name} is defined as a list? Current value: {other_mods}."
+                        )
+
+                    cur_world_settings.other_mods = other_mods
 
             world_num += 1
             world_num_str = f"World {world_num}"

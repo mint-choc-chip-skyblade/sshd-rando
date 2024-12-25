@@ -7,7 +7,12 @@ import sys
 # for more info.
 mp.freeze_support()
 
-from filepathconstants import PLANDO_PATH, PRESETS_PATH, SSHD_EXTRACT_PATH
+from filepathconstants import (
+    PLANDO_PATH,
+    PRESETS_PATH,
+    SSHD_EXTRACT_PATH,
+    OTHER_MODS_PATH,
+)
 from util.arguments import get_program_args
 import logging
 
@@ -33,6 +38,9 @@ if not PLANDO_PATH.exists():
 
 if not PRESETS_PATH.exists():
     PRESETS_PATH.mkdir()
+
+if not OTHER_MODS_PATH.exists():
+    OTHER_MODS_PATH.mkdir()
 
 # Imports here to prevent circular dependency
 if not args.nogui:

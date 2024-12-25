@@ -106,6 +106,7 @@ class SettingMap:
         self.excluded_locations: list[str] = []
         self.excluded_hint_locations: list[str] = []
         self.mixed_entrance_pools: list[list[str]] = []
+        self.other_mods: list[str] = []
 
 
 # Helper class to allow for automatic sanity checking and syntactic sugar when
