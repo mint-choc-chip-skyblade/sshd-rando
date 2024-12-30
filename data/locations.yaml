@@ -2648,125 +2648,125 @@
     - stage/F102_1/r0/l0/TgReact/0xFC42
 
 
-# Flooded Faron Woods:
-# - name: Flooded Faron Woods - Yellow Tadtone under Lilypad
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/10 # group number
+# Flooded Faron Woods
+- name: Flooded Faron Woods - Yellow Tadtone under Lilypad
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/10 # group number
 
-# - name: Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/4 # group number
+- name: Flooded Faron Woods - 8 Light Blue Tadtones near Viewing Platform
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/4 # group number
 
-# - name: Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/2 # group number
+- name: Flooded Faron Woods - 4 Purple Tadtones under Viewing Platform
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/2 # group number
 
-# - name: Flooded Faron Woods - Red Moving Tadtone near Viewing Platform
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/1 # group number
+- name: Flooded Faron Woods - Red Moving Tadtone near Viewing Platform
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/1 # group number
 
-# - name: Flooded Faron Woods - Light Blue Tadtone under Great Tree Root
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/13 # group number
+- name: Flooded Faron Woods - Light Blue Tadtone under Great Tree Root
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/13 # group number
 
-# - name: Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/6 # group number
+- name: Flooded Faron Woods - 8 Yellow Tadtones near Kikwi Elder
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/6 # group number
 
-# - name: Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/8 # group number
+- name: Flooded Faron Woods - 4 Light Blue Moving Tadtones under Kikwi Elder
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/8 # group number
 
-# - name: Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/11 # group number
+- name: Flooded Faron Woods - 4 Red Moving Tadtones North West of Great Tree
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/11 # group number
 
-# - name: Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/5 # group number
+- name: Flooded Faron Woods - Green Tadtone behind Upper Bombable Rock
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/5 # group number
 
-# - name: Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/3 # group number
+- name: Flooded Faron Woods - 2 Dark Blue Tadtones in Grass West of Great Tree
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/3 # group number
 
-# - name: Flooded Faron Woods - 8 Green Tadtones in West Tunnel
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/9 # group number
+- name: Flooded Faron Woods - 8 Green Tadtones in West Tunnel
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/9 # group number
 
-# - name: Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/15 # group number
+- name: Flooded Faron Woods - 2 Red Tadtones in Grass near Lower Bombable Rock
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/15 # group number
 
-# - name: Flooded Faron Woods - 16 Dark Blue Tadtones in the South West
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/17 # group number
+- name: Flooded Faron Woods - 16 Dark Blue Tadtones in the South West
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/17 # group number
 
-# - name: Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/16 # group number
+- name: Flooded Faron Woods - 4 Purple Moving Tadtones near Floria Gate
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/16 # group number
 
-# - name: Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/7 # group number
+- name: Flooded Faron Woods - Dark Blue Moving Tadtone inside Small Hollow Tree
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/7 # group number
 
-# - name: Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/14 # group number
+- name: Flooded Faron Woods - 4 Yellow Tadtones under Small Hollow Tree
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/14 # group number
 
-# - name: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
-#   original_item: Group of Tadtones
-#   types:
-#     - Tadtones
-#   Paths:
-#     - stage/F103/r0/l2/Clef/12 # group number
+- name: Flooded Faron Woods - 8 Purple Tadtones in Clearing after Small Hollow Tree
+  original_item: Group of Tadtones
+  types:
+    - Tadtones
+  Paths:
+    - stage/F103/r0/l2/Clef/12 # group number
 
 - name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1
   original_item: Red Rupee
@@ -2786,15 +2786,14 @@
   Paths:
     - stage/F103_1/r0/l0/Item/0xFFF1
 
-# - name: Flooded Faron Woods - Water Dragon's Reward
-#   original_item: Song of the Hero Part
-#   types:
-#     - Tadtones
-#     - NPC
-#   hint: sometimes
-#   Paths:
-#     - event/204-ForestF3/Give item after Faron SotH CS
-#     - oarc/F103_1/l0
+- name: Flooded Faron Woods - Water Dragon's Reward
+  original_item: Song of the Hero Part
+  types:
+    - NPC
+  hint: sometimes
+  Paths:
+    - event/204-ForestF3/Give item after Faron SotH CS
+    - oarc/F103_1/l0
 
 
 # Eldin Volcano:

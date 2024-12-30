@@ -220,6 +220,12 @@ b.eq assign_item_textbox_collection_sfx
 cmp w8, #68
 b.eq get_silent_realm_item_glow_color
 
+cmp w8, #69 ; nice
+b.eq give_tadtone_random_item
+
+cmp w8, #70
+b.eq check_tadtone_counter_before_song_event
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

@@ -35,20 +35,22 @@ pub struct dAcItem {
     pub itemid:                  u16,
     pub _0:                      [u8; 6],
     pub item_model_ptr:          *mut itemModel,
-    pub _1:                      [u8; 2784],
+    pub _1:                      [u8; 1840],
+    pub state_mgr:               actor::StateMgr,
+    pub _2:                      [u8; 832],
     pub actor_list_element:      u32,
-    pub _2:                      [u8; 816],
+    pub _3:                      [u8; 816],
     pub freestanding_y_offset:   f32,
-    pub _3:                      [u8; 32],
+    pub _4:                      [u8; 32],
     pub rot_increment:           math::Vec3s,
     pub model_rot:               math::Vec3s,
     pub final_determined_itemid: u16,
-    pub _4:                      [u8; 9],
+    pub _5:                      [u8; 9],
     pub prevent_timed_despawn:   u8,
     pub prevent_drop:            u8,
-    pub _5:                      [u8; 3],
+    pub _6:                      [u8; 3],
     pub no_longer_waiting:       u8,
-    pub _6:                      [u8; 19],
+    pub _7:                      [u8; 19],
 }
 assert_eq_size!([u8; 0x1288], dAcItem);
 
@@ -1393,4 +1395,15 @@ pub fn get_silent_realm_item_glow_color(item_id: u32) -> u32 {
         }
     }
     return 4;
+}
+
+#[no_mangle]
+pub fn give_tadtone_random_item(tadtone_actor: *const actor::dAcOClef) {
+    unsafe {
+        let actor_rot_z = (*tadtone_actor).base.members.base.rot.z & 0xFF;
+        give_item(actor_rot_z as u8);
+
+        // Replaced code
+        (*SCENEFLAG_MGR).should_commit = 1;
+    }
 }
