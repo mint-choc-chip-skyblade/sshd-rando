@@ -510,10 +510,14 @@ class Tracker:
             ["main_quest/life_tree_fruit_gray.png", "main_quest/life_tree_fruit.png"],
         )
 
-        # self.tadtones_button = TrackerInventoryButton(
-        #    ["Nothing", GROUP_OF_TADTONES],
-        #    ["main_quest/tadtones_gray.png", "main_quest/tadtones.png"],
-        # )
+        self.tadtones_button = TrackerInventoryButton(
+           ["Nothing"] + [GROUP_OF_TADTONES] * 17,
+           ["main_quest/tadtones_gray.png"] + ["main_quest/tadtones.png"] * 17,
+           None,
+           [f"Tadtones ({i}/17)" for i in range(18)]
+        )
+        self.tadtones_button.create_number_label()
+        self.tadtones_button.set_label_scale(1.3)
         self.scrapper_button = TrackerInventoryButton(
             ["Nothing", SCRAPPER],
             ["main_quest/scrapper_gray.png", "main_quest/scrapper.png"],
@@ -644,7 +648,7 @@ class Tracker:
         self.ui.lower_inventory_layout.addWidget(self.gratitude_crystals_button, 2, 6)
 
         self.ui.lower_inventory_layout.addWidget(self.life_tree_fruit_button, 3, 0)
-        # self.ui.lower_inventory_layout.addWidget(self.tadtones_button, 3, 1)
+        self.ui.lower_inventory_layout.addWidget(self.tadtones_button, 3, 1)
 
         # Connect clicking a tracker inventory button to updating the tracker
         for inventory_button in self.ui.tracker_tab.findChildren(
