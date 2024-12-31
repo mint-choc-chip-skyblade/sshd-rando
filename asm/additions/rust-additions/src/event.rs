@@ -2,9 +2,12 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use crate::actor;
 use crate::debug;
 use crate::entrance;
 use crate::fix;
+use crate::flag;
+use crate::lyt;
 use crate::traps;
 
 use core::arch::asm;
@@ -106,6 +109,9 @@ extern "C" {
     // Custom symbols
     static mut TRAP_ID: u8;
 
+    static STORYFLAG_MGR: *mut flag::FlagMgr;
+    static LYT_MSG_WINDOW: *mut lyt::dLytMsgWindow;
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
 }
@@ -119,7 +125,7 @@ pub fn custom_event_commands(
     actor_event_flow_mgr: *mut ActorEventFlowMgr,
     p_event_flow_element: *const EventFlowElement,
 ) {
-    let event_flow_element = unsafe { &*p_event_flow_element };
+    let mut event_flow_element = unsafe { &*p_event_flow_element };
     match event_flow_element.param3 {
         // Fi Warp
         70 => entrance::warp_to_start(),
@@ -133,6 +139,18 @@ pub fn custom_event_commands(
         },
         72 => traps::update_traps(),
         73 => fix::set_skyloft_thunderhead_sceneflag(),
+        74 => flag::increment_tadtone_counter(),
+        75 => unsafe {
+            let tadtone_groups_left = 17 - flag::check_storyflag(953);
+
+            // Set numeric arg 0 to number of tadtones left. This will display the number
+            // of remaining tadtones in the textbox for the item give.
+            (*(*LYT_MSG_WINDOW).text_mgr).numeric_args[0] = tadtone_groups_left;
+
+            // Set result from previous check to number of tadtones left. If this is 0, it
+            // will show the item give textbox for collecting all the tadtones.
+            (*actor_event_flow_mgr).result_from_previous_check = tadtone_groups_left;
+        },
         _ => (),
     }
 
@@ -147,4 +165,23 @@ pub fn custom_event_commands(
             in(reg) p_event_flow_element,
         );
     }
+}
+
+#[no_mangle]
+pub fn check_tadtone_counter_before_song_event(
+    tadtone_minigame_actor: *mut actor::dTgClefGame,
+) -> (*mut actor::dTgClefGame, u32) {
+    let collected_tadtone_groups = flag::check_storyflag(953);
+    let vanilla_tadtones_completed_flag = flag::check_storyflag(18);
+
+    // If we've collected all 17 tadtone groups and haven't played the cutscene
+    // yet, then play the cutscene
+    if collected_tadtone_groups == 17 && vanilla_tadtones_completed_flag == 0 {
+        unsafe {
+            (*tadtone_minigame_actor).delay_before_starting_event = 0;
+        }
+        return (tadtone_minigame_actor, 1);
+    }
+
+    return (tadtone_minigame_actor, 0);
 }

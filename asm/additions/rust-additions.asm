@@ -133,3 +133,9 @@
 
 .global get_silent_realm_item_glow_color
 .type get_silent_realm_item_glow_color @function
+
+.global give_tadtone_random_item
+.type give_tadtone_random_item @function
+
+.global check_tadtone_counter_before_song_event
+.type check_tadtone_counter_before_song_event @function

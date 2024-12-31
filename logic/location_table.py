@@ -135,6 +135,10 @@ def get_disabled_shuffle_locations(
                 and int(location.name.split(" ")[-1], 0)
                 > int(settings["trial_treasure_shuffle"].value, 0)
             )
+            or (
+                settings["tadtone_shuffle"].value == "off"
+                and "Tadtones" in location.types
+            )
         )
     ]
 

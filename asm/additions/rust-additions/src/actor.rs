@@ -268,7 +268,7 @@ assert_eq_size!([u8; 0x18], ActorTreeProcess);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct StageMgrvtable {
+pub struct StateMgr__vtable {
     pub unk:                   u64,
     pub dtor:                  u64,
     pub initialize_state:      u64,
@@ -276,17 +276,17 @@ pub struct StageMgrvtable {
     pub finalize_state:        u64,
     pub change_state:          extern "C" fn(*mut StateMgr, *mut c_void),
     pub refresh_state:         u64,
-    pub get_state:             u64,
+    pub get_state:             extern "C" fn(*mut StateMgr) -> *const c_void,
     pub get_new_state_id:      u64,
-    pub get_current_state_id:  u64,
+    pub get_current_state_id:  extern "C" fn(*mut StateMgr) -> i32,
     pub get_previous_state_id: u64,
 }
-assert_eq_size!([u8; 0x58], StageMgrvtable);
+assert_eq_size!([u8; 0x58], StateMgr__vtable);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct StateMgr {
-    pub vtable: *mut StageMgrvtable,
+    pub vtable: *mut StateMgr__vtable,
     pub _0:     [u8; 0x68],
 }
 assert_eq_size!([u8; 0x70], StateMgr);
@@ -357,6 +357,15 @@ pub struct dAcObell {
 }
 assert_eq_size!([u8; 0x861], dAcObell);
 
+// Tadtone
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dAcOClef {
+    pub base: dAcOBase,
+    pub _0:   [u8; 0x5C8],
+}
+assert_eq_size!([u8; 0x9D8], dAcOClef);
+
 // Tags
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
@@ -372,6 +381,17 @@ pub struct dTgMusasabi {
     pub has_spawned_squirrels_LOD: bool,
 }
 assert_eq_size!([u8; 0x1F8], dTgMusasabi);
+
+// Tadtone Minigame
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dTgClefGame {
+    pub base:                        dAcBase,
+    pub _0:                          [u8; 0x9B],
+    pub delay_before_starting_event: u8,
+    pub _1:                          [u8; 0x4],
+}
+assert_eq_size!([u8; 0x230], dTgClefGame);
 
 // NPCs
 // TODO: dAcOrdinaryNpc
