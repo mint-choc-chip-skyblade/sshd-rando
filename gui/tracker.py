@@ -511,10 +511,10 @@ class Tracker:
         )
 
         self.tadtones_button = TrackerInventoryButton(
-           ["Nothing"] + [GROUP_OF_TADTONES] * 17,
-           ["main_quest/tadtones_gray.png"] + ["main_quest/tadtones.png"] * 17,
-           None,
-           [f"Tadtones ({i}/17)" for i in range(18)]
+            ["Nothing"] + [GROUP_OF_TADTONES] * 17,
+            ["main_quest/tadtones_gray.png"] + ["main_quest/tadtones.png"] * 17,
+            None,
+            [f"Tadtones ({i}/17)" for i in range(18)],
         )
         self.tadtones_button.create_number_label()
         self.tadtones_button.set_label_scale(1.3)

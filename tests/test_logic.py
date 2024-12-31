@@ -254,8 +254,10 @@ def test_rupee_shuffle_intermediate() -> None:
 def test_rupee_shuffle_advanced() -> None:
     config_test("rupee_shuffle_advanced.yaml")
 
+
 def test_tadtone_shuffle() -> None:
     config_test("random_tadtones.yaml")
+
 
 def test_bad_starting_inventory() -> None:
     worlds = config_test("starting_inventory_bad.yaml")

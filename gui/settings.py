@@ -21,7 +21,11 @@ from constants.configconstants import (
     get_new_seed,
 )
 from constants.guiconstants import *
-from constants.itemconstants import STARTABLE_ITEMS, GRATITUDE_CRYSTAL, GROUP_OF_TADTONES
+from constants.itemconstants import (
+    STARTABLE_ITEMS,
+    GRATITUDE_CRYSTAL,
+    GROUP_OF_TADTONES,
+)
 from filepathconstants import BASE_PRESETS_PATH, CONFIG_PATH, ITEMS_PATH, PRESETS_PATH
 from gui.components.list_pair import ListPair
 from gui.components.tristate_check_box import RandoTriStateCheckBox
@@ -777,9 +781,15 @@ class Settings:
         return [
             item
             for item in STARTABLE_ITEMS
-            if (self.config.settings[0].settings["gratitude_crystal_shuffle"].value
-            != "on"
-            and item == GRATITUDE_CRYSTAL) or (self.config.settings[0].settings["tadtone_shuffle"].value != "on" and item == GROUP_OF_TADTONES)
+            if (
+                self.config.settings[0].settings["gratitude_crystal_shuffle"].value
+                != "on"
+                and item == GRATITUDE_CRYSTAL
+            )
+            or (
+                self.config.settings[0].settings["tadtone_shuffle"].value != "on"
+                and item == GROUP_OF_TADTONES
+            )
         ]
 
     def change_preset(self):
