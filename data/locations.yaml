@@ -2790,7 +2790,7 @@
   original_item: Song of the Hero Part
   types:
     - NPC
-  hint: sometimes
+  hint: always
   Paths:
     - event/204-ForestF3/Give item after Faron SotH CS
     - oarc/F103_1/l0
