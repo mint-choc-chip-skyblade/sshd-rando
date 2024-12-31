@@ -21,7 +21,7 @@ from constants.configconstants import (
     get_new_seed,
 )
 from constants.guiconstants import *
-from constants.itemconstants import STARTABLE_ITEMS, GRATITUDE_CRYSTAL
+from constants.itemconstants import STARTABLE_ITEMS, GRATITUDE_CRYSTAL, GROUP_OF_TADTONES
 from filepathconstants import BASE_PRESETS_PATH, CONFIG_PATH, ITEMS_PATH, PRESETS_PATH
 from gui.components.list_pair import ListPair
 from gui.components.tristate_check_box import RandoTriStateCheckBox
@@ -371,6 +371,9 @@ class Settings:
         if self.config.settings[0].settings["gratitude_crystal_shuffle"].value != "on":
             while GRATITUDE_CRYSTAL in starting_inventory:
                 starting_inventory.remove(GRATITUDE_CRYSTAL)
+        if self.config.settings[0].settings["tadtone_shuffle"].value != "on":
+            while GROUP_OF_TADTONES in starting_inventory:
+                starting_inventory.remove(GROUP_OF_TADTONES)
         self.config.settings[0].starting_inventory = Counter(starting_inventory)
 
         ## Mixed entrance pools
@@ -774,9 +777,9 @@ class Settings:
         return [
             item
             for item in STARTABLE_ITEMS
-            if self.config.settings[0].settings["gratitude_crystal_shuffle"].value
+            if (self.config.settings[0].settings["gratitude_crystal_shuffle"].value
             != "on"
-            and item == GRATITUDE_CRYSTAL
+            and item == GRATITUDE_CRYSTAL) or (self.config.settings[0].settings["tadtone_shuffle"].value != "on" and item == GROUP_OF_TADTONES)
         ]
 
     def change_preset(self):
