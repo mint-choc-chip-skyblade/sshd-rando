@@ -858,3 +858,12 @@ class World:
     ) -> list[Entrance]:
         entrances = self.get_shuffleable_entrances(entrance_type, only_primary)
         return [e for e in entrances if e.shuffled]
+
+    def is_placing_hints_on_gossip_stones(self) -> None:
+        hint_types = ["path", "barren", "location", "item"]
+        return any(
+            [
+                self.setting(f"{type}_hints_on_gossip_stones") == "on"
+                for type in hint_types
+            ]
+        )

@@ -1,4 +1,4 @@
-seed: Beginner
+seed: TESTTESTTESTTESTTEST
 generate_spoiler_log: true
 use_plandomizer: false
 plandomizer_file: None
@@ -14,8 +14,10 @@ World 1:
   underground_rupee_shuffle: 'off'
   beedle_shop_shuffle: junk_only
   goddess_chest_shuffle: 'off'
+  trial_treasure_shuffle: '0'
   full_wallet_upgrades: 'off'
   skip_harp_playing: 'off'
+  random_trial_object_positions: none
   randomize_skykeep_layout: 'off'
   peatrice_conversations: '0'
   small_keys: own_dungeon
@@ -40,18 +42,18 @@ World 1:
   impa_sot_hint: 'on'
   cryptic_hint_text: 'off'
   always_hints: 'on'
-  random_starting_statues: 'off'
-  random_starting_spawn: vanilla
+  random_starting_statues: 'on'
+  random_starting_spawn: anywhere
   limit_starting_spawn: 'off'
-  randomize_dungeon_entrances: 'off'
-  randomize_trial_gate_entrances: 'off'
-  randomize_door_entrances: 'off'
-  decouple_double_doors: 'off'
-  randomize_interior_entrances: 'off'
-  randomize_overworld_entrances: 'off'
-  decouple_entrances: 'off'
+  randomize_dungeon_entrances: 'on'
+  randomize_trial_gate_entrances: 'on'
+  randomize_door_entrances: 'on'
+  decouple_double_doors: 'on'
+  randomize_interior_entrances: 'on'
+  randomize_overworld_entrances: 'on'
+  decouple_entrances: 'on'
   natural_night_connections: 'on'
-  skip_horde: 'on'
+  skip_horde: 'off'
   skip_g3: 'off'
   skip_demise: 'off'
   required_dungeons: '2'
@@ -59,10 +61,10 @@ World 1:
   empty_unrequired_dungeons: 'on'
   random_bottle_contents: 'off'
   trap_mode: no_traps
-  trappable_items: any_items
-  burn_traps: 'off'
-  curse_traps: 'off'
-  noise_traps: 'off'
+  trappable_items: major_items
+  burn_traps: 'on'
+  curse_traps: 'on'
+  noise_traps: 'on'
   groose_traps: 'off'
   health_traps: 'off'
   ammo_availability: plentiful
@@ -101,10 +103,10 @@ World 1:
   shortcut_west_wall_minecart: 'off'
   shortcut_sand_oasis_minecart: 'off'
   shortcut_minecart_before_caves: 'off'
-  shortcut_skyview_boards: 'on'
+  shortcut_skyview_boards: 'off'
   shortcut_skyview_bars: 'off'
-  shortcut_earth_temple_bridge: 'on'
-  shortcut_lmf_wind_gates: 'on'
+  shortcut_earth_temple_bridge: 'off'
+  shortcut_lmf_wind_gates: 'off'
   shortcut_lmf_boxes: 'off'
   shortcut_lmf_bars_to_west_side: 'off'
   shortcut_ac_bridge: 'off'
@@ -159,15 +161,11 @@ World 1:
   starting_sword: goddess_sword
   random_starting_tablet_count: '1'
   random_starting_item_count: '0'
-  starting_hearts: '8'
+  starting_hearts: '6'
   starting_inventory:
-  - Progressive Pouch
-  - Progressive Pouch
-  - Progressive Pouch
-  - Progressive Pouch
+  - Hylian Shield
   - Progressive Pouch
   - Scrapper
-  - Hylian Shield
   - Skyview Temple Map
   - Earth Temple Map
   - Lanayru Mining Facility Map
@@ -178,7 +176,6 @@ World 1:
   excluded_locations:
   - Knight Academy - Deliver Kikwi to Owlan
   - Upper Skyloft - 600 Points in Pumpkin Pull
-  - Bazaar - Repair Gondo's Junk
   - Central Skyloft - Peatrice's Love
   - Batreaux's House - 70 Gratitude Crystals First Reward
   - Batreaux's House - 70 Gratitude Crystals Second Reward
@@ -189,8 +186,8 @@ World 1:
   - The Sky - Form a Swirrell Ring above Volcanic Island
   - The Sky - Form a Swirrell Ring above Lumpy Pumpkin
   - The Sky - Form a Swirrell Ring above Bamboo Island
-  - Bug Heaven - 10 Bugs in 3 Minutes
   - Inside the Thunderhead - Song from Levias
+  - Bug Heaven - 10 Bugs in 3 Minutes
   - Shipyard - Heart Stopping Rickety Coaster Track in 1'05
   - The Goddess's Silent Realm - Collect all Tears Reward
   - Farore's Silent Realm - Collect all Tears Reward
