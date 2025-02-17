@@ -145,13 +145,14 @@ pub fn rotate_shop_items() {
         let shop_sample: *mut dAcShopSample;
         asm!("mov {0:x}, x19", out(reg) shop_sample);
 
+        // idk why this is backwards from the normal item actor rotation ¯\_(ツ)_/¯
         let mut degrees = -0.3f32;
         let item_index = (*(*shop_sample).model_holder.current_model).item_index as usize;
 
         if item_index == 0x7F || (*shop_sample).model_holder.use_sold_out_model {
             degrees = 0.0f32;
             (*shop_sample).base.members.base.rot.y = 0;
-        } else if SHOP_ITEMS[item_index].trapbits != 0 {
+        } else if SHOP_ITEMS[item_index].trapbits == 0xF {
             degrees = 0.3f32;
         }
 
