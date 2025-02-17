@@ -154,7 +154,7 @@
   standard: "Well, here you are. All fixed up!
     \n\n\n\nI couldn't have done it without your\nhelp. So, here, you have it...\nwhat ever this is..."
 
-- name: Rerandomize Treasure Question
+- name: Change Night Treasures/Bugs Question
   standard: "Want to sell something different?\n[1]Yes[2-]No"
 
 - name: Fix Soup textboxes

@@ -1505,42 +1505,6 @@
     index: 507
     flow:
       next: 503
-  # needs asm change to work
-  # - name: to rerandomize treasure question
-  #   type: flowpatch
-  #   index: 410
-  #   flow:
-  #     next: Show Rerandomize Treasure Question
-  # - name: Rerandomize Treasure Question
-  #   type: textadd
-  #   text: "Want to sell something different?\n[1]Yes[2-]No"
-  # - name: Show Rerandomize Treasure Question
-  #   type: flowadd
-  #   flow:
-  #     type: type1
-  #     next: Treasure Question Switch
-  #     param3: 115
-  #     param4: Rerandomize Treasure Question
-  # - name: Rerandomize Treasure
-  #   type: flowadd
-  #   flow:
-  #     type: type3
-  #     subType: 1
-  #     param1: 9 # custom actor action done with asm
-  #     param2: 0 # item
-  #     param3: 33 # make actor do something
-  #     next: 495 # ask to buy again
-  #     param4: 0
-  #     param5: 0
-  # - name: Treasure Question Switch
-  #   type: switchadd
-  #   flow:
-  #     subType: 6
-  #     param2: 0
-  #     param3: 0
-  #   cases:
-  #     - Rerandomize Treasure
-  #     - -1
   - name: Skip to end of fledge 2
     type: flowpatch
     index: 347 # after giving fledge the second stamina potion
@@ -1551,6 +1515,55 @@
     index: 353
     flow:
       next: 320 # before crystal itemget
+
+  - name: Change Night Treasures/Bugs Question
+    type: textadd
+
+  # Cycle through Rupin's night market options
+  - name: Patch in new treasure choices question
+    type: flowpatch
+    index: 410
+    flow:
+      next: Show Change Night Treasures Question
+  - name: Show Change Night Treasures Question
+    type: flowadd
+    flow:
+      type: type1
+      next: Treasure Question Switch
+      param3: 115
+      param4: Change Night Treasures/Bugs Question
+  - name: Treasure Question Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 495 # Ask to buy again (asm patched to chance choices)
+      - -1
+
+  # Cycle through Strich's night market options
+  - name: Patch in new bug choices question
+    type: flowpatch
+    index: 473
+    flow:
+      next: Show Change Night Bugs Question
+  - name: Show Change Night Bugs Question
+    type: flowadd
+    flow:
+      type: type1
+      next: Bug Question Switch
+      param3: 115
+      param4: Change Night Treasures/Bugs Question
+  - name: Bug Question Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 476 # Ask to buy again (asm patched to chance choices)
+      - -1
 
 116-InsectGame:
   - name: Fix switch 1
