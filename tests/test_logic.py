@@ -87,6 +87,42 @@ def test_default_config() -> None:
     config_test("default_empty_config.yaml")
 
 
+def test_max_entrance_rando() -> None:
+    config_test("max_entrance_rando.yaml")
+
+
+def test_mixed_pools() -> None:
+    config_test("mixed_pools.yaml")
+
+
+def test_decouple_entrances() -> None:
+    config_test("decouple_entrances.yaml")
+
+
+def test_randomize_dungeon_entrances() -> None:
+    config_test("randomize_dungeon_entrances.yaml")
+
+
+def test_randomize_door_entrances() -> None:
+    config_test("randomize_door_entrances.yaml")
+
+
+def test_randomize_door_entrances_decoupled() -> None:
+    config_test("randomize_door_entrances_decoupled.yaml")
+
+
+def test_randomize_trial_gate_entrances() -> None:
+    config_test("randomize_trial_gate_entrances.yaml")
+
+
+def test_randomize_interior_entrances() -> None:
+    config_test("randomize_interior_entrances.yaml")
+
+
+def test_randomize_overworld_entrances() -> None:
+    config_test("randomize_overworld_entrances.yaml")
+
+
 def test_random_crystals() -> None:
     config_test("random_crystals.yaml")
 
@@ -141,42 +177,6 @@ def test_random_starting_spawn_any_surface_region() -> None:
 
 def test_random_starting_spawn_anywhere() -> None:
     config_test("random_starting_spawn_anywhere.yaml")
-
-
-def test_randomize_dungeon_entrances() -> None:
-    config_test("randomize_dungeon_entrances.yaml")
-
-
-def test_randomize_door_entrances() -> None:
-    config_test("randomize_door_entrances.yaml")
-
-
-def test_randomize_door_entrances_decoupled() -> None:
-    config_test("randomize_door_entrances_decoupled.yaml")
-
-
-def test_randomize_trial_gate_entrances() -> None:
-    config_test("randomize_trial_gate_entrances.yaml")
-
-
-def test_randomize_interior_entrances() -> None:
-    config_test("randomize_interior_entrances.yaml")
-
-
-def test_randomize_overworld_entrances() -> None:
-    config_test("randomize_overworld_entrances.yaml")
-
-
-def test_decouple_entrances() -> None:
-    config_test("decouple_entrances.yaml")
-
-
-def test_mixed_pools() -> None:
-    config_test("mixed_pools.yaml")
-
-
-def test_max_entrance_rando() -> None:
-    config_test("max_entrance_rando.yaml")
 
 
 def test_fi_hints() -> None:
