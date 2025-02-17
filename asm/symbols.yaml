@@ -97,6 +97,8 @@ main:
 
     SQUIRRELS_CAUGHT_THIS_PLAY_SESSION: 0x71018285e2
 
+    SHOP_ITEMS: 0x710164043c
+
 
     # Functions
     debugPrint_128: 0x710051bf54

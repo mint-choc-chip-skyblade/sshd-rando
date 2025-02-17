@@ -112,6 +112,16 @@ def generate_spoiler_log(worlds: list[World]) -> None:
             for location in sphere:
                 longest_name_length = max(longest_name_length, len(f"{location}"))
 
+        # Get shop item name lengths for pretty formatting
+        longest_shop_item_length = 0
+        for world in worlds:
+            for location in world.location_table.values():
+                if (
+                    location.name in VANILLA_SHOP_PRICES
+                    and len(location.current_item.name) > longest_shop_item_length
+                ):
+                    longest_shop_item_length = len(location.current_item.name)
+
         # Print playthrough
         sphere_num = 0
         spoiler_log.write("\nPlaythrough:\n")
@@ -126,15 +136,23 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                 ):
                     override_item_name = EMPTY_BOTTLE
 
-                spoiler_log.write(
-                    "        "
-                    + spoiler_format_location(
-                        location,
-                        longest_name_length,
-                        override_item_name=override_item_name,
-                    )
-                    + "\n"
+                formatted_location_name = spoiler_format_location(
+                    location,
+                    longest_name_length,
+                    override_item_name=get_item_override_name(location),
                 )
+
+                if (
+                    world.setting("randomize_shop_prices") == "on"
+                    and location.name in world.shop_prices
+                ):
+                    price_info = f" # Price: {world.shop_prices[location.name]:>4}R"
+                    formatted_location_name += (
+                        " "
+                        * (longest_shop_item_length - len(location.current_item.name))
+                    ) + price_info
+
+                spoiler_log.write("        " + formatted_location_name + "\n")
             sphere_num += 1
 
         # Get name lengths for entrances for pretty formatting
@@ -181,15 +199,26 @@ def generate_spoiler_log(worlds: list[World]) -> None:
                     and "Hint Location" not in location.types
                     and "Goddess Cube" not in location.types
                 ):
-                    spoiler_log.write(
-                        "        "
-                        + spoiler_format_location(
-                            location,
-                            longest_name_length,
-                            override_item_name=get_item_override_name(location),
-                        )
-                        + "\n"
+                    formatted_location_name = spoiler_format_location(
+                        location,
+                        longest_name_length,
+                        override_item_name=get_item_override_name(location),
                     )
+
+                    if (
+                        world.setting("randomize_shop_prices") == "on"
+                        and location.name in world.shop_prices
+                    ):
+                        price_info = f" # Price: {world.shop_prices[location.name]:>4}R"
+                        formatted_location_name += (
+                            " "
+                            * (
+                                longest_shop_item_length
+                                - len(location.current_item.name)
+                            )
+                        ) + price_info
+
+                    spoiler_log.write("        " + formatted_location_name + "\n")
 
         # Recalculate longest name length for all shuffled entrances
         longest_name_length = 0
@@ -269,15 +298,26 @@ def generate_spoiler_log(worlds: list[World]) -> None:
 
             for location in world.location_table.values():
                 if location in disabled_shuffle_locations:
-                    spoiler_log.write(
-                        "        "
-                        + spoiler_format_location(
-                            location,
-                            longest_name_length,
-                            override_item_name=get_item_override_name(location),
-                        )
-                        + "\n"
+                    formatted_location_name = spoiler_format_location(
+                        location,
+                        longest_name_length,
+                        override_item_name=get_item_override_name(location),
                     )
+
+                    if (
+                        world.setting("randomize_shop_prices") == "on"
+                        and location.name in world.shop_prices
+                    ):
+                        price_info = f" # Price: {world.shop_prices[location.name]:>4}R"
+                        formatted_location_name += (
+                            " "
+                            * (
+                                longest_shop_item_length
+                                - len(location.current_item.name)
+                            )
+                        ) + price_info
+
+                    spoiler_log.write("        " + formatted_location_name + "\n")
 
         log_settings(spoiler_log, config, worlds)
 

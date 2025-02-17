@@ -48,6 +48,7 @@ class ASMPatchHandler:
         self.main_nso_output_path = self.asm_output_path / "main"
         self.subsdk8_nso_path = self.asm_output_path / "subsdk8"
         self.sdk_nso_path = self.asm_output_path / "sdk"
+        self.shop_data: dict = {}
 
     def compress(self, data: bytes) -> bytes:
         # Uses the lz4 compression.
@@ -59,7 +60,7 @@ class ASMPatchHandler:
 
     def get_segments(self, nso):
         size = SegmentHeader.SEGMENT_HEADER_SIZE
-        nso.seek(size)  # Start of .text SegmentHeader
+        nso.seek(0x10)  # Start of .text SegmentHeader
         text_header = SegmentHeader.bytes_to_segment_header(nso.read(size))
         rodata_header = SegmentHeader.bytes_to_segment_header(nso.read(size))
         data_header = SegmentHeader.bytes_to_segment_header(nso.read(size))
@@ -146,8 +147,9 @@ class ASMPatchHandler:
         #
         # Each segment size can change due to the compression.
         # If the new size is smaller, don't bother updating it - there's no point.
+        # The MemoryOffset and Size fields are left unchanged as this doesn't appear to cause problems.
         if new_text_size_diff > 0:
-            # Update rodata and data segment headers.
+            # Update rodata and data file offsets in their segment headers.
             write_u32(
                 nso,
                 SegmentHeader.SEGMENT_HEADER_SIZE * 2,
@@ -161,24 +163,15 @@ class ASMPatchHandler:
                 is_little_endian=True,
             )
 
-            # Update segment headers in case the rodata size is different too.
+            # Update the local segment headers in case the rodata size is different too.
             text_header, rodata_header, data_header = self.get_segments(nso)
 
         if new_rodata_size_diff > 0:
-            # Update data segment header.
+            # Update data file offset in its segment header.
             write_u32(
                 nso,
                 SegmentHeader.SEGMENT_HEADER_SIZE * 3,
                 data_header.get_file_offset() + new_rodata_size_diff,
-                is_little_endian=True,
-            )
-
-        if new_data_size_diff > 0:
-            # Update .bss size.
-            write_u32(
-                nso,
-                (SegmentHeader.SEGMENT_HEADER_SIZE * 3) + 0xC,
-                data_header.get_other() + new_data_size_diff,
                 is_little_endian=True,
             )
 
@@ -230,8 +223,9 @@ class ASMPatchHandler:
 
     # Applies both asm patches and additions.
     def patch_all_asm(self, world: World, onlyif_handler: ConditionalPatchHandler):
+        # Apply sdk patches
         if ASM_DEBUG_PRINT:
-            print("Debug print asm patches")
+            print_progress_text("Applying SDK asm patches")
             self.patch_asm(
                 world,
                 onlyif_handler,
@@ -243,15 +237,22 @@ class ASMPatchHandler:
 
         temp_dir = tempfile.TemporaryDirectory()
 
+        # Apply main patches
         # Keeps the temporary directory only within this with block.
         with temp_dir as temp_dir_name:
             temp_dir_name = Path(temp_dir_name)
 
-            print_progress_text("Applying damage multiplier")
+            print_progress_text("Creating shop shuffle patches")
+            shop_shuffle_diff_file_path = temp_dir_name / "shop-shuffle-diff.yaml"
+            self.create_shop_data_patch(
+                ASM_PATCHES_DIFFS_PATH / shop_shuffle_diff_file_path
+            )
+
+            print_progress_text("Creating damage multiplier patch")
             damage_multiplier_diff_file_path = (
                 temp_dir_name / "damage-multiplier-diff.yaml"
             )
-            self.patch_damage_multiplier(
+            self.create_damage_multiplier_patch(
                 ASM_PATCHES_DIFFS_PATH / damage_multiplier_diff_file_path, world
             )
 
@@ -268,13 +269,16 @@ class ASMPatchHandler:
 
         temp_dir = tempfile.TemporaryDirectory()
 
+        # Apply subsdk8 patches
         # Keeps the temporary directory only within this with block.
         with temp_dir as temp_dir_name:
             temp_dir_name = Path(temp_dir_name)
 
-            print_progress_text("Assembling startflags")
+            print_progress_text("Creating startflag additions")
             startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
-            self.patch_startflags(startflags_diff_file_path, world, onlyif_handler)
+            self.create_startflag_patches(
+                startflags_diff_file_path, world, onlyif_handler
+            )
 
             print("Initializing global variables")
             global_variables_diff_file_path = (
@@ -282,13 +286,11 @@ class ASMPatchHandler:
             )
             self.init_global_variables(global_variables_diff_file_path, world)
 
-            print("Patching starting entrance")
+            print_progress_text("Creating starting entrance additions")
             staring_entrance_diff_file_path = (
                 temp_dir_name / "starting-entrance-diff.yaml"
             )
-
-            print_progress_text("Patching Starting Entrance")
-            self.patch_starting_entrance(staring_entrance_diff_file_path, world)
+            self.create_starting_entrance_patch(staring_entrance_diff_file_path, world)
 
             print_progress_text("Applying asm additions")
             self.patch_asm(
@@ -301,7 +303,7 @@ class ASMPatchHandler:
                 extra_diffs_path=temp_dir_name,
             )
 
-    def patch_starting_entrance(self, output_path: Path, world: World):
+    def create_starting_entrance_patch(self, output_path: Path, world: World):
         try:
             spawn_info = world.get_entrance(
                 "Link's Spawn -> Knight Academy"
@@ -340,10 +342,10 @@ class ASMPatchHandler:
 
         yaml_write(output_path, spawn_data_dict)
 
-        # Write the startflag binary to a non-temp file.
+        # Write the starting entrance binary to a non-temp file.
         # yaml_write(Path("./test-starting-entrance.yaml"), spawn_data_dict)
 
-    def patch_startflags(
+    def create_startflag_patches(
         self, output_path: Path, world: World, onlyif_handler: ConditionalPatchHandler
     ):
         startflags = dict(yaml_load(STARTFLAGS_FILE_PATH))
@@ -550,7 +552,7 @@ class ASMPatchHandler:
         # Write the global variables binary to a non-temp file.
         # yaml_write(Path("./test-global-variables.yaml"), init_globals_dict)
 
-    def patch_damage_multiplier(self, output_path: Path, world: World):
+    def create_damage_multiplier_patch(self, output_path: Path, world: World):
         multiplier = world.setting("damage_multiplier").value_as_number()
         # bytes for instruction: mov w8, damage_multiplier
         bytes = 0x52800008 | (multiplier << 5)
@@ -566,6 +568,65 @@ class ASMPatchHandler:
         }
 
         yaml_write(output_path, damage_multiplier_dict)
+
+    def add_shop_data(
+        self,
+        shop_index: int,
+        buy_decide_scale: float,
+        put_scale: float,
+        target_arrow_height_offset: float,
+        itemid: int,
+        price: int,
+        event_entrypoint: int,
+        next_shop_index: int,
+        spawn_storyflag: int,
+        shop_arc_name: str,
+        shop_model_name: str,
+        display_height_offset: float,
+        trapbits: int,
+        sold_out_storyflag: int,
+    ):
+        self.shop_data[shop_index] = (
+            buy_decide_scale,
+            put_scale,
+            target_arrow_height_offset,
+            itemid,
+            price,
+            event_entrypoint,
+            next_shop_index,
+            spawn_storyflag,
+            shop_arc_name,
+            shop_model_name,
+            display_height_offset,
+            trapbits,
+            sold_out_storyflag,
+        )
+
+    def create_shop_data_patch(self, output_path: Path):
+        shop_item_table_start_address = 0x710164043C
+        shop_item_size = 0x54
+        shop_data_dict = {}
+
+        for shop_index in self.shop_data:
+            item_start_address = shop_item_table_start_address + (
+                shop_item_size * shop_index
+            )
+
+            for value_index, value in enumerate(self.shop_data[shop_index]):
+                if value != -1:
+                    if (format := SHOP_ITEM_DATA_FORMATS[value_index]) is not None:
+                        value = list(struct.pack(format, value))
+                    else:  # must be a string
+                        value = list(bytes(value + "\0", "ascii"))
+
+                    shop_data_dict[
+                        item_start_address + SHOP_ITEM_DATA_OFFSETS[value_index]
+                    ] = value
+
+        yaml_write(output_path, shop_data_dict)
+
+        # Write the shop data binary to a non-temp file.
+        # yaml_write(Path("./test-shop-data.yaml"), shop_data_dict)
 
     def _get_flags(
         self, startflag_section, onlyif_handler: ConditionalPatchHandler

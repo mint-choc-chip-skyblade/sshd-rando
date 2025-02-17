@@ -29,6 +29,7 @@ mod player;
 mod rng;
 mod savefile;
 mod settings;
+mod shop;
 mod snd;
 mod traps;
 

@@ -33,10 +33,10 @@
        <string notr="true">QToolTip {color: #000000; background-color: #FFFFFF;}</string>
       </property>
       <property name="tabShape">
-       <enum>QTabWidget::TabShape::Rounded</enum>
+       <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -85,10 +85,10 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Before generating a seed, you need to have a valid extract of the vanilla version of the game.&lt;/p&gt;&lt;p&gt;Please follow our handy setup guides for the &lt;a href=&quot;https://docs.google.com/document/d/1VXNME7SVD5EU7NNn9dQ15_Q9-v9OJAHOX-hSor0n2dg&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Nintendo Switch console&lt;/span&gt;&lt;/a&gt; or for &lt;a href=&quot;https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;emulator&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;For additional help with this process, please join the &lt;a href=&quot;https://discord.gg/nNbpfH5jyG&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Discord Server&lt;/span&gt;&lt;/a&gt; or ask on &lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
-                 <enum>Qt::TextFormat::RichText</enum>
+                 <enum>Qt::RichText</enum>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                 </property>
                 <property name="wordWrap">
                  <bool>true</bool>
@@ -97,7 +97,7 @@
                  <bool>true</bool>
                 </property>
                 <property name="textInteractionFlags">
-                 <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
                 </property>
                </widget>
               </item>
@@ -116,7 +116,7 @@
               <string>➜</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -144,10 +144,10 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Quick start: &lt;/span&gt;You can select one of the settings presets below to jump straight in!&lt;/p&gt;&lt;p&gt;Don't worry if there's too much going on, the default settings are perfect for beginners.&lt;/p&gt;&lt;p&gt;Alternatively, you can customize every setting yourself. There's lots of buttons and switches, so get stuck in!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
-                 <enum>Qt::TextFormat::RichText</enum>
+                 <enum>Qt::RichText</enum>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                 </property>
                 <property name="wordWrap">
                  <bool>true</bool>
@@ -156,7 +156,7 @@
                  <bool>true</bool>
                 </property>
                 <property name="textInteractionFlags">
-                 <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
                 </property>
                </widget>
               </item>
@@ -169,7 +169,7 @@
               <string>➜</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -197,10 +197,10 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Once you're ready, click the &lt;span style=&quot; font-family:'Courier New';&quot;&gt;Randomize&lt;/span&gt; button in the bottom right.&lt;/p&gt;&lt;p&gt;The program will begin to generate a game patch that will allow you to play the randomizer.&lt;/p&gt;&lt;p&gt;If you encounter a problem, don't hesitate to ask for help! You can join the &lt;a href=&quot;https://discord.gg/nNbpfH5jyG&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Discord Server&lt;/span&gt;&lt;/a&gt; or ask on &lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
-                 <enum>Qt::TextFormat::RichText</enum>
+                 <enum>Qt::RichText</enum>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                 </property>
                 <property name="wordWrap">
                  <bool>true</bool>
@@ -209,7 +209,7 @@
                  <bool>true</bool>
                 </property>
                 <property name="textInteractionFlags">
-                 <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
                 </property>
                </widget>
               </item>
@@ -228,7 +228,7 @@
               <string>➜</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -256,13 +256,13 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can play the randomizer either on a modded Nintendo Switch console or on an emulator.&lt;/p&gt;&lt;p&gt;Please follow the instructions in our setup guides for &lt;a href=&quot;https://docs.google.com/document/d/1VXNME7SVD5EU7NNn9dQ15_Q9-v9OJAHOX-hSor0n2dg&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Nintendo Switch console&lt;/span&gt;&lt;/a&gt; or for &lt;a href=&quot;https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;emulator&lt;/span&gt;&lt;/a&gt; to find instructions on running the randomizer patch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
-                 <enum>Qt::TextFormat::RichText</enum>
+                 <enum>Qt::RichText</enum>
                 </property>
                 <property name="scaledContents">
                  <bool>false</bool>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                 </property>
                 <property name="wordWrap">
                  <bool>true</bool>
@@ -271,7 +271,7 @@
                  <bool>true</bool>
                 </property>
                 <property name="textInteractionFlags">
-                 <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+                 <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
                 </property>
                </widget>
               </item>
@@ -310,10 +310,10 @@
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Guides&lt;/p&gt;&lt;p&gt;➜ &lt;a href=&quot;https://docs.google.com/document/d/1VXNME7SVD5EU7NNn9dQ15_Q9-v9OJAHOX-hSor0n2dg&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Setup Guide (Console)&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;➜ &lt;a href=&quot;https://docs.google.com/document/d/1HHQRXND0n-ZrmhEl4eXjzMANQ-xHK3pKKXPQqSbwXwY&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Setup Guide (Emulator)&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;➜ &lt;a href=&quot;https://docs.google.com/document/d/1bb6GoCBFVREc-wHscRBTfZrftN1OA639iML2azdXqXE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Location Guide&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;➜ &lt;a href=&quot;https://docs.google.com/document/d/1Dm0jhwXWIvPLuvl-JoRqocTKjXM_jRRmryYqpQMO_6w&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Tricks Guide&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;➜ &lt;a href=&quot;https://docs.google.com/document/d/1Eq1rXcjwRpVjp-5ugpQAsjmZy5QuGi7KAOkvpWoQkqc&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Texture Replacement Guide&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="textFormat">
-                <enum>Qt::TextFormat::RichText</enum>
+                <enum>Qt::RichText</enum>
                </property>
                <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                </property>
                <property name="wordWrap">
                 <bool>true</bool>
@@ -322,7 +322,7 @@
                 <bool>true</bool>
                </property>
                <property name="textInteractionFlags">
-                <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+                <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
                </property>
               </widget>
              </item>
@@ -338,10 +338,10 @@
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Community&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://discord.gg/nNbpfH5jyG&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Discord Server&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Report a Bug&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;➜ &lt;/span&gt;&lt;a href=&quot;https://github.com/mint-choc-chip-skyblade/sshd-rando&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="textFormat">
-                <enum>Qt::TextFormat::RichText</enum>
+                <enum>Qt::RichText</enum>
                </property>
                <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                </property>
                <property name="wordWrap">
                 <bool>true</bool>
@@ -350,7 +350,7 @@
                 <bool>true</bool>
                </property>
                <property name="textInteractionFlags">
-                <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+                <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
                </property>
               </widget>
              </item>
@@ -375,7 +375,7 @@
                 <string>Theming</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_3">
                 <item>
@@ -441,10 +441,10 @@
                 <item>
                  <spacer name="theming_vspacer">
                   <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
+                   <enum>Qt::Vertical</enum>
                   </property>
                   <property name="sizeType">
-                   <enum>QSizePolicy::Policy::Expanding</enum>
+                   <enum>QSizePolicy::Expanding</enum>
                   </property>
                   <property name="sizeHint" stdset="0">
                    <size>
@@ -496,7 +496,7 @@
                      <string>Select Font Family</string>
                     </property>
                     <property name="fontFilters">
-                     <set>QFontComboBox::FontFilter::ScalableFonts</set>
+                     <set>QFontComboBox::ScalableFonts</set>
                     </property>
                     <property name="currentFont">
                      <font>
@@ -548,7 +548,7 @@
                 <item>
                  <spacer name="fonts_vspacer">
                   <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
+                   <enum>Qt::Vertical</enum>
                   </property>
                   <property name="sizeHint" stdset="0">
                    <size>
@@ -628,7 +628,7 @@
              <item>
               <spacer name="presets_vspacer">
                <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
+                <enum>Qt::Vertical</enum>
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
@@ -715,7 +715,7 @@
            <item>
             <spacer name="dungeons_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -817,6 +817,13 @@
             </layout>
            </item>
            <item>
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_shop_prices">
+             <property name="text">
+              <string>Randomize Shop Prices</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="RandoTriStateCheckBox" name="setting_random_bottle_contents">
              <property name="text">
               <string>Random Bottle Contents</string>
@@ -850,7 +857,7 @@
            <item>
             <spacer name="tweaks_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -941,7 +948,7 @@
            <item>
             <spacer name="beat_the_game_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -1018,7 +1025,7 @@
            <item>
             <spacer name="hint_placements_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -1175,7 +1182,7 @@
            <item>
             <spacer name="open_world_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -1214,7 +1221,7 @@
            <item>
             <widget class="Line" name="line">
              <property name="orientation">
-              <enum>Qt::Orientation::Horizontal</enum>
+              <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -1312,7 +1319,7 @@
            <item>
             <spacer name="shortcuts_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -1407,7 +1414,7 @@
            <item>
             <spacer name="entrance_randomization_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -1438,7 +1445,7 @@
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Defined Entrance Pools:&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Pool 1: [] &lt;br/&gt;Pool 2: [] &lt;br/&gt;Pool 3: []&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="textFormat">
-              <enum>Qt::TextFormat::RichText</enum>
+              <enum>Qt::RichText</enum>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -1447,7 +1454,7 @@
               <bool>true</bool>
              </property>
              <property name="textInteractionFlags">
-              <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
              </property>
             </widget>
            </item>
@@ -1503,10 +1510,10 @@
            <item>
             <spacer name="mixed_entrance_pools_vspacer1">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeType">
-              <enum>QSizePolicy::Policy::Fixed</enum>
+              <enum>QSizePolicy::Fixed</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -1519,17 +1526,17 @@
            <item>
             <widget class="Line" name="mixed_entrance_pools_hline">
              <property name="orientation">
-              <enum>Qt::Orientation::Horizontal</enum>
+              <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
            <item>
             <spacer name="mixed_entrance_pools_vspacer2">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeType">
-              <enum>QSizePolicy::Policy::Fixed</enum>
+              <enum>QSizePolicy::Fixed</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -1551,7 +1558,7 @@
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;What are Mixed Entrance Pools?&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Mixed entrance pools define how entrance types are shuffled together. By default, turning on an entrance randomizer setting will only shuffle the entrances of that type with each other. For example, randomizing dungeon entrances will only shuffle the dungeon entrances with each other. The Sandship entrance could &lt;span style=&quot; font-style:italic;&quot;&gt;not&lt;/span&gt; be shuffled to Wryna's House door or a trial gate entrance. &lt;br/&gt;&lt;br/&gt;By defining mixed entrance pools, different entrance types can be shuffled together. For example, if a mixed pool was defined as this: [Dungeon, Door, Trial Gate], the Sandship entrance &lt;span style=&quot; font-style:italic;&quot;&gt;could&lt;/span&gt; be shuffled to Wryna's House door or a trial gate entrance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="textFormat">
-              <enum>Qt::TextFormat::RichText</enum>
+              <enum>Qt::RichText</enum>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -1560,14 +1567,14 @@
               <bool>true</bool>
              </property>
              <property name="textInteractionFlags">
-              <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
              </property>
             </widget>
            </item>
            <item>
             <spacer name="mixed_entrance_pools_vspacer3">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -1598,7 +1605,7 @@
           <item>
            <spacer name="individual_locations_top_vspacer">
             <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
+             <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -1625,7 +1632,7 @@
           <item>
            <spacer name="individual_locations_middle_vspacer">
             <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
+             <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -1652,7 +1659,7 @@
           <item>
            <spacer name="individual_locations_bottom_vspacer">
             <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
+             <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -1686,7 +1693,7 @@
            <item>
             <widget class="QLabel" name="beedle_shop_shuffle_label">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="text">
               <string>Beedle's Airshop Shuffle</string>
@@ -1696,7 +1703,7 @@
            <item>
             <widget class="QComboBox" name="setting_beedle_shop_shuffle">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -1785,7 +1792,7 @@
            <item>
             <spacer name="shuffles_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -1830,13 +1837,13 @@
            <item>
             <widget class="QListView" name="excluded_locations_list_view">
              <property name="editTriggers">
-              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+              <set>QAbstractItemView::NoEditTriggers</set>
              </property>
              <property name="showDropIndicator" stdset="0">
               <bool>false</bool>
              </property>
              <property name="selectionMode">
-              <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
+              <enum>QAbstractItemView::MultiSelection</enum>
              </property>
              <property name="selectionRectVisible">
               <bool>false</bool>
@@ -1885,13 +1892,13 @@
            <item>
             <widget class="QListView" name="included_locations_list_view">
              <property name="editTriggers">
-              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+              <set>QAbstractItemView::NoEditTriggers</set>
              </property>
              <property name="showDropIndicator" stdset="0">
               <bool>false</bool>
              </property>
              <property name="selectionMode">
-              <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
+              <enum>QAbstractItemView::MultiSelection</enum>
              </property>
              <property name="selectionRectVisible">
               <bool>false</bool>
@@ -1955,13 +1962,13 @@
               </sizepolicy>
              </property>
              <property name="editTriggers">
-              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+              <set>QAbstractItemView::NoEditTriggers</set>
              </property>
              <property name="showDropIndicator" stdset="0">
               <bool>false</bool>
              </property>
              <property name="selectionMode">
-              <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
+              <enum>QAbstractItemView::MultiSelection</enum>
              </property>
              <property name="selectionRectVisible">
               <bool>false</bool>
@@ -2006,13 +2013,13 @@
               </sizepolicy>
              </property>
              <property name="editTriggers">
-              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+              <set>QAbstractItemView::NoEditTriggers</set>
              </property>
              <property name="showDropIndicator" stdset="0">
               <bool>false</bool>
              </property>
              <property name="selectionMode">
-              <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
+              <enum>QAbstractItemView::MultiSelection</enum>
              </property>
              <property name="selectionRectVisible">
               <bool>false</bool>
@@ -2025,12 +2032,12 @@
         <item row="0" column="1">
          <layout class="QVBoxLayout" name="inventory_button_layout">
           <property name="sizeConstraint">
-           <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+           <enum>QLayout::SetDefaultConstraint</enum>
           </property>
           <item>
            <spacer name="starting_items_top_vspacer">
             <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
+             <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -2057,7 +2064,7 @@
           <item>
            <spacer name="starting_items_middle_vspacer">
             <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
+             <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -2084,10 +2091,10 @@
           <item>
            <spacer name="starting_items_bottom_vspacer">
             <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
+             <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Policy::Expanding</enum>
+             <enum>QSizePolicy::Expanding</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -2216,7 +2223,7 @@
            <item>
             <spacer name="item_settings_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -2276,13 +2283,13 @@
               </sizepolicy>
              </property>
              <property name="editTriggers">
-              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+              <set>QAbstractItemView::NoEditTriggers</set>
              </property>
              <property name="showDropIndicator" stdset="0">
               <bool>false</bool>
              </property>
              <property name="selectionMode">
-              <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
+              <enum>QAbstractItemView::MultiSelection</enum>
              </property>
              <property name="selectionRectVisible">
               <bool>false</bool>
@@ -2295,12 +2302,12 @@
         <item row="0" column="1">
          <layout class="QVBoxLayout" name="hints_button_layout">
           <property name="sizeConstraint">
-           <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+           <enum>QLayout::SetDefaultConstraint</enum>
           </property>
           <item>
            <spacer name="hints_top_vspacer">
             <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
+             <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -2327,7 +2334,7 @@
           <item>
            <spacer name="hints_middle_vspacer">
             <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
+             <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -2354,10 +2361,10 @@
           <item>
            <spacer name="hints_bottom_vspacer">
             <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
+             <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Policy::Expanding</enum>
+             <enum>QSizePolicy::Expanding</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -2404,13 +2411,13 @@
               </sizepolicy>
              </property>
              <property name="editTriggers">
-              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+              <set>QAbstractItemView::NoEditTriggers</set>
              </property>
              <property name="showDropIndicator" stdset="0">
               <bool>false</bool>
              </property>
              <property name="selectionMode">
-              <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
+              <enum>QAbstractItemView::MultiSelection</enum>
              </property>
              <property name="selectionRectVisible">
               <bool>false</bool>
@@ -2587,7 +2594,7 @@
            <item>
             <spacer name="hints_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -2632,10 +2639,10 @@
            <item>
             <spacer name="logic_rules_hspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Horizontal</enum>
+              <enum>Qt::Horizontal</enum>
              </property>
              <property name="sizeType">
-              <enum>QSizePolicy::Policy::Expanding</enum>
+              <enum>QSizePolicy::Expanding</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -2794,7 +2801,7 @@
               <item>
                <spacer name="precise_items_vspacer">
                 <property name="orientation">
-                 <enum>Qt::Orientation::Vertical</enum>
+                 <enum>Qt::Vertical</enum>
                 </property>
                 <property name="sizeHint" stdset="0">
                  <size>
@@ -2899,7 +2906,7 @@
               <item>
                <spacer name="dives_and_jumps_vspacer">
                 <property name="orientation">
-                 <enum>Qt::Orientation::Vertical</enum>
+                 <enum>Qt::Vertical</enum>
                 </property>
                 <property name="sizeHint" stdset="0">
                  <size>
@@ -2955,7 +2962,7 @@
               <item>
                <spacer name="glitches_vspacer">
                 <property name="orientation">
-                 <enum>Qt::Orientation::Vertical</enum>
+                 <enum>Qt::Vertical</enum>
                 </property>
                 <property name="sizeHint" stdset="0">
                  <size>
@@ -3055,7 +3062,7 @@ Practice Sword</string>
               <item>
                <spacer name="miscellaneous_vspacer">
                 <property name="orientation">
-                 <enum>Qt::Orientation::Vertical</enum>
+                 <enum>Qt::Vertical</enum>
                 </property>
                 <property name="sizeHint" stdset="0">
                  <size>
@@ -3134,7 +3141,7 @@ Practice Sword</string>
            <item>
             <spacer name="environment_cosmetics_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -3170,7 +3177,7 @@ Practice Sword</string>
            <item>
             <widget class="Line" name="player_cosmetics_hline">
              <property name="orientation">
-              <enum>Qt::Orientation::Horizontal</enum>
+              <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -3180,7 +3187,7 @@ Practice Sword</string>
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can also edit the textures of Link and the Loftwing by following this &lt;a href=&quot;https://docs.google.com/document/d/1Eq1rXcjwRpVjp-5ugpQAsjmZy5QuGi7KAOkvpWoQkqc&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#9a0089;&quot;&gt;Texture Replacements Guide&lt;/span&gt;&lt;/a&gt;. The same principles shown there can also be used with custom models.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="textFormat">
-              <enum>Qt::TextFormat::RichText</enum>
+              <enum>Qt::RichText</enum>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -3189,14 +3196,14 @@ Practice Sword</string>
               <bool>true</bool>
              </property>
              <property name="textInteractionFlags">
-              <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
              </property>
             </widget>
            </item>
            <item>
             <spacer name="player_cosmetics_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -3235,7 +3242,7 @@ Practice Sword</string>
            <item>
             <spacer name="audio_cosmetics_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -3267,7 +3274,7 @@ Practice Sword</string>
            <item>
             <spacer name="text_cosmetics_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -3315,7 +3322,7 @@ Practice Sword</string>
            <item>
             <widget class="Line" name="utils_hline">
              <property name="orientation">
-              <enum>Qt::Orientation::Horizontal</enum>
+              <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -3350,7 +3357,7 @@ Practice Sword</string>
            <item>
             <widget class="Line" name="utils_hline_2">
              <property name="orientation">
-              <enum>Qt::Orientation::Horizontal</enum>
+              <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -3395,7 +3402,7 @@ Practice Sword</string>
            <item>
             <widget class="Line" name="utils_hline_3">
              <property name="orientation">
-              <enum>Qt::Orientation::Horizontal</enum>
+              <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
@@ -3427,7 +3434,7 @@ Practice Sword</string>
            <item>
             <spacer name="file_setup_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -3458,7 +3465,7 @@ Practice Sword</string>
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;WARNING&lt;/span&gt;: The plandomizer settings will automatically &lt;span style=&quot; font-weight:700;&quot;&gt;TURN THEMSELVES OFF&lt;/span&gt; when reopening this randomizer program!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="textFormat">
-              <enum>Qt::TextFormat::RichText</enum>
+              <enum>Qt::RichText</enum>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -3467,7 +3474,7 @@ Practice Sword</string>
               <bool>true</bool>
              </property>
              <property name="textInteractionFlags">
-              <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
+              <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
              </property>
             </widget>
            </item>
@@ -3494,7 +3501,7 @@ Practice Sword</string>
               </sizepolicy>
              </property>
              <property name="sizeAdjustPolicy">
-              <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
+              <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
              </property>
              <property name="minimumContentsLength">
               <number>1</number>
@@ -3511,7 +3518,7 @@ Practice Sword</string>
            <item>
             <spacer name="plandomizer_vspacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -3559,7 +3566,7 @@ Practice Sword</string>
            <item>
             <spacer name="verticalSpacer">
              <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
+              <enum>Qt::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -3617,7 +3624,7 @@ QPushButton {
                <number>1</number>
               </property>
               <property name="sizeConstraint">
-               <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_sv_keys_layout">
@@ -3625,7 +3632,7 @@ QPushButton {
                  <number>1</number>
                 </property>
                 <property name="sizeConstraint">
-                 <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+                 <enum>QLayout::SetDefaultConstraint</enum>
                 </property>
                </layout>
               </item>
@@ -3637,7 +3644,7 @@ QPushButton {
                <number>1</number>
               </property>
               <property name="sizeConstraint">
-               <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_et_keys_layout">
@@ -3654,7 +3661,7 @@ QPushButton {
                <number>1</number>
               </property>
               <property name="sizeConstraint">
-               <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_lmf_keys_layout">
@@ -3671,7 +3678,7 @@ QPushButton {
                <number>1</number>
               </property>
               <property name="sizeConstraint">
-               <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_ac_keys_layout">
@@ -3688,7 +3695,7 @@ QPushButton {
                <number>1</number>
               </property>
               <property name="sizeConstraint">
-               <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_ssh_keys_layout">
@@ -3705,7 +3712,7 @@ QPushButton {
                <number>1</number>
               </property>
               <property name="sizeConstraint">
-               <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_fs_keys_layout">
@@ -3722,7 +3729,7 @@ QPushButton {
                <number>1</number>
               </property>
               <property name="sizeConstraint">
-               <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
                <layout class="QHBoxLayout" name="dungeon_sk_keys_layout">
@@ -3730,7 +3737,7 @@ QPushButton {
                  <number>1</number>
                 </property>
                 <property name="sizeConstraint">
-                 <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+                 <enum>QLayout::SetDefaultConstraint</enum>
                 </property>
                </layout>
               </item>
@@ -3767,14 +3774,14 @@ QPushButton {
         <item row="0" column="2">
          <layout class="QVBoxLayout" name="tracker_info_layout" stretch="55,45">
           <property name="sizeConstraint">
-           <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+           <enum>QLayout::SetDefaultConstraint</enum>
           </property>
           <item>
            <layout class="QVBoxLayout" name="tracker_info_top_half_layout">
             <item>
              <layout class="QGridLayout" name="tracker_statistics_grid" rowstretch="0,0,0" columnstretch="4,50">
               <property name="sizeConstraint">
-               <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+               <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item row="2" column="1">
                <widget class="QLabel" name="tracker_stats_remaining_label">
@@ -3795,7 +3802,7 @@ QPushButton {
                  <string/>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -3811,7 +3818,7 @@ QPushButton {
                  <string/>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -3827,7 +3834,7 @@ QPushButton {
                  <string/>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -3944,7 +3951,7 @@ QPushButton {
             <item>
              <spacer name="tracker_info_layout_spacer">
               <property name="orientation">
-               <enum>Qt::Orientation::Vertical</enum>
+               <enum>Qt::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -4008,7 +4015,7 @@ QPushButton {
              </size>
             </property>
             <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
+             <enum>QFrame::NoFrame</enum>
             </property>
             <property name="lineWidth">
              <number>0</number>
@@ -4077,7 +4084,7 @@ QPushButton {
          <string>Settings current option description</string>
         </property>
         <property name="textFormat">
-         <enum>Qt::TextFormat::RichText</enum>
+         <enum>Qt::RichText</enum>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -4168,7 +4175,7 @@ QPushButton {
              <string>Hash:</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
