@@ -47,10 +47,11 @@ bl additions_jumptable
 .offset 0x7100b01f0c
 ; sold out
 cmp w9, #0x7F
-b.eq 0x7100b01fc4
-; init Luv's potion shop
-cmp w9, #30 ; w9 holds the shop_index
-b.ge 0x7100b022c0
+b.eq 0x7100b01fc4 ; sold out case
+cmp w9, #30 ; Luv's shop >=30
+b.ge 0x7100b021fc ; handled by 2nd switch (vanilla behaviour)
+cmp w9, #8 ; Rupin's shop <=8
+b.le 0x7100b021fc ; handled by 2nd switch (vanilla behaviour)
 cmp w9, #20 ; Beedle 300R
 b.eq 0x7100b023a8
 cmp w9, #21 ; Beedle 600R
@@ -59,6 +60,7 @@ cmp w9, #22 ; Beedle 1200R
 b.eq 0x7100b0256c
 b 0x7100b02054 ; otherwise, got to vanilla extra wallet init
 
+; In the vanilla extra wallet init
 ; Keep shop_index when creating subclass
 .offset 0x7100b02064
 mov w20, w9

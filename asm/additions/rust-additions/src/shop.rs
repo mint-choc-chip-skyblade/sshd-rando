@@ -171,7 +171,8 @@ pub fn set_shop_display_height() {
         let item_index = (*(*shop_sample).model_holder.current_model).item_index as usize;
         let mut display_height_offset = -25.0f32;
 
-        if item_index != 0x7F {
+        // Use default height for sold out items and Rupin's shop.
+        if item_index != 0x7F && item_index > 8 {
             display_height_offset = SHOP_ITEMS[item_index].display_height_offset;
         }
 
