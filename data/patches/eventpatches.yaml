@@ -596,6 +596,16 @@
     index: 520
     flow:
       next: -1
+  - name: Prevent Sacred Water setting flags 1
+    type: flowpatch
+    index: 155
+    flow:
+      next: 156
+  - name: Prevent Sacred Water setting flags 2
+    type: flowpatch
+    index: 156
+    flow:
+      next: -1
   # - name: Set GoT flags on MS
   #   type: flowpatch
   #   index: 74

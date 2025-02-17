@@ -80,7 +80,7 @@
   exits:
     LMF Big Hub Past West Gate: ('Can_Activate_Armos_Room_Timeshift_Stone') and Can_Defeat_Armos
   locations:
-    Lanayru Mining Facility - Chest after Armos Fight: Can_Defeat_Armos and (Distance_Activator or Goddess_Sword)
+    Lanayru Mining Facility - Chest after Armos Fight: Can_Defeat_Armos and 'Can_Activate_Armos_Room_Timeshift_Stone'
 
 
 - name: LMF Big Hub South
