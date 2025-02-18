@@ -21,18 +21,18 @@ CONTROL_REPLACEMENTS = {
     "<g+<": "\x0e\x00\x03\x02\x07",  # green rupee green
     "<b+<": "\x0e\x00\x03\x02\x08",  # blue rupee blue
     "<r+<": "\x0e\x00\x03\x02\x09",  # red-white
-    "<s<": "\x0e\x00\x03\x02\x0A",  # silver
-    "<ye<": "\x0e\x00\x03\x02\x0B",  # gold rupee gold
-    "<blk<": "\x0e\x00\x03\x02\x0C",  # rupoor
-    ">>": "\x0e\x00\x03\x02\uFFFF",  # end color
+    "<s<": "\x0e\x00\x03\x02\x0a",  # silver
+    "<ye<": "\x0e\x00\x03\x02\x0b",  # gold rupee gold
+    "<blk<": "\x0e\x00\x03\x02\x0c",  # rupoor
+    ">>": "\x0e\x00\x03\x02\uffff",  # end color
     # start of option token, '-' means cancel (B) option
-    "[1]": "\x0e\x01\x00\x02\uFFFF",
+    "[1]": "\x0e\x01\x00\x02\uffff",
     "[2-]": "\x0e\x01\x01\x02\x00",
-    "[2]": "\x0e\x01\x01\x02\uFFFF",
+    "[2]": "\x0e\x01\x01\x02\uffff",
     "[3-]": "\x0e\x01\x02\x02\x00",
-    "[3]": "\x0e\x01\x02\x02\uFFFF",
+    "[3]": "\x0e\x01\x02\x02\uffff",
     "[4-]": "\x0e\x01\x03\x02\x00",
-    "[4]": "\x0e\x01\x03\x02\uFFFF",
+    "[4]": "\x0e\x01\x03\x02\uffff",
     "<numeric arg0>": "\x0e\x02\x03\x06\x00\x00\xcd",
     "<numeric arg1>": "\x0e\x02\x03\x06\x00\x01\xcd",
     "<numeric arg2>": "\x0e\x02\x03\x06\x00\x02\xcd",
@@ -83,10 +83,10 @@ def process_control_sequences(data: str) -> str:
 def parse_msb(data: bytes) -> ParsedMsb:
     parsed = ParsedMsb({})
 
-    if data[:10] == b"MsgFlwBn\xFE\xFF":
+    if data[:10] == b"MsgFlwBn\xfe\xff":
         parsed["type"] = "MsgFlwBn"
         assert data[10:16] == b"\x00\x00\x00\x03\x00\x02"
-    elif data[:10] == b"MsgStdBn\xFE\xFF":
+    elif data[:10] == b"MsgStdBn\xfe\xff":
         parsed["type"] = "MsgStdBn"
         assert data[10:16] == b"\x00\x00\x01\x03\x00\x03"
     else:
@@ -187,10 +187,10 @@ def parse_msb(data: bytes) -> ParsedMsb:
 
 def build_msb(msb: ParsedMsb) -> bytes:
     if msb["type"] == "MsgFlwBn":
-        header = b"MsgFlwBn\xFE\xFF"
+        header = b"MsgFlwBn\xfe\xff"
         header += b"\x00\x00\x00\x03\x00\x02"
     elif msb["type"] == "MsgStdBn":
-        header = b"MsgStdBn\xFE\xFF"
+        header = b"MsgStdBn\xfe\xff"
         header += b"\x00\x00\x01\x03\x00\x03"
     else:
         raise Exception(f'Unsupported filetype: {msb["type"]}.')
@@ -275,7 +275,7 @@ def build_msb(msb: ParsedMsb) -> bytes:
         total_body += seg_id.encode("ascii")
         total_body += struct.pack(">i", len(body)) + 8 * b"\x00"
         total_body += body
-        total_body += (-len(total_body) % 0x10) * b"\xAB"
+        total_body += (-len(total_body) % 0x10) * b"\xab"
 
     total_length = len(header) + len(total_body)
     header[0x12] = (total_length >> 24) & 0xFF
