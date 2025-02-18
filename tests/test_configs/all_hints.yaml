@@ -1,10 +1,16 @@
 seed: TESTTESTTEST
 World 1:
-  path_hints: "7"
-  barren_hints: "7"
-  item_hints: "7"
-  location_hints: "7"
-  fi_hints: "on"
-  gossip_stone_hints: "on"
+  path_hints: '7'
+  path_hints_on_fi: 'on'
+  path_hints_on_gossip_stones: 'on'
+  barren_hints: '7'
+  barren_hints_on_fi: 'on'
+  barren_hints_on_gossip_stones: 'on'
+  location_hints: '7'
+  location_hints_on_fi: 'on'
+  location_hints_on_gossip_stones: 'on'
+  item_hints: '3'
+  item_hints_on_fi: 'on'
+  item_hints_on_gossip_stones: 'on'
   song_hints: direct
   impa_sot_hint: "on"
