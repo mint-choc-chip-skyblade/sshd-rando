@@ -9,6 +9,7 @@ from PySide6.QtWidgets import (
     QMessageBox,
     QMainWindow,
     QWidget,
+    QLayout,
 )
 
 from constants.guiconstants import OPTION_PREFIX
@@ -251,6 +252,20 @@ The output folder you have specified cannot be found.
         if self.tracker.started:
             self.tracker.autosave_tracker()
         event.accept()
+
+    def clear_layout(self, layout: QLayout, remove_nested_layouts=True) -> None:
+        # Recursively clear nested layouts
+        for nested_layout in layout.findChildren(QLayout):
+            self.clear_layout(nested_layout, remove_nested_layouts)
+
+        while item := layout.takeAt(0):
+            if widget := item.widget():
+                widget.deleteLater()
+            del item
+
+        if remove_nested_layouts:
+            for nested_layout in layout.findChildren(QLayout):
+                layout.removeItem(nested_layout)
 
 
 def start_gui(app: QApplication):

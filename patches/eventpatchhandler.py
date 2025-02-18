@@ -22,6 +22,7 @@ from gui.dialogs.dialog_header import (
 )
 from logic.settings import SettingGet
 from patches.conditionalpatchhandler import ConditionalPatchHandler
+from patches.othermods import get_resolved_game_file_path
 
 from sslib.msb import (
     ParsedMsb,
@@ -41,7 +42,7 @@ class EventPatchError(RuntimeError):
 
 
 class EventPatchHandler:
-    def __init__(self, output_path: Path):
+    def __init__(self, output_path: Path, other_mods: list[str]):
         self.event_output_paths: dict[str, Path] = {
             tail.name: output_path / tail for tail in EVENT_FILE_PATH_TAILS
         }
@@ -49,6 +50,7 @@ class EventPatchHandler:
         self.check_patches: dict[str, list[tuple[str, int, int]]] = defaultdict(list)
         self.flow_label_to_index_mapping = {}
         self.text_label_to_index_mapping = {}
+        self.other_mods = other_mods
 
     def append_to_event_patches(self, file_name: str, event_patch: dict):
         if file_name not in self.event_patches:
@@ -87,125 +89,136 @@ class EventPatchHandler:
                 / file_name
             )
 
-            event_arc = U8File.get_parsed_U8_from_path(event_path, False)
+            resolved_event_path, mod = get_resolved_game_file_path(
+                event_path, self.other_mods
+            )
 
-            # patch text files first
-            for event_file_path in filter(
-                lambda name: name[-1] == "t", event_arc.get_all_paths()
-            ):
-                msbt_file_name = event_file_path.split("/")[-1]
-                if msbt_file_name[:-5] in self.event_patches:
-                    print(f"Patching {msbt_file_name}")
-                    msbt_data = event_arc.get_file_data(event_file_path)
+            try:
+                event_arc = U8File.get_parsed_U8_from_path(resolved_event_path)
 
-                    if not msbt_data:
-                        raise TypeError("Expected type bytes but found None")
-
-                    parsed_msbt = parse_msb(msbt_data)
-                    assert len(parsed_msbt["TXT2"]) == len(parsed_msbt["ATR1"])
-
-                    for patch in self.event_patches[msbt_file_name[:-5]]:
-                        if statement := patch.get("onlyif", False):
-                            if not onlyif_handler.evaluate_onlyif(statement):
-                                continue
-
-                        # handle text patches here
-                        if patch["type"] == "textadd":
-                            self.text_add(
-                                msbt=parsed_msbt,
-                                text_add=patch,
-                                msbt_file_name=msbt_file_name,
-                                lang=language_event_path.name,
-                            )
-                        elif patch["type"] == "textpatch":
-                            self.text_patch(
-                                msbt=parsed_msbt,
-                                text_patch=patch,
-                                lang=language_event_path.name,
-                            )
-
-                    event_arc.set_file_data(event_file_path, build_msb(parsed_msbt))
-
-            for event_file_path in filter(
-                lambda name: name[-1] == "f", event_arc.get_all_paths()
-            ):
-                msbf_file_name = event_file_path.split("/")[-1]
-
-                if (
-                    msbf_file_name[:-5] in self.event_patches
-                    or msbf_file_name[:-5] in self.check_patches
-                    or msbf_file_name == "003-ItemGet.msbf"
+                # patch text files first
+                for event_file_path in filter(
+                    lambda name: name[-1] == "t", event_arc.get_all_paths()
                 ):
-                    print(f"Patching {msbf_file_name}")
+                    msbt_file_name = event_file_path.split("/")[-1]
+                    if msbt_file_name[:-5] in self.event_patches:
+                        print(f"Patching {msbt_file_name}")
+                        msbt_data = event_arc.get_file_data(event_file_path)
 
-                    if (
-                        event_file_data := event_arc.get_file_data(event_file_path)
-                    ) is None:
-                        raise TypeError(
-                            "Event file data incorrect. Expected bytes but found None."
-                        )
+                        if not msbt_data:
+                            raise TypeError("Expected type bytes but found None")
 
-                    parsed_msbf = parse_msb(event_file_data)
+                        parsed_msbt = parse_msb(msbt_data)
+                        assert len(parsed_msbt["TXT2"]) == len(parsed_msbt["ATR1"])
 
-                    if msbf_file_name[:-5] in self.event_patches:
-                        self.create_flow_label_to_index_mapping(
-                            flow_patches=self.event_patches[msbf_file_name[:-5]],
-                            msbf=parsed_msbf,
-                            onlyif_handler=onlyif_handler,
-                        )
-
-                        for patch in self.event_patches[msbf_file_name[:-5]]:
+                        for patch in self.event_patches[msbt_file_name[:-5]]:
                             if statement := patch.get("onlyif", False):
                                 if not onlyif_handler.evaluate_onlyif(statement):
                                     continue
 
-                            if (
-                                patch["type"]
-                                in FLOW_ADD_VARIATIONS + SWITCH_ADD_VARIATIONS
-                            ):
-                                self.flow_add(msbf=parsed_msbf, flow_add=patch)
-                            elif patch["type"] == "flowpatch":
-                                self.flow_patch(msbf=parsed_msbf, flow_patch=patch)
-                            elif patch["type"] == "entryadd":
-                                self.entry_add(msbf=parsed_msbf, entry_add=patch)
-
-                    if msbf_file_name[:-5] in self.check_patches:
-                        for eventid, itemid, trapid in self.check_patches[
-                            msbf_file_name[:-5]
-                        ]:
-                            if not eventid.isnumeric():
-                                index = self.flow_label_to_index_mapping.get(
-                                    eventid, None
+                            # handle text patches here
+                            if patch["type"] == "textadd":
+                                self.text_add(
+                                    msbt=parsed_msbt,
+                                    text_add=patch,
+                                    msbt_file_name=msbt_file_name,
+                                    lang=language_event_path.name,
+                                )
+                            elif patch["type"] == "textpatch":
+                                self.text_patch(
+                                    msbt=parsed_msbt,
+                                    text_patch=patch,
+                                    lang=language_event_path.name,
                                 )
 
-                                if index is None:
-                                    raise EventPatchError(
-                                        f'Flow label "{eventid}" not found when patching event check.\nFile: {msbf_file_name}.\nEventID: {eventid}.\nItemID: {itemid}.'
+                        event_arc.set_file_data(event_file_path, build_msb(parsed_msbt))
+
+                for event_file_path in filter(
+                    lambda name: name[-1] == "f", event_arc.get_all_paths()
+                ):
+                    msbf_file_name = event_file_path.split("/")[-1]
+
+                    if (
+                        msbf_file_name[:-5] in self.event_patches
+                        or msbf_file_name[:-5] in self.check_patches
+                        or msbf_file_name == "003-ItemGet.msbf"
+                    ):
+                        print(f"Patching {msbf_file_name}")
+
+                        if (
+                            event_file_data := event_arc.get_file_data(event_file_path)
+                        ) is None:
+                            raise TypeError(
+                                "Event file data incorrect. Expected bytes but found None."
+                            )
+
+                        parsed_msbf = parse_msb(event_file_data)
+
+                        if msbf_file_name[:-5] in self.event_patches:
+                            self.create_flow_label_to_index_mapping(
+                                flow_patches=self.event_patches[msbf_file_name[:-5]],
+                                msbf=parsed_msbf,
+                                onlyif_handler=onlyif_handler,
+                            )
+
+                            for patch in self.event_patches[msbf_file_name[:-5]]:
+                                if statement := patch.get("onlyif", False):
+                                    if not onlyif_handler.evaluate_onlyif(statement):
+                                        continue
+
+                                if (
+                                    patch["type"]
+                                    in FLOW_ADD_VARIATIONS + SWITCH_ADD_VARIATIONS
+                                ):
+                                    self.flow_add(msbf=parsed_msbf, flow_add=patch)
+                                elif patch["type"] == "flowpatch":
+                                    self.flow_patch(msbf=parsed_msbf, flow_patch=patch)
+                                elif patch["type"] == "entryadd":
+                                    self.entry_add(msbf=parsed_msbf, entry_add=patch)
+
+                        if msbf_file_name[:-5] in self.check_patches:
+                            for eventid, itemid, trapid in self.check_patches[
+                                msbf_file_name[:-5]
+                            ]:
+                                if not eventid.isnumeric():
+                                    index = self.flow_label_to_index_mapping.get(
+                                        eventid, None
                                     )
 
-                                eventid = index
+                                    if index is None:
+                                        raise EventPatchError(
+                                            f'Flow label "{eventid}" not found when patching event check.\nFile: {msbf_file_name}.\nEventID: {eventid}.\nItemID: {itemid}.'
+                                        )
 
-                            eventid = int(eventid)
+                                    eventid = index
 
-                            trapbits = 0
+                                eventid = int(eventid)
 
-                            # +1 allows 0 == not a trap so spawned NPC items don't break
-                            if trapid:
-                                trapbits = (254 - trapid) + 1
+                                trapbits = 0
 
-                            # Inverted so a value of 0 == not a trap
-                            # 11 cos signed numbers are bleh
-                            itemid |= (trapbits & 0xF) << 11
+                                # +1 allows 0 == not a trap so spawned NPC items don't break
+                                if trapid:
+                                    trapbits = (254 - trapid) + 1
 
-                            parsed_msbf["FLW3"]["flow"][eventid]["param2"] = itemid
+                                # Inverted so a value of 0 == not a trap
+                                # 11 cos signed numbers are bleh
+                                itemid |= (trapbits & 0xF) << 11
 
-                            # Give item command == 9
-                            parsed_msbf["FLW3"]["flow"][eventid]["param3"] = 9
+                                parsed_msbf["FLW3"]["flow"][eventid]["param2"] = itemid
 
-                    if msbf_file_name == "003-ItemGet.msbf":
-                        handle_progressive_items(parsed_msbf)
+                                # Give item command == 9
+                                parsed_msbf["FLW3"]["flow"][eventid]["param3"] = 9
 
-                    event_arc.set_file_data(event_file_path, build_msb(parsed_msbf))
+                        if msbf_file_name == "003-ItemGet.msbf":
+                            handle_progressive_items(parsed_msbf)
+
+                        event_arc.set_file_data(event_file_path, build_msb(parsed_msbf))
+            except Exception as e:
+                if mod:
+                    e.add_note(
+                        f'This was caused by the "{mod}" mod. This mod is currently incompatible with the randomizer.'
+                    )
+                raise e
 
             write_bytes_create_dirs(modified_event_path, event_arc.build_U8())
 
