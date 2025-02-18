@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'custom_theme_dialog.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.3
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -66,7 +66,7 @@ class Ui_CustomThemeDialog(object):
         self.hlay_widgets.setObjectName(u"hlay_widgets")
         self.vlay_widget_name = QVBoxLayout()
         self.vlay_widget_name.setObjectName(u"vlay_widget_name")
-        self.vlay_widget_name.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.vlay_widget_name.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.widget_name_label = QLabel(self.custom_colors_tab)
         self.widget_name_label.setObjectName(u"widget_name_label")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Preferred)
@@ -75,7 +75,7 @@ class Ui_CustomThemeDialog(object):
         sizePolicy1.setHeightForWidth(self.widget_name_label.sizePolicy().hasHeightForWidth())
         self.widget_name_label.setSizePolicy(sizePolicy1)
         self.widget_name_label.setMinimumSize(QSize(0, 0))
-        self.widget_name_label.setTextFormat(Qt.MarkdownText)
+        self.widget_name_label.setTextFormat(Qt.TextFormat.MarkdownText)
 
         self.vlay_widget_name.addWidget(self.widget_name_label)
 
@@ -90,7 +90,7 @@ class Ui_CustomThemeDialog(object):
         self.vlay_color_light.setObjectName(u"vlay_color_light")
         self.color_light_label = QLabel(self.custom_colors_tab)
         self.color_light_label.setObjectName(u"color_light_label")
-        self.color_light_label.setTextFormat(Qt.MarkdownText)
+        self.color_light_label.setTextFormat(Qt.TextFormat.MarkdownText)
 
         self.vlay_color_light.addWidget(self.color_light_label)
 
@@ -105,8 +105,8 @@ class Ui_CustomThemeDialog(object):
         self.vlay_color_dark.setObjectName(u"vlay_color_dark")
         self.color_dark_label = QLabel(self.custom_colors_tab)
         self.color_dark_label.setObjectName(u"color_dark_label")
-        self.color_dark_label.setFrameShadow(QFrame.Plain)
-        self.color_dark_label.setTextFormat(Qt.MarkdownText)
+        self.color_dark_label.setFrameShadow(QFrame.Shadow.Plain)
+        self.color_dark_label.setTextFormat(Qt.TextFormat.MarkdownText)
 
         self.vlay_color_dark.addWidget(self.color_dark_label)
 
@@ -150,8 +150,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_3 = QFrame(self.demo_group_box)
         self.demo_line_3.setObjectName(u"demo_line_3")
-        self.demo_line_3.setFrameShape(QFrame.HLine)
-        self.demo_line_3.setFrameShadow(QFrame.Sunken)
+        self.demo_line_3.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_3.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_3)
 
@@ -162,8 +162,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_2 = QFrame(self.demo_group_box)
         self.demo_line_2.setObjectName(u"demo_line_2")
-        self.demo_line_2.setFrameShape(QFrame.HLine)
-        self.demo_line_2.setFrameShadow(QFrame.Sunken)
+        self.demo_line_2.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_2.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_2)
 
@@ -179,8 +179,8 @@ class Ui_CustomThemeDialog(object):
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.demo_line.sizePolicy().hasHeightForWidth())
         self.demo_line.setSizePolicy(sizePolicy3)
-        self.demo_line.setFrameShape(QFrame.HLine)
-        self.demo_line.setFrameShadow(QFrame.Sunken)
+        self.demo_line.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line)
 
@@ -191,8 +191,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_10 = QFrame(self.demo_group_box)
         self.demo_line_10.setObjectName(u"demo_line_10")
-        self.demo_line_10.setFrameShape(QFrame.HLine)
-        self.demo_line_10.setFrameShadow(QFrame.Sunken)
+        self.demo_line_10.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_10.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_10)
 
@@ -203,8 +203,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_9 = QFrame(self.demo_group_box)
         self.demo_line_9.setObjectName(u"demo_line_9")
-        self.demo_line_9.setFrameShape(QFrame.HLine)
-        self.demo_line_9.setFrameShadow(QFrame.Sunken)
+        self.demo_line_9.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_9.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_9)
 
@@ -215,8 +215,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_8 = QFrame(self.demo_group_box)
         self.demo_line_8.setObjectName(u"demo_line_8")
-        self.demo_line_8.setFrameShape(QFrame.HLine)
-        self.demo_line_8.setFrameShadow(QFrame.Sunken)
+        self.demo_line_8.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_8.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_8)
 
@@ -227,8 +227,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_7 = QFrame(self.demo_group_box)
         self.demo_line_7.setObjectName(u"demo_line_7")
-        self.demo_line_7.setFrameShape(QFrame.HLine)
-        self.demo_line_7.setFrameShadow(QFrame.Sunken)
+        self.demo_line_7.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_7.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_7)
 
@@ -239,21 +239,21 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_6 = QFrame(self.demo_group_box)
         self.demo_line_6.setObjectName(u"demo_line_6")
-        self.demo_line_6.setFrameShape(QFrame.HLine)
-        self.demo_line_6.setFrameShadow(QFrame.Sunken)
+        self.demo_line_6.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_6.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_6)
 
         self.demo_horizontalSlider = QSlider(self.demo_group_box)
         self.demo_horizontalSlider.setObjectName(u"demo_horizontalSlider")
-        self.demo_horizontalSlider.setOrientation(Qt.Horizontal)
+        self.demo_horizontalSlider.setOrientation(Qt.Orientation.Horizontal)
 
         self.vlay_demo_group_box.addWidget(self.demo_horizontalSlider)
 
         self.demo_line_5 = QFrame(self.demo_group_box)
         self.demo_line_5.setObjectName(u"demo_line_5")
-        self.demo_line_5.setFrameShape(QFrame.HLine)
-        self.demo_line_5.setFrameShadow(QFrame.Sunken)
+        self.demo_line_5.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_5.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_5)
 
@@ -265,14 +265,14 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_4 = QFrame(self.demo_group_box)
         self.demo_line_4.setObjectName(u"demo_line_4")
-        self.demo_line_4.setFrameShape(QFrame.HLine)
-        self.demo_line_4.setFrameShadow(QFrame.Sunken)
+        self.demo_line_4.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_4.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_group_box.addWidget(self.demo_line_4)
 
         self.demo_dialogButtonBox = QDialogButtonBox(self.demo_group_box)
         self.demo_dialogButtonBox.setObjectName(u"demo_dialogButtonBox")
-        self.demo_dialogButtonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
+        self.demo_dialogButtonBox.setStandardButtons(QDialogButtonBox.StandardButton.Cancel|QDialogButtonBox.StandardButton.Ok)
         self.demo_dialogButtonBox.setCenterButtons(True)
 
         self.vlay_demo_group_box.addWidget(self.demo_dialogButtonBox)
@@ -297,14 +297,14 @@ class Ui_CustomThemeDialog(object):
         sizePolicy4.setVerticalStretch(0)
         sizePolicy4.setHeightForWidth(self.demo_line_separator_left.sizePolicy().hasHeightForWidth())
         self.demo_line_separator_left.setSizePolicy(sizePolicy4)
-        self.demo_line_separator_left.setFrameShape(QFrame.VLine)
-        self.demo_line_separator_left.setFrameShadow(QFrame.Sunken)
+        self.demo_line_separator_left.setFrameShape(QFrame.Shape.VLine)
+        self.demo_line_separator_left.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.horizontalLayout_2.addWidget(self.demo_line_separator_left)
 
         self.demo_vslider = QSlider(self.demo_widgets_tab)
         self.demo_vslider.setObjectName(u"demo_vslider")
-        self.demo_vslider.setOrientation(Qt.Vertical)
+        self.demo_vslider.setOrientation(Qt.Orientation.Vertical)
 
         self.horizontalLayout_2.addWidget(self.demo_vslider)
 
@@ -312,8 +312,8 @@ class Ui_CustomThemeDialog(object):
         self.demo_line_separator_right.setObjectName(u"demo_line_separator_right")
         sizePolicy4.setHeightForWidth(self.demo_line_separator_right.sizePolicy().hasHeightForWidth())
         self.demo_line_separator_right.setSizePolicy(sizePolicy4)
-        self.demo_line_separator_right.setFrameShape(QFrame.VLine)
-        self.demo_line_separator_right.setFrameShadow(QFrame.Sunken)
+        self.demo_line_separator_right.setFrameShape(QFrame.Shape.VLine)
+        self.demo_line_separator_right.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.horizontalLayout_2.addWidget(self.demo_line_separator_right)
 
@@ -326,8 +326,8 @@ class Ui_CustomThemeDialog(object):
 
         self.demo_line_11 = QFrame(self.demo_widgets_tab)
         self.demo_line_11.setObjectName(u"demo_line_11")
-        self.demo_line_11.setFrameShape(QFrame.HLine)
-        self.demo_line_11.setFrameShadow(QFrame.Sunken)
+        self.demo_line_11.setFrameShape(QFrame.Shape.HLine)
+        self.demo_line_11.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.vlay_demo_right.addWidget(self.demo_line_11)
 
@@ -361,8 +361,8 @@ class Ui_CustomThemeDialog(object):
 
         self.bbox_theme = QDialogButtonBox(CustomThemeDialog)
         self.bbox_theme.setObjectName(u"bbox_theme")
-        self.bbox_theme.setOrientation(Qt.Horizontal)
-        self.bbox_theme.setStandardButtons(QDialogButtonBox.Close|QDialogButtonBox.Save)
+        self.bbox_theme.setOrientation(Qt.Orientation.Horizontal)
+        self.bbox_theme.setStandardButtons(QDialogButtonBox.StandardButton.Close|QDialogButtonBox.StandardButton.Save)
         self.bbox_theme.setCenterButtons(False)
 
         self.horizontalLayout.addWidget(self.bbox_theme)
