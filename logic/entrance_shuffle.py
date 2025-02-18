@@ -251,6 +251,14 @@ def create_entrance_pools(world: World) -> EntrancePools:
                 entrance.reverse for entrance in entrance_pools["Interior"]
             ]
 
+            # Push the forward interior pool back behind the interior reverse pool in the shuffle order.
+            # We do this because the target entrance of Waterfall Cave -> Skyloft Past Waterfall Cave
+            # is finicky and requires Night access to ensure all it's locations are reachable.
+            # By placing it after the forward interior entrances, we significantly reduce the
+            # chances of a placement failure.
+            interior_pool = entrance_pools.pop("Interior")
+            entrance_pools["Interior"] = interior_pool
+
     if world.setting("randomize_overworld_entrances") == "on":
         # Normally we allow any overworld entrances to link together.
         # However, if overworld entrances are mixed with other entrance types
@@ -654,11 +662,13 @@ def shuffle_entrances(
     random.shuffle(entrance_pool)
 
     for entrance in entrance_pool:
+        # If this entrance is already connected, then continue on to the next one
         if entrance.connected_area is not None:
             continue
         random.shuffle(target_entrance_pool)
 
         for target in target_entrance_pool:
+            # If this target has already been used, try the next one
             if target.connected_area is None:
                 continue
 
