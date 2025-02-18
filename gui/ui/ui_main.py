@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.3
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -840,8 +840,8 @@ class Ui_main_window(object):
 
         self.line = QFrame(self.open_dungeons_group_box)
         self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.HLine)
-        self.line.setFrameShadow(QFrame.Sunken)
+        self.line.setFrameShape(QFrame.Shape.HLine)
+        self.line.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_25.addWidget(self.line)
 
@@ -1049,8 +1049,8 @@ class Ui_main_window(object):
 
         self.mixed_entrance_pools_hline = QFrame(self.mixed_entrance_pools_group_box)
         self.mixed_entrance_pools_hline.setObjectName(u"mixed_entrance_pools_hline")
-        self.mixed_entrance_pools_hline.setFrameShape(QFrame.HLine)
-        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Sunken)
+        self.mixed_entrance_pools_hline.setFrameShape(QFrame.Shape.HLine)
+        self.mixed_entrance_pools_hline.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_28.addWidget(self.mixed_entrance_pools_hline)
 
@@ -1243,7 +1243,7 @@ class Ui_main_window(object):
         self.excluded_locations_list_view = QListView(self.excluded_locations_group_box)
         self.excluded_locations_list_view.setObjectName(u"excluded_locations_list_view")
         self.excluded_locations_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.excluded_locations_list_view.setProperty("showDropIndicator", False)
+        self.excluded_locations_list_view.setProperty(u"showDropIndicator", False)
         self.excluded_locations_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.excluded_locations_list_view.setSelectionRectVisible(False)
 
@@ -1277,7 +1277,7 @@ class Ui_main_window(object):
         self.included_locations_list_view = QListView(self.included_locations_group_box)
         self.included_locations_list_view.setObjectName(u"included_locations_list_view")
         self.included_locations_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.included_locations_list_view.setProperty("showDropIndicator", False)
+        self.included_locations_list_view.setProperty(u"showDropIndicator", False)
         self.included_locations_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.included_locations_list_view.setSelectionRectVisible(False)
 
@@ -1327,7 +1327,7 @@ class Ui_main_window(object):
         sizePolicy10.setHeightForWidth(self.randomized_items_list_view.sizePolicy().hasHeightForWidth())
         self.randomized_items_list_view.setSizePolicy(sizePolicy10)
         self.randomized_items_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.randomized_items_list_view.setProperty("showDropIndicator", False)
+        self.randomized_items_list_view.setProperty(u"showDropIndicator", False)
         self.randomized_items_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.randomized_items_list_view.setSelectionRectVisible(False)
 
@@ -1361,7 +1361,7 @@ class Ui_main_window(object):
         sizePolicy10.setHeightForWidth(self.starting_items_list_view.sizePolicy().hasHeightForWidth())
         self.starting_items_list_view.setSizePolicy(sizePolicy10)
         self.starting_items_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.starting_items_list_view.setProperty("showDropIndicator", False)
+        self.starting_items_list_view.setProperty(u"showDropIndicator", False)
         self.starting_items_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.starting_items_list_view.setSelectionRectVisible(False)
 
@@ -1522,7 +1522,7 @@ class Ui_main_window(object):
         sizePolicy10.setHeightForWidth(self.included_hint_locations_list_view.sizePolicy().hasHeightForWidth())
         self.included_hint_locations_list_view.setSizePolicy(sizePolicy10)
         self.included_hint_locations_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.included_hint_locations_list_view.setProperty("showDropIndicator", False)
+        self.included_hint_locations_list_view.setProperty(u"showDropIndicator", False)
         self.included_hint_locations_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.included_hint_locations_list_view.setSelectionRectVisible(False)
 
@@ -1583,7 +1583,7 @@ class Ui_main_window(object):
         sizePolicy10.setHeightForWidth(self.excluded_hint_locations_list_view.sizePolicy().hasHeightForWidth())
         self.excluded_hint_locations_list_view.setSizePolicy(sizePolicy10)
         self.excluded_hint_locations_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.excluded_hint_locations_list_view.setProperty("showDropIndicator", False)
+        self.excluded_hint_locations_list_view.setProperty(u"showDropIndicator", False)
         self.excluded_hint_locations_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
         self.excluded_hint_locations_list_view.setSelectionRectVisible(False)
 
@@ -2112,8 +2112,8 @@ class Ui_main_window(object):
 
         self.player_cosmetics_hline = QFrame(self.player_cosmetics_group_box)
         self.player_cosmetics_hline.setObjectName(u"player_cosmetics_hline")
-        self.player_cosmetics_hline.setFrameShape(QFrame.HLine)
-        self.player_cosmetics_hline.setFrameShadow(QFrame.Sunken)
+        self.player_cosmetics_hline.setFrameShape(QFrame.Shape.HLine)
+        self.player_cosmetics_hline.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_37.addWidget(self.player_cosmetics_hline)
 
@@ -2204,8 +2204,8 @@ class Ui_main_window(object):
 
         self.utils_hline = QFrame(self.file_setup_group_box)
         self.utils_hline.setObjectName(u"utils_hline")
-        self.utils_hline.setFrameShape(QFrame.HLine)
-        self.utils_hline.setFrameShadow(QFrame.Sunken)
+        self.utils_hline.setFrameShape(QFrame.Shape.HLine)
+        self.utils_hline.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline)
 
@@ -2231,8 +2231,8 @@ class Ui_main_window(object):
 
         self.utils_hline_2 = QFrame(self.file_setup_group_box)
         self.utils_hline_2.setObjectName(u"utils_hline_2")
-        self.utils_hline_2.setFrameShape(QFrame.HLine)
-        self.utils_hline_2.setFrameShadow(QFrame.Sunken)
+        self.utils_hline_2.setFrameShape(QFrame.Shape.HLine)
+        self.utils_hline_2.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline_2)
 
@@ -2266,8 +2266,8 @@ class Ui_main_window(object):
 
         self.utils_hline_3 = QFrame(self.file_setup_group_box)
         self.utils_hline_3.setObjectName(u"utils_hline_3")
-        self.utils_hline_3.setFrameShape(QFrame.HLine)
-        self.utils_hline_3.setFrameShadow(QFrame.Sunken)
+        self.utils_hline_3.setFrameShape(QFrame.Shape.HLine)
+        self.utils_hline_3.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_31.addWidget(self.utils_hline_3)
 
@@ -2722,7 +2722,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 339))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
