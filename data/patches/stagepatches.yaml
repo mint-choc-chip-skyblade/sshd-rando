@@ -1997,6 +1997,13 @@ F102_2: # Faron's Lair
       play_cutscene: -1
 
 F103: # Flooded Faron Woods
+  # Always force layer 2 since that's the layer with the tadtones
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1 
+        night: 0
+        layer: 2
   - name: Don't play intro cutscene
     type: objpatch
     room: 0

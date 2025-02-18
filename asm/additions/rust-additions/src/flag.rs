@@ -368,6 +368,13 @@ pub fn set_storyflag(flag: u16) {
 }
 
 #[no_mangle]
+pub fn set_storyflag_or_counter_to_value(flag: u16, value: u16) {
+    unsafe {
+        ((*(*STORYFLAG_MGR).funcs).set_flag_or_counter_to_value)(STORYFLAG_MGR, flag, value);
+    };
+}
+
+#[no_mangle]
 pub fn unset_storyflag(flag: u16) {
     unsafe {
         ((*(*STORYFLAG_MGR).funcs).unset_flag)(STORYFLAG_MGR, flag);
@@ -669,9 +676,12 @@ pub fn handle_startflags() {
                 starting_hearts += start_count.value * 4;
             }
             // If the counter is less than 25, it's a dungeon scene
+            // If the counter is greater than 511, it's a storyflag
             // for small key counts. Otherwise, it's a regular item flag counter
             else if start_count.counter <= 25 {
                 (*FILE_MGR).FA.dungeonflags[start_count.counter as usize][1] = start_count.value;
+            } else if start_count.counter > 511 {
+                set_storyflag_or_counter_to_value(start_count.counter, start_count.value);
             } else {
                 ((*(*ITEMFLAG_MGR).funcs).set_flag_or_counter_to_value)(
                     ITEMFLAG_MGR,
@@ -693,4 +703,18 @@ pub fn handle_startflags() {
 
         (*FILE_MGR).prevent_commit = false;
     }
+}
+
+#[no_mangle]
+pub fn increment_tadtone_counter() {
+    let current_value = check_storyflag(953) as u16;
+    let mut new_value = current_value + 1;
+
+    if new_value > 17 {
+        new_value = 17;
+    }
+
+    set_storyflag_or_counter_to_value(953, new_value);
+    // DO NOT REMOVE THIS DEBUG STATEMENT, OTHERWISE WEIRD BEHAVIOR HAPPENS
+    debug::debug_print(cstr!("Incrementing Tadtones").as_ptr());
 }

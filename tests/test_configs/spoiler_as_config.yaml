@@ -13,6 +13,7 @@ World 1:
   beedle_shop_shuffle: random
   goddess_chest_shuffle: random
   trial_treasure_shuffle: random
+  tadtone_shuffle: random
   full_wallet_upgrades: random
   randomize_skykeep_layout: "off"
   peatrice_conversations: random

@@ -1,4 +1,4 @@
-seed: TESTTESTTESTTESTTEST
+seed: TESTTESTTEST
 World 1:
   random_starting_spawn: anywhere
   randomize_dungeon_entrances: "on"
