@@ -286,10 +286,46 @@ assert_eq_size!([u8; 0x58], StateMgr__vtable);
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct StateMgr {
-    pub vtable: *mut StateMgr__vtable,
-    pub _0:     [u8; 0x68],
+    pub vtable:          *mut StateMgr__vtable,
+    pub checker:         extern "C" fn(),
+    pub factory:         extern "C" fn(),
+    pub state_functions: u64,
+    pub actor_reference: *mut dBase,
+    pub current_state:   *mut ActorState,
+    pub state_method:    [u8; 0x40],
 }
 assert_eq_size!([u8; 0x70], StateMgr);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct ActorState {
+    pub vtable:       *mut ActorState__vtable,
+    pub name:         *mut c_char,
+    pub number:       u32,
+    pub _0:           u32,
+    pub state_enter:  [u8; 0x10], // ptmf
+    pub state_update: [u8; 0x10], // ptmf
+    pub state_leave:  [u8; 0x10], // ptmf
+}
+assert_eq_size!([u8; 0x48], ActorState);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct ActorState__vtable {
+    pub _0:                u64,
+    pub dtor:              extern "C" fn(*mut ActorState),
+    pub is_null:           extern "C" fn(*mut ActorState) -> bool,
+    pub is_equal:          extern "C" fn(*mut ActorState, *mut ActorState) -> bool,
+    pub operator_eq:       extern "C" fn(*mut ActorState, *mut ActorState) -> u32,
+    pub operator_not_eq:   extern "C" fn(*mut ActorState, *mut ActorState) -> u32,
+    pub is_same_name:      extern "C" fn(*mut ActorState, *mut ActorState) -> u32, /* return type guess */
+    pub get_state_name:    extern "C" fn(*mut ActorState) -> *const c_char,
+    pub get_state_number:  extern "C" fn(*mut ActorState) -> u32,
+    pub call_enter_state:  extern "C" fn(),
+    pub call_update_state: extern "C" fn(),
+    pub call_leave_state:  extern "C" fn(),
+}
+assert_eq_size!([u8; 0x60], ActorState__vtable);
 
 // Actors
 #[repr(C, packed(1))]

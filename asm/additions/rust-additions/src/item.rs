@@ -66,7 +66,7 @@ assert_eq_size!([u8; 0x8], itemModel);
 pub struct itemModelVtable {
     pub _0:               [u8; 0x28],
     pub set_local_matrix:
-        extern "C" fn(item_model_ptr: *mut itemModel, world_matrix: *const c_void),
+        extern "C" fn(item_model_ptr: *mut itemModel, world_matrix: *mut math::Matrix),
 }
 assert_eq_size!([u8; 0x30], itemModelVtable);
 
@@ -124,6 +124,8 @@ extern "C" {
 
     static RANDOMIZER_SETTINGS: settings::RandomizerSettings;
     static mut dAcOWarp__StateGateOpen: c_void;
+    static mut dAcItem__StateGet: actor::ActorState;
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn sinf(x: f32) -> f32;
@@ -1293,7 +1295,7 @@ pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *cons
 
 // Applys a fixed value for the scale of a model in dAcItem::update
 #[no_mangle]
-pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *const c_void) {
+pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *mut math::Matrix) {
     unsafe {
         let mut scale = match (*item_actor).final_determined_itemid {
             214 => 0.5f32, // Tadtone
@@ -1304,6 +1306,15 @@ pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *const c_void)
         (*item_actor).base.members.base.scale.x *= scale;
         (*item_actor).base.members.base.scale.y *= scale;
         (*item_actor).base.members.base.scale.z *= scale;
+
+        // Change Tadtone height during item get
+        if (*item_actor).itemid == 214 {
+            let current_player_action = (*PLAYER_PTR).current_action;
+
+            if current_player_action == player::PLAYER_ACTIONS::ITEM_GET {
+                (*world_matrix).yw += -20.0;
+            }
+        }
 
         // Replaced code
         ((*(*(*item_actor).item_model_ptr).vtable).set_local_matrix)(
