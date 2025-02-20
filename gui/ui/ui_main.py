@@ -1505,6 +1505,30 @@ class Ui_main_window(object):
         self.hints_tab.setSizePolicy(sizePolicy1)
         self.gridLayout_8 = QGridLayout(self.hints_tab)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
+        self.excluded_hint_locations_group_box = QGroupBox(self.hints_tab)
+        self.excluded_hint_locations_group_box.setObjectName(u"excluded_hint_locations_group_box")
+        self.verticalLayout_27 = QVBoxLayout(self.excluded_hint_locations_group_box)
+        self.verticalLayout_27.setObjectName(u"verticalLayout_27")
+        self.excluded_hint_locations_free_search = QLineEdit(self.excluded_hint_locations_group_box)
+        self.excluded_hint_locations_free_search.setObjectName(u"excluded_hint_locations_free_search")
+        self.excluded_hint_locations_free_search.setClearButtonEnabled(True)
+
+        self.verticalLayout_27.addWidget(self.excluded_hint_locations_free_search)
+
+        self.excluded_hint_locations_list_view = QListView(self.excluded_hint_locations_group_box)
+        self.excluded_hint_locations_list_view.setObjectName(u"excluded_hint_locations_list_view")
+        sizePolicy10.setHeightForWidth(self.excluded_hint_locations_list_view.sizePolicy().hasHeightForWidth())
+        self.excluded_hint_locations_list_view.setSizePolicy(sizePolicy10)
+        self.excluded_hint_locations_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.excluded_hint_locations_list_view.setProperty(u"showDropIndicator", False)
+        self.excluded_hint_locations_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
+        self.excluded_hint_locations_list_view.setSelectionRectVisible(False)
+
+        self.verticalLayout_27.addWidget(self.excluded_hint_locations_list_view)
+
+
+        self.gridLayout_8.addWidget(self.excluded_hint_locations_group_box, 0, 2, 1, 1)
+
         self.included_hint_locations_group_box = QGroupBox(self.hints_tab)
         self.included_hint_locations_group_box.setObjectName(u"included_hint_locations_group_box")
         sizePolicy.setHeightForWidth(self.included_hint_locations_group_box.sizePolicy().hasHeightForWidth())
@@ -1568,30 +1592,6 @@ class Ui_main_window(object):
 
         self.gridLayout_8.addLayout(self.hints_button_layout, 0, 1, 1, 1)
 
-        self.excluded_hint_locations_group_box = QGroupBox(self.hints_tab)
-        self.excluded_hint_locations_group_box.setObjectName(u"excluded_hint_locations_group_box")
-        self.verticalLayout_27 = QVBoxLayout(self.excluded_hint_locations_group_box)
-        self.verticalLayout_27.setObjectName(u"verticalLayout_27")
-        self.excluded_hint_locations_free_search = QLineEdit(self.excluded_hint_locations_group_box)
-        self.excluded_hint_locations_free_search.setObjectName(u"excluded_hint_locations_free_search")
-        self.excluded_hint_locations_free_search.setClearButtonEnabled(True)
-
-        self.verticalLayout_27.addWidget(self.excluded_hint_locations_free_search)
-
-        self.excluded_hint_locations_list_view = QListView(self.excluded_hint_locations_group_box)
-        self.excluded_hint_locations_list_view.setObjectName(u"excluded_hint_locations_list_view")
-        sizePolicy10.setHeightForWidth(self.excluded_hint_locations_list_view.sizePolicy().hasHeightForWidth())
-        self.excluded_hint_locations_list_view.setSizePolicy(sizePolicy10)
-        self.excluded_hint_locations_list_view.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.excluded_hint_locations_list_view.setProperty(u"showDropIndicator", False)
-        self.excluded_hint_locations_list_view.setSelectionMode(QAbstractItemView.SelectionMode.MultiSelection)
-        self.excluded_hint_locations_list_view.setSelectionRectVisible(False)
-
-        self.verticalLayout_27.addWidget(self.excluded_hint_locations_list_view)
-
-
-        self.gridLayout_8.addWidget(self.excluded_hint_locations_group_box, 0, 2, 1, 1)
-
         self.hints_group_box = QGroupBox(self.hints_tab)
         self.hints_group_box.setObjectName(u"hints_group_box")
         self.verticalLayout_23 = QVBoxLayout(self.hints_group_box)
@@ -1599,116 +1599,192 @@ class Ui_main_window(object):
         self.path_hints_group_box = QGroupBox(self.hints_group_box)
         self.path_hints_group_box.setObjectName(u"path_hints_group_box")
         self.path_hints_group_box.setFlat(False)
-        self.horizontalLayout_9 = QHBoxLayout(self.path_hints_group_box)
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.horizontalLayout_9.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_38 = QVBoxLayout(self.path_hints_group_box)
+        self.verticalLayout_38.setObjectName(u"verticalLayout_38")
+        self.verticalLayout_38.setContentsMargins(5, 5, 5, 5)
+        self.path_hints_source_layout = QHBoxLayout()
+        self.path_hints_source_layout.setObjectName(u"path_hints_source_layout")
         self.setting_path_hints_on_fi = RandoTriStateCheckBox(self.path_hints_group_box)
         self.setting_path_hints_on_fi.setObjectName(u"setting_path_hints_on_fi")
         sizePolicy6.setHeightForWidth(self.setting_path_hints_on_fi.sizePolicy().hasHeightForWidth())
         self.setting_path_hints_on_fi.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_9.addWidget(self.setting_path_hints_on_fi)
+        self.path_hints_source_layout.addWidget(self.setting_path_hints_on_fi)
 
         self.setting_path_hints_on_gossip_stones = RandoTriStateCheckBox(self.path_hints_group_box)
         self.setting_path_hints_on_gossip_stones.setObjectName(u"setting_path_hints_on_gossip_stones")
         sizePolicy6.setHeightForWidth(self.setting_path_hints_on_gossip_stones.sizePolicy().hasHeightForWidth())
         self.setting_path_hints_on_gossip_stones.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_9.addWidget(self.setting_path_hints_on_gossip_stones)
+        self.path_hints_source_layout.addWidget(self.setting_path_hints_on_gossip_stones)
+
+        self.path_hints_source_hspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.path_hints_source_layout.addItem(self.path_hints_source_hspacer)
+
+
+        self.verticalLayout_38.addLayout(self.path_hints_source_layout)
+
+        self.path_hints_count_layout = QHBoxLayout()
+        self.path_hints_count_layout.setObjectName(u"path_hints_count_layout")
+        self.path_hints_label = QLabel(self.path_hints_group_box)
+        self.path_hints_label.setObjectName(u"path_hints_label")
+
+        self.path_hints_count_layout.addWidget(self.path_hints_label)
 
         self.setting_path_hints = QSpinBox(self.path_hints_group_box)
         self.setting_path_hints.setObjectName(u"setting_path_hints")
         sizePolicy6.setHeightForWidth(self.setting_path_hints.sizePolicy().hasHeightForWidth())
         self.setting_path_hints.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_9.addWidget(self.setting_path_hints)
+        self.path_hints_count_layout.addWidget(self.setting_path_hints)
+
+
+        self.verticalLayout_38.addLayout(self.path_hints_count_layout)
 
 
         self.verticalLayout_23.addWidget(self.path_hints_group_box)
 
         self.barren_hints_group_box = QGroupBox(self.hints_group_box)
         self.barren_hints_group_box.setObjectName(u"barren_hints_group_box")
-        self.horizontalLayout_10 = QHBoxLayout(self.barren_hints_group_box)
-        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_39 = QVBoxLayout(self.barren_hints_group_box)
+        self.verticalLayout_39.setObjectName(u"verticalLayout_39")
+        self.verticalLayout_39.setContentsMargins(5, 5, 5, 5)
+        self.barren_hints_source_layout = QHBoxLayout()
+        self.barren_hints_source_layout.setObjectName(u"barren_hints_source_layout")
         self.setting_barren_hints_on_fi = RandoTriStateCheckBox(self.barren_hints_group_box)
         self.setting_barren_hints_on_fi.setObjectName(u"setting_barren_hints_on_fi")
         sizePolicy6.setHeightForWidth(self.setting_barren_hints_on_fi.sizePolicy().hasHeightForWidth())
         self.setting_barren_hints_on_fi.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_10.addWidget(self.setting_barren_hints_on_fi)
+        self.barren_hints_source_layout.addWidget(self.setting_barren_hints_on_fi)
 
         self.setting_barren_hints_on_gossip_stones = RandoTriStateCheckBox(self.barren_hints_group_box)
         self.setting_barren_hints_on_gossip_stones.setObjectName(u"setting_barren_hints_on_gossip_stones")
         sizePolicy6.setHeightForWidth(self.setting_barren_hints_on_gossip_stones.sizePolicy().hasHeightForWidth())
         self.setting_barren_hints_on_gossip_stones.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_10.addWidget(self.setting_barren_hints_on_gossip_stones)
+        self.barren_hints_source_layout.addWidget(self.setting_barren_hints_on_gossip_stones)
+
+        self.barren_hints_hspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.barren_hints_source_layout.addItem(self.barren_hints_hspacer)
+
+
+        self.verticalLayout_39.addLayout(self.barren_hints_source_layout)
+
+        self.barren_hints_count_layout = QHBoxLayout()
+        self.barren_hints_count_layout.setObjectName(u"barren_hints_count_layout")
+        self.barren_hints_label = QLabel(self.barren_hints_group_box)
+        self.barren_hints_label.setObjectName(u"barren_hints_label")
+
+        self.barren_hints_count_layout.addWidget(self.barren_hints_label)
 
         self.setting_barren_hints = QSpinBox(self.barren_hints_group_box)
         self.setting_barren_hints.setObjectName(u"setting_barren_hints")
         sizePolicy6.setHeightForWidth(self.setting_barren_hints.sizePolicy().hasHeightForWidth())
         self.setting_barren_hints.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_10.addWidget(self.setting_barren_hints)
+        self.barren_hints_count_layout.addWidget(self.setting_barren_hints)
+
+
+        self.verticalLayout_39.addLayout(self.barren_hints_count_layout)
 
 
         self.verticalLayout_23.addWidget(self.barren_hints_group_box)
 
         self.location_hints_group_box = QGroupBox(self.hints_group_box)
         self.location_hints_group_box.setObjectName(u"location_hints_group_box")
-        self.horizontalLayout_11 = QHBoxLayout(self.location_hints_group_box)
-        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_40 = QVBoxLayout(self.location_hints_group_box)
+        self.verticalLayout_40.setObjectName(u"verticalLayout_40")
+        self.verticalLayout_40.setContentsMargins(5, 5, 5, 5)
+        self.location_hints_source_layout = QHBoxLayout()
+        self.location_hints_source_layout.setObjectName(u"location_hints_source_layout")
         self.setting_location_hints_on_fi = RandoTriStateCheckBox(self.location_hints_group_box)
         self.setting_location_hints_on_fi.setObjectName(u"setting_location_hints_on_fi")
         sizePolicy6.setHeightForWidth(self.setting_location_hints_on_fi.sizePolicy().hasHeightForWidth())
         self.setting_location_hints_on_fi.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_11.addWidget(self.setting_location_hints_on_fi)
+        self.location_hints_source_layout.addWidget(self.setting_location_hints_on_fi)
 
         self.setting_location_hints_on_gossip_stones = RandoTriStateCheckBox(self.location_hints_group_box)
         self.setting_location_hints_on_gossip_stones.setObjectName(u"setting_location_hints_on_gossip_stones")
         sizePolicy6.setHeightForWidth(self.setting_location_hints_on_gossip_stones.sizePolicy().hasHeightForWidth())
         self.setting_location_hints_on_gossip_stones.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_11.addWidget(self.setting_location_hints_on_gossip_stones)
+        self.location_hints_source_layout.addWidget(self.setting_location_hints_on_gossip_stones)
+
+        self.location_hints_hspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.location_hints_source_layout.addItem(self.location_hints_hspacer)
+
+
+        self.verticalLayout_40.addLayout(self.location_hints_source_layout)
+
+        self.location_hints_count_layout = QHBoxLayout()
+        self.location_hints_count_layout.setObjectName(u"location_hints_count_layout")
+        self.location_hints_label = QLabel(self.location_hints_group_box)
+        self.location_hints_label.setObjectName(u"location_hints_label")
+
+        self.location_hints_count_layout.addWidget(self.location_hints_label)
 
         self.setting_location_hints = QSpinBox(self.location_hints_group_box)
         self.setting_location_hints.setObjectName(u"setting_location_hints")
         sizePolicy6.setHeightForWidth(self.setting_location_hints.sizePolicy().hasHeightForWidth())
         self.setting_location_hints.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_11.addWidget(self.setting_location_hints)
+        self.location_hints_count_layout.addWidget(self.setting_location_hints)
+
+
+        self.verticalLayout_40.addLayout(self.location_hints_count_layout)
 
 
         self.verticalLayout_23.addWidget(self.location_hints_group_box)
 
         self.item_hints_group_box = QGroupBox(self.hints_group_box)
         self.item_hints_group_box.setObjectName(u"item_hints_group_box")
-        self.horizontalLayout_12 = QHBoxLayout(self.item_hints_group_box)
-        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.horizontalLayout_12.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_41 = QVBoxLayout(self.item_hints_group_box)
+        self.verticalLayout_41.setObjectName(u"verticalLayout_41")
+        self.verticalLayout_41.setContentsMargins(5, 5, 5, 5)
+        self.item_hints_source_layout = QHBoxLayout()
+        self.item_hints_source_layout.setObjectName(u"item_hints_source_layout")
         self.setting_item_hints_on_fi = RandoTriStateCheckBox(self.item_hints_group_box)
         self.setting_item_hints_on_fi.setObjectName(u"setting_item_hints_on_fi")
         sizePolicy6.setHeightForWidth(self.setting_item_hints_on_fi.sizePolicy().hasHeightForWidth())
         self.setting_item_hints_on_fi.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_12.addWidget(self.setting_item_hints_on_fi)
+        self.item_hints_source_layout.addWidget(self.setting_item_hints_on_fi)
 
         self.setting_item_hints_on_gossip_stones = RandoTriStateCheckBox(self.item_hints_group_box)
         self.setting_item_hints_on_gossip_stones.setObjectName(u"setting_item_hints_on_gossip_stones")
         sizePolicy6.setHeightForWidth(self.setting_item_hints_on_gossip_stones.sizePolicy().hasHeightForWidth())
         self.setting_item_hints_on_gossip_stones.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_12.addWidget(self.setting_item_hints_on_gossip_stones)
+        self.item_hints_source_layout.addWidget(self.setting_item_hints_on_gossip_stones)
+
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.item_hints_source_layout.addItem(self.horizontalSpacer_4)
+
+
+        self.verticalLayout_41.addLayout(self.item_hints_source_layout)
+
+        self.item_hints_count_layout = QHBoxLayout()
+        self.item_hints_count_layout.setObjectName(u"item_hints_count_layout")
+        self.item_hints_label = QLabel(self.item_hints_group_box)
+        self.item_hints_label.setObjectName(u"item_hints_label")
+
+        self.item_hints_count_layout.addWidget(self.item_hints_label)
 
         self.setting_item_hints = QSpinBox(self.item_hints_group_box)
         self.setting_item_hints.setObjectName(u"setting_item_hints")
         sizePolicy6.setHeightForWidth(self.setting_item_hints.sizePolicy().hasHeightForWidth())
         self.setting_item_hints.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_12.addWidget(self.setting_item_hints)
+        self.item_hints_count_layout.addWidget(self.setting_item_hints)
+
+
+        self.verticalLayout_41.addLayout(self.item_hints_count_layout)
 
 
         self.verticalLayout_23.addWidget(self.item_hints_group_box)
@@ -2732,7 +2808,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 340))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -3043,6 +3119,9 @@ class Ui_main_window(object):
         self.random_starting_item_count_label.setText(QCoreApplication.translate("main_window", u"Random Starting Item Count", None))
         self.starting_hearts_label.setText(QCoreApplication.translate("main_window", u"Starting Hearts", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.inventory_tab), QCoreApplication.translate("main_window", u"Items and Inventory", None))
+        self.excluded_hint_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Hint Locations", None))
+        self.excluded_hint_locations_free_search.setText("")
+        self.excluded_hint_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.included_hint_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Included Hint Locations", None))
         self.included_hint_locations_free_search.setText("")
         self.included_hint_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
@@ -3051,22 +3130,23 @@ class Ui_main_window(object):
         self.exclude_hint_location_button.setText(QCoreApplication.translate("main_window", u"Add\n"
 "--->", None))
         self.hints_reset_button.setText(QCoreApplication.translate("main_window", u"Reset", None))
-        self.excluded_hint_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Hint Locations", None))
-        self.excluded_hint_locations_free_search.setText("")
-        self.excluded_hint_locations_free_search.setPlaceholderText(QCoreApplication.translate("main_window", u"Search", None))
         self.hints_group_box.setTitle(QCoreApplication.translate("main_window", u"Hint Settings", None))
         self.path_hints_group_box.setTitle(QCoreApplication.translate("main_window", u"Path Hints", None))
         self.setting_path_hints_on_fi.setText(QCoreApplication.translate("main_window", u"On Fi", None))
         self.setting_path_hints_on_gossip_stones.setText(QCoreApplication.translate("main_window", u"On Gossip Stones", None))
+        self.path_hints_label.setText(QCoreApplication.translate("main_window", u"Number of Path Hints", None))
         self.barren_hints_group_box.setTitle(QCoreApplication.translate("main_window", u"Barren Hints", None))
         self.setting_barren_hints_on_fi.setText(QCoreApplication.translate("main_window", u"On Fi", None))
         self.setting_barren_hints_on_gossip_stones.setText(QCoreApplication.translate("main_window", u"On Gossip Stones", None))
+        self.barren_hints_label.setText(QCoreApplication.translate("main_window", u"Number of Barren Hints", None))
         self.location_hints_group_box.setTitle(QCoreApplication.translate("main_window", u"Location Hints", None))
         self.setting_location_hints_on_fi.setText(QCoreApplication.translate("main_window", u"On Fi", None))
         self.setting_location_hints_on_gossip_stones.setText(QCoreApplication.translate("main_window", u"On Gossip Stones", None))
+        self.location_hints_label.setText(QCoreApplication.translate("main_window", u"Number of Location Hints", None))
         self.item_hints_group_box.setTitle(QCoreApplication.translate("main_window", u"Item Hints", None))
         self.setting_item_hints_on_fi.setText(QCoreApplication.translate("main_window", u"On Fi", None))
         self.setting_item_hints_on_gossip_stones.setText(QCoreApplication.translate("main_window", u"On Gossip Stones", None))
+        self.item_hints_label.setText(QCoreApplication.translate("main_window", u"Number of Item Hints", None))
         self.song_hints_label.setText(QCoreApplication.translate("main_window", u"Song Hints", None))
         self.setting_always_hints.setText(QCoreApplication.translate("main_window", u"Prioritize Remote Location Hints", None))
         self.setting_cryptic_hint_text.setText(QCoreApplication.translate("main_window", u"Cryptic Hint Text", None))
