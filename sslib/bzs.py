@@ -211,7 +211,7 @@ def build_bzs(root: dict) -> bytes:
     pad = 32 - (len(data) % 32)
     if pad == 32:
         pad = 0
-    data += b"\xFF" * pad
+    data += b"\xff" * pad
     return data
 
 
@@ -227,7 +227,7 @@ def build_object(
         for data_type, obj in object_data.items():
             count, data = build_object(data_type, obj)
             # pad to 4
-            pad = (4 - (len(data) % 4)) * b"\xFF"
+            pad = (4 - (len(data) % 4)) * b"\xff"
             if len(pad) == 4:
                 pad = b""
             header_bytes += struct.pack(
@@ -254,7 +254,7 @@ def build_object(
                 count, data = build_object("V001", layer)
                 dataoffset = len(body) - len(header_bytes) + offset
                 # pad to 4
-                pad = (4 - (len(data) % 4)) * b"\xFF"
+                pad = (4 - (len(data) % 4)) * b"\xff"
                 if len(pad) == 4:
                     pad = b""
                 header_bytes += struct.pack(">hhi", count, -1, dataoffset)
