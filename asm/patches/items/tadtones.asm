@@ -33,17 +33,28 @@ mov w9, wzr
 nop
 
 ; Give tadtone's randomized item when in various possible states
-.offset 0x7100770568
-bl 0x7100659ae0 ; Tadtones give item in jumptable
+.offset 0x7100770564
+mov x0, x19
+mov w8, #69
+bl additions_jumptable
 
-.offset 0x7100771840
-bl 0x7100659ae0 ; Tadtones give item in jumptable
+.offset 0x7100771838
+mov x0, x19
+mov w8, #69
+bl additions_jumptable
+nop
 
-.offset 0x7100772354
-bl 0x7100659ae0 ; Tadtones give item in jumptable
+.offset 0x710077234c
+mov x0, x19
+mov w8, #69
+bl additions_jumptable
+nop
 
-.offset 0x7100772568
-bl 0x7100659ae0 ; Tadtones give item in jumptable
+.offset 0x7100772560
+mov x0, x19
+mov w8, #69
+bl additions_jumptable
+nop
 
 ; Always init the tadtone minigame even if we've collected all tadtone group items
 .offset 0x7100e50ef8

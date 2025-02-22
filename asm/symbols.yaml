@@ -97,6 +97,8 @@ main:
 
     SQUIRRELS_CAUGHT_THIS_PLAY_SESSION: 0x71018285e2
 
+    TADTONE_SCENEFLAGS: 0x71013a3fa5
+
 
     # Functions
     debugPrint_128: 0x710051bf54

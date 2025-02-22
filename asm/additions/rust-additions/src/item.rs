@@ -121,6 +121,7 @@ extern "C" {
     static mut NUMBER_OF_ITEMS: u32;
 
     static mut SQUIRRELS_CAUGHT_THIS_PLAY_SESSION: bool;
+    static TADTONE_SCENEFLAGS: [u8; 17];
 
     static RANDOMIZER_SETTINGS: settings::RandomizerSettings;
     static mut dAcOWarp__StateGateOpen: c_void;
@@ -1411,10 +1412,13 @@ pub fn get_silent_realm_item_glow_color(item_id: u32) -> u32 {
 #[no_mangle]
 pub fn give_tadtone_random_item(tadtone_actor: *const actor::dAcOClef) {
     unsafe {
-        let actor_rot_z = (*tadtone_actor).base.members.base.rot.z & 0xFF;
-        give_item(actor_rot_z as u8);
+        let itemid = (*tadtone_actor).base.members.base.rot.z & 0xFF;
+        let tadtone_group_index: u8 =
+            ((((*tadtone_actor).base.basebase.members.param1 >> 3) & 0x1F) - 1) as u8;
 
-        // Replaced code
-        (*SCENEFLAG_MGR).should_commit = 1;
+        give_item_with_sceneflag(
+            itemid as u8,
+            TADTONE_SCENEFLAGS[tadtone_group_index as usize],
+        );
     }
 }

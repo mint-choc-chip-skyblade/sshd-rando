@@ -20,8 +20,8 @@
 ; Total available instructions:                     372 (decimal)
 ; 
 ; Please update this:
-; Total space used (bytes):                         100
-; Total instructions used:                           25
+; Total space used (bytes):                          88
+; Total instructions used:                           22
 
 ; startflags
 .offset 0x7100659ab0
@@ -51,12 +51,6 @@ b additions_jumptable
 
 .offset 0x7100659ad8
 mov w8, #43
-b additions_jumptable
-
-; Tadtones give item
-.offset 0x7100659ae0
-mov x0, x19
-mov w8, #69
 b additions_jumptable
 
 ; Actually branches to the rust additions landingpad
