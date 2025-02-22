@@ -106,6 +106,8 @@ assert_eq_size!([u8; 0x19A8], dAcTbox);
 extern "C" {
     static PLAYER_PTR: *mut player::dPlayer;
 
+    static s_rng: u32;
+
     static FILE_MGR: *mut savefile::FileMgr;
     static ROOM_MGR: *mut actor::RoomMgr;
     static HARP_RELATED: *mut event::HarpRelated;
@@ -1271,6 +1273,7 @@ pub fn get_arc_model_from_item(
 pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *const c_char {
     unsafe {
         let mut initial_model_name = match item_id {
+            214 if (s_rng & 1) == 0 => cstr!("OnpA").as_ptr(),
             214 => cstr!("OnpB").as_ptr(),
             215 => cstr!("DesertRobot").as_ptr(),
             _ => model_name,

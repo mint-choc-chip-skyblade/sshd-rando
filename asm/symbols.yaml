@@ -2,6 +2,8 @@ main:
     PLAYER_PTR: 0x7102bfd940
     LOFTWING_PTR: 0x7101821fa0
 
+    s_rng: 0x710168c3e0
+
 
     # MGRs
     FILE_MGR: 0x7102bfdcc0
