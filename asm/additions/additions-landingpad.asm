@@ -225,11 +225,11 @@ b.eq assign_item_textbox_collection_sfx
 cmp w8, #68
 b.eq get_silent_realm_item_glow_color
 
-cmp w8, #69
-b.eq rotate_shop_items
+cmp w8, #69 ; nice
+b.eq give_tadtone_random_item
 
 cmp w8, #70
-b.eq set_shop_display_height
+b.eq check_tadtone_counter_before_song_event
 
 cmp w8, #71
 b.eq set_shop_sold_out_storyflag
@@ -239,6 +239,12 @@ b.eq check_shop_sold_out_storyflag
 
 cmp w8, #73
 b.eq handle_shop_traps
+
+cmp w8, #74
+b.eq rotate_shop_items
+
+cmp w8, #75
+b.eq set_shop_display_height
 
 ret ; this should never be reached
 

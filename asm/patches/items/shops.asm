@@ -21,12 +21,12 @@
 
 ; Rotate shop items
 .offset 0x7100b0595c
-mov w8, #69
+mov w8, #74
 bl additions_jumptable
 
 ; Set shop item height
 .offset 0x7100afff98
-mov w8, #70
+mov w8, #75
 bl additions_jumptable
 
 ; Init dAcShopSample__Subclasses based on their shop_index instead of the item

@@ -1,4 +1,4 @@
-seed: TESTTESTTEST
+seed: TESTTESTTESTTEST
 World 1:
   logic_rules: all_locations_reachable
   # Can't be random as "minimal" causes 4 locations to be unreachable
@@ -13,6 +13,7 @@ World 1:
   beedle_shop_shuffle: random
   goddess_chest_shuffle: random
   trial_treasure_shuffle: random
+  tadtone_shuffle: random
   full_wallet_upgrades: random
   randomize_skykeep_layout: "off"
   peatrice_conversations: random
@@ -24,11 +25,17 @@ World 1:
   chest_type_matches_contents: random
   small_keys_in_fancy_chests: random
   path_hints: random
+  path_hints_on_fi: random
+  path_hints_on_gossip_stones: random
   barren_hints: random
+  barren_hints_on_fi: random
+  barren_hints_on_gossip_stones: random
   location_hints: random
+  location_hints_on_fi: random
+  location_hints_on_gossip_stones: random
   item_hints: random
-  fi_hints: random
-  gossip_stone_hints: random
+  item_hints_on_fi: random
+  item_hints_on_gossip_stones: random
   song_hints: random
   impa_sot_hint: random
   cryptic_hint_text: random

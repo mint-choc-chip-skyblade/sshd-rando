@@ -188,7 +188,7 @@ MINIMAL_ITEM_POOL: list[str] = (
     + [GRATITUDE_CRYSTAL_PACK] * 13
     + [GRATITUDE_CRYSTAL] * 15
     + [EMPTY_BOTTLE] * 5
-    # + [GROUP_OF_TADTONES] * 17
+    + [GROUP_OF_TADTONES] * 17
     + [KEY_PIECE] * 5
     + [SV_SMALL_KEY] * 2
     + [AC_SMALL_KEY] * 2
@@ -339,6 +339,7 @@ STARTABLE_ITEMS: list[str] = (
     + [EXTRA_WALLET] * 3
     + [HYLIAN_SHIELD]
     + [EMPTY_BOTTLE] * 5
+    + [GROUP_OF_TADTONES] * 17
     + [GRATITUDE_CRYSTAL] * 15
     + [GRATITUDE_CRYSTAL_PACK] * 13
     + [LC_SMALL_KEY] * 2
@@ -520,6 +521,7 @@ ITEM_COUNTS = {
     SK_SMALL_KEY: (20, 1, 1),
     HEART_CONTAINER: (0x5D, 1, 6),
     HEART_PIECE: (0x5E, 1, 32),
+    GROUP_OF_TADTONES: (953, 1, 17),
 }
 
 TRAP_SETTING_TO_ITEM = {
