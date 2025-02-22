@@ -1,4 +1,4 @@
-seed: TESTTESTTEST
+seed: TESTTESTTESTTEST
 World 1:
   logic_rules: all_locations_reachable
   # Can't be random as "minimal" causes 4 locations to be unreachable
