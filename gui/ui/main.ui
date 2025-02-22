@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -2249,6 +2249,50 @@
         <string>Hints</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_8" columnstretch="6,1,6,4">
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="excluded_hint_locations_group_box">
+          <property name="title">
+           <string>Excluded Hint Locations</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_27">
+           <item>
+            <widget class="QLineEdit" name="excluded_hint_locations_free_search">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>Search</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListView" name="excluded_hint_locations_list_view">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
+             </property>
+             <property name="selectionRectVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
         <item row="0" column="0">
          <widget class="QGroupBox" name="included_hint_locations_group_box">
           <property name="sizePolicy">
@@ -2383,50 +2427,6 @@
           </item>
          </layout>
         </item>
-        <item row="0" column="2">
-         <widget class="QGroupBox" name="excluded_hint_locations_group_box">
-          <property name="title">
-           <string>Excluded Hint Locations</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_27">
-           <item>
-            <widget class="QLineEdit" name="excluded_hint_locations_free_search">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="placeholderText">
-              <string>Search</string>
-             </property>
-             <property name="clearButtonEnabled">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QListView" name="excluded_hint_locations_list_view">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="editTriggers">
-              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-             </property>
-             <property name="showDropIndicator" stdset="0">
-              <bool>false</bool>
-             </property>
-             <property name="selectionMode">
-              <enum>QAbstractItemView::SelectionMode::MultiSelection</enum>
-             </property>
-             <property name="selectionRectVisible">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
         <item row="0" column="3">
          <widget class="QGroupBox" name="hints_group_box">
           <property name="title">
@@ -2434,24 +2434,346 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_23">
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_gossip_stone_hints">
-             <property name="text">
-              <string>Gossip Stone Hints</string>
+            <widget class="QGroupBox" name="path_hints_group_box">
+             <property name="title">
+              <string>Path Hints</string>
              </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_38">
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>5</number>
+              </property>
+              <property name="rightMargin">
+               <number>5</number>
+              </property>
+              <property name="bottomMargin">
+               <number>5</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="path_hints_source_layout">
+                <item>
+                 <widget class="RandoTriStateCheckBox" name="setting_path_hints_on_fi">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>On Fi</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="RandoTriStateCheckBox" name="setting_path_hints_on_gossip_stones">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>On Gossip Stones</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="path_hints_source_hspacer">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="path_hints_count_layout">
+                <item>
+                 <widget class="QLabel" name="path_hints_label">
+                  <property name="text">
+                   <string>Number of Path Hints</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="setting_path_hints">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_fi_hints">
-             <property name="text">
-              <string>Fi Hints</string>
+            <widget class="QGroupBox" name="barren_hints_group_box">
+             <property name="title">
+              <string>Barren Hints</string>
              </property>
+             <layout class="QVBoxLayout" name="verticalLayout_39">
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>5</number>
+              </property>
+              <property name="rightMargin">
+               <number>5</number>
+              </property>
+              <property name="bottomMargin">
+               <number>5</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="barren_hints_source_layout">
+                <item>
+                 <widget class="RandoTriStateCheckBox" name="setting_barren_hints_on_fi">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>On Fi</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="RandoTriStateCheckBox" name="setting_barren_hints_on_gossip_stones">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>On Gossip Stones</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="barren_hints_hspacer">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="barren_hints_count_layout">
+                <item>
+                 <widget class="QLabel" name="barren_hints_label">
+                  <property name="text">
+                   <string>Number of Barren Hints</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="setting_barren_hints">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_impa_sot_hint">
-             <property name="text">
-              <string>Past Impa Stone of Trials Hint</string>
+            <widget class="QGroupBox" name="location_hints_group_box">
+             <property name="title">
+              <string>Location Hints</string>
              </property>
+             <layout class="QVBoxLayout" name="verticalLayout_40">
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>5</number>
+              </property>
+              <property name="rightMargin">
+               <number>5</number>
+              </property>
+              <property name="bottomMargin">
+               <number>5</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="location_hints_source_layout">
+                <item>
+                 <widget class="RandoTriStateCheckBox" name="setting_location_hints_on_fi">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>On Fi</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="RandoTriStateCheckBox" name="setting_location_hints_on_gossip_stones">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>On Gossip Stones</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="location_hints_hspacer">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="location_hints_count_layout">
+                <item>
+                 <widget class="QLabel" name="location_hints_label">
+                  <property name="text">
+                   <string>Number of Location Hints</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="setting_location_hints">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="item_hints_group_box">
+             <property name="title">
+              <string>Item Hints</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_41">
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>5</number>
+              </property>
+              <property name="rightMargin">
+               <number>5</number>
+              </property>
+              <property name="bottomMargin">
+               <number>5</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="item_hints_source_layout">
+                <item>
+                 <widget class="RandoTriStateCheckBox" name="setting_item_hints_on_fi">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>On Fi</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="RandoTriStateCheckBox" name="setting_item_hints_on_gossip_stones">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>On Gossip Stones</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="item_hints_count_layout">
+                <item>
+                 <widget class="QLabel" name="item_hints_label">
+                  <property name="text">
+                   <string>Number of Item Hints</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="setting_item_hints">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
@@ -2465,102 +2787,6 @@
             <widget class="QComboBox" name="setting_song_hints"/>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="path_hints_layout">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="path_hints_label">
-               <property name="text">
-                <string>Path Hints</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="setting_path_hints">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="barren_hints_layout">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="barren_hints_label">
-               <property name="text">
-                <string>Barren Hints</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="setting_barren_hints">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="location_hints_layout">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="location_hints_label">
-               <property name="text">
-                <string>Location Hints</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="setting_location_hints">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="item_hints_layout">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="item_hints_label">
-               <property name="text">
-                <string>Item Hints</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="setting_item_hints">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
             <widget class="RandoTriStateCheckBox" name="setting_always_hints">
              <property name="text">
               <string>Prioritize Remote Location Hints</string>
@@ -2571,6 +2797,13 @@
             <widget class="RandoTriStateCheckBox" name="setting_cryptic_hint_text">
              <property name="text">
               <string>Cryptic Hint Text</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_impa_sot_hint">
+             <property name="text">
+              <string>Past Impa Stone of Trials Hint</string>
              </property>
             </widget>
            </item>
@@ -4028,8 +4261,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>100</width>
-               <height>30</height>
+               <width>546</width>
+               <height>340</height>
               </rect>
              </property>
              <property name="maximumSize">

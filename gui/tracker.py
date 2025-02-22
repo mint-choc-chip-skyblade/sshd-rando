@@ -1701,7 +1701,7 @@ class Tracker:
 
         self.world.assign_hint_regions_and_goal_locations()
         all_locations = self.world.get_all_item_locations()
-        if self.world.setting("gossip_stone_hints") == "on":
+        if self.world.is_placing_hints_on_gossip_stones():
             all_locations.extend(self.world.get_gossip_stones())
         for location in all_locations:
             for area_name in set(

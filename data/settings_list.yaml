@@ -315,6 +315,26 @@
   options:
     - 0-7: "Select the number of path hints you would like to generate."
 
+- name: path_hints_on_fi
+  default_option: "off"
+  pretty_name: On Fi # Hint type is implied by groupbox
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Path hints will not be placed on Fi."
+    - "on": "Path hints will be placed on Fi and can be seen by calling Fi and asking her for hints. If path hints are also on placed on gossip stones, then the hints will be split evenly between the two options."
+
+- name: path_hints_on_gossip_stones
+  default_option: "on"
+  pretty_name: On Gossip Stones # Hint type is implied by groupbox
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Path hints will not be placed on gossip stones."
+    - "on": "Path hints will be placed on gossip stones and can be seen by talking to them. If path hints are also on placed on Fi, then the hints will be split evenly between the two options."
+
 - name: barren_hints
   default_option: 2
   pretty_name: Barren Hints
@@ -322,6 +342,26 @@
     - 0-7
   options:
     - 0-7: "Select the number of barren hints you would like to generate."
+
+- name: barren_hints_on_fi
+  default_option: "off"
+  pretty_name: On Fi # Hint type is implied by groupbox
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Barren hints will not be placed on Fi."
+    - "on": "Barren hints will be placed on Fi and can be seen by calling Fi and asking her for hints. If barren hints are also on placed on gossip stones, then the hints will be split evenly between the two options."
+
+- name: barren_hints_on_gossip_stones
+  default_option: "on"
+  pretty_name: On Gossip Stones # Hint type is implied by groupbox
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Barren hints will not be placed on gossip stones."
+    - "on": "Barren hints will be placed on gossip stones and can be seen by talking to them. If barren hints are also on placed on Fi, then the hints will be split evenly between the two options."
 
 - name: location_hints
   default_option: 7 # assumes always_hints is on
@@ -331,6 +371,26 @@
   options:
     - 0-7: "Select the number of location hints you would like to generate."
 
+- name: location_hints_on_fi
+  default_option: "off"
+  pretty_name: On Fi # Hint type is implied by groupbox
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Location hints will not be placed on Fi."
+    - "on": "Location hints will be placed on Fi and can be seen by calling Fi and asking her for hints. If location hints are also on placed on gossip stones, then the hints will be split evenly between the two options."
+
+- name: location_hints_on_gossip_stones
+  default_option: "on"
+  pretty_name: On Gossip Stones # Hint type is implied by groupbox
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Location hints will not be placed on gossip stones."
+    - "on": "Location hints will be placed on gossip stones and can be seen by talking to them. If location hints are also on placed on Fi, then the hints will be split evenly between the two options."
+
 - name: item_hints
   default_option: 3
   pretty_name: Item Hints
@@ -339,25 +399,25 @@
   options:
     - 0-7: "Select the number of item hints you would like to generate."
 
-- name: fi_hints
-  default_option: "on"
-  pretty_name: Fi Hints
-  pretty_options:
-    - "Off"
-    - "On"
-  options:
-    - "off": "Hints will not be placed on Fi."
-    - "on": "Hints will be placed on Fi and can be seen by calling Fi and asking her for hints."
-
-- name: gossip_stone_hints
+- name: item_hints_on_fi
   default_option: "off"
-  pretty_name: Gossip Stone Hints
+  pretty_name: On Fi # Hint type is implied by groupbox
   pretty_options:
     - "Off"
     - "On"
   options:
-    - "off": "Hints will not be placed on Gossip Stones."
-    - "on": "Hints will be placed on Gossip Stones and can be seen by talking to them."
+    - "off": "Item hints will not be placed on Fi."
+    - "on": "Item hints will be placed on Fi and can be seen by calling Fi and asking her for hints. If item hints are also on placed on gossip stones, then the hints will be split evenly between the two options."
+
+- name: item_hints_on_gossip_stones
+  default_option: "on"
+  pretty_name: On Gossip Stones # Hint type is implied by groupbox
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Item hints will not be placed on gossip stones."
+    - "on": "Item hints will be placed on gossip stones and can be seen by talking to them. If item hints are also on placed on Fi, then the hints will be split evenly between the two options."
 
 - name: song_hints
   default_option: "direct"
