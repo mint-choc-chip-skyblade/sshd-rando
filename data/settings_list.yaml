@@ -144,6 +144,17 @@
   options:
    - 0-10: "Randomizes treasures in Silent Realms to items. Items other than dusk relics will glow in Silent Realms (Yellow in Faron, Blue in Eldin, Green in Lanayru, and Red on Skyloft). Choose the amount you want to randomize."
 
+- name: tadtone_shuffle
+  tracker_important: true
+  default_option: "off"
+  pretty_name: Tadtone Shuffle
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "The tadtones in Flooded Faron Woods will not be shuffled."
+    - "on": "The tadtones in Flooded Faron Woods will be shuffled and 17 \"Group of Tadtones\" items will be shuffled throughout the world."
+
 - name: full_wallet_upgrades
   default_option: "off"
   pretty_name: Full Wallet Upgrades
