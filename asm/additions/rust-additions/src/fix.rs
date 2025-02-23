@@ -254,7 +254,9 @@ pub fn apply_loftwing_speed_override() {
             && flag::check_storyflag(200) == 0) // Levias defeated
             || minigame::MinigameState::SpiralChargeTutorial.is_current()
         {
-            if (*LOFTWING_PTR).obj_base_members.forward_speed > 80.0 {
+            if LOFTWING_PTR != core::ptr::null_mut()
+                && (*LOFTWING_PTR).obj_base_members.forward_speed > 80.0
+            {
                 (*LOFTWING_PTR).obj_base_members.forward_speed = 80.0;
             }
         }
