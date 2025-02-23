@@ -57,4 +57,7 @@ shutil.copyfile(
     release_archive_path / "sshd_extract" / "README.txt",
 )
 
+if platform.system() == "Linux":
+    base_name = base_name.replace(".", "_")
+
 shutil.move(exe_path, release_archive_path / (base_name + exe_ext))
