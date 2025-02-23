@@ -2,6 +2,8 @@ main:
     PLAYER_PTR: 0x7102bfd940
     LOFTWING_PTR: 0x7101821fa0
 
+    s_rng: 0x710168c3e0
+
 
     # MGRs
     FILE_MGR: 0x7102bfdcc0
@@ -96,6 +98,8 @@ main:
     NUMBER_OF_ITEMS: 0x71018265fc
 
     SQUIRRELS_CAUGHT_THIS_PLAY_SESSION: 0x71018285e2
+
+    TADTONE_SCENEFLAGS: 0x71013a3fa5
 
 
     # Functions

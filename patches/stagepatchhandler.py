@@ -415,19 +415,19 @@ def patch_squirrels(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     )
 
 
-# def patch_tadtone_group(bzs: dict, itemid: int, groupID: str, trapid: int):
-#     groupID = int(groupID, 0)
-#     clefs = filter(
-#         lambda x: x["name"] == "Clef" and ((x["params1"] >> 3) & 0x1F) == groupID,
-#         bzs["OBJ "],
-#     )
+def patch_tadtone_group(bzs: dict, itemid: int, groupid: str, trapid: int):
+    groupid = int(groupid, 0)
+    clefs = filter(
+        lambda x: x["name"] == "Clef" and ((x["params1"] >> 3) & 0x1F) == groupid,
+        bzs["OBJ "],
+    )
 
-#     # Don't use fake itemid yet, this needs patching properly first
-#     if trapid:
-#         itemid = 34 # rupoor
+    # Don't use fake itemid yet, this needs patching properly first
+    if trapid:
+        itemid = 34  # rupoor
 
-#     for clef in clefs:
-#         clef["anglez"] = mask_shift_set(clef["anglez"], 0xFFFF, 0, itemid)
+    for clef in clefs:
+        clef["anglez"] = mask_shift_set(clef["anglez"], 0xFFFF, 0, itemid)
 
 
 def patch_trial_gate(bzs: dict, itemid: int, trapid: int):
@@ -1111,13 +1111,13 @@ def patch_and_write_stage(
                                     itemid,
                                     trapid,
                                 )
-                            # elif object_name == "Clef":
-                            #     patch_tadtone_group(
-                            #         room_bzs["LAY "][f"l{layer}"],
-                            #         itemid,
-                            #         objectid,
-                            #         trapid,
-                            #     )
+                            elif object_name == "Clef":
+                                patch_tadtone_group(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
+                                    objectid,
+                                    trapid,
+                                )
                             else:
                                 print(
                                     f"Object name: {object_name} not currently supported for check patching."

@@ -35,20 +35,22 @@ pub struct dAcItem {
     pub itemid:                  u16,
     pub _0:                      [u8; 6],
     pub item_model_ptr:          *mut itemModel,
-    pub _1:                      [u8; 2784],
+    pub _1:                      [u8; 1840],
+    pub state_mgr:               actor::StateMgr,
+    pub _2:                      [u8; 832],
     pub actor_list_element:      u32,
-    pub _2:                      [u8; 816],
+    pub _3:                      [u8; 816],
     pub freestanding_y_offset:   f32,
-    pub _3:                      [u8; 32],
+    pub _4:                      [u8; 32],
     pub rot_increment:           math::Vec3s,
     pub model_rot:               math::Vec3s,
     pub final_determined_itemid: u16,
-    pub _4:                      [u8; 9],
+    pub _5:                      [u8; 9],
     pub prevent_timed_despawn:   u8,
     pub prevent_drop:            u8,
-    pub _5:                      [u8; 3],
+    pub _6:                      [u8; 3],
     pub no_longer_waiting:       u8,
-    pub _6:                      [u8; 19],
+    pub _7:                      [u8; 19],
 }
 assert_eq_size!([u8; 0x1288], dAcItem);
 
@@ -64,7 +66,7 @@ assert_eq_size!([u8; 0x8], itemModel);
 pub struct itemModelVtable {
     pub _0:               [u8; 0x28],
     pub set_local_matrix:
-        extern "C" fn(item_model_ptr: *mut itemModel, world_matrix: *const c_void),
+        extern "C" fn(item_model_ptr: *mut itemModel, world_matrix: *mut math::Matrix),
 }
 assert_eq_size!([u8; 0x30], itemModelVtable);
 
@@ -104,6 +106,8 @@ assert_eq_size!([u8; 0x19A8], dAcTbox);
 extern "C" {
     static PLAYER_PTR: *mut player::dPlayer;
 
+    static s_rng: u32;
+
     static FILE_MGR: *mut savefile::FileMgr;
     static ROOM_MGR: *mut actor::RoomMgr;
     static HARP_RELATED: *mut event::HarpRelated;
@@ -119,9 +123,12 @@ extern "C" {
     static mut NUMBER_OF_ITEMS: u32;
 
     static mut SQUIRRELS_CAUGHT_THIS_PLAY_SESSION: bool;
+    static TADTONE_SCENEFLAGS: [u8; 17];
 
     static RANDOMIZER_SETTINGS: settings::RandomizerSettings;
     static mut dAcOWarp__StateGateOpen: c_void;
+    static mut dAcItem__StateGet: actor::ActorState;
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn sinf(x: f32) -> f32;
@@ -1266,6 +1273,7 @@ pub fn get_arc_model_from_item(
 pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *const c_char {
     unsafe {
         let mut initial_model_name = match item_id {
+            214 if (s_rng & 1) == 0 => cstr!("OnpA").as_ptr(),
             214 => cstr!("OnpB").as_ptr(),
             215 => cstr!("DesertRobot").as_ptr(),
             _ => model_name,
@@ -1291,7 +1299,7 @@ pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *cons
 
 // Applys a fixed value for the scale of a model in dAcItem::update
 #[no_mangle]
-pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *const c_void) {
+pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *mut math::Matrix) {
     unsafe {
         let mut scale = match (*item_actor).final_determined_itemid {
             214 => 0.5f32, // Tadtone
@@ -1302,6 +1310,15 @@ pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *const c_void)
         (*item_actor).base.members.base.scale.x *= scale;
         (*item_actor).base.members.base.scale.y *= scale;
         (*item_actor).base.members.base.scale.z *= scale;
+
+        // Change Tadtone height during item get
+        if (*item_actor).itemid == 214 {
+            let current_player_action = (*PLAYER_PTR).current_action;
+
+            if current_player_action == player::PLAYER_ACTIONS::ITEM_GET {
+                (*world_matrix).yw += -20.0;
+            }
+        }
 
         // Replaced code
         ((*(*(*item_actor).item_model_ptr).vtable).set_local_matrix)(
@@ -1393,4 +1410,18 @@ pub fn get_silent_realm_item_glow_color(item_id: u32) -> u32 {
         }
     }
     return 4;
+}
+
+#[no_mangle]
+pub fn give_tadtone_random_item(tadtone_actor: *const actor::dAcOClef) {
+    unsafe {
+        let itemid = (*tadtone_actor).base.members.base.rot.z & 0xFF;
+        let tadtone_group_index: u8 =
+            ((((*tadtone_actor).base.basebase.members.param1 >> 3) & 0x1F) - 1) as u8;
+
+        give_item_with_sceneflag(
+            itemid as u8,
+            TADTONE_SCENEFLAGS[tadtone_group_index as usize],
+        );
+    }
 }

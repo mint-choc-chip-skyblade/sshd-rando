@@ -13,7 +13,7 @@ def generate_hints(worlds: list[World]) -> None:
     calculate_possible_barren_regions(worlds)
 
     for world in worlds:
-        hint_locations = []
+        hint_locations: list[Location] = []
         generate_impa_sot_hint(world)
         generate_song_hints(world, hint_locations)
         generate_path_hint_locations(world, hint_locations)
@@ -33,40 +33,43 @@ def generate_hints(worlds: list[World]) -> None:
         num_location_hints = total_num_hints - total_made_hints
         generate_location_hint_locations(world, hint_locations, num_location_hints)
 
-        # Setup each possible hint placement option
-        hint_placement_options = []
-        if world.setting("fi_hints") == "on":
-            hint_placement_options.append("fi_hints")
-        if world.setting("gossip_stone_hints") == "on":
-            hint_placement_options.append("gossip_stone_hints")
-
-        # If no placement options were selected, don't use hints
-        if not hint_placement_options:
-            continue
-
-        random.shuffle(hint_placement_options)
-
-        hints_for_category = {
-            placement_option: [] for placement_option in hint_placement_options
+        hints_for_category: dict[str, list[Location]] = {
+            "fi_hints": [],
+            "gossip_stone_hints": [],
         }
-        # Distribute hints as evenly as possible among placement options
+
+        # Distribute each hint to its appropriate placement option
         for i in range(len(hint_locations)):
-            # Iterate between the placement options on each index
-            placement_option = hint_placement_options[i % len(hint_placement_options)]
-            # Add the hint location to the selected placement option
-            hints_for_category[placement_option].append(hint_locations[i])
-            logging.getLogger("").debug(
-                f'Hint for "{hint_locations[i]}" will be given to {placement_option}'
+            location = hint_locations[i]
+            type = location.hint.type.lower()
+
+            type_on_fi = world.setting(f"{type}_hints_on_fi") == "on"
+            type_on_gossip_stones = (
+                world.setting(f"{type}_hints_on_gossip_stones") == "on"
             )
 
-        if (
-            "gossip_stone_hints" in hints_for_category
-            and hints_for_category["gossip_stone_hints"]
-        ):
+            placement_option = ""
+            # If both options for the type are selected, then choose based on the current list index.
+            # All hints of a type should be consecutive in the list, so this works for evenly distributing them
+            if type_on_fi and type_on_gossip_stones:
+                placement_option = "fi_hints" if i % 2 else "gossip_stone_hints"
+            elif type_on_fi:
+                placement_option = "fi_hints"
+            elif type_on_gossip_stones:
+                placement_option = "gossip_stone_hints"
+
+            if placement_option:
+                hints_for_category[placement_option].append(location)
+                logging.getLogger("").debug(
+                    f'Hint for "{location}" will be given to {placement_option}'
+                )
+
+        if hints_for_category["gossip_stone_hints"]:
             assign_gossip_stone_hints(
                 world, worlds, hints_for_category["gossip_stone_hints"]
             )
-        if "fi_hints" in hints_for_category:
+
+        if hints_for_category["fi_hints"]:
             world.fi_hints = hints_for_category["fi_hints"]
 
 
@@ -322,14 +325,14 @@ def generate_path_hint_locations(world: World, hint_locations: list) -> None:
 
             goal_location = random.choice(goal_locations_list)
 
-        # If we're placing hints on gossip stones, don't choose any that somehow
+        # If we're placing path hints on gossip stones, don't choose any that somehow
         # manage to be before every possible gossip stone
         valid_path_locations = [
             loc
             for loc in world.path_locations[goal_location]
-            if world.setting("gossip_stone_hints") == "off"
+            if world.setting("path_hints_on_gossip_stones") == "off"
             or (
-                world.setting("gossip_stone_hints") == "on"
+                world.setting("path_hints_on_gossip_stones") == "on"
                 and get_possible_gossip_stones(loc)
             )
         ]
@@ -459,6 +462,7 @@ def generate_location_hint_locations(
         always_locations.clear()
 
     random.shuffle(sometimes_locations)
+    random.shuffle(always_locations)
 
     for i in range(num_location_hints):
         hint_location = None
@@ -606,6 +610,7 @@ def generate_location_hint_message(location: Location) -> None:
             )
 
     location.hint.text = full_text
+    location.hint.type = "Location"
 
 
 def assign_gossip_stone_hints(

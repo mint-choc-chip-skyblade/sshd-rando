@@ -97,6 +97,7 @@ DEFAULT_SETTINGS = {
         "The Sky - Form a Swirrell Ring above Bamboo Island",
         "Inside the Thunderhead - Song from Levias",
         "Bug Heaven - 10 Bugs in 3 Minutes",
+        "Flooded Faron Woods - Water Dragon's Reward",
         "Shipyard - Heart Stopping Rickety Coaster Track in 1'05",
         "The Goddess's Silent Realm - Collect all Tears Reward",
         "Farore's Silent Realm - Collect all Tears Reward",
