@@ -58,6 +58,6 @@ shutil.copyfile(
 )
 
 if platform.system() == "Linux":
-    base_name.replace(".", "_")
+    base_name = base_name.replace(".", "_")
 
 shutil.move(exe_path, release_archive_path / (base_name + exe_ext))
