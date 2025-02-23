@@ -1283,7 +1283,7 @@ class StagePatchHandler:
                                 continue
 
                         print_progress_text(
-                            f"Extracting {mod + "/" if mod else ""}{arc_name}"
+                            f"Extracting {mod + '/' if mod else ''}{arc_name}"
                         )
                         (oarc_cache_path / f"{arc_name}.arc").write_bytes(arc_data)
                 else:
@@ -1342,7 +1342,7 @@ class StagePatchHandler:
                                     continue
 
                             print_progress_text(
-                                f"Extracting {mod + "/" if mod else ""}{arc_name}"
+                                f"Extracting {mod + '/' if mod else ''}{arc_name}"
                             )
                             (oarc_cache_path / f"{arc_name}.arc").write_bytes(arc_data)
 
