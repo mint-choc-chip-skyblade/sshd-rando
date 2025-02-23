@@ -5,14 +5,15 @@ from filepathconstants import (
 )
 from sslib.utils import write_bytes_create_dirs
 from sslib.u8file import U8File
+from .stagepatchhandler import get_oarc_cache_path
 
 
-def patch_object_pack(object_pack_output_path: Path):
-    objectpack_arc = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH, True)
+def patch_object_pack(object_pack_output_path: Path, other_mods: list[str] = []):
+    objectpack_arc = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH)
 
-    for arc in ("Alink", "Bird_Link"):
-        arc_name = f"{arc}.arc"
-        oarc_path = OARC_CACHE_PATH / arc_name
+    for path in objectpack_arc.get_all_paths():
+        arc_name = path.split("/")[-1]
+        oarc_path = get_oarc_cache_path(arc_name, other_mods)
 
         if oarc_path.exists():
             objectpack_arc.add_file_data(f"oarc/{arc_name}", oarc_path.read_bytes())

@@ -1,5 +1,6 @@
 from functools import partial
 from pathlib import Path
+import os
 
 from PySide6.QtCore import Qt, QUrl
 from PySide6.QtGui import QDesktopServices
@@ -9,6 +10,8 @@ from PySide6.QtWidgets import (
     QComboBox,
     QLineEdit,
     QFileDialog,
+    QSpacerItem,
+    QSizePolicy,
 )
 
 from filepathconstants import (
@@ -17,6 +20,8 @@ from filepathconstants import (
     PLANDO_PATH,
     SPOILER_LOGS_PATH,
     SSHD_EXTRACT_PATH,
+    OTHER_MODS_PATH,
+    COMBINED_MODS_FOLDER,
 )
 from gui.dialogs.error_dialog import error_from_str
 from gui.dialogs.verify_files_progress_dialog import VerifyFilesProgressDialog
@@ -38,8 +43,6 @@ class Advanced:
         self.main = main
         self.ui = ui
         self.config: Config = main.config
-
-        self.ui.random_settings_group_box.setTitle("")
 
         self.output_dir_line_edit: QLineEdit = self.ui.config_output
         self.output_dir_line_edit.setText(self.config.output_dir.as_posix())
@@ -64,6 +67,8 @@ class Advanced:
         self.verify_all_button.clicked.connect(
             partial(self.verify_extract, verify_all=True)
         )
+
+        self.ui.refresh_mod_list_button.clicked.connect(self.generate_other_mods_list)
 
         self.verify_dialog = None
 
@@ -111,6 +116,9 @@ class Advanced:
         self.open_spoiler_logs_folder_button.clicked.connect(
             self.open_spoiler_logs_folder
         )
+
+        # Other mods
+        self.generate_other_mods_list()
 
     def update_config(self):
         write_config_to_file(CONFIG_PATH, self.config)
@@ -218,6 +226,54 @@ class Advanced:
         self.verify_dialog.deleteLater()
 
         return True
+
+    def generate_other_mods_list(self):
+        self.main.clear_layout(self.ui.other_mods_scroll_layout)
+        found_mods = []
+        for entry in os.scandir(OTHER_MODS_PATH):
+            if entry.is_dir():
+                mod_name = entry.name
+
+                # Don't include the combined mods folder as a mod folder. Normally this folder is deleted, but
+                # if generation fails for some reason, then it might not get deleted.
+                if mod_name == COMBINED_MODS_FOLDER:
+                    continue
+
+                # Don't include the mod if it has an exefs folder. We don't support integrating other mods which modify code
+                if (OTHER_MODS_PATH / mod_name / "exefs").exists():
+                    continue
+
+                mod_checkbox = QCheckBox(mod_name)
+                mod_checkbox.clicked.connect(self.update_mods_in_config)
+                if mod_name in self.config.settings[0].other_mods:
+                    mod_checkbox.setChecked(True)
+                    found_mods.append(mod_name)
+
+                self.ui.other_mods_scroll_layout.addWidget(mod_checkbox)
+
+        # Add a vertical spacer to push the mod list up
+        self.ui.other_mods_scroll_layout.addSpacerItem(
+            QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        )
+
+        # Remove mods from config which weren't found
+        for mod_name in self.config.settings[0].other_mods.copy():
+            if mod_name not in found_mods:
+                print(
+                    f"Removing mod {mod_name} from other_mods list as the QCheckbox for the mod could not be found"
+                )
+                self.config.settings[0].other_mods.remove(mod_name)
+
+        self.update_config()
+
+    def update_mods_in_config(self):
+        other_mods = self.config.settings[0].other_mods
+        other_mods.clear()
+        for checkbox in self.ui.other_mods_scroll_widget.findChildren(QCheckBox):
+            if checkbox.isChecked():
+                other_mods.append(checkbox.text())
+
+        self.update_config()
 
     def cancel_callback(self):
         VerificationThread.cancelled = True

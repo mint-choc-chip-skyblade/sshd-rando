@@ -3765,19 +3765,6 @@ Practice Sword</string>
          </widget>
         </item>
         <item>
-         <widget class="QGroupBox" name="random_settings_group_box">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="title">
-           <string>Random Settings</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QGroupBox" name="other_settings_group_box">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -3808,6 +3795,56 @@ Practice Sword</string>
               </size>
              </property>
             </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="other_mods_group_box">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Other Mods</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_38">
+           <item>
+            <widget class="QLabel" name="other_mods_explanation_text">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The randomizer modifies a lot of files the game uses. To better integrate other mods with the randomizer, you can put them in separate folders in the &lt;span style=&quot; font-weight:700;&quot;&gt;other_mods&lt;/span&gt; directory and choose which ones you want to apply together. For example, if you have a mod which changes Link's tunic color, you can create a new folder in the &lt;span style=&quot; font-weight:700;&quot;&gt;other_mods&lt;/span&gt; directory named &amp;quot;Other Tunic Color&amp;quot; and put the &lt;span style=&quot; font-weight:700;&quot;&gt;romfs&lt;/span&gt; folder of that mod into the new folder. Then refresh the mod list and it should appear below. We do not currently support mods that modify any files in the &lt;span style=&quot; font-weight:700;&quot;&gt;exefs&lt;/span&gt; folder.&lt;/p&gt;&lt;p&gt;Note that this feature is EXPERIMENTAL and we do not guarantee that you won't run into bugs when using other mods, but the randomizer will try it's best.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="refresh_mod_list_button">
+             <property name="text">
+              <string>Refresh Mod List</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QScrollArea" name="other_mods_scroll_area">
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="other_mods_scroll_widget">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>306</width>
+                <height>336</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="other_mods_scroll_layout"/>
+             </widget>
+            </widget>
            </item>
           </layout>
          </widget>

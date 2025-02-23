@@ -1,4 +1,7 @@
-from filepathconstants import OBJECTPACK_PATH_TAIL, SSHD_EXTRACT_PATH
+from filepathconstants import (
+    OBJECTPACK_PATH_TAIL,
+    SSHD_EXTRACT_PATH,
+)
 from gui.dialogs.dialog_header import print_progress_text, update_progress_value
 from logic.world import World
 from patches.asmpatchhandler import ASMPatchHandler
@@ -18,6 +21,7 @@ from patches.stagepatchhandler import (
 )
 from patches.eventpatchhandler import EventPatchHandler
 from patches.dynamictextpatches import add_dynamic_text_patches
+from patches.othermods import verify_other_mods, copy_extra_mod_files
 from shutil import rmtree
 
 from patches.temp_objectpack_texture_replace_hack import patch_object_pack
@@ -33,10 +37,14 @@ class AllPatchHandler:
 
         self.conditional_patch_handler = ConditionalPatchHandler(self.world)
 
-        self.event_patch_handler = EventPatchHandler(output_dir)
+        self.event_patch_handler = EventPatchHandler(
+            output_dir, world.setting_map.other_mods
+        )
 
         stage_output_path = output_dir / "romfs"
-        self.stage_patch_handler = StagePatchHandler(stage_output_path)
+        self.stage_patch_handler = StagePatchHandler(
+            stage_output_path, world.setting_map.other_mods
+        )
 
     def do_all_patches(self):
         update_progress_value(14)
@@ -60,6 +68,7 @@ class AllPatchHandler:
             rmtree(romfs_output.as_posix())
 
         update_progress_value(16)
+        verify_other_mods(self.world.setting_map.other_mods)
         self.stage_patch_handler.create_oarc_cache()
         self.stage_patch_handler.set_oarc_add_remove_from_patches()
 
@@ -77,9 +86,12 @@ class AllPatchHandler:
             self.world.get_shuffled_entrances(), self.stage_patch_handler
         )
 
-        create_shuffled_trial_object_patches(self.world, self.stage_patch_handler)
+        patch_object_pack(
+            self.world.config.output_dir / OBJECTPACK_PATH_TAIL,
+            self.stage_patch_handler.other_mods,
+        )
 
-        patch_object_pack(self.world.config.output_dir / OBJECTPACK_PATH_TAIL)
+        create_shuffled_trial_object_patches(self.world, self.stage_patch_handler)
 
         print_progress_text("Patching Stages")
         patch_required_dungeon_text_trigger(self.world, self.stage_patch_handler)
@@ -99,5 +111,8 @@ class AllPatchHandler:
 
         update_progress_value(99)
         self.asm_patch_handler.patch_all_asm(self.world, self.conditional_patch_handler)
+        copy_extra_mod_files(
+            self.world.setting_map.other_mods, self.world.config.output_dir
+        )
 
         print_progress_text("Patching completed")
