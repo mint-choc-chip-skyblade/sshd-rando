@@ -644,6 +644,16 @@
     - "off": "Unrequired dungeons may contain items needed to beat the game."
     - "on": "Unrequired dungeons will be barren."
 
+- name: randomize_shop_prices
+  default_option: "off"
+  pretty_name: Randomize Shop Prices
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "All shop prices will be unchanged from the vanilla game."
+    - "on": "All shop prices will be randomized without changing how many wallets are needed to obtain each check."
+
 - name: random_bottle_contents
   default_option: "off"
   pretty_name: Random Bottle Contents

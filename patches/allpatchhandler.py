@@ -76,6 +76,7 @@ class AllPatchHandler:
             self.world,
             self.stage_patch_handler,
             self.event_patch_handler,
+            self.asm_patch_handler,
         )
 
         update_progress_value(18)

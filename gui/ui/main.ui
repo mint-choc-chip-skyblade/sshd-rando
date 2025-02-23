@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -815,6 +815,13 @@
               </widget>
              </item>
             </layout>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_shop_prices">
+             <property name="text">
+              <string>Randomize Shop Prices</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="RandoTriStateCheckBox" name="setting_random_bottle_contents">
@@ -1686,7 +1693,7 @@
            <item>
             <widget class="QLabel" name="beedle_shop_shuffle_label">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="text">
               <string>Beedle's Airshop Shuffle</string>
@@ -1696,7 +1703,7 @@
            <item>
             <widget class="QComboBox" name="setting_beedle_shop_shuffle">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -4298,8 +4305,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>546</width>
-               <height>340</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <property name="maximumSize">

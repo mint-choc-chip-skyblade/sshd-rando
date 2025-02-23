@@ -555,6 +555,11 @@ class Ui_main_window(object):
 
         self.verticalLayout.addLayout(self.peatrice_conversations_layout)
 
+        self.setting_randomize_shop_prices = RandoTriStateCheckBox(self.tweaks_group_box)
+        self.setting_randomize_shop_prices.setObjectName(u"setting_randomize_shop_prices")
+
+        self.verticalLayout.addWidget(self.setting_randomize_shop_prices)
+
         self.setting_random_bottle_contents = RandoTriStateCheckBox(self.tweaks_group_box)
         self.setting_random_bottle_contents.setObjectName(u"setting_random_bottle_contents")
 
@@ -1134,13 +1139,13 @@ class Ui_main_window(object):
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.beedle_shop_shuffle_label = QLabel(self.shuffles_group_box)
         self.beedle_shop_shuffle_label.setObjectName(u"beedle_shop_shuffle_label")
-        self.beedle_shop_shuffle_label.setEnabled(False)
+        self.beedle_shop_shuffle_label.setEnabled(True)
 
         self.verticalLayout_10.addWidget(self.beedle_shop_shuffle_label)
 
         self.setting_beedle_shop_shuffle = QComboBox(self.shuffles_group_box)
         self.setting_beedle_shop_shuffle.setObjectName(u"setting_beedle_shop_shuffle")
-        self.setting_beedle_shop_shuffle.setEnabled(False)
+        self.setting_beedle_shop_shuffle.setEnabled(True)
 
         self.verticalLayout_10.addWidget(self.setting_beedle_shop_shuffle)
 
@@ -2838,7 +2843,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 340))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2981,7 +2986,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(5)
+        self.tab_widget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3034,6 +3039,7 @@ class Ui_main_window(object):
         self.damage_multiplier_label.setText(QCoreApplication.translate("main_window", u"Damage Multiplier", None))
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
+        self.setting_randomize_shop_prices.setText(QCoreApplication.translate("main_window", u"Randomize Shop Prices", None))
         self.setting_random_bottle_contents.setText(QCoreApplication.translate("main_window", u"Random Bottle Contents", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
         self.setting_skip_harp_playing.setText(QCoreApplication.translate("main_window", u"Skip Harp Playing", None))

@@ -18,8 +18,12 @@ If you want to contribute, develop or otherwise run SSHDR from source, you'll ne
 
 ## ❗️ Pre-Requisites
 
+Necessary:
 - `python 3.12`
+
+For [ASM development](#asm-setup):
 - `rust`
+- `devkitA64`
 
 ### Python Setup
 

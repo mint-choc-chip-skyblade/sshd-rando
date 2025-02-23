@@ -1,4 +1,5 @@
 from constants.itemconstants import ALL_JUNK_ITEMS, TRAP_SETTING_TO_ITEM, BOTTLE_ITEMS
+from constants.shopconstants import VANILLA_SHOP_PRICES, WALLET_CAPACITY_BOUNDARIES
 from filepathconstants import ITEMS_PATH, MACROS_DATA_PATH, WORLD_DATA_PATH
 from logic.location_table import build_location_table, get_disabled_shuffle_locations
 from .config import Config
@@ -46,6 +47,7 @@ class World:
         self.areas: OrderedDict[int, Area] = OrderedDict()
         self.macros: dict[str, Requirement] = {}
         self.dungeons: dict[str, Dungeon] = {}
+        self.shop_prices: dict[str, int] = {}
 
         # Map event names to ids and ids to names
         self.events: dict[str, int] = {}
@@ -110,6 +112,8 @@ class World:
                 item_id = int(item_node["id"])
                 name = item_node["name"]
                 oarcs = item_node["oarc"]
+                shop_arc_name = item_node.get("shop_arc_name", None)
+                shop_model_name = item_node.get("shop_model_name", None)
                 major_item = item_node.get("advancement", False)
                 game_winning_item = item_node.get("game_winning_item", False)
                 chain_locations = item_node.get("chain_locations", [])
@@ -119,6 +123,8 @@ class World:
                     item_id,
                     name,
                     oarcs,
+                    shop_arc_name,
+                    shop_model_name,
                     self,
                     major_item,
                     game_winning_item,
@@ -658,6 +664,7 @@ class World:
 
     def perform_post_fill_tasks(self) -> None:
         self.set_bottle_contents()
+        self.set_shop_prices()
 
     def set_bottle_contents(self) -> None:
         logging.getLogger("").debug(f"Setting bottle contents for {self}")
@@ -680,6 +687,44 @@ class World:
                 ):
                     location.remove_current_item()
                     location.set_current_item(self.get_item(bottle_pool.pop()))
+
+    def set_shop_prices(self) -> None:
+        logging.getLogger("").debug(f"Setting shop prices for {self}")
+
+        for world in self.worlds:
+            for location in world.get_all_item_locations():
+                if location.name in VANILLA_SHOP_PRICES:
+                    if world.setting("randomize_shop_prices") == "off":
+                        world.shop_prices[location.name] = VANILLA_SHOP_PRICES[
+                            location.name
+                        ]
+                    else:
+                        WALLET_CAPACITY_BOUNDARIES.sort()
+                        vanilla_price = VANILLA_SHOP_PRICES[location.name]
+
+                        upper_price_bound = WALLET_CAPACITY_BOUNDARIES[-1]
+
+                        # Relies on WALLET_CAPACITY_BOUNDARIES being sorted
+                        for boundary_price in WALLET_CAPACITY_BOUNDARIES:
+                            if boundary_price >= vanilla_price:
+                                upper_price_bound = boundary_price
+                                break
+
+                        boundary_price_index = WALLET_CAPACITY_BOUNDARIES.index(
+                            upper_price_bound
+                        )
+
+                        if boundary_price_index > 0:
+                            lower_price_bound = WALLET_CAPACITY_BOUNDARIES[
+                                boundary_price_index - 1
+                            ]
+                        else:
+                            lower_price_bound = 0
+
+                        item_price = random.randrange(
+                            lower_price_bound, upper_price_bound
+                        )
+                        world.shop_prices[location.name] = item_price
 
     # Replaces a portion of the non-major item pool with traps.
     def add_traps(self) -> None:

@@ -34,6 +34,7 @@
     - Sky Keep
     - Skyloft Village
     - Batreaux's House
+    - Beedle's Airshop
 
 - name: Knight Academy
   x: 185
@@ -64,6 +65,10 @@
 - name: Batreaux's House
   x: 320
   y: 250
+
+- name: Beedle's Airshop
+  x: 437
+  y: 155
 
 
 - name: Faron

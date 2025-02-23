@@ -75,12 +75,21 @@ class Text:
         return self.text[lang]
 
     def get_plurality(self, lang: str) -> str:
+        if lang not in self.plurality:
+            lang = "en_US"
+
         return self.plurality[lang]
 
     def is_plural(self, lang: str) -> bool:
+        if lang not in self.plurality:
+            lang = "en_US"
+
         return self.plurality[lang] == Text.PLURAL
 
     def get_gender(self, lang: str) -> str:
+        if lang not in self.gender:
+            lang = "en_US"
+
         return self.gender[lang]
 
     def replace(self, old: str, new: Union[str, "Text"], count: int = -1) -> "Text":
@@ -102,6 +111,33 @@ class Text:
 
                 text_with_replace.text[lang] = full_text.replace(old, new_text, count)
         return text_with_replace
+
+    def resolve_plurality(self, plural_determiner: "Text"):
+        for lang in Text.SUPPORTED_LANGUAGES:
+            full_text = self.text[lang]
+            is_plural = plural_determiner.is_plural(lang)
+
+            while (start_pipe_index := full_text.find("|")) != -1:
+                end_pipe_index = (
+                    full_text[start_pipe_index + 1 :].find("|") + start_pipe_index + 1
+                )
+
+                # Removes the pipes as well
+                plural_substring = full_text[start_pipe_index + 1 : end_pipe_index]
+                plural_substring_parts = plural_substring.split("/")
+                plural_substring_final = (
+                    plural_substring_parts[1]
+                    if is_plural
+                    else plural_substring_parts[0]
+                )
+
+                full_text = (
+                    full_text[:start_pipe_index]
+                    + plural_substring_final
+                    + full_text[end_pipe_index + 1 :]
+                )
+
+            self.text[lang] = full_text
 
     def apply_text_color(self, color: str) -> "Text":
         new_text = copy.deepcopy(self)

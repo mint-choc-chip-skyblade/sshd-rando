@@ -1,6 +1,11 @@
 ; Start using subsdk8 0x500 bytes into the .text section
 ; Please leave 0x1000 bytes for this landingpad
 
+; Yes, this in not very optimal. However, this big comparison chain is easier
+; to edit and harder to mess up than a more elegant solution. In particular,
+; this method makes it very easy to remove functions without having to change
+; `w8` across the codebase.
+
 .offset 0x712e0a5500
 
 ; custom item gets
@@ -225,6 +230,21 @@ b.eq give_tadtone_random_item
 
 cmp w8, #70
 b.eq check_tadtone_counter_before_song_event
+
+cmp w8, #71
+b.eq set_shop_sold_out_storyflag
+
+cmp w8, #72
+b.eq check_shop_sold_out_storyflag
+
+cmp w8, #73
+b.eq handle_shop_traps
+
+cmp w8, #74
+b.eq rotate_shop_items
+
+cmp w8, #75
+b.eq set_shop_display_height
 
 ret ; this should never be reached
 
