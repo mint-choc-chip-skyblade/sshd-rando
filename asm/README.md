@@ -35,7 +35,7 @@ blocks must be preceded by the offset where the instructions are to be
 patched. This is done with `.offset address`. For example:
 
 ```
-.offset 0x08b0d0a8
+.offset 0x7100000000
 mov w8, #2
 ```
 
@@ -46,46 +46,40 @@ section below
 
 All the existing asm additons can be found in the `asm/additions` directory.
 Each addition should be named in lowercase, have words separated by hyphens
-(`-`), and end with the `.asm` file extension.
+(`-`), and end with the `.asm` file extension. Where possible, please write
+additions in rust rather than asm. There is currently only one example of
+additions written in asm: `ac-boko-item-flag.asm` vs 100+ rust functions.
 
-Each addition file should serve a specific purpose. This is to make it easier
-to find a specific addition as well as make it easier to understand what
-additions have been made. If in doubt, create a new additions file rather than
-extending an existing one.
+All additions rely on a patch branching to the additional code. However,
+because the additions are written to a separate module, a single branch
+instruction cannot make the jump. To get around this issue, there is a single
+point that handles branching to the additional code by reading register `w8` to
+determine which custom function should be branched to.
 
-Additions that require use of the jumptable should only be created when
-**absolutely** necessary. Jumptable space is **very** limited.
-
-A janky alternative is always better than a clean use of the jumptable. When
-avoiding creating a new jumptable entry, please explain any janky solutions in
-detail. Additions have to be maintained. A clever solution created 6 months
-ago is worthless if nobody remembers how it works.
-
-Fortunately (at least for this specific issue), SSHD's functions have been
-much more heavily in-lined than in SD. This means that there are often
-duplicated bits of code that can be used instead.
-
-Clever placement of your additions can help when you're short by an
-instruction. By aligning the offset of your addition such that the last 4
-digits are all zeros, you can save an instruction. For example:
+E.g. If you wanted to create a patch that branched to custom function 69, you
+would write:
 
 ```
-; branches to addition at 0x360A5500
-mov x16, #0x5500
-movk x16, #0x360A, LSL #16
-br x16
+.offset 0x7100000000
+mov w8, #69
+bl additions_jumptable
 ```
 
-vs
+Please note, the custom symbol `additions_jumptable` has been defined so that
+the exact address doesn't need to be known and so patches are more readable.
+Please make sure to use this symbol rather than the raw address.
 
-```
-; branches to addition at 0x360B0000
-movz x16, #0x360B, LSL #16
-br x16
-```
+This will create a patch that branches to the jumptable with a value of 69. The
+jumptable will branch to the "additions landingpad" in the additional code
+space. Here, the value in `w8` is read and compared so that a final branch can
+be made to the actual additional code. The landingpad is defined in
+`additions-landingpad.asm`.
 
-This method is preferred to using the jumptable but, again, a solution
-requiring neither should always be sought out first.
+#### Single Instruction Additions Branching
+
+Sometimes, finding a place where you can overwrite 2 instructions is difficult.
+For these cases, `jumptable.asm` can be used as an intermediate step. However,
+this method is highly discouraged as the jumptable space is very small. 
 
 #### subsdk8
 Additions are placed in a separate nso file and are loaded as their own
@@ -100,10 +94,15 @@ Any changes that you make will need to be assembled in order to be used by the
 randomizer. If you follow have followed the guidance detailed above, any
 changes you have made can be assembled by running:
 
-```python assemble.py```
+```
+cd asm
+python assemble.py
+```
 
-in the `asm` directory. All the asm files will then be assembled, linked, and
-converted to binary. The output can be viewed in `asm/patches/diffs`.
+from the root of the randomizer. All the asm files will then be assembled,
+linked, and converted to binary. The output can be viewed in
+`asm/patches/diffs`.
+
 **Do not** directly change these files. Any changes made directly to the diff
 files will be overwritten the next time the assembler is called.
 
@@ -134,9 +133,9 @@ zeros.
 ### Addresses and Offsets
 
 The offsets used with the patches are the relative addresses for each vanilla
-`.nso` file (`main`, `rtld`, `sdk`, `subsdk0`, `subsdk1`). These are the
-addresses used in ghidra (if your addresses start at 0x71000000, you haven't
-set up your ghidra environment correctly).
+`.nso` file (`main`, `rtld`, `sdk`, `subsdk0`, `subsdk1`). These are similar to
+the addresses used in ghidra but not exactly the same. the address 0x80001234
+would be 0x7100001234 in ghidra.
 
 These addresses come from `gdb` (instructions about how to install and use
 `gdb` can be found at
@@ -144,20 +143,20 @@ https://gist.github.com/jam1garner/c9ba6c0cff150f1a2480d0c18ff05e33).
 
 For The Legend of Zelda: Skyward Sword HD, the relative addresses for each
 `.nso` file are:
-* `rtld    = 0x08000000 -> 0x08003FFF`
-* `main    = 0x08004000 -> 0x09841FFF`
-* `subsdk0 = 0x35037000 -> 0x359FEFFF`
-* `subsdk1 = 0x359FF000 -> 0x360A4FFF`
-* `sdk     = 0x360A5000 -> 0x36DA2FFF`
+* `rtld    (nnrtld)       = 0x80000000 -> 0x80003FFF`
+* `main    (Shoebill.nss) = 0x80004000 -> 0xAD036FFF`
+* `subsdk0 (glslc)        = 0xAD037000 -> 0xAD9FEFFF`
+* `subsdk1 (multimedia)   = 0xAD9FF000 -> 0xAE0A4FFF`
+* `sdk     (nnSdk)        = 0xAE0A5000 -> 0xAEDD8FFF`
 
 #### subsdk8
 
 The above addresses are changed slightly by the randomizer to allow for asm
 additions to the code. The relative addresses for each `.nso` file with the
 randomizer asm changes are:
-* `rtld    = 0x08000000 -> 0x08003FFF`
-* `main    = 0x08004000 -> 0x09841FFF`
-* `subsdk0 = 0x35037000 -> 0x359FEFFF`
-* `subsdk1 = 0x359FF000 -> 0x360A4FFF`
-* `subsdk8 = 0x360A5000 -> 0x3674AFFF`
-* `sdk     = 0x3674B000 -> 0x3747EFFF`
+* `rtld    (nnrtld)       = 0x80000000 -> 0x80003FFF`
+* `main    (Shoebill.nss) = 0x80004000 -> 0xAD036FFF`
+* `subsdk0 (glslc)        = 0xAD037000 -> 0xAD9FEFFF`
+* `subsdk1 (multimedia)   = 0xAD9FF000 -> 0xAE0A4FFF`
+* `subsdk8 (multimedia)   = 0xAE0A5000 -> 0xAE74AFFF`
+* `sdk     (nnSdk)        = 0xAE74B000 -> 0xAF47EFFF`

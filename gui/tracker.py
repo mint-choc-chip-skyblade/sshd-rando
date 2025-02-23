@@ -937,8 +937,8 @@ class Tracker:
         self.update_hover_text("")
 
         self.update_tracker()
-        self.clear_layout(self.ui.tracker_locations_info_layout)
-        self.clear_layout(self.ui.tracker_locations_scroll_layout)
+        self.main.clear_layout(self.ui.tracker_locations_info_layout)
+        self.main.clear_layout(self.ui.tracker_locations_scroll_layout)
         # If the starting entrance is random, prompt the user to enter it
         starting_spawn = self.world.get_entrance("Link's Spawn -> Knight Academy")
         if (
@@ -1042,7 +1042,7 @@ class Tracker:
         if area_button is not None:
             self.last_opened_region = area_button
             self.show_area_location_info(area_name)
-            self.clear_layout(self.ui.tracker_locations_scroll_layout)
+            self.main.clear_layout(self.ui.tracker_locations_scroll_layout)
             locations = area_button.get_included_locations(remove_special_types=False)
 
             left_layout = QVBoxLayout()
@@ -1120,7 +1120,7 @@ class Tracker:
 
     def create_info_widgets_if_none(self) -> None:
         if not self.ui.tracker_tab.findChild(QLabel, "area_name_label"):
-            self.clear_layout(self.ui.tracker_locations_info_layout)
+            self.main.clear_layout(self.ui.tracker_locations_info_layout)
             pt_size = 20
 
             # Layouts used for the info area
@@ -1181,7 +1181,7 @@ class Tracker:
     def show_area_entrances(self, area_name: str) -> None:
         if area_button := self.areas.get(area_name, None):
             self.show_area_entrance_info(area_name)
-            self.clear_layout(self.ui.tracker_locations_scroll_layout)
+            self.main.clear_layout(self.ui.tracker_locations_scroll_layout)
             entrances = area_button.entrances
 
             left_layout = QVBoxLayout()
@@ -1234,8 +1234,8 @@ class Tracker:
             self.ui.tracker_locations_scroll_layout.addLayout(right_layout)
             self.set_label_visibility()
         else:
-            self.clear_layout(self.ui.tracker_locations_scroll_layout)
-            self.clear_layout(self.ui.tracker_locations_info_layout)
+            self.main.clear_layout(self.ui.tracker_locations_scroll_layout)
+            self.main.clear_layout(self.ui.tracker_locations_info_layout)
 
     def show_area_entrance_info(self, area_name: str):
         if area_button := self.areas.get(area_name, None):
@@ -1272,7 +1272,7 @@ class Tracker:
         if entrance.type not in self.target_entrance_pools:
             return
 
-        self.clear_layout(self.ui.tracker_locations_info_layout)
+        self.main.clear_layout(self.ui.tracker_locations_info_layout)
 
         # Layouts used for the info area
         info_outer_layout = QVBoxLayout()
@@ -1303,7 +1303,7 @@ class Tracker:
         info_outer_layout.addLayout(info_inner_bottom_layout)
         self.ui.tracker_locations_info_layout.addLayout(info_outer_layout)
 
-        self.clear_layout(self.ui.tracker_locations_scroll_layout)
+        self.main.clear_layout(self.ui.tracker_locations_scroll_layout)
 
         left_layout = QVBoxLayout()
         right_layout = QVBoxLayout()
@@ -1475,8 +1475,8 @@ class Tracker:
             self.show_area_entrances(parent_area_name)
         # Otherwise clear the scroll area
         else:
-            self.clear_layout(self.ui.tracker_locations_info_layout)
-            self.clear_layout(self.ui.tracker_locations_scroll_layout)
+            self.main.clear_layout(self.ui.tracker_locations_info_layout)
+            self.main.clear_layout(self.ui.tracker_locations_scroll_layout)
 
     def on_right_click_entrance_label(self, entrance: Entrance, area_name: str) -> None:
         self.tracker_disconnect_entrance(entrance)
@@ -1551,7 +1551,7 @@ class Tracker:
     def show_random_setting_choices(self) -> None:
 
         # Put Update and Cancel buttons in the area info layout
-        self.clear_layout(self.ui.tracker_locations_info_layout)
+        self.main.clear_layout(self.ui.tracker_locations_info_layout)
 
         update_button = QPushButton(text="Update Settings")
         update_button.clicked.connect(self.on_random_settings_update_button_clicked)
@@ -1562,7 +1562,7 @@ class Tracker:
         self.ui.tracker_locations_info_layout.addWidget(cancel_button)
         self.ui.tracker_locations_info_layout.addWidget(update_button)
 
-        self.clear_layout(self.ui.tracker_locations_scroll_layout)
+        self.main.clear_layout(self.ui.tracker_locations_scroll_layout)
 
         # Put a vertical layout inside the scroll area
         outer_layout = QVBoxLayout()
@@ -1602,8 +1602,8 @@ class Tracker:
         self.show_random_setting_choices()
 
     def on_random_settings_cancel_button_clicked(self) -> None:
-        self.clear_layout(self.ui.tracker_locations_info_layout)
-        self.clear_layout(self.ui.tracker_locations_scroll_layout)
+        self.main.clear_layout(self.ui.tracker_locations_info_layout)
+        self.main.clear_layout(self.ui.tracker_locations_scroll_layout)
 
     def on_back_button_clicked(self) -> None:
         # need to update the tracker so that subarea markers
@@ -1839,20 +1839,6 @@ class Tracker:
             # Add the key in for the next search
             search.owned_items[key] += 1
 
-    def clear_layout(self, layout: QLayout, remove_nested_layouts=True) -> None:
-        # Recursively clear nested layouts
-        for nested_layout in layout.findChildren(QLayout):
-            self.clear_layout(nested_layout, remove_nested_layouts)
-
-        while item := layout.takeAt(0):
-            if widget := item.widget():
-                widget.deleteLater()
-            del item
-
-        if remove_nested_layouts:
-            for nested_layout in layout.findChildren(QLayout):
-                layout.removeItem(nested_layout)
-
     def handle_right_click(self, event: QMouseEvent) -> None:
         if (
             event.button() == QtCore.Qt.MouseButton.RightButton
@@ -1994,7 +1980,7 @@ class Tracker:
         self.show_sphere_tracking_info()
 
     def show_hint_options(self):
-        self.clear_layout(self.ui.tracker_locations_info_layout)
+        self.main.clear_layout(self.ui.tracker_locations_info_layout)
 
         # Layout used for the info area
         info_layout = QHBoxLayout()
@@ -2011,7 +1997,7 @@ class Tracker:
 
         self.ui.tracker_locations_info_layout.addLayout(info_layout)
 
-        self.clear_layout(self.ui.tracker_locations_scroll_layout)
+        self.main.clear_layout(self.ui.tracker_locations_scroll_layout)
 
         left_layout = QVBoxLayout()
         right_layout = QVBoxLayout()

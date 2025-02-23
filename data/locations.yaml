@@ -1002,97 +1002,97 @@
 
 
 # Beedle's Airshop:
-# - name: Beedle's Airshop - 300 Rupee Item
-#   original_item: Progressive Pouch
-#   types:
-#     - Beedle's Airshop
-#     - Shop (Cheap)
-#     - NPC
-#   Paths:
-#     - ShpSmpl/20
+- name: Beedle's Airshop - 300 Rupee Item
+  original_item: Progressive Pouch
+  types:
+    - Beedle's Airshop
+    - Shop (Cheap)
+    - NPC
+  Paths:
+    - ShpSmpl/20
 
-# - name: Beedle's Airshop - 600 Rupee Item
-#   original_item: Progressive Pouch
-#   types:
-#     - Beedle's Airshop
-#     - Shop (Medium)
-#     - NPC
-#   Paths:
-#     - ShpSmpl/21
+- name: Beedle's Airshop - 600 Rupee Item
+  original_item: Progressive Pouch
+  types:
+    - Beedle's Airshop
+    - Shop (Medium)
+    - NPC
+  Paths:
+    - ShpSmpl/21
 
-# - name: Beedle's Airshop - 1200 Rupee Item
-#   original_item: Progressive Pouch
-#   types:
-#     - Beedle's Airshop
-#     - Shop (Expensive)
-#     - NPC
-#   hint: always
-#   Paths:
-#     - ShpSmpl/22
+- name: Beedle's Airshop - 1200 Rupee Item
+  original_item: Progressive Pouch
+  types:
+    - Beedle's Airshop
+    - Shop (Expensive)
+    - NPC
+  hint: always
+  Paths:
+    - ShpSmpl/22
 
-# - name: Beedle's Airshop - 800 Rupee Item
-#   original_item: Life Medal
-#   types:
-#     - Beedle's Airshop
-#     - Shop (Medium)
-#     - NPC
-#   Paths:
-#     - ShpSmpl/26
+- name: Beedle's Airshop - 800 Rupee Item
+  original_item: Life Medal
+  types:
+    - Beedle's Airshop
+    - Shop (Medium)
+    - NPC
+  Paths:
+    - ShpSmpl/26
 
-# - name: Beedle's Airshop - 1600 Rupee Item
-#   original_item: Heart Piece
-#   types:
-#     - Beedle's Airshop
-#     - Shop (Expensive)
-#     - NPC
-#   hint: always
-#   Paths:
-#     - ShpSmpl/23
+- name: Beedle's Airshop - 1600 Rupee Item
+  original_item: Heart Piece
+  types:
+    - Beedle's Airshop
+    - Shop (Expensive)
+    - NPC
+  hint: always
+  Paths:
+    - ShpSmpl/23
 
-# - name: Beedle's Airshop - First 100 Rupee Item
-#   original_item: Extra Wallet
-#   types:
-#     - Beedle's Airshop
-#     - Shop (Cheap)
-#     - NPC
-#   Paths:
-#     - ShpSmpl/24
+- name: Beedle's Airshop - First 100 Rupee Item
+  original_item: Extra Wallet
+  types:
+    - Beedle's Airshop
+    - Shop (Cheap)
+    - NPC
+  Paths:
+    - ShpSmpl/24
 
-# - name: Beedle's Airshop - Second 100 Rupee Item
-#   original_item: Extra Wallet
-#   types:
-#     - Beedle's Airshop
-#     - Shop (Cheap)
-#     - NPC
-#   Paths:
-#     - ShpSmpl/17
+- name: Beedle's Airshop - Second 100 Rupee Item
+  original_item: Extra Wallet
+  types:
+    - Beedle's Airshop
+    - Shop (Cheap)
+    - NPC
+  Paths:
+    - ShpSmpl/28
 
-# - name: Beedle's Airshop - Third 100 Rupee Item
-#   original_item: Extra Wallet
-#   types:
-#     - Beedle's Airshop
-#     - Shop (Cheap)
-#     - NPC
-#   Paths:
-#     - ShpSmpl/18
+- name: Beedle's Airshop - Third 100 Rupee Item
+  original_item: Extra Wallet
+  types:
+    - Beedle's Airshop
+    - Shop (Cheap)
+    - NPC
+  Paths:
+    - ShpSmpl/29
 
-# - name: Beedle's Airshop - 50 Rupee Item
-#   original_item: Progressive Bug Net
-#   types:
-#     - Beedle's Airshop
-#     - Shop (Cheap)
-#     - NPC
-#   Paths:
-#     - ShpSmpl/25
+- name: Beedle's Airshop - 50 Rupee Item
+  original_item: Progressive Bug Net
+  types:
+    - Beedle's Airshop
+    - Shop (Cheap)
+    - NPC
+  Paths:
+    - ShpSmpl/25
 
-# - name: Beedle's Airshop - 1000 Rupee Item
-#   original_item: Bug Medal
-#   types:
-#     - Beedle's Airshop
-#     - Shop (Medium)
-#     - NPC
-#   Paths:
-#     - ShpSmpl/27
+- name: Beedle's Airshop - 1000 Rupee Item
+  original_item: Bug Medal
+  types:
+    - Beedle's Airshop
+    - Shop (Medium)
+    - NPC
+  Paths:
+    - ShpSmpl/27
 
 
 # The Sky:

@@ -101,6 +101,8 @@ main:
 
     TADTONE_SCENEFLAGS: 0x71013a3fa5
 
+    SHOP_ITEMS: 0x710164043c
+
 
     # Functions
     debugPrint_128: 0x710051bf54
