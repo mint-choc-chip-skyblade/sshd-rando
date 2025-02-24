@@ -2756,22 +2756,30 @@ F201_2: # Inside Volcano (Bokoblin Base)
       posy: 0
       posz: -810
       name: Tubo
-  - name: True Master Sword Chest
+  - name: Fi text after pulling True Master Sword
     type: objadd
+    room: 0
+    layer: 0
+    id: 0xFC00
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF01 # type 1, no fi, flag sets automatically
+      params2: 0xFF1FFFFF
+      posx: 0
+      posy: 0 # doesn't matter, is triggered anywhere
+      posz: 0
+      angley: 0xFFFF
+      anglez: 10751 # entrypoint 107_51
+      id: 0xFC00
+      name: NpcTke
+      trigscenefid: 44 # 4x10
+      untrigstoryfid: 952 # Raised True Master Sword in Boko Base
+  - name: Remove vanilla Fi text after pulling sword
+    type: objdelete
+    id: 0xFC34
     layer: 0
     room: 0
-    objtype: OBJS
-    object:
-      params1: 0xFFFFFFF3
-      params2: 0xFF5FFFFF
-      posx: 1314.69677734375
-      posy: 50
-      posz: -68.63192749023438
-      anglex: 0xFFFF
-      angley: 16384
-      anglez: 37379 # >> 9 = chest flag 73
-      id: 0xFC26
-      name: TBox
+    objtype: OBJ
   - name: Force layer 2 when entering Fire Dragon's Lair
     type: objpatch
     index: 0
