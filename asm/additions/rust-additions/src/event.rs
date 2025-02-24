@@ -112,6 +112,8 @@ extern "C" {
     static STORYFLAG_MGR: *mut flag::FlagMgr;
     static LYT_MSG_WINDOW: *mut lyt::dLytMsgWindow;
 
+    static mut CURRENT_STAGE_NAME: [u8; 8];
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
 }
@@ -184,4 +186,44 @@ pub fn check_tadtone_counter_before_song_event(
     }
 
     return (tadtone_minigame_actor, 0);
+}
+
+#[no_mangle]
+pub fn set_boko_base_restricted_sword_flag_before_event(param1: *mut c_void) {
+    unsafe {
+        if &CURRENT_STAGE_NAME[..7] == b"F201_2\0" {
+            flag::set_storyflag(167);
+        }
+    }
+
+    // Replaced instructions
+    unsafe {
+        asm!("mov x0, {0:x}", "mov w8, #1", "strb w8, [x0, #0xb5a]", in(reg) param1);
+    }
+}
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct unkstruct {
+    pub unk0x0:  *mut c_void,
+    pub unk0x8:  *mut c_void,
+    pub unk0x10: extern "C" fn(*mut c_void, u32, u32),
+}
+
+#[no_mangle]
+pub fn remove_vanilla_tms_sword_pull_textbox(param1: *mut *mut unkstruct) {
+    unsafe {
+        ((*(*param1)).unk0x10)(param1 as *mut c_void, 0xFF, 3);
+    }
+
+    // The vanilla textbox eventflow unsets these flags.
+    flag::unset_storyflag(167); // Restricted sword
+    flag::set_local_sceneflag(44);
+}
+
+#[no_mangle]
+pub fn fix_boko_base_sword_model() -> u64 {
+    // Base sword model address from dPlayer::initSwordModels + offset needed for
+    // TMS 7100de5828 + (0xa0000 * 0x1a)
+    return 0x8193D800 + 0x1040000;
 }

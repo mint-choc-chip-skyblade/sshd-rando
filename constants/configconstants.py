@@ -158,6 +158,10 @@ LOCATION_ALIASES = {
     "Sealed Grounds - Slingshot Mouth in Wall Drawing of Beast": "Sealed Grounds - Slingshot Open Mouth in Wall Drawing of Beast",
     "Sealed Grounds - Bonk Wall Drawing of Hylia Raising Skyloft": "Sealed Grounds - Bonk Wall Drawing of Hylia Raising Sword and Harp",
     "Sealed Grounds - Slingshot Sun in Wall Drawing of Worshippers": "Sealed Grounds - Slingshot Light of Ultimate Power in Wall Drawing of Worshippers",
+    # Since v1.4
+    "Inside the Statue of the Goddess - First Goddess Sword Item": "Inside the Statue of the Goddess - Raise Sword Item 1",
+    "Inside the Statue of the Goddess - Second Goddess Sword Item": "Inside the Statue of the Goddess - Raise Sword Item 2",
+    "Bokoblin Base - Raised Chest in Volcano Summit": "Bokoblin Base - Raise Sword",
 }
 
 TRACKER_NOTE_EVENTS = {

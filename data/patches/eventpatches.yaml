@@ -1085,6 +1085,25 @@
       param2: 3 # item
       next: -1
       param3: 9
+  - name: Fi give Boko Base Sword item start
+    type: flowpatch
+    index: 15
+    flow:
+      next: Fi give Boko Base Sword item
+  - name: Fi give Boko Base Sword item
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 3 # item
+      next: Set Boko Base Sword item Storyflag
+      param3: 9
+  - name: Set Boko Base Sword item Storyflag
+    type: setstoryflag
+    flow:
+      setstoryflag: 952
+      next: -1
   - name: Add flow for Sky Keep goal location sign
     type: entryadd
     entry:

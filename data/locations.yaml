@@ -257,7 +257,7 @@
     - stage/F000/r0/l6/Item/0xFDEA
     - stage/F000/r0/l7/Item/0xFDFF
 
-- name: Inside the Statue of the Goddess - First Goddess Sword Item
+- name: Inside the Statue of the Goddess - Raise Sword Item 1
   original_item: Progressive Sword
   types:
     - NPC
@@ -265,7 +265,7 @@
     - event/107-Kanban/Fi give Goddess Statue item 1
     - oarc/F008r/l0
 
-- name: Inside the Statue of the Goddess - Second Goddess Sword Item
+- name: Inside the Statue of the Goddess - Raise Sword Item 2
   original_item: Emerald Tablet
   types:
     - NPC
@@ -4064,13 +4064,14 @@
     - stage/F201_2/r0/l0/TBox/72
     - stage/F201_1/r0/l4/TBox/72
 
-- name: Bokoblin Base - Raised Chest in Volcano Summit
+- name: Bokoblin Base - Raise Sword
   original_item: Progressive Sword
   types:
     - Chests
   Paths:
-    - stage/F201_2/r0/l0/TBox/73
-    - stage/F201_1/r0/l4/TBox/73
+    - event/107-Kanban/Fi give Boko Base Sword item
+    - oarc/F201_2/l0 # boko base stage
+    - oarc/F201_1/l4 # vs stage, post-boko base layer
 
 - name: Bokoblin Base - Chest in Volcano Summit Alcove
   original_item: Progressive Pouch

@@ -59,8 +59,8 @@ World 1:
     - Knight Academy - Crystal in Link's Room
     - Knight Academy - Deliver Kikwi to Owlan
   always_hint_locations:
-    - Inside the Statue of the Goddess - First Goddess Sword Item
-    - Inside the Statue of the Goddess - Second Goddess Sword Item
+    - Inside the Statue of the Goddess - Raise Sword Item 1
+    - Inside the Statue of the Goddess - Raise Sword Item 2
 
 # MULTIWORLD PLANDOMIZER (Note: currently multiworld is not an option in the randomizer
 # and is not actively being developed, but the filling algorithm was made to support

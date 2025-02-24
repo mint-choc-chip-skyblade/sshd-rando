@@ -246,6 +246,15 @@ b.eq rotate_shop_items
 cmp w8, #75
 b.eq set_shop_display_height
 
+cmp w8, #76
+b.eq set_boko_base_restricted_sword_flag_before_event
+
+cmp w8, #77
+b.eq remove_vanilla_tms_sword_pull_textbox
+
+cmp w8, #78
+b.eq fix_boko_base_sword_model
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
