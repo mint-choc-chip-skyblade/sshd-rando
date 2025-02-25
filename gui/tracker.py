@@ -505,6 +505,11 @@ class Tracker:
             [f"Gratitude Crystals ({i}/80)" for i in range(81)],
         )
         self.gratitude_crystals_button.create_number_label()
+
+        self.life_tree_seedling_button = TrackerInventoryButton(
+            ["Nothing", LIFE_TREE_SEEDLING],
+            ["main_quest/life_tree_seedling_gray.png", "main_quest/life_tree_seedling.png"],
+        )
         self.life_tree_fruit_button = TrackerInventoryButton(
             ["Nothing", LIFE_TREE_FRUIT],
             ["main_quest/life_tree_fruit_gray.png", "main_quest/life_tree_fruit.png"],
@@ -518,6 +523,7 @@ class Tracker:
         )
         self.tadtones_button.create_number_label()
         self.tadtones_button.set_label_scale(1.3)
+
         self.scrapper_button = TrackerInventoryButton(
             ["Nothing", SCRAPPER],
             ["main_quest/scrapper_gray.png", "main_quest/scrapper.png"],
@@ -647,8 +653,9 @@ class Tracker:
         self.ui.lower_inventory_layout.addWidget(self.rattle_button, 2, 5)
         self.ui.lower_inventory_layout.addWidget(self.gratitude_crystals_button, 2, 6)
 
-        self.ui.lower_inventory_layout.addWidget(self.life_tree_fruit_button, 3, 0)
-        self.ui.lower_inventory_layout.addWidget(self.tadtones_button, 3, 1)
+        self.ui.lower_inventory_layout.addWidget(self.life_tree_seedling_button, 3, 0)
+        self.ui.lower_inventory_layout.addWidget(self.life_tree_fruit_button, 3, 1)
+        self.ui.lower_inventory_layout.addWidget(self.tadtones_button, 3, 2)
 
         # Connect clicking a tracker inventory button to updating the tracker
         for inventory_button in self.ui.tracker_tab.findChildren(

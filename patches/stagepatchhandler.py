@@ -343,6 +343,24 @@ def patch_chandelier_item(bzs: dict, itemid: int, trapid: int):
     chandelier["params1"] = mask_shift_set(chandelier["params1"], 0xFF, 8, itemid)
 
 
+def patch_tree_of_life(bzs: dict, itemid: int, trapid: int):
+    tree: dict | None = next(filter(lambda x: x["name"] == "FrtTree", bzs["OBJ "]), None)
+
+    if tree is None:
+        raise Exception(f"No FrtTree (Tree of Life) found to patch.")
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        tree["params2"] = mask_shift_set(
+            tree["params2"], 0xF, 4, trapbits
+        )
+    # No need for other checks as params2 is always 0xFFFFFFFF
+    
+    tree["params1"] = mask_shift_set(tree["params1"], 0xFF, 24, itemid)
+
+
 def patch_digspot_item(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     id = int(object_id_str)
     digspot: dict | None = next(
@@ -1116,6 +1134,12 @@ def patch_and_write_stage(
                                     room_bzs["LAY "][f"l{layer}"],
                                     itemid,
                                     objectid,
+                                    trapid,
+                                )
+                            elif object_name == "FrtTree":
+                                patch_tree_of_life(
+                                    room_bzs["LAY "][f"l{layer}"],
+                                    itemid,
                                     trapid,
                                 )
                             else:
