@@ -246,6 +246,13 @@ b.eq rotate_shop_items
 cmp w8, #75
 b.eq set_shop_display_height
 
+
+cmp w8, #79
+b.eq check_local_sceneflag
+
+cmp w8, #80
+b.eq spawn_tree_of_life_item
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
