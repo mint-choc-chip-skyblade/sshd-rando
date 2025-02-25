@@ -1859,6 +1859,86 @@
       param3: 1 # actually unset the flag
       next: 77
 
+  # Harp Minigame patches
+  - name: Harp Minigame Guaranteed Win Pumm
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 329
+    flow: {}
+    cases:
+      - 332
+      - 257
+  - name: Harp Minigame Easy Pumm 1
+    onlyif: minigame_difficulty == easy
+    type: flowpatch
+    index: 330
+    flow: {}
+    cases:
+      - 600
+      - 333
+      - 332
+      - 332
+  - name: Harp Minigame Easy Pumm 2
+    onlyif: minigame_difficulty == easy
+    type: flowpatch
+    index: 255
+    flow: {}
+    cases:
+      - 601
+      - 256
+      - 257
+      - 257
+  - name: Harp Minigame Hard Pumm 1
+    onlyif: minigame_difficulty == hard
+    type: flowpatch
+    index: 330
+    flow: {}
+    cases:
+      - 331
+      - 331
+      - 600
+      - 333
+  - name: Harp Minigame Hard Pumm 2
+    onlyif: minigame_difficulty == hard
+    type: flowpatch
+    index: 255
+    flow: {}
+    cases:
+      - 254
+      - 254
+      - 601
+      - 256
+  - name: Harp Minigame Guaranteed Win Kina
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 248
+    flow: {}
+    cases:
+      - 251
+      - 251
+      - 251
+      - 251
+  - name: Harp Minigame Easy Kina
+    onlyif: minigame_difficulty == easy
+    type: flowpatch
+    index: 248
+    flow: {}
+    cases:
+      - 599
+      - 250
+      - 251
+      - 251
+  - name: Harp Minigame Hard Kina
+    onlyif: minigame_difficulty == hard
+    type: flowpatch
+    index: 248
+    flow: {}
+    cases:
+      - 249
+      - 249
+      - 599
+      - 250
+
 118-Town3:
   - name: Sparrot Scrapper check
     type: flowpatch
