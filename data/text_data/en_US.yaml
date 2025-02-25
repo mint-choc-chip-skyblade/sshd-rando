@@ -1335,6 +1335,16 @@
   pretty: Knight Academy - Fledge's Gift
   cryptic: a <r<gift from a friend>>
 
+- name: Knight Academy - Deliver Barrel to Henya the Lunch Lady
+  standard: Knight Academy - Deliver Barrel to Henya the Lunch Lady
+  pretty: Knight Academy - Deliver Barrel to Henya the Lunch Lady
+  cryptic: carrying a <r<heavy burden>>
+
+- name: Knight Academy - Item from Cawlin
+  standard: Knight Academy - Item from Cawlin
+  pretty: Knight Academy - Item from Cawlin
+  cryptic: a <r<disgruntled teenager>>
+
 - name: Knight Academy - Bonk Classroom Bookshelf
   standard: Knight Academy - Bonk Classroom Bookshelf
   pretty: Knight Academy - Bonk Classroom Bookshelf
@@ -1414,11 +1424,6 @@
   standard: Knight Academy - Help Fledge Workout
   pretty: Knight Academy - Help Fledge Workout
   cryptic: <r<lending strength to a friend>>
-
-- name: Knight Academy - Item from Cawlin
-  standard: Knight Academy - Item from Cawlin
-  pretty: Knight Academy - Item from Cawlin
-  cryptic: a <r<disgruntled teenager>>
 
 - name: Knight Academy - Deliver Cawlin's Letter
   standard: Knight Academy - Deliver Cawlin's Letter

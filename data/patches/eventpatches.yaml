@@ -856,6 +856,69 @@
       - 167
       - 165
 
+  - name: Patch Pre-Barrel Delivery Text
+    type: flowpatch
+    index: 2
+    flow:
+      next: Show Attention Mark Switch
+  - name: Show Attention Mark Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 23 # Sceneflag 23 - has received barrel check
+      param3: 6
+    cases:
+      - 3 # yes - don't show
+      - Show Attention Mark before Delivering Barrel # no - show mark
+  - name: Show Attention Mark before Delivering Barrel
+    type: attentionmark
+    flow:
+      next: 3
+
+  - name: Patch Barrel Delivery Text
+    type: flowpatch
+    index: 144
+    flow:
+      next: Delivered Barrel Switch
+  - name: Delivered Barrel Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 22 # Sceneflag 22 - has delivered barrel
+      param3: 6
+    cases:
+      - Have Received Barrel Delivery Check # yes - check if already given check
+      - 145 # no - behave like vanilla
+  - name: Have Received Barrel Delivery Check
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 23 # Sceneflag 22 - received barrel check
+      param3: 6
+    cases:
+      - 145 # yes - ignore
+      - 147 # no - give randomized item
+  - name: Patch Barrel Delivered Text
+    type: flowpatch
+    index: 147
+    flow:
+      next: Give Barrel Devlivery Item
+  - name: Give Barrel Devlivery Item
+    type: flowadd
+    flow:
+      type: type3
+      subType: 0
+      param1: 0
+      param2: 4 # item
+      next: Set Received Barrel Check Sceneflag
+      param3: 9
+  - name: Set Received Barrel Check Sceneflag
+    type: setsceneflag
+    flow:
+      sceneindex: 0 # Skyloft
+      setsceneflag: 23
+      next: -1
+
 101-Shop:
   - name: Remove pouch bipping after item seller
     type: flowpatch
