@@ -508,7 +508,10 @@ class Tracker:
 
         self.life_tree_seedling_button = TrackerInventoryButton(
             ["Nothing", LIFE_TREE_SEEDLING],
-            ["main_quest/life_tree_seedling_gray.png", "main_quest/life_tree_seedling.png"],
+            [
+                "main_quest/life_tree_seedling_gray.png",
+                "main_quest/life_tree_seedling.png",
+            ],
         )
         self.life_tree_fruit_button = TrackerInventoryButton(
             ["Nothing", LIFE_TREE_FRUIT],

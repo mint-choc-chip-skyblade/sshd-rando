@@ -344,7 +344,9 @@ def patch_chandelier_item(bzs: dict, itemid: int, trapid: int):
 
 
 def patch_tree_of_life(bzs: dict, itemid: int, trapid: int):
-    tree: dict | None = next(filter(lambda x: x["name"] == "FrtTree", bzs["OBJ "]), None)
+    tree: dict | None = next(
+        filter(lambda x: x["name"] == "FrtTree", bzs["OBJ "]), None
+    )
 
     if tree is None:
         raise Exception(f"No FrtTree (Tree of Life) found to patch.")
@@ -353,11 +355,9 @@ def patch_tree_of_life(bzs: dict, itemid: int, trapid: int):
     if trapid:
         trapbits = 254 - trapid
         # Unsets bit 0x000000F0 of params2
-        tree["params2"] = mask_shift_set(
-            tree["params2"], 0xF, 4, trapbits
-        )
+        tree["params2"] = mask_shift_set(tree["params2"], 0xF, 4, trapbits)
     # No need for other checks as params2 is always 0xFFFFFFFF
-    
+
     tree["params1"] = mask_shift_set(tree["params1"], 0xFF, 24, itemid)
 
 
