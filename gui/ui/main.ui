@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -656,84 +656,12 @@
         <string>Gameplay</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_9" columnstretch="1,1,1,1">
-        <item row="0" column="1">
-         <widget class="QGroupBox" name="dungeons_group_box">
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="groupBox">
           <property name="title">
-           <string>Dungeon Items</string>
+           <string>Convenience Tweaks</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_16">
-           <item>
-            <widget class="QLabel" name="small_keys_label">
-             <property name="text">
-              <string>Small Keys</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_small_keys"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="boss_keys_label">
-             <property name="text">
-              <string>Boss Keys</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_boss_keys"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="map_mode_label">
-             <property name="text">
-              <string>Dungeon Maps</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_map_mode"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="lanayru_caves_keys_label">
-             <property name="text">
-              <string>Lanayru Caves Small Key</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_lanayru_caves_keys"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="boss_key_puzzles_label">
-             <property name="text">
-              <string>Boss Key Puzzles</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_boss_key_puzzles"/>
-           </item>
-           <item>
-            <spacer name="dungeons_vspacer">
-             <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <widget class="QGroupBox" name="tweaks_group_box">
-          <property name="title">
-           <string>Tweaks</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
+          <layout class="QVBoxLayout" name="verticalLayout_43">
            <item>
             <widget class="RandoTriStateCheckBox" name="setting_spawn_hearts">
              <property name="text">
@@ -817,20 +745,6 @@
             </layout>
            </item>
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_randomize_shop_prices">
-             <property name="text">
-              <string>Randomize Shop Prices</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_random_bottle_contents">
-             <property name="text">
-              <string>Random Bottle Contents</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="RandoTriStateCheckBox" name="setting_full_wallet_upgrades">
              <property name="text">
               <string>Full Wallet Upgrades</string>
@@ -845,6 +759,52 @@
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="minigame_difficulty_label">
+             <property name="text">
+              <string>Minigame Difficulty</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_minigame_difficulty"/>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>315</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QGroupBox" name="hint_placements_group_box">
+          <property name="title">
+           <string>Tweaks and Traps</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_24">
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_randomize_shop_prices">
+             <property name="text">
+              <string>Randomize Shop Prices</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_random_bottle_contents">
+             <property name="text">
+              <string>Random Bottle Contents</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLabel" name="random_trial_object_positions_label">
              <property name="text">
               <string>Random Trial Object Positions</string>
@@ -855,14 +815,141 @@
             <widget class="QComboBox" name="setting_random_trial_object_positions"/>
            </item>
            <item>
-            <spacer name="tweaks_vspacer">
+            <widget class="QLabel" name="trap_mode_label">
+             <property name="text">
+              <string>Trap Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_trap_mode"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="trappable_items_label">
+             <property name="text">
+              <string>Trappable Items</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_trappable_items"/>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_burn_traps">
+             <property name="text">
+              <string>Burn Traps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_curse_traps">
+             <property name="text">
+              <string>Curse Traps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_noise_traps">
+             <property name="text">
+              <string>Noise Traps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_health_traps">
+             <property name="text">
+              <string>Health Traps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_groose_traps">
+             <property name="text">
+              <string>Groose Traps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="hint_placements_vspacer">
              <property name="orientation">
               <enum>Qt::Orientation::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
-               <height>148</height>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="dungeons_group_box">
+          <property name="title">
+           <string>Dungeon Items</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QLabel" name="small_keys_label">
+             <property name="text">
+              <string>Small Keys</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_small_keys"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="boss_keys_label">
+             <property name="text">
+              <string>Boss Keys</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_boss_keys"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="map_mode_label">
+             <property name="text">
+              <string>Dungeon Maps</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_map_mode"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="lanayru_caves_keys_label">
+             <property name="text">
+              <string>Lanayru Caves Small Key</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_lanayru_caves_keys"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="boss_key_puzzles_label">
+             <property name="text">
+              <string>Boss Key Puzzles</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_boss_key_puzzles"/>
+           </item>
+           <item>
+            <spacer name="dungeons_vspacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
               </size>
              </property>
             </spacer>
@@ -947,83 +1034,6 @@
            </item>
            <item>
             <spacer name="beat_the_game_vspacer">
-             <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QGroupBox" name="hint_placements_group_box">
-          <property name="title">
-           <string>Traps</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_24">
-           <item>
-            <widget class="QLabel" name="trap_mode_label">
-             <property name="text">
-              <string>Trap Mode</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_trap_mode"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="trappable_items_label">
-             <property name="text">
-              <string>Trappable Items</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="setting_trappable_items"/>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_burn_traps">
-             <property name="text">
-              <string>Burn Traps</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_curse_traps">
-             <property name="text">
-              <string>Curse Traps</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_noise_traps">
-             <property name="text">
-              <string>Noise Traps</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_health_traps">
-             <property name="text">
-              <string>Health Traps</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="RandoTriStateCheckBox" name="setting_groose_traps">
-             <property name="text">
-              <string>Groose Traps</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="hint_placements_vspacer">
              <property name="orientation">
               <enum>Qt::Orientation::Vertical</enum>
              </property>
@@ -3845,8 +3855,8 @@ Practice Sword</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>306</width>
-                <height>336</height>
+                <width>310</width>
+                <height>344</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="other_mods_scroll_layout"/>
@@ -4305,8 +4315,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>100</width>
-               <height>30</height>
+               <width>546</width>
+               <height>340</height>
               </rect>
              </property>
              <property name="maximumSize">

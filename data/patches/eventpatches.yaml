@@ -1384,6 +1384,30 @@
     index: 16
     flow:
       next: -1
+  - name: Pumpkin Archery Easy No Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 35
+  - name: Pumpkin Archery Easy Low Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 36
+  - name: Pumpkin Archery Easy Mid Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 38
+  - name: Pumpkin Archery Hard No Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 35
+  - name: Pumpkin Archery Hard Low Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 36
+  - name: Pumpkin Archery Hard Mid Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 38
 
 115-Town2:
   - name: Parrow's Empty Bottle
