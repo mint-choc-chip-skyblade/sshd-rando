@@ -128,3 +128,77 @@ mov w8, #325 ; island rotation speed down from 750
 ; onlyif minigame_difficulty == hard
 .offset 0x71008b0110
 mov w8, #1500 ; island rotation speed up from 750
+
+
+
+; Rickety Coaster Guaranteed Win
+; onlyif minigame_difficulty == guaranteed_win
+.offset 0x710059303c
+mov w0, #3 ; best score
+b 0x7100592ff8
+
+
+; Rickety Coaster Easy
+; Scary (easy) ret 3
+; onlyif minigame_difficulty == easy
+.offset 0x7100593114
+mov w8, #35000 ; up from 30000
+
+; Scary (easy) ret 2
+; onlyif minigame_difficulty == easy
+.offset 0x710059314c
+mov w8, #40000 ; up from 35000
+
+; Scary (easy) ret 1
+; onlyif minigame_difficulty == easy
+.offset 0x7100593158
+mov w8, #45000 ; up from 40000
+
+; Heartstopping (hard)
+; This one has to be handled differently as the
+; numbers are too big to just swap them out
+; onlyif minigame_difficulty == easy
+.offset 0x71005930bc
+mov w8, #0x1170
+movk w8, #1, LSL #16
+cmp w19, w8
+b.lt 0x7100593120 ; ret 3 if < 70000
+mov w9, #5000
+add w8, w8, w9
+cmp w19, w8
+b.le 0x7100593100 ; ret 2 if < 75000
+add w8, w8, w9
+; ret 1 if < 80000 else ret 0
+
+
+; Rickety Coaster Hard
+; Scary (easy) ret 3
+; onlyif minigame_difficulty == hard
+.offset 0x7100593114
+mov w8, #29500 ; down from 30000
+
+; Scary (easy) ret 2
+; onlyif minigame_difficulty == hard
+.offset 0x710059314c
+mov w8, #30000 ; down from 35000
+
+; Scary (easy) ret 1
+; onlyif minigame_difficulty == hard
+.offset 0x7100593158
+mov w8, #35000 ; down from 40000
+
+; Heartstopping (hard) ret 3
+; onlyif minigame_difficulty == hard
+.offset 0x71005930bc
+mov w8, #62000 ; down from 65000
+
+; Heartstopping (hard) ret 2
+; onlyif minigame_difficulty == hard
+.offset 0x71005930cc
+mov w8, #65000 ; down from 70000
+
+; Heartstopping (hard) ret 1
+; onlyif minigame_difficulty == hard
+.offset 0x71005930d8
+mov w8, #0x1170
+movk w8, #1, LSL #16 ; 70000, down from 75000
