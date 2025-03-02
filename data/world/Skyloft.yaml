@@ -175,8 +175,8 @@
   exits:
     Upper Skyloft: Nothing
   locations:
-    Inside the Statue of the Goddess - First Goddess Sword Item: Nothing
-    Inside the Statue of the Goddess - Second Goddess Sword Item: Nothing
+    Inside the Statue of the Goddess - Raise Sword Item 1: Nothing
+    Inside the Statue of the Goddess - Raise Sword Item 2: Nothing
 
 - name: Central Skyloft
   allowed_time_of_day: All

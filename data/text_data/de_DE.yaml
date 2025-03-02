@@ -1500,12 +1500,12 @@
   pretty: Oberer Wolkenhort - Ausdauerfrucht nahe Statue der Göttin
   cryptic: eine <r<Frucht nahe einer großen Statue>>
 
-- name: Inside the Statue of the Goddess - First Goddess Sword Item
+- name: Inside the Statue of the Goddess - Raise Sword Item 1
   standard: In der Statue der Göttin - Schwert der Göttin Item 1
   pretty: In der Statue der Göttin - Schwert der Göttin Item 1
   cryptic: die <r<erste Belohnung der Göttin>>
 
-- name: Inside the Statue of the Goddess - Second Goddess Sword Item
+- name: Inside the Statue of the Goddess - Raise Sword Item 2
   standard: In der Statue der Göttin - Schwert der Göttin Item 2
   pretty: In der Statue der Göttin - Schwert der Göttin Item 2
   cryptic: die <r<zweite Belohnung der Göttin>>
@@ -3813,10 +3813,10 @@
   pretty: Bokoblin-Lager - Erste Schatztruhe im Vulkangipfel
   cryptic: eine <r<erbeutete Truhe>> in einem hochliegenden Gebiet
 
-- name: Bokoblin Base - Raised Chest in Volcano Summit
-  standard: Bokoblin-Lager - Erhöhte Schatztruhe im Vulkangipfel
-  pretty: Bokoblin-Lager - Erhöhte Schatztruhe im Vulkangipfel
-  cryptic: die <r<höchste erbeutete Truhe>>
+- name: Bokoblin Base - Raise Sword
+  standard: Bokoblin-Lager - Erhöhte Schatztruhe im Vulkangipfel # Needs updating
+  pretty: Bokoblin-Lager - Erhöhte Schatztruhe im Vulkangipfel # Needs updating
+  cryptic: die <r<höchste erbeutete Truhe>> # Needs updating
 
 - name: Bokoblin Base - Chest in Volcano Summit Alcove
   standard: Bokoblin-Lager - Schatztruhe in Vulkangipfelnische

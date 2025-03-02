@@ -1495,14 +1495,14 @@
   pretty: Upper Skyloft - Stamina Fruit near Goddess Statue
   cryptic: a <r<fruit near a tall statue>>
 
-- name: Inside the Statue of the Goddess - First Goddess Sword Item
-  standard: Inside the Statue of the Goddess - First Goddess Sword Item
-  pretty: Inside the Statue of the Goddess - First Goddess Sword Item
+- name: Inside the Statue of the Goddess - Raise Sword Item 1
+  standard: Inside the Statue of the Goddess - Raise Sword Item 1
+  pretty: Inside the Statue of the Goddess - Raise Sword Item 1
   cryptic: the <r<goddess's first reward>>
 
-- name: Inside the Statue of the Goddess - Second Goddess Sword Item
-  standard: Inside the Statue of the Goddess - Second Goddess Sword Item
-  pretty: Inside the Statue of the Goddess - Second Goddess Sword Item
+- name: Inside the Statue of the Goddess - Raise Sword Item 2
+  standard: Inside the Statue of the Goddess - Raise Sword Item 2
+  pretty: Inside the Statue of the Goddess - Raise Sword Item 2
   cryptic: the <r<goddess's second reward>>
 
 - name: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
@@ -3811,9 +3811,9 @@
   pretty: Bokoblin Base - First Chest in Volcano Summit
   cryptic: a <r<captured chest>> in a high area
 
-- name: Bokoblin Base - Raised Chest in Volcano Summit
-  standard: Bokoblin Base - Raised Chest in Volcano Summit
-  pretty: Bokoblin Base - Raised Chest in Volcano Summit
+- name: Bokoblin Base - Raise Sword
+  standard: Bokoblin Base - Raise Sword
+  pretty: Bokoblin Base - Raise Sword
   cryptic: the <r<highest captured chest>>
 
 - name: Bokoblin Base - Chest in Volcano Summit Alcove

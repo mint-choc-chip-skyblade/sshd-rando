@@ -85,8 +85,7 @@ Below is the list of all the flags that the randomizer changes:
 * 950: Progressive Bug Net 2 (Big Bug Net)
 
 * 951: Raising Goddess Sword in Goddess Statue
-
-* 952: ***Reserved for Raising True Master Sword in Bokoblin Base***
+* 952: Raising True Master Sword in Boko Base
 
 * 953: Group of Tadtones Counter
 
