@@ -335,7 +335,7 @@
   exits:
     Inside the Thunderhead: Day
   locations:
-    Bug Heaven - 10 Bugs in 3 Minutes: Bug_Net
+    Bug Heaven - 10 Bugs in 3 Minutes: (Bug_Net and (minigame_difficulty == vanilla or minigame_difficulty == hard)) or Big_Bug_Net
     Bug Heaven - Goddess Chest: Volcano_Summit_Goddess_Cube_at_Summit_Waterfall
     Bug Heaven - Stamina Fruit near Start: Nothing
     Bug Heaven - Stamina Fruit in front of Wooden Plank: Nothing

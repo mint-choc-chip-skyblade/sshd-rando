@@ -202,3 +202,50 @@ mov w8, #65000 ; down from 70000
 .offset 0x71005930d8
 mov w8, #0x1170
 movk w8, #1, LSL #16 ; 70000, down from 75000
+
+
+
+; Bug Heaven Guaranteed Win
+; onlyif minigame_difficulty == guaranteed_win
+.offset 0x710059b9e4
+b 0x710059bb00
+
+
+; Bug Heaven Easy
+; ret 3
+; onlyif minigame_difficulty == easy
+.offset 0x710059ba48
+mov w9, #0xbf21 ; replace 120001 (2 mins) with 180001 (3 mins)
+movk w9, #2, LSL #16
+
+; ret 2
+; onlyif minigame_difficulty == easy
+.offset 0x710059ba58
+mov w9, #0x93e1 ; replace 180001 (3 mins) with 300001 (5 mins)
+movk w9, #4, LSL #16
+
+; ret 1
+; onlyif minigame_difficulty == easy
+.offset 0x710059ba68
+mov w9, #0x27c1 ; replace 300001 (5 mins) with 600001 (10 mins)
+movk w9, #9, LSL #16
+
+
+; Bug Heaven Hard
+; ret 3
+; onlyif minigame_difficulty == hard
+.offset 0x710059ba48
+mov w9, #0xea61 ; replace 120001 (2 mins) with 60001 (1 min)
+nop
+
+; ret 2
+; onlyif minigame_difficulty == hard
+.offset 0x710059ba58
+mov w9, #0xd4c1 ; replace 180001 (3 mins) with 120001 (2 mins)
+movk w9, #1, LSL #16
+
+; ret 1
+; onlyif minigame_difficulty == hard
+.offset 0x710059ba68
+mov w9, #0xbf21 ; replace 300001 (5 mins) with 180001 (3 mins)
+movk w9, #2, LSL #16

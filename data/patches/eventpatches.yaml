@@ -1611,6 +1611,48 @@
     flow:
       param2: 925
 
+  - name: Bug Heaven Easy No Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 15
+  - name: Bug Heaven Easy Beginner Low Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 24
+  - name: Bug Heaven Easy Wrangler Low Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 16
+  - name: Bug Heaven Easy Beginner Mid Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 26
+  - name: Bug Heaven Easy Wrangler Mid Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 18
+
+  - name: Bug Heaven Hard No Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 15
+  - name: Bug Heaven Hard Beginner Low Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 24
+  - name: Bug Heaven Hard Wrangler Low Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 16
+  - name: Bug Heaven Hard Beginner Mid Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 26
+  - name: Bug Heaven Hard Wrangler Mid Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 18
+
 117-Pumpkin:
   - name: Check if Pumm should give Kina Quest Storyflag
     type: flowpatch

@@ -6175,3 +6175,56 @@
 - name: Pumpkin Archery Hard Mid Prize Text
   standard:
     "It would be great to see you hit <r<800\npoints>> and set a record next time.\nGive it your best shot!"
+
+# Pretty sure this text is actually impossible to get cos there's a hard 10 min cap on the timer.
+- name: Bug Heaven Easy No Prize Text
+  standard:
+    "That's it—time's up! Umm...you've still\ngot A LOT of improving to do.
+    \n\n\nFor starters, shoot for getting your\ntime <r<under ten minutes>>. Just keep on\npracticing.
+    \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+
+- name: Bug Heaven Easy Beginner Low Prize Text
+  standard:
+    "Next time, try for <r<under five minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+
+- name: Bug Heaven Easy Wrangler Low Prize Text
+  standard:
+    "Time's up! That was pretty decent,\nI have to admit.
+    \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under five minutes>>."
+
+- name: Bug Heaven Easy Beginner Mid Prize Text
+  standard:
+    "Next time, pull out all the stops and\ntry to finish in <r<less than three minutes>>.
+    \n\n\nOh, and your prize this time is \n<r<50 Rupees>>!"
+
+- name: Bug Heaven Easy Wrangler Mid Prize Text
+  standard:
+    "OK! Time! Hey... This is incredible!
+    \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under three\nminutes>>.
+    \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
+
+- name: Bug Heaven Hard No Prize Text
+  standard:
+    "That's it—time's up! Umm...you've still\ngot A LOT of improving to do.
+    \n\n\nFor starters, shoot for getting your\ntime <r<under three minutes>>. Just keep on\npracticing.
+    \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+
+- name: Bug Heaven Hard Beginner Low Prize Text
+  standard:
+    "Next time, try for <r<under two minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+
+- name: Bug Heaven Hard Wrangler Low Prize Text
+  standard:
+    "Time's up! That was pretty decent,\nI have to admit.
+    \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under two minutes>>."
+
+- name: Bug Heaven Hard Beginner Mid Prize Text
+  standard:
+    "Next time, pull out all the stops and\ntry to finish in <r<less than one minute>>.
+    \n\n\nOh, and your prize this time is \n<r<50 Rupees>>!"
+
+- name: Bug Heaven Hard Wrangler Mid Prize Text
+  standard:
+    "OK! Time! Hey... This is incredible!
+    \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under one\nminute>>.
+    \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
