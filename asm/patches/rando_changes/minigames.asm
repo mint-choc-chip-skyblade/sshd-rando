@@ -249,3 +249,50 @@ movk w9, #1, LSL #16
 .offset 0x710059ba68
 mov w9, #0xbf21 ; replace 300001 (5 mins) with 180001 (3 mins)
 movk w9, #2, LSL #16
+
+
+
+; Clean Cut Easy
+; ret 3
+; onlyif minigame_difficulty == easy
+.offset 0x710052fe2c
+cmp w8, #20 ; 28 -> 20
+
+; ret 2
+; onlyif minigame_difficulty == easy
+.offset 0x710052fdd4
+cmp w8, #15 ; 20 -> 15
+; onlyif minigame_difficulty == easy
+.offset 0x710052fe00
+cmp w8, #15 ; 20 -> 15
+
+; ret 1
+; onlyif minigame_difficulty == easy
+.offset 0x710052fd90
+cmp w8, #10 ; 15 -> 10
+; onlyif minigame_difficulty == easy
+.offset 0x710052fdc4
+cmp w8, #10 ; 15 -> 10
+
+
+; Clean Cut Hard
+; ret 3
+; onlyif minigame_difficulty == hard
+.offset 0x710052fe2c
+cmp w8, #43 ; 28 -> 43
+
+; ret 2
+; onlyif minigame_difficulty == hard
+.offset 0x710052fdd4
+cmp w8, #28 ; 20 -> 28
+; onlyif minigame_difficulty == hard
+.offset 0x710052fe00
+cmp w8, #28 ; 20 -> 28
+
+; ret 1
+; onlyif minigame_difficulty == hard
+.offset 0x710052fd90
+cmp w8, #20 ; 15 -> 20
+; onlyif minigame_difficulty == hard
+.offset 0x710052fdc4
+cmp w8, #20 ; 15 -> 20

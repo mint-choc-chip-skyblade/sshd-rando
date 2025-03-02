@@ -1220,6 +1220,73 @@
       param3: 109
       param4: No Sword Text
 
+  - name: Patch Clean Cut Pre-reward Switch
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 7
+    flow: {}
+    cases:
+      - 10
+      - 10
+      - 10
+      - 10
+  - name: Clean Cut Guaranteed Win Reward Choice Text
+    type: textadd
+  - name: Clean Cut Guaranteed Win Reward Choice Start
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 10
+    flow:
+      next: Show Clean Cut Guaranteed Win Reward Choice Text
+  - name: Show Clean Cut Guaranteed Win Reward Choice Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Show Clean Cut Guaranteed Win Reward Choice Switch
+      param3: 3
+      param4: Clean Cut Guaranteed Win Reward Choice Text
+  - name: Show Clean Cut Guaranteed Win Reward Choice Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 15 # Rare Treasure
+      - 14 # Uncommon Treasure
+  - name: Remove Text after Uncommon Treasure Reward
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 14
+    flow:
+      next: 27
+
+  - name: Clean Cut Easy No Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 23
+  - name: Clean Cut Easy Low Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 25
+  - name: Clean Cut Easy Mid Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 27
+  
+  - name: Clean Cut Hard No Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 23
+  - name: Clean Cut Hard Low Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 25
+  - name: Clean Cut Hard Mid Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 27
+
 110-DivingGame:
   - name: Require Scrapper before starting quest
     type: flowpatch

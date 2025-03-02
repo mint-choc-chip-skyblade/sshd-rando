@@ -6228,3 +6228,33 @@
     "OK! Time! Hey... This is incredible!
     \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under one\nminute>>.
     \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
+
+- name: Clean Cut Guaranteed Win Reward Choice Text
+  standard:
+    "You want an <r<Uncommon Treasure>>\nor a <r<Rare Treasure>>?[1]Rare.[2]Uncommon."
+
+- name: Clean Cut Easy No Prize Text
+  standard:
+    "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<10 cuts>>!
+    \n\nSharpen up your concentration!\nThere's no prize for sloppy slicin'."
+
+- name: Clean Cut Easy Low Prize Text
+  standard:
+    "Next time around, shoot for <r<15 cuts>>."
+
+- name: Clean Cut Easy Mid Prize Text
+  standard:
+    "I want to see you do <r<20 chops>> next time!"
+
+- name: Clean Cut Hard No Prize Text
+  standard:
+    "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<20 cuts>>!
+    \n\nSharpen up your concentration!\nThere's no prize for sloppy slicin'."
+
+- name: Clean Cut Hard Low Prize Text
+  standard:
+    "Next time around, shoot for <r<28 cuts>>."
+
+- name: Clean Cut Hard Mid Prize Text
+  standard:
+    "I want to see you do <r<43 chops>> next time!"
