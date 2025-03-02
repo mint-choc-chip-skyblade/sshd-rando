@@ -5764,6 +5764,14 @@ D201_1: # Fire Sanctuary B (inner)
     layer: 0
     room: 1
     objtype: STAG
+  - name: Remove npctkes in 2nd trapped mogma room
+    type: objdelete
+    ids:
+      - 0xFC09 # 2nd trapped mogma text
+      - 0xFC16 # can't leave text
+    layer: 0
+    room: 2
+    objtype: OBJ
 
 B201: # Ghirahim 2 Boss Room
   # Change FS beaten flag from 13 to 901
