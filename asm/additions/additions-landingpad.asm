@@ -255,6 +255,12 @@ b.eq remove_vanilla_tms_sword_pull_textbox
 cmp w8, #78
 b.eq fix_boko_base_sword_model
 
+cmp w8, #79
+b.eq check_local_sceneflag
+
+cmp w8, #80
+b.eq spawn_tree_of_life_item
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

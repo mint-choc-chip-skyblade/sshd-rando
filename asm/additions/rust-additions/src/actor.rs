@@ -1259,9 +1259,9 @@ pub fn spawn_actor(
 
         // Reset globals
         ACTORBASE_PARAM2 = 0xFFFFFFFF;
-        ACTOR_PARAM_POS = core::ptr::null_mut();
-        ACTOR_PARAM_ROT = core::ptr::null_mut();
-        ACTOR_PARAM_SCALE = core::ptr::null_mut();
+        // ACTOR_PARAM_POS = core::ptr::null_mut();
+        // ACTOR_PARAM_ROT = core::ptr::null_mut();
+        // ACTOR_PARAM_SCALE = core::ptr::null_mut();
         return actor;
     }
 }
