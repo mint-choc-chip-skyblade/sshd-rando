@@ -1718,6 +1718,32 @@
     index: 68
     flow:
       param2: 925
+  
+  - name: Bug Heaven Guaranteed Win Reward Choice Text
+    type: textadd
+  - name: Bug Heaven Guaranteed Win Reward Choice Start
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 84
+    flow:
+      next: Show Bug Heaven Guaranteed Win Reward Choice Text
+  - name: Show Bug Heaven Guaranteed Win Reward Choice Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Show Bug Heaven Guaranteed Win Reward Choice Switch
+      param3: 3
+      param4: Bug Heaven Guaranteed Win Reward Choice Text
+  - name: Show Bug Heaven Guaranteed Win Reward Choice Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 85 # Rare Bugs
+      - 82 # Uncommon Bugs
+      - 81 # 80 Rupees
 
   - name: Bug Heaven Easy No Prize Text
     onlyif: minigame_difficulty == easy
