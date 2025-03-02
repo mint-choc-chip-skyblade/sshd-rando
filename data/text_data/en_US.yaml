@@ -6138,6 +6138,10 @@
   standard: "|That/Those| there |is/are| {sold_item}.\nJust this once |it's/they're| half off!\n|It/They| can be yours for just <r<{discounted_price}>> rupees!\nWant to buy |it/them|?
              \n[1]I'll buy |it/them|![2-]No, thanks."
 
+- name: Pumpkin Archery Guaranteed Win Reward Choice Text
+  standard:
+    "Would you like <r<50 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]50 Rupees."
+
 - name: Pumpkin Archery Easy No Prize Text
   standard:
     "You scored <numeric arg0>.
@@ -6231,7 +6235,7 @@
 
 - name: Clean Cut Guaranteed Win Reward Choice Text
   standard:
-    "You want an <r<Uncommon Treasure>>\nor a <r<Rare Treasure>>?[1]Rare.[2]Uncommon."
+    "You want <r<30 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]30 Rupees."
 
 - name: Clean Cut Easy No Prize Text
   standard:

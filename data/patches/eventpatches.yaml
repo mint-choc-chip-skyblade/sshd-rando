@@ -1254,7 +1254,14 @@
     cases:
       - 15 # Rare Treasure
       - 14 # Uncommon Treasure
-  - name: Remove Text after Uncommon Treasure Reward
+      - 13 # 30 Rupees
+  - name: Remove Text after Clean Cut Rupee Reward
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 13
+    flow:
+      next: 27
+  - name: Remove Text after Clean Cut Uncommon Treasure Reward
     onlyif: minigame_difficulty == guaranteed_win
     type: flowpatch
     index: 14
@@ -1451,6 +1458,39 @@
     index: 16
     flow:
       next: -1
+
+  - name: Pumpkin Archery Guaranteed Win Reward Choice Text
+    type: textadd
+  - name: Pumpkin Archery Guaranteed Win Reward Choice Start
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 105
+    flow:
+      next: Show Pumpkin Archery Guaranteed Win Reward Choice Text
+  - name: Show Pumpkin Archery Guaranteed Win Reward Choice Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Show Pumpkin Archery Guaranteed Win Reward Choice Switch
+      param3: 3
+      param4: Pumpkin Archery Guaranteed Win Reward Choice Text
+  - name: Show Pumpkin Archery Guaranteed Win Reward Choice Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 89 # Rare Treasure
+      - 88 # Uncommon Treasure
+      - 87 # 50 Rupees
+  - name: Remove Text after Pumpkin Archery Uncommon Treasure Reward
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 88
+    flow:
+      next: 91
+
   - name: Pumpkin Archery Easy No Prize Text
     onlyif: minigame_difficulty == easy
     type: textpatch
@@ -1463,6 +1503,7 @@
     onlyif: minigame_difficulty == easy
     type: textpatch
     index: 38
+
   - name: Pumpkin Archery Hard No Prize Text
     onlyif: minigame_difficulty == hard
     type: textpatch
