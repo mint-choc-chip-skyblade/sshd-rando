@@ -3278,6 +3278,32 @@
     flow:
       next: 100
 
+  - name: Rickety Coaster Guaranteed Win Reward Choice Text
+    type: textadd
+  - name: Rickety Coaster Guaranteed Win Reward Choice Start
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 122
+    flow:
+      next: Show Rickety Coaster Guaranteed Win Reward Choice Text
+  - name: Show Rickety Coaster Guaranteed Win Reward Choice Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Show Rickety Coaster Guaranteed Win Reward Choice Switch
+      param3: 3
+      param4: Rickety Coaster Guaranteed Win Reward Choice Text
+  - name: Show Rickety Coaster Guaranteed Win Reward Choice Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 76 # Rare Treasure
+      - 6 # Uncommon Treasure
+      - 5 # 20 Rupees
+
 460-RairyuMinigame:
   - name: Avoid Boss rush Entry
     type: entryadd

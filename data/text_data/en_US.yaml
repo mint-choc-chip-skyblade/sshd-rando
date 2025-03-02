@@ -6180,6 +6180,10 @@
   standard:
     "It would be great to see you hit <r<800\npoints>> and set a record next time.\nGive it your best shot!"
 
+- name: Rickety Coaster Guaranteed Win Reward Choice Text
+  standard:
+    "Would you like <r<20 Rupees>>, an <r<Uncommon\nTreasure>>, or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]20 Rupees."
+
 # Pretty sure this text is actually impossible to get cos there's a hard 10 min cap on the timer.
 - name: Bug Heaven Easy No Prize Text
   standard:
