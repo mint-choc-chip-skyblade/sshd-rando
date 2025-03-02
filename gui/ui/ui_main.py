@@ -428,6 +428,175 @@ class Ui_main_window(object):
         self.gameplay_tab.setSizePolicy(sizePolicy1)
         self.gridLayout_9 = QGridLayout(self.gameplay_tab)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
+        self.groupBox = QGroupBox(self.gameplay_tab)
+        self.groupBox.setObjectName(u"groupBox")
+        self.verticalLayout_43 = QVBoxLayout(self.groupBox)
+        self.verticalLayout_43.setObjectName(u"verticalLayout_43")
+        self.setting_spawn_hearts = RandoTriStateCheckBox(self.groupBox)
+        self.setting_spawn_hearts.setObjectName(u"setting_spawn_hearts")
+
+        self.verticalLayout_43.addWidget(self.setting_spawn_hearts)
+
+        self.setting_upgraded_skyward_strike = RandoTriStateCheckBox(self.groupBox)
+        self.setting_upgraded_skyward_strike.setObjectName(u"setting_upgraded_skyward_strike")
+
+        self.verticalLayout_43.addWidget(self.setting_upgraded_skyward_strike)
+
+        self.setting_faster_air_meter_depletion = RandoTriStateCheckBox(self.groupBox)
+        self.setting_faster_air_meter_depletion.setObjectName(u"setting_faster_air_meter_depletion")
+
+        self.verticalLayout_43.addWidget(self.setting_faster_air_meter_depletion)
+
+        self.damage_multiplier_layout = QHBoxLayout()
+        self.damage_multiplier_layout.setObjectName(u"damage_multiplier_layout")
+        self.damage_multiplier_label = QLabel(self.groupBox)
+        self.damage_multiplier_label.setObjectName(u"damage_multiplier_label")
+
+        self.damage_multiplier_layout.addWidget(self.damage_multiplier_label)
+
+        self.setting_damage_multiplier = QSpinBox(self.groupBox)
+        self.setting_damage_multiplier.setObjectName(u"setting_damage_multiplier")
+        sizePolicy6.setHeightForWidth(self.setting_damage_multiplier.sizePolicy().hasHeightForWidth())
+        self.setting_damage_multiplier.setSizePolicy(sizePolicy6)
+
+        self.damage_multiplier_layout.addWidget(self.setting_damage_multiplier)
+
+
+        self.verticalLayout_43.addLayout(self.damage_multiplier_layout)
+
+        self.ammo_availability_label = QLabel(self.groupBox)
+        self.ammo_availability_label.setObjectName(u"ammo_availability_label")
+
+        self.verticalLayout_43.addWidget(self.ammo_availability_label)
+
+        self.setting_ammo_availability = QComboBox(self.groupBox)
+        self.setting_ammo_availability.setObjectName(u"setting_ammo_availability")
+
+        self.verticalLayout_43.addWidget(self.setting_ammo_availability)
+
+        self.peatrice_conversations_layout = QHBoxLayout()
+        self.peatrice_conversations_layout.setSpacing(0)
+        self.peatrice_conversations_layout.setObjectName(u"peatrice_conversations_layout")
+        self.peatrice_conversations_label = QLabel(self.groupBox)
+        self.peatrice_conversations_label.setObjectName(u"peatrice_conversations_label")
+        sizePolicy.setHeightForWidth(self.peatrice_conversations_label.sizePolicy().hasHeightForWidth())
+        self.peatrice_conversations_label.setSizePolicy(sizePolicy)
+
+        self.peatrice_conversations_layout.addWidget(self.peatrice_conversations_label)
+
+        self.setting_peatrice_conversations = QSpinBox(self.groupBox)
+        self.setting_peatrice_conversations.setObjectName(u"setting_peatrice_conversations")
+        sizePolicy6.setHeightForWidth(self.setting_peatrice_conversations.sizePolicy().hasHeightForWidth())
+        self.setting_peatrice_conversations.setSizePolicy(sizePolicy6)
+
+        self.peatrice_conversations_layout.addWidget(self.setting_peatrice_conversations)
+
+
+        self.verticalLayout_43.addLayout(self.peatrice_conversations_layout)
+
+        self.setting_full_wallet_upgrades = RandoTriStateCheckBox(self.groupBox)
+        self.setting_full_wallet_upgrades.setObjectName(u"setting_full_wallet_upgrades")
+
+        self.verticalLayout_43.addWidget(self.setting_full_wallet_upgrades)
+
+        self.setting_skip_harp_playing = RandoTriStateCheckBox(self.groupBox)
+        self.setting_skip_harp_playing.setObjectName(u"setting_skip_harp_playing")
+
+        self.verticalLayout_43.addWidget(self.setting_skip_harp_playing)
+
+        self.minigame_difficulty_label = QLabel(self.groupBox)
+        self.minigame_difficulty_label.setObjectName(u"minigame_difficulty_label")
+
+        self.verticalLayout_43.addWidget(self.minigame_difficulty_label)
+
+        self.setting_minigame_difficulty = QComboBox(self.groupBox)
+        self.setting_minigame_difficulty.setObjectName(u"setting_minigame_difficulty")
+
+        self.verticalLayout_43.addWidget(self.setting_minigame_difficulty)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 315, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_43.addItem(self.verticalSpacer_2)
+
+
+        self.gridLayout_9.addWidget(self.groupBox, 0, 2, 1, 1)
+
+        self.hint_placements_group_box = QGroupBox(self.gameplay_tab)
+        self.hint_placements_group_box.setObjectName(u"hint_placements_group_box")
+        self.verticalLayout_24 = QVBoxLayout(self.hint_placements_group_box)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.setting_randomize_shop_prices = RandoTriStateCheckBox(self.hint_placements_group_box)
+        self.setting_randomize_shop_prices.setObjectName(u"setting_randomize_shop_prices")
+
+        self.verticalLayout_24.addWidget(self.setting_randomize_shop_prices)
+
+        self.setting_random_bottle_contents = RandoTriStateCheckBox(self.hint_placements_group_box)
+        self.setting_random_bottle_contents.setObjectName(u"setting_random_bottle_contents")
+
+        self.verticalLayout_24.addWidget(self.setting_random_bottle_contents)
+
+        self.random_trial_object_positions_label = QLabel(self.hint_placements_group_box)
+        self.random_trial_object_positions_label.setObjectName(u"random_trial_object_positions_label")
+
+        self.verticalLayout_24.addWidget(self.random_trial_object_positions_label)
+
+        self.setting_random_trial_object_positions = QComboBox(self.hint_placements_group_box)
+        self.setting_random_trial_object_positions.setObjectName(u"setting_random_trial_object_positions")
+
+        self.verticalLayout_24.addWidget(self.setting_random_trial_object_positions)
+
+        self.trap_mode_label = QLabel(self.hint_placements_group_box)
+        self.trap_mode_label.setObjectName(u"trap_mode_label")
+
+        self.verticalLayout_24.addWidget(self.trap_mode_label)
+
+        self.setting_trap_mode = QComboBox(self.hint_placements_group_box)
+        self.setting_trap_mode.setObjectName(u"setting_trap_mode")
+
+        self.verticalLayout_24.addWidget(self.setting_trap_mode)
+
+        self.trappable_items_label = QLabel(self.hint_placements_group_box)
+        self.trappable_items_label.setObjectName(u"trappable_items_label")
+
+        self.verticalLayout_24.addWidget(self.trappable_items_label)
+
+        self.setting_trappable_items = QComboBox(self.hint_placements_group_box)
+        self.setting_trappable_items.setObjectName(u"setting_trappable_items")
+
+        self.verticalLayout_24.addWidget(self.setting_trappable_items)
+
+        self.setting_burn_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
+        self.setting_burn_traps.setObjectName(u"setting_burn_traps")
+
+        self.verticalLayout_24.addWidget(self.setting_burn_traps)
+
+        self.setting_curse_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
+        self.setting_curse_traps.setObjectName(u"setting_curse_traps")
+
+        self.verticalLayout_24.addWidget(self.setting_curse_traps)
+
+        self.setting_noise_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
+        self.setting_noise_traps.setObjectName(u"setting_noise_traps")
+
+        self.verticalLayout_24.addWidget(self.setting_noise_traps)
+
+        self.setting_health_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
+        self.setting_health_traps.setObjectName(u"setting_health_traps")
+
+        self.verticalLayout_24.addWidget(self.setting_health_traps)
+
+        self.setting_groose_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
+        self.setting_groose_traps.setObjectName(u"setting_groose_traps")
+
+        self.verticalLayout_24.addWidget(self.setting_groose_traps)
+
+        self.hint_placements_vspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_24.addItem(self.hint_placements_vspacer)
+
+
+        self.gridLayout_9.addWidget(self.hint_placements_group_box, 0, 3, 1, 1)
+
         self.dungeons_group_box = QGroupBox(self.gameplay_tab)
         self.dungeons_group_box.setObjectName(u"dungeons_group_box")
         self.verticalLayout_16 = QVBoxLayout(self.dungeons_group_box)
@@ -488,109 +657,6 @@ class Ui_main_window(object):
 
 
         self.gridLayout_9.addWidget(self.dungeons_group_box, 0, 1, 1, 1)
-
-        self.tweaks_group_box = QGroupBox(self.gameplay_tab)
-        self.tweaks_group_box.setObjectName(u"tweaks_group_box")
-        self.verticalLayout = QVBoxLayout(self.tweaks_group_box)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.setting_spawn_hearts = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_spawn_hearts.setObjectName(u"setting_spawn_hearts")
-
-        self.verticalLayout.addWidget(self.setting_spawn_hearts)
-
-        self.setting_upgraded_skyward_strike = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_upgraded_skyward_strike.setObjectName(u"setting_upgraded_skyward_strike")
-
-        self.verticalLayout.addWidget(self.setting_upgraded_skyward_strike)
-
-        self.setting_faster_air_meter_depletion = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_faster_air_meter_depletion.setObjectName(u"setting_faster_air_meter_depletion")
-
-        self.verticalLayout.addWidget(self.setting_faster_air_meter_depletion)
-
-        self.damage_multiplier_layout = QHBoxLayout()
-        self.damage_multiplier_layout.setObjectName(u"damage_multiplier_layout")
-        self.damage_multiplier_label = QLabel(self.tweaks_group_box)
-        self.damage_multiplier_label.setObjectName(u"damage_multiplier_label")
-
-        self.damage_multiplier_layout.addWidget(self.damage_multiplier_label)
-
-        self.setting_damage_multiplier = QSpinBox(self.tweaks_group_box)
-        self.setting_damage_multiplier.setObjectName(u"setting_damage_multiplier")
-        sizePolicy6.setHeightForWidth(self.setting_damage_multiplier.sizePolicy().hasHeightForWidth())
-        self.setting_damage_multiplier.setSizePolicy(sizePolicy6)
-
-        self.damage_multiplier_layout.addWidget(self.setting_damage_multiplier)
-
-
-        self.verticalLayout.addLayout(self.damage_multiplier_layout)
-
-        self.ammo_availability_label = QLabel(self.tweaks_group_box)
-        self.ammo_availability_label.setObjectName(u"ammo_availability_label")
-
-        self.verticalLayout.addWidget(self.ammo_availability_label)
-
-        self.setting_ammo_availability = QComboBox(self.tweaks_group_box)
-        self.setting_ammo_availability.setObjectName(u"setting_ammo_availability")
-
-        self.verticalLayout.addWidget(self.setting_ammo_availability)
-
-        self.peatrice_conversations_layout = QHBoxLayout()
-        self.peatrice_conversations_layout.setSpacing(0)
-        self.peatrice_conversations_layout.setObjectName(u"peatrice_conversations_layout")
-        self.peatrice_conversations_label = QLabel(self.tweaks_group_box)
-        self.peatrice_conversations_label.setObjectName(u"peatrice_conversations_label")
-        sizePolicy.setHeightForWidth(self.peatrice_conversations_label.sizePolicy().hasHeightForWidth())
-        self.peatrice_conversations_label.setSizePolicy(sizePolicy)
-
-        self.peatrice_conversations_layout.addWidget(self.peatrice_conversations_label)
-
-        self.setting_peatrice_conversations = QSpinBox(self.tweaks_group_box)
-        self.setting_peatrice_conversations.setObjectName(u"setting_peatrice_conversations")
-        sizePolicy6.setHeightForWidth(self.setting_peatrice_conversations.sizePolicy().hasHeightForWidth())
-        self.setting_peatrice_conversations.setSizePolicy(sizePolicy6)
-
-        self.peatrice_conversations_layout.addWidget(self.setting_peatrice_conversations)
-
-
-        self.verticalLayout.addLayout(self.peatrice_conversations_layout)
-
-        self.setting_randomize_shop_prices = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_randomize_shop_prices.setObjectName(u"setting_randomize_shop_prices")
-
-        self.verticalLayout.addWidget(self.setting_randomize_shop_prices)
-
-        self.setting_random_bottle_contents = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_random_bottle_contents.setObjectName(u"setting_random_bottle_contents")
-
-        self.verticalLayout.addWidget(self.setting_random_bottle_contents)
-
-        self.setting_full_wallet_upgrades = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_full_wallet_upgrades.setObjectName(u"setting_full_wallet_upgrades")
-
-        self.verticalLayout.addWidget(self.setting_full_wallet_upgrades)
-
-        self.setting_skip_harp_playing = RandoTriStateCheckBox(self.tweaks_group_box)
-        self.setting_skip_harp_playing.setObjectName(u"setting_skip_harp_playing")
-
-        self.verticalLayout.addWidget(self.setting_skip_harp_playing)
-
-        self.random_trial_object_positions_label = QLabel(self.tweaks_group_box)
-        self.random_trial_object_positions_label.setObjectName(u"random_trial_object_positions_label")
-
-        self.verticalLayout.addWidget(self.random_trial_object_positions_label)
-
-        self.setting_random_trial_object_positions = QComboBox(self.tweaks_group_box)
-        self.setting_random_trial_object_positions.setObjectName(u"setting_random_trial_object_positions")
-
-        self.verticalLayout.addWidget(self.setting_random_trial_object_positions)
-
-        self.tweaks_vspacer = QSpacerItem(20, 148, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout.addItem(self.tweaks_vspacer)
-
-
-        self.gridLayout_9.addWidget(self.tweaks_group_box, 0, 3, 1, 1)
 
         self.beat_the_game_group_box = QGroupBox(self.gameplay_tab)
         self.beat_the_game_group_box.setObjectName(u"beat_the_game_group_box")
@@ -655,62 +721,6 @@ class Ui_main_window(object):
 
 
         self.gridLayout_9.addWidget(self.beat_the_game_group_box, 0, 0, 1, 1)
-
-        self.hint_placements_group_box = QGroupBox(self.gameplay_tab)
-        self.hint_placements_group_box.setObjectName(u"hint_placements_group_box")
-        self.verticalLayout_24 = QVBoxLayout(self.hint_placements_group_box)
-        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
-        self.trap_mode_label = QLabel(self.hint_placements_group_box)
-        self.trap_mode_label.setObjectName(u"trap_mode_label")
-
-        self.verticalLayout_24.addWidget(self.trap_mode_label)
-
-        self.setting_trap_mode = QComboBox(self.hint_placements_group_box)
-        self.setting_trap_mode.setObjectName(u"setting_trap_mode")
-
-        self.verticalLayout_24.addWidget(self.setting_trap_mode)
-
-        self.trappable_items_label = QLabel(self.hint_placements_group_box)
-        self.trappable_items_label.setObjectName(u"trappable_items_label")
-
-        self.verticalLayout_24.addWidget(self.trappable_items_label)
-
-        self.setting_trappable_items = QComboBox(self.hint_placements_group_box)
-        self.setting_trappable_items.setObjectName(u"setting_trappable_items")
-
-        self.verticalLayout_24.addWidget(self.setting_trappable_items)
-
-        self.setting_burn_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
-        self.setting_burn_traps.setObjectName(u"setting_burn_traps")
-
-        self.verticalLayout_24.addWidget(self.setting_burn_traps)
-
-        self.setting_curse_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
-        self.setting_curse_traps.setObjectName(u"setting_curse_traps")
-
-        self.verticalLayout_24.addWidget(self.setting_curse_traps)
-
-        self.setting_noise_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
-        self.setting_noise_traps.setObjectName(u"setting_noise_traps")
-
-        self.verticalLayout_24.addWidget(self.setting_noise_traps)
-
-        self.setting_health_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
-        self.setting_health_traps.setObjectName(u"setting_health_traps")
-
-        self.verticalLayout_24.addWidget(self.setting_health_traps)
-
-        self.setting_groose_traps = RandoTriStateCheckBox(self.hint_placements_group_box)
-        self.setting_groose_traps.setObjectName(u"setting_groose_traps")
-
-        self.verticalLayout_24.addWidget(self.setting_groose_traps)
-
-        self.hint_placements_vspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_24.addItem(self.hint_placements_vspacer)
-
-
-        self.gridLayout_9.addWidget(self.hint_placements_group_box, 0, 2, 1, 1)
 
         self.gridLayout_9.setColumnStretch(0, 1)
         self.gridLayout_9.setColumnStretch(1, 1)
@@ -2487,30 +2497,30 @@ class Ui_main_window(object):
         self.other_mods_group_box.setObjectName(u"other_mods_group_box")
         sizePolicy.setHeightForWidth(self.other_mods_group_box.sizePolicy().hasHeightForWidth())
         self.other_mods_group_box.setSizePolicy(sizePolicy)
-        self.verticalLayout_38 = QVBoxLayout(self.other_mods_group_box)
-        self.verticalLayout_38.setObjectName(u"verticalLayout_38")
+        self.verticalLayout_381 = QVBoxLayout(self.other_mods_group_box)
+        self.verticalLayout_381.setObjectName(u"verticalLayout_381")
         self.other_mods_explanation_text = QLabel(self.other_mods_group_box)
         self.other_mods_explanation_text.setObjectName(u"other_mods_explanation_text")
         self.other_mods_explanation_text.setWordWrap(True)
 
-        self.verticalLayout_38.addWidget(self.other_mods_explanation_text)
+        self.verticalLayout_381.addWidget(self.other_mods_explanation_text)
 
         self.refresh_mod_list_button = QPushButton(self.other_mods_group_box)
         self.refresh_mod_list_button.setObjectName(u"refresh_mod_list_button")
 
-        self.verticalLayout_38.addWidget(self.refresh_mod_list_button)
+        self.verticalLayout_381.addWidget(self.refresh_mod_list_button)
 
         self.other_mods_scroll_area = QScrollArea(self.other_mods_group_box)
         self.other_mods_scroll_area.setObjectName(u"other_mods_scroll_area")
         self.other_mods_scroll_area.setWidgetResizable(True)
         self.other_mods_scroll_widget = QWidget()
         self.other_mods_scroll_widget.setObjectName(u"other_mods_scroll_widget")
-        self.other_mods_scroll_widget.setGeometry(QRect(0, 0, 306, 336))
+        self.other_mods_scroll_widget.setGeometry(QRect(0, 0, 310, 344))
         self.other_mods_scroll_layout = QVBoxLayout(self.other_mods_scroll_widget)
         self.other_mods_scroll_layout.setObjectName(u"other_mods_scroll_layout")
         self.other_mods_scroll_area.setWidget(self.other_mods_scroll_widget)
 
-        self.verticalLayout_38.addWidget(self.other_mods_scroll_area)
+        self.verticalLayout_381.addWidget(self.other_mods_scroll_area)
 
 
         self.horizontalLayout_4.addWidget(self.other_mods_group_box)
@@ -2843,7 +2853,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 340))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2986,7 +2996,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(3)
+        self.tab_widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3026,24 +3036,33 @@ class Ui_main_window(object):
         self.presets_save_new_button.setText(QCoreApplication.translate("main_window", u"Save New", None))
         self.presets_apply_button.setText(QCoreApplication.translate("main_window", u"Apply", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.getting_started_tab), QCoreApplication.translate("main_window", u"Getting Started", None))
-        self.dungeons_group_box.setTitle(QCoreApplication.translate("main_window", u"Dungeon Items", None))
-        self.small_keys_label.setText(QCoreApplication.translate("main_window", u"Small Keys", None))
-        self.boss_keys_label.setText(QCoreApplication.translate("main_window", u"Boss Keys", None))
-        self.map_mode_label.setText(QCoreApplication.translate("main_window", u"Dungeon Maps", None))
-        self.lanayru_caves_keys_label.setText(QCoreApplication.translate("main_window", u"Lanayru Caves Small Key", None))
-        self.boss_key_puzzles_label.setText(QCoreApplication.translate("main_window", u"Boss Key Puzzles", None))
-        self.tweaks_group_box.setTitle(QCoreApplication.translate("main_window", u"Tweaks", None))
+        self.groupBox.setTitle(QCoreApplication.translate("main_window", u"Convenience Tweaks", None))
         self.setting_spawn_hearts.setText(QCoreApplication.translate("main_window", u"Spawn Hearts and Heart Flowers", None))
         self.setting_upgraded_skyward_strike.setText(QCoreApplication.translate("main_window", u"Upgraded Skyward Strike", None))
         self.setting_faster_air_meter_depletion.setText(QCoreApplication.translate("main_window", u"Faster Air Meter Depletion", None))
         self.damage_multiplier_label.setText(QCoreApplication.translate("main_window", u"Damage Multiplier", None))
         self.ammo_availability_label.setText(QCoreApplication.translate("main_window", u"Ammo Availability", None))
         self.peatrice_conversations_label.setText(QCoreApplication.translate("main_window", u"Peatrice Conversations", None))
-        self.setting_randomize_shop_prices.setText(QCoreApplication.translate("main_window", u"Randomize Shop Prices", None))
-        self.setting_random_bottle_contents.setText(QCoreApplication.translate("main_window", u"Random Bottle Contents", None))
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
         self.setting_skip_harp_playing.setText(QCoreApplication.translate("main_window", u"Skip Harp Playing", None))
+        self.minigame_difficulty_label.setText(QCoreApplication.translate("main_window", u"Minigame Difficulty", None))
+        self.hint_placements_group_box.setTitle(QCoreApplication.translate("main_window", u"Tweaks and Traps", None))
+        self.setting_randomize_shop_prices.setText(QCoreApplication.translate("main_window", u"Randomize Shop Prices", None))
+        self.setting_random_bottle_contents.setText(QCoreApplication.translate("main_window", u"Random Bottle Contents", None))
         self.random_trial_object_positions_label.setText(QCoreApplication.translate("main_window", u"Random Trial Object Positions", None))
+        self.trap_mode_label.setText(QCoreApplication.translate("main_window", u"Trap Mode", None))
+        self.trappable_items_label.setText(QCoreApplication.translate("main_window", u"Trappable Items", None))
+        self.setting_burn_traps.setText(QCoreApplication.translate("main_window", u"Burn Traps", None))
+        self.setting_curse_traps.setText(QCoreApplication.translate("main_window", u"Curse Traps", None))
+        self.setting_noise_traps.setText(QCoreApplication.translate("main_window", u"Noise Traps", None))
+        self.setting_health_traps.setText(QCoreApplication.translate("main_window", u"Health Traps", None))
+        self.setting_groose_traps.setText(QCoreApplication.translate("main_window", u"Groose Traps", None))
+        self.dungeons_group_box.setTitle(QCoreApplication.translate("main_window", u"Dungeon Items", None))
+        self.small_keys_label.setText(QCoreApplication.translate("main_window", u"Small Keys", None))
+        self.boss_keys_label.setText(QCoreApplication.translate("main_window", u"Boss Keys", None))
+        self.map_mode_label.setText(QCoreApplication.translate("main_window", u"Dungeon Maps", None))
+        self.lanayru_caves_keys_label.setText(QCoreApplication.translate("main_window", u"Lanayru Caves Small Key", None))
+        self.boss_key_puzzles_label.setText(QCoreApplication.translate("main_window", u"Boss Key Puzzles", None))
         self.beat_the_game_group_box.setTitle(QCoreApplication.translate("main_window", u"Beat the Game", None))
         self.got_sword_requirement_label.setText(QCoreApplication.translate("main_window", u"Gate of Time Sword Requirement", None))
         self.required_dungeons_label.setText(QCoreApplication.translate("main_window", u"Required Dungeons", None))
@@ -3052,14 +3071,6 @@ class Ui_main_window(object):
         self.setting_skip_horde.setText(QCoreApplication.translate("main_window", u"Skip The Horde Fight", None))
         self.setting_skip_g3.setText(QCoreApplication.translate("main_window", u"Skip Ghirahim 3 Fight", None))
         self.setting_skip_demise.setText(QCoreApplication.translate("main_window", u"Skip Demise Fight", None))
-        self.hint_placements_group_box.setTitle(QCoreApplication.translate("main_window", u"Traps", None))
-        self.trap_mode_label.setText(QCoreApplication.translate("main_window", u"Trap Mode", None))
-        self.trappable_items_label.setText(QCoreApplication.translate("main_window", u"Trappable Items", None))
-        self.setting_burn_traps.setText(QCoreApplication.translate("main_window", u"Burn Traps", None))
-        self.setting_curse_traps.setText(QCoreApplication.translate("main_window", u"Curse Traps", None))
-        self.setting_noise_traps.setText(QCoreApplication.translate("main_window", u"Noise Traps", None))
-        self.setting_health_traps.setText(QCoreApplication.translate("main_window", u"Health Traps", None))
-        self.setting_groose_traps.setText(QCoreApplication.translate("main_window", u"Groose Traps", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.gameplay_tab), QCoreApplication.translate("main_window", u"Gameplay", None))
         self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))
         self.setting_unlock_all_groosenator_destinations.setText(QCoreApplication.translate("main_window", u"Unlock all Groosenator Destinations", None))

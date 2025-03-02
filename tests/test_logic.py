@@ -70,7 +70,7 @@ def test_default_empty_config() -> None:
 
 
 def test_default_undefined_config() -> None:
-    # This file does not exist intentionally to test that it behaves without it
+    # This file does not exist intentionally to test that it behaves without it.
     config_file_name = Path("default_undefined_config.yaml")
 
     config = load_config_from_file(
@@ -226,8 +226,8 @@ def test_no_logic_config() -> None:
 
 
 def test_item_pool_minimal() -> None:
-    # The minimal item pool can make the 2 Ancient Harbour Crown and the 2
-    # Pirate Stronghold Pillar rupee checks impossible to reach
+    # The minimal item pool can make the 2 Ancient Harbour Crown and the 2 Pirate Stronghold
+    # Pillar rupee checks impossible to reach. And now the Bug Heaven minigame too.
     config_test("item_pool_minimal.yaml", assert_all_locations_reachable=False)
 
 
@@ -237,6 +237,26 @@ def test_item_pool_extra() -> None:
 
 def test_item_pool_plentiful() -> None:
     config_test("item_pool_plentiful.yaml")
+
+
+def test_minigame_difficulty_guaranteed_win() -> None:
+    # The minigame_difficulty being set to guaranteed_win or easy can make the 2 Bug Heaven
+    # minigame check impossible to reach.
+    config_test("minigames_guaranteed_win.yaml", assert_all_locations_reachable=False)
+
+
+def test_minigame_difficulty_easy() -> None:
+    # The minigame_difficulty being set to guaranteed_win or easy can make the 2 Bug Heaven
+    # minigame check impossible to reach.
+    config_test("minigames_easy.yaml", assert_all_locations_reachable=False)
+
+
+def test_minigame_difficulty_vanilla() -> None:
+    config_test("minigames_vanilla.yaml")
+
+
+def test_minigame_difficulty_hard() -> None:
+    config_test("minigames_hard.yaml")
 
 
 def test_rupee_shuffle_off() -> None:

@@ -12,10 +12,13 @@ World 1:
   hidden_item_shuffle: 'on'
   rupee_shuffle: advanced
   underground_rupee_shuffle: 'on'
-  beedle_shop_shuffle: junk_only
+  beedle_shop_shuffle: randomized
   goddess_chest_shuffle: 'on'
+  trial_treasure_shuffle: '0'
+  tadtone_shuffle: 'off'
   full_wallet_upgrades: 'off'
   skip_harp_playing: 'off'
+  random_trial_object_positions: none
   randomize_skykeep_layout: 'off'
   peatrice_conversations: '0'
   small_keys: anywhere
@@ -57,6 +60,7 @@ World 1:
   required_dungeons: '7'
   dungeons_include_sky_keep: 'on'
   empty_unrequired_dungeons: 'off'
+  randomize_shop_prices: 'on'
   random_bottle_contents: 'on'
   trap_mode: trapsome
   trappable_items: any_items
@@ -73,6 +77,7 @@ World 1:
   spawn_hearts: 'on'
   damage_multiplier: '1'
   unlock_all_groosenator_destinations: 'off'
+  minigame_difficulty: easy
   language: english_us
   tunic_swap: 'off'
   lightning_skyward_strike: 'off'
@@ -169,3 +174,4 @@ World 1:
   - []
   - []
   - []
+  other_mods: []

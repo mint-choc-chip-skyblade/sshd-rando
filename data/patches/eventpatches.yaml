@@ -1302,6 +1302,80 @@
       param3: 109
       param4: No Sword Text
 
+  - name: Patch Clean Cut Pre-reward Switch
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 7
+    flow: {}
+    cases:
+      - 10
+      - 10
+      - 10
+      - 10
+  - name: Clean Cut Guaranteed Win Reward Choice Text
+    type: textadd
+  - name: Clean Cut Guaranteed Win Reward Choice Start
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 10
+    flow:
+      next: Show Clean Cut Guaranteed Win Reward Choice Text
+  - name: Show Clean Cut Guaranteed Win Reward Choice Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Show Clean Cut Guaranteed Win Reward Choice Switch
+      param3: 3
+      param4: Clean Cut Guaranteed Win Reward Choice Text
+  - name: Show Clean Cut Guaranteed Win Reward Choice Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 15 # Rare Treasure
+      - 14 # Uncommon Treasure
+      - 13 # 30 Rupees
+  - name: Remove Text after Clean Cut Rupee Reward
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 13
+    flow:
+      next: 27
+  - name: Remove Text after Clean Cut Uncommon Treasure Reward
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 14
+    flow:
+      next: 27
+
+  - name: Clean Cut Easy No Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 23
+  - name: Clean Cut Easy Low Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 25
+  - name: Clean Cut Easy Mid Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 27
+  
+  - name: Clean Cut Hard No Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 23
+  - name: Clean Cut Hard Low Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 25
+  - name: Clean Cut Hard Mid Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 27
+
 110-DivingGame:
   - name: Require Scrapper before starting quest
     type: flowpatch
@@ -1466,6 +1540,64 @@
     index: 16
     flow:
       next: -1
+
+  - name: Pumpkin Archery Guaranteed Win Reward Choice Text
+    type: textadd
+  - name: Pumpkin Archery Guaranteed Win Reward Choice Start
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 105
+    flow:
+      next: Show Pumpkin Archery Guaranteed Win Reward Choice Text
+  - name: Show Pumpkin Archery Guaranteed Win Reward Choice Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Show Pumpkin Archery Guaranteed Win Reward Choice Switch
+      param3: 3
+      param4: Pumpkin Archery Guaranteed Win Reward Choice Text
+  - name: Show Pumpkin Archery Guaranteed Win Reward Choice Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 89 # Rare Treasure
+      - 88 # Uncommon Treasure
+      - 87 # 50 Rupees
+  - name: Remove Text after Pumpkin Archery Uncommon Treasure Reward
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 88
+    flow:
+      next: 91
+
+  - name: Pumpkin Archery Easy No Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 35
+  - name: Pumpkin Archery Easy Low Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 36
+  - name: Pumpkin Archery Easy Mid Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 38
+
+  - name: Pumpkin Archery Hard No Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 35
+  - name: Pumpkin Archery Hard Low Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 36
+  - name: Pumpkin Archery Hard Mid Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 38
 
 115-Town2:
   - name: Parrow's Empty Bottle
@@ -1668,6 +1800,74 @@
     index: 68
     flow:
       param2: 925
+  
+  - name: Bug Heaven Guaranteed Win Reward Choice Text
+    type: textadd
+  - name: Bug Heaven Guaranteed Win Reward Choice Start
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 84
+    flow:
+      next: Show Bug Heaven Guaranteed Win Reward Choice Text
+  - name: Show Bug Heaven Guaranteed Win Reward Choice Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Show Bug Heaven Guaranteed Win Reward Choice Switch
+      param3: 3
+      param4: Bug Heaven Guaranteed Win Reward Choice Text
+  - name: Show Bug Heaven Guaranteed Win Reward Choice Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 85 # Rare Bugs
+      - 82 # Uncommon Bugs
+      - 81 # 80 Rupees
+
+  - name: Bug Heaven Easy No Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 15
+  - name: Bug Heaven Easy Beginner Low Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 24
+  - name: Bug Heaven Easy Wrangler Low Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 16
+  - name: Bug Heaven Easy Beginner Mid Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 26
+  - name: Bug Heaven Easy Wrangler Mid Prize Text
+    onlyif: minigame_difficulty == easy
+    type: textpatch
+    index: 18
+
+  - name: Bug Heaven Hard No Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 15
+  - name: Bug Heaven Hard Beginner Low Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 24
+  - name: Bug Heaven Hard Wrangler Low Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 16
+  - name: Bug Heaven Hard Beginner Mid Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 26
+  - name: Bug Heaven Hard Wrangler Mid Prize Text
+    onlyif: minigame_difficulty == hard
+    type: textpatch
+    index: 18
 
 117-Pumpkin:
   - name: Check if Pumm should give Kina Quest Storyflag
@@ -1916,6 +2116,86 @@
       setstoryflag: 894 # Should fill bottle not create new
       param3: 1 # actually unset the flag
       next: 77
+
+  # Harp Minigame patches
+  - name: Harp Minigame Guaranteed Win Pumm
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 329
+    flow: {}
+    cases:
+      - 332
+      - 257
+  - name: Harp Minigame Easy Pumm 1
+    onlyif: minigame_difficulty == easy
+    type: flowpatch
+    index: 330
+    flow: {}
+    cases:
+      - 600
+      - 333
+      - 332
+      - 332
+  - name: Harp Minigame Easy Pumm 2
+    onlyif: minigame_difficulty == easy
+    type: flowpatch
+    index: 255
+    flow: {}
+    cases:
+      - 601
+      - 256
+      - 257
+      - 257
+  - name: Harp Minigame Hard Pumm 1
+    onlyif: minigame_difficulty == hard
+    type: flowpatch
+    index: 330
+    flow: {}
+    cases:
+      - 331
+      - 331
+      - 600
+      - 333
+  - name: Harp Minigame Hard Pumm 2
+    onlyif: minigame_difficulty == hard
+    type: flowpatch
+    index: 255
+    flow: {}
+    cases:
+      - 254
+      - 254
+      - 601
+      - 256
+  - name: Harp Minigame Guaranteed Win Kina
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 248
+    flow: {}
+    cases:
+      - 251
+      - 251
+      - 251
+      - 251
+  - name: Harp Minigame Easy Kina
+    onlyif: minigame_difficulty == easy
+    type: flowpatch
+    index: 248
+    flow: {}
+    cases:
+      - 599
+      - 250
+      - 251
+      - 251
+  - name: Harp Minigame Hard Kina
+    onlyif: minigame_difficulty == hard
+    type: flowpatch
+    index: 248
+    flow: {}
+    cases:
+      - 249
+      - 249
+      - 599
+      - 250
 
 118-Town3:
   - name: Sparrot Scrapper check
@@ -3105,6 +3385,32 @@
     type: attentionmark
     flow:
       next: 100
+
+  - name: Rickety Coaster Guaranteed Win Reward Choice Text
+    type: textadd
+  - name: Rickety Coaster Guaranteed Win Reward Choice Start
+    onlyif: minigame_difficulty == guaranteed_win
+    type: flowpatch
+    index: 122
+    flow:
+      next: Show Rickety Coaster Guaranteed Win Reward Choice Text
+  - name: Show Rickety Coaster Guaranteed Win Reward Choice Text
+    type: flowadd
+    flow:
+      type: type1
+      next: Show Rickety Coaster Guaranteed Win Reward Choice Switch
+      param3: 3
+      param4: Rickety Coaster Guaranteed Win Reward Choice Text
+  - name: Show Rickety Coaster Guaranteed Win Reward Choice Switch
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 0
+    cases:
+      - 76 # Rare Treasure
+      - 6 # Uncommon Treasure
+      - 5 # 20 Rupees
 
 460-RairyuMinigame:
   - name: Avoid Boss rush Entry
