@@ -1509,6 +1509,7 @@
   types:
     - Minigames
     - NPC
+    - Allowed Unreachable
   hint: sometimes
   Paths:
     - event/116-InsectGame/69
