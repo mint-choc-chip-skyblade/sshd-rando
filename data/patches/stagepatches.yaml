@@ -890,12 +890,29 @@ F001r:
     layer: 4
     room: 0
     objtype: OBJ
-  - name: Remove Daytime Fledge's Gift NpcTke
+  - name: Remove NPC actors
     type: objdelete
-    id: 0xFC78
+    ids:
+      - 0xFC78 # Daytime Fledge's Gift NpcTke
+      - 0xFC86 # vanilla l3 Lunch Lady
     layer: 3
     room: 0
     objtype: OBJ
+  - name: Move l1 Lunch Lady to l3
+    type: objmove
+    id: 0xFC7B
+    layer: 1
+    destlayer: 3
+    room: 0
+    objtype: OBJ
+  - name: Patch barrel params so Henya can detect it
+    type: objpatch
+    id: 0xFC83
+    layer: 3
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFF30
   - name: Move Fledge closer to Link's room at night
     type: objpatch
     id: 0xFC7D

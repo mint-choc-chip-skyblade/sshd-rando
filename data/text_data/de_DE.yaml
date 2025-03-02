@@ -1340,6 +1340,13 @@
   pretty: Ritterschule - Grus' Geschenk
   cryptic: ein <r<Geschenk von einem Freund>>
 
+# - name: Knight Academy - Deliver Barrel to Henya the Lunch Lady
+
+- name: Knight Academy - Item from Cawlin
+  standard: Ritterschule - Item von Rax
+  pretty: Ritterschule - Item von Rax
+  cryptic: einen <r<missmutigen Teenager>>
+
 - name: Knight Academy - Bonk Classroom Bookshelf
   standard: Ritterschule - Rollattacke gegen Klassenzimmerbücherregal
   pretty: Ritterschule - Rollattacke gegen Klassenzimmerbücherregal
@@ -1419,11 +1426,6 @@
   standard: Ritterschule - Hilf Grus trainieren
   pretty: Ritterschule - Hilf Grus trainieren
   cryptic: Helfen beim <r<Training eines Freundes>>
-
-- name: Knight Academy - Item from Cawlin
-  standard: Ritterschule - Item von Rax
-  pretty: Ritterschule - Item von Rax
-  cryptic: einen <r<missmutigen Teenager>>
 
 - name: Knight Academy - Deliver Cawlin's Letter
   standard: Ritterschule - Rax' Brief zustellen
