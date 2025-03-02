@@ -5764,9 +5764,11 @@ D201_1: # Fire Sanctuary B (inner)
     layer: 0
     room: 1
     objtype: STAG
-  - name: Remove npctke blocking exit from 2nd trapped mogma
+  - name: Remove npctkes in 2nd trapped mogma room
     type: objdelete
-    id: 0xFC16
+    ids:
+      - 0xFC09 # 2nd trapped mogma text
+      - 0xFC16 # can't leave text
     layer: 0
     room: 2
     objtype: OBJ
