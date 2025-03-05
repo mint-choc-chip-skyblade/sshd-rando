@@ -98,6 +98,8 @@ DEFAULT_SETTINGS = {
         "Inside the Thunderhead - Song from Levias",
         "Bug Heaven - 10 Bugs in 3 Minutes",
         "Flooded Faron Woods - Water Dragon's Reward",
+        "Lanayru Gorge - Boss Rush 4 Bosses",
+        "Lanayru Gorge - Boss Rush 8 Bosses",
         "Shipyard - Heart Stopping Rickety Coaster Track in 1'05",
         "The Goddess's Silent Realm - Collect all Tears Reward",
         "Farore's Silent Realm - Collect all Tears Reward",

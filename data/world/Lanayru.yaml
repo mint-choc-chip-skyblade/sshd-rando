@@ -371,6 +371,7 @@
   hint_region: Lanayru Gorge
   events:
     Blow Up Rock to Locked Door: Hook_Beetle or ((Bomb_Bag or (Whip and logic_cactus_bomb_whip)) and logic_bomb_throws)
+    Unlock Boss Rush: Can_Hit_Timeshift_Stone_in_Minecart and Life_Tree_Fruit
   exits:
     Lanayru Gorge Statue: Nothing
     Lanayru Gorge after Locked Door: "'Blow_Up_Rock_to_Locked_Door' and (count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed)"
@@ -385,8 +386,8 @@
     Lanayru Gorge - Bonk Wall Left of Stairs: Nothing
     Lanayru Gorge - Bonk Wall Right of Stairs: Nothing
     Lanayru Gorge - Blow Grass near Lone Boulder: "'Blow_Up_Rock_to_Locked_Door' and Gust_Bellows"
-    # Lanayru Gorge - Boss Rush -- 4 Bosses: Impossible # TODO
-    # Lanayru Gorge - Boss Rush -- 8 Bosses: Impossible
+    Lanayru Gorge - Boss Rush 4 Bosses: "'Unlock_Boss_Rush' and Goddess_Longsword and Bomb_Bag and Gust_Bellows and Whip and Bow"
+    Lanayru Gorge - Boss Rush 8 Bosses: "'Unlock_Boss_Rush' and Goddess_Longsword and Bomb_Bag and Gust_Bellows and Whip and Bow"
 
 - name: Lanayru Gorge after Locked Door
   hint_region: Lanayru Gorge

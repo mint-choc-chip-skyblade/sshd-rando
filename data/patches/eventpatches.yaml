@@ -3107,20 +3107,185 @@
       next: 100
 
 460-RairyuMinigame:
-  - name: Avoid Boss rush Entry
-    type: entryadd
-    entry:
-      name: "460_70"
-      value: display Thank you text
-  - name: Thunderdragon Thank you text
-    type: textadd
-  - name: display Thank you text
+  - name: Goto Boss Rush backup Ghirahim1 flags
+    type: flowpatch
+    index: 161
+    flow:
+      next: Boss Rush backup Ghirahim1 flags
+  - name: Boss Rush backup Ghirahim1 flags
     type: flowadd
     flow:
-      type: type1
-      next: -1
-      param3: 115
-      param4: Thunderdragon Thank you text
+      type: type3
+      param1: 11 # sceneindex 11 = Skyview Temple
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 121 # start fight
+
+  - name: Goto Boss Rush backup Scaldera flags
+    type: flowpatch
+    index: 162
+    flow:
+      next: Boss Rush backup Scaldera flags
+  - name: Boss Rush backup Scaldera flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 14 # sceneindex 14 = Earth Temple
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 128 # start fight
+  
+  - name: Goto Boss Rush backup Moldarach flags
+    type: flowpatch
+    index: 163
+    flow:
+      next: Boss Rush backup Moldarach flags
+  - name: Boss Rush backup Moldarach flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 17 # sceneindex 17 = Lanayru Mining Facility
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 134 # start fight
+  
+  - name: Goto Boss Rush backup Imp1 flags
+    type: flowpatch
+    index: 164
+    flow:
+      next: Boss Rush backup Imp1 flags
+  - name: Boss Rush backup Imp1 flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 10 # sceneindex 10 = Sealed Grounds
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 175 # start fight
+  
+  - name: Goto Boss Rush backup Koloktos flags
+    type: flowpatch
+    index: 165
+    flow:
+      next: Boss Rush backup Koloktos flags
+  - name: Boss Rush backup Koloktos flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 12 # sceneindex 12 = Ancient Cistern
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 143 # start fight
+  
+  - name: Goto Boss Rush backup Tentalus flags
+    type: flowpatch
+    index: 166
+    flow:
+      next: Boss Rush backup Tentalus flags
+  - name: Boss Rush backup Tentalus flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 18 # sceneindex 18 = Sandship
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 148 # start fight
+  
+  - name: Goto Boss Rush backup Ghirahim2 flags
+    type: flowpatch
+    index: 167
+    flow:
+      next: Boss Rush backup Ghirahim2 flags
+  - name: Boss Rush backup Ghirahim2 flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 15 # sceneindex 15 = Fire Sanctuary
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 150 # start fight
+  
+  - name: Goto Boss Rush backup Imp2 flags
+    type: flowpatch
+    index: 168
+    flow:
+      next: Boss Rush backup Imp2 flags
+  - name: Boss Rush backup Imp2 flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 10 # sceneindex 10 = Sealed Grounds
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 152 # start fight
+  
+  - name: Goto Boss Rush backup Imp3 flags
+    type: flowpatch
+    index: 169
+    flow:
+      next: Boss Rush backup Imp3 flags
+  - name: Boss Rush backup Imp3 flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 10 # sceneindex 10 = Sealed Grounds
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 154 # start fight
+  
+  - name: Goto Boss Rush backup Horde flags
+    type: flowpatch
+    index: 170
+    flow:
+      next: Boss Rush backup Horde flags
+  - name: Boss Rush backup Horde flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 10 # sceneindex 10 = Sealed Grounds
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 156 # start fight
+  
+  - name: Goto Boss Rush backup Ghirahim3 flags
+    type: flowpatch
+    index: 171
+    flow:
+      next: Boss Rush backup Ghirahim3 flags
+  - name: Boss Rush backup Ghirahim3 flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 10 # sceneindex 10 = Sealed Grounds
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 158 # start fight
+  
+  - name: Goto Boss Rush backup Demise flags
+    type: flowpatch
+    index: 172
+    flow:
+      next: Boss Rush backup Demise flags
+  - name: Boss Rush backup Demise flags
+    type: flowadd
+    flow:
+      type: type3
+      param1: 10 # sceneindex 10 = Sealed Grounds
+      param2: 1 # backup
+      param3: 76 # custom command: boss_rush_backup_flags
+      next: 160 # start fight
+
+  - name: Goto Boss Rush restore flags
+    type: flowpatch
+    index: 688
+    flow:
+      next: Boss Rush restore flags
+  - name: Boss Rush restore flags
+    type: flowadd
+    flow:
+      type: type3
+      param3: 77 # custom command: boss_rush_restore_flags
+      next: 473 # Continue to post-fight Thunderdragon yapping
 
 499-Demo:
   - name: Skip setting sword itemflag

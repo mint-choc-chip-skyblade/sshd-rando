@@ -6,6 +6,7 @@ use crate::actor;
 use crate::debug;
 use crate::flag;
 use crate::item;
+use crate::savefile;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
@@ -55,7 +56,15 @@ impl MinigameState {
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
+    static FILE_MGR: *mut savefile::FileMgr;
+
     static mut MINIGAME_STATE: MinigameState;
+
+    static mut BOSS_RUSH_CURRENT_SCENEINDEX: u16;
+    static mut BOSS_RUSH_STORYFLAG_STATES: u16;
+
+    static mut BOSS_RUSH_SCENEFLAG_BKP: [u16; 8];
+    static mut BOSS_RUSH_DUNGEONFLAG_BKP: [u16; 8];
 
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
@@ -102,4 +111,57 @@ pub fn try_end_pumpkin_archery(bell_actor: *mut actor::dAcObell) -> *mut actor::
     }
 
     return bell_actor;
+}
+
+#[no_mangle]
+pub fn boss_rush_backup_flags(sceneindex: u16) {
+    unsafe {
+        BOSS_RUSH_CURRENT_SCENEINDEX = sceneindex;
+
+        BOSS_RUSH_SCENEFLAG_BKP = (*FILE_MGR).FA.sceneflags[sceneindex as usize];
+        BOSS_RUSH_DUNGEONFLAG_BKP = (*FILE_MGR).FA.dungeonflags[sceneindex as usize];
+
+        BOSS_RUSH_STORYFLAG_STATES = 0x0000;
+
+        // 131 = Imp 1 Defeated (shouldn't be necessary due to separate asm patch)
+        BOSS_RUSH_STORYFLAG_STATES |= flag::check_storyflag(131) as u16;
+        // 132 = Imp 2 Defeated
+        BOSS_RUSH_STORYFLAG_STATES |= (flag::check_storyflag(132) << 1) as u16;
+        // 648 = Koloktos Defeated
+        BOSS_RUSH_STORYFLAG_STATES |= (flag::check_storyflag(648) << 2) as u16;
+    }
+}
+
+#[no_mangle]
+pub fn boss_rush_restore_flags() {
+    unsafe {
+        let sceneindex = BOSS_RUSH_CURRENT_SCENEINDEX;
+        BOSS_RUSH_CURRENT_SCENEINDEX == 0xFFFF;
+
+        (*FILE_MGR).FA.sceneflags[sceneindex as usize] = BOSS_RUSH_SCENEFLAG_BKP;
+        (*FILE_MGR).FA.dungeonflags[sceneindex as usize] = BOSS_RUSH_DUNGEONFLAG_BKP;
+
+        // 131 = Imp 1
+        if (BOSS_RUSH_STORYFLAG_STATES & 0x1) == 1 {
+            flag::set_storyflag(131);
+        } else {
+            flag::unset_storyflag(131);
+        }
+
+        // 131 = Imp 2
+        if (BOSS_RUSH_STORYFLAG_STATES & 0x2) == 1 {
+            flag::set_storyflag(132);
+        } else {
+            flag::unset_storyflag(132);
+        }
+
+        // 648 = Koloktos
+        if (BOSS_RUSH_STORYFLAG_STATES & 0x4) == 1 {
+            flag::set_storyflag(648);
+        } else {
+            flag::unset_storyflag(648);
+        }
+
+        BOSS_RUSH_STORYFLAG_STATES = 0x0000;
+    }
 }

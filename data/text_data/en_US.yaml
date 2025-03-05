@@ -226,9 +226,6 @@
 - name: Fi text text to leave dungeon
   standard: "You can't beat this dungeon at the\npresent time, I would suggest coming\nback later."
 
-- name: Thunderdragon Thank you text
-  standard: "Thank you for saving me."
-
 - name: Patch Fi text before Demise
   standard: "Master <heroname>, I have\nimportant information for you.\n\n\nMy analysis indicates a 100% chance\nthat entering this portal will\n<r<conclude>> your journey.\n\nAre you ready to proceed?\n[1]I'm ready![2-]Not yet..."
 
@@ -4350,6 +4347,16 @@
   standard: Lanayru Gorge - Bonk Right Machine after Locked Door
   pretty: Lanayru Gorge - Bonk Right Machine after Locked Door
   cryptic: <r<disturbing a machine>> near an <y<ancient dragon>>
+
+- name: Lanayru Gorge - Boss Rush 4 Bosses
+  standard: Lanayru Gorge - Boss Rush 4 Bosses
+  pretty: Lanayru Gorge - Boss Rush 4 Bosses
+  cryptic: being <r<quite successful>> at an <y<ancient dragon's games>>
+
+- name: Lanayru Gorge - Boss Rush 8 Bosses
+  standard: Lanayru Gorge - Boss Rush 8 Bosses
+  pretty: Lanayru Gorge - Boss Rush 8 Bosses
+  cryptic: being <r<very successful>> at an <y<ancient dragon's games>>
 
 - name: Ancient Harbour - Slingshot Left Nostril of Entrance Robot
   standard: Ancient Harbour - Slingshot Left Nostril of Entrance Robot

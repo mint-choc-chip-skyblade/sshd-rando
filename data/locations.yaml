@@ -4944,6 +4944,24 @@
   Paths:
     - stage/F302/r2/l0/TgReact/0xFC0C
 
+- name: Lanayru Gorge - Boss Rush 4 Bosses
+  original_item: Heart Piece
+  types:
+    - Minigames
+    - NPC
+  Paths:
+    - event/460-RairyuMinigame/989
+    - oarc/F302/l0
+
+- name: Lanayru Gorge - Boss Rush 8 Bosses
+  original_item: Hylian Shield
+  types:
+    - Minigames
+    - NPC
+  Paths:
+    - event/460-RairyuMinigame/505
+    - oarc/F302/l0
+
 
 # Ancient Harbour:
 - name: Ancient Harbour - Slingshot Left Nostril of Entrance Robot

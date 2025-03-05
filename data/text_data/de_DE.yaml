@@ -228,9 +228,6 @@
 - name: Fi text text to leave dungeon
   standard: "Du kannst diesen Dungeon zur Zeit nicht bezwingen,\nich würde vorschlagen, dass du zu einem\nspäteren Zeitpunkt zurückkommst."
 
-- name: Thunderdragon Thank you text
-  standard: "Danke, dass du mich gerettet hast."
-
 - name: Patch Fi text before Demise
   standard: "Gebieter <heroname>, ich habe dir etwas zu berichten.\n\n\n Wenn du hier weitergehst, liegt die\nWahrscheinlichkeit, dass du nicht mehr\nzurückkehren kannst, ohne den Kampf\nbeendet zu haben, bei 100%.\n\nFühlst du dich bereit für den Kampf?\n[1]Ja[2-]Nein"
 
@@ -4353,6 +4350,9 @@
   standard: Ranelle-Schlucht - Rollattacke gegen rechte Maschine nach verschlossener Tür
   pretty: Ranelle-Schlucht - Rollattacke gegen rechte Maschine nach verschlossener Tür
   cryptic: <r<Anrempeln einer Maschine>> nahe einem <y<uralten Drachen>>
+
+# - name: Lanayru Gorge - Boss Rush 4 Bosses
+# - name: Lanayru Gorge - Boss Rush 8 Bosses
 
 - name: Ancient Harbour - Slingshot Left Nostril of Entrance Robot
   standard: Bootssteg - Schleuderschuss auf linkes Nasenloch des Eingangsroboters
