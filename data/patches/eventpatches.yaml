@@ -3107,6 +3107,12 @@
       next: 100
 
 460-RairyuMinigame:
+  - name: Always show rewards text
+    type: flowpatch
+    index: 27
+    flow:
+      next: 112 # skip over 78 (sets flag for having seen explainer text)
+
   - name: Goto Boss Rush backup Ghirahim1 flags
     type: flowpatch
     index: 161
