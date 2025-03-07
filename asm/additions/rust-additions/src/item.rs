@@ -447,6 +447,18 @@ pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
             return;
         }
 
+        // Make sure stamina fruits in the Sealed Spiral don't change during boss rush
+        // Also make sure that collecting the fruit doesn't set the custom flag either
+        if (&CURRENT_STAGE_NAME[..5] == b"F401\0"
+            && flag::check_storyflag(530) != 0
+            && original_itemid == 42)
+        {
+            (*item_actor).base.basebase.members.param1 &= !0x1FF;
+            (*item_actor).base.basebase.members.param1 |= 0x22A; // 0x200 + 42
+            (*item_actor).base.members.base.param2 = 0xFFFFFFFF;
+            return;
+        }
+
         // Don't give a textbox for the specified items, otherwise, force a textbox
         match current_item {
             // Green | Blue | Red Rupee | Heart, Arrows | Bombs, Stamina, Tears, Light Fruit | Seeds

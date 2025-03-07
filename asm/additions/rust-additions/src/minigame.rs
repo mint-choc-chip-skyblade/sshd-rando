@@ -149,14 +149,14 @@ pub fn boss_rush_restore_flags() {
         }
 
         // 131 = Imp 2
-        if (BOSS_RUSH_STORYFLAG_STATES & 0x2) == 1 {
+        if (BOSS_RUSH_STORYFLAG_STATES & 0x2) == 2 {
             flag::set_storyflag(132);
         } else {
             flag::unset_storyflag(132);
         }
 
         // 648 = Koloktos
-        if (BOSS_RUSH_STORYFLAG_STATES & 0x4) == 1 {
+        if (BOSS_RUSH_STORYFLAG_STATES & 0x4) == 4 {
             flag::set_storyflag(648);
         } else {
             flag::unset_storyflag(648);
