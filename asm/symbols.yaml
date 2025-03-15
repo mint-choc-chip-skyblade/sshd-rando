@@ -200,5 +200,13 @@ main:
     ## Size: 1
     COLOR_CHANGE_DELAY: 0x712e5ff034
 
+    ## Size: 16
+    BOSS_RUSH_SCENEFLAG_BKP: 0x712e5ff038
+    BOSS_RUSH_DUNGEONFLAG_BKP: 0x712e5ff048
+    
+    ## Size 2:
+    BOSS_RUSH_CURRENT_SCENEINDEX: 0x712e5ff058
+    BOSS_RUSH_STORYFLAG_STATES: 0x712e5ff05a
+
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
     dAcItem__spawnRandoItemWithParams: 0x71005c2060

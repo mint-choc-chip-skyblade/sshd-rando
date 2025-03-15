@@ -1169,6 +1169,8 @@
   advancement: true
   chain_locations:
    - Lanayru Gorge - Thunder Dragon's Reward
+   - Lanayru Gorge - Boss Rush 4 Bosses
+   - Lanayru Gorge - Boss Rush 8 Bosses
 - id: 199
   name: Extra Wallet
   types:
