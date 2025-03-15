@@ -28,6 +28,8 @@ Slingshot: count(1, Progressive_Slingshot)
 
 Bug Net: count(1, Progressive_Bug_Net)
 
+Big Bug Net: count(2, Progressive_Bug_Net)
+
 Digging Mitts: count(1, Progressive_Mitts)
 
 Mogma Mitts: count(2, Progressive_Mitts)

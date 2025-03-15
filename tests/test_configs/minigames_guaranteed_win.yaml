@@ -1,0 +1,5 @@
+seed: TESTTESTTEST
+World 1:
+  minigame_difficulty: guaranteed_win
+  excluded_locations:
+  - Knight Academy - Fledge's Gift # just to make sure the minigames are actually included as checks

@@ -75,6 +75,7 @@
   locations:
     Sealed Temple - Chest near The Old One: Nothing
     Sealed Temple - Song from The Old One: Goddesss_Harp
+    Sealed Temple - Collect Fruit from the Tree of Life: "'Plant_Life_Tree_Seedling'"
     Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral: Slingshot
     Sealed Temple - Slingshot above Doors to Behind the Temple: Slingshot
     Sealed Temple - Slingshot above Large Doors behind The Old One: Slingshot
@@ -84,6 +85,8 @@
     Sealed Temple - Blow Triforce Symbol on Northwest Archway behind Bird Statue: Gust_Bellows
 
 - name: Temple of Hylia
+  events:
+    Plant Life Tree Seedling: Life_Tree_Seedling
   exits:
     Sealed Temple: Nothing
   locations:

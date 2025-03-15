@@ -12,10 +12,13 @@ World 1:
   hidden_item_shuffle: 'off'
   rupee_shuffle: vanilla
   underground_rupee_shuffle: 'off'
-  beedle_shop_shuffle: junk_only
+  beedle_shop_shuffle: randomized
   goddess_chest_shuffle: 'off'
+  trial_treasure_shuffle: '0'
+  tadtone_shuffle: 'off'
   full_wallet_upgrades: 'off'
   skip_harp_playing: 'off'
+  random_trial_object_positions: none
   randomize_skykeep_layout: 'off'
   peatrice_conversations: '0'
   small_keys: own_dungeon
@@ -57,6 +60,7 @@ World 1:
   required_dungeons: '2'
   dungeons_include_sky_keep: 'off'
   empty_unrequired_dungeons: 'on'
+  randomize_shop_prices: 'off'
   random_bottle_contents: 'off'
   trap_mode: no_traps
   trappable_items: any_items
@@ -73,6 +77,7 @@ World 1:
   spawn_hearts: 'on'
   damage_multiplier: '1'
   unlock_all_groosenator_destinations: 'off'
+  minigame_difficulty: easy
   language: english_us
   tunic_swap: 'off'
   lightning_skyward_strike: 'off'
@@ -183,6 +188,11 @@ World 1:
   - Batreaux's House - 70 Gratitude Crystals First Reward
   - Batreaux's House - 70 Gratitude Crystals Second Reward
   - Batreaux's House - 80 Gratitude Crystals Reward
+  - Beedle's Airshop - 600 Rupee Item
+  - Beedle's Airshop - 1200 Rupee Item
+  - Beedle's Airshop - 800 Rupee Item
+  - Beedle's Airshop - 1600 Rupee Item
+  - Beedle's Airshop - 1000 Rupee Item
   - Lumpy Pumpkin - Harp Duet with Kina
   - Lumpy Pumpkin - Deliver Mogma to Kina
   - Fun Fun Island - 500 Rupees in Dodoh's High Dive
@@ -205,3 +215,4 @@ World 1:
   - []
   - []
   - []
+  other_mods: []

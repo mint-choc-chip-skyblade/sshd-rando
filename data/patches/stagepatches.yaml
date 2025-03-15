@@ -4018,12 +4018,13 @@ F302: # Lanayru Gorge
       posy: 29.94655228
       posz: -2115
       name: Tubo
-  - name: Delete trigger preventing you from moving over bridge
+  - name: Delete text triggers
     type: objdelete
     ids:
       - 0xFC06 # Trigger blocking bridge access
+      - 0xFC2B # Robot text after picking up Life Tree Seedling
       - 0xFCC0 # Fi text after Dragon's reward
-    layers: [0, 2]
+    layers: [0, 0, 2]
     room: 0
     objtype: OBJ
   - name: Move TgReacts to correct layer
@@ -4364,12 +4365,6 @@ F402: # Sealed Temple
       posy: 7599.990234
       posz: 10540
       name: Tubo
-  - name: Remove objects and triggers
-    type: objdelete
-    id: 0xFC06 # Tree of Life
-    layer: 0
-    room: 2
-    objtype: OBJ
   - name: Remove fake Faron trial dowsing target
     type: objdelete
     id: 0xFC3D
@@ -5752,6 +5747,14 @@ D201_1: # Fire Sanctuary B (inner)
     layer: 0
     room: 1
     objtype: STAG
+  - name: Remove npctkes in 2nd trapped mogma room
+    type: objdelete
+    ids:
+      - 0xFC09 # 2nd trapped mogma text
+      - 0xFC16 # can't leave text
+    layer: 0
+    room: 2
+    objtype: OBJ
 
 B201: # Ghirahim 2 Boss Room
   # Change FS beaten flag from 13 to 901

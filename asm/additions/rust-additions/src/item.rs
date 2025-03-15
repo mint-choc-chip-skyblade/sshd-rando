@@ -129,6 +129,8 @@ extern "C" {
     static mut dAcOWarp__StateGateOpen: c_void;
     static mut dAcItem__StateGet: actor::ActorState;
 
+    static mut ACTOR_PARAM_POS: *mut math::Vec3f;
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn sinf(x: f32) -> f32;
@@ -1435,5 +1437,38 @@ pub fn give_tadtone_random_item(tadtone_actor: *const actor::dAcOClef) {
             itemid as u8,
             TADTONE_SCENEFLAGS[tadtone_group_index as usize],
         );
+    }
+}
+
+#[no_mangle]
+pub fn spawn_tree_of_life_item() -> *mut dAcItem {
+    let tree_actor: *mut actor::dAcOBase;
+
+    unsafe {
+        asm!("mov {0:x}, x19", out(reg) tree_actor);
+
+        let tree_param1 = (*tree_actor).basebase.members.param1;
+
+        // Adjust item spawn height so it's not stuck in a tree branch ^^'
+        (*ACTOR_PARAM_POS).y -= 80.0;
+
+        NUMBER_OF_ITEMS = 0;
+        ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
+
+        let item_actor: *mut dAcItem = actor::spawn_actor(
+            actor::ACTORID::ITEM,
+            (*ROOM_MGR).roomid.into(),
+            0xFF9C0200 | (52 << 10) | (tree_param1 >> 24),
+            ACTOR_PARAM_POS,
+            core::ptr::null_mut(),
+            core::ptr::null_mut(),
+            // The tree actor already has param2 setup correctly.
+            (*tree_actor).members.base.param2,
+        ) as *mut dAcItem;
+
+        ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
+        NUMBER_OF_ITEMS = 0;
+
+        return item_actor;
     }
 }
