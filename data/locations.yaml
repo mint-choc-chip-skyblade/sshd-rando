@@ -1896,6 +1896,13 @@
     - event/501-Inpa/267
     - oarc/F402/l0
 
+- name: Sealed Temple - Collect Fruit from the Tree of Life
+  original_item: Life Tree Fruit
+  types:
+    - Freestanding Items
+  Paths:
+    - stage/F402/r2/l0/FrtTree
+
 - name: Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral
   original_item: Green Rupee
   types:
