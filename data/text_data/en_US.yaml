@@ -6147,3 +6147,136 @@
 - name: Beedle Discounted Shop Text Template
   standard: "|That/Those| there |is/are| {sold_item}.\nJust this once |it's/they're| half off!\n|It/They| can be yours for just <r<{discounted_price}>> rupees!\nWant to buy |it/them|?
              \n[1]I'll buy |it/them|![2-]No, thanks."
+
+- name: Pumpkin Archery Guaranteed Win Reward Choice Text
+  standard:
+    "Would you like <r<50 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]50 Rupees."
+
+- name: Pumpkin Archery Easy No Prize Text
+  standard:
+    "You scored <numeric arg0>.
+    \n\n\n\nJust not feeling it today, huh,\n<heroname>? Sorry, but you\ndon't get a prize with that score.
+    \n\nThe easiest way to hit a pumpkin is\nto lead it. You know, put the cursor a\nlittle ahead of it as it's flying.
+    \n\nDo that, and I bet you can score\n<r<10 points>> or so.
+    \n\n\nNot that I'm giving you advice or\nanything. I mean, I know you know\nwhat you're doing."
+
+- name: Pumpkin Archery Easy Low Prize Text
+  standard:
+    "Wow, <numeric arg0>! Nice job,\n<heroname>!
+    \n\n\nIt's not the best score ever, but you\nwere pretty smooth, <heroname>!
+    \n\n\nNext time, I want you to aim for at\nleast <r<150 points>>!
+    \n\n\nAnyway, here's 50 Rupees I've earned\nfrom doing chores for the grumpy\nkitchen lady."
+
+- name: Pumpkin Archery Easy Mid Prize Text
+  standard:
+    "It would be great to see you hit <r<400\npoints>> and set a record next time.\nGive it your best shot!"
+
+- name: Pumpkin Archery Hard No Prize Text
+  standard:
+    "You scored <numeric arg0>.
+    \n\n\n\nJust not feeling it today, huh,\n<heroname>? Sorry, but you\ndon't get a prize with that score.
+    \n\nThe easiest way to hit a pumpkin is\nto lead it. You know, put the cursor a\nlittle ahead of it as it's flying.
+    \n\nDo that, and I bet you can score\n<r<400 points>> or so.
+    \n\n\nNot that I'm giving you advice or\nanything. I mean, I know you know\nwhat you're doing."
+
+- name: Pumpkin Archery Hard Low Prize Text
+  standard:
+    "Wow, <numeric arg0>! Nice job,\n<heroname>!
+    \n\n\nIt's not the best score ever, but you\nwere pretty smooth, <heroname>!
+    \n\n\nNext time, I want you to aim for at\nleast <r<600 points>>!
+    \n\n\nAnyway, here's 50 Rupees I've earned\nfrom doing chores for the grumpy\nkitchen lady."
+
+- name: Pumpkin Archery Hard Mid Prize Text
+  standard:
+    "It would be great to see you hit <r<800\npoints>> and set a record next time.\nGive it your best shot!"
+
+- name: Rickety Coaster Guaranteed Win Reward Choice Text
+  standard:
+    "Would you like <r<20 Rupees>>, an <r<Uncommon\nTreasure>>, or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]20 Rupees."
+
+- name: Bug Heaven Guaranteed Win Reward Choice Text
+  standard:
+    "Unless... Would you like those <r<Rare Bugs>>, or\nsome <r<Uncommon Bugs>>? Or maybe <r<80 Rupees>>?[1]Rare.[2]Uncommon.[3]80 Rupees."
+
+# Pretty sure this text is actually impossible to get cos there's a hard 10 min cap on the timer.
+- name: Bug Heaven Easy No Prize Text
+  standard:
+    "That's it—time's up! Umm...you've still\ngot A LOT of improving to do.
+    \n\n\nFor starters, shoot for getting your\ntime <r<under ten minutes>>. Just keep on\npracticing.
+    \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+
+- name: Bug Heaven Easy Beginner Low Prize Text
+  standard:
+    "Next time, try for <r<under five minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+
+- name: Bug Heaven Easy Wrangler Low Prize Text
+  standard:
+    "Time's up! That was pretty decent,\nI have to admit.
+    \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under five minutes>>."
+
+- name: Bug Heaven Easy Beginner Mid Prize Text
+  standard:
+    "Next time, pull out all the stops and\ntry to finish in <r<less than three minutes>>.
+    \n\n\nOh, and your prize this time is \n<r<50 Rupees>>!"
+
+- name: Bug Heaven Easy Wrangler Mid Prize Text
+  standard:
+    "OK! Time! Hey... This is incredible!
+    \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under three\nminutes>>.
+    \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
+
+- name: Bug Heaven Hard No Prize Text
+  standard:
+    "That's it—time's up! Umm...you've still\ngot A LOT of improving to do.
+    \n\n\nFor starters, shoot for getting your\ntime <r<under three minutes>>. Just keep on\npracticing.
+    \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+
+- name: Bug Heaven Hard Beginner Low Prize Text
+  standard:
+    "Next time, try for <r<under two minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+
+- name: Bug Heaven Hard Wrangler Low Prize Text
+  standard:
+    "Time's up! That was pretty decent,\nI have to admit.
+    \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under two minutes>>."
+
+- name: Bug Heaven Hard Beginner Mid Prize Text
+  standard:
+    "Next time, pull out all the stops and\ntry to finish in <r<less than one minute>>.
+    \n\n\nOh, and your prize this time is \n<r<50 Rupees>>!"
+
+- name: Bug Heaven Hard Wrangler Mid Prize Text
+  standard:
+    "OK! Time! Hey... This is incredible!
+    \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under one\nminute>>.
+    \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
+
+- name: Clean Cut Guaranteed Win Reward Choice Text
+  standard:
+    "You want <r<30 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]30 Rupees."
+
+- name: Clean Cut Easy No Prize Text
+  standard:
+    "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<10 cuts>>!
+    \n\nSharpen up your concentration!\nThere's no prize for sloppy slicin'."
+
+- name: Clean Cut Easy Low Prize Text
+  standard:
+    "Next time around, shoot for <r<15 cuts>>."
+
+- name: Clean Cut Easy Mid Prize Text
+  standard:
+    "I want to see you do <r<20 chops>> next time!"
+
+- name: Clean Cut Hard No Prize Text
+  standard:
+    "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<20 cuts>>!
+    \n\nSharpen up your concentration!\nThere's no prize for sloppy slicin'."
+
+- name: Clean Cut Hard Low Prize Text
+  standard:
+    "Next time around, shoot for <r<28 cuts>>."
+
+- name: Clean Cut Hard Mid Prize Text
+  standard:
+    "I want to see you do <r<43 chops>> next time!"
