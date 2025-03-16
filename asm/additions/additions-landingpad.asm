@@ -261,6 +261,12 @@ b.eq check_local_sceneflag
 cmp w8, #80
 b.eq spawn_tree_of_life_item
 
+cmp w8, #81
+b.eq check_should_spawn_horwell
+
+cmp w8, #82
+b.eq check_should_spawn_remlit
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

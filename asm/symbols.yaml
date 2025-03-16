@@ -119,6 +119,7 @@ main:
     SceneflagMgr__checkFlag: 0x7100b8319c
 
     allocateNewActor: 0x7100f14500
+    allocateActorWork1Heap: 0x7100ecade8
 
     dPlayer__putItemAway: 0x7100a1c6d4
     dAcItem__determineFinalItemid: 0x71004ea050
