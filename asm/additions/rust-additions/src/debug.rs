@@ -33,8 +33,13 @@ use static_assertions::assert_eq_size;
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
+    static mut DEBUG_PRINTABLE_STRING: [c_char; 128];
+    static mut DEBUG_BUFFER: [c_char; 128];
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
+    fn strlen_const(string: *const c_char) -> u64;
+    fn strcat(dest: *const c_char, src: *const c_char) -> *const c_char;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -42,42 +47,90 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn debug_print(string: *const c_char) {
-    // e.g. debug::debug_print(cstr!("Test string").as_ptr());
+pub fn debug_print(debug_string: *const c_char) {
+    // e.g. debug::debug_print(c"Test string".as_ptr());
 
     unsafe {
-        let buffer: [c_char; 128] = [0; 128];
-        debugPrint_128(buffer.as_ptr(), string);
+        DEBUG_PRINTABLE_STRING.fill(0);
+        DEBUG_PRINTABLE_STRING[0] = 62;
+        DEBUG_PRINTABLE_STRING[1] = 32; // Starts string with c"> "
+        strcat(DEBUG_PRINTABLE_STRING.as_ptr(), debug_string);
+
+        let str_len = strlen_const(DEBUG_PRINTABLE_STRING.as_ptr()) as usize;
+        DEBUG_PRINTABLE_STRING[str_len..80].fill(32);
+        DEBUG_PRINTABLE_STRING[81] = 0;
+
+        DEBUG_BUFFER.fill(0);
+        debugPrint_128(DEBUG_BUFFER.as_ptr(), DEBUG_PRINTABLE_STRING.as_ptr());
     }
 }
 
 #[no_mangle]
-pub fn debug_print_str(string: *const c_char, string_arg: *const c_char) {
+pub fn debug_print_str(debug_string: *const c_char, string_arg: *const c_char) {
     // e.g. debug::debug_print_str(cstr!("custom model name: %s").as_ptr(),
     // cstr!("DesertRobot").as_ptr());
 
     unsafe {
-        let buffer: [c_char; 128] = [0; 128];
-        debugPrint_128(buffer.as_ptr(), string, string_arg);
+        DEBUG_PRINTABLE_STRING.fill(0);
+        DEBUG_PRINTABLE_STRING[0] = 62;
+        DEBUG_PRINTABLE_STRING[1] = 32; // Starts string with c"> "
+        strcat(DEBUG_PRINTABLE_STRING.as_ptr(), debug_string);
+
+        let str_len = strlen_const(DEBUG_PRINTABLE_STRING.as_ptr()) as usize;
+        DEBUG_PRINTABLE_STRING[str_len..80].fill(32);
+        DEBUG_PRINTABLE_STRING[81] = 0;
+
+        DEBUG_BUFFER.fill(0);
+        debugPrint_128(
+            DEBUG_BUFFER.as_ptr(),
+            DEBUG_PRINTABLE_STRING.as_ptr(),
+            string_arg,
+        );
     }
 }
 
 #[no_mangle]
-pub fn debug_print_num(string: *const c_char, number: usize) {
+pub fn debug_print_num(debug_string: *const c_char, number: usize) {
     // e.g. debug::debug_print_num(cstr!("param1: %d").as_ptr(), param1 as usize);
 
     unsafe {
-        let buffer: [c_char; 128] = [0; 128];
-        debugPrint_128(buffer.as_ptr(), string, number);
+        DEBUG_PRINTABLE_STRING.fill(0);
+        DEBUG_PRINTABLE_STRING[0] = 62;
+        DEBUG_PRINTABLE_STRING[1] = 32; // Starts string with c"> "
+        strcat(DEBUG_PRINTABLE_STRING.as_ptr(), debug_string);
+
+        let str_len = strlen_const(DEBUG_PRINTABLE_STRING.as_ptr()) as usize;
+        DEBUG_PRINTABLE_STRING[str_len..80].fill(32);
+        DEBUG_PRINTABLE_STRING[81] = 0;
+
+        DEBUG_BUFFER.fill(0);
+        debugPrint_128(
+            DEBUG_BUFFER.as_ptr(),
+            DEBUG_PRINTABLE_STRING.as_ptr(),
+            number,
+        );
     }
 }
 
 #[no_mangle]
-pub fn debug_print_float(string: *const c_char, float: f32) {
+pub fn debug_print_float(debug_string: *const c_char, float: f32) {
     // e.g. debug::debug_print_float(cstr!("param1: %f").as_ptr(), param1 as f32);
 
     unsafe {
-        let buffer: [c_char; 128] = [0; 128];
-        debugPrint_128(buffer.as_ptr(), string, float as c_double);
+        DEBUG_PRINTABLE_STRING.fill(0);
+        DEBUG_PRINTABLE_STRING[0] = 62;
+        DEBUG_PRINTABLE_STRING[1] = 32; // Starts string with c"> "
+        strcat(DEBUG_PRINTABLE_STRING.as_ptr(), debug_string);
+
+        let str_len = strlen_const(DEBUG_PRINTABLE_STRING.as_ptr()) as usize;
+        DEBUG_PRINTABLE_STRING[str_len..80].fill(32);
+        DEBUG_PRINTABLE_STRING[81] = 0;
+
+        DEBUG_BUFFER.fill(0);
+        debugPrint_128(
+            DEBUG_BUFFER.as_ptr(),
+            DEBUG_PRINTABLE_STRING.as_ptr(),
+            float as c_double,
+        );
     }
 }
