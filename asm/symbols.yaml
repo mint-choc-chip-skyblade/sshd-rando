@@ -4,6 +4,25 @@ main:
 
     s_rng: 0x710168c3e0
 
+    sCurrentHeap: 0x7102c01a40
+    mDvd__l_ArchiveHeap: 0x7102c02918
+    mDvd__l_CommandHeap: 0x7102c02920
+    mHeap__g_gameHeaps: 0x712d036080
+    mHeap__g_archiveHeap: 0x7102c02950
+    mHeap__g_assertHeap: 0x7102c02968
+    mHeap__g_commandHeap: 0x7102c02958
+    mHeap__g_dylinkHeap: 0x7102c02960
+    mHeap__s_SavedCurrentHeap: 0x7102c02948
+    SOME_HEAP: 0x7101834548
+    WORK1_HEAP: 0x7101834558
+    WORK2_HEAP: 0x7101834560
+    WORK_EX_HEAP: 0x7101834568
+    LAYOUT_HEAP: 0x7101834570
+    LAYOUT_EX_HEAP: 0x7101834578
+    LAYOUT_EX2_HEAP: 0x7101834580
+    LAYOUT_RES_HEAP: 0x7101834588
+
+
 
     # MGRs
     FILE_MGR: 0x7102bfdcc0

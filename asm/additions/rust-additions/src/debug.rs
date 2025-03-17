@@ -56,8 +56,8 @@ pub fn debug_print(debug_string: *const c_char) {
         strcat(DEBUG_PRINTABLE_STRING.as_ptr(), debug_string);
 
         let str_len = strlen_const(DEBUG_PRINTABLE_STRING.as_ptr()) as usize;
-        DEBUG_PRINTABLE_STRING[str_len..80].fill(32);
-        DEBUG_PRINTABLE_STRING[81] = 0;
+        DEBUG_PRINTABLE_STRING[str_len..63].fill(32);
+        DEBUG_PRINTABLE_STRING[64] = 0;
 
         DEBUG_BUFFER.fill(0);
         debugPrint_128(DEBUG_BUFFER.as_ptr(), DEBUG_PRINTABLE_STRING.as_ptr());
@@ -75,9 +75,10 @@ pub fn debug_print_str(debug_string: *const c_char, string_arg: *const c_char) {
         DEBUG_PRINTABLE_STRING[1] = 32; // Starts string with c"> "
         strcat(DEBUG_PRINTABLE_STRING.as_ptr(), debug_string);
 
-        let str_len = strlen_const(DEBUG_PRINTABLE_STRING.as_ptr()) as usize;
-        DEBUG_PRINTABLE_STRING[str_len..80].fill(32);
-        DEBUG_PRINTABLE_STRING[81] = 0;
+        let mut str_len = strlen_const(DEBUG_PRINTABLE_STRING.as_ptr()) as usize;
+        // str_len -= strlen_const(string_arg) as usize;
+        DEBUG_PRINTABLE_STRING[str_len..63].fill(32);
+        DEBUG_PRINTABLE_STRING[64] = 0;
 
         DEBUG_BUFFER.fill(0);
         debugPrint_128(
@@ -87,7 +88,6 @@ pub fn debug_print_str(debug_string: *const c_char, string_arg: *const c_char) {
         );
     }
 }
-
 #[no_mangle]
 pub fn debug_print_num(debug_string: *const c_char, number: usize) {
     // e.g. debug::debug_print_num(c"param1: %d".as_ptr(), param1 as usize);
@@ -99,8 +99,8 @@ pub fn debug_print_num(debug_string: *const c_char, number: usize) {
         strcat(DEBUG_PRINTABLE_STRING.as_ptr(), debug_string);
 
         let str_len = strlen_const(DEBUG_PRINTABLE_STRING.as_ptr()) as usize;
-        DEBUG_PRINTABLE_STRING[str_len..80].fill(32);
-        DEBUG_PRINTABLE_STRING[81] = 0;
+        DEBUG_PRINTABLE_STRING[str_len..(63)].fill(32);
+        DEBUG_PRINTABLE_STRING[64] = 0;
 
         DEBUG_BUFFER.fill(0);
         debugPrint_128(
@@ -122,8 +122,8 @@ pub fn debug_print_float(debug_string: *const c_char, float: f32) {
         strcat(DEBUG_PRINTABLE_STRING.as_ptr(), debug_string);
 
         let str_len = strlen_const(DEBUG_PRINTABLE_STRING.as_ptr()) as usize;
-        DEBUG_PRINTABLE_STRING[str_len..80].fill(32);
-        DEBUG_PRINTABLE_STRING[81] = 0;
+        DEBUG_PRINTABLE_STRING[str_len..63].fill(32);
+        DEBUG_PRINTABLE_STRING[64] = 0;
 
         DEBUG_BUFFER.fill(0);
         debugPrint_128(

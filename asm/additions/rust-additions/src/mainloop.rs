@@ -6,6 +6,7 @@ use crate::color;
 use crate::debug;
 use crate::fix;
 use crate::input;
+use crate::mem;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
@@ -55,14 +56,23 @@ extern "C" {
 pub fn main_loop_inject() -> *mut c_void {
     unsafe {
         // Soft-reset button combo
-        if (input::check_button_held(input::BUTTON_INPUTS::LEFT_STICK_BUTTON)
-            && input::check_button_held(input::BUTTON_INPUTS::A_BUTTON)
-            && input::check_button_held(input::BUTTON_INPUTS::R_BUTTON))
+        if (input::check_button_held_down(input::BUTTON_INPUTS::LEFT_STICK_BUTTON)
+            && input::check_button_held_down(input::BUTTON_INPUTS::A_BUTTON)
+            && input::check_button_held_down(input::BUTTON_INPUTS::R_BUTTON))
         {
             (*reload_color_fader).other_state = 1;
             (*reload_color_fader).previous_state = (*reload_color_fader).current_state;
             (*reload_color_fader).current_state = 1;
             do_soft_reset(reload_color_fader);
+        }
+
+        // Print heap info to debug conole
+        if (input::check_button_held_down(input::BUTTON_INPUTS::LEFT_STICK_BUTTON)
+            && input::check_button_held_down(input::BUTTON_INPUTS::RIGHT_STICK_BUTTON)
+            && input::check_button_held_down(input::BUTTON_INPUTS::L_BUTTON)
+            && input::check_button_pressed_up(input::BUTTON_INPUTS::R_BUTTON))
+        {
+            mem::debug_print_heap_info();
         }
 
         color::handle_colors();
@@ -77,7 +87,7 @@ pub fn main_loop_inject() -> *mut c_void {
 pub fn activate_back_in_time(param1: *mut c_void) -> *mut c_void {
     // This is patched into the do_soft_reset function
     unsafe {
-        if input::check_button_held(input::BUTTON_INPUTS::L_BUTTON) {
+        if input::check_button_held_down(input::BUTTON_INPUTS::L_BUTTON) {
             RESPAWN_TYPE = 3;
         }
 

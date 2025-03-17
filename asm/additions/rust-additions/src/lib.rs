@@ -23,6 +23,7 @@ mod item;
 mod lyt;
 mod mainloop;
 mod math;
+mod mem;
 mod minigame;
 mod player;
 mod rng;

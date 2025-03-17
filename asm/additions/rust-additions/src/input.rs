@@ -28,10 +28,11 @@ pub struct InputMgr {
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct InputMgr__vtable {
-    pub _0:                   [u8; 0x20],
-    pub check_button_held:    extern "C" fn(*mut InputMgr, BUTTON_INPUTS) -> bool,
-    pub _1:                   u64,
-    pub check_button_pressed: extern "C" fn(*mut InputMgr, BUTTON_INPUTS) -> bool,
+    pub _0:                        [u8; 0x20],
+    pub check_button_held_down:    extern "C" fn(*mut InputMgr, BUTTON_INPUTS) -> bool,
+    pub check_button_held_up:      extern "C" fn(*mut InputMgr, BUTTON_INPUTS) -> bool,
+    pub check_button_pressed_down: extern "C" fn(*mut InputMgr, BUTTON_INPUTS) -> bool,
+    pub check_button_pressed_up:   extern "C" fn(*mut InputMgr, BUTTON_INPUTS) -> bool,
 }
 
 #[repr(u32)]
@@ -77,15 +78,29 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn check_button_held(button: BUTTON_INPUTS) -> bool {
+pub fn check_button_held_down(button: BUTTON_INPUTS) -> bool {
     unsafe {
-        return ((*(*INPUT_MGR).vtable).check_button_held)(INPUT_MGR, button);
+        return ((*(*INPUT_MGR).vtable).check_button_held_down)(INPUT_MGR, button);
     }
 }
 
 #[no_mangle]
-pub fn check_button_pressed(button: BUTTON_INPUTS) -> bool {
+pub fn check_button_held_up(button: BUTTON_INPUTS) -> bool {
     unsafe {
-        return ((*(*INPUT_MGR).vtable).check_button_pressed)(INPUT_MGR, button);
+        return ((*(*INPUT_MGR).vtable).check_button_held_up)(INPUT_MGR, button);
+    }
+}
+
+#[no_mangle]
+pub fn check_button_pressed_down(button: BUTTON_INPUTS) -> bool {
+    unsafe {
+        return ((*(*INPUT_MGR).vtable).check_button_pressed_down)(INPUT_MGR, button);
+    }
+}
+
+#[no_mangle]
+pub fn check_button_pressed_up(button: BUTTON_INPUTS) -> bool {
+    unsafe {
+        return ((*(*INPUT_MGR).vtable).check_button_pressed_up)(INPUT_MGR, button);
     }
 }
