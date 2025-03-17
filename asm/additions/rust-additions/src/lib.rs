@@ -8,7 +8,6 @@
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
 use core::str;
-use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 mod actor;

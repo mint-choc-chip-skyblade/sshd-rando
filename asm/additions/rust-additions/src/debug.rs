@@ -12,7 +12,6 @@
 
 use core::arch::asm;
 use core::ffi::{c_char, c_double, c_void};
-use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -67,8 +66,8 @@ pub fn debug_print(debug_string: *const c_char) {
 
 #[no_mangle]
 pub fn debug_print_str(debug_string: *const c_char, string_arg: *const c_char) {
-    // e.g. debug::debug_print_str(cstr!("custom model name: %s").as_ptr(),
-    // cstr!("DesertRobot").as_ptr());
+    // e.g. debug::debug_print_str(c"custom model name: %s".as_ptr(),
+    // c"DesertRobot".as_ptr());
 
     unsafe {
         DEBUG_PRINTABLE_STRING.fill(0);
@@ -91,7 +90,7 @@ pub fn debug_print_str(debug_string: *const c_char, string_arg: *const c_char) {
 
 #[no_mangle]
 pub fn debug_print_num(debug_string: *const c_char, number: usize) {
-    // e.g. debug::debug_print_num(cstr!("param1: %d").as_ptr(), param1 as usize);
+    // e.g. debug::debug_print_num(c"param1: %d".as_ptr(), param1 as usize);
 
     unsafe {
         DEBUG_PRINTABLE_STRING.fill(0);
@@ -114,7 +113,7 @@ pub fn debug_print_num(debug_string: *const c_char, number: usize) {
 
 #[no_mangle]
 pub fn debug_print_float(debug_string: *const c_char, float: f32) {
-    // e.g. debug::debug_print_float(cstr!("param1: %f").as_ptr(), param1 as f32);
+    // e.g. debug::debug_print_float(c"param1: %f".as_ptr(), param1 as f32);
 
     unsafe {
         DEBUG_PRINTABLE_STRING.fill(0);
