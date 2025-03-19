@@ -130,273 +130,52 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn debug_print_heap_info() {
-    unsafe {
-        debug::debug_print(c"".as_ptr());
-        debug::debug_print(c"Heap Info:".as_ptr());
-        debug::debug_print(c"".as_ptr());
+pub fn debug_print_heap_info(heap: *mut Heap, heap_identifier: *const c_char) {
+    debug::debug_print_str(c"Heap info for: %s".as_ptr(), heap_identifier);
+    if heap != core::ptr::null_mut() {
+        debug::debug_print(c"Heap Name:".as_ptr());
+        debug::debug_print(unsafe { (*heap).mName });
+        debug::debug_print_num(c"Total Free Size: %d".as_ptr(), unsafe {
+            ((*(*heap).vtable).get_total_free_size)(heap)
+        } as usize);
+    } else {
+        debug::debug_print(c"Is nullptr:".as_ptr());
+    }
+    debug::debug_print(c"".as_ptr());
+}
 
-        debug::debug_print(c"Current Heap:".as_ptr());
-        if sCurrentHeap != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*sCurrentHeap).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*sCurrentHeap).vtable).get_total_free_size)(sCurrentHeap) as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
+#[no_mangle]
+pub fn debug_print_all_heap_info() {
+    let heaps = unsafe {
+        [
+            (sCurrentHeap, c"sCurrentHeap".as_ptr()),
+            (mDvd__l_ArchiveHeap, c"mDvd__l_ArchiveHeap".as_ptr()),
+            (mDvd__l_CommandHeap, c"mDvd__l_CommandHeap".as_ptr()),
+            (mHeap__g_archiveHeap, c"mHeap__g_archiveHeap".as_ptr()),
+            (mHeap__g_assertHeap, c"mHeap__g_assertHeap".as_ptr()),
+            (mHeap__g_commandHeap, c"mHeap__g_commandHeap".as_ptr()),
+            (mHeap__g_dylinkHeap, c"mHeap__g_dylinkHeap".as_ptr()),
+            (
+                mHeap__s_SavedCurrentHeap,
+                c"mHeap__s_SavedCurrentHeap".as_ptr(),
+            ),
+            (WORK1_HEAP, c"WORK1_HEAP".as_ptr()),
+            (WORK2_HEAP, c"WORK2_HEAP".as_ptr()),
+            (WORK_EX_HEAP, c"WORK_EX_HEAP".as_ptr()),
+            (LAYOUT_HEAP, c"LAYOUT_HEAP".as_ptr()),
+            (LAYOUT_EX_HEAP, c"LAYOUT_EX_HEAP".as_ptr()),
+            (LAYOUT_EX2_HEAP, c"LAYOUT_EX2_HEAP".as_ptr()),
+            (LAYOUT_RES_HEAP, c"LAYOUT_RES_HEAP".as_ptr()),
+            (mHeap__g_gameHeaps[0], c"mHeap__g_gameHeaps[0]".as_ptr()),
+            (mHeap__g_gameHeaps[1], c"mHeap__g_gameHeaps[1]".as_ptr()),
+        ]
+    };
 
-        debug::debug_print(c"mDvd__l_ArchiveHeap:".as_ptr());
-        if mDvd__l_ArchiveHeap != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*mDvd__l_ArchiveHeap).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*mDvd__l_ArchiveHeap).vtable).get_total_free_size)(mDvd__l_ArchiveHeap)
-                    as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
+    debug::debug_print(c"".as_ptr());
+    debug::debug_print(c"Heap Info:".as_ptr());
+    debug::debug_print(c"".as_ptr());
 
-        debug::debug_print(c"mDvd__l_CommandHeap:".as_ptr());
-        if mDvd__l_CommandHeap != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*mDvd__l_CommandHeap).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*mDvd__l_CommandHeap).vtable).get_total_free_size)(mDvd__l_CommandHeap)
-                    as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"mHeap__g_archiveHeap:".as_ptr());
-        if mHeap__g_archiveHeap != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*mHeap__g_archiveHeap).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*mHeap__g_archiveHeap).vtable).get_total_free_size)(mHeap__g_archiveHeap)
-                    as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"mHeap__g_commandHeap:".as_ptr());
-        if mHeap__g_commandHeap != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*mHeap__g_commandHeap).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*mHeap__g_commandHeap).vtable).get_total_free_size)(mHeap__g_commandHeap)
-                    as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"mHeap__g_assertHeap:".as_ptr());
-        if mHeap__g_assertHeap != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*mHeap__g_assertHeap).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*mHeap__g_assertHeap).vtable).get_total_free_size)(mHeap__g_assertHeap)
-                    as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"mHeap__g_dylinkHeap:".as_ptr());
-        if mHeap__g_dylinkHeap != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*mHeap__g_dylinkHeap).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*mHeap__g_dylinkHeap).vtable).get_total_free_size)(mHeap__g_dylinkHeap)
-                    as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"mHeap__s_SavedCurrentHeap:".as_ptr());
-        if mHeap__s_SavedCurrentHeap != core::ptr::null_mut() {
-            debug::debug_print_str(
-                c"Heap Name: %s".as_ptr(),
-                (*mHeap__s_SavedCurrentHeap).mName,
-            );
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*mHeap__s_SavedCurrentHeap).vtable).get_total_free_size)(
-                    mHeap__s_SavedCurrentHeap,
-                ) as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        // Crashes as not null but also not a standard heap
-        //
-        // debug::debug_print(c"SOME_HEAP:".as_ptr());
-        // if SOME_HEAP != core::ptr::null_mut() {
-        //     debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*SOME_HEAP).mName);
-        //     debug::debug_print_num(
-        //         c"Total Free Size: %d".as_ptr(),
-        //         ((*(*SOME_HEAP).vtable).get_total_free_size)(SOME_HEAP) as usize,
-        //     );
-        // } else {
-        //     debug::debug_print(c"Is nullptr:".as_ptr());
-        // }
-        // debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"WORK1_HEAP:".as_ptr());
-        if WORK1_HEAP != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*WORK1_HEAP).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*WORK1_HEAP).vtable).get_total_free_size)(WORK1_HEAP) as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"WORK2_HEAP:".as_ptr());
-        if WORK2_HEAP != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*WORK2_HEAP).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*WORK2_HEAP).vtable).get_total_free_size)(WORK2_HEAP) as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"WORK_EX_HEAP:".as_ptr());
-        if WORK_EX_HEAP != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*WORK_EX_HEAP).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*WORK_EX_HEAP).vtable).get_total_free_size)(WORK_EX_HEAP) as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"LAYOUT_HEAP:".as_ptr());
-        if LAYOUT_HEAP != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*LAYOUT_HEAP).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*LAYOUT_HEAP).vtable).get_total_free_size)(LAYOUT_HEAP) as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"LAYOUT_EX_HEAP:".as_ptr());
-        if LAYOUT_EX_HEAP != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*LAYOUT_EX_HEAP).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*LAYOUT_EX_HEAP).vtable).get_total_free_size)(LAYOUT_EX_HEAP) as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"LAYOUT_EX2_HEAP:".as_ptr());
-        if LAYOUT_EX2_HEAP != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*LAYOUT_EX2_HEAP).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*LAYOUT_EX2_HEAP).vtable).get_total_free_size)(LAYOUT_EX2_HEAP) as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"LAYOUT_RES_HEAP:".as_ptr());
-        if LAYOUT_RES_HEAP != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*LAYOUT_RES_HEAP).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*LAYOUT_RES_HEAP).vtable).get_total_free_size)(LAYOUT_RES_HEAP) as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"mHeap__g_gameHeaps[0]:".as_ptr());
-        if mHeap__g_gameHeaps[0] != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*mHeap__g_gameHeaps[0]).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*mHeap__g_gameHeaps[0]).vtable).get_total_free_size)(mHeap__g_gameHeaps[0])
-                    as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"mHeap__g_gameHeaps[1]:".as_ptr());
-        if mHeap__g_gameHeaps[1] != core::ptr::null_mut() {
-            debug::debug_print_str(c"Heap Name: %s".as_ptr(), (*mHeap__g_gameHeaps[1]).mName);
-            debug::debug_print_num(
-                c"Total Free Size: %d".as_ptr(),
-                ((*(*mHeap__g_gameHeaps[1]).vtable).get_total_free_size)(mHeap__g_gameHeaps[1])
-                    as usize,
-            );
-        } else {
-            debug::debug_print(c"Is nullptr:".as_ptr());
-        }
-        debug::debug_print(c"".as_ptr());
-
-        // Crashes as not null but also not a standard heap
-        //
-        // debug::debug_print(c"mHeap__g_gameHeaps[2]:".as_ptr());
-        // if mHeap__g_gameHeaps[2] != core::ptr::null_mut() {
-        //     debug::debug_print_str(c"Heap Name: %s".as_ptr(),
-        // (*mHeap__g_gameHeaps[2]).mName);     debug::debug_print_num(
-        //         c"Total Free Size: %d".as_ptr(),
-        //         ((*(*mHeap__g_gameHeaps[2]).vtable).
-        // get_total_free_size)(mHeap__g_gameHeaps[2])             as usize,
-        //     );
-        // } else {
-        //     debug::debug_print(c"Is nullptr:".as_ptr());
-        // }
-        // debug::debug_print(c"".as_ptr());
-
-        // Crashes as not null but also not a standard heap
-        //
-        // debug::debug_print(c"mHeap__g_gameHeaps[3]:".as_ptr());
-        // if mHeap__g_gameHeaps[3] != core::ptr::null_mut() {
-        //     debug::debug_print_str(c"Heap Name: %s".as_ptr(),
-        // (*mHeap__g_gameHeaps[3]).mName);     debug::debug_print_num(
-        //         c"Total Free Size: %d".as_ptr(),
-        //         ((*(*mHeap__g_gameHeaps[3]).vtable).
-        // get_total_free_size)(mHeap__g_gameHeaps[3])             as usize,
-        //     );
-        // } else {
-        //     debug::debug_print(c"Is nullptr:".as_ptr());
-        // }
-        // debug::debug_print(c"".as_ptr());
-
-        debug::debug_print(c"".as_ptr());
+    for (heap, heap_identifier) in heaps {
+        debug_print_heap_info(heap, heap_identifier);
     }
 }

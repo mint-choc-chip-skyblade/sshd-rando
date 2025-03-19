@@ -54,33 +54,33 @@ extern "C" {
 
 #[no_mangle]
 pub fn main_loop_inject() -> *mut c_void {
-    unsafe {
-        // Soft-reset button combo
-        if (input::check_button_held_down(input::BUTTON_INPUTS::LEFT_STICK_BUTTON)
-            && input::check_button_held_down(input::BUTTON_INPUTS::A_BUTTON)
-            && input::check_button_held_down(input::BUTTON_INPUTS::R_BUTTON))
-        {
+    // Soft-reset button combo
+    if (input::check_button_held_down(input::BUTTON_INPUTS::LEFT_STICK_BUTTON)
+        && input::check_button_held_down(input::BUTTON_INPUTS::A_BUTTON)
+        && input::check_button_held_down(input::BUTTON_INPUTS::R_BUTTON))
+    {
+        unsafe {
             (*reload_color_fader).other_state = 1;
             (*reload_color_fader).previous_state = (*reload_color_fader).current_state;
             (*reload_color_fader).current_state = 1;
             do_soft_reset(reload_color_fader);
         }
-
-        // Print heap info to debug conole
-        if (input::check_button_held_down(input::BUTTON_INPUTS::LEFT_STICK_BUTTON)
-            && input::check_button_held_down(input::BUTTON_INPUTS::RIGHT_STICK_BUTTON)
-            && input::check_button_held_down(input::BUTTON_INPUTS::L_BUTTON)
-            && input::check_button_pressed_up(input::BUTTON_INPUTS::R_BUTTON))
-        {
-            mem::debug_print_heap_info();
-        }
-
-        color::handle_colors();
-
-        fix::apply_loftwing_speed_override();
-
-        return dSystem;
     }
+
+    // Print heap info to debug conole
+    if (input::check_button_held_down(input::BUTTON_INPUTS::LEFT_STICK_BUTTON)
+        && input::check_button_held_down(input::BUTTON_INPUTS::RIGHT_STICK_BUTTON)
+        && input::check_button_held_down(input::BUTTON_INPUTS::L_BUTTON)
+        && input::check_button_pressed_up(input::BUTTON_INPUTS::R_BUTTON))
+    {
+        mem::debug_print_all_heap_info();
+    }
+
+    color::handle_colors();
+
+    fix::apply_loftwing_speed_override();
+
+    return unsafe { dSystem };
 }
 
 #[no_mangle]
