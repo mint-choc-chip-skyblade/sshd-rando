@@ -226,6 +226,7 @@ main:
 
     ## Size: 0x80 (128) each
     DEBUG_PRINTABLE_STRING: 0x712e601000
+    DEBUG_PRINTABLE_STRING_ARG: 0x712e601040
     DEBUG_BUFFER: 0x712e601080
 
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
