@@ -39,7 +39,7 @@ from sslib.yaml import yaml_load, yaml_write
 # Adds a patch to nnSdk to route all vfprintf calls to the debug output
 # These will be printed to the console on yuzu
 # These prints will spam the console so don't leave this set to True
-ASM_DEBUG_PRINT = False
+ASM_DEBUG_PRINT = True
 
 
 class ASMPatchHandler:
