@@ -35,6 +35,7 @@ main:
     CONNECT_MGR: 0x710168c510
     LIGHT_MGRS: 0x7102c02690
     SOUND_MGRS: 0x7102c02a98
+    ARC_MGR: 0x7101933d50
 
     STORYFLAG_MGR: 0x71018321f0
     SCENEFLAG_MGR: 0x7101831ef8
@@ -142,6 +143,7 @@ main:
     SceneflagMgr__checkFlag: 0x7100b8319c
 
     allocateNewActor: 0x7100f14500
+    arc_instance__mount: 0x7100ed82f4
 
     dPlayer__putItemAway: 0x7100a1c6d4
     dAcItem__determineFinalItemid: 0x71004ea050

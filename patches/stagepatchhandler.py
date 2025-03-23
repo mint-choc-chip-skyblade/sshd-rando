@@ -872,6 +872,13 @@ def patch_and_write_stage(
                     if "oarc/" in path
                 ]
             )
+
+            # Leak slingshot model where possible.
+            # Combine with plando slingshot on a l0 Faron check to ensure leak conditions are met.
+            if "GetPachinkoA" in this_layer_arcs:
+                this_layer_arcs.remove("GetPachinkoA")
+                print("Removed slingshot", stage, layer)
+
             # If any arcs are currently on this layer and layer 0, remove them from this layer
             remove_arcs |= l0_arcs.intersection(this_layer_arcs)
             # Don't add arcs which layer 0 already has

@@ -7,3 +7,11 @@ mov w10, #0x8988
 
 .offset 0x7100e3b610
 mov w8, #400 ; upped from 200
+
+
+; hopefully fix memory leak by checking if filename already has an arcEntry
+.offset 0x7100ed7d80
+mov x4, x19
+mov w8, #81
+bl additions_jumptable
+strb w23, [x22, x0]
