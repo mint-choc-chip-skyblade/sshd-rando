@@ -24,7 +24,7 @@ from patches.dynamictextpatches import add_dynamic_text_patches
 from patches.othermods import verify_other_mods, copy_extra_mod_files
 from shutil import rmtree
 
-from patches.temp_objectpack_texture_replace_hack import patch_object_folder
+from patches.arcpatchhandler import patch_object_folder
 
 
 class AllPatchHandler:
