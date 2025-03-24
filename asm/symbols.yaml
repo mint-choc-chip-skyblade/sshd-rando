@@ -144,6 +144,7 @@ main:
 
     allocateNewActor: 0x7100f14500
     arc_instance__mount: 0x7100ed82f4
+    raw_arc_entry__destroy: 0x7100deaca4
 
     dPlayer__putItemAway: 0x7100a1c6d4
     dAcItem__determineFinalItemid: 0x71004ea050

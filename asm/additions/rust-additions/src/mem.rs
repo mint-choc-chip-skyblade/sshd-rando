@@ -119,7 +119,7 @@ pub struct ArcEntry {
     pub ref_count: i16,
     pub _0:        [u8; 0x6],
     pub dvd_req:   u64,
-    pub arc:       u64,
+    pub arc:       *mut Arc,
     pub heap:      *mut Heap,
     pub _1:        [u8; 0x18],
 }
@@ -194,6 +194,7 @@ extern "C" {
         actor_group_type: u8,
     ) -> *mut actor::dBase;
     fn arc_instance__mount(p1: *mut c_void, p2: *mut Heap, p3: i32, p4: *const c_char) -> *mut Arc;
+    fn raw_arc_entry__destroy(arc_entry: *mut ArcEntry, stage_arc_type: u64);
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
