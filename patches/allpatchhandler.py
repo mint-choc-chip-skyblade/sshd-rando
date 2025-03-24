@@ -1,5 +1,5 @@
 from filepathconstants import (
-    OBJECTPACK_PATH_TAIL,
+    OBJECT_PATH_TAIL,
     SSHD_EXTRACT_PATH,
 )
 from gui.dialogs.dialog_header import print_progress_text, update_progress_value
@@ -24,7 +24,7 @@ from patches.dynamictextpatches import add_dynamic_text_patches
 from patches.othermods import verify_other_mods, copy_extra_mod_files
 from shutil import rmtree
 
-from patches.temp_objectpack_texture_replace_hack import patch_object_pack
+from patches.temp_objectpack_texture_replace_hack import patch_object_folder
 
 
 class AllPatchHandler:
@@ -86,8 +86,8 @@ class AllPatchHandler:
             self.world.get_shuffled_entrances(), self.stage_patch_handler
         )
 
-        patch_object_pack(
-            self.world.config.output_dir / OBJECTPACK_PATH_TAIL,
+        patch_object_folder(
+            self.world.config.output_dir / OBJECT_PATH_TAIL,
             self.stage_patch_handler.other_mods,
         )
 
