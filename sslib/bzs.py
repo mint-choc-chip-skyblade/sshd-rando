@@ -263,7 +263,11 @@ def build_object(
         return (29, header_bytes + body)
 
     elif object_type in ("OBJN", "ARCN"):
-        assert type(object_data) == list
+        if type(object_data) != list:
+            raise Exception(
+                f"Could not patch {object_type} because object_data is of type {type(object_data)}, not a list.\nobject_data: {object_data}"
+            )
+
         offset = len(object_data) * 2
         sbytes = b""
         header_bytes = b""

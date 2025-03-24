@@ -70,7 +70,6 @@ class AllPatchHandler:
         update_progress_value(16)
         verify_other_mods(self.world.setting_map.other_mods)
         self.stage_patch_handler.create_oarc_cache()
-        self.stage_patch_handler.set_oarc_add_remove_from_patches()
 
         determine_check_patches(
             self.world,

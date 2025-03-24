@@ -433,8 +433,8 @@ def patch_squirrels(bzs: dict, itemid: int, object_id_str: str, trapid: int):
     )
 
 
-def patch_tadtone_group(bzs: dict, itemid: int, groupid: str, trapid: int):
-    groupid = int(groupid, 0)
+def patch_tadtone_group(bzs: dict, itemid: int, groupid_str: str, trapid: int):
+    groupid = int(groupid_str, 0)
     clefs = filter(
         lambda x: x["name"] == "Clef" and ((x["params1"] >> 3) & 0x1F) == groupid,
         bzs["OBJ "],
@@ -804,16 +804,27 @@ def layer_override(bzs: dict, patch: dict):
     bzs["LYSE"] = layer_override
 
 
+def arcn_add(bzs: dict, patch: dict):
+    arcn: set[str] = set(patch.get("arcn", None))
+    if arcn == None:
+        raise Exception(
+            f"Could not find 'arcn' from patch. Did you typo the 'arcn' field?\nPatch: {patch}"
+        )
+
+    arcn_set: set[str] = set(bzs.get("ARCN", []))
+    arcn_set |= arcn
+    bzs["ARCN"] = list(arcn_set)
+    # print(patch["layer"], patch["room"], bzs["ARCN"])
+
+
 # Generic function outside of the StagePatchHandler
 # We have to pass all the various patch data to each process
 # individually
 def patch_and_write_stage(
     stage_path: Path,
     stage_output_path: Path,
-    stage_patches,
-    check_patches,
-    stage_oarc_remove,
-    stage_oarc_add,
+    stage_patches: dict[str, list[dict]],
+    check_patches: dict[str, list[tuple]],
     other_mods,
 ):
     stage_match = STAGE_FILE_REGEX.match(stage_path.parts[-1])
@@ -826,94 +837,14 @@ def patch_and_write_stage(
     modified_stage_path = (
         stage_output_path / f"{stage}" / "NX" / f"{stage}_stg_l{layer}.arc.LZ"
     )
-    # remove arcs
-    remove_arcs = set(stage_oarc_remove.get((stage, layer), []))
-    # add arcs
-    add_arcs = set(stage_oarc_add.get((stage, layer), []))
 
     patches = stage_patches.get(stage, [])
-
     object_patches = []
     stage_u8 = None
 
-    # don't remove any arcs that are also set to be added
-    remove_arcs = remove_arcs - add_arcs
-
     mod = ""
     try:
-        # If this isn't layer 0, remove any arcs that layer 0 will have
-        if layer != 0:
-            stage_l0_path = Path(stage_path.as_posix().replace(f"l{layer}", "l0"))
-            stage_l0_path, mod = get_resolved_game_file_path(stage_l0_path, other_mods)
-
-            stage_l0_u8 = U8File.get_parsed_U8_from_path(stage_l0_path)
-            oarc_path = stage_l0_u8.get_oarc_path()
-            # Get the arcs that layer 0 already has
-            l0_arcs = set(
-                [
-                    path.replace(f"/{oarc_path}/", "").replace(".arc", "")
-                    for path in stage_l0_u8.get_all_paths()
-                    if "oarc/" in path
-                ]
-            )
-            # Subtract the arcs which will be removed
-            l0_arcs -= set(stage_oarc_remove.get((stage, 0), []))
-            # Add the arcs which will be added
-            l0_arcs |= set(stage_oarc_add.get((stage, 0), []))
-
-            # Get the arcs for the current layer
-            stage_u8_path, mod = get_resolved_game_file_path(stage_path, other_mods)
-            stage_u8 = U8File.get_parsed_U8_from_path(stage_u8_path)
-            oarc_path = stage_u8.get_oarc_path()
-            this_layer_arcs = set(
-                [
-                    path.replace(f"/{oarc_path}/", "").replace(".arc", "")
-                    for path in stage_u8.get_all_paths()
-                    if "oarc/" in path
-                ]
-            )
-
-            # Leak slingshot model where possible.
-            # Combine with plando slingshot on a l0 Faron check to ensure leak conditions are met.
-            if "GetPachinkoA" in this_layer_arcs:
-                this_layer_arcs.remove("GetPachinkoA")
-                print("Removed slingshot", stage, layer)
-
-            # If any arcs are currently on this layer and layer 0, remove them from this layer
-            remove_arcs |= l0_arcs.intersection(this_layer_arcs)
-            # Don't add arcs which layer 0 already has
-            add_arcs -= l0_arcs
-            stage_u8 = None
-
-        if len(remove_arcs) > 0:
-            stage_u8_path, mod = get_resolved_game_file_path(stage_path, other_mods)
-            stage_u8 = U8File.get_parsed_U8_from_path(stage_u8_path)
-            oarc_path = stage_u8.get_oarc_path()
-
-            for arc in remove_arcs:
-                stage_u8.delete_file(f"{oarc_path}/{arc}.arc")
-
-        if len(add_arcs) > 0:
-            if stage_u8 is None:
-                stage_u8_path, mod = get_resolved_game_file_path(stage_path, other_mods)
-                stage_u8 = U8File.get_parsed_U8_from_path(stage_u8_path)
-
-            for arc in add_arcs:
-                arc_name = f"{arc}.arc"
-                arc_path = get_oarc_cache_path(arc_name, other_mods)
-                stage_oarc_path = stage_u8.get_oarc_path()
-
-                if arc_path.exists():
-                    stage_u8.add_file_data(
-                        f"{stage_oarc_path}/{arc_name}", arc_path.read_bytes()
-                    )
-                else:
-                    raise Exception(
-                        f"Arc '{arc_name}' cannot be found in oarccache. Try adding the arc to extracts.yaml."
-                    )
-
         if layer == 0:
-            # handle layer overrides
             layer_override_patches = list(
                 filter(lambda patch: patch["type"] == "layeroverride", patches)
             )
@@ -922,7 +853,8 @@ def patch_and_write_stage(
                 raise Exception(
                     f"Multiple layeroverrides found. {len(layer_override_patches)} layer overrides found for stage {stage}, expected 1."
                 )
-            elif len(layer_override_patches) == 1:
+
+            if len(layer_override_patches) == 1 > 0:
                 if stage_u8 is None:
                     stage_u8_path, mod = get_resolved_game_file_path(
                         stage_path, other_mods
@@ -936,18 +868,14 @@ def patch_and_write_stage(
 
                 stage_bzs = parse_bzs(stage_u8_data)
 
-                layer_override(bzs=stage_bzs, patch=layer_override_patches[0])
+                if len(layer_override_patches) == 1:
+                    layer_override(bzs=stage_bzs, patch=layer_override_patches[0])
+
                 stage_u8.set_file_data("dat/stage.bzs", build_bzs(stage_bzs))
 
             for obj_patch in filter(
                 lambda patch: patch["type"]
-                in [
-                    "objadd",
-                    "objdelete",
-                    "objpatch",
-                    "objmove",
-                    "pathadd",
-                ],
+                in ["objadd", "objdelete", "objpatch", "objmove", "pathadd", "arcnadd"],
                 patches,
             ):
                 object_patches.append(obj_patch)
@@ -970,7 +898,7 @@ def patch_and_write_stage(
                 for room_path_match in room_path_matches:
                     roomid = int(room_path_match.group("roomID"))
 
-                    patches_for_current_room = list(
+                    obj_patches_for_current_room = list(
                         filter(
                             lambda patch: patch.get("room") == roomid,
                             object_patches,
@@ -985,7 +913,7 @@ def patch_and_write_stage(
                     )
 
                     if (
-                        len(patches_for_current_room)
+                        len(obj_patches_for_current_room)
                         + len(check_patches_for_current_room)
                         > 0
                     ):
@@ -1001,28 +929,40 @@ def patch_and_write_stage(
 
                         nextid = get_highest_object_id(bzs=room_bzs) + 1
 
-                        for patch in patches_for_current_room:
-                            if patch["type"] == "objadd":
+                        for patch in obj_patches_for_current_room:
+                            patch_type = patch.get("type", None)
+                            if patch_type == None:
+                                raise Exception(
+                                    f"Patch is missing a 'type' field and cannot be processed.\nPatch: {patch}"
+                                )
+                            elif type(patch_type) != str:
+                                raise Exception(
+                                    f"Patch field 'type' is not a string. Found '{type(patch_type)}' instead.\nPatch{patch}"
+                                )
+
+                            if patch_type == "objadd":
                                 nextid += object_add(
                                     bzs=room_bzs,
                                     object_add=patch,
                                     nextid=nextid,
                                 )
-                            elif patch["type"] == "objdelete":
+                            elif patch_type == "objdelete":
                                 object_delete(bzs=room_bzs, object_delete=patch)
-                            elif patch["type"] == "objpatch":
+                            elif patch_type == "objpatch":
                                 object_patch(bzs=room_bzs, object_patch=patch)
-                            elif patch["type"] == "objmove":
+                            elif patch_type == "objmove":
                                 nextid += object_move(
                                     bzs=room_bzs,
                                     object_move=patch,
                                     nextid=nextid,
                                 )
-                            elif patch["type"] == "pathadd":
+                            elif patch_type == "pathadd":
                                 pathadd(bzs=room_bzs, path=patch)
+                            elif patch_type == "arcnadd":
+                                arcn_add(bzs=room_bzs["LAY "][f"l{layer}"], patch=patch)
                             else:
                                 raise Exception(
-                                    f"Unsupported patch type ({patch['type']}) found.\nPatch: {patch}"
+                                    f"Unsupported patch type '{patch_type}' found.\nPatch: {patch}"
                                 )
 
                         for (
@@ -1179,10 +1119,8 @@ class StagePatchHandler:
     def __init__(self, output_path: Path, other_mods: list[str] = []):
         self.base_output_path = output_path
         self.stage_output_path = self.base_output_path / "Stage"
-        self.stage_patches: dict = yaml_load(STAGE_PATCHES_PATH)  # type: ignore
+        self.stage_patches: dict[str, list[dict]] = yaml_load(STAGE_PATCHES_PATH)  # type: ignore
         self.check_patches: dict[str, list[tuple]] = defaultdict(list)
-        self.stage_oarc_remove: dict[tuple[str, int], set[str]] = defaultdict(set)
-        self.stage_oarc_add: dict[tuple[str, int], set[str]] = defaultdict(set)
         self.other_mods = other_mods
 
     def handle_stage_patches(self, onlyif_handler: ConditionalPatchHandler):
@@ -1219,8 +1157,6 @@ class StagePatchHandler:
                 stage_output_path=self.stage_output_path,
                 stage_patches=self.stage_patches,
                 check_patches=self.check_patches,
-                stage_oarc_remove=self.stage_oarc_remove,
-                stage_oarc_add=self.stage_oarc_add,
                 other_mods=self.other_mods,
             )
 
@@ -1387,17 +1323,18 @@ class StagePatchHandler:
                     )
                 mod_arcs[arc] = mod
 
-    def set_oarc_add_remove_from_patches(self):
-        for stage, stage_patches in self.stage_patches.items():
-            for patch in stage_patches:
-                for oarc in patch.get("oarc", []):
-                    if patch["type"] == "oarcadd":
-                        self.stage_oarc_add[(stage, patch["destlayer"])].add(oarc)
-                    elif patch["type"] == "oarcdelete":
-                        self.stage_oarc_remove[(stage, patch["layer"])].add(oarc)
+    def add_arcn_for_check(self, stage: str, layer: int, room: int, arcn: str):
+        if self.stage_patches.get(stage, None) == None:
+            self.stage_patches[stage] = []
 
-    def add_oarc_for_check(self, stage: str, layer: int, oarc: str):
-        self.stage_oarc_add[(stage, layer)].add(oarc)
+        self.stage_patches[stage].append(
+            {
+                "type": "arcnadd",
+                "layer": layer,
+                "room": room,
+                "arcn": [arcn],
+            }
+        )
 
     def add_check_patch(
         self,
@@ -1529,6 +1466,11 @@ def create_shuffled_trial_object_patches(
             room_u8 = stage_u8.get_parsed_U8_from_this_U8(path=room_path_match.group(0))
 
             room_u8_data = room_u8.get_file_data("dat/room.bzs")
+            if room_u8_data == None:
+                raise Exception(
+                    f"Could not load dat/room.bzs for {stage}, room {room_id}."
+                )
+
             room_bzs = parse_bzs(room_u8_data)
 
             for obj in room_bzs["LAY "]["l2"].get("OBJ ", []):

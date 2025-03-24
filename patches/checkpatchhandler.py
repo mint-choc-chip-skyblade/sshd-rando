@@ -188,7 +188,7 @@ def determine_check_patches(
                             tbox_subtype = 1
 
                 for oarc in item_oarcs:
-                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
+                    stage_patch_handler.add_arcn_for_check(stage, layer, room, oarc)
 
                 stage_patch_handler.add_check_patch(
                     stage,
@@ -215,7 +215,7 @@ def determine_check_patches(
                 layer = int(oarc_add_match.group("layer"))
 
                 for oarc in item_oarcs:
-                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
+                    stage_patch_handler.add_arcn_for_check(stage, layer, room, oarc)
 
             if shop_match := SHOP_PATCH_PATH_REGEX.match(path):
                 shop_index = int(shop_match.group("index"))
@@ -226,7 +226,7 @@ def determine_check_patches(
                     stage = "F004r"  # Bazaar
 
                 for oarc in item_oarcs:
-                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
+                    stage_patch_handler.add_arcn_for_check(stage, layer, room, oarc)
 
                 create_shop_data(
                     world, asm_patch_handler, location, shop_index, item, trapid

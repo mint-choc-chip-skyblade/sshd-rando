@@ -6,8 +6,7 @@ VALID_STAGE_PATCH_TYPES = (
     "objdelete",
     "objpatch",
     "objmove",
-    "oarcadd",
-    "oarcdelete",
+    "arcnadd",
     "pathadd",
 )
 
