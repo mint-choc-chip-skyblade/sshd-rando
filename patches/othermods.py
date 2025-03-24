@@ -2,7 +2,7 @@ from filepathconstants import (
     OTHER_MODS_PATH,
     COMBINED_MODS_FOLDER,
     COMBINED_MODS_PATH,
-    OARC_CACHE_PATH,
+    CACHE_OARC_PATH,
     SSHD_EXTRACT_PATH,
 )
 from gui.dialogs.dialog_header import print_progress_text
@@ -52,14 +52,14 @@ def get_resolved_game_file_path(
     return base_game_path, ""
 
 
-def get_oarc_cache_path(oarc_file: str, other_mods: list[str] = []):
+def get_cache_oarc_path(oarc_file: str, other_mods: list[str] = []):
     for mod in other_mods:
-        path = OARC_CACHE_PATH / mod / oarc_file
+        path = CACHE_OARC_PATH / mod / oarc_file
         if path.exists():
             print(f'Found {oarc_file} from mod "{mod}"')
             return path
 
-    return OARC_CACHE_PATH / oarc_file
+    return CACHE_OARC_PATH / oarc_file
 
 
 # Some mods don't recompress their files, so in a bunch of instances we have to check if both the compressed or uncompressed

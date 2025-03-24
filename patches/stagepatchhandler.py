@@ -1,3 +1,5 @@
+import hashlib
+from constants.verificationconstants import BZS_FILE_HASHES
 from patches.stagepatchhelper import patch_additional_properties
 from util.arguments import get_program_args
 from gui.dialogs.dialog_header import (
@@ -8,7 +10,7 @@ from gui.dialogs.dialog_header import (
 from patches.conditionalpatchhandler import ConditionalPatchHandler
 from patches.othermods import (
     get_resolved_game_file_path,
-    get_oarc_cache_path,
+    get_cache_oarc_path,
 )
 from sslib.bzs import parse_bzs, build_bzs, get_entry_from_bzs, get_highest_object_id
 from sslib.utils import mask_shift_set, write_bytes_create_dirs
@@ -33,7 +35,6 @@ from constants.patchconstants import (
     DEFAULT_SCEN,
     DEFAULT_PLY,
     DEFAULT_AREA,
-    STAGE_FILES_TO_ALWAYS_PATCH,
     STAGE_OBJECT_NAMES,
     STAGE_FILE_REGEX,
     ROOM_ARC_REGEX,
@@ -44,7 +45,9 @@ from filepathconstants import (
     RANDO_ROOT_PATH,
     STAGE_FILES_PATH,
     STAGE_PATCHES_PATH,
-    OARC_CACHE_PATH,
+    CACHE_PATH,
+    CACHE_OARC_PATH,
+    CACHE_BZS_PATH,
     EXTRACTS_PATH,
     OBJECTPACK_PATH,
     TITLE2D_SOURCE_PATH,
@@ -1191,9 +1194,72 @@ class StagePatchHandler:
                     if not onlyif_handler.evaluate_onlyif(statement):
                         patches.remove(patch)
 
-    def create_oarc_cache(self):
+    def __extract_bzs_files(self, stage_file_paths):
+        for current_stage_file_num, stage_path in enumerate(stage_file_paths):
+            stage_name = stage_path.name
+            print_progress_text(f"Checking stage files: {stage_name}")
+
+            bzs_stage_dir_path = CACHE_BZS_PATH / stage_name
+            bzs_stage_dir_path.mkdir(parents=True, exist_ok=True)
+
+            files_to_extract: list[str] = []
+
+            for bzs_file_name in BZS_FILE_HASHES[stage_name]:
+                bzs_stage_file_path = bzs_stage_dir_path / bzs_file_name
+
+                if (
+                    not bzs_stage_file_path.exists()
+                    or BZS_FILE_HASHES[stage_name][bzs_file_name]
+                    != hashlib.sha256(bzs_stage_file_path.read_bytes()).hexdigest()
+                ):
+                    files_to_extract.append(bzs_file_name)
+
+            if len(files_to_extract) > 0:
+                for bzs_file_name in files_to_extract:
+                    print_progress_text(f"Extracting {bzs_file_name} for {stage_name}")
+                    bzs_stage_file_path = bzs_stage_dir_path / bzs_file_name
+
+                    if bzs_stage_file_path.exists():
+                        bzs_stage_file_path.unlink()
+
+                    full_stage_path = stage_path / "NX" / f"{stage_name}_stg_l0.arc.LZ"
+                    stage_u8 = U8File.get_parsed_U8_from_path(full_stage_path)
+
+                    if bzs_file_name.endswith("stage.bzs"):
+                        bzs = stage_u8.get_file_data("dat/stage.bzs")
+                    else:
+                        roomid = bzs_file_name.split(".bzs")[0][-2:]
+
+                        if roomid.startswith("_"):
+                            roomid = "0" + roomid[-1]
+
+                        room_u8 = stage_u8.get_parsed_U8_from_this_U8(
+                            f"rarc/{stage_name}_r{roomid}.arc"
+                        )
+                        bzs = room_u8.get_file_data("dat/room.bzs")
+
+                    if bzs is None:
+                        raise Exception(
+                            f"Failed to extract data from stage {stage_name}.\nCould not read bzs data for {bzs_stage_file_path}."
+                        )
+
+                    if (
+                        BZS_FILE_HASHES[stage_name][bzs_file_name]
+                        != hashlib.sha256(bzs).hexdigest()
+                    ):
+                        raise Exception(
+                            f"The bzs data extracted from stage {stage_name} is not correct and cannot be used. Please verify your stage files are correct and try again."
+                        )
+
+                    bzs_stage_file_path.write_bytes(bzs)
+
+    def create_cache(self):
         extracts: dict[dict, dict] = yaml_load(EXTRACTS_PATH)  # type: ignore
-        OARC_CACHE_PATH.mkdir(parents=True, exist_ok=True)
+        CACHE_PATH.mkdir(parents=True, exist_ok=True)
+        CACHE_OARC_PATH.mkdir(parents=True, exist_ok=True)
+        CACHE_BZS_PATH.mkdir(parents=True, exist_ok=True)
+
+        self.__extract_bzs_files(stage_file_paths=list(STAGE_FILES_PATH.glob("*")))
 
         mods = [""]  # Empty string represents default game extract
         mods.extend(self.other_mods)
@@ -1201,9 +1267,9 @@ class StagePatchHandler:
         default_objectpack_u8 = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH)
 
         for mod in mods:
-            oarc_cache_path = OARC_CACHE_PATH / mod
-            if not oarc_cache_path.exists():
-                oarc_cache_path.mkdir(parents=True, exist_ok=True)
+            cache_oarc_path = CACHE_OARC_PATH / mod
+            if not cache_oarc_path.exists():
+                cache_oarc_path.mkdir(parents=True, exist_ok=True)
 
             objectpack_path, _ = get_resolved_game_file_path(
                 OBJECTPACK_PATH, self.other_mods, mod
@@ -1216,7 +1282,7 @@ class StagePatchHandler:
                     arcs_not_in_cache = [
                         arc_name
                         for arc_name in arcs
-                        if not (oarc_cache_path / f"{arc_name}.arc").exists()
+                        if not (cache_oarc_path / f"{arc_name}.arc").exists()
                     ]
 
                     if len(arcs_not_in_cache) == 0:
@@ -1251,7 +1317,7 @@ class StagePatchHandler:
                         print_progress_text(
                             f"Extracting {mod + '/' if mod else ''}{arc_name}"
                         )
-                        (oarc_cache_path / f"{arc_name}.arc").write_bytes(arc_data)
+                        (cache_oarc_path / f"{arc_name}.arc").write_bytes(arc_data)
                 else:
                     stage = extract["stage"]
 
@@ -1260,7 +1326,7 @@ class StagePatchHandler:
                         arcs = layer["oarcs"]
 
                         all_already_in_cache = all(
-                            ((oarc_cache_path / f"{arc}.arc").exists() for arc in arcs)
+                            ((cache_oarc_path / f"{arc}.arc").exists() for arc in arcs)
                         )
 
                         if all_already_in_cache:
@@ -1310,12 +1376,12 @@ class StagePatchHandler:
                             print_progress_text(
                                 f"Extracting {mod + '/' if mod else ''}{arc_name}"
                             )
-                            (oarc_cache_path / f"{arc_name}.arc").write_bytes(arc_data)
+                            (cache_oarc_path / f"{arc_name}.arc").write_bytes(arc_data)
 
         # Once we've extracted all the arcs, look for conflicts between different mods
         mod_arcs = {}
         for mod in self.other_mods:
-            for arc in os.listdir(OARC_CACHE_PATH / mod):
+            for arc in os.listdir(CACHE_OARC_PATH / mod):
                 if arc in mod_arcs:
                     raise Exception(
                         f'Mods "{mod_arcs[arc]}" and "{mod}" conflict and cannot be used together.'

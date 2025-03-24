@@ -64,7 +64,9 @@ TRACKER_AREAS_PATH = RANDO_ROOT_PATH / "data" / "tracker_areas.yaml"
 TRACKER_AUTOSAVE_PATH = Path(userdata_path) / "tracker_autosave_RANDOMIZER_VERSION.yaml"
 
 # Stage and event stuff
-OARC_CACHE_PATH = Path(userdata_path) / "oarccache"
+CACHE_PATH = Path(userdata_path) / "cache"
+CACHE_OARC_PATH = CACHE_PATH / "oarc"
+CACHE_BZS_PATH = CACHE_PATH / "bzs"
 
 STAGE_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "stagepatches.yaml"
 EVENT_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "eventpatches.yaml"
