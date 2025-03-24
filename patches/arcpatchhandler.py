@@ -6,7 +6,7 @@ from filepathconstants import (
 )
 from sslib.utils import write_bytes_create_dirs
 from sslib.u8file import U8File
-from .stagepatchhandler import get_cache_oarc_path
+from .othermods import get_cache_oarc_path
 
 
 def patch_object_folder(object_folder_output_path: Path, other_mods: list[str] = []):

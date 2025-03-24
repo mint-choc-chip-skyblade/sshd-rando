@@ -1,11 +1,5 @@
-import multiprocessing as mp
 import os
 import sys
-
-# Required to make the multiprocessing stuff not infinitely hang when running a build
-# version. See https://pyinstaller.org/en/stable/common-issues-and-pitfalls.html?highlight=multipr#multi-processing
-# for more info.
-mp.freeze_support()
 
 from filepathconstants import (
     PLANDO_PATH,
