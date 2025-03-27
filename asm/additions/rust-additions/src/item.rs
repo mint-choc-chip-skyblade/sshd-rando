@@ -144,11 +144,11 @@ extern "C" {
         param_4: u32,
         param_5: *mut c_void,
     ) -> u32;
-    fn getArcModelFromName(
+    fn dRawArcTable_c__getDataFromOarc(
         arc_table: *mut c_void,
         model_name: *const c_char,
         model_path: *const c_char,
-    ) -> u64;
+    ) -> *mut c_void;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -1244,7 +1244,7 @@ pub fn get_arc_model_from_item(
     arc_table: *mut c_void,
     model_name: *const c_char,
     item_id: u16,
-) -> u64 {
+) -> *mut c_void {
     unsafe {
         let mut initial_model_name = match item_id {
             214 => c"Onp".as_ptr(),
@@ -1262,7 +1262,11 @@ pub fn get_arc_model_from_item(
 
         let resolved_model_name = resolve_progressive_item_models(initial_model_name, item_id);
 
-        return getArcModelFromName(arc_table, resolved_model_name, c"g3d/model.brres".as_ptr());
+        return dRawArcTable_c__getDataFromOarc(
+            arc_table,
+            resolved_model_name,
+            c"g3d/model.brres".as_ptr(),
+        );
     }
 }
 

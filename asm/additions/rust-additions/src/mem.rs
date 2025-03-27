@@ -184,6 +184,10 @@ extern "C" {
 
     static ARC_MGR: *mut ArcMgr;
 
+    static mut NEXT_STAGE_NAME: [u8; 8];
+
+    static mut BZS_STRING: [c_char; 32];
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
     fn strcmp(s1: *const c_char, s2: *const c_char) -> i32;
@@ -193,8 +197,25 @@ extern "C" {
         actor_param1: u32,
         actor_group_type: u8,
     ) -> *mut actor::dBase;
-    fn arc_instance__mount(p1: *mut c_void, p2: *mut Heap, p3: i32, p4: *const c_char) -> *mut Arc;
-    fn raw_arc_entry__destroy(arc_entry: *mut ArcEntry, stage_arc_type: u64);
+    fn EGG__Archive__mount(p1: *mut c_void, p2: *mut Heap, p3: i32, p4: *const c_char) -> *mut Arc;
+    fn dRawArcEntry_c__destroy(arc_entry: *mut ArcEntry, stage_arc_type: u64);
+    fn dRawArcTable_c__getArcOrLoadFromDisk(
+        arc_table: *mut c_void,
+        arc_name: *const c_char,
+        parent_dir_name: *const c_char,
+        heap: *mut c_void,
+    );
+    fn dRawArcTable_c__getDataFromOarc(
+        arc_table: *mut c_void,
+        arc_name: *const c_char,
+        model_path: *const c_char,
+    ) -> *mut c_void; // actually *mut ResFile
+    fn dRawArcTable_c__addEntryFromParentArc(
+        arc_table: *mut c_void,
+        arc_name: *const c_char,
+        some_ptr: *mut c_void,
+        heap: *mut c_void,
+    );
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -244,7 +265,7 @@ pub fn fix_memory_leak(
             }
         }
 
-        let new_arc = arc_instance__mount(u8File, heap, align, xtx_thing_file_extension);
+        let new_arc = EGG__Archive__mount(u8File, heap, align, xtx_thing_file_extension);
         (*new_arc).ref_count = 0;
 
         return (*xtx_thing).some_index;
@@ -267,6 +288,114 @@ pub fn arc_table_print(p1: actor::ACTORID, p2: *const actor::ActorTreeNode) {
         }
 
         allocateNewActor(p1, p2, 0, 3);
+    }
+}
+
+#[no_mangle]
+pub fn load_custom_bzs(
+    arc_table: *mut c_void,
+    arc_name: *const c_char,
+    parent_dir_name: *const c_char,
+    heap: *mut c_void,
+) {
+    unsafe {
+        dRawArcTable_c__getArcOrLoadFromDisk(arc_table, arc_name, parent_dir_name, heap);
+        dRawArcTable_c__getArcOrLoadFromDisk(arc_table, c"bzs".as_ptr(), c"Stage".as_ptr(), heap);
+    }
+}
+
+#[no_mangle]
+pub fn use_custom_bzs(
+    arc_table: *mut c_void,
+    arc_name: *const c_char,
+    model_path: *const c_char,
+) -> *mut c_void {
+    unsafe {
+        if strcmp(model_path, (*c"dat/stage.bzs").as_ptr()) == 0 {
+            let new_arc_name = (*c"bzs").as_ptr();
+            let mut current_char_index = 0;
+
+            for character in b"dat/" {
+                BZS_STRING[current_char_index] = *character as i8;
+                current_char_index += 1;
+            }
+
+            let mut found_string_terminator = false;
+            for stage_char in &mut NEXT_STAGE_NAME[0..6] {
+                if !found_string_terminator && *stage_char != 0 {
+                    BZS_STRING[current_char_index] = *stage_char as i8;
+                    current_char_index += 1;
+                } else {
+                    found_string_terminator = true;
+                }
+            }
+
+            for character in b"_stage.bzs\0" {
+                BZS_STRING[current_char_index] = *character as i8;
+                current_char_index += 1;
+            }
+
+            asm!("mov x2, {0:x}", in(reg) &BZS_STRING);
+            asm!("mov x1, {0:x}", in(reg) new_arc_name);
+        } else if strcmp(model_path, (*c"dat/room.bzs").as_ptr()) == 0 {
+            let new_arc_name = (*c"bzs").as_ptr();
+            let mut current_char_index = 0;
+
+            for character in b"dat/" {
+                BZS_STRING[current_char_index] = *character as i8;
+                current_char_index += 1;
+            }
+
+            let mut found_string_terminator = false;
+            for stage_char in &mut NEXT_STAGE_NAME[0..8] {
+                if !found_string_terminator && *stage_char != 0 {
+                    BZS_STRING[current_char_index] = *stage_char as i8;
+                    current_char_index += 1;
+                } else {
+                    found_string_terminator = true;
+                }
+            }
+
+            for character in b"_room_" {
+                BZS_STRING[current_char_index] = *character as i8;
+                current_char_index += 1;
+            }
+
+            let indexable_arc_name = core::slice::from_raw_parts(arc_name, 16);
+            let mut roomid_char_index = 0;
+
+            // Get the roomid from the arc_name string
+            while indexable_arc_name[roomid_char_index] != 0 {
+                roomid_char_index += 1;
+            }
+
+            // b"0"
+            if indexable_arc_name[roomid_char_index - 2] != 48 {
+                BZS_STRING[current_char_index] = indexable_arc_name[roomid_char_index - 2];
+                current_char_index += 1;
+            }
+
+            BZS_STRING[current_char_index] = indexable_arc_name[roomid_char_index - 1];
+            current_char_index += 1;
+
+            for character in b".bzs\0" {
+                BZS_STRING[current_char_index] = *character as i8;
+                current_char_index += 1;
+            }
+
+            asm!("mov x2, {0:x}", in(reg) &BZS_STRING);
+            asm!("mov x1, {0:x}", in(reg) new_arc_name);
+        } else {
+            asm!("mov x2, {0:x}", in(reg) model_path);
+            asm!("mov x1, {0:x}", in(reg) arc_name);
+        }
+
+        asm!("mov x0, {0:x}", in(reg) arc_table);
+
+        // Replaced instructions
+        asm!("ldrh w23, [x0, #0x8]");
+
+        return arc_table;
     }
 }
 

@@ -15,3 +15,12 @@ mov x4, x19
 mov w8, #81
 bl additions_jumptable
 strb w23, [x22, x0]
+
+; Load custom bzs.arc
+; uses the jumptable cos the vanilla instructions are a mess
+.offset 0x7100e13354
+b 0x7100659ae0
+
+; Use custom bzs.arc when trying to load vanilla bzs
+.offset 0x7100deb9a4
+bl 0x7100659ae8

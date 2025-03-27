@@ -143,15 +143,17 @@ main:
     SceneflagMgr__checkFlag: 0x7100b8319c
 
     allocateNewActor: 0x7100f14500
-    arc_instance__mount: 0x7100ed82f4
-    raw_arc_entry__destroy: 0x7100deaca4
+    EGG__Archive__mount: 0x7100ed82f4
+    dRawArcEntry_c__destroy: 0x7100deaca4
+    dRawArcTable_c__addEntryFromParentArc: 0x7100deb60c
+    dRawArcTable_c__getArcOrLoadFromDisk: 0x7100deb2a0
+    dRawArcTable_c__getDataFromOarc: 0x7100deb990
 
     dPlayer__putItemAway: 0x7100a1c6d4
     dAcItem__determineFinalItemid: 0x71004ea050
     dAcOlightLine__inUpdate: 0x7100836380
     dAcOmusasabi__stateWaitEnter: 0x7100861db4
     checkParam2OnDestroy: 0x7100b93be4
-    getArcModelFromName: 0x7100deb990
 
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
     dAcItem__spawnItemWithParams: 0x71004eba70
@@ -225,6 +227,9 @@ main:
 
     ## Size: 1
     COLOR_CHANGE_DELAY: 0x712e5ff034
+
+    ## Size: 32
+    BZS_STRING: 0x712e5ff038
 
 
     ## Size: 0x80 (128) each
