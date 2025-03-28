@@ -934,7 +934,9 @@ class StagePatchHandler:
                     elif patch_type == "pathadd":
                         pathadd(bzs=room_bzs, path=patch)
                     elif patch_type == "arcnadd":
-                        arcn_add(bzs=room_bzs["LAY "][f"l{layer}"], patch=patch)
+                        arcn_add(
+                            bzs=room_bzs["LAY "][f"l{patch['layer']}"], patch=patch
+                        )
                     else:
                         raise Exception(
                             f"Unsupported patch type '{patch_type}' found.\nPatch: {patch}"

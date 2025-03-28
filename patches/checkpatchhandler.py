@@ -212,6 +212,7 @@ def determine_check_patches(
 
             if oarc_add_match := OARC_ADD_PATH_REGEX.match(path):
                 stage = oarc_add_match.group("stage")
+                room = int(oarc_add_match.group("room"))
                 layer = int(oarc_add_match.group("layer"))
 
                 for oarc in item_oarcs:
