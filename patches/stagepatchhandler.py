@@ -991,7 +991,7 @@ class StagePatchHandler:
                             objectid,
                             trapid,
                             room,
-                            stage,
+                            stage_name,
                         )
                     elif object_name == "EBc":
                         patch_ac_key_boko(
