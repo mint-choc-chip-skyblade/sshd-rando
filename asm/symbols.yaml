@@ -148,6 +148,7 @@ main:
     dRawArcTable_c__addEntryFromParentArc: 0x7100deb60c
     dRawArcTable_c__getArcOrLoadFromDisk: 0x7100deb2a0
     dRawArcTable_c__getDataFromOarc: 0x7100deb990
+    parseBRRES: 0x7100ffd9f0
 
     dPlayer__putItemAway: 0x7100a1c6d4
     dAcItem__determineFinalItemid: 0x71004ea050
@@ -190,6 +191,12 @@ main:
     HYLIA_CLOUD_COLOR: 0x7101839464
     THUNDERHEAD_CLOUD_COLOR: 0x7101839e8c
     FILESELECT_CLOUD_COLOR: 0x710183925c
+
+    # Base sword model address from dPlayer::initSwordModels + offset needed
+    # for TMS 7100de5828 + (0xa0000 * 0x1a)
+    # return 0x8193D800 + 0x1040000;
+    GODDESS_SWORD_RES: 0x71026fd800
+    TRUE_MASTER_SWORD_RES: 0x710297d800
 
 
     # Custom Symbols

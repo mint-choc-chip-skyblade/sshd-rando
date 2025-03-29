@@ -113,8 +113,12 @@ extern "C" {
 
     static mut CURRENT_STAGE_NAME: [u8; 8];
 
+    static mut GODDESS_SWORD_RES: [u8; 0xA0000];
+    static mut TRUE_MASTER_SWORD_RES: [u8; 0xA0000];
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
+    fn parseBRRES(res_data: u64);
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -221,8 +225,21 @@ pub fn remove_vanilla_tms_sword_pull_textbox(param1: *mut *mut unkstruct) {
 }
 
 #[no_mangle]
-pub fn fix_boko_base_sword_model() -> u64 {
-    // Base sword model address from dPlayer::initSwordModels + offset needed for
-    // TMS 7100de5828 + (0xa0000 * 0x1a)
-    return 0x8193D800 + 0x1040000;
+pub fn fix_boko_base_sword_model(
+    mut res_data: *mut c_void,
+    mut model_name: *const c_char,
+    sword_type: u8,
+) {
+    unsafe {
+        if sword_type == 1 {
+            res_data = TRUE_MASTER_SWORD_RES.as_ptr() as *mut c_void;
+            model_name = c"EquipSwordMaster".as_ptr();
+        } else {
+            res_data = GODDESS_SWORD_RES.as_ptr() as *mut c_void;
+            model_name = c"EquipSwordB".as_ptr();
+        }
+
+        asm!("mov x0, {0:x}", in(reg) res_data);
+        asm!("mov x1, {0:x}", in(reg) model_name);
+    }
 }
