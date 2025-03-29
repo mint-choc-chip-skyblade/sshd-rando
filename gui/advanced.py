@@ -1,6 +1,5 @@
 from functools import partial
 from pathlib import Path
-import os
 
 from PySide6.QtCore import Qt, QUrl
 from PySide6.QtGui import QDesktopServices
@@ -230,9 +229,9 @@ class Advanced:
     def generate_other_mods_list(self):
         self.main.clear_layout(self.ui.other_mods_scroll_layout)
         found_mods = []
-        for entry in os.scandir(OTHER_MODS_PATH):
-            if entry.is_dir():
-                mod_name = entry.name
+        for mod_path in OTHER_MODS_PATH.glob("*"):
+            if mod_path.is_dir():
+                mod_name = mod_path.name
 
                 # Don't include the combined mods folder as a mod folder. Normally this folder is deleted, but
                 # if generation fails for some reason, then it might not get deleted.
