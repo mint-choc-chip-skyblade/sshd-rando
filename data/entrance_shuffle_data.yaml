@@ -10,10 +10,10 @@
         room: 0
         index: 0
     spawn_info:
-      - stage: F400
-        layer: 0
-        room: 0
-        entrance: 10
+      - stage: F001r
+        layer: 3
+        room: 1
+        entrance: 5
 
 ###############################
 #          DUNGEONS           #
