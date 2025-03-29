@@ -1275,12 +1275,12 @@ class StagePatchHandler:
         # Once we've extracted all the arcs, look for conflicts between different mods
         mod_arcs = {}
         for mod in self.other_mods:
-            for arc in os.listdir(CACHE_OARC_PATH / mod):
-                if arc in mod_arcs:
+            for arc in (CACHE_OARC_PATH / mod).glob("*"):
+                if arc.name in mod_arcs:
                     raise Exception(
-                        f'Mods "{mod_arcs[arc]}" and "{mod}" conflict and cannot be used together.'
+                        f'Mods "{mod_arcs[arc.name]}" and "{mod}" conflict and cannot be used together.'
                     )
-                mod_arcs[arc] = mod
+                mod_arcs[arc.name] = mod
 
     def add_arcn_for_check(self, stage: str, layer: int, room: int, arcn: str):
         if self.stage_patches.get(stage, None) == None:

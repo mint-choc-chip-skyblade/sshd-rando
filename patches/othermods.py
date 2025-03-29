@@ -162,12 +162,13 @@ def combine_mod_files(
         for mod_file, mod in files_to_combine:
 
             mod_file_path = copy.deepcopy(path)
+            mod_arc_paths = iter(mod_file.get_all_paths())
             # Some mods have an extra directory named "." in their archive files for some reason. Account for this
-            if next(mod_file.get_all_paths()).startswith("/."):
+            if next(mod_arc_paths).startswith("/."):
                 mod_file_path = f"/.{mod_file_path}"
 
             mod_data = mod_file.get_file_data(mod_file_path)
-            if mod_data != base_game_data:
+            if mod_data != None and mod_data != base_game_data:
                 modded_files.append((mod_data, mod))
 
         if len(modded_files) == 1:
