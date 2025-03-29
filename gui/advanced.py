@@ -115,10 +115,10 @@ class Advanced:
         self.open_spoiler_logs_folder_button.clicked.connect(
             self.open_spoiler_logs_folder
         )
-        self.open_other_mods_dir_button: QAbstractButton = self.ui.open_other_mods_dir_button
-        self.open_other_mods_dir_button.clicked.connect(
-            self.open_other_mods_directory
+        self.open_other_mods_dir_button: QAbstractButton = (
+            self.ui.open_other_mods_dir_button
         )
+        self.open_other_mods_dir_button.clicked.connect(self.open_other_mods_directory)
 
         # Other mods
         self.generate_other_mods_list()
@@ -267,7 +267,9 @@ class Advanced:
 
         # Add a vertical spacer to push the mod list up
         self.ui.other_mods_scroll_layout.addSpacerItem(
-            QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            QSpacerItem(
+                20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
 
         # Remove mods from config which weren't found
