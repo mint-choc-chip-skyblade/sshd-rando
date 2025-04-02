@@ -9,6 +9,21 @@ mov w10, #0x8988
 mov w8, #400 ; upped from 200
 
 
+; Allocate more space for StageArcMgr entries
+; 
+; This sucks cos the vanilla game allocates *exactly* enough entries to accommodate
+; all of the rooms in Sandship. Which means the extra entry needed to load the bzs.arc
+; that rando adds isn't there and the game crashes trying to find an arc which doesn't exist.
+; 
+; In theory, only one extra entry needs to be added
+; but even numbers are nice and safety is even nicer.
+.offset 0x7100e3b2ac
+mov w1, #0x6e8 ; ArcEntry[20] -> 0x58 * 20 = 0x6e0, + 0x8 for some pointer ArcEntryTable
+
+.offset 0x7100e3b2bc
+mov w8, #20 ; upped from 18
+
+
 ; hopefully fix memory leak by checking if filename already has an arcEntry
 .offset 0x7100ed7d80
 mov x4, x19

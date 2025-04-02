@@ -114,6 +114,20 @@ assert_eq_size!([u8; 0x20], ArcMgr);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
+pub struct StageArcMgr {
+    pub vtable:                         u64,
+    pub stage_name:                     [c_char; 32],
+    pub current_loading_stage_arc_name: [c_char; 32],
+    pub stage_extra_layer_arc_name:     [c_char; 32],
+    pub entries:                        *mut [ArcEntry; 400],
+    pub entry_count:                    u16,
+    pub _0:                             [u8; 0x6],
+    pub stage_arc_type:                 u64,
+}
+assert_eq_size!([u8; 0x80], StageArcMgr);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
 pub struct ArcEntry {
     pub arc_name:  [c_char; 32],
     pub ref_count: i16,
@@ -183,6 +197,7 @@ extern "C" {
     static LAYOUT_RES_HEAP: *mut Heap;
 
     static ARC_MGR: *mut ArcMgr;
+    static STAGE_ARC_MGR: *mut StageArcMgr;
 
     static mut NEXT_STAGE_NAME: [u8; 8];
 
