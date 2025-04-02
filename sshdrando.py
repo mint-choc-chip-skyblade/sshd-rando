@@ -58,10 +58,10 @@ else:
     from randomizer.randomize import randomize
 
     if __name__ == "__main__":
-        start_randomization_time = time.process_time()
+        start_randomization_time = time.perf_counter()
 
         randomize()
 
         print(
-            f"Total randomization took {(time.process_time() - start_randomization_time)} seconds"
+            f"Total randomization took {(time.perf_counter() - start_randomization_time)} seconds"
         )
