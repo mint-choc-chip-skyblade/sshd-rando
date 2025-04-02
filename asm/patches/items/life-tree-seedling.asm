@@ -15,3 +15,11 @@ bl additions_jumptable
 
 ; .offset 0x71007d993c
 ; nop
+
+; Allow planting seedling if the player already has the fruit
+.offset 0x71007b81dc
+nop
+.offset 0x71007b80c0
+nop
+.offset 0x71007b837c
+nop
