@@ -261,6 +261,9 @@ b.eq check_local_sceneflag
 cmp w8, #80
 b.eq spawn_tree_of_life_item
 
+cmp w8, #81
+b.eq require_sword_to_enter_sacred_realm
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

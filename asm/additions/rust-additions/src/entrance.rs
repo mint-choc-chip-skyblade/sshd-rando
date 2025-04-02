@@ -329,6 +329,20 @@ pub fn require_sword_to_enter_trial_gate() -> bool {
 }
 
 #[no_mangle]
+pub fn require_sword_to_enter_sacred_realm(
+    sceneflag_mgr: *mut c_void,
+    roomid: u32,
+    sceneflag: u32,
+) -> bool {
+    if flag::check_itemflag(flag::ITEMFLAGS::PRACTICE_SWORD) == 0
+        || flag::check_local_sceneflag(sceneflag) != 0
+    {
+        return false;
+    }
+    return true;
+}
+
+#[no_mangle]
 pub fn allow_saving_respawn_info_on_new_file_start() {
     unsafe {
         // Storyflag 1201 is the "can use amiibo" flag.
