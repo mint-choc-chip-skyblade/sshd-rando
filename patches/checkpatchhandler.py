@@ -28,6 +28,8 @@ def determine_check_patches(
     event_patch_handler: EventPatchHandler,
     asm_patch_handler: ASMPatchHandler,
 ):
+    print_progress_text("Creating Location Patches")
+
     # Custom flags currently use 10 total bits as follows
     # in order of most significant to least significant bits:
 

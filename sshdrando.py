@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 
 from filepathconstants import (
     PLANDO_PATH,
@@ -57,4 +58,10 @@ else:
     from randomizer.randomize import randomize
 
     if __name__ == "__main__":
+        start_randomization_time = time.process_time()
+
         randomize()
+
+        print(
+            f"Total randomization took {(time.process_time() - start_randomization_time)} seconds"
+        )

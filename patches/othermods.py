@@ -70,7 +70,8 @@ def get_other_file_path(path: str):
 
 # Verifies that all included mods can be used together. If mods can't be used together because they modify the same
 # files that we can't resolve the differences between, then an error will be thrown
-def verify_other_mods(other_mods: list[str]) -> bool:
+def verify_other_mods(other_mods: list[str]):
+    print_progress_text("Verifying other mods")
 
     # Keep track of which files are modified by which mods
     mod_files: dict[str, list[str]] = defaultdict(list)

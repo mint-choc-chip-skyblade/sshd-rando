@@ -1,4 +1,5 @@
 import hashlib
+import time
 from constants.verificationconstants import BZS_FILE_HASHES
 from patches.stagepatchhelper import patch_additional_properties
 from util.arguments import get_program_args
@@ -843,6 +844,8 @@ class StagePatchHandler:
         print("Removing unecessary patches")
         self.remove_unnecessary_patches(onlyif_handler)
 
+        start_stage_patching_time = time.process_time()
+
         bzs_u8 = U8File.get_parsed_U8_from_path(BZS_TEMPLATE_PATH)
         bzs_cache_stage_paths = list(CACHE_BZS_PATH.glob("*"))
 
@@ -850,6 +853,8 @@ class StagePatchHandler:
             stage_name = bzs_cache_path.name
             patches = self.stage_patches.get(stage_name, [])
             object_patches = []
+
+            print(f"Patching Stage: {stage_name}")
 
             # handle layer overrides
             layer_override_patches = list(
@@ -1075,8 +1080,18 @@ class StagePatchHandler:
                     f"dat/{stage_name}_room_{roomid}.bzs", build_bzs(room_bzs)
                 )
 
+            update_progress_value(
+                get_progress_value_from_range(
+                    80, 20, current_stage_num, len(bzs_cache_stage_paths)
+                )
+            )
+
         write_bytes_create_dirs(
             self.base_output_path / "Stage" / "bzs.arc", bzs_u8.build_U8()
+        )
+
+        print(
+            f"Patching stages took {(time.process_time() - start_stage_patching_time)} seconds"
         )
 
     def remove_unnecessary_patches(
@@ -1091,7 +1106,7 @@ class StagePatchHandler:
     def __extract_bzs_files(self, stage_file_paths):
         for current_stage_file_num, stage_path in enumerate(stage_file_paths):
             stage_name = stage_path.name
-            print_progress_text(f"Checking stage files: {stage_name}")
+            print_progress_text(f"Checking cached files for stage: {stage_name}")
 
             bzs_stage_dir_path = CACHE_BZS_PATH / stage_name
             bzs_stage_dir_path.mkdir(parents=True, exist_ok=True)
@@ -1147,13 +1162,26 @@ class StagePatchHandler:
 
                     bzs_stage_file_path.write_bytes(bzs)
 
+            update_progress_value(
+                get_progress_value_from_range(
+                    40, 10, current_stage_file_num, len(stage_file_paths)
+                )
+            )
+
     def create_cache(self):
+        start_cache_time = time.process_time()
+
         extracts: dict[dict, dict] = yaml_load(EXTRACTS_PATH)  # type: ignore
         CACHE_PATH.mkdir(parents=True, exist_ok=True)
         CACHE_OARC_PATH.mkdir(parents=True, exist_ok=True)
         CACHE_BZS_PATH.mkdir(parents=True, exist_ok=True)
 
         self.__extract_bzs_files(stage_file_paths=list(STAGE_FILES_PATH.glob("*")))
+
+        print(
+            f"Verifying bzs cache took {(time.process_time() - start_cache_time)} seconds"
+        )
+        start_arc_patching_time = time.process_time()
 
         mods = [""]  # Empty string represents default game extract
         mods.extend(self.other_mods)
@@ -1169,7 +1197,7 @@ class StagePatchHandler:
                 OBJECTPACK_PATH, self.other_mods, mod
             )
 
-            for extract in extracts:
+            for current_extract_num, extract in enumerate(extracts):
                 # objectpack is a special case (not a stage)
                 if "objectpack" in extract and objectpack_path.exists():
                     arcs = extract["objectpack"]
@@ -1272,6 +1300,13 @@ class StagePatchHandler:
                             )
                             (cache_oarc_path / f"{arc_name}.arc").write_bytes(arc_data)
 
+                if mod == "":
+                    update_progress_value(
+                        get_progress_value_from_range(
+                            45, 5, current_extract_num, len(extracts)
+                        )
+                    )
+
         # Once we've extracted all the arcs, look for conflicts between different mods
         mod_arcs = {}
         for mod in self.other_mods:
@@ -1281,6 +1316,14 @@ class StagePatchHandler:
                         f'Mods "{mod_arcs[arc.name]}" and "{mod}" conflict and cannot be used together.'
                     )
                 mod_arcs[arc.name] = mod
+
+        end_cache_time = time.process_time()
+        print(
+            f"Arc extraction took {(end_cache_time - start_arc_patching_time)} seconds"
+        )
+        print(
+            f"Total cache building took {(end_cache_time - start_cache_time)} seconds"
+        )
 
     def add_arcn_for_check(self, stage: str, layer: int, room: int, arcn: str):
         if self.stage_patches.get(stage, None) == None:
@@ -1399,6 +1442,7 @@ class StagePatchHandler:
 def create_shuffled_trial_object_patches(
     world: World, stage_patch_handler: StagePatchHandler
 ) -> None:
+    print_progress_text("Patching trial objects")
 
     # Go through each stage and collect all the item object positions
     silent_realm_stages = ["S000", "S100", "S200", "S300"]
