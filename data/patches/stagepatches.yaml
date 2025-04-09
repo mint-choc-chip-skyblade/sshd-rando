@@ -950,14 +950,6 @@ F001r:
     objtype: OBJ
     object:
       trigstoryfid: -1
-  - name: Always lock Horwell's door
-    type: objpatch
-    id: 0xFC39
-    layer: 0
-    room: 0
-    objtype: OBJS
-    object:
-      anglex: 65025 # from 0x4301 -> 0xFE01; don't have an unlock sceneflag
 
   # Move Loose Crystal checks to night layers
   - name: Raise crystal in Link's room

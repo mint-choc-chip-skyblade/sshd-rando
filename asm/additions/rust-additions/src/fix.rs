@@ -48,6 +48,11 @@ extern "C" {
     fn dAcOlightLine__inUpdate(light_pillar_actor: *mut actor::dAcOlightLine, unk: u64);
     fn dAcOrdinaryNpc__update(npc: *mut c_void) -> u64;
     fn dAcNpcSkn2__addInteractionTarget(horwell: *mut c_void, some_val: u32);
+    fn allocateActorWork1Heap(
+        param1: *mut actor::dAcOBase,
+        param2: i32,
+        param3: *mut c_char,
+    ) -> u64;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -204,6 +209,69 @@ pub fn horwell_always_interactable(horwell: *mut c_void) {
         // Replaced instructions
         dAcOrdinaryNpc__update(horwell);
         asm!("ldr x8,[x19, #0xb60]");
+    }
+}
+
+#[no_mangle]
+pub fn check_should_spawn_horwell(
+    horwell_actor: *mut actor::dAcOBase,
+    param2: i32,
+    param3: *mut c_char,
+) -> bool {
+    unsafe {
+        asm!("mov x19, {0:x}", in(reg) horwell_actor);
+
+        if allocateActorWork1Heap(horwell_actor, param2, param3) & 1 == 0 {
+            return false;
+        }
+
+        // If received random item from Horwell after delivering the remlit.
+        if flag::check_local_sceneflag(28) == 1 {
+            // If outside Horwell
+            if &CURRENT_STAGE_NAME[..5] == b"F000\0" {
+                return false;
+            }
+        } else {
+            // If inside Horwell
+            if &CURRENT_STAGE_NAME[..6] == b"F001r\0" {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+#[no_mangle]
+pub fn check_should_spawn_remlit(
+    remlit_actor: *mut actor::dAcOBase,
+    param2: i32,
+    param3: *mut c_char,
+) -> bool {
+    unsafe {
+        asm!("mov x19, {0:x}", in(reg) remlit_actor);
+
+        if allocateActorWork1Heap(remlit_actor, param2, param3) & 1 == 0 {
+            return false;
+        }
+
+        let param1: u32 = (*remlit_actor).basebase.members.param1;
+
+        // If received random item from Horwell after delivering the remlit.
+        if flag::check_local_sceneflag(28) == 1 {
+            // If current remlit is Mia
+            if (param1 & 0xF) == 1 {
+                return false;
+            }
+        } else {
+            // If haven't rescued remlit and inside the academy,
+            // don't spawn Mia in Horwell's room.
+            if &CURRENT_STAGE_NAME[..6] == b"F001r\0" {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
 

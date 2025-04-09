@@ -144,6 +144,7 @@ main:
     SceneflagMgr__checkFlag: 0x7100b8319c
 
     allocateNewActor: 0x7100f14500
+    allocateActorWork1Heap: 0x7100ecade8
     EGG__Archive__mount: 0x7100ed82f4
     dRawArcEntry_c__destroy: 0x7100deaca4
     dRawArcTable_c__addEntryFromParentArc: 0x7100deb60c

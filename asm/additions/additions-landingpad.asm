@@ -270,6 +270,12 @@ b.eq load_custom_bzs
 cmp w8, #83
 b.eq use_custom_bzs
 
+cmp w8, #84
+b.eq check_should_spawn_horwell
+
+cmp w8, #85
+b.eq check_should_spawn_remlit
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

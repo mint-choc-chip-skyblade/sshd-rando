@@ -103,13 +103,12 @@
     - event/118-Town3/157
     - oarc/F001r/r5/l0
 
-# Uncomment when Horwell's door is unlocked
-# - name: Knight Academy - Horwell's Closet
-#   original_item: Green Rupee
-#   types:
-#     - Closets
-#   Paths:
-#     - stage/F001r/r5/l0/chest/0xFC03
+- name: Knight Academy - Horwell's Closet
+  original_item: Green Rupee
+  types:
+    - Closets
+  Paths:
+    - stage/F001r/r4/l0/chest/0xFC03
 
 - name: Knight Academy - Karane's Closet
   original_item: Green Rupee
