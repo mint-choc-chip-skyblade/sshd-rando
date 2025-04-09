@@ -8,7 +8,6 @@ use crate::flag;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
-use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -326,6 +325,20 @@ pub fn require_sword_to_enter_trial_gate() -> bool {
 
         return true;
     }
+}
+
+#[no_mangle]
+pub fn require_sword_to_enter_sacred_realm(
+    sceneflag_mgr: *mut c_void,
+    roomid: u32,
+    sceneflag: u32,
+) -> bool {
+    if flag::check_itemflag(flag::ITEMFLAGS::PRACTICE_SWORD) == 0
+        || flag::check_local_sceneflag(sceneflag) != 0
+    {
+        return false;
+    }
+    return true;
 }
 
 #[no_mangle]

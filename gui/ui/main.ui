@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -3839,14 +3839,31 @@ Practice Sword</string>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="refresh_mod_list_button">
-             <property name="text">
-              <string>Refresh Mod List</string>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="other_mods_button_layout">
+             <item>
+              <widget class="QPushButton" name="open_other_mods_dir_button">
+               <property name="text">
+                <string>Open other_mods Folder</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="refresh_mod_list_button">
+               <property name="text">
+                <string>Refresh Mod List</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item>
             <widget class="QScrollArea" name="other_mods_scroll_area">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="widgetResizable">
               <bool>true</bool>
              </property>
@@ -3856,7 +3873,7 @@ Practice Sword</string>
                 <x>0</x>
                 <y>0</y>
                 <width>310</width>
-                <height>344</height>
+                <height>342</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="other_mods_scroll_layout"/>
@@ -4315,8 +4332,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>546</width>
-               <height>340</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <property name="maximumSize">

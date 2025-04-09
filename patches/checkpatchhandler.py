@@ -28,6 +28,8 @@ def determine_check_patches(
     event_patch_handler: EventPatchHandler,
     asm_patch_handler: ASMPatchHandler,
 ):
+    print_progress_text("Creating Location Patches")
+
     # Custom flags currently use 10 total bits as follows
     # in order of most significant to least significant bits:
 
@@ -188,7 +190,7 @@ def determine_check_patches(
                             tbox_subtype = 1
 
                 for oarc in item_oarcs:
-                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
+                    stage_patch_handler.add_arcn_for_check(stage, layer, room, oarc)
 
                 stage_patch_handler.add_check_patch(
                     stage,
@@ -212,10 +214,11 @@ def determine_check_patches(
 
             if oarc_add_match := OARC_ADD_PATH_REGEX.match(path):
                 stage = oarc_add_match.group("stage")
+                room = int(oarc_add_match.group("room"))
                 layer = int(oarc_add_match.group("layer"))
 
                 for oarc in item_oarcs:
-                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
+                    stage_patch_handler.add_arcn_for_check(stage, layer, room, oarc)
 
             if shop_match := SHOP_PATCH_PATH_REGEX.match(path):
                 shop_index = int(shop_match.group("index"))
@@ -226,7 +229,7 @@ def determine_check_patches(
                     stage = "F004r"  # Bazaar
 
                 for oarc in item_oarcs:
-                    stage_patch_handler.add_oarc_for_check(stage, layer, oarc)
+                    stage_patch_handler.add_arcn_for_check(stage, layer, room, oarc)
 
                 create_shop_data(
                     world, asm_patch_handler, location, shop_index, item, trapid

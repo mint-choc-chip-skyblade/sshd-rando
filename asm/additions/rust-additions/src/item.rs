@@ -14,7 +14,6 @@ use crate::settings;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
-use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -145,11 +144,11 @@ extern "C" {
         param_4: u32,
         param_5: *mut c_void,
     ) -> u32;
-    fn getArcModelFromName(
+    fn dRawArcTable_c__getDataFromOarc(
         arc_table: *mut c_void,
         model_name: *const c_char,
         model_path: *const c_char,
-    ) -> u64;
+    ) -> *mut c_void;
 }
 
 // IMPORTANT: when adding functions here that need to get called from the game,
@@ -1191,59 +1190,59 @@ pub fn resolve_progressive_item_models(model_name: *const c_char, item_id: u16) 
             // Progressive Bow
             19 => {
                 if flag::check_itemflag(flag::ITEMFLAGS::BOW) == 0 {
-                    return cstr!("GetBowA").as_ptr();
+                    return c"GetBowA".as_ptr();
                 }
                 if flag::check_itemflag(flag::ITEMFLAGS::IRON_BOW) == 0 {
-                    return cstr!("GetBowB").as_ptr();
+                    return c"GetBowB".as_ptr();
                 }
-                return cstr!("GetBowC").as_ptr();
+                return c"GetBowC".as_ptr();
             },
             // Progressive Slingshot
             52 => {
                 if flag::check_itemflag(flag::ITEMFLAGS::SLINGSHOT) == 0 {
-                    return cstr!("GetPachinkoA").as_ptr();
+                    return c"GetPachinkoA".as_ptr();
                 }
-                return cstr!("GetPachinkoB").as_ptr();
+                return c"GetPachinkoB".as_ptr();
             },
             // Progressive Beetle
             53 => {
                 if flag::check_itemflag(flag::ITEMFLAGS::BEETLE) == 0 {
-                    return cstr!("GetBeetleA").as_ptr();
+                    return c"GetBeetleA".as_ptr();
                 }
                 if flag::check_itemflag(flag::ITEMFLAGS::HOOK_BEETLE) == 0 {
-                    return cstr!("GetBeetleB").as_ptr();
+                    return c"GetBeetleB".as_ptr();
                 }
                 if flag::check_itemflag(flag::ITEMFLAGS::QUICK_BEETLE) == 0 {
-                    return cstr!("GetBeetleC").as_ptr();
+                    return c"GetBeetleC".as_ptr();
                 }
-                return cstr!("GetBeetleD").as_ptr();
+                return c"GetBeetleD".as_ptr();
             },
             // Progressive Mitts
             56 => {
                 if flag::check_itemflag(flag::ITEMFLAGS::DIGGING_MITTS) == 0 {
-                    return cstr!("GetMoleGloveA").as_ptr();
+                    return c"GetMoleGloveA".as_ptr();
                 }
-                return cstr!("GetMoleGloveB").as_ptr();
+                return c"GetMoleGloveB".as_ptr();
             },
             // Progressive Bug Net
             71 => {
                 if flag::check_itemflag(flag::ITEMFLAGS::BUG_NET) == 0 {
-                    return cstr!("GetNetA").as_ptr();
+                    return c"GetNetA".as_ptr();
                 }
-                return cstr!("GetNetB").as_ptr();
+                return c"GetNetB".as_ptr();
             },
             // Progressive Wallet
             108 => {
                 if flag::check_itemflag(flag::ITEMFLAGS::MEDIUM_WALLET) == 0 {
-                    return cstr!("GetPurseB").as_ptr();
+                    return c"GetPurseB".as_ptr();
                 }
                 if flag::check_itemflag(flag::ITEMFLAGS::BIG_WALLET) == 0 {
-                    return cstr!("GetPurseC").as_ptr();
+                    return c"GetPurseC".as_ptr();
                 }
                 if flag::check_itemflag(flag::ITEMFLAGS::GIANT_WALLET) == 0 {
-                    return cstr!("GetPurseD").as_ptr();
+                    return c"GetPurseD".as_ptr();
                 }
-                return cstr!("GetPurseE").as_ptr();
+                return c"GetPurseE".as_ptr();
             },
             _ => {
                 return model_name;
@@ -1257,28 +1256,28 @@ pub fn get_arc_model_from_item(
     arc_table: *mut c_void,
     model_name: *const c_char,
     item_id: u16,
-) -> u64 {
+) -> *mut c_void {
     unsafe {
         let mut initial_model_name = match item_id {
-            214 => cstr!("Onp").as_ptr(),
-            215 => cstr!("DesertRobot").as_ptr(),
+            214 => c"Onp".as_ptr(),
+            215 => c"DesertRobot".as_ptr(),
             _ => model_name,
         };
 
         if item_id == 112 {
             if flag::check_itemflag(flag::ITEMFLAGS::ADVENTURE_POUCH) == 0 {
-                initial_model_name = cstr!("GetPouchA").as_ptr();
+                initial_model_name = c"GetPouchA".as_ptr();
             } else {
-                initial_model_name = cstr!("GetPouchB").as_ptr();
+                initial_model_name = c"GetPouchB".as_ptr();
             }
         }
 
         let resolved_model_name = resolve_progressive_item_models(initial_model_name, item_id);
 
-        return getArcModelFromName(
+        return dRawArcTable_c__getDataFromOarc(
             arc_table,
             resolved_model_name,
-            cstr!("g3d/model.brres").as_ptr(),
+            c"g3d/model.brres".as_ptr(),
         );
     }
 }
@@ -1287,17 +1286,17 @@ pub fn get_arc_model_from_item(
 pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *const c_char {
     unsafe {
         let mut initial_model_name = match item_id {
-            214 if (s_rng & 1) == 0 => cstr!("OnpA").as_ptr(),
-            214 => cstr!("OnpB").as_ptr(),
-            215 => cstr!("DesertRobot").as_ptr(),
+            214 if (s_rng & 1) == 0 => c"OnpA".as_ptr(),
+            214 => c"OnpB".as_ptr(),
+            215 => c"DesertRobot".as_ptr(),
             _ => model_name,
         };
 
         if item_id == 112 {
             if flag::check_itemflag(flag::ITEMFLAGS::ADVENTURE_POUCH) == 0 {
-                initial_model_name = cstr!("GetPorchA").as_ptr();
+                initial_model_name = c"GetPorchA".as_ptr();
             } else {
-                initial_model_name = cstr!("GetPorchB").as_ptr();
+                initial_model_name = c"GetPorchB".as_ptr();
             }
         }
 

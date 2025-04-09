@@ -1,5 +1,6 @@
 import struct
 import tempfile
+import time
 from constants.itemconstants import (
     ITEM_ITEMFLAGS,
     ITEM_STORYFLAGS,
@@ -25,7 +26,7 @@ import random
 from constants.asmconstants import *
 
 from lz4.block import compress, decompress
-from gui.dialogs.dialog_header import print_progress_text
+from gui.dialogs.dialog_header import print_progress_text, update_progress_value
 from logic.world import World
 
 from patches.asmpatchhelper import NsoOffsets, SegmentHeader
@@ -38,8 +39,10 @@ from sslib.yaml import yaml_load, yaml_write
 
 # Adds a patch to nnSdk to route all vfprintf calls to the debug output
 # These will be printed to the console on yuzu
-# These prints will spam the console so don't leave this set to True
-ASM_DEBUG_PRINT = False
+# Only prints that start with "> " will be printed to the console on yuzu
+# This variable disables this functionality if desired (mainly just leftover
+# from when this would print *everything* to the console ^^')
+ASM_DEBUG_PRINT = True
 
 
 class ASMPatchHandler:
@@ -223,6 +226,8 @@ class ASMPatchHandler:
 
     # Applies both asm patches and additions.
     def patch_all_asm(self, world: World, onlyif_handler: ConditionalPatchHandler):
+        asm_patching_start_time = time.process_time()
+
         # Apply sdk patches
         if ASM_DEBUG_PRINT:
             print_progress_text("Applying SDK asm patches")
@@ -235,6 +240,11 @@ class ASMPatchHandler:
                 SDK_NSO_OFFSETS,
             )
 
+            print(
+                f"Patching sdk.nso took {(time.process_time() - asm_patching_start_time)} seconds"
+            )
+
+        start_main_patching_time = time.process_time()
         temp_dir = tempfile.TemporaryDirectory()
 
         # Apply main patches
@@ -267,6 +277,12 @@ class ASMPatchHandler:
                 extra_diffs_path=temp_dir_name,
             )
 
+        update_progress_value(93)
+        print(
+            f"Patching main.nso took {(time.process_time() - start_main_patching_time)} seconds"
+        )
+        start_subsdk8_patching_time = time.process_time()
+
         temp_dir = tempfile.TemporaryDirectory()
 
         # Apply subsdk8 patches
@@ -274,24 +290,28 @@ class ASMPatchHandler:
         with temp_dir as temp_dir_name:
             temp_dir_name = Path(temp_dir_name)
 
+            update_progress_value(94)
             print_progress_text("Creating startflag additions")
             startflags_diff_file_path = temp_dir_name / "startflags-diff.yaml"
             self.create_startflag_patches(
                 startflags_diff_file_path, world, onlyif_handler
             )
 
+            update_progress_value(95)
             print("Initializing global variables")
             global_variables_diff_file_path = (
                 temp_dir_name / "global-variables-diff.yaml"
             )
             self.init_global_variables(global_variables_diff_file_path, world)
 
+            update_progress_value(96)
             print_progress_text("Creating starting entrance additions")
             staring_entrance_diff_file_path = (
                 temp_dir_name / "starting-entrance-diff.yaml"
             )
             self.create_starting_entrance_patch(staring_entrance_diff_file_path, world)
 
+            update_progress_value(97)
             print_progress_text("Applying asm additions")
             self.patch_asm(
                 world,
@@ -302,6 +322,14 @@ class ASMPatchHandler:
                 SUBSDK_NSO_OFFSETS,
                 extra_diffs_path=temp_dir_name,
             )
+
+        asm_patching_end_time = time.process_time()
+        print(
+            f"Patching subsdk8.nso took {(asm_patching_end_time - start_subsdk8_patching_time)} seconds"
+        )
+        print(
+            f"Total asm patching took {(asm_patching_end_time - asm_patching_start_time)} seconds"
+        )
 
     def create_starting_entrance_patch(self, output_path: Path, world: World):
         try:
@@ -545,13 +573,13 @@ class ASMPatchHandler:
                 0x00,
                 0x00,
             ],  # COLOR_CHANGE_DELAY
-            0x712E5FF038: [0x00] * 16,  # BOSS_RUSH_SCENEFLAG_BKP
-            0x712E5FF048: [0x00] * 16,  # BOSS_RUSH_DUNGEONFLAG_BKP
-            0x712E5FF058: [
+            0x712E5FF058: [0x00] * 16,  # BOSS_RUSH_SCENEFLAG_BKP
+            0x712E5FF068: [0x00] * 16,  # BOSS_RUSH_DUNGEONFLAG_BKP
+            0x712E5FF078: [
                 0xFF,
                 0xFF,
             ],  # BOSS_RUSH_CURRENT_SCENEINDEX
-            0x712E5FF05A: [
+            0x712E5FF07A: [
                 0x00,
                 0x0,
             ],  # BOSS_RUSH_STORYFLAG_STATES

@@ -10,7 +10,6 @@ use crate::savefile;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
-use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.

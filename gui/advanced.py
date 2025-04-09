@@ -1,6 +1,5 @@
 from functools import partial
 from pathlib import Path
-import os
 
 from PySide6.QtCore import Qt, QUrl
 from PySide6.QtGui import QDesktopServices
@@ -116,6 +115,10 @@ class Advanced:
         self.open_spoiler_logs_folder_button.clicked.connect(
             self.open_spoiler_logs_folder
         )
+        self.open_other_mods_dir_button: QAbstractButton = (
+            self.ui.open_other_mods_dir_button
+        )
+        self.open_other_mods_dir_button.clicked.connect(self.open_other_mods_directory)
 
         # Other mods
         self.generate_other_mods_list()
@@ -227,12 +230,23 @@ class Advanced:
 
         return True
 
+    def open_other_mods_directory(self):
+        try:
+            if not OTHER_MODS_PATH.exists():
+                OTHER_MODS_PATH.mkdir()
+
+            QDesktopServices.openUrl(QUrl.fromLocalFile(OTHER_MODS_PATH.absolute()))
+        except:
+            self.show_file_error_dialog(
+                "Could not open or create the 'other_mods' folder.\n\nThe 'other_mods' folder should be in the same folder as this randomizer program."
+            )
+
     def generate_other_mods_list(self):
         self.main.clear_layout(self.ui.other_mods_scroll_layout)
         found_mods = []
-        for entry in os.scandir(OTHER_MODS_PATH):
-            if entry.is_dir():
-                mod_name = entry.name
+        for mod_path in OTHER_MODS_PATH.glob("*"):
+            if mod_path.is_dir():
+                mod_name = mod_path.name
 
                 # Don't include the combined mods folder as a mod folder. Normally this folder is deleted, but
                 # if generation fails for some reason, then it might not get deleted.
@@ -253,7 +267,9 @@ class Advanced:
 
         # Add a vertical spacer to push the mod list up
         self.ui.other_mods_scroll_layout.addSpacerItem(
-            QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            QSpacerItem(
+                20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
         )
 
         # Remove mods from config which weren't found

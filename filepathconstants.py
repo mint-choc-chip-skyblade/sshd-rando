@@ -64,7 +64,10 @@ TRACKER_AREAS_PATH = RANDO_ROOT_PATH / "data" / "tracker_areas.yaml"
 TRACKER_AUTOSAVE_PATH = Path(userdata_path) / "tracker_autosave_RANDOMIZER_VERSION.yaml"
 
 # Stage and event stuff
-OARC_CACHE_PATH = Path(userdata_path) / "oarccache"
+CACHE_PATH = Path(userdata_path) / "cache"
+CACHE_OARC_PATH = CACHE_PATH / "oarc"
+CACHE_BZS_PATH = CACHE_PATH / "bzs"
+BZS_TEMPLATE_PATH = RANDO_ROOT_PATH / "assets" / "BZS_Template.arc"
 
 STAGE_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "stagepatches.yaml"
 EVENT_PATCHES_PATH = RANDO_ROOT_PATH / "data" / "patches" / "eventpatches.yaml"
@@ -97,8 +100,9 @@ VANILLA_EVENT_FILE_PATHS = {
     tail.name: SSHD_EXTRACT_PATH / tail for tail in EVENT_FILE_PATH_TAILS
 }
 
-OBJECTPACK_PATH_TAIL = Path("romfs") / "Object" / "NX" / "ObjectPack.arc.LZ"
-OBJECTPACK_PATH = SSHD_EXTRACT_PATH / OBJECTPACK_PATH_TAIL
+OBJECTPACK_FILENAME = "ObjectPack.arc.LZ"
+OBJECT_PATH_TAIL = Path("romfs") / "Object" / "NX"
+OBJECTPACK_PATH = SSHD_EXTRACT_PATH / OBJECT_PATH_TAIL / OBJECTPACK_FILENAME
 
 TEXT_DATA_PATH = RANDO_ROOT_PATH / "data" / "text_data"
 ENTRANCE_SHUFFLE_DATA_PATH = RANDO_ROOT_PATH / "data" / "entrance_shuffle_data.yaml"

@@ -261,6 +261,24 @@ b.eq check_local_sceneflag
 cmp w8, #80
 b.eq spawn_tree_of_life_item
 
+cmp w8, #81
+b.eq fix_memory_leak
+
+cmp w8, #82
+b.eq load_custom_bzs
+
+cmp w8, #83
+b.eq use_custom_bzs
+
+cmp w8, #84
+b.eq check_should_spawn_horwell
+
+cmp w8, #85
+b.eq check_should_spawn_remlit
+
+cmp w8, #86
+b.eq require_sword_to_enter_sacred_realm
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

@@ -1,63 +1,32 @@
 F000: # Skyloft
-  # F000 oarcadds
+  # F000 arcnadds
   - name: Add Trial Arcs
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 0
+    room: 0
+    arcn:
       - PLHarpPlay
       - PLSwordStick
       - SirenEntrance
-    destlayer: 0
   - name: Owlan on layer 6 Arcs
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 6
+    room: 0
+    arcn:
       - ShinkanA
       - Shinkan_motion
-    destlayer: 6
   - name: Horwell on layer 4 Arc
-    type: oarcadd
-    oarc:
-      - ShinkanB
-    destlayer: 4
-  - name: Horwell on layer 6 Arc
-    type: oarcadd
-    oarc:
-      - ShinkanB
-    destlayer: 6
-
-  # F000 oarcdeletes
-  - name: Remove oarcs layer 0
-    type: oarcdelete
-    oarc:
-      - GetGaragara
-      - PutGaragara
-      - MoldoGut_Baby # baby moldararch, is probably here because of the dust pile but not needed
-    layer: 0
-  - name: Remove people on bridge # probably unnecessary
-    type: oarcdelete
-    oarc:
-      - DouguyaMotherLOD
-      - JunkMotherLOD
-      - SenpaiAMotherLOD
-    layer: 1
-  - name: Remove oarcs layer 4
-    type: oarcdelete
-    oarc:
-      - GetShieldHylia
-      - GetShieldWood
-      - GetSozaiN
-      - GetSozaiO
-      - PLHarpPlay
-      - PLSwordStick
-      - SirenEntrance
-      - SoMother # wryna is never outside anymore
+    type: arcnadd
     layer: 4
-  - name: Remove oarcs layer 6
-    type: oarcdelete
-    oarc:
-      - GetSozaiN
-      - GetSozaiO
-      - SoMother # wryna is never outside anymore
+    room: 0
+    arcn:
+      - ShinkanB
+  - name: Horwell on layer 6 Arc
+    type: arcnadd
     layer: 6
+    room: 0
+    arcn:
+      - ShinkanB
 
   # F000 objadds
   - name: Light Tower SwHrp on layer 6
@@ -981,14 +950,6 @@ F001r:
     objtype: OBJ
     object:
       trigstoryfid: -1
-  - name: Always lock Horwell's door
-    type: objpatch
-    id: 0xFC39
-    layer: 0
-    room: 0
-    objtype: OBJS
-    object:
-      anglex: 65025 # from 0x4301 -> 0xFE01; don't have an unlock sceneflag
 
   # Move Loose Crystal checks to night layers
   - name: Raise crystal in Link's room
@@ -1234,22 +1195,6 @@ F020: # The Sky
       posy: -10643.59375
       posz: 47020
       name: Tubo
-  - name: Remove oarcs
-    type: oarcdelete
-    oarc:
-      - GetMedal
-      - GetPouchB
-      - GetSpareBombBagA
-      - GetSpareQuiverA
-      - GetSpareSeedA
-    layer: 0
-  - name: Remove unused Scrapper related oarcs
-    type: oarcdelete
-    oarc:
-      - Pinwheel
-      - WaterPotWater
-      - Waterpot
-    layer: 2
   - name: Fi text about goddess cubes
     type: objdelete
     id: 0xFD0F
@@ -1322,25 +1267,18 @@ F020: # The Sky
     objtype: OBJ
 
 F023: # Thunderhead
-  - name: Remove Arcs
-    type: oarcdelete
-    oarc:
-      - GetSpareBombBagA
-      - GetSpareQuiverA
-      - GetSpareSeedA
-      - GetTerryCage
-      - Pinwheel
-    layer: 0
   - name: Add Arcs layer 0
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 0
+    room: 0
+    arcn:
       - GossipStone
-    destlayer: 0
   - name: Add Arcs layer 1
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 1
+    room: 0
+    arcn:
       - KobunB # Stritch
-    destlayer: 1
   - name: Add Stritch to layer 1
     type: objadd
     layer: 1
@@ -1446,18 +1384,20 @@ F100: # Faron Woods
         night: 0
         layer: 1
   - name: Add Arcs layer 0
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 0
+    room: 0
+    arcn:
       - PLHarpPlay
       - PLSwordStick
       - SirenEntrance
       - SwrdPrj
-    destlayer: 0
   - name: Add Arcs layer 1
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 1
+    room: 0
+    arcn:
       - ForestManWiz
-    destlayer: 1
   - name: Add ammo pot to Faron Woods Entry Bird Statue
     onlyif: ammo_availability == useful or ammo_availability == plentiful
     type: objadd
@@ -2107,8 +2047,10 @@ F200: # Eldin Volcano
         night: 0
         layer: 1
   - name: Add Arcs
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 0
+    room: 0
+    arcn:
       - GossipStone
       # Underground stuff
       - MoldWorm
@@ -2128,7 +2070,6 @@ F200: # Eldin Volcano
       - FWRockB
       - Ph
       - PRing
-    destlayer: 0
   - name: Add ammo pot to Volcano Entry Bird Statue
     onlyif: ammo_availability == plentiful
     type: objadd
@@ -2895,10 +2836,11 @@ F201_4: # Volcano Waterfall
 F202: # Bokoblin Base
   # TODO: figure out vanilla layeroverride with flag 200 (Levias SotH)
   - name: Add Arcs
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 0
+    room: 1
+    arcn:
       - GossipStone
-    destlayer: 0
   - name: Add Shiekah Stone in Boko Base to Prison
     type: objadd
     layer: 0
@@ -3865,10 +3807,11 @@ F301_4: # Shipyard
         night: 0
         layer: 1
   - name: Add Arcs
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 0
+    room: 0
+    arcn:
       - GossipStone
-    destlayer: 0
   - name: Move Gossip Stone
     type: objmove
     id: 0xFC5E
@@ -4138,13 +4081,14 @@ F303: # Lanayru Caves
       posy: 0
       posz: 3500
       name: Tubo
-  # Add oarcs
+  # Add arcns
   - name: Add Goron Arcs
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 0
+    room: 0
+    arcn:
       - GoronD
       - Goron_motion
-    destlayer: 0
   # Golo
   - name: Move Golo out of the Way
     type: objpatch
@@ -4273,10 +4217,11 @@ F400: # Behind the Temple
     room: 0
     objtype: STAG
   - name: Add Little Bird Arc
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 0
+    room: 0
+    arcn:
       - LittleBird
-    destlayer: 0
 
 F401: # Sealed Grounds Spiral
   # Removed flags 134 (Defeated The Horde), 175 (in Lanayru SotH Quest), 200 (Defeated Levias),
@@ -4437,8 +4382,10 @@ F402: # Sealed Temple
     room: 2
     objtypes: [OBJS, STAG, STAG,]
   - name: Add layer 2 arcs to layer 0
-    type: oarcadd
-    oarc:
+    type: arcnadd
+    layer: 0
+    room: 2
+    arcn:
       - Amber
       - DoorF
       - DoorG
@@ -4447,7 +4394,6 @@ F402: # Sealed Temple
       - SwitchHarp
       - TimeDoorA
       - TimeDoorB
-    destlayer: 0
   - name: Remove extra Impas
     type: objdelete
     ids:
@@ -4958,11 +4904,25 @@ D100: # Skyview Temple
       posy: 300
       posz: -16960
       name: Tubo
-  - name: Add Arcs
-    type: oarcadd
-    oarc:
+  # TODO: make this better
+  - name: Add Eye Arc to room 1
+    type: arcnadd
+    layer: 0
+    room: 1
+    arcn:
       - SwitchEye
-    destlayer: 0
+  - name: Add Eye Arc to room 4
+    type: arcnadd
+    layer: 0
+    room: 4
+    arcn:
+      - SwitchEye
+  - name: Add Eye Arc to room 7
+    type: arcnadd
+    layer: 0
+    room: 7
+    arcn:
+      - SwitchEye
   # objdeletes
   - name: Remove Empty Soil
     type: objdelete
@@ -6056,9 +6016,10 @@ D301: # Sandship A (main)
       id: 0xFC50
       name: Bombf
   - name: Add Heart Container and Crest Arcs to normal layer
-    type: oarcadd
-    destlayer: 1
-    oarc:
+    type: arcnadd
+    layer: 1
+    room: 0
+    arcn:
       - GoddessSymbolSc
       - PutHeartUtuwa
       - SwordCandle

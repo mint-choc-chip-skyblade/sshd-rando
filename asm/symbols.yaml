@@ -4,6 +4,25 @@ main:
 
     s_rng: 0x710168c3e0
 
+    sCurrentHeap: 0x7102c01a40
+    mDvd__l_ArchiveHeap: 0x7102c02918
+    mDvd__l_CommandHeap: 0x7102c02920
+    mHeap__g_gameHeaps: 0x712d036080
+    mHeap__g_archiveHeap: 0x7102c02950
+    mHeap__g_assertHeap: 0x7102c02968
+    mHeap__g_commandHeap: 0x7102c02958
+    mHeap__g_dylinkHeap: 0x7102c02960
+    mHeap__s_SavedCurrentHeap: 0x7102c02948
+    SOME_HEAP: 0x7101834548
+    WORK1_HEAP: 0x7101834558
+    WORK2_HEAP: 0x7101834560
+    WORK_EX_HEAP: 0x7101834568
+    LAYOUT_HEAP: 0x7101834570
+    LAYOUT_EX_HEAP: 0x7101834578
+    LAYOUT_EX2_HEAP: 0x7101834580
+    LAYOUT_RES_HEAP: 0x7101834588
+
+
 
     # MGRs
     FILE_MGR: 0x7102bfdcc0
@@ -16,6 +35,8 @@ main:
     CONNECT_MGR: 0x710168c510
     LIGHT_MGRS: 0x7102c02690
     SOUND_MGRS: 0x7102c02a98
+    ARC_MGR: 0x7101933d50
+    STAGE_ARC_MGR: 0x7102bfde20
 
     STORYFLAG_MGR: 0x71018321f0
     SCENEFLAG_MGR: 0x7101831ef8
@@ -107,6 +128,10 @@ main:
     # Functions
     debugPrint_128: 0x710051bf54
     strlen: 0x710105f5c0
+    strlen_const: 0x710105f5c0
+    strcmp: 0x710105f6b0
+    strncmp: 0x710105f680
+    strcat: 0x710105f9c0
     sinf: 0x710105f830
     cosf: 0x710105f820
     getRotFromDegrees: 0x710002e9a4
@@ -119,13 +144,19 @@ main:
     SceneflagMgr__checkFlag: 0x7100b8319c
 
     allocateNewActor: 0x7100f14500
+    allocateActorWork1Heap: 0x7100ecade8
+    EGG__Archive__mount: 0x7100ed82f4
+    dRawArcEntry_c__destroy: 0x7100deaca4
+    dRawArcTable_c__addEntryFromParentArc: 0x7100deb60c
+    dRawArcTable_c__getArcOrLoadFromDisk: 0x7100deb2a0
+    dRawArcTable_c__getDataFromOarc: 0x7100deb990
+    parseBRRES: 0x7100ffd9f0
 
     dPlayer__putItemAway: 0x7100a1c6d4
     dAcItem__determineFinalItemid: 0x71004ea050
     dAcOlightLine__inUpdate: 0x7100836380
     dAcOmusasabi__stateWaitEnter: 0x7100861db4
     checkParam2OnDestroy: 0x7100b93be4
-    getArcModelFromName: 0x7100deb990
 
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
     dAcItem__spawnItemWithParams: 0x71004eba70
@@ -162,6 +193,12 @@ main:
     HYLIA_CLOUD_COLOR: 0x7101839464
     THUNDERHEAD_CLOUD_COLOR: 0x7101839e8c
     FILESELECT_CLOUD_COLOR: 0x710183925c
+
+    # Base sword model address from dPlayer::initSwordModels + offset needed
+    # for TMS 7100de5828 + (0xa0000 * 0x1a)
+    # return 0x8193D800 + 0x1040000;
+    GODDESS_SWORD_RES: 0x71026fd800
+    TRUE_MASTER_SWORD_RES: 0x710297d800
 
 
     # Custom Symbols
@@ -200,13 +237,22 @@ main:
     ## Size: 1
     COLOR_CHANGE_DELAY: 0x712e5ff034
 
+    ## Size: 32
+    BZS_STRING: 0x712e5ff038
+
     ## Size: 16
-    BOSS_RUSH_SCENEFLAG_BKP: 0x712e5ff038
-    BOSS_RUSH_DUNGEONFLAG_BKP: 0x712e5ff048
+    BOSS_RUSH_SCENEFLAG_BKP: 0x712e5ff058
+    BOSS_RUSH_DUNGEONFLAG_BKP: 0x712e5ff068
     
     ## Size 2:
-    BOSS_RUSH_CURRENT_SCENEINDEX: 0x712e5ff058
-    BOSS_RUSH_STORYFLAG_STATES: 0x712e5ff05a
+    BOSS_RUSH_CURRENT_SCENEINDEX: 0x712e5ff078
+    BOSS_RUSH_STORYFLAG_STATES: 0x712e5ff07a
+
+    ## Size: 0x80 (128) each
+    DEBUG_PRINTABLE_STRING: 0x712e601000
+    DEBUG_PRINTABLE_STRING_ARG: 0x712e601040
+    DEBUG_BUFFER: 0x712e601080
+
 
     ## This calls dAcItem__spawnItemWithParams but makes sure that bit 9 is left unchanged
     dAcItem__spawnRandoItemWithParams: 0x71005c2060
