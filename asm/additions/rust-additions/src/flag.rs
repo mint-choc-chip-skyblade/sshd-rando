@@ -8,7 +8,6 @@ use crate::savefile;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
-use cstr::cstr;
 use static_assertions::assert_eq_size;
 
 // repr(C) prevents rust from reordering struct fields.
@@ -716,5 +715,5 @@ pub fn increment_tadtone_counter() {
 
     set_storyflag_or_counter_to_value(953, new_value);
     // DO NOT REMOVE THIS DEBUG STATEMENT, OTHERWISE WEIRD BEHAVIOR HAPPENS
-    debug::debug_print(cstr!("Incrementing Tadtones").as_ptr());
+    debug::debug_print(c"Incrementing Tadtones".as_ptr());
 }

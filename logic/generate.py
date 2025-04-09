@@ -17,6 +17,7 @@ import random
 
 
 def generate(config_file: Path) -> list[World]:
+    start_load_config_time = time.process_time()
     get_all_settings_info()
     load_text_data()
 
@@ -31,28 +32,33 @@ The output folder you have specified cannot be found ({config.output_dir.as_posi
 Please choose a valid folder and try again."""
         )
 
+    print(
+        f"Loading config took {(time.process_time() - start_load_config_time)} seconds"
+    )
+
     # If config has no seed, generate one
     if config.seed == "":
         config.seed = str(random.randint(0, 0xFFFFFFFF))
         # write_config_to_file(config_file, config)
 
+    update_progress_value(7)
     print_progress_text(f"Seed: {config.seed}")
 
     return generate_randomizer(config)
 
 
 def generate_randomizer(config: Config) -> list[World]:
-    start = time.process_time()
+    update_progress_value(8)
 
     seed_rng(config, resolve_non_standard_random=True, ignore_invalid_plandomizer=False)
     print(f"Hash: {config.get_hash()}")
 
     worlds: list[World] = []
 
-    update_progress_value(2)
-
     # Build all necessary worlds
     for i in range(len(config.settings)):
+        start_world_build_time = time.process_time()
+
         setting_map = config.settings[i]
         worlds.append(World(i))
         print_progress_text(f"Building {worlds[i]}")
@@ -63,6 +69,11 @@ def generate_randomizer(config: Config) -> list[World]:
         worlds[i].config = config
         worlds[i].build()
 
+        end_world_build_time = time.process_time()
+        print(
+            f"Building World {i+1} took {(end_world_build_time - start_world_build_time)} seconds"
+        )
+
     # Give each world a reference back to the list of all worlds
     for world in worlds:
         world.worlds = worlds
@@ -70,6 +81,9 @@ def generate_randomizer(config: Config) -> list[World]:
     print(
         f"Setting String: {setting_string_from_config(config, worlds[0].location_table)}"
     )
+
+    update_progress_value(10)
+    print_progress_text("Loading plandomizer data")
 
     # Process plando data for all worlds
     if config.use_plandomizer:
@@ -85,7 +99,7 @@ def generate_randomizer(config: Config) -> list[World]:
     for world in worlds:
         world.perform_pre_entrance_shuffle_tasks()
 
-    update_progress_value(4)
+    update_progress_value(12)
     for world in worlds:
         print_progress_text(f"Shuffling entrances for {world}...")
         shuffle_world_entrances(world, worlds)
@@ -93,25 +107,26 @@ def generate_randomizer(config: Config) -> list[World]:
     for world in worlds:
         world.perform_post_entrance_shuffle_tasks()
 
-    start = time.process_time()
-
-    update_progress_value(6)
+    update_progress_value(16)
     print_progress_text("Filling Worlds...")
 
+    start_world_build_time = time.process_time()
+
     fill_worlds(worlds)
-    end = time.process_time()
-    print(f"Fill took {(end - start)} seconds")
+
+    end_world_build_time = time.process_time()
+    print(f"Fill took {(end_world_build_time - start_world_build_time)} seconds")
 
     for world in worlds:
         world.perform_post_fill_tasks()
 
-    update_progress_value(8)
+    update_progress_value(20)
     generate_playthrough(worlds)
 
-    update_progress_value(10)
+    update_progress_value(22)
     generate_hints(worlds)
 
-    update_progress_value(12)
+    update_progress_value(24)
     if config.generate_spoiler_log:
         generate_spoiler_log(worlds)
     generate_anti_spoiler_log(worlds)

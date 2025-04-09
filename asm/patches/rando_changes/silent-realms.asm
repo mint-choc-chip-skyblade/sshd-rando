@@ -52,7 +52,7 @@ bl additions_jumptable
 cbz w0, 0x71009d9534
 
 .offset 0x710093f758
-mov w8, #81
+mov w8, #86
 bl additions_jumptable
 cbz w0, 0x710093f784
 

@@ -2505,17 +2505,29 @@ class Ui_main_window(object):
 
         self.verticalLayout_381.addWidget(self.other_mods_explanation_text)
 
+        self.other_mods_button_layout = QHBoxLayout()
+        self.other_mods_button_layout.setObjectName(u"other_mods_button_layout")
+        self.open_other_mods_dir_button = QPushButton(self.other_mods_group_box)
+        self.open_other_mods_dir_button.setObjectName(u"open_other_mods_dir_button")
+
+        self.other_mods_button_layout.addWidget(self.open_other_mods_dir_button)
+
         self.refresh_mod_list_button = QPushButton(self.other_mods_group_box)
         self.refresh_mod_list_button.setObjectName(u"refresh_mod_list_button")
 
-        self.verticalLayout_381.addWidget(self.refresh_mod_list_button)
+        self.other_mods_button_layout.addWidget(self.refresh_mod_list_button)
+
+
+        self.verticalLayout_381.addLayout(self.other_mods_button_layout)
 
         self.other_mods_scroll_area = QScrollArea(self.other_mods_group_box)
         self.other_mods_scroll_area.setObjectName(u"other_mods_scroll_area")
+        sizePolicy10.setHeightForWidth(self.other_mods_scroll_area.sizePolicy().hasHeightForWidth())
+        self.other_mods_scroll_area.setSizePolicy(sizePolicy10)
         self.other_mods_scroll_area.setWidgetResizable(True)
         self.other_mods_scroll_widget = QWidget()
         self.other_mods_scroll_widget.setObjectName(u"other_mods_scroll_widget")
-        self.other_mods_scroll_widget.setGeometry(QRect(0, 0, 310, 344))
+        self.other_mods_scroll_widget.setGeometry(QRect(0, 0, 310, 342))
         self.other_mods_scroll_layout = QVBoxLayout(self.other_mods_scroll_widget)
         self.other_mods_scroll_layout.setObjectName(u"other_mods_scroll_layout")
         self.other_mods_scroll_area.setWidget(self.other_mods_scroll_widget)
@@ -2853,7 +2865,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 340))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -2996,7 +3008,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(8)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3291,6 +3303,7 @@ class Ui_main_window(object):
         self.setting_enable_back_in_time.setText(QCoreApplication.translate("main_window", u"Enable Back in Time (BiT)", None))
         self.other_mods_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Mods", None))
         self.other_mods_explanation_text.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>The randomizer modifies a lot of files the game uses. To better integrate other mods with the randomizer, you can put them in separate folders in the <span style=\" font-weight:700;\">other_mods</span> directory and choose which ones you want to apply together. For example, if you have a mod which changes Link's tunic color, you can create a new folder in the <span style=\" font-weight:700;\">other_mods</span> directory named &quot;Other Tunic Color&quot; and put the <span style=\" font-weight:700;\">romfs</span> folder of that mod into the new folder. Then refresh the mod list and it should appear below. We do not currently support mods that modify any files in the <span style=\" font-weight:700;\">exefs</span> folder.</p><p>Note that this feature is EXPERIMENTAL and we do not guarantee that you won't run into bugs when using other mods, but the randomizer will try it's best.</p></body></html>", None))
+        self.open_other_mods_dir_button.setText(QCoreApplication.translate("main_window", u"Open other_mods Folder", None))
         self.refresh_mod_list_button.setText(QCoreApplication.translate("main_window", u"Refresh Mod List", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))
         self.tracker_stats_remaining_label.setText(QCoreApplication.translate("main_window", u"Locations Remaining", None))

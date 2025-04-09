@@ -77,12 +77,6 @@ class EventPatchHandler:
         total_event_file_count = len(event_paths)
 
         for event_path in event_paths:
-            patched_event_file_count = event_paths.index(event_path)
-            progress_value = get_progress_value_from_range(
-                99, 7, patched_event_file_count, total_event_file_count
-            )
-            update_progress_value(progress_value)
-
             file_name = event_path.parts[-1]
             modified_event_path = (
                 self.event_output_paths[LANGUAGE_NAME_TO_FILE_ID[language.value()]]
@@ -221,6 +215,12 @@ class EventPatchHandler:
                 raise e
 
             write_bytes_create_dirs(modified_event_path, event_arc.build_U8())
+
+            patched_event_file_count = event_paths.index(event_path)
+            progress_value = get_progress_value_from_range(
+                90, 6, patched_event_file_count, total_event_file_count
+            )
+            update_progress_value(progress_value)
 
     def create_flow_label_to_index_mapping(
         self,

@@ -74,11 +74,9 @@ cmp w0, #1
 ; model data from the player struct. However, because the desired behaviour is to always show TMS,
 ; the following two patches must re-create the behaviour found in dPlayer::initSwordModels.
 
-; Force TMS model data
-.offset 0x71008c46f4
+.offset 0x71008c46bc
+mov w2, w8 ; put sword_type in w2
 mov w8, #78
 bl additions_jumptable
-
-; Force TMS model brres name
-.offset 0x71008c4704
-mov w8, #5
+str x0, [x19, #0x478]
+b 0x71008c4714
