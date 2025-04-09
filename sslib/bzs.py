@@ -263,7 +263,11 @@ def build_object(
         return (29, header_bytes + body)
 
     elif object_type in ("OBJN", "ARCN"):
-        assert type(object_data) == list
+        if type(object_data) != list:
+            raise Exception(
+                f"Could not patch {object_type} because object_data is of type {type(object_data)}, not a list.\nobject_data: {object_data}"
+            )
+
         offset = len(object_data) * 2
         sbytes = b""
         header_bytes = b""
@@ -316,7 +320,7 @@ def get_entry_from_bzs(
     else:
         object_list = bzs["LAY "][f"l{layer}"][object_type]
 
-    if not id is None:
+    if id is not None:
         objs = [x for x in object_list if x["id"] == id]
 
         if len(objs) != 1:
@@ -328,7 +332,7 @@ def get_entry_from_bzs(
         if remove:
             object_list.remove(obj)
 
-    elif not index is None:
+    elif index is not None:
         if index >= len(object_list):
             print(f"Error lisError list index out of range: {json.dumps(object_def)}")
             return None

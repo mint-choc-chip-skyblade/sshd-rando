@@ -19,8 +19,8 @@
     - NPC
   Paths:
     - event/114-Friend/16
-    - oarc/F001r/l3
-    - oarc/F001r/l4
+    - oarc/F001r/r0/l3
+    - oarc/F001r/r0/l4
 
 - name: Knight Academy - Deliver Barrel to Henya the Lunch Lady
   original_item: Red Rupee
@@ -28,7 +28,7 @@
     - NPC
   Paths:
     - event/100-Town/Give Barrel Devlivery Item
-    - oarc/F001r/l3
+    - oarc/F001r/r0/l3
 
 - name: Knight Academy - Item from Cawlin
   original_item: Cawlin's Letter
@@ -36,7 +36,7 @@
     - NPC
   Paths:
     - event/115-Town2/166
-    - oarc/F001r/l0
+    - oarc/F001r/r0/l0
 
 - name: Knight Academy - Bonk Classroom Bookshelf
   original_item: Green Rupee
@@ -66,7 +66,7 @@
     - NPC
   Paths:
     - event/115-Town2/325
-    - oarc/F001r/l0
+    - oarc/F001r/r1/l0
 
 - name: Knight Academy - Deliver Cawlin's Letter
   original_item: Gratitude Crystal Pack
@@ -75,7 +75,7 @@
   Paths:
     - event/115-Town2/522
     - event/115-Town2/641
-    - oarc/F001r/l0
+    - oarc/F001r/r0/l0
 
 - name: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
   original_item: Green Rupee
@@ -101,7 +101,7 @@
   hint: sometimes
   Paths:
     - event/118-Town3/157
-    - oarc/F001r/l0
+    - oarc/F001r/r5/l0
 
 # Uncomment when Horwell's door is unlocked
 # - name: Knight Academy - Horwell's Closet
@@ -192,8 +192,8 @@
     - NPC
   Paths:
     - event/108-ShinkanA/168
-    - oarc/F000/l4
-    - oarc/F000/l6
+    - oarc/F000/r0/l4
+    - oarc/F000/r0/l6
 
 - name: Upper Skyloft - Stamina Fruit near Lower Academy Gates
   original_item: Stamina Fruit
@@ -214,8 +214,8 @@
     - NPC
   Paths:
     - event/108-ShinkanA/292
-    - oarc/F000/l4
-    - oarc/F000/l6
+    - oarc/F000/r0/l4
+    - oarc/F000/r0/l6
 
 - name: Upper Skyloft - Ring Knight Academy Bell
   original_item: Green Rupee
@@ -271,7 +271,7 @@
     - NPC
   Paths:
     - event/107-Kanban/Fi give Goddess Statue item 1
-    - oarc/F008r/l0
+    - oarc/F008r/r0/l0
 
 - name: Inside the Statue of the Goddess - Raise Sword Item 2
   original_item: Emerald Tablet
@@ -279,7 +279,7 @@
     - NPC
   Paths:
     - event/107-Kanban/Fi give Goddess Statue item 2
-    - oarc/F008r/l0
+    - oarc/F008r/r0/l0
 
 - name: Upper Skyloft - Chest below Goddess Statue
   original_item: Red Rupee
@@ -314,8 +314,8 @@
   hint: sometimes
   Paths:
     - event/114-Friend/99
-    - oarc/F000/l4
-    - oarc/F000/l6
+    - oarc/F000/r0/l4
+    - oarc/F000/r0/l6
 
 - name: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
   original_item: Green Rupee
@@ -339,7 +339,7 @@
     - Gratitude Crystals
   Paths:
     - stage/F009r/r0/l2/Item/115
-    - oarc/F009r/l0
+    - oarc/F009r/r0/l0
 
 - name: Sparring Hall - Chest in Back Room
   original_item: Progressive Sword
@@ -356,7 +356,7 @@
     - NPC
   Paths:
     - event/106-DrugStore/44
-    - oarc/F004r/l0
+    - oarc/F004r/r0/l0
 
 - name: Bazaar - Goddess Chest
   original_item: Gold Rupee
@@ -415,7 +415,7 @@
     - NPC
   Paths:
     - event/113-RemodelStore/Give Repair Gondo Junk item
-    - oarc/F004r/l0
+    - oarc/F004r/r0/l0
 
 
 # Central Skyloft:
@@ -581,9 +581,9 @@
   Paths:
     - event/115-Town2/230 # mushroom spores
     - event/115-Town2/733 # Empty Bottle
-    - oarc/F000/l4
-    - oarc/F000/l6
-    - oarc/F005r/l0
+    - oarc/F000/r0/l4
+    - oarc/F000/r0/l6
+    - oarc/F005r/r0/l0
 
 - name: Central Skyloft - Parrow's Gratitude
   original_item: Gratitude Crystal Pack
@@ -591,9 +591,9 @@
     - NPC
   Paths:
     - event/115-Town2/813
-    - oarc/F000/l4
-    - oarc/F000/l6
-    - oarc/F005r/l0
+    - oarc/F000/r0/l4
+    - oarc/F000/r0/l6
+    - oarc/F005r/r0/l0
 
 - name: Central Skyloft - Crystal on Light Tower
   original_item: Gratitude Crystal
@@ -635,8 +635,8 @@
   Paths:
     - event/109-TakeGoron/79
     - event/123-Town5/316
-    - oarc/F018r/l0
-    - oarc/F019r/l0
+    - oarc/F018r/r0/l0
+    - oarc/F019r/r0/l0
 
 - name: Central Skyloft - Stamina Fruit near Wryna's House
   original_item: Stamina Fruit
@@ -652,7 +652,7 @@
     - NPC
   Paths:
     - event/118-Town3/144
-    - oarc/F006r/l0
+    - oarc/F006r/r0/l0
 
 - name: Central Skyloft - Wryna's Closet
   original_item: Green Rupee
@@ -859,7 +859,7 @@
     - NPC
   Paths:
     - event/123-Town5/186
-    - oarc/F016r/l0
+    - oarc/F016r/r0/l0
 
 - name: Skyloft Village - Mallara's Closet
   original_item: Green Rupee
@@ -874,7 +874,7 @@
     - NPC
   Paths:
     - event/115-Town2/125
-    - oarc/F014r/l0
+    - oarc/F014r/r0/l0
 
 - name: Skyloft Village - Luv and Bertie's Closet
   original_item: Green Rupee
@@ -898,7 +898,7 @@
   hint: sometimes
   Paths:
     - event/118-Town3/141
-    - oarc/F013r/l0
+    - oarc/F013r/r0/l0
 
 - name: Skyloft Village - Sparrot's Closet
   original_item: Green Rupee
@@ -931,7 +931,7 @@
     - NPC
   Paths:
     - event/121-AkumaKun/21
-    - oarc/F012r/l0
+    - oarc/F012r/r0/l0
 
 - name: Batreaux's House - 10 Gratitude Crystals Reward
   original_item: Heart Piece
@@ -940,7 +940,7 @@
     - NPC
   Paths:
     - event/121-AkumaKun/42
-    - oarc/F012r/l0
+    - oarc/F012r/r0/l0
 
 - name: Batreaux's House - 30 Gratitude Crystals Reward
   original_item: Progressive Wallet
@@ -949,7 +949,7 @@
     - NPC
   Paths:
     - event/121-AkumaKun/24
-    - oarc/F012r/l0
+    - oarc/F012r/r0/l0
 
 - name: Batreaux's House - 30 Gratitude Crystals Reward Chest
   original_item: Cursed Medal
@@ -966,7 +966,7 @@
     - NPC
   Paths:
     - event/121-AkumaKun/49
-    - oarc/F012r/l0
+    - oarc/F012r/r0/l0
 
 - name: Batreaux's House - 50 Gratitude Crystals Reward
   original_item: Progressive Wallet
@@ -976,7 +976,7 @@
   hint: sometimes
   Paths:
     - event/121-AkumaKun/27
-    - oarc/F012r/l0
+    - oarc/F012r/r0/l0
 
 - name: Batreaux's House - 70 Gratitude Crystals First Reward
   original_item: Gold Rupee
@@ -986,7 +986,7 @@
   hint: sometimes
   Paths:
     - event/121-AkumaKun/161
-    - oarc/F012r/l0
+    - oarc/F012r/r0/l0
 
 - name: Batreaux's House - 70 Gratitude Crystals Second Reward
   original_item: Gold Rupee
@@ -996,7 +996,7 @@
   hint: sometimes
   Paths:
     - event/121-AkumaKun/163
-    - oarc/F012r/l0
+    - oarc/F012r/r0/l0
 
 - name: Batreaux's House - 80 Gratitude Crystals Reward
   original_item: Progressive Wallet
@@ -1006,7 +1006,7 @@
   hint: always
   Paths:
     - event/121-AkumaKun/37
-    - oarc/F012r/l0
+    - oarc/F012r/r0/l0
 
 
 # Beedle's Airshop:
@@ -1224,7 +1224,7 @@
   hint: sometimes
   Paths:
     - event/117-Pumpkin/305
-    - oarc/F011r/l0
+    - oarc/F011r/r0/l0
 
 - name: Lumpy Pumpkin - Deliver Mogma to Kina
   original_item: Gratitude Crystal Pack
@@ -1234,7 +1234,7 @@
   hint: sometimes
   Paths:
     - event/117-Pumpkin/386
-    - oarc/F020/l0
+    - oarc/F020/r0/l0
 
 - name: Lumpy Pumpkin - Pumm and Kina's Closet
   original_item: Green Rupee
@@ -1272,7 +1272,7 @@
     - NPC
   Paths:
     - event/115-Town2/225
-    - oarc/F020/l0
+    - oarc/F020/r0/l0
 
 - name: Beedle's Island - Deliver Beedle's Insect Cage
   original_item: Gratitude Crystal Pack
@@ -1281,7 +1281,7 @@
   hint: sometimes
   Paths:
     - event/105-Terry/115
-    - oarc/F020/l0
+    - oarc/F020/r0/l0
 
 - name: Beedle's Island - Crystal on Airshop Propeller
   original_item: Gratitude Crystal
@@ -1317,7 +1317,7 @@
     - NPC
   Paths:
     - event/110-DivingGame/60
-    - oarc/F020/l0
+    - oarc/F020/r0/l0
 
 - name: Fun Fun Island - 500 Rupees in Dodoh's High Dive
   original_item: Heart Piece
@@ -1328,7 +1328,7 @@
   hint: sometimes
   Paths:
     - event/110-DivingGame/19
-    - oarc/F020/l2
+    - oarc/F020/r0/l2
 
 - name: Fun Fun Island - Goddess Chest below Island
   original_item: Gold Rupee
@@ -1521,7 +1521,7 @@
   hint: sometimes
   Paths:
     - event/116-InsectGame/69
-    - oarc/F023/l0
+    - oarc/F023/r0/l0
 
 - name: Bug Heaven - Goddess Chest
   original_item: Heart Piece
@@ -1646,7 +1646,7 @@
   hint: always
   Paths:
     - event/120-Nushi/give item after levias
-    - oarc/F023/l0
+    - oarc/F023/r0/l0
 
 
 # Sealed Grounds:
@@ -1895,7 +1895,7 @@
     - NPC
   Paths:
     - event/501-Inpa/267
-    - oarc/F402/l0
+    - oarc/F402/r2/l0
 
 - name: Sealed Temple - Collect Fruit from the Tree of Life
   original_item: Life Tree Fruit
@@ -1975,7 +1975,7 @@
   hint: sometimes
   Paths:
     - event/503-Goron/630
-    - oarc/F400/l0
+    - oarc/F400/r0/l0
 
 # Sealed Grounds - Behind the Temple Triforce on Goddess Wall:
 #   original_item: Gold Rupee
@@ -1983,7 +1983,7 @@
 #     - Goddess Walls
 #   Paths:
 #    - event/503-Goron/418
-#    - oarc/F400/l0
+#    - oarc/F400/r0/l0
 
 - name: Sealed Grounds - Gossip Stone Behind the Temple
   original_item: Nothing
@@ -2041,7 +2041,7 @@
   hint: sometimes
   Paths:
     - event/502-CenterFieldBack/17
-    - oarc/F404/l1
+    - oarc/F404/r2/l1
 
 - name: Hylia's Realm - Defeat Demise
   original_item: Game Beatable
@@ -2121,7 +2121,7 @@
   hint: sometimes
   Paths:
     - stage/F100/r0/l1/NpcKyuE/0x1EBB # id is different from SD
-    - oarc/F100/l0
+    - oarc/F100/r0/l0
 
 - name: Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba
   original_item: Stamina Fruit
@@ -2809,7 +2809,7 @@
   hint: always
   Paths:
     - event/204-ForestF3/Give item after Faron SotH CS
-    - oarc/F103_1/l0
+    - oarc/F103_1/r0/l0
 
 
 # Eldin Volcano:
@@ -2986,7 +2986,7 @@
     - stage/F200/r2/l1/Item/0xFCC6
     - stage/F200/r2/l2/Item/0xFCBE
     - stage/F200/r2/l3/Item/0xFCCC
-    - oarc/F200/l0
+    - oarc/F200/r2/l0
 
 - name: Eldin Volcano - Underground Rupee before Bone Bridge 1
   original_item: Red Rupee
@@ -3823,7 +3823,7 @@
   Paths:
     - event/300-Mountain/6
     - event/300-Mountain/135
-    - oarc/F210/l0
+    - oarc/F210/r0/l0
 
 - name: Mogma Turf - Bonk Campfire above Sand Slide
   original_item: Heart
@@ -4011,7 +4011,7 @@
     - NPC
   Paths:
     - event/305-MountainF3/Plats' Gift
-    - oarc/F202/l1
+    - oarc/F202/r1/l1
 
 - name: Bokoblin Base - Chest near Bone Bridge
   original_item: Gust Bellows
@@ -4086,8 +4086,8 @@
     - Chests
   Paths:
     - event/107-Kanban/Fi give Boko Base Sword item
-    - oarc/F201_2/r0/l0 # boko base stage
-    - oarc/F201_1/r0/l4 # vs stage, post-boko base layer
+    - oarc/F201_2/r0/r0/l0 # boko base stage
+    - oarc/F201_1/r0/r0/l4 # vs stage, post-boko base layer
     - stage/F201_1/r0/l4/TBox/73 # missing zev prevents the sword pull working on this stage
 
 - name: Bokoblin Base - Chest in Volcano Summit Alcove
@@ -4104,7 +4104,7 @@
     - NPC
   Paths:
     - event/305-MountainF3/Give item after Eldin SotH CS
-    - oarc/F221/l0
+    - oarc/F221/r0/l0
 
 
 # Lanayru Mine:
@@ -4381,7 +4381,7 @@
     - NPC
   Paths:
     - event/400-Desert/8
-    - oarc/F300/l0
+    - oarc/F300/r0/l0
 
 - name: Lanayru Desert - Rupee behind South Statue near Caged Robot
   original_item: Blue Rupee
@@ -4777,7 +4777,7 @@
     - NPC
   Paths:
     - event/404-DesertF3/127
-    - oarc/F303/l0
+    - oarc/F303/r0/l0
 
 - name: Lanayru Caves - Gossip Stone in Center
   original_item: Nothing
@@ -4814,7 +4814,7 @@
   hint: sometimes
   Paths:
     - event/404-DesertF3/give item after Healing Thunderdragon
-    - oarc/F302/l0
+    - oarc/F302/r0/l0
 
 - name: Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon
   original_item: Blue Rupee
@@ -5216,7 +5216,7 @@
   hint: sometimes
   Paths:
     - event/406-TrolleyRace/77
-    - oarc/F301_4/l0
+    - oarc/F301_4/r0/l0
 
 - name: Shipyard - Gossip Stone after First Minecart Track
   original_item: Nothing
@@ -5286,7 +5286,7 @@
   Paths:
     - stage/F301_6/r0/l1/Item/13
     - stage/F301_6/r0/l2/Item/13
-    - oarc/F301_6/l0
+    - oarc/F301_6/r0/l0
 
 - name: Pirate Stronghold - Bonk Pillar Left of Shark's Head
   original_item: Blue Rupee
@@ -5717,7 +5717,7 @@
     - Crests
   Paths:
     - event/201-ForestD1/6
-    - oarc/B100_1/l0
+    - oarc/B100_1/r0/l0
 
 - name: Skyview Spring - Goddess Cube behind Crest
   original_item: Skyview Spring Goddess Cube
@@ -5824,7 +5824,7 @@
     - NPC
   Paths:
     - event/301-MountainD1/16
-    - oarc/D200/l0
+    - oarc/D200/r1/l0
 
 - name: Earth Temple - Rupee in Dragon's Mouth in Lava Tunnel
   original_item: Silver Rupee
@@ -5896,7 +5896,7 @@
     - Crests
   Paths:
     - event/301-MountainD1/22
-    - oarc/B210/l0
+    - oarc/B210/r0/l0
 
 
 # Lanayru Mining Facility (LMF):
@@ -6273,7 +6273,7 @@
     - Crests
   Paths:
     - event/400-Desert/283
-    - oarc/F300_5/l0
+    - oarc/F300_5/r0/l0
 
 
 # Ancient Cistern (AC):
@@ -6464,7 +6464,7 @@
     - Crests
   Paths:
     - event/202-ForestD2/give item after beating ancient cistern
-    - oarc/B101_1/l0
+    - oarc/B101_1/r0/l0
 
 
 # Sandship (SSH):
@@ -6587,7 +6587,7 @@
   hint: sometimes
   Paths:
     - event/401-DesertD2/14
-    - oarc/D301/l4
+    - oarc/D301/r10/l4
 
 - name: Sandship - Chest after Scervo Fight
   original_item: Progressive Bow
@@ -6620,8 +6620,8 @@
     - Crests
   Paths:
     - event/401-DesertD2/45
-    - oarc/B301/l1
-    - oarc/D301/l1
+    - oarc/B301/r0/l1
+    - oarc/D301/r0/l1
 
 
 # Fire Sanctuary (FS):
@@ -6864,7 +6864,7 @@
     - Crests
   Paths:
     - event/304-MountainD2/5
-    - oarc/B201_1/l0
+    - oarc/B201_1/r0/l0
 
 
 # Sky Keep (SK):

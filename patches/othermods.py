@@ -2,7 +2,7 @@ from filepathconstants import (
     OTHER_MODS_PATH,
     COMBINED_MODS_FOLDER,
     COMBINED_MODS_PATH,
-    OARC_CACHE_PATH,
+    CACHE_OARC_PATH,
     SSHD_EXTRACT_PATH,
 )
 from gui.dialogs.dialog_header import print_progress_text
@@ -52,14 +52,14 @@ def get_resolved_game_file_path(
     return base_game_path, ""
 
 
-def get_oarc_cache_path(oarc_file: str, other_mods: list[str] = []):
+def get_cache_oarc_path(oarc_file: str, other_mods: list[str] = []):
     for mod in other_mods:
-        path = OARC_CACHE_PATH / mod / oarc_file
+        path = CACHE_OARC_PATH / mod / oarc_file
         if path.exists():
             print(f'Found {oarc_file} from mod "{mod}"')
             return path
 
-    return OARC_CACHE_PATH / oarc_file
+    return CACHE_OARC_PATH / oarc_file
 
 
 # Some mods don't recompress their files, so in a bunch of instances we have to check if both the compressed or uncompressed
@@ -70,7 +70,8 @@ def get_other_file_path(path: str):
 
 # Verifies that all included mods can be used together. If mods can't be used together because they modify the same
 # files that we can't resolve the differences between, then an error will be thrown
-def verify_other_mods(other_mods: list[str]) -> bool:
+def verify_other_mods(other_mods: list[str]):
+    print_progress_text("Verifying other mods")
 
     # Keep track of which files are modified by which mods
     mod_files: dict[str, list[str]] = defaultdict(list)
@@ -162,12 +163,13 @@ def combine_mod_files(
         for mod_file, mod in files_to_combine:
 
             mod_file_path = copy.deepcopy(path)
+            mod_arc_paths = iter(mod_file.get_all_paths())
             # Some mods have an extra directory named "." in their archive files for some reason. Account for this
-            if next(mod_file.get_all_paths()).startswith("/."):
+            if next(mod_arc_paths).startswith("/."):
                 mod_file_path = f"/.{mod_file_path}"
 
             mod_data = mod_file.get_file_data(mod_file_path)
-            if mod_data != base_game_data:
+            if mod_data != None and mod_data != base_game_data:
                 modded_files.append((mod_data, mod))
 
         if len(modded_files) == 1:

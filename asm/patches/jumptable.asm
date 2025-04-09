@@ -20,8 +20,8 @@
 ; Total available instructions:                     372 (decimal)
 ; 
 ; Please update this:
-; Total space used (bytes):                          88
-; Total instructions used:                           22
+; Total space used (bytes):                         104
+; Total instructions used:                           26
 
 ; startflags
 .offset 0x7100659ab0
@@ -51,6 +51,16 @@ b additions_jumptable
 
 .offset 0x7100659ad8
 mov w8, #43
+b additions_jumptable
+
+; load custom bzs
+.offset 0x7100659ae0
+mov w8, #82
+b additions_jumptable
+
+; use custom bzs
+.offset 0x7100659ae8
+mov w8, #83
 b additions_jumptable
 
 ; Actually branches to the rust additions landingpad

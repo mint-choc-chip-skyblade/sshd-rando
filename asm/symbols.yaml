@@ -35,6 +35,8 @@ main:
     CONNECT_MGR: 0x710168c510
     LIGHT_MGRS: 0x7102c02690
     SOUND_MGRS: 0x7102c02a98
+    ARC_MGR: 0x7101933d50
+    STAGE_ARC_MGR: 0x7102bfde20
 
     STORYFLAG_MGR: 0x71018321f0
     SCENEFLAG_MGR: 0x7101831ef8
@@ -142,13 +144,18 @@ main:
     SceneflagMgr__checkFlag: 0x7100b8319c
 
     allocateNewActor: 0x7100f14500
+    EGG__Archive__mount: 0x7100ed82f4
+    dRawArcEntry_c__destroy: 0x7100deaca4
+    dRawArcTable_c__addEntryFromParentArc: 0x7100deb60c
+    dRawArcTable_c__getArcOrLoadFromDisk: 0x7100deb2a0
+    dRawArcTable_c__getDataFromOarc: 0x7100deb990
+    parseBRRES: 0x7100ffd9f0
 
     dPlayer__putItemAway: 0x7100a1c6d4
     dAcItem__determineFinalItemid: 0x71004ea050
     dAcOlightLine__inUpdate: 0x7100836380
     dAcOmusasabi__stateWaitEnter: 0x7100861db4
     checkParam2OnDestroy: 0x7100b93be4
-    getArcModelFromName: 0x7100deb990
 
     ## This has been patched to always spawn items with bit 9 set (NOT a rando patched item)
     dAcItem__spawnItemWithParams: 0x71004eba70
@@ -186,6 +193,12 @@ main:
     THUNDERHEAD_CLOUD_COLOR: 0x7101839e8c
     FILESELECT_CLOUD_COLOR: 0x710183925c
 
+    # Base sword model address from dPlayer::initSwordModels + offset needed
+    # for TMS 7100de5828 + (0xa0000 * 0x1a)
+    # return 0x8193D800 + 0x1040000;
+    GODDESS_SWORD_RES: 0x71026fd800
+    TRUE_MASTER_SWORD_RES: 0x710297d800
+
 
     # Custom Symbols
     additions_jumptable: 0x710065a070
@@ -222,6 +235,9 @@ main:
 
     ## Size: 1
     COLOR_CHANGE_DELAY: 0x712e5ff034
+
+    ## Size: 32
+    BZS_STRING: 0x712e5ff038
 
 
     ## Size: 0x80 (128) each
