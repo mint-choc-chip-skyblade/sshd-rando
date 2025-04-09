@@ -6,8 +6,7 @@ VALID_STAGE_PATCH_TYPES = (
     "objdelete",
     "objpatch",
     "objmove",
-    "oarcadd",
-    "oarcdelete",
+    "arcnadd",
     "pathadd",
 )
 
@@ -279,7 +278,9 @@ STAGE_PATCH_PATH_REGEX = re.compile(
     r"stage/(?P<stage>[^/]+)/r(?P<room>[0-9]+)/l(?P<layer>[0-9]+)/(?P<objectName>[a-zA-Z]+)(/(?P<objectID>[^/]+))?"
 )
 EVENT_PATCH_PATH_REGEX = re.compile(r"event/(?P<eventFile>[^/]+)/(?P<eventID>[^/]+)")
-OARC_ADD_PATH_REGEX = re.compile(r"oarc/(?P<stage>[^/]+)/l(?P<layer>[^/]+)")
+OARC_ADD_PATH_REGEX = re.compile(
+    r"oarc/(?P<stage>[^/]+)/r(?P<room>[0-9]+)/l(?P<layer>[^/]+)"
+)
 SHOP_PATCH_PATH_REGEX = re.compile(r"ShpSmpl/(?P<index>[0-9]+)")
 
 LANGUAGE_NAME_TO_FILE_ID = {

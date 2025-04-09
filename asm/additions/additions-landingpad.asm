@@ -262,9 +262,18 @@ cmp w8, #80
 b.eq spawn_tree_of_life_item
 
 cmp w8, #81
-b.eq check_should_spawn_horwell
+b.eq fix_memory_leak
 
 cmp w8, #82
+b.eq load_custom_bzs
+
+cmp w8, #83
+b.eq use_custom_bzs
+
+cmp w8, #84
+b.eq check_should_spawn_horwell
+
+cmp w8, #85
 b.eq check_should_spawn_remlit
 
 ret ; this should never be reached

@@ -31,12 +31,6 @@ class RandomizationThread(QThread):
             import traceback
 
             self.error_abort.emit(str(e), traceback.format_exc())
-
-            import multiprocessing as mp
-
-            for child in mp.active_children():
-                child.kill()
-
             return
 
         self.randomization_complete.emit()
