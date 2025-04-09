@@ -92,7 +92,8 @@
       Can_Defeat_Bokoblins and 
       Can_Defeat_Stalfos and Bow and
       Can_Defeat_Cursed_Bokoblins and
-      Can_Defeat_Stalmaster
+      Can_Defeat_Stalmaster and
+      Practice_Sword
     SK Ancient Cistern Room East: Nothing
 
 
@@ -120,7 +121,7 @@
 - name: SK Fire Sanctuary Room End Platform
   dungeon: Sky Keep
   exits:
-    SK Sacred Power of Din Room: Nothing
+    SK Sacred Power of Din Room: Practice_Sword
     SK Fire Sanctuary Room West: Nothing
     SK Fire Sanctuary Room East: Nothing
     
@@ -141,7 +142,7 @@
 - name: SK Sandship Room West
   dungeon: Sky Keep
   exits:
-    SK Sacred Power of Nayru Room: Bow and Clawshots
+    SK Sacred Power of Nayru Room: Bow and Clawshots and Practice_Sword
 
 
 - name: SK Sacred Power of Nayru Room

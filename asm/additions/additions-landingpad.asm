@@ -276,6 +276,9 @@ b.eq check_should_spawn_horwell
 cmp w8, #85
 b.eq check_should_spawn_remlit
 
+cmp w8, #86
+b.eq require_sword_to_enter_sacred_realm
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
