@@ -4086,8 +4086,9 @@
     - Chests
   Paths:
     - event/107-Kanban/Fi give Boko Base Sword item
-    - oarc/F201_2/l0 # boko base stage
-    - oarc/F201_1/l4 # vs stage, post-boko base layer
+    - oarc/F201_2/r0/l0 # boko base stage
+    - oarc/F201_1/r0/l4 # vs stage, post-boko base layer
+    - stage/F201_1/r0/l4/TBox/73 # missing zev prevents the sword pull working on this stage
 
 - name: Bokoblin Base - Chest in Volcano Summit Alcove
   original_item: Progressive Pouch
