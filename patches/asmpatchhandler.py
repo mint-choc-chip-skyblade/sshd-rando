@@ -38,7 +38,9 @@ from sslib.yaml import yaml_load, yaml_write
 
 # Adds a patch to nnSdk to route all vfprintf calls to the debug output
 # These will be printed to the console on yuzu
-# These prints will spam the console so don't leave this set to True
+# Only prints that start with "> " will be printed to the console on yuzu
+# This variable disables this functionality if desired (mainly just leftover
+# from when this would print *everything* to the console ^^')
 ASM_DEBUG_PRINT = True
 
 
