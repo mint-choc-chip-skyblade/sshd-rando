@@ -121,7 +121,7 @@ pub enum ITEMFLAGS {
     FIRE_SANCTUARY_BOSS_KEY          = 0x1A,
     SANDSHIP_BOSS_KEY                = 0x1B,
     KEY_PIECE                        = 0x1C,
-    SKYVIEW_BOSS_KEY                 = 0x1D,
+    SKYVIEW_TEMPLE_BOSS_KEY          = 0x1D,
     EARTH_TEMPLE_BOSS_KEY            = 0x1E,
     LANAYRU_MINING_FACILITY_BOSS_KEY = 0x1F,
     SILVER_RUPEE                     = 0x20,
@@ -292,6 +292,22 @@ pub enum ITEMFLAGS {
     LIFE_TREE_SEEDLING               = 0xC5,
     LIFE_TREE_FRUIT                  = 0xC6,
     EXTRA_WALLET                     = 0xC7,
+    SKYVIEW_TEMPLE_SMALL_KEY         = 0xC8,
+    LANAYRU_MINING_FACILITY_SMALL_KEY = 0xC9,
+    ANCIENT_CISTERN_SMALL_KEY        = 0xCA,
+    FIRE_SANCTUARY_SMALL_KEY         = 0xCB,
+    SANDSHIP_SMALL_KEY               = 0xCC,
+    SKY_KEEP_SMALL_KEY               = 0xCD,
+    LANAYRU_CAVES_SMALL_KEY          = 0xCE,
+    SKYVIEW_TEMPLE_MAP               = 0xCF,
+    EARTH_TEMPLE_MAP                 = 0xD0,
+    LANAYRU_MINING_FACILITY_MAP      = 0xD1,
+    ANCIENT_CISTERN_MAP              = 0xD2,
+    FIRE_SANCTUARY_MAP               = 0xD3,
+    SANDSHIP_MAP                     = 0xD4,
+    SKY_KEEP_MAP                     = 0xD5,
+    GROUP_OF_TADTONES                = 0xD6,
+    SCRAPPER                         = 0xD7,
     HEART_PIECE_COUNTER              = 0x1E9,
     POUCH_EXPANSION_COUNTER          = 0x1EA,
     DEKU_SEED_COUNTER                = 0x1ED,
@@ -678,7 +694,8 @@ pub fn handle_startflags() {
             // If the counter is greater than 511, it's a storyflag
             // for small key counts. Otherwise, it's a regular item flag counter
             else if start_count.counter <= 25 {
-                (*FILE_MGR).FA.dungeonflags[start_count.counter as usize][1] = start_count.value;
+                (*FILE_MGR).FA.dungeonflags[start_count.counter as usize][1] =
+                    (start_count.value << 4) | start_count.value;
             } else if start_count.counter > 511 {
                 set_storyflag_or_counter_to_value(start_count.counter, start_count.value);
             } else {
