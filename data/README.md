@@ -177,3 +177,10 @@ Below is the list of all the flags that the randomizer changes:
 * 110: Obtained Relic 8
 * 111: Obtained Relic 9
 * 112: Obtained Relic 10
+
+### Dungeonflags
+
+* The upper 4 bits of the small key flags now keep track of the total number
+  of obtained small keys. Allows the help menu to show both the number of
+  small keys the player currently has as well as how many small keys they have
+  found in total.

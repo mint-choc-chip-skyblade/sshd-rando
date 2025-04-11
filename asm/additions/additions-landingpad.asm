@@ -279,6 +279,18 @@ b.eq check_should_spawn_remlit
 cmp w8, #86
 b.eq require_sword_to_enter_sacred_realm
 
+cmp w8, #87
+b.eq set_help_menu_strings
+
+cmp w8, #88
+b.eq left_justify_help_text
+
+cmp w8, #89
+b.eq custom_help_menu_state_change
+
+cmp w8, #90
+b.eq check_help_index_bounds
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

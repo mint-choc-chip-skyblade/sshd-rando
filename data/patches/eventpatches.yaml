@@ -716,6 +716,82 @@
     flow:
       next: 30
 
+005-Tutorial:
+  - name: Help Text Title 1a
+    type: textpatch
+    index: 138
+  - name: Help Text Title 1b
+    type: textpatch
+    index: 139
+  - name: Help Text Title 1c
+    type: textpatch
+    index: 140
+  - name: Help Text Content 1a
+    type: textpatch
+    index: 141
+  - name: Help Text Content 1b
+    type: textpatch
+    index: 142
+  - name: Help Text Content 1b
+    type: textpatch
+    index: 143
+  - name: Help Text Content 1c
+    type: textpatch
+    index: 144
+  - name: Help Text Content 1c
+    type: textpatch
+    index: 145
+  - name: Help Text Content 1c
+    type: textpatch
+    index: 146
+
+  - name: Help Text Title 2a
+    type: textpatch
+    index: 148
+  - name: Help Text Title 2b
+    type: textpatch
+    index: 149
+  - name: Help Text Title 2c
+    type: textpatch
+    index: 150
+  - name: Help Text Content 2a
+    type: textpatch
+    index: 151
+  - name: Help Text Content 2b
+    type: textpatch
+    index: 152
+  - name: Help Text Content 2c
+    type: textpatch
+    index: 153
+  
+  - name: Help Text Title 3a
+    type: textpatch
+    index: 155
+  - name: Help Text Title 3b
+    type: textpatch
+    index: 156
+  - name: Help Text Title 3c
+    type: textpatch
+    index: 157
+  - name: Help Text Content 3a
+    type: textpatch
+    index: 158
+  - name: Help Text Content 3a
+    type: textpatch
+    index: 161
+  - name: Help Text Content 3b
+    type: textpatch
+    index: 159
+  - name: Help Text Content 3b
+    type: textpatch
+    index: 162
+  - name: Help Text Content 3c
+    type: textpatch
+    index: 160
+  - name: Help Text Content 3c
+    type: textpatch
+    index: 163
+
 006-8KenseiNormal:
   - name: Entry for forced Required Dungeons Text
     type: entryadd
@@ -2491,8 +2567,13 @@
       subType: 0
       param1: 0
       param2: 3 # item
-      next: Set zoneflag to trigger loadzone
+      next: Give Ancient Cistern beaten story flag
       param3: 9
+  - name: Give Ancient Cistern beaten story flag
+    type: setstoryflag
+    flow:
+      setstoryflag: 900 # Ancient Cistern beaten story flag
+      next: Set zoneflag to trigger loadzone
   - name: Set zoneflag to trigger loadzone
     type: setzoneflag
     flow:

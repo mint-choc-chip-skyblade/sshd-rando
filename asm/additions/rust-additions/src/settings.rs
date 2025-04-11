@@ -22,9 +22,10 @@ use static_assertions::assert_eq_size;
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
 pub struct RandomizerSettings {
-    pub skip_harp_playing: u8,
+    pub skip_harp_playing:         u8,
+    pub sky_keep_beaten_sceneflag: i8,
 }
-assert_eq_size!([u8; 0x1], RandomizerSettings);
+assert_eq_size!([u8; 0x2], RandomizerSettings);
 
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
