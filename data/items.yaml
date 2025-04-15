@@ -1322,196 +1322,196 @@
   oarc: null
   game_winning_item: true
   advancement: true
-  
 # Dummy items (for now) to simulate hitting goddess cubes
 - id: 257
   name: Faron Woods Goddess Cube on West Great Tree near Exit
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Central Skyloft - Goddess Chest on West Cliff Island
 - id: 258
   name: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Volcanic Island - Inside Goddess Chest
 - id: 259
   name: Faron Woods Goddess Cube on East Great Tree with Rope
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Inside the Thunderhead - Goddess Chest on East Island
 - id: 260
   name: Deep Woods Goddess Cube near Goron
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Lumpy Pumpkin - Goddess Chest near Gossip Stone
 - id: 261
   name: Deep Woods Goddess Cube in front of Skyview
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Island Closest to Faron Pillar - Goddess Chest
 - id: 262
   name: Deep Woods Goddess Cube on top of Skyview
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Beedle's Island - Goddess Chest in Cage
 - id: 263
   name: Lake Floria Goddess Cube
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Central Skyloft - Goddess Chest on Island near Waterfall
 - id: 264
   name: Floria Waterfall Goddess Cube on High Ledge
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Fun Fun Island - Goddess Chest below Island
 - id: 265
   name: Eldin Volcano Goddess Cube at Eldin Entrance
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Triple Island - Upper Goddess Chest
 - id: 266
   name: Eldin Volcano Goddess Cube near Mogma Turf Entrance
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Island near Bamboo Island - Top Goddess Chest
 - id: 267
   name: Eldin Volcano Goddess Cube West of Temple
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Bamboo Island - Goddess Chest behind Entrance
 - id: 268
   name: Eldin Volcano Goddess Cube East of Temple
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Northeast Island - Goddess Chest in Cage
 - id: 269
   name: Eldin Volcano Goddess Cube on Sand Slide
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Central Skyloft - Goddess Chest in Shed
 - id: 270
   name: Mogma Turf Goddess Cube
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Isle of Songs - Lower Goddess Chest
 - id: 271
   name: Volcano Summit Goddess Cube in Lava Lake
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
 - id: 272
   name: Volcano Summit Goddess Cube at Summit Waterfall
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Bug Heaven - Goddess Chest
 - id: 273
   name: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Isle of Songs - Top Goddess Chest
 - id: 274
   name: Lanayru Mine Goddess Cube behind First Landing Robot
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Northeast Island - Goddess Chest behind Bombable Rocks
 - id: 275
   name: Lanayru Desert Goddess Cube near Caged Robot
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Triple Island - Lower Goddess Chest
 - id: 276
   name: Lanayru Desert Goddess Cube in Sand Oasis
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Volcanic Island - Outside Goddess Chest
 - id: 277
   name: Lanayru Desert Goddess Cube in Secret Passageway
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Island near Bamboo Island - Goddess Chest in Cave
 - id: 278
   name: Temple of Time Goddess Cube
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Beedle's Island - Top Goddess Chest
 - id: 279
   name: Lanayru Gorge Goddess Cube
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest
 - id: 280
   name: Ancient Harbour Goddess Cube
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Bazaar - Goddess Chest
 - id: 281
   name: Skipper's Retreat Goddess Cube
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Triple Island - Goddess Chest in Cage
 - id: 282
   name: Pirate Stronghold Goddess Cube
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
-
+  goddess_chest: Central Skyloft - Goddess Chest on Waterfall Island
 - id: 283
   name: Skyview Spring Goddess Cube
   types:
-    - Cubes
+    - Goddess Cube
   oarc: null
   advancement: true
+  goddess_chest: Lumpy Pumpkin - Goddess Chest on Roof
 
 
 #####################################################################

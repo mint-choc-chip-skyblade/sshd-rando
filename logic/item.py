@@ -24,6 +24,7 @@ class Item:
         world_: "World" = None,
         major_item_: bool = False,
         game_winning_item_: bool = False,
+        goddess_chest_: str = None,
     ) -> None:
         self.id: int = id_
         self.name: str = name_
@@ -33,6 +34,7 @@ class Item:
         self.world: "World" = world_
         self.is_major_item: bool = major_item_
         self.is_game_winning_item: bool = game_winning_item_
+        self.goddess_chest: str = goddess_chest_
         self.chain_locations: set["Location"] = set()
         self.was_always_junk: bool = not major_item_
 
@@ -41,6 +43,9 @@ class Item:
         )
         self.is_boss_key: bool = " Boss Key" in name_
         self.is_dungeon_map: bool = " Map" in name_
+
+    def get_goddess_chest(self) -> "Location":
+        return self.world.get_location(self.goddess_chest)
 
     def can_be_in_barren_region(self) -> bool:
         return (

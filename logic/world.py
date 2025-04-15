@@ -116,6 +116,7 @@ class World:
                 shop_model_name = item_node.get("shop_model_name", None)
                 major_item = item_node.get("advancement", False)
                 game_winning_item = item_node.get("game_winning_item", False)
+                goddess_chest = item_node.get("goddess_chest", None)
 
                 stripped_name = name.replace("'", "")
                 self.item_table[stripped_name] = Item(
@@ -127,6 +128,7 @@ class World:
                     self,
                     major_item,
                     game_winning_item,
+                    goddess_chest,
                 )
                 logging.getLogger("").debug(
                     f"Processing new item {name}\tid: {item_id}"
