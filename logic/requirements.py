@@ -1,7 +1,17 @@
+from .search_mode import SearchMode
+
 import copy
 from typing import TYPE_CHECKING, Callable
+from collections import Counter
+from constants.itemconstants import (
+    GRATITUDE_CRYSTAL,
+    GRATITUDE_CRYSTAL_PACK,
+    PROGRESSIVE_WALLET,
+    EXTRA_WALLET,
+)
 
 if TYPE_CHECKING:
+    from .item import Item
     from .world import World
     from .search import Search
     from .entrance import Entrance
@@ -69,6 +79,57 @@ class Requirement:
     def set_as_impossible(self) -> None:
         self.type = RequirementType.IMPOSSIBLE
         self.args = []
+
+    # Return a set of all items mentioned in this requirement
+    def get_items(self, world: "World") -> set["Item"]:
+        items: set["Item"] = set()
+        match self.type:
+            case RequirementType.OR | RequirementType.AND:
+                for arg in self.args:
+                    items |= arg.get_items(world)
+            case RequirementType.ITEM:
+                items.add(self.args[0])
+            case RequirementType.COUNT:
+                items.add(self.args[1])
+            case RequirementType.GRATITUDE_CRYSTALS:
+                items |= {
+                    world.get_item(GRATITUDE_CRYSTAL),
+                    world.get_item(GRATITUDE_CRYSTAL_PACK),
+                }
+
+            case RequirementType.WALLET_CAPACITY:
+                items |= {
+                    world.get_item(EXTRA_WALLET),
+                    world.get_item(PROGRESSIVE_WALLET),
+                }
+        return items
+
+    # Returns the highest wallet capacity found in the requirement
+    def get_wallet_capacity(self, cur_capacity=0) -> int:
+        match self.type:
+            case RequirementType.OR | RequirementType.AND:
+                for arg in self.args:
+                    cur_capacity = arg.get_wallet_capacity(cur_capacity)
+            case RequirementType.WALLET_CAPACITY:
+                if self.args[0] > cur_capacity:
+                    cur_capacity = self.args[0]
+
+        return cur_capacity
+
+    # Returns the highest crystal count found in the requirement
+    def get_crystal_count(self, cur_count=0) -> int:
+        match self.type:
+            case RequirementType.OR | RequirementType.AND:
+                for arg in self.args:
+                    cur_count = arg.get_crystal_count(cur_count)
+            case RequirementType.GRATITUDE_CRYSTALS:
+                if self.args[0] > cur_count:
+                    cur_count = self.args[0]
+
+        return cur_count
+
+    def __eq__(self, value: "Requirement") -> bool:
+        return self.type == value.type and self.args == value.args
 
 
 # Helper to strip an expression down to whatever is inside
@@ -190,8 +251,13 @@ def parse_requirement_string(
             count = int(split_arg[0])
             item = world.get_item(split_arg[1])
 
-            req.args.append(count)
-            req.args.append(item)
+            # If the count is 1, just treat it as a regular item requirement
+            if count == 1:
+                req.args.append(item)
+                req.type = RequirementType.ITEM
+            else:
+                req.args.append(count)
+                req.args.append(item)
         # Then setting comparison check...
         # Since settings don't change curing seed generation,
         # we can resolve them to NOTHING or IMPOSSIBLE requirements now
@@ -335,12 +401,26 @@ def evaluate_requirement_at_time(
             return False
 
         case RequirementType.OR:
-            return any(
+            changed_to_only_items_at_start = False
+            if (
+                search.search_mode == SearchMode.LOCATION_IMPORTANCE
+                and search.assumed_false_req in req.args
+                and not search.only_search_with_items_at_start
+            ):
+                search.only_search_with_items_at_start = True
+                changed_to_only_items_at_start = True
+
+            evaluation = any(
                 [
                     evaluate_requirement_at_time(arg, search, time, world)
                     for arg in req.args
                 ]
             )
+
+            if changed_to_only_items_at_start:
+                search.only_search_with_items_at_start = False
+
+            return evaluation
 
         case RequirementType.AND:
             return all(
@@ -355,11 +435,15 @@ def evaluate_requirement_at_time(
 
         case RequirementType.ITEM:
             item = req.args[0]
+            if search.only_search_with_items_at_start:
+                return search.items_at_start[item] > 0
             return search.owned_items[item] > 0
 
         case RequirementType.COUNT:
             count = req.args[0]
             item = req.args[1]
+            if search.only_search_with_items_at_start:
+                return search.items_at_start[item] > count
             return search.owned_items[item] >= count
 
         case RequirementType.EVENT:
@@ -382,9 +466,14 @@ def evaluate_requirement_at_time(
 
         case RequirementType.WALLET_CAPACITY:
             expected_capacity = req.args[0]
+            if (
+                search.search_mode == SearchMode.LOCATION_IMPORTANCE
+                and search.assumed_wallet_capacity >= expected_capacity
+            ):
+                return True
             base_wallet = 300
-            num_prog_wallets = search.owned_items[world.get_item("Progressive Wallet")]
-            num_extra_wallets = search.owned_items[world.get_item("Extra Wallet")]
+            num_prog_wallets = search.owned_items[world.get_item(PROGRESSIVE_WALLET)]
+            num_extra_wallets = search.owned_items[world.get_item(EXTRA_WALLET)]
             match num_prog_wallets:
                 case 1:
                     base_wallet = 500
@@ -398,11 +487,14 @@ def evaluate_requirement_at_time(
 
         case RequirementType.GRATITUDE_CRYSTALS:
             expected_crystals = req.args[0]
-            num_single_crystals = search.owned_items[
-                world.get_item("Gratitude Crystal")
-            ]
+            if (
+                search.search_mode == SearchMode.LOCATION_IMPORTANCE
+                and search.assumed_crystal_count >= expected_crystals
+            ):
+                return True
+            num_single_crystals = search.owned_items[world.get_item(GRATITUDE_CRYSTAL)]
             num_crystal_packs = search.owned_items[
-                world.get_item("Gratitude Crystal Pack")
+                world.get_item(GRATITUDE_CRYSTAL_PACK)
             ]
             return num_single_crystals + (num_crystal_packs * 5) >= expected_crystals
 

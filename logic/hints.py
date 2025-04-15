@@ -115,12 +115,7 @@ def sanitize_major_items(worlds: list[World]) -> None:
                 or (
                     # If all of this item's chain locations are not progression, then
                     # the item is not a major item.
-                    all(
-                        [
-                            True if not world.get_location(loc).progression else False
-                            for loc in item.chain_locations
-                        ]
-                    )
+                    all([not loc.progression for loc in item.chain_locations])
                     and len(item.chain_locations) > 0
                 )
             ):
@@ -135,14 +130,14 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
     # First generate the goal location keys and also remove items from non-
     # progress locations since they shouldn't be considered when determining
     # path locations
-    non_required_locations = {}
+    non_required_locations: dict[Location, Item] = {}
     for world in worlds:
         # Defeat Demise is always a goal location
-        world.path_locations[world.get_location("Hylia's Realm - Defeat Demise")] = []
+        world.goal_locations.append(world.get_location("Hylia's Realm - Defeat Demise"))
         # Required dungeons also have goal locations
         for dungeon in world.dungeons.values():
             if dungeon.required:
-                world.path_locations[dungeon.goal_location] = []
+                world.goal_locations.append(dungeon.goal_location)
 
         for location in world.location_table.values():
             if not location.progression and not (
@@ -152,61 +147,48 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
                 non_required_locations[location] = location.current_item
                 location.remove_current_item()
 
-    # Determine path locations for each goal location by going through the playthrough
-    # and seeing if taking away the item at each location can still access the goal location(s)
+    # Determine path locations for every progression location with a major item by going through
+    # and seeing if taking away the item at each location can still access the other locations
     for world in worlds:
-        for sphere in worlds[0].playthrough_spheres:
-            for location in sphere:
-                item_at_location = location.current_item
+        for potential_path_location in world.get_all_item_locations():
+            item_at_location = potential_path_location.current_item
 
-                # TODO: how can an item_at_location even be null here?
-                if item_at_location is None:
-                    continue
+            # Skip over locations with removed items
+            if item_at_location is None:
+                continue
 
-                # If this location has a small or big key and the key is known to be within the dungeon,
-                # then ignore it because the player already knows where those items are. Also ignore race
-                # mode locations at the end of dungeons because players know those locations are required.
-                if (
-                    location.has_known_vanilla_item
-                    or location.is_goal_location
-                    or (
-                        item_at_location.is_dungeon_small_key
-                        and world.setting("small_keys").is_any_of(
-                            "own_dungeon", "own_region"
-                        )
-                    )
-                    or (
-                        item_at_location.is_boss_key
-                        and world.setting("boss_keys").is_any_of(
-                            "own_dungeon", "own_region"
-                        )
-                    )
-                ):
-                    continue
+            # If this location is not a progression location with a major item, continue
+            if not (
+                potential_path_location.progression and item_at_location.is_major_item
+            ):
+                continue
 
-                # Take the item away from the location
-                location.remove_current_item()
+            # Take the item away from the location
+            potential_path_location.remove_current_item()
 
-                # Run a search without the item
-                search = Search(SearchMode.ACCESSIBLE_LOCATIONS, worlds)
-                search.search_worlds()
+            # Run a search without the item
+            search = Search(SearchMode.ACCESSIBLE_LOCATIONS, worlds)
+            search.search_worlds()
 
-                # If we never reach the goal location, then this location is
-                # "on the path to" the goal location.
-                for goal_location, path_locations in world.path_locations.items():
-                    if goal_location not in search.visited_locations:
-                        path_locations.append(location)
+            # Check to see if we can reach each progression location. For each progression location that we can't reach,
+            # add the potential path location as a path location
+            for location in world.location_table.values():
+                if location not in search.visited_locations:
+                    location.path_locations.append(potential_path_location)
+                    # logging.getLogger("").debug(
+                    #     f"{potential_path_location} is now path to {location} ({item_at_location})"
+                    # )
 
-                # Then give back the location's item
-                location.set_current_item(item_at_location)
+            # Then give back the location's item
+            potential_path_location.set_current_item(item_at_location)
 
         # logging.getLogger("").debug(f"Path locations for {world}")
-        # for goal_location, path_locations in world.path_locations.items():
+        # for goal_location in world.path_locations:
         #     goal_name = get_text_data(goal_location.name, "goal_name").get(
         #         "en_US"
         #     )
         #     logging.getLogger("").debug(f"  {goal_name}")
-        #     for location in path_locations:
+        #     for location in goal_location.path_locations:
         #         logging.getLogger("").debug(f"  - {location}: {location.current_item}")
 
     # Give back non-progress items
@@ -217,88 +199,153 @@ def calculate_possible_path_locations(worlds: list[World]) -> None:
 def calculate_possible_barren_regions(worlds: list[World]) -> None:
     logging.getLogger("").debug("Calculating Barren Regions")
     for world in worlds:
-        potentially_junk_locations = set()
-        junk_locations = set()
-        for location in world.get_all_item_locations():
+        defeat_demise = world.get_location("Hylia's Realm - Defeat Demise")
+        defeat_demise_path_locs = set(defeat_demise.path_locations)
+
+        for loc in world.get_all_item_locations():
             # If this location is progression, then add its hint regions to
             # the set of potentially barren regions
-            if location.progression:
-                for loc_access in location.loc_access_list:
+            if loc.progression:
+                for loc_access in loc.loc_access_list:
                     for hint_region in loc_access.area.hint_regions:
                         world.barren_regions[hint_region] = []
 
-            # Prevent small keys and big keys in known places from being barren blockers
-            item_at_location = location.current_item
-            if (
-                location.is_goal_location
-                or (
-                    item_at_location.is_dungeon_small_key
-                    and world.setting("small_keys").is_any_of("vanilla", "own_dungeon")
-                )
-                or (
-                    item_at_location.is_boss_key
-                    and world.setting("boss_keys").is_any_of("vanilla", "own_dungeon")
-                )
-            ):
-                junk_locations.add(location)
-            # Depending on how items were placed, temporarily set certain
-            # items as junk items if all of the item's chain locations also
-            # only contain junk
-            chain_locations = [
-                world.get_location(loc_name)
-                for loc_name in location.current_item.chain_locations
-            ]
-            if location.progression and len(chain_locations) > 0:
-                if locations_are_all_junk(chain_locations):
-                    junk_locations.add(location)
-                    logging.getLogger("").debug(f"{location.current_item} is now junk")
-                else:
-                    potentially_junk_locations.add(location)
-
-        # Iterate through all the potentially_junk_locations until
-        # no new junk locations are set
-        new_junk_locations = True
-        while new_junk_locations:
-            new_junk_locations = False
-            for location in potentially_junk_locations:
-                chain_locations = [
-                    world.get_location(loc_name)
-                    for loc_name in location.current_item.chain_locations
+            # Set locations that we can easily calculate as not required or required right now.
+            # Locations which contain barren items, or whose chain locations all contain barren items are not required.
+            if not loc.current_item.is_major_item or all(
+                [
+                    not c.current_item.is_major_item
+                    for c in loc.current_item.chain_locations
                 ]
-                if location.current_item.is_major_item and locations_are_all_junk(
-                    chain_locations
-                ):
-                    new_junk_locations = True
-                    junk_locations.add(location)
-                    logging.getLogger("").debug(f"{location.current_item} is now junk")
+            ):
+                loc.importance = LocationImportance.NOT_REQUIRED
+            # Locations which are on the path to Demise are required.
+            elif loc in defeat_demise_path_locs or loc == defeat_demise:
+                loc.importance = LocationImportance.REQUIRED
+
+        # Any location in the playthrough which doesn't have a hint importance set yet is going to be possibly required
+        for sphere in worlds[0].playthrough_spheres:
+            for loc in sphere:
+                if loc.importance == LocationImportance.UNKNOWN:
+                    loc.importance = LocationImportance.POSSIBLY_REQUIRED
+                    logging.getLogger("").debug(
+                        f"{loc}: {loc.current_item} is possibly required due to appearing in playthrough"
+                    )
+
+        # Any remaining locations which don't have a hint importance set yet are either possibly required or not required.
+        # These locations' hint importance take much longer to calculate
+        for loc in world.get_all_item_locations():
+            if loc.importance == LocationImportance.UNKNOWN:
+                if blocking_location := calculate_location_hint_importance(loc):
+                    logging.getLogger("").debug(
+                        f"{loc}: {loc.current_item} possibly required due to {blocking_location}: {blocking_location.current_item}"
+                    )
+                else:
+                    logging.getLogger("").debug(
+                        f"{loc}: {loc.current_item} not required"
+                    )
 
         # Now loop through all the progression locations again and remove
-        # any regions from the barren regions which have non-junk items at
-        # any of their locations. Otherwise add the location to the list
-        # of locations in the barren region
-        for location in world.get_all_item_locations():
-            for loc_access in location.loc_access_list:
+        # any regions from the barren regions which have any possibly required or
+        # required items (unless they can be in a barren region). Otherwise add
+        # the location to the list of locations in the barren region
+        for loc in world.get_all_item_locations():
+            if not loc.progression:
+                continue
+
+            for loc_access in loc.loc_access_list:
                 for hint_region in loc_access.area.hint_regions:
-                    if (
-                        location.progression
-                        and location.current_item.is_major_item
-                        and location not in junk_locations
-                        and hint_region in world.barren_regions
-                    ):
-                        del world.barren_regions[hint_region]
-                    elif hint_region in world.barren_regions:
-                        world.barren_regions[hint_region].append(location)
+                    if hint_region in world.barren_regions:
+                        if (
+                            loc.importance == LocationImportance.NOT_REQUIRED
+                            or loc.current_item.can_be_in_barren_region()
+                        ):
+                            world.barren_regions[hint_region].append(loc)
+                        else:
+                            del world.barren_regions[hint_region]
 
         logging.getLogger("").debug(f"Barren regions for {world}")
         for region in world.barren_regions.keys():
             logging.getLogger("").debug(f"- {region}")
 
 
+# Calculates the passed in location's hint importance, as well as recursively calculates the importance of any
+# locations that this one may unlock, but haven't had their own importance calculated yet
+def calculate_location_hint_importance(
+    location: Location, currently_checking: set["Location"] = set()
+) -> Location:
+    # If this location's hint importance is already known, we don't need to calculate it
+    if location.importance != LocationImportance.UNKNOWN:
+        return None
+
+    # Get all the progressive chain locations for this location's item
+    # Filter out locations that aren't progression, are already in this
+    # location's path locations, have an item that we can trivially know
+    # is barren, or have already been deemed as not required.
+    chain_locations = {
+        loc
+        for loc in location.current_item.chain_locations
+        if loc.progression
+        and loc.current_item.is_major_item
+        and loc not in location.path_locations
+        and not loc.current_item.can_be_in_barren_region()
+        and not loc.importance == LocationImportance.NOT_REQUIRED
+    }
+    # Discard the current location, as obviously the item at this location will not lead to itself
+    chain_locations.discard(location)
+
+    # If there are no chain locations left, then this location is not required
+    if len(chain_locations) == 0:
+        location.importance = LocationImportance.NOT_REQUIRED
+        return
+
+    # Get all items from this location's logically required path locations
+    logically_required_items = []
+    for path_location in location.path_locations:
+        logically_required_items.append(path_location.current_item)
+
+    # Perform an importance search to see which locations are reachable without using this item in any way
+    importance_search = Search(
+        SearchMode.LOCATION_IMPORTANCE,
+        location.world.worlds,
+        logically_required_items,
+        importance_location_=location,
+    )
+    importance_search.search_worlds()
+
+    # Any locations that we found can be subtracted out of our chain locations because the item at this location
+    # does not help reach them in any way.
+    chain_locations -= importance_search.visited_locations
+
+    # If any remaining chain locations are also currently being checked for their hint importance,
+    # then we subtract them out. This will allow us to only check locations which aren't potentially
+    # dependent on each other's items. If we go through all of the other locations first and don't
+    # find anything that makes this location possibly required, we'd only be left with locations
+    # currently being checked that are dependent on one another. If these location's items are only
+    # potentially dependent on each other, then they're both not required.
+    chain_locations -= currently_checking
+
+    for loc in chain_locations:
+        # If any remaining chain location hasn't had its hint importance calculated, then do so now
+        if loc.importance == LocationImportance.UNKNOWN:
+            currently_checking.add(location)
+            calculate_location_hint_importance(loc, currently_checking)
+            currently_checking.discard(location)
+        # If any remaining chain location is at least possibly required, then this location is also possibly required
+        if loc.importance != LocationImportance.NOT_REQUIRED:
+            location.importance = LocationImportance.POSSIBLY_REQUIRED
+            return loc
+
+    # If all remaining chain locations were not required, then this location is also not required
+    location.importance = LocationImportance.NOT_REQUIRED
+    return None
+
+
 def generate_path_hint_locations(world: World, hint_locations: list) -> None:
     # Shuffle each pool of path locations so that their orders are random
-    goal_locations_list = []
-    for goal_location, path_locations in world.path_locations.items():
-        random.shuffle(path_locations)
+    goal_locations_list: list[Location] = []
+    for goal_location in world.goal_locations:
+        random.shuffle(goal_location.path_locations)
         # Initially we want to create hints for required dungeon's goal locations
         # and then add Demise in once we have at least 1 hint for each required dungeon
         if goal_location != world.get_location("Hylia's Realm - Defeat Demise"):
@@ -325,15 +372,34 @@ def generate_path_hint_locations(world: World, hint_locations: list) -> None:
 
             goal_location = random.choice(goal_locations_list)
 
-        # If we're placing path hints on gossip stones, don't choose any that somehow
-        # manage to be before every possible gossip stone
         valid_path_locations = [
             loc
-            for loc in world.path_locations[goal_location]
-            if world.setting("path_hints_on_gossip_stones") == "off"
-            or (
-                world.setting("path_hints_on_gossip_stones") == "on"
-                and get_possible_gossip_stones(loc)
+            for loc in goal_location.path_locations
+            # If we're placing path hints on gossip stones, don't choose any that somehow
+            # manage to be before every possible gossip stone
+            if (
+                world.setting("path_hints_on_gossip_stones") == "off"
+                or (
+                    world.setting("path_hints_on_gossip_stones") == "on"
+                    and get_possible_gossip_stones(loc)
+                )
+            )
+            # Also don't choose any locations that are known vanilla items, or small/boss keys in known regions
+            and not (
+                loc.has_known_vanilla_item
+                or loc.is_goal_location
+                or (
+                    loc.current_item.is_dungeon_small_key
+                    and world.setting("small_keys").is_any_of(
+                        "own_dungeon", "own_region"
+                    )
+                )
+                or (
+                    loc.current_item.is_boss_key
+                    and world.setting("boss_keys").is_any_of(
+                        "own_dungeon", "own_region"
+                    )
+                )
             )
         ]
         hint_location = get_hintable_location(valid_path_locations)
@@ -565,8 +631,11 @@ def generate_item_hint_message(location: Location) -> None:
 
     type_ = "cryptic" if world.setting("cryptic_hint_text") == "on" else "pretty"
     item_text_color = "r" if type_ == "pretty" else ""
-    item_text = get_text_data(location.current_item.name, type_).apply_text_color(
-        item_text_color
+    item_text = (
+        get_text_data(location.current_item.name, type_).apply_text_color(
+            item_text_color
+        )
+        + location.generate_importance_text()
     )
 
     full_text = (
@@ -594,7 +663,10 @@ def generate_location_hint_message(location: Location) -> None:
     item = location.current_item
 
     location_text = get_text_data(location.name, type_).apply_text_color(color)
-    item_text = get_text_data(item.name, type_).apply_text_color(color)
+    item_text = (
+        get_text_data(item.name, type_).apply_text_color(color)
+        + location.generate_importance_text()
+    )
 
     full_text = (
         get_text_data("Location Hint")
@@ -804,66 +876,62 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
         match world.setting("song_hints"):
             case "basic":
                 # If there are any major items in the silent realm
-                if any([loc for loc in locations if loc.current_item.is_major_item]):
+                if any(
+                    [
+                        loc.importance >= LocationImportance.POSSIBLY_REQUIRED
+                        for loc in locations
+                    ]
+                ):
                     hint.text = get_text_data("Trial Useful")
                 else:
                     hint.text = get_text_data("Trial Useless")
 
             case "advanced":
-                # If there are any items on the path to Demise
+                # If there are any required items
                 if any(
-                    [
-                        loc
-                        for loc in locations
-                        if loc
-                        in world.path_locations[
-                            world.get_location("Hylia's Realm - Defeat Demise")
-                        ]
-                    ]
+                    [loc.importance == LocationImportance.REQUIRED for loc in locations]
                 ):
                     hint.text = get_text_data("Trial Required")
-                # If there are any major items in the silent realm
-                elif any([loc for loc in locations if loc.current_item.is_major_item]):
+                # If there are any possibly required item
+                elif any(
+                    [
+                        loc.importance == LocationImportance.POSSIBLY_REQUIRED
+                        for loc in locations
+                    ]
+                ):
                     hint.text = get_text_data("Trial Useful")
                 else:
                     hint.text = get_text_data("Trial Useless")
 
             case "direct":
                 useful_locations = [
-                    loc for loc in locations if loc.current_item.is_major_item
+                    loc
+                    for loc in locations
+                    if loc.importance >= LocationImportance.POSSIBLY_REQUIRED
                 ]
                 if not useful_locations:
                     hint.text = get_text_data("Trial Direct Nothing")
                 else:
-                    # There's only enough text space to hint at one full item name, so calculate which item
-                    # is the most logically useful among the set and display that item name. The most logically
-                    # useful item is whichever item blocks the most checks.
-                    most_useful_location = None
-                    # Keep track of the least amount of locations unlocked so far
-                    unlocked_locations = len(world.location_table) + 1
+                    # There's only enough text space to hint at one full item name.
+                    hinted_location = None
+                    # If there are any logically required items (on the path to Demise), choose one of them at random
+                    random.shuffle(useful_locations)
                     for location in useful_locations:
-                        item_at_location = location.current_item
-                        location.remove_current_item()
+                        if location.importance == LocationImportance.REQUIRED:
+                            hinted_location = location
+                            break
 
-                        search = Search(SearchMode.ACCESSIBLE_LOCATIONS, world.worlds)
-                        search.search_worlds()
-                        # If removing the item at this location leads to fewer unlocked
-                        # locations, then it's the most logically useful
-                        visisted_progression_locations = [
-                            loc for loc in search.visited_locations if loc.progression
-                        ]
-                        if (
-                            len(visisted_progression_locations) < unlocked_locations
-                            or most_useful_location is None
-                        ):
-                            most_useful_location = location
-                            unlocked_locations = len(visisted_progression_locations)
+                    # If there weren't any, just choose any useful location at random.
+                    # The list is already shuffled, so we'll take the first one.
+                    if not hinted_location:
+                        hinted_location = useful_locations[0]
 
-                        location.set_current_item(item_at_location)
-
-                    first_item_text = get_text_data(
-                        f"{most_useful_location.current_item.name}", "pretty"
-                    ).apply_text_color("r")
+                    first_item_text = (
+                        get_text_data(
+                            f"{hinted_location.current_item.name}", "pretty"
+                        ).apply_text_color("r")
+                        + hinted_location.generate_importance_text()
+                    )
                     # If there are still more useful locations in the silent realm, then list how many there are
                     if len(useful_locations) == 1:
                         hint_text_to_append = get_text_data("Trial Direct One").replace(
@@ -874,7 +942,7 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                             "<item>", first_item_text
                         )
                     else:
-                        useful_locations.remove(most_useful_location)
+                        useful_locations.remove(hinted_location)
                         hint_text_to_append = (
                             get_text_data("Trial Direct Three Plus")
                             .replace("<item>", first_item_text)
@@ -895,10 +963,6 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                     hint.text += hint_text_to_append
 
         logging.getLogger("").debug(f'Generated hint "{hint.text}" for song {song}')
-
-
-def locations_are_all_junk(locations: list[Location]) -> bool:
-    return all([not loc.current_item.is_major_item for loc in locations])
 
 
 def get_hintable_location(locations: list[Location]) -> Location | None:

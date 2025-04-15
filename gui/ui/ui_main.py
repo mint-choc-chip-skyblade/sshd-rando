@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -1834,6 +1834,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_23.addWidget(self.setting_impa_sot_hint)
 
+        self.setting_hint_importance = RandoTriStateCheckBox(self.hints_group_box)
+        self.setting_hint_importance.setObjectName(u"setting_hint_importance")
+
+        self.verticalLayout_23.addWidget(self.setting_hint_importance)
+
         self.chest_size_matches_contents_label = QLabel(self.hints_group_box)
         self.chest_size_matches_contents_label.setObjectName(u"chest_size_matches_contents_label")
 
@@ -2865,7 +2870,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 340))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -3008,7 +3013,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(8)
+        self.tab_widget.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3211,6 +3216,7 @@ class Ui_main_window(object):
         self.setting_always_hints.setText(QCoreApplication.translate("main_window", u"Prioritize Remote Location Hints", None))
         self.setting_cryptic_hint_text.setText(QCoreApplication.translate("main_window", u"Cryptic Hint Text", None))
         self.setting_impa_sot_hint.setText(QCoreApplication.translate("main_window", u"Past Impa Stone of Trials Hint", None))
+        self.setting_hint_importance.setText(QCoreApplication.translate("main_window", u"Hint Importance", None))
         self.chest_size_matches_contents_label.setText(QCoreApplication.translate("main_window", u"Chest Type Matches Contents (CTMC)", None))
         self.setting_small_keys_in_fancy_chests.setText(QCoreApplication.translate("main_window", u"Small Keys in Fancy Chests", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.hints_tab), QCoreApplication.translate("main_window", u"Hints", None))

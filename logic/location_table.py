@@ -89,7 +89,10 @@ def get_disabled_shuffle_locations(
             )
             or (
                 settings["goddess_chest_shuffle"].value == "off"
-                and "Goddess Chests" in location.types
+                and (
+                    "Goddess Chests" in location.types
+                    or "Goddess Cube" in location.types
+                )
             )
             or (
                 (

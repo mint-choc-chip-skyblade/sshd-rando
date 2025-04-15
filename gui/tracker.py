@@ -909,9 +909,7 @@ class Tracker:
                 # Only list goddess cubes whose associated goddess chests aren't excluded
                 if (
                     self.world.setting("goddess_chest_shuffle") == "on"
-                    and self.world.get_location(
-                        location.original_item.chain_locations[0]
-                    ).progression
+                    and location.current_item.get_goddess_chest().progression
                 ):
                     location.progression = True
                     self.items_on_mark[location] = location.current_item

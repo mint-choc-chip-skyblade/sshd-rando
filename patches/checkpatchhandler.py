@@ -156,8 +156,7 @@ def determine_check_patches(
                                         [
                                             loc
                                             for loc in item.chain_locations
-                                            if loc in location_table
-                                            and location_table[loc].progression
+                                            if loc.progression
                                         ]
                                     )
                                     > 0
