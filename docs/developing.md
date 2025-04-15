@@ -63,7 +63,17 @@ Add your `romfs` and `exefs` to `./sshd_extract`.
 
 You won't be able to test randomization without it, so you'll need it during development as well. Our `.gitignore` will prevent you from accidentally committing those files, so it's safe to put there.
 
-#### 4. Run
+#### 4. Tests
+
+```sh
+# Run tests one after another
+pytest
+
+# Run tests in parallel
+pytest -n auto
+```
+
+#### 5. Run
 
 ```sh
 py ./sshdrando.py

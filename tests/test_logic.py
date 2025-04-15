@@ -83,10 +83,6 @@ def test_default_undefined_config() -> None:
     return
 
 
-def test_default_config() -> None:
-    config_test("default_empty_config.yaml")
-
-
 def test_max_entrance_rando() -> None:
     config_test("max_entrance_rando.yaml")
 

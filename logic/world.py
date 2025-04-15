@@ -314,9 +314,17 @@ class World:
             self.setting("required_dungeons") == "7"
             and self.setting("dungeons_include_sky_keep") == "off"
         ):
-            raise ValueError(
-                "Cannot require 7 dungeons when Sky Keep is not a dungeon. Please either reduce the required dungeon count or enable Sky Keep to be a required dungeon."
-            )
+            # If dungeons_include_sky_keep is being chosen randomly, then we'll set it to on to fix the issue
+            if self.setting("dungeons_include_sky_keep").setting.is_using_random_option:
+                self.setting("dungeons_include_sky_keep").set_value("on")
+            # Otherwise if required_dungeons is random, set it back down to 6
+            elif self.setting("required_dungeons").setting.is_using_random_option:
+                self.setting("required_dungeons").set_value("6")
+            # If neither are random, then it's the user's fault
+            else:
+                raise ValueError(
+                    "Cannot require 7 dungeons when Sky Keep is not a dungeon. Please either reduce the required dungeon count or enable Sky Keep to be a required dungeon."
+                )
 
     def place_hardcoded_items(self) -> None:
         defeat_demise = self.get_location("Hylia's Realm - Defeat Demise")
