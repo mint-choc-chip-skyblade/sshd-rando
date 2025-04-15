@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -2825,6 +2825,13 @@
             </widget>
            </item>
            <item>
+            <widget class="RandoTriStateCheckBox" name="setting_hint_importance">
+             <property name="text">
+              <string>Hint Importance</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QLabel" name="chest_size_matches_contents_label">
              <property name="text">
               <string>Chest Type Matches Contents (CTMC)</string>
@@ -4332,8 +4339,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>100</width>
-               <height>30</height>
+               <width>546</width>
+               <height>340</height>
               </rect>
              </property>
              <property name="maximumSize">

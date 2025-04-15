@@ -9,6 +9,7 @@ from .spoiler_log import generate_spoiler_log, generate_anti_spoiler_log
 from .plandomizer import load_plandomizer_data
 from .entrance_shuffle import shuffle_world_entrances
 from .hints import generate_hints
+from .tooltips.tooltips import flatten_world_requirements
 from util.text import load_text_data
 
 from gui.dialogs.dialog_header import print_progress_text, update_progress_value
@@ -106,6 +107,8 @@ def generate_randomizer(config: Config) -> list[World]:
 
     for world in worlds:
         world.perform_post_entrance_shuffle_tasks()
+        print_progress_text(f"Flattening {world}...")
+        flatten_world_requirements(world)
 
     update_progress_value(16)
     print_progress_text("Filling Worlds...")

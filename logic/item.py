@@ -1,7 +1,16 @@
 from typing import TYPE_CHECKING
 
+from constants.itemconstants import (
+    GRATITUDE_CRYSTAL,
+    GRATITUDE_CRYSTAL_PACK,
+    PROGRESSIVE_WALLET,
+    EXTRA_WALLET,
+    BOTTLE_ITEMS,
+)
+
 if TYPE_CHECKING:
     from .world import World
+    from .location import Location
 
 
 class Item:
@@ -15,7 +24,6 @@ class Item:
         world_: "World" = None,
         major_item_: bool = False,
         game_winning_item_: bool = False,
-        chain_locations_: list[str] = [],
     ) -> None:
         self.id: int = id_
         self.name: str = name_
@@ -25,13 +33,58 @@ class Item:
         self.world: "World" = world_
         self.is_major_item: bool = major_item_
         self.is_game_winning_item: bool = game_winning_item_
-        self.chain_locations: list[str] = chain_locations_
+        self.chain_locations: set["Location"] = set()
+        self.was_always_junk: bool = not major_item_
 
         self.is_dungeon_small_key: bool = (
             " Small Key" in name_ and name_ != "Lanayru Caves Small Key"
         )
         self.is_boss_key: bool = " Boss Key" in name_
         self.is_dungeon_map: bool = " Map" in name_
+
+    def can_be_in_barren_region(self) -> bool:
+        return (
+            not self.is_major_item
+            or (
+                self.is_dungeon_small_key
+                and self.world.setting("small_keys").is_any_of("vanilla", "own_dungeon")
+            )
+            or (
+                self.is_boss_key
+                and self.world.setting("boss_keys").is_any_of("vanilla", "own_dungeon")
+            )
+            or (
+                self.name == GRATITUDE_CRYSTAL
+                and self.world.setting("gratitude_crystal_shuffle") == "off"
+            )
+        )
+
+    def is_same_or_similar_item(self, other_item: "Item") -> bool:
+        if self == other_item:
+            return True
+
+        # Gratitude Crystals
+        gratitude_crystal_items = {
+            self.world.get_item(GRATITUDE_CRYSTAL_PACK),
+            self.world.get_item(GRATITUDE_CRYSTAL),
+        }
+        if self in gratitude_crystal_items and other_item in gratitude_crystal_items:
+            return True
+
+        # Wallets
+        wallet_items = {
+            self.world.get_item(PROGRESSIVE_WALLET),
+            self.world.get_item(EXTRA_WALLET),
+        }
+        if self in wallet_items and other_item in wallet_items:
+            return True
+
+        # Bottles
+        bottle_items = {self.world.get_item(bottle) for bottle in BOTTLE_ITEMS}
+        if self in bottle_items and other_item in bottle_items:
+            return True
+
+        return False
 
     def __str__(self) -> str:
         return (

@@ -253,6 +253,15 @@
 - name: Location Hint
   standard: They say that <location_pretty_or_cryptic_name> rewards <item_pretty_or_cryptic_name>.
 
+- name: Hint Importance Required
+  standard: " (<g+<required>>)"
+
+- name: Hint Importance Possibly Required
+  standard: " (<ye<possibly required>>)"
+
+- name: Hint Importance Not Required
+  standard: " (<s<not required>>)"
+
 - name: Small Key
   standard: Small Key
   pretty: a <Small Key>

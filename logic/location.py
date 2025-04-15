@@ -1,6 +1,7 @@
 from logic.requirements import Requirement, RequirementType
 from .item import Item
 from .hint_class import Hint
+from util.text import Text, get_text_data
 
 import logging
 from typing import TYPE_CHECKING
@@ -10,6 +11,13 @@ from constants.itemconstants import GRATITUDE_CRYSTAL
 if TYPE_CHECKING:
     from .world import World
     from .area import LocationAccess
+
+
+class LocationImportance:
+    UNKNOWN: int = 0
+    NOT_REQUIRED: int = 1
+    POSSIBLY_REQUIRED: int = 2
+    REQUIRED: int = 3
 
 
 class Location:
@@ -46,6 +54,8 @@ class Location:
         self.hint_textfile: str = hint_textfile_
         self.hint_textindex: int = hint_textindex_
         self.eventflowindex: int = eventflowindex_
+        self.path_locations: list[Location] = []
+        self.importance: int = LocationImportance.UNKNOWN
 
         # Tracker variables
         self.marked: bool = False
@@ -101,3 +111,22 @@ class Location:
             and self.original_item.name.endswith("Small Key")
             and self.original_item.name != "Lanayru Caves Small Key"
         )
+
+    def generate_importance_text(self) -> Text:
+        # If this item was always junk, or if hint importance is off,
+        # then we won't generate any hint importance text for it
+        if (
+            self.world.setting("hint_importance") == "off"
+            or self.current_item.was_always_junk
+        ):
+            return Text()
+
+        match self.importance:
+            case LocationImportance.REQUIRED:
+                return get_text_data("Hint Importance Required")
+            case LocationImportance.POSSIBLY_REQUIRED:
+                return get_text_data("Hint Importance Possibly Required")
+            case LocationImportance.NOT_REQUIRED:
+                return get_text_data("Hint Importance Not Required")
+            case _:
+                return Text()

@@ -443,3 +443,17 @@ def pretty_name(item, count):
         return f"{item} x {count}"
     else:
         return item
+
+
+def flatten_world_requirements(world: World) -> None:
+
+    # Run the tooltip search. This will set the simplified
+    # requirement for each location
+    flatten = TooltipsSearch(world)
+    flatten.do_search()
+
+    # For each location, get the items which appear in its simplified access expression
+    for loc in world.get_all_item_locations():
+        # For each item, add this location as a chain location for that item
+        for item in loc.computed_requirement.get_items(world):
+            item.chain_locations.add(loc)
