@@ -219,7 +219,7 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                 ]
             ):
                 loc.importance = LocationImportance.NOT_REQUIRED
-            # Locations which are on the path to Ganondorf are required.
+            # Locations which are on the path to Demise are required.
             elif loc in defeat_demise_path_locs or loc == defeat_demise:
                 loc.importance = LocationImportance.REQUIRED
 
@@ -914,7 +914,7 @@ def generate_song_hints(world: World, hint_locations: list[Location]) -> None:
                 else:
                     # There's only enough text space to hint at one full item name.
                     hinted_location = None
-                    # If there are any logically required items (on the path to Ganondorf), choose one of them at random
+                    # If there are any logically required items (on the path to Demise), choose one of them at random
                     random.shuffle(useful_locations)
                     for location in useful_locations:
                         if location.importance == LocationImportance.REQUIRED:
