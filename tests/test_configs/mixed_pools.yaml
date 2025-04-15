@@ -1,4 +1,4 @@
-seed: TESTTESTTEST
+seed: GosellePouchDiveBlob
 World 1:
   randomize_dungeon_entrances: "on"
   randomize_trial_gate_entrances: "on"
