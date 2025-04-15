@@ -6298,3 +6298,75 @@
 - name: Clean Cut Hard Mid Prize Text
   standard:
     "I want to see you do <r<43 chops>> next time!"
+
+- name: Help Text Title 1a
+  standard:
+    "Skyview Temple"
+
+- name: Help Text Content 1a
+  standard:
+    "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+
+- name: Help Text Title 1b
+  standard:
+    "Earth Temple"
+
+- name: Help Text Content 1b
+  standard:
+    "Status: <string arg0>\nBoss Key: <string arg1>\nKey Pieces: <numeric arg0>/5\nMap: <string arg2>"
+
+- name: Help Text Title 1c
+  standard:
+    "Lanayru Mining Facility"
+
+- name: Help Text Content 1c
+  standard:
+    "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/1\nMap: <string arg2>"
+
+- name: Help Text Title 2a
+  standard:
+    "Ancient Cistern"
+
+- name: Help Text Content 2a
+  standard:
+    "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+
+- name: Help Text Title 2b
+  standard:
+    "Sandship"
+
+- name: Help Text Content 2b
+  standard:
+    "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+
+- name: Help Text Title 2c
+  standard:
+    "Fire Sanctuary"
+
+- name: Help Text Content 2c
+  standard:
+    "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/3\nMap: <string arg2>"
+
+- name: Help Text Title 3a
+  standard:
+    "Sky Keep"
+
+- name: Help Text Content 3a
+  standard:
+    "Status: <string arg0>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/1\nMap: <string arg2>"
+
+- name: Help Text Title 3b
+  standard:
+    "Items"
+
+- name: Help Text Content 3b
+  standard:
+    "Spiral Charge: <string arg0>\nScrapper: <string arg1>\nGroup of Tadtones: <numeric arg0>"
+
+- name: Help Text Title 3c
+  standard:
+    "Gorge"
+
+- name: Help Text Content 3c
+  standard:
+    "Life Tree Fruit: <string arg0>\nSeedling: <string arg1>\nCaves Keys: <numeric arg0>, Found <numeric arg1>/2"

@@ -532,17 +532,29 @@ class ASMPatchHandler:
         ].current_option_index
         skip_harp_playing = world.setting("skip_harp_playing").value_index()
 
+        sky_keep_goal = world.get_dungeon("Sky Keep").goal_location
+        if sky_keep_goal == None:
+            sky_keep_beaten_sceneflag = -1
+        elif sky_keep_goal.name.endswith("Din"):
+            sky_keep_beaten_sceneflag = 61
+        elif sky_keep_goal.name.endswith("Nayru"):
+            sky_keep_beaten_sceneflag = 62
+        elif sky_keep_goal.name.endswith("Farore"):
+            sky_keep_beaten_sceneflag = 64
+
         init_rw_globals_dict = {
             0x712E54B6BC: [
                 daytime_sky_color_index,
                 nighttime_sky_color_index,
                 daytime_cloud_color_index,
-                nighttime_cloud_color_index,  # SKY_CLOUD_COLORS
+                nighttime_cloud_color_index,
+            ],  # SKY_CLOUD_COLORS
+            0x712E54B6C0: [
                 skip_harp_playing,
+                sky_keep_beaten_sceneflag,
                 0xFF,
                 0xFF,
-                0xFF,
-            ],
+            ],  # RANDOMIZER_SETTINGS
             0x712E5FF020: [
                 0xFF,
                 0xFF,

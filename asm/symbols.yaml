@@ -46,6 +46,7 @@ main:
 
     LYT_MSG_WINDOW: 0x7101840a18
     LYT_PAUSE_DISP: 0x7101840a50
+    GLOBAL_TEXT_MGR: 0x7101932048
 
     FANFARE_SOUND_MGR: 0x7102c02c20
     BGM_SOUND_MGR: 0x7102c02d40
@@ -170,6 +171,13 @@ main:
     do_soft_reset: 0x7100deab00
     reload_color_fader: 0x7102bfd808
     dSystem: 0x7102bfdeb0
+
+    set_string_arg: 0x7100dc3718
+    getTextMessageByLabel: 0x7100dbb770
+    eventFlowTextProcessingRelated: 0x7100dc015c
+    get_msb_text_maybe: 0x7100f2f210
+
+    dLytHelp__stateNoneUpdate: 0x7100c3fc0c
 
 
     # Misc
