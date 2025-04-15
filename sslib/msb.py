@@ -38,6 +38,11 @@ CONTROL_REPLACEMENTS = {
     "<numeric arg2>": "\x0e\x02\x03\x06\x00\x02\xcd",
     "<numeric arg3>": "\x0e\x02\x03\x06\x00\x03\xcd",
     "<numeric arg4>": "\x0e\x02\x03\x06\x00\x04\xcd",
+    "<numeric arg5>": "\x0e\x02\x03\x06\x00\x05\xcd",
+    "<numeric arg6>": "\x0e\x02\x03\x06\x00\x06\xcd",
+    "<numeric arg7>": "\x0e\x02\x03\x06\x00\x07\xcd",
+    "<numeric arg8>": "\x0e\x02\x03\x06\x00\x08\xcd",
+    "<numeric arg9>": "\x0e\x02\x03\x06\x00\x09\xcd",
     "<string arg0>": "\x0e\x02\x02\x04\x00\x00",
     "<string arg1>": "\x0e\x02\x02\x04\x00\x01",
     "<string arg2>": "\x0e\x02\x02\x04\x00\x02",
@@ -66,7 +71,66 @@ CONTROL_REPLACEMENTS = {
     "<actionE ": "\x0e\x01\x09\x04\x0e",
     "<actionF ": "\x0e\x01\x09\x04\x0f",
     # Different icons within text
+    "<icon 0>": "\x0e\x02\x04\x02\u00cd",  # A button icon
+    "<icon 1>": "\x0e\x02\x04\x02\u01cd",  # B button icon
+    "<icon 2>": "\x0e\x02\x04\x02\u02cd",  # Minus button icon
+    "<icon 3>": "\x0e\x02\x04\x02\u03cd",  # Plus button icon
+    "<icon 4>": "\x0e\x02\x04\x02\u04cd",  # 1 button icon
+    "<icon 5>": "\x0e\x02\x04\x02\u05cd",  # 2 button icon
+    "<icon 6>": "\x0e\x02\x04\x02\u06cd",  # C button icon
+    "<icon 7>": "\x0e\x02\x04\x02\u07cd",  # ZL button icon
+    "<icon 8>": "\x0e\x02\x04\x02\u08cd",  # L stick icon
+    "<icon 9>": "\x0e\x02\x04\x02\u09cd",  # L stick Up icon
+    "<icon 10>": "\x0e\x02\x04\x02\u0acd",  # L stick Down icon
+    "<icon 11>": "\x0e\x02\x04\x02\u0bcd",  # L stick Left icon
+    "<icon 12>": "\x0e\x02\x04\x02\u0ccd",  # L stick Right icon
+    "<icon 13>": "\x0e\x02\x04\x02\u0dcd",  # L stick Down icon
+    "<icon 14>": "\x0e\x02\x04\x02\u0ecd",  # L stick Right icon
+    "<icon 15>": "\x0e\x02\x04\x02\u0fcd",  # D-pad icon
+    "<icon 16>": "\x0e\x02\x04\x02\u10cd",  # D-pad Up icon
+    "<icon 17>": "\x0e\x02\x04\x02\u11cd",  # D-pad Down icon
+    "<icon 18>": "\x0e\x02\x04\x02\u12cd",  # D-pad Left icon
+    "<icon 19>": "\x0e\x02\x04\x02\u13cd",  # D-pad Right icon
+    "<icon 20>": "\x0e\x02\x04\x02\u14cd",  # Up arrow icon
+    "<icon 21>": "\x0e\x02\x04\x02\u15cd",  # Down arrow icon
+    "<icon 22>": "\x0e\x02\x04\x02\u16cd",  # Left arrow icon
+    "<icon 23>": "\x0e\x02\x04\x02\u17cd",  # Right arrow icon
+    "<icon 24>": "\x0e\x02\x04\x02\u18cd",  # Hand pointer icon
+    "<icon 25>": "\x0e\x02\x04\x02\u19cd",  # Map cross (x) icon
+    "<icon 26>": "\x0e\x02\x04\x02\u1acd",  # Glowing circle icon
+    "<icon 27>": "\x0e\x02\x04\x02\u1bcd",  # A button icon
+    "<icon 28>": "\x0e\x02\x04\x02\u1ccd",  # B button icon
+    "<icon 29>": "\x0e\x02\x04\x02\u1dcd",  # Y button icon
     "<icon 30>": "\x0e\x02\x04\x02\u1ecd",  # X button icon
+    "<icon 31>": "\x0e\x02\x04\x02\u1fcd",  # Minus button icon
+    "<icon 32>": "\x0e\x02\x04\x02\u20cd",  # Plus button icon
+    "<icon 33>": "\x0e\x02\x04\x02\u21cd",  # D-pad icon
+    "<icon 34>": "\x0e\x02\x04\x02\u22cd",  # D-pad Up icon
+    "<icon 35>": "\x0e\x02\x04\x02\u23cd",  # D-pad Down icon
+    "<icon 36>": "\x0e\x02\x04\x02\u24cd",  # D-pad Left icon
+    "<icon 37>": "\x0e\x02\x04\x02\u25cd",  # D-pad Right icon
+    "<icon 38>": "\x0e\x02\x04\x02\u26cd",  # L button icon
+    "<icon 39>": "\x0e\x02\x04\x02\u27cd",  # ZL button icon
+    "<icon 40>": "\x0e\x02\x04\x02\u28cd",  # R button icon
+    "<icon 41>": "\x0e\x02\x04\x02\u29cd",  # ZR button icon
+    "<icon 42>": "\x0e\x02\x04\x02\u2acd",  # L stick icon (probably different animations)
+    "<icon 43>": "\x0e\x02\x04\x02\u2bcd",  # L stick icon (probably different animations)
+    "<icon 44>": "\x0e\x02\x04\x02\u2ccd",  # L stick icon (probably different animations)
+    "<icon 45>": "\x0e\x02\x04\x02\u2dcd",  # L stick icon (probably different animations)
+    "<icon 46>": "\x0e\x02\x04\x02\u2ecd",  # L stick icon (probably different animations)
+    "<icon 47>": "\x0e\x02\x04\x02\u2fcd",  # L stick In icon
+    "<icon 48>": "\x0e\x02\x04\x02\u30cd",  # L stick icon (probably different animations)
+    "<icon 49>": "\x0e\x02\x04\x02\u31cd",  # L stick icon (probably different animations)
+    "<icon 50>": "\x0e\x02\x04\x02\u32cd",  # R stick icon
+    "<icon 51>": "\x0e\x02\x04\x02\u33cd",  # R stick Up-Down blur icon
+    "<icon 52>": "\x0e\x02\x04\x02\u34cd",  # L stick Down-Up blur icon
+    "<icon 53>": "\x0e\x02\x04\x02\u35cd",  # L stick Left-Right blur icon
+    "<icon 54>": "\x0e\x02\x04\x02\u36cd",  # L stick Right-Left blur icon
+    "<icon 55>": "\x0e\x02\x04\x02\u37cd",  # L stick In icon
+    "<icon 56>": "\x0e\x02\x04\x02\u38cd",  # L stick Down-Up blur icon
+    "<icon 57>": "\x0e\x02\x04\x02\u39cd",  # L stick Right-Left blur icon
+    "<icon 58>": "\x0e\x02\x04\x02\u3acd",  # ? icon
+    "<icon 59>": "\x0e\x02\x04\x02\u3bcd",  # ? icon
 }
 
 

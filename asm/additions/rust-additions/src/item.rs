@@ -372,14 +372,25 @@ pub fn handle_custom_item_get(item_actor: *mut dAcItem) -> u16 {
                 if dungeon_item_mask != 0x0F {
                     STATIC_DUNGEONFLAGS[0] |= dungeon_item_mask;
                 } else {
-                    STATIC_DUNGEONFLAGS[1] += 1;
+                    let mut current_key_count = STATIC_DUNGEONFLAGS[1] & 0xF;
+                    let mut obtained_key_count = (STATIC_DUNGEONFLAGS[1] >> 4) & 0xF;
+                    current_key_count += 1;
+                    obtained_key_count += 1;
+                    STATIC_DUNGEONFLAGS[1] = (obtained_key_count << 4) | current_key_count;
                 }
             }
             // Otherwise, set the global flag.
             if dungeon_item_mask != 0x0F {
                 (*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][0] |= dungeon_item_mask;
             } else {
-                (*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][1] += 1;
+                let mut current_key_count =
+                    (*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][1] & 0xF;
+                let mut obtained_key_count =
+                    ((*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][1] >> 4) & 0xF;
+                current_key_count += 1;
+                obtained_key_count += 1;
+                (*FILE_MGR).FA.dungeonflags[dungeon_item_scene_index][1] =
+                    (obtained_key_count << 4) | current_key_count;
             }
         }
 

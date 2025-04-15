@@ -18,3 +18,4 @@ lto = true
 
 [dependencies]
 static_assertions = "1.1.0"
+wchar = "0.11.0"
