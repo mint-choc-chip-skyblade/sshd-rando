@@ -5,6 +5,7 @@
 use crate::actor;
 use crate::debug;
 use crate::flag;
+use crate::item;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
@@ -221,5 +222,30 @@ pub fn handle_shop_traps() {
         ACTORBASE_PARAM2 = 0xFFFFFF0F | (((*shop_item).trapbits << 4) as u32);
         ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
         NUMBER_OF_ITEMS = 0;
+    }
+}
+
+#[no_mangle]
+pub fn shop_use_progressive_models() {
+    unsafe {
+        let shop_sample: *mut dAcShopSampleShopItem;
+        asm!("mov {0:x}, x26", out(reg) shop_sample);
+
+        let item_id = (*shop_sample).itemid;
+
+        // Fix archive name
+        let mut archive_name = (*shop_sample).arc_name.as_ptr() as *const c_char;
+        (*shop_sample).arc_name =
+            *(item::resolve_progressive_item_models(archive_name, item_id as u16, 1)
+                as *mut [u8; 30]);
+
+        // Fix model name
+        let mut model_name = (*shop_sample).model_name.as_ptr() as *const c_char;
+        (*shop_sample).model_name =
+            *(item::resolve_progressive_item_models(model_name, item_id as u16, 2)
+                as *mut [u8; 24]);
+
+        // Replaced instructions
+        asm!("mov w8, #0xFFFF", "mov w1, {0:w}", in(reg) (*shop_sample).spawn_storyflag);
     }
 }

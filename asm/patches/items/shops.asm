@@ -129,3 +129,9 @@ nop
 .offset 0x7100b032d0
 nop
 nop
+
+
+; Use progressive models
+.offset 0x7100b050c0
+mov w8, #91
+bl additions_jumptable
