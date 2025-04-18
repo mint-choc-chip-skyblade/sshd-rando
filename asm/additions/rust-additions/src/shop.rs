@@ -235,6 +235,23 @@ pub fn shop_use_progressive_models() {
 
         // Fix archive name
         let mut archive_name = (*shop_sample).arc_name.as_ptr() as *const c_char;
+
+        // Handle shop rupee colors
+        //
+        // Completely different from how SDR handles this
+        // The solution used in SDR would require HDR to recreate several complex
+        // functions which have been inlined. However, HDR has way more memory
+        // than SDR so this can be bypassed by having each rupee have its own
+        // model.
+        archive_name = match item_id {
+            flag::ITEMFLAGS::BLUE_RUPEE => c"GetBlueRupee".as_ptr(),
+            flag::ITEMFLAGS::RED_RUPEE => c"GetRedRupee".as_ptr(),
+            flag::ITEMFLAGS::SILVER_RUPEE => c"GetSilverRupee".as_ptr(),
+            flag::ITEMFLAGS::GOLD_RUPEE => c"GetGoldRupee".as_ptr(),
+            flag::ITEMFLAGS::RUPOOR => c"GetRupoor".as_ptr(),
+            _ => archive_name,
+        };
+
         (*shop_sample).arc_name =
             *(item::resolve_progressive_item_models(archive_name, item_id as u16, 1)
                 as *mut [u8; 30]);
