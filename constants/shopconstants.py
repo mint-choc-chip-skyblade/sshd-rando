@@ -131,6 +131,8 @@ BUY_DECIDE_SCALES = {
     29: 0.8,  # Skyview Boss Key
     30: 0.8,  # Earth Temple Boss Key
     31: 0.8,  # Lanayru Mining Facility Boss Key
+    32: 1.7,  # Silver Rupee
+    33: 1.7,  # Gold Rupee
     49: 1.0,  # Gust Bellows
     52: 1.2,  # Slingshot (Progressive Slingshot)
     53: 1.0,  # Beetle (Progressive Beetle)
@@ -199,6 +201,8 @@ PUT_SCALES = {
     29: 1.2,  # Skyview Boss Key
     30: 1.2,  # Earth Temple Boss Key
     31: 1.2,  # Lanayru Mining Facility Boss Key
+    32: 2.0,  # Silver Rupee
+    33: 2.0,  # Gold Rupee
     49: 1.5,  # Gust Bellows
     52: 1.5,  # Slingshot (Progressive Slingshot)
     53: 1.5,  # Beetle (Progressive Beetle)
