@@ -24,10 +24,17 @@
 mov w8, #74
 bl additions_jumptable
 
-; Set shop item height
-.offset 0x7100afff98
+; Get shop item height
+.offset 0x7100affee8
 mov w8, #75
 bl additions_jumptable
+b 0x7100afff5c
+
+; Set shop item height
+.offset 0x7100afff5c
+fmov s2, s0
+fmov s1, wzr
+fmov s0, wzr
 
 ; Init dAcShopSample__Subclasses based on their shop_index instead of the item
 ; being sold. The vanilla game checks the shop_index and behaves correctly for

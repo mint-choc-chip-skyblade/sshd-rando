@@ -124,7 +124,7 @@ assert_eq_size!([u8; 0x54], dAcShopSampleShopItem);
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
-    static SHOP_ITEMS: [dAcShopSampleShopItem; 35];
+    static mut SHOP_ITEMS: [dAcShopSampleShopItem; 35];
     static mut ACTORBASE_PARAM2: u32;
 
     static mut ITEM_GET_BOTTLE_POUCH_SLOT: u32;
@@ -166,7 +166,7 @@ pub fn rotate_shop_items() {
 }
 
 #[no_mangle]
-pub fn set_shop_display_height() {
+pub fn set_shop_display_height() -> f32 {
     unsafe {
         let shop_sample: *mut dAcShopSample;
         asm!("mov {0:x}, x20", out(reg) shop_sample);
@@ -179,8 +179,56 @@ pub fn set_shop_display_height() {
             display_height_offset = SHOP_ITEMS[item_index].display_height_offset;
         }
 
-        // Replaced instructions
-        asm!("str s1, [x19]", "str {0:w}, [x19, #4]", "str s0, [x19, #8]", in(reg) display_height_offset);
+        // Override display_height_offset for progressive models
+        match SHOP_ITEMS[item_index].itemid {
+            flag::ITEMFLAGS::BOW => {
+                if flag::check_itemflag(flag::ITEMFLAGS::IRON_BOW) != 0 {
+                    display_height_offset = -35.0f32;
+                } else if flag::check_itemflag(flag::ITEMFLAGS::BOW) != 0 {
+                    display_height_offset = -29.0f32;
+                }
+            },
+            flag::ITEMFLAGS::SLINGSHOT => {
+                if flag::check_itemflag(flag::ITEMFLAGS::SLINGSHOT) != 0 {
+                    display_height_offset = -32.0f32;
+                }
+            },
+            flag::ITEMFLAGS::BEETLE => {
+                if flag::check_itemflag(flag::ITEMFLAGS::QUICK_BEETLE) != 0 {
+                    display_height_offset = -17.0f32;
+                // Hook Beetle and Quick Beetle use the same offset
+                } else if flag::check_itemflag(flag::ITEMFLAGS::BEETLE) != 0 {
+                    display_height_offset = -16.0f32;
+                }
+            },
+            flag::ITEMFLAGS::DIGGING_MITTS => {
+                if flag::check_itemflag(flag::ITEMFLAGS::DIGGING_MITTS) != 0 {
+                    display_height_offset = -38.0f32;
+                }
+            },
+            flag::ITEMFLAGS::BUG_NET => {
+                if flag::check_itemflag(flag::ITEMFLAGS::BUG_NET) != 0 {
+                    display_height_offset = -32.0f32;
+                }
+            },
+            flag::ITEMFLAGS::MEDIUM_WALLET => {
+                if flag::check_itemflag(flag::ITEMFLAGS::GIANT_WALLET) != 0 {
+                    display_height_offset = -32.0f32;
+                } else if flag::check_itemflag(flag::ITEMFLAGS::BIG_WALLET) != 0 {
+                    display_height_offset = -30.0f32; // this model sucks ;-;
+                } else if flag::check_itemflag(flag::ITEMFLAGS::MEDIUM_WALLET) != 0 {
+                    display_height_offset = -30.0f32;
+                }
+            },
+            flag::ITEMFLAGS::ADVENTURE_POUCH => {
+                if flag::check_itemflag(flag::ITEMFLAGS::ADVENTURE_POUCH) != 0 {
+                    display_height_offset = -23.0f32;
+                }
+            },
+            _ => {},
+        }
+
+        return display_height_offset;
     }
 }
 
