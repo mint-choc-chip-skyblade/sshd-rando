@@ -463,6 +463,7 @@ def apply_shop_text_patches(
         )
         shop_normal_text = shop_normal_text.replace("{normal_price}", str(normal_price))
         shop_normal_text.resolve_plurality(sold_item_text)
+        shop_normal_text.break_lines()
 
         add_text_data(patch_name, shop_normal_text)
 
@@ -497,5 +498,6 @@ def apply_shop_text_patches(
             "{discounted_price}", str(discounted_price)
         )
         shop_discounted_text.resolve_plurality(sold_item_text)
+        shop_discounted_text.break_lines()
 
         add_text_data(patch_name, shop_discounted_text)
