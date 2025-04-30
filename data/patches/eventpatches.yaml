@@ -932,9 +932,9 @@
       - 167
       - 165
 
-  - name: Patch Pre-Barrel Delivery Text
+  - name: Patch Barrel Delivery Text
     type: flowpatch
-    index: 2
+    index: 144
     flow:
       next: Show Attention Mark Switch
   - name: Show Attention Mark Switch
@@ -944,16 +944,10 @@
       param2: 23 # Sceneflag 23 - has received barrel check
       param3: 6
     cases:
-      - 3 # yes - don't show
+      - 145 # yes - don't show
       - Show Attention Mark before Delivering Barrel # no - show mark
   - name: Show Attention Mark before Delivering Barrel
     type: attentionmark
-    flow:
-      next: 3
-
-  - name: Patch Barrel Delivery Text
-    type: flowpatch
-    index: 144
     flow:
       next: Delivered Barrel Switch
   - name: Delivered Barrel Switch
@@ -969,7 +963,7 @@
     type: switchadd
     flow:
       subType: 6
-      param2: 23 # Sceneflag 22 - received barrel check
+      param2: 23 # Sceneflag 23 - received barrel check
       param3: 6
     cases:
       - 145 # yes - ignore
