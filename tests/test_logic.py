@@ -15,11 +15,15 @@ def config_test(
     config_file_name: str | Path,
     assert_all_locations_reachable: bool = True,
     remove_spoiler: bool = True,
+    is_test_config: bool = True,
 ) -> list[World]:
     config_file_name = Path(config_file_name)
 
-    config_test_path = Path("tests") / "test_configs" / config_file_name
-    assert config_test_path.exists()
+    if is_test_config:
+        config_test_path = Path("tests") / "test_configs" / config_file_name
+        assert config_test_path.exists()
+    else:
+        config_test_path = config_file_name
 
     config = load_config_from_file(config_test_path, allow_rewrite=False)
     write_config_to_file(config_file_name, config)
@@ -40,27 +44,40 @@ def config_test(
 
 
 def test_spoiler_as_config() -> None:
+    # Gen first seed
     worlds = config_test("spoiler_as_config.yaml", remove_spoiler=False)
+    assert all_logic_satisfied(worlds)
     spoiler_path = f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Spoiler Log.txt"
     anti_spoiler_path = (
         f"{SPOILER_LOGS_PATH}/{worlds[0].config.get_hash()} Anti Spoiler Log.txt"
     )
-    log1 = ""
     with open(spoiler_path, "r", encoding="utf-8") as first_log:
         log1 = first_log.read()
 
     os.remove(spoiler_path)
 
+    # Write log as config for second seed
     with open("spoiler_log_config_test.yaml", "w", encoding="utf-8") as config:
         config.write(log1)
-        worlds = generate(Path("spoiler_log_config_test.yaml"))
-        assert all_logic_satisfied(worlds)
 
-    os.remove("spoiler_log_config_test.yaml")
+    # Gen second seed
+    worlds = config_test(
+        "spoiler_log_config_test.yaml", remove_spoiler=False, is_test_config=False
+    )
+    assert all_logic_satisfied(worlds)
 
     with open(spoiler_path, encoding="utf-8") as second_log:
-        assert log1 == second_log.read()
+        log2 = second_log.read()
 
+    # Output both logs for debugging
+    # with open("log1.yaml", "w", encoding="utf-8") as f:
+    #     f.write(log1)
+    # with open("log2.yaml", "w", encoding="utf-8") as f:
+    #     f.write(log2)
+
+    assert log1 == log2
+
+    # Cleanup
     os.remove(spoiler_path)
     os.remove(anti_spoiler_path)
 
