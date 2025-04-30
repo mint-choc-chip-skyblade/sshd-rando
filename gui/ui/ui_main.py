@@ -428,33 +428,33 @@ class Ui_main_window(object):
         self.gameplay_tab.setSizePolicy(sizePolicy1)
         self.gridLayout_9 = QGridLayout(self.gameplay_tab)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
-        self.groupBox = QGroupBox(self.gameplay_tab)
-        self.groupBox.setObjectName(u"groupBox")
-        self.verticalLayout_43 = QVBoxLayout(self.groupBox)
+        self.convenience_tweaks_group_box = QGroupBox(self.gameplay_tab)
+        self.convenience_tweaks_group_box.setObjectName(u"convenience_tweaks_group_box")
+        self.verticalLayout_43 = QVBoxLayout(self.convenience_tweaks_group_box)
         self.verticalLayout_43.setObjectName(u"verticalLayout_43")
-        self.setting_spawn_hearts = RandoTriStateCheckBox(self.groupBox)
+        self.setting_spawn_hearts = RandoTriStateCheckBox(self.convenience_tweaks_group_box)
         self.setting_spawn_hearts.setObjectName(u"setting_spawn_hearts")
 
         self.verticalLayout_43.addWidget(self.setting_spawn_hearts)
 
-        self.setting_upgraded_skyward_strike = RandoTriStateCheckBox(self.groupBox)
+        self.setting_upgraded_skyward_strike = RandoTriStateCheckBox(self.convenience_tweaks_group_box)
         self.setting_upgraded_skyward_strike.setObjectName(u"setting_upgraded_skyward_strike")
 
         self.verticalLayout_43.addWidget(self.setting_upgraded_skyward_strike)
 
-        self.setting_faster_air_meter_depletion = RandoTriStateCheckBox(self.groupBox)
+        self.setting_faster_air_meter_depletion = RandoTriStateCheckBox(self.convenience_tweaks_group_box)
         self.setting_faster_air_meter_depletion.setObjectName(u"setting_faster_air_meter_depletion")
 
         self.verticalLayout_43.addWidget(self.setting_faster_air_meter_depletion)
 
         self.damage_multiplier_layout = QHBoxLayout()
         self.damage_multiplier_layout.setObjectName(u"damage_multiplier_layout")
-        self.damage_multiplier_label = QLabel(self.groupBox)
+        self.damage_multiplier_label = QLabel(self.convenience_tweaks_group_box)
         self.damage_multiplier_label.setObjectName(u"damage_multiplier_label")
 
         self.damage_multiplier_layout.addWidget(self.damage_multiplier_label)
 
-        self.setting_damage_multiplier = QSpinBox(self.groupBox)
+        self.setting_damage_multiplier = QSpinBox(self.convenience_tweaks_group_box)
         self.setting_damage_multiplier.setObjectName(u"setting_damage_multiplier")
         sizePolicy6.setHeightForWidth(self.setting_damage_multiplier.sizePolicy().hasHeightForWidth())
         self.setting_damage_multiplier.setSizePolicy(sizePolicy6)
@@ -464,12 +464,12 @@ class Ui_main_window(object):
 
         self.verticalLayout_43.addLayout(self.damage_multiplier_layout)
 
-        self.ammo_availability_label = QLabel(self.groupBox)
+        self.ammo_availability_label = QLabel(self.convenience_tweaks_group_box)
         self.ammo_availability_label.setObjectName(u"ammo_availability_label")
 
         self.verticalLayout_43.addWidget(self.ammo_availability_label)
 
-        self.setting_ammo_availability = QComboBox(self.groupBox)
+        self.setting_ammo_availability = QComboBox(self.convenience_tweaks_group_box)
         self.setting_ammo_availability.setObjectName(u"setting_ammo_availability")
 
         self.verticalLayout_43.addWidget(self.setting_ammo_availability)
@@ -477,14 +477,14 @@ class Ui_main_window(object):
         self.peatrice_conversations_layout = QHBoxLayout()
         self.peatrice_conversations_layout.setSpacing(0)
         self.peatrice_conversations_layout.setObjectName(u"peatrice_conversations_layout")
-        self.peatrice_conversations_label = QLabel(self.groupBox)
+        self.peatrice_conversations_label = QLabel(self.convenience_tweaks_group_box)
         self.peatrice_conversations_label.setObjectName(u"peatrice_conversations_label")
         sizePolicy.setHeightForWidth(self.peatrice_conversations_label.sizePolicy().hasHeightForWidth())
         self.peatrice_conversations_label.setSizePolicy(sizePolicy)
 
         self.peatrice_conversations_layout.addWidget(self.peatrice_conversations_label)
 
-        self.setting_peatrice_conversations = QSpinBox(self.groupBox)
+        self.setting_peatrice_conversations = QSpinBox(self.convenience_tweaks_group_box)
         self.setting_peatrice_conversations.setObjectName(u"setting_peatrice_conversations")
         sizePolicy6.setHeightForWidth(self.setting_peatrice_conversations.sizePolicy().hasHeightForWidth())
         self.setting_peatrice_conversations.setSizePolicy(sizePolicy6)
@@ -494,32 +494,32 @@ class Ui_main_window(object):
 
         self.verticalLayout_43.addLayout(self.peatrice_conversations_layout)
 
-        self.setting_full_wallet_upgrades = RandoTriStateCheckBox(self.groupBox)
+        self.setting_full_wallet_upgrades = RandoTriStateCheckBox(self.convenience_tweaks_group_box)
         self.setting_full_wallet_upgrades.setObjectName(u"setting_full_wallet_upgrades")
 
         self.verticalLayout_43.addWidget(self.setting_full_wallet_upgrades)
 
-        self.setting_skip_harp_playing = RandoTriStateCheckBox(self.groupBox)
+        self.setting_skip_harp_playing = RandoTriStateCheckBox(self.convenience_tweaks_group_box)
         self.setting_skip_harp_playing.setObjectName(u"setting_skip_harp_playing")
 
         self.verticalLayout_43.addWidget(self.setting_skip_harp_playing)
 
-        self.minigame_difficulty_label = QLabel(self.groupBox)
+        self.minigame_difficulty_label = QLabel(self.convenience_tweaks_group_box)
         self.minigame_difficulty_label.setObjectName(u"minigame_difficulty_label")
 
         self.verticalLayout_43.addWidget(self.minigame_difficulty_label)
 
-        self.setting_minigame_difficulty = QComboBox(self.groupBox)
+        self.setting_minigame_difficulty = QComboBox(self.convenience_tweaks_group_box)
         self.setting_minigame_difficulty.setObjectName(u"setting_minigame_difficulty")
 
         self.verticalLayout_43.addWidget(self.setting_minigame_difficulty)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 315, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.convenience_tweaks_vspacer = QSpacerItem(20, 315, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
-        self.verticalLayout_43.addItem(self.verticalSpacer_2)
+        self.verticalLayout_43.addItem(self.convenience_tweaks_vspacer)
 
 
-        self.gridLayout_9.addWidget(self.groupBox, 0, 2, 1, 1)
+        self.gridLayout_9.addWidget(self.convenience_tweaks_group_box, 0, 2, 1, 1)
 
         self.hint_placements_group_box = QGroupBox(self.gameplay_tab)
         self.hint_placements_group_box.setObjectName(u"hint_placements_group_box")
@@ -1209,24 +1209,24 @@ class Ui_main_window(object):
 
         self.verticalLayout_10.addWidget(self.setting_npc_closet_shuffle)
 
-        self.horizontalLayout_8 = QHBoxLayout()
-        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.trial_treasure_shuffle_layout = QHBoxLayout()
+        self.trial_treasure_shuffle_layout.setObjectName(u"trial_treasure_shuffle_layout")
         self.trial_treasure_shuffle_label = QLabel(self.shuffles_group_box)
         self.trial_treasure_shuffle_label.setObjectName(u"trial_treasure_shuffle_label")
         sizePolicy.setHeightForWidth(self.trial_treasure_shuffle_label.sizePolicy().hasHeightForWidth())
         self.trial_treasure_shuffle_label.setSizePolicy(sizePolicy)
 
-        self.horizontalLayout_8.addWidget(self.trial_treasure_shuffle_label)
+        self.trial_treasure_shuffle_layout.addWidget(self.trial_treasure_shuffle_label)
 
         self.setting_trial_treasure_shuffle = QSpinBox(self.shuffles_group_box)
         self.setting_trial_treasure_shuffle.setObjectName(u"setting_trial_treasure_shuffle")
         sizePolicy6.setHeightForWidth(self.setting_trial_treasure_shuffle.sizePolicy().hasHeightForWidth())
         self.setting_trial_treasure_shuffle.setSizePolicy(sizePolicy6)
 
-        self.horizontalLayout_8.addWidget(self.setting_trial_treasure_shuffle)
+        self.trial_treasure_shuffle_layout.addWidget(self.setting_trial_treasure_shuffle)
 
 
-        self.verticalLayout_10.addLayout(self.horizontalLayout_8)
+        self.verticalLayout_10.addLayout(self.trial_treasure_shuffle_layout)
 
         self.shuffles_vspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -1686,9 +1686,9 @@ class Ui_main_window(object):
 
         self.barren_hints_source_layout.addWidget(self.setting_barren_hints_on_gossip_stones)
 
-        self.barren_hints_hspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.barren_hints_source_hspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.barren_hints_source_layout.addItem(self.barren_hints_hspacer)
+        self.barren_hints_source_layout.addItem(self.barren_hints_source_hspacer)
 
 
         self.verticalLayout_39.addLayout(self.barren_hints_source_layout)
@@ -1734,9 +1734,9 @@ class Ui_main_window(object):
 
         self.location_hints_source_layout.addWidget(self.setting_location_hints_on_gossip_stones)
 
-        self.location_hints_hspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.location_hints_source_hspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.location_hints_source_layout.addItem(self.location_hints_hspacer)
+        self.location_hints_source_layout.addItem(self.location_hints_source_hspacer)
 
 
         self.verticalLayout_40.addLayout(self.location_hints_source_layout)
@@ -1782,9 +1782,9 @@ class Ui_main_window(object):
 
         self.item_hints_source_layout.addWidget(self.setting_item_hints_on_gossip_stones)
 
-        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.item_hints_source_hspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.item_hints_source_layout.addItem(self.horizontalSpacer_4)
+        self.item_hints_source_layout.addItem(self.item_hints_source_hspacer)
 
 
         self.verticalLayout_41.addLayout(self.item_hints_source_layout)
@@ -2116,6 +2116,11 @@ class Ui_main_window(object):
         self.setting_logic_itemless_first_timeshift_stone.setObjectName(u"setting_logic_itemless_first_timeshift_stone")
 
         self.verticalLayout_22.addWidget(self.setting_logic_itemless_first_timeshift_stone)
+
+        self.setting_logic_stamina_potion_through_sink_sand = RandoTriStateCheckBox(self.miscellaneous_group_box)
+        self.setting_logic_stamina_potion_through_sink_sand.setObjectName(u"setting_logic_stamina_potion_through_sink_sand")
+
+        self.verticalLayout_22.addWidget(self.setting_logic_stamina_potion_through_sink_sand)
 
         self.setting_logic_fire_node_without_hook_beetle = RandoTriStateCheckBox(self.miscellaneous_group_box)
         self.setting_logic_fire_node_without_hook_beetle.setObjectName(u"setting_logic_fire_node_without_hook_beetle")
@@ -2502,13 +2507,13 @@ class Ui_main_window(object):
         self.other_mods_group_box.setObjectName(u"other_mods_group_box")
         sizePolicy.setHeightForWidth(self.other_mods_group_box.sizePolicy().hasHeightForWidth())
         self.other_mods_group_box.setSizePolicy(sizePolicy)
-        self.verticalLayout_381 = QVBoxLayout(self.other_mods_group_box)
-        self.verticalLayout_381.setObjectName(u"verticalLayout_381")
+        self.verticalLayout_42 = QVBoxLayout(self.other_mods_group_box)
+        self.verticalLayout_42.setObjectName(u"verticalLayout_42")
         self.other_mods_explanation_text = QLabel(self.other_mods_group_box)
         self.other_mods_explanation_text.setObjectName(u"other_mods_explanation_text")
         self.other_mods_explanation_text.setWordWrap(True)
 
-        self.verticalLayout_381.addWidget(self.other_mods_explanation_text)
+        self.verticalLayout_42.addWidget(self.other_mods_explanation_text)
 
         self.other_mods_button_layout = QHBoxLayout()
         self.other_mods_button_layout.setObjectName(u"other_mods_button_layout")
@@ -2523,7 +2528,7 @@ class Ui_main_window(object):
         self.other_mods_button_layout.addWidget(self.refresh_mod_list_button)
 
 
-        self.verticalLayout_381.addLayout(self.other_mods_button_layout)
+        self.verticalLayout_42.addLayout(self.other_mods_button_layout)
 
         self.other_mods_scroll_area = QScrollArea(self.other_mods_group_box)
         self.other_mods_scroll_area.setObjectName(u"other_mods_scroll_area")
@@ -2537,7 +2542,7 @@ class Ui_main_window(object):
         self.other_mods_scroll_layout.setObjectName(u"other_mods_scroll_layout")
         self.other_mods_scroll_area.setWidget(self.other_mods_scroll_widget)
 
-        self.verticalLayout_381.addWidget(self.other_mods_scroll_area)
+        self.verticalLayout_42.addWidget(self.other_mods_scroll_area)
 
 
         self.horizontalLayout_4.addWidget(self.other_mods_group_box)
@@ -3013,7 +3018,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(5)
+        self.tab_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3053,7 +3058,7 @@ class Ui_main_window(object):
         self.presets_save_new_button.setText(QCoreApplication.translate("main_window", u"Save New", None))
         self.presets_apply_button.setText(QCoreApplication.translate("main_window", u"Apply", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.getting_started_tab), QCoreApplication.translate("main_window", u"Getting Started", None))
-        self.groupBox.setTitle(QCoreApplication.translate("main_window", u"Convenience Tweaks", None))
+        self.convenience_tweaks_group_box.setTitle(QCoreApplication.translate("main_window", u"Convenience Tweaks", None))
         self.setting_spawn_hearts.setText(QCoreApplication.translate("main_window", u"Spawn Hearts and Heart Flowers", None))
         self.setting_upgraded_skyward_strike.setText(QCoreApplication.translate("main_window", u"Upgraded Skyward Strike", None))
         self.setting_faster_air_meter_depletion.setText(QCoreApplication.translate("main_window", u"Faster Air Meter Depletion", None))
@@ -3261,6 +3266,7 @@ class Ui_main_window(object):
         self.miscellaneous_group_box.setTitle(QCoreApplication.translate("main_window", u"Miscellaneous", None))
         self.setting_logic_faron_woods_with_groosenator.setText(QCoreApplication.translate("main_window", u"Faron Woods with Groosenator", None))
         self.setting_logic_itemless_first_timeshift_stone.setText(QCoreApplication.translate("main_window", u"Itemless First Timeshift Stone", None))
+        self.setting_logic_stamina_potion_through_sink_sand.setText(QCoreApplication.translate("main_window", u"Stamina Potion through Sink Sand", None))
         self.setting_logic_fire_node_without_hook_beetle.setText(QCoreApplication.translate("main_window", u"Fire Node without Hook Beetle", None))
         self.setting_logic_skyview_spider_roll.setText(QCoreApplication.translate("main_window", u"Skyview Temple Spider Roll", None))
         self.setting_logic_et_keese_skyward_strike.setText(QCoreApplication.translate("main_window", u"Earth Temple Keese Skyward Strike", None))
