@@ -9,7 +9,7 @@ use crate::savefile;
 use crate::settings;
 
 use core::arch::asm;
-use core::ffi::{c_char, c_void};
+use core::ffi::{c_char, c_int, c_void};
 use static_assertions::assert_eq_size;
 use wchar::wch;
 
@@ -315,4 +315,30 @@ pub fn custom_help_menu_state_change(dLytHelp: *mut c_void) -> u32 {
     }
 
     return 1; // Ret, don't close help menu
+}
+
+// Adapted from SDR:
+// https://github.com/ssrando/ssrando/blob/029545b5e1d73ef515a1d61fc69b572946d45399/asm/custom-functions/src/rando/mod.rs#L614
+#[no_mangle]
+extern "C" fn get_tablet_keyframe_count() -> c_int {
+    // The tablet frames effectively start with a Gray Code, the continuation of
+    // which looks like this:
+    //
+    // Count     Emerald   Ruby      Amber     As Index
+    // 0         0         0         0         0
+    // 1         1         0         0         1
+    // 2         1         1         0         3
+    // 3         1         1         1         7
+    // 4         1         0         1         5
+    // 5         0         0         1         4
+    // 6         0         1         1         6
+    // 7         0         1         0         2
+
+    const TABLET_BITMAP_TO_KEYFRAME: [u8; 8] = [0, 1, 7, 2, 5, 4, 6, 3];
+
+    let item_bitmap = flag::check_itemflag(flag::ITEMFLAGS::EMERALD_TABLET) as usize
+        | ((flag::check_itemflag(flag::ITEMFLAGS::RUBY_TABLET) as usize) << 1)
+        | ((flag::check_itemflag(flag::ITEMFLAGS::AMBER_TABLET) as usize) << 2);
+
+    return TABLET_BITMAP_TO_KEYFRAME[item_bitmap & 0x7] as i32;
 }

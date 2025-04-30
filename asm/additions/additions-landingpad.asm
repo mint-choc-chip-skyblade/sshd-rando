@@ -291,6 +291,10 @@ b.eq custom_help_menu_state_change
 cmp w8, #90
 b.eq check_help_index_bounds
 
+
+cmp w8, #92
+b.eq get_tablet_keyframe_count
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
