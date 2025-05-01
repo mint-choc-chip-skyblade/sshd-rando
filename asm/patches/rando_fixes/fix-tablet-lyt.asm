@@ -21,3 +21,10 @@ nop
 .offset 0x7100d78a88
 mov x9, #0x40E00000 ; 7.0, was 0x40400000 -> 3.0
 movk x9, #0x40E0, LSL #48
+
+
+; Override CAPTION_ITEM inventory text to
+; accurately display correct tablet text
+.offset 0x7100d85a30
+mov w8, #93
+bl additions_jumptable

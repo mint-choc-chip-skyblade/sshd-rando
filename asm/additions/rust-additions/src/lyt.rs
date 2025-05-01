@@ -60,12 +60,13 @@ assert_eq_size!([u8; 0xBF8], TextMgr);
 // symbols.yaml and then added to this extern block.
 extern "C" {
     static mut CURRENT_STAGE_NAME: [u8; 8];
+    static dManager__sInstance: *mut c_void;
     static GLOBAL_TEXT_MGR: *mut TextMgr;
     static FILE_MGR: *mut savefile::FileMgr;
     static RANDOMIZER_SETTINGS: settings::RandomizerSettings;
 
     // Functions
-    fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
+    fn debugPrint_32(string: *const c_char, fstr: *const c_char, ...);
     fn set_string_arg(text_mgr: *mut TextMgr, arg: *const c_void, arg_num: u32);
     fn getTextMessageByLabel(
         param1: *mut c_void,
@@ -341,4 +342,28 @@ extern "C" fn get_tablet_keyframe_count() -> c_int {
         | ((flag::check_itemflag(flag::ITEMFLAGS::AMBER_TABLET) as usize) << 2);
 
     return TABLET_BITMAP_TO_KEYFRAME[item_bitmap & 0x7] as i32;
+}
+
+#[no_mangle]
+extern "C" fn override_inventory_caption_item_text(
+    string: *const c_char,
+    fstr: *const c_char,
+    mut itemid: u32,
+) {
+    unsafe {
+        // Is tablet
+        if itemid == 177 || itemid == 178 || itemid == 179 {
+            // Use a the same system as in get_tablet_keyframe_count
+            // Item ids 181 -> 185 are unused in vanilla. Rando replaces them
+            const TABLET_BITMAP_TO_TEXTID: [u32; 8] = [999, 177, 184, 178, 182, 181, 183, 179];
+
+            let item_bitmap = flag::check_itemflag(flag::ITEMFLAGS::EMERALD_TABLET) as usize
+                | ((flag::check_itemflag(flag::ITEMFLAGS::RUBY_TABLET) as usize) << 1)
+                | ((flag::check_itemflag(flag::ITEMFLAGS::AMBER_TABLET) as usize) << 2);
+
+            itemid = TABLET_BITMAP_TO_TEXTID[item_bitmap & 0x7];
+        }
+        debugPrint_32(string, fstr, itemid);
+        asm!("mov x8, {0:x}", in(reg) dManager__sInstance);
+    }
 }

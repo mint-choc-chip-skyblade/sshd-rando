@@ -359,6 +359,27 @@
   - name: Single Gratitude crystal counter
     type: textpatch
     index: 62
+  - name: Inventory Emerald Tablet text
+    type: textpatch
+    index: 643
+  - name: Inventory Emerald and Ruby Tablet text
+    type: textpatch
+    index: 644
+  - name: Inventory All Tablets text
+    type: textpatch
+    index: 645
+  - name: Inventory Emerald and Amber Tablet text
+    type: textpatch
+    index: 647
+  - name: Inventory Amber Tablet text
+    type: textpatch
+    index: 648
+  - name: Inventory Ruby and Amber Tablet text
+    type: textpatch
+    index: 649
+  - name: Inventory Ruby Tablet text
+    type: textpatch
+    index: 650
   - name: Zelda dowsing in Key Piece
     type: flowpatch
     index: 677
