@@ -2,6 +2,7 @@ import logging
 from collections import Counter
 from .item import *
 from .area import *
+from .search_mode import SearchMode
 
 from gui.dialogs.dialog_header import print_progress_text, update_progress_value
 
@@ -11,15 +12,6 @@ if TYPE_CHECKING:
     from .world import *
 
 
-class SearchMode:
-    ACCESSIBLE_LOCATIONS: int = 0
-    GAME_BEATABLE: int = 1
-    ALL_LOCATIONS_REACHABLE: int = 2
-    GENERATE_PLAYTHROUGH: int = 3
-    SPHERE_ZERO: int = 4
-    TRACKER_SPHERES: int = 5
-
-
 class Search:
     def __init__(
         self,
@@ -27,6 +19,7 @@ class Search:
         worlds_: list["World"],
         items_: Iterable[Item] = [],
         world_to_search_: int = -1,
+        importance_location_: Location = None,
     ) -> None:
         self.search_mode: int = search_mode_
         self.worlds: list["World"] = worlds_
@@ -53,11 +46,20 @@ class Search:
 
         self.area_time: dict[int, int] = {}
 
+        # Variables used for Location Importance searches
+        self.items_at_start: Counter[Item] = Counter(items_)
+        self.only_search_with_items_at_start: bool = False
+        self.assumed_wallet_capacity: int = 0
+        self.assumed_crystal_count: int = 0
+        self.assumed_false_req: Requirement = Requirement(RequirementType.IMPOSSIBLE)
+        self.importance_location: Location = importance_location_
+
         # Add starting inventory items for each world
         for world in self.worlds:
             if world.id == self.world_to_search or self.world_to_search == -1:
                 for item, count in world.starting_item_pool.items():
                     self.owned_items[item] += count
+                    self.items_at_start[item] += count
 
         # Set search starting properties and add each world's root to exits_to_try
         for world in self.worlds:
@@ -71,6 +73,51 @@ class Search:
                     # Don't add non root exits if we're doing a sphere zero search
                     if self.search_mode == SearchMode.SPHERE_ZERO:
                         break
+
+        # If we're doing an importance search, then we have to setup a few extra things
+        if self.search_mode == SearchMode.LOCATION_IMPORTANCE:
+            importance_item = self.importance_location.current_item
+
+            # Generate the logic requirement for what it would "mean" to obtain the item at this importance location
+            # We're going to assume that this logic requirement is always false when searching.
+            # This ensures that we only evaluate to true the chain locations that this item absolutely does not help unlock
+            count = self.owned_items[importance_item] + 1
+            if count == 1:
+                self.assumed_false_req = Requirement(
+                    RequirementType.ITEM, [importance_item]
+                )
+            else:
+                self.assumed_false_req = Requirement(
+                    RequirementType.COUNT, [count, importance_item]
+                )
+
+            # If this location is either a wallet or gratitude crystals, we'll pass along any assumed wallet capacity or
+            # gratitude crystal count from this location or any of its path locations. This will properly take into account any
+            # wallet or crystal requirements that were necessary to get here and adjust hint importance accordingly.
+            # (I.e. If Beedle 1600 is a path location, and this location has a wallet, then it'll always be not required.)
+            if importance_item.is_same_or_similar_item(
+                importance_item.world.get_item(PROGRESSIVE_WALLET)
+            ):
+                self.assumed_wallet_capacity = (
+                    self.importance_location.computed_requirement.get_wallet_capacity()
+                )
+                for loc in self.importance_location.path_locations:
+                    self.assumed_wallet_capacity = max(
+                        self.assumed_wallet_capacity,
+                        loc.computed_requirement.get_wallet_capacity(),
+                    )
+
+            if importance_item.is_same_or_similar_item(
+                importance_item.world.get_item(GRATITUDE_CRYSTAL)
+            ):
+                self.assumed_crystal_count = (
+                    self.importance_location.computed_requirement.get_crystal_count()
+                )
+                for loc in self.importance_location.path_locations:
+                    self.assumed_crystal_count = max(
+                        self.assumed_crystal_count,
+                        loc.computed_requirement.get_crystal_count(),
+                    )
 
     def search_worlds(self) -> None:
         # Get all locations which fit criteria to test on each iteration
@@ -225,7 +272,12 @@ class Search:
                 return
 
     def process_location(self, location: Location) -> None:
-        if not self.collect_items:
+        if not self.collect_items or (
+            self.search_mode == SearchMode.LOCATION_IMPORTANCE
+            and self.importance_location.current_item.is_same_or_similar_item(
+                location.current_item
+            )
+        ):
             return
         if self.search_mode == SearchMode.TRACKER_SPHERES:
             self.owned_items[location.tracked_item] += 1

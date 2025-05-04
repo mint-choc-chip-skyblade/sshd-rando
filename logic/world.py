@@ -71,8 +71,8 @@ class World:
         self.plandomizer_entrances: dict[Entrance, Entrance] = {}
 
         # Hint related things
-        # path_locations maps a goal location to its set of path locations
-        self.path_locations: dict[Location, list[Location]] = {}
+        # goal_locations are locations at the end of required dungeons and Defeat Demise
+        self.goal_locations: list[Location] = []
         # barren_regions maps a hint region to the list of all locations in the region
         self.barren_regions: OrderedDict[str, list[Location]] = OrderedDict()
         self.fi_hints: list[Location] = []
@@ -116,7 +116,7 @@ class World:
                 shop_model_name = item_node.get("shop_model_name", None)
                 major_item = item_node.get("advancement", False)
                 game_winning_item = item_node.get("game_winning_item", False)
-                chain_locations = item_node.get("chain_locations", [])
+                goddess_chest = item_node.get("goddess_chest", None)
 
                 stripped_name = name.replace("'", "")
                 self.item_table[stripped_name] = Item(
@@ -128,7 +128,7 @@ class World:
                     self,
                     major_item,
                     game_winning_item,
-                    chain_locations,
+                    goddess_chest,
                 )
                 logging.getLogger("").debug(
                     f"Processing new item {name}\tid: {item_id}"
@@ -314,9 +314,17 @@ class World:
             self.setting("required_dungeons") == "7"
             and self.setting("dungeons_include_sky_keep") == "off"
         ):
-            raise ValueError(
-                "Cannot require 7 dungeons when Sky Keep is not a dungeon. Please either reduce the required dungeon count or enable Sky Keep to be a required dungeon."
-            )
+            # If dungeons_include_sky_keep is being chosen randomly, then we'll set it to on to fix the issue
+            if self.setting("dungeons_include_sky_keep").setting.is_using_random_option:
+                self.setting("dungeons_include_sky_keep").set_value("on")
+            # Otherwise if required_dungeons is random, set it back down to 6
+            elif self.setting("required_dungeons").setting.is_using_random_option:
+                self.setting("required_dungeons").set_value("6")
+            # If neither are random, then it's the user's fault
+            else:
+                raise ValueError(
+                    "Cannot require 7 dungeons when Sky Keep is not a dungeon. Please either reduce the required dungeon count or enable Sky Keep to be a required dungeon."
+                )
 
     def place_hardcoded_items(self) -> None:
         defeat_demise = self.get_location("Hylia's Realm - Defeat Demise")

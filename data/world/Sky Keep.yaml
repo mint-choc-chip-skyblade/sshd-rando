@@ -20,7 +20,9 @@
     SK Earth Temple Room North: can_access(SK Fire Sanctuary Room East)
     SK Earth Temple Room East: can_access(SK Fire Sanctuary Room East)
     SK Dreadfuse Room South: can_access(SK Fire Sanctuary Room East)
-    SK Dreadfuse Room West: can_access(SK Fire Sanctuary Room East)
+    # There are bars blocking the way to the chest until Dreadfuse is dead
+    # so while you can get here without beating Dreadfuse, doing so is useless
+    # SK Dreadfuse Room West: can_access(SK Fire Sanctuary Room East)
     SK Ancient Cistern Room South: can_access(SK Skyview Room North)
     SK Ancient Cistern Room East: can_access(SK LMF Room North)
     SK Fire Sanctuary Room East: can_access(SK LMF Room North)
@@ -76,11 +78,14 @@
   dungeon: Sky Keep
   exits:
     SK Dreadfuse Room West: Can_Defeat_Scervo_And_Dreadfuse and Clawshots
-  locations:
-    Sky Keep - Chest after Dreadfuse Fight: Nothing
 
 
 - name: SK Dreadfuse Room West
+  dungeon: Sky Keep
+  exits:
+    SK Dreadfuse Room South: can_access(SK Dreadfuse Room South) and Can_Defeat_Scervo_And_Dreadfuse and Clawshots
+  locations:
+    Sky Keep - Chest after Dreadfuse Fight: Nothing
 
 
 - name: SK Ancient Cistern Room South

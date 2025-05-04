@@ -156,8 +156,7 @@ def determine_check_patches(
                                         [
                                             loc
                                             for loc in item.chain_locations
-                                            if loc in location_table
-                                            and location_table[loc].progression
+                                            if loc.progression
                                         ]
                                     )
                                     > 0
@@ -188,6 +187,11 @@ def determine_check_patches(
                                 tbox_subtype = 0
                         elif item.is_dungeon_map:
                             tbox_subtype = 1
+
+                    # If the post-boko base sword pull chest would CTMC into
+                    # a small brown chest actually make it a big blue chest.
+                    if stage == "F201_1" and objectid == "73" and tbox_subtype == 1:
+                        tbox_subtype = 0
 
                 for oarc in item_oarcs:
                     stage_patch_handler.add_arcn_for_check(stage, layer, room, oarc)

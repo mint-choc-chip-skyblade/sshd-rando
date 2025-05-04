@@ -253,7 +253,7 @@
 - name: Bazaar
   allowed_time_of_day: Day Only
   events:
-    Obtain Stamina Potion: Bottle and Raise_Lanayru_Mining_Facility
+    Obtain Stamina Potion: Bottle
     # important Tracker events
     Access Item Check: Nothing
     Purchase Shield: Nothing

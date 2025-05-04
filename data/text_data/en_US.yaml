@@ -250,6 +250,15 @@
 - name: Location Hint
   standard: They say that <location_pretty_or_cryptic_name> rewards <item_pretty_or_cryptic_name>.
 
+- name: Hint Importance Required
+  standard: " (<g+<required>>)"
+
+- name: Hint Importance Possibly Required
+  standard: " (<ye<possibly required>>)"
+
+- name: Hint Importance Not Required
+  standard: " (<s<not required>>)"
+
 - name: Small Key
   standard: Small Key
   pretty: a <Small Key>
@@ -6370,3 +6379,25 @@
 - name: Help Text Content 3c
   standard:
     "Life Tree Fruit: <string arg0>\nSeedling: <string arg1>\nCaves Keys: <numeric arg0>, Found <numeric arg1>/2"
+
+- name: Inventory Emerald Tablet text
+  standard:
+    "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<g<Faron Woods>>."
+- name: Inventory Emerald and Ruby Tablet text
+  standard:
+    "The <r<ruby>> and <g<emerald>> tablet fragments\nopen the way to <g<Faron Woods>> and <r<Eldin\nVolcano>>."
+- name: Inventory All Tablets text
+  standard:
+    "Completed tablet containing the <g<emerald>>,\n<r<ruby>>, and <y<amber>> fragments. Opens all areas\nof the surface--<g<woods>>, <r<volcano>>, and <y<desert>>."
+- name: Inventory Emerald and Amber Tablet text
+  standard:
+    "The <y<amber>> and <g<emerald>> tablet fragments\nopen the way to <g<Faron Woods>> and\n<y<Lanayru Desert>>."
+- name: Inventory Amber Tablet text
+  standard:
+    "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<y<Lanayru Desert>>."
+- name: Inventory Ruby and Amber Tablet text
+  standard:
+    "The <y<amber>> and <r<ruby>> tablet fragments\nopen the way to <r<Eldin Volcano>> and\n<y<Lanayru Desert>>."
+- name: Inventory Ruby Tablet text
+  standard:
+    "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<r<Eldin Volcano>>."

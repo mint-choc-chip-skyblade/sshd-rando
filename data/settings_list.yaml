@@ -463,6 +463,16 @@
     - "off": "All locations will be treated equally for location hints."
     - "on": "Certain locations which are time-consuming to check will be given priority for location hints."
 
+- name: hint_importance
+  default_option: "off"
+  pretty_name: Hint Importance
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Location and item hints will not specify whether or not an item is required."
+    - "on": "Location and item hints will specify if the item hinted at is required, not required, or possibly required. Junk items will not have any specifier, as they are trivially unrequired."
+
 - name: random_starting_statues
   default_option: "off"
   pretty_name: Random Starting Bird Statues
@@ -592,7 +602,7 @@
     - "Off"
     - "On"
   options:
-    - "off": "You will need to fight The Horde after exting the double doors in Temple of Hylia at the end of the game."
+    - "off": "You will need to fight The Horde after exiting the double doors in Temple of Hylia at the end of the game."
     - "on": "The Horde fight after exiting the double doors in Temple of Hylia will be skipped."
 
 - name: skip_g3
@@ -826,7 +836,7 @@
   options:
     - 1-80: "Determines the overall damage multiplier.
         <b>Normal Mode</b> (default) damage is x1.
-        <b>Hero Hode</b> (new game +) damage is x2.
+        <b>Hero Mode</b> (new game +) damage is x2.
         At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
 - name: unlock_all_groosenator_destinations
@@ -850,9 +860,9 @@
     - Hard
   options:
     - guaranteed_win: "Completing the minigame will guarantee the best reward."
-    - easy: "The threshhold needed to earn a reward from each minigame will be reduced."
-    - vanilla: "The threshhold nedede to earn a reward from each minigame will be unchanged."
-    - hard: "The threshhold nedede to earn a reward from each minigame will be increased."
+    - easy: "The threshold needed to earn a reward from each minigame will be reduced."
+    - vanilla: "The threshold needed to earn a reward from each minigame will be unchanged."
+    - hard: "The threshold needed to earn a reward from each minigame will be increased."
 
 ######################
 ## Cosmetic Options ##
@@ -1584,6 +1594,16 @@
   options:
     - "off": "You will only be expected to use an item to activate the first timeshift stone in Lanayru Mine."
     - "on": "You may need to use the bomb flower near the Chus in order to activate the first timeshift stone in Lanayru Mine without items."
+
+- name: logic_stamina_potion_through_sink_sand
+  default_option: "off"
+  pretty_name: Stamina Potion through Sink Sand
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will only be expected to navigate sink sand by creating paths to run on (usually done by knocking down statues by carrying bomb flowers with the Hook Beetle)."
+    - "on": "You may need to purchase a stamina potion to run through sink sand further than is normally possible."
 
 - name: logic_brakeslide
   default_option: "off"

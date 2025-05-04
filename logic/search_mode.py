@@ -1,0 +1,8 @@
+class SearchMode:
+    ACCESSIBLE_LOCATIONS: int = 0
+    GAME_BEATABLE: int = 1
+    ALL_LOCATIONS_REACHABLE: int = 2
+    GENERATE_PLAYTHROUGH: int = 3
+    SPHERE_ZERO: int = 4
+    TRACKER_SPHERES: int = 5
+    LOCATION_IMPORTANCE: int = 6

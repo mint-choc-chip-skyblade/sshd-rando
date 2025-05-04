@@ -73,7 +73,7 @@ def get_disabled_shuffle_locations(
 ) -> list[Location]:
     settings = settings_map.settings
 
-    non_vanilla_locations = [
+    disabled_locations = [
         location
         for location in location_table.values()
         if location.types is not None
@@ -89,7 +89,10 @@ def get_disabled_shuffle_locations(
             )
             or (
                 settings["goddess_chest_shuffle"].value == "off"
-                and "Goddess Chests" in location.types
+                and (
+                    "Goddess Chests" in location.types
+                    or "Goddess Cube" in location.types
+                )
             )
             or (
                 (
@@ -142,4 +145,4 @@ def get_disabled_shuffle_locations(
         )
     ]
 
-    return non_vanilla_locations
+    return disabled_locations

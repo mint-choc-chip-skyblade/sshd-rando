@@ -30,6 +30,10 @@ def generate_item_pool(world: "World") -> None:
         case "plentiful":
             item_pool = PLENTIFUL_ITEM_POOL
 
+    # Needed otherwise the "constant" item pools above get editted as well.
+    # Doesn't cause problems until multiple seeds are generated.
+    item_pool = item_pool.copy()
+
     # Remove Key Pieces if the ET Door is open
     if world.setting("open_earth_temple") == "on":
         item_pool = [item for item in item_pool if item != KEY_PIECE]
@@ -47,12 +51,70 @@ def generate_item_pool(world: "World") -> None:
     if world.setting("boss_keys") == "removed":
         item_pool = [item for item in item_pool if not item.endswith(BOSS_KEY)]
 
+    # Add rupees and treasures to item pool based on the enabled locations.
+    # Closets which don't have items in vanilla are set to have Green Rupees.
+    # These rupees should be ignored as they would inflate their representation in the item pool.
+    types_to_ignore = [
+        "Closets",
+    ]
+
+    if world.setting("rupee_shuffle") == "intermediate":
+        types_to_ignore.append("Advanced Rupees")
+    elif world.setting("rupee_shuffle") == "beginner":
+        types_to_ignore.append("Advanced Rupees")
+        types_to_ignore.append("Intermediate Rupees")
+    elif world.setting("rupee_shuffle") == "vanilla":
+        types_to_ignore.append("Advanced Rupees")
+        types_to_ignore.append("Intermediate Rupees")
+        types_to_ignore.append("Beginner Rupees")
+
+    if world.setting("underground_rupee_shuffle") == "off":
+        types_to_ignore.append("Underground Rupees")
+
+    if world.setting("hidden_item_shuffle") == "off":
+        types_to_ignore.append("Hidden Items")
+
+    if world.setting("goddess_chest_shuffle") == "off":
+        types_to_ignore.append("Goddess Chests")
+
+    test_counter = 0
+    for loc_name in world.location_table:
+        location = world.location_table[loc_name]
+
+        # Filter out non-item locations like gossip stones
+        if location.original_item is None:
+            continue
+
+        original_item = location.original_item.name
+
+        if original_item in SHUFFLE_DEPENDENT_ITEMS:
+            should_add_item_to_pool = True
+
+            for loc_type in location.types:
+                if loc_type in types_to_ignore:
+                    should_add_item_to_pool = False
+                    break
+
+            if should_add_item_to_pool:
+                item_pool.append(original_item)
+                test_counter += 1
+
+    # Add dusk relics equal to the number of enabled relic checks
+    item_pool += (
+        [DUSK_RELIC] * world.setting("trial_treasure_shuffle").value_as_number() * 4
+    )
+
     for item_name in item_pool:
         if item_name in VANILLA_RANDOM_ITEM_TABLE:
             item_name = random.choice(VANILLA_RANDOM_ITEM_TABLE[item_name])
 
         item = world.get_item(item_name)
         world.item_pool[item] += 1
+
+    # Output the item pool for debugging
+    # print("Item Pool:")
+    # for item in world.item_pool:
+    #     print(f"\t{item.name}: {world.item_pool[item]}")
 
 
 # Will remove items from the passed in world's item pool
@@ -128,19 +190,7 @@ def generate_starting_item_pool(world: "World"):
 
 
 def get_random_junk_item_name() -> str:
-    random_junk_item = random.choice(
-        (
-            BLUE_RUPEE,
-            RED_RUPEE,
-            SILVER_RUPEE,
-            FIVE_BOMBS,
-            FIVE_DEKU_SEEDS,
-            TEN_ARROWS,
-            COMMON_TREASURE,
-            UNCOMMON_TREASURE,
-            RARE_TREASURE,
-        )
-    )
+    random_junk_item = random.choice(ALL_JUNK_ITEMS)
 
     if random_junk_item in VANILLA_RANDOM_ITEM_TABLE:
         random_junk_item = random.choice(VANILLA_RANDOM_ITEM_TABLE[random_junk_item])

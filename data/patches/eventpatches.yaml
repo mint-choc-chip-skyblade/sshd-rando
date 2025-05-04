@@ -359,6 +359,27 @@
   - name: Single Gratitude crystal counter
     type: textpatch
     index: 62
+  - name: Inventory Emerald Tablet text
+    type: textpatch
+    index: 643
+  - name: Inventory Emerald and Ruby Tablet text
+    type: textpatch
+    index: 644
+  - name: Inventory All Tablets text
+    type: textpatch
+    index: 645
+  - name: Inventory Emerald and Amber Tablet text
+    type: textpatch
+    index: 647
+  - name: Inventory Amber Tablet text
+    type: textpatch
+    index: 648
+  - name: Inventory Ruby and Amber Tablet text
+    type: textpatch
+    index: 649
+  - name: Inventory Ruby Tablet text
+    type: textpatch
+    index: 650
   - name: Zelda dowsing in Key Piece
     type: flowpatch
     index: 677
@@ -932,9 +953,9 @@
       - 167
       - 165
 
-  - name: Patch Pre-Barrel Delivery Text
+  - name: Patch Barrel Delivery Text
     type: flowpatch
-    index: 2
+    index: 144
     flow:
       next: Show Attention Mark Switch
   - name: Show Attention Mark Switch
@@ -944,16 +965,10 @@
       param2: 23 # Sceneflag 23 - has received barrel check
       param3: 6
     cases:
-      - 3 # yes - don't show
+      - 145 # yes - don't show
       - Show Attention Mark before Delivering Barrel # no - show mark
   - name: Show Attention Mark before Delivering Barrel
     type: attentionmark
-    flow:
-      next: 3
-
-  - name: Patch Barrel Delivery Text
-    type: flowpatch
-    index: 144
     flow:
       next: Delivered Barrel Switch
   - name: Delivered Barrel Switch
@@ -969,7 +984,7 @@
     type: switchadd
     flow:
       subType: 6
-      param2: 23 # Sceneflag 22 - received barrel check
+      param2: 23 # Sceneflag 23 - received barrel check
       param3: 6
     cases:
       - 145 # yes - ignore
@@ -1189,11 +1204,20 @@
     index: 42
     flow:
       next: 44 # give item
-  - name: Requirement for Stamina Potion
+  - name: Remove requirement for Stamina Potion
     type: flowpatch
     index: 103
-    flow:
-      param2: 8 # raised LMF
+    flow: {}
+    cases:
+      - 50
+      - 50
+  - name: Remove requirement for Air Potion
+    type: flowpatch
+    index: 124
+    flow: {}
+    cases:
+      - 49
+      - 49
   - name: Remove pouch bipping from Potion Lady
     type: flowpatch
     index: 115

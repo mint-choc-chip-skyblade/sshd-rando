@@ -226,6 +226,9 @@ pub fn remove_vanilla_tms_sword_pull_textbox(param1: *mut *mut unkstruct) {
         ((*(*param1)).unk0x10)(param1 as *mut c_void, 0xFF, 3);
     }
 
+    // Sets tboxflag 9 in sceneindex 5 (Boko Base / VS)
+    flag::set_global_tboxflag(5, 9);
+
     // The vanilla textbox eventflow unsets these flags.
     flag::unset_storyflag(167); // Restricted sword
     flag::set_local_sceneflag(44);

@@ -15,7 +15,7 @@ import logging
 args = get_program_args()
 
 # Set specified log level
-if args.debug and __name__ == "__main__":
+if args.debug:
     print("Starting Debug Log")
     logging.basicConfig(
         filename="debug.log",

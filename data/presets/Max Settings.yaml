@@ -43,6 +43,7 @@ World 1:
   impa_sot_hint: 'on'
   cryptic_hint_text: 'off'
   always_hints: 'on'
+  hint_importance: 'off'
   random_starting_statues: 'off'
   random_starting_spawn: vanilla
   limit_starting_spawn: 'off'
