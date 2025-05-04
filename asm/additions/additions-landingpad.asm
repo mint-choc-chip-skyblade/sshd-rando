@@ -294,6 +294,12 @@ b.eq check_help_index_bounds
 cmp w8, #91
 b.eq shop_use_progressive_models
 
+cmp w8, #92
+b.eq get_tablet_keyframe_count
+
+cmp w8, #93
+b.eq override_inventory_caption_item_text
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

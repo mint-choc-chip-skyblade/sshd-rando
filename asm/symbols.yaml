@@ -46,6 +46,7 @@ main:
 
     LYT_MSG_WINDOW: 0x7101840a18
     LYT_PAUSE_DISP: 0x7101840a50
+    dManager__sInstance: 0x7101932040
     GLOBAL_TEXT_MGR: 0x7101932048
 
     FANFARE_SOUND_MGR: 0x7102c02c20
@@ -128,6 +129,7 @@ main:
 
 
     # Functions
+    debugPrint_32: 0x7100022680
     debugPrint_128: 0x710051bf54
     strlen: 0x710105f5c0
     strlen_const: 0x710105f5c0

@@ -25,7 +25,12 @@ from patches.dynamictextpatches import add_dynamic_text_patches
 from patches.othermods import verify_other_mods, copy_extra_mod_files
 from shutil import rmtree
 
-from patches.arcpatchhandler import create_shop_rupee_arcs, patch_object_folder
+from patches.arcpatchhandler import (
+    create_shop_rupee_arcs,
+    patch_logo,
+    patch_object_folder,
+    patch_tablet_ui,
+)
 
 
 class AllPatchHandler:
@@ -108,7 +113,10 @@ class AllPatchHandler:
         self.stage_patch_handler.handle_stage_patches(self.conditional_patch_handler)
 
         update_progress_value(80)
-        self.stage_patch_handler.patch_logo()
+        patch_logo(output_dir / "romfs")
+
+        update_progress_value(81)
+        patch_tablet_ui(output_dir / "romfs")
 
         update_progress_value(82)
         add_dynamic_text_patches(self.world, self.event_patch_handler)
