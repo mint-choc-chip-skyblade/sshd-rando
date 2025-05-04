@@ -82,7 +82,6 @@ def sanitize_major_items(worlds: list[World]) -> None:
     # then the rest of that item are not major items
     one_then_junk_items = [
         PROGRESSIVE_BOW,
-        PROGRESSIVE_BUG_NET,
         PROGRESSIVE_SLINGSHOT,
         PROGRESSIVE_POUCH,
         EMPTY_BOTTLE,
@@ -98,11 +97,17 @@ def sanitize_major_items(worlds: list[World]) -> None:
     }
 
     for world in worlds:
+
+        world_one_then_junk = one_then_junk_items.copy()
+        # Only add bug net if minigame difficulty is vaniulla, or hard
+        if world.setting("minigame_difficulty").is_any_of("vanilla", "hard"):
+            world_one_then_junk.append(PROGRESSIVE_BUG_NET)
+
         for location in world.get_all_item_locations():
             item = location.current_item
             if (
                 (
-                    item.name in one_then_junk_items
+                    item.name in world_one_then_junk
                     and world.starting_item_pool[item] > 0
                 )
                 or (
