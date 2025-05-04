@@ -2699,7 +2699,7 @@ F201_1: # Inside volcano
       posz: -68.63192749023438
       anglex: 0xFFFF
       angley: 16384
-      anglez: 37379 # >> 9 = chest flag 73
+      anglez: 37379 # >> 9 = chest flag 9
       id: 0xFC26
       name: TBox
   - name: Patch loadzone to Fire Dragon's Lair
