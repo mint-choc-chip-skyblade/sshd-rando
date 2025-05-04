@@ -1183,11 +1183,20 @@
     index: 42
     flow:
       next: 44 # give item
-  - name: Requirement for Stamina Potion
+  - name: Remove requirement for Stamina Potion
     type: flowpatch
     index: 103
-    flow:
-      param2: 8 # raised LMF
+    flow: {}
+    cases:
+      - 50
+      - 50
+  - name: Remove requirement for Air Potion
+    type: flowpatch
+    index: 124
+    flow: {}
+    cases:
+      - 49
+      - 49
   - name: Remove pouch bipping from Potion Lady
     type: flowpatch
     index: 115

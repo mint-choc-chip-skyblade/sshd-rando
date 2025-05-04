@@ -1595,6 +1595,16 @@
     - "off": "You will only be expected to use an item to activate the first timeshift stone in Lanayru Mine."
     - "on": "You may need to use the bomb flower near the Chus in order to activate the first timeshift stone in Lanayru Mine without items."
 
+- name: logic_stamina_potion_through_sink_sand
+  default_option: "off"
+  pretty_name: Stamina Potion through Sink Sand
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will only be expected to navigate sink sand by creating paths to run on (usually done by knocking down statues by carrying bomb flowers with the Hook Beetle)."
+    - "on": "You may need to purchase a stamina potion to run through sink sand further than is normally possible."
+
 - name: logic_brakeslide
   default_option: "off"
   pretty_name: Brakesliding
