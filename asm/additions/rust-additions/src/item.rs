@@ -1183,8 +1183,46 @@ pub fn after_item_collection_hook(collected_item: flag::ITEMFLAGS) -> flag::ITEM
 }
 
 #[no_mangle]
-pub fn resolve_progressive_item_models(model_name: *const c_char, item_id: u16) -> *const c_char {
+pub fn resolve_progressive_item_models(
+    mut model_name: *const c_char,
+    item_id: u16,
+    arc_or_model: u8,
+) -> *const c_char {
     unsafe {
+        // Deal with unique archive names
+        if arc_or_model == 1 {
+            model_name = match item_id {
+                214 => c"Onp".as_ptr(),
+                215 => c"DesertRobot".as_ptr(),
+                _ => model_name,
+            };
+
+            if item_id == 112 {
+                if flag::check_itemflag(flag::ITEMFLAGS::ADVENTURE_POUCH) == 0 {
+                    model_name = c"GetPouchA".as_ptr();
+                } else {
+                    model_name = c"GetPouchB".as_ptr();
+                }
+            }
+        // Deal with unique model names
+        } else if arc_or_model == 2 {
+            model_name = match item_id {
+                // Randomly pick which of the two tadtone models is used for fun :p
+                214 if (s_rng & 1) == 0 => c"OnpA".as_ptr(),
+                214 => c"OnpB".as_ptr(),
+                215 => c"DesertRobot".as_ptr(),
+                _ => model_name,
+            };
+
+            if item_id == 112 {
+                if flag::check_itemflag(flag::ITEMFLAGS::ADVENTURE_POUCH) == 0 {
+                    model_name = c"GetPorchA".as_ptr();
+                } else {
+                    model_name = c"GetPorchB".as_ptr();
+                }
+            }
+        }
+
         match item_id {
             // Progressive Bow
             19 => {
@@ -1253,25 +1291,11 @@ pub fn resolve_progressive_item_models(model_name: *const c_char, item_id: u16) 
 #[no_mangle]
 pub fn get_arc_model_from_item(
     arc_table: *mut c_void,
-    model_name: *const c_char,
+    arc_name: *const c_char,
     item_id: u16,
 ) -> *mut c_void {
     unsafe {
-        let mut initial_model_name = match item_id {
-            214 => c"Onp".as_ptr(),
-            215 => c"DesertRobot".as_ptr(),
-            _ => model_name,
-        };
-
-        if item_id == 112 {
-            if flag::check_itemflag(flag::ITEMFLAGS::ADVENTURE_POUCH) == 0 {
-                initial_model_name = c"GetPouchA".as_ptr();
-            } else {
-                initial_model_name = c"GetPouchB".as_ptr();
-            }
-        }
-
-        let resolved_model_name = resolve_progressive_item_models(initial_model_name, item_id);
+        let resolved_model_name = resolve_progressive_item_models(arc_name, item_id, 1);
 
         return dRawArcTable_c__getDataFromOarc(
             arc_table,
@@ -1284,22 +1308,7 @@ pub fn get_arc_model_from_item(
 #[no_mangle]
 pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *const c_char {
     unsafe {
-        let mut initial_model_name = match item_id {
-            214 if (s_rng & 1) == 0 => c"OnpA".as_ptr(),
-            214 => c"OnpB".as_ptr(),
-            215 => c"DesertRobot".as_ptr(),
-            _ => model_name,
-        };
-
-        if item_id == 112 {
-            if flag::check_itemflag(flag::ITEMFLAGS::ADVENTURE_POUCH) == 0 {
-                initial_model_name = c"GetPorchA".as_ptr();
-            } else {
-                initial_model_name = c"GetPorchB".as_ptr();
-            }
-        }
-
-        let resolved_model_name = resolve_progressive_item_models(initial_model_name, item_id);
+        let resolved_model_name = resolve_progressive_item_models(model_name, item_id, 2);
 
         // Replaced code
         asm!("mov x1, {0:x}", in(reg) item_id);

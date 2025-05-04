@@ -999,6 +999,16 @@ F002r: # Beedle's Airshop
     layer: 1
     room: 0
     objtype: STAG
+  - name: Add shop rupee models
+    type: arcnadd
+    layer: 1
+    room: 0
+    arcn:
+      - GetBlueRupee
+      - GetRedRupee
+      - GetSilverRupee
+      - GetGoldRupee
+      - GetRupoor
 
 F004r: # Bazaar
   - name: Remove goddess chest fi text

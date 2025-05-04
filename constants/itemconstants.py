@@ -112,6 +112,35 @@ ITEMS_NOT_TO_TRAP = (
 )
 
 # Item Pools
+SHUFFLE_DEPENDENT_ITEMS: list[str] = (
+    [
+        GREEN_RUPEE,
+        BLUE_RUPEE,
+        RED_RUPEE,
+        SILVER_RUPEE,
+        GOLD_RUPEE,
+        RUPOOR,
+        FIVE_DEKU_SEEDS,
+        TEN_DEKU_SEEDS,
+        SINGLE_ARROW,
+        TEN_ARROWS,
+        FIVE_BOMBS,
+        TEN_BOMBS,
+        COMMON_TREASURE,
+        UNCOMMON_TREASURE,
+        RARE_TREASURE,
+        # COMMON_BUG,
+        # UNCOMMON_BUG,
+        # RARE_BUG,
+    ]
+    + list(COMMON_TREASURES)
+    + list(UNCOMMON_TREASURES)
+    + list(RARE_TREASURES)
+    # + list(COMMON_BUGS)
+    # + list(UNCOMMON_BUGS)
+    # + list(RARE_BUGS)
+)
+
 ALL_JUNK_ITEMS: list[str] = (
     [
         # HEART,
@@ -217,17 +246,6 @@ MINIMAL_ITEM_POOL: list[str] = (
     + [HEART_PIECE] * 24
     + [HEART_CONTAINER] * 6
     + [LIFE_MEDAL] * 2
-    + [GREEN_RUPEE] * 3
-    + [BLUE_RUPEE] * 11
-    + [RED_RUPEE] * 42
-    + [SILVER_RUPEE] * 22
-    + [GOLD_RUPEE] * 11
-    + [UNCOMMON_TREASURE] * 10
-    + [GOLDEN_SKULL] * 1
-    + [RARE_TREASURE] * 12
-    + [EVIL_CRYSTAL] * 2
-    + [ELDIN_ORE] * 2
-    + [RUPOOR] * 5
     + [
         SV_MAP,
         ET_MAP,

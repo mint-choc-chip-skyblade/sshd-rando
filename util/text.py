@@ -444,6 +444,7 @@ def break_lines(text: str) -> str:
         ".": 7,
         ",": 7,
         "!": 7,
+        "?": 19,
         ":": 7,
         ";": 7,
         "(": 10,  # NEEDS CONFIRMING

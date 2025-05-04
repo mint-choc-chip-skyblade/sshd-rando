@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -657,7 +657,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_9" columnstretch="1,1,1,1">
         <item row="0" column="2">
-         <widget class="QGroupBox" name="groupBox">
+         <widget class="QGroupBox" name="convenience_tweaks_group_box">
           <property name="title">
            <string>Convenience Tweaks</string>
           </property>
@@ -769,7 +769,7 @@
             <widget class="QComboBox" name="setting_minigame_difficulty"/>
            </item>
            <item>
-            <spacer name="verticalSpacer_2">
+            <spacer name="convenience_tweaks_vspacer">
              <property name="orientation">
               <enum>Qt::Orientation::Vertical</enum>
              </property>
@@ -1780,7 +1780,7 @@
             <widget class="QComboBox" name="setting_npc_closet_shuffle"/>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <layout class="QHBoxLayout" name="trial_treasure_shuffle_layout">
              <item>
               <widget class="QLabel" name="trial_treasure_shuffle_label">
                <property name="sizePolicy">
@@ -2585,7 +2585,7 @@
                  </widget>
                 </item>
                 <item>
-                 <spacer name="barren_hints_hspacer">
+                 <spacer name="barren_hints_source_hspacer">
                   <property name="orientation">
                    <enum>Qt::Orientation::Horizontal</enum>
                   </property>
@@ -2670,7 +2670,7 @@
                  </widget>
                 </item>
                 <item>
-                 <spacer name="location_hints_hspacer">
+                 <spacer name="location_hints_source_hspacer">
                   <property name="orientation">
                    <enum>Qt::Orientation::Horizontal</enum>
                   </property>
@@ -2755,7 +2755,7 @@
                  </widget>
                 </item>
                 <item>
-                 <spacer name="horizontalSpacer_4">
+                 <spacer name="item_hints_source_hspacer">
                   <property name="orientation">
                    <enum>Qt::Orientation::Horizontal</enum>
                   </property>
@@ -3255,6 +3255,13 @@
                <widget class="RandoTriStateCheckBox" name="setting_logic_itemless_first_timeshift_stone">
                 <property name="text">
                  <string>Itemless First Timeshift Stone</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RandoTriStateCheckBox" name="setting_logic_stamina_potion_through_sink_sand">
+                <property name="text">
+                 <string>Stamina Potion through Sink Sand</string>
                 </property>
                </widget>
               </item>
@@ -3834,7 +3841,7 @@ Practice Sword</string>
           <property name="title">
            <string>Other Mods</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_38">
+          <layout class="QVBoxLayout" name="verticalLayout_42">
            <item>
             <widget class="QLabel" name="other_mods_explanation_text">
              <property name="text">

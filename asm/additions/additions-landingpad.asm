@@ -291,6 +291,9 @@ b.eq custom_help_menu_state_change
 cmp w8, #90
 b.eq check_help_index_bounds
 
+cmp w8, #91
+b.eq shop_use_progressive_models
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
