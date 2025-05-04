@@ -70,3 +70,50 @@ def patch_object_folder(object_folder_output_path: Path, other_mods: list[str] =
     print(
         f"Total Object folder patching took {(end_objectpack_patching_time - start_move_arcs_time)} seconds"
     )
+
+
+def create_shop_rupee_arcs():
+    print_progress_text("Creating Rupee arcs for shops")
+
+    cache_oarc_names = [arc.name for arc in list(CACHE_OARC_PATH.glob("*"))]
+    shop_rupee_arc_names = (
+        "GetBlueRupee.arc",
+        "GetRedRupee.arc",
+        "GetSilverRupee.arc",
+        "GetGoldRupee.arc",
+        "GetRupoor.arc",
+    )
+    shop_rupee_arc_offsets = (0x1000, 0x1E00, 0x2C00, 0x3A00, 0x4800)
+
+    data_size = 0x2C0
+    green_data_start = 0x200
+    green_data_end = green_data_start + data_size
+
+    for rupee_index, rupee_arc in enumerate(shop_rupee_arc_names):
+        if rupee_arc in cache_oarc_names:
+            print(f"{rupee_arc} already exists")
+            continue
+
+        print(f"Creating {rupee_arc}")
+
+        # Don't check other mods for this.
+        # If another mod *did* change the rupee model, this method of patching
+        # the model to work in shops would almost certainly cause a crash.
+        rupee_arc_path = get_cache_oarc_path("GetRupee.arc", [])
+        if not rupee_arc_path.exists():
+            raise Exception(f"ERROR: GetRupee.arc not found in oarc cache.")
+
+        rupee_arc = U8File.get_parsed_U8_from_path(rupee_arc_path)
+
+        if model_xtx := rupee_arc.get_file_data("g3d/model.xtx"):
+            new_data_start = shop_rupee_arc_offsets[rupee_index]
+            new_data_end = new_data_start + data_size
+            new_texture_data = bytearray(model_xtx)[new_data_start:new_data_end]
+
+            model_xtx = bytearray(model_xtx)
+            model_xtx[green_data_start:green_data_end] = new_texture_data
+            rupee_arc.set_file_data("g3d/model.xtx", model_xtx)
+
+        write_bytes_create_dirs(
+            CACHE_OARC_PATH / shop_rupee_arc_names[rupee_index], rupee_arc.build_U8()
+        )

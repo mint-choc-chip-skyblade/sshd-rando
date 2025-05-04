@@ -25,7 +25,7 @@ from patches.dynamictextpatches import add_dynamic_text_patches
 from patches.othermods import verify_other_mods, copy_extra_mod_files
 from shutil import rmtree
 
-from patches.arcpatchhandler import patch_object_folder
+from patches.arcpatchhandler import create_shop_rupee_arcs, patch_object_folder
 
 
 class AllPatchHandler:
@@ -93,6 +93,7 @@ class AllPatchHandler:
         )
 
         update_progress_value(50)
+        create_shop_rupee_arcs()
         patch_object_folder(
             self.world.config.output_dir / OBJECT_PATH_TAIL,
             self.stage_patch_handler.other_mods,
