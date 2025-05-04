@@ -602,7 +602,7 @@
     - "Off"
     - "On"
   options:
-    - "off": "You will need to fight The Horde after exting the double doors in Temple of Hylia at the end of the game."
+    - "off": "You will need to fight The Horde after exiting the double doors in Temple of Hylia at the end of the game."
     - "on": "The Horde fight after exiting the double doors in Temple of Hylia will be skipped."
 
 - name: skip_g3
@@ -836,7 +836,7 @@
   options:
     - 1-80: "Determines the overall damage multiplier.
         <b>Normal Mode</b> (default) damage is x1.
-        <b>Hero Hode</b> (new game +) damage is x2.
+        <b>Hero Mode</b> (new game +) damage is x2.
         At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
 - name: unlock_all_groosenator_destinations
@@ -860,9 +860,9 @@
     - Hard
   options:
     - guaranteed_win: "Completing the minigame will guarantee the best reward."
-    - easy: "The threshhold needed to earn a reward from each minigame will be reduced."
-    - vanilla: "The threshhold nedede to earn a reward from each minigame will be unchanged."
-    - hard: "The threshhold nedede to earn a reward from each minigame will be increased."
+    - easy: "The threshold needed to earn a reward from each minigame will be reduced."
+    - vanilla: "The threshold needed to earn a reward from each minigame will be unchanged."
+    - hard: "The threshold needed to earn a reward from each minigame will be increased."
 
 ######################
 ## Cosmetic Options ##
