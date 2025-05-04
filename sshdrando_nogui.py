@@ -1,3 +1,9 @@
 import os
+from util.arguments import get_program_args
 
-os.system("sshdrando.py --nogui ")
+args = get_program_args()
+
+if args.debug:
+    os.system("sshdrando.py --nogui --debug")
+else:
+    os.system("sshdrando.py --nogui ")

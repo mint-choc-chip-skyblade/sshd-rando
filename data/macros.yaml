@@ -168,6 +168,8 @@ Can Survive Hot Cave: damage_multiplier <= 11 or Fireshield_Earrings
 
 Raise Lanayru Mining Facility: open_lmf == open or 'Activate_Main_Node'
 
+Can use Stamina Potion in Sink Sand: logic_stamina_potion_through_sink_sand and 'Obtain_Stamina_Potion'
+
 Can Navigate in Oasis: Can_Defeat_Ampilus or Hook_Beetle or 'Obtain_Stamina_Potion' or logic_brakeslide or logic_stuttersprint
 
 Blow Up Covered Timeshift Stone: Bomb_Bag

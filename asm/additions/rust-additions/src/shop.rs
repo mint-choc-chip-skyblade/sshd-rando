@@ -5,6 +5,7 @@
 use crate::actor;
 use crate::debug;
 use crate::flag;
+use crate::item;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
@@ -123,7 +124,7 @@ assert_eq_size!([u8; 0x54], dAcShopSampleShopItem);
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
-    static SHOP_ITEMS: [dAcShopSampleShopItem; 35];
+    static mut SHOP_ITEMS: [dAcShopSampleShopItem; 35];
     static mut ACTORBASE_PARAM2: u32;
 
     static mut ITEM_GET_BOTTLE_POUCH_SLOT: u32;
@@ -148,7 +149,9 @@ pub fn rotate_shop_items() {
         let mut degrees = -0.3f32;
         let item_index = (*(*shop_sample).model_holder.current_model).item_index as usize;
 
-        if item_index == 0x7F || (*shop_sample).model_holder.use_sold_out_model {
+        if item_index >= 30 {
+            degrees = 0.0f32;
+        } else if (*shop_sample).model_holder.use_sold_out_model {
             degrees = 0.0f32;
             (*shop_sample).base.members.base.rot.y = 0;
         } else if SHOP_ITEMS[item_index].trapbits == 0xF {
@@ -163,7 +166,7 @@ pub fn rotate_shop_items() {
 }
 
 #[no_mangle]
-pub fn set_shop_display_height() {
+pub fn set_shop_display_height() -> f32 {
     unsafe {
         let shop_sample: *mut dAcShopSample;
         asm!("mov {0:x}, x20", out(reg) shop_sample);
@@ -176,8 +179,56 @@ pub fn set_shop_display_height() {
             display_height_offset = SHOP_ITEMS[item_index].display_height_offset;
         }
 
-        // Replaced instructions
-        asm!("str s1, [x19]", "str {0:w}, [x19, #4]", "str s0, [x19, #8]", in(reg) display_height_offset);
+        // Override display_height_offset for progressive models
+        match SHOP_ITEMS[item_index].itemid {
+            flag::ITEMFLAGS::BOW => {
+                if flag::check_itemflag(flag::ITEMFLAGS::IRON_BOW) != 0 {
+                    display_height_offset = -35.0f32;
+                } else if flag::check_itemflag(flag::ITEMFLAGS::BOW) != 0 {
+                    display_height_offset = -29.0f32;
+                }
+            },
+            flag::ITEMFLAGS::SLINGSHOT => {
+                if flag::check_itemflag(flag::ITEMFLAGS::SLINGSHOT) != 0 {
+                    display_height_offset = -32.0f32;
+                }
+            },
+            flag::ITEMFLAGS::BEETLE => {
+                if flag::check_itemflag(flag::ITEMFLAGS::QUICK_BEETLE) != 0 {
+                    display_height_offset = -17.0f32;
+                // Hook Beetle and Quick Beetle use the same offset
+                } else if flag::check_itemflag(flag::ITEMFLAGS::BEETLE) != 0 {
+                    display_height_offset = -16.0f32;
+                }
+            },
+            flag::ITEMFLAGS::DIGGING_MITTS => {
+                if flag::check_itemflag(flag::ITEMFLAGS::DIGGING_MITTS) != 0 {
+                    display_height_offset = -38.0f32;
+                }
+            },
+            flag::ITEMFLAGS::BUG_NET => {
+                if flag::check_itemflag(flag::ITEMFLAGS::BUG_NET) != 0 {
+                    display_height_offset = -32.0f32;
+                }
+            },
+            flag::ITEMFLAGS::MEDIUM_WALLET => {
+                if flag::check_itemflag(flag::ITEMFLAGS::GIANT_WALLET) != 0 {
+                    display_height_offset = -32.0f32;
+                } else if flag::check_itemflag(flag::ITEMFLAGS::BIG_WALLET) != 0 {
+                    display_height_offset = -30.0f32; // this model sucks ;-;
+                } else if flag::check_itemflag(flag::ITEMFLAGS::MEDIUM_WALLET) != 0 {
+                    display_height_offset = -30.0f32;
+                }
+            },
+            flag::ITEMFLAGS::ADVENTURE_POUCH => {
+                if flag::check_itemflag(flag::ITEMFLAGS::ADVENTURE_POUCH) != 0 {
+                    display_height_offset = -23.0f32;
+                }
+            },
+            _ => {},
+        }
+
+        return display_height_offset;
     }
 }
 
@@ -221,5 +272,47 @@ pub fn handle_shop_traps() {
         ACTORBASE_PARAM2 = 0xFFFFFF0F | (((*shop_item).trapbits << 4) as u32);
         ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
         NUMBER_OF_ITEMS = 0;
+    }
+}
+
+#[no_mangle]
+pub fn shop_use_progressive_models() {
+    unsafe {
+        let shop_sample: *mut dAcShopSampleShopItem;
+        asm!("mov {0:x}, x26", out(reg) shop_sample);
+
+        let item_id = (*shop_sample).itemid;
+
+        // Fix archive name
+        let mut archive_name = (*shop_sample).arc_name.as_ptr() as *const c_char;
+
+        // Handle shop rupee colors
+        //
+        // Completely different from how SDR handles this
+        // The solution used in SDR would require HDR to recreate several complex
+        // functions which have been inlined. However, HDR has way more memory
+        // than SDR so this can be bypassed by having each rupee have its own
+        // model.
+        archive_name = match item_id {
+            flag::ITEMFLAGS::BLUE_RUPEE => c"GetBlueRupee".as_ptr(),
+            flag::ITEMFLAGS::RED_RUPEE => c"GetRedRupee".as_ptr(),
+            flag::ITEMFLAGS::SILVER_RUPEE => c"GetSilverRupee".as_ptr(),
+            flag::ITEMFLAGS::GOLD_RUPEE => c"GetGoldRupee".as_ptr(),
+            flag::ITEMFLAGS::RUPOOR => c"GetRupoor".as_ptr(),
+            _ => archive_name,
+        };
+
+        (*shop_sample).arc_name =
+            *(item::resolve_progressive_item_models(archive_name, item_id as u16, 1)
+                as *mut [u8; 30]);
+
+        // Fix model name
+        let mut model_name = (*shop_sample).model_name.as_ptr() as *const c_char;
+        (*shop_sample).model_name =
+            *(item::resolve_progressive_item_models(model_name, item_id as u16, 2)
+                as *mut [u8; 24]);
+
+        // Replaced instructions
+        asm!("mov w8, #0xFFFF", "mov w1, {0:w}", in(reg) (*shop_sample).spawn_storyflag);
     }
 }

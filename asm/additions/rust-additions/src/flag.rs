@@ -345,6 +345,7 @@ extern "C" {
     static mut STATIC_ZONEFLAGS: [[u16; 4]; 63];
     static mut STATIC_ITEMFLAGS: [u16; 64];
     static mut STATIC_DUNGEONFLAGS: [u16; 8];
+    static mut STATIC_TBOXFLAGS: [u8; 4];
 
     static mut NEXT_NIGHT: u8;
     static mut NEXT_UNK: u8;
@@ -506,6 +507,27 @@ pub fn unset_itemflag(flag: ITEMFLAGS) {
 pub fn check_itemflag(flag: ITEMFLAGS) -> u32 {
     unsafe {
         return ((*(*ITEMFLAG_MGR).funcs).get_flag_or_counter)(ITEMFLAG_MGR, flag as u16);
+    }
+}
+
+// Tboxflags (global)
+#[no_mangle]
+pub fn set_global_tboxflag(sceneindex: u16, flag: u8) {
+    let tbox_index = flag / 8;
+    let shift = flag % 8;
+
+    unsafe {
+        (*FILE_MGR).FA.tboxflags[sceneindex as usize][tbox_index as usize] |= 1 << shift;
+    }
+}
+
+#[no_mangle]
+pub fn check_global_tboxflag(sceneindex: u16, flag: u8) -> u8 {
+    let tbox_index = flag / 8;
+    let shift = flag % 8;
+
+    unsafe {
+        return ((*FILE_MGR).FA.tboxflags[sceneindex as usize][tbox_index as usize] >> shift) & 0x1;
     }
 }
 
