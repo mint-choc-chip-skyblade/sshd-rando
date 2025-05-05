@@ -180,7 +180,7 @@ pub fn set_shop_display_height() -> f32 {
         }
 
         // Prevents last item in shop list from freezing after purchase
-        if item_index >= 35 {
+        if item_index == 0x7F {
             (*shop_sample).base.members.base.rot.y = 0;
             return display_height_offset;
         }
