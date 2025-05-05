@@ -179,6 +179,12 @@ pub fn set_shop_display_height() -> f32 {
             display_height_offset = SHOP_ITEMS[item_index].display_height_offset;
         }
 
+        // Prevents last item in shop list from freezing after purchase
+        if item_index >= 35 {
+            (*shop_sample).base.members.base.rot.y = 0;
+            return display_height_offset;
+        }
+
         // Override display_height_offset for progressive models
         match SHOP_ITEMS[item_index].itemid {
             flag::ITEMFLAGS::BOW => {
