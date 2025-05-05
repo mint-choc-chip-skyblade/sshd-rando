@@ -21,7 +21,7 @@
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  shop_arc_name: GetRupee
+  shop_arc_name: GetBlueRupee
   shop_model_name: GetRupee
 - id: 4
   name: Red Rupee
@@ -29,7 +29,7 @@
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  shop_arc_name: GetRupee
+  shop_arc_name: GetRedRupee
   shop_model_name: GetRupee
 - id: 6
   name: Heart
@@ -219,7 +219,7 @@
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  shop_arc_name: GetRupee
+  shop_arc_name: GetSilverRupee
   shop_model_name: GetRupee
 - id: 33
   name: Gold Rupee
@@ -227,7 +227,7 @@
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  shop_arc_name: GetRupee
+  shop_arc_name: GetGoldRupee
   shop_model_name: GetRupee
 - id: 34
   name: Rupoor
@@ -235,7 +235,7 @@
     - Rupees
     - Minor Items
   oarc: null # ObjectPack
-  shop_arc_name: GetRupee
+  shop_arc_name: GetRupoor
   shop_model_name: GetRupee
 - id: 35
   name: Gratitude Crystal Pack
