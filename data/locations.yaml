@@ -419,6 +419,38 @@
 
 
 # Central Skyloft:
+- name: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD30
+
+- name: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD2F
+
+- name: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD2D
+
+- name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD2E
+
 - name: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
   original_item: Blue Rupee
   types:
@@ -443,67 +475,6 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD35
 
-- name: Central Skyloft - Stamina Fruit between Wooden Planks
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/Item/0xFCDF
-
-- name: Central Skyloft - Crystal between Wooden Planks
-  original_item: Gratitude Crystal
-  types:
-    - Gratitude Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/112
-    - stage/F000/r0/l5/Item/112
-    - stage/F000/r0/l7/Item/112
-    - stage/F000/r0/l9/Item/112
-
-- name: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD2D
-
-- name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD2E
-
-- name: Central Skyloft - Goddess Chest on West Cliff Island
-  original_item: Silver Rupee
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F000/r0/l0/TBox/78
-  cube_region: Faron Woods
-
-- name: Central Skyloft - Crystal below West Cliff
-  original_item: Gratitude Crystal
-  types:
-    - Gratitude Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/113
-    - stage/F000/r0/l5/Item/113
-    - stage/F000/r0/l7/Item/113
-    - stage/F000/r0/l9/Item/113
-
-- name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/Item/0xFCD8
-
 - name: Central Skyloft - Orielle and Parrow's Closet
   original_item: Green Rupee
   types:
@@ -518,6 +489,42 @@
   Paths:
     - stage/F005r/r0/l2/Item/114
 
+- name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCD8
+
+- name: Central Skyloft - Crystal between Wooden Planks
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/112
+    - stage/F000/r0/l5/Item/112
+    - stage/F000/r0/l7/Item/112
+    - stage/F000/r0/l9/Item/112
+
+- name: Central Skyloft - Stamina Fruit between Wooden Planks
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCDF
+
+- name: Central Skyloft - Crystal below West Cliff
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/113
+    - stage/F000/r0/l5/Item/113
+    - stage/F000/r0/l7/Item/113
+    - stage/F000/r0/l9/Item/113
+
 - name: Central Skyloft - Stamina Fruit near Bazaar
   original_item: Stamina Fruit
   types:
@@ -525,38 +532,6 @@
     - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCD6
-
-- name: Central Skyloft - Blow Red Flag South of the Bazaar
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD1B
-
-- name: Central Skyloft - Blow Purple Flag South of the Bazaar
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD1C
-
-- name: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD30
-
-- name: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD2F
 
 - name: Central Skyloft - Bonk Tree Southeast of the Bazaar
   original_item: Blue Rupee
@@ -573,6 +548,16 @@
     - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDE
+
+- name: Central Skyloft - Crystal on Light Tower
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/106
+    - stage/F000/r0/l5/Item/106
+    - stage/F000/r0/l7/Item/106
+    - stage/F000/r0/l9/Item/106
 
 - name: Central Skyloft - Parrow's Gift
   original_item: Empty Bottle
@@ -595,15 +580,21 @@
     - oarc/F000/r0/l6
     - oarc/F005r/r0/l0
 
-- name: Central Skyloft - Crystal on Light Tower
-  original_item: Gratitude Crystal
+- name: Central Skyloft - Blow Red Flag South of the Bazaar
+  original_item: Blue Rupee
   types:
-    - Gratitude Crystals
+    - Hidden Items
+    - Custom Flag
   Paths:
-    - stage/F000/r0/l2/Item/106
-    - stage/F000/r0/l5/Item/106
-    - stage/F000/r0/l7/Item/106
-    - stage/F000/r0/l9/Item/106
+    - stage/F000/r0/l0/TgReact/0xFD1B
+
+- name: Central Skyloft - Blow Purple Flag South of the Bazaar
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD1C
 
 - name: Central Skyloft - Stamina Fruit near River
   original_item: Stamina Fruit
@@ -703,34 +694,6 @@
     - stage/F000/r0/l7/Item/109
     - stage/F000/r0/l9/Item/109
 
-- name: Central Skyloft - Goddess Chest on Island near Waterfall
-  original_item: Gold Rupee
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F000/r0/l0/TBox/91
-  cube_region: Lake Floria
-
-- name: Central Skyloft - Goddess Chest on Waterfall Island
-  original_item: Heart Piece
-  types:
-    - Chests
-    - Goddess Chests
-  hint: sometimes
-  Paths:
-    - stage/F000/r0/l0/TBox/80
-  cube_region: Lanayru Sand Sea
-
-- name: Central Skyloft - Gossip Stone on Waterfall Island
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 124-Town6
-  textindex: 18
-  eventflowindex: 51
-
 - name: Central Skyloft - North Rupee in Bird's Nest
   original_item: Green Rupee
   types:
@@ -824,6 +787,43 @@
     - stage/F000/r0/l5/Item/110
     - stage/F000/r0/l7/Item/110
     - stage/F000/r0/l9/Item/110
+
+- name: Central Skyloft - Goddess Chest on West Cliff Island
+  original_item: Silver Rupee
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F000/r0/l0/TBox/78
+  cube_region: Faron Woods
+
+- name: Central Skyloft - Goddess Chest on Island near Waterfall
+  original_item: Gold Rupee
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F000/r0/l0/TBox/91
+  cube_region: Lake Floria
+
+- name: Central Skyloft - Goddess Chest on Waterfall Island
+  original_item: Heart Piece
+  types:
+    - Chests
+    - Goddess Chests
+  hint: sometimes
+  Paths:
+    - stage/F000/r0/l0/TBox/80
+  cube_region: Lanayru Sand Sea
+
+- name: Central Skyloft - Gossip Stone on Waterfall Island
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 124-Town6
+  textindex: 18
+  eventflowindex: 51
 
 
 # Skyloft Village:
