@@ -853,6 +853,13 @@
     - stage/F000/r0/l7/Item/108
     - stage/F000/r0/l9/Item/108
 
+- name: Skyloft Village - Pipit's Closet
+  original_item: Green Rupee
+  types:
+    - Closets
+  Paths:
+    - stage/F016r/r0/l0/chest/0xFC28
+
 - name: Skyloft Village - Clean Pipit's House
   original_item: Gratitude Crystal Pack
   types:
@@ -861,12 +868,12 @@
     - event/123-Town5/186
     - oarc/F016r/r0/l0
 
-- name: Skyloft Village - Pipit's Closet
+- name: Skyloft Village - Bertie and Luv's Closet
   original_item: Green Rupee
   types:
     - Closets
   Paths:
-    - stage/F016r/r0/l0/chest/0xFC28
+    - stage/F014r/r0/l0/chest/0xFC12
 
 - name: Skyloft Village - Deliver Rattle to Bertie
   original_item: Gratitude Crystal Pack
@@ -876,29 +883,12 @@
     - event/115-Town2/125
     - oarc/F014r/r0/l0
 
-- name: Skyloft Village - Luv and Bertie's Closet
-  original_item: Green Rupee
-  types:
-    - Closets
-  Paths:
-    - stage/F014r/r0/l0/chest/0xFC12
-
 - name: Skyloft Village - Gondo's Closet
   original_item: Green Rupee
   types:
     - Closets
   Paths:
     - stage/F015r/r0/l0/chest/0xFC10
-
-- name: Skyloft Village - Deliver Crystal Ball to Sparrot
-  original_item: Gratitude Crystal Pack
-  types:
-    - Scrapper Deliveries
-    - NPC
-  hint: sometimes
-  Paths:
-    - event/118-Town3/141
-    - oarc/F013r/r0/l0
 
 - name: Skyloft Village - Sparrot's Closet
   original_item: Green Rupee
@@ -914,6 +904,16 @@
     - Custom Flag
   Paths:
     - stage/F013r/r0/l0/TgReact/0xFC14
+
+- name: Skyloft Village - Deliver Crystal Ball to Sparrot
+  original_item: Gratitude Crystal Pack
+  types:
+    - Scrapper Deliveries
+    - NPC
+  hint: sometimes
+  Paths:
+    - event/118-Town3/141
+    - oarc/F013r/r0/l0
 
 - name: Skyloft Village - Rupin's Closet
   original_item: Green Rupee

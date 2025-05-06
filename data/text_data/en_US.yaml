@@ -1844,9 +1844,9 @@
   pretty: Skyloft Village - Deliver Rattle to Bertie
   cryptic: helping an <r<exhausted parent>>
 
-- name: Skyloft Village - Luv and Bertie's Closet
-  standard: Skyloft Village - Luv and Bertie's Closet
-  pretty: Skyloft Village - Luv and Bertie's Closet
+- name: Skyloft Village - Bertie and Luv's Closet
+  standard: Skyloft Village - Bertie and Luv's Closet
+  pretty: Skyloft Village - Bertie and Luv's Closet
   cryptic: snooping through a <r<potion couple's clothes>>
 
 - name: Skyloft Village - Gondo's Closet

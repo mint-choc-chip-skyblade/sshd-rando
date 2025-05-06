@@ -418,7 +418,7 @@
     Skyloft Village: Nothing
   locations:
     Skyloft Village - Deliver Rattle to Bertie: Rattle and Night
-    Skyloft Village - Luv and Bertie's Closet: Nothing
+    Skyloft Village - Bertie and Luv's Closet: Nothing
 
 - name: Sparrot's House
   allowed_time_of_day: All

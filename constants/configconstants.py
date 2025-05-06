@@ -178,6 +178,7 @@ LOCATION_ALIASES = {
     "Skyloft Village - Stamina Fruit above Mallara's House": "Skyloft Village - Stamina Fruit above Pipit's House",
     "Skyloft Village - Clean Mallara's House": "Skyloft Village - Clean Pipit's House",
     "Skyloft Village - Mallara's Closet": "Skyloft Village - Pipit's Closet",
+    "Skyloft Village - Luv and Bertie's Closet": "Skyloft Village - Bertie and Luv's Closet",
 }
 
 TRACKER_NOTE_EVENTS = {
