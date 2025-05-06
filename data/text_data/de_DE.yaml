@@ -1633,7 +1633,7 @@
   cryptic: eine <r<glückliche Mutter>>
 
 # TODO: update with new name
-- name: Central Skyloft - Kukiel's Closet
+- name: Central Skyloft - Kukiel's Family Closet
   standard: Zentrum des Wolkenhorts - Sasias Schrank
   pretty: Zentrum des Wolkenhorts - Sasias Schrank
   cryptic: <r<Durchwühlen der Kleidung einer glücklichen Mutter>>
@@ -1833,7 +1833,7 @@
   cryptic: einer <r<Mutter Faulheit>>
 
 # TODO: update with new name
-- name: Skyloft Village - Pipit's Closet
+- name: Skyloft Village - Pipit and Mallara's Closet
   standard: Wolkenhort-Dorf - Anatis Schrank
   pretty: Wolkenhort-Dorf - Anatis Schrank
   cryptic: <r<Durchwühlen eines staubigen Schranks>>
@@ -1849,12 +1849,12 @@
   pretty: Wolkenhort-Dorf - Xia and Diomeds Schrank
   cryptic: <r<Durchwühlen der Kleidung eines Trankbrauerpaars>>
 
-- name: Skyloft Village - Gondo's Closet
+- name: Skyloft Village - Gondo and Gebra's Closet
   standard: Wolkenhort-Dorf - Dorucos Schrank
   pretty: Wolkenhort-Dorf - Dorucos Schrank
   cryptic: <r<Durchwühlen der Kleidung eines Mechanikers>>
 
-- name: Skyloft Village - Rupin's Closet
+- name: Skyloft Village - Rupin and Goselle's Closet
   standard: Wolkenhort-Dorf - Kulkans Schrank
   pretty: Wolkenhort-Dorf - Kulkans Schrank
   cryptic: <r<Durchwühlen der Kleidung eines Geizhalses>>

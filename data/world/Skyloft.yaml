@@ -317,7 +317,7 @@
   exits:
     Central Skyloft: Nothing
   locations:
-    Central Skyloft - Kukiel's Closet: Nothing
+    Central Skyloft - Kukiel's Family Closet: Nothing
     Central Skyloft - Wryna's Gratitude: Nothing
 
 - name: Piper's House
@@ -439,7 +439,7 @@
     Skyloft Village: Nothing
   locations:
     Skyloft Village - Clean Pipit's House: Gust_Bellows
-    Skyloft Village - Pipit's Closet: Nothing
+    Skyloft Village - Pipit and Mallara's Closet: Nothing
 
 - name: Gondo's House
   allowed_time_of_day: All
@@ -447,7 +447,7 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Gondo's Closet: Nothing
+    Skyloft Village - Gondo and Gebra's Closet: Nothing
 
 - name: Rupin's House
   allowed_time_of_day: All
@@ -455,7 +455,7 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Rupin's Closet: Nothing
+    Skyloft Village - Rupin and Goselle's Closet: Nothing
 
 - name: Batreaux's House
   allowed_time_of_day: All

@@ -1639,9 +1639,9 @@
   pretty: Central Skyloft - Wryna's Gratitude
   cryptic: a <r<happy mother>>
 
-- name: Central Skyloft - Kukiel's Closet
-  standard: Central Skyloft - Kukiel's Closet
-  pretty: Central Skyloft - Kukiel's Closet
+- name: Central Skyloft - Kukiel's Family Closet
+  standard: Central Skyloft - Kukiel's Family Closet
+  pretty: Central Skyloft - Kukiel's Family Closet
   cryptic: snooping through a <r<happy child's clothes>>
 
 - name: Central Skyloft - Waterfall Cave First Chest
@@ -1834,9 +1834,9 @@
   pretty: Skyloft Village - Clean Pipit's House
   cryptic: a <r<mother's laziness>>
 
-- name: Skyloft Village - Pipit's Closet
-  standard: Skyloft Village - Pipit's Closet
-  pretty: Skyloft Village - Pipit's Closet
+- name: Skyloft Village - Pipit and Mallara's Closet
+  standard: Skyloft Village - Pipit and Mallara's Closet
+  pretty: Skyloft Village - Pipit and Mallara's Closet
   cryptic: snooping through a <r<dusty closet>>
 
 - name: Skyloft Village - Deliver Rattle to Bertie
@@ -1849,14 +1849,14 @@
   pretty: Skyloft Village - Bertie and Luv's Closet
   cryptic: snooping through a <r<potion couple's clothes>>
 
-- name: Skyloft Village - Gondo's Closet
-  standard: Skyloft Village - Gondo's Closet
-  pretty: Skyloft Village - Gondo's Closet
+- name: Skyloft Village - Gondo and Gebra's Closet
+  standard: Skyloft Village - Gondo and Gebra's Closet
+  pretty: Skyloft Village - Gondo and Gebra's Closet
   cryptic: snooping through a <r<repairman's clothes>>
 
-- name: Skyloft Village - Rupin's Closet
-  standard: Skyloft Village - Rupin's Closet
-  pretty: Skyloft Village - Rupin's Closet
+- name: Skyloft Village - Rupin and Goselle's Closet
+  standard: Skyloft Village - Rupin and Goselle's Closet
+  pretty: Skyloft Village - Rupin and Goselle's Closet
   cryptic: snooping through a <r<greedy man's clothes>>
 
 - name: Skyloft Village - Deliver Crystal Ball to Sparrot
