@@ -4186,12 +4186,12 @@
   pretty: Feuer-Knotenpunkt - Erhöhte Schatztruhe
   cryptic: eine <r<erhöhte Truhe im Feuer-Knotenpunkt>>
 
-- name: Feuer-Knotenpunkt - First Small Chest
+- name: Fire Node - First Chest below Sand
   standard: Feuer-Knotenpunkt - Erste Schatztruhe
   pretty: Feuer-Knotenpunkt - Erste Schatztruhe
   cryptic: eine <r<Truhe in der Mitte eines Lagers aus Stein>>
 
-- name: Fire Node - Second Small Chest
+- name: Fire Node - Second Chest below Sand
   standard: Feuer-Knotenpunkt - Zweite Schatztruhe
   pretty: Feuer-Knotenpunkt - Zweite Schatztruhe
   cryptic: eine <r<Truhe in der Mitte eines Lagers aus Stein>>

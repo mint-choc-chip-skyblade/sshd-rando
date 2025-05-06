@@ -4195,14 +4195,14 @@
   pretty: Fire Node - Raised Chest
   cryptic: a <r<raised chest in the Fire Node>>
 
-- name: Fire Node - First Small Chest
-  standard: Fire Node - First Small Chest
-  pretty: Fire Node - First Small Chest
+- name: Fire Node - First Chest below Sand
+  standard: Fire Node - First Chest below Sand
+  pretty: Fire Node - First Chest below Sand
   cryptic: a <r<chest in the middle of a stone cache>>
 
-- name: Fire Node - Second Small Chest
-  standard: Fire Node - Second Small Chest
-  pretty: Fire Node - Second Small Chest
+- name: Fire Node - Second Chest below Sand
+  standard: Fire Node - Second Chest below Sand
+  pretty: Fire Node - Second Chest below Sand
   cryptic: a <r<chest in the middle of a stone cache>>
 
 - name: Fire Node - Bonk Fire Node Power Supply

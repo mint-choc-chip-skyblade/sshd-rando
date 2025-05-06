@@ -4680,14 +4680,14 @@
   Paths:
     - stage/F300_3/r0/l0/TBox/79
 
-- name: Fire Node - First Small Chest
+- name: Fire Node - First Chest below Sand
   original_item: Blue Rupee
   types:
     - Chests
   Paths:
     - stage/F300_3/r0/l0/TBox/78
 
-- name: Fire Node - Second Small Chest
+- name: Fire Node - Second Chest below Sand
   original_item: Blue Rupee
   types:
     - Chests
