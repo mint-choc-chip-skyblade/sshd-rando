@@ -186,6 +186,7 @@ LOCATION_ALIASES = {
     "Faron Woods - Chest behind Bombable Rocks near Erla": "Faron Woods - Chest behind Upper Bombable Rock",
     "Deep Woods - Goddess Cube in front of Skyview": "Deep Woods - Goddess Cube in front of Temple",
     "Deep Woods - Goddess Cube on top of Skyview": "Deep Woods - Goddess Cube on top of Temple",
+    "Thrill Digger Cave - Gossip Stone near Tubert": "Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator",
 }
 
 TRACKER_NOTE_EVENTS = {

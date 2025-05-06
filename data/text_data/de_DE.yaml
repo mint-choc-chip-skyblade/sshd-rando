@@ -3269,7 +3269,8 @@
   pretty: Vulkan Eldin - Rechter Rubin hinter sprengbarer Wand nahe Risiko-Rubinjagd-Höhle
   cryptic: einen <r<Rubin hinter einer versteckten Wand>>
 
-- name: Thrill Digger Cave - Gossip Stone near Tubert
+# TODO: update with new name
+- name: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
   standard: Risiko-Rubinjagd-Höhle - Mythenstein nahe Cippolino
   pretty: Risiko-Rubinjagd-Höhle - Mythenstein nahe Cippolino
   cryptic:

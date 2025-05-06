@@ -3265,9 +3265,9 @@
   pretty: Eldin Volcano - Right Rupee behind Bombable Wall near Thrill Digger Cave
   cryptic: a <r<rupee behind a hidden wall>>
 
-- name: Thrill Digger Cave - Gossip Stone near Tubert
-  standard: Thrill Digger Cave - Gossip Stone near Tubert
-  pretty: Thrill Digger Cave - Gossip Stone near Tubert
+- name: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
+  standard: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
+  pretty: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
   cryptic:
 
 - name: Thrill Digger Cave - Slingshot Left Blue Crystal 1

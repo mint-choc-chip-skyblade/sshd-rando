@@ -3765,7 +3765,7 @@
   Paths:
     - stage/F200/r2/l1/Soil/64
 
-- name: Thrill Digger Cave - Gossip Stone near Tubert
+- name: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
   original_item: Nothing
   types:
     - Hint Location
