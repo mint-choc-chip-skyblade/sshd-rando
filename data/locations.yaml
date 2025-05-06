@@ -2814,6 +2814,111 @@
     - oarc/F103_1/r0/l0
 
 
+# Bokoblin Base:
+# Placing these locations before the Eldin Volcano ones means that the Goddess Cubes
+# will appear at the end of the list of Bokoblin Base locations rather than at the start.
+- name: Bokoblin Base - Plats' Gift
+  original_item: Mogma Mitts
+  types:
+    - NPC
+  Paths:
+    - event/305-MountainF3/Plats' Gift
+    - oarc/F202/r1/l1
+
+- name: Bokoblin Base - Chest near Bone Bridge
+  original_item: Gust Bellows
+  types:
+    - Chests
+  Paths:
+    - stage/F202/r2/l1/TBox/70
+
+- name: Bokoblin Base - Bonk Hammer in Hut near Cliff
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F202/r2/l0/TgReact/0x00AF
+
+- name: Bokoblin Base - Blow Cloth above Hut near Cliff
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F202/r2/l0/TgReact/0x00B0
+
+- name: Bokoblin Base - Chest on Cliff
+  original_item: Clawshots
+  types:
+    - Chests
+  Paths:
+    - stage/F202/r2/l1/TBox/66
+
+- name: Bokoblin Base - Chest near Drawbridge
+  original_item: Whip
+  types:
+    - Chests
+  Paths:
+    - stage/F202/r2/l1/TBox/67
+
+- name: Bokoblin Base - Bonk Campfire East of Temple
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F202/r4/l0/TgReact/0x005E
+
+- name: Bokoblin Base - Chest East of Temple down Lava River
+  original_item: Progressive Slingshot
+  types:
+    - Chests
+  Paths:
+    - stage/F202/r4/l1/TBox/68
+
+- name: Bokoblin Base - Chest West of Temple behind Watch Tower
+  original_item: Bomb Bag
+  types:
+    - Chests
+  Paths:
+    - stage/F202/r4/l1/TBox/69
+
+- name: Bokoblin Base - First Chest in Volcano Summit
+  original_item: Blue Rupee
+  types:
+    - Chests
+  Paths:
+    - stage/F201_2/r0/l0/TBox/72
+    - stage/F201_1/r0/l4/TBox/72
+
+- name: Bokoblin Base - Raise Sword
+  original_item: Progressive Sword
+  types:
+    - Chests
+  Paths:
+    - event/107-Kanban/Fi give Boko Base Sword item
+    - oarc/F201_2/r0/l0 # boko base stage
+    - oarc/F201_1/r0/l4 # vs stage, post-boko base layer
+    - stage/F201_1/r0/l4/TBox/73 # missing zev prevents the sword pull working on this stage
+
+- name: Bokoblin Base - Chest in Volcano Summit Alcove
+  original_item: Progressive Pouch
+  types:
+    - Chests
+  Paths:
+    - stage/F201_2/r0/l0/TBox/71
+    - stage/F201_1/r0/l4/TBox/71
+
+- name: Bokoblin Base - Fire Dragon's Reward
+  original_item: Song of the Hero Part
+  types:
+    - NPC
+  Paths:
+    - event/305-MountainF3/Give item after Eldin SotH CS
+    - oarc/F221/r0/l0
+
+
 # Eldin Volcano:
 ## First Room
 - name: Eldin Volcano - Goddess Cube at Eldin Entrance
@@ -4004,109 +4109,6 @@
   textfile: 004-Object
   textindex: 31
   eventflowindex: 76
-
-
-# Bokoblin Base:
-- name: Bokoblin Base - Plats' Gift
-  original_item: Mogma Mitts
-  types:
-    - NPC
-  Paths:
-    - event/305-MountainF3/Plats' Gift
-    - oarc/F202/r1/l1
-
-- name: Bokoblin Base - Chest near Bone Bridge
-  original_item: Gust Bellows
-  types:
-    - Chests
-  Paths:
-    - stage/F202/r2/l1/TBox/70
-
-- name: Bokoblin Base - Bonk Hammer in Hut near Cliff
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F202/r2/l0/TgReact/0x00AF
-
-- name: Bokoblin Base - Blow Cloth above Hut near Cliff
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F202/r2/l0/TgReact/0x00B0
-
-- name: Bokoblin Base - Chest on Cliff
-  original_item: Clawshots
-  types:
-    - Chests
-  Paths:
-    - stage/F202/r2/l1/TBox/66
-
-- name: Bokoblin Base - Chest near Drawbridge
-  original_item: Whip
-  types:
-    - Chests
-  Paths:
-    - stage/F202/r2/l1/TBox/67
-
-- name: Bokoblin Base - Bonk Campfire East of Temple
-  original_item: Heart
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F202/r4/l0/TgReact/0x005E
-
-- name: Bokoblin Base - Chest East of Temple down Lava River
-  original_item: Progressive Slingshot
-  types:
-    - Chests
-  Paths:
-    - stage/F202/r4/l1/TBox/68
-
-- name: Bokoblin Base - Chest West of Temple behind Watch Tower
-  original_item: Bomb Bag
-  types:
-    - Chests
-  Paths:
-    - stage/F202/r4/l1/TBox/69
-
-- name: Bokoblin Base - First Chest in Volcano Summit
-  original_item: Blue Rupee
-  types:
-    - Chests
-  Paths:
-    - stage/F201_2/r0/l0/TBox/72
-    - stage/F201_1/r0/l4/TBox/72
-
-- name: Bokoblin Base - Raise Sword
-  original_item: Progressive Sword
-  types:
-    - Chests
-  Paths:
-    - event/107-Kanban/Fi give Boko Base Sword item
-    - oarc/F201_2/r0/l0 # boko base stage
-    - oarc/F201_1/r0/l4 # vs stage, post-boko base layer
-    - stage/F201_1/r0/l4/TBox/73 # missing zev prevents the sword pull working on this stage
-
-- name: Bokoblin Base - Chest in Volcano Summit Alcove
-  original_item: Progressive Pouch
-  types:
-    - Chests
-  Paths:
-    - stage/F201_2/r0/l0/TBox/71
-    - stage/F201_1/r0/l4/TBox/71
-
-- name: Bokoblin Base - Fire Dragon's Reward
-  original_item: Song of the Hero Part
-  types:
-    - NPC
-  Paths:
-    - event/305-MountainF3/Give item after Eldin SotH CS
-    - oarc/F221/r0/l0
 
 
 # Lanayru Mine:
