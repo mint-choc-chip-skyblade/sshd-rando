@@ -170,6 +170,9 @@ LOCATION_ALIASES = {
     "Lanayru Mining Facility - Raised Chest in Hub Room after Minecart": "Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts",
     "Fire Node - First Small Chest": "Fire Node - First Chest below Sand",
     "Fire Node - Second Small Chest": "Fire Node - Second Chest below Sand",
+    "Central Skyloft - Crystal after Waterfall Cave": "Central Skyloft - Crystal near Bird Statue after Waterfall Cave",
+    "Central Skyloft - Crystal in Loftwing Prison": "Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave",
+    "Central Skyloft - Stamina Fruit near Bazaar": "Central Skyloft - Stamina Fruit between Stairs near the Bazaar",
 }
 
 TRACKER_NOTE_EVENTS = {

@@ -1752,7 +1752,8 @@
   pretty: Zentrum des Wolkenhorts - Ausdauerfrucht nahe Galea und Hirus Haus
   cryptic: eine <r<Frucht in einer lebhaften Gegend>>
 
-- name: Central Skyloft - Stamina Fruit near Bazaar
+# TODO: update with new name
+- name: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
   standard: Zentrum des Wolkenhorts - Ausdauerfrucht nahe Basar
   pretty: Zentrum des Wolkenhorts - Ausdauerfrucht nahe Basar
   cryptic: eine <r<Frucht in einer lebhaften Gegend>>
@@ -1797,12 +1798,14 @@
   pretty: Zentrum des Wolkenhorts - Juwel zwischen Holzplanken
   cryptic: ein <r<Juwel entlang eines hölzernen Pfads>>
 
-- name: Central Skyloft - Crystal after Waterfall Cave
+# TODO: update with new name
+- name: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
   standard: Zentrum des Wolkenhorts - Juwel nach Wasserfallhöhle
   pretty: Zentrum des Wolkenhorts - Juwel nach Wasserfallhöhle
   cryptic: ein <r<Juwel nahe einem Höhlenausgang>>
 
-- name: Central Skyloft - Crystal in Loftwing Prison
+# TODO: update with new name
+- name: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
   standard: Zentrum des Wolkenhorts - Juwel in Wolkenvogelgefängnis
   pretty: Zentrum des Wolkenhorts - Juwel in Wolkenvogelgefängnis
   cryptic: ein <r<Juwel in einem ehemaligen Gefängnis>>

@@ -525,7 +525,7 @@
     - stage/F000/r0/l7/Item/113
     - stage/F000/r0/l9/Item/113
 
-- name: Central Skyloft - Stamina Fruit near Bazaar
+- name: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -768,7 +768,7 @@
   Paths:
     - stage/D000/r0/l0/Item/0xFC14
 
-- name: Central Skyloft - Crystal after Waterfall Cave
+- name: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
   original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
@@ -778,7 +778,7 @@
     - stage/F000/r0/l7/Item/111
     - stage/F000/r0/l9/Item/111
 
-- name: Central Skyloft - Crystal in Loftwing Prison
+- name: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
   original_item: Gratitude Crystal
   types:
     - Gratitude Crystals

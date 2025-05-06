@@ -1759,9 +1759,9 @@
   pretty: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
   cryptic: a <r<fruit in a lively area>>
 
-- name: Central Skyloft - Stamina Fruit near Bazaar
-  standard: Central Skyloft - Stamina Fruit near Bazaar
-  pretty: Central Skyloft - Stamina Fruit near Bazaar
+- name: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
+  standard: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
+  pretty: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
   cryptic: a <r<fruit in a lively area>>
 
 - name: Central Skyloft - Stamina Fruit near Plaza
@@ -1804,14 +1804,14 @@
   pretty: Central Skyloft - Crystal between Wooden Planks
   cryptic: a <r<crystal along a wooden path>>
 
-- name: Central Skyloft - Crystal after Waterfall Cave
-  standard: Central Skyloft - Crystal after Waterfall Cave
-  pretty: Central Skyloft - Crystal after Waterfall Cave
+- name: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
+  standard: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
+  pretty: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
   cryptic: a <r<crystal near a cave exit>>
 
-- name: Central Skyloft - Crystal in Loftwing Prison
-  standard: Central Skyloft - Crystal in Loftwing Prison
-  pretty: Central Skyloft - Crystal in Loftwing Prison
+- name: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
+  standard: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
+  pretty: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
   cryptic: a <r<crystal in a former prison>>
 
 - name: Central Skyloft - Crystal on Waterfall Island

@@ -228,15 +228,15 @@
     Central Skyloft - Stamina Fruit near Wryna's House: Nothing
     Central Skyloft - Stamina Fruit near River: Nothing
     Central Skyloft - Stamina Fruit near Orielle and Parrow's House: Nothing
-    Central Skyloft - Stamina Fruit near Bazaar: Nothing
+    Central Skyloft - Stamina Fruit between Stairs near the Bazaar: Nothing
     Central Skyloft - Stamina Fruit near Plaza: Nothing
     Central Skyloft - North Rupee in Bird's Nest: Beetle
     Central Skyloft - East Rupee in Bird's Nest: Beetle
     Central Skyloft - South Rupee in Bird's Nest: Beetle
     Central Skyloft - West Rupee in Bird's Nest: Beetle
     Central Skyloft - Crystal on Waterfall Island: Night and Quick_Beetle and logic_precise_beetle
-    Central Skyloft - Crystal after Waterfall Cave: Night and Beetle and logic_precise_beetle
-    Central Skyloft - Crystal in Loftwing Prison: Night and Beetle and logic_precise_beetle
+    Central Skyloft - Crystal near Bird Statue after Waterfall Cave: Night and Beetle and logic_precise_beetle
+    Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave: Night and Beetle and logic_precise_beetle
 
 - name: Bird Nest
   hint_region: Central Skyloft
@@ -369,8 +369,8 @@
     Waterfall Cave: Nothing
     The Sky: Day
   locations:
-    Central Skyloft - Crystal after Waterfall Cave: Night
-    Central Skyloft - Crystal in Loftwing Prison: Night
+    Central Skyloft - Crystal near Bird Statue after Waterfall Cave: Night
+    Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave: Night
 
 - name: The Goddess's Silent Realm
   allowed_time_of_day: All
