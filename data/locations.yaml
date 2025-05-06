@@ -4822,6 +4822,13 @@
     - event/404-DesertF3/give item after Healing Thunderdragon
     - oarc/F302/r0/l0
 
+- name: Lanayru Gorge - Item on Pillar below Dragon
+  original_item: Lanayru Caves Small Key
+  types:
+    - Freestanding Items
+  Paths:
+    - stage/F302/r0/l0/Item/9
+
 - name: Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon
   original_item: Blue Rupee
   types:
@@ -4837,13 +4844,6 @@
     - Custom Flag
   Paths:
     - stage/F302/r0/l0/TgReact/0xFC5A
-
-- name: Lanayru Gorge - Item on Pillar below Dragon
-  original_item: Lanayru Caves Small Key
-  types:
-    - Freestanding Items
-  Paths:
-    - stage/F302/r0/l0/Item/9
 
 - name: Lanayru Gorge - Bonk Wall Left of Stairs
   original_item: Green Rupee
@@ -5334,12 +5334,6 @@
   Paths:
     - stage/F301_6/r0/l0/Item/0xFC1E
 
-- name: Pirate Stronghold - Goddess Cube on top of Shark Head
-  original_item: Pirate Stronghold Goddess Cube
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
 - name: Pirate Stronghold Interior - Chest behind Electric Fence
   original_item: Silver Rupee
   types:
@@ -5360,6 +5354,12 @@
     - Chests
   Paths:
     - stage/F301_2/r6/l0/TBox/74
+
+- name: Pirate Stronghold - Goddess Cube on top of Shark Head
+  original_item: Pirate Stronghold Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 
 # Skyview Temple (SV):
