@@ -1,11 +1,4 @@
 # Knight Academy:
-- name: Knight Academy - Crystal in Link's Room
-  original_item: Gratitude Crystal
-  types:
-    - Gratitude Crystals
-  Paths:
-    - stage/F001r/r1/l4/Item/104
-
 - name: Knight Academy - Link's Closet
   original_item: Blue Rupee
   types:
@@ -22,14 +15,6 @@
     - oarc/F001r/r0/l3
     - oarc/F001r/r0/l4
 
-- name: Knight Academy - Deliver Barrel to Henya the Lunch Lady
-  original_item: Red Rupee
-  types:
-    - NPC
-  Paths:
-    - event/100-Town/Give Barrel Devlivery Item
-    - oarc/F001r/r0/l3
-
 - name: Knight Academy - Item from Cawlin
   original_item: Cawlin's Letter
   types:
@@ -38,20 +23,13 @@
     - event/115-Town2/166
     - oarc/F001r/r0/l0
 
-- name: Knight Academy - Bonk Classroom Bookshelf
-  original_item: Green Rupee
+- name: Knight Academy - Deliver Barrel to Henya the Lunch Lady
+  original_item: Red Rupee
   types:
-    - Hidden Items
-    - Custom Flag
+    - NPC
   Paths:
-    - stage/F001r/r0/l0/TgReact/0xFC5C
-
-- name: Knight Academy - Groose's Closet
-  original_item: Green Rupee
-  types:
-    - Closets
-  Paths:
-    - stage/F001r/r2/l0/chest/0xFC03
+    - event/100-Town/Give Barrel Devlivery Item
+    - oarc/F001r/r0/l3
 
 - name: Knight Academy - Fledge's Closet
   original_item: Green Rupee
@@ -60,22 +38,20 @@
   Paths:
     - stage/F001r/r1/l0/chest/0xFC07
 
-- name: Knight Academy - Help Fledge Workout
-  original_item: Gratitude Crystal Pack
+- name: Knight Academy - Groose's Closet
+  original_item: Green Rupee
   types:
-    - NPC
+    - Closets
   Paths:
-    - event/115-Town2/325
-    - oarc/F001r/r1/l0
+    - stage/F001r/r2/l0/chest/0xFC03
 
-- name: Knight Academy - Deliver Cawlin's Letter
-  original_item: Gratitude Crystal Pack
+- name: Knight Academy - Bonk Classroom Bookshelf
+  original_item: Green Rupee
   types:
-    - NPC
+    - Hidden Items
+    - Custom Flag
   Paths:
-    - event/115-Town2/522
-    - event/115-Town2/641
-    - oarc/F001r/r0/l0
+    - stage/F001r/r0/l0/TgReact/0xFC5C
 
 - name: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
   original_item: Green Rupee
@@ -92,17 +68,6 @@
   Paths:
     - stage/F001r/r5/l0/chest/0xFC05
 
-- name: Knight Academy - Deliver Kikwi to Owlan
-  original_item: Gratitude Crystal Pack
-  types:
-    - Scrapper Deliveries
-    - Combat
-    - NPC
-  hint: sometimes
-  Paths:
-    - event/118-Town3/157
-    - oarc/F001r/r5/l0
-
 - name: Knight Academy - Horwell's Closet
   original_item: Green Rupee
   types:
@@ -117,12 +82,33 @@
   Paths:
     - stage/F001r/r6/l0/chest/0xFC06
 
-- name: Knight Academy - Crystal in Knight Academy Plant
-  original_item: Gratitude Crystal
+- name: Knight Academy - Deliver Cawlin's Letter
+  original_item: Gratitude Crystal Pack
   types:
-    - Gratitude Crystals
+    - NPC
   Paths:
-    - stage/F001r/r0/l4/Item/102
+    - event/115-Town2/522
+    - event/115-Town2/641
+    - oarc/F001r/r0/l0
+
+- name: Knight Academy - Help Fledge Workout
+  original_item: Gratitude Crystal Pack
+  types:
+    - NPC
+  Paths:
+    - event/115-Town2/325
+    - oarc/F001r/r1/l0
+
+- name: Knight Academy - Deliver Kikwi to Owlan
+  original_item: Gratitude Crystal Pack
+  types:
+    - Scrapper Deliveries
+    - Combat
+    - NPC
+  hint: sometimes
+  Paths:
+    - event/118-Town3/157
+    - oarc/F001r/r5/l0
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 1
   original_item: Green Rupee
@@ -169,6 +155,13 @@
   Paths:
     - stage/F001r/r6/l0/Item/0xFC11
 
+- name: Knight Academy - Zelda's Closet
+  original_item: Heart Piece
+  types:
+    - Closets
+  Paths:
+    - stage/F001r/r6/l0/chest/0xFC07
+
 - name: Knight Academy - Crystal in Zelda's Room
   original_item: Gratitude Crystal
   types:
@@ -176,12 +169,19 @@
   Paths:
     - stage/F001r/r6/l4/Item/103
 
-- name: Knight Academy - Zelda's Closet
-  original_item: Heart Piece
+- name: Knight Academy - Crystal in Link's Room
+  original_item: Gratitude Crystal
   types:
-    - Closets
+    - Gratitude Crystals
   Paths:
-    - stage/F001r/r6/l0/chest/0xFC07
+    - stage/F001r/r1/l4/Item/104
+
+- name: Knight Academy - Crystal in Knight Academy Plant
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F001r/r0/l4/Item/102
 
 
 # Upper Skyloft:
