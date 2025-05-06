@@ -2559,15 +2559,6 @@
   Paths:
     - stage/F102_2/r0/l0/TBox/85
 
-- name: Floria Waterfall - Gossip Stone near Bird Statue
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 28
-  eventflowindex: 42
-
 - name: Floria Waterfall - Goddess Cube on High Ledge
   original_item: Floria Waterfall Goddess Cube on High Ledge
   types:
@@ -2632,21 +2623,6 @@
   Paths:
     - stage/F102_1/r0/l0/TgReact/0xFC3E
 
-- name: Floria Waterfall - Slingshot Left Cistern Door Frame
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F102_1/r0/l0/TgReact/0xFC3F
-
-- name: Floria Waterfall - Slingshot Right Cistern Door Frame
-  original_item: Heart # actually spawns 3
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F102_1/r0/l0/TgReact/0xFC40
 
 - name: Floria Waterfall - Slingshot Left Cistern Eye
   original_item: Blue Rupee
@@ -2663,6 +2639,31 @@
     - Custom Flag
   Paths:
     - stage/F102_1/r0/l0/TgReact/0xFC42
+
+- name: Floria Waterfall - Slingshot Left Cistern Door Frame
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC3F
+
+- name: Floria Waterfall - Slingshot Right Cistern Door Frame
+  original_item: Heart # actually spawns 3
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC40
+
+- name: Floria Waterfall - Gossip Stone near Bird Statue
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 28
+  eventflowindex: 42
 
 
 # Flooded Faron Woods
