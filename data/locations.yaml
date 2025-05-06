@@ -5716,6 +5716,12 @@
   Paths:
     - stage/B100_1/r0/l0/TgReact/0xFC36
 
+- name: Skyview Spring - Goddess Cube behind Crest
+  original_item: Skyview Spring Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Skyview Spring - Strike Crest
   original_item: Ruby Tablet
   goal_location: true
@@ -5725,11 +5731,6 @@
     - event/201-ForestD1/6
     - oarc/B100_1/r0/l0
 
-- name: Skyview Spring - Goddess Cube behind Crest
-  original_item: Skyview Spring Goddess Cube
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
 
 
 # Earth Temple (ET):
