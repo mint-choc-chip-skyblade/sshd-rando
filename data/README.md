@@ -102,7 +102,7 @@ Below is the list of all the flags that the randomizer changes:
 * 57: Obtained the item in Horwell's Closet
 * 61: Obtained the item in Karane's Closet
 * 81: Obtained the item in Orielle and Parrow's Closet
-* 82: Obtained the item in Wryna's Closet
+* 82: Obtained the item in Kukiel's Closet
 * 100: Obtained the item in Sparrot's Closet
 * 101: Obtained the item in Luv and Bertie's Closet
 * 105: Obtained the item in Gondo's Closet

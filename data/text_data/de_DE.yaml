@@ -1632,7 +1632,8 @@
   pretty: Zentrum des Wolkenhorts - Sasias Dankbarkeit
   cryptic: eine <r<glückliche Mutter>>
 
-- name: Central Skyloft - Wryna's Closet
+# TODO: update with new name
+- name: Central Skyloft - Kukiel's Closet
   standard: Zentrum des Wolkenhorts - Sasias Schrank
   pretty: Zentrum des Wolkenhorts - Sasias Schrank
   cryptic: <r<Durchwühlen der Kleidung einer glücklichen Mutter>>
@@ -1737,7 +1738,7 @@
   pretty: Zentrum des Wolkenhorts - Ausdauerfrucht zwischen Holzplanken
   cryptic: eine <r<Frucht in einer lebhaften Gegend>>
 
-- name: Central Skyloft - Stamina Fruit near Wryna's House
+- name: Central Skyloft - Stamina Fruit near Kukiel's House
   standard: Zentrum des Wolkenhorts - Ausdauerfrucht nahe Sasias Haus
   pretty: Zentrum des Wolkenhorts - Ausdauerfrucht nahe Sasias Haus
   cryptic: eine <r<Frucht in einer lebhaften Gegend>>

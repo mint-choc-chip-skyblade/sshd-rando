@@ -192,7 +192,7 @@
     The Goddess's Silent Realm: Goddesss_Harp and Full_Song_of_the_Hero and Progressive_Sword
     Orielle and Parrow's House: Nothing
     Peatrice's House: Nothing
-    Wryna's House: Nothing
+    Kukiel's House: Nothing
     Piper's House: Nothing
     The Sky: Day
     Upper Skyloft: Nothing
@@ -225,7 +225,7 @@
     Central Skyloft - Chest in Shed: Water_Dragons_Scale
     Central Skyloft - Goddess Chest in Shed: Water_Dragons_Scale and Eldin_Volcano_Goddess_Cube_on_Sand_Slide
     Central Skyloft - Stamina Fruit between Wooden Planks: Nothing
-    Central Skyloft - Stamina Fruit near Wryna's House: Nothing
+    Central Skyloft - Stamina Fruit near Kukiel's House: Nothing
     Central Skyloft - Stamina Fruit near River: Nothing
     Central Skyloft - Stamina Fruit near Orielle and Parrow's House: Nothing
     Central Skyloft - Stamina Fruit between Stairs near the Bazaar: Nothing
@@ -311,14 +311,14 @@
     Central Skyloft - Peater's Closet: Nothing
     Central Skyloft - Peatrice's Closet: Nothing
 
-- name: Wryna's House
+- name: Kukiel's House
   allowed_time_of_day: All
   can_sleep: true
   exits:
     Central Skyloft: Nothing
   locations:
+    Central Skyloft - Kukiel's Closet: Nothing
     Central Skyloft - Wryna's Gratitude: Nothing
-    Central Skyloft - Wryna's Closet: Nothing
 
 - name: Piper's House
   allowed_time_of_day: All

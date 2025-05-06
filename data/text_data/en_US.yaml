@@ -1639,10 +1639,10 @@
   pretty: Central Skyloft - Wryna's Gratitude
   cryptic: a <r<happy mother>>
 
-- name: Central Skyloft - Wryna's Closet
-  standard: Central Skyloft - Wryna's Closet
-  pretty: Central Skyloft - Wryna's Closet
-  cryptic: snooping through a <r<happy mother's clothes>>
+- name: Central Skyloft - Kukiel's Closet
+  standard: Central Skyloft - Kukiel's Closet
+  pretty: Central Skyloft - Kukiel's Closet
+  cryptic: snooping through a <r<happy child's clothes>>
 
 - name: Central Skyloft - Waterfall Cave First Chest
   standard: Central Skyloft - Waterfall Cave First Chest
@@ -1744,9 +1744,9 @@
   pretty: Central Skyloft - Stamina Fruit between Wooden Planks
   cryptic: a <r<fruit in a lively area>>
 
-- name: Central Skyloft - Stamina Fruit near Wryna's House
-  standard: Central Skyloft - Stamina Fruit near Wryna's House
-  pretty: Central Skyloft - Stamina Fruit near Wryna's House
+- name: Central Skyloft - Stamina Fruit near Kukiel's House
+  standard: Central Skyloft - Stamina Fruit near Kukiel's House
+  pretty: Central Skyloft - Stamina Fruit near Kukiel's House
   cryptic: a <r<fruit in a lively area>>
 
 - name: Central Skyloft - Stamina Fruit near River

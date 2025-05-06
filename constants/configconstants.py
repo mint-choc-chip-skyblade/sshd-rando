@@ -173,6 +173,8 @@ LOCATION_ALIASES = {
     "Central Skyloft - Crystal after Waterfall Cave": "Central Skyloft - Crystal near Bird Statue after Waterfall Cave",
     "Central Skyloft - Crystal in Loftwing Prison": "Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave",
     "Central Skyloft - Stamina Fruit near Bazaar": "Central Skyloft - Stamina Fruit between Stairs near the Bazaar",
+    "Central Skyloft - Stamina Fruit near Wryna's House": "Central Skyloft - Stamina Fruit near Kukiel's House",
+    "Central Skyloft - Wryna's Closet": "Central Skyloft - Kukiel's Closet",
 }
 
 TRACKER_NOTE_EVENTS = {
