@@ -1898,13 +1898,6 @@
     - event/501-Inpa/267
     - oarc/F402/r2/l0
 
-- name: Sealed Temple - Collect Fruit from the Tree of Life
-  original_item: Life Tree Fruit
-  types:
-    - Freestanding Items
-  Paths:
-    - stage/F402/r2/l0/FrtTree
-
 - name: Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral
   original_item: Green Rupee
   types:
@@ -1986,15 +1979,6 @@
 #    - event/503-Goron/418
 #    - oarc/F400/r0/l0
 
-- name: Sealed Grounds - Gossip Stone Behind the Temple
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 13
-  eventflowindex: 22
-
 - name: Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone
   original_item: Green Rupee
   types:
@@ -2035,6 +2019,13 @@
   Paths:
     - stage/F400/r0/l0/TgReact/0xFC8F
 
+- name: Sealed Temple - Collect Fruit from the Tree of Life
+  original_item: Life Tree Fruit
+  types:
+    - Freestanding Items
+  Paths:
+    - stage/F402/r2/l0/FrtTree
+
 - name: Temple of Hylia - Zelda's Blessing
   original_item: Progressive Sword
   types:
@@ -2049,6 +2040,15 @@
   types:
     - Game Beatable
   is_gui_excluded_location: False
+
+- name: Sealed Grounds - Gossip Stone Behind the Temple
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 13
+  eventflowindex: 22
 
 
 # Faron Woods:
