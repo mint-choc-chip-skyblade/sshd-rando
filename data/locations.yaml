@@ -2052,6 +2052,14 @@
 
 
 # Faron Woods:
+- name: Faron Woods - Stamina Fruit on Vines below First Log
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/Item/0x60E6
+
 - name: Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing
   original_item: Green Rupee
   types:
@@ -2098,14 +2106,6 @@
     - Freestanding Items
   Paths:
     - stage/F100/r0/l0/Item/33 #last thing is SceneflagID
-
-- name: Faron Woods - Stamina Fruit on Vines below First Log
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F100/r0/l0/Item/0x60E6
 
 - name: Faron Woods - Item on Great Tree after Tightrope
   original_item: Heart Piece
