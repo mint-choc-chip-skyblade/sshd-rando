@@ -4112,6 +4112,12 @@
 
 
 # Lanayru Mine:
+- name: Lanayru Mine - Goddess Cube behind First Landing Robot
+  original_item: Lanayru Mine Goddess Cube behind First Landing Robot
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Lanayru Mine - Slingshot Left Eye of First Landing Robot
   original_item: Blue Rupee
   types:
@@ -4134,37 +4140,6 @@
     - Chests
   Paths:
     - stage/F300_1/r0/l0/TBox/64
-
-- name: Lanayru Mine - Blow Digging Robot's Wall before Side Room near First Timeshift Stone
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_1/r0/l0/TgReact/0xFC57
-
-- name: Lanayru Mine - Blow Left Digging Robot's Wall in Side Room near First Timeshift Stone
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_1/r1/l0/TgReact/0xFC07
-
-- name: Lanayru Mine - Blow Right Digging Robot's Wall in Side Room near First Timeshift Stone
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_1/r1/l0/TgReact/0xFC08
-
-- name: Lanayru Mine - Chest in Side Room near First Timeshift Stone
-  original_item: Red Rupee
-  types:
-    - Chests
-  Paths:
-    - stage/F300_1/r1/l0/TBox/65
 
 - name: Lanayru Mine - Rupee on Southeast Conveyor 1
   original_item: Green Rupee
@@ -4201,6 +4176,37 @@
     - Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/147
+
+- name: Lanayru Mine - Chest in Side Room near First Timeshift Stone
+  original_item: Red Rupee
+  types:
+    - Chests
+  Paths:
+    - stage/F300_1/r1/l0/TBox/65
+
+- name: Lanayru Mine - Blow Left Digging Robot's Wall in Side Room near First Timeshift Stone
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r1/l0/TgReact/0xFC07
+
+- name: Lanayru Mine - Blow Right Digging Robot's Wall in Side Room near First Timeshift Stone
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r1/l0/TgReact/0xFC08
+
+- name: Lanayru Mine - Blow Digging Robot's Wall before Side Room near First Timeshift Stone
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/TgReact/0xFC57
 
 - name: Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway
   original_item: Blue Rupee
@@ -4321,12 +4327,6 @@
     - Chests
   Paths:
     - stage/F300_1/r2/l0/TBox/66
-
-- name: Lanayru Mine - Goddess Cube behind First Landing Robot
-  original_item: Lanayru Mine Goddess Cube behind First Landing Robot
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
 
 
 # Lanayru Desert:
