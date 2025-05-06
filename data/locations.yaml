@@ -358,6 +358,14 @@
     - event/106-DrugStore/44
     - oarc/F004r/r0/l0
 
+- name: Bazaar - Repair Gondo's Junk
+  original_item: Scrapper
+  types:
+    - NPC
+  Paths:
+    - event/113-RemodelStore/Give Repair Gondo Junk item
+    - oarc/F004r/r0/l0
+
 - name: Bazaar - Goddess Chest
   original_item: Gold Rupee
   types:
@@ -408,14 +416,6 @@
 #     - Scrap Shop
 #     - NPC
 #   hint: never
-
-- name: Bazaar - Repair Gondo's Junk
-  original_item: Scrapper
-  types:
-    - NPC
-  Paths:
-    - event/113-RemodelStore/Give Repair Gondo Junk item
-    - oarc/F004r/r0/l0
 
 
 # Central Skyloft:
