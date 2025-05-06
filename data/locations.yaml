@@ -2667,6 +2667,24 @@
 
 
 # Flooded Faron Woods
+- name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1
+  original_item: Red Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F103_1/r0/l0/Item/0xFFF0
+
+- name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2
+  original_item: Red Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F103_1/r0/l0/Item/0xFFF1
+
 - name: Flooded Faron Woods - Yellow Tadtone under Lilypad
   original_item: Group of Tadtones
   types:
@@ -2785,24 +2803,6 @@
     - Tadtones
   Paths:
     - stage/F103/r0/l2/Clef/12 # group number
-
-- name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1
-  original_item: Red Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F103_1/r0/l0/Item/0xFFF0
-
-- name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2
-  original_item: Red Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F103_1/r0/l0/Item/0xFFF1
 
 - name: Flooded Faron Woods - Water Dragon's Reward
   original_item: Song of the Hero Part
