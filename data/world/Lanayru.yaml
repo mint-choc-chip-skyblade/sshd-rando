@@ -579,7 +579,7 @@
 - name: Pirate Stronghold Top Door
   exits:
     Pirate Stronghold Interior: Nothing
-    Pirate Stronghold Inside the Shark Head: Nothing
+    Pirate Stronghold Inside the Shark Head: "'Finish_Pirate_Stronghold'"
 
 # Lanayru Statues
 - name: Lanayru Mine Entry Statue
