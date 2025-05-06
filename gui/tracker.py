@@ -604,7 +604,9 @@ class Tracker:
         self.ui.dungeon_sk_keys_layout.addWidget(self.sk_small_key_button)
         self.ui.dungeon_sk_keys_layout.addWidget(self.sk_sot_button)
 
-        self.ui.dungeon_svt_layout.addWidget(TrackerDungeonLabel("SVT", "Skyview Temple"))
+        self.ui.dungeon_svt_layout.addWidget(
+            TrackerDungeonLabel("SVT", "Skyview Temple")
+        )
         self.ui.dungeon_et_layout.addWidget(TrackerDungeonLabel("ET", "Earth Temple"))
         self.ui.dungeon_lmf_layout.addWidget(
             TrackerDungeonLabel("LMF", "Lanayru Mining Facility")
