@@ -4387,6 +4387,12 @@
     - event/400-Desert/8
     - oarc/F300/r0/l0
 
+- name: Lanayru Desert - Goddess Cube near Caged Robot
+  original_item: Lanayru Desert Goddess Cube near Caged Robot
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Lanayru Desert - Rupee behind South Statue near Caged Robot
   original_item: Blue Rupee
   types:
@@ -4438,6 +4444,12 @@
     - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC33
+
+- name: Lanayru Desert - Goddess Cube in Sand Oasis
+  original_item: Lanayru Desert Goddess Cube in Sand Oasis
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue
   original_item: Blue Rupee
@@ -4525,6 +4537,12 @@
   Paths:
     - stage/F300/r0/l0/TBox/74
 
+- name: Lanayru Desert - Goddess Cube in Secret Passageway
+  original_item: Lanayru Desert Goddess Cube in Secret Passageway
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Lanayru Desert - Chest on Platform near Fire Node
   original_item: Red Rupee
   types:
@@ -4563,30 +4581,6 @@
     - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFFF2
-
-- name: Lanayru Desert - Goddess Cube in Secret Passageway
-  original_item: Lanayru Desert Goddess Cube in Secret Passageway
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Lanayru Desert - Goddess Cube near Caged Robot
-  original_item: Lanayru Desert Goddess Cube near Caged Robot
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Lanayru Desert - Goddess Cube in Sand Oasis
-  original_item: Lanayru Desert Goddess Cube in Sand Oasis
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Temple of Time - Goddess Cube on High Platform North of Tree
-  original_item: Temple of Time Goddess Cube
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
 
 ## Nodes
 - name: Fire Node - Raised Chest
@@ -4758,6 +4752,12 @@
     - Custom Flag
   Paths:
     - stage/F300_4/r0/l0/Item/0xFFFE
+
+- name: Temple of Time - Goddess Cube on High Platform North of Tree
+  original_item: Temple of Time Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Temple of Time - Gossip Stone near Robot
   original_item: Nothing
