@@ -1104,15 +1104,6 @@
 
 
 # The Sky:
-- name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 11
-  eventflowindex: 18
-
 - name: Bamboo Island Interior - Bonk Southwest Sprout
   original_item: Green Rupee
   types:
@@ -1257,30 +1248,12 @@
   Paths:
     - stage/F011r/r0/l2/Item/116
 
-- name: Lumpy Pumpkin - Gossip Stone near Back Door
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 27
-  eventflowindex: 40
-
 - name: Orielle's Island - Heal Orielle's Loftwing
   original_item: Gratitude Crystal Pack
   types:
     - NPC
   Paths:
     - event/115-Town2/225
-    - oarc/F020/r0/l0
-
-- name: Beedle's Island - Deliver Beedle's Insect Cage
-  original_item: Gratitude Crystal Pack
-  types:
-    - NPC
-  hint: sometimes
-  Paths:
-    - event/105-Terry/115
     - oarc/F020/r0/l0
 
 - name: Beedle's Island - Crystal on Airshop Propeller
@@ -1290,25 +1263,14 @@
   Paths:
     - stage/F020/r0/l4/Item/119
 
-- name: Beedle's Island - Top Goddess Chest
-  original_item: Heart Piece
+- name: Beedle's Island - Deliver Beedle's Insect Cage
+  original_item: Gratitude Crystal Pack
   types:
-    - Chests
-    - Goddess Chests
-    - Combat
+    - NPC
   hint: sometimes
   Paths:
-    - stage/F020/r0/l0/TBox/89
-  cube_region: Lanayru Desert
-
-- name: Beedle's Island - Goddess Chest in Cage
-  original_item: Rupee Medal
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F020/r0/l0/TBox/81
-  cube_region: Faron Woods
+    - event/105-Terry/115
+    - oarc/F020/r0/l0
 
 - name: Fun Fun Island - Deliver Party Wheel to Dodoh
   original_item: Gratitude Crystal Pack
@@ -1329,15 +1291,6 @@
   Paths:
     - event/110-DivingGame/19
     - oarc/F020/r0/l2
-
-- name: Fun Fun Island - Goddess Chest below Island
-  original_item: Gold Rupee
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F020/r0/l0/TBox/86
-  cube_region: Lake Floria
 
 - name: The Sky - Form a Swirrell Ring above Volcanic Island
   original_item: Red Rupee
@@ -1373,15 +1326,6 @@
     - Chests
   Paths:
     - stage/F020/r0/l0/TBox/69
-
-- name: Volcanic Island - Gossip Stone inside Island
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 30
-  eventflowindex: 64
 
 ## Goddess Chests
 - name: Bamboo Island - Goddess Chest behind Entrance
@@ -1429,6 +1373,26 @@
     - stage/F020/r0/l0/TBox/74
   cube_region: Eldin Volcano
 
+- name: Beedle's Island - Top Goddess Chest
+  original_item: Heart Piece
+  types:
+    - Chests
+    - Goddess Chests
+    - Combat
+  hint: sometimes
+  Paths:
+    - stage/F020/r0/l0/TBox/89
+  cube_region: Lanayru Desert
+
+- name: Beedle's Island - Goddess Chest in Cage
+  original_item: Rupee Medal
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/81
+  cube_region: Faron Woods
+
 - name: Lumpy Pumpkin - Goddess Chest on Roof
   original_item: Gold Rupee
   types:
@@ -1474,6 +1438,15 @@
     - stage/F020/r0/l0/TBox/68
   cube_region: Faron Woods
 
+- name: Fun Fun Island - Goddess Chest below Island
+  original_item: Gold Rupee
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/86
+  cube_region: Lake Floria
+
 - name: Triple Island - Upper Goddess Chest
   original_item: Small Seed Satchel
   types:
@@ -1500,6 +1473,34 @@
   Paths:
     - stage/F020/r0/l0/TBox/75
   cube_region: Lanayru Sand Sea
+
+## Gossip Stones
+- name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 11
+  eventflowindex: 18
+
+- name: Lumpy Pumpkin - Gossip Stone near Back Door
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 27
+  eventflowindex: 40
+
+- name: Volcanic Island - Gossip Stone inside Island
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 30
+  eventflowindex: 64
 
 
 # Inside the Thunderhead:
