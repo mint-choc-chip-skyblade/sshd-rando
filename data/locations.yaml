@@ -3216,15 +3216,6 @@
   Paths:
     - stage/F200/r2/l0/TBox/71
 
-- name: Lower Eldin Cave - East Gossip Stone
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 17
-  eventflowindex: 56
-
 - name: Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 1
   original_item: Stamina Fruit
   types:
@@ -3272,15 +3263,6 @@
     - Intermediate Rupees
   Paths:
     - stage/F200/r4/l0/Item/11
-
-- name: Thrill Digger Cave - Gossip Stone near Tubert
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 16
-  eventflowindex: 28
 
 - name: Thrill Digger Cave - Slingshot Left Blue Crystal 1
   original_item: Blue Rupee
@@ -3459,26 +3441,13 @@
     - stage/F200/r4/l0/Item/0xFC35
 
 ## Outside Earth Temple
-- name: Eldin Volcano - Digging Spot West of Temple
-  original_item: Key Piece
+- name: Eldin Volcano - Slingshot Red Jewel above Temple Entrance
+  original_item: Red Rupee
   types:
-    - Digging Spots
+    - Hidden Items
+    - Custom Flag
   Paths:
-    - stage/F200/r4/l1/Soil/8
-
-- name: Eldin Volcano - Digging Spot below Tower West of Temple
-  original_item: Key Piece
-  types:
-    - Digging Spots
-  Paths:
-    - stage/F200/r4/l1/Soil/9
-
-- name: Eldin Volcano - Digging Spot behind Boulder on Slope before Temple
-  original_item: Key Piece
-  types:
-    - Digging Spots
-  Paths:
-    - stage/F200/r4/l1/Soil/12
+    - stage/F200/r4/l0/TgReact/0xFC69
 
 - name: Eldin Volcano - Blow Closest Torch West of Temple
   original_item: Green Rupee
@@ -3496,28 +3465,32 @@
   Paths:
     - stage/F200/r4/l0/TgReact/0xFC6B
 
-- name: Eldin Volcano - Slingshot Red Jewel above Temple Entrance
-  original_item: Red Rupee
+- name: Eldin Volcano - Digging Spot West of Temple
+  original_item: Key Piece
   types:
-    - Hidden Items
-    - Custom Flag
+    - Digging Spots
   Paths:
-    - stage/F200/r4/l0/TgReact/0xFC69
-
-- name: Eldin Volcano - Gossip Stone on Cliff West of Temple
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 14
-  eventflowindex: 24
+    - stage/F200/r4/l1/Soil/8
 
 - name: Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple
   original_item: Eldin Volcano Goddess Cube West of Temple
   types:
     - Goddess Cube
   is_gui_excluded_location: False
+
+- name: Eldin Volcano - Digging Spot below Tower West of Temple
+  original_item: Key Piece
+  types:
+    - Digging Spots
+  Paths:
+    - stage/F200/r4/l1/Soil/9
+
+- name: Eldin Volcano - Digging Spot behind Boulder on Slope before Temple
+  original_item: Key Piece
+  types:
+    - Digging Spots
+  Paths:
+    - stage/F200/r4/l1/Soil/12
 
 - name: Eldin Volcano - Underground Rupee West of Temple 1
   original_item: Blue Rupee
@@ -3612,15 +3585,6 @@
   types:
     - Goddess Cube
   is_gui_excluded_location: False
-
-- name: Upper Eldin Cave - West Gossip Stone
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 21
-  eventflowindex: 30
 
 - name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
   original_item: Stamina Fruit
@@ -3800,6 +3764,42 @@
     - Digging Spots
   Paths:
     - stage/F200/r2/l1/Soil/64
+
+- name: Thrill Digger Cave - Gossip Stone near Tubert
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 16
+  eventflowindex: 28
+
+- name: Eldin Volcano - Gossip Stone on Cliff West of Temple
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 14
+  eventflowindex: 24
+
+- name: Lower Eldin Cave - East Gossip Stone
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 17
+  eventflowindex: 56
+
+- name: Upper Eldin Cave - West Gossip Stone
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 21
+  eventflowindex: 30
 
 
 # Mogma Turf:
