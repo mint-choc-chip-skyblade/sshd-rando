@@ -2401,15 +2401,6 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Deep Woods - Gossip Stone before Temple
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 15
-  eventflowindex: 26
-
 - name: Deep Woods - Bonk Tree near Gossip Stone Item 1
   original_item: 5 Deku Seeds
   types:
@@ -2497,6 +2488,15 @@
   types:
     - Goddess Cube
   is_gui_excluded_location: False
+
+- name: Deep Woods - Gossip Stone before Temple
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 15
+  eventflowindex: 26
 
 
 # Lake Floria:
