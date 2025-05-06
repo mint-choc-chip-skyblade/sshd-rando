@@ -1826,12 +1826,14 @@
   pretty: Wolkenhort-Dorf - Rollattacke gegen Baum nahe Fluss
   cryptic: <r<Anrempeln eines Baums>> im <b<Dorf>>
 
-- name: Skyloft Village - Clean Mallara's House
+# TODO: update with new name
+- name: Skyloft Village - Clean Pipit's House
   standard: Wolkenhort-Dorf - Putze Anatis Haus
   pretty: Wolkenhort-Dorf - Putze Anatis Haus
   cryptic: einer <r<Mutter Faulheit>>
 
-- name: Skyloft Village - Mallara's Closet
+# TODO: update with new name
+- name: Skyloft Village - Pipit's Closet
   standard: Wolkenhort-Dorf - Anatis Schrank
   pretty: Wolkenhort-Dorf - Anatis Schrank
   cryptic: <r<Durchwühlen eines staubigen Schranks>>
@@ -1876,7 +1878,8 @@
   pretty: Wolkenhort-Dorf - Juwel nahe Kürbisfeld
   cryptic: ein <r<Juwel hinter einem Baum>>
 
-- name: Skyloft Village - Stamina Fruit above Mallara's House
+# TODO: update with new name
+- name: Skyloft Village - Stamina Fruit above Pipit's House
   standard: Wolkenhort-Dorf - Ausdauerfrucht oberhalb Anatis Haus
   pretty: Wolkenhort-Dorf - Ausdauerfrucht oberhalb Anatis Haus
   cryptic: eine <r<Frucht nahe einiger Residenzen>>

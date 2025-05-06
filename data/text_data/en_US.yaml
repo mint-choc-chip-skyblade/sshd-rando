@@ -1829,14 +1829,14 @@
   pretty: Skyloft Village - Bonk Tree near River
   cryptic: <r<disturbing sky wood>> in a <b<village>>
 
-- name: Skyloft Village - Clean Mallara's House
-  standard: Skyloft Village - Clean Mallara's House
-  pretty: Skyloft Village - Clean Mallara's House
+- name: Skyloft Village - Clean Pipit's House
+  standard: Skyloft Village - Clean Pipit's House
+  pretty: Skyloft Village - Clean Pipit's House
   cryptic: a <r<mother's laziness>>
 
-- name: Skyloft Village - Mallara's Closet
-  standard: Skyloft Village - Mallara's Closet
-  pretty: Skyloft Village - Mallara's Closet
+- name: Skyloft Village - Pipit's Closet
+  standard: Skyloft Village - Pipit's Closet
+  pretty: Skyloft Village - Pipit's Closet
   cryptic: snooping through a <r<dusty closet>>
 
 - name: Skyloft Village - Deliver Rattle to Bertie
@@ -1879,9 +1879,9 @@
   pretty: Skyloft Village - Crystal near Pumpkin Patch
   cryptic: a <r<crystal behind a tree>>
 
-- name: Skyloft Village - Stamina Fruit above Mallara's House
-  standard: Skyloft Village - Stamina Fruit above Mallara's House
-  pretty: Skyloft Village - Stamina Fruit above Mallara's House
+- name: Skyloft Village - Stamina Fruit above Pipit's House
+  standard: Skyloft Village - Stamina Fruit above Pipit's House
+  pretty: Skyloft Village - Stamina Fruit above Pipit's House
   cryptic: a <r<fruit near some residences>>
 
 - name: Batreaux's House - 5 Gratitude Crystals Reward

@@ -175,6 +175,9 @@ LOCATION_ALIASES = {
     "Central Skyloft - Stamina Fruit near Bazaar": "Central Skyloft - Stamina Fruit between Stairs near the Bazaar",
     "Central Skyloft - Stamina Fruit near Wryna's House": "Central Skyloft - Stamina Fruit near Kukiel's House",
     "Central Skyloft - Wryna's Closet": "Central Skyloft - Kukiel's Closet",
+    "Skyloft Village - Stamina Fruit above Mallara's House": "Skyloft Village - Stamina Fruit above Pipit's House",
+    "Skyloft Village - Clean Mallara's House": "Skyloft Village - Clean Pipit's House",
+    "Skyloft Village - Mallara's Closet": "Skyloft Village - Pipit's Closet",
 }
 
 TRACKER_NOTE_EVENTS = {

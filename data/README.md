@@ -106,7 +106,7 @@ Below is the list of all the flags that the randomizer changes:
 * 100: Obtained the item in Sparrot's Closet
 * 101: Obtained the item in Luv and Bertie's Closet
 * 105: Obtained the item in Gondo's Closet
-* 107: Obtained the item in Mallara's Closet
+* 107: Obtained the item in Pipit's Closet
 * 116: Obtained the item in Rupin's Closet
 * 117: Obtained the item in Peater's Closet
 * 118: Obtained the item in Peatrice's Closet

@@ -835,7 +835,7 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD1E
 
-- name: Skyloft Village - Stamina Fruit above Mallara's House
+- name: Skyloft Village - Stamina Fruit above Pipit's House
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -853,7 +853,7 @@
     - stage/F000/r0/l7/Item/108
     - stage/F000/r0/l9/Item/108
 
-- name: Skyloft Village - Clean Mallara's House
+- name: Skyloft Village - Clean Pipit's House
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -861,7 +861,7 @@
     - event/123-Town5/186
     - oarc/F016r/r0/l0
 
-- name: Skyloft Village - Mallara's Closet
+- name: Skyloft Village - Pipit's Closet
   original_item: Green Rupee
   types:
     - Closets

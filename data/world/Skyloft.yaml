@@ -399,7 +399,7 @@
   exits:
     Bertie's House: Nothing
     Sparrot's House: Nothing
-    Mallara's House: Nothing
+    Pipit's House: Nothing
     Gondo's House: Nothing
     Rupin's House: Nothing
     Batreaux's House: open_batreaux_shed or 'Opened_Shed' or logic_gravestone_jump
@@ -409,7 +409,7 @@
   locations:
     Skyloft Village - Bonk Tree near River: Nothing
     Skyloft Village - Crystal near Pumpkin Patch: Night
-    Skyloft Village - Stamina Fruit above Mallara's House: Nothing
+    Skyloft Village - Stamina Fruit above Pipit's House: Nothing
 
 - name: Bertie's House
   allowed_time_of_day: All
@@ -432,14 +432,14 @@
     Skyloft Village - Sparrot's Closet: Nothing
     Skyloft Village - Bonk Sparrot's Valuables: Nothing
 
-- name: Mallara's House
+- name: Pipit's House
   allowed_time_of_day: All
   can_sleep: true
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Clean Mallara's House: Gust_Bellows
-    Skyloft Village - Mallara's Closet: Nothing
+    Skyloft Village - Clean Pipit's House: Gust_Bellows
+    Skyloft Village - Pipit's Closet: Nothing
 
 - name: Gondo's House
   allowed_time_of_day: All

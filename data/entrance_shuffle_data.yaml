@@ -766,7 +766,7 @@
         entrance: 33
 - type: Door
   forward:
-    connection: Skyloft Village -> Mallara's House
+    connection: Skyloft Village -> Pipit's House
     exit_infos:
       - stage: F000
         room: 0
@@ -777,7 +777,7 @@
         room: 0
         entrance: 1
   return:
-    connection: Mallara's House -> Skyloft Village
+    connection: Pipit's House -> Skyloft Village
     exit_infos:
       - stage: F016r
         room: 0
