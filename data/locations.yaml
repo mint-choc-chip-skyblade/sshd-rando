@@ -2294,6 +2294,12 @@
   Paths:
     - stage/F100/r0/l0/TgReact/0xFD69
 
+- name: Faron Woods - Goddess Cube on West Great Tree near Exit
+  original_item: Faron Woods Goddess Cube on West Great Tree near Exit
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Faron Woods - Goddess Cube on East Great Tree with Rope
   original_item: Faron Woods Goddess Cube on East Great Tree with Rope
   types:
@@ -2302,12 +2308,6 @@
 
 - name: Faron Woods - Goddess Cube on East Great Tree with Clawshots Target
   original_item: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Faron Woods - Goddess Cube on West Great Tree near Exit
-  original_item: Faron Woods Goddess Cube on West Great Tree near Exit
   types:
     - Goddess Cube
   is_gui_excluded_location: False
