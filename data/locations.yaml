@@ -4564,94 +4564,6 @@
   Paths:
     - stage/F300/r0/l0/Item/0xFFF2
 
-- name: Temple of Time - Gossip Stone near Robot
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 25
-  eventflowindex: 36
-
-- name: Temple of Time - Northwest Rupee on Tree Root
-  original_item: Green Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F300_4/r0/l0/Item/0xFC0A
-
-- name: Temple of Time - Northeast Rupee on Tree Root
-  original_item: Green Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F300_4/r0/l0/Item/0xFC09
-
-- name: Temple of Time - Southeast Rupee on Tree Root
-  original_item: Green Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F300_4/r0/l0/Item/0xFC08
-
-- name: Temple of Time - East Rupee on Tree Trunk
-  original_item: Green Rupee
-  types:
-    - Freestanding Rupees
-    - Intermediate Rupees
-    - Custom Flag
-  Paths:
-    - stage/F300_4/r0/l0/Item/0xFC0B
-
-- name: Temple of Time - South Rupee on Tree Trunk
-  original_item: Green Rupee
-  types:
-    - Freestanding Rupees
-    - Intermediate Rupees
-    - Custom Flag
-  Paths:
-    - stage/F300_4/r0/l0/Item/0xFC0C
-
-- name: Temple of Time - Bonk Northeast Bird Pillar near Gate of Time
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_4/r0/l0/TgReact/0xFC49
-
-- name: Temple of Time - Bonk Southeast Bird Pillar near Gate of Time
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_4/r0/l0/TgReact/0xFC4A
-
-- name: Temple of Time - Rupee on North Gate of Time Pillar
-  original_item: Blue Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F300_4/r0/l0/Item/0xFFFD
-
-- name: Temple of Time - Rupee on Southwest Gate of Time Pillar
-  original_item: Blue Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F300_4/r0/l0/Item/0xFFFE
-
 - name: Lanayru Desert - Goddess Cube in Secret Passageway
   original_item: Lanayru Desert Goddess Cube in Secret Passageway
   types:
@@ -4765,6 +4677,96 @@
     - Chests
   Paths:
     - stage/F300_2/r0/l0/TBox/77
+
+
+# Temple of Time:
+- name: Temple of Time - Northwest Rupee on Tree Root
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFC0A
+
+- name: Temple of Time - Northeast Rupee on Tree Root
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFC09
+
+- name: Temple of Time - Southeast Rupee on Tree Root
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFC08
+
+- name: Temple of Time - East Rupee on Tree Trunk
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFC0B
+
+- name: Temple of Time - South Rupee on Tree Trunk
+  original_item: Green Rupee
+  types:
+    - Freestanding Rupees
+    - Intermediate Rupees
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFC0C
+
+- name: Temple of Time - Bonk Northeast Bird Pillar near Gate of Time
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/TgReact/0xFC49
+
+- name: Temple of Time - Bonk Southeast Bird Pillar near Gate of Time
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/TgReact/0xFC4A
+
+- name: Temple of Time - Rupee on North Gate of Time Pillar
+  original_item: Blue Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFFFD
+
+- name: Temple of Time - Rupee on Southwest Gate of Time Pillar
+  original_item: Blue Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F300_4/r0/l0/Item/0xFFFE
+
+- name: Temple of Time - Gossip Stone near Robot
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 25
+  eventflowindex: 36
 
 
 # Lanayru Caves:
