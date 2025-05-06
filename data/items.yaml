@@ -1352,14 +1352,14 @@
   advancement: true
   goddess_chest: Lumpy Pumpkin - Goddess Chest near Gossip Stone
 - id: 261
-  name: Deep Woods Goddess Cube in front of Skyview
+  name: Deep Woods Goddess Cube in front of Temple
   types:
     - Goddess Cube
   oarc: null
   advancement: true
   goddess_chest: Island Closest to Faron Pillar - Goddess Chest
 - id: 262
-  name: Deep Woods Goddess Cube on top of Skyview
+  name: Deep Woods Goddess Cube on top of Temple
   types:
     - Goddess Cube
   oarc: null

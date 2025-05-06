@@ -184,6 +184,8 @@ LOCATION_ALIASES = {
     "Faron Woods - Item behind Bombable Rock": "Faron Woods - Item behind Lower Bombable Rock",
     "Faron Woods - Stamina Fruit on Vines near Erla": "Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock",
     "Faron Woods - Chest behind Bombable Rocks near Erla": "Faron Woods - Chest behind Upper Bombable Rock",
+    "Deep Woods - Goddess Cube in front of Skyview": "Deep Woods - Goddess Cube in front of Temple",
+    "Deep Woods - Goddess Cube on top of Skyview": "Deep Woods - Goddess Cube on top of Temple",
 }
 
 TRACKER_NOTE_EVENTS = {

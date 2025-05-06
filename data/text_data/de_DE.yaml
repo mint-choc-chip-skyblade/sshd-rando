@@ -1197,13 +1197,15 @@
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
   plurality: Singular
 
-- name: Deep Woods Goddess Cube in front of Skyview
+# TODO: update with new name
+- name: Deep Woods Goddess Cube in front of Temple
   standard: Artefakt der Göttin tief im Wald vor Himmelsblick
   pretty: das <Artefakt der Göttin tief im Wald vor Himmelsblick>
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
   plurality: Singular
 
-- name: Deep Woods Goddess Cube on top of Skyview
+# TODO: update with new name
+- name: Deep Woods Goddess Cube on top of Temple
   standard: Artefakt der Göttin tief im Wald auf Himmelsblick
   pretty: das <Artefakt der Göttin tief im Wald auf Himmelsblick>
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
@@ -2820,12 +2822,14 @@
   pretty: Tief im Wald - Artefakt der Göttin nahe Gorone
   cryptic:
 
-- name: Deep Woods - Goddess Cube in front of Skyview
+# TODO: update with new name
+- name: Deep Woods - Goddess Cube in front of Temple
   standard: Tief im Wald - Artefakt der Göttin vor Himmelsblick
   pretty: Tief im Wald - Artefakt der Göttin vor Himmelsblick
   cryptic:
 
-- name: Deep Woods - Goddess Cube on top of Skyview
+# TODO: update with new name
+- name: Deep Woods - Goddess Cube on top of Temple
   standard: Tief im Wald - Artefakt der Göttin auf Himmelsblick
   pretty: Tief im Wald - Artefakt der Göttin auf Himmelsblick
   cryptic:

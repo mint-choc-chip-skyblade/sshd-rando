@@ -2417,8 +2417,8 @@
   Paths:
     - stage/F101/r0/l0/TgReact/0xFCDF
 
-- name: Deep Woods - Goddess Cube in front of Skyview
-  original_item: Deep Woods Goddess Cube in front of Skyview
+- name: Deep Woods - Goddess Cube in front of Temple
+  original_item: Deep Woods Goddess Cube in front of Temple
   types:
     - Goddess Cube
   is_gui_excluded_location: False
@@ -2483,8 +2483,8 @@
   Paths:
     - stage/F101/r0/l0/TgReact/0xFDFF
 
-- name: Deep Woods - Goddess Cube on top of Skyview
-  original_item: Deep Woods Goddess Cube on top of Skyview
+- name: Deep Woods - Goddess Cube on top of Temple
+  original_item: Deep Woods Goddess Cube on top of Temple
   types:
     - Goddess Cube
   is_gui_excluded_location: False

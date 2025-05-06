@@ -1201,15 +1201,15 @@
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Deep Woods Goddess Cube in front of Skyview
-  standard: Deep Woods Goddess Cube in front of Skyview
-  pretty: the <Deep Woods Goddess Cube in front of Skyview>
+- name: Deep Woods Goddess Cube in front of Temple
+  standard: Deep Woods Goddess Cube in front of Temple
+  pretty: the <Deep Woods Goddess Cube in front of Temple>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Deep Woods Goddess Cube on top of Skyview
-  standard: Deep Woods Goddess Cube on top of Skyview
-  pretty: the <Deep Woods Goddess Cube on top of Skyview>
+- name: Deep Woods Goddess Cube on top of Temple
+  standard: Deep Woods Goddess Cube on top of Temple
+  pretty: the <Deep Woods Goddess Cube on top of Temple>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
@@ -2820,14 +2820,14 @@
   pretty: Deep Woods - Goddess Cube Near Goron
   cryptic:
 
-- name: Deep Woods - Goddess Cube in front of Skyview
-  standard: Deep Woods - Goddess Cube in front of Skyview
-  pretty: Deep Woods - Goddess Cube in front of Skyview
+- name: Deep Woods - Goddess Cube in front of Temple
+  standard: Deep Woods - Goddess Cube in front of Temple
+  pretty: Deep Woods - Goddess Cube in front of Temple
   cryptic:
 
-- name: Deep Woods - Goddess Cube on top of Skyview
-  standard: Deep Woods - Goddess Cube on top of Skyview
-  pretty: Deep Woods - Goddess Cube on top of Skyview
+- name: Deep Woods - Goddess Cube on top of Temple
+  standard: Deep Woods - Goddess Cube on top of Temple
+  pretty: Deep Woods - Goddess Cube on top of Temple
   cryptic:
 
 - name: Lake Floria - Rupee under Central Boulder
