@@ -3921,14 +3921,6 @@
   Paths:
     - stage/F201_4/r0/l0/TBox/95
 
-- name: Volcano Summit - Item after Underground Tunnel near Gossip Stone
-  original_item: Heart Piece
-  types:
-    - Freestanding Items
-  hint: sometimes
-  Paths:
-    - stage/F201_3/r0/l0/Item/104 #sceneflagID
-
 - name: Volcano Summit - Underground Rupee 1
   original_item: Blue Rupee
   types:
@@ -3944,6 +3936,56 @@
     - Custom Flag
   Paths:
     - stage/F201_3/r0/l0/Item/136 #sceneflagID
+
+- name: Volcano Summit - Item after Underground Tunnel near Gossip Stone
+  original_item: Heart Piece
+  types:
+    - Freestanding Items
+  hint: sometimes
+  Paths:
+    - stage/F201_3/r0/l0/Item/104 #sceneflagID
+
+- name: Volcano Summit - Goddess Cube in Lava Lake
+  original_item: Volcano Summit Goddess Cube in Lava Lake
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
+- name: Volcano Summit - Goddess Cube at Summit Waterfall
+  original_item: Volcano Summit Goddess Cube at Summit Waterfall
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
+- name: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
+  original_item: Red Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/TgReact/0xFC4C
+
+- name: Volcano Summit - Blow Torch West of Fire Sanctuary
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/TgReact/0xFC4A
+
+- name: Volcano Summit - Blow Torch East of Fire Sanctuary
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/TgReact/0xFC4B
+
+- name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
+  original_item: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Volcano Summit - Gossip Stone on Cliff near Waterfall
   original_item: Nothing
@@ -3962,48 +4004,6 @@
   textfile: 004-Object
   textindex: 31
   eventflowindex: 76
-
-- name: Volcano Summit - Goddess Cube in Lava Lake
-  original_item: Volcano Summit Goddess Cube in Lava Lake
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Volcano Summit - Goddess Cube at Summit Waterfall
-  original_item: Volcano Summit Goddess Cube at Summit Waterfall
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Volcano Summit - Blow Torch West of Fire Sanctuary
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F201_3/r0/l0/TgReact/0xFC4A
-
-- name: Volcano Summit - Blow Torch East of Fire Sanctuary
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F201_3/r0/l0/TgReact/0xFC4B
-
-- name: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
-  original_item: Red Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F201_3/r0/l0/TgReact/0xFC4C
-
-- name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
-  original_item: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
 
 
 # Bokoblin Base:
