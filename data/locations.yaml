@@ -185,6 +185,35 @@
 
 
 # Upper Skyloft:
+
+- name: Sparring Hall - Chest in Back Room
+  original_item: Progressive Sword
+  types:
+    - Chests
+  Paths:
+    - stage/F009r/r0/l0/TBox/66
+
+- name: Sparring Hall - Crystal on Roof Beam
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F009r/r0/l2/Item/115
+    - oarc/F009r/r0/l0
+
+- name: Upper Skyloft - Stamina Fruit near Sparring Hall
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l4/Item/0xFDFA
+    - stage/F000/r0/l5/Item/0xFE06
+    - stage/F000/r0/l6/Item/0xFDEB
+    - stage/F000/r0/l7/Item/0xFE01
+    - stage/F000/r0/l8/Item/0xFDD8
+    - stage/F000/r0/l9/Item/0xFDF6
+
 - name: Upper Skyloft - Owlan's Gift
   original_item: Wooden Shield
   types:
@@ -215,33 +244,6 @@
     - event/108-ShinkanA/292
     - oarc/F000/r0/l4
     - oarc/F000/r0/l6
-
-- name: Upper Skyloft - Ring Knight Academy Bell
-  original_item: Green Rupee
-  types:
-    - Bell
-  Paths:
-    - stage/F000/r0/l2/Bell
-    - stage/F000/r0/l4/Bell
-    - stage/F000/r0/l5/Bell
-    - stage/F000/r0/l6/Bell
-    - stage/F000/r0/l7/Bell
-
-- name: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD37
-
-- name: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD38
 
 - name: Upper Skyloft - Stamina Fruit near Upper Academy Gates
   original_item: Stamina Fruit
@@ -292,18 +294,16 @@
     - stage/F000/r0/l7/TBox/71
     # - stage/F000/r0/l10/TBox/71
 
-- name: Upper Skyloft - Stamina Fruit near Sparring Hall
-  original_item: Stamina Fruit
+- name: Upper Skyloft - Ring Knight Academy Bell
+  original_item: Green Rupee
   types:
-    - Stamina Fruits
-    - Custom Flag
+    - Bell
   Paths:
-    - stage/F000/r0/l4/Item/0xFDFA
-    - stage/F000/r0/l5/Item/0xFE06
-    - stage/F000/r0/l6/Item/0xFDEB
-    - stage/F000/r0/l7/Item/0xFE01
-    - stage/F000/r0/l8/Item/0xFDD8
-    - stage/F000/r0/l9/Item/0xFDF6
+    - stage/F000/r0/l2/Bell
+    - stage/F000/r0/l4/Bell
+    - stage/F000/r0/l5/Bell
+    - stage/F000/r0/l6/Bell
+    - stage/F000/r0/l7/Bell
 
 - name: Upper Skyloft - 600 Points in Pumpkin Pull
   original_item: Heart Piece
@@ -315,6 +315,22 @@
     - event/114-Friend/99
     - oarc/F000/r0/l4
     - oarc/F000/r0/l6
+
+- name: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD37
+
+- name: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD38
 
 - name: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
   original_item: Green Rupee
@@ -331,21 +347,6 @@
     - Custom Flag
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD3A
-
-- name: Sparring Hall - Crystal on Roof Beam
-  original_item: Gratitude Crystal
-  types:
-    - Gratitude Crystals
-  Paths:
-    - stage/F009r/r0/l2/Item/115
-    - oarc/F009r/r0/l0
-
-- name: Sparring Hall - Chest in Back Room
-  original_item: Progressive Sword
-  types:
-    - Chests
-  Paths:
-    - stage/F009r/r0/l0/TBox/66
 
 
 # Bazaar:
