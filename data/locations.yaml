@@ -4959,7 +4959,7 @@
     - NPC
   Paths:
     - event/460-RairyuMinigame/989
-    - oarc/F302/l0
+    - oarc/F302/r0/l0
 
 - name: Lanayru Gorge - Boss Rush 8 Bosses
   original_item: Hylian Shield
@@ -4968,7 +4968,7 @@
     - NPC
   Paths:
     - event/460-RairyuMinigame/505
-    - oarc/F302/l0
+    - oarc/F302/r0/l0
 
 
 # Ancient Harbour:
