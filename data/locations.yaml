@@ -6882,13 +6882,6 @@
   Paths:
     - stage/D003_7/r0/l0/TBox/64
 
-- name: Sky Keep - Chest after Dreadfuse Fight
-  original_item: Sky Keep Small Key
-  types:
-    - Chests
-  Paths:
-    - stage/D003_6/r0/l0/TBox/65
-
 - name: Sky Keep - Rupee in Fire Sanctuary Room in Alcove
   original_item: Silver Rupee
   types:
@@ -6896,6 +6889,13 @@
     - Advanced Rupees
   Paths:
     - stage/D003_2/r0/l0/Item/36
+
+- name: Sky Keep - Chest after Dreadfuse Fight
+  original_item: Sky Keep Small Key
+  types:
+    - Chests
+  Paths:
+    - stage/D003_6/r0/l0/TBox/65
 
 - name: Sky Keep - Sacred Power of Din
   original_item: Triforce of Power
