@@ -1504,14 +1504,14 @@
 
 
 # Inside the Thunderhead:
-- name: Inside the Thunderhead - Gossip Stone near Bug Heaven
-  original_item: Nothing
+- name: Bug Heaven - Goddess Chest
+  original_item: Heart Piece
   types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 12
-  eventflowindex: 20
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/88
+  cube_region: Volcano Summit
 
 - name: Bug Heaven - 10 Bugs in 3 Minutes
   original_item: Beedle's Insect Cage
@@ -1524,14 +1524,13 @@
     - event/116-InsectGame/69
     - oarc/F023/r0/l0
 
-- name: Bug Heaven - Goddess Chest
-  original_item: Heart Piece
+- name: Bug Heaven - Stamina Fruit on top of Slope
+  original_item: Stamina Fruit
   types:
-    - Chests
-    - Goddess Chests
+    - Stamina Fruits
+    - Custom Flag
   Paths:
-    - stage/F023/r0/l0/TBox/88
-  cube_region: Volcano Summit
+    - stage/F023/r0/l0/Item/0xFC10
 
 - name: Bug Heaven - Stamina Fruit near Start
   original_item: Stamina Fruit
@@ -1556,14 +1555,6 @@
     - Custom Flag
   Paths:
     - stage/F023/r0/l0/Item/0xFC86
-
-- name: Bug Heaven - Stamina Fruit on top of Slope
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F023/r0/l0/Item/0xFC10
 
 - name: Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
   original_item: Empty Bottle
@@ -1648,6 +1639,15 @@
   Paths:
     - event/120-Nushi/give item after levias
     - oarc/F023/r0/l0
+
+- name: Inside the Thunderhead - Gossip Stone near Bug Heaven
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 12
+  eventflowindex: 20
 
 
 # Sealed Grounds:
