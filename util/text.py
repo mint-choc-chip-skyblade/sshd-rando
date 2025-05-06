@@ -472,6 +472,8 @@ def break_lines(text: str) -> str:
             # 8 chars max * max char width
             if code == "<heroname>":
                 cur_line_width += 8 * 30
+            elif code.startswith("<action"):
+                code += " " * 6
             i += len(code)
             continue
 
@@ -487,8 +489,9 @@ def break_lines(text: str) -> str:
             continue
 
         if text[i] not in char_widths:
+            print(text, "\n")
             raise RuntimeError(
-                f"Char '{text[i]}' has no defined width in text \"{text}\""
+                f"Char '{text[i]}' has no defined width in the above text."
             )
 
         cur_line_width += char_widths[text[i]]
