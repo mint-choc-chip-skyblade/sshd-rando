@@ -200,7 +200,7 @@ MINIMAL_ITEM_POOL: list[str] = (
         TRIFORCE_OF_COURAGE,
         TRIFORCE_OF_WISDOM,
         TRIFORCE_OF_POWER,
-        SV_BOSS_KEY,
+        SVT_BOSS_KEY,
         ET_BOSS_KEY,
         LMF_BOSS_KEY,
         AC_BOSS_KEY,
@@ -220,7 +220,7 @@ MINIMAL_ITEM_POOL: list[str] = (
     + [EMPTY_BOTTLE] * 5
     + [GROUP_OF_TADTONES] * 17
     + [KEY_PIECE] * 5
-    + [SV_SMALL_KEY] * 2
+    + [SVT_SMALL_KEY] * 2
     + [AC_SMALL_KEY] * 2
     + [SSH_SMALL_KEY] * 2
     + [FS_SMALL_KEY] * 3
@@ -247,7 +247,7 @@ MINIMAL_ITEM_POOL: list[str] = (
     + [HEART_CONTAINER] * 6
     + [LIFE_MEDAL] * 2
     + [
-        SV_MAP,
+        SVT_MAP,
         ET_MAP,
         LMF_MAP,
         AC_MAP,
@@ -362,21 +362,21 @@ STARTABLE_ITEMS: list[str] = (
     + [GRATITUDE_CRYSTAL] * 15
     + [GRATITUDE_CRYSTAL_PACK] * 13
     + [LC_SMALL_KEY] * 2
-    + [SV_SMALL_KEY] * 2
+    + [SVT_SMALL_KEY] * 2
     + [LMF_SMALL_KEY]
     + [AC_SMALL_KEY] * 2
     + [SSH_SMALL_KEY] * 2
     + [FS_SMALL_KEY] * 3
     + [SK_SMALL_KEY]
     + [
-        SV_MAP,
+        SVT_MAP,
         ET_MAP,
         LMF_MAP,
         AC_MAP,
         SSH_MAP,
         FS_MAP,
         SK_MAP,
-        SV_BOSS_KEY,
+        SVT_BOSS_KEY,
         ET_BOSS_KEY,
         LMF_BOSS_KEY,
         AC_BOSS_KEY,
@@ -505,14 +505,14 @@ ITEM_STORYFLAGS = {
 # first value is dungeon name
 # second value is the flag to set at the scene
 ITEM_DUNGEONFLAGS = {
-    SV_MAP: ("Skyview Temple", 2),
+    SVT_MAP: ("Skyview Temple", 2),
     ET_MAP: ("Earth Temple", 2),
     LMF_MAP: ("Lanayru Mining Facility", 2),
     AC_MAP: ("Ancient Cistern", 2),
     SSH_MAP: ("Sandship", 2),
     FS_MAP: ("Fire Sanctuary", 2),
     SK_MAP: ("Sky Keep", 2),
-    SV_BOSS_KEY: ("Skyview Temple", 12),
+    SVT_BOSS_KEY: ("Skyview Temple", 12),
     ET_BOSS_KEY: ("Earth Temple", 12),
     LMF_BOSS_KEY: ("Lanayru Mining Facility", 12),
     AC_BOSS_KEY: ("Ancient Cistern", 12),
@@ -533,7 +533,7 @@ ITEM_COUNTS = {
     PROGRESSIVE_POUCH: (0x1EA, 1, 5),
     EXTRA_WALLET: (0x1FC, 1, 3),
     LC_SMALL_KEY: (9, 1, 2),
-    SV_SMALL_KEY: (11, 1, 2),
+    SVT_SMALL_KEY: (11, 1, 2),
     LMF_SMALL_KEY: (17, 1, 1),
     AC_SMALL_KEY: (12, 1, 2),
     SSH_SMALL_KEY: (18, 1, 2),

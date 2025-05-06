@@ -1320,9 +1320,9 @@
             </widget>
            </item>
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_sv_room_bars">
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_svt_room_bars">
              <property name="text">
-              <string>Sky Keep Bars in Skyview Room</string>
+              <string>Sky Keep Bars in Skyview Temple Room</string>
              </property>
             </widget>
            </item>
@@ -3937,15 +3937,15 @@ QPushButton {
              <number>2</number>
             </property>
             <item>
-             <layout class="QVBoxLayout" name="dungeon_sv_layout">
+             <layout class="QVBoxLayout" name="dungeon_svt_layout">
               <property name="spacing">
-               <number>1</number>
+               <number>1</number>S
               </property>
               <property name="sizeConstraint">
                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
               </property>
               <item>
-               <layout class="QHBoxLayout" name="dungeon_sv_keys_layout">
+               <layout class="QHBoxLayout" name="dungeon_svt_keys_layout">
                 <property name="spacing">
                  <number>1</number>
                 </property>

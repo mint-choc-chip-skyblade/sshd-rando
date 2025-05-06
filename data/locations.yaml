@@ -5362,7 +5362,7 @@
   is_gui_excluded_location: False
 
 
-# Skyview Temple (SV):
+# Skyview Temple (SVT):
 - name: Skyview Temple - Slingshot Wall Eye behind First Bird Statue
   original_item: Green Rupee
   types:

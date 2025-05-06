@@ -119,7 +119,7 @@ World 1:
   shortcut_sandship_brig_bars: 'off'
   shortcut_fs_outside_bars: 'off'
   shortcut_fs_lava_flow: 'on'
-  shortcut_sky_keep_sv_room_bars: 'on'
+  shortcut_sky_keep_svt_room_bars: 'on'
   logic_early_lake_floria: 'off'
   logic_beedles_island_cage_chest_dive: 'off'
   logic_volcanic_island_dive: 'off'

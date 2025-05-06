@@ -920,10 +920,10 @@ class Ui_main_window(object):
 
         self.verticalLayout_25.addWidget(self.setting_shortcut_fs_lava_flow)
 
-        self.setting_shortcut_sky_keep_sv_room_bars = RandoTriStateCheckBox(self.open_dungeons_group_box)
-        self.setting_shortcut_sky_keep_sv_room_bars.setObjectName(u"setting_shortcut_sky_keep_sv_room_bars")
+        self.setting_shortcut_sky_keep_svt_room_bars = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_sky_keep_svt_room_bars.setObjectName(u"setting_shortcut_sky_keep_svt_room_bars")
 
-        self.verticalLayout_25.addWidget(self.setting_shortcut_sky_keep_sv_room_bars)
+        self.verticalLayout_25.addWidget(self.setting_shortcut_sky_keep_svt_room_bars)
 
         self.shortcuts_vspacer = QSpacerItem(20, 148, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -2569,19 +2569,19 @@ class Ui_main_window(object):
         self.dungeon_inventory_layout = QHBoxLayout()
         self.dungeon_inventory_layout.setSpacing(2)
         self.dungeon_inventory_layout.setObjectName(u"dungeon_inventory_layout")
-        self.dungeon_sv_layout = QVBoxLayout()
-        self.dungeon_sv_layout.setSpacing(1)
-        self.dungeon_sv_layout.setObjectName(u"dungeon_sv_layout")
-        self.dungeon_sv_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
-        self.dungeon_sv_keys_layout = QHBoxLayout()
-        self.dungeon_sv_keys_layout.setSpacing(1)
-        self.dungeon_sv_keys_layout.setObjectName(u"dungeon_sv_keys_layout")
-        self.dungeon_sv_keys_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
+        self.dungeon_svt_layout = QVBoxLayout()
+        self.dungeon_svt_layout.setSpacing(1)
+        self.dungeon_svt_layout.setObjectName(u"dungeon_svt_layout")
+        self.dungeon_svt_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
+        self.dungeon_svt_keys_layout = QHBoxLayout()
+        self.dungeon_svt_keys_layout.setSpacing(1)
+        self.dungeon_svt_keys_layout.setObjectName(u"dungeon_svt_keys_layout")
+        self.dungeon_svt_keys_layout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
 
-        self.dungeon_sv_layout.addLayout(self.dungeon_sv_keys_layout)
+        self.dungeon_svt_layout.addLayout(self.dungeon_svt_keys_layout)
 
 
-        self.dungeon_inventory_layout.addLayout(self.dungeon_sv_layout)
+        self.dungeon_inventory_layout.addLayout(self.dungeon_svt_layout)
 
         self.dungeon_et_layout = QVBoxLayout()
         self.dungeon_et_layout.setSpacing(1)
@@ -3127,7 +3127,7 @@ class Ui_main_window(object):
         self.setting_shortcut_sandship_brig_bars.setText(QCoreApplication.translate("main_window", u"Sandship Bars before Brig", None))
         self.setting_shortcut_fs_outside_bars.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Bars between Outdoor Bridges", None))
         self.setting_shortcut_fs_lava_flow.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Skip Lava Chase", None))
-        self.setting_shortcut_sky_keep_sv_room_bars.setText(QCoreApplication.translate("main_window", u"Sky Keep Bars in Skyview Room", None))
+        self.setting_shortcut_sky_keep_svt_room_bars.setText(QCoreApplication.translate("main_window", u"Sky Keep Bars in Skyview Temple Room", None))
         self.entrance_randomization_group_box.setTitle(QCoreApplication.translate("main_window", u"Entrance Randomization", None))
         self.setting_randomize_door_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Door Entrances", None))
         self.setting_randomize_interior_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Interior Entrances", None))

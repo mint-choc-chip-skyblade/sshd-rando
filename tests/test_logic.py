@@ -329,7 +329,7 @@ def _check_inventory_items_were_placed(worlds: list[World]):
                 TREASURE_MEDAL,
                 POTION_MEDAL,
                 BUG_MEDAL,
-                SV_MAP,
+                SVT_MAP,
                 ET_MAP,
                 LMF_MAP,
                 AC_MAP,

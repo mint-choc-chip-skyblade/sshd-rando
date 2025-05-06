@@ -177,8 +177,8 @@ class Tracker:
 
     def init_buttons(self):
 
-        self.sv_small_key_button = TrackerInventoryButton(
-            ["Nothing", SV_SMALL_KEY, SV_SMALL_KEY],
+        self.svt_small_key_button = TrackerInventoryButton(
+            ["Nothing", SVT_SMALL_KEY, SVT_SMALL_KEY],
             [
                 "dungeons/small_key_0.png",
                 "dungeons/small_key_1.png",
@@ -244,8 +244,8 @@ class Tracker:
             [f"Sky Keep Small Key ({i}/1)" for i in range(2)],
         )
 
-        self.sv_boss_key_button = TrackerInventoryButton(
-            ["Nothing", SV_BOSS_KEY],
+        self.svt_boss_key_button = TrackerInventoryButton(
+            ["Nothing", SVT_BOSS_KEY],
             ["dungeons/golden_carving_gray.png", "dungeons/golden_carving.png"],
         )
         self.et_boss_key_button = TrackerInventoryButton(
@@ -589,8 +589,8 @@ class Tracker:
         self.back_button.setVisible(False)
 
     def assign_buttons_to_layout(self) -> None:
-        self.ui.dungeon_sv_keys_layout.addWidget(self.sv_small_key_button)
-        self.ui.dungeon_sv_keys_layout.addWidget(self.sv_boss_key_button)
+        self.ui.dungeon_svt_keys_layout.addWidget(self.svt_small_key_button)
+        self.ui.dungeon_svt_keys_layout.addWidget(self.svt_boss_key_button)
         self.ui.dungeon_et_keys_layout.addWidget(self.et_key_piece_button)
         self.ui.dungeon_et_keys_layout.addWidget(self.et_boss_key_button)
         self.ui.dungeon_lmf_keys_layout.addWidget(self.lmf_small_key_button)
@@ -604,7 +604,7 @@ class Tracker:
         self.ui.dungeon_sk_keys_layout.addWidget(self.sk_small_key_button)
         self.ui.dungeon_sk_keys_layout.addWidget(self.sk_sot_button)
 
-        self.ui.dungeon_sv_layout.addWidget(TrackerDungeonLabel("SV", "Skyview Temple"))
+        self.ui.dungeon_svt_layout.addWidget(TrackerDungeonLabel("SVT", "Skyview Temple"))
         self.ui.dungeon_et_layout.addWidget(TrackerDungeonLabel("ET", "Earth Temple"))
         self.ui.dungeon_lmf_layout.addWidget(
             TrackerDungeonLabel("LMF", "Lanayru Mining Facility")
@@ -766,7 +766,7 @@ class Tracker:
 
         # Small Key buttons
         visible = self.world.setting("small_keys") != "removed"
-        self.sv_small_key_button.setVisible(visible)
+        self.svt_small_key_button.setVisible(visible)
         self.lmf_small_key_button.setVisible(visible)
         self.ac_small_key_button.setVisible(visible)
         self.ssh_small_key_button.setVisible(visible)
@@ -775,7 +775,7 @@ class Tracker:
 
         # Boss Key buttons
         visible = self.world.setting("boss_keys") != "removed"
-        self.sv_boss_key_button.setVisible(visible)
+        self.svt_boss_key_button.setVisible(visible)
         self.et_boss_key_button.setVisible(visible)
         self.lmf_boss_key_button.setVisible(visible)
         self.ac_boss_key_button.setVisible(visible)

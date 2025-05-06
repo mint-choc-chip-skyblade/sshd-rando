@@ -4855,7 +4855,7 @@ D003_8: # Triforce Room
       layer: 2 # force layer 2 so the barbed wire is gone
 
 D100: # Skyview Temple
-  # Removed flags 11 (Beat Ancient Cistern / Rail tracks), 206 (Obtained Water Dragon's Scale), and 4 (Watched Enter SV CS)
+  # Removed flags 11 (Beat Ancient Cistern / Rail tracks), 206 (Obtained Water Dragon's Scale), and 4 (Watched Enter SVT CS)
   # Change default layer to 1 instead of 0
   - name: Layer override
     type: layeroverride

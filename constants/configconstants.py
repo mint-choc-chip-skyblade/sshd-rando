@@ -69,7 +69,7 @@ DEFAULT_SETTINGS = {
             HYLIAN_SHIELD,
             PROGRESSIVE_POUCH,
             SCRAPPER,
-            SV_MAP,
+            SVT_MAP,
             ET_MAP,
             LMF_MAP,
             AC_MAP,
@@ -197,4 +197,5 @@ TRACKER_NOTE_EVENTS = {
 
 SETTING_ALIASES = {
     "shortcut_fs_lava_flow": "fs_lava_flow",
+    "shortcut_sky_keep_svt_room_bars": "shortcut_sky_keep_sv_room_bars",
 }
