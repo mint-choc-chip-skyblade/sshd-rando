@@ -2570,9 +2570,9 @@
   pretty: Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue
   cryptic: <r<disturbing fungi in the woods>>
 
-- name: Faron Woods - Item behind Bombable Rock
-  standard: Faron Woods - Item behind Bombable Rock
-  pretty: Faron Woods - Item behind Bombable Rock
+- name: Faron Woods - Item behind Lower Bombable Rock
+  standard: Faron Woods - Item behind Lower Bombable Rock
+  pretty: Faron Woods - Item behind Lower Bombable Rock
   cryptic: an <r<item behind some forest rocks>>
 
 - name: Faron Woods - Item on Great Tree after Tightrope
@@ -2645,9 +2645,9 @@
   pretty: Faron Woods - Slingshot Northwest Great Tree Trunk
   cryptic: <r<shooting ancient wood>>
 
-- name: Faron Woods - Chest behind Bombable Rocks near Erla
-  standard: Faron Woods - Chest behind Bombable Rocks near Erla
-  pretty: Faron Woods - Chest behind Bombable Rocks near Erla
+- name: Faron Woods - Chest behind Upper Bombable Rock
+  standard: Faron Woods - Chest behind Upper Bombable Rock
+  pretty: Faron Woods - Chest behind Upper Bombable Rock
   cryptic: a <r<chest behind some forest rocks>>
 
 - name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1
@@ -2690,9 +2690,9 @@
   pretty: Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba
   cryptic: a <r<fruit above a forest slope>>
 
-- name: Faron Woods - Stamina Fruit on Vines near Erla
-  standard: Faron Woods - Stamina Fruit on Vines near Erla
-  pretty: Faron Woods - Stamina Fruit on Vines near Erla
+- name: Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock
+  standard: Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock
+  pretty: Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock
   cryptic: a <r<fruit on some forest vines>>
 
 - name: Faron Woods - Stamina Fruit on Vines on Great Tree

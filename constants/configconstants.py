@@ -181,6 +181,9 @@ LOCATION_ALIASES = {
     "Skyloft Village - Luv and Bertie's Closet": "Skyloft Village - Bertie and Luv's Closet",
     "Skyloft Village - Gondo's Closet": "Skyloft Village - Gondo and Gebra's Closet",
     "Skyloft Village - Rupin's Closet": "Skyloft Village - Rupin and Goselle's Closet",
+    "Faron Woods - Item behind Bombable Rock": "Faron Woods - Item behind Lower Bombable Rock",
+    "Faron Woods - Stamina Fruit on Vines near Erla": "Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock",
+    "Faron Woods - Chest behind Bombable Rocks near Erla": "Faron Woods - Chest behind Upper Bombable Rock",
 }
 
 TRACKER_NOTE_EVENTS = {

@@ -2100,7 +2100,7 @@
   Paths:
     - stage/F100/r0/l0/TgReact/0xFD5B
 
-- name: Faron Woods - Item behind Bombable Rock
+- name: Faron Woods - Item behind Lower Bombable Rock
   original_item: Heart Piece
   types:
     - Freestanding Items
@@ -2231,7 +2231,7 @@
   Paths:
     - stage/F100/r0/l0/TgReact/0xFD66
 
-- name: Faron Woods - Stamina Fruit on Vines near Erla
+- name: Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -2239,7 +2239,7 @@
   Paths:
     - stage/F100/r0/l0/Item/0x5CE4
 
-- name: Faron Woods - Chest behind Bombable Rocks near Erla
+- name: Faron Woods - Chest behind Upper Bombable Rock
   original_item: Uncommon Treasure
   types:
     - Chests
