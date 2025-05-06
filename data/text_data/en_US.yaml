@@ -1255,9 +1255,9 @@
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Mogma Turf Goddess Cube
-  standard: Mogma Turf Goddess Cube
-  pretty: the <Mogma Turf Goddess Cube>
+- name: Mogma Turf Goddess Cube on Raised Pillar
+  standard: Mogma Turf Goddess Cube on Raised Pillar
+  pretty: the <Mogma Turf Goddess Cube on Raised Pillar>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
@@ -3705,9 +3705,9 @@
   pretty: Mogma Turf - Chest behind Bombable Wall in Fire Maze
   cryptic: a <r<chest in a hot maze>>
 
-- name: Mogma Turf - Goddess Cube
-  standard: Mogma Turf - Goddess Cube
-  pretty: Mogma Turf - Goddess Cube
+- name: Mogma Turf - Goddess Cube on Raised Pillar
+  standard: Mogma Turf - Goddess Cube on Raised Pillar
+  pretty: Mogma Turf - Goddess Cube on Raised Pillar
   cryptic:
 
 - name: Volcano Summit - Bonk Waterfall

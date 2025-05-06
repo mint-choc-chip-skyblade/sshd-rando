@@ -250,7 +250,7 @@
     Mogma Turf: Nothing
   locations:
     Mogma Turf - Free Fall Chest: Nothing
-    Mogma Turf - Goddess Cube: Goddess_Sword
+    Mogma Turf - Goddess Cube on Raised Pillar: Goddess_Sword
 
 - name: Mogma Turf
   hint_region: Mogma Turf

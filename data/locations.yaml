@@ -3810,6 +3810,12 @@
   Paths:
     - stage/F210/r0/l0/TBox/64
 
+- name: Mogma Turf - Goddess Cube on Raised Pillar
+  original_item: Mogma Turf Goddess Cube on Raised Pillar
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Mogma Turf - Chest behind Bombable Wall at Entrance
   original_item: Golden Skull
   types:
@@ -3897,12 +3903,6 @@
     - Chests
   Paths:
     - stage/F210/r0/l0/TBox/70
-
-- name: Mogma Turf - Goddess Cube
-  original_item: Mogma Turf Goddess Cube
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
 
 
 # Volcano Summit:

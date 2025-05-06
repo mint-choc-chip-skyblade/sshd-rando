@@ -1253,7 +1253,8 @@
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
   plurality: Singular
 
-- name: Mogma Turf Goddess Cube
+# TODO: update with new name
+- name: Mogma Turf Goddess Cube on Raised Pillar
   standard: Artefakt der Göttin im Mogma-Revier
   pretty: das <Artefakt der Göttin im Mogma-Revier>
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
@@ -3710,7 +3711,8 @@
   pretty: Mogma-Revier - Schatztruhe hinter sprengbarer Wand im Feuerlabyrinth
   cryptic: eine <r<Truhe in einem heißen Labyrinth>>
 
-- name: Mogma Turf - Goddess Cube
+# TODO: update with new name
+- name: Mogma Turf - Goddess Cube on Raised Pillar
   standard: Mogma-Revier - Artefakt der Göttin
   pretty: Mogma-Revier - Artefakt der Göttin
   cryptic:

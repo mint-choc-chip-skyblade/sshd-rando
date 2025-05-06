@@ -1415,7 +1415,7 @@
   advancement: true
   goddess_chest: Central Skyloft - Goddess Chest in Shed
 - id: 270
-  name: Mogma Turf Goddess Cube
+  name: Mogma Turf Goddess Cube on Raised Pillar
   types:
     - Goddess Cube
   oarc: null

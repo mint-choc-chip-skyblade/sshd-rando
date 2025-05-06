@@ -187,6 +187,7 @@ LOCATION_ALIASES = {
     "Deep Woods - Goddess Cube in front of Skyview": "Deep Woods - Goddess Cube in front of Temple",
     "Deep Woods - Goddess Cube on top of Skyview": "Deep Woods - Goddess Cube on top of Temple",
     "Thrill Digger Cave - Gossip Stone near Tubert": "Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator",
+    "Mogma Turf - Goddess Cube": "Mogma Turf - Goddess Cube on Raised Pillar",
 }
 
 TRACKER_NOTE_EVENTS = {
