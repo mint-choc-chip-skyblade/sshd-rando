@@ -187,7 +187,7 @@
     LMF Boss Key Room: Nothing
     LMF Big Hub Near Boss Door: (Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows) or (logic_lmf_minecart_jump and (Bomb_Bag or Beetle))
   locations:
-    Lanayru Mining Facility - Raised Chest in Hub Room after Minecart: Nothing
+    Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts: Nothing
 
 
 - name: LMF Boss Room

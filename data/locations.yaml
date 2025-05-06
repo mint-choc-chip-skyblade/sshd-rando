@@ -6250,7 +6250,7 @@
   Paths:
     - stage/D300_1/r8/l0/TBox/71
 
-- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
   original_item: Red Rupee
   types:
     - Chests

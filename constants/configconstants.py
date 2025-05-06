@@ -167,6 +167,7 @@ LOCATION_ALIASES = {
     "Inside the Statue of the Goddess - First Goddess Sword Item": "Inside the Statue of the Goddess - Raise Sword Item 1",
     "Inside the Statue of the Goddess - Second Goddess Sword Item": "Inside the Statue of the Goddess - Raise Sword Item 2",
     "Bokoblin Base - Raised Chest in Volcano Summit": "Bokoblin Base - Raise Sword",
+    "Lanayru Mining Facility - Raised Chest in Hub Room after Minecart": "Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts",
 }
 
 TRACKER_NOTE_EVENTS = {

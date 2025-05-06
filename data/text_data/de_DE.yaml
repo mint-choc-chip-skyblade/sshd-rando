@@ -5148,7 +5148,8 @@
   pretty: Ranelle-Steinwerk - Schatztruhe nach Doppel-Armos-Kampf
   cryptic: ein Paar Armos, tief im <r<Ranelle-Steinwerk>>
 
-- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+# TODO: update "Minewagen" to be plural
+- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
   standard: Ranelle-Steinwerk - Erhöhte Schatztruhe im Zentralraum nach Minenwagen
   pretty: Ranelle-Steinwerk - Erhöhte Schatztruhe im Zentralraum nach Minenwagen
   cryptic: die <r<Truhe tief im Bergwerk>>

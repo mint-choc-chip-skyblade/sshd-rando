@@ -5157,9 +5157,9 @@
   pretty: Lanayru Mining Facility - Chest after Double Armos Fight
   cryptic: deep inside <r<Lanayru Mining Facility, a pair of Armos>>
 
-- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
-  standard: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
-  pretty: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
+  standard: Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
+  pretty: Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
   cryptic: the <r<deepest chest in a mining facility>>
 
 - name: Lanayru Mining Facility - Defeat Boss
