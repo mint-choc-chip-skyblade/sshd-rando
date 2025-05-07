@@ -4010,6 +4010,12 @@
 
 
 # Volcano Summit:
+- name: Volcano Summit - Goddess Cube in Lava Lake
+  original_item: Volcano Summit Goddess Cube in Lava Lake
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Volcano Summit - Bonk Waterfall
   original_item: Fairy
   types:
@@ -4017,6 +4023,12 @@
     - Custom Flag
   Paths:
     - stage/F201_4/r0/l0/TgReact/0xFC15
+
+- name: Volcano Summit - Goddess Cube at Summit Waterfall
+  original_item: Volcano Summit Goddess Cube at Summit Waterfall
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Volcano Summit - Chest on Cliff behind Bombable Wall near Waterfall
   original_item: Silver Rupee
@@ -4048,18 +4060,6 @@
   hint: sometimes
   Paths:
     - stage/F201_3/r0/l0/Item/104 #sceneflagID
-
-- name: Volcano Summit - Goddess Cube in Lava Lake
-  original_item: Volcano Summit Goddess Cube in Lava Lake
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Volcano Summit - Goddess Cube at Summit Waterfall
-  original_item: Volcano Summit Goddess Cube at Summit Waterfall
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
 
 - name: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
   original_item: Red Rupee
