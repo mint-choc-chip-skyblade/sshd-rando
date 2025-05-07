@@ -188,6 +188,7 @@ LOCATION_ALIASES = {
     "Deep Woods - Goddess Cube on top of Skyview": "Deep Woods - Goddess Cube on top of Temple",
     "Thrill Digger Cave - Gossip Stone near Tubert": "Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator",
     "Mogma Turf - Goddess Cube": "Mogma Turf - Goddess Cube on Raised Pillar",
+    "Bazaar - Potion Lady's Gift": "Bazaar - Luv the Potion Lady's Gift",
 }
 
 TRACKER_NOTE_EVENTS = {

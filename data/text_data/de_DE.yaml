@@ -1546,7 +1546,8 @@
   pretty: Übungshalle - Juwel auf Dachbalken
   cryptic: ein <r<Trainingsjuwel>>
 
-- name: Bazaar - Potion Lady's Gift
+# TODO: update with new name
+- name: Bazaar - Luv the Potion Lady's Gift
   standard: Basar - Geschenk der Trankbrauerin
   pretty: Basar - Geschenk der Trankbrauerin
   cryptic: ein <r<Geschenk einer Verkäuferin>>
