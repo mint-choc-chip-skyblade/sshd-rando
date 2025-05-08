@@ -5223,15 +5223,6 @@
     - event/406-TrolleyRace/77
     - oarc/F301_4/r0/l0
 
-- name: Shipyard - Gossip Stone after First Minecart Track
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 23
-  eventflowindex: 32
-
 - name: Shipyard - Bonk Sign before Second Minecart Track
   original_item: Blue Rupee
   types:
@@ -5263,6 +5254,15 @@
     - Custom Flag
   Paths:
     - stage/F301_7/r0/l0/TgReact/0xFC08
+
+- name: Shipyard - Gossip Stone after First Minecart Track
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 23
+  eventflowindex: 32
 
 ## Pirate Stronghold
 - name: Pirate Stronghold - Rupee on East Sea Pillar
