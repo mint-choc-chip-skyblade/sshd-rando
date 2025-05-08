@@ -132,7 +132,7 @@
     Beedle's Island - Crystal on Airshop Propeller: Night and Beetle
     Beedle's Island - Deliver Beedle's Insect Cage: Night and Beedles_Insect_Cage
     Beedle's Island - Top Goddess Chest: Day and Temple_of_Time_Goddess_Cube
-    Beedle's Island - Goddess Chest in Cage: (Night or (Day and logic_beedles_island_cage_chest_dive)) and Deep_Woods_Goddess_Cube_on_top_of_Skyview
+    Beedle's Island - Goddess Chest in Cage: (Night or (Day and logic_beedles_island_cage_chest_dive)) and Deep_Woods_Goddess_Cube_on_top_of_Temple
 
 
 - name: Northeast Island
@@ -228,7 +228,7 @@
   exits:
     The Sky: Day
   locations:
-    Island Closest to Faron Pillar - Goddess Chest: Deep_Woods_Goddess_Cube_in_front_of_Skyview
+    Island Closest to Faron Pillar - Goddess Chest: Deep_Woods_Goddess_Cube_in_front_of_Temple
 
 
 - name: Volcanic Island
@@ -298,7 +298,7 @@
     Isle of Songs Interior: Sword or Distance_Activator or Whip or shortcut_ios_bridge_complete # bomb bag doesn't work
   locations:
     Isle of Songs - Top Goddess Chest: Day and Volcano_Summit_Goddess_Cube_near_Fire_Sanctuary_Entrance
-    Isle of Songs - Lower Goddess Chest: Day and Mogma_Turf_Goddess_Cube
+    Isle of Songs - Lower Goddess Chest: Day and Mogma_Turf_Goddess_Cube_on_Raised_Pillar
 
 
 - name: Isle of Songs Interior

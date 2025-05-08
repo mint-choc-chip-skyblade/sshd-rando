@@ -115,7 +115,7 @@
   exits:
     Outside Thrill Digger Cave: Nothing
   locations:
-    Thrill Digger Cave - Gossip Stone near Tubert: Nothing
+    Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator: Nothing
     Thrill Digger Cave - Slingshot Left Blue Crystal 1: Slingshot
     Thrill Digger Cave - Slingshot Left Green Crystal 1: Slingshot
     Thrill Digger Cave - Slingshot Left Blue Crystal 2: Slingshot
@@ -250,7 +250,7 @@
     Mogma Turf: Nothing
   locations:
     Mogma Turf - Free Fall Chest: Nothing
-    Mogma Turf - Goddess Cube: Goddess_Sword
+    Mogma Turf - Goddess Cube on Raised Pillar: Goddess_Sword
 
 - name: Mogma Turf
   hint_region: Mogma Turf

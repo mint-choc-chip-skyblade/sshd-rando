@@ -102,12 +102,12 @@ Below is the list of all the flags that the randomizer changes:
 * 57: Obtained the item in Horwell's Closet
 * 61: Obtained the item in Karane's Closet
 * 81: Obtained the item in Orielle and Parrow's Closet
-* 82: Obtained the item in Wryna's Closet
+* 82: Obtained the item in Kukiel's Family Closet
 * 100: Obtained the item in Sparrot's Closet
-* 101: Obtained the item in Luv and Bertie's Closet
-* 105: Obtained the item in Gondo's Closet
-* 107: Obtained the item in Mallara's Closet
-* 116: Obtained the item in Rupin's Closet
+* 101: Obtained the item in Bertie and Luv's Closet
+* 105: Obtained the item in Gondo and Gebra's Closet
+* 107: Obtained the item in Pipit and Mallara's Closet
+* 116: Obtained the item in Rupin and Goselle's Closet
 * 117: Obtained the item in Peater's Closet
 * 118: Obtained the item in Peatrice's Closet
 * 127: Obtained the Academy Bell Item

@@ -68,11 +68,11 @@ World 1:
 # If you'd like to plandomize a multiworld seed, then each element
 # must be under a "World #" element, with the '#' being the world number
 # the locations will be for. For example, if we want place the Whip at
-# Bazaar - Potion Lady's Gift in World 1 and the Skyview Boss Key at
+# Bazaar - Luv the Potion Lady's Gift in World 1 and the Skyview Boss Key at
 # Sandship - Chest after Scervo Fight in World 2, then we'd type
 World 1:
   locations:
-    Bazaar - Potion Lady's Gift: Whip
+    Bazaar - Luv the Potion Lady's Gift: Whip
 World 2:
   locations:
     Sandship - Chest after Scervo Fight: Skyview Boss Key

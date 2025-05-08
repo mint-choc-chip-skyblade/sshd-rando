@@ -255,11 +255,11 @@ def patch_closet(
         ("F001r", 4, 0xFC03): 57,  # Horwell's Closet         6x02
         ("F001r", 6, 0xFC06): 61,  # Karane's Closet          6x20
         ("F005r", 0, 0xFC0E): 81,  # O&P's Closet             Bx02
-        ("F006r", 0, 0xFC16): 82,  # Wryna's Closet           Bx04
+        ("F006r", 0, 0xFC16): 82,  # Kukiel's Closet          Bx04
         ("F013r", 0, 0xFC0E): 100,  # Sparrot's Closet        Dx10
         ("F014r", 0, 0xFC12): 101,  # Luv and Bertie's Closet Dx20
         ("F015r", 0, 0xFC10): 105,  # Gondo's Closet          Cx02
-        ("F016r", 0, 0xFC28): 107,  # Mallara's Closet        Cx04
+        ("F016r", 0, 0xFC28): 107,  # Pipit's Closet          Cx04
         ("F017r", 0, 0xFC1E): 116,  # Rupin's Closet          Fx10
         ("F018r", 0, 0xFC11): 117,  # Peater's Closet         Fx20
         ("F018r", 0, 0xFC12): 118,  # Peatrice's Closet       Fx40

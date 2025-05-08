@@ -119,11 +119,6 @@
 - name: Item 213 Text
   standard: "Du hast die Dungeon-Karte für\nden <s<Turm des Himmels>> erhalten!"
 
-- name: Beedle Half Off Bug Net Text
-  standard: "Oh, Sie interessieren sich also für das\n<y<Schmetterlingsnetz>>?
-             \n\n\nDamit können Sie Insekten einfangen.\nDas macht Spaß und ist zudem auch \nnoch sehr nützlich!
-             \n\nUnd zum halben Preis von nur <r<25 Rubinen>>,\nbin ich sicher Sie machen einen \"guten Fang\",\nfinden Sie nicht auch?\n[1]Ich nehme es![2-]Nein, danke."
-
 - name: Can't buy Pouch text
   standard: "Oh, ich bitte um Verzeihung, mein Herr! Ihr besitzt\nkeine <y<Abenteurertasche>>, deshalb kann\nich Euch dieses Item leider nicht verkaufen..."
 
@@ -156,7 +151,7 @@
 - name: Patch post Gondo Repair Text
   standard: "So, das wär's. Fix und fertig!\n\n\n\n\nIch hätte es ohne deine Hilfe nicht\ngeschafft. Also, hier hast du es...\nwas auch immer das ist."
 
-- name: Rerandomize Treasure Question
+- name: Change Night Treasures/Bugs Question
   standard: "Möchtest du etwas anderes verkaufen?\n[1]Ja[2-]Nein"
 
 - name: Fix Soup textboxes
@@ -254,6 +249,16 @@
 
 - name: Location Hint
   standard: Es wird gesagt, dass durch <location_pretty_or_cryptic_name> <item_pretty_or_cryptic_name> offenbart |wird/werden|.
+
+# TODO: add translations
+# - name: Hint Importance Required
+#   standard: " (<g+<required>>)"
+
+# - name: Hint Importance Possibly Required
+#   standard: " (<ye<possibly required>>)"
+
+# - name: Hint Importance Not Required
+#   standard: " (<s<not required>>)"
 
 - name: Small Key
   standard: kleiner Schlüssel
@@ -1136,26 +1141,26 @@
 
 - name: Health Trap
   standard: Falle
-  pretty: eine Gesundheitsfalle
+  pretty: eine <Gesundheitsfalle>
   cryptic: <r<Lebensraub>>
   plurality: Singular
 
 - name: Groose Trap
   standard: Falle
-  pretty: eine Bado-Falle
+  pretty: eine <Bado-Falle>
   cryptic: <r<Wolkenhorts wahrer Held>>
   plurality: Singular
 
 - name: Noise Trap
   standard: Falle
-  pretty: eine Lärmfalle
+  pretty: eine <Lärmfalle>
   cryptic: eines <r<Audiophils Genuss>>
   plurality: Singular
 
 - name: Curse Trap
   standard: Falle
   pretty:
-    text: eine Fluchfalle
+    text: eine <Fluchfalle>
     plurality: Singular
   cryptic:
     text: ein paar <r<magische Handfesseln>>
@@ -1163,7 +1168,7 @@
 
 - name: Burn Trap
   standard: Falle
-  pretty: eine Feuerfalle
+  pretty: eine <Feuerfalle>
   cryptic: eines <r<Pyrotechnikers Genuss>>
   plurality: Singular
 
@@ -1197,13 +1202,15 @@
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
   plurality: Singular
 
-- name: Deep Woods Goddess Cube in front of Skyview
+# TODO: update with new name
+- name: Deep Woods Goddess Cube in front of Temple
   standard: Artefakt der Göttin tief im Wald vor Himmelsblick
   pretty: das <Artefakt der Göttin tief im Wald vor Himmelsblick>
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
   plurality: Singular
 
-- name: Deep Woods Goddess Cube on top of Skyview
+# TODO: update with new name
+- name: Deep Woods Goddess Cube on top of Temple
   standard: Artefakt der Göttin tief im Wald auf Himmelsblick
   pretty: das <Artefakt der Göttin tief im Wald auf Himmelsblick>
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
@@ -1251,7 +1258,8 @@
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
   plurality: Singular
 
-- name: Mogma Turf Goddess Cube
+# TODO: update with new name
+- name: Mogma Turf Goddess Cube on Raised Pillar
   standard: Artefakt der Göttin im Mogma-Revier
   pretty: das <Artefakt der Göttin im Mogma-Revier>
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
@@ -1340,7 +1348,11 @@
   pretty: Ritterschule - Grus' Geschenk
   cryptic: ein <r<Geschenk von einem Freund>>
 
+# TODO: add translations
 # - name: Knight Academy - Deliver Barrel to Henya the Lunch Lady
+#   standard: Knight Academy - Deliver Barrel to Henya the Lunch Lady
+#   pretty: Knight Academy - Deliver Barrel to Henya the Lunch Lady
+#   cryptic: carrying a <r<heavy burden>>
 
 - name: Knight Academy - Item from Cawlin
   standard: Ritterschule - Item von Rax
@@ -1502,11 +1514,13 @@
   pretty: Oberer Wolkenhort - Ausdauerfrucht nahe Statue der Göttin
   cryptic: eine <r<Frucht nahe einer großen Statue>>
 
+# TODO: update with new name
 - name: Inside the Statue of the Goddess - Raise Sword Item 1
   standard: In der Statue der Göttin - Schwert der Göttin Item 1
   pretty: In der Statue der Göttin - Schwert der Göttin Item 1
   cryptic: die <r<erste Belohnung der Göttin>>
 
+# TODO: update with new name
 - name: Inside the Statue of the Goddess - Raise Sword Item 2
   standard: In der Statue der Göttin - Schwert der Göttin Item 2
   pretty: In der Statue der Göttin - Schwert der Göttin Item 2
@@ -1532,7 +1546,8 @@
   pretty: Übungshalle - Juwel auf Dachbalken
   cryptic: ein <r<Trainingsjuwel>>
 
-- name: Bazaar - Potion Lady's Gift
+# TODO: update with new name
+- name: Bazaar - Luv the Potion Lady's Gift
   standard: Basar - Geschenk der Trankbrauerin
   pretty: Basar - Geschenk der Trankbrauerin
   cryptic: ein <r<Geschenk einer Verkäuferin>>
@@ -1632,7 +1647,8 @@
   pretty: Zentrum des Wolkenhorts - Sasias Dankbarkeit
   cryptic: eine <r<glückliche Mutter>>
 
-- name: Central Skyloft - Wryna's Closet
+# TODO: update with new name
+- name: Central Skyloft - Kukiel's Family Closet
   standard: Zentrum des Wolkenhorts - Sasias Schrank
   pretty: Zentrum des Wolkenhorts - Sasias Schrank
   cryptic: <r<Durchwühlen der Kleidung einer glücklichen Mutter>>
@@ -1737,7 +1753,8 @@
   pretty: Zentrum des Wolkenhorts - Ausdauerfrucht zwischen Holzplanken
   cryptic: eine <r<Frucht in einer lebhaften Gegend>>
 
-- name: Central Skyloft - Stamina Fruit near Wryna's House
+# TODO: update with new name
+- name: Central Skyloft - Stamina Fruit near Kukiel's House
   standard: Zentrum des Wolkenhorts - Ausdauerfrucht nahe Sasias Haus
   pretty: Zentrum des Wolkenhorts - Ausdauerfrucht nahe Sasias Haus
   cryptic: eine <r<Frucht in einer lebhaften Gegend>>
@@ -1752,7 +1769,8 @@
   pretty: Zentrum des Wolkenhorts - Ausdauerfrucht nahe Galea und Hirus Haus
   cryptic: eine <r<Frucht in einer lebhaften Gegend>>
 
-- name: Central Skyloft - Stamina Fruit near Bazaar
+# TODO: update with new name
+- name: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
   standard: Zentrum des Wolkenhorts - Ausdauerfrucht nahe Basar
   pretty: Zentrum des Wolkenhorts - Ausdauerfrucht nahe Basar
   cryptic: eine <r<Frucht in einer lebhaften Gegend>>
@@ -1797,12 +1815,14 @@
   pretty: Zentrum des Wolkenhorts - Juwel zwischen Holzplanken
   cryptic: ein <r<Juwel entlang eines hölzernen Pfads>>
 
-- name: Central Skyloft - Crystal after Waterfall Cave
+# TODO: update with new name
+- name: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
   standard: Zentrum des Wolkenhorts - Juwel nach Wasserfallhöhle
   pretty: Zentrum des Wolkenhorts - Juwel nach Wasserfallhöhle
   cryptic: ein <r<Juwel nahe einem Höhlenausgang>>
 
-- name: Central Skyloft - Crystal in Loftwing Prison
+# TODO: update with new name
+- name: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
   standard: Zentrum des Wolkenhorts - Juwel in Wolkenvogelgefängnis
   pretty: Zentrum des Wolkenhorts - Juwel in Wolkenvogelgefängnis
   cryptic: ein <r<Juwel in einem ehemaligen Gefängnis>>
@@ -1822,12 +1842,14 @@
   pretty: Wolkenhort-Dorf - Rollattacke gegen Baum nahe Fluss
   cryptic: <r<Anrempeln eines Baums>> im <b<Dorf>>
 
-- name: Skyloft Village - Clean Mallara's House
+# TODO: update with new name
+- name: Skyloft Village - Clean Pipit's House
   standard: Wolkenhort-Dorf - Putze Anatis Haus
   pretty: Wolkenhort-Dorf - Putze Anatis Haus
   cryptic: einer <r<Mutter Faulheit>>
 
-- name: Skyloft Village - Mallara's Closet
+# TODO: update with new name
+- name: Skyloft Village - Pipit and Mallara's Closet
   standard: Wolkenhort-Dorf - Anatis Schrank
   pretty: Wolkenhort-Dorf - Anatis Schrank
   cryptic: <r<Durchwühlen eines staubigen Schranks>>
@@ -1837,17 +1859,20 @@
   pretty: Wolkenhort-Dorf - Rassel zu Diomed bringen
   cryptic: einen <r<dankbaren, erschöpften Vater>> 
 
-- name: Skyloft Village - Luv and Bertie's Closet
+# TODO: update with new name
+- name: Skyloft Village - Bertie and Luv's Closet
   standard: Wolkenhort-Dorf - Xia und Diomeds Schrank
   pretty: Wolkenhort-Dorf - Xia and Diomeds Schrank
   cryptic: <r<Durchwühlen der Kleidung eines Trankbrauerpaars>>
 
-- name: Skyloft Village - Gondo's Closet
+# TODO: update with new name
+- name: Skyloft Village - Gondo and Gebra's Closet
   standard: Wolkenhort-Dorf - Dorucos Schrank
   pretty: Wolkenhort-Dorf - Dorucos Schrank
   cryptic: <r<Durchwühlen der Kleidung eines Mechanikers>>
 
-- name: Skyloft Village - Rupin's Closet
+# TODO: update with new name
+- name: Skyloft Village - Rupin and Goselle's Closet
   standard: Wolkenhort-Dorf - Kulkans Schrank
   pretty: Wolkenhort-Dorf - Kulkans Schrank
   cryptic: <r<Durchwühlen der Kleidung eines Geizhalses>>
@@ -1872,7 +1897,8 @@
   pretty: Wolkenhort-Dorf - Juwel nahe Kürbisfeld
   cryptic: ein <r<Juwel hinter einem Baum>>
 
-- name: Skyloft Village - Stamina Fruit above Mallara's House
+# TODO: update with new name
+- name: Skyloft Village - Stamina Fruit above Pipit's House
   standard: Wolkenhort-Dorf - Ausdauerfrucht oberhalb Anatis Haus
   pretty: Wolkenhort-Dorf - Ausdauerfrucht oberhalb Anatis Haus
   cryptic: eine <r<Frucht nahe einiger Residenzen>>
@@ -2529,6 +2555,12 @@
   pretty: Siegelhain - Rollattacke gegen kleinen östlichen Felsen vor Wald von Phirone
   cryptic: <r<Anrempeln eines kleinen Felsens>> hinter einem <g<versiegelten Tempel>>
 
+# TOOD: add translations
+# - name: Sealed Temple - Collect Fruit from the Tree of Life
+#   standard: Sealed Temple - Collect Fruit from the Tree of Life
+#   pretty: Sealed Temple - Collect Fruit from the Tree of Life
+#   cryptic: <r<growing an ancient seed>>
+
 - name: Temple of Hylia - Zelda's Blessing
   standard: Hylia-Tempel - Zeldas Segen
   pretty: Hylia-Tempel - Zeldas Segen
@@ -2560,7 +2592,8 @@
   pretty: Wald von Phirone - Rollattacke gegen gelben Pilz nach Das Waldesinnere-Vogelstatue
   cryptic: <r<Anrempeln eines Fungus im Wald>>
 
-- name: Faron Woods - Item behind Bombable Rock
+# TODO: update with new name
+- name: Faron Woods - Item behind Lower Bombable Rock
   standard: Wald von Phirone - Item hinter sprengbaren Felsen
   pretty: Wald von Phirone - Item hinter sprengbaren Felsen
   cryptic: ein <r<Item hinter einigen Waldfelsen>>
@@ -2635,7 +2668,8 @@
   pretty: Wald von Phirone - Schleuderschuss vom Nordwesten auf Knoten im Großen Baum
   cryptic: <r<Schießen auf uraltes Holz>>
 
-- name: Faron Woods - Chest behind Bombable Rocks near Erla
+# TODO: update with new name
+- name: Faron Woods - Chest behind Upper Bombable Rock
   standard: Wald von Phirone - Schatztruhe hinter sprengbaren Felsen nahe Senbuli
   pretty: Wald von Phirone - Schatztruhe hinter sprengbaren Felsen nahe Senbuli
   cryptic: eine <r<Truhe hinter einigen Waldfelsen>>
@@ -2680,7 +2714,8 @@
   pretty: Wald von Phirone - Ausdauerfrucht oberhalb Abhang bewacht von Dekuranha
   cryptic: eine <r<Frucht oberhalb eines Waldabhangs>>
 
-- name: Faron Woods - Stamina Fruit on Vines near Erla
+# TODO: update with new name
+- name: Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock
   standard: Wald von Phirone - Ausdauerfrucht an Ranken nahe Senbuli
   pretty: Wald von Phirone - Ausdauerfrucht an Ranken nahe Senbuli
   cryptic: eine <r<Frucht an einigen Waldranken>>
@@ -2810,12 +2845,14 @@
   pretty: Tief im Wald - Artefakt der Göttin nahe Gorone
   cryptic:
 
-- name: Deep Woods - Goddess Cube in front of Skyview
+# TODO: update with new name
+- name: Deep Woods - Goddess Cube in front of Temple
   standard: Tief im Wald - Artefakt der Göttin vor Himmelsblick
   pretty: Tief im Wald - Artefakt der Göttin vor Himmelsblick
   cryptic:
 
-- name: Deep Woods - Goddess Cube on top of Skyview
+# TODO: update with new name
+- name: Deep Woods - Goddess Cube on top of Temple
   standard: Tief im Wald - Artefakt der Göttin auf Himmelsblick
   pretty: Tief im Wald - Artefakt der Göttin auf Himmelsblick
   cryptic:
@@ -3255,7 +3292,8 @@
   pretty: Vulkan Eldin - Rechter Rubin hinter sprengbarer Wand nahe Risiko-Rubinjagd-Höhle
   cryptic: einen <r<Rubin hinter einer versteckten Wand>>
 
-- name: Thrill Digger Cave - Gossip Stone near Tubert
+# TODO: update with new name
+- name: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
   standard: Risiko-Rubinjagd-Höhle - Mythenstein nahe Cippolino
   pretty: Risiko-Rubinjagd-Höhle - Mythenstein nahe Cippolino
   cryptic:
@@ -3695,7 +3733,8 @@
   pretty: Mogma-Revier - Schatztruhe hinter sprengbarer Wand im Feuerlabyrinth
   cryptic: eine <r<Truhe in einem heißen Labyrinth>>
 
-- name: Mogma Turf - Goddess Cube
+# TODO: update with new name
+- name: Mogma Turf - Goddess Cube on Raised Pillar
   standard: Mogma-Revier - Artefakt der Göttin
   pretty: Mogma-Revier - Artefakt der Göttin
   cryptic:
@@ -3815,6 +3854,7 @@
   pretty: Bokoblin-Lager - Erste Schatztruhe im Vulkangipfel
   cryptic: eine <r<erbeutete Truhe>> in einem hochliegenden Gebiet
 
+# TODO: update with new name
 - name: Bokoblin Base - Raise Sword
   standard: Bokoblin-Lager - Erhöhte Schatztruhe im Vulkangipfel # Needs updating
   pretty: Bokoblin-Lager - Erhöhte Schatztruhe im Vulkangipfel # Needs updating
@@ -4186,12 +4226,14 @@
   pretty: Feuer-Knotenpunkt - Erhöhte Schatztruhe
   cryptic: eine <r<erhöhte Truhe im Feuer-Knotenpunkt>>
 
-- name: Feuer-Knotenpunkt - First Small Chest
+# TODO: update with new name
+- name: Fire Node - First Chest below Sand
   standard: Feuer-Knotenpunkt - Erste Schatztruhe
   pretty: Feuer-Knotenpunkt - Erste Schatztruhe
   cryptic: eine <r<Truhe in der Mitte eines Lagers aus Stein>>
 
-- name: Fire Node - Second Small Chest
+# TODO: update with new name
+- name: Fire Node - Second Chest below Sand
   standard: Feuer-Knotenpunkt - Zweite Schatztruhe
   pretty: Feuer-Knotenpunkt - Zweite Schatztruhe
   cryptic: eine <r<Truhe in der Mitte eines Lagers aus Stein>>
@@ -5148,7 +5190,8 @@
   pretty: Ranelle-Steinwerk - Schatztruhe nach Doppel-Armos-Kampf
   cryptic: ein Paar Armos, tief im <r<Ranelle-Steinwerk>>
 
-- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+# TODO: update "Minewagen" to be plural
+- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
   standard: Ranelle-Steinwerk - Erhöhte Schatztruhe im Zentralraum nach Minenwagen
   pretty: Ranelle-Steinwerk - Erhöhte Schatztruhe im Zentralraum nach Minenwagen
   cryptic: die <r<Truhe tief im Bergwerk>>
@@ -5572,6 +5615,57 @@
   pretty: Sairen der Göttin - Ausdauerfrucht auf Balkon bei Ritterschule
   cryptic: eine <r<Frucht auf dem Schulbalkon in einer anderen Welt>>
 
+# TODO: add translations
+# - name: The Goddess's Silent Realm - Relic 1
+#   standard: The Goddess's Silent Realm - Relic 1
+#   pretty: The Goddess's Silent Realm - Relic 1
+#   cryptic: a <r<relic in a silent village>>
+
+# - name: The Goddess's Silent Realm - Relic 2
+#   standard: The Goddess's Silent Realm - Relic 2
+#   pretty: The Goddess's Silent Realm - Relic 2
+#   cryptic: a <r<relic in a silent village>>
+
+# - name: The Goddess's Silent Realm - Relic 3
+#   standard: The Goddess's Silent Realm - Relic 3
+#   pretty: The Goddess's Silent Realm - Relic 3
+#   cryptic: a <r<relic in a silent village>>
+
+# - name: The Goddess's Silent Realm - Relic 4
+#   standard: The Goddess's Silent Realm - Relic 4
+#   pretty: The Goddess's Silent Realm - Relic 4
+#   cryptic: a <r<relic in a silent village>>
+
+# - name: The Goddess's Silent Realm - Relic 5
+#   standard: The Goddess's Silent Realm - Relic 5
+#   pretty: The Goddess's Silent Realm - Relic 5
+#   cryptic: a <r<relic in a silent village>>
+
+# - name: The Goddess's Silent Realm - Relic 6
+#   standard: The Goddess's Silent Realm - Relic 6
+#   pretty: The Goddess's Silent Realm - Relic 6
+#   cryptic: a <r<relic in a silent village>>
+
+# - name: The Goddess's Silent Realm - Relic 7
+#   standard: The Goddess's Silent Realm - Relic 7
+#   pretty: The Goddess's Silent Realm - Relic 7
+#   cryptic: a <r<relic in a silent village>>
+
+# - name: The Goddess's Silent Realm - Relic 8
+#   standard: The Goddess's Silent Realm - Relic 8
+#   pretty: The Goddess's Silent Realm - Relic 8
+#   cryptic: a <r<relic in a silent village>>
+
+# - name: The Goddess's Silent Realm - Relic 9
+#   standard: The Goddess's Silent Realm - Relic 9
+#   pretty: The Goddess's Silent Realm - Relic 9
+#   cryptic: a <r<relic in a silent village>>
+
+# - name: The Goddess's Silent Realm - Relic 10
+#   standard: The Goddess's Silent Realm - Relic 10
+#   pretty: The Goddess's Silent Realm - Relic 10
+#   cryptic: a <r<relic in a silent village>>
+
 - name: The Goddess's Silent Realm - Collect all Tears Reward
   standard: Sairen der Göttin - Belohnung für komplette Tränensammlung
   pretty: Sairen der Göttin - Belohnung für komplette Tränensammlung
@@ -5586,6 +5680,57 @@
   standard: Farores Sairen - Ausdauerfrucht an Rankenwand 2
   pretty: Farores Sairen - Ausdauerfrucht an Rankenwand 2
   cryptic: eine <r<Frucht an Waldwand in einer anderen Welt>>
+
+# TODO: add translations
+# - name: Farore's Silent Realm - Relic 1
+#   standard: Farore's Silent Realm - Relic 1
+#   pretty: Farore's Silent Realm - Relic 1
+#   cryptic: a <r<relic in a silent forest>>
+
+# - name: Farore's Silent Realm - Relic 2
+#   standard: Farore's Silent Realm - Relic 2
+#   pretty: Farore's Silent Realm - Relic 2
+#   cryptic: a <r<relic in a silent forest>>
+
+# - name: Farore's Silent Realm - Relic 3
+#   standard: Farore's Silent Realm - Relic 3
+#   pretty: Farore's Silent Realm - Relic 3
+#   cryptic: a <r<relic in a silent forest>>
+
+# - name: Farore's Silent Realm - Relic 4
+#   standard: Farore's Silent Realm - Relic 4
+#   pretty: Farore's Silent Realm - Relic 4
+#   cryptic: a <r<relic in a silent forest>>
+
+# - name: Farore's Silent Realm - Relic 5
+#   standard: Farore's Silent Realm - Relic 5
+#   pretty: Farore's Silent Realm - Relic 5
+#   cryptic: a <r<relic in a silent forest>>
+
+# - name: Farore's Silent Realm - Relic 6
+#   standard: Farore's Silent Realm - Relic 6
+#   pretty: Farore's Silent Realm - Relic 6
+#   cryptic: a <r<relic in a silent forest>>
+
+# - name: Farore's Silent Realm - Relic 7
+#   standard: Farore's Silent Realm - Relic 7
+#   pretty: Farore's Silent Realm - Relic 7
+#   cryptic: a <r<relic in a silent forest>>
+
+# - name: Farore's Silent Realm - Relic 8
+#   standard: Farore's Silent Realm - Relic 8
+#   pretty: Farore's Silent Realm - Relic 8
+#   cryptic: a <r<relic in a silent forest>>
+
+# - name: Farore's Silent Realm - Relic 9
+#   standard: Farore's Silent Realm - Relic 9
+#   pretty: Farore's Silent Realm - Relic 9
+#   cryptic: a <r<relic in a silent forest>>
+
+# - name: Farore's Silent Realm - Relic 10
+#   standard: Farore's Silent Realm - Relic 10
+#   pretty: Farore's Silent Realm - Relic 10
+#   cryptic: a <r<relic in a silent forest>>
 
 - name: Farore's Silent Realm - Collect all Tears Reward
   standard: Farores Sairen - Belohnung für komplette Tränensammlung
@@ -5617,6 +5762,57 @@
   pretty: Nayrus Sairen - Ausdauerfrucht unter Baum nahe Mineneingang
   cryptic: eine <r<Frucht in Baumnähe in einer anderen Welt>>
 
+# TODO: add translations
+# - name: Nayru's Silent Realm - Relic 1
+#   standard: Nayru's Silent Realm - Relic 1
+#   pretty: Nayru's Silent Realm - Relic 1
+#   cryptic: a <r<relic in a silent desert>>
+
+# - name: Nayru's Silent Realm - Relic 2
+#   standard: Nayru's Silent Realm - Relic 2
+#   pretty: Nayru's Silent Realm - Relic 2
+#   cryptic: a <r<relic in a silent desert>>
+
+# - name: Nayru's Silent Realm - Relic 3
+#   standard: Nayru's Silent Realm - Relic 3
+#   pretty: Nayru's Silent Realm - Relic 3
+#   cryptic: a <r<relic in a silent desert>>
+
+# - name: Nayru's Silent Realm - Relic 4
+#   standard: Nayru's Silent Realm - Relic 4
+#   pretty: Nayru's Silent Realm - Relic 4
+#   cryptic: a <r<relic in a silent desert>>
+
+# - name: Nayru's Silent Realm - Relic 5
+#   standard: Nayru's Silent Realm - Relic 5
+#   pretty: Nayru's Silent Realm - Relic 5
+#   cryptic: a <r<relic in a silent desert>>
+
+# - name: Nayru's Silent Realm - Relic 6
+#   standard: Nayru's Silent Realm - Relic 6
+#   pretty: Nayru's Silent Realm - Relic 6
+#   cryptic: a <r<relic in a silent desert>>
+
+# - name: Nayru's Silent Realm - Relic 7
+#   standard: Nayru's Silent Realm - Relic 7
+#   pretty: Nayru's Silent Realm - Relic 7
+#   cryptic: a <r<relic in a silent desert>>
+
+# - name: Nayru's Silent Realm - Relic 8
+#   standard: Nayru's Silent Realm - Relic 8
+#   pretty: Nayru's Silent Realm - Relic 8
+#   cryptic: a <r<relic in a silent desert>>
+
+# - name: Nayru's Silent Realm - Relic 9
+#   standard: Nayru's Silent Realm - Relic 9
+#   pretty: Nayru's Silent Realm - Relic 9
+#   cryptic: a <r<relic in a silent desert>>
+
+# - name: Nayru's Silent Realm - Relic 10
+#   standard: Nayru's Silent Realm - Relic 10
+#   pretty: Nayru's Silent Realm - Relic 10
+#   cryptic: a <r<relic in a silent desert>>
+
 - name: Nayru's Silent Realm - Collect all Tears Reward
   standard: Nayrus Sairen - Belohnung für komplette Tränensammlung
   pretty: Nayrus Sairen - Belohnung für komplette Tränensammlung
@@ -5636,6 +5832,57 @@
   standard: Dins Sairen - Ausdauerfrucht nahe Träne an Ranken
   pretty: Dins Sairen - Ausdauerfrucht nahe Träne an Ranken
   cryptic: eine <r<Frucht an einer vulkanischen Wand in einer anderen Welt>>
+
+# TODO: add translations
+# - name: Din's Silent Realm - Relic 1
+#   standard: Din's Silent Realm - Relic 1
+#   pretty: Din's Silent Realm - Relic 1
+#   cryptic: a <r<relic on a silent volcano>>
+
+# - name: Din's Silent Realm - Relic 2
+#   standard: Din's Silent Realm - Relic 2
+#   pretty: Din's Silent Realm - Relic 2
+#   cryptic: a <r<relic on a silent volcano>>
+
+# - name: Din's Silent Realm - Relic 3
+#   standard: Din's Silent Realm - Relic 3
+#   pretty: Din's Silent Realm - Relic 3
+#   cryptic: a <r<relic on a silent volcano>>
+
+# - name: Din's Silent Realm - Relic 4
+#   standard: Din's Silent Realm - Relic 4
+#   pretty: Din's Silent Realm - Relic 4
+#   cryptic: a <r<relic on a silent volcano>>
+
+# - name: Din's Silent Realm - Relic 5
+#   standard: Din's Silent Realm - Relic 5
+#   pretty: Din's Silent Realm - Relic 5
+#   cryptic: a <r<relic on a silent volcano>>
+
+# - name: Din's Silent Realm - Relic 6
+#   standard: Din's Silent Realm - Relic 6
+#   pretty: Din's Silent Realm - Relic 6
+#   cryptic: a <r<relic on a silent volcano>>
+
+# - name: Din's Silent Realm - Relic 7
+#   standard: Din's Silent Realm - Relic 7
+#   pretty: Din's Silent Realm - Relic 7
+#   cryptic: a <r<relic on a silent volcano>>
+
+# - name: Din's Silent Realm - Relic 8
+#   standard: Din's Silent Realm - Relic 8
+#   pretty: Din's Silent Realm - Relic 8
+#   cryptic: a <r<relic on a silent volcano>>
+
+# - name: Din's Silent Realm - Relic 9
+#   standard: Din's Silent Realm - Relic 9
+#   pretty: Din's Silent Realm - Relic 9
+#   cryptic: a <r<relic on a silent volcano>>
+
+# - name: Din's Silent Realm - Relic 10
+#   standard: Din's Silent Realm - Relic 10
+#   pretty: Din's Silent Realm - Relic 10
+#   cryptic: a <r<relic on a silent volcano>>
 
 - name: Din's Silent Realm - Collect all Tears Reward
   standard: Dins Sairen - Belohnung für komplette Tränensammlung
@@ -5918,3 +6165,245 @@
     \n\n\nUm das <r<Zeitportal>> zu öffnen, musst du das\n<y<{required_sword}>> haben und mit dem\n<b<Himmelsstrahl>> das <r<Zeitportal>> öffnen.
     \n\nNachdem du in die Vergangenheit gereist bist,\nbenötigst du die drei Teile des <y+<Triforce>>.
     \n\n\nDamit kannst du den <b<Hylia-Tempel>> durch die\nDoppeltüren verlassen und dich den Endgegnern\nstellen."
+
+# Beedle's Airshop text
+- name: Beedle Half Off Bug Net Text
+  standard: "Oh, Sie interessieren sich also für das\n<y<Schmetterlingsnetz>>?
+             \n\n\nDamit können Sie Insekten einfangen.\nDas macht Spaß und ist zudem auch \nnoch sehr nützlich!
+             \n\nUnd zum halben Preis von nur <r<25 Rubinen>>,\nbin ich sicher Sie machen einen \"guten Fang\",\nfinden Sie nicht auch?\n[1]Ich nehme es![2-]Nein, danke."
+
+# TODO: add translations
+# - name: Beedle Normal Shop Text Template
+#   standard: "|That/Those| there |is/are| {sold_item}.\nI'm selling |it/them| for only <r<{normal_price}>> rupees!\nWant to buy |it/them|?
+#              \n\n[1]I'll buy |it/them|![2-]No, thanks."
+
+# - name: Beedle Discounted Shop Text Template
+#   standard: "|That/Those| there |is/are| {sold_item}.\nJust this once |it's/they're| half off!\n|It/They| can be yours for just <r<{discounted_price}>> rupees!\nWant to buy |it/them|?
+#              \n[1]I'll buy |it/them|![2-]No, thanks."
+
+# - name: Pumpkin Archery Guaranteed Win Reward Choice Text
+#   standard:
+#     "Would you like <r<50 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]50 Rupees."
+
+# - name: Pumpkin Archery Easy No Prize Text
+#   standard:
+#     "You scored <numeric arg0>.
+#     \n\n\n\nJust not feeling it today, huh,\n<heroname>? Sorry, but you\ndon't get a prize with that score.
+#     \n\nThe easiest way to hit a pumpkin is\nto lead it. You know, put the cursor a\nlittle ahead of it as it's flying.
+#     \n\nDo that, and I bet you can score\n<r<10 points>> or so.
+#     \n\n\nNot that I'm giving you advice or\nanything. I mean, I know you know\nwhat you're doing."
+
+# - name: Pumpkin Archery Easy Low Prize Text
+#   standard:
+#     "Wow, <numeric arg0>! Nice job,\n<heroname>!
+#     \n\n\nIt's not the best score ever, but you\nwere pretty smooth, <heroname>!
+#     \n\n\nNext time, I want you to aim for at\nleast <r<150 points>>!
+#     \n\n\nAnyway, here's 50 Rupees I've earned\nfrom doing chores for the grumpy\nkitchen lady."
+
+# - name: Pumpkin Archery Easy Mid Prize Text
+#   standard:
+#     "It would be great to see you hit <r<400\npoints>> and set a record next time.\nGive it your best shot!"
+
+# - name: Pumpkin Archery Hard No Prize Text
+#   standard:
+#     "You scored <numeric arg0>.
+#     \n\n\n\nJust not feeling it today, huh,\n<heroname>? Sorry, but you\ndon't get a prize with that score.
+#     \n\nThe easiest way to hit a pumpkin is\nto lead it. You know, put the cursor a\nlittle ahead of it as it's flying.
+#     \n\nDo that, and I bet you can score\n<r<400 points>> or so.
+#     \n\n\nNot that I'm giving you advice or\nanything. I mean, I know you know\nwhat you're doing."
+
+# - name: Pumpkin Archery Hard Low Prize Text
+#   standard:
+#     "Wow, <numeric arg0>! Nice job,\n<heroname>!
+#     \n\n\nIt's not the best score ever, but you\nwere pretty smooth, <heroname>!
+#     \n\n\nNext time, I want you to aim for at\nleast <r<600 points>>!
+#     \n\n\nAnyway, here's 50 Rupees I've earned\nfrom doing chores for the grumpy\nkitchen lady."
+
+# - name: Pumpkin Archery Hard Mid Prize Text
+#   standard:
+#     "It would be great to see you hit <r<800\npoints>> and set a record next time.\nGive it your best shot!"
+
+# - name: Rickety Coaster Guaranteed Win Reward Choice Text
+#   standard:
+#     "Would you like <r<20 Rupees>>, an <r<Uncommon\nTreasure>>, or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]20 Rupees."
+
+# - name: Bug Heaven Guaranteed Win Reward Choice Text
+#   standard:
+#     "Unless... Would you like those <r<Rare Bugs>>, or\nsome <r<Uncommon Bugs>>? Or maybe <r<80 Rupees>>?[1]Rare.[2]Uncommon.[3]80 Rupees."
+
+# # Pretty sure this text is actually impossible to get cos there's a hard 10 min cap on the timer.
+# - name: Bug Heaven Easy No Prize Text
+#   standard:
+#     "That's it—time's up! Umm...you've still\ngot A LOT of improving to do.
+#     \n\n\nFor starters, shoot for getting your\ntime <r<under ten minutes>>. Just keep on\npracticing.
+#     \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+
+# - name: Bug Heaven Easy Beginner Low Prize Text
+#   standard:
+#     "Next time, try for <r<under five minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+
+# - name: Bug Heaven Easy Wrangler Low Prize Text
+#   standard:
+#     "Time's up! That was pretty decent,\nI have to admit.
+#     \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under five minutes>>."
+
+# - name: Bug Heaven Easy Beginner Mid Prize Text
+#   standard:
+#     "Next time, pull out all the stops and\ntry to finish in <r<less than three minutes>>.
+#     \n\n\nOh, and your prize this time is \n<r<50 Rupees>>!"
+
+# - name: Bug Heaven Easy Wrangler Mid Prize Text
+#   standard:
+#     "OK! Time! Hey... This is incredible!
+#     \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under three\nminutes>>.
+#     \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
+
+# - name: Bug Heaven Hard No Prize Text
+#   standard:
+#     "That's it—time's up! Umm...you've still\ngot A LOT of improving to do.
+#     \n\n\nFor starters, shoot for getting your\ntime <r<under three minutes>>. Just keep on\npracticing.
+#     \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+
+# - name: Bug Heaven Hard Beginner Low Prize Text
+#   standard:
+#     "Next time, try for <r<under two minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+
+# - name: Bug Heaven Hard Wrangler Low Prize Text
+#   standard:
+#     "Time's up! That was pretty decent,\nI have to admit.
+#     \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under two minutes>>."
+
+# - name: Bug Heaven Hard Beginner Mid Prize Text
+#   standard:
+#     "Next time, pull out all the stops and\ntry to finish in <r<less than one minute>>.
+#     \n\n\nOh, and your prize this time is \n<r<50 Rupees>>!"
+
+# - name: Bug Heaven Hard Wrangler Mid Prize Text
+#   standard:
+#     "OK! Time! Hey... This is incredible!
+#     \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under one\nminute>>.
+#     \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
+
+# - name: Clean Cut Guaranteed Win Reward Choice Text
+#   standard:
+#     "You want <r<30 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]30 Rupees."
+
+# - name: Clean Cut Easy No Prize Text
+#   standard:
+#     "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<10 cuts>>!
+#     \n\nSharpen up your concentration!\nThere's no prize for sloppy slicin'."
+
+# - name: Clean Cut Easy Low Prize Text
+#   standard:
+#     "Next time around, shoot for <r<15 cuts>>."
+
+# - name: Clean Cut Easy Mid Prize Text
+#   standard:
+#     "I want to see you do <r<20 chops>> next time!"
+
+# - name: Clean Cut Hard No Prize Text
+#   standard:
+#     "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<20 cuts>>!
+#     \n\nSharpen up your concentration!\nThere's no prize for sloppy slicin'."
+
+# - name: Clean Cut Hard Low Prize Text
+#   standard:
+#     "Next time around, shoot for <r<28 cuts>>."
+
+# - name: Clean Cut Hard Mid Prize Text
+#   standard:
+#     "I want to see you do <r<43 chops>> next time!"
+
+# - name: Help Text Title 1a
+#   standard:
+#     "Skyview Temple"
+
+# - name: Help Text Content 1a
+#   standard:
+#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+
+# - name: Help Text Title 1b
+#   standard:
+#     "Earth Temple"
+
+# - name: Help Text Content 1b
+#   standard:
+#     "Status: <string arg0>\nBoss Key: <string arg1>\nKey Pieces: <numeric arg0>/5\nMap: <string arg2>"
+
+# - name: Help Text Title 1c
+#   standard:
+#     "Lanayru Mining Facility"
+
+# - name: Help Text Content 1c
+#   standard:
+#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/1\nMap: <string arg2>"
+
+# - name: Help Text Title 2a
+#   standard:
+#     "Ancient Cistern"
+
+# - name: Help Text Content 2a
+#   standard:
+#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+
+# - name: Help Text Title 2b
+#   standard:
+#     "Sandship"
+
+# - name: Help Text Content 2b
+#   standard:
+#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+
+# - name: Help Text Title 2c
+#   standard:
+#     "Fire Sanctuary"
+
+# - name: Help Text Content 2c
+#   standard:
+#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/3\nMap: <string arg2>"
+
+# - name: Help Text Title 3a
+#   standard:
+#     "Sky Keep"
+
+# - name: Help Text Content 3a
+#   standard:
+#     "Status: <string arg0>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/1\nMap: <string arg2>"
+
+# - name: Help Text Title 3b
+#   standard:
+#     "Items"
+
+# - name: Help Text Content 3b
+#   standard:
+#     "Spiral Charge: <string arg0>\nScrapper: <string arg1>\nGroup of Tadtones: <numeric arg0>"
+
+# - name: Help Text Title 3c
+#   standard:
+#     "Gorge"
+
+# - name: Help Text Content 3c
+#   standard:
+#     "Life Tree Fruit: <string arg0>\nSeedling: <string arg1>\nCaves Keys: <numeric arg0>, Found <numeric arg1>/2"
+
+# - name: Inventory Emerald Tablet text
+#   standard:
+#     "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<g<Faron Woods>>."
+# - name: Inventory Emerald and Ruby Tablet text
+#   standard:
+#     "The <r<ruby>> and <g<emerald>> tablet fragments\nopen the way to <g<Faron Woods>> and <r<Eldin\nVolcano>>."
+# - name: Inventory All Tablets text
+#   standard:
+#     "Completed tablet containing the <g<emerald>>,\n<r<ruby>>, and <y<amber>> fragments. Opens all areas\nof the surface--<g<woods>>, <r<volcano>>, and <y<desert>>."
+# - name: Inventory Emerald and Amber Tablet text
+#   standard:
+#     "The <y<amber>> and <g<emerald>> tablet fragments\nopen the way to <g<Faron Woods>> and\n<y<Lanayru Desert>>."
+# - name: Inventory Amber Tablet text
+#   standard:
+#     "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<y<Lanayru Desert>>."
+# - name: Inventory Ruby and Amber Tablet text
+#   standard:
+#     "The <y<amber>> and <r<ruby>> tablet fragments\nopen the way to <r<Eldin Volcano>> and\n<y<Lanayru Desert>>."
+# - name: Inventory Ruby Tablet text
+#   standard:
+#     "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<r<Eldin Volcano>>."
