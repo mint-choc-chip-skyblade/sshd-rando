@@ -192,7 +192,7 @@
     The Goddess's Silent Realm: Goddesss_Harp and Full_Song_of_the_Hero and Progressive_Sword
     Orielle and Parrow's House: Nothing
     Peatrice's House: Nothing
-    Wryna's House: Nothing
+    Kukiel's House: Nothing
     Piper's House: Nothing
     The Sky: Day
     Upper Skyloft: Nothing
@@ -225,18 +225,18 @@
     Central Skyloft - Chest in Shed: Water_Dragons_Scale
     Central Skyloft - Goddess Chest in Shed: Water_Dragons_Scale and Eldin_Volcano_Goddess_Cube_on_Sand_Slide
     Central Skyloft - Stamina Fruit between Wooden Planks: Nothing
-    Central Skyloft - Stamina Fruit near Wryna's House: Nothing
+    Central Skyloft - Stamina Fruit near Kukiel's House: Nothing
     Central Skyloft - Stamina Fruit near River: Nothing
     Central Skyloft - Stamina Fruit near Orielle and Parrow's House: Nothing
-    Central Skyloft - Stamina Fruit near Bazaar: Nothing
+    Central Skyloft - Stamina Fruit between Stairs near the Bazaar: Nothing
     Central Skyloft - Stamina Fruit near Plaza: Nothing
     Central Skyloft - North Rupee in Bird's Nest: Beetle
     Central Skyloft - East Rupee in Bird's Nest: Beetle
     Central Skyloft - South Rupee in Bird's Nest: Beetle
     Central Skyloft - West Rupee in Bird's Nest: Beetle
     Central Skyloft - Crystal on Waterfall Island: Night and Quick_Beetle and logic_precise_beetle
-    Central Skyloft - Crystal after Waterfall Cave: Night and Beetle and logic_precise_beetle
-    Central Skyloft - Crystal in Loftwing Prison: Night and Beetle and logic_precise_beetle
+    Central Skyloft - Crystal near Bird Statue after Waterfall Cave: Night and Beetle and logic_precise_beetle
+    Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave: Night and Beetle and logic_precise_beetle
 
 - name: Bird Nest
   hint_region: Central Skyloft
@@ -262,7 +262,7 @@
     Bazaar West: Nothing
     Bazaar South: Nothing
   locations:
-    Bazaar - Potion Lady's Gift: Nothing
+    Bazaar - Luv the Potion Lady's Gift: Nothing
     Bazaar - Goddess Chest: Ancient_Harbour_Goddess_Cube
     Bazaar - Repair Gondo's Junk: "'Ancient_Flower_Farming'"
     # Bazaar - Upgrade to Quick Beetle: Hook_Beetle and 'Hornet_Larvae_Farming' and 'Ancient_Flower_Farming' and 'Can_Play_Clean_Cut_Minigame' # Golden Skull farming
@@ -311,14 +311,14 @@
     Central Skyloft - Peater's Closet: Nothing
     Central Skyloft - Peatrice's Closet: Nothing
 
-- name: Wryna's House
+- name: Kukiel's House
   allowed_time_of_day: All
   can_sleep: true
   exits:
     Central Skyloft: Nothing
   locations:
+    Central Skyloft - Kukiel's Family Closet: Nothing
     Central Skyloft - Wryna's Gratitude: Nothing
-    Central Skyloft - Wryna's Closet: Nothing
 
 - name: Piper's House
   allowed_time_of_day: All
@@ -369,8 +369,8 @@
     Waterfall Cave: Nothing
     The Sky: Day
   locations:
-    Central Skyloft - Crystal after Waterfall Cave: Night
-    Central Skyloft - Crystal in Loftwing Prison: Night
+    Central Skyloft - Crystal near Bird Statue after Waterfall Cave: Night
+    Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave: Night
 
 - name: The Goddess's Silent Realm
   allowed_time_of_day: All
@@ -399,7 +399,7 @@
   exits:
     Bertie's House: Nothing
     Sparrot's House: Nothing
-    Mallara's House: Nothing
+    Pipit's House: Nothing
     Gondo's House: Nothing
     Rupin's House: Nothing
     Batreaux's House: open_batreaux_shed or 'Opened_Shed' or logic_gravestone_jump
@@ -409,7 +409,7 @@
   locations:
     Skyloft Village - Bonk Tree near River: Nothing
     Skyloft Village - Crystal near Pumpkin Patch: Night
-    Skyloft Village - Stamina Fruit above Mallara's House: Nothing
+    Skyloft Village - Stamina Fruit above Pipit's House: Nothing
 
 - name: Bertie's House
   allowed_time_of_day: All
@@ -418,7 +418,7 @@
     Skyloft Village: Nothing
   locations:
     Skyloft Village - Deliver Rattle to Bertie: Rattle and Night
-    Skyloft Village - Luv and Bertie's Closet: Nothing
+    Skyloft Village - Bertie and Luv's Closet: Nothing
 
 - name: Sparrot's House
   allowed_time_of_day: All
@@ -432,14 +432,14 @@
     Skyloft Village - Sparrot's Closet: Nothing
     Skyloft Village - Bonk Sparrot's Valuables: Nothing
 
-- name: Mallara's House
+- name: Pipit's House
   allowed_time_of_day: All
   can_sleep: true
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Clean Mallara's House: Gust_Bellows
-    Skyloft Village - Mallara's Closet: Nothing
+    Skyloft Village - Clean Pipit's House: Gust_Bellows
+    Skyloft Village - Pipit and Mallara's Closet: Nothing
 
 - name: Gondo's House
   allowed_time_of_day: All
@@ -447,7 +447,7 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Gondo's Closet: Nothing
+    Skyloft Village - Gondo and Gebra's Closet: Nothing
 
 - name: Rupin's House
   allowed_time_of_day: All
@@ -455,7 +455,7 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Rupin's Closet: Nothing
+    Skyloft Village - Rupin and Goselle's Closet: Nothing
 
 - name: Batreaux's House
   allowed_time_of_day: All

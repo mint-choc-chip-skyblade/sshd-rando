@@ -14,8 +14,8 @@ World 1:
   underground_rupee_shuffle: 'on'
   beedle_shop_shuffle: randomized
   goddess_chest_shuffle: 'on'
-  trial_treasure_shuffle: '0'
-  tadtone_shuffle: 'off'
+  trial_treasure_shuffle: '10'
+  tadtone_shuffle: 'on'
   full_wallet_upgrades: 'off'
   skip_harp_playing: 'off'
   random_trial_object_positions: none
@@ -119,7 +119,7 @@ World 1:
   shortcut_sandship_brig_bars: 'off'
   shortcut_fs_outside_bars: 'off'
   shortcut_fs_lava_flow: 'on'
-  shortcut_sky_keep_sv_room_bars: 'on'
+  shortcut_sky_keep_svt_room_bars: 'on'
   logic_early_lake_floria: 'off'
   logic_beedles_island_cage_chest_dive: 'off'
   logic_volcanic_island_dive: 'off'
@@ -135,6 +135,7 @@ World 1:
   logic_bomb_throws: 'off'
   logic_faron_woods_with_groosenator: 'off'
   logic_itemless_first_timeshift_stone: 'off'
+  logic_stamina_potion_through_sink_sand: 'off'
   logic_brakeslide: 'off'
   logic_lanayru_mine_quick_bomb: 'off'
   logic_tot_skip_brakeslide: 'off'

@@ -3,43 +3,43 @@
   dungeon_starting_area: true
   exits:
     Deep Woods: Nothing
-    SV First Room: Can_Cut_Trees_And_Logs
+    SVT First Room: Can_Cut_Trees_And_Logs
   locations:
     Skyview Temple - Slingshot Wall Eye behind First Bird Statue: Slingshot
     Skyview Temple - Bonk Tree Root after First Skulltula Web: Nothing
 
-- name: SV First Room
+- name: SVT First Room
   dungeon: Skyview Temple
   events:
     Goddess Wall Trigger: Ballad_of_the_Goddess and Goddesss_Harp
   exits:
     Skyview Entry: Can_Cut_Trees_And_Logs
-    SV One Eye Room: Can_Hit_High_Skyview_Switches
-    SV First Hub Center Room: Bomb_Bag or shortcut_skyview_boards
+    SVT One Eye Room: Can_Hit_High_Skyview_Switches
+    SVT First Hub Center Room: Bomb_Bag or shortcut_skyview_boards
 
-- name: SV One Eye Room
+- name: SVT One Eye Room
   dungeon: Skyview Temple
   exits:
-    SV First Room: Nothing
-    SV First Hub Center Room: Sword
+    SVT First Room: Nothing
+    SVT First Hub Center Room: Sword
   locations:
     Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room: Slingshot
     Skyview Temple - Slingshot Northwest Wall Eye in One Eye Room: Slingshot
     Skyview Temple - Slingshot East Wall Eye in One Eye Room: Slingshot
     Skyview Temple - Slingshot Deactivated Main Eye in One Eye Room: Sword and Slingshot
 
-- name: SV First Hub Center Room
+- name: SVT First Hub Center Room
   dungeon: Skyview Temple
   events:
     One Water Raise: "'Skyview_Raise_East_Water' or 'Skyview_Raise_West_Water'"
     Can Collect Water: Bottle and 'One_Water_Raise'
   exits:
-    SV One Eye Room: Nothing
-    SV First Room: Nothing
-    SV First Hub Left Room: Can_Hit_Switch or ('One_Water_Raise' and Water_Dragons_Scale)
-    SV First Hub Right Room Lower: Can_Hit_High_Skyview_Switches
-    SV First Hub Right Room Upper: Clawshots or ('Skyview_Raise_East_Water' and 'Skyview_Raise_West_Water')
-    SV Second Hub Center Room: (Skyview_Temple_Small_Key or small_keys == removed) and (Clawshots or 'One_Water_Raise')
+    SVT One Eye Room: Nothing
+    SVT First Room: Nothing
+    SVT First Hub Left Room: Can_Hit_Switch or ('One_Water_Raise' and Water_Dragons_Scale)
+    SVT First Hub Right Room Lower: Can_Hit_High_Skyview_Switches
+    SVT First Hub Right Room Upper: Clawshots or ('Skyview_Raise_East_Water' and 'Skyview_Raise_West_Water')
+    SVT Second Hub Center Room: (Skyview_Temple_Small_Key or small_keys == removed) and (Clawshots or 'One_Water_Raise')
   locations:
     Skyview Temple - Bonk Tree Branch with Chest: Nothing
     # Water Dragon's Scale needed to make sure you can't lock yourself out of the checks
@@ -52,7 +52,7 @@
     Skyview Temple - Rupee on Lower Tree Root before Hub Room: Water_Dragons_Scale
     Skyview Temple - Rupee on Coiled Tree Branch before Hub Room: Beetle or (logic_skyview_coiled_rupee_jump and Practice_Sword and (Clawshots or 'One_Water_Raise'))
 
-- name: SV First Hub Left Room
+- name: SVT First Hub Left Room
   dungeon: Skyview Temple
   events: #                  Hit Vines                              and Can_Hit_Switch
     Skyview Raise West Water:
@@ -60,38 +60,38 @@
       or (logic_skyview_spider_roll and Can_Hit_High_Skyview_Switches)"
     Can Collect Water: Bottle and 'Skyview_Raise_West_Water'
   exits:
-    SV First Hub Center Room: Nothing
+    SVT First Hub Center Room: Nothing
   locations:
     Skyview Temple - Chest on Tree Branch: (Can_Hit_High_Skyview_Switches or Goddess_Sword or Whip) or logic_skyview_spider_roll
 
-- name: SV First Hub Right Room Lower
+- name: SVT First Hub Right Room Lower
   dungeon: Skyview Temple
   events:
     Skyview Raise East Water: Can_Hit_High_Skyview_Switches
     Can Collect Water: Bottle and 'Skyview_Raise_East_Water'
   exits:
-    SV First Hub Center Room: Nothing
+    SVT First Hub Center Room: Nothing
   locations:
     Skyview Temple - Digging Spot in Crawlspace: Digging_Mitts and Water_Dragons_Scale # Have to assume player misses it the first time
 
-- name: SV First Hub Right Room Upper
+- name: SVT First Hub Right Room Upper
   dungeon: Skyview Temple
   exits:
-    SV First Hub Right Room Lower: Nothing
-    SV First Hub Center Room: Nothing
+    SVT First Hub Right Room Lower: Nothing
+    SVT First Hub Center Room: Nothing
   locations:
     Skyview Temple - Slingshot Left Deactivated Eye in Two Eyes Room: Sword and Slingshot
     Skyview Temple - Slingshot Right Deactivated Eye in Two Eyes Room: Sword and Slingshot
     Skyview Temple - Chest behind Two Eyes: Sword
 
-- name: SV Second Hub Center Room
+- name: SVT Second Hub Center Room
   dungeon: Skyview Temple
   exits:
-    SV First Hub Center Room: count(2, Skyview_Temple_Small_Key) or small_keys == removed
-    SV Miniboss Room: Distance_Activator
-    SV Second Hub Left Rooms: Beetle
-    SV Staldra Room: count(2, Skyview_Temple_Small_Key) or small_keys == removed
-    SV Last Room Before Rope: (can_access(SV Last Room Before Rope) and Can_Hit_High_Skyview_Switches) or shortcut_skyview_bars
+    SVT First Hub Center Room: count(2, Skyview_Temple_Small_Key) or small_keys == removed
+    SVT Miniboss Room: Distance_Activator
+    SVT Second Hub Left Rooms: Beetle
+    SVT Staldra Room: count(2, Skyview_Temple_Small_Key) or small_keys == removed
+    SVT Last Room Before Rope: (can_access(SVT Last Room Before Rope) and Can_Hit_High_Skyview_Switches) or shortcut_skyview_bars
   locations:
     Skyview Temple - Rupee on South Bird Pillar in Hub Room: Beetle
     Skyview Temple - Bonk South Bird Pillar in Hub Room: Nothing
@@ -105,68 +105,68 @@
     Skyview Temple - Third Rupee in Northeast Tunnel: Beetle
     Skyview Temple - Item behind Bars: Beetle or (Slingshot and logic_skyview_precise_slingshot) or Whip
 
-- name: SV Miniboss Room
+- name: SVT Miniboss Room
   dungeon: Skyview Temple
   exits:
-    SV Second Hub Center Room: Nothing
+    SVT Second Hub Center Room: Nothing
   locations:
     Skyview Temple - Chest after Stalfos Fight: Can_Defeat_Stalfos
 
 # This is both rooms so assume you've gotten locked in the 3-eyes room
-- name: SV Second Hub Left Rooms
+- name: SVT Second Hub Left Rooms
   dungeon: Skyview Temple
   exits:
     # Sword for 3 eyes and to kill Skultullas
     # Beetle or Bow to free the box
     # Projectile Item to hit the switch to get back to 2nd hub room
-    SV Second Hub Center Room: Sword and (Beetle or Bow) and Projectile_Item
+    SVT Second Hub Center Room: Sword and (Beetle or Bow) and Projectile_Item
   locations:
     Skyview Temple - Slingshot Southwest Wall Eye in Three Eyes Room: Slingshot
     Skyview Temple - Slingshot Deactivated Middle Eye in Three Eyes Room: Sword and Slingshot
     Skyview Temple - Chest behind Three Eyes: (Beetle or Bow) and Sword
 
-- name: SV Staldra Room
+- name: SVT Staldra Room
   dungeon: Skyview Temple
   exits:
-    SV Second Hub Center Room: Skyview_Temple_Small_Key or small_keys == removed
-    SV Last Room Before Spider: Can_Defeat_Staldra
+    SVT Second Hub Center Room: Skyview_Temple_Small_Key or small_keys == removed
+    SVT Last Room Before Spider: Can_Defeat_Staldra
 
-- name: SV Last Room Before Spider
+- name: SVT Last Room Before Spider
   dungeon: Skyview Temple
   exits:
-    SV Staldra Room: Nothing
-    SV Last Room Before Rope: Beetle or Bow or (Bomb_Bag and logic_bomb_throws)
+    SVT Staldra Room: Nothing
+    SVT Last Room Before Rope: Beetle or Bow or (Bomb_Bag and logic_bomb_throws)
     # Both the Beetle and the bow can cut it down.
     # A bomb knocks the Skulltula away.
     # A skyward strike can knock it away too but not logically.
 
-- name: SV Last Room Before Rope
+- name: SVT Last Room Before Rope
   dungeon: Skyview Temple
   exits:
-    SV Last Room Before Spider: Beetle or Bow or (Bomb_Bag and logic_bomb_throws)
-    SV Second Hub Center Room: Can_Hit_High_Skyview_Switches or shortcut_skyview_bars
-    SV Last Room After Rope: Long_Range_Skyward_Strike or Hook_Beetle or Bow
+    SVT Last Room Before Spider: Beetle or Bow or (Bomb_Bag and logic_bomb_throws)
+    SVT Second Hub Center Room: Can_Hit_High_Skyview_Switches or shortcut_skyview_bars
+    SVT Last Room After Rope: Long_Range_Skyward_Strike or Hook_Beetle or Bow
 
-- name: SV Last Room After Rope
+- name: SVT Last Room After Rope
   dungeon: Skyview Temple
   exits:
-    SV Last Room Before Rope: Can_Defeat_Bokoblins or Hook_Beetle # Run out of range and use bomb flower to defeat them
-    SV Last Room Near Chest after Vines: Long_Range_Skyward_Strike or Distance_Activator
+    SVT Last Room Before Rope: Can_Defeat_Bokoblins or Hook_Beetle # Run out of range and use bomb flower to defeat them
+    SVT Last Room Near Chest after Vines: Long_Range_Skyward_Strike or Distance_Activator
     Skyview Boss Room: Skyview_Temple_Boss_Key or boss_keys == removed
   locations:
     Skyview Temple - Chest near Boss Door: Nothing
 
-- name: SV Last Room Near Chest after Vines
+- name: SVT Last Room Near Chest after Vines
   dungeon: Skyview Temple
   exits:
-    SV Last Room Before Rope: Nothing
-    SV Last Room After Rope: Distance_Activator
+    SVT Last Room Before Rope: Nothing
+    SVT Last Room After Rope: Distance_Activator
   locations:
     Skyview Temple - Chest after Vines: Nothing
 
 - name: Skyview Boss Room
   exits:
-    SV Last Room After Rope: Can_Defeat_Ghirahim
+    SVT Last Room After Rope: Can_Defeat_Ghirahim
     Skyview Spring: Can_Defeat_Ghirahim
   locations:
     Skyview Temple - Defeat Boss: Can_Defeat_Ghirahim

@@ -1,7 +1,7 @@
 ; Assign model index for new items
 .offset 0x71013a0d84
 ; Small Keys
-.2byte 0 ; SV Small Key         (200)
+.2byte 0 ; SVT Small Key        (200)
 .2byte 0 ; LMF Small Key        (201)
 .2byte 0 ; AC Small Key         (202)
 .2byte 0 ; FS Small Key         (203)
@@ -10,7 +10,7 @@
 .2byte 0 ; Caves Small Key      (206)
 
 ; Maps
-.2byte 0x2B ; SV Map            (207)
+.2byte 0x2B ; SVT Map           (207)
 .2byte 0x2B ; ET Map            (208)
 .2byte 0x2B ; LMF Map           (209)
 .2byte 0x2B ; AC Map            (210)
@@ -64,14 +64,14 @@
 ; Assign item get animation
 ; the good game SS is, it assumes the best default and crashes :p
 .offset 0x710137af0c
-.int 0      ; SV Small Key      (200)
+.int 0      ; SVT Small Key     (200)
 .int 0      ; LMF Small Key     (201)
 .int 0      ; AC Small Key      (202)
 .int 0      ; FS Small Key      (203)
 .int 0      ; SSH Small Key     (204)
 .int 0      ; SK Small Key      (205)
 .int 0      ; Caves Small Key   (206)
-.int 0x1000 ; SV Map            (207)
+.int 0x1000 ; SVT Map           (207)
 .int 0x1000 ; ET Map            (208)
 .int 0x1000 ; LMF Map           (209)
 .int 0x1000 ; AC Map            (210)

@@ -305,13 +305,13 @@ pub fn handle_custom_item_get(item_actor: *mut dAcItem) -> u16 {
         15,  // FS BK - item id 26
         18,  // SSH BK - item id 27
         255, // unused, shouldn't happen
-        11,  // SV BK - item id 29
+        11,  // SVT BK - item id 29
         14,  // ET - item id 30
         17,  // LMF - item id 31
     ];
 
     const SK_TO_FLAGINDEX: [usize; 7] = [
-        11, // SV SK - item id 200
+        11, // SVT SK - item id 200
         17, // LMF SK - item id 201
         12, // AC SK - item id 202
         15, // FS SK - item id 203
@@ -321,7 +321,7 @@ pub fn handle_custom_item_get(item_actor: *mut dAcItem) -> u16 {
     ];
 
     const MAP_TO_FLAGINDEX: [usize; 7] = [
-        11, // SV MAP - item id 207
+        11, // SVT MAP - item id 207
         14, // ET MAP - item id 208
         17, // LMF MAP - item id 209
         12, // AC MAP - item id 210
@@ -777,7 +777,7 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                 20 | 21 | 99 | 197 => y_offset = 25.0,
                 // AC BK | FS BK
                 25 | 26 => y_offset = 30.0,
-                // SSH BK, ET Key, SV BK, ET BK | Amber Tablet
+                // SSH BK, ET Key, SVT BK, ET BK | Amber Tablet
                 27..=30 | 99 | 179 => y_offset = 24.0,
                 // LMF BK
                 31 => y_offset = 27.0,
@@ -917,7 +917,7 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                     h_offset = 50.0;
                     angle_change_x = 0xEF00;
                 },
-                // FS BK | SV BK
+                // FS BK | SVT BK
                 26 | 29 => h_offset = 40.0,
                 // SSH BK
                 27 => h_offset = 47.0,

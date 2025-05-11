@@ -69,7 +69,7 @@ DEFAULT_SETTINGS = {
             HYLIAN_SHIELD,
             PROGRESSIVE_POUCH,
             SCRAPPER,
-            SV_MAP,
+            SVT_MAP,
             ET_MAP,
             LMF_MAP,
             AC_MAP,
@@ -169,6 +169,28 @@ LOCATION_ALIASES = {
     "Inside the Statue of the Goddess - First Goddess Sword Item": "Inside the Statue of the Goddess - Raise Sword Item 1",
     "Inside the Statue of the Goddess - Second Goddess Sword Item": "Inside the Statue of the Goddess - Raise Sword Item 2",
     "Bokoblin Base - Raised Chest in Volcano Summit": "Bokoblin Base - Raise Sword",
+    "Lanayru Mining Facility - Raised Chest in Hub Room after Minecart": "Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts",
+    "Fire Node - First Small Chest": "Fire Node - First Chest below Sand",
+    "Fire Node - Second Small Chest": "Fire Node - Second Chest below Sand",
+    "Central Skyloft - Crystal after Waterfall Cave": "Central Skyloft - Crystal near Bird Statue after Waterfall Cave",
+    "Central Skyloft - Crystal in Loftwing Prison": "Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave",
+    "Central Skyloft - Stamina Fruit near Bazaar": "Central Skyloft - Stamina Fruit between Stairs near the Bazaar",
+    "Central Skyloft - Stamina Fruit near Wryna's House": "Central Skyloft - Stamina Fruit near Kukiel's House",
+    "Central Skyloft - Wryna's Closet": "Central Skyloft - Kukiel's Family Closet",
+    "Skyloft Village - Stamina Fruit above Mallara's House": "Skyloft Village - Stamina Fruit above Pipit's House",
+    "Skyloft Village - Clean Mallara's House": "Skyloft Village - Clean Pipit's House",
+    "Skyloft Village - Mallara's Closet": "Skyloft Village - Pipit and Mallara's Closet",
+    "Skyloft Village - Luv and Bertie's Closet": "Skyloft Village - Bertie and Luv's Closet",
+    "Skyloft Village - Gondo's Closet": "Skyloft Village - Gondo and Gebra's Closet",
+    "Skyloft Village - Rupin's Closet": "Skyloft Village - Rupin and Goselle's Closet",
+    "Faron Woods - Item behind Bombable Rock": "Faron Woods - Item behind Lower Bombable Rock",
+    "Faron Woods - Stamina Fruit on Vines near Erla": "Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock",
+    "Faron Woods - Chest behind Bombable Rocks near Erla": "Faron Woods - Chest behind Upper Bombable Rock",
+    "Deep Woods - Goddess Cube in front of Skyview": "Deep Woods - Goddess Cube in front of Temple",
+    "Deep Woods - Goddess Cube on top of Skyview": "Deep Woods - Goddess Cube on top of Temple",
+    "Thrill Digger Cave - Gossip Stone near Tubert": "Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator",
+    "Mogma Turf - Goddess Cube": "Mogma Turf - Goddess Cube on Raised Pillar",
+    "Bazaar - Potion Lady's Gift": "Bazaar - Luv the Potion Lady's Gift",
 }
 
 TRACKER_NOTE_EVENTS = {
@@ -178,4 +200,5 @@ TRACKER_NOTE_EVENTS = {
 
 SETTING_ALIASES = {
     "shortcut_fs_lava_flow": "fs_lava_flow",
+    "shortcut_sky_keep_svt_room_bars": "shortcut_sky_keep_sv_room_bars",
 }

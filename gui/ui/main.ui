@@ -1320,9 +1320,9 @@
             </widget>
            </item>
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_sv_room_bars">
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_svt_room_bars">
              <property name="text">
-              <string>Sky Keep Bars in Skyview Room</string>
+              <string>Sky Keep Bars in Skyview Temple Room</string>
              </property>
             </widget>
            </item>
@@ -1565,7 +1565,7 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;What are Mixed Entrance Pools?&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Mixed entrance pools define how entrance types are shuffled together. By default, turning on an entrance randomizer setting will only shuffle the entrances of that type with each other. For example, randomizing dungeon entrances will only shuffle the dungeon entrances with each other. The Sandship entrance could &lt;span style=&quot; font-style:italic;&quot;&gt;not&lt;/span&gt; be shuffled to Wryna's House door or a trial gate entrance. &lt;br/&gt;&lt;br/&gt;By defining mixed entrance pools, different entrance types can be shuffled together. For example, if a mixed pool was defined as this: [Dungeon, Door, Trial Gate], the Sandship entrance &lt;span style=&quot; font-style:italic;&quot;&gt;could&lt;/span&gt; be shuffled to Wryna's House door or a trial gate entrance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;What are Mixed Entrance Pools?&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Mixed entrance pools define how entrance types are shuffled together. By default, turning on an entrance randomizer setting will only shuffle the entrances of that type with each other. For example, randomizing dungeon entrances will only shuffle the dungeon entrances with each other. The Sandship entrance could &lt;span style=&quot; font-style:italic;&quot;&gt;not&lt;/span&gt; be shuffled to Kukiel's House door or a trial gate entrance. &lt;br/&gt;&lt;br/&gt;By defining mixed entrance pools, different entrance types can be shuffled together. For example, if a mixed pool was defined as this: [Dungeon, Door, Trial Gate], the Sandship entrance &lt;span style=&quot; font-style:italic;&quot;&gt;could&lt;/span&gt; be shuffled to Kukiel's House door or a trial gate entrance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="textFormat">
               <enum>Qt::TextFormat::RichText</enum>
@@ -3937,15 +3937,15 @@ QPushButton {
              <number>2</number>
             </property>
             <item>
-             <layout class="QVBoxLayout" name="dungeon_sv_layout">
+             <layout class="QVBoxLayout" name="dungeon_svt_layout">
               <property name="spacing">
-               <number>1</number>
+               <number>1</number>S
               </property>
               <property name="sizeConstraint">
                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
               </property>
               <item>
-               <layout class="QHBoxLayout" name="dungeon_sv_keys_layout">
+               <layout class="QHBoxLayout" name="dungeon_svt_keys_layout">
                 <property name="spacing">
                  <number>1</number>
                 </property>
