@@ -118,7 +118,23 @@
 - name: SK Fire Sanctuary Room East
   dungeon: Sky Keep
   exits:
-    SK Fire Sanctuary Room End Platform: Clawshots and (Beetle or (logic_skykeep_vineclip and Bomb_Bag))
+    SK Fire Sanctuary Room South: Beetle
+    SK Fire Sanctuary Room North: Beetle and shortcut_sky_keep_fs_room_lower_bars
+    SK Fire Sanctuary Room End Platform: (Clawshots and (Beetle or (logic_skykeep_vineclip and Bomb_Bag))) or shortcut_sky_keep_fs_room_upper_bars
+  locations:
+    Sky Keep - Rupee in Fire Sanctuary Room in Alcove: Beetle
+
+
+- name: SK Fire Sanctuary Room South
+  dungeon: Sky Keep
+  exits:
+    SK Fire Sanctuary Room East: Beetle # ride the lava river and open the lower bars
+    SK Fire Sanctuary Room North: Beetle
+
+- name: SK Fire Sanctuary Room North
+  dungeon: Sky Keep
+  exits:
+    SK Fire Sanctuary Room End Platform: Beetle and Clawshots
   locations:
     Sky Keep - Rupee in Fire Sanctuary Room in Alcove: Beetle
 
@@ -127,8 +143,8 @@
   dungeon: Sky Keep
   exits:
     SK Sacred Power of Din Room: Practice_Sword
-    SK Fire Sanctuary Room West: Nothing
-    SK Fire Sanctuary Room East: Nothing
+    SK Fire Sanctuary Room West: Nothing # raise the end bars
+    SK Fire Sanctuary Room East: Nothing # raise the upper bars
     
 
 - name: SK Sacred Power of Din Room
