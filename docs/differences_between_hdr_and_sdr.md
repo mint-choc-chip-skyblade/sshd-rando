@@ -6,9 +6,9 @@ coupling, and mixing pools
 * Traps!
 * Full Plandomizer Support
 * Hints are now controlled by their own settings
-* Ammo Availability to control how careful you need to be with deku seeds, bombs, and arrows
 * Lots of shortcuts
 * In-Game Language
+* Minigame Difficulty control
 * Item Pool options for minimal, standard, extra, or plentiful amounts of progress items
 * Chest Type Matches Contents (CTMC)
 * Full Rupee Shuffle
@@ -16,18 +16,20 @@ coupling, and mixing pools
 * Stamina Fruit Shuffle
 * Hidden Item Shuffle
 * NPC Closet Shuffle
+* Sky Keep can be added to the required dungeons pool
 * Unlock all Groosenator Destinations
 * Sky and Cloud color cosmetic settings
 * Low Health Beeping Speed
 * Skip Harp Playing when opening trial gates, The Thunderhead, and the Gate of Time
 * Random Bottle Contents
+* Random Shop Prices
 
 ## New Setting Options
 * Every setting has a `random` option which will pick one of the other options randomly when
 generating a seed
 * Beatable Only logic option
 * Any Dungeon, Own Region, and Overworld options for Small Key and Boss Key shuffles
-* Removed option for all Key shuffles which unlocks their doors from the start
+* New "Removed" option for all Key shuffles which unlocks their doors from the start
 * Goddess Chest Shuffle to turn on/off randomization of the items inside Goddess Chests easily
 * Correct Orientation option for Randomized Boss Key Puzzles
 * The `Random Starting Item` setting is now a count where you can select how many random items you
@@ -36,8 +38,12 @@ would like to start with
 ## New Checks
 * All the checks from Full Rupee, Single Gratitude Crystal, Stamina Fruit, Hidden Item, and NPC
 Closet shuffles
+* `Knight Academy - Deliver Barrel to Henya the Lunch Lady`
 * `Upper Skyloft - Rescue Remlit above Knight Academy`
 * `The Sky - Form a Swirrell Ring above Volcanic Island` / `Lumpy Pumpkin` / `Bamboo Island`
+* `Sealed Temple - Collect Fruit from the Tree of Life`
+* `Lanayru Gorge - Boss Rush 4 Bosses`
+* `Lanayru Gorge - Boss Rush 8 Bosses`
 
 ## General Changes
 * Tracker built into the randomizer program
@@ -48,6 +54,9 @@ return to the titlescreen and go back to your last save point
     and button combination which can allow you to experiment with BiT.
 * Fi will keep track of any Gossip Stone hints you find. Call her and select "Information" and
 then "Notes". She will only tell you hints that you have already found
+* Freestanding items, shop items, and items shown during item gets will show the correct progressive model for major items
+  * (Swords still only use the Practice Sword model for now)
+* Freestanding item models should all rest on the ground correctly without clipping into the floor
 * All freestanding items spin like Heart Pieces and Triforces so that they are easier to peak
 * There are no Spirit of the Sword (SotS) hints. Path hints can be "Path to Demise" which function
 similarly to SotS
@@ -58,7 +67,6 @@ trial's reward check
 * You must climb onto Bucha's back to get the `Faron Woods - Kikwi Elder Reward` check
 * The Groosenator is always available in the Sealed Grounds Spiral
 * You can call Fi while on fire
-* Freestanding item models should all rest on the ground correctly without clipping into the floor
 * Speech bubbles will always and only appear above an NPC's head when they have some important
 information related to the randomizer (usually checks)
 * The `Remove Enemy Music` setting also removes the music which plays when Scaldera and Tentalus
@@ -70,6 +78,14 @@ Mushroom Spores
 * Obtaining Scrapper will automatically activate all the quests associated with him
 * `Earth Temple - Ledd's Gift` only requires defeating the double Lizalfos fight and not opening
 the chest
+* Stamina Potions and Air Potions can be bought from the start of the game
+  * `Knight Academy - Help Fledge Workout` no longer requires the Lanayru Mining Facility to be raised (or beaten)
+* Entering trial gates and the gates to the Goddess's Realm in Sky Keep requires a sword
+* Added the Life Tree Seedling as an obtainable item
+* The Bokoblin Base sword is actually a sword pull check
+* The Group of Tadtones item will randomly use one of two models when freestanding or during item gets
+* Heart Containers and Ancient Tablets will play their special item get sounds when collected
+* Important items which aren't shown on the inventory screen can be viewed by pressing the help button
 
 ## Logic Changes
 * Required dungeons aren't based on striking the Goddess Crest at the end (or running out the end
@@ -94,13 +110,23 @@ Sentrobes
 * You logically need some way to defeat or stun the Deku Baba Inside the Great Tree which guards
 the chest
 * You logically need the Digging Mitts to collect the crystal ball near the Earth Temple entrance
+* Thrill Digger is no longer a logical option for rupee farming
+* Stamina Potions are no longer a logical option for traversing sink sand (there is a trick setting to enable this)
 
 ## Not yet implemented / SDR-only
-* Shop randomization
-* Flooded Faron Woods randomization
-* Chest Dowsing Matches Contents (CDMC) (HDR has CTMC instead)
-* Custom Models and Music (you can use the files from SDR to achieve this)
+* Chest Dowsing Matches Contents (CDMC) (HDR has CTMC instead for now)
+* Full custom model and music support (experimental support for other mods has been added)
 * Random Music (you can use the files from SDR to achieve this)
-* Tadtones as items
 * Starting with a Treasures or Bugs
 * Save File text isn't updated for the randomizer
+* Random Riddles (randomizes the solutions to various puzzles throughout the game)
+* Sword Dungeon Reward setting
+* Show current small key count when collecting a small key
+* Multiple Demises during the final fight
+
+## Removed Settings / Features
+* Fill Dowsing on White Sword (this is always true in HDR)
+* BiT Patches (there is a setting to allow BiT to be possible)
+* Rupoor Mode (traps supersede this setting)
+* Separate Cube SotS Hints (SotS hints do not exist in HDR)
+* Precise Item Hints (generally too powerful and unused)
