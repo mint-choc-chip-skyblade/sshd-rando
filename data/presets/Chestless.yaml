@@ -119,7 +119,7 @@ World 1:
   shortcut_sandship_brig_bars: 'off'
   shortcut_fs_outside_bars: 'off'
   shortcut_fs_lava_flow: 'on'
-  shortcut_sky_keep_sv_room_bars: 'on'
+  shortcut_sky_keep_svt_room_bars: 'on'
   logic_early_lake_floria: 'off'
   logic_beedles_island_cage_chest_dive: 'off'
   logic_volcanic_island_dive: 'off'
@@ -207,7 +207,7 @@ World 1:
   - Bug Heaven - 10 Bugs in 3 Minutes
   - Inside the Thunderhead - Chest on East Island
   - Sealed Temple - Chest near The Old One
-  - Faron Woods - Chest behind Bombable Rocks near Erla
+  - Faron Woods - Chest behind Upper Bombable Rock
   - Inside the Great Tree - Chest Guarded by Deku Baba
   - Deep Woods - Chest on High Ledge
   - Lake Floria - Chest near Bird Statue
@@ -241,8 +241,8 @@ World 1:
   - Lanayru Desert - Chest on top of Lanayru Mining Facility
   - Lanayru Desert - Chest in Northeast Secret Passageway
   - Fire Node - Raised Chest
-  - Fire Node - First Small Chest
-  - Fire Node - Second Small Chest
+  - Fire Node - First Chest below Sand
+  - Fire Node - Second Chest below Sand
   - Fire Node - Left Ending Chest
   - Fire Node - Right Ending Chest
   - Lightning Node - Front Chest
@@ -280,7 +280,7 @@ World 1:
   - Lanayru Mining Facility - Chest behind First Crawlspace
   - Lanayru Mining Facility - Chest in Spike Maze
   - Lanayru Mining Facility - Chest after Double Armos Fight
-  - Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+  - Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
   - Ancient Cistern - Chest in East Room
   - Ancient Cistern - Chest after Whip Hooks
   - Ancient Cistern - Chest near Vines

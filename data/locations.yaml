@@ -1,11 +1,4 @@
 # Knight Academy:
-- name: Knight Academy - Crystal in Link's Room
-  original_item: Gratitude Crystal
-  types:
-    - Gratitude Crystals
-  Paths:
-    - stage/F001r/r1/l4/Item/104
-
 - name: Knight Academy - Link's Closet
   original_item: Blue Rupee
   types:
@@ -22,14 +15,6 @@
     - oarc/F001r/r0/l3
     - oarc/F001r/r0/l4
 
-- name: Knight Academy - Deliver Barrel to Henya the Lunch Lady
-  original_item: Red Rupee
-  types:
-    - NPC
-  Paths:
-    - event/100-Town/Give Barrel Devlivery Item
-    - oarc/F001r/r0/l3
-
 - name: Knight Academy - Item from Cawlin
   original_item: Cawlin's Letter
   types:
@@ -38,20 +23,13 @@
     - event/115-Town2/166
     - oarc/F001r/r0/l0
 
-- name: Knight Academy - Bonk Classroom Bookshelf
-  original_item: Green Rupee
+- name: Knight Academy - Deliver Barrel to Henya the Lunch Lady
+  original_item: Red Rupee
   types:
-    - Hidden Items
-    - Custom Flag
+    - NPC
   Paths:
-    - stage/F001r/r0/l0/TgReact/0xFC5C
-
-- name: Knight Academy - Groose's Closet
-  original_item: Green Rupee
-  types:
-    - Closets
-  Paths:
-    - stage/F001r/r2/l0/chest/0xFC03
+    - event/100-Town/Give Barrel Devlivery Item
+    - oarc/F001r/r0/l3
 
 - name: Knight Academy - Fledge's Closet
   original_item: Green Rupee
@@ -60,22 +38,20 @@
   Paths:
     - stage/F001r/r1/l0/chest/0xFC07
 
-- name: Knight Academy - Help Fledge Workout
-  original_item: Gratitude Crystal Pack
+- name: Knight Academy - Groose's Closet
+  original_item: Green Rupee
   types:
-    - NPC
+    - Closets
   Paths:
-    - event/115-Town2/325
-    - oarc/F001r/r1/l0
+    - stage/F001r/r2/l0/chest/0xFC03
 
-- name: Knight Academy - Deliver Cawlin's Letter
-  original_item: Gratitude Crystal Pack
+- name: Knight Academy - Bonk Classroom Bookshelf
+  original_item: Green Rupee
   types:
-    - NPC
+    - Hidden Items
+    - Custom Flag
   Paths:
-    - event/115-Town2/522
-    - event/115-Town2/641
-    - oarc/F001r/r0/l0
+    - stage/F001r/r0/l0/TgReact/0xFC5C
 
 - name: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
   original_item: Green Rupee
@@ -92,17 +68,6 @@
   Paths:
     - stage/F001r/r5/l0/chest/0xFC05
 
-- name: Knight Academy - Deliver Kikwi to Owlan
-  original_item: Gratitude Crystal Pack
-  types:
-    - Scrapper Deliveries
-    - Combat
-    - NPC
-  hint: sometimes
-  Paths:
-    - event/118-Town3/157
-    - oarc/F001r/r5/l0
-
 - name: Knight Academy - Horwell's Closet
   original_item: Green Rupee
   types:
@@ -117,12 +82,33 @@
   Paths:
     - stage/F001r/r6/l0/chest/0xFC06
 
-- name: Knight Academy - Crystal in Knight Academy Plant
-  original_item: Gratitude Crystal
+- name: Knight Academy - Deliver Cawlin's Letter
+  original_item: Gratitude Crystal Pack
   types:
-    - Gratitude Crystals
+    - NPC
   Paths:
-    - stage/F001r/r0/l4/Item/102
+    - event/115-Town2/522
+    - event/115-Town2/641
+    - oarc/F001r/r0/l0
+
+- name: Knight Academy - Help Fledge Workout
+  original_item: Gratitude Crystal Pack
+  types:
+    - NPC
+  Paths:
+    - event/115-Town2/325
+    - oarc/F001r/r1/l0
+
+- name: Knight Academy - Deliver Kikwi to Owlan
+  original_item: Gratitude Crystal Pack
+  types:
+    - Scrapper Deliveries
+    - Combat
+    - NPC
+  hint: sometimes
+  Paths:
+    - event/118-Town3/157
+    - oarc/F001r/r5/l0
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 1
   original_item: Green Rupee
@@ -169,13 +155,6 @@
   Paths:
     - stage/F001r/r6/l0/Item/0xFC11
 
-- name: Knight Academy - Crystal in Zelda's Room
-  original_item: Gratitude Crystal
-  types:
-    - Gratitude Crystals
-  Paths:
-    - stage/F001r/r6/l4/Item/103
-
 - name: Knight Academy - Zelda's Closet
   original_item: Heart Piece
   types:
@@ -183,8 +162,57 @@
   Paths:
     - stage/F001r/r6/l0/chest/0xFC07
 
+- name: Knight Academy - Crystal in Zelda's Room
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F001r/r6/l4/Item/103
+
+- name: Knight Academy - Crystal in Link's Room
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F001r/r1/l4/Item/104
+
+- name: Knight Academy - Crystal in Knight Academy Plant
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F001r/r0/l4/Item/102
+
 
 # Upper Skyloft:
+- name: Sparring Hall - Chest in Back Room
+  original_item: Progressive Sword
+  types:
+    - Chests
+  Paths:
+    - stage/F009r/r0/l0/TBox/66
+
+- name: Sparring Hall - Crystal on Roof Beam
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F009r/r0/l2/Item/115
+    - oarc/F009r/r0/l0
+
+- name: Upper Skyloft - Stamina Fruit near Sparring Hall
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l4/Item/0xFDFA
+    - stage/F000/r0/l5/Item/0xFE06
+    - stage/F000/r0/l6/Item/0xFDEB
+    - stage/F000/r0/l7/Item/0xFE01
+    - stage/F000/r0/l8/Item/0xFDD8
+    - stage/F000/r0/l9/Item/0xFDF6
+
 - name: Upper Skyloft - Owlan's Gift
   original_item: Wooden Shield
   types:
@@ -215,33 +243,6 @@
     - event/108-ShinkanA/292
     - oarc/F000/r0/l4
     - oarc/F000/r0/l6
-
-- name: Upper Skyloft - Ring Knight Academy Bell
-  original_item: Green Rupee
-  types:
-    - Bell
-  Paths:
-    - stage/F000/r0/l2/Bell
-    - stage/F000/r0/l4/Bell
-    - stage/F000/r0/l5/Bell
-    - stage/F000/r0/l6/Bell
-    - stage/F000/r0/l7/Bell
-
-- name: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD37
-
-- name: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD38
 
 - name: Upper Skyloft - Stamina Fruit near Upper Academy Gates
   original_item: Stamina Fruit
@@ -292,18 +293,16 @@
     - stage/F000/r0/l7/TBox/71
     # - stage/F000/r0/l10/TBox/71
 
-- name: Upper Skyloft - Stamina Fruit near Sparring Hall
-  original_item: Stamina Fruit
+- name: Upper Skyloft - Ring Knight Academy Bell
+  original_item: Green Rupee
   types:
-    - Stamina Fruits
-    - Custom Flag
+    - Bell
   Paths:
-    - stage/F000/r0/l4/Item/0xFDFA
-    - stage/F000/r0/l5/Item/0xFE06
-    - stage/F000/r0/l6/Item/0xFDEB
-    - stage/F000/r0/l7/Item/0xFE01
-    - stage/F000/r0/l8/Item/0xFDD8
-    - stage/F000/r0/l9/Item/0xFDF6
+    - stage/F000/r0/l2/Bell
+    - stage/F000/r0/l4/Bell
+    - stage/F000/r0/l5/Bell
+    - stage/F000/r0/l6/Bell
+    - stage/F000/r0/l7/Bell
 
 - name: Upper Skyloft - 600 Points in Pumpkin Pull
   original_item: Heart Piece
@@ -315,6 +314,22 @@
     - event/114-Friend/99
     - oarc/F000/r0/l4
     - oarc/F000/r0/l6
+
+- name: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD37
+
+- name: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD38
 
 - name: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
   original_item: Green Rupee
@@ -332,29 +347,22 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD3A
 
-- name: Sparring Hall - Crystal on Roof Beam
-  original_item: Gratitude Crystal
-  types:
-    - Gratitude Crystals
-  Paths:
-    - stage/F009r/r0/l2/Item/115
-    - oarc/F009r/r0/l0
-
-- name: Sparring Hall - Chest in Back Room
-  original_item: Progressive Sword
-  types:
-    - Chests
-  Paths:
-    - stage/F009r/r0/l0/TBox/66
-
 
 # Bazaar:
-- name: Bazaar - Potion Lady's Gift
+- name: Bazaar - Luv the Potion Lady's Gift
   original_item: Empty Bottle
   types:
     - NPC
   Paths:
     - event/106-DrugStore/44
+    - oarc/F004r/r0/l0
+
+- name: Bazaar - Repair Gondo's Junk
+  original_item: Scrapper
+  types:
+    - NPC
+  Paths:
+    - event/113-RemodelStore/Give Repair Gondo Junk item
     - oarc/F004r/r0/l0
 
 - name: Bazaar - Goddess Chest
@@ -408,16 +416,40 @@
 #     - NPC
 #   hint: never
 
-- name: Bazaar - Repair Gondo's Junk
-  original_item: Scrapper
-  types:
-    - NPC
-  Paths:
-    - event/113-RemodelStore/Give Repair Gondo Junk item
-    - oarc/F004r/r0/l0
-
 
 # Central Skyloft:
+- name: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD30
+
+- name: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD2F
+
+- name: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD2D
+
+- name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD2E
+
 - name: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
   original_item: Blue Rupee
   types:
@@ -442,67 +474,6 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD35
 
-- name: Central Skyloft - Stamina Fruit between Wooden Planks
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/Item/0xFCDF
-
-- name: Central Skyloft - Crystal between Wooden Planks
-  original_item: Gratitude Crystal
-  types:
-    - Gratitude Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/112
-    - stage/F000/r0/l5/Item/112
-    - stage/F000/r0/l7/Item/112
-    - stage/F000/r0/l9/Item/112
-
-- name: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD2D
-
-- name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD2E
-
-- name: Central Skyloft - Goddess Chest on West Cliff Island
-  original_item: Silver Rupee
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F000/r0/l0/TBox/78
-  cube_region: Faron Woods
-
-- name: Central Skyloft - Crystal below West Cliff
-  original_item: Gratitude Crystal
-  types:
-    - Gratitude Crystals
-  Paths:
-    - stage/F000/r0/l2/Item/113
-    - stage/F000/r0/l5/Item/113
-    - stage/F000/r0/l7/Item/113
-    - stage/F000/r0/l9/Item/113
-
-- name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/Item/0xFCD8
-
 - name: Central Skyloft - Orielle and Parrow's Closet
   original_item: Green Rupee
   types:
@@ -517,45 +488,49 @@
   Paths:
     - stage/F005r/r0/l2/Item/114
 
-- name: Central Skyloft - Stamina Fruit near Bazaar
+- name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCD8
+
+- name: Central Skyloft - Crystal between Wooden Planks
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/112
+    - stage/F000/r0/l5/Item/112
+    - stage/F000/r0/l7/Item/112
+    - stage/F000/r0/l9/Item/112
+
+- name: Central Skyloft - Stamina Fruit between Wooden Planks
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/Item/0xFCDF
+
+- name: Central Skyloft - Crystal below West Cliff
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/113
+    - stage/F000/r0/l5/Item/113
+    - stage/F000/r0/l7/Item/113
+    - stage/F000/r0/l9/Item/113
+
+- name: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCD6
-
-- name: Central Skyloft - Blow Red Flag South of the Bazaar
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD1B
-
-- name: Central Skyloft - Blow Purple Flag South of the Bazaar
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD1C
-
-- name: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD30
-
-- name: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F000/r0/l0/TgReact/0xFD2F
 
 - name: Central Skyloft - Bonk Tree Southeast of the Bazaar
   original_item: Blue Rupee
@@ -572,6 +547,16 @@
     - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDE
+
+- name: Central Skyloft - Crystal on Light Tower
+  original_item: Gratitude Crystal
+  types:
+    - Gratitude Crystals
+  Paths:
+    - stage/F000/r0/l2/Item/106
+    - stage/F000/r0/l5/Item/106
+    - stage/F000/r0/l7/Item/106
+    - stage/F000/r0/l9/Item/106
 
 - name: Central Skyloft - Parrow's Gift
   original_item: Empty Bottle
@@ -594,15 +579,21 @@
     - oarc/F000/r0/l6
     - oarc/F005r/r0/l0
 
-- name: Central Skyloft - Crystal on Light Tower
-  original_item: Gratitude Crystal
+- name: Central Skyloft - Blow Red Flag South of the Bazaar
+  original_item: Blue Rupee
   types:
-    - Gratitude Crystals
+    - Hidden Items
+    - Custom Flag
   Paths:
-    - stage/F000/r0/l2/Item/106
-    - stage/F000/r0/l5/Item/106
-    - stage/F000/r0/l7/Item/106
-    - stage/F000/r0/l9/Item/106
+    - stage/F000/r0/l0/TgReact/0xFD1B
+
+- name: Central Skyloft - Blow Purple Flag South of the Bazaar
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F000/r0/l0/TgReact/0xFD1C
 
 - name: Central Skyloft - Stamina Fruit near River
   original_item: Stamina Fruit
@@ -637,13 +628,20 @@
     - oarc/F018r/r0/l0
     - oarc/F019r/r0/l0
 
-- name: Central Skyloft - Stamina Fruit near Wryna's House
+- name: Central Skyloft - Stamina Fruit near Kukiel's House
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
     - Custom Flag
   Paths:
     - stage/F000/r0/l0/Item/0xFCDA
+
+- name: Central Skyloft - Kukiel's Family Closet
+  original_item: Green Rupee
+  types:
+    - Closets
+  Paths:
+    - stage/F006r/r0/l0/chest/0xFC16
 
 - name: Central Skyloft - Wryna's Gratitude
   original_item: Gratitude Crystal Pack
@@ -652,13 +650,6 @@
   Paths:
     - event/118-Town3/144
     - oarc/F006r/r0/l0
-
-- name: Central Skyloft - Wryna's Closet
-  original_item: Green Rupee
-  types:
-    - Closets
-  Paths:
-    - stage/F006r/r0/l0/chest/0xFC16
 
 - name: Central Skyloft - Chest in Shed
   original_item: Silver Rupee
@@ -701,34 +692,6 @@
     - stage/F000/r0/l5/Item/109
     - stage/F000/r0/l7/Item/109
     - stage/F000/r0/l9/Item/109
-
-- name: Central Skyloft - Goddess Chest on Island near Waterfall
-  original_item: Gold Rupee
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F000/r0/l0/TBox/91
-  cube_region: Lake Floria
-
-- name: Central Skyloft - Goddess Chest on Waterfall Island
-  original_item: Heart Piece
-  types:
-    - Chests
-    - Goddess Chests
-  hint: sometimes
-  Paths:
-    - stage/F000/r0/l0/TBox/80
-  cube_region: Lanayru Sand Sea
-
-- name: Central Skyloft - Gossip Stone on Waterfall Island
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 124-Town6
-  textindex: 18
-  eventflowindex: 51
 
 - name: Central Skyloft - North Rupee in Bird's Nest
   original_item: Green Rupee
@@ -804,7 +767,7 @@
   Paths:
     - stage/D000/r0/l0/Item/0xFC14
 
-- name: Central Skyloft - Crystal after Waterfall Cave
+- name: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
   original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
@@ -814,7 +777,7 @@
     - stage/F000/r0/l7/Item/111
     - stage/F000/r0/l9/Item/111
 
-- name: Central Skyloft - Crystal in Loftwing Prison
+- name: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
   original_item: Gratitude Crystal
   types:
     - Gratitude Crystals
@@ -823,6 +786,43 @@
     - stage/F000/r0/l5/Item/110
     - stage/F000/r0/l7/Item/110
     - stage/F000/r0/l9/Item/110
+
+- name: Central Skyloft - Goddess Chest on West Cliff Island
+  original_item: Silver Rupee
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F000/r0/l0/TBox/78
+  cube_region: Faron Woods
+
+- name: Central Skyloft - Goddess Chest on Island near Waterfall
+  original_item: Gold Rupee
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F000/r0/l0/TBox/91
+  cube_region: Lake Floria
+
+- name: Central Skyloft - Goddess Chest on Waterfall Island
+  original_item: Heart Piece
+  types:
+    - Chests
+    - Goddess Chests
+  hint: sometimes
+  Paths:
+    - stage/F000/r0/l0/TBox/80
+  cube_region: Lanayru Sand Sea
+
+- name: Central Skyloft - Gossip Stone on Waterfall Island
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 124-Town6
+  textindex: 18
+  eventflowindex: 51
 
 
 # Skyloft Village:
@@ -834,7 +834,7 @@
   Paths:
     - stage/F000/r0/l0/TgReact/0xFD1E
 
-- name: Skyloft Village - Stamina Fruit above Mallara's House
+- name: Skyloft Village - Stamina Fruit above Pipit's House
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -852,7 +852,14 @@
     - stage/F000/r0/l7/Item/108
     - stage/F000/r0/l9/Item/108
 
-- name: Skyloft Village - Clean Mallara's House
+- name: Skyloft Village - Pipit and Mallara's Closet
+  original_item: Green Rupee
+  types:
+    - Closets
+  Paths:
+    - stage/F016r/r0/l0/chest/0xFC28
+
+- name: Skyloft Village - Clean Pipit's House
   original_item: Gratitude Crystal Pack
   types:
     - NPC
@@ -860,12 +867,12 @@
     - event/123-Town5/186
     - oarc/F016r/r0/l0
 
-- name: Skyloft Village - Mallara's Closet
+- name: Skyloft Village - Bertie and Luv's Closet
   original_item: Green Rupee
   types:
     - Closets
   Paths:
-    - stage/F016r/r0/l0/chest/0xFC28
+    - stage/F014r/r0/l0/chest/0xFC12
 
 - name: Skyloft Village - Deliver Rattle to Bertie
   original_item: Gratitude Crystal Pack
@@ -875,29 +882,12 @@
     - event/115-Town2/125
     - oarc/F014r/r0/l0
 
-- name: Skyloft Village - Luv and Bertie's Closet
-  original_item: Green Rupee
-  types:
-    - Closets
-  Paths:
-    - stage/F014r/r0/l0/chest/0xFC12
-
-- name: Skyloft Village - Gondo's Closet
+- name: Skyloft Village - Gondo and Gebra's Closet
   original_item: Green Rupee
   types:
     - Closets
   Paths:
     - stage/F015r/r0/l0/chest/0xFC10
-
-- name: Skyloft Village - Deliver Crystal Ball to Sparrot
-  original_item: Gratitude Crystal Pack
-  types:
-    - Scrapper Deliveries
-    - NPC
-  hint: sometimes
-  Paths:
-    - event/118-Town3/141
-    - oarc/F013r/r0/l0
 
 - name: Skyloft Village - Sparrot's Closet
   original_item: Green Rupee
@@ -914,7 +904,17 @@
   Paths:
     - stage/F013r/r0/l0/TgReact/0xFC14
 
-- name: Skyloft Village - Rupin's Closet
+- name: Skyloft Village - Deliver Crystal Ball to Sparrot
+  original_item: Gratitude Crystal Pack
+  types:
+    - Scrapper Deliveries
+    - NPC
+  hint: sometimes
+  Paths:
+    - event/118-Town3/141
+    - oarc/F013r/r0/l0
+
+- name: Skyloft Village - Rupin and Goselle's Closet
   original_item: Green Rupee
   types:
     - Closets
@@ -1103,15 +1103,6 @@
 
 
 # The Sky:
-- name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 11
-  eventflowindex: 18
-
 - name: Bamboo Island Interior - Bonk Southwest Sprout
   original_item: Green Rupee
   types:
@@ -1256,30 +1247,12 @@
   Paths:
     - stage/F011r/r0/l2/Item/116
 
-- name: Lumpy Pumpkin - Gossip Stone near Back Door
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 27
-  eventflowindex: 40
-
 - name: Orielle's Island - Heal Orielle's Loftwing
   original_item: Gratitude Crystal Pack
   types:
     - NPC
   Paths:
     - event/115-Town2/225
-    - oarc/F020/r0/l0
-
-- name: Beedle's Island - Deliver Beedle's Insect Cage
-  original_item: Gratitude Crystal Pack
-  types:
-    - NPC
-  hint: sometimes
-  Paths:
-    - event/105-Terry/115
     - oarc/F020/r0/l0
 
 - name: Beedle's Island - Crystal on Airshop Propeller
@@ -1289,25 +1262,14 @@
   Paths:
     - stage/F020/r0/l4/Item/119
 
-- name: Beedle's Island - Top Goddess Chest
-  original_item: Heart Piece
+- name: Beedle's Island - Deliver Beedle's Insect Cage
+  original_item: Gratitude Crystal Pack
   types:
-    - Chests
-    - Goddess Chests
-    - Combat
+    - NPC
   hint: sometimes
   Paths:
-    - stage/F020/r0/l0/TBox/89
-  cube_region: Lanayru Desert
-
-- name: Beedle's Island - Goddess Chest in Cage
-  original_item: Rupee Medal
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F020/r0/l0/TBox/81
-  cube_region: Faron Woods
+    - event/105-Terry/115
+    - oarc/F020/r0/l0
 
 - name: Fun Fun Island - Deliver Party Wheel to Dodoh
   original_item: Gratitude Crystal Pack
@@ -1328,15 +1290,6 @@
   Paths:
     - event/110-DivingGame/19
     - oarc/F020/r0/l2
-
-- name: Fun Fun Island - Goddess Chest below Island
-  original_item: Gold Rupee
-  types:
-    - Chests
-    - Goddess Chests
-  Paths:
-    - stage/F020/r0/l0/TBox/86
-  cube_region: Lake Floria
 
 - name: The Sky - Form a Swirrell Ring above Volcanic Island
   original_item: Red Rupee
@@ -1372,15 +1325,6 @@
     - Chests
   Paths:
     - stage/F020/r0/l0/TBox/69
-
-- name: Volcanic Island - Gossip Stone inside Island
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 30
-  eventflowindex: 64
 
 ## Goddess Chests
 - name: Bamboo Island - Goddess Chest behind Entrance
@@ -1428,6 +1372,26 @@
     - stage/F020/r0/l0/TBox/74
   cube_region: Eldin Volcano
 
+- name: Beedle's Island - Top Goddess Chest
+  original_item: Heart Piece
+  types:
+    - Chests
+    - Goddess Chests
+    - Combat
+  hint: sometimes
+  Paths:
+    - stage/F020/r0/l0/TBox/89
+  cube_region: Lanayru Desert
+
+- name: Beedle's Island - Goddess Chest in Cage
+  original_item: Rupee Medal
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/81
+  cube_region: Faron Woods
+
 - name: Lumpy Pumpkin - Goddess Chest on Roof
   original_item: Gold Rupee
   types:
@@ -1473,6 +1437,15 @@
     - stage/F020/r0/l0/TBox/68
   cube_region: Faron Woods
 
+- name: Fun Fun Island - Goddess Chest below Island
+  original_item: Gold Rupee
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F020/r0/l0/TBox/86
+  cube_region: Lake Floria
+
 - name: Triple Island - Upper Goddess Chest
   original_item: Small Seed Satchel
   types:
@@ -1500,16 +1473,44 @@
     - stage/F020/r0/l0/TBox/75
   cube_region: Lanayru Sand Sea
 
-
-# Inside the Thunderhead:
-- name: Inside the Thunderhead - Gossip Stone near Bug Heaven
+## Gossip Stones
+- name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
   original_item: Nothing
   types:
     - Hint Location
   is_gui_excluded_location: False
   textfile: 004-Object
-  textindex: 12
-  eventflowindex: 20
+  textindex: 11
+  eventflowindex: 18
+
+- name: Lumpy Pumpkin - Gossip Stone near Back Door
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 27
+  eventflowindex: 40
+
+- name: Volcanic Island - Gossip Stone inside Island
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 30
+  eventflowindex: 64
+
+
+# Inside the Thunderhead:
+- name: Bug Heaven - Goddess Chest
+  original_item: Heart Piece
+  types:
+    - Chests
+    - Goddess Chests
+  Paths:
+    - stage/F023/r0/l0/TBox/88
+  cube_region: Volcano Summit
 
 - name: Bug Heaven - 10 Bugs in 3 Minutes
   original_item: Beedle's Insect Cage
@@ -1522,14 +1523,13 @@
     - event/116-InsectGame/69
     - oarc/F023/r0/l0
 
-- name: Bug Heaven - Goddess Chest
-  original_item: Heart Piece
+- name: Bug Heaven - Stamina Fruit on top of Slope
+  original_item: Stamina Fruit
   types:
-    - Chests
-    - Goddess Chests
+    - Stamina Fruits
+    - Custom Flag
   Paths:
-    - stage/F023/r0/l0/TBox/88
-  cube_region: Volcano Summit
+    - stage/F023/r0/l0/Item/0xFC10
 
 - name: Bug Heaven - Stamina Fruit near Start
   original_item: Stamina Fruit
@@ -1554,14 +1554,6 @@
     - Custom Flag
   Paths:
     - stage/F023/r0/l0/Item/0xFC86
-
-- name: Bug Heaven - Stamina Fruit on top of Slope
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F023/r0/l0/Item/0xFC10
 
 - name: Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
   original_item: Empty Bottle
@@ -1646,6 +1638,15 @@
   Paths:
     - event/120-Nushi/give item after levias
     - oarc/F023/r0/l0
+
+- name: Inside the Thunderhead - Gossip Stone near Bug Heaven
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 12
+  eventflowindex: 20
 
 
 # Sealed Grounds:
@@ -1896,13 +1897,6 @@
     - event/501-Inpa/267
     - oarc/F402/r2/l0
 
-- name: Sealed Temple - Collect Fruit from the Tree of Life
-  original_item: Life Tree Fruit
-  types:
-    - Freestanding Items
-  Paths:
-    - stage/F402/r2/l0/FrtTree
-
 - name: Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral
   original_item: Green Rupee
   types:
@@ -1984,15 +1978,6 @@
 #    - event/503-Goron/418
 #    - oarc/F400/r0/l0
 
-- name: Sealed Grounds - Gossip Stone Behind the Temple
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 13
-  eventflowindex: 22
-
 - name: Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone
   original_item: Green Rupee
   types:
@@ -2033,6 +2018,13 @@
   Paths:
     - stage/F400/r0/l0/TgReact/0xFC8F
 
+- name: Sealed Temple - Collect Fruit from the Tree of Life
+  original_item: Life Tree Fruit
+  types:
+    - Freestanding Items
+  Paths:
+    - stage/F402/r2/l0/FrtTree
+
 - name: Temple of Hylia - Zelda's Blessing
   original_item: Progressive Sword
   types:
@@ -2048,8 +2040,25 @@
     - Game Beatable
   is_gui_excluded_location: False
 
+- name: Sealed Grounds - Gossip Stone Behind the Temple
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 13
+  eventflowindex: 22
+
 
 # Faron Woods:
+- name: Faron Woods - Stamina Fruit on Vines below First Log
+  original_item: Stamina Fruit
+  types:
+    - Stamina Fruits
+    - Custom Flag
+  Paths:
+    - stage/F100/r0/l0/Item/0x60E6
+
 - name: Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing
   original_item: Green Rupee
   types:
@@ -2090,20 +2099,12 @@
   Paths:
     - stage/F100/r0/l0/TgReact/0xFD5B
 
-- name: Faron Woods - Item behind Bombable Rock
+- name: Faron Woods - Item behind Lower Bombable Rock
   original_item: Heart Piece
   types:
     - Freestanding Items
   Paths:
     - stage/F100/r0/l0/Item/33 #last thing is SceneflagID
-
-- name: Faron Woods - Stamina Fruit on Vines below First Log
-  original_item: Stamina Fruit
-  types:
-    - Stamina Fruits
-    - Custom Flag
-  Paths:
-    - stage/F100/r0/l0/Item/0x60E6
 
 - name: Faron Woods - Item on Great Tree after Tightrope
   original_item: Heart Piece
@@ -2229,7 +2230,7 @@
   Paths:
     - stage/F100/r0/l0/TgReact/0xFD66
 
-- name: Faron Woods - Stamina Fruit on Vines near Erla
+- name: Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock
   original_item: Stamina Fruit
   types:
     - Stamina Fruits
@@ -2237,7 +2238,7 @@
   Paths:
     - stage/F100/r0/l0/Item/0x5CE4
 
-- name: Faron Woods - Chest behind Bombable Rocks near Erla
+- name: Faron Woods - Chest behind Upper Bombable Rock
   original_item: Uncommon Treasure
   types:
     - Chests
@@ -2292,6 +2293,12 @@
   Paths:
     - stage/F100/r0/l0/TgReact/0xFD69
 
+- name: Faron Woods - Goddess Cube on West Great Tree near Exit
+  original_item: Faron Woods Goddess Cube on West Great Tree near Exit
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Faron Woods - Goddess Cube on East Great Tree with Rope
   original_item: Faron Woods Goddess Cube on East Great Tree with Rope
   types:
@@ -2300,12 +2307,6 @@
 
 - name: Faron Woods - Goddess Cube on East Great Tree with Clawshots Target
   original_item: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Faron Woods - Goddess Cube on West Great Tree near Exit
-  original_item: Faron Woods Goddess Cube on West Great Tree near Exit
   types:
     - Goddess Cube
   is_gui_excluded_location: False
@@ -2399,15 +2400,6 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Deep Woods - Gossip Stone before Temple
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 15
-  eventflowindex: 26
-
 - name: Deep Woods - Bonk Tree near Gossip Stone Item 1
   original_item: 5 Deku Seeds
   types:
@@ -2424,8 +2416,8 @@
   Paths:
     - stage/F101/r0/l0/TgReact/0xFCDF
 
-- name: Deep Woods - Goddess Cube in front of Skyview
-  original_item: Deep Woods Goddess Cube in front of Skyview
+- name: Deep Woods - Goddess Cube in front of Temple
+  original_item: Deep Woods Goddess Cube in front of Temple
   types:
     - Goddess Cube
   is_gui_excluded_location: False
@@ -2490,11 +2482,20 @@
   Paths:
     - stage/F101/r0/l0/TgReact/0xFDFF
 
-- name: Deep Woods - Goddess Cube on top of Skyview
-  original_item: Deep Woods Goddess Cube on top of Skyview
+- name: Deep Woods - Goddess Cube on top of Temple
+  original_item: Deep Woods Goddess Cube on top of Temple
   types:
     - Goddess Cube
   is_gui_excluded_location: False
+
+- name: Deep Woods - Gossip Stone before Temple
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 15
+  eventflowindex: 26
 
 
 # Lake Floria:
@@ -2556,15 +2557,6 @@
     - Chests
   Paths:
     - stage/F102_2/r0/l0/TBox/85
-
-- name: Floria Waterfall - Gossip Stone near Bird Statue
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 28
-  eventflowindex: 42
 
 - name: Floria Waterfall - Goddess Cube on High Ledge
   original_item: Floria Waterfall Goddess Cube on High Ledge
@@ -2630,21 +2622,6 @@
   Paths:
     - stage/F102_1/r0/l0/TgReact/0xFC3E
 
-- name: Floria Waterfall - Slingshot Left Cistern Door Frame
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F102_1/r0/l0/TgReact/0xFC3F
-
-- name: Floria Waterfall - Slingshot Right Cistern Door Frame
-  original_item: Heart # actually spawns 3
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F102_1/r0/l0/TgReact/0xFC40
 
 - name: Floria Waterfall - Slingshot Left Cistern Eye
   original_item: Blue Rupee
@@ -2662,8 +2639,51 @@
   Paths:
     - stage/F102_1/r0/l0/TgReact/0xFC42
 
+- name: Floria Waterfall - Slingshot Left Cistern Door Frame
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC3F
+
+- name: Floria Waterfall - Slingshot Right Cistern Door Frame
+  original_item: Heart # actually spawns 3
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F102_1/r0/l0/TgReact/0xFC40
+
+- name: Floria Waterfall - Gossip Stone near Bird Statue
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 28
+  eventflowindex: 42
+
 
 # Flooded Faron Woods
+- name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1
+  original_item: Red Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F103_1/r0/l0/Item/0xFFF0
+
+- name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2
+  original_item: Red Rupee
+  types:
+    - Freestanding Rupees
+    - Beginner Rupees
+    - Custom Flag
+  Paths:
+    - stage/F103_1/r0/l0/Item/0xFFF1
+
 - name: Flooded Faron Woods - Yellow Tadtone under Lilypad
   original_item: Group of Tadtones
   types:
@@ -2783,24 +2803,6 @@
   Paths:
     - stage/F103/r0/l2/Clef/12 # group number
 
-- name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1
-  original_item: Red Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F103_1/r0/l0/Item/0xFFF0
-
-- name: Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2
-  original_item: Red Rupee
-  types:
-    - Freestanding Rupees
-    - Beginner Rupees
-    - Custom Flag
-  Paths:
-    - stage/F103_1/r0/l0/Item/0xFFF1
-
 - name: Flooded Faron Woods - Water Dragon's Reward
   original_item: Song of the Hero Part
   types:
@@ -2809,6 +2811,111 @@
   Paths:
     - event/204-ForestF3/Give item after Faron SotH CS
     - oarc/F103_1/r0/l0
+
+
+# Bokoblin Base:
+# Placing these locations before the Eldin Volcano ones means that the Goddess Cubes
+# will appear at the end of the list of Bokoblin Base locations rather than at the start.
+- name: Bokoblin Base - Plats' Gift
+  original_item: Mogma Mitts
+  types:
+    - NPC
+  Paths:
+    - event/305-MountainF3/Plats' Gift
+    - oarc/F202/r1/l1
+
+- name: Bokoblin Base - Chest near Bone Bridge
+  original_item: Gust Bellows
+  types:
+    - Chests
+  Paths:
+    - stage/F202/r2/l1/TBox/70
+
+- name: Bokoblin Base - Bonk Hammer in Hut near Cliff
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F202/r2/l0/TgReact/0x00AF
+
+- name: Bokoblin Base - Blow Cloth above Hut near Cliff
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F202/r2/l0/TgReact/0x00B0
+
+- name: Bokoblin Base - Chest on Cliff
+  original_item: Clawshots
+  types:
+    - Chests
+  Paths:
+    - stage/F202/r2/l1/TBox/66
+
+- name: Bokoblin Base - Chest near Drawbridge
+  original_item: Whip
+  types:
+    - Chests
+  Paths:
+    - stage/F202/r2/l1/TBox/67
+
+- name: Bokoblin Base - Bonk Campfire East of Temple
+  original_item: Heart
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F202/r4/l0/TgReact/0x005E
+
+- name: Bokoblin Base - Chest East of Temple down Lava River
+  original_item: Progressive Slingshot
+  types:
+    - Chests
+  Paths:
+    - stage/F202/r4/l1/TBox/68
+
+- name: Bokoblin Base - Chest West of Temple behind Watch Tower
+  original_item: Bomb Bag
+  types:
+    - Chests
+  Paths:
+    - stage/F202/r4/l1/TBox/69
+
+- name: Bokoblin Base - First Chest in Volcano Summit
+  original_item: Blue Rupee
+  types:
+    - Chests
+  Paths:
+    - stage/F201_2/r0/l0/TBox/72
+    - stage/F201_1/r0/l4/TBox/72
+
+- name: Bokoblin Base - Raise Sword
+  original_item: Progressive Sword
+  types:
+    - Chests
+  Paths:
+    - event/107-Kanban/Fi give Boko Base Sword item
+    - oarc/F201_2/r0/l0 # boko base stage
+    - oarc/F201_1/r0/l4 # vs stage, post-boko base layer
+    - stage/F201_1/r0/l4/TBox/73 # missing zev prevents the sword pull working on this stage
+
+- name: Bokoblin Base - Chest in Volcano Summit Alcove
+  original_item: Progressive Pouch
+  types:
+    - Chests
+  Paths:
+    - stage/F201_2/r0/l0/TBox/71
+    - stage/F201_1/r0/l4/TBox/71
+
+- name: Bokoblin Base - Fire Dragon's Reward
+  original_item: Song of the Hero Part
+  types:
+    - NPC
+  Paths:
+    - event/305-MountainF3/Give item after Eldin SotH CS
+    - oarc/F221/r0/l0
 
 
 # Eldin Volcano:
@@ -3213,15 +3320,6 @@
   Paths:
     - stage/F200/r2/l0/TBox/71
 
-- name: Lower Eldin Cave - East Gossip Stone
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 17
-  eventflowindex: 56
-
 - name: Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 1
   original_item: Stamina Fruit
   types:
@@ -3269,15 +3367,6 @@
     - Intermediate Rupees
   Paths:
     - stage/F200/r4/l0/Item/11
-
-- name: Thrill Digger Cave - Gossip Stone near Tubert
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 16
-  eventflowindex: 28
 
 - name: Thrill Digger Cave - Slingshot Left Blue Crystal 1
   original_item: Blue Rupee
@@ -3456,26 +3545,13 @@
     - stage/F200/r4/l0/Item/0xFC35
 
 ## Outside Earth Temple
-- name: Eldin Volcano - Digging Spot West of Temple
-  original_item: Key Piece
+- name: Eldin Volcano - Slingshot Red Jewel above Temple Entrance
+  original_item: Red Rupee
   types:
-    - Digging Spots
+    - Hidden Items
+    - Custom Flag
   Paths:
-    - stage/F200/r4/l1/Soil/8
-
-- name: Eldin Volcano - Digging Spot below Tower West of Temple
-  original_item: Key Piece
-  types:
-    - Digging Spots
-  Paths:
-    - stage/F200/r4/l1/Soil/9
-
-- name: Eldin Volcano - Digging Spot behind Boulder on Slope before Temple
-  original_item: Key Piece
-  types:
-    - Digging Spots
-  Paths:
-    - stage/F200/r4/l1/Soil/12
+    - stage/F200/r4/l0/TgReact/0xFC69
 
 - name: Eldin Volcano - Blow Closest Torch West of Temple
   original_item: Green Rupee
@@ -3493,28 +3569,32 @@
   Paths:
     - stage/F200/r4/l0/TgReact/0xFC6B
 
-- name: Eldin Volcano - Slingshot Red Jewel above Temple Entrance
-  original_item: Red Rupee
+- name: Eldin Volcano - Digging Spot West of Temple
+  original_item: Key Piece
   types:
-    - Hidden Items
-    - Custom Flag
+    - Digging Spots
   Paths:
-    - stage/F200/r4/l0/TgReact/0xFC69
-
-- name: Eldin Volcano - Gossip Stone on Cliff West of Temple
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 14
-  eventflowindex: 24
+    - stage/F200/r4/l1/Soil/8
 
 - name: Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple
   original_item: Eldin Volcano Goddess Cube West of Temple
   types:
     - Goddess Cube
   is_gui_excluded_location: False
+
+- name: Eldin Volcano - Digging Spot below Tower West of Temple
+  original_item: Key Piece
+  types:
+    - Digging Spots
+  Paths:
+    - stage/F200/r4/l1/Soil/9
+
+- name: Eldin Volcano - Digging Spot behind Boulder on Slope before Temple
+  original_item: Key Piece
+  types:
+    - Digging Spots
+  Paths:
+    - stage/F200/r4/l1/Soil/12
 
 - name: Eldin Volcano - Underground Rupee West of Temple 1
   original_item: Blue Rupee
@@ -3609,15 +3689,6 @@
   types:
     - Goddess Cube
   is_gui_excluded_location: False
-
-- name: Upper Eldin Cave - West Gossip Stone
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 21
-  eventflowindex: 30
 
 - name: Eldin Volcano - Stamina Fruit after Last Boko Camp Tower
   original_item: Stamina Fruit
@@ -3798,6 +3869,42 @@
   Paths:
     - stage/F200/r2/l1/Soil/64
 
+- name: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 16
+  eventflowindex: 28
+
+- name: Eldin Volcano - Gossip Stone on Cliff West of Temple
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 14
+  eventflowindex: 24
+
+- name: Lower Eldin Cave - East Gossip Stone
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 17
+  eventflowindex: 56
+
+- name: Upper Eldin Cave - West Gossip Stone
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 21
+  eventflowindex: 30
+
 
 # Mogma Turf:
 - name: Mogma Turf - Free Fall Chest
@@ -3806,6 +3913,12 @@
     - Chests
   Paths:
     - stage/F210/r0/l0/TBox/64
+
+- name: Mogma Turf - Goddess Cube on Raised Pillar
+  original_item: Mogma Turf Goddess Cube on Raised Pillar
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Mogma Turf - Chest behind Bombable Wall at Entrance
   original_item: Golden Skull
@@ -3895,14 +4008,14 @@
   Paths:
     - stage/F210/r0/l0/TBox/70
 
-- name: Mogma Turf - Goddess Cube
-  original_item: Mogma Turf Goddess Cube
+
+# Volcano Summit:
+- name: Volcano Summit - Goddess Cube in Lava Lake
+  original_item: Volcano Summit Goddess Cube in Lava Lake
   types:
     - Goddess Cube
   is_gui_excluded_location: False
 
-
-# Volcano Summit:
 - name: Volcano Summit - Bonk Waterfall
   original_item: Fairy
   types:
@@ -3911,20 +4024,18 @@
   Paths:
     - stage/F201_4/r0/l0/TgReact/0xFC15
 
+- name: Volcano Summit - Goddess Cube at Summit Waterfall
+  original_item: Volcano Summit Goddess Cube at Summit Waterfall
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Volcano Summit - Chest on Cliff behind Bombable Wall near Waterfall
   original_item: Silver Rupee
   types:
     - Chests
   Paths:
     - stage/F201_4/r0/l0/TBox/95
-
-- name: Volcano Summit - Item after Underground Tunnel near Gossip Stone
-  original_item: Heart Piece
-  types:
-    - Freestanding Items
-  hint: sometimes
-  Paths:
-    - stage/F201_3/r0/l0/Item/104 #sceneflagID
 
 - name: Volcano Summit - Underground Rupee 1
   original_item: Blue Rupee
@@ -3941,6 +4052,44 @@
     - Custom Flag
   Paths:
     - stage/F201_3/r0/l0/Item/136 #sceneflagID
+
+- name: Volcano Summit - Item after Underground Tunnel near Gossip Stone
+  original_item: Heart Piece
+  types:
+    - Freestanding Items
+  hint: sometimes
+  Paths:
+    - stage/F201_3/r0/l0/Item/104 #sceneflagID
+
+- name: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
+  original_item: Red Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/TgReact/0xFC4C
+
+- name: Volcano Summit - Blow Torch West of Fire Sanctuary
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/TgReact/0xFC4A
+
+- name: Volcano Summit - Blow Torch East of Fire Sanctuary
+  original_item: Green Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F201_3/r0/l0/TgReact/0xFC4B
+
+- name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
+  original_item: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Volcano Summit - Gossip Stone on Cliff near Waterfall
   original_item: Nothing
@@ -3960,153 +4109,14 @@
   textindex: 31
   eventflowindex: 76
 
-- name: Volcano Summit - Goddess Cube in Lava Lake
-  original_item: Volcano Summit Goddess Cube in Lava Lake
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Volcano Summit - Goddess Cube at Summit Waterfall
-  original_item: Volcano Summit Goddess Cube at Summit Waterfall
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Volcano Summit - Blow Torch West of Fire Sanctuary
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F201_3/r0/l0/TgReact/0xFC4A
-
-- name: Volcano Summit - Blow Torch East of Fire Sanctuary
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F201_3/r0/l0/TgReact/0xFC4B
-
-- name: Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary
-  original_item: Red Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F201_3/r0/l0/TgReact/0xFC4C
-
-- name: Volcano Summit - Goddess Cube near Fire Sanctuary Entrance
-  original_item: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-
-# Bokoblin Base:
-- name: Bokoblin Base - Plats' Gift
-  original_item: Mogma Mitts
-  types:
-    - NPC
-  Paths:
-    - event/305-MountainF3/Plats' Gift
-    - oarc/F202/r1/l1
-
-- name: Bokoblin Base - Chest near Bone Bridge
-  original_item: Gust Bellows
-  types:
-    - Chests
-  Paths:
-    - stage/F202/r2/l1/TBox/70
-
-- name: Bokoblin Base - Bonk Hammer in Hut near Cliff
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F202/r2/l0/TgReact/0x00AF
-
-- name: Bokoblin Base - Blow Cloth above Hut near Cliff
-  original_item: Green Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F202/r2/l0/TgReact/0x00B0
-
-- name: Bokoblin Base - Chest on Cliff
-  original_item: Clawshots
-  types:
-    - Chests
-  Paths:
-    - stage/F202/r2/l1/TBox/66
-
-- name: Bokoblin Base - Chest near Drawbridge
-  original_item: Whip
-  types:
-    - Chests
-  Paths:
-    - stage/F202/r2/l1/TBox/67
-
-- name: Bokoblin Base - Bonk Campfire East of Temple
-  original_item: Heart
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F202/r4/l0/TgReact/0x005E
-
-- name: Bokoblin Base - Chest East of Temple down Lava River
-  original_item: Progressive Slingshot
-  types:
-    - Chests
-  Paths:
-    - stage/F202/r4/l1/TBox/68
-
-- name: Bokoblin Base - Chest West of Temple behind Watch Tower
-  original_item: Bomb Bag
-  types:
-    - Chests
-  Paths:
-    - stage/F202/r4/l1/TBox/69
-
-- name: Bokoblin Base - First Chest in Volcano Summit
-  original_item: Blue Rupee
-  types:
-    - Chests
-  Paths:
-    - stage/F201_2/r0/l0/TBox/72
-    - stage/F201_1/r0/l4/TBox/72
-
-- name: Bokoblin Base - Raise Sword
-  original_item: Progressive Sword
-  types:
-    - Chests
-  Paths:
-    - event/107-Kanban/Fi give Boko Base Sword item
-    - oarc/F201_2/r0/l0 # boko base stage
-    - oarc/F201_1/r0/l4 # vs stage, post-boko base layer
-    - stage/F201_1/r0/l4/TBox/73 # missing zev prevents the sword pull working on this stage
-
-- name: Bokoblin Base - Chest in Volcano Summit Alcove
-  original_item: Progressive Pouch
-  types:
-    - Chests
-  Paths:
-    - stage/F201_2/r0/l0/TBox/71
-    - stage/F201_1/r0/l4/TBox/71
-
-- name: Bokoblin Base - Fire Dragon's Reward
-  original_item: Song of the Hero Part
-  types:
-    - NPC
-  Paths:
-    - event/305-MountainF3/Give item after Eldin SotH CS
-    - oarc/F221/r0/l0
-
 
 # Lanayru Mine:
+- name: Lanayru Mine - Goddess Cube behind First Landing Robot
+  original_item: Lanayru Mine Goddess Cube behind First Landing Robot
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Lanayru Mine - Slingshot Left Eye of First Landing Robot
   original_item: Blue Rupee
   types:
@@ -4129,37 +4139,6 @@
     - Chests
   Paths:
     - stage/F300_1/r0/l0/TBox/64
-
-- name: Lanayru Mine - Blow Digging Robot's Wall before Side Room near First Timeshift Stone
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_1/r0/l0/TgReact/0xFC57
-
-- name: Lanayru Mine - Blow Left Digging Robot's Wall in Side Room near First Timeshift Stone
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_1/r1/l0/TgReact/0xFC07
-
-- name: Lanayru Mine - Blow Right Digging Robot's Wall in Side Room near First Timeshift Stone
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_1/r1/l0/TgReact/0xFC08
-
-- name: Lanayru Mine - Chest in Side Room near First Timeshift Stone
-  original_item: Red Rupee
-  types:
-    - Chests
-  Paths:
-    - stage/F300_1/r1/l0/TBox/65
 
 - name: Lanayru Mine - Rupee on Southeast Conveyor 1
   original_item: Green Rupee
@@ -4196,6 +4175,37 @@
     - Custom Flag
   Paths:
     - stage/F300_1/r0/l0/Item/147
+
+- name: Lanayru Mine - Chest in Side Room near First Timeshift Stone
+  original_item: Red Rupee
+  types:
+    - Chests
+  Paths:
+    - stage/F300_1/r1/l0/TBox/65
+
+- name: Lanayru Mine - Blow Left Digging Robot's Wall in Side Room near First Timeshift Stone
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r1/l0/TgReact/0xFC07
+
+- name: Lanayru Mine - Blow Right Digging Robot's Wall in Side Room near First Timeshift Stone
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r1/l0/TgReact/0xFC08
+
+- name: Lanayru Mine - Blow Digging Robot's Wall before Side Room near First Timeshift Stone
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_1/r0/l0/TgReact/0xFC57
 
 - name: Lanayru Mine - Slingshot Left Robot Eye above First Minecart Doorway
   original_item: Blue Rupee
@@ -4317,12 +4327,6 @@
   Paths:
     - stage/F300_1/r2/l0/TBox/66
 
-- name: Lanayru Mine - Goddess Cube behind First Landing Robot
-  original_item: Lanayru Mine Goddess Cube behind First Landing Robot
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
 
 # Lanayru Desert:
 - name: Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit
@@ -4382,6 +4386,12 @@
     - event/400-Desert/8
     - oarc/F300/r0/l0
 
+- name: Lanayru Desert - Goddess Cube near Caged Robot
+  original_item: Lanayru Desert Goddess Cube near Caged Robot
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Lanayru Desert - Rupee behind South Statue near Caged Robot
   original_item: Blue Rupee
   types:
@@ -4433,6 +4443,12 @@
     - Custom Flag
   Paths:
     - stage/F300/r0/l0/Item/0xFC33
+
+- name: Lanayru Desert - Goddess Cube in Sand Oasis
+  original_item: Lanayru Desert Goddess Cube in Sand Oasis
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
 - name: Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue
   original_item: Blue Rupee
@@ -4520,6 +4536,12 @@
   Paths:
     - stage/F300/r0/l0/TBox/74
 
+- name: Lanayru Desert - Goddess Cube in Secret Passageway
+  original_item: Lanayru Desert Goddess Cube in Secret Passageway
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Lanayru Desert - Chest on Platform near Fire Node
   original_item: Red Rupee
   types:
@@ -4559,15 +4581,98 @@
   Paths:
     - stage/F300/r0/l0/Item/0xFFF2
 
-- name: Temple of Time - Gossip Stone near Robot
-  original_item: Nothing
+## Nodes
+- name: Fire Node - Raised Chest
+  original_item: Rare Treasure # TODO check again
   types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 25
-  eventflowindex: 36
+    - Chests
+  hint: sometimes
+  Paths:
+    - stage/F300_3/r0/l0/TBox/79
 
+- name: Fire Node - First Chest below Sand
+  original_item: Blue Rupee
+  types:
+    - Chests
+  Paths:
+    - stage/F300_3/r0/l0/TBox/78
+
+- name: Fire Node - Second Chest below Sand
+  original_item: Blue Rupee
+  types:
+    - Chests
+  Paths:
+    - stage/F300_3/r0/l0/TBox/80
+
+- name: Fire Node - Bonk Fire Node Power Supply
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_3/r0/l0/TgReact/0xFC3F
+
+- name: Fire Node - Bonk Fire Node Generator
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_3/r0/l0/TgReact/0xFC3E
+
+- name: Fire Node - Left Ending Chest
+  original_item: Golden Skull # TODO check again
+  types:
+    - Chests
+  Paths:
+    - stage/F300_3/r0/l0/TBox/81
+
+- name: Fire Node - Right Ending Chest
+  original_item: Blue Rupee
+  types:
+    - Chests
+  Paths:
+    - stage/F300_3/r0/l0/TBox/82
+
+- name: Lightning Node - Front Chest
+  original_item: Red Rupee
+  types:
+    - Chests
+  Paths:
+    - stage/F300_2/r0/l0/TBox/75
+
+- name: Lightning Node - Middle Chest
+  original_item: Blue Rupee
+  types:
+    - Chests
+  Paths:
+    - stage/F300_2/r0/l0/TBox/76
+
+- name: Lightning Node - Bonk Lightning Node Power Supply
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_2/r0/l0/TgReact/0xFC36
+
+- name: Lightning Node - Bonk Lightning Node Generator
+  original_item: Blue Rupee
+  types:
+    - Hidden Items
+    - Custom Flag
+  Paths:
+    - stage/F300_2/r0/l0/TgReact/0xFC35
+
+- name: Lightning Node - Raised Chest near Generator
+  original_item: Rare Treasure # TODO check again
+  types:
+    - Chests
+  Paths:
+    - stage/F300_2/r0/l0/TBox/77
+
+
+# Temple of Time:
 - name: Temple of Time - Northwest Rupee on Tree Root
   original_item: Green Rupee
   types:
@@ -4647,119 +4752,20 @@
   Paths:
     - stage/F300_4/r0/l0/Item/0xFFFE
 
-- name: Lanayru Desert - Goddess Cube in Secret Passageway
-  original_item: Lanayru Desert Goddess Cube in Secret Passageway
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Lanayru Desert - Goddess Cube near Caged Robot
-  original_item: Lanayru Desert Goddess Cube near Caged Robot
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
-- name: Lanayru Desert - Goddess Cube in Sand Oasis
-  original_item: Lanayru Desert Goddess Cube in Sand Oasis
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
 - name: Temple of Time - Goddess Cube on High Platform North of Tree
   original_item: Temple of Time Goddess Cube
   types:
     - Goddess Cube
   is_gui_excluded_location: False
 
-## Nodes
-- name: Fire Node - Raised Chest
-  original_item: Rare Treasure # TODO check again
+- name: Temple of Time - Gossip Stone near Robot
+  original_item: Nothing
   types:
-    - Chests
-  hint: sometimes
-  Paths:
-    - stage/F300_3/r0/l0/TBox/79
-
-- name: Fire Node - First Small Chest
-  original_item: Blue Rupee
-  types:
-    - Chests
-  Paths:
-    - stage/F300_3/r0/l0/TBox/78
-
-- name: Fire Node - Second Small Chest
-  original_item: Blue Rupee
-  types:
-    - Chests
-  Paths:
-    - stage/F300_3/r0/l0/TBox/80
-
-- name: Fire Node - Bonk Fire Node Power Supply
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_3/r0/l0/TgReact/0xFC3F
-
-- name: Fire Node - Bonk Fire Node Generator
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_3/r0/l0/TgReact/0xFC3E
-
-- name: Fire Node - Left Ending Chest
-  original_item: Golden Skull # TODO check again
-  types:
-    - Chests
-  Paths:
-    - stage/F300_3/r0/l0/TBox/81
-
-- name: Fire Node - Right Ending Chest
-  original_item: Blue Rupee
-  types:
-    - Chests
-  Paths:
-    - stage/F300_3/r0/l0/TBox/82
-
-- name: Lightning Node - Front Chest
-  original_item: Red Rupee
-  types:
-    - Chests
-  Paths:
-    - stage/F300_2/r0/l0/TBox/75
-
-- name: Lightning Node - Middle Chest
-  original_item: Blue Rupee
-  types:
-    - Chests
-  Paths:
-    - stage/F300_2/r0/l0/TBox/76
-
-- name: Lightning Node - Bonk Lightning Node Power Supply
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_2/r0/l0/TgReact/0xFC36
-
-- name: Lightning Node - Bonk Lightning Node Generator
-  original_item: Blue Rupee
-  types:
-    - Hidden Items
-    - Custom Flag
-  Paths:
-    - stage/F300_2/r0/l0/TgReact/0xFC35
-
-- name: Lightning Node - Raised Chest near Generator
-  original_item: Rare Treasure # TODO check again
-  types:
-    - Chests
-  Paths:
-    - stage/F300_2/r0/l0/TBox/77
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 25
+  eventflowindex: 36
 
 
 # Lanayru Caves:
@@ -4815,6 +4821,13 @@
     - event/404-DesertF3/give item after Healing Thunderdragon
     - oarc/F302/r0/l0
 
+- name: Lanayru Gorge - Item on Pillar below Dragon
+  original_item: Lanayru Caves Small Key
+  types:
+    - Freestanding Items
+  Paths:
+    - stage/F302/r0/l0/Item/9
+
 - name: Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon
   original_item: Blue Rupee
   types:
@@ -4830,13 +4843,6 @@
     - Custom Flag
   Paths:
     - stage/F302/r0/l0/TgReact/0xFC5A
-
-- name: Lanayru Gorge - Item on Pillar below Dragon
-  original_item: Lanayru Caves Small Key
-  types:
-    - Freestanding Items
-  Paths:
-    - stage/F302/r0/l0/Item/9
 
 - name: Lanayru Gorge - Bonk Wall Left of Stairs
   original_item: Green Rupee
@@ -5217,15 +5223,6 @@
     - event/406-TrolleyRace/77
     - oarc/F301_4/r0/l0
 
-- name: Shipyard - Gossip Stone after First Minecart Track
-  original_item: Nothing
-  types:
-    - Hint Location
-  is_gui_excluded_location: False
-  textfile: 004-Object
-  textindex: 23
-  eventflowindex: 32
-
 - name: Shipyard - Bonk Sign before Second Minecart Track
   original_item: Blue Rupee
   types:
@@ -5257,6 +5254,15 @@
     - Custom Flag
   Paths:
     - stage/F301_7/r0/l0/TgReact/0xFC08
+
+- name: Shipyard - Gossip Stone after First Minecart Track
+  original_item: Nothing
+  types:
+    - Hint Location
+  is_gui_excluded_location: False
+  textfile: 004-Object
+  textindex: 23
+  eventflowindex: 32
 
 ## Pirate Stronghold
 - name: Pirate Stronghold - Rupee on East Sea Pillar
@@ -5327,12 +5333,6 @@
   Paths:
     - stage/F301_6/r0/l0/Item/0xFC1E
 
-- name: Pirate Stronghold - Goddess Cube on top of Shark Head
-  original_item: Pirate Stronghold Goddess Cube
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
-
 - name: Pirate Stronghold Interior - Chest behind Electric Fence
   original_item: Silver Rupee
   types:
@@ -5354,8 +5354,14 @@
   Paths:
     - stage/F301_2/r6/l0/TBox/74
 
+- name: Pirate Stronghold - Goddess Cube on top of Shark Head
+  original_item: Pirate Stronghold Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
 
-# Skyview Temple (SV):
+
+# Skyview Temple (SVT):
 - name: Skyview Temple - Slingshot Wall Eye behind First Bird Statue
   original_item: Green Rupee
   types:
@@ -5709,6 +5715,12 @@
   Paths:
     - stage/B100_1/r0/l0/TgReact/0xFC36
 
+- name: Skyview Spring - Goddess Cube behind Crest
+  original_item: Skyview Spring Goddess Cube
+  types:
+    - Goddess Cube
+  is_gui_excluded_location: False
+
 - name: Skyview Spring - Strike Crest
   original_item: Ruby Tablet
   goal_location: true
@@ -5717,12 +5729,6 @@
   Paths:
     - event/201-ForestD1/6
     - oarc/B100_1/r0/l0
-
-- name: Skyview Spring - Goddess Cube behind Crest
-  original_item: Skyview Spring Goddess Cube
-  types:
-    - Goddess Cube
-  is_gui_excluded_location: False
 
 
 # Earth Temple (ET):
@@ -6250,7 +6256,7 @@
   Paths:
     - stage/D300_1/r8/l0/TBox/71
 
-- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
   original_item: Red Rupee
   types:
     - Chests
@@ -6874,13 +6880,6 @@
   Paths:
     - stage/D003_7/r0/l0/TBox/64
 
-- name: Sky Keep - Chest after Dreadfuse Fight
-  original_item: Sky Keep Small Key
-  types:
-    - Chests
-  Paths:
-    - stage/D003_6/r0/l0/TBox/65
-
 - name: Sky Keep - Rupee in Fire Sanctuary Room in Alcove
   original_item: Silver Rupee
   types:
@@ -6888,6 +6887,13 @@
     - Advanced Rupees
   Paths:
     - stage/D003_2/r0/l0/Item/36
+
+- name: Sky Keep - Chest after Dreadfuse Fight
+  original_item: Sky Keep Small Key
+  types:
+    - Chests
+  Paths:
+    - stage/D003_6/r0/l0/TBox/65
 
 - name: Sky Keep - Sacred Power of Din
   original_item: Triforce of Power

@@ -104,7 +104,7 @@ SSH_BOSS_KEY = "Sandship Boss Key"
 KEY_PIECE = "Key Piece"
 
 # 29
-SV_BOSS_KEY = "Skyview Temple Boss Key"
+SVT_BOSS_KEY = "Skyview Temple Boss Key"
 
 # 30
 ET_BOSS_KEY = "Earth Temple Boss Key"
@@ -598,7 +598,7 @@ LIFE_TREE_FRUIT = "Life Tree Fruit"
 EXTRA_WALLET = "Extra Wallet"
 
 # 200
-SV_SMALL_KEY = "Skyview Temple Small Key"
+SVT_SMALL_KEY = "Skyview Temple Small Key"
 
 # 201
 LMF_SMALL_KEY = "Lanayru Mining Facility Small Key"
@@ -619,7 +619,7 @@ SK_SMALL_KEY = "Sky Keep Small Key"
 LC_SMALL_KEY = "Lanayru Caves Small Key"
 
 # 207
-SV_MAP = "Skyview Temple Map"
+SVT_MAP = "Skyview Temple Map"
 
 # 208
 ET_MAP = "Earth Temple Map"

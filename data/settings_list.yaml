@@ -894,7 +894,7 @@
     - english_us: "Status: Complete. The randomized game will use the American English language files."
     - french_fr: "Status: Incomplete. The randomized game will use the French language files."
     - french_us: "Status: Incomplete. The randomized game will use the French language files."
-    - german: "Status: Complete. The randomized game will use the German language files."
+    - german: "Status: Mostly complete (some text is missing or needs updating). The randomized game will use the German language files."
     - italian: "Status: Incomplete. The randomized game will use the Italian language files."
     # - japanese: "Status: Broken. The randomized game will use the Japanese language files."
     # - korean: "Status: Broken. The randomized game will use the Korean language files."
@@ -1430,16 +1430,16 @@
     - "off": "You will need to blow up the rock and escape the lava chase in order for the lava river at the end of Fire Sanctuary to be flowing."
     - "on": "The lava river at the end of Fire Sanctuary will be flowing from the start of the game."
 
-- name: shortcut_sky_keep_sv_room_bars
+- name: shortcut_sky_keep_svt_room_bars
   tracker_important: true
   default_option: "on"
-  pretty_name: Sky Keep Bars in Skyview Room
+  pretty_name: Sky Keep Bars in Skyview Temple Room
   pretty_options:
     - "Off"
     - "On"
   options:
-    - "off": "You will need to traverse the Skyview room in Sky Keep using most items in the item wheel to continue through Sky Keep."
-    - "on": "The bars in the Skyview room in Sky Keep will already be raised allowing you to skip traversing the room."
+    - "off": "You will need to traverse the Skyview Temple room in Sky Keep using most items in the item wheel to continue through Sky Keep."
+    - "on": "The bars in the Skyview Temple room in Sky Keep will already be raised allowing you to skip traversing the room."
 
 #############################
 ## Logic settings (tricks) ##

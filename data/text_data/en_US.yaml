@@ -1201,15 +1201,15 @@
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Deep Woods Goddess Cube in front of Skyview
-  standard: Deep Woods Goddess Cube in front of Skyview
-  pretty: the <Deep Woods Goddess Cube in front of Skyview>
+- name: Deep Woods Goddess Cube in front of Temple
+  standard: Deep Woods Goddess Cube in front of Temple
+  pretty: the <Deep Woods Goddess Cube in front of Temple>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Deep Woods Goddess Cube on top of Skyview
-  standard: Deep Woods Goddess Cube on top of Skyview
-  pretty: the <Deep Woods Goddess Cube on top of Skyview>
+- name: Deep Woods Goddess Cube on top of Temple
+  standard: Deep Woods Goddess Cube on top of Temple
+  pretty: the <Deep Woods Goddess Cube on top of Temple>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
@@ -1255,9 +1255,9 @@
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
-- name: Mogma Turf Goddess Cube
-  standard: Mogma Turf Goddess Cube
-  pretty: the <Mogma Turf Goddess Cube>
+- name: Mogma Turf Goddess Cube on Raised Pillar
+  standard: Mogma Turf Goddess Cube on Raised Pillar
+  pretty: the <Mogma Turf Goddess Cube on Raised Pillar>
   cryptic: a <ye<cube of sacred power>>
   plurality: Singular
 
@@ -1539,9 +1539,9 @@
   pretty: Sparring Hall - Crystal on Roof Beam
   cryptic: a <r<training crystal>>
 
-- name: Bazaar - Potion Lady's Gift
-  standard: Bazaar - Potion Lady's Gift
-  pretty: Bazaar - Potion Lady's Gift
+- name: Bazaar - Luv the Potion Lady's Gift
+  standard: Bazaar - Luv the Potion Lady's Gift
+  pretty: Bazaar - Luv the Potion Lady's Gift
   cryptic: a <r<gift from a seller>>
 
 - name: Bazaar - Goddess Chest
@@ -1639,10 +1639,10 @@
   pretty: Central Skyloft - Wryna's Gratitude
   cryptic: a <r<happy mother>>
 
-- name: Central Skyloft - Wryna's Closet
-  standard: Central Skyloft - Wryna's Closet
-  pretty: Central Skyloft - Wryna's Closet
-  cryptic: snooping through a <r<happy mother's clothes>>
+- name: Central Skyloft - Kukiel's Family Closet
+  standard: Central Skyloft - Kukiel's Family Closet
+  pretty: Central Skyloft - Kukiel's Family Closet
+  cryptic: snooping through a <r<happy child's clothes>>
 
 - name: Central Skyloft - Waterfall Cave First Chest
   standard: Central Skyloft - Waterfall Cave First Chest
@@ -1744,9 +1744,9 @@
   pretty: Central Skyloft - Stamina Fruit between Wooden Planks
   cryptic: a <r<fruit in a lively area>>
 
-- name: Central Skyloft - Stamina Fruit near Wryna's House
-  standard: Central Skyloft - Stamina Fruit near Wryna's House
-  pretty: Central Skyloft - Stamina Fruit near Wryna's House
+- name: Central Skyloft - Stamina Fruit near Kukiel's House
+  standard: Central Skyloft - Stamina Fruit near Kukiel's House
+  pretty: Central Skyloft - Stamina Fruit near Kukiel's House
   cryptic: a <r<fruit in a lively area>>
 
 - name: Central Skyloft - Stamina Fruit near River
@@ -1759,9 +1759,9 @@
   pretty: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
   cryptic: a <r<fruit in a lively area>>
 
-- name: Central Skyloft - Stamina Fruit near Bazaar
-  standard: Central Skyloft - Stamina Fruit near Bazaar
-  pretty: Central Skyloft - Stamina Fruit near Bazaar
+- name: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
+  standard: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
+  pretty: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
   cryptic: a <r<fruit in a lively area>>
 
 - name: Central Skyloft - Stamina Fruit near Plaza
@@ -1804,14 +1804,14 @@
   pretty: Central Skyloft - Crystal between Wooden Planks
   cryptic: a <r<crystal along a wooden path>>
 
-- name: Central Skyloft - Crystal after Waterfall Cave
-  standard: Central Skyloft - Crystal after Waterfall Cave
-  pretty: Central Skyloft - Crystal after Waterfall Cave
+- name: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
+  standard: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
+  pretty: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
   cryptic: a <r<crystal near a cave exit>>
 
-- name: Central Skyloft - Crystal in Loftwing Prison
-  standard: Central Skyloft - Crystal in Loftwing Prison
-  pretty: Central Skyloft - Crystal in Loftwing Prison
+- name: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
+  standard: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
+  pretty: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
   cryptic: a <r<crystal in a former prison>>
 
 - name: Central Skyloft - Crystal on Waterfall Island
@@ -1829,14 +1829,14 @@
   pretty: Skyloft Village - Bonk Tree near River
   cryptic: <r<disturbing sky wood>> in a <b<village>>
 
-- name: Skyloft Village - Clean Mallara's House
-  standard: Skyloft Village - Clean Mallara's House
-  pretty: Skyloft Village - Clean Mallara's House
+- name: Skyloft Village - Clean Pipit's House
+  standard: Skyloft Village - Clean Pipit's House
+  pretty: Skyloft Village - Clean Pipit's House
   cryptic: a <r<mother's laziness>>
 
-- name: Skyloft Village - Mallara's Closet
-  standard: Skyloft Village - Mallara's Closet
-  pretty: Skyloft Village - Mallara's Closet
+- name: Skyloft Village - Pipit and Mallara's Closet
+  standard: Skyloft Village - Pipit and Mallara's Closet
+  pretty: Skyloft Village - Pipit and Mallara's Closet
   cryptic: snooping through a <r<dusty closet>>
 
 - name: Skyloft Village - Deliver Rattle to Bertie
@@ -1844,19 +1844,19 @@
   pretty: Skyloft Village - Deliver Rattle to Bertie
   cryptic: helping an <r<exhausted parent>>
 
-- name: Skyloft Village - Luv and Bertie's Closet
-  standard: Skyloft Village - Luv and Bertie's Closet
-  pretty: Skyloft Village - Luv and Bertie's Closet
+- name: Skyloft Village - Bertie and Luv's Closet
+  standard: Skyloft Village - Bertie and Luv's Closet
+  pretty: Skyloft Village - Bertie and Luv's Closet
   cryptic: snooping through a <r<potion couple's clothes>>
 
-- name: Skyloft Village - Gondo's Closet
-  standard: Skyloft Village - Gondo's Closet
-  pretty: Skyloft Village - Gondo's Closet
+- name: Skyloft Village - Gondo and Gebra's Closet
+  standard: Skyloft Village - Gondo and Gebra's Closet
+  pretty: Skyloft Village - Gondo and Gebra's Closet
   cryptic: snooping through a <r<repairman's clothes>>
 
-- name: Skyloft Village - Rupin's Closet
-  standard: Skyloft Village - Rupin's Closet
-  pretty: Skyloft Village - Rupin's Closet
+- name: Skyloft Village - Rupin and Goselle's Closet
+  standard: Skyloft Village - Rupin and Goselle's Closet
+  pretty: Skyloft Village - Rupin and Goselle's Closet
   cryptic: snooping through a <r<greedy man's clothes>>
 
 - name: Skyloft Village - Deliver Crystal Ball to Sparrot
@@ -1879,9 +1879,9 @@
   pretty: Skyloft Village - Crystal near Pumpkin Patch
   cryptic: a <r<crystal behind a tree>>
 
-- name: Skyloft Village - Stamina Fruit above Mallara's House
-  standard: Skyloft Village - Stamina Fruit above Mallara's House
-  pretty: Skyloft Village - Stamina Fruit above Mallara's House
+- name: Skyloft Village - Stamina Fruit above Pipit's House
+  standard: Skyloft Village - Stamina Fruit above Pipit's House
+  pretty: Skyloft Village - Stamina Fruit above Pipit's House
   cryptic: a <r<fruit near some residences>>
 
 - name: Batreaux's House - 5 Gratitude Crystals Reward
@@ -2459,11 +2459,6 @@
   pretty: Sealed Temple - Song from The Old One
   cryptic: <r<Impa's song>>
 
-- name: Sealed Temple - Collect Fruit from the Tree of Life
-  standard: Sealed Temple - Collect Fruit from the Tree of Life
-  pretty: Sealed Temple - Collect Fruit from the Tree of Life
-  cryptic: <r<growing an ancient seed>>
-
 - name: Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral
   standard: Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral
   pretty: Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral
@@ -2539,6 +2534,11 @@
   pretty: Sealed Grounds - Bonk Small East Rock before Faron Woods
   cryptic: <r<disturbing a small rock>> behind a <g<secure temple>>
 
+- name: Sealed Temple - Collect Fruit from the Tree of Life
+  standard: Sealed Temple - Collect Fruit from the Tree of Life
+  pretty: Sealed Temple - Collect Fruit from the Tree of Life
+  cryptic: <r<growing an ancient seed>>
+
 - name: Temple of Hylia - Zelda's Blessing
   standard: Temple of Hylia - Zelda's Blessing
   pretty: Temple of Hylia - Zelda's Blessing
@@ -2570,9 +2570,9 @@
   pretty: Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue
   cryptic: <r<disturbing fungi in the woods>>
 
-- name: Faron Woods - Item behind Bombable Rock
-  standard: Faron Woods - Item behind Bombable Rock
-  pretty: Faron Woods - Item behind Bombable Rock
+- name: Faron Woods - Item behind Lower Bombable Rock
+  standard: Faron Woods - Item behind Lower Bombable Rock
+  pretty: Faron Woods - Item behind Lower Bombable Rock
   cryptic: an <r<item behind some forest rocks>>
 
 - name: Faron Woods - Item on Great Tree after Tightrope
@@ -2645,9 +2645,9 @@
   pretty: Faron Woods - Slingshot Northwest Great Tree Trunk
   cryptic: <r<shooting ancient wood>>
 
-- name: Faron Woods - Chest behind Bombable Rocks near Erla
-  standard: Faron Woods - Chest behind Bombable Rocks near Erla
-  pretty: Faron Woods - Chest behind Bombable Rocks near Erla
+- name: Faron Woods - Chest behind Upper Bombable Rock
+  standard: Faron Woods - Chest behind Upper Bombable Rock
+  pretty: Faron Woods - Chest behind Upper Bombable Rock
   cryptic: a <r<chest behind some forest rocks>>
 
 - name: Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1
@@ -2690,9 +2690,9 @@
   pretty: Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba
   cryptic: a <r<fruit above a forest slope>>
 
-- name: Faron Woods - Stamina Fruit on Vines near Erla
-  standard: Faron Woods - Stamina Fruit on Vines near Erla
-  pretty: Faron Woods - Stamina Fruit on Vines near Erla
+- name: Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock
+  standard: Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock
+  pretty: Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock
   cryptic: a <r<fruit on some forest vines>>
 
 - name: Faron Woods - Stamina Fruit on Vines on Great Tree
@@ -2820,14 +2820,14 @@
   pretty: Deep Woods - Goddess Cube Near Goron
   cryptic:
 
-- name: Deep Woods - Goddess Cube in front of Skyview
-  standard: Deep Woods - Goddess Cube in front of Skyview
-  pretty: Deep Woods - Goddess Cube in front of Skyview
+- name: Deep Woods - Goddess Cube in front of Temple
+  standard: Deep Woods - Goddess Cube in front of Temple
+  pretty: Deep Woods - Goddess Cube in front of Temple
   cryptic:
 
-- name: Deep Woods - Goddess Cube on top of Skyview
-  standard: Deep Woods - Goddess Cube on top of Skyview
-  pretty: Deep Woods - Goddess Cube on top of Skyview
+- name: Deep Woods - Goddess Cube on top of Temple
+  standard: Deep Woods - Goddess Cube on top of Temple
+  pretty: Deep Woods - Goddess Cube on top of Temple
   cryptic:
 
 - name: Lake Floria - Rupee under Central Boulder
@@ -3265,9 +3265,9 @@
   pretty: Eldin Volcano - Right Rupee behind Bombable Wall near Thrill Digger Cave
   cryptic: a <r<rupee behind a hidden wall>>
 
-- name: Thrill Digger Cave - Gossip Stone near Tubert
-  standard: Thrill Digger Cave - Gossip Stone near Tubert
-  pretty: Thrill Digger Cave - Gossip Stone near Tubert
+- name: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
+  standard: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
+  pretty: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
   cryptic:
 
 - name: Thrill Digger Cave - Slingshot Left Blue Crystal 1
@@ -3705,9 +3705,9 @@
   pretty: Mogma Turf - Chest behind Bombable Wall in Fire Maze
   cryptic: a <r<chest in a hot maze>>
 
-- name: Mogma Turf - Goddess Cube
-  standard: Mogma Turf - Goddess Cube
-  pretty: Mogma Turf - Goddess Cube
+- name: Mogma Turf - Goddess Cube on Raised Pillar
+  standard: Mogma Turf - Goddess Cube on Raised Pillar
+  pretty: Mogma Turf - Goddess Cube on Raised Pillar
   cryptic:
 
 - name: Volcano Summit - Bonk Waterfall
@@ -4195,14 +4195,14 @@
   pretty: Fire Node - Raised Chest
   cryptic: a <r<raised chest in the Fire Node>>
 
-- name: Fire Node - First Small Chest
-  standard: Fire Node - First Small Chest
-  pretty: Fire Node - First Small Chest
+- name: Fire Node - First Chest below Sand
+  standard: Fire Node - First Chest below Sand
+  pretty: Fire Node - First Chest below Sand
   cryptic: a <r<chest in the middle of a stone cache>>
 
-- name: Fire Node - Second Small Chest
-  standard: Fire Node - Second Small Chest
-  pretty: Fire Node - Second Small Chest
+- name: Fire Node - Second Chest below Sand
+  standard: Fire Node - Second Chest below Sand
+  pretty: Fire Node - Second Chest below Sand
   cryptic: a <r<chest in the middle of a stone cache>>
 
 - name: Fire Node - Bonk Fire Node Power Supply
@@ -5157,9 +5157,9 @@
   pretty: Lanayru Mining Facility - Chest after Double Armos Fight
   cryptic: deep inside <r<Lanayru Mining Facility, a pair of Armos>>
 
-- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
-  standard: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
-  pretty: Lanayru Mining Facility - Raised Chest in Hub Room after Minecart
+- name: Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
+  standard: Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
+  pretty: Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts
   cryptic: the <r<deepest chest in a mining facility>>
 
 - name: Lanayru Mining Facility - Defeat Boss

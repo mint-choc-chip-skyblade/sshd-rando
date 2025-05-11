@@ -250,8 +250,8 @@
   exits:
     Lanayru Desert East: Nothing
   locations:
-    Fire Node - First Small Chest: Bomb_Bag
-    Fire Node - Second Small Chest: Bomb_Bag
+    Fire Node - First Chest below Sand: Bomb_Bag
+    Fire Node - Second Chest below Sand: Bomb_Bag
     Fire Node - Raised Chest: Can_Defeat_Ampilus or logic_brakeslide
     Fire Node - Bonk Fire Node Power Supply: Can_Defeat_Ampilus or logic_brakeslide
     Fire Node - Bonk Fire Node Generator: "'Can_Reach_Fire_Node_Activator'"
