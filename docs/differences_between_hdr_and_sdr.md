@@ -117,12 +117,11 @@ the chest
 * Chest Dowsing Matches Contents (CDMC) (HDR has CTMC instead for now)
 * Full custom model and music support (experimental support for other mods has been added)
 * Random Music (you can use the files from SDR to achieve this)
-* Starting with a Treasures or Bugs
+* Starting with all Treasures or Bugs
 * Save File text isn't updated for the randomizer
 * Random Riddles (randomizes the solutions to various puzzles throughout the game)
 * Sword Dungeon Reward setting
 * Show current small key count when collecting a small key
-* Multiple Demises during the final fight
 
 ## Removed Settings / Features
 * Fill Dowsing on White Sword (this is always true in HDR)
@@ -130,3 +129,4 @@ the chest
 * Rupoor Mode (traps supersede this setting)
 * Separate Cube SotS Hints (SotS hints do not exist in HDR)
 * Precise Item Hints (generally too powerful and unused)
+* Multiple Demises during the final fight (janky)
