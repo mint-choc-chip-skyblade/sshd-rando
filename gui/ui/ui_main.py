@@ -2496,6 +2496,16 @@ class Ui_main_window(object):
 
         self.verticalLayout_32.addWidget(self.setting_enable_back_in_time)
 
+        self.setting_allow_flying_at_night = RandoTriStateCheckBox(self.other_settings_group_box)
+        self.setting_allow_flying_at_night.setObjectName(u"setting_allow_flying_at_night")
+
+        self.verticalLayout_32.addWidget(self.setting_allow_flying_at_night)
+
+        self.setting_natural_night_connections = RandoTriStateCheckBox(self.other_settings_group_box)
+        self.setting_natural_night_connections.setObjectName(u"setting_natural_night_connections")
+
+        self.verticalLayout_32.addWidget(self.setting_natural_night_connections)
+
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_32.addItem(self.verticalSpacer)
@@ -3018,7 +3028,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(8)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3313,6 +3323,8 @@ class Ui_main_window(object):
         self.open_plandomizer_folder_button.setText(QCoreApplication.translate("main_window", u"Open Plandomizer Folder", None))
         self.other_settings_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Settings", None))
         self.setting_enable_back_in_time.setText(QCoreApplication.translate("main_window", u"Enable Back in Time (BiT)", None))
+        self.setting_allow_flying_at_night.setText(QCoreApplication.translate("main_window", u"Allow Flying at Night", None))
+        self.setting_natural_night_connections.setText(QCoreApplication.translate("main_window", u"Require Natural Night Connections", None))
         self.other_mods_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Mods", None))
         self.other_mods_explanation_text.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>The randomizer modifies a lot of files the game uses. To better integrate other mods with the randomizer, you can put them in separate folders in the <span style=\" font-weight:700;\">other_mods</span> directory and choose which ones you want to apply together. For example, if you have a mod which changes Link's tunic color, you can create a new folder in the <span style=\" font-weight:700;\">other_mods</span> directory named &quot;Other Tunic Color&quot; and put the <span style=\" font-weight:700;\">romfs</span> folder of that mod into the new folder. Then refresh the mod list and it should appear below. We do not currently support mods that modify any files in the <span style=\" font-weight:700;\">exefs</span> folder.</p><p>Note that this feature is EXPERIMENTAL and we do not guarantee that you won't run into bugs when using other mods, but the randomizer will try it's best.</p></body></html>", None))
         self.open_other_mods_dir_button.setText(QCoreApplication.translate("main_window", u"Open other_mods Folder", None))

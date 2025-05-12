@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -3815,6 +3815,20 @@ Practice Sword</string>
             </widget>
            </item>
            <item>
+            <widget class="RandoTriStateCheckBox" name="setting_allow_flying_at_night">
+             <property name="text">
+              <string>Allow Flying at Night</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_natural_night_connections">
+             <property name="text">
+              <string>Require Natural Night Connections</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <spacer name="verticalSpacer">
              <property name="orientation">
               <enum>Qt::Orientation::Vertical</enum>
@@ -3939,7 +3953,7 @@ QPushButton {
             <item>
              <layout class="QVBoxLayout" name="dungeon_svt_layout">
               <property name="spacing">
-               <number>1</number>S
+               <number>1</number>
               </property>
               <property name="sizeConstraint">
                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
