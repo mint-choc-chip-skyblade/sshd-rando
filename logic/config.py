@@ -381,6 +381,13 @@ def load_config_from_file(
                         )
 
                     for pool in mixed_pools:
+                        # Validate mixed pools list
+                        for entrance_type in pool:
+                            if entrance_type not in ENTRANCE_TYPES:
+                                raise ConfigError(
+                                    f"Invalid mixed pools definition: {mixed_pools}.\nEntrance type '{entrance_type}' is unknown.\nValid entrance types are: {ENTRANCE_TYPES}."
+                                )
+
                         cur_world_settings.mixed_entrance_pools.append(pool)
 
                     # Turn mixed pools into a list of lists
