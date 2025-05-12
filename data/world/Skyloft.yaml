@@ -251,7 +251,6 @@
     Central Skyloft - West Rupee in Bird's Nest: Nothing
 
 - name: Bazaar
-  allowed_time_of_day: Day Only
   events:
     Obtain Stamina Potion: Bottle
     # important Tracker events
