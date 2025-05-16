@@ -23,6 +23,7 @@ coupling, and mixing pools
 * Skip Harp Playing when opening trial gates, The Thunderhead, and the Gate of Time
 * Random Bottle Contents
 * Random Shop Prices
+* Flying at Night
 
 ## New Setting Options
 * Every setting has a `random` option which will pick one of the other options randomly when

@@ -175,6 +175,11 @@
     - layerid: 1
       oarcs:
         - GetBirdStatue
+    - layerid: 2
+      oarcs:
+        - BirdAnm
+        - BirdLinkAnm
+        - PLBird
 
 - stage: F023
   layers:

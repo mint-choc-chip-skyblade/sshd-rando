@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -3825,6 +3825,20 @@ Practice Sword</string>
             <widget class="RandoTriStateCheckBox" name="setting_enable_back_in_time">
              <property name="text">
               <string>Enable Back in Time (BiT)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_allow_flying_at_night">
+             <property name="text">
+              <string>Allow Flying at Night</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_natural_night_connections">
+             <property name="text">
+              <string>Require Natural Night Connections</string>
              </property>
             </widget>
            </item>

@@ -1205,6 +1205,26 @@ F020: # The Sky
       posy: -10643.59375
       posz: 47020
       name: Tubo
+
+  # Allow flying at night
+  - name: Add Bird Arcs to Layer 0
+    onlyif: natural_night_connections == off or allow_flying_at_night == on
+    type: arcnadd
+    layer: 0
+    room: 0
+    arcn:
+      - BirdAnm
+      - BirdLinkAnm
+      - PLBird
+  - name: Move PyBird from Layer 2 to 0
+    onlyif: natural_night_connections == off or allow_flying_at_night == on
+    type: objmove
+    id: 0xFD05
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: OBJ
+
   - name: Fi text about goddess cubes
     type: objdelete
     id: 0xFD0F
