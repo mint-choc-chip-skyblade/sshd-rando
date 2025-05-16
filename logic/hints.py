@@ -212,7 +212,7 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
             # the set of potentially barren regions
             if loc.progression:
                 for loc_access in loc.loc_access_list:
-                    for hint_region in loc_access.area.hint_regions:
+                    for hint_region in sorted(loc_access.area.hint_regions):
                         world.barren_regions[hint_region] = []
 
             # Set locations that we can easily calculate as not required or required right now.
@@ -454,7 +454,12 @@ def generate_barren_hint_locations(world: World, hint_locations: list) -> None:
             generate_barren_hint_message(
                 location, get_text_data(hinted_region, "pretty").apply_text_color("b")
             )
-        hint_locations.append(world.barren_regions[hinted_region][0])
+
+        for location in world.barren_regions[hinted_region]:
+            if location not in hint_locations:
+                hint_locations.append(location)
+                break
+
         logging.getLogger("").debug(
             f'Chose "{hinted_region}" as a hinted barren region'
         )
@@ -612,7 +617,11 @@ def generate_path_hint_message(location: Location, goal_location: Location) -> N
 
 
 def generate_barren_hint_message(location: Location, barren_region: Text) -> None:
-    location.hint.text = get_text_data("Barren Hint").replace("<region>", barren_region)
+    # If a location is part of multiple barren regions, only assign it the barren text once
+    if not location.hint.text.get("English"):
+        location.hint.text = get_text_data("Barren Hint").replace(
+            "<region>", barren_region
+        )
     location.hint.type = "Barren"
 
 
