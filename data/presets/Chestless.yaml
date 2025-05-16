@@ -87,6 +87,8 @@ World 1:
   nighttime_sky_color: default
   daytime_cloud_color: default
   nighttime_cloud_color: default
+  randomize_music: vanilla
+  cutoff_game_over_music: 'off'
   remove_enemy_music: 'off'
   low_health_beeping_speed: normal
   open_thunderhead: 'off'
