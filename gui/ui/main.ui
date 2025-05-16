@@ -3487,6 +3487,23 @@ Practice Sword</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_35">
            <item>
+            <widget class="QLabel" name="randomize_music_label">
+             <property name="text">
+              <string>Randomize Music</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_randomize_music"/>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_cutoff_game_over_music">
+             <property name="text">
+              <string>Cutoff Game Over Music</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="RandoTriStateCheckBox" name="setting_remove_enemy_music">
              <property name="text">
               <string>Remove Enemy Music</string>
@@ -3886,8 +3903,8 @@ Practice Sword</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>310</width>
-                <height>342</height>
+                <width>98</width>
+                <height>28</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="other_mods_scroll_layout"/>
@@ -3939,7 +3956,7 @@ QPushButton {
             <item>
              <layout class="QVBoxLayout" name="dungeon_svt_layout">
               <property name="spacing">
-               <number>1</number>S
+               <number>1</number>
               </property>
               <property name="sizeConstraint">
                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
@@ -4346,8 +4363,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>546</width>
-               <height>340</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <property name="maximumSize">
