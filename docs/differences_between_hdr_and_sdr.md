@@ -100,7 +100,6 @@ the chest
 * Flooded Faron Woods randomization
 * Chest Dowsing Matches Contents (CDMC) (HDR has CTMC instead)
 * Custom Models and Music (you can use the files from SDR to achieve this)
-* Random Music (you can use the files from SDR to achieve this)
 * Tadtones as items
 * Starting with a Treasures or Bugs
 * Save File text isn't updated for the randomizer
