@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -1229,7 +1229,7 @@
             <widget class="QComboBox" name="setting_open_lmf"/>
            </item>
            <item>
-            <widget class="Line" name="line">
+            <widget class="Line" name="open_dungeons_line">
              <property name="orientation">
               <enum>Qt::Orientation::Horizontal</enum>
              </property>
@@ -1323,6 +1323,20 @@
             <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_svt_room_bars">
              <property name="text">
               <string>Sky Keep Bars in Skyview Temple Room</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_fs_room_lower_bars">
+             <property name="text">
+              <string>Sky Keep Lower Bars in Fire Sanctuary Room</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_fs_room_upper_bars">
+             <property name="text">
+              <string>Sky Keep Upper Bars in Fire Sanctuary Room</string>
              </property>
             </widget>
            </item>
@@ -3886,8 +3900,8 @@ Practice Sword</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>310</width>
-                <height>342</height>
+                <width>98</width>
+                <height>28</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="other_mods_scroll_layout"/>
@@ -3939,7 +3953,7 @@ QPushButton {
             <item>
              <layout class="QVBoxLayout" name="dungeon_svt_layout">
               <property name="spacing">
-               <number>1</number>S
+               <number>1</number>
               </property>
               <property name="sizeConstraint">
                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
@@ -4346,8 +4360,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>546</width>
-               <height>340</height>
+               <width>100</width>
+               <height>30</height>
               </rect>
              </property>
              <property name="maximumSize">
