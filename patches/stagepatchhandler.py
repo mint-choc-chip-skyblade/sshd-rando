@@ -1103,8 +1103,11 @@ class StagePatchHandler:
     def __extract_bzs_files(self, stage_file_paths):
         for current_stage_file_num, stage_path in enumerate(stage_file_paths):
             stage_name = stage_path.name
-            print_progress_text(f"Checking cached files for stage: {stage_name}")
+            # Ignore non-stage files
+            if stage_name not in BZS_FILE_HASHES:
+                continue
 
+            print_progress_text(f"Checking cached files for stage: {stage_name}")
             bzs_stage_dir_path = CACHE_BZS_PATH / stage_name
             bzs_stage_dir_path.mkdir(parents=True, exist_ok=True)
 
