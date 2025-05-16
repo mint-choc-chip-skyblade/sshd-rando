@@ -55,6 +55,7 @@ World 1:
   randomize_overworld_entrances: 'off'
   decouple_entrances: 'off'
   natural_night_connections: 'on'
+  allow_flying_at_night: 'off'
   skip_horde: 'off'
   skip_g3: 'off'
   skip_demise: 'off'
