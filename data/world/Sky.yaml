@@ -1,5 +1,4 @@
 - name: The Sky
-  allowed_time_of_day: Day Only
   hint_region: Sky
   exits:
     Faron Pillar: Emerald_Tablet

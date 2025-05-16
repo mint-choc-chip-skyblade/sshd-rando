@@ -592,6 +592,16 @@ class ASMPatchHandler:
                 0x00,
                 0x00,
             ],  # COLOR_CHANGE_DELAY
+            0x712E5FF058: [0x00] * 16,  # BOSS_RUSH_SCENEFLAG_BKP
+            0x712E5FF068: [0x00] * 16,  # BOSS_RUSH_DUNGEONFLAG_BKP
+            0x712E5FF078: [
+                0xFF,
+                0xFF,
+            ],  # BOSS_RUSH_CURRENT_SCENEINDEX
+            0x712E5FF07A: [
+                0x00,
+                0x0,
+            ],  # BOSS_RUSH_STORYFLAG_STATES
         }
 
         yaml_write(output_path, init_rw_globals_dict)

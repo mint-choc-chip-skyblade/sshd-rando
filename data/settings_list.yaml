@@ -584,7 +584,6 @@
     - "off": "Entering a location and taking the entrance behind you will take you back to where you came from."
     - "on": "Entering a location and taking the entrance behind you will take you to a random location."
 
-# Not on the gui yet - wanna look into making this better first
 - name: natural_night_connections
   default_option: "on"
   pretty_name: Require Natural Night Connections
@@ -594,6 +593,16 @@
   options:
     - "off": "You may be required to sleep to night and travel anywhere in the world to access nighttime-only checks, including flying at night."
     - "on": "You will not be required to sleep to night and travel to the overworld to access nighttime-only checks."
+
+- name: allow_flying_at_night
+  default_option: "off"
+  pretty_name: Allow Flying at Night
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will not be able to fly at night. If the Require Natural Night Connections setting is disabled, night flying will be enabled to facilitate this."
+    - "on": "You will be able to call your loftwing and fly in The Sky at night."
 
 - name: skip_horde
   default_option: "off"
@@ -1464,6 +1473,28 @@
   options:
     - "off": "You will need to traverse the Skyview Temple room in Sky Keep using most items in the item wheel to continue through Sky Keep."
     - "on": "The bars in the Skyview Temple room in Sky Keep will already be raised allowing you to skip traversing the room."
+
+- name: shortcut_sky_keep_fs_room_lower_bars
+  tracker_important: true
+  default_option: "on"
+  pretty_name: Sky Keep Lower Bars in Fire Sanctuary Room
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to fully traverse the Fire Sanctuary room in Sky Keep by riding magma platforms and using the Beetle and Clawshots."
+    - "on": "The lower bars in the Fire Sanctuary room in Sky Keep will already be raised. This does not change logic and merely speeds up this room."
+
+- name: shortcut_sky_keep_fs_room_upper_bars
+  tracker_important: true
+  default_option: "off"
+  pretty_name: Sky Keep Upper Bars in Fire Sanctuary Room
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to fully traverse the Fire Sanctuary room in Sky Keep by riding magma platforms and using the Beetle and Clawshots."
+    - "on": "The upper bars in the Fire Sanctuary room in Sky Keep will already be raised. This completely skips riding the magma platforms as well as using the Beetle and Clawshots."
 
 #############################
 ## Logic settings (tricks) ##

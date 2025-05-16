@@ -22,6 +22,8 @@ def add_dynamic_text_patches(
 
     apply_shop_text_patches(world, event_patch_handler)
 
+    apply_boss_rush_text_patches(world, event_patch_handler)
+
 
 def add_fi_text_patches(world: World, event_patch_handler: EventPatchHandler) -> None:
     # Required dungeons
@@ -501,3 +503,74 @@ def apply_shop_text_patches(
         shop_discounted_text.break_lines()
 
         add_text_data(patch_name, shop_discounted_text)
+
+
+def apply_boss_rush_text_patches(world: World, event_patch_handler: EventPatchHandler):
+    # Patch defeat 4 bosses text.
+    boss_rush_item1_patch_name = "Patch Boss Rush 4 Boss Reward Text"
+
+    event_patch_handler.append_to_event_patches(
+        "460-RairyuMinigame",
+        {
+            "name": f"{boss_rush_item1_patch_name}",
+            "type": "textpatch",
+            "index": 105,
+        },
+    )
+
+    boss_rush_location1 = world.get_location("Lanayru Gorge - Boss Rush 4 Bosses")
+    boss_rush_item1_text = get_text_data(
+        boss_rush_location1.current_item.name, "standard"
+    )
+
+    add_text_data(boss_rush_item1_patch_name, boss_rush_item1_text)
+
+    # Patch defeat 8 bosses text.
+    boss_rush_item2_patch_name = "Patch Boss Rush 8 Boss Reward Text"
+
+    event_patch_handler.append_to_event_patches(
+        "460-RairyuMinigame",
+        {
+            "name": f"{boss_rush_item2_patch_name}",
+            "type": "textpatch",
+            "index": 109,
+        },
+    )
+
+    boss_rush_location2 = world.get_location("Lanayru Gorge - Boss Rush 8 Bosses")
+    boss_rush_item2_text = get_text_data(
+        boss_rush_location2.current_item.name, "standard"
+    )
+
+    add_text_data(boss_rush_item2_patch_name, boss_rush_item2_text)
+
+    # Patch Thunder Dragon's intro yapping to include randomized rewards.
+    boss_rush_dragon_text_patch_name = "Thunder Dragon Boss Rush Rewards Text"
+    boss_rush_dragon_text = get_text_data(
+        "Thunder Dragon Boss Rush Rewards Template Text", "standard"
+    )
+
+    boss_rush_dragon_text = boss_rush_dragon_text.replace(
+        "{boss_rush_item1}",
+        Text.apply_text_color(
+            get_text_data(boss_rush_location1.current_item.name, "pretty"), "r"
+        ),
+    )
+    boss_rush_dragon_text = boss_rush_dragon_text.replace(
+        "{boss_rush_item2}",
+        Text.apply_text_color(
+            get_text_data(boss_rush_location2.current_item.name, "pretty"), "r"
+        ),
+    )
+    boss_rush_dragon_text.break_lines()
+
+    event_patch_handler.append_to_event_patches(
+        "460-RairyuMinigame",
+        {
+            "name": f"{boss_rush_dragon_text_patch_name}",
+            "type": "textpatch",
+            "index": 5,
+        },
+    )
+
+    add_text_data(boss_rush_dragon_text_patch_name, boss_rush_dragon_text)

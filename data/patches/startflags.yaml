@@ -12,6 +12,7 @@ Storyflags:
   - 81 # Tadtone Dowsing
   - 82 # Tadtones music scroll
   - 96 # Skip 1st time getting a map Fi text
+  - 108 # Heart Dowsing
   - 115 # Full Lake Floria map
   - 122 # Collected Deku Hornet for 1st time
   - 129 # Updated Lanayru Desert map
@@ -359,7 +360,11 @@ Sceneflags:
     - small_keys == removed:
       - 63 # Unlocked key locked door
     - shortcut_sky_keep_svt_room_bars == on:
-      - 70 # Bars in Skyview room raised
+      - 70 # Bars in Skyview Temple room raised
+    - shortcut_sky_keep_fs_room_lower_bars == on:
+      - 40 # Lower bars in Fire Sanctuary room raised
+    - shortcut_sky_keep_fs_room_upper_bars == on:
+      - 42 # Upper bars in Fire Sanctuary room raised
 
   The Sky: # Scene Index 21
     - shortcut_ios_bridge_complete == on:

@@ -166,17 +166,17 @@ pub fn handle_er_cases() {
         // If it should be night time, check if the entrance is valid at night
         // check_storyflag(899) can only be true if natural_night_connections is off
         if (flag::check_storyflag(899) != 0 || NEXT_NIGHT == 1) {
-            // debug::debug_print("Should be night");
+            debug::debug_print(c"Should be night".as_ptr());
 
             if next_stage_is_valid_at_night() {
-                // debug::debug_print("Next stage is valid at night: NEXT_NIGHT = 1");
+                debug::debug_print(c"Next stage is valid at night: NEXT_NIGHT = 1".as_ptr());
                 NEXT_NIGHT = 1;
             } else {
-                // debug::debug_print("Next stage is NOT valid at night: NEXT_NIGHT = 0");
+                debug::debug_print(c"Next stage is NOT valid at night: NEXT_NIGHT = 0".as_ptr());
                 NEXT_NIGHT = 0;
             }
         } else {
-            // debug::debug_print("Should not be night");
+            debug::debug_print(c"Should not be night".as_ptr());
             NEXT_NIGHT = 0;
         }
 
@@ -196,24 +196,14 @@ pub fn handle_er_cases() {
 #[no_mangle]
 pub fn next_stage_is_valid_at_night() -> bool {
     unsafe {
-        if (&NEXT_STAGE_NAME[..2] == b"F0" &&      // Non-surface stage
-            &NEXT_STAGE_NAME[..6] != b"F004r\0" && // Not Bazaar
-            &NEXT_STAGE_NAME[..6] != b"F010r\0" && // Not Isle of Songs
-            &NEXT_STAGE_NAME[..6] != b"F019r\0" && // Not Bamboo Island
-            &NEXT_STAGE_NAME[..3] != b"F02"   ||   // Not Sky/Thunderhead
+        if (&NEXT_STAGE_NAME[..5] == b"D000\0" || // Waterfall Cave
+            &NEXT_STAGE_NAME[..5] == b"S000\0" || // The Goddess's Silent Realm
             (
-                &NEXT_STAGE_NAME[..5] == b"F020\0" && // Sky stage
-                (
-                    NEXT_ENTRANCE == 0  || // Beedle's Island
-                    NEXT_ENTRANCE == 22 || // Lumpy West Door
-                    NEXT_ENTRANCE == 23 || // Lumpy East Door
-                    NEXT_ENTRANCE == 24    // Lumpy Back Door
-                )
-            ) ||
-            // Waterfall Cave
-            &NEXT_STAGE_NAME[..5] == b"D000\0" ||
-            // The Goddess's Silent Realm
-            &NEXT_STAGE_NAME[..5] == b"S000\0")
+                &NEXT_STAGE_NAME[..2] == b"F0"      && // Non-surface stage
+                &NEXT_STAGE_NAME[..6] != b"F010r\0" && // Not Isle of Songs (works but looks weird)
+                &NEXT_STAGE_NAME[..6] != b"F019r\0"    // Not Bamboo Island (Peater disappears?)
+                // &NEXT_STAGE_NAME[..6] != b"F004r\0" // Not Bazaar (works but Sparrot isn't there)
+            ))
         {
             return true;
         }

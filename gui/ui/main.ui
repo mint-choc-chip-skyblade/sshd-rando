@@ -1229,7 +1229,7 @@
             <widget class="QComboBox" name="setting_open_lmf"/>
            </item>
            <item>
-            <widget class="Line" name="line">
+            <widget class="Line" name="open_dungeons_line">
              <property name="orientation">
               <enum>Qt::Orientation::Horizontal</enum>
              </property>
@@ -1323,6 +1323,20 @@
             <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_svt_room_bars">
              <property name="text">
               <string>Sky Keep Bars in Skyview Temple Room</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_fs_room_lower_bars">
+             <property name="text">
+              <string>Sky Keep Lower Bars in Fire Sanctuary Room</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_shortcut_sky_keep_fs_room_upper_bars">
+             <property name="text">
+              <string>Sky Keep Upper Bars in Fire Sanctuary Room</string>
              </property>
             </widget>
            </item>
@@ -3828,6 +3842,20 @@ Practice Sword</string>
             <widget class="RandoTriStateCheckBox" name="setting_enable_back_in_time">
              <property name="text">
               <string>Enable Back in Time (BiT)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_allow_flying_at_night">
+             <property name="text">
+              <string>Allow Flying at Night</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_natural_night_connections">
+             <property name="text">
+              <string>Require Natural Night Connections</string>
              </property>
             </widget>
            </item>

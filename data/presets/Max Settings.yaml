@@ -122,6 +122,8 @@ World 1:
   shortcut_fs_outside_bars: 'off'
   shortcut_fs_lava_flow: 'on'
   shortcut_sky_keep_svt_room_bars: 'on'
+  shortcut_sky_keep_fs_room_lower_bars: 'on'
+  shortcut_sky_keep_fs_room_upper_bars: 'off'
   logic_early_lake_floria: 'off'
   logic_beedles_island_cage_chest_dive: 'off'
   logic_volcanic_island_dive: 'off'
