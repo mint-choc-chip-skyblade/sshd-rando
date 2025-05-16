@@ -22,21 +22,48 @@ use static_assertions::assert_eq_size;
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct SoundMgrs {
-    pub vtable: *mut SoundMgrsVtable,
+pub struct SndAudioMgr {
+    pub vtable:     *mut SndAudioMgrVtable,
+    pub _0:         [u8; 0xCE0],
+    pub brsar_info: *mut BrsarInfo,
 }
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct SoundMgrsVtable {
+pub struct SndAudioMgrVtable {
     pub _0:  [u8; 0x48],
-    pub fn9: extern "C" fn(*mut SoundMgrs, i32, u64, u64),
+    pub fn9: extern "C" fn(*mut SndAudioMgr, i32, u64, u64),
 }
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct BrsarInfo {
+    pub _0:       [u8; 0x87E1C],
+    pub wzs_data: [WZSInfo; 238],
+}
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct WZSInfo {
+    pub audio_len:       i32,
+    pub blank:           i32,
+    pub negative_one:    i32,
+    pub unk1:            i32,
+    pub unk_offset1:     i32,
+    pub unk2:            i32,
+    pub unk_offset2:     i32,
+    pub filename_prefix: [c_char; 4],
+    pub filename:        [c_char; 32],
+    pub pad:             u32,
+}
+assert_eq_size!([u8; 0x44], WZSInfo);
 
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
-    static SOUND_MGRS: *mut SoundMgrs;
+    static SndAudioMgr__sInstance: *mut SndAudioMgr;
+    static BGM_SOUND_MGR: *mut c_void;
+    static RANDOM_MUSIC_DATA: [[c_char; 32]; 238];
 
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
@@ -47,18 +74,18 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn load_additional_sfx(sound_mgrs: u64, sound_id: i32) {
+pub fn load_additional_sfx(snd_audio_mgr: u64, sound_id: i32) {
     unsafe {
         // Replaced instructions
-        ((*(*SOUND_MGRS).vtable).fn9)(SOUND_MGRS, sound_id, 0, 0);
+        ((*(*SndAudioMgr__sInstance).vtable).fn9)(SndAudioMgr__sInstance, sound_id, 0, 0);
 
         /// 576 is the sound ID for GRP_D301_L1 which has the heart container
         /// sound
-        ((*(*SOUND_MGRS).vtable).fn9)(SOUND_MGRS, 576, 0, 0);
+        ((*(*SndAudioMgr__sInstance).vtable).fn9)(SndAudioMgr__sInstance, 576, 0, 0);
 
         /// 545 is the sound ID for GRP_B210_L14 which has the ancient tablet
         /// sound
-        ((*(*SOUND_MGRS).vtable).fn9)(SOUND_MGRS, 545, 0, 0);
+        ((*(*SndAudioMgr__sInstance).vtable).fn9)(SndAudioMgr__sInstance, 545, 0, 0);
     }
 }
 
@@ -85,5 +112,26 @@ pub fn assign_item_textbox_collection_sfx(
         asm!("mov w1, {0:w}", in(reg) sfx_id);
 
         return fanfare_sound_mgr;
+    }
+}
+
+#[no_mangle]
+pub fn randomize_music() {
+    unsafe {
+        let wzs_data_array = (*(*SndAudioMgr__sInstance).brsar_info).wzs_data;
+        let mut index = 0;
+        while index < 238 {
+            (*(*SndAudioMgr__sInstance).brsar_info).wzs_data[index].filename =
+                RANDOM_MUSIC_DATA[index];
+
+            if index != 3 {
+                (*(*SndAudioMgr__sInstance).brsar_info).wzs_data[index].audio_len = 0x7FFFFFFF;
+            }
+
+            index += 1;
+        }
+
+        // Replaced instructions
+        asm!("mov x11, x19", "mov x10, {0:x}", in(reg) BGM_SOUND_MGR);
     }
 }

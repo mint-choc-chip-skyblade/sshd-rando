@@ -23,3 +23,9 @@ cbz w1, 0x7100a3b878 ; continue with vanilla sfx if sfx_id == 0
 ; don't overwrite sfx_id with the vanilla heart container sound
 .offset 0x7100a3b838
 nop
+
+
+; Randomize Music
+.offset 0x7100df53f0
+mov w8, #94
+bl additions_jumptable

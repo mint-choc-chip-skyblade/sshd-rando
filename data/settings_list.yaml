@@ -1060,6 +1060,19 @@
     - grey: "The nighttime cloud color will be a grey color."
     - rainbow: "The nighttime cloud color will fade between different colors over time."
 
+- name: randomize_music
+  type: Cosmetic
+  default_option: "vanilla"
+  pretty_name: Randomize Music
+  pretty_options:
+    - "Vanilla"
+    - "Shuffle"
+    - "Shuffle (Limit Vanilla)"
+  options:
+    - "vanilla": "The background music will not be shuffled."
+    - "shuffle_music": "The background music will be randomly shuffled."
+    - "shuffle_music_limit_vanilla": "The background music will be shuffled to minimize the number of unchanged tracks."
+
 - name: remove_enemy_music
   type: Cosmetic
   default_option: "off"
