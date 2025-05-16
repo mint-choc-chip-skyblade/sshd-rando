@@ -259,7 +259,7 @@ def calculate_possible_barren_regions(worlds: list[World]) -> None:
                 continue
 
             for loc_access in loc.loc_access_list:
-                for hint_region in loc_access.area.hint_regions:
+                for hint_region in sorted(loc_access.area.hint_regions):
                     if hint_region in world.barren_regions:
                         if (
                             loc.importance == LocationImportance.NOT_REQUIRED
@@ -446,20 +446,22 @@ def generate_barren_hint_locations(world: World, hint_locations: list) -> None:
         if not barren_pool:
             logging.getLogger("").debug("No more barren regions to hint at.")
             break
-        region = random.choices(barren_pool, weights=barren_weights)[0]
+        hinted_region = random.choices(barren_pool, weights=barren_weights)[0]
         # Set all locations in the selected barren region as hinted
         # so we don't hint at them again
-        for location in world.barren_regions[region]:
+        for location in world.barren_regions[hinted_region]:
             location.is_hinted = True
             generate_barren_hint_message(
-                location, get_text_data(region, "pretty").apply_text_color("b")
+                location, get_text_data(hinted_region, "pretty").apply_text_color("b")
             )
-        hint_locations.append(world.barren_regions[region][0])
-        logging.getLogger("").debug(f'Chose "{region}" as a hinted barren region')
+        hint_locations.append(world.barren_regions[hinted_region][0])
+        logging.getLogger("").debug(
+            f'Chose "{hinted_region}" as a hinted barren region'
+        )
 
         # Reform weights without the hint we just chose
-        barren_weights.pop(barren_pool.index(region))
-        barren_pool.remove(region)
+        barren_weights.pop(barren_pool.index(hinted_region))
+        barren_pool.remove(hinted_region)
 
 
 def generate_item_hint_locations(world: World, hint_locations: list) -> None:
