@@ -5,6 +5,7 @@
 use crate::actor;
 use crate::debug;
 use crate::flag;
+use crate::savefile;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
@@ -36,7 +37,7 @@ assert_eq_size!([u8; 12], WarpToStartInfo);
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.
 extern "C" {
-    static FILE_MGR: *mut c_void;
+    static FILE_MGR: *mut savefile::FileMgr;
     static STORYFLAG_MGR: *mut flag::FlagMgr;
     static STAGE_MGR: *mut actor::dStageMgr;
     static FANFARE_SOUND_MGR: *mut c_void;
@@ -68,6 +69,7 @@ extern "C" {
 
     // Custom
     static WARP_TO_START_INFO: WarpToStartInfo;
+    static mut TRAP_ID: u8;
 
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
@@ -178,7 +180,11 @@ pub fn handle_er_cases() {
             NEXT_NIGHT = 0;
         }
 
-        playFanfareMaybe(FANFARE_SOUND_MGR, 0xFFFF);
+        // Stop trap music. If health is zero, this gets handled
+        // already and this would cut off the game over music instead
+        if (TRAP_ID == 2 || TRAP_ID == 3) && (*FILE_MGR).FA.current_health != 0 {
+            playFanfareMaybe(FANFARE_SOUND_MGR, 0xFFFF);
+        }
 
         // Replaced code sets these
         (*GAME_RELOADER_PTR).item_to_use_after_reload = 0xFF;

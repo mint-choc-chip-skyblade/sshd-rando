@@ -535,7 +535,9 @@ class ASMPatchHandler:
         nighttime_cloud_color_index = world.setting_map.settings[
             "nighttime_cloud_color"
         ].current_option_index
+
         skip_harp_playing = world.setting("skip_harp_playing").value_index()
+        cutoff_game_over_music = world.setting("cutoff_game_over_music").value_index()
 
         sky_keep_goal = world.get_dungeon("Sky Keep").goal_location
         if sky_keep_goal == None:
@@ -557,7 +559,7 @@ class ASMPatchHandler:
             0x712E54B6C0: [
                 skip_harp_playing,
                 sky_keep_beaten_sceneflag,
-                0xFF,
+                cutoff_game_over_music,
                 0xFF,
             ],  # RANDOMIZER_SETTINGS
             0x712E5FF020: [

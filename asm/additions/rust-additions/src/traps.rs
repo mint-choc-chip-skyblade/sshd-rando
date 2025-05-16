@@ -36,6 +36,8 @@ use static_assertions::assert_eq_size;
 extern "C" {
     static PLAYER_PTR: *mut player::dPlayer;
 
+    static s_rng: u32;
+
     static FILE_MGR: *mut savefile::FileMgr;
     static ROOM_MGR: *mut actor::RoomMgr;
     static EVENT_MGR: *mut event::EventMgr;
@@ -170,7 +172,11 @@ pub fn update_traps() {
                     );
                 }
 
-                playFanfareMaybe(FANFARE_SOUND_MGR, 0x1705); // Groose's theme
+                if (s_rng & 1) == 0 {
+                    playFanfareMaybe(FANFARE_SOUND_MGR, 0x1705); // Groose's Theme 2
+                } else {
+                    playFanfareMaybe(FANFARE_SOUND_MGR, 0x1707); // Silly Groose 1
+                }
             },
             // Health Trap
             4 => {

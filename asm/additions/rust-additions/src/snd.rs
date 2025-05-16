@@ -4,6 +4,7 @@
 
 use crate::debug;
 use crate::flag;
+use crate::settings;
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
@@ -64,6 +65,7 @@ extern "C" {
     static SndAudioMgr__sInstance: *mut SndAudioMgr;
     static BGM_SOUND_MGR: *mut c_void;
     static RANDOM_MUSIC_DATA: [[c_char; 32]; 238];
+    static RANDOMIZER_SETTINGS: settings::RandomizerSettings;
 
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
@@ -124,7 +126,7 @@ pub fn randomize_music() {
             (*(*SndAudioMgr__sInstance).brsar_info).wzs_data[index].filename =
                 RANDOM_MUSIC_DATA[index];
 
-            if index != 3 {
+            if index != 2 || RANDOMIZER_SETTINGS.cutoff_game_over_music == 0 {
                 (*(*SndAudioMgr__sInstance).brsar_info).wzs_data[index].audio_len = 0x7FFFFFFF;
             }
 
