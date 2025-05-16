@@ -3996,14 +3996,6 @@ F302: # Lanayru Gorge
     object:
       storyflag: -1
       play_cutscene: -1
-  - name: Patch Entry of Thunderdragon after heal
-    type: objpatch
-    id: 0x10D0
-    layer: 2
-    room: 0
-    objtype: OBJ
-    object:
-      talk_behaviour: 46070
   - name: Patch wounded Thuderdragon to always trigger
     type: objpatch
     id: 0x10D1
@@ -4448,7 +4440,6 @@ F402: # Sealed Temple
       story_flag2: -1
 
 F403: # Hylia's Realm
-  # Removed Boss Rush layeroverride
   # Change flag 342 (Beat Sky Keep) to -1
   - name: Layer override
     type: layeroverride
@@ -4456,9 +4447,9 @@ F403: # Hylia's Realm
       - story_flag: 726 # Refight G3
         night: 0
         layer: 4
-      # - story_flag: 530 # Boss Rush
-      #   night: 0
-      #   layer: 1
+      - story_flag: 530 # Boss Rush
+        night: 0
+        layer: 1
       - story_flag: 486 # G3 Defeated
         night: 0
         layer: 3
@@ -5056,14 +5047,13 @@ D100: # Skyview Temple
       posy: -210
 
 B100: # Ghirahim 1 Boss Room
-  # Removed Boss Rush layeroverride
   # Removed flags 67 (Triple Stalfos Defeated), 206 (Obtained Water Dragon's Scale), and 5 (Beat Skyview Temple)
   - name: Layer override
     type: layeroverride
     override:
-      # - story_flag: 530 # Boss Rush
-      #   night: 0
-      #   layer: 5
+      - story_flag: 530 # Boss Rush
+        night: 0
+        layer: 5
       - story_flag: 83 # Ghirahim 1 Defeated
         night: 0
         layer: 1
@@ -5315,13 +5305,12 @@ D101: # Ancient Cistern
       name: Bombf
 
 B101: # Koloktos Boss Room
-  # Removed Boss Rush layeroverride
   - name: Layer override
     type: layeroverride
     override:
-      # - story_flag: 530 # Boss Rush
-      #   night: 0
-      #   layer: 2
+      - story_flag: 530 # Boss Rush
+        night: 0
+        layer: 2
       - story_flag: 648 # Koloktos Defeated
         night: 0
         layer: 3
@@ -5487,14 +5476,13 @@ D200: # Earth Temple
       params1: 0x3F02050F
 
 B200: # Scaldera Boss Room
-  # Removed Boss Rush layeroverride
   # Change flag 5 (Beat Skyview Temple) to -1
   - name: Layer override
     type: layeroverride
     override:
-      # - story_flag: 530 # Boss Rush
-      #   night: 0
-      #   layer: 3
+      - story_flag: 530 # Boss Rush
+        night: 0
+        layer: 3
       - story_flag: 7 # Beat ET
         night: 0
         layer: 1
@@ -5743,9 +5731,9 @@ B201: # Ghirahim 2 Boss Room
   - name: Layer override
     type: layeroverride
     override:
-      # - story_flag: 530 # Boss Rush
-      #   night: 0
-      #   layer: 3
+      - story_flag: 530 # Boss Rush
+        night: 0
+        layer: 3
       - story_flag: 901 # Fire Sanctuary Beaten
         night: 0
         layer: 2
@@ -5952,16 +5940,15 @@ D300_1: # Lanayru Mining Facility B (back)
       name: Bombf
 
 B300: # Moldarach Boss Room
-  # Removed Boss Rush layeroverride
   - name: Layer override
     type: layeroverride
     override:
       - story_flag: 812 # Opened door after defeating Moldy
         night: 0
         layer: 3
-      # - story_flag: 530 # Boss Rush
-      #   night: 0
-      #   layer: 2
+      - story_flag: 530 # Boss Rush
+        night: 0
+        layer: 2
       - story_flag: -1
         night: 0
         layer: 1
@@ -6159,13 +6146,12 @@ D301_1: # Sandship B (escape)
     objtype: OBJ
 
 B301: # Tentalus Boss Room
-  # Removed Boss Rush layeroverride
   - name: Layer override
     type: layeroverride
     override:
-      # - story_flag: 530 # Boss Rush
-      #   night: 0
-      #   layer: 2
+      - story_flag: 530 # Boss Rush
+        night: 0
+        layer: 2
       - story_flag: -1
         night: 0
         layer: 1
