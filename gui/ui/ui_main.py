@@ -853,12 +853,12 @@ class Ui_main_window(object):
 
         self.verticalLayout_25.addWidget(self.setting_open_lmf)
 
-        self.line = QFrame(self.open_dungeons_group_box)
-        self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.Shape.HLine)
-        self.line.setFrameShadow(QFrame.Shadow.Sunken)
+        self.open_dungeons_line = QFrame(self.open_dungeons_group_box)
+        self.open_dungeons_line.setObjectName(u"open_dungeons_line")
+        self.open_dungeons_line.setFrameShape(QFrame.Shape.HLine)
+        self.open_dungeons_line.setFrameShadow(QFrame.Shadow.Sunken)
 
-        self.verticalLayout_25.addWidget(self.line)
+        self.verticalLayout_25.addWidget(self.open_dungeons_line)
 
         self.setting_shortcut_skyview_boards = RandoTriStateCheckBox(self.open_dungeons_group_box)
         self.setting_shortcut_skyview_boards.setObjectName(u"setting_shortcut_skyview_boards")
@@ -924,6 +924,16 @@ class Ui_main_window(object):
         self.setting_shortcut_sky_keep_svt_room_bars.setObjectName(u"setting_shortcut_sky_keep_svt_room_bars")
 
         self.verticalLayout_25.addWidget(self.setting_shortcut_sky_keep_svt_room_bars)
+
+        self.setting_shortcut_sky_keep_fs_room_lower_bars = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_sky_keep_fs_room_lower_bars.setObjectName(u"setting_shortcut_sky_keep_fs_room_lower_bars")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_sky_keep_fs_room_lower_bars)
+
+        self.setting_shortcut_sky_keep_fs_room_upper_bars = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.setting_shortcut_sky_keep_fs_room_upper_bars.setObjectName(u"setting_shortcut_sky_keep_fs_room_upper_bars")
+
+        self.verticalLayout_25.addWidget(self.setting_shortcut_sky_keep_fs_room_upper_bars)
 
         self.shortcuts_vspacer = QSpacerItem(20, 148, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -2547,7 +2557,7 @@ class Ui_main_window(object):
         self.other_mods_scroll_area.setWidgetResizable(True)
         self.other_mods_scroll_widget = QWidget()
         self.other_mods_scroll_widget.setObjectName(u"other_mods_scroll_widget")
-        self.other_mods_scroll_widget.setGeometry(QRect(0, 0, 310, 342))
+        self.other_mods_scroll_widget.setGeometry(QRect(0, 0, 98, 28))
         self.other_mods_scroll_layout = QVBoxLayout(self.other_mods_scroll_widget)
         self.other_mods_scroll_layout.setObjectName(u"other_mods_scroll_layout")
         self.other_mods_scroll_area.setWidget(self.other_mods_scroll_widget)
@@ -2885,7 +2895,7 @@ class Ui_main_window(object):
         self.tracker_locations_scroll_area.setWidgetResizable(True)
         self.tracker_locations_scroll_widget = QWidget()
         self.tracker_locations_scroll_widget.setObjectName(u"tracker_locations_scroll_widget")
-        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 546, 340))
+        self.tracker_locations_scroll_widget.setGeometry(QRect(0, 0, 100, 30))
         self.tracker_locations_scroll_widget.setMaximumSize(QSize(546, 16777215))
         self.tracker_locations_scroll_layout = QHBoxLayout(self.tracker_locations_scroll_widget)
         self.tracker_locations_scroll_layout.setSpacing(0)
@@ -3028,8 +3038,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(8)
-
+        self.tab_widget.setCurrentIndex(0)
 
         QMetaObject.connectSlotsByName(main_window)
     # setupUi
@@ -3138,6 +3147,8 @@ class Ui_main_window(object):
         self.setting_shortcut_fs_outside_bars.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Bars between Outdoor Bridges", None))
         self.setting_shortcut_fs_lava_flow.setText(QCoreApplication.translate("main_window", u"Fire Sanctuary Skip Lava Chase", None))
         self.setting_shortcut_sky_keep_svt_room_bars.setText(QCoreApplication.translate("main_window", u"Sky Keep Bars in Skyview Temple Room", None))
+        self.setting_shortcut_sky_keep_fs_room_lower_bars.setText(QCoreApplication.translate("main_window", u"Sky Keep Lower Bars in Fire Sanctuary Room", None))
+        self.setting_shortcut_sky_keep_fs_room_upper_bars.setText(QCoreApplication.translate("main_window", u"Sky Keep Upper Bars in Fire Sanctuary Room", None))
         self.entrance_randomization_group_box.setTitle(QCoreApplication.translate("main_window", u"Entrance Randomization", None))
         self.setting_randomize_door_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Door Entrances", None))
         self.setting_randomize_interior_entrances.setText(QCoreApplication.translate("main_window", u"Randomize Interior Entrances", None))

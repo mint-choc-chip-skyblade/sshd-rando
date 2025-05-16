@@ -8,6 +8,7 @@ use crate::entrance;
 use crate::fix;
 use crate::flag;
 use crate::lyt;
+use crate::minigame;
 use crate::traps;
 
 use core::arch::asm;
@@ -93,13 +94,17 @@ pub struct EventFlowElement {
     pub typ:     u8,
     pub subtype: u8,
     pub pad:     u16,
+    pub param2:  u16, // 6.5 hrs went into finding out that these are reversed ...
     pub param1:  u16,
-    pub param2:  u16,
     pub next:    u16,
     pub param3:  u16,
     pub param4:  u16,
     pub param5:  u16,
 }
+// Long story, turns out that the game stores param1 and 2 in a single u32
+// field. This works fine in SD, however, HD has the reverse endianness. So,
+// these two params2 get reversed and that's how I lost over 6 hours of my life
+// ;-;
 assert_eq_size!([u8; 0x10], EventFlowElement);
 
 // IMPORTANT: when using vanilla code, the start point must be declared in
@@ -156,6 +161,8 @@ pub fn custom_event_commands(
             // will show the item give textbox for collecting all the tadtones.
             (*actor_event_flow_mgr).result_from_previous_check = tadtone_groups_left;
         },
+        76 => minigame::boss_rush_backup_flags(event_flow_element.param1),
+        77 => minigame::boss_rush_restore_flags(),
         _ => (),
     }
 

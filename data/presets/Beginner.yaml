@@ -120,6 +120,8 @@ World 1:
   shortcut_fs_outside_bars: 'off'
   shortcut_fs_lava_flow: 'on'
   shortcut_sky_keep_svt_room_bars: 'on'
+  shortcut_sky_keep_fs_room_lower_bars: 'on'
+  shortcut_sky_keep_fs_room_upper_bars: 'off'
   logic_early_lake_floria: 'off'
   logic_beedles_island_cage_chest_dive: 'off'
   logic_volcanic_island_dive: 'off'
@@ -203,6 +205,8 @@ World 1:
   - The Sky - Form a Swirrell Ring above Bamboo Island
   - Bug Heaven - 10 Bugs in 3 Minutes
   - Inside the Thunderhead - Song from Levias
+  - Lanayru Gorge - Boss Rush 4 Bosses
+  - Lanayru Gorge - Boss Rush 8 Bosses
   - Shipyard - Heart Stopping Rickety Coaster Track in 1'05
   - The Goddess's Silent Realm - Collect all Tears Reward
   - Farore's Silent Realm - Collect all Tears Reward

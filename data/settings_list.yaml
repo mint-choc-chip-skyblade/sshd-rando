@@ -1450,6 +1450,28 @@
     - "off": "You will need to traverse the Skyview Temple room in Sky Keep using most items in the item wheel to continue through Sky Keep."
     - "on": "The bars in the Skyview Temple room in Sky Keep will already be raised allowing you to skip traversing the room."
 
+- name: shortcut_sky_keep_fs_room_lower_bars
+  tracker_important: true
+  default_option: "on"
+  pretty_name: Sky Keep Lower Bars in Fire Sanctuary Room
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to fully traverse the Fire Sanctuary room in Sky Keep by riding magma platforms and using the Beetle and Clawshots."
+    - "on": "The lower bars in the Fire Sanctuary room in Sky Keep will already be raised. This does not change logic and merely speeds up this room."
+
+- name: shortcut_sky_keep_fs_room_upper_bars
+  tracker_important: true
+  default_option: "off"
+  pretty_name: Sky Keep Upper Bars in Fire Sanctuary Room
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will need to fully traverse the Fire Sanctuary room in Sky Keep by riding magma platforms and using the Beetle and Clawshots."
+    - "on": "The upper bars in the Fire Sanctuary room in Sky Keep will already be raised. This completely skips riding the magma platforms as well as using the Beetle and Clawshots."
+
 #############################
 ## Logic settings (tricks) ##
 #############################

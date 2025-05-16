@@ -120,6 +120,8 @@ World 1:
   shortcut_fs_outside_bars: 'off'
   shortcut_fs_lava_flow: 'on'
   shortcut_sky_keep_svt_room_bars: 'on'
+  shortcut_sky_keep_fs_room_lower_bars: 'on'
+  shortcut_sky_keep_fs_room_upper_bars: 'off'
   logic_early_lake_floria: 'off'
   logic_beedles_island_cage_chest_dive: 'off'
   logic_volcanic_island_dive: 'off'
@@ -249,6 +251,8 @@ World 1:
   - Lightning Node - Middle Chest
   - Lightning Node - Raised Chest near Generator
   - Lanayru Caves - Chest near Golo
+  - Lanayru Gorge - Boss Rush 4 Bosses
+  - Lanayru Gorge - Boss Rush 8 Bosses
   - Skipper's Retreat - Chest Guarded by Quadro Baba
   - Skipper's Retreat - Chest on North Cacti Pillar
   - Skipper's Retreat Shack - Chest under Sand
