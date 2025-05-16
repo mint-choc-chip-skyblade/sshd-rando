@@ -20,6 +20,7 @@ Storyflags:
     - 132 # Can Target Gate of Time (Imp 2 Defeated)
     - 340 # Gate of Time raised
   - 138 # Sealed Temple layer 1
+  - 156 # Watched Sandship Intro Cutscene (fixes SSH audio)
   - 178 # Cutscene showing off Bokoblin Base with Plats
   - 187 # Watered Big Frog outside Fire Sanctuary
   - 198 # Can jump off Loftwing
