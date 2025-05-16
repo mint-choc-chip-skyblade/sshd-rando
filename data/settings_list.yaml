@@ -1069,6 +1069,30 @@
     - grey: "The nighttime cloud color will be a grey color."
     - rainbow: "The nighttime cloud color will fade between different colors over time."
 
+- name: randomize_music
+  type: Cosmetic
+  default_option: "vanilla"
+  pretty_name: Randomize Music
+  pretty_options:
+    - "Vanilla"
+    - "Shuffle"
+    - "Shuffle (Limit Vanilla)"
+  options:
+    - "vanilla": "The background music will not be shuffled."
+    - "shuffle_music": "The background music will be randomly shuffled."
+    - "shuffle_music_limit_vanilla": "The background music will be shuffled to minimize the number of unchanged tracks."
+
+- name: cutoff_game_over_music
+  type: Cosmetic
+  default_option: "off"
+  pretty_name: Cutoff Game Over Music
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "The game over music will continue to play until the song has ended, even if the Randomize Music setting places a very long song as the game over sound."
+    - "on": "The game over music will be cutoff when selecting continue after dying."
+
 - name: remove_enemy_music
   type: Cosmetic
   default_option: "off"

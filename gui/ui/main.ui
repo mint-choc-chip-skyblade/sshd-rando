@@ -3501,6 +3501,23 @@ Practice Sword</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_35">
            <item>
+            <widget class="QLabel" name="randomize_music_label">
+             <property name="text">
+              <string>Randomize Music</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_randomize_music"/>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_cutoff_game_over_music">
+             <property name="text">
+              <string>Cutoff Game Over Music</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="RandoTriStateCheckBox" name="setting_remove_enemy_music">
              <property name="text">
               <string>Remove Enemy Music</string>

@@ -117,7 +117,6 @@ the chest
 ## Not yet implemented / SDR-only
 * Chest Dowsing Matches Contents (CDMC) (HDR has CTMC instead for now)
 * Full custom model and music support (experimental support for other mods has been added)
-* Random Music (you can use the files from SDR to achieve this)
 * Starting with all Treasures or Bugs
 * Save File text isn't updated for the randomizer
 * Random Riddles (randomizes the solutions to various puzzles throughout the game)

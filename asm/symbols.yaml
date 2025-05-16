@@ -34,7 +34,7 @@ main:
     EVENT_MGR: 0x7101831ed8
     CONNECT_MGR: 0x710168c510
     LIGHT_MGRS: 0x7102c02690
-    SOUND_MGRS: 0x7102c02a98
+    SndAudioMgr__sInstance: 0x7102c02a98
     ARC_MGR: 0x7101933d50
     STAGE_ARC_MGR: 0x7102bfde20
 
@@ -230,6 +230,9 @@ main:
 
     ## Size: 50 (who knows how many settings we'll get in the future)
     RANDOMIZER_SETTINGS: 0x712e54b6c0
+
+    ## Size: 7616 (0x1DC0) = 32*238
+    RANDOM_MUSIC_DATA: 0x712e54c000
 
     # Writable
     ## Size: 1

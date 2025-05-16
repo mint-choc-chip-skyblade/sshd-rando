@@ -8,6 +8,7 @@ from constants.itemconstants import (
     ITEM_COUNTS,
     PROGRESSIVE_POUCH,
 )
+from constants.musicconstants import VANILLA_MUSIC_DATA
 from filepathconstants import (
     ASM_ADDITIONS_DIFFS_PATH,
     ASM_PATCHES_DIFFS_PATH,
@@ -304,12 +305,16 @@ class ASMPatchHandler:
             )
             self.init_global_variables(global_variables_diff_file_path, world)
 
-            update_progress_value(96)
             print_progress_text("Creating starting entrance additions")
             staring_entrance_diff_file_path = (
                 temp_dir_name / "starting-entrance-diff.yaml"
             )
             self.create_starting_entrance_patch(staring_entrance_diff_file_path, world)
+
+            update_progress_value(96)
+            print_progress_text("Creating music patches")
+            music_diff_file_path = temp_dir_name / "music-diff.yaml"
+            self.create_music_patch(music_diff_file_path, world)
 
             update_progress_value(97)
             print_progress_text("Applying asm additions")
@@ -530,7 +535,9 @@ class ASMPatchHandler:
         nighttime_cloud_color_index = world.setting_map.settings[
             "nighttime_cloud_color"
         ].current_option_index
+
         skip_harp_playing = world.setting("skip_harp_playing").value_index()
+        cutoff_game_over_music = world.setting("cutoff_game_over_music").value_index()
 
         sky_keep_goal = world.get_dungeon("Sky Keep").goal_location
         if sky_keep_goal == None:
@@ -552,7 +559,7 @@ class ASMPatchHandler:
             0x712E54B6C0: [
                 skip_harp_playing,
                 sky_keep_beaten_sceneflag,
-                0xFF,
+                cutoff_game_over_music,
                 0xFF,
             ],  # RANDOMIZER_SETTINGS
             0x712E5FF020: [
@@ -677,6 +684,94 @@ class ASMPatchHandler:
 
         # Write the shop data binary to a non-temp file.
         # yaml_write(Path("./test-shop-data.yaml"), shop_data_dict)
+
+    def create_music_patch(self, output_path: Path, world: World):
+        music_rando_setting = world.setting("randomize_music")
+        music_data = VANILLA_MUSIC_DATA.copy()
+        music_pool: dict[int, list[str]] = {}
+
+        for music_name, music_type in music_data:
+            # Shuffle type 2 with type 1
+            if music_type == 2:
+                music_type = 1
+
+            # Tadtones Melody
+            # Add it to type 3 so it can show up in random places but ensure
+            # it's also added to type 11 so the vanilla tadtone melody remains
+            # unchanged (as non-vanilla tadtone music softlocks).
+            if music_name == "F63D5DB51DE748A3729628C659397A49":
+                music_pool[11].append(music_name)  # the pool for type 11 already exists
+                music_type = 3
+
+            if music_type not in music_pool:
+                music_pool[music_type] = [music_name]
+            else:
+                music_pool[music_type].append(music_name)
+
+        if music_rando_setting != "vanilla":
+            for music_type, music_name_list in music_pool.items():
+                # Don't shuffle types 10 and 11
+                if music_type not in (10, 11) and len(music_name_list) > 1:
+                    if music_rando_setting == "shuffle_music_limit_vanilla":
+                        derangement = self._get_derangement(len(music_name_list))
+                        shuffled_music_name_list = []
+
+                        for track_index in range(len(music_name_list)):
+                            shuffled_music_name_list.append(
+                                music_name_list[derangement[track_index]]
+                            )
+                    else:
+                        shuffled_music_name_list = music_name_list
+                        random.shuffle(shuffled_music_name_list)
+
+                    music_pool[music_type] = shuffled_music_name_list
+
+        shuffled_names = []
+        music_type_counter: dict[int, int] = {}
+
+        for music_name, music_type in music_data:
+            if music_type == 2:
+                music_type = 1
+
+            if music_type not in music_type_counter:
+                music_type_counter[music_type] = 0
+
+            music_type_counter[music_type] += 1
+
+            shuffled_music_name = music_pool[music_type][
+                music_type_counter[music_type] - 1
+            ]
+
+            # print(music_name, shuffled_music_name)
+            for char in shuffled_music_name:
+                shuffled_names.append(ord(char))
+
+        music_data_dict = {0x712E54C000: shuffled_names}
+
+        yaml_write(output_path, music_data_dict)
+
+        # Write the shop data binary to a non-temp file.
+        # yaml_write(Path("./test-music.yaml"), music_data_dict)
+
+    def _is_derangement(self, l: list[int]) -> bool:
+        for i, n in enumerate(l):
+            if i == n:
+                return False
+        return True
+
+    def _get_derangement(self, music_list_length: int) -> list[int]:
+        # Generates a list of the range [0, music_list_length],
+        # shuffled such that no number is at its original index.
+        if music_list_length <= 1:
+            raise ValueError("Length of music list needs to be at least 2.")
+
+        music_index_list = list(range(music_list_length))
+        random.shuffle(music_index_list)
+
+        while not self._is_derangement(music_index_list):
+            random.shuffle(music_index_list)
+
+        return music_index_list
 
     def _get_flags(
         self, startflag_section, onlyif_handler: ConditionalPatchHandler

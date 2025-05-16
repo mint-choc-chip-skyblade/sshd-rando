@@ -24,8 +24,9 @@ use static_assertions::assert_eq_size;
 pub struct RandomizerSettings {
     pub skip_harp_playing:         u8,
     pub sky_keep_beaten_sceneflag: i8,
+    pub cutoff_game_over_music:    u8,
 }
-assert_eq_size!([u8; 0x2], RandomizerSettings);
+assert_eq_size!([u8; 0x3], RandomizerSettings);
 
 // IMPORTANT: when using vanilla code, the start point must be declared in
 // symbols.yaml and then added to this extern block.

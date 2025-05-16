@@ -55,6 +55,7 @@ World 1:
   randomize_overworld_entrances: 'off'
   decouple_entrances: 'off'
   natural_night_connections: 'on'
+  allow_flying_at_night: 'off'
   skip_horde: 'off'
   skip_g3: 'off'
   skip_demise: 'off'
@@ -87,6 +88,8 @@ World 1:
   nighttime_sky_color: default
   daytime_cloud_color: default
   nighttime_cloud_color: default
+  randomize_music: vanilla
+  cutoff_game_over_music: 'off'
   remove_enemy_music: 'off'
   low_health_beeping_speed: normal
   open_thunderhead: 'off'

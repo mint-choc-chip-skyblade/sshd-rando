@@ -300,6 +300,9 @@ b.eq get_tablet_keyframe_count
 cmp w8, #93
 b.eq override_inventory_caption_item_text
 
+cmp w8, #94
+b.eq randomize_music
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

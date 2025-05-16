@@ -2288,6 +2288,21 @@ class Ui_main_window(object):
         self.audio_cosmetics_group_box.setObjectName(u"audio_cosmetics_group_box")
         self.verticalLayout_35 = QVBoxLayout(self.audio_cosmetics_group_box)
         self.verticalLayout_35.setObjectName(u"verticalLayout_35")
+        self.randomize_music_label = QLabel(self.audio_cosmetics_group_box)
+        self.randomize_music_label.setObjectName(u"randomize_music_label")
+
+        self.verticalLayout_35.addWidget(self.randomize_music_label)
+
+        self.setting_randomize_music = QComboBox(self.audio_cosmetics_group_box)
+        self.setting_randomize_music.setObjectName(u"setting_randomize_music")
+
+        self.verticalLayout_35.addWidget(self.setting_randomize_music)
+
+        self.setting_cutoff_game_over_music = RandoTriStateCheckBox(self.audio_cosmetics_group_box)
+        self.setting_cutoff_game_over_music.setObjectName(u"setting_cutoff_game_over_music")
+
+        self.verticalLayout_35.addWidget(self.setting_cutoff_game_over_music)
+
         self.setting_remove_enemy_music = RandoTriStateCheckBox(self.audio_cosmetics_group_box)
         self.setting_remove_enemy_music.setObjectName(u"setting_remove_enemy_music")
 
@@ -3310,6 +3325,8 @@ class Ui_main_window(object):
         self.setting_lightning_skyward_strike.setText(QCoreApplication.translate("main_window", u"Lightning Skyward Strike", None))
         self.player_cosmetics_texture_gude_label.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>You can also edit the textures of Link and the Loftwing by following this <a href=\"https://docs.google.com/document/d/1Eq1rXcjwRpVjp-5ugpQAsjmZy5QuGi7KAOkvpWoQkqc\"><span style=\" text-decoration: underline; color:#9a0089;\">Texture Replacements Guide</span></a>. The same principles shown there can also be used with custom models.</p></body></html>", None))
         self.audio_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Audio Cosmetics", None))
+        self.randomize_music_label.setText(QCoreApplication.translate("main_window", u"Randomize Music", None))
+        self.setting_cutoff_game_over_music.setText(QCoreApplication.translate("main_window", u"Cutoff Game Over Music", None))
         self.setting_remove_enemy_music.setText(QCoreApplication.translate("main_window", u"Remove Enemy Music", None))
         self.low_health_beeping_speed_label.setText(QCoreApplication.translate("main_window", u"Low Health Beeping Speed", None))
         self.text_cosmetics_group_box.setTitle(QCoreApplication.translate("main_window", u"Text Cosmetics", None))
