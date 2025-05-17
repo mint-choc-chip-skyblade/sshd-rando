@@ -6314,77 +6314,77 @@
 #   standard:
 #     "I want to see you do <r<43 chops>> next time!"
 
-# - name: Help Text Title 1a
-#   standard:
-#     "Skyview Temple"
+- name: Help Text Title 1a
+  standard:
+    "Tempel des Himmelblicks"
 
-# - name: Help Text Content 1a
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+- name: Help Text Content 1a
+  standard:
+    "Status: <string arg0>\nBossschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg0>, Gefunden <numeric arg1>/2\nKarte: <string arg2>"
 
-# - name: Help Text Title 1b
-#   standard:
-#     "Earth Temple"
+- name: Help Text Title 1b
+  standard:
+    "Tempel des Erdlandes"
 
-# - name: Help Text Content 1b
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nKey Pieces: <numeric arg0>/5\nMap: <string arg2>"
+- name: Help Text Content 1b
+  standard:
+    "Status: <string arg0>\nBossschlüssel: <string arg1>\nSchlüsselfragmente: <numeric arg0>/5\nKarte: <string arg2>"
 
-# - name: Help Text Title 1c
-#   standard:
-#     "Lanayru Mining Facility"
+- name: Help Text Title 1c
+  standard:
+    "Ranelle-Steinwerk"
 
-# - name: Help Text Content 1c
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/1\nMap: <string arg2>"
+- name: Help Text Content 1c
+  standard:
+    "Status: <string arg0>\nBossschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg0>, Gefunden <numeric arg1>/1\nKarte: <string arg2>"
 
-# - name: Help Text Title 2a
-#   standard:
-#     "Ancient Cistern"
+- name: Help Text Title 2a
+  standard:
+    "Höhlenheiligtum"
 
-# - name: Help Text Content 2a
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+- name: Help Text Content 2a
+  standard:
+    "Status: <string arg0>\nBossschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg0>, Gefunden <numeric arg1>/2\nKarte: <string arg2>"
 
-# - name: Help Text Title 2b
-#   standard:
-#     "Sandship"
+- name: Help Text Title 2b
+  standard:
+    "Sandgaleone"
 
-# - name: Help Text Content 2b
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+- name: Help Text Content 2b
+  standard:
+    "Status: <string arg0>\nBossschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg0>, Gefunden <numeric arg1>/2\nKarte: <string arg2>"
 
-# - name: Help Text Title 2c
-#   standard:
-#     "Fire Sanctuary"
+- name: Help Text Title 2c
+  standard:
+    "Altes Großheiligtum"
 
-# - name: Help Text Content 2c
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/3\nMap: <string arg2>"
+- name: Help Text Content 2c
+  standard:
+    "Status: <string arg0>\nBossschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg0>, Gefunden <numeric arg1>/3\nKarte: <string arg2>"
 
-# - name: Help Text Title 3a
-#   standard:
-#     "Sky Keep"
+- name: Help Text Title 3a
+  standard:
+    "Turm des Himmels"
 
-# - name: Help Text Content 3a
-#   standard:
-#     "Status: <string arg0>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/1\nMap: <string arg2>"
+- name: Help Text Content 3a
+  standard:
+    "Status: <string arg0>\nKleine Schlüssel: <numeric arg0>, Gefunden <numeric arg1>/1\nKarte: <string arg2>"
 
-# - name: Help Text Title 3b
-#   standard:
-#     "Items"
+- name: Help Text Title 3b
+  standard:
+    "Gegenstände"
 
-# - name: Help Text Content 3b
-#   standard:
-#     "Spiral Charge: <string arg0>\nScrapper: <string arg1>\nGroup of Tadtones: <numeric arg0>"
+- name: Help Text Content 3b
+  standard:
+    "Tornadostoß: <string arg0>\nTrapo: <string arg1>\nMelodinen: <numeric arg0>"
 
-# - name: Help Text Title 3c
-#   standard:
-#     "Gorge"
+- name: Help Text Title 3c
+  standard:
+    "Ranelle-Schlucht"
 
-# - name: Help Text Content 3c
-#   standard:
-#     "Life Tree Fruit: <string arg0>\nSeedling: <string arg1>\nCaves Keys: <numeric arg0>, Found <numeric arg1>/2"
+- name: Help Text Content 3c
+  standard:
+    "Lebensbaumfrucht: <string arg0>\nLebensbaumkeimling: <string arg1>\nHöhlenschlüssel: <numeric arg0>, Gefunden <numeric arg1>/2"
 
 # - name: Inventory Emerald Tablet text
 #   standard:
