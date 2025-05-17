@@ -1,5 +1,133 @@
 # Changelog
 
+## Version 2.0
+
+### Additions and Changes
+* Overhauled the randomizer patching system
+  * Shrinks the output size of randomizer patches by approximately 95%
+  * Fixes a memory leak in the original game code previously preventing such an optimization
+  * The first time a seed is generated, the randomizer program will need to extract a lot of data and will take longer to randomize than normal
+* Added `Beedle's Airshop Shuffle`
+  * The 10 shop items which Beedle sells are now randomized locations
+  * Also added a `Randomize Shop Prices` setting
+    * Shop prices will be randomized in such a way that the logic doesn't change
+    * E.g. the `Beedle's Airshop - 300 Rupee Item` location will have a random price between 0 and 300 Rupees (as any more would require a bigger wallet)
+  * Shop items will rotate like freestanding items
+* Added `Trial Treasure Shuffle`
+  * The 10 Dusk Relics within each Silent Realm have been turned into randomized locations
+  * The `Trial Treasure Shuffle` setting controls how many relic locations are shuffled in each Silent Realm
+  * Colleting a Light Fruit will highlight the trial's Tears in the trials main color and any non-relic items in a secondary color
+* Added `Tadtone Shuffle`
+  * Randomizes the 17 tadtone groups swimming around in Flooded Faron Woods
+  * Adds 17 "Group of Tadtones" items to the item pool
+    * The "Group of Tadtones" items will randomly use one of the two vanilla tadtones models
+    * When all 17 have been collected, the `Flooded Faron Woods - Water Dragon's Reward` location can be obtained by talking to the Water Dragon
+* Added experimental support for other mods to work with the randomizer
+  * Create mod packs inside the `other_mods` folder
+    * Any folders within the `other_mods` folder will show up as mod packs on the "Advanced" tab of the randomizer program
+    * For a mod to be valid, it must contain a `romfs` folder directly inside the main mod pack's folder
+    * The contents of the `romfs` folder must mirror the contents of the `sshd_extract/romfs` folder
+* Added a `Minigame Difficulty` setting
+  * Controls if minigames are `Hard`, `Vanilla`, `Easy`, or a `Guaranteed Win`
+  * Scales the Pumpkin Archery, Harp Minigame, High Dive, Rickety Coaster, Bug Heaven, and Clean Cut minigames
+    * Pumpkin Archery requires 800, 600, 400, or 0 points to obtain the randomized item
+    * Harp Minigame requires better or worse playing depending on what the `Minigame Difficulty` setting is set to (both `Easy` and `Guaranteed Win` will allow the randomized item to be obtained without actually playing the harp)
+    * High Dive will double the speed of the island, not change anything, half the speed of the island (virtually still after collecting all 5 rings), or guarantee the maximum reward is given
+    * Rickety Coaster requires a time less than 1min 2secs, 1min 5secs, 1min 10secs, or just to make it around the track to obtain the randomized item
+    * Bug Heaven requires a time less than 2 minutes, 3 minutes, 5 minutes, 10 minutes to obtain the randomized item
+      * When set to `Easy` or `Guaranteed Win`, the Big Bug Net is logically required instead of just the Bug Net
+    * Clean Cut requires 43 points, 28 points, 20 points, or 1 point to obtain a Rare Treasure
+  * Minigames with multiple modes (Rickety Coaster and Bug Heaven) have their other modes scaled as well (potentially to become logical rupee farming methods in the future)
+  * When set to `Guaranteed Win`, minigames with different rewards based on performance can be chosen to suit the player's needs
+* Changed the in-game help menu to show information about items which don't appear on the inventory screen
+  * Shows information about whether each dungeon has been complete or not
+  * Shows information about the number of Small Keys, Boss Keys, and Maps found for each dungeon
+  * Shows information about the Lanayru Caves Small Keys, Life Tree Fruit, Life Tree Seedling, Spiral Charge, Scrapper, and Group of Tadtones
+* Added settings for choosing where different hint types should be placed
+  * Each hint type can be placed on Gossip Stones, Fi, both, or neither
+  * Currently, all hint types are placed on Gossip Stones except barren hints which are placed on Fi
+* Added the `Hint Importance` setting
+  * When enabled, location and item hints will say whether the hinted location/item is "required", "possibly required", or "not required" to beat the game
+* Added the `Sealed Temple - Collect Fruit from the Tree of Life` location
+  * Adds the Life Tree Seedling item to the item pool
+  * Planting it in Hylia's Temple in the past will make a tree grow in the Sealed Temple in the present which can be bonked to obtain a randomized item
+* Added the `Knight Academy - Deliver Barrel to Henya the Lunch Lady` location
+  * Carry the barrel in the Knight Academy and place it in front of Henya the lunch lady to receive a randomized item
+* Added the `Knight Academy - Horwell's Closet` location and unlocked Professor Horwell's bedroom door
+* Changed Rupin's night market and Strich's bug collection to cycle between the treasures and bugs they sell without having to sleep
+* Changed the `Bokoblin Base - Raised Chest in Volcano Summit` from a chest to raising the True Master Sword (like in vanilla)
+  * To account for this, this location has been renamed `Bokoblin Base - Raise Sword`
+  * Due to event limitations (potentially solvable in the future), the sword will appear as a chest once Bokoblin Base has been beaten
+    * When the `Chest Type Matches Contents` setting isn't turned off, this workaround chest will always be a big blue chest (or a fancy chest if it contains a key) to encourage players to pull the sword rather than waiting to see the chest type
+* Added support for Boss Rush
+  * Adds the `Lanayru Gorge - Boss Rush 4 Bosses` and `Lanayru Gorge - Boss Rush 8 Bosses` locations
+  * The Thunderdragon will say what the rewards for each location and ask to confirm if you would like to start Boss Rush
+* Updated how the item pool is created so that the quantity of various rupees and treasures changed depending on which shuffles are enabled
+  * If the `Goddess Chest Shuffle` setting is turned off, there will be fewer Gold Rupees in the item pool
+  * If the `Hidden Item Shuffle` or `Rupee Shuffle` settings are enabled, more Green Rupees and Blue Rupees will be in the item pool
+* Unlocked the ability to purchase Stamina Potions and Air Potions from the beginning of the game
+  * Raising (or beating) the Lanayru Mining Facility is no longer required to purchase Stamina Potions
+  * Obtaining the Water Dragon's Scale is no longer required to purchase Air Potions
+  * The `Knight Academy - Help Fledge Workout` location no longer requires raising (or beating) the Lanayru Mining Facility to be logically obtained
+* Changed the in-game inventory screen to show the correct Ancient Tablets
+  * Previously, players would need to look at which light pillars were opened in The Sky to determine which Ancient Tablets they had in their inventory
+  * Now the in-game inventory screen accurately displays this information
+  * The warning after the first seed has been generated has been updated (it now only warns about the heart container models for the `Defeat Boss` locations)
+* Added the `Allow Flying at Night` setting
+  * Allows the loftwing to be called when diving at night
+  * This setting doesn't change anything logically and just allows players to experiment (yes, this can be used to obtain locations out of logic)
+  * If the `Require Natural Night Connections` setting is turned off, loftwing will be able to be flown at night as this may be logically required
+* Added the `Require Natural Night Connections` setting to the randomizer program
+  * Adds a GUI toggle for this setting (it previously needed to be enabled by editing the `config.yaml` file manually)
+  * When enabled, logic will require that the player can reach night time only locations only by traversing through areas of the game which are normally reachable at night time
+  * When disabled, the night time state will persist everywhere in the game
+    * The only way to change the time of day is by sleeping
+    * Most surface regions will appear a lot darker at night (most of the Lanayru Sand Sea isn't changed due to a quirk of how the night time filter works)
+    * You may be logically expected to fly the loftwing at night
+* Added the `Randomize Music` setting
+  * Background and cutscene music can be shuffled
+  * When set to `Shuffle`, music will be shuffled but some music may be shuffled to its vanilla location
+  * When set to `Shuffle (Limit Vanilla)`, music will be shuffled in a way to prevent unchanged/vanilla music
+  * The `Cutoff Game Over Music` controls if the game over music will continue playing after the player respawns until the track is finished or if it gets cut off when the player respawns instead
+* Added unique sound effects to play when collecting Heart Containers and Ancient Tablets
+* Removed the forced text trigger in the second trapped mogma room in Fire Sanctuary (where the `Fire Sanctuary - Chest from Second Trapped Mogma` location is)
+* Changed the gates to the Goddess's Realm in Sky Keep to require a sword (mirrors the change to make trial gates require a sword)
+* Updated the default presets with the new settings
+* Changed default option for the `Open Lake Floria` setting from `Vanilla` to `Open`
+* Changed the default option for the `Chest Type Matches Contents` setting from `Off` to `All Contents`
+* Changed the default option for the `Deep Woods Log before Temple` setting from `Off` to `On`
+* Added logic for the `Faron Woods - Stamina Fruit on Vines below First Log` location to be collectable from the vanilla entrance to Faron Woods with the Beetle
+* Changed logic for the `Faron Woods - Stamina Fruit on Vines on Great Tree` location to require Clawshots or Quick Beetle instead of just Beetle
+* Changed the "Randomize" button in the bottom right of the randomizer program will now read "Verify Extract" until the first time verification has been completed
+  * Clicking the "Verify Extract" button will allow the first time verification to be performed without having to close and re-open the randomizer program
+* Added clearer error messages in some places
+* Added the `Sky Keep Lower Bars in Fire Sanctuary Room` and `Sky Keep Upper Bars in Fire Sanctuary Room` shortcut settings
+* Unlocked Heart Dowsing from the start of the game
+* Renamed various locations
+* Reordered various locations so that they appear on the tracker in a more intuitive order
+* Renamed `Wryna's House` to `Kukiel's House` to match the vanilla game
+* Renamed `Mallara's House` to `Pipit's House` to match the vanilla game
+* Changed all uses of the "SV" abbreviation for "Skyview Temple" to "SVT"
+
+### Fixes
+* Fixed issue where collecting the Sacred Water item in the Sealed Grounds Spiral would start a Groosenator event
+* Reduced the failure rate of various entrance shuffles
+* Fixed crash when entering Inside the Thunderhead after activating but not finishing the Levias fight
+* Fixed Linux build name so it can be executed instead of opened as a man page
+* Fixed issue with the location calculations for the `Chest Type Matches Contents` setting
+* Fixed issue where the `Include Sky Keep as a Dungeon` and `Required Dungeons` settings could conflict when either is set to the "Random" option
+* Fixed incorrect time of day logic for the Bazaar entrances
+* Fixed logic for exiting Inside the Thunderhead
+* Fixed logic for the `Lanayru Mining Facility - Chest after Armos Fight` location
+* Fixed logic for `Sky Keep - Chest after Dreadfuse Fight` location
+* Fixed logic error where starting at the `Pirate Stronghold Top Door from Pirate Stronghold Inside the Shark Head` entrance would incorrectly not require raising the Pirate Stronghold shark head (and therefore the Gust Bellows) to obtain the Pirate Stronghold Goddess Cube
+* Fixed issue where regions could be hinted as barren multiple times
+* Fixed issue where the hints would be inconsistent when generating the same seed multiple times
+* Fixed issue where the main deck of the Sandship would play the incorrect music causing the music to stop when the timeshift stone was active
+* Fixed minor text formatting issues and spelling mistakes
+
+
+
 ## Version 1.4
 
 ### Additions and Changes

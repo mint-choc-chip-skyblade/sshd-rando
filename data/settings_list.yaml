@@ -113,7 +113,7 @@
 
 - name: beedle_shop_shuffle
   tracker_important: true
-  default_option: junk_only
+  default_option: randomized
   pretty_name: Beedle's Airshop Shuffle
   pretty_options:
     - Vanilla
@@ -344,7 +344,7 @@
     - 0-7: "Select the number of barren hints you would like to generate."
 
 - name: barren_hints_on_fi
-  default_option: "off"
+  default_option: "on"
   pretty_name: On Fi # Hint type is implied by groupbox
   pretty_options:
     - "Off"
@@ -354,7 +354,7 @@
     - "on": "Barren hints will be placed on Fi and can be seen by calling Fi and asking her for hints. If barren hints are also on placed on gossip stones, then the hints will be split evenly between the two options."
 
 - name: barren_hints_on_gossip_stones
-  default_option: "on"
+  default_option: "off"
   pretty_name: On Gossip Stones # Hint type is implied by groupbox
   pretty_options:
     - "Off"
