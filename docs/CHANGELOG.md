@@ -113,7 +113,7 @@
 * Fixed issue where collecting the Sacred Water item in the Sealed Grounds Spiral would start a Groosenator event
 * Reduced the failure rate of various entrance shuffles
 * Fixed crash when entering Inside the Thunderhead after activating but not finishing the Levias fight
-* Fixed Linux build name so it can will be executed instead of opened as a man page
+* Fixed Linux build name so it can be executed instead of opened as a man page
 * Fixed issue with the location calculations for the `Chest Type Matches Contents` setting
 * Fixed issue where the `Include Sky Keep as a Dungeon` and `Required Dungeons` settings could conflict when either is set to the "Random" option
 * Fixed incorrect time of day logic for the Bazaar entrances
