@@ -6320,7 +6320,7 @@
 
 - name: Help Text Content 1a
   standard:
-    "Status: <string arg0>\nBossschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg0> \nGefundene Schlüssel <numeric arg1>/2\nKarte: <string arg2>"
+    "Status: <string arg0>\nGoldener Schlüssel: <string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
 
 - name: Help Text Title 1b
   standard:
@@ -6328,7 +6328,7 @@
 
 - name: Help Text Content 1b
   standard:
-    "Status: <string arg0>\nBossschlüssel: <string arg1>\nSchlüsselfragmente: <numeric arg0>/5\nKarte: <string arg2>"
+    "Status: <string arg0>\nDrachenschlüssel: <string arg1>\nSchlüsselfragmente: <numeric arg0>/5\nKarte: <string arg2>"
 
 - name: Help Text Title 1c
   standard:
@@ -6336,7 +6336,7 @@
 
 - name: Help Text Content 1c
   standard:
-    "Status: <string arg0>\nBossschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg0> \nGefundene Schlüssel <numeric arg1>/1\nKarte: <string arg2>"
+    "Status: <string arg0>\nUraltes Gebilde: <string arg1>\nKleine Schlüssel: <numeric arg1>/1\nKarte: <string arg2>"
 
 - name: Help Text Title 2a
   standard:
@@ -6344,7 +6344,7 @@
 
 - name: Help Text Content 2a
   standard:
-    "Status: <string arg0>\nBossschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg0> \nGefundene Schlüssel <numeric arg1>/2\nKarte: <string arg2>"
+    "Status: <string arg0>\nGesegneter Schlüssel: <string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
 
 - name: Help Text Title 2b
   standard:
@@ -6352,7 +6352,7 @@
 
 - name: Help Text Content 2b
   standard:
-    "Status: <string arg0>\nBossschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg0> \nGefundene Schlüssel <numeric arg1>/2\nKarte: <string arg2>"
+    "Status: <string arg0>\nTentakelschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
 
 - name: Help Text Title 2c
   standard:
@@ -6360,7 +6360,7 @@
 
 - name: Help Text Content 2c
   standard:
-    "Status: <string arg0>\nBossschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg0> \nGefundene Schlüssel <numeric arg1>/3\nKarte: <string arg2>"
+    "Status: <string arg0>\nMysterienkristall: <string arg1>\nKleine Schlüssel: <numeric arg1>/3\nKarte: <string arg2>"
 
 - name: Help Text Title 3a
   standard:
@@ -6368,7 +6368,7 @@
 
 - name: Help Text Content 3a
   standard:
-    "Status: <string arg0>\nKleine Schlüssel: <numeric arg0> \nGefundene Schlüssel <numeric arg1>/1\nKarte: <string arg2>"
+    "Status: <string arg0>\nKleine Schlüssel: <numeric arg1>/1\nKarte: <string arg2>"
 
 - name: Help Text Title 3b
   standard:
