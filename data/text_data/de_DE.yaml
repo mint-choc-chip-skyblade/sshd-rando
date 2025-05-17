@@ -5615,7 +5615,7 @@
   pretty: Sairen der Göttin - Ausdauerfrucht auf Balkon bei Ritterschule
   cryptic: eine <r<Frucht auf dem Schulbalkon in einer anderen Welt>>
 
-# TODO: add translations (done)
+# TODO: add translations (done but couldnt test)
 - name: The Goddess's Silent Realm - Relic 1
   standard: Sairen der Göttin - Finsterhalbmond vor der nordwestlichen Windmühle
   pretty: Sairen der Göttin - Finsterhalbmond vor der nordwestlichen Windmühle
@@ -6314,13 +6314,14 @@
 #   standard:
 #     "I want to see you do <r<43 chops>> next time!"
 
+# TODO: Done adding translating! Rework might be needed after/if "Not Obtained" and "Obtained" can be changed in this file
 - name: Help Text Title 1a
   standard:
     "Tempel des Himmelblicks"
 
 - name: Help Text Content 1a
   standard:
-    "Status: <string arg0>\nGoldener Schlüssel: <string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
+    "Status: <string arg0>\nGoldener Schlüssel: \n<string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
 
 - name: Help Text Title 1b
   standard:
@@ -6328,7 +6329,7 @@
 
 - name: Help Text Content 1b
   standard:
-    "Status: <string arg0>\nDrachenschlüssel: <string arg1>\nSchlüsselfragmente: <numeric arg0>/5\nKarte: <string arg2>"
+    "Status: <string arg0>\nDrachenschlüssel: \n<string arg1>\nSchlüsselfragmente: <numeric arg0>/5\nKarte: <string arg2>"
 
 - name: Help Text Title 1c
   standard:
@@ -6336,7 +6337,7 @@
 
 - name: Help Text Content 1c
   standard:
-    "Status: <string arg0>\nUraltes Gebilde: <string arg1>\nKleine Schlüssel: <numeric arg1>/1\nKarte: <string arg2>"
+    "Status: <string arg0>\nUraltes Gebilde: \n<string arg1>\nKleine Schlüssel: <numeric arg1>/1\nKarte: <string arg2>"
 
 - name: Help Text Title 2a
   standard:
@@ -6344,7 +6345,7 @@
 
 - name: Help Text Content 2a
   standard:
-    "Status: <string arg0>\nGesegneter Schlüssel: <string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
+    "Status: <string arg0>\nGesegneter Schlüssel: \n<string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
 
 - name: Help Text Title 2b
   standard:
@@ -6352,7 +6353,7 @@
 
 - name: Help Text Content 2b
   standard:
-    "Status: <string arg0>\nTentakelschlüssel: <string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
+    "Status: <string arg0>\nTentakelschlüssel: \n<string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
 
 - name: Help Text Title 2c
   standard:
@@ -6360,7 +6361,7 @@
 
 - name: Help Text Content 2c
   standard:
-    "Status: <string arg0>\nMysterienkristall: <string arg1>\nKleine Schlüssel: <numeric arg1>/3\nKarte: <string arg2>"
+    "Status: <string arg0>\nMysterienkristall: \n<string arg1>\nKleine Schlüssel: <numeric arg1>/3\nKarte: <string arg2>"
 
 - name: Help Text Title 3a
   standard:
