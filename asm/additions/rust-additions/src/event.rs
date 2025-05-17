@@ -131,7 +131,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn custom_event_commands(
+pub extern "C" fn custom_event_commands(
     actor_event_flow_mgr: *mut ActorEventFlowMgr,
     p_event_flow_element: *const EventFlowElement,
 ) {
@@ -180,7 +180,8 @@ pub fn custom_event_commands(
 }
 
 #[no_mangle]
-pub fn check_tadtone_counter_before_song_event(
+#[warn(improper_ctypes_definitions)]
+pub extern "C" fn check_tadtone_counter_before_song_event(
     tadtone_minigame_actor: *mut actor::dTgClefGame,
 ) -> (*mut actor::dTgClefGame, u32) {
     let collected_tadtone_groups = flag::check_storyflag(953);
@@ -199,7 +200,7 @@ pub fn check_tadtone_counter_before_song_event(
 }
 
 #[no_mangle]
-pub fn set_boko_base_restricted_sword_flag_before_event(param1: *mut c_void) {
+pub extern "C" fn set_boko_base_restricted_sword_flag_before_event(param1: *mut c_void) {
     unsafe {
         if &CURRENT_STAGE_NAME[..7] == b"F201_2\0" {
             flag::set_storyflag(167);
@@ -221,7 +222,7 @@ pub struct unkstruct {
 }
 
 #[no_mangle]
-pub fn remove_vanilla_tms_sword_pull_textbox(param1: *mut *mut unkstruct) {
+pub extern "C" fn remove_vanilla_tms_sword_pull_textbox(param1: *mut *mut unkstruct) {
     unsafe {
         ((*(*param1)).unk0x10)(param1 as *mut c_void, 0xFF, 3);
     }
@@ -235,7 +236,7 @@ pub fn remove_vanilla_tms_sword_pull_textbox(param1: *mut *mut unkstruct) {
 }
 
 #[no_mangle]
-pub fn fix_boko_base_sword_model(
+pub extern "C" fn fix_boko_base_sword_model(
     mut res_data: *mut c_void,
     mut model_name: *const c_char,
     sword_type: u8,

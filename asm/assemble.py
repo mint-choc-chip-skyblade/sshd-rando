@@ -407,6 +407,17 @@ with temp_dir as temp_dir_name:
     ):
         raise Exception("Formatting rust additions failed.")
 
+    # Lint rust additions.
+    print("Linting rust code")
+    if rust_build_command := call(
+        [
+            "cargo",
+            "clippy",
+        ],
+        cwd="./additions/rust-additions",
+    ):
+        raise Exception("Linting rust additions failed.")
+
     # Assemble rust additions.
     print("Building rust code")
     if rust_build_command := call(

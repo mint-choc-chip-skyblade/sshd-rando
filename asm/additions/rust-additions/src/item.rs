@@ -155,12 +155,12 @@ extern "C" {
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
 #[no_mangle]
-pub fn give_item(itemid: u8) {
+pub extern "C" fn give_item(itemid: u8) {
     give_item_with_sceneflag(itemid, 0xFF);
 }
 
 #[no_mangle]
-pub fn give_item_with_sceneflag(itemid: u8, sceneflag: u8) -> *mut dAcItem {
+pub extern "C" fn give_item_with_sceneflag(itemid: u8, sceneflag: u8) -> *mut dAcItem {
     unsafe {
         NUMBER_OF_ITEMS = 0;
         ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
@@ -186,12 +186,12 @@ pub fn give_item_with_sceneflag(itemid: u8, sceneflag: u8) -> *mut dAcItem {
 }
 
 #[no_mangle]
-pub fn init_appearing_chest_subtype(tbox: *mut dAcTbox) -> *mut dAcTbox {
+pub extern "C" fn init_appearing_chest_subtype(tbox: *mut dAcTbox) -> *mut dAcTbox {
     unsafe {
         let param1 = (*tbox).base.basebase.members.param1;
         let spawn_sceneflag = (param1 >> 0x14) & 0xFF;
 
-        if spawn_sceneflag != 0xFF && flag::check_local_sceneflag(spawn_sceneflag.into()) == 0 {
+        if spawn_sceneflag != 0xFF && flag::check_local_sceneflag(spawn_sceneflag) == 0 {
             (*tbox).chest_subtype = 0;
         } else {
             (*tbox).chest_subtype = ((param1 >> 4) & 0x3) as u8;
@@ -204,7 +204,7 @@ pub fn init_appearing_chest_subtype(tbox: *mut dAcTbox) -> *mut dAcTbox {
 }
 
 #[no_mangle]
-pub fn spawn_appeared_chest(tbox: *mut dAcTbox) -> *mut dAcTbox {
+pub extern "C" fn spawn_appeared_chest(tbox: *mut dAcTbox) -> *mut dAcTbox {
     unsafe {
         let w9_bkp: u32;
         asm!("mov {0:w}, w9", out(reg) w9_bkp);
@@ -251,14 +251,14 @@ pub fn spawn_appeared_chest(tbox: *mut dAcTbox) -> *mut dAcTbox {
 }
 
 #[no_mangle]
-pub fn hide_appearing_chest(tbox: *mut dAcTbox) {
+pub extern "C" fn hide_appearing_chest(tbox: *mut dAcTbox) {
     unsafe {
-        (*tbox).base.members.base.pos.y = (*tbox).base.members.base.pos.y - 10000.0;
+        (*tbox).base.members.base.pos.y -= 10000.0;
     }
 }
 
 #[no_mangle]
-pub fn handle_crest_hit_give_item(crest_actor: *mut actor::dAcOSwSwordBeam) {
+pub extern "C" fn handle_crest_hit_give_item(crest_actor: *mut actor::dAcOSwSwordBeam) {
     unsafe {
         // Reset position so that we don't void out before getting the items
         let position = math::Vec3f {
@@ -299,7 +299,7 @@ pub fn handle_crest_hit_give_item(crest_actor: *mut actor::dAcOSwSwordBeam) {
 }
 
 #[no_mangle]
-pub fn handle_custom_item_get(item_actor: *mut dAcItem) -> u16 {
+pub extern "C" fn handle_custom_item_get(item_actor: *mut dAcItem) -> u16 {
     const BK_TO_FLAGINDEX: [usize; 7] = [
         12,  // AC BK - item id 25
         15,  // FS BK - item id 26
@@ -414,7 +414,8 @@ pub fn handle_custom_item_get(item_actor: *mut dAcItem) -> u16 {
 
 // Unpacks our custom item params into separate variables
 #[no_mangle]
-pub fn unpack_custom_item_params(item_actor: *mut dAcItem) -> (u32, u32, u32, u32) {
+#[warn(improper_ctypes_definitions)]
+pub extern "C" fn unpack_custom_item_params(item_actor: *mut dAcItem) -> (u32, u32, u32, u32) {
     unsafe {
         let param2: u32 = (*item_actor).base.members.base.param2;
         let flag: u32 = (param2 & (0x00007F00)) >> 8;
@@ -446,7 +447,7 @@ pub fn unpack_custom_item_params(item_actor: *mut dAcItem) -> (u32, u32, u32, u3
 }
 
 #[no_mangle]
-pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
+pub extern "C" fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
     unsafe {
         // Get necessary params for checking if this item has a custom flag
         let (flag, sceneindex, flag_space_trigger, original_itemid) =
@@ -529,7 +530,7 @@ pub fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
 }
 
 #[no_mangle]
-pub fn activation_checks_for_goddess_walls() -> bool {
+pub extern "C" fn activation_checks_for_goddess_walls() -> bool {
     unsafe {
         // Replaced code
         if (*HARP_RELATED).some_check_for_continuous_strumming == 0
@@ -546,7 +547,7 @@ pub fn activation_checks_for_goddess_walls() -> bool {
 }
 
 #[no_mangle]
-pub fn give_squirrel_item(musasabi_tag: *mut actor::dTgMusasabi) {
+pub extern "C" fn give_squirrel_item(musasabi_tag: *mut actor::dTgMusasabi) {
     unsafe {
         if SQUIRRELS_CAUGHT_THIS_PLAY_SESSION && (*musasabi_tag).unused == 0 {
             let itemid: u8 = ((*musasabi_tag).base.members.param2 & 0xFF) as u8;
@@ -576,7 +577,7 @@ pub fn give_squirrel_item(musasabi_tag: *mut actor::dTgMusasabi) {
 }
 
 #[no_mangle]
-pub fn tgreact_spawn_custom_item(
+pub extern "C" fn tgreact_spawn_custom_item(
     mut param2_s0x18: u8,
     roomid: u32,
     pos: *mut math::Vec3f,
@@ -687,7 +688,7 @@ pub fn tgreact_spawn_custom_item(
 }
 
 #[no_mangle]
-pub fn academy_bell_give_custom_item() {
+pub extern "C" fn academy_bell_give_custom_item() {
     unsafe {
         let bell_actor: *mut actor::dAcObell;
         asm!("mov {0:x}, x19", out(reg) bell_actor);
@@ -702,7 +703,7 @@ pub fn academy_bell_give_custom_item() {
 }
 
 #[no_mangle]
-pub fn check_bucha_local_sceneflag(flag: u32) -> u16 {
+pub extern "C" fn check_bucha_local_sceneflag(flag: u32) -> u16 {
     unsafe {
         if &CURRENT_STAGE_NAME[..5] == b"F100\0" {
             return flag::check_local_sceneflag(flag);
@@ -712,7 +713,7 @@ pub fn check_bucha_local_sceneflag(flag: u32) -> u16 {
 }
 
 #[no_mangle]
-pub fn check_stage_on_bucha_interaction(param1: u64) -> u64 {
+pub extern "C" fn check_stage_on_bucha_interaction(param1: u64) -> u64 {
     unsafe {
         if &CURRENT_STAGE_NAME[..5] != b"F100\0" {
             asm!("add lr, lr, #0x234");
@@ -729,7 +730,7 @@ pub fn check_stage_on_bucha_interaction(param1: u64) -> u64 {
 }
 
 #[no_mangle]
-pub fn fix_bottle_items_from_npcs(param1: u64, param2: u64, param3: u32) {
+pub extern "C" fn fix_bottle_items_from_npcs(param1: u64, param2: u64, param3: u32) {
     unsafe {
         if flag::check_storyflag(894) == 0 {
             ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
@@ -741,7 +742,7 @@ pub fn fix_bottle_items_from_npcs(param1: u64, param2: u64, param3: u32) {
 }
 
 #[no_mangle]
-pub fn rotate_freestanding_items(item_actor: *mut dAcItem) {
+pub extern "C" fn rotate_freestanding_items(item_actor: *mut dAcItem) {
     unsafe {
         let mut degrees = 1.5f32;
 
@@ -758,7 +759,7 @@ pub fn rotate_freestanding_items(item_actor: *mut dAcItem) {
 }
 
 #[no_mangle]
-pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
+pub extern "C" fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
     unsafe {
         let actor_param1 = (*item_actor).base.basebase.members.param1;
 
@@ -868,7 +869,7 @@ pub fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
 }
 
 #[no_mangle]
-pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
+pub extern "C" fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
     unsafe {
         // If the item is facing sideways, apply a horizontal offset (i.e. stamina
         // fruit on walls) and rotate the item if necessary
@@ -1089,7 +1090,7 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
                 (*item_actor).base.members.base.rot.y = facing_angle;
                 (*item_actor).base.members.base.rot.z = 0;
             }
-            let facing_angle_radians: f32 = (facing_angle as f32 / 65535 as f32) * 2.0 * 3.14159;
+            let facing_angle_radians: f32 = (facing_angle as f32 / 65535_f32) * 2.0 * 3.14159;
             let xOffset = sinf(facing_angle_radians) * h_offset;
             let zOffset = cosf(facing_angle_radians) * h_offset;
             (*item_actor).base.members.base.pos.x += xOffset;
@@ -1103,7 +1104,7 @@ pub fn fix_freestanding_item_horizontal_offset(item_actor: *mut dAcItem) {
 }
 
 #[no_mangle]
-pub fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
+pub extern "C" fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
     unsafe {
         // Don't try to open any trial gates if the setting isn't on
         if RANDOMIZER_SETTINGS.skip_harp_playing == 0 {
@@ -1171,7 +1172,7 @@ pub fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
                 actor::find_actor_by_type(actor::ACTORID::OBJ_WARP, core::ptr::null_mut())
                     as *mut actor::dAcOWarp;
             // If it exists, change it's state to open
-            if trial_gate_actor != core::ptr::null_mut() {
+            if !trial_gate_actor.is_null() {
                 ((*(*trial_gate_actor).state_mgr.vtable).change_state)(
                     &mut (*trial_gate_actor).state_mgr as *mut actor::StateMgr,
                     &mut dAcOWarp__StateGateOpen as *mut c_void,
@@ -1182,7 +1183,7 @@ pub fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
 }
 
 #[no_mangle]
-pub fn after_item_collection_hook(collected_item: flag::ITEMFLAGS) -> flag::ITEMFLAGS {
+pub extern "C" fn after_item_collection_hook(collected_item: flag::ITEMFLAGS) -> flag::ITEMFLAGS {
     unsafe {
         fix::fix_ammo_counts(collected_item);
         check_and_open_trial_gates(collected_item);
@@ -1195,7 +1196,7 @@ pub fn after_item_collection_hook(collected_item: flag::ITEMFLAGS) -> flag::ITEM
 }
 
 #[no_mangle]
-pub fn resolve_progressive_item_models(
+pub extern "C" fn resolve_progressive_item_models(
     mut model_name: *const c_char,
     item_id: u16,
     arc_or_model: u8,
@@ -1301,7 +1302,7 @@ pub fn resolve_progressive_item_models(
 }
 
 #[no_mangle]
-pub fn get_arc_model_from_item(
+pub extern "C" fn get_arc_model_from_item(
     arc_table: *mut c_void,
     arc_name: *const c_char,
     item_id: u16,
@@ -1318,7 +1319,10 @@ pub fn get_arc_model_from_item(
 }
 
 #[no_mangle]
-pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *const c_char {
+pub extern "C" fn get_item_model_name_ptr(
+    model_name: *const c_char,
+    item_id: u16,
+) -> *const c_char {
     unsafe {
         let resolved_model_name = resolve_progressive_item_models(model_name, item_id, 2);
 
@@ -1332,7 +1336,7 @@ pub fn get_item_model_name_ptr(model_name: *const c_char, item_id: u16) -> *cons
 
 // Applys a fixed value for the scale of a model in dAcItem::update
 #[no_mangle]
-pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *mut math::Matrix) {
+pub extern "C" fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *mut math::Matrix) {
     unsafe {
         let mut scale = match (*item_actor).final_determined_itemid {
             214 => 0.5f32, // Tadtone
@@ -1365,7 +1369,7 @@ pub fn change_model_scale(item_actor: *mut dAcItem, world_matrix: *mut math::Mat
 // there isn't weird inconsistencies between items that have textboxes and
 // those that don't
 #[no_mangle]
-pub fn force_traps_to_have_textboxes(item_actor: *mut dAcItem) {
+pub extern "C" fn force_traps_to_have_textboxes(item_actor: *mut dAcItem) {
     unsafe {
         // If the item isn't a trap and it's a minor item, don't force a textbox
         if ((*item_actor).base.members.base.param2 >> 4) & 0xF != 0xF
@@ -1377,7 +1381,7 @@ pub fn force_traps_to_have_textboxes(item_actor: *mut dAcItem) {
 }
 
 #[no_mangle]
-pub fn get_custom_freestanding_item_scale() -> f32 {
+pub extern "C" fn get_custom_freestanding_item_scale() -> f32 {
     // dAcItem->freestandingModelScale gets bound to different functions depending
     // on the itemid during dAcItem::init. The function for "small" items gets
     // patched to call this function.
@@ -1404,7 +1408,7 @@ pub fn get_custom_freestanding_item_scale() -> f32 {
         }
 
         // Just to be extra safe
-        if item_actor == core::ptr::null_mut() {
+        if item_actor.is_null() {
             return 1.0;
         }
 
@@ -1418,7 +1422,7 @@ pub fn get_custom_freestanding_item_scale() -> f32 {
 }
 
 #[no_mangle]
-pub fn get_silent_realm_item_glow_color(item_id: u32) -> u32 {
+pub extern "C" fn get_silent_realm_item_glow_color(item_id: u32) -> u32 {
     unsafe {
         // Only proceed if in a silent realm and we're not currently in the process of
         // receiving the spirit vessel or the trial reward
@@ -1446,7 +1450,7 @@ pub fn get_silent_realm_item_glow_color(item_id: u32) -> u32 {
 }
 
 #[no_mangle]
-pub fn give_tadtone_random_item(tadtone_actor: *const actor::dAcOClef) {
+pub extern "C" fn give_tadtone_random_item(tadtone_actor: *const actor::dAcOClef) {
     unsafe {
         let itemid = (*tadtone_actor).base.members.base.rot.z & 0xFF;
         let tadtone_group_index: u8 =
@@ -1460,7 +1464,7 @@ pub fn give_tadtone_random_item(tadtone_actor: *const actor::dAcOClef) {
 }
 
 #[no_mangle]
-pub fn spawn_tree_of_life_item() -> *mut dAcItem {
+pub extern "C" fn spawn_tree_of_life_item() -> *mut dAcItem {
     let tree_actor: *mut actor::dAcOBase;
 
     unsafe {

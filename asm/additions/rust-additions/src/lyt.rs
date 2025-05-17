@@ -92,7 +92,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn set_top_dowsing_icon() -> u32 {
+pub extern "C" fn set_top_dowsing_icon() -> u32 {
     unsafe {
         if &CURRENT_STAGE_NAME[..5] == b"F103\0" {
             return 0x11; // Tadtones
@@ -110,7 +110,7 @@ const OBTAINED_TEXT: *const c_void = wch!(u16, "Obtained\0").as_ptr() as *const 
 const NOT_OBTAINED_TEXT: *const c_void = wch!(u16, "Not Obtained\0").as_ptr() as *const c_void;
 
 #[no_mangle]
-pub fn __set_dungeon_string_and_numeric_args(complete_storyflag: u16, sceneindex: u16) {
+pub extern "C" fn __set_dungeon_string_and_numeric_args(complete_storyflag: u16, sceneindex: u16) {
     unsafe {
         // Check if dungeon is complete
         if flag::check_storyflag(complete_storyflag) == 0 {
@@ -144,7 +144,7 @@ pub fn __set_dungeon_string_and_numeric_args(complete_storyflag: u16, sceneindex
 }
 
 #[no_mangle]
-pub fn check_help_index_bounds(dLytHelp: *mut c_void, mut help_index: u32) {
+pub extern "C" fn check_help_index_bounds(dLytHelp: *mut c_void, mut help_index: u32) {
     if help_index <= 0x3A {
         help_index = 0x3B;
     }
@@ -156,7 +156,7 @@ pub fn check_help_index_bounds(dLytHelp: *mut c_void, mut help_index: u32) {
 }
 
 #[no_mangle]
-pub fn set_help_menu_strings(param1: *mut c_void, help_index: u32) {
+pub extern "C" fn set_help_menu_strings(param1: *mut c_void, help_index: u32) {
     unsafe {
         let help_number: u32;
         asm!("mov {0:w}, w28", out(reg) help_number);
@@ -267,7 +267,7 @@ pub fn set_help_menu_strings(param1: *mut c_void, help_index: u32) {
 }
 
 #[no_mangle]
-pub fn left_justify_help_text() {
+pub extern "C" fn left_justify_help_text() {
     unsafe {
         asm!(
             "add x20, x19, x20, LSL #0x3",
@@ -281,7 +281,7 @@ pub fn left_justify_help_text() {
 }
 
 #[no_mangle]
-pub fn custom_help_menu_state_change(dLytHelp: *mut c_void) -> u32 {
+pub extern "C" fn custom_help_menu_state_change(dLytHelp: *mut c_void) -> u32 {
     if input::check_button_pressed_down(input::BUTTON_INPUTS::DPAD_LEFT_BUTTON) {
         return 2; // Close help menu
     }
