@@ -733,12 +733,21 @@ class Tracker:
         if self.world.setting("starting_sword") == "random":
             self.world.setting("starting_sword").set_value("no_sword")
 
+        # If trial treasure shuffle is random, set it to 10 for building the world, then back to random
+        trial_treasure_shuffle_is_random = False
+        if self.world.setting("trial_treasure_shuffle") == "random":
+            self.world.setting("trial_treasure_shuffle").set_value("10")
+            trial_treasure_shuffle_is_random = True
+
         # Build the world (only as necessary)
         self.world.build()
         self.world.perform_pre_entrance_shuffle_tasks()
 
         # Restore starting hearts value
         starting_hearts.set_value(starting_hearts_value)
+
+        if trial_treasure_shuffle_is_random:
+            self.world.setting("trial_treasure_shuffle").set_value("random")
 
         # Get any random settings. If any are passed in from the autosave
         # load those instead of loading them from the world
