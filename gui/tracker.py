@@ -746,6 +746,7 @@ class Tracker:
         # Restore starting hearts value
         starting_hearts.set_value(starting_hearts_value)
 
+        # Restore trial treasure shuffle to random if it was before
         if trial_treasure_shuffle_is_random:
             self.world.setting("trial_treasure_shuffle").set_value("random")
 
