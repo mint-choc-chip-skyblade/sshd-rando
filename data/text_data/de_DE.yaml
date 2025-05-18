@@ -5618,53 +5618,53 @@
 # TODO: done added and tested
 - name: The Goddess's Silent Realm - Relic 1
   standard: Sairen der Göttin - Finsterhalbmond 1
-  pretty: Sairen der Göttin - Finsterhalbmond vor der nordwestlichen Windmühle
-  cryptic: eine <r<dunkle Träne im nordwestlichen Wind einer anderen Welt>>
+  pretty: Sairen der Göttin - Finsterhalbmond 1
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 2
   standard: Sairen der Göttin - Finsterhalbmond 2
-  pretty: Sairen der Göttin - Finsterhalbmond links hinter dem Wächter nach dem Sairen-Eingang
-  cryptic: eine <r<dunkle Träne bewacht am Eingang einer anderen Welt>>
+  pretty: Sairen der Göttin - Finsterhalbmond 2
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 3
   standard: Sairen der Göttin - Finsterhalbmond 3
-  pretty: Sairen der Göttin - Finsterhalbmond hinter der Bank an der südwestlichen Basar-Seite
-  cryptic: eine <r<dunkle Träne ruhend in der Nähe eines Ladens einer anderen Welt>>
+  pretty: Sairen der Göttin - Finsterhalbmond 3
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 4
   standard: Sairen der Göttin - Finsterhalbmond 4
-  pretty: Sairen der Göttin - Finsterhalbmond neben der nordwestlichen Treppe zur Ritterschule
-  cryptic: eine <r<dunkle Träne neben dem Weg zur Schule einer anderen Welt>>
+  pretty: Sairen der Göttin - Finsterhalbmond 4
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 5
   standard: Sairen der Göttin - Finsterhalbmond 5
-  pretty: Finsterhalbmond auf einer Stange an der nördlichen Basar-Seite
-  cryptic: eine <r<dunkle Träne fliegend im Norden neben einem Laden einer anderen Welt>>
+  pretty: Sairen der Göttin - Finsterhalbmond 5
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 6
   standard: Sairen der Göttin - Finsterhalbmond 6
-  pretty: Sairen der Göttin - Finsterhalbmond vor der Höhle im Nordosten
-  cryptic: eine <r<dunkle Träne zum Untergrund einer anderen Welt>>
+  pretty: Sairen der Göttin - Finsterhalbmond 6
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 7
   standard: Sairen der Göttin - Finsterhalbmond 7
-  pretty: Sairen der Göttin - Finsterhalbmond hinter dem Leuchtturm
-  cryptic: eine <r<dunkle Träne hinter dem Licht einer anderen Welt>>
+  pretty: Sairen der Göttin - Finsterhalbmond 7
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 8
   standard: Sairen der Göttin - Finsterhalbmond 8
-  pretty: Sairen der Göttin - Finsterhalbmond auf dem Friedhof
-  cryptic: eine <r<dunkle Träne bei den Toten einer anderen Welt>>
+  pretty: Sairen der Göttin - Finsterhalbmond 8
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 9
   standard: Sairen der Göttin - Finsterhalbmond 9
-  pretty: Sairen der Göttin - Finsterhalbmond vor der nordöstlichen Windmühle
-  cryptic: eine <r<dunkle Träne im nordöstlichen Wind einer anderen Welt>>
+  pretty: Sairen der Göttin - Finsterhalbmond 9
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 10
   standard: Sairen der Göttin - Finsterhalbmond 10
-  pretty: Sairen der Göttin - Finsterhalbmond auf Sasias Haus neben dem Vogelnest
-  cryptic: eine <r<dunkle Träne einer glücklichen Mutter einer anderen Welt>>
+  pretty: Sairen der Göttin - Finsterhalbmond 10
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Collect all Tears Reward
   standard: Sairen der Göttin - Belohnung für komplette Tränensammlung
@@ -5681,56 +5681,56 @@
   pretty: Farores Sairen - Ausdauerfrucht an Rankenwand 2
   cryptic: eine <r<Frucht an Waldwand in einer anderen Welt>>
 
-# TODO: add translations
-# - name: Farore's Silent Realm - Relic 1
-#   standard: Farore's Silent Realm - Relic 1
-#   pretty: Farore's Silent Realm - Relic 1
-#   cryptic: a <r<relic in a silent forest>>
+# TODO: add translations (done)
+- name: Farore's Silent Realm - Relic 1
+  standard: Farores Sairen - Finsterhalbmond 1
+  pretty: Farores Sairen - Finsterhalbmond 1
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 2
-#   standard: Farore's Silent Realm - Relic 2
-#   pretty: Farore's Silent Realm - Relic 2
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 2
+  standard: Farores Sairen - Finsterhalbmond 2
+  pretty: Farores Sairen - Finsterhalbmond 2
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 3
-#   standard: Farore's Silent Realm - Relic 3
-#   pretty: Farore's Silent Realm - Relic 3
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 3
+  standard: Farores Sairen - Finsterhalbmond 3
+  pretty: Farores Sairen - Finsterhalbmond 3
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 4
-#   standard: Farore's Silent Realm - Relic 4
-#   pretty: Farore's Silent Realm - Relic 4
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 4
+  standard: Farores Sairen - Finsterhalbmond 4
+  pretty: Farores Sairen - Finsterhalbmond 4
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 5
-#   standard: Farore's Silent Realm - Relic 5
-#   pretty: Farore's Silent Realm - Relic 5
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 5
+  standard: Farores Sairen - Finsterhalbmond 5
+  pretty: Farores Sairen - Finsterhalbmond 5
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 6
-#   standard: Farore's Silent Realm - Relic 6
-#   pretty: Farore's Silent Realm - Relic 6
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 6
+  standard: Farores Sairen - Finsterhalbmond 6
+  pretty: Farores Sairen - Finsterhalbmond 6
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 7
-#   standard: Farore's Silent Realm - Relic 7
-#   pretty: Farore's Silent Realm - Relic 7
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 7
+  standard: Farores Sairen - Finsterhalbmond 7
+  pretty: Farores Sairen - Finsterhalbmond 7
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 8
-#   standard: Farore's Silent Realm - Relic 8
-#   pretty: Farore's Silent Realm - Relic 8
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 8
+  standard: Farores Sairen - Finsterhalbmond 8
+  pretty: Farores Sairen - Finsterhalbmond 8
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 9
-#   standard: Farore's Silent Realm - Relic 9
-#   pretty: Farore's Silent Realm - Relic 9
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 9
+  standard: Farores Sairen - Finsterhalbmond 9
+  pretty: Farores Sairen - Finsterhalbmond 9
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 10
-#   standard: Farore's Silent Realm - Relic 10
-#   pretty: Farore's Silent Realm - Relic 10
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 10
+  standard: Farores Sairen - Finsterhalbmond 10
+  pretty: Farores Sairen - Finsterhalbmond 10
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
 - name: Farore's Silent Realm - Collect all Tears Reward
   standard: Farores Sairen - Belohnung für komplette Tränensammlung
@@ -5762,56 +5762,56 @@
   pretty: Nayrus Sairen - Ausdauerfrucht unter Baum nahe Mineneingang
   cryptic: eine <r<Frucht in Baumnähe in einer anderen Welt>>
 
-# TODO: add translations
-# - name: Nayru's Silent Realm - Relic 1
-#   standard: Nayru's Silent Realm - Relic 1
-#   pretty: Nayru's Silent Realm - Relic 1
-#   cryptic: a <r<relic in a silent desert>>
+# TODO: add translations (done)
+- name: Nayru's Silent Realm - Relic 1
+  standard: Nayrus Sairen - Finsterhalbmond 1
+  pretty: Nayrus Sairen - Finsterhalbmond 1
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 2
-#   standard: Nayru's Silent Realm - Relic 2
-#   pretty: Nayru's Silent Realm - Relic 2
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 2
+  standard: Nayrus Sairen - Finsterhalbmond 2
+  pretty: Nayrus Sairen - Finsterhalbmond 2
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 3
-#   standard: Nayru's Silent Realm - Relic 3
-#   pretty: Nayru's Silent Realm - Relic 3
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 3
+  standard: Nayrus Sairen - Finsterhalbmond 3
+  pretty: Nayrus Sairen - Finsterhalbmond 3
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 4
-#   standard: Nayru's Silent Realm - Relic 4
-#   pretty: Nayru's Silent Realm - Relic 4
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 4
+  standard: Nayrus Sairen - Finsterhalbmond 4
+  pretty: Nayrus Sairen - Finsterhalbmond 4
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 5
-#   standard: Nayru's Silent Realm - Relic 5
-#   pretty: Nayru's Silent Realm - Relic 5
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 5
+  standard: Nayrus Sairen - Finsterhalbmond 5
+  pretty: Nayrus Sairen - Finsterhalbmond 5
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 6
-#   standard: Nayru's Silent Realm - Relic 6
-#   pretty: Nayru's Silent Realm - Relic 6
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 6
+  standard: Nayrus Sairen - Finsterhalbmond 6
+  pretty: Nayrus Sairen - Finsterhalbmond 6
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 7
-#   standard: Nayru's Silent Realm - Relic 7
-#   pretty: Nayru's Silent Realm - Relic 7
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 7
+  standard: Nayrus Sairen - Finsterhalbmond 7
+  pretty: Nayrus Sairen - Finsterhalbmond 7
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 8
-#   standard: Nayru's Silent Realm - Relic 8
-#   pretty: Nayru's Silent Realm - Relic 8
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 8
+  standard: Nayrus Sairen - Finsterhalbmond 8
+  pretty: Nayrus Sairen - Finsterhalbmond 8
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 9
-#   standard: Nayru's Silent Realm - Relic 9
-#   pretty: Nayru's Silent Realm - Relic 9
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 9
+  standard: Nayrus Sairen - Finsterhalbmond 9
+  pretty: Nayrus Sairen - Finsterhalbmond 9
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 10
-#   standard: Nayru's Silent Realm - Relic 10
-#   pretty: Nayru's Silent Realm - Relic 10
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 10
+  standard: Nayrus Sairen - Finsterhalbmond 10
+  pretty: Nayrus Sairen - Finsterhalbmond 10
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
 - name: Nayru's Silent Realm - Collect all Tears Reward
   standard: Nayrus Sairen - Belohnung für komplette Tränensammlung
@@ -5833,56 +5833,56 @@
   pretty: Dins Sairen - Ausdauerfrucht nahe Träne an Ranken
   cryptic: eine <r<Frucht an einer vulkanischen Wand in einer anderen Welt>>
 
-# TODO: add translations
-# - name: Din's Silent Realm - Relic 1
-#   standard: Din's Silent Realm - Relic 1
-#   pretty: Din's Silent Realm - Relic 1
-#   cryptic: a <r<relic on a silent volcano>>
+# TODO: add translations (done)
+- name: Din's Silent Realm - Relic 1
+  standard: Dins Sairen - Finsterhalbmond 1
+  pretty: Dins Sairen - Finsterhalbmond 1
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 2
-#   standard: Din's Silent Realm - Relic 2
-#   pretty: Din's Silent Realm - Relic 2
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 2
+  standard: Dins Sairen - Finsterhalbmond 2
+  pretty: Dins Sairen - Finsterhalbmond 2
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 3
-#   standard: Din's Silent Realm - Relic 3
-#   pretty: Din's Silent Realm - Relic 3
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 3
+  standard: Dins Sairen - Finsterhalbmond 3
+  pretty: Dins Sairen - Finsterhalbmond 3
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 4
-#   standard: Din's Silent Realm - Relic 4
-#   pretty: Din's Silent Realm - Relic 4
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 4
+  standard: Dins Sairen - Finsterhalbmond 4
+  pretty: Dins Sairen - Finsterhalbmond 4
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 5
-#   standard: Din's Silent Realm - Relic 5
-#   pretty: Din's Silent Realm - Relic 5
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 5
+  standard: Dins Sairen - Finsterhalbmond 5
+  pretty: Dins Sairen - Finsterhalbmond 5
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 6
-#   standard: Din's Silent Realm - Relic 6
-#   pretty: Din's Silent Realm - Relic 6
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 6
+  standard: Dins Sairen - Finsterhalbmond 6
+  pretty: Dins Sairen - Finsterhalbmond 6
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 7
-#   standard: Din's Silent Realm - Relic 7
-#   pretty: Din's Silent Realm - Relic 7
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 7
+  standard: Dins Sairen - Finsterhalbmond 7
+  pretty: Dins Sairen - Finsterhalbmond 7
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 8
-#   standard: Din's Silent Realm - Relic 8
-#   pretty: Din's Silent Realm - Relic 8
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 8
+  standard: Dins Sairen - Finsterhalbmond 8
+  pretty: Dins Sairen - Finsterhalbmond 8
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 9
-#   standard: Din's Silent Realm - Relic 9
-#   pretty: Din's Silent Realm - Relic 9
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 9
+  standard: Dins Sairen - Finsterhalbmond 9
+  pretty: Dins Sairen - Finsterhalbmond 9
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 10
-#   standard: Din's Silent Realm - Relic 10
-#   pretty: Din's Silent Realm - Relic 10
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 10
+  standard: Dins Sairen - Finsterhalbmond 10
+  pretty: Dins Sairen - Finsterhalbmond 10
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
 - name: Din's Silent Realm - Collect all Tears Reward
   standard: Dins Sairen - Belohnung für komplette Tränensammlung
