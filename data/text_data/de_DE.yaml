@@ -5617,52 +5617,52 @@
 
 # TODO: add translations (done but couldnt test)
 - name: The Goddess's Silent Realm - Relic 1
-  standard: Sairen der Göttin - Finsterhalbmond vor der nordwestlichen Windmühle
+  standard: Sairen der Göttin - Finsterhalbmond 1
   pretty: Sairen der Göttin - Finsterhalbmond vor der nordwestlichen Windmühle
   cryptic: eine <r<dunkle Träne im nordwestlichen Wind einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 2
-  standard: Sairen der Göttin - Finsterhalbmond links hinter dem Wächter nach dem Sairen-Eingang
+  standard: Sairen der Göttin - Finsterhalbmond 2
   pretty: Sairen der Göttin - Finsterhalbmond links hinter dem Wächter nach dem Sairen-Eingang
   cryptic: eine <r<dunkle Träne bewacht am Eingang einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 3
-  standard: Sairen der Göttin - Finsterhalbmond hinter der Bank an der südwestlichen Basar-Seite
+  standard: Sairen der Göttin - Finsterhalbmond 3
   pretty: Sairen der Göttin - Finsterhalbmond hinter der Bank an der südwestlichen Basar-Seite
   cryptic: eine <r<dunkle Träne ruhend in der Nähe eines Ladens einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 4
-  standard: Sairen der Göttin - Finsterhalbmond neben der nordwestlichen Treppe zur Ritterschule
+  standard: Sairen der Göttin - Finsterhalbmond 4
   pretty: Sairen der Göttin - Finsterhalbmond neben der nordwestlichen Treppe zur Ritterschule
   cryptic: eine <r<dunkle Träne auf neben dem Weg zur Schule einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 5
-  standard: Sairen der Göttin - Finsterhalbmond auf einer Stange an der nördlichen Basar-Seite
+  standard: Sairen der Göttin - Finsterhalbmond 5
   pretty: Finsterhalbmond auf einer Stange an der nördlichen Basar-Seite
   cryptic: eine <r<dunkle Träne fliegend im Norden neben einem Laden einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 6
-  standard: Sairen der Göttin - Finsterhalbmond vor der Höhle im Nordosten
+  standard: Sairen der Göttin - Finsterhalbmond 6
   pretty: Sairen der Göttin - Finsterhalbmond vor der Höhle im Nordosten
   cryptic: eine <r<dunkle Träne zum Untergrund einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 7
-  standard: Sairen der Göttin - Finsterhalbmond hinter dem Leuchtturm
+  standard: Sairen der Göttin - Finsterhalbmond 7
   pretty: Sairen der Göttin - Finsterhalbmond hinter dem Leuchtturm
   cryptic: eine <r<dunkle Träne hinter dem Licht einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 8
-  standard: Sairen der Göttin - Finsterhalbmond auf dem Friedhof
+  standard: Sairen der Göttin - Finsterhalbmond 8
   pretty: Sairen der Göttin - Finsterhalbmond auf dem Friedhof
   cryptic: eine <r<dunkle Träne bei den Toten einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 9
-  standard: Sairen der Göttin - Finsterhalbmond vor der nordöstlichen Windmühle
+  standard: Sairen der Göttin - Finsterhalbmond 9
   pretty: Sairen der Göttin - Finsterhalbmond vor der nordöstlichen Windmühle
   cryptic: eine <r<dunkle Träne im nordöstlichen Wind einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Relic 10
-  standard: Sairen der Göttin - Finsterhalbmond auf Sasias Haus neben dem Vogelnest
+  standard: Sairen der Göttin - Finsterhalbmond 10
   pretty: Sairen der Göttin - Finsterhalbmond auf Sasias Haus neben dem Vogelnest
   cryptic: eine <r<dunkle Träne einer glücklichen Mutter einer anderen Welt>>
 
