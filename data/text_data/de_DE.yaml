@@ -6387,24 +6387,24 @@
   standard:
     "Lebensbaumfrucht: \n<string arg0>\nLebensbaumkeimling: \n<string arg1>\nHöhlenschlüssel: <numeric arg1>/2"
 
-- name: Inventory Emerald Tablet text #(tested done)
+- name: Inventory Emerald Tablet text
   standard:
-    "Ein Fragment einer antiken Tafel, die den Weg \nzur Oberfläche öffnet. Sie öffnet den Weg in \nden <g<Wald von Phirone>>."
-- name: Inventory Emerald and Ruby Tablet text #(new test)
+    "Diese uralte Tafel eröffnet dir den Weg \nzum <g<Waldreich von Phirone>>."
+- name: Inventory Emerald and Ruby Tablet text
   standard:
-    "Die <r<Rubin>> und <g<Smaragd>> Tafeln öffnen die Wege \nin den <g<Wald von Phirone>> und \nzu dem <r<Vulkan Eldin>>."
-- name: Inventory All Tablets text #(serious rework needed)
+    "Die <g<Smaragd->> und <r<Rubin->>Tafeln eröffnen \ndir den Weg zum <g<Waldreich>> und zum \n<r<Feuerreich Eldin>>."
+- name: Inventory All Tablets text
   standard:
-    "Die antike Tafel bestehend aus den <g<Smaragd>>, \n<r<Rubin>>, und <y<Bernstein>> Tafeln. Öffnet alle Areale \nder Oberfläche: <g<Wald von Phirone>>, <r<Vulkan Eldin>>, und <y<Wüste Ranelle>>."
-- name: Inventory Emerald and Amber Tablet text #(rework)
+    "Die <g<Smaragd->>, <r<Rubin->> und <y<Bernstein->>Tafeln \neröffnen dir den Weg in die Länder des \n<g<Waldes>>, des <r<Feuers>> und der <y<Wüste>>."
+- name: Inventory Emerald and Amber Tablet text
   standard:
-    "Die <y<Bernstein>> und <g<Smaragd>> Tafeln öffnen die \nWege in den <g<Wald von Phirone>> und\ndie <y<Wüste Ranelle>>."
-- name: Inventory Amber Tablet text #(tested done)
+    "Die <g<Smaragd->> und <y<Bernstein->>Tafeln eröffnen \ndir den Weg zum <g<Waldreich>> und \nzum <y<Wüstenreich Ranelle>>."
+- name: Inventory Amber Tablet text
   standard:
-    "Ein Fragment einer antiken Tafel, die den Weg \nzur Oberfläche öffnet. Sie öffnet den Weg in \ndie <y<Wüste Ranelle>>."
-- name: Inventory Ruby and Amber Tablet text #(tested done)
+    "Diese uralte Tafel eröffnet dir den Weg \nzum <y<Wüstenreich von Ranelle>>."
+- name: Inventory Ruby and Amber Tablet text
   standard:
-    "Die <y<Bernstein>> und <r<Rubin>> Tafeln öffnen die Wege \nzu dem <r<Vulkan Eldin>> und \nin die <y<Wüste Ranelle>>."
-- name: Inventory Ruby Tablet text #(tested done)
+    "Die <r<Rubin->> und <y<Bernstein->>Tafeln eröffnen \ndir den Weg zum <r<Feuerreich>> und \nzum <y<Wüstenreich Ranelle>>."
+- name: Inventory Ruby Tablet text 
   standard:
-    "Ein Fragment einer antiken Tafel, die den Weg \nzur Oberfläche öffnet. Sie öffnet den Weg zu \ndem <r<Vulkan Eldin>>."
+    "Diese uralte Tafel eröffnet dir den Weg \nzum <r<Feuerreich von Eldin>>."
