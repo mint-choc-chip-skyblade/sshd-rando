@@ -6387,24 +6387,24 @@
   standard:
     "Lebensbaumfrucht: \n<string arg0>\nLebensbaumkeimling: \n<string arg1>\nHöhlenschlüssel: <numeric arg1>/2"
 
-- name: Inventory Emerald Tablet text
+- name: Inventory Emerald Tablet text #(tested done)
   standard:
     "Ein Fragment einer antiken Tafel, die den Weg \nzur Oberfläche öffnet. Sie öffnet den Weg in \nden <g<Wald von Phirone>>."
-- name: Inventory Emerald and Ruby Tablet text
+- name: Inventory Emerald and Ruby Tablet text #(new test)
   standard:
-    "Die <r<Rubin>> und <g<Smaragd>> Tafeln \nöffnen die Wege in den <g<Wald von Phirone>> und \nzu dem <r<Vulkan Eldin>>."
-- name: Inventory All Tablets text
+    "Die <r<Rubin>> und <g<Smaragd>> Tafeln öffnen die Wege \nin den <g<Wald von Phirone>> und \nzu dem <r<Vulkan Eldin>>."
+- name: Inventory All Tablets text #(new test)
   standard:
-    "Die antike Tafel bestehend aus den <g<Smaragd>>,\n<r<Rubin>>, und <y<Bernstein>> Tafeln. Öffnet alle Areale der Oberfläche --\n<g<Wald von Phirone>>, <r<Vulkan Eldin>>, und <y<Wüste Ranelle>>."
-- name: Inventory Emerald and Amber Tablet text
+    "Die antike Tafel bestehend aus den <g<Smaragd>>, <r<Rubin>>, und \n<y<Bernstein>> Tafeln. Öffnet alle Areale der Oberfläche \n<g<Wald von Phirone>>, <r<Vulkan Eldin>>, und <y<Wüste Ranelle>>."
+- name: Inventory Emerald and Amber Tablet text 
   standard:
-    "Die <y<Bernstein>> und <g<Smaragd>> Tafeln \nöffnen den Weg in den <g<Wald von Phirone>> und\ndie <y<Wüste Ranelle>>."
+    "Die <y<Bernstein>> und <g<Smaragd>> Tafeln öffnen die Wege \nin den <g<Wald von Phirone>> und\ndie <y<Wüste Ranelle>>."
 - name: Inventory Amber Tablet text
   standard:
     "Ein Fragment einer antiken Tafel, die den Weg \nzur Oberfläche öffnet. Sie öffnet den Weg in \ndie <y<Wüste Ranelle>>."
 - name: Inventory Ruby and Amber Tablet text
   standard:
-    "Die <y<Bernstein>> und <r<Rubin>> Tafeln \nöffnen die Wege zu dem <r<Vulkan Eldin>> und in\ndie <y<Wüste Ranelle>>."
+    "Die <y<Bernstein>> und <r<Rubin>> Tafeln öffnen die Wege \nzu dem <r<Vulkan Eldin>> und \nin die <y<Wüste Ranelle>>."
 - name: Inventory Ruby Tablet text
   standard:
     "Ein Fragment einer antiken Tafel, die den Weg \nzur Oberfläche öffnet. Sie öffnet den Weg zu \ndem <r<Vulkan Eldin>>."
