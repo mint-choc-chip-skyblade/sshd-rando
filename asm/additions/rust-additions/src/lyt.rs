@@ -221,7 +221,8 @@ pub fn set_help_menu_strings(param1: *mut c_void, help_index: u32) {
                             set_string_arg(GLOBAL_TEXT_MGR, OBTAINED_TEXT, 0);
                         }
 
-                        if flag::check_itemflag(flag::ITEMFLAGS::SCRAPPER) == 0 {
+                        // If has Scrapper, checking the itemflag doesn't work
+                        if flag::check_storyflag(323) == 0 {
                             set_string_arg(GLOBAL_TEXT_MGR, NOT_OBTAINED_TEXT, 1);
                         } else {
                             set_string_arg(GLOBAL_TEXT_MGR, OBTAINED_TEXT, 1);
