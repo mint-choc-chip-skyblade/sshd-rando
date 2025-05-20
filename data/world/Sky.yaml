@@ -101,7 +101,7 @@
   events:
     Can Play Clean Cut Minigame: Sword
   exits:
-    Bamboo Island: Day or or natural_night_connections == off
+    Bamboo Island: Day or natural_night_connections == off
   locations:
     Bamboo Island Interior - Gossip Stone behind Bamboo Pole: Nothing
     Bamboo Island Interior - Bonk Southwest Sprout: Nothing
