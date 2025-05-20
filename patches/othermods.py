@@ -60,6 +60,7 @@ def get_resolved_game_file_path(
 def get_cache_oarc_path(oarc_file: str, other_mods: list[str] = []):
     for mod in other_mods:
         path = CACHE_OARC_PATH / mod / oarc_file
+
         if path.exists():
             print(f'Found {oarc_file} from mod "{mod}"')
             return path
@@ -199,14 +200,23 @@ def copy_extra_mod_files(other_mods: list[str], output_dir: Path):
     mod_folders = [COMBINED_MODS_FOLDER] + other_mods
 
     for mod in mod_folders:
-        for root, dirs, files in os.walk(OTHER_MODS_PATH / mod):
+        mod_path = OTHER_MODS_PATH / mod
+
+        for root, dirs, files in os.walk(mod_path):
             for file in files:
                 file_path = os.path.join(root, file)
+                found_fs = False
+
                 # Get the part of the path which just involves the game folders
                 for i, part in enumerate(reversed(Path(file_path).parts)):
                     if part in ("romfs", "exefs"):
                         file_path = "/".join(Path(file_path).parts[-1 - i :])
+                        found_fs = True
                         break
+
+                # Ignore files not in the romfs or exefs directories
+                if not found_fs:
+                    continue
 
                 path = output_dir / file_path
                 other_path = (
@@ -217,9 +227,7 @@ def copy_extra_mod_files(other_mods: list[str], output_dir: Path):
 
                 if not path.exists() and not other_path.exists():
                     print(f"Copying {mod}/{file_path} to output")
-                    write_bytes_create_dirs(
-                        path, (OTHER_MODS_PATH / mod / file_path).read_bytes()
-                    )
+                    write_bytes_create_dirs(path, (mod_path / file_path).read_bytes())
 
     # Since this is the last step in the process, we can delete the temporary combined mods folder here
     if Path(COMBINED_MODS_PATH).exists():

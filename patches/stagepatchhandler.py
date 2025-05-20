@@ -1,4 +1,5 @@
 import hashlib
+import shutil
 import time
 from constants.verificationconstants import BZS_FILE_HASHES
 from patches.stagepatchhelper import patch_additional_properties
@@ -42,6 +43,7 @@ from filepathconstants import (
     CACHE_BZS_PATH,
     CACHE_OARC_PATH,
     CACHE_PATH,
+    OTHER_MODS_PATH,
     STAGE_FILES_PATH,
     STAGE_PATCHES_PATH,
     EXTRACTS_PATH,
@@ -1210,8 +1212,20 @@ class StagePatchHandler:
                     if len(arcs_not_in_cache) == 0:
                         continue
 
+                    # Allow mod makers to put objectpack arcs in "ModName/Object"
+                    mod_object_path = OTHER_MODS_PATH / mod / "Object"
+
+                    if mod and mod_object_path.exists():
+                        for arc_name in arcs_not_in_cache:
+                            if (mod_object_path / f"{arc_name}.arc").exists():
+                                print_progress_text(f"Extracting {mod}/{arc_name}")
+                                shutil.copyfile(
+                                    mod_object_path / f"{arc_name}.arc",
+                                    cache_oarc_path / f"{arc_name}.arc",
+                                )
+
                     # If a mod doesn't have an objectpack, then skip it
-                    if mod and os.path.samefile(OBJECTPACK_PATH, objectpack_path):
+                    if mod and OBJECTPACK_PATH.samefile(objectpack_path):
                         continue
 
                     objectpack_u8 = U8File.get_parsed_U8_from_path(objectpack_path)
@@ -1227,8 +1241,8 @@ class StagePatchHandler:
                                 f"Expected type bytes but found None for {mod}/{arc_name}."
                             )
 
-                        # If we're extracting arcs from a mod, don't rewrite the arcs if they're the same
-                        # as the original game
+                        # If we're extracting arcs from a mod, don't rewrite
+                        # the arcs if they're the same as the original game
                         if mod:
                             default_arc_data = default_objectpack_u8.get_file_data(
                                 f"oarc/{arc_name}.arc"

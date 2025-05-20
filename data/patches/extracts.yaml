@@ -313,7 +313,6 @@
       oarcs:
         - GetEarring
 
-# For model texture stuff?
 - objectpack:
     - Alink
     - Bc
