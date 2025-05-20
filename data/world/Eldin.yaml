@@ -134,6 +134,8 @@
     Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 3: Slingshot
     Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4: Slingshot
 
+# Includes anything after the boko tower near Thrill Digger
+# and anything before the boko tower before hot cave
 - name: Near Temple Entrance
   hint_region: Eldin Volcano
   events:
@@ -167,9 +169,6 @@
     Eldin Volcano - Stamina Fruit below Slope before Temple 2: Nothing
     Eldin Volcano - Stamina Fruit below Slope before Temple 3: Nothing
     Eldin Volcano - Bonk Campfire East of Temple: Nothing
-    Eldin Volcano - Stamina Fruit after Last Boko Camp Tower: Nothing
-    Eldin Volcano - Stamina Fruit on Ledge near Hot Cave: Nothing
-    Eldin Volcano - Stamina Fruit on Vines near Hot Cave: Nothing
     Eldin Volcano - Gossip Stone on Cliff West of Temple: Digging_Mitts
     Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple: Digging_Mitts and Goddess_Sword
     Eldin Volcano - Goddess Cube East of Temple: Goddess_Sword
@@ -187,12 +186,18 @@
   locations:
     Upper Eldin Cave - West Gossip Stone: Nothing
 
+# Includes anything after the boko tower
 - name: Hot Cave
   hint_region: Eldin Volcano
   exits:
     Volcano Summit: Fireshield_Earrings
     Sand Slide: Can_Survive_Hot_Cave
     Near Temple Entrance: can_access(Near Temple Entrance) or (logic_bomb_throws and Bomb_Bag)
+  locations:
+    # Activate the floor switch and run backwards
+    Eldin Volcano - Stamina Fruit after Last Boko Camp Tower: Nothing
+    Eldin Volcano - Stamina Fruit on Ledge near Hot Cave: Nothing
+    Eldin Volcano - Stamina Fruit on Vines near Hot Cave: Nothing
 
 - name: Sand Slide
   hint_region: Eldin Volcano
