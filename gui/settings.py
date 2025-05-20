@@ -260,7 +260,7 @@ class Settings:
             except:
                 pass
 
-            if isinstance(widget, RandoTriStateCheckBox):  # on or off
+            if isinstance(widget, RandoTriStateCheckBox):
                 if current_option_value == "on":
                     widget.setChecked(True)
                 elif current_option_value == "random":
@@ -460,7 +460,7 @@ class Settings:
             except:
                 pass
 
-            if isinstance(widget, QCheckBox):  # on or off
+            if isinstance(widget, QCheckBox):
                 if current_option_value == "on":
                     widget.setChecked(True)
                 elif current_option_value == "random":
@@ -882,14 +882,15 @@ class Settings:
             else:
                 selected_preset_path = PRESETS_PATH / (selected_preset + ".yaml")
 
-            self.config = load_config_from_file(selected_preset_path)
+            self.config = load_config_from_file(
+                selected_preset_path, config=self.config
+            )
             self.verify_excluded_locations()
             write_config_to_file(selected_preset_path, self.config)
             self.settings = self.config.settings[0].settings
 
             self.new_seed()
             self.update_from_config()
-            self.main.config = self.config  # ¯\_(ツ)_/¯
 
     def update_hash(self):
         self.config.hash = ""

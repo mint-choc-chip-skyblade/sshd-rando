@@ -215,6 +215,7 @@ def load_or_get_default_from_config(config: dict, setting_name: str):
 
 def load_config_from_file(
     filepath: Path,
+    config: Config | None = None,
     allow_rewrite: bool = True,
     create_if_blank: bool = False,
     default_on_invalid_value: bool = False,
@@ -223,7 +224,8 @@ def load_config_from_file(
         print("No config file found. Creating default config file.")
         create_default_config(filepath)
 
-    config = load_preferences()
+    config = load_preferences(config)
+
     # If the config is missing any options, set defaults and resave it afterwards
     rewrite_config: bool = False
     with open(filepath, encoding="utf-8") as config_file:
@@ -248,6 +250,9 @@ def load_config_from_file(
         # Create default World 1 if it doesn't exist already
         if world_num_str not in config_in:
             config_in[world_num_str] = {}
+
+        # If config was passed into this function, clear the setting and start over
+        config.settings.clear()
 
         settings_info = get_all_settings_info()
         while world_num_str in config_in:
@@ -417,8 +422,10 @@ def load_config_from_file(
     return config
 
 
-def load_preferences() -> Config:
-    config = Config()
+def load_preferences(config: Config | None = None) -> Config:
+    if config is None:
+        config = Config()
+
     filepath = Path(PREFERENCES_PATH)
 
     if not filepath.is_file():
