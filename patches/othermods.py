@@ -23,13 +23,18 @@ def get_resolved_game_file_path(
     if specific_mod == "":
         return base_game_path, ""
 
-    game_path = None
+    game_path: str | None = None
 
     # Get the part of the path which just involves the game folders
     for i, part in enumerate(reversed(base_game_path.parts)):
         if part in ("romfs", "exefs"):
             game_path = "/".join(base_game_path.parts[-1 - i :])
             break
+
+    if game_path is None:
+        raise Exception(
+            f"Could not find romfs or exefs directory in base game path. Invalid base game path given: {base_game_path}."
+        )
 
     # Some mods don't recompress their files, so we have to check for both compressed and noncompressed variations
     game_path_2 = get_other_file_path(game_path)
@@ -62,8 +67,8 @@ def get_cache_oarc_path(oarc_file: str, other_mods: list[str] = []):
     return CACHE_OARC_PATH / oarc_file
 
 
-# Some mods don't recompress their files, so in a bunch of instances we have to check if both the compressed or uncompressed
-# ones exist
+# Some mods don't recompress their files, so in a bunch of instances
+# we have to check if both the compressed or uncompressed ones exist
 def get_other_file_path(path: str):
     return path[:-3] if path.endswith(".LZ") else f"{path}.LZ"
 
@@ -119,12 +124,11 @@ def verify_other_mods(other_mods: list[str]):
             build_combined_mod_file(file_path, other_mods)
 
 
-# Attempts to combine two archive files from different mods. If multiple mods modify the same files within the archive
-# then an error is thrown
+# Attempts to combine two archive files from different mods.
+# If multiple mods modify the same files within the archive then an error is thrown
 def build_combined_mod_file(game_path: str, other_mods: list[str] = []):
-
     # Get all the mods which modify this file
-    files_to_combine: list[U8File] = []
+    files_to_combine: list[tuple[U8File, str]] = []
     for mod in other_mods:
         path_to_file = OTHER_MODS_PATH / mod / game_path
         if path_to_file.exists():
@@ -186,7 +190,6 @@ def combine_mod_files(
 
 # If any active mods modify extra files not touched by the randomizer, then copy them over here
 def copy_extra_mod_files(other_mods: list[str], output_dir: Path):
-
     if not other_mods:
         return
 
