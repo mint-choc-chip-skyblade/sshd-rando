@@ -478,68 +478,68 @@
   events:
     Unlock Sealed Grounds Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Sealed Grounds: Nothing
 
 - name: Behind the Temple Statue
   events:
     Unlock Behind the Temple Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Behind the Temple: Nothing
 
 - name: Faron Woods Entry Statue
   events:
     Unlock Faron Woods Entry Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Faron Woods Entry: Nothing
 
 - name: Viewing Platform Statue
   events:
     Unlock Viewing Platform Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Faron Woods: Nothing
 
 - name: In the Woods Statue
   events:
     Unlock In the Woods Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Faron Woods: Nothing
 
 - name: Deep Woods Statue
   events:
     Unlock Deep Woods Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Deep Woods: Nothing
 
 - name: Forest Temple Statue
   events:
     Unlock Forest Temple Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Deep Woods: Nothing
 
 - name: The Great Tree Statue
   events:
     Unlock The Great Tree Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Great Tree Exterior Top: Nothing
 
 - name: Lake Floria Statue
   events:
     Unlock Lake Floria Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Lake Floria Emerged Area: Nothing
 
 - name: Floria Waterfall Statue
   events:
     Unlock Floria Waterfall Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Floria Waterfall: Nothing

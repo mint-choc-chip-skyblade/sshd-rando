@@ -1,6 +1,3 @@
-# allowed_time_of_day: DayOnly
-# hint_region: Sandship
-
 - name: Sandship Main Deck
   dungeon: Sandship
   dungeon_starting_area: true

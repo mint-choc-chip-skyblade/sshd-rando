@@ -461,40 +461,40 @@
   events:
     Unlock Volcano Entrance Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Volcano Entrance: Nothing
 
 - name: Volcano East Statue
   events:
     Unlock Volcano East Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Volcano East: Nothing
 
 - name: Volcano Ascent Statue
   events:
     Unlock Volcano Ascent Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Volcano Ascent: Nothing
 
 - name: Temple Entrance Statue
   events:
     Unlock Temple Entrance Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Near Temple Entrance: Nothing
 
 - name: Inside the Volcano Statue
   events:
     Unlock Inside the Volcano Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Outside Fire Sanctuary: Nothing
 
 - name: Inside the Fire Sanctuary Statue
   events:
     Unlock Inside the Fire Sanctuary Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     FS In Front of Boss Door: Nothing

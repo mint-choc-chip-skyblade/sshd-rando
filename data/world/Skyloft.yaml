@@ -194,7 +194,7 @@
     Peatrice's House: Nothing
     Kukiel's House: Nothing
     Piper's House: Nothing
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Upper Skyloft: Nothing
     Skyloft Village: Nothing
     # omit SoT here intentionally, see the comment on that
@@ -366,7 +366,7 @@
   allowed_time_of_day: All
   exits:
     Waterfall Cave: Nothing
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
   locations:
     Central Skyloft - Crystal near Bird Statue after Waterfall Cave: Night
     Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave: Night
@@ -402,7 +402,7 @@
     Gondo's House: Nothing
     Rupin's House: Nothing
     Batreaux's House: open_batreaux_shed or 'Opened_Shed' or logic_gravestone_jump
-    The Sky: Day
+    The Sky: Day or or natural_night_connections == off
     Skyloft Past Waterfall Cave Jump: logic_waterfall_cave_jump and Day
     Central Skyloft: Nothing
   locations:
