@@ -64,7 +64,9 @@ class Advanced:
             partial(self.verify_extract, verify_all=True)
         )
 
-        self.ui.refresh_mod_list_button.clicked.connect(self.main.settings.generate_other_mods_list)
+        self.ui.refresh_mod_list_button.clicked.connect(
+            self.main.settings.generate_other_mods_list
+        )
 
         self.verify_dialog = None
 

@@ -28,7 +28,14 @@ from constants.itemconstants import (
     GRATITUDE_CRYSTAL,
     GROUP_OF_TADTONES,
 )
-from filepathconstants import BASE_PRESETS_PATH, COMBINED_MODS_FOLDER, CONFIG_PATH, ITEMS_PATH, OTHER_MODS_PATH, PRESETS_PATH
+from filepathconstants import (
+    BASE_PRESETS_PATH,
+    COMBINED_MODS_FOLDER,
+    CONFIG_PATH,
+    ITEMS_PATH,
+    OTHER_MODS_PATH,
+    PRESETS_PATH,
+)
 from gui.components.list_pair import ListPair
 from gui.components.tristate_check_box import RandoTriStateCheckBox
 from gui.mixed_entrance_pools import MixedEntrancePools
