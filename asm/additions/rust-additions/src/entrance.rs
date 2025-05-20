@@ -230,8 +230,13 @@ pub fn handle_er_action_states() {
 }
 
 #[no_mangle]
-pub fn warp_to_start() {
+pub fn warp_to_start() -> bool {
     unsafe {
+        // Don't warp if in boss rush
+        if flag::check_storyflag(530) != 0 || flag::check_storyflag(531) != 0 {
+            return false;
+        }
+
         let start_info = &*(&WARP_TO_START_INFO as *const WarpToStartInfo);
 
         // Make sure the night storyflag remains in-sync with the actual time of day
@@ -267,6 +272,7 @@ pub fn warp_to_start() {
 
         // Just to be extra safe (fixes some issues with Fi warp)
         handle_er_cases();
+        return true;
     }
 }
 
