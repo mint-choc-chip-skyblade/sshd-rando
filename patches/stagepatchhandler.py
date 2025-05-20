@@ -1212,8 +1212,8 @@ class StagePatchHandler:
                     if len(arcs_not_in_cache) == 0:
                         continue
 
-                    # Allow mod makers to put objectpack arcs in "ModName/Object"
-                    mod_object_path = OTHER_MODS_PATH / mod / "Object"
+                    # Allow mod makers to put objectpack arcs in "ModName/oarc"
+                    mod_object_path = OTHER_MODS_PATH / mod / "oarc"
 
                     if mod and mod_object_path.exists():
                         for arc_name in arcs_not_in_cache:
