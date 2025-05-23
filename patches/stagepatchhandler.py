@@ -1192,8 +1192,12 @@ class StagePatchHandler:
 
         for mod in mods:
             cache_oarc_path = CACHE_OARC_PATH / mod
-            if not cache_oarc_path.exists():
-                cache_oarc_path.mkdir(parents=True, exist_ok=True)
+
+            # Remove mod cache each time to prevent old mod files from lingering
+            if mod and cache_oarc_path.exists():
+                shutil.rmtree(cache_oarc_path)
+
+            cache_oarc_path.mkdir(parents=True, exist_ok=True)
 
             objectpack_path, _ = get_resolved_game_file_path(
                 OBJECTPACK_PATH, self.other_mods, mod
