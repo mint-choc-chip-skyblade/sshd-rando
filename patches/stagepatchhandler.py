@@ -805,14 +805,15 @@ def layer_override(bzs: dict, patch: dict):
 
 
 def arcn_add(bzs: dict, patch: dict):
-    arcn: set[str] = set(patch.get("arcn", None))
+    arcn: list[str] | None = patch.get("arcn", None)
+
     if arcn == None:
         raise Exception(
             f"Could not find 'arcn' from patch. Did you typo the 'arcn' field?\nPatch: {patch}"
         )
 
     arcn_set: set[str] = set(bzs.get("ARCN", []))
-    arcn_set |= arcn
+    arcn_set |= set(arcn)
     bzs["ARCN"] = list(arcn_set)
     # print(patch["layer"], patch["room"], bzs["ARCN"])
 
@@ -1220,13 +1221,13 @@ class StagePatchHandler:
                     mod_object_path = OTHER_MODS_PATH / mod / "oarc"
 
                     if mod and mod_object_path.exists():
-                        for arc_name in arcs_not_in_cache:
-                            if (mod_object_path / f"{arc_name}.arc").exists():
-                                print_progress_text(f"Extracting {mod}/{arc_name}")
-                                shutil.copyfile(
-                                    mod_object_path / f"{arc_name}.arc",
-                                    cache_oarc_path / f"{arc_name}.arc",
-                                )
+                        for arc_path in mod_object_path.glob("*.arc"):
+                            arc_name = arc_path.name
+                            shutil.copyfile(
+                                mod_object_path / arc_name,
+                                cache_oarc_path / arc_name,
+                            )
+                            print_progress_text(f"Copying {mod}/{arc_name}")
 
                     # If a mod doesn't have an objectpack, then skip it
                     if mod and OBJECTPACK_PATH.samefile(objectpack_path):

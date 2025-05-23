@@ -45,8 +45,7 @@ def patch_object_folder(object_folder_output_path: Path, other_mods: list[str] =
         if arc.name in objectpack_arc_names:
             objectpack_arc.add_file_data(f"oarc/{arc.name}", arc_data_path.read_bytes())
         else:
-            oarc = U8File.get_parsed_U8_from_path(CACHE_OARC_PATH / arc.name)
-
+            oarc = U8File.get_parsed_U8_from_path(arc_data_path)
             write_bytes_create_dirs(
                 object_folder_output_path / (arc.name + ".LZ"),
                 oarc.build_and_compress_U8(),

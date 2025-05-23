@@ -39,3 +39,9 @@ b 0x7100659ae0
 ; Use custom bzs.arc when trying to load vanilla bzs
 .offset 0x7100deb9a4
 bl 0x7100659ae8
+
+
+; Load arcs from romfs/Object/NX where possible
+; Unfortunately necessary jumptable usage ;-;
+.offset 0x7100b8c3e4
+bl 0x7100659af0

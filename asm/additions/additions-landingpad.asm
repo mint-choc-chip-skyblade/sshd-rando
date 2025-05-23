@@ -303,6 +303,9 @@ b.eq override_inventory_caption_item_text
 cmp w8, #94
 b.eq randomize_music
 
+cmp w8, #95
+b.eq prefer_object_folder_for_models
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
