@@ -57,15 +57,20 @@ def get_resolved_game_file_path(
     return base_game_path, ""
 
 
-def get_cache_oarc_path(oarc_file: str, other_mods: list[str] = []):
+def get_cache_oarc_path(
+    oarc_file: str, other_mods: list[str] = []
+) -> tuple[Path, bool]:
+    is_from_mod = False
+
     for mod in other_mods:
         path = CACHE_OARC_PATH / mod / oarc_file
 
         if path.exists():
             print(f'Found {oarc_file} from mod "{mod}"')
-            return path
+            is_from_mod = True
+            return (path, is_from_mod)
 
-    return CACHE_OARC_PATH / oarc_file
+    return (CACHE_OARC_PATH / oarc_file, is_from_mod)
 
 
 # Some mods don't recompress their files, so in a bunch of instances

@@ -399,29 +399,67 @@ pub fn use_custom_bzs(
     }
 }
 
+// When loading arcs from a stage file, try looking at romfs/ModReplace first.
 #[no_mangle]
-pub extern "C" fn prefer_object_folder_for_models(
+pub extern "C" fn prefer_object_folder_for_stage_arcs(
     arc_table: *mut ArcEntryTable,
     arc_entry: *mut ArcEntry,
     mut res_file_data: *mut c_void,
     heap: *mut Heap,
 ) {
     unsafe {
-        debug::debug_print(&(*arc_entry).arc_name as *const c_char);
-        debug_print_heap_info(sCurrentHeap, c"current_heap".as_ptr());
-
         let result = dRawArcTable_c__getArcOrLoadFromDisk(
             arc_table,
             &(*arc_entry).arc_name as *const c_char,
-            c"Object/NX".as_ptr(),
+            c"ModReplace".as_ptr(),
             WORK2_HEAP,
         );
-
-        debug::debug_print_num(c"%d".as_ptr(), result as usize);
 
         if !result {
             dRawArcTable_c__addEntryFromParentArc(arc_table, arc_entry, res_file_data, heap);
         }
+    }
+}
+
+// Having the replaced instructions in a separate function ensures that the
+// original instructions don't get ignored in
+// prefer_modreplace_for_general_arcs because of the params.
+#[no_mangle]
+pub extern "C" fn setup_registers_for_general_modreplace() {
+    unsafe {
+        asm!(
+            "mov x22, x3",
+            "mov x24, x2",
+            "mov x19, x1",
+            "mov x21, x0",
+            "mov w27, wzr",
+            "mov x20, x26",
+        );
+    }
+}
+
+// When loading an arc with dRawArcTable_c__getArcOrLoadFromDisk,
+// try looking in romfs/ModReplace for the arc first.
+#[no_mangle]
+pub extern "C" fn prefer_modreplace_for_general_arcs(
+    arc_table: *mut ArcEntryTable,
+    arc_name: *mut c_char,
+    parent_dir_name: *const c_char,
+    heap: *mut Heap,
+) -> bool {
+    unsafe {
+        let mod_replace_str = c"ModReplace".as_ptr();
+
+        if strcmp(parent_dir_name, mod_replace_str) != 0 {
+            return dRawArcTable_c__getArcOrLoadFromDisk(
+                arc_table,
+                arc_name,
+                mod_replace_str,
+                heap,
+            );
+        }
+
+        return false;
     }
 }
 

@@ -104,6 +104,8 @@ OBJECTPACK_FILENAME = "ObjectPack.arc.LZ"
 OBJECT_PATH_TAIL = Path("romfs") / "Object" / "NX"
 OBJECTPACK_PATH = SSHD_EXTRACT_PATH / OBJECT_PATH_TAIL / OBJECTPACK_FILENAME
 
+MOD_REPLACE_PATH = Path("romfs") / "ModReplace"
+
 TEXT_DATA_PATH = RANDO_ROOT_PATH / "data" / "text_data"
 ENTRANCE_SHUFFLE_DATA_PATH = RANDO_ROOT_PATH / "data" / "entrance_shuffle_data.yaml"
 BIRD_STATUE_DATA_PATH = RANDO_ROOT_PATH / "data" / "bird_statue_data.yaml"

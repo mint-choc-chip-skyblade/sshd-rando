@@ -41,7 +41,16 @@ b 0x7100659ae0
 bl 0x7100659ae8
 
 
-; Load arcs from romfs/Object/NX where possible
+; Load stage arcs from romfs/ModReplace where possible
 ; Unfortunately necessary jumptable usage ;-;
 .offset 0x7100b8c3e4
 bl 0x7100659af0
+
+; Load general arcs from romfs/ModReplace where possible
+.offset 0x7100deb2cc
+mov w8, #96 // replaced instructions / function setup
+bl additions_jumptable
+mov w8, #97 // prefer_modreplace_for_general_arcs
+bl additions_jumptable
+cbnz w0, 0x7100deb604 ; return 1
+nop
