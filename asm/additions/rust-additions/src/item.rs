@@ -395,8 +395,11 @@ pub extern "C" fn handle_custom_item_get(item_actor: *mut dAcItem) -> u16 {
         }
 
         // Get necessary params for setting a custom flag if this item has one
-        let (flag, sceneindex, flag_space_trigger, original_itemid) =
-            unpack_custom_item_params(item_actor);
+        let unpacked_params = unpack_custom_item_params(item_actor);
+        let flag = unpacked_params.flag;
+        let sceneindex = unpacked_params.sceneindex;
+        let flag_space_trigger = unpacked_params.flag_space_trigger;
+        let original_itemid = unpacked_params.original_itemid;
 
         if flag != 0x7F {
             // Use different flag spaces depending on the value of the
@@ -412,10 +415,17 @@ pub extern "C" fn handle_custom_item_get(item_actor: *mut dAcItem) -> u16 {
     }
 }
 
+#[repr(C)]
+pub struct UnpackedParams {
+    pub flag:               u32,
+    pub sceneindex:         u32,
+    pub flag_space_trigger: u32,
+    pub original_itemid:    u32,
+}
+
 // Unpacks our custom item params into separate variables
 #[no_mangle]
-#[warn(improper_ctypes_definitions)]
-pub extern "C" fn unpack_custom_item_params(item_actor: *mut dAcItem) -> (u32, u32, u32, u32) {
+pub extern "C" fn unpack_custom_item_params(item_actor: *mut dAcItem) -> UnpackedParams {
     unsafe {
         let param2: u32 = (*item_actor).base.members.base.param2;
         let flag: u32 = (param2 & (0x00007F00)) >> 8;
@@ -442,7 +452,12 @@ pub extern "C" fn unpack_custom_item_params(item_actor: *mut dAcItem) -> (u32, u
             _ => {},
         }
 
-        return (flag, sceneindex, flag_space_trigger, original_itemid);
+        return UnpackedParams {
+            flag,
+            sceneindex,
+            flag_space_trigger,
+            original_itemid,
+        };
     }
 }
 
@@ -450,8 +465,11 @@ pub extern "C" fn unpack_custom_item_params(item_actor: *mut dAcItem) -> (u32, u
 pub extern "C" fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
     unsafe {
         // Get necessary params for checking if this item has a custom flag
-        let (flag, sceneindex, flag_space_trigger, original_itemid) =
-            unpack_custom_item_params(item_actor);
+        let unpacked_params = unpack_custom_item_params(item_actor);
+        let flag = unpacked_params.flag;
+        let sceneindex = unpacked_params.sceneindex;
+        let flag_space_trigger = unpacked_params.flag_space_trigger;
+        let original_itemid = unpacked_params.original_itemid;
 
         // Don't do anything for conveyor spawned stamina fruit in LMF
         let current_item = (*item_actor).base.basebase.members.param1 & 0x1FF;
