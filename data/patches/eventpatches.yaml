@@ -941,8 +941,17 @@
     type: flowadd
     flow:
       type: type3
-      next: -1
+      next: Check if Warp was successful
       param3: 70 # Custom command
+  - name: Check if Warp was successful
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 7 # use result from previous check
+    cases:
+      - 11 # false, go to can't use amiibo text
+      - -1 # true, don't do anything
 
 100-Town:
   - name: Remove Attention Mark from Pipit at night
