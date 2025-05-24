@@ -82,7 +82,7 @@
 - name: Lanayru Desert South
   hint_region: Lanayru Desert
   events:
-    Retrieve Party Wheel: Scrapper and 'Start_Dodohs_Quest' and Blow_Up_Covered_Timeshift_Stone
+    Retrieve Party Wheel: Scrapper and Blow_Up_Covered_Timeshift_Stone
     Ancient Flower Farming: Blow_Up_Covered_Timeshift_Stone
 
     # Hook Beetle to knock down statue platforms
@@ -587,82 +587,82 @@
   events:
     Unlock Lanayru Mine Entry Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Lanayru Mine Entry: Nothing
 
 - name: Desert Entrance Statue
   events:
     Unlock Desert Entrance Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Lanayru Desert South: Nothing
 
 - name: West Desert Statue
   events:
     Unlock West Desert Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Sand Oasis Middle: Nothing
 
 - name: Desert Gorge Statue
   events:
     Unlock Desert Gorge Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Temple of Time South: Nothing
 
 - name: Temple of Time Statue
   events:
     Unlock Temple of Time Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Temple of Time West Past Rubble: Nothing
 
 - name: North Desert Statue
   events:
     Unlock North Desert Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Lanayru Desert North: Nothing
 
 - name: Stone Cache Statue
   events:
     Unlock Stone Cache Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Lanayru Desert East: Nothing
 
 - name: Ancient Harbour Statue
   events:
     Unlock Ancient Harbour Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Ancient Harbour: Nothing
 
 - name: Skipper's Retreat Statue
   events:
     Unlock Skippers Retreat Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Skipper's Retreat Dock: Nothing
 
 - name: Shipyard Statue
   events:
     Unlock Shipyard Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Shipyard Dock: Nothing
 
 - name: Pirate Stronghold Statue
   events:
     Unlock Pirate Stronghold Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Pirate Stronghold Dock: Nothing
 
 - name: Lanayru Gorge Statue
   events:
     Unlock Lanayru Gorge Statue: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
     Lanayru Gorge: Nothing
