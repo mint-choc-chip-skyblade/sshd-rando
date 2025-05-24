@@ -23,13 +23,18 @@ def get_resolved_game_file_path(
     if specific_mod == "":
         return base_game_path, ""
 
-    game_path = None
+    game_path: str | None = None
 
     # Get the part of the path which just involves the game folders
     for i, part in enumerate(reversed(base_game_path.parts)):
         if part in ("romfs", "exefs"):
             game_path = "/".join(base_game_path.parts[-1 - i :])
             break
+
+    if game_path is None:
+        raise Exception(
+            f"Could not find romfs or exefs directory in base game path. Invalid base game path given: {base_game_path}."
+        )
 
     # Some mods don't recompress their files, so we have to check for both compressed and noncompressed variations
     game_path_2 = get_other_file_path(game_path)
@@ -52,18 +57,24 @@ def get_resolved_game_file_path(
     return base_game_path, ""
 
 
-def get_cache_oarc_path(oarc_file: str, other_mods: list[str] = []):
+def get_cache_oarc_path(
+    oarc_file: str, other_mods: list[str] = []
+) -> tuple[Path, bool]:
+    is_from_mod = False
+
     for mod in other_mods:
         path = CACHE_OARC_PATH / mod / oarc_file
+
         if path.exists():
             print(f'Found {oarc_file} from mod "{mod}"')
-            return path
+            is_from_mod = True
+            return (path, is_from_mod)
 
-    return CACHE_OARC_PATH / oarc_file
+    return (CACHE_OARC_PATH / oarc_file, is_from_mod)
 
 
-# Some mods don't recompress their files, so in a bunch of instances we have to check if both the compressed or uncompressed
-# ones exist
+# Some mods don't recompress their files, so in a bunch of instances
+# we have to check if both the compressed or uncompressed ones exist
 def get_other_file_path(path: str):
     return path[:-3] if path.endswith(".LZ") else f"{path}.LZ"
 
@@ -119,12 +130,11 @@ def verify_other_mods(other_mods: list[str]):
             build_combined_mod_file(file_path, other_mods)
 
 
-# Attempts to combine two archive files from different mods. If multiple mods modify the same files within the archive
-# then an error is thrown
+# Attempts to combine two archive files from different mods.
+# If multiple mods modify the same files within the archive then an error is thrown
 def build_combined_mod_file(game_path: str, other_mods: list[str] = []):
-
     # Get all the mods which modify this file
-    files_to_combine: list[U8File] = []
+    files_to_combine: list[tuple[U8File, str]] = []
     for mod in other_mods:
         path_to_file = OTHER_MODS_PATH / mod / game_path
         if path_to_file.exists():
@@ -186,7 +196,6 @@ def combine_mod_files(
 
 # If any active mods modify extra files not touched by the randomizer, then copy them over here
 def copy_extra_mod_files(other_mods: list[str], output_dir: Path):
-
     if not other_mods:
         return
 
@@ -196,14 +205,23 @@ def copy_extra_mod_files(other_mods: list[str], output_dir: Path):
     mod_folders = [COMBINED_MODS_FOLDER] + other_mods
 
     for mod in mod_folders:
-        for root, dirs, files in os.walk(OTHER_MODS_PATH / mod):
+        mod_path = OTHER_MODS_PATH / mod
+
+        for root, dirs, files in os.walk(mod_path):
             for file in files:
                 file_path = os.path.join(root, file)
+                found_fs = False
+
                 # Get the part of the path which just involves the game folders
                 for i, part in enumerate(reversed(Path(file_path).parts)):
                     if part in ("romfs", "exefs"):
                         file_path = "/".join(Path(file_path).parts[-1 - i :])
+                        found_fs = True
                         break
+
+                # Ignore files not in the romfs or exefs directories
+                if not found_fs:
+                    continue
 
                 path = output_dir / file_path
                 other_path = (
@@ -214,9 +232,7 @@ def copy_extra_mod_files(other_mods: list[str], output_dir: Path):
 
                 if not path.exists() and not other_path.exists():
                     print(f"Copying {mod}/{file_path} to output")
-                    write_bytes_create_dirs(
-                        path, (OTHER_MODS_PATH / mod / file_path).read_bytes()
-                    )
+                    write_bytes_create_dirs(path, (mod_path / file_path).read_bytes())
 
     # Since this is the last step in the process, we can delete the temporary combined mods folder here
     if Path(COMBINED_MODS_PATH).exists():

@@ -100,7 +100,7 @@ class AllPatchHandler:
         update_progress_value(50)
         create_shop_rupee_arcs()
         patch_object_folder(
-            self.world.config.output_dir / OBJECT_PATH_TAIL,
+            self.world.config.output_dir,
             self.stage_patch_handler.other_mods,
         )
 

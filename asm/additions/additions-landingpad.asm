@@ -303,6 +303,15 @@ b.eq override_inventory_caption_item_text
 cmp w8, #94
 b.eq randomize_music
 
+cmp w8, #95
+b.eq prefer_object_folder_for_stage_arcs
+
+cmp w8, #96
+b.eq setup_registers_for_general_modreplace
+
+cmp w8, #97
+b.eq prefer_modreplace_for_general_arcs
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000
