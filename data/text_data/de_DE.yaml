@@ -6223,70 +6223,74 @@
   standard:
     "Vielleicht schaffts du es, die absolute \nRekordmarke von <r<800 Punkten>> zu \nknacken! Versuch es bald noch mal!"
 
-# - name: Rickety Coaster Guaranteed Win Reward Choice Text
-#   standard:
-#     "Would you like <r<20 Rupees>>, an <r<Uncommon\nTreasure>>, or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]20 Rupees."
+- name: Rickety Coaster Guaranteed Win Reward Choice Text
+  standard:
+    "Möchtest du <r<20 Rubine>>, einen <r<seltenen \nSchatz>> oder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]20 Rubine."
 
-# - name: Bug Heaven Guaranteed Win Reward Choice Text
-#   standard:
-#     "Unless... Would you like those <r<Rare Bugs>>, or\nsome <r<Uncommon Bugs>>? Or maybe <r<80 Rupees>>?[1]Rare.[2]Uncommon.[3]80 Rupees."
+- name: Bug Heaven Guaranteed Win Reward Choice Text
+  standard:
+    "Außer... Möchtest du diese <r<sehr seltenen Insekten>>, oder \nein paar <r<seltene Insekten>>? Oder lieber <r<80 Rubine>>?[1]Sehr selten.[2]Selten.[3]80 Rubine."
 
 # # Pretty sure this text is actually impossible to get cos there's a hard 10 min cap on the timer.
 - name: Bug Heaven Easy No Prize Text
   standard:
-    "Zeit ist abgelaufen! Hm... \nDas hat leider etwas zu lange gedauert.
-    \n\n\nFür den Anfang versuche eine \nZeit von <r<unter 10 Minuten>> zu erreichen. \nBleib am Ball.
-    \n\nÜbrigens, Nachts kaufe ich Käfer, in meinem \nZimmer der Ritterschule, an. Komm vorbei\nund verkaufe mir alle Schönheiten die du findest."
+    "Zeit ist abgelaufen! Hm... \nDas hat leider etwas zu lange gedauert. \nFür einen Sieg hat es dieses Mal leider\nnicht gereicht!
+    \n\n\nDu weißt aber schon, dass das nicht \ngerade eine Glanzleistung war? Versuche \ndas nächste Mal <r<unter 10 Minuten>> \nzu bleiben.
+    \n\nÜbrigens... Nachts kaufe ich Insekten. Schau\ndoch mal bei mir vorbei, wenn die Sonne\nuntergegangen ist!"
 
-# - name: Bug Heaven Easy Beginner Low Prize Text
-#   standard:
-#     "Next time, try for <r<under five minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+- name: Bug Heaven Easy Beginner Low Prize Text
+  standard:
+    "Versuch beim nächsten Mal <r<unter 5 Minuten>> \nzu bleiben. Hier hast du <r<30 Rubine>>."
 
-# - name: Bug Heaven Easy Wrangler Low Prize Text
-#   standard:
-#     "Time's up! That was pretty decent,\nI have to admit.
-#     \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under five minutes>>."
+- name: Bug Heaven Easy Wrangler Low Prize Text
+  standard:
+    "Fertig! Das waren alle!\nNicht schlecht, das muss ich zugeben.
+    \n\n\nMerk dir gut, wo Insekten nisten, dann bist\ndu beim nächsten Mal noch etwas schneller.
+    \n\n\nWie wär's, wenn du beim nächsten Mal\nversuchst, <r<unter 5 Minuten>> zu bleiben?"
 
-# - name: Bug Heaven Easy Beginner Mid Prize Text
-#   standard:
-#     "Next time, pull out all the stops and\ntry to finish in <r<less than three minutes>>.
-#     \n\n\nOh, and your prize this time is \n<r<50 Rupees>>!"
+- name: Bug Heaven Easy Beginner Mid Prize Text
+  standard:
+    "Versuche dich weiter zu verbessern. Schaffst du\nes auch <r<unter 3 Minuten>>?
+    \n\n\nDiesmal bekommst du <r<50 Rubine>>!"
 
-# - name: Bug Heaven Easy Wrangler Mid Prize Text
-#   standard:
-#     "OK! Time! Hey... This is incredible!
-#     \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under three\nminutes>>.
-#     \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
+- name: Bug Heaven Easy Wrangler Mid Prize Text
+  standard:
+    "Fertig! Das waren alle!\nHui! Ein echter Rekord!
+    \n\n\nDu darfst dich nun zu Recht als zweitbester\nInsektenfänger gleich nach mir bezeichnen!
+    \n\n\nVersuch beim nächsten Mal, <r<unter 1 Minute>> zu bleiben!
+    \n\n\nNun, dann lass mich dir deinen Gewinn\nüberreichen. Etwas, das du lieben wirst...\n<r<5 Insekten>>!"
 
 - name: Bug Heaven Hard No Prize Text
   standard:
-    "Zeit ist abgelaufen! Hm... \nDas hat leider etwas zu lange gedauert.
-    \n\n\nFür den Anfang versuche eine \nZeit von <r<unter 3 Minuten>> zu erreichen. \nBleib am Ball.
-    \n\nÜbrigens, Nachts kaufe ich Käfer, in meinem \nZimmer der Ritterschule, an. Komm vorbei\nund verkaufe mir alle Schönheiten die du findest."
+    "Zeit ist abgelaufen! Hm... \nDas hat leider etwas zu lange gedauert. \nFür einen Sieg hat es dieses Mal leider\nnicht gereicht!
+    \n\n\nDu weißt aber schon, dass das nicht \ngerade eine Glanzleistung war? Versuche \ndas nächste Mal <r<unter 3 Minuten>> \nzu bleiben.
+    \n\nÜbrigens... Nachts kaufe ich Insekten. Schau\ndoch mal bei mir vorbei, wenn die Sonne\nuntergegangen ist!"
 
-# - name: Bug Heaven Hard Beginner Low Prize Text
-#   standard:
-#     "Next time, try for <r<under two minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+- name: Bug Heaven Hard Beginner Low Prize Text
+  standard:
+    "Versuch beim nächsten Mal <r<unter 2 Minuten>> \nzu bleiben. Hier hast du <r<30 Rubine>>."
 
-# - name: Bug Heaven Hard Wrangler Low Prize Text
-#   standard:
-#     "Time's up! That was pretty decent,\nI have to admit.
-#     \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under two minutes>>."
+- name: Bug Heaven Hard Wrangler Low Prize Text
+  standard:
+    "Fertig! Das waren alle!\nNicht schlecht, das muss ich zugeben.
+    \n\n\nMerk dir gut, wo Insekten nisten, dann bist\ndu beim nächsten Mal noch etwas schneller.
+    \n\n\nWie wär's, wenn du beim nächsten Mal\nversuchst, <r<unter 2 Minuten>> zu bleiben?"
 
-# - name: Bug Heaven Hard Beginner Mid Prize Text
-#   standard:
-#     "Next time, pull out all the stops and\ntry to finish in <r<less than one minute>>.
-#     \n\n\nOh, and your prize this time is \n<r<50 Rupees>>!"
+- name: Bug Heaven Hard Beginner Mid Prize Text
+  standard:
+    "Versuche dich weiter zu verbessern. Schaffst du\nes auch <r<unter 1 Minute>>?
+    \n\n\nDiesmal bekommst du <r<50 Rubine>>!"
 
-# - name: Bug Heaven Hard Wrangler Mid Prize Text
-#   standard:
-#     "OK! Time! Hey... This is incredible!
-#     \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under one\nminute>>.
-#     \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
+- name: Bug Heaven Hard Wrangler Mid Prize Text
+  standard:
+    "Fertig! Das waren alle!\nHui! Ein echter Rekord!
+    \n\n\nDu darfst dich nun zu Recht als zweitbester\nInsektenfänger gleich nach mir bezeichnen!
+    \n\n\nVersuch beim nächsten Mal, <r<unter 1 Minute>> zu bleiben!
+    \n\n\nNun, dann lass mich dir deinen Gewinn\nüberreichen. Etwas, das du lieben wirst...\n<r<5 Insekten>>!"
 
-# - name: Clean Cut Guaranteed Win Reward Choice Text
-#   standard:
-#     "You want <r<30 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]30 Rupees."
+- name: Clean Cut Guaranteed Win Reward Choice Text
+  standard:
+    "Möchtest du <r<30 Rubine>>, einen <r<seltenen \nSchatz>> oder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]30 Rubine."
 
 - name: Clean Cut Easy No Prize Text
   standard:
