@@ -140,7 +140,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn rotate_shop_items() {
+pub extern "C" fn rotate_shop_items() {
     unsafe {
         let shop_sample: *mut dAcShopSample;
         asm!("mov {0:x}, x19", out(reg) shop_sample);
@@ -166,7 +166,7 @@ pub fn rotate_shop_items() {
 }
 
 #[no_mangle]
-pub fn set_shop_display_height() -> f32 {
+pub extern "C" fn set_shop_display_height() -> f32 {
     unsafe {
         let shop_sample: *mut dAcShopSample;
         asm!("mov {0:x}, x20", out(reg) shop_sample);
@@ -216,6 +216,7 @@ pub fn set_shop_display_height() -> f32 {
                 }
             },
             flag::ITEMFLAGS::MEDIUM_WALLET => {
+                #[allow(clippy::if_same_then_else)]
                 if flag::check_itemflag(flag::ITEMFLAGS::GIANT_WALLET) != 0 {
                     display_height_offset = -32.0f32;
                 } else if flag::check_itemflag(flag::ITEMFLAGS::BIG_WALLET) != 0 {
@@ -237,7 +238,7 @@ pub fn set_shop_display_height() -> f32 {
 }
 
 #[no_mangle]
-pub fn set_shop_sold_out_storyflag() {
+pub extern "C" fn set_shop_sold_out_storyflag() {
     unsafe {
         let item_index: usize;
         asm!("ldrh {0:w}, [x20, #8]", out(reg) item_index);
@@ -253,7 +254,7 @@ pub fn set_shop_sold_out_storyflag() {
 }
 
 #[no_mangle]
-pub fn check_shop_sold_out_storyflag(item_index: usize) -> bool {
+pub extern "C" fn check_shop_sold_out_storyflag(item_index: usize) -> bool {
     unsafe {
         if item_index != 0x7F {
             let sold_out_storyflag = SHOP_ITEMS[item_index].sold_out_storyflag;
@@ -268,7 +269,7 @@ pub fn check_shop_sold_out_storyflag(item_index: usize) -> bool {
 }
 
 #[no_mangle]
-pub fn handle_shop_traps() {
+pub extern "C" fn handle_shop_traps() {
     unsafe {
         let shop_item: *mut dAcShopSampleShopItem;
         asm!("mov {0:x}, x20", out(reg) shop_item);
@@ -280,7 +281,7 @@ pub fn handle_shop_traps() {
 }
 
 #[no_mangle]
-pub fn shop_use_progressive_models() {
+pub extern "C" fn shop_use_progressive_models() {
     unsafe {
         let shop_sample: *mut dAcShopSampleShopItem;
         asm!("mov {0:x}, x26", out(reg) shop_sample);

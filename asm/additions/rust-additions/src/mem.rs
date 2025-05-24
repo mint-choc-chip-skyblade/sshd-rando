@@ -238,7 +238,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn fix_memory_leak(
+pub extern "C" fn fix_memory_leak(
     u8File: *mut c_void,
     heap: *mut Heap,
     align: i32,
@@ -250,7 +250,7 @@ pub fn fix_memory_leak(
         // debug::debug_print(arc_name.as_ptr() as *const c_char);
 
         if &arc_name[..6] == b"/oarc/" {
-            let mut arc_name_len = 0 as usize;
+            let mut arc_name_len = 0_usize;
 
             for c in &arc_name[6..] {
                 if *c == 0 {
@@ -288,7 +288,7 @@ pub fn fix_memory_leak(
 }
 
 #[no_mangle]
-pub fn arc_table_print(p1: actor::ACTORID, p2: *const actor::ActorTreeNode) {
+pub extern "C" fn arc_table_print(p1: actor::ACTORID, p2: *const actor::ActorTreeNode) {
     unsafe {
         let mut current_entry_num = 0;
         let mut next_entry = (*(*ARC_MGR).entries)[current_entry_num as usize];
@@ -307,7 +307,7 @@ pub fn arc_table_print(p1: actor::ACTORID, p2: *const actor::ActorTreeNode) {
 }
 
 #[no_mangle]
-pub fn load_custom_bzs(
+pub extern "C" fn load_custom_bzs(
     arc_table: *mut c_void,
     arc_name: *const c_char,
     parent_dir_name: *const c_char,
@@ -320,7 +320,7 @@ pub fn load_custom_bzs(
 }
 
 #[no_mangle]
-pub fn use_custom_bzs(
+pub extern "C" fn use_custom_bzs(
     arc_table: *mut c_void,
     arc_name: *const c_char,
     model_path: *const c_char,
@@ -415,9 +415,9 @@ pub fn use_custom_bzs(
 }
 
 #[no_mangle]
-pub fn debug_print_heap_info(heap: *mut Heap, heap_identifier: *const c_char) {
+pub extern "C" fn debug_print_heap_info(heap: *mut Heap, heap_identifier: *const c_char) {
     debug::debug_print_str(c"Heap info for: %s".as_ptr(), heap_identifier);
-    if heap != core::ptr::null_mut() {
+    if !heap.is_null() {
         debug::debug_print(c"Heap Name:".as_ptr());
         debug::debug_print(unsafe { (*heap).mName });
         debug::debug_print_num(c"Total Free Size: %d".as_ptr(), unsafe {
@@ -430,7 +430,7 @@ pub fn debug_print_heap_info(heap: *mut Heap, heap_identifier: *const c_char) {
 }
 
 #[no_mangle]
-pub fn debug_print_all_heap_info() {
+pub extern "C" fn debug_print_all_heap_info() {
     let heaps = unsafe {
         [
             (sCurrentHeap, c"sCurrentHeap".as_ptr()),

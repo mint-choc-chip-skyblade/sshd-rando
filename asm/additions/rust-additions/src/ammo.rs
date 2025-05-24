@@ -43,7 +43,7 @@ extern "C" {
 
 // Ammo pots
 #[no_mangle]
-pub fn drop_arrows_bombs_seeds(
+pub extern "C" fn drop_arrows_bombs_seeds(
     param2_s0x18: u8,
     roomid: u32,
     pos: *mut math::Vec3f,
@@ -94,7 +94,7 @@ pub fn drop_arrows_bombs_seeds(
 }
 
 #[no_mangle]
-pub fn drop_nothing(param2_s0x18: u8) {
+pub extern "C" fn drop_nothing(param2_s0x18: u8) {
     unsafe {
         // if should drop seeds, arrows, or bombs
         if param2_s0x18 == 0xB || param2_s0x18 == 0xC || param2_s0x18 == 0xD {

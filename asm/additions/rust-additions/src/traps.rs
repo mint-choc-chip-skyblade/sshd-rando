@@ -70,7 +70,7 @@ extern "C" {
 
 // Traps
 #[no_mangle]
-pub fn setup_traps(item_actor: *mut item::dAcItem) -> u16 {
+pub extern "C" fn setup_traps(item_actor: *mut item::dAcItem) -> u16 {
     unsafe {
         // Is trap if one of 0x000000F0 is unset
         let trapid_bitmask = 0xF;
@@ -99,7 +99,7 @@ pub fn setup_traps(item_actor: *mut item::dAcItem) -> u16 {
 }
 
 #[no_mangle]
-pub fn update_traps() {
+pub extern "C" fn update_traps() {
     unsafe {
         match TRAP_ID {
             // Burn trap
@@ -196,10 +196,10 @@ pub fn update_traps() {
 }
 
 #[no_mangle]
-pub fn handle_effect_timers() -> u32 {
+pub extern "C" fn handle_effect_timers() -> u32 {
     unsafe {
         // If in event, clear status effects
-        if EVENT_MGR != core::ptr::null_mut() && (*EVENT_MGR).probably_state != 0 {
+        if !EVENT_MGR.is_null() && (*EVENT_MGR).probably_state != 0 {
             // But if the cause is a trap, don't clear them
             if TRAP_DURATION > 0 {
                 return 0;
@@ -230,7 +230,7 @@ pub fn handle_effect_timers() -> u32 {
 }
 
 #[no_mangle]
-pub fn trap_should_burn_shield() -> bool {
+pub extern "C" fn trap_should_burn_shield() -> bool {
     unsafe {
         let shield_pouch_slot = (*FILE_MGR).FA.shield_pouch_slot as usize;
         if shield_pouch_slot < 8 {
@@ -245,7 +245,7 @@ pub fn trap_should_burn_shield() -> bool {
 }
 
 #[no_mangle]
-pub fn npc_traps() {
+pub extern "C" fn npc_traps() {
     unsafe {
         let mut itemid: u16;
         let mut trapid: u8;
@@ -267,7 +267,7 @@ pub fn npc_traps() {
 }
 
 #[no_mangle]
-pub fn fix_tbox_traps() {
+pub extern "C" fn fix_tbox_traps() {
     unsafe {
         let tbox_actor: *mut item::dAcTbox;
         asm!("mov {0:x}, x19", out(reg) tbox_actor);
@@ -289,7 +289,7 @@ pub fn fix_tbox_traps() {
 }
 
 #[no_mangle]
-pub fn spawned_actor_traps(
+pub extern "C" fn spawned_actor_traps(
     actorid: actor::ACTORID,
     parent: *mut c_void,
     actor_param1: u32,
@@ -308,7 +308,7 @@ pub fn spawned_actor_traps(
 }
 
 #[no_mangle]
-pub fn handle_closet_traps(item_id: u32) -> u32 {
+pub extern "C" fn handle_closet_traps(item_id: u32) -> u32 {
     unsafe {
         let closet_actor: *mut actor::dAcOBase;
         asm!("mov {0:x}, x19", out(reg) closet_actor);
@@ -323,7 +323,7 @@ pub fn handle_closet_traps(item_id: u32) -> u32 {
 }
 
 #[no_mangle]
-pub fn handle_bucha_traps() {
+pub extern "C" fn handle_bucha_traps() {
     unsafe {
         let bucha: *mut actor::dAcOBase;
         asm!("mov {0:x}, x19", out(reg) bucha);
@@ -339,7 +339,7 @@ pub fn handle_bucha_traps() {
 }
 
 #[no_mangle]
-pub fn handle_ac_boko_and_heartco_and_digspot_traps() {
+pub extern "C" fn handle_ac_boko_and_heartco_and_digspot_traps() {
     unsafe {
         let ac_boko: *mut actor::dAcOBase;
         asm!("mov {0:x}, x19", out(reg) ac_boko);
