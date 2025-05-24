@@ -6172,7 +6172,7 @@
              \n\n\nDamit können Sie Insekten einfangen.\nDas macht Spaß und ist zudem auch \nnoch sehr nützlich!
              \n\nUnd zum halben Preis von nur <r<25 Rubinen>>,\nbin ich sicher Sie machen einen \"guten Fang\",\nfinden Sie nicht auch?\n[1]Ich nehme es![2-]Nein, danke."
 
-# TODO: add translations (Beedle done, Bow done, Cut done), need to test guaranteed choice and add bug challenge
+# TODO: add translations (done)
 - name: Beedle Normal Shop Text Template
   standard: "|Das/Dies| dort |ist/sind| {sold_item}.\nIch verkaufe |es/sie| für nur <r<{normal_price}>> Rubine!\nMöchtest du |es/sie| kaufen?
              \n\n[1]Ich kaufe |es/sie|![2-]Nein danke."
@@ -6181,9 +6181,9 @@
   standard: "|Das/Dies| dort |ist/sind| {sold_item}.\nNur dieses Mal |ist es/sind sie| erhältlich zum halben Preis! |Es/Sie| |kann/können| |deins/deine| sein für \nnur <r<{discounted_price}>> Rubine!\nMöchtest du |es/sie| kaufen?
              \n\n[1]Ich kaufe |es/sie|![2-]Nein danke."
 
-- name: Pumpkin Archery Guaranteed Win Reward Choice Text
-  standard:
-    "Möchtest du <r<50 Rubine>>, einen <r<seltenen \nSchatz>> oder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]50 Rubine."
+# - name: Pumpkin Archery Guaranteed Win Reward Choice Text
+#   standard:
+#     "Möchtest du <r<50 Rubine>>, einen <r<seltenen \nSchatz>> oder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]50 Rubine."
 
 - name: Pumpkin Archery Easy No Prize Text
   standard:
@@ -6223,13 +6223,13 @@
   standard:
     "Vielleicht schaffts du es, die absolute \nRekordmarke von <r<800 Punkten>> zu \nknacken! Versuch es bald noch mal!"
 
-- name: Rickety Coaster Guaranteed Win Reward Choice Text
-  standard:
-    "Möchtest du <r<20 Rubine>>, einen <r<seltenen \nSchatz>> oder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]20 Rubine."
+# - name: Rickety Coaster Guaranteed Win Reward Choice Text
+#   standard:
+#     "Möchtest du <r<20 Rubine>>, einen <r<seltenen \nSchatz>> oder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]20 Rubine."
 
-- name: Bug Heaven Guaranteed Win Reward Choice Text
-  standard:
-    "Außer... Möchtest du diese <r<sehr seltenen Insekten>>, oder \nein paar <r<seltene Insekten>>? Oder lieber <r<80 Rubine>>?[1]Sehr selten.[2]Selten.[3]80 Rubine."
+# - name: Bug Heaven Guaranteed Win Reward Choice Text
+#   standard:
+#     "Außer... Möchtest du diese <r<sehr seltenen Insekten>>, oder \nein paar <r<seltene Insekten>>? Oder lieber <r<80 Rubine>>?[1]Sehr selten.[2]Selten.[3]80 Rubine."
 
 # # Pretty sure this text is actually impossible to get cos there's a hard 10 min cap on the timer.
 - name: Bug Heaven Easy No Prize Text
@@ -6288,9 +6288,9 @@
     \n\n\nVersuch beim nächsten Mal, <r<unter 1 Minute>> zu bleiben!
     \n\n\nNun, dann lass mich dir deinen Gewinn\nüberreichen. Etwas, das du lieben wirst...\n<r<5 Insekten>>!"
 
-- name: Clean Cut Guaranteed Win Reward Choice Text
-  standard:
-    "Möchtest du <r<30 Rubine>>, einen <r<seltenen \nSchatz>> oder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]30 Rubine."
+# - name: Clean Cut Guaranteed Win Reward Choice Text
+#   standard:
+#     "Möchtest du <r<30 Rubine>>, einen <r<seltenen \nSchatz>> oder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]30 Rubine."
 
 - name: Clean Cut Easy No Prize Text
   standard:
