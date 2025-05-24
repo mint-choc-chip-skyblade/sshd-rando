@@ -36,7 +36,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn simple_rng() -> u32 {
+pub extern "C" fn simple_rng() -> u32 {
     unsafe {
         RNG_SEED = RNG_SEED.wrapping_mul(1664525).wrapping_add(1013904223);
         RNG_SEED

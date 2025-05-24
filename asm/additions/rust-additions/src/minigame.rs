@@ -74,7 +74,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn prevent_minigame_death(final_health: i32) -> (u32, i32) {
+pub extern "C" fn prevent_minigame_death(final_health: i32) {
     unsafe {
         let mut new_final_health = final_health;
         // Set final health to 1 if we're in the thrill digger or bug heaven minigames
@@ -90,17 +90,20 @@ pub fn prevent_minigame_death(final_health: i32) -> (u32, i32) {
             restricted_pouch = 1;
         }
 
-        return (restricted_pouch, new_final_health);
+        asm!("mov w0, {0:w}", in(reg) restricted_pouch);
+        asm!("mov w1, {0:w}", in(reg) new_final_health);
     }
 }
 
 #[no_mangle]
-pub fn try_end_pumpkin_archery(bell_actor: *mut actor::dAcObell) -> *mut actor::dAcObell {
+pub extern "C" fn try_end_pumpkin_archery(
+    bell_actor: *mut actor::dAcObell,
+) -> *mut actor::dAcObell {
     unsafe {
         if ((*bell_actor).field_0x860 & 1) == 1 {
             let npc_pcs = actor::find_actor_by_type(actor::ACTORID::NPC_PCS, core::ptr::null_mut())
                 as *mut actor::dAcNpcPcs;
-            if npc_pcs != core::ptr::null_mut() {
+            if !npc_pcs.is_null() {
                 (*npc_pcs).pumpkin_archery_timer = 0;
             }
             asm!("mov w8, #1")
@@ -113,7 +116,7 @@ pub fn try_end_pumpkin_archery(bell_actor: *mut actor::dAcObell) -> *mut actor::
 }
 
 #[no_mangle]
-pub fn boss_rush_backup_flags(sceneindex: u16) {
+pub extern "C" fn boss_rush_backup_flags(sceneindex: u16) {
     unsafe {
         BOSS_RUSH_CURRENT_SCENEINDEX = sceneindex;
 
@@ -132,10 +135,11 @@ pub fn boss_rush_backup_flags(sceneindex: u16) {
 }
 
 #[no_mangle]
-pub fn boss_rush_restore_flags() {
+pub extern "C" fn boss_rush_restore_flags() {
     unsafe {
         let sceneindex = BOSS_RUSH_CURRENT_SCENEINDEX;
-        BOSS_RUSH_CURRENT_SCENEINDEX == 0xFFFF;
+        // TODO: is this necessary?
+        // BOSS_RUSH_CURRENT_SCENEINDEX = 0xFFFF;
 
         (*FILE_MGR).FA.sceneflags[sceneindex as usize] = BOSS_RUSH_SCENEFLAG_BKP;
         (*FILE_MGR).FA.dungeonflags[sceneindex as usize] = BOSS_RUSH_DUNGEONFLAG_BKP;

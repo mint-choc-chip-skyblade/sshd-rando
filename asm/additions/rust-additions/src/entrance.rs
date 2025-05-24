@@ -115,7 +115,7 @@ extern "C" {
 // all of the NEXT_* variables as this function gets called right after
 // those have been assigned.
 #[no_mangle]
-pub fn handle_er_cases() {
+pub extern "C" fn handle_er_cases() {
     unsafe {
         // Enforce a max speed after reloading
         // Prevents you running off high ledges from non-vanilla exits
@@ -194,7 +194,7 @@ pub fn handle_er_cases() {
 }
 
 #[no_mangle]
-pub fn next_stage_is_valid_at_night() -> bool {
+pub extern "C" fn next_stage_is_valid_at_night() -> bool {
     unsafe {
         if (&NEXT_STAGE_NAME[..5] == b"D000\0" || // Waterfall Cave
             &NEXT_STAGE_NAME[..5] == b"S000\0" || // The Goddess's Silent Realm
@@ -215,7 +215,7 @@ pub fn next_stage_is_valid_at_night() -> bool {
 // When checking stage info in this function be sure to use
 // all of the CURRENT_* variables
 #[no_mangle]
-pub fn handle_er_action_states() {
+pub extern "C" fn handle_er_action_states() {
     unsafe {
         // If we're spawning in the mogma turf dive entrance,
         // set Link to always be diving regardless of how he
@@ -230,7 +230,7 @@ pub fn handle_er_action_states() {
 }
 
 #[no_mangle]
-pub fn warp_to_start() -> bool {
+pub extern "C" fn warp_to_start() -> bool {
     unsafe {
         // Don't warp if in boss rush
         if flag::check_storyflag(530) != 0 || flag::check_storyflag(531) != 0 {
@@ -240,7 +240,7 @@ pub fn warp_to_start() -> bool {
         let start_info = &*(&WARP_TO_START_INFO as *const WarpToStartInfo);
 
         // Make sure the night storyflag remains in-sync with the actual time of day
-        if (*start_info).night == 0 {
+        if start_info.night == 0 {
             flag::unset_storyflag(737);
         } else {
             flag::set_storyflag(737);
@@ -248,10 +248,10 @@ pub fn warp_to_start() -> bool {
 
         GameReloader__actuallyTriggerEntrance(
             STAGE_MGR,
-            (*start_info).room.into(),
-            (*start_info).layer.into(),
-            (*start_info).entrance.into(),
-            (*start_info).night.into(),
+            start_info.room,
+            start_info.layer,
+            start_info.entrance,
+            start_info.night.into(),
             0,
             0,
             0xF,
@@ -277,7 +277,7 @@ pub fn warp_to_start() -> bool {
 }
 
 #[no_mangle]
-pub fn fix_sky_keep_exit(
+pub extern "C" fn fix_sky_keep_exit(
     game_reloader: *mut actor::GameReloader,
     stage_name: *mut [u8; 7],
     room: u32,
@@ -316,7 +316,7 @@ pub fn fix_sky_keep_exit(
 }
 
 #[no_mangle]
-pub fn require_sword_to_enter_trial_gate() -> bool {
+pub extern "C" fn require_sword_to_enter_trial_gate() -> bool {
     unsafe {
         let scen_link: u8;
         asm!("ldrb {0:w}, [x23, #0x4]", out(reg) scen_link);
@@ -330,7 +330,7 @@ pub fn require_sword_to_enter_trial_gate() -> bool {
 }
 
 #[no_mangle]
-pub fn require_sword_to_enter_sacred_realm(
+pub extern "C" fn require_sword_to_enter_sacred_realm(
     sceneflag_mgr: *mut c_void,
     roomid: u32,
     sceneflag: u32,
@@ -344,7 +344,7 @@ pub fn require_sword_to_enter_sacred_realm(
 }
 
 #[no_mangle]
-pub fn allow_saving_respawn_info_on_new_file_start() {
+pub extern "C" fn allow_saving_respawn_info_on_new_file_start() {
     unsafe {
         // Storyflag 1201 is the "can use amiibo" flag.
         // This is used as a check for setting the respawn info and forcing an
@@ -360,7 +360,7 @@ pub fn allow_saving_respawn_info_on_new_file_start() {
 }
 
 #[no_mangle]
-pub fn allow_autosave_on_new_file_start(param1: u64) -> u64 {
+pub extern "C" fn allow_autosave_on_new_file_start(param1: u64) -> u64 {
     unsafe {
         let mut w21: u32;
         asm!("mov {0:w}, w21", out(reg) w21);

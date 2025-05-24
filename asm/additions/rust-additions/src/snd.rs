@@ -76,7 +76,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn load_additional_sfx(snd_audio_mgr: u64, sound_id: i32) {
+pub extern "C" fn load_additional_sfx(snd_audio_mgr: u64, sound_id: i32) {
     unsafe {
         // Replaced instructions
         ((*(*SndAudioMgr__sInstance).vtable).fn9)(SndAudioMgr__sInstance, sound_id, 0, 0);
@@ -92,7 +92,7 @@ pub fn load_additional_sfx(snd_audio_mgr: u64, sound_id: i32) {
 }
 
 #[no_mangle]
-pub fn assign_item_textbox_collection_sfx(
+pub extern "C" fn assign_item_textbox_collection_sfx(
     fanfare_sound_mgr: *mut c_void,
     item_being_collected: flag::ITEMFLAGS,
 ) -> *mut c_void {
@@ -118,7 +118,7 @@ pub fn assign_item_textbox_collection_sfx(
 }
 
 #[no_mangle]
-pub fn randomize_music() {
+pub extern "C" fn randomize_music() {
     unsafe {
         let wzs_data_array = (*(*SndAudioMgr__sInstance).brsar_info).wzs_data;
         let mut index = 0;
