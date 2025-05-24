@@ -1,244 +1,248 @@
 # Translation by YourAverageLink, helped by JadeMinibou, and NULL
 
 - name: Trap Text
-  standard: "<slowtext>You got<pause 5>.<pause 5>.<pause 5>. <pause 15>Trapped!"
+  standard: "<slowtext>Vous êtes<pause 5> tombé<pause 5> dans<pause 5> un <pause 15>piège !"
 
 - name: Scrapper Item Get Text
-  standard: "You found Gondo's robot, <y<Scrapper>>!
-    \n\n\n\nBe sure to take care of him.\n...even if he's a little mean."
+  standard: "Vous avez retrouvé le robot de Dorco, <y<Récupix>> !
+    \n\n\n\nPrenez bien soin de lui.\n... même s'il est quelque peu désagréable."
 
 - name: Some Tadtones Collected text
-  standard: "You got a group of <y<Tadtones>>!\nOnly <r<<numeric arg0> >> left to find!"
+  standard: "Vous avez obtenu un groupe de <y<fironotes>> !\nPlus que <r<<numeric arg0>>> !"
 
 - name: All Tadtones Collected text
   standard:
-    "You got the last group of <y<Tadtones>>!\nYou found every last one of them!
-    \n\n\nHurry to <b<Flooded Faron Woods>> and talk\nto the <r<Water Dragon>> to claim your\nreward!"
+    "Vous avez obtenu le dernier groupe de <y<fironotes>> !\nVous les avez toutes trouvées !
+    \n\n\nAllez à la <b<forêt de Firone inondée>> et parlez au <r<dragon d'eau>> pour récupérer votre récompense !"
 
 - name: Spiral Charge Text
-  standard: "You learned the <y<Spiral Charge>>!"
+  standard: "Vous avez appris l'<y<attaque tornade>> !"
 
 - name: Goddess Longsword Text
-  standard: "You got the <y<Goddess Longsword>>!\nThe flames of Farore have improved your\nsword, making it longer and sharp enough\nto do twice as much damage!"
+  standard: "Vous avez obtenu la <y<longue épée divine>> !\nEn recevant la flamme de Farore, la lame de votre épée s'est allongée et son tranchant s'est amélioré !"
 
 - name: Goddess White Sword Text
-  standard: "You got the <y<Goddess White Sword>>!\nThe flames of Nayru have transformed\nyour blade, expanding Fi's powers.\n\nShe can now help you use your <r<dowsing>>\nability to search for more objects!"
+  standard: "Vous avez obtenu la <y<blanche épée divine>> !\nEn recevant la flamme de Nayru, Fay s'est éveillée à de nouveaux pouvoirs de <r<détection>> !"
 
 - name: Master Sword Text
-  standard: "You got the <y<Master Sword>>!\nThe flames of Din have imbued your\nblade with a sacred white light that\ndemons revile."
+  standard: "Vous avez obtenu l'<y<épée de légende>> !\nEn recevant la flamme de Din, votre épée s'est emplie d'une lumière sacrée qui peut repousser les démons !"
 
 - name: True Master Sword Text
-  standard: "You got the <y<True Master Sword>>!\nThe goddess has blessed your blade, and\nthe Master Sword has at last achieved its\nultimate form!"
+  standard: "Vous avez obtenu la <y<vraie épée de légende>> !\nGrâce à la bénédiction de la Déesse, l'<r<épée de\nlégende>> a atteint le paroxysme de sa puissance !"
 
 - name: Harp Text
-  standard: "You got the <y<Goddess's Harp>>!\nBut there's no time to admire it!\nYou can play it with <icon 30>."
+  standard: "Vous avez obtenu la <color yellow<lyre de la Déesse >coloroff>! Mais ce\nn'est pas le moment de l'admirer...\nVous pouvez en jouer avec <icon 30>."
 
 - name: Harp Inventory Text
-  standard: "A traditional instrument from Skyloft. You\ncan play it with <icon 30>."
+  standard: "Charmant instrument traditionnel de Célesbourg.\nVous pouvez en jouer avec <icon 30>."
 
 - name: Emerald Tablet text
-  standard: "You got the <y<Emerald Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
+  standard: "Vous avez obtenu la <y<stèle émeraude>> !\nC'est une vieille plaque en pierre très lourde."
 
 - name: Ruby Tablet text
-  standard: "You got the <y<Ruby Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
+  standard: "Vous avez obtenu la <y<stèle rubis>> !\nC'est une vieille plaque en pierre très lourde."
 
 - name: Amber Tablet text
-  standard: "You got the <y<Amber Tablet>>!\nThe weathered surface of this heavy stone\ntablet feels very old."
+  standard: "Vous avez obtenu la <y<stèle ambre>> !\nC'est une vieille plaque en pierre très lourde."
 
 - name: Farore's Courage Text
-  standard: "You learned <y<Farore's Courage>>!"
+  standard: "Vous avez appris le <y<Courage de Farore>> !"
 
 - name: Nayru's Wisdom Text
-  standard: "You learned <y<Nayru's Wisdom>>!"
+  standard: "Vous avez appris la <y<Sagesse de Nayru>> !"
 
 - name: Din's Power Text
-  standard: "You learned <y<Din's Power>>!"
+  standard: "Vous avez appris la <y<Puissance de Din>> !"
 
 - name: Faron SotH text
-  standard: "You learned the <y<Water Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
+  standard: "Vous avez appris la <y<mélodie du dragon d'eau>> !\nC'est une des mélodies du <y<Chant du héros>> !"
 
 - name: Eldin SotH text
-  standard: "You learned the <y<Fire Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
+  standard: "Vous avez appris la <y<mélodie du dragon de feu>> !\nC'est une des mélodies du <y<Chant du héros>> !"
 
 - name: Lanayru SotH text
-  standard: "You learned the <y<Thunder Dragon's Song>>!\nThis is a part of the <y<Song of the Hero>>!"
+  standard: "Vous avez appris la <y<mélodie du dragon de foudre>> !\nC'est une des mélodies du <y<Chant du héros>> !"
 
 - name: Full SotH text
-  standard: "You learned the <y<final part of the\nSong of the Hero>>...\n\n\nThe <y<Song of the Hero>> is now complete!"
+  standard: "Vous avez appris la <y<dernière mélodie du Chant du héros>>...\n\n\nVous avez reconstitué le <y<Chant du héros>> !"
 
 - name: Cold Pumpkin Soup text
-  standard: "You got some <y<Cold Pumpkin Soup>>!\nThis homemade soup is Pumm's specialty,\nbut someone's let it get cold..."
+  standard: "Vous avez obtenu de la <y<soupe de citrouille froide>> !\nC'est la spécialité de Potron, mais quelqu'un l'a laissé refroidir..."
 
 - name: Five Gratitude crystal counter
-  standard: "You got <r<five>> <y<Gratitude Crystals>>!\nThat is <r<<numeric arg1> >>in total!"
+  standard: "Vous avez obtenu <r<cinq>> <y<cristaux de gratitude>> !\nÇa en fait <r<<numeric arg1>>> en tout !"
 
 - name: Single Gratitude crystal counter
-  standard: "You got <r<one>> <y<Gratitude Crystal>>!\nThat is <r<<numeric arg1> >>in total!"
+  standard: "Vous avez obtenu <r<un>> <y<cristal de gratitude>> !\nÇa en fait <r<<numeric arg1>>> en tout !"
 
 - name: Skyview Key Text
-  standard: "You got a <g<Skyview Temple>> Small Key!"
+  standard: "Vous avez obtenu une petite clé pour le <g<temple de la contemplation>> !"
 
   # This is an intentional duplicate of the above entry
 - name: Item 200 Text
-  standard: "You got a <g<Skyview Temple>> Small Key!"
+  standard: "Vous avez obtenu une petite clé pour le <g<temple de la contemplation>> !"
 
 - name: Item 201 Text
-  standard: "You got a <y<Lanayru Mining Facility>> Small\nKey!"
+  standard: "Vous avez obtenu une petite clé pour la <y<raffinerie de Lanelle>> !"
 
 - name: Item 202 Text
-  standard: "You got a <b<Ancient Cistern>> Small Key!"
+  standard: "Vous avez obtenu une petite clé pour la <b<grande caverne antique>> !"
 
 - name: Item 203 Text
-  standard: "You got a <r<Fire Sanctuary>> Small Key!"
+  standard: "Vous avez obtenu une petite clé pour le <r<sanctuaire ancien>> !"
 
 - name: Item 204 Text
-  standard: "You got a <y+<Sandship>> Small Key!"
+  standard: "Vous avez obtenu une petite clé pour le <y+<galion des sables>> !"
 
 - name: Item 205 Text
-  standard: "You got a <s<Sky Keep>> Small Key!"
+  standard: "Vous avez obtenu une petite clé pour la <s<tour des cieux>> !"
 
 - name: Item 206 Text
-  standard: "You got a <ye<Lanayru Caves>> Small Key!"
+  standard: "Vous avez obtenu une petite clé pour la <ye<grotte de Lanelle>> !"
 
 - name: Item 207 Text
-  standard: "You got the <g<Skyview Temple>> Map!"
+  standard: "Vous avez obtenu la carte du <g<temple de la contemplation>> !"
 
 - name: Item 208 Text
-  standard: "You got the <r+<Earth Temple>> Map!"
+  standard: "Vous avez obtenu la carte du <r+<temple de la terre>> !"
 
 - name: Item 209 Text
-  standard: "You got the <y<Lanayru Mining Facility>> Map!"
+  standard: "Vous avez obtenu la carte de la <y<raffinerie de Lanelle>> !"
 
 - name: Item 210 Text
-  standard: "You got the <b<Ancient Cistern>> Map!"
+  standard: "Vous avez obtenu la carte de la <b<grande caverne antique>> !"
 
 - name: Item 211 Text
-  standard: "You got the <r<Fire Sanctuary>> Map!"
+  standard: "Vous avez obtenu la carte du <r<sanctuaire ancien>> !"
 
 - name: Item 212 Text
-  standard: "You got the <y+<Sandship>> Map!"
+  standard: "Vous avez obtenu la carte du <y+<galion des sables>> !"
 
 - name: Item 213 Text
-  standard: "You got the <s<Sky Keep>> Map!"
+  standard: "Vous avez obtenu la carte de la <s<tour des cieux>> !"
 
 - name: Can't buy Pouch text
-  standard: "You need an <y<Adventure Pouch>> to buy\nthis!"
+  standard: "Il vous faut la <y<sacoche d'aventurier>> pour acheter ceci !"
 
 - name: Potion Lady Text Patch
-  standard: "Just so you know, I can't sell you a \npotion if you don't have an Empty \nBottle to pour it into!
-             \n\n\x0E\x01\x09\x04\x09\x90For some reason, I like you, though, so\nI'll give you a spare item I've\nbeen keeping here in the stall!\nOh, it's nothing. It's my little gift."
+  standard: "Tu peux seulement acheter mes potions si tu\npossèdes des flacons vides.
+             \n\n\x0E\x01\x09\x04\x09\x90Allez, comme je t'aime bien, je t'en offre un\nen cadeau !"
 
 - name: Does not have slingshot
-  standard: "\x0E\x01\x09\x04\x00\x01By the way, <heroname>, I have been \nlooking for new sources of research\nabout <b<plant life>>.\n\nIf you ever find something, please meet\nme <r<in the Knight Academy>>!"
+  standard: "\x0E\x01\x09\x04\x00\x01Au fait, <heroname>, je suis à la recherche de nouveaux <b<types de plantes>>.\n\nSi tu trouves quelque chose, viens me voir <r<dans l'école de chevalerie>> !"
 
 - name: Does have slingshot
-  standard: "\x0E\x01\x09\x04\x00\x01Oh, <heroname>, something tells me you\nmight know some <b<plant life>> I could\nresearch! Please meet me \n<r<in the Knight Academy>>!"
+  standard: "\x0E\x01\x09\x04\x00\x01Oh, <heroname>, quelque chose me dit que tu as découvert un <b<type de plantes>> que je pourrais étudier ! Reviens me parler <r<dans l'école de chevalerie>> !"
 
 - name: No Sword Text
-  standard: "You don't have a Sword,\nso I can't let you play!"
+  standard: "Tu n'as pas d'épée,\nje ne peux pas de laisser jouer !"
 
 - name: Patch Gondo Options Text After Check
-  standard: "Hey, kid! Anything to upgrade today?\n[1]Upgrade gear.[2]Repair shield.[3-]No, thanks."
+  standard: "Hé, garçon ! Tu veux améliorer quelque chose ?\n[1]Améliorer[2]Réparer[3-]Non merci"
 
 - name: Gondo Options Text
   standard:
-    "Heyyyyy! Welcome to the Scrap Shop!\nI can use the stuff you find to upgrade\nyour gear and make it even stronger!
-    \n\nAnd if your shield takes a beating, no\nworries. I can fix that too.\nSo what'll it be?\n[1]Upgrade gear.[2]Fix shield.[3]<r<Repair Junk?>>[4-]Never mind."
+    "Yo ! Ici, c'est l'atelier de rénovation. J'peux\naméliorer un max de tes objets !\n\n\n
+    J'peux aussi réparer ton bouclier s'il est\nendommagé. Alors, qu'est‐ce que j'peux\nfaire pour toi ?\n\n[1]Améliorer[2]Réparer[3]Réparer le <r<robot>>[4-]Rien"
 
 - name: Patch Gondo Repair Scrapper Text 1
-  standard: "Oh that?\nWell, my old Gramps did tell me this:
-    \n\n\n\"You can get this working again with\nthe extract from an <y<Ancient Flower>>.\"\nBut I've never even heard of, much less\nseen, any such thing!\n[1]Take mine![2-]Me neither."
+  standard: "Oh ça ? Si j'en crois l'histoire de papi, il aurait besoin d'une huile extraite d'une <y<fleur ancienne>>.\n\n\n
+    J'en ai jamais vu dans le coin, ni même entendu parler...\n[1]La voici[2-]Moi non plus"
 
 - name: Patch Gondo Repair Scrapper Text 2
-  standard: "So this is an <y<Ancient Flower>>?!\nI can feel some slick, oily stuff coming\nout of its stem! Great, with this we can\nfix my old Gramps' stuff!\n...Wait right here! I'll have it up and\nrunning in no time!"
+  standard:
+    "Waouh ! C'est ça, la <y<fleur ancienne >>? Ouais, on dirait bien qu'une sorte d'huile suinte de la racine !\n\n
+    J'devrais pouvoir réparer <b<Récupix>> avec ça !\n\n\n\n
+    Bouge pas, j'essaie tout de suite !"
 
 - name: Patch post Gondo Repair Text
-  standard: "Well, here you are. All fixed up!
-    \n\n\n\nI couldn't have done it without your\nhelp. So, here, you have it...\nwhat ever this is..."
+  standard: "Et voilà, c'est bon. Il est comme neuf !\n\n\n\n
+    J'aurais rien pu faire sans ton aide. Du coup, je te le laisse, tiens."
 
 - name: Change Night Treasures/Bugs Question
-  standard: "Want to sell something different?\n[1]Yes[2-]No"
+  standard: "Tu veux vendre autre chose ?\n[1]Oui[2-]Non"
 
 - name: Fix Soup textboxes
-  standard: "What's the matter? You look like\nyou've got something mighty\nserious on your mind.\n[1]Soup[2-]No Soup"
+  standard: "Qu'est‐ce qu'il t'arrive ? Je sais reconnaître le\nvisage d'un jeune homme perturbé, et toi, gamin,\ntu as l'air perturbé !\n[1]Soupe[2-]Pas de soupe"
 
 - name: New text Option
-  standard: "Hey, you look like you have a question?\n[1]<r<Levias>>[2-]Other Things"
+  standard: "Hé, t'as une question pour moi ?\n[1]<r<Narisha>>[2-]Autre chose"
 
 - name: New Kina Text Option
-  standard: "Hey, kid, what do you need from me?\n[1]Plowing the fields?[2]Carrying pumpkins![3-]Nothing."
+  standard: "Salut ! Tu veux m'aider ?\n[1]Labourer la terre[2]Porter les citrouilles[3-]Rien"
 
 - name: Kina Scrapper Hint Text
-  standard: "I wish someone could help plow these fields...\nBut even if I found someone, I'd need <r<a way to\ntransport them>> first..."
+  standard: "J'espère que quelqu'un pourra m'aider pour labourer la terre...\nMais même si je trouvais quelqu'un, je ne saurais pas comment <r<l'amener ici>>..."
 
 - name: Owlan Scrapper Hint Text
-  standard: "Actually, let's talk about this matter\nanother time. Even if we found what I\nwanted, we'd have no <r<way to transport it>>\nback here."
+  standard: "En fait, reparlons-en une autre fois. Même si tu trouvais quelque chose, nous n'avons aucun moyen de <r<le déplacer>> jusqu'ici."
 
 - name: Statue Lower Question
-  standard: "Do you want to reset the statue?\n[1]Yes[2-]No"
+  standard: "Veux-tu faire redescendre la statue ?[1]Oui[2-]Non"
 
 - name: Already Completed Tadtones Text
-  standard: "You have already completed my final\ntest. There is nothing more I can do\nfor you."
+  standard: "Tu as déjà réussi mon épreuve. Je ne peux plus rien pour t'aider."
 
 - name: Flooded Faron Reentry Text
-  standard: "Would you like me to <r<flood the forest>>\nagain?\n[1]Yes[2-]No"
+  standard: "Veux-tu que j'<r<inonde la forêt>> de nouveau ?\n[1]Oui[2-]Non"
 
 - name: Flooded Faron Entry Question
-  standard: "Here to accept my final test? I will\n<r<flood the forest>> if you choose to\naccept.\n[1]Yes[2-]No"
+  standard: "Prêt à te soumettre à mon épreuve ? Si tu acceptes, j'<r<inonderai>> la forêt\n[1]Oui[2-]Non"
 
 - name: Declined Flooded Faron Offer Text
-  standard: "Very well. Talk to me again if you\nchange your mind."
+  standard: "Très bien. Reviens me parler si tu changes d'avis."
 
 - name: Yerbal intro text
-  standard: "They used to call me <b<Yerbal>>. Now I'm\njust the old <b<Kikwi hermit>>."
+  standard: "Je suis l'<b<ermite>> Tikwi de ces bois, protecteur\nde la goyave et de l'aubépin !"
 
 - name: Yerbal open floria gates text
   standard:
-    "However, <b<Faron>>, the Water Dragon,\nlet me know a secret of hers.\nKwwwwwwrk...
-    \n\nSee, she gave me a <r<spare key>> to the\nLake, kwwwrk!
-    \n\n\nDon't tell her I'm letting you in\nthough. I've heard stories of folks\nwho caught her in a fussy mood.
-    \n\nThey ended up as midmorning snacks,\nkwwwwrk!"
+    "<b<Farore>>, le dragon d'eau, m'a confié un secret très important.\n\n\n
+    Vois-tu, elle m'a donné une <r<clé>> pour le lac !\n\n\n
+    Ne lui dis pas que je t'ai laissé entrer.\n
+    Madame le dragon d'eau est très soupe au lait, et j'ai pas envie de finir en salade !"
 
 - name: Yerbal floria gates intro text
   standard:
-    "See those gates over there? They\nlead to <b<Lake Floria>>. However, the\n<r<Water Dragon>> has sealed them shut to\nall those she judged unworthy...
-    \nBut don't worry, kwwwwrk. I'll let you\nin on the trick to opening the gate."
+    "Tu vois cette grande porte ? Elle mène au <b<lac Faroria>>.
+    Cependant, le <r<dragon d'eau>> l'a solidement fermée pour empêcher les intrus d'entrer...\n
+    Mais je vais te révéler comment on ouvre cette\nporte, petit pin."
 
 - name: Flooded Faron Exit Question
-  standard: "Leaving so soon? I can drain the forest\nif you wish to return later.\n[1]Yes[2-]No"
+  standard: "Veux-tu déjà partir ? Je peux faire baisser le niveau de l'eau si tu veux revenir plus tard.\n[1]Oui[2-]Non"
 
 - name: Continue With Tadtones Text
-  standard: "Very well. Talk to me again if you\nchange your mind."
+  standard: "Très bien. Reviens me parler si tu changes d'avis."
 
 - name: No Mitts Text
-  standard: "You don't have Digging Mitts,\nso I can't let you play!"
+  standard: "Tu n'as pas de gants creuse-tout,\ndonc je ne peux pas te laisser jouer !"
 
 - name: Boko Base Exit Question
-  standard: "Want to leave <b<Bokoblin Base>>?\n[1]Yes[2-]No"
+  standard: "Veux-tu sortir de la <b<base des Bokoblins>>?\n[1]Oui[2-]Non"
 
 - name: Boko Base Entry Question
-  standard: "Want to enter <b<Bokoblin Base>>?\n[1]Yes[2-]No"
+  standard: "Veux-tu entrer dans la <b<base des Bokoblins>>?\n[1]Oui[2-]Non"
 
 - name: Declined Boko Base Offer Text
-  standard: "Very well. Talk to me again if you\nchange your mind."
+  standard: "Très bien. Reviens me parler si tu changes d'avis."
 
 - name: Post Plats' Gift text
-  standard: "See ya around, pal!"
+  standard: "Allez, à plus !"
 
 - name: Fi text text to leave dungeon
-  standard: "You can't beat this dungeon at the\npresent time, I would suggest coming\nback later."
+  standard: "Vous ne pouvez pas terminer ce donjon pour l'instant. Je vous conseille de revenir plus tard."
 
 - name: Patch Fi text before Demise
-  standard: "Master <heroname>, I have\nimportant information for you.\n\n\nMy analysis indicates a 100% chance\nthat entering this portal will\n<r<conclude>> your journey.\n\nAre you ready to proceed?\n[1]I'm ready![2-]Not yet..."
+  standard: "Maître, Fay au rapport. La probabilité que ce portail mène à la fin de votre aventure est de 100 %.\n\nDésirez‐vous continuer ?\n[1-]Et comment ![2]Pas pour\nl'instant..."
 
 - name: Patch Fi text before Demise 2
-  standard: "Understood, Master <heroname>.\nThank you for taking me on this\njourney with you."
+  standard: "Très bien, Maître <heroname>.\nCe voyage sera gravé en ma\nmémoire, comme le plus précieux des souvenirs..."
 
 - name: Impa Complete Triforce text
-  standard: "Though your wish has been granted by\nthe <y+<Triforce>>, <b<Ghirahim>> escaped with\nZelda through the <r<great doors\nat the front of the temple>>.\nYou may yet catch him before it's too\nlate. Hurry, <heroname>!"
+  standard: "Bien que ton vœu ait été exaucé par\n la <y+<Triforce>>, <b<Ghirahim>> a pu s'enfuir avec\nZelda par la <r<grande porte d'entrée\ndu temple>>.\nIl n'est peut-être pas trop tard.\nHâte-toi, <heroname> !"
 
 - name: The Old One skip harp playing text
-  standard: "I see you have acquired the <y<harp>>. Well done.\nLet me teach you a <b<song>>, it will be useful for\nyour adventure."
+  standard: "Je vois que tu as obtenu la <y<lyre de la Déesse>>. Très bien, je vais t'apprendre un <b<Chant>> qui te sera utile pour ton aventure."
 
 - name: Path Hint
   standard: They say that <regions> |is/are| on the path to <goal_name>.
