@@ -48,9 +48,9 @@ bl 0x7100659af0
 
 ; Load general arcs from romfs/ModReplace where possible
 .offset 0x7100deb2cc
-mov w8, #96 // replaced instructions / function setup
+mov w8, #96 ; replaced instructions / function setup
 bl additions_jumptable
-mov w8, #97 // prefer_modreplace_for_general_arcs
+mov w8, #97 ; prefer_modreplace_for_general_arcs
 bl additions_jumptable
 cbnz w0, 0x7100deb604 ; return 1
 nop
