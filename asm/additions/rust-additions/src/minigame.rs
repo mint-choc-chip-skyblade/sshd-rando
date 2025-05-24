@@ -74,8 +74,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-#[warn(improper_ctypes_definitions)]
-pub extern "C" fn prevent_minigame_death(final_health: i32) -> (u32, i32) {
+pub extern "C" fn prevent_minigame_death(final_health: i32) {
     unsafe {
         let mut new_final_health = final_health;
         // Set final health to 1 if we're in the thrill digger or bug heaven minigames
@@ -91,7 +90,8 @@ pub extern "C" fn prevent_minigame_death(final_health: i32) -> (u32, i32) {
             restricted_pouch = 1;
         }
 
-        return (restricted_pouch, new_final_health);
+        asm!("mov w0, {0:w}", in(reg) restricted_pouch);
+        asm!("mov w1, {0:w}", in(reg) new_final_health);
     }
 }
 
