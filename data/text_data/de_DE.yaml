@@ -6173,55 +6173,55 @@
              \n\nUnd zum halben Preis von nur <r<25 Rubinen>>,\nbin ich sicher Sie machen einen \"guten Fang\",\nfinden Sie nicht auch?\n[1]Ich nehme es![2-]Nein, danke."
 
 # TODO: add translations
-# - name: Beedle Normal Shop Text Template
-#   standard: "|That/Those| there |is/are| {sold_item}.\nI'm selling |it/them| for only <r<{normal_price}>> rupees!\nWant to buy |it/them|?
-#              \n\n[1]I'll buy |it/them|![2-]No, thanks."
+- name: Beedle Normal Shop Text Template
+  standard: "|Das/Dies| dort |ist/sind| {sold_item}.\nIch verkaufe |es/sie| für nur <r<{normal_price}>> Rubine!\nMöchtest du |es/sie| kaufen?
+             \n\n[1]Ich kaufe |es/sie|![2-]Nein danke."
 
-# - name: Beedle Discounted Shop Text Template
-#   standard: "|That/Those| there |is/are| {sold_item}.\nJust this once |it's/they're| half off!\n|It/They| can be yours for just <r<{discounted_price}>> rupees!\nWant to buy |it/them|?
-#              \n[1]I'll buy |it/them|![2-]No, thanks."
+- name: Beedle Discounted Shop Text Template
+  standard: "|Das/Dies| dort |ist/sind| {sold_item}.\nNur dieses Mal |ist es/sind sie| erhältlich zum halben Preis!\n|Es/Sie| |kann/können| |deins/deine| sein für nur <r<{discounted_price}>> Rubine!\nMöchtest du |es/sie| kaufen
+             \n\n[1]Ich kaufe |es/sie|![2-]Nein danke."
 
-# - name: Pumpkin Archery Guaranteed Win Reward Choice Text
-#   standard:
-#     "Would you like <r<50 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]50 Rupees."
+- name: Pumpkin Archery Guaranteed Win Reward Choice Text
+  standard:
+    "Möchtest du <r<50 Rubine>>, einen <r<seltenen \nSchatz>> oder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]50 Rubine."
 
-# - name: Pumpkin Archery Easy No Prize Text
-#   standard:
-#     "You scored <numeric arg0>.
-#     \n\n\n\nJust not feeling it today, huh,\n<heroname>? Sorry, but you\ndon't get a prize with that score.
-#     \n\nThe easiest way to hit a pumpkin is\nto lead it. You know, put the cursor a\nlittle ahead of it as it's flying.
-#     \n\nDo that, and I bet you can score\n<r<10 points>> or so.
-#     \n\n\nNot that I'm giving you advice or\nanything. I mean, I know you know\nwhat you're doing."
+- name: Pumpkin Archery Easy No Prize Text
+  standard:
+    "Nur <numeric arg0>...
+    \n\n\n\nOh... Heute hattest du wohl keinen sehr guten \nTag, <heroname>. Für diese Punktzahl \nkann ich dir leider keinen Preis geben...
+    \n\nVersuche, die Flugbahn des Kürbisses mit \neinzuberechnen und bewege das Fadenkreuz \nein wenig vor den Kürbis. So triffst du \nbestimmt öfters!
+    \n\nUnd vielleicht erreichst du so auch \n<r<10 Punkte>>...
+    \n\n\nAber das wusstest du bestimmt alles bereits, \nnicht wahr?"
 
-# - name: Pumpkin Archery Easy Low Prize Text
-#   standard:
-#     "Wow, <numeric arg0>! Nice job,\n<heroname>!
-#     \n\n\nIt's not the best score ever, but you\nwere pretty smooth, <heroname>!
-#     \n\n\nNext time, I want you to aim for at\nleast <r<150 points>>!
-#     \n\n\nAnyway, here's 50 Rupees I've earned\nfrom doing chores for the grumpy\nkitchen lady."
+- name: Pumpkin Archery Easy Low Prize Text
+  standard:
+    "Du hast <numeric arg0>! Das ist großartig,\n<heroname>!
+    \n\n\nDu kannst das bestimmt noch besser, aber deine \nLeistung war schon ganz ordentlich!
+    \n\n\nVersuche als Nächstes, eine Punktzahl von \n<r<150 Punkten>> zu erreichen!
+    \n\n\nAls Preis für deine Leistung gebe ich dir \50 hart verdiente Rubine!"
 
-# - name: Pumpkin Archery Easy Mid Prize Text
-#   standard:
-#     "It would be great to see you hit <r<400\npoints>> and set a record next time.\nGive it your best shot!"
+- name: Pumpkin Archery Easy Mid Prize Text
+  standard:
+    "Vielleicht schaffts du es, die absolute \nRekordmarke von <r<400 Punkten>> zu \nknacken! Versuch es bald noch mal!"
 
-# - name: Pumpkin Archery Hard No Prize Text
-#   standard:
-#     "You scored <numeric arg0>.
-#     \n\n\n\nJust not feeling it today, huh,\n<heroname>? Sorry, but you\ndon't get a prize with that score.
-#     \n\nThe easiest way to hit a pumpkin is\nto lead it. You know, put the cursor a\nlittle ahead of it as it's flying.
-#     \n\nDo that, and I bet you can score\n<r<400 points>> or so.
-#     \n\n\nNot that I'm giving you advice or\nanything. I mean, I know you know\nwhat you're doing."
+- name: Pumpkin Archery Hard No Prize Text
+  standard:
+    "Nur <numeric arg0>...
+    \n\n\n\nOh... Heute hattest du wohl keinen sehr guten \nTag, <heroname>. Für diese Punktzahl \nkann ich dir leider keinen Preis geben...
+    \n\nVersuche, die Flugbahn des Kürbisses mit \neinzuberechnen und bewege das Fadenkreuz \nein wenig vor den Kürbis. So triffst du \nbestimmt öfters!
+    \n\nUnd vielleicht erreichst du so auch \n<r<400 Punkte>>...
+    \n\n\nAber das wusstest du bestimmt alles bereits, \nnicht wahr?"
 
-# - name: Pumpkin Archery Hard Low Prize Text
-#   standard:
-#     "Wow, <numeric arg0>! Nice job,\n<heroname>!
-#     \n\n\nIt's not the best score ever, but you\nwere pretty smooth, <heroname>!
-#     \n\n\nNext time, I want you to aim for at\nleast <r<600 points>>!
-#     \n\n\nAnyway, here's 50 Rupees I've earned\nfrom doing chores for the grumpy\nkitchen lady."
+- name: Pumpkin Archery Hard Low Prize Text
+  standard:
+    "Du hast <numeric arg0>! Das ist großartig,\n<heroname>!
+    \n\n\nDu kannst das bestimmt noch besser, aber deine \nLeistung war schon ganz ordentlich!
+    \n\n\nVersuche als Nächstes, eine Punktzahl von \n<r<600 Punkten>> zu erreichen!
+    \n\n\nAls Preis für deine Leistung gebe ich dir \50 hart verdiente Rubine!"
 
-# - name: Pumpkin Archery Hard Mid Prize Text
-#   standard:
-#     "It would be great to see you hit <r<800\npoints>> and set a record next time.\nGive it your best shot!"
+- name: Pumpkin Archery Hard Mid Prize Text
+  standard:
+    "Vielleicht schaffts du es, die absolute \nRekordmarke von <r<800 Punkten>> zu \nknacken! Versuch es bald noch mal!"
 
 # - name: Rickety Coaster Guaranteed Win Reward Choice Text
 #   standard:
