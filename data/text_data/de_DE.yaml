@@ -6232,11 +6232,11 @@
 #     "Unless... Would you like those <r<Rare Bugs>>, or\nsome <r<Uncommon Bugs>>? Or maybe <r<80 Rupees>>?[1]Rare.[2]Uncommon.[3]80 Rupees."
 
 # # Pretty sure this text is actually impossible to get cos there's a hard 10 min cap on the timer.
-# - name: Bug Heaven Easy No Prize Text
-#   standard:
-#     "That's it—time's up! Umm...you've still\ngot A LOT of improving to do.
-#     \n\n\nFor starters, shoot for getting your\ntime <r<under ten minutes>>. Just keep on\npracticing.
-#     \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+- name: Bug Heaven Easy No Prize Text
+  standard:
+    "Zeit ist abgelaufen! Hm... \nDas hat leider etwas zu lange gedauert.
+    \n\n\nFür den Anfang versuche eine \nZeit von <r<unter 10 Minuten>> zu erreichen. \nBleib am Ball.
+    \n\nÜbrigens, Nachts kaufe ich Käfer, in meinem \nZimmer der Ritterschule, an. Komm vorbei\nund verkaufe mir alle Schönheiten die du findest."
 
 # - name: Bug Heaven Easy Beginner Low Prize Text
 #   standard:
@@ -6258,11 +6258,11 @@
 #     \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under three\nminutes>>.
 #     \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
 
-# - name: Bug Heaven Hard No Prize Text
-#   standard:
-#     "That's it—time's up! Umm...you've still\ngot A LOT of improving to do.
-#     \n\n\nFor starters, shoot for getting your\ntime <r<under three minutes>>. Just keep on\npracticing.
-#     \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+- name: Bug Heaven Hard No Prize Text
+  standard:
+    "Zeit ist abgelaufen! Hm... \nDas hat leider etwas zu lange gedauert.
+    \n\n\nFür den Anfang versuche eine \nZeit von <r<unter 3 Minuten>> zu erreichen. \nBleib am Ball.
+    \n\nÜbrigens, Nachts kaufe ich Käfer, in meinem \nZimmer der Ritterschule, an. Komm vorbei\nund verkaufe mir alle Schönheiten die du findest."
 
 # - name: Bug Heaven Hard Beginner Low Prize Text
 #   standard:
