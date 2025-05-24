@@ -6217,7 +6217,7 @@
     "Du hast <numeric arg0>! Das ist großartig,\n<heroname>!
     \n\n\nDu kannst das bestimmt noch besser, aber deine \nLeistung war schon ganz ordentlich!
     \n\n\nVersuche als Nächstes, eine Punktzahl von \n<r<600 Punkten>> zu erreichen!
-    \n\n\nAls Preis für deine Leistung gebe ich dir \50 hart verdiente Rubine!"
+    \n\n\nAls Preis für deine Leistung gebe ich dir \n50 hart verdiente Rubine!"
 
 - name: Pumpkin Archery Hard Mid Prize Text
   standard:
