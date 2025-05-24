@@ -6172,13 +6172,13 @@
              \n\n\nDamit können Sie Insekten einfangen.\nDas macht Spaß und ist zudem auch \nnoch sehr nützlich!
              \n\nUnd zum halben Preis von nur <r<25 Rubinen>>,\nbin ich sicher Sie machen einen \"guten Fang\",\nfinden Sie nicht auch?\n[1]Ich nehme es![2-]Nein, danke."
 
-# TODO: add translations
+# TODO: add translations (Beedle done, Bow done, Cut done), need to test guaranteed choice and add bug challenge
 - name: Beedle Normal Shop Text Template
   standard: "|Das/Dies| dort |ist/sind| {sold_item}.\nIch verkaufe |es/sie| für nur <r<{normal_price}>> Rubine!\nMöchtest du |es/sie| kaufen?
              \n\n[1]Ich kaufe |es/sie|![2-]Nein danke."
 
 - name: Beedle Discounted Shop Text Template
-  standard: "|Das/Dies| dort |ist/sind| {sold_item}.\nNur dieses Mal |ist es/sind sie| erhältlich zum halben Preis!\n|Es/Sie| |kann/können| |deins/deine| sein für nur <r<{discounted_price}>> Rubine!\nMöchtest du |es/sie| kaufen
+  standard: "|Das/Dies| dort |ist/sind| {sold_item}.\nNur dieses Mal |ist es/sind sie| erhältlich zum halben Preis! |Es/Sie| |kann/können| |deins/deine| sein für \nnur <r<{discounted_price}>> Rubine!\nMöchtest du |es/sie| kaufen?
              \n\n[1]Ich kaufe |es/sie|![2-]Nein danke."
 
 - name: Pumpkin Archery Guaranteed Win Reward Choice Text
@@ -6288,31 +6288,31 @@
 #   standard:
 #     "You want <r<30 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]30 Rupees."
 
-# - name: Clean Cut Easy No Prize Text
-#   standard:
-#     "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<10 cuts>>!
-#     \n\nSharpen up your concentration!\nThere's no prize for sloppy slicin'."
+- name: Clean Cut Easy No Prize Text
+  standard:
+    "An deiner Schwerttechnik musst du \nnoch arbeiten! Versuche, mindestens \n<r<10 Stücke>> erfolgreich zu schlagen!
+    \n\nFolge meinem Rat und konzentriere \ndich, sonst wird das nichts!"
 
-# - name: Clean Cut Easy Low Prize Text
-#   standard:
-#     "Next time around, shoot for <r<15 cuts>>."
+- name: Clean Cut Easy Low Prize Text
+  standard:
+    "Versuch beim nächsten Mal mindestens \n<r<15 Stücke>> zu schlagen."
 
-# - name: Clean Cut Easy Mid Prize Text
-#   standard:
-#     "I want to see you do <r<20 chops>> next time!"
+- name: Clean Cut Easy Mid Prize Text
+  standard:
+    "Beim nächsten Mal will ich mindestens \n<r<20 Stücke>> fliegen sehen!"
 
-# - name: Clean Cut Hard No Prize Text
-#   standard:
-#     "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<20 cuts>>!
-#     \n\nSharpen up your concentration!\nThere's no prize for sloppy slicin'."
+- name: Clean Cut Hard No Prize Text
+  standard:
+    "An deiner Schwerttechnik musst du \nnoch arbeiten! Versuche, mindestens \n<r<20 Stücke>> erfolgreich zu schlagen!
+    \n\nFolge meinem Rat und konzentriere \ndich, sonst wird das nichts!"
 
-# - name: Clean Cut Hard Low Prize Text
-#   standard:
-#     "Next time around, shoot for <r<28 cuts>>."
+- name: Clean Cut Hard Low Prize Text
+  standard:
+    "Versuch beim nächsten Mal mindestens \n<r<28 Stücke>> zu schlagen."
 
-# - name: Clean Cut Hard Mid Prize Text
-#   standard:
-#     "I want to see you do <r<43 chops>> next time!"
+- name: Clean Cut Hard Mid Prize Text
+  standard:
+    "Beim nächsten Mal will ich mindestens \n<r<43 Stücke>> fliegen sehen!"
 
 # TODO: Done adding translating! Rework might be needed after/if "Not Obtained" and "Obtained" can be changed in this file
 - name: Help Text Title 1a
