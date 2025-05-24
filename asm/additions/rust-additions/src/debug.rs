@@ -47,7 +47,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-fn __fill_debug_string(string: *const c_char, character: c_char) {
+extern "C" fn __fill_debug_string(string: *const c_char, character: c_char) {
     let string_as_array = string as *mut [c_char; 64];
     let mut char_counter = 0;
 
@@ -60,7 +60,7 @@ fn __fill_debug_string(string: *const c_char, character: c_char) {
 }
 
 #[no_mangle]
-fn __setup_debug_strings(debug_string: *const c_char, string_arg: *const c_char) {
+extern "C" fn __setup_debug_strings(debug_string: *const c_char, string_arg: *const c_char) {
     unsafe {
         __fill_debug_string(DEBUG_PRINTABLE_STRING.as_ptr(), 0);
         __fill_debug_string(DEBUG_PRINTABLE_STRING_ARG.as_ptr(), 0);
@@ -73,7 +73,7 @@ fn __setup_debug_strings(debug_string: *const c_char, string_arg: *const c_char)
         strcat(DEBUG_PRINTABLE_STRING.as_ptr(), debug_string);
         let len_debug_string = strlen_const(DEBUG_PRINTABLE_STRING.as_ptr()) as usize;
 
-        if string_arg != core::ptr::null_mut() && len_debug_string < 63 {
+        if !string_arg.is_null() && len_debug_string < 63 {
             strcat(DEBUG_PRINTABLE_STRING_ARG.as_ptr(), string_arg);
             let len_string_arg = strlen_const(DEBUG_PRINTABLE_STRING_ARG.as_ptr()) as usize;
             __fill_debug_string(DEBUG_PRINTABLE_STRING_ARG[len_string_arg..].as_ptr(), 0);
@@ -96,7 +96,7 @@ fn __setup_debug_strings(debug_string: *const c_char, string_arg: *const c_char)
 }
 
 #[no_mangle]
-pub fn debug_print(debug_string: *const c_char) {
+pub extern "C" fn debug_print(debug_string: *const c_char) {
     // e.g. debug::debug_print(c"Test string".as_ptr());
 
     unsafe {
@@ -106,7 +106,7 @@ pub fn debug_print(debug_string: *const c_char) {
 }
 
 #[no_mangle]
-pub fn debug_print_str(debug_string: *const c_char, string_arg: *const c_char) {
+pub extern "C" fn debug_print_str(debug_string: *const c_char, string_arg: *const c_char) {
     // e.g. debug::debug_print_str(c"custom model name: %s".as_ptr(),
     // c"DesertRobot".as_ptr());
 
@@ -120,7 +120,7 @@ pub fn debug_print_str(debug_string: *const c_char, string_arg: *const c_char) {
     }
 }
 #[no_mangle]
-pub fn debug_print_num(debug_string: *const c_char, number: usize) {
+pub extern "C" fn debug_print_num(debug_string: *const c_char, number: usize) {
     // e.g. debug::debug_print_num(c"param1: %d".as_ptr(), param1 as usize);
 
     unsafe {
@@ -134,7 +134,7 @@ pub fn debug_print_num(debug_string: *const c_char, number: usize) {
 }
 
 #[no_mangle]
-pub fn debug_print_float(debug_string: *const c_char, float: f32) {
+pub extern "C" fn debug_print_float(debug_string: *const c_char, float: f32) {
     // e.g. debug::debug_print_float(c"param1: %f".as_ptr(), param1 as f32);
 
     unsafe {

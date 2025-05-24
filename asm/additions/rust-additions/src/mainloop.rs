@@ -53,7 +53,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn main_loop_inject() -> *mut c_void {
+pub extern "C" fn main_loop_inject() -> *mut c_void {
     // Soft-reset button combo
     if (input::check_button_held_down(input::BUTTON_INPUTS::LEFT_STICK_BUTTON)
         && input::check_button_held_down(input::BUTTON_INPUTS::A_BUTTON)
@@ -67,7 +67,7 @@ pub fn main_loop_inject() -> *mut c_void {
         }
     }
 
-    // Print heap info to debug conole
+    // Print heap info to debug console
     if (input::check_button_held_down(input::BUTTON_INPUTS::LEFT_STICK_BUTTON)
         && input::check_button_held_down(input::BUTTON_INPUTS::RIGHT_STICK_BUTTON)
         && input::check_button_held_down(input::BUTTON_INPUTS::L_BUTTON)
@@ -84,7 +84,7 @@ pub fn main_loop_inject() -> *mut c_void {
 }
 
 #[no_mangle]
-pub fn activate_back_in_time(param1: *mut c_void) -> *mut c_void {
+pub extern "C" fn activate_back_in_time(param1: *mut c_void) -> *mut c_void {
     // This is patched into the do_soft_reset function
     unsafe {
         if input::check_button_held_down(input::BUTTON_INPUTS::L_BUTTON) {

@@ -1,0 +1,56 @@
+name: ASM Diff
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  asm:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.env || 'Development' }}
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache venv
+        id: cache-venv
+        uses: actions/cache@v4
+        with:
+          path: ./.venv
+          key: asm-venv-${{ hashFiles('**/req*.txt') }}
+
+      - name: Create venv
+        if: steps.cache-venv.outputs.cache-hit != 'true'
+        run: |
+          python -m venv ./.venv
+      
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compile ASM
+        run: |
+          docker run \
+            -v "/var/run/docker.sock":"/var/run/docker.sock" \
+            -v ${{ github.workspace }}:/usr/src \
+            --entrypoint=bash \
+            ghcr.io/mint-choc-chip-skyblade/sshd-rando-buildtools:latest \
+            -itc "mise trust && source ./.venv/bin/activate && python -m pip install -r requirements.txt && cd ./asm && python ./assemble.py"
+      
+      - name: Checkout this branch's asm for comparison
+        uses: actions/checkout@v4
+        with:
+          path: committed
+          sparse-checkout: |
+            asm
+      
+      - name: Compare the compiled ASM to the committed ASM
+        run: |
+          find ./asm -type f -name "*-diff.yaml" | while read line ; do git diff --no-index $line "./committed/$line" ; done

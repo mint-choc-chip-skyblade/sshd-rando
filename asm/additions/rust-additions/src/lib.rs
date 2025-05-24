@@ -4,6 +4,9 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 #![allow(unused)]
+#![deny(clippy::no_mangle_with_rust_abi)]
+#![deny(improper_ctypes)]
+#![deny(improper_ctypes_definitions)]
 
 use core::arch::asm;
 use core::ffi::{c_char, c_void};
