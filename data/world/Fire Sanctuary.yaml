@@ -1,7 +1,3 @@
-# allowed_time_of_day: DayOnly
-# hint_region: Fire Sanctuary
-
-
 - name: Fire Sanctuary First Room
   dungeon: Fire Sanctuary
   dungeon_starting_area: true

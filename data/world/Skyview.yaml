@@ -145,12 +145,12 @@
   exits:
     SVT Last Room Before Spider: Beetle or Bow or (Bomb_Bag and logic_bomb_throws)
     SVT Second Hub Center Room: Can_Hit_High_Skyview_Switches or shortcut_skyview_bars
-    SVT Last Room After Rope: Long_Range_Skyward_Strike or Hook_Beetle or Bow
+    SVT Last Room After Rope: Nothing
 
 - name: SVT Last Room After Rope
   dungeon: Skyview Temple
   exits:
-    SVT Last Room Before Rope: Can_Defeat_Bokoblins or Hook_Beetle # Run out of range and use bomb flower to defeat them
+    SVT Last Room Before Rope: Nothing
     SVT Last Room Near Chest after Vines: Long_Range_Skyward_Strike or Distance_Activator
     Skyview Boss Room: Skyview_Temple_Boss_Key or boss_keys == removed
   locations:
