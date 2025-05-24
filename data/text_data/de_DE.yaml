@@ -5615,56 +5615,55 @@
   pretty: Sairen der Göttin - Ausdauerfrucht auf Balkon bei Ritterschule
   cryptic: eine <r<Frucht auf dem Schulbalkon in einer anderen Welt>>
 
-# TODO: add translations
-# - name: The Goddess's Silent Realm - Relic 1
-#   standard: The Goddess's Silent Realm - Relic 1
-#   pretty: The Goddess's Silent Realm - Relic 1
-#   cryptic: a <r<relic in a silent village>>
+- name: The Goddess's Silent Realm - Relic 1
+  standard: Sairen der Göttin - Finsterhalbmond 1
+  pretty: Sairen der Göttin - Finsterhalbmond 1
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
-# - name: The Goddess's Silent Realm - Relic 2
-#   standard: The Goddess's Silent Realm - Relic 2
-#   pretty: The Goddess's Silent Realm - Relic 2
-#   cryptic: a <r<relic in a silent village>>
+- name: The Goddess's Silent Realm - Relic 2
+  standard: Sairen der Göttin - Finsterhalbmond 2
+  pretty: Sairen der Göttin - Finsterhalbmond 2
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
-# - name: The Goddess's Silent Realm - Relic 3
-#   standard: The Goddess's Silent Realm - Relic 3
-#   pretty: The Goddess's Silent Realm - Relic 3
-#   cryptic: a <r<relic in a silent village>>
+- name: The Goddess's Silent Realm - Relic 3
+  standard: Sairen der Göttin - Finsterhalbmond 3
+  pretty: Sairen der Göttin - Finsterhalbmond 3
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
-# - name: The Goddess's Silent Realm - Relic 4
-#   standard: The Goddess's Silent Realm - Relic 4
-#   pretty: The Goddess's Silent Realm - Relic 4
-#   cryptic: a <r<relic in a silent village>>
+- name: The Goddess's Silent Realm - Relic 4
+  standard: Sairen der Göttin - Finsterhalbmond 4
+  pretty: Sairen der Göttin - Finsterhalbmond 4
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
-# - name: The Goddess's Silent Realm - Relic 5
-#   standard: The Goddess's Silent Realm - Relic 5
-#   pretty: The Goddess's Silent Realm - Relic 5
-#   cryptic: a <r<relic in a silent village>>
+- name: The Goddess's Silent Realm - Relic 5
+  standard: Sairen der Göttin - Finsterhalbmond 5
+  pretty: Sairen der Göttin - Finsterhalbmond 5
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
-# - name: The Goddess's Silent Realm - Relic 6
-#   standard: The Goddess's Silent Realm - Relic 6
-#   pretty: The Goddess's Silent Realm - Relic 6
-#   cryptic: a <r<relic in a silent village>>
+- name: The Goddess's Silent Realm - Relic 6
+  standard: Sairen der Göttin - Finsterhalbmond 6
+  pretty: Sairen der Göttin - Finsterhalbmond 6
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
-# - name: The Goddess's Silent Realm - Relic 7
-#   standard: The Goddess's Silent Realm - Relic 7
-#   pretty: The Goddess's Silent Realm - Relic 7
-#   cryptic: a <r<relic in a silent village>>
+- name: The Goddess's Silent Realm - Relic 7
+  standard: Sairen der Göttin - Finsterhalbmond 7
+  pretty: Sairen der Göttin - Finsterhalbmond 7
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
-# - name: The Goddess's Silent Realm - Relic 8
-#   standard: The Goddess's Silent Realm - Relic 8
-#   pretty: The Goddess's Silent Realm - Relic 8
-#   cryptic: a <r<relic in a silent village>>
+- name: The Goddess's Silent Realm - Relic 8
+  standard: Sairen der Göttin - Finsterhalbmond 8
+  pretty: Sairen der Göttin - Finsterhalbmond 8
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
-# - name: The Goddess's Silent Realm - Relic 9
-#   standard: The Goddess's Silent Realm - Relic 9
-#   pretty: The Goddess's Silent Realm - Relic 9
-#   cryptic: a <r<relic in a silent village>>
+- name: The Goddess's Silent Realm - Relic 9
+  standard: Sairen der Göttin - Finsterhalbmond 9
+  pretty: Sairen der Göttin - Finsterhalbmond 9
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
-# - name: The Goddess's Silent Realm - Relic 10
-#   standard: The Goddess's Silent Realm - Relic 10
-#   pretty: The Goddess's Silent Realm - Relic 10
-#   cryptic: a <r<relic in a silent village>>
+- name: The Goddess's Silent Realm - Relic 10
+  standard: Sairen der Göttin - Finsterhalbmond 10
+  pretty: Sairen der Göttin - Finsterhalbmond 10
+  cryptic: eine <r<dunkle Träne im Dorf einer anderen Welt>>
 
 - name: The Goddess's Silent Realm - Collect all Tears Reward
   standard: Sairen der Göttin - Belohnung für komplette Tränensammlung
@@ -5681,56 +5680,55 @@
   pretty: Farores Sairen - Ausdauerfrucht an Rankenwand 2
   cryptic: eine <r<Frucht an Waldwand in einer anderen Welt>>
 
-# TODO: add translations
-# - name: Farore's Silent Realm - Relic 1
-#   standard: Farore's Silent Realm - Relic 1
-#   pretty: Farore's Silent Realm - Relic 1
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 1
+  standard: Farores Sairen - Finsterhalbmond 1
+  pretty: Farores Sairen - Finsterhalbmond 1
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 2
-#   standard: Farore's Silent Realm - Relic 2
-#   pretty: Farore's Silent Realm - Relic 2
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 2
+  standard: Farores Sairen - Finsterhalbmond 2
+  pretty: Farores Sairen - Finsterhalbmond 2
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 3
-#   standard: Farore's Silent Realm - Relic 3
-#   pretty: Farore's Silent Realm - Relic 3
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 3
+  standard: Farores Sairen - Finsterhalbmond 3
+  pretty: Farores Sairen - Finsterhalbmond 3
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 4
-#   standard: Farore's Silent Realm - Relic 4
-#   pretty: Farore's Silent Realm - Relic 4
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 4
+  standard: Farores Sairen - Finsterhalbmond 4
+  pretty: Farores Sairen - Finsterhalbmond 4
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 5
-#   standard: Farore's Silent Realm - Relic 5
-#   pretty: Farore's Silent Realm - Relic 5
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 5
+  standard: Farores Sairen - Finsterhalbmond 5
+  pretty: Farores Sairen - Finsterhalbmond 5
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 6
-#   standard: Farore's Silent Realm - Relic 6
-#   pretty: Farore's Silent Realm - Relic 6
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 6
+  standard: Farores Sairen - Finsterhalbmond 6
+  pretty: Farores Sairen - Finsterhalbmond 6
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 7
-#   standard: Farore's Silent Realm - Relic 7
-#   pretty: Farore's Silent Realm - Relic 7
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 7
+  standard: Farores Sairen - Finsterhalbmond 7
+  pretty: Farores Sairen - Finsterhalbmond 7
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 8
-#   standard: Farore's Silent Realm - Relic 8
-#   pretty: Farore's Silent Realm - Relic 8
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 8
+  standard: Farores Sairen - Finsterhalbmond 8
+  pretty: Farores Sairen - Finsterhalbmond 8
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 9
-#   standard: Farore's Silent Realm - Relic 9
-#   pretty: Farore's Silent Realm - Relic 9
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 9
+  standard: Farores Sairen - Finsterhalbmond 9
+  pretty: Farores Sairen - Finsterhalbmond 9
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
-# - name: Farore's Silent Realm - Relic 10
-#   standard: Farore's Silent Realm - Relic 10
-#   pretty: Farore's Silent Realm - Relic 10
-#   cryptic: a <r<relic in a silent forest>>
+- name: Farore's Silent Realm - Relic 10
+  standard: Farores Sairen - Finsterhalbmond 10
+  pretty: Farores Sairen - Finsterhalbmond 10
+  cryptic: eine <r<dunkle Träne in einem Wald der anderen Welt>>
 
 - name: Farore's Silent Realm - Collect all Tears Reward
   standard: Farores Sairen - Belohnung für komplette Tränensammlung
@@ -5762,56 +5760,55 @@
   pretty: Nayrus Sairen - Ausdauerfrucht unter Baum nahe Mineneingang
   cryptic: eine <r<Frucht in Baumnähe in einer anderen Welt>>
 
-# TODO: add translations
-# - name: Nayru's Silent Realm - Relic 1
-#   standard: Nayru's Silent Realm - Relic 1
-#   pretty: Nayru's Silent Realm - Relic 1
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 1
+  standard: Nayrus Sairen - Finsterhalbmond 1
+  pretty: Nayrus Sairen - Finsterhalbmond 1
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 2
-#   standard: Nayru's Silent Realm - Relic 2
-#   pretty: Nayru's Silent Realm - Relic 2
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 2
+  standard: Nayrus Sairen - Finsterhalbmond 2
+  pretty: Nayrus Sairen - Finsterhalbmond 2
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 3
-#   standard: Nayru's Silent Realm - Relic 3
-#   pretty: Nayru's Silent Realm - Relic 3
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 3
+  standard: Nayrus Sairen - Finsterhalbmond 3
+  pretty: Nayrus Sairen - Finsterhalbmond 3
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 4
-#   standard: Nayru's Silent Realm - Relic 4
-#   pretty: Nayru's Silent Realm - Relic 4
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 4
+  standard: Nayrus Sairen - Finsterhalbmond 4
+  pretty: Nayrus Sairen - Finsterhalbmond 4
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 5
-#   standard: Nayru's Silent Realm - Relic 5
-#   pretty: Nayru's Silent Realm - Relic 5
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 5
+  standard: Nayrus Sairen - Finsterhalbmond 5
+  pretty: Nayrus Sairen - Finsterhalbmond 5
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 6
-#   standard: Nayru's Silent Realm - Relic 6
-#   pretty: Nayru's Silent Realm - Relic 6
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 6
+  standard: Nayrus Sairen - Finsterhalbmond 6
+  pretty: Nayrus Sairen - Finsterhalbmond 6
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 7
-#   standard: Nayru's Silent Realm - Relic 7
-#   pretty: Nayru's Silent Realm - Relic 7
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 7
+  standard: Nayrus Sairen - Finsterhalbmond 7
+  pretty: Nayrus Sairen - Finsterhalbmond 7
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 8
-#   standard: Nayru's Silent Realm - Relic 8
-#   pretty: Nayru's Silent Realm - Relic 8
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 8
+  standard: Nayrus Sairen - Finsterhalbmond 8
+  pretty: Nayrus Sairen - Finsterhalbmond 8
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 9
-#   standard: Nayru's Silent Realm - Relic 9
-#   pretty: Nayru's Silent Realm - Relic 9
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 9
+  standard: Nayrus Sairen - Finsterhalbmond 9
+  pretty: Nayrus Sairen - Finsterhalbmond 9
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
-# - name: Nayru's Silent Realm - Relic 10
-#   standard: Nayru's Silent Realm - Relic 10
-#   pretty: Nayru's Silent Realm - Relic 10
-#   cryptic: a <r<relic in a silent desert>>
+- name: Nayru's Silent Realm - Relic 10
+  standard: Nayrus Sairen - Finsterhalbmond 10
+  pretty: Nayrus Sairen - Finsterhalbmond 10
+  cryptic: eine <r<dunkle Träne in der Wüste einer anderen Welt>>
 
 - name: Nayru's Silent Realm - Collect all Tears Reward
   standard: Nayrus Sairen - Belohnung für komplette Tränensammlung
@@ -5833,56 +5830,55 @@
   pretty: Dins Sairen - Ausdauerfrucht nahe Träne an Ranken
   cryptic: eine <r<Frucht an einer vulkanischen Wand in einer anderen Welt>>
 
-# TODO: add translations
-# - name: Din's Silent Realm - Relic 1
-#   standard: Din's Silent Realm - Relic 1
-#   pretty: Din's Silent Realm - Relic 1
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 1
+  standard: Dins Sairen - Finsterhalbmond 1
+  pretty: Dins Sairen - Finsterhalbmond 1
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 2
-#   standard: Din's Silent Realm - Relic 2
-#   pretty: Din's Silent Realm - Relic 2
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 2
+  standard: Dins Sairen - Finsterhalbmond 2
+  pretty: Dins Sairen - Finsterhalbmond 2
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 3
-#   standard: Din's Silent Realm - Relic 3
-#   pretty: Din's Silent Realm - Relic 3
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 3
+  standard: Dins Sairen - Finsterhalbmond 3
+  pretty: Dins Sairen - Finsterhalbmond 3
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 4
-#   standard: Din's Silent Realm - Relic 4
-#   pretty: Din's Silent Realm - Relic 4
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 4
+  standard: Dins Sairen - Finsterhalbmond 4
+  pretty: Dins Sairen - Finsterhalbmond 4
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 5
-#   standard: Din's Silent Realm - Relic 5
-#   pretty: Din's Silent Realm - Relic 5
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 5
+  standard: Dins Sairen - Finsterhalbmond 5
+  pretty: Dins Sairen - Finsterhalbmond 5
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 6
-#   standard: Din's Silent Realm - Relic 6
-#   pretty: Din's Silent Realm - Relic 6
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 6
+  standard: Dins Sairen - Finsterhalbmond 6
+  pretty: Dins Sairen - Finsterhalbmond 6
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 7
-#   standard: Din's Silent Realm - Relic 7
-#   pretty: Din's Silent Realm - Relic 7
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 7
+  standard: Dins Sairen - Finsterhalbmond 7
+  pretty: Dins Sairen - Finsterhalbmond 7
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 8
-#   standard: Din's Silent Realm - Relic 8
-#   pretty: Din's Silent Realm - Relic 8
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 8
+  standard: Dins Sairen - Finsterhalbmond 8
+  pretty: Dins Sairen - Finsterhalbmond 8
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 9
-#   standard: Din's Silent Realm - Relic 9
-#   pretty: Din's Silent Realm - Relic 9
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 9
+  standard: Dins Sairen - Finsterhalbmond 9
+  pretty: Dins Sairen - Finsterhalbmond 9
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
-# - name: Din's Silent Realm - Relic 10
-#   standard: Din's Silent Realm - Relic 10
-#   pretty: Din's Silent Realm - Relic 10
-#   cryptic: a <r<relic on a silent volcano>>
+- name: Din's Silent Realm - Relic 10
+  standard: Dins Sairen - Finsterhalbmond 10
+  pretty: Dins Sairen - Finsterhalbmond 10
+  cryptic: eine <r<dunkle Träne bei einem Vulkan der anderen Welt>>
 
 - name: Din's Silent Realm - Collect all Tears Reward
   standard: Dins Sairen - Belohnung für komplette Tränensammlung
@@ -6172,238 +6168,242 @@
              \n\n\nDamit können Sie Insekten einfangen.\nDas macht Spaß und ist zudem auch \nnoch sehr nützlich!
              \n\nUnd zum halben Preis von nur <r<25 Rubinen>>,\nbin ich sicher Sie machen einen \"guten Fang\",\nfinden Sie nicht auch?\n[1]Ich nehme es![2-]Nein, danke."
 
-# TODO: add translations
-# - name: Beedle Normal Shop Text Template
-#   standard: "|That/Those| there |is/are| {sold_item}.\nI'm selling |it/them| for only <r<{normal_price}>> rupees!\nWant to buy |it/them|?
-#              \n\n[1]I'll buy |it/them|![2-]No, thanks."
+- name: Beedle Normal Shop Text Template
+  standard: "|Das/Dies| dort |ist/sind| {sold_item}.\nIch verkaufe |es/sie| für nur <r<{normal_price}>> Rubine!\nMöchtest du |es/sie| kaufen?
+             \n\n[1]Ich kaufe |es/sie|![2-]Nein danke."
 
-# - name: Beedle Discounted Shop Text Template
-#   standard: "|That/Those| there |is/are| {sold_item}.\nJust this once |it's/they're| half off!\n|It/They| can be yours for just <r<{discounted_price}>> rupees!\nWant to buy |it/them|?
-#              \n[1]I'll buy |it/them|![2-]No, thanks."
+- name: Beedle Discounted Shop Text Template
+  standard: "|Das/Dies| dort |ist/sind| {sold_item}.\nNur dieses Mal |ist es/sind sie| erhältlich zum halben Preis! |Es/Sie| |kann/können| |deins/deine| sein für \nnur <r<{discounted_price}>> Rubine!\nMöchtest du |es/sie| kaufen?
+             \n\n[1]Ich kaufe |es/sie|![2-]Nein danke."
 
-# - name: Pumpkin Archery Guaranteed Win Reward Choice Text
-#   standard:
-#     "Would you like <r<50 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]50 Rupees."
+- name: Pumpkin Archery Guaranteed Win Reward Choice Text
+  standard:
+    "Möchtest du <r<50 Rubine>>, einen <r<seltenen Schatz>> \noder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]50 Rubine."
 
-# - name: Pumpkin Archery Easy No Prize Text
-#   standard:
-#     "You scored <numeric arg0>.
-#     \n\n\n\nJust not feeling it today, huh,\n<heroname>? Sorry, but you\ndon't get a prize with that score.
-#     \n\nThe easiest way to hit a pumpkin is\nto lead it. You know, put the cursor a\nlittle ahead of it as it's flying.
-#     \n\nDo that, and I bet you can score\n<r<10 points>> or so.
-#     \n\n\nNot that I'm giving you advice or\nanything. I mean, I know you know\nwhat you're doing."
+- name: Pumpkin Archery Easy No Prize Text
+  standard:
+    "Nur <numeric arg0>...
+    \n\n\n\nOh... Heute hattest du wohl keinen sehr guten \nTag, <heroname>. Für diese Punktzahl \nkann ich dir leider keinen Preis geben...
+    \n\nVersuche, die Flugbahn des Kürbisses mit \neinzuberechnen und bewege das Fadenkreuz \nein wenig vor den Kürbis. So triffst du \nbestimmt öfters!
+    \n\nUnd vielleicht erreichst du so auch \n<r<10 Punkte>>...
+    \n\n\nAber das wusstest du bestimmt alles bereits, \nnicht wahr?"
 
-# - name: Pumpkin Archery Easy Low Prize Text
-#   standard:
-#     "Wow, <numeric arg0>! Nice job,\n<heroname>!
-#     \n\n\nIt's not the best score ever, but you\nwere pretty smooth, <heroname>!
-#     \n\n\nNext time, I want you to aim for at\nleast <r<150 points>>!
-#     \n\n\nAnyway, here's 50 Rupees I've earned\nfrom doing chores for the grumpy\nkitchen lady."
+- name: Pumpkin Archery Easy Low Prize Text
+  standard:
+    "Du hast <numeric arg0>! Das ist großartig,\n<heroname>!
+    \n\n\nDu kannst das bestimmt noch besser, aber deine \nLeistung war schon ganz ordentlich!
+    \n\n\nVersuche als Nächstes, eine Punktzahl von \n<r<150 Punkten>> zu erreichen!
+    \n\n\nAls Preis für deine Leistung gebe ich dir \n50 hart verdiente Rubine!"
 
-# - name: Pumpkin Archery Easy Mid Prize Text
-#   standard:
-#     "It would be great to see you hit <r<400\npoints>> and set a record next time.\nGive it your best shot!"
+- name: Pumpkin Archery Easy Mid Prize Text
+  standard:
+    "Vielleicht schaffts du es, die absolute \nRekordmarke von <r<400 Punkten>> zu \nknacken! Versuch es bald noch mal!"
 
-# - name: Pumpkin Archery Hard No Prize Text
-#   standard:
-#     "You scored <numeric arg0>.
-#     \n\n\n\nJust not feeling it today, huh,\n<heroname>? Sorry, but you\ndon't get a prize with that score.
-#     \n\nThe easiest way to hit a pumpkin is\nto lead it. You know, put the cursor a\nlittle ahead of it as it's flying.
-#     \n\nDo that, and I bet you can score\n<r<400 points>> or so.
-#     \n\n\nNot that I'm giving you advice or\nanything. I mean, I know you know\nwhat you're doing."
+- name: Pumpkin Archery Hard No Prize Text
+  standard:
+    "Nur <numeric arg0>...
+    \n\n\n\nOh... Heute hattest du wohl keinen sehr guten \nTag, <heroname>. Für diese Punktzahl \nkann ich dir leider keinen Preis geben...
+    \n\nVersuche, die Flugbahn des Kürbisses mit \neinzuberechnen und bewege das Fadenkreuz \nein wenig vor den Kürbis. So triffst du \nbestimmt öfters!
+    \n\nUnd vielleicht erreichst du so auch \n<r<400 Punkte>>...
+    \n\n\nAber das wusstest du bestimmt alles bereits, \nnicht wahr?"
 
-# - name: Pumpkin Archery Hard Low Prize Text
-#   standard:
-#     "Wow, <numeric arg0>! Nice job,\n<heroname>!
-#     \n\n\nIt's not the best score ever, but you\nwere pretty smooth, <heroname>!
-#     \n\n\nNext time, I want you to aim for at\nleast <r<600 points>>!
-#     \n\n\nAnyway, here's 50 Rupees I've earned\nfrom doing chores for the grumpy\nkitchen lady."
+- name: Pumpkin Archery Hard Low Prize Text
+  standard:
+    "Du hast <numeric arg0>! Das ist großartig,\n<heroname>!
+    \n\n\nDu kannst das bestimmt noch besser, aber deine \nLeistung war schon ganz ordentlich!
+    \n\n\nVersuche als Nächstes, eine Punktzahl von \n<r<600 Punkten>> zu erreichen!
+    \n\n\nAls Preis für deine Leistung gebe ich dir \n50 hart verdiente Rubine!"
 
-# - name: Pumpkin Archery Hard Mid Prize Text
-#   standard:
-#     "It would be great to see you hit <r<800\npoints>> and set a record next time.\nGive it your best shot!"
+- name: Pumpkin Archery Hard Mid Prize Text
+  standard:
+    "Vielleicht schaffts du es, die absolute \nRekordmarke von <r<800 Punkten>> zu \nknacken! Versuch es bald noch mal!"
 
-# - name: Rickety Coaster Guaranteed Win Reward Choice Text
-#   standard:
-#     "Would you like <r<20 Rupees>>, an <r<Uncommon\nTreasure>>, or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]20 Rupees."
+- name: Rickety Coaster Guaranteed Win Reward Choice Text
+  standard:
+    "Möchtest du <r<20 Rubine>>, einen <r<seltenen Schatz>> \noder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]20 Rubine."
 
-# - name: Bug Heaven Guaranteed Win Reward Choice Text
-#   standard:
-#     "Unless... Would you like those <r<Rare Bugs>>, or\nsome <r<Uncommon Bugs>>? Or maybe <r<80 Rupees>>?[1]Rare.[2]Uncommon.[3]80 Rupees."
+- name: Bug Heaven Guaranteed Win Reward Choice Text
+  standard:
+    "Außer... Möchtest du diese <r<sehr seltenen Insekten>>, oder \nein paar <r<seltene Insekten>>? Oder lieber <r<80 Rubine>>?[1]Sehr selten.[2]Selten.[3]80 Rubine."
 
 # # Pretty sure this text is actually impossible to get cos there's a hard 10 min cap on the timer.
-# - name: Bug Heaven Easy No Prize Text
-#   standard:
-#     "That's it—time's up! Umm...you've still\ngot A LOT of improving to do.
-#     \n\n\nFor starters, shoot for getting your\ntime <r<under ten minutes>>. Just keep on\npracticing.
-#     \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+- name: Bug Heaven Easy No Prize Text
+  standard:
+    "Zeit ist abgelaufen! Hm... \nDas hat leider etwas zu lange gedauert. \nFür einen Sieg hat es dieses Mal leider\nnicht gereicht!
+    \n\n\nDu weißt aber schon, dass das nicht \ngerade eine Glanzleistung war? Versuche \ndas nächste Mal <r<unter 10 Minuten>> \nzu bleiben.
+    \n\nÜbrigens... Nachts kaufe ich Insekten. Schau\ndoch mal bei mir vorbei, wenn die Sonne\nuntergegangen ist!"
 
-# - name: Bug Heaven Easy Beginner Low Prize Text
-#   standard:
-#     "Next time, try for <r<under five minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+- name: Bug Heaven Easy Beginner Low Prize Text
+  standard:
+    "Versuch beim nächsten Mal <r<unter 5 Minuten>> \nzu bleiben. Hier hast du <r<30 Rubine>>."
 
-# - name: Bug Heaven Easy Wrangler Low Prize Text
-#   standard:
-#     "Time's up! That was pretty decent,\nI have to admit.
-#     \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under five minutes>>."
+- name: Bug Heaven Easy Wrangler Low Prize Text
+  standard:
+    "Fertig! Das waren alle!\nNicht schlecht, das muss ich zugeben.
+    \n\n\nMerk dir gut, wo Insekten nisten, dann bist\ndu beim nächsten Mal noch etwas schneller.
+    \n\n\nWie wär's, wenn du beim nächsten Mal\nversuchst, <r<unter 5 Minuten>> zu bleiben?"
 
-# - name: Bug Heaven Easy Beginner Mid Prize Text
-#   standard:
-#     "Next time, pull out all the stops and\ntry to finish in <r<less than three minutes>>.
-#     \n\n\nOh, and your prize this time is \n<r<50 Rupees>>!"
+- name: Bug Heaven Easy Beginner Mid Prize Text
+  standard:
+    "Versuche dich weiter zu verbessern. Schaffst du\nes auch <r<unter 3 Minuten>>?
+    \n\n\nDiesmal bekommst du <r<50 Rubine>>!"
 
-# - name: Bug Heaven Easy Wrangler Mid Prize Text
-#   standard:
-#     "OK! Time! Hey... This is incredible!
-#     \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under three\nminutes>>.
-#     \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
+- name: Bug Heaven Easy Wrangler Mid Prize Text
+  standard:
+    "Fertig! Das waren alle!\nHui! Ein echter Rekord!
+    \n\n\nDu darfst dich nun zu Recht als zweitbester\nInsektenfänger gleich nach mir bezeichnen!
+    \n\n\nVersuch beim nächsten Mal, <r<unter 1 Minute>> zu bleiben!
+    \n\n\nNun, dann lass mich dir deinen Gewinn\nüberreichen. Etwas, das du lieben wirst...\n<r<5 Insekten>>!"
 
-# - name: Bug Heaven Hard No Prize Text
-#   standard:
-#     "That's it—time's up! Umm...you've still\ngot A LOT of improving to do.
-#     \n\n\nFor starters, shoot for getting your\ntime <r<under three minutes>>. Just keep on\npracticing.
-#     \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+- name: Bug Heaven Hard No Prize Text
+  standard:
+    "Zeit ist abgelaufen! Hm... \nDas hat leider etwas zu lange gedauert. \nFür einen Sieg hat es dieses Mal leider\nnicht gereicht!
+    \n\n\nDu weißt aber schon, dass das nicht \ngerade eine Glanzleistung war? Versuche \ndas nächste Mal <r<unter 3 Minuten>> \nzu bleiben.
+    \n\nÜbrigens... Nachts kaufe ich Insekten. Schau\ndoch mal bei mir vorbei, wenn die Sonne\nuntergegangen ist!"
 
-# - name: Bug Heaven Hard Beginner Low Prize Text
-#   standard:
-#     "Next time, try for <r<under two minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+- name: Bug Heaven Hard Beginner Low Prize Text
+  standard:
+    "Versuch beim nächsten Mal <r<unter 2 Minuten>> \nzu bleiben. Hier hast du <r<30 Rubine>>."
 
-# - name: Bug Heaven Hard Wrangler Low Prize Text
-#   standard:
-#     "Time's up! That was pretty decent,\nI have to admit.
-#     \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under two minutes>>."
+- name: Bug Heaven Hard Wrangler Low Prize Text
+  standard:
+    "Fertig! Das waren alle!\nNicht schlecht, das muss ich zugeben.
+    \n\n\nMerk dir gut, wo Insekten nisten, dann bist\ndu beim nächsten Mal noch etwas schneller.
+    \n\n\nWie wär's, wenn du beim nächsten Mal\nversuchst, <r<unter 2 Minuten>> zu bleiben?"
 
-# - name: Bug Heaven Hard Beginner Mid Prize Text
-#   standard:
-#     "Next time, pull out all the stops and\ntry to finish in <r<less than one minute>>.
-#     \n\n\nOh, and your prize this time is \n<r<50 Rupees>>!"
+- name: Bug Heaven Hard Beginner Mid Prize Text
+  standard:
+    "Versuche dich weiter zu verbessern. Schaffst du\nes auch <r<unter 1 Minute>>?
+    \n\n\nDiesmal bekommst du <r<50 Rubine>>!"
 
-# - name: Bug Heaven Hard Wrangler Mid Prize Text
-#   standard:
-#     "OK! Time! Hey... This is incredible!
-#     \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under one\nminute>>.
-#     \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home!"
+- name: Bug Heaven Hard Wrangler Mid Prize Text
+  standard:
+    "Fertig! Das waren alle!\nHui! Ein echter Rekord!
+    \n\n\nDu darfst dich nun zu Recht als zweitbester\nInsektenfänger gleich nach mir bezeichnen!
+    \n\n\nVersuch beim nächsten Mal, <r<unter 1 Minute>> zu bleiben!
+    \n\n\nNun, dann lass mich dir deinen Gewinn\nüberreichen. Etwas, das du lieben wirst...\n<r<5 Insekten>>!"
 
-# - name: Clean Cut Guaranteed Win Reward Choice Text
-#   standard:
-#     "You want <r<30 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]30 Rupees."
+- name: Clean Cut Guaranteed Win Reward Choice Text
+  standard:
+    "Möchtest du <r<30 Rubine>>, einen <r<seltenen Schatz>> \noder einen <r<sehr seltenen Schatz>> erhalten?[1]Sehr selten.[2]Selten.[3]30 Rubine."
 
-# - name: Clean Cut Easy No Prize Text
-#   standard:
-#     "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<10 cuts>>!
-#     \n\nSharpen up your concentration!\nThere's no prize for sloppy slicin'."
+- name: Clean Cut Easy No Prize Text
+  standard:
+    "An deiner Schwerttechnik musst du \nnoch arbeiten! Versuche, mindestens \n<r<10 Stücke>> erfolgreich zu schlagen!
+    \n\nFolge meinem Rat und konzentriere \ndich, sonst wird das nichts!"
 
-# - name: Clean Cut Easy Low Prize Text
-#   standard:
-#     "Next time around, shoot for <r<15 cuts>>."
+- name: Clean Cut Easy Low Prize Text
+  standard:
+    "Versuch beim nächsten Mal mindestens \n<r<15 Stücke>> zu schlagen."
 
-# - name: Clean Cut Easy Mid Prize Text
-#   standard:
-#     "I want to see you do <r<20 chops>> next time!"
+- name: Clean Cut Easy Mid Prize Text
+  standard:
+    "Beim nächsten Mal will ich mindestens \n<r<20 Stücke>> fliegen sehen!"
 
-# - name: Clean Cut Hard No Prize Text
-#   standard:
-#     "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<20 cuts>>!
-#     \n\nSharpen up your concentration!\nThere's no prize for sloppy slicin'."
+- name: Clean Cut Hard No Prize Text
+  standard:
+    "An deiner Schwerttechnik musst du \nnoch arbeiten! Versuche, mindestens \n<r<20 Stücke>> erfolgreich zu schlagen!
+    \n\nFolge meinem Rat und konzentriere \ndich, sonst wird das nichts!"
 
-# - name: Clean Cut Hard Low Prize Text
-#   standard:
-#     "Next time around, shoot for <r<28 cuts>>."
+- name: Clean Cut Hard Low Prize Text
+  standard:
+    "Versuch beim nächsten Mal mindestens \n<r<28 Stücke>> zu schlagen."
 
-# - name: Clean Cut Hard Mid Prize Text
-#   standard:
-#     "I want to see you do <r<43 chops>> next time!"
+- name: Clean Cut Hard Mid Prize Text
+  standard:
+    "Beim nächsten Mal will ich mindestens \n<r<43 Stücke>> fliegen sehen!"
 
-# - name: Help Text Title 1a
-#   standard:
-#     "Skyview Temple"
+# TODO: Done adding translating! Rework might be needed after/if "Not Obtained" and "Obtained" can be changed in this file
+- name: Help Text Title 1a
+  standard:
+    "Tempel des Himmelblicks"
 
-# - name: Help Text Content 1a
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+- name: Help Text Content 1a
+  standard:
+    "Status: <string arg0>\nGoldener Schlüssel: \n<string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
 
-# - name: Help Text Title 1b
-#   standard:
-#     "Earth Temple"
+- name: Help Text Title 1b
+  standard:
+    "Tempel des Erdlandes"
 
-# - name: Help Text Content 1b
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nKey Pieces: <numeric arg0>/5\nMap: <string arg2>"
+- name: Help Text Content 1b
+  standard:
+    "Status: <string arg0>\nDrachenschlüssel: \n<string arg1>\nSchlüsselfragmente: <numeric arg0>/5\nKarte: <string arg2>"
 
-# - name: Help Text Title 1c
-#   standard:
-#     "Lanayru Mining Facility"
+- name: Help Text Title 1c
+  standard:
+    "Ranelle-Steinwerk"
 
-# - name: Help Text Content 1c
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/1\nMap: <string arg2>"
+- name: Help Text Content 1c
+  standard:
+    "Status: <string arg0>\nUraltes Gebilde: \n<string arg1>\nKleine Schlüssel: <numeric arg1>/1\nKarte: <string arg2>"
 
-# - name: Help Text Title 2a
-#   standard:
-#     "Ancient Cistern"
+- name: Help Text Title 2a
+  standard:
+    "Höhlenheiligtum"
 
-# - name: Help Text Content 2a
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+- name: Help Text Content 2a
+  standard:
+    "Status: <string arg0>\nGesegneter Schlüssel: \n<string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
 
-# - name: Help Text Title 2b
-#   standard:
-#     "Sandship"
+- name: Help Text Title 2b
+  standard:
+    "Sandgaleone"
 
-# - name: Help Text Content 2b
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+- name: Help Text Content 2b
+  standard:
+    "Status: <string arg0>\nTentakelschlüssel: \n<string arg1>\nKleine Schlüssel: <numeric arg1>/2\nKarte: <string arg2>"
 
-# - name: Help Text Title 2c
-#   standard:
-#     "Fire Sanctuary"
+- name: Help Text Title 2c
+  standard:
+    "Altes Großheiligtum"
 
-# - name: Help Text Content 2c
-#   standard:
-#     "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/3\nMap: <string arg2>"
+- name: Help Text Content 2c
+  standard:
+    "Status: <string arg0>\nMysterienkristall: \n<string arg1>\nKleine Schlüssel: <numeric arg1>/3\nKarte: <string arg2>"
 
-# - name: Help Text Title 3a
-#   standard:
-#     "Sky Keep"
+- name: Help Text Title 3a
+  standard:
+    "Turm des Himmels"
 
-# - name: Help Text Content 3a
-#   standard:
-#     "Status: <string arg0>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/1\nMap: <string arg2>"
+- name: Help Text Content 3a
+  standard:
+    "Status: <string arg0>\nKleine Schlüssel: <numeric arg1>/1\nKarte: <string arg2>"
 
-# - name: Help Text Title 3b
-#   standard:
-#     "Items"
+- name: Help Text Title 3b
+  standard:
+    "Gegenstände"
 
-# - name: Help Text Content 3b
-#   standard:
-#     "Spiral Charge: <string arg0>\nScrapper: <string arg1>\nGroup of Tadtones: <numeric arg0>"
+- name: Help Text Content 3b
+  standard:
+    "Tornadostoß: <string arg0>\nTrapo: <string arg1>\nMelodinen: <numeric arg0>"
 
-# - name: Help Text Title 3c
-#   standard:
-#     "Gorge"
+- name: Help Text Title 3c
+  standard:
+    "Ranelle-Schlucht"
 
-# - name: Help Text Content 3c
-#   standard:
-#     "Life Tree Fruit: <string arg0>\nSeedling: <string arg1>\nCaves Keys: <numeric arg0>, Found <numeric arg1>/2"
+- name: Help Text Content 3c
+  standard:
+    "Lebensbaumfrucht: \n<string arg0>\nLebensbaumkeimling: \n<string arg1>\nHöhlenschlüssel: <numeric arg1>/2"
 
-# - name: Inventory Emerald Tablet text
-#   standard:
-#     "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<g<Faron Woods>>."
-# - name: Inventory Emerald and Ruby Tablet text
-#   standard:
-#     "The <r<ruby>> and <g<emerald>> tablet fragments\nopen the way to <g<Faron Woods>> and <r<Eldin\nVolcano>>."
-# - name: Inventory All Tablets text
-#   standard:
-#     "Completed tablet containing the <g<emerald>>,\n<r<ruby>>, and <y<amber>> fragments. Opens all areas\nof the surface--<g<woods>>, <r<volcano>>, and <y<desert>>."
-# - name: Inventory Emerald and Amber Tablet text
-#   standard:
-#     "The <y<amber>> and <g<emerald>> tablet fragments\nopen the way to <g<Faron Woods>> and\n<y<Lanayru Desert>>."
-# - name: Inventory Amber Tablet text
-#   standard:
-#     "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<y<Lanayru Desert>>."
-# - name: Inventory Ruby and Amber Tablet text
-#   standard:
-#     "The <y<amber>> and <r<ruby>> tablet fragments\nopen the way to <r<Eldin Volcano>> and\n<y<Lanayru Desert>>."
-# - name: Inventory Ruby Tablet text
-#   standard:
-#     "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<r<Eldin Volcano>>."
+- name: Inventory Emerald Tablet text
+  standard:
+    "Diese uralte Tafel eröffnet dir den Weg \nzum <g<Waldreich von Phirone>>."
+- name: Inventory Emerald and Ruby Tablet text
+  standard:
+    "Die <g<Smaragd->> und <r<Rubin->>Tafeln eröffnen \ndir den Weg zum <g<Waldreich>> und zum \n<r<Feuerreich Eldin>>."
+- name: Inventory All Tablets text
+  standard:
+    "Die <g<Smaragd->>, <r<Rubin->> und <y<Bernstein->>Tafeln \neröffnen dir den Weg in die Länder des \n<g<Waldes>>, des <r<Feuers>> und der <y<Wüste>>."
+- name: Inventory Emerald and Amber Tablet text
+  standard:
+    "Die <g<Smaragd->> und <y<Bernstein->>Tafeln eröffnen \ndir den Weg zum <g<Waldreich>> und \nzum <y<Wüstenreich Ranelle>>."
+- name: Inventory Amber Tablet text
+  standard:
+    "Diese uralte Tafel eröffnet dir den Weg \nzum <y<Wüstenreich von Ranelle>>."
+- name: Inventory Ruby and Amber Tablet text
+  standard:
+    "Die <r<Rubin->> und <y<Bernstein->>Tafeln eröffnen \ndir den Weg zum <r<Feuerreich>> und \nzum <y<Wüstenreich Ranelle>>."
+- name: Inventory Ruby Tablet text 
+  standard:
+    "Diese uralte Tafel eröffnet dir den Weg \nzum <r<Feuerreich von Eldin>>."
