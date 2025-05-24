@@ -138,7 +138,9 @@ pub extern "C" fn custom_event_commands(
     let mut event_flow_element = unsafe { &*p_event_flow_element };
     match event_flow_element.param3 {
         // Fi Warp
-        70 => entrance::warp_to_start(),
+        70 => unsafe {
+            (*actor_event_flow_mgr).result_from_previous_check = entrance::warp_to_start() as u32
+        },
         // Get trap type
         71 => unsafe {
             if TRAP_ID != u8::MAX {

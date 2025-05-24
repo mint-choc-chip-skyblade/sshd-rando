@@ -89,7 +89,7 @@
   hint_region: Sky
   exits:
     Bamboo Island Interior: Nothing
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
   locations:
     Bamboo Island - Slingshot Left Lantern: Slingshot
     Bamboo Island - Slingshot Middle Lantern: Slingshot
@@ -101,7 +101,7 @@
   events:
     Can Play Clean Cut Minigame: Sword
   exits:
-    Bamboo Island: Day
+    Bamboo Island: Day or natural_night_connections == off
   locations:
     Bamboo Island Interior - Gossip Stone behind Bamboo Pole: Nothing
     Bamboo Island Interior - Bonk Southwest Sprout: Nothing
@@ -115,7 +115,7 @@
   events:
     Can Collect Water: Bottle
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
   locations:
     Island near Bamboo Island - Top Goddess Chest: Eldin_Volcano_Goddess_Cube_near_Mogma_Turf_Entrance
     Island near Bamboo Island - Goddess Chest in Cave: Water_Dragons_Scale and Lanayru_Desert_Goddess_Cube_in_Secret_Passageway
@@ -126,18 +126,18 @@
   hint_region: Sky
   exits:
     Beedle's Airshop: Night
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
   locations:
     Beedle's Island - Crystal on Airshop Propeller: Night and Beetle
     Beedle's Island - Deliver Beedle's Insect Cage: Night and Beedles_Insect_Cage
-    Beedle's Island - Top Goddess Chest: Day and Temple_of_Time_Goddess_Cube
-    Beedle's Island - Goddess Chest in Cage: (Night or (Day and logic_beedles_island_cage_chest_dive)) and Deep_Woods_Goddess_Cube_on_top_of_Temple
+    Beedle's Island - Top Goddess Chest: (Day or natural_night_connections == off) and Temple_of_Time_Goddess_Cube
+    Beedle's Island - Goddess Chest in Cage: (Night or ((Day or natural_night_connections == off) and logic_beedles_island_cage_chest_dive)) and Deep_Woods_Goddess_Cube_on_top_of_Temple
 
 
 - name: Northeast Island
   hint_region: Sky
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
   locations:
     Northeast Island - Goddess Chest behind Bombable Rocks: Bomb_Bag and Lanayru_Mine_Goddess_Cube_behind_First_Landing_Robot
     Northeast Island - Goddess Chest in Cage: Eldin_Volcano_Goddess_Cube_East_of_Temple
@@ -153,7 +153,7 @@
     Lumpy Pumpkin Back Door Exterior: Nothing
     Lumpy Pumpkin Main East Door Exterior: Nothing
     Lumpy Pumpkin Main West Door Exterior: Nothing
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
   locations:
     Lumpy Pumpkin - Slingshot Left Porch Lantern: Slingshot
     Lumpy Pumpkin - Slingshot Right Porch Lantern: Slingshot
@@ -162,7 +162,7 @@
     Lumpy Pumpkin - Slingshot Lantern next to Back Door: Slingshot
     Lumpy Pumpkin - Outside Crystal: Night
     Lumpy Pumpkin - Goddess Chest near Gossip Stone: Deep_Woods_Goddess_Cube_near_Goron
-    Lumpy Pumpkin - Goddess Chest on Roof: Day and Skyview_Spring_Goddess_Cube
+    Lumpy Pumpkin - Goddess Chest on Roof: (Day or natural_night_connections == off) and Skyview_Spring_Goddess_Cube
     Lumpy Pumpkin - Deliver Mogma to Kina: Day and 'Pick_up_Guld'
     Lumpy Pumpkin - Gossip Stone near Back Door: Nothing
 
@@ -225,7 +225,7 @@
 - name: Island Closest to Faron Pillar
   hint_region: Sky
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
   locations:
     Island Closest to Faron Pillar - Goddess Chest: Deep_Woods_Goddess_Cube_in_front_of_Temple
 
@@ -235,7 +235,7 @@
   events:
     Mushroom Spores: Nothing
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
   locations:
     Volcanic Island - Outside Goddess Chest: Lanayru_Desert_Goddess_Cube_in_Sand_Oasis
     Volcanic Island - Inside Goddess Chest: (Clawshots or logic_volcanic_island_dive) and Faron_Woods_Goddess_Cube_on_East_Great_Tree_with_Clawshots_Target
@@ -245,10 +245,10 @@
 - name: Orielle's Island
   hint_region: Sky
   events:
-    Talk to Orielle: Nothing
-    Save Orielle: Bottle and 'Mushroom_Spores'
+    Talk to Orielle: Day
+    Save Orielle: Day and Bottle and 'Mushroom_Spores'
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
   locations:
     Orielle's Island - Heal Orielle's Loftwing: "'Save_Orielle'"
 
@@ -256,35 +256,33 @@
 - name: Fun Fun Island
   hint_region: Sky
   events:
-    Start Dodohs Quest: Nothing
-    Can Play Fun Fun Island Minigame: "'Retrieve_Party_Wheel'"
+    Can Play Fun Fun Island Minigame: Day and 'Retrieve_Party_Wheel'
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
   locations:
-    Fun Fun Island - Deliver Party Wheel to Dodoh: "'Retrieve_Party_Wheel'"
+    Fun Fun Island - Deliver Party Wheel to Dodoh: Day and 'Retrieve_Party_Wheel'
     Fun Fun Island - 500 Rupees in Dodoh's High Dive: "'Can_Play_Fun_Fun_Island_Minigame'"
-    Fun Fun Island - Goddess Chest below Island: Day and Floria_Waterfall_Goddess_Cube_on_High_Ledge
+    Fun Fun Island - Goddess Chest below Island: (Day or natural_night_connections == off) and Floria_Waterfall_Goddess_Cube_on_High_Ledge
 
 
 - name: Triple Island
   hint_region: Sky
   exits:
-    The Sky: Day
+    The Sky: Day or natural_night_connections == off
   locations:
     Triple Island - Upper Goddess Chest: Eldin_Volcano_Goddess_Cube_at_Eldin_Entrance
     Triple Island - Lower Goddess Chest: Lanayru_Desert_Goddess_Cube_near_Caged_Robot
     Triple Island - Goddess Chest in Cage: Clawshots and Skippers_Retreat_Goddess_Cube
 
-# TODO: Check day/night stuff
 - name: Inside the Thunderhead
-  allowed_time_of_day: Day Only
+  allowed_time_of_day: Day Only # The loadzone works but the light beam isn't there
   hint_region: Inside the Thunderhead
   exits:
     Inside the Thunderhead East Island: Nothing
     Isle of Songs: Nothing
     Mogma Mitts Island: Nothing
     Bug Heaven: Nothing
-    The Sky: (Goddesss_Harp and Ballad_of_the_Goddess and can_access(Central Skyloft)) or open_thunderhead == on
+    The Sky: Day and ((Goddesss_Harp and Ballad_of_the_Goddess and can_access(Central Skyloft)) or open_thunderhead == on)
   locations:
     Inside the Thunderhead - Song from Levias: Spiral_Charge and Scrapper and Sword and 'Pick_up_Levias_Soup'
     Inside the Thunderhead - Gossip Stone near Bug Heaven: Nothing
@@ -293,11 +291,11 @@
 - name: Isle of Songs
   hint_region: Inside the Thunderhead
   exits:
-    Inside the Thunderhead: Day
+    Inside the Thunderhead: Day or natural_night_connections == off
     Isle of Songs Interior: Sword or Distance_Activator or Whip or shortcut_ios_bridge_complete # bomb bag doesn't work
   locations:
-    Isle of Songs - Top Goddess Chest: Day and Volcano_Summit_Goddess_Cube_near_Fire_Sanctuary_Entrance
-    Isle of Songs - Lower Goddess Chest: Day and Mogma_Turf_Goddess_Cube_on_Raised_Pillar
+    Isle of Songs - Top Goddess Chest: (Day or natural_night_connections == off) and Volcano_Summit_Goddess_Cube_near_Fire_Sanctuary_Entrance
+    Isle of Songs - Lower Goddess Chest: (Day or natural_night_connections == off) and Mogma_Turf_Goddess_Cube_on_Raised_Pillar
 
 
 - name: Isle of Songs Interior
@@ -312,7 +310,7 @@
 - name: Inside the Thunderhead East Island
   hint_region: Inside the Thunderhead
   exits:
-    Inside the Thunderhead: Day
+    Inside the Thunderhead: Day or natural_night_connections == off
   locations:
     Inside the Thunderhead - Chest on East Island: Digging_Mitts or logic_east_island_dive
     Inside the Thunderhead - Goddess Chest on East Island: Faron_Woods_Goddess_Cube_on_East_Great_Tree_with_Rope
@@ -321,7 +319,7 @@
 - name: Mogma Mitts Island
   hint_region: Inside the Thunderhead
   exits:
-    Inside the Thunderhead: Day
+    Inside the Thunderhead: Day or natural_night_connections == off
   locations:
     Inside the Thunderhead - Mogma Mitts Island First Goddess Chest: Mogma_Mitts and Volcano_Summit_Goddess_Cube_in_Lava_Lake
     Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest: Mogma_Mitts and Lanayru_Gorge_Goddess_Cube
@@ -332,7 +330,7 @@
   events:
     Can Collect Water: Bottle
   exits:
-    Inside the Thunderhead: Day
+    Inside the Thunderhead: Day or natural_night_connections == off
   locations:
     Bug Heaven - 10 Bugs in 3 Minutes: (Bug_Net and (minigame_difficulty == vanilla or minigame_difficulty == hard)) or Big_Bug_Net
     Bug Heaven - Goddess Chest: Volcano_Summit_Goddess_Cube_at_Summit_Waterfall

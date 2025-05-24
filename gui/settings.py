@@ -11,6 +11,8 @@ from PySide6.QtWidgets import (
     QWidget,
     QAbstractButton,
     QInputDialog,
+    QSpacerItem,
+    QSizePolicy,
 )
 
 import pyclip
@@ -26,7 +28,14 @@ from constants.itemconstants import (
     GRATITUDE_CRYSTAL,
     GROUP_OF_TADTONES,
 )
-from filepathconstants import BASE_PRESETS_PATH, CONFIG_PATH, ITEMS_PATH, PRESETS_PATH
+from filepathconstants import (
+    BASE_PRESETS_PATH,
+    COMBINED_MODS_FOLDER,
+    CONFIG_PATH,
+    ITEMS_PATH,
+    OTHER_MODS_PATH,
+    PRESETS_PATH,
+)
 from gui.components.list_pair import ListPair
 from gui.components.tristate_check_box import RandoTriStateCheckBox
 from gui.mixed_entrance_pools import MixedEntrancePools
@@ -260,7 +269,7 @@ class Settings:
             except:
                 pass
 
-            if isinstance(widget, RandoTriStateCheckBox):  # on or off
+            if isinstance(widget, RandoTriStateCheckBox):
                 if current_option_value == "on":
                     widget.setChecked(True)
                 elif current_option_value == "random":
@@ -385,6 +394,8 @@ class Settings:
             mixed_entrance_pools = [pool for pool in widget_info if len(pool) > 0]
             self.config.settings[0].mixed_entrance_pools = mixed_entrance_pools
 
+        self.generate_other_mods_list()
+
         if allow_rewrite:
             write_config_to_file(CONFIG_PATH, self.config)
 
@@ -460,7 +471,7 @@ class Settings:
             except:
                 pass
 
-            if isinstance(widget, QCheckBox):  # on or off
+            if isinstance(widget, QCheckBox):
                 if current_option_value == "on":
                     widget.setChecked(True)
                 elif current_option_value == "random":
@@ -882,14 +893,15 @@ class Settings:
             else:
                 selected_preset_path = PRESETS_PATH / (selected_preset + ".yaml")
 
-            self.config = load_config_from_file(selected_preset_path)
+            self.config = load_config_from_file(
+                selected_preset_path, config=self.config
+            )
             self.verify_excluded_locations()
             write_config_to_file(selected_preset_path, self.config)
             self.settings = self.config.settings[0].settings
 
             self.new_seed()
             self.update_from_config()
-            self.main.config = self.config  # ¯\_(ツ)_/¯
 
     def update_hash(self):
         self.config.hash = ""
@@ -899,3 +911,51 @@ class Settings:
 
         seed_rng(self.config)
         self.ui.hash_label.setText(f"Hash: {self.config.get_hash()}")
+
+    def generate_other_mods_list(self):
+        self.main.clear_layout(self.ui.other_mods_scroll_layout)
+        found_mods = []
+        for mod_path in OTHER_MODS_PATH.glob("*"):
+            if mod_path.is_dir():
+                mod_name = mod_path.name
+
+                # Don't include the combined mods folder as a mod folder. Normally this folder is deleted, but
+                # if generation fails for some reason, then it might not get deleted.
+                if mod_name == COMBINED_MODS_FOLDER:
+                    continue
+
+                # Don't include the mod if it has an exefs folder. We don't support integrating other mods which modify code
+                if (OTHER_MODS_PATH / mod_name / "exefs").exists():
+                    continue
+
+                mod_checkbox = QCheckBox(mod_name)
+                mod_checkbox.clicked.connect(self.update_mods_in_config)
+                if mod_name in self.config.settings[0].other_mods:
+                    mod_checkbox.setChecked(True)
+                    found_mods.append(mod_name)
+
+                self.ui.other_mods_scroll_layout.addWidget(mod_checkbox)
+
+        # Add a vertical spacer to push the mod list up
+        self.ui.other_mods_scroll_layout.addSpacerItem(
+            QSpacerItem(
+                20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding
+            )
+        )
+
+        # Remove mods from config which weren't found
+        for mod_name in self.config.settings[0].other_mods.copy():
+            if mod_name not in found_mods:
+                print(
+                    f"Removing mod {mod_name} from other_mods list as the QCheckbox for the mod could not be found"
+                )
+                self.config.settings[0].other_mods.remove(mod_name)
+
+    def update_mods_in_config(self):
+        other_mods = self.config.settings[0].other_mods
+        other_mods.clear()
+        for checkbox in self.ui.other_mods_scroll_widget.findChildren(QCheckBox):
+            if checkbox.isChecked():
+                other_mods.append(checkbox.text())
+
+        self.update_from_gui()

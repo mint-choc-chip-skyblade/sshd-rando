@@ -496,6 +496,16 @@ pub extern "C" fn check_and_modify_item_actor(item_actor: *mut dAcItem) {
             (*item_actor).base.basebase.members.param1 &= !0x1FF;
         }
 
+        // Don't spawn randomized items in silent realms while also in boss rush
+        // Items 42 -> 47 are the 4 tears, stamina fruits, and light fruits
+        if &CURRENT_STAGE_NAME[..1] == b"S"
+            && flag::check_storyflag(531) != 0
+            && !(42..=47).contains(&current_item)
+        {
+            // Set itemid to 0 which despawns it later in the init function
+            (*item_actor).base.basebase.members.param1 &= !0x1FF;
+        }
+
         // Check if the flag is on
         let mut flag_is_on = 0;
         match flag_space_trigger {
