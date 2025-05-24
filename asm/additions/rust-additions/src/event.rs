@@ -182,23 +182,26 @@ pub extern "C" fn custom_event_commands(
 }
 
 #[no_mangle]
-#[warn(improper_ctypes_definitions)]
 pub extern "C" fn check_tadtone_counter_before_song_event(
     tadtone_minigame_actor: *mut actor::dTgClefGame,
-) -> (*mut actor::dTgClefGame, u32) {
+) -> *mut actor::dTgClefGame {
     let collected_tadtone_groups = flag::check_storyflag(953);
     let vanilla_tadtones_completed_flag = flag::check_storyflag(18);
+
+    let mut should_play_cutscene = false;
 
     // If we've collected all 17 tadtone groups and haven't played the cutscene
     // yet, then play the cutscene
     if collected_tadtone_groups == 17 && vanilla_tadtones_completed_flag == 0 {
+        should_play_cutscene = true;
+
         unsafe {
             (*tadtone_minigame_actor).delay_before_starting_event = 0;
         }
-        return (tadtone_minigame_actor, 1);
     }
 
-    return (tadtone_minigame_actor, 0);
+    unsafe { asm!("mov w1, {0:w}", in(reg) should_play_cutscene as u32) };
+    return tadtone_minigame_actor;
 }
 
 #[no_mangle]
