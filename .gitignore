@@ -1,15 +1,15 @@
 # Don't commit the vanilla game files xD
-title
-sshd_extract/*
+/title
+/sshd_extract/*
 !sshd_extract/README.md
 
 # Don't commit the modified game files either :p
-output
-sshdr_output
+/output
+/sshdr_output
 
 # Seriously, don't commit Nintendo's IP
-oarccache
-cache
+/oarccache
+/cache
 
 *__pycache__*
 .pytest_cache
@@ -20,29 +20,30 @@ cache
 *.svg
 !.github/assets/icons/*.svg
 
-build/
-dist/
-logs/
+/build
+/dist
+/logs
 config.yaml
 preferences.yaml
 custom_theme.json
 tracker_autosave*
 
 # Presets
-presets/*.yaml
+/presets/*.yaml
 
 # Plandomizer
 *plandomizer.yaml
-plandomizers/*
-!plandomizers/examples/
-!plandomizers/vanilla_boko_base.yaml
+/plandomizers/*
+!/plandomizers/examples
+!/plandomizers/vanilla_boko_base.yaml
 
 # asm
-target/
+/asm/additions/rust-additions/target
+/asm/disassemble
 damage-multiplier-diff.yaml
 
 # OS BS
 .DS_Store
 
 # Other Mods
-other_mods
+/other_mods
