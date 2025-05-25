@@ -44,6 +44,18 @@ jobs:
             ghcr.io/mint-choc-chip-skyblade/sshd-rando-buildtools:latest \
             -itc "mise trust && source ./.venv/bin/activate && python -m pip install -r requirements.txt && cd ./asm && python ./assemble.py"
       
+      - name: Upload diffs Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: asm-additions-diffs
+          path: asm/additions/diffs
+      
+      - name: Upload rust target Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: target-aarch64-unknown-none-release
+          path: asm/additions/rust-additions/target/aarch64-unknown-none/release
+      
       - name: Checkout this branch's asm for comparison
         uses: actions/checkout@v4
         with:
