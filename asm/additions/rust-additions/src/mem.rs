@@ -103,12 +103,19 @@ assert_eq_size!([u8; 0x68], RootHeapsMgrVtable);
 
 #[repr(C, packed(1))]
 #[derive(Copy, Clone)]
-pub struct ArcMgr {
-    pub vtable:         u64,
+pub struct ArcEntryTable {
     pub entries:        *mut [ArcEntry; 400],
     pub entry_count:    u16,
     pub _0:             [u8; 0x6],
     pub stage_arc_type: u64,
+}
+assert_eq_size!([u8; 0x18], ArcEntryTable);
+
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct ArcMgr {
+    pub vtable:        u64,
+    pub entries_table: ArcEntryTable,
 }
 assert_eq_size!([u8; 0x20], ArcMgr);
 
@@ -119,10 +126,7 @@ pub struct StageArcMgr {
     pub stage_name:                     [c_char; 32],
     pub current_loading_stage_arc_name: [c_char; 32],
     pub stage_extra_layer_arc_name:     [c_char; 32],
-    pub entries:                        *mut [ArcEntry; 400],
-    pub entry_count:                    u16,
-    pub _0:                             [u8; 0x6],
-    pub stage_arc_type:                 u64,
+    pub entries_table:                  ArcEntryTable,
 }
 assert_eq_size!([u8; 0x80], StageArcMgr);
 
@@ -215,21 +219,21 @@ extern "C" {
     fn EGG__Archive__mount(p1: *mut c_void, p2: *mut Heap, p3: i32, p4: *const c_char) -> *mut Arc;
     fn dRawArcEntry_c__destroy(arc_entry: *mut ArcEntry, stage_arc_type: u64);
     fn dRawArcTable_c__getArcOrLoadFromDisk(
-        arc_table: *mut c_void,
+        arc_table: *mut ArcEntryTable,
         arc_name: *const c_char,
         parent_dir_name: *const c_char,
-        heap: *mut c_void,
-    );
+        heap: *mut Heap,
+    ) -> bool;
     fn dRawArcTable_c__getDataFromOarc(
         arc_table: *mut c_void,
         arc_name: *const c_char,
         model_path: *const c_char,
     ) -> *mut c_void; // actually *mut ResFile
     fn dRawArcTable_c__addEntryFromParentArc(
-        arc_table: *mut c_void,
-        arc_name: *const c_char,
-        some_ptr: *mut c_void,
-        heap: *mut c_void,
+        arc_table: *mut ArcEntryTable,
+        arc_name: *mut ArcEntry,
+        res_file_data: *mut c_void,
+        heap: *mut Heap,
     );
 }
 
@@ -265,7 +269,7 @@ pub extern "C" fn fix_memory_leak(
 
             // Check if arc has already been loaded
             let mut current_entry_num = 0;
-            let mut next_entry = (*(*ARC_MGR).entries)[current_entry_num as usize];
+            let mut next_entry = (*(*ARC_MGR).entries_table.entries)[current_entry_num as usize];
 
             while next_entry.arc_name[0] != 0 {
                 if strcmp(arc_name_cstr, next_entry.arc_name.as_ptr()) == 0
@@ -276,7 +280,7 @@ pub extern "C" fn fix_memory_leak(
                 }
 
                 current_entry_num += 1;
-                next_entry = (*(*ARC_MGR).entries)[current_entry_num as usize];
+                next_entry = (*(*ARC_MGR).entries_table.entries)[current_entry_num as usize];
             }
         }
 
@@ -288,30 +292,11 @@ pub extern "C" fn fix_memory_leak(
 }
 
 #[no_mangle]
-pub extern "C" fn arc_table_print(p1: actor::ACTORID, p2: *const actor::ActorTreeNode) {
-    unsafe {
-        let mut current_entry_num = 0;
-        let mut next_entry = (*(*ARC_MGR).entries)[current_entry_num as usize];
-
-        while next_entry.arc_name[0] != 0 {
-            debug::debug_print(next_entry.arc_name.as_ptr());
-            debug::debug_print_num(c"refs: %d".as_ptr(), next_entry.ref_count as usize);
-            debug::debug_print(c"".as_ptr());
-
-            current_entry_num += 1;
-            next_entry = (*(*ARC_MGR).entries)[current_entry_num as usize];
-        }
-
-        allocateNewActor(p1, p2, 0, 3);
-    }
-}
-
-#[no_mangle]
 pub extern "C" fn load_custom_bzs(
-    arc_table: *mut c_void,
+    arc_table: *mut ArcEntryTable,
     arc_name: *const c_char,
     parent_dir_name: *const c_char,
-    heap: *mut c_void,
+    heap: *mut Heap,
 ) {
     unsafe {
         dRawArcTable_c__getArcOrLoadFromDisk(arc_table, arc_name, parent_dir_name, heap);
@@ -321,10 +306,10 @@ pub extern "C" fn load_custom_bzs(
 
 #[no_mangle]
 pub extern "C" fn use_custom_bzs(
-    arc_table: *mut c_void,
+    arc_table: *mut ArcEntryTable,
     arc_name: *const c_char,
     model_path: *const c_char,
-) -> *mut c_void {
+) -> *mut ArcEntryTable {
     unsafe {
         if strcmp(model_path, (*c"dat/stage.bzs").as_ptr()) == 0 {
             let new_arc_name = (*c"bzs").as_ptr();
@@ -411,6 +396,70 @@ pub extern "C" fn use_custom_bzs(
         asm!("ldrh w23, [x0, #0x8]");
 
         return arc_table;
+    }
+}
+
+// When loading arcs from a stage file, try looking at romfs/ModReplace first.
+#[no_mangle]
+pub extern "C" fn prefer_object_folder_for_stage_arcs(
+    arc_table: *mut ArcEntryTable,
+    arc_entry: *mut ArcEntry,
+    mut res_file_data: *mut c_void,
+    heap: *mut Heap,
+) {
+    unsafe {
+        let result = dRawArcTable_c__getArcOrLoadFromDisk(
+            arc_table,
+            &(*arc_entry).arc_name as *const c_char,
+            c"ModReplace".as_ptr(),
+            WORK2_HEAP,
+        );
+
+        if !result {
+            dRawArcTable_c__addEntryFromParentArc(arc_table, arc_entry, res_file_data, heap);
+        }
+    }
+}
+
+// Having the replaced instructions in a separate function ensures that the
+// original instructions don't get ignored in
+// prefer_modreplace_for_general_arcs because of the params.
+#[no_mangle]
+pub extern "C" fn setup_registers_for_general_modreplace() {
+    unsafe {
+        asm!(
+            "mov x22, x3",
+            "mov x24, x2",
+            "mov x19, x1",
+            "mov x21, x0",
+            "mov w27, wzr",
+            "mov x20, x26",
+        );
+    }
+}
+
+// When loading an arc with dRawArcTable_c__getArcOrLoadFromDisk,
+// try looking in romfs/ModReplace for the arc first.
+#[no_mangle]
+pub extern "C" fn prefer_modreplace_for_general_arcs(
+    arc_table: *mut ArcEntryTable,
+    arc_name: *mut c_char,
+    parent_dir_name: *const c_char,
+    heap: *mut Heap,
+) -> bool {
+    unsafe {
+        let mod_replace_str = c"ModReplace".as_ptr();
+
+        if strcmp(parent_dir_name, mod_replace_str) != 0 {
+            return dRawArcTable_c__getArcOrLoadFromDisk(
+                arc_table,
+                arc_name,
+                mod_replace_str,
+                heap,
+            );
+        }
+
+        return false;
     }
 }
 
