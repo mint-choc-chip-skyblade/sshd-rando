@@ -40,6 +40,7 @@ tracker_autosave*
 # asm
 /asm/additions/rust-additions/target
 /asm/disassemble
+/asm/linker_file.txt
 damage-multiplier-diff.yaml
 
 # OS BS
