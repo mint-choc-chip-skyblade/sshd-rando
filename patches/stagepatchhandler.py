@@ -1191,13 +1191,13 @@ class StagePatchHandler:
 
         default_objectpack_u8 = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH)
 
+        # Remove mod cache each time to prevent old mod files from lingering
+        for cache_path in CACHE_OARC_PATH.glob("*"):
+            if cache_path.is_dir():
+                shutil.rmtree(cache_path)
+
         for mod in mods:
             cache_oarc_path = CACHE_OARC_PATH / mod
-
-            # Remove mod cache each time to prevent old mod files from lingering
-            if mod and cache_oarc_path.exists():
-                shutil.rmtree(cache_oarc_path)
-
             cache_oarc_path.mkdir(parents=True, exist_ok=True)
 
             objectpack_path, _ = get_resolved_game_file_path(
