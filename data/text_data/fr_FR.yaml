@@ -265,613 +265,618 @@
 - name: Hint Importance Not Required
   standard: " (<s<pas nécessaire>>)"
 
+# Items; see file 003-ItemGet lines 259-...
+
 - name: Small Key
-  standard: Small Key
-  pretty: a <Small Key>
-  cryptic: a <key>
+  standard: Petite clé
+  pretty: une <petite clé>
+  cryptic: une <clé>
   plurality: Singular
 
 - name: Green Rupee
-  standard: Green Rupee
-  pretty: a <Green Rupee>
-  cryptic: a <g<penny>>
+  standard: Rubis vert
+  pretty: un <rubis vert>
+  cryptic: une <g<piécette>>
   plurality: Singular
 
 - name: Blue Rupee
-  standard: Blue Rupee
-  pretty: a <Blue Rupee>
-  cryptic: a <b+<common coin>>
+  standard: Rubis bleu
+  pretty: un <rubis bleu>
+  cryptic: une <b+<pièce jaune>>
   plurality: Singular
 
 - name: Red Rupee
-  standard: Red Rupee
-  pretty: a <Red Rupee>
-  cryptic: <r<couch cash>>
+  standard: Rubis rouge
+  pretty: un <rubis rouge>
+  cryptic: un <r<fonds de tirelire>>
   plurality: Singular
 
 - name: Heart
-  standard: Heart
-  pretty: a <Heart>
-  cryptic: a <r<Band-Aid>>
+  standard: Cœur
+  pretty: un <cœur>
+  cryptic: un <r<pansement>>
   plurality: Singular
 
 - name: 10 Arrows
-  standard: 10 Arrows
-  pretty: <10 Arrows>
-  cryptic: <r<pointy sticks>>
+  standard: Dix flèches
+  pretty: <dix flèches>
+  cryptic: des <r<pieux volants>>
   plurality: Plural
 
 - name: Goddess White Sword
-  standard: Goddess White Sword
-  pretty: the <Goddess White Sword>
-  cryptic: a <r<white sword extension>>
+  standard: Blanche épée divine
+  pretty: la <blanche épée divine>
+  cryptic: une <r<blanche épée>>
   plurality: Singular
 
 - name: Progressive Sword
-  standard: Progressive Sword
-  pretty: a <Progressive Sword>
-  cryptic: a <r<sword upgrade>>
+  standard: Épée progressive
+  pretty: une <épée progressive>
+  cryptic: une <r<amélioration pour votre épée>>
   plurality: Singular
 
 - name: Goddess Sword
-  standard: Goddess Sword
-  pretty: the <Goddess Sword>
-  cryptic: the <r<sword of the goddess>>
+  standard: Épée divine
+  pretty: l'<épée divine>
+  cryptic: l'<r<épée de la Déesse>>
   plurality: Singular
 
 - name: Goddess Longsword
-  standard: Goddess Longsword
-  pretty: the <Goddess Longsword>
-  cryptic: a <r<long sword extension>>
+  standard: Longue épée divine
+  pretty: la <longue épée divine>
+  cryptic: une <r<longue épée>>
   plurality: Singular
 
 - name: Master Sword
-  standard: Master Sword
-  pretty: the <Master Sword>
-  cryptic: the <r<blade of evil's bane>>
+  standard: Épée de légende
+  pretty: l'<épée de légende>
+  cryptic: la <r<lame pour terrasser le mal>>
   plurality: Singular
 
 - name: True Master Sword
-  standard: True Master Sword
-  pretty: the <True Master Sword>
-  cryptic: the <r<final blessing of Hylia>>
+  standard: Vraie épée de légende
+  pretty: la <vraie épée de légende>
+  cryptic: la <r<bénédiction finale d'Hylia>>
   plurality: Singular
 
 - name: Sailcloth
-  standard: Sailcloth
-  pretty: a <Sailcloth>
-  cryptic: an <r<item that smells nice>>
+  standard: Parachâle
+  pretty: un <parachâle>
+  cryptic: un <r<objet qui sent bon>>
   plurality: Singular
 
 - name: Goddess's Harp
-  standard: Goddess's Harp
-  pretty:
-    text: the <Goddess's Harp>
-    plurality: Singular
-  cryptic:
-    text: the <r<strings of a goddess>>
-    plurality: Plural
+  standard: Lyre de la Déesse
+  pretty: la <lyre de la Déesse>
+  cryptic: l'<r<intrument divin>>
+  plurality: Singular
 
 - name: Progressive Bow
-  standard: Progressive Bow
-  pretty: a <Progressive Bow>
-  cryptic: an <r<archery enabler>>
+  standard: Arc progressif
+  pretty: un <arc progressif>
+  cryptic: un <r<lanceur de flèche>>
   plurality: Singular
 
 - name: Clawshots
-  standard: Clawshots
-  pretty: the <Clawshots>
-  cryptic: a <r<pair of orange chains>>
-  plurality: Plural
+  standard: Grappin
+  pretty:
+    text: le <grappin>
+    plurality: Singular
+  cryptic:
+    text: deux <r<chaînes oranges>>
+    plurality: Plural
 
 - name: Spiral Charge
-  standard: Spiral Charge
-  pretty: the <Spiral Charge>
-  cryptic: the <r<barrel roll>>
+  # 005 L204
+  standard: Attaque tornade
+  pretty: l'<attaque tornade>
+  cryptic: le <r<tonneau aérien>>
   plurality: Singular
 
 - name: Ancient Cistern Boss Key
-  standard: Ancient Cistern Boss Key
-  pretty: the <Ancient Cistern Boss Key>
-  cryptic: a <r<blessed idol>>
+  standard: Grande clé de la grande caverne antique
+  pretty: la <grande clé de la grande caverne antique>
+  cryptic: une <r<statuette sereine>>
   plurality: Singular
 
 - name: Fire Sanctuary Boss Key
-  standard: Fire Sanctuary Boss Key
-  pretty:
-    text: the <Fire Sanctuary Boss Key>
-    plurality: Singular
-  cryptic:
-    text: some <r<mysterious crystals>>
-    plurality: Plural
+  standard: Grande clé du sanctuaire ancien
+  pretty: la <grande clé du grand sanctuaire ancien>
+  cryptic: un <r<cristal étrange>>
+  plurality: Singular
 
 - name: Sandship Boss Key
-  standard: Sandship Boss Key
-  pretty: the <Sandship Boss Key>
-  cryptic: a <r<squid carving>>
+  standard: Grande clé du galion des sables
+  pretty: la <grande clé du galion des sables>
+  cryptic: un <r<statuette tentaculaire>>
   plurality: Singular
 
 - name: Key Piece
-  standard: Key Piece
-  pretty: a <Key Piece>
-  cryptic: a <r<1/5 of a pie>>
+  standard: Fragment de clé
+  pretty: un <fragment de clé>
+  cryptic: un <r<cinquième de camembert>>
   plurality: Singular
 
 - name: Skyview Temple Boss Key
-  standard: Skyview Temple Boss Key
-  pretty: the <Skyview Temple Boss Key>
-  cryptic: a <r<golden carving>>
+  standard: Grande clé du temple de la contemplation
+  pretty: la <grande clé du temple de la contemplation>
+  cryptic: une <r<sculpture dorée>>
   plurality: Singular
 
 - name: Earth Temple Boss Key
-  standard: Earth Temple Boss Key
-  pretty: the <Earth Temple Boss Key>
-  cryptic: a <r<dragon sculpture>>
+  standard: Grande clé du temple de la terre
+  pretty: la <grande clé du temple de la terre>
+  cryptic: une <r<statuette de dragon>>
   plurality: Singular
 
 - name: Lanayru Mining Facility Boss Key
-  standard: Lanayru Mining Facility Boss Key
-  pretty: the <Lanayru Mining Facility Boss Key>
-  cryptic: an <r<ancient circuit>>
+  standard: Grande clé de la raffinerie de Lanelle
+  pretty: la <grande clé de la raffinerie de Lanelle>
+  cryptic: un <r<circuit antique>>
   plurality: Singular
 
 - name: Silver Rupee
-  standard: Silver Rupee
-  pretty: a <Silver Rupee>
-  cryptic: some <s<decent pay>>
+  standard: Rubis argenté
+  pretty: un <rubis argenté>
+  cryptic: une <s<coquette somme>>
   plurality: Singular
 
 - name: Gold Rupee
-  standard: Gold Rupee
-  pretty:
-    text: a <Gold Rupee>
-    plurality: Singular
-  cryptic:
-    text: <ye<many riches>>
-    plurality: Plural
+  standard: Rubis doré
+  pretty: un <rubis doré>
+  cryptic: une <ye<petite fortune>>
+  plurality: Singular
 
 - name: Rupoor
-  standard: Rupoor
+  standard: Roupir
   pretty: a <Rupoor>
-  cryptic: an <blk<anti-rupee>>
+  cryptic: un <blk<anti-rubis>>
   plurality: Singular
 
 - name: Gratitude Crystal Pack
-  standard: Gratitude Crystal Pack
-  pretty: a <Gratitude Crystal Pack>
-  cryptic: a <r<pack of gratitude>>
+  standard: Lot de cristaux de gratitude
+  pretty: un <lot de cristaux de gratitude>
+  cryptic: un <r<paquet de gratitude>>
   plurality: Singular
 
 - name: Glittering Spores
-  standard: Glittering Spores
-  pretty: some <Glittering Spores>
-  cryptic: <r<sparkly powder>>
-  plurality: Plural
+  standard: Spores scintillantes
+  pretty:
+    text: des <spores scintillantes>
+    plurality: Plural
+  cryptic:
+    text: de la <r<poudre étincelante>>
+    plurality: Singluar
 
 - name: 5 Bombs
-  standard: 5 Bombs
-  pretty: 5 Bombs
-  cryptic: <r<5 explosions>>
+  standard: Cinq bombes
+  pretty: cinq bombes
+  cryptic: <r<cinq pétards>>
   plurality: Plural
 
 - name: 10 Bombs
-  standard: 10 Bombs
-  pretty: 10 Bombs
-  cryptic: <r<10 explosions>>
+  standard: Dix bombes
+  pretty: dix bombes
+  cryptic: <r<dix pétards>>
   plurality: Plural
 
 - name: Stamina Fruit
-  standard: Stamina Fruit
-  pretty: Stamina Fruit
-  cryptic: an <r<energetic fruit>>
+  standard: Baie d'endurance
+  pretty: une baie d'endurance
+  cryptic: un <r<fruit vitaminé>>
   plurality: Singular
 
 - name: Gratitude Crystal
-  standard: Gratitude Crystal
-  pretty: a <Gratitude Crystal>
-  cryptic: a <r<piece of gratitude>>
+  standard: cristal de gratitude
+  pretty: un <cristal de gratitude>
+  cryptic: un <r<morceau de gratitude>>
   plurality: Singular
 
 - name: Gust Bellows
-  standard: Gust Bellows
-  pretty: the <Gust Bellows>
-  cryptic: a <r<leaf blower>>
+  standard: Jarre magique
+  pretty: la <jarre magique>
+  cryptic: la <r<souffleuse>>
   plurality: Singular
 
 - name: Map
-  standard: Map
-  pretty: a <Map>
-  cryptic: some <r<paper>>
+  standard: Carte du donjon
+  pretty: la <carte du donjon>
+  cryptic: une <r<feuille de papier>>
   plurality: Singular
 
 - name: Progressive Slingshot
-  standard: Progressive Slingshot
-  pretty: a <Progressive Slingshot>
-  cryptic: a <r<pellet launcher>>
+  standard: Lance-pierre progressif
+  pretty: un <lance-pierre progressif>
+  cryptic: un <r<jouet dangereux>>
   plurality: Singular
 
 - name: Progressive Beetle
-  standard: Progressive Beetle
-  pretty: a <Progressive Beetle>
-  cryptic: a <r<remote controlled insect>>
+  standard: Scarabée progressif
+  pretty: un <scarabée progressif>
+  cryptic: un <r<drone insecte>>
   plurality: Singular
 
 - name: Bottle of Water
-  standard: Bottle of Water
-  pretty: a <Bottle of Water>
-  cryptic: <b<hydration>>
+  standard: Eau ordinaire
+  pretty: un <flacon d'eau>
+  cryptic: de quoi s'<b<hydrater>>
   plurality: Singular
 
 - name: Mushroom Spores
-  standard: Mushroom Spores
-  pretty: some <Mushroom Spores>
-  cryptic: <r<fungal powder>>
-  plurality: Plural
+  standard: Spores de champignon
+  pretty:
+    text: des <spores de champignon>
+    plurality: Plural
+  cryptic:
+    text: de la <r<poudre fongique>>
+    plurality: Singular
 
 - name: Progressive Mitts
-  standard: Progressive Mitts
-  pretty: Progressive Mitts
-  cryptic: <r<excavation tools>>
-  plurality: Plural
+  standard: Gants creuse-tout
+  pretty:
+    text: les <gants creuse-tout>
+    plurality: Plural
+  cryptic:
+    text: une <r<pelleteuse portative>>
+    plurality: Singular
 
 - name: 5 Deku Seeds
-  standard: 5 Deku Seeds
-  pretty: 5 Deku Seeds
-  cryptic: some <r<pellets>>
+  standard: Cinq graines mojo
+  pretty: cinq graines mojos
+  cryptic: quelques <r<cailloux>>
   plurality: Plural
 
 - name: 10 Deku Seeds
-  standard: 10 Deku Seeds
-  pretty: 10 Deku Seeds
-  cryptic: many <r<pellets>>
+  standard: Dix graines mojo
+  pretty: dix graines mojo
+  cryptic: plusieurs <r<cailloux>>
   plurality: Plural
 
 - name: Uncommon Treasure
-  standard: Uncommon Treasure
-  pretty: an <Uncommon Treasure>
-  cryptic: a <r<nice treasure>>
+  standard: Trésor peu commun
+  pretty: un <trésor peu commun>
+  cryptic: un <r<beau trésor>>
   plurality: Singular
 
 - name: Rare Treasure
-  standard: Rare Treasure
-  pretty: a <Rare Treasure>
-  cryptic: a <r<very nice treasure>>
+  standard: Trésor rare
+  pretty: un <trésor rare>
+  cryptic: un <r<très beau trésor>>
   plurality: Singular
 
 - name: Guardian Potion
-  standard: Guardian Potion
-  pretty: a <Guardian Potion>
-  cryptic: <r<partial immunity>>
+  standard: Protectine
+  pretty: de la <Protectine>
+  cryptic: une <r<immunité partielle>>
   plurality: Singular
 
 - name: Guardian Potion Plus
-  standard: Guardian Potion+
-  pretty: a <Guardian Potion+>
-  cryptic: <r<full immunity>>
+  standard: Protectine *
+  pretty: de la <Protectine *>
+  cryptic: une <r<immunité totale>>
   plurality: Singular
 
 - name: Water Dragon's Scale
-  standard: Water Dragon's Scale
-  pretty: the <Water Dragon's Scale>
-  cryptic: <b<underwater exploration>>
+  standard: Écaille du dragon d'eau
+  pretty: l'<écaille du dragon d'eau>
+  cryptic: un <b<masque de plongée>>
   plurality: Singular
 
 - name: Bug Medal
-  standard: Bug Medal
-  pretty: a <Bug Medal>
-  cryptic: a <r<bug attractor>>
+  standard: Médaille insecte
+  pretty: une <médaille insecte>
+  cryptic: un <r<aimant à insectes>>
   plurality: Singular
 
 - name: Progressive Bug Net
-  standard: Progressive Bug Net
-  pretty: a <Progressive Bug Net>
-  cryptic: a <r<fun net>>
+  standard: Filet à papillons progressif
+  pretty: un <filet à papillons>
+  cryptic: un <r<filet mignon>>
   plurality: Singular
 
 - name: Fairy
-  standard: Fairy
-  pretty: Fairy
-  cryptic: a <r<magical friend>>
+  standard: Fée
+  pretty: une fée
+  cryptic: une <r<amie magique>>
   plurality: Singular
 
 - name: Sacred Water
-  standard: Sacred Water
-  pretty: <Sacred Water>
-  cryptic: <r<blessed liquid>>
+  standard: Eau sacrée
+  pretty: de l'<eau sacrée>
+  cryptic: un <r<liquide béni>>
   plurality: Singular
 
 - name: Hook Beetle
-  standard: Hook Beetle
-  pretty: the <Hook Beetle>
-  cryptic: a <r<clawed insect>>
+  standard: Scarabée à crochet
+  pretty: le <scarabée à crochet>
+  cryptic: un <r<drone insecte cargo>>
   plurality: Singular
 
 - name: Quick Beetle
-  standard: Quick Beetle
-  pretty: the <Quick Beetle>
-  cryptic: a <r<fast insect>>
+  standard: Scarabée rapide
+  pretty: le <scarabée rapide>
+  cryptic: un <r<insecte vif>>
   plurality: Singular
 
 - name: Tough Beetle
-  standard: Tough Beetle
-  pretty: the <Tough Beetle>
-  cryptic: a <r<touch insect>>
+  standard: Scarabée endurant
+  pretty: le <scarabée endurant>
+  cryptic: un <r<insecte dur à cuire>>
   plurality: Singular
 
 - name: Heart Potion
-  standard: Heart Potion
-  pretty: a <Heart Potion>
-  cryptic: <r<medicine>>
+  standard: Potion de soin
+  pretty: une <potion de soin>
+  cryptic: un <r<médicament>>
   plurality: Singular
 
 - name: Heart Potion Plus
-  standard: Heart Potion+
-  pretty: a <Heart Potion+>
-  cryptic: <r<strong medicine>>
+  standard: Potion de soin *
+  pretty: une <potion de soin *>
+  cryptic: un <r<médicament puissant>>
   plurality: Singular
 
 - name: Heart Potion Plus Plus
-  standard: Heart Potion++
-  pretty: a <Heart Potion++>
-  cryptic: <r<very strong medicine>>
+  standard: Potion de soin **
+  pretty: une <potion de soin **>
+  cryptic: un <r<médicament très puissant>>
   plurality: Singular
 
 - name: Stamina Potion
-  standard: Stamina Potion
-  pretty:
-    text: a <Stamina Potion>
-    plurality: Singular
-  cryptic:
-    text: <r<stimulants>>
-    plurality: Plural
+  standard: Endurol
+  pretty: de l'<Endurol>
+  cryptic: un <r<excitant>>
 
 - name: Stamina Potion Plus
-  standard: Stamina Potion+
-  pretty:
-    text: a <Stamina Potion+>
-    plurality: Singular
-  cryptic:
-    text: <r<strong stimulants>>
-    plurality: Plural
+  standard: Endurol *
+  pretty: de l'<Endurol *>
+  cryptic: un <r<excitant puissant>>
+  plurality: Singular
 
 - name: Air Potion
-  standard: Air Potion
-  pretty: a <Air Potion>
-  cryptic: a <r<snorkel>>
+  standard: Potion d'oxygène
+  pretty: une <potion d'oxygène>
+  cryptic: une <r<bouteille d'oxygène liquide>>
   plurality: Singular
 
 - name: Air Potion Plus
-  standard: Air Potion+
-  pretty: a <Air Potion+>
-  cryptic: a <r<strong snorkel>>
+  standard: Potion d'oxygène *
+  pretty: une <potion d'oxygène>
+  cryptic: une <r<grande bouteille d'oxygène liquide>>
   plurality: Singular
 
 - name: Fairy in a Bottle
-  standard: Fairy in a Bottle
-  pretty: <Fairy in a Bottle>
-  cryptic: a <r<revive>>
+  standard: Fée dans son flacon
+  pretty: une <fée dans son flacon>
+  cryptic: un <r<rappel>>
   plurality: Singular
 
 - name: Iron Bow
-  standard: Iron Bow
-  pretty: an <Iron Bow>
-  cryptic: a <r<metal launcher>>
+  standard: Arc en fer
+  pretty: un <arc en fer>
+  cryptic: un <r<lanceur métallique>>
   plurality: Singular
 
 - name: Sacred Bow
-  standard: Sacred Bow
-  pretty: a <Sacred Bow>
-  cryptic: a <r<sacred launcher>>
+  standard: Arc sacré
+  pretty: un <arc sacré>
+  cryptic: un <r<lanceur béni>>
   plurality: Singular
 
 - name: Bomb Bag
-  standard: Bomb Bag
-  pretty: a <Bomb Bag>
-  cryptic: a <r<bag for explosions>>
+  standard: Sac de bombes
+  pretty: un <sac de bombes>
+  cryptic: une <r<boîte de pétards>>
   plurality: Singular
 
 - name: Heart Container
-  standard: Heart Container
-  pretty: a <Heart Container>
-  cryptic: <r<a lot of love>>
+  standard: Réceptacle de cœur
+  pretty: un <réceptacle de cœur>
+  cryptic: <r<beaucoup d'amour>>
   plurality: Singular
 
 - name: Heart Piece
-  standard: Heart Piece
-  pretty: a <Heart Piece>
-  cryptic: <r<a little love>>
+  standard: Fragment de cœur
+  pretty: un <fragment de cœur>
+  cryptic: <r<un peu d'amour>>
   plurality: Singular
 
 - name: Triforce of Courage
-  standard: Triforce of Courage
-  pretty: the <Triforce of Courage>
-  cryptic: the <r<power of courage>>
+  standard: Triforce du courage
+  pretty: la <Triforce du courage>
+  cryptic: la <r<force du courage>>
   plurality: Singular
 
 - name: Triforce of Power
-  standard: Triforce of Power
-  pretty: the <Triforce of Power>
-  cryptic: the <r<power of... power>>
+  standard: Triforce de la force
+  pretty: la <Triforce de la force>
+  cryptic: la <r<force de... la force>>
   plurality: Singular
 
 - name: Triforce of Wisdom
-  standard: Triforce of Wisdom
-  pretty: the <Triforce of Wisdom>
-  cryptic: the <r<power of wisdom>>
+  standard: Triforce de la sagesse
+  pretty: la <Triforce de la sagesse>
+  cryptic: la <r<force de la sagesse>>
   plurality: Singular
 
 - name: Sea Chart
-  standard: Sea Chart
-  pretty: a <Sea Chart>
-  cryptic: a <r<ship finder>>
+  standard: Carte marine ancienne
+  pretty: une <carte marine ancienne>
+  cryptic: un <r<détecteur de navire>>
   plurality: Singular
 
 - name: Mogma Mitts
-  standard: Mogma Mitts
-  pretty: the <Mogma Mitts>
-  cryptic: <r<spelunking tools>>
-  plurality: Plural
+  standard: Gants mogma
+  pretty:
+    text: les <gants mogma>
+    plurality: Plural
+  cryptic:
+    text: un <r<tunnelier portable>>
+    plurality: Singular
 
 - name: Heart Medal
-  standard: Heart Medal
-  pretty: a <Heart Medal>
-  cryptic: a <r<love medallion>>
+  standard: Médaille cœur
+  pretty: une <médaille cœur>
+  cryptic: un <r<médaillon d'amour>>
   plurality: Singular
 
 - name: Rupee Medal
-  standard: Rupee Medal
-  pretty: a <Rupee Medal>
-  cryptic: a <r<money maker>>
+  standard: Médaille rubis
+  pretty: une <médaille rubis>
+  cryptic: une <r<planche à billets>>
   plurality: Singular
 
 - name: Treasure Medal
-  standard: Treasure Medal
-  pretty: a <Treasure Medal>
-  cryptic: a <r<treasure finder>>
+  standard: Médaille trésor
+  pretty: une <médaille trésor>
+  cryptic: un <r<détecteur de trésor>>
   plurality: Singular
 
 - name: Potion Medal
-  standard: Potion Medal
-  pretty: a <Potion Medal>
-  cryptic: a <r<potion enhancer>>
+  standard: Médaille de durabilité
+  pretty: une <médaille de durabilité>
+  cryptic: un <r<exhausteur de goût>>
   plurality: Singular
 
 - name: Cursed Medal
-  standard: Cursed Medal
-  pretty: a <Cursed Medal>
-  cryptic: a <blk<hexed circle>>
+  standard: Médaille démoniaque
+  pretty: une <médaille démoniaque>
+  cryptic: un <blk<cylindre maudit>>
   plurality: Singular
 
 - name: Scattershot
-  standard: Scattershot
-  pretty: the <Scattershot>
-  cryptic: a <r<scattering device>>
+  standard: Lance‐pierre rafale
+  pretty: le <lance‐pierre rafale>
+  cryptic: un <r<jouet très dangereux>>
   plurality: Singular
 
 - name: Progressive Wallet
-  standard: Progressive Wallet
-  pretty: a <Progressive Wallet>
-  cryptic: a <r<rupee holder>>
+  standard: Bourse progressive
+  pretty: une <bourse progressive>
+  cryptic: un <r<contenant à rubis>>
   plurality: Singular
 
 - name: Big Wallet
-  standard: Big Wallet
-  pretty: the <Big Wallet>
-  cryptic: a <r<big rupee holder>>
+  standard: Grande bourse
+  pretty: la <grande bourse>
+  cryptic: une <r<tirelire à rubis>>
   plurality: Singular
 
 - name: Giant Wallet
-  standard: Giant Wallet
-  pretty: the <Giant Wallet>
-  cryptic: a <r<giant rupee holder>>
+  standard: Bourse énorme
+  pretty: la <bourse énorme>
+  cryptic: un <r<coffre à rubis>>
   plurality: Singular
 
 - name: Tycoon Wallet
-  standard: Tycoon Wallet
-  pretty: the <Tycoon Wallet>
-  cryptic: a <r<tycoon's rupee holder>>
+  standard: Bourse de star
+  pretty: la <bourse de star>
+  cryptic: une <r<banque de rubis>>
   plurality: Singular
 
 - name: Progressive Pouch
-  standard: Progressive Pouch
-  pretty: a <Progressive Pouch>
-  cryptic: <r<extra space>>
+  standard: Sacoche progressive
+  pretty: une <sacoche progressive>
+  cryptic: de la <r<place supplémentaire>>
   plurality: Singular
 
 - name: Pouch Expansion
-  standard: Pouch Expansion
-  pretty: a <Pouch Expansion>
-  cryptic: <r<extra space>>
+  standard: Poche vide
+  pretty: une <poche vide>
+  cryptic: de la <r<place supplémentaire>>
   plurality: Singular
 
 - name: Life Medal
-  standard: Life Medal
-  pretty: a <Life Medal>
-  cryptic: an <r<extra heart>>
+  standard: Médaille de vie
+  pretty: une <médaille de vie>
+  cryptic: de l'<r<amour solide>>
   plurality: Singular
 
 - name: Wooden Shield
-  standard: Wooden Shield
-  pretty: a <Wooden Shield>
-  cryptic: a <r<beginner's blocker>>
+  standard: Bouclier en bois
+  pretty: un <bouclier en bois>
+  cryptic: la <r<protection du débutant>>
   plurality: Singular
 
 - name: Hylian Shield
-  standard: Hylian Shield
-  pretty: a <Hylian Shield>
-  cryptic: the <b<ultimate blocker>>
+  standard: Bouclier d'Hylia
+  pretty: le <bouclier d'Hylia>
+  cryptic: la <b<protection ultime>>
   plurality: Singular
 
 - name: Revitalizing Potion
-  standard: Revitalizing Potion
-  pretty: a <Revitalizing Potion>
-  cryptic: a <r<cure-all>>
+  standard: Polypotion
+  pretty: de la <polypotion>
+  cryptic: un <r<remède universel>>
   plurality: Singular
 
 - name: Revitalizing Potion Plus
-  standard: Revitalizing Potion+
-  pretty: a <Revitalizing Potion+>
-  cryptic: a <r<strong cure-all>>
+  standard: Polypotion *
+  pretty: de la <polypotion *>
+  cryptic: un <r<remède universel puissant>>
   plurality: Singular
 
 - name: Small Seed Satchel
-  standard: Small Seed Satchel
-  pretty: a <Small Seed Satchel>
-  cryptic: a <r<pellet bag>>
+  standard: Petit sac de graines
+  pretty: un <petit sac de graines>
+  cryptic: un <r<sac de cailloux>>
   plurality: Singular
 
 - name: Small Quiver
-  standard: Small Quiver
-  pretty: a <Small Quiver>
-  cryptic: a <r<launcher bag>>
+  standard: Petit carquois
+  pretty: un <petit carquois>
+  cryptic: un <r<sac de pieux volants>>
   plurality: Singular
 
 - name: Small Bomb Bag
-  standard: Small Bomb Bag
-  pretty: a <Small Bomb Bag>
-  cryptic: a <r<bag for extra explosions>>
+  standard: Petit sac de bombes
+  pretty: un <petit sac de bombes>
+  cryptic: un <r<compartiment supplémentaire de pétards>>
   plurality: Singular
 
 - name: Whip
-  standard: Whip
-  pretty: the <Whip>
-  cryptic: a <r<small sonicboom>>
+  standard: Fouet
+  pretty: le <fouet>
+  cryptic: un <r<outil supersonique>>
   plurality: Singular
 
 - name: Fireshield Earrings
-  standard: Fireshield Earrings
-  pretty: the <Fireshield Earrings>
-  cryptic: <r<fashionable fire protection>>
-  plurality: Singular
+  standard: Boucles ignifuges
+  pretty:
+    text: les <boucles ignifuges>
+    plurality: Plural
+  cryptic:
+    text: un <r<pare-feu à la mode>>
+    plurality: Singular
 
 - name: Big Bug Net
-  standard: Big Bug Net
-  pretty: the <Big Bug Net>
-  cryptic: a <r<big net>>
+  standard: Grand filet
+  pretty: le <grand filet>
+  cryptic: un <r<filêt de pêche>>
   plurality: Singular
 
 - name: Empty Bottle
-  standard: Empty Bottle
-  pretty: an <Empty Bottle>
-  cryptic: a <r<glass container>>
+  standard: Flacon vide
+  pretty: un <flacon vide>
+  cryptic: un <r<récipient en verre>>
   plurality: Singular
 
 - name: Cawlin's Letter
-  standard: Cawlin's Letter
-  pretty: Cawlin's Letter
-  cryptic: a <r<love letter>>
+  standard: Lettre d'Orbo
+  pretty: la <lettre d'Orbo>
+  cryptic: une <r<lettre d'amour>>
   plurality: Singular
 
 - name: Beedle's Insect Cage
-  standard: Beedle's Insect Cage
-  pretty: Beedle's Insect Cage
-  cryptic: a <r<prized insect>>
+  standard: Cage à insecte
+  pretty: une <cage à insecte>
+  cryptic: un <r<insecte chéri>>
   plurality: Singular
 
 - name: Rattle
-  standard: Rattle
-  pretty: a <Rattle>
-  cryptic: a <r<baby's toy>>
+  standard: Hochet
+  pretty: un <hochet>
+  cryptic: un <r<jouet pour bébé>>
   plurality: Singular
 
 - name: Tumbleweed
