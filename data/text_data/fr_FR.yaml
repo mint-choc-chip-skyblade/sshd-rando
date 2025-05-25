@@ -245,25 +245,25 @@
   standard: "Je vois que tu as obtenu la <y<lyre de la Déesse>>. Très bien, je vais t'apprendre un <b<Chant>> qui te sera utile pour ton aventure."
 
 - name: Path Hint
-  standard: They say that <regions> |is/are| on the path to <goal_name>.
+  standard: On dit que <regions> |est/sont| sur le chemin de <goal_name>.
 
 - name: Barren Hint
-  standard: They say that visiting <region> is a foolish choice.
+  standard: On dit que visiter <region> est un choix imprudent.
 
 - name: Item Hint
-  standard: They say that <item_pretty_or_cryptic_name> can be found at <regions>.
+  standard: On dit que l'on peut trouver <item_pretty_or_cryptic_name> en <regions>.
 
 - name: Location Hint
-  standard: They say that <location_pretty_or_cryptic_name> rewards <item_pretty_or_cryptic_name>.
+  standard: On dit que <location_pretty_or_cryptic_name> aurait pour récompense <item_pretty_or_cryptic_name>.
 
 - name: Hint Importance Required
-  standard: " (<g+<required>>)"
+  standard: " (<g+<nécessaire>>)"
 
 - name: Hint Importance Possibly Required
-  standard: " (<ye<possibly required>>)"
+  standard: " (<ye<potentiellement utile>>)"
 
 - name: Hint Importance Not Required
-  standard: " (<s<not required>>)"
+  standard: " (<s<pas nécessaire>>)"
 
 - name: Small Key
   standard: Small Key
