@@ -128,7 +128,7 @@ if not devkitA64_linker.is_file():
 
 if not devkitA64_objcopy.is_file():
     raise Exception(
-        f"Failed to find devkitA64 linker at {devkitA64_linker}. {DEVKIT_FILE_NOT_FOUND_HELP}"
+        f"Failed to find devkitA64 objcopy at {devkitA64_objcopy}. {DEVKIT_FILE_NOT_FOUND_HELP}"
     )
 
 
