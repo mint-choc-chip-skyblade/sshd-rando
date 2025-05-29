@@ -880,310 +880,349 @@
   cryptic: un <r<jouet pour bébé>>
   plurality: Singular
 
+- name: Hornetb Larvae
+  standard: Larve de guêpe
+  pretty: une <larve de guêpe>
+  # cryptic:
+  plurality: Singular
+
+- name: Bird Feather
+  standard: Plume d'oiseau
+  pretty: une <plume d'oiseau>
+  # cryptic:
+  plurality: Singular
+
 - name: Tumbleweed
-  standard: Tumbleweed
+  standard: Virevoltant
   pretty:
-    text: a <Tumbleweed>
+    text: un <virevoltant>
     plurality: Singular
   cryptic:
-    text: some <r<conjoined twigs>>
+    text: des <r<brindilles enchvêtrées>>
     plurality: Plural
 
 - name: Eldin Ore
-  standard: Eldin Ore
-  pretty: some <Eldin Ore>
-  cryptic: some <r<common metal>>
+  standard: Minerai d'Ordinn
+  pretty: du <minerai d'Ordinn>
+  # cryptic: some <r<common metal>>
   plurality: Singular
 
 - name: Ancient Flower
-  standard: Ancient Flower
-  pretty: an <Ancient Flower>
-  cryptic: an <r<old plant>>
+  standard: Fleur ancienne
+  pretty: une <fleur ancienne>
+  cryptic: une <r<vieille plante>>
+  plurality: Singular
+
+- name: Amber Relic
+  standard: Perle d'ambre
+  pretty: une <perle d'ambre>
+  # cryptic:
   plurality: Singular
 
 - name: Dusk Relic
-  standard: Dusk Relic
-  pretty: a <Dusk Relic>
-  cryptic: a <r<dark tear>>
+  standard: Perle d'ambre
+  pretty: une <perle d'ombre>
+  cryptic: une <r<larme sombre>>
+  plurality: Singular
+
+- name: Jelly Blob
+  standard: Gélatibulle
+  pretty: une <gélatibulle>
+  # cryptic:
+  plurality: Singular
+
+- name: Monster Claw
+  standard: Griffe de monstre
+  pretty: une <griffe de monstre>
+  # cryptic:
   plurality: Singular
 
 - name: Monster Horn
-  standard: Monster Horn
-  pretty: a <Monster Horn>
-  cryptic: a <r<call to evil>>
+  standard: Cor de monstre
+  pretty: un <cor de monstre>
+  # cryptic: a <r<call to evil>>
+  plurality: Singular
+
+- name: Ornamental Skull
+  standard: Crâne décoratif
+  pretty: un <crâne décoratif>
+  # cryptic:
   plurality: Singular
 
 - name: Evil Crystal
-  standard: Evil Crystal
-  pretty: an <Evil Crystal>
-  cryptic: a <r<dark crystal>>
+  standard: Cristal maléfique
+  pretty: un <cristal maléfique>
+  cryptic: un <r<cristal sombre>>
   plurality: Singular
 
 - name: Blue Bird Feather
-  standard: Blue Bird Feather
-  pretty: a <Blue Bird Feather>
-  cryptic: a <r<valuable feather>>
+  standard: Plume bleue
+  pretty: une <plume bleue>
+  cryptic: une <r<plume recherchée>>
   plurality: Singular
 
 - name: Golden Skull
-  standard: Golden Skull
-  pretty: a <Golden Skull>
-  cryptic: a <r<prized face>>
+  standard: Crâne d'or
+  pretty: un <crâne d'or>
+  cryptic: un <r<visage prisé>>
   plurality: Singular
 
 - name: Goddess Plume
-  standard: Goddess Plume
-  pretty: a <Goddess Plume>
-  cryptic: a <r<heavenly feather>>
+  standard: Poussière de Déesse
+  pretty: de la <poussière de Déesse>
+  # cryptic: a <r<heavenly feather>>
   plurality: Singular
 
 - name: Emerald Tablet
-  standard: Emerald Tablet
-  pretty: the <Emerald Tablet>
-  cryptic: the <g<forest cloud breaker>>
+  standard: Stèle émeraude
+  pretty: la <stèle émeraude>
+  # cryptic: the <g<forest cloud breaker>>
   plurality: Singular
 
 - name: Ruby Tablet
-  standard: Ruby Tablet
-  pretty: the <Ruby Tablet>
-  cryptic: the <r<volcano cloud breaker>>
+  standard: Stèle rubis
+  pretty: la <stèle rubis>
+  # cryptic: the <r<volcano cloud breaker>>
   plurality: Singular
 
 - name: Amber Tablet
-  standard: Amber Tablet
-  pretty: the <Amber Tablet>
-  cryptic: the <y<desert cloud breaker>>
+  standard: Stèle ambre
+  pretty: la <stèle ambre>
+  # cryptic: the <y<desert cloud breaker>>
   plurality: Singular
 
 - name: Stone of Trials
-  standard: Stone of Trials
-  pretty: the <Stone of Trials>
-  cryptic: a <r<matching bird's eye>>
+  standard: Sceau des épreuves
+  pretty: le <sceau des épreuves>
+  cryptic: l'<r<œil d'un oiseau de pierre>>
   plurality: Singular
 
 - name: Ballad of the Goddess
-  standard: Ballad of the Goddess
-  pretty: the <Ballad of the Goddess>
-  cryptic: a <r<tune for the gods>>
+  standard: Chant de la Déesse
+  pretty: le <chant de la Déesse>
+  cryptic: un <r<air pour les dieux>>
   plurality: Singular
 
 - name: Farore's Courage
-  standard: Farore's Courage
-  pretty: Farore's Courage
-  cryptic: a <r<couragous tune>>
+  standard: Le Courage de Farore
+  pretty: le <Courage de Farore>
+  cryptic: un <r<air intrépide>>
   plurality: Singular
 
 - name: Nayru's Wisdom
-  standard: Nayru's Wisdom
-  pretty: Nayru's Widsom
-  cryptic: a <r<wise tune>>
+  standard: La Sagesse de Nayru
+  pretty: la <Sagesse de Nayru>
+  cryptic: un <r<air raisonné>>
   plurality: Singular
 
 - name: Din's Power
-  standard: Din's Power
-  pretty: Din's Power
-  cryptic: a <r<powerful tune>>
+  standard: La Force de Din
+  pretty: la <Force de Din>
+  cryptic: un <r<air puissant>>
   plurality: Singular
 
 - name: Song of the Hero Part
-  standard: Song of the Hero Part
-  pretty: a <Song of the Hero Part>
-  cryptic: a <r<dragon's tune>>
+  standard: Mélodie du Chant du héros
+  pretty: l'une des <mélodies du Chant du héros>
+  cryptic: un <r<air draconique>>
   plurality: Singular
 
 - name: Faron Song of the Hero Part
-  standard: Faron Song of the Hero Part
-  pretty: Faron's Song of the Hero Part
-  cryptic: a <r<dragon's tune>>
+  standard: Mélodie de Firone
+  pretty: la <mélodie de Firone>
+  cryptic: un <r<air draconique>>
   plurality: Singular
 
 - name: Eldin Song of the Hero Part
-  standard: Eldin Song of the Hero Part
-  pretty: Eldin's Song of the Hero Part
-  cryptic: a <r<dragon's tune>>
+  standard: Mélodie d'Ordinn
+  pretty: la <mélodie d'Ordinn>
+  cryptic: un <r<air draconique>>
   plurality: Singular
 
 - name: Lanayru Song of the Hero Part
-  standard: Lanayru Song of the Hero Part
-  pretty: Lanayru's Song of the Hero Part
-  cryptic: a <r<dragon's tune>>
+  standard: Mélodie de Lanelle
+  pretty: la <mélodie de Lanelle>
+  cryptic: un <r<air draconique>>
   plurality: Singular
 
 - name: Song of the Hero
-  standard: Song of the Hero
-  pretty: the <Song of the Hero>
-  cryptic: a <r<tune for the chosen one>>
+  standard: Chant du héros
+  pretty: le <Chant du héros>
+  cryptic: l'<r<air de l'élu>>
   plurality: Singular
 
 - name: Revitalizing Potion Plus Plus
-  standard: Revitalizing Potion++
-  pretty: a <Revitalizing Potion++>
-  cryptic: a <r<very strong cure-all>>
+  standard: Polypotion **
+  pretty: de la <polypotion **>
+  cryptic: un <r<remède universel très puissant>>
   plurality: Singular
 
 - name: Hot Pumpkin Soup
-  standard: Hot Pumpkin Soup
-  pretty: <Hot Pumpkin Soup>
-  cryptic: <r<steaming nourishment>>
+  standard: Soupe de citrouille chaude
+  pretty: de la <soupe de citrouille chaude>
+  cryptic: un <r<mets fumant>>
   plurality: Singular
 
 - name: Cold Pumpkin Soup
-  standard: Cold Pumpkin Soup
-  pretty: <Cold Pumpkin Soup>
-  cryptic: <r<tepid nourishment>>
+  standard: Soupe de citrouille froide
+  pretty: de la <soupe de citrouille froide>
+  cryptic: un <r<mets tiède>>
   plurality: Singular
 
 - name: Life Tree Seedling
-  standard: Life Tree Seedling
-  pretty: the <Life Tree Seedling>
-  cryptic: the <r<sprouting of life>>
+  standard: Pousse de l'arbre de vie
+  pretty: la <pousse de l'arbre de vie>
+  cryptic: le <r<germe de vie>>
   plurality: Singular
 
 - name: Life Tree Fruit
-  standard: Life Tree Fruit
-  pretty: the <Life Tree Fruit>
-  cryptic: the <r<fruit of life>>
+  standard: Fruit de l'arbre de vie
+  pretty: le <fruit de l'arbre de vie>
+  cryptic: le <r<fruit de vie>>
   plurality: Singular
 
 - name: Extra Wallet
-  standard: Extra Wallet
-  pretty: an <Extra Wallet>
-  cryptic: a <r<coin purse>>
+  standard: Bourse annexe
+  pretty: une <bourse annexe>
+  cryptic: un <r<porte-monnaie>>
   plurality: Singular
 
 - name: Skyview Temple Small Key
-  standard: Skyview Temple Small Key
-  pretty: a <Skyview Temple Small Key>
-  cryptic: a <r<glowing mushroom key>>
+  standard: Petite clé pour le temple de la contemplation
+  pretty: une <petite clé pour le temple de la contemplation>
+  cryptic: une <r<clé couverte de champignons scintillants>>
   plurality: Singular
 
 - name: Lanayru Mining Facility Small Key
-  standard: Lanayru Mining Facility Small Key
-  pretty: a <Lanayru Mining Facility Small Key>
-  cryptic: an <r<electric key>>
+  standard: Petite clé pour la raffinerie de Lanelle
+  pretty: une <petite clé pour la raffinerie de Lanelle>
+  cryptic: une <r<clé électrifiée>>
   plurality: Singular
 
 - name: Ancient Cistern Small Key
-  standard: Ancient Cistern Small Key
-  pretty: an <Ancient Cistern Small Key>
-  cryptic: a <r<wet key>>
+  standard: Petite clé pour la grande caverne antique
+  pretty: une <petite clé pour la grande caverne antique>
+  cryptic: une <r<clé mouillée>>
   plurality: Singular
 
 - name: Fire Sanctuary Small Key
-  standard: Fire Sanctuary Small Key
-  pretty: a <Fire Sanctuary Small Key>
-  cryptic: a <r<flaming key>>
+  standard: Petite clé pour le sanctuaire ancien
+  pretty: une <petite clé pour le sanctuaire ancien>
+  cryptic: une <r<clé enflammée>>
   plurality: Singular
 
 - name: Sandship Small Key
-  standard: Sandship Small Key
-  pretty: a <Sandship Small Key>
-  cryptic: a <r<time-travelling key>>
+  standard: Petite clé pour le galion des sables
+  pretty: une <petite clé pour le galion des sables>
+  cryptic: une <r<clé d'un autre temps>>
   plurality: Singular
 
 - name: Sky Keep Small Key
-  standard: Sky Keep Small Key
-  pretty: a <Sky Keep Small Key>
-  cryptic: a <r<sacred key>>
+  standard: Petite clé pour la tour des cieux
+  pretty: une <petite clé pour la tour des cieux>
+  cryptic: une <r<clé céleste>>
   plurality: Singular
 
 - name: Lanayru Caves Small Key
-  standard: Lanayru Caves Small Key
-  pretty: the <Lanayru Caves Small Key>
-  cryptic: a <r<key to the sea>>
+  standard: Petite clé pour la grotte de Lanelle
+  pretty: une <petite clé pour la grotte de Lanelle>
+  cryptic: une <r<clé qui sent les embruns>>
   plurality: Singular
 
 - name: Skyview Temple Map
-  standard: Skyview Temple Map
-  pretty: the <Skyview Temple map>
-  cryptic: a <r<glowing mushroom map>>
+  standard: Carte du temple de la contemplation
+  pretty: la <carte du temple de la contemplation>
+  cryptic: une <r<carte couverte de champignons scintillants>>
   plurality: Singular
 
 - name: Earth Temple Map
-  standard: Earth Temple Map
-  pretty: the <Earth Temple Map>
-  cryptic: an <r<earthen map>>
+  standard: Carte du temple de la terre !
+  pretty: la <carte du temple de la terre>
+  cryptic: une <r<carte terreuse>>
   plurality: Singular
 
 - name: Lanayru Mining Facility Map
-  standard: Lanayru Mining Facility Map
-  pretty: the <Lanayru Mining Facility Map>
-  cryptic: an <r<electric map>>
+  standard: Carte de la raffinerie de Lanelle
+  pretty: la <carte de la raffinerie de Lanelle>
+  cryptic: une <r<carte électrique>>
   plurality: Singular
 
 - name: Ancient Cistern Map
-  standard: Ancient Cistern Map
-  pretty: the <Ancient Cistern Map>
-  cryptic: a <r<wet map>>
+  standard: Carte de la grande caverne antique
+  pretty: la carte de <la grande caverne antique>
+  cryptic: une <r<carte mouillée>>
   plurality: Singular
 
 - name: Fire Sanctuary Map
-  standard: Fire Sanctuary Map
-  pretty: the <Fire Sanctuary Map>
-  cryptic: a <r<flaming map>>
+  standard: Carte du sanctuaire ancien
+  pretty: la <carte du sanctuaire ancien>
+  cryptic: une <r<carte enflammée>>
   plurality: Singular
 
 - name: Sandship Map
-  standard: Sandship Map
-  pretty: the <Sandship Map>
-  cryptic: a <r<time-travelling map>>
+  standard: Carte du galion des sables
+  pretty: la <carte du galion des sables>
+  cryptic: une <r<carte d'un autre temps>>
   plurality: Singular
 
 - name: Sky Keep Map
-  standard: Sky Keep Map
-  pretty: the <Sky Keep Map>
-  cryptic: a <r<sacred map>>
+  standard: Carte de la tour des cieux
+  pretty: la <carte de la tour des cieux>
+  cryptic: une <r<carte céleste>>
   plurality: Singular
 
 - name: Group of Tadtones
-  standard: Group of Tadtones
-  pretty: a <Group of Tadtones>
-  cryptic: some <r<music notes>>
-  plurality: Plural
+  standard: Groupe de fironotes
+  pretty:
+    text: un <groupe de fironotes>
+    plurality: Singular
+  cryptic:
+    text: des <r<notes de musique>>
+    plurality: Plural
 
 - name: Scrapper
-  standard: Scrapper
-  pretty: Scrapper
-  cryptic: a <r<transport friend>>
+  standard: Récupix
+  pretty: <Récupix>
+  cryptic: un <r<ami aux grands bras>>
   plurality: Singular
 
 - name: Health Trap
-  standard: Trap
-  pretty: a <Health Trap>
-  cryptic: a <r<life drain>>
+  standard: Piège
+  pretty: un <piège de santé>
+  cryptic: un <r<aspirateur de vie>>
   plurality: Singular
 
 - name: Groose Trap
-  standard: Trap
-  pretty: a <Groose Trap>
-  cryptic: <r<Skyloft's true hero>>
+  standard: Piège
+  pretty: un <piège Hergo>
+  cryptic: le <r<véritable héros de l'histoire>>
   plurality: Singular
 
 - name: Noise Trap
-  standard: Trap
-  pretty: a <Noise Trap>
-  cryptic: an <r<audiophile's delight>>
+  standard: Piège
+  pretty: un <piège bruyant>
+  cryptic: un <r<délice pour les tympans>>
   plurality: Singular
 
 - name: Curse Trap
-  standard: Trap
+  standard: Piège
   pretty:
-    text: a <Curse Trap>
+    text: un <piège maudit>
     plurality: Singular
   cryptic:
-    text: some <r<magical hand-ties>>
+    text: des <r<menottes magiques>>
     plurality: Plural
 
 - name: Burn Trap
-  standard: Trap
-  pretty: a <Burn Trap>
-  cryptic: a <r<pyrotechnician's delight>>
+  standard: Piège
+  pretty: un <piège incendiaire>
+  cryptic: un <r<spectacle pyrotechnique>>
   plurality: Singular
 
 - name: Game Beatable
-  standard: Game Beatable
-  pretty: Game Beatable
-  cryptic: the <r<death of the demon king>>
+  standard: Jeu finissable
+  pretty: jeu finissable
+  cryptic: la <r<mort du roi démon>>
   plurality: Singular
 
 - name: Faron Woods Goddess Cube on West Great Tree near Exit
