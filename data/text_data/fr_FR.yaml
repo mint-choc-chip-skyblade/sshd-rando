@@ -1226,165 +1226,165 @@
   plurality: Singular
 
 - name: Faron Woods Goddess Cube on West Great Tree near Exit
-  standard: Forêt de Firone Goddess Cube on West Great Tree near Exit
-  pretty: the <Forêt de Firone Goddess Cube on West Great Tree near Exit>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse sur une branche à l'ouest de l'arbre de vie
+  pretty: le <cube de la Déesse sur une branche à l'ouest de l'arbre de vie>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Faron Woods Goddess Cube on East Great Tree with Clawshots Target
-  standard: Forêt de Firone Goddess Cube on East Great Tree with Clawshots Target
-  pretty: the <Forêt de Firone Goddess Cube on East Great Tree with Clawshots Target>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse sur une branche au nord est de l'arbre de vie (grappin)
+  pretty: le <cube de la Déesse sur une branche au nord est de l'arbre de vie>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Faron Woods Goddess Cube on East Great Tree with Rope
-  standard: Forêt de Firone Goddess Cube on East Great Tree with Rope
-  pretty: the <Forêt de Firone Goddess Cube on East Great Tree with Rope>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse sur une branche à l'est de l'arbre de vie (corde)
+  pretty: le <cube de la Déesse sur une branche à l'est de l'arbre de vie>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Deep Woods Goddess Cube near Goron
-  standard: Cœur de la forêt Goddess Cube near Goron
-  pretty: the <Cœur de la forêt Goddess Cube near Goron>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse près du Goron dans le cœur de la forêt
+  pretty: le <cube de la Déesse près du Goron dans le cœur de la forêt>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Deep Woods Goddess Cube in front of Temple
-  standard: Cœur de la forêt Goddess Cube in front of Temple
-  pretty: the <Cœur de la forêt Goddess Cube in front of Temple>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse devant le temple de la contemplation
+  pretty: le <cube de la Déesse devant le temple de la contemplation>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Deep Woods Goddess Cube on top of Temple
-  standard: Cœur de la forêt Goddess Cube on top of Temple
-  pretty: the <Cœur de la forêt Goddess Cube on top of Temple>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse sur le temple de la contemplation
+  pretty: le <cube de la Déesse sur le temple de la contemplation>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Lake Floria Goddess Cube
-  standard: Lac Faroria Goddess Cube
-  pretty: the <Lac Faroria Goddess Cube>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse du lac Faroria
+  pretty: le <cube de la Déesse du lac Faroria>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Floria Waterfall Goddess Cube on High Ledge
-  standard: Cascade de Faroria Goddess Cube on High Ledge
-  pretty: the <Cascade de Faroria Goddess Cube on High Ledge>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse de la cascade de Faroria (hauteurs)
+  pretty: le <cube de la Déesse de la cascade de Faroria>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Eldin Volcano Goddess Cube at Eldin Entrance
-  standard: Volcan d'Ordinn Goddess Cube at Eldin Entrance
-  pretty: the <Volcan d'Ordinn Goddess Cube at Eldin Entrance>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse à l'entrée d'Ordinn
+  pretty: le <cube de la Déesse à l'entrée d'Ordinn>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Eldin Volcano Goddess Cube near Mogma Turf Entrance
-  standard: Volcan d'Ordinn Goddess Cube near Territoire mogma Entrance
-  pretty: the <Volcan d'Ordinn Goddess Cube near Territoire mogma Entrance>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse près de l'entrée du territoire mogma
+  pretty: le <cube de la Déesse près de l'entrée du territoire mogma>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Eldin Volcano Goddess Cube West of Temple
-  standard: Volcan d'Ordinn Goddess Cube West of Temple
-  pretty: the <Volcan d'Ordinn Goddess Cube West of Temple>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse à l'ouest du temple de la terre
+  pretty: le <cube de la Déesse à l'ouest du temple de la terre>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Eldin Volcano Goddess Cube East of Temple
-  standard: Volcan d'Ordinn Goddess Cube East of Temple
-  pretty: the <Volcan d'Ordinn Goddess Cube East of Temple>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse à l'est du temple de la terre
+  pretty: le <cube de la Déesse à l'est du temple de la terre>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Eldin Volcano Goddess Cube on Sand Slide
-  standard: Volcan d'Ordinn Goddess Cube on Sand Slide
-  pretty: the <Volcan d'Ordinn Goddess Cube on Sand Slide>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse dans la pente ensablée d'Ordinn
+  pretty: le <cube de la Déesse dans la pente ensablée d'Ordinn>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Mogma Turf Goddess Cube on Raised Pillar
-  standard: Territoire mogma Goddess Cube on Raised Pillar
-  pretty: the <Territoire mogma Goddess Cube on Raised Pillar>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse sur le pilier du territoire mogma
+  pretty: le <cube de la Déesse sur le pilier du territoire mogma>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Volcano Summit Goddess Cube in Lava Lake
-  standard: Sommet du volcan Goddess Cube in Lava Lake
-  pretty: the <Sommet du volcan Goddess Cube in Lava Lake>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse dans le lac de lave au sommet du volcan
+  pretty: le <cube de la Déesse dans le lac de lave au sommet du volcan>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Volcano Summit Goddess Cube at Summit Waterfall
-  standard: Sommet du volcan Goddess Cube at Summit Waterfall
-  pretty: the <Sommet du volcan Goddess Cube at Summit Waterfall>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse près de la cascade du sommet du volcan
+  pretty: le <cube de la Déesse près de la cascade du sommet du volcan>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Volcano Summit Goddess Cube near Fire Sanctuary Entrance
-  standard: Sommet du volcan Goddess Cube near Sanctuaire ancien Entrance
-  pretty: the <Sommet du volcan Goddess Cube near Sanctuaire ancien Entrance>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse près de l'entrée du sanctuaire ancien
+  pretty: le <cube de la Déesse près de l'entrée du sanctuaire ancien>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Lanayru Mine Goddess Cube behind First Landing Robot
-  standard: Mines de Lanelle Goddess Cube behind First Landing Robot
-  pretty: the <Mines de Lanelle Goddess Cube behind First Landing Robot>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse derrière le point d'aterrissage de Lanelle
+  pretty: le <cube de la Déesse derrière le point d'aterrissage de Lanelle>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Lanayru Desert Goddess Cube near Caged Robot
-  standard: Désert de Lanelle Goddess Cube near Caged Robot
-  pretty: the <Désert de Lanelle Goddess Cube near Caged Robot>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse près du robot encagé
+  pretty: le <cube de la Déesse près du robot encagé>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Lanayru Desert Goddess Cube in Sand Oasis
-  standard: Désert de Lanelle Goddess Cube in Sand Oasis
-  pretty: the <Désert de Lanelle Goddess Cube in Sand Oasis>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse dans l'oasis de sable
+  pretty: le <cube de la Déesse dans l'oasis de sable>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Lanayru Desert Goddess Cube in Secret Passageway
-  standard: Désert de Lanelle Goddess Cube in Secret Passageway
-  pretty: the <Désert de Lanelle Goddess Cube in Secret Passageway>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse dans le passage secret du désert
+  pretty: le <cube de la Déesse dans le passage secret du désert>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Temple of Time Goddess Cube
-  standard: Temple du temps Goddess Cube
-  pretty: the <Temple du temps Goddess Cube>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse près du temple du temps
+  pretty: le <cube de la Déesse près du temple du temps>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Lanayru Gorge Goddess Cube
-  standard: Gorges de Lanelle Goddess Cube
-  pretty: the <Gorges de Lanelle Goddess Cube>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse près de l'arbre de vie
+  pretty: le <cube de la Déesse près de l'arbre de vie>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Ancient Harbour Goddess Cube
-  standard: Port ancien Goddess Cube
-  pretty: the <Port ancien Goddess Cube>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse du port ancien
+  pretty: le <cube de la Déesse du port ancien>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Skipper's Retreat Goddess Cube
-  standard: Maison du capitaine Goddess Cube
-  pretty: the <Maison du capitaine Goddess Cube>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse près de la maison du capitaine
+  pretty: le <cube de la Déesse près de la maison du capitaine>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Pirate Stronghold Goddess Cube
-  standard: Repaire des pirates Goddess Cube
-  pretty: the <Repaire des pirates Goddess Cube>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse dans le repaire des pirates
+  pretty: le <cube de la Déesse dans le repaire des pirates>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Skyview Spring Goddess Cube
-  standard: Source de la contemplation Goddess Cube
-  pretty: the <Source de la contemplation Goddess Cube>
-  cryptic: a <ye<cube of sacred power>>
+  standard: Cube de la Déesse dans la source de la contemplation
+  pretty: le <cube de la Déesse dans la source de la contemplation>
+  cryptic: un <ye<cube béni>>
   plurality: Singular
 
 - name: Knight Academy - Fledge's Gift
