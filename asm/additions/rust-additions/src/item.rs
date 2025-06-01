@@ -1442,8 +1442,8 @@ pub extern "C" fn get_custom_freestanding_item_scale() -> f32 {
 
         return match (*item_actor).final_determined_itemid {
             40 => 1.5, // 5 Bombs
-            // Tumbleweed, Ancient Flower, Blue Bird Feather, Goddess Plume
-            60 | 163 | 166 | 174 | 176 => 2.0,
+            // Tumbleweed, Ancient Flower, Dusk Relic, Blue Bird Feather, Goddess Plume
+            60 | 163 | 166 | 168 | 174 | 176 => 2.0,
             _ => 1.0,
         };
     }
