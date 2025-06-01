@@ -176,7 +176,7 @@ pub fn set_shop_display_height() -> f32 {
 
         // Prevents last item in shop list from freezing after purchase
         // Also prevents Rupin's Shop items from rotating or being badly in the table.
-        if item_index == 0x7F || item_index <= 8 {
+        if item_index == 0x7F || item_index <= 8 || (*shop_sample).model_holder.use_sold_out_model {
             (*shop_sample).base.members.base.rot.y = 0;
             return display_height_offset;
         }
