@@ -3,6 +3,9 @@
 .offset 0x7100f7dc2c
 mov w8, #66
 bl additions_jumptable
+; Always load sounds (check for bad soundid moved to custom function)
+.offset 0x7100f7dc14
+nop
 
 ; Forces the GRP_FAN_TIMECHANGE sound file to always be loaded
 .offset 0x7100f7d684
