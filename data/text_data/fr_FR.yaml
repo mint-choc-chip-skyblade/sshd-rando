@@ -13,25 +13,25 @@
 - name: All Tadtones Collected text
   standard:
     "Vous avez obtenu le dernier groupe de <y<fironotes>> !\nVous les avez toutes trouvées !
-    \n\n\nAllez à la <b<forêt de Firone inondée>> et parlez au <r<dragon d'eau>> pour récupérer votre récompense !"
+    \n\n\nAllez à la <b<forêt de Firone inondée>> et parlez au\n<r<dragon d'eau>> pour récupérer votre récompense !"
 
 - name: Spiral Charge Text
   standard: "Vous avez appris l'<y<attaque tornade>> !"
 
 - name: Goddess Longsword Text
-  standard: "Vous avez obtenu la <y<longue épée divine>> !\nEn recevant la flamme de Farore, la lame de votre épée s'est allongée et son tranchant s'est amélioré !"
+  standard: "Vous avez obtenu la <y<longue épée divine>> !\nEn recevant la flamme de Farore, la lame de votre\népée s'est allongée et son tranchant s'est\namélioré !"
 
 - name: Goddess White Sword Text
-  standard: "Vous avez obtenu la <y<blanche épée divine>> !\nEn recevant la flamme de Nayru, Fay s'est éveillée à de nouveaux pouvoirs de <r<détection>> !"
+  standard: "Vous avez obtenu la <y<blanche épée divine>> !\nEn recevant la flamme de Nayru, Fay s'est\néveillée à de nouveaux pouvoirs de <r<détection>> !"
 
 - name: Master Sword Text
-  standard: "Vous avez obtenu l'<y<épée de légende>> !\nEn recevant la flamme de Din, votre épée s'est emplie d'une lumière sacrée qui peut repousser les démons !"
+  standard: "Vous avez obtenu l'<y<épée de légende>> !\nEn recevant la flamme de Din, votre épée\ns'est emplie d'une lumière sacrée qui peut\nrepousser les démons !"
 
 - name: True Master Sword Text
   standard: "Vous avez obtenu la <y<vraie épée de légende>> !\nGrâce à la bénédiction de la Déesse, l'<r<épée de\nlégende>> a atteint le paroxysme de sa puissance !"
 
 - name: Harp Text
-  standard: "Vous avez obtenu la <color yellow<lyre de la Déesse >coloroff>! Mais ce\nn'est pas le moment de l'admirer...\nVous pouvez en jouer avec <icon 30>."
+  standard: "Vous avez obtenu la <y<lyre de la Déesse >>! Mais ce\nn'est pas le moment de l'admirer...\nVous pouvez en jouer avec <icon 30>."
 
 - name: Harp Inventory Text
   standard: "Charmant instrument traditionnel de Célesbourg.\nVous pouvez en jouer avec <icon 30>."
@@ -70,47 +70,47 @@
   standard: "Vous avez obtenu de la <y<soupe de citrouille froide>> !\nC'est la spécialité de Potron, mais quelqu'un l'a laissé refroidir..."
 
 - name: Five Gratitude crystal counter
-  standard: "Vous avez obtenu <r<cinq>> <y<cristaux de gratitude>> !\nÇa en fait <r<<numeric arg1>>> en tout !"
+  standard: "Vous avez obtenu <r<cinq>> <y<cristaux de gratitude>> !\nÇa en fait <r<<numeric arg1> >>en tout !"
 
 - name: Single Gratitude crystal counter
-  standard: "Vous avez obtenu <r<un>> <y<cristal de gratitude>> !\nÇa en fait <r<<numeric arg1>>> en tout !"
+  standard: "Vous avez obtenu <r<un>> <y<cristal de gratitude>> !\nÇa en fait <r<<numeric arg1> >>en tout !"
 
 - name: Skyview Key Text
-  standard: "Vous avez obtenu une petite clé pour le <g<temple de la contemplation>> !"
+  standard: "Vous avez obtenu une petite clé pour le <g<temple de\nla contemplation>> !"
 
   # This is an intentional duplicate of the above entry
 - name: Item 200 Text
-  standard: "Vous avez obtenu une petite clé pour le <g<temple de la contemplation>> !"
+  standard: "Vous avez obtenu une petite clé pour le <g<temple de\nla contemplation>> !"
 
 - name: Item 201 Text
-  standard: "Vous avez obtenu une petite clé pour la <y<raffinerie de Lanelle>> !"
+  standard: "Vous avez obtenu une petite clé pour la <y<raffinerie\nde Lanelle>> !"
 
 - name: Item 202 Text
-  standard: "Vous avez obtenu une petite clé pour la <b<grande caverne antique>> !"
+  standard: "Vous avez obtenu une petite clé pour la <b<grande\ncaverne antique>> !"
 
 - name: Item 203 Text
-  standard: "Vous avez obtenu une petite clé pour le <r<sanctuaire ancien>> !"
+  standard: "Vous avez obtenu une petite clé pour le <r<sanctuaire\nancien>> !"
 
 - name: Item 204 Text
-  standard: "Vous avez obtenu une petite clé pour le <y+<galion des sables>> !"
+  standard: "Vous avez obtenu une petite clé pour le <y+<galion des\nsables>> !"
 
 - name: Item 205 Text
-  standard: "Vous avez obtenu une petite clé pour la <s<tour des cieux>> !"
+  standard: "Vous avez obtenu une petite clé pour la <s<tour des\ncieux>> !"
 
 - name: Item 206 Text
-  standard: "Vous avez obtenu une petite clé pour la <ye<grotte de Lanelle>> !"
+  standard: "Vous avez obtenu une petite clé pour la <ye<grotte de\nLanelle>> !"
 
 - name: Item 207 Text
-  standard: "Vous avez obtenu la carte du <g<temple de la contemplation>> !"
+  standard: "Vous avez obtenu la carte du <g<temple de la\ncontemplation>> !"
 
 - name: Item 208 Text
   standard: "Vous avez obtenu la carte du <r+<temple de la terre>> !"
 
 - name: Item 209 Text
-  standard: "Vous avez obtenu la carte de la <y<raffinerie de Lanelle>> !"
+  standard: "Vous avez obtenu la carte de la <y<raffinerie de\nLanelle>> !"
 
 - name: Item 210 Text
-  standard: "Vous avez obtenu la carte de la <b<grande caverne antique>> !"
+  standard: "Vous avez obtenu la carte de la <b<grande caverne\nantique>> !"
 
 - name: Item 211 Text
   standard: "Vous avez obtenu la carte du <r<sanctuaire ancien>> !"
@@ -122,11 +122,11 @@
   standard: "Vous avez obtenu la carte de la <s<tour des cieux>> !"
 
 - name: Can't buy Pouch text
-  standard: "Il vous faut la <y<sacoche d'aventurier>> pour acheter ceci !"
+  standard: "Il vous faut la <y<sacoche d'aventurier>>\npour acheter ceci !"
 
 - name: Potion Lady Text Patch
   standard: "Tu peux seulement acheter mes potions si tu\npossèdes des flacons vides.
-             \n\n\x0E\x01\x09\x04\x09\x90Allez, comme je t'aime bien, je t'en offre un\nen cadeau !"
+             \n\n\n\x0E\x01\x09\x04\x09\x90Allez, comme je t'aime bien, je t'en offre un\nen cadeau !"
 
 - name: Does not have slingshot
   standard: "\x0E\x01\x09\x04\x00\x01Au fait, <heroname>, je suis à la recherche de nouveaux <b<types de plantes>>.\n\nSi tu trouves quelque chose, viens me voir <r<dans l'école de chevalerie>> !"
@@ -142,22 +142,24 @@
 
 - name: Gondo Options Text
   standard:
-    "Yo ! Ici, c'est l'atelier de rénovation. J'peux\naméliorer un max de tes objets !\n\n\n
-    J'peux aussi réparer ton bouclier s'il est\nendommagé. Alors, qu'est‐ce que j'peux\nfaire pour toi ?\n\n[1]Améliorer[2]Réparer[3]Réparer le <r<robot>>[4-]Rien"
+    "Yo ! Ici, c'est l'atelier de rénovation. J'peux\naméliorer un max de tes objets !
+    \n\n\nJ'peux aussi réparer ton bouclier s'il est\nendommagé. Alors, qu'est‐ce que j'peux\nfaire pour toi ?\n[1]Améliorer[2]Réparer[3]Réparer le <r<robot>>[4-]Rien"
 
 - name: Patch Gondo Repair Scrapper Text 1
-  standard: "Oh ça ? Si j'en crois l'histoire de papi, il aurait besoin d'une huile extraite d'une <y<fleur ancienne>>.\n\n\n
-    J'en ai jamais vu dans le coin, ni même entendu parler...\n[1]La voici[2-]Moi non plus"
+  standard:
+    "Oh ça ? Si j'en crois l'histoire de papi, il aurait\nbesoin d'une huile extraite d'une <y<fleur ancienne>>.
+    \n\n\n J'en ai jamais vu dans le coin, ni même\nentendu parler...\n[1]La voici[2-]Moi non plus"
 
 - name: Patch Gondo Repair Scrapper Text 2
   standard:
-    "Waouh ! C'est ça, la <y<fleur ancienne >>? Ouais, on dirait bien qu'une sorte d'huile suinte de la racine !\n\n
-    J'devrais pouvoir réparer <b<Récupix>> avec ça !\n\n\n\n
-    Bouge pas, j'essaie tout de suite !"
+    "Waouh ! C'est ça, la <y<fleur ancienne >>? Ouais, on dirait bien qu'une sorte d'huile suinte de la racine !
+    \n\nJ'devrais pouvoir réparer <b<Récupix>> avec ça !
+    \n\n\n\nBouge pas, j'essaie tout de suite !"
 
 - name: Patch post Gondo Repair Text
-  standard: "Et voilà, c'est bon. Il est comme neuf !\n\n\n\n
-    J'aurais rien pu faire sans ton aide. Du coup, je te le laisse, tiens."
+  standard:
+    "Et voilà, c'est bon. Il est comme neuf !
+    \n\n\n\nJ'aurais rien pu faire sans ton aide. Du coup, je te le laisse, tiens."
 
 - name: Change Night Treasures/Bugs Question
   standard: "Tu veux vendre autre chose ?\n[1]Oui[2-]Non"
@@ -181,7 +183,7 @@
   standard: "Veux-tu faire redescendre la statue ?[1]Oui[2-]Non"
 
 - name: Already Completed Tadtones Text
-  standard: "Tu as déjà réussi mon épreuve. Je ne peux plus rien pour t'aider."
+  standard: "Tu as déjà réussi mon épreuve.\nJe ne peux plus rien pour t'aider."
 
 - name: Flooded Faron Reentry Text
   standard: "Veux-tu que j'<r<inonde la forêt>> de nouveau ?\n[1]Oui[2-]Non"
@@ -197,22 +199,21 @@
 
 - name: Yerbal open floria gates text
   standard:
-    "<b<Farore>>, le dragon d'eau, m'a confié un secret très important.\n\n\n
-    Vois-tu, elle m'a donné une <r<clé>> pour le lac !\n\n\n
-    Ne lui dis pas que je t'ai laissé entrer.\n
-    Madame le dragon d'eau est très soupe au lait, et j'ai pas envie de finir en salade !"
+    "<b<Farore>>, le dragon d'eau, m'a confié un secret très important.
+    \n\n\nVois-tu, elle m'a donné une <r<clé>> pour le lac !
+    \n\n\nNe lui dis pas que je t'ai laissé entrer.\nMadame le dragon d'eau est très soupe au lait, et j'ai pas envie de finir en salade !"
 
 - name: Yerbal floria gates intro text
   standard:
-    "Tu vois cette grande porte ? Elle mène au <b<lac Faroria>>.
-    Cependant, le <r<dragon d'eau>> l'a solidement fermée pour empêcher les intrus d'entrer...\n
-    Mais je vais te révéler comment on ouvre cette\nporte, petit pin."
+    "Tu vois cette grande porte ? Elle mène au\n<b<lac Faroria>>.
+    \n\n\nCependant, le <r<dragon d'eau>> l'a solidement\nfermée pour empêcher les intrus d'entrer...
+    \n\n\nMais je vais te révéler comment on ouvre\ncette porte, petit pin."
 
 - name: Flooded Faron Exit Question
-  standard: "Veux-tu déjà partir ? Je peux faire baisser le niveau de l'eau si tu veux revenir plus tard.\n[1]Oui[2-]Non"
+  standard: "Veux-tu déjà partir ? Je peux faire baisser le\nniveau de l'eau si tu veux revenir plus tard.\n[1]Oui[2-]Non"
 
 - name: Continue With Tadtones Text
-  standard: "Très bien. Reviens me parler si tu changes d'avis."
+  standard: "Très bien. Reviens me parler si tu changes\nd'avis."
 
 - name: No Mitts Text
   standard: "Tu n'as pas de gants creuse-tout,\ndonc je ne peux pas te laisser jouer !"
@@ -224,13 +225,13 @@
   standard: "Veux-tu entrer dans la <b<base des Bokoblins>>?\n[1]Oui[2-]Non"
 
 - name: Declined Boko Base Offer Text
-  standard: "Très bien. Reviens me parler si tu changes d'avis."
+  standard: "Très bien. Reviens me parler si tu changes\nd'avis."
 
 - name: Post Plats' Gift text
   standard: "Allez, à plus !"
 
 - name: Fi text text to leave dungeon
-  standard: "Vous ne pouvez pas terminer ce donjon pour l'instant. Je vous conseille de revenir plus tard."
+  standard: "Vous ne pouvez pas terminer ce donjon pour\nl'instant. Je vous conseille de revenir\nplus tard."
 
 - name: Patch Fi text before Demise
   standard: "Maître, Fay au rapport. La probabilité que ce portail mène à la fin de votre aventure est de 100 %.\n\nDésirez‐vous continuer ?\n[1-]Et comment ![2]Pas pour\nl'instant..."
@@ -242,7 +243,7 @@
   standard: "Bien que ton vœu ait été exaucé par\n la <y+<Triforce>>, <b<Ghirahim>> a pu s'enfuir avec\nZelda par la <r<grande porte d'entrée\ndu temple>>.\nIl n'est peut-être pas trop tard.\nHâte-toi, <heroname> !"
 
 - name: The Old One skip harp playing text
-  standard: "Je vois que tu as obtenu la <y<lyre de la Déesse>>. Très bien, je vais t'apprendre un <b<Chant>> qui te sera utile pour ton aventure."
+  standard: "Je vois que tu as obtenu la <y<lyre de la Déesse>>.\nTrès bien, je vais t'apprendre un <b<Chant>>\nqui te sera utile pour ton aventure."
 
 - name: Path Hint
   standard: On dit que <regions> |est/sont| sur le chemin de <goal_name>.
@@ -446,7 +447,7 @@
     plurality: Plural
   cryptic:
     text: de la <r<poudre étincelante>>
-    plurality: Singluar
+    plurality: Singular
 
 - name: 5 Bombs
   standard: Cinq bombes
@@ -5931,7 +5932,7 @@
 
 - name: Great Tree
   standard: Dans le grand arbre
-  pretty: dans le<grand arbre>
+  pretty: dans le <grand arbre>
   cryptic:
 
 - name: Flooded Faron Woods
@@ -6060,8 +6061,9 @@
 
 - name: Faron Trial Fi Questions Text
   # 350 L3
-  standard: "Lorsque le <y<réceptacle spirituel>> sera rempli, votre âme\ns'épanouira et la Déesse vous octroiera un <r<nouveau\npouvoir>>.\n\n
-    Avez‐vous des questions, Maître ?\n[1-]Oui[2]Non"
+  standard:
+    "Lorsque le <y<réceptacle spirituel>> sera rempli, votre âme\ns'épanouira et la Déesse vous octroiera un <r<nouveau\npouvoir>>.
+    \n\nAvez‐vous des questions, Maître ?\n[1-]Oui[2]Non"
 
 - name: Trial Direct Nothing
   standard: " La psysalis que ce chant ouvre ne vous apportera <r<rien>>."
@@ -6098,8 +6100,9 @@
 
 - name: Impa SoT Text
   # 502 L7
-  standard: "N'aie aucune crainte. J'assurerai la protection\nde dame <color blue<Zelda>coloroff>.
-    Rends-toi à présent en <regions>. L'<r<objet nécessaire à ta destinée>> \nt'y attend."
+  standard:
+    "N'aie aucune crainte. J'assurerai la\nprotection de dame <b<Zelda>>.
+    \n\nRends-toi à présent en <regions>.\nL'<r<objet nécessaire à ta destinée>> t'y attend."
 
 - name: First Groosenator Choice Text
   # 501 L101
@@ -6109,7 +6112,7 @@
   standard: "Désolé, <heroname>. Je ne peux pas te catapulter\n en un lieu où tu n'as jamais été."
 
 - name: FFW Bucha leave question text
-  standard: "<action6 \x03>L'eau n'est-elle pas à ton goût?\nJe connais un passage secret pour sortir de la forêt,\nveux-tu que je te le montre ?\n[1]S'il te plaît[2-]Non merci"
+  standard: "<action6 \x03>L'eau n'est-elle pas à ton goût?\nJe connais un passage secret pour sortir de la\nforêt, veux-tu que je te le montre ?\n[1]S'il te plaît[2-]Non merci"
 
 - name: FFW Bucha leave text
   standard: "Suis-moi !<action2 \x0e>"
@@ -6150,7 +6153,7 @@
   standard: "Bienvenue dans votre nouvelle aventure, Maître. J'ai\ndes <r<informations importantes>> sur votre voyage."
 
 - name: No Required Dungeons Text
-  standard: "Je ne détecte aucun donjon avec de fortes auras divines."
+  standard: "Je ne détecte aucun donjon avec de fortes auras\ndivines."
 
 - name: Some Required Dungeons Text
   standard: "Je détecte de fortes auras divines dans les donjons\nsuivants : {dungeon_text}"
@@ -6167,35 +6170,35 @@
       \n\n\nPour ce faire, vous devez ériger et ouvrir la <r<porte du\ntemps>> dans le <b<temple du sceau>>.
       \n\n\nPour ériger la <r<porte du temps>>, vous devez acquérir la\n<y<lyre de la Déesse>> et le <s<Chant de la Déesse>>.
       \n\n\nPour ouvrir la <r<porte du temps>>, vous devez projeter\nun <b<éclat céleste>> avec <y<{required_sword}>>.
-      \n\n\nAprès avoir voyagé dans le passé, vous devez rassembler les\ntrois morceaux de la <y+<Triforce>>.
+      \n\n\nAprès avoir voyagé dans le passé, vous devez\nrassembler les trois morceaux de la <y+<Triforce>>.
       \n\n\nCela vous permettra de sortir du <b<Temple d'Hylia>> dans\nle passé et de vaincre les boss sur votre chemin."
 
 # Beedle's Airshop text
 - name: Beedle Half Off Bug Net Text
   # 105 L26
-  standard: "Ça, c'est un <y<filet à papillons>>. Ça sert à attraper\nles insectes !\n\n\n
-    Y en a pas beaucoup dans le coin, mais j'suis\nsûr que ça te sera super utile ailleurs !\n\n\n
-    Une super affaire ! À moitié prix, ça fait <r<25 rubis>> ! T'en dis quoi ?\n[1-]J'achète[2]Non merci"
+  standard:
+    "Ça, c'est un <y<filet à papillons>>. Ça sert à\nattraper les insectes !
+    \n\n\nY en a pas beaucoup dans le coin, mais j'suis\nsûr que ça te sera super utile ailleurs !
+    \n\n\nUne super affaire ! À moitié prix, ça fait\n<r<25 rubis>> ! T'en dis quoi ?\n[1-]J'achète[2]Non merci"
 
 - name: Beedle Normal Shop Text Template
   standard: "Ça, c'est {sold_item}.\nJ'te |le/la/les| vends pour seulement <r<{normal_price}>> rubis !\nÇa te dit ?\n\n[1]J'achète[2-]Non merci"
 
 - name: Beedle Discounted Shop Text Template
-  standard: "Ça, c'est {sold_item}.\nAvec ta réduc à 50%, j'te |le/la/les| vends pour seulement <r<{normal_price}>> rubis !\nÇa te dit ?\n\n[1]J'achète[2-]Non merci"
+  standard: "Ça, c'est {sold_item}.\nAvec ta réduc à 50%, j'te |le/la/les| vends pour seulement <r<{discounted_price}>> rubis !\nÇa te dit ?\n\n[1]J'achète[2-]Non merci"
 
 - name: Thunder Dragon Boss Rush Rewards Template Text
   # 460 L6
   standard:
     # Actions: fold arms, nothing?, unfold arms, say "hey"
-    "<actionB \x0D>Va pour un <r<combat>> ! Ton enthousiasme me\nplaît !\n\n\n
-    Tu vas te retrouver face aux plus redoutables\nadversaires que tu as combattus jusqu'à présent.\n\n\n
-    <action0 \x00>Je vais utiliser mes pouvoirs pour recréer tes\ncombats passés.\n\n\n
-    Évidemment...<pause 15> si tu gagnes, tu seras récompensé.\n
-    Si tu défais quelques adversaires, je t'offirai {boss_rush_item1}.\n
-    Défais-en beaucoup et tu obtiendras mon trésor le plus\nprécieux, {boss_rush_item2} !\n\n
-    <action0 \x00>Mais attention...<pause 10> tu ne dois pas prendre ces\ncombats à la légère.
-    <rSi tu perds, c'est fini >>!\nTu seras perdu à jamais...\n\n
-    <action0 \x0A>Tu es toujours partant ?\n[1]Oui ![2-]Non..."
+    "<actionB \x0D>Va pour un <r<combat>> ! Ton enthousiasme me\nplaît !
+    \n\n\nTu vas te retrouver face aux plus\nredoutables adversaires que tu as\ncombattus jusqu'à présent.
+    \n\n<action0 \x00>Je vais utiliser mes pouvoirs pour recréer\ntes combats passés.
+    \n\n\nÉvidemment...<pause 15> si tu gagnes, tu seras\nrécompensé.
+    \n\n\nSi tu défais quelques adversaires,\nje t'offirai {boss_rush_item1}.\nDéfais-en beaucoup et tu obtiendras mon\ntrésor le plus précieux,\n
+    {boss_rush_item2} !
+    \n\n\n\n<actionD \x00>Mais attention...<pause 10> tu ne dois pas prendre ces\ncombats à la légère. <r<Si tu perds, c'est fini >>!\nTu seras perdu à jamais...
+    \n\n<action0 \x0A>Tu es toujours partant ?\n[1]Oui ![2-]Non..."
 
 - name: Pumpkin Archery Guaranteed Win Reward Choice Text
   standard:
@@ -6204,19 +6207,19 @@
 - name: Pumpkin Archery Easy No Prize Text
   # 114 L36
   standard:
-    "Hmm... <numeric arg0>...\n\n\n\n
-    <heroname>... Tu n'es pas dans ton\nassiette aujourd'hui ? Je ne peux pas te\ndonner de récompense...\n\n
-    Quand tu vises une citrouille, place ton curseur\nsur un point de sa trajectoire un peu avant\nqu'elle atteigne ce point.\n\n
-    Comme ça, tu devrais pouvoir marquer\n<r<10 points>> sans trop de problème...\n\n\n
-    Ah, désolé ! Je suppose que tu n'as pas besoin\nde mes conseils !"
+    "Hmm... <numeric arg0>...
+    \n\n\n\n<heroname>... Tu n'es pas dans ton\nassiette aujourd'hui ? Je ne peux pas te\ndonner de récompense...
+    \n\nQuand tu vises une citrouille, place ton\ncurseur sur un point de sa trajectoire\nun peu avant qu'elle atteigne ce point.
+    \n\nComme ça, tu devrais pouvoir marquer\n<r<10 points>> sans trop de problème...
+    \n\n\nAh, désolé ! Je suppose que tu n'as pas besoin\nde mes conseils !"
 
 - name: Pumpkin Archery Easy Low Prize Text
   # 114 L37
   standard:
-    "<numeric arg0> points ! Pas mal, <heroname> !\n\n\n\n
-    Ce n'est pas exceptionnel, mais ce n'est pas\nmauvais non plus. Et tu y es arrivé sans\nverser une goutte de sueur !\n\n
-    La prochaine fois, essaie de marquer au moins\n<r<150 points>> !\n\n\n
-    Tiens, je te donne les 50 rubis que j'ai\néconomisés en travaillant pour la dame\nde la cantine."
+    "<numeric arg0> points ! Pas mal, <heroname> !
+    \n\n\n\nCe n'est pas exceptionnel, mais ce n'est pas\nmauvais non plus. Et tu y es arrivé sans\nverser une goutte de sueur !
+    \n\nLa prochaine fois, essaie de marquer au moins\n<r<150 points>> !
+    \n\n\nTiens, je te donne les 50 rubis que j'ai\néconomisés en travaillant pour la dame\nde la cantine."
 
 - name: Pumpkin Archery Easy Mid Prize Text
   # 114 L39
@@ -6226,19 +6229,19 @@
 - name: Pumpkin Archery Hard No Prize Text
   # 114 L36
   standard:
-    "Hmm... <numeric arg0>...\n\n\n\n
-    <heroname>... Tu n'es pas dans ton\nassiette aujourd'hui ? Je ne peux pas te\ndonner de récompense...\n\n
-    Quand tu vises une citrouille, place ton curseur\nsur un point de sa trajectoire un peu avant\nqu'elle atteigne ce point.\n\n
-    Comme ça, tu devrais pouvoir marquer\n<r<400 points>> sans trop de problème...\n\n\n
-    Ah, désolé ! Je suppose que tu n'as pas besoin\nde mes conseils !"
+    "Hmm... <numeric arg0>...
+    \n\n\n\n<heroname>... Tu n'es pas dans ton\nassiette aujourd'hui ? Je ne peux pas te\ndonner de récompense...
+    \n\nQuand tu vises une citrouille, place ton\ncurseur sur un point de sa trajectoire\nun peu avant qu'elle atteigne ce point.
+    \n\nComme ça, tu devrais pouvoir marquer\n<r<400 points>> sans trop de problème...
+    \n\n\nAh, désolé ! Je suppose que tu n'as pas besoin\nde mes conseils !"
 
 - name: Pumpkin Archery Hard Low Prize Text
   # 114 L37
   standard:
-    "<numeric arg0> points ! Pas mal, <heroname> !\n\n\n\n
-    Ce n'est pas exceptionnel, mais ce n'est pas\nmauvais non plus. Et tu y es arrivé sans\nverser une goutte de sueur !\n\n
-    La prochaine fois, essaie de marquer au moins\n<r<600 points>> !\n\n\n
-    Tiens, je te donne les 50 rubis que j'ai\néconomisés en travaillant pour la dame\nde la cantine."
+    "<numeric arg0> points ! Pas mal, <heroname> !
+    \n\n\n\nCe n'est pas exceptionnel, mais ce n'est pas\nmauvais non plus. Et tu y es arrivé sans\nverser une goutte de sueur !
+    \n\nLa prochaine fois, essaie de marquer au moins\n<r<600 points>> !
+    \n\n\nTiens, je te donne les 50 rubis que j'ai\néconomisés en travaillant pour la dame\nde la cantine."
 
 - name: Pumpkin Archery Hard Mid Prize Text
   # 114 L39
@@ -6257,9 +6260,9 @@
 - name: Bug Heaven Easy No Prize Text
   # 116 L16
   standard:
-    "OK, c'est terminé. T'avoueras que c'était pas\nterrible !\n\n\n
-    La prochaine fois, essaie de mettre <r<moins de\ndix minutes>>.\n\n\n
-    Et si t'as des insectes à me vendre, je suis\npreneur, passe me voir pendant la nuit !"
+    "OK, c'est terminé. T'avoueras que c'était pas\nterrible !
+    \n\n\nLa prochaine fois, essaie de mettre <r<moins de\ndix minutes>>.
+    \n\n\nEt si t'as des insectes à me vendre, je suis\npreneur, passe me voir pendant la nuit !"
 
 - name: Bug Heaven Easy Beginner Low Prize Text
   # 116 L25
@@ -6269,28 +6272,28 @@
 - name: Bug Heaven Easy Wrangler Low Prize Text
   # 116 L17
   standard:
-    "OK, c'est terminé. Mouais, c'était pas trop mal.\n\n\n\n
-    Si tu sais à l'avance où les trouver, tu feras un\nmeilleur temps ! Essaye de mettre <r<moins de\ncinq minutes >>la prochaine fois."
+    "OK, c'est terminé. Mouais, c'était pas trop mal.
+    \n\n\n\nSi tu sais à l'avance où les trouver,\ntu feras un meilleur temps !\nEssaye de mettre <r<moins de cinq minutes >>\nla prochaine fois."
 
 - name: Bug Heaven Easy Beginner Mid Prize Text
   # 116 L27
   standard:
-    "Fais de ton mieux la prochaine fois, essaie de\nfinir en <r<moins de trois minutes>>.\n\n\n
-    Tiens, pour cette fois, tu gagnes <r<50 rubis >>!"
+    "Fais de ton mieux la prochaine fois, essaie de\nfinir en <r<moins de trois minutes>>.
+    \n\n\nTiens, pour cette fois, tu gagnes <r<50 rubis >>!"
 
 - name: Bug Heaven Easy Wrangler Mid Prize Text
   # 116 L19
   standard:
-    "OK, c'est terminé ! Alors ça, c'est un score pas\npiqué des hannetons !\n\n\n
-    Je sens qu'tu vas pas tarder à devenir le\nmeilleur chasseur d'insectes après moi...\nEssaie de mettre <r<moins de trois minutes\n>>la prochaine fois !\n
-    Voilà ton prix, je suis sûr que rien ne pourrait\nte faire plus plaisir : <r<cinq>> insectes !"
+    "OK, c'est terminé ! Alors ça, c'est un score pas\npiqué des hannetons !
+    \n\n\nJe sens qu'tu vas pas tarder à devenir le\nmeilleur chasseur d'insectes après moi...\nEssaie de mettre <r<moins de trois minutes\n>>la prochaine fois !
+    \nVoilà ton prix, je suis sûr que rien ne pourrait\nte faire plus plaisir : <r<cinq>> insectes !"
 
 - name: Bug Heaven Hard No Prize Text
   # 116 L16
   standard:
-    "OK, c'est terminé. T'avoueras que c'était pas\nterrible !\n\n\n
-    La prochaine fois, essaie de mettre <r<moins de\ntrois minutes>>.\n\n\n
-    Et si t'as des insectes à me vendre, je suis\npreneur, passe me voir pendant la nuit !"
+    "OK, c'est terminé. T'avoueras que c'était pas\nterrible !
+    \n\n\nLa prochaine fois, essaie de mettre <r<moins de\ntrois minutes>>.
+    \n\n\nEt si t'as des insectes à me vendre, je suis\npreneur, passe me voir pendant la nuit !"
 
 - name: Bug Heaven Hard Beginner Low Prize Text
   # 116 L25
@@ -6300,21 +6303,21 @@
 - name: Bug Heaven Hard Wrangler Low Prize Text
   # 116 L17
   standard:
-    "OK, c'est terminé. Mouais, c'était pas trop mal.\n\n\n\n
-    Si tu sais à l'avance où les trouver, tu feras un\nmeilleur temps ! Essaye de mettre <r<moins de\ndeux minutes >>la prochaine fois."
+    "OK, c'est terminé. Mouais, c'était pas trop mal.
+    \n\n\n\nSi tu sais à l'avance où les trouver, tu feras un\nmeilleur temps ! Essaye de mettre <r<moins de\ndeux minutes >>la prochaine fois."
 
 - name: Bug Heaven Hard Beginner Mid Prize Text
   # 116 L27
   standard:
-    "Fais de ton mieux la prochaine fois, essaie de\nfinir en <r<moins d'une minute>>.\n\n\n
-    Tiens, pour cette fois, tu gagnes <r<50 rubis >>!"
+    "Fais de ton mieux la prochaine fois, essaie de\nfinir en <r<moins d'une minute>>.
+    \n\n\nTiens, pour cette fois, tu gagnes <r<50 rubis >>!"
 
 - name: Bug Heaven Hard Wrangler Mid Prize Text
   # 116 L19
   standard:
-    "OK, c'est terminé ! Alors ça, c'est un score pas\npiqué des hannetons !\n\n\n
-    Je sens qu'tu vas pas tarder à devenir le\nmeilleur chasseur d'insectes après moi...\nEssaie de mettre <r<moins d'une minute\n>>la prochaine fois !\n
-    Voilà ton prix, je suis sûr que rien ne pourrait\nte faire plus plaisir : <r<cinq>> insectes !"
+    "OK, c'est terminé ! Alors ça, c'est un score pas\npiqué des hannetons !
+    \n\n\nJe sens qu'tu vas pas tarder à devenir le\nmeilleur chasseur d'insectes après moi...\nEssaie de mettre <r<moins d'une minute\n>>la prochaine fois !
+    \nVoilà ton prix, je suis sûr que rien ne pourrait\nte faire plus plaisir : <r<cinq>> insectes !"
 
 - name: Clean Cut Guaranteed Win Reward Choice Text
   standard:
@@ -6323,8 +6326,8 @@
 - name: Clean Cut Easy No Prize Text
   # 109 L24
   standard:
-    "Bon, c'est pas comme ça que tu vas t'illustrer...\nTu dois faire au moins <r<10 morceaux>> !\n\n\n
-    Si je peux te donner un conseil, tu ferais bien\nde te concentrer un poil, sinon tu vas rentrer\nbredouille !"
+    "Bon, c'est pas comme ça que tu vas t'illustrer...\nTu dois faire au moins <r<10 morceaux>> !
+    \n\n\nSi je peux te donner un conseil, tu ferais bien\nde te concentrer un poil, sinon tu vas rentrer\nbredouille !"
 
 - name: Clean Cut Easy Low Prize Text
   # 109 L26
@@ -6339,8 +6342,8 @@
 - name: Clean Cut Hard No Prize Text
   # 109 L24
   standard:
-    "Bon, c'est pas comme ça que tu vas t'illustrer...\nTu dois faire au moins <r<20 morceaux>> !\n\n\n
-    Si je peux te donner un conseil, tu ferais bien\nde te concentrer un poil, sinon tu vas rentrer\nbredouille !"
+    "Bon, c'est pas comme ça que tu vas t'illustrer...\nTu dois faire au moins <r<20 morceaux>> !
+    \n\n\nSi je peux te donner un conseil, tu ferais bien\nde te concentrer un poil, sinon tu vas rentrer\nbredouille !"
 
 - name: Clean Cut Hard Low Prize Text
   # 109 L26
@@ -6422,7 +6425,7 @@
 
 - name: Help Text Content 3c
   standard:
-    "Fruit de l'arbre de vie : <string arg0>\Pousse : <string arg1>\nPetites clés : <numeric arg0>, <numeric arg1>/2 trouvée(s)"
+    "Fruit de l'arbre de vie : <string arg0>\nPousse : <string arg1>\nPetites clés : <numeric arg0>, <numeric arg1>/2 trouvée(s)"
 
 - name: Inventory Emerald Tablet text
   # 003 L644
