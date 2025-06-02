@@ -148,7 +148,7 @@
 - name: Patch Gondo Repair Scrapper Text 1
   standard:
     "Oh ça ? Si j'en crois l'histoire de papi, il aurait\nbesoin d'une huile extraite d'une <y<fleur ancienne>>.
-    \n\n\n J'en ai jamais vu dans le coin, ni même\nentendu parler...\n[1]La voici[2-]Moi non plus"
+    \n\n\nJ'en ai jamais vu dans le coin, ni même\nentendu parler...\n[1]La voici[2-]Moi non plus"
 
 - name: Patch Gondo Repair Scrapper Text 2
   standard:
