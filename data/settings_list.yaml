@@ -838,7 +838,7 @@
 - name: damage_multiplier
   default_option: "1"
   pretty_name: Damage Multiplier
-  random_low: "1"
+  random_low: "0"
   random_high: "4"
   pretty_options:
     - 0-80
@@ -846,6 +846,7 @@
     - 0-80: "Determines the overall damage multiplier.
         <b>Normal Mode</b> (default) damage is x1.
         <b>Hero Mode</b> (new game +) damage is x2.
+        At x0, the player will be invincible and not take any damage.
         At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
 - name: unlock_all_groosenator_destinations
