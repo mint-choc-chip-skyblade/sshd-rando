@@ -841,9 +841,9 @@
   random_low: "1"
   random_high: "4"
   pretty_options:
-    - 1-80
+    - 0-80
   options:
-    - 1-80: "Determines the overall damage multiplier.
+    - 0-80: "Determines the overall damage multiplier.
         <b>Normal Mode</b> (default) damage is x1.
         <b>Hero Mode</b> (new game +) damage is x2.
         At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
