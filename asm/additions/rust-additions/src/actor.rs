@@ -1229,7 +1229,7 @@ extern "C" {
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
 #[no_mangle]
-pub fn spawn_actor(
+pub extern "C" fn spawn_actor(
     actorid: ACTORID,
     roomid: u32,
     actor_param1: u32,
@@ -1267,29 +1267,31 @@ pub fn spawn_actor(
 
 // This function was inlined so we have to create our own
 #[no_mangle]
-pub fn find_actor_by_type(actorid: ACTORID, start_node: *mut ActorTreeNode) -> *mut dBase {
+pub extern "C" fn find_actor_by_type(
+    actorid: ACTORID,
+    start_node: *mut ActorTreeNode,
+) -> *mut dBase {
     unsafe {
         let mut cur_node: *mut ActorTreeNode = start_node;
 
-        if cur_node == core::ptr::null_mut() {
+        if cur_node.is_null() {
             cur_node = CONNECT_MGR.root;
         }
 
-        while cur_node != core::ptr::null_mut()
-            && (*(*cur_node).owner).members.members.actorid != actorid as u16
+        while !cur_node.is_null() && (*(*cur_node).owner).members.members.actorid != actorid as u16
         {
             // Search the tree depth-first starting with the child node
-            if (*cur_node).tree_node.child != core::ptr::null_mut() {
+            if !(*cur_node).tree_node.child.is_null() {
                 cur_node = (*cur_node).tree_node.child as *mut ActorTreeNode;
             // If there's no child node go to the next sibling node
-            } else if (*cur_node).tree_node.next != core::ptr::null_mut() {
+            } else if !(*cur_node).tree_node.next.is_null() {
                 cur_node = (*cur_node).tree_node.next as *mut ActorTreeNode;
             // If there's no more sibling nodes, go up the tree until we hit
             // a node which has an unexplored sibling
             } else {
-                while (*cur_node).tree_node.next == core::ptr::null_mut() {
+                while (*cur_node).tree_node.next.is_null() {
                     cur_node = (*cur_node).tree_node.parent as *mut ActorTreeNode;
-                    if cur_node == core::ptr::null_mut() {
+                    if cur_node.is_null() {
                         return core::ptr::null_mut();
                     }
                 }
@@ -1297,7 +1299,7 @@ pub fn find_actor_by_type(actorid: ACTORID, start_node: *mut ActorTreeNode) -> *
             }
         }
 
-        if (cur_node == core::ptr::null_mut()) {
+        if (cur_node.is_null()) {
             return core::ptr::null_mut();
         }
 
@@ -1306,7 +1308,9 @@ pub fn find_actor_by_type(actorid: ACTORID, start_node: *mut ActorTreeNode) -> *
 }
 
 #[no_mangle]
-pub fn should_spawn_eldin_platforms(platform_actor_maybe: *mut dAcORockBoatMaybe) -> u32 {
+pub extern "C" fn should_spawn_eldin_platforms(
+    platform_actor_maybe: *mut dAcORockBoatMaybe,
+) -> u32 {
     unsafe {
         // If we haven't visited the fire dragon and aren't in boko base,
         // then don't spawn the platforms
@@ -1328,7 +1332,7 @@ pub fn should_spawn_eldin_platforms(platform_actor_maybe: *mut dAcORockBoatMaybe
 }
 
 #[no_mangle]
-pub fn set_correct_boss_key_positions() {
+pub extern "C" fn set_correct_boss_key_positions() {
     unsafe {
         for bk_angle in &mut INITIAL_INSERT_ANGLES[0..6] {
             bk_angle.x = 0xC000;
@@ -1339,7 +1343,7 @@ pub fn set_correct_boss_key_positions() {
 }
 
 #[no_mangle]
-pub fn set_random_boss_key_positions() {
+pub extern "C" fn set_random_boss_key_positions() {
     unsafe {
         for bk_angle in &mut INITIAL_INSERT_ANGLES[0..6] {
             bk_angle.x = rng::simple_rng() as u16;

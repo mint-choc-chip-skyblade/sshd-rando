@@ -128,7 +128,7 @@ if not devkitA64_linker.is_file():
 
 if not devkitA64_objcopy.is_file():
     raise Exception(
-        f"Failed to find devkitA64 linker at {devkitA64_linker}. {DEVKIT_FILE_NOT_FOUND_HELP}"
+        f"Failed to find devkitA64 objcopy at {devkitA64_objcopy}. {DEVKIT_FILE_NOT_FOUND_HELP}"
     )
 
 
@@ -137,6 +137,8 @@ with open("symbols.yaml", "r", encoding="utf-8") as f:
 
 with open("linker.ld", "r", encoding="utf-8") as f:
     linker_script = f.read()
+
+linker_script += NEWLINE
 
 for symbol, address in defined_symbols["main"].items():
     assert symbol is not None
@@ -201,12 +203,15 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
                 if destination.startswith("0x"):
                     destination = int(destination, 16)
                     temp_branch_label = f"branch_label_0x{destination:x}"
-                    local_branches.append(
+                    new_local_branch = (
                         temp_branch_label
                         + f" = 0x{destination:x}"
                         + SEMICOLON
                         + NEWLINE
                     )
+
+                    if new_local_branch not in local_branches:
+                        local_branches.append(new_local_branch)
 
                     code_blocks[asm_read_offset].append(
                         SPACE.join(instruction_parts[:-1])
@@ -219,8 +224,8 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
             else:
                 code_blocks[asm_read_offset].append(line + NEWLINE)
 
-            for symbol in local_branches:
-                temp_linker_script += symbol
+        for symbol in local_branches:
+            temp_linker_script += symbol
 
         for code_block_identifier, code in code_blocks.items():
             if code_block_identifier.startswith(OFFSET_PREFIX):
@@ -286,10 +291,11 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
             if asm_file_path == ASM_RUST_ADDITIONS_PATH:
                 linker_command.append("./" + ASM_RUST_ADDITIONS_TARGET_PATH.as_posix())
 
-            if result := call(linker_command):
-                # with open(temp_linker_file_name, "r", encoding="utf-8") as f:
-                #     print(f.readlines())
+            # with open(temp_linker_file_name, "r", encoding="utf-8") as f:
+            #     with open("linker_file.txt", "w") as linker_f:
+            #         linker_f.write(f.read())
 
+            if result := call(linker_command):
                 raise Exception(
                     f"Linker call {linker_command} failed with error code: {result}"
                 )
@@ -318,6 +324,11 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
 
                             symbol_address = int(match.group(1), 16)
                             symbol_name = match.group(2)
+
+                            # Rust sometimes outputs symbols with generics which the linker can't deal with.
+                            # Not currently an issue but becomes one when updating the rust nightly channel.
+                            # TODO: find a better way to deal with this.
+                            # if "<" not in symbol_name:
                             custom_symbols[symbol_name] = symbol_address
 
             # Convert to binary.
@@ -406,6 +417,17 @@ with temp_dir as temp_dir_name:
         cwd="./additions/rust-additions",
     ):
         raise Exception("Formatting rust additions failed.")
+
+    # Lint rust additions.
+    print("Linting rust code")
+    if rust_build_command := call(
+        [
+            "cargo",
+            "clippy",
+        ],
+        cwd="./additions/rust-additions",
+    ):
+        raise Exception("Linting rust additions failed.")
 
     # Assemble rust additions.
     print("Building rust code")

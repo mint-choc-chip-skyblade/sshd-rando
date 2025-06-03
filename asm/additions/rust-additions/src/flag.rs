@@ -377,28 +377,28 @@ extern "C" {
 // Flags
 // Storyflags
 #[no_mangle]
-pub fn set_storyflag(flag: u16) {
+pub extern "C" fn set_storyflag(flag: u16) {
     unsafe {
         ((*(*STORYFLAG_MGR).funcs).set_flag)(STORYFLAG_MGR, flag);
     };
 }
 
 #[no_mangle]
-pub fn set_storyflag_or_counter_to_value(flag: u16, value: u16) {
+pub extern "C" fn set_storyflag_or_counter_to_value(flag: u16, value: u16) {
     unsafe {
         ((*(*STORYFLAG_MGR).funcs).set_flag_or_counter_to_value)(STORYFLAG_MGR, flag, value);
     };
 }
 
 #[no_mangle]
-pub fn unset_storyflag(flag: u16) {
+pub extern "C" fn unset_storyflag(flag: u16) {
     unsafe {
         ((*(*STORYFLAG_MGR).funcs).unset_flag)(STORYFLAG_MGR, flag);
     };
 }
 
 #[no_mangle]
-pub fn check_storyflag(flag: u16) -> u32 {
+pub extern "C" fn check_storyflag(flag: u16) -> u32 {
     unsafe {
         return ((*(*STORYFLAG_MGR).funcs).get_flag_or_counter)(STORYFLAG_MGR, flag);
     }
@@ -406,21 +406,21 @@ pub fn check_storyflag(flag: u16) -> u32 {
 
 // Sceneflags (local)
 #[no_mangle]
-pub fn set_local_sceneflag(flag: u32) {
+pub extern "C" fn set_local_sceneflag(flag: u32) {
     unsafe {
         return SceneflagMgr__setFlag(SCENEFLAG_MGR, 0, flag);
     }
 }
 
 #[no_mangle]
-pub fn unset_local_sceneflag(flag: u32) {
+pub extern "C" fn unset_local_sceneflag(flag: u32) {
     unsafe {
         return SceneflagMgr__unsetFlag(SCENEFLAG_MGR, 0, flag);
     }
 }
 
 #[no_mangle]
-pub fn check_local_sceneflag(flag: u32) -> u16 {
+pub extern "C" fn check_local_sceneflag(flag: u32) -> u16 {
     unsafe {
         return SceneflagMgr__checkFlag(SCENEFLAG_MGR, 0, flag);
     }
@@ -428,7 +428,7 @@ pub fn check_local_sceneflag(flag: u32) -> u16 {
 
 // Sceneflags (global)
 #[no_mangle]
-pub fn set_global_sceneflag(sceneindex: u16, flag: u16) {
+pub extern "C" fn set_global_sceneflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
 
@@ -438,7 +438,7 @@ pub fn set_global_sceneflag(sceneindex: u16, flag: u16) {
 }
 
 #[no_mangle]
-pub fn unset_global_sceneflag(sceneindex: u16, flag: u16) {
+pub extern "C" fn unset_global_sceneflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
 
@@ -448,7 +448,7 @@ pub fn unset_global_sceneflag(sceneindex: u16, flag: u16) {
 }
 
 #[no_mangle]
-pub fn check_global_sceneflag(sceneindex: u16, flag: u16) -> u16 {
+pub extern "C" fn check_global_sceneflag(sceneindex: u16, flag: u16) -> u16 {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
 
@@ -460,7 +460,7 @@ pub fn check_global_sceneflag(sceneindex: u16, flag: u16) -> u16 {
 
 // Dungeonflags (global)
 #[no_mangle]
-pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
+pub extern "C" fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
 
@@ -470,7 +470,7 @@ pub fn set_global_dungeonflag(sceneindex: u16, flag: u16) {
 }
 
 #[no_mangle]
-pub fn check_global_dungeonflag(sceneindex: u16, flag: u16) -> u16 {
+pub extern "C" fn check_global_dungeonflag(sceneindex: u16, flag: u16) -> u16 {
     let upper_flag = (flag & 0xF0) >> 4;
     let lower_flag = flag & 0x0F;
 
@@ -483,28 +483,28 @@ pub fn check_global_dungeonflag(sceneindex: u16, flag: u16) -> u16 {
 
 // Itemflags
 #[no_mangle]
-pub fn set_itemflag(flag: ITEMFLAGS) {
+pub extern "C" fn set_itemflag(flag: ITEMFLAGS) {
     unsafe {
         ((*(*ITEMFLAG_MGR).funcs).set_flag)(ITEMFLAG_MGR, flag as u16);
     }
 }
 
 #[no_mangle]
-pub fn set_itemflag_or_counter_to_value(flag: ITEMFLAGS, value: u16) {
+pub extern "C" fn set_itemflag_or_counter_to_value(flag: ITEMFLAGS, value: u16) {
     unsafe {
         ((*(*ITEMFLAG_MGR).funcs).set_flag_or_counter_to_value)(ITEMFLAG_MGR, flag as u16, value);
     }
 }
 
 #[no_mangle]
-pub fn unset_itemflag(flag: ITEMFLAGS) {
+pub extern "C" fn unset_itemflag(flag: ITEMFLAGS) {
     unsafe {
         ((*(*ITEMFLAG_MGR).funcs).unset_flag)(ITEMFLAG_MGR, flag as u16);
     }
 }
 
 #[no_mangle]
-pub fn check_itemflag(flag: ITEMFLAGS) -> u32 {
+pub extern "C" fn check_itemflag(flag: ITEMFLAGS) -> u32 {
     unsafe {
         return ((*(*ITEMFLAG_MGR).funcs).get_flag_or_counter)(ITEMFLAG_MGR, flag as u16);
     }
@@ -512,7 +512,7 @@ pub fn check_itemflag(flag: ITEMFLAGS) -> u32 {
 
 // Tboxflags (global)
 #[no_mangle]
-pub fn set_global_tboxflag(sceneindex: u16, flag: u8) {
+pub extern "C" fn set_global_tboxflag(sceneindex: u16, flag: u8) {
     let tbox_index = flag / 8;
     let shift = flag % 8;
 
@@ -522,7 +522,7 @@ pub fn set_global_tboxflag(sceneindex: u16, flag: u8) {
 }
 
 #[no_mangle]
-pub fn check_global_tboxflag(sceneindex: u16, flag: u8) -> u8 {
+pub extern "C" fn check_global_tboxflag(sceneindex: u16, flag: u8) -> u8 {
     let tbox_index = flag / 8;
     let shift = flag % 8;
 
@@ -533,18 +533,18 @@ pub fn check_global_tboxflag(sceneindex: u16, flag: u8) -> u8 {
 
 // Misc flag funcs
 #[no_mangle]
-pub fn set_goddess_sword_pulled_story_flag() {
+pub extern "C" fn set_goddess_sword_pulled_story_flag() {
     // Set story flag 951 (Raised Goddess Sword in Goddess Statue).
     set_storyflag(951);
 }
 
 #[no_mangle]
-pub fn check_night_storyflag() -> bool {
+pub extern "C" fn check_night_storyflag() -> bool {
     return check_storyflag(899) != 0; // 899 == day/night flag
 }
 
 #[no_mangle]
-pub fn update_day_night_storyflag() {
+pub extern "C" fn update_day_night_storyflag() {
     // debug::debug_print("Updating night flag");
 
     unsafe {
@@ -567,7 +567,7 @@ pub fn update_day_night_storyflag() {
 }
 
 #[no_mangle]
-pub fn set_stone_of_trials_placed_flag(
+pub extern "C" fn set_stone_of_trials_placed_flag(
     game_reloader: *mut actor::GameReloader,
     current_room: u32,
     exit_index: u32,
@@ -588,7 +588,9 @@ pub fn set_stone_of_trials_placed_flag(
 }
 
 #[no_mangle]
-pub fn check_and_set_trial_completion_flag(trial_gate_actor: *mut actor::dAcOWarp) -> u32 {
+pub extern "C" fn check_and_set_trial_completion_flag(
+    trial_gate_actor: *mut actor::dAcOWarp,
+) -> u32 {
     unsafe {
         // Array of tuples (trial index, trial completion storyflag)
         let indexes_and_flags = [(0, 919), (1, 921), (2, 920), (3, 922)];
@@ -615,7 +617,7 @@ pub fn check_and_set_trial_completion_flag(trial_gate_actor: *mut actor::dAcOWar
 }
 
 #[no_mangle]
-pub fn handle_startflags() {
+pub extern "C" fn handle_startflags() {
     unsafe {
         (*FILE_MGR).prevent_commit = true;
 
@@ -633,7 +635,7 @@ pub fn handle_startflags() {
             match delimiter_count {
                 // Storyflags
                 0 => {
-                    ((*(*STORYFLAG_MGR).funcs).set_flag)(STORYFLAG_MGR, flag.into());
+                    ((*(*STORYFLAG_MGR).funcs).set_flag)(STORYFLAG_MGR, flag);
                 },
 
                 // Sceneflags
@@ -651,7 +653,7 @@ pub fn handle_startflags() {
 
                 // Itemflags
                 2 => {
-                    ((*(*ITEMFLAG_MGR).funcs).set_flag)(ITEMFLAG_MGR, flag.into());
+                    ((*(*ITEMFLAG_MGR).funcs).set_flag)(ITEMFLAG_MGR, flag);
 
                     // Set pouch items if applicable
                     match flag {
@@ -744,7 +746,7 @@ pub fn handle_startflags() {
 }
 
 #[no_mangle]
-pub fn increment_tadtone_counter() {
+pub extern "C" fn increment_tadtone_counter() {
     let current_value = check_storyflag(953) as u16;
     let mut new_value = current_value + 1;
 

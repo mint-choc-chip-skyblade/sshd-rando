@@ -59,7 +59,7 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn init_rainbow_colors(memcpy_dest: *mut c_void, memcpy_src: *mut c_void) {
+pub extern "C" fn init_rainbow_colors(memcpy_dest: *mut c_void, memcpy_src: *mut c_void) {
     unsafe {
         // Replaced instructions
         memcpy(memcpy_dest, memcpy_src, 0x28A0);
@@ -94,7 +94,7 @@ pub fn init_rainbow_colors(memcpy_dest: *mut c_void, memcpy_src: *mut c_void) {
 }
 
 #[no_mangle]
-pub fn handle_colors() {
+pub extern "C" fn handle_colors() {
     unsafe {
         // update the color change delay
         if COLOR_CHANGE_DELAY == 0 {
@@ -133,7 +133,7 @@ pub fn handle_colors() {
 }
 
 #[no_mangle]
-pub fn get_color_from_index(color_index: u32, color: u32) -> u32 {
+pub extern "C" fn get_color_from_index(color_index: u32, color: u32) -> u32 {
     match color_index {
         1 => return 0xFFFFCD9C,  // Blue (9C,CD,FF)
         2 => return 0xFFB5F0A3,  // Green (A3,F0,B5)
@@ -151,10 +151,10 @@ pub fn get_color_from_index(color_index: u32, color: u32) -> u32 {
 }
 
 #[no_mangle]
-pub fn rainbow_color_fade(color: u32) -> u32 {
+pub extern "C" fn rainbow_color_fade(color: u32) -> u32 {
     unsafe {
         // Yep, this is a stupid way to check if the game is paused ^^'
-        if COLOR_CHANGE_DELAY == 0 && LYT_PAUSE_DISP == core::ptr::null_mut() {
+        if COLOR_CHANGE_DELAY == 0 && LYT_PAUSE_DISP.is_null() {
             let mut prev_r: u32 = color & 0xFF;
             let mut prev_g: u32 = (color >> 8) & 0xFF;
             let mut prev_b: u32 = (color >> 16) & 0xFF;
