@@ -19,3 +19,15 @@ lto = true
 [dependencies]
 static_assertions = "1.1.0"
 wchar = "0.11.0"
+
+[lints.clippy]
+collapsible_if = "allow"
+upper_case_acronyms = "allow"
+needless_return = "allow"
+explicit_auto_deref = "allow"
+too_many_arguments = "allow"
+assign_op_pattern = "allow"
+manual_range_contains = "allow"
+excessive_precision = "allow"
+approx_constant = "allow"
+

@@ -59,7 +59,7 @@ extern "C" {
 // add `#[no_mangle]` and add a .global *symbolname* to
 // additions/rust-additions.asm
 #[no_mangle]
-pub fn fix_item_get() {
+pub extern "C" fn fix_item_get() {
     unsafe {
         let mut item_animation_index: u8;
 
@@ -98,7 +98,7 @@ pub fn fix_item_get() {
 }
 
 #[no_mangle]
-pub fn fix_items_in_sand_piles() {
+pub extern "C" fn fix_items_in_sand_piles() {
     unsafe {
         let param1: u32;
         asm!(
@@ -121,7 +121,7 @@ pub fn fix_items_in_sand_piles() {
 }
 
 #[no_mangle]
-pub fn fix_sandship_boat() -> u32 {
+pub extern "C" fn fix_sandship_boat() -> u32 {
     unsafe {
         let current_stage_name = unsafe { &CURRENT_STAGE_NAME[..4] };
 
@@ -135,7 +135,7 @@ pub fn fix_sandship_boat() -> u32 {
 }
 
 #[no_mangle]
-pub fn remove_timeshift_stone_cutscenes() {
+pub extern "C" fn remove_timeshift_stone_cutscenes() {
     unsafe {
         let mut subtypeBitfield: u8;
         asm!(
@@ -162,7 +162,7 @@ pub fn remove_timeshift_stone_cutscenes() {
 }
 
 #[no_mangle]
-pub fn fix_light_pillars(light_pillar_actor: *mut actor::dAcOlightLine) {
+pub extern "C" fn fix_light_pillars(light_pillar_actor: *mut actor::dAcOlightLine) {
     unsafe {
         let param1 = (*light_pillar_actor).base.basebase.members.param1;
         let storyflag = ((param1 >> 8) & 0xFF) as u16;
@@ -176,7 +176,7 @@ pub fn fix_light_pillars(light_pillar_actor: *mut actor::dAcOlightLine) {
 }
 
 #[no_mangle]
-pub fn update_crystal_count(itemid: u32) {
+pub extern "C" fn update_crystal_count(itemid: u32) {
     unsafe {
         let mut count: u32 = flag::check_itemflag(flag::ITEMFLAGS::CRYSTAL_PACK_COUNTER);
 
@@ -202,7 +202,7 @@ pub fn update_crystal_count(itemid: u32) {
 }
 
 #[no_mangle]
-pub fn horwell_always_interactable(horwell: *mut c_void) {
+pub extern "C" fn horwell_always_interactable(horwell: *mut c_void) {
     unsafe {
         dAcNpcSkn2__addInteractionTarget(horwell, 2);
 
@@ -213,7 +213,7 @@ pub fn horwell_always_interactable(horwell: *mut c_void) {
 }
 
 #[no_mangle]
-pub fn check_should_spawn_horwell(
+pub extern "C" fn check_should_spawn_horwell(
     horwell_actor: *mut actor::dAcOBase,
     param2: i32,
     param3: *mut c_char,
@@ -243,7 +243,7 @@ pub fn check_should_spawn_horwell(
 }
 
 #[no_mangle]
-pub fn check_should_spawn_remlit(
+pub extern "C" fn check_should_spawn_remlit(
     remlit_actor: *mut actor::dAcOBase,
     param2: i32,
     param3: *mut c_char,
@@ -276,7 +276,7 @@ pub fn check_should_spawn_remlit(
 }
 
 #[no_mangle]
-pub fn is_kikwi_found(dont_care: *mut c_void, found_storyflag: u16) -> bool {
+pub extern "C" fn is_kikwi_found(dont_care: *mut c_void, found_storyflag: u16) -> bool {
     unsafe {
         if &CURRENT_STAGE_NAME[..5] == b"F100\0" {
             return flag::check_storyflag(found_storyflag) == 1;
@@ -287,7 +287,7 @@ pub fn is_kikwi_found(dont_care: *mut c_void, found_storyflag: u16) -> bool {
 }
 
 #[no_mangle]
-pub fn fix_ammo_counts(collected_item: flag::ITEMFLAGS) {
+pub extern "C" fn fix_ammo_counts(collected_item: flag::ITEMFLAGS) {
     // Reset ammo counts to zero if we collect ammo, but don't
     // have the item which corresponds to using the ammo
     match collected_item {
@@ -314,16 +314,14 @@ pub fn fix_ammo_counts(collected_item: flag::ITEMFLAGS) {
 }
 
 #[no_mangle]
-pub fn apply_loftwing_speed_override() {
+pub extern "C" fn apply_loftwing_speed_override() {
     unsafe {
         if (&CURRENT_STAGE_NAME[..5] == b"F023\0"
             && flag::check_storyflag(368) == 1 // Pumpkin Soup delivered to rainbow island
             && flag::check_storyflag(200) == 0) // Levias defeated
             || minigame::MinigameState::SpiralChargeTutorial.is_current()
         {
-            if LOFTWING_PTR != core::ptr::null_mut()
-                && (*LOFTWING_PTR).obj_base_members.forward_speed > 80.0
-            {
+            if !LOFTWING_PTR.is_null() && (*LOFTWING_PTR).obj_base_members.forward_speed > 80.0 {
                 (*LOFTWING_PTR).obj_base_members.forward_speed = 80.0;
             }
         }
@@ -331,7 +329,7 @@ pub fn apply_loftwing_speed_override() {
 }
 
 #[no_mangle]
-pub fn check_for_botg_itemflag_for_light_tower(param1: u64, param2: u64, param3: u64) {
+pub extern "C" fn check_for_botg_itemflag_for_light_tower(param1: u64, param2: u64, param3: u64) {
     unsafe {
         let actor: *mut c_void;
         asm!("mov {0:x}, x19", out(reg) actor);
@@ -350,7 +348,7 @@ pub fn check_for_botg_itemflag_for_light_tower(param1: u64, param2: u64, param3:
 }
 
 #[no_mangle]
-pub fn set_skyloft_thunderhead_sceneflag() {
+pub extern "C" fn set_skyloft_thunderhead_sceneflag() {
     if unsafe { (*SCENEFLAG_MGR).sceneindex } == 0 {
         flag::set_local_sceneflag(29);
     }
@@ -360,7 +358,7 @@ pub fn set_skyloft_thunderhead_sceneflag() {
 
 // prevent_pyrup_fire_when_underground1
 #[no_mangle]
-pub fn not_should_pyrup_breathe_fire(player: *mut player::dPlayer) -> bool {
+pub extern "C" fn not_should_pyrup_breathe_fire(player: *mut player::dPlayer) -> bool {
     unsafe {
         if !((*(*player).vtable).is_recovering_related)(player) && !is_player_in_tunnel() {
             return false;
@@ -370,7 +368,7 @@ pub fn not_should_pyrup_breathe_fire(player: *mut player::dPlayer) -> bool {
 }
 
 #[no_mangle]
-pub fn prevent_pyrup_fire_when_underground2(some_value: i16) -> bool {
+pub extern "C" fn prevent_pyrup_fire_when_underground2(some_value: i16) -> bool {
     unsafe {
         let mut should_prevent_fire = true;
 
@@ -386,7 +384,7 @@ pub fn prevent_pyrup_fire_when_underground2(some_value: i16) -> bool {
 }
 
 #[no_mangle]
-pub fn is_player_in_tunnel() -> bool {
+pub extern "C" fn is_player_in_tunnel() -> bool {
     let current_action = unsafe { (*PLAYER_PTR).current_action };
 
     if current_action == player::PLAYER_ACTIONS::ATTACK_CRAWL

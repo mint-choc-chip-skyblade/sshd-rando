@@ -78,28 +78,28 @@ extern "C" {
 // additions/rust-additions.asm
 
 #[no_mangle]
-pub fn check_button_held_down(button: BUTTON_INPUTS) -> bool {
+pub extern "C" fn check_button_held_down(button: BUTTON_INPUTS) -> bool {
     unsafe {
         return ((*(*INPUT_MGR).vtable).check_button_held_down)(INPUT_MGR, button);
     }
 }
 
 #[no_mangle]
-pub fn check_button_held_up(button: BUTTON_INPUTS) -> bool {
+pub extern "C" fn check_button_held_up(button: BUTTON_INPUTS) -> bool {
     unsafe {
         return ((*(*INPUT_MGR).vtable).check_button_held_up)(INPUT_MGR, button);
     }
 }
 
 #[no_mangle]
-pub fn check_button_pressed_down(button: BUTTON_INPUTS) -> bool {
+pub extern "C" fn check_button_pressed_down(button: BUTTON_INPUTS) -> bool {
     unsafe {
         return ((*(*INPUT_MGR).vtable).check_button_pressed_down)(INPUT_MGR, button);
     }
 }
 
 #[no_mangle]
-pub fn check_button_pressed_up(button: BUTTON_INPUTS) -> bool {
+pub extern "C" fn check_button_pressed_up(button: BUTTON_INPUTS) -> bool {
     unsafe {
         return ((*(*INPUT_MGR).vtable).check_button_pressed_up)(INPUT_MGR, button);
     }
