@@ -575,6 +575,8 @@ class World:
                 )
                 dungeons.remove(dungeon)
 
+        # Collect required dungeon locations to make sure we don't accidentally set them as nonprogress
+        required_dungeon_locations = set()
         for _ in range(num_chosen_dungeons, num_required_dungeons):
             # If there are no more dungeons that can be chosen, that means that
             # there were too many dungeons that had to be unrequired to satisfy
@@ -589,16 +591,22 @@ class World:
             dungeon = dungeons.pop()
             dungeon.required = True
             dungeon.starting_entrance.enable()
+            for location in dungeon.locations:
+                required_dungeon_locations.add(location)
             logging.getLogger("").debug(f"Chose {dungeon} as required dungeon")
 
         # Now run a search and set any non-accessible locations as non-progress.
         # This sets the barren dungeon locations as non-progress, but also sets
         # locations only accessible through barren dungeons as non-progress so
-        # that players are never required to enter them at all
+        # that players are never required to enter them at all unless it's to
+        # access another required dungeon with dungeon entrances decoupled.
         search = Search(SearchMode.ACCESSIBLE_LOCATIONS, self.worlds, item_pool)
         search.search_worlds()
         for location in self.location_table.values():
-            if location not in search.visited_locations:
+            if (
+                location not in search.visited_locations
+                and location not in required_dungeon_locations
+            ):
                 location.progression = False
                 logging.getLogger("").debug(
                     f"Location {location} is not progression due to requiring barren dungeon access"
