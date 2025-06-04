@@ -9,6 +9,7 @@
 * Updated the `Damage Multiplier` setting to accept a value of zero
   * When set to zero, the player will be invincible and take no damage
 * Added some German translations for randomizer text added in version 2.0
+* Moves the `Unlock all Groosenator Destinations` to the "Advanced" tab of the randomizer GUI
 
 ### Fixes
 * Fixed softlock when trying to open the Faron trial gate after collecting the `Faron Woods - Kikwi Elder's Reward` and the "Scrapper" item
@@ -23,6 +24,7 @@
 * Fixed issue where the help menu would incorrectly show the "Scrapper" item as unobtained at all times
 * Fixed issue where applying presets would duplicate the settings and create inconsistencies between the settings shown in the randomizer program and the settings used to generate seeds
 * Fixed issue where the sold out sign in Beedle's Airshop would sometimes clip into the table or float above it
+* Fixed issue causing seeds to fail to generate when the `Decouple Entrances` setting is enabled
 
 
 
