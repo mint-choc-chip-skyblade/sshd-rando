@@ -1068,13 +1068,6 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_14">
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_unlock_all_groosenator_destinations">
-             <property name="text">
-              <string>Unlock all Groosenator Destinations</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="RandoTriStateCheckBox" name="setting_open_thunderhead">
              <property name="text">
               <string>Open Thunderhead</string>
@@ -3856,6 +3849,13 @@ Practice Sword</string>
             <widget class="RandoTriStateCheckBox" name="setting_natural_night_connections">
              <property name="text">
               <string>Require Natural Night Connections</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_unlock_all_groosenator_destinations">
+             <property name="text">
+              <string>Unlock all Groosenator Destinations</string>
              </property>
             </widget>
            </item>
