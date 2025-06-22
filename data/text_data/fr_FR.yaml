@@ -1388,644 +1388,644 @@
   plurality: Singular
 
 - name: Knight Academy - Fledge's Gift
-  standard: École de chevalerie - Fledge's Gift
-  pretty: École de chevalerie - Fledge's Gift
-  cryptic: a <r<gift from a friend>>
+  standard: École de chevalerie - Don de Célestin
+  pretty: École de chevalerie - Don de Célestin
+  cryptic: # a <r<gift from a friend>>
 
 - name: Knight Academy - Deliver Barrel to Henya the Lunch Lady
-  standard: École de chevalerie - Deliver Barrel to Henya the Lunch Lady
-  pretty: École de chevalerie - Deliver Barrel to Henya the Lunch Lady
-  cryptic: carrying a <r<heavy burden>>
+  standard: École de chevalerie - Amener un tonneau à Galina
+  pretty: École de chevalerie - Amener un tonneau à Galina
+  cryptic: # carrying a <r<heavy burden>>
 
 - name: Knight Academy - Item from Cawlin
-  standard: École de chevalerie - Item from Cawlin
-  pretty: École de chevalerie - Item from Cawlin
-  cryptic: a <r<disgruntled teenager>>
+  standard: École de chevalerie - Objet confié par Orbo
+  pretty: École de chevalerie - Objet confié par Orbo
+  cryptic: # a <r<disgruntled teenager>>
 
 - name: Knight Academy - Bonk Classroom Bookshelf
-  standard: École de chevalerie - Bonk Classroom Bookshelf
-  pretty: École de chevalerie - Bonk Classroom Bookshelf
-  cryptic: <r<disturbing the student library>>
+  standard: École de chevalerie - Se cogner contre la bibliothèque de la salle de classe
+  pretty: École de chevalerie - Se cogner contre la bibliothèque de la salle de classe
+  cryptic: # <r<disturbing the student library>>
 
 - name: Knight Academy - Bonk Headmaster Gaepora's Bookshelf
-  standard: École de chevalerie - Bonk Headmaster Gaepora's Bookshelf
-  pretty: École de chevalerie - Bonk Headmaster Gaepora's Bookshelf
-  cryptic: <r<disturbing ancient tomes>>
+  standard: École de chevalerie - Se cogner contre la bibliothèque du directeur Gaepora
+  pretty: École de chevalerie - Se cogner contre la bibliothèque du directeur Gaepora
+  cryptic: # <r<disturbing ancient tomes>>
 
 - name: Knight Academy - Link's Closet
-  standard: École de chevalerie - Link's Closet
-  pretty: École de chevalerie - Link's Closet
-  cryptic: <r<your closet>>
+  standard: École de chevalerie - Armoire de Link
+  pretty: École de chevalerie - Armoire de Link
+  cryptic: # <r<your closet>>
 
 - name: Knight Academy - Fledge's Closet
-  standard: École de chevalerie - Fledge's Closet
-  pretty: École de chevalerie - Fledge's Closet
-  cryptic: snooping through a <r<friend's clothes>>
+  standard: École de chevalerie - Armoire de Célestin
+  pretty: École de chevalerie - Armoire de Célestin
+  cryptic: # snooping through a <r<friend's clothes>>
 
 - name: Knight Academy - Groose's Closet
-  standard: École de chevalerie - Groose's Closet
-  pretty: École de chevalerie - Groose's Closet
-  cryptic: snooping through a <r<rival's clothes>>
+  standard: École de chevalerie - Armoire d'Hergo
+  pretty: École de chevalerie - Armoire d'Hergo
+  cryptic: # snooping through a <r<rival's clothes>>
 
 - name: Knight Academy - Owlan's Closet
-  standard: École de chevalerie - Owlan's Closet
-  pretty: École de chevalerie - Owlan's Closet
-  cryptic: snooping through a <r<professor's clothes>>
+  standard: École de chevalerie - Armoire d'Arfan
+  pretty: École de chevalerie - Armoire d'Arfan
+  cryptic: # snooping through a <r<professor's clothes>>
 
 - name: Knight Academy - Horwell's Closet
-  standard: École de chevalerie - Horwell's Closet
-  pretty: École de chevalerie - Horwell's Closet
-  cryptic: snooping through a <r<professor's clothes>>
+  standard: École de chevalerie - Armoire de Hulul
+  pretty: École de chevalerie - Armoire de Hulul
+  cryptic: # snooping through a <r<professor's clothes>>
 
 - name: Knight Academy - Karane's Closet
-  standard: École de chevalerie - Karane's Closet
-  pretty: École de chevalerie - Karane's Closet
-  cryptic: snooping through a <r<popular student's clothes>>
+  standard: École de chevalerie - Armoire de Grida
+  pretty: École de chevalerie - Armoire de Grida
+  cryptic: # snooping through a <r<popular student's clothes>>
 
 - name: Knight Academy - Zelda's Closet
-  standard: École de chevalerie - Zelda's Closet
-  pretty: École de chevalerie - Zelda's Closet
-  cryptic: snooping through a <r<lover's clothes>>
+  standard: École de chevalerie - Armoire de Zelda
+  pretty: École de chevalerie - Armoire de Zelda
+  cryptic: # snooping through a <r<lover's clothes>>
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 1
-  standard: École de chevalerie - Rupee in Chimney Crawlspace 1
-  pretty: École de chevalerie - Rupee in Chimney Crawlspace 1
-  cryptic: sneaking above a <r<lover's bedroom>>
+  standard: École de chevalerie - Rubis dans la faux plafond n°1
+  pretty: École de chevalerie - Rubis dans la faux plafond n°1
+  cryptic: # sneaking above a <r<lover's bedroom>>
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 2
-  standard: École de chevalerie - Rupee in Chimney Crawlspace 2
-  pretty: École de chevalerie - Rupee in Chimney Crawlspace 2
-  cryptic: sneaking above a <r<lover's bedroom>>
+  standard: École de chevalerie - Rubis dans la faux plafond n°2
+  pretty: École de chevalerie - Rubis dans la faux plafond n°2
+  cryptic: # sneaking above a <r<lover's bedroom>>
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 3
-  standard: École de chevalerie - Rupee in Chimney Crawlspace 3
-  pretty: École de chevalerie - Rupee in Chimney Crawlspace 3
-  cryptic: sneaking above a <r<lover's bedroom>>
+  standard: École de chevalerie - Rubis dans la faux plafond n°3
+  pretty: École de chevalerie - Rubis dans la faux plafond n°3
+  cryptic: # sneaking above a <r<lover's bedroom>>
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 4
-  standard: École de chevalerie - Rupee in Chimney Crawlspace 4
-  pretty: École de chevalerie - Rupee in Chimney Crawlspace 4
-  cryptic: sneaking above a <r<lover's bedroom>>
+  standard: École de chevalerie - Rubis dans la faux plafond n°4
+  pretty: École de chevalerie - Rubis dans la faux plafond n°4
+  cryptic: # sneaking above a <r<lover's bedroom>>
 
 - name: Knight Academy - Rupee in Chimney Crawlspace 5
-  standard: École de chevalerie - Rupee in Chimney Crawlspace 5
-  pretty: École de chevalerie - Rupee in Chimney Crawlspace 5
-  cryptic: sneaking above a <r<lover's bedroom>>
+  standard: École de chevalerie - Rubis dans la faux plafond n°5
+  pretty: École de chevalerie - Rubis dans la faux plafond n°5
+  cryptic: # sneaking above a <r<lover's bedroom>>
 
 - name: Knight Academy - Deliver Kikwi to Owlan
-  standard: École de chevalerie - Deliver Kikwi to Owlan
-  pretty: École de chevalerie - Deliver Kikwi to Owlan
-  cryptic: advancing a <r<professor's research>>
+  standard: École de chevalerie - Livrer le tikwi à Arfan
+  pretty: École de chevalerie - Livrer le tikwi à Arfan
+  cryptic: # advancing a <r<professor's research>>
 
 - name: Knight Academy - Help Fledge Workout
-  standard: École de chevalerie - Help Fledge Workout
-  pretty: École de chevalerie - Help Fledge Workout
-  cryptic: <r<lending strength to a friend>>
+  standard: École de chevalerie - Aider Célestin à devenir fort
+  pretty: École de chevalerie - Aider Célestin à devenir fort
+  cryptic: # <r<lending strength to a friend>>
 
 - name: Knight Academy - Deliver Cawlin's Letter
-  standard: École de chevalerie - Deliver Cawlin's Letter
-  pretty: École de chevalerie - Deliver Cawlin's Letter
-  cryptic: <r<mailing a love letter>>
+  standard: École de chevalerie - Livrer la lettre d'Orbo
+  pretty: École de chevalerie - Livrer la lettre d'Orbo
+  cryptic: # <r<mailing a love letter>>
 
 - name: Knight Academy - Crystal in Link's Room
-  standard: École de chevalerie - Crystal in Link's Room
-  pretty: École de chevalerie - Crystal in Link's Room
-  cryptic: the <r<crystal on the hero's desk>>
+  standard: École de chevalerie - Cristal dans la chambre de Link
+  pretty: École de chevalerie - Cristal dans la chambre de Link
+  cryptic: # the <r<crystal on the hero's desk>>
 
 - name: Knight Academy - Crystal in Knight Academy Plant
-  standard: École de chevalerie - Crystal in École de chevalerie Plant
-  pretty: École de chevalerie - Crystal in École de chevalerie Plant
-  cryptic: the <r<crystal hidden in a plant>>
+  standard: École de chevalerie - Cristal dans la plante en pot
+  pretty: École de chevalerie - Cristal dans la plante en pot
+  cryptic: # the <r<crystal hidden in a plant>>
 
 - name: Knight Academy - Crystal in Zelda's Room
-  standard: École de chevalerie - Crystal in Zelda's Room
-  pretty: École de chevalerie - Crystal in Zelda's Room
-  cryptic: the <r<crystal in a lover's room>>
+  standard: École de chevalerie - Cristal dans la chambre de Zelda
+  pretty: École de chevalerie - Cristal dans la chambre de Zelda
+  cryptic: # the <r<crystal in a lover's room>>
 
 - name: Upper Skyloft - Owlan's Gift
-  standard: Nord de Célesbourg - Owlan's Gift
-  pretty: Nord de Célesbourg - Owlan's Gift
-  cryptic: a <r<gift from a professor>>
+  standard: Nord de Célesbourg - Don d'Arfan
+  pretty: Nord de Célesbourg - Don d'Arfan
+  cryptic: # a <r<gift from a professor>>
 
 - name: Upper Skyloft - Rescue Remlit above Knight Academy
-  standard: Nord de Célesbourg - Rescue Remlit above École de chevalerie
-  pretty: Nord de Célesbourg - Rescue Remlit above École de chevalerie
-  cryptic: disturbing a <r<sleepy cat>>
+  standard: Nord de Célesbourg - Rescue Miou sur le toit de l'école de chevalerie
+  pretty: Nord de Célesbourg - Rescue Miou sur le toit de l'école de chevalerie
+  cryptic: # disturbing a <r<sleepy cat>>
 
 - name: Upper Skyloft - Ring Knight Academy Bell
-  standard: Nord de Célesbourg - Ring École de chevalerie Bell
-  pretty: Nord de Célesbourg - Ring École de chevalerie Bell
-  cryptic: <r<getting everyone's attention>>
+  standard: Nord de Célesbourg - Faire sonner la cloche de l'école de chevalerie
+  pretty: Nord de Célesbourg - Faire sonner la cloche de l'école de chevalerie
+  cryptic: # <r<getting everyone's attention>>
 
 - name: Upper Skyloft - Slingshot Left Lamp outside Upper Academy Doors
-  standard: Nord de Célesbourg - Slingshot Left Lamp outside Upper Academy Doors
-  pretty: Nord de Célesbourg - Slingshot Left Lamp outside Upper Academy Doors
-  cryptic: <r<shooting a schoolhouse light>>
+  standard: Nord de Célesbourg - Lancer une pierre sur la lampe à gauche des portes hautes de l'école
+  pretty: Nord de Célesbourg - Lancer une pierre sur la lampe à gauche des portes hautes de l'école
+  cryptic: # <r<shooting a schoolhouse light>>
 
 - name: Upper Skyloft - Slingshot Right Lamp outside Upper Academy Doors
-  standard: Nord de Célesbourg - Slingshot Right Lamp outside Upper Academy Doors
-  pretty: Nord de Célesbourg - Slingshot Right Lamp outside Upper Academy Doors
-  cryptic: <r<shooting a schoolhouse light>>
+  standard: Nord de Célesbourg - Lancer une pierre sur la lampe à droite des portes hautes de l'école
+  pretty: Nord de Célesbourg - Lancer une pierre sur la lampe à droite des portes hautes de l'école
+  cryptic: # <r<shooting a schoolhouse light>>
 
 - name: Upper Skyloft - Chest below Goddess Statue
-  standard: Nord de Célesbourg - Chest below Goddess Statue
-  pretty: Nord de Célesbourg - Chest below Goddess Statue
-  cryptic: the <r<northmost chest on Skyloft>>
+  standard: Nord de Célesbourg - Coffre sous la statue de la Déesse
+  pretty: Nord de Célesbourg - Coffre sous la statue de la Déesse
+  cryptic: # the <r<northmost chest on Skyloft>>
 
 - name: Upper Skyloft - 600 Points in Pumpkin Pull
-  standard: Nord de Célesbourg - 600 Points in Pumpkin Pull
-  pretty: Nord de Célesbourg - 600 Points in Pumpkin Pull
-  cryptic: <r<shooting pumpkins>>
+  standard: Nord de Célesbourg - 600 points au tir à la citrouille
+  pretty: Nord de Célesbourg - 600 points au tir à la citrouille
+  cryptic: # <r<shooting pumpkins>>
 
 - name: Upper Skyloft - Stamina Fruit near Upper Academy Gates
-  standard: Nord de Célesbourg - Stamina Fruit near Upper Academy Gates
-  pretty: Nord de Célesbourg - Stamina Fruit near Upper Academy Gates
-  cryptic: a <r<fruit near a school>>
+  standard: Nord de Célesbourg - Baie d'endurance près de l'entrée haute de l'école
+  pretty: Nord de Célesbourg - Baie d'endurance près de l'entrée haute de l'école
+  cryptic: # a <r<fruit near a school>>
 
 - name: Upper Skyloft - Stamina Fruit near Lower Academy Gates
-  standard: Nord de Célesbourg - Stamina Fruit near Lower Academy Gates
-  pretty: Nord de Célesbourg - Stamina Fruit near Lower Academy Gates
-  cryptic: a <r<fruit near a school>>
+  standard: Nord de Célesbourg - Baie d'endurance près de l'entrée basse de l'école
+  pretty: Nord de Célesbourg - Baie d'endurance près de l'entrée basse de l'école
+  cryptic: # a <r<fruit near a school>>
 
 - name: Upper Skyloft - Stamina Fruit near Sparring Hall
-  standard: Nord de Célesbourg - Stamina Fruit near Salle d'escrime
-  pretty: Nord de Célesbourg - Stamina Fruit near Salle d'escrime
-  cryptic: a <r<fruit near a school>>
+  standard: Nord de Célesbourg - Baie d'endurance près de la salle d'escrime
+  pretty: Nord de Célesbourg - Baie d'endurance près de la salle d'escrime
+  cryptic: # a <r<fruit near a school>>
 
 - name: Upper Skyloft - Stamina Fruit near Goddess Statue
-  standard: Nord de Célesbourg - Stamina Fruit near Goddess Statue
-  pretty: Nord de Célesbourg - Stamina Fruit near Goddess Statue
-  cryptic: a <r<fruit near a tall statue>>
+  standard: Nord de Célesbourg - Baie d'endurance près de la statue de la Déesse
+  pretty: Nord de Célesbourg - Baie d'endurance près de la statue de la Déesse
+  cryptic: # a <r<fruit near a tall statue>>
 
 - name: Inside the Statue of the Goddess - Raise Sword Item 1
-  standard: Dans la statue de la Déesse - Raise Sword Item 1
-  pretty: Dans la statue de la Déesse - Raise Sword Item 1
-  cryptic: the <r<goddess's first reward>>
+  standard: Dans la statue de la Déesse - Empoigner l'épée (objet n°1)
+  pretty: Dans la statue de la Déesse - Empoigner l'épée (objet n°1)
+  cryptic: # the <r<goddess's first reward>>
 
 - name: Inside the Statue of the Goddess - Raise Sword Item 2
-  standard: Dans la statue de la Déesse - Raise Sword Item 2
-  pretty: Dans la statue de la Déesse - Raise Sword Item 2
-  cryptic: the <r<goddess's second reward>>
+  standard: Dans la statue de la Déesse - Empoigner l'épée (objet n°2)
+  pretty: Dans la statue de la Déesse - Empoigner l'épée (objet n°2)
+  cryptic: # the <r<goddess's second reward>>
 
 - name: Upper Skyloft - Slingshot Left Lamp outside Sparring Hall Doors
-  standard: Nord de Célesbourg - Slingshot Left Lamp outside Salle d'escrime Doors
-  pretty: Nord de Célesbourg - Slingshot Left Lamp outside Salle d'escrime Doors
-  cryptic: <r<shooting a swordman's light>>
+  standard: Nord de Célesbourg - Lancer une pierre sur la lampe à gauche des portes de la salle d'escrime
+  pretty: Nord de Célesbourg - Lancer une pierre sur la lampe à gauche des portes de la salle d'escrime
+  cryptic: # <r<shooting a swordman's light>>
 
 - name: Upper Skyloft - Slingshot Right Lamp outside Sparring Hall Doors
-  standard: Nord de Célesbourg - Slingshot Right Lamp outside Salle d'escrime Doors
-  pretty: Nord de Célesbourg - Slingshot Right Lamp outside Salle d'escrime Doors
-  cryptic: <r<shooting a swordman's light>>
+  standard: Nord de Célesbourg - Lancer une pierre sur la lampe à droite des portes de la salle d'escrime
+  pretty: Nord de Célesbourg - Lancer une pierre sur la lampe à droite des portes de la salle d'escrime
+  cryptic: # <r<shooting a swordman's light>>
 
 - name: Sparring Hall - Chest in Back Room
-  standard: Salle d'escrime - Chest in Back Room
-  pretty: Salle d'escrime - Chest in Back Room
-  cryptic: a <r<training chest>>
+  standard: Salle d'escrime - Coffre de l'arrière salle
+  pretty: Salle d'escrime - Coffre de l'arrière salle
+  cryptic: # a <r<training chest>>
 
 - name: Sparring Hall - Crystal on Roof Beam
-  standard: Salle d'escrime - Crystal on Roof Beam
-  pretty: Salle d'escrime - Crystal on Roof Beam
-  cryptic: a <r<training crystal>>
+  standard: Salle d'escrime - Cristal sur la poutre
+  pretty: Salle d'escrime - Cristal sur la poutre
+  cryptic: # a <r<training crystal>>
 
 - name: Bazaar - Luv the Potion Lady's Gift
-  standard: Marché couvert - Luv the Potion Lady's Gift
-  pretty: Marché couvert - Luv the Potion Lady's Gift
-  cryptic: a <r<gift from a seller>>
+  standard: Marché couvert - Cadeau de Manda
+  pretty: Marché couvert - Cadeau de Manda
+  cryptic: # a <r<gift from a seller>>
 
 - name: Bazaar - Goddess Chest
-  standard: Marché couvert - Goddess Chest
-  pretty: Marché couvert - Goddess Chest
-  cryptic: a <s<goddess cube>> in an <y<ancient harbor>>
+  standard: Marché couvert - Coffre de la Déesse
+  pretty: Marché couvert - Coffre de la Déesse
+  cryptic: # a <s<goddess cube>> in an <y<ancient harbor>>
 
 - name: Bazaar - Upgrade to Quick Beetle
-  standard: Marché couvert - Upgrade to Quick Beetle
-  pretty: Marché couvert - Upgrade to Quick Beetle
-  cryptic: <r<making your insect fly faster>>
+  standard: Marché couvert - Amélioration en scarabée rapide
+  pretty: Marché couvert - Amélioration en scarabée rapide
+  cryptic: # <r<making your insect fly faster>>
 
 - name: Bazaar - Upgrade to Tough Beetle
-  standard: Marché couvert - Upgrade to Tough Beetle
-  pretty: Marché couvert - Upgrade to Tough Beetle
-  cryptic: <r<making your insect tougher>>
+  standard: Marché couvert - Amélioration en scarabée endurant
+  pretty: Marché couvert - Amélioration en scarabée endurant
+  cryptic: # <r<making your insect tougher>>
 
 - name: Bazaar - Upgrade to Scattershot
-  standard: Marché couvert - Upgrade to Scattershot
-  pretty: Marché couvert - Upgrade to Scattershot
-  cryptic: <r<scattering your pellets>>
+  standard: Marché couvert - Amélioration en lance-pierre rafale
+  pretty: Marché couvert - Amélioration en lance-pierre rafale
+  cryptic: # <r<scattering your pellets>>
 
 - name: Bazaar - Upgrade to Iron Bow
-  standard: Marché couvert - Upgrade to Iron Bow
-  pretty: Marché couvert - Upgrade to Iron Bow
-  cryptic: <r<forging your bow>>
+  standard: Marché couvert - Amélioration en arc en fer
+  pretty: Marché couvert - Amélioration en arc en fer
+  cryptic: # <r<forging your bow>>
 
 - name: Bazaar - Upgrade to Sacred Bow
-  standard: Marché couvert - Upgrade to Sacred Bow
-  pretty: Marché couvert - Upgrade to Sacred Bow
-  cryptic: <r<blessing your bow>>
+  standard: Marché couvert - Amélioration en arc sacré
+  pretty: Marché couvert - Amélioration en arc sacré
+  cryptic: # <r<blessing your bow>>
 
 - name: Bazaar - Upgrade to Big Bug Net
-  standard: Marché couvert - Upgrade to Big Bug Net
-  pretty: Marché couvert - Upgrade to Big Bug Net
-  cryptic: <r<increasing your net size>>
+  standard: Marché couvert - Amélioration en grand filet
+  pretty: Marché couvert - Amélioration en grand filet
+  cryptic: # <r<increasing your net size>>
 
 - name: Bazaar - Repair Gondo's Junk
-  standard: Marché couvert - Repair Gondo's Junk
-  pretty: Marché couvert - Repair Gondo's Junk
-  cryptic: <r<fixing an ancient robot>>
+  standard: Marché couvert - Réparer le robot de Dorco
+  pretty: Marché couvert - Réparer le robot de Dorco
+  cryptic: # <r<fixing an ancient robot>>
 
 - name: Central Skyloft - Bonk Tree before Lower Academy Stairs 1
-  standard: Centre de Célesbourg - Bonk Tree before Lower Academy Stairs 1
-  pretty: Centre de Célesbourg - Bonk Tree before Lower Academy Stairs 1
-  cryptic: <r<disturbing western sky wood>>
+  standard: Centre de Célesbourg - Se cogner contre le premier arbre devant l'escalier de l'école
+  pretty: Centre de Célesbourg - Se cogner contre le premier arbre devant l'escalier de l'école
+  cryptic: # <r<disturbing western sky wood>>
 
 - name: Central Skyloft - Bonk Tree before Lower Academy Stairs 2
-  standard: Centre de Célesbourg - Bonk Tree before Lower Academy Stairs 2
-  pretty: Centre de Célesbourg - Bonk Tree before Lower Academy Stairs 2
-  cryptic: <r<disturbing western sky wood>>
+  standard: Centre de Célesbourg - Se cogner contre le deuxième arbre devant l'escalier de l'école
+  pretty: Centre de Célesbourg - Se cogner contre le deuxième arbre devant l'escalier de l'école
+  cryptic: # <r<disturbing western sky wood>>
 
 - name: Central Skyloft - Bonk Tree before Lower Academy Stairs 3
-  standard: Centre de Célesbourg - Bonk Tree before Lower Academy Stairs 3
-  pretty: Centre de Célesbourg - Bonk Tree before Lower Academy Stairs 3
-  cryptic: <r<disturbing western sky wood>>
+  standard: Centre de Célesbourg - Se cogner contre le troisième arbre devant l'escalier de l'école
+  pretty: Centre de Célesbourg - Se cogner contre le troisième arbre devant l'escalier de l'école
+  cryptic: # <r<disturbing western sky wood>>
 
 - name: Central Skyloft - Slingshot Left Lamp outside North Bazaar Entrance
-  standard: Centre de Célesbourg - Slingshot Left Lamp outside North Marché couvert Entrance
-  pretty: Centre de Célesbourg - Slingshot Left Lamp outside North Marché couvert Entrance
-  cryptic: <r<shooting a northern shop light>>
+  standard: Centre de Célesbourg - Lancer une pierre sur la lampe à gauche de l'entrée nord du marché couvert
+  pretty: Centre de Célesbourg - Lancer une pierre sur la lampe à gauche de l'entrée nord du marché couvert
+  cryptic: # <r<shooting a northern shop light>>
 
 - name: Central Skyloft - Slingshot Right Lamp outside North Bazaar Entrance
-  standard: Centre de Célesbourg - Slingshot Right Lamp outside North Marché couvert Entrance
-  pretty: Centre de Célesbourg - Slingshot Right Lamp outside North Marché couvert Entrance
-  cryptic: <r<shooting a northern shop light>>
+  standard: Centre de Célesbourg - Lancer une pierre sur la lampe à droite de l'entrée nord du marché couvert
+  pretty: Centre de Célesbourg - Lancer une pierre sur la lampe à droite de l'entrée nord du marché couvert
+  cryptic: # <r<shooting a northern shop light>>
 
 - name: Central Skyloft - Slingshot Left Lamp outside South Bazaar Entrance
-  standard: Centre de Célesbourg - Slingshot Left Lamp outside South Marché couvert Entrance
-  pretty: Centre de Célesbourg - Slingshot Left Lamp outside South Marché couvert Entrance
-  cryptic: <r<shooting a southern shop light>>
+  standard: Centre de Célesbourg - Lancer une pierre sur la lampe à gauche de l'entrée sud du marché couvert
+  pretty: Centre de Célesbourg - Lancer une pierre sur la lampe à gauche de l'entrée sud du marché couvert
+  cryptic: # <r<shooting a southern shop light>>
 
 - name: Central Skyloft - Slingshot Right Lamp outside South Bazaar Entrance
-  standard: Centre de Célesbourg - Slingshot Right Lamp outside South Marché couvert Entrance
-  pretty: Centre de Célesbourg - Slingshot Right Lamp outside South Marché couvert Entrance
-  cryptic: <r<shooting a southern shop light>>
+  standard: Centre de Célesbourg - Lancer une pierre sur la lampe à droite de l'entrée sud du marché couvert
+  pretty: Centre de Célesbourg - Lancer une pierre sur la lampe à droite de l'entrée sud du marché couvert
+  cryptic: # <r<shooting a southern shop light>>
 
 - name: Central Skyloft - Blow Red Flag South of the Bazaar
-  standard: Centre de Célesbourg - Blow Red Flag South of the Marché couvert
-  pretty: Centre de Célesbourg - Blow Red Flag South of the Marché couvert
-  cryptic: <r<dusting a red flag>>
+  standard: Centre de Célesbourg - Souffler sur le drapeau rouge au sud du marché couvert
+  pretty: Centre de Célesbourg - Souffler sur le drapeau rouge au sud du marché couvert
+  cryptic: # <r<dusting a red flag>>
 
 - name: Central Skyloft - Blow Purple Flag South of the Bazaar
-  standard: Centre de Célesbourg - Blow Purple Flag South of the Marché couvert
-  pretty: Centre de Célesbourg - Blow Purple Flag South of the Marché couvert
-  cryptic: <r<dusting a purple flag>>
+  standard: Centre de Célesbourg - Souffler sur le drapeau violet au sud du marché couvert
+  pretty: Centre de Célesbourg - Souffler sur le drapeau violet au sud du marché couvert
+  cryptic: # <r<dusting a purple flag>>
 
 - name: Central Skyloft - Bonk Tree Southeast of the Bazaar
-  standard: Centre de Célesbourg - Bonk Tree Southeast of the Marché couvert
-  pretty: Centre de Célesbourg - Bonk Tree Southeast of the Marché couvert
-  cryptic: <r<disturbing sky wood below a market>>
+  standard: Centre de Célesbourg - Se cogner contre l'arbre au sud-est du marché couvert
+  pretty: Centre de Célesbourg - Se cogner contre l'arbre au sud-est du marché couvert
+  cryptic: # <r<disturbing sky wood below a market>>
 
 - name: Central Skyloft - Wryna's Gratitude
-  standard: Centre de Célesbourg - Wryna's Gratitude
-  pretty: Centre de Célesbourg - Wryna's Gratitude
-  cryptic: a <r<happy mother>>
+  standard: Centre de Célesbourg - Gratitude de Nacia
+  pretty: Centre de Célesbourg - Gratitude de Nacia
+  cryptic: # a <r<happy mother>>
 
 - name: Central Skyloft - Kukiel's Family Closet
-  standard: Centre de Célesbourg - Kukiel's Family Closet
-  pretty: Centre de Célesbourg - Kukiel's Family Closet
-  cryptic: snooping through a <r<happy child's clothes>>
+  standard: Centre de Célesbourg - Armoire familiale de Picoro
+  pretty: Centre de Célesbourg - Armoire familiale de Picoro
+  cryptic: # snooping through a <r<happy child's clothes>>
 
 - name: Central Skyloft - Waterfall Cave First Chest
-  standard: Centre de Célesbourg - Waterfall Cave First Chest
-  pretty: Centre de Célesbourg - Waterfall Cave First Chest
-  cryptic: the <r<higher chest>> in a <b<cave in the sky>>
+  standard: Centre de Célesbourg - Premier coffre de la grotte sous la cascade
+  pretty: Centre de Célesbourg - Premier coffre de la grotte sous la cascade
+  cryptic: # the <r<higher chest>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - Waterfall Cave Second Chest
-  standard: Centre de Célesbourg - Waterfall Cave Second Chest
-  pretty: Centre de Célesbourg - Waterfall Cave Second Chest
-  cryptic: the <r<lower chest>> in a <b<cave in the sky>>
+  standard: Centre de Célesbourg - Second coffre de la grotte sous la cascade
+  pretty: Centre de Célesbourg - Second coffre de la grotte sous la cascade
+  cryptic: # the <r<lower chest>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
-  standard: Centre de Célesbourg - First Rupee in Waterfall Cave Crawlspace
-  pretty: Centre de Célesbourg - First Rupee in Waterfall Cave Crawlspace
-  cryptic: a <r<rupee>> in a <b<cave in the sky>>
+  standard: Centre de Célesbourg - Premier rubis dans le passage étroit de la grotte sous la cascade
+  pretty: Centre de Célesbourg - Premier rubis dans le passage étroit de la grotte sous la cascade
+  cryptic: # a <r<rupee>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
-  standard: Centre de Célesbourg - Second Rupee in Waterfall Cave Crawlspace
-  pretty: Centre de Célesbourg - Second Rupee in Waterfall Cave Crawlspace
-  cryptic: a <r<rupee>> in a <b<cave in the sky>>
+  standard: Centre de Célesbourg - Second rubis dans le passage étroit de la grotte sous la cascade
+  pretty: Centre de Célesbourg - Second rubis dans le passage étroit de la grotte sous la cascade
+  cryptic: # a <r<rupee>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - Gossip Stone on Waterfall Island
-  standard: Centre de Célesbourg - Gossip Stone on Waterfall Island
-  pretty: Centre de Célesbourg - Gossip Stone on Waterfall Island
+  standard: Centre de Célesbourg - Pierre à potins sur l'île de la cascade
+  pretty: Centre de Célesbourg - Pierre à potins sur l'île de la cascade
   cryptic:
 
 - name: Central Skyloft - Parrow's Gift
-  standard: Centre de Célesbourg - Parrow's Gift
-  pretty: Centre de Célesbourg - Parrow's Gift
-  cryptic: a <r<brother's distress>>
+  standard: Centre de Célesbourg - Don d'Hiron
+  pretty: Centre de Célesbourg - Don d'Hiron
+  cryptic: # a <r<brother's distress>>
 
 - name: Central Skyloft - Parrow's Gratitude
-  standard: Centre de Célesbourg - Parrow's Gratitude
-  pretty: Centre de Célesbourg - Parrow's Gratitude
-  cryptic: a <r<brother's gratitude>>
+  standard: Centre de Célesbourg - Gratitude d'Hiron
+  pretty: Centre de Célesbourg - Gratitude d'Hiron
+  cryptic: # a <r<brother's gratitude>>
 
 - name: Central Skyloft - Orielle and Parrow's Closet
-  standard: Centre de Célesbourg - Orielle and Parrow's Closet
-  pretty: Centre de Célesbourg - Orielle and Parrow's Closet
-  cryptic: snooping through a <r<worried couple's clothes>>
+  standard: Centre de Célesbourg - Armoire d'Hiron et Kinaé
+  pretty: Centre de Célesbourg - Armoire d'Hiron et Kinaé
+  cryptic: # snooping through a <r<worried couple's clothes>>
 
 - name: Central Skyloft - Peatrice's Love
-  standard: Centre de Célesbourg - Peatrice's Love
-  pretty: Centre de Célesbourg - Peatrice's Love
-  cryptic: the <r<item check girl>>
+  standard: Centre de Célesbourg - Amour de Pavelle
+  pretty: Centre de Célesbourg - Amour de Pavelle
+  cryptic: # the <r<item check girl>>
 
 - name: Central Skyloft - Peater's Closet
-  standard: Centre de Célesbourg - Peater's Closet
-  pretty: Centre de Célesbourg - Peater's Closet
-  cryptic: snooping through a <r<protective father's clothes>>
+  standard: Centre de Célesbourg - Armoire de Panolo
+  pretty: Centre de Célesbourg - Armoire de Panolo
+  cryptic: # snooping through a <r<protective father's clothes>>
 
 - name: Central Skyloft - Peatrice's Closet
-  standard: Centre de Célesbourg - Peatrice's Closet
-  pretty: Centre de Célesbourg - Peatrice's Closet
-  cryptic: <r<snooping through the item check girl's clothes>>
+  standard: Centre de Célesbourg - Armoire de Pavelle
+  pretty: Centre de Célesbourg - Armoire de Pavelle
+  cryptic: # <r<snooping through the item check girl's clothes>>
 
 - name: Central Skyloft - Item in Bird's Nest
-  standard: Centre de Célesbourg - Item in Bird's Nest
-  pretty: Centre de Célesbourg - Item in Bird's Nest
-  cryptic: an <r<item nesting in dust>>
+  standard: Centre de Célesbourg - Objet enseveli dans le nid
+  pretty: Centre de Célesbourg - Objet enseveli dans le nid
+  cryptic: # an <r<item nesting in dust>>
 
 - name: Central Skyloft - North Rupee in Bird's Nest
-  standard: Centre de Célesbourg - North Rupee in Bird's Nest
-  pretty: Centre de Célesbourg - North Rupee in Bird's Nest
-  cryptic: a <r<nesting item>>
+  standard: Centre de Célesbourg - Rubis nord dans le nid
+  pretty: Centre de Célesbourg - Rubis nord dans le nid
+  cryptic: # a <r<nesting item>>
 
 - name: Central Skyloft - East Rupee in Bird's Nest
-  standard: Centre de Célesbourg - East Rupee in Bird's Nest
-  pretty: Centre de Célesbourg - East Rupee in Bird's Nest
-  cryptic: a <r<nesting item>>
+  standard: Centre de Célesbourg - Rubis est dans le nid
+  pretty: Centre de Célesbourg - Rubis est dans le nid
+  cryptic: # a <r<nesting item>>
 
 - name: Central Skyloft - South Rupee in Bird's Nest
-  standard: Centre de Célesbourg - South Rupee in Bird's Nest
-  pretty: Centre de Célesbourg - South Rupee in Bird's Nest
-  cryptic: a <r<nesting item>>
+  standard: Centre de Célesbourg - Rubis sud dans le nid
+  pretty: Centre de Célesbourg - Rubis sud dans le nid
+  cryptic: # a <r<nesting item>>
 
 - name: Central Skyloft - West Rupee in Bird's Nest
-  standard: Centre de Célesbourg - West Rupee in Bird's Nest
-  pretty: Centre de Célesbourg - West Rupee in Bird's Nest
-  cryptic: a <r<nesting item>>
+  standard: Centre de Célesbourg - Rubis ouest dans le nid
+  pretty: Centre de Célesbourg - Rubis ouest dans le nid
+  cryptic: # a <r<nesting item>>
 
 - name: Central Skyloft - Chest in Shed
-  standard: Centre de Célesbourg - Chest in Shed
-  pretty: Centre de Célesbourg - Chest in Shed
-  cryptic: a <r<chest next to a goddess chest>>
+  standard: Centre de Célesbourg - Coffre dans l'abri
+  pretty: Centre de Célesbourg - Coffre dans l'abri
+  cryptic: # a <r<chest next to a goddess chest>>
 
 - name: Central Skyloft - Bonk Tree Left of Sky Keep Statue
-  standard: Centre de Célesbourg - Bonk Tree Left of Tour des cieux Statue
-  pretty: Centre de Célesbourg - Bonk Tree Left of Tour des cieux Statue
-  cryptic: <r<disturbing sky wood>> near a <b<waterfall>>
+  standard: Centre de Célesbourg - Se cogner contre l'arbre à gauche de la statue à un œil
+  pretty: Centre de Célesbourg - Se cogner contre l'arbre à gauche de la statue à un œil
+  cryptic: # <r<disturbing sky wood>> near a <b<waterfall>>
 
 - name: Central Skyloft - Bonk Tree Right of Sky Keep Statue
-  standard: Centre de Célesbourg - Bonk Tree Right of Tour des cieux Statue
-  pretty: Centre de Célesbourg - Bonk Tree Right of Tour des cieux Statue
-  cryptic: <r<disturbing sky wood>> near a <b<waterfall>>
+  standard: Centre de Célesbourg - Se cogner contre l'arbre à gauche de la statue à un œil
+  pretty: Centre de Célesbourg - Se cogner contre l'arbre à gauche de la statue à un œil
+  cryptic: # <r<disturbing sky wood>> near a <b<waterfall>>
 
 - name: Central Skyloft - Stamina Fruit between Wooden Planks
-  standard: Centre de Célesbourg - Stamina Fruit between Wooden Planks
-  pretty: Centre de Célesbourg - Stamina Fruit between Wooden Planks
-  cryptic: a <r<fruit in a lively area>>
+  standard: Centre de Célesbourg - Baie d'endurance entre les planches de bois
+  pretty: Centre de Célesbourg - Baie d'endurance entre les planches de bois
+  cryptic: # a <r<fruit in a lively area>>
 
 - name: Central Skyloft - Stamina Fruit near Kukiel's House
-  standard: Centre de Célesbourg - Stamina Fruit near Kukiel's House
-  pretty: Centre de Célesbourg - Stamina Fruit near Kukiel's House
-  cryptic: a <r<fruit in a lively area>>
+  standard: Centre de Célesbourg - Baie d'endurance près de la maison de Nacia
+  pretty: Centre de Célesbourg - Baie d'endurance près de la maison de Nacia
+  cryptic: # a <r<fruit in a lively area>>
 
 - name: Central Skyloft - Stamina Fruit near River
-  standard: Centre de Célesbourg - Stamina Fruit near River
-  pretty: Centre de Célesbourg - Stamina Fruit near River
-  cryptic: a <r<fruit in a lively area>>
+  standard: Centre de Célesbourg - Baie d'endurance près de la rivière
+  pretty: Centre de Célesbourg - Baie d'endurance près de la rivière
+  cryptic: # a <r<fruit in a lively area>>
 
 - name: Central Skyloft - Stamina Fruit near Orielle and Parrow's House
-  standard: Centre de Célesbourg - Stamina Fruit near Orielle and Parrow's House
-  pretty: Centre de Célesbourg - Stamina Fruit near Orielle and Parrow's House
-  cryptic: a <r<fruit in a lively area>>
+  standard: Centre de Célesbourg - Baie d'endurance près de la maison d'Hiron et Kinaé
+  pretty: Centre de Célesbourg - Baie d'endurance près de la maison d'Hiron et Kinaé
+  cryptic: # a <r<fruit in a lively area>>
 
 - name: Central Skyloft - Stamina Fruit between Stairs near the Bazaar
-  standard: Centre de Célesbourg - Stamina Fruit between Stairs near the Marché couvert
-  pretty: Centre de Célesbourg - Stamina Fruit between Stairs near the Marché couvert
-  cryptic: a <r<fruit in a lively area>>
+  standard: Centre de Célesbourg - Baie d'endurance entre les escaliers près du marché couvert
+  pretty: Centre de Célesbourg - Baie d'endurance entre les escaliers près du marché couvert
+  cryptic: # a <r<fruit in a lively area>>
 
 - name: Central Skyloft - Stamina Fruit near Plaza
-  standard: Centre de Célesbourg - Stamina Fruit near Plaza
-  pretty: Centre de Célesbourg - Stamina Fruit near Plaza
-  cryptic: a <r<fruit in a lively area>>
+  standard: Centre de Célesbourg - Baie d'endurance près de la place
+  pretty: Centre de Célesbourg - Baie d'endurance près de la place
+  cryptic: # a <r<fruit in a lively area>>
 
 - name: Central Skyloft - Goddess Chest on West Cliff Island
-  standard: Centre de Célesbourg - Goddess Chest on West Cliff Island
-  pretty: Centre de Célesbourg - Goddess Chest on West Cliff Island
-  cryptic: a <ye<goddess cube>> on a <r<great tree's branch>>
+  standard: Centre de Célesbourg - Coffre de la Déesse sur l'île près de la falaise ouest
+  pretty: Centre de Célesbourg - Coffre de la Déesse sur l'île près de la falaise ouest
+  cryptic: # a <ye<goddess cube>> on a <r<great tree's branch>>
 
 - name: Central Skyloft - Goddess Chest in Shed
-  standard: Centre de Célesbourg - Goddess Chest in Shed
-  pretty: Centre de Célesbourg - Goddess Chest in Shed
-  cryptic: a <ye<goddess cube>> on a <r<slippery slope>>
+  standard: Centre de Célesbourg - Coffre de la Déesse dans l'abri
+  pretty: Centre de Célesbourg - Coffre de la Déesse dans l'abri
+  cryptic: # a <ye<goddess cube>> on a <r<slippery slope>>
 
 - name: Central Skyloft - Goddess Chest on Island near Waterfall
-  standard: Centre de Célesbourg - Goddess Chest on Island near Waterfall
-  pretty: Centre de Célesbourg - Goddess Chest on Island near Waterfall
-  cryptic: a <ye<goddess cube>> in a <b<lake>>
+  standard: Centre de Célesbourg - Coffre de la Déesse sur l'île près de la cascade
+  pretty: Centre de Célesbourg - Coffre de la Déesse sur l'île près de la cascade
+  cryptic: # a <ye<goddess cube>> in a <b<lake>>
 
 - name: Central Skyloft - Goddess Chest on Waterfall Island
-  standard: Centre de Célesbourg - Goddess Chest on Waterfall Island
-  pretty: Centre de Célesbourg - Goddess Chest on Waterfall Island
-  cryptic: a <s<goddess cube>> <r<amongst the pirates>>
+  standard: Centre de Célesbourg - Coffre de la Déesse sur l'île de la Déesse
+  pretty: Centre de Célesbourg - Coffre de la Déesse sur l'île de la Déesse
+  cryptic: # a <s<goddess cube>> <r<amongst the pirates>>
 
 - name: Central Skyloft - Crystal in Orielle and Parrow's House
-  standard: Centre de Célesbourg - Crystal in Orielle and Parrow's House
-  pretty: Centre de Célesbourg - Crystal in Orielle and Parrow's House
-  cryptic: a <r<crystal in a home corner>>
+  standard: Centre de Célesbourg - Cristal dans la maison d'Hiron et Kinaé
+  pretty: Centre de Célesbourg - Cristal dans la maison d'Hiron et Kinaé
+  cryptic: # a <r<crystal in a home corner>>
 
 - name: Central Skyloft - Crystal below West Cliff
-  standard: Centre de Célesbourg - Crystal below West Cliff
-  pretty: Centre de Célesbourg - Crystal below West Cliff
-  cryptic: a <r<crystal down west>>
+  standard: Centre de Célesbourg - Cristal sous la falaise ouest
+  pretty: Centre de Célesbourg - Cristal sous la falaise ouest
+  cryptic: # a <r<crystal down west>>
 
 - name: Central Skyloft - Crystal between Wooden Planks
-  standard: Centre de Célesbourg - Crystal between Wooden Planks
-  pretty: Centre de Célesbourg - Crystal between Wooden Planks
-  cryptic: a <r<crystal along a wooden path>>
+  standard: Centre de Célesbourg - Cristal entre les planches de bois
+  pretty: Centre de Célesbourg - Cristal entre les planches de bois
+  cryptic: # a <r<crystal along a wooden path>>
 
 - name: Central Skyloft - Crystal near Bird Statue after Waterfall Cave
-  standard: Centre de Célesbourg - Crystal near Bird Statue after Waterfall Cave
-  pretty: Centre de Célesbourg - Crystal near Bird Statue after Waterfall Cave
-  cryptic: a <r<crystal near a cave exit>>
+  standard: Centre de Célesbourg - Cristal près de la statue d'oiseau après la grotte sous la cascade
+  pretty: Centre de Célesbourg - Cristal près de la statue d'oiseau après la grotte sous la cascade
+  cryptic: # a <r<crystal near a cave exit>>
 
 - name: Central Skyloft - Crystal in Loftwing Prison after Waterfall Cave
-  standard: Centre de Célesbourg - Crystal in Loftwing Prison after Waterfall Cave
-  pretty: Centre de Célesbourg - Crystal in Loftwing Prison after Waterfall Cave
-  cryptic: a <r<crystal in a former prison>>
+  standard: Centre de Célesbourg - Cristal dans la prison du célestrier
+  pretty: Centre de Célesbourg - Cristal dans la prison du célestrier
+  cryptic: # a <r<crystal in a former prison>>
 
 - name: Central Skyloft - Crystal on Waterfall Island
-  standard: Centre de Célesbourg - Crystal on Waterfall Island
-  pretty: Centre de Célesbourg - Crystal on Waterfall Island
-  cryptic: a <r<crystal on the edge of a waterfall>>
+  standard: Centre de Célesbourg - Cristal sur l'île de la cascade
+  pretty: Centre de Célesbourg - Cristal sur l'île de la cascade
+  cryptic: # a <r<crystal on the edge of a waterfall>>
 
 - name: Central Skyloft - Crystal on Light Tower
-  standard: Centre de Célesbourg - Crystal on Light Tower
-  pretty: Centre de Célesbourg - Crystal on Light Tower
-  cryptic: a <r<crystal at the base of a tower>>
+  standard: Centre de Célesbourg - Cristal sur la tour de lumière
+  pretty: Centre de Célesbourg - Cristal sur la tour de lumière
+  cryptic: # a <r<crystal at the base of a tower>>
 
 - name: Skyloft Village - Bonk Tree near River
-  standard: Village de Célesbourg - Bonk Tree near River
-  pretty: Village de Célesbourg - Bonk Tree near River
-  cryptic: <r<disturbing sky wood>> in a <b<village>>
+  standard: Village de Célesbourg - Se cogner contre l'arbre près de la rivière
+  pretty: Village de Célesbourg - Se cogner contre l'arbre près de la rivière
+  cryptic: # <r<disturbing sky wood>> in a <b<village>>
 
 - name: Skyloft Village - Clean Pipit's House
-  standard: Village de Célesbourg - Clean Pipit's House
-  pretty: Village de Célesbourg - Clean Pipit's House
-  cryptic: a <r<mother's laziness>>
+  standard: Village de Célesbourg - Nettoyer la maison de Kiko
+  pretty: Village de Célesbourg - Nettoyer la maison de Kiko
+  cryptic: # a <r<mother's laziness>>
 
 - name: Skyloft Village - Pipit and Mallara's Closet
-  standard: Village de Célesbourg - Pipit and Mallara's Closet
-  pretty: Village de Célesbourg - Pipit and Mallara's Closet
-  cryptic: snooping through a <r<dusty closet>>
+  standard: Village de Célesbourg - Armoire de Kiko et Canita
+  pretty: Village de Célesbourg - Armoire de Kiko et Canita
+  cryptic: # snooping through a <r<dusty closet>>
 
 - name: Skyloft Village - Deliver Rattle to Bertie
-  standard: Village de Célesbourg - Deliver Rattle to Bertie
-  pretty: Village de Célesbourg - Deliver Rattle to Bertie
-  cryptic: helping an <r<exhausted parent>>
+  standard: Village de Célesbourg - Livrer le hochet à Darin
+  pretty: Village de Célesbourg - Livrer le hochet à Darin
+  cryptic: # helping an <r<exhausted parent>>
 
 - name: Skyloft Village - Bertie and Luv's Closet
-  standard: Village de Célesbourg - Bertie and Luv's Closet
-  pretty: Village de Célesbourg - Bertie and Luv's Closet
-  cryptic: snooping through a <r<potion couple's clothes>>
+  standard: Village de Célesbourg - Armoire de Darin et Manda
+  pretty: Village de Célesbourg - Armoire de Darin et Manda
+  cryptic: # snooping through a <r<potion couple's clothes>>
 
 - name: Skyloft Village - Gondo and Gebra's Closet
-  standard: Village de Célesbourg - Gondo and Gebra's Closet
-  pretty: Village de Célesbourg - Gondo and Gebra's Closet
-  cryptic: snooping through a <r<repairman's clothes>>
+  standard: Village de Célesbourg - Armoire de Dorco et Podi
+  pretty: Village de Célesbourg - Armoire de Dorco et Podi
+  cryptic: # snooping through a <r<repairman's clothes>>
 
 - name: Skyloft Village - Rupin and Goselle's Closet
-  standard: Village de Célesbourg - Rupin and Goselle's Closet
-  pretty: Village de Célesbourg - Rupin and Goselle's Closet
-  cryptic: snooping through a <r<greedy man's clothes>>
+  standard: Village de Célesbourg - Armoire d'Arpigon et Aiglantine
+  pretty: Village de Célesbourg - Armoire d'Arpigon et Aiglantine
+  cryptic: # snooping through a <r<greedy man's clothes>>
 
 - name: Skyloft Village - Deliver Crystal Ball to Sparrot
-  standard: Village de Célesbourg - Deliver Crystal Ball to Sparrot
-  pretty: Village de Célesbourg - Deliver Crystal Ball to Sparrot
-  cryptic: delivering a <r<fortune telling device>>
+  standard: Village de Célesbourg - Livrer une boule de crystal à Petronus
+  pretty: Village de Célesbourg - Livrer une boule de crystal à Petronus
+  cryptic: # delivering a <r<fortune telling device>>
 
 - name: Skyloft Village - Sparrot's Closet
-  standard: Village de Célesbourg - Sparrot's Closet
-  pretty: Village de Célesbourg - Sparrot's Closet
-  cryptic: snooping through a <r<fortune teller's clothes>>
+  standard: Village de Célesbourg - Armoire de Petronus
+  pretty: Village de Célesbourg - Armoire de Petronus
+  cryptic: # snooping through a <r<fortune teller's clothes>>
 
 - name: Skyloft Village - Bonk Sparrot's Valuables
-  standard: Village de Célesbourg - Bonk Sparrot's Valuables
-  pretty: Village de Célesbourg - Bonk Sparrot's Valuables
-  cryptic: <r<disturbing a fortune teller's fortune>>
+  standard: Village de Célesbourg - Se cogner contre les babioles de Petronus
+  pretty: Village de Célesbourg - Se cogner contre les babioles de Petronus
+  cryptic: # <r<disturbing a fortune teller's fortune>>
 
 - name: Skyloft Village - Crystal near Pumpkin Patch
-  standard: Village de Célesbourg - Crystal near Pumpkin Patch
-  pretty: Village de Célesbourg - Crystal near Pumpkin Patch
-  cryptic: a <r<crystal behind a tree>>
+  standard: Village de Célesbourg - Cristal près du champ de citrouilles
+  pretty: Village de Célesbourg - Cristal près du champ de citrouilles
+  cryptic: # a <r<crystal behind a tree>>
 
 - name: Skyloft Village - Stamina Fruit above Pipit's House
-  standard: Village de Célesbourg - Stamina Fruit above Pipit's House
-  pretty: Village de Célesbourg - Stamina Fruit above Pipit's House
-  cryptic: a <r<fruit near some residences>>
+  standard: Village de Célesbourg - Baie d'endurance sur la maison de Kiko
+  pretty: Village de Célesbourg - Baie d'endurance sur la maison de Kiko
+  cryptic: # a <r<fruit near some residences>>
 
 - name: Batreaux's House - 5 Gratitude Crystals Reward
-  standard: Maison de Morcego - 5 Gratitude Crystals Reward
-  pretty: Maison de Morcego - 5 Gratitude Crystals Reward
-  cryptic: <r<the demon's first reward>>
+  standard: Maison de Morcego - Récompense contre 5 cristaux de gratitude
+  pretty: Maison de Morcego - Récompense contre 5 cristaux de gratitude
+  cryptic: # <r<the demon's first reward>>
 
 - name: Batreaux's House - 10 Gratitude Crystals Reward
-  standard: Maison de Morcego - 10 Gratitude Crystals Reward
-  pretty: Maison de Morcego - 10 Gratitude Crystals Reward
-  cryptic: <ye<10>> <r<pieces of gratitude>>
+  standard: Maison de Morcego - Récompense contre 10 cristaux de gratitude
+  pretty: Maison de Morcego - Récompense contre 10 cristaux de gratitude
+  cryptic: # <ye<10>> <r<pieces of gratitude>>
 
 - name: Batreaux's House - 30 Gratitude Crystals Reward
-  standard: Maison de Morcego - 30 Gratitude Crystals Reward
-  pretty: Maison de Morcego - 30 Gratitude Crystals Reward
-  cryptic: <ye<30>> <r<pieces of gratitude>>
+  standard: Maison de Morcego - Récompense contre 30 cristaux de gratitude
+  pretty: Maison de Morcego - Récompense contre 30 cristaux de gratitude
+  cryptic: # <ye<30>> <r<pieces of gratitude>>
 
 - name: Batreaux's House - 30 Gratitude Crystals Reward Chest
-  standard: Maison de Morcego - 30 Gratitude Crystals Reward Chest
-  pretty: Maison de Morcego - 30 Gratitude Crystals Reward Chest
-  cryptic: a <r<chest from a demon>>
+  standard: Maison de Morcego - Récompense contre 30 cristaux de gratitude Chest
+  pretty: Maison de Morcego - Récompense contre 30 cristaux de gratitude Chest
+  cryptic: # a <r<chest from a demon>>
 
 - name: Batreaux's House - 40 Gratitude Crystals Reward
-  standard: Maison de Morcego - 40 Gratitude Crystals Reward
-  pretty: Maison de Morcego - 40 Gratitude Crystals Reward
-  cryptic: <ye<40>> <r<pieces of gratitude>>
+  standard: Maison de Morcego - Récompense contre 40 cristaux de gratitude
+  pretty: Maison de Morcego - Récompense contre 40 cristaux de gratitude
+  cryptic: # <ye<40>> <r<pieces of gratitude>>
 
 - name: Batreaux's House - 50 Gratitude Crystals Reward
-  standard: Maison de Morcego - 50 Gratitude Crystals Reward
-  pretty: Maison de Morcego - 50 Gratitude Crystals Reward
-  cryptic: <ye<50>> <r<pieces of gratitude>>
+  standard: Maison de Morcego - Récompense contre 50 cristaux de gratitude
+  pretty: Maison de Morcego - Récompense contre 50 cristaux de gratitude
+  cryptic: # <ye<50>> <r<pieces of gratitude>>
 
 - name: Batreaux's House - 70 Gratitude Crystals First Reward
-  standard: Maison de Morcego - 70 Gratitude Crystals First Reward
-  pretty: Maison de Morcego - 70 Gratitude Crystals First Reward
-  cryptic: the <r<demon's penultimate reward>>
+  standard: Maison de Morcego - Première récompense contre 70 cristaux de gratitude
+  pretty: Maison de Morcego - Première récompense contre 70 cristaux de gratitude
+  cryptic: # the <r<demon's penultimate reward>>
 
 - name: Batreaux's House - 70 Gratitude Crystals Second Reward
-  standard: Maison de Morcego - 70 Gratitude Crystals Second Reward
-  pretty: Maison de Morcego - 70 Gratitude Crystals Second Reward
-  cryptic: the <r<demon's penultimate reward>>
+  standard: Maison de Morcego - Deuxième récompense contre 70 cristaux de gratitude
+  pretty: Maison de Morcego - Deuxième récompense contre 70 cristaux de gratitude
+  cryptic: # the <r<demon's penultimate reward>>
 
 - name: Batreaux's House - 80 Gratitude Crystals Reward
-  standard: Maison de Morcego - 80 Gratitude Crystals Reward
-  pretty: Maison de Morcego - 80 Gratitude Crystals Reward
-  cryptic: a <r<demon in human form>>
+  standard: Maison de Morcego - Récompense contre 80 cristaux de gratitude
+  pretty: Maison de Morcego - Récompense contre 80 cristaux de gratitude
+  cryptic: # a <r<demon in human form>>
 
 - name: Beedle's Airshop - 300 Rupee Item
-  standard: Boutique de Terry - 300 Rupee Item
-  pretty: Boutique de Terry - 300 Rupee Item
-  cryptic: for <g+<300 rupees>> <r<Beedle>>
+  standard: Boutique de Terry - Objet à 300 rubis
+  pretty: Boutique de Terry - Objet à 300 rubis
+  cryptic: # for <g+<300 rupees>> <r<Beedle>>
 
 - name: Beedle's Airshop - 600 Rupee Item
-  standard: Boutique de Terry - 600 Rupee Item
-  pretty: Boutique de Terry - 600 Rupee Item
-  cryptic: for <g+<600 rupees>> <r<Beedle>>
+  standard: Boutique de Terry - Objet à 600 rubis
+  pretty: Boutique de Terry - Objet à 600 rubis
+  cryptic: # for <g+<600 rupees>> <r<Beedle>>
 
 - name: Beedle's Airshop - 1200 Rupee Item
-  standard: Boutique de Terry - 1200 Rupee Item
-  pretty: Boutique de Terry - 1200 Rupee Item
-  cryptic: for <g+<1200 rupees>> <r<Beedle>>
+  standard: Boutique de Terry - Objet à 1200 rubis
+  pretty: Boutique de Terry - Objet à 1200 rubis
+  cryptic: # for <g+<1200 rupees>> <r<Beedle>>
 
 - name: Beedle's Airshop - 800 Rupee Item
-  standard: Boutique de Terry - 800 Rupee Item
-  pretty: Boutique de Terry - 800 Rupee Item
-  cryptic: for <g+<800 rupees>> <r<Beedle>>
+  standard: Boutique de Terry - Objet à 800 rubis
+  pretty: Boutique de Terry - Objet à 800 rubis
+  cryptic: # for <g+<800 rupees>> <r<Beedle>>
 
 - name: Beedle's Airshop - 1600 Rupee Item
-  standard: Boutique de Terry - 1600 Rupee Item
-  pretty: Boutique de Terry - 1600 Rupee Item
-  cryptic: for <g+<1600 rupees>> <r<Beedle>>
+  standard: Boutique de Terry - Objet à 1600 rubis
+  pretty: Boutique de Terry - Objet à 1600 rubis
+  cryptic: # for <g+<1600 rupees>> <r<Beedle>>
 
 - name: Beedle's Airshop - First 100 Rupee Item
-  standard: Boutique de Terry - First 100 Rupee Item
-  pretty: Boutique de Terry - First 100 Rupee Item
-  cryptic: for <g+<100 rupees>> <r<Beedle>>
+  standard: Boutique de Terry - Premier objet à 100 rubis
+  pretty: Boutique de Terry - Premier objet à 100 rubis
+  cryptic: # for <g+<100 rupees>> <r<Beedle>>
 
 - name: Beedle's Airshop - Second 100 Rupee Item
-  standard: Boutique de Terry - Second 100 Rupee Item
-  pretty: Boutique de Terry - Second 100 Rupee Item
-  cryptic: for <g+<100 rupees>> <r<Beedle>>
+  standard: Boutique de Terry - Deuxième objet à 100 rubis
+  pretty: Boutique de Terry - Deuxième objet à 100 rubis
+  cryptic: # for <g+<100 rupees>> <r<Beedle>>
 
 - name: Beedle's Airshop - Third 100 Rupee Item
-  standard: Boutique de Terry - Third 100 Rupee Item
-  pretty: Boutique de Terry - Third 100 Rupee Item
-  cryptic: for <g+<100 rupees>> <r<Beedle>>
+  standard: Boutique de Terry - Trosième objet à 100 rubis
+  pretty: Boutique de Terry - Trosième objet à 100 rubis
+  cryptic: # for <g+<100 rupees>> <r<Beedle>>
 
 - name: Beedle's Airshop - 50 Rupee Item
-  standard: Boutique de Terry - 50 Rupee Item
-  pretty: Boutique de Terry - 50 Rupee Item
-  cryptic: for <g+<50 rupees>> <r<Beedle>>
+  standard: Boutique de Terry - Objet à 50 rubis
+  pretty: Boutique de Terry - Objet à 50 rubis
+  cryptic: # for <g+<50 rupees>> <r<Beedle>>
 
 - name: Beedle's Airshop - 1000 Rupee Item
-  standard: Boutique de Terry - 1000 Rupee Item
-  pretty: Boutique de Terry - 1000 Rupee Item
-  cryptic: for <g+<1000 rupees>> <r<Beedle>>
+  standard: Boutique de Terry - Objet à 1000 rubis
+  pretty: Boutique de Terry - Objet à 1000 rubis
+  cryptic: # for <g+<1000 rupees>> <r<Beedle>>
 
 - name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
   standard: Tour aux bambous - Gossip Stone behind Bamboo Pole
