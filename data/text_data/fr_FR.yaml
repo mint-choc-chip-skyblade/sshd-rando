@@ -1698,8 +1698,8 @@
   cryptic: # the <r<higher chest>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - Waterfall Cave Second Chest
-  standard: Centre de Célesbourg - Second coffre de la grotte sous la cascade
-  pretty: Centre de Célesbourg - Second coffre de la grotte sous la cascade
+  standard: Centre de Célesbourg - Deuxième coffre de la grotte sous la cascade
+  pretty: Centre de Célesbourg - Deuxième coffre de la grotte sous la cascade
   cryptic: # the <r<lower chest>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - First Rupee in Waterfall Cave Crawlspace
@@ -1708,8 +1708,8 @@
   cryptic: # a <r<rupee>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
-  standard: Centre de Célesbourg - Second rubis dans le passage étroit de la grotte sous la cascade
-  pretty: Centre de Célesbourg - Second rubis dans le passage étroit de la grotte sous la cascade
+  standard: Centre de Célesbourg - Deuxième rubis dans le passage étroit de la grotte sous la cascade
+  pretty: Centre de Célesbourg - Deuxième rubis dans le passage étroit de la grotte sous la cascade
   cryptic: # a <r<rupee>> in a <b<cave in the sky>>
 
 - name: Central Skyloft - Gossip Stone on Waterfall Island
@@ -2028,324 +2028,324 @@
   cryptic: # for <g+<1000 rupees>> <r<Beedle>>
 
 - name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
-  standard: Tour aux bambous - Gossip Stone behind Bamboo Pole
-  pretty: Tour aux bambous - Gossip Stone behind Bamboo Pole
+  standard: Tour aux bambous - Pierre à potins derrière la tige de bambou
+  pretty: Tour aux bambous - Pierre à potins derrière la tige de bambou
   cryptic:
 
 - name: Bamboo Island Interior - Bonk Southwest Sprout
-  standard: Tour aux bambous - Bonk Southwest Sprout
-  pretty: Tour aux bambous - Bonk Southwest Sprout
-  cryptic: <r<disturbing baby bamboo>>
+  standard: Tour aux bambous - Se cogner contre la pousse sud-est
+  pretty: Tour aux bambous - Se cogner contre la pousse sud-est
+  cryptic: # <r<disturbing baby bamboo>>
 
 - name: Bamboo Island Interior - Bonk West Sprout
-  standard: Tour aux bambous - Bonk West Sprout
-  pretty: Tour aux bambous - Bonk West Sprout
-  cryptic: <r<disturbing baby bamboo>>
+  standard: Tour aux bambous - Se cogner contre la pousse ouest
+  pretty: Tour aux bambous - Se cogner contre la pousse ouest
+  cryptic: # <r<disturbing baby bamboo>>
 
 - name: Bamboo Island Interior - Bonk East Sprout
-  standard: Tour aux bambous - Bonk East Sprout
-  pretty: Tour aux bambous - Bonk East Sprout
-  cryptic: <r<disturbing baby bamboo>>
+  standard: Tour aux bambous - Se cogner contre la pousse est
+  pretty: Tour aux bambous - Se cogner contre la pousse est
+  cryptic: # <r<disturbing baby bamboo>>
 
 - name: Bamboo Island Interior - Bonk Southeast Sprout
-  standard: Tour aux bambous - Bonk Southeast Sprout
-  pretty: Tour aux bambous - Bonk Southeast Sprout
-  cryptic: <r<disturbing baby bamboo>>
+  standard: Tour aux bambous - Se cogner contre la pousse sud-est
+  pretty: Tour aux bambous - Se cogner contre la pousse sud-est
+  cryptic: # <r<disturbing baby bamboo>>
 
 - name: Bamboo Island - Slingshot Left Lantern
-  standard: Île aux bambous - Slingshot Left Lantern
-  pretty: Île aux bambous - Slingshot Left Lantern
-  cryptic: <r<shooting the light>> of a <g<clean cut building>>
+  standard: Île aux bambous - Lancer une pierre sur la lanterne de gauche
+  pretty: Île aux bambous - Lancer une pierre sur la lanterne de gauche
+  cryptic: # <r<shooting the light>> of a <g<clean cut building>>
 
 - name: Bamboo Island - Slingshot Middle Lantern
-  standard: Île aux bambous - Slingshot Middle Lantern
-  pretty: Île aux bambous - Slingshot Middle Lantern
-  cryptic: <r<shooting the light>> of a <g<clean cut building>>
+  standard: Île aux bambous - Lancer une pierre sur la lanterne centrale
+  pretty: Île aux bambous - Lancer une pierre sur la lanterne centrale
+  cryptic: # <r<shooting the light>> of a <g<clean cut building>>
 
 - name: Bamboo Island - Slingshot Right Lantern
-  standard: Île aux bambous - Slingshot Right Lantern
-  pretty: Île aux bambous - Slingshot Right Lantern
-  cryptic: <r<shooting the light>> of a <g<clean cut building>>
+  standard: Île aux bambous - Lancer une pierre sur la lanterne de droite
+  pretty: Île aux bambous - Lancer une pierre sur la lanterne de droite
+  cryptic: # <r<shooting the light>> of a <g<clean cut building>>
 
 - name: Lumpy Pumpkin - Slingshot Left Porch Lantern
-  standard: La Citrouille perchée - Slingshot Left Porch Lantern
-  pretty: La Citrouille perchée - Slingshot Left Porch Lantern
-  cryptic: <r<shooting a sheltered light>>
+  standard: La Citrouille perchée - Lancer une pierre sur la lanterne de gauche du porche
+  pretty: La Citrouille perchée - Lancer une pierre sur la lanterne de gauche du porche
+  cryptic: # <r<shooting a sheltered light>>
 
 - name: Lumpy Pumpkin - Slingshot Right Porch Lantern
-  standard: La Citrouille perchée - Slingshot Right Porch Lantern
-  pretty: La Citrouille perchée - Slingshot Right Porch Lantern
-  cryptic: <r<shooting a sheltered light>>
+  standard: La Citrouille perchée - Lancer une pierre sur la lanterne de droite du porche
+  pretty: La Citrouille perchée - Lancer une pierre sur la lanterne de droite du porche
+  cryptic: # <r<shooting a sheltered light>>
 
 - name: Lumpy Pumpkin - Slingshot Lantern Left of Main Door
-  standard: La Citrouille perchée - Slingshot Lantern Left of Main Door
-  pretty: La Citrouille perchée - Slingshot Lantern Left of Main Door
-  cryptic: <r<shooting a welcome light>> at an <r<inn>>
+  standard: La Citrouille perchée - Lancer une pierre sur la lanterne à gauche de la grande porte
+  pretty: La Citrouille perchée - Lancer une pierre sur la lanterne à gauche de la grande porte
+  cryptic: # <r<shooting a welcome light>> at an <r<inn>>
 
 - name: Lumpy Pumpkin - Slingshot Lantern Right of Main Door
-  standard: La Citrouille perchée - Slingshot Lantern Right of Main Door
-  pretty: La Citrouille perchée - Slingshot Lantern Right of Main Door
-  cryptic: <r<shooting a welcome light>> at an <r<inn>>
+  standard: La Citrouille perchée - Lancer une pierre sur la lanterne à droite de la grande porte
+  pretty: La Citrouille perchée - Lancer une pierre sur la lanterne à droite de la grande porte
+  cryptic: # <r<shooting a welcome light>> at an <r<inn>>
 
 - name: Lumpy Pumpkin - Slingshot Lantern next to Back Door
-  standard: La Citrouille perchée - Slingshot Lantern next to Back Door
-  pretty: La Citrouille perchée - Slingshot Lantern next to Back Door
-  cryptic: <r<shooting the rear light>> at an <r<inn>>
+  standard: La Citrouille perchée - Lancer une pierre sur la lanterne près de la porte de service
+  pretty: La Citrouille perchée - Lancer une pierre sur la lanterne près de la porte de service
+  cryptic: # <r<shooting the rear light>> at an <r<inn>>
 
 - name: Lumpy Pumpkin - Item on Chandelier
-  standard: La Citrouille perchée - Item on Chandelier
-  pretty: La Citrouille perchée - Item on Chandelier
-  cryptic: <r<angering a bartender>>
+  standard: La Citrouille perchée - Objet sur le chandelier
+  pretty: La Citrouille perchée - Objet sur le chandelier
+  cryptic: # <r<angering a bartender>>
 
 - name: Lumpy Pumpkin - Harp Duet with Kina
-  standard: La Citrouille perchée - Harp Duet with Kina
-  pretty: La Citrouille perchée - Harp Duet with Kina
-  cryptic: the <r<bartender>>
+  standard: La Citrouille perchée - Accompagnement de Tironne à la lyre
+  pretty: La Citrouille perchée - Accompagnement de Tironne à la lyre
+  cryptic: # the <r<bartender>>
 
 - name: Lumpy Pumpkin - Deliver Mogma to Kina
-  standard: La Citrouille perchée - Deliver Mogma to Kina
-  pretty: La Citrouille perchée - Deliver Mogma to Kina
-  cryptic: <r<delivering a mogma to the sky>>
+  standard: La Citrouille perchée - Livrer un mogma à Tironne
+  pretty: La Citrouille perchée - Livrer un mogma à Tironne
+  cryptic: # <r<delivering a mogma to the sky>>
 
 - name: Lumpy Pumpkin - Pumm and Kina's Closet
-  standard: La Citrouille perchée - Pumm and Kina's Closet
-  pretty: La Citrouille perchée - Pumm and Kina's Closet
-  cryptic: snooping through a <r<father and daughter's clothes>>
+  standard: La Citrouille perchée - Armoire de Potron et Tironne
+  pretty: La Citrouille perchée - Armoire de Potron et Tironne
+  cryptic: # snooping through a <r<father and daughter's clothes>>
 
 - name: Lumpy Pumpkin - Outside Crystal
-  standard: La Citrouille perchée - Outside Crystal
-  pretty: La Citrouille perchée - Outside Crystal
-  cryptic: a <r<crystal in a shed>>
+  standard: La Citrouille perchée - Cristal extérieur
+  pretty: La Citrouille perchée - Cristal extérieur
+  cryptic: # a <r<crystal in a shed>>
 
 - name: Lumpy Pumpkin - Inside Crystal
-  standard: La Citrouille perchée - Inside Crystal
-  pretty: La Citrouille perchée - Inside Crystal
-  cryptic: a <r<crystal in a bar>>
+  standard: La Citrouille perchée - Cristal intérieur
+  pretty: La Citrouille perchée - Cristal intérieur
+  cryptic: # a <r<crystal in a bar>>
 
 - name: Lumpy Pumpkin - Gossip Stone near Back Door
-  standard: La Citrouille perchée - Gossip Stone near Back Door
-  pretty: La Citrouille perchée - Gossip Stone near Back Door
+  standard: La Citrouille perchée - Pierre à potins près de la porte de service
+  pretty: La Citrouille perchée - Pierre à potins près de la porte de service
   cryptic:
 
 - name: Orielle's Island - Heal Orielle's Loftwing
-  standard: Île de Kina - Heal Orielle's Loftwing
-  pretty: Île de Kina - Heal Orielle's Loftwing
-  cryptic: saving a <r<sick loftwing>>
+  standard: Île de Kinaé - Soigner le célestrier de Kinaé
+  pretty: Île de Kinaé - Soigner le célestrier de Kinaé
+  cryptic: # saving a <r<sick loftwing>>
 
 - name: Beedle's Island - Deliver Beedle's Insect Cage
-  standard: Île de Terry - Deliver Beedle's Insect Cage
-  pretty: Île de Terry - Deliver Beedle's Insect Cage
-  cryptic: <r<reuniting two Beedles>>
+  standard: Île de Terry - Livrer la cage à insecte à Terry
+  pretty: Île de Terry - Livrer la cage à insecte à Terry
+  cryptic: # <r<reuniting two Beedles>>
 
 - name: Beedle's Island - Crystal on Airshop Propeller
-  standard: Île de Terry - Crystal on Airshop Propeller
-  pretty: Île de Terry - Crystal on Airshop Propeller
-  cryptic: a <r<crystal above propellors>>
+  standard: Île de Terry - Cristal sur l'hélice de la boutique
+  pretty: Île de Terry - Cristal sur l'hélice de la boutique
+  cryptic: # a <r<crystal above propellors>>
 
 - name: Beedle's Island - Top Goddess Chest
-  standard: Île de Terry - Top Goddess Chest
-  pretty: Île de Terry - Top Goddess Chest
-  cryptic: a <s<goddess cube>> at the <y+<monument to time>>
+  standard: Île de Terry - Coffre de la Déesse en haut
+  pretty: Île de Terry - Coffre de la Déesse en haut
+  cryptic: # a <s<goddess cube>> at the <y+<monument to time>>
 
 - name: Beedle's Island - Goddess Chest in Cage
-  standard: Île de Terry - Goddess Chest in Cage
-  pretty: Île de Terry - Goddess Chest in Cage
-  cryptic: a <s<goddess cube>> <g<atop a temple>>
+  standard: Île de Terry - Coffre de la Déesse dans la cage
+  pretty: Île de Terry - Coffre de la Déesse dans la cage
+  cryptic: # a <s<goddess cube>> <g<atop a temple>>
 
 - name: Fun Fun Island - Deliver Party Wheel to Dodoh
-  standard: Île roulette - Deliver Party Wheel to Dodoh
-  pretty: Île roulette - Deliver Party Wheel to Dodoh
-  cryptic: delivering a <r<colorful wheel>>
+  standard: Île roulette - Livrer la roulette à Dodon
+  pretty: Île roulette - Livrer la roulette à Dodon
+  cryptic: # delivering a <r<colorful wheel>>
 
 - name: Fun Fun Island - 500 Rupees in Dodoh's High Dive
-  standard: Île roulette - 500 Rupees in Dodoh's High Dive
-  pretty: Île roulette - 500 Rupees in Dodoh's High Dive
-  cryptic: <r<diving through 5 rings>>
+  standard: Île roulette - 500 rubis à la Roulette en chute libre
+  pretty: Île roulette - 500 rubis à la Roulette en chute libre
+  cryptic: # <r<diving through 5 rings>>
 
 - name: Fun Fun Island - Goddess Chest below Island
-  standard: Île roulette - Goddess Chest below Island
-  pretty: Île roulette - Goddess Chest below Island
-  cryptic: a <s<goddess cube>> <s<near an ancient purifier>>
+  standard: Île roulette - Coffre de la Déesse sous l'île
+  pretty: Île roulette - Coffre de la Déesse sous l'île
+  cryptic: # a <s<goddess cube>> <s<near an ancient purifier>>
 
 - name: The Sky - Form a Swirrell Ring above Volcanic Island
-  standard: Ciel - Form a Swirrell Ring above Île volcan
-  pretty: Ciel - Form a Swirrell Ring above Île volcan
-  cryptic: <r<flying in a western formation>
+  standard: Ciel - Former un cercle de swirrells au-dessus de l'île volcan
+  pretty: Ciel - Former un cercle de swirrells au-dessus de l'île volcan
+  cryptic: # <r<flying in a western formation>
 
 - name: The Sky - Form a Swirrell Ring above Lumpy Pumpkin
-  standard: Ciel - Form a Swirrell Ring above La Citrouille perchée
-  pretty: Ciel - Form a Swirrell Ring above La Citrouille perchée
-  cryptic: <r<flying in an eastern formation>
+  standard: Ciel - Former un cercle de swirrells au dessus de la Citrouille perchée
+  pretty: Ciel - Former un cercle de swirrells au dessus de la Citrouille perchée
+  cryptic: # <r<flying in an eastern formation>
 
 - name: The Sky - Form a Swirrell Ring above Bamboo Island
-  standard: Ciel - Form a Swirrell Ring above Île aux bambous
-  pretty: Ciel - Form a Swirrell Ring above Île aux bambous
-  cryptic: <r<flying in a northern formation>
+  standard: Ciel - Former un cercle de swirrells au dessus de l'île aux bambous
+  pretty: Ciel - Former un cercle de swirrells au dessus de l'île aux bambous
+  cryptic: # <r<flying in a northern formation>
 
 - name: The Sky - Chest in Breakable Boulder near Fun Fun Island
-  standard: Ciel - Chest in Breakable Boulder near Île roulette
-  pretty: Ciel - Chest in Breakable Boulder near Île roulette
-  cryptic: an <r<eastern chest in a floating rock>>
+  standard: Ciel - Coffre dans le rocher friable près de l'île roulette
+  pretty: Ciel - Coffre dans le rocher friable près de l'île roulette
+  cryptic: # an <r<eastern chest in a floating rock>>
 
 - name: The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
-  standard: Ciel - Chest in Breakable Boulder near La Citrouille perchée
-  pretty: Ciel - Chest in Breakable Boulder near La Citrouille perchée
-  cryptic: a <r<western chest in a floating rock>>
+  standard: Ciel - Coffre dans le rocher friable près de la Citrouille perchée
+  pretty: Ciel - Coffre dans le rocher friable près de la Citrouille perchée
+  cryptic: # a <r<western chest in a floating rock>>
 
 - name: Volcanic Island - Gossip Stone inside Island
-  standard: Île volcan - Gossip Stone inside Island
-  pretty: Île volcan - Gossip Stone inside Island
+  standard: Île volcan - Pierre à potins dans l'île
+  pretty: Île volcan - Pierre à potins dans l'île
   cryptic:
 
 - name: Bamboo Island - Goddess Chest behind Entrance
-  standard: Île aux bambous - Goddess Chest behind Entrance
-  pretty: Île aux bambous - Goddess Chest behind Entrance
-  cryptic: a <s<goddess cube>> <r<above an air vent>>
+  standard: Île aux bambous - Coffre de la Déesse derrière l'entrée
+  pretty: Île aux bambous - Coffre de la Déesse derrière l'entrée
+  cryptic: # a <s<goddess cube>> <r<above an air vent>>
 
 - name: Island near Bamboo Island - Top Goddess Chest
-  standard: Île près de l'île volcan - Top Goddess Chest
-  pretty: Île près de l'île volcan - Top Goddess Chest
-  cryptic: a <s<goddess cube>> <r<near a turf entrance>>
+  standard: Île près de l'île volcan - Coffre de la Déesse en haut
+  pretty: Île près de l'île volcan - Coffre de la Déesse en haut
+  cryptic: # a <s<goddess cube>> <r<near a turf entrance>>
 
 - name: Island near Bamboo Island - Goddess Chest in Cave
-  standard: Île près de l'île volcan - Goddess Chest in Cave
-  pretty: Île près de l'île volcan - Goddess Chest in Cave
-  cryptic: a <s<goddess cube>> in a <y<secret desert passageway>>
+  standard: Île près de l'île volcan - Coffre de la Déesse dans la grotte
+  pretty: Île près de l'île volcan - Coffre de la Déesse dans la grotte
+  cryptic: # a <s<goddess cube>> in a <y<secret desert passageway>>
 
 - name: Northeast Island - Goddess Chest behind Bombable Rocks
-  standard: Île au nord-est - Goddess Chest behind Bombable Rocks
-  pretty: Île au nord-est - Goddess Chest behind Bombable Rocks
-  cryptic: a <s<goddess cube>> at a <y<desert landing>>
+  standard: Île au nord-est - Coffre de la Déesse derrière les rochers destructibles
+  pretty: Île au nord-est - Coffre de la Déesse derrière les rochers destructibles
+  cryptic: # a <s<goddess cube>> at a <y<desert landing>>
 
 - name: Northeast Island - Goddess Chest in Cage
-  standard: Île au nord-est - Goddess Chest in Cage
-  pretty: Île au nord-est - Goddess Chest in Cage
-  cryptic: a <s<goddess cube>> next to a <r<river of lava>>
+  standard: Île au nord-est - Coffre de la Déesse dans la cage
+  pretty: Île au nord-est - Coffre de la Déesse dans la cage
+  cryptic: # a <s<goddess cube>> next to a <r<river of lava>>
 
 - name: Lumpy Pumpkin - Goddess Chest on Roof
-  standard: La Citrouille perchée - Goddess Chest on Roof
-  pretty: La Citrouille perchée - Goddess Chest on Roof
-  cryptic: a <s<goddess cube>> in a <b<spring>>
+  standard: La Citrouille perchée - Coffre de la Déesse sur le toit
+  pretty: La Citrouille perchée - Coffre de la Déesse sur le toit
+  cryptic: # a <s<goddess cube>> in a <b<spring>>
 
 - name: Lumpy Pumpkin - Goddess Chest near Gossip Stone
-  standard: La Citrouille perchée - Goddess Chest near Gossip Stone
-  pretty: La Citrouille perchée - Goddess Chest near Gossip Stone
-  cryptic: a <s<goddess cube>> near an <g<intrigued individual>>
+  standard: La Citrouille perchée - Coffre de la Déesse près de la pierre à potins
+  pretty: La Citrouille perchée - Coffre de la Déesse près de la pierre à potins
+  cryptic: # a <s<goddess cube>> near an <g<intrigued individual>>
 
 - name: Island Closest to Faron Pillar - Goddess Chest
-  standard: Island Closest to Faron Pillar - Goddess Chest
-  pretty: Island Closest to Faron Pillar - Goddess Chest
-  cryptic: a <s<goddess cube>> in front of a <g<temple in the forest>>
+  standard: Île près du pilier vers Firone - Coffre de la Déesse
+  pretty: Île près du pilier vers Firone - Coffre de la Déesse
+  cryptic: # a <s<goddess cube>> in front of a <g<temple in the forest>>
 
 - name: Volcanic Island - Outside Goddess Chest
-  standard: Île volcan - Outside Goddess Chest
-  pretty: Île volcan - Outside Goddess Chest
-  cryptic: a <s<goddess cube>> <y<among quicksand>>
+  standard: Île volcan - Coffre de la Déesse extérieur
+  pretty: Île volcan - Coffre de la Déesse extérieur
+  cryptic: # a <s<goddess cube>> <y<among quicksand>>
 
 - name: Volcanic Island - Inside Goddess Chest
-  standard: Île volcan - Inside Goddess Chest
-  pretty: Île volcan - Inside Goddess Chest
-  cryptic: a <s<goddess cube>> on a <g<great tree's west branch>>
+  standard: Île volcan - Coffre de la Déesse intérieur
+  pretty: Île volcan - Coffre de la Déesse intérieur
+  cryptic: # a <s<goddess cube>> on a <g<great tree's west branch>>
 
 - name: Triple Island - Upper Goddess Chest
-  standard: Île triple - Upper Goddess Chest
-  pretty: Île triple - Upper Goddess Chest
-  cryptic: a <s<goddess cube>> at the <r<entrance to a volcano>>
+  standard: Île triple - Coffre de la Déesse du haut
+  pretty: Île triple - Coffre de la Déesse du haut
+  cryptic: # a <s<goddess cube>> at the <r<entrance to a volcano>>
 
 - name: Triple Island - Lower Goddess Chest
-  standard: Île triple - Lower Goddess Chest
-  pretty: Île triple - Lower Goddess Chest
-  cryptic: a <s<goddess cube>> near a <y<caged friend>>
+  standard: Île triple - Coffre de la Déesse du bas
+  pretty: Île triple - Coffre de la Déesse du bas
+  cryptic: # a <s<goddess cube>> near a <y<caged friend>>
 
 - name: Triple Island - Goddess Chest in Cage
-  standard: Île triple - Goddess Chest in Cage
-  pretty: Île triple - Goddess Chest in Cage
-  cryptic: a <s<goddess cube>> in a <y<retreat>>
+  standard: Île triple - Coffre de la Déesse dans la cage
+  pretty: Île triple - Coffre de la Déesse dans la cage
+  cryptic: # a <s<goddess cube>> in a <y<retreat>>
 
 - name: Isle of Songs - Strike Crest with Goddess Sword
-  standard: Île aux chants - Strike Crest with Goddess Sword
-  pretty: Île aux chants - Strike Crest with Goddess Sword
-  cryptic: the <r<goddess' blade>>
+  standard: Île aux chants - Illuminer l'emblème avec l'épée divine
+  pretty: Île aux chants - Illuminer l'emblème avec l'épée divine
+  cryptic: # the <r<goddess' blade>>
 
 - name: Isle of Songs - Strike Crest with Longsword
-  standard: Île aux chants - Strike Crest with Longsword
-  pretty: Île aux chants - Strike Crest with Longsword
-  cryptic: a <r<longsword>>
+  standard: Île aux chants - Illuminer l'emblème avec la longue épée divine
+  pretty: Île aux chants - Illuminer l'emblème avec la longue épée divine
+  cryptic: # a <r<longsword>>
 
 - name: Isle of Songs - Strike Crest with White Sword
-  standard: Île aux chants - Strike Crest with White Sword
-  pretty: Île aux chants - Strike Crest with White Sword
-  cryptic: a <r<blade of white>>
+  standard: Île aux chants - Illuminer l'emblème avec la blanche épée divine
+  pretty: Île aux chants - Illuminer l'emblème avec la blanche épée divine
+  cryptic: # a <r<blade of white>>
 
 - name: Isle of Songs - Top Goddess Chest
-  standard: Île aux chants - Top Goddess Chest
-  pretty: Île aux chants - Top Goddess Chest
-  cryptic: a <s<goddess cube>> <r<deep in a volcano>>
+  standard: Île aux chants - Coffre de la Déesse sur le toit
+  pretty: Île aux chants - Coffre de la Déesse sur le toit
+  cryptic: # a <s<goddess cube>> <r<deep in a volcano>>
 
 - name: Isle of Songs - Lower Goddess Chest
-  standard: Île aux chants - Lower Goddess Chest
-  pretty: Île aux chants - Lower Goddess Chest
-  cryptic: a <s<goddess cube>> in a <r<underground cave>>
+  standard: Île aux chants - Coffre de la Déesse en bas
+  pretty: Île aux chants - Coffre de la Déesse en bas
+  cryptic: # a <s<goddess cube>> in a <r<underground cave>>
 
 - name: Inside the Thunderhead - Song from Levias
-  standard: Cumulonimbus - Song from Levias
-  pretty: Cumulonimbus - Song from Levias
-  cryptic: the <r<ancient whale>> within a <s<raging storm>>
+  standard: Cumulonimbus - Chant de Narisha
+  pretty: Cumulonimbus - Chant de Narisha
+  cryptic: # the <r<ancient whale>> within a <s<raging storm>>
 
 - name: Bug Heaven - 10 Bugs in 3 Minutes
-  standard: île aux insectes - 10 Bugs in 3 Minutes
-  pretty: île aux insectes - 10 Bugs in 3 Minutes
-  cryptic: <r<true bug catchers>>
+  standard: île aux insectes - 10 insectes en 3 minutes
+  pretty: île aux insectes - 10 insectes en 3 minutes
+  cryptic: # <r<true bug catchers>>
 
 - name: Bug Heaven - Goddess Chest
-  standard: île aux insectes - Goddess Chest
-  pretty: île aux insectes - Goddess Chest
-  cryptic: a <s<goddess cube>> near a <r<volcano's waterfall>>
+  standard: île aux insectes - Coffre de la Déesse
+  pretty: île aux insectes - Coffre de la Déesse
+  cryptic: # a <s<goddess cube>> near a <r<volcano's waterfall>>
 
 - name: Bug Heaven - Stamina Fruit near Start
-  standard: île aux insectes - Stamina Fruit near Start
-  pretty: île aux insectes - Stamina Fruit near Start
-  cryptic: a <r<fruit in a buggy area>>
+  standard: île aux insectes - Baie d'endurance près du départ
+  pretty: île aux insectes - Baie d'endurance près du départ
+  cryptic: # a <r<fruit in a buggy area>>
 
 - name: Bug Heaven - Stamina Fruit in front of Wooden Plank
-  standard: île aux insectes - Stamina Fruit in front of Wooden Plank
-  pretty: île aux insectes - Stamina Fruit in front of Wooden Plank
-  cryptic: a <r<fruit in a buggy area>>
+  standard: île aux insectes - Baie d'endurance devant la planche de bois
+  pretty: île aux insectes - Baie d'endurance devant la planche de bois
+  cryptic: # a <r<fruit in a buggy area>>
 
 - name: Bug Heaven - Stamina Fruit in Center Room
-  standard: île aux insectes - Stamina Fruit in Center Room
-  pretty: île aux insectes - Stamina Fruit in Center Room
-  cryptic: a <r<fruit in a buggy area>>
+  standard: île aux insectes - Baie d'endurance dans la pièce centrale
+  pretty: île aux insectes - Baie d'endurance dans la pièce centrale
+  cryptic: # a <r<fruit in a buggy area>>
 
 - name: Bug Heaven - Stamina Fruit on top of Slope
-  standard: île aux insectes - Stamina Fruit on top of Slope
-  pretty: île aux insectes - Stamina Fruit on top of Slope
-  cryptic: a <r<fruit in a buggy area>>
+  standard: île aux insectes - Baie d'endurance sur la pente
+  pretty: île aux insectes - Baie d'endurance sur la pente
+  cryptic: # a <r<fruit in a buggy area>>
 
 - name: Inside the Thunderhead - Gossip Stone near Bug Heaven
-  standard: Cumulonimbus - Gossip Stone near île aux insectes
-  pretty: Cumulonimbus - Gossip Stone near île aux insectes
+  standard: Cumulonimbus - Pierre à potins près de l'île aux insectes
+  pretty: Cumulonimbus - Pierre à potins près de l'île aux insectes
   cryptic:
 
 - name: Inside the Thunderhead - Chest on East Island
-  standard: Cumulonimbus - Chest on East Island
-  pretty: Cumulonimbus - Chest on East Island
-  cryptic: a <r<chest>> within a <s<raging storm>>
+  standard: Cumulonimbus - Coffre sur l'île à l'est
+  pretty: Cumulonimbus - Coffre sur l'île à l'est
+  cryptic: # a <r<chest>> within a <s<raging storm>>
 
 - name: Inside the Thunderhead - Goddess Chest on East Island
-  standard: Cumulonimbus - Goddess Chest on East Island
-  pretty: Cumulonimbus - Goddess Chest on East Island
-  cryptic: a <s<goddess cube>> <r<near a rope>>
+  standard: Cumulonimbus - Coffre de la Déesse sur l'île à l'est
+  pretty: Cumulonimbus - Coffre de la Déesse sur l'île à l'est
+  cryptic: # a <s<goddess cube>> <r<near a rope>>
 
 - name: Inside the Thunderhead - Mogma Mitts Island First Goddess Chest
-  standard: Cumulonimbus - Mogma Mitts Island First Goddess Chest
-  pretty: Cumulonimbus - Mogma Mitts Island First Goddess Chest
-  cryptic: a <s<goddess cube>> <r<surrounded by lava>>
+  standard: Cumulonimbus - Premier coffre de la Déesse sur l'île aux gants mogma
+  pretty: Cumulonimbus - Premier coffre de la Déesse sur l'île aux gants mogma
+  cryptic: # a <s<goddess cube>> <r<surrounded by lava>>
 
 - name: Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest
-  standard: Cumulonimbus - Mogma Mitts Island Second Goddess Chest
-  pretty: Cumulonimbus - Mogma Mitts Island Second Goddess Chest
-  cryptic: a <s<goddess cube>> in a <ye<desert gorge>>
+  standard: Cumulonimbus - Deuxième coffre de la Déesse sur l'île aux gants mogma
+  pretty: Cumulonimbus - Deuxième coffre de la Déesse sur l'île aux gants mogma
+  cryptic: # a <s<goddess cube>> in a <ye<desert gorge>>
 
 - name: Sealed Grounds - Bonk Wall between Pillars near Bird Statue
   standard: Vallon du sceau - Bonk Wall between Pillars near Bird Statue
