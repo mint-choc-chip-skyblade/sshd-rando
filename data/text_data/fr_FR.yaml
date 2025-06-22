@@ -6028,7 +6028,7 @@
 
 - name: Ancient Harbour
   standard: Port ancien
-  pretty: port ancien
+  pretty: le <port ancien>
   cryptic:
 
 - name: Lanayru Sand Sea
