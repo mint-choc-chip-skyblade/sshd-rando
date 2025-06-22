@@ -6054,71 +6054,75 @@
 
 
 - name: Faron Trial Fi Questions Text
-  standard: "When your vessel is full, your spirit\nwill grow and you will be entrusted\nwith a <r<new power>> by the goddess.
-             \n\nDo you have any questions?[1]Yes ![2-]No."
+  # 350 L3
+  standard: "Lorsque le <y<réceptacle spirituel>> sera rempli, votre âme\ns'épanouira et la Déesse vous octroiera un <r<nouveau\npouvoir>>.\n\n
+    Avez‐vous des questions, Maître ?\n[1-]Oui[2]Non"
 
 - name: Trial Direct Nothing
-  standard: " The realm beyond holds <r<nothing>>."
+  standard: " La psysalis que ce chant ouvre ne vous apportera <r<rien>>."
 
 - name: Trial Direct One
-  standard: " The realm beyond holds <item>."
+  standard: " La psysalis que ce chant ouvre renferme <item>."
 
 - name: Trial Direct Two
-  standard: " The realm beyond holds <item> and <r<1 more item>>."
+  standard: " La psysalis que ce chant ouvre renferme <item> et <r<1 autre objet>>."
 
 - name: Trial Direct Three Plus
-  standard: " The realm beyond holds <item> and <r<%d more items>>."
+  standard: " La psysalis que ce chant ouvre renferme <item> et <r<%d autres objets>>."
 
 - name: Trial Useless
-  standard: " You probably don't need to use it..."
+  standard: " Vous n'en aurez proabablement aucun usage..."
 
 - name: Trial Useful
-  standard: " It looks like it can unlock some useful items..."
+  standard: " Il semblerait que ce chant vous permette d'accéder à des objets utiles..."
 
 - name: Trial Required
-  standard: " Your spirit will grow by entering the realm beyond this song."
+  standard: " Votre âme s'épanouira à l'entrée de la psysalis que ce chant ouvre."
 
 - name: Farore's Courage Inventory
-  standard: This song opens the trial located in <b+<Faron Woods>>.
+  standard: Ce chant ouvre la psysalis située dans la <b+<forêt de Firone>>.
 
 - name: Din's Power Inventory
-  standard: This song opens the trial located on <b+<Eldin Volcano>>.
+  standard: Ce chant ouvre la psysalis située dans le <b+<volcan d'Ordinn>>.
 
 - name: Nayru's Wisdom Inventory
-  standard: This song opens the trial located in <b+<Lanayru Desert>>.
+  standard: Ce chant ouvre la psysalis située dans le <b+<désert de Lanelle>>.
 
 - name: Song of the Hero Inventory
-  standard: The song that leads you to the final trial on <b+<Skyloft>>.
+  standard: Ce chant ouvre la psysalis de la Déesse à <b+<Célesbourg>>.
 
 - name: Impa SoT Text
-  standard: Do not fear for <b<Zelda>>. I will watch over her here. Go now to <regions>. The <r<item you need to fulfill your destiny>> is there.
+  # 502 L7
+  standard: "N'aie aucune crainte. J'assurerai la protection\nde dame <color blue<Zelda>coloroff>.
+    Rends-toi à présent en <regions>. L'<r<objet nécessaire à ta destinée>> \nt'y attend."
 
 - name: First Groosenator Choice Text
-  standard: "So, where you flying to today?\n[1]The sky ![2]The surface.[3]<b<Flooded Faron Woods>>[4-]Never mind !"
+  # 501 L101
+  standard: "Alors, où est‐ce que je te jette ?\n[1]Ciel[2]Surface[3]<b<forêt de Firone\ninondée>>[4-]Nulle part"
 
 - name: Groosenator can't fling text
-  standard: "Sorry, <heroname>. I can't fling you\nsomewhere you haven't been before."
+  standard: "Désolé, <heroname>. Je ne peux pas te catapulter\n en un lieu où tu n'as jamais été."
 
 - name: FFW Bucha leave question text
-  standard: "<action6 \x03>Kewwww... Is the water not to your liking?\nI know a secret way out of the forest,\nwould you like me to show you?\n[1]Yes please ![2-]No thanks."
+  standard: "<action6 \x03>L'eau n'est-elle pas à ton goût?\nJe connais un passage secret pour sortir de la forêt,\nveux-tu que je te le montre ?\n[1]S'il te plaît[2-]Non merci"
 
 - name: FFW Bucha leave text
-  standard: "Kewwwww !\nFollow me !<action2 \x0e>"
+  standard: "Suis-moi !<action2 \x0e>"
 
 - name: FFW Bucha stay text
-  standard: "Talk to me again if you change your\nmind, kewwwwww.<action0 \x0c>"
+  standard: "Reviens me parler si tu changes d'avis.<action0 \x0c>"
 
 - name: Sky Keep No Goal Location Text
-  standard: "Hero of the Goddess !\nSeek now the exit."
+  standard: "Élu de la Déesse !\nMettez vous en quête de la sortie."
 
 - name: Sky Keep Goal Location Sacred Power of Farore Text
-  standard: "Hero of the Goddess !\nSeek now the <g<Sacred Power of Farore>>."
+  standard: "Élu de la Déesse !\nMettez vous en quête de la <g<puissance sacrée de Firone>>."
 
 - name: Sky Keep Goal Location Sacred Power of Nayru Text
-  standard: "Hero of the Goddess !\nSeek now the <b<Sacred Power of Nayru>>."
+  standard: "Élu de la Déesse !\nMettez vous en quête de la <b<puissance sacrée de Nayru>>."
 
 - name: Sky Keep Goal Location Sacred Power of Din Text
-  standard: "Hero of the Goddess !\nSeek now the <r<Sacred Power of Din>>."
+  standard: "Élu de la Déesse !\nMettez vous en quête de la <r<puissance sacrée de Din>>."
 
 
 # Fi text
@@ -6163,252 +6167,279 @@
 
 # Beedle's Airshop text
 - name: Beedle Half Off Bug Net Text
-  standard: "That's a <y<Bug Net>>. You know, for\ncatching bugs ! Insects too.
-             \n\n\nOK, so there aren't so many bugs here,\nbut you'll be able to catch tons with\nthis when there are some !
-             \n\nAnd at half-price of only <r<25 Rupees>>,\nI'm sure you'll make a \"net profit\" !\nWant to buy it?\n[1]OK ![2-]No, thanks."
+  # 105 L26
+  standard: "Ça, c'est un <y<filet à papillons>>. Ça sert à attraper\nles insectes !\n\n\n
+    Y en a pas beaucoup dans le coin, mais j'suis\nsûr que ça te sera super utile ailleurs !\n\n\n
+    Une super affaire ! À moitié prix, ça fait <r<25 rubis>> ! T'en dis quoi ?\n[1-]J'achète[2]Non merci"
 
 - name: Beedle Normal Shop Text Template
-  standard: "|That/Those| there |is/are| {sold_item}.\nI'm selling |it/them| for only <r<{normal_price}>> rupees !\nWant to buy |it/them|?
-             \n\n[1]I'll buy |it/them| ![2-]No, thanks."
+  standard: "Ça, c'est {sold_item}.\nJ'te |le/la/les| vends pour seulement <r<{normal_price}>> rubis !\nÇa te dit ?\n\n[1]J'achète[2-]Non merci"
 
 - name: Beedle Discounted Shop Text Template
-  standard: "|That/Those| there |is/are| {sold_item}.\nJust this once |it's/they're| half off !\n|It/They| can be yours for just <r<{discounted_price}>> rupees !\nWant to buy |it/them|?
-             \n[1]I'll buy |it/them| ![2-]No, thanks."
+  standard: "Ça, c'est {sold_item}.\nAvec ta réduc à 50%, j'te |le/la/les| vends pour seulement <r<{normal_price}>> rubis !\nÇa te dit ?\n\n[1]J'achète[2-]Non merci"
 
 - name: Thunder Dragon Boss Rush Rewards Template Text
+  # 460 L6
   standard:
     # Actions: fold arms, nothing?, unfold arms, say "hey"
-    "<actionB \x0D>You want to do <r<battle>>? Fantastic !\nI like your moxie.
-    \n\n\nBecause you chose <r<battle>>, I will select\nfrom only the toughest opponents\nyou've ever faced...
-    \n\n<action0 \x00>And I will use my power to re-create\nthe same battle, so you can face your\ngreatest enemies once more !
-    \n\nYou're being a good sport, so I'll\nreward you. Do well enough, and I\nmight give you something truly special.
-    \n\nOh, but if you lose...
-    \n\n\n\n<actionD \x00>Well, let's just say that this isn't just a\ngame... <r<If you lose, it's all over>>. You\nwon't be going home in one piece !
-    \n\nDefeat enough bosses and you'll earn {boss_rush_item1} and then {boss_rush_item2}.\n<action0 \x0A>Still interested?\n[1]Yes ![2-]No, thanks."
+    "<actionB \x0D>Va pour un <r<combat>> ! Ton enthousiasme me\nplaît !\n\n\n
+    Tu vas te retrouver face aux plus redoutables\nadversaires que tu as combattus jusqu'à présent.\n\n\n
+    <action0 \x00>Je vais utiliser mes pouvoirs pour recréer tes\ncombats passés.\n\n\n
+    Évidemment...<pause 15> si tu gagnes, tu seras récompensé.\n
+    Si tu défais quelques adversaires, je t'offirai {boss_rush_item1}.\n
+    Défais-en beaucoup et tu obtiendras mon trésor le plus\nprécieux, {boss_rush_item2} !\n\n
+    <action0 \x00>Mais attention...<pause 10> tu ne dois pas prendre ces\ncombats à la légère.
+    <rSi tu perds, c'est fini >>!\nTu seras perdu à jamais...\n\n
+    <action0 \x0A>Tu es toujours partant ?\n[1]Oui ![2-]Non..."
 
 - name: Pumpkin Archery Guaranteed Win Reward Choice Text
   standard:
-    "Would you like <r<50 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]50 Rupees."
+    "Tu préfères recevoir <r<50 rubis>>, un <r<trésor\npeu commun>> ou un <r<trésor rare>> ?[1]Rare[2]Peu commun[3]50 rubis"
 
 - name: Pumpkin Archery Easy No Prize Text
+  # 114 L36
   standard:
-    "You scored <numeric arg0>.
-    \n\n\n\nJust not feeling it today, huh,\n<heroname>? Sorry, but you\ndon't get a prize with that score.
-    \n\nThe easiest way to hit a pumpkin is\nto lead it. You know, put the cursor a\nlittle ahead of it as it's flying.
-    \n\nDo that, and I bet you can score\n<r<10 points>> or so.
-    \n\n\nNot that I'm giving you advice or\nanything. I mean, I know you know\nwhat you're doing."
+    "Hmm... <numeric arg0>...\n\n\n\n
+    <heroname>... Tu n'es pas dans ton\nassiette aujourd'hui ? Je ne peux pas te\ndonner de récompense...\n\n
+    Quand tu vises une citrouille, place ton curseur\nsur un point de sa trajectoire un peu avant\nqu'elle atteigne ce point.\n\n
+    Comme ça, tu devrais pouvoir marquer\n<r<10 points>> sans trop de problème...\n\n\n
+    Ah, désolé ! Je suppose que tu n'as pas besoin\nde mes conseils !"
 
 - name: Pumpkin Archery Easy Low Prize Text
+  # 114 L37
   standard:
-    "Wow, <numeric arg0> ! Nice job,\n<heroname> !
-    \n\n\nIt's not the best score ever, but you\nwere pretty smooth, <heroname> !
-    \n\n\nNext time, I want you to aim for at\nleast <r<150 points>> !
-    \n\n\nAnyway, here's 50 Rupees I've earned\nfrom doing chores for the grumpy\nkitchen lady."
+    "<numeric arg0> points ! Pas mal, <heroname> !\n\n\n\n
+    Ce n'est pas exceptionnel, mais ce n'est pas\nmauvais non plus. Et tu y es arrivé sans\nverser une goutte de sueur !\n\n
+    La prochaine fois, essaie de marquer au moins\n<r<150 points>> !\n\n\n
+    Tiens, je te donne les 50 rubis que j'ai\néconomisés en travaillant pour la dame\nde la cantine."
 
 - name: Pumpkin Archery Easy Mid Prize Text
+  # 114 L39
   standard:
-    "It would be great to see you hit <r<400\npoints>> and set a record next time.\nGive it your best shot !"
+    "Tu crois que tu arriverais à marquer au moins\n<r<400 points>> ? J'aimerais beaucoup voir ça !"
 
 - name: Pumpkin Archery Hard No Prize Text
+  # 114 L36
   standard:
-    "You scored <numeric arg0>.
-    \n\n\n\nJust not feeling it today, huh,\n<heroname>? Sorry, but you\ndon't get a prize with that score.
-    \n\nThe easiest way to hit a pumpkin is\nto lead it. You know, put the cursor a\nlittle ahead of it as it's flying.
-    \n\nDo that, and I bet you can score\n<r<400 points>> or so.
-    \n\n\nNot that I'm giving you advice or\nanything. I mean, I know you know\nwhat you're doing."
+    "Hmm... <numeric arg0>...\n\n\n\n
+    <heroname>... Tu n'es pas dans ton\nassiette aujourd'hui ? Je ne peux pas te\ndonner de récompense...\n\n
+    Quand tu vises une citrouille, place ton curseur\nsur un point de sa trajectoire un peu avant\nqu'elle atteigne ce point.\n\n
+    Comme ça, tu devrais pouvoir marquer\n<r<400 points>> sans trop de problème...\n\n\n
+    Ah, désolé ! Je suppose que tu n'as pas besoin\nde mes conseils !"
 
 - name: Pumpkin Archery Hard Low Prize Text
+  # 114 L37
   standard:
-    "Wow, <numeric arg0> ! Nice job,\n<heroname> !
-    \n\n\nIt's not the best score ever, but you\nwere pretty smooth, <heroname> !
-    \n\n\nNext time, I want you to aim for at\nleast <r<600 points>> !
-    \n\n\nAnyway, here's 50 Rupees I've earned\nfrom doing chores for the grumpy\nkitchen lady."
+    "<numeric arg0> points ! Pas mal, <heroname> !\n\n\n\n
+    Ce n'est pas exceptionnel, mais ce n'est pas\nmauvais non plus. Et tu y es arrivé sans\nverser une goutte de sueur !\n\n
+    La prochaine fois, essaie de marquer au moins\n<r<600 points>> !\n\n\n
+    Tiens, je te donne les 50 rubis que j'ai\néconomisés en travaillant pour la dame\nde la cantine."
 
 - name: Pumpkin Archery Hard Mid Prize Text
+  # 114 L39
   standard:
-    "It would be great to see you hit <r<800\npoints>> and set a record next time.\nGive it your best shot !"
+    "Tu crois que tu arriverais à marquer au moins\n<r<800 points>> ? J'aimerais beaucoup voir ça !"
 
 - name: Rickety Coaster Guaranteed Win Reward Choice Text
   standard:
-    "Would you like <r<20 Rupees>>, an <r<Uncommon\nTreasure>>, or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]20 Rupees."
+    "Tu préfères recevoir <r<20 rubis>>, un <r<trésor\npeu commun>>, ou un <r<trésor rare>>?[1]Rare[2]Peu commun[3]20 rubis"
 
 - name: Bug Heaven Guaranteed Win Reward Choice Text
   standard:
-    "Unless... Would you like those <r<Rare Bugs>>, or\nsome <r<Uncommon Bugs>>? Or maybe <r<80 Rupees>>?[1]Rare.[2]Uncommon.[3]80 Rupees."
+    "Alors... Tu veux des <r<insectes rares>>, ou\ndes <r<insectes peu communs>> ? Ou encore <r<80 rubis>> ?[1]Rares[2]Peu communs[3]80 rubis"
 
 # Pretty sure this text is actually impossible to get cos there's a hard 10 min cap on the timer.
 - name: Bug Heaven Easy No Prize Text
+  # 116 L16
   standard:
-    "That's it—time's up ! Umm...you've still\ngot A LOT of improving to do.
-    \n\n\nFor starters, shoot for getting your\ntime <r<under ten minutes>>. Just keep on\npracticing.
-    \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+    "OK, c'est terminé. T'avoueras que c'était pas\nterrible !\n\n\n
+    La prochaine fois, essaie de mettre <r<moins de\ndix minutes>>.\n\n\n
+    Et si t'as des insectes à me vendre, je suis\npreneur, passe me voir pendant la nuit !"
 
 - name: Bug Heaven Easy Beginner Low Prize Text
+  # 116 L25
   standard:
-    "Next time, try for <r<under five minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+    "La prochaine fois, essaie de mettre <r<moins de\ncinq minutes>coloroff> ! Tiens, voilà <r<30 rubis >>pour toi !"
 
 - name: Bug Heaven Easy Wrangler Low Prize Text
+  # 116 L17
   standard:
-    "Time's up ! That was pretty decent,\nI have to admit.
-    \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under five minutes>>."
+    "OK, c'est terminé. Mouais, c'était pas trop mal.\n\n\n\n
+    Si tu sais à l'avance où les trouver, tu feras un\nmeilleur temps ! Essaye de mettre <r<moins de\ncinq minutes >>la prochaine fois."
 
 - name: Bug Heaven Easy Beginner Mid Prize Text
+  # 116 L27
   standard:
-    "Next time, pull out all the stops and\ntry to finish in <r<less than three minutes>>.
-    \n\n\nOh, and your prize this time is \n<r<50 Rupees>> !"
+    "Fais de ton mieux la prochaine fois, essaie de\nfinir en <r<moins de trois minutes>>.\n\n\n
+    Tiens, pour cette fois, tu gagnes <r<50 rubis >>!"
 
 - name: Bug Heaven Easy Wrangler Mid Prize Text
+  # 116 L19
   standard:
-    "OK ! Time ! Hey... This is incredible !
-    \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under three\nminutes>>.
-    \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home !"
+    "OK, c'est terminé ! Alors ça, c'est un score pas\npiqué des hannetons !\n\n\n
+    Je sens qu'tu vas pas tarder à devenir le\nmeilleur chasseur d'insectes après moi...\nEssaie de mettre <r<moins de trois minutes\n>>la prochaine fois !\n
+    Voilà ton prix, je suis sûr que rien ne pourrait\nte faire plus plaisir : <r<cinq>> insectes !"
 
 - name: Bug Heaven Hard No Prize Text
+  # 116 L16
   standard:
-    "That's it—time's up ! Umm...you've still\ngot A LOT of improving to do.
-    \n\n\nFor starters, shoot for getting your\ntime <r<under three minutes>>. Just keep on\npracticing.
-    \n\nOh, at night, I buy bugs back in my\nroom in Skyloft. You should come by\nand sell me any beauties you find."
+    "OK, c'est terminé. T'avoueras que c'était pas\nterrible !\n\n\n
+    La prochaine fois, essaie de mettre <r<moins de\ntrois minutes>>.\n\n\n
+    Et si t'as des insectes à me vendre, je suis\npreneur, passe me voir pendant la nuit !"
 
 - name: Bug Heaven Hard Beginner Low Prize Text
+  # 116 L25
   standard:
-    "Next time, try for <r<under two minutes>>.\nOh, and I guess I should throw you\na little money. Here's <r<30 Rupees>>."
+    "La prochaine fois, essaie de mettre <r<moins de\ndeux minutes>coloroff> ! Tiens, voilà <r<30 rubis >>pour toi !"
 
 - name: Bug Heaven Hard Wrangler Low Prize Text
+  # 116 L17
   standard:
-    "Time's up ! That was pretty decent,\nI have to admit.
-    \n\n\nYour times will get even better if you\nremember where the bugs live. Next\ntime, shoot for <r<under two minutes>>."
+    "OK, c'est terminé. Mouais, c'était pas trop mal.\n\n\n\n
+    Si tu sais à l'avance où les trouver, tu feras un\nmeilleur temps ! Essaye de mettre <r<moins de\ndeux minutes >>la prochaine fois."
 
 - name: Bug Heaven Hard Beginner Mid Prize Text
+  # 116 L27
   standard:
-    "Next time, pull out all the stops and\ntry to finish in <r<less than one minute>>.
-    \n\n\nOh, and your prize this time is \n<r<50 Rupees>> !"
+    "Fais de ton mieux la prochaine fois, essaie de\nfinir en <r<moins d'une minute>>.\n\n\n
+    Tiens, pour cette fois, tu gagnes <r<50 rubis >>!"
 
 - name: Bug Heaven Hard Wrangler Mid Prize Text
+  # 116 L19
   standard:
-    "OK ! Time ! Hey... This is incredible !
-    \n\n\n\nI think you might be in the running for\nsecond place as the best bug catcher\nafter me. You should aim for <r<under one\nminute>>.
-    \nDo that, and a prize package of <r<five\nfabulous bugs>> is yours to take home !"
+    "OK, c'est terminé ! Alors ça, c'est un score pas\npiqué des hannetons !\n\n\n
+    Je sens qu'tu vas pas tarder à devenir le\nmeilleur chasseur d'insectes après moi...\nEssaie de mettre <r<moins d'une minute\n>>la prochaine fois !\n
+    Voilà ton prix, je suis sûr que rien ne pourrait\nte faire plus plaisir : <r<cinq>> insectes !"
 
 - name: Clean Cut Guaranteed Win Reward Choice Text
   standard:
-    "You want <r<30 Rupees>>, an <r<Uncommon\nTreasure>> or a <r<Rare Treasure>>?[1]Rare.[2]Uncommon.[3]30 Rupees."
+    "Tu veux <r<30 rubis>>, un <r<trésor\npeu commun>> ou un <r<trésor rare>>?[1]Rare[2]Uncommon[3]30 rubis"
 
 - name: Clean Cut Easy No Prize Text
+  # 109 L24
   standard:
-    "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<10 cuts>> !
-    \n\nSharpen up your concentration !\nThere's no prize for sloppy slicin'."
+    "Bon, c'est pas comme ça que tu vas t'illustrer...\nTu dois faire au moins <r<10 morceaux>> !\n\n\n
+    Si je peux te donner un conseil, tu ferais bien\nde te concentrer un poil, sinon tu vas rentrer\nbredouille !"
 
 - name: Clean Cut Easy Low Prize Text
+  # 109 L26
   standard:
-    "Next time around, shoot for <r<15 cuts>>."
+    "Essaie de faire <r<15 morceaux>> la prochaine fois !"
 
 - name: Clean Cut Easy Mid Prize Text
+  # 109 L28
   standard:
-    "I want to see you do <r<20 chops>> next time !"
+    "Essaie de faire <r<20 morceaux>> la prochaine fois !"
 
 - name: Clean Cut Hard No Prize Text
+  # 109 L24
   standard:
-    "You're not lightin' any records on\nfire with that score, son. You got to get\nat least <r<20 cuts>> !
-    \n\nSharpen up your concentration !\nThere's no prize for sloppy slicin'."
+    "Bon, c'est pas comme ça que tu vas t'illustrer...\nTu dois faire au moins <r<20 morceaux>> !\n\n\n
+    Si je peux te donner un conseil, tu ferais bien\nde te concentrer un poil, sinon tu vas rentrer\nbredouille !"
 
 - name: Clean Cut Hard Low Prize Text
+  # 109 L26
   standard:
-    "Next time around, shoot for <r<28 cuts>>."
+    "Essaie de faire <r<28 morceaux>> la prochaine fois !"
 
 - name: Clean Cut Hard Mid Prize Text
+  # 109 L28
   standard:
-    "I want to see you do <r<43 chops>> next time !"
+    "Essaie de faire <r<43 morceaux>> la prochaine fois !"
 
 - name: Help Text Title 1a
   standard:
-    "Skyview Temple"
+    "Temple de la contemplation"
 
 - name: Help Text Content 1a
   standard:
-    "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+    "Statut : <string arg0>\nGrande clé : <string arg1>\nPetites clés : <numeric arg0>, <numeric arg1>/2 trouvée(s)\nCarte : <string arg2>"
 
 - name: Help Text Title 1b
   standard:
-    "Earth Temple"
+    "Temple de la terre"
 
 - name: Help Text Content 1b
   standard:
-    "Status: <string arg0>\nBoss Key: <string arg1>\nKey Pieces: <numeric arg0>/5\nMap: <string arg2>"
+    "Statut : <string arg0>\nGrande clé : <string arg1>\nFragments de clé <numeric arg0>/5\nCarte : <string arg2>"
 
 - name: Help Text Title 1c
   standard:
-    "Lanayru Mining Facility"
+    "Raffinerie de Lanelle"
 
 - name: Help Text Content 1c
   standard:
-    "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/1\nMap: <string arg2>"
+    "Statut : <string arg0>\nGrande clé : <string arg1>\nPetites clés : <numeric arg0>, <numeric arg1>/1 trouvée(s)\nCarte : <string arg2>"
 
 - name: Help Text Title 2a
   standard:
-    "Ancient Cistern"
+    "Grande caverne antique"
 
 - name: Help Text Content 2a
   standard:
-    "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+    "Statut : <string arg0>\nGrande clé : <string arg1>\nPetites clés : <numeric arg0>, <numeric arg1>/2 trouvée(s)\nCarte : <string arg2>"
 
 - name: Help Text Title 2b
   standard:
-    "Sandship"
+    "Galion des sables"
 
 - name: Help Text Content 2b
   standard:
-    "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/2\nMap: <string arg2>"
+    "Statut : <string arg0>\nGrande clé : <string arg1>\nPetites clés : <numeric arg0>, <numeric arg1>/2 trouvée(s)\nCarte : <string arg2>"
 
 - name: Help Text Title 2c
   standard:
-    "Fire Sanctuary"
+    "Sanctuaire ancien"
 
 - name: Help Text Content 2c
   standard:
-    "Status: <string arg0>\nBoss Key: <string arg1>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/3\nMap: <string arg2>"
+    "Statut : <string arg0>\nGrande clé : <string arg1>\nPetites clés : <numeric arg0>, <numeric arg1>/3 trouvée(s)\nCarte : <string arg2>"
 
 - name: Help Text Title 3a
   standard:
-    "Sky Keep"
+    "Tour des cieux"
 
 - name: Help Text Content 3a
   standard:
-    "Status: <string arg0>\nSmall Keys: <numeric arg0>, Found <numeric arg1>/1\nMap: <string arg2>"
+    "Statut : <string arg0>\nPetites clés : <numeric arg0>, <numeric arg1>/1 trouvée(s)\nCarte : <string arg2>"
 
 - name: Help Text Title 3b
   standard:
-    "Items"
+    "Objets importants"
 
 - name: Help Text Content 3b
   standard:
-    "Spiral Charge: <string arg0>\nScrapper: <string arg1>\nGroup of Tadtones: <numeric arg0>"
+    "Attaque tornade : <string arg0>\nRécupix : <string arg1>\nGroupes de fironotes : <numeric arg0>"
 
 - name: Help Text Title 3c
   standard:
-    "Gorge"
+    "Gorge de Lanelle"
 
 - name: Help Text Content 3c
   standard:
-    "Life Tree Fruit: <string arg0>\nSeedling: <string arg1>\nCaves Keys: <numeric arg0>, Found <numeric arg1>/2"
+    "Fruit de l'arbre de vie : <string arg0>\Pousse : <string arg1>\nPetites clés : <numeric arg0>, <numeric arg1>/2 trouvée(s)"
 
 - name: Inventory Emerald Tablet text
+  # 003 L644
   standard:
-    "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<g<Faron Woods>>."
+    "Stèle ancienne. Elle ouvre la voie vers la <g<forêt\nde Firone>>."
 - name: Inventory Emerald and Ruby Tablet text
+  # 003 L645
   standard:
-    "The <r<ruby>> and <g<emerald>> tablet fragments\nopen the way to <g<Faron Woods>> and <r<Eldin\nVolcano>>."
+    "Stèle <g<émeraude>> et stèle <r<rubis>>. Elles ouvrent la\nvoie vers la <g<forêt de Firone>> et le <r<volcan d'Ordinn>>."
 - name: Inventory All Tablets text
+  # 003 L646
   standard:
-    "Completed tablet containing the <g<emerald>>,\n<r<ruby>>, and <y<amber>> fragments. Opens all areas\nof the surface--<g<woods>>, <r<volcano>>, and <y<desert>>."
+    "Stèle <g<émeraude>>, stèle <r<rubis>> et stèle <y<ambre>>.\nElles ouvrent la voie vers les trois contrées."
 - name: Inventory Emerald and Amber Tablet text
   standard:
-    "The <y<amber>> and <g<emerald>> tablet fragments\nopen the way to <g<Faron Woods>> and\n<y<Lanayru Desert>>."
+    "Stèle <g<émeraude>> et stèle <r<ambre>>. Elles ouvrent la\nvoie vers la <g<forêt de Firone>> et le <y<désert\nde Lanelle>>."
 - name: Inventory Amber Tablet text
   standard:
-    "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<y<Lanayru Desert>>."
+    "Stèle ancienne. Elle ouvre la voie vers le <y<désert\nde Lanelle>>."
 - name: Inventory Ruby and Amber Tablet text
   standard:
-    "The <y<amber>> and <r<ruby>> tablet fragments\nopen the way to <r<Eldin Volcano>> and\n<y<Lanayru Desert>>."
+    "Stèle <g<rubis>> et stèle <r<ambre>>. Elles ouvrent la\nvoie vers le <r<volcan d'Ordinn>> et le <y<désert\nde Lanelle>>."
 - name: Inventory Ruby Tablet text
   standard:
-    "A fragment of the ancient tablet that leads\nto the surface. It opens the way to\n<r<Eldin Volcano>>."
+    "Stèle ancienne. Elle ouvre la voie vers le <r<volcan\nd'Ordinn>>."
