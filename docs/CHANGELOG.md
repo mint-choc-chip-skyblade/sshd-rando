@@ -9,6 +9,8 @@
 * Updated the `Damage Multiplier` setting to accept a value of zero
   * When set to zero, the player will be invincible and take no damage
 * Added some German translations for randomizer text added in version 2.0
+* Removed Moldarach 2 from the Construction Bay
+  * The "Gust Bellows and Sword" logic for traversing through the Construction Bay has also been removed
 * Moves the `Unlock all Groosenator Destinations` to the "Advanced" tab of the randomizer GUI
 
 ### Fixes
