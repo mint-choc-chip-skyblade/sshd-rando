@@ -105,7 +105,7 @@ Below is the list of all the flags that the randomizer changes:
 * 82: Obtained the item in Kukiel's Family Closet
 * 100: Obtained the item in Sparrot's Closet
 * 101: Obtained the item in Bertie and Luv's Closet
-* 105: Obtained the item in Gondo and Gebra's Closet
+* 105: Obtained the item in Gondo and Greba's Closet
 * 107: Obtained the item in Pipit and Mallara's Closet
 * 116: Obtained the item in Rupin and Goselle's Closet
 * 117: Obtained the item in Peater's Closet
