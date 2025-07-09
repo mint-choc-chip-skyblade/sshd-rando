@@ -25,8 +25,10 @@
 * Fixed issue where players could use Fi's "Warp to Start" feature while in the Boss Rush minigame and lose access to key items
 * Fixed issue where the help menu would incorrectly show the "Scrapper" item as unobtained at all times
 * Fixed issue where applying presets would duplicate the settings and create inconsistencies between the settings shown in the randomizer program and the settings used to generate seeds
+* Fixed issue where talking to Fledge after obtaining `Knight Academy - Deliver Barrel to Henya the Lunch Lady` would give you 20 Rupees (and require you to talk to Fledge again to obtain `Knight Academy - Fledge's Gift`)
 * Fixed issue where the sold out sign in Beedle's Airshop would sometimes clip into the table or float above it
 * Fixed issue causing seeds to fail to generate when the `Decouple Entrances` setting is enabled
+* Fixed typo where Greba was misspelled as Gebra
 
 
 
