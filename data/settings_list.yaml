@@ -1156,14 +1156,16 @@
 
 - name: open_earth_temple
   tracker_important: true
-  default_option: "on"
+  default_option: "open"
   pretty_name: Open Earth Temple
   pretty_options:
-    - "Off"
-    - "On"
+    - "Open"
+    - "Shuffle Key Pieces (Eldin)"
+    - "Shuffle Key Pieces (Anywhere)"
   options:
-    - "off": "You will need to collect all the Earth Temple Key Pieces in order to open the Earth Temple Door."
-    - "on": "The Earth Temple Door will be opened from the start of the game."
+    - "open": "The Earth Temple Door will be opened from the start of the game."
+    - "shuffle_eldin": "You will need to collect all the Earth Temple Key Pieces, shuffled within the Eldin Volcanoe region, in order to open the Earth Temple Door."
+    - "shuffle_anywhere": "You will need to collect all the Earth Temple Key Pieces, shuffled anywhere, in order to open the Earth Temple Door."
 
 - name: open_lmf
   tracker_important: true

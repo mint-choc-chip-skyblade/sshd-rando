@@ -2206,7 +2206,7 @@ F200: # Eldin Volcano
     room: 4
     objtype: OBJ
   - name: Remove ET Door if open ET
-    onlyif: open_earth_temple == on
+    onlyif: open_earth_temple == open
     type: objdelete
     id: 0x2413
     layer: 0

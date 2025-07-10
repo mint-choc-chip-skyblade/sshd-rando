@@ -29,7 +29,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(1387, 873)
+        main_window.resize(1483, 977)
         main_window.setStyleSheet(u"QToolTip {color: #000000; background-color: #FFFFFF;}")
         self.central_widget = QWidget(main_window)
         self.central_widget.setObjectName(u"central_widget")
@@ -310,7 +310,7 @@ class Ui_main_window(object):
         self.font_family_combo_box.setMinimumContentsLength(1)
         self.font_family_combo_box.setFontFilters(QFontComboBox.FontFilter.ScalableFonts)
         font = QFont()
-        font.setFamilies([u"Arial"])
+        font.setFamilies([u"Arimo"])
         font.setPointSize(10)
         self.font_family_combo_box.setCurrentFont(font)
 
@@ -838,7 +838,12 @@ class Ui_main_window(object):
         self.open_dungeons_group_box.setObjectName(u"open_dungeons_group_box")
         self.verticalLayout_25 = QVBoxLayout(self.open_dungeons_group_box)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
-        self.setting_open_earth_temple = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.open_earth_temple_label = QLabel(self.open_dungeons_group_box)
+        self.open_earth_temple_label.setObjectName(u"open_earth_temple_label")
+
+        self.verticalLayout_25.addWidget(self.open_earth_temple_label)
+
+        self.setting_open_earth_temple = QComboBox(self.open_dungeons_group_box)
         self.setting_open_earth_temple.setObjectName(u"setting_open_earth_temple")
 
         self.verticalLayout_25.addWidget(self.setting_open_earth_temple)
@@ -3053,7 +3058,8 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(2)
+
 
         QMetaObject.connectSlotsByName(main_window)
     # setupUi
@@ -3147,7 +3153,7 @@ class Ui_main_window(object):
         self.setting_shortcut_sand_oasis_minecart.setText(QCoreApplication.translate("main_window", u"Lanayru Desert Minecart in Sand Oasis", None))
         self.setting_shortcut_minecart_before_caves.setText(QCoreApplication.translate("main_window", u"Lanayru Desert Minecart before Lanayru Caves", None))
         self.open_dungeons_group_box.setTitle(QCoreApplication.translate("main_window", u"Open Dungeons", None))
-        self.setting_open_earth_temple.setText(QCoreApplication.translate("main_window", u"Open Earth Temple", None))
+        self.open_earth_temple_label.setText(QCoreApplication.translate("main_window", u"Open Earth Temple", None))
         self.open_lmf_label.setText(QCoreApplication.translate("main_window", u"Open Lanyru Mining Facility", None))
         self.setting_shortcut_skyview_boards.setText(QCoreApplication.translate("main_window", u"Skyview Temple Boarded Shortcut", None))
         self.setting_shortcut_skyview_bars.setText(QCoreApplication.translate("main_window", u"Skyview Temple Bars before Boss Door", None))
