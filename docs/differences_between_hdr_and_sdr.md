@@ -31,6 +31,7 @@ generating a seed
 * Beatable Only logic option
 * Any Dungeon, Own Region, and Overworld options for Small Key and Boss Key shuffles
 * New "Removed" option for all Key shuffles which unlocks their doors from the start
+* The `Open Earth Temple` setting has an option to place Key Pieces in the Eldin Volcano region
 * Goddess Chest Shuffle to turn on/off randomization of the items inside Goddess Chests easily
 * Correct Orientation option for Randomized Boss Key Puzzles
 * The `Random Starting Item` setting is now a count where you can select how many random items you
