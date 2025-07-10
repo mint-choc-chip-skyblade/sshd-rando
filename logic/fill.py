@@ -362,6 +362,28 @@ def place_own_region_items(world: World, worlds: list[World]):
         complete_item_pool = get_complete_item_pool(worlds)
         assumed_fill(worlds, own_region_items, complete_item_pool, own_region_locations)
 
+    # Own region place Earth Temple Key Pieces if needed
+    if world.setting("open_earth_temple") == "shuffle_eldin":
+        key_piece = world.get_item(KEY_PIECE)
+
+        eldin_locations: list[Location] = []
+        eldin_items: list[Item] = []
+        eldin_items.extend([key_piece] * world.item_pool[key_piece])
+        world.item_pool[key_piece] = 0
+
+        for location in world.get_all_item_locations():
+            if any(
+                la
+                for la in location.loc_access_list
+                if "Eldin Volcano" in la.area.hint_regions
+            ):
+                eldin_locations.append(location)
+
+        # Get the complete item pool for all worlds incase of multiworld
+        # plandomized items that are required to get to Eldin Volcano
+        complete_item_pool = get_complete_item_pool(worlds)
+        assumed_fill(worlds, eldin_items, complete_item_pool, eldin_locations)
+
 
 def place_any_dungeon_items(world: World, worlds: list[World]):
     any_dungeon_items: list[Item] = []
