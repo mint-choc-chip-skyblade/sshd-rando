@@ -192,6 +192,26 @@ def test_random_starting_spawn_anywhere() -> None:
     config_test("random_starting_spawn_anywhere.yaml")
 
 
+def test_open_et_key_pieces_in_eldin() -> None:
+    worlds = config_test("open_et_key_pieces_in_eldin.yaml")
+
+    for world in worlds:
+        key_piece_count = 0
+
+        for location in world.get_all_item_locations():
+            if location.current_item.name == KEY_PIECE:
+                assert any(
+                    la
+                    for la in location.loc_access_list
+                    if "Eldin Volcano" in la.area.hint_regions
+                )
+                key_piece_count += 1
+
+        # With default settings, there should always be 5 key pieces.
+        # Ensures that all 5 are found and correct.
+        assert key_piece_count == 5
+
+
 def test_fi_hints() -> None:
     config_test("fi_hints.yaml")
 
