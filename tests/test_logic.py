@@ -204,6 +204,7 @@ def test_open_et_key_pieces_in_eldin() -> None:
                     la
                     for la in location.loc_access_list
                     if "Eldin Volcano" in la.area.hint_regions
+                    or "Mogma Turf" in la.area.hint_regions
                 )
                 key_piece_count += 1
 
