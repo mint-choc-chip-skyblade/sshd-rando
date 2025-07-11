@@ -1164,7 +1164,7 @@
     - "Shuffle Key Pieces (Anywhere)"
   options:
     - "open": "The Earth Temple Door will be opened from the start of the game."
-    - "shuffle_eldin": "You will need to collect all the Earth Temple Key Pieces, shuffled within the Eldin Volcano region, in order to open the Earth Temple Door."
+    - "shuffle_eldin": "You will need to collect all the Earth Temple Key Pieces, shuffled within the Eldin Volcano region (including Mogma Turf), in order to open the Earth Temple Door."
     - "shuffle_anywhere": "You will need to collect all the Earth Temple Key Pieces, shuffled anywhere, in order to open the Earth Temple Door."
 
 - name: open_lmf
