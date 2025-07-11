@@ -446,7 +446,7 @@
   exits:
     Skyloft Village: Nothing
   locations:
-    Skyloft Village - Gondo and Gebra's Closet: Nothing
+    Skyloft Village - Gondo and Greba's Closet: Nothing
 
 - name: Rupin's House
   allowed_time_of_day: All

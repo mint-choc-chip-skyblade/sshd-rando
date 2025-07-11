@@ -737,11 +737,6 @@ class Ui_main_window(object):
         self.open_world_group_box.setObjectName(u"open_world_group_box")
         self.verticalLayout_14 = QVBoxLayout(self.open_world_group_box)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.setting_unlock_all_groosenator_destinations = RandoTriStateCheckBox(self.open_world_group_box)
-        self.setting_unlock_all_groosenator_destinations.setObjectName(u"setting_unlock_all_groosenator_destinations")
-
-        self.verticalLayout_14.addWidget(self.setting_unlock_all_groosenator_destinations)
-
         self.setting_open_thunderhead = RandoTriStateCheckBox(self.open_world_group_box)
         self.setting_open_thunderhead.setObjectName(u"setting_open_thunderhead")
 
@@ -2536,6 +2531,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_32.addWidget(self.setting_natural_night_connections)
 
+        self.setting_unlock_all_groosenator_destinations = RandoTriStateCheckBox(self.other_settings_group_box)
+        self.setting_unlock_all_groosenator_destinations.setObjectName(u"setting_unlock_all_groosenator_destinations")
+
+        self.verticalLayout_32.addWidget(self.setting_unlock_all_groosenator_destinations)
+
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_32.addItem(self.verticalSpacer)
@@ -3061,6 +3061,7 @@ class Ui_main_window(object):
         self.tab_widget.setCurrentIndex(2)
 
 
+
         QMetaObject.connectSlotsByName(main_window)
     # setupUi
 
@@ -3135,7 +3136,6 @@ class Ui_main_window(object):
         self.setting_skip_demise.setText(QCoreApplication.translate("main_window", u"Skip Demise Fight", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.gameplay_tab), QCoreApplication.translate("main_window", u"Gameplay", None))
         self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))
-        self.setting_unlock_all_groosenator_destinations.setText(QCoreApplication.translate("main_window", u"Unlock all Groosenator Destinations", None))
         self.setting_open_thunderhead.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
         self.open_lake_floria_label.setText(QCoreApplication.translate("main_window", u"Open Lake Floria", None))
         self.setting_open_batreaux_shed.setText(QCoreApplication.translate("main_window", u"Open Batreaux's Shed", None))
@@ -3359,8 +3359,9 @@ class Ui_main_window(object):
         self.setting_enable_back_in_time.setText(QCoreApplication.translate("main_window", u"Enable Back in Time (BiT)", None))
         self.setting_allow_flying_at_night.setText(QCoreApplication.translate("main_window", u"Allow Flying at Night", None))
         self.setting_natural_night_connections.setText(QCoreApplication.translate("main_window", u"Require Natural Night Connections", None))
+        self.setting_unlock_all_groosenator_destinations.setText(QCoreApplication.translate("main_window", u"Unlock all Groosenator Destinations", None))
         self.other_mods_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Mods", None))
-        self.other_mods_explanation_text.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>The randomizer modifies a lot of files the game uses. To better integrate other mods with the randomizer, you can put them in separate folders in the <span style=\" font-weight:700;\">other_mods</span> directory and choose which ones you want to apply together. For example, if you have a mod which changes Link's tunic color, you can create a new folder in the <span style=\" font-weight:700;\">other_mods</span> directory named &quot;Other Tunic Color&quot; and put the <span style=\" font-weight:700;\">romfs</span> folder of that mod into the new folder. Then refresh the mod list and it should appear below. We do not currently support mods that modify any files in the <span style=\" font-weight:700;\">exefs</span> folder.</p><p>Note that this feature is EXPERIMENTAL and we do not guarantee that you won't run into bugs when using other mods, but the randomizer will try it's best.</p></body></html>", None))
+        self.other_mods_explanation_text.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>The randomizer modifies a lot of files the game uses. To better integrate other mods with the randomizer, you can put them in separate folders in the <span style=\" font-weight:700;\">other_mods</span> directory and choose which ones you want to apply together. For example, if you have a mod which changes Link's tunic color, you can create a new folder in the <span style=\" font-weight:700;\">other_mods</span> directory named &quot;Other Tunic Color&quot; and put the <span style=\" font-weight:700;\">romfs</span> folder of that mod into the new folder. Then refresh the mod list and it should appear below. We do not currently support mods that modify any files in the <span style=\" font-weight:700;\">exefs</span> folder.</p><p>Note that this feature is EXPERIMENTAL and we do not guarantee that you won't run into bugs when using other mods, but the randomizer will try its best.</p></body></html>", None))
         self.open_other_mods_dir_button.setText(QCoreApplication.translate("main_window", u"Open other_mods Folder", None))
         self.refresh_mod_list_button.setText(QCoreApplication.translate("main_window", u"Refresh Mod List", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))

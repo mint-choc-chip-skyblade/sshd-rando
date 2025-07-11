@@ -527,10 +527,8 @@
     Construction Bay - Bonk Right Sign near Upper Door: Nothing
 
 - name: Construction Bay Sand Pit
-  events:
-    Defeat Shipyard Moldarach: Gust_Bellows and Sword # Bellowsless Moldarach isn't possible here
   exits:
-    Shipyard Dock: "'Defeat_Shipyard_Moldarach'"
+    Shipyard Dock: Nothing
 
 - name: Pirate Stronghold Dock
   exits:

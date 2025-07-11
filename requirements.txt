@@ -5,13 +5,13 @@ PyYAML~=6.0.1
 lz4~=4.4.3
 PySide6~=6.9.0
 pyqtdarktheme @ git+https://github.com/CovenEsme/PyQtDarkTheme/@v2.2.0 # Includes support for python 3.12
-typing_extensions~=4.13.1
+typing_extensions~=4.14.1
 pyclip~=0.7.0
 
 # dev stuff
 black~=25.1.0
-pytest~=8.3.1
-pytest-xdist~=3.7.0
-PyInstaller~=6.13.0
-Pillow~=11.2.1
+pytest~=8.4.1
+pytest-xdist~=3.8.0
+PyInstaller~=6.14.2
+Pillow~=11.3.0
 appdirs~=1.4.4

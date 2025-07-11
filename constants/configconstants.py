@@ -191,6 +191,8 @@ LOCATION_ALIASES = {
     "Thrill Digger Cave - Gossip Stone near Tubert": "Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator",
     "Mogma Turf - Goddess Cube": "Mogma Turf - Goddess Cube on Raised Pillar",
     "Bazaar - Potion Lady's Gift": "Bazaar - Luv the Potion Lady's Gift",
+    # Since v2.0
+    "Skyloft Village - Gondo and Gebra's Closet": "Skyloft Village - Gondo and Greba's Closet",
 }
 
 TRACKER_NOTE_EVENTS = {
