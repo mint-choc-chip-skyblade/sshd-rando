@@ -96,6 +96,7 @@ if sys.platform == "win32":
     objcopy += EXE
 else:
     devkitpro = Path(os.environ.get("DEVKITPRO"))
+    # devkitpro = Path("/opt") / "devkitpro"
 
 devkitA64 = devkitpro / "devkitA64" / "bin"
 
@@ -292,7 +293,7 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
                 linker_command.append("./" + ASM_RUST_ADDITIONS_TARGET_PATH.as_posix())
 
             # with open(temp_linker_file_name, "r", encoding="utf-8") as f:
-            #     with open("linker_file.txt", "w") as linker_f:
+            #     with open("./linker_file.txt", "w") as linker_f:
             #         linker_f.write(f.read())
 
             if result := call(linker_command):
