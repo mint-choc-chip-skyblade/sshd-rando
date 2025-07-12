@@ -371,27 +371,20 @@ def place_own_region_items(world: World, worlds: list[World]):
         eldin_items.extend([key_piece] * world.item_pool[key_piece])
         world.item_pool[key_piece] = 0
 
-        # Check if Mogma Turf is dircetly connected to Eldin Volcano
-        mogma_turf_connected_hint_regions: set[str] = set()
-        mogma_turf_connected_hint_regions |= world.get_entrance(
-            "Mogma Turf -> Volcano East"
-        ).connected_area.hint_regions
-        mogma_turf_connected_hint_regions |= world.get_entrance(
-            "Mogma Turf Final Vent -> Past Mogma Turf"
-        ).connected_area.hint_regions
-        include_mogma_turf = False
-
-        if "Eldin Volcano" in mogma_turf_connected_hint_regions:
-            include_mogma_turf = True
-
         for location in world.get_all_item_locations():
             if any(
                 la
                 for la in location.loc_access_list
                 if "Eldin Volcano" in la.area.hint_regions
-                or (include_mogma_turf and "Mogma Turf" in la.area.hint_regions)
+                or (
+                    world.setting("randomize_overworld_entrances") == "off"
+                    and "Mogma Turf" in la.area.hint_regions
+                )
             ):
                 eldin_locations.append(location)
+
+        for l in eldin_locations:
+            print(l)
 
         # Get the complete item pool for all worlds incase of multiworld
         # plandomized items that are required to get to Eldin Volcano
