@@ -94,7 +94,7 @@ World 1:
   low_health_beeping_speed: normal
   open_thunderhead: 'off'
   open_lake_floria: open
-  open_earth_temple: 'on'
+  open_earth_temple: 'open'
   open_lmf: open
   open_batreaux_shed: 'on'
   shortcut_ios_bridge_complete: 'off'

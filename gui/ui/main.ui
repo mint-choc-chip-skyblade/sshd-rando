@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1387</width>
-    <height>873</height>
+    <width>1483</width>
+    <height>977</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -500,7 +500,7 @@
                     </property>
                     <property name="currentFont">
                      <font>
-                      <family>Arial</family>
+                      <family>Arimo</family>
                       <pointsize>10</pointsize>
                      </font>
                     </property>
@@ -1205,11 +1205,14 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_25">
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_open_earth_temple">
+            <widget class="QLabel" name="open_earth_temple_label">
              <property name="text">
               <string>Open Earth Temple</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_earth_temple"/>
            </item>
            <item>
             <widget class="QLabel" name="open_lmf_label">
