@@ -243,7 +243,7 @@ def determine_check_patches(
 def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
     print_progress_text("Creating Dungeon Item Patches")
 
-    DUNGEON_ITEMIDS = [
+    DUNGEON_SKEY_ITEMIDS = (
         200,
         201,
         202,
@@ -251,6 +251,8 @@ def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
         204,
         205,
         206,
+    )
+    DUNGEON_MAP_ITEMIDS = (
         207,
         208,
         209,
@@ -258,20 +260,50 @@ def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
         211,
         212,
         213,
-    ]
+    )
+    DUNGEON_SKEY_SCENEINDEXES = {
+        200: 11,  # Skyview Temple
+        201: 17,  # Lanayru Mining Facility
+        202: 12,  # Ancient Cistern
+        203: 15,  # Fire Sanctuary
+        204: 18,  # Sandship
+        205: 20,  # Sky Keep
+        206: 9,  # Lanayru Gorge & Caves
+    }
 
     # Patch the pre-existing entry for the Skyview Small Key (003_200).
-    skyview_small_key_text_patch = {
-        "name": f"Skyview Key Text",
+    svt_small_key_text_patch = {
+        "name": f"Skyview Temple Small Key Text",
         "type": "textpatch",
         "index": 251,
     }
-
+    svt_goto_small_key_count_patch = {
+        "name": f"Goto Skyview Temple Small Key Count",
+        "type": "flowpatch",
+        "index": 498,
+        "flow": {
+            "next": f"Get Skyview Temple Small Key Count",
+        },
+    }
+    svt_small_key_count_patch = {
+        "name": f"Get Skyview Temple Small Key Count",
+        "type": "flowadd",
+        "flow": {
+            "type": "type3",
+            "next": 496,
+            "param1": DUNGEON_SKEY_SCENEINDEXES[200],
+            "param3": 78,  # custom command: get small key count
+        },
+    }
+    event_patch_handler.append_to_event_patches("003-ItemGet", svt_small_key_text_patch)
     event_patch_handler.append_to_event_patches(
-        "003-ItemGet", skyview_small_key_text_patch
+        "003-ItemGet", svt_goto_small_key_count_patch
+    )
+    event_patch_handler.append_to_event_patches(
+        "003-ItemGet", svt_small_key_count_patch
     )
 
-    for itemid in DUNGEON_ITEMIDS:
+    for itemid in DUNGEON_SKEY_ITEMIDS + DUNGEON_MAP_ITEMIDS:
         textadd_patch = {
             "name": f"Item {itemid} Text",
             "type": "textadd",
@@ -290,14 +322,37 @@ def append_dungeon_item_patches(event_patch_handler: EventPatchHandler):
             },
         }
 
-        entryadd_patch = {
-            "name": f"Item {itemid} Entry",
-            "type": "entryadd",
-            "entry": {
-                "name": f"003_{itemid}",
-                "value": f"Show Item {itemid} Text",
-            },
-        }
+        if itemid in DUNGEON_SKEY_ITEMIDS:
+            entryadd_patch = {
+                "name": f"Item {itemid} Entry",
+                "type": "entryadd",
+                "entry": {
+                    "name": f"003_{itemid}",
+                    "value": f"Get {itemid} Small Key Count",
+                },
+            }
+            small_key_count_patch = {
+                "name": f"Get {itemid} Small Key Count",
+                "type": "flowadd",
+                "flow": {
+                    "type": "type3",
+                    "next": f"Show Item {itemid} Text",
+                    "param1": DUNGEON_SKEY_SCENEINDEXES[itemid],
+                    "param3": 78,  # custom command: get small key count
+                },
+            }
+            event_patch_handler.append_to_event_patches(
+                "003-ItemGet", small_key_count_patch
+            )
+        else:
+            entryadd_patch = {
+                "name": f"Item {itemid} Entry",
+                "type": "entryadd",
+                "entry": {
+                    "name": f"003_{itemid}",
+                    "value": f"Show Item {itemid} Text",
+                },
+            }
 
         event_patch_handler.append_to_event_patches("003-ItemGet", textadd_patch)
         event_patch_handler.append_to_event_patches("003-ItemGet", flowadd_patch)
