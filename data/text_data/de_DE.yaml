@@ -73,6 +73,7 @@
 - name: Single Gratitude crystal counter
   standard: "Du hast <r<ein>> <y<Juwel der Güte>> erhalten!\nDamit hast du insgesamt <r<<numeric arg1> >>!"
 
+# TODO: Needs updating to include the key count text.
 - name: Skyview Key Text
   standard: "Du hast einen kleinen Schlüssel für\nden <g<Tempel des Himmelsblicks>> erhalten!"
 
