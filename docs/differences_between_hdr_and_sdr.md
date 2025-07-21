@@ -122,7 +122,6 @@ the chest
 * Save File text isn't updated for the randomizer
 * Random Riddles (randomizes the solutions to various puzzles throughout the game)
 * Sword Dungeon Reward setting
-* Show current small key count when collecting a small key
 
 ## Removed Settings / Features
 * Fill Dowsing on White Sword (this is always true in HDR)
