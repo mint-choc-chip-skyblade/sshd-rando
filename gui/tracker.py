@@ -773,7 +773,7 @@ class Tracker:
 
         # Hide specific inventory buttons depending on settings
         # ET Key Pieces
-        visible = self.world.setting("open_earth_temple") != "on"
+        visible = self.world.setting("open_earth_temple") != "open"
         self.et_key_piece_button.setVisible(visible)
 
         # Small Key buttons

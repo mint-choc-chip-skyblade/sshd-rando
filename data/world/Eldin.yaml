@@ -142,7 +142,7 @@
     Retrieve Crystal Ball: Digging_Mitts and Clawshots and Scrapper and 'Start_Sparrots_Quest'
   exits:
     Temple Entrance Statue: Nothing
-    Earth Temple First Room: open_earth_temple or count(5, Key_Piece)
+    Earth Temple First Room: open_earth_temple == open or count(5, Key_Piece)
     Hot Cave: Nothing # You can use the bomb flower in one of the boko huts to blow up the tower
     Outside Upper Eldin Cave: "'Beaten_Boko_Base'"
     Outside Thrill Digger Cave: can_access(Outside Thrill Digger Cave) or (logic_bomb_throws and Bomb_Bag)
