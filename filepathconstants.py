@@ -47,6 +47,10 @@ PLANDO_PATH = Path(userdata_path) / "plandomizers"
 PRESETS_PATH = Path(userdata_path) / "presets"
 BASE_PRESETS_PATH = RANDO_ROOT_PATH / "data" / "presets"
 
+# Tests
+CONFIG_TEST_PATH = Path("tests") / "test_configs"
+CROSS_PLATFORM_TESTS_PATH = Path("tests") / "cross_platform_test_configs"
+
 # GUI Stuff
 THEME_INFO_PATH = RANDO_ROOT_PATH / "gui" / "custom_themes" / "default_theme_info.yaml"
 
