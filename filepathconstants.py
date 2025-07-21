@@ -1,4 +1,4 @@
-import appdirs
+import platformdirs
 import os
 import platform
 
@@ -17,7 +17,9 @@ except ImportError:
     RANDO_ROOT_PATH = Path(os.path.dirname(os.path.realpath(__file__)))
 
 if platform.system() == "Darwin":
-    userdata_path = appdirs.user_data_dir("Skyward Sword HD Randomizer", "SSHD Rando")
+    userdata_path = platformdirs.user_data_dir(
+        "Skyward Sword HD Randomizer", "SSHD Rando"
+    )
 
     if not os.path.isdir(userdata_path):
         os.mkdir(userdata_path)
