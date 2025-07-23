@@ -1,4 +1,4 @@
-import appdirs
+import platformdirs
 import os
 import platform
 
@@ -17,7 +17,9 @@ except ImportError:
     RANDO_ROOT_PATH = Path(os.path.dirname(os.path.realpath(__file__)))
 
 if platform.system() == "Darwin":
-    userdata_path = appdirs.user_data_dir("Skyward Sword HD Randomizer", "SSHD Rando")
+    userdata_path = platformdirs.user_data_dir(
+        "Skyward Sword HD Randomizer", "SSHD Rando"
+    )
 
     if not os.path.isdir(userdata_path):
         os.mkdir(userdata_path)
@@ -44,6 +46,10 @@ SETTINGS_LIST_PATH = RANDO_ROOT_PATH / "data" / "settings_list.yaml"
 PLANDO_PATH = Path(userdata_path) / "plandomizers"
 PRESETS_PATH = Path(userdata_path) / "presets"
 BASE_PRESETS_PATH = RANDO_ROOT_PATH / "data" / "presets"
+
+# Tests
+CONFIG_TEST_PATH = Path("tests") / "test_configs"
+CROSS_PLATFORM_TESTS_PATH = Path("tests") / "cross_platform_test_configs"
 
 # GUI Stuff
 THEME_INFO_PATH = RANDO_ROOT_PATH / "gui" / "custom_themes" / "default_theme_info.yaml"

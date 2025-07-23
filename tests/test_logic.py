@@ -8,7 +8,7 @@ from logic.generate import generate
 from logic.config import *
 from logic.search import all_logic_satisfied
 from logic.world import World
-from filepathconstants import SPOILER_LOGS_PATH
+from filepathconstants import CONFIG_TEST_PATH, SPOILER_LOGS_PATH
 
 
 def config_test(
@@ -20,7 +20,7 @@ def config_test(
     config_file_name = Path(config_file_name)
 
     if is_test_config:
-        config_test_path = Path("tests") / "test_configs" / config_file_name
+        config_test_path = CONFIG_TEST_PATH / config_file_name
         assert config_test_path.exists()
     else:
         config_test_path = config_file_name
