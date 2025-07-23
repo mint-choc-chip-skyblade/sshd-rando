@@ -1517,6 +1517,16 @@ class Ui_main_window(object):
 
         self.verticalLayout_29.addLayout(self.starting_hearts_layout)
 
+        self.setting_start_with_all_bugs = RandoTriStateCheckBox(self.item_settings_group_box)
+        self.setting_start_with_all_bugs.setObjectName(u"setting_start_with_all_bugs")
+
+        self.verticalLayout_29.addWidget(self.setting_start_with_all_bugs)
+
+        self.setting_start_with_all_treasures = RandoTriStateCheckBox(self.item_settings_group_box)
+        self.setting_start_with_all_treasures.setObjectName(u"setting_start_with_all_treasures")
+
+        self.verticalLayout_29.addWidget(self.setting_start_with_all_treasures)
+
         self.item_settings_vspacer = QSpacerItem(20, 137, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_29.addItem(self.item_settings_vspacer)
@@ -3058,8 +3068,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(2)
-
+        self.tab_widget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3230,6 +3239,8 @@ class Ui_main_window(object):
         self.random_starting_tablet_count_label.setText(QCoreApplication.translate("main_window", u"Random Starting Tablet Count", None))
         self.random_starting_item_count_label.setText(QCoreApplication.translate("main_window", u"Random Starting Item Count", None))
         self.starting_hearts_label.setText(QCoreApplication.translate("main_window", u"Starting Hearts", None))
+        self.setting_start_with_all_bugs.setText(QCoreApplication.translate("main_window", u"Start with All Bugs", None))
+        self.setting_start_with_all_treasures.setText(QCoreApplication.translate("main_window", u"Start with All Treasures", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.inventory_tab), QCoreApplication.translate("main_window", u"Items and Inventory", None))
         self.excluded_hint_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Hint Locations", None))
         self.excluded_hint_locations_free_search.setText("")

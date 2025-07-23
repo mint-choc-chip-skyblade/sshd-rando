@@ -1,6 +1,14 @@
+import random
 import struct
 import tempfile
 import time
+
+from io import BytesIO
+from pathlib import Path
+from collections import Counter
+from lz4.block import compress, decompress
+
+from constants.asmconstants import *
 from constants.itemconstants import (
     ITEM_ITEMFLAGS,
     ITEM_STORYFLAGS,
@@ -8,6 +16,7 @@ from constants.itemconstants import (
     ITEM_COUNTS,
     PROGRESSIVE_POUCH,
 )
+from constants.itemnames import *
 from constants.musicconstants import VANILLA_MUSIC_DATA
 from filepathconstants import (
     ASM_ADDITIONS_DIFFS_PATH,
@@ -19,15 +28,9 @@ from filepathconstants import (
     SUBSDK1_FILE_PATH,
     BIRD_STATUE_DATA_PATH,
 )
-from io import BytesIO
-from pathlib import Path
-from collections import Counter
-import random
 
-from constants.asmconstants import *
-
-from lz4.block import compress, decompress
 from gui.dialogs.dialog_header import print_progress_text, update_progress_value
+
 from logic.world import World
 
 from patches.asmpatchhelper import NsoOffsets, SegmentHeader
@@ -389,7 +392,21 @@ class ASMPatchHandler:
         dungeonflags = startflags["Dungeonflags"]
         start_counts = Counter()
 
-        for item, count in world.starting_item_pool.items():
+        # Handle starting bugs and treasures
+        additional_starting_items = {}
+
+        if world.setting("start_with_all_bugs") == "on":
+            for bug in BUG_NAMES:
+                additional_starting_items[world.get_item(bug)] = 99
+
+        if world.setting("start_with_all_treasures") == "on":
+            for treasure in TREASURE_NAMES:
+                additional_starting_items[world.get_item(treasure)] = 99
+
+        # Get flag data from starting item pool
+        for item, count in (
+            world.starting_item_pool.items() | additional_starting_items.items()
+        ):
             item_name = item.name
 
             if itemflag_data := ITEM_ITEMFLAGS.get(item_name, False):
