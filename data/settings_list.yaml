@@ -838,14 +838,15 @@
 - name: damage_multiplier
   default_option: "1"
   pretty_name: Damage Multiplier
-  random_low: "1"
+  random_low: "0"
   random_high: "4"
   pretty_options:
-    - 1-80
+    - 0-80
   options:
-    - 1-80: "Determines the overall damage multiplier.
+    - 0-80: "Determines the overall damage multiplier.
         <b>Normal Mode</b> (default) damage is x1.
         <b>Hero Mode</b> (new game +) damage is x2.
+        At x0, the player will be invincible and not take any damage.
         At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
 - name: unlock_all_groosenator_destinations
@@ -872,6 +873,26 @@
     - easy: "The threshold needed to earn a reward from each minigame will be reduced."
     - vanilla: "The threshold needed to earn a reward from each minigame will be unchanged."
     - hard: "The threshold needed to earn a reward from each minigame will be increased."
+
+- name: start_with_all_bugs
+  default_option: "off"
+  pretty_name: Start with All Bugs
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will start the game without any bugs in your inventory."
+    - "on": "You will start the game with 99 of each bug in your inventory."
+
+- name: start_with_all_treasures
+  default_option: "off"
+  pretty_name: Start with All Treasures
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will start the game without any treasures in your inventory."
+    - "on": "You will start the game with 99 of each treasure in your inventory."
 
 ######################
 ## Cosmetic Options ##
@@ -1155,14 +1176,16 @@
 
 - name: open_earth_temple
   tracker_important: true
-  default_option: "on"
+  default_option: "open"
   pretty_name: Open Earth Temple
   pretty_options:
-    - "Off"
-    - "On"
+    - "Open"
+    - "Shuffle Key Pieces (Eldin)"
+    - "Shuffle Key Pieces (Anywhere)"
   options:
-    - "off": "You will need to collect all the Earth Temple Key Pieces in order to open the Earth Temple Door."
-    - "on": "The Earth Temple Door will be opened from the start of the game."
+    - "open": "The Earth Temple Door will be opened from the start of the game."
+    - "shuffle_eldin": "You will need to collect all the Earth Temple Key Pieces, shuffled within the Eldin Volcano region (including Mogma Turf if overworld entrances are not randomized), in order to open the Earth Temple Door."
+    - "shuffle_anywhere": "You will need to collect all the Earth Temple Key Pieces, shuffled anywhere, in order to open the Earth Temple Door."
 
 - name: open_lmf
   tracker_important: true

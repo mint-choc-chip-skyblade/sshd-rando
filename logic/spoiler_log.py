@@ -32,11 +32,8 @@ def log_basic_info(log, config: Config, worlds: list[World]) -> None:
     log.write(f"Skyward Sword HD Randomizer Version: {VERSION}\n")
     log.write(f"Seed: {config.seed}\n")
 
-    clean_config = load_config_from_file(
-        CONFIG_PATH, allow_rewrite=False, create_if_blank=True
-    )
     log.write(
-        f"Setting String: {setting_string_from_config(clean_config, worlds[0].location_table)}\n"
+        f"Setting String: {setting_string_from_config(config, worlds[0].location_table)}\n"
     )
     log.write(f"Hash: {config.get_hash()}\n")
 

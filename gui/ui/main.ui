@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1387</width>
-    <height>873</height>
+    <width>1483</width>
+    <height>977</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -500,7 +500,7 @@
                     </property>
                     <property name="currentFont">
                      <font>
-                      <family>Arial</family>
+                      <family>Arimo</family>
                       <pointsize>10</pointsize>
                      </font>
                     </property>
@@ -1068,13 +1068,6 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_14">
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_unlock_all_groosenator_destinations">
-             <property name="text">
-              <string>Unlock all Groosenator Destinations</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="RandoTriStateCheckBox" name="setting_open_thunderhead">
              <property name="text">
               <string>Open Thunderhead</string>
@@ -1212,11 +1205,14 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_25">
            <item>
-            <widget class="RandoTriStateCheckBox" name="setting_open_earth_temple">
+            <widget class="QLabel" name="open_earth_temple_label">
              <property name="text">
               <string>Open Earth Temple</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="setting_open_earth_temple"/>
            </item>
            <item>
             <widget class="QLabel" name="open_lmf_label">
@@ -2250,6 +2246,20 @@
               </widget>
              </item>
             </layout>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_start_with_all_bugs">
+             <property name="text">
+              <string>Start with All Bugs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_start_with_all_treasures">
+             <property name="text">
+              <string>Start with All Treasures</string>
+             </property>
+            </widget>
            </item>
            <item>
             <spacer name="item_settings_vspacer">
@@ -3860,6 +3870,13 @@ Practice Sword</string>
             </widget>
            </item>
            <item>
+            <widget class="RandoTriStateCheckBox" name="setting_unlock_all_groosenator_destinations">
+             <property name="text">
+              <string>Unlock all Groosenator Destinations</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <spacer name="verticalSpacer">
              <property name="orientation">
               <enum>Qt::Orientation::Vertical</enum>
@@ -3890,7 +3907,7 @@ Practice Sword</string>
            <item>
             <widget class="QLabel" name="other_mods_explanation_text">
              <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The randomizer modifies a lot of files the game uses. To better integrate other mods with the randomizer, you can put them in separate folders in the &lt;span style=&quot; font-weight:700;&quot;&gt;other_mods&lt;/span&gt; directory and choose which ones you want to apply together. For example, if you have a mod which changes Link's tunic color, you can create a new folder in the &lt;span style=&quot; font-weight:700;&quot;&gt;other_mods&lt;/span&gt; directory named &amp;quot;Other Tunic Color&amp;quot; and put the &lt;span style=&quot; font-weight:700;&quot;&gt;romfs&lt;/span&gt; folder of that mod into the new folder. Then refresh the mod list and it should appear below. We do not currently support mods that modify any files in the &lt;span style=&quot; font-weight:700;&quot;&gt;exefs&lt;/span&gt; folder.&lt;/p&gt;&lt;p&gt;Note that this feature is EXPERIMENTAL and we do not guarantee that you won't run into bugs when using other mods, but the randomizer will try it's best.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The randomizer modifies a lot of files the game uses. To better integrate other mods with the randomizer, you can put them in separate folders in the &lt;span style=&quot; font-weight:700;&quot;&gt;other_mods&lt;/span&gt; directory and choose which ones you want to apply together. For example, if you have a mod which changes Link's tunic color, you can create a new folder in the &lt;span style=&quot; font-weight:700;&quot;&gt;other_mods&lt;/span&gt; directory named &amp;quot;Other Tunic Color&amp;quot; and put the &lt;span style=&quot; font-weight:700;&quot;&gt;romfs&lt;/span&gt; folder of that mod into the new folder. Then refresh the mod list and it should appear below. We do not currently support mods that modify any files in the &lt;span style=&quot; font-weight:700;&quot;&gt;exefs&lt;/span&gt; folder.&lt;/p&gt;&lt;p&gt;Note that this feature is EXPERIMENTAL and we do not guarantee that you won't run into bugs when using other mods, but the randomizer will try its best.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="wordWrap">
               <bool>true</bool>

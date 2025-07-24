@@ -2206,7 +2206,7 @@ F200: # Eldin Volcano
     room: 4
     objtype: OBJ
   - name: Remove ET Door if open ET
-    onlyif: open_earth_temple == on
+    onlyif: open_earth_temple == open
     type: objdelete
     id: 0x2413
     layer: 0
@@ -3955,9 +3955,17 @@ F301_6: # Outside Pirate stronghold
       play_cutscene: -1
 
 F301_7: # Construction Bay
-  - name: Remove Text near minecart door
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 0 # Force Moldarach not to spawn
+  - name: Remove Fi text
     type: objdelete
-    id: 0xFC04
+    ids:
+      - 0xFC03
+      - 0xFC04
     layer: 0
     room: 0
     objtype: OBJ

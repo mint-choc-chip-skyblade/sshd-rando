@@ -73,6 +73,7 @@
 - name: Single Gratitude crystal counter
   standard: "Du hast <r<ein>> <y<Juwel der Güte>> erhalten!\nDamit hast du insgesamt <r<<numeric arg1> >>!"
 
+# TODO: Needs updating to include the key count text.
 - name: Skyview Key Text
   standard: "Du hast einen kleinen Schlüssel für\nden <g<Tempel des Himmelsblicks>> erhalten!"
 
@@ -845,6 +846,79 @@
   cryptic: ein <r<großes Netz>>
   plurality: Singular
 
+# TODO: add translations
+# - name: Faron Grasshopper
+#   standard: Faron Grasshopper
+#   pretty: a <Faron Grasshopper>
+#   cryptic: a <r<jumping insect>>
+#   plurality: Singular
+
+# - name: Woodland Rhino Beetle
+#   standard: Woodland Rhino Beetle
+#   pretty: a <Woodland Rhino Beetle>
+#   cryptic: a <r<horned forest insect>>
+#   plurality: Singular
+
+# - name: Deku Hornet
+#   standard: Deku Hornet
+#   pretty: a <Deku Hornet>
+#   cryptic: a <r<stinging insect>>
+#   plurality: Singular
+
+# - name: Skyloft Mantis
+#   standard: Skyloft Mantis
+#   pretty: a <Skyloft Mantis>
+#   cryptic: a <r<posing sky insect>>
+#   plurality: Singular
+
+# - name: Volcanic Ladybug
+#   standard: Volcanic Ladybug
+#   pretty: a <Volcanic Ladybug>
+#   cryptic: a <r<fiery posh insect>>
+#   plurality: Singular
+
+# - name: Blessed Butterfly
+#   standard: Blessed Butterfly
+#   pretty: a <Blessed Butterfly>
+#   cryptic: a <r<slippery insect>>
+#   plurality: Singular
+
+# - name: Lanayru Ant
+#   standard: Lanayru Ant
+#   pretty: a <Lanayru Ant>
+#   cryptic: a <r<sandy worker insect>>
+#   plurality: Singular
+
+# - name: Sand Cicada
+#   standard: Sand Cicada
+#   pretty: a <Sand Cicada>
+#   cryptic: a <r<noisy insect>>
+#   plurality: Singular
+
+# - name: Gerudo Dragonfly
+#   standard: Gerudo Dragonfly
+#   pretty: a <Gerudo Dragonfly>
+#   cryptic: a <r<fast insect>>
+#   plurality: Singular
+
+# - name: Eldin Roller
+#   standard: Eldin Roller
+#   pretty: a <Eldin Roller>
+#   cryptic: a <r<sisyphean insect>>
+#   plurality: Singular
+
+# - name: Sky Stag Beetle
+#   standard: Sky Stag Beetle
+#   pretty: a <Sky Stag Beetle>
+#   cryptic: a <r<bachelor's insect>>
+#   plurality: Singular
+
+# - name: Starry Firefly
+#   standard: Starry Firefly
+#   pretty: a <Starry Firefly>
+#   cryptic: a <r<glowing insect>>
+#   plurality: Singular
+
 - name: Empty Bottle
   standard: leere Flasche
   pretty: eine <leere Flasche>
@@ -869,11 +943,34 @@
   cryptic: ein <r<Babyspielzeug>>
   plurality: Singular
 
+# TODO: add translations
+# - name: Hornet Larvae
+#   standard: Hornet Larvae
+#   pretty:
+#     text: some <Hornet Larvae>
+#     plurality: Plural
+#   cryptic:
+#     text: a <r<sticky home>>
+#     plurality: Singular
+
+# - name: Bird Feather
+#   standard: Bird Feather
+#   pretty: a <Bird Feather>
+#   cryptic: a <r<writing implement>>
+#   plurality: Singular
+
 - name: Tumbleweed
   standard: Wüstengras
   pretty: ein <Wüstengras>
   cryptic: ein <r<trockener Grasball>>
   plurality: Singular
+
+# TODO: add translations
+# - name: Lizard Tail
+#   standard: Lizard Tail
+#   pretty: a <Lizard Tail>
+#   cryptic: a <r<spiky tail>>
+#   plurality: Singular
 
 - name: Eldin Ore
   standard: Eldin-Erz
@@ -887,17 +984,44 @@
   cryptic: eine <r<uralte Pflanze>>
   plurality: Singular
 
+# TODO: add translations
+# - name: Amber Relic
+#   standard: Amber Relic
+#   pretty: an <Amber Relic>
+#   cryptic: an <r<orange tear>>
+#   plurality: Singular
+
 - name: Dusk Relic
   standard: Finsterhalbmond
   pretty: ein <Finsterhalbmond>
   cryptic: eine <r<dunkle Träne>>
   plurality: Singular
 
+# TODO: add translations
+# - name: Jelly Blob
+#   standard: Jelly Blob
+#   pretty: a <Jelly Blob>
+#   cryptic: a <r<slimey orb>>
+#   plurality: Singular
+
+# - name: Monster Claw
+#   standard: Monster Claw
+#   pretty: a <Monster Claw>
+#   cryptic: a <r<hand of evil>>
+#   plurality: Singular
+
 - name: Monster Horn
   standard: Monsterhorn
   pretty: ein <Monsterhorn>
   cryptic: ein <r<Signal ans Böse>>
   plurality: Singular
+
+# TODO: add translations
+# - name: Ornamental Skull
+#   standard: Ornamental Skull
+#   pretty: a <Ornamental Skull>
+#   cryptic: a <r<weathered face>>
+#   plurality: Singular
 
 - name: Evil Crystal
   standard: Schattenkristall
@@ -1863,7 +1987,7 @@
   cryptic: <r<Durchwühlen der Kleidung eines Trankbrauerpaars>>
 
 # TODO: update with new name
-- name: Skyloft Village - Gondo and Gebra's Closet
+- name: Skyloft Village - Gondo and Greba's Closet
   standard: Wolkenhort-Dorf - Dorucos Schrank
   pretty: Wolkenhort-Dorf - Dorucos Schrank
   cryptic: <r<Durchwühlen der Kleidung eines Mechanikers>>
