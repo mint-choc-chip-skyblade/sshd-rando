@@ -1,5 +1,43 @@
 # Changelog
 
+## Version 2.1
+
+### Additions and Changes
+* Expanded the `Open Earth Temple` setting to include an option for regional Key Pieces
+  * The options are now: `Open`, `Shuffle Key Pieces (Eldin)`, `Shuffle Key Pieces (Anywhere)`
+  * When set to `Shuffle Key Pieces (Eldin)`, the five Key Pieces needed to unlock the door to the Earth Temple dungeon entrance will be shuffled only with in the Eldin Volcano region (including Thrill Digger)
+  * This includes Mogma Turf when the `Randomize Overworld Entrances` setting is turned off
+* Added the total number of collected Small Keys to the item get textboxes of each of the Small Keys
+* Added settings for starting with all bugs and all treasures
+* Updated other mods support to allow mod makers to globally replace arcs by placing them in the `[mod-name]/oarc` folder
+  * Mods still need to have a `[mod-name]/romfs` folder in order to work with the randomizer
+* Updated other mods support to allow mod makers to put arcs in the `[mod-name]/romfs/Object/NX` folder instead of having to share a modified `ObjectPack.arc.LZ` as part of their mod
+* Updated the `Damage Multiplier` setting to accept a value of zero
+  * When set to zero, the player will be invincible and take no damage
+* Added some German translations for randomizer text added in version 2.0
+* Removed Moldarach 2 from the Construction Bay
+  * The "Gust Bellows and Sword" logic for traversing through the Construction Bay has also been removed
+* Moves the `Unlock all Groosenator Destinations` to the "Advanced" tab of the randomizer GUI
+
+### Fixes
+* Fixed softlock when trying to open the Faron trial gate after collecting the `Faron Woods - Kikwi Elder's Reward` and the "Scrapper" item
+* Fixed tracker error when the `Trial Treasure Shuffle` setting was set to `Random`
+* Fixed freestanding model scale for the "Dusk Relic" item so that it no longer appears very small
+* Fixed logic for flying at night when the `Natural Night Connections` setting is turned off
+* Fixed incorrect logic for traversing the tight rope before the Skyview Temple boss door
+* Fixed incorrect logic of obtaining stamina fruit locations near the Eldin Volcano hot cave area (`Eldin Volcano - Stamina Fruit after Last Boko Camp Tower`, `Eldin Volcano - Stamina Fruit on Ledge near Hot Cave`, `Eldin Volcano - Stamina Fruit on Vines near Hot Cave`)
+* Fixed issue where the tracker would show any "Song of the Hero" requirement twice
+* Fixed issue where freestanding items would spawn inside Silent Realms when they were accessed via the Boss Rush minigame
+* Fixed issue where players could use Fi's "Warp to Start" feature while in the Boss Rush minigame and lose access to key items
+* Fixed issue where the help menu would incorrectly show the "Scrapper" item as unobtained at all times
+* Fixed issue where applying presets would duplicate the settings and create inconsistencies between the settings shown in the randomizer program and the settings used to generate seeds
+* Fixed issue where talking to Fledge after obtaining `Knight Academy - Deliver Barrel to Henya the Lunch Lady` would give you 20 Rupees (and require you to talk to Fledge again to obtain `Knight Academy - Fledge's Gift`)
+* Fixed issue where the sold out sign in Beedle's Airshop would sometimes clip into the table or float above it
+* Fixed issue causing seeds to fail to generate when the `Decouple Entrances` setting is enabled
+* Fixed typo where Greba was misspelled as Gebra
+
+
+
 ## Version 2.0
 
 ### Additions and Changes
