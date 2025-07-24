@@ -21,7 +21,7 @@ if platform.system() == "Darwin":
         "Skyward Sword HD Randomizer", "SSHD Rando"
     )
 
-    if not os.path.isdir(userdata_path):
+    if not os.path.exists(userdata_path):
         os.mkdir(userdata_path)
 
     print(
