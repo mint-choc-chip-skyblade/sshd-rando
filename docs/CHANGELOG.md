@@ -8,6 +8,7 @@
   * When set to `Shuffle Key Pieces (Eldin)`, the five Key Pieces needed to unlock the door to the Earth Temple dungeon entrance will be shuffled only with in the Eldin Volcano region (including Thrill Digger)
   * This includes Mogma Turf when the `Randomize Overworld Entrances` setting is turned off
 * Added the total number of collected Small Keys to the item get textboxes of each of the Small Keys
+* Added settings for starting with all bugs and all treasures
 * Updated other mods support to allow mod makers to globally replace arcs by placing them in the `[mod-name]/oarc` folder
   * Mods still need to have a `[mod-name]/romfs` folder in order to work with the randomizer
 * Updated other mods support to allow mod makers to put arcs in the `[mod-name]/romfs/Object/NX` folder instead of having to share a modified `ObjectPack.arc.LZ` as part of their mod
