@@ -856,6 +856,102 @@
   shop_arc_name: GetNetB
   shop_model_name: GetNetB
   advancement: true
+- id: 141
+  name: Faron Grasshopper
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 142
+  name: Woodland Rhino Beetle
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 143
+  name: Deku Hornet
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 144
+  name: Skyloft Mantis
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 145
+  name: Volcanic Ladybug
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 146
+  name: Blessed Butterfly
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 147
+  name: Lanayru Ant
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 148
+  name: Sand Cicada
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 149
+  name: Gerudo Dragonfly
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 150
+  name: Eldin Roller
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 151
+  name: Sky Stag Beetle
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 152
+  name: Starry Firefly
+  types:
+    - Bugs
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
 - id: 153
   name: Empty Bottle
   types:
@@ -894,6 +990,22 @@
   shop_arc_name: GetGaragara
   shop_model_name: GetGaragara
   advancement: true
+- id: 161
+  name: Hornet Larvae
+  types:
+    - Treasures
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 162
+  name: Bird Feather
+  types:
+    - Treasures
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
 - id: 163
   name: Tumbleweed
   types:
@@ -902,6 +1014,14 @@
   oarc: GetSozaiC
   shop_arc_name: GetSozaiC
   shop_model_name: GetSozaiC
+- id: 164
+  name: Lizard Tail
+  types:
+    - Treasures
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
 - id: 165
   name: Eldin Ore
   types:
@@ -918,6 +1038,14 @@
   oarc: GetSozaiF
   shop_arc_name: GetSozaiF
   shop_model_name: GetSozaiF
+- id: 167
+  name: Amber Relic
+  types:
+    - Treasures
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
 - id: 168
   name: Dusk Relic
   types:
@@ -926,6 +1054,22 @@
   oarc: GetSozaiH
   shop_arc_name: GetSozaiH
   shop_model_name: GetSozaiH
+- id: 169
+  name: Jelly Blob
+  types:
+    - Treasures
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
+- id: 170
+  name: Monster Claw
+  types:
+    - Treasures
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
 - id: 171
   name: Monster Horn
   types:
@@ -934,6 +1078,14 @@
   oarc: GetSozaiL
   shop_arc_name: GetSozaiL
   shop_model_name: GetSozaiL
+- id: 172
+  name: Ornamental Skull
+  types:
+    - Treasures
+    - Minor Items
+  oarc: null # TODO
+  shop_arc_name: null # TODO
+  shop_model_name: null # TODO
 - id: 173
   name: Evil Crystal
   types:
