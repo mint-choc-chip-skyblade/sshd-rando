@@ -5,12 +5,21 @@ on:
   - pull_request
 
 jobs:
-  build:
+  run-tests:
     strategy:
       matrix:
         include:
           - name: Windows Tests
             os: windows-latest
+            architecture: x64
+          - name: MacOS x64 Tests
+            os: macos-13
+            architecture: x64
+          - name: MacOS arm64 Tests
+            os: macos-14
+            architecture: arm64
+          - name: Linux Tests
+            os: ubuntu-latest
             architecture: x64
 
     runs-on: ${{ matrix.os }}
@@ -50,8 +59,10 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install wheel
           python -m pip install -r requirements.txt
+
       - name: Test python formatting
         run: black . --check
+
       - name: Run tests
         run: |
-          pytest
+          pytest -n auto

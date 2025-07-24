@@ -28,7 +28,7 @@ on:
         default: "Production"
 
 jobs:
-  build:
+  create-builds:
     strategy:
       matrix:
         include:
