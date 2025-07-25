@@ -95,6 +95,8 @@ def determine_check_patches(
                     for item in world.item_table.values()
                     if item.id < 200  # exclude custom items
                     and item.name not in ITEMS_NOT_TO_TRAP
+                    and item.shop_arc_name is not None
+                    and item.shop_model_name is not None
                 ]
 
                 trappable_items_setting = world.setting("trappable_items")
