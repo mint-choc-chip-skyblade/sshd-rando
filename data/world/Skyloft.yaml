@@ -349,7 +349,8 @@
     Central Skyloft - Crystal on Waterfall Island: Night
     Central Skyloft - Goddess Chest on Waterfall Island: Pirate_Stronghold_Goddess_Cube
     Central Skyloft - Goddess Chest on Island near Waterfall: Lake_Floria_Goddess_Cube
-    Central Skyloft - Gossip Stone on Waterfall Island: Nothing
+    Central Skyloft - Gossip Stone Treasure on Waterfall Island: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Central Skyloft - Gossip Stone Hint on Waterfall Island: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Waterfall Cave
   allowed_time_of_day: All
