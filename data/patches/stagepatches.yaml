@@ -1368,7 +1368,7 @@ F023: # Thunderhead
     objtype: PLY
     object:
       play_cutscene: -1
-  - name: Gossip Stone
+  - name: Move Gossip Stone to layer 0
     type: objmove
     id: 0xFCEE
     hardcoded_id: 0xFDFF
@@ -1376,6 +1376,13 @@ F023: # Thunderhead
     destlayer: 0
     room: 0
     objtype: OBJ
+  - name: Move Gossip Stone Butterflies to layer 0
+    type: objmove
+    id: 0xFCF2
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: STAG
   - name: Delete Isle of Songs intro Cutscene
     type: objdelete
     id: 0xFC89
@@ -2231,6 +2238,13 @@ F200: # Eldin Volcano
     destlayer: 0
     room: 4
     objtype: OBJ
+  - name: Move Gossip Stone Butterflies to layer 0
+    type: objmove
+    id: 0x249A
+    layer: 2
+    destlayer: 0
+    room: 4
+    objtype: STAG
   - name: Remove 2nd key piece tower cs
     type: objpatch
     id: 0x200A
@@ -3844,7 +3858,7 @@ F301_4: # Shipyard
     room: 0
     arcn:
       - GossipStone
-  - name: Move Gossip Stone
+  - name: Move Gossip Stone to layer 0
     type: objmove
     id: 0xFC5E
     hardcoded_id: 0xFDFF
@@ -3852,6 +3866,13 @@ F301_4: # Shipyard
     destlayer: 0
     room: 0
     objtype: OBJ
+  - name: Move Gossip Stone Butterflies to layer 0
+    type: objmove
+    id: 0xFC5F
+    layer: 5
+    destlayer: 0
+    room: 0
+    objtype: STAG
   - name: Text after intro
     type: objdelete
     id: 0xFC6E
