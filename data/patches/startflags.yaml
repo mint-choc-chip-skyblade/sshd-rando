@@ -122,7 +122,8 @@ Sceneflags:
   Skyloft: # Scene Index 0
     - 0 # Lower Academy gates opened
     - 1 # UA Doors open
-    - 7 # Revealed Gossip Stone above waterfall cave
+    - gossip_stone_treasure_shuffle == off:
+      - 7 # Revealed Gossip Stone above waterfall cave
     - 8 # Seen Cutscene after getting Hero's Tunic
     - 21 # Upper Academy gates opened
     - 26 # Watched Eye Cutscene in Bazaar
@@ -151,7 +152,8 @@ Sceneflags:
     - 30 # Watched Enter Skyview Cutscene
     - 51 # Fi text before talking to Yerbal
     - 52 # Fi text after opening floria gate
-    - 66 # Reveal Gossip Stone in Deep Woods
+    - gossip_stone_treasure_shuffle == off:
+      - 66 # Reveal Gossip Stone in Deep Woods
     - shortcut_logs_near_machi == on:
       - 20 # Log above Vines pushed down
       - 23 # Log after First Rope Swing pushed down
@@ -166,16 +168,18 @@ Sceneflags:
       - 50 # Open Lake Floria Gates
 
   Lake Floria: # Scene Index 2
-    - 67 # Reveal Lake Floria Gossip Stone
+    - gossip_stone_treasure_shuffle == off:
+      - 67 # Reveal Lake Floria Gossip Stone
 
   # Flooded Faron Woods: # Scene Index 3
 
   Eldin Volcano: # Scene Index 4
     - 2 # Skip first Digging Mitts mogma text
-    - 14 # Reveal Gossip Stone near Earth Temple Entrance
-    - 15 # Reveal Gossip Stone in Thrill Digger Cave
-    - 52 # Reveal Gossip Stone in lower Eldin Cave
-    - 53 # Reveal Gossip Stone in upper Eldin Cave
+    - gossip_stone_treasure_shuffle == off:
+      - 14 # Reveal Gossip Stone near Earth Temple Entrance
+      - 15 # Reveal Gossip Stone in Thrill Digger Cave
+      - 52 # Reveal Gossip Stone in lower Eldin Cave
+      - 53 # Reveal Gossip Stone in upper Eldin Cave
     - 16 # Watched first time landing Cutscene
     - 32 # Watched Impa Cutscene (bridge extended)
     - 58 # Watched Digging Mitts mogma Cutscene
@@ -187,10 +191,13 @@ Sceneflags:
       - 70 # Eldin Silent Realm Trial Gate Open
 
   Eldin Volcano Summit: # Scene Index 5 (VS & Boko Base)
-    - 19 # Reveal Gossip Stone in lower Boko Base Cave
+    - gossip_stone_treasure_shuffle == off:
+      - 19 # Reveal Gossip Stone in lower Boko Base Cave
+      - 22 # Reveal Gossip Stone in upper Boko Base Cave
+      - 118 # Reveal Gossip Stone in Waterfall Area
+      - 119 # Reveal Gossip Stone Near 2nd Frog
     - 20 # Set after initial panning Cutscene with Plats
     - 21 # Set after initial panning Cutscene
-    - 22 # Reveal Gossip Stone in upper Boko Base Cave
     - 34 # Watched panning Cutscene showing peahots
     - 37 # Watched panning Cutscene showing boko camp and clawshots chest
     - 38 # Watched panning Cutscene showing gust bellows chest
@@ -203,8 +210,6 @@ Sceneflags:
     - 68 # Have talked to Plats near Volcano East
     - 70 # Watched initial panning Cutscene
     - 100 # Watered Big Frog
-    - 118 # Reveal Gossip Stone in Waterfall Area
-    - 119 # Reveal Gossip Stone Near 2nd Frog
     - shortcut_vs_flames == on:
       - 98 # First frog watered
       - 99 # Second frog watered and flames gone
@@ -218,7 +223,8 @@ Sceneflags:
     - 7 # Pushed first minecart in Mine
     - 50 # Watched Enter Lanayru Mining Facility (LMF) Cutscene
     - 55 # Watched Lanayru Desert Intro Cutscene
-    - 79 # Revealed Gossip Stone near Temple of Time
+    - gossip_stone_treasure_shuffle == off:
+      - 79 # Revealed Gossip Stone near Temple of Time
     - open_lmf == open:
       - 30 # Watched LMF Rises Cutscene
       - 31 # Watched LMF rising Cutscene
@@ -240,13 +246,15 @@ Sceneflags:
       - 102 # Water node active
 
   Lanayru Sand Sea: # Scene Index 8
-    - 95 # Reveal Shipyard Gossip Stone
+    - gossip_stone_treasure_shuffle == off:
+      - 95 # Reveal Shipyard Gossip Stone
 
   Lanayru Gorge: # Scene Index 9 (Gorge & Caves)
     - 10 # Minecart at end of Track
     - 16 # Watched Lanayru Gorge Intro Cutscene
-    - 40 # Revealed Gossip Stone in Center of Caves
-    - 41 # Revealed Gossip Stone near Lanayru Gorge Entrance
+    - gossip_stone_treasure_shuffle == off:
+      - 40 # Revealed Gossip Stone in Center of Caves
+      - 41 # Revealed Gossip Stone near Lanayru Gorge Entrance
     - lanayru_caves_keys == removed:
       - 14 # Unlocked door to Lanayru Gorge Minecart area
       - 28 # Unlocked door to Lanayru Sand Sea
@@ -256,7 +264,8 @@ Sceneflags:
     - 7 # Activated vents
     - 13 # Unlocked Sealed Temple big door
     - 55 # Watched First time landing Cutscene
-    - 72 # Revealed Behind the Temple Gossip Stone
+    - gossip_stone_treasure_shuffle == off:
+      - 72 # Revealed Behind the Temple Gossip Stone
     - random_starting_statues == off:
       - 35 # Sealed Grounds Statue
     - shortcut_spiral_log_to_btt == on:
@@ -369,10 +378,11 @@ Sceneflags:
   The Sky: # Scene Index 21
     - shortcut_ios_bridge_complete == on:
       - 1 # Isle of Songs bridge completed
-    - 43 # Revealed Gossip Stone in Thunderhead
-    - 44 # Revealed Gossip Stone in Volcanic Island
-    - 45 # Revealed Gossip Stone at Lumpy Pumpkin
-    - 46 # Revealed Gossip Stone on Bamboo Island
+    - gossip_stone_treasure_shuffle == off:
+      - 43 # Revealed Gossip Stone in Thunderhead
+      - 44 # Revealed Gossip Stone in Volcanic Island
+      - 45 # Revealed Gossip Stone at Lumpy Pumpkin
+      - 46 # Revealed Gossip Stone on Bamboo Island
 
   # Farore's Silent Realm: # Scene Index 22
 
