@@ -103,7 +103,8 @@
   exits:
     Bamboo Island: Day or natural_night_connections == off
   locations:
-    Bamboo Island Interior - Gossip Stone behind Bamboo Pole: Nothing
+    Bamboo Island Interior - Gossip Stone Treasure behind Bamboo Pole: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Bamboo Island Interior - Gossip Stone Hint behind Bamboo Pole: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
     Bamboo Island Interior - Bonk Southwest Sprout: Nothing
     Bamboo Island Interior - Bonk West Sprout: Nothing
     Bamboo Island Interior - Bonk East Sprout: Nothing
@@ -164,7 +165,8 @@
     Lumpy Pumpkin - Goddess Chest near Gossip Stone: Deep_Woods_Goddess_Cube_near_Goron
     Lumpy Pumpkin - Goddess Chest on Roof: (Day or natural_night_connections == off) and Skyview_Spring_Goddess_Cube
     Lumpy Pumpkin - Deliver Mogma to Kina: Day and 'Pick_up_Guld'
-    Lumpy Pumpkin - Gossip Stone near Back Door: Nothing
+    Lumpy Pumpkin - Gossip Stone Treasure near Back Door: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Lumpy Pumpkin - Gossip Stone Hint near Back Door: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 
 - name: Lumpy Pumpkin Back Door Exterior
@@ -239,7 +241,8 @@
   locations:
     Volcanic Island - Outside Goddess Chest: Lanayru_Desert_Goddess_Cube_in_Sand_Oasis
     Volcanic Island - Inside Goddess Chest: (Clawshots or logic_volcanic_island_dive) and Faron_Woods_Goddess_Cube_on_East_Great_Tree_with_Clawshots_Target
-    Volcanic Island - Gossip Stone inside Island: Nothing
+    Volcanic Island - Gossip Stone Treasure inside Island: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Volcanic Island - Gossip Stone Hint inside Island: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 
 - name: Orielle's Island
@@ -285,7 +288,8 @@
     The Sky: Day and ((Goddesss_Harp and Ballad_of_the_Goddess and can_access(Central Skyloft)) or open_thunderhead == on)
   locations:
     Inside the Thunderhead - Song from Levias: Spiral_Charge and Scrapper and Sword and 'Pick_up_Levias_Soup'
-    Inside the Thunderhead - Gossip Stone near Bug Heaven: Nothing
+    Inside the Thunderhead - Gossip Stone Treasure near Bug Heaven: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Inside the Thunderhead - Gossip Stone Hint near Bug Heaven: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 
 - name: Isle of Songs

@@ -1794,7 +1794,14 @@
   pretty: Zentrum des Wolkenhorts - Kriechgang-Rubin in Wasserfallhöhle 2
   cryptic: einen <r<Rubin>> in einer <b<Wolkenhorthöhle>>
 
-- name: Central Skyloft - Gossip Stone on Waterfall Island
+# TODO: add translations
+# - name: Central Skyloft - Gossip Stone Treasure on Waterfall Island
+#   standard: Central Skyloft - Gossip Stone Treasure on Waterfall Island
+#   pretty: Central Skyloft - Gossip Stone Treasure on Waterfall Island
+#   cryptic: the <r<blessing>> of the <r<sky cave's guardian>>
+
+# TODO: update translation from "Gossip Stone" -> "Gossip Stone Hint"
+- name: Central Skyloft - Gossip Stone Hint on Waterfall Island
   standard: Zentrum des Wolkenhorts - Mythenstein auf Wasserfallinsel
   pretty: Zentrum des Wolkenhorts - Mythenstein auf Wasserfallinsel
   cryptic:
@@ -2119,7 +2126,14 @@
   pretty: Terris Laden - 1000 Rubin Item
   cryptic: <g+<1000 Rubine>> bei <r<Terri>>
 
-- name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
+# TODO: add translations
+# - name: Bamboo Island Interior - Gossip Stone Treasure behind Bamboo Pole
+#   standard: Bamboo Island Interior - Gossip Stone Treasure behind Bamboo Pole
+#   pretty: Bamboo Island Interior - Gossip Stone Treasure behind Bamboo Pole
+#   cryptic: the <r<blessing>> of the <r<swordsman's guardian>>
+
+# TODO: update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Bamboo Island Interior - Gossip Stone Hint behind Bamboo Pole
   standard: Bambusinselinnere - Mythenstein hinter Bambusstange
   pretty: Bambusinselinnere - Mythenstein hinter Bambusstange
   cryptic:
@@ -2214,7 +2228,14 @@
   pretty: Kürbisbar - Innen-Juwel
   cryptic: ein <r<Juwel in einer Bar>>
 
-- name: Lumpy Pumpkin - Gossip Stone near Back Door
+# TODO: Add translations
+# - name: Lumpy Pumpkin - Gossip Stone Treasure near Back Door
+#   standard: Lumpy Pumpkin - Gossip Stone Treasure near Back Door
+#   pretty: Lumpy Pumpkin - Gossip Stone Treasure near Back Door
+#   cryptic: the <r<blessing>> of the <r<pumpkin's guardian>>
+
+# TODO: update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Lumpy Pumpkin - Gossip Stone Hint near Back Door
   standard: Kürbisinsel - Mythenstein nahe Hintereingang
   pretty: Kürbisinsel - Mythenstein nahe Hintereingang
   cryptic:
@@ -2284,7 +2305,14 @@
   pretty: Wolkenmeer - Schatztruhe im zerbrechbarem Felsen nahe Kürbisinsel
   cryptic: eine <r<Truhe in einem westlichen schwebenden Felsen>>
 
-- name: Volcanic Island - Gossip Stone inside Island
+# TODO: Add translations
+# - name: Volcanic Island - Gossip Stone Treasure inside Island
+#   standard: Volcanic Island - Gossip Stone Treasure inside Island
+#   pretty: Volcanic Island - Gossip Stone Treasure inside Island
+#   cryptic: the <r<blessing>> of the <r<tiny volcano's guardian>>
+
+# TODO: update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Volcanic Island - Gossip Stone Hint inside Island
   standard: Vulkanische Insel - Mythenstein im Inselinneren
   pretty: Vulkanische Insel - Mythenstein im Inselinneren
   cryptic:
@@ -2414,7 +2442,14 @@
   pretty: Insekteninsel - Ausdauerfrucht oberhalb Abhangq
   cryptic: eine <r<Frucht im Paradies der Insekten>>
 
-- name: Inside the Thunderhead - Gossip Stone near Bug Heaven
+# TODO: Add translations
+# - name: Inside the Thunderhead - Gossip Stone Treasure near Bug Heaven
+#   standard: Inside the Thunderhead - Gossip Stone Treasure near Bug Heaven
+#   pretty: Inside the Thunderhead - Gossip Stone Treasure near Bug Heaven
+#   cryptic: the <r<blessing>> of the <r<cloud dome's guardian>>
+
+# TODO: update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Inside the Thunderhead - Gossip Stone Hint near Bug Heaven
   standard: In der Sturmwolke - Mythenstein nahe Insekteninsel
   pretty: In der Sturmwolke - Mythenstein nahe Insekteninsel
   cryptic:
@@ -2646,7 +2681,14 @@
   pretty: Siegelhain - Belohnung Marugos Wand der Göttin
   cryptic: <r<Zeichnen auf einer magischen Wand>>
 
-- name: Sealed Grounds - Gossip Stone Behind the Temple
+# TODO: Add translations
+# - name: Sealed Grounds - Gossip Stone Treasure Behind the Temple
+#   standard: Sealed Grounds - Gossip Stone Treasure Behind the Temple
+#   pretty: Sealed Grounds - Gossip Stone Treasure Behind the Temple
+#   cryptic: the <r<blessing>> of the <r<Imprisoned's guardian>>
+
+# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Sealed Grounds - Gossip Stone Hint Behind the Temple
   standard: Siegelhain - Mythenstein hinter Tempel
   pretty: Siegelhain - Mythenstein hinter Tempel
   cryptic:
@@ -2956,7 +2998,14 @@
   pretty: Tief im Wald - Schleuderschuss auf rechten Tempeltürrahmen
   cryptic: <r<Schießen auf einen Eingang>> zu einem <g<Waldtempel>>
 
-- name: Deep Woods - Gossip Stone before Temple
+# TODO: Add translations
+# - name: Deep Woods - Gossip Stone Treasure before Temple
+#   standard: Deep Woods - Gossip Stone Treasure before Temple
+#   pretty: Deep Woods - Gossip Stone Treasure before Temple
+#   cryptic: the <r<blessing>> of the <r<forest temple's guardian>>
+
+# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Deep Woods - Gossip Stone Hint before Temple
   standard: Tief im Wald - Mythenstein vor Tempel
   pretty: Tief im Wald - Mythenstein vor Tempel
   cryptic:
@@ -3073,7 +3122,14 @@
   pretty: Floria-Wasserfall - Schleuderschuss auf rechtes Höhlenheiligtumsauge
   cryptic: <r<Schießen auf ein durchnässtes Auge>>
 
-- name: Floria Waterfall - Gossip Stone near Bird Statue
+# TODO: Add translations
+# - name: Floria Waterfall - Gossip Stone Treasure near Bird Statue
+#   standard: Floria Waterfall - Gossip Stone Treasure near Bird Statue
+#   pretty: Floria Waterfall - Gossip Stone Treasure near Bird Statue
+#   cryptic: the <r<blessing>> of the <r<lake's guardian>>
+
+# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
+- name: Floria Waterfall - Gossip Stone Hint near Bird Statue
   standard: Floria-Wasserfall - Mythenstein nahe Vogelstatue
   pretty: Floria-Wasserfall - Mythenstein nahe Vogelstatue
   cryptic:
@@ -3413,8 +3469,14 @@
   pretty: Vulkan Eldin - Rechter Rubin hinter sprengbarer Wand nahe Risiko-Rubinjagd-Höhle
   cryptic: einen <r<Rubin hinter einer versteckten Wand>>
 
-# TODO: update with new name
-- name: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
+# TODO: Add translations
+# - name: Thrill Digger Cave - Gossip Stone Treasure near Tubert the Thrill Digger Operator
+#   standard: Thrill Digger Cave - Gossip Stone Treasure near Tubert the Thrill Digger Operator
+#   pretty: Thrill Digger Cave - Gossip Stone Treasure near Tubert the Thrill Digger Operator
+#   cryptic: the <r<blessing>> of the <r<burrowing guardian>>
+
+# TODO: update with new name + "Gossip Stone" -> "Gossip Stone Hint"
+- name: Thrill Digger Cave - Gossip Stone Hint near Tubert the Thrill Digger Operator
   standard: Risiko-Rubinjagd-Höhle - Mythenstein nahe Cippolino
   pretty: Risiko-Rubinjagd-Höhle - Mythenstein nahe Cippolino
   cryptic:
@@ -3504,17 +3566,38 @@
   pretty: Risiko-Rubinjagd-Höhle - Schleuderschuss auf rechte Säule blauen Kristall 4
   cryptic: <r<Schießen auf ein blaues Juwel>> in einer <r<risikoreichen Höhle>>
 
-- name: Eldin Volcano - Gossip Stone on Cliff West of Temple
+# TODO: Add translations
+# - name: Eldin Volcano - Gossip Stone Treasure on Cliff West of Temple
+#   standard: Eldin Volcano - Gossip Stone Treasure on Cliff West of Temple
+#   pretty: Eldin Volcano - Gossip Stone Treasure on Cliff West of Temple
+#   cryptic: the <r<blessing>> of the <r<hot temple's guardian>>
+
+# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Eldin Volcano - Gossip Stone Hint on Cliff West of Temple
   standard: Vulkan Eldin - Mythenstein auf Klippe westlich des Tempels
   pretty: Vulkan Eldin - Mythenstein auf Klippe westlich des Tempels
   cryptic:
 
-- name: Upper Eldin Cave - West Gossip Stone
+# TODO: Add translations
+# - name: Upper Eldin Cave - West Gossip Stone Treasure
+#   standard: Upper Eldin Cave - West Gossip Stone Treasure
+#   pretty: Upper Eldin Cave - West Gossip Stone Treasure
+#   cryptic: the <r<blessing>> of the <r<warm upper cave's guardian>>
+
+# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Upper Eldin Cave - West Gossip Stone Hint
   standard: Obere Eldinhöhle - Westlicher Mythenstein
   pretty: Obere Eldinhöhle - Westlicher Mythenstein
   cryptic:
 
-- name: Lower Eldin Cave - East Gossip Stone
+# TODO: Add translations
+# - name: Lower Eldin Cave - East Gossip Stone Treasure
+#   standard: Lower Eldin Cave - East Gossip Stone Treasure
+#   pretty: Lower Eldin Cave - East Gossip Stone Treasure
+#   cryptic: the <r<blessing>> of the <r<warm lower cave's guardian>>
+
+# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Lower Eldin Cave - East Gossip Stone Hint
   standard: Untere Eldinhöhle - Östlicher Mythenstein
   pretty: Untere Eldinhöhle - Östlicher Mythenstein
   cryptic:
@@ -3885,12 +3968,26 @@
   pretty: Vulkangipfel - Unterirdischer Rubin 2
   cryptic: einen <r<unterirdischen Rubin am Gipfel>>
 
-- name: Volcano Summit - Gossip Stone on Cliff near Waterfall
+# TODO: Add translations
+# - name: Volcano Summit - Gossip Stone Treasure on Cliff near Waterfall
+#   standard: Volcano Summit - Gossip Stone Treasure on Cliff near Waterfall
+#   pretty: Volcano Summit - Gossip Stone Treasure on Cliff near Waterfall
+#   cryptic: the <r<blessing>> of the <r<volcano's watery guardian>>
+
+# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Volcano Summit - Gossip Stone Hint on Cliff near Waterfall
   standard: Vulkangipfel - Mythenstein auf Klippe nahe Wasserfall
   pretty: Vulkangipfel - Mythenstein auf Klippe nahe Wasserfall
   cryptic:
 
-- name: Volcano Summit - Gossip Stone between Small Thirsty Frogs
+# TODO: Add translations
+# - name: Volcano Summit - Gossip Stone Treasure between Small Thirsty Frogs
+#   standard: Volcano Summit - Gossip Stone Treasure between Small Thirsty Frogs
+#   pretty: Volcano Summit - Gossip Stone Treasure between Small Thirsty Frogs
+#   cryptic: the <r<blessing>> of the <r<volcano's parched guardian>>
+
+# TODO: Update Translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Volcano Summit - Gossip Stone Hint between Small Thirsty Frogs
   standard: Vulkangipfel - Mythenstein zwischen kleinen durstigen Fröschen
   pretty: Vulkangipfel - Mythenstein zwischen kleinen durstigen Fröschen
   cryptic:
@@ -4272,7 +4369,14 @@
   pretty: Wüste Ranelle - Ausdauerfrucht in nördlicher Sandoase 2
   cryptic: eine <r<Frucht in einem sandigen Paradies>>
 
-- name: Temple of Time - Gossip Stone near Robot
+# TODO: Add translations
+# - name: Temple of Time - Gossip Stone Treasure near Robot
+#   standard: Temple of Time - Gossip Stone Treasure near Robot
+#   pretty: Temple of Time - Gossip Stone Treasure near Robot
+#   cryptic: the <r<blessing>> of the <r<time-travelling guardian>>
+
+# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Temple of Time - Gossip Stone Hint near Robot
   standard: Tempel der Zeit - Mythenstein nahe Roboter
   pretty: Tempel der Zeit - Mythenstein nahe Roboter
   cryptic:
@@ -4414,12 +4518,26 @@
   pretty: Ranelle-Höhle - Kennbuns Geschenk
   cryptic: ein <r<Geschenk eines Archäologen>>
 
-- name: Lanayru Caves - Gossip Stone in Center
+# TODO: Add translations
+# - name: Lanayru Caves - Gossip Stone Treasure in Center
+#   standard: Lanayru Caves - Gossip Stone Treasure in Center
+#   pretty: Lanayru Caves - Gossip Stone Treasure in Center
+#   cryptic: the <r<blessing>> of the <r<sandy cave's guardian>>
+
+# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Lanayru Caves - Gossip Stone Hint in Center
   standard: Ranelle-Höhle - Mythenstein im Zentrum
   pretty: Ranelle-Höhle - Mythenstein im Zentrum
   cryptic:
 
-- name: Lanayru Caves - Gossip Stone towards Lanayru Gorge
+# TODO: Add translations
+# - name: Lanayru Caves - Gossip Stone Treasure towards Lanayru Gorge
+#   standard: Lanayru Caves - Gossip Stone Treasure towards Lanayru Gorge
+#   pretty: Lanayru Caves - Gossip Stone Treasure towards Lanayru Gorge
+#   cryptic: the <r<blessing>> of the <r<sandy cave's twin guardian>>
+
+# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Lanayru Caves - Gossip Stone Hint towards Lanayru Gorge
   standard: Ranelle-Höhle - Mythenstein in Richtung Ranelle-Schlucht
   pretty: Ranelle-Höhle - Mythenstein in Richtung Ranelle-Schlucht
   cryptic:
@@ -4682,7 +4800,14 @@
   pretty: Werft - Lustiges Loren-Lenken (Experte) in 1:05
   cryptic: eine <r<schnelle Minenwagenzeit>>
 
-- name: Shipyard - Gossip Stone after First Minecart Track
+# TODO: Add translations
+# - name: Shipyard - Gossip Stone Treasure after First Minecart Track
+#   standard: Shipyard - Gossip Stone Treasure after First Minecart Track
+#   pretty: Shipyard - Gossip Stone Treasure after First Minecart Track
+#   cryptic: the <r<blessing>> of the <r<roller coaster's guardian>>
+
+# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+- name: Shipyard - Gossip Stone Hint after First Minecart Track
   standard: Werft - Mythenstein nach erstem Minenwagenparkour
   pretty: Werft - Mythenstein nach erstem Minenwagenparkour
   cryptic:

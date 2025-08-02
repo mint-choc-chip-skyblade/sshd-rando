@@ -815,7 +815,14 @@
     - stage/F000/r0/l0/TBox/80
   cube_region: Lanayru Sand Sea
 
-- name: Central Skyloft - Gossip Stone on Waterfall Island
+- name: Central Skyloft - Gossip Stone Treasure on Waterfall Island
+  original_item: Goddess Plume
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F000/r0/l0/HrpHint/0xFCD5
+
+- name: Central Skyloft - Gossip Stone Hint on Waterfall Island
   original_item: Nothing
   types:
     - Hint Location
@@ -1474,7 +1481,14 @@
   cube_region: Lanayru Sand Sea
 
 ## Gossip Stones
-- name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
+- name: Bamboo Island Interior - Gossip Stone Treasure behind Bamboo Pole
+  original_item: Golden Skull
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F019r/r0/l0/HrpHint/0xFC02
+
+- name: Bamboo Island Interior - Gossip Stone Hint behind Bamboo Pole
   original_item: Nothing
   types:
     - Hint Location
@@ -1483,7 +1497,14 @@
   textindex: 11
   eventflowindex: 18
 
-- name: Lumpy Pumpkin - Gossip Stone near Back Door
+- name: Lumpy Pumpkin - Gossip Stone Treasure near Back Door
+  original_item: Monster Claw
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F020/r0/l0/HrpHint/0xFC70
+
+- name: Lumpy Pumpkin - Gossip Stone Hint near Back Door
   original_item: Nothing
   types:
     - Hint Location
@@ -1492,7 +1513,14 @@
   textindex: 27
   eventflowindex: 40
 
-- name: Volcanic Island - Gossip Stone inside Island
+- name: Volcanic Island - Gossip Stone Treasure inside Island
+  original_item: Monster Claw
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F020/r0/l0/HrpHint/0xFC6F
+
+- name: Volcanic Island - Gossip Stone Hint inside Island
   original_item: Nothing
   types:
     - Hint Location
@@ -1639,7 +1667,14 @@
     - event/120-Nushi/give item after levias
     - oarc/F023/r0/l0
 
-- name: Inside the Thunderhead - Gossip Stone near Bug Heaven
+- name: Inside the Thunderhead - Gossip Stone Treasure near Bug Heaven
+  original_item: Monster Horn
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F023/r0/l0/HrpHint/0xFDFF
+
+- name: Inside the Thunderhead - Gossip Stone Hint near Bug Heaven
   original_item: Nothing
   types:
     - Hint Location
@@ -2040,7 +2075,14 @@
     - Game Beatable
   is_gui_excluded_location: False
 
-- name: Sealed Grounds - Gossip Stone Behind the Temple
+- name: Sealed Grounds - Gossip Stone Treasure Behind the Temple
+  original_item: Ornamental Skull
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F400/r0/l0/HrpHint/0xFC63
+
+- name: Sealed Grounds - Gossip Stone Hint Behind the Temple
   original_item: Nothing
   types:
     - Hint Location
@@ -2488,7 +2530,14 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Deep Woods - Gossip Stone before Temple
+- name: Deep Woods - Gossip Stone Treasure before Temple
+  original_item: Jelly Blob
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F101/r0/l0/HrpHint/0xFC72
+
+- name: Deep Woods - Gossip Stone Hint before Temple
   original_item: Nothing
   types:
     - Hint Location
@@ -2655,7 +2704,14 @@
   Paths:
     - stage/F102_1/r0/l0/TgReact/0xFC40
 
-- name: Floria Waterfall - Gossip Stone near Bird Statue
+- name: Floria Waterfall - Gossip Stone Treasure near Bird Statue
+  original_item: Monster Claw
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F102_1/r0/l0/HrpHint/0xFC1B
+
+- name: Floria Waterfall - Gossip Stone Hint near Bird Statue
   original_item: Nothing
   types:
     - Hint Location
@@ -3869,7 +3925,14 @@
   Paths:
     - stage/F200/r2/l1/Soil/64
 
-- name: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
+- name: Thrill Digger Cave - Gossip Stone Treasure near Tubert the Thrill Digger Operator
+  original_item: Eldin Ore
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F211/r0/l1/HrpHint/0xFC67
+
+- name: Thrill Digger Cave - Gossip Stone Hint near Tubert the Thrill Digger Operator
   original_item: Nothing
   types:
     - Hint Location
@@ -3878,7 +3941,14 @@
   textindex: 16
   eventflowindex: 28
 
-- name: Eldin Volcano - Gossip Stone on Cliff West of Temple
+- name: Eldin Volcano - Gossip Stone Treasure on Cliff West of Temple
+  original_item: Eldin Ore
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F200/r4/l0/HrpHint/0xFDFF
+
+- name: Eldin Volcano - Gossip Stone Hint on Cliff West of Temple
   original_item: Nothing
   types:
     - Hint Location
@@ -3887,7 +3957,15 @@
   textindex: 14
   eventflowindex: 24
 
-- name: Lower Eldin Cave - East Gossip Stone
+- name: Lower Eldin Cave - East Gossip Stone Treasure 
+  original_item: Eldin Ore
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F202_1/r0/l0/HrpHint/0xFC00
+    - stage/F202_3/r0/l0/HrpHint/0xFC00
+
+- name: Lower Eldin Cave - East Gossip Stone Hint
   original_item: Nothing
   types:
     - Hint Location
@@ -3896,7 +3974,15 @@
   textindex: 17
   eventflowindex: 56
 
-- name: Upper Eldin Cave - West Gossip Stone
+- name: Upper Eldin Cave - West Gossip Stone Treasure 
+  original_item: Evil Crystal
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F202_2/r0/l0/HrpHint/0xFC06
+    - stage/F202_4/r0/l0/HrpHint/0xFC06
+
+- name: Upper Eldin Cave - West Gossip Stone Hint
   original_item: Nothing
   types:
     - Hint Location
@@ -4091,7 +4177,14 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Volcano Summit - Gossip Stone on Cliff near Waterfall
+- name: Volcano Summit - Gossip Stone Treasure on Cliff near Waterfall 
+  original_item: Jelly Blob
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F201_4/r0/l0/HrpHint/0xFC07
+
+- name: Volcano Summit - Gossip Stone Hint on Cliff near Waterfall
   original_item: Nothing
   types:
     - Hint Location
@@ -4100,7 +4193,14 @@
   textindex: 26
   eventflowindex: 38
 
-- name: Volcano Summit - Gossip Stone between Small Thirsty Frogs
+- name: Volcano Summit - Gossip Stone Treasure between Small Thirsty Frogs
+  original_item: Eldin Ore
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F201_3/r0/l0/HrpHint/0xFC2F
+
+- name: Volcano Summit - Gossip Stone Hint between Small Thirsty Frogs
   original_item: Nothing
   types:
     - Hint Location
@@ -4758,7 +4858,14 @@
     - Goddess Cube
   is_gui_excluded_location: False
 
-- name: Temple of Time - Gossip Stone near Robot
+- name: Temple of Time - Gossip Stone Treasure near Robot
+  original_item: Evil Crystal
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F300_4/r0/l2/HrpHint/0xFC89 # only needs the layer 2 stone
+
+- name: Temple of Time - Gossip Stone Hint near Robot
   original_item: Nothing
   types:
     - Hint Location
@@ -4784,7 +4891,14 @@
     - event/404-DesertF3/127
     - oarc/F303/r0/l0
 
-- name: Lanayru Caves - Gossip Stone in Center
+- name: Lanayru Caves - Gossip Stone Treasure in Center
+  original_item: Evil Crystal
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F303/r0/l0/HrpHint/0xFC0D
+
+- name: Lanayru Caves - Gossip Stone Hint in Center
   original_item: Nothing
   types:
     - Hint Location
@@ -4793,7 +4907,14 @@
   textindex: 24
   eventflowindex: 34
 
-- name: Lanayru Caves - Gossip Stone towards Lanayru Gorge
+- name: Lanayru Caves - Gossip Stone Treasure towards Lanayru Gorge
+  original_item: Monster Claw
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F303/r0/l0/HrpHint/0xFC24
+
+- name: Lanayru Caves - Gossip Stone Hint towards Lanayru Gorge
   original_item: Nothing
   types:
     - Hint Location
@@ -5273,7 +5394,14 @@
   Paths:
     - stage/F301_7/r0/l0/TgReact/0xFC08
 
-- name: Shipyard - Gossip Stone after First Minecart Track
+- name: Shipyard - Gossip Stone Treasure after First Minecart Track
+  original_item: Golden Skull
+  types:
+    - Gossip Stone Treasures
+  Paths:
+    - stage/F301_4/r0/l0/HrpHint/0xFDFF
+
+- name: Shipyard - Gossip Stone Hint after First Minecart Track
   original_item: Nothing
   types:
     - Hint Location

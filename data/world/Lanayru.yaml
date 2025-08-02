@@ -282,7 +282,8 @@
     Temple of Time West Past Rubble: Nothing
     Temple of Time North Minecart Ride: Long_Range_Skyward_Strike or Distance_Activator
   locations:
-    Temple of Time - Gossip Stone near Robot: Nothing
+    Temple of Time - Gossip Stone Treasure near Robot: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Temple of Time - Gossip Stone Hint near Robot: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
     # Save Robot: Can_Defeat_Bokoblins and 'ToT_West_Timeshift_Stone'
 
 - name: Temple of Time West Past Rubble
@@ -351,7 +352,8 @@
   locations:
     Lanayru Caves - Chest near Golo: Nothing
     Lanayru Caves - Golo's Gift: Nothing
-    Lanayru Caves - Gossip Stone in Center: Nothing
+    Lanayru Caves - Gossip Stone Treasure in Center: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Lanayru Caves - Gossip Stone Hint in Center: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Lanayru Caves Past Locked Door
   hint_region: Lanayru Caves
@@ -365,7 +367,8 @@
     Lanayru Caves: Bomb_Bag or can_access(Lanayru Caves)
     Lanayru Gorge: Nothing
   locations:
-    Lanayru Caves - Gossip Stone towards Lanayru Gorge: Nothing
+    Lanayru Caves - Gossip Stone Treasure towards Lanayru Gorge: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Lanayru Caves - Gossip Stone Hint towards Lanayru Gorge: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Lanayru Gorge
   hint_region: Lanayru Gorge
@@ -510,7 +513,9 @@
     Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator: Nothing
     Shipyard - Heart Stopping Rickety Coaster Track in 1'05: Nothing
     Shipyard - Bonk Sign before Second Minecart Track: Nothing
-    Shipyard - Gossip Stone after First Minecart Track: Nothing # Take the first cart and you've arrived
+    # Take the first cart and you've arrived
+    Shipyard - Gossip Stone Treasure after First Minecart Track: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Shipyard - Gossip Stone Hint after First Minecart Track: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Shipyard End of Minecart Ride
   exits:

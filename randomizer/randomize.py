@@ -26,6 +26,7 @@ def randomize():
     update_progress_value(100)
 
     if not args.dryrun:
+        print(f"\nHash: {worlds[0].config.get_hash()}")
         print(
-            f"\nThe randomizer patch can be found at: {worlds[0].config.output_dir.as_posix()}"
+            f"The randomizer patch can be found at: {worlds[0].config.output_dir.as_posix()}"
         )

@@ -155,6 +155,17 @@
     - "off": "The tadtones in Flooded Faron Woods will not be shuffled."
     - "on": "The tadtones in Flooded Faron Woods will be shuffled and 17 \"Group of Tadtones\" items will be shuffled throughout the world."
 
+- name: gossip_stone_treasure_shuffle
+  tracker_important: true
+  default_option: "off"
+  pretty_name: Gossip Stone Treasure Shuffle
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - "off": "Gossip Stones will always be visible and will not give items."
+   - "on": "Gossip Stones will need to be raised by playing Ballad of the Goddess with the Goddess' Harp. A random item will appear with the Gossip Stone."
+
 - name: full_wallet_upgrades
   default_option: "off"
   pretty_name: Full Wallet Upgrades
