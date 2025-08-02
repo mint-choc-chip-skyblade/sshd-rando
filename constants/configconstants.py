@@ -112,7 +112,7 @@ DEFAULT_SETTINGS = {
         "Din's Silent Realm - Collect all Tears Reward",
     ],
     "excluded_hint_locations": [
-        "Shipyard - Gossip Stone after First Minecart Track",
+        "Shipyard - Gossip Stone Hint after First Minecart Track",
     ],
     "mixed_entrance_pools": [],
     "other_mods": [],
@@ -193,6 +193,24 @@ LOCATION_ALIASES = {
     "Bazaar - Potion Lady's Gift": "Bazaar - Luv the Potion Lady's Gift",
     # Since v2.0
     "Skyloft Village - Gondo and Gebra's Closet": "Skyloft Village - Gondo and Greba's Closet",
+    "Central Skyloft - Gossip Stone on Waterfall Island": "Central Skyloft - Gossip Stone Hint on Waterfall Island",
+    "Bamboo Island Interior - Gossip Stone behind Bamboo Pole": "Bamboo Island Interior - Gossip Stone Hint behind Bamboo Pole",
+    "Lumpy Pumpkin - Gossip Stone near Back Door": "Lumpy Pumpkin - Gossip Stone Hint near Back Door",
+    "Volcanic Island - Gossip Stone inside Island": "Volcanic Island - Gossip Stone Hint inside Island",
+    "Inside the Thunderhead - Gossip Stone near Bug Heaven": "Inside the Thunderhead - Gossip Stone Hint near Bug Heaven",
+    "Sealed Grounds - Gossip Stone Behind the Temple": "Sealed Grounds - Gossip Stone Hint Behind the Temple",
+    "Deep Woods - Gossip Stone before Temple": "Deep Woods - Gossip Stone Hint before Temple",
+    "Floria Waterfall - Gossip Stone near Bird Statue": "Floria Waterfall - Gossip Stone Hint near Bird Statue",
+    "Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator": "Thrill Digger Cave - Gossip Stone Hint near Tubert the Thrill Digger Operator",
+    "Eldin Volcano - Gossip Stone on Cliff West of Temple": "Eldin Volcano - Gossip Stone Hint on Cliff West of Temple",
+    "Lower Eldin Cave - East Gossip Stone": "Lower Eldin Cave - East Gossip Stone Hint",
+    "Upper Eldin Cave - West Gossip Stone": "Upper Eldin Cave - West Gossip Stone Hint",
+    "Volcano Summit - Gossip Stone on Cliff near Waterfall": "Volcano Summit - Gossip Stone Hint on Cliff near Waterfall",
+    "Volcano Summit - Gossip Stone between Small Thirsty Frogs": "Volcano Summit - Gossip Stone Hint between Small Thirsty Frogs",
+    "Temple of Time - Gossip Stone near Robot": "Temple of Time - Gossip Stone Hint near Robot",
+    "Lanayru Caves - Gossip Stone in Center": "Lanayru Caves - Gossip Stone Hint in Center",
+    "Lanayru Caves - Gossip Stone towards Lanayru Gorge": "Lanayru Caves - Gossip Stone Hint towards Lanayru Gorge",
+    "Shipyard - Gossip Stone after First Minecart Track": "Shipyard - Gossip Stone Hint after First Minecart Track",
 }
 
 TRACKER_NOTE_EVENTS = {

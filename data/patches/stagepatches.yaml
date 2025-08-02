@@ -1371,6 +1371,7 @@ F023: # Thunderhead
   - name: Gossip Stone
     type: objmove
     id: 0xFCEE
+    hardcoded_id: 0xFDFF
     layer: 2
     destlayer: 0
     room: 0
@@ -2225,6 +2226,7 @@ F200: # Eldin Volcano
   - name: Move Gossip Stone to layer 0
     type: objmove
     id: 0xFC97
+    hardcoded_id: 0xFDFF
     layer: 2
     destlayer: 0
     room: 4
@@ -3845,6 +3847,7 @@ F301_4: # Shipyard
   - name: Move Gossip Stone
     type: objmove
     id: 0xFC5E
+    hardcoded_id: 0xFDFF
     layer: 5
     destlayer: 0
     room: 0
