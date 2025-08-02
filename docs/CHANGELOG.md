@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 2.2
+
+### Fixes
+* Fixed issue where traps mimicking non-major items could result in some locations not giving an item and some seeds failing to generate
+
+
+
 ## Version 2.1
 
 ### Additions and Changes
