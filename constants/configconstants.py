@@ -106,6 +106,7 @@ DEFAULT_SETTINGS = {
         "Lanayru Gorge - Boss Rush 4 Bosses",
         "Lanayru Gorge - Boss Rush 8 Bosses",
         "Shipyard - Heart Stopping Rickety Coaster Track in 1'05",
+        "Shipyard - Gossip Stone Treasure after First Minecart Track",
         "The Goddess's Silent Realm - Collect all Tears Reward",
         "Farore's Silent Realm - Collect all Tears Reward",
         "Nayru's Silent Realm - Collect all Tears Reward",
