@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -1776,6 +1776,13 @@
             <widget class="RandoTriStateCheckBox" name="setting_tadtone_shuffle">
              <property name="text">
               <string>Tadtone Shuffle</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_gossip_stone_treasure_shuffle">
+             <property name="text">
+              <string>Gossip Stone Treasure Shuffle</string>
              </property>
             </widget>
            </item>
