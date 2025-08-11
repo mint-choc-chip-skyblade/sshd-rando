@@ -101,13 +101,13 @@ jobs:
 
     steps:
       - name: Download all Artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           run-id: ${{ github.run_id }}
           github-token: ${{ github.token }}
 
       - name: Download logs
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           pattern: logs-*
           path: logs
