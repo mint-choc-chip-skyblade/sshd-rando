@@ -113,7 +113,8 @@
   locations:
     Sealed Grounds - Slingshot above Doors Behind the Temple: Slingshot
     Sealed Grounds - Gorko's Goddess Wall Reward: Goddesss_Harp and Ballad_of_the_Goddess and Goddess_Sword
-    Sealed Grounds - Gossip Stone Behind the Temple: Nothing
+    Sealed Grounds - Gossip Stone Treasure Behind the Temple: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Sealed Grounds - Gossip Stone Hint Behind the Temple: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
     Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone: Gust_Bellows
     Sealed Grounds - Slingshot Behind the Temple Gates Southwest Side: Slingshot
     Sealed Grounds - Slingshot Behind the Temple Gates Northeast Side: Slingshot
@@ -327,7 +328,8 @@
     Deep Woods - Bonk Fence furthest West of Temple: Nothing
     Deep Woods - Slingshot Left Temple Door Frame: Slingshot
     Deep Woods - Slingshot Right Temple Door Frame: Slingshot
-    Deep Woods - Gossip Stone before Temple: Nothing
+    Deep Woods - Gossip Stone Treasure before Temple: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Deep Woods - Gossip Stone Hint before Temple: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
     Deep Woods - Goddess Cube Near Goron: Goddess_Sword
     Deep Woods - Goddess Cube in front of Temple: Goddess_Sword
     Deep Woods - Goddess Cube on top of Temple: Goddess_Sword and Clawshots
@@ -453,7 +455,8 @@
     Faron Woods Floria Shortcut Ledge: Nothing
     Farore's Lair: Nothing
   locations:
-    Floria Waterfall - Gossip Stone near Bird Statue: Nothing
+    Floria Waterfall - Gossip Stone Treasure near Bird Statue: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Floria Waterfall - Gossip Stone Hint near Bird Statue: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
     Floria Waterfall - Rupee on High Ledge: Beetle
     Floria Waterfall - North Rupee in underwater Grass: Water_Dragons_Scale
     Floria Waterfall - South Rupee in underwater Grass: Water_Dragons_Scale

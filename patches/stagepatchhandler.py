@@ -515,6 +515,30 @@ def patch_academy_bell(bzs: dict, itemid: int, trapid: int):
     academy_bell["params1"] = mask_shift_set(academy_bell["params1"], 0xFF, 0, itemid)
 
 
+def patch_hrphint(bzs: dict, itemid: int, object_id_str: str, trapid: int):
+    id = int(object_id_str, 16)
+
+    hrphint: dict | None = next(
+        filter(lambda x: x["name"] == "HrpHint" and x["id"] == id, bzs["OBJ "]), None
+    )
+
+    if hrphint is None:
+        raise Exception(
+            f"No gossip stone (HrpHint) with id '{hex(id)}' found to patch."
+        )
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        hrphint["params2"] = mask_shift_set(hrphint["params2"], 0xF, 0, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        hrphint["params2"] = mask_shift_set(hrphint["params2"], 0xF, 0, 0xF)
+
+    hrphint["params2"] = mask_shift_set(hrphint["params2"], 0xFF, 4, itemid)
+
+
 def object_add(bzs: dict, object_add: dict, nextid: int) -> int:
     layer = object_add.get("layer", None)
     object_type: str = object_add["objtype"].ljust(4)
@@ -1069,6 +1093,13 @@ class StagePatchHandler:
                         patch_tree_of_life(
                             room_bzs["LAY "][f"l{layer}"],
                             itemid,
+                            trapid,
+                        )
+                    elif object_name == "HrpHint":
+                        patch_hrphint(
+                            room_bzs["LAY "][f"l{layer}"],
+                            itemid,
+                            objectid,
                             trapid,
                         )
                     else:

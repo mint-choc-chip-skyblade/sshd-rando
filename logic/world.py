@@ -399,6 +399,15 @@ class World:
                 else:
                     location.set_current_item(self.get_item(GREEN_RUPEE))
 
+            # Since you can't obtain the gossip stone checks when they are turned off
+            # force them to have Green Rupees instead of their vanilla treasures
+            # Doesn't matter currently but treasures may be relevant in the future
+            if (
+                location in disabled_shuffle_locations
+                and "Gossip Stone Treasures" in location.types
+            ):
+                location.set_current_item(self.get_item(GREEN_RUPEE))
+
             # Set Goddess Cubes as having their own item
             if "Goddess Cube" in location.types:
                 location.set_current_item(item)

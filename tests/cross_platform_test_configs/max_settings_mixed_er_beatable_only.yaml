@@ -172,7 +172,7 @@ World 1:
   starting_inventory: []
   excluded_locations: []
   excluded_hint_locations:
-  - Shipyard - Gossip Stone after First Minecart Track
+  - Shipyard - Gossip Stone Hint after First Minecart Track
   mixed_entrance_pools:
   - - Dungeon
     - Trial Gate
