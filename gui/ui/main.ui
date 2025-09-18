@@ -36,7 +36,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="getting_started_tab">
        <property name="sizePolicy">
@@ -2246,6 +2246,20 @@
               </widget>
              </item>
             </layout>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_start_with_all_bugs">
+             <property name="text">
+              <string>Start with All Bugs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="RandoTriStateCheckBox" name="setting_start_with_all_treasures">
+             <property name="text">
+              <string>Start with All Treasures</string>
+             </property>
+            </widget>
            </item>
            <item>
             <spacer name="item_settings_vspacer">

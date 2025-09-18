@@ -874,6 +874,26 @@
     - vanilla: "The threshold needed to earn a reward from each minigame will be unchanged."
     - hard: "The threshold needed to earn a reward from each minigame will be increased."
 
+- name: start_with_all_bugs
+  default_option: "off"
+  pretty_name: Start with All Bugs
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will start the game without any bugs in your inventory."
+    - "on": "You will start the game with 99 of each bug in your inventory."
+
+- name: start_with_all_treasures
+  default_option: "off"
+  pretty_name: Start with All Treasures
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will start the game without any treasures in your inventory."
+    - "on": "You will start the game with 99 of each treasure in your inventory."
+
 ######################
 ## Cosmetic Options ##
 ######################
