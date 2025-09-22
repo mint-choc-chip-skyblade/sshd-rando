@@ -9,7 +9,7 @@ typing_extensions~=4.15.0
 pyclip~=0.7.0
 
 # dev stuff
-black~=25.1.0
+black~=25.9.0
 pytest~=8.4.1
 pytest-xdist~=3.8.0
 PyInstaller~=6.16.0
