@@ -310,7 +310,7 @@ class Ui_main_window(object):
         self.font_family_combo_box.setMinimumContentsLength(1)
         self.font_family_combo_box.setFontFilters(QFontComboBox.FontFilter.ScalableFonts)
         font = QFont()
-        font.setFamilies([u"Tahoma"])
+        font.setFamilies([u"Arimo"])
         font.setPointSize(10)
         self.font_family_combo_box.setCurrentFont(font)
 
@@ -3073,7 +3073,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(1)
+        self.tab_widget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(main_window)
