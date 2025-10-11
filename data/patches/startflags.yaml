@@ -346,6 +346,15 @@ Sceneflags:
     - shortcut_sandship_windows == on:
       - 42 # Windows below life boat opened
       - 50 # Played animation of windows below life boat opening
+    - skip_misc_small_cutscenes == on:
+      - 9  # Press switch cutscene in south generator room
+      - 10 # Release switch cutscene in south generator room
+      - 33 # Press switch cutscene in BK room
+      - 34 # Release switch cutscene in BK room
+      - 43 # Press switch cutscene in north generator room
+      - 44 # Release switch cutscene in north generator room
+      - 62 # South generator activation cutscene
+      - 63 # North generator activation cutscene
     - shortcut_sandship_brig_bars == on:
       - 65 # Bars to brig raised
     - small_keys == removed:
