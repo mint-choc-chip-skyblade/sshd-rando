@@ -1,5 +1,5 @@
 cmake~=4.1.0; sys_platform == 'darwin' and platform_machine != 'x86_64' and platform_machine != 'x86_32' # Needed to get nlzss11 v1.7
-nlzss11 @ git+https://github.com/lepelog/nlzss11@de9c811c93435aef0ad0ce6ed3395492eb75b695 ; sys_platform == 'darwin' and platform_machine != 'x86_64' and platform_machine != 'x86_32' # Allows for compression of larger SSHD files
+nlzss11 @ git+https://github.com/gymnast86/nlzss11@f145af13f3dfefaa41fb783bbb163eed46da3fe8 ; sys_platform == 'darwin' and platform_machine != 'x86_64' and platform_machine != 'x86_32' # Allows for compression of larger SSHD files
 nlzss11~=1.7; sys_platform != 'darwin' or platform_machine == 'x86_64' or platform_machine == 'x86_32'
 PyYAML~=6.0.1
 lz4~=4.4.3
