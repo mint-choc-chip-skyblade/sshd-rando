@@ -1214,6 +1214,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_10.addWidget(self.setting_tadtone_shuffle)
 
+        self.setting_gossip_stone_treasure_shuffle = RandoTriStateCheckBox(self.shuffles_group_box)
+        self.setting_gossip_stone_treasure_shuffle.setObjectName(u"setting_gossip_stone_treasure_shuffle")
+
+        self.verticalLayout_10.addWidget(self.setting_gossip_stone_treasure_shuffle)
+
         self.npc_closet_shuffle_label = QLabel(self.shuffles_group_box)
         self.npc_closet_shuffle_label.setObjectName(u"npc_closet_shuffle_label")
 
@@ -3073,7 +3078,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_widget.setCurrentIndex(4)
+        self.tab_widget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -3219,6 +3224,7 @@ class Ui_main_window(object):
         self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruit Shuffle", None))
         self.setting_hidden_item_shuffle.setText(QCoreApplication.translate("main_window", u"Hidden Item Shuffle", None))
         self.setting_tadtone_shuffle.setText(QCoreApplication.translate("main_window", u"Tadtone Shuffle", None))
+        self.setting_gossip_stone_treasure_shuffle.setText(QCoreApplication.translate("main_window", u"Gossip Stone Treasure Shuffle", None))
         self.npc_closet_shuffle_label.setText(QCoreApplication.translate("main_window", u"NPC Closets", None))
         self.trial_treasure_shuffle_label.setText(QCoreApplication.translate("main_window", u"Trial Treasure Shuffle", None))
         self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))

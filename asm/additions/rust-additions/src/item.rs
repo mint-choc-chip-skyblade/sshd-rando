@@ -1515,3 +1515,43 @@ pub extern "C" fn spawn_tree_of_life_item() -> *mut dAcItem {
         return item_actor;
     }
 }
+
+#[no_mangle]
+pub extern "C" fn setup_gossip_stone_item_params(
+    roomid: u32,
+    mut param1: u32,
+    actor_pos: *mut math::Vec3f,
+    actor_rot: *mut math::Vec3s, // unused, redefined later
+    mut param2: u32,
+    hrphint_actor: *mut actor::dAcOBase,
+) -> *mut dAcItem {
+    unsafe {
+        let sceneflag: u32 = (*hrphint_actor).basebase.members.param1 & 0xFF;
+        let trapid: u32 = (*hrphint_actor).members.base.param2 & 0xF;
+        let itemid: u32 = ((*hrphint_actor).members.base.param2 >> 4) & 0xFF;
+
+        param1 = 0x180000u32 | (sceneflag << 10) | itemid;
+        param2 &= 0xFFFFFF0F;
+        param2 |= trapid << 4;
+
+        // Redefine actor_rot
+        // Can't use the vanilla rot on the stack as, unfathomably, this causes the
+        // item not to spawn at all
+        let mut actor_rot = (*hrphint_actor).members.base.rot;
+        let actor_rot_ptr = &mut actor_rot as *mut math::Vec3s;
+
+        let item_actor: *mut dAcItem = actor::spawn_actor(
+            actor::ACTORID::ITEM,
+            roomid,
+            param1,
+            actor_pos,
+            actor_rot_ptr,
+            core::ptr::null_mut(),
+            param2,
+        ) as *mut dAcItem;
+
+        (*item_actor).prevent_timed_despawn = 1;
+
+        return item_actor;
+    }
+}
