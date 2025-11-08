@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.0
+## Created by: Qt User Interface Compiler version 6.9.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -513,6 +513,11 @@ class Ui_main_window(object):
         self.setting_minigame_difficulty.setObjectName(u"setting_minigame_difficulty")
 
         self.verticalLayout_43.addWidget(self.setting_minigame_difficulty)
+
+        self.setting_skip_misc_small_cutscenes = RandoTriStateCheckBox(self.convenience_tweaks_group_box)
+        self.setting_skip_misc_small_cutscenes.setObjectName(u"setting_skip_misc_small_cutscenes")
+
+        self.verticalLayout_43.addWidget(self.setting_skip_misc_small_cutscenes)
 
         self.convenience_tweaks_vspacer = QSpacerItem(20, 315, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -3123,6 +3128,7 @@ class Ui_main_window(object):
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
         self.setting_skip_harp_playing.setText(QCoreApplication.translate("main_window", u"Skip Harp Playing", None))
         self.minigame_difficulty_label.setText(QCoreApplication.translate("main_window", u"Minigame Difficulty", None))
+        self.setting_skip_misc_small_cutscenes.setText(QCoreApplication.translate("main_window", u"Skip Miscellaneous Small Cutscenes", None))
         self.hint_placements_group_box.setTitle(QCoreApplication.translate("main_window", u"Tweaks and Traps", None))
         self.setting_randomize_shop_prices.setText(QCoreApplication.translate("main_window", u"Randomize Shop Prices", None))
         self.setting_random_bottle_contents.setText(QCoreApplication.translate("main_window", u"Random Bottle Contents", None))

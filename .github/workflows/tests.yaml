@@ -30,10 +30,10 @@ jobs:
         shell: bash
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up Python
         id: setup-py
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           # TODO: Unfreeze python version when this is resolved: https://github.com/actions/setup-python/issues/886
           python-version: "3.12"

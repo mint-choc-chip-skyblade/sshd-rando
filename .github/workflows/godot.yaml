@@ -20,7 +20,7 @@ jobs:
       image: barichello/godot-ci:${GODOT_VERSION}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           lfs: true
       - name: Setup
@@ -33,7 +33,7 @@ jobs:
           cd $PROJECT_PATH
           godot -v --export "Windows Desktop" ../build/windows/$EXPORT_NAME.exe
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: ${{ env.EXPORT_NAME }}_Windows_$CI_JOB_NAME
           path: build/windows
