@@ -1155,39 +1155,31 @@ pub extern "C" fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
         let mut open_trial_gate = false;
         // If we have the Goddess Harp and the appropriate song, set
         // the scene flag for the trial gate being open. If we're in
-        // the scene index where the trial is, set the flag locally
-        // and then try to find the trial gate actor and open it.
+        // the scene index where the trial is, try to find the trial gate actor and
+        // open it.
         if flag::check_itemflag(flag::ITEMFLAGS::GODDESS_HARP) == 1 {
             if flag::check_itemflag(flag::ITEMFLAGS::FARORE_COURAGE) == 1 {
+                flag::set_global_sceneflag(1, 17);
                 if (*SCENEFLAG_MGR).sceneindex == 1 {
-                    flag::set_local_sceneflag(17);
                     open_trial_gate = true;
-                } else {
-                    flag::set_global_sceneflag(1, 17);
                 }
             }
             if flag::check_itemflag(flag::ITEMFLAGS::NAYRU_WISDOM) == 1 {
+                flag::set_global_sceneflag(7, 91);
                 if (*SCENEFLAG_MGR).sceneindex == 7 {
-                    flag::set_local_sceneflag(91);
                     open_trial_gate = true;
-                } else {
-                    flag::set_global_sceneflag(7, 91);
                 }
             }
             if flag::check_itemflag(flag::ITEMFLAGS::DIN_POWER) == 1 {
+                flag::set_global_sceneflag(4, 70);
                 if (*SCENEFLAG_MGR).sceneindex == 4 {
-                    flag::set_local_sceneflag(70);
                     open_trial_gate = true;
-                } else {
-                    flag::set_global_sceneflag(4, 70);
                 }
             }
             if flag::check_itemflag(flag::ITEMFLAGS::SONG_OF_THE_HERO) == 1 {
+                flag::set_global_sceneflag(0, 69);
                 if (*SCENEFLAG_MGR).sceneindex == 0 {
-                    flag::set_local_sceneflag(69);
                     open_trial_gate = true;
-                } else {
-                    flag::set_global_sceneflag(0, 69);
                 }
             }
         }
