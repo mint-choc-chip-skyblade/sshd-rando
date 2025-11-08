@@ -68,7 +68,7 @@ jobs:
 
       - name: Upload Artifact
         if: runner.os != 'macOS'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: logs-${{ matrix.name }}
           path: logs
@@ -76,7 +76,7 @@ jobs:
       # Cos mac is quirky and refuses to write to local directories like a normal OS
       - name: Upload macOS Artifact
         if: runner.os == 'macOS'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: logs-${{ matrix.name }}
           path: "/Users/runner/Library/Application Support/Skyward Sword HD Randomizer/logs"
@@ -85,7 +85,7 @@ jobs:
       # - name: Test win log diff
       #   run: echo "TEST" >> "./logs/Strich Plaza Dovos Spoiler Log.txt"
       # - name: Upload TEST Artifact
-      #   uses: actions/upload-artifact@v4
+      #   uses: actions/upload-artifact@v5
       #   with:
       #     name: logs-windows
       #     path: logs
