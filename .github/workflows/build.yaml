@@ -65,7 +65,7 @@ jobs:
       MACOSX_DEPLOYMENT_TARGET: 14
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       
       # Setup Python
       - name: Set up Python
