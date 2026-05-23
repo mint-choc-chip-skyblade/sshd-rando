@@ -1,3 +1,4 @@
+# SKY KEEP
 - name: Sky Keep Entryway
   dungeon: Sky Keep
   dungeon_starting_area: true
@@ -6,8 +7,8 @@
     SK First Room South: Nothing
     Sky Keep Entrance Platform: Nothing
 
-# Holds entrance access to each room based on which areas have been reached
-# TODO: Needs to be generalized for random layouts
+# Holds entrance access to each room based on which areas have been reached.
+# TODO: Needs to be generalized for random layouts.
 - name: SK Meta Room
   exits:
     SK Skyview Room West: can_access(SK First Room East)
@@ -18,14 +19,13 @@
     SK Earth Temple Room East: can_access(SK Fire Sanctuary Room East)
     SK Dreadfuse Room South: can_access(SK Fire Sanctuary Room East)
     # There are bars blocking the way to the chest until Dreadfuse is dead
-    # so while you can get here without beating Dreadfuse, doing so is useless
+    # so while you can get here without beating Dreadfuse, doing so is useless.
     # SK Dreadfuse Room West: can_access(SK Fire Sanctuary Room East)
     SK Ancient Cistern Room South: can_access(SK Skyview Room North)
     SK Ancient Cistern Room East: can_access(SK LMF Room North)
     SK Fire Sanctuary Room East: can_access(SK LMF Room North)
     SK Fire Sanctuary Room West: can_access(SK Fire Sanctuary Room East)
     SK Sandship Room West: can_access(SK Fire Sanctuary Room East)
-
 
 - name: SK First Room South
   dungeon: Sky Keep
@@ -34,36 +34,33 @@
   locations:
     Sky Keep - Chest in First Room: Nothing
 
-
 - name: SK First Room East
   dungeon: Sky Keep
   exits:
     SK First Room South: can_access(SK First Room South)
 
-
 - name: SK Skyview Room West
   dungeon: Sky Keep
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
     SK Skyview Room North: shortcut_sky_keep_svt_room_bars or (Whip and (Beetle or Bow) and Clawshots and (Bomb_Bag or Hook_Beetle or Bow) and Gust_Bellows)
-
 
 - name: SK Skyview Room North
   dungeon: Sky Keep
   exits:
-    SK Skyview Room West: Nothing # pull lever to raise bars
-
+    SK Skyview Room West: Nothing # Pull lever to raise bars.
 
 - name: SK LMF Room South
   dungeon: Sky Keep
   exits:
-    SK LMF Room North: (Gust_Bellows or logic_present_bow_switches) and Bow
-
+    # Gust Bellows to shoot the single eye switch, whip to control the conveyor for the 5 switches.
+    SK LMF Room North: ((Gust_Bellows and Whip) or logic_present_bow_switches) and Bow
 
 - name: SK LMF Room North
   dungeon: Sky Keep
   exits:
     SK LMF Room South: logic_present_bow_switches and Bow
-
 
 - name: SK Earth Temple Room East
   dungeon: Sky Keep
@@ -76,14 +73,12 @@
   exits:
     SK Dreadfuse Room West: Can_Defeat_Scervo_And_Dreadfuse and Clawshots
 
-
 - name: SK Dreadfuse Room West
   dungeon: Sky Keep
   exits:
     SK Dreadfuse Room South: can_access(SK Dreadfuse Room South) and Can_Defeat_Scervo_And_Dreadfuse and Clawshots
   locations:
-    Sky Keep - Chest after Dreadfuse Fight: Nothing
-
+    Sky Keep - Chest after Dreadfuse Fight: Nothing # Open the chest.
 
 - name: SK Ancient Cistern Room South
   dungeon: Sky Keep
@@ -98,19 +93,16 @@
       Practice_Sword
     SK Ancient Cistern Room East: Nothing
 
-
 - name: SK Ancient Cistern Room East
   dungeon: Sky Keep
   exits:
     SK Ancient Cistern Room South: Nothing
 
-
 - name: SK Sacred Power of Farore Room
   exits:
     SK Ancient Cistern Room South: Nothing
   locations:
-    Sky Keep - Sacred Power of Farore: Nothing
-
+    Sky Keep - Sacred Power of Farore: Nothing # Run into the floating item.
 
 - name: SK Fire Sanctuary Room East
   dungeon: Sky Keep
@@ -121,11 +113,10 @@
   locations:
     Sky Keep - Rupee in Fire Sanctuary Room in Alcove: Beetle
 
-
 - name: SK Fire Sanctuary Room South
   dungeon: Sky Keep
   exits:
-    SK Fire Sanctuary Room East: Beetle # ride the lava river and open the lower bars
+    SK Fire Sanctuary Room East: Beetle # Ride the lava river and open the lower bars.
     SK Fire Sanctuary Room North: Beetle
 
 - name: SK Fire Sanctuary Room North
@@ -135,36 +126,31 @@
   locations:
     Sky Keep - Rupee in Fire Sanctuary Room in Alcove: Beetle
 
-
 - name: SK Fire Sanctuary Room End Platform
   dungeon: Sky Keep
   exits:
     SK Sacred Power of Din Room: Practice_Sword
-    SK Fire Sanctuary Room West: Nothing # raise the end bars
-    SK Fire Sanctuary Room East: Nothing # raise the upper bars
-    
+    SK Fire Sanctuary Room West: Nothing # Raise the end bars.
+    SK Fire Sanctuary Room East: Nothing # Raise the upper bars.
 
 - name: SK Sacred Power of Din Room
   exits:
     SK Fire Sanctuary Room End Platform: Nothing
   locations:
-    Sky Keep - Sacred Power of Din: Nothing
-
+    Sky Keep - Sacred Power of Din: Nothing # Run into the floating item.
 
 - name: SK Fire Sanctuary Room West
   dungeon: Sky Keep
   exits:
     SK Fire Sanctuary Room End Platform: can_access(SK Fire Sanctuary Room End Platform) # pull lever
 
-
 - name: SK Sandship Room West
   dungeon: Sky Keep
   exits:
     SK Sacred Power of Nayru Room: Bow and Clawshots and Practice_Sword
 
-
 - name: SK Sacred Power of Nayru Room
   exits:
     SK Sandship Room West: Nothing
   locations:
-    Sky Keep - Sacred Power of Nayru: Nothing
+    Sky Keep - Sacred Power of Nayru: Nothing # Run into the floating item.

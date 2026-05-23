@@ -1,11 +1,12 @@
+# LANAYRU MINE
 - name: Lanayru Mine Entry
   hint_region: Lanayru Mine
   events:
     Lanayru Mine First Timeshift Stone: Can_Hit_Timeshift_Stone or logic_itemless_first_timeshift_stone
     Ancient Flower Farming: "'Lanayru_Mine_First_Timeshift_Stone'"
-    Blow Down First Mine Statue: Nothing
+    Blow Down First Mine Statue: Nothing # Use the bomb flower near the statue.
   exits:
-    Lanayru Mine Entry Statue: Nothing
+    Lanayru Mine Entry Statue: Nothing # Interact with the statue.
     Lanayru Mine Statues Area: "'Lanayru_Mine_First_Timeshift_Stone'"
     Lanayru Mine Upper Area: Clawshots
   locations:
@@ -26,16 +27,16 @@
 - name: Lanayru Mine Upper Area
   hint_region: Lanayru Mine
   exits:
-    Lanayru Mine Entry: Nothing
+    Lanayru Mine Entry: Nothing # Drop down.
     Lanayru Mine Caves Platform: Clawshots
   locations:
-    Lanayru Mine - Chest behind First Landing Robot: Nothing
+    Lanayru Mine - Chest behind First Landing Robot: Nothing # Run around the outside ledge and open the chest.
 
 - name: Lanayru Mine Caves Platform
   hint_region: Lanayru Mine
   exits:
     Lanayru Mine Upper Area: Clawshots
-    Lanayru Caves: Nothing
+    Lanayru Caves: Nothing # Exit into the open entrance to the caves.
 
 - name: Lanayru Mine Statues Area
   hint_region: Lanayru Mine
@@ -48,7 +49,7 @@
     Lanayru Mine - Chest behind Northeast Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
     Lanayru Mine - Rupee behind Northeast Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
     Lanayru Mine - Rupee behind Southwest Statue: Bomb_Bag or ('Blow_Down_First_Mine_Statue' and Hook_Beetle)
-    Lanayru Mine - Stamina Fruit before Falling Statues: Nothing
+    Lanayru Mine - Stamina Fruit before Falling Statues: Nothing # Collect the freestanding item.
     Lanayru Mine - Stamina Fruit after Falling Statues: Beetle
     Lanayru Mine - Stamina Fruit near Spumes 1: Beetle
     Lanayru Mine - Stamina Fruit near Spumes 2: Beetle
@@ -57,70 +58,70 @@
 - name: Lanayru Mine End
   hint_region: Lanayru Mine
   events:
-    Blow up Rock on Track: Nothing
-    Ancient Flower Farming: Can_Hit_Timeshift_Stone # Nothing?
+    Blow up Rock on Track: Nothing # Use the nearby bomb flower to destroy the rock.
+    Ancient Flower Farming: Can_Hit_Timeshift_Stone
   exits:
     Lanayru Mine Statues Area: "'Blow_Down_First_Mine_Statue' or logic_brakeslide or Can_use_Stamina_Potion_in_Sink_Sand"
     Lanayru Mine In Minecart: Can_Hit_Timeshift_Stone
   locations:
     Lanayru Mine - Blow Digging Robot's Wall near Mine Exit: Gust_Bellows
     Lanayru Mine - Blow Digging Robot's Wall near Last Mine Timeshift Stone: Gust_Bellows
-    Lanayru Mine - Chest at the End of Mine: Nothing # There's a baba in the way
-    Lanayru Mine - Stamina Fruit after Falling Statues: Nothing
-    Lanayru Mine - Stamina Fruit near Spumes 1: Nothing
-    Lanayru Mine - Stamina Fruit near Spumes 2: Nothing
-    Lanayru Mine - Stamina Fruit near Spumes 3: Nothing
+    Lanayru Mine - Chest at the End of Mine: Nothing # There's a baba in the way but can be ignored.
+    Lanayru Mine - Stamina Fruit after Falling Statues: Nothing # Collect the freestanding item.
+    Lanayru Mine - Stamina Fruit near Spumes 1: Nothing # Collect the freestanding item.
+    Lanayru Mine - Stamina Fruit near Spumes 2: Nothing # Collect the freestanding item.
+    Lanayru Mine - Stamina Fruit near Spumes 3: Nothing # Collect the freestanding item.
 
 - name: Lanayru Mine In Minecart
   hint_region: Lanayru Mine
   events:
     Blow up Rock on Track: logic_lanayru_mine_quick_bomb and Bomb_Bag
   exits:
-    Lanayru Desert South: Nothing
+    Lanayru Desert South: Nothing # Ride the minecart.
     Lanayru Mine End: "'Blow_up_Rock_on_Track"
 
+
+# LANAYRU DESERT
 - name: Lanayru Desert South
   hint_region: Lanayru Desert
   events:
     Retrieve Party Wheel: Scrapper and Blow_Up_Covered_Timeshift_Stone
     Ancient Flower Farming: Blow_Up_Covered_Timeshift_Stone
-
-    # Hook Beetle to knock down statue platforms
-    # Stamina Potion to run past the Spume
-    # or defeat Spume and brakeslide through
+    # Hook Beetle to get a nearby bomb flower to knock down statue platforms or
+    # Stamina Potion to run past the Spume or
+    # a way to defeat the Spume and brakeslide through the sand.
     Get Past Spume to Sand Oasis: "Hook_Beetle or
       Can_use_Stamina_Potion_in_Sink_Sand or
       (logic_brakeslide and (Bomb_Bag or Bow or Long_Range_Skyward_Strike))"
   exits:
-    Desert Entrance Statue: Nothing
+    Desert Entrance Statue: Nothing # Interact with the statue.
     Lanayru Desert West Wall: Clawshots
     Top of LMF: Raise_Lanayru_Mining_Facility
     Lanayru Desert East: Clawshots or Can_use_Stamina_Potion_in_Sink_Sand or shortcut_lanayru_bars or can_access(Lanayru Desert East) or logic_tot_skip_brakeslide
     Lanayru Desert West Courtyard: "'Get_Past_Spume_to_Sand_Oasis'"
-    Lanayru Mine In Minecart: Blow_Up_Covered_Timeshift_Stone # I can't assume the minecart is available, right?
+    Lanayru Mine In Minecart: Blow_Up_Covered_Timeshift_Stone # Cannot assume that minecart is available.
   locations:
     Lanayru Desert - Slingshot Left Robot Eye above Lanayru Mine Exit: Slingshot
     Lanayru Desert - Chest near Party Wheel: Blow_Up_Covered_Timeshift_Stone
     Lanayru Desert - Stamina Fruit on Ledge to Party Wheel: Blow_Up_Covered_Timeshift_Stone or Beetle
-    Lanayru Desert - Rupee above Caged Robot 1: Beetle # You can (in theory) use a bomb flower to knock it down
-    Lanayru Desert - Rupee above Caged Robot 2: Beetle # You can (in theory) use a bomb flower to knock it down
+    Lanayru Desert - Rupee above Caged Robot 1: Beetle # You can (in theory) use the bomb flowers to nudge the item and knock it down to the ground.
+    Lanayru Desert - Rupee above Caged Robot 2: Beetle # You can (in theory) use the bomb flowers to nudge the item and knock it down to the ground.
     Lanayru Desert - Rupee behind South Statue near Caged Robot: Hook_Beetle
     Lanayru Desert - Rupee behind West Statue near Caged Robot: Hook_Beetle
     Lanayru Desert - Rupee behind East Statue before Sand Oasis: Hook_Beetle
     Lanayru Desert - Rupee behind West Statue before Sand Oasis: Hook_Beetle
-    Lanayru Desert - Chest near Caged Robot: Nothing
-
-    # You can use the bomb flowers to *just* throw one up into the hole in the cage from the ground
-    # This trick is only doable on HD
+    Lanayru Desert - Chest near Caged Robot: Nothing # Run up the ledge and open the chest.
+    # You can use the bomb flowers to *just* throw one up into the hole in the cage from the ground.
+    # This trick is only doable on HD.
     Lanayru Desert - Rescue Caged Robot: (Blow_Up_Covered_Timeshift_Stone or Hook_Beetle or logic_bomb_throws) and Can_Defeat_Bokoblins
-    Lanayru Desert - Goddess Cube near Caged Robot: Long_Range_Skyward_Strike # Also accessible elsewhere
+    Lanayru Desert - Goddess Cube near Caged Robot: Long_Range_Skyward_Strike # Also accessible elsewhere.
 
 - name: Lanayru Desert West Courtyard
   hint_region: Lanayru Desert
   exits:
-    Lanayru Desert South: Nothing
+    Lanayru Desert South: Nothing # Run up the slope and drop down past the sand pit.
     Lanayru Desert West Wall: Clawshots or shortcut_west_wall_minecart or 'Push_Down_West_Wall_Minecart'
-    Sand Oasis Middle: Can_Navigate_in_Oasis or shortcut_sand_oasis_minecart or 'Push_Down_First_Sand_Oasis_Minecart'
+    Sand Oasis Start: Nothing # Just walk upto it.
   locations:
     Lanayru Desert - Goddess Cube in Sand Oasis: Can_Navigate_in_Oasis and Goddess_Sword
     Lanayru Desert - Rupee behind South Statue near Caged Robot: Bomb_Bag and logic_bomb_throws
@@ -131,65 +132,76 @@
 - name: Lanayru Desert West Wall
   hint_region: Lanayru Desert
   events:
-    Push Down West Wall Minecart: Nothing
+    Push Down West Wall Minecart: Nothing # Run along the wall and push down the minecart.
   exits:
-    Lanayru Desert South: Nothing
-    Sand Oasis Middle: Nothing
-    Lanayru Desert North: Nothing
+    Lanayru Desert South: Nothing # Drop down off the wall.
+    Sand Oasis Middle: Nothing # Drop down off the wall.
+    Lanayru Desert North: Nothing # Drop down off the wall.
   locations:
-    Lanayru Desert - Chest on Sand Oasis Wall: Nothing
+    Lanayru Desert - Chest on Sand Oasis Wall: Nothing # Run to the chest and open it.
     Lanayru Desert - Goddess Cube near Caged Robot: Goddess_Sword
+
+- name: Sand Oasis Start
+  hint_region: Lanayru Desert
+  exits:
+    Lanayru Desert West Courtyard: Nothing # Just walk into it.
+    Sand Oasis Middle: Can_Navigate_in_Oasis or shortcut_sand_oasis_minecart or 'Push_Down_First_Sand_Oasis_Minecart'
+  locations:
+    Lanayru Desert - Stamina Fruit in South Sand Oasis 1: Can_Navigate_in_Oasis or Beetle
+    Lanayru Desert - Stamina Fruit in South Sand Oasis 2: Can_Navigate_in_Oasis or Beetle
 
 - name: Sand Oasis Middle
   hint_region: Lanayru Desert
   events:
-    Push Down First Sand Oasis Minecart: Nothing
+    Push Down First Sand Oasis Minecart: Nothing # Climb up the wall, run round to the start of sand oasis, and push down the minecart.
   exits:
-    West Desert Statue: Nothing
-    Lanayru Desert West Courtyard: Nothing
+    West Desert Statue: Nothing # Interact with the statue.
+    Sand Oasis Start: Nothing # Climb up the wall and run towards the start.
+    Lanayru Desert West Courtyard: Nothing # Climb up the wall and run toward the courtyard.
     Lanayru Desert West Wall: Clawshots
     Sand Oasis End: Can_Navigate_in_Oasis or Clawshots or shortcut_minecart_before_caves or 'Push_Down_Second_Sand_Oasis_Minecart'
   locations:
     Lanayru Desert - Goddess Cube in Sand Oasis: Goddess_Sword
-    Lanayru Desert - Stamina Fruit in South Sand Oasis 1: Can_Navigate_in_Oasis or Beetle
-    Lanayru Desert - Stamina Fruit in South Sand Oasis 2: Can_Navigate_in_Oasis or Beetle
-    Lanayru Desert - Stamina Fruit in North Sand Oasis 1: Can_Navigate_in_Oasis or Beetle
-    Lanayru Desert - Stamina Fruit in North Sand Oasis 2: Can_Navigate_in_Oasis or Beetle
+    # Only the 2nd stamina fruit can be directly obtained from here.
+    Lanayru Desert - Stamina Fruit in South Sand Oasis 1: Beetle
+    Lanayru Desert - Stamina Fruit in South Sand Oasis 2: Nothing # Run into the south oasis and collect the freestanding item.
+    Lanayru Desert - Stamina Fruit in North Sand Oasis 1: Beetle
+    Lanayru Desert - Stamina Fruit in North Sand Oasis 2: Beetle
     Lanayru Desert - Slingshot Left Robot Eye near West Desert Bird Statue: Slingshot
 
 - name: Sand Oasis End
   hint_region: Lanayru Desert
   events:
-    Push Down Second Sand Oasis Minecart: Nothing
+    Push Down Second Sand Oasis Minecart: Nothing # Climb up the wall, run past the caves entrannce, and push down the minecart.
   exits:
-    Temple of Time South: Nothing
+    Temple of Time South: Nothing # Run towards the exit.
     Sand Oasis Highest Platform: Clawshots
-    Sand Oasis Middle: Nothing
+    Sand Oasis Middle: Nothing # Climb up the wall and drop down near the bird statue.
   locations:
-    Lanayru Desert - Stamina Fruit in North Sand Oasis 1: Nothing
-    Lanayru Desert - Stamina Fruit in North Sand Oasis 2: Nothing
+    Lanayru Desert - Stamina Fruit in North Sand Oasis 1: Nothing # Run over the sand and collect the freestanding item.
+    Lanayru Desert - Stamina Fruit in North Sand Oasis 2: Nothing # Run over the sand and collect the freestanding item.
     Lanayru Desert - Slingshot Left Robot Eye above Temple of Time Entrance: Slingshot
 
 - name: Sand Oasis Highest Platform
   hint_region: Lanayru Desert
   exits:
-    Sand Oasis End: Nothing
-    Lanayru Caves: Nothing
+    Sand Oasis End: Nothing # Drop down from the high ledge and run along the wall towards the temple of time entrances.
+    Lanayru Caves: Nothing # Run into the caves entrance.
   locations:
     Lanayru Desert - Slingshot Left Robot Eye above Lanayru Caves Entrance: Slingshot
 
 - name: Top of LMF
   hint_region: Lanayru Desert
   exits:
-    Lanayru Desert North: Nothing
-    Lanayru Desert East: Nothing
-    Lanayru Desert South: Nothing
-    LMF First Room: Nothing
+    Lanayru Desert North: Nothing # Climb down.
+    Lanayru Desert East: Nothing # Climb down.
+    Lanayru Desert South: Nothing # Climb down.
+    LMF First Room: Nothing # Climb down.
   locations:
-    Lanayru Desert - Chest on top of Lanayru Mining Facility: Nothing
-    Lanayru Desert - Stamina Fruit on Mining Facility South Ledge: Nothing
-    Lanayru Desert - Stamina Fruit on Mining Facility West Ledge: Nothing
-    Lanayru Desert - Stamina Fruit on Mining Facility Wall Vines: Nothing
+    Lanayru Desert - Chest on top of Lanayru Mining Facility: Nothing # Open the chest.
+    Lanayru Desert - Stamina Fruit on Mining Facility South Ledge: Nothing # Navigate the outer ledge of the dungeon and collect the freestanding item.
+    Lanayru Desert - Stamina Fruit on Mining Facility West Ledge: Nothing # Navigate the outer ledge of the dungeon and collect the freestanding item.
+    Lanayru Desert - Stamina Fruit on Mining Facility Wall Vines: Nothing # Climb the vines on the dungeon and collect the freestanding item.
 
 - name: Lanayru Desert North
   hint_region: Lanayru Desert
@@ -198,16 +210,16 @@
     Ancient Flower Farming: Bomb_Bag or Hook_Beetle
     Activate Main Node: (Bomb_Bag or Hook_Beetle) and Sword and (('Water_Node' and 'Lightning_Node' and 'Fire_Node') or open_lmf == main_node)
   exits:
-    North Desert Statue: Nothing
-    Lanayru Desert East: Nothing
+    North Desert Statue: Nothing # Interact with the statue.
+    Lanayru Desert East: Nothing # Walk to the east of the desert.
     Top of LMF: Raise_Lanayru_Mining_Facility
     Nayru's Silent Realm: Goddesss_Harp and Nayrus_Wisdom and Progressive_Sword
-    Lightning Node: Nothing # There's a bombflower nearby
+    Lightning Node: Nothing # Use a nearby bomb flower to open the entrance into the node.
     Lanayru Desert Secret Passageway: Bomb_Bag or Tough_Beetle or (logic_precise_beetle and Hook_Beetle)
     Lanayru Desert West Wall: Clawshots
-    Temple of Time North: Nothing
+    Temple of Time North: Nothing # Exit towards the vanilla Temple of Time exit.
   locations:
-    Lanayru Desert - Bonk Main Node Generator: Nothing
+    Lanayru Desert - Bonk Main Node Generator: Nothing # Run up the slope towards the dungeon and bonk into the generator.
     Lanayru Desert - Chest on Platform near Lightning Node: Clawshots
     Lanayru Desert - Slingshot Right Robot Eye above Temple of Time Exit: Slingshot
     Lanayru Desert - Bonk Water Node Generator: Bomb_Bag or Hook_Beetle
@@ -216,7 +228,7 @@
   events:
     Lightning Node: Bomb_Bag and Sword
   exits:
-    Lanayru Desert North: Nothing
+    Lanayru Desert North: Nothing # Exit out of the door to the desert.
   locations:
     Lightning Node - Front Chest: Bomb_Bag
     Lightning Node - Middle Chest: Bomb_Bag
@@ -227,19 +239,19 @@
 - name: Lanayru Desert Secret Passageway
   hint_region: Lanayru Desert
   exits:
-    Lanayru Desert North: Nothing
+    Lanayru Desert North: Nothing # Run out of the secret passageway.
   locations:
-    Lanayru Desert - Chest in Northeast Secret Passageway: Nothing
+    Lanayru Desert - Chest in Northeast Secret Passageway: Nothing # Follow the path around and open the chest.
     Lanayru Desert - Goddess Cube in Secret Passageway: Clawshots and Goddess_Sword
 
 - name: Lanayru Desert East
   hint_region: Lanayru Desert
   exits:
-    Stone Cache Statue: Nothing
-    Fire Node: Nothing
+    Stone Cache Statue: Nothing # Interact with the statue.
+    Fire Node: Nothing # Open the door into the node.
     Top of LMF: Raise_Lanayru_Mining_Facility
-    Lanayru Desert South: Nothing
-    Lanayru Desert North: Nothing
+    Lanayru Desert South: Nothing # Walk round to the south and exit through the bars shortcut.
+    Lanayru Desert North: Nothing # Walk round to the north.
   locations:
     Lanayru Desert - Chest on Platform near Fire Node: Clawshots
 
@@ -248,7 +260,7 @@
     Can Reach Fire Node Activator: Bomb_Bag and (Can_Defeat_Ampilus or logic_brakeslide) and (Hook_Beetle or logic_fire_node_without_hook_beetle)
     Fire Node: Sword and 'Can_Reach_Fire_Node_Activator'
   exits:
-    Lanayru Desert East: Nothing
+    Lanayru Desert East: Nothing # Exit out of the node to the desert.
   locations:
     Fire Node - First Chest below Sand: Bomb_Bag
     Fire Node - Second Chest below Sand: Bomb_Bag
@@ -258,13 +270,15 @@
     Fire Node - Left Ending Chest: "'Can_Reach_Fire_Node_Activator'"
     Fire Node - Right Ending Chest: "'Can_Reach_Fire_Node_Activator'"
 
+
+# TEMPLE OF TIME
 - name: Temple of Time South
   hint_region: Temple of Time
   evets:
-    Ancient Flower Farming: Distance_Activator # For timeshift stone
+    Ancient Flower Farming: Distance_Activator # To activate the timeshift stone.
   exits:
-    Sand Oasis End: Nothing
-    Desert Gorge Statue: Nothing
+    Sand Oasis End: Nothing # Run out of the exit.
+    Desert Gorge Statue: Nothing # Interact with the statue.
     Temple of Time West: Hook_Beetle or (Slingshot and logic_tot_slingshot)
   locations:
     Temple of Time - Northwest Rupee on Tree Root: Beetle
@@ -276,54 +290,58 @@
 - name: Temple of Time West
   hint_region: Temple of Time
   events:
-    Ancient Flower Farming: Hook_Beetle # For timeshift stone
+    Ancient Flower Farming: Hook_Beetle # Grab the bomb flower on the cactus and activate the main timeshift stone.
     # ToT West Timeshift Stone: Hook_Beetle or (logic_bomb_throws and (Bomb_Bag or (logic_cactus_bomb_whip and Whip)))
   exits:
-    Temple of Time West Past Rubble: Nothing
+    Temple of Time West Past Rubble: Nothing # Run towards the broken Gate of Time.
     Temple of Time North Minecart Ride: Long_Range_Skyward_Strike or Distance_Activator
   locations:
-    Temple of Time - Gossip Stone near Robot: Nothing
+    Temple of Time - Gossip Stone Treasure near Robot: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Temple of Time - Gossip Stone Hint near Robot: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
     # Save Robot: Can_Defeat_Bokoblins and 'ToT_West_Timeshift_Stone'
 
 - name: Temple of Time West Past Rubble
   hint_region: Temple of Time
   exits:
-    Temple of Time Statue: Nothing
-    Temple of Time West: Nothing
-    Temple of Time West Post LMF Area: Nothing
+    Temple of Time Statue: Nothing # Interact with the statue.
+    Temple of Time West: Nothing # Run out of the Gate of Time area.
+    Temple of Time West Post LMF Area: Nothing # Run towards the exit out of LMF.
   locations:
-    Temple of Time - Bonk Northeast Bird Pillar near Gate of Time: Nothing
-    Temple of Time - Bonk Southeast Bird Pillar near Gate of Time: Nothing
+    Temple of Time - Bonk Northeast Bird Pillar near Gate of Time: Nothing # Bonk into the pillar.
+    Temple of Time - Bonk Southeast Bird Pillar near Gate of Time: Nothing # Bonk into the pillar.
     Temple of Time - Rupee on North Gate of Time Pillar: Beetle
     Temple of Time - Rupee on Southwest Gate of Time Pillar: Beetle
 
-# Weird but allows Temple of Time West Past Rubble to have a proper hint_region
+# Weird but allows Temple of Time West Past Rubble to have a proper hint_region.
 - name: Temple of Time West Post LMF Area
-  hint_region: None # TODO figure out what to do with this
+  hint_region: None # Allow the region to be assigned a hint region. Prevents weird hints with dungeon ER enabled.
   exits:
-    Temple of Time West Past Rubble: Nothing
-    LMF End of Hall of Ancient Robots: Impossible # TODO
+    Temple of Time West Past Rubble: Nothing # Run towards the broken Gate of Time.
+    LMF End of Hall of Ancient Robots: Impossible # TODO maybe.
 
 - name: Temple of Time North Minecart Ride
   hint_region: Temple of Time
   exits:
-    Temple of Time North: Nothing
+    Temple of Time North: Nothing # Ride the minecart.
   locations:
     Temple of Time - Goddess Cube on High Platform North of Tree: Goddess_Sword
 
 - name: Temple of Time North
   hint_region: Temple of Time
   events:
-    Ancient Flower Farming: Distance_Activator # For timeshift stone
+    Ancient Flower Farming: Distance_Activator # Activate the timeshift stone below the northern pathway.
   exits:
-    Lanayru Desert North: Nothing
+    Lanayru Desert North: Nothing # Run out of the vanilla exit out of the Temple of Time area.
     Temple of Time South: Distance_Activator
 
+
+# SILENT REALM
 - name: Nayru's Silent Realm
   hint_region: Nayru's Silent Realm
   exits:
-    Lanayru Desert North: Nothing
+    Lanayru Desert North: Nothing # Exit out of the trial gate.
   locations:
+    # No requirements, just run around and collect the items / tears.
     Nayru's Silent Realm - Collect all Tears Reward: Nothing
     Nayru's Silent Realm - Stamina Fruit on Mining Facility East Vine Wall: Nothing
     Nayru's Silent Realm - Stamina Fruit on Mining Facility West Vine Wall: Nothing
@@ -341,50 +359,56 @@
     Nayru's Silent Realm - Relic 9: Nothing
     Nayru's Silent Realm - Relic 10: Nothing
 
+
+# LANAYRU CAVES
 - name: Lanayru Caves
   hint_region: Lanayru Caves
   exits:
     Lanayru Caves Past Locked Door: Clawshots and (count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed)
-    Lanayru Caves Past Crawlspace: Nothing
-    Lanayru Mine Caves Platform: Nothing
-    Sand Oasis Highest Platform: Nothing
+    Lanayru Caves Past Crawlspace: Nothing # Use one of the bomb flowers to open up the crawlspace.
+    Lanayru Mine Caves Platform: Nothing # Run up the ledge and exit towards the mine.
+    Sand Oasis Highest Platform: Nothing # Run past the pillars towards the main desert.
   locations:
-    Lanayru Caves - Chest near Golo: Nothing
-    Lanayru Caves - Golo's Gift: Nothing
-    Lanayru Caves - Gossip Stone in Center: Nothing
+    Lanayru Caves - Chest near Golo: Nothing # Open the chest.
+    Lanayru Caves - Golo's Gift: Nothing # Talk to Golo.
+    Lanayru Caves - Gossip Stone Treasure in Center: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Lanayru Caves - Gossip Stone Hint in Center: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Lanayru Caves Past Locked Door
   hint_region: Lanayru Caves
   exits:
     Lanayru Caves: count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed
-    Ancient Harbour Highest Platform: Nothing
+    Ancient Harbour Highest Platform: Nothing # Run out towards Sand Sea.
 
 - name: Lanayru Caves Past Crawlspace
   hint_region: Lanayru Caves
   exits:
     Lanayru Caves: Bomb_Bag or can_access(Lanayru Caves)
-    Lanayru Gorge: Nothing
+    Lanayru Gorge: Nothing # Exit out towards Gorge.
   locations:
-    Lanayru Caves - Gossip Stone towards Lanayru Gorge: Nothing
+    Lanayru Caves - Gossip Stone Treasure towards Lanayru Gorge: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Lanayru Caves - Gossip Stone Hint towards Lanayru Gorge: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
+
+# LANAYRU GORGE
 - name: Lanayru Gorge
   hint_region: Lanayru Gorge
   events:
     Blow Up Rock to Locked Door: Hook_Beetle or ((Bomb_Bag or (Whip and logic_cactus_bomb_whip)) and logic_bomb_throws)
     Unlock Boss Rush: Can_Hit_Timeshift_Stone_in_Minecart and Life_Tree_Fruit
   exits:
-    Lanayru Gorge Statue: Nothing
+    Lanayru Gorge Statue: Nothing # Interact with the statue.
     Lanayru Gorge after Locked Door: "'Blow_Up_Rock_to_Locked_Door' and (count(2, Lanayru_Caves_Small_Key) or lanayru_caves_keys == removed)"
     Lanayru Gorge Beyond Bridge: Can_Hit_Timeshift_Stone_in_Minecart
-    Lanayru Caves Past Crawlspace: Nothing
+    Lanayru Caves Past Crawlspace: Nothing # Exit out of Gorge towards Caves.
   locations:
     Lanayru Gorge - Item on Pillar below Dragon: Beetle
     Lanayru Gorge - Thunder Dragon's Reward: Can_Hit_Timeshift_Stone_in_Minecart and Life_Tree_Fruit
     Lanayru Gorge - Bonk Pillar near Thunder Dragon: Nothing
     Lanayru Gorge - Slingshot Left Pillar behind the Thunder Dragon: Slingshot and Beetle
     Lanayru Gorge - Slingshot Right Pillar behind the Thunder Dragon: Slingshot and Beetle
-    Lanayru Gorge - Bonk Wall Left of Stairs: Nothing
-    Lanayru Gorge - Bonk Wall Right of Stairs: Nothing
+    Lanayru Gorge - Bonk Wall Left of Stairs: Nothing # Bonk into the wall.
+    Lanayru Gorge - Bonk Wall Right of Stairs: Nothing # Bonk into the wall.
     Lanayru Gorge - Blow Grass near Lone Boulder: "'Blow_Up_Rock_to_Locked_Door' and Gust_Bellows"
     Lanayru Gorge - Boss Rush 4 Bosses: "'Unlock_Boss_Rush' and Goddess_Longsword and Bomb_Bag and Gust_Bellows and Whip and Bow"
     Lanayru Gorge - Boss Rush 8 Bosses: "'Unlock_Boss_Rush' and Goddess_Longsword and Bomb_Bag and Gust_Bellows and Whip and Bow"
@@ -402,7 +426,7 @@
   events:
     Ancient Flower Farming: Gust_Bellows and Can_Hit_Timeshift_Stone
   exits:
-    Lanayru Gorge: Nothing # Death warp with bomb flower
+    Lanayru Gorge: Nothing # Death warp with the bomb flower.
   locations:
     Lanayru Gorge - Life Tree Digging Spot near Sandfalls: Gust_Bellows and Can_Hit_Timeshift_Stone and Digging_Mitts
     Lanayru Gorge - Goddess Cube near Sandfalls: Goddess_Sword
@@ -414,10 +438,12 @@
     Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 4: Beetle
     Lanayru Gorge - Rupee in Sandfall Tunnel near Life Tree 5: Beetle
 
+
+# ANCIENT HARBOUR
 - name: Ancient Harbour Highest Platform
   hint_region: Ancient Harbour
   exits:
-    Lanayru Caves Past Locked Door: Nothing
+    Lanayru Caves Past Locked Door: Nothing # Exit towards Caves.
     Ancient Harbour: Clawshots
   locations:
     Ancient Harbour - Slingshot Left Nostril of Entrance Robot: Slingshot
@@ -431,7 +457,7 @@
   exits:
     Lanayru Sand Sea: Distance_Activator or Sword or Bomb_Bag
     # Sandship Main Deck: (Distance_Activator or Sword or Bomb_Bag) and 'Shoot_down_Sandship'
-    Ancient Harbour Statue: Nothing
+    Ancient Harbour Statue: Nothing # Interact with the statue.
     Ancient Harbour Highest Platform: Clawshots
   locations:
     Ancient Harbour - Slingshot Northeast Box Robot Eye with Clawshot Target: Slingshot
@@ -442,36 +468,38 @@
     Ancient Harbour - Slingshot South Box Robot Eye: Slingshot
     Ancient Harbour - Goddess Cube in North Cave: Clawshots and Goddess_Sword
 
+
+# LANAYRU SAND SEA
 - name: Lanayru Sand Sea
   hint_region: Lanayru Sand Sea
   events:
     Shoot down Sandship: Sea_Chart and Sword
   exits:
-    Ancient Harbour: Nothing
+    Ancient Harbour: Nothing # Sail to the east and exit at the dock.
     Sandship Main Deck: "'Shoot_down_Sandship'"
-    Skipper's Retreat Dock: Nothing
-    Shipyard Dock: Nothing
-    Pirate Stronghold Dock: Nothing
+    Skipper's Retreat Dock: Nothing # Sail to the southeast and exit at the dock.
+    Shipyard Dock: Nothing # Sail to the west and exit at the dock.
+    Pirate Stronghold Dock: Nothing # Sail to the north west and exit at the dock.
 
 - name: Skipper's Retreat Dock
   exits:
-    Skipper's Retreat Statue: Nothing
+    Skipper's Retreat Statue: Nothing # Interact with the statue.
     Skipper's Retreat Past Rock: Clawshots and (Bomb_Bag or Hook_Beetle or (Whip and logic_cactus_bomb_whip))
-    Lanayru Sand Sea: Nothing
+    Lanayru Sand Sea: Nothing # Talk to Skipper and exit to the sea.
 
 - name: Skipper's Retreat Past Rock
   exits:
     Skipper's Retreat Top: Clawshots and Whip and (Projectile_Item or logic_skippers_fast_clawshots)
-    Skipper's Retreat Dock: Nothing
+    Skipper's Retreat Dock: Nothing # Use the zipper and ride down to the dock.
   locations:
-    Skipper's Retreat - Chest Guarded by Quadro Baba: Nothing
+    Skipper's Retreat - Chest Guarded by Quadro Baba: Nothing # Avoid the baba and open the chest.
     Skipper's Retreat - Goddess Cube on Southwest Pillar: Clawshots and Goddess_Sword
 
 - name: Skipper's Retreat Top
   exits:
-    Skipper's Retreat Shack: Nothing
-    Skipper's Retreat Past Rock: Nothing
-    Skipper's Retreat Skydive Platform: Nothing
+    Skipper's Retreat Shack: Nothing # Open the door into the shack.
+    Skipper's Retreat Past Rock: Nothing # Use the zipper and ride down.
+    Skipper's Retreat Skydive Platform: Can_Survive_Long_Fall
   locations:
     Skipper's Retreat - Chest on North Cacti Pillar: Clawshots
     Skipper's Retreat - Slingshot Left Eye of Shack: Slingshot
@@ -480,7 +508,7 @@
 
 - name: Skipper's Retreat Shack
   exits:
-    Skipper's Retreat Top: Nothing
+    Skipper's Retreat Top: Nothing # Open the door and exit the shack.
   locations:
     Skipper's Retreat Shack - Chest under Sand: Gust_Bellows
     Skipper's Retreat Shack - Skipper's Closet: Gust_Bellows
@@ -496,81 +524,81 @@
 
 - name: Skipper's Retreat Skydive Platform
   exits:
-    Skipper's Retreat Dock: Clawshots # Should add bomb flower here
+    Skipper's Retreat Dock: Clawshots # There's a bomb flower for death warping.
   locations:
-    Skipper's Retreat - Skydive Chest: Nothing
+    Skipper's Retreat - Skydive Chest: Nothing # Open the chest.
 
 - name: Shipyard Dock
   exits:
-    Shipyard Statue: Nothing
+    Shipyard Statue: Nothing # Interact with the statue.
     Shipyard End of Minecart Ride: Nothing
-    Construction Bay Sand Pit: Nothing
-    Lanayru Sand Sea: Nothing
+    Construction Bay Sand Pit: Nothing # Open the door to the west.
+    Lanayru Sand Sea: Nothing # Talk to Skipper and exit to the sea.
   locations:
-    Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator: Nothing
-    Shipyard - Heart Stopping Rickety Coaster Track in 1'05: Nothing
-    Shipyard - Bonk Sign before Second Minecart Track: Nothing
-    Shipyard - Gossip Stone after First Minecart Track: Nothing # Take the first cart and you've arrived
+    Shipyard - Bonk Sign before Gortram the Rickety Coaster Operator: Nothing # Bonk into the sign.
+    Shipyard - Heart Stopping Rickety Coaster Track in 1'05: Nothing # Talk to Gortram and play the minigame.
+    # Take the first cart and you've arrived.
+    Shipyard - Bonk Sign before Second Minecart Track: Nothing # Ride the minecart ride and bonk into the sign at the end.
+    Shipyard - Gossip Stone Treasure after First Minecart Track: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Shipyard - Gossip Stone Hint after First Minecart Track: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Shipyard End of Minecart Ride
   exits:
-    Construction Bay Upper Platform: Nothing
+    Construction Bay Upper Platform: Nothing # Open the door.
   locations:
-    Shipyard - Bonk Sign after Second Minecart Track: Nothing
+    Shipyard - Bonk Sign after Second Minecart Track: Nothing # Bonk into the sign.
 
 - name: Construction Bay Upper Platform
   exits:
-    Construction Bay Sand Pit: Nothing
-    Shipyard End of Minecart Ride: Nothing
+    Construction Bay Sand Pit: Nothing # Drop down into the sand pit.
+    Shipyard End of Minecart Ride: Nothing # Open the upper door.
   locations:
-    Construction Bay - Bonk Left Sign near Upper Door: Nothing
-    Construction Bay - Bonk Right Sign near Upper Door: Nothing
+    Construction Bay - Bonk Left Sign near Upper Door: Nothing # Bonk into the sign.
+    Construction Bay - Bonk Right Sign near Upper Door: Nothing # Bonk into the sign.
 
 - name: Construction Bay Sand Pit
-  events:
-    Defeat Shipyard Moldarach: Gust_Bellows and Sword # Bellowsless Moldarach isn't possible here
   exits:
-    Shipyard Dock: "'Defeat_Shipyard_Moldarach'"
+    Shipyard Dock: Nothing # Open the lower door.
 
 - name: Pirate Stronghold Dock
   exits:
-    Pirate Stronghold Statue: Nothing
-    Pirate Stronghold Side Door: Nothing
+    Pirate Stronghold Statue: Nothing # Interact with the statue.
+    Pirate Stronghold Side Door: Nothing # Run around to the east and open the door.
     Pirate Stronghold Inside the Shark Head: "'Finish_Pirate_Stronghold'"
-    Lanayru Sand Sea: Nothing
+    Lanayru Sand Sea: Nothing # Talk to Skipper and exit to the sea.
   locations:
     Pirate Stronghold - Rupee on West Sea Pillar: Quick_Beetle or (logic_precise_beetle and Beetle)
     Pirate Stronghold - Rupee on East Sea Pillar: Quick_Beetle or (logic_precise_beetle and Beetle)
     Pirate Stronghold - Rupee on Bird Statue Pillar or Nose: Beetle
-    Pirate Stronghold - Bonk Pillar Left of Shark's Head: Nothing
-    Pirate Stronghold - Bonk Pillar Right of Shark's Head: Nothing
-    Pirate Stronghold - Stamina Fruit on Left Side: Nothing
-    Pirate Stronghold - Stamina Fruit on Upper Right Side: Nothing
-    Pirate Stronghold - Stamina Fruit on Lower Right Side: Nothing
+    Pirate Stronghold - Bonk Pillar Left of Shark's Head: Nothing # Climb up the stairs and bonk into the pillar.
+    Pirate Stronghold - Bonk Pillar Right of Shark's Head: Nothing # Climb up the stairs and bonk into the pillar.
+    Pirate Stronghold - Stamina Fruit on Left Side: Nothing # Collect the freestanding item.
+    Pirate Stronghold - Stamina Fruit on Upper Right Side: Nothing # Collect the freestanding item.
+    Pirate Stronghold - Stamina Fruit on Lower Right Side: Nothing # Collect the freestanding item.
 
-# "'Finish_Pirate_Stronghold'" means the Shark Head is raised
+# "'Finish_Pirate_Stronghold'" means the Shark Head is raised.
 - name: Pirate Stronghold Inside the Shark Head
   exits:
-    # Clawshot up and run along the Shark Head or just run out if it's been raised
+    # Clawshot up and run along the Shark Head or just run out if it's been raised.
     Pirate Stronghold Dock: Clawshots or 'Finish_Pirate_Stronghold'
-    Pirate Stronghold Top Door: Nothing
+    Pirate Stronghold Top Door: Nothing # Open the door.
   locations:
     Pirate Stronghold - Goddess Cube on top of Shark Head: Clawshots and Goddess_Sword
 
 - name: Pirate Stronghold Interior
   events:
     Finish Pirate Stronghold: Can_Defeat_Beamos and Can_Defeat_Armos
-    Ancient Flower Farming: Nothing
+    Ancient Flower Farming: Nothing # Run through the mini-dungeon, pick up the timeshift orb, and run round to the first sand pit.
   exits:
-    Pirate Stronghold Side Door: Nothing
+    Pirate Stronghold Side Door: Nothing # Open the door out of the mini-dungeon.
     Pirate Stronghold Top Door: "'Finish_Pirate_Stronghold'"
   locations:
-    # You can run past the Beamos' without killing it. You can also run past the Deku Baba
-    # Both only effect swordless which is a more advanced mode
-    # So leave the logic as "Nothing" to make swordless more interesting
-    Pirate Stronghold Interior - Chest behind Electric Fence: Nothing
-    Pirate Stronghold Interior - Chest before Deku Babas: Nothing
-    Pirate Stronghold Interior - Chest before Double Armos Fight: Nothing
+    # You can run past the Beamos' without killing it. You can also run past the Deku Baba.
+    # Both only effect swordless which is a more advanced mode.
+    # So leave the logic as "Nothing" to make swordless more interesting.
+    Pirate Stronghold Interior - Chest behind Electric Fence: Nothing # Carry the timeshift orb, run through the mini-dungeon, and open the chest.
+    Pirate Stronghold Interior - Chest before Deku Babas: Nothing # Carry the timeshift orb, run through the mini-dungeon, and open the chest.
+    Pirate Stronghold Interior - Chest before Double Armos Fight: Nothing # Carry the timeshift orb, run through the mini-dungeon, and open the chest.
 
 - name: Pirate Stronghold Side Door
   exits:
@@ -582,87 +610,88 @@
     Pirate Stronghold Interior: Nothing
     Pirate Stronghold Inside the Shark Head: "'Finish_Pirate_Stronghold'"
 
-# Lanayru Statues
+
+# BIRD STATUES
 - name: Lanayru Mine Entry Statue
   events:
-    Unlock Lanayru Mine Entry Statue: Nothing
+    Unlock Lanayru Mine Entry Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Lanayru Mine Entry: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Lanayru Mine Entry: Nothing # Back out of interaction.
 
 - name: Desert Entrance Statue
   events:
-    Unlock Desert Entrance Statue: Nothing
+    Unlock Desert Entrance Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Lanayru Desert South: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Lanayru Desert South: Nothing # Back out of interaction.
 
 - name: West Desert Statue
   events:
-    Unlock West Desert Statue: Nothing
+    Unlock West Desert Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Sand Oasis Middle: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Sand Oasis Middle: Nothing # Back out of interaction.
 
 - name: Desert Gorge Statue
   events:
-    Unlock Desert Gorge Statue: Nothing
+    Unlock Desert Gorge Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Temple of Time South: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Temple of Time South: Nothing # Back out of interaction.
 
 - name: Temple of Time Statue
   events:
-    Unlock Temple of Time Statue: Nothing
+    Unlock Temple of Time Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Temple of Time West Past Rubble: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Temple of Time West Past Rubble: Nothing # Back out of interaction.
 
 - name: North Desert Statue
   events:
-    Unlock North Desert Statue: Nothing
+    Unlock North Desert Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Lanayru Desert North: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Lanayru Desert North: Nothing # Back out of interaction.
 
 - name: Stone Cache Statue
   events:
-    Unlock Stone Cache Statue: Nothing
+    Unlock Stone Cache Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Lanayru Desert East: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Lanayru Desert East: Nothing # Back out of interaction.
 
 - name: Ancient Harbour Statue
   events:
-    Unlock Ancient Harbour Statue: Nothing
+    Unlock Ancient Harbour Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Ancient Harbour: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Ancient Harbour: Nothing # Back out of interaction.
 
 - name: Skipper's Retreat Statue
   events:
-    Unlock Skippers Retreat Statue: Nothing
+    Unlock Skippers Retreat Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Skipper's Retreat Dock: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Skipper's Retreat Dock: Nothing # Back out of interaction.
 
 - name: Shipyard Statue
   events:
-    Unlock Shipyard Statue: Nothing
+    Unlock Shipyard Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Shipyard Dock: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Shipyard Dock: Nothing # Back out of interaction.
 
 - name: Pirate Stronghold Statue
   events:
-    Unlock Pirate Stronghold Statue: Nothing
+    Unlock Pirate Stronghold Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Pirate Stronghold Dock: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Pirate Stronghold Dock: Nothing # Back out of interaction.
 
 - name: Lanayru Gorge Statue
   events:
-    Unlock Lanayru Gorge Statue: Nothing
+    Unlock Lanayru Gorge Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Lanayru Gorge: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Lanayru Gorge: Nothing # Back out of interaction.

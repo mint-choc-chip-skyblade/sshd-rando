@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.0
+## Created by: Qt User Interface Compiler version 6.10.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -29,7 +29,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(1387, 873)
+        main_window.resize(1483, 977)
         main_window.setStyleSheet(u"QToolTip {color: #000000; background-color: #FFFFFF;}")
         self.central_widget = QWidget(main_window)
         self.central_widget.setObjectName(u"central_widget")
@@ -310,7 +310,7 @@ class Ui_main_window(object):
         self.font_family_combo_box.setMinimumContentsLength(1)
         self.font_family_combo_box.setFontFilters(QFontComboBox.FontFilter.ScalableFonts)
         font = QFont()
-        font.setFamilies([u"Arial"])
+        font.setFamilies([u"Tahoma"])
         font.setPointSize(10)
         self.font_family_combo_box.setCurrentFont(font)
 
@@ -513,6 +513,11 @@ class Ui_main_window(object):
         self.setting_minigame_difficulty.setObjectName(u"setting_minigame_difficulty")
 
         self.verticalLayout_43.addWidget(self.setting_minigame_difficulty)
+
+        self.setting_skip_misc_small_cutscenes = RandoTriStateCheckBox(self.convenience_tweaks_group_box)
+        self.setting_skip_misc_small_cutscenes.setObjectName(u"setting_skip_misc_small_cutscenes")
+
+        self.verticalLayout_43.addWidget(self.setting_skip_misc_small_cutscenes)
 
         self.convenience_tweaks_vspacer = QSpacerItem(20, 315, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -737,11 +742,6 @@ class Ui_main_window(object):
         self.open_world_group_box.setObjectName(u"open_world_group_box")
         self.verticalLayout_14 = QVBoxLayout(self.open_world_group_box)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.setting_unlock_all_groosenator_destinations = RandoTriStateCheckBox(self.open_world_group_box)
-        self.setting_unlock_all_groosenator_destinations.setObjectName(u"setting_unlock_all_groosenator_destinations")
-
-        self.verticalLayout_14.addWidget(self.setting_unlock_all_groosenator_destinations)
-
         self.setting_open_thunderhead = RandoTriStateCheckBox(self.open_world_group_box)
         self.setting_open_thunderhead.setObjectName(u"setting_open_thunderhead")
 
@@ -838,7 +838,12 @@ class Ui_main_window(object):
         self.open_dungeons_group_box.setObjectName(u"open_dungeons_group_box")
         self.verticalLayout_25 = QVBoxLayout(self.open_dungeons_group_box)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
-        self.setting_open_earth_temple = RandoTriStateCheckBox(self.open_dungeons_group_box)
+        self.open_earth_temple_label = QLabel(self.open_dungeons_group_box)
+        self.open_earth_temple_label.setObjectName(u"open_earth_temple_label")
+
+        self.verticalLayout_25.addWidget(self.open_earth_temple_label)
+
+        self.setting_open_earth_temple = QComboBox(self.open_dungeons_group_box)
         self.setting_open_earth_temple.setObjectName(u"setting_open_earth_temple")
 
         self.verticalLayout_25.addWidget(self.setting_open_earth_temple)
@@ -1209,6 +1214,11 @@ class Ui_main_window(object):
 
         self.verticalLayout_10.addWidget(self.setting_tadtone_shuffle)
 
+        self.setting_gossip_stone_treasure_shuffle = RandoTriStateCheckBox(self.shuffles_group_box)
+        self.setting_gossip_stone_treasure_shuffle.setObjectName(u"setting_gossip_stone_treasure_shuffle")
+
+        self.verticalLayout_10.addWidget(self.setting_gossip_stone_treasure_shuffle)
+
         self.npc_closet_shuffle_label = QLabel(self.shuffles_group_box)
         self.npc_closet_shuffle_label.setObjectName(u"npc_closet_shuffle_label")
 
@@ -1516,6 +1526,16 @@ class Ui_main_window(object):
 
 
         self.verticalLayout_29.addLayout(self.starting_hearts_layout)
+
+        self.setting_start_with_all_bugs = RandoTriStateCheckBox(self.item_settings_group_box)
+        self.setting_start_with_all_bugs.setObjectName(u"setting_start_with_all_bugs")
+
+        self.verticalLayout_29.addWidget(self.setting_start_with_all_bugs)
+
+        self.setting_start_with_all_treasures = RandoTriStateCheckBox(self.item_settings_group_box)
+        self.setting_start_with_all_treasures.setObjectName(u"setting_start_with_all_treasures")
+
+        self.verticalLayout_29.addWidget(self.setting_start_with_all_treasures)
 
         self.item_settings_vspacer = QSpacerItem(20, 137, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -2016,6 +2036,11 @@ class Ui_main_window(object):
         self.dives_and_jumps_group_box.setSizePolicy(sizePolicy)
         self.verticalLayout_19 = QVBoxLayout(self.dives_and_jumps_group_box)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.setting_logic_precise_falls = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
+        self.setting_logic_precise_falls.setObjectName(u"setting_logic_precise_falls")
+
+        self.verticalLayout_19.addWidget(self.setting_logic_precise_falls)
+
         self.setting_logic_volcanic_island_dive = RandoTriStateCheckBox(self.dives_and_jumps_group_box)
         self.setting_logic_volcanic_island_dive.setObjectName(u"setting_logic_volcanic_island_dive")
 
@@ -2530,6 +2555,11 @@ class Ui_main_window(object):
         self.setting_natural_night_connections.setObjectName(u"setting_natural_night_connections")
 
         self.verticalLayout_32.addWidget(self.setting_natural_night_connections)
+
+        self.setting_unlock_all_groosenator_destinations = RandoTriStateCheckBox(self.other_settings_group_box)
+        self.setting_unlock_all_groosenator_destinations.setObjectName(u"setting_unlock_all_groosenator_destinations")
+
+        self.verticalLayout_32.addWidget(self.setting_unlock_all_groosenator_destinations)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -3055,6 +3085,7 @@ class Ui_main_window(object):
 
         self.tab_widget.setCurrentIndex(0)
 
+
         QMetaObject.connectSlotsByName(main_window)
     # setupUi
 
@@ -3102,6 +3133,7 @@ class Ui_main_window(object):
         self.setting_full_wallet_upgrades.setText(QCoreApplication.translate("main_window", u"Full Wallet Upgrades", None))
         self.setting_skip_harp_playing.setText(QCoreApplication.translate("main_window", u"Skip Harp Playing", None))
         self.minigame_difficulty_label.setText(QCoreApplication.translate("main_window", u"Minigame Difficulty", None))
+        self.setting_skip_misc_small_cutscenes.setText(QCoreApplication.translate("main_window", u"Skip Miscellaneous Small Cutscenes", None))
         self.hint_placements_group_box.setTitle(QCoreApplication.translate("main_window", u"Tweaks and Traps", None))
         self.setting_randomize_shop_prices.setText(QCoreApplication.translate("main_window", u"Randomize Shop Prices", None))
         self.setting_random_bottle_contents.setText(QCoreApplication.translate("main_window", u"Random Bottle Contents", None))
@@ -3129,7 +3161,6 @@ class Ui_main_window(object):
         self.setting_skip_demise.setText(QCoreApplication.translate("main_window", u"Skip Demise Fight", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.gameplay_tab), QCoreApplication.translate("main_window", u"Gameplay", None))
         self.open_world_group_box.setTitle(QCoreApplication.translate("main_window", u"Open World", None))
-        self.setting_unlock_all_groosenator_destinations.setText(QCoreApplication.translate("main_window", u"Unlock all Groosenator Destinations", None))
         self.setting_open_thunderhead.setText(QCoreApplication.translate("main_window", u"Open Thunderhead", None))
         self.open_lake_floria_label.setText(QCoreApplication.translate("main_window", u"Open Lake Floria", None))
         self.setting_open_batreaux_shed.setText(QCoreApplication.translate("main_window", u"Open Batreaux's Shed", None))
@@ -3147,7 +3178,7 @@ class Ui_main_window(object):
         self.setting_shortcut_sand_oasis_minecart.setText(QCoreApplication.translate("main_window", u"Lanayru Desert Minecart in Sand Oasis", None))
         self.setting_shortcut_minecart_before_caves.setText(QCoreApplication.translate("main_window", u"Lanayru Desert Minecart before Lanayru Caves", None))
         self.open_dungeons_group_box.setTitle(QCoreApplication.translate("main_window", u"Open Dungeons", None))
-        self.setting_open_earth_temple.setText(QCoreApplication.translate("main_window", u"Open Earth Temple", None))
+        self.open_earth_temple_label.setText(QCoreApplication.translate("main_window", u"Open Earth Temple", None))
         self.open_lmf_label.setText(QCoreApplication.translate("main_window", u"Open Lanyru Mining Facility", None))
         self.setting_shortcut_skyview_boards.setText(QCoreApplication.translate("main_window", u"Skyview Temple Boarded Shortcut", None))
         self.setting_shortcut_skyview_bars.setText(QCoreApplication.translate("main_window", u"Skyview Temple Bars before Boss Door", None))
@@ -3198,6 +3229,7 @@ class Ui_main_window(object):
         self.setting_stamina_fruit_shuffle.setText(QCoreApplication.translate("main_window", u"Stamina Fruit Shuffle", None))
         self.setting_hidden_item_shuffle.setText(QCoreApplication.translate("main_window", u"Hidden Item Shuffle", None))
         self.setting_tadtone_shuffle.setText(QCoreApplication.translate("main_window", u"Tadtone Shuffle", None))
+        self.setting_gossip_stone_treasure_shuffle.setText(QCoreApplication.translate("main_window", u"Gossip Stone Treasure Shuffle", None))
         self.npc_closet_shuffle_label.setText(QCoreApplication.translate("main_window", u"NPC Closets", None))
         self.trial_treasure_shuffle_label.setText(QCoreApplication.translate("main_window", u"Trial Treasure Shuffle", None))
         self.excluded_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Locations", None))
@@ -3224,6 +3256,8 @@ class Ui_main_window(object):
         self.random_starting_tablet_count_label.setText(QCoreApplication.translate("main_window", u"Random Starting Tablet Count", None))
         self.random_starting_item_count_label.setText(QCoreApplication.translate("main_window", u"Random Starting Item Count", None))
         self.starting_hearts_label.setText(QCoreApplication.translate("main_window", u"Starting Hearts", None))
+        self.setting_start_with_all_bugs.setText(QCoreApplication.translate("main_window", u"Start with All Bugs", None))
+        self.setting_start_with_all_treasures.setText(QCoreApplication.translate("main_window", u"Start with All Treasures", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.inventory_tab), QCoreApplication.translate("main_window", u"Items and Inventory", None))
         self.excluded_hint_locations_group_box.setTitle(QCoreApplication.translate("main_window", u"Excluded Hint Locations", None))
         self.excluded_hint_locations_free_search.setText("")
@@ -3282,7 +3316,8 @@ class Ui_main_window(object):
         self.setting_logic_lmf_minecart_jump.setText(QCoreApplication.translate("main_window", u"Lanayru Mining Facility Ride on Minecart", None))
         self.setting_logic_present_bow_switches.setText(QCoreApplication.translate("main_window", u"Present Bow Switch Shots", None))
         self.setting_logic_skykeep_vineclip.setText(QCoreApplication.translate("main_window", u"Sky Keep Vine Clip", None))
-        self.dives_and_jumps_group_box.setTitle(QCoreApplication.translate("main_window", u"Dives and Jumps", None))
+        self.dives_and_jumps_group_box.setTitle(QCoreApplication.translate("main_window", u"Dives, Jumps, and Falls", None))
+        self.setting_logic_precise_falls.setText(QCoreApplication.translate("main_window", u"Precise Falls", None))
         self.setting_logic_volcanic_island_dive.setText(QCoreApplication.translate("main_window", u"Volcanic Island Dive", None))
         self.setting_logic_east_island_dive.setText(QCoreApplication.translate("main_window", u"Inside the Thunderhead East Island Dive", None))
         self.setting_logic_beedles_island_cage_chest_dive.setText(QCoreApplication.translate("main_window", u"Beedle's Island Cage Chest Dive", None))
@@ -3353,8 +3388,9 @@ class Ui_main_window(object):
         self.setting_enable_back_in_time.setText(QCoreApplication.translate("main_window", u"Enable Back in Time (BiT)", None))
         self.setting_allow_flying_at_night.setText(QCoreApplication.translate("main_window", u"Allow Flying at Night", None))
         self.setting_natural_night_connections.setText(QCoreApplication.translate("main_window", u"Require Natural Night Connections", None))
+        self.setting_unlock_all_groosenator_destinations.setText(QCoreApplication.translate("main_window", u"Unlock all Groosenator Destinations", None))
         self.other_mods_group_box.setTitle(QCoreApplication.translate("main_window", u"Other Mods", None))
-        self.other_mods_explanation_text.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>The randomizer modifies a lot of files the game uses. To better integrate other mods with the randomizer, you can put them in separate folders in the <span style=\" font-weight:700;\">other_mods</span> directory and choose which ones you want to apply together. For example, if you have a mod which changes Link's tunic color, you can create a new folder in the <span style=\" font-weight:700;\">other_mods</span> directory named &quot;Other Tunic Color&quot; and put the <span style=\" font-weight:700;\">romfs</span> folder of that mod into the new folder. Then refresh the mod list and it should appear below. We do not currently support mods that modify any files in the <span style=\" font-weight:700;\">exefs</span> folder.</p><p>Note that this feature is EXPERIMENTAL and we do not guarantee that you won't run into bugs when using other mods, but the randomizer will try it's best.</p></body></html>", None))
+        self.other_mods_explanation_text.setText(QCoreApplication.translate("main_window", u"<html><head/><body><p>The randomizer modifies a lot of files the game uses. To better integrate other mods with the randomizer, you can put them in separate folders in the <span style=\" font-weight:700;\">other_mods</span> directory and choose which ones you want to apply together. For example, if you have a mod which changes Link's tunic color, you can create a new folder in the <span style=\" font-weight:700;\">other_mods</span> directory named &quot;Other Tunic Color&quot; and put the <span style=\" font-weight:700;\">romfs</span> folder of that mod into the new folder. Then refresh the mod list and it should appear below. We do not currently support mods that modify any files in the <span style=\" font-weight:700;\">exefs</span> folder.</p><p>Note that this feature is EXPERIMENTAL and we do not guarantee that you won't run into bugs when using other mods, but the randomizer will try its best.</p></body></html>", None))
         self.open_other_mods_dir_button.setText(QCoreApplication.translate("main_window", u"Open other_mods Folder", None))
         self.refresh_mod_list_button.setText(QCoreApplication.translate("main_window", u"Refresh Mod List", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.advanced_tab), QCoreApplication.translate("main_window", u"Advanced", None))

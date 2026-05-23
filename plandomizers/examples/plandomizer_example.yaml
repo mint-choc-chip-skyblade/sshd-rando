@@ -39,14 +39,15 @@ World 1:
 # attempting to plandomize must be turned on.
 World 1:
   entrances:
-    Deep Woods -> Skyview Entry: Ancient Cistern Lobby from Floria Waterfall Temple Ledge
-    Lake Floria Temple Ledge -> Ancient Cistern Lobby: Skyview Entry from Deep Woods
+    Deep Woods -> Skyview Temple: Ancient Cistern from Floria Waterfall
+    Floria Waterfall -> Ancient Cistern: Skyview Temple from Deep Woods
 # The original entrance must be in the format "<first area> -> <second area>", and
 # the replacement entrance must be in the format "<second area> from <first area>".
 # The spaces around the arrow and the word "from" are important to include. These
 # formats are not interchangable. If you attempt to randomize entrances
 # that don't exist or which aren't supported for shuffling at the current moment,
-# then you'll get a plandomizer error. For a full list of randomizable entrances please see:
+# then you'll get a plandomizer error. For a full list of randomizable entrances (and
+# aliases that you can use) please see:
 # https://github.com/mint-choc-chip-skyblade/sshd-rando/blob/main/data/entrance_shuffle_data.yaml
 
 # HINTS

@@ -2,6 +2,7 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use crate::actor;
 use crate::debug;
 use crate::flag;
 use crate::input;
@@ -26,6 +27,7 @@ use wchar::wch;
 
 // Lyt stuff
 #[repr(C, packed(1))]
+#[derive(Copy, Clone)]
 pub struct dLytMsgWindow {
     pub _0:       [u8; 0xA90],
     pub text_mgr: *mut TextMgr,
@@ -33,6 +35,7 @@ pub struct dLytMsgWindow {
 assert_eq_size!([u8; 0xA98], dLytMsgWindow);
 
 #[repr(C, packed(1))]
+#[derive(Copy, Clone)]
 pub struct dLytPauseDisp {
     pub _0:        [u8; 0xC5E],
     pub is_paused: bool,
@@ -40,8 +43,25 @@ pub struct dLytPauseDisp {
 }
 assert_eq_size!([u8; 0xC70], dLytPauseDisp);
 
+#[repr(C, packed(1))]
+#[derive(Copy, Clone)]
+pub struct dLytSaveMgr {
+    pub base:                   [u8; 0xC0],
+    pub state_mgr:              actor::StateMgr,
+    pub save_msg_window:        [u8; 0x23A8],
+    pub save_text_prompt_index: u32,
+    pub state_select_related:   u32,
+    pub _0:                     [u8; 14],
+    pub save_obj_name_index:    u8,
+    pub saving:                 bool,
+    pub is_not_saving:          bool,
+    pub _1:                     [u8; 7],
+}
+assert_eq_size!([u8; 0x24F8], dLytSaveMgr);
+
 // Text stuff
 #[repr(C, packed(1))]
+#[derive(Copy, Clone)]
 pub struct TextMgr {
     pub _0:                 [u8; 0x8AC],
     pub numeric_args:       [u32; 10],
@@ -64,6 +84,8 @@ extern "C" {
     static GLOBAL_TEXT_MGR: *mut TextMgr;
     static FILE_MGR: *mut savefile::FileMgr;
     static RANDOMIZER_SETTINGS: settings::RandomizerSettings;
+
+    static dLytSaveMgr__sSavePrompts: [*const c_char; 6];
 
     // Functions
     fn debugPrint_32(string: *const c_char, fstr: *const c_char, ...);
@@ -366,5 +388,19 @@ extern "C" fn override_inventory_caption_item_text(
         }
         debugPrint_32(string, fstr, itemid);
         asm!("mov x8, {0:x}", in(reg) dManager__sInstance);
+    }
+}
+
+#[no_mangle]
+pub extern "C" fn require_sailcloth_to_fly_to_sky(save_mgr: *mut dLytSaveMgr) {
+    unsafe {
+        if (*save_mgr).save_text_prompt_index == 1
+            && flag::check_itemflag(flag::ITEMFLAGS::SAILCLOTH) == 0
+        {
+            (*save_mgr).save_text_prompt_index = 0;
+        }
+        ((*(*save_mgr).state_mgr.vtable).execute_state)(
+            &mut (*save_mgr).state_mgr as *mut actor::StateMgr,
+        );
     }
 }

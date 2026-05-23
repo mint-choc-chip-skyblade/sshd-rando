@@ -2,6 +2,8 @@ from pathlib import Path
 import time
 from filepathconstants import (
     ENDROLL_SOURCE_PATH,
+    MOD_REPLACE_PATH,
+    OBJECT_PATH_TAIL,
     OBJECTPACK_FILENAME,
     OBJECTPACK_PATH,
     CACHE_OARC_PATH,
@@ -28,29 +30,44 @@ def patch_object_folder(object_folder_output_path: Path, other_mods: list[str] =
         path.split("/")[-1] for path in objectpack_arc.get_all_paths()
     ]
 
-    cache_oarc_paths = list(CACHE_OARC_PATH.glob("*"))
+    cache_oarc_paths = list(CACHE_OARC_PATH.rglob("*"))
 
     # Move oarc cache models to romfs/Object/NX or the ObjectPack as is appropriate.
     # Patches made previously to the ARCN arrays in the room bzs files allow these models to be found by the game.
-    for current_arc_num, arc in enumerate(cache_oarc_paths):
+    for current_arc_num, arc_path in enumerate(cache_oarc_paths):
+        arc_name = arc_path.name
+
         # Only deal with .arc files
-        if not arc.name.endswith(".arc"):
+        if not arc_name.endswith(".arc"):
             continue
 
-        arc_data_path = get_cache_oarc_path(arc.name, other_mods)
+        arc_data_path, is_from_mod = get_cache_oarc_path(arc_name, other_mods)
+
         if not arc_data_path.exists():
-            raise Exception(f"ERROR: {arc.name} not found in oarc cache.")
+            raise Exception(f"ERROR: {arc_name} not found in oarc cache.")
 
         # Replace arcs in objectpack. If an arc doesn't belong there, add it to the Object/NX folder.
-        if arc.name in objectpack_arc_names:
-            objectpack_arc.add_file_data(f"oarc/{arc.name}", arc_data_path.read_bytes())
+        if arc_name in objectpack_arc_names:
+            objectpack_arc.add_file_data(f"oarc/{arc_name}", arc_data_path.read_bytes())
         else:
-            oarc = U8File.get_parsed_U8_from_path(CACHE_OARC_PATH / arc.name)
+            oarc = U8File.get_parsed_U8_from_path(arc_data_path)
 
-            write_bytes_create_dirs(
-                object_folder_output_path / (arc.name + ".LZ"),
-                oarc.build_and_compress_U8(),
-            )
+            # Allows the game code to search only from arcs which are definitely modded.
+            if is_from_mod:
+                output_path = object_folder_output_path / MOD_REPLACE_PATH
+                write_bytes_create_dirs(
+                    output_path / (arc_name + ".LZ"),
+                    oarc.build_and_compress_U8(),
+                )
+
+            # Make sure that all the arcs needed for the ARCN system are in romfs/Object/NX.
+            # These are all the arcs in the cache/oarc folder but *not* within a mod cache folder.
+            if arc_path.parts[-2] == "oarc":
+                output_path = object_folder_output_path / OBJECT_PATH_TAIL
+                write_bytes_create_dirs(
+                    output_path / (arc_name + ".LZ"),
+                    oarc.build_and_compress_U8(),
+                )
 
         update_progress_value(
             get_progress_value_from_range(57, 7, current_arc_num, len(cache_oarc_paths))
@@ -63,7 +80,7 @@ def patch_object_folder(object_folder_output_path: Path, other_mods: list[str] =
     print_progress_text("Rebuilding ObjectPack")
 
     write_bytes_create_dirs(
-        object_folder_output_path / OBJECTPACK_FILENAME,
+        object_folder_output_path / OBJECT_PATH_TAIL / OBJECTPACK_FILENAME,
         objectpack_arc.build_and_compress_U8(),
     )
 
@@ -103,7 +120,7 @@ def create_shop_rupee_arcs():
         # Don't check other mods for this.
         # If another mod *did* change the rupee model, this method of patching
         # the model to work in shops would almost certainly cause a crash.
-        rupee_arc_path = get_cache_oarc_path("GetRupee.arc", [])
+        rupee_arc_path, _ = get_cache_oarc_path("GetRupee.arc", [])
         if not rupee_arc_path.exists():
             raise Exception(f"ERROR: GetRupee.arc not found in oarc cache.")
 

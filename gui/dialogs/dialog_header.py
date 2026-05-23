@@ -2,7 +2,6 @@ from gui.guithreads import ThreadCancelled
 from util.arguments import get_program_args
 import logging
 
-
 args = get_program_args()
 
 

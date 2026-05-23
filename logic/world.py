@@ -11,6 +11,7 @@ from .requirements import *
 from .item_pool import *
 from .dungeon import *
 from .search import game_beatable, Search, SearchMode
+from .plandomizer import Plandomizer, PlandomizerError
 from util.text import *
 
 from collections import Counter, OrderedDict
@@ -67,8 +68,7 @@ class World:
         self.playthrough_spheres: list[list[Location]] = None  # type: ignore
         self.entrance_spheres: list[list[Entrance]] = None  # type: ignore
 
-        self.plandomizer_locations: dict[Location, Item] = {}
-        self.plandomizer_entrances: dict[Entrance, Entrance] = {}
+        self.plandomizer: Plandomizer = Plandomizer()
 
         # Hint related things
         # goal_locations are locations at the end of required dungeons and Defeat Demise
@@ -332,7 +332,7 @@ class World:
         defeat_demise.has_known_vanilla_item = True
 
     def place_plandomizer_items(self) -> None:
-        for location, item in self.plandomizer_locations.items():
+        for location, item in self.plandomizer.locations.items():
             location.set_current_item(item)
             world = item.world
             # If this is a bottled item, subtract an empty bottle from the pool
@@ -398,6 +398,15 @@ class World:
                     self.item_pool[item] -= 1
                 else:
                     location.set_current_item(self.get_item(GREEN_RUPEE))
+
+            # Since you can't obtain the gossip stone checks when they are turned off
+            # force them to have Green Rupees instead of their vanilla treasures
+            # Doesn't matter currently but treasures may be relevant in the future
+            if (
+                location in disabled_shuffle_locations
+                and "Gossip Stone Treasures" in location.types
+            ):
+                location.set_current_item(self.get_item(GREEN_RUPEE))
 
             # Set Goddess Cubes as having their own item
             if "Goddess Cube" in location.types:
@@ -575,6 +584,8 @@ class World:
                 )
                 dungeons.remove(dungeon)
 
+        # Collect required dungeon locations to make sure we don't accidentally set them as nonprogress
+        required_dungeon_locations = set()
         for _ in range(num_chosen_dungeons, num_required_dungeons):
             # If there are no more dungeons that can be chosen, that means that
             # there were too many dungeons that had to be unrequired to satisfy
@@ -589,16 +600,22 @@ class World:
             dungeon = dungeons.pop()
             dungeon.required = True
             dungeon.starting_entrance.enable()
+            for location in dungeon.locations:
+                required_dungeon_locations.add(location)
             logging.getLogger("").debug(f"Chose {dungeon} as required dungeon")
 
         # Now run a search and set any non-accessible locations as non-progress.
         # This sets the barren dungeon locations as non-progress, but also sets
         # locations only accessible through barren dungeons as non-progress so
-        # that players are never required to enter them at all
+        # that players are never required to enter them at all unless it's to
+        # access another required dungeon with dungeon entrances decoupled.
         search = Search(SearchMode.ACCESSIBLE_LOCATIONS, self.worlds, item_pool)
         search.search_worlds()
         for location in self.location_table.values():
-            if location not in search.visited_locations:
+            if (
+                location not in search.visited_locations
+                and location not in required_dungeon_locations
+            ):
                 location.progression = False
                 logging.getLogger("").debug(
                     f"Location {location} is not progression due to requiring barren dungeon access"
@@ -691,7 +708,7 @@ class World:
                 item = location.current_item
                 if (
                     item == self.get_item(EMPTY_BOTTLE)
-                    and location not in world.plandomizer_locations
+                    and location not in world.plandomizer.locations
                 ):
                     location.remove_current_item()
                     location.set_current_item(self.get_item(bottle_pool.pop()))
@@ -732,6 +749,16 @@ class World:
                         item_price = random.randrange(
                             lower_price_bound, upper_price_bound
                         )
+
+                        # Override price with plando price if applicable
+                        if location in world.plandomizer.shop_prices:
+                            plando_price = world.plandomizer.shop_prices[location]
+                            if plando_price > upper_price_bound:
+                                raise PlandomizerError(
+                                    f"Shop price {plando_price} is too high for {location}. Maximum price is {upper_price_bound}"
+                                )
+                            item_price = plando_price
+
                         world.shop_prices[location.name] = item_price
 
     # Replaces a portion of the non-major item pool with traps.

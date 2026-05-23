@@ -13,6 +13,9 @@ bl additions_jumptable
 .offset 0x7100e10b6c
 mov w8, #7
 bl additions_jumptable
+; Don't overwrite the value in x22, the rust code backs that up instead
+.offset 0x7100e10bd8
+nop
 
 ; Allow saving respawn info when starting a new file
 .offset 0x7100df6a50

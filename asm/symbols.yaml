@@ -157,6 +157,7 @@ main:
     parseBRRES: 0x7100ffd9f0
 
     dPlayer__putItemAway: 0x7100a1c6d4
+    dPlayer__handle_gameover: 0x7100aa6014
     dAcItem__determineFinalItemid: 0x71004ea050
     dAcOlightLine__inUpdate: 0x7100836380
     dAcOmusasabi__stateWaitEnter: 0x7100861db4
@@ -186,6 +187,8 @@ main:
     # Misc
     DAT_7102c01000: 0x7102c01000
     BOOT_PTR: 0x7102bfda58
+
+    dLytSaveMgr__sSavePrompts: 0x710166d9a0
 
     CURRENT_SKY_COLOR: 0x7101838838
     DAYTIME_SKY_COLOR: 0x7101838a40

@@ -1,4 +1,4 @@
-
+# EARTH TEMPLE
 - name: Earth Temple First Room
   dungeon: Earth Temple
   dungeon_starting_area: true
@@ -6,89 +6,81 @@
                  # Lower the drawbridge and Dislodge the boulder
     ET Hub Room: "(Beetle or Bow or (Long_Range_Skyward_Strike and logic_et_keese_skyward_strike)) and 
                   (Slingshot or Clawshots or Bow or Long_Range_Skyward_Strike or (Can_Defeat_Lizalfos and Beetle))"
-    Near Temple Entrance: Nothing
+    Near Temple Entrance: Nothing # Walk up the stairs and exit the dungeon.
   locations:
-    Earth Temple - Bonk Front Left Elephant Pillar: Nothing
-    Earth Temple - Bonk Front Right Elephant Pillar: Nothing
-    Earth Temple - Bonk Back Left Elephant Pillar: Nothing
-    Earth Temple - Bonk Back Right Elephant Pillar: Nothing
-    Earth Temple - Chest after Air Vent in First Room: Digging_Mitts
+    Earth Temple - Bonk Front Left Elephant Pillar: Nothing # Bonk into the pillar.
+    Earth Temple - Bonk Front Right Elephant Pillar: Nothing # Bonk into the pillar.
+    Earth Temple - Bonk Back Left Elephant Pillar: Nothing # Bonk into the pillar.
+    Earth Temple - Bonk Back Right Elephant Pillar: Nothing # Bonk into the pillar.
+    Earth Temple - Chest after Air Vent in First Room: Digging_Mitts and Sailcloth
     Earth Temple - Rupee above First Drawbridge: Beetle
 
-      
 - name: ET Hub Room
   dungeon: Earth Temple
   events:
-    ET Push Left Peg: Nothing
+    ET Push Left Peg: Nothing # Roll the dislodged boulder into the peg.
   exits:
-    ET Past Lava Section: ((Bomb_Bag or Hook_Beetle) and Beetle) or shortcut_earth_temple_bridge # Can go under bridge
-    ET East Room: Nothing # Use bomb flowers to blow up rock
+    ET Past Lava Section: ((Bomb_Bag or Hook_Beetle) and Beetle) or shortcut_earth_temple_bridge # Can go under bridge.
+    ET East Room: Nothing # Use bomb flowers to blow up rock.
     ET West Room: Bomb_Bag or Hook_Beetle
     ET Room with Slopes: shortcut_earth_temple_bridge or ('ET_Push_Left_Peg' and 'ET_Push_Right_Peg')
   locations:
     Earth Temple - Rupee above First Drawbridge: Beetle
-    Earth Temple - Chest behind Southwest Bombable Rock: Nothing # Use nearby bomb flowers
-    Earth Temple - Northwest Chest in Main Room: Nothing
+    Earth Temple - Chest behind Southwest Bombable Rock: Nothing # Use nearby bomb flowers.
+    Earth Temple - Northwest Chest in Main Room: Nothing # Roll the disloded boulder over to the chest.
     Earth Temple - Ledd's Gift: Can_Defeat_Lizalfos
-    Earth Temple - Rupee in Dragon's Mouth in Lava Tunnel: Beetle and (Bomb_Bag or Hook_Beetle) # Can use tough beetle and go round in reverse
-
+    Earth Temple - Rupee in Dragon's Mouth in Lava Tunnel: Beetle and (Bomb_Bag or Hook_Beetle) # Can use tough beetle and go round in reverse.
 
 - name: ET Past Lava Section
   dungeon: Earth Temple
   events:
-    ET Push Right Peg: Nothing
+    ET Push Right Peg: Nothing # Roll the dislodged boulder into the peg.
   exits:
-    ET Hub Room: Nothing
+    ET Hub Room: Nothing # Roll the dislodged boulder under the raised bridge (or all the way back through the lava section).
   locations:
-    Earth Temple - Northeast Chest Guarded by Lizalfos: Nothing
-
+    Earth Temple - Northeast Chest Guarded by Lizalfos: Nothing # Roll the dislodged boulder over to the ledge with the chest.
 
 - name: ET East Room
   dungeon: Earth Temple
   exits:
-    ET Hub Room: Nothing
+    ET Hub Room: Nothing # Open the door.
     # It'd be annoying to put in logic, but you need boulder access to reach the central part.
     # If the boulder doesn't spawn where you can use it, you're locked.
     # Releasing the boulder from here doesn't help as it's too far away.
   locations:
     Earth Temple - Chest after Double Lizalfos Fight: Can_Defeat_Lizalfos
 
-
 - name: ET West Room
   dungeon: Earth Temple
   exits:
-    ET Hub Room: Bomb_Bag or Hook_Beetle # If you're somehow here first, you still need to blow up the rock
+    ET Hub Room: Bomb_Bag or Hook_Beetle # If you're somehow here first, you still need to blow up the rock.
   locations:
-    Earth Temple - Chest in West Room: Nothing
-    Earth Temple - Bonk Left Pillar in West Room: Nothing
-    Earth Temple - Bonk Right Pillar in West Room: Nothing
-
+    Earth Temple - Chest in West Room: Nothing # Jump over the platforms and open the chest.
+    Earth Temple - Bonk Left Pillar in West Room: Nothing # Jump over the platforms and bonk into the pillar.
+    Earth Temple - Bonk Right Pillar in West Room: Nothing # Jump over the platforms and bonk into the pillar.
 
 - name: ET Room with Slopes
   dungeon: Earth Temple
   exits:
     ET Front of Boss Door: (Digging_Mitts and Bomb_Bag) or Hook_Beetle or logic_et_slope_stuttersprint
-    ET Hub Room: Nothing
-      
+    ET Hub Room: Nothing # Open the door at the bottom of the slopes.
 
 - name: ET Front of Boss Door
   dungeon: Earth Temple
   exits:
-    ET Room with Slopes: Nothing
+    ET Room with Slopes: Nothing # Slide down the slopes.
     Earth Temple Boss Room: Earth_Temple_Boss_Key or boss_keys == removed
   locations:
-    Earth Temple - Chest before Boulder Chase: Nothing
-    Earth Temple - Stamina Fruit before Boulder Chase 1: Nothing
-    Earth Temple - Stamina Fruit before Boulder Chase 2: Nothing
-    Earth Temple - Stamina Fruit before Boulder Chase 3: Nothing
-    Earth Temple - Stamina Fruit before Boulder Chase 4: Nothing
-
+    Earth Temple - Chest before Boulder Chase: Nothing # Run up the slope to the chest and escape with your life.
+    Earth Temple - Stamina Fruit before Boulder Chase 1: Nothing # Run up the slope to the chest.
+    Earth Temple - Stamina Fruit before Boulder Chase 2: Nothing # Run up the slope to the chest.
+    Earth Temple - Stamina Fruit before Boulder Chase 3: Nothing # Run up the slope to the chest.
+    Earth Temple - Stamina Fruit before Boulder Chase 4: Nothing # Run up the slope to the chest.
 
 - name: Earth Temple Boss Room
   exits:
-    ET Front of Boss Door: Can_Defeat_Scaldera # Needs asm so you can leave without defeating the boss
-    Earth Temple Boss Arena: Nothing
-
+    ET Front of Boss Door: Can_Defeat_Scaldera # Needs asm so you can leave without defeating the boss.
+    Earth Temple Boss Arena: Nothing # Run off the ledge to the arena.
 
 - name: Earth Temple Boss Arena
   exits:
@@ -96,9 +88,8 @@
   locations:
     Earth Temple - Defeat Boss: Can_Defeat_Scaldera
 
-
 - name: Earth Spring
   exits:
-    Earth Temple Boss Arena: Nothing
+    Earth Temple Boss Arena: Nothing # Open the door back into the boss room.
   locations:
     Earth Spring - Strike Crest: Goddess_Sword

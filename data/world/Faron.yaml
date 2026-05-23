@@ -2,35 +2,36 @@
 - name: Sealed Grounds
   hint_region: Sealed Grounds
   exits:
-    Sealed Grounds Statue: Nothing
-    Sealed Grounds Spiral: Nothing
+    Sealed Grounds Statue: Nothing # Interact with the statue.
+    Sealed Grounds Spiral: Nothing # Run down off the tracks.
     Sealed Grounds Upper Ledge: shortcut_spiral_log_to_btt or 'Push_Down_Sealed_Grounds_Log'
-    Sealed Grounds Groosenator: Nothing
+    Sealed Grounds Groosenator: Nothing # Run towards Groose.
   locations:
-    Sealed Grounds - Bonk Wall between Pillars near Bird Statue: Nothing
+    Sealed Grounds - Bonk Wall between Pillars near Bird Statue: Nothing # Bonk the wall.
 
 - name: Sealed Grounds Groosenator
-  hint_region: None # Don't allow sealed grounds to be the parent area of any areas reached with the groosenator
+  hint_region: None # Don't allow sealed grounds to be the parent area of any areas reached with the groosenator.
   exits:
-    Flooded Faron Woods: Nothing
-    Fun Fun Island: unlock_all_groosenator_destinations
-    Bug Heaven: unlock_all_groosenator_destinations
-    Bamboo Island: unlock_all_groosenator_destinations
-    Upper Skyloft: unlock_all_groosenator_destinations
-    Lanayru Gorge: unlock_all_groosenator_destinations
-    Shipyard Dock: unlock_all_groosenator_destinations
-    Outside Thrill Digger Cave: unlock_all_groosenator_destinations
+    Flooded Faron Woods: Nothing # Fling to FFW.
+    Fun Fun Island: Sailcloth and unlock_all_groosenator_destinations
+    Bug Heaven: Sailcloth and unlock_all_groosenator_destinations
+    Bamboo Island: Sailcloth and unlock_all_groosenator_destinations
+    Upper Skyloft: Sailcloth and unlock_all_groosenator_destinations
+    Lanayru Gorge: Sailcloth and unlock_all_groosenator_destinations
+    Shipyard Dock: Sailcloth and unlock_all_groosenator_destinations
+    Outside Thrill Digger Cave: Sailcloth and unlock_all_groosenator_destinations
 
 - name: Sealed Grounds Spiral
   hint_region: Sealed Grounds
   exits:
-    Sealed Temple: Nothing
-    Sealed Grounds: Nothing
+    Sealed Temple: Nothing # Open the doors
+    Sealed Grounds: Nothing # Run up the spiral.
   locations:
-    Sealed Grounds - Bonk Wall Drawing of Hylia Raising Sword and Harp: Nothing
+    Sealed Grounds - Bonk Wall Drawing of Hylia Raising Sword and Harp: Nothing # Bonk into the wall at the bottom of the spiral.
     Sealed Grounds - Slingshot Light of Ultimate Power in Wall Drawing of Worshippers: Slingshot
     Sealed Grounds - Slingshot Open Mouth in Wall Drawing of Beast: Slingshot
-    Sealed Grounds - Bonk Rocks below Sealed Temple Entrance: Nothing
+    Sealed Grounds - Bonk Rocks below Sealed Temple Entrance: Nothing # Bonk into the wall one level below the entrance to the Sealed Temple.
+    # Run around the spiral and collect the 24 items.
     Sealed Grounds - Spiral Stamina Fruit 1: Nothing
     Sealed Grounds - Spiral Stamina Fruit 2: Nothing
     Sealed Grounds - Spiral Stamina Fruit 3: Nothing
@@ -59,21 +60,21 @@
 - name: Sealed Grounds Upper Ledge
   hint_region: Sealed Grounds
   events:
-    Push Down Sealed Grounds Log: Nothing
+    Push Down Sealed Grounds Log: Nothing # Push the log.
   exits:
-    Sealed Grounds: Nothing
-    Behind the Temple: Nothing
+    Sealed Grounds: Nothing # Drop down.
+    Behind the Temple: Nothing # Run into the loadzone.
 
 - name: Sealed Temple
   events:
     Raise Gate of Time: Goddesss_Harp and Ballad_of_the_Goddess
     Open Gate of Time: "'Raise_Gate_of_Time' and Gate_of_Time_Sword_Requirement"
   exits:
-    Sealed Grounds Spiral: Nothing
-    Behind the Temple: Nothing
+    Sealed Grounds Spiral: Nothing # Exit out of the double doors to the south of the temple.
+    Behind the Temple: Nothing # Exit out of the double doors to the east of the temple.
     Temple of Hylia: "'Open_Gate_of_Time'"
   locations:
-    Sealed Temple - Chest near The Old One: Nothing
+    Sealed Temple - Chest near The Old One: Nothing # Open the chest to the east of Impa.
     Sealed Temple - Song from The Old One: Goddesss_Harp
     Sealed Temple - Collect Fruit from the Tree of Life: "'Plant_Life_Tree_Seedling'"
     Sealed Temple - Slingshot above Doors to Sealed Grounds Spiral: Slingshot
@@ -86,163 +87,166 @@
 
 - name: Temple of Hylia
   events:
-    Plant Life Tree Seedling: Life_Tree_Seedling
+    Plant Life Tree Seedling: Life_Tree_Seedling and Digging_Mitts
   exits:
-    Sealed Temple: Nothing
+    Sealed Temple: Nothing # Go through the Gate of Time.
   locations:
-    Temple of Hylia - Zelda's Blessing: Nothing
+    Temple of Hylia - Zelda's Blessing: Nothing # Talk to Impa (ironically ^^').
     Hylia's Realm - Defeat Demise: Goddess_Sword and Complete_Triforce and Can_Obtain_a_Shield
 
 # - name: Behind the Temple North Door
 #   exits:
-#     Sealed Temple: Nothing
-#     Behind the Temple: Nothing
+#     Sealed Temple: Nothing # Go through the north door.
+#     Behind the Temple: Nothing # Go through the north door.
 
 # - name: Behind the Temple South Door
 #   exits:
-#     Sealed Temple: Nothing
-#     Behind the Temple: Nothing
+#     Sealed Temple: Nothing # Go through the south door.
+#     Behind the Temple: Nothing # Go through the south door.
 
 - name: Behind the Temple
   hint_region: Sealed Grounds
   exits:
-    Behind the Temple Statue: Nothing
-    Sealed Temple: Nothing
-    Faron Woods Entry: Nothing
-    Sealed Grounds Upper Ledge: Nothing
+    Behind the Temple Statue: Nothing # Interact with the statue.
+    Sealed Temple: Nothing # Open the double doors.
+    Faron Woods Entry: Nothing # Run up the pushed log into Faron Woods.
+    Sealed Grounds Upper Ledge: Nothing # Climb up the vines towards the open loadzone.
   locations:
     Sealed Grounds - Slingshot above Doors Behind the Temple: Slingshot
     Sealed Grounds - Gorko's Goddess Wall Reward: Goddesss_Harp and Ballad_of_the_Goddess and Goddess_Sword
-    Sealed Grounds - Gossip Stone Behind the Temple: Nothing
+    Sealed Grounds - Gossip Stone Treasure Behind the Temple: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Sealed Grounds - Gossip Stone Hint Behind the Temple: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
     Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone: Gust_Bellows
     Sealed Grounds - Slingshot Behind the Temple Gates Southwest Side: Slingshot
     Sealed Grounds - Slingshot Behind the Temple Gates Northeast Side: Slingshot
-    Sealed Grounds - Bonk Large West Rock before Faron Woods: Nothing
-    Sealed Grounds - Bonk Small East Rock before Faron Woods: Nothing
+    Sealed Grounds - Bonk Large West Rock before Faron Woods: Nothing # Bonk into the rock.
+    Sealed Grounds - Bonk Small East Rock before Faron Woods: Nothing # Bonk into the rock.
+
 
 # FARON WOODS
-
 - name: Faron Woods Entry
   hint_region: Faron Woods
   exits:
-    Faron Woods Entry Statue: Nothing
-    Faron Woods: Can_Cut_Trees_And_Logs or Clawshots or shortcut_logs_near_machi or 'Push_Down_Faron_Woods_Entry_Log' # Either cut trees or clawshot vines
-    Behind the Temple: Nothing
+    Faron Woods Entry Statue: Nothing # Interact with the statue.
+    Faron Woods: Can_Cut_Trees_And_Logs or Clawshots or shortcut_logs_near_machi or 'Push_Down_Faron_Woods_Entry_Log' # Either cut trees or clawshot vines.
+    Behind the Temple: Nothing # Run towards the Sealed Temple.
   locations:
     Faron Woods - Stamina Fruit on Vines below First Log: Beetle
 
 - name: Faron Woods
   hint_region: Faron Woods
   events:
-    Push Down Faron Woods Entry Log: Nothing
-    #                       Erla                   Lopsa
+    Push Down Faron Woods Entry Log: Nothing # Run around the path, through the mushroom grove, and push down the log.
+    #                 Erla and              Lopsa.
     All Kikwis Saved: (Sword or Beetle) and Can_Defeat_Bokoblins
     # Early Lake Floria only works if you run to outside Ancient Cistern. You can't use it to get to the vanilla entrance.
     Lake Floria Gates Opened: open_lake_floria == open or ('Talk_to_Yerbal' and (Goddess_Sword or open_lake_floria == yerbal))
-    #                             Free vine to Floria Gates       Remove Bamboo
+    #                             Free vine to Floria Gates or  Remove Bamboo.
     Can Get To Lake Floria Gates: Beetle or Clawshots or Bow or Sword or Bomb_Bag
-    Amber Relic Farming: Nothing
+    Amber Relic Farming: Nothing # Reload the area with any of the accessible loadzones to get relics to spawn under various logs.
     Can Collect Water: Bottle
+    Can Collect Mushroom Spores: Bottle
   exits:
-    In the Woods Statue: Nothing
-    Viewing Platform Statue: Nothing
+    In the Woods Statue: Nothing # Interact with the statue.
+    Viewing Platform Statue: Nothing # Interact with the statue.
+    Faron Woods Entry: Nothing # Run back round to the start of Faron Woods.
     Lake Floria: ('Can_Get_To_Lake_Floria_Gates') and ('Lake_Floria_Gates_Opened')
-    Behind the Crawlspace and Rope: Bomb_Bag # Only after getting Kikwi Elder's Reward
+    Behind the Crawlspace and Rope: Bomb_Bag # Only after getting Kikwi Elder's Reward.
     Farore's Silent Realm: Goddesss_Harp and Farores_Courage and Progressive_Sword
     Great Tree Interior Underwater: Water_Dragons_Scale
     Great Tree Exterior Platforms: Clawshots
     Great Tree Clawshot Target Branch: Clawshots
     Faron Woods Ledge to Deep Woods: Distance_Activator
     Faron Woods Floria Shortcut Ledge: ('Can_Get_To_Lake_Floria_Gates' and Sword and logic_early_lake_floria) or shortcut_faron_log_to_floria or 'Push_Down_Floria_Shortcut_Log'
-    Faron Woods Entry: Nothing
   locations:
-    Faron Woods - Rupee on Hollow Tree Root: Nothing
+    Faron Woods - Rupee on Hollow Tree Root: Nothing # Run towards the root.
     Faron Woods - Rupee on Hollow Tree Branch: Beetle
     Faron Woods - Rupee on Platform near Floria Door: Beetle
     Faron Woods - Kikwi Elder's Reward: "'All_Kikwis_Saved'"
-    Faron Woods - Item on Great Tree after Tightrope: Nothing
+    Faron Woods - Item on Great Tree after Tightrope: Nothing # Climb the large root and walk the tightrope.
     Faron Woods - Item behind Lower Bombable Rock: Bomb_Bag
     Faron Woods - Chest behind Upper Bombable Rock: Bomb_Bag
-    Faron Woods - Stamina Fruit on Vines below First Log: Nothing
-    Faron Woods - Stamina Fruit after Kikwi in Clearing: Nothing
-    Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba: Nothing
-    Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock: Nothing
+    Faron Woods - Stamina Fruit on Vines below First Log: Nothing # Push the log down and climb the vines.
+    Faron Woods - Stamina Fruit after Kikwi in Clearing: Nothing # Run back towards Machi.
+    Faron Woods - Stamina Fruit above Slope Guarded by Deku Baba: Nothing # Run up the slope.
+    Faron Woods - Stamina Fruit on Vines near Upper Bombable Rock: Nothing # Climb up to Erla.
     Faron Woods - Stamina Fruit on Vines on Great Tree: Clawshots or Quick_Beetle
-    Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing: Nothing
+    Faron Woods - Bonk Bamboo Blockade before Kikwi in Clearing: Nothing # Bonk into the bamboo before destroying it (can be reloaded).
     Faron Woods - Slingshot Archway after Kikwi in Clearing: Slingshot
     Faron Woods - Slingshot Archway before Mushroom Grove: Slingshot
-    Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue: Nothing
-    Faron Woods - Bonk Tree next to Shortcut Rope to Floria Gates: Nothing
-    Faron Woods - Bonk Bamboo Blockade before Floria Gates: Nothing
+    Faron Woods - Bonk Yellow Mushroom near In the Woods Bird Statue: Nothing # Bonk into the mushroom.
+    Faron Woods - Bonk Tree next to Shortcut Rope to Floria Gates: Nothing # Bonk into the tree.
+    Faron Woods - Bonk Bamboo Blockade before Floria Gates: Nothing # Bonk into the bamboo before destroying it (can be reloaded).
     Faron Woods - Slingshot Floria Gates Archway: Slingshot and 'Can_Get_To_Lake_Floria_Gates'
-    Faron Woods - Bonk Raised Tree near Crooked Archway: Nothing
+    Faron Woods - Bonk Raised Tree near Crooked Archway: Nothing # Bonk into the tree.
     Faron Woods - Slingshot Main Viewing Platform Archway: Slingshot
     Faron Woods - Blow Farore's Symbol on Viewing Platform: Gust_Bellows
     Faron Woods - Bonk Archway before Deep Woods: Distance_Activator
-    Faron Woods - Bonk Tall Blue Northern Mushroom: Nothing
+    Faron Woods - Bonk Tall Blue Northern Mushroom: Nothing # Bonk into the mushroom.
     Faron Woods - Slingshot Northwest Great Tree Trunk: Slingshot
-    Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1: Nothing
-    Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 2: Nothing
+    Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 1: Nothing # Bonk into the tree.
+    Faron Woods - Bonk Tree after Shortcut from Entry Bird Statue Item 2: Nothing # Bonk into the tree.
 
 - name: Faron Woods Floria Shortcut Ledge
   hint_region: Faron Woods
   events:
-    Push Down Floria Shortcut Log: Nothing
+    Push Down Floria Shortcut Log: Nothing # Push down the log.
   exits:
-    Faron Woods: Nothing
-    Floria Waterfall: Nothing
+    Faron Woods: Nothing # Drop down the ledge.
+    Floria Waterfall: Nothing # Run back through the loadzone.
 
 - name: Faron Woods Ledge to Deep Woods
   hint_region: Faron Woods
   exits:
-    Faron Woods: Nothing
-    Deep Woods Entry: Nothing
+    Faron Woods: Nothing # Drop down the ledge.
+    Deep Woods Entry: Nothing # Run into the loadzone.
 
 - name: Behind the Crawlspace and Rope
   hint_region: Faron Woods
   events:
-    Push Down Log Near Oolo: Nothing
+    Push Down Log Near Oolo: Nothing # Swing on the rope and push down the log.
     Retrieve Oolo: Scrapper and 'Start_Owlans_Quest'
   exits:
-    Faron Woods: Nothing
+    Faron Woods: Nothing # Swing on the rope to get onto the ledge and drop down the other side.
 
 - name: Great Tree West Branch
   hint_region: Faron Woods
   exits:
-    Faron Woods: Nothing
+    Faron Woods: Nothing # Drop down off the branch.
   locations:
     Faron Woods - Goddess Cube on West Great Tree near Exit: Goddess_Sword
 
 - name: Great Tree Clawshot Target Branch
   hint_region: Faron Woods
   exits:
-    Faron Woods: Nothing
+    Faron Woods: Nothing # Drop down off the branch.
   locations:
     Faron Woods - Goddess Cube on East Great Tree with Clawshots Target: Goddess_Sword
 
 - name: Great Tree Rope Branch
   hint_region: Faron Woods
   exits:
-    Faron Woods: Nothing
+    Faron Woods: Nothing # Drop down off the branch.
   locations:
     Faron Woods - Blow Wooden Spiral near Goddess Cube near Rope: Gust_Bellows
     Faron Woods - Goddess Cube on East Great Tree with Rope: Goddess_Sword
 
+
 # GREAT TREE
-# This gets it's own hint region, otherwise the interior
-# chest would be part of 4 different hint regions which
-# would be dumb
+# This gets it's own hint region, otherwise the interior chest would be part
+# of 4 different hint regions which would be dumb.
 - name: Great Tree Interior Underwater
   hint_region: Great Tree
   exits:
-    Faron Woods: Nothing
+    Faron Woods: Nothing # Swim out to Faron Woods.
     Great Tree Interior Lower: Water_Dragons_Scale
 
-# Bit with the swinging platforms and the shallow water
+# Bit with the swinging platforms and the shallow water.
 - name: Great Tree Interior Lower
   hint_region: Great Tree
   events:
     Can Collect Water: Bottle
+    Can Collect Mushroom Spores: Bottle
   exits:
     Great Tree Interior Underwater: Water_Dragons_Scale
     Great Tree Interior Middle: Gust_Bellows
@@ -250,93 +254,103 @@
     Inside the Great Tree - Blow Small Yellow Mushroom after Vines: Gust_Bellows
     Inside the Great Tree - Blow Large Yellow Mushroom after Vines: Gust_Bellows
 
-- name: Great Tree Interior Middle # area including the platforms and chest
+- name: Great Tree Interior Middle # area including the platforms and chest.
   hint_region: Great Tree
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
-    Great Tree Interior Lower: Nothing
-    Great Tree Exterior Platforms: Nothing
+    Great Tree Interior Lower: Nothing # Drop down into the water.
+    Great Tree Exterior Platforms: Nothing # Run out the loadzone.
   locations:
     Inside the Great Tree - Blow Red Mushroom after Swinging Platforms West: Gust_Bellows
     Inside the Great Tree - Blow Tall Blue Mushroom after Swinging Platforms South: Gust_Bellows
-    # It's quite precise to wait for this baba like the others and very frustrating to fail
-    Inside the Great Tree - Chest Guarded by Deku Baba: Gust_Bellows and (Can_Defeat_Baba or Slingshot) # Slingshot to stun
+    # It's quite precise to wait for this baba like the others and very frustrating to fail.
+    Inside the Great Tree - Chest Guarded by Deku Baba: Gust_Bellows and (Can_Defeat_Baba or Slingshot) # Slingshot to stun.
 
 - name: Great Tree Exterior Platforms
   hint_region: Faron Woods
   exits:
-    Great Tree Interior Middle: Nothing
-    Great Tree Interior Upper: Nothing
-    Great Tree West Branch: Nothing
-    Faron Woods: Nothing
+    Great Tree Interior Middle: Nothing # Run into the Great Tree.
+    Great Tree Interior Upper: Nothing # Climb the vines and run into the Great Tree.
+    Great Tree West Branch: Nothing # Drop down using the platforms around the Great Tree (no damage or Sailcloth needed).
+    Faron Woods: Nothing # Drop down using the platforms around the Great Tree (no damage or Sailcloth needed).
   locations:
-    Faron Woods - Stamina Fruit on Vines on Great Tree: Nothing
+    Faron Woods - Stamina Fruit on Vines on Great Tree: Nothing # Climb the vines.
 
-- name: Great Tree Interior Upper # top with the moblin
+- name: Great Tree Interior Upper # top with the moblin.
   hint_region: Great Tree
   exits:
     Great Tree Interior Lower: Can_Defeat_Moblins
-    Great Tree Exterior Top: Nothing
-    Great Tree Exterior Platforms: Nothing
+    Great Tree Exterior Top: Nothing # Run past the moblin.
+    Great Tree Exterior Platforms: Nothing # Run away from the moblin and through the loadzone.
   locations:
     Inside the Great Tree - Blow Tree Spiral on Highest Pathway: Gust_Bellows
 
 - name: Great Tree Exterior Top
   hint_region: Faron Woods
   events:
-    Talk to Yerbal: Water_Dragons_Scale and (Slingshot or Beetle) # Scale needed for Yerbal to spawn
+    Talk to Yerbal: Water_Dragons_Scale and (Slingshot or Beetle) # Scale needed for Yerbal to spawn.
   exits:
-    The Great Tree Statue: Nothing
-    Great Tree Interior Upper: Nothing
-    Great Tree Exterior Platforms: Nothing
-    Great Tree Rope Branch: Nothing
-    Great Tree Clawshot Target Branch: Nothing
+    The Great Tree Statue: Nothing # Interact with the statue.
+    Great Tree Interior Upper: Nothing # Run into the Great Tree.
+    Great Tree Exterior Platforms: Can_Survive_Short_Fall or logic_precise_falls # Slow walking off the ledge doesn't result in fall damage.
+    Great Tree Rope Branch: Can_Survive_Short_Fall
+    Great Tree Clawshot Target Branch: Can_Survive_Short_Fall
   locations:
     Faron Woods - Rupee on Great Tree North Branch: Beetle
     Faron Woods - Rupee on Great Tree West Branch: Beetle
+
 
 # DEEP WOODS
 - name: Deep Woods Entry
   hint_region: Faron Woods
   events:
-    Hornet Larvae Farming: Nothing # Bonk the tree
+    Hornet Larvae Farming: Nothing # Bonk the tree.
   exits:
     Deep Woods: Distance_Activator or Goddess_Sword or shortcut_deep_woods_log_before_tightrope or 'Push_Down_Deep_Woods_Shortcut_Logs' or (Bomb_Bag and logic_bomb_throws)
-    Faron Woods Ledge to Deep Woods: Nothing
+    Faron Woods Ledge to Deep Woods: Nothing # Run towards Faron Woods.
   locations:
     Deep Woods - Blow Flowers at Entrance: Gust_Bellows
 
+# This is past the tightrope with the Deku Hornets.
 - name: Deep Woods
   hint_region: Faron Woods
   events:
-    Push Down Deep Woods Shortcut Logs: Nothing
+    Push Down Deep Woods Shortcut Logs: Nothing # Run up the natural stairs near the tightrope and push the log down.
   exits:
-    Deep Woods Statue: Nothing
-    Forest Temple Statue: Nothing
+    Deep Woods Statue: Nothing # Interact with the statue.
+    Forest Temple Statue: Nothing # Interact with the statue.
+    Deep Woods Entry: Nothing # Run up the natural stairs near the tightrope and drop down the other side.
     Skyview Entry: Can_Hit_High_Skyview_Switches
-    Deep Woods Entry: Nothing
   locations:
-    Deep Woods - Stamina Fruit on Hanging Ledge: Nothing
-    Deep Woods - Bonk Tree with Rope: Nothing
-    Deep Woods - Chest on High Ledge: Nothing
-    Deep Woods - Bonk Tree near Gossip Stone Item 1: Nothing
-    Deep Woods - Bonk Tree near Gossip Stone Item 2: Nothing
-    Deep Woods - Bonk East Pillar before Temple: Nothing
-    Deep Woods - Bonk Tree East of Temple Item 1: Nothing
-    Deep Woods - Bonk Tree East of Temple Item 2: Nothing
+    # Dodging the enemies here can be a little rough without any way to deal with them.
+    # Adding logic to deal with them may be appropriate in the future.
+    Deep Woods - Stamina Fruit on Hanging Ledge: Nothing # Run around to the ledge and collect the item.
+    Deep Woods - Bonk Tree with Rope: Nothing # Run around, climb on the thin ledge, walk the tightrope and bonk into the tree.
+    Deep Woods - Chest on High Ledge: Nothing # Run around, climb on the thin ledge, walk the tightrope and swing on the rope.
+    Deep Woods - Bonk Tree near Gossip Stone Item 1: Nothing # Bonk into the tree.
+    Deep Woods - Bonk Tree near Gossip Stone Item 2: Nothing # Bonk into the tree.
+    Deep Woods - Bonk East Pillar before Temple: Nothing # Bonk into the pillar.
+    Deep Woods - Bonk Tree East of Temple Item 1: Nothing # Bonk into the tree.
+    Deep Woods - Bonk Tree East of Temple Item 2: Nothing # Bonk into the tree.
     Deep Woods - Blow Mixed Flowers above East Temple Stairs: Gust_Bellows
-    Deep Woods - Bonk Fence furthest West of Temple: Nothing
+    Deep Woods - Bonk Fence furthest West of Temple: Nothing # Bonk into the fence.
     Deep Woods - Slingshot Left Temple Door Frame: Slingshot
     Deep Woods - Slingshot Right Temple Door Frame: Slingshot
-    Deep Woods - Gossip Stone before Temple: Nothing
+    Deep Woods - Gossip Stone Treasure before Temple: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Deep Woods - Gossip Stone Hint before Temple: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
     Deep Woods - Goddess Cube Near Goron: Goddess_Sword
     Deep Woods - Goddess Cube in front of Temple: Goddess_Sword
     Deep Woods - Goddess Cube on top of Temple: Goddess_Sword and Clawshots
 
+
+# SILENT REALM
 - name: Farore's Silent Realm
   hint_region: Farore's Silent Realm
   exits:
-    Faron Woods: Nothing
+    Faron Woods: Nothing # Exit out of the trial gate.
   locations:
+    # No requirements, just run around and collect the items / tears.
     Farore's Silent Realm - Collect all Tears Reward: Nothing
     Farore's Silent Realm - Stamina Fruit on Vine Wall 1: Nothing
     Farore's Silent Realm - Stamina Fruit on Vine Wall 2: Nothing
@@ -351,21 +365,21 @@
     Farore's Silent Realm - Relic 9: Nothing
     Farore's Silent Realm - Relic 10: Nothing
 
+
 # FLOODED FARON WOODS
 - name: Flooded Faron Woods
   hint_region: Flooded Faron Woods
   events:
     Retrieve Oolo: Scrapper and 'Start_Owlans_Quest'
-    Can Watch Completed Tadtones Cutscene: Nothing
+    Can Watch Completed Tadtones Cutscene: Nothing # Exist in FFW with all the tadtones.
     Can Collect Water: Bottle
-    # Leads to some obscure logic when paired with the Groosenator
-    #
+    # Leads to some obscure logic when paired with the Groosenator.
     Unlock In the Woods Statue: logic_faron_woods_with_groosenator and Water_Dragons_Scale
     Unlock Viewing Platform Statue: logic_faron_woods_with_groosenator and Water_Dragons_Scale
     Unlock Faron Woods Entry Statue: logic_faron_woods_with_groosenator and Water_Dragons_Scale
     Unlock The Great Tree Statue: logic_faron_woods_with_groosenator and (Clawshots or Water_Dragons_Scale)
   exits:
-    Sealed Grounds: Nothing # Talk to Bucha
+    Sealed Grounds: Nothing # Talk to Bucha to leave.
     Flooded Great Tree Upper: Clawshots
     Flooded Great Tree Lower: Water_Dragons_Scale
   locations:
@@ -390,7 +404,7 @@
 - name: Flooded Great Tree Upper
   hint_region: Flooded Faron Woods
   exits:
-    Flooded Faron Woods: Nothing
+    Flooded Faron Woods: Nothing # Run out to FFW.
     Flooded Great Tree Lower: Water_Dragons_Scale
   locations:
     Flooded Faron Woods - Water Dragon's Reward: count(17, Group_of_Tadtones) and 'Can_Watch_Completed_Tadtones_Cutscene'
@@ -404,12 +418,13 @@
     Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 1: Water_Dragons_Scale
     Inside the Flooded Great Tree - Rupee behind Breakable Rocks near Dragon's Tail 2: Water_Dragons_Scale
 
+
 # LAKE FLORIA
 - name: Lake Floria
   hint_region: Lake Floria
   exits:
-    Lake Floria Emerged Area: Water_Dragons_Scale # blow up rock with froak
-    Faron Woods: Impossible # To satisfy entrance rando
+    Lake Floria Emerged Area: Water_Dragons_Scale # Blow up rock with froak.
+    Faron Woods: Impossible # To satisfy entrance rando.
   locations:
     Lake Floria - Rupee behind Southwest Boulder: Water_Dragons_Scale
     Lake Floria - Left Rupee behind Northwest Boulder: Water_Dragons_Scale
@@ -419,11 +434,11 @@
 - name: Lake Floria Emerged Area
   hint_region: Lake Floria
   exits:
-    Lake Floria Statue: Nothing
+    Lake Floria Statue: Nothing # Interact with the statue.
     Lake Floria: can_access(Lake Floria) and Water_Dragons_Scale
     Lake Floria After Emerged Area: Water_Dragons_Scale
   locations:
-    Lake Floria - Chest near Bird Statue: Nothing
+    Lake Floria - Chest near Bird Statue: Nothing # Run behind the statue and open the chest.
     Lake Floria - Goddess Cube near Bird Statue: Goddess_Sword
 
 - name: Lake Floria After Emerged Area
@@ -434,112 +449,116 @@
 
 - name: Farore's Lair
   events:
-    Talk to Farore: Nothing
+    Talk to Farore: Nothing # Swim into the centre of the room and talk to the dragon.
     Can Collect Water: Bottle
   exits:
-    Floria Waterfall: Nothing
+    Floria Waterfall: Nothing # Swim towards Ancient Cistern, climb onto the ledge, and leave the lair.
     Lake Floria After Emerged Area: Water_Dragons_Scale
   locations:
     Lake Floria - Dragon Lair South Chest: Water_Dragons_Scale
-    Lake Floria - Dragon Lair East Chest: Nothing
+    Lake Floria - Dragon Lair East Chest: Nothing # Swim towards Ancient Cistern, climb onto the ledge, and run around to the chest.
 
 - name: Floria Waterfall
   hint_region: Lake Floria
   events:
     Can Collect Water: Bottle
   exits:
-    Floria Waterfall Statue: Nothing
+    Floria Waterfall Statue: Nothing # Interact with the statue.
     Floria Waterfall Temple Ledge: Water_Dragons_Scale
-    Faron Woods Floria Shortcut Ledge: Nothing
-    Farore's Lair: Nothing
+    Faron Woods Floria Shortcut Ledge: Nothing # Run towards Faron Woods.
+    Farore's Lair: Nothing # Run into Lake Floria.
   locations:
-    Floria Waterfall - Gossip Stone near Bird Statue: Nothing
+    Floria Waterfall - Gossip Stone Treasure near Bird Statue: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Floria Waterfall - Gossip Stone Hint near Bird Statue: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
     Floria Waterfall - Rupee on High Ledge: Beetle
     Floria Waterfall - North Rupee in underwater Grass: Water_Dragons_Scale
     Floria Waterfall - South Rupee in underwater Grass: Water_Dragons_Scale
-    Floria Waterfall - Bonk North Pillar near Bird Statue: Nothing
-    Floria Waterfall - Bonk South Pillar near Bird Statue: Nothing
+    Floria Waterfall - Bonk North Pillar near Bird Statue: Nothing # Bonk into the pillar.
+    Floria Waterfall - Bonk South Pillar near Bird Statue: Nothing # Bonk into the pillar.
     Floria Waterfall - Slingshot Broken Spike on Bridge: Slingshot
     Floria Waterfall - Slingshot Northwest Spike on Bridge: Slingshot
     Floria Waterfall - Slingshot Left Cistern Door Frame: Slingshot and (Water_Dragons_Scale or Beetle)
     Floria Waterfall - Slingshot Right Cistern Door Frame: Slingshot and (Water_Dragons_Scale or Beetle)
     Floria Waterfall - Slingshot Left Cistern Eye: Slingshot and Water_Dragons_Scale
     Floria Waterfall - Slingshot Right Cistern Eye: Slingshot and Water_Dragons_Scale
+    # Tested and the player can jump into the water to break their fall without Sailcloth.
+    # Warp to Start would also cover this but that would kinda suck.
     Floria Waterfall - Goddess Cube on High Ledge: Clawshots and Goddess_Sword
 
 - name: Floria Waterfall Temple Ledge
   hint_region: Lake Floria
   exits:
-    Ancient Cistern Lobby: Nothing
-    Floria Waterfall: Nothing
+    Ancient Cistern Lobby: Nothing # Run into the dungeon.
+    Floria Waterfall: Nothing # Jump into the water.
 
-# FARON STATUES
+
+# BIRD STATUES
 - name: Sealed Grounds Statue
   events:
-    Unlock Sealed Grounds Statue: Nothing
+    Unlock Sealed Grounds Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Sealed Grounds: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Sealed Grounds: Nothing # Back out of interaction.
 
 - name: Behind the Temple Statue
   events:
-    Unlock Behind the Temple Statue: Nothing
+    Unlock Behind the Temple Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Behind the Temple: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Behind the Temple: Nothing # Back out of interaction.
 
 - name: Faron Woods Entry Statue
   events:
-    Unlock Faron Woods Entry Statue: Nothing
+    Unlock Faron Woods Entry Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Faron Woods Entry: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Faron Woods Entry: Nothing # Back out of interaction.
 
 - name: Viewing Platform Statue
   events:
-    Unlock Viewing Platform Statue: Nothing
+    Unlock Viewing Platform Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Faron Woods: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Faron Woods: Nothing # Back out of interaction.
 
 - name: In the Woods Statue
   events:
-    Unlock In the Woods Statue: Nothing
+    Unlock In the Woods Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Faron Woods: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Faron Woods: Nothing # Back out of interaction.
 
 - name: Deep Woods Statue
   events:
-    Unlock Deep Woods Statue: Nothing
+    Unlock Deep Woods Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Deep Woods: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Deep Woods: Nothing # Back out of interaction.
 
 - name: Forest Temple Statue
   events:
-    Unlock Forest Temple Statue: Nothing
+    Unlock Forest Temple Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Deep Woods: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Deep Woods: Nothing # Back out of interaction.
 
 - name: The Great Tree Statue
   events:
-    Unlock The Great Tree Statue: Nothing
+    Unlock The Great Tree Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Great Tree Exterior Top: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Great Tree Exterior Top: Nothing # Back out of interaction.
 
 - name: Lake Floria Statue
   events:
-    Unlock Lake Floria Statue: Nothing
+    Unlock Lake Floria Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Lake Floria Emerged Area: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Lake Floria Emerged Area: Nothing # Back out of interaction.
 
 - name: Floria Waterfall Statue
   events:
-    Unlock Floria Waterfall Statue: Nothing
+    Unlock Floria Waterfall Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Floria Waterfall: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Floria Waterfall: Nothing # Back out of interaction.

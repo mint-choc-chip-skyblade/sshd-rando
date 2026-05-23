@@ -1,75 +1,69 @@
-
+# LANAYRU MINING FACILITY
 - name: LMF First Room
   dungeon: Lanayru Mining Facility
   dungeon_starting_area: true
   exits:
     LMF First Hub: Hook_Beetle or (Whip and logic_lmf_whip_switch)
-    Lanayru Desert North: Nothing
+    Lanayru Desert North: Nothing # Run up the stairs and exit the dungeon.
   locations:
-    Lanayru Mining Facility - Chest behind Bars: Nothing
-    Lanayru Mining Facility - Left Front Rupee behind Statue: Nothing
-    Lanayru Mining Facility - Left Middle Rupee behind Statue: Nothing
+    Lanayru Mining Facility - Chest behind Bars: Nothing # Flip the east wall switch and open the chest.
+    Lanayru Mining Facility - Left Front Rupee behind Statue: Nothing # Collect the item.
+    Lanayru Mining Facility - Left Middle Rupee behind Statue: Nothing # Collect the item.
     Lanayru Mining Facility - Left Back Rupee behind Statue: Hook_Beetle
     Lanayru Mining Facility - Right Front Rupee behind Statue: Bomb_Bag or Hook_Beetle
-    Lanayru Mining Facility - Right Middle Rupee behind Statue: Nothing
-    Lanayru Mining Facility - Right Back Rupee behind Statue: Nothing
-    Lanayru Mining Facility - Bonk Bomb Flower Pillar: Nothing
+    Lanayru Mining Facility - Right Middle Rupee behind Statue: Nothing # Collect the item.
+    Lanayru Mining Facility - Right Back Rupee behind Statue: Nothing # Collect the item.
+    Lanayru Mining Facility - Bonk Bomb Flower Pillar: Nothing # Bonk into the pillar.
     Lanayru Mining Facility - Slingshot Left Robot Eye in First Room: Slingshot
     Lanayru Mining Facility - Slingshot Right Robot Eye in First Room: Slingshot
-
 
 - name: LMF First Hub
   dungeon: Lanayru Mining Facility
   exits:
-    LMF First Room: Nothing
-    LMF Big Hub South: Nothing # Push boxes
+    LMF First Room: Nothing # Open the door to the start of the dungeon.
+    LMF Big Hub South: Nothing # Push a box up against the broken stairs and climb up.
     LMF Key Locked Room: Lanayru_Mining_Facility_Small_Key or small_keys == removed
-    LMF First West Room: Gust_Bellows # Blow sand off switch and box
-
+    LMF First West Room: Gust_Bellows # Blow sand off the switch and nearby box.
 
 - name: LMF Key Locked Room
   dungeon: Lanayru Mining Facility
   events:
-    # Blow up the box on top of the ladder and hit the timeshift stone
+    # Blow up the box on top of the ladder AND hit the timeshift stone.
     LMF Key Locked Room Timeshift Stone: "(Hook_Beetle or (Bomb_Bag and logic_bomb_throws)) and
                                           (Bow or Beetle or (Slingshot and logic_lmf_ceiling_precise_slingshot))"
   exits:
-    LMF First Hub: Nothing
+    LMF First Hub: Nothing # Open the door back to the hub.
     LMF Hop Across Boxes Room: "'LMF_Key_Locked_Room_Timeshift_Stone'"
   locations:
     Lanayru Mining Facility - Slingshot Bomb Flower Pillar in Key Locked Room: Slingshot
-    # (access to a position where you can shoot the eyes from) and Slingshot (to hit the eyes) and Beetle (to collect the item)
-    # Yes, the Beetle requirement is in vanilla too
+    # (access to a position where you can shoot the eyes from) AND Slingshot (to hit the eyes) AND Beetle (to collect the item).
+    # Yes, the Beetle requirement is in vanilla too.
     Lanayru Mining Facility - Slingshot Left Robot Eye in Key Locked Room: (logic_stuttersprint or logic_brakeslide or 'LMF_Key_Locked_Room_Timeshift_Stone') and Slingshot and Beetle
     Lanayru Mining Facility - Slingshot Right Robot Eye in Key Locked Room: (logic_stuttersprint or logic_brakeslide or 'LMF_Key_Locked_Room_Timeshift_Stone') and Slingshot and Beetle
     Lanayru Mining Facility - Chest in Key Locked Room: logic_stuttersprint or logic_brakeslide or 'LMF_Key_Locked_Room_Timeshift_Stone'
-
 
 - name: LMF Hop Across Boxes Room
   dungeon: Lanayru Mining Facility
   exits:
     LMF Hop Across Boxes Room Near Exit: Can_Make_Froak_Explode or shortcut_lmf_boxes
-    # Does not include the entry ledge you can only jump from
+    # Does not include the entry ledge you can only jump from.
   locations:
     Lanayru Mining Facility - Hop across Boxes Raised Chest: Can_Make_Froak_Explode or shortcut_lmf_boxes
     Lanayru Mining Facility - Hop across Boxes Lower Chest: Can_Make_Froak_Explode or shortcut_lmf_boxes
 
-
 - name: LMF Hop Across Boxes Room Near Exit
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Big Hub Near Hop Across Boxes Room: Nothing
-    LMF Hop Across Boxes Room: Nothing
-
+    LMF Big Hub Near Hop Across Boxes Room: Nothing # Open the door to the main hub. The sand pile is removed in rando.
+    LMF Hop Across Boxes Room: Nothing # Drop down into the room.
 
 - name: LMF First West Room
   dungeon: Lanayru Mining Facility
   exits:
-    LMF First Hub: Nothing
+    LMF First Hub: Nothing # Open the door back to the hub.
     LMF Armos Fight Room: Gust_Bellows and Can_Defeat_Beamos
   locations:
     Lanayru Mining Facility - Chest in First West Room: Gust_Bellows
-
 
 - name: LMF Armos Fight Room
   dungeon: Lanayru Mining Facility
@@ -82,43 +76,39 @@
   locations:
     Lanayru Mining Facility - Chest after Armos Fight: Can_Defeat_Armos and 'Can_Activate_Armos_Room_Timeshift_Stone'
 
-
 - name: LMF Big Hub South
   dungeon: Lanayru Mining Facility
   exits:
-    LMF First Hub: Nothing
+    LMF First Hub: Nothing # Open the door back to the hub.
     LMF Big Hub After Wooden Boxes: Bomb_Bag or Hook_Beetle
     LMF Big Hub Past West Gate: can_access(LMF Big Hub Past West Gate) or shortcut_lmf_bars_to_west_side
     LMF Big Hub Between Wind Gates: "'LMF_First_Wind_Gate'"
 
-
 - name: LMF Big Hub After Wooden Boxes
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Big Hub South: Nothing
+    LMF Big Hub South: Nothing # Climb down the ladder and jump to the centre of the hub area.
     LMF Big Hub Near Hop Across Boxes Room: can_access(LMF Big Hub Near Hop Across Boxes Room) or shortcut_lmf_boxes
   locations:
-    Lanayru Mining Facility - Chest after Breakable Boxes in Hub Room: Nothing
-
+    Lanayru Mining Facility - Chest after Breakable Boxes in Hub Room: Nothing # Open the chest.
 
 - name: LMF Big Hub Near Hop Across Boxes Room
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Hop Across Boxes Room Near Exit: Nothing
-    LMF Big Hub After Wooden Boxes: Nothing
-
+    LMF Hop Across Boxes Room Near Exit: Nothing # Exit through the door.
+    LMF Big Hub After Wooden Boxes: Nothing # Jump down the ledge or push the box and climb down the ladder.
 
 - name: LMF Big Hub Past West Gate
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Big Hub South: Nothing
-    LMF Armos Fight Room: Nothing
+    LMF Big Hub South: Nothing # Step on the floor switch to get back to the centre of the hub area.
+    LMF Armos Fight Room: Nothing # Open the door to the west.
     LMF Sand Spike Maze: Gust_Bellows
   locations:
+    # Gust Bellows are needed to uncover the sand piles in front of the crawlspace.
     Lanayru Mining Facility - Rupee in First Crawlspace: Gust_Bellows
     Lanayru Mining Facility - Chest behind First Crawlspace: Gust_Bellows
     Lanayru Mining Facility - Blow Painting behind First Crawlspace: Gust_Bellows
-
 
 - name: LMF Sand Spike Maze
   dungeon: Lanayru Mining Facility
@@ -132,16 +122,15 @@
     Lanayru Mining Facility - West Rupee in Spike Maze 2: Gust_Bellows
     Lanayru Mining Facility - West Rupee in Spike Maze 3: Gust_Bellows
     Lanayru Mining Facility - West Rupee in Spike Maze 4: Gust_Bellows
-    Lanayru Mining Facility - Southeast Rupee in Spike Maze 1: Nothing
-    Lanayru Mining Facility - Southeast Rupee in Spike Maze 2: Nothing
-    Lanayru Mining Facility - Southeast Rupee in Spike Maze 3: Nothing
-    Lanayru Mining Facility - Southeast Rupee in Spike Maze 4: Nothing
+    Lanayru Mining Facility - Southeast Rupee in Spike Maze 1: Nothing # Collect the freestanding items.
+    Lanayru Mining Facility - Southeast Rupee in Spike Maze 2: Nothing # Collect the freestanding items.
+    Lanayru Mining Facility - Southeast Rupee in Spike Maze 3: Nothing # Collect the freestanding items.
+    Lanayru Mining Facility - Southeast Rupee in Spike Maze 4: Nothing # Collect the freestanding items.
     Lanayru Mining Facility - Central Rupee in Spike Maze 1: Gust_Bellows
     Lanayru Mining Facility - Central Rupee in Spike Maze 2: Gust_Bellows
     Lanayru Mining Facility - Central Rupee in Spike Maze 3: Gust_Bellows
     Lanayru Mining Facility - Northeast Rupee in Spike Maze: Gust_Bellows
     Lanayru Mining Facility - Chest in Spike Maze: Gust_Bellows
-
 
 - name: LMF Big Hub Near Boss Door
   dungeon: Lanayru Mining Facility
@@ -150,7 +139,6 @@
     LMF Big Hub Near Boss Key Room North: logic_lmf_minecart_jump and (Bomb_Bag or Beetle)
     LMF Big Hub Between Wind Gates: "Can_Hit_Timeshift_Stone_in_Minecart and
                                      ((Can_Defeat_Sentrobe and Gust_Bellows and Can_Defeat_Beamos) or shortcut_lmf_wind_gates)"
-
 
 - name: LMF Big Hub Between Wind Gates
   dungeon: Lanayru Mining Facility
@@ -161,12 +149,10 @@
     LMF Big Hub Near Boss Key Room South: Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows
     LMF Big Hub Near Boss Key Room North: can_access(LMF Big Hub Near Boss Key Room North) or shortcut_lmf_boxes
 
-
 - name: LMF Big Hub Near Boss Key Room South
   dungeon: Lanayru Mining Facility
   exits:
     LMF Boss Key Room: Gust_Bellows and Can_Hit_Timeshift_Stone_in_Minecart
-
 
 - name: LMF Boss Key Room
   dungeon: Lanayru Mining Facility
@@ -179,38 +165,33 @@
     Lanayru Mining Facility - Blow Robot behind Top Northwest Statue: Bomb_Bag and Gust_Bellows
     Lanayru Mining Facility - Chest after Double Armos Fight: Bomb_Bag and Gust_Bellows and Can_Defeat_Armos
 
-
 - name: LMF Big Hub Near Boss Key Room North
   dungeon: Lanayru Mining Facility
   exits:
-    LMF Big Hub Between Wind Gates: Nothing # Climb ladder and jump down
-    LMF Boss Key Room: Nothing
+    LMF Big Hub Between Wind Gates: Nothing # Climb the ladder, run to the south, and jump down.
+    LMF Boss Key Room: Nothing # Exit through the door.
     LMF Big Hub Near Boss Door: (Can_Hit_Timeshift_Stone_in_Minecart and Gust_Bellows) or (logic_lmf_minecart_jump and (Bomb_Bag or Beetle))
   locations:
-    Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts: Nothing
-
+    Lanayru Mining Facility - Raised Chest in Hub Room after Minecarts: Nothing # Climb the ladder, run to the chest, and open it.
 
 - name: LMF Boss Room
   exits:
     LMF Big Hub Near Boss Door: Can_Defeat_Moldarach
-    LMF After Sand Drain: Nothing
-
+    LMF After Sand Drain: Can_Defeat_Moldarach # The sand only drains after defeating moldarach.
 
 - name: LMF After Sand Drain
   exits:
-    LMF Hall of Ancient Robots: Can_Defeat_Moldarach
+    LMF Hall of Ancient Robots: Nothing # Exit through the door.
   locations:
-    Lanayru Mining Facility - Defeat Boss: Can_Defeat_Moldarach
-
+    Lanayru Mining Facility - Defeat Boss: Nothing # Moldarach needs to be defeated for the sand to drain, then the item spawns.
 
 - name: LMF Hall of Ancient Robots
   exits:
-    LMF Boss Room: Nothing
+    LMF Boss Room: Nothing # Exit through the door.
     LMF End of Hall of Ancient Robots: Beetle or Bow
-
 
 - name: LMF End of Hall of Ancient Robots
   exits:
-    Temple of Time West Post LMF Area: Nothing
+    Temple of Time West Post LMF Area: Nothing # Run out the exit of LMF.
   locations:
-    Lanayru Mining Facility - Exit Hall of Ancient Robots: Nothing
+    Lanayru Mining Facility - Exit Hall of Ancient Robots: Nothing # RUn out the exit of LMF.

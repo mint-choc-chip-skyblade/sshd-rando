@@ -8,7 +8,7 @@ from logic.generate import generate
 from logic.config import *
 from logic.search import all_logic_satisfied
 from logic.world import World
-from filepathconstants import SPOILER_LOGS_PATH
+from filepathconstants import CONFIG_TEST_PATH, SPOILER_LOGS_PATH
 
 
 def config_test(
@@ -20,7 +20,7 @@ def config_test(
     config_file_name = Path(config_file_name)
 
     if is_test_config:
-        config_test_path = Path("tests") / "test_configs" / config_file_name
+        config_test_path = CONFIG_TEST_PATH / config_file_name
         assert config_test_path.exists()
     else:
         config_test_path = config_file_name
@@ -190,6 +190,30 @@ def test_random_starting_spawn_any_surface_region() -> None:
 
 def test_random_starting_spawn_anywhere() -> None:
     config_test("random_starting_spawn_anywhere.yaml")
+
+
+def test_open_et_key_pieces_in_eldin() -> None:
+    worlds = config_test("open_et_key_pieces_in_eldin.yaml")
+
+    for world in worlds:
+        key_piece_count = 0
+
+        for location in world.get_all_item_locations():
+            if location.current_item.name == KEY_PIECE:
+                assert any(
+                    la
+                    for la in location.loc_access_list
+                    if "Eldin Volcano" in la.area.hint_regions
+                    or (
+                        world.setting("randomize_overworld_entrances") == "off"
+                        and "Mogma Turf" in la.area.hint_regions
+                    )
+                )
+                key_piece_count += 1
+
+        # With default settings, there should always be 5 key pieces.
+        # Ensures that all 5 are found and correct.
+        assert key_piece_count == 5
 
 
 def test_fi_hints() -> None:

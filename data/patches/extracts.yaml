@@ -101,6 +101,9 @@
         - ShinkanA
         - Shinkan_motion
       # - GetSozaiP
+    - layerid: 17
+      oarcs:
+        - Demo11_01
 
 - stage: F001r
   layers:
@@ -313,7 +316,6 @@
       oarcs:
         - GetEarring
 
-# For model texture stuff?
 - objectpack:
     - Alink
     - Bc

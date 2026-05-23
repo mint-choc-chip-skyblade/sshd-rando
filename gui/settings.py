@@ -914,8 +914,12 @@ class Settings:
 
     def generate_other_mods_list(self):
         self.main.clear_layout(self.ui.other_mods_scroll_layout)
+
+        other_mods_paths = list(OTHER_MODS_PATH.glob("*"))
+        other_mods_paths.sort()
         found_mods = []
-        for mod_path in OTHER_MODS_PATH.glob("*"):
+
+        for mod_path in other_mods_paths:
             if mod_path.is_dir():
                 mod_name = mod_path.name
 

@@ -164,7 +164,12 @@ Can Defeat Ghirahim 2: Goddess_Sword or logic_fs_practice_sword_ghirahim_2 # Pra
 
 # Area Specific Stuff
 
+# TODO: consider adding logic for guardian potions
 Can Survive Hot Cave: damage_multiplier <= 11 or Fireshield_Earrings
+
+Can Survive Short Fall: damage_multiplier <= 5 or Sailcloth
+
+Can Survive Long Fall: damage_multiplier <= 2 or Sailcloth
 
 Raise Lanayru Mining Facility: open_lmf == open or 'Activate_Main_Node'
 

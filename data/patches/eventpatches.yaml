@@ -314,6 +314,9 @@
   - name: True Master Sword Text
     type: textpatch
     index: 19
+  - name: Sailcloth Text
+    type: textpatch
+    index: 20
   - name: Harp Text
     type: textpatch
     index: 21
@@ -846,6 +849,37 @@
       next: Display Required Dungeons
       param3: 68
       param4: Fi Objective Text
+  
+  - name: Check if Sailcloth itemflag is set
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 15 # Sailcloth
+      param2: 1 # Check it is set
+      next: Require Sailcloth to use Amiibo Warp
+      param3: 23 # Check an itemflag
+  
+  - name: Require Sailcloth to use Amiibo Warp
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 7 # use result from previous check
+    cases:
+      - 28 # true, the player does have the Sailcloth
+      - Show Fi require Sailcloth to Amiibo Warp # false: the player does not have the Sailcloth
+  
+  - name: Fi require Sailcloth to Amiibo Warp
+    type: textadd
+    textboxtype: 2 # Fi text box background
+  - name: Show Fi require Sailcloth to Amiibo Warp
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 68
+      param4: Fi require Sailcloth to Amiibo Warp
 
   - name: Allow Amiibo Warp without actual Amiibo
     type: flowpatch
@@ -935,7 +969,7 @@
       param3: 0
     cases:
       - Warp to Start
-      - 28
+      - Check if Sailcloth itemflag is set
       - -1
   - name: Warp to Start
     type: flowadd
@@ -3766,10 +3800,48 @@
       param3: 2
       param4: 4 # number of choices
     cases:
-      - 196 # The Sky!
-      - 198 # The Surface.
+      - Check Sailcloth for Groosenator Sky # The Sky!
+      - Check Sailcloth for Groosenator Surface # The Surface.
       - 79  # Flooded Faron Woods
       - 200 # Never mind!
+  
+  - name: Check Sailcloth for Groosenator Sky
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 15 # Sailcloth itemflag
+      param2: 1 # check it's set
+      next: Switch from Check Sailcloth for Groosenator Sky
+      param3: 23 # for checking a itemflag
+  - name: Switch from Check Sailcloth for Groosenator Sky
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 7 # use result from previous check
+    cases:
+      - 196 # true, continue with flinging to the sky
+      - Show Groosenator needs sailcloth text # false, tell player they need Sailcloth
+  
+  - name: Check Sailcloth for Groosenator Surface
+    type: flowadd
+    flow:
+      type: type3
+      subType: 1
+      param1: 15 # Sailcloth itemflag
+      param2: 1 # check it's set
+      next: Switch from Check Sailcloth for Groosenator Surface
+      param3: 23 # for checking a itemflag
+  - name: Switch from Check Sailcloth for Groosenator Surface
+    type: switchadd
+    flow:
+      subType: 6
+      param2: 0
+      param3: 7 # use result from previous check
+    cases:
+      - 198 # true, continue with flinging to the surface
+      - Show Groosenator needs sailcloth text # false, tell player they need Sailcloth
 
   - name: Groosenator can't fling text
     type: textadd
@@ -3780,6 +3852,16 @@
       next: -1
       param3: 188
       param4: Groosenator can't fling text
+  
+  - name: Groosenator needs sailcloth text
+    type: textadd
+  - name: Show Groosenator needs sailcloth text
+    type: flowadd
+    flow:
+      type: type1
+      next: -1
+      param3: 188
+      param4: Groosenator needs sailcloth text
 
   # Skydiving entrance requirement check
   - name: Access requirement for Skydiving choice

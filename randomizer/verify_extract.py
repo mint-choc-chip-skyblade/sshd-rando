@@ -64,21 +64,17 @@ def verify_extract(verify_all_files: bool = False):
                         short_name in BASE_VER_FILE_HASHES
                         and hash == BASE_VER_FILE_HASHES[short_name]
                     ):
-                        raise SSHDExtractError(
-                            f"""
+                        raise SSHDExtractError(f"""
 '{short_name}' is from the 1.0.0 version of the game.
 Ensure your extract is from the 1.0.1 version of the game.
 Could not verify extract.
-                        """
-                        )
+                        """)
 
-                    raise SSHDExtractError(
-                        f"""
+                    raise SSHDExtractError(f"""
 Data in file '{short_name}' is incorrect.
 Expected sha256 hash of '{important_file_hashs[short_name]}' but got '{hash}'.
 Could not verify extract.
-                    """
-                    )
+                    """)
 
             print_verify_text(f"Verified {short_name}")
 

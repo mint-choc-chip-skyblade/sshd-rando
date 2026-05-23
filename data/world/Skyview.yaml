@@ -1,17 +1,21 @@
+# SKYVIEW TEMPLE
 - name: Skyview Entry
   dungeon: Skyview Temple
   dungeon_starting_area: true
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
-    Deep Woods: Nothing
+    Deep Woods: Nothing # Exit out of the dungeon.
     SVT First Room: Can_Cut_Trees_And_Logs
   locations:
     Skyview Temple - Slingshot Wall Eye behind First Bird Statue: Slingshot
-    Skyview Temple - Bonk Tree Root after First Skulltula Web: Nothing
+    Skyview Temple - Bonk Tree Root after First Skulltula Web: Nothing # Bonk into the tree root.
 
 - name: SVT First Room
   dungeon: Skyview Temple
   events:
     Goddess Wall Trigger: Ballad_of_the_Goddess and Goddesss_Harp
+    Can Collect Mushroom Spores: Bottle
   exits:
     Skyview Entry: Can_Cut_Trees_And_Logs
     SVT One Eye Room: Can_Hit_High_Skyview_Switches
@@ -19,8 +23,10 @@
 
 - name: SVT One Eye Room
   dungeon: Skyview Temple
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
-    SVT First Room: Nothing
+    SVT First Room: Nothing # Open the door.
     SVT First Hub Center Room: Sword
   locations:
     Skyview Temple - Slingshot Southwest Wall Eye in One Eye Room: Slingshot
@@ -33,19 +39,19 @@
   events:
     One Water Raise: "'Skyview_Raise_East_Water' or 'Skyview_Raise_West_Water'"
     Can Collect Water: Bottle and 'One_Water_Raise'
+    Can Collect Mushroom Spores: Bottle
   exits:
-    SVT One Eye Room: Nothing
-    SVT First Room: Nothing
+    SVT One Eye Room: Nothing # Open the door.
+    SVT First Room: Nothing # Climb the vines.
     SVT First Hub Left Room: Can_Hit_Switch or ('One_Water_Raise' and Water_Dragons_Scale)
     SVT First Hub Right Room Lower: Can_Hit_High_Skyview_Switches
     SVT First Hub Right Room Upper: Clawshots or ('Skyview_Raise_East_Water' and 'Skyview_Raise_West_Water')
     SVT Second Hub Center Room: (Skyview_Temple_Small_Key or small_keys == removed) and (Clawshots or 'One_Water_Raise')
   locations:
-    Skyview Temple - Bonk Tree Branch with Chest: Nothing
-    # Water Dragon's Scale needed to make sure you can't lock yourself out of the checks
-    # by raising the water before getting them
-    Skyview Temple - Slingshot West Water Gate: Slingshot and Water_Dragons_Scale # items can sink into the water
-    Skyview Temple - Slingshot East Water Gate: Slingshot and Water_Dragons_Scale # items can sink into the water
+    Skyview Temple - Bonk Tree Branch with Chest: Nothing # Run up the broken steps to the south west and bonk the tree.
+    # Water Dragon's Scale needed to make sure you can't lock yourself out of the checks by raising the water before getting them.
+    Skyview Temple - Slingshot West Water Gate: Slingshot and Water_Dragons_Scale # The items can sink into the water.
+    Skyview Temple - Slingshot East Water Gate: Slingshot and Water_Dragons_Scale # The items can sink into the water.
     Skyview Temple - Rupee under South Walkway before Hub Room: Water_Dragons_Scale
     Skyview Temple - First Rupee under West Walkway before Hub Room: Water_Dragons_Scale
     Skyview Temple - Second Rupee under West Walkway before Hub Room: Water_Dragons_Scale
@@ -59,8 +65,9 @@
       "((Can_Hit_High_Skyview_Switches or Goddess_Sword or Whip) and Can_Hit_Switch)
       or (logic_skyview_spider_roll and Can_Hit_High_Skyview_Switches)"
     Can Collect Water: Bottle and 'Skyview_Raise_West_Water'
+    Can Collect Mushroom Spores: Bottle
   exits:
-    SVT First Hub Center Room: Nothing
+    SVT First Hub Center Room: Nothing # Open the door.
   locations:
     Skyview Temple - Chest on Tree Branch: (Can_Hit_High_Skyview_Switches or Goddess_Sword or Whip) or logic_skyview_spider_roll
 
@@ -69,16 +76,19 @@
   events:
     Skyview Raise East Water: Can_Hit_High_Skyview_Switches
     Can Collect Water: Bottle and 'Skyview_Raise_East_Water'
+    Can Collect Mushroom Spores: Bottle
   exits:
-    SVT First Hub Center Room: Nothing
+    SVT First Hub Center Room: Nothing # Open the lower door.
   locations:
     Skyview Temple - Digging Spot in Crawlspace: Digging_Mitts and Water_Dragons_Scale # Have to assume player misses it the first time
 
 - name: SVT First Hub Right Room Upper
   dungeon: Skyview Temple
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
-    SVT First Hub Right Room Lower: Nothing
-    SVT First Hub Center Room: Nothing
+    SVT First Hub Right Room Lower: Nothing # Drop down.
+    SVT First Hub Center Room: Nothing # Open the upper door.
   locations:
     Skyview Temple - Slingshot Left Deactivated Eye in Two Eyes Room: Sword and Slingshot
     Skyview Temple - Slingshot Right Deactivated Eye in Two Eyes Room: Sword and Slingshot
@@ -86,6 +96,8 @@
 
 - name: SVT Second Hub Center Room
   dungeon: Skyview Temple
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
     SVT First Hub Center Room: count(2, Skyview_Temple_Small_Key) or small_keys == removed
     SVT Miniboss Room: Distance_Activator
@@ -94,8 +106,8 @@
     SVT Last Room Before Rope: (can_access(SVT Last Room Before Rope) and Can_Hit_High_Skyview_Switches) or shortcut_skyview_bars
   locations:
     Skyview Temple - Rupee on South Bird Pillar in Hub Room: Beetle
-    Skyview Temple - Bonk South Bird Pillar in Hub Room: Nothing
-    Skyview Temple - Bonk East Bird Pillar in Hub Room: Nothing
+    Skyview Temple - Bonk South Bird Pillar in Hub Room: Nothing # Bonk into the pillar.
+    Skyview Temple - Bonk East Bird Pillar in Hub Room: Nothing # Bonk into the pillar.
     Skyview Temple - Rupee on Northeast Bird Pillar in Hub Room: Beetle
     Skyview Temple - Rupee in Southeast Tunnel: Beetle
     Skyview Temple - Rupee in Southwest Tunnel: Beetle
@@ -107,18 +119,22 @@
 
 - name: SVT Miniboss Room
   dungeon: Skyview Temple
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
-    SVT Second Hub Center Room: Nothing
+    SVT Second Hub Center Room: Nothing # Open the door out of the room.
   locations:
     Skyview Temple - Chest after Stalfos Fight: Can_Defeat_Stalfos
 
-# This is both rooms so assume you've gotten locked in the 3-eyes room
+# This includes both rooms and assumes you've gotten locked in the 3-eyes room.
 - name: SVT Second Hub Left Rooms
   dungeon: Skyview Temple
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
-    # Sword for 3 eyes and to kill Skultullas
-    # Beetle or Bow to free the box
-    # Projectile Item to hit the switch to get back to 2nd hub room
+    # Sword for 3 eyes and to kill Skultullas.
+    # Beetle or Bow to free the box.
+    # Projectile Item to hit the switch to get back to 2nd hub room.
     SVT Second Hub Center Room: Sword and (Beetle or Bow) and Projectile_Item
   locations:
     Skyview Temple - Slingshot Southwest Wall Eye in Three Eyes Room: Slingshot
@@ -127,42 +143,52 @@
 
 - name: SVT Staldra Room
   dungeon: Skyview Temple
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
     SVT Second Hub Center Room: Skyview_Temple_Small_Key or small_keys == removed
     SVT Last Room Before Spider: Can_Defeat_Staldra
 
 - name: SVT Last Room Before Spider
   dungeon: Skyview Temple
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
-    SVT Staldra Room: Nothing
-    SVT Last Room Before Rope: Beetle or Bow or (Bomb_Bag and logic_bomb_throws)
+    SVT Staldra Room: Nothing # Open the door.
     # Both the Beetle and the bow can cut it down.
     # A bomb knocks the Skulltula away.
     # A skyward strike can knock it away too but not logically.
+    SVT Last Room Before Rope: Beetle or Bow or (Bomb_Bag and logic_bomb_throws)
 
 - name: SVT Last Room Before Rope
   dungeon: Skyview Temple
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
     SVT Last Room Before Spider: Beetle or Bow or (Bomb_Bag and logic_bomb_throws)
     SVT Second Hub Center Room: Can_Hit_High_Skyview_Switches or shortcut_skyview_bars
-    SVT Last Room After Rope: Nothing
+    SVT Last Room After Rope: Nothing # Walk over the rope.
 
 - name: SVT Last Room After Rope
   dungeon: Skyview Temple
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
-    SVT Last Room Before Rope: Nothing
+    SVT Last Room Before Rope: Nothing # Walk over the rope.
     SVT Last Room Near Chest after Vines: Long_Range_Skyward_Strike or Distance_Activator
     Skyview Boss Room: Skyview_Temple_Boss_Key or boss_keys == removed
   locations:
-    Skyview Temple - Chest near Boss Door: Nothing
+    Skyview Temple - Chest near Boss Door: Nothing # Open the chest.
 
 - name: SVT Last Room Near Chest after Vines
   dungeon: Skyview Temple
+  events:
+    Can Collect Mushroom Spores: Bottle
   exits:
-    SVT Last Room Before Rope: Nothing
+    SVT Last Room Before Rope: Nothing # Drop down.
     SVT Last Room After Rope: Distance_Activator
   locations:
-    Skyview Temple - Chest after Vines: Nothing
+    Skyview Temple - Chest after Vines: Nothing # Open the chest.
 
 - name: Skyview Boss Room
   exits:
@@ -176,12 +202,11 @@
     Can Collect Water: Bottle
     # Sacred Water: Bottle and Skyview_2
   exits:
-    Skyview Boss Room: Nothing
-    # Crest Hit: Ruby Tablet
+    Skyview Boss Room: Nothing # Open the door.
   locations:
     Skyview Spring - Slingshot top of Door: Slingshot
-    Skyview Spring - Bonk Broken Left Pillar: Nothing
-    Skyview Spring - Bonk Broken Right Pillar: Nothing
+    Skyview Spring - Bonk Broken Left Pillar: Nothing # Bonk into the pillar.
+    Skyview Spring - Bonk Broken Right Pillar: Nothing # Bonk into the pillar.
     Skyview Spring - Rupee on Spring Pillar: Beetle
     Skyview Spring - Slingshot Post Left of Goddess Crest: Slingshot
     Skyview Spring - Slingshot Post Right of Goddess Crest: Slingshot

@@ -271,7 +271,7 @@ pub struct StateMgr__vtable {
     pub unk:                   u64,
     pub dtor:                  u64,
     pub initialize_state:      u64,
-    pub execute_state:         u64,
+    pub execute_state:         extern "C" fn(*mut StateMgr),
     pub finalize_state:        u64,
     pub change_state:          extern "C" fn(*mut StateMgr, *mut c_void),
     pub refresh_state:         u64,
@@ -1350,5 +1350,23 @@ pub extern "C" fn set_random_boss_key_positions() {
             bk_angle.y = rng::simple_rng() as u16;
             bk_angle.z = rng::simple_rng() as u16;
         }
+    }
+}
+
+#[no_mangle]
+pub extern "C" fn check_sailcloth_for_air_vents(mut should_deactivate: bool) -> bool {
+    unsafe {
+        // Replaced Instructions
+        asm!("ldp d9, d8, [sp], #0x50");
+
+        if !should_deactivate
+            && &CURRENT_STAGE_NAME[..1] != b"S"
+            && &CURRENT_STAGE_NAME[..1] != b"D"
+            && flag::check_itemflag(flag::ITEMFLAGS::SAILCLOTH) == 0
+        {
+            should_deactivate = true;
+        }
+
+        return should_deactivate;
     }
 }

@@ -22,6 +22,7 @@
 - type: Dungeon
   forward:
     connection: Deep Woods -> Skyview Entry
+    alias: Deep Woods -> Skyview Temple
     exit_infos:
       - stage: F101
         room: 0
@@ -33,6 +34,7 @@
         entrance: 0
   return:
     connection: Skyview Entry -> Deep Woods
+    alias: Skyview Temple -> Deep Woods
     exit_infos:
       - stage: D100
         room: 0
@@ -64,6 +66,7 @@
 - type: Dungeon
   forward:
     connection: Near Temple Entrance -> Earth Temple First Room
+    alias: Eldin Volcano -> Earth Temple
     exit_infos:
       - stage: F200
         room: 4
@@ -75,6 +78,7 @@
         entrance: 0
   return:
     connection: Earth Temple First Room -> Near Temple Entrance
+    alias: Earth Temple -> Eldin Volcano
     exit_infos:
       - stage: D200
         room: 1
@@ -100,6 +104,7 @@
 - type: Dungeon
   forward:
     connection: Top of LMF -> LMF First Room
+    alias: Lanayru Desert -> Lanayru Mining Facility
     exit_infos:
       - stage: F300
         room: 0
@@ -111,6 +116,7 @@
         entrance: 0
   return:
     connection: LMF First Room -> Lanayru Desert North
+    alias: Lanayru Mining Facility -> Lanayru Desert
     # Conditional connections may only stay if the above connection
     # is vanilla
     conditional_vanilla_connections:
@@ -134,9 +140,6 @@
       - stage: D300_1
         room: 5
         index: 4
-      - stage: B300
-        room: 0
-        index: 1
       - stage: F300_5
         room: 0
         index: 3
@@ -157,6 +160,7 @@
 - type: Dungeon
   forward:
     connection: Floria Waterfall Temple Ledge -> Ancient Cistern Lobby
+    alias: Floria Waterfall -> Ancient Cistern
     exit_infos:
       - stage: F102_1
         room: 0
@@ -168,6 +172,7 @@
         entrance: 0
   return:
     connection: Ancient Cistern Lobby -> Floria Waterfall Temple Ledge
+    alias: Ancient Cistern -> Floria Waterfall
     exit_infos:
       - stage: D101
         room: 0
@@ -196,6 +201,7 @@
 - type: Dungeon
   forward:
     connection: Lanayru Sand Sea -> Sandship Main Deck
+    alias: Lanayru Sand Sea -> Sandship
     exit_infos:
       - stage: F301_1
         room: 0
@@ -213,6 +219,7 @@
         entrance: 0
   return:
     connection: Sandship Main Deck -> Lanayru Sand Sea
+    alias: Sandship -> Lanayru Sand Sea
     exit_infos:
       - stage: D301
         room: 0
@@ -261,6 +268,7 @@
 - type: Dungeon
   forward:
     connection: Outside Fire Sanctuary -> Fire Sanctuary First Room
+    alias: Inside the Volcano -> Fire Sanctuary
     exit_infos:
       - stage: F201_3
         room: 0
@@ -272,6 +280,7 @@
         entrance: 0
   return:
     connection: Fire Sanctuary First Room -> Outside Fire Sanctuary
+    alias: Fire Sanctuary -> Inside the Volcano
     exit_infos:
       - stage: D201
         room: 0
@@ -306,6 +315,7 @@
 - type: Dungeon
   forward:
     connection: Sky Keep Entrance Platform -> Sky Keep Entryway
+    alias: Central Skyloft -> Sky Keep
     exit_infos:
       - stage: F000
         room: 0
@@ -317,6 +327,7 @@
         entrance: 4
   return:
     connection: Sky Keep Entryway -> Sky Keep Entrance Platform
+    alias: Sky Keep -> Central Skyloft
     exit_infos: # most of them not needed
       - stage: D003_0
         room: 0
@@ -434,6 +445,7 @@
 - type: Trial Gate
   forward:
     connection: Volcano Ascent -> Din's Silent Realm
+    alias: Eldin Volcano -> Din's Silent Realm
     exit_infos:
       - stage: F200
         room: 2
@@ -445,6 +457,7 @@
         entrance: 0
   return:
     connection: Din's Silent Realm -> Volcano Ascent
+    alias: Din's Silent Realm -> Eldin Volcano
     exit_infos:
       - stage: S200
         room: 2
@@ -457,6 +470,7 @@
 - type: Trial Gate
   forward:
     connection: Lanayru Desert North -> Nayru's Silent Realm
+    alias: Lanayru Desert -> Nayru's Silent Realm
     exit_infos:
       - stage: F300
         room: 0
@@ -468,6 +482,7 @@
         entrance: 0
   return:
     connection: Nayru's Silent Realm -> Lanayru Desert North
+    alias: Nayru's Silent Realm -> Lanayru Desert
     exit_infos:
       - stage: S300
         room: 0
@@ -486,6 +501,7 @@
   door_couple_tag: Knight Academy Lower
   forward:
     connection: Knight Academy Lower East Door Exterior -> Knight Academy Lower East Door Interior
+    alias: Upper Skyloft -> Knight Academy Lower East Door
     exit_infos:
       - stage: F000
         room: 0
@@ -497,6 +513,7 @@
         entrance: 2
   return:
     connection: Knight Academy Lower East Door Interior -> Knight Academy Lower East Door Exterior
+    alias: Knight Academy Lower East Door -> Upper Skyloft
     exit_infos:
       - stage: F001r
         room: 0
@@ -510,6 +527,7 @@
   door_couple_tag: Knight Academy Lower
   forward:
     connection: Knight Academy Lower West Door Exterior -> Knight Academy Lower West Door Interior
+    alias: Upper Skyloft -> Knight Academy Lower West Door
     exit_infos:
       - stage: F000
         room: 0
@@ -521,6 +539,7 @@
         entrance: 1
   return:
     connection: Knight Academy Lower West Door Interior -> Knight Academy Lower West Door Exterior
+    alias: Knight Academy Lower West Door -> Upper Skyloft
     exit_infos:
       - stage: F001r
         room: 0
@@ -534,6 +553,7 @@
   door_couple_tag: Knight Academy Upper
   forward:
     connection: Knight Academy Upper North Door Exterior -> Knight Academy Upper North Door Interior
+    alias: Upper Skyloft -> Knight Academy Upper North Door
     exit_infos:
       - stage: F000
         room: 0
@@ -545,6 +565,7 @@
         entrance: 4
   return:
     connection: Knight Academy Upper North Door Interior -> Knight Academy Upper North Door Exterior
+    alias: Knight Academy Upper North Door -> Upper Skyloft
     exit_infos:
       - stage: F001r
         room: 0
@@ -558,6 +579,7 @@
   door_couple_tag: Knight Academy Upper
   forward:
     connection: Knight Academy Upper South Door Exterior -> Knight Academy Upper South Door Interior
+    alias: Upper Skyloft -> Knight Academy Upper South Door
     exit_infos:
       - stage: F000
         room: 0
@@ -569,6 +591,7 @@
         entrance: 3
   return:
     connection: Knight Academy Upper South Door Interior -> Knight Academy Upper South Door Exterior
+    alias: Knight Academy Upper South Door -> Upper Skyloft
     exit_infos:
       - stage: F001r
         room: 0
@@ -582,6 +605,7 @@
   door_couple_tag: Sparring Hall
   forward:
     connection: Sparring Hall North Door Exterior -> Sparring Hall North Door Interior
+    alias: Upper Skyloft -> Sparring Hall North Door
     exit_infos:
       - stage: F000
         room: 0
@@ -593,6 +617,7 @@
         entrance: 2
   return:
     connection: Sparring Hall North Door Interior -> Sparring Hall North Door Exterior
+    alias: Sparring Hall North Door -> Upper Skyloft
     exit_infos:
       - stage: F009r
         room: 0
@@ -606,6 +631,7 @@
   door_couple_tag: Sparring Hall
   forward:
     connection: Sparring Hall South Door Exterior -> Sparring Hall South Door Interior
+    alias: Upper Skyloft -> Sparring Hall South Door
     exit_infos:
       - stage: F000
         room: 0
@@ -617,6 +643,7 @@
         entrance: 1
   return:
     connection: Sparring Hall South Door Interior -> Sparring Hall South Door Exterior
+    alias: Sparring Hall South Door -> Upper Skyloft
     exit_infos:
       - stage: F009r
         room: 0
@@ -860,6 +887,7 @@
   door_couple_tag: Lumpy Pumpkin
   forward:
     connection: Lumpy Pumpkin Main East Door Exterior -> Lumpy Pumpkin Main East Door Interior
+    alias: Sky -> Lumpy Pumpkin Main East Door
     exit_infos:
       - stage: F020
         room: 0
@@ -871,6 +899,7 @@
         entrance: 2
   return:
     connection: Lumpy Pumpkin Main East Door Interior -> Lumpy Pumpkin Main East Door Exterior
+    alias: Lumpy Pumpkin Main East Door -> Sky
     exit_infos:
       - stage: F011r
         room: 0
@@ -884,6 +913,7 @@
   door_couple_tag: Lumpy Pumpkin
   forward:
     connection: Lumpy Pumpkin Main West Door Exterior -> Lumpy Pumpkin Main West Door Interior
+    alias: Sky -> Lumpy Pumpkin Main West Door
     exit_infos:
       - stage: F020
         room: 0
@@ -895,6 +925,7 @@
         entrance: 1
   return:
     connection: Lumpy Pumpkin Main West Door Interior -> Lumpy Pumpkin Main West Door Exterior
+    alias: Lumpy Pumpkin Main West Door -> Sky
     exit_infos:
       - stage: F011r
         room: 0
@@ -907,6 +938,7 @@
 - type: Door
   forward:
     connection: Lumpy Pumpkin Back Door Exterior -> Lumpy Pumpkin Back Door Interior
+    alias: Sky -> Lumpy Pumpkin Back Door
     exit_infos:
       - stage: F020
         room: 0
@@ -918,6 +950,7 @@
         entrance: 3
   return:
     connection: Lumpy Pumpkin Back Door Interior -> Lumpy Pumpkin Back Door Exterior
+    alias: Lumpy Pumpkin Back Door -> Sky
     exit_infos:
       - stage: F011r
         room: 0
@@ -976,6 +1009,7 @@
 - type: Door
   forward:
     connection: Skipper's Retreat Top -> Skipper's Retreat Shack
+    alias: Skipper's Retreat -> Skipper's Shack
     exit_infos:
       - stage: F301_3
         room: 0
@@ -987,6 +1021,7 @@
         entrance: 0
   return:
     connection: Skipper's Retreat Shack -> Skipper's Retreat Top
+    alias: Skipper's Shack -> Skipper's Retreat
     exit_infos:
       - stage: F301_5
         room: 0
@@ -1188,6 +1223,7 @@
 - type: Interior
   forward:
     connection: Bamboo Island -> Bamboo Island Interior
+    alias: Sky -> Bamboo Island
     exit_infos:
       - stage: F020
         room: 0
@@ -1199,6 +1235,7 @@
         entrance: 0
   return:
     connection: Bamboo Island Interior -> Bamboo Island
+    alias: Bamboo Island -> Sky
     exit_infos:
       - stage: F019r
         room: 0
@@ -1211,6 +1248,7 @@
 - type: Interior
   forward:
     connection: Isle of Songs -> Isle of Songs Interior
+    alias: The Thunderhead -> Isle of Songs
     exit_infos:
       - stage: F023
         room: 0
@@ -1222,6 +1260,7 @@
         entrance: 0
   return:
     connection: Isle of Songs Interior -> Isle of Songs
+    alias: Isle of Songs -> The Thunderhead
     exit_infos:
       - stage: F010r
         room: 0
@@ -1234,6 +1273,7 @@
 - type: Interior
   forward:
     connection: Faron Woods -> Great Tree Interior Underwater
+    alias: Faron Woods -> Great Tree Underwater
     can_start_at: false
     exit_infos:
       - stage: F100
@@ -1246,6 +1286,7 @@
         entrance: 4
   return:
     connection: Great Tree Interior Underwater -> Faron Woods
+    alias: Great Tree Underwater -> Faron Woods
     exit_infos:
       - stage: F100_1
         room: 0
@@ -1258,6 +1299,7 @@
 - type: Interior
   forward:
     connection: Great Tree Exterior Platforms -> Great Tree Interior Middle
+    alias: Faron Woods -> Great Tree Swinging Platforms
     exit_infos:
       - stage: F100
         room: 0
@@ -1269,6 +1311,7 @@
         entrance: 1
   return:
     connection: Great Tree Interior Middle -> Great Tree Exterior Platforms
+    alias: Great Tree Swinging Platforms -> Faron Woods
     exit_infos:
       - stage: F100_1
         room: 0
@@ -1281,6 +1324,7 @@
 - type: Interior
   forward:
     connection: Great Tree Exterior Platforms -> Great Tree Interior Upper
+    alias: Faron Woods -> Great Tree Inner Bridge
     exit_infos:
       - stage: F100
         room: 0
@@ -1292,6 +1336,7 @@
         entrance: 2
   return:
     connection: Great Tree Interior Upper -> Great Tree Exterior Platforms
+    alias: Great Tree Inner Bridge -> Faron Woods
     exit_infos:
       - stage: F100_1
         room: 0
@@ -1304,6 +1349,7 @@
 - type: Interior
   forward:
     connection: Great Tree Exterior Top -> Great Tree Interior Upper
+    alias: Faron Woods Top of Great Tree -> Great Tree Inner Bridge
     exit_infos:
       - stage: F100
         room: 0
@@ -1315,6 +1361,7 @@
         entrance: 3
   return:
     connection: Great Tree Interior Upper -> Great Tree Exterior Top
+    alias: Great Tree Inner Bridge -> Faron Woods Top of Great Tree
     exit_infos:
       - stage: F100_1
         room: 0
@@ -1327,6 +1374,7 @@
 - type: Interior
   forward:
     connection: Outside Thrill Digger Cave -> Thrill Digger Cave
+    alias: Eldin Volcano -> Thrill Digger
     exit_infos:
       - stage: F200
         room: 4
@@ -1338,6 +1386,7 @@
         entrance: 0
   return:
     connection: Thrill Digger Cave -> Outside Thrill Digger Cave
+    alias: Thrill Digger -> Eldin Volcano
     exit_infos:
       - stage: F211
         room: 0
@@ -1350,6 +1399,7 @@
 - type: Interior
   forward:
     connection: Lanayru Desert North -> Lightning Node
+    alias: Lanayru Desert -> Lightning Node
     exit_infos:
       - stage: F300
         room: 0
@@ -1361,6 +1411,7 @@
         entrance: 0
   return:
     connection: Lightning Node -> Lanayru Desert North
+    alias: Lightning Node -> Lanayru Desert
     exit_infos:
       - stage: F300_2
         room: 0
@@ -1373,6 +1424,7 @@
 - type: Interior
   forward:
     connection: Lanayru Desert East -> Fire Node
+    alias: Lanayru Desert -> Fire Node
     exit_infos:
       - stage: F300
         room: 0
@@ -1384,6 +1436,7 @@
         entrance: 0
   return:
     connection: Fire Node -> Lanayru Desert East
+    alias: Fire Node -> Lanayru Desert
     exit_infos:
       - stage: F300_3
         room: 0
@@ -1396,6 +1449,7 @@
 - type: Interior
   forward:
     connection: Lanayru Mine Caves Platform -> Lanayru Caves
+    alias: Lanayru Mine -> Lanayru Caves
     exit_infos:
       - stage: F300_1
         room: 0
@@ -1407,6 +1461,7 @@
         entrance: 0
   return:
     connection: Lanayru Caves -> Lanayru Mine Caves Platform
+    alias: Lanayru Caves -> Lanayru Mine
     exit_infos:
       - stage: F303
         room: 0
@@ -1419,6 +1474,7 @@
 - type: Interior
   forward:
     connection: Sand Oasis Highest Platform -> Lanayru Caves
+    alias: Lanayru Desert -> Lanayru Caves
     exit_infos:
       - stage: F300
         room: 0
@@ -1430,6 +1486,7 @@
         entrance: 1
   return:
     connection: Lanayru Caves -> Sand Oasis Highest Platform
+    alias: Lanayru Caves -> Lanayru Desert
     exit_infos:
       - stage: F303
         room: 0
@@ -1442,6 +1499,7 @@
 - type: Interior
   forward:
     connection: Ancient Harbour Highest Platform -> Lanayru Caves Past Locked Door
+    alias: Ancient Harbour -> Lanayru Caves
     exit_infos:
       - stage: F301
         room: 0
@@ -1453,6 +1511,7 @@
         entrance: 2
   return:
     connection: Lanayru Caves Past Locked Door -> Ancient Harbour Highest Platform
+    alias: Lanayru Caves -> Ancient Harbour
     exit_infos:
       - stage: F303
         room: 0
@@ -1465,6 +1524,7 @@
 - type: Interior
   forward:
     connection: Lanayru Gorge -> Lanayru Caves Past Crawlspace
+    alias: Lanayru Gorge -> Lanayru Caves
     exit_infos:
       - stage: F302
         room: 0
@@ -1476,6 +1536,7 @@
         entrance: 3
   return:
     connection: Lanayru Caves Past Crawlspace -> Lanayru Gorge
+    alias: Lanayru Caves -> Lanayru Gorge
     exit_infos:
       - stage: F303
         room: 0
@@ -1488,6 +1549,7 @@
 - type: Interior
   forward:
     connection: Shipyard End of Minecart Ride -> Construction Bay Upper Platform
+    alias: Shipyard -> Construction Bay Upper Door
     exit_infos:
       - stage: F301_4
         room: 0
@@ -1499,6 +1561,7 @@
         entrance: 4
   return:
     connection: Construction Bay Upper Platform -> Shipyard End of Minecart Ride
+    alias: Construction Bay Upper Door -> Shipyard
     exit_infos:
       - stage: F301_7
         room: 0
@@ -1511,6 +1574,7 @@
 - type: Interior
   forward:
     connection: Shipyard Dock -> Construction Bay Sand Pit
+    alias: Shipyard -> Construction Bay Lower Door
     can_start_at: false
     exit_infos:
       - stage: F301_4
@@ -1523,6 +1587,7 @@
         entrance: 1
   return:
     connection: Construction Bay Sand Pit -> Shipyard Dock
+    alias: Construction Bay Lower Door -> Shipyard
     exit_infos:
       - stage: F301_7
         room: 0
@@ -1586,6 +1651,7 @@
 - type: Overworld
   forward:
     connection: Sealed Grounds Upper Ledge -> Behind the Temple
+    alias: Sealed Grounds -> Behind the Temple
     exit_infos:
       - stage: F401
         room: 1
@@ -1597,6 +1663,7 @@
         entrance: 2
   return:
     connection: Behind the Temple -> Sealed Grounds Upper Ledge
+    alias: Behind the Temple -> Sealed Grounds
     exit_infos:
       - stage: F400
         room: 0
@@ -1609,6 +1676,7 @@
 - type: Overworld
   forward:
     connection: Behind the Temple -> Faron Woods Entry
+    alias: Behind the Temple -> Faron Woods
     exit_infos:
       - stage: F400
         room: 0
@@ -1620,6 +1688,7 @@
         entrance: 0
   return:
     connection: Faron Woods Entry -> Behind the Temple
+    alias: Faron Woods -> Behind the Temple
     exit_infos:
       - stage: F100
         room: 0
@@ -1632,6 +1701,7 @@
 - type: Overworld
   forward:
     connection: Faron Woods Ledge to Deep Woods -> Deep Woods Entry
+    alias: Faron Woods -> Deep Woods
     exit_infos:
       - stage: F100
         room: 0
@@ -1643,6 +1713,7 @@
         entrance: 0
   return:
     connection: Deep Woods Entry -> Faron Woods Ledge to Deep Woods
+    alias: Deep Woods -> Faron Woods
     exit_infos:
       - stage: F101
         room: 0
@@ -1678,6 +1749,7 @@
 - type: Overworld
   forward:
     connection: Lake Floria After Emerged Area -> Farore's Lair
+    alias: Lake Floria -> Farore's Lair
     exit_infos:
       - stage: F102
         room: 4
@@ -1689,6 +1761,7 @@
         entrance: 0
   return:
     connection: Farore's Lair -> Lake Floria After Emerged Area
+    alias: Farore's Lair -> Lake Floria
     can_start_at: false
     exit_infos:
       - stage: F102_2
@@ -1725,6 +1798,7 @@
 - type: Overworld
   forward:
     connection: Floria Waterfall -> Faron Woods Floria Shortcut Ledge
+    alias: Floria Waterfall -> Faron Woods
     exit_infos:
       - stage: F102_1
         room: 0
@@ -1736,6 +1810,7 @@
         entrance: 17
   return:
     connection: Faron Woods Floria Shortcut Ledge -> Floria Waterfall
+    alias: Faron Woods -> Floria Waterfall
     exit_infos:
       - stage: F100
         room: 0
@@ -1748,6 +1823,7 @@
 - type: Overworld
   forward:
     connection: Volcano East -> Mogma Turf Dive
+    alias: Eldin Volcano -> Mogma Turf Dive
     exit_infos:
       - stage: F200
         room: 2
@@ -1759,6 +1835,7 @@
         entrance: 0
   return:
     connection: Mogma Turf -> Volcano East
+    alias: Mogma Turf First Vent -> Eldin Volcano
     exit_infos:
       - stage: F210
         room: 0
@@ -1771,6 +1848,7 @@
 - type: Overworld
   forward:
     connection: Mogma Turf Final Vent -> Past Mogma Turf
+    alias: Mogma Turf Second Vent -> Eldin Volcano
     exit_infos:
       - stage: F210
         room: 0
@@ -1782,6 +1860,7 @@
         entrance: 2
   return:
     connection: Past Mogma Turf -> Mogma Turf Final Vent
+    alias: Eldin Volcano -> Mogma Turf Second Vent
     spawn_info:
       - stage: F210
         layer: 0
@@ -1790,6 +1869,7 @@
 - type: Overworld
   forward:
     connection: Hot Cave -> Volcano Summit
+    alias: Eldin Volcano -> Volcano Summit
     can_start_at: false
     exit_infos:
       - stage: F200
@@ -1802,6 +1882,7 @@
         entrance: 4
   return:
     connection: Volcano Summit -> Hot Cave
+    alias: Volcano Summit -> Eldin Volcano
     exit_infos:
       - stage: F201_1
         room: 0
@@ -1838,6 +1919,7 @@
 - type: Overworld
   forward:
     connection: Volcano Summit -> Past Volcano Summit
+    alias: Volcano Summit -> Inside the Volcano
     exit_infos:
       - stage: F201_1
         room: 0
@@ -1849,6 +1931,7 @@
         entrance: 0
   return:
     connection: Past Volcano Summit -> Volcano Summit
+    alias: Inside the Volcano -> Volcano Summit
     can_start_at: false
     exit_infos:
       - stage: F201_3
@@ -1862,6 +1945,7 @@
 - type: Overworld
   forward:
     connection: Lanayru Mine In Minecart -> Lanayru Desert South
+    alias: Lanayru Mine -> Lanayru Desert
     exit_infos:
       - stage: F300_1
         room: 2
@@ -1873,6 +1957,7 @@
         entrance: 2
   return:
     connection: Lanayru Desert South -> Lanayru Mine In Minecart
+    alias: Lanayru Desert -> Lanayru Mine
     exit_infos:
       - stage: F300
         room: 0
@@ -1885,6 +1970,7 @@
 - type: Overworld
   forward:
     connection: Sand Oasis End -> Temple of Time South
+    alias: Lanayru Desert -> Temple of Time South
     exit_infos:
       - stage: F300
         room: 0
@@ -1896,6 +1982,7 @@
         entrance: 0
   return:
     connection: Temple of Time South -> Sand Oasis End
+    alias: Temple of Time South -> Lanayru Desert
     exit_infos:
       - stage: F300_4
         room: 0
@@ -1908,6 +1995,7 @@
 - type: Overworld
   forward:
     connection: Temple of Time North -> Lanayru Desert North
+    alias: Temple of Time North -> Lanayru Desert
     exit_infos:
       - stage: F300_4
         room: 0
@@ -1919,6 +2007,7 @@
         entrance: 1
   return:
     connection: Lanayru Desert North -> Temple of Time North
+    alias: Lanayru Desert -> Temple of Time North
     exit_infos:
       - stage: F300
         room: 0
@@ -1954,6 +2043,7 @@
 - type: Overworld
   forward:
     connection: Lanayru Sand Sea -> Skipper's Retreat Dock
+    alias: Lanayru Sand Sea -> Skipper's Retreat
     exit_infos:
       - stage: F301_1
         room: 0
@@ -1965,6 +2055,7 @@
         entrance: 0
   return:
     connection: Skipper's Retreat Dock -> Lanayru Sand Sea
+    alias: Skipper's Retreat -> Lanayru Sand Sea
     exit_infos:
       - stage: F301_3
         room: 0
@@ -1977,6 +2068,7 @@
 - type: Overworld
   forward:
     connection: Lanayru Sand Sea -> Shipyard Dock
+    alias: Lanayru Sand Sea -> Shipyard
     exit_infos:
       - stage: F301_1
         room: 0
@@ -1988,6 +2080,7 @@
         entrance: 0
   return:
     connection: Shipyard Dock -> Lanayru Sand Sea
+    alias: Shipyard -> Lanayru Sand Sea
     exit_infos:
       - stage: F301_4
         room: 0
@@ -2000,6 +2093,7 @@
 - type: Overworld
   forward:
     connection: Lanayru Sand Sea -> Pirate Stronghold Dock
+    alias: Lanayru Sand Sea -> Pirate Stronghold
     exit_infos:
       - stage: F301_1
         room: 0
@@ -2011,6 +2105,7 @@
         entrance: 0
   return:
     connection: Pirate Stronghold Dock -> Lanayru Sand Sea
+    alias: Pirate Stronghold -> Lanayru Sand Sea
     exit_infos:
       - stage: F301_6
         room: 0

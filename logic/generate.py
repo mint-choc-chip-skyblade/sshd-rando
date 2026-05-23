@@ -27,11 +27,9 @@ def generate(config_file: Path) -> list[World]:
     if config.output_dir != DEFAULT_OUTPUT_PATH and (
         not config.output_dir.exists() or not config.output_dir.is_dir()
     ):
-        raise ConfigError(
-            f"""
+        raise ConfigError(f"""
 The output folder you have specified cannot be found ({config.output_dir.as_posix()}).
-Please choose a valid folder and try again."""
-        )
+Please choose a valid folder and try again.""")
 
     print(
         f"Loading config took {(time.process_time() - start_load_config_time)} seconds"

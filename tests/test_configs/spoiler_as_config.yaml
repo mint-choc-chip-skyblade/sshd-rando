@@ -150,10 +150,10 @@ World 1:
   - Sky Keep - Sacred Power of Nayru
   - Isle of Songs - Strike Crest with Goddess Sword
   excluded_hint_locations:
-  - Central Skyloft - Gossip Stone on Waterfall Island
-  - Deep Woods - Gossip Stone before Temple
-  - Upper Eldin Cave - West Gossip Stone
-  - Lanayru Caves - Gossip Stone towards Lanayru Gorge
+  - Central Skyloft - Gossip Stone Hint on Waterfall Island
+  - Deep Woods - Gossip Stone Hint before Temple
+  - Upper Eldin Cave - West Gossip Stone Hint
+  - Lanayru Caves - Gossip Stone Hint towards Lanayru Gorge
   mixed_entrance_pools:
   - - Dungeon
     - Trial Gate

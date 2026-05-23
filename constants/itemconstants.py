@@ -1,6 +1,5 @@
 from constants.itemnames import *
 
-
 # Item Groups
 ALL_TABLETS = (EMERALD_TABLET, RUBY_TABLET, AMBER_TABLET)
 
@@ -175,6 +174,7 @@ MINIMAL_ITEM_POOL: list[str] = (
         PROGRESSIVE_SLINGSHOT,
         PROGRESSIVE_BOW,
         PROGRESSIVE_BUG_NET,
+        SAILCLOTH,
         WATER_DRAGON_SCALE,
         FIRESHIELD_EARRINGS,
         STONE_OF_TRIALS,
@@ -277,7 +277,7 @@ EXTRA_ITEM_POOL: list[str] = [
     CLAWSHOTS,
     WHIP,
     GUST_BELLOWS,
-    # SAILCLOTH,
+    SAILCLOTH,
     PROGRESSIVE_MITTS,
     WATER_DRAGON_SCALE,
     FIRESHIELD_EARRINGS,
@@ -293,7 +293,7 @@ PLENTIFUL_ITEM_POOL: list[str] = (
         CLAWSHOTS,
         WHIP,
         GUST_BELLOWS,
-        # SAILCLOTH,
+        SAILCLOTH,
         WATER_DRAGON_SCALE,
         FIRESHIELD_EARRINGS,
         EMERALD_TABLET,
@@ -330,7 +330,7 @@ STARTABLE_ITEMS: list[str] = (
         GUST_BELLOWS,
     ]
     + [PROGRESSIVE_POUCH] * 5
-    # + [SAILCLOTH]
+    + [SAILCLOTH]
     + [PROGRESSIVE_MITTS] * 2
     + [
         WATER_DRAGON_SCALE,
@@ -395,7 +395,7 @@ RANDOM_STARTABLE_ITEMS = (
         WHIP,
         GUST_BELLOWS,
         PROGRESSIVE_POUCH,
-        # SAILCLOTH,
+        SAILCLOTH,
         WATER_DRAGON_SCALE,
         FIRESHIELD_EARRINGS,
         GODDESS_HARP,
@@ -449,7 +449,7 @@ ITEM_ITEMFLAGS = {
     GRATITUDE_CRYSTAL_PACK: 35,
     HYLIAN_SHIELD: 125,
     EMPTY_BOTTLE: [153, 153, 153, 153, 153],
-    # SAILCLOTH: 15,
+    SAILCLOTH: 15,
 }
 
 
@@ -499,7 +499,7 @@ ITEM_STORYFLAGS = {
     PROGRESSIVE_BUG_NET: [949, 950],  # Bug Net, Big Bug Net
     PROGRESSIVE_POUCH: [30, 932, 932, 932, 932],  # Adventure Pouch, Pouch Expansion * 4
     SOTH_PART: [895, 896, 897, 369],
-    # SAILCLOTH: 32,
+    SAILCLOTH: 32,
 }
 
 # first value is dungeon name
@@ -524,14 +524,14 @@ ITEM_DUNGEONFLAGS = {
 # second is the amount to add
 # third is the maximum of the item
 ITEM_COUNTS = {
-    GRATITUDE_CRYSTAL: (0x1F6, 1, 15),
-    GRATITUDE_CRYSTAL_PACK: (0x1F6, 5, 13),
-    BOMB_BAG: (0x1F3, 10, 1),
-    PROGRESSIVE_BOW: (0x1F2, 20, 1),
-    PROGRESSIVE_SLINGSHOT: (0x1ED, 20, 1),
-    KEY_PIECE: (0x1F9, 1, 5),
-    PROGRESSIVE_POUCH: (0x1EA, 1, 5),
-    EXTRA_WALLET: (0x1FC, 1, 3),
+    GRATITUDE_CRYSTAL: (502, 1, 15),
+    GRATITUDE_CRYSTAL_PACK: (502, 5, 13),
+    BOMB_BAG: (499, 10, 1),
+    PROGRESSIVE_BOW: (498, 20, 1),
+    PROGRESSIVE_SLINGSHOT: (493, 20, 1),
+    KEY_PIECE: (505, 1, 5),
+    PROGRESSIVE_POUCH: (490, 1, 5),
+    EXTRA_WALLET: (508, 1, 3),
     LC_SMALL_KEY: (9, 1, 2),
     SVT_SMALL_KEY: (11, 1, 2),
     LMF_SMALL_KEY: (17, 1, 1),
@@ -539,9 +539,39 @@ ITEM_COUNTS = {
     SSH_SMALL_KEY: (18, 1, 2),
     FS_SMALL_KEY: (15, 1, 3),
     SK_SMALL_KEY: (20, 1, 1),
-    HEART_CONTAINER: (0x5D, 1, 6),
-    HEART_PIECE: (0x5E, 1, 32),
+    HEART_CONTAINER: (93, 1, 6),
+    HEART_PIECE: (94, 1, 32),
     GROUP_OF_TADTONES: (953, 1, 17),
+    # Bugs
+    FARON_GRASSHOPPER: (441, 1, 99),
+    WOODLAND_RHINO_BEETLE: (442, 1, 99),
+    DEKU_HORNET: (443, 1, 99),
+    SKYLOFT_MANTIS: (444, 1, 99),
+    VOLCANIC_LADYBUG: (445, 1, 99),
+    BLESSED_BUTTERFLY: (446, 1, 99),
+    LANAYRU_ANT: (447, 1, 99),
+    SAND_CICADA: (448, 1, 99),
+    GERUDO_DRAGONFLY: (449, 1, 99),
+    ELDIN_ROLLER: (450, 1, 99),
+    SKY_STAG_BEETLE: (451, 1, 99),
+    STARRY_FIREFLY: (452, 1, 99),
+    # Treasures
+    HORNET_LARVAE: (421, 1, 99),
+    BIRD_FEATHER: (422, 1, 99),
+    TUMBLEWEED: (423, 1, 99),
+    LIZARD_TAIL: (424, 1, 99),
+    ELDIN_ORE: (425, 1, 99),
+    ANCIENT_FLOWER: (426, 1, 99),
+    AMBER_RELIC: (427, 1, 99),
+    DUSK_RELIC: (428, 1, 99),
+    JELLY_BLOB: (429, 1, 99),
+    MONSTER_CLAW: (430, 1, 99),
+    MONSTER_HORN: (431, 1, 99),
+    ORNAMENTAL_SKULL: (432, 1, 99),
+    EVIL_CRYSTAL: (433, 1, 99),
+    BLUE_BIRD_FEATHER: (434, 1, 99),
+    GOLDEN_SKULL: (435, 1, 99),
+    GODDESS_PLUME: (436, 1, 99),
 }
 
 TRAP_SETTING_TO_ITEM = {

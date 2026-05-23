@@ -1368,13 +1368,21 @@ F023: # Thunderhead
     objtype: PLY
     object:
       play_cutscene: -1
-  - name: Gossip Stone
+  - name: Move Gossip Stone to layer 0
     type: objmove
     id: 0xFCEE
+    hardcoded_id: 0xFDFF
     layer: 2
     destlayer: 0
     room: 0
     objtype: OBJ
+  - name: Move Gossip Stone Butterflies to layer 0
+    type: objmove
+    id: 0xFCF2
+    layer: 2
+    destlayer: 0
+    room: 0
+    objtype: STAG
   - name: Delete Isle of Songs intro Cutscene
     type: objdelete
     id: 0xFC89
@@ -2206,7 +2214,7 @@ F200: # Eldin Volcano
     room: 4
     objtype: OBJ
   - name: Remove ET Door if open ET
-    onlyif: open_earth_temple == on
+    onlyif: open_earth_temple == open
     type: objdelete
     id: 0x2413
     layer: 0
@@ -2225,10 +2233,18 @@ F200: # Eldin Volcano
   - name: Move Gossip Stone to layer 0
     type: objmove
     id: 0xFC97
+    hardcoded_id: 0xFDFF
     layer: 2
     destlayer: 0
     room: 4
     objtype: OBJ
+  - name: Move Gossip Stone Butterflies to layer 0
+    type: objmove
+    id: 0x249A
+    layer: 2
+    destlayer: 0
+    room: 4
+    objtype: STAG
   - name: Remove 2nd key piece tower cs
     type: objpatch
     id: 0x200A
@@ -3812,13 +3828,13 @@ F301_3: # Skipper's Retreat
       posy: 50
       posz: 8550
       name: Tubo
-  - name: Add bomb flower next to skydive chest # prevents softlocks
+  - name: Add cactus with bomb flower next to skydive chest # prevents softlocks
     type: objadd
     layer: 0
     room: 0
-    objtype: OBJ
+    objtype: SOBJ
     object:
-      params1: 0xFFFFFFF0
+      params1: 0xFFFEFFFF
       params2: 0xFFFFFFFF
       posx: -80
       posy: 800
@@ -3827,7 +3843,7 @@ F301_3: # Skipper's Retreat
       angley: 0
       anglez: 0
       id: 0x4270
-      name: Bombf
+      name: ECactus
 
 F301_4: # Shipyard
   - name: Layer override
@@ -3842,13 +3858,21 @@ F301_4: # Shipyard
     room: 0
     arcn:
       - GossipStone
-  - name: Move Gossip Stone
+  - name: Move Gossip Stone to layer 0
     type: objmove
     id: 0xFC5E
+    hardcoded_id: 0xFDFF
     layer: 5
     destlayer: 0
     room: 0
     objtype: OBJ
+  - name: Move Gossip Stone Butterflies to layer 0
+    type: objmove
+    id: 0xFC5F
+    layer: 5
+    destlayer: 0
+    room: 0
+    objtype: STAG
   - name: Text after intro
     type: objdelete
     id: 0xFC6E
@@ -3955,9 +3979,17 @@ F301_6: # Outside Pirate stronghold
       play_cutscene: -1
 
 F301_7: # Construction Bay
-  - name: Remove Text near minecart door
+  - name: Layer override
+    type: layeroverride
+    override:
+      - story_flag: -1
+        night: 0
+        layer: 0 # Force Moldarach not to spawn
+  - name: Remove Fi text
     type: objdelete
-    id: 0xFC04
+    ids:
+      - 0xFC03
+      - 0xFC04
     layer: 0
     room: 0
     objtype: OBJ
@@ -4072,22 +4104,22 @@ F302: # Lanayru Gorge
     objtype: EVNT
     object:
       item: -1 # no lanayru Soth anymore
-  - name: Add extra Bomb Flower
+  - name: Add cactus with bomb flower next to skydive chest # prevents softlocks
     type: objadd
     layer: 0
     room: 0
-    objtype: OBJ
+    objtype: SOBJ
     object:
-      params1: 0xFFFFFFF0
+      params1: 0xFFFEFFFF
       params2: 0xFFFFFFFF
-      posx: 4100
-      posy: 28.9521332
-      posz: -3200
+      posx: 4625
+      posy: 6.606566906
+      posz: -4250
       anglex: 0
       angley: 0
       anglez: 0
       id: 0xFC50
-      name: Bombf
+      name: ECactus
 
 F303: # Lanayru Caves
   # Removed all flags and default to layer 0

@@ -28,6 +28,12 @@
 - name: True Master Sword Text
   standard: "You got the <y<True Master Sword>>!\nThe goddess has blessed your blade, and\nthe Master Sword has at last achieved its\nultimate form!"
 
+- name: Sailcloth Text
+  standard: 
+    "You got the <y<Sailcloth>>!
+    \n\n\n\nNow you can jump from any height without\nfear of a painful landing!
+    \n\n\n<slowtext>...<pause 20>It smells nice too.<pause 20>"
+
 - name: Harp Text
   standard: "You got the <y<Goddess's Harp>>!\nBut there's no time to admire it!\nYou can play it with <icon 30>."
 
@@ -73,30 +79,30 @@
 - name: Single Gratitude crystal counter
   standard: "You got <r<one>> <y<Gratitude Crystal>>!\nThat is <r<<numeric arg1> >>in total!"
 
-- name: Skyview Key Text
-  standard: "You got a <g<Skyview Temple>> Small Key!"
+- name: Skyview Temple Small Key Text
+  standard: "You got a <g<Skyview Temple>> Small Key!\nYou have collected <r<<numeric arg1> out of 2>>."
 
   # This is an intentional duplicate of the above entry
 - name: Item 200 Text
-  standard: "You got a <g<Skyview Temple>> Small Key!"
+  standard: "You got a <g<Skyview Temple>> Small Key!\nYou have collected <r<<numeric arg1> out of 2>>."
 
 - name: Item 201 Text
-  standard: "You got a <y<Lanayru Mining Facility>> Small\nKey!"
+  standard: "You got the <y<Lanayru Mining Facility>>\nSmall Key!\nYou have collected <r<<numeric arg1> out of 1>>."
 
 - name: Item 202 Text
-  standard: "You got a <b<Ancient Cistern>> Small Key!"
+  standard: "You got a <b<Ancient Cistern>> Small Key!\nYou have collected <r<<numeric arg1> out of 2>>."
 
 - name: Item 203 Text
-  standard: "You got a <r<Fire Sanctuary>> Small Key!"
+  standard: "You got a <r<Fire Sanctuary>> Small Key!\nYou have collected <r<<numeric arg1> out of 3>>."
 
 - name: Item 204 Text
-  standard: "You got a <y+<Sandship>> Small Key!"
+  standard: "You got a <y+<Sandship>> Small Key!\nYou have collected <r<<numeric arg1> out of 2>>."
 
 - name: Item 205 Text
-  standard: "You got a <s<Sky Keep>> Small Key!"
+  standard: "You got the <s<Sky Keep>> Small Key!\nYou have collected <r<<numeric arg1> out of 1>>."
 
 - name: Item 206 Text
-  standard: "You got a <ye<Lanayru Caves>> Small Key!"
+  standard: "You got a <ye<Lanayru Caves>> Small Key!\nYou have collected <r<<numeric arg1> out of 2>>."
 
 - name: Item 207 Text
   standard: "You got the <g<Skyview Temple>> Map!"
@@ -844,6 +850,78 @@
   cryptic: a <r<big net>>
   plurality: Singular
 
+- name: Faron Grasshopper
+  standard: Faron Grasshopper
+  pretty: a <Faron Grasshopper>
+  cryptic: a <r<jumping insect>>
+  plurality: Singular
+
+- name: Woodland Rhino Beetle
+  standard: Woodland Rhino Beetle
+  pretty: a <Woodland Rhino Beetle>
+  cryptic: a <r<horned forest insect>>
+  plurality: Singular
+
+- name: Deku Hornet
+  standard: Deku Hornet
+  pretty: a <Deku Hornet>
+  cryptic: a <r<stinging insect>>
+  plurality: Singular
+
+- name: Skyloft Mantis
+  standard: Skyloft Mantis
+  pretty: a <Skyloft Mantis>
+  cryptic: a <r<posing sky insect>>
+  plurality: Singular
+
+- name: Volcanic Ladybug
+  standard: Volcanic Ladybug
+  pretty: a <Volcanic Ladybug>
+  cryptic: a <r<fiery posh insect>>
+  plurality: Singular
+
+- name: Blessed Butterfly
+  standard: Blessed Butterfly
+  pretty: a <Blessed Butterfly>
+  cryptic: a <r<slippery insect>>
+  plurality: Singular
+
+- name: Lanayru Ant
+  standard: Lanayru Ant
+  pretty: a <Lanayru Ant>
+  cryptic: a <r<sandy worker insect>>
+  plurality: Singular
+
+- name: Sand Cicada
+  standard: Sand Cicada
+  pretty: a <Sand Cicada>
+  cryptic: a <r<noisy insect>>
+  plurality: Singular
+
+- name: Gerudo Dragonfly
+  standard: Gerudo Dragonfly
+  pretty: a <Gerudo Dragonfly>
+  cryptic: a <r<fast insect>>
+  plurality: Singular
+
+- name: Eldin Roller
+  standard: Eldin Roller
+  pretty: a <Eldin Roller>
+  cryptic: a <r<sisyphean insect>>
+  plurality: Singular
+
+- name: Sky Stag Beetle
+  standard: Sky Stag Beetle
+  pretty: a <Sky Stag Beetle>
+  cryptic: a <r<bachelor's insect>>
+  plurality: Singular
+
+- name: Starry Firefly
+  standard: Starry Firefly
+  pretty: a <Starry Firefly>
+  cryptic: a <r<glowing insect>>
+  plurality: Singular
+
 - name: Empty Bottle
   standard: Empty Bottle
   pretty: an <Empty Bottle>
@@ -868,6 +946,21 @@
   cryptic: a <r<baby's toy>>
   plurality: Singular
 
+- name: Hornet Larvae
+  standard: Hornet Larvae
+  pretty:
+    text: some <Hornet Larvae>
+    plurality: Plural
+  cryptic:
+    text: a <r<sticky home>>
+    plurality: Singular
+
+- name: Bird Feather
+  standard: Bird Feather
+  pretty: a <Bird Feather>
+  cryptic: a <r<writing implement>>
+  plurality: Singular
+
 - name: Tumbleweed
   standard: Tumbleweed
   pretty: 
@@ -876,6 +969,12 @@
   cryptic: 
     text: some <r<conjoined twigs>>
     plurality: Plural
+
+- name: Lizard Tail
+  standard: Lizard Tail
+  pretty: a <Lizard Tail>
+  cryptic: a <r<spiky tail>>
+  plurality: Singular
 
 - name: Eldin Ore
   standard: Eldin Ore
@@ -889,16 +988,40 @@
   cryptic: an <r<old plant>>
   plurality: Singular
 
+- name: Amber Relic
+  standard: Amber Relic
+  pretty: an <Amber Relic>
+  cryptic: an <r<orange tear>>
+  plurality: Singular
+
 - name: Dusk Relic
   standard: Dusk Relic
   pretty: a <Dusk Relic>
   cryptic: a <r<dark tear>>
   plurality: Singular
 
+- name: Jelly Blob
+  standard: Jelly Blob
+  pretty: a <Jelly Blob>
+  cryptic: a <r<slimey orb>>
+  plurality: Singular
+
+- name: Monster Claw
+  standard: Monster Claw
+  pretty: a <Monster Claw>
+  cryptic: a <r<hand of evil>>
+  plurality: Singular
+
 - name: Monster Horn
   standard: Monster Horn
   pretty: a <Monster Horn>
   cryptic: a <r<call to evil>>
+  plurality: Singular
+
+- name: Ornamental Skull
+  standard: Ornamental Skull
+  pretty: a <Ornamental Skull>
+  cryptic: a <r<weathered face>>
   plurality: Singular
 
 - name: Evil Crystal
@@ -1661,9 +1784,14 @@
   pretty: Central Skyloft - Second Rupee in Waterfall Cave Crawlspace
   cryptic: a <r<rupee>> in a <b<cave in the sky>>
 
-- name: Central Skyloft - Gossip Stone on Waterfall Island
-  standard: Central Skyloft - Gossip Stone on Waterfall Island
-  pretty: Central Skyloft - Gossip Stone on Waterfall Island
+- name: Central Skyloft - Gossip Stone Treasure on Waterfall Island
+  standard: Central Skyloft - Gossip Stone Treasure on Waterfall Island
+  pretty: Central Skyloft - Gossip Stone Treasure on Waterfall Island
+  cryptic: the <r<blessing>> of the <r<sky cave's guardian>>
+
+- name: Central Skyloft - Gossip Stone Hint on Waterfall Island
+  standard: Central Skyloft - Gossip Stone Hint on Waterfall Island
+  pretty: Central Skyloft - Gossip Stone Hint on Waterfall Island
   cryptic:
 
 - name: Central Skyloft - Parrow's Gift
@@ -1846,9 +1974,9 @@
   pretty: Skyloft Village - Bertie and Luv's Closet
   cryptic: snooping through a <r<potion couple's clothes>>
 
-- name: Skyloft Village - Gondo and Gebra's Closet
-  standard: Skyloft Village - Gondo and Gebra's Closet
-  pretty: Skyloft Village - Gondo and Gebra's Closet
+- name: Skyloft Village - Gondo and Greba's Closet
+  standard: Skyloft Village - Gondo and Greba's Closet
+  pretty: Skyloft Village - Gondo and Greba's Closet
   cryptic: snooping through a <r<repairman's clothes>>
 
 - name: Skyloft Village - Rupin and Goselle's Closet
@@ -1976,9 +2104,14 @@
   pretty: Beedle's Airshop - 1000 Rupee Item
   cryptic: for <g+<1000 rupees>> <r<Beedle>>
 
-- name: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
-  standard: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
-  pretty: Bamboo Island Interior - Gossip Stone behind Bamboo Pole
+- name: Bamboo Island Interior - Gossip Stone Treasure behind Bamboo Pole
+  standard: Bamboo Island Interior - Gossip Stone Treasure behind Bamboo Pole
+  pretty: Bamboo Island Interior - Gossip Stone Treasure behind Bamboo Pole
+  cryptic: the <r<blessing>> of the <r<swordsman's guardian>>
+
+- name: Bamboo Island Interior - Gossip Stone Hint behind Bamboo Pole
+  standard: Bamboo Island Interior - Gossip Stone Hint behind Bamboo Pole
+  pretty: Bamboo Island Interior - Gossip Stone Hint behind Bamboo Pole
   cryptic:
 
 - name: Bamboo Island Interior - Bonk Southwest Sprout
@@ -2071,9 +2204,14 @@
   pretty: Lumpy Pumpkin - Inside Crystal
   cryptic: a <r<crystal in a bar>>
 
-- name: Lumpy Pumpkin - Gossip Stone near Back Door
-  standard: Lumpy Pumpkin - Gossip Stone near Back Door
-  pretty: Lumpy Pumpkin - Gossip Stone near Back Door
+- name: Lumpy Pumpkin - Gossip Stone Treasure near Back Door
+  standard: Lumpy Pumpkin - Gossip Stone Treasure near Back Door
+  pretty: Lumpy Pumpkin - Gossip Stone Treasure near Back Door
+  cryptic: the <r<blessing>> of the <r<pumpkin's guardian>>
+
+- name: Lumpy Pumpkin - Gossip Stone Hint near Back Door
+  standard: Lumpy Pumpkin - Gossip Stone Hint near Back Door
+  pretty: Lumpy Pumpkin - Gossip Stone Hint near Back Door
   cryptic:
 
 - name: Orielle's Island - Heal Orielle's Loftwing
@@ -2141,9 +2279,14 @@
   pretty: The Sky - Chest in Breakable Boulder near Lumpy Pumpkin
   cryptic: a <r<western chest in a floating rock>>
 
-- name: Volcanic Island - Gossip Stone inside Island
-  standard: Volcanic Island - Gossip Stone inside Island
-  pretty: Volcanic Island - Gossip Stone inside Island
+- name: Volcanic Island - Gossip Stone Treasure inside Island
+  standard: Volcanic Island - Gossip Stone Treasure inside Island
+  pretty: Volcanic Island - Gossip Stone Treasure inside Island
+  cryptic: the <r<blessing>> of the <r<tiny volcano's guardian>>
+
+- name: Volcanic Island - Gossip Stone Hint inside Island
+  standard: Volcanic Island - Gossip Stone Hint inside Island
+  pretty: Volcanic Island - Gossip Stone Hint inside Island
   cryptic:
 
 - name: Bamboo Island - Goddess Chest behind Entrance
@@ -2271,9 +2414,14 @@
   pretty: Bug Heaven - Stamina Fruit on top of Slope
   cryptic: a <r<fruit in a buggy area>>
 
-- name: Inside the Thunderhead - Gossip Stone near Bug Heaven
-  standard: Inside the Thunderhead - Gossip Stone near Bug Heaven
-  pretty: Inside the Thunderhead - Gossip Stone near Bug Heaven
+- name: Inside the Thunderhead - Gossip Stone Treasure near Bug Heaven
+  standard: Inside the Thunderhead - Gossip Stone Treasure near Bug Heaven
+  pretty: Inside the Thunderhead - Gossip Stone Treasure near Bug Heaven
+  cryptic: the <r<blessing>> of the <r<cloud dome's guardian>>
+
+- name: Inside the Thunderhead - Gossip Stone Hint near Bug Heaven
+  standard: Inside the Thunderhead - Gossip Stone Hint near Bug Heaven
+  pretty: Inside the Thunderhead - Gossip Stone Hint near Bug Heaven
   cryptic:
 
 - name: Inside the Thunderhead - Chest on East Island
@@ -2501,9 +2649,14 @@
   pretty: Sealed Grounds - Gorko's Goddess Wall Reward
   cryptic: <r<drawing upon a magical wall>>
 
-- name: Sealed Grounds - Gossip Stone Behind the Temple
-  standard: Sealed Grounds - Gossip Stone Behind the Temple
-  pretty: Sealed Grounds - Gossip Stone Behind the Temple
+- name: Sealed Grounds - Gossip Stone Treasure Behind the Temple
+  standard: Sealed Grounds - Gossip Stone Treasure Behind the Temple
+  pretty: Sealed Grounds - Gossip Stone Treasure Behind the Temple
+  cryptic: the <r<blessing>> of the <r<Imprisoned's guardian>>
+
+- name: Sealed Grounds - Gossip Stone Hint Behind the Temple
+  standard: Sealed Grounds - Gossip Stone Hint Behind the Temple
+  pretty: Sealed Grounds - Gossip Stone Hint Behind the Temple
   cryptic:
 
 - name: Sealed Grounds - Blow High Bushes in Corner Left of Gossip Stone
@@ -2807,9 +2960,14 @@
   pretty: Deep Woods - Slingshot Right Temple Door Frame
   cryptic: <r<shooting an entrance>> to a <g<temple in the forest>>
 
-- name: Deep Woods - Gossip Stone before Temple
-  standard: Deep Woods - Gossip Stone before Temple
-  pretty: Deep Woods - Gossip Stone before Temple
+- name: Deep Woods - Gossip Stone Treasure before Temple
+  standard: Deep Woods - Gossip Stone Treasure before Temple
+  pretty: Deep Woods - Gossip Stone Treasure before Temple
+  cryptic: the <r<blessing>> of the <r<forest temple's guardian>>
+
+- name: Deep Woods - Gossip Stone Hint before Temple
+  standard: Deep Woods - Gossip Stone Hint before Temple
+  pretty: Deep Woods - Gossip Stone Hint before Temple
   cryptic:
 
 - name: Deep Woods - Goddess Cube Near Goron
@@ -2922,9 +3080,14 @@
   pretty: Floria Waterfall - Slingshot Right Cistern Eye
   cryptic: <r<shooting a soggy eye>>
 
-- name: Floria Waterfall - Gossip Stone near Bird Statue
-  standard: Floria Waterfall - Gossip Stone near Bird Statue
-  pretty: Floria Waterfall - Gossip Stone near Bird Statue
+- name: Floria Waterfall - Gossip Stone Treasure near Bird Statue
+  standard: Floria Waterfall - Gossip Stone Treasure near Bird Statue
+  pretty: Floria Waterfall - Gossip Stone Treasure near Bird Statue
+  cryptic: the <r<blessing>> of the <r<lake's guardian>>
+
+- name: Floria Waterfall - Gossip Stone Hint near Bird Statue
+  standard: Floria Waterfall - Gossip Stone Hint near Bird Statue
+  pretty: Floria Waterfall - Gossip Stone Hint near Bird Statue
   cryptic:
 
 - name: Floria Waterfall - Goddess Cube on High Ledge
@@ -3262,9 +3425,14 @@
   pretty: Eldin Volcano - Right Rupee behind Bombable Wall near Thrill Digger Cave
   cryptic: a <r<rupee behind a hidden wall>>
 
-- name: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
-  standard: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
-  pretty: Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator
+- name: Thrill Digger Cave - Gossip Stone Treasure near Tubert the Thrill Digger Operator
+  standard: Thrill Digger Cave - Gossip Stone Treasure near Tubert the Thrill Digger Operator
+  pretty: Thrill Digger Cave - Gossip Stone Treasure near Tubert the Thrill Digger Operator
+  cryptic: the <r<blessing>> of the <r<burrowing guardian>>
+
+- name: Thrill Digger Cave - Gossip Stone Hint near Tubert the Thrill Digger Operator
+  standard: Thrill Digger Cave - Gossip Stone Hint near Tubert the Thrill Digger Operator
+  pretty: Thrill Digger Cave - Gossip Stone Hint near Tubert the Thrill Digger Operator
   cryptic:
 
 - name: Thrill Digger Cave - Slingshot Left Blue Crystal 1
@@ -3352,19 +3520,34 @@
   pretty: Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4
   cryptic: <r<shooting a blue gem>> in an <r<exciting cave>>
 
-- name: Eldin Volcano - Gossip Stone on Cliff West of Temple
-  standard: Eldin Volcano - Gossip Stone on Cliff West of Temple
-  pretty: Eldin Volcano - Gossip Stone on Cliff West of Temple
+- name: Eldin Volcano - Gossip Stone Treasure on Cliff West of Temple
+  standard: Eldin Volcano - Gossip Stone Treasure on Cliff West of Temple
+  pretty: Eldin Volcano - Gossip Stone Treasure on Cliff West of Temple
+  cryptic: the <r<blessing>> of the <r<hot temple's guardian>>
+
+- name: Eldin Volcano - Gossip Stone Hint on Cliff West of Temple
+  standard: Eldin Volcano - Gossip Stone Hint on Cliff West of Temple
+  pretty: Eldin Volcano - Gossip Stone Hint on Cliff West of Temple
   cryptic:
 
-- name: Upper Eldin Cave - West Gossip Stone
-  standard: Upper Eldin Cave - West Gossip Stone
-  pretty: Upper Eldin Cave - West Gossip Stone
+- name: Upper Eldin Cave - West Gossip Stone Treasure
+  standard: Upper Eldin Cave - West Gossip Stone Treasure
+  pretty: Upper Eldin Cave - West Gossip Stone Treasure
+  cryptic: the <r<blessing>> of the <r<warm upper cave's guardian>>
+
+- name: Upper Eldin Cave - West Gossip Stone Hint
+  standard: Upper Eldin Cave - West Gossip Stone Hint
+  pretty: Upper Eldin Cave - West Gossip Stone Hint
   cryptic:
 
-- name: Lower Eldin Cave - East Gossip Stone
-  standard: Lower Eldin Cave - East Gossip Stone
-  pretty: Lower Eldin Cave - East Gossip Stone
+- name: Lower Eldin Cave - East Gossip Stone Treasure
+  standard: Lower Eldin Cave - East Gossip Stone Treasure
+  pretty: Lower Eldin Cave - East Gossip Stone Treasure
+  cryptic: the <r<blessing>> of the <r<warm lower cave's guardian>>
+
+- name: Lower Eldin Cave - East Gossip Stone Hint
+  standard: Lower Eldin Cave - East Gossip Stone Hint
+  pretty: Lower Eldin Cave - East Gossip Stone Hint
   cryptic:
 
 - name: Eldin Volcano - Goddess Cube at Eldin Entrance
@@ -3732,14 +3915,24 @@
   pretty: Volcano Summit - Underground Rupee 2
   cryptic: an <r<underground rupee at the summit>>
 
-- name: Volcano Summit - Gossip Stone on Cliff near Waterfall
-  standard: Volcano Summit - Gossip Stone on Cliff near Waterfall
-  pretty: Volcano Summit - Gossip Stone on Cliff near Waterfall
+- name: Volcano Summit - Gossip Stone Treasure on Cliff near Waterfall
+  standard: Volcano Summit - Gossip Stone Treasure on Cliff near Waterfall
+  pretty: Volcano Summit - Gossip Stone Treasure on Cliff near Waterfall
+  cryptic: the <r<blessing>> of the <r<volcano's watery guardian>>
+
+- name: Volcano Summit - Gossip Stone Hint on Cliff near Waterfall
+  standard: Volcano Summit - Gossip Stone Hint on Cliff near Waterfall
+  pretty: Volcano Summit - Gossip Stone Hint on Cliff near Waterfall
   cryptic:
 
-- name: Volcano Summit - Gossip Stone between Small Thirsty Frogs
-  standard: Volcano Summit - Gossip Stone between Small Thirsty Frogs
-  pretty: Volcano Summit - Gossip Stone between Small Thirsty Frogs
+- name: Volcano Summit - Gossip Stone Treasure between Small Thirsty Frogs
+  standard: Volcano Summit - Gossip Stone Treasure between Small Thirsty Frogs
+  pretty: Volcano Summit - Gossip Stone Treasure between Small Thirsty Frogs
+  cryptic: the <r<blessing>> of the <r<volcano's parched guardian>>
+
+- name: Volcano Summit - Gossip Stone Hint between Small Thirsty Frogs
+  standard: Volcano Summit - Gossip Stone Hint between Small Thirsty Frogs
+  pretty: Volcano Summit - Gossip Stone Hint between Small Thirsty Frogs
   cryptic:
 
 - name: Volcano Summit - Goddess Cube in Lava Lake
@@ -4117,9 +4310,14 @@
   pretty: Lanayru Desert - Stamina Fruit in North Sand Oasis 2
   cryptic: a <r<fruit in a sandy paradise>>
 
-- name: Temple of Time - Gossip Stone near Robot
-  standard: Temple of Time - Gossip Stone near Robot
-  pretty: Temple of Time - Gossip Stone near Robot
+- name: Temple of Time - Gossip Stone Treasure near Robot
+  standard: Temple of Time - Gossip Stone Treasure near Robot
+  pretty: Temple of Time - Gossip Stone Treasure near Robot
+  cryptic: the <r<blessing>> of the <r<time-travelling guardian>>
+
+- name: Temple of Time - Gossip Stone Hint near Robot
+  standard: Temple of Time - Gossip Stone Hint near Robot
+  pretty: Temple of Time - Gossip Stone Hint near Robot
   cryptic:
 
 - name: Temple of Time - Northwest Rupee on Tree Root
@@ -4257,14 +4455,24 @@
   pretty: Lanayru Caves - Golo's Gift
   cryptic: a <r<gift from a miner>>
 
-- name: Lanayru Caves - Gossip Stone in Center
-  standard: Lanayru Caves - Gossip Stone in Center
-  pretty: Lanayru Caves - Gossip Stone in Center
+- name: Lanayru Caves - Gossip Stone Treasure in Center
+  standard: Lanayru Caves - Gossip Stone Treasure in Center
+  pretty: Lanayru Caves - Gossip Stone Treasure in Center
+  cryptic: the <r<blessing>> of the <r<sandy cave's guardian>>
+
+- name: Lanayru Caves - Gossip Stone Hint in Center
+  standard: Lanayru Caves - Gossip Stone Hint in Center
+  pretty: Lanayru Caves - Gossip Stone Hint in Center
   cryptic:
 
-- name: Lanayru Caves - Gossip Stone towards Lanayru Gorge
-  standard: Lanayru Caves - Gossip Stone towards Lanayru Gorge
-  pretty: Lanayru Caves - Gossip Stone towards Lanayru Gorge
+- name: Lanayru Caves - Gossip Stone Treasure towards Lanayru Gorge
+  standard: Lanayru Caves - Gossip Stone Treasure towards Lanayru Gorge
+  pretty: Lanayru Caves - Gossip Stone Treasure towards Lanayru Gorge
+  cryptic: the <r<blessing>> of the <r<sandy cave's twin guardian>>
+
+- name: Lanayru Caves - Gossip Stone Hint towards Lanayru Gorge
+  standard: Lanayru Caves - Gossip Stone Hint towards Lanayru Gorge
+  pretty: Lanayru Caves - Gossip Stone Hint towards Lanayru Gorge
   cryptic:
 
 - name: Lanayru Gorge - Bonk Pillar near Thunder Dragon
@@ -4532,9 +4740,14 @@
   pretty: Shipyard - Heart Stopping Rickety Coaster Track in 1'05
   cryptic: a <r<fast minecart time>>
 
-- name: Shipyard - Gossip Stone after First Minecart Track
-  standard: Shipyard - Gossip Stone after First Minecart Track
-  pretty: Shipyard - Gossip Stone after First Minecart Track
+- name: Shipyard - Gossip Stone Treasure after First Minecart Track
+  standard: Shipyard - Gossip Stone Treasure after First Minecart Track
+  pretty: Shipyard - Gossip Stone Treasure after First Minecart Track
+  cryptic: the <r<blessing>> of the <r<roller coaster's guardian>>
+
+- name: Shipyard - Gossip Stone Hint after First Minecart Track
+  standard: Shipyard - Gossip Stone Hint after First Minecart Track
+  pretty: Shipyard - Gossip Stone Hint after First Minecart Track
   cryptic:
 
 - name: Shipyard - Bonk Sign before Second Minecart Track
@@ -6089,6 +6302,9 @@
 - name: Groosenator can't fling text
   standard: "Sorry, <heroname>. I can't fling you\nsomewhere you haven't been before."
 
+- name: Groosenator needs sailcloth text
+  standard: "Sorry, <heroname>. I can't fling you\nthere if you can't <b<break your fall>>."
+
 - name: FFW Bucha leave question text
   standard: "<action6 \x03>Kewwww... Is the water not to your liking?\nI know a secret way out of the forest,\nwould you like me to show you?\n[1]Yes please![2-]No thanks."
 
@@ -6125,6 +6341,9 @@
 
 - name: Patch Fi Call Use amiibo Option
   standard: "Warp"
+
+- name: Fi require Sailcloth to Amiibo Warp
+  standard: "Master, I unfortunately cannot allow you to\nuse the amiibo without the <y<Sailcloth>>."
 
 - name: Forced Required Dungeons Text
   standard: "Welcome to your new adventure, Master. I have\n<r<important information>> about your journey."

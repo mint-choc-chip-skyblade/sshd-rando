@@ -9,6 +9,7 @@ use crate::fix;
 use crate::flag;
 use crate::lyt;
 use crate::minigame;
+use crate::savefile;
 use crate::traps;
 
 use core::arch::asm;
@@ -115,6 +116,7 @@ extern "C" {
 
     static STORYFLAG_MGR: *mut flag::FlagMgr;
     static LYT_MSG_WINDOW: *mut lyt::dLytMsgWindow;
+    static FILE_MGR: *mut savefile::FileMgr;
 
     static mut CURRENT_STAGE_NAME: [u8; 8];
 
@@ -165,6 +167,12 @@ pub extern "C" fn custom_event_commands(
         },
         76 => minigame::boss_rush_backup_flags(event_flow_element.param1),
         77 => minigame::boss_rush_restore_flags(),
+        78 => unsafe {
+            let sceneindex = event_flow_element.param1;
+
+            (*(*LYT_MSG_WINDOW).text_mgr).numeric_args[1] =
+                1 + (((*FILE_MGR).FA.dungeonflags[sceneindex as usize][1] >> 4) & 0xF) as u32;
+        },
         _ => (),
     }
 

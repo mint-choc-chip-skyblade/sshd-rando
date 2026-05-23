@@ -117,6 +117,8 @@ def set_all_entrances_data(world: World) -> None:
             forward_entrance.can_start_at = entrance_data["forward"].get(
                 "can_start_at", True
             )
+            if alias := entrance_data["forward"].get("alias", None):
+                forward_entrance.alias = alias
             forward_entrance.primary = True
             forward_entrance.sort_priority = Entrance.sort_counter
             if conditional_vanilla_connections := entrance_data["forward"].get(
@@ -144,6 +146,8 @@ def set_all_entrances_data(world: World) -> None:
                 return_entrance.can_start_at = entrance_data["return"].get(
                     "can_start_at", True
                 )
+                if alias := entrance_data["return"].get("alias", None):
+                    return_entrance.alias = alias
                 return_entrance.sort_priority = Entrance.sort_counter
                 Entrance.sort_counter += 1
                 if conditional_vanilla_connections := entrance_data["return"].get(
@@ -179,9 +183,15 @@ def set_all_entrances_data(world: World) -> None:
                     coupled_door.connected_area.entrances.remove(coupled_door)
                     coupled_door.parent_area.exits.remove(coupled_door)
 
-                    # Change the main door's name to be more general
+                    # Change the main door's name and alias to be more general
                     main_door.original_name = (
                         main_door.original_name.replace(" North", "")
+                        .replace(" South", "")
+                        .replace(" East", "")
+                        .replace(" West", "")
+                    )
+                    main_door.alias = (
+                        main_door.alias.replace(" North", "")
                         .replace(" South", "")
                         .replace(" East", "")
                         .replace(" West", "")
@@ -489,12 +499,12 @@ def set_plandomizer_entrances(
             for type, pool in entrance_pools.items()
             if type in Entrance.NON_ASSUMED_ENTRANCE_TYPES
             for entrance in pool
-            if entrance not in world.plandomizer_entrances
+            if entrance not in world.plandomizer.entrances
         ]
     )
 
     # Attempt to connect each plandomized entrance
-    for entrance, target in world.plandomizer_entrances.items():
+    for entrance, target in world.plandomizer.entrances.items():
         entrance_to_connect = entrance
         target_to_connect = target
         entrance_type = entrance.type

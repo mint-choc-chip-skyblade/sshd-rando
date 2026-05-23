@@ -31,10 +31,10 @@ class TrackerTargetLabel(QLabel):
 
         if show_full_connection:
             self.setText(
-                f"{self.target.connected_area} from {self.target.replaces.parent_area}"
+                f"{self.target.alias_connected_area()} from {self.target.replaces.alias_parent_area()}"
             )
         else:
-            self.setText(self.target.replaces.original_name.split(" -> ")[1])
+            self.setText(self.target.replaces.alias.split(" -> ")[1])
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
         if ev.button() == QtCore.Qt.MouseButton.LeftButton:

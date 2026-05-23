@@ -1,6 +1,5 @@
 from patches.asmpatchhelper import NsoOffsets
 
-
 MAIN_NSO_OFFSETS = NsoOffsets(
     text_offset=0x7100004000,
     rodata_offset=0x7101061000,

@@ -860,8 +860,8 @@ pub extern "C" fn fix_freestanding_item_y_offset(item_actor: *mut dAcItem) {
                     y_offset = 24.0;
                     use_default_scaling = true;
                 },
-                // Seed Satchel | Golden Skull
-                128 | 175 => y_offset = 14.0,
+                // Sailcloth | Seed Satchel | Golden Skull
+                15 | 128 | 175 => y_offset = 14.0,
                 // Map | Quiver | Whip | Emerald Tablet | Maps
                 50 | 131 | 137 | 177 | 207..=213 => y_offset = 19.0,
                 // Earrings
@@ -1155,39 +1155,31 @@ pub extern "C" fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
         let mut open_trial_gate = false;
         // If we have the Goddess Harp and the appropriate song, set
         // the scene flag for the trial gate being open. If we're in
-        // the scene index where the trial is, set the flag locally
-        // and then try to find the trial gate actor and open it.
+        // the scene index where the trial is, try to find the trial gate actor and
+        // open it.
         if flag::check_itemflag(flag::ITEMFLAGS::GODDESS_HARP) == 1 {
             if flag::check_itemflag(flag::ITEMFLAGS::FARORE_COURAGE) == 1 {
+                flag::set_global_sceneflag(1, 17);
                 if (*SCENEFLAG_MGR).sceneindex == 1 {
-                    flag::set_local_sceneflag(17);
                     open_trial_gate = true;
-                } else {
-                    flag::set_global_sceneflag(1, 17);
                 }
             }
             if flag::check_itemflag(flag::ITEMFLAGS::NAYRU_WISDOM) == 1 {
+                flag::set_global_sceneflag(7, 91);
                 if (*SCENEFLAG_MGR).sceneindex == 7 {
-                    flag::set_local_sceneflag(91);
                     open_trial_gate = true;
-                } else {
-                    flag::set_global_sceneflag(7, 91);
                 }
             }
             if flag::check_itemflag(flag::ITEMFLAGS::DIN_POWER) == 1 {
+                flag::set_global_sceneflag(4, 70);
                 if (*SCENEFLAG_MGR).sceneindex == 4 {
-                    flag::set_local_sceneflag(70);
                     open_trial_gate = true;
-                } else {
-                    flag::set_global_sceneflag(4, 70);
                 }
             }
             if flag::check_itemflag(flag::ITEMFLAGS::SONG_OF_THE_HERO) == 1 {
+                flag::set_global_sceneflag(0, 69);
                 if (*SCENEFLAG_MGR).sceneindex == 0 {
-                    flag::set_local_sceneflag(69);
                     open_trial_gate = true;
-                } else {
-                    flag::set_global_sceneflag(0, 69);
                 }
             }
         }
@@ -1233,6 +1225,7 @@ pub extern "C" fn resolve_progressive_item_models(
         // Deal with unique archive names
         if arc_or_model == 1 {
             model_name = match item_id {
+                15 => c"Demo11_01".as_ptr(),
                 214 => c"Onp".as_ptr(),
                 215 => c"DesertRobot".as_ptr(),
                 _ => model_name,
@@ -1248,6 +1241,7 @@ pub extern "C" fn resolve_progressive_item_models(
         // Deal with unique model names
         } else if arc_or_model == 2 {
             model_name = match item_id {
+                15 => c"GetStole".as_ptr(),
                 // Randomly pick which of the two tadtone models is used for fun :p
                 214 if (s_rng & 1) == 0 => c"OnpA".as_ptr(),
                 214 => c"OnpB".as_ptr(),
@@ -1442,8 +1436,8 @@ pub extern "C" fn get_custom_freestanding_item_scale() -> f32 {
 
         return match (*item_actor).final_determined_itemid {
             40 => 1.5, // 5 Bombs
-            // Tumbleweed, Ancient Flower, Blue Bird Feather, Goddess Plume
-            60 | 163 | 166 | 174 | 176 => 2.0,
+            // Tumbleweed, Ancient Flower, Dusk Relic, Blue Bird Feather, Goddess Plume
+            60 | 163 | 166 | 168 | 174 | 176 => 2.0,
             _ => 1.0,
         };
     }
@@ -1519,6 +1513,46 @@ pub extern "C" fn spawn_tree_of_life_item() -> *mut dAcItem {
 
         ITEM_GET_BOTTLE_POUCH_SLOT = 0xFFFFFFFF;
         NUMBER_OF_ITEMS = 0;
+
+        return item_actor;
+    }
+}
+
+#[no_mangle]
+pub extern "C" fn setup_gossip_stone_item_params(
+    roomid: u32,
+    mut param1: u32,
+    actor_pos: *mut math::Vec3f,
+    actor_rot: *mut math::Vec3s, // unused, redefined later
+    mut param2: u32,
+    hrphint_actor: *mut actor::dAcOBase,
+) -> *mut dAcItem {
+    unsafe {
+        let sceneflag: u32 = (*hrphint_actor).basebase.members.param1 & 0xFF;
+        let trapid: u32 = (*hrphint_actor).members.base.param2 & 0xF;
+        let itemid: u32 = ((*hrphint_actor).members.base.param2 >> 4) & 0xFF;
+
+        param1 = 0x180000u32 | (sceneflag << 10) | itemid;
+        param2 &= 0xFFFFFF0F;
+        param2 |= trapid << 4;
+
+        // Redefine actor_rot
+        // Can't use the vanilla rot on the stack as, unfathomably, this causes the
+        // item not to spawn at all
+        let mut actor_rot = (*hrphint_actor).members.base.rot;
+        let actor_rot_ptr = &mut actor_rot as *mut math::Vec3s;
+
+        let item_actor: *mut dAcItem = actor::spawn_actor(
+            actor::ACTORID::ITEM,
+            roomid,
+            param1,
+            actor_pos,
+            actor_rot_ptr,
+            core::ptr::null_mut(),
+            param2,
+        ) as *mut dAcItem;
+
+        (*item_actor).prevent_timed_despawn = 1;
 
         return item_actor;
     }

@@ -35,7 +35,7 @@ def generate_item_pool(world: "World") -> None:
     item_pool = item_pool.copy()
 
     # Remove Key Pieces if the ET Door is open
-    if world.setting("open_earth_temple") == "on":
+    if world.setting("open_earth_temple") == "open":
         item_pool = [item for item in item_pool if item != KEY_PIECE]
 
     if world.setting("small_keys") == "removed":

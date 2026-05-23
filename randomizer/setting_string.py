@@ -57,9 +57,12 @@ def setting_string_from_config(
             if setting.info.type == SettingType.COSMETIC:
                 continue
 
-            bits_writer.write(
-                setting.current_option_index, get_bit_length_for_setting(setting)
-            )
+            if setting.is_using_random_option:
+                option_index = setting.info.options.index(setting.info.random_option)
+            else:
+                option_index = setting.current_option_index
+
+            bits_writer.write(option_index, get_bit_length_for_setting(setting))
 
         for location in location_table:
             bits_writer.write(

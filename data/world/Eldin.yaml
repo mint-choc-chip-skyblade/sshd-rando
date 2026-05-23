@@ -1,23 +1,24 @@
+# ELDIN VOLCANO
 - name: Volcano Entrance
   hint_region: Eldin Volcano
   exits:
-    Volcano Entrance Statue: Nothing
+    Volcano Entrance Statue: Nothing # Interact with the statue.
     Volcano Ascent: Bomb_Bag or shortcut_eldin_entrance_boulder or can_access(Volcano Ascent) # No bomb flowers are close enough for even tough beetle
-    Volcano First Room: Nothing
+    Volcano First Room: Nothing # Run over the magma platforms to the cave / room area.
   locations:
-    Eldin Volcano - Rupee on Ledge before First Room: Nothing
+    Eldin Volcano - Rupee on Ledge before First Room: Nothing # Drop down using the vines.
     Eldin Volcano - Goddess Cube at Eldin Entrance: Goddess_Sword
 
-- name: Volcano First Room # Until the rocks
+- name: Volcano First Room # Until the rocks.
   hint_region: Eldin Volcano
   exits:
-    Volcano East: Nothing
-    Bokoblin Base Prison: Nothing
+    Volcano East: Nothing # Use the bomb flowers to destroy the rocks.
+    Bokoblin Base Prison: Nothing # Talk to the Gossip Stone.
   locations:
-    Eldin Volcano - Stamina Fruit in Rising Lava Room: Nothing
-    Eldin Volcano - Chest behind Bombable Wall in First Room: Nothing
-    Eldin Volcano - Rupee behind Bombable Wall in First Room: Nothing
-    Eldin Volcano - Rupee in Crawlspace in First Room: Nothing
+    Eldin Volcano - Stamina Fruit in Rising Lava Room: Nothing # Run through the room and collect the item.
+    Eldin Volcano - Chest behind Bombable Wall in First Room: Nothing # Use the bomb flowers.
+    Eldin Volcano - Rupee behind Bombable Wall in First Room: Nothing # Use the bomb flowers.
+    Eldin Volcano - Rupee in Crawlspace in First Room: Nothing # Use the bomb flowers.
     Eldin Volcano - Slingshot Ceiling in First Room: Slingshot
     Eldin Volcano - Underground Rupee in First Room 1: Mogma_Mitts
     Eldin Volcano - Underground Rupee in First Room 2: Mogma_Mitts
@@ -32,24 +33,24 @@
 - name: Volcano East
   hint_region: Eldin Volcano
   exits:
-    Volcano East Statue: Nothing
+    Volcano East Statue: Nothing # Interact with the statue.
     Volcano Entrance: Clawshots
     Volcano First Room: Bomb_Bag
-    Mogma Turf Dive: Nothing
+    Mogma Turf Dive: Sailcloth
     Past Mogma Turf: Bomb_Bag or Hook_Beetle
   locations:
     Eldin Volcano - Rupee on Ledge before First Room: Beetle
-    Eldin Volcano - Chest after Blocked Crawlspace: Nothing
+    Eldin Volcano - Chest after Blocked Crawlspace: Nothing # Use the bomb flower and roll it into the crawlspace.
     Eldin Volcano - Southeast Rupee above Mogma Turf Entrance: Beetle
     Eldin Volcano - North Rupee above Mogma Turf Entrance: Beetle
     Eldin Volcano - Underground Rupee before Bone Bridge 1: Mogma_Mitts
     Eldin Volcano - Underground Rupee before Bone Bridge 2: Mogma_Mitts
-    Eldin Volcano - Chest behind Bombable Wall near Cliff: Nothing
-    Eldin Volcano - Rupee in Old Pyrup Shell near Cliff: Nothing # Use nearby bomb flower
-    Eldin Volcano - Bonk Hammer in Hut near Cliff: Nothing
+    Eldin Volcano - Chest behind Bombable Wall near Cliff: Nothing # Use bomb flower on the cliff and carry it over to the wall.
+    Eldin Volcano - Rupee in Old Pyrup Shell near Cliff: Nothing # Use nearby bomb flower.
+    Eldin Volcano - Bonk Hammer in Hut near Cliff: Nothing # Roll into the wall.
     Eldin Volcano - Blow Cloth above Hut near Cliff: Gust_Bellows
-    Eldin Volcano - Rupee in Old Pyrup Shell on Cliff: Nothing # Use nearby bomb flower
-    Eldin Volcano - Item on Cliff: Nothing
+    Eldin Volcano - Rupee in Old Pyrup Shell on Cliff: Nothing # Use nearby bomb flower.
+    Eldin Volcano - Item on Cliff: Nothing # Climb up the cliff.
     Eldin Volcano - Underground Rupee in Cliff 1: Mogma_Mitts
     Eldin Volcano - Underground Rupee in Cliff 2: Mogma_Mitts
     Eldin Volcano - Underground Rupee in Cliff 3: Mogma_Mitts
@@ -65,57 +66,60 @@
     Eldin Volcano - Underground Rupee in Cliff 13: Mogma_Mitts
     Eldin Volcano - Underground Rupee in Cliff 14: Mogma_Mitts
     Eldin Volcano - Underground Rupee in Cliff 15: Mogma_Mitts
-    # Removed as extra collision on Eldin layer 1 makes this digspot *very* buggy
+    # Removed as extra collision on Eldin layer 1 makes this digspot *very* buggy.
     #
     # Eldin Volcano - Underground Rupee below Mogma Turf Entrance 1: Mogma_Mitts
     # Eldin Volcano - Underground Rupee below Mogma Turf Entrance 2: Mogma_Mitts
     # Eldin Volcano - Underground Rupee below Mogma Turf Entrance 3: Mogma_Mitts
-    Eldin Volcano - Stamina Fruit near Volcano East Statue: Nothing
-    Eldin Volcano - Stamina Fruit in front of Bone Bridge: Nothing
-    Eldin Volcano - Stamina Fruit near Item on Cliff: Nothing
+    Eldin Volcano - Stamina Fruit near Volcano East Statue: Nothing # Follow the path from the statue.
+    Eldin Volcano - Stamina Fruit in front of Bone Bridge: Nothing # Follow the path round to the bone bridge.
+    Eldin Volcano - Stamina Fruit near Item on Cliff: Nothing # Follow the path round and climb the cliff.
     Eldin Volcano - Goddess Cube near Mogma Turf Entrance: Goddess_Sword
 
 - name: Past Mogma Turf
   hint_region: Eldin Volcano
   exits:
-    Volcano East: Nothing
-    Volcano Ascent: Nothing
-    Mogma Turf Final Vent: Impossible # To satisfy entrance rando
+    Volcano East: Nothing # Use nearby bomb flower.
+    Volcano Ascent: Nothing # Run over the always extended bridge.
+    Mogma Turf Final Vent: Impossible # To satisfy entrance rando.
 
 - name: Volcano Ascent
   hint_region: Eldin Volcano
   exits:
-    Volcano Ascent Statue: Nothing
+    Volcano Ascent Statue: Nothing # Interact with the statue.
     Din's Silent Realm: Goddesss_Harp and Dins_Power and Progressive_Sword
     # Beetle can be used to scare the boko away but that's really not obvious
     Outside Thrill Digger Cave: Bow or Slingshot or logic_stuttersprint
     Past Sand Slide: shortcut_eldin_ascent_boulder or Bomb_Bag or Hook_Beetle or can_access(Past Sand Slide) # or (Whip and Whip Bomb Trick)
+    # Run partly up the slope to the west.
+    # Use the bomb flower on one of the slope ledges to destroy the rocks blocking the path back to Volcano Entrance.
     Volcano Entrance: Nothing
-    Past Mogma Turf: Nothing
+    Past Mogma Turf: Nothing # Run over the always extended bridge.
   locations:
-    Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent: Nothing
-    Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 1: Nothing
-    Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 2: Nothing
-    Eldin Volcano - Stamina Fruit below Slope after Entrance Shortcut: Nothing
+    Eldin Volcano - Chest behind Bombable Wall near Volcano Ascent: Nothing # Use the bomb flowers to blow up the wall.
+    Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 1: Nothing # Run towards the slope to the west.
+    Eldin Volcano - Stamina Fruit below Slope after Volcano Ascent 2: Nothing # Run towards the slope to the west.
+    Eldin Volcano - Stamina Fruit below Slope after Entrance Shortcut: Nothing # Run towards the slope to the west, run partly up and slide down to the rocks.
 
 - name: Outside Thrill Digger Cave
   hint_region: Eldin Volcano
   exits:
-    Volcano Ascent: Nothing
-    Near Temple Entrance: Nothing # You can use the nearby bomb flowers to blow up the tower
-    Thrill Digger Cave: Nothing
+    Volcano Ascent: Nothing # Slide down the slope.
+    Near Temple Entrance: Nothing # Use the nearby bomb flowers to blow up the tower.
+    Thrill Digger Cave: Nothing # Use the bomb flowers to blow up the wall.
   locations:
-    Eldin Volcano - Left Rupee behind Bombable Wall near Thrill Digger Cave: Nothing
-    Eldin Volcano - Right Rupee behind Bombable Wall near Thrill Digger Cave: Nothing
-    Eldin Volcano - Stamina Fruit above Slope after Volcano Ascent: Nothing
+    Eldin Volcano - Left Rupee behind Bombable Wall near Thrill Digger Cave: Nothing # Use a bomb flower to blow up the wall.
+    Eldin Volcano - Right Rupee behind Bombable Wall near Thrill Digger Cave: Nothing # Use a bomb flower to blow up the wall.
+    Eldin Volcano - Stamina Fruit above Slope after Volcano Ascent: Nothing # Collect the item near the bomb flower near the slope.
 
 - name: Thrill Digger Cave
   events:
     Can Play Thrill Digger Minigame: Digging_Mitts
   exits:
-    Outside Thrill Digger Cave: Nothing
+    Outside Thrill Digger Cave: Nothing # Run out the exit.
   locations:
-    Thrill Digger Cave - Gossip Stone near Tubert the Thrill Digger Operator: Nothing
+    Thrill Digger Cave - Gossip Stone Treasure near Tubert the Thrill Digger Operator: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Thrill Digger Cave - Gossip Stone Hint near Tubert the Thrill Digger Operator: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
     Thrill Digger Cave - Slingshot Left Blue Crystal 1: Slingshot
     Thrill Digger Cave - Slingshot Left Green Crystal 1: Slingshot
     Thrill Digger Cave - Slingshot Left Blue Crystal 2: Slingshot
@@ -134,18 +138,18 @@
     Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 3: Slingshot
     Thrill Digger Cave - Slingshot Right Pillar Blue Crystal 4: Slingshot
 
-# Includes anything after the boko tower near Thrill Digger
-# and anything before the boko tower before hot cave
+# Includes anything after the boko tower near Thrill Digger and anything before the boko tower before hot cave.
 - name: Near Temple Entrance
   hint_region: Eldin Volcano
   events:
-    Retrieve Crystal Ball: Digging_Mitts and Clawshots and Scrapper and 'Start_Sparrots_Quest'
+    # Tested and the player can drop down from where the ball is located without taking damage or needing sailcloth.
+    Retrieve Crystal Ball: Sailcloth and Digging_Mitts and Clawshots and Scrapper and 'Start_Sparrots_Quest'
   exits:
-    Temple Entrance Statue: Nothing
-    Earth Temple First Room: open_earth_temple or count(5, Key_Piece)
-    Hot Cave: Nothing # You can use the bomb flower in one of the boko huts to blow up the tower
+    Temple Entrance Statue: Nothing # Interact with the statue.
+    Earth Temple First Room: open_earth_temple == open or count(5, Key_Piece)
+    Hot Cave: Nothing # You can use the bomb flower in one of the boko huts to blow up the tower.
     Outside Upper Eldin Cave: "'Beaten_Boko_Base'"
-    Outside Thrill Digger Cave: can_access(Outside Thrill Digger Cave) or (logic_bomb_throws and Bomb_Bag)
+    Outside Thrill Digger Cave: can_access(Outside Thrill Digger Cave) or (logic_bomb_throws and Bomb_Bag) # or side hop jump.
   locations:
     Eldin Volcano - Blow Closest Torch West of Temple: Gust_Bellows
     Eldin Volcano - Blow Farthest Torch West of Temple: Gust_Bellows
@@ -163,30 +167,31 @@
     Eldin Volcano - Underground Rupee West of Temple 10: Mogma_Mitts
     Eldin Volcano - Digging Spot below Tower West of Temple: Digging_Mitts
     Eldin Volcano - Digging Spot behind Boulder on Slope before Temple: Digging_Mitts
-    Eldin Volcano - Stamina Fruit next to Small Puddle: Nothing
-    Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger: Nothing
-    Eldin Volcano - Stamina Fruit below Slope before Temple 1: Nothing
-    Eldin Volcano - Stamina Fruit below Slope before Temple 2: Nothing
-    Eldin Volcano - Stamina Fruit below Slope before Temple 3: Nothing
-    Eldin Volcano - Bonk Campfire East of Temple: Nothing
-    Eldin Volcano - Gossip Stone on Cliff West of Temple: Digging_Mitts
-    Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple: Digging_Mitts and Goddess_Sword
+    Eldin Volcano - Stamina Fruit next to Small Puddle: Nothing # Slide down the slope and climb down the vines.
+    Eldin Volcano - Stamina Fruit on Vine Wall near Thrill Digger: Nothing # Slide down the slope and climb down the vines.
+    Eldin Volcano - Stamina Fruit below Slope before Temple 1: Nothing # Slide down the slope.
+    Eldin Volcano - Stamina Fruit below Slope before Temple 2: Nothing # Slide down the slope.
+    Eldin Volcano - Stamina Fruit below Slope before Temple 3: Nothing # Slide down the slope.
+    Eldin Volcano - Bonk Campfire East of Temple: Nothing # Run to the east and bonk the campfire.
+    Eldin Volcano - Gossip Stone Treasure on Cliff West of Temple: Sailcloth and Digging_Mitts and ((Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off)
+    Eldin Volcano - Gossip Stone Hint on Cliff West of Temple: Sailcloth and Digging_Mitts and ((Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off)
+    Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple: Sailcloth and Digging_Mitts and Goddess_Sword
     Eldin Volcano - Goddess Cube East of Temple: Goddess_Sword
 
 - name: Outside Upper Eldin Cave
   hint_region: Eldin Volcano
   exits:
     Near Temple Entrance: Clawshots or 'Beaten_Boko_Base'
-    Upper Eldin Cave: Nothing
+    Upper Eldin Cave: Nothing # Run into the cave.
 
 - name: Upper Eldin Cave
   hint_region: Eldin Volcano
   exits:
-    Outside Upper Eldin Cave: Nothing
+    Outside Upper Eldin Cave: Nothing # Run out the room.
   locations:
-    Upper Eldin Cave - West Gossip Stone: Nothing
+    Upper Eldin Cave - West Gossip Stone Hint: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
-# Includes anything after the boko tower
+# Includes anything after the boko tower.
 - name: Hot Cave
   hint_region: Eldin Volcano
   exits:
@@ -195,46 +200,47 @@
     Near Temple Entrance: can_access(Near Temple Entrance) or (logic_bomb_throws and Bomb_Bag)
   locations:
     # Activate the floor switch and run backwards
-    Eldin Volcano - Stamina Fruit after Last Boko Camp Tower: Nothing
-    Eldin Volcano - Stamina Fruit on Ledge near Hot Cave: Nothing
-    Eldin Volcano - Stamina Fruit on Vines near Hot Cave: Nothing
+    Eldin Volcano - Stamina Fruit after Last Boko Camp Tower: Nothing # Run across the bridge towards Earth Temple.
+    Eldin Volcano - Stamina Fruit on Ledge near Hot Cave: Nothing # Run across the bridge towards Earth Temple and climb on ledge.
+    Eldin Volcano - Stamina Fruit on Vines near Hot Cave: Nothing # Run towards Earth Temple and climb down the vines outside hot cave.
 
 - name: Sand Slide
   hint_region: Eldin Volcano
   exits:
-    Past Sand Slide: Nothing
+    Past Sand Slide: Nothing # Slide down the slope.
   locations:
-    Eldin Volcano - Digging Spot after Sand Slide Vents: Digging_Mitts
-    Eldin Volcano - Goddess Cube on Sand Slide: Goddess_Sword
-    Eldin Volcano - Left Rupee on Sand Slide 1: Nothing
-    Eldin Volcano - Left Rupee on Sand Slide 2: Nothing
-    Eldin Volcano - Left Rupee on Sand Slide 3: Nothing
-    Eldin Volcano - Left Rupee on Sand Slide 4: Nothing
-    Eldin Volcano - Left Rupee on Sand Slide 5: Nothing
-    Eldin Volcano - Left Rupee on Sand Slide 6: Nothing
-    Eldin Volcano - Left Rupee on Sand Slide 7: Nothing
-    Eldin Volcano - Left Rupee on Sand Slide 8: Nothing
-    Eldin Volcano - Right Rupee on Sand Slide 1: Nothing
-    Eldin Volcano - Right Rupee on Sand Slide 2: Nothing
-    Eldin Volcano - Right Rupee on Sand Slide 3: Nothing
-    Eldin Volcano - Right Rupee on Sand Slide 4: Nothing
-    Eldin Volcano - Right Rupee on Sand Slide 5: Nothing
-    Eldin Volcano - Right Rupee on Sand Slide 6: Nothing
+    Eldin Volcano - Digging Spot after Sand Slide Vents: Sailcloth and Digging_Mitts
+    Eldin Volcano - Goddess Cube on Sand Slide: Sailcloth and Goddess_Sword
+    # Collecting all these rupees requires multiple trips down the slope or Beetle.
+    Eldin Volcano - Left Rupee on Sand Slide 1: Nothing # Slide down the slope.
+    Eldin Volcano - Left Rupee on Sand Slide 2: Nothing # Slide down the slope.
+    Eldin Volcano - Left Rupee on Sand Slide 3: Nothing # Slide down the slope.
+    Eldin Volcano - Left Rupee on Sand Slide 4: Nothing # Slide down the slope.
+    Eldin Volcano - Left Rupee on Sand Slide 5: Nothing # Slide down the slope.
+    Eldin Volcano - Left Rupee on Sand Slide 6: Nothing # Slide down the slope.
+    Eldin Volcano - Left Rupee on Sand Slide 7: Nothing # Slide down the slope.
+    Eldin Volcano - Left Rupee on Sand Slide 8: Nothing # Slide down the slope.
+    Eldin Volcano - Right Rupee on Sand Slide 1: Nothing # Slide down the slope.
+    Eldin Volcano - Right Rupee on Sand Slide 2: Nothing # Slide down the slope.
+    Eldin Volcano - Right Rupee on Sand Slide 3: Nothing # Slide down the slope.
+    Eldin Volcano - Right Rupee on Sand Slide 4: Nothing # Slide down the slope.
+    Eldin Volcano - Right Rupee on Sand Slide 5: Nothing # Slide down the slope.
+    Eldin Volcano - Right Rupee on Sand Slide 6: Nothing # Slide down the slope.
 
 - name: Past Sand Slide
   hint_region: Eldin Volcano
   exits:
-    Volcano Ascent: Nothing # You can use the bomb flowers to blow up the rock
-    Hot Cave: Nothing # Huge Vent
+    Volcano Ascent: Nothing # Use the bomb flowers to blow up the rock.
+    Hot Cave: Sailcloth # Huge Vent.
     Outside Lower Eldin Cave: "'Beaten_Boko_Base'"
   locations:
     Eldin Volcano - Digging Spot after Draining Lava: Digging_Mitts
-    Eldin Volcano - Stamina Fruit after Big Sand Slide: Nothing
+    Eldin Volcano - Stamina Fruit after Big Sand Slide: Nothing # Jump over the gaps.
 
 - name: Outside Lower Eldin Cave
   hint_region: Eldin Volcano
   exits:
-    Lower Eldin Cave: Nothing
+    Lower Eldin Cave: Nothing # Run into the cave.
     Past Sand Slide: Clawshots
     Past Mogma Turf: "'Beaten_Boko_Base'"
     Volcano East: "'Beaten_Boko_Base'"
@@ -242,26 +248,27 @@
 - name: Lower Eldin Cave
   hint_region: Eldin Volcano
   exits:
-    Outside Lower Eldin Cave: Nothing
+    Outside Lower Eldin Cave: Nothing # Run out the room.
   locations:
-    Lower Eldin Cave - East Gossip Stone: Nothing
+    Lower Eldin Cave - East Gossip Stone Hint: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+
 
 # MOGMA TURF
 - name: Mogma Turf Dive
   hint_region: Mogma Turf
   events:
-    Pick up Guld: Scrapper and 'Start_Kinas_Quest'
+    Pick up Guld: Can_Survive_Long_Fall and Scrapper and 'Start_Kinas_Quest'
   exits:
-    Mogma Turf: Nothing
+    Mogma Turf: Can_Survive_Long_Fall
   locations:
-    Mogma Turf - Free Fall Chest: Nothing
-    Mogma Turf - Goddess Cube on Raised Pillar: Goddess_Sword
+    Mogma Turf - Free Fall Chest: Can_Survive_Short_Fall
+    Mogma Turf - Goddess Cube on Raised Pillar: Can_Survive_Long_Fall and Goddess_Sword
 
 - name: Mogma Turf
   hint_region: Mogma Turf
   exits:
-    Mogma Turf Pyrup Maze: Digging_Mitts
-    Volcano East: Nothing # Through 1st huge vent
+    Mogma Turf Pyrup Maze: Sailcloth and Digging_Mitts
+    Volcano East: Sailcloth # Through 1st huge vent.
   locations:
     Mogma Turf - Chest behind Bombable Wall at Entrance: Bomb_Bag or Hook_Beetle or can_access(Mogma Turf Dive)
     Mogma Turf - Defeat Bokoblins: Can_Defeat_Bokoblins
@@ -269,38 +276,41 @@
 - name: Mogma Turf Pyrup Maze
   hint_region: Mogma Turf
   exits:
-    Sand Slide Platform: Digging_Mitts
-    Mogma Turf Final Vent: Digging_Mitts # Through 2nd huge vent
-    Mogma Turf: Nothing
+    Sand Slide Platform: Sailcloth and Digging_Mitts
+    Mogma Turf Final Vent: Sailcloth and Digging_Mitts # Dig up small vent.
+    Mogma Turf: Nothing # Run out of the maze.
   locations:
-    Mogma Turf - Chest behind Bombable Wall in Fire Maze: Nothing
-    Mogma Turf - Rupee in First Pyrup Hole in Fire Maze: Nothing
+    Mogma Turf - Chest behind Bombable Wall in Fire Maze: Nothing # Use bomb flower to blow up wall.
+    Mogma Turf - Rupee in First Pyrup Hole in Fire Maze: Nothing # Use bomb flower to kill Pyrup and crawl into hole.
 
 - name: Sand Slide Platform
   hint_region: Mogma Turf
   exits:
-    Mogma Turf: Nothing
-    Mogma Turf Pyrup Maze: Nothing
+    Mogma Turf: Nothing # Drop down.
+    Mogma Turf Pyrup Maze: Nothing # Run round to maze.
   locations:
-    Mogma Turf - Bonk Campfire above Sand Slide: Nothing
+    Mogma Turf - Bonk Campfire above Sand Slide: Nothing # Bonk into campfire.
     Mogma Turf - Slingshot Skull on Hut above Sand Slide: Slingshot
-    Mogma Turf - Bonk Dusty Bag in Right Hut above Sand Slide: Nothing
-    Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide: Nothing
-    Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide: Nothing
-    Mogma Turf - Bonk Hammer in Left Hut above Sand Slide: Nothing
-    Mogma Turf - Chest after Sand Slide: Nothing
+    Mogma Turf - Bonk Dusty Bag in Right Hut above Sand Slide: Nothing # Bonk into wall.
+    Mogma Turf - Bonk Dusty Bag in Middle Hut above Sand Slide: Nothing # Bonk into wall.
+    Mogma Turf - Bonk Dusty Bag in Left Hut above Sand Slide: Nothing # Bonk into wall.
+    Mogma Turf - Bonk Hammer in Left Hut above Sand Slide: Nothing # Bonk into wall.
+    Mogma Turf - Chest after Sand Slide: Nothing # Slide down middle slope hole.
 
 - name: Mogma Turf Final Vent
   hint_region: Mogma Turf
   exits:
-    Past Mogma Turf: Nothing
-    Mogma Turf Pyrup Maze: Bomb_Bag # Can't use hook beetle or whip
+    Past Mogma Turf: Sailcloth # Through 2nd big vent.
+    Mogma Turf Pyrup Maze: Bomb_Bag # Can't use hook beetle or whip.
 
+
+# SILENT REALM
 - name: Din's Silent Realm
   hint_region: Din's Silent Realm
   exits:
-    Volcano Ascent: Nothing
+    Volcano Ascent: Nothing # Exit out of the trial gate.
   locations:
+    # No requirements, just run around and collect the items / tears.
     Din's Silent Realm - Collect all Tears Reward: Nothing
     Din's Silent Realm - Stamina Fruit on Slope after Volcano Ascent: Nothing
     Din's Silent Realm - Stamina Fruit near First Bone Bridge: Nothing
@@ -315,6 +325,7 @@
     Din's Silent Realm - Relic 8: Nothing
     Din's Silent Realm - Relic 9: Nothing
     Din's Silent Realm - Relic 10: Nothing
+
 
 # VOLCANO SUMMIT
 - name: Volcano Summit
@@ -333,24 +344,26 @@
     Volcano Summit: Nothing
   locations:
     Volcano Summit - Bonk Waterfall: Nothing
-    Volcano Summit - Chest on Cliff behind Bombable Wall near Waterfall: Clawshots
-    Volcano Summit - Gossip Stone on Cliff near Waterfall: Clawshots
-    Volcano Summit - Goddess Cube at Summit Waterfall: Goddess_Sword # Bomb flower for death warp without claws
+    Volcano Summit - Chest on Cliff behind Bombable Wall near Waterfall: Can_Survive_Short_Fall and Clawshots
+    Volcano Summit - Gossip Stone Treasure on Cliff near Waterfall: Can_Survive_Short_Fall and Clawshots and ((Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off)
+    Volcano Summit - Gossip Stone Hint on Cliff near Waterfall: Can_Survive_Short_Fall and Clawshots and ((Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off)
+    Volcano Summit - Goddess Cube at Summit Waterfall: Can_Survive_Short_Fall and Goddess_Sword # Bomb flower for death warp without clawshots.
 
 - name: Past Volcano Summit
   exits:
-    Volcano Summit: Nothing
+    Volcano Summit: Nothing # Run into Volcano Summit.
     Outside Fire Sanctuary: shortcut_vs_flames or (Clawshots and 'Can_Collect_Water')
   locations:
     Volcano Summit - Item after Underground Tunnel near Gossip Stone: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
     Volcano Summit - Underground Rupee 1: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
     Volcano Summit - Underground Rupee 2: Mogma_Mitts and (shortcut_vs_flames or 'Can_Collect_Water')
-    Volcano Summit - Gossip Stone between Small Thirsty Frogs: shortcut_vs_flames or 'Can_Collect_Water'
+    Volcano Summit - Gossip Stone Treasure between Small Thirsty Frogs: (shortcut_vs_flames or 'Can_Collect_Water') and ((Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off)
+    Volcano Summit - Gossip Stone Hint between Small Thirsty Frogs: (shortcut_vs_flames or 'Can_Collect_Water') and ((Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off)
 
 - name: Outside Fire Sanctuary
   exits:
-    Inside the Volcano Statue: Nothing
-    Fire Sanctuary First Room: Nothing
+    Inside the Volcano Statue: Nothing # Interact with the statue.
+    Fire Sanctuary First Room: Nothing # Run down the stairs into the dungeon.
     Past Volcano Summit: can_access(Past Volcano Summit) and Clawshots and (shortcut_vs_flames or 'Can_Collect_Water')
   locations:
     Volcano Summit - Blow Torch West of Fire Sanctuary: Gust_Bellows
@@ -358,19 +371,20 @@
     Volcano Summit - Slingshot Big Thirsty Frog above Fire Sanctuary: Slingshot
     Volcano Summit - Goddess Cube near Fire Sanctuary Entrance: Clawshots and Goddess_Sword
 
+
 # BOKOBLIN BASE
 - name: Bokoblin Base Prison
   hint_region: Bokoblin Base
   exits:
     Bokoblin Base Volcano East: Mogma_Mitts
   locations:
-    Bokoblin Base - Plats' Gift: Nothing
+    Bokoblin Base - Plats' Gift: Nothing # Talk to Plats.
 
 - name: Bokoblin Base Volcano East
   hint_region: Bokoblin Base
   exits:
     Bokoblin Base Prison: Mogma_Mitts
-    Bokoblin Base Before Drawbridge: Nothing
+    Bokoblin Base Before Drawbridge: Nothing # Follow the path and avoid the lantern bokoblin.
     Bokoblin Base After Drawbridge: Clawshots and Bomb_Bag
   locations:
     Bokoblin Base - Chest near Bone Bridge: Can_Bypass_Boko_Base_Watch_Tower or Mogma_Mitts or Gust_Bellows
@@ -382,7 +396,7 @@
 - name: Bokoblin Base Before Drawbridge
   hint_region: Bokoblin Base
   exits:
-    Bokoblin Base Volcano East: Nothing
+    Bokoblin Base Volcano East: Nothing # Ride the magma platforms back round to the start.
     Bokoblin Base After Drawbridge: Whip and Clawshots
   locations:
     Bokoblin Base - Chest near Drawbridge: Clawshots or Can_Bypass_Boko_Base_Watch_Tower
@@ -391,55 +405,67 @@
   hint_region: Bokoblin Base
   exits:
     Bokoblin Base Before Drawbridge: Clawshots
-    Bokoblin Base Outside Lower Eldin Cave: Nothing
-    Bokoblin Base Volcano East: Nothing
-    Bokoblin Base Outside Earth Temple: Nothing
+    Bokoblin Base Outside Lower Eldin Cave: Nothing # Jump over to the entrance via the magma platforms.
+    Bokoblin Base Volcano East: Nothing # Ride a magma platform back to the start.
+    Bokoblin Base Outside Earth Temple: Sailcloth
 
 - name: Bokoblin Base Outside Lower Eldin Cave
   hint_region: Bokoblin Base
   exits:
-    Bokoblin Base Lower Eldin Cave: Nothing
+    Bokoblin Base Lower Eldin Cave: Nothing # Run into the cave.
     Bokoblin Base After Drawbridge: Clawshots
-    Bokoblin Base Before Drawbridge: Nothing
-    Bokoblin Base Volcano East: Nothing
+    Bokoblin Base Before Drawbridge: Nothing # Ride a magma platform.
+    Bokoblin Base Volcano East: Nothing # Ride a magma platform to the start.
 
 - name: Bokoblin Base Lower Eldin Cave
   hint_region: Bokoblin Base
   exits:
-    Bokoblin Base Outside Lower Eldin Cave: Nothing
+    Bokoblin Base Outside Lower Eldin Cave: Nothing # Run out of the cave.
   locations:
-    Lower Eldin Cave - East Gossip Stone: Nothing
+    Lower Eldin Cave - East Gossip Stone Treasure: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Lower Eldin Cave - East Gossip Stone Hint: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Bokoblin Base Outside Earth Temple
   hint_region: Bokoblin Base
   exits:
-    Bokoblin Base Hot Cave: Nothing
-    Bokoblin Base Outside Upper Eldin Cave: Nothing
+    Bokoblin Base Hot Cave: Nothing # Run into the hot cave.
+    Bokoblin Base Outside Upper Eldin Cave: Nothing # Jump on a magma platform.
+    #                                               Deal with bokoblin in front of tower and            Deal with tower.
+    Bokoblin Base After Watch Tower West of Temple: (Slingshot or Bow or Bomb_Bag or Goddess_Sword) and Can_Bypass_Boko_Base_Watch_Tower
   locations:
-    Bokoblin Base - Bonk Campfire East of Temple: Nothing
-    Bokoblin Base - Chest East of Temple down Lava River: Nothing
-    Bokoblin Base - Chest West of Temple behind Watch Tower: (Slingshot or Bow or Bomb_Bag or Goddess_Sword) and Can_Bypass_Boko_Base_Watch_Tower and Mogma_Mitts
-    Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple: Digging_Mitts and Goddess_Sword and Can_Bypass_Boko_Base_Watch_Tower 
+    Bokoblin Base - Bonk Campfire East of Temple: Nothing # Bonk into the campfire.
+    Bokoblin Base - Chest East of Temple down Lava River: Nothing # Ride a magma platform down to the chest, use a bomb flower to knock out the tower.    
     Eldin Volcano - Goddess Cube East of Temple: Goddess_Sword
+
+- name: Bokoblin Base After Watch Tower West of Temple
+  hint_region: Bokoblin Base
+  exits:
+    Bokoblin Base Outside Earth Temple: Nothing # Run towards temple.
+  locations:
+    # Burrow or blow up rocks next to chest.
+    Bokoblin Base - Chest West of Temple behind Watch Tower: Mogma_Mitts or (Bomb_Bag and logic_bomb_throws)
+    Eldin Volcano - Goddess Cube behind Bombable Rock West of Temple: (Mogma_Mitts or (Bomb_Bag and logic_bomb_throws)) and Sailcloth and Digging_Mitts and Goddess_Sword
 
 - name: Bokoblin Base Outside Upper Eldin Cave
   hint_region: Bokoblin Base
   exits:
-    Bokoblin Base Outside Earth Temple: Nothing
-    Bokoblin Base Upper Eldin Cave: Nothing
+    Bokoblin Base Outside Earth Temple: Nothing # Wait for magma platform and jump over.
+    Bokoblin Base Upper Eldin Cave: Nothing # Run into cave.
 
 - name: Bokoblin Base Upper Eldin Cave
   hint_region: Bokoblin Base
   exits:
-    Bokoblin Base Outside Upper Eldin Cave: Nothing
+    Bokoblin Base Outside Upper Eldin Cave: Nothing # Run out of cave.
   locations:
-    Upper Eldin Cave - West Gossip Stone: Nothing
+    Upper Eldin Cave - West Gossip Stone Treasure: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Upper Eldin Cave - West Gossip Stone Hint: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Bokoblin Base Hot Cave
   hint_region: Bokoblin Base
   exits:
     Bokoblin Base After Drawbridge: Fireshield_Earrings and Bomb_Bag
     Bokoblin Base Summit: Fireshield_Earrings and Bomb_Bag
+    # Bokoblin Base Sand Slide: Bomb_Bag
 
 - name: Bokoblin Base Summit
   hint_region: Bokoblin Base
@@ -457,49 +483,50 @@
   events:
     Beaten Boko Base: Bow or Beetle
   exits:
-    Bokoblin Base Summit: Nothing
+    Bokoblin Base Summit: Nothing # Run out of room.
   locations:
     Bokoblin Base - Fire Dragon's Reward: "'Beaten_Boko_Base'"
 
-# Bird Staues in Eldin
+
+# BIRD STATUES
 - name: Volcano Entrance Statue
   events:
-    Unlock Volcano Entrance Statue: Nothing
+    Unlock Volcano Entrance Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Volcano Entrance: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Volcano Entrance: Nothing # Back out of interaction.
 
 - name: Volcano East Statue
   events:
-    Unlock Volcano East Statue: Nothing
+    Unlock Volcano East Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Volcano East: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Volcano East: Nothing # Back out of interaction.
 
 - name: Volcano Ascent Statue
   events:
-    Unlock Volcano Ascent Statue: Nothing
+    Unlock Volcano Ascent Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Volcano Ascent: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Volcano Ascent: Nothing # Back out of interaction.
 
 - name: Temple Entrance Statue
   events:
-    Unlock Temple Entrance Statue: Nothing
+    Unlock Temple Entrance Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Near Temple Entrance: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Near Temple Entrance: Nothing # Back out of interaction.
 
 - name: Inside the Volcano Statue
   events:
-    Unlock Inside the Volcano Statue: Nothing
+    Unlock Inside the Volcano Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    Outside Fire Sanctuary: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    Outside Fire Sanctuary: Nothing # Back out of interaction.
 
 - name: Inside the Fire Sanctuary Statue
   events:
-    Unlock Inside the Fire Sanctuary Statue: Nothing
+    Unlock Inside the Fire Sanctuary Statue: Nothing # Approach statue and get autosave.
   exits:
-    The Sky: Day or natural_night_connections == off
-    FS In Front of Boss Door: Nothing
+    The Sky: Sailcloth and (Day or natural_night_connections == off)
+    FS In Front of Boss Door: Nothing # Back out of interaction.

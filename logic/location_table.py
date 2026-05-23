@@ -142,6 +142,10 @@ def get_disabled_shuffle_locations(
                 settings["tadtone_shuffle"].value == "off"
                 and "Tadtones" in location.types
             )
+            or (
+                settings["gossip_stone_treasure_shuffle"].value == "off"
+                and "Gossip Stone Treasures" in location.types
+            )
         )
     ]
 

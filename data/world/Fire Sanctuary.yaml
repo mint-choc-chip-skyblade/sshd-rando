@@ -1,10 +1,10 @@
+# FIRE SANCTUARY
 - name: Fire Sanctuary First Room
   dungeon: Fire Sanctuary
   dungeon_starting_area: true
   exits:
-    Outside Fire Sanctuary: Nothing
+    Outside Fire Sanctuary: Nothing # Run up the stairs and exit the dungeon.
     FS First Room Past Water Plants: Can_Hit_High_Water_Plant
-
 
 - name: FS First Room Past Water Plants
   dungeon: Fire Sanctuary
@@ -18,31 +18,28 @@
     Fire Sanctuary - Slingshot Back Right Owl Statue: Slingshot
     Fire Sanctuary - Chest in First Room: Can_Defeat_Bokoblins and Can_Hit_High_Water_Plant
 
-
 - name: FS First Outside Section
   dungeon: Fire Sanctuary
   exits:
-    FS First Room Past Water Plants: Nothing
-    FS First Magmanos Room: Nothing
-
+    FS First Room Past Water Plants: Nothing # Open the door to the entrance of the dungeon.
+    FS First Magmanos Room: Nothing # Follow the stairs down and open the door.
 
 - name: FS First Magmanos Room
   dungeon: Fire Sanctuary
   exits:
-    FS South Bridge: Nothing
+    # Clawshots to skip to the end of the vines, bow or slingshot to kill / stun the bokoblin archers.
+    FS South Bridge: Clawshots or Bow or Slingshot
     FS First Magmanos Room Balcony: Mogma_Mitts and Sword
-    FS First Outside Section: Nothing
+    FS First Outside Section: Nothing # Open the lower door.
   locations:
-    Fire Sanctuary - Chest in Second Room: Nothing
-
+    Fire Sanctuary - Chest in Second Room: Nothing # Run towards the door to FS First Outside Section and follow the spiral past the door.
 
 - name: FS First Magmanos Room Balcony
   dungeon: Fire Sanctuary
   exits:
-    FS First Magmanos Room: Mogma_Mitts # Assumes lava is lowered from defeating the Magmanos
+    FS First Magmanos Room: Mogma_Mitts # Assumes lava is lowered from defeating the Magmanos.
   locations:
-    Fire Sanctuary - Chest on Balcony after Single Magmanos Fight: Nothing
-
+    Fire Sanctuary - Chest on Balcony after Single Magmanos Fight: Nothing # Open the chest.
 
 - name: FS South Bridge
   dungeon: Fire Sanctuary
@@ -50,12 +47,11 @@
     FS First Magmanos Room: Can_Defeat_Lizalfos
     FS North Bridge East Side: shortcut_fs_outside_bars
     FS Room with First Lava River: Can_Defeat_Lizalfos
-    
 
 - name: FS Room with First Lava River
   dungeon: Fire Sanctuary
   exits:
-    FS South Bridge: Nothing
+    FS South Bridge: Nothing # Open the door to the outside section with the bridges.
     FS Room with First Lava River Past River: Hook_Beetle
   locations:
     Fire Sanctuary - Left Rupee above Blocked Lava Source: Beetle
@@ -65,23 +61,20 @@
     Fire Sanctuary - Second Rupee in Alcove opposite Blocked Lava Source: Beetle
     Fire Sanctuary - Third Rupee in Alcove opposite Blocked Lava Source: Beetle
 
-
 - name: FS Room with First Lava River Past River
   dungeon: Fire Sanctuary
   exits:
-    FS Room with First Lava River: Clawshots or Hook_Beetle # Clawshot to vines or heetle to blow up the lavaflow rock
-    FS First Trapped Mogma Room Upper: Nothing
+    FS Room with First Lava River: Clawshots or Hook_Beetle # Clawshot to vines or heetle to blow up the lavaflow rock.
+    FS First Trapped Mogma Room Upper: Nothing # Open the non-key-locked door.
     FS Water Fruit Room: count(2, Fire_Sanctuary_Small_Key) or small_keys == removed
-
 
 - name: FS First Trapped Mogma Room Upper
   dungeon: Fire Sanctuary
   exits:
-    FS Room with First Lava River Past River: Nothing
+    FS Room with First Lava River Past River: Nothing # Open the south door.
     FS First Trapped Mogma Room Lower: "'Double_Magmanos_Defeated'"
   locations:
     Fire Sanctuary - Chest near First Trapped Mogma: Gust_Bellows or Clawshots
-
 
 - name: FS Water Fruit Room
   dungeon: Fire Sanctuary
@@ -89,16 +82,14 @@
     FS Room with First Lava River Past River: count(2, Fire_Sanctuary_Small_Key) or small_keys == removed
     FS Water Fruit Room After Frog: Sword
   locations:
-    Fire Sanctuary - Lower Chest in Water Fruit Room: Nothing
-    Fire Sanctuary - Raised Chest in Water Fruit Room: Nothing
-
+    Fire Sanctuary - Lower Chest in Water Fruit Room: Nothing # Walk around the room and open the chest.
+    Fire Sanctuary - Raised Chest in Water Fruit Room: Nothing # Walk around the room and open the chest.
 
 - name: FS Water Fruit Room After Frog
   dungeon: Fire Sanctuary
   exits:
     FS Water Fruit Room: can_access(FS Water Fruit Room) and Sword
-    FS Magmanos Fight Room: Nothing
-
+    FS Magmanos Fight Room: Nothing # Run past the bird statue and open the door.
 
 - name: FS Magmanos Fight Room
   dungeon: Fire Sanctuary
@@ -108,25 +99,25 @@
     FS Water Fruit Room After Frog: "'Double_Magmanos_Defeated'"
     FS First Trapped Mogma Room Lower: "'Double_Magmanos_Defeated'"
 
-
 - name: FS First Trapped Mogma Room Lower
   dungeon: Fire Sanctuary
   events:
+    # Smack the bomb flower with the Digging Mitts.
+    # Needs to be here to logically prevent the player from being able to traverse the room backwards.
     Blow Up Rock in Tunnel: Nothing
   exits:
     FS First Trapped Mogma Room Upper: "'Double_Magmanos_Defeated'"
     FS Magmanos Fight Room: "'Double_Magmanos_Defeated'"
     FS Under Magmanos Fight Room: Mogma_Mitts and 'Blow_Up_Rock_in_Tunnel'
   locations:
-    Fire Sanctuary - Chest from First Trapped Mogma: Nothing # Lever lowered to match SD
-
+    Fire Sanctuary - Chest from First Trapped Mogma: Nothing # Lever has been lowered in rando to match the SD logic.
 
 - name: FS Under Magmanos Fight Room
   dungeon: Fire Sanctuary
   events:
     Move First FS Sliding Gate: Gust_Bellows and Mogma_Mitts
   exits:
-    # You can't blow up the rock in the tunnel when going backwards
+    # You can't blow up the rock in the tunnel when going backwards.
     FS First Trapped Mogma Room Lower: Mogma_Mitts and 'Blow_Up_Rock_in_Tunnel'
     FS Under Magmanos Fight Room Past Sliding Door: "'Move_First_FS_Sliding_Gate'"
     FS West of Boss Door Before Lava River: count(3, Fire_Sanctuary_Small_Key) or small_keys == removed
@@ -137,22 +128,21 @@
     Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 4: Mogma_Mitts
     Fire Sanctuary - Underground Rupee beneath Double Magmanos Room 5: Mogma_Mitts
 
-
 - name: FS Under Magmanos Fight Room Past Sliding Door
   dungeon: Fire Sanctuary
   exits:
     FS Under Magmanos Fight Room: can_access(FS Under Magmanos Fight Room) and 'Move_First_FS_Sliding_Gate'
-    FS North Bridge West Side: Nothing
-
+    FS North Bridge West Side: Nothing # Open the door to the outside bridges.
 
 - name: FS North Bridge West Side
   dungeon: Fire Sanctuary
   exits:
-    FS North Bridge Bottom: Nothing
-    FS North Bridge East Side: Clawshots or logic_fs_pillar_jump # No bow for the bokos?
-    FS South Bridge: Nothing
-    FS Under Magmanos Fight Room Past Sliding Door: Nothing
-
+    FS North Bridge Bottom: Nothing # Fall down.
+    # Clawshots for the targets; Bow, Slingshot, or Hook Beetle to deal with the annoying bokoblin archers; or just pillar jump.
+    # Pillar jump allows the player to hide out of the bokoblins' line of sight so they aren't really an issue.
+    FS North Bridge East Side: (Clawshots and (Bow or Slingshot or Hook_Beetle)) or logic_fs_pillar_jump
+    FS South Bridge: Nothing # Run south and step on the floor switch to raise the bars.
+    FS Under Magmanos Fight Room Past Sliding Door: Nothing # Open the north west door on the bridge.
 
 - name: FS North Bridge Bottom
   dungeon: Fire Sanctuary
@@ -160,90 +150,80 @@
     FS North Bridge West Side: Clawshots
     FS North Bridge East Side: Clawshots
 
-
 - name: FS North Bridge East Side
   dungeon: Fire Sanctuary
   exits:
-    FS North Bridge Bottom: Nothing
+    FS North Bridge Bottom: Nothing # Fall down.
     FS North Bridge West Side: Clawshots or logic_fs_pillar_jump
-    FS Second Trapped Mogma Room: Nothing
-
+    FS Second Trapped Mogma Room: Nothing # Open the north east door on the bridge.
 
 - name: FS Second Trapped Mogma Room
   dungeon: Fire Sanctuary
   exits:
-    FS North Bridge East Side: Nothing
+    FS North Bridge East Side: Nothing # Open the door to the outside bridges.
   locations:
-    Fire Sanctuary - Chest from Second Trapped Mogma: Mogma_Mitts and Sword # Mitts to move gate; sword for water pod
+    Fire Sanctuary - Chest from Second Trapped Mogma: Mogma_Mitts and Sword # Mitts to move gate; sword for water pod.
     Fire Sanctuary - Underground Rupee behind Bombable Wall: Mogma_Mitts and Sword and Bomb_Bag
     Fire Sanctuary - Chest after Bombable Wall: Mogma_Mitts and Sword and Bomb_Bag
-    
 
 - name: FS West of Boss Door Before Lava River
   dungeon: Fire Sanctuary
   exits:
-    FS Under Magmanos Fight Room: Nothing
-    FS West of Boss Door: Can_Hit_High_Water_Plant
+    FS Under Magmanos Fight Room: Nothing # Open the door.
+    FS West of Boss Door After Lava River: Can_Hit_High_Water_Plant # To form a magma platform to jump across to the other side of the river.
 
-
-- name: FS West of Boss Door
+- name: FS West of Boss Door After Lava River
   dungeon: Fire Sanctuary
   events:
+    # Catch Plats, cross the river to the dig spot, burrow and set the river flowing OR have the shortcut enabled.
     FS Release Second Lava River: (Can_Hit_High_Water_Plant and Mogma_Mitts) or shortcut_fs_lava_flow
   exits:
+    # Hit the plant and ride the river on the magma platform.
     FS In Front of Boss Door: Can_Hit_High_Water_Plant and 'FS_Release_Second_Lava_River'
     FS West of Boss Door Before Lava River: Can_Hit_High_Water_Plant
   locations:
     Fire Sanctuary - Plats' Chest: Mogma_Mitts and Can_Hit_High_Water_Plant
 
-
 - name: FS In Front of Boss Door
   dungeon: Fire Sanctuary
   exits:
-    Inside the Fire Sanctuary Statue: Nothing
+    Inside the Fire Sanctuary Statue: Nothing # Interact with the statue.
     Fire Sanctuary Boss Room: Fire_Sanctuary_Boss_Key or boss_keys == removed
-    FS Lizalfos Fight Room: Nothing
-    FS West of Boss Door: Nothing
-    # FS In Front of Boss Door Past Bars: Opened Bars
-
+    FS Lizalfos Fight Room: Can_Survive_Long_Fall or (Can_Survive_Short_Fall and logic_precise_falls)
+    FS West of Boss Door After Lava River: Nothing # Drop down.
 
 - name: FS In Front of Boss Door Past Bars
   dungeon: Fire Sanctuary
   exits:
-    FS Boss Key Room: Nothing
-    FS In Front of Boss Door: Nothing
-
+    FS Boss Key Room: Nothing # Open the door.
+    FS In Front of Boss Door: Nothing # Stand on the floor switch to raise the bars and walk forwards.
 
 - name: FS Lizalfos Fight Room
   dungeon: Fire Sanctuary
   exits:
     FS Staircase Room Lower: Can_Defeat_Lizalfos
 
-
 - name: FS Staircase Room Lower
   dungeon: Fire Sanctuary
   exits:
     FS Staricase Room Upper: Clawshots
-    FS Lizalfos Fight Room: Nothing
+    FS Lizalfos Fight Room: Nothing # Open the bottom door.
   locations:
     Fire Sanctuary - Chest in Staircase Room: Clawshots
-
 
 - name: FS Staricase Room Upper
   dungeon: Fire Sanctuary
   exits:
-    FS Staircase Room Lower: Nothing
-    FS Boss Key Room: Nothing
-
+    FS Staircase Room Lower: Nothing # Climb down the stairs and open the bottom door (no fall damage needed).
+    FS Boss Key Room: Nothing # Open the door to the boss key room.
 
 - name: FS Boss Key Room
   dungeon: Fire Sanctuary
   exits:
-    FS Staricase Room Upper: Nothing
-    FS In Front of Boss Door Past Bars: Nothing
+    FS Staricase Room Upper: Nothing # Open the door to the staircase room.
+    FS In Front of Boss Door Past Bars: Nothing # Open the door to the outside.
   locations:
     Fire Sanctuary - Chest after Winged Torches: Mogma_Mitts
-
 
 - name: Fire Sanctuary Boss Room
   exits:
@@ -252,9 +232,8 @@
   locations:
     Fire Sanctuary - Defeat Boss: Can_Defeat_Ghirahim_2
 
-
 - name: Fire Sanctuary Flame Room
   exits:
-    Fire Sanctuary Boss Room: Nothing
+    Fire Sanctuary Boss Room: Nothing # Open the door to the boss room.
   locations:
     Fire Sanctuary - Din's Flame: Goddess_Sword

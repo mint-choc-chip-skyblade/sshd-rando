@@ -23,7 +23,7 @@ RUN install -dm 755 /etc/apt/keyrings && \
     . ~/.bash_profile
 
 # Install Python
-RUN mise install python@3.12 && mise use -g python@3.12
+RUN mise install python@3.14 && mise use -g python@3.14
 
 # Install rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly -y && \

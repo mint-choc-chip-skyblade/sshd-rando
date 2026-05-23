@@ -1,4 +1,4 @@
-
+# ANCIENT CISTERN
 - name: Ancient Cistern Lobby
   dungeon: Ancient Cistern
   dungeon_starting_area: true
@@ -6,21 +6,20 @@
     Can Pull Waterfall Lever: Whip
     Can Collect Water: Bottle
   exits:
-    AC East Rooms: Nothing
+    AC East Rooms: Nothing # Can walk round to the left and open the door (run up and flip the wall lever).
     AC Lobby After Whip Hooks: Whip
     AC Lobby Vines Area: (can_access(AC Lobby Vines Area) and Whip) or shortcut_ac_water_vents
     AC Behind the Waterfall: Water_Dragons_Scale and 'Can_Pull_Waterfall_Lever'
-    AC Inside Statue: count(2, Ancient_Cistern_Small_Key) or small_keys == removed or 'Can_Lower_Giant_Statue'
-    Floria Waterfall Temple Ledge: Nothing
+    AC Inside Statue High: count(2, Ancient_Cistern_Small_Key) or small_keys == removed or 'Can_Lower_Giant_Statue'
+    Floria Waterfall Temple Ledge: Nothing # Walk up the stairs and out the dungeon.
   locations:
     Ancient Cistern - Rupee in East Hand: Water_Dragons_Scale
     Ancient Cistern - Rupee in West Hand: Water_Dragons_Scale
 
-
 - name: AC East Rooms
   dungeon: Ancient Cistern
   exits:
-    Ancient Cistern Lobby: Nothing
+    Ancient Cistern Lobby: Nothing # Open the door.
   locations:
     Ancient Cistern - Rupee in East Room in Cubby: Can_Unlock_Combination_Lock and Water_Dragons_Scale
     Ancient Cistern - First Rupee in East Room in Short Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
@@ -29,16 +28,14 @@
     Ancient Cistern - Rupee in East Room in Main Tunnel: Can_Unlock_Combination_Lock and Water_Dragons_Scale
     Ancient Cistern - Chest in East Room: Can_Unlock_Combination_Lock and Water_Dragons_Scale
 
-
 - name: AC Lobby After Whip Hooks
   dungeon: Ancient Cistern
   exits:
     AC Lobby Vines Area: Clawshots
     AC Back Room: can_access(AC Back Room)
-    Ancient Cistern Lobby: Nothing
+    Ancient Cistern Lobby: Nothing # Drop into the water and swim back to the start.
   locations:
-    Ancient Cistern - Chest after Whip Hooks: Nothing
-
+    Ancient Cistern - Chest after Whip Hooks: Nothing # Walk forward and open the chest.
 
 - name: AC Lobby Vines Area
   dungeon: Ancient Cistern
@@ -47,26 +44,24 @@
     Can Pull Waterfall Lever: logic_ac_lever_jump_trick
   exits:
     AC Platform with Thread to Basement: shortcut_ac_bridge
-    # Can front hop and jump slash
+    # Can front hop and jump slash.
+    # Can be done without taking damage or needing Sailcloth.
     AC Lobby After Whip Hooks: Sword and logic_ac_chest_after_whip_hooks_jump
-    Ancient Cistern Lobby: Nothing
+    Ancient Cistern Lobby: Nothing # Drop into the water and swim back to the start.
   locations:
-    Ancient Cistern - Chest near Vines: Nothing
-
+    Ancient Cistern - Chest near Vines: Nothing # Climb the vines and open the chest.
 
 - name: AC Behind the Waterfall
   dungeon: Ancient Cistern
   exits:
     AC Red Pipe Basement: Whip
   locations:
-    Ancient Cistern - Chest behind Waterfall: Nothing
-
+    Ancient Cistern - Chest behind Waterfall: Nothing # Run behind the fish mouth entrance.
 
 - name: AC Red Pipe Basement
   dungeon: Ancient Cistern
   exits:
     AC Red Pipe Basement Past Skulltula: (Beetle or Bow) and Water_Dragons_Scale # or Ancient Cistern - Basement Lilypad Clip Trick)
-
 
 - name: AC Red Pipe Basement Past Skulltula
   dungeon: Ancient Cistern
@@ -76,41 +71,55 @@
   locations:
     Ancient Cistern - Whip Item from Bokoblin between Pipes: Whip
 
-
 - name: AC Back Room
   dungeon: Ancient Cistern
   exits:
-    AC Lobby After Whip Hooks: Nothing # Run up wall to pull lever or leave dungeon
-    # The quadra-baba is kinda annoying but it's not too hard
+    AC Lobby After Whip Hooks: Nothing # Run up wall to pull lever or leave dungeon at the statue.
+    # The quadra-baba is kinda annoying but it's not too hard.
     AC Lobby Vines Area: Whip and (Water_Dragons_Scale or (shortcut_ac_water_vents and Clawshots))
   locations:
-    Ancient Cistern - Rupee under Lilypad after Pipes: Water_Dragons_Scale and (Whip or Clawshots) # Flip lilypad and swim under
-    # You can clawshot from one of the lilypads and avoid having to use the scale (not that you can get here without it)
+    Ancient Cistern - Rupee under Lilypad after Pipes: Water_Dragons_Scale and (Whip or Clawshots) # Flip lilypad and swim under.
+    # You can clawshot from one of the lilypads and avoid having to use the scale (not that you can get here without it).
     Ancient Cistern - Slingshot East Lamp after Pipes 1: ((Water_Dragons_Scale and Whip) or Clawshots) and Slingshot
     Ancient Cistern - Slingshot East Lamp after Pipes 2: ((Water_Dragons_Scale and Whip) or Clawshots) and Slingshot
     Ancient Cistern - Slingshot West Lamp after Pipes 1: Water_Dragons_Scale and (Whip or Clawshots) and Slingshot
     Ancient Cistern - Slingshot West Lamp after Pipes 2: Water_Dragons_Scale and (Whip or Clawshots) and Slingshot
     Ancient Cistern - Slingshot West Lamp after Pipes 3: Water_Dragons_Scale and (Whip or Clawshots) and Slingshot
 
-
-- name: AC Inside Statue
+- name: AC Inside Statue High
   dungeon: Ancient Cistern
   exits:
-    AC Basement: "'Can_Lower_Giant_Statue'"
+    # The player can enter the inside of the statue either from the key locked
+    # door, or the door above it. Falling from the key locked door down to the
+    # basement is a short fall. Falling from the higher door is a long fall.
+    # To avoid complicating the logic for an already logically complex dungeon,
+    # assume the player needs to survive a long fall and move on.
+    # 
+    # One additional note: The cutscene of the Stalmaster spawning in negates
+    # the fall damage and allows the player to bypass the fall logic while the
+    # Stalmaster remains undefeated. As such, the likelihood of someone
+    # actually getting locked out of their seed without modelling this fall
+    # logic is *exceedingly* small.
+    AC Inside Statue Low: Can_Survive_Long_Fall
     Ancient Cistern Lobby: Whip or shortcut_ac_water_vents
-    AC Platform Before Boss: (Ancient_Cistern_Boss_Key or boss_keys == removed) and (Whip or shortcut_ac_water_vents)
+    AC Platform Before Boss: (Ancient_Cistern_Boss_Key or boss_keys == removed) and Whip
+
+- name: AC Inside Statue Low
+  dungeon: Ancient Cistern
+  exits:
+    AC Inside Statue High: Whip or shortcut_ac_water_vents
+    AC Basement: "'Can_Lower_Giant_Statue'"
   locations:
     Ancient Cistern - Chest in Key Locked Room: "(count(2, Ancient_Cistern_Small_Key) or small_keys == removed) and
                                                  (Can_Defeat_Stalmaster or 'Can_Lower_Giant_Statue')"
 
-
-# Implies statue is lowered
+# Implies statue is lowered.
 - name: AC Basement
   dungeon: Ancient Cistern
   exits:
-    AC Inside Statue: Nothing
+    AC Inside Statue Low: Nothing # Open the door at the base of the statue.
     AC Basement Bone Pile with Long Thread: shortcut_ac_water_vents
-    # You can clawshot straight onto the rotating vines
+    # You can clawshot straight onto the rotating vines.
     AC Basement Rotating Vines: "Clawshots or
                                 (Whip and (Hook_Beetle or (Bomb_Bag and logic_bomb_throws)))" # TODO: Damage Multiplier Check?
     AC Under the Statue: "'Can_Freely_Raise_and_Lower_Statue'"
@@ -118,50 +127,45 @@
     Ancient Cistern - Rupee in Basement Demon's Right Eye: Beetle
     Ancient Cistern - Rupee in Basement Demon's Left Eye: Beetle
 
-
-# Implies statue is raised
+# Implies statue is raised.
 - name: AC Under the Statue
   dungeon: Ancient Cistern
   events:
-    Can_Lower_Giant_Statue: Nothing
+    Can_Lower_Giant_Statue: Nothing # Statue will lower once the player escapes the falling event.
   exits:
-    AC Basement: Nothing
+    AC Basement: Nothing # Run out of the pit with the chest.
   locations:
     Ancient Cistern - Chest under Stone Statue: "'Can_Lower_Giant_Statue'"
-
 
 - name: AC Basement Rotating Vines
   dungeon: Ancient Cistern
   exits:
-    AC Basement: Nothing # You can jump back down to where you came from
+    AC Basement: Nothing # You can jump back down to where you came from.
     AC Basement Bone Pile with Long Thread: Whip
 
-
-# Renamed from SD cos just "Spider Thread" isn't clear
+# Renamed from SD cos just "Spider Thread" isn't clear.
 - name: AC Basement Bone Pile with Long Thread
   dungeon: Ancient Cistern
   exits:
-    AC Basement: Nothing
-    AC Platform with Thread to Basement: Nothing
-
+    AC Basement: Nothing # Drop down the ledge to the statue.
+    AC Platform with Thread to Basement: Nothing # Climb the thread.
 
 - name: AC Platform with Thread to Basement
   dungeon: Ancient Cistern
   events:
     Can Freely Raise and Lower Statue: Whip
   exits:
-    AC Basement Bone Pile with Long Thread: Nothing
-    AC Lobby Vines Area: Nothing
-    Ancient Cistern Lobby: Nothing
-    
+    AC Basement Bone Pile with Long Thread: Nothing # Drop down the hole with the thread.
+    AC Lobby Vines Area: Nothing # Extend the bridge and run over it.
+    Ancient Cistern Lobby: Nothing # Drop into the water and swim back to the start.
 
 - name: AC Platform Before Boss
   dungeon: Ancient Cistern
   exits:
-    Ancient Cistern Boss Room: Nothing
-    Ancient Cistern Lobby: Nothing
+    Ancient Cistern Boss Room: Nothing # Run up the stairs to the boss.
+    Ancient Cistern Lobby: Can_Survive_Short_Fall # Drop down and exit through the door.
 
-# Not explicitly part of the dungeon incase boss entrances are randomized
+# Not explicitly part of the dungeon incase boss entrances are randomized.
 - name: Ancient Cistern Boss Room
   exits:
     AC Platform Before Boss: Can_Defeat_Koloktos
@@ -173,7 +177,6 @@
   events:
     Can Complete Ancient Cistern: Goddess_Sword
   exits:
-    Ancient Cistern Boss Room: Nothing
-    # Crest Hit: Farore's Flame
+    Ancient Cistern Boss Room: Nothing # Go back through the door.
   locations:
     Ancient Cistern - Farore's Flame: Goddess_Sword

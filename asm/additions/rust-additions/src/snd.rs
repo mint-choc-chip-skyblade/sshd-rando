@@ -67,6 +67,9 @@ extern "C" {
     static RANDOM_MUSIC_DATA: [[c_char; 32]; 238];
     static RANDOMIZER_SETTINGS: settings::RandomizerSettings;
 
+    static mut CURRENT_STAGE_NAME: [u8; 8];
+    static mut CURRENT_LAYER: u8;
+
     // Functions
     fn debugPrint_128(string: *const c_char, fstr: *const c_char, ...);
 }
@@ -79,15 +82,23 @@ extern "C" {
 pub extern "C" fn load_additional_sfx(snd_audio_mgr: u64, sound_id: i32) {
     unsafe {
         // Replaced instructions
-        ((*(*SndAudioMgr__sInstance).vtable).fn9)(SndAudioMgr__sInstance, sound_id, 0, 0);
+        if sound_id != -1 {
+            ((*(*SndAudioMgr__sInstance).vtable).fn9)(SndAudioMgr__sInstance, sound_id, 0, 0);
+        }
 
-        /// 576 is the sound ID for GRP_D301_L1 which has the heart container
-        /// sound
-        ((*(*SndAudioMgr__sInstance).vtable).fn9)(SndAudioMgr__sInstance, 576, 0, 0);
+        // 381 is the sound ID for GRP_HeartCo which has the heart container sound.
+        // In brawlcrate, this is the "InfoIndex" number when selected on a GRP entry.
+        ((*(*SndAudioMgr__sInstance).vtable).fn9)(SndAudioMgr__sInstance, 381, 0, 0);
 
-        /// 545 is the sound ID for GRP_B210_L14 which has the ancient tablet
-        /// sound
+        // 545 is the sound ID for GRP_B210_L14
+        // which has the ancient tablet sound.
         ((*(*SndAudioMgr__sInstance).vtable).fn9)(SndAudioMgr__sInstance, 545, 0, 0);
+
+        // 216 is the sound ID for GRP_WarpObj_A4 which has Fi's singing sounds.
+        // This is specifically the sounds for Faron Woods. 215 doesn't fully work.
+        if &CURRENT_STAGE_NAME[..5] == b"F100\0" {
+            ((*(*SndAudioMgr__sInstance).vtable).fn9)(SndAudioMgr__sInstance, 216, 0, 0);
+        }
     }
 }
 

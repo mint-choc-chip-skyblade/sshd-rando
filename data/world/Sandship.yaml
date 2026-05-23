@@ -1,3 +1,4 @@
+# SANDSHIP
 - name: Sandship Main Deck
   dungeon: Sandship
   dungeon_starting_area: true
@@ -5,29 +6,26 @@
     Sandship Raise Timeshift Stone: Bow
     Sandship Freely Usable Timeshift Stone: Bow and 'Finish_Mast_Sequence'
   exits:
-    Sandship Before Ship's Bow: Nothing # You can leave and re-enter to reset the timeshift stone and the bars on the door
+    Sandship Before Ship's Bow: Nothing # You can leave and re-enter to reset the timeshift stone and the bars on the door.
     Sandship Captain's Cabin: (count(2, Sandship_Small_Key) or small_keys == removed) and ('Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone')
     Sandship Starboard Rooms: Bow and ('Open_Starboard_Windows' or shortcut_sandship_windows)
     Sandship Mast: "'Sandship_Raise_Timeshift_Stone' or 'Sandship_Freely_Usable_Timeshift_Stone'"
-    Lanayru Sand Sea: Nothing # If stuck in the mast sequence, deathwarp
-
+    Lanayru Sand Sea: Nothing # If stuck in the mast sequence, deathwarp to the start and climb down the ladder out of the dungeon.
 
 - name: Sandship Mast
   dungeon: Sandship
   events:
     Finish Mast Sequence: Bow and Sword
   exits:
-    Sandship Main Deck: Nothing
-    Sandship Stern: Bow and (Clawshots or logic_sandship_jump_to_stern)
-
+    Sandship Main Deck: Nothing # Climb across the masts to the central ladder and climb down.
+    Sandship Stern: Bow and Can_Survive_Short_Fall and (Clawshots or logic_sandship_jump_to_stern)
 
 - name: Sandship Stern
   dungeon: Sandship
   exits:
-    Sandship Main Deck: Clawshots # Deathwarp possible
+    Sandship Main Deck: Clawshots # There's a bomb flower for deathwarping but the area and inventory is reset.
   locations:
-    Sandship - Chest at Ship's Stern: "'Finish_Mast_Sequence'" # Can't keep the item otherwise
-
+    Sandship - Chest at Ship's Stern: "'Finish_Mast_Sequence'" # Can't keep the item otherwise.
 
 - name: Sandship Captain's Cabin
   dungeon: Sandship
@@ -35,7 +33,6 @@
     Sandship Main Deck: count(2, Sandship_Small_Key) or small_keys == removed
   locations:
     Sandship - Chest in Captain's Cabin: Bow and 'Sandship_Freely_Usable_Timeshift_Stone' and Can_Defeat_Beamos
-
 
 - name: Sandship Before Ship's Bow
   dungeon: Sandship
@@ -46,7 +43,6 @@
     Sandship - Blow Ceiling Lamp below Scervo Fight: Gust_Bellows
     Sandship - Chest before 4-Door Corridor: "'Sandship_Freely_Usable_Timeshift_Stone'"
 
-
 - name: Sandship Ship's Bow
   dungeon: Sandship
   exits:
@@ -54,23 +50,21 @@
   locations:
     Sandship - Chest after Scervo Fight: Can_Defeat_Scervo_And_Dreadfuse
 
-
 - name: Sandship Corridor
   dungeon: Sandship
   exits:
     Sandship Before Ship's Bow: (Goddess_Sword or Bow or Bomb_Bag or Slingshot or logic_sandship_itemless_spume) or 'Sandship_Freely_Usable_Timeshift_Stone'
     Sandship Starboard Rooms: "'Sandship_Freely_Usable_Timeshift_Stone'"
     Sandship Port Rooms: Bow
-    Sandship Before Boss Door: Nothing
+    Sandship Before Boss Door: Nothing # Run through the corridor.
   locations:
     Sandship - Blow Front Ceiling Lamp in 4-Door Corridor: Gust_Bellows
     Sandship - Blow Back Ceiling Lamp in 4-Door Corridor: Gust_Bellows
 
-
 - name: Sandship Starboard Rooms
   dungeon: Sandship
   events:
-    Open Starboard Windows: Nothing
+    Open Starboard Windows: Nothing # Push the box onto the floor switch.
     Starboard Generator: Bow and 'Sandship_Freely_Usable_Timeshift_Stone'
   exits:
     Sandship Main Deck: Bow and 'Open_Starboard_Windows'
@@ -78,7 +72,6 @@
     Sandship Corridor: "'Sandship_Freely_Usable_Timeshift_Stone'"
   locations:
     Sandship - Blow Ceiling Lamp in Right Generator Room: Gust_Bellows and 'Open_Starboard_Windows' and 'Sandship_Freely_Usable_Timeshift_Stone'
-
 
 - name: Sandship Port Rooms
   dungeon: Sandship
@@ -88,20 +81,18 @@
     Sandship Corridor: Bow
   locations:
     Sandship - Blow Ceiling Lamp in Left Generator Room: Bow and Gust_Bellows
-    
 
 - name: Sandship Before Boss Door
   dungeon: Sandship
   exits:
-    Sandship Corridor: Nothing
+    Sandship Corridor: Nothing # Run through the corridor.
     Sandship Boss Room: (Sandship_Boss_Key or boss_keys == removed) and 'Sandship_Freely_Usable_Timeshift_Stone'
   locations:
     Sandship - Blow Ceiling Lamp Right of Boss Door: Gust_Bellows
     Sandship - Blow Ceiling Lamp Left of Boss Door: Gust_Bellows
     Sandship - Chest behind Combination Lock: (Gust_Bellows or 'Sandship_Freely_Usable_Timeshift_Stone' or logic_sandship_no_combination_hint) and Can_Unlock_Combination_Lock
 
-
-# All of the bottom-of-the-ship bit, not just the prison
+# All of the bottom-of-the-ship bit, not just the prison.
 - name: Sandship Brig
   dungeon: Sandship
   exits:
@@ -109,26 +100,23 @@
     Sandship Brig Prison: (Whip and 'Starboard_Generator' and 'Port_Generator') or shortcut_sandship_brig_bars
     Sandship Starboard Rooms: shortcut_sandship_windows or 'Open_Starboard_Windows'
 
-
 - name: Sandship Treasure Room
   dungeon: Sandship
   exits:
-    Sandship Brig: Nothing
+    Sandship Brig: Nothing # Climb down the ladder.
   locations:
-    Sandship - Treasure Room First Chest: Nothing
-    Sandship - Treasure Room Second Chest: Nothing
-    Sandship - Treasure Room Third Chest: Nothing
-    Sandship - Treasure Room Fourth Chest: Nothing
-    Sandship - Treasure Room Fifth Chest: Nothing
-
+    Sandship - Treasure Room First Chest: Nothing # Open the chest.
+    Sandship - Treasure Room Second Chest: Nothing # Open the chest.
+    Sandship - Treasure Room Third Chest: Nothing # Open the chest.
+    Sandship - Treasure Room Fourth Chest: Nothing # Open the chest.
+    Sandship - Treasure Room Fifth Chest: Nothing # Open the chest.
 
 - name: Sandship Brig Prison
   dungeon: Sandship
   exits:
-    Sandship Brig: Nothing
+    Sandship Brig: Nothing # Walk out the prison.
   locations:
-    Sandship - Robot in Brig's Reward: Nothing
-
+    Sandship - Robot in Brig's Reward: Nothing # Enter the prison.
 
 - name: Sandship Boss Room
   locations:

@@ -11,7 +11,6 @@ from filepathconstants import (
 from util.arguments import get_program_args
 import logging
 
-
 args = get_program_args()
 
 # Set specified log level

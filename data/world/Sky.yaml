@@ -1,30 +1,32 @@
 - name: The Sky
   hint_region: Sky
   exits:
-    Faron Pillar: Emerald_Tablet
-    Eldin Pillar: Ruby_Tablet
-    Lanayru Pillar: Amber_Tablet
+    Faron Pillar: Emerald_Tablet and Sailcloth
+    Eldin Pillar: Ruby_Tablet and Sailcloth
+    Lanayru Pillar: Amber_Tablet and Sailcloth
+    # You can fly low enough to land on the islands without taking damage or needing the sailcloth.
     Bamboo Island: Nothing
     Island near Bamboo Island: Nothing
     Beedle's Island: Nothing
     Northeast Island: Nothing
     Lumpy Pumpkin Exterior: Nothing
     Island Closest to Faron Pillar: Nothing
-    Volcanic Island: Nothing
+    # Even flying right up to the sky entrance requires taking some fall damage.
+    # It is not possible to dive into the side entrance.
+    Volcanic Island: Can_Survive_Short_Fall
     Orielle's Island: Nothing
     Fun Fun Island: Nothing
     Triple Island: Nothing
     Inside the Thunderhead: (Goddesss_Harp and Ballad_of_the_Goddess and can_access(Central Skyloft)) or open_thunderhead == on
-    Upper Skyloft: Nothing
-    Central Skyloft: Nothing
-    Skyloft Village: Nothing
+    Upper Skyloft: Sailcloth
+    Central Skyloft: Sailcloth
+    Skyloft Village: Sailcloth
   locations:
-    The Sky - Form a Swirrell Ring above Volcanic Island: Nothing
-    The Sky - Form a Swirrell Ring above Lumpy Pumpkin: Nothing
-    The Sky - Form a Swirrell Ring above Bamboo Island: Nothing
+    The Sky - Form a Swirrell Ring above Volcanic Island: Nothing # Collect the swirrell and then land somewhere else, carefully.
+    The Sky - Form a Swirrell Ring above Lumpy Pumpkin: Nothing # Collect the swirrell and then land somewhere else, carefully.
+    The Sky - Form a Swirrell Ring above Bamboo Island: Nothing # Collect the swirrell and then land somewhere else, carefully.
     The Sky - Chest in Breakable Boulder near Lumpy Pumpkin: Spiral_Charge
     The Sky - Chest in Breakable Boulder near Fun Fun Island: Spiral_Charge
-
 
 - name: Faron Pillar
   hint_region: None
@@ -88,7 +90,7 @@
   allowed_time_of_day: All
   hint_region: Sky
   exits:
-    Bamboo Island Interior: Nothing
+    Bamboo Island Interior: Nothing # Run into the building.
     The Sky: Day or natural_night_connections == off
   locations:
     Bamboo Island - Slingshot Left Lantern: Slingshot
@@ -96,19 +98,18 @@
     Bamboo Island - Slingshot Right Lantern: Slingshot
     Bamboo Island - Goddess Chest behind Entrance: Eldin_Volcano_Goddess_Cube_West_of_Temple
 
-
 - name: Bamboo Island Interior
   events:
     Can Play Clean Cut Minigame: Sword
   exits:
     Bamboo Island: Day or natural_night_connections == off
   locations:
-    Bamboo Island Interior - Gossip Stone behind Bamboo Pole: Nothing
-    Bamboo Island Interior - Bonk Southwest Sprout: Nothing
-    Bamboo Island Interior - Bonk West Sprout: Nothing
-    Bamboo Island Interior - Bonk East Sprout: Nothing
-    Bamboo Island Interior - Bonk Southeast Sprout: Nothing
-
+    Bamboo Island Interior - Gossip Stone Treasure behind Bamboo Pole: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Bamboo Island Interior - Gossip Stone Hint behind Bamboo Pole: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Bamboo Island Interior - Bonk Southwest Sprout: Nothing # Bonk into the sprout.
+    Bamboo Island Interior - Bonk West Sprout: Nothing # Bonk into the sprout.
+    Bamboo Island Interior - Bonk East Sprout: Nothing # Bonk into the sprout.
+    Bamboo Island Interior - Bonk Southeast Sprout: Nothing # Bonk into the sprout.
 
 - name: Island near Bamboo Island
   hint_region: Sky
@@ -119,7 +120,6 @@
   locations:
     Island near Bamboo Island - Top Goddess Chest: Eldin_Volcano_Goddess_Cube_near_Mogma_Turf_Entrance
     Island near Bamboo Island - Goddess Chest in Cave: Water_Dragons_Scale and Lanayru_Desert_Goddess_Cube_in_Secret_Passageway
-
 
 - name: Beedle's Island
   allowed_time_of_day: All
@@ -133,7 +133,6 @@
     Beedle's Island - Top Goddess Chest: (Day or natural_night_connections == off) and Temple_of_Time_Goddess_Cube
     Beedle's Island - Goddess Chest in Cage: (Night or ((Day or natural_night_connections == off) and logic_beedles_island_cage_chest_dive)) and Deep_Woods_Goddess_Cube_on_top_of_Temple
 
-
 - name: Northeast Island
   hint_region: Sky
   exits:
@@ -142,7 +141,6 @@
     Northeast Island - Goddess Chest behind Bombable Rocks: Bomb_Bag and Lanayru_Mine_Goddess_Cube_behind_First_Landing_Robot
     Northeast Island - Goddess Chest in Cage: Eldin_Volcano_Goddess_Cube_East_of_Temple
 
-
 - name: Lumpy Pumpkin Exterior
   allowed_time_of_day: All
   hint_region: Sky
@@ -150,9 +148,9 @@
     Start Kinas Quest: Day and 'Complete_Hot_Soup_Delivery'
     Pumpkin Carrying: Day and 'Complete_Hot_Soup_Delivery'
   exits:
-    Lumpy Pumpkin Back Door Exterior: Nothing
-    Lumpy Pumpkin Main East Door Exterior: Nothing
-    Lumpy Pumpkin Main West Door Exterior: Nothing
+    Lumpy Pumpkin Back Door Exterior: Nothing # Open the door.
+    Lumpy Pumpkin Main East Door Exterior: Nothing # Open the door.
+    Lumpy Pumpkin Main West Door Exterior: Nothing # Open the door.
     The Sky: Day or natural_night_connections == off
   locations:
     Lumpy Pumpkin - Slingshot Left Porch Lantern: Slingshot
@@ -164,8 +162,8 @@
     Lumpy Pumpkin - Goddess Chest near Gossip Stone: Deep_Woods_Goddess_Cube_near_Goron
     Lumpy Pumpkin - Goddess Chest on Roof: (Day or natural_night_connections == off) and Skyview_Spring_Goddess_Cube
     Lumpy Pumpkin - Deliver Mogma to Kina: Day and 'Pick_up_Guld'
-    Lumpy Pumpkin - Gossip Stone near Back Door: Nothing
-
+    Lumpy Pumpkin - Gossip Stone Treasure near Back Door: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Lumpy Pumpkin - Gossip Stone Hint near Back Door: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Lumpy Pumpkin Back Door Exterior
   allowed_time_of_day: All
@@ -203,7 +201,6 @@
     Lumpy Pumpkin Interior: Nothing
     Lumpy Pumpkin Main West Door Exterior: Nothing
 
-
 - name: Lumpy Pumpkin Interior
   allowed_time_of_day: All
   can_sleep: true
@@ -212,15 +209,14 @@
     Complete Hot Soup Delivery: "'Delivered_Hot_Soup'"
     Pick up Levias Soup: Spiral_Charge
   exits:
-    Lumpy Pumpkin Back Door Interior: Nothing
-    Lumpy Pumpkin Main East Door Interior: Nothing
-    Lumpy Pumpkin Main West Door Interior: Nothing
+    Lumpy Pumpkin Back Door Interior: Nothing # Open the door.
+    Lumpy Pumpkin Main East Door Interior: Nothing # Open the door.
+    Lumpy Pumpkin Main West Door Interior: Nothing # Open the door.
   locations:
-    Lumpy Pumpkin - Item on Chandelier: Nothing
+    Lumpy Pumpkin - Item on Chandelier: Nothing # Bonk into the banister on the top floor.
     Lumpy Pumpkin - Inside Crystal: Night
     Lumpy Pumpkin - Harp Duet with Kina: Night and Goddesss_Harp and 'Pumpkin_Carrying'
-    Lumpy Pumpkin - Pumm and Kina's Closet: Nothing
-
+    Lumpy Pumpkin - Pumm and Kina's Closet: Nothing # Open the closet door.
 
 - name: Island Closest to Faron Pillar
   hint_region: Sky
@@ -229,29 +225,27 @@
   locations:
     Island Closest to Faron Pillar - Goddess Chest: Deep_Woods_Goddess_Cube_in_front_of_Temple
 
-
 - name: Volcanic Island
   hint_region: Sky
   events:
-    Mushroom Spores: Nothing
+    Can Collect Mushroom Spores: Bottle
   exits:
     The Sky: Day or natural_night_connections == off
   locations:
     Volcanic Island - Outside Goddess Chest: Lanayru_Desert_Goddess_Cube_in_Sand_Oasis
     Volcanic Island - Inside Goddess Chest: (Clawshots or logic_volcanic_island_dive) and Faron_Woods_Goddess_Cube_on_East_Great_Tree_with_Clawshots_Target
-    Volcanic Island - Gossip Stone inside Island: Nothing
-
+    Volcanic Island - Gossip Stone Treasure inside Island: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Volcanic Island - Gossip Stone Hint inside Island: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Orielle's Island
   hint_region: Sky
   events:
     Talk to Orielle: Day
-    Save Orielle: Day and Bottle and 'Mushroom_Spores'
+    Save Orielle: Day and Bottle and 'Can_Collect_Mushroom_Spores'
   exits:
     The Sky: Day or natural_night_connections == off
   locations:
     Orielle's Island - Heal Orielle's Loftwing: "'Save_Orielle'"
-
 
 - name: Fun Fun Island
   hint_region: Sky
@@ -264,7 +258,6 @@
     Fun Fun Island - 500 Rupees in Dodoh's High Dive: "'Can_Play_Fun_Fun_Island_Minigame'"
     Fun Fun Island - Goddess Chest below Island: (Day or natural_night_connections == off) and Floria_Waterfall_Goddess_Cube_on_High_Ledge
 
-
 - name: Triple Island
   hint_region: Sky
   exits:
@@ -274,10 +267,13 @@
     Triple Island - Lower Goddess Chest: Lanayru_Desert_Goddess_Cube_near_Caged_Robot
     Triple Island - Goddess Chest in Cage: Clawshots and Skippers_Retreat_Goddess_Cube
 
+
+# INSIDE THE THUNDERHEAD
 - name: Inside the Thunderhead
-  allowed_time_of_day: Day Only # The loadzone works but the light beam isn't there
+  allowed_time_of_day: Day Only # The loadzone works but the light beam isn't there.
   hint_region: Inside the Thunderhead
   exits:
+    # You can fly low enough to land on the islands without taking damage or needing the sailcloth.
     Inside the Thunderhead East Island: Nothing
     Isle of Songs: Nothing
     Mogma Mitts Island: Nothing
@@ -285,36 +281,33 @@
     The Sky: Day and ((Goddesss_Harp and Ballad_of_the_Goddess and can_access(Central Skyloft)) or open_thunderhead == on)
   locations:
     Inside the Thunderhead - Song from Levias: Spiral_Charge and Scrapper and Sword and 'Pick_up_Levias_Soup'
-    Inside the Thunderhead - Gossip Stone near Bug Heaven: Nothing
-
+    Inside the Thunderhead - Gossip Stone Treasure near Bug Heaven: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
+    Inside the Thunderhead - Gossip Stone Hint near Bug Heaven: (Goddess's_Harp and Ballad_of_the_Goddess) or gossip_stone_treasure_shuffle == off
 
 - name: Isle of Songs
   hint_region: Inside the Thunderhead
   exits:
     Inside the Thunderhead: Day or natural_night_connections == off
-    Isle of Songs Interior: Sword or Distance_Activator or Whip or shortcut_ios_bridge_complete # bomb bag doesn't work
+    Isle of Songs Interior: Sword or Distance_Activator or Whip or shortcut_ios_bridge_complete # Bomb Bag doesn't work on the switches.
   locations:
     Isle of Songs - Top Goddess Chest: (Day or natural_night_connections == off) and Volcano_Summit_Goddess_Cube_near_Fire_Sanctuary_Entrance
     Isle of Songs - Lower Goddess Chest: (Day or natural_night_connections == off) and Mogma_Turf_Goddess_Cube_on_Raised_Pillar
 
-
 - name: Isle of Songs Interior
   exits:
-    Isle of Songs: Nothing
+    Isle of Songs: Nothing # Exit through the crawlspace.
   locations:
     Isle of Songs - Strike Crest with Goddess Sword: Goddess_Sword
     Isle of Songs - Strike Crest with Longsword: Goddess_Longsword
     Isle of Songs - Strike Crest with White Sword: Goddess_White_Sword
-
 
 - name: Inside the Thunderhead East Island
   hint_region: Inside the Thunderhead
   exits:
     Inside the Thunderhead: Day or natural_night_connections == off
   locations:
-    Inside the Thunderhead - Chest on East Island: Digging_Mitts or logic_east_island_dive
+    Inside the Thunderhead - Chest on East Island: (Digging_Mitts and Sailcloth) or logic_east_island_dive
     Inside the Thunderhead - Goddess Chest on East Island: Faron_Woods_Goddess_Cube_on_East_Great_Tree_with_Rope
-
 
 - name: Mogma Mitts Island
   hint_region: Inside the Thunderhead
@@ -323,7 +316,6 @@
   locations:
     Inside the Thunderhead - Mogma Mitts Island First Goddess Chest: Mogma_Mitts and Volcano_Summit_Goddess_Cube_in_Lava_Lake
     Inside the Thunderhead - Mogma Mitts Island Second Goddess Chest: Mogma_Mitts and Lanayru_Gorge_Goddess_Cube
-
 
 - name: Bug Heaven
   hint_region: Inside the Thunderhead
@@ -334,7 +326,7 @@
   locations:
     Bug Heaven - 10 Bugs in 3 Minutes: (Bug_Net and (minigame_difficulty == vanilla or minigame_difficulty == hard)) or Big_Bug_Net
     Bug Heaven - Goddess Chest: Volcano_Summit_Goddess_Cube_at_Summit_Waterfall
-    Bug Heaven - Stamina Fruit near Start: Nothing
-    Bug Heaven - Stamina Fruit in front of Wooden Plank: Nothing
-    Bug Heaven - Stamina Fruit in Center Room: Nothing
-    Bug Heaven - Stamina Fruit on top of Slope: Nothing
+    Bug Heaven - Stamina Fruit near Start: Nothing # Collect the freestanding item.
+    Bug Heaven - Stamina Fruit in front of Wooden Plank: Nothing # Collect the freestanding item.
+    Bug Heaven - Stamina Fruit in Center Room: Nothing # Collect the freestanding item.
+    Bug Heaven - Stamina Fruit on top of Slope: Nothing # Collect the freestanding item.

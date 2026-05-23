@@ -20,7 +20,6 @@ from logic.tooltips.tooltips import TooltipsSearch, print_req
 from logic.world import World
 from util.text import load_text_data
 
-
 """
 The entire point of the tooltips code is to accurately inform
 the user which items are needed to put which checks in logic.

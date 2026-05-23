@@ -30,6 +30,7 @@ class Entrance:
         self.type: str = "None"
         self.original_type: str = "None"
         self.original_name: str = self.current_name()
+        self.alias: str = self.original_name
 
         self.requirement: Requirement = requirement_
         self.world: "World" = world_
@@ -79,6 +80,12 @@ class Entrance:
     def current_name(self) -> str:
         return f"{self.parent_area} -> {self.connected_area}"
 
+    def alias_connected_area(self) -> str:
+        return self.alias.split(" -> ")[1]
+
+    def alias_parent_area(self) -> str:
+        return self.alias.split(" -> ")[0]
+
     def __str__(self) -> str:
         return self.original_name
 
@@ -126,6 +133,7 @@ class Entrance:
         self.world.root.exits.append(target_entrance)
         target_entrance.connect(self.connected_area)
         target_entrance.replaces = self
+        target_entrance.alias = self.alias
         return target_entrance
 
     # Create this entrance's target and disconnect the original entrance

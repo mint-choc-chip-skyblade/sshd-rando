@@ -5,12 +5,21 @@ on:
   - pull_request
 
 jobs:
-  build:
+  run-tests:
     strategy:
       matrix:
         include:
           - name: Windows Tests
             os: windows-latest
+            architecture: x64
+          - name: MacOS x64 Tests
+            os: macos-15-intel
+            architecture: x64
+          - name: MacOS arm64 Tests
+            os: macos-latest
+            architecture: arm64
+          - name: Linux Tests
+            os: ubuntu-latest
             architecture: x64
 
     runs-on: ${{ matrix.os }}
@@ -21,18 +30,17 @@ jobs:
         shell: bash
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Python
         id: setup-py
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          # TODO: Unfreeze python version when this is resolved: https://github.com/actions/setup-python/issues/886
-          python-version: "3.12"
+          python-version: "3.14"
           check-latest: true
           cache: "pip" # Cache all pip dependency downloads
       - name: Cache venv
         id: cache-venv
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ./.venv
           key: ${{ matrix.os }}-tests-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles('**/req*.txt') }}
@@ -50,8 +58,10 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install wheel
           python -m pip install -r requirements.txt
+
       - name: Test python formatting
         run: black . --check
+
       - name: Run tests
         run: |
-          pytest
+          pytest -n auto

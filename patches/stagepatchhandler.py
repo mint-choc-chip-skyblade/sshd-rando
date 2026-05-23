@@ -1,4 +1,5 @@
 import hashlib
+import shutil
 import time
 from constants.verificationconstants import BZS_FILE_HASHES
 from patches.stagepatchhelper import patch_additional_properties
@@ -42,6 +43,7 @@ from filepathconstants import (
     CACHE_BZS_PATH,
     CACHE_OARC_PATH,
     CACHE_PATH,
+    OTHER_MODS_PATH,
     STAGE_FILES_PATH,
     STAGE_PATCHES_PATH,
     EXTRACTS_PATH,
@@ -513,6 +515,30 @@ def patch_academy_bell(bzs: dict, itemid: int, trapid: int):
     academy_bell["params1"] = mask_shift_set(academy_bell["params1"], 0xFF, 0, itemid)
 
 
+def patch_hrphint(bzs: dict, itemid: int, object_id_str: str, trapid: int):
+    id = int(object_id_str, 16)
+
+    hrphint: dict | None = next(
+        filter(lambda x: x["name"] == "HrpHint" and x["id"] == id, bzs["OBJ "]), None
+    )
+
+    if hrphint is None:
+        raise Exception(
+            f"No gossip stone (HrpHint) with id '{hex(id)}' found to patch."
+        )
+
+    # Need to check this as itemid is the itemid of the fake item model when trapid > 0
+    if trapid:
+        trapbits = 254 - trapid
+        # Unsets bit 0x000000F0 of params2
+        hrphint["params2"] = mask_shift_set(hrphint["params2"], 0xF, 0, trapbits)
+    else:
+        # Makes sure the bit is set if not a trap
+        hrphint["params2"] = mask_shift_set(hrphint["params2"], 0xF, 0, 0xF)
+
+    hrphint["params2"] = mask_shift_set(hrphint["params2"], 0xFF, 4, itemid)
+
+
 def object_add(bzs: dict, object_add: dict, nextid: int) -> int:
     layer = object_add.get("layer", None)
     object_type: str = object_add["objtype"].ljust(4)
@@ -803,14 +829,15 @@ def layer_override(bzs: dict, patch: dict):
 
 
 def arcn_add(bzs: dict, patch: dict):
-    arcn: set[str] = set(patch.get("arcn", None))
+    arcn: list[str] | None = patch.get("arcn", None)
+
     if arcn == None:
         raise Exception(
             f"Could not find 'arcn' from patch. Did you typo the 'arcn' field?\nPatch: {patch}"
         )
 
     arcn_set: set[str] = set(bzs.get("ARCN", []))
-    arcn_set |= arcn
+    arcn_set |= set(arcn)
     bzs["ARCN"] = list(arcn_set)
     # print(patch["layer"], patch["room"], bzs["ARCN"])
 
@@ -1068,6 +1095,13 @@ class StagePatchHandler:
                             itemid,
                             trapid,
                         )
+                    elif object_name == "HrpHint":
+                        patch_hrphint(
+                            room_bzs["LAY "][f"l{layer}"],
+                            itemid,
+                            objectid,
+                            trapid,
+                        )
                     else:
                         print(
                             f"Object name: {object_name} not currently supported for check patching."
@@ -1188,10 +1222,14 @@ class StagePatchHandler:
 
         default_objectpack_u8 = U8File.get_parsed_U8_from_path(OBJECTPACK_PATH)
 
+        # Remove mod cache each time to prevent old mod files from lingering
+        for cache_path in CACHE_OARC_PATH.glob("*"):
+            if cache_path.is_dir():
+                shutil.rmtree(cache_path)
+
         for mod in mods:
             cache_oarc_path = CACHE_OARC_PATH / mod
-            if not cache_oarc_path.exists():
-                cache_oarc_path.mkdir(parents=True, exist_ok=True)
+            cache_oarc_path.mkdir(parents=True, exist_ok=True)
 
             objectpack_path, _ = get_resolved_game_file_path(
                 OBJECTPACK_PATH, self.other_mods, mod
@@ -1210,8 +1248,20 @@ class StagePatchHandler:
                     if len(arcs_not_in_cache) == 0:
                         continue
 
+                    # Allow mod makers to put objectpack arcs in "ModName/oarc"
+                    mod_object_path = OTHER_MODS_PATH / mod / "oarc"
+
+                    if mod and mod_object_path.exists():
+                        for arc_path in mod_object_path.glob("*.arc"):
+                            arc_name = arc_path.name
+                            shutil.copyfile(
+                                mod_object_path / arc_name,
+                                cache_oarc_path / arc_name,
+                            )
+                            print_progress_text(f"Copying {mod}/{arc_name}")
+
                     # If a mod doesn't have an objectpack, then skip it
-                    if mod and os.path.samefile(OBJECTPACK_PATH, objectpack_path):
+                    if mod and OBJECTPACK_PATH.samefile(objectpack_path):
                         continue
 
                     objectpack_u8 = U8File.get_parsed_U8_from_path(objectpack_path)
@@ -1227,8 +1277,8 @@ class StagePatchHandler:
                                 f"Expected type bytes but found None for {mod}/{arc_name}."
                             )
 
-                        # If we're extracting arcs from a mod, don't rewrite the arcs if they're the same
-                        # as the original game
+                        # If we're extracting arcs from a mod, don't rewrite
+                        # the arcs if they're the same as the original game
                         if mod:
                             default_arc_data = default_objectpack_u8.get_file_data(
                                 f"oarc/{arc_name}.arc"

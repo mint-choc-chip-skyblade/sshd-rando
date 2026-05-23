@@ -28,7 +28,7 @@ on:
         default: "Production"
 
 jobs:
-  build:
+  create-builds:
     strategy:
       matrix:
         include:
@@ -38,12 +38,12 @@ jobs:
             artifact: windows
             artifact_suffix: ""
           - name: MacOS Build x64
-            os: macos-13
+            os: macos-15-intel
             architecture: x64
             artifact: macos
             artifact_suffix: _intel
           - name: MacOS Build arm64
-            os: macos-14
+            os: macos-latest
             architecture: arm64
             artifact: macos
             artifact_suffix: _apple_silicon
@@ -62,24 +62,23 @@ jobs:
 
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      MACOSX_DEPLOYMENT_TARGET: 13
+      MACOSX_DEPLOYMENT_TARGET: 14
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       
       # Setup Python
       - name: Set up Python
         id: setup-py
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          # TODO: Unfreeze python version when this is resolved: https://github.com/actions/setup-python/issues/886
-          python-version: "3.12"
+          python-version: "3.14"
           check-latest: true
           architecture: ${{ matrix.architecture }}
           cache: "pip" # Cache all pip dependency downloads
       - name: Cache venv
         id: cache-venv
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ./.venv
           key: ${{ matrix.os }}-venv-${{ steps.setup-py.outputs.python-version }}-${{ hashFiles('**/req*.txt') }}
@@ -122,13 +121,13 @@ jobs:
         run: tar -C "dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}/" -cvf "Skyward_Sword_HD_Randomizer_v${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}${{ matrix.artifact_suffix }}.tar" .
       - name: Upload non-Windows Artifact
         if: runner.os != 'Windows'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }}${{ matrix.artifact_suffix }})
           path: Skyward_Sword_HD_Randomizer_v${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}${{ matrix.artifact_suffix }}.tar
       - name: Upload Windows Artifact
         if: runner.os == 'Windows'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Skyward Sword HD Randomizer v${{ steps.read_toml.outputs.value }} (${{ matrix.artifact }})
           path: dist/release_archive_${{ steps.read_toml.outputs.value }}_${{ matrix.artifact }}

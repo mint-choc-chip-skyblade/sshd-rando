@@ -303,6 +303,27 @@ b.eq override_inventory_caption_item_text
 cmp w8, #94
 b.eq randomize_music
 
+cmp w8, #95
+b.eq prefer_object_folder_for_stage_arcs
+
+cmp w8, #96
+b.eq setup_registers_for_general_modreplace
+
+cmp w8, #97
+b.eq prefer_modreplace_for_general_arcs
+
+cmp w8, #98
+b.eq setup_gossip_stone_item_params
+
+cmp w8, #99
+b.eq check_sailcloth_for_air_vents
+
+cmp w8, #100
+b.eq require_sailcloth_to_fly_to_sky
+
+cmp w8, #101
+b.eq voidout_near_skyloft_or_light_pillars_without_sailcloth
+
 ret ; this should never be reached
 
 ; ends at 0x712e0a7000

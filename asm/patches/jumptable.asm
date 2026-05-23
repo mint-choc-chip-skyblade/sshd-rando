@@ -15,13 +15,13 @@
 ; 
 ; dAcNpcSenpaiAMotherLOD_c::ctor starts at:  0x7100659ab0
 ; dAcNpcSenpaiAMotherLOD_c::init ends at:    0x710065a080
-; Total available space (bytes):                  0x5D0
-; Total available space (bytes):                   1488 (decimal)
-; Total available instructions:                     372 (decimal)
+; Total available space (bytes):                  0x5C8
+; Total available space (bytes):                   1480 (decimal)
+; Total available instructions:                     370 (decimal)
 ; 
 ; Please update this:
-; Total space used (bytes):                         104
-; Total instructions used:                           26
+; Total space used (bytes):                         10C
+; Total instructions used:                           28
 
 ; startflags
 .offset 0x7100659ab0
@@ -61,6 +61,12 @@ b additions_jumptable
 ; use custom bzs
 .offset 0x7100659ae8
 mov w8, #83
+b additions_jumptable
+
+; Load arcs from romfs/Object/NX where possible
+; prefer_object_folder_for_models
+.offset 0x7100659af0
+mov w8, #95
 b additions_jumptable
 
 ; Actually branches to the rust additions landingpad

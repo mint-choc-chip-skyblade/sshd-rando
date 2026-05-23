@@ -155,6 +155,17 @@
     - "off": "The tadtones in Flooded Faron Woods will not be shuffled."
     - "on": "The tadtones in Flooded Faron Woods will be shuffled and 17 \"Group of Tadtones\" items will be shuffled throughout the world."
 
+- name: gossip_stone_treasure_shuffle
+  tracker_important: true
+  default_option: "off"
+  pretty_name: Gossip Stone Treasure Shuffle
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+   - "off": "Gossip Stones will always be visible and will not give items."
+   - "on": "Gossip Stones will need to be raised by playing Ballad of the Goddess with the Goddess' Harp. A random item will appear with the Gossip Stone."
+
 - name: full_wallet_upgrades
   default_option: "off"
   pretty_name: Full Wallet Upgrades
@@ -838,14 +849,15 @@
 - name: damage_multiplier
   default_option: "1"
   pretty_name: Damage Multiplier
-  random_low: "1"
+  random_low: "0"
   random_high: "4"
   pretty_options:
-    - 1-80
+    - 0-80
   options:
-    - 1-80: "Determines the overall damage multiplier.
+    - 0-80: "Determines the overall damage multiplier.
         <b>Normal Mode</b> (default) damage is x1.
         <b>Hero Mode</b> (new game +) damage is x2.
+        At x0, the player will be invincible and not take any damage.
         At x12 or higher, the hot cave in Eldin Volcano logically requires Fireshield Earrings to traverse."
 
 - name: unlock_all_groosenator_destinations
@@ -872,6 +884,16 @@
     - easy: "The threshold needed to earn a reward from each minigame will be reduced."
     - vanilla: "The threshold needed to earn a reward from each minigame will be unchanged."
     - hard: "The threshold needed to earn a reward from each minigame will be increased."
+
+- name: skip_misc_small_cutscenes
+  default_option: "off"
+  pretty_name: Skip Miscellaneous Small Cutscenes
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "Small cutscenes will play as normal."
+    - "on": "Certain small cutscenes will be skipped. This currently includes the Sandship switch and generator cutscenes."
 
 ######################
 ## Cosmetic Options ##
@@ -1155,14 +1177,16 @@
 
 - name: open_earth_temple
   tracker_important: true
-  default_option: "on"
+  default_option: "open"
   pretty_name: Open Earth Temple
   pretty_options:
-    - "Off"
-    - "On"
+    - "Open"
+    - "Shuffle Key Pieces (Eldin)"
+    - "Shuffle Key Pieces (Anywhere)"
   options:
-    - "off": "You will need to collect all the Earth Temple Key Pieces in order to open the Earth Temple Door."
-    - "on": "The Earth Temple Door will be opened from the start of the game."
+    - "open": "The Earth Temple Door will be opened from the start of the game."
+    - "shuffle_eldin": "You will need to collect all the Earth Temple Key Pieces, shuffled within the Eldin Volcano region (including Mogma Turf if overworld entrances are not randomized), in order to open the Earth Temple Door."
+    - "shuffle_anywhere": "You will need to collect all the Earth Temple Key Pieces, shuffled anywhere, in order to open the Earth Temple Door."
 
 - name: open_lmf
   tracker_important: true
@@ -1630,6 +1654,16 @@
     - "off": "You will only be expected to use the Slingshot, Bow, Clawshots, or a Beetle to activate distant switches and you will only be expected to use nearby bomb flowers with the Hook Beetle to blow up distant rocks."
     - "on": "You may need to use the Bomb Bag and time bomb throws to activate switches or blow up distant rocks or towers."
 
+- name: logic_precise_falls
+  default_option: "off"
+  pretty_name: Precise Falls
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will never be expected to make precise adjustments when falling from a high place to avoid or take less damage."
+    - "on": "You will be expected to make adjustments when falling to minimize the amount of damage taken (e.g. landing on the frog's head when diving into the frog's mouth in Fire Sanctuary)."
+
 - name: logic_faron_woods_with_groosenator
   default_option: "off"
   pretty_name: Faron Woods with Groosenator
@@ -1977,3 +2011,23 @@
     - 6-18
   options:
     - 6-18: "Select the number of hearts you want to start with."
+
+- name: start_with_all_bugs
+  default_option: "off"
+  pretty_name: Start with All Bugs
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will start the game without any bugs in your inventory."
+    - "on": "You will start the game with 99 of each bug in your inventory."
+
+- name: start_with_all_treasures
+  default_option: "off"
+  pretty_name: Start with All Treasures
+  pretty_options:
+    - "Off"
+    - "On"
+  options:
+    - "off": "You will start the game without any treasures in your inventory."
+    - "on": "You will start the game with 99 of each treasure in your inventory."
