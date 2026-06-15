@@ -10,8 +10,8 @@ pyclip~=0.7.0
 
 # dev stuff
 black~=26.5.1
-pytest~=9.0.2
+pytest~=9.1.0
 pytest-xdist~=3.8.0
-PyInstaller~=6.20.0
+PyInstaller~=6.21.0
 Pillow~=12.2.0
-platformdirs~=4.9.6
+platformdirs~=4.10.0
