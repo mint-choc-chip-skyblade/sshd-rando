@@ -155,13 +155,15 @@ class ASMPatchHandler:
         # If the new size is smaller, don't bother updating it - there's no point.
         # The MemoryOffset and Size fields are left unchanged as this doesn't appear to cause problems.
         if new_text_size_diff > 0:
-            # Update rodata and data file offsets in their segment headers.
+            # Update the decompressed size of the .text section.
             write_u32(
                 nso,
                 SegmentHeader.SEGMENT_HEADER_SIZE + 0x8,
                 len(text_segment.getvalue()),
                 is_little_endian=True,
             )
+
+            # Update rodata and data file offsets in their segment headers.
             write_u32(
                 nso,
                 SegmentHeader.SEGMENT_HEADER_SIZE * 2,
