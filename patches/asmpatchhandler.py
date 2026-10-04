@@ -158,6 +158,12 @@ class ASMPatchHandler:
             # Update rodata and data file offsets in their segment headers.
             write_u32(
                 nso,
+                SegmentHeader.SEGMENT_HEADER_SIZE + 0x8,
+                len(text_segment.getvalue()),
+                is_little_endian=True,
+            )
+            write_u32(
+                nso,
                 SegmentHeader.SEGMENT_HEADER_SIZE * 2,
                 rodata_header.get_file_offset() + new_text_size_diff,
                 is_little_endian=True,

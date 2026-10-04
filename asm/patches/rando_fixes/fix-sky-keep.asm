@@ -1,6 +1,6 @@
 ; Set Stone of Trials placed flag when opening Sky Keep
 .offset 0x710098312c
-b 0x7100659ac0
+b 0x7101060958
 
 
 ; Fix Sky Keep dungeon exit
