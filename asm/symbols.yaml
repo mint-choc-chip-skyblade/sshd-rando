@@ -216,7 +216,7 @@ main:
 
 
     # Custom Symbols
-    additions_jumptable: 0x710065a070
+    additions_jumptable: 0x7101060FE0
 
     # Read-only
     ## Size: 0x1000

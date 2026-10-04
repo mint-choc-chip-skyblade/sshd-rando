@@ -34,17 +34,17 @@ strb w23, [x22, x0]
 ; Load custom bzs.arc
 ; uses the jumptable cos the vanilla instructions are a mess
 .offset 0x7100e13354
-b 0x7100659ae0
+b 0x7101060978
 
 ; Use custom bzs.arc when trying to load vanilla bzs
 .offset 0x7100deb9a4
-bl 0x7100659ae8
+bl 0x7101060980
 
 
 ; Load stage arcs from romfs/ModReplace where possible
 ; Unfortunately necessary jumptable usage ;-;
 .offset 0x7100b8c3e4
-bl 0x7100659af0
+bl 0x7101060988
 
 ; Load general arcs from romfs/ModReplace where possible
 .offset 0x7100deb2cc

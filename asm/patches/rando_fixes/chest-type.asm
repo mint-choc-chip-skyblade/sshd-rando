@@ -36,4 +36,4 @@ nop
 
 ; Hide chest in dAcTbox::stateDemoAppearLeave
 .offset 0x7100b0a6c4
-b 0x7100659ac8 ; in custom jumptable
+b 0x7101060960 ; in custom jumptable

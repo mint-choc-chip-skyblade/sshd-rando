@@ -14,7 +14,7 @@ mov w21, w1
 
 ; End Pumpkin Archery Early by hitting the bell
 .offset 0x710072884c
-bl 0x7100659ad0
+bl 0x7101060968
 
 
 ; Minigame win condition changes
