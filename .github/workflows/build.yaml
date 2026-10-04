@@ -70,7 +70,7 @@ jobs:
       # Setup Python
       - name: Set up Python
         id: setup-py
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: "3.14"
           check-latest: true
