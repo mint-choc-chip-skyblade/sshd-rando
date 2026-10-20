@@ -447,8 +447,11 @@ def break_lines(text: str) -> str:
         "?": 19,
         ":": 7,
         ";": 7,
-        "(": 10,  # NEEDS CONFIRMING
-        ")": 10,  # NEEDS CONFIRMING
+        "(": 9,
+        ")": 9,
+        "*": 13,
+        "%": 25,
+        "œ": 26,
     }
 
     max_line_length = 695
@@ -489,9 +492,10 @@ def break_lines(text: str) -> str:
             continue
 
         if text[i] not in char_widths:
-            print(text, "\n")
+            print(text[i], i)
+            print()
             raise RuntimeError(
-                f"Char '{text[i]}' has no defined width in the above text."
+                f"Char '{text[i]}' at index '{i}' has no defined width. Cannot process the following text: {text}"
             )
 
         cur_line_width += char_widths[text[i]]
